@@ -12,7 +12,7 @@ var searchData=
   ['getclipboardtype_9',['getClipBoardType',['../class_qt_pass_settings.html#a14599d5904d2e158de03c16494db8edd',1,'QtPassSettings']]],
   ['getclipboardtyperaw_10',['getClipBoardTypeRaw',['../class_qt_pass_settings.html#a003c48cf1fe61f172e3252e88815f0f3',1,'QtPassSettings']]],
   ['getcurrenttreeviewindex_11',['getCurrentTreeViewIndex',['../class_main_window.html#acc66dda09963fdddea9716163293ddda',1,'MainWindow']]],
-  ['getdefaultkeytemplate_12',['getDefaultKeyTemplate',['../class_pass.html#a190cfd6ca902c5b7d271922bd8b9e5e1',1,'Pass']]],
+  ['getdefaultkeytemplate_12',['getDefaultKeyTemplate',['../class_pass.html#a0240e98aae2cee6ab3d035ff17c47920',1,'Pass']]],
   ['getdialoggeometry_13',['getDialogGeometry',['../class_qt_pass_settings.html#a41481e1e44a7db8f1bae4371017dd023',1,'QtPassSettings']]],
   ['getdialogpos_14',['getDialogPos',['../class_qt_pass_settings.html#a16bbe6462ac8bbf26bc057ff65cd9028',1,'QtPassSettings']]],
   ['getdialogsize_15',['getDialogSize',['../class_qt_pass_settings.html#a556d04858217dd5165fa7c91e8de1edf',1,'QtPassSettings']]],
@@ -76,7 +76,7 @@ var searchData=
   ['gpg_5fgenkeys_73',['GPG_GENKEYS',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c',1,'Enums']]],
   ['gpgexecutable_74',['gpgExecutable',['../struct_app_settings.html#a0d19db5f33a7d4728142617f99cb55db',1,'AppSettings']]],
   ['gpghome_75',['gpgHome',['../struct_app_settings.html#a536aba611f1643063f9c38c8af91d29c',1,'AppSettings']]],
-  ['gpgsupportsed25519_76',['gpgSupportsEd25519',['../class_pass.html#a95709a3bc0597e6ebcf20439018d90ea',1,'Pass']]],
+  ['gpgsupportsed25519_76',['gpgSupportsEd25519',['../class_pass.html#a407558ed7e2d88f953de7b179a1d143a',1,'Pass']]],
   ['grep_77',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]],
   ['grepsearchcontroller_78',['GrepSearchController',['../class_grep_search_controller.html',1,'']]]
 ];
