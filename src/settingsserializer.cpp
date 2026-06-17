@@ -63,7 +63,7 @@ auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
       qs.value(SettingsConstants::noLineWrapping, false).toBool();
 
   // Features
-  // Default true: every QtPassSettings::isAddGPGId() call site passes true.
+  // Default true: AppSettings::addGPGId defaults to true.
   s.addGPGId = qs.value(SettingsConstants::addGPGId, true).toBool();
   s.useGit = qs.value(SettingsConstants::useGit, false).toBool();
   s.useGrepSearch = qs.value(SettingsConstants::useGrepSearch, false).toBool();

@@ -143,13 +143,6 @@ public:
   static void setSize(const QSize &size);
 
   /**
-   * @brief Get maximized state.
-   * @param defaultValue Boolean returned if not saved.
-   * @return true if window is maximized.
-   */
-  static auto isMaximized(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Save maximized state.
    * @param maximized Maximized state to save.
    */
@@ -223,32 +216,11 @@ public:
 
   // Password store settings
   /**
-   * @brief Get whether to use pass (true) or GPG (false).
-   * @param defaultValue Boolean returned if not saved (defaults to false).
-   * @return true if using pass, false if using GPG.
-   */
-  static auto isUsePass(const bool &defaultValue = QVariant().toBool()) -> bool;
-  /**
    * @brief Save use pass setting.
    * @param usePass true to use pass, false for GPG.
    */
   static void setUsePass(const bool &usePass);
 
-  /**
-   * @brief Get clipboard type preference.
-   * @param defaultValue Default value returned if not saved.
-   * @return Clipboard type as Enums::clipBoardType.
-   */
-  static auto getClipBoardTypeRaw(
-      const Enums::clipBoardType &defaultValue = Enums::CLIPBOARD_NEVER) -> int;
-  /**
-   * @brief Get clipboard type as enum.
-   * @param defaultValue Default value returned if not saved.
-   * @return Clipboard type as Enums::clipBoardType.
-   */
-  static auto getClipBoardType(
-      const Enums::clipBoardType &defaultValue = Enums::CLIPBOARD_NEVER)
-      -> Enums::clipBoardType;
   /**
    * @brief Save clipboard type.
    * @param clipBoardType Clipboard type to save.
@@ -257,25 +229,11 @@ public:
 
   // UI settings
   /**
-   * @brief Get whether to use selection (X11) for clipboard.
-   * @param defaultValue Boolean returned if not saved.
-   * @return true if using selection.
-   */
-  static auto isUseSelection(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Save use selection setting.
    * @param useSelection true to use selection.
    */
   static void setUseSelection(const bool &useSelection);
 
-  /**
-   * @brief Get whether to use autoclear for clipboard.
-   * @param defaultValue Boolean returned if not saved.
-   * @return true if autoclear is enabled.
-   */
-  static auto isUseAutoclear(const bool &defaultValue = QVariant().toBool())
-      -> bool;
   /**
    * @brief Save use autoclear setting.
    * @param useAutoclear true to enable autoclear.
@@ -296,13 +254,6 @@ public:
   static void setAutoclearSeconds(const int &autoClearSeconds);
 
   /**
-   * @brief Get whether to use panel autoclear.
-   * @param defaultValue Boolean returned if not saved.
-   * @return true if panel autoclear is enabled.
-   */
-  static auto
-  isUseAutoclearPanel(const bool &defaultValue = QVariant().toBool()) -> bool;
-  /**
    * @brief Save use autoclear panel setting.
    * @param useAutoclearPanel true to enable panel autoclear.
    */
@@ -322,25 +273,11 @@ public:
   static void setAutoclearPanelSeconds(const int &autoClearPanelSeconds);
 
   /**
-   * @brief Get whether to hide password in UI.
-   * @param defaultValue Boolean returned if not saved.
-   * @return true if password is hidden.
-   */
-  static auto isHidePassword(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Save hide password setting.
    * @param hidePassword true to hide password.
    */
   static void setHidePassword(const bool &hidePassword);
 
-  /**
-   * @brief Get whether to hide content (password + username).
-   * @param defaultValue Boolean returned if not saved.
-   * @return true if content is hidden.
-   */
-  static auto isHideContent(const bool &defaultValue = QVariant().toBool())
-      -> bool;
   /**
    * @brief Save hide content setting.
    * @param hideContent true to hide content.
@@ -348,25 +285,11 @@ public:
   static void setHideContent(const bool &hideContent);
 
   /**
-   * @brief Get whether to use monospace font.
-   * @param defaultValue Boolean returned if not saved.
-   * @return true if using monospace font.
-   */
-  static auto isUseMonospace(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Save use monospace setting.
    * @param useMonospace true to use monospace font.
    */
   static void setUseMonospace(const bool &useMonospace);
 
-  /**
-   * @brief Get whether to display password as-is (no modification).
-   * @param defaultValue Boolean returned if not saved.
-   * @return true if displaying as-is.
-   */
-  static auto isDisplayAsIs(const bool &defaultValue = QVariant().toBool())
-      -> bool;
   /**
    * @brief Save display as-is setting.
    * @param displayAsIs true to display unmodified.
@@ -374,25 +297,11 @@ public:
   static void setDisplayAsIs(const bool &displayAsIs);
 
   /**
-   * @brief Get whether to disable line wrapping.
-   * @param defaultValue Boolean returned if not saved.
-   * @return true if line wrapping disabled.
-   */
-  static auto isNoLineWrapping(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Save no line wrapping setting.
    * @param noLineWrapping true to disable wrapping.
    */
   static void setNoLineWrapping(const bool &noLineWrapping);
 
-  /**
-   * @brief Get whether to auto-add GPG ID when receiving files.
-   * @param defaultValue Boolean returned if not saved.
-   * @return true if auto-adding is enabled.
-   */
-  static auto isAddGPGId(const bool &defaultValue = QVariant().toBool())
-      -> bool;
   /**
    * @brief Save add GPG ID setting.
    * @param addGPGId true to auto-add GPG IDs.
@@ -461,27 +370,11 @@ public:
   static void setSshAuthSockOverride(const QString &value);
 
   /**
-   * @brief Get git executable path.
-   * @param defaultValue String returned if not saved.
-   * @return Path to git executable.
-   */
-  static auto
-  getGitExecutable(const QString &defaultValue = QVariant().toString())
-      -> QString;
-  /**
    * @brief Save git executable path.
    * @param gitExecutable Path to git.
    */
   static void setGitExecutable(const QString &gitExecutable);
 
-  /**
-   * @brief Get GPG executable path.
-   * @param defaultValue String returned if not saved.
-   * @return Path to GPG executable.
-   */
-  static auto
-  getGpgExecutable(const QString &defaultValue = QVariant().toString())
-      -> QString;
   /**
    * @brief Save GPG executable path.
    * @param gpgExecutable Path to GPG executable.
@@ -524,39 +417,17 @@ public:
   static void setUseWebDav(const bool &useWebDav);
 
   /**
-   * @brief Get WebDAV URL.
-   * @param defaultValue String returned if not saved.
-   * @return WebDAV URL.
-   */
-  static auto getWebDavUrl(const QString &defaultValue = QVariant().toString())
-      -> QString;
-  /**
    * @brief Save WebDAV URL.
    * @param webDavUrl WebDAV URL.
    */
   static void setWebDavUrl(const QString &webDavUrl);
 
   /**
-   * @brief Get WebDAV username.
-   * @param defaultValue String returned if not saved.
-   * @return WebDAV username.
-   */
-  static auto getWebDavUser(const QString &defaultValue = QVariant().toString())
-      -> QString;
-  /**
    * @brief Save WebDAV username.
    * @param webDavUser WebDAV username.
    */
   static void setWebDavUser(const QString &webDavUser);
 
-  /**
-   * @brief Get WebDAV password.
-   * @param defaultValue String returned if not saved.
-   * @return WebDAV password.
-   */
-  static auto
-  getWebDavPassword(const QString &defaultValue = QVariant().toString())
-      -> QString;
   /**
    * @brief Save WebDAV password.
    * @param webDavPassword WebDAV password.
@@ -663,26 +534,11 @@ public:
   static void setUseOtp(const bool &useOtp);
 
   /**
-   * @brief Check whether qrencode support is enabled.
-   * @param defaultValue Value returned if not saved.
-   * @return True if qrencode support is enabled.
-   */
-  static auto isUseQrencode(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Save qrencode support flag.
    * @param useQrencode Whether to enable qrencode support.
    */
   static void setUseQrencode(const bool &useQrencode);
 
-  /**
-   * @brief Get qrencode executable path.
-   * @param defaultValue String returned if not saved.
-   * @return Path to qrencode executable.
-   */
-  static auto
-  getQrencodeExecutable(const QString &defaultValue = QVariant().toString())
-      -> QString;
   /**
    * @brief Save qrencode executable path.
    * @param qrencodeExecutable Path to qrencode executable.
@@ -690,25 +546,11 @@ public:
   static void setQrencodeExecutable(const QString &qrencodeExecutable);
 
   /**
-   * @brief Check whether pwgen support is enabled.
-   * @param defaultValue Value returned if not saved.
-   * @return True if pwgen support is enabled.
-   */
-  static auto isUsePwgen(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Save pwgen support flag.
    * @param usePwgen Whether to enable pwgen support.
    */
   static void setUsePwgen(const bool &usePwgen);
 
-  /**
-   * @brief Check whether uppercase characters should be avoided.
-   * @param defaultValue Value returned if not saved.
-   * @return True if uppercase characters are avoided.
-   */
-  static auto isAvoidCapitals(const bool &defaultValue = QVariant().toBool())
-      -> bool;
   /**
    * @brief Save uppercase avoidance flag.
    * @param avoidCapitals Whether uppercase characters should be avoided.
@@ -716,38 +558,17 @@ public:
   static void setAvoidCapitals(const bool &avoidCapitals);
 
   /**
-   * @brief Check whether numeric characters should be avoided.
-   * @param defaultValue Value returned if not saved.
-   * @return True if numeric characters are avoided.
-   */
-  static auto isAvoidNumbers(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Save numeric avoidance flag.
    * @param avoidNumbers Whether numeric characters should be avoided.
    */
   static void setAvoidNumbers(const bool &avoidNumbers);
 
   /**
-   * @brief Check whether less random password generation is enabled.
-   * @param defaultValue Value returned if not saved.
-   * @return True if less random generation is enabled.
-   */
-  static auto isLessRandom(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Save less-random generation flag.
    * @param lessRandom Whether less-random generation is enabled.
    */
   static void setLessRandom(const bool &lessRandom);
 
-  /**
-   * @brief Check whether symbol characters are enabled.
-   * @param defaultValue Value returned if not saved.
-   * @return True if symbol characters are enabled.
-   */
-  static auto isUseSymbols(const bool &defaultValue = QVariant().toBool())
-      -> bool;
   /**
    * @brief Save symbol usage flag.
    * @param useSymbols Whether symbol characters are enabled.
@@ -781,13 +602,6 @@ public:
   static void setPasswordChars(const QString &passwordChars);
 
   /**
-   * @brief Check whether tray icon support is enabled.
-   * @param defaultValue Value returned if not saved.
-   * @return True if tray icon support is enabled.
-   */
-  static auto isUseTrayIcon(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Save tray icon support flag.
    * @param useTrayIcon Whether tray icon support is enabled.
    */
@@ -807,13 +621,6 @@ public:
   static void setHideOnClose(const bool &hideOnClose);
 
   /**
-   * @brief Check whether application should start minimized.
-   * @param defaultValue Value returned if not saved.
-   * @return True if application should start minimized.
-   */
-  static auto isStartMinimized(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Save start-minimized flag.
    * @param startMinimized Whether application should start minimized.
    */
@@ -832,13 +639,6 @@ public:
    */
   static void setAlwaysOnTop(const bool &alwaysOnTop);
 
-  /**
-   * @brief Check whether automatic pull is enabled.
-   * @param defaultValue Value returned if not saved.
-   * @return True if automatic pull is enabled.
-   */
-  static auto isAutoPull(const bool &defaultValue = QVariant().toBool())
-      -> bool;
   /**
    * @brief Save automatic pull flag.
    * @param autoPull Whether automatic pull should be enabled.
@@ -873,25 +673,11 @@ public:
   static void setPassTemplate(const QString &passTemplate);
 
   /**
-   * @brief Check whether template usage is enabled.
-   * @param defaultValue Value returned if not saved.
-   * @return True if template usage is enabled.
-   */
-  static auto isUseTemplate(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Save template usage flag.
    * @param useTemplate Whether template usage should be enabled.
    */
   static void setUseTemplate(const bool &useTemplate);
 
-  /**
-   * @brief Check whether template applies to all fields.
-   * @param defaultValue Value returned if not saved.
-   * @return True if template applies to all fields.
-   */
-  static auto
-  isTemplateAllFields(const bool &defaultValue = QVariant().toBool()) -> bool;
   /**
    * @brief Save template-all-fields flag.
    * @param templateAllFields Whether template should apply to all fields.

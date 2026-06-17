@@ -73,9 +73,10 @@ void tst_mainwindow::initTestCase() {
 
   // Save original settings before modifying them
   m_savedPassStore = QtPassSettings::getPassStore();
-  m_savedUsePass = QtPassSettings::isUsePass();
   m_savedShowProcessOutput = QtPassSettings::isShowProcessOutput();
-  m_savedGpgExecutable = QtPassSettings::getGpgExecutable();
+  const AppSettings savedSettings = QtPassSettings::load();
+  m_savedUsePass = savedSettings.usePass;
+  m_savedGpgExecutable = savedSettings.gpgExecutable;
 
   // Point QtPassSettings at the temp store and use gpg (not pass) mode so
   // configIsValid() only requires the .gpg-id file + a gpg binary.
