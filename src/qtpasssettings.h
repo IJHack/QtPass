@@ -244,12 +244,6 @@ public:
    */
   static void setPassStore(const QString &passStore);
 
-  /**
-   * @brief Save GPG signing key.
-   * @param passSigningKey Key ID to use for signing.
-   */
-  static void setPassSigningKey(const QString &passSigningKey);
-
   // Executable paths
   /**
    * @brief Initialize executable paths by auto-detecting them.
@@ -277,12 +271,6 @@ public:
    */
   static auto getProfile(const QString &defaultValue = QVariant().toString())
       -> QString;
-  /**
-   * @brief Save active profile name.
-   * @param profile Profile name.
-   */
-  static void setProfile(const QString &profile);
-
   /**
    * @brief Get Git setting for a specific profile.
    * @param profileName Name of the profile.
