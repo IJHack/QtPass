@@ -3,7 +3,6 @@
 #include "importkeydialog.h"
 
 #include "executor.h"
-#include "qtpasssettings.h"
 #include "ui_importkeydialog.h"
 
 #include <QApplication>
@@ -25,8 +24,8 @@ static const QRegularExpression
 static const QRegularExpression KEY_IMPORTED_FALLBACK(
     QStringLiteral(R"(gpg: key ([0-9A-Fa-f]{40}|[0-9A-Fa-f]{16}):.*imported)"));
 
-ImportKeyDialog::ImportKeyDialog(QWidget *parent)
-    : QDialog(parent), ui(new Ui::ImportKeyDialog) {
+ImportKeyDialog::ImportKeyDialog(const QString &gpgExe, QWidget *parent)
+    : QDialog(parent), ui(new Ui::ImportKeyDialog), m_gpgExe(gpgExe) {
   ui->setupUi(this);
   ui->importButton->setEnabled(false);
 }
@@ -102,10 +101,7 @@ void ImportKeyDialog::on_inputTextEdit_textChanged() {
 }
 
 bool ImportKeyDialog::importFromString(const QString &input) {
-  QString gpgExe = QtPassSettings::getGpgExecutable();
-  if (gpgExe.isEmpty()) {
-    gpgExe = "gpg";
-  }
+  QString gpgExe = m_gpgExe.isEmpty() ? QStringLiteral("gpg") : m_gpgExe;
   QStringList args = {"--status-fd", "1", "--import", "--batch", "--yes"};
 
   QString stdOut;

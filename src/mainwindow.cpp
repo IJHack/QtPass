@@ -648,7 +648,8 @@ void MainWindow::passShowHandler(const QString &p_output) {
   if (QtPassSettings::isHideContent()) {
     output = "***" + tr("Content hidden") + "***";
   } else if (!QtPassSettings::isDisplayAsIs()) {
-    m_displayPanel->displayFields(password, fileContent.getNamedValues());
+    m_displayPanel->displayFields(password, fileContent.getNamedValues(),
+                                  QtPassSettings::load());
     output = fileContent.getRemainingDataForDisplay();
   }
 
@@ -672,7 +673,8 @@ void MainWindow::passShowHandler(const QString &p_output) {
  */
 void MainWindow::passOtpHandler(const QString &p_output) {
   if (!p_output.isEmpty()) {
-    m_displayPanel->appendField(tr("OTP Code"), p_output);
+    m_displayPanel->appendField(tr("OTP Code"), p_output,
+                                QtPassSettings::load());
     m_qtPass->copyTextToClipboard(p_output);
     showStatusMessage(tr("OTP code copied to clipboard"));
   } else {
@@ -1036,7 +1038,8 @@ auto MainWindow::confirmPathInStore(const QString &candidate) -> bool {
  * @param isNew insert (not update)
  */
 void MainWindow::setPassword(const QString &file, bool isNew) {
-  PasswordDialog d(file, isNew, this);
+  PasswordDialog d(QtPassSettings::getPass(), QtPassSettings::load(), file,
+                   isNew, this);
 
   if (isNew) {
     QString storePath = QtPassSettings::getPassStore();

@@ -6,6 +6,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
+#include "../../../src/appsettings.h"
 #include "../../../src/filecontent.h"
 #include "../../../src/passworddisplaypanel.h"
 
@@ -44,28 +45,32 @@ void tst_passworddisplaypanel::cleanup() {
 }
 
 void tst_passworddisplaypanel::displayFieldsAddsRows() {
+  AppSettings s;
   m_panel->displayFields(QStringLiteral("secret"),
-                         NamedValues{{"url", "https://example.org"}});
+                         NamedValues{{"url", "https://example.org"}}, s);
   // Two fields (password + url), each a label + value widget => 4 grid items.
   QCOMPARE(m_grid->count(), 4);
 }
 
 void tst_passworddisplaypanel::displayFieldsSkipsEmptyPassword() {
-  m_panel->displayFields(QString(), NamedValues{});
+  AppSettings s;
+  m_panel->displayFields(QString(), NamedValues{}, s);
   QVERIFY2(m_grid->count() == 0,
            "An empty password with no fields must leave the grid empty");
 }
 
 void tst_passworddisplaypanel::clearRemovesAllRows() {
-  m_panel->displayFields(QStringLiteral("secret"), NamedValues{});
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"), NamedValues{}, s);
   QVERIFY2(m_grid->count() > 0, "precondition: grid populated");
   m_panel->clear();
   QVERIFY2(m_grid->count() == 0, "clear() must remove every grid row");
 }
 
 void tst_passworddisplaypanel::appendFieldAddsOneRow() {
+  AppSettings s;
   const int before = m_grid->count();
-  m_panel->appendField(QStringLiteral("OTP Code"), QStringLiteral("123456"));
+  m_panel->appendField(QStringLiteral("OTP Code"), QStringLiteral("123456"), s);
   QCOMPARE(m_grid->count(), before + 2);
 }
 

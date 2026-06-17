@@ -131,12 +131,12 @@ void tst_importkeydialog::parseGpgImportOutputPrefersImportOkOverImported() {
 }
 
 void tst_importkeydialog::initialKeyIdEmpty() {
-  ImportKeyDialog dialog;
+  ImportKeyDialog dialog(QString{});
   QVERIFY(dialog.importedKeyId().isEmpty());
 }
 
 void tst_importkeydialog::importButtonStartsDisabled() {
-  ImportKeyDialog dialog;
+  ImportKeyDialog dialog(QString{});
   auto *button =
       dialog.findChild<QPushButton *>(QStringLiteral("importButton"));
   QVERIFY(button != nullptr);
@@ -237,7 +237,7 @@ void tst_importkeydialog::parseGpgImportOutputImportResWithoutImportOk() {
 
 void tst_importkeydialog::importButtonEnabledAfterTextInput() {
   // Simulating on_inputTextEdit_textChanged via the text edit widget.
-  ImportKeyDialog dialog;
+  ImportKeyDialog dialog(QString{});
   auto *button =
       dialog.findChild<QPushButton *>(QStringLiteral("importButton"));
   auto *edit =
@@ -255,7 +255,7 @@ void tst_importkeydialog::importButtonEnabledAfterTextInput() {
 
 void tst_importkeydialog::importButtonDisabledForWhitespaceOnlyInput() {
   // Whitespace-only content trims to empty; the button must stay disabled.
-  ImportKeyDialog dialog;
+  ImportKeyDialog dialog(QString{});
   auto *button =
       dialog.findChild<QPushButton *>(QStringLiteral("importButton"));
   auto *edit =
@@ -282,7 +282,7 @@ void tst_importkeydialog::pasteButtonSetsTextFromClipboard() {
     QSKIP("Clipboard is not functional on this platform");
   }
 
-  ImportKeyDialog dialog;
+  ImportKeyDialog dialog(QString{});
   auto *edit =
       dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
   QVERIFY(edit != nullptr);
