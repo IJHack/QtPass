@@ -106,13 +106,17 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   connect(ui->treeView, &DeselectableTreeView::emptyClicked, this,
           &MainWindow::deselect);
 
-  if (QtPassSettings::isUseMonospace()) {
-    QFont monospace("Monospace");
-    monospace.setStyleHint(QFont::Monospace);
-    ui->textBrowser->setFont(monospace);
-  }
-  if (QtPassSettings::isNoLineWrapping()) {
-    ui->textBrowser->setLineWrapMode(QTextBrowser::NoWrap);
+  {
+    const AppSettings s = QtPassSettings::load();
+    if (s.useMonospace) {
+      QFont monospace("Monospace");
+      monospace.setStyleHint(QFont::Monospace);
+      ui->textBrowser->setFont(monospace);
+    }
+    if (s.noLineWrapping) {
+      ui->textBrowser->setLineWrapMode(QTextBrowser::NoWrap);
+    }
+    clearPanelTimer.setInterval(MS_PER_SECOND * s.autoclearPanelSeconds);
   }
   ui->textBrowser->setOpenExternalLinks(true);
   ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -129,8 +133,6 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
           &QtPass::showTextAsQRCode);
 
   QtPassSettings::getPass()->updateEnv();
-  clearPanelTimer.setInterval(MS_PER_SECOND *
-                              QtPassSettings::getAutoclearPanelSeconds());
   clearPanelTimer.setSingleShot(true);
   connect(&clearPanelTimer, &QTimer::timeout, this, [this]() { clearPanel(); });
 
@@ -439,7 +441,8 @@ void MainWindow::flashText(const QString &text, const bool isError,
  * inter-window communication
  */
 void MainWindow::applyTextBrowserSettings() {
-  if (QtPassSettings::isUseMonospace()) {
+  const AppSettings s = QtPassSettings::load();
+  if (s.useMonospace) {
     QFont monospace("Monospace");
     monospace.setStyleHint(QFont::Monospace);
     ui->textBrowser->setFont(monospace);
@@ -447,7 +450,7 @@ void MainWindow::applyTextBrowserSettings() {
     ui->textBrowser->setFont(QFont());
   }
 
-  if (QtPassSettings::isNoLineWrapping()) {
+  if (s.noLineWrapping) {
     ui->textBrowser->setLineWrapMode(QTextBrowser::NoWrap);
   } else {
     ui->textBrowser->setLineWrapMode(QTextBrowser::WidgetWidth);
@@ -490,30 +493,28 @@ void MainWindow::config() {
       applyWindowFlagsSettings();
 
       updateProfileBox();
-      const QString passStore = QtPassSettings::getPassStore();
-      proxyModel.setStore(passStore);
-      ui->treeView->setRootIndex(proxyModel.rootIndexFor(passStore));
+      const AppSettings s = QtPassSettings::load();
+      proxyModel.setStore(s.passStore);
+      ui->treeView->setRootIndex(proxyModel.rootIndexFor(s.passStore));
       deselect();
       ui->treeView->setCurrentIndex(QModelIndex());
 
-      if (m_qtPass->isFreshStart() &&
-          !Util::configIsValid(QtPassSettings::load())) {
+      if (m_qtPass->isFreshStart() && !Util::configIsValid(s)) {
         config();
       }
       Pass *activePass = QtPassSettings::getPass();
       activePass->updateEnv();
       proxyModel.setPass(activePass);
-      clearPanelTimer.setInterval(MS_PER_SECOND *
-                                  QtPassSettings::getAutoclearPanelSeconds());
+      clearPanelTimer.setInterval(MS_PER_SECOND * s.autoclearPanelSeconds);
       m_qtPass->setClipboardTimer();
 
       updateGitButtonVisibility();
       updateOtpButtonVisibility();
       updateGrepButtonVisibility();
       updateProcessOutputVisibility();
-      if (QtPassSettings::isUseTrayIcon() && m_tray == nullptr) {
+      if (s.useTrayIcon && m_tray == nullptr) {
         initTrayIcon();
-      } else if (!QtPassSettings::isUseTrayIcon() && m_tray != nullptr) {
+      } else if (!s.useTrayIcon && m_tray != nullptr) {
         destroyTrayIcon();
       }
     }
@@ -674,15 +675,15 @@ void MainWindow::passShowHandler(const QString &p_output) {
  * @return void - This function does not return a value.
  */
 void MainWindow::passOtpHandler(const QString &p_output) {
+  const AppSettings s = QtPassSettings::load();
   if (!p_output.isEmpty()) {
-    m_displayPanel->appendField(tr("OTP Code"), p_output,
-                                QtPassSettings::load());
+    m_displayPanel->appendField(tr("OTP Code"), p_output, s);
     m_qtPass->copyTextToClipboard(p_output);
     showStatusMessage(tr("OTP code copied to clipboard"));
   } else {
     flashText(tr("No OTP code found in this password entry"), true);
   }
-  if (QtPassSettings::isUseAutoclearPanel()) {
+  if (s.useAutoclearPanel) {
     clearPanelTimer.start();
   }
   setUiElementsEnabled(true);
@@ -761,23 +762,24 @@ void MainWindow::restoreWindow() {
   move(position);
   QSize newSize = QtPassSettings::getSize(size());
   resize(newSize);
-  if (QtPassSettings::isMaximized(isMaximized())) {
+  const AppSettings s = QtPassSettings::load();
+  if (s.maximized) {
     showMaximized();
   }
 
-  if (QtPassSettings::isAlwaysOnTop()) {
+  if (s.alwaysOnTop) {
     Qt::WindowFlags flags = windowFlags();
     setWindowFlags(flags | Qt::WindowStaysOnTopHint);
     show();
   }
 
-  if (QtPassSettings::isUseTrayIcon() && m_tray == nullptr) {
+  if (s.useTrayIcon && m_tray == nullptr) {
     initTrayIcon();
-    if (QtPassSettings::isStartMinimized()) {
+    if (s.startMinimized) {
       // since we are still in constructor, can't directly hide
       QTimer::singleShot(10, this, SLOT(hide()));
     }
-  } else if (!QtPassSettings::isUseTrayIcon() && m_tray != nullptr) {
+  } else if (!s.useTrayIcon && m_tray != nullptr) {
     destroyTrayIcon();
   }
 }
@@ -870,13 +872,14 @@ void MainWindow::on_lineEdit_returnPressed() {
  * @brief Toggle grep (content search) mode.
  */
 void MainWindow::on_grepButton_toggled(bool checked) {
+  const AppSettings s = QtPassSettings::load();
   if (checked) {
     m_grep.enterGrepMode();
     ui->lineEdit->setPlaceholderText(tr("Search content (regex)"));
     // The regex dialect depends on the backend (see Pass::Grep): the pass
     // backend uses POSIX BRE via `pass grep`, the native backend uses PCRE.
     ui->lineEdit->setToolTip(
-        QtPassSettings::isUsePass()
+        s.usePass
             ? tr("Content search uses POSIX basic regular expressions "
                  "(pass grep).")
             : tr("Content search uses Perl-compatible regular expressions "
@@ -884,8 +887,7 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->lineEdit->clear();
     searchTimer.stop();
     proxyModel.setFilterRegularExpression(QRegularExpression());
-    ui->treeView->setRootIndex(
-        proxyModel.rootIndexFor(QtPassSettings::getPassStore()));
+    ui->treeView->setRootIndex(proxyModel.rootIndexFor(s.passStore));
     ui->grepResultsList->setVisible(false);
     // Keep treeView visible until results arrive
   } else {
@@ -902,8 +904,7 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->grepResultsList->setVisible(false);
     ui->treeView->setVisible(true);
     proxyModel.setFilterRegularExpression(QRegularExpression());
-    ui->treeView->setRootIndex(
-        proxyModel.rootIndexFor(QtPassSettings::getPassStore()));
+    ui->treeView->setRootIndex(proxyModel.rootIndexFor(s.passStore));
   }
 }
 
@@ -931,7 +932,8 @@ void MainWindow::onGrepFinished(
     ui->treeView->setVisible(true);
     return;
   }
-  const bool hideContent = QtPassSettings::isHideContent();
+  const AppSettings s = QtPassSettings::load();
+  const bool hideContent = s.hideContent;
   int totalLines = 0;
   for (const auto &pair : results) {
     auto *entryItem = new QTreeWidgetItem(ui->grepResultsList);
@@ -952,7 +954,7 @@ void MainWindow::onGrepFinished(
       tr("Found %n match(es)", nullptr, totalLines) + " " +
           tr("in %n entr(ies).", nullptr, static_cast<int>(results.size())),
       3000);
-  if (QtPassSettings::isUseAutoclearPanel())
+  if (s.useAutoclearPanel)
     clearPanelTimer.start();
 }
 
@@ -961,11 +963,12 @@ void MainWindow::onGrepFinished(
  */
 void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
                                                 int /*column*/) {
+  const AppSettings s = QtPassSettings::load();
   const QString entry = item->data(0, Qt::UserRole).toString();
   if (entry.isEmpty())
     return;
-  const QString fullPath = QDir::cleanPath(
-      QDir(QtPassSettings::getPassStore()).filePath(entry + ".gpg"));
+  const QString fullPath =
+      QDir::cleanPath(QDir(s.passStore).filePath(entry + ".gpg"));
   QModelIndex srcIndex = model.index(fullPath);
   if (!srcIndex.isValid())
     return;
@@ -974,7 +977,7 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
     return;
   ui->treeView->setCurrentIndex(proxyIndex);
   on_treeView_clicked(proxyIndex);
-  if (QtPassSettings::isHideContent() || QtPassSettings::isUseAutoclearPanel())
+  if (s.hideContent || s.useAutoclearPanel)
     ui->grepResultsList->clear();
   ui->grepResultsList->setVisible(false);
   ui->treeView->setVisible(true);
@@ -1040,13 +1043,13 @@ auto MainWindow::confirmPathInStore(const QString &candidate) -> bool {
  * @param isNew insert (not update)
  */
 void MainWindow::setPassword(const QString &file, bool isNew) {
-  PasswordDialog d(QtPassSettings::getPass(), QtPassSettings::load(), file,
-                   isNew, this);
+  const AppSettings s = QtPassSettings::load();
+  PasswordDialog d(QtPassSettings::getPass(), s, file, isNew, this);
 
   if (isNew) {
-    QString storePath = QtPassSettings::getPassStore();
+    const QString storePath = s.passStore;
     QString folder = Util::getDir(ui->treeView->currentIndex(), false, model,
-                                  proxyModel, QtPassSettings::getPassStore());
+                                  proxyModel, s.passStore);
     if (folder.isEmpty()) {
       folder = storePath;
     }
@@ -1071,21 +1074,21 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
  * number of dialogs.
  */
 void MainWindow::addPassword() {
+  const QString passStore = QtPassSettings::load().passStore;
   bool ok;
   QString dir = Util::getDir(ui->treeView->currentIndex(), true, model,
-                             proxyModel, QtPassSettings::getPassStore());
+                             proxyModel, passStore);
   QString file = QInputDialog::getText(
       this, tr("New file"),
       tr("New password file: \n(Will be placed in %1 )")
-          .arg(QtPassSettings::getPassStore() +
-               Util::getDir(ui->treeView->currentIndex(), true, model,
-                            proxyModel, QtPassSettings::getPassStore())),
+          .arg(passStore + Util::getDir(ui->treeView->currentIndex(), true,
+                                        model, proxyModel, passStore)),
       QLineEdit::Normal, "", &ok);
   if (!ok || file.isEmpty()) {
     return;
   }
   file = dir + file;
-  if (!confirmPathInStore(QtPassSettings::getPassStore() + file)) {
+  if (!confirmPathInStore(passStore + file)) {
     return;
   }
   setPassword(file);
@@ -1393,6 +1396,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
  * @param pos
  */
 void MainWindow::showContextMenu(const QPoint &pos) {
+  const AppSettings s = QtPassSettings::load();
   QModelIndex index = ui->treeView->indexAt(pos);
   bool selected = true;
   if (!index.isValid()) {
@@ -1439,20 +1443,16 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     QAction *deleteItem = contextMenu.addAction(tr("Delete"));
     connect(deleteItem, &QAction::triggered, this, &MainWindow::onDelete);
     if (fileOrFolder.isDir()) {
-      QString dirPath = QDir::cleanPath(
-          Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel,
-                       QtPassSettings::getPassStore()));
+      QString dirPath = QDir::cleanPath(Util::getDir(
+          ui->treeView->currentIndex(), false, model, proxyModel, s.passStore));
 
       auto *shareMenu = new QMenu(tr("Share"), &contextMenu);
       contextMenu.addMenu(shareMenu);
 
-      QString gpgIdPath =
-          Pass::getGpgIdPath(dirPath, QtPassSettings::getPassStore());
+      QString gpgIdPath = Pass::getGpgIdPath(dirPath, s.passStore);
       bool gpgIdExists = !gpgIdPath.isEmpty() && QFile(gpgIdPath).exists();
 
-      QString exePath = QtPassSettings::isUsePass()
-                            ? QtPassSettings::getPassExecutable()
-                            : QtPassSettings::getGpgExecutable();
+      const QString exePath = s.usePass ? s.passExecutable : s.gpgExecutable;
       bool gpgAvailable = !exePath.isEmpty() && (exePath.startsWith("wsl ") ||
                                                  QFile(exePath).exists());
 
@@ -1507,15 +1507,15 @@ void MainWindow::openFolder() {
  * @brief MainWindow::addFolder add a new folder to store passwords in
  */
 void MainWindow::addFolder() {
+  const AppSettings s = QtPassSettings::load();
   bool ok;
   QString dir = Util::getDir(ui->treeView->currentIndex(), false, model,
-                             proxyModel, QtPassSettings::getPassStore());
+                             proxyModel, s.passStore);
   QString newdir = QInputDialog::getText(
       this, tr("New file"),
       tr("New Folder: \n(Will be placed in %1 )")
-          .arg(QtPassSettings::getPassStore() +
-               Util::getDir(ui->treeView->currentIndex(), true, model,
-                            proxyModel, QtPassSettings::getPassStore())),
+          .arg(s.passStore + Util::getDir(ui->treeView->currentIndex(), true,
+                                          model, proxyModel, s.passStore)),
       QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty()) {
     return;
@@ -1529,7 +1529,7 @@ void MainWindow::addFolder() {
                          tr("Failed to create folder: %1").arg(newdir));
     return;
   }
-  if (QtPassSettings::isAddGPGId(true)) {
+  if (s.addGPGId) {
     QString gpgIdFile = newdir + "/.gpg-id";
     QFile gpgId(gpgIdFile);
     if (!gpgId.open(QIODevice::WriteOnly)) {
@@ -1581,7 +1581,8 @@ void MainWindow::renameFolder() {
  */
 void MainWindow::editPassword(const QString &file) {
   if (!file.isEmpty()) {
-    if (QtPassSettings::isUseGit() && QtPassSettings::isAutoPull()) {
+    const AppSettings s = QtPassSettings::load();
+    if (s.useGit && s.autoPull) {
       onUpdate(true);
     }
     setPassword(file, false);
@@ -1706,7 +1707,8 @@ void MainWindow::endReencryptPath() { setUiElementsEnabled(true); }
  * unavailable, so the user still gets actionable guidance.
  */
 void MainWindow::exportPublicKey() {
-  QString identity = QtPassSettings::getPassSigningKey();
+  const AppSettings s = QtPassSettings::load();
+  const QString identity = s.passSigningKey;
   if (identity.isEmpty()) {
     QMessageBox::information(
         this, tr("Export Public Key"),
@@ -1718,7 +1720,7 @@ void MainWindow::exportPublicKey() {
            "<p>Then send the file to your teammates.</p>"));
     return;
   }
-  QString gpgExe = QtPassSettings::getGpgExecutable();
+  QString gpgExe = s.gpgExecutable;
   if (gpgExe.isEmpty()) {
     gpgExe = QStringLiteral("gpg");
   }
@@ -1774,9 +1776,8 @@ void MainWindow::showShareHelp() {
 }
 
 void MainWindow::updateGitButtonVisibility() {
-  if (!QtPassSettings::isUseGit() ||
-      (QtPassSettings::getGitExecutable().isEmpty() &&
-       QtPassSettings::getPassExecutable().isEmpty())) {
+  const AppSettings s = QtPassSettings::load();
+  if (!s.useGit || (s.gitExecutable.isEmpty() && s.passExecutable.isEmpty())) {
     enableGitButtons(false);
   } else {
     enableGitButtons(true);
