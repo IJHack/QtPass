@@ -827,7 +827,7 @@ void tst_util::configIsValid() {
 
   // No .gpg-id in this store => config must be invalid.
   QtPassSettings::setPassStore(tempDir.path());
-  bool isValid = Util::configIsValid();
+  bool isValid = Util::configIsValid(QtPassSettings::load());
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id is missing");
 
   // Create .gpg-id, then force invalid executable configuration.
@@ -841,13 +841,13 @@ void tst_util::configIsValid() {
   SettingGuard<QString, QtPassSettings::setGpgExecutable> gpgGuard{
       QtPassSettings::getGpgExecutable(), QString()};
 
-  isValid = Util::configIsValid();
+  isValid = Util::configIsValid(QtPassSettings::load());
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
                      "executable is missing");
 
   QtPassSettings::setGpgExecutable(
       QStringLiteral("definitely_nonexistent_gpg_binary_12345"));
-  isValid = Util::configIsValid();
+  isValid = Util::configIsValid(QtPassSettings::load());
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
                      "executable is invalid");
 }
@@ -866,11 +866,9 @@ void tst_util::getDirBasic() {
            "Store path should match the set value");
   QModelIndex rootIndex = fileSystemModel.index(tempDir.path());
   QVERIFY2(rootIndex.isValid(), "Filesystem model root index should be valid");
-  const QString originalStore = QtPassSettings::getPassStore();
-  QtPassSettings::setPassStore(tempDir.path());
 
-  QString result =
-      Util::getDir(QModelIndex(), false, fileSystemModel, storeModel);
+  QString result = Util::getDir(QModelIndex(), false, fileSystemModel,
+                                storeModel, tempDir.path());
   QString expectedDir = QDir(tempDir.path()).absolutePath();
   if (!expectedDir.endsWith(QDir::separator())) {
     expectedDir += QDir::separator();
@@ -878,7 +876,6 @@ void tst_util::getDirBasic() {
   QVERIFY2(
       result == expectedDir,
       qPrintable(QString("Expected '%1', got '%2'").arg(expectedDir, result)));
-  QtPassSettings::setPassStore(originalStore);
 }
 
 void tst_util::getDirWithIndex() {
@@ -899,10 +896,6 @@ void tst_util::getDirWithIndex() {
            "Failed to write test data to file in temporary directory");
   file.close();
 
-  const QString originalPassStore = QtPassSettings::getPassStore();
-  PassStoreGuard passStoreGuard(originalPassStore);
-  QtPassSettings::setPassStore(dirPath);
-
   QFileSystemModel fileSystemModel;
   fileSystemModel.setRootPath(dirPath);
 
@@ -918,7 +911,8 @@ void tst_util::getDirWithIndex() {
   QVERIFY2(fileIndex.isValid(),
            "Proxy index should be valid for the test file");
 
-  QString result = Util::getDir(fileIndex, false, fileSystemModel, storeModel);
+  QString result =
+      Util::getDir(fileIndex, false, fileSystemModel, storeModel, dirPath);
   QVERIFY2(!result.isEmpty(),
            "getDir should return a non-empty directory for a valid index");
   QVERIFY(result.endsWith(QDir::separator()));
@@ -934,7 +928,7 @@ void tst_util::getDirWithIndex() {
 
   QModelIndex invalidIndex;
   QString invalidResult =
-      Util::getDir(invalidIndex, false, fileSystemModel, storeModel);
+      Util::getDir(invalidIndex, false, fileSystemModel, storeModel, dirPath);
   QString expectedForInvalid = dirPath;
   if (!expectedForInvalid.endsWith(QDir::separator())) {
     expectedForInvalid += QDir::separator();
@@ -1143,9 +1137,7 @@ void tst_util::getRecipientListBasic() {
   file.write("ABCDEF12\n34567890\n");
   file.close();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(passStore);
-  QStringList recipients = Pass::getRecipientList(passStore);
+  QStringList recipients = Pass::getRecipientList(passStore, passStore);
   QCOMPARE(recipients.size(), 2);
   QCOMPARE(recipients[0], QString("ABCDEF12"));
   QCOMPARE(recipients[1], QString("34567890"));
@@ -1160,9 +1152,7 @@ void tst_util::getRecipientListEmpty() {
   QVERIFY(file.open(QIODevice::WriteOnly));
   file.close();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(passStore);
-  QStringList recipients = Pass::getRecipientList(passStore);
+  QStringList recipients = Pass::getRecipientList(passStore, passStore);
   QVERIFY(recipients.isEmpty());
 }
 
@@ -1176,9 +1166,7 @@ void tst_util::getRecipientListWithComments() {
   file.write("ABCDEF12\n# comment\n34567890\n");
   file.close();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(passStore);
-  QStringList recipients = Pass::getRecipientList(passStore);
+  QStringList recipients = Pass::getRecipientList(passStore, passStore);
   QCOMPARE(recipients.size(), 2);
   QVERIFY(!recipients.contains("# comment"));
   QVERIFY(!recipients.contains("comment"));
@@ -1195,10 +1183,7 @@ void tst_util::getRecipientListInvalidKeyId() {
              "example.org\n");
   file.close();
 
-  const QString originalPassStore = QtPassSettings::getPassStore();
-  PassStoreGuard originalGuard(originalPassStore);
-  QtPassSettings::setPassStore(passStore);
-  QStringList recipients = Pass::getRecipientList(passStore);
+  QStringList recipients = Pass::getRecipientList(passStore, passStore);
   QVERIFY(!recipients.contains("invalid"));
   QVERIFY(recipients.contains("ABCDEF12"));
   QVERIFY(recipients.contains("0xABCDEF123456789012"));
@@ -1249,13 +1234,11 @@ void tst_util::getRecipientStringCount() {
   file.write("ABCDEF12\n34567890\n");
   file.close();
 
-  const QString originalPassStore = QtPassSettings::getPassStore();
-  PassStoreGuard originalGuard(originalPassStore);
-  QtPassSettings::setPassStore(passStore);
   int count = 0;
   QStringList parsedRecipients =
-      Pass::getRecipientString(passStore, " ", &count);
-  QStringList recipientsNoCount = Pass::getRecipientString(passStore, " ");
+      Pass::getRecipientString(passStore, passStore, " ", &count);
+  QStringList recipientsNoCount =
+      Pass::getRecipientString(passStore, passStore, " ");
 
   QStringList expectedRecipients = {"ABCDEF12", "34567890"};
   // Verify count matches the expected number of parsed recipients.
@@ -1282,9 +1265,7 @@ void tst_util::getGpgIdPathBasic() {
   file.write("ABCDEF12\n");
   file.close();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(passStore);
-  QString path = QDir::cleanPath(Pass::getGpgIdPath(passStore));
+  QString path = QDir::cleanPath(Pass::getGpgIdPath(passStore, passStore));
   QString expected = QDir::cleanPath(gpgIdFile);
   QVERIFY2(path == expected,
            qPrintable(QString("Expected %1, got %2").arg(expected, path)));
@@ -1302,9 +1283,7 @@ void tst_util::getGpgIdPathSubfolder() {
   file.write("ABCDEF12\n");
   file.close();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(passStore);
-  QString path = Pass::getGpgIdPath(subfolder + "/password.gpg");
+  QString path = Pass::getGpgIdPath(subfolder + "/password.gpg", passStore);
   QVERIFY2(path == gpgIdFile,
            qPrintable(QString("Expected %1, got %2").arg(gpgIdFile, path)));
 }
@@ -1313,10 +1292,8 @@ void tst_util::getGpgIdPathNotFound() {
   QTemporaryDir tempDir;
   QString passStore = tempDir.path();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(passStore);
-  QString path =
-      QDir::cleanPath(Pass::getGpgIdPath(passStore + "/nonexistent"));
+  QString path = QDir::cleanPath(
+      Pass::getGpgIdPath(passStore + "/nonexistent", passStore));
   QString expected = QDir::cleanPath(passStore + "/.gpg-id");
   QVERIFY2(path == expected,
            qPrintable(QString("Expected %1, got %2").arg(expected, path)));

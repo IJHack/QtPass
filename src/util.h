@@ -3,6 +3,7 @@
 #ifndef SRC_UTIL_H_
 #define SRC_UTIL_H_
 
+#include "appsettings.h"
 #include "storemodel.h"
 #include <QFileSystemModel>
 #include <QProcessEnvironment>
@@ -43,11 +44,12 @@ public:
   static auto normalizeFolderPath(const QString &path) -> QString;
   /**
    * @brief Verify that the required configuration is complete.
+   * @param s Application settings snapshot (passStore, usePass, executables).
    * @return bool `true` if the password store's `.gpg-id` exists AND the
    * configured executable (pass or gpg, depending on settings) exists or is a
    * WSL wrapper; `false` otherwise.
    */
-  static auto configIsValid() -> bool;
+  static auto configIsValid(const AppSettings &s) -> bool;
   /**
    * @brief Get the selected folder path, either relative to the configured pass
    * store or absolute.
@@ -57,13 +59,15 @@ public:
    * @param model Filesystem model used to resolve the index.
    * @param storeModel StoreModel used to map view indexes to the filesystem
    * model.
+   * @param passStore Root directory of the password store.
    * @return QString Folder path that always ends with the native directory
    * separator. Returns an empty string when `index` is invalid and `forPass` is
    * true; otherwise returns the pass store root.
    */
   static auto getDir(const QModelIndex &index, bool forPass,
                      const QFileSystemModel &model,
-                     const StoreModel &storeModel) -> QString;
+                     const StoreModel &storeModel,
+                     const QString &passStore) -> QString;
   /**
    * @brief Returns a regex to match .gpg file extensions.
    * @return Reference to static regex

@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "pass.h"
 #include "gpgkeystate.h"
-#include "qtpasssettings.h" // TODO(#1511): remove once static getGpgIdPath chain is migrated
 #include "util.h"
 #include <QCoreApplication>
 #include <QDebug>
@@ -843,17 +842,17 @@ void Pass::updateEnv() {
  * @param for_file which file (folder) would you like the gpgid file path for.
  * @return path to the gpgid file.
  */
-auto Pass::getGpgIdPath(const QString &for_file) -> QString {
-  QString passStore =
-      QDir::fromNativeSeparators(QtPassSettings::getPassStore());
+auto Pass::getGpgIdPath(const QString &for_file,
+                        const QString &passStore) -> QString {
+  QString normalizedStore = QDir::fromNativeSeparators(passStore);
   QString normalizedFile = QDir::fromNativeSeparators(for_file);
-  QString fullPath = normalizedFile.startsWith(passStore)
+  QString fullPath = normalizedFile.startsWith(normalizedStore)
                          ? normalizedFile
-                         : passStore + "/" + normalizedFile;
+                         : normalizedStore + "/" + normalizedFile;
   QDir gpgIdDir(QFileInfo(fullPath).absoluteDir());
   // QDir::cleanPath() always normalises to forward slashes, so use '/'
   // here rather than QDir::separator() (which returns '\\' on Windows).
-  QString cleanPassStore = QDir::cleanPath(passStore);
+  QString cleanPassStore = QDir::cleanPath(normalizedStore);
   bool found = false;
   while (gpgIdDir.exists()) {
     QString currentPath = QDir::cleanPath(gpgIdDir.absolutePath());
@@ -869,11 +868,8 @@ auto Pass::getGpgIdPath(const QString &for_file) -> QString {
       break;
     }
   }
-  QString gpgIdPath(
-      found ? gpgIdDir.absoluteFilePath(".gpg-id")
-            : QDir(QtPassSettings::getPassStore()).filePath(".gpg-id"));
-
-  return gpgIdPath;
+  return found ? gpgIdDir.absoluteFilePath(".gpg-id")
+               : QDir(passStore).filePath(".gpg-id");
 }
 
 /**
@@ -881,8 +877,9 @@ auto Pass::getGpgIdPath(const QString &for_file) -> QString {
  * @param for_file which file (folder) would you like recipients for
  * @return recipients gpg-id contents
  */
-auto Pass::getRecipientList(const QString &for_file) -> QStringList {
-  QFile gpgId(getGpgIdPath(for_file));
+auto Pass::getRecipientList(const QString &for_file,
+                            const QString &passStore) -> QStringList {
+  QFile gpgId(getGpgIdPath(for_file, passStore));
   if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text)) {
     return {};
   }
@@ -904,10 +901,12 @@ auto Pass::getRecipientList(const QString &for_file) -> QStringList {
  * @param count
  * @return recipient string
  */
-auto Pass::getRecipientString(const QString &for_file, const QString &separator,
+auto Pass::getRecipientString(const QString &for_file,
+                              const QString &passStore,
+                              const QString &separator,
                               int *count) -> QStringList {
   Q_UNUSED(separator)
-  QStringList recipients = Pass::getRecipientList(for_file);
+  QStringList recipients = Pass::getRecipientList(for_file, passStore);
   if (count) {
     *count = static_cast<int>(recipients.size());
   }

@@ -99,9 +99,9 @@ auto QtPass::init() -> bool {
 
   QtPassSettings::setVersion(VERSION);
 
-  if (!Util::configIsValid()) {
+  if (!Util::configIsValid(QtPassSettings::load())) {
     m_mainWindow->config();
-    if (freshStart && !Util::configIsValid()) {
+    if (freshStart && !Util::configIsValid(QtPassSettings::load())) {
       return false;
     }
   }

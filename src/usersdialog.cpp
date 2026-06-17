@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "usersdialog.h"
 #include "importkeydialog.h"
+#include "pass.h"
 #include "qtpasssettings.h"
 #include "ui_usersdialog.h"
 #include <QApplication>
@@ -101,8 +102,9 @@ void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
 
 void UsersDialog::loadRecipients() {
   int count = 0;
-  QStringList recipients = QtPassSettings::getPass()->getRecipientString(
-      m_dir.isEmpty() ? "" : m_dir, " ", &count);
+  QStringList recipients = Pass::getRecipientString(
+      m_dir.isEmpty() ? "" : m_dir, QtPassSettings::getPassStore(), " ",
+      &count);
 
   QList<UserInfo> selectedUsers =
       QtPassSettings::getPass()->listKeys(recipients);
@@ -117,8 +119,8 @@ void UsersDialog::loadRecipients() {
   }
 
   if (count > selectedUsers.size()) {
-    QStringList allRecipients = QtPassSettings::getPass()->getRecipientList(
-        m_dir.isEmpty() ? "" : m_dir);
+    QStringList allRecipients = Pass::getRecipientList(
+        m_dir.isEmpty() ? "" : m_dir, QtPassSettings::getPassStore());
 
     // Use bulk lookup to resolve all recipients at once (single gpg call)
     // This preserves the original email/UID resolution behavior

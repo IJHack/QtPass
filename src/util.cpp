@@ -12,6 +12,7 @@
  */
 
 #include "util.h"
+#include "appsettings.h"
 #include "executor.h"
 #include <QDebug>
 #include <QDir>
@@ -24,7 +25,6 @@
 #else
 #include <sys/time.h>
 #endif
-#include "qtpasssettings.h"
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -218,16 +218,14 @@ auto Util::findBinaryInPath(const QString &binary) -> QString {
  * @return bool - True if the configuration file exists and the required
  * executable is available; otherwise false.
  */
-auto Util::configIsValid() -> bool {
-  const QString configFilePath =
-      QDir(QtPassSettings::getPassStore()).filePath(".gpg-id");
+auto Util::configIsValid(const AppSettings &s) -> bool {
+  const QString configFilePath = QDir(s.passStore).filePath(".gpg-id");
   if (!QFile(configFilePath).exists()) {
     return false;
   }
 
-  const QString executable = QtPassSettings::isUsePass()
-                                 ? QtPassSettings::getPassExecutable()
-                                 : QtPassSettings::getGpgExecutable();
+  const QString executable =
+      s.usePass ? s.passExecutable : s.gpgExecutable;
 
   if (executable.startsWith(QStringLiteral("wsl "))) {
     // Probe WSL once per session — availability doesn't change at runtime
@@ -267,10 +265,9 @@ auto Util::configIsValid() -> bool {
  * platform's directory separator.
  */
 auto Util::getDir(const QModelIndex &index, bool forPass,
-                  const QFileSystemModel &model, const StoreModel &storeModel)
-    -> QString {
-  QString abspath =
-      QDir(QtPassSettings::getPassStore()).absolutePath() + QDir::separator();
+                  const QFileSystemModel &model, const StoreModel &storeModel,
+                  const QString &passStore) -> QString {
+  QString abspath = QDir(passStore).absolutePath() + QDir::separator();
   if (!index.isValid()) {
     return forPass ? "" : abspath;
   }
