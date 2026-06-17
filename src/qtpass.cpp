@@ -187,6 +187,7 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
  * @brief QtPass::mountWebDav is some scary voodoo magic
  */
 void QtPass::mountWebDav() {
+  const AppSettings s = QtPassSettings::load();
 #ifdef Q_OS_WIN
   char dst[20] = {0};
   NETRESOURCEA netres;
@@ -195,9 +196,9 @@ void QtPass::mountWebDav() {
   netres.lpLocalName = nullptr;
   // Store QByteArray in variables to ensure lifetime during WNetUseConnectionA
   // call
-  QByteArray webDavUrlUtf8 = QtPassSettings::getWebDavUrl().toUtf8();
-  QByteArray webDavPasswordUtf8 = QtPassSettings::getWebDavPassword().toUtf8();
-  QByteArray webDavUserUtf8 = QtPassSettings::getWebDavUser().toUtf8();
+  QByteArray webDavUrlUtf8 = s.webDavUrl.toUtf8();
+  QByteArray webDavPasswordUtf8 = s.webDavPassword.toUtf8();
+  QByteArray webDavUserUtf8 = s.webDavUser.toUtf8();
   netres.lpRemoteName = const_cast<char *>(webDavUrlUtf8.constData());
   DWORD size = sizeof(dst);
   DWORD r = WNetUseConnectionA(
@@ -221,12 +222,11 @@ void QtPass::mountWebDav() {
                                << "-o"
                                << "nonempty"
                                << "-u"
-                               << "\"" + QtPassSettings::getWebDavUser() + "\""
-                               << QtPassSettings::getWebDavUrl()
-                               << "\"" + QtPassSettings::getPassStore() + "\"");
+                               << "\"" + s.webDavUser + "\"" << s.webDavUrl
+                               << "\"" + s.passStore + "\"");
   fusedav.waitForStarted();
   if (fusedav.state() == QProcess::Running) {
-    QString pwd = QtPassSettings::getWebDavPassword();
+    QString pwd = s.webDavPassword;
     bool ok = true;
     if (pwd.isEmpty()) {
       pwd = QInputDialog::getText(m_mainWindow, tr("QtPass WebDAV password"),
@@ -405,7 +405,7 @@ void QtPass::showInTextBrowser(QString output, const QString &prefix,
  * @brief Performs automatic git push if enabled in settings.
  */
 void QtPass::doGitPush() {
-  if (QtPassSettings::isAutoPush()) {
+  if (QtPassSettings::load().autoPush) {
     m_mainWindow->onPush();
   }
 }
@@ -417,10 +417,10 @@ void QtPass::doGitPush() {
  * @param p_output Additional output text
  */
 void QtPass::setClippedText(const QString &password, const QString &p_output) {
-  if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
-      !p_output.isEmpty()) {
+  const AppSettings s = QtPassSettings::load();
+  if (s.clipBoardType != Enums::CLIPBOARD_NEVER && !p_output.isEmpty()) {
     clippedText = password;
-    if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS) {
+    if (s.clipBoardType == Enums::CLIPBOARD_ALWAYS) {
       copyTextToClipboard(password);
     }
   }
@@ -435,7 +435,7 @@ void QtPass::clearClippedText() { clippedText = ""; }
  */
 void QtPass::setClipboardTimer() {
   clearClipboardTimer.setInterval(MS_PER_SECOND *
-                                  QtPassSettings::getAutoclearSeconds());
+                                  QtPassSettings::load().autoclearSeconds);
 }
 
 /**
@@ -490,10 +490,11 @@ auto buildClipboardMimeData(const QString &text) -> QMimeData * {
  * @param text
  */
 void QtPass::copyTextToClipboard(const QString &text) {
+  const AppSettings s = QtPassSettings::load();
   QClipboard *clip = QApplication::clipboard();
 
   QClipboard::Mode mode = QClipboard::Clipboard;
-  if (QtPassSettings::isUseSelection() && clip->supportsSelection()) {
+  if (s.useSelection && clip->supportsSelection()) {
     mode = QClipboard::Selection;
   }
 
@@ -502,7 +503,7 @@ void QtPass::copyTextToClipboard(const QString &text) {
 
   clippedText = text;
   m_mainWindow->showStatusMessage(tr("Copied to clipboard"));
-  if (QtPassSettings::isUseAutoclear()) {
+  if (s.useAutoclear) {
     clearClipboardTimer.start();
   }
 }
@@ -512,10 +513,13 @@ void QtPass::copyTextToClipboard(const QString &text) {
  * @param text
  */
 void QtPass::showTextAsQRCode(const QString &text) {
+  const AppSettings s = QtPassSettings::load();
+  const QString qrExe = s.qrencodeExecutable.isEmpty()
+                            ? QStringLiteral("/usr/bin/qrencode")
+                            : s.qrencodeExecutable;
   QProcess qrencode;
-  qrencode.start(QtPassSettings::getQrencodeExecutable("/usr/bin/qrencode"),
-                 QStringList() << "-o-"
-                               << "-tPNG");
+  qrencode.start(qrExe, QStringList() << "-o-"
+                                      << "-tPNG");
   qrencode.write(text.toUtf8());
   qrencode.closeWriteChannel();
   qrencode.waitForFinished();
