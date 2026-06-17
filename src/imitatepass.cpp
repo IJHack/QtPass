@@ -61,16 +61,18 @@ ImitatePass::~ImitatePass() {
 }
 
 auto ImitatePass::pgit(const QString &path) const -> QString {
+  QString normalizedPath = QDir::cleanPath(path);
   if (!m_settings.gitExecutable.startsWith(QStringLiteral("wsl ")))
-    return path;
-  QString res = QStringLiteral("$(wslpath ") + path + QLatin1Char(')');
+    return normalizedPath;
+  QString res = QStringLiteral("$(wslpath ") + normalizedPath + QLatin1Char(')');
   return res.replace('\\', '/');
 }
 
 auto ImitatePass::pgpg(const QString &path) const -> QString {
+  QString normalizedPath = QDir::cleanPath(path);
   if (!m_settings.gpgExecutable.startsWith(QStringLiteral("wsl ")))
-    return path;
-  QString res = QStringLiteral("$(wslpath ") + path + QLatin1Char(')');
+    return normalizedPath;
+  QString res = QStringLiteral("$(wslpath ") + normalizedPath + QLatin1Char(')');
   return res.replace('\\', '/');
 }
 
@@ -726,7 +728,7 @@ auto ImitatePass::createBackupCommit() -> bool {
 void ImitatePass::reencryptPath(const QString &dir) {
   emit statusMsg(tr("Re-encrypting from folder %1").arg(dir), 3000);
   emit startReencryptPath();
-  if (m_settings.autoPull) {
+  if (m_settings.autoPull && m_settings.useGit) {
     emit statusMsg(tr("Updating password-store"), 2000);
     GitPull_b();
   }
@@ -781,7 +783,7 @@ void ImitatePass::reencryptPath(const QString &dir) {
         3000);
   }
 
-  if (m_settings.autoPush) {
+  if (m_settings.autoPush && m_settings.useGit) {
     emit statusMsg(tr("Updating password-store"), 2000);
     GitPush();
   }

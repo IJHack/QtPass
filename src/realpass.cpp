@@ -102,7 +102,17 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
   // remove the passStore directory otherwise,
   // pass would create a passStore/passStore/dir
   // but you want passStore/dir
-  QString dirWithoutPassdir = path.remove(0, m_settings.passStore.size());
+  QString normalizedPath = QDir::cleanPath(path);
+  QString normalizedStore = QDir::cleanPath(m_settings.passStore);
+  QString dirWithoutPassdir;
+  if (normalizedPath.startsWith(normalizedStore)) {
+    dirWithoutPassdir = normalizedPath.mid(normalizedStore.size());
+    if (dirWithoutPassdir.startsWith('/')) {
+      dirWithoutPassdir.remove(0, 1);
+    }
+  } else {
+    dirWithoutPassdir = normalizedPath;
+  }
   QStringList args = {"init", "--path=" + dirWithoutPassdir};
   foreach (const UserInfo &user, users) {
     if (user.enabled) {
@@ -153,10 +163,12 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
     return;
   }
 
-  QString passSrc =
-      QDir(m_settings.passStore).relativeFilePath(QDir(src).absolutePath());
-  QString passDest =
-      QDir(m_settings.passStore).relativeFilePath(QDir(dest).absolutePath());
+  QString normalizedStore = QDir::cleanPath(m_settings.passStore);
+  QString normalizedSrc = QDir::cleanPath(QDir(src).absolutePath());
+  QString normalizedDest = QDir::cleanPath(QDir(dest).absolutePath());
+
+  QString passSrc = QDir(normalizedStore).relativeFilePath(normalizedSrc);
+  QString passDest = QDir(normalizedStore).relativeFilePath(normalizedDest);
 
   // remove the .gpg because pass will not work
   if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
