@@ -179,8 +179,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0de322eb0b4907a730325e4008c0b4b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get password store directory path.  <br /></td></tr>
 <tr class="memitem:a87ce0a9a9a6510a621e6429f2d090862" id="r_a87ce0a9a9a6510a621e6429f2d090862"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a87ce0a9a9a6510a621e6429f2d090862">setPassStore</a> (const QString &amp;passStore)</td></tr>
 <tr class="memdesc:a87ce0a9a9a6510a621e6429f2d090862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save password store path.  <br /></td></tr>
-<tr class="memitem:aa38dc1b1104a378ab3f862063d9604b7" id="r_aa38dc1b1104a378ab3f862063d9604b7"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aa38dc1b1104a378ab3f862063d9604b7">setPassSigningKey</a> (const QString &amp;passSigningKey)</td></tr>
-<tr class="memdesc:aa38dc1b1104a378ab3f862063d9604b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save GPG signing key.  <br /></td></tr>
 <tr class="memitem:accde18f59a051107c85755993fcefdac" id="r_accde18f59a051107c85755993fcefdac"><td class="memItemLeft"><a id="accde18f59a051107c85755993fcefdac" name="accde18f59a051107c85755993fcefdac"></a>
 static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></tr>
 <tr class="memdesc:accde18f59a051107c85755993fcefdac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize executable paths by auto-detecting them. <br /></td></tr>
@@ -190,8 +188,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <tr class="memdesc:a15e5619edfc478765e728fac1bb9c6cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether WebDAV integration is enabled.  <br /></td></tr>
 <tr class="memitem:af2548c1c64c4daccdc1df6f505935588" id="r_af2548c1c64c4daccdc1df6f505935588"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af2548c1c64c4daccdc1df6f505935588">getProfile</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
 <tr class="memdesc:af2548c1c64c4daccdc1df6f505935588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get active profile name.  <br /></td></tr>
-<tr class="memitem:a5026be84cffcec3cc08f53c1d45c78bd" id="r_a5026be84cffcec3cc08f53c1d45c78bd"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a5026be84cffcec3cc08f53c1d45c78bd">setProfile</a> (const QString &amp;profile)</td></tr>
-<tr class="memdesc:a5026be84cffcec3cc08f53c1d45c78bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save active profile name.  <br /></td></tr>
 <tr class="memitem:ae68f51e4cf8ebfc810709bcc6c54e53e" id="r_ae68f51e4cf8ebfc810709bcc6c54e53e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae68f51e4cf8ebfc810709bcc6c54e53e">getProfileUseGit</a> (const QString &amp;profileName, const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
 <tr class="memdesc:ae68f51e4cf8ebfc810709bcc6c54e53e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Git setting for a specific profile.  <br /></td></tr>
 <tr class="memitem:ac6577f850d148b93dc8b017b157a4691" id="r_ac6577f850d148b93dc8b017b157a4691"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ac6577f850d148b93dc8b017b157a4691">setProfileUseGit</a> (const QString &amp;profileName, const bool &amp;useGit)</td></tr>
@@ -1544,39 +1540,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 
 </div>
 </div>
-<a id="aa38dc1b1104a378ab3f862063d9604b7" name="aa38dc1b1104a378ab3f862063d9604b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa38dc1b1104a378ab3f862063d9604b7">&#9670;&#160;</a></span>setPassSigningKey()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QtPassSettings::setPassSigningKey </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>passSigningKey</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Save GPG signing key. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">passSigningKey</td><td>Key ID to use for signing. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a87ce0a9a9a6510a621e6429f2d090862" name="a87ce0a9a9a6510a621e6429f2d090862"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a87ce0a9a9a6510a621e6429f2d090862">&#9670;&#160;</a></span>setPassStore()</h2>
 
@@ -1637,39 +1600,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pos</td><td>Window position to save. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a5026be84cffcec3cc08f53c1d45c78bd" name="a5026be84cffcec3cc08f53c1d45c78bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5026be84cffcec3cc08f53c1d45c78bd">&#9670;&#160;</a></span>setProfile()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QtPassSettings::setProfile </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>profile</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Save active profile name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">profile</td><td>Profile name. </td></tr>
   </table>
   </dd>
 </dl>
