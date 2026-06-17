@@ -405,7 +405,7 @@ void QtPass::showInTextBrowser(QString output, const QString &prefix,
  * @brief Performs automatic git push if enabled in settings.
  */
 void QtPass::doGitPush() {
-  if (QtPassSettings::load().autoPush) {
+  if (QtPassSettings::isAutoPush()) {
     m_mainWindow->onPush();
   }
 }
@@ -435,7 +435,7 @@ void QtPass::clearClippedText() { clippedText = ""; }
  */
 void QtPass::setClipboardTimer() {
   clearClipboardTimer.setInterval(MS_PER_SECOND *
-                                  QtPassSettings::load().autoclearSeconds);
+                                  QtPassSettings::getAutoclearSeconds());
 }
 
 /**
