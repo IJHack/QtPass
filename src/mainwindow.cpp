@@ -87,6 +87,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   model.fetchMore(rootDir);
 
   proxyModel.setModelAndStore(&model, passStore);
+  proxyModel.setPass(QtPassSettings::getPass());
   selectionModel.reset(new QItemSelectionModel(&proxyModel));
 
   ui->treeView->setModel(&proxyModel);
@@ -499,7 +500,9 @@ void MainWindow::config() {
           !Util::configIsValid(QtPassSettings::load())) {
         config();
       }
-      QtPassSettings::getPass()->updateEnv();
+      Pass *activePass = QtPassSettings::getPass();
+      activePass->updateEnv();
+      proxyModel.setPass(activePass);
       clearPanelTimer.setInterval(MS_PER_SECOND *
                                   QtPassSettings::getAutoclearPanelSeconds());
       m_qtPass->setClipboardTimer();
