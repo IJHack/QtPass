@@ -130,6 +130,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d113aadab8e115cdd963f2246333664" id="r_a1d113aadab8e115cdd963f2246333664"><td class="memItemLeft"><a id="a1d113aadab8e115cdd963f2246333664" name="a1d113aadab8e115cdd963f2246333664"></a>
 &#160;</td><td class="memItemRight"><b>StoreModel</b> ()</td></tr>
 <tr class="memdesc:a1d113aadab8e115cdd963f2246333664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_store_model.html" title="QSortFilterProxyModel for filtering and displaying password store.">StoreModel</a>. <br /></td></tr>
+<tr class="memitem:a90d7f788202bdb64c4722ee897a01363" id="r_a90d7f788202bdb64c4722ee897a01363"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a90d7f788202bdb64c4722ee897a01363">setPass</a> (<a class="el" href="class_pass.html">Pass</a> *pass)</td></tr>
+<tr class="memdesc:a90d7f788202bdb64c4722ee897a01363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inject the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> backend for drag-and-drop Move/Copy operations.  <br /></td></tr>
 <tr class="memitem:a02542fddfeea1874e849c0bb1d94f6c1" id="r_a02542fddfeea1874e849c0bb1d94f6c1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a02542fddfeea1874e849c0bb1d94f6c1">filterAcceptsRow</a> (int source_row, const QModelIndex &amp;source_parent) const -&gt; bool override</td></tr>
 <tr class="memdesc:a02542fddfeea1874e849c0bb1d94f6c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter whether a row should be displayed.  <br /></td></tr>
 <tr class="memitem:a3f87cb8b3ca0d20117f37386e4701691" id="r_a3f87cb8b3ca0d20117f37386e4701691"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3f87cb8b3ca0d20117f37386e4701691">showThis</a> (const QModelIndex &amp;index) const -&gt; bool</td></tr>
@@ -170,7 +172,7 @@ Public Member Functions</h2></td></tr>
 <li>Custom sorting (directories before files) </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00064">64</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00065">65</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="accf361cc9145306e3063f7b0be939476" name="accf361cc9145306e3063f7b0be939476"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#accf361cc9145306e3063f7b0be939476">&#9670;&#160;</a></span>canDropMimeData()</h2>
@@ -466,7 +468,7 @@ Public Member Functions</h2></td></tr>
 <p>Get the password store root path. </p>
 <dl class="section return"><dt>Returns</dt><dd>Store path. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00160">160</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00168">168</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
 
 </div>
 </div>
@@ -645,6 +647,31 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">sourceModel</td><td>Filesystem model to wrap. </td></tr>
     <tr><td class="paramname">passStore</td><td>Root path of password store. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a90d7f788202bdb64c4722ee897a01363" name="a90d7f788202bdb64c4722ee897a01363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90d7f788202bdb64c4722ee897a01363">&#9670;&#160;</a></span>setPass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StoreModel::setPass </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_pass.html">Pass</a> *</td>          <td class="paramname"><span class="paramname"><em>pass</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inject the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> backend for drag-and-drop Move/Copy operations. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pass</td><td><a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> backend instance; must outlive this <a class="el" href="class_store_model.html" title="QSortFilterProxyModel for filtering and displaying password store.">StoreModel</a>. </td></tr>
   </table>
   </dd>
 </dl>

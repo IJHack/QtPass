@@ -34,7 +34,7 @@ var searchData=
   ['setmaximized_31',['setMaximized',['../class_qt_pass_settings.html#a55a473b77fe0450ce08e19544d495c6f',1,'QtPassSettings']]],
   ['setmodelandstore_32',['setModelAndStore',['../class_store_model.html#a71787f93027b50575cfbdcbb1d8de071',1,'StoreModel']]],
   ['setnolinewrapping_33',['setNoLineWrapping',['../class_qt_pass_settings.html#ac463092fe55a3f66a87305b70bcce2c1',1,'QtPassSettings']]],
-  ['setpass_34',['setPass',['../class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8',1,'PasswordDialog']]],
+  ['setpass_34',['setPass',['../class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8',1,'PasswordDialog::setPass()'],['../class_store_model.html#a90d7f788202bdb64c4722ee897a01363',1,'StoreModel::setPass()']]],
   ['setpassexecutable_35',['setPassExecutable',['../class_qt_pass_settings.html#ab97129498f8b41e600f205611dab3bcf',1,'QtPassSettings']]],
   ['setpasssigningkey_36',['setPassSigningKey',['../class_qt_pass_settings.html#aa38dc1b1104a378ab3f862063d9604b7',1,'QtPassSettings']]],
   ['setpassstore_37',['setPassStore',['../class_qt_pass_settings.html#a87ce0a9a9a6510a621e6429f2d090862',1,'QtPassSettings']]],
