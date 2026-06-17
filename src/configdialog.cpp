@@ -785,15 +785,15 @@ void ConfigDialog::initializeNewProfiles(
 
     // Show user selection dialog for GPG recipients
     // UsersDialog will run pass init when accepted
-    UsersDialog usersDialog(QtPassSettings::getPass(), QtPassSettings::load(),
-                            cleanPath, this);
+    const AppSettings settings = QtPassSettings::load();
+    UsersDialog usersDialog(QtPassSettings::getPass(), settings, cleanPath,
+                            this);
     usersDialog.setWindowTitle(tr("Select recipients for %1").arg(name));
     const int result = usersDialog.exec();
 
     // Use per-profile useGit setting, falling back to global if not set
     QString useGitStr = newProfiles.value(name).value("useGit");
-    bool useGit =
-        useGitStr.isEmpty() ? QtPassSettings::isUseGit() : useGitStr == "true";
+    bool useGit = useGitStr.isEmpty() ? settings.useGit : useGitStr == "true";
 
     if (result == QDialog::Accepted && useGit) {
       QtPassSettings::getPass()->GitInit();
