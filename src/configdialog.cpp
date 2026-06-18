@@ -859,7 +859,7 @@ void ConfigDialog::on_deleteButton_clicked() {
     selectedRows.insert(item->row());
   // get a list, and sort it big to small
   QList<int> rows = selectedRows.values();
-  std::sort(rows.begin(), rows.end(), std::greater<int>());
+  std::sort(rows.begin(), rows.end(), std::greater<>());
   // now actually do the removing:
   foreach (int row, rows)
     ui->profileTable->removeRow(row);
