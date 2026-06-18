@@ -11,6 +11,7 @@ qtpass.xcodeproj/xcuserdata/*
 qtpass.xcworkspace/xcuserdata/*
 .DS_Store
 .qmake.stash
+.tmp/
 *.o
 moc_*.cpp
 qrc_*.cpp
