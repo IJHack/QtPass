@@ -51,9 +51,10 @@ void PasswordDisplayPanel::displayFields(const QString &password,
     // The password is hidden in addField when needed.
     addField(0, QObject::tr("Password"), password, s);
   }
-  for (int j = 0; j < namedValues.length(); ++j) {
-    const NamedValue &nv = namedValues.at(j);
-    addField(j + 1, nv.name, nv.value, s);
+  int position = 1;
+  for (const NamedValue &nv : namedValues) {
+    addField(position, nv.name, nv.value, s);
+    ++position;
   }
   m_container->setSpacing(m_grid->count() == 0 ? 0 : 6);
 }
@@ -81,10 +82,10 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
 
   // Combine the Copy button and the line edit in one widget
   auto *frame = new QFrame();
-  QLayout *ly = new QHBoxLayout();
-  ly->setContentsMargins(5, 2, 2, 2);
-  ly->setSpacing(0);
-  frame->setLayout(ly);
+  QLayout *frameLayout = new QHBoxLayout();
+  frameLayout->setContentsMargins(5, 2, 2, 2);
+  frameLayout->setSpacing(0);
+  frame->setLayout(frameLayout);
   if (s.clipBoardType != Enums::CLIPBOARD_NEVER) {
     auto *fieldLabel =
         new QPushButtonWithClipboard(trimmedValue, m_widgetParent);
@@ -158,8 +159,8 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     line->setSizePolicy(
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
     line->setObjectName(trimmedField);
-    trimmedValue.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)");
-    line->setText(trimmedValue);
+    line->setText(
+        trimmedValue.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)"));
     line->setReadOnly(true);
     line->setStyleSheet(lineStyle);
     line->setContentsMargins(0, 0, 0, 0);
