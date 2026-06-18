@@ -31,15 +31,19 @@ public:
   static auto findBinaryInPath(const QString &binary) -> QString;
   /**
    * @brief Locate the password store directory.
-   * @return QString Path to the password store, always ends with native
-   * directory separator.
+   * @return QString Path to the password store, always ends with '/'.
    */
   static auto findPasswordStore() -> QString;
   /**
-   * @brief Ensure a folder path always ends with the native directory
-   * separator.
+   * @brief Ensure a folder path always ends with '/'.
+   *
+   * Qt normalises paths to forward slashes internally, so this function
+   * appends '/' unconditionally rather than the platform-native separator.
+   * Callers that need native separators can call QDir::toNativeSeparators()
+   * themselves.
+   *
    * @param path The folder path to normalize.
-   * @return QString Path with trailing separator added if missing.
+   * @return QString Path with a trailing '/' added if it was missing.
    */
   static auto normalizeFolderPath(const QString &path) -> QString;
   /**
