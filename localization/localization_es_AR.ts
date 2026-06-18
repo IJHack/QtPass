@@ -705,7 +705,7 @@ dirección de correo</translation>
         <location filename="../src/imitatepass.cpp" line="391"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>Ninguna de las claves secretas de la firma están disponible.
+        <translation>Ninguna de las claves secretas de firma está disponible.
 ¡No vas a poder modificar la lista de usuarios!</translation>
     </message>
     <message>
@@ -1441,7 +1441,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="1086"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nuevo archivo de contraseña:
+(Se ubicará en %1 )</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1444"/>
