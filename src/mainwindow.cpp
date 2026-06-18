@@ -1481,6 +1481,12 @@ void MainWindow::showContextMenu(const QPoint &pos) {
  */
 void MainWindow::showBrowserContextMenu(const QPoint &pos) {
   QMenu *contextMenu = ui->textBrowser->createStandardContextMenu(pos);
+  // createStandardContextMenu() parents the menu to textBrowser, which carries
+  // a "background: palette(base)" stylesheet. Qt cascades that stylesheet to
+  // the child QMenu and breaks its opaque native background, leaving the menu
+  // transparent. Reparent to the main window (no stylesheet) so it paints
+  // solid.
+  contextMenu->setParent(this, contextMenu->windowFlags());
   QPoint globalPos = ui->textBrowser->viewport()->mapToGlobal(pos);
 
   contextMenu->exec(globalPos);
