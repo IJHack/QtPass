@@ -178,7 +178,6 @@ private Q_SLOTS:
   void imitatePassResolveMoveDestinationDestExistsNoForce();
   void imitatePassResolveMoveDestinationDir();
   void imitatePassResolveMoveDestinationNonExistent();
-  void imitatePassRemoveDir();
   void getRecipientListBasic();
   void getRecipientListEmpty();
   void getRecipientListWithComments();
@@ -1146,16 +1145,6 @@ void tst_util::imitatePassResolveMoveDestinationNonExistent() {
   QVERIFY2(result.isEmpty(), "Should return empty for non-existent source");
 }
 
-void tst_util::imitatePassRemoveDir() {
-  ImitatePass pass;
-  QTemporaryDir tmpDir;
-  QString subDir = tmpDir.path() + "/testdir";
-  QVERIFY(QDir().mkpath(subDir));
-  QVERIFY(QDir(subDir).exists());
-  bool result = pass.removeDir(subDir);
-  QVERIFY(result);
-  QVERIFY(!QDir(subDir).exists());
-}
 
 void tst_util::getRecipientListBasic() {
   QTemporaryDir tempDir;

@@ -36,12 +36,6 @@ protected:
    */
   auto verifyGpgIdFile(const QString &file) -> bool;
   /**
-   * @brief Remove directory recursively.
-   * @param dirName Directory path.
-   * @return true if removed.
-   */
-  auto removeDir(const QString &dirName) -> bool;
-  /**
    * @brief Check if signing keys are valid.
    * @param signingKeys List of key IDs.
    * @return true if all keys valid.
@@ -297,7 +291,17 @@ public:
 private:
   int m_grepSeq = 0;
   QList<QThread *> m_grepThreads;
+  QString m_transactionOutput;
 
+  /**
+   * @brief Translate @p path for the given @p exe when WSL-routed: wraps in
+   * wslpath substitution, otherwise returns @p path unchanged.
+   * @param path Native filesystem path.
+   * @param exe Executable path (checked for "wsl " prefix).
+   * @return Path suitable for the given executable.
+   */
+  auto translatePathForWsl(const QString &path, const QString &exe) const
+      -> QString;
   /**
    * @brief Translate @p path for git when WSL-routed: wraps in wslpath
    * substitution, otherwise returns @p path unchanged.

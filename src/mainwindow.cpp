@@ -821,6 +821,8 @@ void MainWindow::onTimeoutSearch() {
 
   query.replace(QStringLiteral(" "), ".*");
   QRegularExpression regExp(query, QRegularExpression::CaseInsensitiveOption);
+  if (!regExp.isValid())
+    return;
   proxyModel.setFilterRegularExpression(regExp);
   ui->treeView->setRootIndex(
       proxyModel.rootIndexFor(QtPassSettings::getPassStore()));
@@ -1308,15 +1310,6 @@ void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
  */
 void MainWindow::initTrayIcon() {
   m_tray = new TrayIcon(this);
-  // Setup tray icon
-
-  if (m_tray == nullptr) {
-#ifdef QT_DEBUG
-    dbg() << "Allocating tray icon failed.";
-#endif
-    return;
-  }
-
   if (!m_tray->getIsAllocated()) {
     destroyTrayIcon();
   }
@@ -1633,13 +1626,23 @@ void MainWindow::copyPasswordFromTreeview() {
     // Disconnect any previous connection to avoid accumulation
     disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
                &MainWindow::passwordFromFileToClipboard);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+            &MainWindow::passwordFromFileToClipboard, Qt::SingleShotConnection);
+#else
     connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
             &MainWindow::passwordFromFileToClipboard);
+#endif
     QtPassSettings::getPass()->Show(file);
   }
 }
 
 void MainWindow::passwordFromFileToClipboard(const QString &text) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+  // Qt 5: no SingleShotConnection flag — disconnect manually on first fire.
+  disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+             &MainWindow::passwordFromFileToClipboard);
+#endif
   QStringList tokens = text.split('\n');
   m_qtPass->copyTextToClipboard(tokens[0]);
 }
