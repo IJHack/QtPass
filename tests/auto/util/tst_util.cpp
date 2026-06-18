@@ -1145,7 +1145,6 @@ void tst_util::imitatePassResolveMoveDestinationNonExistent() {
   QVERIFY2(result.isEmpty(), "Should return empty for non-existent source");
 }
 
-
 void tst_util::getRecipientListBasic() {
   QTemporaryDir tempDir;
   QString passStore = tempDir.path();
