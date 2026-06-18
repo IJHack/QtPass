@@ -345,7 +345,16 @@ void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
       }
     }
     emit finished(i.id, exitCode, output, err);
+  } else {
+    QString output;
+    QString err;
+    if (i.readStdout) {
+      output = decodeAssumingUtf8(m_process.readAllStandardOutput());
+    }
+    if (i.readStderr || exitCode != 0) {
+      err = decodeAssumingUtf8(m_process.readAllStandardError());
+    }
+    emit error(i.id, exitCode, output, err);
   }
-  //  else: emit crashed with ID, which may give a chance to recover ?
   executeNext();
 }
