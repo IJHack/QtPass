@@ -542,7 +542,7 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
   QString err;
   const int result =
       Executor::executeBlocking(m_settings.gpgExecutable, args, &keys, &err);
-  if (result != 0 && keys.isEmpty() && err.isEmpty()) {
+  if (result != 0) {
     return {};
   }
   QStringList actualKeys;

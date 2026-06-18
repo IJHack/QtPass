@@ -48,6 +48,8 @@ auto PassBackendFactory::getRealPass() -> RealPass * {
 auto PassBackendFactory::getImitatePass() -> ImitatePass * {
   if (imitatePass.isNull()) {
     imitatePass.reset(new ImitatePass());
+    AppSettings s = QtPassSettings::load();
+    imitatePass->init(s);
   }
   return imitatePass.data();
 }
