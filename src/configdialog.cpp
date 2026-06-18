@@ -261,6 +261,8 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
       for (int j = 0; j < ui->profileTable->columnCount(); j++) {
         QTableWidgetItem *_item = ui->profileTable->item(i, j);
 
+        if (!_item)
+          continue;
         if (_item->text().isEmpty() && j != 2) {
           _item->setBackground(Qt::red);
           _item->setToolTip(tr("This field is required"));
@@ -897,7 +899,11 @@ auto ConfigDialog::isQrencodeAvailable() -> bool {
 #else
   QProcess which;
   which.start("which", QStringList() << "qrencode");
-  which.waitForFinished();
+  if (!which.waitForFinished(2000)) {
+    which.kill();
+    which.waitForFinished(500);
+    return false;
+  }
   QtPassSettings::setQrencodeExecutable(
       which.readAllStandardOutput().trimmed());
   return which.exitCode() == 0;

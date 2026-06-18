@@ -272,6 +272,8 @@ private Q_SLOTS:
   void getFolderTemplateInParent();
   void getFolderTemplateNoneFound();
   void getFolderTemplateCommentIgnored();
+  // normalizeFolderPath — new contract (always forward slash)
+  void normalizeFolder();
 };
 
 /**
@@ -309,41 +311,30 @@ void tst_util::cleanupTestCase() {
 
 /**
  * @brief tst_util::normalizeFolderPath test to check correct working
- * of Util::normalizeFolderPath the paths should always end with a slash
+ * of Util::normalizeFolderPath the paths should always end with '/'
  */
 void tst_util::normalizeFolderPath() {
   QString result;
-  QString sep = QDir::separator();
 
-  // Forward slash path
+  // Path without trailing slash — slash must be appended.
   result = Util::normalizeFolderPath("test");
-  QVERIFY(result.endsWith(sep));
-  result = Util::normalizeFolderPath("test/");
-  QVERIFY(result.endsWith(sep));
-  // Verify exact normalized path content
-  result = Util::normalizeFolderPath("test");
-  QVERIFY2(result == "test" + sep,
-           qPrintable(QString("Expected 'test%1', got '%2'").arg(sep, result)));
-  result = Util::normalizeFolderPath("test/");
-  QVERIFY2(result == "test" + sep,
-           qPrintable(QString("Expected 'test%1', got '%2'").arg(sep, result)));
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("test/"));
 
-  // Windows-style backslash path (only on Windows)
-  if (QDir::separator() == '\\') {
-    result = Util::normalizeFolderPath("test\\subdir");
-    QVERIFY(result.endsWith("\\"));
-    QVERIFY(result.contains("test"));
-    QVERIFY(result.contains("subdir"));
-    // Verify exact normalized path content
-    QVERIFY2(
-        result == "test\\subdir\\",
-        qPrintable(
-            QString("Expected 'test\\\\subdir\\\\', got '%1'").arg(result)));
-  }
+  // Path already ending with '/' — must be idempotent (no double slash).
+  result = Util::normalizeFolderPath("test/");
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("test/"));
 
-  // Mixed separators test
+  // Nested path without trailing slash.
+  result = Util::normalizeFolderPath("test/subdir");
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("test/subdir/"));
+
+  // Mixed separators: the function does NOT normalize backslashes; callers
+  // should run QDir::cleanPath() first if needed.
   result = Util::normalizeFolderPath("test/subdir\\folder");
-  QVERIFY(result.endsWith(sep));
+  QVERIFY(result.endsWith('/'));
   QVERIFY(result.contains("test"));
   QVERIFY(result.contains("subdir"));
   QVERIFY(result.contains("folder"));
@@ -468,19 +459,31 @@ void tst_util::regexPatterns() {
 }
 
 void tst_util::normalizeFolderPathEdgeCases() {
+  // Empty string -> "/" (a single forward slash is appended).
   QString result = Util::normalizeFolderPath("");
-  QVERIFY(result.endsWith(QDir::separator()));
-  QVERIFY2(result == QDir::separator() || result.endsWith(QDir::separator()),
-           "Empty path should become separator");
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("/"));
 
-  result = Util::normalizeFolderPath(QDir::separator());
-  QVERIFY(result.endsWith(QDir::separator()));
+  // Already a single '/' -> idempotent.
+  result = Util::normalizeFolderPath("/");
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("/"));
 
+  // Already-normalized deep path -> idempotent.
   result = Util::normalizeFolderPath("path/to/dir/");
-  QVERIFY(result.endsWith(QDir::separator()));
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("path/to/dir/"));
 
-  QString nativeResult = Util::normalizeFolderPath("path/to/dir");
-  QVERIFY(nativeResult.endsWith(QDir::separator()));
+  // Path without trailing slash -> slash added.
+  result = Util::normalizeFolderPath("path/to/dir");
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("path/to/dir/"));
+
+  // Path ending with a Windows backslash: the function appends '/' after the
+  // backslash because it only checks for '/'.  Callers that need normalized
+  // separators should run QDir::cleanPath() before calling this function.
+  result = Util::normalizeFolderPath("C:\\Users\\test");
+  QVERIFY(result.endsWith('/'));
 }
 
 void tst_util::fileContentEdgeCases() {
@@ -827,7 +830,7 @@ void tst_util::findBinaryInPath() {
 void tst_util::findPasswordStore() {
   QString result = Util::findPasswordStore();
   QVERIFY(!result.isEmpty());
-  QVERIFY(result.endsWith(QDir::separator()));
+  QVERIFY(result.endsWith('/'));
 }
 
 void tst_util::configIsValid() {
@@ -981,8 +984,10 @@ void tst_util::findPasswordStoreEnvVar() {
 void tst_util::normalizeFolderPathMultipleCalls() {
   QString result1 = Util::normalizeFolderPath("test1");
   QString result2 = Util::normalizeFolderPath("test2");
-  QVERIFY(result1.endsWith(QDir::separator()));
-  QVERIFY(result2.endsWith(QDir::separator()));
+  QVERIFY(result1.endsWith('/'));
+  QVERIFY(result2.endsWith('/'));
+  QCOMPARE(result1, QStringLiteral("test1/"));
+  QCOMPARE(result2, QStringLiteral("test2/"));
 }
 
 void tst_util::userInfoFullyValid() {
@@ -2676,6 +2681,34 @@ void tst_util::getFolderTemplateCommentIgnored() {
   QString result = TemplateIO::getFolderTemplate(subPath, store.path());
   QVERIFY2(result.isEmpty(),
            ".default_template with only a comment must return empty string");
+}
+
+/**
+ * @brief normalizeFolder — explicit contract tests for normalizeFolderPath.
+ *
+ * normalizeFolderPath always appends '/' when the path does not already end
+ * with one. It never calls QDir::toNativeSeparators(), so the result always
+ * uses forward slashes regardless of the host platform.
+ */
+void tst_util::normalizeFolder() {
+  // Already-normalized path ending in '/' -> idempotent (no double slash).
+  QCOMPARE(Util::normalizeFolderPath(QStringLiteral("/home/user/store/")),
+           QStringLiteral("/home/user/store/"));
+
+  // Path NOT ending in '/' -> slash appended.
+  QCOMPARE(Util::normalizeFolderPath(QStringLiteral("/home/user/store")),
+           QStringLiteral("/home/user/store/"));
+
+  // Empty string -> "/" (single forward slash).
+  QCOMPARE(Util::normalizeFolderPath(QString()), QStringLiteral("/"));
+
+  // Path ending in backslash: '\\' is NOT '/', so '/' is appended after it.
+  // Callers needing clean separators should run QDir::cleanPath() first.
+  QString backslashPath = QStringLiteral("C:\\Users\\test");
+  QString result = Util::normalizeFolderPath(backslashPath);
+  QVERIFY2(result.endsWith('/'),
+           "normalizeFolderPath must append '/' even after a backslash");
+  QCOMPARE(result, QStringLiteral("C:\\Users\\test/"));
 }
 
 QTEST_MAIN(tst_util)

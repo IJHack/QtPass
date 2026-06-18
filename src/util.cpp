@@ -105,11 +105,10 @@ auto Util::findPasswordStore() -> QString {
 
 auto Util::normalizeFolderPath(const QString &path) -> QString {
   QString normalizedPath = path;
-  if (!normalizedPath.endsWith("/") &&
-      !normalizedPath.endsWith(QDir::separator())) {
-    normalizedPath += QDir::separator();
+  if (!normalizedPath.endsWith('/')) {
+    normalizedPath += '/';
   }
-  return QDir::toNativeSeparators(normalizedPath);
+  return normalizedPath;
 }
 
 /**
