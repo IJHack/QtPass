@@ -351,7 +351,7 @@ void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
     if (i.readStdout) {
       output = decodeAssumingUtf8(m_process.readAllStandardOutput());
     }
-    if (i.readStderr) {
+    if (i.readStderr || exitCode != 0) {
       err = decodeAssumingUtf8(m_process.readAllStandardError());
     }
     emit error(i.id, exitCode, output, err);

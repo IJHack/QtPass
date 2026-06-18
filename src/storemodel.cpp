@@ -215,7 +215,7 @@ auto StoreModel::mimeData(const QModelIndexList &indexes) const -> QMimeData * {
   dragAndDropInfoPasswordStore info;
 
   if (indexes.isEmpty())
-    return new QMimeData();
+    return nullptr;
   QByteArray encodedData;
   // only use the first, otherwise we should enable multiselection
   QModelIndex index = indexes.at(0);
