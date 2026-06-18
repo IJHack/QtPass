@@ -1488,6 +1488,7 @@ void MainWindow::showContextMenu(const QPoint &pos) {
  */
 void MainWindow::showBrowserContextMenu(const QPoint &pos) {
   QMenu *contextMenu = ui->textBrowser->createStandardContextMenu(pos);
+  contextMenu->setPalette(QApplication::palette());
   QPoint globalPos = ui->textBrowser->viewport()->mapToGlobal(pos);
 
   contextMenu->exec(globalPos);
