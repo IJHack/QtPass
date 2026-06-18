@@ -137,34 +137,36 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
           : "QLineEdit, QTextBrowser { border-style: none; background: "
             "transparent; }";
 
+  constexpr int fieldHeight = 26;
   if (s.hidePassword && trimmedField == QObject::tr("Password")) {
-    auto *line = new QLineEdit();
-    line->setObjectName(trimmedField);
-    line->setText(trimmedValue);
-    line->setReadOnly(true);
-    line->setStyleSheet(lineStyle);
-    line->setContentsMargins(0, 0, 0, 0);
-    line->setEchoMode(QLineEdit::Password);
-    auto *showButton = new QPushButtonShowPassword(line, m_widgetParent);
+    auto *passwordLineEdit = new QLineEdit();
+    passwordLineEdit->setObjectName(trimmedField);
+    passwordLineEdit->setText(trimmedValue);
+    passwordLineEdit->setReadOnly(true);
+    passwordLineEdit->setStyleSheet(lineStyle);
+    passwordLineEdit->setContentsMargins(0, 0, 0, 0);
+    passwordLineEdit->setEchoMode(QLineEdit::Password);
+    auto *showButton =
+        new QPushButtonShowPassword(passwordLineEdit, m_widgetParent);
     showButton->setStyleSheet(buttonStyle);
     showButton->setContentsMargins(0, 0, 0, 0);
     frame->layout()->addWidget(showButton);
-    frame->layout()->addWidget(line);
+    frame->layout()->addWidget(passwordLineEdit);
   } else {
-    auto *line = new QTextBrowser();
-    line->setOpenExternalLinks(true);
-    line->setOpenLinks(true);
-    line->setMaximumHeight(26);
-    line->setMinimumHeight(26);
-    line->setSizePolicy(
+    auto *contentTextBrowser = new QTextBrowser();
+    contentTextBrowser->setOpenExternalLinks(true);
+    contentTextBrowser->setOpenLinks(true);
+    contentTextBrowser->setMaximumHeight(fieldHeight);
+    contentTextBrowser->setMinimumHeight(fieldHeight);
+    contentTextBrowser->setSizePolicy(
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
-    line->setObjectName(trimmedField);
-    line->setText(
+    contentTextBrowser->setObjectName(trimmedField);
+    contentTextBrowser->setText(
         trimmedValue.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)"));
-    line->setReadOnly(true);
-    line->setStyleSheet(lineStyle);
-    line->setContentsMargins(0, 0, 0, 0);
-    frame->layout()->addWidget(line);
+    contentTextBrowser->setReadOnly(true);
+    contentTextBrowser->setStyleSheet(lineStyle);
+    contentTextBrowser->setContentsMargins(0, 0, 0, 0);
+    frame->layout()->addWidget(contentTextBrowser);
   }
 
   // Derive the border colour from the palette so it adapts to light/dark
