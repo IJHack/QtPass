@@ -68,11 +68,7 @@ Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
           static_cast<void (Executor::*)(int, int, const QString &,
                                          const QString &)>(&Executor::finished),
           this, &Pass::finished);
-
-  // This was previously using direct QProcess signals.
-  // The code now uses Executor instead of raw QProcess for better control.
-  // connect(&process, SIGNAL(error(QProcess::ProcessError)), this,
-  //        SIGNAL(error(QProcess::ProcessError)));
+  connect(&exec, &Executor::error, this, &Pass::finished);
 
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
   // Merge our vars into WSLENV rather than blindly appending a duplicate entry
