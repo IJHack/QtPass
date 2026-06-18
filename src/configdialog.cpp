@@ -899,7 +899,11 @@ auto ConfigDialog::isQrencodeAvailable() -> bool {
 #else
   QProcess which;
   which.start("which", QStringList() << "qrencode");
-  which.waitForFinished(2000);
+  if (!which.waitForFinished(2000)) {
+    which.kill();
+    which.waitForFinished(500);
+    return false;
+  }
   QtPassSettings::setQrencodeExecutable(
       which.readAllStandardOutput().trimmed());
   return which.exitCode() == 0;
