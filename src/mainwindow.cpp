@@ -1004,18 +1004,19 @@ void MainWindow::selectFirstFile() {
  * @return QModelIndex
  */
 auto MainWindow::firstFile(QModelIndex parentIndex) -> QModelIndex {
-  QModelIndex index = parentIndex;
   int numRows = proxyModel.rowCount(parentIndex);
   for (int row = 0; row < numRows; ++row) {
-    index = proxyModel.index(row, 0, parentIndex);
+    QModelIndex index = proxyModel.index(row, 0, parentIndex);
     if (model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
       return index;
     }
     if (proxyModel.hasChildren(index)) {
-      return firstFile(index);
+      QModelIndex childFile = firstFile(index);
+      if (childFile.isValid())
+        return childFile;
     }
   }
-  return index;
+  return QModelIndex();
 }
 
 /**
