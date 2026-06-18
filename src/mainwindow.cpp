@@ -1343,6 +1343,11 @@ void MainWindow::closeEvent(QCloseEvent *event) {
       QtPassSettings::setSize(size());
     }
     event->accept();
+    // A visible QSystemTrayIcon keeps the application alive after the last
+    // window closes, so quitOnLastWindowClosed never fires and the window
+    // merely vanishes into the tray. Quit explicitly so closing the window
+    // actually exits when "hide on close" is disabled.
+    QApplication::quit();
   }
 }
 
