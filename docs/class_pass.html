@@ -2045,10 +2045,11 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set or remove an environment variable. </p>
+<p>The <code class="param">key</code> must include a trailing '=' character (e.g. "FOO="). This convention anchors the lookup so that "FOO=" never accidentally matches "FOOBAR=". Callers are responsible for appending the '='; the function asserts and warns (but does not modify env) if the '=' is missing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>Variable name including trailing '='. </td></tr>
-    <tr><td class="paramname">value</td><td>New value; empty string removes the variable. </td></tr>
+    <tr><td class="paramname">key</td><td>Variable name with trailing '=' (e.g. "PASSWORD_STORE_DIR="). </td></tr>
+    <tr><td class="paramname">value</td><td>New value; an empty string removes the variable entirely. </td></tr>
   </table>
   </dd>
 </dl>

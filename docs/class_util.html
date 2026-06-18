@@ -120,7 +120,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:abfddcff8c37fbb33e86605e4fb7250db" id="r_abfddcff8c37fbb33e86605e4fb7250db"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abfddcff8c37fbb33e86605e4fb7250db">findPasswordStore</a> () -&gt; QString</td></tr>
 <tr class="memdesc:abfddcff8c37fbb33e86605e4fb7250db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the password store directory.  <br /></td></tr>
 <tr class="memitem:ab23a1afdcad63df9101660fd6e53b763" id="r_ab23a1afdcad63df9101660fd6e53b763"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab23a1afdcad63df9101660fd6e53b763">normalizeFolderPath</a> (const QString &amp;path) -&gt; QString</td></tr>
-<tr class="memdesc:ab23a1afdcad63df9101660fd6e53b763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure a folder path always ends with the native directory separator.  <br /></td></tr>
+<tr class="memdesc:ab23a1afdcad63df9101660fd6e53b763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure a folder path always ends with '/'.  <br /></td></tr>
 <tr class="memitem:ac8926b725ca51d6e68f3f383cfae478f" id="r_ac8926b725ca51d6e68f3f383cfae478f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac8926b725ca51d6e68f3f383cfae478f">configIsValid</a> (const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;s) -&gt; bool</td></tr>
 <tr class="memdesc:ac8926b725ca51d6e68f3f383cfae478f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify that the required configuration is complete.  <br /></td></tr>
 <tr class="memitem:a6cd77a6dfdb6fbbaacce27c15ba81220" id="r_a6cd77a6dfdb6fbbaacce27c15ba81220"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6cd77a6dfdb6fbbaacce27c15ba81220">getDir</a> (const QModelIndex &amp;index, bool forPass, const QFileSystemModel &amp;model, const <a class="el" href="class_store_model.html">StoreModel</a> &amp;storeModel, const QString &amp;passStore) -&gt; QString</td></tr>
@@ -261,7 +261,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Locate the password store directory. </p>
-<dl class="section return"><dt>Returns</dt><dd>QString Path to the password store, always ends with native directory separator. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>QString Path to the password store, always ends with '/'. </dd></dl>
 
 </div>
 </div>
@@ -454,14 +454,15 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Ensure a folder path always ends with the native directory separator. </p>
+<p>Ensure a folder path always ends with '/'. </p>
+<p>Qt normalises paths to forward slashes internally, so this function appends '/' unconditionally rather than the platform-native separator. Callers that need native separators can call QDir::toNativeSeparators() themselves.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>The folder path to normalize. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>QString Path with trailing separator added if missing. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>QString Path with a trailing '/' added if it was missing. </dd></dl>
 
 </div>
 </div>
