@@ -60,9 +60,10 @@ ImitatePass::~ImitatePass() {
   }
 }
 
-auto ImitatePass::pgit(const QString &path) const -> QString {
+auto ImitatePass::translatePathForWsl(const QString &path,
+                                      const QString &exe) const -> QString {
   QString normalizedPath = QDir::cleanPath(path);
-  if (!m_settings.gitExecutable.startsWith(QStringLiteral("wsl ")))
+  if (!exe.startsWith(QStringLiteral("wsl ")))
     return normalizedPath;
   QString wslPath;
   const int rc = Executor::executeBlocking(
@@ -72,16 +73,12 @@ auto ImitatePass::pgit(const QString &path) const -> QString {
   return (rc == 0 && !translated.isEmpty()) ? translated : normalizedPath;
 }
 
+auto ImitatePass::pgit(const QString &path) const -> QString {
+  return translatePathForWsl(path, m_settings.gitExecutable);
+}
+
 auto ImitatePass::pgpg(const QString &path) const -> QString {
-  QString normalizedPath = QDir::cleanPath(path);
-  if (!m_settings.gpgExecutable.startsWith(QStringLiteral("wsl ")))
-    return normalizedPath;
-  QString wslPath;
-  const int rc = Executor::executeBlocking(
-      QStringLiteral("wsl"), {QStringLiteral("wslpath"), normalizedPath},
-      &wslPath);
-  const QString translated = wslPath.trimmed();
-  return (rc == 0 && !translated.isEmpty()) ? translated : normalizedPath;
+  return translatePathForWsl(path, m_settings.gpgExecutable);
 }
 
 /**
@@ -469,35 +466,6 @@ auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
 }
 
 /**
- * @brief ImitatePass::removeDir delete folder recursive.
- * @param dirName which folder.
- * @return was removal successful?
- */
-auto ImitatePass::removeDir(const QString &dirName) -> bool {
-  bool result = true;
-  QDir dir(dirName);
-
-  if (dir.exists(dirName)) {
-    for (const QFileInfo &info :
-         dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden |
-                               QDir::AllDirs | QDir::Files,
-                           QDir::DirsFirst)) {
-      if (info.isDir()) {
-        result = removeDir(info.absoluteFilePath());
-      } else {
-        result = QFile::remove(info.absoluteFilePath());
-      }
-
-      if (!result) {
-        return result;
-      }
-    }
-    result = dir.rmdir(dirName);
-  }
-  return result;
-}
-
-/**
  * @brief ImitatePass::reencryptPath reencrypt all files under the chosen
  * directory
  *
@@ -767,6 +735,7 @@ void ImitatePass::reencryptPath(const QString &dir) {
         emit endReencryptPath();
         return;
       }
+      currentDir = QDir(gpgFiles.fileInfo().path());
     }
     QStringList actualKeys = getKeysFromFile(fileName);
     if (actualKeys != gpgId) {
@@ -1004,9 +973,8 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
 #ifdef QT_DEBUG
   dbg() << "Imitate Pass";
 #endif
-  static QString transactionOutput;
   PROCESS pid = transactionIsOver(static_cast<PROCESS>(id));
-  transactionOutput.append(out);
+  m_transactionOutput.append(out);
 
   if (exitCode == 0) {
     if (pid == INVALID) {
@@ -1025,8 +993,8 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
       pid = transactionIsOver(static_cast<PROCESS>(id));
     }
   }
-  Pass::finished(pid, exitCode, transactionOutput, err);
-  transactionOutput.clear();
+  Pass::finished(pid, exitCode, m_transactionOutput, err);
+  m_transactionOutput.clear();
 }
 
 /**
