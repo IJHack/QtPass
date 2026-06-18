@@ -72,9 +72,12 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   QString trimmedField = field.trimmed();
   QString trimmedValue = value.trimmed();
 
+  // Scope every rule to the widget type so the transparent background does not
+  // cascade into the field's standard context menu (a child QMenu), which would
+  // otherwise render transparent too.
   const QString buttonStyle =
-      "border-style: none; background: transparent; padding: 0; margin: 0; "
-      "icon-size: 16px; color: inherit;";
+      "QPushButton { border-style: none; background: transparent; padding: 0; "
+      "margin: 0; icon-size: 16px; color: inherit; }";
 
   // Combine the Copy button and the line edit in one widget
   auto *frame = new QFrame();
@@ -128,9 +131,10 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   // set the echo mode to password, if the field is "password"
   const QString lineStyle =
       s.useMonospace
-          ? "border-style: none; background: transparent; font-family: "
-            "monospace;"
-          : "border-style: none; background: transparent;";
+          ? "QLineEdit, QTextBrowser { border-style: none; background: "
+            "transparent; font-family: monospace; }"
+          : "QLineEdit, QTextBrowser { border-style: none; background: "
+            "transparent; }";
 
   if (s.hidePassword && trimmedField == QObject::tr("Password")) {
     auto *line = new QLineEdit();
