@@ -652,7 +652,7 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
         <location filename="../src/imitatepass.cpp" line="154"/>
         <location filename="../src/imitatepass.cpp" line="577"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Methwyd darllen allwedd amgryptio i&apos;w ddefnyddio, .gpg-id File ar goll neu annilys.</translation>
+        <translation>Methwyd darllen allwedd amgryptio i&apos;w defnyddio, ffeil .gpg-id ar goll neu annilys.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="322"/>
@@ -1806,7 +1806,7 @@ Nid yw cofnodion coch yn ddilys, ni fyddwch yn gallu amgryptio i&apos;r rhain.</
     <message>
         <location filename="../src/usersdialog.cpp" line="83"/>
         <source>Keylist missing</source>
-        <translation>Keylist ar goll</translation>
+        <translation>Rhestr allweddi ar goll</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="84"/>

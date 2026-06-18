@@ -706,7 +706,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="153"/>
         <location filename="../src/imitatepass.cpp" line="576"/>
         <source>Can not edit</source>
-        <translation>Can not edit</translation>
+        <translation>Cannot edit</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="154"/>
@@ -1546,7 +1546,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="153"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Operation timed out; re-enabling interface.</translation>
+        <translation>Operation timed out; re-enabling interface.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="359"/>
@@ -1556,12 +1556,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="886"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Content search uses POSIX basic regular expressions (pass grep).</translation>
+        <translation>Content search uses POSIX basic regular expressions (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="888"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Content search uses Perl-compatible regular expressions (PCRE).</translation>
+        <translation>Content search uses Perl-compatible regular expressions (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
@@ -1818,12 +1818,12 @@ Continue?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
         <location filename="../src/passworddisplaypanel.cpp" line="139"/>
         <source>Password</source>
-        <translation type="unfinished">Password</translation>
+        <translation>Password</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="117"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Open %1 in browser</translation>
+        <translation>Open %1 in browser</translation>
     </message>
 </context>
 <context>

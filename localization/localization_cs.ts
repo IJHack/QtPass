@@ -1469,7 +1469,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="153"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Operace vypršela; rozhraní se znovu aktivuje.</translation>
+        <translation>Operace vypršela; rozhraní se znovu aktivuje.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="359"/>
@@ -1479,22 +1479,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="886"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Hledání v obsahu používá základní regulární výrazy POSIX (pass grep).</translation>
+        <translation>Hledání v obsahu používá základní regulární výrazy POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="888"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Hledání v obsahu používá regulární výrazy kompatibilní s Perlem (PCRE).</translation>
+        <translation>Hledání v obsahu používá regulární výrazy kompatibilní s Perlem (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Neplatné jméno</translation>
+        <translation>Neplatné jméno</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1038"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Tento název by odkazoval mimo úložiště hesel. Zvolte prosím jiný název.</translation>
+        <translation>Tento název by odkazoval mimo úložiště hesel. Zvolte prosím jiný název.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1444"/>
@@ -1741,12 +1741,12 @@ Pokračovat?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
         <location filename="../src/passworddisplaypanel.cpp" line="139"/>
         <source>Password</source>
-        <translation type="unfinished">Heslo</translation>
+        <translation>Heslo</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="117"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Otevřít %1 v prohlížeči</translation>
+        <translation>Otevřít %1 v prohlížeči</translation>
     </message>
 </context>
 <context>

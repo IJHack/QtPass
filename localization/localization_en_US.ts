@@ -1512,12 +1512,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="886"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Content search uses POSIX basic regular expressions (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="888"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Content search uses Perl-compatible regular expressions (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="933"/>

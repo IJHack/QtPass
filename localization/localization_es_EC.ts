@@ -699,7 +699,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="390"/>
         <source>No signing key!</source>
-        <translation>¡Sin firma!</translation>
+        <translation>¡No hay clave de firma!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="391"/>
@@ -1441,7 +1441,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="1086"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nuevo archivo de contraseñas:
+(Se colocará en %1 )</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1444"/>
