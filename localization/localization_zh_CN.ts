@@ -1518,7 +1518,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="888"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation>内容搜索使用兼容 Perl 的正则表达式（PCRE）。</translation>
+        <translation>内容搜索使用兼容 Perl 的正则表达式（PCRE）.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
