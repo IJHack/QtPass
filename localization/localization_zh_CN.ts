@@ -91,7 +91,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
         <source>Select character set for password generation</source>
-        <translation>选择密码所用的字符集</translation>
+        <translation>选择密码所用的的字符集</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
