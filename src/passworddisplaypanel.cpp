@@ -25,6 +25,7 @@
 #include <QLineEdit>
 #include <QPalette>
 #include <QPushButton>
+#include <QRegularExpressionMatchIterator>
 #include <QTextBrowser>
 #include <QUrl>
 
@@ -164,8 +165,24 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     contentTextBrowser->setSizePolicy(
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
     contentTextBrowser->setObjectName(trimmedField);
-    contentTextBrowser->setText(
-        trimmedValue.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)"));
+    {
+      QString linkedText;
+      int lastIndex = 0;
+      const QRegularExpression re = Util::protocolRegex();
+      QRegularExpressionMatchIterator it = re.globalMatch(trimmedValue);
+      while (it.hasNext()) {
+        const QRegularExpressionMatch match = it.next();
+        const int start = match.capturedStart(0);
+        const int end = match.capturedEnd(0);
+        linkedText +=
+            trimmedValue.mid(lastIndex, start - lastIndex).toHtmlEscaped();
+        const QString escapedUrl = match.captured(0).toHtmlEscaped();
+        linkedText += QStringLiteral("<a href=\"%1\">%1</a>").arg(escapedUrl);
+        lastIndex = end;
+      }
+      linkedText += trimmedValue.mid(lastIndex).toHtmlEscaped();
+      contentTextBrowser->setText(linkedText);
+    }
     contentTextBrowser->setReadOnly(true);
     contentTextBrowser->setStyleSheet(lineStyle);
     contentTextBrowser->setContentsMargins(0, 0, 0, 0);
