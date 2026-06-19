@@ -1534,12 +1534,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>Invalid name</source>
-        <translation>Ugyldigt navn</translation>
+        <translation type="unfinished">Ugyldigt navn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1038"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation>Det navn peger uden for adgangskodelageret. Vælg venligst et andet navn.</translation>
+        <translation type="unfinished">Det navn peger uden for adgangskodelageret. Vælg venligst et andet navn.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1444"/>
