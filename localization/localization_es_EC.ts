@@ -699,7 +699,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="390"/>
         <source>No signing key!</source>
-        <translation>¡No hay clave de firma!</translation>
+        <translation>¡Sin firma!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="391"/>
