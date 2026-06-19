@@ -115,7 +115,8 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     urlButton->setIcon(QIcon::fromTheme(QStringLiteral("applications-internet"),
                                         QIcon(":/icons/open-url.svg")));
     // Escape only for tooltip rendering (rich-text safe display). The launched
-    // URL must remain the original validated value; HTML escaping would change it.
+    // URL must remain the original validated value; HTML escaping would change
+    // it.
     urlButton->setToolTip(
         QObject::tr("Open %1 in browser").arg(trimmedValue.toHtmlEscaped()));
     urlButton->setStyleSheet(buttonStyle);
