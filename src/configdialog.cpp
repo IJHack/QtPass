@@ -98,7 +98,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     useSelection(s.useSelection);
   }
 
-  if (!Util::configIsValid()) {
+  if (!Util::configIsValid(s)) {
     // Show Programs tab, which is likely
     // what the user needs to fix now.
     ui->tabWidget->setCurrentIndex(1);
@@ -261,6 +261,8 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
       for (int j = 0; j < ui->profileTable->columnCount(); j++) {
         QTableWidgetItem *_item = ui->profileTable->item(i, j);
 
+        if (!_item)
+          continue;
         if (_item->text().isEmpty() && j != 2) {
           _item->setBackground(Qt::red);
           _item->setToolTip(tr("This field is required"));
@@ -490,7 +492,7 @@ void ConfigDialog::on_toolButtonGpg_clicked() {
  * @brief ConfigDialog::on_pushButtonGenerateKey_clicked open keygen dialog.
  */
 void ConfigDialog::on_pushButtonGenerateKey_clicked() {
-  KeygenDialog d(this);
+  KeygenDialog d(ui->gpgPath->text(), this);
   d.exec();
 }
 
@@ -785,14 +787,15 @@ void ConfigDialog::initializeNewProfiles(
 
     // Show user selection dialog for GPG recipients
     // UsersDialog will run pass init when accepted
-    UsersDialog usersDialog(cleanPath, this);
+    const AppSettings settings = QtPassSettings::load();
+    UsersDialog usersDialog(QtPassSettings::getPass(), settings, cleanPath,
+                            this);
     usersDialog.setWindowTitle(tr("Select recipients for %1").arg(name));
     const int result = usersDialog.exec();
 
     // Use per-profile useGit setting, falling back to global if not set
     QString useGitStr = newProfiles.value(name).value("useGit");
-    bool useGit =
-        useGitStr.isEmpty() ? QtPassSettings::isUseGit() : useGitStr == "true";
+    bool useGit = useGitStr.isEmpty() ? settings.useGit : useGitStr == "true";
 
     if (result == QDialog::Accepted && useGit) {
       QtPassSettings::getPass()->GitInit();
@@ -858,7 +861,7 @@ void ConfigDialog::on_deleteButton_clicked() {
     selectedRows.insert(item->row());
   // get a list, and sort it big to small
   QList<int> rows = selectedRows.values();
-  std::sort(rows.begin(), rows.end());
+  std::sort(rows.begin(), rows.end(), std::greater<>());
   // now actually do the removing:
   foreach (int row, rows)
     ui->profileTable->removeRow(row);
@@ -896,7 +899,11 @@ auto ConfigDialog::isQrencodeAvailable() -> bool {
 #else
   QProcess which;
   which.start("which", QStringList() << "qrencode");
-  which.waitForFinished();
+  if (!which.waitForFinished(2000)) {
+    which.kill();
+    which.waitForFinished(500);
+    return false;
+  }
   QtPassSettings::setQrencodeExecutable(
       which.readAllStandardOutput().trimmed());
   return which.exitCode() == 0;
@@ -919,7 +926,7 @@ auto ConfigDialog::isPassOtpAvailable() -> bool {
  * @brief ConfigDialog::wizard first-time use wizard.
  */
 void ConfigDialog::wizard() {
-  (void)Util::configIsValid();
+  (void)Util::configIsValid(QtPassSettings::load());
   on_autodetectButton_clicked();
 
   if (!checkGpgExistence()) {
@@ -996,7 +1003,7 @@ auto ConfigDialog::checkSecretKeys() -> bool {
 #endif
 
   if ((gpg.startsWith("wsl ") || QFile(gpg).exists()) && names.empty()) {
-    KeygenDialog d(this);
+    KeygenDialog d(gpg, this);
     return d.exec();
   }
   return true;

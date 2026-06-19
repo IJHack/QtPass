@@ -12,6 +12,7 @@
  */
 
 #include "util.h"
+#include "appsettings.h"
 #include "executor.h"
 #include <QDebug>
 #include <QDir>
@@ -24,7 +25,6 @@
 #else
 #include <sys/time.h>
 #endif
-#include "qtpasssettings.h"
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -105,11 +105,10 @@ auto Util::findPasswordStore() -> QString {
 
 auto Util::normalizeFolderPath(const QString &path) -> QString {
   QString normalizedPath = path;
-  if (!normalizedPath.endsWith("/") &&
-      !normalizedPath.endsWith(QDir::separator())) {
-    normalizedPath += QDir::separator();
+  if (!normalizedPath.endsWith('/')) {
+    normalizedPath += '/';
   }
-  return QDir::toNativeSeparators(normalizedPath);
+  return normalizedPath;
 }
 
 /**
@@ -211,23 +210,22 @@ auto Util::findBinaryInPath(const QString &binary) -> QString {
 /**
  * @brief Checks whether the current QtPass configuration is valid.
  * @example
- * bool result = Util::configIsValid();
+ * AppSettings s = QtPassSettings::load();
+ * bool result = Util::configIsValid(s);
  * std::cout << std::boolalpha << result << std::endl; // Expected output: true
  * or false
  *
+ * @param s Application settings snapshot to validate.
  * @return bool - True if the configuration file exists and the required
  * executable is available; otherwise false.
  */
-auto Util::configIsValid() -> bool {
-  const QString configFilePath =
-      QDir(QtPassSettings::getPassStore()).filePath(".gpg-id");
+auto Util::configIsValid(const AppSettings &s) -> bool {
+  const QString configFilePath = QDir(s.passStore).filePath(".gpg-id");
   if (!QFile(configFilePath).exists()) {
     return false;
   }
 
-  const QString executable = QtPassSettings::isUsePass()
-                                 ? QtPassSettings::getPassExecutable()
-                                 : QtPassSettings::getGpgExecutable();
+  const QString executable = s.usePass ? s.passExecutable : s.gpgExecutable;
 
   if (executable.startsWith(QStringLiteral("wsl "))) {
     // Probe WSL once per session — availability doesn't change at runtime
@@ -251,26 +249,24 @@ auto Util::configIsValid() -> bool {
  * @brief Returns a directory path derived from a model index, optionally
  * relative to the pass store.
  * @example
- * QString result = Util::getDir(index, true, model, storeModel);
+ * QString result = Util::getDir(index, true, model, storeModel, passStore);
  * std::cout << result.toStdString() << std::endl; // Expected output: relative
  * directory path with trailing separator
  *
- * @param QModelIndex &index - Source index used to resolve the file or
- * directory path.
- * @param bool forPass - If true, returns a path relative to the pass store;
+ * @param index Source index used to resolve the file or directory path.
+ * @param forPass If true, returns a path relative to the pass store;
  * otherwise returns an absolute path.
- * @param QFileSystemModel &model - File system model used to obtain file
- * information.
- * @param StoreModel &storeModel - Proxy model used to map the provided index to
- * the source model.
+ * @param model File system model used to obtain file information.
+ * @param storeModel Proxy model used to map the provided index to the source
+ * model.
+ * @param passStore Absolute path to the password store root directory.
  * @return QString - The resolved directory path, always ending with the
  * platform's directory separator.
  */
 auto Util::getDir(const QModelIndex &index, bool forPass,
-                  const QFileSystemModel &model, const StoreModel &storeModel)
-    -> QString {
-  QString abspath =
-      QDir(QtPassSettings::getPassStore()).absolutePath() + QDir::separator();
+                  const QFileSystemModel &model, const StoreModel &storeModel,
+                  const QString &passStore) -> QString {
+  QString abspath = QDir(passStore).absolutePath() + QDir::separator();
   if (!index.isValid()) {
     return forPass ? "" : abspath;
   }

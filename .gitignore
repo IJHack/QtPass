@@ -11,6 +11,7 @@ qtpass.xcodeproj/xcuserdata/*
 qtpass.xcworkspace/xcuserdata/*
 .DS_Store
 .qmake.stash
+.tmp/
 *.o
 moc_*.cpp
 qrc_*.cpp
@@ -40,6 +41,9 @@ tests/auto/importkeydialog/tst_importkeydialog
 tests/auto/keygendialog/tst_keygendialog
 tests/auto/trayicon/tst_trayicon
 tests/auto/configdialog/tst_configdialog
+tests/auto/mainwindow/tst_mainwindow
+tests/auto/profileinit/tst_profileinit
+tests/auto/userinfo/tst_userinfo
 tests/auto/locale/tst_locale
 tests/auto/locale/.qm/
 tests/auto/locale/qmake_qmake_qm_files.qrc

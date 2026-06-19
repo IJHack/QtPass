@@ -149,7 +149,7 @@ auto main(int argc, char *argv[]) -> int {
   // Probe / set SSH_AUTH_SOCK before any subprocess runs (issue #543).
   // GUI launchers don't inherit shell-set env vars, so users with
   // gpg-agent's SSH support get failed git push/pull until this fires.
-  SshAuthSock::initialise(QtPassSettings::getSshAuthSockOverride());
+  SshAuthSock::initialise(QtPassSettings::load().sshAuthSockOverride);
 
   // Setup and load translator for localization.
   //

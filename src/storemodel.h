@@ -17,6 +17,7 @@
  * - Supporting drag and drop operations
  * - Custom sorting (directories before files)
  */
+class Pass;
 class QFileSystemModel;
 
 /**
@@ -67,6 +68,7 @@ class StoreModel : public QSortFilterProxyModel {
 private:
   QFileSystemModel *fs;
   QString store;
+  Pass *m_pass{nullptr};
 
   auto parseDropData(const QMimeData *data,
                      dragAndDropInfoPasswordStore *outInfo) -> bool;
@@ -81,14 +83,20 @@ private:
    * @param force Overwrite an existing destination.
    * @return true once the operation has been dispatched.
    */
-  static auto performDrop(const QString &cleanedSrc, const QString &cleanedDest,
-                          Qt::DropAction action, bool force) -> bool;
+  auto performDrop(const QString &cleanedSrc, const QString &cleanedDest,
+                   Qt::DropAction action, bool force) -> bool;
 
 public:
   /**
    * @brief Construct a StoreModel.
    */
   StoreModel();
+
+  /**
+   * @brief Inject the Pass backend for drag-and-drop Move/Copy operations.
+   * @param pass Pass backend instance; must outlive this StoreModel.
+   */
+  void setPass(Pass *pass);
 
   /**
    * @brief Filter whether a row should be displayed.

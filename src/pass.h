@@ -228,23 +228,29 @@ public:
   /**
    * @brief Get .gpg-id file path for a password file.
    * @param for_file Path to password file.
+   * @param passStore Root directory of the password store.
    * @return Path to .gpg-id file.
    */
-  static auto getGpgIdPath(const QString &for_file) -> QString;
+  static auto getGpgIdPath(const QString &for_file, const QString &passStore)
+      -> QString;
   /**
    * @brief Get list of recipients for a password file.
    * @param for_file Path to password file.
+   * @param passStore Root directory of the password store.
    * @return List of recipient key IDs.
    */
-  static auto getRecipientList(const QString &for_file) -> QStringList;
+  static auto getRecipientList(const QString &for_file,
+                               const QString &passStore) -> QStringList;
   /**
    * @brief Get recipients as string.
    * @param for_file Path to password file.
+   * @param passStore Root directory of the password store.
    * @param separator Separator between recipients.
    * @param count Pointer to store recipient count.
    * @return List of recipient key IDs.
    */
   static auto getRecipientString(const QString &for_file,
+                                 const QString &passStore,
                                  const QString &separator = " ",
                                  int *count = nullptr) -> QStringList;
 
@@ -275,8 +281,14 @@ protected:
   auto boundedRandom(quint32 bound) -> quint32;
   /**
    * @brief Set or remove an environment variable.
-   * @param key Variable name including trailing '='.
-   * @param value New value; empty string removes the variable.
+   *
+   * The @p key must include a trailing '=' character (e.g. "FOO="). This
+   * convention anchors the lookup so that "FOO=" never accidentally matches
+   * "FOOBAR=". Callers are responsible for appending the '='; the function
+   * asserts and warns (but does not modify env) if the '=' is missing.
+   *
+   * @param key Variable name with trailing '=' (e.g. "PASSWORD_STORE_DIR=").
+   * @param value New value; an empty string removes the variable entirely.
    */
   void setEnvVar(const QString &key, const QString &value);
 

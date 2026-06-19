@@ -305,9 +305,17 @@ void tst_integration::initTestCase() {
   qputenv("GNUPGHOME", m_gnupgHome.path().toLocal8Bit());
   QtPassSettings::getInstance()->setValue(SettingsConstants::gpgHome,
                                           m_gnupgHome.path());
-  QtPassSettings::setGpgExecutable(m_gpgExe);
-  m_originalPassSigningKey = QtPassSettings::getPassSigningKey();
-  QtPassSettings::setPassSigningKey(QString());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
+  m_originalPassSigningKey = QtPassSettings::load().passSigningKey;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey = QString();
+    QtPassSettings::save(s);
+  }
   qRegisterMetaType<GrepResults>("GrepResults");
   qRegisterMetaType<GrepResults>(
       "QList<QPair<QString,QStringList>>"); // Qt5 fallback
@@ -315,7 +323,11 @@ void tst_integration::initTestCase() {
 
 void tst_integration::cleanupTestCase() {
   // Restore original pass signing key
-  QtPassSettings::setPassSigningKey(m_originalPassSigningKey);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey = m_originalPassSigningKey;
+    QtPassSettings::save(s);
+  }
 
   // Kill any gpg-agent started in our temporary homedir so it doesn't linger.
   QProcess killer;
@@ -553,17 +565,25 @@ void tst_integration::imitatePass_nestedDirectoryInsertAndShow() {
 }
 
 namespace {
-// RAII guard to ensure QtPassSettings::setUseGit is restored on any exit path
+// RAII guard to ensure useGit is restored on any exit path
 struct RestoreUseGit {
   bool orig;
   RestoreUseGit() : orig(QtPassSettings::isUseGit()) {}
-  ~RestoreUseGit() { QtPassSettings::setUseGit(orig); }
+  ~RestoreUseGit() {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = orig;
+    QtPassSettings::save(s);
+  }
 };
 } // namespace
 
 void tst_integration::imitatePass_editExistingEntry() {
   RestoreUseGit restoreUseGit;
-  QtPassSettings::setUseGit(false); // Ensure git is off for this test
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false; // Ensure git is off for this test
+    QtPassSettings::save(s);
+  }
 
   QTemporaryDir storeDir;
   ImitatePass pass;
@@ -609,8 +629,12 @@ void tst_integration::imitatePass_gitInitAndCommit() {
 
   RestoreUseGit restoreUseGit;
 
-  QtPassSettings::setGitExecutable(gitExe);
-  QtPassSettings::setUseGit(true);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gitExecutable = gitExe;
+    s.useGit = true;
+    QtPassSettings::save(s);
+  }
 
   QTemporaryDir storeDir;
   ImitatePass pass;
@@ -680,8 +704,12 @@ void tst_integration::realPass_insertAndShow() {
   QVERIFY(storeDir.isValid());
 
   QtPassSettings::setPassStore(storeDir.path());
-  QtPassSettings::setPassExecutable(passExe);
-  QtPassSettings::setGpgExecutable(m_gpgExe);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
   QtPassSettings::setUsePass(true);
 
   // Initialise the store via `pass init`.
@@ -721,8 +749,12 @@ void tst_integration::realPass_insertAndGrep() {
   QVERIFY(storeDir.isValid());
 
   QtPassSettings::setPassStore(storeDir.path());
-  QtPassSettings::setPassExecutable(passExe);
-  QtPassSettings::setGpgExecutable(m_gpgExe);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
   QtPassSettings::setUsePass(true);
 
   QProcess initProc;
@@ -777,8 +809,12 @@ void tst_integration::imitatePass_otpGenerate() {
   QVERIFY(storeDir.isValid());
 
   QtPassSettings::setPassStore(storeDir.path());
-  QtPassSettings::setPassExecutable(passExe);
-  QtPassSettings::setGpgExecutable(m_gpgExe);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
   QtPassSettings::setUsePass(true);
 
   QProcessEnvironment env = QProcessEnvironment::systemEnvironment();

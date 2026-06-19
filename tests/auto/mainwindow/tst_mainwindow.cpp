@@ -73,9 +73,10 @@ void tst_mainwindow::initTestCase() {
 
   // Save original settings before modifying them
   m_savedPassStore = QtPassSettings::getPassStore();
-  m_savedUsePass = QtPassSettings::isUsePass();
   m_savedShowProcessOutput = QtPassSettings::isShowProcessOutput();
-  m_savedGpgExecutable = QtPassSettings::getGpgExecutable();
+  const AppSettings savedSettings = QtPassSettings::load();
+  m_savedUsePass = savedSettings.usePass;
+  m_savedGpgExecutable = savedSettings.gpgExecutable;
 
   // Point QtPassSettings at the temp store and use gpg (not pass) mode so
   // configIsValid() only requires the .gpg-id file + a gpg binary.
@@ -93,19 +94,31 @@ void tst_mainwindow::initTestCase() {
     m_gpgPath = Util::findBinaryInPath(QStringLiteral("gpg"));
   if (m_gpgPath.isEmpty())
     QSKIP("gpg not available — skipping MainWindow construction tests");
-  QtPassSettings::setGpgExecutable(m_gpgPath);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = m_gpgPath;
+    QtPassSettings::save(s);
+  }
 }
 
 void tst_mainwindow::init() {
   // Re-apply store settings in case a previous test modified them.
   QtPassSettings::setPassStore(QDir::cleanPath(m_storeDir.path()));
   QtPassSettings::setUsePass(false);
-  QtPassSettings::setShowProcessOutput(true);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.showProcessOutput = true;
+    QtPassSettings::save(s);
+  }
   // Re-apply gpg path: initExecutables() inside the constructor overwrites
   // the setting to findBinaryInPath("gpg2"), which is empty on systems where
   // only "gpg" exists. Setting it here ensures configIsValid() sees a valid
   // executable and does not fall back to the blocking config() dialog.
-  QtPassSettings::setGpgExecutable(m_gpgPath);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = m_gpgPath;
+    QtPassSettings::save(s);
+  }
   m_window.reset(new MainWindow);
 }
 
@@ -117,8 +130,16 @@ void tst_mainwindow::cleanupTestCase() {
   // scope).
   QtPassSettings::setPassStore(m_savedPassStore);
   QtPassSettings::setUsePass(m_savedUsePass);
-  QtPassSettings::setShowProcessOutput(m_savedShowProcessOutput);
-  QtPassSettings::setGpgExecutable(m_savedGpgExecutable);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.showProcessOutput = m_savedShowProcessOutput;
+    QtPassSettings::save(s);
+  }
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = m_savedGpgExecutable;
+    QtPassSettings::save(s);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -253,7 +274,9 @@ void tst_mainwindow::onProcessOutputAppendsToPanel() {
  *        (isShowProcessOutput == false).
  */
 void tst_mainwindow::onProcessOutputSkippedWhenPanelHidden() {
-  QtPassSettings::setShowProcessOutput(false);
+  AppSettings s = QtPassSettings::load();
+  s.showProcessOutput = false;
+  QtPassSettings::save(s);
 
   auto *outputEdit =
       m_window->findChild<QTextEdit *>(QStringLiteral("processOutputEdit"));

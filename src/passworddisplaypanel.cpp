@@ -51,9 +51,10 @@ void PasswordDisplayPanel::displayFields(const QString &password,
     // The password is hidden in addField when needed.
     addField(0, QObject::tr("Password"), password, s);
   }
-  for (int j = 0; j < namedValues.length(); ++j) {
-    const NamedValue &nv = namedValues.at(j);
-    addField(j + 1, nv.name, nv.value, s);
+  int position = 1;
+  for (const NamedValue &nv : namedValues) {
+    addField(position, nv.name, nv.value, s);
+    ++position;
   }
   m_container->setSpacing(m_grid->count() == 0 ? 0 : 6);
 }
@@ -72,16 +73,19 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   QString trimmedField = field.trimmed();
   QString trimmedValue = value.trimmed();
 
+  // Scope every rule to the widget type so the transparent background does not
+  // cascade into the field's standard context menu (a child QMenu), which would
+  // otherwise render transparent too.
   const QString buttonStyle =
-      "border-style: none; background: transparent; padding: 0; margin: 0; "
-      "icon-size: 16px; color: inherit;";
+      "QPushButton { border-style: none; background: transparent; padding: 0; "
+      "margin: 0; icon-size: 16px; color: inherit; }";
 
   // Combine the Copy button and the line edit in one widget
   auto *frame = new QFrame();
-  QLayout *ly = new QHBoxLayout();
-  ly->setContentsMargins(5, 2, 2, 2);
-  ly->setSpacing(0);
-  frame->setLayout(ly);
+  QLayout *frameLayout = new QHBoxLayout();
+  frameLayout->setContentsMargins(5, 2, 2, 2);
+  frameLayout->setSpacing(0);
+  frame->setLayout(frameLayout);
   if (s.clipBoardType != Enums::CLIPBOARD_NEVER) {
     auto *fieldLabel =
         new QPushButtonWithClipboard(trimmedValue, m_widgetParent);
@@ -128,38 +132,41 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   // set the echo mode to password, if the field is "password"
   const QString lineStyle =
       s.useMonospace
-          ? "border-style: none; background: transparent; font-family: "
-            "monospace;"
-          : "border-style: none; background: transparent;";
+          ? "QLineEdit, QTextBrowser { border-style: none; background: "
+            "transparent; font-family: monospace; }"
+          : "QLineEdit, QTextBrowser { border-style: none; background: "
+            "transparent; }";
 
+  constexpr int fieldHeight = 26;
   if (s.hidePassword && trimmedField == QObject::tr("Password")) {
-    auto *line = new QLineEdit();
-    line->setObjectName(trimmedField);
-    line->setText(trimmedValue);
-    line->setReadOnly(true);
-    line->setStyleSheet(lineStyle);
-    line->setContentsMargins(0, 0, 0, 0);
-    line->setEchoMode(QLineEdit::Password);
-    auto *showButton = new QPushButtonShowPassword(line, m_widgetParent);
+    auto *passwordLineEdit = new QLineEdit();
+    passwordLineEdit->setObjectName(trimmedField);
+    passwordLineEdit->setText(trimmedValue);
+    passwordLineEdit->setReadOnly(true);
+    passwordLineEdit->setStyleSheet(lineStyle);
+    passwordLineEdit->setContentsMargins(0, 0, 0, 0);
+    passwordLineEdit->setEchoMode(QLineEdit::Password);
+    auto *showButton =
+        new QPushButtonShowPassword(passwordLineEdit, m_widgetParent);
     showButton->setStyleSheet(buttonStyle);
     showButton->setContentsMargins(0, 0, 0, 0);
     frame->layout()->addWidget(showButton);
-    frame->layout()->addWidget(line);
+    frame->layout()->addWidget(passwordLineEdit);
   } else {
-    auto *line = new QTextBrowser();
-    line->setOpenExternalLinks(true);
-    line->setOpenLinks(true);
-    line->setMaximumHeight(26);
-    line->setMinimumHeight(26);
-    line->setSizePolicy(
+    auto *contentTextBrowser = new QTextBrowser();
+    contentTextBrowser->setOpenExternalLinks(true);
+    contentTextBrowser->setOpenLinks(true);
+    contentTextBrowser->setMaximumHeight(fieldHeight);
+    contentTextBrowser->setMinimumHeight(fieldHeight);
+    contentTextBrowser->setSizePolicy(
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
-    line->setObjectName(trimmedField);
-    trimmedValue.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)");
-    line->setText(trimmedValue);
-    line->setReadOnly(true);
-    line->setStyleSheet(lineStyle);
-    line->setContentsMargins(0, 0, 0, 0);
-    frame->layout()->addWidget(line);
+    contentTextBrowser->setObjectName(trimmedField);
+    contentTextBrowser->setText(
+        trimmedValue.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)"));
+    contentTextBrowser->setReadOnly(true);
+    contentTextBrowser->setStyleSheet(lineStyle);
+    contentTextBrowser->setContentsMargins(0, 0, 0, 0);
+    frame->layout()->addWidget(contentTextBrowser);
   }
 
   // Derive the border colour from the palette so it adapts to light/dark

@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "usersdialog.h"
 #include "importkeydialog.h"
+#include "pass.h"
 #include "qtpasssettings.h"
 #include "ui_usersdialog.h"
 #include <QApplication>
@@ -22,12 +23,17 @@
 #endif
 /**
  * @brief UsersDialog::UsersDialog basic constructor
+ * @param pass Active Pass backend.
+ * @param s Application settings snapshot.
  * @param dir Password directory
  * @param parent
  */
-UsersDialog::UsersDialog(QString dir, QWidget *parent)
-    : QDialog(parent), ui(new Ui::UsersDialog), m_dir(std::move(dir)) {
-
+UsersDialog::UsersDialog(Pass *pass, const AppSettings &s, QString dir,
+                         QWidget *parent)
+    : QDialog(parent), ui(new Ui::UsersDialog), m_pass(pass),
+      m_passStore(s.passStore), m_gpgExe(s.gpgExecutable),
+      m_dir(std::move(dir)) {
+  Q_ASSERT(pass);
   ui->setupUi(this);
 
   restoreDialogState();
@@ -72,7 +78,7 @@ void UsersDialog::restoreDialogState() {
 }
 
 auto UsersDialog::loadGpgKeys() -> bool {
-  QList<UserInfo> users = QtPassSettings::getPass()->listKeys();
+  QList<UserInfo> users = m_pass->listKeys();
   if (users.isEmpty()) {
     QMessageBox::critical(parentWidget(), tr("Keylist missing"),
                           tr("Could not fetch list of available GPG keys"));
@@ -87,7 +93,7 @@ auto UsersDialog::loadGpgKeys() -> bool {
 }
 
 void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
-  QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
+  QList<UserInfo> secret_keys = m_pass->listKeys("", true);
   QSet<QString> secretKeyIds;
   for (const UserInfo &sec : secret_keys) {
     secretKeyIds.insert(sec.key_id);
@@ -101,11 +107,10 @@ void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
 
 void UsersDialog::loadRecipients() {
   int count = 0;
-  QStringList recipients = QtPassSettings::getPass()->getRecipientString(
-      m_dir.isEmpty() ? "" : m_dir, " ", &count);
+  QStringList recipients = Pass::getRecipientString(
+      m_dir.isEmpty() ? "" : m_dir, m_passStore, " ", &count);
 
-  QList<UserInfo> selectedUsers =
-      QtPassSettings::getPass()->listKeys(recipients);
+  QList<UserInfo> selectedUsers = m_pass->listKeys(recipients);
   QSet<QString> selectedKeyIds;
   for (const UserInfo &sel : selectedUsers) {
     selectedKeyIds.insert(sel.key_id);
@@ -117,13 +122,12 @@ void UsersDialog::loadRecipients() {
   }
 
   if (count > selectedUsers.size()) {
-    QStringList allRecipients = QtPassSettings::getPass()->getRecipientList(
-        m_dir.isEmpty() ? "" : m_dir);
+    QStringList allRecipients =
+        Pass::getRecipientList(m_dir.isEmpty() ? "" : m_dir, m_passStore);
 
     // Use bulk lookup to resolve all recipients at once (single gpg call)
     // This preserves the original email/UID resolution behavior
-    QList<UserInfo> resolvedKeys =
-        QtPassSettings::getPass()->listKeys(allRecipients);
+    QList<UserInfo> resolvedKeys = m_pass->listKeys(allRecipients);
     // Track resolved recipients by their resolved key_id
     QSet<QString> resolvedKeyIds;
     for (const UserInfo &key : resolvedKeys) {
@@ -167,7 +171,7 @@ UsersDialog::~UsersDialog() { delete ui; }
  * @brief UsersDialog::accept
  */
 void UsersDialog::accept() {
-  QtPassSettings::getPass()->Init(m_dir, m_userList);
+  m_pass->Init(m_dir, m_userList);
 
   QDialog::accept();
 }
@@ -358,7 +362,7 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter) {
 void UsersDialog::on_checkBox_clicked() { populateList(ui->lineEdit->text()); }
 
 void UsersDialog::on_importKeyButton_clicked() {
-  ImportKeyDialog dialog(QtPassSettings::getGpgExecutable(), this);
+  ImportKeyDialog dialog(m_gpgExe, this);
   if (dialog.exec() != QDialog::Accepted) {
     return;
   }

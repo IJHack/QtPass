@@ -67,6 +67,8 @@ void tst_settings::initTestCase() {
   m_isPortableMode = QFile::exists(portableIni);
 
   if (m_isPortableMode) {
+    // Backup FIRST so the restored file contains the true original user config,
+    // not the post-reset state written below.
     QtPassSettings::getInstance()->sync();
     QString settingsFile = QtPassSettings::getInstance()->fileName();
     m_settingsBackupPath = settingsFile + ".bak";
@@ -80,6 +82,15 @@ void tst_settings::initTestCase() {
     qWarning() << "Non-portable mode detected: tests may modify persistent "
                   "user settings (e.g. Windows registry). For an isolated "
                   "run, drop a qtpass.ini next to the test binary.";
+  }
+
+  // Reset password configuration to structural defaults so
+  // getPasswordConfigurationDefault() passes even after a prior run that wrote
+  // non-default values to persistent (non-portable) settings.
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passwordConfiguration = PasswordConfiguration{};
+    QtPassSettings::save(s);
   }
 }
 
@@ -111,17 +122,27 @@ void tst_settings::getPasswordConfigurationDefault() {
 }
 
 void tst_settings::setAndGetPasswordConfiguration() {
+  const PasswordConfiguration saved =
+      QtPassSettings::load().passwordConfiguration;
+
   PasswordConfiguration config;
   config.length = 20;
   config.selected = PasswordConfiguration::ALPHABETICAL;
   config.Characters[PasswordConfiguration::CUSTOM] = "abc";
 
-  QtPassSettings::setPasswordConfiguration(config);
+  AppSettings toSave = QtPassSettings::load();
+  toSave.passwordConfiguration = config;
+  QtPassSettings::save(toSave);
 
   PasswordConfiguration readConfig = QtPassSettings::getPasswordConfiguration();
   QCOMPARE(readConfig.length, 20);
   QVERIFY2(readConfig.selected == PasswordConfiguration::ALPHABETICAL,
            "Password config should be ALPHABETICAL");
+
+  // Restore to avoid polluting subsequent test runs
+  toSave = QtPassSettings::load();
+  toSave.passwordConfiguration = saved;
+  QtPassSettings::save(toSave);
 }
 
 void tst_settings::getProfilesEmpty() {
@@ -178,60 +199,40 @@ void tst_settings::setAndGetPassStore() {
 namespace {
 struct BoolSetting {
   const char *name;
-  void (*setter)(const bool &);
-  bool (*getter)(const bool &);
+  bool AppSettings::*field;
 };
 
 const BoolSetting boolSettings[] = {
-    {"usePass", QtPassSettings::setUsePass, QtPassSettings::isUsePass},
-    {"useGit", QtPassSettings::setUseGit, QtPassSettings::isUseGit},
-    {"useOtp", QtPassSettings::setUseOtp, QtPassSettings::isUseOtp},
-    {"useTrayIcon", QtPassSettings::setUseTrayIcon,
-     QtPassSettings::isUseTrayIcon},
-    {"usePwgen", QtPassSettings::setUsePwgen, QtPassSettings::isUsePwgen},
-    {"hidePassword", QtPassSettings::setHidePassword,
-     QtPassSettings::isHidePassword},
-    {"hideContent", QtPassSettings::setHideContent,
-     QtPassSettings::isHideContent},
-    {"useSelection", QtPassSettings::setUseSelection,
-     QtPassSettings::isUseSelection},
-    {"useAutoclear", QtPassSettings::setUseAutoclear,
-     QtPassSettings::isUseAutoclear},
-    {"useMonospace", QtPassSettings::setUseMonospace,
-     QtPassSettings::isUseMonospace},
-    {"noLineWrapping", QtPassSettings::setNoLineWrapping,
-     QtPassSettings::isNoLineWrapping},
-    {"addGPGId", QtPassSettings::setAddGPGId, QtPassSettings::isAddGPGId},
-    {"avoidCapitals", QtPassSettings::setAvoidCapitals,
-     QtPassSettings::isAvoidCapitals},
-    {"avoidNumbers", QtPassSettings::setAvoidNumbers,
-     QtPassSettings::isAvoidNumbers},
-    {"lessRandom", QtPassSettings::setLessRandom, QtPassSettings::isLessRandom},
-    {"useSymbols", QtPassSettings::setUseSymbols, QtPassSettings::isUseSymbols},
-    {"displayAsIs", QtPassSettings::setDisplayAsIs,
-     QtPassSettings::isDisplayAsIs},
-    {"hideOnClose", QtPassSettings::setHideOnClose,
-     QtPassSettings::isHideOnClose},
-    {"startMinimized", QtPassSettings::setStartMinimized,
-     QtPassSettings::isStartMinimized},
-    {"alwaysOnTop", QtPassSettings::setAlwaysOnTop,
-     QtPassSettings::isAlwaysOnTop},
-    {"autoPull", QtPassSettings::setAutoPull, QtPassSettings::isAutoPull},
-    {"autoPush", QtPassSettings::setAutoPush, QtPassSettings::isAutoPush},
-    {"useTemplate", QtPassSettings::setUseTemplate,
-     QtPassSettings::isUseTemplate},
-    {"templateAllFields", QtPassSettings::setTemplateAllFields,
-     QtPassSettings::isTemplateAllFields},
-    {"useWebDav", QtPassSettings::setUseWebDav, QtPassSettings::isUseWebDav},
-    {"useQrencode", QtPassSettings::setUseQrencode,
-     QtPassSettings::isUseQrencode},
-    {"useAutoclearPanel", QtPassSettings::setUseAutoclearPanel,
-     QtPassSettings::isUseAutoclearPanel},
-    {"maximized", QtPassSettings::setMaximized, QtPassSettings::isMaximized},
-    {"useGrepSearch", QtPassSettings::setUseGrepSearch,
-     QtPassSettings::isUseGrepSearch},
-    {"showProcessOutput", QtPassSettings::setShowProcessOutput,
-     QtPassSettings::isShowProcessOutput},
+    {"usePass", &AppSettings::usePass},
+    {"useGit", &AppSettings::useGit},
+    {"useOtp", &AppSettings::useOtp},
+    {"useTrayIcon", &AppSettings::useTrayIcon},
+    {"usePwgen", &AppSettings::usePwgen},
+    {"hidePassword", &AppSettings::hidePassword},
+    {"hideContent", &AppSettings::hideContent},
+    {"useSelection", &AppSettings::useSelection},
+    {"useAutoclear", &AppSettings::useAutoclear},
+    {"useMonospace", &AppSettings::useMonospace},
+    {"noLineWrapping", &AppSettings::noLineWrapping},
+    {"addGPGId", &AppSettings::addGPGId},
+    {"avoidCapitals", &AppSettings::avoidCapitals},
+    {"avoidNumbers", &AppSettings::avoidNumbers},
+    {"lessRandom", &AppSettings::lessRandom},
+    {"useSymbols", &AppSettings::useSymbols},
+    {"displayAsIs", &AppSettings::displayAsIs},
+    {"hideOnClose", &AppSettings::hideOnClose},
+    {"startMinimized", &AppSettings::startMinimized},
+    {"alwaysOnTop", &AppSettings::alwaysOnTop},
+    {"autoPull", &AppSettings::autoPull},
+    {"autoPush", &AppSettings::autoPush},
+    {"useTemplate", &AppSettings::useTemplate},
+    {"templateAllFields", &AppSettings::templateAllFields},
+    {"useWebDav", &AppSettings::useWebDav},
+    {"useQrencode", &AppSettings::useQrencode},
+    {"useAutoclearPanel", &AppSettings::useAutoclearPanel},
+    {"maximized", &AppSettings::maximized},
+    {"useGrepSearch", &AppSettings::useGrepSearch},
+    {"showProcessOutput", &AppSettings::showProcessOutput},
 };
 } // namespace
 
@@ -252,14 +253,16 @@ void tst_settings::boolRoundTrip() {
 
   for (const auto &s : boolSettings) {
     if (setting == s.name) {
-      s.setter(testValue);
-      // Pass !testValue as the getter's default so a missing/unstored value
-      // would surface as a mismatch instead of silently equalling testValue.
-      QVERIFY2(s.getter(!testValue) == testValue,
+      AppSettings toSave = QtPassSettings::load();
+      toSave.*s.field = testValue;
+      QtPassSettings::save(toSave);
+      const AppSettings loaded = QtPassSettings::load();
+      const bool actual = loaded.*s.field;
+      QVERIFY2(actual == testValue,
                qPrintable(QString("%1 should be %2, got %3")
                               .arg(setting)
                               .arg(testValue ? "true" : "false")
-                              .arg(s.getter(!testValue) ? "true" : "false")));
+                              .arg(actual ? "true" : "false")));
       return;
     }
   }
@@ -267,59 +270,55 @@ void tst_settings::boolRoundTrip() {
 }
 
 void tst_settings::setAndGetClipBoardType() {
-  QtPassSettings::setClipBoardType(1);
-  QCOMPARE(QtPassSettings::getClipBoardType(), 1);
+  AppSettings toSave = QtPassSettings::load();
+  toSave.clipBoardType = static_cast<Enums::clipBoardType>(1);
+  QtPassSettings::save(toSave);
+  QCOMPARE(QtPassSettings::load().clipBoardType,
+           static_cast<Enums::clipBoardType>(1));
 }
 
 void tst_settings::setAndGetPasswordLength() {
-  QtPassSettings::setPasswordLength(24);
+  AppSettings toSave = QtPassSettings::load();
+  const int savedLength = toSave.passwordConfiguration.length;
+  toSave.passwordConfiguration.length = 24;
+  QtPassSettings::save(toSave);
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QCOMPARE(config.length, 24);
+  // Restore to avoid polluting subsequent test runs
+  toSave = QtPassSettings::load();
+  toSave.passwordConfiguration.length = savedLength;
+  QtPassSettings::save(toSave);
 }
 
 namespace {
 struct IntSetting {
   const char *name;
-  void (*setter)(const int &);
-  int (*getter)(const int &);
+  int AppSettings::*field;
 };
 
 const IntSetting intSettings[] = {
-    {"autoclearSeconds", QtPassSettings::setAutoclearSeconds,
-     QtPassSettings::getAutoclearSeconds},
-    {"autoclearPanelSeconds", QtPassSettings::setAutoclearPanelSeconds,
-     QtPassSettings::getAutoclearPanelSeconds},
+    {"autoclearSeconds", &AppSettings::autoclearSeconds},
+    {"autoclearPanelSeconds", &AppSettings::autoclearPanelSeconds},
 };
 
 struct StringSetting {
   const char *name;
-  void (*setter)(const QString &);
-  QString (*getter)(const QString &);
+  QString AppSettings::*field;
 };
 
 const StringSetting stringSettings[] = {
-    {"passSigningKey", QtPassSettings::setPassSigningKey,
-     QtPassSettings::getPassSigningKey},
-    {"passExecutable", QtPassSettings::setPassExecutable,
-     QtPassSettings::getPassExecutable},
-    {"gitExecutable", QtPassSettings::setGitExecutable,
-     QtPassSettings::getGitExecutable},
-    {"gpgExecutable", QtPassSettings::setGpgExecutable,
-     QtPassSettings::getGpgExecutable},
-    {"pwgenExecutable", QtPassSettings::setPwgenExecutable,
-     QtPassSettings::getPwgenExecutable},
-    {"qrencodeExecutable", QtPassSettings::setQrencodeExecutable,
-     QtPassSettings::getQrencodeExecutable},
-    {"webDavUrl", QtPassSettings::setWebDavUrl, QtPassSettings::getWebDavUrl},
-    {"webDavUser", QtPassSettings::setWebDavUser,
-     QtPassSettings::getWebDavUser},
-    {"webDavPassword", QtPassSettings::setWebDavPassword,
-     QtPassSettings::getWebDavPassword},
-    {"profile", QtPassSettings::setProfile, QtPassSettings::getProfile},
-    {"passTemplate", QtPassSettings::setPassTemplate,
-     QtPassSettings::getPassTemplate},
-    {"sshAuthSockOverride", QtPassSettings::setSshAuthSockOverride,
-     QtPassSettings::getSshAuthSockOverride},
+    {"passSigningKey", &AppSettings::passSigningKey},
+    {"passExecutable", &AppSettings::passExecutable},
+    {"gitExecutable", &AppSettings::gitExecutable},
+    {"gpgExecutable", &AppSettings::gpgExecutable},
+    {"pwgenExecutable", &AppSettings::pwgenExecutable},
+    {"qrencodeExecutable", &AppSettings::qrencodeExecutable},
+    {"webDavUrl", &AppSettings::webDavUrl},
+    {"webDavUser", &AppSettings::webDavUser},
+    {"webDavPassword", &AppSettings::webDavPassword},
+    {"profile", &AppSettings::activeProfile},
+    {"passTemplate", &AppSettings::passTemplate},
+    {"sshAuthSockOverride", &AppSettings::sshAuthSockOverride},
 };
 } // namespace
 
@@ -340,8 +339,10 @@ void tst_settings::intRoundTrip() {
 
   for (const auto &s : intSettings) {
     if (setting == s.name) {
-      s.setter(testValue);
-      QCOMPARE(s.getter(-1), testValue);
+      AppSettings toSave = QtPassSettings::load();
+      toSave.*s.field = testValue;
+      QtPassSettings::save(toSave);
+      QCOMPARE(QtPassSettings::load().*s.field, testValue);
       return;
     }
   }
@@ -389,8 +390,10 @@ void tst_settings::stringRoundTrip() {
 
   for (const auto &s : stringSettings) {
     if (setting == s.name) {
-      s.setter(testValue);
-      QCOMPARE(s.getter(QString()), testValue);
+      AppSettings toSave = QtPassSettings::load();
+      toSave.*s.field = testValue;
+      QtPassSettings::save(toSave);
+      QCOMPARE(QtPassSettings::load().*s.field, testValue);
       return;
     }
   }
@@ -485,19 +488,32 @@ void tst_settings::setAndGetDialogMaximized() {
 }
 
 void tst_settings::setAndGetPasswordCharsSelection() {
-  QtPassSettings::setPasswordCharsSelection(
-      PasswordConfiguration::ALPHABETICAL);
+  AppSettings toSave = QtPassSettings::load();
+  const PasswordConfiguration::characterSet savedSelected =
+      toSave.passwordConfiguration.selected;
+  toSave.passwordConfiguration.selected = PasswordConfiguration::ALPHABETICAL;
+  QtPassSettings::save(toSave);
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QCOMPARE(config.selected, PasswordConfiguration::ALPHABETICAL);
+  // Restore to avoid polluting subsequent tests
+  toSave = QtPassSettings::load();
+  toSave.passwordConfiguration.selected = savedSelected;
+  QtPassSettings::save(toSave);
 }
 
 void tst_settings::setAndGetPasswordChars() {
-  QtPassSettings::setPasswordChars("abc123");
+  AppSettings toSave = QtPassSettings::load();
+  toSave.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM] =
+      "abc123";
+  QtPassSettings::save(toSave);
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QVERIFY2(config.Characters[PasswordConfiguration::CUSTOM].contains("abc"),
            "PasswordChars should contain 'abc'");
   // Reset to avoid affecting subsequent tests and live QtPass
-  QtPassSettings::setPasswordChars(QString());
+  toSave = QtPassSettings::load();
+  toSave.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM] =
+      QString();
+  QtPassSettings::save(toSave);
 }
 
 void tst_settings::setAndGetMultipleProfiles() {
@@ -568,8 +584,12 @@ void tst_settings::profileGitOptions() {
 
 void tst_settings::setAndGetProfileDefault() {
   const QString expectedProfile = QStringLiteral("defaultProfile");
-  QtPassSettings::setProfile(expectedProfile);
-  QCOMPARE(QtPassSettings::getProfile(), expectedProfile);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = expectedProfile;
+    QtPassSettings::save(s);
+  }
+  QCOMPARE(QtPassSettings::load().activeProfile, expectedProfile);
 }
 
 void tst_settings::serializerLoadDefaults() {

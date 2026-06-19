@@ -50,9 +50,9 @@ QtPass::QtPass(MainWindow *mainWindow) : m_mainWindow(mainWindow) {
  */
 QtPass::~QtPass() {
 #ifdef Q_OS_WIN
-  if (QtPassSettings::isUseWebDav())
-    WNetCancelConnection2A(QtPassSettings::getPassStore().toUtf8().constData(),
-                           0, 1);
+  const AppSettings s = QtPassSettings::load();
+  if (s.useWebDav)
+    WNetCancelConnection2A(s.passStore.toUtf8().constData(), 0, 1);
 #else
   if (fusedav.state() == QProcess::Running) {
     fusedav.terminate();
@@ -78,30 +78,27 @@ auto QtPass::init() -> bool {
 #ifdef QT_DEBUG
     dbg() << "assuming fresh install";
 #endif
-
-    if (QtPassSettings::getAutoclearSeconds() < 5) {
-      QtPassSettings::setAutoclearSeconds(10);
-    }
-    if (QtPassSettings::getAutoclearPanelSeconds() < 5) {
-      QtPassSettings::setAutoclearPanelSeconds(10);
-    }
-    if (!QtPassSettings::getPwgenExecutable().isEmpty()) {
-      QtPassSettings::setUsePwgen(true);
-    } else {
-      QtPassSettings::setUsePwgen(false);
-    }
-    QtPassSettings::setPassTemplate("login\nurl");
+    AppSettings s = QtPassSettings::load();
+    if (s.autoclearSeconds < 5)
+      s.autoclearSeconds = 10;
+    if (s.autoclearPanelSeconds < 5)
+      s.autoclearPanelSeconds = 10;
+    s.usePwgen = !s.pwgenExecutable.isEmpty();
+    s.passTemplate = QStringLiteral("login\nurl");
+    QtPassSettings::save(s);
   } else {
-    if (QtPassSettings::getPassTemplate().isEmpty()) {
-      QtPassSettings::setPassTemplate("login\nurl");
+    AppSettings s = QtPassSettings::load();
+    if (s.passTemplate.isEmpty()) {
+      s.passTemplate = QStringLiteral("login\nurl");
+      QtPassSettings::save(s);
     }
   }
 
   QtPassSettings::setVersion(VERSION);
 
-  if (!Util::configIsValid()) {
+  if (!Util::configIsValid(QtPassSettings::load())) {
     m_mainWindow->config();
-    if (freshStart && !Util::configIsValid()) {
+    if (freshStart && !Util::configIsValid(QtPassSettings::load())) {
       return false;
     }
   }
@@ -187,6 +184,7 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
  * @brief QtPass::mountWebDav is some scary voodoo magic
  */
 void QtPass::mountWebDav() {
+  const AppSettings s = QtPassSettings::load();
 #ifdef Q_OS_WIN
   char dst[20] = {0};
   NETRESOURCEA netres;
@@ -195,9 +193,9 @@ void QtPass::mountWebDav() {
   netres.lpLocalName = nullptr;
   // Store QByteArray in variables to ensure lifetime during WNetUseConnectionA
   // call
-  QByteArray webDavUrlUtf8 = QtPassSettings::getWebDavUrl().toUtf8();
-  QByteArray webDavPasswordUtf8 = QtPassSettings::getWebDavPassword().toUtf8();
-  QByteArray webDavUserUtf8 = QtPassSettings::getWebDavUser().toUtf8();
+  QByteArray webDavUrlUtf8 = s.webDavUrl.toUtf8();
+  QByteArray webDavPasswordUtf8 = s.webDavPassword.toUtf8();
+  QByteArray webDavUserUtf8 = s.webDavUser.toUtf8();
   netres.lpRemoteName = const_cast<char *>(webDavUrlUtf8.constData());
   DWORD size = sizeof(dst);
   DWORD r = WNetUseConnectionA(
@@ -221,12 +219,11 @@ void QtPass::mountWebDav() {
                                << "-o"
                                << "nonempty"
                                << "-u"
-                               << "\"" + QtPassSettings::getWebDavUser() + "\""
-                               << QtPassSettings::getWebDavUrl()
-                               << "\"" + QtPassSettings::getPassStore() + "\"");
+                               << "\"" + s.webDavUser + "\"" << s.webDavUrl
+                               << "\"" + s.passStore + "\"");
   fusedav.waitForStarted();
   if (fusedav.state() == QProcess::Running) {
-    QString pwd = QtPassSettings::getWebDavPassword();
+    QString pwd = s.webDavPassword;
     bool ok = true;
     if (pwd.isEmpty()) {
       pwd = QInputDialog::getText(m_mainWindow, tr("QtPass WebDAV password"),
@@ -417,10 +414,10 @@ void QtPass::doGitPush() {
  * @param p_output Additional output text
  */
 void QtPass::setClippedText(const QString &password, const QString &p_output) {
-  if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
-      !p_output.isEmpty()) {
+  const AppSettings s = QtPassSettings::load();
+  if (s.clipBoardType != Enums::CLIPBOARD_NEVER && !p_output.isEmpty()) {
     clippedText = password;
-    if (QtPassSettings::getClipBoardType() == Enums::CLIPBOARD_ALWAYS) {
+    if (s.clipBoardType == Enums::CLIPBOARD_ALWAYS) {
       copyTextToClipboard(password);
     }
   }
@@ -490,10 +487,11 @@ auto buildClipboardMimeData(const QString &text) -> QMimeData * {
  * @param text
  */
 void QtPass::copyTextToClipboard(const QString &text) {
+  const AppSettings s = QtPassSettings::load();
   QClipboard *clip = QApplication::clipboard();
 
   QClipboard::Mode mode = QClipboard::Clipboard;
-  if (QtPassSettings::isUseSelection() && clip->supportsSelection()) {
+  if (s.useSelection && clip->supportsSelection()) {
     mode = QClipboard::Selection;
   }
 
@@ -502,7 +500,7 @@ void QtPass::copyTextToClipboard(const QString &text) {
 
   clippedText = text;
   m_mainWindow->showStatusMessage(tr("Copied to clipboard"));
-  if (QtPassSettings::isUseAutoclear()) {
+  if (s.useAutoclear) {
     clearClipboardTimer.start();
   }
 }
@@ -512,10 +510,13 @@ void QtPass::copyTextToClipboard(const QString &text) {
  * @param text
  */
 void QtPass::showTextAsQRCode(const QString &text) {
+  const AppSettings s = QtPassSettings::load();
+  const QString qrExe = s.qrencodeExecutable.isEmpty()
+                            ? QStringLiteral("/usr/bin/qrencode")
+                            : s.qrencodeExecutable;
   QProcess qrencode;
-  qrencode.start(QtPassSettings::getQrencodeExecutable("/usr/bin/qrencode"),
-                 QStringList() << "-o-"
-                               << "-tPNG");
+  qrencode.start(qrExe, QStringList() << "-o-"
+                                      << "-tPNG");
   qrencode.write(text.toUtf8());
   qrencode.closeWriteChannel();
   qrencode.waitForFinished();

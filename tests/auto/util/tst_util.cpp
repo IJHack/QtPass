@@ -107,6 +107,23 @@ private:
     SettingGuard &operator=(const SettingGuard &) = delete;
   };
 
+  template <typename T, T AppSettings::*Field> struct AppSettingsGuard {
+    T original;
+    explicit AppSettingsGuard(const T &newVal)
+        : original(QtPassSettings::load().*Field) {
+      AppSettings s = QtPassSettings::load();
+      s.*Field = newVal;
+      QtPassSettings::save(s);
+    }
+    ~AppSettingsGuard() {
+      AppSettings s = QtPassSettings::load();
+      s.*Field = original;
+      QtPassSettings::save(s);
+    }
+    AppSettingsGuard(const AppSettingsGuard &) = delete;
+    AppSettingsGuard &operator=(const AppSettingsGuard &) = delete;
+  };
+
 private Q_SLOTS:
   void cleanupTestCase();
   void normalizeFolderPath();
@@ -161,7 +178,6 @@ private Q_SLOTS:
   void imitatePassResolveMoveDestinationDestExistsNoForce();
   void imitatePassResolveMoveDestinationDir();
   void imitatePassResolveMoveDestinationNonExistent();
-  void imitatePassRemoveDir();
   void getRecipientListBasic();
   void getRecipientListEmpty();
   void getRecipientListWithComments();
@@ -256,6 +272,8 @@ private Q_SLOTS:
   void getFolderTemplateInParent();
   void getFolderTemplateNoneFound();
   void getFolderTemplateCommentIgnored();
+  // normalizeFolderPath — new contract (always forward slash)
+  void normalizeFolder();
 };
 
 /**
@@ -293,41 +311,30 @@ void tst_util::cleanupTestCase() {
 
 /**
  * @brief tst_util::normalizeFolderPath test to check correct working
- * of Util::normalizeFolderPath the paths should always end with a slash
+ * of Util::normalizeFolderPath the paths should always end with '/'
  */
 void tst_util::normalizeFolderPath() {
   QString result;
-  QString sep = QDir::separator();
 
-  // Forward slash path
+  // Path without trailing slash — slash must be appended.
   result = Util::normalizeFolderPath("test");
-  QVERIFY(result.endsWith(sep));
-  result = Util::normalizeFolderPath("test/");
-  QVERIFY(result.endsWith(sep));
-  // Verify exact normalized path content
-  result = Util::normalizeFolderPath("test");
-  QVERIFY2(result == "test" + sep,
-           qPrintable(QString("Expected 'test%1', got '%2'").arg(sep, result)));
-  result = Util::normalizeFolderPath("test/");
-  QVERIFY2(result == "test" + sep,
-           qPrintable(QString("Expected 'test%1', got '%2'").arg(sep, result)));
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("test/"));
 
-  // Windows-style backslash path (only on Windows)
-  if (QDir::separator() == '\\') {
-    result = Util::normalizeFolderPath("test\\subdir");
-    QVERIFY(result.endsWith("\\"));
-    QVERIFY(result.contains("test"));
-    QVERIFY(result.contains("subdir"));
-    // Verify exact normalized path content
-    QVERIFY2(
-        result == "test\\subdir\\",
-        qPrintable(
-            QString("Expected 'test\\\\subdir\\\\', got '%1'").arg(result)));
-  }
+  // Path already ending with '/' — must be idempotent (no double slash).
+  result = Util::normalizeFolderPath("test/");
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("test/"));
 
-  // Mixed separators test
+  // Nested path without trailing slash.
+  result = Util::normalizeFolderPath("test/subdir");
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("test/subdir/"));
+
+  // Mixed separators: the function does NOT normalize backslashes; callers
+  // should run QDir::cleanPath() first if needed.
   result = Util::normalizeFolderPath("test/subdir\\folder");
-  QVERIFY(result.endsWith(sep));
+  QVERIFY(result.endsWith('/'));
   QVERIFY(result.contains("test"));
   QVERIFY(result.contains("subdir"));
   QVERIFY(result.contains("folder"));
@@ -452,19 +459,31 @@ void tst_util::regexPatterns() {
 }
 
 void tst_util::normalizeFolderPathEdgeCases() {
+  // Empty string -> "/" (a single forward slash is appended).
   QString result = Util::normalizeFolderPath("");
-  QVERIFY(result.endsWith(QDir::separator()));
-  QVERIFY2(result == QDir::separator() || result.endsWith(QDir::separator()),
-           "Empty path should become separator");
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("/"));
 
-  result = Util::normalizeFolderPath(QDir::separator());
-  QVERIFY(result.endsWith(QDir::separator()));
+  // Already a single '/' -> idempotent.
+  result = Util::normalizeFolderPath("/");
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("/"));
 
+  // Already-normalized deep path -> idempotent.
   result = Util::normalizeFolderPath("path/to/dir/");
-  QVERIFY(result.endsWith(QDir::separator()));
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("path/to/dir/"));
 
-  QString nativeResult = Util::normalizeFolderPath("path/to/dir");
-  QVERIFY(nativeResult.endsWith(QDir::separator()));
+  // Path without trailing slash -> slash added.
+  result = Util::normalizeFolderPath("path/to/dir");
+  QVERIFY(result.endsWith('/'));
+  QCOMPARE(result, QStringLiteral("path/to/dir/"));
+
+  // Path ending with a Windows backslash: the function appends '/' after the
+  // backslash because it only checks for '/'.  Callers that need normalized
+  // separators should run QDir::cleanPath() before calling this function.
+  result = Util::normalizeFolderPath("C:\\Users\\test");
+  QVERIFY(result.endsWith('/'));
 }
 
 void tst_util::fileContentEdgeCases() {
@@ -671,8 +690,7 @@ void tst_util::createGpgIdFileEmptyKeys() {
 }
 
 void tst_util::generateRandomPassword() {
-  SettingGuard<bool, QtPassSettings::setUsePwgen> disablePwgenGuard{
-      QtPassSettings::isUsePwgen(), false};
+  AppSettingsGuard<bool, &AppSettings::usePwgen> disablePwgenGuard{false};
 
   ImitatePass pass;
   QString charset = "abcdefghijklmnopqrstuvwxyz";
@@ -760,8 +778,7 @@ void tst_util::generateRandomPassword() {
 }
 
 void tst_util::boundedRandom() {
-  SettingGuard<bool, QtPassSettings::setUsePwgen> disablePwgenGuard{
-      QtPassSettings::isUsePwgen(), false};
+  AppSettingsGuard<bool, &AppSettings::usePwgen> disablePwgenGuard{false};
 
   ImitatePass pass;
 
@@ -813,7 +830,7 @@ void tst_util::findBinaryInPath() {
 void tst_util::findPasswordStore() {
   QString result = Util::findPasswordStore();
   QVERIFY(!result.isEmpty());
-  QVERIFY(result.endsWith(QDir::separator()));
+  QVERIFY(result.endsWith('/'));
 }
 
 void tst_util::configIsValid() {
@@ -823,11 +840,11 @@ void tst_util::configIsValid() {
   PassStoreGuard guard(QtPassSettings::getPassStore());
 
   SettingGuard<bool, QtPassSettings::setUsePass> usePassGuard{
-      QtPassSettings::isUsePass(), false};
+      QtPassSettings::load().usePass, false};
 
   // No .gpg-id in this store => config must be invalid.
   QtPassSettings::setPassStore(tempDir.path());
-  bool isValid = Util::configIsValid();
+  bool isValid = Util::configIsValid(QtPassSettings::load());
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id is missing");
 
   // Create .gpg-id, then force invalid executable configuration.
@@ -838,16 +855,31 @@ void tst_util::configIsValid() {
   gpgIdFile.write("test@example.com\n");
   gpgIdFile.close();
 
-  SettingGuard<QString, QtPassSettings::setGpgExecutable> gpgGuard{
-      QtPassSettings::getGpgExecutable(), QString()};
+  const QString savedGpgExe = QtPassSettings::load().gpgExecutable;
+  struct RestoreGpg {
+    QString saved;
+    ~RestoreGpg() {
+      AppSettings s = QtPassSettings::load();
+      s.gpgExecutable = saved;
+      QtPassSettings::save(s);
+    }
+  } gpgRestore{savedGpgExe};
 
-  isValid = Util::configIsValid();
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = QString();
+    QtPassSettings::save(s);
+  }
+  isValid = Util::configIsValid(QtPassSettings::load());
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
                      "executable is missing");
 
-  QtPassSettings::setGpgExecutable(
-      QStringLiteral("definitely_nonexistent_gpg_binary_12345"));
-  isValid = Util::configIsValid();
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = QStringLiteral("definitely_nonexistent_gpg_binary_12345");
+    QtPassSettings::save(s);
+  }
+  isValid = Util::configIsValid(QtPassSettings::load());
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
                      "executable is invalid");
 }
@@ -866,11 +898,9 @@ void tst_util::getDirBasic() {
            "Store path should match the set value");
   QModelIndex rootIndex = fileSystemModel.index(tempDir.path());
   QVERIFY2(rootIndex.isValid(), "Filesystem model root index should be valid");
-  const QString originalStore = QtPassSettings::getPassStore();
-  QtPassSettings::setPassStore(tempDir.path());
 
-  QString result =
-      Util::getDir(QModelIndex(), false, fileSystemModel, storeModel);
+  QString result = Util::getDir(QModelIndex(), false, fileSystemModel,
+                                storeModel, tempDir.path());
   QString expectedDir = QDir(tempDir.path()).absolutePath();
   if (!expectedDir.endsWith(QDir::separator())) {
     expectedDir += QDir::separator();
@@ -878,7 +908,6 @@ void tst_util::getDirBasic() {
   QVERIFY2(
       result == expectedDir,
       qPrintable(QString("Expected '%1', got '%2'").arg(expectedDir, result)));
-  QtPassSettings::setPassStore(originalStore);
 }
 
 void tst_util::getDirWithIndex() {
@@ -899,10 +928,6 @@ void tst_util::getDirWithIndex() {
            "Failed to write test data to file in temporary directory");
   file.close();
 
-  const QString originalPassStore = QtPassSettings::getPassStore();
-  PassStoreGuard passStoreGuard(originalPassStore);
-  QtPassSettings::setPassStore(dirPath);
-
   QFileSystemModel fileSystemModel;
   fileSystemModel.setRootPath(dirPath);
 
@@ -918,7 +943,8 @@ void tst_util::getDirWithIndex() {
   QVERIFY2(fileIndex.isValid(),
            "Proxy index should be valid for the test file");
 
-  QString result = Util::getDir(fileIndex, false, fileSystemModel, storeModel);
+  QString result =
+      Util::getDir(fileIndex, false, fileSystemModel, storeModel, dirPath);
   QVERIFY2(!result.isEmpty(),
            "getDir should return a non-empty directory for a valid index");
   QVERIFY(result.endsWith(QDir::separator()));
@@ -934,7 +960,7 @@ void tst_util::getDirWithIndex() {
 
   QModelIndex invalidIndex;
   QString invalidResult =
-      Util::getDir(invalidIndex, false, fileSystemModel, storeModel);
+      Util::getDir(invalidIndex, false, fileSystemModel, storeModel, dirPath);
   QString expectedForInvalid = dirPath;
   if (!expectedForInvalid.endsWith(QDir::separator())) {
     expectedForInvalid += QDir::separator();
@@ -958,8 +984,10 @@ void tst_util::findPasswordStoreEnvVar() {
 void tst_util::normalizeFolderPathMultipleCalls() {
   QString result1 = Util::normalizeFolderPath("test1");
   QString result2 = Util::normalizeFolderPath("test2");
-  QVERIFY(result1.endsWith(QDir::separator()));
-  QVERIFY(result2.endsWith(QDir::separator()));
+  QVERIFY(result1.endsWith('/'));
+  QVERIFY(result2.endsWith('/'));
+  QCOMPARE(result1, QStringLiteral("test1/"));
+  QCOMPARE(result2, QStringLiteral("test2/"));
 }
 
 void tst_util::userInfoFullyValid() {
@@ -1122,17 +1150,6 @@ void tst_util::imitatePassResolveMoveDestinationNonExistent() {
   QVERIFY2(result.isEmpty(), "Should return empty for non-existent source");
 }
 
-void tst_util::imitatePassRemoveDir() {
-  ImitatePass pass;
-  QTemporaryDir tmpDir;
-  QString subDir = tmpDir.path() + "/testdir";
-  QVERIFY(QDir().mkpath(subDir));
-  QVERIFY(QDir(subDir).exists());
-  bool result = pass.removeDir(subDir);
-  QVERIFY(result);
-  QVERIFY(!QDir(subDir).exists());
-}
-
 void tst_util::getRecipientListBasic() {
   QTemporaryDir tempDir;
   QString passStore = tempDir.path();
@@ -1143,9 +1160,7 @@ void tst_util::getRecipientListBasic() {
   file.write("ABCDEF12\n34567890\n");
   file.close();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(passStore);
-  QStringList recipients = Pass::getRecipientList(passStore);
+  QStringList recipients = Pass::getRecipientList(passStore, passStore);
   QCOMPARE(recipients.size(), 2);
   QCOMPARE(recipients[0], QString("ABCDEF12"));
   QCOMPARE(recipients[1], QString("34567890"));
@@ -1160,9 +1175,7 @@ void tst_util::getRecipientListEmpty() {
   QVERIFY(file.open(QIODevice::WriteOnly));
   file.close();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(passStore);
-  QStringList recipients = Pass::getRecipientList(passStore);
+  QStringList recipients = Pass::getRecipientList(passStore, passStore);
   QVERIFY(recipients.isEmpty());
 }
 
@@ -1176,9 +1189,7 @@ void tst_util::getRecipientListWithComments() {
   file.write("ABCDEF12\n# comment\n34567890\n");
   file.close();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(passStore);
-  QStringList recipients = Pass::getRecipientList(passStore);
+  QStringList recipients = Pass::getRecipientList(passStore, passStore);
   QCOMPARE(recipients.size(), 2);
   QVERIFY(!recipients.contains("# comment"));
   QVERIFY(!recipients.contains("comment"));
@@ -1195,10 +1206,7 @@ void tst_util::getRecipientListInvalidKeyId() {
              "example.org\n");
   file.close();
 
-  const QString originalPassStore = QtPassSettings::getPassStore();
-  PassStoreGuard originalGuard(originalPassStore);
-  QtPassSettings::setPassStore(passStore);
-  QStringList recipients = Pass::getRecipientList(passStore);
+  QStringList recipients = Pass::getRecipientList(passStore, passStore);
   QVERIFY(!recipients.contains("invalid"));
   QVERIFY(recipients.contains("ABCDEF12"));
   QVERIFY(recipients.contains("0xABCDEF123456789012"));
@@ -1249,13 +1257,11 @@ void tst_util::getRecipientStringCount() {
   file.write("ABCDEF12\n34567890\n");
   file.close();
 
-  const QString originalPassStore = QtPassSettings::getPassStore();
-  PassStoreGuard originalGuard(originalPassStore);
-  QtPassSettings::setPassStore(passStore);
   int count = 0;
   QStringList parsedRecipients =
-      Pass::getRecipientString(passStore, " ", &count);
-  QStringList recipientsNoCount = Pass::getRecipientString(passStore, " ");
+      Pass::getRecipientString(passStore, passStore, " ", &count);
+  QStringList recipientsNoCount =
+      Pass::getRecipientString(passStore, passStore, " ");
 
   QStringList expectedRecipients = {"ABCDEF12", "34567890"};
   // Verify count matches the expected number of parsed recipients.
@@ -1282,9 +1288,7 @@ void tst_util::getGpgIdPathBasic() {
   file.write("ABCDEF12\n");
   file.close();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(passStore);
-  QString path = QDir::cleanPath(Pass::getGpgIdPath(passStore));
+  QString path = QDir::cleanPath(Pass::getGpgIdPath(passStore, passStore));
   QString expected = QDir::cleanPath(gpgIdFile);
   QVERIFY2(path == expected,
            qPrintable(QString("Expected %1, got %2").arg(expected, path)));
@@ -1302,21 +1306,19 @@ void tst_util::getGpgIdPathSubfolder() {
   file.write("ABCDEF12\n");
   file.close();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(passStore);
-  QString path = Pass::getGpgIdPath(subfolder + "/password.gpg");
-  QVERIFY2(path == gpgIdFile,
-           qPrintable(QString("Expected %1, got %2").arg(gpgIdFile, path)));
+  QString path = QDir::cleanPath(
+      Pass::getGpgIdPath(subfolder + "/password.gpg", passStore));
+  QString expected = QDir::cleanPath(gpgIdFile);
+  QVERIFY2(path == expected,
+           qPrintable(QString("Expected %1, got %2").arg(expected, path)));
 }
 
 void tst_util::getGpgIdPathNotFound() {
   QTemporaryDir tempDir;
   QString passStore = tempDir.path();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(passStore);
-  QString path =
-      QDir::cleanPath(Pass::getGpgIdPath(passStore + "/nonexistent"));
+  QString path = QDir::cleanPath(
+      Pass::getGpgIdPath(passStore + "/nonexistent", passStore));
   QString expected = QDir::cleanPath(passStore + "/.gpg-id");
   QVERIFY2(path == expected,
            qPrintable(QString("Expected %1, got %2").arg(expected, path)));
@@ -1743,13 +1745,19 @@ void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars() {
   PasswordConfiguration original = QtPassSettings::getPasswordConfiguration();
   struct ConfigRollback {
     PasswordConfiguration value;
-    ~ConfigRollback() { QtPassSettings::setPasswordConfiguration(value); }
+    ~ConfigRollback() {
+      AppSettings s = QtPassSettings::load();
+      s.passwordConfiguration = value;
+      QtPassSettings::save(s);
+    }
   } rollback{original};
 
   PasswordConfiguration config = original;
   config.selected = PasswordConfiguration::CUSTOM;
   config.Characters[PasswordConfiguration::CUSTOM] = QString();
-  QtPassSettings::setPasswordConfiguration(config);
+  AppSettings toSave = QtPassSettings::load();
+  toSave.passwordConfiguration = config;
+  QtPassSettings::save(toSave);
   AppSettings s = QtPassSettings::load();
   pass.init(s);
 
@@ -2118,14 +2126,16 @@ public:
   SshAuthSockGuard()
       : hadEnv_(qEnvironmentVariableIsSet("SSH_AUTH_SOCK")),
         prevEnv_(qgetenv("SSH_AUTH_SOCK")),
-        prevOverride_(QtPassSettings::getSshAuthSockOverride()) {}
+        prevOverride_(QtPassSettings::load().sshAuthSockOverride) {}
   ~SshAuthSockGuard() {
     if (hadEnv_) {
       qputenv("SSH_AUTH_SOCK", prevEnv_);
     } else {
       qunsetenv("SSH_AUTH_SOCK");
     }
-    QtPassSettings::setSshAuthSockOverride(prevOverride_);
+    AppSettings s = QtPassSettings::load();
+    s.sshAuthSockOverride = prevOverride_;
+    QtPassSettings::save(s);
   }
   SshAuthSockGuard(const SshAuthSockGuard &) = delete;
   auto operator=(const SshAuthSockGuard &) -> SshAuthSockGuard & = delete;
@@ -2144,19 +2154,25 @@ void tst_util::sshAuthSockOverrideRoundtrip() {
   testutils::SshAuthSockGuard guard;
   const QString sentinel =
       QStringLiteral("/tmp/qtpass-test-sock-") + QUuid::createUuid().toString();
-  QtPassSettings::setSshAuthSockOverride(sentinel);
-  QCOMPARE(QtPassSettings::getSshAuthSockOverride(), sentinel);
-  QtPassSettings::setSshAuthSockOverride(QString{});
-  QCOMPARE(QtPassSettings::getSshAuthSockOverride(), QString{});
+  AppSettings s = QtPassSettings::load();
+  s.sshAuthSockOverride = sentinel;
+  QtPassSettings::save(s);
+  QCOMPARE(QtPassSettings::load().sshAuthSockOverride, sentinel);
+  s = QtPassSettings::load();
+  s.sshAuthSockOverride = QString{};
+  QtPassSettings::save(s);
+  QCOMPARE(QtPassSettings::load().sshAuthSockOverride, QString{});
 }
 
 /**
- * @brief default value of getSshAuthSockOverride is empty.
+ * @brief default value of sshAuthSockOverride is empty.
  */
 void tst_util::sshAuthSockOverrideEmptyByDefault() {
   testutils::SshAuthSockGuard guard;
-  QtPassSettings::setSshAuthSockOverride(QString{});
-  QCOMPARE(QtPassSettings::getSshAuthSockOverride(), QString{});
+  AppSettings s = QtPassSettings::load();
+  s.sshAuthSockOverride = QString{};
+  QtPassSettings::save(s);
+  QCOMPARE(QtPassSettings::load().sshAuthSockOverride, QString{});
 }
 
 /**
@@ -2665,6 +2681,34 @@ void tst_util::getFolderTemplateCommentIgnored() {
   QString result = TemplateIO::getFolderTemplate(subPath, store.path());
   QVERIFY2(result.isEmpty(),
            ".default_template with only a comment must return empty string");
+}
+
+/**
+ * @brief normalizeFolder — explicit contract tests for normalizeFolderPath.
+ *
+ * normalizeFolderPath always appends '/' when the path does not already end
+ * with one. It never calls QDir::toNativeSeparators(), so the result always
+ * uses forward slashes regardless of the host platform.
+ */
+void tst_util::normalizeFolder() {
+  // Already-normalized path ending in '/' -> idempotent (no double slash).
+  QCOMPARE(Util::normalizeFolderPath(QStringLiteral("/home/user/store/")),
+           QStringLiteral("/home/user/store/"));
+
+  // Path NOT ending in '/' -> slash appended.
+  QCOMPARE(Util::normalizeFolderPath(QStringLiteral("/home/user/store")),
+           QStringLiteral("/home/user/store/"));
+
+  // Empty string -> "/" (single forward slash).
+  QCOMPARE(Util::normalizeFolderPath(QString()), QStringLiteral("/"));
+
+  // Path ending in backslash: '\\' is NOT '/', so '/' is appended after it.
+  // Callers needing clean separators should run QDir::cleanPath() first.
+  QString backslashPath = QStringLiteral("C:\\Users\\test");
+  QString result = Util::normalizeFolderPath(backslashPath);
+  QVERIFY2(result.endsWith('/'),
+           "normalizeFolderPath must append '/' even after a backslash");
+  QCOMPARE(result, QStringLiteral("C:\\Users\\test/"));
 }
 
 QTEST_MAIN(tst_util)

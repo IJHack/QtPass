@@ -1,8 +1,7 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "storemodel.h"
-#include "qtpasssettings.h"
-
+#include "pass.h"
 #include "pathvalidator.h"
 #include "util.h"
 #include <QApplication>
@@ -50,6 +49,8 @@ auto operator>>(QDataStream &in,
  * http://www.qtcentre.org/threads/46471-QTreeView-Filter
  */
 StoreModel::StoreModel() { fs = nullptr; }
+
+void StoreModel::setPass(Pass *pass) { m_pass = pass; }
 
 /**
  * @brief StoreModel::filterAcceptsRow should row be shown, wrapper for
@@ -213,6 +214,8 @@ auto StoreModel::mimeTypes() const -> QStringList {
 auto StoreModel::mimeData(const QModelIndexList &indexes) const -> QMimeData * {
   dragAndDropInfoPasswordStore info;
 
+  if (indexes.isEmpty())
+    return nullptr;
   QByteArray encodedData;
   // only use the first, otherwise we should enable multiselection
   QModelIndex index = indexes.at(0);
@@ -364,9 +367,8 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
   // crafted; canonical-path checks stop drops that would move/copy outside
   // the store or follow a symlink out (e.g. a symlink within the store
   // pointing at /etc).
-  const QString storeRoot = QtPassSettings::getPassStore();
-  if (!PathValidator::isPathInStore(storeRoot, cleanedSrc) ||
-      !PathValidator::isPathInStore(storeRoot, cleanedDest)) {
+  if (!PathValidator::isPathInStore(store, cleanedSrc) ||
+      !PathValidator::isPathInStore(store, cleanedDest)) {
     qWarning() << "executeDropAction: rejecting drop that escapes the store"
                << "(src=" << cleanedSrc << "dest=" << cleanedDest << ")";
     return false;
@@ -403,10 +405,13 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
 auto StoreModel::performDrop(const QString &cleanedSrc,
                              const QString &cleanedDest, Qt::DropAction action,
                              bool force) -> bool {
+  if (!m_pass) {
+    return false;
+  }
   if (action == Qt::MoveAction) {
-    QtPassSettings::getPass()->Move(cleanedSrc, cleanedDest, force);
+    m_pass->Move(cleanedSrc, cleanedDest, force);
   } else if (action == Qt::CopyAction) {
-    QtPassSettings::getPass()->Copy(cleanedSrc, cleanedDest, force);
+    m_pass->Copy(cleanedSrc, cleanedDest, force);
   }
   return true;
 }
