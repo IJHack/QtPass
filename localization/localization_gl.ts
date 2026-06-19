@@ -1339,7 +1339,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="153"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">A operación esgotou o tempo; reactivando a interface.</translation>
+        <translation>A operación esgotou o tempo; reactivando a interface.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="681"/>
@@ -1379,12 +1379,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="886"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">A busca de contido usa expresións regulares básicas POSIX (pass grep).</translation>
+        <translation>A busca de contido usa expresións regulares básicas POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="888"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">A busca de contido usa expresións regulares compatibles con Perl (PCRE).</translation>
+        <translation>A busca de contido usa expresións regulares compatibles con Perl (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="933"/>
@@ -1732,12 +1732,12 @@ Continuar?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
         <location filename="../src/passworddisplaypanel.cpp" line="139"/>
         <source>Password</source>
-        <translation type="unfinished">Contrasinal</translation>
+        <translation>Contrasinal</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="117"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Abrir %1 no navegador</translation>
+        <translation>Abrir %1 no navegador</translation>
     </message>
 </context>
 <context>
