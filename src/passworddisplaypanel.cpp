@@ -39,7 +39,11 @@ PasswordDisplayPanel::PasswordDisplayPanel(QGridLayout *grid,
 void PasswordDisplayPanel::clear() {
   while (m_grid->count() > 0) {
     QLayoutItem *item = m_grid->takeAt(0);
-    delete item->widget();
+    if (item->widget()) {
+      delete item->widget();
+    } else if (item->layout()) {
+      delete item->layout();
+    }
     delete item;
   }
   m_container->setSpacing(0);
@@ -169,7 +173,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     {
       QString linkedText;
       int lastIndex = 0;
-      const QRegularExpression re = Util::protocolRegex();
+      static const QRegularExpression re = Util::protocolRegex();
       QRegularExpressionMatchIterator it = re.globalMatch(trimmedValue);
       while (it.hasNext()) {
         const QRegularExpressionMatch match = it.next();

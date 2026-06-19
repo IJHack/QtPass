@@ -48,6 +48,7 @@ clang-format --style=file -i <source-file>
 
 ## Git Workflow
 
+- **NEVER push to main directly. Always create a PR.** Use branch → PR → merge flow.
 - **Create branch:** `git checkout -b fix/description`
 - **Commit (always sign):** `git commit -S -m "description"`
   - Prerequisite: configure Git commit signing (GPG or SSH signing key) before using `-S`.
