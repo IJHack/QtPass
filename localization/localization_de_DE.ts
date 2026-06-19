@@ -764,7 +764,7 @@ Sie können die Benutzerliste nicht ändern!</translation>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Der Partnerschlüssel der selektierten Schlüssel fehlt.
-Hiermit können keine neu hinzugefügten Kennwörter entschlüsselt werden!</translation>
+Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
@@ -1528,7 +1528,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="957"/>
         <source>Found %n match(es)</source>
         <translation>
-            <numerusform>%n Treffer gefunden</numerusform>
+            <numerusform>Ein Treffer gefunden</numerusform>
             <numerusform>%n Treffer gefunden</numerusform>
         </translation>
     </message>

@@ -567,12 +567,12 @@ Die waarde sal steeds gestoor word soos ingevoer.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="963"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Installeer asseblief GnuPG op jou stelsel.&lt;br&gt;Installeer &lt;strong&gt;Ubuntu&lt;/strong&gt; van die Microsoft Store om dit te kry.&lt;br&gt;As jy dit reeds gedoen het, maak seker dat jy dit een keer begin het en&lt;br&gt;klik &quot;Outospeur&quot; in die volgende dialoog.</translation>
+        <translation>Installeer asseblief GnuPG op jou stelsel. &lt;br&gt; installeer &lt;strong&gt; Ubuntu &lt;/strong&gt; van die Microsoft-Winkel om dit te kry. &lt;br&gt; as jy dit reeds gedoen het, maak seker dat jy dit eers begin en &lt;br&gt; Klik &quot;Outobespeur&quot; in die volgende dialoog.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="968"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Installeer asseblief GnuPG op jou stelsel.&lt;br&gt;Installeer &lt;strong&gt;Ubuntu&lt;/strong&gt; van die Microsoft Store&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;laai dit af&lt;/a&gt; van GnuPG.org</translation>
+        <translation>Installeer GnuPG op u stelsel. &lt;br&gt; Installeer &lt;strong&gt; Ubuntu &lt;/strong&gt; van die Microsoft Store &lt;br&gt; of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; laai dit af &lt;/a&gt; van GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -751,12 +751,12 @@ Jy sal nie die gebruikerslys kan verander nie!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="264"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Kon nie .gpg-id vir skryf oopmaak nie.</translation>
+        <translation>Kon nie oopmaak nie. gpg-id vir skryf.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="283"/>
         <source>Check selected users!</source>
-        <translation>Kontroleer geselekteerde gebruikers!</translation>
+        <translation>Kies geselekteerde gebruikers!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="284"/>

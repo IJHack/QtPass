@@ -705,7 +705,7 @@ dirección de correo</translation>
         <location filename="../src/imitatepass.cpp" line="391"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>Ninguna de las claves secretas de firma está disponible.
+        <translation>Ninguna de las claves secretas de la firma están disponible.
 ¡No vas a poder modificar la lista de usuarios!</translation>
     </message>
     <message>
