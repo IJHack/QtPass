@@ -41,9 +41,8 @@ void PasswordDisplayPanel::clear() {
     QLayoutItem *item = m_grid->takeAt(0);
     if (item->widget()) {
       delete item->widget();
-    } else if (item->layout()) {
-      delete item->layout();
     }
+    // Layouts and spacers: QLayoutItem destructor handles cleanup.
     delete item;
   }
   m_container->setSpacing(0);
