@@ -43,6 +43,8 @@ void PasswordDisplayPanel::clear() {
       delete item->widget();
     } else if (item->layout()) {
       delete item->layout();
+    } else if (item->spacerItem()) {
+      // Spacer owned by QLayoutItem wrapper; released when wrapper is deleted.
     }
     delete item;
   }
