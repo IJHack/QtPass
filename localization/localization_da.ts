@@ -1425,7 +1425,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1415"/>
         <source>Open folder with file manager</source>
-        <translation>Åbn mappen med filhåndteringen</translation>
+        <translation>Åben mappen med filhåndteringen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="390"/>
