@@ -144,7 +144,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
           : "QLineEdit, QTextBrowser { border-style: none; background: "
             "transparent; }";
 
-  // Fixed control height keeps line edits and action buttons aligned.
+  // 26px matches the action-button visual height for consistent alignment.
   constexpr int fieldHeight = 26;
   if (s.hidePassword && trimmedField == QObject::tr("Password")) {
     auto *passwordLineEdit = new QLineEdit();
