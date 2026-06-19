@@ -96,7 +96,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
         <source>All Characters</source>
-        <translation>Tódolos caracteres</translation>
+        <translation>Todos os caracteres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
@@ -341,7 +341,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1089"/>
         <source>Show all fields templated</source>
-        <translation>Mostra tódolos campos dos modelos</translation>
+        <translation>Mostra todos os campos dos modelos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1116"/>
@@ -1696,7 +1696,7 @@ Continuar?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
-        <translation>Tódolos caracteres</translation>
+        <translation>Todos os caracteres</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
