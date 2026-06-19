@@ -60,7 +60,7 @@ clang-format --style=file -i <source-file>
   ```bash
   git fetch upstream
   git pull upstream main --rebase
-  git push -f
+  git push -f   # safe only on personal feature branches; never on shared branches or main
   ```
 
 ## Key Conventions
