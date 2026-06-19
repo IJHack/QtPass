@@ -83,7 +83,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
 
   // Combine the Copy button and the line edit in one widget
   auto *frame = new QFrame();
-  QLayout *frameLayout = new QHBoxLayout();
+  QHBoxLayout *frameLayout = new QHBoxLayout();
   frameLayout->setContentsMargins(5, 2, 2, 2);
   frameLayout->setSpacing(0);
   frame->setLayout(frameLayout);
@@ -141,6 +141,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
           : "QLineEdit, QTextBrowser { border-style: none; background: "
             "transparent; }";
 
+  // Fixed control height keeps line edits and action buttons aligned.
   constexpr int fieldHeight = 26;
   if (s.hidePassword && trimmedField == QObject::tr("Password")) {
     auto *passwordLineEdit = new QLineEdit();
