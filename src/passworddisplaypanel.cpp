@@ -97,7 +97,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
             &PasswordDisplayPanel::copyRequested);
 
     fieldLabel->setStyleSheet(buttonStyle);
-    frame->layout()->addWidget(fieldLabel);
+    frameLayout->addWidget(fieldLabel);
   }
 
   if (s.useQrencode) {
@@ -105,7 +105,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     connect(qrbutton, &QPushButtonAsQRCode::clicked, this,
             &PasswordDisplayPanel::qrRequested);
     qrbutton->setStyleSheet(buttonStyle);
-    frame->layout()->addWidget(qrbutton);
+    frameLayout->addWidget(qrbutton);
   }
 
   // Show an explicit "open in browser" button when the value is a safe
@@ -171,6 +171,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     contentTextBrowser->setObjectName(trimmedField);
     {
       QString linkedText;
+      linkedText.reserve(trimmedValue.size() * 3);
       int lastIndex = 0;
       static const QRegularExpression re = Util::protocolRegex();
       QRegularExpressionMatchIterator it = re.globalMatch(trimmedValue);
