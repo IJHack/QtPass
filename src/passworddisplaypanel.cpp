@@ -41,10 +41,9 @@ PasswordDisplayPanel::PasswordDisplayPanel(QGridLayout *grid,
 void PasswordDisplayPanel::clear() {
   while (m_grid->count() > 0) {
     QLayoutItem *item = m_grid->takeAt(0);
-    if (item->widget()) {
-      delete item->widget();
+    if (QWidget *widget = item->widget()) {
+      delete widget;
     }
-    // Layouts and spacers: QLayoutItem destructor handles cleanup.
     delete item;
   }
   m_container->setSpacing(0);
@@ -173,26 +172,22 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     contentTextBrowser->setObjectName(trimmedField);
     {
       QString linkedText;
-      qsizetype matchedUrlLength = 0;
-      qsizetype matchCount = 0;
+      QList<QRegularExpressionMatch> urlMatches;
+      qsizetype totalUrlLength = 0;
       {
-        QRegularExpressionMatchIterator sizeIt =
+        QRegularExpressionMatchIterator it =
             kProtocolRegex.globalMatch(trimmedValue);
-        while (sizeIt.hasNext()) {
-          const QRegularExpressionMatch match = sizeIt.next();
-          matchedUrlLength += match.capturedLength(0);
-          ++matchCount;
+        while (it.hasNext()) {
+          QRegularExpressionMatch match = it.next();
+          totalUrlLength += match.capturedLength(0);
+          urlMatches.append(match);
         }
       }
-      // Base text + duplicated URL text in href/content + fixed tag overhead.
       constexpr qsizetype anchorTagOverhead = sizeof("<a href=\"\"></a>") - 1;
-      linkedText.reserve(trimmedValue.size() + matchedUrlLength +
-                         matchCount * anchorTagOverhead);
+      linkedText.reserve(trimmedValue.size() + totalUrlLength +
+                         urlMatches.size() * anchorTagOverhead);
       int lastIndex = 0;
-      QRegularExpressionMatchIterator it =
-          kProtocolRegex.globalMatch(trimmedValue);
-      while (it.hasNext()) {
-        const QRegularExpressionMatch match = it.next();
+      for (const QRegularExpressionMatch &match : std::as_const(urlMatches)) {
         const int start = match.capturedStart(0);
         const int end = match.capturedEnd(0);
         linkedText +=
