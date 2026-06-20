@@ -29,6 +29,8 @@
 #include <QTextBrowser>
 #include <QUrl>
 
+static const QRegularExpression kProtocolRegex = Util::protocolRegex();
+
 PasswordDisplayPanel::PasswordDisplayPanel(QGridLayout *grid,
                                            QBoxLayout *container,
                                            QWidget *widgetParent,
@@ -171,10 +173,24 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     contentTextBrowser->setObjectName(trimmedField);
     {
       QString linkedText;
-      linkedText.reserve(trimmedValue.size() * 3);
+      qsizetype matchedUrlLength = 0;
+      qsizetype matchCount = 0;
+      {
+        QRegularExpressionMatchIterator sizeIt =
+            kProtocolRegex.globalMatch(trimmedValue);
+        while (sizeIt.hasNext()) {
+          const QRegularExpressionMatch match = sizeIt.next();
+          matchedUrlLength += match.capturedLength(0);
+          ++matchCount;
+        }
+      }
+      // Base text + duplicated URL text in href/content + fixed tag overhead.
+      constexpr qsizetype anchorTagOverhead = sizeof("<a href=\"\"></a>") - 1;
+      linkedText.reserve(trimmedValue.size() + matchedUrlLength +
+                         matchCount * anchorTagOverhead);
       int lastIndex = 0;
-      static const QRegularExpression re = Util::protocolRegex();
-      QRegularExpressionMatchIterator it = re.globalMatch(trimmedValue);
+      QRegularExpressionMatchIterator it =
+          kProtocolRegex.globalMatch(trimmedValue);
       while (it.hasNext()) {
         const QRegularExpressionMatch match = it.next();
         const int start = match.capturedStart(0);
