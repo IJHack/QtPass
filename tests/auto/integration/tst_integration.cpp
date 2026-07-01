@@ -216,6 +216,7 @@ private Q_SLOTS:
   void imitatePass_insertMoveAndShow();
   void imitatePass_insertCopyAndShow();
   void imitatePass_insertAndRemove();
+  void imitatePass_generateGpgKeysEmptyExecutable();
   void imitatePass_nestedDirectoryInsertAndShow();
   void imitatePass_editExistingEntry();
   void imitatePass_grepCaseInsensitive();
@@ -341,6 +342,29 @@ void tst_integration::cleanupTestCase() {
 // ---------------------------------------------------------------------------
 // ImitatePass tests
 // ---------------------------------------------------------------------------
+
+void tst_integration::imitatePass_generateGpgKeysEmptyExecutable() {
+  // Regression test for #1598: with no gpg executable configured,
+  // GenerateGPGKeys must surface an error rather than silently dropping the
+  // command (which would leave the keygen dialog spinning forever with no
+  // feedback). No gpg is run.
+  ImitatePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.gpgExecutable = QString(); // unconfigured
+  pass.init(s);
+
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  QSignalSpy successSpy(&pass, &Pass::finishedGenerateGPGKeys);
+  QVERIFY(errorSpy.isValid());
+  QVERIFY(successSpy.isValid());
+
+  pass.GenerateGPGKeys(QStringLiteral("Key-Type: RSA\n%commit\n"));
+
+  QTRY_COMPARE_WITH_TIMEOUT(errorSpy.count(), 1, 5000);
+  QCOMPARE(successSpy.count(), 0);
+  QVERIFY2(errorSpy.first().at(0).toInt() != 0,
+           "an unconfigured gpg executable must report a non-zero exit code");
+}
 
 void tst_integration::imitatePass_insertAndShow() {
   QTemporaryDir storeDir;
