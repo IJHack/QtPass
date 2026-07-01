@@ -31,6 +31,8 @@ private Q_SLOTS:
   void executeAsyncStartingSignal();
   void executeAsyncMultipleSequential();
   void executeAsyncWithWorkDir();
+  void executeAsyncFailedToStartEmitsError();
+  void executeAsyncCrashExitReportsNonZeroCode();
   void cancelNextWhileRunningReturnsMinusOne();
 #endif
   void executeBlockingNotFound();
@@ -375,6 +377,46 @@ void tst_executor::executeAsyncNonZeroExitCode() {
   QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
   const int exitCode = spy.first().at(1).toInt();
   QVERIFY2(exitCode != 0, "sh -c 'exit 1' must exit with non-zero code");
+}
+
+void tst_executor::executeAsyncFailedToStartEmitsError() {
+  // Regression test for #1598: a command that carries stdin but fails to start
+  // must surface an error rather than being silently dropped. Previously
+  // executeNext() dequeued it without emitting finished() or error(), leaving
+  // callers (e.g. the GPG keygen dialog) hanging with no feedback.
+  Executor exec;
+  QSignalSpy errorSpy(&exec, &Executor::error);
+  QSignalSpy finishedSpy(&exec,
+                         qOverload<int, int, const QString &, const QString &>(
+                             &Executor::finished));
+  QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
+  QVERIFY2(finishedSpy.isValid(),
+           "spy must connect to Executor::finished signal");
+  // Non-empty input forces the waitForStarted() branch in executeNext().
+  exec.execute(1, "/nonexistent/definitely-not-a-real-binary",
+               {"--gen-key", "--no-tty", "--batch"},
+               QStringLiteral("Key-Type: RSA\n%commit\n"), true, true);
+  QTRY_COMPARE_WITH_TIMEOUT(errorSpy.count(), 1, 5000);
+  QCOMPARE(finishedSpy.count(), 0);
+  QCOMPARE(errorSpy.first().at(0).toInt(), 1);
+  QVERIFY2(errorSpy.first().at(1).toInt() != 0,
+           "a failed-to-start process must report a non-zero exit code");
+}
+
+void tst_executor::executeAsyncCrashExitReportsNonZeroCode() {
+  // A signal-killed process is reported by QProcess as CrashExit with an exit
+  // code equal to the signal number (never 0), so it routes through the
+  // non-zero error gate instead of being mistaken for a successful run.
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy errorSpy(&exec, &Executor::error);
+  QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
+  exec.execute(2, sh, {"-c", "kill -SEGV $$"}, true, true);
+  QTRY_COMPARE_WITH_TIMEOUT(errorSpy.count(), 1, 5000);
+  QVERIFY2(errorSpy.first().at(1).toInt() != 0,
+           "a crashed process must report a non-zero exit code");
 }
 
 void tst_executor::executeAsyncStartingSignal() {

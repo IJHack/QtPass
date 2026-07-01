@@ -439,19 +439,31 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
  * @param batch GnuPG style configuration string
  */
 void Pass::GenerateGPGKeys(QString batch) {
-  // Kill any stale GPG agents that might be holding locks on the key database
-  // This helps avoid "database locked" timeouts during key generation
   const QString gpgPath = m_settings.gpgExecutable;
-  if (!gpgPath.isEmpty()) {
-    ResolvedGpgconfCommand resolvedGpgconf = resolveGpgconfCommand(gpgPath);
-    QStringList killArgs = resolvedGpgconf.arguments;
-    killArgs << "--kill";
-    killArgs << "gpg-agent";
-    // Use same environment as key generation to target correct gpg-agent
-    if (Executor::executeBlocking(env, resolvedGpgconf.program, killArgs) !=
-        0) {
-      qWarning() << "Failed to kill gpg-agent";
-    }
+  if (gpgPath.isEmpty()) {
+    // No gpg configured: executeWrapper would hand an empty executable to the
+    // Executor, which silently drops it (see Executor::execute), leaving the
+    // keygen dialog spinning with no feedback. Surface the misconfiguration
+    // instead. Deferred via a queued call so we do not re-enter
+    // KeygenDialog::done(), which drives key generation synchronously.
+    QMetaObject::invokeMethod(
+        this,
+        [this]() {
+          emit processErrorExit(1, tr("No GPG executable configured"));
+        },
+        Qt::QueuedConnection);
+    return;
+  }
+
+  // Kill any stale GPG agents that might be holding locks on the key database.
+  // This helps avoid "database locked" timeouts during key generation.
+  ResolvedGpgconfCommand resolvedGpgconf = resolveGpgconfCommand(gpgPath);
+  QStringList killArgs = resolvedGpgconf.arguments;
+  killArgs << "--kill";
+  killArgs << "gpg-agent";
+  // Use same environment as key generation to target correct gpg-agent
+  if (Executor::executeBlocking(env, resolvedGpgconf.program, killArgs) != 0) {
+    qWarning() << "Failed to kill gpg-agent";
   }
 
   executeWrapper(GPG_GENKEYS, gpgPath, {"--gen-key", "--no-tty", "--batch"},

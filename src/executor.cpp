@@ -82,9 +82,26 @@ void Executor::executeNext() {
 #ifdef QT_DEBUG
           dbg() << "Process failed to start:" << i.id << " " << i.app;
 #endif
+          // Capture before dequeue() invalidates the head reference.
+          const int failedId = i.id;
+          const QString failedApp = i.app;
           m_process.closeWriteChannel();
           running = false;
           m_execQueue.dequeue();
+          // Surface the failure instead of silently dropping the command:
+          // otherwise callers waiting on a finished/error signal (e.g. the GPG
+          // keygen dialog) hang forever with no feedback. Defer the emit via a
+          // queued call so we do not re-enter a caller still on the stack —
+          // KeygenDialog::done() drives key generation synchronously — which
+          // mirrors the normal asynchronous QProcess::finished path. A -1 exit
+          // code routes through Pass::finished's non-zero error gate.
+          QMetaObject::invokeMethod(
+              this,
+              [this, failedId, failedApp]() {
+                emit error(failedId, -1, QString(),
+                           tr("Failed to start %1").arg(failedApp));
+              },
+              Qt::QueuedConnection);
           executeNext();
           return;
         }
