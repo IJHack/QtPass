@@ -1,5 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QDir>
+#include <QFileInfo>
 #include <QStandardPaths>
 #include <QtTest>
 
@@ -31,6 +33,8 @@ private Q_SLOTS:
   void executeAsyncStartingSignal();
   void executeAsyncMultipleSequential();
   void executeAsyncWithWorkDir();
+  void executeAsyncFailedToStartEmitsError();
+  void executeAsyncCrashExitReportsNonZeroCode();
   void cancelNextWhileRunningReturnsMinusOne();
 #endif
   void executeBlockingNotFound();
@@ -377,6 +381,46 @@ void tst_executor::executeAsyncNonZeroExitCode() {
   QVERIFY2(exitCode != 0, "sh -c 'exit 1' must exit with non-zero code");
 }
 
+void tst_executor::executeAsyncFailedToStartEmitsError() {
+  // Regression test for #1598: a command that carries stdin but fails to start
+  // must surface an error rather than being silently dropped. Previously
+  // executeNext() dequeued it without emitting finished() or error(), leaving
+  // callers (e.g. the GPG keygen dialog) hanging with no feedback.
+  Executor exec;
+  QSignalSpy errorSpy(&exec, &Executor::error);
+  QSignalSpy finishedSpy(&exec,
+                         qOverload<int, int, const QString &, const QString &>(
+                             &Executor::finished));
+  QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
+  QVERIFY2(finishedSpy.isValid(),
+           "spy must connect to Executor::finished signal");
+  // Non-empty input forces the waitForStarted() branch in executeNext().
+  exec.execute(1, "/nonexistent/definitely-not-a-real-binary",
+               {"--gen-key", "--no-tty", "--batch"},
+               QStringLiteral("Key-Type: RSA\n%commit\n"), true, true);
+  QTRY_COMPARE_WITH_TIMEOUT(errorSpy.count(), 1, 5000);
+  QCOMPARE(finishedSpy.count(), 0);
+  QCOMPARE(errorSpy.first().at(0).toInt(), 1);
+  QVERIFY2(errorSpy.first().at(1).toInt() != 0,
+           "a failed-to-start process must report a non-zero exit code");
+}
+
+void tst_executor::executeAsyncCrashExitReportsNonZeroCode() {
+  // A signal-killed process is reported by QProcess as CrashExit with an exit
+  // code equal to the signal number (never 0), so it routes through the
+  // non-zero error gate instead of being mistaken for a successful run.
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy errorSpy(&exec, &Executor::error);
+  QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
+  exec.execute(2, sh, {"-c", "kill -SEGV $$"}, true, true);
+  QTRY_COMPARE_WITH_TIMEOUT(errorSpy.count(), 1, 5000);
+  QVERIFY2(errorSpy.first().at(1).toInt() != 0,
+           "a crashed process must report a non-zero exit code");
+}
+
 void tst_executor::executeAsyncStartingSignal() {
   const QString sh = QStandardPaths::findExecutable("sh");
   if (sh.isEmpty())
@@ -421,7 +465,13 @@ void tst_executor::executeAsyncWithWorkDir() {
   exec.execute(5, tmp.path(), sh, {"-c", "pwd"}, true, false);
   QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
   const QString output = spy.first().at(2).toString().trimmed();
-  QVERIFY2(QDir::cleanPath(output) == QDir::cleanPath(tmp.path()),
+  QVERIFY2(!output.isEmpty(), "pwd must produce output");
+  // Compare canonical paths: on macOS the temp dir lives under /var (a symlink
+  // to /private/var) and the child's pwd reports the resolved physical path, so
+  // a plain string compare fails. canonicalFilePath() resolves symlinks on both
+  // sides so equivalent locations compare equal on every platform.
+  QVERIFY2(QFileInfo(output).canonicalFilePath() ==
+               QFileInfo(tmp.path()).canonicalFilePath(),
            "working directory must match the tmp path");
 }
 
