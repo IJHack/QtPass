@@ -1,5 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QDir>
+#include <QFileInfo>
 #include <QStandardPaths>
 #include <QtTest>
 
@@ -463,7 +465,13 @@ void tst_executor::executeAsyncWithWorkDir() {
   exec.execute(5, tmp.path(), sh, {"-c", "pwd"}, true, false);
   QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
   const QString output = spy.first().at(2).toString().trimmed();
-  QVERIFY2(QDir::cleanPath(output) == QDir::cleanPath(tmp.path()),
+  QVERIFY2(!output.isEmpty(), "pwd must produce output");
+  // Compare canonical paths: on macOS the temp dir lives under /var (a symlink
+  // to /private/var) and the child's pwd reports the resolved physical path, so
+  // a plain string compare fails. canonicalFilePath() resolves symlinks on both
+  // sides so equivalent locations compare equal on every platform.
+  QVERIFY2(QFileInfo(output).canonicalFilePath() ==
+               QFileInfo(tmp.path()).canonicalFilePath(),
            "working directory must match the tmp path");
 }
 
