@@ -78,6 +78,9 @@ jobs:
 
       - uses: jurplel/install-qt-action@v4.3.1
         if: steps.need_build.outputs.run_build == 'true'
+        with:
+          # The Windows installer ships on Qt 6.8 (LTS).
+          version: "6.8"
 
       - name: Install Inno Setup
         if: steps.need_build.outputs.run_build == 'true'
@@ -170,6 +173,12 @@ jobs:
 
       - uses: jurplel/install-qt-action@v4.3.1
         if: steps.need_build.outputs.run_build == 'true'
+        with:
+          # Qt 6.11 (6.11.1+) is required to build on the macos-latest runner:
+          # its Xcode 26.x clang rejects the ARM __yield intrinsic used by
+          # Qt 6.8.x's qyieldcpu.h. 6.11 reordered that header to prefer
+          # __builtin_arm_yield, so it compiles cleanly.
+          version: "6.11"
 
       - name: Install dmg helper
         if: steps.need_build.outputs.run_build == 'true'

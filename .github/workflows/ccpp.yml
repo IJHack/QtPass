@@ -56,11 +56,19 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        # Qt 6.8 (LTS) is verified on Linux and Windows. macOS is not tested on
+        # 6.8: the macos-latest runner's Xcode 26.x cannot compile Qt 6.8.x
+        # (qyieldcpu.h uses the ARM __yield intrinsic, unfixed until 6.11.1).
+        # macOS is covered by the 6.11 entry below, matching what the dmg ships.
+        os: [ubuntu-latest, windows-latest]
         qt: ["6.8"]
         include:
           - os: ubuntu-latest
             qt: "5.15"
+          - os: ubuntu-latest
+            qt: "6.11"
+          - os: macos-latest
+            qt: "6.11"
 
     steps:
       - name: Check if build needed
