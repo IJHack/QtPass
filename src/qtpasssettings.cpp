@@ -166,7 +166,17 @@ auto QtPassSettings::getProfiles() -> QHash<QString, QHash<QString, QString>> {
  */
 void QtPassSettings::setProfiles(
     const QHash<QString, QHash<QString, QString>> &profiles) {
+  // The "profile" key is overloaded: it stores both the active-profile name
+  // (a scalar, read by getProfile()) and the per-profile group
+  // (profile/<name>/...). remove() clears the whole subtree including the
+  // scalar, which would silently switch the active password store on every
+  // save, so preserve and restore the active-profile name around the rewrite.
+  const QString activeProfile =
+      getInstance()->value(SettingsConstants::profile).toString();
   getInstance()->remove(SettingsConstants::profile);
+  if (!activeProfile.isEmpty()) {
+    getInstance()->setValue(SettingsConstants::profile, activeProfile);
+  }
   getInstance()->beginGroup(SettingsConstants::profile);
 
   QHash<QString, QHash<QString, QString>>::const_iterator i = profiles.begin();

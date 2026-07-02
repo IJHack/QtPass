@@ -46,6 +46,7 @@ private Q_SLOTS:
   void setPwgenPathSetsLineEdit();
   void setPwgenPathEmptyDisablesPwgenCheckbox();
   void setAndGetPasswordConfigurationRoundTrip();
+  void customCharsetRoundTrip();
 };
 
 /**
@@ -255,6 +256,26 @@ void tst_configdialog::setAndGetPasswordConfigurationRoundTrip() {
   QCOMPARE(result.length, 32);
   QCOMPARE(static_cast<int>(result.selected),
            static_cast<int>(PasswordConfiguration::ALPHANUMERIC));
+}
+
+/**
+ * @brief A CUSTOM charset survives the set/get round-trip.
+ *
+ * getPasswordConfiguration() only reads the character line edit while CUSTOM is
+ * selected; this guards that path so a user-defined charset is not lost or
+ * replaced by a builtin string on save.
+ */
+void tst_configdialog::customCharsetRoundTrip() {
+  ConfigDialog dialog(nullptr);
+  PasswordConfiguration cfg;
+  cfg.selected = PasswordConfiguration::CUSTOM;
+  cfg.Characters[PasswordConfiguration::CUSTOM] = QStringLiteral("abc123!@#");
+  dialog.setPasswordConfiguration(cfg);
+  PasswordConfiguration result = dialog.getPasswordConfiguration();
+  QCOMPARE(static_cast<int>(result.selected),
+           static_cast<int>(PasswordConfiguration::CUSTOM));
+  QCOMPARE(result.Characters[PasswordConfiguration::CUSTOM],
+           QStringLiteral("abc123!@#"));
 }
 
 QTEST_MAIN(tst_configdialog)

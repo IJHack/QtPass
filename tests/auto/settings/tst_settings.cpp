@@ -23,6 +23,7 @@ private Q_SLOTS:
   void setAndGetPasswordConfiguration();
   void getProfilesEmpty();
   void setAndGetProfiles();
+  void setProfilesPreservesActiveProfile();
   void setAndGetVersion();
   void setAndGetGeometry();
   void getPassStore();
@@ -168,6 +169,26 @@ void tst_settings::setAndGetProfiles() {
   QVERIFY(!readProfiles.isEmpty());
   QVERIFY(readProfiles.contains("profile1"));
   QCOMPARE(readProfiles["profile1"]["path"], QString("/test/path"));
+}
+
+void tst_settings::setProfilesPreservesActiveProfile() {
+  // The active-profile name (getProfile) is stored under the same "profile"
+  // key that setProfiles() clears before rewriting the profile group.
+  // Regression: setProfiles() used to wipe the scalar, silently switching the
+  // active password store on every config-dialog OK.
+  AppSettings s = QtPassSettings::load();
+  s.activeProfile = QStringLiteral("work");
+  QtPassSettings::save(s);
+  QCOMPARE(QtPassSettings::getProfile(), QStringLiteral("work"));
+
+  QHash<QString, QHash<QString, QString>> profiles;
+  QHash<QString, QString> profile;
+  profile.insert("path", "/store/work");
+  profiles.insert("work", profile);
+  QtPassSettings::setProfiles(profiles);
+
+  QCOMPARE(QtPassSettings::getProfile(), QStringLiteral("work"));
+  QVERIFY(QtPassSettings::getProfiles().contains("work"));
 }
 
 void tst_settings::setAndGetVersion() {
