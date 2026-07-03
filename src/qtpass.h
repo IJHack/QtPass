@@ -64,11 +64,6 @@ public:
   void setClippedText(const QString &text, const QString &p_output = QString());
 
   /**
-   * @brief Remove any stored clipped text value.
-   */
-  void clearClippedText();
-
-  /**
    * @brief Configure and start the clipboard-clear timer.
    */
   void setClipboardTimer();
