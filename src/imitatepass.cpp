@@ -920,14 +920,19 @@ void ImitatePass::Copy(const QString src, const QString dest,
                        const bool force) {
   QFileInfo destFileInfo(dest);
   transactionHelper trans(this, PASS_COPY);
-  QDir qDir;
   if (force) {
-    qDir.remove(dest);
+    QFile::remove(dest);
   }
   // git has no "cp" subcommand, so copy on the filesystem in both modes and,
   // when using git, stage the new path afterwards. QFile::copy is synchronous,
-  // so the destination exists before the re-encryption below runs.
-  QFile::copy(src, dest);
+  // so the destination exists before the re-encryption below runs. It fails
+  // (without overwriting) when dest already exists, so surface that instead of
+  // committing a copy that never happened.
+  if (!QFile::copy(src, dest)) {
+    emit critical(tr("Copy failed"),
+                  tr("Could not copy %1 to %2.").arg(src, dest));
+    return;
+  }
   if (m_settings.useGit) {
     executeGit(GIT_COPY, {"add", pgit(dest)});
     QString message = QString("Copied from %1 to %2 using QtPass.");
