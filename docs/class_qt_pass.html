@@ -147,10 +147,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad0a4d7627e6303e412d4a832a8bad77c" id="r_ad0a4d7627e6303e412d4a832a8bad77c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad0a4d7627e6303e412d4a832a8bad77c">init</a> () -&gt; bool</td></tr>
 <tr class="memdesc:ad0a4d7627e6303e412d4a832a8bad77c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize internal state and signal connections.  <br /></td></tr>
 <tr class="memitem:a34a92aa7506eb436628c7c7ff6bfc489" id="r_a34a92aa7506eb436628c7c7ff6bfc489"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a34a92aa7506eb436628c7c7ff6bfc489">setClippedText</a> (const QString &amp;text, const QString &amp;p_output=QString())</td></tr>
-<tr class="memdesc:a34a92aa7506eb436628c7c7ff6bfc489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the tracked clipped text value.  <br /></td></tr>
-<tr class="memitem:a00f9914078839b980f3d66ddbed61cab" id="r_a00f9914078839b980f3d66ddbed61cab"><td class="memItemLeft"><a id="a00f9914078839b980f3d66ddbed61cab" name="a00f9914078839b980f3d66ddbed61cab"></a>
-void&#160;</td><td class="memItemRight"><b>clearClippedText</b> ()</td></tr>
-<tr class="memdesc:a00f9914078839b980f3d66ddbed61cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove any stored clipped text value. <br /></td></tr>
+<tr class="memdesc:a34a92aa7506eb436628c7c7ff6bfc489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle clipboard copying for a shown entry.  <br /></td></tr>
 <tr class="memitem:a24eb2c0a19143db0ba3a741c66881be6" id="r_a24eb2c0a19143db0ba3a741c66881be6"><td class="memItemLeft"><a id="a24eb2c0a19143db0ba3a741c66881be6" name="a24eb2c0a19143db0ba3a741c66881be6"></a>
 void&#160;</td><td class="memItemRight"><b>setClipboardTimer</b> ()</td></tr>
 <tr class="memdesc:a24eb2c0a19143db0ba3a741c66881be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure and start the clipboard-clear timer. <br /></td></tr>
@@ -308,7 +305,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Return whether this instance is in a fresh-start state. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if in fresh-start state. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00080">80</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00079">79</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 
 </div>
 </div>
@@ -331,11 +328,11 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Update the tracked clipped text value. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Handle clipboard copying for a shown entry. </p>
+<p>In "always copy" mode (and only then) this copies <code class="param">text</code> to the clipboard via <a class="el" href="#acba134fb5281aedee11899a03976aa95" title="Copy text into the system clipboard.">copyTextToClipboard()</a>, which also arms the autoclear timer and records the clipboard contents. In other modes it does nothing, leaving any pending autoclear tracking intact. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td>Primary text to store. </td></tr>
-    <tr><td class="paramname">p_output</td><td>Optional additional output used when determining the final clipped text value. </td></tr>
+    <tr><td class="paramname">text</td><td>Password (or value) of the entry being shown. </td></tr>
+    <tr><td class="paramname">p_output</td><td>Full decrypted output; copying is skipped when it is empty. </td></tr>
   </table>
   </dd>
 </dl>
@@ -373,7 +370,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00086">86</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00085">85</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 
 </div>
 </div>
