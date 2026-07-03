@@ -221,6 +221,9 @@ private:
 
   MainWindow *mainWindow;
   QHash<QString, QHash<QString, QString>> m_profiles;
+  /// User-defined custom charset, retained while a builtin set is selected so
+  /// it is not lost when the line edit shows the builtin's characters instead.
+  QString m_customPasswordChars;
 };
 
 #endif // SRC_CONFIGDIALOG_H_

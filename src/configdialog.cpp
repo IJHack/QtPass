@@ -150,6 +150,12 @@ void ConfigDialog::applySettings(const AppSettings &settings) {
   useOtp(settings.useOtp);
   useGrepSearch(settings.useGrepSearch);
   useQrencode(settings.useQrencode);
+  // Restore the persisted pwgen path and password-generation settings before
+  // toggling usePwgen (which is gated on a non-empty pwgen path). Without this
+  // the Password-tab widgets keep their .ui defaults and readSettings() writes
+  // those defaults back over the user's saved configuration on every OK.
+  setPwgenPath(settings.pwgenExecutable);
+  setPasswordConfiguration(settings.passwordConfiguration);
   usePwgen(settings.usePwgen);
   useTemplate(settings.useTemplate);
 }
@@ -254,8 +260,8 @@ void ConfigDialog::usePass(bool usePass) {
  * @return void - This function does not return a value.
  */
 void ConfigDialog::validate(QTableWidgetItem *item) {
-  bool status = true;
-
+  // Update the required-field marker(s): all cells when no specific item is
+  // given, otherwise just the one that changed.
   if (item == nullptr) {
     for (int i = 0; i < ui->profileTable->rowCount(); i++) {
       for (int j = 0; j < ui->profileTable->columnCount(); j++) {
@@ -266,26 +272,34 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
         if (_item->text().isEmpty() && j != 2) {
           _item->setBackground(Qt::red);
           _item->setToolTip(tr("This field is required"));
-          status = false;
-          break;
         } else {
           _item->setBackground(QBrush());
           _item->setToolTip(QString());
         }
-      }
-
-      if (!status) {
-        break;
       }
     }
   } else {
     if (item->text().isEmpty() && item->column() != 2) {
       item->setBackground(Qt::red);
       item->setToolTip(tr("This field is required"));
-      status = false;
     } else {
       item->setBackground(QBrush());
       item->setToolTip(QString());
+    }
+  }
+
+  // Enable OK only when every required cell across all rows is filled. Deriving
+  // this from a single changed item would re-enable OK while another row still
+  // has an empty required field, letting an empty-named profile be saved (and
+  // then silently dropped, losing that profile's path and signing key).
+  bool status = true;
+  for (int i = 0; i < ui->profileTable->rowCount() && status; i++) {
+    for (int j = 0; j < ui->profileTable->columnCount(); j++) {
+      QTableWidgetItem *_item = ui->profileTable->item(i, j);
+      if (_item && _item->text().isEmpty() && j != 2) {
+        status = false;
+        break;
+      }
     }
   }
 
@@ -619,24 +633,40 @@ void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
   // Cache profiles for use in onProfileTableSelectionChanged
   m_profiles = profiles;
 
+  // Populate with sorting disabled: writing into the sort column re-sorts the
+  // table between setItem calls, so the path/signingKey cells would land in a
+  // different profile's row — corrupting the display and destroying data on
+  // save. Restore the previous sort state and locate the current row by item
+  // pointer afterwards.
+  bool sortingEnabled = ui->profileTable->isSortingEnabled();
+  ui->profileTable->setSortingEnabled(false);
+
   ui->profileTable->setRowCount(static_cast<int>(profiles.count()));
   QHashIterator<QString, QHash<QString, QString>> i(profiles);
   int n = 0;
+  QTableWidgetItem *currentItem = nullptr;
   while (i.hasNext()) {
     i.next();
     if (!i.value().isEmpty() && !i.key().isEmpty()) {
-      ui->profileTable->setItem(n, 0, new QTableWidgetItem(i.key()));
+      auto *nameItem = new QTableWidgetItem(i.key());
+      ui->profileTable->setItem(n, 0, nameItem);
       ui->profileTable->setItem(n, 1,
                                 new QTableWidgetItem(i.value().value("path")));
       ui->profileTable->setItem(
           n, 2, new QTableWidgetItem(i.value().value("signingKey")));
       if (i.key() == currentProfile) {
-        ui->profileTable->selectRow(n);
-        // Load git settings for current profile
-        loadGitSettingsForProfile(currentProfile, m_profiles);
+        currentItem = nameItem;
       }
     }
     ++n;
+  }
+
+  ui->profileTable->setSortingEnabled(sortingEnabled);
+
+  if (currentItem != nullptr) {
+    ui->profileTable->selectRow(ui->profileTable->row(currentItem));
+    // Load git settings for current profile
+    loadGitSettingsForProfile(currentProfile, m_profiles);
   }
 }
 
@@ -815,18 +845,22 @@ void ConfigDialog::on_addButton_clicked() {
 
   int n = ui->profileTable->rowCount();
   ui->profileTable->insertRow(n);
-  ui->profileTable->setItem(n, 0, new QTableWidgetItem(tr("New Profile")));
+  auto *nameItem = new QTableWidgetItem(tr("New Profile"));
+  ui->profileTable->setItem(n, 0, nameItem);
   ui->profileTable->setItem(n, 1, new QTableWidgetItem(ui->storePath->text()));
   ui->profileTable->setItem(n, 2, new QTableWidgetItem());
 
   ui->profileTable->setSortingEnabled(sortingEnabled);
 
-  int currentRow = ui->profileTable->row(ui->profileTable->item(n, 0));
+  // Re-enabling sorting may move the new row, so locate it by item pointer
+  // rather than the stale insertion index — item(n, 0) could now be a
+  // different, existing profile, which we would then wrongly rename/select.
+  int currentRow = ui->profileTable->row(nameItem);
   ui->profileTable->selectRow(currentRow);
   ui->deleteButton->setEnabled(true);
 
-  ui->profileTable->editItem(ui->profileTable->item(currentRow, 0));
-  ui->profileTable->item(currentRow, 0)->setSelected(true);
+  ui->profileTable->editItem(nameItem);
+  nameItem->setSelected(true);
 
   validate();
   updateProfileStatus(currentRow);
@@ -840,7 +874,14 @@ void ConfigDialog::on_profileTable_cellDoubleClicked(int row, int column) {
   if (column == 1) {
     QString dir = selectFolder();
     if (!dir.isEmpty()) {
-      ui->profileTable->item(row, 1)->setText(dir);
+      // QTableWidget emits cellDoubleClicked even for cells with no item, so
+      // guard against a null path cell rather than dereferencing it.
+      QTableWidgetItem *pathItem = ui->profileTable->item(row, 1);
+      if (pathItem != nullptr) {
+        pathItem->setText(dir);
+      } else {
+        ui->profileTable->setItem(row, 1, new QTableWidgetItem(dir));
+      }
     }
   }
 }
@@ -1228,6 +1269,9 @@ void ConfigDialog::usePwgen(bool usePwgen) {
 
 void ConfigDialog::setPasswordConfiguration(
     const PasswordConfiguration &config) {
+  // Retain the custom charset so it survives even when a builtin set is the
+  // active selection (the line edit then shows the builtin's characters).
+  m_customPasswordChars = config.Characters[PasswordConfiguration::CUSTOM];
   ui->spinBoxPasswordLength->setValue(config.length);
   ui->passwordCharTemplateSelector->setCurrentIndex(config.selected);
   if (config.selected != PasswordConfiguration::CUSTOM) {
@@ -1241,8 +1285,16 @@ auto ConfigDialog::getPasswordConfiguration() -> PasswordConfiguration {
   config.length = ui->spinBoxPasswordLength->value();
   config.selected = static_cast<PasswordConfiguration::characterSet>(
       ui->passwordCharTemplateSelector->currentIndex());
-  config.Characters[PasswordConfiguration::CUSTOM] =
-      ui->lineEditPasswordChars->text();
+  // The line edit only holds the user's custom charset while CUSTOM is
+  // selected; for a builtin selection it shows that builtin's characters.
+  // Reading it unconditionally would overwrite the saved custom charset with a
+  // builtin string, so fall back to the retained custom value in that case.
+  if (config.selected == PasswordConfiguration::CUSTOM) {
+    config.Characters[PasswordConfiguration::CUSTOM] =
+        ui->lineEditPasswordChars->text();
+  } else {
+    config.Characters[PasswordConfiguration::CUSTOM] = m_customPasswordChars;
+  }
   return config;
 }
 
