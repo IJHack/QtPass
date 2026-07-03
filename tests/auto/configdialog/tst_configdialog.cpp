@@ -319,8 +319,13 @@ void tst_configdialog::customCharsetPreservedWhenBuiltinSelected() {
  * the new one. The new row must be located by item pointer.
  */
 void tst_configdialog::addProfileSelectsNewRowAfterSort() {
-  const QHash<QString, QHash<QString, QString>> previous =
-      QtPassSettings::getProfiles();
+  // Restore the real profile state even if an assertion fails early (QVERIFY/
+  // QCOMPARE return immediately), so this test never leaks its synthetic
+  // profiles into later tests in the run.
+  struct ProfileRestorer {
+    QHash<QString, QHash<QString, QString>> saved;
+    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
+  } restorer{QtPassSettings::getProfiles()};
 
   QHash<QString, QHash<QString, QString>> profiles;
   for (const QString &name :
@@ -350,9 +355,6 @@ void tst_configdialog::addProfileSelectsNewRowAfterSort() {
     QVERIFY(nameItem != nullptr);
     QCOMPARE(nameItem->text(), QStringLiteral("New Profile"));
   }
-
-  // Restore whatever profile state existed before the test.
-  QtPassSettings::setProfiles(previous);
 }
 
 QTEST_MAIN(tst_configdialog)
