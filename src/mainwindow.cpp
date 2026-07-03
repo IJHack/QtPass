@@ -574,8 +574,6 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   bool cleared = ui->treeView->currentIndex().flags() == Qt::NoItemFlags;
   m_currentDir = Util::getDir(ui->treeView->currentIndex(), false, model,
                               proxyModel, QtPassSettings::getPassStore());
-  // Clear any previously cached clipped text before showing new password
-  m_qtPass->clearClippedText();
   QString file = getFile(index, true);
   ui->passwordName->setText(file);
   if (!file.isEmpty() && !cleared) {

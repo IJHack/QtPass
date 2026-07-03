@@ -415,17 +415,16 @@ void QtPass::doGitPush() {
  */
 void QtPass::setClippedText(const QString &password, const QString &p_output) {
   const AppSettings s = QtPassSettings::load();
-  if (s.clipBoardType != Enums::CLIPBOARD_NEVER && !p_output.isEmpty()) {
-    clippedText = password;
-    if (s.clipBoardType == Enums::CLIPBOARD_ALWAYS) {
-      copyTextToClipboard(password);
-    }
+  // Only "always copy" mode actually places text on the clipboard here; in
+  // on-demand mode the copy happens later from the field's copy button.
+  // Crucially, do not touch clippedText otherwise — it tracks what is currently
+  // on the clipboard so the autoclear timer knows what to clear. Overwriting it
+  // when merely showing another entry left a previously copied password on the
+  // clipboard past its autoclear window (copyTextToClipboard sets it).
+  if (s.clipBoardType == Enums::CLIPBOARD_ALWAYS && !p_output.isEmpty()) {
+    copyTextToClipboard(password);
   }
 }
-/**
- * @brief Clears the stored clipped text.
- */
-void QtPass::clearClippedText() { clippedText = ""; }
 
 /**
  * @brief Sets the clipboard clear timer based on autoclear settings.
