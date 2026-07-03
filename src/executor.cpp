@@ -69,52 +69,56 @@ void Executor::startProcessBlocking(QProcess &internal, const QString &app,
  * @brief Executor::executeNext consumes executable tasks from the queue
  */
 void Executor::executeNext() {
-  if (!running) {
-    if (!m_execQueue.isEmpty()) {
-      const execQueueItem &i = m_execQueue.head();
-      running = true;
-      if (!i.workingDir.isEmpty()) {
-        m_process.setWorkingDirectory(i.workingDir);
-      }
-      startProcess(i.app, i.args);
-      if (!i.input.isEmpty()) {
-        if (!m_process.waitForStarted(-1)) {
+  if (running || m_execQueue.isEmpty()) {
+    return;
+  }
+  const execQueueItem &i = m_execQueue.head();
+  running = true;
+  if (!i.workingDir.isEmpty()) {
+    m_process.setWorkingDirectory(i.workingDir);
+  }
+  startProcess(i.app, i.args);
+
+  // Confirm the process actually started, regardless of whether it takes stdin.
+  // A process that fails to start emits errorOccurred(FailedToStart) but never
+  // finished(), so without this check `running` would stay true forever and
+  // stall the whole queue (and, for stdin commands, the input would be dropped
+  // silently). Surface the failure so callers waiting on a finished/error
+  // signal (e.g. the GPG keygen dialog) do not hang. Defer the emit via a
+  // queued call so we do not re-enter a caller still on the stack —
+  // KeygenDialog::done() drives key generation synchronously — which mirrors
+  // the normal asynchronous QProcess::finished path. A -1 exit code routes
+  // through Pass::finished's non-zero error gate.
+  if (!m_process.waitForStarted(-1)) {
 #ifdef QT_DEBUG
-          dbg() << "Process failed to start:" << i.id << " " << i.app;
+    dbg() << "Process failed to start:" << i.id << " " << i.app;
 #endif
-          // Capture before dequeue() invalidates the head reference.
-          const int failedId = i.id;
-          const QString failedApp = i.app;
-          m_process.closeWriteChannel();
-          running = false;
-          m_execQueue.dequeue();
-          // Surface the failure instead of silently dropping the command:
-          // otherwise callers waiting on a finished/error signal (e.g. the GPG
-          // keygen dialog) hang forever with no feedback. Defer the emit via a
-          // queued call so we do not re-enter a caller still on the stack —
-          // KeygenDialog::done() drives key generation synchronously — which
-          // mirrors the normal asynchronous QProcess::finished path. A -1 exit
-          // code routes through Pass::finished's non-zero error gate.
-          QMetaObject::invokeMethod(
-              this,
-              [this, failedId, failedApp]() {
-                emit error(failedId, -1, QString(),
-                           tr("Failed to start %1").arg(failedApp));
-              },
-              Qt::QueuedConnection);
-          executeNext();
-          return;
-        }
-        QByteArray data = i.input.toUtf8();
-        if (m_process.write(data) != data.length()) {
+    // Capture before dequeue() invalidates the head reference.
+    const int failedId = i.id;
+    const QString failedApp = i.app;
+    m_process.closeWriteChannel();
+    running = false;
+    m_execQueue.dequeue();
+    QMetaObject::invokeMethod(
+        this,
+        [this, failedId, failedApp]() {
+          emit error(failedId, -1, QString(),
+                     tr("Failed to start %1").arg(failedApp));
+        },
+        Qt::QueuedConnection);
+    executeNext();
+    return;
+  }
+
+  if (!i.input.isEmpty()) {
+    QByteArray data = i.input.toUtf8();
+    if (m_process.write(data) != data.length()) {
 #ifdef QT_DEBUG
-          dbg() << "Not all data written to process:" << i.id << " " << i.app;
+      dbg() << "Not all data written to process:" << i.id << " " << i.app;
 #endif
-        }
-      }
-      m_process.closeWriteChannel();
     }
   }
+  m_process.closeWriteChannel();
 }
 
 /**

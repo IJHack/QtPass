@@ -34,6 +34,7 @@ private Q_SLOTS:
   void executeAsyncMultipleSequential();
   void executeAsyncWithWorkDir();
   void executeAsyncFailedToStartEmitsError();
+  void executeAsyncFailedToStartNoInputDoesNotStall();
   void executeAsyncCrashExitReportsNonZeroCode();
   void cancelNextWhileRunningReturnsMinusOne();
 #endif
@@ -403,6 +404,39 @@ void tst_executor::executeAsyncFailedToStartEmitsError() {
   QCOMPARE(errorSpy.first().at(0).toInt(), 1);
   QVERIFY2(errorSpy.first().at(1).toInt() != 0,
            "a failed-to-start process must report a non-zero exit code");
+}
+
+void tst_executor::executeAsyncFailedToStartNoInputDoesNotStall() {
+  // A command WITHOUT stdin that fails to start used to leave `running` true
+  // forever: QProcess emits errorOccurred(FailedToStart) but never finished(),
+  // and the no-input path skipped waitForStarted(), so the whole queue stalled.
+  // It must now surface an error and let queued commands proceed.
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy errorSpy(&exec, &Executor::error);
+  QSignalSpy finishedSpy(&exec,
+                         qOverload<int, int, const QString &, const QString &>(
+                             &Executor::finished));
+  QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
+  QVERIFY2(finishedSpy.isValid(),
+           "spy must connect to Executor::finished signal");
+
+  // No input -> the path that previously skipped the start check and stalled.
+  exec.execute(1, "/nonexistent/definitely-not-a-real-binary", {"status"},
+               false, false);
+  // A valid command queued behind the failure must still run.
+  exec.execute(2, sh, {"-c", "echo after-failure"}, true, false);
+
+  QTRY_COMPARE_WITH_TIMEOUT(errorSpy.count(), 1, 5000);
+  QCOMPARE(errorSpy.first().at(0).toInt(), 1);
+  QVERIFY2(errorSpy.first().at(1).toInt() != 0,
+           "failed-to-start must report a non-zero exit code");
+
+  // The queue did not stall: the second command completed.
+  QTRY_COMPARE_WITH_TIMEOUT(finishedSpy.count(), 1, 5000);
+  QCOMPARE(finishedSpy.first().at(0).toInt(), 2);
 }
 
 void tst_executor::executeAsyncCrashExitReportsNonZeroCode() {
