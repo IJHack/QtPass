@@ -7,9 +7,11 @@
 #include "grepsearchcontroller.h"
 #include "storemodel.h"
 
+#include <QDialog>
 #include <QFileSystemModel>
 #include <QItemSelectionModel>
 #include <QMainWindow>
+#include <QPointer>
 #include <QProcess>
 #include <QTimer>
 
@@ -28,7 +30,6 @@ namespace Ui {
 class MainWindow;
 }
 
-class QDialog;
 class QDockWidget;
 class QTextEdit;
 class QToolButton;
@@ -111,7 +112,8 @@ public:
    *
    * The returned pointer is non-owning: the dialog's lifetime is managed
    * elsewhere (cleanKeygenDialog() closes and forgets it), so callers must
-   * observe it only and never delete it.
+   * observe it only and never delete it. Backed by a QPointer, so it reads back
+   * as nullptr once the dialog is destroyed.
    * @return Non-owning pointer to the keygen QDialog, or nullptr when none is
    * active.
    */
@@ -307,7 +309,11 @@ private:
   // completion (see setUiElementsEnabled).
   QTimer m_uiWatchdog;
   static constexpr int UiWatchdogMs = 30000;
-  QDialog *m_keyGenDialog{};
+  // QPointer so it auto-clears if the keygen dialog is destroyed (e.g. the user
+  // closes it) while an async gpg --gen-key is still running; a raw pointer
+  // would dangle and cleanKeygenDialog()/onKeyGenerationComplete() would then
+  // close freed memory.
+  QPointer<QDialog> m_keyGenDialog;
   QString m_currentDir;
   TrayIcon *m_tray{};
 

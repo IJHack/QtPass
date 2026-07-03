@@ -16,6 +16,7 @@
  */
 
 #include <QApplication>
+#include <QDialog>
 #include <QDir>
 #include <QFile>
 #include <QScopedPointer>
@@ -50,6 +51,7 @@ private Q_SLOTS:
   void constructionDoesNotCrash();
   void getKeygenDialogInitiallyNull();
   void cleanKeygenDialogWithNullIsHarmless();
+  void keygenDialogPointerClearsWhenDialogDestroyed();
   void setUiElementsEnabledDisablesTreeView();
   void setUiElementsEnabledEnablesTreeView();
   void flashTextSetsContent();
@@ -166,6 +168,29 @@ void tst_mainwindow::cleanKeygenDialogWithNullIsHarmless() {
   QCOMPARE(m_window->getKeyGenDialog(), nullptr);
   m_window->cleanKeygenDialog();
   QCOMPARE(m_window->getKeyGenDialog(), nullptr);
+}
+
+/**
+ * @brief m_keyGenDialog auto-clears when the keygen dialog is destroyed.
+ *
+ * Regression for a use-after-free: the keygen dialog lives on the caller's
+ * stack and an async gpg --gen-key can still be running when the user closes
+ * it. The backing QPointer must read back as null after destruction so the
+ * completion handler and cleanKeygenDialog() never close freed memory.
+ */
+void tst_mainwindow::keygenDialogPointerClearsWhenDialogDestroyed() {
+  auto *dialog = new QDialog;
+  // generateKeyPair only records the dialog and emits a signal that is not
+  // connected in this isolated MainWindow, so no gpg process is spawned.
+  m_window->generateKeyPair(QStringLiteral("dummy-batch"), dialog);
+  QCOMPARE(m_window->getKeyGenDialog(), static_cast<QDialog *>(dialog));
+
+  delete dialog; // the user closed the dialog while generation was in flight
+  QCOMPARE(m_window->getKeyGenDialog(), static_cast<QDialog *>(nullptr));
+
+  // With the pointer already cleared this must be a safe no-op.
+  m_window->cleanKeygenDialog();
+  QCOMPARE(m_window->getKeyGenDialog(), static_cast<QDialog *>(nullptr));
 }
 
 /**
