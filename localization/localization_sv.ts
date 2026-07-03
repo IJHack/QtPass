@@ -1466,17 +1466,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="153"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation>Åtgärd har nått tidsgränsen; återaktiver gränssnittet.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="884"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation>Innehållssökning använder grundläggande reguljära uttryck i POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="886"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation>Innehållssök använder Perl-kompatibla reguljära uttryck (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1448"/>
@@ -1731,12 +1731,12 @@ Fortsätta?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="117"/>
         <location filename="../src/passworddisplaypanel.cpp" line="150"/>
         <source>Password</source>
-        <translation type="unfinished">Lösenord</translation>
+        <translation>Lösenord</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="126"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna %1 i webbläsare</translation>
     </message>
 </context>
 <context>
