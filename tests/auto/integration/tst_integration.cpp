@@ -205,6 +205,32 @@ class tst_integration : public QObject {
     return true;
   }
 
+  // Initialize a git repo with local identity and disabled commit signing so
+  // ImitatePass git operations succeed in tests. Returns true on success.
+  static auto initGitRepo(const QString &storePath, const QString &gitExe)
+      -> bool {
+    QProcess gitInit;
+    gitInit.setWorkingDirectory(storePath);
+    gitInit.start(gitExe, {"init"});
+    if (!gitInit.waitForFinished() || gitInit.exitCode() != 0) {
+      return false;
+    }
+    QProcess cfgName;
+    cfgName.setWorkingDirectory(storePath);
+    if (!runGitConfig(cfgName, gitExe, {"config", "user.name", "Test User"})) {
+      return false;
+    }
+    QProcess cfgEmail;
+    cfgEmail.setWorkingDirectory(storePath);
+    if (!runGitConfig(cfgEmail, gitExe,
+                      {"config", "user.email", "test@example.com"})) {
+      return false;
+    }
+    QProcess cfgSign;
+    cfgSign.setWorkingDirectory(storePath);
+    return runGitConfig(cfgSign, gitExe, {"config", "commit.gpgsign", "false"});
+  }
+
 private Q_SLOTS:
   void initTestCase();
   void cleanupTestCase();
@@ -223,6 +249,7 @@ private Q_SLOTS:
   void imitatePass_specialCharactersInPassword();
   void imitatePass_emptyPassword();
   void imitatePass_gitInitAndCommit();
+  void imitatePass_gitCopyAndShow();
 
   // UTF-8 and unicode handling
   void imitatePass_utf8Characters();
@@ -664,36 +691,8 @@ void tst_integration::imitatePass_gitInitAndCommit() {
   ImitatePass pass;
   INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
 
-  QProcess gitInit;
-  gitInit.setWorkingDirectory(storeDir.path());
-  gitInit.start(gitExe, {"init"});
-  QVERIFY2(gitInit.waitForFinished(), "git init should complete");
-  QVERIFY2(gitInit.exitCode() == 0, "git init should succeed");
-
-  // Configure local git identity so ImitatePass commits succeed
-  QProcess gitConfig;
-  gitConfig.setWorkingDirectory(storeDir.path());
-  QVERIFY2(
-      runGitConfig(gitConfig, gitExe, {"config", "user.name", "Test User"}),
-      qPrintable(
-          QString("git config user.name failed: %1")
-              .arg(QString::fromUtf8(gitConfig.readAllStandardError()))));
-
-  QProcess gitConfigEmail;
-  gitConfigEmail.setWorkingDirectory(storeDir.path());
-  QVERIFY2(runGitConfig(gitConfigEmail, gitExe,
-                        {"config", "user.email", "test@example.com"}),
-           qPrintable(QString("git config user.email failed: %1")
-                          .arg(QString::fromUtf8(
-                              gitConfigEmail.readAllStandardError()))));
-
-  QProcess gitConfigSign;
-  gitConfigSign.setWorkingDirectory(storeDir.path());
-  QVERIFY2(runGitConfig(gitConfigSign, gitExe,
-                        {"config", "commit.gpgsign", "false"}),
-           qPrintable(QString("git config commit.gpgsign failed: %1")
-                          .arg(QString::fromUtf8(
-                              gitConfigSign.readAllStandardError()))));
+  QVERIFY2(initGitRepo(storeDir.path(), gitExe),
+           "git repo setup (init + identity/signing config) should succeed");
 
   const QString entryName = QStringLiteral("gitentry");
   const QString entryContent = QStringLiteral("secret\nurl: example.com\n");
@@ -713,6 +712,64 @@ void tst_integration::imitatePass_gitInitAndCommit() {
   QVERIFY2(commitMsg.contains("gitentry"),
            qPrintable(QString("commit message should mention gitentry: %1")
                           .arg(commitMsg)));
+}
+
+void tst_integration::imitatePass_gitCopyAndShow() {
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (gitExe.isEmpty())
+    QSKIP("git not installed – skipping Git copy test");
+
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gitExecutable = gitExe;
+    s.useGit = true;
+    QtPassSettings::save(s);
+  }
+
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  QVERIFY2(initGitRepo(storeDir.path(), gitExe),
+           "git repo setup should succeed");
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("original"), QStringLiteral("copyme\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  const QString src = QDir::cleanPath(storeDir.path() + "/original.gpg");
+  const QString dst = QDir::cleanPath(storeDir.path() + "/copy.gpg");
+  QVERIFY2(QFile::exists(src), "source must exist before copy");
+
+  // Regression: git-mode Copy used a non-existent `git cp` subcommand, so the
+  // destination was silently never created. It must now produce a decryptable
+  // copy.
+  pass.Copy(src, dst, false);
+  QVERIFY2(QFile::exists(src), "source should still exist after copy");
+  QVERIFY2(QFile::exists(dst), "destination should exist after git-mode copy");
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("copy"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted after copy");
+  QVERIFY2(showSpy[0][0].toString().contains("copyme"),
+           "decrypted git-mode copy should contain the original content");
+
+  // Confirm the copy was staged/committed into the repository, not just written
+  // to disk — a git command run in the wrong directory would leave it
+  // untracked. (The copy's re-encryption commit is synchronous, so by now the
+  // file is in the repo; the async "Copied" commit message may not have landed
+  // yet, hence checking tracked state rather than a specific commit subject.)
+  QProcess gitLs;
+  gitLs.setWorkingDirectory(storeDir.path());
+  gitLs.start(gitExe, {"ls-files"});
+  QVERIFY2(gitLs.waitForFinished(), "git ls-files should complete");
+  const QString tracked = QString::fromUtf8(gitLs.readAll());
+  QVERIFY2(
+      tracked.contains("copy.gpg"),
+      qPrintable(
+          QString("copied entry should be tracked in git: %1").arg(tracked)));
 }
 
 // ---------------------------------------------------------------------------
