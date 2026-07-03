@@ -476,15 +476,18 @@ auto ImitatePass::verifyGpgIdForDir(const QString &file,
                                     QStringList &gpgIdFilesVerified,
                                     QStringList &gpgId) -> bool {
   QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);
-  if (gpgIdFilesVerified.contains(gpgIdPath)) {
-    return true;
+  // Verify each .gpg-id signature only once, but always refresh the recipient
+  // list for the current file: a cache hit means the signature was already
+  // checked, not that gpgId still holds this directory's recipients — it may
+  // carry a different directory's list, which would re-encrypt to wrong keys.
+  if (!gpgIdFilesVerified.contains(gpgIdPath)) {
+    if (!verifyGpgIdFile(gpgIdPath)) {
+      emit critical(tr("Check .gpg-id file signature!"),
+                    tr("Signature for %1 is invalid.").arg(gpgIdPath));
+      return false;
+    }
+    gpgIdFilesVerified.append(gpgIdPath);
   }
-  if (!verifyGpgIdFile(gpgIdPath)) {
-    emit critical(tr("Check .gpg-id file signature!"),
-                  tr("Signature for %1 is invalid.").arg(gpgIdPath));
-    return false;
-  }
-  gpgIdFilesVerified.append(gpgIdPath);
   gpgId = getRecipientList(file, m_settings.passStore);
   gpgId.sort();
   return true;
@@ -645,12 +648,15 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   QFile::remove(backupPath);
 
   if (!m_settings.useWebDav && m_settings.useGit) {
+    // -C the store so git runs there rather than in QtPass's launch directory
+    // (executeBlocking sets no working directory).
+    const QString store = pgit(m_settings.passStore);
     Executor::executeBlocking(m_settings.gitExecutable,
-                              {"add", pgit(fileName)});
+                              {"-C", store, "add", pgit(fileName)});
     QString path = QDir(m_settings.passStore).relativeFilePath(fileName);
     path.replace(Util::endsWithGpg(), "");
     Executor::executeBlocking(m_settings.gitExecutable,
-                              {"commit", pgit(fileName), "-m",
+                              {"-C", store, "commit", pgit(fileName), "-m",
                                "Re-encrypt for " + path + " using QtPass."});
   }
 
@@ -667,18 +673,22 @@ auto ImitatePass::createBackupCommit() -> bool {
   }
   emit statusMsg(tr("Creating backup commit"), 2000);
   const QString git = m_settings.gitExecutable;
+  // Run git in the password store: executeBlocking does not set a working
+  // directory, so without -C these commands would run in QtPass's launch
+  // directory and either fail or operate on an unrelated repository.
+  const QString store = pgit(m_settings.passStore);
   QString statusOut;
-  if (Executor::executeBlocking(git, {"status", "--porcelain"}, &statusOut) !=
-      0) {
+  if (Executor::executeBlocking(git, {"-C", store, "status", "--porcelain"},
+                                &statusOut) != 0) {
     emit critical(
         tr("Backup commit failed"),
         tr("Could not inspect git status. Re-encryption was aborted."));
     return false;
   }
   if (!statusOut.trimmed().isEmpty()) {
-    if (Executor::executeBlocking(git, {"add", "-A"}) != 0 ||
-        Executor::executeBlocking(
-            git, {"commit", "-m", "Backup before re-encryption"}) != 0) {
+    if (Executor::executeBlocking(git, {"-C", store, "add", "-A"}) != 0 ||
+        Executor::executeBlocking(git, {"-C", store, "commit", "-m",
+                                        "Backup before re-encryption"}) != 0) {
       emit critical(tr("Backup commit failed"),
                     tr("Re-encryption was aborted because a git backup could "
                        "not be created."));
@@ -910,25 +920,19 @@ void ImitatePass::Copy(const QString src, const QString dest,
                        const bool force) {
   QFileInfo destFileInfo(dest);
   transactionHelper trans(this, PASS_COPY);
+  QDir qDir;
+  if (force) {
+    qDir.remove(dest);
+  }
+  // git has no "cp" subcommand, so copy on the filesystem in both modes and,
+  // when using git, stage the new path afterwards. QFile::copy is synchronous,
+  // so the destination exists before the re-encryption below runs.
+  QFile::copy(src, dest);
   if (m_settings.useGit) {
-    QStringList args;
-    args << "cp";
-    if (force) {
-      args << "-f";
-    }
-    args << pgit(src);
-    args << pgit(dest);
-    executeGit(GIT_COPY, args);
-
+    executeGit(GIT_COPY, {"add", pgit(dest)});
     QString message = QString("Copied from %1 to %2 using QtPass.");
     message = message.arg(src, dest);
     gitCommit("", message);
-  } else {
-    QDir qDir;
-    if (force) {
-      qDir.remove(dest);
-    }
-    QFile::copy(src, dest);
   }
   // reecrypt all files under the new folder
   if (destFileInfo.isDir()) {

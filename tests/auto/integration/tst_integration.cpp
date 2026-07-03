@@ -223,6 +223,7 @@ private Q_SLOTS:
   void imitatePass_specialCharactersInPassword();
   void imitatePass_emptyPassword();
   void imitatePass_gitInitAndCommit();
+  void imitatePass_gitCopyAndShow();
 
   // UTF-8 and unicode handling
   void imitatePass_utf8Characters();
@@ -713,6 +714,63 @@ void tst_integration::imitatePass_gitInitAndCommit() {
   QVERIFY2(commitMsg.contains("gitentry"),
            qPrintable(QString("commit message should mention gitentry: %1")
                           .arg(commitMsg)));
+}
+
+void tst_integration::imitatePass_gitCopyAndShow() {
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (gitExe.isEmpty())
+    QSKIP("git not installed – skipping Git copy test");
+
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gitExecutable = gitExe;
+    s.useGit = true;
+    QtPassSettings::save(s);
+  }
+
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  QProcess gitInit;
+  gitInit.setWorkingDirectory(storeDir.path());
+  gitInit.start(gitExe, {"init"});
+  QVERIFY2(gitInit.waitForFinished(), "git init should complete");
+  QVERIFY2(gitInit.exitCode() == 0, "git init should succeed");
+
+  QProcess cfgName;
+  cfgName.setWorkingDirectory(storeDir.path());
+  QVERIFY(runGitConfig(cfgName, gitExe, {"config", "user.name", "Test User"}));
+  QProcess cfgEmail;
+  cfgEmail.setWorkingDirectory(storeDir.path());
+  QVERIFY(runGitConfig(cfgEmail, gitExe,
+                       {"config", "user.email", "test@example.com"}));
+  QProcess cfgSign;
+  cfgSign.setWorkingDirectory(storeDir.path());
+  QVERIFY(runGitConfig(cfgSign, gitExe, {"config", "commit.gpgsign", "false"}));
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("original"), QStringLiteral("copyme\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  const QString src = QDir::cleanPath(storeDir.path() + "/original.gpg");
+  const QString dst = QDir::cleanPath(storeDir.path() + "/copy.gpg");
+  QVERIFY2(QFile::exists(src), "source must exist before copy");
+
+  // Regression: git-mode Copy used a non-existent `git cp` subcommand, so the
+  // destination was silently never created. It must now produce a decryptable
+  // copy.
+  pass.Copy(src, dst, false);
+  QVERIFY2(QFile::exists(src), "source should still exist after copy");
+  QVERIFY2(QFile::exists(dst), "destination should exist after git-mode copy");
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("copy"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted after copy");
+  QVERIFY2(showSpy[0][0].toString().contains("copyme"),
+           "decrypted git-mode copy should contain the original content");
 }
 
 // ---------------------------------------------------------------------------
