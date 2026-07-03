@@ -179,9 +179,12 @@ void tst_mainwindow::cleanKeygenDialogWithNullIsHarmless() {
  * completion handler and cleanKeygenDialog() never close freed memory.
  */
 void tst_mainwindow::keygenDialogPointerClearsWhenDialogDestroyed() {
-  auto *dialog = new QDialog;
-  // generateKeyPair only records the dialog and emits a signal that is not
-  // connected in this isolated MainWindow, so no gpg process is spawned.
+  // Parent the dialog to the window so it is not a top-level widget: a deleted
+  // top-level can leave a dangling active-window pointer that crashes Qt 5.15
+  // offscreen teardown. generateKeyPair only records the dialog and emits a
+  // signal that is not connected in this isolated MainWindow, so no gpg process
+  // is spawned.
+  auto *dialog = new QDialog(m_window.data());
   m_window->generateKeyPair(QStringLiteral("dummy-batch"), dialog);
   QCOMPARE(m_window->getKeyGenDialog(), static_cast<QDialog *>(dialog));
 
