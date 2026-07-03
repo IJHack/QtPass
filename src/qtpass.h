@@ -56,10 +56,14 @@ public:
   auto init() -> bool;
 
   /**
-   * @brief Update the tracked clipped text value.
-   * @param text Primary text to store.
-   * @param p_output Optional additional output used when determining the final
-   *        clipped text value.
+   * @brief Handle clipboard copying for a shown entry.
+   *
+   * In "always copy" mode (and only then) this copies @p text to the clipboard
+   * via copyTextToClipboard(), which also arms the autoclear timer and records
+   * the clipboard contents. In other modes it does nothing, leaving any pending
+   * autoclear tracking intact.
+   * @param text Password (or value) of the entry being shown.
+   * @param p_output Full decrypted output; copying is skipped when it is empty.
    */
   void setClippedText(const QString &text, const QString &p_output = QString());
 
