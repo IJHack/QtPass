@@ -19,6 +19,8 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QLineEdit>
+#include <QListWidget>
 #include <QProcess>
 #include <QRegularExpression>
 #include <QSignalSpy>
@@ -32,6 +34,7 @@
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/realpass.h"
 #include "../../../src/userinfo.h"
+#include "../../../src/usersdialog.h"
 
 using GrepResults = QList<QPair<QString, QStringList>>;
 Q_DECLARE_METATYPE(GrepResults)
@@ -250,6 +253,7 @@ private Q_SLOTS:
   void imitatePass_emptyPassword();
   void imitatePass_gitInitAndCommit();
   void imitatePass_gitCopyAndShow();
+  void imitatePass_usersDialogListsAndFilters();
 
   // UTF-8 and unicode handling
   void imitatePass_utf8Characters();
@@ -770,6 +774,44 @@ void tst_integration::imitatePass_gitCopyAndShow() {
       tracked.contains("copy.gpg"),
       qPrintable(
           QString("copied entry should be tracked in git: %1").arg(tracked)));
+}
+
+void tst_integration::imitatePass_usersDialogListsAndFilters() {
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  // UsersDialog loads the available GPG keys from the test keyring in its
+  // constructor; with the generated test key present it must populate the
+  // recipient list (no modal error dialog).
+  const AppSettings s = QtPassSettings::load();
+  UsersDialog dialog(&pass, s, storeDir.path());
+
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY2(list != nullptr, "listWidget must exist");
+  QVERIFY2(list->count() >= 1,
+           "the generated test key should populate the recipient list");
+
+  bool found = false;
+  for (int i = 0; i < list->count(); ++i) {
+    if (list->item(i)->text().contains(QStringLiteral("QtPass Integration"))) {
+      found = true;
+      break;
+    }
+  }
+  QVERIFY2(found,
+           "the test key's identity should appear in the recipient list");
+
+  auto *filter = dialog.findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  QVERIFY2(filter != nullptr, "lineEdit must exist");
+
+  // populateList() rebuilds the list on each filter change, so a non-matching
+  // filter empties it and a matching one brings the key back.
+  filter->setText(QStringLiteral("zzz-definitely-no-such-recipient-zzz"));
+  QCOMPARE(list->count(), 0);
+
+  filter->setText(QStringLiteral("QtPass"));
+  QVERIFY2(list->count() >= 1, "a matching filter should show the key again");
 }
 
 // ---------------------------------------------------------------------------
