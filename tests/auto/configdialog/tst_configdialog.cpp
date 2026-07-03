@@ -5,10 +5,12 @@
 #include <QLineEdit>
 #include <QSpinBox>
 #include <QSystemTrayIcon>
+#include <QTableWidget>
 #include <QtTest>
 
 #include "../../../src/configdialog.h"
 #include "../../../src/passwordconfiguration.h"
+#include "../../../src/qtpasssettings.h"
 
 /**
  * @class tst_configdialog
@@ -47,6 +49,8 @@ private Q_SLOTS:
   void setPwgenPathEmptyDisablesPwgenCheckbox();
   void setAndGetPasswordConfigurationRoundTrip();
   void customCharsetRoundTrip();
+  void customCharsetPreservedWhenBuiltinSelected();
+  void addProfileSelectsNewRowAfterSort();
 };
 
 /**
@@ -276,6 +280,79 @@ void tst_configdialog::customCharsetRoundTrip() {
            static_cast<int>(PasswordConfiguration::CUSTOM));
   QCOMPARE(result.Characters[PasswordConfiguration::CUSTOM],
            QStringLiteral("abc123!@#"));
+}
+
+/**
+ * @brief The custom charset survives while a builtin set is selected.
+ *
+ * This is the branch the fix is actually about: with a builtin (non-CUSTOM)
+ * selection the line edit shows the builtin's characters, so
+ * getPasswordConfiguration() must fall back to the retained custom charset
+ * rather than reading the line edit and clobbering it with a builtin string.
+ */
+void tst_configdialog::customCharsetPreservedWhenBuiltinSelected() {
+  ConfigDialog dialog(nullptr);
+  PasswordConfiguration cfg;
+  cfg.selected = PasswordConfiguration::CUSTOM;
+  cfg.Characters[PasswordConfiguration::CUSTOM] = QStringLiteral("abc123!@#");
+  dialog.setPasswordConfiguration(cfg);
+
+  // Switch to a builtin selection while keeping the same custom charset.
+  PasswordConfiguration builtin = dialog.getPasswordConfiguration();
+  builtin.selected = PasswordConfiguration::ALPHANUMERIC;
+  dialog.setPasswordConfiguration(builtin);
+
+  PasswordConfiguration result = dialog.getPasswordConfiguration();
+  QCOMPARE(static_cast<int>(result.selected),
+           static_cast<int>(PasswordConfiguration::ALPHANUMERIC));
+  QCOMPARE(result.Characters[PasswordConfiguration::CUSTOM],
+           QStringLiteral("abc123!@#"));
+}
+
+/**
+ * @brief Adding a profile after the user sorted by name selects the new row.
+ *
+ * Regression for on_addButton_clicked(): after the user sorts the table by the
+ * name column, re-enabling sorting moves the freshly inserted row, so reading
+ * item(n, 0) by the stale insertion index returned an existing profile — the
+ * edit and selection then landed on (and would rename) that profile instead of
+ * the new one. The new row must be located by item pointer.
+ */
+void tst_configdialog::addProfileSelectsNewRowAfterSort() {
+  const QHash<QString, QHash<QString, QString>> previous =
+      QtPassSettings::getProfiles();
+
+  QHash<QString, QHash<QString, QString>> profiles;
+  for (const QString &name :
+       {QStringLiteral("alpha"), QStringLiteral("beta"),
+        QStringLiteral("gamma"), QStringLiteral("delta")}) {
+    QHash<QString, QString> profile;
+    profile.insert("path", "/store/" + name);
+    profiles.insert(name, profile);
+  }
+  QtPassSettings::setProfiles(profiles);
+
+  {
+    ConfigDialog dialog(nullptr);
+    auto *table =
+        dialog.findChild<QTableWidget *>(QStringLiteral("profileTable"));
+    QVERIFY2(table != nullptr, "profileTable widget must exist");
+
+    // Mimic the user sorting by the name column; this makes a later insert
+    // re-sort and move the new row away from its insertion index.
+    table->sortItems(0, Qt::DescendingOrder);
+
+    QVERIFY(QMetaObject::invokeMethod(&dialog, "on_addButton_clicked"));
+
+    const QList<QTableWidgetItem *> selected = table->selectedItems();
+    QVERIFY(!selected.isEmpty());
+    QTableWidgetItem *nameItem = table->item(selected.first()->row(), 0);
+    QVERIFY(nameItem != nullptr);
+    QCOMPARE(nameItem->text(), QStringLiteral("New Profile"));
+  }
+
+  // Restore whatever profile state existed before the test.
+  QtPassSettings::setProfiles(previous);
 }
 
 QTEST_MAIN(tst_configdialog)

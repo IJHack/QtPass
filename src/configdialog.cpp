@@ -1269,6 +1269,9 @@ void ConfigDialog::usePwgen(bool usePwgen) {
 
 void ConfigDialog::setPasswordConfiguration(
     const PasswordConfiguration &config) {
+  // Retain the custom charset so it survives even when a builtin set is the
+  // active selection (the line edit then shows the builtin's characters).
+  m_customPasswordChars = config.Characters[PasswordConfiguration::CUSTOM];
   ui->spinBoxPasswordLength->setValue(config.length);
   ui->passwordCharTemplateSelector->setCurrentIndex(config.selected);
   if (config.selected != PasswordConfiguration::CUSTOM) {
@@ -1285,14 +1288,12 @@ auto ConfigDialog::getPasswordConfiguration() -> PasswordConfiguration {
   // The line edit only holds the user's custom charset while CUSTOM is
   // selected; for a builtin selection it shows that builtin's characters.
   // Reading it unconditionally would overwrite the saved custom charset with a
-  // builtin string, so preserve the persisted custom value in that case.
+  // builtin string, so fall back to the retained custom value in that case.
   if (config.selected == PasswordConfiguration::CUSTOM) {
     config.Characters[PasswordConfiguration::CUSTOM] =
         ui->lineEditPasswordChars->text();
   } else {
-    config.Characters[PasswordConfiguration::CUSTOM] =
-        QtPassSettings::getPasswordConfiguration()
-            .Characters[PasswordConfiguration::CUSTOM];
+    config.Characters[PasswordConfiguration::CUSTOM] = m_customPasswordChars;
   }
   return config;
 }
