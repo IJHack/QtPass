@@ -321,10 +321,12 @@ void PasswordDialog::cycleTemplate() {
  * @param output Output from pass show command
  */
 void PasswordDialog::setPass(const QString &output) {
+  // setPassword() replaces (not appends) every field, so if more than one
+  // finishedShow arrives the last one wins rather than duplicating content.
+  // We deliberately keep listening: the dialog is modal and always edits the
+  // selected entry, so its own Show is the result that matters, and we cannot
+  // safely disconnect on the first signal because finishedShow carries no
+  // request identity — a stale queued Show could otherwise be consumed as ours.
   setPassword(output);
   m_contentLoaded = true;
-  // Only the first Show result — the one for this dialog's entry — is ours.
-  // Stop listening so a later Show of a different entry (finishedShow is a
-  // shared Pass signal) cannot overwrite or duplicate these fields.
-  disconnect(m_pass, &Pass::finishedShow, this, &PasswordDialog::setPass);
 }
