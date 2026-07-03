@@ -215,7 +215,7 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock"><p>Main application window orchestrating UI, user interactions, and external process handlers. </p>
 <p>Provides the central interface for managing items, folders, passwords, and OTPs; coordinates UI components (toolbars, panels, dialogs, status/tray), selection and navigation in the underlying file/store models, and lifecycle interactions with external handlers (e.g., pass, Git, GPG key generation, OTP). </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00051">51</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00052">52</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a52e97245b2f88492071e639395c4a15a" name="a52e97245b2f88492071e639395c4a15a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a52e97245b2f88492071e639395c4a15a">&#9670;&#160;</a></span>MainWindow()</h2>
@@ -554,9 +554,9 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the active key generation dialog, if any. </p>
-<p>The returned pointer is non-owning: the dialog's lifetime is managed elsewhere (<a class="el" href="#ad2a9b38617b357d8fa42744c00a26fcf" title="Destroy and clear the key generation dialog.">cleanKeygenDialog()</a> closes and forgets it), so callers must observe it only and never delete it. </p><dl class="section return"><dt>Returns</dt><dd>Non-owning pointer to the keygen QDialog, or nullptr when none is active. </dd></dl>
+<p>The returned pointer is non-owning: the dialog's lifetime is managed elsewhere (<a class="el" href="#ad2a9b38617b357d8fa42744c00a26fcf" title="Destroy and clear the key generation dialog.">cleanKeygenDialog()</a> closes and forgets it), so callers must observe it only and never delete it. Backed by a QPointer, so it reads back as nullptr once the dialog is destroyed. </p><dl class="section return"><dt>Returns</dt><dd>Non-owning pointer to the keygen QDialog, or nullptr when none is active. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00118">118</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00120">120</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>

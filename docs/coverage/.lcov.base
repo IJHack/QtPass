@@ -2438,7 +2438,6 @@ DA:398,0
 DA:401,0
 DA:402,0
 DA:403,0
-DA:405,0
 DA:406,0
 DA:422,0
 DA:424,0
@@ -2865,7 +2864,6 @@ DA:1218,0
 DA:1219,0
 DA:1221,0
 DA:1228,0
-DA:1229,0
 DA:1230,0
 DA:1231,0
 DA:1237,0
@@ -3244,16 +3242,15 @@ DA:2037,0
 DA:2038,0
 DA:2039,0
 DA:2040,0
-LF:982
+LF:980
 LH:0
 end_of_record
 TN:
 SF:/home/runner/work/QtPass/QtPass/src/mainwindow.h
 FNF:0
 FNH:0
-DA:52,0
-DA:118,0
-LF:2
+DA:53,0
+LF:1
 LH:0
 end_of_record
 TN:
