@@ -116,11 +116,15 @@ void PasswordDialog::on_createPasswordButton_clicked() {
  * @brief PasswordDialog::on_accepted handle Ok click for QDialog
  */
 void PasswordDialog::on_accepted() {
-  QString newValue = getPassword();
-  if (newValue.isEmpty()) {
+  // For an existing entry, refuse to save until its decrypted content has
+  // loaded (Show is asynchronous). getPassword() always returns at least a
+  // newline, so the previous isEmpty() check never fired and clicking OK early
+  // overwrote the entry with the empty dialog fields.
+  if (!m_isNew && !m_contentLoaded) {
     return;
   }
 
+  QString newValue = getPassword();
   if (newValue.right(1) != "\n") {
     newValue += "\n";
   }
@@ -167,7 +171,10 @@ void PasswordDialog::setPassword(const QString &password) {
     previous = line;
   }
 
-  ui->plainTextEdit->insertPlainText(fileContent.getRemainingData());
+  // setPlainText (not insertPlainText) so re-populating replaces the body
+  // instead of appending a second copy, which would be saved back as
+  // duplicated content.
+  ui->plainTextEdit->setPlainText(fileContent.getRemainingData());
 }
 
 /**
@@ -315,5 +322,9 @@ void PasswordDialog::cycleTemplate() {
  */
 void PasswordDialog::setPass(const QString &output) {
   setPassword(output);
-  // UI is enabled by default when password is set - no additional action needed
+  m_contentLoaded = true;
+  // Only the first Show result — the one for this dialog's entry — is ours.
+  // Stop listening so a later Show of a different entry (finishedShow is a
+  // shared Pass signal) cannot overwrite or duplicate these fields.
+  disconnect(m_pass, &Pass::finishedShow, this, &PasswordDialog::setPass);
 }

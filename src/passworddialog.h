@@ -118,6 +118,10 @@ private:
   QString m_file;
   bool m_templating{};
   bool m_isNew{};
+  /// True once the existing entry's decrypted content has been loaded, so
+  /// on_accepted() can refuse to overwrite it with empty fields before the
+  /// asynchronous Show completes.
+  bool m_contentLoaded{};
   QList<QLineEdit *> m_templateLines;
   QList<QLineEdit *> m_otherLines;
   QHash<QString, QStringList> m_availableTemplates;
