@@ -15,6 +15,7 @@
 
 #include <algorithm>
 
+#include <QAbstractItemModel>
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
@@ -26,11 +27,15 @@
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryDir>
+#include <QTextBrowser>
+#include <QTreeView>
 #include <QtTest>
 
 #include "../../../src/enums.h"
 #include "../../../src/imitatepass.h"
+#include "../../../src/mainwindow.h"
 #include "../../../src/pass.h"
+#include "../../../src/passbackendfactory.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/realpass.h"
 #include "../../../src/userinfo.h"
@@ -301,6 +306,7 @@ private Q_SLOTS:
   void imitatePass_usersDialogListsAndFilters();
   void imitatePass_multiRecipientReencryptChangesRecipients();
   void imitatePass_reencryptPreservesPerFolderRecipients();
+  void mainWindow_selectingEntryShowsDecryptedContent();
 
   // UTF-8 and unicode handling
   void imitatePass_utf8Characters();
@@ -993,6 +999,94 @@ void tst_integration::imitatePass_reencryptPreservesPerFolderRecipients() {
       teamIds.contains(sub2) && !teamIds.contains(sub1),
       qPrintable(QStringLiteral("team entry must target key2 only, got: %1")
                      .arg(teamIds.join(','))));
+}
+
+void tst_integration::mainWindow_selectingEntryShowsDecryptedContent() {
+  // Full GUI end-to-end: build a store with one real entry, construct the
+  // MainWindow over it, click the entry in the tree, and verify the panel shows
+  // the decrypted content — driving the real UI through real gpg.
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  {
+    QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+    QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+    pass.Insert(QStringLiteral("guitest"),
+                QStringLiteral("topsecret\nurl: gui.example.com\n"), false);
+    QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(errSpy));
+  }
+
+  // Restore every globally-mutated setting on any exit path (including early
+  // QVERIFY returns): this test changes passStore/usePass/gpgExecutable/
+  // hideContent, all of which live in AppSettings.
+  const AppSettings savedSettings = QtPassSettings::load();
+  struct SettingsRestorer {
+    AppSettings s;
+    ~SettingsRestorer() {
+      QtPassSettings::save(s);
+      PassBackendFactory::invalidate();
+    }
+  } restorer{savedSettings};
+
+  // Point QtPassSettings at the store in gpg mode and pre-set the gpg path so
+  // the constructor does not open the blocking config dialog. hideContent (not
+  // hidePassword) is what passShowHandler() checks before rendering the panel.
+  QtPassSettings::setPassStore(storeDir.path());
+  QtPassSettings::setUsePass(false);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = m_gpgExe;
+    s.hideContent = false;
+    s.hidePassword = false;
+    QtPassSettings::save(s);
+  }
+  PassBackendFactory::invalidate();
+
+  MainWindow w;
+  w.show();
+  QVERIFY2(QTest::qWaitForWindowExposed(&w),
+           "MainWindow should become exposed");
+
+  auto *tree = w.findChild<QTreeView *>(QStringLiteral("treeView"));
+  QVERIFY2(tree != nullptr, "treeView must exist");
+
+  // QFileSystemModel loads asynchronously; wait until our entry appears, then
+  // capture its index.
+  QModelIndex entryIdx;
+  auto findEntry = [&]() -> bool {
+    QAbstractItemModel *m = tree->model();
+    const QModelIndex root = tree->rootIndex();
+    for (int r = 0; r < m->rowCount(root); ++r) {
+      const QModelIndex idx = m->index(r, 0, root);
+      if (m->data(idx).toString() == QStringLiteral("guitest")) {
+        entryIdx = idx;
+        return true;
+      }
+    }
+    return false;
+  };
+  QTRY_VERIFY_WITH_TIMEOUT(findEntry(), 10000);
+  QVERIFY(entryIdx.isValid());
+
+  // Click the entry in the tree.
+  tree->scrollTo(entryIdx);
+  const QRect rect = tree->visualRect(entryIdx);
+  QVERIFY2(rect.isValid() && !rect.isEmpty(), "entry must have a visible rect");
+  QTest::mouseClick(tree->viewport(), Qt::LeftButton, Qt::NoModifier,
+                    rect.center());
+
+  // The decrypted "url" field should render in the display panel (a
+  // QTextBrowser); the show is asynchronous so poll for it.
+  auto panelHasUrl = [&]() -> bool {
+    const auto browsers = w.findChildren<QTextBrowser *>();
+    for (auto *b : browsers) {
+      if (b->toPlainText().contains(QStringLiteral("gui.example.com"))) {
+        return true;
+      }
+    }
+    return false;
+  };
+  QTRY_VERIFY_WITH_TIMEOUT(panelHasUrl(), 15000);
 }
 
 // ---------------------------------------------------------------------------
