@@ -1016,13 +1016,27 @@ void tst_integration::mainWindow_selectingEntryShowsDecryptedContent() {
     QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(errSpy));
   }
 
+  // Restore every globally-mutated setting on any exit path (including early
+  // QVERIFY returns): this test changes passStore/usePass/gpgExecutable/
+  // hideContent, all of which live in AppSettings.
+  const AppSettings savedSettings = QtPassSettings::load();
+  struct SettingsRestorer {
+    AppSettings s;
+    ~SettingsRestorer() {
+      QtPassSettings::save(s);
+      PassBackendFactory::invalidate();
+    }
+  } restorer{savedSettings};
+
   // Point QtPassSettings at the store in gpg mode and pre-set the gpg path so
-  // the constructor does not open the blocking config dialog.
+  // the constructor does not open the blocking config dialog. hideContent (not
+  // hidePassword) is what passShowHandler() checks before rendering the panel.
   QtPassSettings::setPassStore(storeDir.path());
   QtPassSettings::setUsePass(false);
   {
     AppSettings s = QtPassSettings::load();
     s.gpgExecutable = m_gpgExe;
+    s.hideContent = false;
     s.hidePassword = false;
     QtPassSettings::save(s);
   }
@@ -1030,6 +1044,8 @@ void tst_integration::mainWindow_selectingEntryShowsDecryptedContent() {
 
   MainWindow w;
   w.show();
+  QVERIFY2(QTest::qWaitForWindowExposed(&w),
+           "MainWindow should become exposed");
 
   auto *tree = w.findChild<QTreeView *>(QStringLiteral("treeView"));
   QVERIFY2(tree != nullptr, "treeView must exist");
