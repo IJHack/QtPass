@@ -92,25 +92,27 @@ static int runGpg(const QString &gnupgHome, const QStringList &args,
   return p.exitCode();
 }
 
-// Generate a test GPG key in the given GNUPGHOME; returns the key fingerprint.
-static QString generateTestKey(const QString &gnupgHome) {
+// Generate a test GPG key with the given identity in GNUPGHOME; returns its
+// fingerprint.
+static QString generateNamedTestKey(const QString &gnupgHome,
+                                    const QString &name, const QString &email) {
   const QString batch = QStringLiteral("%no-protection\n"
                                        "Key-Type: RSA\n"
                                        "Key-Length: 2048\n"
                                        "Subkey-Type: RSA\n"
                                        "Subkey-Length: 2048\n"
-                                       "Name-Real: QtPass Integration Test\n"
-                                       "Name-Email: qtpass-test@localhost\n"
+                                       "Name-Real: %1\n"
+                                       "Name-Email: %2\n"
                                        "Expire-Date: 0\n"
-                                       "%commit\n");
+                                       "%commit\n")
+                            .arg(name, email);
 
   int rc = runGpg(gnupgHome, {"--batch", "--gen-key"}, batch);
   if (rc != 0)
     return {};
 
   QString out;
-  runGpg(gnupgHome, {"--with-colons", "--fingerprint", "qtpass-test@localhost"},
-         QString(), &out);
+  runGpg(gnupgHome, {"--with-colons", "--fingerprint", email}, QString(), &out);
 
   QString fingerprint;
   for (const auto &line : out.split('\n')) {
@@ -136,6 +138,48 @@ static QString generateTestKey(const QString &gnupgHome) {
   return fingerprint;
 }
 
+// Generate the default integration test key.
+static QString generateTestKey(const QString &gnupgHome) {
+  return generateNamedTestKey(gnupgHome, "QtPass Integration Test",
+                              "qtpass-test@localhost");
+}
+
+// Return the 16-char encryption-subkey key IDs a .gpg file is encrypted to,
+// parsed from `gpg --list-packets` (works without the secret key).
+static QStringList recipientKeyIds(const QString &gnupgHome,
+                                   const QString &gpgFile) {
+  QString out;
+  QString err;
+  runGpg(gnupgHome, {"--list-packets", gpgFile}, QString(), &out, &err);
+  const QString combined = out + err;
+  QStringList ids;
+  static const QRegularExpression re(QStringLiteral("keyid ([0-9A-Fa-f]{16})"));
+  auto it = re.globalMatch(combined);
+  while (it.hasNext()) {
+    ids << it.next().captured(1).toUpper();
+  }
+  return ids;
+}
+
+// Return the 16-char key ID of a primary key's encryption subkey.
+static QString encryptionSubkeyId(const QString &gnupgHome,
+                                  const QString &fingerprint) {
+  QString out;
+  runGpg(gnupgHome, {"--with-colons", "--list-keys", fingerprint}, QString(),
+         &out);
+  for (const auto &line : out.split('\n')) {
+    if (line.startsWith("sub:")) {
+      const auto f = line.split(':');
+      // field 12 = capabilities (contains 'e' for an encryption key),
+      // field 5 = key ID.
+      if (f.size() >= 12 && f.at(11).contains('e')) {
+        return f.at(4).trimmed().toUpper();
+      }
+    }
+  }
+  return {};
+}
+
 // ---------------------------------------------------------------------------
 // Test class
 // ---------------------------------------------------------------------------
@@ -146,6 +190,7 @@ class tst_integration : public QObject {
   QString m_gpgExe;
   QTemporaryDir m_gnupgHome;
   QString m_keyFingerprint;
+  QString m_keyFingerprint2;
   QString m_originalPassSigningKey;
 
   // Wait for a signal spy to receive at least one signal (up to timeoutMs).
@@ -254,6 +299,8 @@ private Q_SLOTS:
   void imitatePass_gitInitAndCommit();
   void imitatePass_gitCopyAndShow();
   void imitatePass_usersDialogListsAndFilters();
+  void imitatePass_multiRecipientReencryptChangesRecipients();
+  void imitatePass_reencryptPreservesPerFolderRecipients();
 
   // UTF-8 and unicode handling
   void imitatePass_utf8Characters();
@@ -330,6 +377,12 @@ void tst_integration::initTestCase() {
   m_keyFingerprint = generateTestKey(m_gnupgHome.path());
   QVERIFY2(!m_keyFingerprint.isEmpty(),
            "Failed to generate GPG key for integration tests");
+
+  // A second, independent key used by multi-recipient / re-encryption tests.
+  m_keyFingerprint2 = generateNamedTestKey(
+      m_gnupgHome.path(), "QtPass Second Key", "qtpass-test2@localhost");
+  QVERIFY2(!m_keyFingerprint2.isEmpty(),
+           "Failed to generate second GPG key for integration tests");
 
   // Redirect GNUPGHOME process-wide so all child processes inherit the test
   // keyring. Also set it in QtPassSettings so Pass::init() propagates it
@@ -812,6 +865,134 @@ void tst_integration::imitatePass_usersDialogListsAndFilters() {
 
   filter->setText(QStringLiteral("QtPass"));
   QVERIFY2(list->count() >= 1, "a matching filter should show the key again");
+}
+
+void tst_integration::imitatePass_multiRecipientReencryptChangesRecipients() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+
+  // Store initially encrypts to BOTH keys.
+  QtPassSettings::setPassStore(storeDir.path());
+  {
+    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
+    QVERIFY2(gpgId.open(QIODevice::WriteOnly | QIODevice::Text),
+             "failed to open .gpg-id");
+    const QByteArray payload =
+        (m_keyFingerprint + "\n" + m_keyFingerprint2 + "\n").toUtf8();
+    QVERIFY2(gpgId.write(payload) == payload.size(), "failed to write .gpg-id");
+  }
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("multi"), QStringLiteral("secret\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  const QString gpgFile = QDir::cleanPath(storeDir.path() + "/multi.gpg");
+  QVERIFY2(QFile::exists(gpgFile), "encrypted entry must exist after insert");
+
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY2(!sub1.isEmpty() && !sub2.isEmpty(),
+           "both keys must have an encryption subkey");
+
+  // Freshly inserted entry is encrypted to both recipients.
+  const QStringList before = recipientKeyIds(m_gnupgHome.path(), gpgFile);
+  QVERIFY2(before.contains(sub1) && before.contains(sub2),
+           qPrintable(QStringLiteral("entry should target both keys, got: %1")
+                          .arg(before.join(','))));
+
+  // Drop the second recipient from the .gpg-id and re-encrypt the store. This
+  // exercises reencryptPath()/verifyGpgIdForDir(): the entry must be rewritten
+  // to the CURRENT recipient set, not the one it was originally encrypted to.
+  {
+    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    const QByteArray payload = (m_keyFingerprint + "\n").toUtf8();
+    QVERIFY(gpgId.write(payload) == payload.size());
+  }
+
+  pass.reencryptPath(storeDir.path()); // synchronous (executeBlocking)
+
+  const QStringList after = recipientKeyIds(m_gnupgHome.path(), gpgFile);
+  QVERIFY2(after.contains(sub1),
+           qPrintable(QStringLiteral("re-encrypted entry must still target "
+                                     "the kept key, got: %1")
+                          .arg(after.join(','))));
+  QVERIFY2(!after.contains(sub2),
+           qPrintable(QStringLiteral("re-encrypted entry must drop the removed "
+                                     "recipient, got: %1")
+                          .arg(after.join(','))));
+}
+
+void tst_integration::imitatePass_reencryptPreservesPerFolderRecipients() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+
+  // Root .gpg-id -> key1; a subfolder overrides it with key2.
+  auto writeGpgId = [](const QString &dir, const QString &fpr) -> bool {
+    QDir().mkpath(dir);
+    QFile f(QDir::cleanPath(dir + "/.gpg-id"));
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return false;
+    const QByteArray payload = (fpr + "\n").toUtf8();
+    return f.write(payload) == payload.size();
+  };
+  QVERIFY(writeGpgId(storeDir.path(), m_keyFingerprint));
+  const QString subDir = QDir::cleanPath(storeDir.path() + "/team");
+  QVERIFY(writeGpgId(subDir, m_keyFingerprint2));
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  // Insert one entry per folder; each is encrypted to its own .gpg-id.
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  {
+    QSignalSpy spy(&pass, &Pass::finishedInsert);
+    pass.Insert(QStringLiteral("rootentry"), QStringLiteral("r\n"), false);
+    QVERIFY2(waitForSignal(spy), gpgInsertErrorMsg(errorSpy));
+  }
+  {
+    QSignalSpy spy(&pass, &Pass::finishedInsert);
+    pass.Insert(QStringLiteral("team/teamentry"), QStringLiteral("t\n"), false);
+    QVERIFY2(waitForSignal(spy), gpgInsertErrorMsg(errorSpy));
+  }
+
+  // Re-encrypt the whole tree. reencryptPath walks both folders; each file must
+  // end up encrypted to ITS folder's recipients — a stale cached recipient list
+  // would cross-encrypt one folder's entry to the other folder's key.
+  pass.reencryptPath(storeDir.path()); // synchronous
+
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY(!sub1.isEmpty() && !sub2.isEmpty());
+
+  const QStringList rootIds = recipientKeyIds(
+      m_gnupgHome.path(), QDir::cleanPath(storeDir.path() + "/rootentry.gpg"));
+  const QStringList teamIds = recipientKeyIds(
+      m_gnupgHome.path(), QDir::cleanPath(subDir + "/teamentry.gpg"));
+
+  QVERIFY2(
+      rootIds.contains(sub1) && !rootIds.contains(sub2),
+      qPrintable(QStringLiteral("root entry must target key1 only, got: %1")
+                     .arg(rootIds.join(','))));
+  QVERIFY2(
+      teamIds.contains(sub2) && !teamIds.contains(sub1),
+      qPrintable(QStringLiteral("team entry must target key2 only, got: %1")
+                     .arg(teamIds.join(','))));
 }
 
 // ---------------------------------------------------------------------------
