@@ -17,17 +17,21 @@
 
 #include <QAbstractItemModel>
 #include <QCoreApplication>
+#include <QDialogButtonBox>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QLineEdit>
 #include <QListWidget>
+#include <QPlainTextEdit>
 #include <QProcess>
+#include <QPushButton>
 #include <QRegularExpression>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryDir>
 #include <QTextBrowser>
+#include <QTimer>
 #include <QTreeView>
 #include <QtTest>
 
@@ -36,6 +40,7 @@
 #include "../../../src/mainwindow.h"
 #include "../../../src/pass.h"
 #include "../../../src/passbackendfactory.h"
+#include "../../../src/passworddialog.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/realpass.h"
 #include "../../../src/userinfo.h"
@@ -307,6 +312,7 @@ private Q_SLOTS:
   void imitatePass_multiRecipientReencryptChangesRecipients();
   void imitatePass_reencryptPreservesPerFolderRecipients();
   void mainWindow_selectingEntryShowsDecryptedContent();
+  void mainWindow_editEntryThroughModalDialogUpdatesContent();
 
   // UTF-8 and unicode handling
   void imitatePass_utf8Characters();
@@ -1087,6 +1093,128 @@ void tst_integration::mainWindow_selectingEntryShowsDecryptedContent() {
     return false;
   };
   QTRY_VERIFY_WITH_TIMEOUT(panelHasUrl(), 15000);
+}
+
+void tst_integration::mainWindow_editEntryThroughModalDialogUpdatesContent() {
+  // GUI end-to-end for the modal edit flow: double-click an entry, let the
+  // modal PasswordDialog load its decrypted content, change the password,
+  // accept, and confirm the store entry was rewritten.
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+  {
+    QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+    QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+    pass.Insert(QStringLiteral("editme"),
+                QStringLiteral("oldpass\nurl: keep.example.com\n"), false);
+    QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(errSpy));
+  }
+
+  const AppSettings savedSettings = QtPassSettings::load();
+  struct SettingsRestorer {
+    AppSettings s;
+    ~SettingsRestorer() {
+      QtPassSettings::save(s);
+      PassBackendFactory::invalidate();
+    }
+  } restorer{savedSettings};
+
+  QtPassSettings::setPassStore(storeDir.path());
+  QtPassSettings::setUsePass(false);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = m_gpgExe;
+    s.hideContent = false;
+    s.hidePassword = false;
+    QtPassSettings::save(s);
+  }
+  PassBackendFactory::invalidate();
+
+  MainWindow w;
+  w.show();
+  QVERIFY2(QTest::qWaitForWindowExposed(&w), "MainWindow should be exposed");
+
+  auto *tree = w.findChild<QTreeView *>(QStringLiteral("treeView"));
+  QVERIFY2(tree != nullptr, "treeView must exist");
+
+  QModelIndex entryIdx;
+  auto findEntry = [&]() -> bool {
+    QAbstractItemModel *m = tree->model();
+    const QModelIndex root = tree->rootIndex();
+    for (int r = 0; r < m->rowCount(root); ++r) {
+      const QModelIndex idx = m->index(r, 0, root);
+      if (m->data(idx).toString() == QStringLiteral("editme")) {
+        entryIdx = idx;
+        return true;
+      }
+    }
+    return false;
+  };
+  QTRY_VERIFY_WITH_TIMEOUT(findEntry(), 10000);
+  QVERIFY(entryIdx.isValid());
+
+  Pass *backend = QtPassSettings::getPass();
+  QSignalSpy editInsertSpy(backend, &Pass::finishedInsert);
+  QSignalSpy editErrSpy(backend, &Pass::processErrorExit);
+
+  // Drive the modal PasswordDialog once its decrypted content has loaded: set a
+  // new password and accept. The attempts guard rejects the dialog so the test
+  // can never hang if the content never arrives.
+  bool driven = false;
+  int attempts = 0;
+  QTimer poker;
+  poker.setInterval(50);
+  QObject::connect(&poker, &QTimer::timeout, [&]() {
+    auto *dlg =
+        qobject_cast<PasswordDialog *>(QApplication::activeModalWidget());
+    if (dlg == nullptr)
+      return;
+    auto *pw = dlg->findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+    if (pw == nullptr)
+      return;
+    if (pw->text().isEmpty()) { // wait for the asynchronous Show to populate it
+      if (++attempts > 200) {
+        poker.stop();
+        dlg->reject();
+      }
+      return;
+    }
+    pw->setText(QStringLiteral("newpass"));
+    auto *box = dlg->findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    if (box != nullptr) {
+      box->button(QDialogButtonBox::Ok)->click();
+    } else {
+      dlg->accept();
+    }
+    driven = true;
+    poker.stop();
+  });
+  poker.start();
+
+  // on_treeView_doubleClicked() checks the tree's *current* index before
+  // editing, so select the entry first.
+  tree->setCurrentIndex(entryIdx);
+
+  // Double-click -> editPassword() -> modal exec(); the poker drives it. Direct
+  // connection so this blocks in the modal loop until the dialog closes.
+  QVERIFY(QMetaObject::invokeMethod(&w, "on_treeView_doubleClicked",
+                                    Qt::DirectConnection,
+                                    Q_ARG(QModelIndex, entryIdx)));
+  QVERIFY2(driven,
+           "the modal edit dialog should have been driven and accepted");
+
+  // The accept triggers an overwrite Insert (asynchronous).
+  QVERIFY2(waitForSignal(editInsertSpy), gpgInsertErrorMsg(editErrSpy));
+
+  // Re-show and confirm the change stuck.
+  QSignalSpy showSpy(backend, &Pass::finishedShow);
+  backend->Show(QStringLiteral("editme"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow after edit");
+  const QString shown = showSpy[0][0].toString();
+  QVERIFY2(shown.contains("newpass"),
+           "edited entry must contain the new password");
+  QVERIFY2(!shown.contains("oldpass"),
+           "edited entry must not contain the old password");
 }
 
 // ---------------------------------------------------------------------------
