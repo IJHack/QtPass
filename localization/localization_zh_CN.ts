@@ -647,7 +647,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished"></translation>
+        <translation>无法启动 %1</translation>
     </message>
 </context>
 <context>
@@ -848,12 +848,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished"></translation>
+        <translation>复制失败</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法复制 %1 到 %2。</translation>
     </message>
 </context>
 <context>
@@ -1713,7 +1713,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished"></translation>
+        <translation>未配置 GPG 可执行文件</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
