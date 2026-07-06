@@ -654,7 +654,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallou o inicio de %1</translation>
     </message>
 </context>
 <context>
@@ -855,12 +855,12 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallo ao copiar</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non se puido copiar %1 a %2.</translation>
     </message>
 </context>
 <context>
@@ -1666,7 +1666,7 @@ Continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished"></translation>
+        <translation>Non hai un executable GPG configurado</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>

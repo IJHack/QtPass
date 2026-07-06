@@ -643,7 +643,7 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Käivitamine ei õnnestu: %1</translation>
     </message>
 </context>
 <context>
@@ -844,12 +844,12 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopeerimine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopeerimine ei õnnestunud: „%1“ → „%2“.</translation>
     </message>
 </context>
 <context>
@@ -1745,7 +1745,7 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG käsufaili pole seadistatud</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
