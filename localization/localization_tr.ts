@@ -330,7 +330,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="970"/>
         <source>Name</source>
-        <translation>İsim</translation>
+        <translation>Ad</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -587,7 +587,7 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 başlatılamadı</translation>
     </message>
 </context>
 <context>
@@ -788,12 +788,12 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopyalama başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1, %2&apos;ye kopyalanamadı.</translation>
     </message>
 </context>
 <context>
@@ -895,7 +895,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
         <source>Name</source>
-        <translation>İsim</translation>
+        <translation>Ad</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
@@ -994,12 +994,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>Invalid name</source>
-        <translation>Geçersiz isim</translation>
+        <translation>Geçersiz ad</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>İsim en az 5 karakter uzunluğunda olmalıdır.</translation>
+        <translation>Ad en az 5 karakter uzunluğunda olmalıdır.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
@@ -1279,17 +1279,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="153"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation>İşlem zaman aşımına uğradı; arayüz yeniden etkinleştiriliyor.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="884"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation>İçerik araması, POSIX temel düzenli ifadelerini kullanır (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="886"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation>İçerik araması, Perl uyumlu düzenli ifadeler (PCRE) kullanır.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
@@ -1308,12 +1308,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Geçersiz isim</translation>
+        <translation>Geçersiz ad</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu ad, parola deposu dışında çözümlenecektir. Lütfen farklı bir ad seçin.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
@@ -1551,7 +1551,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG programı yapılandırılmadı</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1640,12 +1640,12 @@ Devam edilsin mi?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="117"/>
         <location filename="../src/passworddisplaypanel.cpp" line="150"/>
         <source>Password</source>
-        <translation type="unfinished">Parola</translation>
+        <translation>Parola</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="126"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>%1&apos;i tarayıcıda aç</translation>
     </message>
 </context>
 <context>
