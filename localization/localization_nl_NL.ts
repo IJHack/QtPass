@@ -647,7 +647,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation>Beginnen met %1 mislukt</translation>
+        <translation>Kon %1 niet starten</translation>
     </message>
 </context>
 <context>
@@ -853,7 +853,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation>Kon %1 niet kopiëren naar % 2.</translation>
+        <translation>Kon %1 niet kopiëren naar %2.</translation>
     </message>
 </context>
 <context>
@@ -1767,7 +1767,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation>Geen GPG toepassing geconfigureerd</translation>
+        <translation>Geen GPG-programma geconfigureerd</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>

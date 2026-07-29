@@ -811,7 +811,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation>Kopering misslyckades</translation>
+        <translation>Kopiering misslyckades</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
@@ -1642,7 +1642,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation>Ingen GPG exekverbar fil konfigurerad</translation>
+        <translation>Ingen körbar GPG-fil har konfigurerats.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
