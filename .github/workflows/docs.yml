@@ -187,7 +187,7 @@ jobs:
 
       - name: Upload coverage to Coveralls
         if: steps.need_docs.outputs.run_docs == 'true' && !cancelled()
-        uses: coverallsapp/github-action@v2.3.7
+        uses: coverallsapp/github-action@v2.3.8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           files: ./docs/coverage/.lcov.total
