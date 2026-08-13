@@ -159,6 +159,13 @@ if not defined QT_VERSION (
 for /f "tokens=1 delims=." %%m in ("%QT_VERSION%") do set "QT_MAJOR=%%m"
 if "%QT_MAJOR%"=="5" if not "%ALLOW_QT5%"=="1" goto :err_qt5
 
+REM Ask the kit what it actually targets. The path check above only catches a
+REM Qt with "mingw" in its directory name; this catches any non-MSVC kit,
+REM e.g. one installed as gcc_64 that reports win32-g++.
+set "QT_XSPEC="
+for /f "usebackq delims=" %%x in (`qmake -query QMAKE_XSPEC 2^>nul`) do set "QT_XSPEC=%%x"
+if not "%QT_XSPEC%"=="win32-msvc" goto :err_xspec
+
 REM ---------------------------------------------------------------------------
 REM 6. Build
 REM ---------------------------------------------------------------------------
@@ -219,6 +226,14 @@ exit /b 1
 >&2 echo Error: qmake resolves to a MinGW Qt:
 >&2 echo          %QMAKE_RESOLVED%
 >&2 echo        MinGW is not supported with nmake. Install an msvc*_64 Qt build.
+exit /b 1
+
+:err_xspec
+>&2 echo Error: that Qt does not target MSVC.
+>&2 echo          %QMAKE_RESOLVED%
+>&2 echo        qmake -query QMAKE_XSPEC reported: %QT_XSPEC%
+>&2 echo        Expected win32-msvc. MinGW is not supported with nmake; install an
+>&2 echo        msvc*_64 Qt build, or point QT_DIR at one you already have.
 exit /b 1
 
 :err_qt5
