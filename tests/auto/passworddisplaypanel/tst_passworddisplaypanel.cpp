@@ -39,6 +39,9 @@ private Q_SLOTS:
   void otpRowHonoursClipboardNever();
   void otpRowSurvivesClearWithoutCrashing();
   void duplicateOtpFieldsRenderOneRow();
+  void currentOtpCodeReturnsDisplayedCode();
+  void currentOtpCodeEmptyWithoutOtpRow();
+  void currentOtpCodeEmptyAfterClear();
 
 private:
   [[nodiscard]] auto otpWidgetAt(int row) const -> OtpCodeWidget *;
@@ -270,6 +273,51 @@ void tst_passworddisplaypanel::duplicateOtpFieldsRenderOneRow() {
   // Password plus a single OTP row; the duplicate leaves no empty row behind.
   QCOMPARE(m_grid->count(), 4);
   QVERIFY(otpWidgetAt(1) != nullptr);
+}
+
+/**
+ * @brief MainWindow::onOtp copies the code the user can see rather than
+ * decrypting the entry again, so the panel must hand it out.
+ */
+void tst_passworddisplaypanel::currentOtpCodeReturnsDisplayedCode() {
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"),
+                         NamedValues{{"OTP", kOtpUri}}, s, kOtpUri);
+  OtpCodeWidget *otp = otpWidgetAt(1);
+  QVERIFY(otp != nullptr);
+
+  otp->refresh(1234567890ULL);
+  QCOMPARE(m_panel->currentOtpCode(), QStringLiteral("005924"));
+  QCOMPARE(m_panel->currentOtpCode(), otp->code());
+
+  // Must track the live code, not a snapshot taken when the row was built.
+  otp->refresh(1111111109ULL);
+  QCOMPARE(m_panel->currentOtpCode(), QStringLiteral("081804"));
+}
+
+void tst_passworddisplaypanel::currentOtpCodeEmptyWithoutOtpRow() {
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"),
+                         NamedValues{{"url", "https://example.org"}}, s);
+  QVERIFY2(m_panel->currentOtpCode().isEmpty(),
+           "an entry with no OTP must report no code");
+
+  // Also when the field exists but OTP support is off.
+  m_panel->clear();
+  m_panel->displayFields(QStringLiteral("secret"),
+                         NamedValues{{"OTP", kOtpUri}}, s, QString());
+  QVERIFY(m_panel->currentOtpCode().isEmpty());
+}
+
+void tst_passworddisplaypanel::currentOtpCodeEmptyAfterClear() {
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"),
+                         NamedValues{{"OTP", kOtpUri}}, s, kOtpUri);
+  QVERIFY(!m_panel->currentOtpCode().isEmpty());
+
+  // The panel autoclear timer wipes the row; there is then nothing to copy.
+  m_panel->clear();
+  QVERIFY(m_panel->currentOtpCode().isEmpty());
 }
 
 QTEST_MAIN(tst_passworddisplaypanel)

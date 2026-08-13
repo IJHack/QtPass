@@ -51,6 +51,20 @@ void PasswordDisplayPanel::clear() {
   m_container->setSpacing(0);
 }
 
+auto PasswordDisplayPanel::currentOtpCode() const -> QString {
+  // displayFields() renders at most one OTP row, so the first match is it.
+  for (int i = 0; i < m_grid->count(); ++i) {
+    QWidget *widget = m_grid->itemAt(i)->widget();
+    if (widget == nullptr) {
+      continue;
+    }
+    if (auto *otp = widget->findChild<OtpCodeWidget *>()) {
+      return otp->code();
+    }
+  }
+  return {};
+}
+
 void PasswordDisplayPanel::displayFields(const QString &password,
                                          const NamedValues &namedValues,
                                          const AppSettings &s,

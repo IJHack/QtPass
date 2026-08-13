@@ -152,6 +152,9 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   m_uiWatchdog.setInterval(UiWatchdogMs);
   connect(&m_uiWatchdog, &QTimer::timeout, this, [this]() {
     showStatusMessage(tr("Operation timed out; re-enabling interface."));
+    // Drop any in-flight OTP request so a late finishedShow cannot be mistaken
+    // for the answer to it.
+    m_otpRequestPending = false;
     setUiElementsEnabled(true);
   });
 
@@ -643,7 +646,13 @@ void MainWindow::passShowHandler(const QString &p_output) {
   QString password = fileContent.getPassword();
 
   // set clipped text
-  m_qtPass->setClippedText(password, p_output);
+  //
+  // Skipped for an OTP request: the user asked for a one-time code, not the
+  // password, and writing both in one event-loop turn can leave the Windows
+  // clipboard empty (two OleSetClipboard calls back to back).
+  if (!m_otpRequestPending) {
+    m_qtPass->setClippedText(password, p_output);
+  }
 
   // first clear the current view:
   m_displayPanel->clear();
@@ -682,6 +691,22 @@ void MainWindow::otpFromFileToClipboard(const QString &p_output) {
   disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
              &MainWindow::otpFromFileToClipboard);
 #endif
+  // A failed decrypt never fires finishedShow, and Qt::SingleShotConnection
+  // only self-disconnects when it does fire, so a connection armed by an
+  // earlier failed request can still be live here. Ignore it rather than
+  // hijacking an unrelated entry's decrypted content.
+  if (!m_otpRequestPending) {
+    return;
+  }
+  m_otpRequestPending = false;
+
+  if (p_output.isEmpty()) {
+    // Distinguish "could not read the entry" from "entry has no OTP".
+    flashText(tr("Could not decrypt this password entry"), true);
+    setUiElementsEnabled(true);
+    return;
+  }
+
   const AppSettings s = QtPassSettings::load();
   // Parse with the same template settings passShowHandler uses, so an OTP
   // field is recognised identically in both paths.
@@ -754,7 +779,9 @@ void MainWindow::setUiElementsEnabled(bool state) {
   ui->actionDelete->setEnabled(state);
   ui->actionEdit->setEnabled(state);
   updateGitButtonVisibility();
-  updateOtpButtonVisibility();
+  // `state` is now "UI enabled AND a file is selected", which is exactly when
+  // generating an OTP makes sense.
+  updateOtpButtonVisibility(state);
 }
 
 /**
@@ -1179,8 +1206,27 @@ void MainWindow::onOtp() {
     return;
   }
   if (!QtPassSettings::isUseOtp()) {
+    // Normally unreachable (the action is hidden), but never fail silently.
+    flashText(tr("No OTP code found in this password entry"), true);
     return;
   }
+
+  // Fast path: the panel already shows a live code for the selected entry, so
+  // there is nothing to decrypt. This also keeps the clipboard write single —
+  // going through Show() would let passShowHandler copy the password first, and
+  // two QClipboard::setMimeData calls in one event-loop turn can leave the
+  // Windows clipboard empty.
+  const QString shown = m_displayPanel->currentOtpCode();
+  if (!shown.isEmpty()) {
+    m_qtPass->copyTextToClipboard(shown);
+    showStatusMessage(tr("OTP code copied to clipboard"));
+    return;
+  }
+
+  // Fallback: no OTP row on screen, so decrypt once. The flag stops
+  // passShowHandler putting the password on the clipboard for a request that
+  // only asked for a code.
+  m_otpRequestPending = true;
   setUiElementsEnabled(false);
   // Disconnect any previous connection to avoid accumulation
   disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
@@ -1828,13 +1874,18 @@ void MainWindow::updateGitButtonVisibility() {
   }
 }
 
-void MainWindow::updateOtpButtonVisibility() {
+void MainWindow::updateOtpButtonVisibility(bool uiEnabled) {
   // No platform gating any more: codes are generated in-process, so this works
   // on Windows and macOS and with either backend. It used to be hidden there
   // because the pass-otp extension is Unix-only.
-  const bool enabled = QtPassSettings::isUseOtp();
-  ui->actionOtp->setVisible(enabled);
-  ui->actionOtp->setEnabled(enabled);
+  //
+  // Visibility follows the setting alone, so the button does not flicker in and
+  // out during operations, but it must also honour uiEnabled: this is called
+  // from setUiElementsEnabled(), and ignoring the argument re-enabled the
+  // action while a decrypt was in flight, letting the user stack Show calls.
+  const bool useOtp = QtPassSettings::isUseOtp();
+  ui->actionOtp->setVisible(useOtp);
+  ui->actionOtp->setEnabled(useOtp && uiEnabled);
 }
 
 void MainWindow::updateGrepButtonVisibility() {

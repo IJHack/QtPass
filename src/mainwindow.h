@@ -289,6 +289,10 @@ private:
   PasswordDisplayPanel *m_displayPanel = nullptr;
   bool m_firstShowCompleted = false;
   bool m_autoScroll = true;
+  /// True between onOtp() starting a decrypt and otpFromFileToClipboard
+  /// consuming it. Suppresses passShowHandler's password copy for that request,
+  /// and makes a connection left armed by a failed decrypt inert.
+  bool m_otpRequestPending = false;
   int m_outputCounter = 0;
   static constexpr int MaxOutputLines = 1000;
   // The process output panel is a QDockWidget at the bottom dock area,
@@ -340,7 +344,12 @@ private:
   void applyWindowFlagsSettings();
 
   void updateGitButtonVisibility();
-  void updateOtpButtonVisibility();
+  /**
+   * @brief Refresh the OTP toolbar action from settings.
+   * @param uiEnabled false while a backend operation is in flight, so the
+   *        action is disabled along with the rest of the UI.
+   */
+  void updateOtpButtonVisibility(bool uiEnabled = true);
   void updateGrepButtonVisibility();
   void enableGitButtons(const bool &);
 

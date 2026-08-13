@@ -76,6 +76,16 @@ public:
   void appendField(const QString &field, const QString &value,
                    const AppSettings &s);
 
+  /**
+   * @brief The one-time password currently on display, if there is one.
+   *
+   * Lets callers copy the code the user can actually see instead of decrypting
+   * the entry a second time to re-derive it.
+   * @return The live code, or an empty string when no OTP row is rendered
+   *         (no OTP in the entry, OTP support off, or the panel was cleared).
+   */
+  [[nodiscard]] auto currentOtpCode() const -> QString;
+
 signals:
   /**
    * @brief Emitted when a field's copy button is clicked.
