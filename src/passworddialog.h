@@ -153,6 +153,9 @@ private:
   QString m_currentTemplateName;
   /// Warning indicator shown inside the OTP field; owned by that field.
   QAction *m_otpWarning{nullptr};
+  /// True once the user has typed in the OTP field. Only then may a value that
+  /// is not already an otpauth URI be rewritten, so untouched data survives.
+  bool m_otpFieldEdited{false};
 
   void applyTemplate(const QString &templateName);
 };

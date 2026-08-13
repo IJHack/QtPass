@@ -194,12 +194,24 @@ void PasswordDialog::setPassword(const QString &password) {
 auto PasswordDialog::otpLineEdit() const -> QLineEdit * {
   QList<QLineEdit *> allLines(m_templateLines);
   allLines.append(m_otherLines);
+  QLineEdit *firstMatch = nullptr;
   for (QLineEdit *line : std::as_const(allLines)) {
-    if (FileContent::isOtpFieldName(line->objectName())) {
+    if (!FileContent::isOtpFieldName(line->objectName())) {
+      continue;
+    }
+    // Prefer a populated field. The default template creates an empty `OTP`
+    // widget, and setPassword() fills template widgets by exact name, so an
+    // entry storing `TOTP:` leaves that one empty and puts the real secret in
+    // m_otherLines. Returning the empty template widget meant the actual value
+    // was never validated or normalised.
+    if (!line->text().trimmed().isEmpty()) {
       return line;
     }
+    if (firstMatch == nullptr) {
+      firstMatch = line;
+    }
   }
-  return nullptr;
+  return firstMatch;
 }
 
 /**
@@ -209,8 +221,17 @@ auto PasswordDialog::otpLineEdit() const -> QLineEdit * {
  * called from each of them rather than once from the constructor.
  */
 void PasswordDialog::hookOtpField() {
-  // The old field (and with it the warning action) may already be deleted.
+  // Drop the previous warning indicator. Only m_otherLines widgets are deleted
+  // by removeRow(); a template widget survives, so simply forgetting the action
+  // left it installed forever and the next validate added a second icon.
+  if (m_otpWarning != nullptr) {
+    if (auto *owner = qobject_cast<QWidget *>(m_otpWarning->parent())) {
+      owner->removeAction(m_otpWarning);
+    }
+    delete m_otpWarning;
+  }
   m_otpWarning = nullptr;
+  m_otpFieldEdited = false;
 
   QLineEdit *otp = otpLineEdit();
   if (otp == nullptr) {
@@ -219,6 +240,11 @@ void PasswordDialog::hookOtpField() {
   otp->setPlaceholderText(tr("otpauth:// URI or base32 secret"));
   connect(otp, &QLineEdit::textChanged, this, &PasswordDialog::validateOtpField,
           Qt::UniqueConnection);
+  // textEdited, not textChanged: it fires only for user input, so programmatic
+  // population does not count as the user having touched the field.
+  connect(
+      otp, &QLineEdit::textEdited, this, [this]() { m_otpFieldEdited = true; },
+      Qt::UniqueConnection);
   // Canonicalise as soon as the user leaves the field, so the value they end
   // up saving is the value they were shown.
   connect(otp, &QLineEdit::editingFinished, this,
@@ -258,10 +284,14 @@ void PasswordDialog::validateOtpField() {
 /**
  * @brief PasswordDialog::normalizeOtpField rewrite the OTP field as a URI.
  *
- * An unparseable value is left verbatim: nothing the user typed is silently
- * destroyed, and the display panel surfaces the problem for them. An empty
- * field also stays empty, and getPassword() then drops the line entirely,
- * which is how a secret is removed.
+ * Only rewrites a value that is unambiguously TOTP configuration: an
+ * `otpauth://` URI, or something the user typed into the field this session.
+ *
+ * Anything else is left byte-for-byte. Base32::sanitizeInput() maps 1 to L and
+ * 8 to B, so a static backup code like `12345678` looks like valid base32 and
+ * used to be silently rewritten as an otpauth URI and re-encrypted — on any OK,
+ * even when the user only edited the password field and never touched this one.
+ * A bare secret left alone still works: Totp::parse() accepts one.
  */
 void PasswordDialog::normalizeOtpField() {
   QLineEdit *otp = otpLineEdit();
@@ -272,8 +302,13 @@ void PasswordDialog::normalizeOtpField() {
   if (text.isEmpty()) {
     return;
   }
-  const QString canonical =
-      Totp::normalize(text, QFileInfo(m_file).completeBaseName());
+  if (!m_otpFieldEdited && !FileContent::isOtpUriValue(text)) {
+    return;
+  }
+  // fileName(), not completeBaseName(): the latter truncates at the last dot,
+  // turning an entry called github.com into a label of "github". m_file already
+  // has its .gpg suffix stripped by MainWindow::getFile().
+  const QString canonical = Totp::normalize(text, QFileInfo(m_file).fileName());
   if (!canonical.isEmpty()) {
     otp->setText(canonical);
   }
