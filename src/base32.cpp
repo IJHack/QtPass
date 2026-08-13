@@ -34,14 +34,23 @@ constexpr quint8 ASCII_a = static_cast<quint8>('a');
 constexpr quint8 ASCII_z = static_cast<quint8>('z');
 constexpr quint8 ASCII_EQ = static_cast<quint8>('=');
 
-/// Number of trailing '=' characters, looking at most 6 positions back.
+/**
+ * @brief Length of the trailing run of '=' characters.
+ *
+ * Stops at the first non-'=': counting every '=' in the last few positions
+ * would treat an interior one as padding, and removePadding() would then
+ * truncate real data.
+ * @param encodedData Base32 text.
+ * @return Number of trailing '=', at most 6.
+ */
 auto countPadding(const QByteArray &encodedData) -> int {
   int nPads = 0;
   for (qsizetype i = encodedData.size() - 1;
        i >= 0 && i > encodedData.size() - 7; --i) {
-    if (encodedData.at(i) == '=') {
-      ++nPads;
+    if (encodedData.at(i) != '=') {
+      break;
     }
+    ++nPads;
   }
   return nPads;
 }
@@ -99,9 +108,16 @@ auto Base32::decode(const QByteArray &encodedData) -> QByteArray {
       nSpecialBytes > 0 ? (nQuanta - 1) * 5 + nSpecialBytes : nQuanta * 5;
 
   QByteArray data(nBytes, Qt::Uninitialized);
+  // Written through a raw pointer: Qt 5.15 declares only operator[](int) and
+  // operator[](uint), so subscripting with a qsizetype is an ambiguous overload
+  // there. Qt 6 added a qsizetype overload, which is why this only breaks the
+  // Qt 5.15 build.
+  char *out = data.data();
 
   qsizetype i = 0;
   qsizetype o = 0;
+  // Everything from the first '=' onward must be padding.
+  const qsizetype firstPad = encodedData.size() - countPadding(encodedData);
 
   while (i < encodedData.size()) {
     quint64 quantum = 0;
@@ -120,6 +136,10 @@ auto Base32::decode(const QByteArray &encodedData) -> QByteArray {
         ch -= ASCII_2;
         ch += ALPH_POS_2;
       } else if (ASCII_EQ == ch) {
+        if (i - 1 < firstPad) {
+          // '=' before the trailing run is not padding, it is malformed input.
+          return {};
+        }
         if (i == encodedData.size()) {
           // Finished with the short final quantum.
           quantum >>= specialOffset;
@@ -138,7 +158,7 @@ auto Base32::decode(const QByteArray &encodedData) -> QByteArray {
     const int offset = (nQuantumBytes - 1) * 8;
     quint64 mask = quint64(0xFF) << offset;
     for (int n = offset; n >= 0 && o < nBytes; n -= 8) {
-      data[o++] = static_cast<char>((quantum & mask) >> n);
+      out[o++] = static_cast<char>((quantum & mask) >> n);
       mask >>= 8;
     }
   }
@@ -161,6 +181,8 @@ auto Base32::encode(const QByteArray &data) -> QByteArray {
   const qsizetype nQuanta = nBits / 40 + (rBits > 0 ? 1 : 0);
   const qsizetype nBytes = nQuanta * 8;
   QByteArray encodedData(nBytes, Qt::Uninitialized);
+  // Raw pointer: see the note in decode() about Qt 5.15's operator[] overloads.
+  char *out = encodedData.data();
 
   qsizetype i = 0;
   qsizetype o = 0;
@@ -184,7 +206,7 @@ auto Base32::encode(const QByteArray &data) -> QByteArray {
 
     mask = MASK_40BIT;
     for (n = 35; n >= 0; n -= 5) {
-      encodedData[o++] = kAlphabet[(quantum & mask) >> n];
+      out[o++] = kAlphabet[(quantum & mask) >> n];
       mask >>= 5;
     }
   }
@@ -219,14 +241,14 @@ auto Base32::encode(const QByteArray &data) -> QByteArray {
     }
 
     while (n >= 0) {
-      encodedData[o++] = kAlphabet[(quantum & mask) >> n];
+      out[o++] = kAlphabet[(quantum & mask) >> n];
       mask >>= 5;
       n -= 5;
     }
 
     // Add the pad characters.
     while (o < encodedData.size()) {
-      encodedData[o++] = '=';
+      out[o++] = '=';
     }
   }
 
@@ -284,22 +306,24 @@ auto Base32::sanitizeInput(const QByteArray &encodedData) -> QByteArray {
   }
 
   QByteArray newEncodedData(encodedData.size(), Qt::Uninitialized);
+  // Raw pointer: see the note in decode() about Qt 5.15's operator[] overloads.
+  char *out = newEncodedData.data();
   qsizetype i = 0;
   for (auto ch : encodedData) {
     switch (ch) {
     case '0':
-      newEncodedData[i++] = 'O';
+      out[i++] = 'O';
       break;
     case '1':
-      newEncodedData[i++] = 'L';
+      out[i++] = 'L';
       break;
     case '8':
-      newEncodedData[i++] = 'B';
+      out[i++] = 'B';
       break;
     default:
       if (('A' <= ch && ch <= 'Z') || ('a' <= ch && ch <= 'z') ||
           ('2' <= ch && ch <= '7')) {
-        newEncodedData[i++] = ch;
+        out[i++] = ch;
       }
     }
   }

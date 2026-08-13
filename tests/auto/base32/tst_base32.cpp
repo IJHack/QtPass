@@ -78,6 +78,11 @@ void tst_base32::decodeRejectsBadInput_data() {
   // KeePassXC silently returned wrong-length data for these.
   QTest::newRow("two pads") << QByteArray("MZXW6Y==");
   QTest::newRow("five pads") << QByteArray("MZX=====");
+  // '=' before the trailing run is malformed. countPadding() used to count
+  // every '=' in the last few positions, so these slipped through and produced
+  // wrong-length data instead of an error.
+  QTest::newRow("interior pad") << QByteArray("AA======AAAAAAAA");
+  QTest::newRow("interior pad short") << QByteArray("A=A=A=A=");
 }
 
 void tst_base32::decodeRejectsBadInput() {
@@ -180,6 +185,13 @@ void tst_base32::removePaddingIsInverseOfAddPadding() {
   // Non-multiples of 8 are returned unchanged, as bad input.
   QCOMPARE(Base32::removePadding(QByteArrayLiteral("MZXW6YQ")),
            QByteArrayLiteral("MZXW6YQ"));
+
+  // Only the trailing run is padding. Counting every '=' in the last few
+  // positions made this strip two characters and destroy the 'F'.
+  QCOMPARE(Base32::removePadding(QByteArrayLiteral("AB=CDEF=")),
+           QByteArrayLiteral("AB=CDEF"));
+  QCOMPARE(Base32::removePadding(QByteArrayLiteral("A=B=C=D=")),
+           QByteArrayLiteral("A=B=C=D"));
 }
 
 void tst_base32::sanitizeInputAcceptsHumanInput_data() {
