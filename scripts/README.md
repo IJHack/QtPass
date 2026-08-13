@@ -4,9 +4,10 @@ This directory contains helper scripts for development and releases.
 
 ## Development
 
-| Script                         | Description                                          |
-| ------------------------------ | ---------------------------------------------------- |
-| `generate-compile-commands.sh` | Generate `compile_commands.json` for IDE/LSP tooling |
+| Script                         | Description                                              |
+| ------------------------------ | -------------------------------------------------------- |
+| `generate-compile-commands.sh` | Generate `compile_commands.json` for IDE/LSP tooling     |
+| `build-windows.cmd`            | Set up the MSVC x64 + Qt environment and build (Windows) |
 
 ## Release
 
@@ -25,6 +26,17 @@ For IDE/LSP code completion:
 ```bash
 ./scripts/generate-compile-commands.sh
 ```
+
+### Build on Windows
+
+From any `cmd.exe`; loads the Visual Studio x64 environment and picks an MSVC Qt:
+
+```cmd
+scripts\build-windows.cmd
+scripts\build-windows.cmd check
+```
+
+Set `QT_DIR` to select a specific Qt. See [Windows.md](../Windows.md).
 
 ### Release Scripts
 
