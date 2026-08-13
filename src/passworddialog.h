@@ -6,6 +6,7 @@
 #include "appsettings.h"
 
 #include <QDialog>
+#include <QPointer>
 
 namespace Ui {
 class PasswordDialog;
@@ -152,7 +153,11 @@ private:
   QHash<QString, QStringList> m_availableTemplates;
   QString m_currentTemplateName;
   /// Warning indicator shown inside the OTP field; owned by that field.
-  QAction *m_otpWarning{nullptr};
+  ///
+  /// QPointer, not a raw pointer: the QAction is parented to the QLineEdit, and
+  /// setPassword() deletes the m_otherLines widgets before calling
+  /// hookOtpField(), so a raw pointer would already dangle there.
+  QPointer<QAction> m_otpWarning;
   /// True once the user has typed in the OTP field. Only then may a value that
   /// is not already an otpauth URI be rewritten, so untouched data survives.
   bool m_otpFieldEdited{false};

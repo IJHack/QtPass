@@ -224,7 +224,11 @@ void PasswordDialog::hookOtpField() {
   // Drop the previous warning indicator. Only m_otherLines widgets are deleted
   // by removeRow(); a template widget survives, so simply forgetting the action
   // left it installed forever and the next validate added a second icon.
-  if (m_otpWarning != nullptr) {
+  //
+  // m_otpWarning is a QPointer, so it is already null when the QLineEdit that
+  // owned the action was one of the m_otherLines widgets setPassword() just
+  // deleted — dereferencing a raw pointer here was a use-after-free.
+  if (!m_otpWarning.isNull()) {
     if (auto *owner = qobject_cast<QWidget *>(m_otpWarning->parent())) {
       owner->removeAction(m_otpWarning);
     }
@@ -264,7 +268,7 @@ void PasswordDialog::validateOtpField() {
   const QString text = otp->text().trimmed();
   const bool bad = !text.isEmpty() && !Totp::isValid(text);
   if (bad) {
-    if (m_otpWarning == nullptr) {
+    if (m_otpWarning.isNull()) {
       // Theme-aware indicator: no hardcoded colours and no extra layout row.
       m_otpWarning =
           otp->addAction(QIcon::fromTheme(QStringLiteral("dialog-warning")),
@@ -272,7 +276,7 @@ void PasswordDialog::validateOtpField() {
     }
     otp->setToolTip(tr("Invalid OTP secret"));
   } else {
-    if (m_otpWarning != nullptr) {
+    if (!m_otpWarning.isNull()) {
       otp->removeAction(m_otpWarning);
       delete m_otpWarning;
       m_otpWarning = nullptr;
