@@ -85,6 +85,18 @@ public:
   [[nodiscard]] auto getPassword() const -> QString;
 
   /**
+   * @brief Like getPassword but empty when the password line is itself an
+   * otpauth URI.
+   *
+   * `pass otp insert` writes the URI as the entry's only line, so it lands in
+   * the password position. It is a shared secret, not a password: it must never
+   * be rendered or placed on the clipboard. getPassword() still returns it so
+   * the edit dialog round-trips the file unchanged.
+   * @return The password, or an empty string when it is an otpauth URI.
+   */
+  [[nodiscard]] auto getPasswordForDisplay() const -> QString;
+
+  /**
    * @return the named values in the file in the order of appearance, with
    * template values first.
    */
@@ -109,6 +121,17 @@ public:
    * @return true for "OTP" or "TOTP", compared case-insensitively.
    */
   [[nodiscard]] static auto isOtpFieldName(const QString &name) -> bool;
+
+  /**
+   * @brief Whether a field value is an otpauth URI, and therefore a secret.
+   *
+   * A URI is a shared secret whatever the field is called, so both the
+   * display-suppression and the OTP lookup key off the value as well as the
+   * name; suppressing only `OTP:`/`TOTP:` leaked `2fa:` and friends.
+   * @param value Field value; surrounding whitespace is ignored.
+   * @return true when it starts with "otpauth://", compared case-insensitively.
+   */
+  [[nodiscard]] static auto isOtpUriValue(const QString &value) -> bool;
 
   /**
    * @brief The entry's raw one-time password configuration, if it has one.

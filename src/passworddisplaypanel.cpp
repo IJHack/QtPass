@@ -69,14 +69,21 @@ void PasswordDisplayPanel::displayFields(const QString &password,
                                          const NamedValues &namedValues,
                                          const AppSettings &s,
                                          const QString &otpConfig) {
-  if (!password.isEmpty()) {
+  // Defence in depth: MainWindow passes FileContent::getPasswordForDisplay(),
+  // which is already empty for an entry whose password line is an otpauth URI
+  // (what `pass otp insert` writes). Refuse to render one even if it gets here.
+  if (!password.isEmpty() && !FileContent::isOtpUriValue(password)) {
     // The password is hidden in addField when needed.
     addField(0, QObject::tr("Password"), password, s);
   }
   int position = 1;
   bool otpRendered = false;
   for (const NamedValue &nv : namedValues) {
-    if (FileContent::isOtpFieldName(nv.name)) {
+    // Keyed on the value too: a field called anything whose value is an otpauth
+    // URI is still a shared secret, and isLineHidden() hides it from the text
+    // browser, so suppressing only OTP/TOTP names leaked `2fa:` and friends.
+    if (FileContent::isOtpFieldName(nv.name) ||
+        FileContent::isOtpUriValue(nv.value)) {
       // Never render an OTP field verbatim: its value is the shared secret,
       // and addField() would both display it and hand it to a copy button.
       // The skip is unconditional, so the secret stays hidden even when OTP

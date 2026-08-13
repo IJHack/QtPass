@@ -52,6 +52,11 @@ private Q_SLOTS:
   void getOtpUriEmptyWhenAbsent();
   void otpFieldHiddenFromDisplay();
   void otpFieldRoundTripsInNamedValues();
+  void getOtpUriFromUriAsOnlyLine();
+  void passwordForDisplayBlanksOtpUri();
+  void getOtpUriFromDifferentlyNamedField();
+  void isOtpUriValueMatchesScheme_data();
+  void isOtpUriValueMatchesScheme();
 };
 
 void tst_filecontent::parsePlainPassword() {
@@ -495,6 +500,64 @@ void tst_filecontent::otpFieldRoundTripsInNamedValues() {
   QCOMPARE(values.size(), 1);
   QCOMPARE(values.at(0).name, QStringLiteral("OTP"));
   QCOMPARE(values.at(0).value, kOtpUri);
+}
+
+/**
+ * @brief `pass otp insert` writes the URI as the entry's only line, so it lands
+ * in the password position and the line-by-line scan never sees it.
+ */
+void tst_filecontent::getOtpUriFromUriAsOnlyLine() {
+  FileContent fc = FileContent::parse(kOtpUri, QStringList(), false);
+  QCOMPARE(fc.getOtpUri(), kOtpUri);
+
+  // Also when the URI is line 1 and other fields follow.
+  FileContent withFields =
+      FileContent::parse(kOtpUri + "\nlogin: alice", {"login"}, false);
+  QCOMPARE(withFields.getOtpUri(), kOtpUri);
+}
+
+/**
+ * @brief getPassword() must still return it so the edit dialog round-trips the
+ * file, but nothing on the display path may see it.
+ */
+void tst_filecontent::passwordForDisplayBlanksOtpUri() {
+  FileContent fc = FileContent::parse(kOtpUri, QStringList(), false);
+  QCOMPARE(fc.getPassword(), kOtpUri);
+  QVERIFY2(fc.getPasswordForDisplay().isEmpty(),
+           "a password line that is an otpauth URI must not be displayed");
+
+  // An ordinary password is untouched.
+  FileContent normal =
+      FileContent::parse("hunter2\nlogin: alice", {"login"}, false);
+  QCOMPARE(normal.getPasswordForDisplay(), QStringLiteral("hunter2"));
+}
+
+/// A URI is a secret whatever the field is called.
+void tst_filecontent::getOtpUriFromDifferentlyNamedField() {
+  const QString content = "secret\n2fa: " + kOtpUri;
+  FileContent fc = FileContent::parse(content, QStringList(), true);
+  QCOMPARE(fc.getOtpUri(), kOtpUri);
+  QVERIFY2(!fc.getRemainingDataForDisplay().contains("otpauth"),
+           "the URI must be hidden from the text browser too");
+}
+
+void tst_filecontent::isOtpUriValueMatchesScheme_data() {
+  QTest::addColumn<QString>("value");
+  QTest::addColumn<bool>("expected");
+
+  QTest::newRow("uri") << QStringLiteral("otpauth://totp/x?secret=y") << true;
+  QTest::newRow("uppercase") << QStringLiteral("OTPAUTH://TOTP/x") << true;
+  QTest::newRow("leading space")
+      << QStringLiteral("  otpauth://totp/x") << true;
+  QTest::newRow("bare secret") << QStringLiteral("JBSWY3DPEHPK3PXP") << false;
+  QTest::newRow("url") << QStringLiteral("https://example.com") << false;
+  QTest::newRow("empty") << QString() << false;
+}
+
+void tst_filecontent::isOtpUriValueMatchesScheme() {
+  QFETCH(QString, value);
+  QFETCH(bool, expected);
+  QCOMPARE(FileContent::isOtpUriValue(value), expected);
 }
 
 QTEST_MAIN(tst_filecontent)

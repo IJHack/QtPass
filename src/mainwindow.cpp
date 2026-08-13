@@ -643,7 +643,9 @@ void MainWindow::passShowHandler(const QString &p_output) {
   bool allFields = s.useTemplate && s.templateAllFields;
   FileContent fileContent = FileContent::parse(p_output, templ, allFields);
   QString output = p_output;
-  QString password = fileContent.getPassword();
+  // Display variant: empty when the password line is itself an otpauth URI, so
+  // the shared secret is neither rendered nor copied to the clipboard.
+  QString password = fileContent.getPasswordForDisplay();
 
   // set clipped text
   //

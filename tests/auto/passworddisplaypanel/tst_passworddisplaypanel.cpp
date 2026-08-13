@@ -4,7 +4,9 @@
 
 #include <QGridLayout>
 #include <QLabel>
+#include <QLineEdit>
 #include <QProgressBar>
+#include <QTextBrowser>
 #include <QVBoxLayout>
 #include <QWidget>
 
@@ -42,6 +44,8 @@ private Q_SLOTS:
   void currentOtpCodeReturnsDisplayedCode();
   void currentOtpCodeEmptyWithoutOtpRow();
   void currentOtpCodeEmptyAfterClear();
+  void otpUriAsPasswordIsNeverRendered();
+  void otpUriInDifferentlyNamedFieldIsNeverRendered();
 
 private:
   [[nodiscard]] auto otpWidgetAt(int row) const -> OtpCodeWidget *;
@@ -110,7 +114,32 @@ auto tst_passworddisplaypanel::otpWidgetAt(int row) const -> OtpCodeWidget * {
   return item->widget()->findChild<OtpCodeWidget *>();
 }
 
-/// Collect every string any child widget of the grid renders.
+/**
+ * @brief Collect everything the grid exposes to the user for a given widget.
+ *
+ * Must cover every sink addField() writes a value into, not just QLabel:
+ * field values go into a QTextBrowser (or a QLineEdit for the password) and the
+ * copy payload lives inside QPushButtonWithClipboard. An earlier version read
+ * only QLabel::text() and toolTip(), which made the "secret is never shown"
+ * assertions pass even with the suppression removed entirely.
+ */
+static auto widgetText(const QWidget *widget) -> QString {
+  QString text = widget->toolTip();
+  if (const auto *label = qobject_cast<const QLabel *>(widget)) {
+    text += label->text();
+  } else if (const auto *browser = qobject_cast<const QTextBrowser *>(widget)) {
+    text += browser->toPlainText();
+    text += browser->toHtml();
+  } else if (const auto *edit = qobject_cast<const QLineEdit *>(widget)) {
+    text += edit->text();
+  } else if (const auto *copy =
+                 qobject_cast<const QPushButtonWithClipboard *>(widget)) {
+    text += copy->getTextToCopy();
+  }
+  return text;
+}
+
+/// Collect every string the grid renders or would hand to the clipboard.
 static auto renderedText(QGridLayout *grid) -> QString {
   QString text;
   for (int i = 0; i < grid->count(); ++i) {
@@ -118,16 +147,11 @@ static auto renderedText(QGridLayout *grid) -> QString {
     if (widget == nullptr) {
       continue;
     }
+    text += widgetText(widget);
     const QList<QWidget *> all = widget->findChildren<QWidget *>();
-    for (QWidget *child : all) {
-      if (auto *label = qobject_cast<QLabel *>(child)) {
-        text += label->text();
-      }
+    for (const QWidget *child : all) {
+      text += widgetText(child);
     }
-    if (auto *label = qobject_cast<QLabel *>(widget)) {
-      text += label->text();
-    }
-    text += widget->toolTip();
   }
   return text;
 }
@@ -318,6 +342,43 @@ void tst_passworddisplaypanel::currentOtpCodeEmptyAfterClear() {
   // The panel autoclear timer wipes the row; there is then nothing to copy.
   m_panel->clear();
   QVERIFY(m_panel->currentOtpCode().isEmpty());
+}
+
+/**
+ * @brief `pass otp insert` writes the URI as the entry's only line, so it
+ * arrives as the "password". It is a shared secret and must not be rendered or
+ * offered for copying.
+ */
+void tst_passworddisplaypanel::otpUriAsPasswordIsNeverRendered() {
+  AppSettings s;
+  s.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
+  // Defence in depth: FileContent::getPasswordForDisplay() already blanks it,
+  // but the panel must not render a password line that is a shared secret even
+  // if one reaches it.
+  m_panel->displayFields(kOtpUri, NamedValues{}, s, kOtpUri);
+
+  const QString text = renderedText(m_grid);
+  QVERIFY2(!text.contains(kOtpSecret), "the shared secret must never be shown");
+  QVERIFY2(!text.contains(QStringLiteral("otpauth")),
+           "the otpauth URI must never be shown");
+  QVERIFY2(otpWidgetAt(1) != nullptr,
+           "the entry still has a usable OTP configuration");
+}
+
+/**
+ * @brief A field holding an otpauth URI is a secret whatever it is called;
+ * suppression keyed only on the name leaked `2fa:`, `mfa:` and friends.
+ */
+void tst_passworddisplaypanel::otpUriInDifferentlyNamedFieldIsNeverRendered() {
+  AppSettings s;
+  s.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
+  m_panel->displayFields(QStringLiteral("secret"),
+                         NamedValues{{"2fa", kOtpUri}}, s, kOtpUri);
+
+  const QString text = renderedText(m_grid);
+  QVERIFY2(!text.contains(kOtpSecret), "the shared secret must never be shown");
+  QVERIFY2(!text.contains(QStringLiteral("otpauth")),
+           "the otpauth URI must never be shown");
 }
 
 QTEST_MAIN(tst_passworddisplaypanel)

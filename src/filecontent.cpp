@@ -4,13 +4,9 @@
 
 #include <utility>
 
-/**
- * @brief Checks whether a value is an otpauth URI.
- * @param value The value to check
- * @return true if it starts with otpauth:// (case-insensitive)
- */
+/// Shorthand for the public FileContent::isOtpUriValue.
 static auto isOtpUri(const QString &value) -> bool {
-  return value.trimmed().startsWith("otpauth://", Qt::CaseInsensitive);
+  return FileContent::isOtpUriValue(value);
 }
 
 /**
@@ -52,11 +48,17 @@ auto FileContent::parse(const QString &fileContent,
   QStringList remainingData;
   QStringList remainingDataDisplay;
   NamedValues namedValues;
-  // The OTP configuration can arrive from three places; remember the first hit
-  // for each so getOtpUri() can apply a fixed precedence afterwards.
+  // The OTP configuration can arrive from several places; remember the first
+  // hit for each so getOtpUri() can apply a fixed precedence afterwards.
   QString otpFromField;
   QString otpFromBareLine;
   QString otpFromRemainingField;
+  // The password line itself, for an entry written by `pass otp insert` whose
+  // only line is the URI. It is taken off the list above, so the loop below
+  // never sees it.
+  if (isOtpUri(password)) {
+    otpFromBareLine = password.trimmed();
+  }
   for (const QString &line : std::as_const(lines)) {
     if (line.contains(":")) {
       qsizetype colon = line.indexOf(':');
@@ -67,7 +69,10 @@ auto FileContent::parse(const QString &fileContent,
                "//")) // if value startswith  // colon is probably from a url
           || templateFields.contains(name)) {
         namedValues.append({name.trimmed(), value.trimmed()});
-        if (otpFromField.isEmpty() && FileContent::isOtpFieldName(name)) {
+        // Keyed on the value as well as the name: a field called anything at
+        // all whose value is an otpauth URI is still a shared secret.
+        if (otpFromField.isEmpty() &&
+            (FileContent::isOtpFieldName(name) || isOtpUri(value))) {
           otpFromField = value.trimmed();
         }
         continue;
@@ -117,10 +122,28 @@ auto FileContent::isOtpFieldName(const QString &name) -> bool {
 }
 
 /**
+ * @brief Checks whether a field value is an otpauth URI.
+ * @param value The value to check
+ * @return true if it starts with otpauth:// (case-insensitive)
+ */
+auto FileContent::isOtpUriValue(const QString &value) -> bool {
+  return value.trimmed().startsWith(QStringLiteral("otpauth://"),
+                                    Qt::CaseInsensitive);
+}
+
+/**
  * @brief Gets the password from the parsed file.
  * @return The password string
  */
 auto FileContent::getPassword() const -> QString { return this->password; }
+
+/**
+ * @brief Gets the password unless it is an otpauth URI.
+ * @return The password, empty when it is a shared secret rather than a password
+ */
+auto FileContent::getPasswordForDisplay() const -> QString {
+  return isOtpUri(this->password) ? QString() : this->password;
+}
 
 /**
  * @brief Gets named value pairs from the parsed file.
