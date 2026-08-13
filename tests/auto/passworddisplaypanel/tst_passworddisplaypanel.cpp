@@ -361,8 +361,10 @@ void tst_passworddisplaypanel::otpUriAsPasswordIsNeverRendered() {
   QVERIFY2(!text.contains(kOtpSecret), "the shared secret must never be shown");
   QVERIFY2(!text.contains(QStringLiteral("otpauth")),
            "the otpauth URI must never be shown");
-  QVERIFY2(otpWidgetAt(1) != nullptr,
-           "the entry still has a usable OTP configuration");
+  // Exactly one row, at row 0: skipping the password must not leave a gap.
+  QCOMPARE(m_grid->count(), 2);
+  QVERIFY2(otpWidgetAt(0) != nullptr,
+           "the entry still has a usable OTP configuration, flush at the top");
 }
 
 /**

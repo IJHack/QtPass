@@ -1274,6 +1274,11 @@ void MainWindow::onOtp() {
   connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
           &MainWindow::otpFromFileToClipboard);
 #endif
+  // passShowHandler repaints the panel for this Show too, so keep the marker in
+  // step or a second request would decrypt again instead of taking the fast
+  // path. Safe to set now: executeWrapperStarted() clears the panel on every
+  // command, so a failed decrypt leaves currentOtpCode() empty.
+  m_shownFile = file;
   QtPassSettings::getPass()->Show(file);
 }
 
@@ -1754,6 +1759,8 @@ void MainWindow::copyPasswordFromTreeview() {
     connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
             &MainWindow::passwordFromFileToClipboard);
 #endif
+    // This Show repaints the panel as well; see onOtp().
+    m_shownFile = file;
     QtPassSettings::getPass()->Show(file);
   }
 }

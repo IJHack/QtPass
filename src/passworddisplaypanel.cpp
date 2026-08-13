@@ -69,14 +69,18 @@ void PasswordDisplayPanel::displayFields(const QString &password,
                                          const NamedValues &namedValues,
                                          const AppSettings &s,
                                          const QString &otpConfig) {
+  // Rows are numbered as they are added rather than assuming the password
+  // occupies row 0: an entry written by `pass otp insert` has no password row,
+  // and starting at 1 regardless left an empty grid row above the OTP row.
+  int position = 0;
   // Defence in depth: MainWindow passes FileContent::getPasswordForDisplay(),
   // which is already empty for an entry whose password line is an otpauth URI
   // (what `pass otp insert` writes). Refuse to render one even if it gets here.
   if (!password.isEmpty() && !FileContent::isOtpUriValue(password)) {
     // The password is hidden in addField when needed.
-    addField(0, QObject::tr("Password"), password, s);
+    addField(position, QObject::tr("Password"), password, s);
+    ++position;
   }
-  int position = 1;
   bool otpRendered = false;
   for (const NamedValue &nv : namedValues) {
     // Keyed on the value too: a field called anything whose value is an otpauth
