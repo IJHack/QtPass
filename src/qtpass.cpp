@@ -3,6 +3,7 @@
 #include "qtpass.h"
 #include "mainwindow.h"
 #include "qtpasssettings.h"
+#include "settingsconstants.h"
 #include "util.h"
 #include <QApplication>
 #include <QClipboard>
@@ -88,8 +89,26 @@ auto QtPass::init() -> bool {
     QtPassSettings::save(s);
   } else {
     AppSettings s = QtPassSettings::load();
+    bool changed = false;
     if (s.passTemplate.isEmpty()) {
       s.passTemplate = QStringLiteral("login\nurl\nOTP");
+      changed = true;
+    }
+    // `useOtp` used to gate the Unix-only pass-otp extension and now gates
+    // built-in TOTP, so an existing profile's stored false is stale rather than
+    // a preference. The new default of true never reaches these users: the
+    // fresh-install branch above already persisted the key, and the serializer
+    // writes it unconditionally. Enable it once, remembered by its own key so a
+    // deliberate opt-out is not overridden on the next launch.
+    if (!QtPassSettings::getInstance()
+             ->value(SettingsConstants::otpMigratedToNative, false)
+             .toBool()) {
+      s.useOtp = true;
+      QtPassSettings::getInstance()->setValue(
+          SettingsConstants::otpMigratedToNative, true);
+      changed = true;
+    }
+    if (changed) {
       QtPassSettings::save(s);
     }
   }

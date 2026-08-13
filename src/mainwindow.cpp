@@ -1915,13 +1915,17 @@ void MainWindow::updateOtpButtonVisibility(bool uiEnabled) {
   // on Windows and macOS and with either backend. It used to be hidden there
   // because the pass-otp extension is Unix-only.
   //
-  // Visibility follows the setting alone, so the button does not flicker in and
-  // out during operations, but it must also honour uiEnabled: this is called
-  // from setUiElementsEnabled(), and ignoring the argument re-enabled the
-  // action while a decrypt was in flight, letting the user stack Show calls.
-  const bool useOtp = QtPassSettings::isUseOtp();
-  ui->actionOtp->setVisible(useOtp);
-  ui->actionOtp->setEnabled(useOtp && uiEnabled);
+  // Kept visible but disabled when OTP is off, as it was before: hiding it
+  // removed the only discoverable trace of the feature, and since an OTP field
+  // is suppressed from the panel unconditionally (its value is a secret), a
+  // user with the setting off would see nothing at all where their OTP data
+  // used to be.
+  //
+  // Enablement must honour uiEnabled: this is called from
+  // setUiElementsEnabled(), and ignoring the argument re-enabled the action
+  // while a decrypt was in flight, letting the user stack Show calls.
+  ui->actionOtp->setVisible(true);
+  ui->actionOtp->setEnabled(QtPassSettings::isUseOtp() && uiEnabled);
 }
 
 void MainWindow::updateGrepButtonVisibility() {
