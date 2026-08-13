@@ -158,6 +158,10 @@ void QtPass::setMainWindow() {
 void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::error, this, &QtPass::processError);
   connect(pass, &Pass::processErrorExit, this, &QtPass::processErrorExit);
+  // A failed decrypt never emits finishedShow, so an OTP request would
+  // otherwise stay pending for the rest of the session.
+  connect(pass, &Pass::processErrorExit, m_mainWindow,
+          &MainWindow::cancelOtpRequest);
   connect(pass, &Pass::critical, m_mainWindow, &MainWindow::critical);
   connect(pass, &Pass::startingExecuteWrapper, m_mainWindow,
           &MainWindow::executeWrapperStarted);

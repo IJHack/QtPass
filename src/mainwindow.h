@@ -224,6 +224,14 @@ public slots:
   void otpFromFileToClipboard(const QString &output);
 
   /**
+   * @brief Abandon an in-flight OTP request.
+   *
+   * A failed decrypt never emits Pass::finishedShow, so without this the
+   * request would stay pending for the rest of the session.
+   */
+  void cancelOtpRequest();
+
+  /**
    * @brief Handle results from a completed grep search.
    * @param results List of file/match pairs from the grep operation.
    */
@@ -293,6 +301,14 @@ private:
   /// consuming it. Suppresses passShowHandler's password copy for that request,
   /// and makes a connection left armed by a failed decrypt inert.
   bool m_otpRequestPending = false;
+  /// Entry the display panel is currently rendering. The tree's currentIndex
+  /// can move without a repaint (arrow keys and right-click do not emit
+  /// QTreeView::clicked), so onOtp() must not assume the visible code belongs
+  /// to the selected entry.
+  QString m_shownFile;
+  /// Entry the in-flight OTP request asked for, so a decrypt triggered by
+  /// something else cannot be mistaken for its answer.
+  QString m_otpRequestFile;
   int m_outputCounter = 0;
   static constexpr int MaxOutputLines = 1000;
   // The process output panel is a QDockWidget at the bottom dock area,

@@ -154,7 +154,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
     showStatusMessage(tr("Operation timed out; re-enabling interface."));
     // Drop any in-flight OTP request so a late finishedShow cannot be mistaken
     // for the answer to it.
-    m_otpRequestPending = false;
+    cancelOtpRequest();
     setUiElementsEnabled(true);
   });
 
@@ -581,8 +581,12 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   QString file = getFile(index, true);
   ui->passwordName->setText(file);
   if (!file.isEmpty() && !cleared) {
+    // Remember what the panel is about to show, so onOtp() can tell whether the
+    // code it can see belongs to the entry that is currently selected.
+    m_shownFile = file;
     QtPassSettings::getPass()->Show(file);
   } else {
+    m_shownFile.clear();
     clearPanel(false);
     ui->actionEdit->setEnabled(false);
     ui->actionDelete->setEnabled(true);
@@ -608,6 +612,8 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
  */
 void MainWindow::deselect() {
   m_currentDir = "";
+  m_shownFile.clear();
+  cancelOtpRequest();
   m_qtPass->clearClipboard();
   ui->treeView->clearSelection();
   ui->actionEdit->setEnabled(false);
@@ -700,7 +706,15 @@ void MainWindow::otpFromFileToClipboard(const QString &p_output) {
   if (!m_otpRequestPending) {
     return;
   }
+  // finishedShow carries no request identity, so make sure this decrypt is the
+  // one we asked for and not a tree click that happened to land first.
+  if (m_otpRequestFile != getFile(ui->treeView->currentIndex(), true)) {
+    cancelOtpRequest();
+    setUiElementsEnabled(true);
+    return;
+  }
   m_otpRequestPending = false;
+  m_otpRequestFile.clear();
 
   if (p_output.isEmpty()) {
     // Distinguish "could not read the entry" from "entry has no OTP".
@@ -1195,6 +1209,20 @@ void MainWindow::onDelete() {
 }
 
 /**
+ * @brief MainWindow::cancelOtpRequest abandon an in-flight OTP request.
+ *
+ * Connected to Pass::processErrorExit, and called from deselect(). A failed
+ * decrypt never emits finishedShow, and the error handler re-enables the UI —
+ * which stops the watchdog that was the only other thing clearing the flag.
+ * Left set, it permanently suppressed passShowHandler's copy-on-select and let
+ * the still-armed one-shot claim the next unrelated decrypt.
+ */
+void MainWindow::cancelOtpRequest() {
+  m_otpRequestPending = false;
+  m_otpRequestFile.clear();
+}
+
+/**
  * @brief MainWindow::onOtp generate the selected entry's OTP code and copy it.
  *
  * Decrypts the entry once and derives the code in-process, so this works with
@@ -1218,7 +1246,12 @@ void MainWindow::onOtp() {
   // going through Show() would let passShowHandler copy the password first, and
   // two QClipboard::setMimeData calls in one event-loop turn can leave the
   // Windows clipboard empty.
-  const QString shown = m_displayPanel->currentOtpCode();
+  //
+  // Only when the panel is showing *this* entry: arrow-key navigation and
+  // right-clicking move the tree's currentIndex without emitting
+  // QTreeView::clicked, so the visible code can belong to a different account.
+  const QString shown =
+      (m_shownFile == file) ? m_displayPanel->currentOtpCode() : QString();
   if (!shown.isEmpty()) {
     m_qtPass->copyTextToClipboard(shown);
     showStatusMessage(tr("OTP code copied to clipboard"));
@@ -1229,6 +1262,7 @@ void MainWindow::onOtp() {
   // passShowHandler putting the password on the clipboard for a request that
   // only asked for a code.
   m_otpRequestPending = true;
+  m_otpRequestFile = file;
   setUiElementsEnabled(false);
   // Disconnect any previous connection to avoid accumulation
   disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
