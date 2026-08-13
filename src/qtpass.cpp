@@ -87,6 +87,11 @@ auto QtPass::init() -> bool {
     s.usePwgen = !s.pwgenExecutable.isEmpty();
     s.passTemplate = QStringLiteral("login\nurl\nOTP");
     QtPassSettings::save(s);
+    // A fresh profile already has the new useOtp default, so record the
+    // migration as done. Without this, turning OTP off during the first session
+    // would be undone by the migration branch on the next launch.
+    QtPassSettings::getInstance()->setValue(
+        SettingsConstants::otpMigratedToNative, true);
   } else {
     AppSettings s = QtPassSettings::load();
     bool changed = false;
