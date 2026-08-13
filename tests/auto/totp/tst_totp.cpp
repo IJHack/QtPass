@@ -1,5 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QUrl>
+#include <QUrlQuery>
 #include <QtTest>
 
 #include "../../../src/base32.h"
@@ -23,6 +25,10 @@ private Q_SLOTS:
   void parseAlgorithmNames_data();
   void parseAlgorithmNames();
   void parseClampsDigitsAndPeriod();
+  void parseNonNumericParametersFallBackToDefaults_data();
+  void parseNonNumericParametersFallBackToDefaults();
+  void toUriPreservesUnknownParameters();
+  void toUriOmitsSecretPadding();
   void parseRejectsBadInput_data();
   void parseRejectsBadInput();
   void generateRfc6238Vectors_data();
@@ -124,11 +130,80 @@ void tst_totp::parseClampsDigitsAndPeriod() {
   QCOMPARE(tooBig->digits, Totp::MAX_DIGITS);
   QCOMPARE(tooBig->step, Totp::MAX_STEP);
 
-  const auto tooSmall = Totp::parse(QStringLiteral(
+  // Zero is not a usable digit count or period, so fall back to the RFC
+  // defaults rather than clamping up to 1 (which produced a one-character code
+  // rotating every second, and normalize() then persisted it).
+  const auto zero = Totp::parse(QStringLiteral(
       "otpauth://totp/x?secret=JBSWY3DPEHPK3PXP&digits=0&period=0"));
-  QVERIFY(tooSmall.has_value());
-  QCOMPARE(tooSmall->digits, Totp::MIN_DIGITS);
-  QCOMPARE(tooSmall->step, 1U);
+  QVERIFY(zero.has_value());
+  QCOMPARE(zero->digits, Totp::DEFAULT_DIGITS);
+  QCOMPARE(zero->step, Totp::DEFAULT_STEP);
+}
+
+/// toUInt() returns 0 with no error signal for anything non-numeric.
+void tst_totp::parseNonNumericParametersFallBackToDefaults_data() {
+  QTest::addColumn<QString>("query");
+
+  QTest::newRow("letter O in period") << QStringLiteral("period=3O");
+  QTest::newRow("empty values") << QStringLiteral("digits=&period=");
+  QTest::newRow("words") << QStringLiteral("digits=six&period=thirty");
+  QTest::newRow("negative") << QStringLiteral("digits=-6&period=-30");
+}
+
+void tst_totp::parseNonNumericParametersFallBackToDefaults() {
+  QFETCH(QString, query);
+  const auto settings = Totp::parse(
+      QStringLiteral("otpauth://totp/x?secret=JBSWY3DPEHPK3PXP&%1").arg(query));
+  QVERIFY(settings.has_value());
+  QCOMPARE(settings->digits, Totp::DEFAULT_DIGITS);
+  QCOMPARE(settings->step, Totp::DEFAULT_STEP);
+}
+
+/// Canonicalising must not discard parameters other authenticators honour.
+void tst_totp::toUriPreservesUnknownParameters() {
+  const QString original =
+      QStringLiteral("otpauth://totp/Example:alice?secret=JBSWY3DPEHPK3PXP&"
+                     "issuer=Example&image=https%3A%2F%2Fexample.com%2Fl.png&"
+                     "digits=6&period=30");
+  const auto settings = Totp::parse(original);
+  QVERIFY(settings.has_value());
+  QCOMPARE(settings->extraParams.size(), 1);
+  QCOMPARE(settings->extraParams.at(0).first, QStringLiteral("image"));
+
+  const QString uri = Totp::toUri(*settings);
+  QVERIFY2(uri.contains(QStringLiteral("image=")),
+           "an unmodelled parameter must survive a round trip");
+  // And it survives another round trip.
+  const auto again = Totp::parse(uri);
+  QVERIFY(again.has_value());
+  QCOMPARE(again->extraParams.size(), 1);
+}
+
+/// The Key-Uri-Format spec omits the base32 padding of the secret.
+void tst_totp::toUriOmitsSecretPadding() {
+  // A 16-byte secret encodes to 26 base32 characters plus six '='.
+  const QString padded =
+      QString::fromLatin1(Base32::encode(QByteArray(16, 'x')));
+  QVERIFY2(padded.endsWith(QLatin1Char('=')), "precondition: padded input");
+
+  const auto settings = Totp::parse(padded);
+  QVERIFY(settings.has_value());
+  const QString uri = Totp::toUri(*settings);
+
+  // Inspect the secret parameter itself: the URI legitimately contains '=' as
+  // the key/value separator of every parameter.
+  const QUrl parsedUrl(uri);
+  const QUrlQuery query(parsedUrl);
+  const QString emitted =
+      query.queryItemValue(QStringLiteral("secret"), QUrl::FullyDecoded);
+  QVERIFY2(!emitted.isEmpty(), "the URI must carry a secret");
+  QVERIFY2(!emitted.contains(QLatin1Char('=')),
+           "the emitted secret must carry no base32 padding");
+
+  // Still decodes to the same key, because sanitizeInput() re-pads.
+  const auto reparsed = Totp::parse(uri);
+  QVERIFY(reparsed.has_value());
+  QCOMPARE(reparsed->key, settings->key);
 }
 
 void tst_totp::parseRejectsBadInput_data() {

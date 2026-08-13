@@ -88,6 +88,18 @@ auto encodeLabel(const QString &value) -> QString {
   return QString::fromLatin1(QUrl::toPercentEncoding(value, ":@"));
 }
 
+/**
+ * @brief Read a positive integer query parameter.
+ * @param value Raw parameter text.
+ * @param fallback Returned when @p value is absent, non-numeric or zero.
+ * @return The parsed value, or @p fallback.
+ */
+auto parsePositiveUInt(const QString &value, uint fallback) -> uint {
+  bool ok = false;
+  const uint parsed = value.toUInt(&ok);
+  return (ok && parsed > 0) ? parsed : fallback;
+}
+
 } // namespace
 
 /**
@@ -123,12 +135,14 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     if (settings.label.startsWith(QLatin1Char('/'))) {
       settings.label.remove(0, 1);
     }
-    if (query.hasQueryItem(QStringLiteral("digits"))) {
-      settings.digits = query.queryItemValue(QStringLiteral("digits")).toUInt();
-    }
-    if (query.hasQueryItem(QStringLiteral("period"))) {
-      settings.step = query.queryItemValue(QStringLiteral("period")).toUInt();
-    }
+    // toUInt() returns 0 with no error signal for anything non-numeric, and the
+    // clamp below would turn that into digits=1 / step=1 — a one-character code
+    // rotating every second, which normalize() would then persist. Keep the RFC
+    // default unless the value really is a usable number.
+    settings.digits = parsePositiveUInt(
+        query.queryItemValue(QStringLiteral("digits")), DEFAULT_DIGITS);
+    settings.step = parsePositiveUInt(
+        query.queryItemValue(QStringLiteral("period")), DEFAULT_STEP);
     if (query.hasQueryItem(QStringLiteral("algorithm"))) {
       settings.algorithm =
           algorithmByName(query.queryItemValue(QStringLiteral("algorithm")));
@@ -136,6 +150,18 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
     if (query.queryItemValue(QStringLiteral("encoder"))
             .compare(QStringLiteral("steam"), Qt::CaseInsensitive) == 0) {
       settings.encoder = Encoder::Steam;
+    }
+    // Anything we do not model is kept verbatim so toUri() can put it back;
+    // dropping it silently mutated URIs carrying e.g. `image=`.
+    static const QStringList known = {
+        QStringLiteral("secret"),    QStringLiteral("issuer"),
+        QStringLiteral("digits"),    QStringLiteral("period"),
+        QStringLiteral("algorithm"), QStringLiteral("encoder")};
+    const QList<QPair<QString, QString>> items = query.queryItems();
+    for (const QPair<QString, QString> &item : items) {
+      if (!known.contains(item.first, Qt::CaseInsensitive)) {
+        settings.extraParams.append(item);
+      }
     }
   } else {
     // Not a URI: treat the whole string as a bare base32 secret.
@@ -258,8 +284,13 @@ auto Totp::generateNow(const Settings &settings) -> QString {
 auto Totp::toUri(const Settings &settings) -> QString {
   const QString label =
       settings.label.isEmpty() ? QStringLiteral("QtPass") : settings.label;
+  // The Key-Uri-Format spec says the secret's base32 padding is omitted, and
+  // third-party importers reject or truncate `secret=...======`.
+  // sanitizeInput() re-adds padding when reading, so this round-trips.
+  const QString secret =
+      QString::fromLatin1(Base32::removePadding(settings.base32Key.toLatin1()));
   QString uri = QStringLiteral("otpauth://totp/%1?secret=%2")
-                    .arg(encodeLabel(label), settings.base32Key);
+                    .arg(encodeLabel(label), secret);
   if (!settings.issuer.isEmpty()) {
     uri += QStringLiteral("&issuer=%1").arg(encodeLabel(settings.issuer));
   }
@@ -272,6 +303,13 @@ auto Totp::toUri(const Settings &settings) -> QString {
              .arg(settings.step);
   if (settings.encoder == Encoder::Steam) {
     uri += QStringLiteral("&encoder=steam");
+  }
+  // Re-emit anything the parser did not model, so canonicalising an existing
+  // URI does not quietly discard parameters other authenticators honour.
+  for (const QPair<QString, QString> &item : settings.extraParams) {
+    uri += QStringLiteral("&%1=%2").arg(
+        QString::fromLatin1(QUrl::toPercentEncoding(item.first)),
+        QString::fromLatin1(QUrl::toPercentEncoding(item.second)));
   }
   return uri;
 }

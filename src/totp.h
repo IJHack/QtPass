@@ -5,6 +5,8 @@
 #define SRC_TOTP_H_
 
 #include <QByteArray>
+#include <QList>
+#include <QPair>
 #include <QString>
 
 #include <optional>
@@ -57,6 +59,9 @@ public:
     uint step{DEFAULT_STEP};     ///< Period in seconds, 1..MAX_STEP.
     QString label;               ///< otpauth label; may be empty.
     QString issuer;              ///< otpauth issuer; may be empty.
+    /// Query parameters the parser does not model, kept verbatim so toUri()
+    /// can put them back instead of silently dropping them.
+    QList<QPair<QString, QString>> extraParams;
   };
 
   static constexpr uint DEFAULT_DIGITS = 6U; ///< RFC 6238 default code length.
