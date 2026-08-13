@@ -20,6 +20,7 @@
 #include "qtpass.h"
 #include "qtpasssettings.h"
 #include "templateio.h"
+#include "totp.h"
 #include "trayicon.h"
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
@@ -651,7 +652,9 @@ void MainWindow::passShowHandler(const QString &p_output) {
   if (s.hideContent) {
     output = "***" + tr("Content hidden") + "***";
   } else if (!s.displayAsIs) {
-    m_displayPanel->displayFields(password, fileContent.getNamedValues(), s);
+    m_displayPanel->displayFields(password, fileContent.getNamedValues(), s,
+                                  s.useOtp ? fileContent.getOtpUri()
+                                           : QString());
     output = fileContent.getRemainingDataForDisplay();
   }
 
@@ -664,26 +667,37 @@ void MainWindow::passShowHandler(const QString &p_output) {
 }
 
 /**
- * @brief Handles the OTP output by displaying it, copying it to the clipboard,
- * and updating the UI state.
- * @example
- * void MainWindow::passOtpHandler(const QString &p_output);
+ * @brief Generates a one-time password from a decrypted entry and copies it.
  *
- * @param const QString &p_output - The OTP code text to process; if empty, an
- * error message is shown instead.
+ * Connected as a one-shot to Pass::finishedShow by onOtp(). passShowHandler is
+ * connected first, so by the time this runs the panel has already been
+ * repainted and the UI re-enabled.
+ *
+ * @param p_output - The decrypted entry content.
  * @return void - This function does not return a value.
  */
-void MainWindow::passOtpHandler(const QString &p_output) {
+void MainWindow::otpFromFileToClipboard(const QString &p_output) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+  // Qt 5: no SingleShotConnection flag — disconnect manually on first fire.
+  disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+             &MainWindow::otpFromFileToClipboard);
+#endif
   const AppSettings s = QtPassSettings::load();
-  if (!p_output.isEmpty()) {
-    m_displayPanel->appendField(tr("OTP Code"), p_output, s);
-    m_qtPass->copyTextToClipboard(p_output);
+  // Parse with the same template settings passShowHandler uses, so an OTP
+  // field is recognised identically in both paths.
+  const QStringList templ =
+      s.useTemplate ? s.passTemplate.split("\n") : QStringList();
+  const bool allFields = s.useTemplate && s.templateAllFields;
+  const FileContent fileContent =
+      FileContent::parse(p_output, templ, allFields);
+
+  const std::optional<Totp::Settings> settings =
+      Totp::parse(fileContent.getOtpUri());
+  if (settings.has_value()) {
+    m_qtPass->copyTextToClipboard(Totp::generateNow(*settings));
     showStatusMessage(tr("OTP code copied to clipboard"));
   } else {
     flashText(tr("No OTP code found in this password entry"), true);
-  }
-  if (s.useAutoclearPanel) {
-    clearPanelTimer.start();
   }
   setUiElementsEnabled(true);
 }
@@ -1152,18 +1166,33 @@ void MainWindow::onDelete() {
 }
 
 /**
- * @brief MainWindow::onOTP try and generate (selected) OTP code.
+ * @brief MainWindow::onOtp generate the selected entry's OTP code and copy it.
+ *
+ * Decrypts the entry once and derives the code in-process, so this works with
+ * either backend and on every platform. The code itself is produced by
+ * otpFromFileToClipboard once Pass::finishedShow arrives.
  */
 void MainWindow::onOtp() {
   QString file = getFile(ui->treeView->currentIndex(), true);
-  if (!file.isEmpty()) {
-    if (QtPassSettings::isUseOtp()) {
-      setUiElementsEnabled(false);
-      QtPassSettings::getPass()->OtpGenerate(file);
-    }
-  } else {
+  if (file.isEmpty()) {
     flashText(tr("No password selected for OTP generation"), true);
+    return;
   }
+  if (!QtPassSettings::isUseOtp()) {
+    return;
+  }
+  setUiElementsEnabled(false);
+  // Disconnect any previous connection to avoid accumulation
+  disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+             &MainWindow::otpFromFileToClipboard);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+  connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+          &MainWindow::otpFromFileToClipboard, Qt::SingleShotConnection);
+#else
+  connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+          &MainWindow::otpFromFileToClipboard);
+#endif
+  QtPassSettings::getPass()->Show(file);
 }
 
 /**
@@ -1800,14 +1829,12 @@ void MainWindow::updateGitButtonVisibility() {
 }
 
 void MainWindow::updateOtpButtonVisibility() {
-#if defined(Q_OS_WIN) || defined(__APPLE__)
-  ui->actionOtp->setVisible(false);
-#endif
-  if (!QtPassSettings::isUseOtp()) {
-    ui->actionOtp->setEnabled(false);
-  } else {
-    ui->actionOtp->setEnabled(true);
-  }
+  // No platform gating any more: codes are generated in-process, so this works
+  // on Windows and macOS and with either backend. It used to be hidden there
+  // because the pass-otp extension is Unix-only.
+  const bool enabled = QtPassSettings::isUseOtp();
+  ui->actionOtp->setVisible(enabled);
+  ui->actionOtp->setEnabled(enabled);
 }
 
 void MainWindow::updateGrepButtonVisibility() {

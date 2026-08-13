@@ -10,9 +10,11 @@
 
 #include "passworddisplaypanel.h"
 #include "appsettings.h"
+#include "otpcodewidget.h"
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
 #include "qpushbuttonwithclipboard.h"
+#include "totp.h"
 #include "util.h"
 
 #include <QBoxLayout>
@@ -51,15 +53,33 @@ void PasswordDisplayPanel::clear() {
 
 void PasswordDisplayPanel::displayFields(const QString &password,
                                          const NamedValues &namedValues,
-                                         const AppSettings &s) {
+                                         const AppSettings &s,
+                                         const QString &otpConfig) {
   if (!password.isEmpty()) {
     // The password is hidden in addField when needed.
     addField(0, QObject::tr("Password"), password, s);
   }
   int position = 1;
+  bool otpRendered = false;
   for (const NamedValue &nv : namedValues) {
+    if (FileContent::isOtpFieldName(nv.name)) {
+      // Never render an OTP field verbatim: its value is the shared secret,
+      // and addField() would both display it and hand it to a copy button.
+      // The skip is unconditional, so the secret stays hidden even when OTP
+      // support is switched off and otpConfig is empty.
+      if (!otpRendered && !otpConfig.isEmpty()) {
+        addOtpField(position, otpConfig, s);
+        ++position;
+        otpRendered = true;
+      }
+      continue;
+    }
     addField(position, nv.name, nv.value, s);
     ++position;
+  }
+  // The configuration came from the entry body rather than from a field.
+  if (!otpConfig.isEmpty() && !otpRendered) {
+    addOtpField(position, otpConfig, s);
   }
   m_container->setSpacing(m_grid->count() == 0 ? 0 : 6);
 }
@@ -86,11 +106,8 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
       "margin: 0; icon-size: 16px; color: inherit; }";
 
   // Combine the Copy button and the line edit in one widget
-  auto *frame = new QFrame();
-  QHBoxLayout *frameLayout = new QHBoxLayout();
-  frameLayout->setContentsMargins(5, 2, 2, 2);
-  frameLayout->setSpacing(0);
-  frame->setLayout(frameLayout);
+  auto *frame = createFieldFrame();
+  QHBoxLayout *frameLayout = qobject_cast<QHBoxLayout *>(frame->layout());
   if (s.clipBoardType != Enums::CLIPBOARD_NEVER) {
     auto *fieldLabel =
         new QPushButtonWithClipboard(trimmedValue, m_widgetParent);
@@ -205,6 +222,25 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     frame->layout()->addWidget(contentTextBrowser);
   }
 
+  // set into the layout
+  m_grid->addWidget(new QLabel(trimmedField), position, 0);
+  m_grid->addWidget(frame, position, 1);
+}
+
+/**
+ * @brief Build the bordered container every field row's value side lives in.
+ *
+ * Shared by addField() and addOtpField() so the two cannot drift apart on
+ * spacing or border colour.
+ * @return An empty QFrame carrying a QHBoxLayout.
+ */
+auto PasswordDisplayPanel::createFieldFrame() -> QFrame * {
+  auto *frame = new QFrame();
+  auto *frameLayout = new QHBoxLayout();
+  frameLayout->setContentsMargins(5, 2, 2, 2);
+  frameLayout->setSpacing(0);
+  frame->setLayout(frameLayout);
+
   // Derive the border colour from the palette so it adapts to light/dark
   // themes instead of a hardcoded light grey.
   const QString borderColor =
@@ -212,8 +248,47 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   frame->setStyleSheet(QStringLiteral(".QFrame{border: 1px solid %1; "
                                       "border-radius: 5px;}")
                            .arg(borderColor));
+  return frame;
+}
 
-  // set into the layout
-  m_grid->addWidget(new QLabel(trimmedField), position, 0);
+/**
+ * @brief Render the live one-time password row.
+ *
+ * Exactly two grid items are added (label plus frame), like every other row,
+ * so appendField()'s count()/2 row arithmetic stays valid. The code, its copy
+ * button and the countdown all live inside the frame.
+ *
+ * AppSettings::hidePassword deliberately does not apply: it is keyed on the
+ * password field and exists to protect a long-lived secret, whereas hiding a
+ * code that expires in seconds behind a reveal button next to a visible
+ * countdown would only get in the way. No QR button is offered either, since a
+ * QR code of the configuration would put the shared secret on screen.
+ * @param position Grid row to render into.
+ * @param otpConfig Raw OTP configuration, as stored in the entry.
+ * @param s AppSettings snapshot supplying display settings.
+ */
+void PasswordDisplayPanel::addOtpField(int position, const QString &otpConfig,
+                                       const AppSettings &s) {
+  const std::optional<Totp::Settings> settings = Totp::parse(otpConfig);
+  if (!settings.has_value()) {
+    // Report the problem without echoing what the user stored: the value is
+    // still a would-be secret, so it gets neither a copy nor a QR button.
+    AppSettings inert = s;
+    inert.clipBoardType = Enums::CLIPBOARD_NEVER;
+    inert.useQrencode = false;
+    addField(position, QObject::tr("OTP Code"),
+             QObject::tr("No OTP code found in this password entry"), inert);
+    return;
+  }
+
+  auto *frame = createFieldFrame();
+  auto *otpWidget =
+      new OtpCodeWidget(*settings, s.clipBoardType != Enums::CLIPBOARD_NEVER,
+                        s.useMonospace, frame);
+  connect(otpWidget, &OtpCodeWidget::copyRequested, this,
+          &PasswordDisplayPanel::copyRequested);
+  frame->layout()->addWidget(otpWidget);
+
+  m_grid->addWidget(new QLabel(QObject::tr("OTP Code")), position, 0);
   m_grid->addWidget(frame, position, 1);
 }

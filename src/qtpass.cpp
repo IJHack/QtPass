@@ -84,12 +84,12 @@ auto QtPass::init() -> bool {
     if (s.autoclearPanelSeconds < 5)
       s.autoclearPanelSeconds = 10;
     s.usePwgen = !s.pwgenExecutable.isEmpty();
-    s.passTemplate = QStringLiteral("login\nurl");
+    s.passTemplate = QStringLiteral("login\nurl\nOTP");
     QtPassSettings::save(s);
   } else {
     AppSettings s = QtPassSettings::load();
     if (s.passTemplate.isEmpty()) {
-      s.passTemplate = QStringLiteral("login\nurl");
+      s.passTemplate = QStringLiteral("login\nurl\nOTP");
       QtPassSettings::save(s);
     }
   }
@@ -164,8 +164,9 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::statusMsg, m_mainWindow, &MainWindow::showStatusMessage);
   connect(pass, &Pass::finishedShow, m_mainWindow,
           &MainWindow::passShowHandler);
-  connect(pass, &Pass::finishedOtpGenerate, m_mainWindow,
-          &MainWindow::passOtpHandler);
+  // Pass::finishedOtpGenerate is deliberately not connected: OTP codes are
+  // derived in-process by MainWindow::otpFromFileToClipboard, so the legacy
+  // pass-otp passthrough must not be able to append a second OTP row.
 
   connect(pass, &Pass::finishedGitInit, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedGitPull, this, &QtPass::processFinished);

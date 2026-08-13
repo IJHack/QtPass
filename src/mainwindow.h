@@ -218,10 +218,10 @@ public slots:
   void passShowHandler(const QString &output);
 
   /**
-   * @brief Handle output from the pass OTP command.
-   * @param output OTP output string.
+   * @brief Generate a one-time password from decrypted content and copy it.
+   * @param output Decrypted entry content.
    */
-  void passOtpHandler(const QString &output);
+  void otpFromFileToClipboard(const QString &output);
 
   /**
    * @brief Handle results from a completed grep search.

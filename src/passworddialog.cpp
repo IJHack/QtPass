@@ -5,11 +5,15 @@
 #include "pass.h"
 #include "passwordconfiguration.h"
 #include "qtpasssettings.h"
+#include "totp.h"
 #include "ui_passworddialog.h"
 #include "util.h"
 #include <algorithm>
 
+#include <QAction>
+#include <QFileInfo>
 #include <QHash>
+#include <QIcon>
 #include <QLabel>
 #include <QLineEdit>
 #include <QShortcut>
@@ -124,6 +128,9 @@ void PasswordDialog::on_accepted() {
     return;
   }
 
+  // Canonicalise before serialising: getPassword() stays a dumb serializer.
+  normalizeOtpField();
+
   QString newValue = getPassword();
   if (newValue.right(1) != "\n") {
     newValue += "\n";
@@ -175,6 +182,101 @@ void PasswordDialog::setPassword(const QString &password) {
   // instead of appending a second copy, which would be saved back as
   // duplicated content.
   ui->plainTextEdit->setPlainText(fileContent.getRemainingData());
+
+  // m_otherLines was just rebuilt, so the OTP field may be a new widget.
+  hookOtpField();
+}
+
+/**
+ * @brief PasswordDialog::otpLineEdit find the OTP configuration field.
+ * @return the matching QLineEdit, or nullptr when there is none
+ */
+auto PasswordDialog::otpLineEdit() const -> QLineEdit * {
+  QList<QLineEdit *> allLines(m_templateLines);
+  allLines.append(m_otherLines);
+  for (QLineEdit *line : std::as_const(allLines)) {
+    if (FileContent::isOtpFieldName(line->objectName())) {
+      return line;
+    }
+  }
+  return nullptr;
+}
+
+/**
+ * @brief PasswordDialog::hookOtpField attach validation to the OTP field.
+ *
+ * setTemplate() and setPassword() both recreate the field widgets, so this is
+ * called from each of them rather than once from the constructor.
+ */
+void PasswordDialog::hookOtpField() {
+  // The old field (and with it the warning action) may already be deleted.
+  m_otpWarning = nullptr;
+
+  QLineEdit *otp = otpLineEdit();
+  if (otp == nullptr) {
+    return;
+  }
+  otp->setPlaceholderText(tr("otpauth:// URI or base32 secret"));
+  connect(otp, &QLineEdit::textChanged, this, &PasswordDialog::validateOtpField,
+          Qt::UniqueConnection);
+  // Canonicalise as soon as the user leaves the field, so the value they end
+  // up saving is the value they were shown.
+  connect(otp, &QLineEdit::editingFinished, this,
+          &PasswordDialog::normalizeOtpField, Qt::UniqueConnection);
+  validateOtpField();
+}
+
+/**
+ * @brief PasswordDialog::validateOtpField flag an unusable OTP value.
+ */
+void PasswordDialog::validateOtpField() {
+  QLineEdit *otp = otpLineEdit();
+  if (otp == nullptr) {
+    return;
+  }
+
+  const QString text = otp->text().trimmed();
+  const bool bad = !text.isEmpty() && !Totp::isValid(text);
+  if (bad) {
+    if (m_otpWarning == nullptr) {
+      // Theme-aware indicator: no hardcoded colours and no extra layout row.
+      m_otpWarning =
+          otp->addAction(QIcon::fromTheme(QStringLiteral("dialog-warning")),
+                         QLineEdit::TrailingPosition);
+    }
+    otp->setToolTip(tr("Invalid OTP secret"));
+  } else {
+    if (m_otpWarning != nullptr) {
+      otp->removeAction(m_otpWarning);
+      delete m_otpWarning;
+      m_otpWarning = nullptr;
+    }
+    otp->setToolTip(QString());
+  }
+}
+
+/**
+ * @brief PasswordDialog::normalizeOtpField rewrite the OTP field as a URI.
+ *
+ * An unparseable value is left verbatim: nothing the user typed is silently
+ * destroyed, and the display panel surfaces the problem for them. An empty
+ * field also stays empty, and getPassword() then drops the line entirely,
+ * which is how a secret is removed.
+ */
+void PasswordDialog::normalizeOtpField() {
+  QLineEdit *otp = otpLineEdit();
+  if (otp == nullptr) {
+    return;
+  }
+  const QString text = otp->text().trimmed();
+  if (text.isEmpty()) {
+    return;
+  }
+  const QString canonical =
+      Totp::normalize(text, QFileInfo(m_file).completeBaseName());
+  if (!canonical.isEmpty()) {
+    otp->setText(canonical);
+  }
 }
 
 /**
@@ -232,6 +334,8 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
       previous = line;
     }
   }
+
+  hookOtpField();
 }
 
 /**

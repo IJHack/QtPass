@@ -102,13 +102,40 @@ public:
    */
   [[nodiscard]] auto getRemainingDataForDisplay() const -> QString;
 
+  /**
+   * @brief Whether a field name designates the one-time password field.
+   * @param name Field name as written in the file; surrounding whitespace is
+   *        ignored.
+   * @return true for "OTP" or "TOTP", compared case-insensitively.
+   */
+  [[nodiscard]] static auto isOtpFieldName(const QString &name) -> bool;
+
+  /**
+   * @brief The entry's raw one-time password configuration, if it has one.
+   *
+   * Looked up in this order:
+   *   1. the value of the first field whose name satisfies isOtpFieldName();
+   *   2. the first bare `otpauth://` line in the body, which is how the
+   *      `pass-otp` extension stores it;
+   *   3. the value of the first `OTP:` line that was not promoted to a named
+   *      value, which is what happens when the template does not list `OTP`.
+   *
+   * The string is returned verbatim and is not validated here: it may be an
+   * `otpauth://` URI or a bare base32 secret. Totp::parse() does the
+   * validation.
+   * @return The OTP configuration string, or an empty string when the entry
+   *         has none.
+   */
+  [[nodiscard]] auto getOtpUri() const -> QString;
+
 private:
   FileContent(QString password, NamedValues namedValues, QString remainingData,
-              QString remainingDataDisplay);
+              QString remainingDataDisplay, QString otpUri);
 
   QString password;
   NamedValues namedValues;
   QString remainingData, remainingDataDisplay;
+  QString otpUri;
 };
 
 #endif // SRC_FILECONTENT_H_

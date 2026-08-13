@@ -12,6 +12,7 @@ struct AppSettings;
 
 class QGridLayout;
 class QBoxLayout;
+class QFrame;
 class QWidget;
 
 /**
@@ -50,13 +51,21 @@ public:
 
   /**
    * @brief Render the password and template fields of a decrypted entry.
+   *
+   * Fields whose name satisfies FileContent::isOtpFieldName() are never
+   * rendered verbatim, because their value is a TOTP shared secret. When
+   * @p otpConfig is set, a live OtpCodeWidget row is rendered in that field's
+   * place instead (or appended, when the configuration came from the entry
+   * body rather than from a field).
    * @param password Password value (row 0); skipped when empty.
    * @param namedValues Template/named fields to render below the password.
    * @param s AppSettings snapshot supplying display settings (clipboard,
    *        monospace, hide-password, qrencode).
+   * @param otpConfig Raw OTP configuration from FileContent::getOtpUri(), or
+   *        an empty string to render no OTP row at all.
    */
   void displayFields(const QString &password, const NamedValues &namedValues,
-                     const AppSettings &s);
+                     const AppSettings &s, const QString &otpConfig = {});
 
   /**
    * @brief Append a single field row below the existing ones (e.g. OTP code).
@@ -82,6 +91,9 @@ signals:
 private:
   void addField(int position, const QString &field, const QString &value,
                 const AppSettings &s);
+  void addOtpField(int position, const QString &otpConfig,
+                   const AppSettings &s);
+  auto createFieldFrame() -> QFrame *;
 
   QGridLayout *m_grid;
   QBoxLayout *m_container;
