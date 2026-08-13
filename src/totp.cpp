@@ -157,12 +157,22 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
         QStringLiteral("secret"),    QStringLiteral("issuer"),
         QStringLiteral("digits"),    QStringLiteral("period"),
         QStringLiteral("algorithm"), QStringLiteral("encoder")};
-    const QList<QPair<QString, QString>> items = query.queryItems();
+    // FullyDecoded, because toUri() percent-encodes these again: the default
+    // PrettyDecoded leaves escapes in place and the round trip double-encodes.
+    const QList<QPair<QString, QString>> items =
+        query.queryItems(QUrl::FullyDecoded);
     for (const QPair<QString, QString> &item : items) {
       if (!known.contains(item.first, Qt::CaseInsensitive)) {
         settings.extraParams.append(item);
       }
     }
+  } else if (trimmed.startsWith(QStringLiteral("otpauth:"),
+                                Qt::CaseInsensitive)) {
+    // Claims to be an otpauth URI but QUrl could not parse it. Falling through
+    // to the bare-secret branch would hand the whole string to
+    // Base32::sanitizeInput(), which strips the punctuation and leaves
+    // decodable base32 — producing a confidently wrong code. Refuse instead.
+    return std::nullopt;
   } else {
     // Not a URI: treat the whole string as a bare base32 secret.
     rawSecret = trimmed;

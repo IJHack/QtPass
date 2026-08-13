@@ -170,13 +170,29 @@ void tst_totp::toUriPreservesUnknownParameters() {
   QCOMPARE(settings->extraParams.size(), 1);
   QCOMPARE(settings->extraParams.at(0).first, QStringLiteral("image"));
 
+  // The value must be decoded on read, or re-encoding double-escapes it.
+  QCOMPARE(settings->extraParams.at(0).second,
+           QStringLiteral("https://example.com/l.png"));
+
   const QString uri = Totp::toUri(*settings);
   QVERIFY2(uri.contains(QStringLiteral("image=")),
            "an unmodelled parameter must survive a round trip");
-  // And it survives another round trip.
+  // And it survives another round trip with its value intact — checking only
+  // that "image=" is present would pass while the value was mangled.
   const auto again = Totp::parse(uri);
   QVERIFY(again.has_value());
   QCOMPARE(again->extraParams.size(), 1);
+  QCOMPARE(again->extraParams.at(0).second,
+           QStringLiteral("https://example.com/l.png"));
+
+  // A value containing a literal percent sign is the case that double-encodes.
+  const auto pct = Totp::parse(
+      QStringLiteral("otpauth://totp/x?secret=JBSWY3DPEHPK3PXP&note=100%25"));
+  QVERIFY(pct.has_value());
+  QCOMPARE(pct->extraParams.at(0).second, QStringLiteral("100%"));
+  const auto pctAgain = Totp::parse(Totp::toUri(*pct));
+  QVERIFY(pctAgain.has_value());
+  QCOMPARE(pctAgain->extraParams.at(0).second, QStringLiteral("100%"));
 }
 
 /// The Key-Uri-Format spec omits the base32 padding of the secret.
@@ -222,6 +238,16 @@ void tst_totp::parseRejectsBadInput_data() {
       << QStringLiteral("otpauth://hotp/Example?secret=JBSWY3DPEHPK3PXP&"
                         "counter=1");
   QTest::newRow("bare non-base32") << QStringLiteral("!!!!");
+  // An otpauth: prefix that does not resolve to a valid totp URI must be
+  // rejected, not reinterpreted as a bare secret: sanitizeInput() would strip
+  // the punctuation and leave decodable base32, yielding a silently wrong code.
+  QTest::newRow("otpauth scheme only") << QStringLiteral("otpauth:");
+  QTest::newRow("otpauth without host")
+      << QStringLiteral("otpauth:totp/x?secret=JBSWY3DPEHPK3PXP");
+  QTest::newRow("otpauth uppercase prefix, no host")
+      << QStringLiteral("OTPAUTH:garbage");
+  QTest::newRow("otpauth with unparseable authority")
+      << QStringLiteral("otpauth://[::bad/totp?secret=JBSWY3DPEHPK3PXP");
 }
 
 void tst_totp::parseRejectsBadInput() {
