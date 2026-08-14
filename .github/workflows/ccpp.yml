@@ -110,7 +110,12 @@ jobs:
         if: steps.need_build.outputs.run_build == 'true'
         uses: jurplel/install-qt-action@v4.3.1
         with:
-          version: ${{ matrix.qt }}
+          # Pin the 6.11 series to 6.11.1: the bare "6.11" spec resolves to the
+          # newest patch (6.11.2), whose archives download.qt.io fails to serve
+          # ("Failed to download checksum ... from mirrors"), breaking every
+          # build. 6.11.1 is the known-good patch (also the first with the macOS
+          # __yield fix). Drop this override once 6.11.2 mirrors propagate.
+          version: ${{ matrix.qt == '6.11' && '6.11.1' || matrix.qt }}
 
       - name: Install dependencies (Linux)
         if: runner.os == 'Linux' && steps.need_build.outputs.run_build == 'true'
