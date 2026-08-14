@@ -1,5 +1,6 @@
 # QtPass - GUI for pass
 # SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
+# CI validation: exercise the Qt 6.11.1 build pin from #1627 (do not merge).
 
 !include(qtpass.pri) { error("Couldn't find the qtpass.pri file!") }
 
