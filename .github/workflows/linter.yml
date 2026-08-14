@@ -134,3 +134,8 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # The job runs with a read-only token (no statuses: write), so
+          # super-linter's per-linter commit-status POSTs return HTTP 403 and
+          # fail the job even when every linter passes. Disable the status
+          # writes; the job's own check result already reports pass/fail.
+          MULTI_STATUS: false
