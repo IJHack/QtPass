@@ -1642,7 +1642,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation>Ingen körbar GPG-fil har konfigurerats.</translation>
+        <translation>Ingen körbar GPG-fil har konfigurerats</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
