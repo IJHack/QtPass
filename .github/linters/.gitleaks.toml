@@ -1,0 +1,17 @@
+# gitleaks configuration — see https://github.com/gitleaks/gitleaks
+#
+# Extends the bundled default ruleset and allowlists the test tree: the unit
+# tests embed deliberately fake base32/OTP secrets inside otpauth:// URIs
+# (RFC 6238/4648 vectors and throwaway keys), which the generic-api-key rule
+# otherwise reports as leaked credentials.
+
+title = "QtPass gitleaks configuration"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Test files carry fabricated OTP/base32 secrets, not real credentials."
+paths = [
+  '''tests/.*''',
+]

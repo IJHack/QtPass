@@ -4,7 +4,13 @@
 
 ### New Features
 
-- Built-in TOTP (RFC 6238): one-time passwords are now generated inside QtPass instead of shelling out to the `pass-otp` extension, so OTP works on every platform and with both the `pass` and direct `gpg2`/`git` backends. Store the configuration as an `otpauth://` URI in the `OTP` template field; bare `otpauth://` lines written by `pass-otp` are still read. The selected entry shows a live code with a copy button and a countdown, and SHA-1/SHA-256/SHA-512 plus Steam Guard codes are supported
+- Built-in TOTP (RFC 6238): one-time passwords are now generated inside QtPass
+  instead of shelling out to the `pass-otp` extension, so OTP works on every
+  platform and with both the `pass` and direct `gpg2`/`git` backends. Store the
+  configuration as an `otpauth://` URI in the `OTP` template field; bare
+  `otpauth://` lines written by `pass-otp` are still read. The selected entry
+  shows a live code with a copy button and a countdown, and
+  SHA-1/SHA-256/SHA-512 plus Steam Guard codes are supported
 - Fixed a TOTP shared secret being displayed in cleartext when an entry stored it as an `OTP:` field rather than a bare `otpauth://` line
 - Import GPG keys from file or clipboard via the Users dialog [#1517](https://github.com/IJHack/QtPass/pull/1517)
 - Export your public key and add recipients from the Share submenu
