@@ -116,8 +116,9 @@ auto Base32::decode(const QByteArray &encodedData) -> QByteArray {
 
   qsizetype i = 0;
   qsizetype o = 0;
-  // Everything from the first '=' onward must be padding.
-  const qsizetype firstPad = encodedData.size() - countPadding(encodedData);
+  // Everything from the first '=' onward must be padding. Reuse the pad count
+  // computed above rather than scanning the tail a second time.
+  const qsizetype firstPad = encodedData.size() - nPads;
 
   while (i < encodedData.size()) {
     quint64 quantum = 0;

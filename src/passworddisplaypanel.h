@@ -21,9 +21,10 @@ class QWidget;
  *
  * Extracted from MainWindow, where the field-rendering and grid-clearing
  * logic was spread across addToGridLayout(), clearTemplateWidgets() and
- * passShowHandler()/passOtpHandler(). It builds the per-field row (optional
- * copy / QR / open-in-browser buttons plus a value widget with password echo
- * handling) and owns the show/hide spacing of the surrounding container.
+ * passShowHandler()/otpFromFileToClipboard(). It builds the per-field row
+ * (optional copy / QR / open-in-browser buttons plus a value widget with
+ * password echo handling) and owns the show/hide spacing of the surrounding
+ * container.
  *
  * It does not own the grid or container widgets (those live in MainWindow's
  * .ui); it renders into the ones it is given. Copy and QR actions are surfaced

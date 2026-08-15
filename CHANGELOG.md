@@ -18,6 +18,17 @@
 - Manual `SSH_AUTH_SOCK` override with `gpgconf` auto-probe fallback
 - Process output panel with command labels, colour-coded errors and auto-scroll [#252](https://github.com/IJHack/QtPass/issues/252), [#1172](https://github.com/IJHack/QtPass/pull/1172)
 
+### Upgrade Notes
+
+- OTP support is now on by default, so upgrading shows live one-time-password
+  codes for entries that contain an `otpauth://` secret, even if you had it off
+  before. The old setting only ever gated the Unix-only `pass-otp` extension,
+  so its stored value was meaningless on Windows and macOS. To turn it off,
+  uncheck **Enable one-time password (OTP) support** on the **Settings** tab of
+  the configuration dialog; the choice is remembered and is not re-enabled on
+  later launches. The upgrade changes only this setting — no stored passwords
+  are read, rewritten, or re-encrypted.
+
 ### Code Quality (umbrella [#1508](https://github.com/IJHack/QtPass/issues/1508))
 
 - Split the `Util` grab-bag into `PathValidator`, `SshAuthSock` and `TemplateIO`, and consolidated `StoreModel` drag-drop [#1514](https://github.com/IJHack/QtPass/issues/1514)
