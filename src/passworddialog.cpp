@@ -5,11 +5,15 @@
 #include "pass.h"
 #include "passwordconfiguration.h"
 #include "qtpasssettings.h"
+#include "totp.h"
 #include "ui_passworddialog.h"
 #include "util.h"
 #include <algorithm>
 
+#include <QAction>
+#include <QFileInfo>
 #include <QHash>
+#include <QIcon>
 #include <QLabel>
 #include <QLineEdit>
 #include <QShortcut>
@@ -124,6 +128,9 @@ void PasswordDialog::on_accepted() {
     return;
   }
 
+  // Canonicalise before serialising: getPassword() stays a dumb serializer.
+  normalizeOtpField();
+
   QString newValue = getPassword();
   if (newValue.right(1) != "\n") {
     newValue += "\n";
@@ -175,6 +182,140 @@ void PasswordDialog::setPassword(const QString &password) {
   // instead of appending a second copy, which would be saved back as
   // duplicated content.
   ui->plainTextEdit->setPlainText(fileContent.getRemainingData());
+
+  // m_otherLines was just rebuilt, so the OTP field may be a new widget.
+  hookOtpField();
+}
+
+/**
+ * @brief PasswordDialog::otpLineEdit find the OTP configuration field.
+ * @return the matching QLineEdit, or nullptr when there is none
+ */
+auto PasswordDialog::otpLineEdit() const -> QLineEdit * {
+  QList<QLineEdit *> allLines(m_templateLines);
+  allLines.append(m_otherLines);
+  QLineEdit *firstMatch = nullptr;
+  for (QLineEdit *line : std::as_const(allLines)) {
+    if (!FileContent::isOtpFieldName(line->objectName())) {
+      continue;
+    }
+    // Prefer a populated field. The default template creates an empty `OTP`
+    // widget, and setPassword() fills template widgets by exact name, so an
+    // entry storing `TOTP:` leaves that one empty and puts the real secret in
+    // m_otherLines. Returning the empty template widget meant the actual value
+    // was never validated or normalised.
+    if (!line->text().trimmed().isEmpty()) {
+      return line;
+    }
+    if (firstMatch == nullptr) {
+      firstMatch = line;
+    }
+  }
+  return firstMatch;
+}
+
+/**
+ * @brief PasswordDialog::hookOtpField attach validation to the OTP field.
+ *
+ * setTemplate() and setPassword() both recreate the field widgets, so this is
+ * called from each of them rather than once from the constructor.
+ */
+void PasswordDialog::hookOtpField() {
+  // Drop the previous warning indicator. Only m_otherLines widgets are deleted
+  // by removeRow(); a template widget survives, so simply forgetting the action
+  // left it installed forever and the next validate added a second icon.
+  //
+  // m_otpWarning is a QPointer, so it is already null when the QLineEdit that
+  // owned the action was one of the m_otherLines widgets setPassword() just
+  // deleted — dereferencing a raw pointer here was a use-after-free.
+  if (!m_otpWarning.isNull()) {
+    if (auto *owner = qobject_cast<QWidget *>(m_otpWarning->parent())) {
+      owner->removeAction(m_otpWarning);
+    }
+    delete m_otpWarning;
+  }
+  m_otpWarning = nullptr;
+  m_otpFieldEdited = false;
+
+  QLineEdit *otp = otpLineEdit();
+  if (otp == nullptr) {
+    return;
+  }
+  otp->setPlaceholderText(tr("otpauth:// URI or base32 secret"));
+  connect(otp, &QLineEdit::textChanged, this, &PasswordDialog::validateOtpField,
+          Qt::UniqueConnection);
+  // textEdited, not textChanged: it fires only for user input, so programmatic
+  // population does not count as the user having touched the field.
+  connect(
+      otp, &QLineEdit::textEdited, this, [this]() { m_otpFieldEdited = true; },
+      Qt::UniqueConnection);
+  // Canonicalise as soon as the user leaves the field, so the value they end
+  // up saving is the value they were shown.
+  connect(otp, &QLineEdit::editingFinished, this,
+          &PasswordDialog::normalizeOtpField, Qt::UniqueConnection);
+  validateOtpField();
+}
+
+/**
+ * @brief PasswordDialog::validateOtpField flag an unusable OTP value.
+ */
+void PasswordDialog::validateOtpField() {
+  QLineEdit *otp = otpLineEdit();
+  if (otp == nullptr) {
+    return;
+  }
+
+  const QString text = otp->text().trimmed();
+  const bool bad = !text.isEmpty() && !Totp::isValid(text);
+  if (bad) {
+    if (m_otpWarning.isNull()) {
+      // Theme-aware indicator: no hardcoded colours and no extra layout row.
+      m_otpWarning =
+          otp->addAction(QIcon::fromTheme(QStringLiteral("dialog-warning")),
+                         QLineEdit::TrailingPosition);
+    }
+    otp->setToolTip(tr("Invalid OTP secret"));
+  } else {
+    if (!m_otpWarning.isNull()) {
+      otp->removeAction(m_otpWarning);
+      delete m_otpWarning;
+      m_otpWarning = nullptr;
+    }
+    otp->setToolTip(QString());
+  }
+}
+
+/**
+ * @brief PasswordDialog::normalizeOtpField rewrite the OTP field as a URI.
+ *
+ * Only rewrites a value that is unambiguously TOTP configuration: an
+ * `otpauth://` URI, or something the user typed into the field this session.
+ *
+ * Anything else is left byte-for-byte. Base32::sanitizeInput() maps 1 to L and
+ * 8 to B, so a static backup code like `12345678` looks like valid base32 and
+ * used to be silently rewritten as an otpauth URI and re-encrypted — on any OK,
+ * even when the user only edited the password field and never touched this one.
+ * A bare secret left alone still works: Totp::parse() accepts one.
+ */
+void PasswordDialog::normalizeOtpField() {
+  QLineEdit *otp = otpLineEdit();
+  if (otp == nullptr) {
+    return;
+  }
+  const QString text = otp->text().trimmed();
+  if (text.isEmpty()) {
+    return;
+  }
+  if (!m_otpFieldEdited && !FileContent::isOtpUriValue(text)) {
+    return;
+  }
+  // fileName(), not completeBaseName(): the latter truncates at the last dot,
+  // turning an entry called github.com into a label of "github". m_file already
+  // has its .gpg suffix stripped by MainWindow::getFile().
+  const QString canonical = Totp::normalize(text, QFileInfo(m_file).fileName());
+  if (!canonical.isEmpty()) {
+    otp->setText(canonical);
+  }
 }
 
 /**
@@ -232,6 +373,8 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
       previous = line;
     }
   }
+
+  hookOtpField();
 }
 
 /**

@@ -1,0 +1,8 @@
+# Batch files must be checked out with CRLF line endings. cmd.exe label lookup
+# (`goto :label`, `call :label`) is unreliable in LF-only .cmd files, so a
+# checkout with core.autocrlf=false would produce a script that fails with
+# "The system cannot find the batch label specified".
+#
+# Scoped to *.cmd deliberately: the existing *.bat files are already stored with
+# CRLF in the object database, and declaring them here would rewrite them.
+*.cmd text eol=crlf

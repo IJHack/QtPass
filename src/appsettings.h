@@ -71,7 +71,7 @@ struct AppSettings {
   bool addGPGId{true};           ///< Auto-add `.gpg-id` files to git.
   bool useGit{false};            ///< Enable git integration.
   bool useGrepSearch{false};     ///< Enable content (grep) search.
-  bool useOtp{false};            ///< Enable pass-otp support.
+  bool useOtp{true};             ///< Enable native TOTP (OTP) support.
   bool useQrencode{false};       ///< Enable qrencode support.
   bool usePwgen{false};          ///< Use pwgen for password generation.
   bool useWebDav{false};         ///< Enable WebDAV synchronisation.

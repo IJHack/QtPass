@@ -78,6 +78,9 @@ QM_FILES_RESOURCE_PREFIX=/localization
 SOURCES   += mainwindow.cpp \
              configdialog.cpp \
              storemodel.cpp \
+             base32.cpp \
+             totp.cpp \
+             otpcodewidget.cpp \
              util.cpp \
              sshauthsock.cpp \
              pathvalidator.cpp \
@@ -111,6 +114,9 @@ HEADERS   += mainwindow.h \
              grepsearchcontroller.h \
              configdialog.h \
              storemodel.h \
+             base32.h \
+             totp.h \
+             otpcodewidget.h \
              util.h \
              sshauthsock.h \
              pathvalidator.h \

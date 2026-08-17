@@ -218,10 +218,18 @@ public slots:
   void passShowHandler(const QString &output);
 
   /**
-   * @brief Handle output from the pass OTP command.
-   * @param output OTP output string.
+   * @brief Generate a one-time password from decrypted content and copy it.
+   * @param output Decrypted entry content.
    */
-  void passOtpHandler(const QString &output);
+  void otpFromFileToClipboard(const QString &output);
+
+  /**
+   * @brief Abandon an in-flight OTP request.
+   *
+   * A failed decrypt never emits Pass::finishedShow, so without this the
+   * request would stay pending for the rest of the session.
+   */
+  void cancelOtpRequest();
 
   /**
    * @brief Handle results from a completed grep search.
@@ -289,6 +297,18 @@ private:
   PasswordDisplayPanel *m_displayPanel = nullptr;
   bool m_firstShowCompleted = false;
   bool m_autoScroll = true;
+  /// True between onOtp() starting a decrypt and otpFromFileToClipboard
+  /// consuming it. Suppresses passShowHandler's password copy for that request,
+  /// and makes a connection left armed by a failed decrypt inert.
+  bool m_otpRequestPending = false;
+  /// Entry the display panel is currently rendering. The tree's currentIndex
+  /// can move without a repaint (arrow keys and right-click do not emit
+  /// QTreeView::clicked), so onOtp() must not assume the visible code belongs
+  /// to the selected entry.
+  QString m_shownFile;
+  /// Entry the in-flight OTP request asked for, so a decrypt triggered by
+  /// something else cannot be mistaken for its answer.
+  QString m_otpRequestFile;
   int m_outputCounter = 0;
   static constexpr int MaxOutputLines = 1000;
   // The process output panel is a QDockWidget at the bottom dock area,
@@ -340,7 +360,12 @@ private:
   void applyWindowFlagsSettings();
 
   void updateGitButtonVisibility();
-  void updateOtpButtonVisibility();
+  /**
+   * @brief Refresh the OTP toolbar action from settings.
+   * @param uiEnabled false while a backend operation is in flight, so the
+   *        action is disabled along with the rest of the UI.
+   */
+  void updateOtpButtonVisibility(bool uiEnabled = true);
   void updateGrepButtonVisibility();
   void enableGitButtons(const bool &);
 

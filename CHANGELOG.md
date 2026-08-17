@@ -4,11 +4,30 @@
 
 ### New Features
 
+- Built-in TOTP (RFC 6238): one-time passwords are now generated inside QtPass
+  instead of shelling out to the `pass-otp` extension, so OTP works on every
+  platform and with both the `pass` and direct `gpg2`/`git` backends. Store the
+  configuration as an `otpauth://` URI in the `OTP` template field; bare
+  `otpauth://` lines written by `pass-otp` are still read. The selected entry
+  shows a live code with a copy button and a countdown, and
+  SHA-1/SHA-256/SHA-512 plus Steam Guard codes are supported
+- Fixed a TOTP shared secret being displayed in cleartext when an entry stored it as an `OTP:` field rather than a bare `otpauth://` line
 - Import GPG keys from file or clipboard via the Users dialog [#1517](https://github.com/IJHack/QtPass/pull/1517)
 - Export your public key and add recipients from the Share submenu
 - Opt-in content search across decrypted entries (regular expression)
 - Manual `SSH_AUTH_SOCK` override with `gpgconf` auto-probe fallback
 - Process output panel with command labels, colour-coded errors and auto-scroll [#252](https://github.com/IJHack/QtPass/issues/252), [#1172](https://github.com/IJHack/QtPass/pull/1172)
+
+### Upgrade Notes
+
+- OTP support is now on by default, so upgrading shows live one-time-password
+  codes for entries that contain an `otpauth://` secret, even if you had it off
+  before. The old setting only ever gated the Unix-only `pass-otp` extension,
+  so its stored value was meaningless on Windows and macOS. To turn it off,
+  uncheck **Enable one-time password (OTP) support** on the **Settings** tab of
+  the configuration dialog; the choice is remembered and is not re-enabled on
+  later launches. The upgrade changes only this setting — no stored passwords
+  are read, rewritten, or re-encrypted.
 
 ### Code Quality (umbrella [#1508](https://github.com/IJHack/QtPass/issues/1508))
 

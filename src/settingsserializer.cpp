@@ -67,7 +67,9 @@ auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
   s.addGPGId = qs.value(SettingsConstants::addGPGId, true).toBool();
   s.useGit = qs.value(SettingsConstants::useGit, false).toBool();
   s.useGrepSearch = qs.value(SettingsConstants::useGrepSearch, false).toBool();
-  s.useOtp = qs.value(SettingsConstants::useOtp, false).toBool();
+  // Defaults to true: OTP no longer depends on an external extension, and a
+  // stored value from an older profile still wins over this default.
+  s.useOtp = qs.value(SettingsConstants::useOtp, true).toBool();
   s.useQrencode = qs.value(SettingsConstants::useQrencode, false).toBool();
   s.usePwgen = qs.value(SettingsConstants::usePwgen, false).toBool();
   s.useWebDav = qs.value(SettingsConstants::useWebDav, false).toBool();

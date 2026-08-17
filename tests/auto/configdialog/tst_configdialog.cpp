@@ -128,12 +128,16 @@ void tst_configdialog::useGitTogglesCheckbox() {
 }
 
 /**
- * @brief useOtp toggles the "use OTP extension" checkbox.
+ * @brief useOtp toggles the OTP support checkbox.
  */
 void tst_configdialog::useOtpTogglesCheckbox() {
   ConfigDialog dialog(nullptr);
   auto *cb = dialog.findChild<QCheckBox *>(QStringLiteral("checkBoxUseOtp"));
   QVERIFY2(cb != nullptr, "checkBoxUseOtp widget must exist");
+  // OTP is generated in-process, so the checkbox is no longer gated on
+  // probing for the pass-otp extension, nor hidden on Windows.
+  QVERIFY2(cb->isEnabled(),
+           "checkBoxUseOtp must not be disabled by an availability probe");
 
   dialog.useOtp(true);
   QVERIFY2(cb->isChecked(), "useOtp(true) should check checkBoxUseOtp");

@@ -208,7 +208,6 @@ private:
   // Qt 5.4.1 when QApplication::exec was not yet called
   void criticalMessage(const QString &title, const QString &text);
 
-  auto isPassOtpAvailable() -> bool;
   auto isQrencodeAvailable() -> bool;
   void validate(QTableWidgetItem *item = nullptr);
 
