@@ -1231,11 +1231,18 @@ void MainWindow::onDelete() {
  * The same failed decrypt would otherwise leave m_passwordCopyPending stuck
  * (its only other reset is passwordFromFileToClipboard, which never runs when
  * finishedShow is not emitted), permanently blocking Ctrl+C, so clear it here
- * too.
+ * too. Unlike otpFromFileToClipboard, that slot has no pending-flag guard, so
+ * its single-shot connection must be torn down here as well — otherwise a
+ * connection left armed by the failed decrypt would claim the next unrelated
+ * finishedShow and copy the wrong entry to the clipboard. disconnectSingleShot
+ * is a no-op on Qt 6 (the never-fired connection persists until it emits), so
+ * disconnect unconditionally.
  */
 void MainWindow::cancelOtpRequest() {
   m_otpRequestPending = false;
   m_otpRequestFile.clear();
+  disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+             &MainWindow::passwordFromFileToClipboard);
   m_passwordCopyPending = false;
 }
 
