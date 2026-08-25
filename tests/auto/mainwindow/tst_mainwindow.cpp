@@ -302,9 +302,11 @@ void tst_mainwindow::passwordFromFileToClipboardCopiesFirstLine() {
   QClipboard *clip = QApplication::clipboard();
   clip->setText(QStringLiteral("sentinel"));
 
-  QVERIFY(QMetaObject::invokeMethod(
-      m_window.data(), "passwordFromFileToClipboard", Qt::DirectConnection,
-      Q_ARG(QString, QStringLiteral("hunter2\nlogin: alice"))));
+  QVERIFY2(QMetaObject::invokeMethod(
+               m_window.data(), "passwordFromFileToClipboard",
+               Qt::DirectConnection,
+               Q_ARG(QString, QStringLiteral("hunter2\nlogin: alice"))),
+           "invoking passwordFromFileToClipboard must succeed");
 
   QCOMPARE(clip->text(), QStringLiteral("hunter2"));
 }
@@ -328,9 +330,10 @@ void tst_mainwindow::passwordFromFileToClipboardSkipsOtpSecret() {
 
   const QString otpUri = QStringLiteral(
       "otpauth://totp/Example:alice?secret=JBSWY3DPEHPK3PXP&issuer=Example");
-  QVERIFY(
+  QVERIFY2(
       QMetaObject::invokeMethod(m_window.data(), "passwordFromFileToClipboard",
-                                Qt::DirectConnection, Q_ARG(QString, otpUri)));
+                                Qt::DirectConnection, Q_ARG(QString, otpUri)),
+      "invoking passwordFromFileToClipboard must succeed");
 
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
   QVERIFY2(!clip->text().contains(QStringLiteral("JBSWY3DPEHPK3PXP")),

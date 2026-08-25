@@ -1227,10 +1227,16 @@ void MainWindow::onDelete() {
  * which stops the watchdog that was the only other thing clearing the flag.
  * Left set, it permanently suppressed passShowHandler's copy-on-select and let
  * the still-armed one-shot claim the next unrelated decrypt.
+ *
+ * The same failed decrypt would otherwise leave m_passwordCopyPending stuck
+ * (its only other reset is passwordFromFileToClipboard, which never runs when
+ * finishedShow is not emitted), permanently blocking Ctrl+C, so clear it here
+ * too.
  */
 void MainWindow::cancelOtpRequest() {
   m_otpRequestPending = false;
   m_otpRequestFile.clear();
+  m_passwordCopyPending = false;
 }
 
 /**
@@ -1751,6 +1757,15 @@ void MainWindow::copyPasswordFromTreeview() {
       model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
 
   if (fileOrFolder.isFile()) {
+    // finishedShow carries no request identity, so allow only one copy request
+    // in flight: otherwise a second Ctrl+C on a different entry would re-arm
+    // the single-shot slot and the first decrypt to finish would copy the wrong
+    // entry while the later request is silently dropped. See
+    // m_passwordCopyPending.
+    if (m_passwordCopyPending) {
+      return;
+    }
+    m_passwordCopyPending = true;
     QString file = getFile(ui->treeView->currentIndex(), true);
     connectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
                       &MainWindow::passwordFromFileToClipboard);
@@ -1763,6 +1778,7 @@ void MainWindow::copyPasswordFromTreeview() {
 void MainWindow::passwordFromFileToClipboard(const QString &text) {
   disconnectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
                        &MainWindow::passwordFromFileToClipboard);
+  m_passwordCopyPending = false;
   const QStringList tokens = text.split('\n');
   if (tokens.isEmpty()) {
     return;

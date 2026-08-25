@@ -309,6 +309,14 @@ private:
   /// Entry the in-flight OTP request asked for, so a decrypt triggered by
   /// something else cannot be mistaken for its answer.
   QString m_otpRequestFile;
+  /// True between copyPasswordFromTreeview() arming a decrypt and
+  /// passwordFromFileToClipboard() consuming it. finishedShow carries no
+  /// request identity, so a second copy request while one is in flight would
+  /// let the single-shot slot fire on the earlier decrypt's output (copying the
+  /// wrong entry) and drop the later one. Serialising to one in-flight request
+  /// keeps each Show(file) completion matched to the file it was asked for.
+  /// Cleared on completion and, for a failed decrypt, by cancelOtpRequest().
+  bool m_passwordCopyPending = false;
   int m_outputCounter = 0;
   static constexpr int MaxOutputLines = 1000;
   // The process output panel is a QDockWidget at the bottom dock area,
