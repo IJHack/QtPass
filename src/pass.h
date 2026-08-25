@@ -124,6 +124,11 @@ public:
   virtual void Show(QString file) = 0;
   /**
    * @brief Generate OTP for password file.
+   *
+   * Legacy passthrough to the `pass otp` extension. The UI no longer calls
+   * this: MainWindow derives one-time passwords in-process via Totp, so OTP
+   * works on every platform and with either backend. Kept for API
+   * compatibility and for callers that specifically want the extension.
    * @param file Path to password file.
    */
   virtual void OtpGenerate(QString file) = 0;

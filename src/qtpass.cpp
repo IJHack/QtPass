@@ -3,6 +3,7 @@
 #include "qtpass.h"
 #include "mainwindow.h"
 #include "qtpasssettings.h"
+#include "settingsconstants.h"
 #include "util.h"
 #include <QApplication>
 #include <QClipboard>
@@ -84,12 +85,35 @@ auto QtPass::init() -> bool {
     if (s.autoclearPanelSeconds < 5)
       s.autoclearPanelSeconds = 10;
     s.usePwgen = !s.pwgenExecutable.isEmpty();
-    s.passTemplate = QStringLiteral("login\nurl");
+    s.passTemplate = QStringLiteral("login\nurl\nOTP");
     QtPassSettings::save(s);
+    // A fresh profile already has the new useOtp default, so record the
+    // migration as done. Without this, turning OTP off during the first session
+    // would be undone by the migration branch on the next launch.
+    QtPassSettings::getInstance()->setValue(
+        SettingsConstants::otpMigratedToNative, true);
   } else {
     AppSettings s = QtPassSettings::load();
+    bool changed = false;
     if (s.passTemplate.isEmpty()) {
-      s.passTemplate = QStringLiteral("login\nurl");
+      s.passTemplate = QStringLiteral("login\nurl\nOTP");
+      changed = true;
+    }
+    // `useOtp` used to gate the Unix-only pass-otp extension and now gates
+    // built-in TOTP, so an existing profile's stored false is stale rather than
+    // a preference. The new default of true never reaches these users: the
+    // fresh-install branch above already persisted the key, and the serializer
+    // writes it unconditionally. Enable it once, remembered by its own key so a
+    // deliberate opt-out is not overridden on the next launch.
+    if (!QtPassSettings::getInstance()
+             ->value(SettingsConstants::otpMigratedToNative, false)
+             .toBool()) {
+      s.useOtp = true;
+      QtPassSettings::getInstance()->setValue(
+          SettingsConstants::otpMigratedToNative, true);
+      changed = true;
+    }
+    if (changed) {
       QtPassSettings::save(s);
     }
   }
@@ -158,14 +182,19 @@ void QtPass::setMainWindow() {
 void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::error, this, &QtPass::processError);
   connect(pass, &Pass::processErrorExit, this, &QtPass::processErrorExit);
+  // A failed decrypt never emits finishedShow, so an OTP request would
+  // otherwise stay pending for the rest of the session.
+  connect(pass, &Pass::processErrorExit, m_mainWindow,
+          &MainWindow::cancelOtpRequest);
   connect(pass, &Pass::critical, m_mainWindow, &MainWindow::critical);
   connect(pass, &Pass::startingExecuteWrapper, m_mainWindow,
           &MainWindow::executeWrapperStarted);
   connect(pass, &Pass::statusMsg, m_mainWindow, &MainWindow::showStatusMessage);
   connect(pass, &Pass::finishedShow, m_mainWindow,
           &MainWindow::passShowHandler);
-  connect(pass, &Pass::finishedOtpGenerate, m_mainWindow,
-          &MainWindow::passOtpHandler);
+  // Pass::finishedOtpGenerate is deliberately not connected: OTP codes are
+  // derived in-process by MainWindow::otpFromFileToClipboard, so the legacy
+  // pass-otp passthrough must not be able to append a second OTP row.
 
   connect(pass, &Pass::finishedGitInit, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedGitPull, this, &QtPass::processFinished);

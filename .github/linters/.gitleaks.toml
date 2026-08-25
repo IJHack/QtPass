@@ -1,0 +1,19 @@
+# gitleaks configuration — see https://github.com/gitleaks/gitleaks
+#
+# Extends the bundled default ruleset. The TOTP/base32 unit tests embed
+# deliberately fake secrets inside otpauth:// URIs (RFC 6238/4648 vectors and
+# throwaway keys) that the generic-api-key rule reports as leaked credentials.
+# The allowlist is scoped to exactly the two fixture files that carry them, so
+# every other path — tests and production code alike — keeps full detection.
+
+title = "QtPass gitleaks configuration"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Fabricated otpauth:// secrets live only in these two OTP fixtures."
+paths = [
+  '''tests/auto/totp/tst_totp\.cpp''',
+  '''tests/auto/filecontent/tst_filecontent\.cpp''',
+]

@@ -585,7 +585,7 @@
               <bool>true</bool>
              </property>
              <property name="text">
-              <string>Use pass-otp extension</string>
+              <string>Enable one-time password (OTP) support</string>
              </property>
             </widget>
            </item>

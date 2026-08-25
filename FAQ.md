@@ -119,6 +119,30 @@ Right-click on a **folder** in the password tree to access the **Share** submenu
 
 The submenu only appears on folders, not individual password files.
 
+### How do I set up a one-time password (OTP/TOTP)?
+
+QtPass generates TOTP codes itself (RFC 6238) — you no longer need the
+`pass-otp` extension, and it works on every platform.
+
+1. Make sure **Enable one-time password (OTP) support** is checked on the
+   **Settings** tab of the configuration dialog (it is on by default).
+2. Store the account's `otpauth://` URI in the entry. Put it in the `OTP`
+   template field, or on its own line in the body (the form `pass otp insert`
+   writes). A bare base32 secret works too.
+3. Select the entry: QtPass shows a live code with a countdown and a copy
+   button, refreshing automatically. SHA-1/SHA-256/SHA-512 and Steam Guard
+   codes are all supported.
+
+The shared secret itself is never shown on screen or copied — only the current
+code is.
+
+### QtPass shows an OTP code and I don't want it to
+
+OTP support is enabled by default. To hide the live codes, uncheck **Enable
+one-time password (OTP) support** on the **Settings** tab of the configuration
+dialog. The choice is remembered. Your entries are unchanged — the `otpauth://`
+secret stays in the file and QtPass simply stops rendering a code for it.
+
 ### OTP QR codes don't work on macOS
 
 Applications launched from Finder don't inherit the shell PATH. Install QtPass via Homebrew (which sets up PATH correctly) or create a wrapper script that sets PATH before launching QtPass, for example:

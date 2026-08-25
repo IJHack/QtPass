@@ -27,7 +27,7 @@ _Available in over 60 languages_
 - Native widgets and iconography where possible
 - Per-folder user selection for multi-recipient encryption
 - Multiple profiles support
-- OTP (One-Time Password) support
+- Built-in TOTP (One-Time Password) support, no external extension needed
 - Password generation with configurable complexity
 - Content search across decrypted entries (regular expression; opt-in)
 - Git integration for version control

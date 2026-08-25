@@ -61,6 +61,7 @@ const QString SettingsConstants::groupProfiles = "profiles";
 const QString SettingsConstants::useGit = "useGit";
 const QString SettingsConstants::useGrepSearch = "useGrepSearch";
 const QString SettingsConstants::useOtp = "useOtp";
+const QString SettingsConstants::otpMigratedToNative = "otpMigratedToNative";
 const QString SettingsConstants::useQrencode = "useQrencode";
 const QString SettingsConstants::qrencodeExecutable = "qrencodeExecutable";
 const QString SettingsConstants::useClipboard = "useClipboard";

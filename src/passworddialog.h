@@ -6,12 +6,14 @@
 #include "appsettings.h"
 
 #include <QDialog>
+#include <QPointer>
 
 namespace Ui {
 class PasswordDialog;
 }
 
 class Pass;
+class QAction;
 class QLineEdit;
 class QWidget;
 
@@ -111,6 +113,30 @@ private slots:
   void on_rejected();
 
 private:
+  /**
+   * @brief Locate the field that holds the one-time password configuration.
+   * @return The matching QLineEdit, or nullptr when the entry has no OTP field.
+   */
+  [[nodiscard]] auto otpLineEdit() const -> QLineEdit *;
+  /**
+   * @brief Connect validation and normalisation to the OTP field, if present.
+   *
+   * Called whenever the field widgets are rebuilt, since both setTemplate()
+   * and setPassword() recreate them.
+   */
+  void hookOtpField();
+  /**
+   * @brief Flag an OTP value that is neither a URI nor valid base32.
+   */
+  void validateOtpField();
+  /**
+   * @brief Rewrite the OTP field as a canonical otpauth URI.
+   *
+   * A value that cannot be parsed is left exactly as the user typed it, so
+   * nothing is silently destroyed.
+   */
+  void normalizeOtpField();
+
   Ui::PasswordDialog *ui;
   PasswordConfiguration m_passConfig;
   Pass *m_pass{nullptr};
@@ -126,6 +152,15 @@ private:
   QList<QLineEdit *> m_otherLines;
   QHash<QString, QStringList> m_availableTemplates;
   QString m_currentTemplateName;
+  /// Warning indicator shown inside the OTP field; owned by that field.
+  ///
+  /// QPointer, not a raw pointer: the QAction is parented to the QLineEdit, and
+  /// setPassword() deletes the m_otherLines widgets before calling
+  /// hookOtpField(), so a raw pointer would already dangle there.
+  QPointer<QAction> m_otpWarning;
+  /// True once the user has typed in the OTP field. Only then may a value that
+  /// is not already an otpauth URI be rewritten, so untouched data survives.
+  bool m_otpFieldEdited{false};
 
   void applyTemplate(const QString &templateName);
 };

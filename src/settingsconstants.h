@@ -56,6 +56,14 @@ public:
   static const QString useGit;
   static const QString useGrepSearch;
   static const QString useOtp;
+  /**
+   * @brief Marker that the one-time `useOtp` migration has run.
+   *
+   * `useOtp` used to gate the pass-otp extension and now gates built-in TOTP,
+   * so it is enabled once for profiles created before the change. Recorded
+   * separately so a deliberate opt-out survives the next launch.
+   */
+  static const QString otpMigratedToNative;
   static const QString useQrencode;
   static const QString qrencodeExecutable;
   static const QString useClipboard;

@@ -58,16 +58,12 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   }
 
 #if defined(Q_OS_WIN)
-  ui->checkBoxUseOtp->hide();
+  // checkBoxUseOtp is deliberately not hidden here any more: one-time
+  // passwords are generated in-process, so the feature no longer depends on
+  // the Unix-only pass-otp extension.
   ui->checkBoxUseQrencode->hide();
   ui->label_10->hide();
 #endif
-
-  if (!isPassOtpAvailable()) {
-    ui->checkBoxUseOtp->setEnabled(false);
-    ui->checkBoxUseOtp->setToolTip(
-        tr("Pass OTP extension needs to be installed"));
-  }
 
   if (!isQrencodeAvailable()) {
     ui->checkBoxUseQrencode->setEnabled(false);
@@ -948,18 +944,6 @@ auto ConfigDialog::isQrencodeAvailable() -> bool {
   QtPassSettings::setQrencodeExecutable(
       which.readAllStandardOutput().trimmed());
   return which.exitCode() == 0;
-#endif
-}
-
-auto ConfigDialog::isPassOtpAvailable() -> bool {
-#ifdef Q_OS_WIN
-  return false;
-#else
-  QProcess pass;
-  pass.start(QtPassSettings::getPassExecutable(), QStringList() << "otp"
-                                                                << "--help");
-  pass.waitForFinished(2000);
-  return pass.exitCode() == 0;
 #endif
 }
 

@@ -17,9 +17,11 @@
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
 #include "qpushbuttonwithclipboard.h"
+#include "qtcompat.h"
 #include "qtpass.h"
 #include "qtpasssettings.h"
 #include "templateio.h"
+#include "totp.h"
 #include "trayicon.h"
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
@@ -151,6 +153,9 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   m_uiWatchdog.setInterval(UiWatchdogMs);
   connect(&m_uiWatchdog, &QTimer::timeout, this, [this]() {
     showStatusMessage(tr("Operation timed out; re-enabling interface."));
+    // Drop any in-flight OTP request so a late finishedShow cannot be mistaken
+    // for the answer to it.
+    cancelOtpRequest();
     setUiElementsEnabled(true);
   });
 
@@ -577,8 +582,12 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   QString file = getFile(index, true);
   ui->passwordName->setText(file);
   if (!file.isEmpty() && !cleared) {
+    // Remember what the panel is about to show, so onOtp() can tell whether the
+    // code it can see belongs to the entry that is currently selected.
+    m_shownFile = file;
     QtPassSettings::getPass()->Show(file);
   } else {
+    m_shownFile.clear();
     clearPanel(false);
     ui->actionEdit->setEnabled(false);
     ui->actionDelete->setEnabled(true);
@@ -604,6 +613,8 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
  */
 void MainWindow::deselect() {
   m_currentDir = "";
+  m_shownFile.clear();
+  cancelOtpRequest();
   m_qtPass->clearClipboard();
   ui->treeView->clearSelection();
   ui->actionEdit->setEnabled(false);
@@ -639,10 +650,18 @@ void MainWindow::passShowHandler(const QString &p_output) {
   bool allFields = s.useTemplate && s.templateAllFields;
   FileContent fileContent = FileContent::parse(p_output, templ, allFields);
   QString output = p_output;
-  QString password = fileContent.getPassword();
+  // Display variant: empty when the password line is itself an otpauth URI, so
+  // the shared secret is neither rendered nor copied to the clipboard.
+  QString password = fileContent.getPasswordForDisplay();
 
   // set clipped text
-  m_qtPass->setClippedText(password, p_output);
+  //
+  // Skipped for an OTP request: the user asked for a one-time code, not the
+  // password, and writing both in one event-loop turn can leave the Windows
+  // clipboard empty (two OleSetClipboard calls back to back).
+  if (!m_otpRequestPending) {
+    m_qtPass->setClippedText(password, p_output);
+  }
 
   // first clear the current view:
   m_displayPanel->clear();
@@ -651,7 +670,9 @@ void MainWindow::passShowHandler(const QString &p_output) {
   if (s.hideContent) {
     output = "***" + tr("Content hidden") + "***";
   } else if (!s.displayAsIs) {
-    m_displayPanel->displayFields(password, fileContent.getNamedValues(), s);
+    m_displayPanel->displayFields(password, fileContent.getNamedValues(), s,
+                                  s.useOtp ? fileContent.getOtpUri()
+                                           : QString());
     output = fileContent.getRemainingDataForDisplay();
   }
 
@@ -664,26 +685,71 @@ void MainWindow::passShowHandler(const QString &p_output) {
 }
 
 /**
- * @brief Handles the OTP output by displaying it, copying it to the clipboard,
- * and updating the UI state.
- * @example
- * void MainWindow::passOtpHandler(const QString &p_output);
+ * @brief Generates a one-time password from a decrypted entry and copies it.
  *
- * @param const QString &p_output - The OTP code text to process; if empty, an
- * error message is shown instead.
+ * Connected as a one-shot to Pass::finishedShow by onOtp(). passShowHandler is
+ * connected first, so by the time this runs the panel has already been
+ * repainted and the UI re-enabled.
+ *
+ * @param p_output - The decrypted entry content.
  * @return void - This function does not return a value.
  */
-void MainWindow::passOtpHandler(const QString &p_output) {
+void MainWindow::otpFromFileToClipboard(const QString &p_output) {
+  disconnectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
+                       &MainWindow::otpFromFileToClipboard);
+  // A failed decrypt never fires finishedShow, and Qt::SingleShotConnection
+  // only self-disconnects when it does fire, so a connection armed by an
+  // earlier failed request can still be live here. Ignore it rather than
+  // hijacking an unrelated entry's decrypted content.
+  if (!m_otpRequestPending) {
+    return;
+  }
+  // finishedShow carries no request identity, so make sure this decrypt is the
+  // one we asked for and not a tree click that happened to land first.
+  if (m_otpRequestFile != getFile(ui->treeView->currentIndex(), true)) {
+    cancelOtpRequest();
+    setUiElementsEnabled(true);
+    return;
+  }
+  m_otpRequestPending = false;
+  m_otpRequestFile.clear();
+
+  if (p_output.isEmpty()) {
+    // Distinguish "could not read the entry" from "entry has no OTP".
+    flashText(tr("Could not decrypt this password entry"), true);
+    setUiElementsEnabled(true);
+    return;
+  }
+
+  // passShowHandler is connected first, so it has already repainted the panel
+  // for this same finishedShow. When it rendered the OTP row the current code
+  // is derived and cached, so reuse it instead of re-loading settings and
+  // re-parsing p_output (mirrors onOtp()'s fast path). Falls through to a fresh
+  // parse when no OTP row is shown (hideContent / displayAsIs / no OTP field).
+  const QString shown = m_displayPanel->currentOtpCode();
+  if (!shown.isEmpty()) {
+    m_qtPass->copyTextToClipboard(shown);
+    showStatusMessage(tr("OTP code copied to clipboard"));
+    setUiElementsEnabled(true);
+    return;
+  }
+
   const AppSettings s = QtPassSettings::load();
-  if (!p_output.isEmpty()) {
-    m_displayPanel->appendField(tr("OTP Code"), p_output, s);
-    m_qtPass->copyTextToClipboard(p_output);
+  // Parse with the same template settings passShowHandler uses, so an OTP
+  // field is recognised identically in both paths.
+  const QStringList templ =
+      s.useTemplate ? s.passTemplate.split("\n") : QStringList();
+  const bool allFields = s.useTemplate && s.templateAllFields;
+  const FileContent fileContent =
+      FileContent::parse(p_output, templ, allFields);
+
+  const std::optional<Totp::Settings> settings =
+      Totp::parse(fileContent.getOtpUri());
+  if (settings.has_value()) {
+    m_qtPass->copyTextToClipboard(Totp::generateNow(*settings));
     showStatusMessage(tr("OTP code copied to clipboard"));
   } else {
     flashText(tr("No OTP code found in this password entry"), true);
-  }
-  if (s.useAutoclearPanel) {
-    clearPanelTimer.start();
   }
   setUiElementsEnabled(true);
 }
@@ -740,7 +806,9 @@ void MainWindow::setUiElementsEnabled(bool state) {
   ui->actionDelete->setEnabled(state);
   ui->actionEdit->setEnabled(state);
   updateGitButtonVisibility();
-  updateOtpButtonVisibility();
+  // `state` is now "UI enabled AND a file is selected", which is exactly when
+  // generating an OTP makes sense.
+  updateOtpButtonVisibility(state);
 }
 
 /**
@@ -1152,18 +1220,82 @@ void MainWindow::onDelete() {
 }
 
 /**
- * @brief MainWindow::onOTP try and generate (selected) OTP code.
+ * @brief MainWindow::cancelOtpRequest abandon an in-flight OTP request.
+ *
+ * Connected to Pass::processErrorExit, and called from deselect(). A failed
+ * decrypt never emits finishedShow, and the error handler re-enables the UI —
+ * which stops the watchdog that was the only other thing clearing the flag.
+ * Left set, it permanently suppressed passShowHandler's copy-on-select and let
+ * the still-armed one-shot claim the next unrelated decrypt.
+ *
+ * The same failed decrypt would otherwise leave m_passwordCopyPending stuck
+ * (its only other reset is passwordFromFileToClipboard, which never runs when
+ * finishedShow is not emitted), permanently blocking Ctrl+C, so clear it here
+ * too. Unlike otpFromFileToClipboard, that slot has no pending-flag guard, so
+ * its single-shot connection must be torn down here as well — otherwise a
+ * connection left armed by the failed decrypt would claim the next unrelated
+ * finishedShow and copy the wrong entry to the clipboard. disconnectSingleShot
+ * is a no-op on Qt 6 (the never-fired connection persists until it emits), so
+ * disconnect unconditionally.
+ */
+void MainWindow::cancelOtpRequest() {
+  m_otpRequestPending = false;
+  m_otpRequestFile.clear();
+  disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+             &MainWindow::passwordFromFileToClipboard);
+  m_passwordCopyPending = false;
+}
+
+/**
+ * @brief MainWindow::onOtp generate the selected entry's OTP code and copy it.
+ *
+ * Decrypts the entry once and derives the code in-process, so this works with
+ * either backend and on every platform. The code itself is produced by
+ * otpFromFileToClipboard once Pass::finishedShow arrives.
  */
 void MainWindow::onOtp() {
   QString file = getFile(ui->treeView->currentIndex(), true);
-  if (!file.isEmpty()) {
-    if (QtPassSettings::isUseOtp()) {
-      setUiElementsEnabled(false);
-      QtPassSettings::getPass()->OtpGenerate(file);
-    }
-  } else {
+  if (file.isEmpty()) {
     flashText(tr("No password selected for OTP generation"), true);
+    return;
   }
+  if (!QtPassSettings::isUseOtp()) {
+    // Normally unreachable (the action is hidden), but never fail silently.
+    flashText(tr("No OTP code found in this password entry"), true);
+    return;
+  }
+
+  // Fast path: the panel already shows a live code for the selected entry, so
+  // there is nothing to decrypt. This also keeps the clipboard write single —
+  // going through Show() would let passShowHandler copy the password first, and
+  // two QClipboard::setMimeData calls in one event-loop turn can leave the
+  // Windows clipboard empty.
+  //
+  // Only when the panel is showing *this* entry: arrow-key navigation and
+  // right-clicking move the tree's currentIndex without emitting
+  // QTreeView::clicked, so the visible code can belong to a different account.
+  const QString shown =
+      (m_shownFile == file) ? m_displayPanel->currentOtpCode() : QString();
+  if (!shown.isEmpty()) {
+    m_qtPass->copyTextToClipboard(shown);
+    showStatusMessage(tr("OTP code copied to clipboard"));
+    return;
+  }
+
+  // Fallback: no OTP row on screen, so decrypt once. The flag stops
+  // passShowHandler putting the password on the clipboard for a request that
+  // only asked for a code.
+  m_otpRequestPending = true;
+  m_otpRequestFile = file;
+  setUiElementsEnabled(false);
+  connectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
+                    &MainWindow::otpFromFileToClipboard);
+  // passShowHandler repaints the panel for this Show too, so keep the marker in
+  // step or a second request would decrypt again instead of taking the fast
+  // path. Safe to set now: executeWrapperStarted() clears the panel on every
+  // command, so a failed decrypt leaves currentOtpCode() empty.
+  m_shownFile = file;
+  QtPassSettings::getPass()->Show(file);
 }
 
 /**
@@ -1632,28 +1764,40 @@ void MainWindow::copyPasswordFromTreeview() {
       model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
 
   if (fileOrFolder.isFile()) {
+    // finishedShow carries no request identity, so allow only one copy request
+    // in flight: otherwise a second Ctrl+C on a different entry would re-arm
+    // the single-shot slot and the first decrypt to finish would copy the wrong
+    // entry while the later request is silently dropped. See
+    // m_passwordCopyPending.
+    if (m_passwordCopyPending) {
+      return;
+    }
+    m_passwordCopyPending = true;
     QString file = getFile(ui->treeView->currentIndex(), true);
-    // Disconnect any previous connection to avoid accumulation
-    disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-               &MainWindow::passwordFromFileToClipboard);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-            &MainWindow::passwordFromFileToClipboard, Qt::SingleShotConnection);
-#else
-    connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-            &MainWindow::passwordFromFileToClipboard);
-#endif
+    connectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
+                      &MainWindow::passwordFromFileToClipboard);
+    // This Show repaints the panel as well; see onOtp().
+    m_shownFile = file;
     QtPassSettings::getPass()->Show(file);
   }
 }
 
 void MainWindow::passwordFromFileToClipboard(const QString &text) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  // Qt 5: no SingleShotConnection flag — disconnect manually on first fire.
-  disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-             &MainWindow::passwordFromFileToClipboard);
-#endif
-  QStringList tokens = text.split('\n');
+  disconnectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
+                       &MainWindow::passwordFromFileToClipboard);
+  m_passwordCopyPending = false;
+  const QStringList tokens = text.split('\n');
+  if (tokens.isEmpty()) {
+    return;
+  }
+  // An entry created by `pass otp insert` has the otpauth:// URI as its first
+  // line. That URI carries the shared TOTP secret (the seed, not a code), so
+  // copying it to the clipboard would leak 2FA material. Skip it, matching the
+  // display path (FileContent::getPasswordForDisplay / PasswordDisplayPanel).
+  if (FileContent::isOtpUriValue(tokens[0])) {
+    flashText(tr("This entry holds an OTP secret, not a password"), true);
+    return;
+  }
   m_qtPass->copyTextToClipboard(tokens[0]);
 }
 
@@ -1799,15 +1943,22 @@ void MainWindow::updateGitButtonVisibility() {
   }
 }
 
-void MainWindow::updateOtpButtonVisibility() {
-#if defined(Q_OS_WIN) || defined(__APPLE__)
-  ui->actionOtp->setVisible(false);
-#endif
-  if (!QtPassSettings::isUseOtp()) {
-    ui->actionOtp->setEnabled(false);
-  } else {
-    ui->actionOtp->setEnabled(true);
-  }
+void MainWindow::updateOtpButtonVisibility(bool uiEnabled) {
+  // No platform gating any more: codes are generated in-process, so this works
+  // on Windows and macOS and with either backend. It used to be hidden there
+  // because the pass-otp extension is Unix-only.
+  //
+  // Kept visible but disabled when OTP is off, as it was before: hiding it
+  // removed the only discoverable trace of the feature, and since an OTP field
+  // is suppressed from the panel unconditionally (its value is a secret), a
+  // user with the setting off would see nothing at all where their OTP data
+  // used to be.
+  //
+  // Enablement must honour uiEnabled: this is called from
+  // setUiElementsEnabled(), and ignoring the argument re-enabled the action
+  // while a decrypt was in flight, letting the user stack Show calls.
+  ui->actionOtp->setVisible(true);
+  ui->actionOtp->setEnabled(QtPassSettings::isUseOtp() && uiEnabled);
 }
 
 void MainWindow::updateGrepButtonVisibility() {

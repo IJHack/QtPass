@@ -335,10 +335,10 @@ public:
   static auto isUseGrepSearch(const bool &defaultValue = false) -> bool;
   /**
    * @brief Check whether OTP support is enabled.
-   * @param defaultValue Value returned if not saved.
+   * @param defaultValue Value returned if not saved (defaults to true).
    * @return True if OTP support is enabled.
    */
-  static auto isUseOtp(const bool &defaultValue = QVariant().toBool()) -> bool;
+  static auto isUseOtp(const bool &defaultValue = true) -> bool;
   /**
    * @brief Save qrencode executable path.
    * @param qrencodeExecutable Path to qrencode executable.

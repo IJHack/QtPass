@@ -59,4 +59,4 @@ CONFIG(coverage) {
 	QMAKE_DISTCLEAN += -r docs/coverage/
 }
 
-system($$QMAKE_LUPDATE -locations absolute ./src ./main -ts localization/*.ts)
+system($$QMAKE_LUPDATE -locations absolute ./src ./main -ts $$files(localization/*.ts))

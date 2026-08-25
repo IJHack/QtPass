@@ -31,6 +31,11 @@ end_of_line = crlf
 [*.bat]
 end_of_line = crlf
 
+# Windows .cmd batch files ship as CRLF (see .gitattributes: cmd.exe label
+# lookup is unreliable in LF-only .cmd files).
+[*.cmd]
+end_of_line = crlf
+
 # Apple plist tradition (tabs); matches what plutil and Xcode produce.
 [*.plist]
 indent_style = tab

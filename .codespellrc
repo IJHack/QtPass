@@ -9,4 +9,6 @@ skip = ./localization/*,./.git/*
 # tru — gpg --with-colons "trust" column in test fixtures
 # doubleclick — Qt API name (QSystemTrayIcon::DoubleClick)
 # pre-selected — both forms valid; codespell prefers the closed compound
-ignore-words-list = fpr,ue,tru,doubleclick,pre-selected
+# fo — RFC 4648 base32 test vector (the f/fo/foo/foobar sequence)
+# unparseable — valid variant; used in a TOTP negative-test row label
+ignore-words-list = fpr,ue,tru,doubleclick,pre-selected,fo,unparseable
