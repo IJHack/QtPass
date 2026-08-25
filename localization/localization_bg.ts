@@ -134,11 +134,6 @@
         <translation>Добавяне на специални символи</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="588"/>
-        <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
         <translation>Разрешаване на търсене в съдържанието (pass grep)</translation>
@@ -400,48 +395,48 @@ email</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; версия </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="81"/>
+        <location filename="../src/configdialog.cpp" line="85"/>
         <source>No Clipboard</source>
         <translation>Без буфер</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="82"/>
+        <location filename="../src/configdialog.cpp" line="86"/>
         <source>Always copy to clipboard</source>
         <translation>Задължително копиране в буфера</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="83"/>
+        <location filename="../src/configdialog.cpp" line="87"/>
         <source>On-demand copy to clipboard</source>
         <translation>Копиране в буфера при поискване</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="270"/>
-        <location filename="../src/configdialog.cpp" line="280"/>
+        <location filename="../src/configdialog.cpp" line="274"/>
+        <location filename="../src/configdialog.cpp" line="284"/>
         <source>This field is required</source>
         <translation>Това поле е задължително</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="324"/>
+        <location filename="../src/configdialog.cpp" line="328"/>
         <source>The path does not exist.</source>
         <translation>Пътят не съществува.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="327"/>
+        <location filename="../src/configdialog.cpp" line="331"/>
         <source>The path is not readable.</source>
         <translation>Пътят не е четим.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="330"/>
+        <location filename="../src/configdialog.cpp" line="334"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Пътят не е Unix домейн сокет.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="335"/>
+        <location filename="../src/configdialog.cpp" line="339"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Потенциално невалидно заместване на SSH_AUTH_SOCK</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="336"/>
+        <location filename="../src/configdialog.cpp" line="340"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -454,93 +449,93 @@ The value will still be saved as entered.</source>
 Стойността ще бъде запазена така, както е въведена.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="790"/>
+        <location filename="../src/configdialog.cpp" line="794"/>
         <source>Create profile directory?</source>
         <translation>Да се създаде ли директория на профила?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="791"/>
+        <location filename="../src/configdialog.cpp" line="795"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Искате ли да създадете хранилище за пароли в %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="799"/>
+        <location filename="../src/configdialog.cpp" line="803"/>
         <source>Could not create profile directory: %1</source>
         <translation>Не може да се създаде директория на профила: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="819"/>
+        <location filename="../src/configdialog.cpp" line="823"/>
         <source>Select recipients for %1</source>
         <translation>Избор на получатели за %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="844"/>
+        <location filename="../src/configdialog.cpp" line="848"/>
         <source>New Profile</source>
         <translation>Нов профил</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="892"/>
+        <location filename="../src/configdialog.cpp" line="896"/>
         <source>No profile selected</source>
         <translation>Не е избран профил</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="893"/>
+        <location filename="../src/configdialog.cpp" line="897"/>
         <source>No profile selected to delete</source>
         <translation>Не е избран профил за триене</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="985"/>
+        <location filename="../src/configdialog.cpp" line="1001"/>
         <source>GnuPG not found</source>
         <translation>Не е намерена програма GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="999"/>
+        <location filename="../src/configdialog.cpp" line="1015"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Моля, инсталирайте GnuPG на вашата система.&lt;br&gt;Инсталирайте &lt;strong&gt;gpg&lt;/strong&gt;, използвайки любимия си мениджър на пакети&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;го изтеглете&lt;/a&gt; от GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1053"/>
+        <location filename="../src/configdialog.cpp" line="1069"/>
         <source>Create password-store?</source>
         <translation>Създаване на хранилище за пароли?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1054"/>
+        <location filename="../src/configdialog.cpp" line="1070"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Искате ли да създадете хранилище за пароли на %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="798"/>
-        <location filename="../src/configdialog.cpp" line="1059"/>
+        <location filename="../src/configdialog.cpp" line="802"/>
+        <location filename="../src/configdialog.cpp" line="1075"/>
         <source>Error</source>
         <translation>Грешка</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1060"/>
+        <location filename="../src/configdialog.cpp" line="1076"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Неуспешно създаване на хранилище за пароли на адрес: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1091"/>
+        <location filename="../src/configdialog.cpp" line="1107"/>
         <source>Password store not initialised</source>
         <translation>Не е инициализирано хранилище за пароли</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1092"/>
+        <location filename="../src/configdialog.cpp" line="1108"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Изглежда, че папката %1 не е хранилище за пароли или все още не е инициализирана.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1348"/>
+        <location filename="../src/configdialog.cpp" line="1364"/>
         <source>New profile: %1 at %2</source>
         <translation>Нов профил: %1 в %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1352"/>
+        <location filename="../src/configdialog.cpp" line="1368"/>
         <source>Profile: %1 at %2</source>
         <translation>Профил: %1 в %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1357"/>
+        <location filename="../src/configdialog.cpp" line="1373"/>
         <source>Fill in all required fields</source>
         <translation>Попълнете всички задължителни полета</translation>
     </message>
@@ -560,21 +555,22 @@ The value will still be saved as entered.</source>
         <translation>Системният трей не е наличен</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.cpp" line="69"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="vanished">Необходимо е да се инсталира разширението Pass OTP</translation>
+        <translation>Необходимо е да се инсталира разширението Pass OTP</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="70"/>
+        <location filename="../src/configdialog.cpp" line="74"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode трябва да бъде инсталиран</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="988"/>
+        <location filename="../src/configdialog.cpp" line="1004"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Моля, инсталирайте GnuPG на вашата система.&lt;br&gt;Инсталирайте &lt;strong&gt;Ubuntu&lt;/strong&gt; от Microsoft Store, за да го получите.&lt;br&gt;Ако вече сте го направили, уверете се, че сте го стартирали веднъж и&lt;br&gt;щракнете върху „Автоматично откриване“ в следващия диалогов прозорец.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="993"/>
+        <location filename="../src/configdialog.cpp" line="1009"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Моля, инсталирайте GnuPG на вашата система.&lt;br&gt;Инсталирайте &lt;strong&gt;Ubuntu&lt;/strong&gt; от Microsoft Store&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;го изтеглете&lt;/a&gt; от GnuPG.org</translation>
     </message>
@@ -594,8 +590,9 @@ The value will still be saved as entered.</source>
         <translation>Използвайте QRencode</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="588"/>
         <source>Use pass-otp extension</source>
-        <translation type="vanished">Използвайте разширението pass-otp</translation>
+        <translation>Използвайте разширението pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
@@ -1026,14 +1023,14 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/mainwindow.ui" line="401"/>
-        <location filename="../src/mainwindow.cpp" line="1503"/>
+        <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>Edit</source>
         <translation>Редактиране</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
-        <location filename="../src/mainwindow.cpp" line="1517"/>
+        <location filename="../src/mainwindow.cpp" line="1442"/>
         <source>Delete</source>
         <translation>Изтриване</translation>
     </message>
@@ -1121,7 +1118,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1497"/>
+        <location filename="../src/mainwindow.cpp" line="1422"/>
         <source>Users</source>
         <translation>Потребители</translation>
     </message>
@@ -1202,19 +1199,19 @@ p, li { white-space: pre-wrap; }
         <translation>Добре дошли в QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="355"/>
+        <location filename="../src/mainwindow.cpp" line="351"/>
         <source>Clear output</source>
         <translation>Изчистване на изхода</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="354"/>
+        <location filename="../src/mainwindow.cpp" line="350"/>
         <source>Clear</source>
         <translation>Изчистване</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="748"/>
-        <location filename="../src/mainwindow.cpp" line="943"/>
+        <location filename="../src/mainwindow.cpp" line="709"/>
+        <location filename="../src/mainwindow.cpp" line="902"/>
         <source>Search Password</source>
         <translation>Търсене на парола</translation>
     </message>
@@ -1223,7 +1220,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="325"/>
+        <location filename="../src/mainwindow.cpp" line="321"/>
         <source>Welcome to QtPass %1</source>
         <translation>Добре дошли в QtPass %1</translation>
     </message>
@@ -1262,8 +1259,8 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="535"/>
-        <location filename="../src/mainwindow.cpp" line="548"/>
+        <location filename="../src/mainwindow.cpp" line="531"/>
+        <location filename="../src/mainwindow.cpp" line="544"/>
         <source>Updating password-store</source>
         <translation>Актуализиране на хранилището за пароли</translation>
     </message>
@@ -1280,8 +1277,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="662"/>
-        <location filename="../src/mainwindow.cpp" line="986"/>
+        <location filename="../src/mainwindow.cpp" line="652"/>
+        <location filename="../src/mainwindow.cpp" line="945"/>
         <source>Content hidden</source>
         <translation>Съдържанието е скрито</translation>
     </message>
@@ -1290,8 +1287,9 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Парола</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="679"/>
         <source>OTP Code</source>
-        <translation type="vanished">OTP код</translation>
+        <translation>OTP код</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -1302,7 +1300,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Clipboard not cleared</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="752"/>
+        <location filename="../src/mainwindow.cpp" line="713"/>
         <source>Password and Content hidden</source>
         <translation>Паролата и съдържанието са скрити</translation>
     </message>
@@ -1331,12 +1329,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="840"/>
+        <location filename="../src/mainwindow.cpp" line="799"/>
         <source>Looking for: %1</source>
         <translation>Търси се: %1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="996"/>
+        <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Намерено %n съвпадение</numerusform>
@@ -1344,35 +1342,35 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1125"/>
-        <location filename="../src/mainwindow.cpp" line="1595"/>
+        <location filename="../src/mainwindow.cpp" line="1084"/>
+        <location filename="../src/mainwindow.cpp" line="1520"/>
         <source>New file</source>
         <translation>Нов файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1126"/>
+        <location filename="../src/mainwindow.cpp" line="1085"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Нов файл с пароли:
 (Ще бъде поставен в %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1166"/>
+        <location filename="../src/mainwindow.cpp" line="1125"/>
         <source> and the whole content?</source>
         <translation> и цялото съдържание?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1176"/>
+        <location filename="../src/mainwindow.cpp" line="1135"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> и цялото съдържание? &lt;br&gt; &lt;strong&gt; Внимание: в дадената папка има неочаквани файлове, проверете ги, преди да продължите. &lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1186"/>
+        <location filename="../src/mainwindow.cpp" line="1145"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Наистина ли искате да изтриете %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1185"/>
+        <location filename="../src/mainwindow.cpp" line="1144"/>
         <source>Delete password?</source>
         <translation>Изтриване на парола?</translation>
     </message>
@@ -1381,7 +1379,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Are you sure you want to delete %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1185"/>
+        <location filename="../src/mainwindow.cpp" line="1144"/>
         <source>Delete folder?</source>
         <translation>Изтриване на папка?</translation>
     </message>
@@ -1406,31 +1404,31 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1369"/>
+        <location filename="../src/mainwindow.cpp" line="1294"/>
         <source>Profile changed to %1</source>
         <translation>Профилът е променен на %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1494"/>
+        <location filename="../src/mainwindow.cpp" line="1419"/>
         <source>Open folder with file manager</source>
         <translation>Отваряне на папка с файлов мениджър</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="390"/>
         <location filename="../src/mainwindow.ui" line="393"/>
-        <location filename="../src/mainwindow.cpp" line="1495"/>
+        <location filename="../src/mainwindow.cpp" line="1420"/>
         <source>Add folder</source>
         <translation>Добавяне на папка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
-        <location filename="../src/mainwindow.cpp" line="1496"/>
+        <location filename="../src/mainwindow.cpp" line="1421"/>
         <source>Add password</source>
         <translation>Добавяне на парола</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1596"/>
+        <location filename="../src/mainwindow.cpp" line="1521"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Нова папка: 
@@ -1441,59 +1439,52 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="154"/>
+        <location filename="../src/mainwindow.cpp" line="153"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">Операцията изтече; интерфейсът се активира отново.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="363"/>
+        <location filename="../src/mainwindow.cpp" line="359"/>
         <source>Process Output</source>
         <translation>Изход на процеса</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="705"/>
-        <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="723"/>
-        <location filename="../src/mainwindow.cpp" line="1222"/>
+        <location filename="../src/mainwindow.cpp" line="681"/>
         <source>OTP code copied to clipboard</source>
         <translation>Кодът за еднократна парола е копиран в клипборда</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="725"/>
-        <location filename="../src/mainwindow.cpp" line="1210"/>
+        <location filename="../src/mainwindow.cpp" line="683"/>
         <source>No OTP code found in this password entry</source>
         <translation>В този запис за парола не е намерен OTP код</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="891"/>
+        <location filename="../src/mainwindow.cpp" line="850"/>
         <source>Searching…</source>
         <translation>Търсене…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="920"/>
+        <location filename="../src/mainwindow.cpp" line="879"/>
         <source>Search content (regex)</source>
         <translation>Търсене в съдържанието (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="925"/>
+        <location filename="../src/mainwindow.cpp" line="884"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation type="unfinished">Търсенето в съдържанието използва POSIX основни регулярни изрази (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="927"/>
+        <location filename="../src/mainwindow.cpp" line="886"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">Търсенето в съдържанието използва Perl-съвместими регулярни изрази (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="972"/>
+        <location filename="../src/mainwindow.cpp" line="931"/>
         <source>No matches found.</source>
         <translation>Няма съвпадения.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="997"/>
+        <location filename="../src/mainwindow.cpp" line="956"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>в %n запис.</numerusform>
@@ -1501,52 +1492,52 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1077"/>
+        <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Invalid name</source>
         <translation type="unfinished">Невалидно име</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
+        <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Това име би се разрешило извън хранилището за пароли. Моля, изберете друго име.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1205"/>
+        <location filename="../src/mainwindow.cpp" line="1165"/>
         <source>No password selected for OTP generation</source>
         <translation>Не е избрана парола за генериране на еднократна парола</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1509"/>
+        <location filename="../src/mainwindow.cpp" line="1434"/>
         <source>Rename folder</source>
         <translation>Преименуване на папка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1513"/>
+        <location filename="../src/mainwindow.cpp" line="1438"/>
         <source>Rename password</source>
         <translation>Преименуване на парола</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1523"/>
+        <location filename="../src/mainwindow.cpp" line="1448"/>
         <source>Share</source>
         <translation>Споделяне</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1533"/>
+        <location filename="../src/mainwindow.cpp" line="1458"/>
         <source>Re-encrypt all passwords</source>
         <translation>Повторно криптиране на всички пароли</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1463"/>
         <source>Export my public key...</source>
         <translation>Изнасяне на моя публичен ключ…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1544"/>
+        <location filename="../src/mainwindow.cpp" line="1469"/>
         <source>Add recipient...</source>
         <translation>Добавяне на получател…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1549"/>
+        <location filename="../src/mainwindow.cpp" line="1474"/>
         <source>What is this?</source>
         <translation>Какво е това?</translation>
     </message>
@@ -1555,18 +1546,18 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Отвори %1 в браузъра</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1804"/>
-        <location filename="../src/mainwindow.cpp" line="1823"/>
+        <location filename="../src/mainwindow.cpp" line="1729"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>Export Public Key</source>
         <translation>Изнасяне на публичен ключ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1805"/>
+        <location filename="../src/mainwindow.cpp" line="1730"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Изнасяне на вашия публичен ключ&lt;/h3&gt;&lt;p&gt;Не е настроен ключ за подписване. Задайте го в Настройки на QtPass &amp;gt; GPG ключове, или изпълнете това в терминал:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;След това изпратете файла на колегите си.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1824"/>
+        <location filename="../src/mainwindow.cpp" line="1749"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1575,17 +1566,17 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1826"/>
+        <location filename="../src/mainwindow.cpp" line="1751"/>
         <source>No output from gpg.</source>
         <translation>Няма изход от gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1853"/>
+        <location filename="../src/mainwindow.cpp" line="1778"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Споделяне на пароли чрез GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1854"/>
+        <location filename="../src/mainwindow.cpp" line="1779"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Споделяне на пароли чрез GPG&lt;/h3&gt;&lt;p&gt;За да споделяте пароли с други потребители:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Изнесете своя публичен ключ&lt;/b&gt; и го изпратете на колегите си&lt;/li&gt;&lt;li&gt;&lt;b&gt;Внесете публичните ключове на колегите си&lt;/b&gt; в своя GPG ключодържател&lt;/li&gt;&lt;li&gt;&lt;b&gt;Криптирайте паролите наново&lt;/b&gt;, така че всички получатели да могат да ги декриптират&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Само хора със съответен таен ключ могат да декриптират паролите.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Съвет:&lt;/b&gt; Използвайте един и същ GPG ключ за всички споделени папки.&lt;/p&gt;&lt;p&gt;Вижте ЧЗВ за повече подробности.&lt;/p&gt;</translation>
     </message>
@@ -1594,50 +1585,50 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Прешифроване</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1608"/>
-        <location filename="../src/mainwindow.cpp" line="1617"/>
-        <location filename="../src/mainwindow.cpp" line="1752"/>
+        <location filename="../src/mainwindow.cpp" line="1533"/>
+        <location filename="../src/mainwindow.cpp" line="1542"/>
+        <location filename="../src/mainwindow.cpp" line="1677"/>
         <source>Error</source>
         <translation>Грешка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1609"/>
+        <location filename="../src/mainwindow.cpp" line="1534"/>
         <source>Failed to create folder: %1</source>
         <translation>Папката не е създадена: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1618"/>
+        <location filename="../src/mainwindow.cpp" line="1543"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Неуспешно създаване на .gpg-id файл в: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1645"/>
-        <location filename="../src/mainwindow.cpp" line="1685"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
+        <location filename="../src/mainwindow.cpp" line="1610"/>
         <source>Rename file</source>
         <translation>Преименуване на файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1645"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Rename Folder To: </source>
         <translation>Преименуване на папката на: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1685"/>
+        <location filename="../src/mainwindow.cpp" line="1610"/>
         <source>Rename File To: </source>
         <translation>Преименувайте файла на: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1678"/>
         <source>Directory does not exist: %1</source>
         <translation>Папката не съществува: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1683"/>
         <source>Re-encrypt passwords</source>
         <translation>Прешифровайте паролите</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1759"/>
+        <location filename="../src/mainwindow.cpp" line="1684"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -1663,14 +1654,6 @@ Continue?</source>
 &lt;p&gt;Моля, докладвайте за всички &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;проблеми&lt;/a&gt;, които може да имате с този софтуер.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Документация&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Изходен код&lt;/a&gt;&lt;/p&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>OtpCodeWidget</name>
-    <message>
-        <location filename="../src/otpcodewidget.cpp" line="67"/>
-        <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1773,16 +1756,6 @@ Continue?</source>
         <source>Length:</source>
         <translation>Дължина:</translation>
     </message>
-    <message>
-        <location filename="../src/passworddialog.cpp" line="219"/>
-        <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/passworddialog.cpp" line="247"/>
-        <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -1793,27 +1766,16 @@ Continue?</source>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="74"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="148"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="181"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="57"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="117"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="150"/>
         <source>Password</source>
         <translation type="unfinished">Парола</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="157"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="126"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">Отвори %1 в браузъра</translation>
-    </message>
-    <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="293"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="306"/>
-        <source>OTP Code</source>
-        <translation type="unfinished">OTP код</translation>
-    </message>
-    <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="294"/>
-        <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">В този запис за парола не е намерен OTP код</translation>
     </message>
 </context>
 <context>
@@ -1824,88 +1786,88 @@ Continue?</source>
         <translation>Генериране на двойка GPG ключове</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="214"/>
+        <location filename="../src/qtpass.cpp" line="213"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Неуспешно свързване на WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="230"/>
+        <location filename="../src/qtpass.cpp" line="229"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV парола</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="231"/>
+        <location filename="../src/qtpass.cpp" line="230"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Въведете парола, за да се свържете към WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="248"/>
+        <location filename="../src/qtpass.cpp" line="247"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav спря неочаквано
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="252"/>
+        <location filename="../src/qtpass.cpp" line="251"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Неуспешно стартиране на fusedav за свързване с WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="265"/>
+        <location filename="../src/qtpass.cpp" line="264"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="268"/>
+        <location filename="../src/qtpass.cpp" line="267"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="271"/>
+        <location filename="../src/qtpass.cpp" line="270"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="274"/>
+        <location filename="../src/qtpass.cpp" line="273"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="277"/>
+        <location filename="../src/qtpass.cpp" line="276"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="280"/>
+        <location filename="../src/qtpass.cpp" line="279"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="296"/>
+        <location filename="../src/qtpass.cpp" line="295"/>
         <source>GPG key pair generation failed</source>
         <translation>Генерирането на двойка GPG ключове не беше успешно</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="370"/>
+        <location filename="../src/qtpass.cpp" line="369"/>
         <source>GPG key pair generated successfully</source>
         <translation>Двойката GPG ключове е генерирана успешно</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="454"/>
+        <location filename="../src/qtpass.cpp" line="453"/>
         <source>Clipboard cleared</source>
         <translation>Буферът е изчистен</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="456"/>
+        <location filename="../src/qtpass.cpp" line="455"/>
         <source>Clipboard not cleared</source>
         <translation>Буферът не е изчистен</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="502"/>
+        <location filename="../src/qtpass.cpp" line="501"/>
         <source>Copied to clipboard</source>
         <translation>Копирано в буфера</translation>
     </message>

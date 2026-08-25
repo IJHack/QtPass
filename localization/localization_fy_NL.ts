@@ -134,11 +134,6 @@
         <translation>Spesjale symboalen opnimme</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="588"/>
-        <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
         <translation>Ynhâldssykjen ynskeakelje (pass grep)</translation>
@@ -400,48 +395,48 @@ email</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; ferzje </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="81"/>
+        <location filename="../src/configdialog.cpp" line="85"/>
         <source>No Clipboard</source>
         <translation>Gjin klamboerd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="82"/>
+        <location filename="../src/configdialog.cpp" line="86"/>
         <source>Always copy to clipboard</source>
         <translation>Altyd nei klamboerd kopiearje</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="83"/>
+        <location filename="../src/configdialog.cpp" line="87"/>
         <source>On-demand copy to clipboard</source>
         <translation>Kopiearje op oanfraach nei klamboerd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="270"/>
-        <location filename="../src/configdialog.cpp" line="280"/>
+        <location filename="../src/configdialog.cpp" line="274"/>
+        <location filename="../src/configdialog.cpp" line="284"/>
         <source>This field is required</source>
         <translation>Dit fjild is ferplicht</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="324"/>
+        <location filename="../src/configdialog.cpp" line="328"/>
         <source>The path does not exist.</source>
         <translation>It paad bestiet net.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="327"/>
+        <location filename="../src/configdialog.cpp" line="331"/>
         <source>The path is not readable.</source>
         <translation>It paad is net te lêzen.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="330"/>
+        <location filename="../src/configdialog.cpp" line="334"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>It paad is gjin Unix-domeinsocket.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="335"/>
+        <location filename="../src/configdialog.cpp" line="339"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Miskien ûnjildich SSH_AUTH_SOCK-oerskriuwing</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="336"/>
+        <location filename="../src/configdialog.cpp" line="340"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -454,93 +449,93 @@ The value will still be saved as entered.</source>
 De wearde wurdt altyd opslein as ynfierd.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="790"/>
+        <location filename="../src/configdialog.cpp" line="794"/>
         <source>Create profile directory?</source>
         <translation>Profylmap oanmeitsje?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="791"/>
+        <location filename="../src/configdialog.cpp" line="795"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Wolle jo in wachtwurdopslach oanmeitsje op %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="799"/>
+        <location filename="../src/configdialog.cpp" line="803"/>
         <source>Could not create profile directory: %1</source>
         <translation>Koe gjin profylmap oanmeitsje: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="819"/>
+        <location filename="../src/configdialog.cpp" line="823"/>
         <source>Select recipients for %1</source>
         <translation>Selektearje ûntfangers foar %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="844"/>
+        <location filename="../src/configdialog.cpp" line="848"/>
         <source>New Profile</source>
         <translation>Nij profyl</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="892"/>
+        <location filename="../src/configdialog.cpp" line="896"/>
         <source>No profile selected</source>
         <translation>Gjin profyl selektearre</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="893"/>
+        <location filename="../src/configdialog.cpp" line="897"/>
         <source>No profile selected to delete</source>
         <translation>Gjin profyl selektearre om te wiskjen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="985"/>
+        <location filename="../src/configdialog.cpp" line="1001"/>
         <source>GnuPG not found</source>
         <translation>GnuPG net fûn</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="999"/>
+        <location filename="../src/configdialog.cpp" line="1015"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Ynstallearje asjebleaft GnuPG op jo systeem.&lt;br&gt;Ynstallearje &lt;strong&gt;gpg&lt;/strong&gt; mei jo favorite pakketbehearder&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it fan GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1053"/>
+        <location filename="../src/configdialog.cpp" line="1069"/>
         <source>Create password-store?</source>
         <translation>Wachtwurdopslach oanmeitsje?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1054"/>
+        <location filename="../src/configdialog.cpp" line="1070"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Wolle jo in wachtwurdopslach oanmeitsje op %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="798"/>
-        <location filename="../src/configdialog.cpp" line="1059"/>
+        <location filename="../src/configdialog.cpp" line="802"/>
+        <location filename="../src/configdialog.cpp" line="1075"/>
         <source>Error</source>
         <translation>Fersin</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1060"/>
+        <location filename="../src/configdialog.cpp" line="1076"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Koe wachtwurdopslach net oanmeitsje op: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1091"/>
+        <location filename="../src/configdialog.cpp" line="1107"/>
         <source>Password store not initialised</source>
         <translation>Wachtwurdopslach net ynisjalisearre</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1092"/>
+        <location filename="../src/configdialog.cpp" line="1108"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>De map %1 liket gjin wachtwurdopslach te wêzen of is noch net ynisjalisearre.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1348"/>
+        <location filename="../src/configdialog.cpp" line="1364"/>
         <source>New profile: %1 at %2</source>
         <translation>Nij profyl: %1 op %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1352"/>
+        <location filename="../src/configdialog.cpp" line="1368"/>
         <source>Profile: %1 at %2</source>
         <translation>Profyl: %1 op %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1357"/>
+        <location filename="../src/configdialog.cpp" line="1373"/>
         <source>Fill in all required fields</source>
         <translation>Folje alle fereaske fjilden yn</translation>
     </message>
@@ -560,21 +555,22 @@ De wearde wurdt altyd opslein as ynfierd.</translation>
         <translation>Systeemfak is net beskikber</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.cpp" line="69"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="vanished">De Pass OTP-útwreiding moat ynstalleare wurde</translation>
+        <translation>De Pass OTP-útwreiding moat ynstalleare wurde</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="70"/>
+        <location filename="../src/configdialog.cpp" line="74"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode moat ynstalleare wurde</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="988"/>
+        <location filename="../src/configdialog.cpp" line="1004"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Ynstallearje asjebleaft GnuPG op jo systeem.&lt;br&gt;Ynstallearje &lt;strong&gt;Ubuntu&lt;/strong&gt; fanút de Microsoft Store om it te krijen.&lt;br&gt;As jo dat al dien hawwe, soargje derfoar dat jo it ien kear starte hawwe en&lt;br&gt;klikje op &quot;Automatyske deteksje&quot; yn it folgjende dialoochfinster.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="993"/>
+        <location filename="../src/configdialog.cpp" line="1009"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Ynstallearje GnuPG op jo systeem.&lt;br&gt;Ynstallearje &lt;strong&gt;Ubuntu&lt;/strong&gt; fanút de Microsoft Store&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it fan GnuPG.org</translation>
     </message>
@@ -594,8 +590,9 @@ De wearde wurdt altyd opslein as ynfierd.</translation>
         <translation>Brûk QRencode</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="588"/>
         <source>Use pass-otp extension</source>
-        <translation type="vanished">Brûk pass-otp-útwreiding</translation>
+        <translation>Brûk pass-otp-útwreiding</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
@@ -1090,14 +1087,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/mainwindow.ui" line="401"/>
-        <location filename="../src/mainwindow.cpp" line="1503"/>
+        <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>Edit</source>
         <translation>Bewurkje</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
-        <location filename="../src/mainwindow.cpp" line="1517"/>
+        <location filename="../src/mainwindow.cpp" line="1442"/>
         <source>Delete</source>
         <translation>Wiskje</translation>
     </message>
@@ -1185,7 +1182,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1497"/>
+        <location filename="../src/mainwindow.cpp" line="1422"/>
         <source>Users</source>
         <translation>Brûkers</translation>
     </message>
@@ -1266,19 +1263,19 @@ p, li { white-space: pre-wrap; }
         <translation>Wolkom by QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="355"/>
+        <location filename="../src/mainwindow.cpp" line="351"/>
         <source>Clear output</source>
         <translation>Útfier wiskje</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="354"/>
+        <location filename="../src/mainwindow.cpp" line="350"/>
         <source>Clear</source>
         <translation>Wiskje</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="748"/>
-        <location filename="../src/mainwindow.cpp" line="943"/>
+        <location filename="../src/mainwindow.cpp" line="709"/>
+        <location filename="../src/mainwindow.cpp" line="902"/>
         <source>Search Password</source>
         <translation>Wachtwurd sykje</translation>
     </message>
@@ -1287,7 +1284,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="325"/>
+        <location filename="../src/mainwindow.cpp" line="321"/>
         <source>Welcome to QtPass %1</source>
         <translation>Wolkom by QtPass %1</translation>
     </message>
@@ -1326,8 +1323,8 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="535"/>
-        <location filename="../src/mainwindow.cpp" line="548"/>
+        <location filename="../src/mainwindow.cpp" line="531"/>
+        <location filename="../src/mainwindow.cpp" line="544"/>
         <source>Updating password-store</source>
         <translation>Wachtwurdopslach bywurkje</translation>
     </message>
@@ -1344,8 +1341,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="662"/>
-        <location filename="../src/mainwindow.cpp" line="986"/>
+        <location filename="../src/mainwindow.cpp" line="652"/>
+        <location filename="../src/mainwindow.cpp" line="945"/>
         <source>Content hidden</source>
         <translation>Ynhâld ferburgen</translation>
     </message>
@@ -1354,8 +1351,9 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Wachtwurd</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="679"/>
         <source>OTP Code</source>
-        <translation type="vanished">OTP-koade</translation>
+        <translation>OTP-koade</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -1366,7 +1364,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Clipboard not cleared</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="752"/>
+        <location filename="../src/mainwindow.cpp" line="713"/>
         <source>Password and Content hidden</source>
         <translation>Wachtwurd en ynhâld ferburgen</translation>
     </message>
@@ -1395,12 +1393,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="840"/>
+        <location filename="../src/mainwindow.cpp" line="799"/>
         <source>Looking for: %1</source>
         <translation>Op syk nei: %1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="996"/>
+        <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n oerienkomst fûn</numerusform>
@@ -1408,35 +1406,35 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1125"/>
-        <location filename="../src/mainwindow.cpp" line="1595"/>
+        <location filename="../src/mainwindow.cpp" line="1084"/>
+        <location filename="../src/mainwindow.cpp" line="1520"/>
         <source>New file</source>
         <translation>Nij bestân</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1126"/>
+        <location filename="../src/mainwindow.cpp" line="1085"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nij wachtwurdbestân:
 (Sil pleatst wurde yn %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1166"/>
+        <location filename="../src/mainwindow.cpp" line="1125"/>
         <source> and the whole content?</source>
         <translation> en de hiele ynhâld?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1176"/>
+        <location filename="../src/mainwindow.cpp" line="1135"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> en de hiele ynhâld? &lt;br&gt;&lt;strong&gt;Oandacht: der binne ûnferwachte bestannen yn &apos;e opjûne map, kontrolearje se foardat jo trochgean.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1186"/>
+        <location filename="../src/mainwindow.cpp" line="1145"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Binne jo wis dat jo %1%2 wiskje wolle?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1185"/>
+        <location filename="../src/mainwindow.cpp" line="1144"/>
         <source>Delete password?</source>
         <translation>Wachtwurd wiskje?</translation>
     </message>
@@ -1445,7 +1443,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Are you sure you want to delete %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1185"/>
+        <location filename="../src/mainwindow.cpp" line="1144"/>
         <source>Delete folder?</source>
         <translation>Map wiskje?</translation>
     </message>
@@ -1470,31 +1468,31 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1369"/>
+        <location filename="../src/mainwindow.cpp" line="1294"/>
         <source>Profile changed to %1</source>
         <translation>Profyl feroare nei %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1494"/>
+        <location filename="../src/mainwindow.cpp" line="1419"/>
         <source>Open folder with file manager</source>
         <translation>Iepenje map mei triembehearder</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="390"/>
         <location filename="../src/mainwindow.ui" line="393"/>
-        <location filename="../src/mainwindow.cpp" line="1495"/>
+        <location filename="../src/mainwindow.cpp" line="1420"/>
         <source>Add folder</source>
         <translation>Map tafoegje</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
-        <location filename="../src/mainwindow.cpp" line="1496"/>
+        <location filename="../src/mainwindow.cpp" line="1421"/>
         <source>Add password</source>
         <translation>Wachtwurd tafoegje</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1596"/>
+        <location filename="../src/mainwindow.cpp" line="1521"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nije map:
@@ -1505,29 +1503,27 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="723"/>
-        <location filename="../src/mainwindow.cpp" line="1222"/>
+        <location filename="../src/mainwindow.cpp" line="681"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP-koade kopiearre nei klamboerd</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="725"/>
-        <location filename="../src/mainwindow.cpp" line="1210"/>
+        <location filename="../src/mainwindow.cpp" line="683"/>
         <source>No OTP code found in this password entry</source>
         <translation>Gjin OTP-koade fûn yn dizze wachtwurdynfier</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="891"/>
+        <location filename="../src/mainwindow.cpp" line="850"/>
         <source>Searching…</source>
         <translation>Sykje…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="920"/>
+        <location filename="../src/mainwindow.cpp" line="879"/>
         <source>Search content (regex)</source>
         <translation>Sykje yn ynhâld (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="972"/>
+        <location filename="../src/mainwindow.cpp" line="931"/>
         <source>No matches found.</source>
         <translation>Gjin oerienkomsten fûn.</translation>
     </message>
@@ -1539,7 +1535,7 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="997"/>
+        <location filename="../src/mainwindow.cpp" line="956"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>yn %n yngong.</numerusform>
@@ -1547,17 +1543,17 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1205"/>
+        <location filename="../src/mainwindow.cpp" line="1165"/>
         <source>No password selected for OTP generation</source>
         <translation>Gjin wachtwurd selektearre foar it generearjen fan in OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1509"/>
+        <location filename="../src/mainwindow.cpp" line="1434"/>
         <source>Rename folder</source>
         <translation>Map omneame</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1513"/>
+        <location filename="../src/mainwindow.cpp" line="1438"/>
         <source>Rename password</source>
         <translation>Wachtwurd omneame</translation>
     </message>
@@ -1566,110 +1562,105 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Opnij fersiferje</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="154"/>
+        <location filename="../src/mainwindow.cpp" line="153"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">Tiid foarby; ynterface wurdt wer ynskeakele.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="363"/>
+        <location filename="../src/mainwindow.cpp" line="359"/>
         <source>Process Output</source>
         <translation>Prosesútfier</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="705"/>
-        <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="925"/>
+        <location filename="../src/mainwindow.cpp" line="884"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation type="unfinished">Ynhâldsykjen brûkt POSIX basale reguliere útdrukkings (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="927"/>
+        <location filename="../src/mainwindow.cpp" line="886"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">Ynhâldsykjen brûkt Perl-kompatibele reguliere útdrukkings (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1077"/>
+        <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Invalid name</source>
         <translation type="unfinished">Unjildige namme</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
+        <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Dy namme soe bûten it wachtwurdbewarplak útkomme. Kies in oare namme.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1523"/>
+        <location filename="../src/mainwindow.cpp" line="1448"/>
         <source>Share</source>
         <translation>Diele</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1533"/>
+        <location filename="../src/mainwindow.cpp" line="1458"/>
         <source>Re-encrypt all passwords</source>
         <translation>Alle wachtwurden opnij fersiferje</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1463"/>
         <source>Export my public key...</source>
         <translation>Myn iepenbiere kaai eksportearje…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1544"/>
+        <location filename="../src/mainwindow.cpp" line="1469"/>
         <source>Add recipient...</source>
         <translation>Untfanger taheakje…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1549"/>
+        <location filename="../src/mainwindow.cpp" line="1474"/>
         <source>What is this?</source>
         <translation>Wat is dit?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1608"/>
-        <location filename="../src/mainwindow.cpp" line="1617"/>
-        <location filename="../src/mainwindow.cpp" line="1752"/>
+        <location filename="../src/mainwindow.cpp" line="1533"/>
+        <location filename="../src/mainwindow.cpp" line="1542"/>
+        <location filename="../src/mainwindow.cpp" line="1677"/>
         <source>Error</source>
         <translation>Fersin</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1609"/>
+        <location filename="../src/mainwindow.cpp" line="1534"/>
         <source>Failed to create folder: %1</source>
         <translation>Koe map net oanmeitsje: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1618"/>
+        <location filename="../src/mainwindow.cpp" line="1543"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Koe it .gpg-id-bestân net oanmeitsje yn: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1645"/>
-        <location filename="../src/mainwindow.cpp" line="1685"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
+        <location filename="../src/mainwindow.cpp" line="1610"/>
         <source>Rename file</source>
         <translation>Triem omneame</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1645"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Rename Folder To: </source>
         <translation>Map omneame nei: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1685"/>
+        <location filename="../src/mainwindow.cpp" line="1610"/>
         <source>Rename File To: </source>
         <translation>Triem omneame nei: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1678"/>
         <source>Directory does not exist: %1</source>
         <translation>Map bestiet net: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1683"/>
         <source>Re-encrypt passwords</source>
         <translation>Wachtwurden opnij fersiferje</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1759"/>
+        <location filename="../src/mainwindow.cpp" line="1684"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -1686,18 +1677,18 @@ Dit kin in protte bestannen opnij skriuwe en kin net maklik ûngedien makke wurd
 Trochgean?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1804"/>
-        <location filename="../src/mainwindow.cpp" line="1823"/>
+        <location filename="../src/mainwindow.cpp" line="1729"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>Export Public Key</source>
         <translation>Iepenbiere kaai eksportearje</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1805"/>
+        <location filename="../src/mainwindow.cpp" line="1730"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Eksportearje dyn iepenbiere kaai&lt;/h3&gt;&lt;p&gt;Der is gjin ûndertekeningskaai konfigurearre. Stel ien yn by QtPass-ynstellings &amp;gt; GPG-kaaien, of fier dit út yn in terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Stjoer dêrnei it bestân nei dyn teamleden.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1824"/>
+        <location filename="../src/mainwindow.cpp" line="1749"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1706,17 +1697,17 @@ Trochgean?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1826"/>
+        <location filename="../src/mainwindow.cpp" line="1751"/>
         <source>No output from gpg.</source>
         <translation>Gjin útfier fan gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1853"/>
+        <location filename="../src/mainwindow.cpp" line="1778"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Wachtwurden diele mei GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1854"/>
+        <location filename="../src/mainwindow.cpp" line="1779"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Wachtwurden diele mei GPG&lt;/h3&gt;&lt;p&gt;Om wachtwurden te dielen mei oare brûkers:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksportearje dyn iepenbiere kaai&lt;/b&gt; en stjoer him nei dyn teamleden&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ymportearje de iepenbiere kaaien fan dyn teamleden&lt;/b&gt; yn dyn GPG-kaairing&lt;/li&gt;&lt;li&gt;&lt;b&gt;Fersiferje de wachtwurden opnij&lt;/b&gt; sadat alle ûntfangers se ûntsiferje kinne&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Allinnich minsken mei in oerienkommende geheime kaai kinne de wachtwurden ûntsiferje.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Brûk deselde GPG-kaai foar alle dielde mappen.&lt;/p&gt;&lt;p&gt;Sjoch de FAQ foar mear ynformaasje.&lt;/p&gt;</translation>
     </message>
@@ -1730,14 +1721,6 @@ Trochgean?</translation>
 &lt;p&gt;Meld asjebleaft alle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemen&lt;/a&gt; dy&apos;t jo miskien hawwe mei dizze software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumintaasje&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Boarnekoade&lt;/a&gt;&lt;/p&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>OtpCodeWidget</name>
-    <message>
-        <location filename="../src/otpcodewidget.cpp" line="67"/>
-        <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1840,16 +1823,6 @@ Trochgean?</translation>
         <source>Length:</source>
         <translation>Lingte:</translation>
     </message>
-    <message>
-        <location filename="../src/passworddialog.cpp" line="219"/>
-        <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/passworddialog.cpp" line="247"/>
-        <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -1860,27 +1833,16 @@ Trochgean?</translation>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="74"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="148"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="181"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="57"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="117"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="150"/>
         <source>Password</source>
         <translation type="unfinished">Wachtwurd</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="157"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="126"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">Iepenje %1 yn blêder</translation>
-    </message>
-    <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="293"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="306"/>
-        <source>OTP Code</source>
-        <translation type="unfinished">OTP-koade</translation>
-    </message>
-    <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="294"/>
-        <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Gjin OTP-koade fûn yn dizze wachtwurdynfier</translation>
     </message>
 </context>
 <context>
@@ -1891,88 +1853,88 @@ Trochgean?</translation>
         <translation>GPG-kaaipear generearje</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="214"/>
+        <location filename="../src/qtpass.cpp" line="213"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Koe gjin ferbining meitsje mei WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="230"/>
+        <location filename="../src/qtpass.cpp" line="229"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV-wachtwurd</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="231"/>
+        <location filename="../src/qtpass.cpp" line="230"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Fier it wachtwurd yn om te ferbinen mei WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="248"/>
+        <location filename="../src/qtpass.cpp" line="247"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav is ûnferwachts ôfsletten
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="252"/>
+        <location filename="../src/qtpass.cpp" line="251"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Koe fusedav net starte om ferbining te meitsjen mei WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="265"/>
+        <location filename="../src/qtpass.cpp" line="264"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="268"/>
+        <location filename="../src/qtpass.cpp" line="267"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="271"/>
+        <location filename="../src/qtpass.cpp" line="270"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="274"/>
+        <location filename="../src/qtpass.cpp" line="273"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="277"/>
+        <location filename="../src/qtpass.cpp" line="276"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="280"/>
+        <location filename="../src/qtpass.cpp" line="279"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="296"/>
+        <location filename="../src/qtpass.cpp" line="295"/>
         <source>GPG key pair generation failed</source>
         <translation>GPG-kaaipeargeneraasje mislearre</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="370"/>
+        <location filename="../src/qtpass.cpp" line="369"/>
         <source>GPG key pair generated successfully</source>
         <translation>GPG-kaaipear mei súkses generearre</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="454"/>
+        <location filename="../src/qtpass.cpp" line="453"/>
         <source>Clipboard cleared</source>
         <translation>Klamboerd wiske</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="456"/>
+        <location filename="../src/qtpass.cpp" line="455"/>
         <source>Clipboard not cleared</source>
         <translation>Klamboerd net wiske</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="502"/>
+        <location filename="../src/qtpass.cpp" line="501"/>
         <source>Copied to clipboard</source>
         <translation>Kopiearre nei klamboerd</translation>
     </message>
