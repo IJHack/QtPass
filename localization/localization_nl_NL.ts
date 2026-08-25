@@ -1894,12 +1894,12 @@ Doorgaan?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="304"/>
         <location filename="../src/passworddisplaypanel.cpp" line="317"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP-code</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="305"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Er is geen OTP-code gevonden in dit wachtwoordbestand</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

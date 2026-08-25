@@ -464,7 +464,7 @@ Verdien vil fortsatt bli lagret som oppgitt.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="988"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Installer GnuPG på systemet. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; fra Microsoft Store for å få det. &lt;br&gt;Hvis du allerede har gjort det, må du kontrollere at du startet den én gang, og&lt;br&gt;klikk på &quot;Oppdag autoamtisk&quot; i neste dialogboks.</translation>
+        <translation>Installer GnuPG på systemet. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; fra Microsoft Store for å få det. &lt;br&gt;Hvis du allerede har gjort det, må du kontrollere at du startet den én gang, og&lt;br&gt;klikk på &quot;Oppdag automatisk&quot; i neste dialogboks.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="993"/>

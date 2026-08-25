@@ -1468,7 +1468,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="1126"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nuevo fichero de contraseñas:
+(Se colocará en %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1523"/>

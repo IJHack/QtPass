@@ -568,12 +568,12 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1348"/>
         <source>New profile: %1 at %2</source>
-        <translation>Naujas profilis: %1 at %2</translation>
+        <translation>Naujas profilis: %1 ties %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1352"/>
         <source>Profile: %1 at %2</source>
-        <translation>Profilis: %1 at %2</translation>
+        <translation>Profilis: %1 ties %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1357"/>
