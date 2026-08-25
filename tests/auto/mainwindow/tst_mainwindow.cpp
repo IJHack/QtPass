@@ -16,6 +16,7 @@
  */
 
 #include <QApplication>
+#include <QClipboard>
 #include <QDir>
 #include <QFile>
 #include <QScopedPointer>
@@ -59,6 +60,8 @@ private Q_SLOTS:
   void deselectDoesNotCrash();
   void onProcessOutputAppendsToPanel();
   void onProcessOutputSkippedWhenPanelHidden();
+  void passwordFromFileToClipboardCopiesFirstLine();
+  void passwordFromFileToClipboardSkipsOtpSecret();
 };
 
 void tst_mainwindow::initTestCase() {
@@ -285,6 +288,53 @@ void tst_mainwindow::onProcessOutputSkippedWhenPanelHidden() {
   const QString before = outputEdit->toPlainText();
   m_window->onProcessOutput(QStringLiteral("should not appear"), false);
   QCOMPARE(outputEdit->toPlainText(), before);
+}
+
+/**
+ * @brief passwordFromFileToClipboard() copies the first line of a normal entry.
+ */
+void tst_mainwindow::passwordFromFileToClipboardCopiesFirstLine() {
+  AppSettings s = QtPassSettings::load();
+  s.useSelection = false;
+  s.useAutoclear = false;
+  QtPassSettings::save(s);
+
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("sentinel"));
+
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "passwordFromFileToClipboard", Qt::DirectConnection,
+      Q_ARG(QString, QStringLiteral("hunter2\nlogin: alice"))));
+
+  QCOMPARE(clip->text(), QStringLiteral("hunter2"));
+}
+
+/**
+ * @brief passwordFromFileToClipboard() never copies an otpauth:// shared
+ * secret.
+ *
+ * An entry created by `pass otp insert` has the otpauth URI as its first line;
+ * copying it would leak the TOTP seed. Regression guard for the Ctrl+C path,
+ * analogous to tst_passworddisplaypanel::otpUriAsPasswordIsNeverRendered.
+ */
+void tst_mainwindow::passwordFromFileToClipboardSkipsOtpSecret() {
+  AppSettings s = QtPassSettings::load();
+  s.useSelection = false;
+  s.useAutoclear = false;
+  QtPassSettings::save(s);
+
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("sentinel"));
+
+  const QString otpUri = QStringLiteral(
+      "otpauth://totp/Example:alice?secret=JBSWY3DPEHPK3PXP&issuer=Example");
+  QVERIFY(
+      QMetaObject::invokeMethod(m_window.data(), "passwordFromFileToClipboard",
+                                Qt::DirectConnection, Q_ARG(QString, otpUri)));
+
+  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+  QVERIFY2(!clip->text().contains(QStringLiteral("JBSWY3DPEHPK3PXP")),
+           "otpauth secret must never reach the clipboard");
 }
 
 QTEST_MAIN(tst_mainwindow)

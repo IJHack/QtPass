@@ -17,6 +17,7 @@
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
 #include "qpushbuttonwithclipboard.h"
+#include "qtcompat.h"
 #include "qtpass.h"
 #include "qtpasssettings.h"
 #include "templateio.h"
@@ -694,11 +695,8 @@ void MainWindow::passShowHandler(const QString &p_output) {
  * @return void - This function does not return a value.
  */
 void MainWindow::otpFromFileToClipboard(const QString &p_output) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  // Qt 5: no SingleShotConnection flag — disconnect manually on first fire.
-  disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-             &MainWindow::otpFromFileToClipboard);
-#endif
+  disconnectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
+                       &MainWindow::otpFromFileToClipboard);
   // A failed decrypt never fires finishedShow, and Qt::SingleShotConnection
   // only self-disconnects when it does fire, so a connection armed by an
   // earlier failed request can still be live here. Ignore it rather than
@@ -719,6 +717,19 @@ void MainWindow::otpFromFileToClipboard(const QString &p_output) {
   if (p_output.isEmpty()) {
     // Distinguish "could not read the entry" from "entry has no OTP".
     flashText(tr("Could not decrypt this password entry"), true);
+    setUiElementsEnabled(true);
+    return;
+  }
+
+  // passShowHandler is connected first, so it has already repainted the panel
+  // for this same finishedShow. When it rendered the OTP row the current code
+  // is derived and cached, so reuse it instead of re-loading settings and
+  // re-parsing p_output (mirrors onOtp()'s fast path). Falls through to a fresh
+  // parse when no OTP row is shown (hideContent / displayAsIs / no OTP field).
+  const QString shown = m_displayPanel->currentOtpCode();
+  if (!shown.isEmpty()) {
+    m_qtPass->copyTextToClipboard(shown);
+    showStatusMessage(tr("OTP code copied to clipboard"));
     setUiElementsEnabled(true);
     return;
   }
@@ -1264,16 +1275,8 @@ void MainWindow::onOtp() {
   m_otpRequestPending = true;
   m_otpRequestFile = file;
   setUiElementsEnabled(false);
-  // Disconnect any previous connection to avoid accumulation
-  disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-             &MainWindow::otpFromFileToClipboard);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-  connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-          &MainWindow::otpFromFileToClipboard, Qt::SingleShotConnection);
-#else
-  connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-          &MainWindow::otpFromFileToClipboard);
-#endif
+  connectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
+                    &MainWindow::otpFromFileToClipboard);
   // passShowHandler repaints the panel for this Show too, so keep the marker in
   // step or a second request would decrypt again instead of taking the fast
   // path. Safe to set now: executeWrapperStarted() clears the panel on every
@@ -1749,16 +1752,8 @@ void MainWindow::copyPasswordFromTreeview() {
 
   if (fileOrFolder.isFile()) {
     QString file = getFile(ui->treeView->currentIndex(), true);
-    // Disconnect any previous connection to avoid accumulation
-    disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-               &MainWindow::passwordFromFileToClipboard);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-            &MainWindow::passwordFromFileToClipboard, Qt::SingleShotConnection);
-#else
-    connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-            &MainWindow::passwordFromFileToClipboard);
-#endif
+    connectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
+                      &MainWindow::passwordFromFileToClipboard);
     // This Show repaints the panel as well; see onOtp().
     m_shownFile = file;
     QtPassSettings::getPass()->Show(file);
@@ -1766,12 +1761,20 @@ void MainWindow::copyPasswordFromTreeview() {
 }
 
 void MainWindow::passwordFromFileToClipboard(const QString &text) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  // Qt 5: no SingleShotConnection flag — disconnect manually on first fire.
-  disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-             &MainWindow::passwordFromFileToClipboard);
-#endif
-  QStringList tokens = text.split('\n');
+  disconnectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
+                       &MainWindow::passwordFromFileToClipboard);
+  const QStringList tokens = text.split('\n');
+  if (tokens.isEmpty()) {
+    return;
+  }
+  // An entry created by `pass otp insert` has the otpauth:// URI as its first
+  // line. That URI carries the shared TOTP secret (the seed, not a code), so
+  // copying it to the clipboard would leak 2FA material. Skip it, matching the
+  // display path (FileContent::getPasswordForDisplay / PasswordDisplayPanel).
+  if (FileContent::isOtpUriValue(tokens[0])) {
+    flashText(tr("This entry holds an OTP secret, not a password"), true);
+    return;
+  }
   m_qtPass->copyTextToClipboard(tokens[0]);
 }
 

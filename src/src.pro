@@ -150,6 +150,7 @@ HEADERS   += mainwindow.h \
              passwordconfiguration.h \
              userinfo.h \
              qtpass.h \
+             qtcompat.h \
              profileinit.h
 
 FORMS     += mainwindow.ui \
