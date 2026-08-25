@@ -1,0 +1,4 @@
+<map id="OtpCodeWidget::secondsRemaining" name="OtpCodeWidget::secondsRemaining">
+<area shape="rect" id="Node000001" title="Seconds left on the current code, as last rendered." alt="" coords="5,29,260,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="92,31,83,21,87,11,104,5,133,3,168,7,179,11,182,17,178,20,175,15,167,12,133,8,105,10,91,15,88,20,96,27"/>
+</map>

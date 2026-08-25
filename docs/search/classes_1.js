@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['configdialog_0',['ConfigDialog',['../class_config_dialog.html',1,'']]]
+  ['base32_0',['Base32',['../class_base32.html',1,'']]]
 ];

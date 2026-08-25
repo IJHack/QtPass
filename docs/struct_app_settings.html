@@ -183,8 +183,8 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a95d05280efb398eb31e2440b1fcd1444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable git integration.  <br /></td></tr>
 <tr class="memitem:a0cd6f1f365fafe779fbb047bc10453d7" id="r_a0cd6f1f365fafe779fbb047bc10453d7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0cd6f1f365fafe779fbb047bc10453d7">useGrepSearch</a> {false}</td></tr>
 <tr class="memdesc:a0cd6f1f365fafe779fbb047bc10453d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable content (grep) search.  <br /></td></tr>
-<tr class="memitem:a39b0ad93cc76f9941fe22291ea689613" id="r_a39b0ad93cc76f9941fe22291ea689613"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a39b0ad93cc76f9941fe22291ea689613">useOtp</a> {false}</td></tr>
-<tr class="memdesc:a39b0ad93cc76f9941fe22291ea689613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable pass-otp support.  <br /></td></tr>
+<tr class="memitem:a39b0ad93cc76f9941fe22291ea689613" id="r_a39b0ad93cc76f9941fe22291ea689613"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a39b0ad93cc76f9941fe22291ea689613">useOtp</a> {true}</td></tr>
+<tr class="memdesc:a39b0ad93cc76f9941fe22291ea689613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable native TOTP (OTP) support.  <br /></td></tr>
 <tr class="memitem:ac73a141ef053548af932d5d6cc56e1b9" id="r_ac73a141ef053548af932d5d6cc56e1b9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac73a141ef053548af932d5d6cc56e1b9">useQrencode</a> {false}</td></tr>
 <tr class="memdesc:ac73a141ef053548af932d5d6cc56e1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable qrencode support.  <br /></td></tr>
 <tr class="memitem:a6c2e2a0291def634f07ab1608386676a" id="r_a6c2e2a0291def634f07ab1608386676a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6c2e2a0291def634f07ab1608386676a">usePwgen</a> {false}</td></tr>
@@ -965,12 +965,12 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool AppSettings::useOtp {false}</td>
+          <td class="memname">bool AppSettings::useOtp {true}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enable pass-otp support. </p>
+<p>Enable native TOTP (OTP) support. </p>
 
 <p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00074">74</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 

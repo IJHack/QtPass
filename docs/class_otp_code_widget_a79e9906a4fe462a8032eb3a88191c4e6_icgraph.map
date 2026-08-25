@@ -1,0 +1,4 @@
+<map id="OtpCodeWidget::copyRequested" name="OtpCodeWidget::copyRequested">
+<area shape="rect" id="Node000001" title="Emitted when the copy button is activated." alt="" coords="5,29,237,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="163,20,152,11,121,8,96,10,83,15,81,20,88,27,84,31,75,21,80,11,95,5,121,3,154,7,166,16"/>
+</map>

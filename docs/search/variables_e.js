@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['templateallfields_0',['templateAllFields',['../struct_app_settings.html#abf7c1a08e3aeb6528162cef23c65a04d',1,'AppSettings']]]
+  ['restorecursor_0',['restoreCursor',['../struct_grep_search_controller_1_1_finish_outcome.html#ac239184fd57227541a8be6147f6616b8',1,'GrepSearchController::FinishOutcome']]]
 ];

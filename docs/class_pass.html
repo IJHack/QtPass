@@ -1894,7 +1894,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Generate OTP for password file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Legacy passthrough to the <span class="tt">pass otp</span> extension. The UI no longer calls this: <a class="el" href="class_main_window.html" title="Main application window orchestrating UI, user interactions, and external process handlers.">MainWindow</a> derives one-time passwords in-process via <a class="el" href="class_totp.html" title="RFC 6238 time-based one-time password generation.">Totp</a>, so OTP works on every platform and with either backend. Kept for API compatibility and for callers that specifically want the extension. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file</td><td>Path to password file. </td></tr>
   </table>

@@ -117,15 +117,23 @@ document.addEventListener('DOMContentLoaded', () => {
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac88e8096551d24a41fc0625a4d903139" id="r_ac88e8096551d24a41fc0625a4d903139"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac88e8096551d24a41fc0625a4d903139">getPassword</a> () const -&gt; QString</td></tr>
+<tr class="memitem:ae2d4131533e5e1eee2a5af47fdb653d4" id="r_ae2d4131533e5e1eee2a5af47fdb653d4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae2d4131533e5e1eee2a5af47fdb653d4">getPasswordForDisplay</a> () const -&gt; QString</td></tr>
+<tr class="memdesc:ae2d4131533e5e1eee2a5af47fdb653d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like getPassword but empty when the password line is itself an otpauth URI.  <br /></td></tr>
 <tr class="memitem:a89393e371a598cb3e0d7d149dbc431b1" id="r_a89393e371a598cb3e0d7d149dbc431b1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues</a> () const -&gt; <a class="el" href="class_named_values.html">NamedValues</a></td></tr>
 <tr class="memitem:a845c61a8c0f52e5aa73953c9162dd47d" id="r_a845c61a8c0f52e5aa73953c9162dd47d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a845c61a8c0f52e5aa73953c9162dd47d">getRemainingData</a> () const -&gt; QString</td></tr>
 <tr class="memitem:ac38b9c211d6f62eb7420eecc66f935e8" id="r_ac38b9c211d6f62eb7420eecc66f935e8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac38b9c211d6f62eb7420eecc66f935e8">getRemainingDataForDisplay</a> () const -&gt; QString</td></tr>
 <tr class="memdesc:ac38b9c211d6f62eb7420eecc66f935e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like getRemainingData but without data that should not be displayed (like a TOTP secret).  <br /></td></tr>
+<tr class="memitem:ad196088dd0d816ee3c1311a4448940d2" id="r_ad196088dd0d816ee3c1311a4448940d2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad196088dd0d816ee3c1311a4448940d2">getOtpUri</a> () const -&gt; QString</td></tr>
+<tr class="memdesc:ad196088dd0d816ee3c1311a4448940d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entry's raw one-time password configuration, if it has one.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af8c5c3b19e2f1244c5e83aa40521ebde" id="r_af8c5c3b19e2f1244c5e83aa40521ebde"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af8c5c3b19e2f1244c5e83aa40521ebde">parse</a> (const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields) -&gt; <a class="el" href="class_file_content.html">FileContent</a></td></tr>
 <tr class="memdesc:af8c5c3b19e2f1244c5e83aa40521ebde"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse parses the given fileContent in a <a class="el" href="class_file_content.html" title="Represents the parsed contents of a password file.">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depending on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay.  <br /></td></tr>
+<tr class="memitem:affff8612aceb9006d8b7117e2a6ef70a" id="r_affff8612aceb9006d8b7117e2a6ef70a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#affff8612aceb9006d8b7117e2a6ef70a">isOtpFieldName</a> (const QString &amp;name) -&gt; bool</td></tr>
+<tr class="memdesc:affff8612aceb9006d8b7117e2a6ef70a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a field name designates the one-time password field.  <br /></td></tr>
+<tr class="memitem:a92629a218b9fce0c611d9ac1e1eca638" id="r_a92629a218b9fce0c611d9ac1e1eca638"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a92629a218b9fce0c611d9ac1e1eca638">isOtpUriValue</a> (const QString &amp;value) -&gt; bool</td></tr>
+<tr class="memdesc:a92629a218b9fce0c611d9ac1e1eca638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a field value is an otpauth URI, and therefore a secret.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents the parsed contents of a password file. </p>
@@ -171,6 +179,51 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad196088dd0d816ee3c1311a4448940d2" name="ad196088dd0d816ee3c1311a4448940d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad196088dd0d816ee3c1311a4448940d2">&#9670;&#160;</a></span>getOtpUri()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FileContent::getOtpUri </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The entry's raw one-time password configuration, if it has one. </p>
+<p>Looked up in this order:</p><ol type="1">
+<li>the value of the first field whose name satisfies <a class="el" href="#affff8612aceb9006d8b7117e2a6ef70a" title="Whether a field name designates the one-time password field.">isOtpFieldName()</a>;</li>
+<li>the first bare <span class="tt">otpauth://</span> line in the body, which is how the <span class="tt">pass-otp</span> extension stores it;</li>
+<li>the value of the first <span class="tt">OTP:</span> line that was not promoted to a named value, which is what happens when the template does not list <span class="tt">OTP</span>.</li>
+</ol>
+<p>The string is returned verbatim and is not validated here: it may be an <span class="tt">otpauth://</span> URI or a bare base32 secret. <a class="el" href="class_totp.html#a4b9e16c21366dc739b9855bbd1fbd7cb" title="Parse an OTP configuration string.">Totp::parse()</a> does the validation. </p><dl class="section return"><dt>Returns</dt><dd>The OTP configuration string, or an empty string when the entry has none. </dd></dl>
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_ad196088dd0d816ee3c1311a4448940d2_cgraph.svg" width="178" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_ad196088dd0d816ee3c1311a4448940d2_icgraph.svg" width="178" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="ac88e8096551d24a41fc0625a4d903139" name="ac88e8096551d24a41fc0625a4d903139"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac88e8096551d24a41fc0625a4d903139">&#9670;&#160;</a></span>getPassword()</h2>
 
@@ -197,6 +250,46 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae2d4131533e5e1eee2a5af47fdb653d4" name="ae2d4131533e5e1eee2a5af47fdb653d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d4131533e5e1eee2a5af47fdb653d4">&#9670;&#160;</a></span>getPasswordForDisplay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FileContent::getPasswordForDisplay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Like getPassword but empty when the password line is itself an otpauth URI. </p>
+<p><span class="tt">pass otp insert</span> writes the URI as the entry's only line, so it lands in the password position. It is a shared secret, not a password: it must never be rendered or placed on the clipboard. <a class="el" href="#ac88e8096551d24a41fc0625a4d903139">getPassword()</a> still returns it so the edit dialog round-trips the file unchanged. </p><dl class="section return"><dt>Returns</dt><dd>The password, or an empty string when it is an otpauth URI. </dd></dl>
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_ae2d4131533e5e1eee2a5af47fdb653d4_cgraph.svg" width="198" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_ae2d4131533e5e1eee2a5af47fdb653d4_icgraph.svg" width="198" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a845c61a8c0f52e5aa73953c9162dd47d" name="a845c61a8c0f52e5aa73953c9162dd47d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a845c61a8c0f52e5aa73953c9162dd47d">&#9670;&#160;</a></span>getRemainingData()</h2>
 
@@ -220,16 +313,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the data that is not the password and not in getNamedValues. </dd></dl>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a845c61a8c0f52e5aa73953c9162dd47d_cgraph.svg" width="238" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a845c61a8c0f52e5aa73953c9162dd47d_icgraph.svg" width="238" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -260,17 +353,109 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Like getRemainingData but without data that should not be displayed (like a TOTP secret). </p>
 <dl class="section return"><dt>Returns</dt><dd>Remaining data string safe for display. </dd></dl>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_ac38b9c211d6f62eb7420eecc66f935e8_cgraph.svg" width="206" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_ac38b9c211d6f62eb7420eecc66f935e8_icgraph.svg" width="206" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="affff8612aceb9006d8b7117e2a6ef70a" name="affff8612aceb9006d8b7117e2a6ef70a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affff8612aceb9006d8b7117e2a6ef70a">&#9670;&#160;</a></span>isOtpFieldName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FileContent::isOtpFieldName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether a field name designates the one-time password field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Field name as written in the file; surrounding whitespace is ignored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true for "OTP" or "TOTP", compared case-insensitively. </dd></dl>
+<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_affff8612aceb9006d8b7117e2a6ef70a_cgraph.svg" width="219" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_affff8612aceb9006d8b7117e2a6ef70a_icgraph.svg" width="219" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a92629a218b9fce0c611d9ac1e1eca638" name="a92629a218b9fce0c611d9ac1e1eca638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92629a218b9fce0c611d9ac1e1eca638">&#9670;&#160;</a></span>isOtpUriValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FileContent::isOtpUriValue </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether a field value is an otpauth URI, and therefore a secret. </p>
+<p>A URI is a shared secret whatever the field is called, so both the display-suppression and the OTP lookup key off the value as well as the name; suppressing only <span class="tt">OTP:</span>/<span class="tt">TOTP:</span> leaked <span class="tt">2fa:</span> and friends. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Field value; surrounding whitespace is ignored. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when it starts with "otpauth://", compared case-insensitively. </dd></dl>
+<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a92629a218b9fce0c611d9ac1e1eca638_cgraph.svg" width="204" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-13" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a92629a218b9fce0c611d9ac1e1eca638_icgraph.svg" width="204" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

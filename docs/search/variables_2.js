@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['discard_0',['discard',['../struct_grep_search_controller_1_1_finish_outcome.html#aa12d73ecc749e62f884be80576823595',1,'GrepSearchController::FinishOutcome']]],
-  ['displayasis_1',['displayAsIs',['../struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d',1,'AppSettings']]]
+  ['characters_0',['Characters',['../struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0',1,'PasswordConfiguration']]],
+  ['clipboardtype_1',['clipBoardType',['../struct_app_settings.html#a731f7b91129a33d6835e56611e72dbe8',1,'AppSettings']]],
+  ['created_2',['created',['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo']]]
 ];

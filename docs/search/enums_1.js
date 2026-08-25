@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['itemkind_0',['ItemKind',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6',1,'dragAndDropInfoPasswordStore']]]
+  ['characterset_0',['characterSet',['../struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173',1,'PasswordConfiguration']]],
+  ['clipboardtype_1',['clipBoardType',['../namespace_enums.html#aa36f045555e72e4d536b48aac12ee52d',1,'Enums']]]
 ];

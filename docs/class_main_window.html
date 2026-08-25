@@ -146,8 +146,10 @@ void&#160;</td><td class="memItemRight"><b>executeWrapperStarted</b> ()</td></tr
 <tr class="memdesc:a69f4a122336a6fc3875fc94741e4d1cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show a message in the status bar for the given duration.  <br /></td></tr>
 <tr class="memitem:a35dcbf29b9cfe87b6f7d597b7abba480" id="r_a35dcbf29b9cfe87b6f7d597b7abba480"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a35dcbf29b9cfe87b6f7d597b7abba480">passShowHandler</a> (const QString &amp;output)</td></tr>
 <tr class="memdesc:a35dcbf29b9cfe87b6f7d597b7abba480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle output from the pass show command.  <br /></td></tr>
-<tr class="memitem:ad138cb03123dbf06fe8a118ea057412d" id="r_ad138cb03123dbf06fe8a118ea057412d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad138cb03123dbf06fe8a118ea057412d">passOtpHandler</a> (const QString &amp;output)</td></tr>
-<tr class="memdesc:ad138cb03123dbf06fe8a118ea057412d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle output from the pass OTP command.  <br /></td></tr>
+<tr class="memitem:a7480a2bf495584363acf5e73c5e0570c" id="r_a7480a2bf495584363acf5e73c5e0570c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7480a2bf495584363acf5e73c5e0570c">otpFromFileToClipboard</a> (const QString &amp;output)</td></tr>
+<tr class="memdesc:a7480a2bf495584363acf5e73c5e0570c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a one-time password from decrypted content and copy it.  <br /></td></tr>
+<tr class="memitem:a083c74efb3eabf7f2ccd7fa691bf8841" id="r_a083c74efb3eabf7f2ccd7fa691bf8841"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a083c74efb3eabf7f2ccd7fa691bf8841">cancelOtpRequest</a> ()</td></tr>
+<tr class="memdesc:a083c74efb3eabf7f2ccd7fa691bf8841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abandon an in-flight OTP request.  <br /></td></tr>
 <tr class="memitem:a270b5f2701f275c3de734f4150a3d897" id="r_a270b5f2701f275c3de734f4150a3d897"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a270b5f2701f275c3de734f4150a3d897">onGrepFinished</a> (const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</td></tr>
 <tr class="memdesc:a270b5f2701f275c3de734f4150a3d897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle results from a completed grep search.  <br /></td></tr>
 <tr class="memitem:a6961588ebf3c0640200e0cfa920af3be" id="r_a6961588ebf3c0640200e0cfa920af3be"><td class="memItemLeft"><a id="a6961588ebf3c0640200e0cfa920af3be" name="a6961588ebf3c0640200e0cfa920af3be"></a>
@@ -268,6 +270,34 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a083c74efb3eabf7f2ccd7fa691bf8841" name="a083c74efb3eabf7f2ccd7fa691bf8841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a083c74efb3eabf7f2ccd7fa691bf8841">&#9670;&#160;</a></span>cancelOtpRequest</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::cancelOtpRequest </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abandon an in-flight OTP request. </p>
+<p>A failed decrypt never emits <a class="el" href="class_pass.html#affead66e0aca2e275dc21dbde18066fb" title="Emitted when show finishes.">Pass::finishedShow</a>, so without this the request would stay pending for the rest of the session. </p>
+
+</div>
+</div>
 <a id="a416ae2140ac1aa9f03a6279316abdcad" name="a416ae2140ac1aa9f03a6279316abdcad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a416ae2140ac1aa9f03a6279316abdcad">&#9670;&#160;</a></span>changeEvent()</h2>
 
@@ -736,8 +766,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad138cb03123dbf06fe8a118ea057412d" name="ad138cb03123dbf06fe8a118ea057412d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad138cb03123dbf06fe8a118ea057412d">&#9670;&#160;</a></span>passOtpHandler</h2>
+<a id="a7480a2bf495584363acf5e73c5e0570c" name="a7480a2bf495584363acf5e73c5e0570c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7480a2bf495584363acf5e73c5e0570c">&#9670;&#160;</a></span>otpFromFileToClipboard</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -746,7 +776,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void MainWindow::passOtpHandler </td>
+          <td class="memname">void MainWindow::otpFromFileToClipboard </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span></td><td>)</td>
           <td></td>
@@ -759,10 +789,10 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Handle output from the pass OTP command. </p>
+<p>Generate a one-time password from decrypted content and copy it. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">output</td><td>OTP output string. </td></tr>
+    <tr><td class="paramname">output</td><td>Decrypted entry content. </td></tr>
   </table>
   </dd>
 </dl>
