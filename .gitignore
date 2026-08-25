@@ -47,6 +47,7 @@ tests/auto/userinfo/tst_userinfo
 tests/auto/locale/tst_locale
 tests/auto/locale/.qm/
 tests/auto/locale/qmake_qmake_qm_files.qrc
+tests/auto/passbackendfactory/tst_passbackendfactory
 **/*.gc*
 *.bak
 README.c*
