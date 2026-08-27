@@ -195,7 +195,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
+        <translation>Tek kullanımlık parola (OTP) desteğini etkinleştir</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -1289,7 +1289,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="719"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu parola girdisinin şifresi çözülemedi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="952"/>
@@ -1416,7 +1416,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu girdi bir parola değil, bir OTP şifresi içerir</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1873"/>
@@ -1546,7 +1546,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP kodunun değişmesine kalan saniye</translation>
     </message>
 </context>
 <context>
@@ -1652,12 +1652,12 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
+        <translation>otpauth:// URI veya base32 şifresi</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçersiz OTP şifresi</translation>
     </message>
 </context>
 <context>
@@ -1684,12 +1684,12 @@ Devam edilsin mi?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="304"/>
         <location filename="../src/passworddisplaypanel.cpp" line="317"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP Kodu</translation>
+        <translation>OTP Kodu</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="305"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Bu parola girişinde OTP kodu bulunamadı</translation>
+        <translation>Bu parola girdisinde OTP kodu bulunamadı</translation>
     </message>
 </context>
 <context>
