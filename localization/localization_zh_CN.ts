@@ -126,7 +126,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
+        <translation>启用一次性密码（OTP）支持</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -1536,7 +1536,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="719"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>无法解密此密码条目</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="952"/>
@@ -1619,7 +1619,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished"></translation>
+        <translation>此条目为 OTP secret 不是密码</translation>
     </message>
     <message>
         <source>Open %1 in browser</source>
@@ -1708,7 +1708,7 @@ Continue?</source>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP 码保持不变秒数</translation>
     </message>
 </context>
 <context>
@@ -1814,12 +1814,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
+        <translation>otpauth:// URI 或 base32 secret</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
+        <translation>无效的 OTP secret</translation>
     </message>
 </context>
 <context>
@@ -1846,12 +1846,12 @@ Continue?</source>
         <location filename="../src/passworddisplaypanel.cpp" line="304"/>
         <location filename="../src/passworddisplaypanel.cpp" line="317"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP码</translation>
+        <translation>OTP 码</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="305"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">此密码条目中未找到 OTP 码</translation>
+        <translation>此密码条目中未找到 OTP 码</translation>
     </message>
 </context>
 <context>

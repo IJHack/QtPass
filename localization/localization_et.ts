@@ -136,12 +136,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
+        <translation>Lülita sisse ühekordsete salasõnade (OTP) tugi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation>Luba sisuotsing (pass grep)</translation>
+        <translation>Lülita sisse sisuotsingu tugi (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
@@ -1517,7 +1517,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="719"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Selle salasõnakirje dekrüptimine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="732"/>
@@ -1694,7 +1694,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished"></translation>
+        <translation>Selles kirjes leidub ühekordse salasõna (OTP) loomiseks vajalik saladus, mitte salasõna</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1822"/>
@@ -1740,7 +1740,7 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekundeid ühekordse salasõna (OTP) muutumiseni</translation>
     </message>
 </context>
 <context>
@@ -1846,12 +1846,12 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
+        <translation>otpauth:// URI või base32-kodeeringus saladus</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
+        <translation>Vigane ühekordse salasõna lähtesaladus</translation>
     </message>
 </context>
 <context>
@@ -1878,12 +1878,12 @@ Kas jätkame?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="304"/>
         <location filename="../src/passworddisplaypanel.cpp" line="317"/>
         <source>OTP Code</source>
-        <translation type="unfinished">Ühekordse salasõna kood</translation>
+        <translation>Ühekordse salasõna (OTP) kood</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="305"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Selle salasõna kirje juures ei leidu ühekordset 2FA koodi</translation>
+        <translation>Selle salasõna kirje juures ei leidu ühekordse salasõna (OTP) koodi</translation>
     </message>
 </context>
 <context>
