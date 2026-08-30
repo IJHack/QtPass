@@ -319,7 +319,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivera stöd för engångslösenord (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -1476,7 +1476,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="719"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte dekryptera den här lösenordsposten</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="952"/>
@@ -1556,7 +1556,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished"></translation>
+        <translation>Den här posten innehåller en engångslösenordshemlighet, inte ett lösenord</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1822"/>
@@ -1637,7 +1637,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekunder tills engångskoden ändras</translation>
     </message>
 </context>
 <context>
@@ -1743,12 +1743,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
+        <translation>otpauth:// URI eller base32 hemlighet</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
+        <translation>Ogiltig OTP hemlighet</translation>
     </message>
 </context>
 <context>
@@ -1775,12 +1775,12 @@ Fortsätta?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="304"/>
         <location filename="../src/passworddisplaypanel.cpp" line="317"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP-kod</translation>
+        <translation>OTP kod</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="305"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Ingen engångslösenord-kod hittades i den här lösenordsposten</translation>
+        <translation>Ingen engångskod hittades i den här lösenordsposten</translation>
     </message>
 </context>
 <context>
