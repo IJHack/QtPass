@@ -412,7 +412,7 @@
         <a
           class="app windows"
           href="https://github.com/IJHack/QtPass/releases/download/v1.7.0/qtpass-1.7.0.exe"
-          >QtPass 1.5.1</a
+          >QtPass 1.7.0</a
         >
 
         <p>
@@ -442,7 +442,7 @@
         <a
           class="app macos"
           href="https://github.com/IJHack/QtPass/releases/download/v1.7.0/QtPass-1.7.0.dmg"
-          >QtPass 1.5.1</a
+          >QtPass 1.7.0</a
         >
 
         <p>
@@ -450,14 +450,16 @@
           <a href="https://github.com/IJHack/QtPass/releases">releases page</a>
         </p>
 
-        Via
-        <a href="https://github.com/Homebrew/homebrew-cask">Homebrew Cask</a>
-        <a href="https://repology.org/metapackage/qtpass"
-          ><img
-            src="https://repology.org/badge/version-only-for-repo/homebrew_casks/qtpass.svg"
-            alt="Homebrew Casks package"
-        /></a>
-        <pre><code>brew install qtpass --cask</code></pre>
+        <p>
+          <strong>The Homebrew cask is disabled since 2026-09-01</strong>
+          because the app is not notarized. The <code>.dmg</code> still works,
+          but macOS will refuse the first launch. Remove the quarantine flag:
+        </p>
+        <pre><code>xattr -d com.apple.quarantine /Applications/QtPass.app</code></pre>
+        <p>
+          Read <a href="/macos">why this happened and how you can help</a>
+          get QtPass signed again.
+        </p>
 
         <p>QtPass works best with pass and pinentry-mac installed.</p>
         <pre><code>brew install pass pinentry-mac</code></pre>

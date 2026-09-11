@@ -274,7 +274,13 @@
             ><span aria-hidden="true" class="octicon octicon-link"></span></a
           >macOS
         </h3>
-        <pre><code>brew install --cask qtpass</code></pre>
+        <pre><code>xattr -d com.apple.quarantine /Applications/QtPass.app</code></pre>
+        <p>
+          After installing the <code>.dmg</code> from the
+          <a href="https://github.com/IJHack/QtPass/releases">releases page</a>.
+          The Homebrew cask is disabled until QtPass is notarized;
+          <a href="/macos">here is how you can help</a>.
+        </p>
 
         <p>
           <a href="/downloads">More installation options</a>

@@ -3821,6 +3821,12 @@
   <changefreq>monthly</changefreq>
 </url>
 <url>
+  <loc>https://qtpass.org/macos</loc>
+  <lastmod>2026-09-12T12:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
   <loc>https://qtpass.org/getting-started</loc>
   <lastmod>2026-04-22T13:48:59+00:00</lastmod>
   <priority>0.80</priority>

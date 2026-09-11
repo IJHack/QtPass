@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>QtPass on macOS: Homebrew, Gatekeeper and how you can help</title>
+    <meta
+      name="description"
+      content="The QtPass Homebrew cask was disabled on 2026-09-01 because the app is not notarized. How to install QtPass on macOS today, and how to help get it signed."
+    />
+    <meta
+      name="keywords"
+      content="qtpass, pass, gpg, git, password, store, manager, security"
+    />
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+    />
+    <link rel="canonical" href="https://qtpass.org/macos" />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./images/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./images/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./images/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./images/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./images/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./images/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./images/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./images/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./images/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./images/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      property="og:title"
+      content="QtPass on macOS: Homebrew, Gatekeeper and how you can help"
+    />
+    <meta property="og:site_name" content="QtPass" />
+    <meta property="og:url" content="https://qtpass.org/macos" />
+    <meta property="og:image" content="https://qtpass.org/images/qtpass.png" />
+    <meta
+      property="og:description"
+      content="The QtPass Homebrew cask was disabled on 2026-09-01 because the app is not notarized. How to install QtPass on macOS today, and how to help get it signed."
+    />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@annejanbrouwer" />
+    <meta
+      name="twitter:title"
+      content="QtPass on macOS: Homebrew, Gatekeeper and how you can help"
+    />
+    <meta
+      name="twitter:description"
+      content="The QtPass Homebrew cask was disabled on 2026-09-01 because the app is not notarized. How to install QtPass on macOS today, and how to help get it signed."
+    />
+    <meta name="twitter:url" content="https://qtpass.org/macos" />
+    <meta name="twitter:image" content="https://qtpass.org/images/qtpass.png" />
+    <meta
+      name="twitter:image:src"
+      content="https://qtpass.org/images/icon.svg"
+    />
+    <link href="https://plus.google.com/u/0/+AnneJanBrouwer" rel="publisher" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "QtPass",
+        "url": "https://qtpass.org/",
+        "author": {
+          "@type": "Organization",
+          "name": "IJHack"
+        },
+        "downloadUrl": "https://github.com/IJHack/QtPass/releases",
+        "operatingSystem": "Linux, BSD, OS X and Windows",
+        "requirements": "pass or git and gpg2",
+        "screenshot": "https://qtpass.org/images/qtpass.png",
+        "softwareVersion": "1.7.0",
+        "applicationCategory": "Security, Utility",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "EUR"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "reviewCount": "8"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="wrapper">
+      <header>
+        <h1>QtPass <small>1.7.0</small></h1>
+        <p>
+          <a
+            title="QtPass GUI for pass, the standard UNIX password manager"
+            href="https://qtpass.org/"
+            >QtPass</a
+          >
+          is a multi-platform GUI for
+          <a
+            title="pass, the standard unix password manager"
+            href="https://www.passwordstore.org/"
+            >pass</a
+          >, the standard unix password manager.
+        </p>
+
+        <p class="view">
+          <a href="https://github.com/IJHack/QtPass"
+            >View the Project on GitHub <small>IJHack/QtPass</small></a
+          >
+        </p>
+
+        <ul>
+          <li>
+            <a
+              title="QtPass releases"
+              href="https://github.com/IJHack/QtPass/releases"
+              >Download <strong>Releases</strong></a
+            >
+          </li>
+          <li>
+            <a title="QtPass Windows" href="/downloads#Windows"
+              >Installer .exe <strong>Windows</strong></a
+            >
+          </li>
+          <li>
+            <a title="QtPass macOS" href="/downloads#macOS"
+              >Get a .dmg <strong>macOS</strong></a
+            >
+          </li>
+        </ul>
+
+        <div class="screenshots">
+          <img id="qtpass" src="images/qtpass.png" alt="QtPass MainWindow" />
+          <img
+            id="config"
+            class="hidden"
+            src="images/config.png"
+            alt="QtPass Configuration"
+          />
+        </div>
+      </header>
+      <section>
+        <h2>
+          <a id="macos" class="anchor" href="#macos" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >QtPass on macOS: Homebrew, Gatekeeper and how you can help
+        </h2>
+        <p><em>12 September 2026</em></p>
+
+        <h3>
+          <a
+            id="what-happened"
+            class="anchor"
+            href="#what-happened"
+            aria-hidden="true"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >What happened
+        </h3>
+        <p>
+          Since 1 September 2026 <code>brew install --cask qtpass</code> no
+          longer works. Homebrew now disables every cask whose app does not pass
+          the macOS Gatekeeper check, and the QtPass <code>.dmg</code> is
+          neither code-signed nor notarized by Apple. The cask is marked
+          <code
+            >disable! date: "2026-09-01", because: :fails_gatekeeper_check</code
+          >.
+        </p>
+        <p>
+          Homebrew took that decision in August 2025. We found out in August
+          2026, when a user reported it in
+          <a href="https://github.com/IJHack/QtPass/issues/1542">#1542</a>.
+          Nothing is wrong with Homebrew, and nothing is wrong with QtPass
+          itself; the app simply is not signed.
+        </p>
+
+        <h3>
+          <a
+            id="why-not-signed"
+            class="anchor"
+            href="#why-not-signed"
+            aria-hidden="true"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >Why QtPass is not signed
+        </h3>
+        <p>
+          Signing and notarizing a macOS app needs a paid Apple Developer
+          Program membership, about 99 euro per year. QtPass is maintained by
+          volunteers in their spare time. None of us use macOS any more (I have
+          not touched a MacBook in five years) and none of us have that
+          membership. QtPass actually started life as a macOS-only app, so there
+          is some irony here.
+        </p>
+        <p>
+          The build side is not the problem: our GitHub Actions already produce
+          the <code>.dmg</code> on a macOS runner. What is missing is a
+          Developer ID certificate to sign it with and an account to notarize it
+          against.
+        </p>
+
+        <h3>
+          <a
+            id="install-today"
+            class="anchor"
+            href="#install-today"
+            aria-hidden="true"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >How to install QtPass on macOS today
+        </h3>
+        <p>
+          Download the <code>.dmg</code> from the
+          <a href="https://github.com/IJHack/QtPass/releases">releases page</a>
+          and drag QtPass to your Applications folder. On first launch macOS
+          will refuse to open it, because the download carries the quarantine
+          flag and the app is unsigned. Remove the flag:
+        </p>
+        <pre><code>xattr -d com.apple.quarantine /Applications/QtPass.app</code></pre>
+        <p>
+          Or open
+          <strong>System Settings &rarr; Privacy &amp; Security</strong> after
+          the first refused launch and click <strong>Open Anyway</strong>. On
+          macOS 15 and later right-click &rarr; Open no longer bypasses
+          Gatekeeper for unsigned apps.
+        </p>
+        <p>You can also build from source:</p>
+        <pre><code>brew install qt pass pinentry-mac
+git clone https://github.com/IJHack/QtPass.git
+cd QtPass
+qmake6 &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
+
+        <h3>
+          <a
+            id="how-to-help"
+            class="anchor"
+            href="#how-to-help"
+            aria-hidden="true"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >How you can help
+        </h3>
+        <p>
+          <strong
+            >Best option: you or your company already have an Apple Developer
+            ID.</strong
+          >
+          Then you can sign and notarize our releases. It is a one-time setup: a
+          Developer ID Application certificate and an app-specific password go
+          into the GitHub Actions secrets, and from then on every release is
+          signed and notarized automatically. Say hello in
+          <a href="https://github.com/IJHack/QtPass/issues/1542">#1542</a>.
+        </p>
+        <p>
+          <strong>Otherwise: fund the account.</strong> 100 euro covers one year
+          of the Apple Developer Program. Two ways to do that:
+        </p>
+        <ul>
+          <li>
+            Sponsor the maintainer on
+            <a href="https://github.com/sponsors/annejan">GitHub Sponsors</a>.
+          </li>
+          <li>
+            Donate 100 euro to
+            <a href="https://a2ua.nl">Stichting Aid to Ukraine</a>, a Dutch ANBI
+            charity (tax-deductible in the Netherlands, RSIN 866916556) that
+            brings vehicles, medical supplies and IT equipment to Kharkiv. Send
+            proof of the donation to
+            <a href="mailto:help@qtpass.org">help@qtpass.org</a> and I will pay
+            Apple out of my own pocket. Honestly, this is the option I prefer.
+          </li>
+        </ul>
+        <p>
+          As soon as the year is covered I will enrol, put signing and
+          notarization into the release pipeline, and ship the QtPass 1.8.0
+          <code>.dmg</code> notarized. After that the Homebrew cask can be
+          re-enabled.
+        </p>
+        <p>
+          Thanks to Stefan for the report, and to everyone who keeps QtPass
+          running on a platform its maintainers no longer use.
+        </p>
+        <p>
+          <br />
+          <a title="Install on Linux or FreeBSD" href="/downloads#linux-bsd"
+            ><img
+              class="compatible"
+              src="images/linux.png"
+              alt="Linux Compatible"
+          /></a>
+          <a title="Install on Windows" href="/downloads#Windows"
+            ><img
+              class="compatible"
+              src="images/win11.png"
+              alt="Windows 11 Compatible"
+          /></a>
+          <a title="Install on macOS" href="/downloads#macOS"
+            ><img
+              class="compatible"
+              src="images/macos.png"
+              alt="OS X Compatible"
+          /></a>
+          <a title="Install on FreeBSD" href="/downloads#FreeBSD"
+            ><img
+              class="compatible"
+              src="images/freebsd.png"
+              alt="FreeBSD Compatible"
+          /></a>
+        </p>
+      </section>
+      <footer>
+        <p>
+          This project is maintained by
+          <a title="IJhack on GitHub" href="https://github.com/IJHack"
+            >IJHack</a
+          >
+        </p>
+        <p>
+          Doxygen autogenerated
+          <a title="Latest documentation" href="/docs/">documentation</a>
+        </p>
+        <a href="https://repology.org/metapackage/qtpass">
+          <img
+            src="https://repology.org/badge/latest-versions/qtpass.svg"
+            alt="latest packaged version(s)"
+          />
+        </a>
+        <p>
+          <small
+            >Based on a theme by
+            <a href="https://github.com/orderedlist">orderedlist</a></small
+          >
+        </p>
+        <img
+          src="https://github.com/IJHack/QtPass/workflows/QMake/badge.svg"
+          alt="GitHub Build Status"
+        />
+        <img
+          src="https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true"
+          alt="AppVeyor Build Status"
+        />
+        <p>
+          <small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small>
+        </p>
+      </footer>
+    </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://qtpass.org"
+      }
+    </script>
+    <script src="javascripts/scale.fix.js" defer></script>
+    <script src="javascripts/main.js" defer></script>
+  </body>
+</html>
