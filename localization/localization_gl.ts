@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
+        <translation>Activar a compatibilidade con contrasinal dun só uso (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -1369,7 +1369,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="719"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Non se puido descifrar este contrasinal</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="732"/>
@@ -1536,7 +1536,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta entrada contén unha configuración OTP, non un contrasinal</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1873"/>
@@ -1661,7 +1661,7 @@ Continuar?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Segundos ata que o código OTP se anova</translation>
     </message>
 </context>
 <context>
@@ -1767,12 +1767,12 @@ Continuar?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
+        <translation>Secreto otpauth:// URI ou base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
+        <translation>Secreto OTP non válido</translation>
     </message>
 </context>
 <context>
@@ -1799,12 +1799,12 @@ Continuar?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="304"/>
         <location filename="../src/passworddisplaypanel.cpp" line="317"/>
         <source>OTP Code</source>
-        <translation type="unfinished">Código OTP</translation>
+        <translation>Código OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="305"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Non se atopa código OTP para esta entrada de contrasinal</translation>
+        <translation>Non se atopa código OTP nesta entrada de contrasinal</translation>
     </message>
 </context>
 <context>
