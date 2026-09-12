@@ -1,3 +1,7 @@
+# MIME types the host does not know about
+AddType image/webp .webp
+AddType font/woff2 .woff2
+
 # BEGIN GZIP
 <ifmodule mod_deflate.c>
 AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
