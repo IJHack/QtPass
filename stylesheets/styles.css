@@ -48,6 +48,7 @@ h1, h2, h3, h4, h5, h6{color:#222;margin:0 0 20px;}
 p, ul, ol, table, pre, dl{margin:0 0 20px;}
 h1, h2, h3{line-height:1.1;}
 h1{font-size:28px;font-weight:900;}
+.brand{font-size:28px;font-weight:900;line-height:1.1;color:#222;margin:0 0 20px;}
 h2{color:#393939;}
 h3, h4, h5, h6{color:#494949;}
 a{color:#39c;font-weight:400;text-decoration:none;}
@@ -111,7 +112,7 @@ header ul{display:none;}
 .macos{background-image:url(../images/logo.png);}
 @media (prefers-color-scheme: dark) {
    body,strong{color:#ddd}
-   h1,h2,code{color:#ccc;}
+   h1,h2,.brand,code{color:#ccc;}
    h3,h4,h5,h6{color:#bbb;}
    pre code{color:#222}
 }
