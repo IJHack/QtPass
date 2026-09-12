@@ -1,43 +1,65 @@
-#!/bin/bash
-# Generate sitemap.xml from HTML files
+#!/usr/bin/env bash
+# Regenerate sitemap.xml from the top-level pages on the gh-pages branch.
+#
+# - URLs are the canonical extension-less form (/downloads, not /downloads.html)
+# - lastmod comes from the last git commit that touched the file
+# - Doxygen output under docs/ is represented by a single /docs/ entry;
+#   listing its 600+ generated pages only buried the pages that matter
+#
+# Usage: ./scripts/update-sitemap.sh   (writes sitemap.xml in place)
+set -euo pipefail
+cd "$(dirname "$0")/.."
 
-SITE="https://qtpass.org"
+BASE="https://qtpass.org"
+
+priority() {
+  case "$1" in
+    index) echo 1.0 ;;
+    downloads|getting-started) echo 0.9 ;;
+    advanced|macos|changelog) echo 0.8 ;;
+    privacy) echo 0.5 ;;
+    changelog.*|old) echo 0.3 ;;
+    *) echo 0.5 ;;
+  esac
+}
+
+changefreq() {
+  case "$1" in
+    index|downloads|changelog) echo weekly ;;
+    macos) echo monthly ;;
+    changelog.*|old|privacy) echo yearly ;;
+    *) echo monthly ;;
+  esac
+}
+
+lastmod() {
+  git log -1 --format=%cI -- "$1"
+}
+
+entry() {
+  local loc="$1" file="$2" name="$3"
+  printf '  <url>\n    <loc>%s</loc>\n    <lastmod>%s</lastmod>\n    <changefreq>%s</changefreq>\n    <priority>%s</priority>\n  </url>\n' \
+    "$loc" "$(lastmod "$file")" "$(changefreq "$name")" "$(priority "$name")"
+}
+
 OUTPUT="sitemap.xml"
+{
+echo '<?xml version="1.0" encoding="UTF-8"?>'
+echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
 
-echo '<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">' > "$OUTPUT"
+entry "$BASE/" index.html index
 
-for file in $(find . -name "*.html" -type f | grep -v "^./build/" | sort); do
-    path="${file#./}"
-    # Strip .html for clean URLs (unless index.html)
-    if [ "$path" != "index.html" ]; then
-        path="${path%.html}"
-    fi
-    loc="$SITE/$path"
-    # Use file mtime for lastmod
-    mtime=$(date -r "$file" +"%Y-%m-%dT%H:%M:%S+00:00")
-    priority="0.50"
-    changefreq="monthly"
-    case "$path" in
-        index) priority="1.00" ;;
-        downloads) priority="0.90" ;;
-        changelog|changelog/*) priority="0.80"; changefreq="weekly" ;;
-        getting-started|advanced) priority="0.80" ;;
-        docs/*) priority="0.30"; changefreq="yearly" ;;
-        404) priority="0.10" ;;
-    esac
-    echo "<url>
-  <loc>$loc</loc>
-  <lastmod>$mtime</lastmod>
-  <priority>$priority</priority>
-  <changefreq>$changefreq</changefreq>
-</url>" >> "$OUTPUT"
+for f in ./*.html; do
+  name="${f#./}"; name="${name%.html}"
+  case "$name" in
+    index|404) continue ;;
+  esac
+  entry "$BASE/$name" "$f" "$name"
 done
 
-echo "</urlset>" >> "$OUTPUT"
+entry "$BASE/docs/" docs/index.html docs
 
-echo "Generated $OUTPUT with $(grep -c '<url>' "$OUTPUT") URLs"
+echo '</urlset>'
+} > "$OUTPUT"
+
+echo "Generated $OUTPUT with $(grep -c '<url>' "$OUTPUT") URLs" >&2
