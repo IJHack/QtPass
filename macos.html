@@ -130,6 +130,26 @@
         }
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "QtPass",
+            "item": "https://qtpass.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "macOS",
+            "item": "https://qtpass.org/macos"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="background"></div>
@@ -268,7 +288,10 @@
           macOS 15 and later right-click &rarr; Open no longer bypasses
           Gatekeeper for unsigned apps.
         </p>
-        <p>You can also build from source:</p>
+        <p>
+          The other platforms are unaffected; see
+          <a href="/downloads">downloads</a>. You can also build from source:
+        </p>
         <pre><code>brew install qt pass pinentry-mac
 git clone https://github.com/IJHack/QtPass.git
 cd QtPass

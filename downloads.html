@@ -130,6 +130,26 @@
         }
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "QtPass",
+            "item": "https://qtpass.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Downloads",
+            "item": "https://qtpass.org/downloads"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="background"></div>
@@ -196,6 +216,13 @@
             ><span class="octicon octicon-link"></span></a
           >Download QtPass
         </h1>
+        <p>
+          First time here? The
+          <a href="/getting-started">getting started guide</a> walks through
+          install, GPG key and first password store;
+          <a href="/advanced">advanced features</a> covers profiles, templates,
+          OTP and git.
+        </p>
 
         <h3>
           <a id="linux-bsd" class="anchor" href="#linux-bsd" aria-hidden="true"
