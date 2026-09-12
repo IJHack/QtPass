@@ -1,7 +1,7 @@
-const CACHE_NAME = "qtpass::v1.7.0::static";
+const CACHE_NAME = "qtpass::2026-09-12::static";
 
 // Cache-bust: include version in SW URL to force update
-const SW_VERSION = "?v1.7.0";
+const SW_VERSION = "?2026-09-12";
 
 const PRECACHE_URLS = [
   "/",
@@ -18,7 +18,9 @@ const PRECACHE_URLS = [
   "/changelog.old",
   "/downloads",
   "/getting-started",
+  "/macos",
   "/old",
+  "/privacy",
   "/stylesheets/pygment_trac.css",
   "/stylesheets/styles.css",
   "/javascripts/main.js",
@@ -144,16 +146,43 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // HTML: network first, so a republished page reaches returning visitors
+  // immediately; fall back to the cached copy when offline.
+  if (
+    request.mode === "navigate" ||
+    (request.headers.get("accept") || "").includes("text/html")
+  ) {
+    event.respondWith(
+      (async () => {
+        try {
+          const networkResponse = await fetch(request);
+          if (networkResponse.ok) {
+            const cache = await caches.open(CACHE_NAME);
+            cache.put(request, networkResponse.clone());
+          }
+          return networkResponse;
+        } catch (error) {
+          const cachedResponse = await caches.match(request);
+          if (cachedResponse) {
+            console.log("[sw] offline, serving cached", request.url);
+            return cachedResponse;
+          }
+          throw error;
+        }
+      })(),
+    );
+    return;
+  }
+
+  // Static assets: cache first.
   event.respondWith(
     (async () => {
       const cachedResponse = await caches.match(request);
 
       if (cachedResponse) {
-        console.log("[sw] cache hit", request.url);
         return cachedResponse;
       }
 
-      console.log("[sw] cache miss, fetching", request.url);
       return fetch(request);
     })(),
   );

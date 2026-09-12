@@ -19,32 +19,51 @@ ExpiresByType image/jpeg "access 1 year"
 ExpiresByType image/gif "access 1 year"
 ExpiresByType image/png "access 1 year"
 ExpiresByType text/css "access 1 month"
-ExpiresByType text/html "access 1 month"
+ExpiresByType text/html "access 1 hour"
 ExpiresByType application/pdf "access 1 month"
 ExpiresByType text/x-javascript "access 1 month"
 ExpiresByType application/x-shockwave-flash "access 1 month"
 ExpiresByType image/x-icon "access 1 year"
+ExpiresByType application/javascript "access 1 month"
+ExpiresByType image/svg+xml "access 1 year"
+ExpiresByType font/woff2 "access 1 year"
 ExpiresDefault "access 1 month"
 </IfModule>
 ## EXPIRES CACHING ##
 
+# Legacy anchor URLs from the single-page era of the site.
 Redirect 301 /features /#features
 Redirect 301 /installation /#installation
 Redirect 301 /linux /#linux
-Redirect 301 /windows /#windows
-Redirect 301 /osx /#osx
-Redirect 301 /macos /#osx
-Redirect 301 /dependencies /#dependencies
-Redirect 301 /security-considerations /#security-considerations
-Redirect 301 /planned-features /#planned-features
-Redirect 301 /known-issues /#known-issues
-Redirect 301 /faq /#faq
-Redirect 301 /cant-save-a-password /#cant-save-a-password
-Redirect 301 /i-have-an-issue-with-gnome-keyring /#i-have-an-issue-with-gnome-keyring
-Redirect 301 /can-i-import-from-keepass-lastpass-or-x /#can-i-import-from-keepass-lastpass-or-x
-Redirect 301 /current-FAQ /#current-FAQ
-Redirect 301 /where-can-i-ask-for-help /#where-can-i-ask-for-help
-Redirect 301 /changelogs /#changelogs
+Redirect 301 /windows /#windows-quick
+Redirect 301 /osx /#macos-quick
+Redirect 301 /dependencies /downloads#dependencies
+Redirect 301 /security-considerations /old#security-considerations
+Redirect 301 /planned-features /old#planned-features
+Redirect 301 /known-issues /old#known-issues
+Redirect 301 /faq /old#faq
+Redirect 301 /cant-save-a-password /old#cant-save-a-password
+Redirect 301 /i-have-an-issue-with-gnome-keyring /old#i-have-an-issue-with-gnome-keyring
+Redirect 301 /can-i-import-from-keepass-lastpass-or-x /old#can-i-import-from-keepass-lastpass-or-x
+Redirect 301 /current-FAQ /old#faq
+Redirect 301 /where-can-i-ask-for-help /old#where-can-i-ask-for-help
+Redirect 301 /changelogs /changelog
+
+# Canonical URLs are extension-less: /downloads.html -> /downloads.
+# Not applied under /docs/ (Doxygen links use .html) and not to 404.html.
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+([^./\s]+)\.html[\s?] [NC]
+RewriteCond %{REQUEST_URI} !^/docs/
+RewriteCond %{REQUEST_URI} !^/404\.html$
+RewriteRule ^([^.]+)\.html$ /%1 [R=301,L]
+
+# Service worker must never be served from a long-lived cache.
+<IfModule mod_headers.c>
+  <Files "sw.js">
+    Header set Cache-Control "no-cache, max-age=0, must-revalidate"
+  </Files>
+</IfModule>
 
 <IfModule mod_filter.c>
     AddOutputFilterByType DEFLATE "application/atom+xml" \
