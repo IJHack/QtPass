@@ -57,6 +57,8 @@ const PRECACHE_URLS = [
   "/images/config.png",
   "/images/logo.png",
   "/images/qtpass.png",
+  "/images/qtpass.webp",
+  "/images/config.webp",
   "/images/apple-icon-114x114.png",
   "/images/apple-icon-72x72.png",
   "/images/favicon-16x16.png",
