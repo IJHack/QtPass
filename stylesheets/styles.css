@@ -76,6 +76,10 @@ small{font-size:13px;}
 hr{border:0;background:#e5e5e5;height:1px;margin:0 0 20px;}
 footer{float:left;position:fixed;bottom:50px;}
 .compatible{width:auto;height:120px;margin-right:10px;}
+/* Fixed sidebar + fixed footer collide on viewports shorter than the
+   header with its screenshot; let the left column flow instead. */
+@media screen and (min-width:961px) and (max-height:1100px){header{position:static;}
+footer{position:static;clear:left;width:270px;margin-top:20px;}}
 @media print, screen and (max-width:960px){div.wrapper{width:auto;margin:0;}
 header, section, footer{float:none;position:static;width:auto;}
 header{padding-right:320px;}
