@@ -13,11 +13,9 @@
 #include <QDir>
 #include <QFile>
 #include <QSaveFile>
+#include <QStringConverter>
 #include <QTextStream>
 #include <algorithm>
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <QStringConverter>
-#endif
 
 auto TemplateIO::readTemplates(const QString &storePath)
     -> QHash<QString, QStringList> {
@@ -27,11 +25,7 @@ auto TemplateIO::readTemplates(const QString &storePath)
     return result;
   }
   QTextStream in(&file);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
   in.setEncoding(QStringConverter::Utf8);
-#else
-  in.setCodec("UTF-8");
-#endif
   QString currentSection;
   QStringList currentFields;
   bool skipInvalidSection = false;
@@ -70,11 +64,7 @@ auto TemplateIO::writeTemplates(const QString &storePath,
     return false;
   }
   QTextStream out(&saveFile);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
   out.setEncoding(QStringConverter::Utf8);
-#else
-  out.setCodec("UTF-8");
-#endif
   out << "# QtPass templates configuration\n";
   out << "# Format: INI-style with [template_name] sections,\n";
   out << "# followed by field names (one per line)\n\n";
@@ -116,11 +106,7 @@ auto TemplateIO::getFolderTemplate(const QString &folderPath,
       QFile file(dir.filePath(".default_template"));
       if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&file);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
         in.setEncoding(QStringConverter::Utf8);
-#else
-        in.setCodec("UTF-8");
-#endif
         QString templateName = in.readLine().trimmed();
         file.close();
         if (!templateName.isEmpty() && !templateName.startsWith('#')) {

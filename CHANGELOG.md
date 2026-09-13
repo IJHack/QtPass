@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased] — 2.0
+
+### Removed
+
+- Qt 5 support. QtPass 2.x requires Qt 6.2 or newer; `qmake` refuses older
+  Qt with a clear message. All `QT_VERSION` compatibility branches for Qt 5
+  and the `splitCommandCompat()` / `disconnectSingleShot()` shims are gone
+  ([#908](https://github.com/IJHack/QtPass/issues/908))
+
 ## [1.8.0](https://github.com/IJHack/QtPass/tree/v1.8.0) (2026-09-13)
 
 ### New Features

@@ -111,13 +111,8 @@ auto parseGpgColonOutput(const QString &output, bool secret)
     -> QList<UserInfo> {
   QList<UserInfo> users;
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   const QStringList lines =
       output.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
-#else
-  const QStringList lines =
-      output.split(Util::newLinesRegex(), QString::SkipEmptyParts);
-#endif
 
   UserInfo current_user;
 

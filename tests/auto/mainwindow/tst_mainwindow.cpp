@@ -376,9 +376,6 @@ void tst_mainwindow::textBrowserFollowsRuntimePaletteChange() {
   QVERIFY2(browser->styleSheet().isEmpty(),
            qPrintable(QStringLiteral("textBrowser carries a stylesheet: ") +
                       browser->styleSheet()));
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  QSKIP("pixel grab is not deterministic on the Qt 5 offscreen platform");
-#endif
   const QPalette original = QApplication::palette();
   auto restore =
       qScopeGuard([&original] { QApplication::setPalette(original); });
