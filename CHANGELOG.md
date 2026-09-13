@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [1.8.0](https://github.com/IJHack/QtPass/tree/v1.8.0) (2026-09-13)
 
 ### New Features
 
@@ -10,13 +10,26 @@
   configuration as an `otpauth://` URI in the `OTP` template field; bare
   `otpauth://` lines written by `pass-otp` are still read. The selected entry
   shows a live code with a copy button and a countdown, and
-  SHA-1/SHA-256/SHA-512 plus Steam Guard codes are supported
-- Fixed a TOTP shared secret being displayed in cleartext when an entry stored it as an `OTP:` field rather than a bare `otpauth://` line
-- Import GPG keys from file or clipboard via the Users dialog [#1517](https://github.com/IJHack/QtPass/pull/1517)
-- Export your public key and add recipients from the Share submenu
-- Opt-in content search across decrypted entries (regular expression)
+  SHA-1/SHA-256/SHA-512 plus Steam Guard codes are supported [#1625](https://github.com/IJHack/QtPass/pull/1625)
+- Share submenu on folders: re-encrypt, export your public key, add
+  recipients, and a "What is this?" explainer [#1144](https://github.com/IJHack/QtPass/pull/1144), [#1162](https://github.com/IJHack/QtPass/pull/1162),
+  closes [#422](https://github.com/IJHack/QtPass/issues/422)
+- Import GPG keys from file or clipboard via the Users dialog [#1170](https://github.com/IJHack/QtPass/pull/1170),
+  closes [#1167](https://github.com/IJHack/QtPass/issues/1167)
+- Process output panel (dockable) with command labels, colour-coded errors,
+  auto-scroll with hysteresis and a 1000-line cap [#1172](https://github.com/IJHack/QtPass/pull/1172), [#1193](https://github.com/IJHack/QtPass/pull/1193),
+  closes [#252](https://github.com/IJHack/QtPass/issues/252)
+- "Open in browser" button for URL fields in the password panel [#1517](https://github.com/IJHack/QtPass/pull/1517),
+  closes [#1516](https://github.com/IJHack/QtPass/issues/1516)
 - Manual `SSH_AUTH_SOCK` override with `gpgconf` auto-probe fallback
-- Process output panel with command labels, colour-coded errors and auto-scroll [#252](https://github.com/IJHack/QtPass/issues/252), [#1172](https://github.com/IJHack/QtPass/pull/1172)
+  [#1438](https://github.com/IJHack/QtPass/pull/1438), closes [#543](https://github.com/IJHack/QtPass/issues/543)
+- Opt-in content search across decrypted entries (regular expression)
+- Multiple templates via `.templates` files, auto-applied to new entries,
+  Ctrl+T cycles between them [#1141](https://github.com/IJHack/QtPass/pull/1141), [#1142](https://github.com/IJHack/QtPass/pull/1142), [#1143](https://github.com/IJHack/QtPass/pull/1143)
+- Git options are stored per profile [#1140](https://github.com/IJHack/QtPass/pull/1140), closes [#112](https://github.com/IJHack/QtPass/issues/112)
+- All fields of an entry can be edited, not only the password [#1138](https://github.com/IJHack/QtPass/pull/1138),
+  closes [#132](https://github.com/IJHack/QtPass/issues/132)
+- Status bar feedback while creating a profile [#1136](https://github.com/IJHack/QtPass/pull/1136), closes [#1034](https://github.com/IJHack/QtPass/issues/1034)
 
 ### Upgrade Notes
 
@@ -28,19 +41,99 @@
   the configuration dialog; the choice is remembered and is not re-enabled on
   later launches. The upgrade changes only this setting — no stored passwords
   are read, rewritten, or re-encrypted.
+- macOS: the release `.dmg` is not signed or notarized, and the Homebrew cask
+  was disabled by Homebrew on 2026-09-01 for that reason. Install the `.dmg`
+  from the GitHub release and clear the quarantine flag
+  (`xattr -d com.apple.quarantine /Applications/QtPass.app`). Status and how
+  to help: the [macOS page on qtpass.org](https://qtpass.org/macos) and [#1542](https://github.com/IJHack/QtPass/issues/1542).
+- Windows: the installer is not code-signed; SmartScreen asks for
+  _More info → Run anyway_ on first start [#1643](https://github.com/IJHack/QtPass/issues/1643).
+- 31 single-variant locales were renamed to language-only codes (e.g.
+  `ar_MA` → `ar`); Qt's locale fallback picks them up automatically
+  [#1328](https://github.com/IJHack/QtPass/pull/1328), [#1350](https://github.com/IJHack/QtPass/pull/1350)
+
+### Security
+
+- Path-traversal hardening for new file, rename and drag-and-drop targets
+  [#1464](https://github.com/IJHack/QtPass/pull/1464)
+- `.gpg-id` is written with mode 0600 [#1465](https://github.com/IJHack/QtPass/pull/1465)
+- URLs are HTML-escaped in the password panel [#1584](https://github.com/IJHack/QtPass/pull/1584)
+- A TOTP shared secret is never rendered in cleartext, also when stored as an
+  `OTP:` field, and Ctrl+C on an `otpauth://`-only entry no longer copies the
+  seed [#1625](https://github.com/IJHack/QtPass/pull/1625)
+
+### Bugfixes
+
+- ConfigDialog no longer silently corrupts saved settings [#1602](https://github.com/IJHack/QtPass/pull/1602)
+- PasswordDialog: no content duplication or data loss on premature save
+  [#1605](https://github.com/IJHack/QtPass/pull/1605)
+- ImitatePass Git re-encryption used the wrong recipients and working
+  directory, and its copy operation was broken [#1604](https://github.com/IJHack/QtPass/pull/1604)
+- Executor could stall when a stdin-less command failed to start [#1606](https://github.com/IJHack/QtPass/pull/1606);
+  crashed subprocesses no longer hang the UI [#1570](https://github.com/IJHack/QtPass/pull/1570)
+- Use-after-free of the key-generation dialog pointer [#1603](https://github.com/IJHack/QtPass/pull/1603); keygen start
+  failures are reported instead of hanging [#1599](https://github.com/IJHack/QtPass/pull/1599), closes [#1598](https://github.com/IJHack/QtPass/issues/1598)
+- Clipboard autoclear kept tracking the right entry when navigating [#1607](https://github.com/IJHack/QtPass/pull/1607)
+- The window follows light/dark theme switches at runtime (KDE day/night),
+  including the toolbar, which Breeze kept in the previous theme
+  [#1669](https://github.com/IJHack/QtPass/pull/1669), [#1661](https://github.com/IJHack/QtPass/pull/1661)
+- A missing `qrencode` binary is reported instead of showing an empty QR
+  dialog [#1659](https://github.com/IJHack/QtPass/pull/1659)
+- Close button quits when hide-on-close is off and a tray icon is present
+  [#1580](https://github.com/IJHack/QtPass/pull/1580)
+- WSL: `wslpath` translation is a real call instead of a broken shell
+  substitution [#1569](https://github.com/IJHack/QtPass/pull/1569), closes [#1509](https://github.com/IJHack/QtPass/issues/1509)
+- Segfault chain on first launch (`focusInput` before init) [#1187](https://github.com/IJHack/QtPass/pull/1187)–[#1191](https://github.com/IJHack/QtPass/pull/1191)
+- Process output panel obscured the central widget [#1192](https://github.com/IJHack/QtPass/pull/1192)
+- Locale-aware `QTranslator::load()` so regional variants fall back correctly
+  [#1362](https://github.com/IJHack/QtPass/pull/1362)
+- Plural agreement in the grep status message [#1133](https://github.com/IJHack/QtPass/pull/1133), closes [#1042](https://github.com/IJHack/QtPass/issues/1042)
+- Coverity and clang-tidy findings (one real bug, bulk modernize/performance)
+  [#1096](https://github.com/IJHack/QtPass/pull/1096), [#1100](https://github.com/IJHack/QtPass/pull/1100), [#1432](https://github.com/IJHack/QtPass/pull/1432), [#1435](https://github.com/IJHack/QtPass/pull/1435)
 
 ### Code Quality (umbrella [#1508](https://github.com/IJHack/QtPass/issues/1508))
 
 - Split the `Util` grab-bag into `PathValidator`, `SshAuthSock` and `TemplateIO`, and consolidated `StoreModel` drag-drop [#1514](https://github.com/IJHack/QtPass/issues/1514)
 - Tightened the `Pass` interface: `beforeExecute()` hook, `Move`/`Copy` dedup, documented Grep regular-expression dialect, and `PassBackendFactory` [#1513](https://github.com/IJHack/QtPass/issues/1513)
 - Decomposed `MainWindow` into `GrepSearchController`, `PasswordDisplayPanel`, a UI watchdog, and `StoreModel::rootIndexFor` [#1512](https://github.com/IJHack/QtPass/issues/1512)
-- Introduced `AppSettings` + `SettingsSerializer` with a `QtPassSettings::load()`/`save()` facade [#1511](https://github.com/IJHack/QtPass/issues/1511)
+- Introduced `AppSettings` + `SettingsSerializer` with a `QtPassSettings::load()`/`save()` facade, injected through the `Pass`/dialog layers; 70 dead getter/setter wrappers removed [#1511](https://github.com/IJHack/QtPass/issues/1511)
+- P1 audit sweep: executor crash, StoreModel guard, `getKeysFromFile`, profile sort order, `reencryptPath` init [#1570](https://github.com/IJHack/QtPass/pull/1570), [#1571](https://github.com/IJHack/QtPass/pull/1571), [#1572](https://github.com/IJHack/QtPass/pull/1572)
+
+### Tests
+
+- Test suites grew from 11 to 25: widget tests for MainWindow, ConfigDialog,
+  KeygenDialog, TrayIcon, UsersDialog, PasswordDisplayPanel, Import/Export key
+  dialogs; unit suites for `Base32`, `TOTP`, `PassBackendFactory`, `UserInfo`,
+  `ProfileInit`; GPG end-to-end coverage for multi-recipient encryption,
+  per-folder re-encryption and the decrypt-and-edit GUI flow
+- Tests run against an isolated settings directory instead of the user's live
+  config [#1662](https://github.com/IJHack/QtPass/pull/1662)
+
+### Localization
+
+- 64 locales, 14 of them new since 1.7.0: Bengali, Hindi, Indonesian,
+  Latvian, Lithuanian, Marathi, Persian, Punjabi, Slovenian, Swahili, Telugu,
+  Thai, Urdu and Vietnamese. Most locales are complete apart from the strings
+  added late in this cycle
+- Hundreds of reviewer-driven corrections across sr_Cyrl, hu, cy, et, pl,
+  zh_CN, gl, sv, nl and others; mnemonic and placeholder audit tooling added
+- The strings added this cycle were pre-filled in 46 locales and left
+  `unfinished` for native review on Weblate
+  [#1665](https://github.com/IJHack/QtPass/pull/1665), [#1666](https://github.com/IJHack/QtPass/pull/1666), [#1667](https://github.com/IJHack/QtPass/pull/1667),
+  [#1670](https://github.com/IJHack/QtPass/pull/1670)
+- Weblate remains the place to translate: <https://hosted.weblate.org/projects/qtpass/>
 
 ### Build / CI
 
-- Made the Doxygen download resilient to doxygen.nl outages (GitHub-release mirror + retries) [#1538](https://github.com/IJHack/QtPass/pull/1538)
+- macOS builds on Qt 6.11; Linux/Windows stay on Qt 6.8 LTS; Qt 5.15 still
+  builds [#1600](https://github.com/IJHack/QtPass/pull/1600)
+- Doxygen download resilient to doxygen.nl outages [#1538](https://github.com/IJHack/QtPass/pull/1538); zero-warning
+  Doxygen enforced
+- super-linter v8 (clang-format 21), commitlint, `.editorconfig`, REUSE
+  compliance badge
+- Dead Coverity integration removed [#1544](https://github.com/IJHack/QtPass/pull/1544)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.7.0...HEAD)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.7.0...v1.8.0)
 
 ## [1.7.0](https://github.com/IJHack/QtPass/tree/v1.7.0) (2026-04-20)
 
@@ -84,7 +177,7 @@
 - Consolidated release scripts into `scripts/` folder
 - UsersDialog performance optimizations [#977](https://github.com/IJHack/QtPass/pull/977)
 
-### Bugfixes
+### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
 - Fixed path separator check in gpgconf resolution
 - Fixed .gpg-id path construction for cross-platform [#780](https://github.com/IJHack/QtPass/issues/780)
@@ -109,7 +202,7 @@
 - Extensive doxygen documentation improvements
 - CI/CD improvements and optimizations
 
-### Localization
+### Localization <!-- markdownlint-disable-line MD024 -->
 
 - Updated translations via Weblate
 
