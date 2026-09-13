@@ -74,8 +74,9 @@
 - Use-after-free of the key-generation dialog pointer [#1603](https://github.com/IJHack/QtPass/pull/1603); keygen start
   failures are reported instead of hanging [#1599](https://github.com/IJHack/QtPass/pull/1599), closes [#1598](https://github.com/IJHack/QtPass/issues/1598)
 - Clipboard autoclear kept tracking the right entry when navigating [#1607](https://github.com/IJHack/QtPass/pull/1607)
-- The window follows light/dark theme switches at runtime (KDE day/night)
-  [#1661](https://github.com/IJHack/QtPass/pull/1661)
+- The window follows light/dark theme switches at runtime (KDE day/night),
+  including the toolbar, which Breeze kept in the previous theme
+  [#1669](https://github.com/IJHack/QtPass/pull/1669), [#1661](https://github.com/IJHack/QtPass/pull/1661)
 - A missing `qrencode` binary is reported instead of showing an empty QR
   dialog [#1659](https://github.com/IJHack/QtPass/pull/1659)
 - Close button quits when hide-on-close is off and a tray icon is present
@@ -116,6 +117,10 @@
   added late in this cycle
 - Hundreds of reviewer-driven corrections across sr_Cyrl, hu, cy, et, pl,
   zh_CN, gl, sv, nl and others; mnemonic and placeholder audit tooling added
+- The strings added this cycle were pre-filled in 46 locales and left
+  `unfinished` for native review on Weblate
+  [#1665](https://github.com/IJHack/QtPass/pull/1665), [#1666](https://github.com/IJHack/QtPass/pull/1666), [#1667](https://github.com/IJHack/QtPass/pull/1667),
+  [#1670](https://github.com/IJHack/QtPass/pull/1670)
 - Weblate remains the place to translate: <https://hosted.weblate.org/projects/qtpass/>
 
 ### Build / CI
