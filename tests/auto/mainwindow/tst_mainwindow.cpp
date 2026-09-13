@@ -403,15 +403,25 @@ void tst_mainwindow::textBrowserFollowsRuntimePaletteChange() {
   dark.setColor(QPalette::Base, QColor(0x10, 0x10, 0x10));
   QApplication::setPalette(dark);
   QCoreApplication::processEvents();
-  QImage before = browser->grab().toImage();
-  QCOMPARE(before.pixelColor(before.rect().center()), QColor(0x10, 0x10, 0x10));
+  // Styles may tint Base slightly (Qt 5.15 Fusion renders #101010 as
+  // #070c10), so compare lightness rather than the exact colour.
+  const QColor darkPixel =
+      browser->grab().toImage().pixelColor(browser->rect().center());
+  QVERIFY2(darkPixel.lightness() < 64,
+           qPrintable(QStringLiteral("browser still light after dark "
+                                     "palette: ") +
+                      darkPixel.name()));
 
   QPalette light = original;
   light.setColor(QPalette::Base, QColor(0xfa, 0xfa, 0xfa));
   QApplication::setPalette(light);
   QCoreApplication::processEvents();
-  QImage after = browser->grab().toImage();
-  QCOMPARE(after.pixelColor(after.rect().center()), QColor(0xfa, 0xfa, 0xfa));
+  const QColor lightPixel =
+      browser->grab().toImage().pixelColor(browser->rect().center());
+  QVERIFY2(lightPixel.lightness() > 192,
+           qPrintable(QStringLiteral("browser still dark after light "
+                                     "palette: ") +
+                      lightPixel.name()));
 }
 
 /**
