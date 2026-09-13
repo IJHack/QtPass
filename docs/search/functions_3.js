@@ -6,5 +6,6 @@ var searchData=
   ['deselectabletreeview_3',['DeselectableTreeView',['../class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26',1,'DeselectableTreeView']]],
   ['disconnectsingleshot_4',['disconnectSingleShot',['../qtcompat_8h.html#a66783768ad92fdfe59015e8406435125',1,'qtcompat.h']]],
   ['displayfields_5',['displayFields',['../class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f',1,'PasswordDisplayPanel']]],
-  ['dropmimedata_6',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]]
+  ['dropmimedata_6',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
+  ['dropstaletoolbarpalette_7',['dropStaleToolBarPalette',['../class_main_window.html#a60ed7fe85ceeecb99a88ae9c4d6d2908',1,'MainWindow']]]
 ];

@@ -16,5 +16,6 @@ var searchData=
   ['displayasis_13',['displayAsIs',['../struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d',1,'AppSettings']]],
   ['displayfields_14',['displayFields',['../class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f',1,'PasswordDisplayPanel']]],
   ['draganddropinfopasswordstore_15',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
-  ['dropmimedata_16',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]]
+  ['dropmimedata_16',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
+  ['dropstaletoolbarpalette_17',['dropStaleToolBarPalette',['../class_main_window.html#a60ed7fe85ceeecb99a88ae9c4d6d2908',1,'MainWindow']]]
 ];
