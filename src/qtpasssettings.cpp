@@ -362,8 +362,11 @@ void QtPassSettings::initExecutables() {
     s.passExecutable = Util::findBinaryInPath("pass");
   if (s.gitExecutable.isEmpty())
     s.gitExecutable = Util::findBinaryInPath("git");
-  if (s.gpgExecutable.isEmpty())
+  if (s.gpgExecutable.isEmpty()) {
     s.gpgExecutable = Util::findBinaryInPath("gpg2");
+    if (s.gpgExecutable.isEmpty())
+      s.gpgExecutable = Util::findBinaryInPath("gpg");
+  }
   if (s.pwgenExecutable.isEmpty())
     s.pwgenExecutable = Util::findBinaryInPath("pwgen");
   QtPassSettings::save(s);
