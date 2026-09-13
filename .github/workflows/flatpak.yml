@@ -10,6 +10,9 @@ on:
       - "qtpass.appdata.xml"
       - "qtpass.desktop"
       - "artwork/**"
+      # overlaid into the v1.8.0 source by the manifest
+      - "main/main.cpp"
+      - "src/qtpasssettings.cpp"
       - ".github/workflows/flatpak.yml"
   push:
     tags:

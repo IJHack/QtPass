@@ -17,7 +17,7 @@
 # or use Users -> Import key -> From clipboard inside QtPass.
 id: org.qtpass.QtPass
 runtime: org.kde.Platform
-runtime-version: '6.11'
+runtime-version: "6.11"
 sdk: org.kde.Sdk
 command: qtpass
 rename-desktop-file: qtpass.desktop
@@ -124,7 +124,7 @@ modules:
       # cgit snapshot tarballs are not checksum-stable; pin the tag's commit
       - type: git
         url: https://git.zx2c4.com/password-store
-        tag: '1.7.4'
+        tag: "1.7.4"
         commit: 1078f2514d579178d5df7042c6a790e9c9b731ad
 
   - name: qtpass

@@ -28,8 +28,8 @@ flatpak run --command=flatpak-builder-lint org.flatpak.Builder appstream qtpass.
 
 ## How GnuPG works inside the sandbox
 
-The sandbox has no access to `~/.gnupg`. The bundled `gpg` therefore keeps its
-own keyring in `~/.var/app/org.qtpass.QtPass/.gnupg`, but it connects to the
+The sandbox has no access to `~/.gnupg`. The runtime-provided `gpg` (only the
+`gpg2` wrapper is ours) therefore keeps its own keyring in `~/.var/app/org.qtpass.QtPass/.gnupg`, but it connects to the
 **host** `gpg-agent` through the read-only exposed socket directory
 (`--filesystem=xdg-run/gnupg:ro`). Private keys, pinentry dialogs and
 smartcards stay on the host; only the public keys have to be known inside the
@@ -52,7 +52,7 @@ Flathub linter exception.
 
 Not granted on purpose: `~/.gnupg` itself, `~/.ssh` and the ssh-agent socket.
 A store in another location can be chosen through the file dialog (the portal
-grants access to the chosen folder); for `git` over ssh add
+grants access to the chosen folder); for `git` over SSH add
 `--socket=ssh-auth` (and `--filesystem=~/.ssh:ro` for `known_hosts`) with
 Flatseal or `flatpak override --user`.
 
