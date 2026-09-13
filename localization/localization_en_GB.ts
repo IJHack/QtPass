@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Enable one-time password (OTP) support</translation>
+        <translation>Enable one-time password (OTP) support</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -1579,7 +1579,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Could not decrypt this password entry</translation>
+        <translation>Could not decrypt this password entry</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
@@ -1747,7 +1747,7 @@ Continue?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Seconds until the OTP code changes</translation>
+        <translation>Seconds until the OTP code changes</translation>
     </message>
 </context>
 <context>
@@ -1853,12 +1853,12 @@ Continue?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">otpauth:// URI or base32 secret</translation>
+        <translation>otpauth:// URI or base32 secret</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Invalid OTP secret</translation>
+        <translation>Invalid OTP secret</translation>
     </message>
 </context>
 <context>
@@ -1885,12 +1885,12 @@ Continue?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP Code</translation>
+        <translation>OTP Code</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">No OTP code found in this password entry</translation>
+        <translation>No OTP code found in this password entry</translation>
     </message>
 </context>
 <context>
@@ -1989,7 +1989,7 @@ Continue?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Could not start qrencode: %1</translation>
+        <translation>Could not start qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
@@ -1999,12 +1999,12 @@ Continue?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode crashed</translation>
+        <translation>qrencode crashed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode exited with code %1</translation>
+        <translation>qrencode exited with code %1</translation>
     </message>
 </context>
 <context>
