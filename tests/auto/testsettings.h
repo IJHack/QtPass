@@ -3,9 +3,11 @@
 #ifndef TESTS_AUTO_TESTSETTINGS_H_
 #define TESTS_AUTO_TESTSETTINGS_H_
 
+#include <QDir>
 #include <QSettings>
 #include <QStandardPaths>
 #include <QTemporaryDir>
+#include <QtGlobal>
 
 /**
  * @brief Redirect QSettings (and thus QtPassSettings) to a throw-away
@@ -25,14 +27,21 @@
  */
 inline void isolateTestSettings() {
   static QTemporaryDir dir; // lives until process exit
+  if (!dir.isValid()) {
+    // An empty path would make QSettings::setPath() point at "/", i.e. a
+    // real, shared location. Abort rather than run against the wrong config.
+    qFatal("isolateTestSettings: cannot create temporary settings dir: %s",
+           qPrintable(dir.errorString()));
+  }
+  const QString userPath = QDir::cleanPath(dir.path());
+  const QString systemPath = QDir::cleanPath(dir.filePath("system"));
   QStandardPaths::setTestModeEnabled(true);
   QSettings::setDefaultFormat(QSettings::IniFormat);
-  QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, dir.path());
-  QSettings::setPath(QSettings::NativeFormat, QSettings::UserScope, dir.path());
-  QSettings::setPath(QSettings::IniFormat, QSettings::SystemScope,
-                     dir.path() + QStringLiteral("/system"));
+  QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, userPath);
+  QSettings::setPath(QSettings::NativeFormat, QSettings::UserScope, userPath);
+  QSettings::setPath(QSettings::IniFormat, QSettings::SystemScope, systemPath);
   QSettings::setPath(QSettings::NativeFormat, QSettings::SystemScope,
-                     dir.path() + QStringLiteral("/system"));
+                     systemPath);
 }
 
 #endif // TESTS_AUTO_TESTSETTINGS_H_
