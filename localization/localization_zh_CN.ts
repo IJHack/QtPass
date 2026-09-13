@@ -1334,7 +1334,7 @@ Expire-Date: 0
         <source>Generating GPG key pair</source>
         <translation type="vanished">正在生成 GPG 密钥对</translation>
     </message>
-    <message>
+        <translation>配置文件已更改为 %1</translation>
         <location filename="../src/mainwindow.cpp" line="1426"/>
         <source>Profile changed to %1</source>
         <translation>用户已更改为 %1</translation>
