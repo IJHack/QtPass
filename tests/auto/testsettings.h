@@ -19,10 +19,11 @@
  * ~/.config/IJHack/QtPass.conf (or the registry on Windows) and a suite that
  * is killed half-way leaves a temp store path behind in the real config.
  *
- * Both NativeFormat and IniFormat are redirected: on Linux/macOS the
- * QSettings(org, app) constructor uses NativeFormat regardless of
- * setDefaultFormat(); on Windows NativeFormat is the registry (setPath is a
- * no-op there), so the default format is switched to IniFormat as well.
+ * The default format is switched to IniFormat and QtPassSettings constructs
+ * its QSettings with defaultFormat(), so on every platform (including
+ * Windows, where NativeFormat is the registry and setPath() is a no-op) the
+ * settings land in the redirected ini directory. NativeFormat paths are
+ * redirected too for any plain QSettings(org, app) a test may create.
  * QStandardPaths test mode keeps any other per-user location out of $HOME.
  */
 inline void isolateTestSettings() {

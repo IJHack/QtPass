@@ -42,8 +42,17 @@ private:
 
   QtPassSettings(const QString &organization, const QSettings::Format format)
       : QSettings(organization, format) {}
+  /**
+   * @brief Per-user settings in QSettings::defaultFormat().
+   *
+   * QSettings(organization, application) ignores setDefaultFormat() and
+   * always uses NativeFormat; going through the explicit-format constructor
+   * keeps the production default (NativeFormat) while letting the test
+   * suites redirect settings to an ini file in a temporary directory.
+   */
   QtPassSettings(const QString &organization, const QString &application)
-      : QSettings(organization, application) {}
+      : QSettings(QSettings::defaultFormat(), QSettings::UserScope,
+                  organization, application) {}
 
   ~QtPassSettings() override = default;
 
