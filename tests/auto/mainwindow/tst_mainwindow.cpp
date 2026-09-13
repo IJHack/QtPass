@@ -26,6 +26,7 @@
 #include <QTemporaryDir>
 #include <QTextBrowser>
 #include <QTextEdit>
+#include <QToolBar>
 #include <QTreeView>
 #include <QtTest>
 
@@ -66,6 +67,8 @@ private Q_SLOTS:
   void showTextAsQRCodeReportsMissingQrencode();
   void textBrowserFollowsRuntimePaletteChange();
   void fieldFrameBorderFollowsRuntimePaletteChange();
+  void toolBarDropsStaleStylePaletteAfterThemeSwitch();
+  void toolBarKeepsHeaderTintInSameTheme();
 };
 
 void tst_mainwindow::initTestCase() {
@@ -444,6 +447,65 @@ void tst_mainwindow::fieldFrameBorderFollowsRuntimePaletteChange() {
   QVERIFY2(
       frame->styleSheet().contains(mid.name()),
       qPrintable(QStringLiteral("stylesheet still: ") + frame->styleSheet()));
+}
+
+/**
+ * @brief A toolbar palette left over from the previous theme is dropped.
+ *
+ * KDE's Breeze style stamps a "header" palette on top toolbars and, after a
+ * runtime light/dark switch, re-applies it from a cached kdeglobals — i.e.
+ * with the old theme's colours. Simulate that: mark the toolbar the way
+ * Breeze does, give it a dark palette while the application is light, and
+ * check that MainWindow resets it.
+ */
+void tst_mainwindow::toolBarDropsStaleStylePaletteAfterThemeSwitch() {
+  auto *bar = m_window->findChild<QToolBar *>(QStringLiteral("toolBar"));
+  QVERIFY2(bar != nullptr, "MainWindow must have the toolBar");
+  const QPalette original = QApplication::palette();
+  auto restore =
+      qScopeGuard([&original] { QApplication::setPalette(original); });
+
+  QPalette light = original;
+  light.setColor(QPalette::Window, QColor(0xef, 0xf0, 0xf1));
+  QApplication::setPalette(light);
+
+  QPalette staleDark = light;
+  staleDark.setColor(QPalette::Window, QColor(0x29, 0x2c, 0x30));
+  bar->setProperty("breeze_has_toolsarea_palette", true);
+  bar->setPalette(staleDark);
+  QVERIFY(bar->testAttribute(Qt::WA_SetPalette));
+
+  QTRY_VERIFY2(!bar->testAttribute(Qt::WA_SetPalette),
+               "stale dark toolbar palette must be dropped on a light app");
+  QCOMPARE(bar->palette().color(QPalette::Window),
+           light.color(QPalette::Window));
+  QVERIFY2(bar->autoFillBackground(),
+           "toolbar must paint its own background over the style's stale "
+           "tools-area fill");
+}
+
+/**
+ * @brief A header tint in the same theme as the application is left alone.
+ */
+void tst_mainwindow::toolBarKeepsHeaderTintInSameTheme() {
+  auto *bar = m_window->findChild<QToolBar *>(QStringLiteral("toolBar"));
+  QVERIFY2(bar != nullptr, "MainWindow must have the toolBar");
+  const QPalette original = QApplication::palette();
+  auto restore =
+      qScopeGuard([&original] { QApplication::setPalette(original); });
+
+  QPalette light = original;
+  light.setColor(QPalette::Window, QColor(0xef, 0xf0, 0xf1));
+  QApplication::setPalette(light);
+
+  QPalette headerTint = light;
+  headerTint.setColor(QPalette::Window, QColor(0xe3, 0xe5, 0xe7));
+  bar->setPalette(headerTint);
+
+  QTest::qWait(50); // let the deferred check run
+  QVERIFY2(bar->testAttribute(Qt::WA_SetPalette),
+           "a same-theme header tint must be kept");
+  QCOMPARE(bar->palette().color(QPalette::Window), QColor(0xe3, 0xe5, 0xe7));
 }
 
 QTEST_MAIN(tst_mainwindow)
