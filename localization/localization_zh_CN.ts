@@ -317,12 +317,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
         <source>Profiles</source>
-        <translation>配置文件名</translation>
+        <translation>配置文件</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="970"/>
         <source>Name</source>
-        <translation>用户名</translation>
+        <translation>名称</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
@@ -462,12 +462,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="892"/>
         <source>No profile selected</source>
-        <translation>未选择配置文件，无法删除</translation>
+        <translation>未选择配置文件</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="893"/>
         <source>No profile selected to delete</source>
-        <translation>未选择用户，无法删除</translation>
+        <translation>未选择要删除的配置文件</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="985"/>
@@ -1334,10 +1334,10 @@ Expire-Date: 0
         <source>Generating GPG key pair</source>
         <translation type="vanished">正在生成 GPG 密钥对</translation>
     </message>
-        <translation>配置文件已更改为 %1</translation>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1426"/>
         <source>Profile changed to %1</source>
-        <translation>用户已更改为 %1</translation>
+        <translation>配置文件已更改为 %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="390"/>
