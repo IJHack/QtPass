@@ -317,64 +317,6 @@ QString findGpgconfInGpgDir(const QString &gpgPath) {
   return {};
 }
 
-// Compatibility shim for Qt < 5.15 where QProcess::splitCommand is not
-// available. Keep this fallback while supporting pre-5.15 builds; remove once
-// the project's minimum supported Qt version is raised to 5.15 or newer.
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-/**
- * @brief Splits a command string into arguments while respecting quotes and
- * escape characters.
- * @example
- * QStringList result = splitCommandCompat("cmd \"arg one\" 'arg two'
- * escaped\\ space");
- * // Expected output: ["cmd", "arg one", "arg two", "escaped space"]
- *
- * @param command - The input command string to split into individual arguments.
- * @return QStringList - A list of parsed command arguments.
- */
-QStringList splitCommandCompat(const QString &command) {
-  QStringList result;
-  QString current;
-  bool inSingleQuote = false;
-  bool inDoubleQuote = false;
-  bool escaping = false;
-  for (QChar ch : command) {
-    if (escaping) {
-      current.append(ch);
-      escaping = false;
-      continue;
-    }
-    if (ch == '\\') {
-      escaping = true;
-      continue;
-    }
-    if (ch == '\'' && !inDoubleQuote) {
-      inSingleQuote = !inSingleQuote;
-      continue;
-    }
-    if (ch == '"' && !inSingleQuote) {
-      inDoubleQuote = !inDoubleQuote;
-      continue;
-    }
-    if (ch.isSpace() && !inSingleQuote && !inDoubleQuote) {
-      if (!current.isEmpty()) {
-        result.append(current);
-        current.clear();
-      }
-      continue;
-    }
-    current.append(ch);
-  }
-  if (escaping) {
-    current.append('\\');
-  }
-  if (!current.isEmpty()) {
-    result.append(current);
-  }
-  return result;
-}
-#endif
-
 } // namespace
 
 /**
@@ -396,11 +338,7 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
     return {"gpgconf", {}};
   }
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList parts = QProcess::splitCommand(gpgPath);
-#else
-  QStringList parts = splitCommandCompat(gpgPath);
-#endif
 
   if (parts.isEmpty()) {
     return {"gpgconf", {}};

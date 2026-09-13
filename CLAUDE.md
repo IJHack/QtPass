@@ -21,7 +21,7 @@ make -j4
 make lcov
 ```
 
-Qt 5.15 and Qt 6 are both supported (CI tests Qt 5.15 + Qt 6.8). The project uses qmake with a subdirs layout: `src/` (library), `main/` (executable), `tests/` (unit tests), shared config in `qtpass.pri`.
+Qt 6.2 or newer is required (CI tests Qt 6.8 and 6.11; Qt 5 support ended with QtPass 1.8). The project uses qmake with a subdirs layout: `src/` (library), `main/` (executable), `tests/` (unit tests), shared config in `qtpass.pri`.
 
 ## Testing
 
@@ -95,7 +95,7 @@ When CodeRabbit/AI flags a PR issue: verify it, fix if real, push, comment with 
 - Use `QCoreApplication::arguments()` instead of raw `argv[]` for CLI argument parsing
 - Wrap all user-facing strings with `tr()`
 - Use `QDir::cleanPath()` for cross-platform path normalization
-- Use `std::as_const()`; this repository enforces C++17 for all builds (including Qt 5.15), so `qAsConst()` is a legacy pre-C++17 fallback and must not be introduced
+- Use `std::as_const()`; this repository enforces C++17, so `qAsConst()` is a legacy pre-C++17 fallback and must not be introduced
 - Store indices (not pointers) in `Qt::UserRole` data on model items
 - Use `QPalette` colors instead of hardcoded values for theme-aware UI
 - Check for null from `screenAt()` before dereferencing

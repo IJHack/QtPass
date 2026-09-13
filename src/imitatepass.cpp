@@ -376,13 +376,8 @@ void ImitatePass::gitAddGpgId(const QString &gpgIdFile,
  * @return void - No return value.
  */
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList signingKeys =
       m_settings.passSigningKey.split(" ", Qt::SkipEmptyParts);
-#else
-  QStringList signingKeys =
-      m_settings.passSigningKey.split(" ", QString::SkipEmptyParts);
-#endif
   QString gpgIdSigFile = path + ".gpg-id.sig";
   bool addSigFile = false;
   if (!signingKeys.isEmpty()) {
@@ -428,13 +423,8 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
  * @return was verification successful?
  */
 auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList signingKeys =
       m_settings.passSigningKey.split(" ", Qt::SkipEmptyParts);
-#else
-  QStringList signingKeys =
-      m_settings.passSigningKey.split(" ", QString::SkipEmptyParts);
-#endif
   if (signingKeys.isEmpty()) {
     return true;
   }
@@ -518,11 +508,7 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
   }
   QStringList actualKeys;
   keys += err;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList key = keys.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
-#else
-  QStringList key = keys.split(Util::newLinesRegex(), QString::SkipEmptyParts);
-#endif
   QListIterator<QString> itr(key);
   while (itr.hasNext()) {
     QString current = itr.next();

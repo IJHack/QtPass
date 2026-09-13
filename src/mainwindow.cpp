@@ -704,8 +704,6 @@ void MainWindow::passShowHandler(const QString &p_output) {
  * @return void - This function does not return a value.
  */
 void MainWindow::otpFromFileToClipboard(const QString &p_output) {
-  disconnectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
-                       &MainWindow::otpFromFileToClipboard);
   // A failed decrypt never fires finishedShow, and Qt::SingleShotConnection
   // only self-disconnects when it does fire, so a connection armed by an
   // earlier failed request can still be live here. Ignore it rather than
@@ -1243,9 +1241,8 @@ void MainWindow::onDelete() {
  * too. Unlike otpFromFileToClipboard, that slot has no pending-flag guard, so
  * its single-shot connection must be torn down here as well — otherwise a
  * connection left armed by the failed decrypt would claim the next unrelated
- * finishedShow and copy the wrong entry to the clipboard. disconnectSingleShot
- * is a no-op on Qt 6 (the never-fired connection persists until it emits), so
- * disconnect unconditionally.
+ * finishedShow and copy the wrong entry to the clipboard. A never-fired
+ * Qt::SingleShotConnection persists until it emits, so disconnect here.
  */
 void MainWindow::cancelOtpRequest() {
   m_otpRequestPending = false;
@@ -1399,14 +1396,6 @@ void MainWindow::updateProfileBox() {
 }
 
 /**
- * @brief MainWindow::on_profileBox_currentIndexChanged make sure we show the
- * correct "profile"
- * @param name
- */
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void MainWindow::on_profileBox_currentIndexChanged(const QString &name) {
-#else
-/**
  * @brief Handles changes to the selected profile in the profile combo box.
  * @details Ignores the event during a fresh start or when the selected profile
  * matches the current profile. Otherwise, it clears the password field, updates
@@ -1418,7 +1407,6 @@ void MainWindow::on_profileBox_currentIndexChanged(const QString &name) {
  *
  */
 void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
-#endif
   if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile()) {
     return;
   }
@@ -1827,8 +1815,6 @@ void MainWindow::copyPasswordFromTreeview() {
 }
 
 void MainWindow::passwordFromFileToClipboard(const QString &text) {
-  disconnectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
-                       &MainWindow::passwordFromFileToClipboard);
   m_passwordCopyPending = false;
   const QStringList tokens = text.split('\n');
   if (tokens.isEmpty()) {

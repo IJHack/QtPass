@@ -3,12 +3,7 @@
 #include "executor.h"
 #include <QCoreApplication>
 #include <QDir>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QTextCodec>
-#endif
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <QStringDecoder>
-#endif
 #include <utility>
 
 #ifdef QT_DEBUG
@@ -201,22 +196,11 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
  * If this fails (which is likely if it is not actually UTF-8)
  * it will then fall back to Qt's decoding function, which
  * will try based on BOM and if that fails fall back to local encoding.
- * This should not be needed in Qt6
  *
  * @param in input data
  * @return Input bytes decoded to string
  */
 static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  QTextCodec *codec = QTextCodec::codecForName("UTF-8");
-  QTextCodec::ConverterState state;
-  QString out = codec->toUnicode(in.constData(), in.size(), &state);
-  if (state.invalidChars == 0) {
-    return out;
-  }
-  codec = QTextCodec::codecForUtfText(in);
-  return codec->toUnicode(in);
-#else
   auto converter = QStringDecoder(QStringDecoder::Utf8);
   QString out = converter(in);
   if (!converter.hasError()) {
@@ -225,7 +209,6 @@ static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
   // Fallback if UTF-8 decoding failed - try system encoding
   auto fallback = QStringDecoder(QStringDecoder::System);
   return fallback(in);
-#endif
 }
 
 /**

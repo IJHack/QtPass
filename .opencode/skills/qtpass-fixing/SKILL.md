@@ -266,25 +266,13 @@ if (index < 0 || index >= m_userList.size()) {
 }
 ```
 
-### Qt Version Compatibility (Qt 5.15 vs Qt 6.x)
+### Qt Version Floor (Qt 6.2)
 
-CI tests both Qt 5.15 and Qt 6.8. Some Qt 6 APIs do not exist in Qt 5.15:
-
-| Qt 6 API                  | Qt 5.15-compatible alternative            |
-| ------------------------- | ----------------------------------------- |
-| `QStringList::removeIf()` | `erase/remove_if` with a predicate lambda |
-| `QList::removeIf()`       | same pattern                              |
+QtPass 2.x requires Qt 6.2 or newer; `qtpass.pri` refuses older Qt. CI builds Qt 6.8 and 6.11. APIs newer than 6.2 (for example `QCOMPARE_NE`, 6.4) still need a `QT_VERSION_CHECK` guard or an alternative:
 
 ```cpp
-// Bad — Qt 6.1+ only, fails on Qt 5.15
+// Fine on every supported Qt
 env.removeIf([&key](const QString &e) { return e.startsWith(key); });
-
-// Good — works on Qt 5.15 and Qt 6.x
-env.erase(std::remove_if(env.begin(), env.end(),
-                          [&key](const QString &entry) {
-                            return entry.startsWith(key);
-                          }),
-          env.end());
 ```
 
 When the goal is to drop env vars by name prefix, use `std::remove_if` with `startsWith`. Don't reach for `QStringList::filter()` — it does the opposite (keeps matching entries) and matches substrings anywhere in the string, so even as a selection it would over-match:

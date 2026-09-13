@@ -5,22 +5,14 @@ This file provides guidance for AI agents working on QtPass development.
 ## Build
 
 ```bash
-# Full build (Qt 6)
+# Full build (Qt 6.2+; `qmake` works too when it is the Qt 6 one)
 qmake6 && make -j4
-
-# Full build (Qt 5 alternative)
-qmake && make -j4
 
 # With tests
 make check
 
-# With coverage (Qt 6)
+# With coverage
 qmake6 -r CONFIG+=coverage
-make -j4
-make lcov
-
-# With coverage (Qt 5 alternative)
-qmake -r CONFIG+=coverage
 make -j4
 make lcov
 ```

@@ -26,7 +26,7 @@
  *
  * @subsection dependencies Dependencies
  *
- * - QtPass requires Qt 6.x or later (Qt 5.15 retained for legacy support).
+ * - QtPass requires Qt 6.2 or later.
  * - The Linguist package is required to compile the translations.
  * - For use of the fallback icons the SVG library is required.
  *
@@ -37,7 +37,7 @@
  *
  * On most *nix systems all you need is:
  *
- * `qmake6 && make && make install` (use `qmake` for Qt5 legacy builds)
+ * `qmake6 && make && make install`
  */
 
 /**
@@ -78,11 +78,6 @@ static auto appendWithSpaceIfSuffixNotEmpty(QString &target,
  * @return Application exit code.
  */
 auto main(int argc, char *argv[]) -> int {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-  QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-#endif
-
   QString text;
 #if SINGLE_APP
   QString name = qgetenv("USER");
@@ -187,15 +182,6 @@ auto main(int argc, char *argv[]) -> int {
   QGuiApplication::setDesktopFileName("qtpass");
 
   // Center the MainWindow on the screen the mouse pointer is currently on
-#if QT_VERSION < QT_VERSION_CHECK(5, 12, 0)
-  static int cursorScreen =
-      app.desktop()->screenNumber(app.desktop()->cursor().pos());
-  QPoint cursorScreenCenter =
-      app.desktop()->screenGeometry(cursorScreen).center();
-  QRect windowFrameGeo = w.frameGeometry();
-  windowFrameGeo.moveCenter(cursorScreenCenter);
-  w.move(windowFrameGeo.topLeft());
-#else
   QScreen *screen = QGuiApplication::screenAt(QCursor::pos());
   if (!screen)
     screen = QGuiApplication::primaryScreen();
@@ -205,7 +191,6 @@ auto main(int argc, char *argv[]) -> int {
     windowFrameGeo.moveCenter(cursorScreenCenter);
     w.move(windowFrameGeo.topLeft());
   }
-#endif
 
   w.show();
 
