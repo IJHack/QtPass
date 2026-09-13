@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
-  <id>qtpass.desktop</id>
+<component type="desktop-application">
+  <id>org.qtpass.QtPass</id>
+  <launchable type="desktop-id">qtpass.desktop</launchable>
+  <provides>
+    <id>qtpass.desktop</id>
+  </provides>
   <name>QtPass</name>
   <summary>GUI for the standard UNIX password store</summary>
   <summary xml:lang="nl-NL">GUI voor de standaard UNIX wachtwoord opslag</summary>
-  <developer_name>IJHack</developer_name>
+  <developer id="org.ijhack">
+    <name>IJHack</name>
+  </developer>
   <description>
    <p>
     QtPass is a multi-platform GUI for pass, the standard UNIX password manager.
+    Your passwords stay in GPG-encrypted files that you control, optionally
+    synchronised with git, and QtPass works with the pass command line tool
+    or drives gpg and git directly.
    </p>
    <p>Features:</p>
    <ul>
     <li>Using pass or git and gpg2 directly</li>
-    <li>Cross platform: Linux, BSD, OS X and Windows</li>
+    <li>Cross platform: Linux, BSD, macOS and Windows</li>
     <li>Using native widgets and iconography where possible</li>
     <li>Reading pass password stores</li>
     <li>Decrypting and displaying the password and related info</li>
@@ -32,11 +41,23 @@
    </ul>
   </description>
   <metadata_license>GFDL-1.3</metadata_license>
-  <project_license>GPL-3.0</project_license>
-  <url type="bugtracker">https://github.com/IJHack/qtpass/issues</url>
-  <url type="faq">https://github.com/IJHack/qtpass/blob/master/FAQ.md</url>
+  <project_license>GPL-3.0-or-later</project_license>
   <url type="homepage">https://qtpass.org/</url>
-  <project_group>IJHack</project_group>
+  <url type="bugtracker">https://github.com/IJHack/QtPass/issues</url>
+  <url type="faq">https://github.com/IJHack/QtPass/blob/main/FAQ.md</url>
+  <url type="help">https://qtpass.org/getting-started</url>
+  <url type="vcs-browser">https://github.com/IJHack/QtPass</url>
+  <url type="translate">https://hosted.weblate.org/projects/qtpass/qtpass/</url>
+  <url type="contribute">https://github.com/IJHack/QtPass/blob/main/CONTRIBUTING.md</url>
+  <content_rating type="oars-1.1" />
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+  <branding>
+    <color type="primary" scheme_preference="light">#6ba2e2</color>
+    <color type="primary" scheme_preference="dark">#1d4f7c</color>
+  </branding>
   <screenshots>
     <screenshot type="default">
       <caption>QtPass main window</caption>
@@ -50,8 +71,17 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="1.8.0" date="2026-09-13"/>
-    <release version="1.7.0" date="2026-04-20"/>
-    <release version="1.6.0" date="2026-04-13"/>
+    <release version="1.8.0" date="2026-09-13">
+      <url>https://github.com/IJHack/QtPass/releases/tag/v1.8.0</url>
+      <description>
+        <p>Built-in TOTP one-time passwords (RFC 6238, Steam Guard), share submenu, GPG key import, process output panel, SSH_AUTH_SOCK auto-detection, 14 new languages and many security and bug fixes.</p>
+      </description>
+    </release>
+    <release version="1.7.0" date="2026-04-20">
+      <url>https://github.com/IJHack/QtPass/releases/tag/v1.7.0</url>
+    </release>
+    <release version="1.6.0" date="2026-04-13">
+      <url>https://github.com/IJHack/QtPass/releases/tag/v1.6.0</url>
+    </release>
   </releases>
 </component>

@@ -1,0 +1,38 @@
+---
+name: Flatpak
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "flatpak/**"
+      - "qtpass.appdata.xml"
+      - "qtpass.desktop"
+      - "artwork/**"
+      - ".github/workflows/flatpak.yml"
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  flatpak:
+    name: Build org.qtpass.QtPass
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/flathub-infra/flatpak-github-actions:kde-6.10
+      options: --privileged
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: flathub-infra/flatpak-github-actions/flatpak-builder@933e9e8ca36e85046ebca8e211f0785c6becac40
+        with:
+          manifest-path: flatpak/org.qtpass.QtPass.yml
+          bundle: org.qtpass.QtPass.flatpak
+          cache-key: flatpak-builder-${{ github.sha }}
+          upload-artifact: true
