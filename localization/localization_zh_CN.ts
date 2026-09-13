@@ -462,7 +462,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="892"/>
         <source>No profile selected</source>
-        <translation>未选择用户</translation>
+        <translation>未选择配置文件，无法删除</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="893"/>
