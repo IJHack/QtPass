@@ -6,6 +6,7 @@
 
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/qtpasssettings.h"
+#include "../testsettings.h"
 
 class tst_passwordconfig : public QObject {
   Q_OBJECT
@@ -35,11 +36,8 @@ private Q_SLOTS:
 };
 
 void tst_passwordconfig::initTestCase() {
-  // Reset any leftover test settings to ensure clean state
-  AppSettings s = QtPassSettings::load();
-  s.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM] = QString();
-  s.passwordConfiguration.selected = PasswordConfiguration::ALLCHARS;
-  QtPassSettings::save(s);
+  // Fresh, private settings directory: no leftovers to reset.
+  isolateTestSettings();
 }
 
 void tst_passwordconfig::passwordConfigurationDefaults() {
