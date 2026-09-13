@@ -177,7 +177,7 @@
 - Consolidated release scripts into `scripts/` folder
 - UsersDialog performance optimizations [#977](https://github.com/IJHack/QtPass/pull/977)
 
-### Bugfixes
+### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
 - Fixed path separator check in gpgconf resolution
 - Fixed .gpg-id path construction for cross-platform [#780](https://github.com/IJHack/QtPass/issues/780)
@@ -202,7 +202,7 @@
 - Extensive doxygen documentation improvements
 - CI/CD improvements and optimizations
 
-### Localization
+### Localization <!-- markdownlint-disable-line MD024 -->
 
 - Updated translations via Weblate
 
