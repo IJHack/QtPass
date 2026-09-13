@@ -9,6 +9,10 @@
 - [ ] Tests pass locally: `make check`
 - [ ] Linter passes locally: `act push -W .github/workflows/linter.yml -j build`
 
+## AI assistance
+
+- [ ] No AI assistant was used, **or** the assisted commits carry a `Co-Authored-By:` trailer / it is disclosed above (see [CONTRIBUTING](../CONTRIBUTING.md#ai-assistance))
+
 ## DCO
 
 - [ ] I've signed off all commits in this pull request in accordance with the [Developer Certificate of Origin (DCO)](https://developercertificate.org)
