@@ -1,7 +1,7 @@
-const CACHE_NAME = "qtpass::2026-09-12::static";
+const CACHE_NAME = "qtpass::v1.8.0::static";
 
 // Cache-bust: include version in SW URL to force update
-const SW_VERSION = "?2026-09-12";
+const SW_VERSION = "?v1.8.0";
 
 const PRECACHE_URLS = [
   "/",
