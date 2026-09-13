@@ -1242,7 +1242,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Zäitiwwerschreidung; d'Interface gëtt nees aktivéiert.</translation>
+        <translation type="unfinished">Zäitiwwerschreidung; d&apos;Interface gëtt nees aktivéiert.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
@@ -1252,12 +1252,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">D'Inhaltssich benotzt POSIX-Basis-Regulärausdréck (pass grep).</translation>
+        <translation type="unfinished">D&apos;Inhaltssich benotzt POSIX-Basis-Regulärausdréck (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">D'Inhaltssich benotzt Perl-kompatibel Regulärausdréck (PCRE).</translation>
+        <translation type="unfinished">D&apos;Inhaltssich benotzt Perl-kompatibel Regulärausdréck (PCRE).</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1031"/>

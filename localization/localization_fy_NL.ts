@@ -1990,7 +1990,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode wie net op 'e tiid klear</translation>
+        <translation type="unfinished">qrencode wie net op &apos;e tiid klear</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>

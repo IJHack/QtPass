@@ -1982,7 +1982,7 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">qrencode'i käivitamine ei õnnestunud: %1</translation>
+        <translation type="unfinished">qrencode&apos;i käivitamine ei õnnestunud: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>

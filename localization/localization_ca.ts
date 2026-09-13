@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Habilita la compatibilitat amb contrasenyes d'un sol ús (OTP)</translation>
+        <translation type="unfinished">Habilita la compatibilitat amb contrasenyes d&apos;un sol ús (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -646,7 +646,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">No s'ha pogut iniciar %1</translation>
+        <translation type="unfinished">No s&apos;ha pogut iniciar %1</translation>
     </message>
 </context>
 <context>
@@ -852,7 +852,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">No s'ha pogut copiar %1 a %2.</translation>
+        <translation type="unfinished">No s&apos;ha pogut copiar %1 a %2.</translation>
     </message>
 </context>
 <context>
@@ -1547,7 +1547,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">No s'ha pogut desxifrar aquesta entrada de contrasenya</translation>
+        <translation type="unfinished">No s&apos;ha pogut desxifrar aquesta entrada de contrasenya</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
@@ -1957,7 +1957,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">No s'ha pogut iniciar qrencode: %1</translation>
+        <translation type="unfinished">No s&apos;ha pogut iniciar qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>

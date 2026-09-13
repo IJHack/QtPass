@@ -1911,7 +1911,7 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode n'a pas terminé à temps</translation>
+        <translation type="unfinished">qrencode n&apos;a pas terminé à temps</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
@@ -1921,7 +1921,7 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode s'est terminé avec le code %1</translation>
+        <translation type="unfinished">qrencode s&apos;est terminé avec le code %1</translation>
     </message>
 </context>
 <context>
