@@ -107,14 +107,13 @@ public:
    */
   static auto newLinesRegex() -> const QRegularExpression &;
   /**
-   * @brief Check if a string looks like a valid GPG key ID.
-   * Accepts:
-   * - Key IDs: 8-40 hex characters (0-9, A-F, a-f), optional 0x prefix
-   * - Emails: any string containing @ (e.g., user@domain.org,
-   * <user@domain.org>)
-   * - Special prefixes: leading @, /, #, or & (any content after prefix)
+   * @brief Check whether a `.gpg-id` token may be passed to gpg as a key
+   * selector.
+   * Accepts any non-empty token that does not start with `-`, exactly as
+   * `pass` does: key IDs and fingerprints of every version, emails, `=Exact
+   * User ID`, plain name substrings and the @, /, #, & routing prefixes.
    * @param keyId The string to validate.
-   * @return true if the key ID format is valid, false otherwise.
+   * @return true if gpg may be given the token, false otherwise.
    */
   static auto isValidKeyId(const QString &keyId) -> bool;
 

@@ -186,9 +186,11 @@ private Q_SLOTS:
   void getRecipientListEmpty();
   void getRecipientListWithComments();
   void getRecipientListInvalidKeyId();
+  void getRecipientListKeepsEveryGpgSelector();
   void isValidKeyIdBasic();
   void isValidKeyIdWith0xPrefix();
   void isValidKeyIdWithEmail();
+  void isValidKeyIdUserIdSelectors();
   void isValidKeyIdInvalid();
   void getRecipientStringCount();
   void getGpgIdPathBasic();
@@ -1212,10 +1214,38 @@ void tst_util::getRecipientListInvalidKeyId() {
   file.close();
 
   QStringList recipients = Pass::getRecipientList(passStore, passStore);
-  QVERIFY(!recipients.contains("invalid"));
+  // "invalid" is a perfectly good user-ID substring for gpg; pass keeps it and
+  // so must we — dropping it here would erase it on the next .gpg-id rewrite.
+  QVERIFY(recipients.contains("invalid"));
   QVERIFY(recipients.contains("ABCDEF12"));
   QVERIFY(recipients.contains("0xABCDEF123456789012"));
   QVERIFY(recipients.contains("user@qtpass@example.org"));
+}
+
+void tst_util::getRecipientListKeepsEveryGpgSelector() {
+  QTemporaryDir tempDir;
+  QString passStore = tempDir.path();
+  QString gpgIdFile = passStore + "/.gpg-id";
+
+  // A v6 (64 hex) fingerprint, a plain user ID with spaces, an exact-match
+  // user ID and a v4 fingerprint with 0x prefix are all valid gpg selectors.
+  const QString v6Fingerprint = QString(64, 'a');
+  QFile file(gpgIdFile);
+  QVERIFY(file.open(QIODevice::WriteOnly));
+  file.write((v6Fingerprint + "\n").toUtf8());
+  file.write("Alice Example\n");
+  file.write("=Bob Example <bob@example.com>\n");
+  file.write(
+      "0x0123456789abcdef0123456789abcdef01234567  # trailing comment\n");
+  file.write("-r\n"); // would be parsed as an option, must go
+  file.write("--list-secret-keys\n");
+  file.close();
+
+  QStringList recipients = Pass::getRecipientList(passStore, passStore);
+  QStringList expected = {v6Fingerprint, "Alice Example",
+                          "=Bob Example <bob@example.com>",
+                          "0x0123456789abcdef0123456789abcdef01234567"};
+  QCOMPARE(recipients, expected);
 }
 
 void tst_util::isValidKeyIdBasic() {
@@ -1241,15 +1271,24 @@ void tst_util::isValidKeyIdWithEmail() {
   QVERIFY(Util::isValidKeyId("&anything"));
 }
 
+void tst_util::isValidKeyIdUserIdSelectors() {
+  // Everything gpg accepts after -r must be accepted here; content heuristics
+  // used to reject these and they were then erased from .gpg-id.
+  QVERIFY(Util::isValidKeyId(QString(64, 'a'))); // v6 fingerprint
+  QVERIFY(Util::isValidKeyId("0x" + QString(64, 'A')));
+  QVERIFY(Util::isValidKeyId("Alice Example")); // plain user ID
+  QVERIFY(Util::isValidKeyId("=Alice Example <alice@example.com>"));
+  QVERIFY(Util::isValidKeyId("short"));
+  QVERIFY(Util::isValidKeyId("name+tag!"));
+}
+
 void tst_util::isValidKeyIdInvalid() {
-  // Boundary check: one character above the currently accepted maximum
-  // hexadecimal key-id length should be rejected.
-  constexpr int kTooLongKeyIdLength = 41; // current max (40) + 1
   QVERIFY(!Util::isValidKeyId(""));
-  QVERIFY(!Util::isValidKeyId("short"));
-  QVERIFY(!Util::isValidKeyId(QString(kTooLongKeyIdLength, 'a')));
-  QVERIFY(!Util::isValidKeyId("invalidchars!"));
-  QVERIFY(!Util::isValidKeyId("space in key"));
+  // A leading dash would be parsed as a gpg option in the positional
+  // --list-keys call, so it is the one shape that is refused.
+  QVERIFY(!Util::isValidKeyId("-"));
+  QVERIFY(!Util::isValidKeyId("-r"));
+  QVERIFY(!Util::isValidKeyId("--list-secret-keys"));
 }
 
 void tst_util::getRecipientStringCount() {
