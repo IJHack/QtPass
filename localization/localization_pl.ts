@@ -1778,22 +1778,22 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Nie można uruchomić qrencode: %1</translation>
+        <translation>Nie można uruchomić qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode nie zakończył działania na czas</translation>
+        <translation>qrencode nie zakończył działania na czas</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode uległ awarii</translation>
+        <translation>qrencode uległ awarii</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode zakończył działanie z&#xa0;kodem %1</translation>
+        <translation>qrencode zakończył działanie z&#xa0;kodem %1</translation>
     </message>
 </context>
 <context>
