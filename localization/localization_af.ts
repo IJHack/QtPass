@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Aktiveer ondersteuning vir eenmalige wagwoorde (OTP)</translation>
+        <translation>Aktiveer ondersteuning vir eenmalige wagwoorde (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -646,7 +646,7 @@ e-pos</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">Kon nie %1 begin nie</translation>
+        <translation>Kon nie %1 begin nie</translation>
     </message>
 </context>
 <context>
@@ -847,12 +847,12 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">Kopiëring het misluk</translation>
+        <translation>Kopiëring het misluk</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">Kon nie %1 na %2 kopieer nie.</translation>
+        <translation>Kon nie %1 na %2 kopieer nie.</translation>
     </message>
 </context>
 <context>
@@ -1537,7 +1537,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Bewerking het uitgetel; koppelvlak word heraktiveer.</translation>
+        <translation>Bewerking het uitgetel; koppelvlak word heraktiveer.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="372"/>
@@ -1547,27 +1547,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Kon nie hierdie wagwoordinskrywing dekripteer nie</translation>
+        <translation>Kon nie hierdie wagwoordinskrywing dekripteer nie</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Inhoudssoektog gebruik POSIX basiese regulêre uitdrukkings (pass grep).</translation>
+        <translation>Inhoudssoektog gebruik POSIX basiese regulêre uitdrukkings (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Inhoudssoektog gebruik Perl-versoenbare regulêre uitdrukkings (PCRE).</translation>
+        <translation>Inhoudssoektog gebruik Perl-versoenbare regulêre uitdrukkings (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Ongeldige naam</translation>
+        <translation>Ongeldige naam</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Daardie naam sal buite die wagwoordstoor oplos. Kies asseblief ‘n ander naam.</translation>
+        <translation>Daardie naam sal buite die wagwoordstoor oplos. Kies asseblief ‘n ander naam.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1588"/>
@@ -1630,7 +1630,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Hierdie inskrywing bevat 'n OTP-geheim, nie 'n wagwoord nie</translation>
+        <translation>Hierdie inskrywing bevat &apos;n OTP-geheim, nie &apos;n wagwoord nie</translation>
     </message>
     <message>
         <source>Open %1 in browser</source>
@@ -1715,7 +1715,7 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Sekondes totdat die OTP-kode verander</translation>
+        <translation>Sekondes totdat die OTP-kode verander</translation>
     </message>
 </context>
 <context>
@@ -1743,7 +1743,7 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">Geen uitvoerbare GPG-lêer is opgestel nie</translation>
+        <translation>Geen uitvoerbare GPG-lêer is opgestel nie</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1821,12 +1821,12 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">otpauth://-URI of base32-geheim</translation>
+        <translation>otpauth://-URI of base32-geheim</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Ongeldige OTP-geheim</translation>
+        <translation>Ongeldige OTP-geheim</translation>
     </message>
 </context>
 <context>
@@ -1842,23 +1842,23 @@ Gaan voort?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">Wagwoord</translation>
+        <translation>Wagwoord</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Maak %1 in die blaaier oop</translation>
+        <translation>Maak %1 in die blaaier oop</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP Kode</translation>
+        <translation>OTP Kode</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Geen OTP-kode in hierdie wagwoordinskrywing gevind nie</translation>
+        <translation>Geen OTP-kode in hierdie wagwoordinskrywing gevind nie</translation>
     </message>
 </context>
 <context>
@@ -1957,22 +1957,22 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Kon nie qrencode begin nie: %1</translation>
+        <translation>Kon nie qrencode begin nie: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode het nie betyds klaargemaak nie</translation>
+        <translation>qrencode het nie betyds klaargemaak nie</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode het omgeval</translation>
+        <translation>qrencode het omgeval</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode het met kode %1 afgesluit</translation>
+        <translation>qrencode het met kode %1 afgesluit</translation>
     </message>
 </context>
 <context>
