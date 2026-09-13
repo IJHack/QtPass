@@ -31,6 +31,18 @@ public:
   explicit KeygenDialog(const QString &gpgExe, ConfigDialog *parent = nullptr);
   ~KeygenDialog() override;
 
+  /**
+   * @brief Splice a passphrase into a GPG batch template.
+   *
+   * Replaces %no-protection (or an existing Passphrase: line) with
+   * "Passphrase: <passphrase>"; an empty passphrase yields %no-protection.
+   * @param batch GPG batch template text.
+   * @param passphrase Key passphrase, empty for an unprotected key.
+   * @return Batch text ready for gpg --gen-key --batch.
+   */
+  static QString applyPassphrase(const QString &batch,
+                                 const QString &passphrase);
+
 protected:
   /**
    * @brief Handle dialog close, emitting appropriate signals.
@@ -49,7 +61,6 @@ private:
   Ui::KeygenDialog *ui;
   void replace(const QString &, const QString &);
   void done(int r) override;
-  void no_protection(bool enable);
   ConfigDialog *dialog;
   std::unique_ptr<QProgressIndicator> m_progressIndicator;
 };

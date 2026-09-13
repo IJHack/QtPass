@@ -38,6 +38,15 @@ private Q_SLOTS:
   void secondPassphraseChangeTriggersStateUpdate();
   void clearingFirstPassphraseDisablesButtonBox();
   void nameAndEmailBothUpdateTemplate();
+  void passphraseNeverWrittenToTemplate();
+  void templateEditorHiddenUnlessExpert();
+  void applyPassphraseReplacesNoProtection();
+  void applyPassphraseEmptyKeepsNoProtection();
+  void applyPassphraseReplacesExistingPassphraseLine();
+  void applyPassphraseEmptyRestoresNoProtection();
+  void applyPassphraseInsertsBeforeCommitWhenAbsent();
+  void applyPassphraseCopiesSpecialCharactersVerbatim();
+  void applyPassphraseCollapsesDuplicateProtectionLines();
 };
 
 /**
@@ -233,6 +242,145 @@ void tst_keygendialog::nameAndEmailBothUpdateTemplate() {
            "template must contain Name-Real: Test User");
   QVERIFY2(tpl.contains(QStringLiteral("Name-Email: user@test.example")),
            "template must contain Name-Email: user@test.example");
+}
+
+/**
+ * @brief The masked passphrase fields must never leak into the always
+ *        readable template box; the template keeps its %no-protection
+ *        placeholder until done() splices the passphrase in.
+ */
+void tst_keygendialog::passphraseNeverWrittenToTemplate() {
+  KeygenDialog dialog(nullptr);
+  auto *pp1 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
+  auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
+  auto *editor =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
+  QVERIFY2(pp1 != nullptr, "passphrase1 widget must exist");
+  QVERIFY2(pp2 != nullptr, "passphrase2 widget must exist");
+  QVERIFY2(editor != nullptr, "plainTextEdit widget must exist");
+
+  const QString before = editor->toPlainText();
+  QVERIFY2(before.contains(QStringLiteral("%no-protection")),
+           "default template must start out unprotected");
+
+  pp1->setText(QStringLiteral("testkey123"));
+  pp2->setText(QStringLiteral("testkey123"));
+  const QString after = editor->toPlainText();
+  QVERIFY2(!after.contains(QStringLiteral("testkey123")),
+           "passphrase must not be echoed into the template box");
+  QVERIFY2(!after.contains(QStringLiteral("Passphrase:")),
+           "template box must not gain a Passphrase: line");
+  QCOMPARE(after, before);
+}
+
+/**
+ * @brief The batch template box is hidden until Expert is checked so a
+ *        non-expert never sees a misleading %no-protection placeholder.
+ */
+void tst_keygendialog::templateEditorHiddenUnlessExpert() {
+  KeygenDialog dialog(nullptr);
+  auto *checkBox = dialog.findChild<QCheckBox *>(QStringLiteral("checkBox"));
+  auto *editor =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
+  QVERIFY2(checkBox != nullptr, "checkBox widget must exist");
+  QVERIFY2(editor != nullptr, "plainTextEdit widget must exist");
+
+  QVERIFY2(!checkBox->isChecked(), "Expert should start unchecked");
+  QVERIFY2(editor->isHidden(), "template box should start hidden");
+
+  checkBox->setChecked(true);
+  QVERIFY2(!editor->isHidden(), "expert mode should reveal the template box");
+
+  checkBox->setChecked(false);
+  QVERIFY2(editor->isHidden(), "unchecking expert hides the template box");
+}
+
+void tst_keygendialog::applyPassphraseReplacesNoProtection() {
+  const QString batch = QStringLiteral("%echo Generating a default key\n"
+                                       "Key-Type: RSA\n"
+                                       "Name-Real: QtPass Tester\n"
+                                       "%no-protection\n"
+                                       "%commit\n"
+                                       "%echo done");
+  const QString result =
+      KeygenDialog::applyPassphrase(batch, QStringLiteral("testkey123"));
+  QCOMPARE(result, QStringLiteral("%echo Generating a default key\n"
+                                  "Key-Type: RSA\n"
+                                  "Name-Real: QtPass Tester\n"
+                                  "Passphrase: testkey123\n"
+                                  "%commit\n"
+                                  "%echo done"));
+}
+
+void tst_keygendialog::applyPassphraseEmptyKeepsNoProtection() {
+  const QString batch = QStringLiteral("Key-Type: RSA\n"
+                                       "%no-protection\n"
+                                       "%commit");
+  QCOMPARE(KeygenDialog::applyPassphrase(batch, QString()), batch);
+}
+
+void tst_keygendialog::applyPassphraseReplacesExistingPassphraseLine() {
+  // An expert may already have typed a Passphrase: line; the masked fields
+  // win and no second line is added.
+  const QString batch = QStringLiteral("Key-Type: RSA\n"
+                                       "Passphrase: old-value\n"
+                                       "%commit");
+  QCOMPARE(KeygenDialog::applyPassphrase(batch, QStringLiteral("newkey456")),
+           QStringLiteral("Key-Type: RSA\n"
+                          "Passphrase: newkey456\n"
+                          "%commit"));
+}
+
+void tst_keygendialog::applyPassphraseEmptyRestoresNoProtection() {
+  const QString batch = QStringLiteral("Key-Type: RSA\n"
+                                       "Passphrase: old-value\n"
+                                       "%commit");
+  QCOMPARE(KeygenDialog::applyPassphrase(batch, QString()),
+           QStringLiteral("Key-Type: RSA\n"
+                          "%no-protection\n"
+                          "%commit"));
+}
+
+void tst_keygendialog::applyPassphraseInsertsBeforeCommitWhenAbsent() {
+  const QString batch = QStringLiteral("Key-Type: RSA\n"
+                                       "%commit\n"
+                                       "%echo done");
+  QCOMPARE(KeygenDialog::applyPassphrase(batch, QStringLiteral("testkey123")),
+           QStringLiteral("Key-Type: RSA\n"
+                          "Passphrase: testkey123\n"
+                          "%commit\n"
+                          "%echo done"));
+
+  // No %commit at all: append, so the parameter is still part of the batch.
+  QCOMPARE(KeygenDialog::applyPassphrase(QStringLiteral("Key-Type: RSA"),
+                                         QStringLiteral("testkey123")),
+           QStringLiteral("Key-Type: RSA\nPassphrase: testkey123"));
+
+  // Empty passphrase and nothing to replace: leave the expert's batch alone.
+  QCOMPARE(KeygenDialog::applyPassphrase(batch, QString()), batch);
+}
+
+/**
+ * @brief The passphrase is spliced in as a plain string: backslashes,
+ *        digits, "$" and "%" must all come through untouched.
+ */
+void tst_keygendialog::applyPassphraseCopiesSpecialCharactersVerbatim() {
+  const QString passphrase = QStringLiteral("a\\1b\\9c\\0 $1 %s");
+  const QString result = KeygenDialog::applyPassphrase(
+      QStringLiteral("%no-protection\n%commit"), passphrase);
+  QCOMPARE(result, QStringLiteral("Passphrase: ") + passphrase +
+                       QStringLiteral("\n%commit"));
+}
+
+void tst_keygendialog::applyPassphraseCollapsesDuplicateProtectionLines() {
+  const QString batch = QStringLiteral("Key-Type: RSA\n"
+                                       "%no-protection\n"
+                                       "Passphrase: stale\n"
+                                       "%commit");
+  QCOMPARE(KeygenDialog::applyPassphrase(batch, QStringLiteral("testkey123")),
+           QStringLiteral("Key-Type: RSA\n"
+                          "Passphrase: testkey123\n"
+                          "%commit"));
 }
 
 QTEST_MAIN(tst_keygendialog)
