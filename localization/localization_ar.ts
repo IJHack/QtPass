@@ -1246,7 +1246,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation>اسم غير صالح</translation>
+        <translation>الاسم غير الرسمي</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
