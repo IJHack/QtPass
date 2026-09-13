@@ -28,6 +28,7 @@
 #include <QtTest>
 
 #include "../../../src/mainwindow.h"
+#include "../../../src/passworddisplaypanel.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/util.h"
 
@@ -62,6 +63,7 @@ private Q_SLOTS:
   void onProcessOutputSkippedWhenPanelHidden();
   void passwordFromFileToClipboardCopiesFirstLine();
   void passwordFromFileToClipboardSkipsOtpSecret();
+  void showTextAsQRCodeReportsMissingQrencode();
 };
 
 void tst_mainwindow::initTestCase() {
@@ -338,6 +340,35 @@ void tst_mainwindow::passwordFromFileToClipboardSkipsOtpSecret() {
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
   QVERIFY2(!clip->text().contains(QStringLiteral("JBSWY3DPEHPK3PXP")),
            "otpauth secret must never reach the clipboard");
+}
+
+/**
+ * @brief showTextAsQRCode() reports a qrencode binary that cannot start.
+ *
+ * QProcess leaves exitStatus() at NormalExit and exitCode() at 0 when the
+ * executable does not exist, so the old exitStatus()||exitCode() check took
+ * the success branch and opened an empty QR dialog. The display panel's
+ * qrRequested signal is the production entry point into
+ * QtPass::showTextAsQRCode.
+ */
+void tst_mainwindow::showTextAsQRCodeReportsMissingQrencode() {
+  const QString bogus =
+      QDir(m_storeDir.path()).filePath(QStringLiteral("no-such-qrencode"));
+  QVERIFY(!QFile::exists(bogus));
+  AppSettings s = QtPassSettings::load();
+  s.qrencodeExecutable = bogus;
+  QtPassSettings::save(s);
+
+  auto *panel = m_window->findChild<PasswordDisplayPanel *>();
+  QVERIFY2(panel != nullptr, "MainWindow must own a PasswordDisplayPanel");
+
+  // Would block in QDialog::exec() if the error path were not taken.
+  emit panel->qrRequested(QStringLiteral("hunter2"));
+
+  const QString msg = m_window->statusBar()->currentMessage();
+  QVERIFY2(msg.contains(QStringLiteral("qrencode")),
+           qPrintable(QStringLiteral("unexpected status: ") + msg));
+  QVERIFY2(msg.contains(bogus), "status message should name the missing path");
 }
 
 QTEST_MAIN(tst_mainwindow)

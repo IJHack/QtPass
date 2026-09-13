@@ -545,13 +545,28 @@ void QtPass::showTextAsQRCode(const QString &text) {
   QProcess qrencode;
   qrencode.start(qrExe, QStringList() << "-o-"
                                       << "-tPNG");
+  // A missing or non-executable binary never "finishes": exitStatus() stays
+  // NormalExit and exitCode() 0, which used to fall through to an empty popup.
+  if (!qrencode.waitForStarted()) {
+    m_mainWindow->showStatusMessage(
+        tr("Could not start qrencode: %1").arg(qrExe));
+    return;
+  }
   qrencode.write(text.toUtf8());
   qrencode.closeWriteChannel();
   qrencode.waitForFinished();
   QByteArray output(qrencode.readAllStandardOutput());
 
-  if (qrencode.exitStatus() || qrencode.exitCode()) {
+  const bool crashed = qrencode.exitStatus() != QProcess::NormalExit;
+  // exitCode() is meaningless after a crash, so only consult it otherwise.
+  const bool failed = !crashed && qrencode.exitCode() != 0;
+  if (crashed || failed) {
     QString error(qrencode.readAllStandardError());
+    if (error.trimmed().isEmpty()) {
+      error = crashed
+                  ? tr("qrencode crashed")
+                  : tr("qrencode exited with code %1").arg(qrencode.exitCode());
+    }
     m_mainWindow->showStatusMessage(error);
   } else {
     QPixmap image;
