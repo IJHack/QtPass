@@ -42,6 +42,7 @@ class tst_mainwindow : public QObject {
   bool m_savedUsePass;
   bool m_savedShowProcessOutput;
   QString m_savedGpgExecutable;
+  QString m_savedQrencodeExecutable;
 
 private Q_SLOTS:
   void initTestCase();
@@ -82,6 +83,7 @@ void tst_mainwindow::initTestCase() {
   const AppSettings savedSettings = QtPassSettings::load();
   m_savedUsePass = savedSettings.usePass;
   m_savedGpgExecutable = savedSettings.gpgExecutable;
+  m_savedQrencodeExecutable = savedSettings.qrencodeExecutable;
 
   // Point QtPassSettings at the temp store and use gpg (not pass) mode so
   // configIsValid() only requires the .gpg-id file + a gpg binary.
@@ -143,6 +145,7 @@ void tst_mainwindow::cleanupTestCase() {
   {
     AppSettings s = QtPassSettings::load();
     s.gpgExecutable = m_savedGpgExecutable;
+    s.qrencodeExecutable = m_savedQrencodeExecutable;
     QtPassSettings::save(s);
   }
 }
