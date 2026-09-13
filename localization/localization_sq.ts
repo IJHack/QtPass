@@ -181,7 +181,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Aktivizo mbështetjen për fjalëkalime njëpërdorimshe (OTP)</translation>
+        <translation>Aktivizo mbështetjen për fjalëkalime njëpërdorimshe (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -590,7 +590,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">Nisja e %1 dështoi</translation>
+        <translation>Nisja e %1 dështoi</translation>
     </message>
 </context>
 <context>
@@ -791,12 +791,12 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">Kopjimi dështoi</translation>
+        <translation>Kopjimi dështoi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">%1 nuk u kopjua dot te %2.</translation>
+        <translation>%1 nuk u kopjua dot te %2.</translation>
     </message>
 </context>
 <context>
@@ -1242,22 +1242,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Veprimit i mbaroi koha; ndërfaqja po riaktivizohet.</translation>
+        <translation>Veprimit i mbaroi koha; ndërfaqja po riaktivizohet.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Kjo hyrje fjalëkalimi nuk u deshifrua dot</translation>
+        <translation>Kjo hyrje fjalëkalimi nuk u deshifrua dot</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Kërkimi i përmbajtjes përdor shprehje të rregullta bazë POSIX (pass grep).</translation>
+        <translation>Kërkimi i përmbajtjes përdor shprehje të rregullta bazë POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Kërkimi i përmbajtjes përdor shprehje të rregullta të përputhshme me Perl (PCRE).</translation>
+        <translation>Kërkimi i përmbajtjes përdor shprehje të rregullta të përputhshme me Perl (PCRE).</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1031"/>
@@ -1278,12 +1278,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Emër i pavlefshëm</translation>
+        <translation>Emër i pavlefshëm</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Ai emër do të tregonte jashtë depos së fjalëkalimeve. Ju lutemi zgjidhni një emër tjetër.</translation>
+        <translation>Ai emër do të tregonte jashtë depos së fjalëkalimeve. Ju lutemi zgjidhni një emër tjetër.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1160"/>
@@ -1376,7 +1376,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Kjo hyrje përmban një sekret OTP, jo një fjalëkalim</translation>
+        <translation>Kjo hyrje përmban një sekret OTP, jo një fjalëkalim</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1880"/>
@@ -1501,7 +1501,7 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Sekonda deri sa kodi OTP të ndryshojë</translation>
+        <translation>Sekonda deri sa kodi OTP të ndryshojë</translation>
     </message>
 </context>
 <context>
@@ -1529,7 +1529,7 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">Nuk është konfiguruar asnjë skedar i ekzekutueshëm GPG</translation>
+        <translation>Nuk është konfiguruar asnjë skedar i ekzekutueshëm GPG</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1607,12 +1607,12 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">URI otpauth:// ose sekret base32</translation>
+        <translation>URI otpauth:// ose sekret base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Sekret OTP i pavlefshëm</translation>
+        <translation>Sekret OTP i pavlefshëm</translation>
     </message>
 </context>
 <context>
@@ -1629,23 +1629,23 @@ Të vazhdohet?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">Fjalëkalim</translation>
+        <translation>Fjalëkalim</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Hape %1 në shfletues</translation>
+        <translation>Hape %1 në shfletues</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">Kodi OTP</translation>
+        <translation>Kodi OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Nuk u gjet asnjë kod OTP në këtë hyrje fjalëkalimi</translation>
+        <translation>Nuk u gjet asnjë kod OTP në këtë hyrje fjalëkalimi</translation>
     </message>
 </context>
 <context>
@@ -1744,22 +1744,22 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Nisja e qrencode dështoi: %1</translation>
+        <translation>Nisja e qrencode dështoi: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode nuk përfundoi në kohë</translation>
+        <translation>qrencode nuk përfundoi në kohë</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode u përplas</translation>
+        <translation>qrencode u përplas</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode doli me kodin %1</translation>
+        <translation>qrencode doli me kodin %1</translation>
     </message>
 </context>
 <context>
