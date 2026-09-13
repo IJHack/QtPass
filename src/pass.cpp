@@ -834,9 +834,17 @@ auto Pass::getRecipientList(const QString &for_file, const QString &passStore)
   while (!gpgId.atEnd()) {
     QString recipient(gpgId.readLine());
     recipient = recipient.split("#")[0].trimmed();
-    if (!recipient.isEmpty() && Util::isValidKeyId(recipient)) {
-      recipients += recipient;
+    if (recipient.isEmpty()) {
+      continue;
     }
+    if (!Util::isValidKeyId(recipient)) {
+      // Never drop a recipient silently: the list is written back verbatim
+      // by UsersDialog, so a skipped line disappears from .gpg-id.
+      qWarning() << "Skipping unusable recipient in" << gpgId.fileName() << ":"
+                 << recipient;
+      continue;
+    }
+    recipients += recipient;
   }
   return recipients;
 }

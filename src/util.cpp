@@ -364,39 +364,23 @@ auto Util::newLinesRegex() -> const QRegularExpression & {
 /**
  * @brief Validate whether a string is an accepted GPG key identifier.
  *
- * Accepted formats:
- * - Hexadecimal key IDs / fingerprints, length 8 to 40 hex characters,
- *   optionally prefixed with `0x` or `0X`.
- * - Identifiers wrapped in angle brackets (`<...>`); brackets are stripped
- *   before validation.
- * - Special routing prefixes: `@`, `/`, `#`, `&` (used by GnuPG to look up
- *   keys via mail-server / keyring / fingerprint substring matchers).
- * - Email-style user IDs (any value containing `@`).
+ * Mirrors what `pass` itself accepts in `.gpg-id`: every non-empty token is
+ * handed to gpg as a `-r` argument, and gpg resolves it — key ID or
+ * fingerprint of any version (v4 hex, v6 hex, with or without `0x`),
+ * `<email>`, `=Exact User ID`, a plain name substring, or a `@`/`/`/`#`/`&`
+ * routing prefix. No content heuristics are applied here: they can only
+ * reject recipients gpg would have accepted, and a rejected line is not just
+ * skipped but erased the next time `.gpg-id` is rewritten.
+ *
+ * The one thing rejected is a token starting with `-`: the recipient list is
+ * also passed positionally to `gpg --list-keys`, where such a token would be
+ * parsed as an option instead of a key selector.
  *
  * Empty input is invalid.
  *
  * @param keyId Input key identifier string to validate.
- * @return true if the input matches any accepted format; false otherwise.
+ * @return true unless the input is empty or starts with `-`.
  */
 auto Util::isValidKeyId(const QString &keyId) -> bool {
-  static const QRegularExpression hexPrefixRegex{"^0[xX]"};
-  static const QRegularExpression specialPrefixRegex{"^[@/#&]"};
-  static const QRegularExpression hexKeyIdRegex{"^[0-9A-Fa-f]{8,40}$"};
-
-  if (keyId.isEmpty()) {
-    return false;
-  }
-
-  QString normalized = keyId;
-  if (normalized.startsWith('<') && normalized.endsWith('>')) {
-    normalized = normalized.mid(1, normalized.length() - 2);
-  }
-  normalized.remove(hexPrefixRegex);
-
-  if (specialPrefixRegex.match(normalized).hasMatch() ||
-      normalized.contains('@')) {
-    return true;
-  }
-
-  return hexKeyIdRegex.match(normalized).hasMatch();
+  return !keyId.isEmpty() && !keyId.startsWith('-');
 }
