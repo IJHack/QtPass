@@ -12,6 +12,7 @@
 [![codecov](https://codecov.io/gh/IJHack/QtPass/branch/main/graph/badge.svg)](https://codecov.io/gh/IJHack/QtPass)
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FIJHack%2FQtPass)
+[![REUSE status](https://api.reuse.software/badge/github.com/IJHack/QtPass)](https://api.reuse.software/info/github.com/IJHack/QtPass)
 [![Translation status](https://hosted.weblate.org/widgets/qtpass/-/qtpass/svg-badge.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
 
 QtPass is a multi-platform GUI for [pass](https://www.passwordstore.org/),
