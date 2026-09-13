@@ -158,7 +158,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Unterstützung für Einmalpasswörter (OTP) aktivieren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -646,7 +646,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konnte %1 nicht starten</translation>
     </message>
 </context>
 <context>
@@ -847,12 +847,12 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kopieren fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konnte %1 nicht nach %2 kopieren.</translation>
     </message>
 </context>
 <context>
@@ -1443,7 +1443,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konnte diesen Passworteintrag nicht entschlüsseln</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
@@ -1514,7 +1514,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dieser Eintrag enthält ein OTP-Geheimnis, kein Passwort</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
@@ -1636,7 +1636,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sekunden bis zum Wechsel des OTP-Codes</translation>
     </message>
 </context>
 <context>
@@ -1664,7 +1664,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Keine ausführbare GPG-Datei konfiguriert</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1742,12 +1742,12 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">otpauth://-URI oder Base32-Geheimnis</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ungültiges OTP-Geheimnis</translation>
     </message>
 </context>
 <context>
@@ -1878,22 +1878,22 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konnte qrencode nicht starten: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode wurde nicht rechtzeitig fertig</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode ist abgestürzt</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode wurde mit Code %1 beendet</translation>
     </message>
 </context>
 <context>
