@@ -1518,7 +1518,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Operazione scaduta; riattivazione dell'interfaccia.</translation>
+        <translation type="unfinished">Operazione scaduta; riattivazione dell&apos;interfaccia.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="372"/>
@@ -1584,7 +1584,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Quel nome punterebbe fuori dall'archivio delle password. Scegli un nome diverso.</translation>
+        <translation type="unfinished">Quel nome punterebbe fuori dall&apos;archivio delle password. Scegli un nome diverso.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1267"/>
