@@ -210,10 +210,10 @@ attack I can think of at least two options:
 
 > **AI assistance**<br>
 > Parts of QtPass are developed with AI coding assistants — mainly [Claude Code](https://claude.com/claude-code), earlier also [OpenCode](https://opencode.ai/) — and AI reviewers (CodeRabbit, GitHub Copilot) comment on pull requests.
-> Commits made with an assistant carry a `Co-Authored-By:` trailer naming the model, so `git log` shows which changes were AI-assisted.
+> Commits made with an assistant carry a `Co-Authored-By:` trailer naming the model (or the pull request says so), so the history shows which changes were AI-assisted.
 > Every change is reviewed, built and tested by a human maintainer before it is merged, and the maintainers take responsibility for it.
 > Some translations are machine-drafted; they stay marked _unfinished_ in the `.ts` files until a native speaker confirms them on [Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/).
-> The application itself contains no AI features and sends no data anywhere.
+> The application itself contains no AI features and talks to no AI service.
 
 ## License
 

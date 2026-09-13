@@ -11,7 +11,7 @@
 
 ## AI assistance
 
-- [ ] No AI assistant was used, **or** the assisted commits carry a `Co-Authored-By:` trailer / it is disclosed above (see [CONTRIBUTING](../CONTRIBUTING.md#ai-assistance))
+- [ ] No AI assistant was used, **or** the assisted commits carry a `Co-Authored-By:` trailer / it is disclosed above (see [CONTRIBUTING](https://github.com/IJHack/QtPass/blob/main/CONTRIBUTING.md#ai-assistance))
 
 ## DCO
 
