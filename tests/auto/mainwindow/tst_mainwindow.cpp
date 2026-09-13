@@ -392,6 +392,15 @@ void tst_mainwindow::textBrowserFollowsRuntimePaletteChange() {
   auto *browser =
       m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
   QVERIFY2(browser != nullptr, "MainWindow must have a textBrowser");
+  // The regression was a "background: palette(base)" stylesheet: the
+  // style-sheet engine resolves palette() once at polish time. Any stylesheet
+  // on the browser reintroduces that class of bug.
+  QVERIFY2(browser->styleSheet().isEmpty(),
+           qPrintable(QStringLiteral("textBrowser carries a stylesheet: ") +
+                      browser->styleSheet()));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+  QSKIP("pixel grab is not deterministic on the Qt 5 offscreen platform");
+#endif
   const QPalette original = QApplication::palette();
   auto restore =
       qScopeGuard([&original] { QApplication::setPalette(original); });
