@@ -1536,6 +1536,10 @@ void MainWindow::dropStaleToolBarPalette() {
       QApplication::palette().color(QPalette::Window).lightness();
   if (qAbs(barLightness - appLightness) > kStaleToolBarLightness) {
     ui->toolBar->setPalette(QPalette());
+    // The style also paints the tools-area background on the main window
+    // from the same stale palette, and the toolbar is transparent by default;
+    // paint our own background so the reset is actually visible.
+    ui->toolBar->setAutoFillBackground(true);
   }
 }
 

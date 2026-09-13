@@ -479,6 +479,9 @@ void tst_mainwindow::toolBarDropsStaleStylePaletteAfterThemeSwitch() {
                "stale dark toolbar palette must be dropped on a light app");
   QCOMPARE(bar->palette().color(QPalette::Window),
            light.color(QPalette::Window));
+  QVERIFY2(bar->autoFillBackground(),
+           "toolbar must paint its own background over the style's stale "
+           "tools-area fill");
 }
 
 /**
