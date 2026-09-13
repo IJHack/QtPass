@@ -37,10 +37,7 @@ Executor::Executor(QObject *parent) : QObject(parent) {
  */
 void Executor::startProcess(const QString &app, const QStringList &args) {
   if (app.startsWith("wsl ")) {
-    QStringList wslArgs = args;
-    QString actualApp = app;
-    wslArgs.prepend(actualApp.remove(0, 4));
-    m_process.start("wsl", wslArgs);
+    m_process.start("wsl", wslExecArgs(app.mid(4), args));
   } else {
     m_process.start(app, args);
   }
@@ -56,13 +53,28 @@ void Executor::startProcess(const QString &app, const QStringList &args) {
 void Executor::startProcessBlocking(QProcess &internal, const QString &app,
                                     const QStringList &args) {
   if (app.startsWith("wsl ")) {
-    QStringList wslArgs = args;
-    QString actualApp = app;
-    wslArgs.prepend(actualApp.remove(0, 4));
-    internal.start("wsl", wslArgs);
+    internal.start("wsl", wslExecArgs(app.mid(4), args));
   } else {
     internal.start(app, args);
   }
+}
+
+/**
+ * @brief Executor::wslExecArgs builds the wsl.exe argv for @p command.
+ *
+ * `wsl <command> <args>` hands the joined command line to the default Linux
+ * shell, which word-splits and expands `$()` in every argument. `--exec`
+ * makes WSL launch the binary directly so arguments arrive verbatim.
+ * @param command Linux command to run.
+ * @param args Arguments for @p command.
+ * @return `--exec`, @p command, then @p args.
+ */
+auto Executor::wslExecArgs(const QString &command, const QStringList &args)
+    -> QStringList {
+  QStringList wslArgs = args;
+  wslArgs.prepend(command);
+  wslArgs.prepend(QStringLiteral("--exec"));
+  return wslArgs;
 }
 
 /**
