@@ -232,6 +232,12 @@ public slots:
   void cancelOtpRequest();
 
   /**
+   * @brief Drop a style-imposed toolbar palette that belongs to the other
+   * theme (Breeze header palette after a light/dark switch).
+   */
+  void dropStaleToolBarPalette();
+
+  /**
    * @brief Handle results from a completed grep search.
    * @param results List of file/match pairs from the grep operation.
    */

@@ -146,6 +146,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   // Install the search-box key filter once, not on every setUiElementsEnabled
   // call.
   ui->lineEdit->installEventFilter(this);
+  ui->toolBar->installEventFilter(this);
 
   // Safety net: if a backend operation disables the UI but never signals
   // completion, re-enable after a timeout so the window can't get stuck.
@@ -1497,6 +1498,17 @@ void MainWindow::closeEvent(QCloseEvent *event) {
  * @return
  */
 auto MainWindow::eventFilter(QObject *obj, QEvent *event) -> bool {
+  if (obj == ui->toolBar && event->type() == QEvent::PaletteChange) {
+    // KDE's Breeze style gives top toolbars a "header" palette of its own.
+    // After a runtime light/dark switch it recomputes that palette from a
+    // cached kdeglobals and stamps the previous theme's colours back on, so
+    // the toolbar stays dark on a light window (or vice versa) with matching
+    // invisible icons. A legitimate header tint is close to the window
+    // colour; a stale theme is not. When the two disagree, drop the imposed
+    // palette so the toolbar follows the application palette again. Deferred
+    // so we never re-enter the style while it is still applying its palette.
+    QTimer::singleShot(0, this, &MainWindow::dropStaleToolBarPalette);
+  }
   if (obj == ui->lineEdit && event->type() == QEvent::KeyPress) {
     auto *key = dynamic_cast<QKeyEvent *>(event);
     if (key != nullptr && key->key() == Qt::Key_Down) {
@@ -1504,6 +1516,27 @@ auto MainWindow::eventFilter(QObject *obj, QEvent *event) -> bool {
     }
   }
   return QObject::eventFilter(obj, event);
+}
+
+/**
+ * @brief Reset the toolbar palette when a style left it in the wrong theme.
+ *
+ * Compares the lightness of the toolbar's Window colour with the application
+ * palette; a difference above kStaleToolBarLightness means the toolbar shows
+ * the other theme. See the PaletteChange branch in eventFilter().
+ */
+void MainWindow::dropStaleToolBarPalette() {
+  if (!ui->toolBar->testAttribute(Qt::WA_SetPalette)) {
+    return;
+  }
+  constexpr int kStaleToolBarLightness = 64;
+  const int barLightness =
+      ui->toolBar->palette().color(QPalette::Window).lightness();
+  const int appLightness =
+      QApplication::palette().color(QPalette::Window).lightness();
+  if (qAbs(barLightness - appLightness) > kStaleToolBarLightness) {
+    ui->toolBar->setPalette(QPalette());
+  }
 }
 
 /**
