@@ -213,7 +213,6 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
     contentTextBrowser->setObjectName(trimmedField);
     {
-      QString linkedText;
       QList<QRegularExpressionMatch> urlMatches;
       qsizetype totalUrlLength = 0;
       {
@@ -225,21 +224,32 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
           urlMatches.append(match);
         }
       }
-      constexpr qsizetype anchorTagOverhead = sizeof("<a href=\"\"></a>") - 1;
-      linkedText.reserve(trimmedValue.size() + totalUrlLength +
-                         urlMatches.size() * anchorTagOverhead);
-      int lastIndex = 0;
-      for (const QRegularExpressionMatch &match : std::as_const(urlMatches)) {
-        const int start = match.capturedStart(0);
-        const int end = match.capturedEnd(0);
-        linkedText +=
-            trimmedValue.mid(lastIndex, start - lastIndex).toHtmlEscaped();
-        const QString escapedUrl = match.captured(0).toHtmlEscaped();
-        linkedText += QStringLiteral("<a href=\"%1\">%1</a>").arg(escapedUrl);
-        lastIndex = end;
+      if (urlMatches.isEmpty()) {
+        // Nothing to link, so show the value as-is. Escaping it and calling
+        // setText() only rendered as rich text when the value happened to
+        // contain a '<'; otherwise "&", '"' and ">" came out as HTML entities
+        // and a password such as `a&b` read `a&amp;b` on screen.
+        contentTextBrowser->setPlainText(trimmedValue);
+      } else {
+        QString linkedText;
+        constexpr qsizetype anchorTagOverhead = sizeof("<a href=\"\"></a>") - 1;
+        linkedText.reserve(trimmedValue.size() + totalUrlLength +
+                           urlMatches.size() * anchorTagOverhead);
+        int lastIndex = 0;
+        for (const QRegularExpressionMatch &match : std::as_const(urlMatches)) {
+          const int start = match.capturedStart(0);
+          const int end = match.capturedEnd(0);
+          linkedText +=
+              trimmedValue.mid(lastIndex, start - lastIndex).toHtmlEscaped();
+          const QString escapedUrl = match.captured(0).toHtmlEscaped();
+          linkedText += QStringLiteral("<a href=\"%1\">%1</a>").arg(escapedUrl);
+          lastIndex = end;
+        }
+        linkedText += trimmedValue.mid(lastIndex).toHtmlEscaped();
+        // Always HTML here: the text is escaped and carries anchor tags, so
+        // do not leave the interpretation to setText()'s auto-detection.
+        contentTextBrowser->setHtml(linkedText);
       }
-      linkedText += trimmedValue.mid(lastIndex).toHtmlEscaped();
-      contentTextBrowser->setText(linkedText);
     }
     contentTextBrowser->setReadOnly(true);
     contentTextBrowser->setStyleSheet(lineStyle);
