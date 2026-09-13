@@ -11,6 +11,7 @@
 #include "../../../src/configdialog.h"
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/qtpasssettings.h"
+#include "../testsettings.h"
 
 /**
  * @class tst_configdialog
@@ -34,6 +35,7 @@ class tst_configdialog : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
+  void initTestCase();
   void constructionDoesNotCrash();
   void useSelectionTogglesCheckbox();
   void useAutoclearTogglesCheckbox();
@@ -57,6 +59,8 @@ private Q_SLOTS:
  * @brief Construct ConfigDialog with a nullptr MainWindow and return — the
  *        constructor doesn't dereference its parent.
  */
+void tst_configdialog::initTestCase() { isolateTestSettings(); }
+
 void tst_configdialog::constructionDoesNotCrash() {
   ConfigDialog dialog(nullptr);
   // Reaching this line means the constructor's setting-load + widget-

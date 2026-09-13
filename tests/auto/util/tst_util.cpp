@@ -33,6 +33,7 @@
 #include "../../../src/templateio.h"
 #include "../../../src/userinfo.h"
 #include "../../../src/util.h"
+#include "../testsettings.h"
 
 using GrepResults = QList<QPair<QString, QStringList>>;
 Q_DECLARE_METATYPE(GrepResults)
@@ -127,6 +128,7 @@ private:
   };
 
 private Q_SLOTS:
+  void initTestCase();
   void cleanupTestCase();
   void normalizeFolderPath();
   void normalizeFolderPathEdgeCases();
@@ -307,6 +309,8 @@ void tst_util::cleanup() {
 /**
  * @brief tst_util::cleanupTestCase test case cleanup method
  */
+void tst_util::initTestCase() { isolateTestSettings(); }
+
 void tst_util::cleanupTestCase() {
   // No test case cleanup required; function intentionally left empty.
 }

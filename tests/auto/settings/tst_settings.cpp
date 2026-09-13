@@ -12,6 +12,7 @@
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/settingsconstants.h"
 #include "../../../src/settingsserializer.h"
+#include "../testsettings.h"
 
 class tst_settings : public QObject {
   Q_OBJECT
@@ -55,44 +56,13 @@ private Q_SLOTS:
   void facadeLoadReflectsSave();
 
 private:
-  QString m_settingsBackupPath;
-  bool m_isPortableMode = false;
 };
 
 void tst_settings::initTestCase() {
-  // Check for portable mode (qtpass.ini in app directory)
-  // Only backup/restore settings file in portable mode
-  // On non-portable (registry on Windows), we cannot safely backup
-  QString portableIni =
-      QCoreApplication::applicationDirPath() + QDir::separator() + "qtpass.ini";
-  m_isPortableMode = QFile::exists(portableIni);
-
-  if (m_isPortableMode) {
-    // Backup FIRST so the restored file contains the true original user config,
-    // not the post-reset state written below.
-    QtPassSettings::getInstance()->sync();
-    QString settingsFile = QtPassSettings::getInstance()->fileName();
-    m_settingsBackupPath = settingsFile + ".bak";
-    QFile::remove(m_settingsBackupPath);
-    QVERIFY(QFile::copy(settingsFile, m_settingsBackupPath));
-  } else {
-    m_settingsBackupPath.clear();
-    // No qtpass.ini next to the binary, so QSettings writes to per-user storage
-    // (e.g. the Windows registry). Automatic backup/restore is only safe in
-    // portable mode, so persistent user settings may be modified by this run.
-    qWarning() << "Non-portable mode detected: tests may modify persistent "
-                  "user settings (e.g. Windows registry). For an isolated "
-                  "run, drop a qtpass.ini next to the test binary.";
-  }
-
-  // Reset password configuration to structural defaults so
-  // getPasswordConfigurationDefault() passes even after a prior run that wrote
-  // non-default values to persistent (non-portable) settings.
-  {
-    AppSettings s = QtPassSettings::load();
-    s.passwordConfiguration = PasswordConfiguration{};
-    QtPassSettings::save(s);
-  }
+  // Every suite run starts from an empty, private settings directory, so
+  // getPasswordConfigurationDefault() sees real defaults and nothing here can
+  // touch the user's live config.
+  isolateTestSettings();
 }
 
 void tst_settings::cleanupTestCase() {
@@ -101,19 +71,6 @@ void tst_settings::cleanupTestCase() {
   QtPassSettings::getInstance()->beginGroup("profile");
   QtPassSettings::getInstance()->remove("test-git-profile");
   QtPassSettings::getInstance()->endGroup();
-
-  // Restore original settings after all tests
-  // This ensures make check doesn't change user's live config
-  if (m_isPortableMode) {
-    QString settingsFile = QtPassSettings::getInstance()->fileName();
-    QtPassSettings::getInstance()->sync();
-    QVERIFY2(QFile::remove(settingsFile) || !QFile::exists(settingsFile),
-             "Failed to remove current settings file before restore");
-    QVERIFY2(QFile::copy(m_settingsBackupPath, settingsFile),
-             "Failed to restore settings file from backup");
-    QVERIFY2(QFile::remove(m_settingsBackupPath),
-             "Failed to remove temporary settings backup file");
-  }
 }
 
 void tst_settings::getPasswordConfigurationDefault() {

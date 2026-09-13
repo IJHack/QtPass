@@ -34,6 +34,7 @@
 #include "../../../src/passworddisplaypanel.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/util.h"
+#include "../testsettings.h"
 
 class tst_mainwindow : public QObject {
   Q_OBJECT
@@ -41,11 +42,6 @@ class tst_mainwindow : public QObject {
   QTemporaryDir m_storeDir;
   QScopedPointer<MainWindow> m_window;
   QString m_gpgPath;
-  QString m_savedPassStore;
-  bool m_savedUsePass;
-  bool m_savedShowProcessOutput;
-  QString m_savedGpgExecutable;
-  QString m_savedQrencodeExecutable;
 
 private Q_SLOTS:
   void initTestCase();
@@ -73,6 +69,7 @@ private Q_SLOTS:
 };
 
 void tst_mainwindow::initTestCase() {
+  isolateTestSettings();
   QVERIFY2(m_storeDir.isValid(), "temp store dir must be created");
 
   // Minimal valid pass store: just a .gpg-id file
@@ -81,14 +78,6 @@ void tst_mainwindow::initTestCase() {
   QVERIFY2(gpgId.open(QIODevice::WriteOnly), ".gpg-id must be writable");
   gpgId.write("0000000000000000\n");
   gpgId.close();
-
-  // Save original settings before modifying them
-  m_savedPassStore = QtPassSettings::getPassStore();
-  m_savedShowProcessOutput = QtPassSettings::isShowProcessOutput();
-  const AppSettings savedSettings = QtPassSettings::load();
-  m_savedUsePass = savedSettings.usePass;
-  m_savedGpgExecutable = savedSettings.gpgExecutable;
-  m_savedQrencodeExecutable = savedSettings.qrencodeExecutable;
 
   // Point QtPassSettings at the temp store and use gpg (not pass) mode so
   // configIsValid() only requires the .gpg-id file + a gpg binary.
@@ -137,22 +126,8 @@ void tst_mainwindow::init() {
 void tst_mainwindow::cleanup() { m_window.reset(); }
 
 void tst_mainwindow::cleanupTestCase() {
-  // Restore all saved settings so the user's live config is not left pointing
-  // at our temp store (which will be deleted when m_storeDir goes out of
-  // scope).
-  QtPassSettings::setPassStore(m_savedPassStore);
-  QtPassSettings::setUsePass(m_savedUsePass);
-  {
-    AppSettings s = QtPassSettings::load();
-    s.showProcessOutput = m_savedShowProcessOutput;
-    QtPassSettings::save(s);
-  }
-  {
-    AppSettings s = QtPassSettings::load();
-    s.gpgExecutable = m_savedGpgExecutable;
-    s.qrencodeExecutable = m_savedQrencodeExecutable;
-    QtPassSettings::save(s);
-  }
+  // Settings live in the isolated directory from isolateTestSettings();
+  // nothing to restore.
 }
 
 // ---------------------------------------------------------------------------

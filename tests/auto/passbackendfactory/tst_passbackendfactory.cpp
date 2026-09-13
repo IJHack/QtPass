@@ -20,13 +20,12 @@
 #include "../../../src/passbackendfactory.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/realpass.h"
+#include "../testsettings.h"
 
 class tst_passbackendfactory : public QObject {
   Q_OBJECT
 
   QTemporaryDir m_storeDir;
-  bool m_savedUsePass{};
-  QString m_savedPassStore;
 
 private Q_SLOTS:
   void initTestCase();
@@ -41,10 +40,8 @@ private Q_SLOTS:
 };
 
 void tst_passbackendfactory::initTestCase() {
+  isolateTestSettings();
   QVERIFY2(m_storeDir.isValid(), "temp store dir must be created");
-  const AppSettings s = QtPassSettings::load();
-  m_savedUsePass = s.usePass;
-  m_savedPassStore = QtPassSettings::getPassStore();
 }
 
 void tst_passbackendfactory::cleanup() {
@@ -53,8 +50,6 @@ void tst_passbackendfactory::cleanup() {
 }
 
 void tst_passbackendfactory::cleanupTestCase() {
-  QtPassSettings::setUsePass(m_savedUsePass);
-  QtPassSettings::setPassStore(m_savedPassStore);
   PassBackendFactory::invalidate();
 }
 

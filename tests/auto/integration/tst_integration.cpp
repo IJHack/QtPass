@@ -45,6 +45,7 @@
 #include "../../../src/realpass.h"
 #include "../../../src/userinfo.h"
 #include "../../../src/usersdialog.h"
+#include "../testsettings.h"
 
 using GrepResults = QList<QPair<QString, QStringList>>;
 Q_DECLARE_METATYPE(GrepResults)
@@ -201,7 +202,6 @@ class tst_integration : public QObject {
   QTemporaryDir m_gnupgHome;
   QString m_keyFingerprint;
   QString m_keyFingerprint2;
-  QString m_originalPassSigningKey;
 
   // Wait for a signal spy to receive at least one signal (up to timeoutMs).
   static bool waitForSignal(QSignalSpy &spy, int timeoutMs = 15000) {
@@ -332,6 +332,7 @@ private Q_SLOTS:
 // ---------------------------------------------------------------------------
 
 void tst_integration::initTestCase() {
+  isolateTestSettings();
   m_gpgExe = findGpg();
   if (m_gpgExe.isEmpty())
     QSKIP("gpg not found – skipping integration tests");
@@ -407,7 +408,6 @@ void tst_integration::initTestCase() {
     s.gpgExecutable = m_gpgExe;
     QtPassSettings::save(s);
   }
-  m_originalPassSigningKey = QtPassSettings::load().passSigningKey;
   {
     AppSettings s = QtPassSettings::load();
     s.passSigningKey = QString();
@@ -419,13 +419,6 @@ void tst_integration::initTestCase() {
 }
 
 void tst_integration::cleanupTestCase() {
-  // Restore original pass signing key
-  {
-    AppSettings s = QtPassSettings::load();
-    s.passSigningKey = m_originalPassSigningKey;
-    QtPassSettings::save(s);
-  }
-
   // Kill any gpg-agent started in our temporary homedir so it doesn't linger.
   QProcess killer;
   QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
