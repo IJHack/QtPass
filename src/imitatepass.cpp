@@ -663,16 +663,21 @@ auto ImitatePass::createBackupCommit() -> bool {
   // directory, so without -C these commands would run in QtPass's launch
   // directory and either fail or operate on an unrelated repository.
   const QString store = pgit(m_settings.passStore);
+  // Only tracked files belong in the backup. Untracked files in the store (a
+  // plaintext export, an editor swap file, ...) must not be swept into a
+  // commit that autoPush then sends to the shared remote, so both the status
+  // check and the add are restricted to what git already knows about.
   QString statusOut;
-  if (Executor::executeBlocking(git, {"-C", store, "status", "--porcelain"},
-                                &statusOut) != 0) {
+  if (Executor::executeBlocking(
+          git, {"-C", store, "status", "--porcelain", "--untracked-files=no"},
+          &statusOut) != 0) {
     emit critical(
         tr("Backup commit failed"),
         tr("Could not inspect git status. Re-encryption was aborted."));
     return false;
   }
   if (!statusOut.trimmed().isEmpty()) {
-    if (Executor::executeBlocking(git, {"-C", store, "add", "-A"}) != 0 ||
+    if (Executor::executeBlocking(git, {"-C", store, "add", "-u"}) != 0 ||
         Executor::executeBlocking(git, {"-C", store, "commit", "-m",
                                         "Backup before re-encryption"}) != 0) {
       emit critical(tr("Backup commit failed"),
