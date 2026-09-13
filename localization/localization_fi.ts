@@ -1056,16 +1056,16 @@ Expire-Date: 0
         <translation type="vanished">Add</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="395"/>
         <location filename="../src/mainwindow.ui" line="398"/>
-        <location filename="../src/mainwindow.ui" line="401"/>
-        <location filename="../src/mainwindow.cpp" line="1560"/>
+        <location filename="../src/mainwindow.cpp" line="1568"/>
         <source>Edit</source>
         <translation>Muokkaa</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="403"/>
         <location filename="../src/mainwindow.ui" line="406"/>
-        <location filename="../src/mainwindow.ui" line="409"/>
-        <location filename="../src/mainwindow.cpp" line="1574"/>
+        <location filename="../src/mainwindow.cpp" line="1582"/>
         <source>Delete</source>
         <translation>Poista</translation>
     </message>
@@ -1074,7 +1074,7 @@ Expire-Date: 0
         <translation type="vanished">git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="425"/>
+        <location filename="../src/mainwindow.ui" line="422"/>
         <source>Push</source>
         <translation>Push</translation>
     </message>
@@ -1097,32 +1097,32 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="385"/>
+        <location filename="../src/mainwindow.ui" line="382"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="414"/>
+        <location filename="../src/mainwindow.ui" line="411"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="417"/>
+        <location filename="../src/mainwindow.ui" line="414"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Luo OTP ja kopioi leikepöydälle</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="420"/>
+        <location filename="../src/mainwindow.ui" line="417"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="428"/>
+        <location filename="../src/mainwindow.ui" line="425"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="436"/>
+        <location filename="../src/mainwindow.ui" line="433"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
@@ -1131,7 +1131,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="433"/>
+        <location filename="../src/mainwindow.ui" line="430"/>
         <source>Update</source>
         <translation>Päivitä</translation>
     </message>
@@ -1147,13 +1147,13 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-family: Lato;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="444"/>
+        <location filename="../src/mainwindow.ui" line="441"/>
         <source>Manage who can read password in folder</source>
         <translation>Hallinnoi ketkä voivat lukea salasanan kansiossa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.ui" line="438"/>
+        <location filename="../src/mainwindow.cpp" line="1562"/>
         <source>Users</source>
         <translation>Käyttäjät</translation>
     </message>
@@ -1169,12 +1169,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-family: Lato;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="452"/>
+        <location filename="../src/mainwindow.ui" line="449"/>
         <source>Configuration</source>
         <translation>Asetukset</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="449"/>
+        <location filename="../src/mainwindow.ui" line="446"/>
         <source>Config</source>
         <translation>Asetukset</translation>
     </message>
@@ -1234,19 +1234,19 @@ p, li { white-space: pre-wrap; }
         <translation>Tervetuloa QtPassiin</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="356"/>
+        <location filename="../src/mainwindow.cpp" line="364"/>
         <source>Clear output</source>
         <translation>Tyhjennä tuloste</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="355"/>
+        <location filename="../src/mainwindow.cpp" line="363"/>
         <source>Clear</source>
         <translation>Tyhjennä</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="775"/>
-        <location filename="../src/mainwindow.cpp" line="970"/>
+        <location filename="../src/mainwindow.cpp" line="783"/>
+        <location filename="../src/mainwindow.cpp" line="978"/>
         <source>Search Password</source>
         <translation>Etsi salasana</translation>
     </message>
@@ -1255,7 +1255,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="326"/>
+        <location filename="../src/mainwindow.cpp" line="334"/>
         <source>Welcome to QtPass %1</source>
         <translation>Tervetuloa QtPassiin %1</translation>
     </message>
@@ -1294,8 +1294,8 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="536"/>
-        <location filename="../src/mainwindow.cpp" line="549"/>
+        <location filename="../src/mainwindow.cpp" line="544"/>
+        <location filename="../src/mainwindow.cpp" line="557"/>
         <source>Updating password-store</source>
         <translation>Päivitetään salasanasäilöä</translation>
     </message>
@@ -1312,8 +1312,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="671"/>
-        <location filename="../src/mainwindow.cpp" line="1013"/>
+        <location filename="../src/mainwindow.cpp" line="679"/>
+        <location filename="../src/mainwindow.cpp" line="1021"/>
         <source>Content hidden</source>
         <translation>Sisältö piilotettu</translation>
     </message>
@@ -1334,7 +1334,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Clipboard not cleared</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="779"/>
+        <location filename="../src/mainwindow.cpp" line="787"/>
         <source>Password and Content hidden</source>
         <translation>Salasana ja sisältö piilotettu</translation>
     </message>
@@ -1363,12 +1363,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="867"/>
+        <location filename="../src/mainwindow.cpp" line="875"/>
         <source>Looking for: %1</source>
         <translation>Etsitään: %1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1023"/>
+        <location filename="../src/mainwindow.cpp" line="1031"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n osuma löytyi</numerusform>
@@ -1376,35 +1376,35 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1152"/>
-        <location filename="../src/mainwindow.cpp" line="1652"/>
+        <location filename="../src/mainwindow.cpp" line="1160"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>New file</source>
         <translation>Uusi tiedosto</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1153"/>
+        <location filename="../src/mainwindow.cpp" line="1161"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Uusi salasanatiedosto:
 (Sijoitetaan sijaintiin %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1193"/>
+        <location filename="../src/mainwindow.cpp" line="1201"/>
         <source> and the whole content?</source>
         <translation> ja koko sisältö?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1203"/>
+        <location filename="../src/mainwindow.cpp" line="1211"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> ja koko sisältö? &lt;br&gt;&lt;strong&gt;Huomio: valitussa kansiossa on odottamattomia tiedostoja, tarkista ne ennen jatkamista.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1213"/>
+        <location filename="../src/mainwindow.cpp" line="1221"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Haluatko varmasti poistaa %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1212"/>
+        <location filename="../src/mainwindow.cpp" line="1220"/>
         <source>Delete password?</source>
         <translation>Poista salasana?</translation>
     </message>
@@ -1413,7 +1413,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Are you sure you want to delete %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1212"/>
+        <location filename="../src/mainwindow.cpp" line="1220"/>
         <source>Delete folder?</source>
         <translation>Poista kansio?</translation>
     </message>
@@ -1438,31 +1438,31 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1426"/>
+        <location filename="../src/mainwindow.cpp" line="1434"/>
         <source>Profile changed to %1</source>
         <translation>Profiiliksi muutettu %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1551"/>
+        <location filename="../src/mainwindow.cpp" line="1559"/>
         <source>Open folder with file manager</source>
         <translation>Avaa kansio tiedostoselaimessa</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="387"/>
         <location filename="../src/mainwindow.ui" line="390"/>
-        <location filename="../src/mainwindow.ui" line="393"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
+        <location filename="../src/mainwindow.cpp" line="1560"/>
         <source>Add folder</source>
         <translation>Lisää kansio</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="376"/>
         <location filename="../src/mainwindow.ui" line="379"/>
-        <location filename="../src/mainwindow.ui" line="382"/>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1561"/>
         <source>Add password</source>
         <translation>Lisää salasana</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1653"/>
+        <location filename="../src/mainwindow.cpp" line="1660"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Uusi kansio:
@@ -1478,55 +1478,55 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Toiminto aikakatkaistiin; käyttöliittymä otetaan uudelleen käyttöön.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="364"/>
+        <location filename="../src/mainwindow.cpp" line="372"/>
         <source>Process Output</source>
         <translation>Prosessin tuloste</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="719"/>
+        <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="732"/>
-        <location filename="../src/mainwindow.cpp" line="750"/>
-        <location filename="../src/mainwindow.cpp" line="1281"/>
+        <location filename="../src/mainwindow.cpp" line="740"/>
+        <location filename="../src/mainwindow.cpp" line="758"/>
+        <location filename="../src/mainwindow.cpp" line="1289"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP-koodi kopioitu leikepöydälle</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="752"/>
-        <location filename="../src/mainwindow.cpp" line="1264"/>
+        <location filename="../src/mainwindow.cpp" line="760"/>
+        <location filename="../src/mainwindow.cpp" line="1272"/>
         <source>No OTP code found in this password entry</source>
         <translation>Tässä salasanassa ei löytynyt OTP-koodia</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="918"/>
+        <location filename="../src/mainwindow.cpp" line="926"/>
         <source>Searching…</source>
         <translation>Etsitään…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="947"/>
+        <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Search content (regex)</source>
         <translation>Etsi sisällöstä (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="952"/>
+        <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation type="unfinished">Sisältöhaku käyttää POSIX-perussäännöllisiä lausekkeita (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="954"/>
+        <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">Sisältöhaku käyttää Perl-yhteensopivia säännöllisiä lausekkeita (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="999"/>
+        <location filename="../src/mainwindow.cpp" line="1007"/>
         <source>No matches found.</source>
         <translation>Ei osumia.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1024"/>
+        <location filename="../src/mainwindow.cpp" line="1032"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>%n merkinnässä.</numerusform>
@@ -1534,73 +1534,73 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1104"/>
+        <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
         <translation type="unfinished">Virheellinen nimi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1105"/>
+        <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Tuo nimi viittaisi salasanavaraston ulkopuolelle. Valitse eri nimi.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1259"/>
+        <location filename="../src/mainwindow.cpp" line="1267"/>
         <source>No password selected for OTP generation</source>
         <translation>OTP-luontia varten ei ole valittu salasanaa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1566"/>
+        <location filename="../src/mainwindow.cpp" line="1574"/>
         <source>Rename folder</source>
         <translation>Nimeä kansio uudelleen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1570"/>
+        <location filename="../src/mainwindow.cpp" line="1578"/>
         <source>Rename password</source>
         <translation>Nimeä salasana uudelleen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1580"/>
+        <location filename="../src/mainwindow.cpp" line="1588"/>
         <source>Share</source>
         <translation>Jaa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1590"/>
+        <location filename="../src/mainwindow.cpp" line="1598"/>
         <source>Re-encrypt all passwords</source>
         <translation>Salaa kaikki salasanat uudelleen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1595"/>
+        <location filename="../src/mainwindow.cpp" line="1603"/>
         <source>Export my public key...</source>
         <translation>Vie julkinen avaimeni…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1601"/>
+        <location filename="../src/mainwindow.cpp" line="1609"/>
         <source>Add recipient...</source>
         <translation>Lisää vastaanottaja…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1606"/>
+        <location filename="../src/mainwindow.cpp" line="1614"/>
         <source>What is this?</source>
         <translation>Mikä tämä on?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1798"/>
+        <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1873"/>
-        <location filename="../src/mainwindow.cpp" line="1892"/>
+        <location filename="../src/mainwindow.cpp" line="1880"/>
+        <location filename="../src/mainwindow.cpp" line="1899"/>
         <source>Export Public Key</source>
         <translation>Vie julkinen avain</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1874"/>
+        <location filename="../src/mainwindow.cpp" line="1881"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Vie julkinen avaimesi&lt;/h3&gt;&lt;p&gt;Allekirjoitusavainta ei ole määritetty. Aseta sellainen kohdassa QtPass-asetukset &amp;gt; GPG-avaimet, tai suorita seuraava komento päätteessä:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Lähetä sen jälkeen tiedosto tiimisi jäsenille.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1893"/>
+        <location filename="../src/mainwindow.cpp" line="1900"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1609,17 +1609,17 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1895"/>
+        <location filename="../src/mainwindow.cpp" line="1902"/>
         <source>No output from gpg.</source>
         <translation>gpg ei tuottanut tulostetta.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1922"/>
+        <location filename="../src/mainwindow.cpp" line="1929"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Salasanojen jakaminen GPG:llä</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1923"/>
+        <location filename="../src/mainwindow.cpp" line="1930"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Salasanojen jakaminen GPG:llä&lt;/h3&gt;&lt;p&gt;Salasanojen jakamiseen muiden käyttäjien kanssa:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Vie julkinen avaimesi&lt;/b&gt; ja lähetä se tiimisi jäsenille&lt;/li&gt;&lt;li&gt;&lt;b&gt;Tuo tiimin jäsenten julkiset avaimet&lt;/b&gt; GPG-avainnippuusi&lt;/li&gt;&lt;li&gt;&lt;b&gt;Salaa salasanat uudelleen&lt;/b&gt; jotta kaikki vastaanottajat voivat purkaa salauksen&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Vain henkilöt, joilla on vastaava salainen avain, voivat purkaa salasanojen salauksen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vinkki:&lt;/b&gt; Käytä samaa GPG-avainta kaikissa jaetuissa kansioissa.&lt;/p&gt;&lt;p&gt;Lisätietoja löydät UKK-osiosta.&lt;/p&gt;</translation>
     </message>
@@ -1628,50 +1628,50 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Salaa uudelleen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
-        <location filename="../src/mainwindow.cpp" line="1674"/>
-        <location filename="../src/mainwindow.cpp" line="1821"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1828"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1666"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Failed to create folder: %1</source>
         <translation>Kansion luonti epäonnistui: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1675"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>.gpg-id-tiedoston luominen epäonnistui kohdassa: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1702"/>
-        <location filename="../src/mainwindow.cpp" line="1742"/>
+        <location filename="../src/mainwindow.cpp" line="1709"/>
+        <location filename="../src/mainwindow.cpp" line="1749"/>
         <source>Rename file</source>
         <translation>Nimeä tiedosto uudelleen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1702"/>
+        <location filename="../src/mainwindow.cpp" line="1709"/>
         <source>Rename Folder To: </source>
         <translation>Nimeä kansio uudelleen seuraavaksi: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1742"/>
+        <location filename="../src/mainwindow.cpp" line="1749"/>
         <source>Rename File To: </source>
         <translation>Nimeä tiedosto uudelleen seuraavaksi: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1822"/>
+        <location filename="../src/mainwindow.cpp" line="1829"/>
         <source>Directory does not exist: %1</source>
         <translation>Hakemistoa ei ole olemassa: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1827"/>
+        <location filename="../src/mainwindow.cpp" line="1834"/>
         <source>Re-encrypt passwords</source>
         <translation>Salaa salasanat uudelleen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1828"/>
+        <location filename="../src/mainwindow.cpp" line="1835"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -1688,7 +1688,7 @@ Tämä saattaa kirjoittaa uudelleen useita tiedostoja, eikä sitä voida helpost
 Jatketaanko?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="322"/>
+        <location filename="../src/mainwindow.ui" line="319"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -1839,13 +1839,13 @@ Jatketaanko?</translation>
         <translation type="unfinished">Avaa %1 selaimessa</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="304"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="317"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="320"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
         <translation type="unfinished">OTP koodi</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="305"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Tässä salasanassa ei löytynyt OTP-koodia</translation>
     </message>
@@ -1942,6 +1942,26 @@ Jatketaanko?</translation>
         <location filename="../src/qtpass.cpp" line="530"/>
         <source>Copied to clipboard</source>
         <translation>Tallennettu leikepöydälle</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="552"/>
+        <source>Could not start qrencode: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="560"/>
+        <source>qrencode did not finish in time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="572"/>
+        <source>qrencode crashed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="573"/>
+        <source>qrencode exited with code %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

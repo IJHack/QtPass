@@ -966,8 +966,8 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="775"/>
-        <location filename="../src/mainwindow.cpp" line="970"/>
+        <location filename="../src/mainwindow.cpp" line="783"/>
+        <location filename="../src/mainwindow.cpp" line="978"/>
         <source>Search Password</source>
         <translation>Cari Kata Sandi</translation>
     </message>
@@ -1022,7 +1022,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation>Selamat datang di QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="322"/>
+        <location filename="../src/mainwindow.ui" line="319"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -1033,123 +1033,123 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Kode sumber&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="376"/>
         <location filename="../src/mainwindow.ui" line="379"/>
-        <location filename="../src/mainwindow.ui" line="382"/>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1561"/>
         <source>Add password</source>
         <translation>Tambah kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="385"/>
+        <location filename="../src/mainwindow.ui" line="382"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="387"/>
         <location filename="../src/mainwindow.ui" line="390"/>
-        <location filename="../src/mainwindow.ui" line="393"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
+        <location filename="../src/mainwindow.cpp" line="1560"/>
         <source>Add folder</source>
         <translation>Tambah folder</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="395"/>
         <location filename="../src/mainwindow.ui" line="398"/>
-        <location filename="../src/mainwindow.ui" line="401"/>
-        <location filename="../src/mainwindow.cpp" line="1560"/>
+        <location filename="../src/mainwindow.cpp" line="1568"/>
         <source>Edit</source>
         <translation>Edit</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="403"/>
         <location filename="../src/mainwindow.ui" line="406"/>
-        <location filename="../src/mainwindow.ui" line="409"/>
-        <location filename="../src/mainwindow.cpp" line="1574"/>
+        <location filename="../src/mainwindow.cpp" line="1582"/>
         <source>Delete</source>
         <translation>Hapus</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="414"/>
+        <location filename="../src/mainwindow.ui" line="411"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="417"/>
+        <location filename="../src/mainwindow.ui" line="414"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Buat OTP dan salin ke clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="420"/>
+        <location filename="../src/mainwindow.ui" line="417"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="425"/>
+        <location filename="../src/mainwindow.ui" line="422"/>
         <source>Push</source>
         <translation>Push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="428"/>
+        <location filename="../src/mainwindow.ui" line="425"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="433"/>
+        <location filename="../src/mainwindow.ui" line="430"/>
         <source>Update</source>
         <translation>Perbarui</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="436"/>
+        <location filename="../src/mainwindow.ui" line="433"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.ui" line="438"/>
+        <location filename="../src/mainwindow.cpp" line="1562"/>
         <source>Users</source>
         <translation>Pengguna</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="444"/>
+        <location filename="../src/mainwindow.ui" line="441"/>
         <source>Manage who can read password in folder</source>
         <translation>Kelola siapa yang dapat membaca kata sandi dalam folder</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="449"/>
+        <location filename="../src/mainwindow.ui" line="446"/>
         <source>Config</source>
         <translation>Konfigurasi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="452"/>
+        <location filename="../src/mainwindow.ui" line="449"/>
         <source>Configuration</source>
         <translation>Konfigurasi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="326"/>
+        <location filename="../src/mainwindow.cpp" line="334"/>
         <source>Welcome to QtPass %1</source>
         <translation>Selamat datang di QtPass %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="355"/>
+        <location filename="../src/mainwindow.cpp" line="363"/>
         <source>Clear</source>
         <translation>Bersihkan</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="356"/>
+        <location filename="../src/mainwindow.cpp" line="364"/>
         <source>Clear output</source>
         <translation>Bersihkan keluaran</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="364"/>
+        <location filename="../src/mainwindow.cpp" line="372"/>
         <source>Process Output</source>
         <translation>Keluaran Proses</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="536"/>
-        <location filename="../src/mainwindow.cpp" line="549"/>
+        <location filename="../src/mainwindow.cpp" line="544"/>
+        <location filename="../src/mainwindow.cpp" line="557"/>
         <source>Updating password-store</source>
         <translation>Memperbarui penyimpanan kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="671"/>
-        <location filename="../src/mainwindow.cpp" line="1013"/>
+        <location filename="../src/mainwindow.cpp" line="679"/>
+        <location filename="../src/mainwindow.cpp" line="1021"/>
         <source>Content hidden</source>
         <translation>Konten disembunyikan</translation>
     </message>
@@ -1167,227 +1167,227 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation type="vanished">Kode OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="719"/>
+        <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="732"/>
-        <location filename="../src/mainwindow.cpp" line="750"/>
-        <location filename="../src/mainwindow.cpp" line="1281"/>
+        <location filename="../src/mainwindow.cpp" line="740"/>
+        <location filename="../src/mainwindow.cpp" line="758"/>
+        <location filename="../src/mainwindow.cpp" line="1289"/>
         <source>OTP code copied to clipboard</source>
         <translation>Kode OTP disalin ke clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="752"/>
-        <location filename="../src/mainwindow.cpp" line="1264"/>
+        <location filename="../src/mainwindow.cpp" line="760"/>
+        <location filename="../src/mainwindow.cpp" line="1272"/>
         <source>No OTP code found in this password entry</source>
         <translation>Tidak ada kode OTP yang ditemukan di entri kata sandi ini</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="779"/>
+        <location filename="../src/mainwindow.cpp" line="787"/>
         <source>Password and Content hidden</source>
         <translation>Kata sandi dan konten disembunyikan</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="867"/>
+        <location filename="../src/mainwindow.cpp" line="875"/>
         <source>Looking for: %1</source>
         <translation>Mencari: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="918"/>
+        <location filename="../src/mainwindow.cpp" line="926"/>
         <source>Searching…</source>
         <translation>Mencari…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="947"/>
+        <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Search content (regex)</source>
         <translation>Cari konten (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="952"/>
+        <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="954"/>
+        <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="999"/>
+        <location filename="../src/mainwindow.cpp" line="1007"/>
         <source>No matches found.</source>
         <translation>Tidak ada kecocokan ditemukan.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1023"/>
+        <location filename="../src/mainwindow.cpp" line="1031"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Ditemukan %n kecocokan</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1024"/>
+        <location filename="../src/mainwindow.cpp" line="1032"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>di %n entri.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1104"/>
+        <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
         <translation type="unfinished">Nama tidak valid</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1105"/>
+        <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1152"/>
-        <location filename="../src/mainwindow.cpp" line="1652"/>
+        <location filename="../src/mainwindow.cpp" line="1160"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>New file</source>
         <translation>Berkas baru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1153"/>
+        <location filename="../src/mainwindow.cpp" line="1161"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Berkas kata sandi baru: 
 (Akan ditempatkan di %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1193"/>
+        <location filename="../src/mainwindow.cpp" line="1201"/>
         <source> and the whole content?</source>
         <translation> dan seluruh isinya?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1203"/>
+        <location filename="../src/mainwindow.cpp" line="1211"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> dan seluruh isinya? &lt;br&gt;&lt;strong&gt;Perhatian: ada berkas tidak terduga di folder yang diberikan, periksa sebelum melanjutkan.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1212"/>
+        <location filename="../src/mainwindow.cpp" line="1220"/>
         <source>Delete folder?</source>
         <translation>Hapus folder?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1212"/>
+        <location filename="../src/mainwindow.cpp" line="1220"/>
         <source>Delete password?</source>
         <translation>Hapus kata sandi?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1213"/>
+        <location filename="../src/mainwindow.cpp" line="1221"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Apakah Anda yakin ingin menghapus %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1259"/>
+        <location filename="../src/mainwindow.cpp" line="1267"/>
         <source>No password selected for OTP generation</source>
         <translation>Tidak ada kata sandi yang dipilih untuk pembuatan OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1426"/>
+        <location filename="../src/mainwindow.cpp" line="1434"/>
         <source>Profile changed to %1</source>
         <translation>Profil diubah ke %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1551"/>
+        <location filename="../src/mainwindow.cpp" line="1559"/>
         <source>Open folder with file manager</source>
         <translation>Buka folder dengan pengelola berkas</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1566"/>
+        <location filename="../src/mainwindow.cpp" line="1574"/>
         <source>Rename folder</source>
         <translation>Ubah nama folder</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1570"/>
+        <location filename="../src/mainwindow.cpp" line="1578"/>
         <source>Rename password</source>
         <translation>Ubah nama kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1580"/>
+        <location filename="../src/mainwindow.cpp" line="1588"/>
         <source>Share</source>
         <translation>Bagikan</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1590"/>
+        <location filename="../src/mainwindow.cpp" line="1598"/>
         <source>Re-encrypt all passwords</source>
         <translation>Enkripsi ulang semua kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1595"/>
+        <location filename="../src/mainwindow.cpp" line="1603"/>
         <source>Export my public key...</source>
         <translation>Ekspor kunci publik saya…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1601"/>
+        <location filename="../src/mainwindow.cpp" line="1609"/>
         <source>Add recipient...</source>
         <translation>Tambah penerima…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1606"/>
+        <location filename="../src/mainwindow.cpp" line="1614"/>
         <source>What is this?</source>
         <translation>Apa ini?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1653"/>
+        <location filename="../src/mainwindow.cpp" line="1660"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Folder Baru: 
 (Akan ditempatkan di %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
-        <location filename="../src/mainwindow.cpp" line="1674"/>
-        <location filename="../src/mainwindow.cpp" line="1821"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1828"/>
         <source>Error</source>
         <translation>Galat</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1666"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Failed to create folder: %1</source>
         <translation>Gagal membuat folder: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1675"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Gagal membuat berkas .gpg-id di: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1702"/>
-        <location filename="../src/mainwindow.cpp" line="1742"/>
+        <location filename="../src/mainwindow.cpp" line="1709"/>
+        <location filename="../src/mainwindow.cpp" line="1749"/>
         <source>Rename file</source>
         <translation>Ubah nama berkas</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1702"/>
+        <location filename="../src/mainwindow.cpp" line="1709"/>
         <source>Rename Folder To: </source>
         <translation>Ubah Nama Folder Menjadi: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1742"/>
+        <location filename="../src/mainwindow.cpp" line="1749"/>
         <source>Rename File To: </source>
         <translation>Ubah Nama Berkas Menjadi: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1798"/>
+        <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1822"/>
+        <location filename="../src/mainwindow.cpp" line="1829"/>
         <source>Directory does not exist: %1</source>
         <translation>Direktori tidak ada: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1827"/>
+        <location filename="../src/mainwindow.cpp" line="1834"/>
         <source>Re-encrypt passwords</source>
         <translation>Enkripsi ulang kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1828"/>
+        <location filename="../src/mainwindow.cpp" line="1835"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -1404,18 +1404,18 @@ Ini dapat menulis ulang banyak berkas dan tidak mudah dibatalkan.
 Lanjutkan?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1873"/>
-        <location filename="../src/mainwindow.cpp" line="1892"/>
+        <location filename="../src/mainwindow.cpp" line="1880"/>
+        <location filename="../src/mainwindow.cpp" line="1899"/>
         <source>Export Public Key</source>
         <translation>Ekspor Kunci Publik</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1874"/>
+        <location filename="../src/mainwindow.cpp" line="1881"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Ekspor Kunci Publik Anda&lt;/h3&gt;&lt;p&gt;Tidak ada kunci penandatangan yang dikonfigurasi. Atur satu di Pengaturan QtPass &amp;gt; Kunci GPG, atau jalankan ini di terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Lalu kirim berkas tersebut ke rekan tim Anda.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1893"/>
+        <location filename="../src/mainwindow.cpp" line="1900"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1424,17 +1424,17 @@ Lanjutkan?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1895"/>
+        <location filename="../src/mainwindow.cpp" line="1902"/>
         <source>No output from gpg.</source>
         <translation>Tidak ada keluaran dari gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1922"/>
+        <location filename="../src/mainwindow.cpp" line="1929"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Berbagi Kata Sandi dengan GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1923"/>
+        <location filename="../src/mainwindow.cpp" line="1930"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Berbagi Kata Sandi dengan GPG&lt;/h3&gt;&lt;p&gt;Untuk berbagi kata sandi dengan pengguna lain:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Ekspor kunci publik Anda&lt;/b&gt; dan kirim ke rekan tim&lt;/li&gt;&lt;li&gt;&lt;b&gt;Impor kunci publik rekan tim&lt;/b&gt; ke keyring GPG Anda&lt;/li&gt;&lt;li&gt;&lt;b&gt;Enkripsi ulang kata sandi&lt;/b&gt; agar semua penerima dapat mendekripsinya&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Hanya orang dengan kunci rahasia yang cocok yang dapat mendekripsi kata sandi.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Gunakan kunci GPG yang sama untuk semua folder bersama.&lt;/p&gt;&lt;p&gt;Lihat FAQ untuk detail lebih lanjut.&lt;/p&gt;</translation>
     </message>
@@ -1579,13 +1579,13 @@ Lanjutkan?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="304"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="317"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="320"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
         <translation type="unfinished">Kode OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="305"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Tidak ada kode OTP yang ditemukan di entri kata sandi ini</translation>
     </message>
@@ -1682,6 +1682,26 @@ Lanjutkan?</translation>
         <location filename="../src/qtpass.cpp" line="530"/>
         <source>Copied to clipboard</source>
         <translation>Disalin ke clipboard</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="552"/>
+        <source>Could not start qrencode: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="560"/>
+        <source>qrencode did not finish in time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="572"/>
+        <source>qrencode crashed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="573"/>
+        <source>qrencode exited with code %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
