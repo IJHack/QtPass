@@ -45,7 +45,7 @@
   was disabled by Homebrew on 2026-09-01 for that reason. Install the `.dmg`
   from the GitHub release and clear the quarantine flag
   (`xattr -d com.apple.quarantine /Applications/QtPass.app`). Status and how
-  to help: <https://qtpass.org/macos>, [#1542](https://github.com/IJHack/QtPass/issues/1542).
+  to help: the [macOS page on qtpass.org](https://qtpass.org/macos) and [#1542](https://github.com/IJHack/QtPass/issues/1542).
 - Windows: the installer is not code-signed; SmartScreen asks for
   _More info → Run anyway_ on first start [#1643](https://github.com/IJHack/QtPass/issues/1643).
 - 31 single-variant locales were renamed to language-only codes (e.g.
@@ -62,12 +62,12 @@
   `OTP:` field, and Ctrl+C on an `otpauth://`-only entry no longer copies the
   seed [#1625](https://github.com/IJHack/QtPass/pull/1625)
 
-### Bug Fixes
+### Bugfixes
 
 - ConfigDialog no longer silently corrupts saved settings [#1602](https://github.com/IJHack/QtPass/pull/1602)
 - PasswordDialog: no content duplication or data loss on premature save
   [#1605](https://github.com/IJHack/QtPass/pull/1605)
-- ImitatePass git re-encryption used the wrong recipients and working
+- ImitatePass Git re-encryption used the wrong recipients and working
   directory, and its copy operation was broken [#1604](https://github.com/IJHack/QtPass/pull/1604)
 - Executor could stall when a stdin-less command failed to start [#1606](https://github.com/IJHack/QtPass/pull/1606);
   crashed subprocesses no longer hang the UI [#1570](https://github.com/IJHack/QtPass/pull/1570)
