@@ -554,7 +554,12 @@ void QtPass::showTextAsQRCode(const QString &text) {
   }
   qrencode.write(text.toUtf8());
   qrencode.closeWriteChannel();
-  qrencode.waitForFinished();
+  // A hung qrencode also leaves exitStatus()/exitCode() at their defaults.
+  if (!qrencode.waitForFinished()) {
+    qrencode.kill();
+    m_mainWindow->showStatusMessage(tr("qrencode did not finish in time"));
+    return;
+  }
   QByteArray output(qrencode.readAllStandardOutput());
 
   const bool crashed = qrencode.exitStatus() != QProcess::NormalExit;
