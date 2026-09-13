@@ -51,6 +51,15 @@ public:
   void clear();
 
   /**
+   * @brief Re-derive palette-dependent styling after a runtime theme change.
+   *
+   * Field frames bake the current QPalette::Mid colour into a stylesheet;
+   * call this on QEvent::PaletteChange so an entry that is already
+   * on screen picks up the new theme instead of keeping the old border.
+   */
+  void refreshPalette();
+
+  /**
    * @brief Render the password and template fields of a decrypted entry.
    *
    * Fields whose name satisfies FileContent::isOtpFieldName() are never
@@ -105,6 +114,7 @@ private:
   void addOtpField(int position, const QString &otpConfig,
                    const AppSettings &s);
   auto createFieldFrame() -> QFrame *;
+  void applyFrameStyle(QFrame *frame) const;
 
   QGridLayout *m_grid;
   QBoxLayout *m_container;

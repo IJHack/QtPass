@@ -19,6 +19,8 @@
 #include <QClipboard>
 #include <QDir>
 #include <QFile>
+#include <QFrame>
+#include <QPalette>
 #include <QScopedPointer>
 #include <QStatusBar>
 #include <QTemporaryDir>
@@ -27,6 +29,7 @@
 #include <QTreeView>
 #include <QtTest>
 
+#include "../../../src/filecontent.h"
 #include "../../../src/mainwindow.h"
 #include "../../../src/passworddisplaypanel.h"
 #include "../../../src/qtpasssettings.h"
@@ -65,6 +68,8 @@ private Q_SLOTS:
   void passwordFromFileToClipboardCopiesFirstLine();
   void passwordFromFileToClipboardSkipsOtpSecret();
   void showTextAsQRCodeReportsMissingQrencode();
+  void textBrowserFollowsRuntimePaletteChange();
+  void fieldFrameBorderFollowsRuntimePaletteChange();
 };
 
 void tst_mainwindow::initTestCase() {
@@ -372,6 +377,98 @@ void tst_mainwindow::showTextAsQRCodeReportsMissingQrencode() {
   QVERIFY2(msg.contains(QStringLiteral("qrencode")),
            qPrintable(QStringLiteral("unexpected status: ") + msg));
   QVERIFY2(msg.contains(bogus), "status message should name the missing path");
+}
+
+/**
+ * @brief The content browser repaints in the new Base colour after the
+ * application palette changes at runtime (KDE day/night theme switch).
+ *
+ * The browser used to carry a "background: palette(base)" stylesheet; the
+ * style-sheet engine resolves palette() once at polish time and does not
+ * repolish on ApplicationPaletteChange, so the widget kept the previous
+ * theme's colour. Without the stylesheet the native Base role follows along.
+ */
+void tst_mainwindow::textBrowserFollowsRuntimePaletteChange() {
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY2(browser != nullptr, "MainWindow must have a textBrowser");
+  // The regression was a "background: palette(base)" stylesheet: the
+  // style-sheet engine resolves palette() once at polish time. Any stylesheet
+  // on the browser reintroduces that class of bug.
+  QVERIFY2(browser->styleSheet().isEmpty(),
+           qPrintable(QStringLiteral("textBrowser carries a stylesheet: ") +
+                      browser->styleSheet()));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+  QSKIP("pixel grab is not deterministic on the Qt 5 offscreen platform");
+#endif
+  const QPalette original = QApplication::palette();
+  auto restore =
+      qScopeGuard([&original] { QApplication::setPalette(original); });
+
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+
+  QPalette dark = original;
+  dark.setColor(QPalette::Base, QColor(0x10, 0x10, 0x10));
+  QApplication::setPalette(dark);
+  QCoreApplication::processEvents();
+  // Styles may tint Base slightly (Qt 5.15 Fusion renders #101010 as
+  // #070c10), so compare lightness rather than the exact colour.
+  const QColor darkPixel =
+      browser->grab().toImage().pixelColor(browser->rect().center());
+  QVERIFY2(darkPixel.lightness() < 64,
+           qPrintable(QStringLiteral("browser still light after dark "
+                                     "palette: ") +
+                      darkPixel.name()));
+
+  QPalette light = original;
+  light.setColor(QPalette::Base, QColor(0xfa, 0xfa, 0xfa));
+  QApplication::setPalette(light);
+  QCoreApplication::processEvents();
+  const QColor lightPixel =
+      browser->grab().toImage().pixelColor(browser->rect().center());
+  QVERIFY2(lightPixel.lightness() > 192,
+           qPrintable(QStringLiteral("browser still dark after light "
+                                     "palette: ") +
+                      lightPixel.name()));
+}
+
+/**
+ * @brief Field frames re-derive their border colour from QPalette::Mid when
+ * the application palette changes while an entry is displayed.
+ */
+void tst_mainwindow::fieldFrameBorderFollowsRuntimePaletteChange() {
+  const QPalette original = QApplication::palette();
+  auto restore =
+      qScopeGuard([&original] { QApplication::setPalette(original); });
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+
+  auto *panel = m_window->findChild<PasswordDisplayPanel *>();
+  QVERIFY2(panel != nullptr, "MainWindow must own a PasswordDisplayPanel");
+  panel->displayFields(QStringLiteral("secret"),
+                       NamedValues{{"url", "https://example.org"}},
+                       QtPassSettings::load());
+  // findChild<QFrame*>() would also match QMainWindow internals; take the
+  // frame that actually carries the panel border stylesheet.
+  QFrame *frame = nullptr;
+  for (QFrame *candidate : m_window->findChildren<QFrame *>()) {
+    if (candidate->styleSheet().contains(QStringLiteral("border-radius"))) {
+      frame = candidate;
+      break;
+    }
+  }
+  QVERIFY2(frame != nullptr, "displayFields() must create a field frame");
+
+  QPalette changed = original;
+  const QColor mid(0x12, 0x34, 0x56);
+  changed.setColor(QPalette::Mid, mid);
+  QApplication::setPalette(changed);
+  QCoreApplication::processEvents();
+
+  QVERIFY2(
+      frame->styleSheet().contains(mid.name()),
+      qPrintable(QStringLiteral("stylesheet still: ") + frame->styleSheet()));
 }
 
 QTEST_MAIN(tst_mainwindow)
