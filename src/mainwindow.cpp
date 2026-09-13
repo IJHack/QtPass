@@ -40,9 +40,11 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QPushButton>
+#include <QSaveFile>
 #include <QScrollBar>
 #include <QShortcut>
 #include <QTextCursor>
+#include <QTextStream>
 #include <QTextEdit>
 #include <QTimer>
 #include <QToolButton>
@@ -1700,20 +1702,38 @@ void MainWindow::addFolder() {
   }
   if (s.addGPGId) {
     QString gpgIdFile = newdir + "/.gpg-id";
-    QFile gpgId(gpgIdFile);
+    // Seed the new folder's .gpg-id from the recipients that are currently
+    // in effect for the parent directory. The previous implementation walked
+    // listKeys("", true) and wrote every key whose `enabled` flag was set,
+    // but that flag is only toggled inside UsersDialog, so the loop wrote
+    // nothing and left a zero-byte .gpg-id that shadowed the parent's
+    // recipients (see #1682). Using the inherited recipients keeps the new
+    // folder encrypted to the same keys the parent already uses.
+    const QStringList recipients = Pass::getRecipientList(dir, s.passStore);
+    if (recipients.isEmpty()) {
+      QMessageBox::warning(
+          this, tr("Error"),
+          tr("Failed to create .gpg-id file in: %1").arg(newdir));
+      return;
+    }
+    QSaveFile gpgId(gpgIdFile);
     if (!gpgId.open(QIODevice::WriteOnly)) {
       QMessageBox::warning(
           this, tr("Error"),
           tr("Failed to create .gpg-id file in: %1").arg(newdir));
       return;
     }
-    QList<UserInfo> users = QtPassSettings::getPass()->listKeys("", true);
-    for (const UserInfo &user : users) {
-      if (user.enabled) {
-        gpgId.write((user.key_id + "\n").toUtf8());
-      }
+    QTextStream out(&gpgId);
+    for (const QString &recipient : recipients) {
+      out << recipient << '\n';
     }
-    gpgId.close();
+    out.flush();
+    if (out.status() != QTextStream::Ok || !gpgId.commit()) {
+      QMessageBox::warning(
+          this, tr("Error"),
+          tr("Failed to create .gpg-id file in: %1").arg(newdir));
+      return;
+    }
     // Lock to owner-only access; see ImitatePass::writeGpgIdFile for
     // rationale (NFS / USB / unusual umask scenarios). Best-effort on
     // platforms where setPermissions is a no-op.
