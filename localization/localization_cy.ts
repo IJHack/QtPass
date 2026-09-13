@@ -1281,7 +1281,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Methwyd dadgryptio'r cofnod cyfrinair hwn</translation>
+        <translation type="unfinished">Methwyd dadgryptio&apos;r cofnod cyfrinair hwn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
@@ -1416,7 +1416,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Mae'r cofnod hwn yn cynnwys cyfrinach OTP, nid cyfrinair</translation>
+        <translation type="unfinished">Mae&apos;r cofnod hwn yn cynnwys cyfrinach OTP, nid cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1880"/>
@@ -1558,7 +1558,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">Nid oes ffeil weithredadwy GPG wedi'i ffurfweddu</translation>
+        <translation type="unfinished">Nid oes ffeil weithredadwy GPG wedi&apos;i ffurfweddu</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1787,7 +1787,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">Gorffennodd qrencode gyda'r cod %1</translation>
+        <translation type="unfinished">Gorffennodd qrencode gyda&apos;r cod %1</translation>
     </message>
 </context>
 <context>
