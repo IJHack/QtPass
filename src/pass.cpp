@@ -354,6 +354,12 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
         QFileInfo(parts.last()).fileName().startsWith("gpg")) {
       QString wslGpgconf = resolveWslGpgconfPath(parts.last());
       parts.removeLast();
+      // Run gpgconf directly rather than through the distribution's default
+      // shell, which would word-split and expand the arguments. Keep any
+      // --exec/-e the user already put in the command.
+      if (!parts.contains("--exec") && !parts.contains("-e")) {
+        parts.append("--exec");
+      }
       parts.append(wslGpgconf);
       return {parts.first(), parts.mid(1)};
     }
