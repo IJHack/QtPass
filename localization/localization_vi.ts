@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bật hỗ trợ mật khẩu dùng một lần (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -586,7 +586,7 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không thể khởi động %1</translation>
     </message>
 </context>
 <context>
@@ -787,12 +787,12 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sao chép thất bại</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không thể sao chép %1 sang %2.</translation>
     </message>
 </context>
 <context>
@@ -1221,7 +1221,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tên đó sẽ trỏ ra ngoài kho mật khẩu. Vui lòng chọn tên khác.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1160"/>
@@ -1244,22 +1244,22 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Thao tác đã hết thời gian chờ; đang bật lại giao diện.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không thể giải mã mục mật khẩu này</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tìm kiếm nội dung dùng biểu thức chính quy POSIX cơ bản (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tìm kiếm nội dung dùng biểu thức chính quy tương thích Perl (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1161"/>
@@ -1386,7 +1386,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mục này chứa bí mật OTP, không phải mật khẩu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1829"/>
@@ -1456,7 +1456,7 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Số giây cho đến khi mã OTP thay đổi</translation>
     </message>
 </context>
 <context>
@@ -1484,7 +1484,7 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chưa cấu hình tệp thực thi GPG</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1562,12 +1562,12 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URI otpauth:// hoặc bí mật base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bí mật OTP không hợp lệ</translation>
     </message>
 </context>
 <context>
@@ -1588,7 +1588,7 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mở %1 trong trình duyệt</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
@@ -1698,22 +1698,22 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không thể khởi động qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode không hoàn thành kịp thời</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode đã gặp sự cố</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode đã thoát với mã %1</translation>
     </message>
 </context>
 <context>
