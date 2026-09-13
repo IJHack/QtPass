@@ -33,8 +33,11 @@ trap 'rm -rf "$workdir"' EXIT
 cd "$workdir"
 
 gh release download "$tag" --repo "$repo" --pattern '*'
-gh release download "$tag" --repo "$repo" --archive tar.gz
-gh release download "$tag" --repo "$repo" --archive zip
+# The source archives are normally uploaded as release assets as well (same
+# bytes as GitHub's auto-generated ones), so skip them if the pattern download
+# already fetched them instead of failing on the name clash.
+gh release download "$tag" --repo "$repo" --archive tar.gz --skip-existing
+gh release download "$tag" --repo "$repo" --archive zip --skip-existing
 
 new_asc=()
 
