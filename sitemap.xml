@@ -2,97 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://qtpass.org/</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-13T15:37:31+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://qtpass.org/advanced</loc>
-    <lastmod>2026-09-12T02:29:32+02:00</lastmod>
+    <lastmod>2026-09-12T02:59:20+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.1.1</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-12T02:58:24+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.1.2</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-12T02:58:24+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.1.3</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-12T02:58:24+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.1.4</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-12T02:58:24+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.1.5</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-12T02:58:24+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.1.6</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-12T02:58:24+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.beta</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-12T02:58:24+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-12T02:59:20+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.old</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-12T02:58:24+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/downloads</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-12T02:59:20+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://qtpass.org/getting-started</loc>
-    <lastmod>2026-09-12T02:29:32+02:00</lastmod>
+    <lastmod>2026-09-12T02:59:20+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://qtpass.org/macos</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-12T03:57:40+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://qtpass.org/old</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-12T02:58:24+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/privacy</loc>
-    <lastmod>2026-09-12T02:42:07+02:00</lastmod>
+    <lastmod>2026-09-13T15:17:51+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
