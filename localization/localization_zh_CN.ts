@@ -317,7 +317,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
         <source>Profiles</source>
-        <translation>配置文件</translation>
+        <translation>配置文件名</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="970"/>
