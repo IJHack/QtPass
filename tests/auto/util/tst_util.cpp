@@ -43,10 +43,12 @@ static constexpr int DISTRIBUTION_MAX_PERCENT = 120;
 static constexpr int PERCENT_BASE = 100;
 static constexpr int RANDOMNESS_TEST_SAMPLE_COUNT = 200;
 static constexpr int RANDOMNESS_TEST_PASSWORD_LENGTH = 32;
-// Permissive chi-square cutoff for df=9: set above the p=0.995 critical
-// value (~23.59) to reduce false test failures while still catching
-// meaningful distribution bias.
-static constexpr double CHI_SQUARE_PERMISSIVE_THRESHOLD_DF9 = 30.0;
+// Chi-square cutoff for df=9. 30.0 (p = 4.4e-4) produced a spurious failure
+// roughly once per 2300 runs, and CI runs this test on five platforms per
+// push. 50.0 is p = 1.1e-7; a genuinely broken generator (one of ten
+// buckets missing or doubled over 1000 draws) scores above 100, so the test
+// keeps catching what it is meant to catch.
+static constexpr double CHI_SQUARE_PERMISSIVE_THRESHOLD_DF9 = 50.0;
 
 /**
  * @brief The tst_util class is our first unit test
@@ -802,9 +804,8 @@ void tst_util::boundedRandom() {
     const double count = static_cast<double>(counts[i]);
     chi2 += (count - expected) * (count - expected) / expected;
   }
-  // For 10 buckets, df = 9. The chi-square critical value at p = 0.995 is
-  // about 23.59. We use 30.0 as a more permissive threshold to
-  // reduce false failures from random variation while still catching bias.
+  // For 10 buckets, df = 9; see CHI_SQUARE_PERMISSIVE_THRESHOLD_DF9 for the
+  // false-positive rate this cutoff was chosen for.
   QVERIFY2(
       chi2 < CHI_SQUARE_PERMISSIVE_THRESHOLD_DF9,
       qPrintable(
