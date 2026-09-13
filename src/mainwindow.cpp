@@ -247,11 +247,19 @@ void MainWindow::focusInput() {
 }
 
 /**
- * @brief MainWindow::changeEvent sets focus to the search box
+ * @brief MainWindow::changeEvent sets focus to the search box on activation
+ * and re-derives palette-dependent styling on a theme change.
  * @param event
  */
 void MainWindow::changeEvent(QEvent *event) {
   QWidget::changeEvent(event);
+  if (event->type() == QEvent::PaletteChange && m_displayPanel != nullptr) {
+    // Desktop switched light/dark (e.g. KDE day/night). Top-level widgets
+    // receive PaletteChange for that (ApplicationPaletteChange goes to the
+    // QApplication object). Styling that bakes palette colours into
+    // stylesheets must be re-derived by hand.
+    m_displayPanel->refreshPalette();
+  }
   if (event->type() == QEvent::ActivationChange && isActiveWindow() &&
       isVisible()) {
     // Defer one event-loop tick so the synchronous activation dispatch
@@ -1617,11 +1625,10 @@ void MainWindow::showContextMenu(const QPoint &pos) {
  */
 void MainWindow::showBrowserContextMenu(const QPoint &pos) {
   QMenu *contextMenu = ui->textBrowser->createStandardContextMenu(pos);
-  // createStandardContextMenu() parents the menu to textBrowser, which carries
-  // a "background: palette(base)" stylesheet. Qt cascades that stylesheet to
-  // the child QMenu and breaks its opaque native background, leaving the menu
-  // transparent. Reparent to the main window (no stylesheet) so it paints
-  // solid.
+  // createStandardContextMenu() parents the menu to textBrowser. A stylesheet
+  // on the browser (it used to carry "background: palette(base)") cascades to
+  // the child QMenu and breaks its opaque native background. Reparent to the
+  // main window so the menu paints solid regardless of browser styling.
   contextMenu->setParent(this, contextMenu->windowFlags());
   QPoint globalPos = ui->textBrowser->viewport()->mapToGlobal(pos);
 

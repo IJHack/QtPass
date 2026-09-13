@@ -259,20 +259,36 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
  * spacing or border colour.
  * @return An empty QFrame carrying a QHBoxLayout.
  */
+/**
+ * @brief Apply the field-frame border, coloured from the current palette.
+ *
+ * The colour is baked into the stylesheet string (a `palette(mid)` reference
+ * would be resolved once at polish time and never again), so this has to be
+ * re-run from refreshPalette() when the theme changes.
+ */
+void PasswordDisplayPanel::applyFrameStyle(QFrame *frame) const {
+  const QString borderColor =
+      m_widgetParent->palette().color(QPalette::Mid).name();
+  frame->setStyleSheet(QStringLiteral(".QFrame{border: 1px solid %1; "
+                                      "border-radius: 5px;}")
+                           .arg(borderColor));
+}
+
+void PasswordDisplayPanel::refreshPalette() {
+  for (int i = 0; i < m_grid->count(); ++i) {
+    if (auto *frame = qobject_cast<QFrame *>(m_grid->itemAt(i)->widget())) {
+      applyFrameStyle(frame);
+    }
+  }
+}
+
 auto PasswordDisplayPanel::createFieldFrame() -> QFrame * {
   auto *frame = new QFrame();
   auto *frameLayout = new QHBoxLayout();
   frameLayout->setContentsMargins(5, 2, 2, 2);
   frameLayout->setSpacing(0);
   frame->setLayout(frameLayout);
-
-  // Derive the border colour from the palette so it adapts to light/dark
-  // themes instead of a hardcoded light grey.
-  const QString borderColor =
-      m_widgetParent->palette().color(QPalette::Mid).name();
-  frame->setStyleSheet(QStringLiteral(".QFrame{border: 1px solid %1; "
-                                      "border-radius: 5px;}")
-                           .arg(borderColor));
+  applyFrameStyle(frame);
   return frame;
 }
 
