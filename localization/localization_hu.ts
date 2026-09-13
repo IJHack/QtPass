@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Egyszer használatos jelszavak (OTP) támogatásának engedélyezése</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -642,7 +642,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 indítása sikertelen</translation>
     </message>
 </context>
 <context>
@@ -843,12 +843,12 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A másolás sikertelen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 másolása ide: %2 sikertelen.</translation>
     </message>
 </context>
 <context>
@@ -1329,22 +1329,22 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A művelet túllépte az időkorlátot; a felület újra engedélyezve.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ez a jelszóbejegyzés nem fejthető vissza</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A tartalomkeresés POSIX alap reguláris kifejezéseket használ (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A tartalomkeresés Perl-kompatibilis reguláris kifejezéseket használ (PCRE).</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1031"/>
@@ -1368,7 +1368,7 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ez a név a jelszótárolón kívülre mutatna. Válasszon másik nevet.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1160"/>
@@ -1461,7 +1461,7 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ez a bejegyzés OTP-titkot tartalmaz, nem jelszót</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1880"/>
@@ -1586,7 +1586,7 @@ Folytatja?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Másodpercek az OTP-kód váltásáig</translation>
     </message>
 </context>
 <context>
@@ -1614,7 +1614,7 @@ Folytatja?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nincs beállítva GPG végrehajtható fájl</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1692,12 +1692,12 @@ Folytatja?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">otpauth:// URI vagy base32 titok</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Érvénytelen OTP-titok</translation>
     </message>
 </context>
 <context>
@@ -1718,7 +1718,7 @@ Folytatja?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 megnyitása böngészőben</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
@@ -1787,22 +1787,22 @@ Folytatja?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A qrencode indítása sikertelen: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A qrencode nem fejeződött be időben</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A qrencode összeomlott</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A qrencode %1 kóddal lépett ki</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="173"/>

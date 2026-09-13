@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Omogoči podporo za enkratna gesla (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -586,7 +586,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zagon %1 ni uspel</translation>
     </message>
 </context>
 <context>
@@ -787,12 +787,12 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kopiranje ni uspelo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kopiranje %1 v %2 ni uspelo.</translation>
     </message>
 </context>
 <context>
@@ -1160,7 +1160,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Operacija je potekla; vmesnik se znova omogoča.</translation>
     </message>
     <message>
         <source>OTP Code</source>
@@ -1169,7 +1169,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tega vnosa gesla ni bilo mogoče dešifrirati</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="740"/>
@@ -1207,12 +1207,12 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iskanje po vsebini uporablja osnovne regularne izraze POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iskanje po vsebini uporablja regularne izraze, združljive s Perlom (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1007"/>
@@ -1247,7 +1247,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">To ime bi kazalo izven shrambe gesel. Izberite drugo ime.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1160"/>
@@ -1380,7 +1380,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ta vnos vsebuje skrivnost OTP, ne gesla</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1829"/>
@@ -1450,7 +1450,7 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sekund do spremembe kode OTP</translation>
     </message>
 </context>
 <context>
@@ -1478,7 +1478,7 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izvedljiva datoteka GPG ni nastavljena</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1556,12 +1556,12 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URI otpauth:// ali skrivnost base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neveljavna skrivnost OTP</translation>
     </message>
 </context>
 <context>
@@ -1582,7 +1582,7 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Odpri %1 v brskalniku</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
@@ -1692,22 +1692,22 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zagon qrencode ni uspel: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode se ni končal pravočasno</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode se je sesul</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode se je končal s kodo %1</translation>
     </message>
 </context>
 <context>

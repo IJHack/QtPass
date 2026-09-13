@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktifkan dukungan kata sandi sekali pakai (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -586,7 +586,7 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gagal memulai %1</translation>
     </message>
 </context>
 <context>
@@ -787,12 +787,12 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Penyalinan gagal</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat menyalin %1 ke %2.</translation>
     </message>
 </context>
 <context>
@@ -1160,7 +1160,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Operasi melebihi batas waktu; antarmuka diaktifkan kembali.</translation>
     </message>
     <message>
         <source>OTP Code</source>
@@ -1169,7 +1169,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat mendekripsi entri kata sandi ini</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="740"/>
@@ -1207,12 +1207,12 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pencarian konten menggunakan ekspresi reguler dasar POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pencarian konten menggunakan ekspresi reguler yang kompatibel dengan Perl (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1007"/>
@@ -1241,7 +1241,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nama itu akan mengarah ke luar penyimpanan kata sandi. Silakan pilih nama lain.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1160"/>
@@ -1374,7 +1374,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Entri ini berisi rahasia OTP, bukan kata sandi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1829"/>
@@ -1444,7 +1444,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Detik hingga kode OTP berubah</translation>
     </message>
 </context>
 <context>
@@ -1472,7 +1472,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak ada berkas eksekusi GPG yang dikonfigurasi</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1550,12 +1550,12 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URI otpauth:// atau rahasia base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rahasia OTP tidak valid</translation>
     </message>
 </context>
 <context>
@@ -1576,7 +1576,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Buka %1 di peramban</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
@@ -1686,22 +1686,22 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat memulai qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode tidak selesai tepat waktu</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode mengalami crash</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode berhenti dengan kode %1</translation>
     </message>
 </context>
 <context>

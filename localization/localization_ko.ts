@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">일회용 비밀번호(OTP) 지원 사용</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -646,7 +646,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1을(를) 시작할 수 없습니다</translation>
     </message>
 </context>
 <context>
@@ -847,12 +847,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">복사 실패</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1을(를) %2(으)로 복사할 수 없습니다.</translation>
     </message>
 </context>
 <context>
@@ -1474,7 +1474,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">작업 시간이 초과되었습니다. 인터페이스를 다시 사용합니다.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="372"/>
@@ -1484,7 +1484,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">이 비밀번호 항목을 복호화할 수 없습니다</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="740"/>
@@ -1512,12 +1512,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">내용 검색은 POSIX 기본 정규 표현식을 사용합니다 (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">내용 검색은 Perl 호환 정규 표현식(PCRE)을 사용합니다.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1007"/>
@@ -1539,7 +1539,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">이 이름은 비밀번호 저장소 밖을 가리키게 됩니다. 다른 이름을 선택하세요.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1267"/>
@@ -1584,7 +1584,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">이 항목에는 비밀번호가 아닌 OTP 비밀 키가 들어 있습니다</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1880"/>
@@ -1702,7 +1702,7 @@ Continue?</source>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP 코드가 바뀔 때까지 남은 초</translation>
     </message>
 </context>
 <context>
@@ -1730,7 +1730,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">설정된 GPG 실행 파일이 없습니다</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1808,12 +1808,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">otpauth:// URI 또는 base32 비밀 키</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">잘못된 OTP 비밀 키</translation>
     </message>
 </context>
 <context>
@@ -1834,7 +1834,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1을(를) 브라우저에서 열기</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
@@ -1944,22 +1944,22 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode를 시작할 수 없습니다: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode가 제시간에 끝나지 않았습니다</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode가 비정상 종료되었습니다</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qrencode가 코드 %1(으)로 종료되었습니다</translation>
     </message>
 </context>
 <context>
