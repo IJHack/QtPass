@@ -115,9 +115,10 @@ grep -rn "1\.5" *.html
 
 ### 8. Downstream packages (same day as the release)
 
-QtPass is upstream _and_ maintainer of several downstream packages. Every
-release that is not pushed downstream the same day ends up as a multi-year
-gap (the FreeBSD port sat on 1.4.0 for three years). Do these before
+QtPass is upstream _and_ maintainer of several downstream packages. Nobody
+else bumps them, so a release that is not submitted downstream on release
+day tends to stay unsubmitted (the FreeBSD port sat on 1.4.0 from 2023 to
+2026). Submit each update, or open a tracking issue for it, before
 announcing the release:
 
 #### FreeBSD `sysutils/qtpass`
