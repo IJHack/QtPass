@@ -11,11 +11,13 @@
 #include <algorithm>
 
 #include <QAction>
+#include <QDialogButtonBox>
 #include <QFileInfo>
 #include <QHash>
 #include <QIcon>
 #include <QLabel>
 #include <QLineEdit>
+#include <QPushButton>
 #include <QShortcut>
 #include <utility>
 
@@ -56,10 +58,6 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
     : QDialog(parent), ui(new Ui::PasswordDialog), m_pass(pass),
       m_file(std::move(file)), m_isNew(isNew) {
 
-  if (!isNew) {
-    m_pass->Show(m_file);
-  }
-
   ui->setupUi(this);
 
   setWindowTitle(this->windowTitle() + " " + m_file);
@@ -71,9 +69,21 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
   setPasswordCharTemplate(m_passConfig.selected);
 
   connect(m_pass, &Pass::finishedShow, this, &PasswordDialog::setPass);
-  connect(m_pass, &Pass::processErrorExit, this, &PasswordDialog::close);
+  connect(m_pass, &Pass::processErrorExit, this, &PasswordDialog::onShowError);
   connect(this, &PasswordDialog::accepted, this, &PasswordDialog::on_accepted);
   connect(this, &PasswordDialog::rejected, this, &PasswordDialog::on_rejected);
+
+  if (!isNew) {
+    // Show() is asynchronous: it forks gpg/pass and finishedShow only lands
+    // once the event loop runs again, so right after construction the fields
+    // are still empty. Clicking Ok in that window used to report Accepted
+    // while writing nothing, and the late setPass() then overwrote whatever
+    // was typed. Lock the editor and Ok until the decrypt arrives.
+    ui->statusLabel->setText(tr("Decrypting…"));
+    setEditorEnabled(false);
+    ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+    m_pass->Show(m_file);
+  }
 }
 
 /**
@@ -401,6 +411,7 @@ void PasswordDialog::setPasswordCharTemplate(int templateIndex) {
  * @param usePwgen
  */
 void PasswordDialog::usePwgen(bool usePwgen) {
+  m_usePwgen = usePwgen;
   ui->passwordTemplateSwitch->setDisabled(usePwgen);
   ui->label_characterset->setDisabled(usePwgen);
 }
@@ -472,4 +483,54 @@ void PasswordDialog::setPass(const QString &output) {
   // request identity — a stale queued Show could otherwise be consumed as ours.
   setPassword(output);
   m_contentLoaded = true;
+  // The decrypt landed: unlock the editor and Ok, and drop the "Decrypting…"
+  // note so it cannot be mistaken for a warning.
+  ui->statusLabel->clear();
+  setEditorEnabled(true);
+  ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
+}
+
+/**
+ * @brief PasswordDialog::onShowError surface a decrypt failure in the dialog.
+ * @param exitCode Ignored exit code of the failed process.
+ * @param err Error output to present to the user.
+ */
+void PasswordDialog::onShowError(int /* exitCode */, const QString &err) {
+  // React only while the dialog is still waiting for its own decrypt.
+  // processErrorExit carries no request identity, but for an existing entry
+  // the only Pass operation in flight is the Show() that opened this dialog.
+  if (m_isNew || m_contentLoaded) {
+    return;
+  }
+  // Keep the dialog open so the user can read why it is inert; Ok stays
+  // locked and the only way out is Cancel. The old behaviour closed the
+  // window silently, which looked like "nothing happened".
+  ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+  setEditorEnabled(false);
+  ui->statusLabel->setText(err);
+}
+
+/**
+ * @brief PasswordDialog::setEditorEnabled lock or restore every editable field.
+ * @param enabled true to restore the editor, false to grey it out.
+ */
+void PasswordDialog::setEditorEnabled(bool enabled) {
+  ui->lineEditPassword->setEnabled(enabled);
+  ui->createPasswordButton->setEnabled(enabled);
+  ui->checkBoxShow->setEnabled(enabled);
+  ui->passwordTemplateSwitch->setEnabled(enabled);
+  ui->label_characterset->setEnabled(enabled);
+  ui->spinBox_pwdLength->setEnabled(enabled);
+  ui->plainTextEdit->setEnabled(enabled);
+  for (QLineEdit *line : std::as_const(m_templateLines)) {
+    line->setEnabled(enabled);
+  }
+  for (QLineEdit *line : std::as_const(m_otherLines)) {
+    line->setEnabled(enabled);
+  }
+  // Re-apply the pwgen policy on the way back up, or the two widgets usePwgen()
+  // locks would be spuriously re-enabled with the rest of the editor.
+  if (enabled && m_usePwgen) {
+    usePwgen(true);
+  }
 }

@@ -112,12 +112,32 @@ private slots:
   void on_accepted();
   void on_rejected();
 
+  /**
+   * @brief Handle a process error while waiting for an entry's decrypt.
+   *
+   * When the asynchronous Show() fails, keep the dialog open and surface the
+   * reason in statusLabel instead of closing silently: Ok stays disabled and
+   * the editor keeps its lock so the user can only Cancel/withdraw.
+   * @param exitCode Exit code of the failed process (unused).
+   * @param err Error output to present to the user.
+   */
+  void onShowError(int exitCode, const QString &err);
+
 private:
   /**
    * @brief Locate the field that holds the one-time password configuration.
    * @return The matching QLineEdit, or nullptr when the entry has no OTP field.
    */
   [[nodiscard]] auto otpLineEdit() const -> QLineEdit *;
+  /**
+   * @brief Enabled or grey out every editable field of the dialog.
+   *
+   * Used while an existing entry's decrypted content is being fetched, so an
+   * early Ok cannot report success while writing nothing and a late setPass()
+   * cannot clobber edits made on the still-empty fields.
+   * @param enabled true to restore the editor, false to lock it.
+   */
+  void setEditorEnabled(bool enabled);
   /**
    * @brief Connect validation and normalisation to the OTP field, if present.
    *
@@ -148,6 +168,9 @@ private:
   /// on_accepted() can refuse to overwrite it with empty fields before the
   /// asynchronous Show completes.
   bool m_contentLoaded{};
+  /// Last pwgen mode passed to usePwgen(), so the policy can be re-applied
+  /// after setEditorEnabled() re-enables the character-set widgets.
+  bool m_usePwgen{};
   QList<QLineEdit *> m_templateLines;
   QList<QLineEdit *> m_otherLines;
   QHash<QString, QStringList> m_availableTemplates;

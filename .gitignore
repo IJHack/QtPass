@@ -74,6 +74,7 @@ opencode.json
 .opencode/scheduled_tasks.lock
 tests/auto/grepsearchcontroller/tst_grepsearchcontroller
 tests/auto/passworddisplaypanel/tst_passworddisplaypanel
+tests/auto/passworddialog/tst_passworddialog
 tests/auto/base32/tst_base32
 tests/auto/totp/tst_totp
 flatpak/org.qtpass.QtPass.ci.yml
