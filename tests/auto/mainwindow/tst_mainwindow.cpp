@@ -57,6 +57,7 @@ private Q_SLOTS:
   void setUiElementsEnabledDisablesTreeView();
   void setUiElementsEnabledEnablesTreeView();
   void reencryptKeepsUiDisabledUntilEnd();
+  void reencryptProgressSurvivesQueuedEnd();
   void flashTextSetsContent();
   void flashTextErrorDoesNotCrash();
   void flashTextHtmlRenderedInBrowser();
@@ -227,6 +228,56 @@ void tst_mainwindow::reencryptKeepsUiDisabledUntilEnd() {
   QVERIFY(!treeView->isEnabled());
   m_window->setUiElementsEnabled(true);
   QVERIFY(treeView->isEnabled());
+}
+
+/**
+ * @brief A completion queued behind the last progress event must not crash.
+ *
+ * The worker emits reencryptProgress(N, N) and immediately queues
+ * finishReencrypt(), so both sit in the GUI thread's event queue together.
+ * QProgressDialog::setValue() on a modal dialog calls processEvents(), which
+ * delivers that completion (and thus endReencryptPath()) while
+ * reencryptProgress() is still on the stack: the dialog is hidden and
+ * m_reencryptProgress reset to null under its feet. Nothing may touch the
+ * pointer after setValue() returns.
+ */
+void tst_mainwindow::reencryptProgressSurvivesQueuedEnd() {
+  auto *treeView = m_window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  QVERIFY2(treeView != nullptr, "treeView widget must exist");
+
+  m_window->startReencryptPath();
+  auto *progress = m_window->findChild<QProgressDialog *>();
+  QVERIFY2(progress != nullptr, "a progress dialog must be shown");
+  QVERIFY2(progress->isVisible(), "the progress dialog must be visible");
+  QVERIFY2(progress->isModal(),
+           "the dialog must be modal for setValue() to process events");
+
+  // Mirror the worker's first report. QProgressDialog only starts processing
+  // events from setValue() once its minimum-duration timer (0 ms here) has
+  // fired, so let it.
+  m_window->reencryptProgress(0, 5);
+  QTest::qWait(10);
+
+  // Same ordering as the worker's last two posts: the completion is already
+  // queued when the final progress event is handled.
+  QMetaObject::invokeMethod(
+      m_window.data(), [this]() { m_window->endReencryptPath(); },
+      Qt::QueuedConnection);
+  m_window->reencryptProgress(5, 5);
+
+  QVERIFY2(treeView->isEnabled(),
+           "the queued endReencryptPath must have run inside setValue()");
+  QVERIFY2(!progress->isVisible(), "the dialog must be hidden by the end");
+  QCOMPARE(progress->maximum(), 5);
+  QCOMPARE(progress->value(), 5);
+
+  // A late progress event after the run is a no-op, not a crash.
+  m_window->reencryptProgress(6, 6);
+  QCOMPARE(progress->value(), 5);
+
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY2(m_window->findChild<QProgressDialog *>() == nullptr,
+           "the progress dialog must be gone after the run");
 }
 
 /**

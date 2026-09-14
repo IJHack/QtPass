@@ -45,8 +45,8 @@
 #include <QScrollBar>
 #include <QShortcut>
 #include <QTextCursor>
-#include <QTextStream>
 #include <QTextEdit>
+#include <QTextStream>
 #include <QTimer>
 #include <QToolButton>
 #include <QTreeWidget>
@@ -1945,9 +1945,13 @@ void MainWindow::reencryptProgress(int current, int total) {
   if (!m_reencryptProgress)
     return;
   m_reencryptProgress->setMaximum(total);
-  m_reencryptProgress->setValue(current);
   m_reencryptProgress->setLabelText(
       tr("Re-encrypting passwords: %1 of %2").arg(current).arg(total));
+  // On a modal QProgressDialog setValue() calls processEvents(), which can
+  // deliver the queued completion: endReencryptPath() then hides the dialog
+  // and resets m_reencryptProgress under our feet. Keep it last and touch
+  // nothing afterwards.
+  m_reencryptProgress->setValue(current);
 }
 
 /**
