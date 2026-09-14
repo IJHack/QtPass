@@ -4,8 +4,10 @@
 
 #include <QDir>
 #include <QFile>
+#include <QRegularExpression>
 #include <QSettings>
 #include <QTemporaryDir>
+#include <limits>
 
 #include "../../../src/appsettings.h"
 #include "../../../src/passwordconfiguration.h"
@@ -54,6 +56,9 @@ private Q_SLOTS:
   void serializerRoundTrip();
   void serializerKeyCompatibility();
   void facadeLoadReflectsSave();
+  void serializerPasswordCharsSelection_data();
+  void serializerPasswordCharsSelection();
+  void facadePasswordCharsSelectionOutOfRange();
 
 private:
 };
@@ -743,6 +748,90 @@ void tst_settings::facadeLoadReflectsSave() {
   QCOMPARE(in.useMonospace, out.useMonospace);
   QCOMPARE(in.autoclearSeconds, 77);
   QCOMPARE(in.passSigningKey, QStringLiteral("FACADEKEY"));
+}
+
+void tst_settings::serializerPasswordCharsSelection_data() {
+  QTest::addColumn<int>("stored");
+  QTest::addColumn<int>("expected");
+  QTest::addColumn<bool>("warns");
+
+  // Legitimate values must survive the load untouched.
+  QTest::newRow("allchars")
+      << 0 << static_cast<int>(PasswordConfiguration::ALLCHARS) << false;
+  QTest::newRow("alphabetical")
+      << 1 << static_cast<int>(PasswordConfiguration::ALPHABETICAL) << false;
+  QTest::newRow("alphanumeric")
+      << 2 << static_cast<int>(PasswordConfiguration::ALPHANUMERIC) << false;
+  QTest::newRow("custom") << 3
+                          << static_cast<int>(PasswordConfiguration::CUSTOM)
+                          << false;
+  // Anything outside the enum would index past Characters[CHARSETS_COUNT];
+  // it must be rejected and replaced by the default, never forwarded.
+  QTest::newRow("count-sentinel")
+      << static_cast<int>(PasswordConfiguration::CHARSETS_COUNT)
+      << static_cast<int>(PasswordConfiguration::ALLCHARS) << true;
+  QTest::newRow("too-large")
+      << 7 << static_cast<int>(PasswordConfiguration::ALLCHARS) << true;
+  QTest::newRow("negative")
+      << -1 << static_cast<int>(PasswordConfiguration::ALLCHARS) << true;
+  QTest::newRow("int-min") << std::numeric_limits<int>::min()
+                           << static_cast<int>(PasswordConfiguration::ALLCHARS)
+                           << true;
+}
+
+void tst_settings::serializerPasswordCharsSelection() {
+  QFETCH(int, stored);
+  QFETCH(int, expected);
+  QFETCH(bool, warns);
+
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  QSettings qs(dir.filePath("selection.ini"), QSettings::IniFormat);
+  qs.setValue(SettingsConstants::passwordCharsSelection, stored);
+  qs.setValue(SettingsConstants::passwordChars, QStringLiteral("xyz"));
+
+  if (warns) {
+    QTest::ignoreMessage(QtWarningMsg,
+                         QRegularExpression(QStringLiteral(
+                             "Ignoring out-of-range passwordCharsSelection")));
+  }
+  const AppSettings s = SettingsSerializer::load(qs);
+  QCOMPARE(static_cast<int>(s.passwordConfiguration.selected), expected);
+  // The clamped selection must be a safe index into Characters.
+  QVERIFY(s.passwordConfiguration.selected >= 0);
+  QVERIFY(s.passwordConfiguration.selected <
+          PasswordConfiguration::CHARSETS_COUNT);
+  QVERIFY(!s.passwordConfiguration.Characters[s.passwordConfiguration.selected]
+               .isEmpty());
+  // Rejecting the selection must not drop the neighbouring keys.
+  QCOMPARE(s.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM],
+           QStringLiteral("xyz"));
+}
+
+void tst_settings::facadePasswordCharsSelectionOutOfRange() {
+  // A hand-edited ini reaching the singleton must yield a valid selection from
+  // QtPassSettings::getPasswordConfiguration(), the path the dialogs use.
+  const int savedRaw = QtPassSettings::getInstance()
+                           ->value(SettingsConstants::passwordCharsSelection, 0)
+                           .toInt();
+  QtPassSettings::getInstance()->setValue(
+      SettingsConstants::passwordCharsSelection, 7);
+
+  QTest::ignoreMessage(QtWarningMsg,
+                       QRegularExpression(QStringLiteral(
+                           "Ignoring out-of-range passwordCharsSelection")));
+  const PasswordConfiguration config =
+      QtPassSettings::getPasswordConfiguration();
+  QCOMPARE(config.selected, PasswordConfiguration::ALLCHARS);
+
+  QTest::ignoreMessage(QtWarningMsg,
+                       QRegularExpression(QStringLiteral(
+                           "Ignoring out-of-range passwordCharsSelection")));
+  QCOMPARE(QtPassSettings::load().passwordConfiguration.selected,
+           PasswordConfiguration::ALLCHARS);
+
+  QtPassSettings::getInstance()->setValue(
+      SettingsConstants::passwordCharsSelection, savedRaw);
 }
 
 QTEST_MAIN(tst_settings)
