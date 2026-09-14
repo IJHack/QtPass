@@ -110,15 +110,13 @@ jobs:
         if: steps.need_build.outputs.run_build == 'true'
         uses: jurplel/install-qt-action@v4.3.1
         with:
-          # Pin the 6.11 series to 6.11.1: the bare "6.11" spec resolves to the
-          # newest patch (6.11.2), whose archives download.qt.io fails to serve
-          # ("Failed to download checksum ... from mirrors"), breaking every
-          # build. 6.11.1 is the known-good patch (also the first with the macOS
-          # __yield fix). Drop this override once 6.11.2 mirrors propagate.
-          version: ${{ matrix.qt == '6.11' && '6.11.1' || matrix.qt }}
+          version: ${{ matrix.qt }}
           # Restore the unpacked Qt from the Actions cache instead of pulling
-          # ~600 MB from the Qt mirrors on every run; the mirror pool times
-          # out often enough to fail otherwise green builds.
+          # ~600 MB from the Qt mirrors on every run. aqtinstall fetches the
+          # .sha256 files from download.qt.io only (no mirror carries them, for
+          # any 6.11.x), so a download.qt.io hiccup fails every uncached run
+          # ("Failed to download checksum ... from mirrors"); with the cache
+          # warm that can only hit the first run after a Qt patch release.
           cache: true
 
       - name: Install dependencies (Linux)
