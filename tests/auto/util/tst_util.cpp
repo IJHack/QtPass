@@ -7,6 +7,7 @@
 #include <QList>
 #include <QProcess>
 #include <QProcessEnvironment>
+#include <QScopeGuard>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryDir>
@@ -212,6 +213,10 @@ private Q_SLOTS:
   void findBinaryInPathWithConstQStringRef();
   void findBinaryInPathEmptyString();
   void findBinaryInPathStringLiteral();
+  void findBinaryInPathSkipsDirectoryNamedLikeBinary();
+  void findBinaryInPathSkipsNonExecutableFile();
+  void findBinaryInPathEmptyEntriesDoNotResolveToCwd();
+  void findBinaryInPathEmptySearchPathsFindsNothing();
   void setEnvVarAdds();
   void setEnvVarUpdates();
   void setEnvVarRemoves();
@@ -1848,6 +1853,119 @@ void tst_util::findBinaryInPathStringLiteral() {
   QVERIFY2(!resultDirect.isEmpty(),
            "findBinaryInPath with string literal should succeed");
   QCOMPARE(resultDirect, resultNamed);
+#else
+  QSKIP("Unix-only test");
+#endif
+}
+
+#ifndef Q_OS_WIN
+// Create an executable shell script `name` inside `dir`; returns its path.
+static QString writeExecutable(const QString &dir, const QString &name) {
+  const QString path = dir + QLatin1Char('/') + name;
+  QFile exec(path);
+  if (!exec.open(QIODevice::WriteOnly)) {
+    return {};
+  }
+  exec.write(QByteArrayLiteral("#!/bin/sh\n"));
+  exec.close();
+  if (!exec.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner |
+                           QFileDevice::ExeOwner)) {
+    return {};
+  }
+  return path;
+}
+#endif
+
+void tst_util::findBinaryInPathSkipsDirectoryNamedLikeBinary() {
+  // A directory is "executable" (searchable) on Unix, but it is not a binary.
+  // The old hand-rolled PATH walk returned it; the lookup must skip it and
+  // continue to the real executable later in the PATH.
+#ifndef Q_OS_WIN
+  QTemporaryDir first;
+  QTemporaryDir second;
+  QVERIFY(first.isValid());
+  QVERIFY(second.isValid());
+  const QString name = QStringLiteral("qtpass_dir_lookalike");
+  QVERIFY(QDir(first.path()).mkdir(name));
+  QVERIFY(QFileInfo(first.path() + QLatin1Char('/') + name).isExecutable());
+
+  QVERIFY(Util::findBinaryInPath(name, {first.path()}).isEmpty());
+
+  const QString real = writeExecutable(second.path(), name);
+  QVERIFY(!real.isEmpty());
+  QCOMPARE(Util::findBinaryInPath(name, {first.path(), second.path()}),
+           QFileInfo(real).absoluteFilePath());
+#else
+  QSKIP("Unix-only test");
+#endif
+}
+
+void tst_util::findBinaryInPathSkipsNonExecutableFile() {
+#ifndef Q_OS_WIN
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString name = QStringLiteral("qtpass_not_executable");
+  QFile plain(dir.path() + QLatin1Char('/') + name);
+  QVERIFY(plain.open(QIODevice::WriteOnly));
+  plain.close();
+  QVERIFY(
+      plain.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner));
+
+  QVERIFY(Util::findBinaryInPath(name, {dir.path()}).isEmpty());
+#else
+  QSKIP("Unix-only test");
+#endif
+}
+
+void tst_util::findBinaryInPathEmptyEntriesDoNotResolveToCwd() {
+  // POSIX shells treat an empty PATH entry ("::" or a leading/trailing ':')
+  // as the current directory. QtPass must not: a binary that only exists in
+  // the working directory is not "installed".
+#ifndef Q_OS_WIN
+  QTemporaryDir cwd;
+  QVERIFY(cwd.isValid());
+  const QString name = QStringLiteral("qtpass_cwd_only");
+  const QString real = writeExecutable(cwd.path(), name);
+  QVERIFY(!real.isEmpty());
+
+  const QString previousCwd = QDir::currentPath();
+  const auto restoreCwd =
+      qScopeGuard([&previousCwd] { QDir::setCurrent(previousCwd); });
+  QVERIFY(QDir::setCurrent(cwd.path()));
+
+  QVERIFY(Util::findBinaryInPath(name, {QString()}).isEmpty());
+  QVERIFY(Util::findBinaryInPath(name, {QString(), QString()}).isEmpty());
+  QVERIFY(
+      Util::findBinaryInPath(
+          name,
+          QStringLiteral("::/nonexistent-qtpass-dir:").split(QLatin1Char(':')))
+          .isEmpty());
+  // An explicit "." entry is a relative directory, not an empty one, and
+  // does resolve against the working directory. Compare canonical paths:
+  // QStandardPaths::findExecutable() resolves "." through QDir::current(),
+  // which is the physical getcwd() path, while cwd.path() is the logical one.
+  // They differ when the temp dir is reached through a symlink, as on macOS
+  // where /var/folders is a symlink into /private/var.
+  const QString dotHit = Util::findBinaryInPath(name, {QStringLiteral(".")});
+  QVERIFY(!dotHit.isEmpty());
+  QCOMPARE(QFileInfo(dotHit).canonicalFilePath(),
+           QFileInfo(real).canonicalFilePath());
+#else
+  QSKIP("Unix-only test");
+#endif
+}
+
+void tst_util::findBinaryInPathEmptySearchPathsFindsNothing() {
+  // QStandardPaths::findExecutable() falls back to the process PATH when the
+  // list is empty; the wrapper must not, otherwise PATH="" would still find
+  // things.
+#ifndef Q_OS_WIN
+  const QString binaryName = QStringLiteral("sh");
+  QVERIFY(!Util::findBinaryInPath(binaryName).isEmpty());
+  QVERIFY(Util::findBinaryInPath(binaryName, {}).isEmpty());
+  QVERIFY(Util::findBinaryInPath(binaryName, {QString()}).isEmpty());
+  QVERIFY(
+      Util::findBinaryInPath(QString(), {QStringLiteral("/bin")}).isEmpty());
 #else
   QSKIP("Unix-only test");
 #endif

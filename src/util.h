@@ -9,6 +9,7 @@
 #include <QProcessEnvironment>
 #include <QRegularExpression>
 #include <QString>
+#include <QStringList>
 
 constexpr int MS_PER_SECOND = 1000;
 
@@ -29,6 +30,19 @@ public:
    * otherwise.
    */
   static auto findBinaryInPath(const QString &binary) -> QString;
+  /**
+   * @brief Locate an executable in an explicit list of directories.
+   *
+   * Only regular, executable files match; a directory named like the binary
+   * is skipped. Empty entries are ignored (they never resolve to the current
+   * working directory) and an empty list finds nothing.
+   * @param binary Executable name to locate.
+   * @param searchPaths Directories to search, in order.
+   * @return QString Absolute path to the executable if found, empty QString
+   * otherwise.
+   */
+  static auto findBinaryInPath(const QString &binary,
+                               const QStringList &searchPaths) -> QString;
   /**
    * @brief Locate the password store directory.
    * @return QString Path to the password store, always ends with '/'.
