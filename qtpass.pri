@@ -27,6 +27,8 @@ nosingleapp {
 }
 
 DEFINES += "VERSION=\"\\\"$$VERSION\\\"\""
+# Enforce range-for over Qt's foreach/Q_FOREACH across src, main and tests.
+DEFINES += QT_NO_FOREACH
 
 CODECFORSRC     = UTF-8
 CODECFORTR      = UTF-8

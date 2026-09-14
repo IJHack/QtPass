@@ -402,14 +402,14 @@ void ConfigDialog::on_radioButtonPass_clicked() { setGroupBoxState(); }
  * @return QStringList keys
  */
 auto ConfigDialog::getSecretKeys() -> QStringList {
-  QList<UserInfo> keys = QtPassSettings::getPass()->listKeys("", true);
+  const QList<UserInfo> keys = QtPassSettings::getPass()->listKeys("", true);
   QStringList names;
 
   if (keys.empty()) {
     return names;
   }
 
-  foreach (const UserInfo &sec, keys)
+  for (const UserInfo &sec : keys)
     names << sec.name;
 
   return names;
@@ -887,20 +887,19 @@ void ConfigDialog::on_profileTable_cellDoubleClicked(int row, int column) {
  */
 void ConfigDialog::on_deleteButton_clicked() {
   QSet<int> selectedRows; //  we use a set to prevent doubles
-  QList<QTableWidgetItem *> itemList = ui->profileTable->selectedItems();
+  const QList<QTableWidgetItem *> itemList = ui->profileTable->selectedItems();
   if (itemList.count() == 0) {
     QMessageBox::warning(this, tr("No profile selected"),
                          tr("No profile selected to delete"));
     return;
   }
-  QTableWidgetItem *item;
-  foreach (item, itemList)
+  for (const QTableWidgetItem *item : itemList)
     selectedRows.insert(item->row());
   // get a list, and sort it big to small
   QList<int> rows = selectedRows.values();
   std::sort(rows.begin(), rows.end(), std::greater<>());
   // now actually do the removing:
-  foreach (int row, rows)
+  for (int row : std::as_const(rows))
     ui->profileTable->removeRow(row);
   if (ui->profileTable->rowCount() < 1) {
     ui->deleteButton->setEnabled(false);

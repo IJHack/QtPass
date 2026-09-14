@@ -114,7 +114,7 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
     dirWithoutPassdir = normalizedPath;
   }
   QStringList args = {"init", "--path=" + dirWithoutPassdir};
-  foreach (const UserInfo &user, users) {
+  for (const UserInfo &user : users) {
     if (user.enabled) {
       args.append(user.key_id);
     }
