@@ -384,7 +384,9 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
     // File onto a folder drops into it (no clash); file onto an existing
     // file asks before overwriting.
     if (destFileinfo.isDir()) {
-      return performDrop(cleanedSrc, cleanedDest, action, false);
+      const QString destDir =
+          QDir::cleanPath(QDir(cleanedDest).filePath(srcFileInfo.fileName()));
+      return performDrop(cleanedSrc, destDir, action, false);
     }
     return performDrop(
         cleanedSrc, cleanedDest, action,

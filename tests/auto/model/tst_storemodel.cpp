@@ -8,6 +8,7 @@
 #include <QMimeData>
 #include <QtTest>
 
+#include "../../../src/pass.h"
 #include "../../../src/storemodel.h"
 
 class tst_storemodel : public QObject {
@@ -34,6 +35,7 @@ private Q_SLOTS:
   void dropMimeDataRejectsSourceOutsideStore();
   void dropMimeDataRejectsAbsoluteOutsideSource();
   void dropMimeDataRejectsSymlinkEscape();
+  void dropFileOntoFolderCopiesIntoTarget();
   void lessThan();
   void lessThanDirsFirst();
   void supportedDropActions();
@@ -345,6 +347,35 @@ struct DropFixture {
     return sm.mapFromSource(fsm.index(folderPath));
   }
 };
+
+/// Records Copy/Move invocations so the drop path can assert on the exact
+/// destination it hands to the backend (regression net for the copy-onto-a-
+/// folder bug, where the folder path was passed instead of the target file).
+class RecordingPass : public Pass {
+public:
+  RecordingPass() = default;
+
+  void GitInit() override {}
+  void GitPull() override {}
+  void GitPull_b() override {}
+  void GitPush() override {}
+  void Show(QString) override {}
+  void OtpGenerate(QString) override {}
+  void Insert(QString, QString, bool) override {}
+  void Remove(QString, bool) override {}
+  void Move(const QString src, const QString dest, const bool) override {
+    moveSrc = src;
+    moveDest = dest;
+  }
+  void Copy(const QString src, const QString dest, const bool) override {
+    copySrc = src;
+    copyDest = dest;
+  }
+  void Init(QString, const QList<UserInfo> &) override {}
+  void Grep(QString, bool) override {}
+
+  QString copySrc, copyDest, moveSrc, moveDest;
+};
 } // namespace
 
 void tst_storemodel::mimeDataRoundTripFile() {
@@ -522,6 +553,22 @@ void tst_storemodel::dropMimeDataRejectsSymlinkEscape() {
       !fx.sm.dropMimeData(mime.get(), Qt::MoveAction, 0, 0, fx.folderProxy()),
       "drop with src=<symlink-out-of-store> must be refused");
 #endif
+}
+
+void tst_storemodel::dropFileOntoFolderCopiesIntoTarget() {
+  DropFixture fx;
+  RecordingPass pass;
+  fx.sm.setPass(&pass);
+
+  auto mime =
+      makeMimeData(dragAndDropInfoPasswordStore::ItemKind::File, fx.filePath);
+  QVERIFY2(
+      fx.sm.dropMimeData(mime.get(), Qt::CopyAction, 0, 0, fx.folderProxy()),
+      "dropping a file onto a folder must succeed");
+
+  const QString expected = QDir::cleanPath(fx.folderPath + "/file.gpg");
+  QCOMPARE(pass.copySrc, QDir::cleanPath(fx.filePath));
+  QCOMPARE(pass.copyDest, expected);
 }
 
 void tst_storemodel::setStoreUpdatesPath() {

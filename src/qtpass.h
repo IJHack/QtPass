@@ -126,7 +126,6 @@ public:
   static QDialog *createQRCodePopup(const QPixmap &image);
 
 private slots:
-  void processError(QProcess::ProcessError);
   void processErrorExit(int exitCode, const QString &);
   void processFinished(const QString &, const QString &);
 

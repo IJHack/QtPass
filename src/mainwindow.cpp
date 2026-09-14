@@ -437,6 +437,11 @@ void MainWindow::flashText(const QString &text, const bool isError,
                            const bool isHtml) {
   if (isError) {
     ui->textBrowser->setTextColor(Qt::red);
+  } else {
+    // Reset the colour after a previous error so success/neutral messages do
+    // not stay red for the rest of the session (#1682).
+    ui->textBrowser->setTextColor(
+        ui->textBrowser->palette().color(QPalette::Text));
   }
 
   if (isHtml) {

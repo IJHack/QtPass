@@ -78,15 +78,6 @@ public:
                      const AppSettings &s, const QString &otpConfig = {});
 
   /**
-   * @brief Append a single field row below the existing ones (e.g. OTP code).
-   * @param field Field label.
-   * @param value Field value.
-   * @param s AppSettings snapshot supplying display settings.
-   */
-  void appendField(const QString &field, const QString &value,
-                   const AppSettings &s);
-
-  /**
    * @brief The one-time password currently on display, if there is one.
    *
    * Lets callers copy the code the user can actually see instead of decrypting
