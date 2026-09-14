@@ -296,8 +296,7 @@ auto UsersDialog::isUserExpired(const UserInfo &user) const -> bool {
     m_cachedCurrentDateTime = QDateTime::currentDateTime();
     m_cachedDateTimeValid = true;
   }
-  return user.expiry.toSecsSinceEpoch() > 0 &&
-         m_cachedCurrentDateTime > user.expiry;
+  return user.expiry.isValid() && m_cachedCurrentDateTime > user.expiry;
 }
 
 /**
@@ -307,11 +306,11 @@ auto UsersDialog::isUserExpired(const UserInfo &user) const -> bool {
  */
 QString UsersDialog::buildUserText(const UserInfo &user) const {
   QString text = user.name + "\n" + user.key_id;
-  if (user.created.toSecsSinceEpoch() > 0) {
+  if (user.created.isValid()) {
     text += " " + tr("created") + " " +
             QLocale::system().toString(user.created, QLocale::ShortFormat);
   }
-  if (user.expiry.toSecsSinceEpoch() > 0) {
+  if (user.expiry.isValid()) {
     text += " " + tr("expires") + " " +
             QLocale::system().toString(user.expiry, QLocale::ShortFormat);
   }
