@@ -53,7 +53,14 @@ protected:
 private slots:
   void on_passphrase1_textChanged(const QString &arg1);
   void on_passphrase2_textChanged(const QString &arg1);
-  void on_checkBox_stateChanged(int arg1);
+  /**
+   * @brief Enable or disable expert mode (the editable batch template).
+   *
+   * Connected explicitly to QCheckBox::toggled in the constructor; the box
+   * is two-state, so the deprecated stateChanged(int) is not needed.
+   * @param checked true when the Expert box is checked.
+   */
+  void setExpertMode(bool checked);
   void on_email_textChanged(const QString &arg1);
   void on_name_textChanged(const QString &arg1);
 
