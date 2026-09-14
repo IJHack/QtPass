@@ -35,8 +35,10 @@ public:
    *
    * Only regular, executable files match; a directory named like the binary
    * is skipped. Empty entries are ignored (they never resolve to the current
-   * working directory) and an empty list finds nothing.
-   * @param binary Executable name to locate.
+   * working directory) and an empty list finds nothing. Only bare names are
+   * searched: an absolute path, or a name containing a directory separator,
+   * finds nothing rather than escaping @p searchPaths.
+   * @param binary Executable name to locate (no directory separators).
    * @param searchPaths Directories to search, in order.
    * @return QString Absolute path to the executable if found, empty QString
    * otherwise.

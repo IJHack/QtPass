@@ -219,6 +219,7 @@ private Q_SLOTS:
   void findBinaryInPathSkipsNonExecutableFile();
   void findBinaryInPathEmptyEntriesDoNotResolveToCwd();
   void findBinaryInPathEmptySearchPathsFindsNothing();
+  void findBinaryInPathSearchPathsRejectAbsoluteAndRelativePaths();
   void setEnvVarAdds();
   void setEnvVarUpdates();
   void setEnvVarRemoves();
@@ -2057,6 +2058,47 @@ void tst_util::findBinaryInPathEmptySearchPathsFindsNothing() {
   QVERIFY(Util::findBinaryInPath(binaryName, {QString()}).isEmpty());
   QVERIFY(
       Util::findBinaryInPath(QString(), {QStringLiteral("/bin")}).isEmpty());
+#else
+  QSKIP("Unix-only test");
+#endif
+}
+
+void tst_util::findBinaryInPathSearchPathsRejectAbsoluteAndRelativePaths() {
+  // QStandardPaths::findExecutable() returns an absolute name as-is without
+  // looking at the directory list, and joins a relative one onto each entry,
+  // so "../x" could escape it. The directory-list overload must only search
+  // for bare names inside the supplied directories.
+#ifndef Q_OS_WIN
+  QTemporaryDir outside;
+  QTemporaryDir trusted;
+  QVERIFY(outside.isValid());
+  QVERIFY(trusted.isValid());
+  const QString name = QStringLiteral("qtpass-outside-tool");
+  const QString tool = outside.filePath(name);
+  {
+    QFile f(tool);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("#!/bin/sh\nexit 0\n");
+  }
+  QVERIFY(QFile::setPermissions(tool, QFile::ReadOwner | QFile::WriteOwner |
+                                          QFile::ExeOwner));
+  // Sanity: the file is a valid executable when searched in its own dir.
+  QCOMPARE(Util::findBinaryInPath(name, {outside.path()}), tool);
+
+  // Absolute path: must not be returned when only "trusted" is searched.
+  QVERIFY(Util::findBinaryInPath(tool, {trusted.path()}).isEmpty());
+  // Relative path escaping the search directory via "..".
+  const QString escape = QStringLiteral("../") +
+                         QFileInfo(outside.path()).fileName() +
+                         QLatin1Char('/') + name;
+  QVERIFY(Util::findBinaryInPath(escape, {trusted.path()}).isEmpty());
+  // Even a relative sub-path that would stay inside is not a bare name.
+  QVERIFY(Util::findBinaryInPath(QStringLiteral("./") + name, {outside.path()})
+              .isEmpty());
+
+  // The PATH-based overload still accepts an explicit absolute path.
+  QCOMPARE(Util::findBinaryInPath(tool), tool);
+  QVERIFY(Util::findBinaryInPath(outside.filePath("missing-tool")).isEmpty());
 #else
   QSKIP("Unix-only test");
 #endif

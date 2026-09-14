@@ -137,9 +137,22 @@ auto Util::findBinaryInPath(const QString &binary) -> QString {
 
   initialiseEnvironment();
 
-  QString ret = findBinaryInPath(
-      binary, _env.value(QStringLiteral("PATH"))
-                  .split(QDir::listSeparator(), Qt::SkipEmptyParts));
+  const QStringList dirs =
+      _env.value(QStringLiteral("PATH"))
+          .split(QDir::listSeparator(), Qt::SkipEmptyParts);
+  QString ret;
+  if (QDir::fromNativeSeparators(binary).contains(u'/')) {
+    // An explicit path is not a PATH search: an absolute path is checked
+    // as-is, a relative one is resolved against the PATH directories. The
+    // directory-list overload refuses such names, so handle them here.
+    if (QDir::isAbsolutePath(binary)) {
+      ret = QStandardPaths::findExecutable(binary);
+    } else if (!dirs.isEmpty()) {
+      ret = QStandardPaths::findExecutable(binary, dirs);
+    }
+  } else {
+    ret = findBinaryInPath(binary, dirs);
+  }
 #ifdef Q_OS_WIN
   if (ret.isEmpty()) {
     // Cache per-binary WSL lookup result — the wsl --version probe is a
@@ -187,16 +200,19 @@ auto Util::findBinaryInPath(const QString &binary) -> QString {
  * and on Windows the PATHEXT extensions are tried. Empty entries are dropped
  * rather than being resolved against the current working directory, and an
  * empty list finds nothing instead of silently falling back to the process
- * PATH.
+ * PATH. Only bare names are accepted: QStandardPaths::findExecutable() would
+ * return an absolute @p binary without consulting @p searchPaths at all, and
+ * a relative one containing ".." could escape them, so both find nothing.
  *
- * @param binary The name of the binary to locate.
+ * @param binary The name of the binary to locate; must not contain a
+ * directory separator.
  * @param searchPaths Directories to search, in order.
  * @return QString - The absolute path to the binary, or an empty string if not
  * found.
  */
 auto Util::findBinaryInPath(const QString &binary,
                             const QStringList &searchPaths) -> QString {
-  if (binary.isEmpty()) {
+  if (binary.isEmpty() || QDir::fromNativeSeparators(binary).contains(u'/')) {
     return {};
   }
   QStringList dirs;
