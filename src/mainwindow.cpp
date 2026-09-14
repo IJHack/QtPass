@@ -491,11 +491,16 @@ void MainWindow::applyWindowFlagsSettings() {
  * @brief Opens and processes the application configuration dialog, then applies
  * any accepted settings.
  * @example
- * config();
+ * if (!config()) {
+ *   // the user cancelled
+ * }
  *
- * @return void - This function does not return a value.
+ * @return bool - True when the dialog was accepted, false when it was
+ * cancelled. An accepted dialog can still leave the configuration invalid
+ * (the OK button is not gated on Util::configIsValid()); QtPass::init() keeps
+ * asking until the configuration is usable or this returns false.
  */
-void MainWindow::config() {
+auto MainWindow::config() -> bool {
   QScopedPointer<ConfigDialog> d(new ConfigDialog(this));
   d->setModal(true);
   // Automatically default to pass if it's available
@@ -507,40 +512,46 @@ void MainWindow::config() {
   if (m_qtPass->isFreshStart()) {
     d->wizard(); // run initial setup wizard for first-time configuration
   }
-  if (d->exec()) {
-    if (d->result() == QDialog::Accepted) {
-      applyTextBrowserSettings();
-      applyWindowFlagsSettings();
+  if (d->exec() != QDialog::Accepted) {
+    return false;
+  }
 
-      updateProfileBox();
-      const AppSettings s = QtPassSettings::load();
-      proxyModel.setStore(s.passStore);
-      ui->treeView->setRootIndex(proxyModel.rootIndexFor(s.passStore));
-      deselect();
-      ui->treeView->setCurrentIndex(QModelIndex());
+  applyTextBrowserSettings();
+  applyWindowFlagsSettings();
 
-      // Do not re-run the dialog (and the first-run wizard) on this stack
-      // frame when the configuration is still invalid: QtPass::init() checks
-      // the result and reports failure, which main() turns into an exit.
-      Pass *activePass = QtPassSettings::getPass();
-      activePass->updateEnv();
-      proxyModel.setPass(activePass);
-      clearPanelTimer.setInterval(MS_PER_SECOND * s.autoclearPanelSeconds);
-      m_qtPass->setClipboardTimer();
+  updateProfileBox();
+  const AppSettings s = QtPassSettings::load();
+  proxyModel.setStore(s.passStore);
+  ui->treeView->setRootIndex(proxyModel.rootIndexFor(s.passStore));
+  deselect();
+  ui->treeView->setCurrentIndex(QModelIndex());
 
-      updateGitButtonVisibility();
-      updateOtpButtonVisibility();
-      updateGrepButtonVisibility();
-      updateProcessOutputVisibility();
-      if (s.useTrayIcon && m_tray == nullptr) {
-        initTrayIcon();
-      } else if (!s.useTrayIcon && m_tray != nullptr) {
-        destroyTrayIcon();
-      }
-    }
+  Pass *activePass = QtPassSettings::getPass();
+  activePass->updateEnv();
+  proxyModel.setPass(activePass);
+  clearPanelTimer.setInterval(MS_PER_SECOND * s.autoclearPanelSeconds);
+  m_qtPass->setClipboardTimer();
 
+  updateGitButtonVisibility();
+  updateOtpButtonVisibility();
+  updateGrepButtonVisibility();
+  updateProcessOutputVisibility();
+  if (s.useTrayIcon && m_tray == nullptr) {
+    initTrayIcon();
+  } else if (!s.useTrayIcon && m_tray != nullptr) {
+    destroyTrayIcon();
+  }
+
+  // Leave the fresh-start state in place while the accepted configuration is
+  // still unusable (for example the user declined to create the store), so
+  // the next attempt from QtPass::init() runs the first-run wizard again
+  // instead of showing the bare dialog. The re-prompt itself lives in init():
+  // recursing here re-ran the dialog on this stack frame and never reported
+  // a cancel back to the caller.
+  if (Util::configIsValid(s)) {
     m_qtPass->setFreshStart(false);
   }
+  return true;
 }
 
 /**

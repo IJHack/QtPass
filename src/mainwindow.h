@@ -84,8 +84,14 @@ public:
 
   /**
    * @brief Open the configuration dialog.
+   *
+   * On a fresh start the first-run wizard runs before the dialog is shown.
+   * Accepting the dialog does not guarantee a usable configuration: the OK
+   * button is not gated on Util::configIsValid(), so QtPass::init() uses the
+   * return value to decide whether to ask again or to give up.
+   * @return true when the dialog was accepted, false when it was cancelled.
    */
-  void config();
+  auto config() -> bool;
 
   /**
    * @brief Enable or disable the main UI elements.
