@@ -6,7 +6,9 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QProgressBar>
+#include <QPushButton>
 #include <QTextBrowser>
+#include <QTextDocument>
 #include <QVBoxLayout>
 #include <QWidget>
 
@@ -50,10 +52,13 @@ private Q_SLOTS:
   void fieldValueRendersHtmlSpecialsVerbatim();
   void visiblePasswordRendersHtmlSpecialsVerbatim();
   void fieldValueWithUrlStillLinksAndEscapes();
+  void urlButtonToolTipShowsUrlVerbatim_data();
+  void urlButtonToolTipShowsUrlVerbatim();
 
 private:
   [[nodiscard]] auto otpWidgetAt(int row) const -> OtpCodeWidget *;
   [[nodiscard]] auto browserAt(int row) const -> QTextBrowser *;
+  [[nodiscard]] auto urlButtonAt(int row) const -> QPushButton *;
 };
 
 void tst_passworddisplaypanel::init() {
@@ -454,6 +459,70 @@ void tst_passworddisplaypanel::fieldValueWithUrlStillLinksAndEscapes() {
       html.contains(
           QStringLiteral("<a href=\"https://example.org/?a=1&amp;b=2\"")),
       qPrintable(QStringLiteral("URL must be wrapped in an anchor: ") + html));
+}
+
+auto tst_passworddisplaypanel::urlButtonAt(int row) const -> QPushButton * {
+  QLayoutItem *item = m_grid->itemAtPosition(row, 1);
+  if (item == nullptr || item->widget() == nullptr) {
+    return nullptr;
+  }
+  // The open-in-browser button is the only plain QPushButton in the row; the
+  // copy and QR affordances are subclasses.
+  const auto buttons = item->widget()->findChildren<QPushButton *>();
+  for (QPushButton *button : buttons) {
+    if (qobject_cast<QPushButtonWithClipboard *>(button) == nullptr &&
+        !button->toolTip().isEmpty()) {
+      return button;
+    }
+  }
+  return nullptr;
+}
+
+/**
+ * @brief Render a tooltip string the way QToolTip does: the format is
+ * auto-detected, so the text is HTML only when Qt::mightBeRichText() says so.
+ */
+static auto renderedToolTip(const QString &toolTip) -> QString {
+  QTextDocument doc;
+  if (Qt::mightBeRichText(toolTip)) {
+    doc.setHtml(toolTip);
+  } else {
+    doc.setPlainText(toolTip);
+  }
+  return doc.toPlainText();
+}
+
+/**
+ * @brief The open-in-browser tooltip HTML-escapes the URL, but QToolTip only
+ * treats the text as rich text when it looks like markup. A query string
+ * therefore read `?a=1&amp;b=2` on hover. The escaping must be decoded again
+ * for every launchable URL, including one whose query happens to spell out an
+ * entity.
+ */
+void tst_passworddisplaypanel::urlButtonToolTipShowsUrlVerbatim_data() {
+  QTest::addColumn<QString>("url");
+  QTest::newRow("plain") << QStringLiteral("https://example.org/login");
+  QTest::newRow("query string")
+      << QStringLiteral("https://example.org/?a=1&b=2");
+  QTest::newRow("entity-looking query")
+      << QStringLiteral("https://example.org/?q=&lt;x&gt;");
+}
+
+void tst_passworddisplaypanel::urlButtonToolTipShowsUrlVerbatim() {
+  QFETCH(QString, url);
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"), NamedValues{{"url", url}},
+                         s);
+  QPushButton *button = urlButtonAt(1);
+  QVERIFY2(button != nullptr,
+           "a launchable URL gets an open-in-browser button");
+  const QString rendered = renderedToolTip(button->toolTip());
+  QVERIFY2(rendered.contains(url),
+           qPrintable(QStringLiteral("tooltip must show the URL verbatim: ") +
+                      rendered));
+  QVERIFY2(!rendered.contains(QStringLiteral("&amp;")),
+           qPrintable(QStringLiteral("tooltip must not show entities: ") +
+                      rendered));
 }
 
 QTEST_MAIN(tst_passworddisplaypanel)
