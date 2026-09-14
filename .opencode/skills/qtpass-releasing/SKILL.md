@@ -120,13 +120,44 @@ release that is not pushed downstream the same day ends up as a multi-year
 gap (the FreeBSD port sat on 1.4.0 for three years). Do these before
 announcing the release:
 
-| Package                     | Where                                                                                                                      | How                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| --------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| FreeBSD `sysutils/qtpass`   | [Bugzilla](https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages), component "Individual Port(s)" | `DISTVERSION` bump + `make makesum`; summary `sysutils/qtpass: Update to X.Y.Z`; attach the diff with `maintainer-approval+`. Test in a FreeBSD VM: `make stage check-plist stage-qa`, `portlint -AC`.                                                                                                                                                                                                                                                                                                                                                                                          |
-| MacPorts `aqua/QtPass`      | PR to [macports/macports-ports](https://github.com/macports/macports-ports)                                                | `github.setup … X.Y.Z v`, `revision 0`, new `checksums` (`rmd160`/`sha256`/`size` of the GitHub release tarball). Title `QtPass: update to X.Y.Z`.                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| winget `IJHack.QtPass`      | PR to [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs)                                                    | New `manifests/i/IJHack/QtPass/X.Y.Z/` (version, installer, locale); installer is `x64` (the port is 64-bit only), `InstallerSha256` of `qtpass-X.Y.Z.exe`, `ProductCode` from `qtpass.iss`. Run `winget validate --manifest manifests/i/IJHack/QtPass/X.Y.Z` before opening the PR.                                                                                                                                                                                                                                                                                                            |
-| Flathub `org.qtpass.QtPass` | PR to the Flathub app repository                                                                                           | Bump the `qtpass` module tag/commit in `flatpak/org.qtpass.QtPass.yml`, add a `<release>` to `qtpass.appdata.xml`, run `flatpak-builder-lint`. Flathub's [generative-AI policy](https://docs.flathub.org/docs/for-app-authors/requirements#generative-ai-policy): AI-generated code, packaging or metadata must be disclosed (which parts, how much) and is accepted at reviewer discretion; AI tools must not open or automate the submission PR, write its commit messages, description, review comments or replies, and no AI-agent reviews may be requested. Open and write the PR by hand. |
-| Chocolatey `qtpass`         | Not ours (community maintained)                                                                                            | Nothing to do unless the maintainer asks.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+#### FreeBSD `sysutils/qtpass`
+
+- Where: [Bugzilla](https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages),
+  component "Individual Port(s)", summary `sysutils/qtpass: Update to X.Y.Z`.
+- How: bump `DISTVERSION`, run `make makesum`, attach the diff with the
+  `maintainer-approval+` flag (we are the maintainer, so no approval wait).
+- Test in a FreeBSD VM: `make stage check-plist stage-qa` and `portlint -AC`.
+
+#### MacPorts `aqua/QtPass`
+
+- Where: PR to [macports/macports-ports](https://github.com/macports/macports-ports),
+  title `QtPass: update to X.Y.Z`.
+- How: `github.setup … X.Y.Z v`, `revision 0`, new `checksums`
+  (`rmd160`, `sha256`, `size` of the GitHub release tarball).
+
+#### winget `IJHack.QtPass`
+
+- Where: PR to [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs).
+- How: new `manifests/i/IJHack/QtPass/X.Y.Z/` (version, installer, locale);
+  the installer is `x64` (the port is 64-bit only), `InstallerSha256` of
+  `qtpass-X.Y.Z.exe`, `ProductCode` from `qtpass.iss`.
+- Run `winget validate --manifest manifests/i/IJHack/QtPass/X.Y.Z` first.
+
+#### Flathub `org.qtpass.QtPass`
+
+- Where: PR to the Flathub app repository.
+- How: bump the `qtpass` module tag/commit in `flatpak/org.qtpass.QtPass.yml`,
+  add a `<release>` to `qtpass.appdata.xml`, run `flatpak-builder-lint`.
+- Flathub's [generative-AI policy](https://docs.flathub.org/docs/for-app-authors/requirements#generative-ai-policy):
+  AI-generated code, packaging or metadata must be disclosed (which parts,
+  how much) and is accepted at reviewer discretion; AI tools must not open
+  or automate the submission PR, or write its commit messages, description,
+  review comments or replies, and no AI-agent reviews may be requested.
+  Open and write the PR by hand.
+
+#### Chocolatey `qtpass`
+
+- Not ours (community maintained); nothing to do unless the maintainer asks.
 
 Watch lists: [portscout](https://portscout.freebsd.org/brouwer@annejan.com.html)
 and [FreshPorts](https://www.freshports.org/sysutils/qtpass/) for FreeBSD.
