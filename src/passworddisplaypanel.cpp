@@ -163,9 +163,19 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
                                         QIcon(":/icons/open-url.svg")));
     // Escape only for tooltip rendering (rich-text safe display). The launched
     // URL must remain the original validated value; HTML escaping would change
-    // it.
+    // it. The <qt> wrapper forces the rich-text path: QToolTip auto-detects
+    // the format, and without a tag it would show the escaped entities
+    // literally (`?a=1&amp;b=2`). Plain text is not an option either, because
+    // a URL may legitimately contain `&lt;`, which auto-detection treats as
+    // HTML. Rich text also turns on word wrap in QToolTip, and QLabel's
+    // wrapped-size heuristic would then fold the URL into a cramped multi-line
+    // box, breaking it at `/` and `?`; white-space:nowrap on the block keeps
+    // the tooltip on one line. (<nobr> is not enough: Qt only turns its spaces
+    // into non-breaking ones.)
     urlButton->setToolTip(
-        QObject::tr("Open %1 in browser").arg(trimmedValue.toHtmlEscaped()));
+        QStringLiteral("<qt style=\"white-space:nowrap\">%1</qt>")
+            .arg(QObject::tr("Open %1 in browser")
+                     .arg(trimmedValue.toHtmlEscaped())));
     urlButton->setStyleSheet(buttonStyle);
     urlButton->setCursor(Qt::PointingHandCursor);
     connect(urlButton, &QPushButton::clicked, this, [trimmedValue]() {
