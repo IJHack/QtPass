@@ -142,10 +142,47 @@ void Pass::init(const AppSettings &settings) {
   }
 #endif
 
-  if (!m_settings.gpgHome.isEmpty()) {
+  // GNUPGHOME: the configured gpgHome wins over the inherited environment,
+  // but only when it exists. A gpgHome that is gone (the 1.7.0 test suite
+  // left its temporary keyring path in the live QtPass.conf, #1711) would
+  // make every gpg call fail with "No secret key"; fall back to whatever the
+  // environment says and tell the user. Clearing the setting at runtime
+  // restores the inherited value as well instead of keeping the old path.
+  const QString inheritedHome = QProcessEnvironment::systemEnvironment().value(
+      QStringLiteral("GNUPGHOME"));
+  const auto useInheritedHome = [this, &inheritedHome]() {
+    if (inheritedHome.isEmpty()) {
+      env.remove(QStringLiteral("GNUPGHOME"));
+    } else {
+      env.insert(QStringLiteral("GNUPGHOME"), inheritedHome);
+    }
+  };
+  if (m_settings.gpgHome.isEmpty()) {
+    useInheritedHome();
+  } else {
     QDir absHome(m_settings.gpgHome);
     absHome.makeAbsolute();
-    env.insert(QStringLiteral("GNUPGHOME"), absHome.path());
+    if (absHome.exists()) {
+      env.insert(QStringLiteral("GNUPGHOME"), absHome.path());
+    } else {
+      if (inheritedHome.isEmpty()) {
+        qWarning() << "gpgHome" << absHome.path()
+                   << "does not exist; using the default GnuPG home";
+        emit statusMsg(tr("Configured GPG home %1 does not exist, using the "
+                          "default keyring")
+                           .arg(absHome.path()),
+                       5000);
+      } else {
+        qWarning() << "gpgHome" << absHome.path()
+                   << "does not exist; using GNUPGHOME" << inheritedHome
+                   << "from the environment";
+        emit statusMsg(tr("Configured GPG home %1 does not exist, using "
+                          "GNUPGHOME %2 from the environment")
+                           .arg(absHome.path(), inheritedHome),
+                       5000);
+      }
+      useInheritedHome();
+    }
   }
 }
 

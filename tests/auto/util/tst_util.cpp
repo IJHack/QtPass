@@ -218,6 +218,9 @@ private Q_SLOTS:
   void setEnvVarUpdates();
   void setEnvVarRemoves();
   void setEnvVarNoopOnMissingRemove();
+  void gpgHomeExportedWhenItExists();
+  void gpgHomeMissingFallsBackAndWarns();
+  void gpgHomeClearedRestoresInheritedValue();
   void updateEnvSetsExpectedVars();
   void updateEnvEmptyCustomCharsetFallsBackToAllChars();
   void updateEnvWslenvContainsRequiredVars();
@@ -1973,6 +1976,80 @@ void tst_util::setEnvVarNoopOnMissingRemove() {
   const QProcessEnvironment before = pass.environment();
   pass.callSetEnvVar(QStringLiteral("NONEXISTENT_KEY="), QString());
   QCOMPARE(pass.environment(), before);
+}
+
+/// A configured gpgHome that exists is what gpg gets as GNUPGHOME.
+void tst_util::gpgHomeExportedWhenItExists() {
+  QTemporaryDir home;
+  QVERIFY2(home.isValid(), "temporary GPG home should be creatable");
+  TestPass pass;
+  AppSettings s;
+  s.gpgHome = home.path();
+  pass.init(s);
+  QCOMPARE(pass.environment().value(QStringLiteral("GNUPGHOME")),
+           QDir(home.path()).absolutePath());
+}
+
+/// Regression test for #1711: a gpgHome left behind by an old test run (the
+/// directory is gone) must not be handed to gpg, which would fail every
+/// decrypt with "No secret key"; the user is told and the default home is
+/// used instead.
+void tst_util::gpgHomeMissingFallsBackAndWarns() {
+  QString gone;
+  {
+    QTemporaryDir dir;
+    QVERIFY2(dir.isValid(), "temporary GPG home should be creatable");
+    gone = dir.path();
+  }
+  QVERIFY2(!QDir(gone).exists(), "temporary directory should be gone");
+  const QString inherited =
+      QProcessEnvironment::systemEnvironment().value("GNUPGHOME");
+
+  TestPass pass;
+  QSignalSpy status(&pass, &Pass::statusMsg);
+  AppSettings s;
+  s.gpgHome = gone;
+  QTest::ignoreMessage(QtWarningMsg, QRegularExpression("does not exist"));
+  pass.init(s);
+  const QProcessEnvironment env = pass.environment();
+  if (inherited.isEmpty()) {
+    QVERIFY2(!env.contains(QStringLiteral("GNUPGHOME")),
+             "a missing gpgHome must not be exported");
+  } else {
+    QCOMPARE(env.value(QStringLiteral("GNUPGHOME")), inherited);
+  }
+  QCOMPARE(status.count(), 1);
+  const QString message = status.at(0).at(0).toString();
+  QVERIFY2(message.contains(gone), qPrintable(message));
+  if (inherited.isEmpty()) {
+    QVERIFY2(message.contains(QStringLiteral("default keyring")),
+             qPrintable(message));
+  } else {
+    QVERIFY2(message.contains(inherited), qPrintable(message));
+  }
+}
+
+/// Clearing gpgHome at runtime must not keep exporting the previous path.
+void tst_util::gpgHomeClearedRestoresInheritedValue() {
+  QTemporaryDir home;
+  QVERIFY2(home.isValid(), "temporary GPG home should be creatable");
+  const QString inherited =
+      QProcessEnvironment::systemEnvironment().value("GNUPGHOME");
+  TestPass pass;
+  AppSettings s;
+  s.gpgHome = home.path();
+  pass.init(s);
+  QCOMPARE(pass.environment().value(QStringLiteral("GNUPGHOME")),
+           QDir(home.path()).absolutePath());
+  s.gpgHome.clear();
+  pass.init(s);
+  const QProcessEnvironment env = pass.environment();
+  if (inherited.isEmpty()) {
+    QVERIFY2(!env.contains(QStringLiteral("GNUPGHOME")),
+             "clearing gpgHome must stop exporting the previous path");
+  } else {
+    QCOMPARE(env.value(QStringLiteral("GNUPGHOME")), inherited);
+  }
 }
 
 void tst_util::updateEnvSetsExpectedVars() {

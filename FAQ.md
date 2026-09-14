@@ -83,6 +83,16 @@ setx GIT_ASKPASS "C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass
 This tutorial might resolve your issues.
 <https://gitforwindows.org/OpenSSH-Integration-with-Pageant>
 
+### gpg reports a missing `/tmp/tst_integration-…/pubring.kbx`
+
+QtPass is pointing gpg at a `GNUPGHOME` that no longer exists. The 1.7.0
+test suite wrote its temporary keyring path into the live configuration when
+`make check` was run as your own user (for example by a distribution package
+build), and never removed it. Delete the `gpgHome=` line from
+`~/.config/IJHack/QtPass.conf` (or set it to empty) and restart QtPass. Since
+1.8.1 QtPass ignores a configured GPG home that does not exist and shows a
+status message instead.
+
 ### GPG says "Public key unusable" or "No secret key"
 
 Your GPG key may not be trusted or has expired. Run `gpg --edit-key <KEYID>` and:
