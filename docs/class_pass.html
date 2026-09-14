@@ -233,6 +233,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:aecbf5f13da209c44955bad681a63a388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of recipients for a password file.  <br /></td></tr>
 <tr class="memitem:adc0aa2e7b272f2abe3cfea591a6bc15c" id="r_adc0aa2e7b272f2abe3cfea591a6bc15c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#adc0aa2e7b272f2abe3cfea591a6bc15c">getRecipientString</a> (const QString &amp;for_file, const QString &amp;passStore, const QString &amp;separator=&quot; &quot;, int *count=nullptr) -&gt; QStringList</td></tr>
 <tr class="memdesc:adc0aa2e7b272f2abe3cfea591a6bc15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get recipients as string.  <br /></td></tr>
+<tr class="memitem:a1ed10aadc40a4f13667f235d3a2d67b7" id="r_a1ed10aadc40a4f13667f235d3a2d67b7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1ed10aadc40a4f13667f235d3a2d67b7">seedGpgIdFile</a> (const QString &amp;newDir, const QString &amp;passStore) -&gt; bool</td></tr>
+<tr class="memdesc:a1ed10aadc40a4f13667f235d3a2d67b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seed a new folder's .gpg-id from the recipients it inherits.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-types" class="groupheader"><a id="pro-types" name="pro-types"></a>
 Protected Types</h2></td></tr>
@@ -2014,6 +2016,45 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Resolved command with program and arguments. </dd></dl>
+
+</div>
+</div>
+<a id="a1ed10aadc40a4f13667f235d3a2d67b7" name="a1ed10aadc40a4f13667f235d3a2d67b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed10aadc40a4f13667f235d3a2d67b7">&#9670;&#160;</a></span>seedGpgIdFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::seedGpgIdFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>newDir</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>passStore</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Seed a new folder's .gpg-id from the recipients it inherits. </p>
+<p>Writes the recipient list that is in effect for <code class="param">newDir</code> (found by walking up to the nearest parent .gpg-id, see getGpgIdPath) into <code class="param">newDir/</code>.gpg-id atomically with owner-only permissions. Refuses to overwrite an existing .gpg-id and writes nothing when no recipient is inherited, so a zero-byte file never shadows the parent's list. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newDir</td><td>Absolute path of the freshly created folder. </td></tr>
+    <tr><td class="paramname">passStore</td><td>Root directory of the password store. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the file was written, false otherwise. </dd></dl>
 
 </div>
 </div>
