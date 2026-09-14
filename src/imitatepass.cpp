@@ -334,32 +334,82 @@ auto ImitatePass::signGpgIdFile(const QString &gpgIdFile,
 /**
  * @brief Adds a GPG ID file and optionally its signature file to git, then
  * creates corresponding commit(s).
+ *
+ * Git runs synchronously here on purpose: Init follows up with reencryptPath,
+ * whose backup and re-encryption commits are blocking as well. Queuing the
+ * add/commit on the asynchronous executor instead let the two race for the
+ * index lock, so either the queued `git add` died on `index.lock` (and the
+ * cancelled commit left the .gpg-id untracked) or the backup commit absorbed
+ * the file first and `git commit -- .gpg-id` failed with nothing to commit.
+ *
  * @example
- * void result = ImitatePass::gitAddGpgId(gpgIdFile, gpgIdSigFile, true, true);
+ * int rc = ImitatePass::gitAddGpgId(gpgIdFile, gpgIdSigFile, true, true,
+ *                                   &out, &err);
  *
  * @param const QString &gpgIdFile - Path to the GPG ID file to add and commit.
  * @param const QString &gpgIdSigFile - Path to the signature file associated
  * with the GPG ID file.
- * @param bool addFile - Whether to stage and commit the GPG ID file.
+ * @param bool addFile - Whether to stage the GPG ID file before committing.
  * @param bool addSigFile - Whether to stage and commit the signature file.
- * @return void - This function does not return a value.
+ * @param QString *out - Receives the concatenated stdout of the git commands.
+ * @param QString *err - Receives the concatenated stderr of the git commands.
+ * @return int - Exit code of the first failing git command, 0 on success.
  */
-void ImitatePass::gitAddGpgId(const QString &gpgIdFile,
+auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
                               const QString &gpgIdSigFile, bool addFile,
-                              bool addSigFile) {
+                              bool addSigFile, QString *out, QString *err)
+    -> int {
+  const QString git = m_settings.gitExecutable;
+  const QString store = pgit(m_settings.passStore);
+  auto run = [&](const QStringList &args) -> int {
+    QString runOut;
+    QString runErr;
+    const int rc = Executor::executeBlocking(
+        git, QStringList{"-C", store} + args, &runOut, &runErr);
+    if (out != nullptr) {
+      out->append(runOut);
+    }
+    if (err != nullptr) {
+      err->append(runErr);
+    }
+    return rc;
+  };
+  int rc = 0;
   if (addFile) {
-    executeGit(GIT_ADD, {"add", pgit(gpgIdFile)});
+    rc = run({"add", pgit(gpgIdFile)});
+    if (rc != 0) {
+      return rc;
+    }
   }
   QString commitPath = gpgIdFile;
   commitPath.replace(Util::endsWithGpg(), "");
-  gitCommit(gpgIdFile, "Added " + commitPath + " using QtPass.");
-  if (!addSigFile) {
-    return;
+  rc = run({"commit", "-m", "Added " + commitPath + " using QtPass.", "--",
+            pgit(gpgIdFile)});
+  if (rc != 0 || !addSigFile) {
+    return rc;
   }
-  executeGit(GIT_ADD, {"add", pgit(gpgIdSigFile)});
+  rc = run({"add", pgit(gpgIdSigFile)});
+  if (rc != 0) {
+    return rc;
+  }
   commitPath = gpgIdSigFile;
   commitPath.replace(QRegularExpression("\\.gpg$"), "");
-  gitCommit(gpgIdSigFile, "Added " + commitPath + " using QtPass.");
+  return run({"commit", "-m", "Added " + commitPath + " using QtPass.", "--",
+              pgit(gpgIdSigFile)});
+}
+
+/**
+ * @brief Checks whether git already tracks a file in the password store.
+ *
+ * @param const QString &file - Absolute path of the file inside the store.
+ * @return bool - true when the file is in the index, false when it is
+ * untracked or the lookup failed.
+ */
+auto ImitatePass::gitTracks(const QString &file) -> bool {
+  return Executor::executeBlocking(m_settings.gitExecutable,
+                                   {"-C", pgit(m_settings.passStore),
+                                    "ls-files", "--error-unmatch", "--",
+                                    pgit(file)}) == 0;
 }
 
 /**
@@ -398,14 +448,19 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     }
   }
 
+  const bool useGit = !m_settings.useWebDav && m_settings.useGit &&
+                      !m_settings.gitExecutable.isEmpty();
   QString gpgIdFile = path + ".gpg-id";
   bool addFile = false;
-  transactionHelper trans(this, PASS_INIT);
-  if (m_settings.addGPGId) {
-    QFileInfo checkFile(gpgIdFile);
-    if (!checkFile.exists() || !checkFile.isFile()) {
-      addFile = true;
-    }
+  if (m_settings.addGPGId && useGit) {
+    // Stage the .gpg-id unless git already tracks it. Checking the working
+    // tree instead is not enough: MainWindow::addFolder writes a folder's
+    // .gpg-id without staging it, and since the backup commit before
+    // re-encryption only picks up tracked files (#1685) nothing else ever
+    // would. Without the add, `git commit -- <file>` below fails for the
+    // untracked pathspec and the re-encrypted entries get pushed without
+    // the recipients file they were encrypted to (#1682).
+    addFile = !gitTracks(gpgIdFile);
   }
   writeGpgIdFile(gpgIdFile, users);
 
@@ -415,11 +470,19 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     }
   }
 
-  if (!m_settings.useWebDav && m_settings.useGit &&
-      !m_settings.gitExecutable.isEmpty()) {
-    gitAddGpgId(gpgIdFile, gpgIdSigFile, addFile, addSigFile);
+  int gitExit = 0;
+  QString gitOut;
+  QString gitErr;
+  if (useGit) {
+    gitExit = gitAddGpgId(gpgIdFile, gpgIdSigFile, addFile, addSigFile, &gitOut,
+                          &gitErr);
   }
   reencryptPath(path);
+  if (useGit) {
+    // Same contract the asynchronous add/commit transaction used to provide:
+    // finishedInit when the .gpg-id landed in git, processErrorExit otherwise.
+    Pass::finished(PASS_INIT, gitExit, gitOut, gitErr);
+  }
 }
 
 /**
@@ -677,16 +740,21 @@ auto ImitatePass::createBackupCommit() -> bool {
   // directory, so without -C these commands would run in QtPass's launch
   // directory and either fail or operate on an unrelated repository.
   const QString store = pgit(m_settings.passStore);
+  // Only tracked files belong in the backup. Untracked files in the store (a
+  // plaintext export, an editor swap file, ...) must not be swept into a
+  // commit that autoPush then sends to the shared remote, so both the status
+  // check and the add are restricted to what git already knows about.
   QString statusOut;
-  if (Executor::executeBlocking(git, {"-C", store, "status", "--porcelain"},
-                                &statusOut) != 0) {
+  if (Executor::executeBlocking(
+          git, {"-C", store, "status", "--porcelain", "--untracked-files=no"},
+          &statusOut) != 0) {
     emit critical(
         tr("Backup commit failed"),
         tr("Could not inspect git status. Re-encryption was aborted."));
     return false;
   }
   if (!statusOut.trimmed().isEmpty()) {
-    if (Executor::executeBlocking(git, {"-C", store, "add", "-A"}) != 0 ||
+    if (Executor::executeBlocking(git, {"-C", store, "add", "-u"}) != 0 ||
         Executor::executeBlocking(git, {"-C", store, "commit", "-m",
                                         "Backup before re-encryption"}) != 0) {
       emit critical(tr("Backup commit failed"),
