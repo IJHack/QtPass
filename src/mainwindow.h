@@ -83,8 +83,14 @@ public:
 
   /**
    * @brief Open the configuration dialog.
+   *
+   * On a fresh start the first-run wizard runs before the dialog is shown.
+   * Accepting the dialog does not guarantee a usable configuration: the OK
+   * button is not gated on Util::configIsValid(), so QtPass::init() uses the
+   * return value to decide whether to ask again or to give up.
+   * @return true when the dialog was accepted, false when it was cancelled.
    */
-  void config();
+  auto config() -> bool;
 
   /**
    * @brief Enable or disable the main UI elements.
@@ -118,6 +124,17 @@ public:
    * active.
    */
   auto getKeyGenDialog() -> QDialog * { return m_keyGenDialog; }
+
+  /**
+   * @brief Return whether startup configuration succeeded.
+   *
+   * Reflects the result of the initial configuration check performed in the
+   * constructor (QtPass::init()). When it is false the application cannot be
+   * used (e.g. the user cancelled the first-run wizard), and main() should
+   * exit before ever showing the window.
+   * @return true when QtPass::init() reported a working configuration.
+   */
+  auto initSucceeded() const -> bool { return m_initSucceeded; }
 
   /**
    * @brief Destroy and clear the key generation dialog.
@@ -350,6 +367,9 @@ private:
   QPointer<QDialog> m_keyGenDialog;
   QString m_currentDir;
   TrayIcon *m_tray{};
+  /// Result of QtPass::init() from the constructor; main() consults it via
+  /// initSucceeded() to decide whether the application should start at all.
+  bool m_initSucceeded = false;
 
   void initToolBarButtons();
   void initStatusBar();

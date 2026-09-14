@@ -13,6 +13,9 @@ on:
       # the files the Flathub manifest overlays onto the tagged source
       - "main/main.cpp"
       - "src/qtpasssettings.cpp"
+      - "src/mainwindow.h"
+      - "src/mainwindow.cpp"
+      - "src/qtpass.cpp"
       - ".github/workflows/flatpak.yml"
   push:
     tags:
