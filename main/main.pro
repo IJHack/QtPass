@@ -26,4 +26,14 @@ isEmpty(PREFIX) {
 }
 target.path = $$PREFIX/bin/
 
-INSTALLS += target
+desktop.path = $$PREFIX/share/applications
+desktop.files = ../qtpass.desktop
+metainfo.path = $$PREFIX/share/metainfo
+metainfo.files = ../qtpass.appdata.xml
+icon_scalable.path = $$PREFIX/share/icons/hicolor/scalable/apps
+icon_scalable.files = ../artwork/qtpass-icon.svg
+icon_512.path = $$PREFIX/share/icons/hicolor/512x512/apps
+# installed under the desktop file's Icon= name; the source keeps its old name
+icon_512.extra = $(INSTALL_FILE) $$shell_quote($$PWD/../artwork/icon.png) $$shell_quote($(INSTALL_ROOT)$$PREFIX/share/icons/hicolor/512x512/apps/qtpass-icon.png)
+
+INSTALLS += target desktop metainfo icon_scalable icon_512

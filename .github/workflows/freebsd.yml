@@ -1,0 +1,49 @@
+---
+name: FreeBSD
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and test on FreeBSD 14 (Qt 6)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Build and run the test suites in a FreeBSD VM
+        uses: vmactions/freebsd-vm@8b0f1a8fc0ea0def307835c258940ca358fe6480 # v1
+        with:
+          release: "14"
+          usesh: true
+          mem: 6144
+          cpu: 3
+          sync: rsync
+          copyback: false
+          prepare: |
+            pkg install -y qt6-base qt6-tools qt6-svg gnupg git
+          run: |
+            set -e
+            freebsd-version
+            qmake6 -v
+            # the rsynced tree is owned by another uid inside the VM
+            git config --global --add safe.directory "$(pwd)"
+            # qmake refreshes localization/*.ts at configure time; keep the
+            # checkout clean so the build does not depend on that side effect.
+            qmake6 qtpass.pro
+            git checkout -- localization/
+            make -j3
+            # The suites need a display; the offscreen QPA is enough.
+            export QT_QPA_PLATFORM=offscreen
+            make check
