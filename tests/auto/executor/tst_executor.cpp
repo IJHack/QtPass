@@ -1,8 +1,11 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QDir>
+#include <QFile>
 #include <QFileInfo>
+#include <QProcessEnvironment>
 #include <QStandardPaths>
+#include <QTemporaryDir>
 #include <QtTest>
 
 #include "../../../src/executor.h"
@@ -248,10 +251,20 @@ void tst_executor::getDefaultKeyTemplate() {
 
 void tst_executor::executeBlockingGpgKillAgent() {
 #ifndef Q_OS_WIN
+  // Point gpgconf at a throwaway GNUPGHOME: with the developer's real home
+  // this test killed their session gpg-agent, dropping the passphrase cache
+  // and leaving the respawned agent without the desktop's pinentry setup.
+  QTemporaryDir gnupgHome;
+  QVERIFY2(gnupgHome.isValid(), "temporary GNUPGHOME should be creatable");
+  QVERIFY(QFile::setPermissions(gnupgHome.path(), QFile::ReadOwner |
+                                                      QFile::WriteOwner |
+                                                      QFile::ExeOwner));
+  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  env.insert(QStringLiteral("GNUPGHOME"), gnupgHome.path());
   QString output;
   QString err;
-  int result = Executor::executeBlocking("gpgconf", {"--kill", "gpg-agent"},
-                                         QString(), &output, &err);
+  int result = Executor::executeBlocking(
+      env, "gpgconf", {"--kill", "gpg-agent"}, &output, &err);
   if (result != 0) {
     QSKIP("gpgconf not available in PATH");
   }
