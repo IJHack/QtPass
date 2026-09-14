@@ -194,9 +194,13 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   ui->lineEdit->setText(searchText);
 
-  if (!m_qtPass->init()) {
-    // no working config so this should just quit
-    QApplication::quit();
+  // Record whether startup configuration succeeded instead of calling
+  // QApplication::quit() here: quit() before the event loop runs (exec() is
+  // still ahead in main()) is a documented no-op, so a cancelled first-run
+  // wizard used to leave the half-configured window showing anyway. main()
+  // consults initSucceeded() and exits before show() when this is false.
+  m_initSucceeded = m_qtPass->init();
+  if (!m_initSucceeded) {
     return;
   }
 
@@ -515,10 +519,9 @@ void MainWindow::config() {
       deselect();
       ui->treeView->setCurrentIndex(QModelIndex());
 
-      if (m_qtPass->isFreshStart() && !Util::configIsValid(s)) {
-        config();
-        return;
-      }
+      // Do not re-run the dialog (and the first-run wizard) on this stack
+      // frame when the configuration is still invalid: QtPass::init() checks
+      // the result and reports failure, which main() turns into an exit.
       Pass *activePass = QtPassSettings::getPass();
       activePass->updateEnv();
       proxyModel.setPass(activePass);
