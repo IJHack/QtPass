@@ -188,9 +188,8 @@ void&#160;</td><td class="memItemRight"><b>restoreWindow</b> ()</td></tr>
 <tr class="memdesc:a8737aac54ea6a935210f9a35ac914aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the GPG key generation dialog.  <br /></td></tr>
 <tr class="memitem:a056b66175a3d3ffc3146535726bb4e50" id="r_a056b66175a3d3ffc3146535726bb4e50"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a056b66175a3d3ffc3146535726bb4e50">userDialog</a> (const QString &amp;dir=&quot;&quot;)</td></tr>
 <tr class="memdesc:a056b66175a3d3ffc3146535726bb4e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the user/recipient management dialog.  <br /></td></tr>
-<tr class="memitem:aeb8091ab5531144b76c1fbb0d63deb56" id="r_aeb8091ab5531144b76c1fbb0d63deb56"><td class="memItemLeft"><a id="aeb8091ab5531144b76c1fbb0d63deb56" name="aeb8091ab5531144b76c1fbb0d63deb56"></a>
-void&#160;</td><td class="memItemRight"><b>config</b> ()</td></tr>
-<tr class="memdesc:aeb8091ab5531144b76c1fbb0d63deb56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the configuration dialog. <br /></td></tr>
+<tr class="memitem:acc003e9dd04952c5069f87839d708073" id="r_acc003e9dd04952c5069f87839d708073"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acc003e9dd04952c5069f87839d708073">config</a> () -&gt; bool</td></tr>
+<tr class="memdesc:acc003e9dd04952c5069f87839d708073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the configuration dialog.  <br /></td></tr>
 <tr class="memitem:ac240119ea67a770e5d997a5aa0fe47a3" id="r_ac240119ea67a770e5d997a5aa0fe47a3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a> (bool state)</td></tr>
 <tr class="memdesc:ac240119ea67a770e5d997a5aa0fe47a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable the main UI elements.  <br /></td></tr>
 <tr class="memitem:aae7cd7af04cedf4a17ede44bffafec89" id="r_aae7cd7af04cedf4a17ede44bffafec89"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aae7cd7af04cedf4a17ede44bffafec89">flashText</a> (const QString &amp;text, const bool isError, const bool isHtml=false)</td></tr>
@@ -199,6 +198,8 @@ void&#160;</td><td class="memItemRight"><b>config</b> ()</td></tr>
 <tr class="memdesc:acc66dda09963fdddea9716163293ddda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the currently selected index in the tree view.  <br /></td></tr>
 <tr class="memitem:a8c7b9be447abef349b66c214980988d3" id="r_a8c7b9be447abef349b66c214980988d3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8c7b9be447abef349b66c214980988d3">getKeyGenDialog</a> () -&gt; QDialog *</td></tr>
 <tr class="memdesc:a8c7b9be447abef349b66c214980988d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the active key generation dialog, if any.  <br /></td></tr>
+<tr class="memitem:ac4f5f3a524aa6bf13c16b348c48074b6" id="r_ac4f5f3a524aa6bf13c16b348c48074b6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac4f5f3a524aa6bf13c16b348c48074b6">initSucceeded</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:ac4f5f3a524aa6bf13c16b348c48074b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether startup configuration succeeded.  <br /></td></tr>
 <tr class="memitem:ad2a9b38617b357d8fa42744c00a26fcf" id="r_ad2a9b38617b357d8fa42744c00a26fcf"><td class="memItemLeft"><a id="ad2a9b38617b357d8fa42744c00a26fcf" name="ad2a9b38617b357d8fa42744c00a26fcf"></a>
 void&#160;</td><td class="memItemRight"><b>cleanKeygenDialog</b> ()</td></tr>
 <tr class="memdesc:ad2a9b38617b357d8fa42744c00a26fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy and clear the key generation dialog. <br /></td></tr>
@@ -364,6 +365,26 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="acc003e9dd04952c5069f87839d708073" name="acc003e9dd04952c5069f87839d708073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc003e9dd04952c5069f87839d708073">&#9670;&#160;</a></span>config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto MainWindow::config </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open the configuration dialog. </p>
+<p>On a fresh start the first-run wizard runs before the dialog is shown. Accepting the dialog does not guarantee a usable configuration: the OK button is not gated on <a class="el" href="class_util.html#ac8926b725ca51d6e68f3f383cfae478f" title="Verify that the required configuration is complete.">Util::configIsValid()</a>, so <a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="Initialize internal state and signal connections.">QtPass::init()</a> uses the return value to decide whether to ask again or to give up. </p><dl class="section return"><dt>Returns</dt><dd>true when the dialog was accepted, false when it was cancelled. </dd></dl>
 
 </div>
 </div>
@@ -589,7 +610,37 @@ Protected Member Functions</h2></td></tr>
 <p>Return the active key generation dialog, if any. </p>
 <p>The returned pointer is non-owning: the dialog's lifetime is managed elsewhere (<a class="el" href="#ad2a9b38617b357d8fa42744c00a26fcf" title="Destroy and clear the key generation dialog.">cleanKeygenDialog()</a> closes and forgets it), so callers must observe it only and never delete it. Backed by a QPointer, so it reads back as nullptr once the dialog is destroyed. </p><dl class="section return"><dt>Returns</dt><dd>Non-owning pointer to the keygen QDialog, or nullptr when none is active. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00120">120</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00126">126</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+
+</div>
+</div>
+<a id="ac4f5f3a524aa6bf13c16b348c48074b6" name="ac4f5f3a524aa6bf13c16b348c48074b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4f5f3a524aa6bf13c16b348c48074b6">&#9670;&#160;</a></span>initSucceeded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto MainWindow::initSucceeded </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return whether startup configuration succeeded. </p>
+<p>Reflects the result of the initial configuration check performed in the constructor (<a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="Initialize internal state and signal connections.">QtPass::init()</a>). When it is false the application cannot be used (e.g. the user cancelled the first-run wizard), and main() should exit before ever showing the window. </p><dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="Initialize internal state and signal connections.">QtPass::init()</a> reported a working configuration. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00137">137</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>

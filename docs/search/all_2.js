@@ -19,7 +19,7 @@ var searchData=
   ['clipboardtype_16',['clipBoardType',['../struct_app_settings.html#a731f7b91129a33d6835e56611e72dbe8',1,'AppSettings::clipBoardType'],['../namespace_enums.html#aa36f045555e72e4d536b48aac12ee52d',1,'Enums::clipBoardType']]],
   ['closeevent_17',['closeEvent',['../class_config_dialog.html#ad5f28221ebec0701bb56c43780a452b3',1,'ConfigDialog::closeEvent()'],['../class_keygen_dialog.html#a37012091a78f400d9bdc7b6f6b5949ef',1,'KeygenDialog::closeEvent()'],['../class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f',1,'MainWindow::closeEvent()'],['../class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5',1,'UsersDialog::closeEvent()']]],
   ['code_18',['code',['../class_otp_code_widget.html#a94487d5f3e33884162e3d43eaf22d9c2',1,'OtpCodeWidget']]],
-  ['config_19',['config',['../class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56',1,'MainWindow']]],
+  ['config_19',['config',['../class_main_window.html#acc003e9dd04952c5069f87839d708073',1,'MainWindow']]],
   ['configdialog_20',['ConfigDialog',['../class_config_dialog.html',1,'ConfigDialog'],['../class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1',1,'ConfigDialog::ConfigDialog()']]],
   ['configisvalid_21',['configIsValid',['../class_util.html#ac8926b725ca51d6e68f3f383cfae478f',1,'Util']]],
   ['connectsingleshot_22',['connectSingleShot',['../qtcompat_8h.html#a46dc1f1121b6bc92810dff10bb872613',1,'qtcompat.h']]],
