@@ -283,8 +283,10 @@ void tst_executor::resolveGpgconfCommand() {
     QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
              "WSL with -e should keep the user's flag and not add --exec");
     result = Pass::resolveGpgconfCommand("wsl --exec gpg2");
-    expectedArgs = {"--exec", "gpgconf"};
-    QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
+    // Separate variable: brace-assignment to an existing QStringList is
+    // ambiguous on Qt 5.15.
+    const QStringList expectedExecArgs = {"--exec", "gpgconf"};
+    QVERIFY2(result.program == "wsl" && result.arguments == expectedExecArgs,
              "WSL with --exec should not add a second --exec");
   }
 
