@@ -1733,6 +1733,18 @@ void tst_util::utilRegexProtocol() {
   QVERIFY2(rex.match("https://secure.com").hasMatch(), "Should match https://");
   QVERIFY2(rex.match("ssh://host").hasMatch(), "Should match ssh://");
   QVERIFY2(!rex.match("://no-protocol").hasMatch(), "Should not match invalid");
+
+  // The URL ends at any whitespace, not only at a literal space: in
+  // multi-line text (pass file bodies, gpg stderr) the line break after a
+  // URL must never become part of the captured URL.
+  QCOMPARE(rex.match("https://example.org\nusername: foo").captured(1),
+           QStringLiteral("https://example.org"));
+  QCOMPARE(rex.match("https://example.org\n").captured(1),
+           QStringLiteral("https://example.org"));
+  QCOMPARE(rex.match("https://example.org\r\nnext").captured(1),
+           QStringLiteral("https://example.org"));
+  QCOMPARE(rex.match("https://example.org\tnext").captured(1),
+           QStringLiteral("https://example.org"));
 }
 
 void tst_util::isLaunchableWebUrlAccepts() {
@@ -1801,6 +1813,25 @@ void tst_util::linkifyUrlsLinksLaunchableWebUrls() {
 
   // The optional out parameter may be omitted.
   QVERIFY(Util::linkifyUrls("https://example.org").startsWith("<a href="));
+
+  // Multi-line input (pass file body shown as-is, gpg stderr): the URL on
+  // its own line is linked and the line break stays outside the anchor, so
+  // the caller's "\n" -> "<br />" replacement cannot corrupt the href.
+  QCOMPARE(
+      Util::linkifyUrls("url: https://example.org\nusername: foo", &linked),
+      QStringLiteral("url: <a href=\"https://example.org\">"
+                     "https://example.org</a>\nusername: foo"));
+  QVERIFY(linked);
+  const QString trailingNewline =
+      Util::linkifyUrls("https://example.org\n", &linked);
+  QVERIFY(linked);
+  QCOMPARE(trailingNewline, QStringLiteral("<a href=\"https://example.org\">"
+                                           "https://example.org</a>\n"));
+  QCOMPARE(Util::linkifyUrls("https://example.org\r\nhttp://b.example/\tend"),
+           QStringLiteral("<a href=\"https://example.org\">"
+                          "https://example.org</a>\r\n"
+                          "<a href=\"http://b.example/\">http://b.example/</a>"
+                          "\tend"));
 }
 
 void tst_util::linkifyUrlsLeavesNonWebUrlsAsText() {

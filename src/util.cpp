@@ -302,6 +302,10 @@ auto Util::endsWithGpg() -> const QRegularExpression & {
  * Matches http://, https://, ftp://, ftps://, ssh://, sftp://, webdav://,
  * webdavs://
  *
+ * The URL text ends at the first whitespace character (space, tab, CR, LF),
+ * quote or bracket, so a URL on its own line in multi-line text (pass file
+ * bodies, gpg stderr) is captured without the line break that follows it.
+ *
  * Note: Local file URLs (file:///) are intentionally excluded by design, as
  * they represent local paths rather than network protocols. If this behavior
  * needs to change, update both this function and the corresponding test.
@@ -310,7 +314,7 @@ auto Util::endsWithGpg() -> const QRegularExpression & {
  */
 auto Util::protocolRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{
-      R"(((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^" <>\)\]\[]+))"};
+      R"(((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^"\s<>\)\]\[]+))"};
   return regex;
 }
 
