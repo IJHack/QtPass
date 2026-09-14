@@ -1,11 +1,13 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QRegularExpression>
 #include <QSet>
 #include <QString>
 #include <QtTest>
 
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/qtpasssettings.h"
+#include "../../../src/settingsconstants.h"
 #include "../testsettings.h"
 
 class tst_passwordconfig : public QObject {
@@ -15,6 +17,7 @@ private Q_SLOTS:
   void initTestCase();
   void passwordConfigurationDefaults();
   void passwordConfigurationSetters();
+  void passwordConfigurationSelectionOutOfRange();
   void passwordConfigurationCharacterSets();
   void passwordConfigurationLength();
   void passwordConfigurationCustomChars();
@@ -67,6 +70,37 @@ void tst_passwordconfig::passwordConfigurationSetters() {
   // Restore complete passwordConfiguration to avoid polluting subsequent tests
   saved.passwordConfiguration = original;
   QtPassSettings::save(saved);
+}
+
+void tst_passwordconfig::passwordConfigurationSelectionOutOfRange() {
+  // passwordCharsSelection outside the enum must not become an index past the
+  // end of Characters[]; both -1 and 7 fall back to ALLCHARS.
+  const int savedRaw = QtPassSettings::getInstance()
+                           ->value(SettingsConstants::passwordCharsSelection, 0)
+                           .toInt();
+
+  for (const int raw : {-1, 7}) {
+    QtPassSettings::getInstance()->setValue(
+        SettingsConstants::passwordCharsSelection, raw);
+    QTest::ignoreMessage(QtWarningMsg,
+                         QRegularExpression(QStringLiteral(
+                             "Ignoring out-of-range passwordCharsSelection")));
+    const PasswordConfiguration config =
+        QtPassSettings::getPasswordConfiguration();
+    QCOMPARE(config.selected, PasswordConfiguration::ALLCHARS);
+    QCOMPARE(config.Characters[config.selected],
+             config.Characters[PasswordConfiguration::ALLCHARS]);
+  }
+
+  // A valid value still comes back as stored.
+  QtPassSettings::getInstance()->setValue(
+      SettingsConstants::passwordCharsSelection,
+      static_cast<int>(PasswordConfiguration::ALPHANUMERIC));
+  QCOMPARE(QtPassSettings::getPasswordConfiguration().selected,
+           PasswordConfiguration::ALPHANUMERIC);
+
+  QtPassSettings::getInstance()->setValue(
+      SettingsConstants::passwordCharsSelection, savedRaw);
 }
 
 void tst_passwordconfig::passwordConfigurationCharacterSets() {

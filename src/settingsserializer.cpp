@@ -11,7 +11,37 @@
 #include "settingsserializer.h"
 #include "settingsconstants.h"
 
+#include <QDebug>
 #include <QSettings>
+
+auto SettingsSerializer::loadPasswordConfiguration(QSettings &qs)
+    -> PasswordConfiguration {
+  PasswordConfiguration config;
+
+  int length = qs.value(SettingsConstants::passwordLength, 16).toInt();
+  if (length <= 0) {
+    length = 16;
+  }
+  config.length = length;
+
+  // The ini value is untrusted: anything outside the enum would be used as an
+  // index into PasswordConfiguration::Characters, so clamp it here, once, and
+  // every consumer sees a valid selection.
+  const int selected =
+      qs.value(SettingsConstants::passwordCharsSelection, 0).toInt();
+  if (selected < 0 || selected >= PasswordConfiguration::CHARSETS_COUNT) {
+    qWarning() << "Ignoring out-of-range passwordCharsSelection" << selected;
+    config.selected = PasswordConfiguration::ALLCHARS;
+  } else {
+    config.selected =
+        static_cast<PasswordConfiguration::characterSet>(selected);
+  }
+
+  config.Characters[PasswordConfiguration::CUSTOM] =
+      qs.value(SettingsConstants::passwordChars, QString()).toString();
+
+  return config;
+}
 
 auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
   AppSettings s;
@@ -88,16 +118,7 @@ auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
       qs.value(SettingsConstants::templateAllFields, false).toBool();
 
   // Password generation
-  int length = qs.value(SettingsConstants::passwordLength, 16).toInt();
-  if (length <= 0) {
-    length = 16;
-  }
-  s.passwordConfiguration.length = length;
-  s.passwordConfiguration.selected =
-      static_cast<PasswordConfiguration::characterSet>(
-          qs.value(SettingsConstants::passwordCharsSelection, 0).toInt());
-  s.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM] =
-      qs.value(SettingsConstants::passwordChars, QString()).toString();
+  s.passwordConfiguration = loadPasswordConfiguration(qs);
   s.avoidCapitals = qs.value(SettingsConstants::avoidCapitals, false).toBool();
   s.avoidNumbers = qs.value(SettingsConstants::avoidNumbers, false).toBool();
   s.lessRandom = qs.value(SettingsConstants::lessRandom, false).toBool();
