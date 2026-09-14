@@ -194,6 +194,10 @@ private Q_SLOTS:
   void getGpgIdPathBasic();
   void getGpgIdPathSubfolder();
   void getGpgIdPathNotFound();
+  void seedGpgIdFileCopiesParentRecipients();
+  void seedGpgIdFileTrailingSeparator();
+  void seedGpgIdFileNoParentRecipients();
+  void seedGpgIdFileDoesNotOverwrite();
   void findBinaryInPathReturnedPathIsAbsolute();
   void findBinaryInPathReturnedPathIsExecutable();
   void findBinaryInPathMultipleKnownBinaries();
@@ -1327,6 +1331,105 @@ void tst_util::getGpgIdPathNotFound() {
   QString expected = QDir::cleanPath(passStore + "/.gpg-id");
   QVERIFY2(path == expected,
            qPrintable(QString("Expected %1, got %2").arg(expected, path)));
+}
+
+// Regression tests for #1682 / #1688: a folder added through "Add folder"
+// must get a .gpg-id holding exactly the recipients its parent uses, never a
+// zero-byte file that shadows them.
+
+void tst_util::seedGpgIdFileCopiesParentRecipients() {
+  QTemporaryDir tempDir;
+  QVERIFY(tempDir.isValid());
+  const QString passStore = tempDir.path();
+  const QString newDir = passStore + "/work";
+
+  QFile parent(passStore + "/.gpg-id");
+  QVERIFY(parent.open(QIODevice::WriteOnly));
+  parent.write("# team keys\n"
+               "0123456789ABCDEF0123456789ABCDEF01234567\n"
+               "alice@example.com  # trailing comment\n"
+               "\n");
+  parent.close();
+  QVERIFY(QDir().mkdir(newDir));
+
+  QVERIFY(Pass::seedGpgIdFile(newDir, passStore));
+
+  QFile seeded(newDir + "/.gpg-id");
+  QVERIFY(seeded.exists());
+  QVERIFY(seeded.open(QIODevice::ReadOnly | QIODevice::Text));
+  const QString content = QString::fromUtf8(seeded.readAll());
+  QCOMPARE(content, QString("0123456789ABCDEF0123456789ABCDEF01234567\n"
+                            "alice@example.com\n"));
+  // The new folder now resolves to its own file with the parent's list.
+  QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(newDir + "/x.gpg", passStore)),
+           QDir::cleanPath(newDir + "/.gpg-id"));
+  QCOMPARE(Pass::getRecipientList(newDir + "/x.gpg", passStore),
+           Pass::getRecipientList(passStore, passStore));
+#ifndef Q_OS_WIN
+  const QFile::Permissions perms = QFile(newDir + "/.gpg-id").permissions();
+  QVERIFY2(!(perms & (QFile::ReadGroup | QFile::ReadOther)),
+           "seeded .gpg-id must be owner-only");
+#endif
+}
+
+void tst_util::seedGpgIdFileTrailingSeparator() {
+  // MainWindow::addFolder builds newdir from Util::getDir, which ends in a
+  // native separator; the helper must resolve the parent all the same.
+  QTemporaryDir tempDir;
+  QVERIFY(tempDir.isValid());
+  const QString passStore = tempDir.path();
+  const QString newDir = passStore + QDir::separator() + "nested";
+
+  QFile parent(passStore + "/.gpg-id");
+  QVERIFY(parent.open(QIODevice::WriteOnly));
+  parent.write("ABCDEF12\n");
+  parent.close();
+  QVERIFY(QDir().mkdir(newDir));
+
+  QVERIFY(Pass::seedGpgIdFile(newDir + QDir::separator(), passStore));
+  QCOMPARE(Pass::getRecipientList(newDir + "/x.gpg", passStore),
+           QStringList{"ABCDEF12"});
+}
+
+void tst_util::seedGpgIdFileNoParentRecipients() {
+  // No usable parent .gpg-id: refuse rather than shadow the store with an
+  // empty file (the original #1682 symptom).
+  QTemporaryDir tempDir;
+  QVERIFY(tempDir.isValid());
+  const QString passStore = tempDir.path();
+  const QString newDir = passStore + "/orphan";
+  QVERIFY(QDir().mkdir(newDir));
+
+  QVERIFY(!Pass::seedGpgIdFile(newDir, passStore));
+  QVERIFY(!QFile::exists(newDir + "/.gpg-id"));
+
+  QFile parent(passStore + "/.gpg-id");
+  QVERIFY(parent.open(QIODevice::WriteOnly));
+  parent.write("# only a comment\n\n");
+  parent.close();
+  QVERIFY(!Pass::seedGpgIdFile(newDir, passStore));
+  QVERIFY(!QFile::exists(newDir + "/.gpg-id"));
+}
+
+void tst_util::seedGpgIdFileDoesNotOverwrite() {
+  QTemporaryDir tempDir;
+  QVERIFY(tempDir.isValid());
+  const QString passStore = tempDir.path();
+  const QString newDir = passStore + "/existing";
+  QVERIFY(QDir().mkdir(newDir));
+
+  QFile parent(passStore + "/.gpg-id");
+  QVERIFY(parent.open(QIODevice::WriteOnly));
+  parent.write("ABCDEF12\n");
+  parent.close();
+  QFile own(newDir + "/.gpg-id");
+  QVERIFY(own.open(QIODevice::WriteOnly));
+  own.write("34567890\n");
+  own.close();
+
+  QVERIFY(!Pass::seedGpgIdFile(newDir, passStore));
+  QCOMPARE(Pass::getRecipientList(newDir + "/x.gpg", passStore),
+           QStringList{"34567890"});
 }
 
 // Tests for findBinaryInPath - verifies it correctly locates executables in
