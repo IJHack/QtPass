@@ -52,6 +52,9 @@ private Q_SLOTS:
   void fieldValueRendersHtmlSpecialsVerbatim();
   void visiblePasswordRendersHtmlSpecialsVerbatim();
   void fieldValueWithUrlStillLinksAndEscapes();
+  void fieldValueWithNonWebUrlGetsNoAnchor_data();
+  void fieldValueWithNonWebUrlGetsNoAnchor();
+  void fieldValueLinksOnlyTheLaunchableUrl();
   void urlButtonToolTipShowsUrlVerbatim_data();
   void urlButtonToolTipShowsUrlVerbatim();
 
@@ -459,6 +462,61 @@ void tst_passworddisplaypanel::fieldValueWithUrlStillLinksAndEscapes() {
       html.contains(
           QStringLiteral("<a href=\"https://example.org/?a=1&amp;b=2\"")),
       qPrintable(QStringLiteral("URL must be wrapped in an anchor: ") + html));
+}
+
+/**
+ * @brief The inline anchor is wired to setOpenExternalLinks(), so a click
+ * hands the href straight to the OS URL handler. Only URLs that pass
+ * Util::isLaunchableWebUrl() may therefore become anchors: an ssh:// or
+ * ftp:// URL, or one carrying user:pass\@ credentials, is rendered as plain
+ * text and never becomes clickable.
+ */
+void tst_passworddisplaypanel::fieldValueWithNonWebUrlGetsNoAnchor_data() {
+  QTest::addColumn<QString>("value");
+  QTest::newRow("ssh with credentials")
+      << QStringLiteral("ssh://user:pass@host");
+  QTest::newRow("ftp") << QStringLiteral("ftp://host");
+  QTest::newRow("sftp in prose")
+      << QStringLiteral("backup at sftp://backup.example.org/srv");
+  QTest::newRow("https with credentials")
+      << QStringLiteral("https://user:secret@example.com/");
+  QTest::newRow("webdav") << QStringLiteral("webdav://files.example.org/dav");
+}
+
+void tst_passworddisplaypanel::fieldValueWithNonWebUrlGetsNoAnchor() {
+  QFETCH(QString, value);
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"), NamedValues{{"url", value}},
+                         s);
+  QTextBrowser *browser = browserAt(1);
+  QVERIFY(browser != nullptr);
+  QCOMPARE(browser->toPlainText(), value);
+  const QString html = browser->toHtml();
+  QVERIFY2(
+      !html.contains(QStringLiteral("<a href=")),
+      qPrintable(QStringLiteral("non-web URL must not be an anchor: ") + html));
+  QVERIFY2(urlButtonAt(1) == nullptr,
+           "non-web URL must not get an open-in-browser button either");
+}
+
+/// A value mixing both kinds links the https URL and leaves the ssh one alone.
+void tst_passworddisplaypanel::fieldValueLinksOnlyTheLaunchableUrl() {
+  const QString value = QStringLiteral(
+      "web https://example.org/?a=1&b=2 shell ssh://user:pass@host end");
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"), NamedValues{{"note", value}},
+                         s);
+  QTextBrowser *browser = browserAt(1);
+  QVERIFY(browser != nullptr);
+  QCOMPARE(browser->toPlainText(), value);
+  const QString html = browser->toHtml();
+  QVERIFY2(html.contains(
+               QStringLiteral("<a href=\"https://example.org/?a=1&amp;b=2\"")),
+           qPrintable(QStringLiteral("https URL must be an anchor: ") + html));
+  QVERIFY2(
+      !html.contains(QStringLiteral("<a href=\"ssh://")),
+      qPrintable(QStringLiteral("ssh URL must not be an anchor: ") + html));
+  QCOMPARE(html.count(QStringLiteral("<a href=")), 1);
 }
 
 auto tst_passworddisplaypanel::urlButtonAt(int row) const -> QPushButton * {

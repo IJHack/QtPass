@@ -27,11 +27,8 @@
 #include <QLineEdit>
 #include <QPalette>
 #include <QPushButton>
-#include <QRegularExpressionMatchIterator>
 #include <QTextBrowser>
 #include <QUrl>
-
-static const QRegularExpression kProtocolRegex = Util::protocolRegex();
 
 PasswordDisplayPanel::PasswordDisplayPanel(QGridLayout *grid,
                                            QBoxLayout *container,
@@ -223,39 +220,20 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
     contentTextBrowser->setObjectName(trimmedField);
     {
-      QList<QRegularExpressionMatch> urlMatches;
-      qsizetype totalUrlLength = 0;
-      {
-        QRegularExpressionMatchIterator it =
-            kProtocolRegex.globalMatch(trimmedValue);
-        while (it.hasNext()) {
-          QRegularExpressionMatch match = it.next();
-          totalUrlLength += match.capturedLength(0);
-          urlMatches.append(match);
-        }
-      }
-      if (urlMatches.isEmpty()) {
+      // One rule for every inline anchor: only launchable http(s) URLs
+      // become clickable (Util::isLaunchableWebUrl, the same predicate as the
+      // open-in-browser button); ssh://, ftp:// or user:pass@ URLs stay plain
+      // text, because setOpenExternalLinks() would hand them straight to the
+      // OS URL handler on click.
+      bool linked = false;
+      const QString linkedText = Util::linkifyUrls(trimmedValue, &linked);
+      if (!linked) {
         // Nothing to link, so show the value as-is. Escaping it and calling
         // setText() only rendered as rich text when the value happened to
         // contain a '<'; otherwise "&", '"' and ">" came out as HTML entities
         // and a password such as `a&b` read `a&amp;b` on screen.
         contentTextBrowser->setPlainText(trimmedValue);
       } else {
-        QString linkedText;
-        constexpr qsizetype anchorTagOverhead = sizeof("<a href=\"\"></a>") - 1;
-        linkedText.reserve(trimmedValue.size() + totalUrlLength +
-                           urlMatches.size() * anchorTagOverhead);
-        int lastIndex = 0;
-        for (const QRegularExpressionMatch &match : std::as_const(urlMatches)) {
-          const int start = match.capturedStart(0);
-          const int end = match.capturedEnd(0);
-          linkedText +=
-              trimmedValue.mid(lastIndex, start - lastIndex).toHtmlEscaped();
-          const QString escapedUrl = match.captured(0).toHtmlEscaped();
-          linkedText += QStringLiteral("<a href=\"%1\">%1</a>").arg(escapedUrl);
-          lastIndex = end;
-        }
-        linkedText += trimmedValue.mid(lastIndex).toHtmlEscaped();
         // Always HTML here: the text is escaped and carries anchor tags, so
         // do not leave the interpretation to setText()'s auto-detection.
         contentTextBrowser->setHtml(linkedText);

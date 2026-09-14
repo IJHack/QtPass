@@ -350,6 +350,47 @@ auto Util::isLaunchableWebUrl(const QString &value) -> bool {
 }
 
 /**
+ * @brief Escape text as HTML and link only launchable http(s) URLs.
+ *
+ * See util.h for the contract. Detection uses protocolRegex() so that the
+ * URL text is delimited the same way everywhere; the decision whether a
+ * match becomes an anchor is isLaunchableWebUrl(), the same predicate that
+ * gates the "open in browser" button.
+ *
+ * @param text Plain text, not yet HTML-escaped.
+ * @param linked Set to true when at least one anchor was emitted.
+ * @return HTML string safe to hand to QTextBrowser::setHtml().
+ */
+auto Util::linkifyUrls(const QString &text, bool *linked) -> QString {
+  if (linked != nullptr) {
+    *linked = false;
+  }
+  QString html;
+  html.reserve(text.size());
+  qsizetype lastIndex = 0;
+  QRegularExpressionMatchIterator it = protocolRegex().globalMatch(text);
+  while (it.hasNext()) {
+    const QRegularExpressionMatch match = it.next();
+    const QString url = match.captured(0);
+    if (!isLaunchableWebUrl(url)) {
+      // Not a web URL (or it carries credentials): leave it in the escaped
+      // plain-text run instead of making it clickable.
+      continue;
+    }
+    const qsizetype start = match.capturedStart(0);
+    html += text.mid(lastIndex, start - lastIndex).toHtmlEscaped();
+    const QString escapedUrl = url.toHtmlEscaped();
+    html += QStringLiteral("<a href=\"%1\">%1</a>").arg(escapedUrl);
+    lastIndex = match.capturedEnd(0);
+    if (linked != nullptr) {
+      *linked = true;
+    }
+  }
+  html += text.mid(lastIndex).toHtmlEscaped();
+  return html;
+}
+
+/**
  * @brief Returns a regex matching newline characters (CR or LF).
  *
  * Useful for detecting or sanitising line breaks in text content.
