@@ -309,6 +309,9 @@ private Q_SLOTS:
   void imitatePass_emptyPassword();
   void imitatePass_gitInitAndCommit();
   void imitatePass_gitCopyAndShow();
+  void imitatePass_insertCompletesWhenGitNotConfigured();
+  void imitatePass_removeFallsBackWhenGitNotConfigured();
+  void imitatePass_moveFallsBackWhenGitNotConfigured();
   void imitatePass_usersDialogListsAndFilters();
   void imitatePass_multiRecipientReencryptChangesRecipients();
   void imitatePass_insertIgnoresGpgConfEncryptTo();
@@ -835,6 +838,129 @@ void tst_integration::imitatePass_gitCopyAndShow() {
       tracked.contains("copy.gpg"),
       qPrintable(
           QString("copied entry should be tracked in git: %1").arg(tracked)));
+}
+
+void tst_integration::imitatePass_insertCompletesWhenGitNotConfigured() {
+  // Regression test for #1682: with useGit enabled but no git executable
+  // configured, an insert used to silently drop the empty git command. No
+  // completion signal was ever emitted, leaving a stale transaction head that
+  // swallowed every later operation. The insert must now complete cleanly via
+  // gpg (git is simply skipped).
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = true;
+    s.gitExecutable = QString(); // unconfigured
+    QtPassSettings::save(s);
+  }
+
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  const QString entryName = QStringLiteral("nogit");
+  const QString entryContent = QStringLiteral("secret\nurl: example.com\n");
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(entryName, entryContent, false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+  QCOMPARE(insertErrorSpy.count(), 0);
+
+  const QString gpgFile = QDir::cleanPath(storeDir.path() + "/" + entryName +
+                                          QStringLiteral(".gpg"));
+  QVERIFY2(QFile::exists(gpgFile), "encrypted file should still be written");
+
+  // The queue must not be wedged: a subsequent operation completes too.
+  QSignalSpy insertSpy2(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy2(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("nogit2"), QStringLiteral("more\n"), false);
+  QVERIFY2(waitForSignal(insertSpy2), gpgInsertErrorMsg(insertErrorSpy2));
+  QCOMPARE(insertErrorSpy2.count(), 0);
+}
+
+void tst_integration::imitatePass_removeFallsBackWhenGitNotConfigured() {
+  // Regression test for #1682: with useGit enabled but no git executable,
+  // Remove() took the git branch, executeGit() bailed out silently and the
+  // filesystem fallback never ran, so the .gpg file stayed on disk with no
+  // error shown. It must now delete the file, say why git was skipped, and
+  // leave the command queue usable.
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = true;
+    s.gitExecutable = QString(); // unconfigured
+    QtPassSettings::save(s);
+  }
+
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("nogit-rm"), QStringLiteral("gone\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  const QString gpgFile = storeDir.path() + "/nogit-rm.gpg";
+  QVERIFY2(QFile::exists(gpgFile), "file must exist before remove");
+
+  QSignalSpy statusSpy(&pass, &Pass::statusMsg);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  pass.Remove(QStringLiteral("nogit-rm"), false);
+  QVERIFY2(!QFile::exists(gpgFile),
+           "file must be removed on the filesystem when git is unconfigured");
+  QCOMPARE(errorSpy.count(), 0);
+  QVERIFY2(!statusSpy.isEmpty(), "user must be told that git was skipped");
+  QVERIFY2(statusSpy.first().at(0).toString().contains(
+               QStringLiteral("not configured")),
+           qPrintable(statusSpy.first().at(0).toString()));
+
+  // The queue must not be wedged: a subsequent operation completes too.
+  QSignalSpy insertSpy2(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy2(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("nogit-after"), QStringLiteral("more\n"), false);
+  QVERIFY2(waitForSignal(insertSpy2), gpgInsertErrorMsg(insertErrorSpy2));
+}
+
+void tst_integration::imitatePass_moveFallsBackWhenGitNotConfigured() {
+  // Same defect as Remove(): with useGit on and no git executable, Move()
+  // reached executeMoveGit() and nothing was renamed. The filesystem rename
+  // must run instead.
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = true;
+    s.gitExecutable = QString(); // unconfigured
+    QtPassSettings::save(s);
+  }
+
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("nogit-src"), QStringLiteral("moveme\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  const QString src = storeDir.path() + "/nogit-src.gpg";
+  const QString dst = storeDir.path() + "/nogit-dst.gpg";
+  QVERIFY2(QFile::exists(src), "source .gpg must exist before move");
+
+  QSignalSpy statusSpy(&pass, &Pass::statusMsg);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  pass.Move(src, dst, false);
+  QVERIFY2(!QFile::exists(src), "source must be gone after move");
+  QVERIFY2(QFile::exists(dst), "destination must exist after move");
+  QCOMPARE(errorSpy.count(), 0);
+  QVERIFY2(!statusSpy.isEmpty(), "user must be told that git was skipped");
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("nogit-dst"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted after move");
+  QVERIFY2(showSpy[0][0].toString().contains("moveme"),
+           "decrypted moved entry should contain original content");
 }
 
 void tst_integration::imitatePass_usersDialogListsAndFilters() {
