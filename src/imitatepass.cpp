@@ -1125,32 +1125,42 @@ void ImitatePass::Move(const QString src, const QString dest,
  * void result = ImitatePass::Copy(src, dest, force);
  *
  * @param QString src - Source path to copy from.
- * @param QString dest - Destination path to copy to.
+ * @param QString dest - Destination path to copy to: a new file name, or an
+ * existing folder to copy into (like `pass cp`).
  * @param bool force - If true, overwrites the destination when it already
  * exists.
  * @return void - This function does not return a value.
  */
 void ImitatePass::Copy(const QString src, const QString dest,
                        const bool force) {
-  QFileInfo destFileInfo(dest);
   transactionHelper trans(this, PASS_COPY);
+  // Like `pass cp`, dest may be an existing folder (a drag-and-drop copy hands
+  // over the folder, not the new file name). Resolve the real target the same
+  // way Move does: into the folder, .gpg appended, no clobbering without force.
+  QString destFile = resolveMoveDestination(src, dest, force);
+  if (destFile.isEmpty()) {
+    emit critical(tr("Copy failed"),
+                  tr("Could not copy %1 to %2.").arg(src, dest));
+    return;
+  }
+  QFileInfo destFileInfo(destFile);
   if (force) {
-    QFile::remove(dest);
+    QFile::remove(destFile);
   }
   // git has no "cp" subcommand, so copy on the filesystem in both modes and,
   // when using git, stage the new path afterwards. QFile::copy is synchronous,
   // so the destination exists before the re-encryption below runs. It fails
   // (without overwriting) when dest already exists, so surface that instead of
   // committing a copy that never happened.
-  if (!QFile::copy(src, dest)) {
+  if (!QFile::copy(src, destFile)) {
     emit critical(tr("Copy failed"),
-                  tr("Could not copy %1 to %2.").arg(src, dest));
+                  tr("Could not copy %1 to %2.").arg(src, destFile));
     return;
   }
   if (gitReady()) {
-    executeGit(GIT_COPY, {"add", pgit(dest)});
+    executeGit(GIT_COPY, {"add", pgit(destFile)});
     QString message = QString("Copied from %1 to %2 using QtPass.");
-    message = message.arg(src, dest);
+    message = message.arg(src, destFile);
     gitCommit("", message);
   }
   // reecrypt all files under the new folder
