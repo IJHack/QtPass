@@ -131,6 +131,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a73aa66df403921fb49c57548f83490bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match URL protocols.  <br /></td></tr>
 <tr class="memitem:a0a5f8ed9bf31f351af081b45b92360d0" id="r_a0a5f8ed9bf31f351af081b45b92360d0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0a5f8ed9bf31f351af081b45b92360d0">isLaunchableWebUrl</a> (const QString &amp;value) -&gt; bool</td></tr>
 <tr class="memdesc:a0a5f8ed9bf31f351af081b45b92360d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a value is a safe, launchable web URL.  <br /></td></tr>
+<tr class="memitem:a96f0f96cc2e05dc680250717efe0c428" id="r_a96f0f96cc2e05dc680250717efe0c428"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a96f0f96cc2e05dc680250717efe0c428">linkifyUrls</a> (const QString &amp;text, bool *linked=nullptr) -&gt; QString</td></tr>
+<tr class="memdesc:a96f0f96cc2e05dc680250717efe0c428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn plain text into HTML with clickable links for safe web URLs.  <br /></td></tr>
 <tr class="memitem:a0ba6ef4e4542287d5b257252728d1aa4" id="r_a0ba6ef4e4542287d5b257252728d1aa4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0ba6ef4e4542287d5b257252728d1aa4">newLinesRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
 <tr class="memdesc:a0ba6ef4e4542287d5b257252728d1aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match newline characters.  <br /></td></tr>
 <tr class="memitem:a7a6dcbde6840aab13f34a83a4ce9f3c1" id="r_a7a6dcbde6840aab13f34a83a4ce9f3c1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7a6dcbde6840aab13f34a83a4ce9f3c1">isValidKeyId</a> (const QString &amp;keyId) -&gt; bool</td></tr>
@@ -397,6 +399,46 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if gpg may be given the token, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a96f0f96cc2e05dc680250717efe0c428" name="a96f0f96cc2e05dc680250717efe0c428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96f0f96cc2e05dc680250717efe0c428">&#9670;&#160;</a></span>linkifyUrls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::linkifyUrls </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *</td>          <td class="paramname"><span class="paramname"><em>linked</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Turn plain text into HTML with clickable links for safe web URLs. </p>
+<p>The single rule for every place a value is rendered into an <span class="tt">&lt;a href&gt;</span>: the text is HTML-escaped, and only the <a class="el" href="#a73aa66df403921fb49c57548f83490bc" title="Returns a regex to match URL protocols.">protocolRegex()</a> matches that also pass <a class="el" href="#a0a5f8ed9bf31f351af081b45b92360d0" title="Check whether a value is a safe, launchable web URL.">isLaunchableWebUrl()</a> become anchors. Everything else (ssh://, <a href="ftp://">ftp://</a>, URLs carrying user:pass@ credentials, ...) stays escaped plain text, so a click can never hand a non-web scheme or a secret to the OS URL handler via QTextBrowser::setOpenExternalLinks().</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>Plain (unescaped) text, possibly containing URLs. </td></tr>
+    <tr><td class="paramname">linked</td><td>Optional out parameter, set to true when at least one anchor was produced. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>HTML-escaped text with anchors for launchable http(s) URLs. </dd></dl>
 
 </div>
 </div>
