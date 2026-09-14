@@ -156,8 +156,17 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
                      "file missing or invalid."));
     return;
   }
-  QStringList args = {"--batch", "--status-fd", "2",
-                      "-eq",     "--output",    pgpg(file)};
+  // --no-encrypt-to keeps an `encrypt-to` line in the user's gpg.conf from
+  // adding a recipient that is not listed in the (possibly signed) .gpg-id;
+  // --compress-algo=none mirrors pass(1). Both belong on every encrypt call.
+  QStringList args = {"--batch",
+                      "--status-fd",
+                      "2",
+                      "-eq",
+                      "--compress-algo=none",
+                      "--no-encrypt-to",
+                      "--output",
+                      pgpg(file)};
   for (auto &r : recipients) {
     args.append("-r");
     args.append(r);
@@ -648,7 +657,10 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
 
   // Encrypt to temporary file for atomic replacement
   QString tempPath = fileName + ".reencrypt.tmp";
-  args = QStringList{"--yes", "--batch", "-eq", "--output", pgpg(tempPath)};
+  // Same encrypt-only flags as Insert(): gpg.conf must not add recipients.
+  args = QStringList{
+      "--yes",           "--batch",  "-eq",         "--compress-algo=none",
+      "--no-encrypt-to", "--output", pgpg(tempPath)};
   for (const auto &i : recipients) {
     args.append("-r");
     args.append(i);
