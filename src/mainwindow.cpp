@@ -43,6 +43,7 @@
 #include <QPushButton>
 #include <QScrollBar>
 #include <QShortcut>
+#include <QTextCharFormat>
 #include <QTextCursor>
 #include <QTextEdit>
 #include <QTextStream>
@@ -428,7 +429,7 @@ void MainWindow::cleanKeygenDialog() {
  *
  * @param const QString &text - The text content to display.
  * @param const bool isError - If true, sets the text color to red before
- * displaying the text.
+ * displaying the text; otherwise any earlier error colour is cleared.
  * @param const bool isHtml - If true, treats the text as HTML and appends it to
  * the existing HTML content.
  * @return void - No return value.
@@ -437,6 +438,16 @@ void MainWindow::flashText(const QString &text, const bool isError,
                            const bool isHtml) {
   if (isError) {
     ui->textBrowser->setTextColor(Qt::red);
+  } else {
+    // setTextColor() merges the red foreground into the browser's current
+    // char format, and setText()/setPlainText() re-applies that format to the
+    // whole new document. Without clearing it, a plain-text non-error message
+    // shown after an error would still be red. Remove the property rather
+    // than pinning a palette colour: an explicit foreground would stop the
+    // text from following runtime light/dark palette switches (#946).
+    QTextCharFormat format = ui->textBrowser->currentCharFormat();
+    format.clearForeground();
+    ui->textBrowser->setCurrentCharFormat(format);
   }
 
   if (isHtml) {
