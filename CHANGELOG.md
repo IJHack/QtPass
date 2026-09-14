@@ -49,6 +49,64 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   and the `splitCommandCompat()` / `disconnectSingleShot()` shims are gone
   ([#908](https://github.com/IJHack/QtPass/issues/908))
 
+## [Unreleased] — 1.8.1
+
+The security and data-loss fixes from the 2.0 branch, backported to the 1.8
+line ([#1709](https://github.com/IJHack/QtPass/issues/1709)). Qt 5.15 and Qt 6 are both still supported.
+
+### Security <!-- markdownlint-disable-line MD024 -->
+
+- Windows/WSL: commands run through `wsl --exec` instead of the distribution's
+  login shell, so entry paths, `.gpg-id` recipients and commit messages are no
+  longer word-split or `$()`-expanded (a hostile shared store could run code
+  inside WSL). Binaries reachable only through PATH additions in shell rc
+  files are no longer found [#1723](https://github.com/IJHack/QtPass/pull/1723) (ported from [#1686](https://github.com/IJHack/QtPass/pull/1686))
+- The key-generation dialog no longer shows the passphrase in clear text in
+  the batch template box; it is spliced in only when the key is generated, and
+  batch keywords are matched the way gpg does, so an expert-mode template
+  cannot produce an unprotected key by accident [#1718](https://github.com/IJHack/QtPass/pull/1718) (ported from [#1687](https://github.com/IJHack/QtPass/pull/1687), [#1694](https://github.com/IJHack/QtPass/pull/1694))
+- The re-encryption backup commit stages tracked files only, so a stray
+  plaintext export or editor swap file in the store is no longer committed and
+  auto-pushed; Init stages a new folder's untracked `.gpg-id` itself
+  [#1713](https://github.com/IJHack/QtPass/pull/1713) (ported from [#1685](https://github.com/IJHack/QtPass/pull/1685), [#1698](https://github.com/IJHack/QtPass/pull/1698))
+- Every gpg encrypt call passes `--no-encrypt-to` and `--compress-algo=none`,
+  as `pass` does, so an `encrypt-to` line in the user's `gpg.conf` can no
+  longer add a recipient the `.gpg-id` never listed [#1725](https://github.com/IJHack/QtPass/pull/1725) (ported from [#1720](https://github.com/IJHack/QtPass/pull/1720))
+- Only launchable `http(s)` URLs become clickable links in the password pane
+  and the text browser; `ssh://`, `ftp://`, `sftp://`, `webdav://` and URLs
+  with embedded credentials are shown as text [#1726](https://github.com/IJHack/QtPass/pull/1726) (ported from [#1719](https://github.com/IJHack/QtPass/pull/1719))
+- Single-instance IPC: a stale socket left behind by a crash no longer
+  disables it permanently (launcher clicks did nothing), the socket is
+  restricted to the owning user, and a launch whose forward fails opens a
+  window instead of exiting silently [#1728](https://github.com/IJHack/QtPass/pull/1728) (ported from [#1721](https://github.com/IJHack/QtPass/pull/1721))
+- An out-of-range `passwordCharsSelection` in the settings file is clamped to
+  "All characters" when loaded instead of indexing the character-set table
+  out of bounds when the Settings dialog opens [#1724](https://github.com/IJHack/QtPass/pull/1724) (ported from [#1715](https://github.com/IJHack/QtPass/pull/1715))
+
+### Bugfixes <!-- markdownlint-disable-line MD024 -->
+
+- "New folder" wrote a zero-byte `.gpg-id`, shadowing the parent recipients
+  and breaking every insert in that folder; it is now seeded from the parent
+  recipients, and never left unsigned when a signing key is configured (the
+  folder then inherits the parent's signed list) [#1714](https://github.com/IJHack/QtPass/pull/1714) (ported from [#1688](https://github.com/IJHack/QtPass/pull/1688), [#1695](https://github.com/IJHack/QtPass/pull/1695))
+- `.gpg-id` recipients gpg would accept (v6 fingerprints, user IDs, `=exact`
+  selectors) were dropped silently and then erased on the next UsersDialog
+  save; refused lines are now logged instead [#1710](https://github.com/IJHack/QtPass/pull/1710) (ported from [#1684](https://github.com/IJHack/QtPass/pull/1684))
+- The password pane showed `&amp;`, `&quot;`, `&gt;` for values containing
+  `&`, `"`, `>`, and the open-in-browser tooltip did the same for URLs with
+  query strings; the tooltip also stays on one line [#1712](https://github.com/IJHack/QtPass/pull/1712) (ported from [#1683](https://github.com/IJHack/QtPass/pull/1683), [#1693](https://github.com/IJHack/QtPass/pull/1693))
+- Edits typed in the password dialog before the decrypt landed were silently
+  discarded or overwritten; the dialog now stays inert until the content is
+  in, and a failed decrypt shows the gpg error instead of closing the dialog
+  [#1722](https://github.com/IJHack/QtPass/pull/1722) (ported from [#1690](https://github.com/IJHack/QtPass/pull/1690))
+- Cancelling the first-run wizard quits instead of showing a half-configured
+  window, and an accepted-but-invalid configuration re-asks instead of
+  starting on a broken store [#1717](https://github.com/IJHack/QtPass/pull/1717) (ported from [#1689](https://github.com/IJHack/QtPass/pull/1689), [#1696](https://github.com/IJHack/QtPass/pull/1696))
+- "Use Git" with no Git executable configured no longer wedges the command
+  queue; delete, rename, insert, copy, init, pull and push fall back to plain
+  filesystem operations with a status message instead of silently doing
+  nothing [#1716](https://github.com/IJHack/QtPass/pull/1716) (ported from [#1691](https://github.com/IJHack/QtPass/pull/1691))
+
 ## [1.8.0](https://github.com/IJHack/QtPass/tree/v1.8.0) (2026-09-13)
 
 ### New Features

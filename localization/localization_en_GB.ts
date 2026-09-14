@@ -1662,7 +1662,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">This entry holds an OTP secret, not a password</translation>
+        <translation>This entry holds an OTP secret, not a password</translation>
     </message>
     <message>
         <source>Open %1 in browser</source>
@@ -1994,7 +1994,7 @@ Continue?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode did not finish in time</translation>
+        <translation>qrencode did not finish in time</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>

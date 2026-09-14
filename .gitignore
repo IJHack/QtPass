@@ -80,3 +80,4 @@ tests/auto/base32/tst_base32
 tests/auto/totp/tst_totp
 tests/auto/imitatepass/tst_imitatepass
 tests/auto/singleapplication/tst_singleapplication
+flatpak/org.qtpass.QtPass.ci.yml

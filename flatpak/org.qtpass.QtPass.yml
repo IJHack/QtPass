@@ -22,6 +22,7 @@ sdk: org.kde.Sdk
 command: qtpass
 rename-desktop-file: qtpass.desktop
 rename-icon: qtpass-icon
+rename-appdata-file: qtpass.appdata.xml
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -139,11 +140,12 @@ modules:
       - install -Dm644 qtpass.desktop /app/share/applications/qtpass.desktop
       - install -Dm644 artwork/qtpass-icon.svg /app/share/icons/hicolor/scalable/apps/qtpass-icon.svg
       - install -Dm644 artwork/icon.png /app/share/icons/hicolor/512x512/apps/qtpass-icon.png
-      - install -Dm644 qtpass.appdata.xml /app/share/metainfo/org.qtpass.QtPass.metainfo.xml
+      # same path qmake uses since 1.8.1; rename-appdata-file gives it the app id
+      - install -Dm644 qtpass.appdata.xml /app/share/metainfo/qtpass.appdata.xml
       # QtPassSettings::initExecutables() (and pass) look for "gpg2"; the runtime
       # ships "gpg". The wrapper also scrubs sandbox-only env before the host
       # gpg-agent sees it — see the comments in flatpak/gpg2.
-      - install -Dm755 gpg2 /app/bin/gpg2
+      - install -Dm755 flatpak/gpg2 /app/bin/gpg2
     sources:
       - type: git
         url: https://github.com/IJHack/QtPass.git
@@ -163,6 +165,7 @@ modules:
         dest-filename: qtpass-icon.svg
       - type: file
         path: gpg2
+        dest: flatpak
       - type: file
         path: ../main/main.cpp
         dest: main
@@ -171,3 +174,17 @@ modules:
         path: ../src/qtpasssettings.cpp
         dest: src
         dest-filename: qtpasssettings.cpp
+      # 1.8.1 backport of #1689/#1696 (first-run wizard cancel/re-ask): main.cpp
+      # above needs MainWindow::initSucceeded(), which v1.8.0 does not have.
+      - type: file
+        path: ../src/mainwindow.h
+        dest: src
+        dest-filename: mainwindow.h
+      - type: file
+        path: ../src/mainwindow.cpp
+        dest: src
+        dest-filename: mainwindow.cpp
+      - type: file
+        path: ../src/qtpass.cpp
+        dest: src
+        dest-filename: qtpass.cpp
