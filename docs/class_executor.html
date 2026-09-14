@@ -164,6 +164,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:aec1ef83ae0df4b4a2773b5ad533c837e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously capturing stdout and stderr.  <br /></td></tr>
 <tr class="memitem:aa17378022bf90b96beb2a2ac0750751d" id="r_aa17378022bf90b96beb2a2ac0750751d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa17378022bf90b96beb2a2ac0750751d">executeBlocking</a> (const QProcessEnvironment &amp;env, const QString &amp;app, const QStringList &amp;args, QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td></tr>
 <tr class="memdesc:aa17378022bf90b96beb2a2ac0750751d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously with a custom environment.  <br /></td></tr>
+<tr class="memitem:a694edbdebf865b549812969f49bc0c3d" id="r_a694edbdebf865b549812969f49bc0c3d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a694edbdebf865b549812969f49bc0c3d">wslExecArgs</a> (const QString &amp;command, const QStringList &amp;args) -&gt; QStringList</td></tr>
+<tr class="memdesc:a694edbdebf865b549812969f49bc0c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the wsl.exe argument list that runs <code class="param">command</code> directly.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Runs non-interactive external commands in FIFO order using a single QProcess. </p>
@@ -772,6 +774,45 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a694edbdebf865b549812969f49bc0c3d" name="a694edbdebf865b549812969f49bc0c3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a694edbdebf865b549812969f49bc0c3d">&#9670;&#160;</a></span>wslExecArgs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::wslExecArgs </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>command</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;) -&gt;  QStringList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Build the wsl.exe argument list that runs <code class="param">command</code> directly. </p>
+<p>Prefixes <code class="param">command</code> and <code class="param">args</code> with <span class="tt">--exec</span> so WSL launches the binary itself instead of handing the joined command line to the distribution's default shell. Without it every argument (entry paths, .gpg-id recipients, commit messages) is word-split and <span class="tt">$()</span>-expanded by that shell, so a hostile password store gets code execution. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>Linux command to run (looked up on the WSL PATH). </td></tr>
+    <tr><td class="paramname">args</td><td>Arguments for <code class="param">command</code>, passed through verbatim. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Arguments for <span class="tt">wsl</span>: <span class="tt">--exec</span>, <code class="param">command</code>, then <code class="param">args</code>. </dd></dl>
 
 </div>
 </div>

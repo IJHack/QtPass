@@ -5,5 +5,6 @@ var searchData=
   ['webdavuser_2',['webDavUser',['../struct_app_settings.html#a912ddc9b9f836119deda6b7c6afb9099',1,'AppSettings']]],
   ['wizard_3',['wizard',['../class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15',1,'ConfigDialog']]],
   ['writegpgidfile_4',['writeGpgIdFile',['../class_imitate_pass.html#ae65aff95459cee83b5b999f5a83fcac1',1,'ImitatePass']]],
-  ['writetemplates_5',['writeTemplates',['../class_template_i_o.html#a7eb718028cf367e72b431341a2c916a7',1,'TemplateIO']]]
+  ['writetemplates_5',['writeTemplates',['../class_template_i_o.html#a7eb718028cf367e72b431341a2c916a7',1,'TemplateIO']]],
+  ['wslexecargs_6',['wslExecArgs',['../class_executor.html#a694edbdebf865b549812969f49bc0c3d',1,'Executor']]]
 ];
