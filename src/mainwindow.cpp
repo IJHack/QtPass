@@ -62,7 +62,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
 #ifdef __APPLE__
   // extra treatment for mac os
-  // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
+  // see https://doc.qt.io/qt-6/qkeysequence.html#qt_set_sequence_auto_mnemonic
   qt_set_sequence_auto_mnemonic(true);
 #endif
   ui->setupUi(this);
@@ -70,20 +70,14 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   m_qtPass = new QtPass(this);
 
   // register shortcut ctrl/cmd + Q to close the main window
-  new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q), this, SLOT(close()));
+  new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q), this, this,
+                &MainWindow::close);
   // register shortcut ctrl/cmd + C to copy the currently selected password
-  new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this,
-                SLOT(copyPasswordFromTreeview()));
+  new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this, this,
+                &MainWindow::copyPasswordFromTreeview);
 
   model.setNameFilters(QStringList() << "*.gpg");
   model.setNameFilterDisables(false);
-
-  /*
-   * I added this to solve Windows bug but now on GNU/Linux the main folder,
-   * if hidden, disappear
-   *
-   * model.setFilter(QDir::NoDot);
-   */
 
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
 
@@ -874,7 +868,7 @@ void MainWindow::restoreWindow() {
     initTrayIcon();
     if (s.startMinimized) {
       // since we are still in constructor, can't directly hide
-      QTimer::singleShot(10, this, SLOT(hide()));
+      QTimer::singleShot(10, this, &MainWindow::hide);
     }
   } else if (!s.useTrayIcon && m_tray != nullptr) {
     destroyTrayIcon();

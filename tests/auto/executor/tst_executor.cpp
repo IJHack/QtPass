@@ -26,7 +26,7 @@ private Q_SLOTS:
   void executeBlockingWithEnvEmpty();
   void executeBlockingWithEnvSetsVariable();
   void executeBlockingTwoArgOverload();
-  void executeBlockingConstQStringRef();
+  void executeBlockingConstQString();
   void executeAsyncFinishedSignal();
   void executeAsyncCapturesStdout();
   void executeAsyncNonZeroExitCode();
@@ -165,7 +165,7 @@ void tst_executor::executeBlockingTwoArgOverload() {
            "output should contain 'two-arg-overload'");
 }
 
-void tst_executor::executeBlockingConstQStringRef() {
+void tst_executor::executeBlockingConstQString() {
   // Explicitly verify that the refactored const QString & parameter
   // accepts a const-qualified variable without copies or issues.
   const QString app = QStringLiteral("echo");

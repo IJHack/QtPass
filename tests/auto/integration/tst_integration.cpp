@@ -419,9 +419,6 @@ void tst_integration::initTestCase() {
     s.passSigningKey = QString();
     QtPassSettings::save(s);
   }
-  qRegisterMetaType<GrepResults>("GrepResults");
-  qRegisterMetaType<GrepResults>(
-      "QList<QPair<QString,QStringList>>"); // Qt5 fallback
 }
 
 void tst_integration::cleanupTestCase() {

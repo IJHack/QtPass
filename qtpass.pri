@@ -20,10 +20,10 @@ QT += widgets
 clang|gcc:QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
 
 nosingleapp {
-    QMAKE_CXXFLAGS += -DSINGLE_APP=0
+    DEFINES += SINGLE_APP=0
 } else {
     QT      += network
-    QMAKE_CXXFLAGS += -DSINGLE_APP=1
+    DEFINES += SINGLE_APP=1
 }
 
 DEFINES += "VERSION=\"\\\"$$VERSION\\\"\""

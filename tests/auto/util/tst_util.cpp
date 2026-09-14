@@ -210,7 +210,7 @@ private Q_SLOTS:
   void findBinaryInPathConsistency();
   void findBinaryInPathResultContainsBinaryName();
   void findBinaryInPathTempExecutableInTempDir();
-  void findBinaryInPathWithConstQStringRef();
+  void findBinaryInPathWithConstQString();
   void findBinaryInPathEmptyString();
   void findBinaryInPathStringLiteral();
   void findBinaryInPathSkipsDirectoryNamedLikeBinary();
@@ -323,9 +323,7 @@ tst_util::~tst_util() = default;
  * @brief tst_util::init unit test init method
  */
 void tst_util::init() {
-  qRegisterMetaType<GrepResults>("GrepResults");
-  // Qt5 QSignalSpy looks up by the normalized signal type string, not the alias
-  qRegisterMetaType<GrepResults>("QList<QPair<QString,QStringList>>");
+  // Intentionally left empty: no per-test setup required.
 }
 
 /**
@@ -1819,7 +1817,7 @@ void tst_util::reencryptPathAbsolutePath() {
 // findBinaryInPath(const QString &). These tests verify that callers using
 // const-qualified variables continue to work correctly.
 
-void tst_util::findBinaryInPathWithConstQStringRef() {
+void tst_util::findBinaryInPathWithConstQString() {
   // Pass a const-qualified variable to verify the const-ref signature compiles
   // and executes correctly.
 #ifdef Q_OS_WIN
