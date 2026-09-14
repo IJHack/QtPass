@@ -78,6 +78,17 @@ private:
   QScopedPointer<QLocalServer> localServer;
 
   static const int timeout = 1000;
+  /**
+   * @brief Upper bound for one forwarded message (a command line).
+   *
+   * The socket is user-only, but a peer that keeps a connection open and
+   * streams data would otherwise grow the per-connection buffer without
+   * limit; anything past this is dropped and the peer disconnected.
+   */
+  static const int maxMessageBytes = 64 * 1024;
+  /// Probes for the winner of a takeover race before giving up on IPC.
+  static const int takeoverProbes = 5;
+  static const int takeoverProbeIntervalMs = 100;
 };
 
 #endif // SRC_SINGLEAPPLICATION_H_

@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QLocalSocket>
 #include <QSharedPointer>
+#include <QThread>
 #include <utility>
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -51,9 +52,15 @@ SingleApplication::SingleApplication(
 void SingleApplication::receiveMessage() {
   while (QLocalSocket *localSocket = localServer->nextPendingConnection()) {
     auto buffer = QSharedPointer<QByteArray>::create();
-    connect(
-        localSocket, &QLocalSocket::readyRead, this,
-        [localSocket, buffer]() { buffer->append(localSocket->readAll()); });
+    connect(localSocket, &QLocalSocket::readyRead, this,
+            [localSocket, buffer]() {
+              buffer->append(localSocket->readAll());
+              if (buffer->size() > maxMessageBytes) {
+                // Not a command line any more; drop the peer and its data.
+                buffer->clear();
+                localSocket->abort();
+              }
+            });
     connect(localSocket, &QLocalSocket::disconnected, this,
             [this, localSocket, buffer]() {
               buffer->append(localSocket->readAll());
@@ -107,6 +114,19 @@ auto SingleApplication::sendMessage(const QString &message) -> bool {
 void SingleApplication::becomePrimary() {
   // create shared memory.
   if (!sharedMemory.create(1)) {
+    // Another launch claimed the segment first (two launchers recovering
+    // from the same crash). Give it a moment to start listening and become
+    // its secondary, so main() forwards instead of opening a second window.
+    if (sharedMemory.attach()) {
+      for (int attempt = 0; attempt < takeoverProbes; ++attempt) {
+        if (peerIsListening()) {
+          _isRunning = true;
+          return;
+        }
+        QThread::msleep(takeoverProbeIntervalMs);
+      }
+      sharedMemory.detach();
+    }
 #ifdef QT_DEBUG
     dbg() << "Unable to create single instance.";
 #endif
@@ -125,6 +145,11 @@ void SingleApplication::becomePrimary() {
   if (!localServer->listen(_uniqueKey)) {
     qWarning() << "SingleApplication: cannot listen on" << _uniqueKey << ":"
                << localServer->errorString();
+    // Holding the segment without a server would make every later launch
+    // attach, fail the probe and then fail create(): no instance could ever
+    // take over while this one lives. Release it and run without IPC.
+    localServer.reset();
+    sharedMemory.detach();
   }
 }
 
