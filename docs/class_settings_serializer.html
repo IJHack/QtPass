@@ -117,6 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:abadb580cf96435f4cdb7e733a9260754" id="r_abadb580cf96435f4cdb7e733a9260754"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abadb580cf96435f4cdb7e733a9260754">load</a> (QSettings &amp;qs) -&gt; <a class="el" href="struct_app_settings.html">AppSettings</a></td></tr>
 <tr class="memdesc:abadb580cf96435f4cdb7e733a9260754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read all flat settings from a QSettings store.  <br /></td></tr>
+<tr class="memitem:ac8e3925e7eb3629721b9b78828078cf4" id="r_ac8e3925e7eb3629721b9b78828078cf4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac8e3925e7eb3629721b9b78828078cf4">loadPasswordConfiguration</a> (QSettings &amp;qs) -&gt; <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a></td></tr>
+<tr class="memdesc:ac8e3925e7eb3629721b9b78828078cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read only the password generation settings from a QSettings store.  <br /></td></tr>
 <tr class="memitem:a8f027af895ac755143345eff96118cb2" id="r_a8f027af895ac755143345eff96118cb2"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a8f027af895ac755143345eff96118cb2">save</a> (QSettings &amp;qs, const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;settings)</td></tr>
 <tr class="memdesc:a8f027af895ac755143345eff96118cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write all flat settings to a QSettings store.  <br /></td></tr>
 </table>
@@ -157,6 +159,41 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Populated <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> (defaults applied for absent keys). </dd></dl>
+
+</div>
+</div>
+<a id="ac8e3925e7eb3629721b9b78828078cf4" name="ac8e3925e7eb3629721b9b78828078cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8e3925e7eb3629721b9b78828078cf4">&#9670;&#160;</a></span>loadPasswordConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto SettingsSerializer::loadPasswordConfiguration </td>
+          <td>(</td>
+          <td class="paramtype">QSettings &amp;</td>          <td class="paramname"><span class="paramname"><em>qs</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read only the password generation settings from a QSettings store. </p>
+<p>The stored charset selection is validated against <a class="el" href="struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173" title="Character set options for password generation.">PasswordConfiguration::characterSet</a>; an out-of-range value (hand-edited or corrupted ini) falls back to ALLCHARS so consumers can index <a class="el" href="struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0" title="The different character sets.">PasswordConfiguration::Characters</a> with it safely.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">qs</td><td>Source settings store. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Populated <a class="el" href="struct_password_configuration.html" title="Holds the password configuration settings.">PasswordConfiguration</a> (defaults applied for absent or invalid keys). </dd></dl>
 
 </div>
 </div>
