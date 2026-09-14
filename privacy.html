@@ -119,7 +119,7 @@
         "requirements": "pass or git and gpg2",
         "license": "https://www.gnu.org/licenses/gpl-3.0.html",
         "screenshot": "https://qtpass.org/images/qtpass.png",
-        "softwareVersion": "1.8.0",
+        "softwareVersion": "2.0.0",
         "applicationCategory": "Security, Utility",
         "offers": {
           "@type": "Offer",
@@ -161,7 +161,7 @@
               alt=""
               width="32"
               height="32"
-            />QtPass <small>1.8.0</small>
+            />QtPass <small>2.0.0</small>
           </p>
           <p>
             <a
@@ -204,27 +204,51 @@
           </ul>
 
           <div class="screenshots">
-            <picture
-              ><source srcset="images/qtpass.webp" type="image/webp" />
+            <picture>
+              <source
+                media="(prefers-color-scheme: dark)"
+                srcset="images/qtpass-dark@2x.webp"
+                type="image/webp"
+              />
+              <source
+                media="(prefers-color-scheme: dark)"
+                srcset="images/qtpass-dark.png, images/qtpass-dark@2x.png 2x"
+              />
+              <source srcset="images/qtpass@2x.webp" type="image/webp" />
               <img
                 id="qtpass"
                 src="images/qtpass.png"
-                width="768"
-                height="596"
-                alt="QtPass MainWindow"
-            /></picture>
-            <picture
-              ><source srcset="images/config.webp" type="image/webp" />
+                srcset="images/qtpass.png, images/qtpass@2x.png 2x"
+                width="960"
+                height="640"
+                alt="QtPass main window with a password store, one entry open"
+                title="Click to see the settings"
+              />
+            </picture>
+            <picture>
+              <source
+                media="(prefers-color-scheme: dark)"
+                srcset="images/config-dark@2x.webp"
+                type="image/webp"
+              />
+              <source
+                media="(prefers-color-scheme: dark)"
+                srcset="images/config-dark.png, images/config-dark@2x.png 2x"
+              />
+              <source srcset="images/config@2x.webp" type="image/webp" />
               <img
                 id="config"
                 class="hidden"
                 src="images/config.png"
+                srcset="images/config.png, images/config@2x.png 2x"
                 loading="lazy"
                 decoding="async"
-                width="900"
-                height="637"
-                alt="QtPass Configuration"
-            /></picture>
+                width="659"
+                height="728"
+                alt="QtPass settings dialog"
+                title="Click to go back to the main window"
+              />
+            </picture>
           </div>
         </header>
         <footer>

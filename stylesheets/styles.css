@@ -377,15 +377,17 @@ header ul a:active {
   background: color-mix(in srgb, var(--accent) 18%, var(--panel));
 }
 
-/* screenshots (index) */
+/* screenshots (sidebar): main window, click for the settings dialog */
 .screenshots {
-  position: relative;
-  aspect-ratio: 768 / 596;
   margin: 0 0 1.25rem;
 }
+.screenshots picture {
+  display: block;
+}
 .screenshots img {
-  position: absolute;
-  inset: 0;
+  display: block;
+  width: 100%;
+  height: auto;
   cursor: pointer;
   border-radius: 8px;
   box-shadow:
@@ -398,10 +400,8 @@ header ul a:active {
     0 0 0 1px var(--rule);
   translate: 0 -2px;
 }
-#config {
-  top: 8px;
-}
-.hidden {
+.hidden,
+.screenshots img.hidden {
   display: none;
 }
 
