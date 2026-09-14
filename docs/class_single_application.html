@@ -259,7 +259,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Send a message to the running instance. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>When delivery fails the peer is taken to have exited since the constructor probed it: this instance releases its segment and, if it can, becomes the listening instance itself, so isRunning() turns false and the window the caller opens next is reachable by later launches. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Text to deliver (typically forwarded command-line args). </td></tr>
   </table>
