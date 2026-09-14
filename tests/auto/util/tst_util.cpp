@@ -176,6 +176,8 @@ private Q_SLOTS:
   void utilRegexProtocol();
   void isLaunchableWebUrlAccepts();
   void isLaunchableWebUrlRejects();
+  void linkifyUrlsLinksLaunchableWebUrls();
+  void linkifyUrlsLeavesNonWebUrlsAsText();
   void utilRegexNewLines();
   void reencryptPathNormalization();
   void reencryptPathAbsolutePath();
@@ -1728,6 +1730,18 @@ void tst_util::utilRegexProtocol() {
   QVERIFY2(rex.match("https://secure.com").hasMatch(), "Should match https://");
   QVERIFY2(rex.match("ssh://host").hasMatch(), "Should match ssh://");
   QVERIFY2(!rex.match("://no-protocol").hasMatch(), "Should not match invalid");
+
+  // The URL ends at any whitespace, not only at a literal space: in
+  // multi-line text (pass file bodies, gpg stderr) the line break after a
+  // URL must never become part of the captured URL.
+  QCOMPARE(rex.match("https://example.org\nusername: foo").captured(1),
+           QStringLiteral("https://example.org"));
+  QCOMPARE(rex.match("https://example.org\n").captured(1),
+           QStringLiteral("https://example.org"));
+  QCOMPARE(rex.match("https://example.org\r\nnext").captured(1),
+           QStringLiteral("https://example.org"));
+  QCOMPARE(rex.match("https://example.org\tnext").captured(1),
+           QStringLiteral("https://example.org"));
 }
 
 void tst_util::isLaunchableWebUrlAccepts() {
@@ -1770,6 +1784,82 @@ void tst_util::isLaunchableWebUrlRejects() {
   QVERIFY2(
       !Util::isLaunchableWebUrl(QString("https://e.com") + QChar(0) + ".com"),
       "NUL");
+}
+
+void tst_util::linkifyUrlsLinksLaunchableWebUrls() {
+  bool linked = false;
+  // Plain text without a URL is escaped and reported as not linked.
+  QCOMPARE(Util::linkifyUrls("a<b & c", &linked),
+           QStringLiteral("a&lt;b &amp; c"));
+  QVERIFY(!linked);
+  QCOMPARE(Util::linkifyUrls(""), QString());
+
+  // A launchable https URL becomes an anchor; the surrounding prose and the
+  // URL itself are HTML-escaped exactly once.
+  QCOMPARE(
+      Util::linkifyUrls("see https://example.org/?a=1&b=2 & more", &linked),
+      QStringLiteral("see <a href=\"https://example.org/?a=1&amp;b=2\">"
+                     "https://example.org/?a=1&amp;b=2</a> &amp; more"));
+  QVERIFY(linked);
+
+  // Two web URLs in one value both get linked.
+  QCOMPARE(Util::linkifyUrls("http://a.example/ and https://b.example/x"),
+           QStringLiteral("<a href=\"http://a.example/\">http://a.example/</a>"
+                          " and <a href=\"https://b.example/x\">"
+                          "https://b.example/x</a>"));
+
+  // The optional out parameter may be omitted.
+  QVERIFY(Util::linkifyUrls("https://example.org").startsWith("<a href="));
+
+  // Multi-line input (pass file body shown as-is, gpg stderr): the URL on
+  // its own line is linked and the line break stays outside the anchor, so
+  // the caller's "\n" -> "<br />" replacement cannot corrupt the href.
+  QCOMPARE(
+      Util::linkifyUrls("url: https://example.org\nusername: foo", &linked),
+      QStringLiteral("url: <a href=\"https://example.org\">"
+                     "https://example.org</a>\nusername: foo"));
+  QVERIFY(linked);
+  const QString trailingNewline =
+      Util::linkifyUrls("https://example.org\n", &linked);
+  QVERIFY(linked);
+  QCOMPARE(trailingNewline, QStringLiteral("<a href=\"https://example.org\">"
+                                           "https://example.org</a>\n"));
+  QCOMPARE(Util::linkifyUrls("https://example.org\r\nhttp://b.example/\tend"),
+           QStringLiteral("<a href=\"https://example.org\">"
+                          "https://example.org</a>\r\n"
+                          "<a href=\"http://b.example/\">http://b.example/</a>"
+                          "\tend"));
+}
+
+void tst_util::linkifyUrlsLeavesNonWebUrlsAsText() {
+  // Anything Util::isLaunchableWebUrl() rejects must not become clickable:
+  // the browsers showing this HTML open external links on click.
+  const QStringList rejected = {
+      QStringLiteral("ssh://user:pass@host"),
+      QStringLiteral("ftp://host"),
+      QStringLiteral("sftp://backup.example.org/srv"),
+      QStringLiteral("webdav://files.example.org/dav"),
+      QStringLiteral("https://user:pass@example.com/"),
+      QStringLiteral("http://user@example.com/"),
+  };
+  for (const QString &value : rejected) {
+    bool linked = true;
+    const QString html = Util::linkifyUrls(value, &linked);
+    QVERIFY2(!linked, qPrintable(QStringLiteral("must not link: ") + value));
+    QCOMPARE(html, value.toHtmlEscaped());
+    QVERIFY2(!html.contains(QStringLiteral("<a href=")),
+             qPrintable(QStringLiteral("no anchor expected for: ") + value));
+  }
+
+  // Mixed content: only the https URL is an anchor, the ssh URL stays text.
+  bool linked = false;
+  const QString html = Util::linkifyUrls(
+      "web https://example.org/ shell ssh://user:pass@host end", &linked);
+  QVERIFY(linked);
+  QCOMPARE(html,
+           QStringLiteral("web <a href=\"https://example.org/\">"
+                          "https://example.org/</a> shell ssh://user:pass@host "
+                          "end"));
 }
 
 void tst_util::utilRegexNewLines() {

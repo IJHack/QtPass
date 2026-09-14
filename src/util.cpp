@@ -296,6 +296,10 @@ auto Util::endsWithGpg() -> const QRegularExpression & {
  * Matches http://, https://, ftp://, ftps://, ssh://, sftp://, webdav://,
  * webdavs://
  *
+ * The URL text ends at the first whitespace character (space, tab, CR, LF),
+ * quote or bracket, so a URL on its own line in multi-line text (pass file
+ * bodies, gpg stderr) is captured without the line break that follows it.
+ *
  * Note: Local file URLs (file:///) are intentionally excluded by design, as
  * they represent local paths rather than network protocols. If this behavior
  * needs to change, update both this function and the corresponding test.
@@ -304,7 +308,7 @@ auto Util::endsWithGpg() -> const QRegularExpression & {
  */
 auto Util::protocolRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{
-      R"(((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^" <>\)\]\[]+))"};
+      R"(((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^"\s<>\)\]\[]+))"};
   return regex;
 }
 
@@ -347,6 +351,47 @@ auto Util::isLaunchableWebUrl(const QString &value) -> bool {
     return false;
   }
   return true;
+}
+
+/**
+ * @brief Escape text as HTML and link only launchable http(s) URLs.
+ *
+ * See util.h for the contract. Detection uses protocolRegex() so that the
+ * URL text is delimited the same way everywhere; the decision whether a
+ * match becomes an anchor is isLaunchableWebUrl(), the same predicate that
+ * gates the "open in browser" button.
+ *
+ * @param text Plain text, not yet HTML-escaped.
+ * @param linked Set to true when at least one anchor was emitted.
+ * @return HTML string safe to hand to QTextBrowser::setHtml().
+ */
+auto Util::linkifyUrls(const QString &text, bool *linked) -> QString {
+  if (linked != nullptr) {
+    *linked = false;
+  }
+  QString html;
+  html.reserve(text.size());
+  qsizetype lastIndex = 0;
+  QRegularExpressionMatchIterator it = protocolRegex().globalMatch(text);
+  while (it.hasNext()) {
+    const QRegularExpressionMatch match = it.next();
+    const QString url = match.captured(0);
+    if (!isLaunchableWebUrl(url)) {
+      // Not a web URL (or it carries credentials): leave it in the escaped
+      // plain-text run instead of making it clickable.
+      continue;
+    }
+    const qsizetype start = match.capturedStart(0);
+    html += text.mid(lastIndex, start - lastIndex).toHtmlEscaped();
+    const QString escapedUrl = url.toHtmlEscaped();
+    html += QStringLiteral("<a href=\"%1\">%1</a>").arg(escapedUrl);
+    lastIndex = match.capturedEnd(0);
+    if (linked != nullptr) {
+      *linked = true;
+    }
+  }
+  html += text.mid(lastIndex).toHtmlEscaped();
+  return html;
 }
 
 /**
