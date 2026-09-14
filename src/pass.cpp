@@ -6,10 +6,13 @@
 #include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
+#include <QFile>
 #include <QFileInfo>
 #include <QProcess>
 #include <QRandomGenerator>
 #include <QRegularExpression>
+#include <QSaveFile>
+#include <QTextStream>
 #include <utility>
 
 #ifdef QT_DEBUG
@@ -927,6 +930,45 @@ auto Pass::getRecipientString(const QString &for_file, const QString &passStore,
     *count = static_cast<int>(recipients.size());
   }
   return recipients;
+}
+
+/**
+ * @brief Pass::seedGpgIdFile write the inherited recipients into a new
+ * folder's .gpg-id
+ * @param newDir absolute path of the freshly created folder
+ * @param passStore root directory of the password store
+ * @return true when newDir/.gpg-id was written
+ */
+auto Pass::seedGpgIdFile(const QString &newDir, const QString &passStore)
+    -> bool {
+  const QString gpgIdFile = QDir(newDir).absoluteFilePath(".gpg-id");
+  if (QFileInfo::exists(gpgIdFile)) {
+    return false;
+  }
+  // Resolve from the file we are about to create: getGpgIdPath walks up from
+  // its directory, so this yields the parent's .gpg-id whether or not newDir
+  // carries a trailing separator.
+  const QStringList recipients = getRecipientList(gpgIdFile, passStore);
+  if (recipients.isEmpty()) {
+    return false;
+  }
+  QSaveFile gpgId(gpgIdFile);
+  if (!gpgId.open(QIODevice::WriteOnly)) {
+    return false;
+  }
+  QTextStream out(&gpgId);
+  for (const QString &recipient : recipients) {
+    out << recipient << '\n';
+  }
+  out.flush();
+  if (out.status() != QTextStream::Ok || !gpgId.commit()) {
+    return false;
+  }
+  // Lock to owner-only access; see ImitatePass::writeGpgIdFile for the
+  // rationale (NFS / USB / unusual umask). Best-effort where setPermissions
+  // is a no-op.
+  QFile::setPermissions(gpgIdFile, QFile::ReadOwner | QFile::WriteOwner);
+  return true;
 }
 
 /* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.

@@ -258,6 +258,20 @@ public:
                                  const QString &passStore,
                                  const QString &separator = " ",
                                  int *count = nullptr) -> QStringList;
+  /**
+   * @brief Seed a new folder's .gpg-id from the recipients it inherits.
+   *
+   * Writes the recipient list that is in effect for @p newDir (found by
+   * walking up to the nearest parent .gpg-id, see getGpgIdPath) into
+   * @p newDir/.gpg-id atomically with owner-only permissions. Refuses to
+   * overwrite an existing .gpg-id and writes nothing when no recipient is
+   * inherited, so a zero-byte file never shadows the parent's list.
+   * @param newDir Absolute path of the freshly created folder.
+   * @param passStore Root directory of the password store.
+   * @return true when the file was written, false otherwise.
+   */
+  static auto seedGpgIdFile(const QString &newDir, const QString &passStore)
+      -> bool;
 
 protected:
   /**
