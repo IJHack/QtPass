@@ -84,23 +84,7 @@ void QtPassSettings::save(const AppSettings &settings) {
  * characters.
  */
 auto QtPassSettings::getPasswordConfiguration() -> PasswordConfiguration {
-  PasswordConfiguration config;
-
-  config.length =
-      getInstance()->value(SettingsConstants::passwordLength, 16).toInt();
-  if (config.length <= 0) {
-    config.length = 16;
-  }
-  config.selected = static_cast<PasswordConfiguration::characterSet>(
-      getInstance()
-          ->value(SettingsConstants::passwordCharsSelection, 0)
-          .toInt());
-  config.Characters[PasswordConfiguration::CUSTOM] =
-      getInstance()
-          ->value(SettingsConstants::passwordChars, QString())
-          .toString();
-
-  return config;
+  return SettingsSerializer::loadPasswordConfiguration(*getInstance());
 }
 
 /**
