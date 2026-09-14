@@ -27,6 +27,7 @@
 #include <QProcess>
 #include <QPushButton>
 #include <QRegularExpression>
+#include <QSaveFile>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryDir>
@@ -1106,15 +1107,20 @@ public:
       return;
     m_original = f.readAll();
     f.close();
-    if (!f.open(QIODevice::WriteOnly | QIODevice::Truncate))
+    // Atomic replacement: a short write must not leave gpg with a truncated
+    // configuration, in this test or the ones after it.
+    QSaveFile replacement(m_path);
+    if (!replacement.open(QIODevice::WriteOnly))
       return;
     const QByteArray payload = m_original + line.toUtf8() + "\n";
-    m_ok = f.write(payload) == payload.size();
+    m_ok = replacement.write(payload) == payload.size() && replacement.commit();
   }
   ~GpgConfLine() {
-    QFile f(m_path);
-    if (f.open(QIODevice::WriteOnly | QIODevice::Truncate))
-      f.write(m_original);
+    QSaveFile replacement(m_path);
+    if (replacement.open(QIODevice::WriteOnly) &&
+        replacement.write(m_original) == m_original.size()) {
+      replacement.commit();
+    }
   }
   GpgConfLine(const GpgConfLine &) = delete;
   auto operator=(const GpgConfLine &) -> GpgConfLine & = delete;
