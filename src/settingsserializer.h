@@ -27,6 +27,19 @@ public:
    */
   static auto load(QSettings &qs) -> AppSettings;
   /**
+   * @brief Read only the password generation settings from a QSettings store.
+   *
+   * The stored charset selection is validated against
+   * PasswordConfiguration::characterSet; an out-of-range value (hand-edited or
+   * corrupted ini) falls back to ALLCHARS so consumers can index
+   * PasswordConfiguration::Characters with it safely.
+   *
+   * @param qs Source settings store.
+   * @return Populated PasswordConfiguration (defaults applied for absent or
+   * invalid keys).
+   */
+  static auto loadPasswordConfiguration(QSettings &qs) -> PasswordConfiguration;
+  /**
    * @brief Write all flat settings to a QSettings store.
    * @param qs Destination settings store.
    * @param settings Values to persist.
