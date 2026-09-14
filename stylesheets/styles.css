@@ -437,6 +437,11 @@ header ul a:active {
 
 /* ---- one column ------------------------------------------------------- */
 @media (max-width: 60rem) {
+  /* One column: the sidebar is the whole first screen, so it must scroll
+     away with the page rather than stick on top of the content. */
+  .sidebar {
+    position: static;
+  }
   .wrapper {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "side" "main";
