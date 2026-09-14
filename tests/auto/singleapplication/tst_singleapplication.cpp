@@ -124,6 +124,7 @@ private Q_SLOTS:
 private:
   auto app() -> SingleApplication *;
   auto connectClient(QLocalSocket &client) -> bool;
+  auto flushClient(QLocalSocket &client) -> bool;
   auto acceptedSockets() -> int;
 
   QString m_key;
@@ -137,6 +138,26 @@ auto tst_singleapplication::app() -> SingleApplication * {
 auto tst_singleapplication::connectClient(QLocalSocket &client) -> bool {
   client.connectToServer(m_key, QIODevice::WriteOnly);
   return client.waitForConnected(1000);
+}
+
+/**
+ * The server lives in this very process, so it only accepts the connection
+ * and posts its read while the event loop runs. Blocking in
+ * waitForBytesWritten() would starve it: on Windows QLocalServer creates its
+ * pipes with a zero-sized buffer, so the write cannot even complete until the
+ * server reads, and the wait times out. Spin the loop until the payload is
+ * out instead.
+ */
+auto tst_singleapplication::flushClient(QLocalSocket &client) -> bool {
+  QElapsedTimer timer;
+  timer.start();
+  while (client.bytesToWrite() > 0) {
+    if (timer.elapsed() > 2000) {
+      return false;
+    }
+    QTest::qWait(10);
+  }
+  return true;
 }
 
 auto tst_singleapplication::acceptedSockets() -> int {
@@ -210,7 +231,7 @@ void tst_singleapplication::messageArrives() {
   QLocalSocket client;
   QVERIFY(connectClient(client));
   client.write("search me");
-  QVERIFY(client.waitForBytesWritten(1000));
+  QVERIFY(flushClient(client));
   client.disconnectFromServer();
 
   QVERIFY(spy.wait(2000));
@@ -228,7 +249,7 @@ void tst_singleapplication::emptyPayloadArrivesAsEmptyMessage() {
   QLocalSocket client;
   QVERIFY(connectClient(client));
   client.write(QByteArray(1, '\0'));
-  QVERIFY(client.waitForBytesWritten(1000));
+  QVERIFY(flushClient(client));
   client.disconnectFromServer();
 
   QVERIFY(spy.wait(2000));
