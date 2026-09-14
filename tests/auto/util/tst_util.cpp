@@ -2097,7 +2097,7 @@ void tst_util::setEnvVarNoopOnMissingRemove() {
 /// A configured gpgHome that exists is what gpg gets as GNUPGHOME.
 void tst_util::gpgHomeExportedWhenItExists() {
   QTemporaryDir home;
-  QVERIFY(home.isValid());
+  QVERIFY2(home.isValid(), "temporary GPG home should be creatable");
   TestPass pass;
   AppSettings s;
   s.gpgHome = home.path();
@@ -2114,7 +2114,7 @@ void tst_util::gpgHomeMissingFallsBackAndWarns() {
   QString gone;
   {
     QTemporaryDir dir;
-    QVERIFY(dir.isValid());
+    QVERIFY2(dir.isValid(), "temporary GPG home should be creatable");
     gone = dir.path();
   }
   QVERIFY2(!QDir(gone).exists(), "temporary directory should be gone");
@@ -2148,7 +2148,7 @@ void tst_util::gpgHomeMissingFallsBackAndWarns() {
 /// Clearing gpgHome at runtime must not keep exporting the previous path.
 void tst_util::gpgHomeClearedRestoresInheritedValue() {
   QTemporaryDir home;
-  QVERIFY(home.isValid());
+  QVERIFY2(home.isValid(), "temporary GPG home should be creatable");
   const QString inherited =
       QProcessEnvironment::systemEnvironment().value("GNUPGHOME");
   TestPass pass;
@@ -2161,7 +2161,8 @@ void tst_util::gpgHomeClearedRestoresInheritedValue() {
   pass.init(s);
   const QProcessEnvironment env = pass.environment();
   if (inherited.isEmpty()) {
-    QVERIFY(!env.contains(QStringLiteral("GNUPGHOME")));
+    QVERIFY2(!env.contains(QStringLiteral("GNUPGHOME")),
+             "clearing gpgHome must stop exporting the previous path");
   } else {
     QCOMPARE(env.value(QStringLiteral("GNUPGHOME")), inherited);
   }
