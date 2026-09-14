@@ -170,6 +170,14 @@ auto main(int argc, char *argv[]) -> int {
 
   MainWindow w(text);
 
+  // A cancelled first-run wizard (or otherwise unusable configuration) makes
+  // QtPass::init() report failure from the MainWindow constructor. Quitting
+  // there is a no-op before exec() runs, so bail here before the window is
+  // ever shown.
+  if (!w.initSucceeded()) {
+    return 0;
+  }
+
   w.activateWindow();
 
   QApplication::setWindowIcon(QIcon(":artwork/icon.png"));
