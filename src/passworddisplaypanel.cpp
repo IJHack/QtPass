@@ -167,10 +167,15 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     // the format, and without a tag it would show the escaped entities
     // literally (`?a=1&amp;b=2`). Plain text is not an option either, because
     // a URL may legitimately contain `&lt;`, which auto-detection treats as
-    // HTML.
-    urlButton->setToolTip(QStringLiteral("<qt>%1</qt>")
-                              .arg(QObject::tr("Open %1 in browser")
-                                       .arg(trimmedValue.toHtmlEscaped())));
+    // HTML. Rich text also turns on word wrap in QToolTip, and QLabel's
+    // wrapped-size heuristic would then fold the URL into a cramped multi-line
+    // box, breaking it at `/` and `?`; white-space:nowrap on the block keeps
+    // the tooltip on one line. (<nobr> is not enough: Qt only turns its spaces
+    // into non-breaking ones.)
+    urlButton->setToolTip(
+        QStringLiteral("<qt style=\"white-space:nowrap\">%1</qt>")
+            .arg(QObject::tr("Open %1 in browser")
+                     .arg(trimmedValue.toHtmlEscaped())));
     urlButton->setStyleSheet(buttonStyle);
     urlButton->setCursor(Qt::PointingHandCursor);
     connect(urlButton, &QPushButton::clicked, this, [trimmedValue]() {

@@ -493,11 +493,29 @@ static auto renderedToolTip(const QString &toolTip) -> QString {
 }
 
 /**
+ * @brief Lay a tooltip out the way QToolTip's label does and report whether it
+ * stays on one line. QTipLabel turns word wrap on for rich text, and QLabel's
+ * wrapped-size heuristic then shrinks the box; a tooltip keeps its single line
+ * only when the wrapped size hint equals the unwrapped one.
+ */
+static auto toolTipIsSingleLine(const QString &toolTip) -> bool {
+  QLabel label;
+  label.setTextFormat(Qt::AutoText);
+  label.setText(toolTip);
+  label.setWordWrap(Qt::mightBeRichText(toolTip));
+  const QSize wrapped = label.sizeHint();
+  label.setWordWrap(false);
+  return wrapped == label.sizeHint();
+}
+
+/**
  * @brief The open-in-browser tooltip HTML-escapes the URL, but QToolTip only
  * treats the text as rich text when it looks like markup. A query string
  * therefore read `?a=1&amp;b=2` on hover. The escaping must be decoded again
  * for every launchable URL, including one whose query happens to spell out an
- * entity.
+ * entity, and forcing rich text must not make the tooltip word-wrap: QLabel's
+ * wrapped-size heuristic would fold the URL into a cramped box, broken at `/`
+ * and `?`.
  */
 void tst_passworddisplaypanel::urlButtonToolTipShowsUrlVerbatim_data() {
   QTest::addColumn<QString>("url");
@@ -506,6 +524,9 @@ void tst_passworddisplaypanel::urlButtonToolTipShowsUrlVerbatim_data() {
       << QStringLiteral("https://example.org/?a=1&b=2");
   QTest::newRow("entity-looking query")
       << QStringLiteral("https://example.org/?q=&lt;x&gt;");
+  QTest::newRow("long sign-in URL") << QStringLiteral(
+      "https://accounts.example.com/v3/signin/identifier?continue="
+      "https%3A%2F%2Fmail.example.com%2Fmail%2F&flowName=GlifWebSignIn");
 }
 
 void tst_passworddisplaypanel::urlButtonToolTipShowsUrlVerbatim() {
@@ -523,6 +544,9 @@ void tst_passworddisplaypanel::urlButtonToolTipShowsUrlVerbatim() {
   QVERIFY2(!rendered.contains(QStringLiteral("&amp;")),
            qPrintable(QStringLiteral("tooltip must not show entities: ") +
                       rendered));
+  QVERIFY2(toolTipIsSingleLine(button->toolTip()),
+           qPrintable(QStringLiteral("tooltip must lay out on one line: ") +
+                      button->toolTip()));
 }
 
 QTEST_MAIN(tst_passworddisplaypanel)
