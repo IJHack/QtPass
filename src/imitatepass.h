@@ -314,6 +314,8 @@ signals:
    *
    * Emitted from the worker thread; connect with a queued (or automatic)
    * connection.
+   * @param current Number of files checked so far, including this one.
+   * @param total Total number of files found by the scan.
    */
   void reencryptProgress(int current, int total);
 
