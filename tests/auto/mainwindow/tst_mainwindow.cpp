@@ -29,7 +29,10 @@
 #include <QScopedPointer>
 #include <QStatusBar>
 #include <QTemporaryDir>
+#include <QTextBlock>
 #include <QTextBrowser>
+#include <QTextCharFormat>
+#include <QTextDocument>
 #include <QTextEdit>
 #include <QTimer>
 #include <QToolBar>
@@ -45,6 +48,29 @@
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/util.h"
 #include "../testsettings.h"
+
+namespace {
+
+/**
+ * @brief Collects the char format of every text fragment in @p document by
+ * walking its blocks, so a test can assert on the formats the document
+ * actually stores rather than on the widget's current insertion format.
+ */
+QList<QTextCharFormat> fragmentFormats(const QTextDocument *document) {
+  QList<QTextCharFormat> formats;
+  for (QTextBlock block = document->begin(); block.isValid();
+       block = block.next()) {
+    for (QTextBlock::iterator it = block.begin(); !it.atEnd(); ++it) {
+      const QTextFragment fragment = it.fragment();
+      if (fragment.isValid()) {
+        formats.append(fragment.charFormat());
+      }
+    }
+  }
+  return formats;
+}
+
+} // namespace
 
 class tst_mainwindow : public QObject {
   Q_OBJECT
@@ -69,6 +95,7 @@ private Q_SLOTS:
   void flashTextSetsContent();
   void flashTextErrorDoesNotCrash();
   void flashTextHtmlRenderedInBrowser();
+  void flashTextNonErrorClearsErrorForeground();
   void showStatusMessageAppearsInStatusBar();
   void deselectDoesNotCrash();
   void onProcessOutputAppendsToPanel();
@@ -339,6 +366,51 @@ void tst_mainwindow::flashTextHtmlRenderedInBrowser() {
   QVERIFY2(
       !browser->toHtml().contains(QStringLiteral("&lt;b&gt;bold&lt;/b&gt;")),
       "flashText with isHtml=true must not escape HTML tags");
+}
+
+/**
+ * @brief A plain-text non-error flashText() shown after an error must not
+ * stay red, and must not pin an explicit foreground either.
+ *
+ * flashText(isError=true) merges Qt::red into the browser's current char
+ * format and setPlainText() re-applies that format to the whole new document,
+ * so without a reset the next plain-text message inherits the red. The reset
+ * has to remove the ForegroundBrush property rather than set a palette colour:
+ * an explicit foreground would stop the text from following a runtime
+ * light/dark palette switch (#946).
+ */
+void tst_mainwindow::flashTextNonErrorClearsErrorForeground() {
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY2(browser != nullptr, "textBrowser must exist");
+
+  m_window->flashText(QStringLiteral("something failed"), true);
+  QCOMPARE(browser->toPlainText(), QStringLiteral("something failed"));
+  const QList<QTextCharFormat> errorFormats =
+      fragmentFormats(browser->document());
+  QVERIFY2(!errorFormats.isEmpty(),
+           "the error message must produce a fragment");
+  for (const QTextCharFormat &format : errorFormats) {
+    QVERIFY2(format.hasProperty(QTextFormat::ForegroundBrush),
+             "an error message must carry an explicit foreground");
+    QCOMPARE(format.foreground().color(), QColor(Qt::red));
+  }
+
+  m_window->flashText(QStringLiteral("all good"), false);
+  QCOMPARE(browser->toPlainText(), QStringLiteral("all good"));
+  const QList<QTextCharFormat> okFormats = fragmentFormats(browser->document());
+  QVERIFY2(!okFormats.isEmpty(),
+           "the non-error message must produce a fragment");
+  for (const QTextCharFormat &format : okFormats) {
+    QVERIFY2(!format.hasProperty(QTextFormat::ForegroundBrush),
+             "a non-error message shown after an error must not carry an "
+             "explicit foreground (neither the stale red nor a pinned "
+             "palette colour)");
+  }
+  QVERIFY2(
+      !browser->currentCharFormat().hasProperty(QTextFormat::ForegroundBrush),
+      "the insertion format must not keep an explicit foreground for "
+      "the next message");
 }
 
 /**
