@@ -69,15 +69,22 @@ class tst_imitatepass : public QObject {
   /// on a shell that would leave it behind. Returns the script path, or an
   /// empty string on failure.
   static QString writeBlockingGpg(const QString &dir, const QString &marker,
-                                  int seconds) {
+                                  int seconds, bool ignoreTerm = false) {
     const QString script = QDir(dir).filePath("blocking-gpg.sh");
     QFile f(script);
     if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
       return {};
     QTextStream out(&f);
     out << "#!/bin/sh\n"
-        << ": > '" << marker << "'\n"
-        << "exec sleep " << seconds << "\n";
+        << ": > '" << marker << "'\n";
+    if (ignoreTerm) {
+      // Stay in the shell (no exec) so the trap applies to the process the
+      // cancel signals; sleep runs as a child and is left to exit on its own.
+      out << "trap '' TERM\n"
+          << "sleep " << seconds << "\n";
+    } else {
+      out << "exec sleep " << seconds << "\n";
+    }
     out.flush();
     f.close();
     if (!QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
@@ -206,6 +213,7 @@ private Q_SLOTS:
   void reencryptPathAggregatesFailuresIntoOneCritical();
   void reencryptPathCancelStopsBetweenFiles();
   void reencryptPathCancelInterruptsActiveProcess();
+  void reencryptPathCancelKillsProcessIgnoringTerminate();
   void destructorInterruptsActiveReencryptProcess();
   void insertEncryptArgvCarriesNoEncryptTo();
   void reencryptEncryptArgvCarriesNoEncryptTo();
@@ -415,6 +423,53 @@ void tst_imitatepass::reencryptPathCancelInterruptsActiveProcess() {
       QDir(storeDir.path())
           .entryList({QStringLiteral("*.reencrypt.*")}, QDir::Files);
   QVERIFY2(leftovers.isEmpty(), qPrintable(leftovers.join(' ')));
+#endif
+}
+
+/**
+ * @brief A process that ignores the polite terminate must still be ended by
+ * the delayed forced kill after the grace period. The fake gpg traps SIGTERM,
+ * so only SIGKILL can end it; the run must finish well before the 60 s sleep.
+ */
+void tst_imitatepass::reencryptPathCancelKillsProcessIgnoringTerminate() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a blocking fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 2));
+  const QString marker = QDir(storeDir.path()).filePath("gpg-started");
+  const QString fakeGpg = writeBlockingGpg(storeDir.path(), marker, 60, true);
+  QVERIFY2(!fakeGpg.isEmpty(), "failed to write the blocking fake gpg");
+
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QObject ctx;
+  Recorder rec;
+  record(pass, ctx, rec);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+
+  pass.reencryptPath(storeDir.path());
+  QTRY_VERIFY_WITH_TIMEOUT(QFile::exists(marker), 10000);
+  QElapsedTimer elapsed;
+  elapsed.start();
+  pass.cancelReencryptPath();
+  QVERIFY2(endSpy.count() == 1 || endSpy.wait(10000),
+           "the forced kill must end the run, not the 60 s gpg");
+  QVERIFY2(
+      elapsed.elapsed() < 10000,
+      qPrintable(QStringLiteral("cancel took %1 ms").arg(elapsed.elapsed())));
+  QCoreApplication::processEvents();
+
+  QCOMPARE(endSpy.count(), 1);
+  QVERIFY2(rec.criticals.isEmpty(),
+           qPrintable(QStringLiteral("no failure dialog expected, got: %1")
+                          .arg(rec.criticals.join(QStringLiteral(" | ")))));
+  QVERIFY(!rec.progress.isEmpty());
+  QCOMPARE(rec.progress.last().first, 0);
+  QVERIFY2(!rec.statusMessages.isEmpty(), "a summary status must be shown");
+  QVERIFY2(rec.statusMessages.last().contains(QStringLiteral("cancelled")),
+           qPrintable(rec.statusMessages.last()));
 #endif
 }
 

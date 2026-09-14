@@ -12,6 +12,11 @@
 #include <QThread>
 #include <QTimer>
 #include <utility>
+#ifdef Q_OS_WIN
+#include <windows.h>
+#else
+#include <csignal>
+#endif
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -90,12 +95,13 @@ ImitatePass::~ImitatePass() {
  * The helpers (verifyGpgIdFile(), getKeysFromFile(), reencryptSingleFile(),
  * createBackupCommit()) are shared between the owning thread and the
  * re-encryption worker; the ImitatePass thread affinity tells the two apart.
- * On the worker the process is registered in m_reencryptProcess for the
- * lifetime of the run so a cancel can terminate it, and nothing is started
- * any more once m_reencryptCancel is set. The registration happens from the
- * started() signal, which QProcess emits synchronously on this thread once
- * the child exists, so a cancel that lands between the flag check and the
- * start still reaches the process.
+ * On the worker the OS pid of the process is registered in m_reencryptPid
+ * for the lifetime of the run so a cancel can terminate it, and nothing is
+ * started any more once m_reencryptCancel is set. The registration happens
+ * from the started() signal, which QProcess emits synchronously on this
+ * thread once the child exists, so a cancel that lands between the flag check
+ * and the start still reaches the process. Only the pid crosses threads: the
+ * QProcess itself is not thread-safe and stays with the worker.
  */
 auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
                                const QString &input, QString *process_out,
@@ -108,14 +114,14 @@ auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
   QProcess process;
   connect(&process, &QProcess::started, &process, [this, &process]() {
     QMutexLocker lock(&m_reencryptProcessMutex);
-    m_reencryptProcess = &process;
+    m_reencryptPid = process.processId();
     if (m_reencryptCancel.load())
       process.terminate();
   });
   const int rc = Executor::executeBlocking(process, app, args, input,
                                            process_out, process_err);
   QMutexLocker lock(&m_reencryptProcessMutex);
-  m_reencryptProcess = nullptr;
+  m_reencryptPid = 0;
   return rc;
 }
 
@@ -125,14 +131,38 @@ auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
   return execBlocking(app, args, QString(), process_out, process_err);
 }
 
+/**
+ * @brief Signal the process the worker is blocked on, if any.
+ *
+ * Works on the pid rather than the worker's QProcess: QProcess is not
+ * thread-safe, and its terminate()/kill() read state that the worker tears
+ * down when the child exits, before it gets to clear the registration. The
+ * pid is copied under the mutex and then handed to the OS directly. On Unix
+ * this is SIGTERM or SIGKILL, matching QProcess. On Windows QProcess's
+ * terminate() would post WM_CLOSE, which a console gpg or git ignores anyway,
+ * so only the forced variant does anything there and TerminateProcess()es
+ * the child.
+ */
 void ImitatePass::interruptReencryptProcess(bool force) {
-  QMutexLocker lock(&m_reencryptProcessMutex);
-  if (m_reencryptProcess == nullptr)
+  qint64 pid = 0;
+  {
+    QMutexLocker lock(&m_reencryptProcessMutex);
+    pid = m_reencryptPid;
+  }
+  if (pid <= 0)
     return;
-  if (force)
-    m_reencryptProcess->kill();
-  else
-    m_reencryptProcess->terminate();
+#ifdef Q_OS_WIN
+  if (!force)
+    return;
+  HANDLE handle =
+      OpenProcess(PROCESS_TERMINATE, FALSE, static_cast<DWORD>(pid));
+  if (handle != nullptr) {
+    TerminateProcess(handle, 1);
+    CloseHandle(handle);
+  }
+#else
+  ::kill(static_cast<pid_t>(pid), force ? SIGKILL : SIGTERM);
+#endif
 }
 
 auto ImitatePass::translatePathForWsl(const QString &path,

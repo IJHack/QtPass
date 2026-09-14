@@ -9,8 +9,6 @@
 #include <QMutex>
 #include <atomic>
 
-class QProcess;
-
 class QRegularExpression;
 class QThread;
 
@@ -362,10 +360,12 @@ private:
   /// Set by cancelReencryptPath() and the destructor; read by the worker
   /// between files and, in execBlocking(), before every process it starts.
   std::atomic<bool> m_reencryptCancel{false};
-  /// Process the worker is currently blocked on, registered by execBlocking()
-  /// so interruptReencryptProcess() can reach it from the owning thread.
+  /// OS pid of the process the worker is currently blocked on (0 when none),
+  /// registered by execBlocking() so interruptReencryptProcess() can signal
+  /// it from the owning thread. Only the pid is shared: the QProcess itself
+  /// is not thread-safe and must not be touched from another thread.
   /// Guarded by m_reencryptProcessMutex.
-  QProcess *m_reencryptProcess = nullptr;
+  qint64 m_reencryptPid = 0;
   QMutex m_reencryptProcessMutex;
   QThread *m_reencryptThread = nullptr;
   /**
@@ -373,7 +373,7 @@ private:
    *
    * On the owning thread this is a plain blocking run. On the worker thread
    * it refuses to start anything once m_reencryptCancel is set and registers
-   * the running process in m_reencryptProcess, which is what lets
+   * the pid of the running process in m_reencryptPid, which is what lets
    * cancelReencryptPath() and the destructor interrupt an active gpg or git.
    * @return Exit code, or -1 when refused, failed to start or interrupted.
    */
@@ -386,9 +386,10 @@ private:
                     QString *process_out, QString *process_err = nullptr)
       -> int;
   /**
-   * @brief terminate() (or kill() when @p force) the process the worker is
-   * blocked on, if any. Callers set m_reencryptCancel first so the worker
-   * does not start another one.
+   * @brief Ask the process the worker is blocked on, if any, to terminate
+   * (SIGTERM), or kill it outright when @p force. Acts on the registered pid
+   * through the OS, never on the worker's QProcess. Callers set
+   * m_reencryptCancel first so the worker does not start another one.
    */
   void interruptReencryptProcess(bool force);
   /**
