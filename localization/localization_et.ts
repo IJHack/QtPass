@@ -1982,22 +1982,22 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">qrencode&apos;i käivitamine ei õnnestunud: %1</translation>
+        <translation>qrencode&apos;i käivitamine ei õnnestunud: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode ei lõpetanud õigeks ajaks</translation>
+        <translation>qrencode ei lõpetanud õigeks ajaks</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode jooksis kokku</translation>
+        <translation>qrencode jooksis kokku</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode lõpetas koodiga %1</translation>
+        <translation>qrencode lõpetas tegevuse olekukoodiga %1</translation>
     </message>
 </context>
 <context>

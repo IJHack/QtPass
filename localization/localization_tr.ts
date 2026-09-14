@@ -1788,22 +1788,22 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">qrencode başlatılamadı: %1</translation>
+        <translation>qrencode başlatılamadı: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode zamanında tamamlanmadı</translation>
+        <translation>qrencode zamanında tamamlanmadı</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode çöktü</translation>
+        <translation>qrencode çöktü</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode %1 koduyla sonlandı</translation>
+        <translation>qrencode %1 koduyla sonlandı</translation>
     </message>
 </context>
 <context>
