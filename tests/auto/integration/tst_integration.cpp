@@ -924,7 +924,12 @@ void tst_integration::imitatePass_multiRecipientReencryptChangesRecipients() {
     QVERIFY(gpgId.write(payload) == payload.size());
   }
 
-  pass.reencryptPath(storeDir.path()); // synchronous (executeBlocking)
+  // reencryptPath runs on a worker thread; wait for it to finish.
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir.path());
+    QVERIFY2(waitForSignal(endSpy, 60000), "endReencryptPath not emitted");
+  }
 
   const QStringList after = recipientKeyIds(m_gnupgHome.path(), gpgFile);
   QVERIFY2(after.contains(sub1),
@@ -978,7 +983,12 @@ void tst_integration::imitatePass_reencryptPreservesPerFolderRecipients() {
   // Re-encrypt the whole tree. reencryptPath walks both folders; each file must
   // end up encrypted to ITS folder's recipients — a stale cached recipient list
   // would cross-encrypt one folder's entry to the other folder's key.
-  pass.reencryptPath(storeDir.path()); // synchronous
+  // reencryptPath runs on a worker thread; wait for it to finish.
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir.path());
+    QVERIFY2(waitForSignal(endSpy, 60000), "endReencryptPath not emitted");
+  }
 
   const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
   const QString sub2 =

@@ -211,6 +211,11 @@ public:
    * @return The id of the cancelled command, or -1 if the queue was empty.
    */
   auto cancelNext() -> int;
+  /**
+   * @brief Whether no command is running and nothing is queued.
+   * @return true when the executor has nothing in flight.
+   */
+  auto isIdle() const -> bool { return !running && m_execQueue.isEmpty(); }
 private slots:
   void finished(int exitCode, QProcess::ExitStatus exitStatus);
 signals:

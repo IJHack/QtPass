@@ -157,6 +157,8 @@ void QtPass::setMainWindow() {
   // only for ipass
   connect(QtPassSettings::getImitatePass(), &ImitatePass::startReencryptPath,
           m_mainWindow, &MainWindow::startReencryptPath);
+  connect(QtPassSettings::getImitatePass(), &ImitatePass::reencryptProgress,
+          m_mainWindow, &MainWindow::reencryptProgress);
   connect(QtPassSettings::getImitatePass(), &ImitatePass::endReencryptPath,
           m_mainWindow, &MainWindow::endReencryptPath);
 

@@ -21,6 +21,7 @@
 #include <QFile>
 #include <QFrame>
 #include <QPalette>
+#include <QProgressDialog>
 #include <QScopedPointer>
 #include <QStatusBar>
 #include <QTemporaryDir>
@@ -55,6 +56,7 @@ private Q_SLOTS:
   void cleanKeygenDialogWithNullIsHarmless();
   void setUiElementsEnabledDisablesTreeView();
   void setUiElementsEnabledEnablesTreeView();
+  void reencryptKeepsUiDisabledUntilEnd();
   void flashTextSetsContent();
   void flashTextErrorDoesNotCrash();
   void flashTextHtmlRenderedInBrowser();
@@ -180,6 +182,51 @@ void tst_mainwindow::setUiElementsEnabledEnablesTreeView() {
   m_window->setUiElementsEnabled(false);
   m_window->setUiElementsEnabled(true);
   QVERIFY2(treeView->isEnabled(), "treeView must be re-enabled");
+}
+
+/**
+ * @brief Between startReencryptPath() and endReencryptPath() the interface
+ * stays disabled and a cancellable progress dialog is shown.
+ *
+ * The re-encryption now runs on a worker thread, so the git commands queued by
+ * Init/Move/Copy finish (and call setUiElementsEnabled(true)) while files are
+ * still being rewritten; that call must be ignored until the run ends.
+ */
+void tst_mainwindow::reencryptKeepsUiDisabledUntilEnd() {
+  auto *treeView = m_window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  QVERIFY2(treeView != nullptr, "treeView widget must exist");
+
+  m_window->startReencryptPath();
+  QVERIFY2(!treeView->isEnabled(), "treeView must be disabled during a run");
+  auto *progress = m_window->findChild<QProgressDialog *>();
+  QVERIFY2(progress != nullptr, "a progress dialog must be shown");
+  QVERIFY2(progress->isVisible(), "the progress dialog must be visible");
+
+  // Calling startReencryptPath twice (MainWindow::reencryptPath does so
+  // preemptively, then the ImitatePass signal repeats it) is idempotent.
+  m_window->startReencryptPath();
+  QCOMPARE(m_window->findChildren<QProgressDialog *>().size(), 1);
+
+  m_window->reencryptProgress(2, 5);
+  QCOMPARE(progress->maximum(), 5);
+  QCOMPARE(progress->value(), 2);
+
+  // An unrelated completion must not release the UI while the worker runs.
+  m_window->setUiElementsEnabled(true);
+  QVERIFY2(!treeView->isEnabled(),
+           "treeView must stay disabled until endReencryptPath");
+
+  m_window->endReencryptPath();
+  QVERIFY2(treeView->isEnabled(), "treeView must be re-enabled at the end");
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY2(m_window->findChild<QProgressDialog *>() == nullptr,
+           "the progress dialog must be gone after the run");
+
+  // The guard is released: the normal enable/disable cycle works again.
+  m_window->setUiElementsEnabled(false);
+  QVERIFY(!treeView->isEnabled());
+  m_window->setUiElementsEnabled(true);
+  QVERIFY(treeView->isEnabled());
 }
 
 /**

@@ -31,6 +31,7 @@ class MainWindow;
 }
 
 class QDockWidget;
+class QProgressDialog;
 class QTextEdit;
 class QToolButton;
 class QTreeWidgetItem;
@@ -267,8 +268,19 @@ public slots:
 
   /**
    * @brief Begin a re-encryption pass on the current path.
+   *
+   * Disables the UI, shows a cancellable progress dialog and keeps both in
+   * place until endReencryptPath(): while the worker runs, unrelated
+   * completions must not re-enable the interface (see setUiElementsEnabled).
    */
   void startReencryptPath();
+
+  /**
+   * @brief Update the re-encryption progress dialog.
+   * @param current Files checked so far.
+   * @param total Files found under the re-encrypted folder.
+   */
+  void reencryptProgress(int current, int total);
 
   /**
    * @brief Finish a re-encryption pass on the current path.
@@ -355,6 +367,14 @@ private:
   // would dangle and cleanKeygenDialog()/onKeyGenerationComplete() would then
   // close freed memory.
   QPointer<QDialog> m_keyGenDialog;
+  /// Progress/cancel dialog shown between startReencryptPath() and
+  /// endReencryptPath(); QPointer so a closed dialog reads back as null.
+  QPointer<QProgressDialog> m_reencryptProgress;
+  /// True between startReencryptPath() and endReencryptPath(). While set,
+  /// setUiElementsEnabled(true) is ignored so the git completions queued by
+  /// Init/Move/Copy (or the UI watchdog) cannot re-enable the interface
+  /// while the re-encryption worker is still rewriting files.
+  bool m_reencryptRunning = false;
   QString m_currentDir;
   TrayIcon *m_tray{};
   /// Result of QtPass::init() from the constructor; main() consults it via
