@@ -334,7 +334,9 @@ void QtPass::processErrorExit(int exitCode, const QString &p_error) {
 
   if (!p_error.isEmpty()) {
     QString output;
-    QString error = p_error.toHtmlEscaped();
+    // Escapes and links only launchable http(s) URLs; anything else stays
+    // plain text (the text browser opens external links on click).
+    const QString error = Util::linkifyUrls(p_error);
     if (exitCode == 0) {
       //  https://github.com/IJHack/qtpass/issues/111
       output = "<span style=\"color: darkgray;\">" + error + "</span><br />";
@@ -342,7 +344,6 @@ void QtPass::processErrorExit(int exitCode, const QString &p_error) {
       output = "<span style=\"color: red;\">" + error + "</span><br />";
     }
 
-    output.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)");
     output.replace(QStringLiteral("\n"), "<br />");
 
     m_mainWindow->flashText(output, false, true);
@@ -424,9 +425,9 @@ void QtPass::passShowHandlerFinished(QString output) {
  */
 void QtPass::showInTextBrowser(QString output, const QString &prefix,
                                const QString &postfix) {
-  output = output.toHtmlEscaped();
-
-  output.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)");
+  // Escapes and links only launchable http(s) URLs; anything else stays
+  // plain text (the text browser opens external links on click).
+  output = Util::linkifyUrls(output);
   output.replace(QStringLiteral("\n"), "<br />");
   output = prefix + output + postfix;
 
