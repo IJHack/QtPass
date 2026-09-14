@@ -115,24 +115,27 @@ grep -rn "1\.5" *.html
 
 ### 8. Downstream packages (same day as the release)
 
-QtPass is upstream *and* maintainer of several downstream packages. Every
+QtPass is upstream _and_ maintainer of several downstream packages. Every
 release that is not pushed downstream the same day ends up as a multi-year
 gap (the FreeBSD port sat on 1.4.0 for three years). Do these before
 announcing the release:
 
-| Package | Where | How |
-| --- | --- | --- |
-| FreeBSD `sysutils/qtpass` | [Bugzilla](https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages), component "Individual Port(s)" | `DISTVERSION` bump + `make makesum`; summary `sysutils/qtpass: Update to X.Y.Z`; attach the diff with `maintainer-approval+`. Test in a FreeBSD VM: `make stage check-plist stage-qa`, `portlint -AC`. |
-| MacPorts `aqua/QtPass` | PR to [macports/macports-ports](https://github.com/macports/macports-ports) | `github.setup … X.Y.Z v`, `revision 0`, new `checksums` (`rmd160`/`sha256`/`size` of the GitHub release tarball). Title `QtPass: update to X.Y.Z`. |
-| winget `IJHack.QtPass` | PR to [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) | New `manifests/i/IJHack/QtPass/X.Y.Z/` (version, installer, locale); installer is `x64` (the port is 64-bit only), `InstallerSha256` of `qtpass-X.Y.Z.exe`, `ProductCode` from `qtpass.iss`. |
-| Flathub `org.qtpass.QtPass` | PR to the Flathub app repo | Bump the `qtpass` module tag/commit in `flatpak/org.qtpass.QtPass.yml`, add a `<release>` to `qtpass.appdata.xml`, run `flatpak-builder-lint`. Flathub's policy forbids AI-opened submission PRs: open this one by hand. |
-| Chocolatey `qtpass` | Not ours (community maintained) | Nothing to do unless the maintainer asks. |
+| Package                     | Where                                                                                                                      | How                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| FreeBSD `sysutils/qtpass`   | [Bugzilla](https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages), component "Individual Port(s)" | `DISTVERSION` bump + `make makesum`; summary `sysutils/qtpass: Update to X.Y.Z`; attach the diff with `maintainer-approval+`. Test in a FreeBSD VM: `make stage check-plist stage-qa`, `portlint -AC`.                                                                                                                                                                                                                                                                                                                                                                                          |
+| MacPorts `aqua/QtPass`      | PR to [macports/macports-ports](https://github.com/macports/macports-ports)                                                | `github.setup … X.Y.Z v`, `revision 0`, new `checksums` (`rmd160`/`sha256`/`size` of the GitHub release tarball). Title `QtPass: update to X.Y.Z`.                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| winget `IJHack.QtPass`      | PR to [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs)                                                    | New `manifests/i/IJHack/QtPass/X.Y.Z/` (version, installer, locale); installer is `x64` (the port is 64-bit only), `InstallerSha256` of `qtpass-X.Y.Z.exe`, `ProductCode` from `qtpass.iss`. Run `winget validate --manifest manifests/i/IJHack/QtPass/X.Y.Z` before opening the PR.                                                                                                                                                                                                                                                                                                            |
+| Flathub `org.qtpass.QtPass` | PR to the Flathub app repository                                                                                           | Bump the `qtpass` module tag/commit in `flatpak/org.qtpass.QtPass.yml`, add a `<release>` to `qtpass.appdata.xml`, run `flatpak-builder-lint`. Flathub's [generative-AI policy](https://docs.flathub.org/docs/for-app-authors/requirements#generative-ai-policy): AI-generated code, packaging or metadata must be disclosed (which parts, how much) and is accepted at reviewer discretion; AI tools must not open or automate the submission PR, write its commit messages, description, review comments or replies, and no AI-agent reviews may be requested. Open and write the PR by hand. |
+| Chocolatey `qtpass`         | Not ours (community maintained)                                                                                            | Nothing to do unless the maintainer asks.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 Watch lists: [portscout](https://portscout.freebsd.org/brouwer@annejan.com.html)
-and [FreshPorts](https://www.freshports.org/sysutils/qtpass/) for FreeBSD;
-a Bugzilla ticket on our port unanswered for two weeks lets the change go in
-without the maintainer, and repeated silence resets the port to
-`ports@FreeBSD.org`.
+and [FreshPorts](https://www.freshports.org/sysutils/qtpass/) for FreeBSD.
+Maintainer rules from the
+[Porter's Handbook](https://docs.freebsd.org/en/books/porters-handbook/makefiles/#makefile-maintainer):
+a Bugzilla ticket on our port unanswered for two weeks (excluding major
+public holidays) is a maintainer timeout and the change goes in without
+approval; no response for three months, or three consecutive timeouts, and
+all our ports are reassigned to the pool (`ports@FreeBSD.org`).
 
 ## Version Numbering
 
