@@ -385,7 +385,6 @@ private:
   void initStatusBar();
   void initProcessOutputPanel();
 
-  void updateText();
   void selectFirstFile();
   auto firstFile(QModelIndex parentIndex) -> QModelIndex;
   auto getFile(const QModelIndex &, bool) -> QString;
