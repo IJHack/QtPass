@@ -310,6 +310,7 @@ private Q_SLOTS:
   void imitatePass_insertCopyAndShow();
   void imitatePass_copyOntoFolderAndShow();
   void imitatePass_copyOntoExistingEntryClash();
+  void imitatePass_copyIntoFolderReencryptsToFolderKey();
   void imitatePass_insertAndRemove();
   void imitatePass_generateGpgKeysEmptyExecutable();
   void imitatePass_nestedDirectoryInsertAndShow();
@@ -739,6 +740,71 @@ void tst_integration::imitatePass_copyOntoExistingEntryClash() {
   QVERIFY2(QFile::exists(dst),
            "source must survive a copy onto its own folder");
   QCOMPARE(readFileBytes(dst), copied);
+}
+
+void tst_integration::imitatePass_copyIntoFolderReencryptsToFolderKey() {
+  // A copy into a folder with its own .gpg-id must be re-encrypted for that
+  // folder's recipients. Copy() decides whether to re-encrypt from a QFileInfo
+  // it created before the file existed; QFileInfo caches, so a stale "not a
+  // file" answer would silently leave the copy readable only by the source
+  // folder's key.
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+
+  auto writeGpgId = [](const QString &dir, const QString &fpr) -> bool {
+    QDir().mkpath(dir);
+    QFile f(QDir::cleanPath(dir + "/.gpg-id"));
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return false;
+    const QByteArray payload = (fpr + "\n").toUtf8();
+    return f.write(payload) == payload.size();
+  };
+  QVERIFY(writeGpgId(storeDir.path(), m_keyFingerprint));
+  const QString subDir = QDir::cleanPath(storeDir.path() + "/team");
+  QVERIFY(writeGpgId(subDir, m_keyFingerprint2));
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  {
+    QSignalSpy spy(&pass, &Pass::finishedInsert);
+    pass.Insert(QStringLiteral("rootentry"), QStringLiteral("r\n"), false);
+    QVERIFY2(waitForSignal(spy), gpgInsertErrorMsg(errorSpy));
+  }
+
+  const QString src = QDir::cleanPath(storeDir.path() + "/rootentry.gpg");
+  const QString dst = QDir::cleanPath(subDir + "/rootentry.gpg");
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.Copy(src, subDir, false);
+    QVERIFY2(criticalSpy.isEmpty(), "copy into a folder must not fail");
+    QVERIFY2(QFile::exists(dst), "copy must land as <folder>/<entry>.gpg");
+    QVERIFY2(waitForSignal(endSpy, 60000),
+             "copy into a folder must re-encrypt it (endReencryptPath)");
+  }
+
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY(!sub1.isEmpty() && !sub2.isEmpty());
+  const QStringList ids = recipientKeyIds(m_gnupgHome.path(), dst);
+  QVERIFY2(ids.contains(sub2) && !ids.contains(sub1),
+           qPrintable(QStringLiteral("copied entry must target the folder's "
+                                     "key only, got: %1")
+                          .arg(ids.join(','))));
+  // The source stays as it was.
+  const QStringList srcIds = recipientKeyIds(m_gnupgHome.path(), src);
+  QVERIFY2(srcIds.contains(sub1) && !srcIds.contains(sub2),
+           qPrintable(QStringLiteral("source must still target key1 only, "
+                                     "got: %1")
+                          .arg(srcIds.join(','))));
 }
 
 void tst_integration::imitatePass_insertAndRemove() {
