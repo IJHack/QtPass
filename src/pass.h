@@ -354,10 +354,6 @@ private:
 
 signals:
   /**
-   * @brief Emitted when a process error occurs.
-   */
-  void error(QProcess::ProcessError);
-  /**
    * @brief Emitted before executing a command.
    */
   void startingExecuteWrapper();
@@ -381,12 +377,6 @@ signals:
    */
   void processErrorExit(int exitCode, const QString &err);
 
-  /**
-   * @brief Emitted when any operation finishes.
-   * @param out Standard output from the process.
-   * @param err Standard error from the process.
-   */
-  void finishedAny(const QString &out, const QString &err);
   /**
    * @brief Emitted when any operation finishes with process ID for filtering.
    * @param out Standard output from the process.
@@ -453,12 +443,6 @@ signals:
    * @param err Standard error.
    */
   void finishedCopy(const QString &out, const QString &err);
-  /**
-   * @brief Emitted when generate finishes.
-   * @param out Standard output.
-   * @param err Standard error.
-   */
-  void finishedGenerate(const QString &out, const QString &err);
   /**
    * @brief Emitted when GPG key generation finishes.
    * @param out Standard output.

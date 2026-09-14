@@ -112,13 +112,3 @@ void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason) {
   }
   }
 }
-
-/**
- * @brief TrayIcon::showMessage show a systray message for notification.
- * @param title
- * @param msg
- * @param time
- */
-void TrayIcon::showMessage(const QString &title, const QString &msg, int time) {
-  sysTrayIcon->showMessage(title, msg, QSystemTrayIcon::Information, time);
-}

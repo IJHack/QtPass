@@ -186,7 +186,6 @@ void QtPass::setMainWindow() {
  * @param pass The pass instance to connect
  */
 void QtPass::connectPassSignalHandlers(Pass *pass) {
-  connect(pass, &Pass::error, this, &QtPass::processError);
   connect(pass, &Pass::processErrorExit, this, &QtPass::processErrorExit);
   // A failed decrypt never emits finishedShow, so an OTP request would
   // otherwise stay pending for the rest of the session.
@@ -286,36 +285,6 @@ void QtPass::mountWebDav() {
         tr("Failed to start fusedav to connect WebDAV:\n") + error, true);
   }
 #endif
-}
-
-/**
- * @brief QtPass::processError something went wrong
- * @param error
- */
-void QtPass::processError(QProcess::ProcessError error) {
-  QString errorString;
-  switch (error) {
-  case QProcess::FailedToStart:
-    errorString = tr("QProcess::FailedToStart");
-    break;
-  case QProcess::Crashed:
-    errorString = tr("QProcess::Crashed");
-    break;
-  case QProcess::Timedout:
-    errorString = tr("QProcess::Timedout");
-    break;
-  case QProcess::ReadError:
-    errorString = tr("QProcess::ReadError");
-    break;
-  case QProcess::WriteError:
-    errorString = tr("QProcess::WriteError");
-    break;
-  case QProcess::UnknownError:
-    errorString = tr("QProcess::UnknownError");
-    break;
-  }
-  m_mainWindow->flashText(errorString, true);
-  m_mainWindow->setUiElementsEnabled(true);
 }
 
 /**

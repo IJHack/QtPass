@@ -685,7 +685,6 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
   case PASS_INSERT:
     break;
   default:
-    emit finishedAny(out, err);
     emit finishedAnyWithPid(out, err, pid);
     break;
   }
