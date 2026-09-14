@@ -162,12 +162,22 @@ void Pass::init(const AppSettings &settings) {
     if (absHome.exists()) {
       env.insert(QStringLiteral("GNUPGHOME"), absHome.path());
     } else {
-      qWarning() << "gpgHome" << absHome.path()
-                 << "does not exist; using the default GnuPG home";
-      emit statusMsg(tr("Configured GPG home %1 does not exist, using the "
-                        "default keyring")
-                         .arg(absHome.path()),
-                     5000);
+      if (inheritedHome.isEmpty()) {
+        qWarning() << "gpgHome" << absHome.path()
+                   << "does not exist; using the default GnuPG home";
+        emit statusMsg(tr("Configured GPG home %1 does not exist, using the "
+                          "default keyring")
+                           .arg(absHome.path()),
+                       5000);
+      } else {
+        qWarning() << "gpgHome" << absHome.path()
+                   << "does not exist; using GNUPGHOME" << inheritedHome
+                   << "from the environment";
+        emit statusMsg(tr("Configured GPG home %1 does not exist, using "
+                          "GNUPGHOME %2 from the environment")
+                           .arg(absHome.path(), inheritedHome),
+                       5000);
+      }
       useInheritedHome();
     }
   }
