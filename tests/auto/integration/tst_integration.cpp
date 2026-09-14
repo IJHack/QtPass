@@ -1528,8 +1528,16 @@ void tst_integration::imitatePass_tamperedGpgIdSignatureAbortsReencrypt() {
              "invalid signature must be surfaced");
     QVERIFY2(waitForSignal(endSpy, 60000), "run must still clean up");
   }
-  QVERIFY2(!criticalSpy.isEmpty(),
-           "a critical must report the invalid .gpg-id signature");
+  // Any gpg hiccup emits critical and would also leave the entry on key1, so
+  // pin the failure to the signature check itself.
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.at(0).at(0).toString(),
+           QStringLiteral("Check .gpg-id file signature!"));
+  const QString sigMsg = criticalSpy.at(0).at(1).toString();
+  QVERIFY2(sigMsg.startsWith(QStringLiteral("Signature for ")) &&
+               sigMsg.endsWith(QStringLiteral("/.gpg-id is invalid.")),
+           qPrintable(
+               QStringLiteral("unexpected critical message: %1").arg(sigMsg)));
 
   const QStringList ids = recipientKeyIds(m_gnupgHome.path(), gpgFile);
   QVERIFY2(ids.contains(sub1),
