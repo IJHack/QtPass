@@ -67,7 +67,8 @@ auto ImitatePass::translatePathForWsl(const QString &path,
     return normalizedPath;
   QString wslPath;
   const int rc = Executor::executeBlocking(
-      QStringLiteral("wsl"), {QStringLiteral("wslpath"), normalizedPath},
+      QStringLiteral("wsl"),
+      Executor::wslExecArgs(QStringLiteral("wslpath"), {normalizedPath}),
       &wslPath);
   const QString translated = wslPath.trimmed();
   return (rc == 0 && !translated.isEmpty()) ? translated : normalizedPath;
@@ -1093,7 +1094,8 @@ auto ImitatePass::grepMatchFile(const QProcessEnvironment &env,
   if (gpgExe.startsWith(QStringLiteral("wsl "))) {
     QString wslPath;
     const int wrc = Executor::executeBlocking(
-        QStringLiteral("wsl"), {QStringLiteral("wslpath"), filePath}, &wslPath);
+        QStringLiteral("wsl"),
+        Executor::wslExecArgs(QStringLiteral("wslpath"), {filePath}), &wslPath);
     const QString translated = wslPath.trimmed();
     if (wrc == 0 && !translated.isEmpty())
       translatedPath = translated;

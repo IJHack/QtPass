@@ -181,6 +181,21 @@ public:
                               QString *process_err = nullptr) -> int;
 
   /**
+   * @brief Build the wsl.exe argument list that runs @p command directly.
+   *
+   * Prefixes @p command and @p args with `--exec` so WSL launches the binary
+   * itself instead of handing the joined command line to the distribution's
+   * default shell. Without it every argument (entry paths, .gpg-id
+   * recipients, commit messages) is word-split and `$()`-expanded by that
+   * shell, so a hostile password store gets code execution.
+   * @param command Linux command to run (looked up on the WSL PATH).
+   * @param args Arguments for @p command, passed through verbatim.
+   * @return Arguments for `wsl`: `--exec`, @p command, then @p args.
+   */
+  static auto wslExecArgs(const QString &command, const QStringList &args)
+      -> QStringList;
+
+  /**
    * @brief Set the environment passed to all child processes.
    * @param env Process environment for child processes.
    */

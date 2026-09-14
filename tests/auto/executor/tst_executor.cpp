@@ -37,7 +37,10 @@ private Q_SLOTS:
   void executeAsyncFailedToStartNoInputDoesNotStall();
   void executeAsyncCrashExitReportsNonZeroCode();
   void cancelNextWhileRunningReturnsMinusOne();
+  void wslPrefixBlockingUsesExec();
+  void wslPrefixAsyncUsesExec();
 #endif
+  void wslExecArgsPrependsExec();
   void executeBlockingNotFound();
   void executeBlockingGpgVersion();
   void gpgSupportsEd25519();
@@ -175,6 +178,17 @@ void tst_executor::executeBlockingConstQStringRef() {
 
 #endif
 
+void tst_executor::wslExecArgsPrependsExec() {
+  const QStringList args = Executor::wslExecArgs(
+      QStringLiteral("wslpath"), {QStringLiteral("C:\\store\\$(id).gpg")});
+  const QStringList expected = {QStringLiteral("--exec"),
+                                QStringLiteral("wslpath"),
+                                QStringLiteral("C:\\store\\$(id).gpg")};
+  QCOMPARE(args, expected);
+  QCOMPARE(Executor::wslExecArgs(QStringLiteral("gpg2"), {}),
+           QStringList({QStringLiteral("--exec"), QStringLiteral("gpg2")}));
+}
+
 void tst_executor::executeBlockingNotFound() {
   QString output;
   int result = Executor::executeBlocking("nonexistent_command_xyz", {},
@@ -257,24 +271,38 @@ void tst_executor::resolveGpgconfCommand() {
   // WSL simple
   {
     auto result = Pass::resolveGpgconfCommand("wsl gpg2");
-    QStringList expectedArgs = {"gpgconf"};
+    QStringList expectedArgs = {"--exec", "gpgconf"};
     QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
-             "WSL simple should replace gpg with gpgconf");
+             "WSL simple should replace gpg with gpgconf and run it directly");
+  }
+
+  // WSL with an explicit --exec / -e is not doubled
+  {
+    auto result = Pass::resolveGpgconfCommand("wsl -e gpg2");
+    QStringList expectedArgs = {"-e", "gpgconf"};
+    QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
+             "WSL with -e should keep the user's flag and not add --exec");
+    result = Pass::resolveGpgconfCommand("wsl --exec gpg2");
+    // Separate variable: brace-assignment to an existing QStringList is
+    // ambiguous on Qt 5.15.
+    const QStringList expectedExecArgs = {"--exec", "gpgconf"};
+    QVERIFY2(result.program == "wsl" && result.arguments == expectedExecArgs,
+             "WSL with --exec should not add a second --exec");
   }
 
   // WSL with distro
   {
     auto result = Pass::resolveGpgconfCommand("wsl --distro Debian gpg2");
     QVERIFY2(result.program == "wsl", "WSL distro preserves wsl");
-    QVERIFY2(result.arguments.contains("--distro") &&
-                 result.arguments.contains("Debian"),
-             "WSL distro arguments should be preserved");
+    QStringList expectedArgs = {"--distro", "Debian", "--exec", "gpgconf"};
+    QVERIFY2(result.arguments == expectedArgs,
+             "WSL distro arguments should be preserved before --exec");
   }
 
   // WSL with full path
   {
     auto result = Pass::resolveGpgconfCommand("wsl /usr/bin/gpg2");
-    QStringList expectedArgs = {"/usr/bin/gpgconf"};
+    QStringList expectedArgs = {"--exec", "/usr/bin/gpgconf"};
     QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
              "WSL with full path should preserve directory");
   }
@@ -518,6 +546,80 @@ void tst_executor::cancelNextWhileRunningReturnsMinusOne() {
   exec.execute(2, sh, {"-c", "echo queued"}, false, false);
   QCOMPARE(exec.cancelNext(), -1);
 }
+
+namespace {
+/**
+ * Install a fake `wsl` shell script at the front of PATH that prints each
+ * argv entry on its own line, so tests can see exactly what argv the
+ * Executor hands to wsl.exe. Restores PATH when destroyed.
+ */
+class FakeWsl {
+public:
+  FakeWsl() : m_oldPath(qgetenv("PATH")) {
+    if (!m_dir.isValid()) {
+      return;
+    }
+    QFile script(m_dir.filePath("wsl"));
+    if (!script.open(QIODevice::WriteOnly)) {
+      return;
+    }
+    script.write("#!/bin/sh\nprintf '%s\\n' \"$@\"\n");
+    script.close();
+    script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                          QFile::ExeOwner);
+    qputenv(
+        "PATH",
+        (m_dir.path() + ':' + QString::fromLocal8Bit(m_oldPath)).toLocal8Bit());
+    m_ok = true;
+  }
+  ~FakeWsl() { qputenv("PATH", m_oldPath); }
+  bool ok() const { return m_ok; }
+
+private:
+  QTemporaryDir m_dir;
+  QByteArray m_oldPath;
+  bool m_ok = false;
+};
+} // namespace
+
+// A "wsl <binary>" executable must reach wsl.exe as `--exec <binary> args...`
+// so the arguments are not word-split or $()-expanded by the default shell.
+void tst_executor::wslPrefixBlockingUsesExec() {
+  FakeWsl fake;
+  QVERIFY2(fake.ok(), "fake wsl script should be installed on PATH");
+  QString output;
+  const QString hostile = QStringLiteral("$(touch /tmp/pwned) two words");
+  int result = Executor::executeBlocking(QStringLiteral("wsl gpg2"),
+                                         {QStringLiteral("--version"), hostile},
+                                         QString(), &output);
+  QCOMPARE(result, 0);
+  const QStringList argv = output.split('\n', Qt::SkipEmptyParts);
+  const QStringList expected = {QStringLiteral("--exec"),
+                                QStringLiteral("gpg2"),
+                                QStringLiteral("--version"), hostile};
+  QCOMPARE(argv, expected);
+}
+
+void tst_executor::wslPrefixAsyncUsesExec() {
+  FakeWsl fake;
+  QVERIFY2(fake.ok(), "fake wsl script should be installed on PATH");
+  Executor exec;
+  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
+                            &Executor::finished));
+  const QString hostile = QStringLiteral("$(id) -r");
+  exec.execute(1, QStringLiteral("wsl git"), {QStringLiteral("rm"), hostile},
+               true, true);
+  QVERIFY2(spy.wait(5000), "finished signal should be emitted");
+  QCOMPARE(spy.count(), 1);
+  const QList<QVariant> args = spy.takeFirst();
+  QCOMPARE(args.at(1).toInt(), 0);
+  const QStringList argv =
+      args.at(2).toString().split('\n', Qt::SkipEmptyParts);
+  const QStringList expected = {QStringLiteral("--exec"), QStringLiteral("git"),
+                                QStringLiteral("rm"), hostile};
+  QCOMPARE(argv, expected);
+}
+
 #endif
 
 QTEST_MAIN(tst_executor)
