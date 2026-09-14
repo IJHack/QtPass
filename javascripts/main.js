@@ -4,13 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (qtpass && config) {
     qtpass.addEventListener('click', function () {
-      qtpass.classList.add('hidden');
-      config.classList.remove('hidden');
+      config.classList.toggle('hidden');
     });
 
     config.addEventListener('click', function () {
       config.classList.add('hidden');
-      qtpass.classList.remove('hidden');
     });
   }
 
