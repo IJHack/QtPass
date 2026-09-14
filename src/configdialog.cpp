@@ -13,6 +13,7 @@
 #include <QClipboard>
 #include <QDir>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QSystemTrayIcon>
@@ -65,7 +66,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->label_10->hide();
 #endif
 
-  if (!isQrencodeAvailable()) {
+  if (!isQrencodeAvailable(s.qrencodeExecutable)) {
     ui->checkBoxUseQrencode->setEnabled(false);
     ui->checkBoxUseQrencode->setToolTip(tr("qrencode needs to be installed"));
   }
@@ -922,28 +923,33 @@ void ConfigDialog::criticalMessage(const QString &title, const QString &text) {
 
 /**
  * @brief Checks whether the qrencode executable is available on the system.
- * @example
- * bool result = ConfigDialog::isQrencodeAvailable();
- * std::cout << result << std::endl; // Expected output: true if qrencode is
- * found, otherwise false
  *
+ * A configured path that points at an executable file is accepted as-is.
+ * Otherwise qrencode is looked up on Util's PATH (which carries the macOS and
+ * Windows additions) without spawning a subprocess; a hit is stored so the
+ * QR display can use it, a miss leaves the stored path untouched.
+ *
+ * @param configuredPath The qrencode path currently stored in the settings.
  * @return bool - True if qrencode is available; otherwise false. On Windows,
  * always returns false.
  */
-auto ConfigDialog::isQrencodeAvailable() -> bool {
+auto ConfigDialog::isQrencodeAvailable(const QString &configuredPath) -> bool {
 #ifdef Q_OS_WIN
+  Q_UNUSED(configuredPath);
   return false;
 #else
-  QProcess which;
-  which.start("which", QStringList() << "qrencode");
-  if (!which.waitForFinished(2000)) {
-    which.kill();
-    which.waitForFinished(500);
+  if (!configuredPath.isEmpty()) {
+    const QFileInfo configured(configuredPath);
+    if (configured.isFile() && configured.isExecutable()) {
+      return true;
+    }
+  }
+  const QString found = Util::findBinaryInPath(QStringLiteral("qrencode"));
+  if (found.isEmpty()) {
     return false;
   }
-  QtPassSettings::setQrencodeExecutable(
-      which.readAllStandardOutput().trimmed());
-  return which.exitCode() == 0;
+  QtPassSettings::setQrencodeExecutable(found);
+  return true;
 #endif
 }
 

@@ -19,6 +19,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QHash>
+#include <QStandardPaths>
 #include <QUrl>
 #ifdef Q_OS_WIN
 #include <windows.h>
@@ -115,10 +116,10 @@ auto Util::normalizeFolderPath(const QString &path) -> QString {
  * @brief Finds the absolute path of a binary by searching the PATH environment
  * variable.
  *
- * Iterates through each PATH entry, checks whether the binary exists and is
- * executable, and returns the first matching absolute file path. On Windows, if
- * no local match is found, it may fall back to a WSL invocation when the binary
- * name is valid and WSL appears to support it.
+ * Splits the (platform-augmented) PATH into directories and delegates to the
+ * two-argument overload. On Windows, if no local match is found, it may fall
+ * back to a WSL invocation when the binary name is valid and WSL appears to
+ * support it.
  *
  * @example
  * QString result = Util::findBinaryInPath("git");
@@ -135,39 +136,9 @@ auto Util::findBinaryInPath(const QString &binary) -> QString {
 
   initialiseEnvironment();
 
-  QString ret;
-
-  const QString binaryWithSep = QDir::separator() + binary;
-
-  if (_env.contains("PATH")) {
-    QString path = _env.value("PATH");
-#ifdef Q_OS_WIN
-    const QChar delimiter = ';';
-#else
-    const QChar delimiter = ':';
-#endif
-    QStringList entries = path.split(delimiter);
-
-    for (const QString &entryConst : entries) {
-      QString fullPath = entryConst + binaryWithSep;
-      QFileInfo qfi(fullPath);
-#ifdef Q_OS_WIN
-      if (!qfi.exists()) {
-        QString fullPathExe = fullPath + ".exe";
-        qfi = QFileInfo(fullPathExe);
-      }
-#endif
-      if (!qfi.exists()) {
-        continue;
-      }
-      if (!qfi.isExecutable()) {
-        continue;
-      }
-
-      ret = qfi.absoluteFilePath();
-      break;
-    }
-  }
+  QString ret = findBinaryInPath(
+      binary, _env.value(QStringLiteral("PATH"))
+                  .split(QDir::listSeparator(), Qt::SkipEmptyParts));
 #ifdef Q_OS_WIN
   if (ret.isEmpty()) {
     // Cache per-binary WSL lookup result — the wsl --version probe is a
@@ -205,6 +176,40 @@ auto Util::findBinaryInPath(const QString &binary) -> QString {
 #endif
 
   return ret;
+}
+
+/**
+ * @brief Finds an executable in an explicit list of directories.
+ *
+ * Thin wrapper around QStandardPaths::findExecutable(): only regular files
+ * that are executable match (a directory named like the binary is skipped),
+ * and on Windows the PATHEXT extensions are tried. Empty entries are dropped
+ * rather than being resolved against the current working directory, and an
+ * empty list finds nothing instead of silently falling back to the process
+ * PATH.
+ *
+ * @param binary The name of the binary to locate.
+ * @param searchPaths Directories to search, in order.
+ * @return QString - The absolute path to the binary, or an empty string if not
+ * found.
+ */
+auto Util::findBinaryInPath(const QString &binary,
+                            const QStringList &searchPaths) -> QString {
+  if (binary.isEmpty()) {
+    return {};
+  }
+  QStringList dirs;
+  dirs.reserve(searchPaths.size());
+  for (const QString &dir : searchPaths) {
+    if (!dir.isEmpty()) {
+      dirs.append(dir);
+    }
+  }
+  if (dirs.isEmpty()) {
+    // QStandardPaths::findExecutable() treats an empty list as "use PATH".
+    return {};
+  }
+  return QStandardPaths::findExecutable(binary, dirs);
 }
 
 /**
