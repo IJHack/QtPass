@@ -35,6 +35,7 @@ private Q_SLOTS:
   void executeAsyncWithWorkDir();
   void executeAsyncFailedToStartEmitsError();
   void executeAsyncFailedToStartNoInputDoesNotStall();
+  void executeAsyncEmptyExecutableEmitsErrorAndContinues();
   void executeAsyncCrashExitReportsNonZeroCode();
   void cancelNextWhileRunningReturnsMinusOne();
   void wslPrefixBlockingUsesExec();
@@ -461,6 +462,37 @@ void tst_executor::executeAsyncFailedToStartNoInputDoesNotStall() {
            "failed-to-start must report a non-zero exit code");
 
   // The queue did not stall: the second command completed.
+  QTRY_COMPARE_WITH_TIMEOUT(finishedSpy.count(), 1, 5000);
+  QCOMPARE(finishedSpy.first().at(0).toInt(), 2);
+}
+
+void tst_executor::executeAsyncEmptyExecutableEmitsErrorAndContinues() {
+  // Regression test for #1682: an empty executable (e.g. git not configured
+  // yet) used to be dropped silently. The command stayed at the head of the
+  // queue forever, swallowing every later completion signal. It must now
+  // surface an error through the normal path and let queued commands proceed.
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy errorSpy(&exec, &Executor::error);
+  QSignalSpy finishedSpy(&exec,
+                         qOverload<int, int, const QString &, const QString &>(
+                             &Executor::finished));
+  QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
+  QVERIFY2(finishedSpy.isValid(),
+           "spy must connect to Executor::finished signal");
+
+  exec.execute(1, "", {}, true, false);
+  // A valid command queued behind the empty executable must still run.
+  exec.execute(2, sh, {"-c", "echo after-empty"}, true, false);
+
+  QTRY_COMPARE_WITH_TIMEOUT(errorSpy.count(), 1, 5000);
+  QCOMPARE(errorSpy.first().at(0).toInt(), 1);
+  QVERIFY2(errorSpy.first().at(1).toInt() != 0,
+           "an empty executable must report a non-zero exit code");
+
+  // The queue did not wedge: the following command completed.
   QTRY_COMPARE_WITH_TIMEOUT(finishedSpy.count(), 1, 5000);
   QCOMPARE(finishedSpy.first().at(0).toInt(), 2);
 }
