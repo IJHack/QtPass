@@ -11,6 +11,7 @@
  * error keeps the dialog open with the reason shown instead of closing it.
  */
 
+#include <QCheckBox>
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QLabel>
@@ -76,6 +77,7 @@ private Q_SLOTS:
   void decryptErrorKeepsDialogOpenWithReason();
   void lateErrorAfterContentLoadIsIgnored();
   void newEntryStartsEditable();
+  void showCheckBoxTogglesPasswordEcho();
 };
 
 void tst_passworddialog::existingEntryLocksEditorUntilContentLoads() {
@@ -167,6 +169,31 @@ void tst_passworddialog::newEntryStartsEditable() {
            "a new entry has nothing to fetch, so Ok must be usable");
   auto *pw = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
   QVERIFY2(pw->isEnabled(), "a new entry must be editable immediately");
+}
+
+/**
+ * @brief The "Show password" box is wired explicitly to QCheckBox::toggled
+ *        (not the deprecated stateChanged auto-slot); toggling it must switch
+ *        the password field between masked and clear text.
+ */
+void tst_passworddialog::showCheckBoxTogglesPasswordEcho() {
+  FakePass pass;
+  const AppSettings s = QtPassSettings::load();
+  PasswordDialog d(&pass, s, QStringLiteral("newentry.gpg"), true);
+
+  auto *show = d.findChild<QCheckBox *>(QStringLiteral("checkBoxShow"));
+  auto *pw = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  QVERIFY2(show != nullptr, "checkBoxShow widget must exist");
+  QVERIFY2(pw != nullptr, "lineEditPassword widget must exist");
+
+  QVERIFY2(!show->isChecked(), "Show password should start unchecked");
+  QCOMPARE(pw->echoMode(), QLineEdit::Password);
+
+  show->setChecked(true);
+  QCOMPARE(pw->echoMode(), QLineEdit::Normal);
+
+  show->setChecked(false);
+  QCOMPARE(pw->echoMode(), QLineEdit::Password);
 }
 
 QTEST_MAIN(tst_passworddialog)

@@ -7,6 +7,7 @@
 #include "qtpasssettings.h"
 #include "ui_keygendialog.h"
 #include "util.h"
+#include <QCheckBox>
 #include <QMessageBox>
 #include <QRegularExpression>
 #include <algorithm>
@@ -23,6 +24,8 @@ KeygenDialog::KeygenDialog(const QString &gpgExe, ConfigDialog *parent)
     : QDialog(parent), ui(new Ui::KeygenDialog), m_progressIndicator(nullptr) {
   ui->setupUi(this);
   dialog = parent;
+  connect(ui->checkBox, &QCheckBox::toggled, this,
+          &KeygenDialog::setExpertMode);
 
   // Restore dialog state
   QByteArray savedGeometry = QtPassSettings::getDialogGeometry("keygenDialog");
@@ -76,13 +79,13 @@ void KeygenDialog::on_passphrase2_textChanged(const QString &arg1) {
 }
 
 /**
- * @brief KeygenDialog::on_checkBox_stateChanged expert mode enabled / disabled.
- * @param arg1
+ * @brief KeygenDialog::setExpertMode expert mode enabled / disabled.
+ * @param checked
  */
-void KeygenDialog::on_checkBox_stateChanged(int arg1) {
-  ui->plainTextEdit->setReadOnly(!arg1);
-  ui->plainTextEdit->setEnabled(arg1);
-  ui->plainTextEdit->setVisible(arg1);
+void KeygenDialog::setExpertMode(bool checked) {
+  ui->plainTextEdit->setReadOnly(!checked);
+  ui->plainTextEdit->setEnabled(checked);
+  ui->plainTextEdit->setVisible(checked);
 }
 
 /**
