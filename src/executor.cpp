@@ -80,6 +80,30 @@ void Executor::executeNext() {
     return;
   }
   const execQueueItem &i = m_execQueue.head();
+
+  // An empty executable can never produce a finished() signal. Silently
+  // dropping it used to wedge the queue: the command stayed at the head until
+  // the next completion, whose signal only caused the dequeue; a second
+  // completion then stalled everything (#1682). Fail it through the same
+  // deferred path as a failed-to-start process so the queue keeps draining.
+  if (i.app.isEmpty()) {
+#ifdef QT_DEBUG
+    dbg() << "No executable set for:" << i.id;
+#endif
+    // Capture before dequeue() invalidates the head reference.
+    const int failedId = i.id;
+    m_execQueue.dequeue();
+    QMetaObject::invokeMethod(
+        this,
+        [this, failedId]() {
+          emit error(failedId, -1, QString(),
+                     tr("No executable configured for this command"));
+        },
+        Qt::QueuedConnection);
+    executeNext();
+    return;
+  }
+
   running = true;
   if (!i.workingDir.isEmpty()) {
     m_process.setWorkingDirectory(i.workingDir);
@@ -184,17 +208,13 @@ void Executor::execute(int id, const QString &app, const QStringList &args,
 void Executor::execute(int id, const QString &workDir, const QString &app,
                        const QStringList &args, QString input, bool readStdout,
                        bool readStderr) {
-  // Happens a lot if e.g. git binary is not set.
-  // This will result in bogus "QProcess::FailedToStart" messages,
-  // also hiding legitimate errors from the gpg commands.
-  if (app.isEmpty()) {
-#ifdef QT_DEBUG
-    dbg() << "Trying to execute nothing...";
-#endif
-    return;
-  }
+  // An empty executable (e.g. git not configured yet) used to be dropped
+  // here. That left its command permanently at the head of the queue: no
+  // process ever runs, no finished()/error() is emitted, and every later
+  // completion signal is swallowed for the rest of the session (#1682).
+  // ExecuteNext() now surfaces it as an error instead, so keep queueing it.
   QString appPath = app;
-  if (!appPath.startsWith("wsl ")) {
+  if (!appPath.isEmpty() && !appPath.startsWith("wsl ")) {
     appPath =
         QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
   }

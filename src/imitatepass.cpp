@@ -1162,6 +1162,17 @@ void ImitatePass::executeGpg(PROCESS id, const QStringList &args, QString input,
  */
 void ImitatePass::executeGit(PROCESS id, const QStringList &args, QString input,
                              bool readStdout, bool readStderr) {
+  // useGit can be enabled with no git executable configured. Handing an empty
+  // executable to the Executor used to register a transaction whose completion
+  // signal could never arrive, wedging the queue so every later operation
+  // stopped reporting (#1682). Skip the git command so the parent operation
+  // (gpg/filesystem) still completes cleanly.
+  if (m_settings.gitExecutable.isEmpty()) {
+#ifdef QT_DEBUG
+    dbg() << "No git executable configured, skipping:" << id;
+#endif
+    return;
+  }
   executeWrapper(id, m_settings.gitExecutable, args, std::move(input),
                  readStdout, readStderr);
 }

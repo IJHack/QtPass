@@ -308,6 +308,7 @@ private Q_SLOTS:
   void imitatePass_emptyPassword();
   void imitatePass_gitInitAndCommit();
   void imitatePass_gitCopyAndShow();
+  void imitatePass_insertCompletesWhenGitNotConfigured();
   void imitatePass_usersDialogListsAndFilters();
   void imitatePass_multiRecipientReencryptChangesRecipients();
   void imitatePass_reencryptPreservesPerFolderRecipients();
@@ -832,6 +833,45 @@ void tst_integration::imitatePass_gitCopyAndShow() {
       tracked.contains("copy.gpg"),
       qPrintable(
           QString("copied entry should be tracked in git: %1").arg(tracked)));
+}
+
+void tst_integration::imitatePass_insertCompletesWhenGitNotConfigured() {
+  // Regression test for #1682: with useGit enabled but no git executable
+  // configured, an insert used to silently drop the empty git command. No
+  // completion signal was ever emitted, leaving a stale transaction head that
+  // swallowed every later operation. The insert must now complete cleanly via
+  // gpg (git is simply skipped).
+  RestoreUseGit restoreUseGit;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = true;
+    s.gitExecutable = QString(); // unconfigured
+    QtPassSettings::save(s);
+  }
+
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  const QString entryName = QStringLiteral("nogit");
+  const QString entryContent = QStringLiteral("secret\nurl: example.com\n");
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(entryName, entryContent, false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+  QCOMPARE(insertErrorSpy.count(), 0);
+
+  const QString gpgFile = QDir::cleanPath(storeDir.path() + "/" + entryName +
+                                          QStringLiteral(".gpg"));
+  QVERIFY2(QFile::exists(gpgFile), "encrypted file should still be written");
+
+  // The queue must not be wedged: a subsequent operation completes too.
+  QSignalSpy insertSpy2(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy2(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("nogit2"), QStringLiteral("more\n"), false);
+  QVERIFY2(waitForSignal(insertSpy2), gpgInsertErrorMsg(insertErrorSpy2));
+  QCOMPARE(insertErrorSpy2.count(), 0);
 }
 
 void tst_integration::imitatePass_usersDialogListsAndFilters() {
