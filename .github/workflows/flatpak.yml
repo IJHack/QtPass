@@ -13,6 +13,9 @@ on:
       # overlaid into the v1.8.0 source by the manifest
       - "main/main.cpp"
       - "src/qtpasssettings.cpp"
+      - "src/mainwindow.h"
+      - "src/mainwindow.cpp"
+      - "src/qtpass.cpp"
       - ".github/workflows/flatpak.yml"
   push:
     tags:

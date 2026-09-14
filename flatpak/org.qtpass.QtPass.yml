@@ -171,3 +171,17 @@ modules:
         path: ../src/qtpasssettings.cpp
         dest: src
         dest-filename: qtpasssettings.cpp
+      # 1.8.1 backport of #1689/#1696 (first-run wizard cancel/re-ask): main.cpp
+      # above needs MainWindow::initSucceeded(), which v1.8.0 does not have.
+      - type: file
+        path: ../src/mainwindow.h
+        dest: src
+        dest-filename: mainwindow.h
+      - type: file
+        path: ../src/mainwindow.cpp
+        dest: src
+        dest-filename: mainwindow.cpp
+      - type: file
+        path: ../src/qtpass.cpp
+        dest: src
+        dest-filename: qtpass.cpp
