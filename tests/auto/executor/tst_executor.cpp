@@ -256,9 +256,10 @@ void tst_executor::executeBlockingGpgKillAgent() {
   // and leaving the respawned agent without the desktop's pinentry setup.
   QTemporaryDir gnupgHome;
   QVERIFY2(gnupgHome.isValid(), "temporary GNUPGHOME should be creatable");
-  QVERIFY(QFile::setPermissions(gnupgHome.path(), QFile::ReadOwner |
-                                                      QFile::WriteOwner |
-                                                      QFile::ExeOwner));
+  QVERIFY2(QFile::setPermissions(gnupgHome.path(), QFile::ReadOwner |
+                                                       QFile::WriteOwner |
+                                                       QFile::ExeOwner),
+           "temporary GNUPGHOME must permit only owner access");
   QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
   env.insert(QStringLiteral("GNUPGHOME"), gnupgHome.path());
   QString output;
