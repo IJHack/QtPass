@@ -15,9 +15,6 @@
   --shadow-window:
     0 22px 44px -16px rgba(15, 25, 40, 0.38),
     0 6px 14px -6px rgba(15, 25, 40, 0.18);
-  --shadow-window-lift:
-    0 40px 80px -20px rgba(15, 25, 40, 0.45),
-    0 12px 28px -8px rgba(15, 25, 40, 0.25);
   --titlebar: #eceff3;
   --titlebar-dot: #c6ccd4;
   --watermark: 0.16;
@@ -39,9 +36,6 @@
     --shadow-window:
       0 22px 44px -16px rgba(0, 0, 0, 0.7),
       0 6px 14px -6px rgba(0, 0, 0, 0.5);
-    --shadow-window-lift:
-      0 40px 80px -20px rgba(0, 0, 0, 0.8),
-      0 12px 28px -8px rgba(0, 0, 0, 0.6);
     --titlebar: #2b3138;
     --titlebar-dot: #4a525b;
     --watermark: 0.08;
@@ -302,8 +296,6 @@ a img {
   grid-area: side;
   position: sticky;
   top: clamp(1rem, 4vw, 3rem);
-  /* above the content column, so the zoomed screenshot paints over it */
-  z-index: 1;
 }
 @media (max-height: 52rem) {
   .sidebar {
@@ -411,7 +403,6 @@ header ul a:active {
     0 0 0 1px var(--rule);
   cursor: pointer;
   overflow: hidden;
-  transform-origin: left center;
 }
 .screenshots .window::before {
   content: attr(data-title);
@@ -445,18 +436,6 @@ header ul a:active {
 .screenshots .hidden {
   display: none;
 }
-/* Hover zoom: the window grows out over the main column. Pointer devices in
-   the two-column layout only; a phone gets the plain window. */
-@media (hover: hover) and (min-width: 60rem) {
-  .screenshots .window:hover {
-    transform: scale(1.9);
-    box-shadow:
-      var(--shadow-window-lift),
-      0 0 0 0.5px var(--rule);
-    z-index: 20;
-  }
-}
-
 /* platform badges, app icons, watermark */
 .compatible {
   width: auto;
@@ -544,11 +523,6 @@ header ul a:active {
       background-color 120ms ease,
       color 120ms ease,
       text-decoration-color 120ms ease;
-  }
-  .screenshots .window {
-    transition:
-      transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
-      box-shadow 320ms ease;
   }
 }
 @media print {
