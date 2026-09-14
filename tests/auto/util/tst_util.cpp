@@ -1925,7 +1925,8 @@ void tst_util::findBinaryInPathEmptyEntriesDoNotResolveToCwd() {
   QTemporaryDir cwd;
   QVERIFY(cwd.isValid());
   const QString name = QStringLiteral("qtpass_cwd_only");
-  QVERIFY(!writeExecutable(cwd.path(), name).isEmpty());
+  const QString real = writeExecutable(cwd.path(), name);
+  QVERIFY(!real.isEmpty());
 
   const QString previousCwd = QDir::currentPath();
   const auto restoreCwd =
@@ -1940,9 +1941,15 @@ void tst_util::findBinaryInPathEmptyEntriesDoNotResolveToCwd() {
           QStringLiteral("::/nonexistent-qtpass-dir:").split(QLatin1Char(':')))
           .isEmpty());
   // An explicit "." entry is a relative directory, not an empty one, and
-  // does resolve against the working directory.
-  QCOMPARE(Util::findBinaryInPath(name, {QStringLiteral(".")}),
-           QDir(cwd.path()).absoluteFilePath(name));
+  // does resolve against the working directory. Compare canonical paths:
+  // QStandardPaths::findExecutable() resolves "." through QDir::current(),
+  // which is the physical getcwd() path, while cwd.path() is the logical one.
+  // They differ when the temp dir is reached through a symlink, as on macOS
+  // where /var/folders is a symlink into /private/var.
+  const QString dotHit = Util::findBinaryInPath(name, {QStringLiteral(".")});
+  QVERIFY(!dotHit.isEmpty());
+  QCOMPARE(QFileInfo(dotHit).canonicalFilePath(),
+           QFileInfo(real).canonicalFilePath());
 #else
   QSKIP("Unix-only test");
 #endif
