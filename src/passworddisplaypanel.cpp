@@ -163,9 +163,19 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
                                         QIcon(":/icons/open-url.svg")));
     // Escape only for tooltip rendering (rich-text safe display). The launched
     // URL must remain the original validated value; HTML escaping would change
-    // it.
+    // it. The <qt> wrapper forces the rich-text path: QToolTip auto-detects
+    // the format, and without a tag it would show the escaped entities
+    // literally (`?a=1&amp;b=2`). Plain text is not an option either, because
+    // a URL may legitimately contain `&lt;`, which auto-detection treats as
+    // HTML. Rich text also turns on word wrap in QToolTip, and QLabel's
+    // wrapped-size heuristic would then fold the URL into a cramped multi-line
+    // box, breaking it at `/` and `?`; white-space:nowrap on the block keeps
+    // the tooltip on one line. (<nobr> is not enough: Qt only turns its spaces
+    // into non-breaking ones.)
     urlButton->setToolTip(
-        QObject::tr("Open %1 in browser").arg(trimmedValue.toHtmlEscaped()));
+        QStringLiteral("<qt style=\"white-space:nowrap\">%1</qt>")
+            .arg(QObject::tr("Open %1 in browser")
+                     .arg(trimmedValue.toHtmlEscaped())));
     urlButton->setStyleSheet(buttonStyle);
     urlButton->setCursor(Qt::PointingHandCursor);
     connect(urlButton, &QPushButton::clicked, this, [trimmedValue]() {
@@ -213,7 +223,6 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
     contentTextBrowser->setObjectName(trimmedField);
     {
-      QString linkedText;
       QList<QRegularExpressionMatch> urlMatches;
       qsizetype totalUrlLength = 0;
       {
@@ -225,21 +234,32 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
           urlMatches.append(match);
         }
       }
-      constexpr qsizetype anchorTagOverhead = sizeof("<a href=\"\"></a>") - 1;
-      linkedText.reserve(trimmedValue.size() + totalUrlLength +
-                         urlMatches.size() * anchorTagOverhead);
-      int lastIndex = 0;
-      for (const QRegularExpressionMatch &match : std::as_const(urlMatches)) {
-        const int start = match.capturedStart(0);
-        const int end = match.capturedEnd(0);
-        linkedText +=
-            trimmedValue.mid(lastIndex, start - lastIndex).toHtmlEscaped();
-        const QString escapedUrl = match.captured(0).toHtmlEscaped();
-        linkedText += QStringLiteral("<a href=\"%1\">%1</a>").arg(escapedUrl);
-        lastIndex = end;
+      if (urlMatches.isEmpty()) {
+        // Nothing to link, so show the value as-is. Escaping it and calling
+        // setText() only rendered as rich text when the value happened to
+        // contain a '<'; otherwise "&", '"' and ">" came out as HTML entities
+        // and a password such as `a&b` read `a&amp;b` on screen.
+        contentTextBrowser->setPlainText(trimmedValue);
+      } else {
+        QString linkedText;
+        constexpr qsizetype anchorTagOverhead = sizeof("<a href=\"\"></a>") - 1;
+        linkedText.reserve(trimmedValue.size() + totalUrlLength +
+                           urlMatches.size() * anchorTagOverhead);
+        int lastIndex = 0;
+        for (const QRegularExpressionMatch &match : std::as_const(urlMatches)) {
+          const int start = match.capturedStart(0);
+          const int end = match.capturedEnd(0);
+          linkedText +=
+              trimmedValue.mid(lastIndex, start - lastIndex).toHtmlEscaped();
+          const QString escapedUrl = match.captured(0).toHtmlEscaped();
+          linkedText += QStringLiteral("<a href=\"%1\">%1</a>").arg(escapedUrl);
+          lastIndex = end;
+        }
+        linkedText += trimmedValue.mid(lastIndex).toHtmlEscaped();
+        // Always HTML here: the text is escaped and carries anchor tags, so
+        // do not leave the interpretation to setText()'s auto-detection.
+        contentTextBrowser->setHtml(linkedText);
       }
-      linkedText += trimmedValue.mid(lastIndex).toHtmlEscaped();
-      contentTextBrowser->setText(linkedText);
     }
     contentTextBrowser->setReadOnly(true);
     contentTextBrowser->setStyleSheet(lineStyle);

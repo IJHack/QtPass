@@ -63,3 +63,12 @@ Bump the `tag`/`commit` of the `qtpass` module to the new release. The
 the bundled tools automatically. The `file` overlays in the `qtpass` module
 (metainfo, square icon, `main.cpp`, `qtpasssettings.cpp`) exist only because
 v1.8.0 predates those changes — drop them when building from a later tag.
+
+## CI
+
+The `Flatpak` workflow does not build the pinned tag: `flatpak/ci-manifest.sh`
+derives `org.qtpass.QtPass.ci.yml`, identical except that the `qtpass` module
+is a `dir` source pointing at the checkout under review, so a pull request
+that changes the overlaid files together with other sources still builds.
+The generated file is ignored by Git; run the script locally to build the
+working tree with `flatpak-builder`.

@@ -10,7 +10,7 @@ on:
       - "qtpass.appdata.xml"
       - "qtpass.desktop"
       - "artwork/**"
-      # overlaid into the v1.8.0 source by the manifest
+      # the files the Flathub manifest overlays onto the tagged source
       - "main/main.cpp"
       - "src/qtpasssettings.cpp"
       - ".github/workflows/flatpak.yml"
@@ -33,9 +33,14 @@ jobs:
       - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
+      # The Flathub manifest pins the last tag and overlays a few files from
+      # the repository. CI must build the tree under review instead, so the
+      # qtpass module is swapped for a "dir" source pointing at this checkout.
+      - name: Point the qtpass module at this checkout
+        run: ./flatpak/ci-manifest.sh
       - uses: flathub-infra/flatpak-github-actions/flatpak-builder@933e9e8ca36e85046ebca8e211f0785c6becac40
         with:
-          manifest-path: flatpak/org.qtpass.QtPass.yml
+          manifest-path: flatpak/org.qtpass.QtPass.ci.yml
           bundle: org.qtpass.QtPass.flatpak
           cache-key: flatpak-builder-${{ github.sha }}
           upload-artifact: true

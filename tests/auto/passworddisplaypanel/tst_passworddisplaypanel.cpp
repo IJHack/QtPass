@@ -6,7 +6,9 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QProgressBar>
+#include <QPushButton>
 #include <QTextBrowser>
+#include <QTextDocument>
 #include <QVBoxLayout>
 #include <QWidget>
 
@@ -46,9 +48,17 @@ private Q_SLOTS:
   void currentOtpCodeEmptyAfterClear();
   void otpUriAsPasswordIsNeverRendered();
   void otpUriInDifferentlyNamedFieldIsNeverRendered();
+  void fieldValueRendersHtmlSpecialsVerbatim_data();
+  void fieldValueRendersHtmlSpecialsVerbatim();
+  void visiblePasswordRendersHtmlSpecialsVerbatim();
+  void fieldValueWithUrlStillLinksAndEscapes();
+  void urlButtonToolTipShowsUrlVerbatim_data();
+  void urlButtonToolTipShowsUrlVerbatim();
 
 private:
   [[nodiscard]] auto otpWidgetAt(int row) const -> OtpCodeWidget *;
+  [[nodiscard]] auto browserAt(int row) const -> QTextBrowser *;
+  [[nodiscard]] auto urlButtonAt(int row) const -> QPushButton *;
 };
 
 void tst_passworddisplaypanel::init() {
@@ -381,6 +391,162 @@ void tst_passworddisplaypanel::otpUriInDifferentlyNamedFieldIsNeverRendered() {
   QVERIFY2(!text.contains(kOtpSecret), "the shared secret must never be shown");
   QVERIFY2(!text.contains(QStringLiteral("otpauth")),
            "the otpauth URI must never be shown");
+}
+
+auto tst_passworddisplaypanel::browserAt(int row) const -> QTextBrowser * {
+  QLayoutItem *item = m_grid->itemAtPosition(row, 1);
+  if (item == nullptr || item->widget() == nullptr) {
+    return nullptr;
+  }
+  return item->widget()->findChild<QTextBrowser *>();
+}
+
+/**
+ * @brief Values are HTML-escaped so a URL can be wrapped in an anchor, but
+ * QTextBrowser::setText() only treats the result as rich text when it happens
+ * to contain a '<'. Everything else was shown literally, so a password such as
+ * `a&b` read `a&amp;b` on screen and users typed the wrong secret.
+ */
+void tst_passworddisplaypanel::fieldValueRendersHtmlSpecialsVerbatim_data() {
+  QTest::addColumn<QString>("value");
+  QTest::newRow("ampersand") << QStringLiteral("fish&chips");
+  QTest::newRow("double quote") << QStringLiteral("say \"hi\"");
+  QTest::newRow("greater than") << QStringLiteral("a>b");
+  QTest::newRow("less than") << QStringLiteral("a<b");
+  QTest::newRow("apostrophe") << QStringLiteral("it's");
+  QTest::newRow("all specials") << QStringLiteral("x&y\"z<w>v'u");
+  QTest::newRow("entity-looking text") << QStringLiteral("&amp; &lt;br&gt;");
+}
+
+void tst_passworddisplaypanel::fieldValueRendersHtmlSpecialsVerbatim() {
+  QFETCH(QString, value);
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"),
+                         NamedValues{{"username", value}}, s);
+  QTextBrowser *browser = browserAt(1);
+  QVERIFY2(browser != nullptr, "a named field renders into a QTextBrowser");
+  QCOMPARE(browser->toPlainText(), value);
+}
+
+/// The unhidden password row goes through the same text browser path.
+void tst_passworddisplaypanel::visiblePasswordRendersHtmlSpecialsVerbatim() {
+  const QString password = QStringLiteral("p&s\"w>rd");
+  AppSettings s;
+  s.hidePassword = false;
+  m_panel->displayFields(password, NamedValues{}, s);
+  QTextBrowser *browser = browserAt(0);
+  QVERIFY2(browser != nullptr,
+           "an unhidden password renders into a QTextBrowser");
+  QCOMPARE(browser->toPlainText(), password);
+}
+
+/**
+ * @brief A value that does contain a URL must still get a clickable anchor,
+ * and the surrounding prose must not be double-escaped or mangled by the
+ * rich-text path.
+ */
+void tst_passworddisplaypanel::fieldValueWithUrlStillLinksAndEscapes() {
+  const QString value =
+      QStringLiteral("see https://example.org/?a=1&b=2 & more");
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"), NamedValues{{"note", value}},
+                         s);
+  QTextBrowser *browser = browserAt(1);
+  QVERIFY(browser != nullptr);
+  QCOMPARE(browser->toPlainText(), value);
+  const QString html = browser->toHtml();
+  QVERIFY2(
+      html.contains(
+          QStringLiteral("<a href=\"https://example.org/?a=1&amp;b=2\"")),
+      qPrintable(QStringLiteral("URL must be wrapped in an anchor: ") + html));
+}
+
+auto tst_passworddisplaypanel::urlButtonAt(int row) const -> QPushButton * {
+  QLayoutItem *item = m_grid->itemAtPosition(row, 1);
+  if (item == nullptr || item->widget() == nullptr) {
+    return nullptr;
+  }
+  // The open-in-browser button is the only plain QPushButton in the row; the
+  // copy and QR affordances are subclasses.
+  const auto buttons = item->widget()->findChildren<QPushButton *>();
+  for (QPushButton *button : buttons) {
+    if (qobject_cast<QPushButtonWithClipboard *>(button) == nullptr &&
+        !button->toolTip().isEmpty()) {
+      return button;
+    }
+  }
+  return nullptr;
+}
+
+/**
+ * @brief Render a tooltip string the way QToolTip does: the format is
+ * auto-detected, so the text is HTML only when Qt::mightBeRichText() says so.
+ */
+static auto renderedToolTip(const QString &toolTip) -> QString {
+  QTextDocument doc;
+  if (Qt::mightBeRichText(toolTip)) {
+    doc.setHtml(toolTip);
+  } else {
+    doc.setPlainText(toolTip);
+  }
+  return doc.toPlainText();
+}
+
+/**
+ * @brief Lay a tooltip out the way QToolTip's label does and report whether it
+ * stays on one line. QTipLabel turns word wrap on for rich text, and QLabel's
+ * wrapped-size heuristic then shrinks the box; a tooltip keeps its single line
+ * only when the wrapped size hint equals the unwrapped one.
+ */
+static auto toolTipIsSingleLine(const QString &toolTip) -> bool {
+  QLabel label;
+  label.setTextFormat(Qt::AutoText);
+  label.setText(toolTip);
+  label.setWordWrap(Qt::mightBeRichText(toolTip));
+  const QSize wrapped = label.sizeHint();
+  label.setWordWrap(false);
+  return wrapped == label.sizeHint();
+}
+
+/**
+ * @brief The open-in-browser tooltip HTML-escapes the URL, but QToolTip only
+ * treats the text as rich text when it looks like markup. A query string
+ * therefore read `?a=1&amp;b=2` on hover. The escaping must be decoded again
+ * for every launchable URL, including one whose query happens to spell out an
+ * entity, and forcing rich text must not make the tooltip word-wrap: QLabel's
+ * wrapped-size heuristic would fold the URL into a cramped box, broken at `/`
+ * and `?`.
+ */
+void tst_passworddisplaypanel::urlButtonToolTipShowsUrlVerbatim_data() {
+  QTest::addColumn<QString>("url");
+  QTest::newRow("plain") << QStringLiteral("https://example.org/login");
+  QTest::newRow("query string")
+      << QStringLiteral("https://example.org/?a=1&b=2");
+  QTest::newRow("entity-looking query")
+      << QStringLiteral("https://example.org/?q=&lt;x&gt;");
+  QTest::newRow("long sign-in URL") << QStringLiteral(
+      "https://accounts.example.com/v3/signin/identifier?continue="
+      "https%3A%2F%2Fmail.example.com%2Fmail%2F&flowName=GlifWebSignIn");
+}
+
+void tst_passworddisplaypanel::urlButtonToolTipShowsUrlVerbatim() {
+  QFETCH(QString, url);
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"), NamedValues{{"url", url}},
+                         s);
+  QPushButton *button = urlButtonAt(1);
+  QVERIFY2(button != nullptr,
+           "a launchable URL gets an open-in-browser button");
+  const QString rendered = renderedToolTip(button->toolTip());
+  QVERIFY2(rendered.contains(url),
+           qPrintable(QStringLiteral("tooltip must show the URL verbatim: ") +
+                      rendered));
+  QVERIFY2(!rendered.contains(QStringLiteral("&amp;")),
+           qPrintable(QStringLiteral("tooltip must not show entities: ") +
+                      rendered));
+  QVERIFY2(toolTipIsSingleLine(button->toolTip()),
+           qPrintable(QStringLiteral("tooltip must lay out on one line: ") +
+                      button->toolTip()));
 }
 
 QTEST_MAIN(tst_passworddisplaypanel)
