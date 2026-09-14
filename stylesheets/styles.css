@@ -10,7 +10,7 @@
   --code-bg: #f0f4f8;
   --accent: #19528a;
   --accent-strong: #123c66;
-  --tint: #e9f0f8;
+  --tint: color-mix(in srgb, var(--accent) 9%, var(--bg));
   --shadow: 0 1px 2px rgba(15, 25, 40, 0.08);
   --watermark: 0.16;
 }
@@ -26,7 +26,7 @@
     --code-bg: #1c232b;
     --accent: #6ea8e8;
     --accent-strong: #8fbdf0;
-    --tint: #1a2431;
+    --tint: color-mix(in srgb, var(--accent) 12%, var(--bg));
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     --watermark: 0.08;
   }
@@ -166,10 +166,24 @@ a {
   text-decoration: none;
   text-underline-offset: 0.15em;
 }
+section a:not(:has(img)) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+}
 a:hover,
 a:focus-visible {
   color: var(--accent-strong);
   text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
+::selection {
+  background: color-mix(in srgb, var(--accent) 22%, var(--bg));
+  color: var(--ink-strong);
+}
+:target {
+  scroll-margin-block-start: 1.5rem;
 }
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -355,6 +369,13 @@ header ul a:focus-visible {
   text-decoration: none;
   outline-offset: -2px;
 }
+header ul a:hover strong,
+header ul a:focus-visible strong {
+  color: var(--accent-strong);
+}
+header ul a:active {
+  background: color-mix(in srgb, var(--accent) 18%, var(--panel));
+}
 
 /* screenshots (index) */
 .screenshots {
@@ -370,6 +391,12 @@ header ul a:focus-visible {
   box-shadow:
     var(--shadow),
     0 0 0 1px var(--rule);
+}
+.screenshots img:hover {
+  box-shadow:
+    0 6px 18px rgba(15, 25, 40, 0.16),
+    0 0 0 1px var(--rule);
+  translate: 0 -2px;
 }
 #config {
   top: 8px;
@@ -437,12 +464,34 @@ header ul a:focus-visible {
   }
 }
 
+/* Motion only for people who have not asked for less of it. Page-to-page
+   navigation crossfades the content column while the sidebar stays put
+   (cross-document view transitions; browsers without them just navigate). */
 @media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  .sidebar {
+    view-transition-name: sidebar;
+  }
+  section {
+    view-transition-name: content;
+  }
   header ul a,
+  header ul a strong,
   a {
     transition:
       background-color 120ms ease,
-      color 120ms ease;
+      color 120ms ease,
+      text-decoration-color 120ms ease;
+  }
+  .screenshots img {
+    transition:
+      translate 160ms ease,
+      box-shadow 160ms ease;
   }
 }
 @media print {
