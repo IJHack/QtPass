@@ -120,6 +120,17 @@ public:
   auto getKeyGenDialog() -> QDialog * { return m_keyGenDialog; }
 
   /**
+   * @brief Return whether startup configuration succeeded.
+   *
+   * Reflects the result of the initial configuration check performed in the
+   * constructor (QtPass::init()). When it is false the application cannot be
+   * used (e.g. the user cancelled the first-run wizard), and main() should
+   * exit before ever showing the window.
+   * @return true when QtPass::init() reported a working configuration.
+   */
+  auto initSucceeded() const -> bool { return m_initSucceeded; }
+
+  /**
    * @brief Destroy and clear the key generation dialog.
    */
   void cleanKeygenDialog();
@@ -350,6 +361,9 @@ private:
   QPointer<QDialog> m_keyGenDialog;
   QString m_currentDir;
   TrayIcon *m_tray{};
+  /// Result of QtPass::init() from the constructor; main() consults it via
+  /// initSucceeded() to decide whether the application should start at all.
+  bool m_initSucceeded = false;
 
   void initToolBarButtons();
   void initStatusBar();
