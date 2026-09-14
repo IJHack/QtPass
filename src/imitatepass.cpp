@@ -1144,6 +1144,13 @@ void ImitatePass::Copy(const QString src, const QString dest,
     return;
   }
   QFileInfo destFileInfo(destFile);
+  // A folder destination that is the source's own folder resolves to the
+  // source itself; with force that remove() below would delete the only copy.
+  if (QFileInfo(src) == destFileInfo) {
+    emit critical(tr("Copy failed"),
+                  tr("Could not copy %1 to %2.").arg(src, destFile));
+    return;
+  }
   if (force) {
     QFile::remove(destFile);
   }

@@ -729,6 +729,16 @@ void tst_integration::imitatePass_copyOntoExistingEntryClash() {
   QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted after copy");
   QVERIFY2(showSpy[0][0].toString().contains("copyme"),
            "overwritten entry should now hold the copied content");
+
+  // Copying an entry onto its own folder resolves to the entry itself; with
+  // force that must not delete the only copy.
+  const QByteArray copied = readFileBytes(dst);
+  pass.Copy(dst, storeDir.path(), true);
+  QCOMPARE(criticalSpy.count(), 2);
+  QCOMPARE(criticalSpy[1][0].toString(), QStringLiteral("Copy failed"));
+  QVERIFY2(QFile::exists(dst),
+           "source must survive a copy onto its own folder");
+  QCOMPARE(readFileBytes(dst), copied);
 }
 
 void tst_integration::imitatePass_insertAndRemove() {
