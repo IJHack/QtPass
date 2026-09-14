@@ -2019,7 +2019,14 @@ void tst_util::gpgHomeMissingFallsBackAndWarns() {
     QCOMPARE(env.value(QStringLiteral("GNUPGHOME")), inherited);
   }
   QCOMPARE(status.count(), 1);
-  QVERIFY(status.at(0).at(0).toString().contains(gone));
+  const QString message = status.at(0).at(0).toString();
+  QVERIFY2(message.contains(gone), qPrintable(message));
+  if (inherited.isEmpty()) {
+    QVERIFY2(message.contains(QStringLiteral("default keyring")),
+             qPrintable(message));
+  } else {
+    QVERIFY2(message.contains(inherited), qPrintable(message));
+  }
 }
 
 /// Clearing gpgHome at runtime must not keep exporting the previous path.
