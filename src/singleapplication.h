@@ -33,6 +33,11 @@ public:
   auto isRunning() -> bool;
   /**
    * @brief Send a message to the running instance.
+   *
+   * When delivery fails the peer is taken to have exited since the
+   * constructor probed it: this instance releases its segment and, if it can,
+   * becomes the listening instance itself, so isRunning() turns false and the
+   * window the caller opens next is reachable by later launches.
    * @param message Text to deliver (typically forwarded command-line args).
    * @return true if the message was successfully delivered.
    */
@@ -52,6 +57,21 @@ signals:
   void messageAvailable(const QString &message);
 
 private:
+  /**
+   * @brief Probe whether an instance is actually accepting connections.
+   * @return true if a connection to the unique key succeeded.
+   */
+  auto peerIsListening() -> bool;
+  /**
+   * @brief Claim the segment and listen; no-op when another instance holds it.
+   */
+  void becomePrimary();
+  /**
+   * @brief Deliver a message over the local socket.
+   * @return true if the peer accepted the whole payload.
+   */
+  auto forwardMessage(const QString &message) -> bool;
+
   bool _isRunning;
   QString _uniqueKey;
   QSharedMemory sharedMemory;
