@@ -52,6 +52,12 @@ signals:
   void messageAvailable(const QString &message);
 
 private:
+  /**
+   * @brief Probe whether an instance is actually accepting connections.
+   * @return true if a connection to the unique key succeeded.
+   */
+  auto peerIsListening() -> bool;
+
   bool _isRunning;
   QString _uniqueKey;
   QSharedMemory sharedMemory;

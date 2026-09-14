@@ -127,8 +127,11 @@ auto main(int argc, char *argv[]) -> int {
   }
 
 #if SINGLE_APP
-  if (app.isRunning()) {
-    app.sendMessage(text);
+  // Hand the arguments to the running instance. When that fails (the peer
+  // vanished between the probe and now) start normally instead of exiting
+  // silently, which would leave the user with a launcher click that did
+  // nothing.
+  if (app.isRunning() && app.sendMessage(text)) {
     return 0;
   }
 #endif
