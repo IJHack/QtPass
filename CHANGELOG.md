@@ -2,6 +2,46 @@
 
 ## [Unreleased] — 2.0
 
+First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPass/issues/1682), umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
+
+### Security
+
+- WSL commands run through `wsl --exec` instead of the distribution's login
+  shell, so entry paths, `.gpg-id` recipients and commit messages are no
+  longer word-split or `$()`-expanded [#1686](https://github.com/IJHack/QtPass/pull/1686)
+- The key-generation dialog keeps the passphrase out of the always-visible
+  batch template; it is spliced in only when the key is generated, and batch
+  keywords are matched the way gpg does [#1687](https://github.com/IJHack/QtPass/pull/1687), [#1694](https://github.com/IJHack/QtPass/pull/1694)
+- The re-encryption backup commit only stages tracked files, so a stray
+  plaintext export or editor swap file in the store is no longer committed
+  and auto-pushed [#1685](https://github.com/IJHack/QtPass/pull/1685)
+- New folders never get an unsigned `.gpg-id` when a signing key is
+  configured [#1695](https://github.com/IJHack/QtPass/pull/1695)
+
+### Bugfixes
+
+- "New folder" wrote a zero-byte `.gpg-id`, shadowing the parent recipients
+  and breaking every insert in that folder; it is now seeded from the parent
+  and staged in git [#1688](https://github.com/IJHack/QtPass/pull/1688), [#1698](https://github.com/IJHack/QtPass/pull/1698)
+- `.gpg-id` recipients gpg would accept (v6 fingerprints, user IDs,
+  `=exact` selectors) were dropped silently and then erased on the next
+  UsersDialog save; refused lines are now logged instead [#1684](https://github.com/IJHack/QtPass/pull/1684)
+- The password pane showed `&amp;`, `&quot;`, `&gt;` for values containing
+  `&`, `"`, `>`, and the open-in-browser tooltip did the same for URLs with
+  query strings [#1683](https://github.com/IJHack/QtPass/pull/1683), [#1693](https://github.com/IJHack/QtPass/pull/1693)
+- Re-encryption after a recipient change runs on a worker thread with a
+  cancellable progress dialog and one aggregated error report instead of
+  blocking the window and popping one modal per failed file [#1697](https://github.com/IJHack/QtPass/pull/1697)
+- "Use git" with no git executable configured no longer wedges the command
+  queue, and delete/rename/insert fall back to plain filesystem operations
+  with a status message instead of silently doing nothing [#1691](https://github.com/IJHack/QtPass/pull/1691)
+- Cancelling the first-run wizard quits instead of showing a half-configured
+  window, and an accepted-but-invalid configuration re-asks instead of
+  starting on a broken store [#1689](https://github.com/IJHack/QtPass/pull/1689), [#1696](https://github.com/IJHack/QtPass/pull/1696)
+- Edits typed in the password dialog before the decrypt landed were silently
+  discarded or overwritten; the dialog now stays inert until the content is
+  in [#1690](https://github.com/IJHack/QtPass/pull/1690)
+
 ### Removed
 
 - Qt 5 support. QtPass 2.x requires Qt 6.2 or newer; `qmake` refuses older
@@ -61,7 +101,7 @@
   `ar_MA` → `ar`); Qt's locale fallback picks them up automatically
   [#1328](https://github.com/IJHack/QtPass/pull/1328), [#1350](https://github.com/IJHack/QtPass/pull/1350)
 
-### Security
+### Security <!-- markdownlint-disable-line MD024 -->
 
 - Path-traversal hardening for new file, rename and drag-and-drop targets
   [#1464](https://github.com/IJHack/QtPass/pull/1464)
@@ -71,7 +111,7 @@
   `OTP:` field, and Ctrl+C on an `otpauth://`-only entry no longer copies the
   seed [#1625](https://github.com/IJHack/QtPass/pull/1625)
 
-### Bugfixes
+### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
 - ConfigDialog no longer silently corrupts saved settings [#1602](https://github.com/IJHack/QtPass/pull/1602)
 - PasswordDialog: no content duplication or data loss on premature save
