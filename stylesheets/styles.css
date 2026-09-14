@@ -12,6 +12,14 @@
   --accent-strong: #123c66;
   --tint: color-mix(in srgb, var(--accent) 9%, var(--bg));
   --shadow: 0 1px 2px rgba(15, 25, 40, 0.08);
+  --shadow-window:
+    0 22px 44px -16px rgba(15, 25, 40, 0.38),
+    0 6px 14px -6px rgba(15, 25, 40, 0.18);
+  --shadow-window-lift:
+    0 40px 80px -20px rgba(15, 25, 40, 0.45),
+    0 12px 28px -8px rgba(15, 25, 40, 0.25);
+  --titlebar: #eceff3;
+  --titlebar-dot: #c6ccd4;
   --watermark: 0.16;
 }
 @media (prefers-color-scheme: dark) {
@@ -28,6 +36,14 @@
     --accent-strong: #8fbdf0;
     --tint: color-mix(in srgb, var(--accent) 12%, var(--bg));
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-window:
+      0 22px 44px -16px rgba(0, 0, 0, 0.7),
+      0 6px 14px -6px rgba(0, 0, 0, 0.5);
+    --shadow-window-lift:
+      0 40px 80px -20px rgba(0, 0, 0, 0.8),
+      0 12px 28px -8px rgba(0, 0, 0, 0.6);
+    --titlebar: #2b3138;
+    --titlebar-dot: #4a525b;
     --watermark: 0.08;
   }
 }
@@ -286,6 +302,8 @@ a img {
   grid-area: side;
   position: sticky;
   top: clamp(1rem, 4vw, 3rem);
+  /* above the content column, so the zoomed screenshot paints over it */
+  z-index: 1;
 }
 @media (max-height: 52rem) {
   .sidebar {
@@ -377,32 +395,66 @@ header ul a:active {
   background: color-mix(in srgb, var(--accent) 18%, var(--panel));
 }
 
-/* screenshots (sidebar): main window, click for the settings dialog */
+/* screenshots (sidebar): main window, click for the settings dialog.
+   The window chrome is CSS: a title bar drawn on the figure, so it follows
+   the colour scheme and stays crisp at any density. */
 .screenshots {
   margin: 0 0 1.25rem;
 }
-.screenshots picture {
-  display: block;
+.screenshots .window {
+  position: relative;
+  margin: 0;
+  border-radius: 10px;
+  background: var(--titlebar);
+  box-shadow:
+    var(--shadow-window),
+    0 0 0 1px var(--rule);
+  cursor: pointer;
+  overflow: hidden;
+  transform-origin: left center;
 }
+.screenshots .window::before {
+  content: attr(data-title);
+  display: block;
+  height: 1.6rem;
+  padding: 0 4rem;
+  line-height: 1.6rem;
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background:
+    radial-gradient(circle at 0.8rem 50%, var(--titlebar-dot) 0.24rem, transparent 0.3rem),
+    radial-gradient(circle at 1.7rem 50%, var(--titlebar-dot) 0.24rem, transparent 0.3rem),
+    radial-gradient(circle at 2.6rem 50%, var(--titlebar-dot) 0.24rem, transparent 0.3rem);
+}
+.screenshots picture,
 .screenshots img {
   display: block;
   width: 100%;
   height: auto;
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow:
-    var(--shadow),
-    0 0 0 1px var(--rule);
 }
-.screenshots img:hover {
-  box-shadow:
-    0 6px 18px rgba(15, 25, 40, 0.16),
-    0 0 0 1px var(--rule);
-  translate: 0 -2px;
+.screenshots img {
+  border-top: 1px solid var(--rule);
 }
 .hidden,
-.screenshots img.hidden {
+.screenshots .hidden {
   display: none;
+}
+/* Hover zoom: the window grows out over the main column. Pointer devices in
+   the two-column layout only; a phone gets the plain window. */
+@media (hover: hover) and (min-width: 60rem) {
+  .screenshots .window:hover {
+    transform: scale(1.9);
+    box-shadow:
+      var(--shadow-window-lift),
+      0 0 0 0.5px var(--rule);
+    z-index: 20;
+  }
 }
 
 /* platform badges, app icons, watermark */
@@ -493,10 +545,10 @@ header ul a:active {
       color 120ms ease,
       text-decoration-color 120ms ease;
   }
-  .screenshots img {
+  .screenshots .window {
     transition:
-      translate 160ms ease,
-      box-shadow 160ms ease;
+      transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 320ms ease;
   }
 }
 @media print {
