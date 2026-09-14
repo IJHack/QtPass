@@ -101,7 +101,11 @@ void ImitatePass::GitInit() {
 /**
  * @brief ImitatePass::GitPull git pull wrapper
  */
-void ImitatePass::GitPull() { executeGit(GIT_PULL, {"pull"}); }
+void ImitatePass::GitPull() {
+  if (gitReady()) {
+    executeGit(GIT_PULL, {"pull"});
+  }
+}
 
 /**
  * @brief ImitatePass::GitPull_b git pull wrapper
@@ -114,7 +118,7 @@ void ImitatePass::GitPull_b() {
  * @brief ImitatePass::GitPush git push wrapper
  */
 void ImitatePass::GitPush() {
-  if (m_settings.useGit) {
+  if (gitReady()) {
     executeGit(GIT_PUSH, {"push"});
   }
 }
@@ -176,7 +180,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   }
   args.append("-");
   executeGpg(PASS_INSERT, args, newValue);
-  if (!m_settings.useWebDav && m_settings.useGit) {
+  if (!m_settings.useWebDav && gitReady()) {
     // Git is used when enabled - this is the standard pass workflow
     if (!overwrite) {
       executeGit(GIT_ADD, {"add", pgit(file)});
@@ -212,7 +216,7 @@ void ImitatePass::Remove(QString file, bool isDir) {
   if (!isDir) {
     file += ".gpg";
   }
-  if (m_settings.useGit) {
+  if (gitReady()) {
     executeGit(GIT_RM, {"rm", (isDir ? "-rf" : "-f"), pgit(file)});
     // Normalize path the same way as add/edit operations
     QString path = QDir(m_settings.passStore).relativeFilePath(file);
@@ -453,8 +457,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     }
   }
 
-  const bool useGit = !m_settings.useWebDav && m_settings.useGit &&
-                      !m_settings.gitExecutable.isEmpty();
+  const bool useGit = !m_settings.useWebDav && gitReady();
   QString gpgIdFile = path + ".gpg-id";
   bool addFile = false;
   if (m_settings.addGPGId && useGit) {
@@ -706,7 +709,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   // Success - remove backup
   QFile::remove(backupPath);
 
-  if (!m_settings.useWebDav && m_settings.useGit) {
+  if (!m_settings.useWebDav && gitConfigured()) {
     // -C the store so git runs there rather than in QtPass's launch directory
     // (executeBlocking sets no working directory).
     const QString store = pgit(m_settings.passStore);
@@ -727,7 +730,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
  * @return true if backup created or not needed, false if backup failed.
  */
 auto ImitatePass::createBackupCommit() -> bool {
-  if (!m_settings.useGit || m_settings.gitExecutable.isEmpty()) {
+  if (!gitConfigured()) {
     return true;
   }
   emit statusMsg(tr("Creating backup commit"), 2000);
@@ -872,7 +875,7 @@ void ImitatePass::startReencryptWorker(const QString &dir) {
  */
 auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
   ReencryptResult result;
-  if (m_settings.autoPull && m_settings.useGit) {
+  if (m_settings.autoPull && gitConfigured()) {
     emit statusMsg(tr("Updating password-store"), 2000);
     GitPull_b();
   }
@@ -967,7 +970,7 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
                          .arg(result.reencrypted),
                      3000);
     }
-    if (m_settings.autoPush && m_settings.useGit) {
+    if (m_settings.autoPush && gitConfigured()) {
       emit statusMsg(tr("Updating password-store"), 2000);
       GitPush();
     }
@@ -1092,7 +1095,7 @@ void ImitatePass::Move(const QString src, const QString dest,
   dbg() << "Move Destination: " << destFile;
 #endif
 
-  if (m_settings.useGit) {
+  if (gitReady()) {
     executeMoveGit(src, destFile, force);
   } else {
     QDir qDir;
@@ -1132,7 +1135,7 @@ void ImitatePass::Copy(const QString src, const QString dest,
                   tr("Could not copy %1 to %2.").arg(src, dest));
     return;
   }
-  if (m_settings.useGit) {
+  if (gitReady()) {
     executeGit(GIT_COPY, {"add", pgit(dest)});
     QString message = QString("Copied from %1 to %2 using QtPass.");
     message = message.arg(src, dest);
@@ -1157,22 +1160,42 @@ void ImitatePass::executeGpg(PROCESS id, const QStringList &args, QString input,
 }
 
 /**
+ * @brief ImitatePass::gitConfigured git is enabled and an executable is set.
+ *
+ * useGit can be on while gitExecutable is empty (fresh setup, git removed
+ * later). Handing that empty executable to the Executor used to wedge the
+ * command queue (#1682); the git-only paths must not be taken in that case.
+ * @return true when git commands can actually run.
+ */
+auto ImitatePass::gitConfigured() const -> bool {
+  return m_settings.useGit && !m_settings.gitExecutable.isEmpty();
+}
+
+/**
+ * @brief ImitatePass::gitReady gitConfigured() plus a status message.
+ *
+ * For the user-facing operations: tells the user once per operation why git
+ * was skipped, so the store silently drifting from git does not go unnoticed.
+ * @return true when git commands can actually run.
+ */
+auto ImitatePass::gitReady() -> bool {
+  if (m_settings.useGit && m_settings.gitExecutable.isEmpty()) {
+    emit statusMsg(tr("Git executable not configured, skipping git"), 3000);
+    return false;
+  }
+  return m_settings.useGit;
+}
+
+/**
  * @brief ImitatePass::executeGit easy wrapper for running git commands
  * @param args
  */
 void ImitatePass::executeGit(PROCESS id, const QStringList &args, QString input,
                              bool readStdout, bool readStderr) {
-  // useGit can be enabled with no git executable configured. Handing an empty
-  // executable to the Executor used to register a transaction whose completion
-  // signal could never arrive, wedging the queue so every later operation
-  // stopped reporting (#1682). Skip the git command so the parent operation
-  // (gpg/filesystem) still completes cleanly.
-  if (m_settings.gitExecutable.isEmpty()) {
-#ifdef QT_DEBUG
-    dbg() << "No git executable configured, skipping:" << id;
-#endif
-    return;
-  }
+  // Callers check gitReady() first and fall back to plain filesystem
+  // operations when no git executable is configured. Should an empty
+  // executable still get here, the Executor now reports it as an error
+  // instead of wedging the queue (#1682).
   executeWrapper(id, m_settings.gitExecutable, args, std::move(input),
                  readStdout, readStderr);
 }

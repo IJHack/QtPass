@@ -145,6 +145,17 @@ public:
                   QString input = QString(), bool readStdout = true,
                   bool readStderr = true);
   /**
+   * @brief Git is enabled and an executable is configured.
+   * @return true when git commands can actually run.
+   */
+  auto gitConfigured() const -> bool;
+  /**
+   * @brief gitConfigured() plus a status message when git is enabled but
+   * no executable is configured.
+   * @return true when git commands can actually run.
+   */
+  auto gitReady() -> bool;
+  /**
    * @brief Execute GPG command.
    * @param id Process identifier.
    * @param args GPG arguments.
