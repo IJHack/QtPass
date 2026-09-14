@@ -120,9 +120,13 @@ auto QtPass::init() -> bool {
 
   QtPassSettings::setVersion(VERSION);
 
-  if (!Util::configIsValid(QtPassSettings::load())) {
-    m_mainWindow->config();
-    if (freshStart && !Util::configIsValid(QtPassSettings::load())) {
+  // Ask again until the configuration is usable or the user gives up. The
+  // dialog's OK button is not gated on Util::configIsValid(), so an accepted
+  // first-run configuration can still point at a store without a .gpg-id
+  // (the user declined to create it); only a cancel ends the loop, which
+  // main() turns into an exit before the window is shown.
+  while (!Util::configIsValid(QtPassSettings::load())) {
+    if (!m_mainWindow->config()) {
       return false;
     }
   }
