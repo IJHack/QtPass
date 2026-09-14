@@ -22,7 +22,7 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 - "New folder" wrote a zero-byte `.gpg-id`, shadowing the parent recipients
   and breaking every insert in that folder; it is now seeded from the parent
-  and staged in git [#1688](https://github.com/IJHack/QtPass/pull/1688), [#1698](https://github.com/IJHack/QtPass/pull/1698)
+  and staged in Git [#1688](https://github.com/IJHack/QtPass/pull/1688), [#1698](https://github.com/IJHack/QtPass/pull/1698)
 - `.gpg-id` recipients gpg would accept (v6 fingerprints, user IDs,
   `=exact` selectors) were dropped silently and then erased on the next
   UsersDialog save; refused lines are now logged instead [#1684](https://github.com/IJHack/QtPass/pull/1684)
@@ -32,7 +32,7 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 - Re-encryption after a recipient change runs on a worker thread with a
   cancellable progress dialog and one aggregated error report instead of
   blocking the window and popping one modal per failed file [#1697](https://github.com/IJHack/QtPass/pull/1697)
-- "Use git" with no git executable configured no longer wedges the command
+- "Use Git" with no Git executable configured no longer wedges the command
   queue, and delete/rename/insert fall back to plain filesystem operations
   with a status message instead of silently doing nothing [#1691](https://github.com/IJHack/QtPass/pull/1691)
 - Cancelling the first-run wizard quits instead of showing a half-configured
