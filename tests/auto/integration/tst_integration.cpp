@@ -27,6 +27,7 @@
 #include <QProcess>
 #include <QPushButton>
 #include <QRegularExpression>
+#include <QSaveFile>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryDir>
@@ -310,6 +311,8 @@ private Q_SLOTS:
   void imitatePass_gitCopyAndShow();
   void imitatePass_usersDialogListsAndFilters();
   void imitatePass_multiRecipientReencryptChangesRecipients();
+  void imitatePass_insertIgnoresGpgConfEncryptTo();
+  void imitatePass_reencryptIgnoresGpgConfEncryptTo();
   void imitatePass_reencryptPreservesPerFolderRecipients();
   void mainWindow_selectingEntryShowsDecryptedContent();
   void mainWindow_editEntryThroughModalDialogUpdatesContent();
@@ -934,6 +937,157 @@ void tst_integration::imitatePass_multiRecipientReencryptChangesRecipients() {
   QVERIFY2(!after.contains(sub2),
            qPrintable(QStringLiteral("re-encrypted entry must drop the removed "
                                      "recipient, got: %1")
+                          .arg(after.join(','))));
+}
+
+/**
+ * @brief Append @p line to the shared test gpg.conf for the lifetime of the
+ * returned guard; the original file is restored when the guard goes out of
+ * scope, so later tests see the plain configuration again.
+ */
+class GpgConfLine {
+public:
+  GpgConfLine(const QString &gnupgHome, const QString &line)
+      : m_path(QDir::cleanPath(gnupgHome + "/gpg.conf")) {
+    QFile f(m_path);
+    if (!f.open(QIODevice::ReadOnly))
+      return;
+    m_original = f.readAll();
+    f.close();
+    // Atomic replacement: a short write must not leave gpg with a truncated
+    // configuration, in this test or the ones after it.
+    QSaveFile replacement(m_path);
+    if (!replacement.open(QIODevice::WriteOnly))
+      return;
+    const QByteArray payload = m_original + line.toUtf8() + "\n";
+    m_ok = replacement.write(payload) == payload.size() && replacement.commit();
+  }
+  ~GpgConfLine() {
+    QSaveFile replacement(m_path);
+    if (replacement.open(QIODevice::WriteOnly) &&
+        replacement.write(m_original) == m_original.size()) {
+      replacement.commit();
+    }
+  }
+  GpgConfLine(const GpgConfLine &) = delete;
+  auto operator=(const GpgConfLine &) -> GpgConfLine & = delete;
+  auto ok() const -> bool { return m_ok; }
+
+private:
+  QString m_path;
+  QByteArray m_original;
+  bool m_ok = false;
+};
+
+/**
+ * @brief A user's gpg.conf `encrypt-to` must not add a hidden recipient.
+ *
+ * With `encrypt-to <second key>` in gpg.conf, Insert() must still produce a
+ * file encrypted only to the key listed in .gpg-id (negative), and that file
+ * must still decrypt to the inserted content (positive). Without
+ * --no-encrypt-to on the encrypt argv gpg would silently add the second key.
+ */
+void tst_integration::imitatePass_insertIgnoresGpgConfEncryptTo() {
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  GpgConfLine encryptTo(m_gnupgHome.path(),
+                        QStringLiteral("encrypt-to ") + m_keyFingerprint2);
+  QVERIFY2(encryptTo.ok(), "failed to add encrypt-to to gpg.conf");
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("hidden-recipient"), QStringLiteral("secret\n"),
+              false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  const QString gpgFile =
+      QDir::cleanPath(storeDir.path() + "/hidden-recipient.gpg");
+  QVERIFY2(QFile::exists(gpgFile), "encrypted entry must exist after insert");
+
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY2(!sub1.isEmpty() && !sub2.isEmpty(),
+           "both keys must have an encryption subkey");
+
+  const QStringList ids = recipientKeyIds(m_gnupgHome.path(), gpgFile);
+  QVERIFY2(ids.contains(sub1),
+           qPrintable(QStringLiteral("entry must target the .gpg-id key, "
+                                     "got: %1")
+                          .arg(ids.join(','))));
+  QVERIFY2(!ids.contains(sub2),
+           qPrintable(QStringLiteral("gpg.conf encrypt-to must not add a "
+                                     "recipient, got: %1")
+                          .arg(ids.join(','))));
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("hidden-recipient"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted");
+  QVERIFY2(showSpy[0][0].toString().contains(QStringLiteral("secret")),
+           "entry must still decrypt to the inserted content");
+}
+
+/**
+ * @brief The same guarantee for the re-encryption path: rewriting a file for
+ * the current .gpg-id must not pick up gpg.conf's `encrypt-to` recipient.
+ */
+void tst_integration::imitatePass_reencryptIgnoresGpgConfEncryptTo() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+
+  // Start with both keys so the entry needs rewriting once key2 is dropped.
+  auto writeGpgId = [&storeDir](const QStringList &fprs) -> bool {
+    QFile f(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return false;
+    const QByteArray payload = (fprs.join('\n') + "\n").toUtf8();
+    return f.write(payload) == payload.size();
+  };
+  QVERIFY(writeGpgId({m_keyFingerprint, m_keyFingerprint2}));
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("shrink"), QStringLiteral("secret\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+  const QString gpgFile = QDir::cleanPath(storeDir.path() + "/shrink.gpg");
+  QVERIFY(QFile::exists(gpgFile));
+
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY2(!sub1.isEmpty() && !sub2.isEmpty(),
+           "both keys must have an encryption subkey");
+
+  // Drop key2 from .gpg-id, but have gpg.conf try to sneak it back in.
+  QVERIFY(writeGpgId({m_keyFingerprint}));
+  GpgConfLine encryptTo(m_gnupgHome.path(),
+                        QStringLiteral("encrypt-to ") + m_keyFingerprint2);
+  QVERIFY2(encryptTo.ok(), "failed to add encrypt-to to gpg.conf");
+
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir.path());
+    QVERIFY2(waitForSignal(endSpy, 60000), "endReencryptPath not emitted");
+  }
+
+  const QStringList after = recipientKeyIds(m_gnupgHome.path(), gpgFile);
+  QVERIFY2(after.contains(sub1),
+           qPrintable(QStringLiteral("re-encrypted entry must target the kept "
+                                     "key, got: %1")
+                          .arg(after.join(','))));
+  QVERIFY2(!after.contains(sub2),
+           qPrintable(QStringLiteral("gpg.conf encrypt-to must not re-add the "
+                                     "removed recipient, got: %1")
                           .arg(after.join(','))));
 }
 
