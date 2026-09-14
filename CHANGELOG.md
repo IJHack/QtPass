@@ -106,6 +106,12 @@ line ([#1709](https://github.com/IJHack/QtPass/issues/1709)). Qt 5.15 and Qt 6 a
   queue; delete, rename, insert, copy, init, pull and push fall back to plain
   filesystem operations with a status message instead of silently doing
   nothing [#1716](https://github.com/IJHack/QtPass/pull/1716) (ported from [#1691](https://github.com/IJHack/QtPass/pull/1691))
+- A configured GPG home that no longer exists is ignored with a status message
+  instead of making every gpg call fail with "No secret key" (the 1.7.0 test
+  suite left its temporary keyring path in the live settings when `make check`
+  ran as the user), closes [#1711](https://github.com/IJHack/QtPass/issues/1711) [#1741](https://github.com/IJHack/QtPass/pull/1741) (ported from [#1740](https://github.com/IJHack/QtPass/pull/1740))
+- `make check` no longer kills the developer's own gpg-agent
+  [#1739](https://github.com/IJHack/QtPass/pull/1739) (ported from [#1738](https://github.com/IJHack/QtPass/pull/1738))
 
 ## [1.8.0](https://github.com/IJHack/QtPass/tree/v1.8.0) (2026-09-13)
 
