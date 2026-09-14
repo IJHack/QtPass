@@ -1,12 +1,16 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QFileInfo>
 #include <QProcessEnvironment>
+#include <QScopedPointer>
 #include <QStandardPaths>
 #include <QTemporaryDir>
+#include <QThread>
 #include <QtTest>
+#include <atomic>
 
 #include "../../../src/executor.h"
 #include "../../../src/pass.h"
@@ -41,6 +45,9 @@ private Q_SLOTS:
   void executeAsyncEmptyExecutableEmitsErrorAndContinues();
   void executeAsyncCrashExitReportsNonZeroCode();
   void cancelNextWhileRunningReturnsMinusOne();
+  void executeBlockingCancelFlagEndsChild();
+  void executeBlockingCancelFlagKillsChildIgnoringTerminate();
+  void executeBlockingCancelFlagAlreadySetSkipsStart();
   void wslPrefixBlockingUsesExec();
   void wslPrefixAsyncUsesExec();
 #endif
@@ -576,6 +583,83 @@ void tst_executor::cancelNextWhileRunningReturnsMinusOne() {
   exec.execute(1, sh, {"-c", "sleep 2"}, false, false);
   exec.execute(2, sh, {"-c", "echo queued"}, false, false);
   QCOMPARE(exec.cancelNext(), -1);
+}
+
+namespace {
+/**
+ * Run @p script through `sh -c` on the cancellable executeBlocking() overload
+ * while a second thread sets the cancel flag after @p delayMs. The second
+ * thread only touches the atomic, never the QProcess; the calling thread is
+ * blocked inside executeBlocking(), so it cannot arm a timer of its own.
+ * Returns the exit code and stores the wall time in @p elapsedMs.
+ */
+int runCancelled(const QString &sh, const QString &script, int delayMs,
+                 qint64 *elapsedMs, QProcess *process) {
+  std::atomic_bool cancel{false};
+  QScopedPointer<QThread> setter(QThread::create([&cancel, delayMs]() {
+    QThread::msleep(delayMs);
+    cancel.store(true);
+  }));
+  setter->start();
+  QElapsedTimer elapsed;
+  elapsed.start();
+  const int rc = Executor::executeBlocking(
+      *process, sh, {"-c", script}, QString(), nullptr, nullptr, &cancel);
+  *elapsedMs = elapsed.elapsed();
+  setter->wait();
+  return rc;
+}
+} // namespace
+
+// Setting the flag from another thread must make the calling thread end its
+// child and return non-zero within seconds, not after the 60 s sleep.
+void tst_executor::executeBlockingCancelFlagEndsChild() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QProcess process;
+  qint64 elapsedMs = 0;
+  const int rc = runCancelled(sh, QStringLiteral("exec sleep 60"), 300,
+                              &elapsedMs, &process);
+  QVERIFY2(rc != 0, "a cancelled run must not report success");
+  QVERIFY2(elapsedMs < 3000,
+           qPrintable(QStringLiteral("cancel took %1 ms").arg(elapsedMs)));
+  QCOMPARE(process.state(), QProcess::NotRunning);
+}
+
+// A child that ignores SIGTERM is kill()ed by the same thread after the grace
+// period; the run still ends well before the sleep would.
+void tst_executor::executeBlockingCancelFlagKillsChildIgnoringTerminate() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QProcess process;
+  qint64 elapsedMs = 0;
+  // No exec: the trap must apply to the process that receives the SIGTERM.
+  const int rc = runCancelled(sh, QStringLiteral("trap '' TERM; sleep 60"), 300,
+                              &elapsedMs, &process);
+  QVERIFY2(rc != 0, "a killed run must not report success");
+  QVERIFY2(elapsedMs < 5000,
+           qPrintable(QStringLiteral("cancel took %1 ms").arg(elapsedMs)));
+  QCOMPARE(process.state(), QProcess::NotRunning);
+}
+
+// A flag that is already set must refuse the run without starting anything.
+void tst_executor::executeBlockingCancelFlagAlreadySetSkipsStart() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString marker = tmp.filePath(QStringLiteral("started"));
+  const std::atomic_bool cancel{true};
+  QProcess process;
+  const int rc = Executor::executeBlocking(
+      process, sh, {"-c", QStringLiteral(": > '%1'").arg(marker)}, QString(),
+      nullptr, nullptr, &cancel);
+  QCOMPARE(rc, -1);
+  QVERIFY2(!QFile::exists(marker), "the child must not have been started");
+  QCOMPARE(process.state(), QProcess::NotRunning);
 }
 
 namespace {

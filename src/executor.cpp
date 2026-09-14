@@ -10,6 +10,14 @@
 #include "debughelper.h"
 #endif
 
+namespace {
+/// How often a cancellable blocking run re-checks its cancel flag.
+constexpr int kBlockingCancelPollMs = 100;
+/// Grace between terminate() and kill() once a blocking run is cancelled;
+/// gpg and git exit on SIGTERM well within this.
+constexpr int kBlockingKillGraceMs = 1000;
+} // namespace
+
 /**
  * @brief Executor::Executor executes external applications
  * @param parent
@@ -246,6 +254,7 @@ static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
  * @param input
  * @param process_out
  * @param process_err
+ * @param cancel
  * @return
  *
  * Note: Returning error code instead of throwing to maintain compatibility
@@ -253,7 +262,10 @@ static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
  */
 auto Executor::runBlocking(QProcess &process, const QString &app,
                            const QStringList &args, const QString &input,
-                           QString *process_out, QString *process_err) -> int {
+                           QString *process_out, QString *process_err,
+                           const std::atomic_bool *cancel) -> int {
+  if (cancel != nullptr && cancel->load())
+    return -1;
   startProcessBlocking(process, app, args);
   if (!process.waitForStarted(-1)) {
 #ifdef QT_DEBUG
@@ -272,7 +284,27 @@ auto Executor::runBlocking(QProcess &process, const QString &app,
   // Always close stdin so a child blocking on EOF doesn't hang when no
   // input is written (these are one-shot blocking runs that never stream).
   process.closeWriteChannel();
-  process.waitForFinished(-1);
+  if (cancel == nullptr) {
+    process.waitForFinished(-1);
+  } else {
+    // Poll so a flag set by another thread is noticed within one interval.
+    // Every QProcess call, including the terminate()/kill() that end the
+    // child, stays on this thread: the other thread only sets the flag, so
+    // it can never act on a process that has already exited (or on a pid
+    // the OS has since handed to something else).
+    while (!process.waitForFinished(kBlockingCancelPollMs)) {
+      if (process.state() == QProcess::NotRunning)
+        break;
+      if (cancel->load()) {
+        process.terminate();
+        if (!process.waitForFinished(kBlockingKillGraceMs)) {
+          process.kill();
+          process.waitForFinished(-1);
+        }
+        return -1;
+      }
+    }
+  }
   if (process.exitStatus() != QProcess::NormalExit) {
     // Process failed to start or crashed; return -1 to indicate error.
     // The calling code checks for non-zero exit codes for error handling.
@@ -302,13 +334,15 @@ auto Executor::executeBlocking(const QString &app, const QStringList &args,
  * @param input
  * @param process_out
  * @param process_err
+ * @param cancel Optional flag that ends the run when set (see the header).
  * @return
  */
 auto Executor::executeBlocking(QProcess &process, const QString &app,
                                const QStringList &args, const QString &input,
-                               QString *process_out, QString *process_err)
-    -> int {
-  return runBlocking(process, app, args, input, process_out, process_err);
+                               QString *process_out, QString *process_err,
+                               const std::atomic_bool *cancel) -> int {
+  return runBlocking(process, app, args, input, process_out, process_err,
+                     cancel);
 }
 
 /**

@@ -5,18 +5,12 @@
 #include "util.h"
 #include <QDirIterator>
 #include <QElapsedTimer>
-#include <QMutexLocker>
 #include <QPointer>
 #include <QProcess>
 #include <QRegularExpression>
 #include <QThread>
 #include <QTimer>
 #include <utility>
-#ifdef Q_OS_WIN
-#include <windows.h>
-#else
-#include <csignal>
-#endif
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -45,12 +39,6 @@ using Enums::PASS_REMOVE;
 using Enums::PASS_SHOW;
 using Enums::PROCESS_COUNT;
 
-namespace {
-/// Grace between asking the re-encryption worker's process to terminate and
-/// killing it; gpg and git exit on SIGTERM well within this.
-constexpr int kReencryptKillGraceMs = 1000;
-} // namespace
-
 /**
  * @brief ImitatePass::ImitatePass for situations when pass is not available
  * we imitate the behavior of pass https://www.passwordstore.org/
@@ -73,19 +61,15 @@ ImitatePass::~ImitatePass() {
     }
   }
   // Unlike the grep workers, the re-encryption worker calls member functions
-  // and so must not outlive this object. Cancel it: from now on it starts no
-  // further process, the one it is blocked on (gpg waiting on pinentry while
-  // the user quits, say) is asked to terminate and killed if it ignores that,
-  // and then the thread is joined. A timeout on the join alone would not be
-  // safe, since the worker would go on touching this object's members; the
-  // wait is bounded by the worker's non-process work once its process is gone.
+  // and so must not outlive this object. Cancel it and join. A timeout on the
+  // join would not be safe, since the worker would go on touching this
+  // object's members, and none is needed: the worker polls the flag while it
+  // waits on a process (see execBlocking()), ends that process itself (gpg
+  // waiting on pinentry while the user quits, say) within the poll interval
+  // plus the kill grace, and its remaining work is not process-bound.
   if (m_reencryptThread && m_reencryptThread->isRunning()) {
     m_reencryptCancel.store(true);
-    interruptReencryptProcess(false);
-    if (!m_reencryptThread->wait(kReencryptKillGraceMs)) {
-      interruptReencryptProcess(true);
-      m_reencryptThread->wait();
-    }
+    m_reencryptThread->wait();
   }
 }
 
@@ -95,13 +79,13 @@ ImitatePass::~ImitatePass() {
  * The helpers (verifyGpgIdFile(), getKeysFromFile(), reencryptSingleFile(),
  * createBackupCommit()) are shared between the owning thread and the
  * re-encryption worker; the ImitatePass thread affinity tells the two apart.
- * On the worker the OS pid of the process is registered in m_reencryptPid
- * for the lifetime of the run so a cancel can terminate it, and nothing is
- * started any more once m_reencryptCancel is set. The registration happens
- * from the started() signal, which QProcess emits synchronously on this
- * thread once the child exists, so a cancel that lands between the flag check
- * and the start still reaches the process. Only the pid crosses threads: the
- * QProcess itself is not thread-safe and stays with the worker.
+ * On the worker the run is handed m_reencryptCancel: nothing is started once
+ * the flag is set, and while a process runs the wait polls the flag and, when
+ * it gets set, terminates and if need be kills the process. All of that
+ * happens on the worker thread, which owns the QProcess. The other threads
+ * (cancelReencryptPath(), the destructor) only ever set the flag; they hold
+ * neither the QProcess nor its pid, so they cannot act on a process that has
+ * exited in the meantime, nor on a pid the OS has since reused.
  */
 auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
                                const QString &input, QString *process_out,
@@ -109,60 +93,15 @@ auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
   if (QThread::currentThread() == thread())
     return Executor::executeBlocking(app, args, input, process_out,
                                      process_err);
-  if (m_reencryptCancel.load())
-    return -1;
   QProcess process;
-  connect(&process, &QProcess::started, &process, [this, &process]() {
-    QMutexLocker lock(&m_reencryptProcessMutex);
-    m_reencryptPid = process.processId();
-    if (m_reencryptCancel.load())
-      process.terminate();
-  });
-  const int rc = Executor::executeBlocking(process, app, args, input,
-                                           process_out, process_err);
-  QMutexLocker lock(&m_reencryptProcessMutex);
-  m_reencryptPid = 0;
-  return rc;
+  return Executor::executeBlocking(process, app, args, input, process_out,
+                                   process_err, &m_reencryptCancel);
 }
 
 auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
                                QString *process_out, QString *process_err)
     -> int {
   return execBlocking(app, args, QString(), process_out, process_err);
-}
-
-/**
- * @brief Signal the process the worker is blocked on, if any.
- *
- * Works on the pid rather than the worker's QProcess: QProcess is not
- * thread-safe, and its terminate()/kill() read state that the worker tears
- * down when the child exits, before it gets to clear the registration. The
- * pid is copied under the mutex and then handed to the OS directly. On Unix
- * this is SIGTERM or SIGKILL, matching QProcess. On Windows QProcess's
- * terminate() would post WM_CLOSE, which a console gpg or git ignores anyway,
- * so only the forced variant does anything there and TerminateProcess()es
- * the child.
- */
-void ImitatePass::interruptReencryptProcess(bool force) {
-  qint64 pid = 0;
-  {
-    QMutexLocker lock(&m_reencryptProcessMutex);
-    pid = m_reencryptPid;
-  }
-  if (pid <= 0)
-    return;
-#ifdef Q_OS_WIN
-  if (!force)
-    return;
-  HANDLE handle =
-      OpenProcess(PROCESS_TERMINATE, FALSE, static_cast<DWORD>(pid));
-  if (handle != nullptr) {
-    TerminateProcess(handle, 1);
-    CloseHandle(handle);
-  }
-#else
-  ::kill(static_cast<pid_t>(pid), force ? SIGKILL : SIGTERM);
-#endif
 }
 
 auto ImitatePass::translatePathForWsl(const QString &path,
@@ -925,21 +864,18 @@ void ImitatePass::reencryptPath(const QString &dir) {
 /**
  * @brief Stop a running re-encryption promptly.
  *
- * Sets the cancel flag first, so the worker starts no further process, then
- * asks the process it is blocked on to terminate. terminate() is only a
- * request (SIGTERM; WM_CLOSE on Windows, which a console gpg ignores), so
- * whatever is still running after the grace period is killed. A new run
- * clears the flag, which is what keeps the delayed kill away from it.
+ * Only sets the cancel flag. The worker starts no further process once it is
+ * set, and the process it is blocked on is ended by the worker itself: the
+ * cancellable Executor::executeBlocking() polls the flag and, on seeing it,
+ * terminate()s the child and kill()s it if it is still running after the
+ * grace period (terminate() is only a request: SIGTERM, or WM_CLOSE on
+ * Windows, which a console gpg ignores). Nothing here touches the worker's
+ * QProcess or its pid. A new run clears the flag.
  */
 void ImitatePass::cancelReencryptPath() {
   if (!m_reencryptActive)
     return;
   m_reencryptCancel.store(true);
-  interruptReencryptProcess(false);
-  QTimer::singleShot(kReencryptKillGraceMs, this, [this]() {
-    if (m_reencryptCancel.load())
-      interruptReencryptProcess(true);
-  });
 }
 
 /**
@@ -995,9 +931,10 @@ void ImitatePass::startReencryptWorker(const QString &dir) {
  * transaction state stays on the owning thread. Signals emitted from here
  * (statusMsg, critical, reencryptProgress) are delivered queued to their
  * GUI-thread receivers. The cancel flag is checked between files, and a
- * cancel also interrupts the process in progress (see cancelReencryptPath()):
- * a helper that fails while the flag is set was interrupted, so its file is
- * neither counted as checked nor reported as failed.
+ * cancel also ends the process in progress from this thread (see
+ * execBlocking()): a helper that fails while the flag is set was
+ * interrupted, so its file is neither counted as checked nor reported as
+ * failed.
  */
 auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
   ReencryptResult result;

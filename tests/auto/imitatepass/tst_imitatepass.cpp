@@ -13,8 +13,9 @@
  * files, and endReencryptPath() always closes the run.
  *
  * A third pair uses a fake gpg that blocks (sleeps) to check that a cancel,
- * and destroying the ImitatePass, interrupt the process in progress instead
- * of waiting for it.
+ * and destroying the ImitatePass, make the worker end the process in
+ * progress instead of waiting for it: the cancel only sets a flag, the
+ * worker's wait loop terminates and, if need be, kills its own child.
  *
  * A second group swaps in a recording fake gpg to check the argv QtPass hands
  * to gpg on encryption: every encrypt call must carry --no-encrypt-to (and
@@ -65,9 +66,9 @@ class tst_imitatepass : public QObject {
   }
 
   /// Write a fake gpg that touches @p marker and then blocks for @p seconds.
-  /// `exec` so the signal a cancel sends lands on the sleep itself rather than
-  /// on a shell that would leave it behind. Returns the script path, or an
-  /// empty string on failure.
+  /// `exec` so the SIGTERM the worker's terminate() sends lands on the sleep
+  /// itself rather than on a shell that would leave it behind. Returns the
+  /// script path, or an empty string on failure.
   static QString writeBlockingGpg(const QString &dir, const QString &marker,
                                   int seconds, bool ignoreTerm = false) {
     const QString script = QDir(dir).filePath("blocking-gpg.sh");
@@ -79,7 +80,8 @@ class tst_imitatepass : public QObject {
         << ": > '" << marker << "'\n";
     if (ignoreTerm) {
       // Stay in the shell (no exec) so the trap applies to the process the
-      // cancel signals; sleep runs as a child and is left to exit on its own.
+      // worker terminate()s; sleep runs as a child and is left to exit on its
+      // own.
       out << "trap '' TERM\n"
           << "sleep " << seconds << "\n";
     } else {
@@ -427,9 +429,10 @@ void tst_imitatepass::reencryptPathCancelInterruptsActiveProcess() {
 }
 
 /**
- * @brief A process that ignores the polite terminate must still be ended by
- * the delayed forced kill after the grace period. The fake gpg traps SIGTERM,
- * so only SIGKILL can end it; the run must finish well before the 60 s sleep.
+ * @brief A process that ignores the polite terminate() must still be ended by
+ * the kill() fallback of the worker's wait loop once the grace period is
+ * over. The fake gpg traps SIGTERM, so only SIGKILL can end it; the run must
+ * finish well before the 60 s sleep.
  */
 void tst_imitatepass::reencryptPathCancelKillsProcessIgnoringTerminate() {
 #ifdef Q_OS_WIN
@@ -476,7 +479,8 @@ void tst_imitatepass::reencryptPathCancelKillsProcessIgnoringTerminate() {
 /**
  * @brief Destroying the ImitatePass while its worker is blocked in gpg must
  * not hang: the destructor cannot just time out the join (the worker touches
- * the object's members), so it has to interrupt the process and then join.
+ * the object's members), so it sets the cancel flag, on which the worker ends
+ * its own gpg, and then joins.
  */
 void tst_imitatepass::destructorInterruptsActiveReencryptProcess() {
 #ifdef Q_OS_WIN
