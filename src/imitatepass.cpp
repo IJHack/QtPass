@@ -1034,6 +1034,9 @@ void ImitatePass::Copy(const QString src, const QString dest,
                   tr("Could not copy %1 to %2.").arg(src, destFile));
     return;
   }
+  // QFileInfo caches; the comparison above may have looked at a path that did
+  // not exist yet, so re-read it before deciding what to re-encrypt.
+  destFileInfo.refresh();
   if (gitReady()) {
     executeGit(GIT_COPY, {"add", pgit(destFile)});
     QString message = QString("Copied from %1 to %2 using QtPass.");
