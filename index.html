@@ -137,69 +137,132 @@
   <body>
     <div class="background"></div>
     <div class="wrapper">
-      <header>
-        <h1><img class="mark" src="images/logo.svg" alt="" width="32" height="32" />QtPass <small>1.8.0</small></h1>
-        <p>
-          A password manager for everyone. Works on Linux, Windows, and macOS.
-        </p>
-
-        <p class="view">
-          <a title="Get Started" href="/getting-started"
-            ><strong>Get Started</strong></a
-          >
-          -
-          <a title="Advanced Features" href="/advanced"
-            ><strong>Advanced</strong></a
-          >
-          <a title="QtPass project" href="https://github.com/IJHack/QtPass"
-            >GitHub <small>IJHack/QtPass</small></a
-          >
-        </p>
-
-        <ul>
-          <li>
-            <a
-              title="QtPass releases"
-              href="https://github.com/IJHack/QtPass/releases"
-              >Download <strong>Releases</strong></a
-            >
-          </li>
-          <li>
-            <a title="QtPass Windows" href="/downloads#Windows"
-              >Installer .exe <strong>Windows</strong></a
-            >
-          </li>
-          <li>
-            <a title="QtPass macOS" href="/downloads#macOS"
-              >Get a .dmg <strong>macOS</strong></a
-            >
-          </li>
-        </ul>
-
-        <div class="screenshots">
-          <picture
-            ><source srcset="images/qtpass.webp" type="image/webp" />
+      <aside class="sidebar">
+        <header>
+          <h1>
             <img
-              id="qtpass"
-              src="images/qtpass.png"
-              width="768"
-              height="596"
-              alt="QtPass MainWindow"
-          /></picture>
-          <picture
-            ><source srcset="images/config.webp" type="image/webp" />
+              class="mark"
+              src="images/logo.svg"
+              alt=""
+              width="32"
+              height="32"
+            />QtPass <small>1.8.0</small>
+          </h1>
+          <p>
+            A password manager for everyone. Works on Linux, Windows, and macOS.
+          </p>
+
+          <p class="view">
+            <a title="Get Started" href="/getting-started"
+              ><strong>Get Started</strong></a
+            >
+            -
+            <a title="Advanced Features" href="/advanced"
+              ><strong>Advanced</strong></a
+            >
+            <a title="QtPass project" href="https://github.com/IJHack/QtPass"
+              >GitHub <small>IJHack/QtPass</small></a
+            >
+          </p>
+
+          <ul>
+            <li>
+              <a
+                title="QtPass releases"
+                href="https://github.com/IJHack/QtPass/releases"
+                >Download <strong>Releases</strong></a
+              >
+            </li>
+            <li>
+              <a title="QtPass Windows" href="/downloads#Windows"
+                >Installer .exe <strong>Windows</strong></a
+              >
+            </li>
+            <li>
+              <a title="QtPass macOS" href="/downloads#macOS"
+                >Get a .dmg <strong>macOS</strong></a
+              >
+            </li>
+          </ul>
+
+          <div class="screenshots">
+            <picture
+              ><source srcset="images/qtpass.webp" type="image/webp" />
+              <img
+                id="qtpass"
+                src="images/qtpass.png"
+                width="768"
+                height="596"
+                alt="QtPass MainWindow"
+            /></picture>
+            <picture
+              ><source srcset="images/config.webp" type="image/webp" />
+              <img
+                id="config"
+                class="hidden"
+                src="images/config.png"
+                loading="lazy"
+                decoding="async"
+                width="900"
+                height="637"
+                alt="QtPass Configuration"
+            /></picture>
+          </div>
+        </header>
+        <footer>
+          <p>
+            This project is maintained by
+            <a title="IJhack on GitHub" href="https://github.com/IJHack"
+              >IJHack</a
+            >
+          </p>
+          <p>
+            <a title="Latest documentation" href="/docs/">API Documentation</a>
+          </p>
+          <a href="https://repology.org/metapackage/qtpass">
             <img
-              id="config"
-              class="hidden"
-              src="images/config.png"
-              loading="lazy"
-              decoding="async"
-              width="900"
-              height="637"
-              alt="QtPass Configuration"
-          /></picture>
-        </div>
-      </header>
+              src="https://repology.org/badge/latest-versions/qtpass.svg"
+              alt="latest packaged version(s)"
+            />
+          </a>
+          <br />
+          <a href="https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml">
+            <img
+              src="https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml/badge.svg?branch=main"
+              alt="Build Status"
+            />
+          </a>
+          <a href="https://api.reuse.software/info/github.com/IJHack/QtPass">
+            <img
+              src="https://api.reuse.software/badge/github.com/IJHack/QtPass"
+              alt="REUSE status"
+            />
+          </a>
+          <p>
+            <small
+              >Based on a theme by
+              <a href="https://github.com/orderedlist">orderedlist</a></small
+            >
+          </p>
+          <p>
+            <small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small>
+          </p>
+          <p>
+            <small
+              ><a title="QtPass privacy policy" href="/privacy"
+                >Privacy</a
+              ></small
+            >
+          </p>
+          <p>
+            <small
+              ><a title="Older version" href="/old"
+                >Older version with more details</a
+              ></small
+            >
+          </p>
+        </footer>
+      </aside>
       <section>
         <h2>
           <a id="overview" class="anchor" href="#overview" aria-hidden="true"
@@ -410,57 +473,6 @@ qmake6 &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
           changelog, and known issues.
         </p>
       </section>
-      <footer>
-        <p>
-          This project is maintained by
-          <a title="IJhack on GitHub" href="https://github.com/IJHack"
-            >IJHack</a
-          >
-        </p>
-        <p>
-          <a title="Latest documentation" href="/docs/">API Documentation</a>
-        </p>
-        <a href="https://repology.org/metapackage/qtpass">
-          <img
-            src="https://repology.org/badge/latest-versions/qtpass.svg"
-            alt="latest packaged version(s)"
-          />
-        </a>
-        <br />
-        <a href="https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml">
-          <img
-            src="https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml/badge.svg?branch=main"
-            alt="Build Status"
-          />
-        </a>
-        <a href="https://api.reuse.software/info/github.com/IJHack/QtPass">
-          <img
-            src="https://api.reuse.software/badge/github.com/IJHack/QtPass"
-            alt="REUSE status"
-          />
-        </a>
-        <p>
-          <small
-            >Based on a theme by
-            <a href="https://github.com/orderedlist">orderedlist</a></small
-          >
-        </p>
-        <p>
-          <small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small>
-        </p>
-        <p>
-          <small
-            ><a title="QtPass privacy policy" href="/privacy">Privacy</a></small
-          >
-        </p>
-        <p>
-          <small
-            ><a title="Older version" href="/old"
-              >Older version with more details</a
-            ></small
-          >
-        </p>
-      </footer>
     </div>
     <script type="application/ld+json">
       {

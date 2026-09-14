@@ -262,21 +262,27 @@ a img {
   margin-inline: auto;
   display: grid;
   grid-template-columns: minmax(15rem, 19rem) minmax(0, 1fr);
-  grid-template-areas: "side main" "foot main";
+  grid-template-areas: "side main";
   column-gap: clamp(2rem, 6vw, 5rem);
   align-items: start;
 }
-/* The sidebar scrolls with the page: a sticky header would slide over the
-   footer that sits below it in the same column. */
-header {
+/* Header and footer share one sticky sidebar. On viewports shorter than the
+   sidebar it flows with the page instead of clipping. */
+.sidebar {
   grid-area: side;
+  position: sticky;
+  top: clamp(1rem, 4vw, 3rem);
+}
+@media (max-height: 52rem) {
+  .sidebar {
+    position: static;
+  }
 }
 section {
   grid-area: main;
   min-width: 0;
 }
 footer {
-  grid-area: foot;
   margin-block-start: 2rem;
   font-size: 0.85em;
   color: var(--muted);
@@ -406,7 +412,7 @@ header ul a:focus-visible {
 @media (max-width: 60rem) {
   .wrapper {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "side" "main" "foot";
+    grid-template-areas: "side" "main";
     row-gap: 1.5rem;
   }
   section {
