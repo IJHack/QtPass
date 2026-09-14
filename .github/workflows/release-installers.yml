@@ -81,6 +81,7 @@ jobs:
         with:
           # The Windows installer ships on Qt 6.8 (LTS).
           version: "6.8"
+          cache: true
 
       - name: Install Inno Setup
         if: steps.need_build.outputs.run_build == 'true'
@@ -181,6 +182,7 @@ jobs:
           # Pinned to 6.11.1: the bare "6.11" spec resolves to 6.11.2, whose
           # archives download.qt.io fails to serve. Drop once mirrors catch up.
           version: "6.11.1"
+          cache: true
 
       - name: Install dmg helper
         if: steps.need_build.outputs.run_build == 'true'
