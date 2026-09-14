@@ -15,12 +15,7 @@
  * @param parent
  */
 Executor::Executor(QObject *parent) : QObject(parent) {
-  connect(&m_process,
-          static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(
-              &QProcess::finished),
-          this,
-          static_cast<void (Executor::*)(int, QProcess::ExitStatus)>(
-              &Executor::finished));
+  connect(&m_process, &QProcess::finished, this, &Executor::onProcessFinished);
   connect(&m_process, &QProcess::started, this, &Executor::starting);
 }
 
@@ -359,11 +354,12 @@ auto Executor::cancelNext() -> int {
 }
 
 /**
- * @brief Executor::finished called when an executed process finishes
+ * @brief Executor::onProcessFinished called when an executed process finishes
  * @param exitCode
  * @param exitStatus
  */
-void Executor::finished(int exitCode, QProcess::ExitStatus exitStatus) {
+void Executor::onProcessFinished(int exitCode,
+                                 QProcess::ExitStatus exitStatus) {
   execQueueItem i = m_execQueue.dequeue();
   running = false;
   if (exitStatus == QProcess::NormalExit) {

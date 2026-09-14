@@ -217,7 +217,7 @@ public:
    */
   auto isIdle() const -> bool { return !running && m_execQueue.isEmpty(); }
 private slots:
-  void finished(int exitCode, QProcess::ExitStatus exitStatus);
+  void onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 signals:
   /**
    * @brief finished    signal that is emitted when process finishes
