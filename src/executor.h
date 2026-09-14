@@ -155,6 +155,26 @@ public:
                               QString *process_err = nullptr) -> int;
 
   /**
+   * @brief Run a command synchronously on a caller-supplied QProcess.
+   *
+   * The caller keeps a handle on @p process while it runs, so another thread
+   * can terminate() or kill() it (re-encryption cancellation), or configure
+   * it before the start. @p process must be a fresh, not yet started object.
+   * @param process Process object to run the command on.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param input Data to write to stdin.
+   * @param process_out If non-null, receives stdout output.
+   * @param process_err If non-null, receives stderr output.
+   * @return Process exit code, or -1 if it failed to start or was killed.
+   */
+  static auto executeBlocking(QProcess &process, const QString &app,
+                              const QStringList &args,
+                              const QString &input = QString(),
+                              QString *process_out = nullptr,
+                              QString *process_err = nullptr) -> int;
+
+  /**
    * @brief Run a command synchronously capturing stdout and stderr.
    * @param app Executable path.
    * @param args Command arguments.

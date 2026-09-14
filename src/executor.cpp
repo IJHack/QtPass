@@ -295,6 +295,23 @@ auto Executor::executeBlocking(const QString &app, const QStringList &args,
 }
 
 /**
+ * @brief Executor::executeBlocking blocking run on a caller-supplied QProcess
+ * @param process Process object to run the command on.
+ * @param app
+ * @param args
+ * @param input
+ * @param process_out
+ * @param process_err
+ * @return
+ */
+auto Executor::executeBlocking(QProcess &process, const QString &app,
+                               const QStringList &args, const QString &input,
+                               QString *process_out, QString *process_err)
+    -> int {
+  return runBlocking(process, app, args, input, process_out, process_err);
+}
+
+/**
  * @brief Executor::executeBlocking blocking version of the executor
  * @param app
  * @param args

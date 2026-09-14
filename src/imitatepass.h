@@ -6,7 +6,10 @@
 #include "pass.h"
 #include "simpletransaction.h"
 
+#include <QMutex>
 #include <atomic>
+
+class QProcess;
 
 class QRegularExpression;
 class QThread;
@@ -284,9 +287,16 @@ public:
   /**
    * @brief Ask a running reencryptPath() to stop.
    *
-   * The file currently being re-encrypted is finished (and committed) first
-   * so the store stays consistent; the remaining files are left untouched.
-   * endReencryptPath() is still emitted when the worker has stopped.
+   * The worker starts no further gpg or git process, and the one it is
+   * blocked on (gpg waiting on pinentry, say) is asked to terminate and killed
+   * if it is still running after a short grace period, so the cancel takes
+   * effect promptly rather than after the current file. The store stays
+   * consistent: reencryptSingleFile() only replaces a file once the new
+   * ciphertext is verified, so an interrupted file is left untouched, or
+   * already re-encrypted but not yet committed when git was the process that
+   * was interrupted. The remaining files are left untouched and the
+   * interrupted file is not reported as a failure. endReencryptPath() is
+   * still emitted when the worker has stopped.
    */
   void cancelReencryptPath();
 
@@ -347,9 +357,38 @@ private:
   struct ReencryptResult;
   /// Set while a re-encryption run is pending or on the worker thread.
   bool m_reencryptActive = false;
-  /// Read by the worker between files; set by cancelReencryptPath().
+  /// Set by cancelReencryptPath() and the destructor; read by the worker
+  /// between files and, in execBlocking(), before every process it starts.
   std::atomic<bool> m_reencryptCancel{false};
+  /// Process the worker is currently blocked on, registered by execBlocking()
+  /// so interruptReencryptProcess() can reach it from the owning thread.
+  /// Guarded by m_reencryptProcessMutex.
+  QProcess *m_reencryptProcess = nullptr;
+  QMutex m_reencryptProcessMutex;
   QThread *m_reencryptThread = nullptr;
+  /**
+   * @brief Executor::executeBlocking() for the re-encryption helpers.
+   *
+   * On the owning thread this is a plain blocking run. On the worker thread
+   * it refuses to start anything once m_reencryptCancel is set and registers
+   * the running process in m_reencryptProcess, which is what lets
+   * cancelReencryptPath() and the destructor interrupt an active gpg or git.
+   * @return Exit code, or -1 when refused, failed to start or interrupted.
+   */
+  auto execBlocking(const QString &app, const QStringList &args,
+                    const QString &input = QString(),
+                    QString *process_out = nullptr,
+                    QString *process_err = nullptr) -> int;
+  /// Overload capturing stdout (and stderr) without stdin input.
+  auto execBlocking(const QString &app, const QStringList &args,
+                    QString *process_out, QString *process_err = nullptr)
+      -> int;
+  /**
+   * @brief terminate() (or kill() when @p force) the process the worker is
+   * blocked on, if any. Callers set m_reencryptCancel first so the worker
+   * does not start another one.
+   */
+  void interruptReencryptProcess(bool force);
   /**
    * @brief Start the worker thread once the Executor queue is idle.
    * @param dir Directory passed to reencryptPath().

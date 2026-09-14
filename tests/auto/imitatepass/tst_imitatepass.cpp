@@ -12,6 +12,10 @@
  * failures are aggregated into a single critical(), a cancel stops between
  * files, and endReencryptPath() always closes the run.
  *
+ * A third pair uses a fake gpg that blocks (sleeps) to check that a cancel,
+ * and destroying the ImitatePass, interrupt the process in progress instead
+ * of waiting for it.
+ *
  * A second group swaps in a recording fake gpg to check the argv QtPass hands
  * to gpg on encryption: every encrypt call must carry --no-encrypt-to (and
  * --compress-algo=none, as pass(1) does) so a user's gpg.conf cannot add a
@@ -19,6 +23,7 @@
  */
 
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QSignalSpy>
 #include <QTemporaryDir>
@@ -52,6 +57,28 @@ class tst_imitatepass : public QObject {
         return false;
     }
     return true;
+  }
+
+  /// Write a fake gpg that touches @p marker and then blocks for @p seconds.
+  /// `exec` so the signal a cancel sends lands on the sleep itself rather than
+  /// on a shell that would leave it behind. Returns the script path, or an
+  /// empty string on failure.
+  static QString writeBlockingGpg(const QString &dir, const QString &marker,
+                                  int seconds) {
+    const QString script = QDir(dir).filePath("blocking-gpg.sh");
+    QFile f(script);
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return {};
+    QTextStream out(&f);
+    out << "#!/bin/sh\n"
+        << ": > '" << marker << "'\n"
+        << "exec sleep " << seconds << "\n";
+    out.flush();
+    f.close();
+    if (!QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                           QFile::ExeOwner))
+      return {};
+    return script;
   }
 
   static AppSettings settingsFor(const QString &storeDir, const QString &gpg) {
@@ -145,6 +172,8 @@ private Q_SLOTS:
   void reencryptPathEmitsStartSynchronouslyAndEndLater();
   void reencryptPathAggregatesFailuresIntoOneCritical();
   void reencryptPathCancelStopsBetweenFiles();
+  void reencryptPathCancelInterruptsActiveProcess();
+  void destructorInterruptsActiveReencryptProcess();
   void insertEncryptArgvCarriesNoEncryptTo();
   void reencryptEncryptArgvCarriesNoEncryptTo();
 };
@@ -220,9 +249,10 @@ void tst_imitatepass::reencryptPathAggregatesFailuresIntoOneCritical() {
 }
 
 /**
- * @brief Cancelling stops after the file in progress: fewer files are checked
- * than exist, the ones that were checked are still reported, and a second
- * reencryptPath() during the run is ignored.
+ * @brief Cancelling stops the run: fewer files are checked than exist, the
+ * ones that were checked before the cancel are still reported (and the one
+ * the cancel interrupted is not), and a second reencryptPath() during the run
+ * is ignored.
  */
 void tst_imitatepass::reencryptPathCancelStopsBetweenFiles() {
 #ifdef Q_OS_WIN
@@ -295,6 +325,97 @@ void tst_imitatepass::reencryptPathCancelStopsBetweenFiles() {
   QVERIFY2(!rec.statusMessages.isEmpty(), "a summary status must be shown");
   QVERIFY2(rec.statusMessages.last().contains(QStringLiteral("cancelled")),
            qPrintable(rec.statusMessages.last()));
+#endif
+}
+
+/**
+ * @brief cancelReencryptPath() must interrupt the gpg in progress rather than
+ * wait for it (the worker used to poll the flag only between files, so a gpg
+ * stuck on pinentry pinned the run). The fake gpg blocks for far longer than
+ * the bound; the run must end promptly, with no file counted or reported and
+ * no failure dialog for the interrupted call.
+ */
+void tst_imitatepass::reencryptPathCancelInterruptsActiveProcess() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a blocking fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 3));
+  const QString marker = QDir(storeDir.path()).filePath("gpg-started");
+  const QString fakeGpg = writeBlockingGpg(storeDir.path(), marker, 60);
+  QVERIFY2(!fakeGpg.isEmpty(), "failed to write the blocking fake gpg");
+
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QObject ctx;
+  Recorder rec;
+  record(pass, ctx, rec);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+
+  pass.reencryptPath(storeDir.path());
+  // Only cancel once the first gpg is really blocked in its sleep.
+  QTRY_VERIFY_WITH_TIMEOUT(QFile::exists(marker), 10000);
+  QElapsedTimer elapsed;
+  elapsed.start();
+  pass.cancelReencryptPath();
+  QVERIFY2(endSpy.count() == 1 || endSpy.wait(5000),
+           "cancel must end the run within seconds, not after the 60 s gpg");
+  QVERIFY2(
+      elapsed.elapsed() < 5000,
+      qPrintable(QStringLiteral("cancel took %1 ms").arg(elapsed.elapsed())));
+  QCoreApplication::processEvents();
+
+  QCOMPARE(endSpy.count(), 1);
+  QVERIFY2(rec.criticals.isEmpty(),
+           qPrintable(QStringLiteral("no failure dialog expected, got: %1")
+                          .arg(rec.criticals.join(QStringLiteral(" | ")))));
+  QVERIFY(!rec.progress.isEmpty());
+  QCOMPARE(rec.progress.last().first, 0); // the interrupted file is not counted
+  QVERIFY2(!rec.statusMessages.isEmpty(), "a summary status must be shown");
+  QVERIFY2(rec.statusMessages.last().contains(QStringLiteral("cancelled")),
+           qPrintable(rec.statusMessages.last()));
+  // The store is untouched: no temp or backup file was left behind.
+  const QStringList leftovers =
+      QDir(storeDir.path())
+          .entryList({QStringLiteral("*.reencrypt.*")}, QDir::Files);
+  QVERIFY2(leftovers.isEmpty(), qPrintable(leftovers.join(' ')));
+#endif
+}
+
+/**
+ * @brief Destroying the ImitatePass while its worker is blocked in gpg must
+ * not hang: the destructor cannot just time out the join (the worker touches
+ * the object's members), so it has to interrupt the process and then join.
+ */
+void tst_imitatepass::destructorInterruptsActiveReencryptProcess() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a blocking fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 3));
+  const QString marker = QDir(storeDir.path()).filePath("gpg-started");
+  const QString fakeGpg = writeBlockingGpg(storeDir.path(), marker, 60);
+  QVERIFY2(!fakeGpg.isEmpty(), "failed to write the blocking fake gpg");
+
+  auto *pass = new ImitatePass;
+  pass->init(settingsFor(storeDir.path(), fakeGpg));
+  pass->reencryptPath(storeDir.path());
+  QTRY_VERIFY_WITH_TIMEOUT(QFile::exists(marker), 10000);
+
+  QElapsedTimer elapsed;
+  elapsed.start();
+  delete pass; // joins the worker; must not wait for the 60 s gpg
+  QVERIFY2(
+      elapsed.elapsed() < 5000,
+      qPrintable(
+          QStringLiteral("destruction took %1 ms").arg(elapsed.elapsed())));
+  // Let the worker thread's deleteLater and the queued completion (which must
+  // notice the object is gone) run without touching freed memory.
+  QCoreApplication::processEvents();
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QCoreApplication::processEvents();
 #endif
 }
 

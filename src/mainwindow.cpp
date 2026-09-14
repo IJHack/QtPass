@@ -1928,8 +1928,7 @@ void MainWindow::startReencryptPath() {
   progress->setMinimumDuration(0);
   connect(progress, &QProgressDialog::canceled, this, [this]() {
     QtPassSettings::getImitatePass()->cancelReencryptPath();
-    showStatusMessage(tr("Cancelling re-encryption after the current file"),
-                      5000);
+    showStatusMessage(tr("Cancelling re-encryption"), 5000);
   });
   m_reencryptProgress = progress;
   progress->show();
