@@ -41,7 +41,6 @@
 #include <QMessageBox>
 #include <QProgressDialog>
 #include <QPushButton>
-#include <QSaveFile>
 #include <QScrollBar>
 #include <QShortcut>
 #include <QTextCursor>
@@ -1711,44 +1710,28 @@ void MainWindow::addFolder() {
                          tr("Failed to create folder: %1").arg(newdir));
     return;
   }
-  if (s.addGPGId) {
-    QString gpgIdFile = newdir + "/.gpg-id";
+  // A .gpg-id only counts when it is signed once a signing key is configured:
+  // ImitatePass::verifyGpgIdFile and pass (PASSWORD_STORE_SIGNING_KEY) both
+  // refuse to encrypt into a folder whose .gpg-id has no matching
+  // .gpg-id.sig. Signing here would need the signing secret key and a
+  // passphrase prompt just to create a folder, so in that case leave the
+  // folder without its own .gpg-id: it inherits the parent's signed list,
+  // which encrypts to the same recipients. UsersDialog (Init) is the place to
+  // give it a distinct, signed list.
+  const bool signingConfigured = !s.passSigningKey.trimmed().isEmpty();
+  if (s.addGPGId && !signingConfigured) {
     // Seed the new folder's .gpg-id from the recipients that are currently
-    // in effect for the parent directory. The previous implementation walked
+    // in effect for its parent. The previous implementation walked
     // listKeys("", true) and wrote every key whose `enabled` flag was set,
     // but that flag is only toggled inside UsersDialog, so the loop wrote
     // nothing and left a zero-byte .gpg-id that shadowed the parent's
-    // recipients (see #1682). Using the inherited recipients keeps the new
-    // folder encrypted to the same keys the parent already uses.
-    const QStringList recipients = Pass::getRecipientList(dir, s.passStore);
-    if (recipients.isEmpty()) {
+    // recipients (see #1682).
+    if (!Pass::seedGpgIdFile(newdir, s.passStore)) {
       QMessageBox::warning(
           this, tr("Error"),
           tr("Failed to create .gpg-id file in: %1").arg(newdir));
       return;
     }
-    QSaveFile gpgId(gpgIdFile);
-    if (!gpgId.open(QIODevice::WriteOnly)) {
-      QMessageBox::warning(
-          this, tr("Error"),
-          tr("Failed to create .gpg-id file in: %1").arg(newdir));
-      return;
-    }
-    QTextStream out(&gpgId);
-    for (const QString &recipient : recipients) {
-      out << recipient << '\n';
-    }
-    out.flush();
-    if (out.status() != QTextStream::Ok || !gpgId.commit()) {
-      QMessageBox::warning(
-          this, tr("Error"),
-          tr("Failed to create .gpg-id file in: %1").arg(newdir));
-      return;
-    }
-    // Lock to owner-only access; see ImitatePass::writeGpgIdFile for
-    // rationale (NFS / USB / unusual umask scenarios). Best-effort on
-    // platforms where setPermissions is a no-op.
-    QFile::setPermissions(gpgIdFile, QFile::ReadOwner | QFile::WriteOwner);
   }
 }
 
