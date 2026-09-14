@@ -39,13 +39,14 @@
 #include <QLineEdit>
 #include <QMenu>
 #include <QMessageBox>
+#include <QProgressDialog>
 #include <QPushButton>
 #include <QSaveFile>
 #include <QScrollBar>
 #include <QShortcut>
 #include <QTextCursor>
-#include <QTextStream>
 #include <QTextEdit>
+#include <QTextStream>
 #include <QTimer>
 #include <QToolButton>
 #include <QTreeWidget>
@@ -801,6 +802,13 @@ void MainWindow::clearPanel(bool notify) {
  * @param state
  */
 void MainWindow::setUiElementsEnabled(bool state) {
+  // A running re-encryption owns the UI state: the progress dialog's Cancel is
+  // the user's escape hatch and endReencryptPath() releases the interface, so
+  // neither an unrelated completion nor the watchdog may re-enable it early.
+  if (state && m_reencryptRunning) {
+    m_uiWatchdog.stop();
+    return;
+  }
   // Arm the watchdog while the UI is disabled; disarm once re-enabled.
   if (state) {
     m_uiWatchdog.stop();
@@ -1899,17 +1907,65 @@ void MainWindow::reencryptPath(const QString &dir) {
 }
 
 /**
- * @brief MainWindow::startReencryptPath disable ui elements and treeview
+ * @brief MainWindow::startReencryptPath disable ui elements and treeview and
+ * show the progress dialog. Idempotent: MainWindow::reencryptPath calls it
+ * before ImitatePass emits startReencryptPath.
  */
 void MainWindow::startReencryptPath() {
+  m_reencryptRunning = true;
   setUiElementsEnabled(false);
+  // The worker always ends with endReencryptPath(), and Cancel is available
+  // throughout, so the generic watchdog is not needed for this operation.
+  m_uiWatchdog.stop();
   ui->treeView->setDisabled(true);
+  if (m_reencryptProgress)
+    return;
+  auto *progress = new QProgressDialog(tr("Re-encrypting passwords..."),
+                                       tr("Cancel"), 0, 0, this);
+  progress->setWindowTitle(tr("Re-encrypt passwords"));
+  progress->setWindowModality(Qt::WindowModal);
+  progress->setAutoClose(false);
+  progress->setAutoReset(false);
+  progress->setMinimumDuration(0);
+  connect(progress, &QProgressDialog::canceled, this, [this]() {
+    QtPassSettings::getImitatePass()->cancelReencryptPath();
+    showStatusMessage(tr("Cancelling re-encryption after the current file"),
+                      5000);
+  });
+  m_reencryptProgress = progress;
+  progress->show();
+}
+
+/**
+ * @brief MainWindow::reencryptProgress show how many files were checked
+ * @param current files checked so far
+ * @param total files found under the folder
+ */
+void MainWindow::reencryptProgress(int current, int total) {
+  if (!m_reencryptProgress)
+    return;
+  m_reencryptProgress->setMaximum(total);
+  m_reencryptProgress->setLabelText(
+      tr("Re-encrypting passwords: %1 of %2").arg(current).arg(total));
+  // On a modal QProgressDialog setValue() calls processEvents(), which can
+  // deliver the queued completion: endReencryptPath() then hides the dialog
+  // and resets m_reencryptProgress under our feet. Keep it last and touch
+  // nothing afterwards.
+  m_reencryptProgress->setValue(current);
 }
 
 /**
  * @brief MainWindow::endReencryptPath re-enable ui elements
  */
-void MainWindow::endReencryptPath() { setUiElementsEnabled(true); }
+void MainWindow::endReencryptPath() {
+  m_reencryptRunning = false;
+  if (m_reencryptProgress) {
+    m_reencryptProgress->hide();
+    m_reencryptProgress->deleteLater();
+    m_reencryptProgress = nullptr;
+  }
+  setUiElementsEnabled(true);
+}
 
 /**
  * @brief MainWindow::exportPublicKey export the configured signing key in
