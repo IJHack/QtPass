@@ -1041,8 +1041,9 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
  * @brief Owning-thread epilogue of reencryptPath().
  *
  * Reports the aggregated failures in one dialog, summarises the run in the
- * status bar, pushes when configured (not after a cancel or abort, so the
- * user can inspect the partial result first) and releases the UI.
+ * status bar, pushes when configured (not after a cancel, an abort or a
+ * per-file failure: a partially re-encrypted store must not reach the remote,
+ * and the user should inspect the result first) and releases the UI.
  */
 void ImitatePass::finishReencrypt(const ReencryptResult &result) {
   if (!result.failed.isEmpty()) {
@@ -1077,8 +1078,14 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
                      3000);
     }
     if (m_settings.autoPush && gitConfigured()) {
-      emit statusMsg(tr("Updating password-store"), 2000);
-      GitPush();
+      if (result.failed.isEmpty()) {
+        emit statusMsg(tr("Updating password-store"), 2000);
+        GitPush();
+      } else {
+        emit statusMsg(tr("Not pushing: %n file(s) failed to re-encrypt",
+                          nullptr, result.failed.size()),
+                       5000);
+      }
     }
   }
   m_reencryptActive = false;

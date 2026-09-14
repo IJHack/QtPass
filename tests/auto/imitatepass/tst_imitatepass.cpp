@@ -20,6 +20,11 @@
  * to gpg on encryption: every encrypt call must carry --no-encrypt-to (and
  * --compress-algo=none, as pass(1) does) so a user's gpg.conf cannot add a
  * recipient that the .gpg-id does not list.
+ *
+ * A third group swaps in a recording fake git as well, with autoPush on, to
+ * check that a run in which every file re-encrypted is pushed while a run with
+ * a failed file is not: pushing the partial store would publish recipient
+ * metadata that does not match all encrypted files.
  */
 
 #include <QDir>
@@ -123,6 +128,26 @@ class tst_imitatepass : public QObject {
     return script;
   }
 
+  /// Write a fake git that appends every argv it receives to @p logPath and
+  /// succeeds silently, so `status --porcelain` reports a clean tree and no
+  /// backup commit is attempted. Returns the script path, or an empty string.
+  static QString writeRecordingGit(const QString &dir, const QString &logPath) {
+    const QString script = QDir(dir).filePath(QStringLiteral("record-git.sh"));
+    QFile f(script);
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return {};
+    QTextStream out(&f);
+    out << "#!/bin/sh\n"
+        << "printf '%s\\n' \"$*\" >> '" << logPath << "'\n"
+        << "exit 0\n";
+    out.flush();
+    f.close();
+    if (!QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                           QFile::ExeOwner))
+      return {};
+    return script;
+  }
+
   /// Every logged gpg call, one QStringList of arguments per call.
   static QList<QStringList> loggedCalls(const QString &logPath) {
     QList<QStringList> calls;
@@ -134,6 +159,14 @@ class tst_imitatepass : public QObject {
       if (!line.isEmpty())
         calls << line.split(QLatin1Char(' '), Qt::SkipEmptyParts);
     return calls;
+  }
+
+  /// Whether any of @p calls is a `git push`.
+  static bool hasPush(const QList<QStringList> &calls) {
+    for (const QStringList &c : calls)
+      if (c.contains(QStringLiteral("push")))
+        return true;
+    return false;
   }
 
   /// Only the encrypt (-eq) calls out of @p calls.
@@ -176,6 +209,8 @@ private Q_SLOTS:
   void destructorInterruptsActiveReencryptProcess();
   void insertEncryptArgvCarriesNoEncryptTo();
   void reencryptEncryptArgvCarriesNoEncryptTo();
+  void reencryptPathPushesWhenAllFilesSucceed();
+  void reencryptPathDoesNotPushAfterFailures();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -518,6 +553,91 @@ void tst_imitatepass::reencryptEncryptArgvCarriesNoEncryptTo() {
     const int r = argv.indexOf(QStringLiteral("-r"));
     QCOMPARE(argv.value(r + 1), QStringLiteral("0123456789ABCDEF"));
   }
+#endif
+}
+
+/**
+ * @brief Positive control for the auto-push gate: with git configured,
+ * autoPush on and a cooperating gpg, the run ends with a `git push`.
+ */
+void tst_imitatepass::reencryptPathPushesWhenAllFilesSucceed() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as recording fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 2));
+  const QString gpgLog = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), gpgLog);
+  const QString fakeGit = writeRecordingGit(storeDir.path(), gitLog);
+  QVERIFY2(!fakeGpg.isEmpty(), "failed to write the recording fake gpg");
+  QVERIFY2(!fakeGit.isEmpty(), "failed to write the recording fake git");
+
+  AppSettings settings = settingsFor(storeDir.path(), fakeGpg);
+  settings.useGit = true;
+  settings.gitExecutable = fakeGit;
+  settings.autoPush = true;
+  ImitatePass pass;
+  pass.init(settings);
+  QObject ctx;
+  Recorder rec;
+  record(pass, ctx, rec);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+
+  pass.reencryptPath(storeDir.path());
+  QVERIFY(endSpy.wait(30000));
+  QCoreApplication::processEvents();
+
+  QVERIFY2(rec.criticals.isEmpty(),
+           qPrintable(rec.criticals.join(QStringLiteral(" | "))));
+  // The push goes through the asynchronous Executor queue, so it may land a
+  // little after endReencryptPath().
+  QTRY_VERIFY_WITH_TIMEOUT(hasPush(loggedCalls(gitLog)), 15000);
+#endif
+}
+
+/**
+ * @brief When a file failed to re-encrypt the store is not pushed even with
+ * autoPush on: the remote must not receive recipient metadata that does not
+ * match every encrypted file. The user is told why the push was skipped.
+ */
+void tst_imitatepass::reencryptPathDoesNotPushAfterFailures() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a recording fake git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 2));
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit = writeRecordingGit(storeDir.path(), gitLog);
+  QVERIFY2(!fakeGit.isEmpty(), "failed to write the recording fake git");
+
+  AppSettings settings = settingsFor(storeDir.path(), unstartableGpg());
+  settings.useGit = true;
+  settings.gitExecutable = fakeGit;
+  settings.autoPush = true;
+  ImitatePass pass;
+  pass.init(settings);
+  QObject ctx;
+  Recorder rec;
+  record(pass, ctx, rec);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+
+  pass.reencryptPath(storeDir.path());
+  QVERIFY(endSpy.wait(30000));
+  // Give a wrongly queued push time to reach the fake git before checking.
+  QTest::qWait(500);
+
+  QCOMPARE(rec.criticals.size(), 1);
+  const QList<QStringList> gitCalls = loggedCalls(gitLog);
+  QVERIFY2(!gitCalls.isEmpty(),
+           "the fake git must have been used for the backup status check");
+  QVERIFY2(!hasPush(gitCalls),
+           "a run with failed files must not be pushed to the remote");
+  QVERIFY(!rec.statusMessages.isEmpty());
+  QVERIFY2(rec.statusMessages.last().contains(QStringLiteral("Not pushing")),
+           qPrintable(rec.statusMessages.last()));
 #endif
 }
 
