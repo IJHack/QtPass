@@ -134,7 +134,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0ba6ef4e4542287d5b257252728d1aa4" id="r_a0ba6ef4e4542287d5b257252728d1aa4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0ba6ef4e4542287d5b257252728d1aa4">newLinesRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
 <tr class="memdesc:a0ba6ef4e4542287d5b257252728d1aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match newline characters.  <br /></td></tr>
 <tr class="memitem:a7a6dcbde6840aab13f34a83a4ce9f3c1" id="r_a7a6dcbde6840aab13f34a83a4ce9f3c1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7a6dcbde6840aab13f34a83a4ce9f3c1">isValidKeyId</a> (const QString &amp;keyId) -&gt; bool</td></tr>
-<tr class="memdesc:a7a6dcbde6840aab13f34a83a4ce9f3c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a string looks like a valid GPG key ID. Accepts:  <br /></td></tr>
+<tr class="memdesc:a7a6dcbde6840aab13f34a83a4ce9f3c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a <span class="tt">.gpg-id</span> token may be passed to gpg as a key selector. Accepts any non-empty token that does not start with <span class="tt">-</span>, exactly as <span class="tt">pass</span> does: key IDs and fingerprints of every version, emails, <span class="tt">=Exact
+User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Some static utilities to be used elsewhere. </p>
@@ -387,19 +388,15 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check if a string looks like a valid GPG key ID. Accepts: </p>
-<ul>
-<li>Key IDs: 8-40 hex characters (0-9, A-F, a-f), optional 0x prefix</li>
-<li>Emails: any string containing @ (e.g., <a href="#" onclick="location.href='mai'+'lto:'+'use'+'r@'+'dom'+'ai'+'n.o'+'rg'; return false;">user@<span class="obfuscator">.nosp@m.</span>doma<span class="obfuscator">.nosp@m.</span>in.or<span class="obfuscator">.nosp@m.</span>g</a>, <a href="#" onclick="location.href='mai'+'lto:'+'use'+'r@'+'dom'+'ai'+'n.o'+'rg'; return false;">user@<span class="obfuscator">.nosp@m.</span>doma<span class="obfuscator">.nosp@m.</span>in.or<span class="obfuscator">.nosp@m.</span>g</a>)</li>
-<li>Special prefixes: leading @, /, #, or &amp; (any content after prefix) <dl class="params"><dt>Parameters</dt><dd>
+<p>Check whether a <span class="tt">.gpg-id</span> token may be passed to gpg as a key selector. Accepts any non-empty token that does not start with <span class="tt">-</span>, exactly as <span class="tt">pass</span> does: key IDs and fingerprints of every version, emails, <span class="tt">=Exact
+User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">keyId</td><td>The string to validate. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the key ID format is valid, false otherwise. </dd></dl>
-</li>
-</ul>
+<dl class="section return"><dt>Returns</dt><dd>true if gpg may be given the token, false otherwise. </dd></dl>
 
 </div>
 </div>

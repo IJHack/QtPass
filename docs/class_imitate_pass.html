@@ -256,8 +256,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:ae65aff95459cee83b5b999f5a83fcac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write recipients to .gpg-id file.  <br /></td></tr>
 <tr class="memitem:aa6163e2dd259c8f69d0cead7551b573a" id="r_aa6163e2dd259c8f69d0cead7551b573a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa6163e2dd259c8f69d0cead7551b573a">signGpgIdFile</a> (const QString &amp;gpgIdFile, const QStringList &amp;signingKeys) -&gt; bool</td></tr>
 <tr class="memdesc:aa6163e2dd259c8f69d0cead7551b573a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sign .gpg-id file with signing keys.  <br /></td></tr>
-<tr class="memitem:ae9547b23ef6e8c04b52f514218e50a5c" id="r_ae9547b23ef6e8c04b52f514218e50a5c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae9547b23ef6e8c04b52f514218e50a5c">gitAddGpgId</a> (const QString &amp;gpgIdFile, const QString &amp;gpgIdSigFile, bool addFile, bool addSigFile)</td></tr>
-<tr class="memdesc:ae9547b23ef6e8c04b52f514218e50a5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add .gpg-id to git staging.  <br /></td></tr>
+<tr class="memitem:ae915cb06772e2d7f4ac5654f45b628bc" id="r_ae915cb06772e2d7f4ac5654f45b628bc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae915cb06772e2d7f4ac5654f45b628bc">gitAddGpgId</a> (const QString &amp;gpgIdFile, const QString &amp;gpgIdSigFile, bool addFile, bool addSigFile, QString *out=nullptr, QString *err=nullptr) -&gt; int</td></tr>
+<tr class="memdesc:ae915cb06772e2d7f4ac5654f45b628bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stage and commit .gpg-id (and optionally its signature) in git.  <br /></td></tr>
+<tr class="memitem:a568cee878638fa0cbc4c862060ea35b3" id="r_a568cee878638fa0cbc4c862060ea35b3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a568cee878638fa0cbc4c862060ea35b3">gitTracks</a> (const QString &amp;file) -&gt; bool</td></tr>
+<tr class="memdesc:a568cee878638fa0cbc4c862060ea35b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether git already tracks a file in the store.  <br /></td></tr>
 <tr class="memitem:a7af6102fa60b3267bd1e387e7cfd82af" id="r_a7af6102fa60b3267bd1e387e7cfd82af"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7af6102fa60b3267bd1e387e7cfd82af">verifyGpgIdForDir</a> (const QString &amp;file, QStringList &amp;gpgIdFilesVerified, QStringList &amp;gpgId) -&gt; bool</td></tr>
 <tr class="memdesc:a7af6102fa60b3267bd1e387e7cfd82af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify .gpg-id file for a directory.  <br /></td></tr>
 <tr class="memitem:a086365ec85674590afbd883df0b27a80" id="r_a086365ec85674590afbd883df0b27a80"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a086365ec85674590afbd883df0b27a80">createBackupCommit</a> () -&gt; bool</td></tr>
@@ -686,8 +688,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ae9547b23ef6e8c04b52f514218e50a5c" name="ae9547b23ef6e8c04b52f514218e50a5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9547b23ef6e8c04b52f514218e50a5c">&#9670;&#160;</a></span>gitAddGpgId()</h2>
+<a id="ae915cb06772e2d7f4ac5654f45b628bc" name="ae915cb06772e2d7f4ac5654f45b628bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae915cb06772e2d7f4ac5654f45b628bc">&#9670;&#160;</a></span>gitAddGpgId()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -696,7 +698,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ImitatePass::gitAddGpgId </td>
+          <td class="memname">auto ImitatePass::gitAddGpgId </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span>, </td>
         </tr>
@@ -713,7 +715,17 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>addSigFile</em></span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>addSigFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>out</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>err</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  int</td>
         </tr>
       </table>
   </td>
@@ -723,16 +735,19 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Add .gpg-id to git staging. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Stage and commit .gpg-id (and optionally its signature) in git. </p>
+<p>Runs git synchronously so that the blocking re-encryption that follows in Init cannot race the add/commit for the index lock. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gpgIdFile</td><td>.gpg-id file path. </td></tr>
     <tr><td class="paramname">gpgIdSigFile</td><td>Signature file path. </td></tr>
     <tr><td class="paramname">addFile</td><td>Stage .gpg-id file. </td></tr>
     <tr><td class="paramname">addSigFile</td><td>Stage signature file. </td></tr>
+    <tr><td class="paramname">out</td><td>Receives stdout of the git commands. </td></tr>
+    <tr><td class="paramname">err</td><td>Receives stderr of the git commands. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Exit code of the first failing git command, 0 on success. </dd></dl>
 
 </div>
 </div>
@@ -879,6 +894,40 @@ Additional Inherited Members</h2></td></tr>
 <p>Push to remote. </p>
 
 <p>Implements <a class="el" href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09">Pass</a>.</p>
+
+</div>
+</div>
+<a id="a568cee878638fa0cbc4c862060ea35b3" name="a568cee878638fa0cbc4c862060ea35b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a568cee878638fa0cbc4c862060ea35b3">&#9670;&#160;</a></span>gitTracks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::gitTracks </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check whether git already tracks a file in the store. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>Absolute path inside the password store. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the file is in the git index. </dd></dl>
 
 </div>
 </div>

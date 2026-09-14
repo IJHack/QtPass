@@ -47,12 +47,13 @@ var searchData=
   ['getstore_44',['getStore',['../class_store_model.html#a0adadb60fe309f7f5dad9f27cec9b7d2',1,'StoreModel']]],
   ['gettexttocopy_45',['getTextToCopy',['../class_q_push_button_as_q_r_code.html#ac760ad4c81ab153edbe4ab0e6215aae4',1,'QPushButtonAsQRCode::getTextToCopy()'],['../class_q_push_button_with_clipboard.html#ab3e53e28b6caaa7276eec98432020cff',1,'QPushButtonWithClipboard::getTextToCopy()']]],
   ['getversion_46',['getVersion',['../class_qt_pass_settings.html#a6f238c4845f87423bcd4cedbf12fc390',1,'QtPassSettings']]],
-  ['gitaddgpgid_47',['gitAddGpgId',['../class_imitate_pass.html#ae9547b23ef6e8c04b52f514218e50a5c',1,'ImitatePass']]],
+  ['gitaddgpgid_47',['gitAddGpgId',['../class_imitate_pass.html#ae915cb06772e2d7f4ac5654f45b628bc',1,'ImitatePass']]],
   ['gitcommit_48',['gitCommit',['../class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb',1,'ImitatePass']]],
   ['gitinit_49',['GitInit',['../class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb',1,'ImitatePass::GitInit()'],['../class_pass.html#a26bec7c69e7c35ccb67f8057db90825e',1,'Pass::GitInit()'],['../class_real_pass.html#aacaf85a65fc1398c356dd44370e5e22f',1,'RealPass::GitInit()']]],
   ['gitpull_50',['GitPull',['../class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced',1,'ImitatePass::GitPull()'],['../class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8',1,'Pass::GitPull()'],['../class_real_pass.html#ac3206e85bc586214e6cc75186cff65c3',1,'RealPass::GitPull()']]],
   ['gitpull_5fb_51',['GitPull_b',['../class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2',1,'ImitatePass::GitPull_b()'],['../class_pass.html#a7a109d5c0a7f565398b7238c32bb6328',1,'Pass::GitPull_b()'],['../class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210',1,'RealPass::GitPull_b()']]],
   ['gitpush_52',['GitPush',['../class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9',1,'ImitatePass::GitPush()'],['../class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09',1,'Pass::GitPush()'],['../class_real_pass.html#ae32fd82fe5e57b2c45df05bfe2991b5b',1,'RealPass::GitPush()']]],
-  ['gpgsupportsed25519_53',['gpgSupportsEd25519',['../class_pass.html#a407558ed7e2d88f953de7b179a1d143a',1,'Pass']]],
-  ['grep_54',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]]
+  ['gittracks_53',['gitTracks',['../class_imitate_pass.html#a568cee878638fa0cbc4c862060ea35b3',1,'ImitatePass']]],
+  ['gpgsupportsed25519_54',['gpgSupportsEd25519',['../class_pass.html#a407558ed7e2d88f953de7b179a1d143a',1,'Pass']]],
+  ['grep_55',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]]
 ];
