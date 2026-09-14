@@ -367,8 +367,7 @@ void tst_executor::executeAsyncFinishedSignal() {
   if (sh.isEmpty())
     QSKIP("sh not found in PATH");
   Executor exec;
-  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
-                            &Executor::finished));
+  QSignalSpy spy(&exec, &Executor::finished);
   QVERIFY2(spy.isValid(),
            "spy must connect to Executor::finished(int,int,...) signal");
   exec.execute(42, sh, {"-c", "echo async-hello"}, true, false);
@@ -385,8 +384,7 @@ void tst_executor::executeAsyncCapturesStdout() {
   if (sh.isEmpty())
     QSKIP("sh not found in PATH");
   Executor exec;
-  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
-                            &Executor::finished));
+  QSignalSpy spy(&exec, &Executor::finished);
   QVERIFY2(spy.isValid(), "spy must connect to Executor::finished signal");
   exec.execute(1, sh, {"-c", "echo captured-output"}, true, false);
   QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
@@ -400,8 +398,7 @@ void tst_executor::executeAsyncNonZeroExitCode() {
   if (sh.isEmpty())
     QSKIP("sh not found in PATH");
   Executor exec;
-  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
-                            &Executor::finished));
+  QSignalSpy spy(&exec, &Executor::finished);
   QVERIFY2(spy.isValid(), "spy must connect to Executor::finished signal");
   exec.execute(7, sh, {"-c", "exit 1"}, false, false);
   QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
@@ -416,9 +413,7 @@ void tst_executor::executeAsyncFailedToStartEmitsError() {
   // callers (e.g. the GPG keygen dialog) hanging with no feedback.
   Executor exec;
   QSignalSpy errorSpy(&exec, &Executor::error);
-  QSignalSpy finishedSpy(&exec,
-                         qOverload<int, int, const QString &, const QString &>(
-                             &Executor::finished));
+  QSignalSpy finishedSpy(&exec, &Executor::finished);
   QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
   QVERIFY2(finishedSpy.isValid(),
            "spy must connect to Executor::finished signal");
@@ -443,9 +438,7 @@ void tst_executor::executeAsyncFailedToStartNoInputDoesNotStall() {
     QSKIP("sh not found in PATH");
   Executor exec;
   QSignalSpy errorSpy(&exec, &Executor::error);
-  QSignalSpy finishedSpy(&exec,
-                         qOverload<int, int, const QString &, const QString &>(
-                             &Executor::finished));
+  QSignalSpy finishedSpy(&exec, &Executor::finished);
   QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
   QVERIFY2(finishedSpy.isValid(),
            "spy must connect to Executor::finished signal");
@@ -476,9 +469,7 @@ void tst_executor::executeAsyncEmptyExecutableEmitsErrorAndContinues() {
     QSKIP("sh not found in PATH");
   Executor exec;
   QSignalSpy errorSpy(&exec, &Executor::error);
-  QSignalSpy finishedSpy(&exec,
-                         qOverload<int, int, const QString &, const QString &>(
-                             &Executor::finished));
+  QSignalSpy finishedSpy(&exec, &Executor::finished);
   QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
   QVERIFY2(finishedSpy.isValid(),
            "spy must connect to Executor::finished signal");
@@ -519,9 +510,7 @@ void tst_executor::executeAsyncStartingSignal() {
     QSKIP("sh not found in PATH");
   Executor exec;
   QSignalSpy startSpy(&exec, &Executor::starting);
-  QSignalSpy doneSpy(&exec,
-                     qOverload<int, int, const QString &, const QString &>(
-                         &Executor::finished));
+  QSignalSpy doneSpy(&exec, &Executor::finished);
   QVERIFY2(doneSpy.isValid(),
            "doneSpy must connect to Executor::finished signal");
   exec.execute(3, sh, {"-c", "echo starting-test"}, false, false);
@@ -534,8 +523,7 @@ void tst_executor::executeAsyncMultipleSequential() {
   if (sh.isEmpty())
     QSKIP("sh not found in PATH");
   Executor exec;
-  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
-                            &Executor::finished));
+  QSignalSpy spy(&exec, &Executor::finished);
   QVERIFY2(spy.isValid(), "spy must connect to Executor::finished signal");
   exec.execute(10, sh, {"-c", "echo first"}, true, false);
   exec.execute(11, sh, {"-c", "echo second"}, true, false);
@@ -551,8 +539,7 @@ void tst_executor::executeAsyncWithWorkDir() {
   QTemporaryDir tmp;
   QVERIFY2(tmp.isValid(), "temp dir must be valid");
   Executor exec;
-  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
-                            &Executor::finished));
+  QSignalSpy spy(&exec, &Executor::finished);
   QVERIFY2(spy.isValid(), "spy must connect to Executor::finished signal");
   exec.execute(5, tmp.path(), sh, {"-c", "pwd"}, true, false);
   QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
@@ -634,8 +621,7 @@ void tst_executor::wslPrefixAsyncUsesExec() {
   FakeWsl fake;
   QVERIFY2(fake.ok(), "fake wsl script should be installed on PATH");
   Executor exec;
-  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
-                            &Executor::finished));
+  QSignalSpy spy(&exec, &Executor::finished);
   const QString hostile = QStringLiteral("$(id) -r");
   exec.execute(1, QStringLiteral("wsl git"), {QStringLiteral("rm"), hostile},
                true, true);

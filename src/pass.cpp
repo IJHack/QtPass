@@ -67,10 +67,7 @@ auto effectiveCharset(const PasswordConfiguration &passConfig) -> QString {
  * @brief Pass::Pass wrapper for using either pass or the pass imitation
  */
 Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
-  connect(&exec,
-          static_cast<void (Executor::*)(int, int, const QString &,
-                                         const QString &)>(&Executor::finished),
-          this, &Pass::finished);
+  connect(&exec, &Executor::finished, this, &Pass::finished);
   connect(&exec, &Executor::error, this, &Pass::finished);
 
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
