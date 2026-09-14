@@ -56,14 +56,27 @@ protected:
   auto signGpgIdFile(const QString &gpgIdFile, const QStringList &signingKeys)
       -> bool;
   /**
-   * @brief Add .gpg-id to git staging.
+   * @brief Stage and commit .gpg-id (and optionally its signature) in git.
+   *
+   * Runs git synchronously so that the blocking re-encryption that follows
+   * in Init cannot race the add/commit for the index lock.
    * @param gpgIdFile .gpg-id file path.
    * @param gpgIdSigFile Signature file path.
    * @param addFile Stage .gpg-id file.
    * @param addSigFile Stage signature file.
+   * @param out Receives stdout of the git commands.
+   * @param err Receives stderr of the git commands.
+   * @return Exit code of the first failing git command, 0 on success.
    */
-  void gitAddGpgId(const QString &gpgIdFile, const QString &gpgIdSigFile,
-                   bool addFile, bool addSigFile);
+  auto gitAddGpgId(const QString &gpgIdFile, const QString &gpgIdSigFile,
+                   bool addFile, bool addSigFile, QString *out = nullptr,
+                   QString *err = nullptr) -> int;
+  /**
+   * @brief Check whether git already tracks a file in the store.
+   * @param file Absolute path inside the password store.
+   * @return true when the file is in the git index.
+   */
+  auto gitTracks(const QString &file) -> bool;
   /**
    * @brief Verify .gpg-id file for a directory.
    * @param file Password file path.

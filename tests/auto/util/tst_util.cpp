@@ -284,6 +284,9 @@ private Q_SLOTS:
   // ImitatePass::createBackupCommit must not sweep up untracked files (#1682)
   void createBackupCommitLeavesUntrackedFilesAlone();
   void createBackupCommitSkipsWhenOnlyUntrackedFiles();
+  // ImitatePass::Init must stage a .gpg-id that exists on disk but is not
+  // tracked by git yet (follow-up to #1685)
+  void initStagesUntrackedGpgId();
 
 private:
   // Run git in `dir`; returns false on launch failure or non-zero exit. Stdout
@@ -2861,6 +2864,105 @@ void tst_util::createBackupCommitSkipsWhenOnlyUntrackedFiles() {
   QString lsFiles;
   QVERIFY(runGit(gitExe, tmp.path(), {"ls-files"}, &lsFiles));
   QCOMPARE(lsFiles.trimmed(), QStringLiteral("tracked.gpg"));
+}
+
+/**
+ * @brief Init stages a folder .gpg-id that exists on disk but that git does
+ * not track yet.
+ *
+ * MainWindow::addFolder writes the new folder's .gpg-id without staging it,
+ * and since #1685 the backup commit before re-encryption only picks up
+ * tracked files. Init used to decide whether to `git add` from
+ * QFileInfo::exists, so for such a file it skipped the add and its
+ * `git commit -- <file>` failed on the untracked pathspec, leaving the
+ * re-encrypted entries to be pushed without the recipients file.
+ *
+ * The add/commit also used to run on the asynchronous executor while
+ * reencryptPath issued blocking git calls, so the two raced for the index
+ * lock; Init is sequential now, which is why this test can expect exactly
+ * one finishedInit and the "Added" commit on top.
+ */
+void tst_util::initStagesUntrackedGpgId() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  QString gitExe;
+  const QString tracked = setUpBackupRepo(tmp.path(), &gitExe);
+  if (gitExe.isEmpty())
+    QSKIP("git not installed - skipping Init test");
+  QVERIFY2(!tracked.isEmpty(), "git repo setup should succeed");
+
+  // Mimic addFolder: the folder and its .gpg-id exist, git knows neither.
+  const QString folder = QDir::cleanPath(tmp.path() + "/work") + "/";
+  QVERIFY(QDir().mkpath(folder));
+  {
+    QFile f(folder + ".gpg-id");
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("inheritedkey123\n");
+  }
+
+  TestPass pass;
+  AppSettings s;
+  s.useGit = true;
+  s.addGPGId = true;
+  s.autoPull = false;
+  s.autoPush = false;
+  s.passSigningKey.clear();
+  s.gitExecutable = gitExe;
+  s.passStore = tmp.path();
+  pass.init(s);
+
+  UserInfo user;
+  user.key_id = QStringLiteral("testkey123");
+  user.enabled = true;
+  user.have_secret = true;
+
+  QSignalSpy doneSpy(&pass, &Pass::finishedInit);
+  QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+  pass.Init(folder, {user});
+  QVERIFY2(
+      errSpy.isEmpty(),
+      qPrintable(QStringLiteral("git add/commit of the .gpg-id failed: %1")
+                     .arg(errSpy.isEmpty() ? QString()
+                                           : errSpy.first().at(1).toString())));
+  QCOMPARE(doneSpy.count(), 1);
+
+  QString lsFiles;
+  QVERIFY(runGit(gitExe, tmp.path(), {"ls-files"}, &lsFiles));
+  QVERIFY2(lsFiles.split('\n', Qt::SkipEmptyParts)
+               .contains(QStringLiteral("work/.gpg-id")),
+           qPrintable(QStringLiteral("work/.gpg-id must be tracked, got: %1")
+                          .arg(lsFiles.trimmed())));
+
+  QString log;
+  QVERIFY(runGit(gitExe, tmp.path(), {"log", "--format=%s"}, &log));
+  const QStringList subjects = log.split('\n', Qt::SkipEmptyParts);
+  QCOMPARE(subjects.size(), 2);
+  QCOMPARE(subjects.last(), QStringLiteral("initial"));
+  QVERIFY2(subjects.first().startsWith(QStringLiteral("Added ")) &&
+               subjects.first().endsWith(
+                   QStringLiteral("work/.gpg-id using QtPass.")),
+           qPrintable(subjects.first()));
+
+  QString committed;
+  QVERIFY(runGit(gitExe, tmp.path(),
+                 {"show", "--pretty=format:", "--name-only", "HEAD"},
+                 &committed));
+  QVERIFY2(committed.split('\n', Qt::SkipEmptyParts)
+               .contains(QStringLiteral("work/.gpg-id")),
+           qPrintable(QStringLiteral("HEAD (%1) must contain work/.gpg-id, "
+                                     "got: %2")
+                          .arg(subjects.first(), committed.trimmed())));
+
+  QString status;
+  QVERIFY(runGit(gitExe, tmp.path(), {"status", "--porcelain"}, &status));
+  QVERIFY2(status.trimmed().isEmpty(),
+           qPrintable(QStringLiteral("store must be clean, status: %1")
+                          .arg(status.trimmed())));
+
+  QFile written(folder + ".gpg-id");
+  QVERIFY(written.open(QIODevice::ReadOnly | QIODevice::Text));
+  QCOMPARE(QString::fromUtf8(written.readAll()),
+           QStringLiteral("testkey123\n"));
 }
 
 QTEST_MAIN(tst_util)
