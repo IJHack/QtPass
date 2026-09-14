@@ -1,0 +1,16 @@
+#!/bin/sh
+# SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# gpg forwards its environment to the gpg-agent it talks to, and inside the
+# Flatpak that agent is the HOST's (via the exposed xdg-run/gnupg socket
+# directory). Two variables only make sense inside the sandbox and break the
+# host pinentry ("could not connect to display") when forwarded:
+#   XAUTHORITY=/run/flatpak/Xauthority   (the host cannot read it)
+#   DBUS_SESSION_BUS_ADDRESS=unix:path=/run/flatpak/bus
+# DISPLAY / WAYLAND_DISPLAY keep the same names in and out, so they stay.
+#
+# --persist=.gnupg creates the keyring directory 0755; gpg wants 0700.
+unset XAUTHORITY DBUS_SESSION_BUS_ADDRESS
+[ -d "$HOME/.gnupg" ] && chmod 700 "$HOME/.gnupg"
+exec /usr/bin/gpg "$@"

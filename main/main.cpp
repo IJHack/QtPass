@@ -187,7 +187,10 @@ auto main(int argc, char *argv[]) -> int {
                    &MainWindow::messageAvailable);
 #endif
 
-  QGuiApplication::setDesktopFileName("qtpass");
+  // Inside a Flatpak the desktop file is renamed to the app id; Wayland
+  // compositors map the window to its icon through this name.
+  QGuiApplication::setDesktopFileName(
+      qEnvironmentVariable("FLATPAK_ID", QStringLiteral("qtpass")));
 
   // Center the MainWindow on the screen the mouse pointer is currently on
   QScreen *screen = QGuiApplication::screenAt(QCursor::pos());
