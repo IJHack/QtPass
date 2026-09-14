@@ -119,10 +119,12 @@ private Q_SLOTS:
   void messageArrives();
   void emptyPayloadArrivesAsEmptyMessage();
   void silentPeerIsIgnoredAndReleased();
+  void oversizedPayloadIsDroppedAndPeerDisconnected();
   void primaryIsNotRunning();
 
 private:
   auto app() -> SingleApplication *;
+  void ensurePrimary();
   auto connectClient(QLocalSocket &client) -> bool;
   auto acceptedSockets() -> int;
 
@@ -132,6 +134,20 @@ private:
 
 auto tst_singleapplication::app() -> SingleApplication * {
   return qobject_cast<SingleApplication *>(QCoreApplication::instance());
+}
+
+/**
+ * Every test but the takeover one needs this process to be the listening
+ * instance. When the suite runs in order the first test gets it there; when a
+ * single function is selected on the command line the fake peer is still up,
+ * so perform the same takeover here without the assertions.
+ */
+void tst_singleapplication::ensurePrimary() {
+  if (!app()->isRunning()) {
+    return;
+  }
+  m_peer.vanish();
+  app()->sendMessage(QStringLiteral("takeover"));
 }
 
 auto tst_singleapplication::connectClient(QLocalSocket &client) -> bool {
@@ -180,6 +196,7 @@ void tst_singleapplication::takesOverWhenPeerVanishesBeforeForward() {
  * peer left such a file behind before this instance started listening.
  */
 void tst_singleapplication::listensDespiteStaleSocket() {
+  ensurePrimary();
   QVERIFY(app());
   QLocalSocket client;
   QVERIFY2(connectClient(client),
@@ -191,6 +208,7 @@ void tst_singleapplication::listensDespiteStaleSocket() {
  * Other local users must not be able to talk to a QtPass instance.
  */
 void tst_singleapplication::socketIsUserAccessOnly() {
+  ensurePrimary();
 #ifdef Q_OS_WIN
   QSKIP("named pipe ACLs are not inspectable through QFile");
 #else
@@ -206,6 +224,7 @@ void tst_singleapplication::socketIsUserAccessOnly() {
 }
 
 void tst_singleapplication::messageArrives() {
+  ensurePrimary();
   QSignalSpy spy(app(), &SingleApplication::messageAvailable);
   QLocalSocket client;
   QVERIFY(connectClient(client));
@@ -224,6 +243,7 @@ void tst_singleapplication::messageArrives() {
  * must surface as an empty message (MainWindow then just raises itself).
  */
 void tst_singleapplication::emptyPayloadArrivesAsEmptyMessage() {
+  ensurePrimary();
   QSignalSpy spy(app(), &SingleApplication::messageAvailable);
   QLocalSocket client;
   QVERIFY(connectClient(client));
@@ -248,6 +268,7 @@ void tst_singleapplication::emptyPayloadArrivesAsEmptyMessage() {
  * client.
  */
 void tst_singleapplication::silentPeerIsIgnoredAndReleased() {
+  ensurePrimary();
   auto *server = app()->findChild<QLocalServer *>();
   QVERIFY(server);
   QSignalSpy accepted(server, &QLocalServer::newConnection);
@@ -268,7 +289,34 @@ void tst_singleapplication::silentPeerIsIgnoredAndReleased() {
   QCOMPARE(spy.count(), 0);
 }
 
+/**
+ * A peer that streams more than a command line could ever be must not grow
+ * the buffer without bound: the data is dropped, the peer disconnected, no
+ * message is emitted and the accepted socket is released.
+ */
+void tst_singleapplication::oversizedPayloadIsDroppedAndPeerDisconnected() {
+  ensurePrimary();
+  QSignalSpy spy(app(), &SingleApplication::messageAvailable);
+  QLocalSocket client;
+  QVERIFY(connectClient(client));
+  const QByteArray chunk(16 * 1024, 'x');
+  QElapsedTimer timer;
+  timer.start();
+  // Keep writing until the server hangs up on us (or give up after 5 s).
+  while (client.state() == QLocalSocket::ConnectedState &&
+         timer.elapsed() < 5000) {
+    client.write(chunk);
+    QTest::qWait(10);
+  }
+  QVERIFY2(client.state() != QLocalSocket::ConnectedState,
+           "server kept accepting an unbounded payload");
+  QTRY_COMPARE(acceptedSockets(), 0);
+  QTest::qWait(50);
+  QCOMPARE(spy.count(), 0);
+}
+
 void tst_singleapplication::primaryIsNotRunning() {
+  ensurePrimary();
   QVERIFY(!app()->isRunning());
   QVERIFY(!app()->sendMessage(QStringLiteral("nobody home")));
 }
@@ -281,7 +329,7 @@ auto main(int argc, char *argv[]) -> int {
   SingleApplication app(argc, argv, key);
   tst_singleapplication tc(key, peer);
   QTEST_SET_MAIN_SOURCE_PATH
-  return QTest::qExec(&tc, argc, argv);
+  return QTest::qExec(&tc, QCoreApplication::arguments());
 }
 
 #include "tst_singleapplication.moc"
