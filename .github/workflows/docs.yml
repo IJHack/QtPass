@@ -3,9 +3,9 @@ name: Documentation and public code coverage
 
 on:
   push:
-    branches: [main]
+    branches: [main, "1.8"]
   pull_request:
-    branches: [main]
+    branches: [main, "1.8"]
   merge_group:
 
 permissions:
