@@ -135,11 +135,7 @@ void StoreModel::setStore(const QString &passStore) {
   // Qt versions must manually invalidate filters. We update the store and
   // manually invalidate the filter as a compatibility path.
   store = passStore;
-#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
-  QSortFilterProxyModel::invalidateFilter();
-#else
   invalidateFilter();
-#endif
 #endif
 }
 
