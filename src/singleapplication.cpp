@@ -35,26 +35,7 @@ SingleApplication::SingleApplication(
 #endif
     sharedMemory.detach();
   }
-  // create shared memory.
-  if (!sharedMemory.create(1)) {
-#ifdef QT_DEBUG
-    dbg() << "Unable to create single instance.";
-#endif
-    return;
-  }
-  // create local server and listen to incoming messages from other
-  // instances. A socket file left behind by a crashed instance would make
-  // listen() fail (address in use) and silently disable IPC for good, so
-  // clear it first: no live peer answered above.
-  QLocalServer::removeServer(_uniqueKey);
-  localServer.reset(new QLocalServer(this));
-  localServer->setSocketOptions(QLocalServer::UserAccessOption);
-  connect(localServer.data(), &QLocalServer::newConnection, this,
-          &SingleApplication::receiveMessage);
-  if (!localServer->listen(_uniqueKey)) {
-    qWarning() << "SingleApplication: cannot listen on" << _uniqueKey << ":"
-               << localServer->errorString();
-  }
+  becomePrimary();
 }
 
 // public slots.
@@ -102,6 +83,58 @@ auto SingleApplication::sendMessage(const QString &message) -> bool {
   if (!_isRunning) {
     return false;
   }
+  if (forwardMessage(message)) {
+    return true;
+  }
+  // The peer vanished between the probe in the constructor and now. Let go of
+  // its segment and take its place, so the window main() opens next is the
+  // reachable instance. Staying attached without listening would make every
+  // later launch fail create() and open yet another window without IPC.
+  _isRunning = false;
+  sharedMemory.detach();
+  becomePrimary();
+  return false;
+}
+
+// private functions.
+/**
+ * @brief SingleApplication::becomePrimary claim the shared-memory segment and
+ * start listening for messages from later launches.
+ *
+ * Does nothing (and leaves isRunning() false) when another instance holds the
+ * segment; the caller then runs without IPC rather than not at all.
+ */
+void SingleApplication::becomePrimary() {
+  // create shared memory.
+  if (!sharedMemory.create(1)) {
+#ifdef QT_DEBUG
+    dbg() << "Unable to create single instance.";
+#endif
+    return;
+  }
+  // create local server and listen to incoming messages from other
+  // instances. A socket file left behind by a crashed instance would make
+  // listen() fail (address in use) and silently disable IPC for good, so
+  // clear it first: no live peer answered on it, or create() would have
+  // failed.
+  QLocalServer::removeServer(_uniqueKey);
+  localServer.reset(new QLocalServer(this));
+  localServer->setSocketOptions(QLocalServer::UserAccessOption);
+  connect(localServer.data(), &QLocalServer::newConnection, this,
+          &SingleApplication::receiveMessage);
+  if (!localServer->listen(_uniqueKey)) {
+    qWarning() << "SingleApplication: cannot listen on" << _uniqueKey << ":"
+               << localServer->errorString();
+  }
+}
+
+/**
+ * @brief SingleApplication::forwardMessage deliver a message to the instance
+ * listening on the local socket.
+ * @param message
+ * @return true if the peer accepted the whole payload.
+ */
+auto SingleApplication::forwardMessage(const QString &message) -> bool {
   QLocalSocket localSocket(this);
   localSocket.connectToServer(_uniqueKey, QIODevice::WriteOnly);
   if (!localSocket.waitForConnected(timeout)) {
@@ -125,7 +158,6 @@ auto SingleApplication::sendMessage(const QString &message) -> bool {
   return true;
 }
 
-// private functions.
 /**
  * @brief SingleApplication::peerIsListening probe whether an instance is
  * actually accepting connections on the local socket.
