@@ -9,6 +9,7 @@
 #include "util.h"
 #include <QMessageBox>
 #include <QRegularExpression>
+#include <algorithm>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -121,6 +122,23 @@ void KeygenDialog::replace(const QString &key, const QString &value) {
 }
 
 /**
+ * @brief isControlStatement match a batch line against a gpg control
+ * statement the way gpg's read_parameter_file does: leading whitespace is
+ * skipped, the keyword ends at the first whitespace (anything after it is
+ * ignored) and the comparison is case-insensitive.
+ * @param line A line of the batch template.
+ * @param control The control statement, including the leading '%'.
+ * @return true when gpg would honour the line as that control statement.
+ */
+static bool isControlStatement(const QString &line, const QString &control) {
+  const QString trimmed = line.trimmed();
+  if (!trimmed.startsWith(control, Qt::CaseInsensitive))
+    return false;
+  return trimmed.size() == control.size() ||
+         trimmed.at(control.size()).isSpace();
+}
+
+/**
  * @brief KeygenDialog::applyPassphrase splice the passphrase into a GPG batch
  * template just before it is handed to gpg.
  *
@@ -129,6 +147,12 @@ void KeygenDialog::replace(const QString &key, const QString &value) {
  * %commit if the template has neither. An empty passphrase turns any
  * Passphrase: line back into %no-protection. The value is spliced in as a
  * plain string, never through a regex replacement.
+ *
+ * Keywords are matched as gpg matches them (case-insensitively, control
+ * statements up to the first whitespace, parameter names up to the colon), so
+ * every variant gpg would honour is caught: an expert's "%No-Protection" must
+ * not survive next to the Passphrase: line, because gpg then generates an
+ * unprotected key regardless of the passphrase.
  * @param batch The template as shown in the (expert) editor.
  * @param passphrase The passphrase, or an empty string for an unprotected key.
  * @return The batch to feed to gpg.
@@ -136,6 +160,7 @@ void KeygenDialog::replace(const QString &key, const QString &value) {
 QString KeygenDialog::applyPassphrase(const QString &batch,
                                       const QString &passphrase) {
   static const QString noProtection = QStringLiteral("%no-protection");
+  static const QString commit = QStringLiteral("%commit");
   static const QString passphraseKey = QStringLiteral("Passphrase:");
   const QString protection =
       passphrase.isEmpty() ? noProtection : passphraseKey + " " + passphrase;
@@ -145,8 +170,8 @@ QString KeygenDialog::applyPassphrase(const QString &batch,
   const QStringList lines =
       batch.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
   for (const QString &line : lines) {
-    const QString trimmed = line.trimmed();
-    if (trimmed == noProtection || trimmed.startsWith(passphraseKey)) {
+    if (isControlStatement(line, noProtection) ||
+        line.trimmed().startsWith(passphraseKey, Qt::CaseInsensitive)) {
       if (!spliced) {
         clear.append(protection);
         spliced = true;
@@ -158,8 +183,11 @@ QString KeygenDialog::applyPassphrase(const QString &batch,
 
   if (!spliced && !passphrase.isEmpty()) {
     // Parameters must precede %commit; append when the template has none.
-    qsizetype commit = clear.indexOf(QStringLiteral("%commit"));
-    clear.insert(commit < 0 ? clear.size() : commit, protection);
+    const auto commitLine =
+        std::find_if(clear.cbegin(), clear.cend(), [](const QString &line) {
+          return isControlStatement(line, commit);
+        });
+    clear.insert(commitLine - clear.cbegin(), protection);
   }
   return clear.join("\n");
 }

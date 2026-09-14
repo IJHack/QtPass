@@ -47,6 +47,9 @@ private Q_SLOTS:
   void applyPassphraseInsertsBeforeCommitWhenAbsent();
   void applyPassphraseCopiesSpecialCharactersVerbatim();
   void applyPassphraseCollapsesDuplicateProtectionLines();
+  void applyPassphraseMatchesNoProtectionLikeGpg();
+  void applyPassphraseMatchesPassphraseKeywordLikeGpg();
+  void applyPassphraseMatchesCommitLikeGpg();
 };
 
 /**
@@ -381,6 +384,95 @@ void tst_keygendialog::applyPassphraseCollapsesDuplicateProtectionLines() {
            QStringLiteral("Key-Type: RSA\n"
                           "Passphrase: testkey123\n"
                           "%commit"));
+}
+
+/**
+ * @brief gpg (g10/keygen.c read_parameter_file) compares control statements
+ *        case-insensitively and cuts the keyword at the first whitespace, so
+ *        "%No-Protection" and "%no-protection  # comment" both switch
+ *        protection off. Leaving either next to a Passphrase: line yields an
+ *        unprotected key; every such spelling must be replaced.
+ */
+void tst_keygendialog::applyPassphraseMatchesNoProtectionLikeGpg() {
+  const QString expected = QStringLiteral("Key-Type: RSA\n"
+                                          "Passphrase: testkey123\n"
+                                          "%commit");
+  QCOMPARE(KeygenDialog::applyPassphrase(QStringLiteral("Key-Type: RSA\n"
+                                                        "%No-Protection\n"
+                                                        "%commit"),
+                                         QStringLiteral("testkey123")),
+           expected);
+  QCOMPARE(KeygenDialog::applyPassphrase(
+               QStringLiteral("Key-Type: RSA\n"
+                              "%no-protection   # expert comment\n"
+                              "%commit"),
+               QStringLiteral("testkey123")),
+           expected);
+  QCOMPARE(KeygenDialog::applyPassphrase(QStringLiteral("Key-Type: RSA\n"
+                                                        "\t%NO-PROTECTION\t\n"
+                                                        "%commit"),
+                                         QStringLiteral("testkey123")),
+           expected);
+
+  // A different control statement that merely shares the prefix is not
+  // protection and must be left alone.
+  const QString unrelated = QStringLiteral("Key-Type: RSA\n"
+                                           "%no-protection-something-else\n"
+                                           "%commit");
+  QCOMPARE(
+      KeygenDialog::applyPassphrase(unrelated, QStringLiteral("testkey123")),
+      QStringLiteral("Key-Type: RSA\n"
+                     "%no-protection-something-else\n"
+                     "Passphrase: testkey123\n"
+                     "%commit"));
+}
+
+/**
+ * @brief Parameter names are case-insensitive for gpg too; a lowercase
+ *        "passphrase:" typed in expert mode must be collapsed, otherwise gpg
+ *        sees two Passphrase parameters and aborts with "duplicate keyword".
+ */
+void tst_keygendialog::applyPassphraseMatchesPassphraseKeywordLikeGpg() {
+  QCOMPARE(
+      KeygenDialog::applyPassphrase(QStringLiteral("Key-Type: RSA\n"
+                                                   "passphrase: old-value\n"
+                                                   "%commit"),
+                                    QStringLiteral("newkey456")),
+      QStringLiteral("Key-Type: RSA\n"
+                     "Passphrase: newkey456\n"
+                     "%commit"));
+  QCOMPARE(
+      KeygenDialog::applyPassphrase(QStringLiteral("Key-Type: RSA\n"
+                                                   "  PASSPHRASE: old-value\n"
+                                                   "%commit"),
+                                    QString()),
+      QStringLiteral("Key-Type: RSA\n"
+                     "%no-protection\n"
+                     "%commit"));
+}
+
+/**
+ * @brief "%commit " (trailing whitespace, other case, leading indent) is a
+ *        commit for gpg; the Passphrase: line has to land before it, not
+ *        after, or the key is generated without it.
+ */
+void tst_keygendialog::applyPassphraseMatchesCommitLikeGpg() {
+  QCOMPARE(KeygenDialog::applyPassphrase(QStringLiteral("Key-Type: RSA\n"
+                                                        "%commit \n"
+                                                        "%echo done"),
+                                         QStringLiteral("testkey123")),
+           QStringLiteral("Key-Type: RSA\n"
+                          "Passphrase: testkey123\n"
+                          "%commit \n"
+                          "%echo done"));
+  QCOMPARE(KeygenDialog::applyPassphrase(QStringLiteral("Key-Type: RSA\n"
+                                                        "  %Commit\n"
+                                                        "%echo done"),
+                                         QStringLiteral("testkey123")),
+           QStringLiteral("Key-Type: RSA\n"
+                          "Passphrase: testkey123\n"
+                          "  %Commit\n"
+                          "%echo done"));
 }
 
 QTEST_MAIN(tst_keygendialog)
