@@ -116,6 +116,23 @@ public:
    */
   static auto isLaunchableWebUrl(const QString &value) -> bool;
   /**
+   * @brief Turn plain text into HTML with clickable links for safe web URLs.
+   *
+   * The single rule for every place a value is rendered into an
+   * `<a href>`: the text is HTML-escaped, and only the protocolRegex()
+   * matches that also pass isLaunchableWebUrl() become anchors. Everything
+   * else (ssh://, ftp://, URLs carrying user:pass\@ credentials, ...) stays
+   * escaped plain text, so a click can never hand a non-web scheme or a
+   * secret to the OS URL handler via QTextBrowser::setOpenExternalLinks().
+   *
+   * @param text   Plain (unescaped) text, possibly containing URLs.
+   * @param linked Optional out parameter, set to true when at least one
+   *               anchor was produced.
+   * @return HTML-escaped text with anchors for launchable http(s) URLs.
+   */
+  static auto linkifyUrls(const QString &text, bool *linked = nullptr)
+      -> QString;
+  /**
    * @brief Returns a regex to match newline characters.
    * @return Reference to static regex
    */
