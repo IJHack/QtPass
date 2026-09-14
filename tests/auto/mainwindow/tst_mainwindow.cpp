@@ -500,7 +500,7 @@ void tst_mainwindow::textBrowserFollowsRuntimePaletteChange() {
   dark.setColor(QPalette::Base, QColor(0x10, 0x10, 0x10));
   QApplication::setPalette(dark);
   QCoreApplication::processEvents();
-  // Styles may tint Base slightly (Qt 5.15 Fusion renders #101010 as
+  // Styles may tint Base slightly (Fusion has rendered #101010 as
   // #070c10), so compare lightness rather than the exact colour.
   const QColor darkPixel =
       browser->grab().toImage().pixelColor(browser->rect().center());

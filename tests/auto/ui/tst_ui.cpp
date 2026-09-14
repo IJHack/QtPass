@@ -666,7 +666,7 @@ void tst_ui::deselectableTreeViewConstruction() {
 void tst_ui::deselectableTreeViewHasEmptyClickedSignal() {
   // Verify emptyClicked signal is connectable via QSignalSpy
   QScopedPointer<DeselectableTreeView> view(new DeselectableTreeView(nullptr));
-  QSignalSpy spy(view.data(), SIGNAL(emptyClicked()));
+  QSignalSpy spy(view.data(), &DeselectableTreeView::emptyClicked);
   QVERIFY(spy.isValid());
   // No click occurred yet, so count should be 0
   QCOMPARE(spy.count(), 0);

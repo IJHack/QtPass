@@ -15,14 +15,8 @@
 #include <QProcess>
 #include <QTimer>
 
-#if SINGLE_APP
-class SingleApplication;
-#else
-#define SingleApplication QApplication
-#endif
-
 #ifdef __APPLE__
-// http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
+// https://doc.qt.io/qt-6/qkeysequence.html#qt_set_sequence_auto_mnemonic
 void qt_set_sequence_auto_mnemonic(bool b);
 #endif
 
