@@ -5,6 +5,7 @@ on:
   pull_request:
     branches:
       - main
+      - "1.8"
     paths:
       - "flatpak/**"
       - "qtpass.appdata.xml"
