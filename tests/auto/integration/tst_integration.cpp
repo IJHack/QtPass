@@ -674,6 +674,7 @@ void tst_integration::imitatePass_copyOntoFolderAndShow() {
   const QString dst = folder + "/original.gpg";
 
   QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
   // Without git, Copy is synchronous — no finishedCopy signal emitted.
   pass.Copy(src, folder, false);
   QVERIFY2(criticalSpy.isEmpty(), "copy onto a folder must not fail");
@@ -687,6 +688,18 @@ void tst_integration::imitatePass_copyOntoFolderAndShow() {
   QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted after copy");
   QVERIFY2(showSpy[0][0].toString().contains("copyme"),
            "decrypted copy should contain original content");
+
+  // Copying onto the folder again without force must refuse: the folder
+  // itself is a valid destination, so only the resolved file reveals the
+  // clash, and the existing entry must stay byte-for-byte as it was. The
+  // first copy re-encrypts the folder on a worker thread; let that land
+  // before taking the reference bytes.
+  QVERIFY2(waitForSignal(endSpy, 60000), "endReencryptPath not emitted");
+  const QByteArray before = readFileBytes(dst);
+  pass.Copy(src, folder, false);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy[0][0].toString(), QStringLiteral("Copy failed"));
+  QCOMPARE(readFileBytes(dst), before);
 }
 
 void tst_integration::imitatePass_copyOntoExistingEntryClash() {

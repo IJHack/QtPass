@@ -5,9 +5,11 @@
 #include "util.h"
 #include <QDirIterator>
 #include <QElapsedTimer>
+#include <QFile>
 #include <QPointer>
 #include <QProcess>
 #include <QRegularExpression>
+#include <QSaveFile>
 #include <QThread>
 #include <QTimer>
 #include <utility>
@@ -1187,6 +1189,41 @@ void ImitatePass::Move(const QString src, const QString dest,
 }
 
 /**
+ * @brief Copies a regular file onto dst, replacing dst atomically.
+ *
+ * The bytes are written to a temporary sibling that QSaveFile renames over
+ * dst only once all of them are in, so a failure part-way (disk full,
+ * permissions, a vanished source) leaves an existing dst untouched instead of
+ * removed first and never rewritten. The source's permissions are carried
+ * over, as QFile::copy would.
+ * @return true on success; on failure nothing at dst has changed.
+ */
+static auto copyFileReplacing(const QString &src, const QString &dst) -> bool {
+  QFile in(src);
+  if (!QFileInfo(in).isFile() || !in.open(QIODevice::ReadOnly))
+    return false;
+  QSaveFile out(dst);
+  if (!out.open(QIODevice::WriteOnly))
+    return false;
+  out.setPermissions(in.permissions());
+  char buf[64 * 1024];
+  for (;;) {
+    const qint64 n = in.read(buf, sizeof buf);
+    if (n < 0) {
+      out.cancelWriting();
+      return false;
+    }
+    if (n == 0)
+      break;
+    if (out.write(buf, n) != n) {
+      out.cancelWriting();
+      return false;
+    }
+  }
+  return out.commit();
+}
+
+/**
  * @brief Copies a file or directory from source to destination, optionally
  * forcing overwrite.
  * @example
@@ -1213,21 +1250,25 @@ void ImitatePass::Copy(const QString src, const QString dest,
   }
   QFileInfo destFileInfo(destFile);
   // A folder destination that is the source's own folder resolves to the
-  // source itself; with force that remove() below would delete the only copy.
+  // source itself; with force that would replace the only copy with itself.
   if (QFileInfo(src) == destFileInfo) {
     emit critical(tr("Copy failed"),
                   tr("Could not copy %1 to %2.").arg(src, destFile));
     return;
   }
-  if (force) {
-    QFile::remove(destFile);
+  // resolveMoveDestination only sees a clash when dest names the file; for a
+  // folder destination the resolved <folder>/<entry>.gpg may exist as well.
+  if (!force && destFileInfo.exists()) {
+    emit critical(tr("Copy failed"),
+                  tr("Could not copy %1 to %2.").arg(src, destFile));
+    return;
   }
   // git has no "cp" subcommand, so copy on the filesystem in both modes and,
-  // when using git, stage the new path afterwards. QFile::copy is synchronous,
-  // so the destination exists before the re-encryption below runs. It fails
-  // (without overwriting) when dest already exists, so surface that instead of
-  // committing a copy that never happened.
-  if (!QFile::copy(src, destFile)) {
+  // when using git, stage the new path afterwards. The copy is synchronous and
+  // replaces the destination atomically (see copyFileReplacing), so it exists
+  // before the re-encryption below runs and an entry being overwritten with
+  // force survives a copy that fails half-way.
+  if (!copyFileReplacing(src, destFile)) {
     emit critical(tr("Copy failed"),
                   tr("Could not copy %1 to %2.").arg(src, destFile));
     return;
