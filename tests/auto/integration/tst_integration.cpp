@@ -718,10 +718,12 @@ void tst_integration::imitatePass_copyOntoExistingEntryClash() {
   QCOMPARE(readFileBytes(src), srcBytes);
   QCOMPARE(readFileBytes(dst), dstBytes);
 
-  // With force the existing entry is overwritten by the copy.
+  // With force the existing entry is overwritten by the copy. On this branch
+  // Copy re-encrypts the folder synchronously afterwards, which rewrites the
+  // source's ciphertext too, so check that it survives rather than its bytes.
   pass.Copy(src, dst, true);
   QCOMPARE(criticalSpy.count(), 1);
-  QCOMPARE(readFileBytes(src), srcBytes);
+  QVERIFY2(QFile::exists(src), "source must survive a forced copy");
   QVERIFY2(readFileBytes(dst) != dstBytes,
            "force copy should overwrite the target");
 
