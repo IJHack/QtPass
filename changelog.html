@@ -223,6 +223,98 @@
       <section>
         <h1>QtPass changelog</h1>
         <h2>
+          <a id="v1.8.1" class="anchor" href="#v1.8.1" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >v1.8.1
+        </h2>
+
+        <p>
+          Security and bug-fix release: the fixes from the 2.0 branch that
+          matter for 1.8 users, backported. Qt 5.15 and Qt 6 are both still
+          supported.
+        </p>
+
+        <h3>Security</h3>
+        <ul>
+          <li>
+            Windows/WSL: commands run through <code>wsl --exec</code> instead of
+            the distribution's login shell, so paths, recipients and commit
+            messages are no longer word-split or expanded by a shell
+          </li>
+          <li>
+            Every gpg encrypt call passes <code>--no-encrypt-to</code>, so an
+            <code>encrypt-to</code> in your <code>gpg.conf</code> can no longer
+            add a recipient the <code>.gpg-id</code> never listed
+          </li>
+          <li>
+            Only <code>http(s)</code> URLs become clickable links; other schemes
+            and URLs with embedded credentials are shown as text
+          </li>
+          <li>
+            The key-generation dialog no longer shows the passphrase in the
+            batch template, and an expert-mode template cannot produce an
+            unprotected key by accident
+          </li>
+          <li>
+            The re-encryption backup commit stages tracked files only, so stray
+            plaintext in the store is never committed and pushed
+          </li>
+          <li>
+            Single-instance IPC: a stale socket no longer disables it, the
+            socket is restricted to the owning user, and a failed forward opens
+            a window instead of exiting silently
+          </li>
+          <li>
+            An out-of-range character-set setting is clamped instead of read out
+            of bounds
+          </li>
+        </ul>
+
+        <h3>Bug Fixes</h3>
+        <ul>
+          <li>
+            "New folder" no longer writes an empty <code>.gpg-id</code> that
+            broke every insert in that folder; it inherits the parent's
+            recipients
+          </li>
+          <li>
+            A configured GPG home that no longer exists is ignored with a status
+            message instead of failing every gpg call with "No secret key"
+          </li>
+          <li>
+            Ctrl-drag copying an entry onto a folder works again in the native
+            (<code>gpg2</code>/<code>git</code>) backend
+          </li>
+          <li>
+            "Use Git" without a Git executable no longer wedges the command
+            queue
+          </li>
+          <li>
+            Edits typed in the password dialog before the decrypt finished are
+            no longer discarded; a failed decrypt shows the gpg error
+          </li>
+          <li>
+            The password pane and the open-in-browser tooltip no longer show
+            <code>&amp;amp;</code>, <code>&amp;quot;</code> for values with
+            <code>&amp;</code> and <code>"</code>
+          </li>
+          <li>
+            <code>.gpg-id</code> entries gpg accepts (v6 fingerprints, user IDs)
+            are no longer dropped and erased on the next save
+          </li>
+          <li>
+            Cancelling the first-run wizard quits instead of showing a
+            half-configured window
+          </li>
+        </ul>
+
+        <p>
+          <a href="https://github.com/IJHack/QtPass/compare/v1.8.0...v1.8.1"
+            >Full Changelog</a
+          >
+        </p>
+
+        <h2>
           <a id="v1.8.0" class="anchor" href="#v1.8.0" aria-hidden="true"
             ><span class="octicon octicon-link"></span></a
           >v1.8.0
