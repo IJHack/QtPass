@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased] — 1.8.1
+## [1.8.1](https://github.com/IJHack/QtPass/tree/v1.8.1) (2026-09-15)
 
 The security and data-loss fixes from the 2.0 branch, backported to the 1.8
 line ([#1709](https://github.com/IJHack/QtPass/issues/1709)). Qt 5.15 and Qt 6 are both still supported.
@@ -63,6 +63,11 @@ line ([#1709](https://github.com/IJHack/QtPass/issues/1709)). Qt 5.15 and Qt 6 a
   ran as the user), closes [#1711](https://github.com/IJHack/QtPass/issues/1711) [#1741](https://github.com/IJHack/QtPass/pull/1741) (ported from [#1740](https://github.com/IJHack/QtPass/pull/1740))
 - `make check` no longer kills the developer's own gpg-agent
   [#1739](https://github.com/IJHack/QtPass/pull/1739) (ported from [#1738](https://github.com/IJHack/QtPass/pull/1738))
+- Ctrl-drag copying an entry onto a folder failed with "Copy failed" in the
+  native (`gpg2`/`git`) backend because the folder path was handed to the file
+  copy; the destination is now resolved like a move (`<folder>/<entry>.gpg`,
+  no overwrite without force, never onto the entry itself)
+  [#1748](https://github.com/IJHack/QtPass/pull/1748) (ported from [#1735](https://github.com/IJHack/QtPass/pull/1735))
 
 ## [1.8.0](https://github.com/IJHack/QtPass/tree/v1.8.0) (2026-09-13)
 
