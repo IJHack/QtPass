@@ -1,12 +1,16 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QFileInfo>
 #include <QProcessEnvironment>
+#include <QScopedPointer>
 #include <QStandardPaths>
 #include <QTemporaryDir>
+#include <QThread>
 #include <QtTest>
+#include <atomic>
 
 #include "../../../src/executor.h"
 #include "../../../src/pass.h"
@@ -29,7 +33,7 @@ private Q_SLOTS:
   void executeBlockingWithEnvEmpty();
   void executeBlockingWithEnvSetsVariable();
   void executeBlockingTwoArgOverload();
-  void executeBlockingConstQStringRef();
+  void executeBlockingConstQString();
   void executeAsyncFinishedSignal();
   void executeAsyncCapturesStdout();
   void executeAsyncNonZeroExitCode();
@@ -41,6 +45,9 @@ private Q_SLOTS:
   void executeAsyncEmptyExecutableEmitsErrorAndContinues();
   void executeAsyncCrashExitReportsNonZeroCode();
   void cancelNextWhileRunningReturnsMinusOne();
+  void executeBlockingCancelFlagEndsChild();
+  void executeBlockingCancelFlagKillsChildIgnoringTerminate();
+  void executeBlockingCancelFlagAlreadySetSkipsStart();
   void wslPrefixBlockingUsesExec();
   void wslPrefixAsyncUsesExec();
 #endif
@@ -168,7 +175,7 @@ void tst_executor::executeBlockingTwoArgOverload() {
            "output should contain 'two-arg-overload'");
 }
 
-void tst_executor::executeBlockingConstQStringRef() {
+void tst_executor::executeBlockingConstQString() {
   // Explicitly verify that the refactored const QString & parameter
   // accepts a const-qualified variable without copies or issues.
   const QString app = QStringLiteral("echo");
@@ -298,10 +305,8 @@ void tst_executor::resolveGpgconfCommand() {
     QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
              "WSL with -e should keep the user's flag and not add --exec");
     result = Pass::resolveGpgconfCommand("wsl --exec gpg2");
-    // Separate variable: brace-assignment to an existing QStringList is
-    // ambiguous on Qt 5.15.
-    const QStringList expectedExecArgs = {"--exec", "gpgconf"};
-    QVERIFY2(result.program == "wsl" && result.arguments == expectedExecArgs,
+    expectedArgs = {"--exec", "gpgconf"};
+    QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
              "WSL with --exec should not add a second --exec");
   }
 
@@ -383,8 +388,7 @@ void tst_executor::executeAsyncFinishedSignal() {
   if (sh.isEmpty())
     QSKIP("sh not found in PATH");
   Executor exec;
-  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
-                            &Executor::finished));
+  QSignalSpy spy(&exec, &Executor::finished);
   QVERIFY2(spy.isValid(),
            "spy must connect to Executor::finished(int,int,...) signal");
   exec.execute(42, sh, {"-c", "echo async-hello"}, true, false);
@@ -401,8 +405,7 @@ void tst_executor::executeAsyncCapturesStdout() {
   if (sh.isEmpty())
     QSKIP("sh not found in PATH");
   Executor exec;
-  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
-                            &Executor::finished));
+  QSignalSpy spy(&exec, &Executor::finished);
   QVERIFY2(spy.isValid(), "spy must connect to Executor::finished signal");
   exec.execute(1, sh, {"-c", "echo captured-output"}, true, false);
   QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
@@ -416,8 +419,7 @@ void tst_executor::executeAsyncNonZeroExitCode() {
   if (sh.isEmpty())
     QSKIP("sh not found in PATH");
   Executor exec;
-  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
-                            &Executor::finished));
+  QSignalSpy spy(&exec, &Executor::finished);
   QVERIFY2(spy.isValid(), "spy must connect to Executor::finished signal");
   exec.execute(7, sh, {"-c", "exit 1"}, false, false);
   QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
@@ -432,9 +434,7 @@ void tst_executor::executeAsyncFailedToStartEmitsError() {
   // callers (e.g. the GPG keygen dialog) hanging with no feedback.
   Executor exec;
   QSignalSpy errorSpy(&exec, &Executor::error);
-  QSignalSpy finishedSpy(&exec,
-                         qOverload<int, int, const QString &, const QString &>(
-                             &Executor::finished));
+  QSignalSpy finishedSpy(&exec, &Executor::finished);
   QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
   QVERIFY2(finishedSpy.isValid(),
            "spy must connect to Executor::finished signal");
@@ -459,9 +459,7 @@ void tst_executor::executeAsyncFailedToStartNoInputDoesNotStall() {
     QSKIP("sh not found in PATH");
   Executor exec;
   QSignalSpy errorSpy(&exec, &Executor::error);
-  QSignalSpy finishedSpy(&exec,
-                         qOverload<int, int, const QString &, const QString &>(
-                             &Executor::finished));
+  QSignalSpy finishedSpy(&exec, &Executor::finished);
   QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
   QVERIFY2(finishedSpy.isValid(),
            "spy must connect to Executor::finished signal");
@@ -492,9 +490,7 @@ void tst_executor::executeAsyncEmptyExecutableEmitsErrorAndContinues() {
     QSKIP("sh not found in PATH");
   Executor exec;
   QSignalSpy errorSpy(&exec, &Executor::error);
-  QSignalSpy finishedSpy(&exec,
-                         qOverload<int, int, const QString &, const QString &>(
-                             &Executor::finished));
+  QSignalSpy finishedSpy(&exec, &Executor::finished);
   QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
   QVERIFY2(finishedSpy.isValid(),
            "spy must connect to Executor::finished signal");
@@ -535,9 +531,7 @@ void tst_executor::executeAsyncStartingSignal() {
     QSKIP("sh not found in PATH");
   Executor exec;
   QSignalSpy startSpy(&exec, &Executor::starting);
-  QSignalSpy doneSpy(&exec,
-                     qOverload<int, int, const QString &, const QString &>(
-                         &Executor::finished));
+  QSignalSpy doneSpy(&exec, &Executor::finished);
   QVERIFY2(doneSpy.isValid(),
            "doneSpy must connect to Executor::finished signal");
   exec.execute(3, sh, {"-c", "echo starting-test"}, false, false);
@@ -550,8 +544,7 @@ void tst_executor::executeAsyncMultipleSequential() {
   if (sh.isEmpty())
     QSKIP("sh not found in PATH");
   Executor exec;
-  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
-                            &Executor::finished));
+  QSignalSpy spy(&exec, &Executor::finished);
   QVERIFY2(spy.isValid(), "spy must connect to Executor::finished signal");
   exec.execute(10, sh, {"-c", "echo first"}, true, false);
   exec.execute(11, sh, {"-c", "echo second"}, true, false);
@@ -567,8 +560,7 @@ void tst_executor::executeAsyncWithWorkDir() {
   QTemporaryDir tmp;
   QVERIFY2(tmp.isValid(), "temp dir must be valid");
   Executor exec;
-  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
-                            &Executor::finished));
+  QSignalSpy spy(&exec, &Executor::finished);
   QVERIFY2(spy.isValid(), "spy must connect to Executor::finished signal");
   exec.execute(5, tmp.path(), sh, {"-c", "pwd"}, true, false);
   QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
@@ -591,6 +583,83 @@ void tst_executor::cancelNextWhileRunningReturnsMinusOne() {
   exec.execute(1, sh, {"-c", "sleep 2"}, false, false);
   exec.execute(2, sh, {"-c", "echo queued"}, false, false);
   QCOMPARE(exec.cancelNext(), -1);
+}
+
+namespace {
+/**
+ * Run @p script through `sh -c` on the cancellable executeBlocking() overload
+ * while a second thread sets the cancel flag after @p delayMs. The second
+ * thread only touches the atomic, never the QProcess; the calling thread is
+ * blocked inside executeBlocking(), so it cannot arm a timer of its own.
+ * Returns the exit code and stores the wall time in @p elapsedMs.
+ */
+int runCancelled(const QString &sh, const QString &script, int delayMs,
+                 qint64 *elapsedMs, QProcess *process) {
+  std::atomic_bool cancel{false};
+  QScopedPointer<QThread> setter(QThread::create([&cancel, delayMs]() {
+    QThread::msleep(delayMs);
+    cancel.store(true);
+  }));
+  setter->start();
+  QElapsedTimer elapsed;
+  elapsed.start();
+  const int rc = Executor::executeBlocking(
+      *process, sh, {"-c", script}, QString(), nullptr, nullptr, &cancel);
+  *elapsedMs = elapsed.elapsed();
+  setter->wait();
+  return rc;
+}
+} // namespace
+
+// Setting the flag from another thread must make the calling thread end its
+// child and return non-zero within seconds, not after the 60 s sleep.
+void tst_executor::executeBlockingCancelFlagEndsChild() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QProcess process;
+  qint64 elapsedMs = 0;
+  const int rc = runCancelled(sh, QStringLiteral("exec sleep 60"), 300,
+                              &elapsedMs, &process);
+  QVERIFY2(rc != 0, "a cancelled run must not report success");
+  QVERIFY2(elapsedMs < 3000,
+           qPrintable(QStringLiteral("cancel took %1 ms").arg(elapsedMs)));
+  QCOMPARE(process.state(), QProcess::NotRunning);
+}
+
+// A child that ignores SIGTERM is kill()ed by the same thread after the grace
+// period; the run still ends well before the sleep would.
+void tst_executor::executeBlockingCancelFlagKillsChildIgnoringTerminate() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QProcess process;
+  qint64 elapsedMs = 0;
+  // No exec: the trap must apply to the process that receives the SIGTERM.
+  const int rc = runCancelled(sh, QStringLiteral("trap '' TERM; sleep 60"), 300,
+                              &elapsedMs, &process);
+  QVERIFY2(rc != 0, "a killed run must not report success");
+  QVERIFY2(elapsedMs < 5000,
+           qPrintable(QStringLiteral("cancel took %1 ms").arg(elapsedMs)));
+  QCOMPARE(process.state(), QProcess::NotRunning);
+}
+
+// A flag that is already set must refuse the run without starting anything.
+void tst_executor::executeBlockingCancelFlagAlreadySetSkipsStart() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString marker = tmp.filePath(QStringLiteral("started"));
+  const std::atomic_bool cancel{true};
+  QProcess process;
+  const int rc = Executor::executeBlocking(
+      process, sh, {"-c", QStringLiteral(": > '%1'").arg(marker)}, QString(),
+      nullptr, nullptr, &cancel);
+  QCOMPARE(rc, -1);
+  QVERIFY2(!QFile::exists(marker), "the child must not have been started");
+  QCOMPARE(process.state(), QProcess::NotRunning);
 }
 
 namespace {
@@ -650,8 +719,7 @@ void tst_executor::wslPrefixAsyncUsesExec() {
   FakeWsl fake;
   QVERIFY2(fake.ok(), "fake wsl script should be installed on PATH");
   Executor exec;
-  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
-                            &Executor::finished));
+  QSignalSpy spy(&exec, &Executor::finished);
   const QString hostile = QStringLiteral("$(id) -r");
   exec.execute(1, QStringLiteral("wsl git"), {QStringLiteral("rm"), hostile},
                true, true);

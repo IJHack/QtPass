@@ -6,6 +6,8 @@
 #include "pass.h"
 #include "simpletransaction.h"
 
+#include <atomic>
+
 class QRegularExpression;
 class QThread;
 
@@ -270,9 +272,31 @@ public:
 
   /**
    * @brief Re-encrypt entire directory.
+   *
+   * Emits startReencryptPath() synchronously, then runs the scan and the
+   * per-file gpg calls on a worker thread. Progress is reported through
+   * reencryptProgress(); per-file failures are collected and reported in a
+   * single critical() once the run is over, followed by endReencryptPath().
+   * A second call while a run is active is ignored.
    * @param dir Directory path.
    */
   void reencryptPath(const QString &dir);
+  /**
+   * @brief Ask a running reencryptPath() to stop.
+   *
+   * Only sets a flag. The worker starts no further gpg or git process, and
+   * the one it is blocked on (gpg waiting on pinentry, say) is terminated by
+   * the worker itself, and killed if it is still running after a short grace
+   * period, so the cancel takes effect promptly rather than after the current
+   * file. The store stays
+   * consistent: reencryptSingleFile() only replaces a file once the new
+   * ciphertext is verified, so an interrupted file is left untouched, or
+   * already re-encrypted but not yet committed when git was the process that
+   * was interrupted. The remaining files are left untouched and the
+   * interrupted file is not reported as a failure. endReencryptPath() is
+   * still emitted when the worker has stopped.
+   */
+  void cancelReencryptPath();
 
 signals:
   /**
@@ -283,6 +307,15 @@ signals:
    * @brief Emitted after finishing re-encryption.
    */
   void endReencryptPath();
+  /**
+   * @brief Re-encryption progress: @p current of @p total files checked.
+   *
+   * Emitted from the worker thread; connect with a queued (or automatic)
+   * connection.
+   * @param current Number of files checked so far, including this one.
+   * @param total Total number of files found by the scan.
+   */
+  void reencryptProgress(int current, int total);
 
   // Pass interface
 public:
@@ -316,6 +349,56 @@ private:
   int m_grepSeq = 0;
   QList<QThread *> m_grepThreads;
   QString m_transactionOutput;
+
+  /**
+   * @brief Outcome of one reencryptPath() run; filled on the worker thread and
+   * consumed by finishReencrypt() on the owning thread.
+   */
+  struct ReencryptResult;
+  /// Set while a re-encryption run is pending or on the worker thread.
+  bool m_reencryptActive = false;
+  /// Set by cancelReencryptPath() and the destructor; read by the worker
+  /// between files and polled by Executor::executeBlocking() while the worker
+  /// waits on a process, which the worker then ends itself. The flag is the
+  /// only thing shared with the worker: its QProcess is not thread-safe and
+  /// is never touched from another thread.
+  std::atomic<bool> m_reencryptCancel{false};
+  QThread *m_reencryptThread = nullptr;
+  /**
+   * @brief Executor::executeBlocking() for the re-encryption helpers.
+   *
+   * On the owning thread this is a plain blocking run. On the worker thread
+   * it hands m_reencryptCancel to the cancellable executeBlocking() overload:
+   * nothing is started once the flag is set, and a process that is running
+   * when it gets set is terminated (then killed) by the worker thread, which
+   * is what lets cancelReencryptPath() and the destructor interrupt an
+   * active gpg or git without touching its QProcess or pid.
+   * @return Exit code, or -1 when refused, failed to start or interrupted.
+   */
+  auto execBlocking(const QString &app, const QStringList &args,
+                    const QString &input = QString(),
+                    QString *process_out = nullptr,
+                    QString *process_err = nullptr) -> int;
+  /// Overload capturing stdout (and stderr) without stdin input.
+  auto execBlocking(const QString &app, const QStringList &args,
+                    QString *process_out, QString *process_err = nullptr)
+      -> int;
+  /**
+   * @brief Start the worker thread once the Executor queue is idle.
+   * @param dir Directory passed to reencryptPath().
+   */
+  void startReencryptWorker(const QString &dir);
+  /**
+   * @brief Worker-thread body: scan @p dir and re-encrypt stale files.
+   * @param dir Directory passed to reencryptPath().
+   * @return Counts and the list of files that could not be re-encrypted.
+   */
+  auto reencryptFiles(const QString &dir) -> ReencryptResult;
+  /**
+   * @brief Report the outcome of a run and emit endReencryptPath().
+   * @param result Outcome produced by reencryptFiles().
+   */
+  void finishReencrypt(const ReencryptResult &result);
 
   /**
    * @brief Translate @p path for the given @p exe when WSL-routed: wraps in

@@ -120,10 +120,9 @@ act push -W .github/workflows/ccpp.yml
 
 Tests against:
 
-- Ubuntu + Qt 6.8
-- macOS + Qt 6.8
+- Ubuntu + Qt 6.8 and 6.11
+- macOS + Qt 6.11
 - Windows + Qt 6.8
-- Ubuntu + Qt 5.15
 
 Note: Qt installation may fail in act due to environment limitations. Real CI handles this.
 

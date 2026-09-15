@@ -24,11 +24,15 @@
 #include <QFrame>
 #include <QMessageBox>
 #include <QPalette>
+#include <QProgressDialog>
 #include <QPushButton>
 #include <QScopedPointer>
 #include <QStatusBar>
 #include <QTemporaryDir>
+#include <QTextBlock>
 #include <QTextBrowser>
+#include <QTextCharFormat>
+#include <QTextDocument>
 #include <QTextEdit>
 #include <QTimer>
 #include <QToolBar>
@@ -44,6 +48,29 @@
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/util.h"
 #include "../testsettings.h"
+
+namespace {
+
+/**
+ * @brief Collects the char format of every text fragment in @p document by
+ * walking its blocks, so a test can assert on the formats the document
+ * actually stores rather than on the widget's current insertion format.
+ */
+QList<QTextCharFormat> fragmentFormats(const QTextDocument *document) {
+  QList<QTextCharFormat> formats;
+  for (QTextBlock block = document->begin(); block.isValid();
+       block = block.next()) {
+    for (QTextBlock::iterator it = block.begin(); !it.atEnd(); ++it) {
+      const QTextFragment fragment = it.fragment();
+      if (fragment.isValid()) {
+        formats.append(fragment.charFormat());
+      }
+    }
+  }
+  return formats;
+}
+
+} // namespace
 
 class tst_mainwindow : public QObject {
   Q_OBJECT
@@ -63,9 +90,12 @@ private Q_SLOTS:
   void cleanKeygenDialogWithNullIsHarmless();
   void setUiElementsEnabledDisablesTreeView();
   void setUiElementsEnabledEnablesTreeView();
+  void reencryptKeepsUiDisabledUntilEnd();
+  void reencryptProgressSurvivesQueuedEnd();
   void flashTextSetsContent();
   void flashTextErrorDoesNotCrash();
   void flashTextHtmlRenderedInBrowser();
+  void flashTextNonErrorClearsErrorForeground();
   void showStatusMessageAppearsInStatusBar();
   void deselectDoesNotCrash();
   void onProcessOutputAppendsToPanel();
@@ -198,6 +228,101 @@ void tst_mainwindow::setUiElementsEnabledEnablesTreeView() {
 }
 
 /**
+ * @brief Between startReencryptPath() and endReencryptPath() the interface
+ * stays disabled and a cancellable progress dialog is shown.
+ *
+ * The re-encryption now runs on a worker thread, so the git commands queued by
+ * Init/Move/Copy finish (and call setUiElementsEnabled(true)) while files are
+ * still being rewritten; that call must be ignored until the run ends.
+ */
+void tst_mainwindow::reencryptKeepsUiDisabledUntilEnd() {
+  auto *treeView = m_window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  QVERIFY2(treeView != nullptr, "treeView widget must exist");
+
+  m_window->startReencryptPath();
+  QVERIFY2(!treeView->isEnabled(), "treeView must be disabled during a run");
+  auto *progress = m_window->findChild<QProgressDialog *>();
+  QVERIFY2(progress != nullptr, "a progress dialog must be shown");
+  QVERIFY2(progress->isVisible(), "the progress dialog must be visible");
+
+  // Calling startReencryptPath twice (MainWindow::reencryptPath does so
+  // preemptively, then the ImitatePass signal repeats it) is idempotent.
+  m_window->startReencryptPath();
+  QCOMPARE(m_window->findChildren<QProgressDialog *>().size(), 1);
+
+  m_window->reencryptProgress(2, 5);
+  QCOMPARE(progress->maximum(), 5);
+  QCOMPARE(progress->value(), 2);
+
+  // An unrelated completion must not release the UI while the worker runs.
+  m_window->setUiElementsEnabled(true);
+  QVERIFY2(!treeView->isEnabled(),
+           "treeView must stay disabled until endReencryptPath");
+
+  m_window->endReencryptPath();
+  QVERIFY2(treeView->isEnabled(), "treeView must be re-enabled at the end");
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY2(m_window->findChild<QProgressDialog *>() == nullptr,
+           "the progress dialog must be gone after the run");
+
+  // The guard is released: the normal enable/disable cycle works again.
+  m_window->setUiElementsEnabled(false);
+  QVERIFY(!treeView->isEnabled());
+  m_window->setUiElementsEnabled(true);
+  QVERIFY(treeView->isEnabled());
+}
+
+/**
+ * @brief A completion queued behind the last progress event must not crash.
+ *
+ * The worker emits reencryptProgress(N, N) and immediately queues
+ * finishReencrypt(), so both sit in the GUI thread's event queue together.
+ * QProgressDialog::setValue() on a modal dialog calls processEvents(), which
+ * delivers that completion (and thus endReencryptPath()) while
+ * reencryptProgress() is still on the stack: the dialog is hidden and
+ * m_reencryptProgress reset to null under its feet. Nothing may touch the
+ * pointer after setValue() returns.
+ */
+void tst_mainwindow::reencryptProgressSurvivesQueuedEnd() {
+  auto *treeView = m_window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  QVERIFY2(treeView != nullptr, "treeView widget must exist");
+
+  m_window->startReencryptPath();
+  auto *progress = m_window->findChild<QProgressDialog *>();
+  QVERIFY2(progress != nullptr, "a progress dialog must be shown");
+  QVERIFY2(progress->isVisible(), "the progress dialog must be visible");
+  QVERIFY2(progress->isModal(),
+           "the dialog must be modal for setValue() to process events");
+
+  // Mirror the worker's first report. QProgressDialog only starts processing
+  // events from setValue() once its minimum-duration timer (0 ms here) has
+  // fired, so let it.
+  m_window->reencryptProgress(0, 5);
+  QTest::qWait(10);
+
+  // Same ordering as the worker's last two posts: the completion is already
+  // queued when the final progress event is handled.
+  QMetaObject::invokeMethod(
+      m_window.data(), [this]() { m_window->endReencryptPath(); },
+      Qt::QueuedConnection);
+  m_window->reencryptProgress(5, 5);
+
+  QVERIFY2(treeView->isEnabled(),
+           "the queued endReencryptPath must have run inside setValue()");
+  QVERIFY2(!progress->isVisible(), "the dialog must be hidden by the end");
+  QCOMPARE(progress->maximum(), 5);
+  QCOMPARE(progress->value(), 5);
+
+  // A late progress event after the run is a no-op, not a crash.
+  m_window->reencryptProgress(6, 6);
+  QCOMPARE(progress->value(), 5);
+
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY2(m_window->findChild<QProgressDialog *>() == nullptr,
+           "the progress dialog must be gone after the run");
+}
+
+/**
  * @brief flashText() sets the text browser content.
  */
 void tst_mainwindow::flashTextSetsContent() {
@@ -241,6 +366,51 @@ void tst_mainwindow::flashTextHtmlRenderedInBrowser() {
   QVERIFY2(
       !browser->toHtml().contains(QStringLiteral("&lt;b&gt;bold&lt;/b&gt;")),
       "flashText with isHtml=true must not escape HTML tags");
+}
+
+/**
+ * @brief A plain-text non-error flashText() shown after an error must not
+ * stay red, and must not pin an explicit foreground either.
+ *
+ * flashText(isError=true) merges Qt::red into the browser's current char
+ * format and setPlainText() re-applies that format to the whole new document,
+ * so without a reset the next plain-text message inherits the red. The reset
+ * has to remove the ForegroundBrush property rather than set a palette colour:
+ * an explicit foreground would stop the text from following a runtime
+ * light/dark palette switch (#946).
+ */
+void tst_mainwindow::flashTextNonErrorClearsErrorForeground() {
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY2(browser != nullptr, "textBrowser must exist");
+
+  m_window->flashText(QStringLiteral("something failed"), true);
+  QCOMPARE(browser->toPlainText(), QStringLiteral("something failed"));
+  const QList<QTextCharFormat> errorFormats =
+      fragmentFormats(browser->document());
+  QVERIFY2(!errorFormats.isEmpty(),
+           "the error message must produce a fragment");
+  for (const QTextCharFormat &format : errorFormats) {
+    QVERIFY2(format.hasProperty(QTextFormat::ForegroundBrush),
+             "an error message must carry an explicit foreground");
+    QCOMPARE(format.foreground().color(), QColor(Qt::red));
+  }
+
+  m_window->flashText(QStringLiteral("all good"), false);
+  QCOMPARE(browser->toPlainText(), QStringLiteral("all good"));
+  const QList<QTextCharFormat> okFormats = fragmentFormats(browser->document());
+  QVERIFY2(!okFormats.isEmpty(),
+           "the non-error message must produce a fragment");
+  for (const QTextCharFormat &format : okFormats) {
+    QVERIFY2(!format.hasProperty(QTextFormat::ForegroundBrush),
+             "a non-error message shown after an error must not carry an "
+             "explicit foreground (neither the stale red nor a pinned "
+             "palette colour)");
+  }
+  QVERIFY2(
+      !browser->currentCharFormat().hasProperty(QTextFormat::ForegroundBrush),
+      "the insertion format must not keep an explicit foreground for "
+      "the next message");
 }
 
 /**
@@ -391,9 +561,6 @@ void tst_mainwindow::textBrowserFollowsRuntimePaletteChange() {
   QVERIFY2(browser->styleSheet().isEmpty(),
            qPrintable(QStringLiteral("textBrowser carries a stylesheet: ") +
                       browser->styleSheet()));
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  QSKIP("pixel grab is not deterministic on the Qt 5 offscreen platform");
-#endif
   const QPalette original = QApplication::palette();
   auto restore =
       qScopeGuard([&original] { QApplication::setPalette(original); });
@@ -405,7 +572,7 @@ void tst_mainwindow::textBrowserFollowsRuntimePaletteChange() {
   dark.setColor(QPalette::Base, QColor(0x10, 0x10, 0x10));
   QApplication::setPalette(dark);
   QCoreApplication::processEvents();
-  // Styles may tint Base slightly (Qt 5.15 Fusion renders #101010 as
+  // Styles may tint Base slightly (Fusion has rendered #101010 as
   // #070c10), so compare lightness rather than the exact colour.
   const QColor darkPixel =
       browser->grab().toImage().pixelColor(browser->rect().center());

@@ -9,6 +9,9 @@
  * exposes invalidate() so a settings change can force a rebuild. These tests
  * exercise that routing without needing gpg/pass installed — they only check
  * which backend type is returned and the caching/rebuild lifecycle.
+ *
+ * The suite also pins the Pass signal surface the backends share, so a signal
+ * that nothing emits or connects does not quietly reappear.
  */
 
 #include <QDir>
@@ -18,6 +21,7 @@
 #include "../../../src/appsettings.h"
 #include "../../../src/imitatepass.h"
 #include "../../../src/passbackendfactory.h"
+#include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/realpass.h"
 #include "../testsettings.h"
@@ -37,6 +41,7 @@ private Q_SLOTS:
   void getPassCachesInstance();
   void switchingModeRebuildsBackend();
   void createsMissingStoreDirectory();
+  void passSignalSurfaceHasNoDeadSignals();
 };
 
 void tst_passbackendfactory::initTestCase() {
@@ -115,6 +120,29 @@ void tst_passbackendfactory::createsMissingStoreDirectory() {
 
   QVERIFY2(QDir(sub).exists(),
            "getPass() must create the store directory when it is missing");
+}
+
+/**
+ * Pass::error, Pass::finishedAny and Pass::finishedGenerate were never
+ * emitted (start failures reach Pass::finished through Executor::error, and
+ * finishedAnyWithPid is the live "any" signal), and QtPass::processError was
+ * the only receiver of Pass::error. Pin the meta-object so they do not creep
+ * back in as a second, silently unused, notification path.
+ */
+void tst_passbackendfactory::passSignalSurfaceHasNoDeadSignals() {
+  const QMetaObject &pass = Pass::staticMetaObject;
+  QCOMPARE(pass.indexOfSignal("error(QProcess::ProcessError)"), -1);
+  QCOMPARE(pass.indexOfSignal("finishedAny(QString,QString)"), -1);
+  QCOMPARE(pass.indexOfSignal("finishedGenerate(QString,QString)"), -1);
+  QCOMPARE(QtPass::staticMetaObject.indexOfSlot(
+               "processError(QProcess::ProcessError)"),
+           -1);
+
+  // The live counterparts must still be there, so the check above cannot be
+  // satisfied by a renamed or mistyped signature.
+  QVERIFY(pass.indexOfSignal("processErrorExit(int,QString)") >= 0);
+  QVERIFY(pass.indexOfSignal(
+              "finishedAnyWithPid(QString,QString,Enums::PROCESS)") >= 0);
 }
 
 QTEST_MAIN(tst_passbackendfactory)

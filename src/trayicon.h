@@ -25,14 +25,6 @@ public:
   explicit TrayIcon(QMainWindow *parent);
 
   /**
-   * @brief Display a transient notification message via the tray icon.
-   * @param title Title text of the notification.
-   * @param msg Body text of the notification.
-   * @param time Duration to display the notification in milliseconds.
-   */
-  void showMessage(const QString &title, const QString &msg, int time);
-
-  /**
    * @brief Check whether tray resources have been allocated and initialized.
    * @return true if tray resources are allocated and initialized.
    */

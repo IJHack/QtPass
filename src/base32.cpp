@@ -108,10 +108,8 @@ auto Base32::decode(const QByteArray &encodedData) -> QByteArray {
       nSpecialBytes > 0 ? (nQuanta - 1) * 5 + nSpecialBytes : nQuanta * 5;
 
   QByteArray data(nBytes, Qt::Uninitialized);
-  // Written through a raw pointer: Qt 5.15 declares only operator[](int) and
-  // operator[](uint), so subscripting with a qsizetype is an ambiguous overload
-  // there. Qt 6 added a qsizetype overload, which is why this only breaks the
-  // Qt 5.15 build.
+  // Written through a raw pointer to avoid QByteArray's detach check on every
+  // subscript in the hot loop.
   char *out = data.data();
 
   qsizetype i = 0;
@@ -182,7 +180,7 @@ auto Base32::encode(const QByteArray &data) -> QByteArray {
   const qsizetype nQuanta = nBits / 40 + (rBits > 0 ? 1 : 0);
   const qsizetype nBytes = nQuanta * 8;
   QByteArray encodedData(nBytes, Qt::Uninitialized);
-  // Raw pointer: see the note in decode() about Qt 5.15's operator[] overloads.
+  // Raw pointer: see the note in decode().
   char *out = encodedData.data();
 
   qsizetype i = 0;
@@ -307,7 +305,7 @@ auto Base32::sanitizeInput(const QByteArray &encodedData) -> QByteArray {
   }
 
   QByteArray newEncodedData(encodedData.size(), Qt::Uninitialized);
-  // Raw pointer: see the note in decode() about Qt 5.15's operator[] overloads.
+  // Raw pointer: see the note in decode().
   char *out = newEncodedData.data();
   qsizetype i = 0;
   for (auto ch : encodedData) {

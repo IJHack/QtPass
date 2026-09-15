@@ -107,7 +107,14 @@ public slots:
   void setPass(const QString &output);
 
 private slots:
-  void on_checkBoxShow_stateChanged(int arg1);
+  /**
+   * @brief Show or mask the password field.
+   *
+   * Connected explicitly to QCheckBox::toggled in both constructors; the box
+   * is two-state, so the deprecated stateChanged(int) is not needed.
+   * @param show true to display the password in clear text.
+   */
+  void setPasswordVisible(bool show);
   void on_createPasswordButton_clicked();
   void on_accepted();
   void on_rejected();

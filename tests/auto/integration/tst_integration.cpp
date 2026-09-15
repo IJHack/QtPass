@@ -83,6 +83,14 @@ static QString findGpgconf() {
 
 static QString findPass() { return QStandardPaths::findExecutable("pass"); }
 
+// Read a whole file; empty when it cannot be opened.
+static QByteArray readFileBytes(const QString &path) {
+  QFile f(path);
+  if (!f.open(QIODevice::ReadOnly))
+    return {};
+  return f.readAll();
+}
+
 // Run gpg synchronously with the given GNUPGHOME, return exit code.
 static int runGpg(const QString &gnupgHome, const QStringList &args,
                   const QString &input = QString(), QString *out = nullptr,
@@ -300,6 +308,9 @@ private Q_SLOTS:
   void imitatePass_grepSkipsUndecryptableFiles();
   void imitatePass_insertMoveAndShow();
   void imitatePass_insertCopyAndShow();
+  void imitatePass_copyOntoFolderAndShow();
+  void imitatePass_copyOntoExistingEntryClash();
+  void imitatePass_copyIntoFolderReencryptsToFolderKey();
   void imitatePass_insertAndRemove();
   void imitatePass_generateGpgKeysEmptyExecutable();
   void imitatePass_nestedDirectoryInsertAndShow();
@@ -317,6 +328,9 @@ private Q_SLOTS:
   void imitatePass_insertIgnoresGpgConfEncryptTo();
   void imitatePass_reencryptIgnoresGpgConfEncryptTo();
   void imitatePass_reencryptPreservesPerFolderRecipients();
+  void imitatePass_signedGpgIdInitAndReencrypt();
+  void imitatePass_tamperedGpgIdSignatureAbortsReencrypt();
+  void imitatePass_reencryptMixedFailuresReportedOnce();
   void mainWindow_selectingEntryShowsDecryptedContent();
   void mainWindow_editEntryThroughModalDialogUpdatesContent();
 
@@ -419,9 +433,6 @@ void tst_integration::initTestCase() {
     s.passSigningKey = QString();
     QtPassSettings::save(s);
   }
-  qRegisterMetaType<GrepResults>("GrepResults");
-  qRegisterMetaType<GrepResults>(
-      "QList<QPair<QString,QStringList>>"); // Qt5 fallback
 }
 
 void tst_integration::cleanupTestCase() {
@@ -642,6 +653,173 @@ void tst_integration::imitatePass_insertCopyAndShow() {
            "decrypted copy should contain original content");
 }
 
+void tst_integration::imitatePass_copyOntoFolderAndShow() {
+  // Regression for #1682: a drag-and-drop copy hands the *folder* to the
+  // backend (the pass CLI needs it that way). ImitatePass::Copy used to pass
+  // that folder straight to QFile::copy, which cannot write a directory, so
+  // every copy onto a folder failed. It must land as <folder>/<entry>.gpg.
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  QVERIFY(QDir(storeDir.path()).mkpath("folder"));
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("original"), QStringLiteral("copyme\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  const QString src = storeDir.path() + "/original.gpg";
+  const QString folder = storeDir.path() + "/folder";
+  const QString dst = folder + "/original.gpg";
+
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  // Without git, Copy is synchronous — no finishedCopy signal emitted.
+  pass.Copy(src, folder, false);
+  QVERIFY2(criticalSpy.isEmpty(), "copy onto a folder must not fail");
+  QVERIFY2(QFile::exists(src), "source should still exist after copy");
+  QVERIFY2(QFile::exists(dst),
+           "copy onto a folder should create <folder>/<entry>.gpg");
+  QVERIFY2(!QFile::exists(dst + ".gpg"), "must not double the .gpg suffix");
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("folder/original"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted after copy");
+  QVERIFY2(showSpy[0][0].toString().contains("copyme"),
+           "decrypted copy should contain original content");
+
+  // Copying onto the folder again without force must refuse: the folder
+  // itself is a valid destination, so only the resolved file reveals the
+  // clash, and the existing entry must stay byte-for-byte as it was. The
+  // first copy re-encrypts the folder on a worker thread; let that land
+  // before taking the reference bytes.
+  QVERIFY2(waitForSignal(endSpy, 60000), "endReencryptPath not emitted");
+  const QByteArray before = readFileBytes(dst);
+  pass.Copy(src, folder, false);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy[0][0].toString(), QStringLiteral("Copy failed"));
+  QCOMPARE(readFileBytes(dst), before);
+}
+
+void tst_integration::imitatePass_copyOntoExistingEntryClash() {
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("original"), QStringLiteral("copyme\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+  insertSpy.clear();
+  pass.Insert(QStringLiteral("taken"), QStringLiteral("keepme\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  const QString src = storeDir.path() + "/original.gpg";
+  const QString dst = storeDir.path() + "/taken.gpg";
+  const QByteArray srcBytes = readFileBytes(src);
+  const QByteArray dstBytes = readFileBytes(dst);
+  QVERIFY2(!srcBytes.isEmpty() && !dstBytes.isEmpty(),
+           "both entries must exist before the clash");
+
+  // Without force the clash must be reported, not silently ignored, and
+  // neither file may change.
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  pass.Copy(src, dst, false);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy[0][0].toString(), QStringLiteral("Copy failed"));
+  QCOMPARE(readFileBytes(src), srcBytes);
+  QCOMPARE(readFileBytes(dst), dstBytes);
+
+  // With force the existing entry is overwritten by the copy.
+  pass.Copy(src, dst, true);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(readFileBytes(src), srcBytes);
+  QVERIFY2(readFileBytes(dst) != dstBytes,
+           "force copy should overwrite the target");
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("taken"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted after copy");
+  QVERIFY2(showSpy[0][0].toString().contains("copyme"),
+           "overwritten entry should now hold the copied content");
+
+  // Copying an entry onto its own folder resolves to the entry itself; with
+  // force that must not delete the only copy.
+  const QByteArray copied = readFileBytes(dst);
+  pass.Copy(dst, storeDir.path(), true);
+  QCOMPARE(criticalSpy.count(), 2);
+  QCOMPARE(criticalSpy[1][0].toString(), QStringLiteral("Copy failed"));
+  QVERIFY2(QFile::exists(dst),
+           "source must survive a copy onto its own folder");
+  QCOMPARE(readFileBytes(dst), copied);
+}
+
+void tst_integration::imitatePass_copyIntoFolderReencryptsToFolderKey() {
+  // A copy into a folder with its own .gpg-id must be re-encrypted for that
+  // folder's recipients. Copy() decides whether to re-encrypt from a QFileInfo
+  // it created before the file existed; QFileInfo caches, so a stale "not a
+  // file" answer would silently leave the copy readable only by the source
+  // folder's key.
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+
+  auto writeGpgId = [](const QString &dir, const QString &fpr) -> bool {
+    QDir().mkpath(dir);
+    QFile f(QDir::cleanPath(dir + "/.gpg-id"));
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return false;
+    const QByteArray payload = (fpr + "\n").toUtf8();
+    return f.write(payload) == payload.size();
+  };
+  QVERIFY(writeGpgId(storeDir.path(), m_keyFingerprint));
+  const QString subDir = QDir::cleanPath(storeDir.path() + "/team");
+  QVERIFY(writeGpgId(subDir, m_keyFingerprint2));
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  {
+    QSignalSpy spy(&pass, &Pass::finishedInsert);
+    pass.Insert(QStringLiteral("rootentry"), QStringLiteral("r\n"), false);
+    QVERIFY2(waitForSignal(spy), gpgInsertErrorMsg(errorSpy));
+  }
+
+  const QString src = QDir::cleanPath(storeDir.path() + "/rootentry.gpg");
+  const QString dst = QDir::cleanPath(subDir + "/rootentry.gpg");
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.Copy(src, subDir, false);
+    QVERIFY2(criticalSpy.isEmpty(), "copy into a folder must not fail");
+    QVERIFY2(QFile::exists(dst), "copy must land as <folder>/<entry>.gpg");
+    QVERIFY2(waitForSignal(endSpy, 60000),
+             "copy into a folder must re-encrypt it (endReencryptPath)");
+  }
+
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY(!sub1.isEmpty() && !sub2.isEmpty());
+  const QStringList ids = recipientKeyIds(m_gnupgHome.path(), dst);
+  QVERIFY2(ids.contains(sub2) && !ids.contains(sub1),
+           qPrintable(QStringLiteral("copied entry must target the folder's "
+                                     "key only, got: %1")
+                          .arg(ids.join(','))));
+  // The source stays as it was.
+  const QStringList srcIds = recipientKeyIds(m_gnupgHome.path(), src);
+  QVERIFY2(srcIds.contains(sub1) && !srcIds.contains(sub2),
+           qPrintable(QStringLiteral("source must still target key1 only, "
+                                     "got: %1")
+                          .arg(srcIds.join(','))));
+}
+
 void tst_integration::imitatePass_insertAndRemove() {
   QTemporaryDir storeDir;
   ImitatePass pass;
@@ -694,6 +872,28 @@ struct RestoreUseGit {
     QtPassSettings::save(s);
   }
 };
+
+// RAII guard for the signing key setting; the rest of the suite expects the
+// store to be unsigned (verifyGpgIdFile is fail-open without a signing key).
+struct RestorePassSigningKey {
+  QString orig;
+  RestorePassSigningKey() : orig(QtPassSettings::load().passSigningKey) {}
+  ~RestorePassSigningKey() {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey = orig;
+    QtPassSettings::save(s);
+  }
+};
+
+// A UserInfo representing key @p keyId enabled for use; used to drive
+// Pass::Init (what UsersDialog::accept() calls).
+static UserInfo enabledUser(const QString &keyId) {
+  UserInfo u;
+  u.enabled = true;
+  u.have_secret = true;
+  u.key_id = keyId;
+  return u;
+}
 } // namespace
 
 void tst_integration::imitatePass_editExistingEntry() {
@@ -1053,7 +1253,12 @@ void tst_integration::imitatePass_multiRecipientReencryptChangesRecipients() {
     QVERIFY(gpgId.write(payload) == payload.size());
   }
 
-  pass.reencryptPath(storeDir.path()); // synchronous (executeBlocking)
+  // reencryptPath runs on a worker thread; wait for it to finish.
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir.path());
+    QVERIFY2(waitForSignal(endSpy, 60000), "endReencryptPath not emitted");
+  }
 
   const QStringList after = recipientKeyIds(m_gnupgHome.path(), gpgFile);
   QVERIFY2(after.contains(sub1),
@@ -1258,7 +1463,12 @@ void tst_integration::imitatePass_reencryptPreservesPerFolderRecipients() {
   // Re-encrypt the whole tree. reencryptPath walks both folders; each file must
   // end up encrypted to ITS folder's recipients — a stale cached recipient list
   // would cross-encrypt one folder's entry to the other folder's key.
-  pass.reencryptPath(storeDir.path()); // synchronous
+  // reencryptPath runs on a worker thread; wait for it to finish.
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir.path());
+    QVERIFY2(waitForSignal(endSpy, 60000), "endReencryptPath not emitted");
+  }
 
   const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
   const QString sub2 =
@@ -1278,6 +1488,216 @@ void tst_integration::imitatePass_reencryptPreservesPerFolderRecipients() {
       teamIds.contains(sub2) && !teamIds.contains(sub1),
       qPrintable(QStringLiteral("team entry must target key2 only, got: %1")
                      .arg(teamIds.join(','))));
+}
+
+void tst_integration::imitatePass_signedGpgIdInitAndReencrypt() {
+  // The `.gpg-id` signing feature has never run in CI because initTestCase()
+  // clears passSigningKey. Exercise the happy path with a real signed store:
+  // ImitatePass::Init writes and signs the recipients file, Insert() verifies
+  // it, and re-encryption accepts the valid signature.
+  RestorePassSigningKey restoreSigning;
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey = m_keyFingerprint;
+    s.useGit = false;
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  {
+    // Init() writes and signs .gpg-id, then kicks off a re-encryption of the
+    // (empty) store on the worker thread.
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.Init(storeDir.path() + QLatin1Char('/'),
+              {enabledUser(m_keyFingerprint)});
+    QVERIFY2(waitForSignal(endSpy, 60000), "Init re-encryption never finished");
+  }
+  QVERIFY2(QFile::exists(QDir::cleanPath(storeDir.path() + "/.gpg-id")),
+           "Init must write .gpg-id");
+  QVERIFY2(QFile::exists(QDir::cleanPath(storeDir.path() + "/.gpg-id.sig")),
+           "Init must sign .gpg-id when a signing key is configured");
+  QVERIFY2(criticalSpy.isEmpty(), "no critical expected on the signed path");
+
+  // Insert verifies the signature before encrypting.
+  {
+    QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+    QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+    pass.Insert(QStringLiteral("signed"), QStringLiteral("secret\n"), false);
+    QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+  }
+  QVERIFY2(criticalSpy.isEmpty(), "insert must not reject a valid signature");
+
+  // Re-encrypt the entry; the still-valid signature must be accepted and the
+  // content preserved.
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir.path());
+    QVERIFY2(waitForSignal(endSpy, 60000), "re-encryption never finished");
+  }
+  QVERIFY2(criticalSpy.isEmpty(), "re-encryption must accept the signature");
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("signed"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted");
+  QVERIFY2(showSpy[0][0].toString().contains("secret"),
+           "content must survive the re-encryption");
+}
+
+void tst_integration::imitatePass_tamperedGpgIdSignatureAbortsReencrypt() {
+  // Security regression: a store legitimately signed by key1 whose .gpg-id is
+  // later rewritten to key2 WITHOUT re-signing must abort the re-encryption;
+  // otherwise a tampered recipients file silently re-encrypts the whole store
+  // to an attacker-chosen key.
+  RestorePassSigningKey restoreSigning;
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey = m_keyFingerprint;
+    s.useGit = false;
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  // Legitimate setup: signed .gpg-id for key1 and one encrypted entry.
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    QSignalSpy criticalSpy(&pass, &Pass::critical);
+    pass.Init(storeDir.path() + QLatin1Char('/'),
+              {enabledUser(m_keyFingerprint)});
+    QVERIFY2(waitForSignal(endSpy, 60000), "Init re-encryption never finished");
+    QVERIFY2(criticalSpy.isEmpty(), "clean setup must not complain");
+  }
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("victim"), QStringLiteral("topsecret\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  const QString gpgFile = QDir::cleanPath(storeDir.path() + "/victim.gpg");
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  const QString sub2 =
+      encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint2);
+  QVERIFY(!sub1.isEmpty() && !sub2.isEmpty());
+  QVERIFY2(recipientKeyIds(m_gnupgHome.path(), gpgFile).contains(sub1),
+           "entry must be encrypted to key1 before the attack");
+
+  // Attacker swaps the recipients to their own key, leaving the stale
+  // signature in place.
+  {
+    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    const QByteArray payload = (m_keyFingerprint2 + "\n").toUtf8();
+    QVERIFY(gpgId.write(payload) == payload.size());
+  }
+
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir.path());
+    QVERIFY2(waitForSignal(criticalSpy, 60000),
+             "invalid signature must be surfaced");
+    QVERIFY2(waitForSignal(endSpy, 60000), "run must still clean up");
+  }
+  // Any gpg hiccup emits critical and would also leave the entry on key1, so
+  // pin the failure to the signature check itself.
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.at(0).at(0).toString(),
+           QStringLiteral("Check .gpg-id file signature!"));
+  const QString sigMsg = criticalSpy.at(0).at(1).toString();
+  QVERIFY2(sigMsg.startsWith(QStringLiteral("Signature for ")) &&
+               sigMsg.endsWith(QStringLiteral("/.gpg-id is invalid.")),
+           qPrintable(
+               QStringLiteral("unexpected critical message: %1").arg(sigMsg)));
+
+  const QStringList ids = recipientKeyIds(m_gnupgHome.path(), gpgFile);
+  QVERIFY2(ids.contains(sub1),
+           qPrintable(QStringLiteral("victim entry must still target key1, "
+                                     "got: %1")
+                          .arg(ids.join(','))));
+  QVERIFY2(!ids.contains(sub2),
+           qPrintable(QStringLiteral("victim entry must NOT target the "
+                                     "attacker key2, got: %1")
+                          .arg(ids.join(','))));
+}
+
+void tst_integration::imitatePass_reencryptMixedFailuresReportedOnce() {
+  // Failure-path coverage with real gpg: undecryptable files among valid ones
+  // must not abort the run — the valid entries are still re-encrypted and ALL
+  // failures are aggregated into ONE critical dialog.
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  {
+    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
+    QVERIFY2(gpgId.open(QIODevice::WriteOnly | QIODevice::Text),
+             "failed to open .gpg-id");
+    const QByteArray payload = (m_keyFingerprint + "\n").toUtf8();
+    QVERIFY2(gpgId.write(payload) == payload.size(), "failed to write .gpg-id");
+  }
+
+  ImitatePass pass;
+  {
+    AppSettings s = QtPassSettings::load();
+    pass.init(s);
+    pass.updateEnv();
+  }
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("okentry"), QStringLiteral("secret\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  // Two undecryptable files, the second in a subfolder whose .gpg-id is
+  // inherited from the store root.
+  {
+    QFile bogus(QDir::cleanPath(storeDir.path() + "/broken1.gpg"));
+    QVERIFY(bogus.open(QIODevice::WriteOnly | QIODevice::Text));
+    bogus.write("not a gpg ciphertext\n");
+  }
+  {
+    QFile bogus(QDir::cleanPath(storeDir.path() + "/sub/broken2.gpg"));
+    QVERIFY(QDir().mkpath(storeDir.path() + "/sub"));
+    QVERIFY(bogus.open(QIODevice::WriteOnly | QIODevice::Text));
+    bogus.write("also not encrypted\n");
+  }
+
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  {
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir.path());
+    QVERIFY2(waitForSignal(criticalSpy, 60000), "failures must be surfaced");
+    QVERIFY2(waitForSignal(endSpy, 60000), "run must still finish");
+  }
+
+  QVERIFY2(criticalSpy.count() == 1,
+           qPrintable(QStringLiteral("expected exactly 1 aggregated critical, "
+                                     "got %1")
+                          .arg(criticalSpy.count())));
+  const QString msg = criticalSpy.at(0).at(1).toString();
+  QVERIFY2(
+      msg.contains(QStringLiteral("broken1.gpg")),
+      qPrintable(QStringLiteral("dialog must name broken1.gpg: %1").arg(msg)));
+  QVERIFY2(
+      msg.contains(QStringLiteral("broken2.gpg")),
+      qPrintable(QStringLiteral("dialog must name broken2.gpg: %1").arg(msg)));
+
+  const QString sub1 = encryptionSubkeyId(m_gnupgHome.path(), m_keyFingerprint);
+  QVERIFY(!sub1.isEmpty());
+  const QStringList okIds = recipientKeyIds(
+      m_gnupgHome.path(), QDir::cleanPath(storeDir.path() + "/okentry.gpg"));
+  QVERIFY2(okIds.contains(sub1),
+           qPrintable(QStringLiteral("valid entry must still be re-encrypted "
+                                     "to key1, got: %1")
+                          .arg(okIds.join(','))));
 }
 
 void tst_integration::mainWindow_selectingEntryShowsDecryptedContent() {

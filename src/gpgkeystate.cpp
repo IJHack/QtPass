@@ -5,6 +5,7 @@
 
 #include "util.h"
 
+#include <QDateTime>
 #include <QRegularExpression>
 
 constexpr int GPG_MIN_FIELDS = 10;
@@ -62,16 +63,18 @@ void handlePubSecRecord(const QStringList &props, bool secret,
     current_user.validity = props[GPG_FIELD_VALIDITY][0].toLatin1();
   }
 
+  // An empty field (GnuPG's "no expiry") leaves the QDateTime null, so
+  // callers distinguish "unset" from "set" with isValid() alone.
   bool okCreated = false;
   const qint64 createdSecs = props[GPG_FIELD_CREATED].toLongLong(&okCreated);
   if (okCreated) {
-    current_user.created.setSecsSinceEpoch(createdSecs);
+    current_user.created = QDateTime::fromSecsSinceEpoch(createdSecs);
   }
 
   bool okExpiry = false;
   const qint64 expirySecs = props[GPG_FIELD_EXPIRY].toLongLong(&okExpiry);
   if (okExpiry) {
-    current_user.expiry.setSecsSinceEpoch(expirySecs);
+    current_user.expiry = QDateTime::fromSecsSinceEpoch(expirySecs);
   }
 
   current_user.have_secret = secret;
@@ -111,13 +114,8 @@ auto parseGpgColonOutput(const QString &output, bool secret)
     -> QList<UserInfo> {
   QList<UserInfo> users;
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   const QStringList lines =
       output.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
-#else
-  const QStringList lines =
-      output.split(Util::newLinesRegex(), QString::SkipEmptyParts);
-#endif
 
   UserInfo current_user;
 
