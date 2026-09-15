@@ -71,6 +71,12 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.8.1" date="2026-09-15">
+      <url>https://github.com/IJHack/QtPass/releases/tag/v1.8.1</url>
+      <description>
+        <p>Security and bug-fix release: WSL commands run without a shell, gpg encrypt calls ignore encrypt-to, only http(s) URLs are clickable, hardened single-instance IPC, new folders inherit recipients, a missing GPG home is ignored, and copying an entry onto a folder works again.</p>
+      </description>
+    </release>
     <release version="1.8.0" date="2026-09-13">
       <url>https://github.com/IJHack/QtPass/releases/tag/v1.8.0</url>
       <description>

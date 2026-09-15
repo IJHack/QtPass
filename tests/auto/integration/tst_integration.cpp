@@ -687,6 +687,15 @@ void tst_integration::imitatePass_copyOntoFolderAndShow() {
   QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted after copy");
   QVERIFY2(showSpy[0][0].toString().contains("copyme"),
            "decrypted copy should contain original content");
+
+  // Copying onto the folder again without force must refuse: the folder
+  // itself is a valid destination, so only the resolved file reveals the
+  // clash, and the existing entry must stay byte-for-byte as it was.
+  const QByteArray before = readFileBytes(dst);
+  pass.Copy(src, folder, false);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy[0][0].toString(), QStringLiteral("Copy failed"));
+  QCOMPARE(readFileBytes(dst), before);
 }
 
 void tst_integration::imitatePass_copyOntoExistingEntryClash() {
