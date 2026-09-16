@@ -5,6 +5,7 @@
 
 #include <QFileInfo>
 #include <QSortFilterProxyModel>
+#include <optional>
 
 /**
  * @class StoreModel
@@ -62,6 +63,13 @@ auto operator<<(QDataStream &out, const dragAndDropInfoPasswordStore &info)
 auto operator>>(QDataStream &in, dragAndDropInfoPasswordStore &info)
     -> QDataStream &;
 
+/**
+ * @brief The one MIME type the store tree drags: a serialised
+ * dragAndDropInfoPasswordStore.
+ */
+inline constexpr QLatin1StringView
+    kStoreDragMimeType("application/vnd.qtpass.dragAndDropInfoPasswordStore");
+
 class StoreModel : public QSortFilterProxyModel {
   Q_OBJECT
 
@@ -70,8 +78,13 @@ private:
   QString store;
   Pass *m_pass{nullptr};
 
-  auto parseDropData(const QMimeData *data,
-                     dragAndDropInfoPasswordStore *outInfo) -> bool;
+  /**
+   * @brief Decode the drag payload from @p data.
+   * @return The payload, or nothing when @p data is null, carries no payload
+   * of ours, or the payload does not deserialise cleanly.
+   */
+  static auto parseDropData(const QMimeData *data)
+      -> std::optional<dragAndDropInfoPasswordStore>;
   auto executeDropAction(const dragAndDropInfoPasswordStore &info,
                          Qt::DropAction action, const QModelIndex &parent)
       -> bool;

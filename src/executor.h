@@ -8,6 +8,7 @@
 #include <QProcessEnvironment>
 #include <QQueue>
 #include <atomic>
+#include <utility>
 
 /**
  * @class Executor
@@ -64,9 +65,19 @@ class Executor : public QObject {
   QProcess m_process;
   bool running{false};
   void executeNext();
-  void startProcess(const QString &app, const QStringList &args);
-  static void startProcessBlocking(QProcess &internal, const QString &app,
-                                   const QStringList &args);
+  /**
+   * @brief Start @p process running @p app, handling the "wsl " prefix once
+   * for both the queued and the blocking path.
+   */
+  static void startProcess(QProcess &process, const QString &app,
+                           const QStringList &args);
+  /**
+   * @brief Read what a finished process produced, according to the queue
+   * item's readStdout/readStderr flags; stderr is always read on a non-zero
+   * exit so the caller can report it.
+   */
+  auto collectOutput(const execQueueItem &item, int exitCode)
+      -> std::pair<QString, QString>;
   /**
    * @brief Shared blocking run: start @p process, optionally feed @p input on
    * stdin, wait, and capture stdout/stderr. Backs the executeBlocking

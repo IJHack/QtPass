@@ -198,7 +198,7 @@ auto StoreModel::flags(const QModelIndex &index) const -> Qt::ItemFlags {
  */
 auto StoreModel::mimeTypes() const -> QStringList {
   QStringList types;
-  types << "application/vnd.qtpass.dragAndDropInfoPasswordStore";
+  types << kStoreDragMimeType;
   return types;
 }
 
@@ -230,8 +230,7 @@ auto StoreModel::mimeData(const QModelIndexList &indexes) const -> QMimeData * {
   }
 
   auto *mimeData = new QMimeData();
-  mimeData->setData("application/vnd.qtpass.dragAndDropInfoPasswordStore",
-                    encodedData);
+  mimeData->setData(kStoreDragMimeType, encodedData);
   return mimeData;
 }
 
@@ -254,22 +253,11 @@ auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
   Q_UNUSED(row)
 #endif
 
-  if (data == nullptr ||
-      !data->hasFormat("application/vnd.qtpass.dragAndDropInfoPasswordStore")) {
+  const auto parsed = parseDropData(data);
+  if (!parsed) {
     return false;
   }
-
-  QByteArray encodedData =
-      data->data("application/vnd.qtpass.dragAndDropInfoPasswordStore");
-  if (encodedData.isEmpty()) {
-    return false;
-  }
-  QDataStream stream(&encodedData, QIODevice::ReadOnly);
-  dragAndDropInfoPasswordStore info;
-  stream >> info;
-  if (stream.status() != QDataStream::Ok) {
-    return false;
-  }
+  const dragAndDropInfoPasswordStore &info = *parsed;
 
   QModelIndex useIndex =
       this->index(parent.row(), parent.column(), parent.parent());
@@ -320,31 +308,30 @@ auto StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     return false;
   }
 
-  dragAndDropInfoPasswordStore info;
-  if (!parseDropData(data, &info)) {
+  const auto info = parseDropData(data);
+  if (!info) {
     return false;
   }
 
-  return executeDropAction(info, action, parent);
+  return executeDropAction(*info, action, parent);
 }
 
-auto StoreModel::parseDropData(const QMimeData *data,
-                               dragAndDropInfoPasswordStore *outInfo) -> bool {
-  QByteArray encodedData =
-      data->data("application/vnd.qtpass.dragAndDropInfoPasswordStore");
-  if (encodedData.isEmpty()) {
-    return false;
+auto StoreModel::parseDropData(const QMimeData *data)
+    -> std::optional<dragAndDropInfoPasswordStore> {
+  if (data == nullptr || !data->hasFormat(kStoreDragMimeType)) {
+    return std::nullopt;
   }
-
+  QByteArray encodedData = data->data(kStoreDragMimeType);
+  if (encodedData.isEmpty()) {
+    return std::nullopt;
+  }
   QDataStream stream(&encodedData, QIODevice::ReadOnly);
   dragAndDropInfoPasswordStore info;
   stream >> info;
   if (stream.status() != QDataStream::Ok) {
-    return false;
+    return std::nullopt;
   }
-
-  *outInfo = info;
-  return true;
+  return info;
 }
 
 auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,

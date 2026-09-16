@@ -3,7 +3,7 @@
 TEMPLATE   = app
 QT        += core gui
 
-CONFIG += c++11
+CONFIG += c++17
 LIBS = -L"$$OUT_PWD/../src/$(OBJECTS_DIR)" -lqtpass $$LIBS
 clang|gcc:PRE_TARGETDEPS += "$$OUT_PWD/../src/$(OBJECTS_DIR)/libqtpass.a"
 
