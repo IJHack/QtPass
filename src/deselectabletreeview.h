@@ -3,9 +3,11 @@
 #ifndef SRC_DESELECTABLETREEVIEW_H_
 #define SRC_DESELECTABLETREEVIEW_H_
 
-#include <QCoreApplication>
+#include <QBasicTimer>
+#include <QGuiApplication>
 #include <QMouseEvent>
-#include <QTime>
+#include <QStyleHints>
+#include <QTimer>
 #include <QTreeView>
 
 /**
@@ -69,13 +71,15 @@ signals:
 private:
   bool doubleClickHappened = false;
   bool clickSelected = false;
+  QBasicTimer deselectTimer;
 
   /**
    * @brief mousePressEvent registers if the field was pre-selected
    * @param event
    */
   void mousePressEvent(QMouseEvent *event) override {
-    clickSelected = selectionModel()->isSelected(indexAt(event->pos()));
+    clickSelected =
+        selectionModel()->isSelected(indexAt(event->position().toPoint()));
     QTreeView::mousePressEvent(event);
   }
 
@@ -84,27 +88,40 @@ private:
    * @param event
    */
   void mouseReleaseEvent(QMouseEvent *event) override {
-    doubleClickHappened = false;
-    // The timer is to distinguish between single and double click
-    QTime dieTime = QTime::currentTime().addMSecs(200);
-    while (QTime::currentTime() < dieTime)
-      QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
-    // could this be done nicer?
-    if (!doubleClickHappened && clickSelected) {
-      QModelIndex item = indexAt(event->pos());
-      bool selected = selectionModel()->isSelected(indexAt(event->pos()));
-      if ((item.row() == -1 && item.column() == -1) || selected) {
-        clearSelection();
-        const QModelIndex index;
-        selectionModel()->setCurrentIndex(index, QItemSelectionModel::Select);
-        emit emptyClicked();
-      } else {
-        QTreeView::mouseReleaseEvent(event);
-      }
-    } else {
-      QTreeView::mouseReleaseEvent(event);
-    }
+    const QModelIndex item = indexAt(event->position().toPoint());
+    const bool pressWasOnSelection = clickSelected;
     clickSelected = false;
+
+    // Handle the release immediately: waiting here would delay selection —
+    // and therefore every decrypt — by the double-click interval.
+    QTreeView::mouseReleaseEvent(event);
+
+    const bool emptyOrSelected =
+        !item.isValid() || selectionModel()->isSelected(item);
+    if (!pressWasOnSelection || !emptyOrSelected)
+      return;
+
+    // Deselecting is the one decision that must wait: a double-click starts
+    // with a release, and opening the editor must win over clearing the
+    // selection. Ask the platform how long a double-click may take instead
+    // of assuming 200 ms.
+    doubleClickHappened = false;
+    deselectTimer.start(
+        QGuiApplication::styleHints()->mouseDoubleClickInterval(), this);
+  }
+
+  void timerEvent(QTimerEvent *event) override {
+    if (event->id() != deselectTimer.id()) {
+      QTreeView::timerEvent(event);
+      return;
+    }
+    deselectTimer.stop();
+    if (doubleClickHappened)
+      return;
+    clearSelection();
+    selectionModel()->setCurrentIndex(QModelIndex(),
+                                      QItemSelectionModel::Select);
+    emit emptyClicked();
   }
 
   /**
@@ -113,6 +130,7 @@ private:
    */
   void mouseDoubleClickEvent(QMouseEvent *event) override {
     doubleClickHappened = true;
+    deselectTimer.stop();
     QTreeView::mouseDoubleClickEvent(event);
   }
 };

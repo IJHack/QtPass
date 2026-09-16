@@ -144,10 +144,22 @@ void ImitatePass::GitPull() {
 }
 
 /**
- * @brief ImitatePass::GitPull_b git pull wrapper
+ * @brief ImitatePass::GitPull_b git pull wrapper which blocks until the
+ *        process finishes
  */
 void ImitatePass::GitPull_b() {
-  Executor::executeBlocking(m_settings.gitExecutable, {"pull"});
+  if (!gitReady())
+    return;
+  // -C the store: executeBlocking sets no working directory, so without it
+  // git would run in QtPass's launch directory and pull an unrelated
+  // repository, or fail with "not a git repository".
+  QString err;
+  const int rc = Executor::executeBlocking(
+      m_settings.gitExecutable, {"-C", pgit(m_settings.passStore), "pull"},
+      QString(), nullptr, &err);
+  if (rc != 0) {
+    emit statusMsg(tr("Git pull failed: %1").arg(err.trimmed()), 5000);
+  }
 }
 
 /**
@@ -747,13 +759,26 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     // -C the store so git runs there rather than in QtPass's launch directory
     // (executeBlocking sets no working directory).
     const QString store = pgit(m_settings.passStore);
-    execBlocking(m_settings.gitExecutable,
-                 {"-C", store, "add", pgit(fileName)});
+    if (execBlocking(m_settings.gitExecutable,
+                     {"-C", store, "add", pgit(fileName)}) != 0) {
+#ifdef QT_DEBUG
+      dbg() << "git add failed after re-encrypting:" << fileName;
+#endif
+      // The file on disk is re-encrypted correctly; only the repository is
+      // now behind. Report it so the caller counts this file as failed and
+      // the run is not pushed.
+      return false;
+    }
     QString path = QDir(m_settings.passStore).relativeFilePath(fileName);
     path.replace(Util::endsWithGpg(), "");
-    execBlocking(m_settings.gitExecutable,
-                 {"-C", store, "commit", pgit(fileName), "-m",
-                  "Re-encrypt for " + path + " using QtPass."});
+    if (execBlocking(m_settings.gitExecutable,
+                     {"-C", store, "commit", pgit(fileName), "-m",
+                      "Re-encrypt for " + path + " using QtPass."}) != 0) {
+#ifdef QT_DEBUG
+      dbg() << "git commit failed after re-encrypting:" << fileName;
+#endif
+      return false;
+    }
   }
 
   return true;
@@ -929,7 +954,11 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
   ReencryptResult result;
   if (m_settings.autoPull && gitConfigured()) {
     emit statusMsg(tr("Updating password-store"), 2000);
-    execBlocking(m_settings.gitExecutable, {"pull"});
+    if (execBlocking(m_settings.gitExecutable,
+                     {"-C", pgit(m_settings.passStore), "pull"}) != 0) {
+      emit statusMsg(tr("Git pull failed, re-encrypting the store as it is"),
+                     5000);
+    }
   }
 
   // Create backup before re-encryption - abort if it fails

@@ -4,12 +4,15 @@
 #include <QComboBox>
 #include <QCoreApplication>
 #include <QDialog>
+#include <QElapsedTimer>
 #include <QHash>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPointer>
 #include <QSignalSpy>
 #include <QSpinBox>
+#include <QStandardItemModel>
+#include <QStyleHints>
 #include <QtTest>
 
 #include "../../../src/deselectabletreeview.h"
@@ -91,6 +94,9 @@ private Q_SLOTS:
   // DeselectableTreeView tests
   void deselectableTreeViewConstruction();
   void deselectableTreeViewHasEmptyClickedSignal();
+  void deselectableTreeViewClickDoesNotBlock();
+  void deselectableTreeViewClearsSelectionAfterDoubleClickInterval();
+  void deselectableTreeViewDoubleClickKeepsSelection();
 };
 
 /**
@@ -674,6 +680,76 @@ void tst_ui::deselectableTreeViewHasEmptyClickedSignal() {
   QVERIFY(spy.isValid());
   // No click occurred yet, so count should be 0
   QCOMPARE(spy.count(), 0);
+}
+
+/// A release must return immediately. The old implementation spun
+/// QCoreApplication::processEvents for 200 ms inside mouseReleaseEvent, which
+/// delayed every click — and therefore every decrypt — by that much.
+void tst_ui::deselectableTreeViewClickDoesNotBlock() {
+  DeselectableTreeView view(nullptr);
+  QStandardItemModel model(2, 1);
+  model.setItem(0, 0, new QStandardItem(QStringLiteral("one")));
+  model.setItem(1, 0, new QStandardItem(QStringLiteral("two")));
+  view.setModel(&model);
+  view.resize(200, 100);
+
+  const QModelIndex first = model.index(0, 0);
+  view.selectionModel()->select(first, QItemSelectionModel::Select);
+  const QPoint pos = view.visualRect(first).center();
+
+  QElapsedTimer timer;
+  timer.start();
+  QTest::mousePress(view.viewport(), Qt::LeftButton, Qt::NoModifier, pos);
+  QTest::mouseRelease(view.viewport(), Qt::LeftButton, Qt::NoModifier, pos);
+  const qint64 elapsed = timer.elapsed();
+
+  QVERIFY2(elapsed < 100,
+           qPrintable(QStringLiteral("a click took %1 ms").arg(elapsed)));
+}
+
+/// Clicking an already-selected item clears the selection once the platform's
+/// double-click interval has passed without a second click.
+void tst_ui::deselectableTreeViewClearsSelectionAfterDoubleClickInterval() {
+  DeselectableTreeView view(nullptr);
+  QStandardItemModel model(1, 1);
+  model.setItem(0, 0, new QStandardItem(QStringLiteral("one")));
+  view.setModel(&model);
+  view.resize(200, 100);
+
+  const QModelIndex first = model.index(0, 0);
+  view.selectionModel()->select(first, QItemSelectionModel::Select);
+  QVERIFY(view.selectionModel()->isSelected(first));
+
+  QSignalSpy spy(&view, &DeselectableTreeView::emptyClicked);
+  const QPoint pos = view.visualRect(first).center();
+  QTest::mousePress(view.viewport(), Qt::LeftButton, Qt::NoModifier, pos);
+  QTest::mouseRelease(view.viewport(), Qt::LeftButton, Qt::NoModifier, pos);
+
+  QVERIFY2(spy.wait(5000), "emptyClicked should fire after the interval");
+  QVERIFY(!view.selectionModel()->isSelected(first));
+}
+
+/// A double-click opens the editor, so it must cancel the pending deselect.
+void tst_ui::deselectableTreeViewDoubleClickKeepsSelection() {
+  DeselectableTreeView view(nullptr);
+  QStandardItemModel model(1, 1);
+  model.setItem(0, 0, new QStandardItem(QStringLiteral("one")));
+  view.setModel(&model);
+  view.resize(200, 100);
+
+  const QModelIndex first = model.index(0, 0);
+  view.selectionModel()->select(first, QItemSelectionModel::Select);
+
+  QSignalSpy spy(&view, &DeselectableTreeView::emptyClicked);
+  const QPoint pos = view.visualRect(first).center();
+  QTest::mousePress(view.viewport(), Qt::LeftButton, Qt::NoModifier, pos);
+  QTest::mouseRelease(view.viewport(), Qt::LeftButton, Qt::NoModifier, pos);
+  QTest::mouseDClick(view.viewport(), Qt::LeftButton, Qt::NoModifier, pos);
+
+  // Wait out the interval: nothing may be cleared.
+  QTest::qWait(QGuiApplication::styleHints()->mouseDoubleClickInterval() + 200);
+  QCOMPARE(spy.count(), 0);
+  QVERIFY(view.selectionModel()->isSelected(first));
 }
 
 QTEST_MAIN(tst_ui)

@@ -370,14 +370,14 @@ private:
    * active gpg or git without touching its QProcess or pid.
    * @return Exit code, or -1 when refused, failed to start or interrupted.
    */
-  auto execBlocking(const QString &app, const QStringList &args,
-                    const QString &input = QString(),
-                    QString *process_out = nullptr,
-                    QString *process_err = nullptr) -> int;
+  [[nodiscard]] auto execBlocking(const QString &app, const QStringList &args,
+                                  const QString &input = QString(),
+                                  QString *process_out = nullptr,
+                                  QString *process_err = nullptr) -> int;
   /// Overload capturing stdout (and stderr) without stdin input.
-  auto execBlocking(const QString &app, const QStringList &args,
-                    QString *process_out, QString *process_err = nullptr)
-      -> int;
+  [[nodiscard]] auto execBlocking(const QString &app, const QStringList &args,
+                                  QString *process_out,
+                                  QString *process_err = nullptr) -> int;
   /**
    * @brief Start the worker thread once the Executor queue is idle.
    * @param dir Directory passed to reencryptPath().
