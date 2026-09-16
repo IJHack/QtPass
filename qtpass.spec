@@ -22,8 +22,11 @@ BuildRequires: qt6-qttools-devel
 BuildRequires: desktop-file-utils
 BuildRequires: libappstream-glib
 Requires: qt6-qtsvg
+# gpg is not optional: both backends decrypt through it, and a configuration
+# without a gpg executable is rejected by Util::configIsValid().
+Requires: gnupg2
+# Optional: the pass CLI is one of two backends, git only syncs the store.
 Recommends: pass
-Recommends: gnupg2
 Recommends: git
 
 %description
