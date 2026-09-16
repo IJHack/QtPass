@@ -45,7 +45,7 @@ line ([#1709](https://github.com/IJHack/QtPass/issues/1709)). Qt 5.15 and Qt 6 a
   "All characters" when loaded instead of indexing the character-set table
   out of bounds when the Settings dialog opens [#1724](https://github.com/IJHack/QtPass/pull/1724) (ported from [#1715](https://github.com/IJHack/QtPass/pull/1715))
 
-### Bugfixes
+### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
 - "New folder" wrote a zero-byte `.gpg-id`, shadowing the parent recipients
   and breaking every insert in that folder; it is now seeded from the parent
