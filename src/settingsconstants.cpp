@@ -14,18 +14,9 @@ const QString SettingsConstants::geometry =
     SettingsConstants::groupMainwindow + "/geometry";
 const QString SettingsConstants::savestate =
     SettingsConstants::groupMainwindow + "/savestate";
-const QString SettingsConstants::pos =
-    SettingsConstants::groupMainwindow + "/pos";
-const QString SettingsConstants::size =
-    SettingsConstants::groupMainwindow + "/size";
-const QString SettingsConstants::maximized =
-    SettingsConstants::groupMainwindow + "/maximized";
 
 // Dialog-specific settings (with key prefix)
 const QString SettingsConstants::dialogGeometry = "dialog/geometry";
-const QString SettingsConstants::dialogPos = "dialog/pos";
-const QString SettingsConstants::dialogSize = "dialog/size";
-const QString SettingsConstants::dialogMaximized = "dialog/maximized";
 
 const QString SettingsConstants::usePass = "usePass";
 const QString SettingsConstants::useSelection = "useSelection";

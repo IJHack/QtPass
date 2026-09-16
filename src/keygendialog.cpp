@@ -7,6 +7,7 @@
 #include "qtpasssettings.h"
 #include "ui_keygendialog.h"
 #include "util.h"
+#include "windowstatestore.h"
 #include <QCheckBox>
 #include <QMessageBox>
 #include <QRegularExpression>
@@ -27,20 +28,7 @@ KeygenDialog::KeygenDialog(const QString &gpgExe, ConfigDialog *parent)
   connect(ui->checkBox, &QCheckBox::toggled, this,
           &KeygenDialog::setExpertMode);
 
-  // Restore dialog state
-  QByteArray savedGeometry = QtPassSettings::getDialogGeometry("keygenDialog");
-  bool hasSavedGeometry = !savedGeometry.isEmpty();
-  if (hasSavedGeometry) {
-    restoreGeometry(savedGeometry);
-  }
-  if (QtPassSettings::isDialogMaximized("keygenDialog")) {
-    showMaximized();
-  } else if (hasSavedGeometry) {
-    move(QtPassSettings::getDialogPos("keygenDialog"));
-    resize(QtPassSettings::getDialogSize("keygenDialog"));
-  } else {
-    // Let window manager handle positioning for first launch
-  }
+  WindowStateStore::restore(*this, QStringLiteral("keygenDialog"));
 
   ui->plainTextEdit->setPlainText(Pass::getDefaultKeyTemplate(gpgExe));
   // The batch template is only of interest in expert mode; keep it out of
@@ -258,11 +246,6 @@ void KeygenDialog::done(int r) {
  * @param event
  */
 void KeygenDialog::closeEvent(QCloseEvent *event) {
-  QtPassSettings::setDialogGeometry("keygenDialog", saveGeometry());
-  if (!isMaximized()) {
-    QtPassSettings::setDialogPos("keygenDialog", pos());
-    QtPassSettings::setDialogSize("keygenDialog", size());
-  }
-  QtPassSettings::setDialogMaximized("keygenDialog", isMaximized());
+  WindowStateStore::save(*this, QStringLiteral("keygenDialog"));
   event->accept();
 }

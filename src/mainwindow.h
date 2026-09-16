@@ -399,6 +399,7 @@ private:
 
   void applyTextBrowserSettings();
   void applyWindowFlagsSettings();
+  void saveWindowState();
 
   void updateGitButtonVisibility();
   /**

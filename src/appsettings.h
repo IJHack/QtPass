@@ -32,9 +32,6 @@ struct AppSettings {
   QString version;       ///< Last-run application version.
   QByteArray geometry;   ///< Main-window saved geometry.
   QByteArray savestate;  ///< Main-window saved dock/toolbar state.
-  QPoint pos;            ///< Main-window position.
-  QSize size;            ///< Main-window size.
-  bool maximized{false}; ///< Main-window maximized flag.
   QString activeProfile; ///< Name of the active profile.
 
   // --- Backend selection / store ---

@@ -76,6 +76,7 @@ CONFIG += lrelease embed_translations
 QM_FILES_RESOURCE_PREFIX=/localization
 
 SOURCES   += mainwindow.cpp \
+             windowstatestore.cpp \
              configdialog.cpp \
              storemodel.cpp \
              base32.cpp \
@@ -111,6 +112,7 @@ SOURCES   += mainwindow.cpp \
              profileinit.cpp
 
 HEADERS   += mainwindow.h \
+             windowstatestore.h \
              grepsearchcontroller.h \
              configdialog.h \
              storemodel.h \

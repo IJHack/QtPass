@@ -20,6 +20,15 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Bugfixes
 
+- The main window comes back where it was left. The saved position was
+  discarded on every start (stale position/size keys were applied on top of
+  the restored geometry, then `main()` re-centred the window on the cursor's
+  screen unconditionally), and with "hide on close" nothing was ever saved.
+  One `saveGeometry`/`restoreGeometry` round trip now, for the main window
+  and the settings, keygen and users dialogs alike; the window is centred only
+  when nothing was saved, and not on Wayland, where placement is the
+  compositor's. The redundant `pos`, `size`, `maximized` and `dialog/pos|size|maximized`
+  settings keys are gone
 - The Edit dialog turned every `key: value` line into a label-locked field
   since 1.8.0, also with templates off, so those keys could no longer be
   edited as text ([#1138](https://github.com/IJHack/QtPass/pull/1138) forced "all fields" on for [#132](https://github.com/IJHack/QtPass/issues/132)). Which lines become

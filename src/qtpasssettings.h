@@ -23,7 +23,7 @@
  * defaults.
  *
  * QtPassSettings manages all application configuration including:
- * - Window geometry (position, size, maximized state)
+ * - Window geometry (QWidget::saveGeometry blobs, main window and dialogs)
  * - Password store configuration (path, GPG settings)
  * - Executable paths (pass, git, gpg, pwgen)
  * - UI preferences (clipboard, autoclear, display options)
@@ -126,37 +126,6 @@ public:
    */
   static void setSavestate(const QByteArray &saveState);
 
-  /**
-   * @brief Get saved window position.
-   * @param defaultValue Point returned if no position saved.
-   * @return Window position as QPoint.
-   */
-  static auto getPos(const QPoint &defaultValue = QVariant().toPoint())
-      -> QPoint;
-  /**
-   * @brief Save window position.
-   * @param pos Window position to save.
-   */
-  static void setPos(const QPoint &pos);
-
-  /**
-   * @brief Get saved window size.
-   * @param defaultValue Size returned if no size saved.
-   * @return Window size as QSize.
-   */
-  static auto getSize(const QSize &defaultValue = QVariant().toSize()) -> QSize;
-  /**
-   * @brief Save window size.
-   * @param size Window size to save.
-   */
-  static void setSize(const QSize &size);
-
-  /**
-   * @brief Save maximized state.
-   * @param maximized Maximized state to save.
-   */
-  static void setMaximized(const bool &maximized);
-
   // Dialog-specific settings
   /**
    * @brief Get saved dialog geometry.
@@ -174,54 +143,6 @@ public:
    * @param geometry Dialog geometry to save.
    */
   static void setDialogGeometry(const QString &key, const QByteArray &geometry);
-
-  /**
-   * @brief Get saved dialog position.
-   * @param key Dialog identifier.
-   * @param defaultValue Point returned if not saved.
-   * @return Dialog position as QPoint.
-   */
-  static auto getDialogPos(const QString &key,
-                           const QPoint &defaultValue = QVariant().toPoint())
-      -> QPoint;
-  /**
-   * @brief Save dialog position.
-   * @param key Dialog identifier.
-   * @param pos Dialog position to save.
-   */
-  static void setDialogPos(const QString &key, const QPoint &pos);
-
-  /**
-   * @brief Get saved dialog size.
-   * @param key Dialog identifier.
-   * @param defaultValue Size returned if not saved.
-   * @return Dialog size as QSize.
-   */
-  static auto getDialogSize(const QString &key,
-                            const QSize &defaultValue = QVariant().toSize())
-      -> QSize;
-  /**
-   * @brief Save dialog size.
-   * @param key Dialog identifier.
-   * @param size Dialog size to save.
-   */
-  static void setDialogSize(const QString &key, const QSize &size);
-
-  /**
-   * @brief Get dialog maximized state.
-   * @param key Dialog identifier.
-   * @param defaultValue Boolean returned if not saved.
-   * @return true if dialog is maximized.
-   */
-  static auto isDialogMaximized(const QString &key,
-                                const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
-   * @brief Save dialog maximized state.
-   * @param key Dialog identifier.
-   * @param maximized Maximized state to save.
-   */
-  static void setDialogMaximized(const QString &key, const bool &maximized);
 
   // Password store settings
   /**
