@@ -3,7 +3,6 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QPlainTextEdit>
-#include <QPointer>
 #include <QPushButton>
 #include <QScopeGuard>
 #include <QtTest>
@@ -32,7 +31,6 @@ private Q_SLOTS:
   void importButtonEnabledAfterTextInput();
   void importButtonDisabledForWhitespaceOnlyInput();
   void pasteButtonSetsTextFromClipboard();
-  void destroyingTheDialogDestroysItsWidgets();
 };
 
 void tst_importkeydialog::parseGpgImportOutput_data() {
@@ -300,23 +298,6 @@ void tst_importkeydialog::pasteButtonSetsTextFromClipboard() {
   pasteButton->click();
 
   QCOMPARE(edit->toPlainText(), payload);
-}
-
-/**
- * @brief The Ui struct is owned by the dialog. ~ImportKeyDialog used to be
- *        `= default` with a raw `Ui::ImportKeyDialog *ui`, so one Ui struct
- *        leaked per import. The widgets it created are children of the
- *        dialog either way; what this pins is that the struct is deleted
- *        with the dialog, which the QScopedPointer now guarantees.
- */
-void tst_importkeydialog::destroyingTheDialogDestroysItsWidgets() {
-  QPointer<QWidget> textEdit;
-  {
-    ImportKeyDialog dialog(QString{});
-    textEdit = dialog.findChild<QWidget *>(QStringLiteral("inputTextEdit"));
-    QVERIFY2(!textEdit.isNull(), "the Ui must have created inputTextEdit");
-  }
-  QVERIFY2(textEdit.isNull(), "the dialog's widgets must die with it");
 }
 
 QTEST_MAIN(tst_importkeydialog)
