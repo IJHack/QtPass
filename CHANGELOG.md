@@ -32,8 +32,10 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   About QtPass, About Qt). Until now Push, Pull, Users and Config existed only
   as toolbar icons and there was no About at all; on macOS the standard
   application menu (Preferences, About, Quit) now appears because Qt builds
-  it from the menu roles. Ctrl+Q is the Quit action; like before it closes
-  the window, which quits unless "hide on close" is set
+  it from the menu roles. Ctrl+Q is Quit and quits, tray or not, as it does
+  in KeePassXC, Telegram and per the KDE, GNOME and macOS guidelines; what
+  Ctrl+Q used to do — close the window, which "hide on close" turns into a
+  hide — is File ▸ Close window, Ctrl+W
 - Debug output goes through one `qtpass` logging category instead of
   `#ifdef QT_DEBUG` blocks around a `dbg()` macro. Release builds keep it
   compiled in; `QT_LOGGING_RULES="qtpass.debug=true"` turns it on, so a user
