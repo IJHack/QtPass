@@ -43,10 +43,10 @@
     <widget class="QLabel" name="label">
      <property name="text">
       <string>Select which users should be able to decrypt passwords stored in this folder.
-Note: Existing files will not be modified, and retain the old permissions until you edit them.
-Blue entries have a secret key available, select one of these to be able to decrypt.
-Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
-Red entries are not valid, you will not be able to encrypt to these.</string>
+Note: On OK every password in this folder and its subfolders is re-encrypted to the selected users; this can take a while.
+Bold entries have a secret key available, select one of these to be able to decrypt yourself.
+Plain entries have a trusted encryption key, select these to allow other people to decrypt.
+[INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</string>
      </property>
      <property name="textFormat">
       <enum>Qt::PlainText</enum>

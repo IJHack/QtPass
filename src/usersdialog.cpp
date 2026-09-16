@@ -300,18 +300,18 @@ QString UsersDialog::buildUserText(const UserInfo &user) const {
 void UsersDialog::applyUserStyling(QListWidgetItem *item,
                                    const UserInfo &user) const {
   const QString originalText = item->text();
-  if (user.have_secret) {
-    const QPalette palette = QApplication::palette();
-    item->setForeground(palette.color(QPalette::Link));
-    QFont font = item->font();
-    font.setBold(true);
-    item->setFont(font);
-  } else if (!user.isValid()) {
+  // Status badge first: an own key can be expired too, and then the marker
+  // matters more than the "you can decrypt with this" colour.
+  bool badged = true;
+  if (!user.isValid()) {
     item->setBackground(Qt::darkRed);
     item->setForeground(Qt::white);
     item->setText(tr("[INVALID] ") + originalText);
   } else if (isUserExpired(user)) {
-    item->setForeground(Qt::darkRed);
+    // Same treatment as invalid: a lone dark-red foreground is unreadable on
+    // dark themes, and gpg refuses to encrypt to expired keys anyway.
+    item->setBackground(Qt::darkRed);
+    item->setForeground(Qt::white);
     item->setText(tr("[EXPIRED] ") + originalText);
   } else if (!user.fullyValid()) {
     item->setBackground(Qt::darkYellow);
@@ -319,6 +319,15 @@ void UsersDialog::applyUserStyling(QListWidgetItem *item,
     item->setText(tr("[PARTIAL] ") + originalText);
   } else {
     item->setText(originalText);
+    badged = false;
+  }
+  if (user.have_secret) {
+    if (!badged) {
+      item->setForeground(QApplication::palette().color(QPalette::Link));
+    }
+    QFont font = item->font();
+    font.setBold(true);
+    item->setFont(font);
   }
 }
 
