@@ -6,7 +6,8 @@
 TEMPLATE = subdirs
 SUBDIRS += src tests main
 main.depends = src
-tests.depends = main
+# The suites link libqtpass.a from src/; nothing in them needs main/.
+tests.depends = src
 
 OTHER_FILES += LICENSE \
                README.md \

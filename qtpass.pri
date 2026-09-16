@@ -76,8 +76,12 @@ win32 {
     msvc:QMAKE_LFLAGS += /DYNAMICBASE /NXCOMPAT
     LIBS    += -lmpr -lbcrypt
 } else:macx {
-    ICON = ../artwork/icon.icns
-    QMAKE_INFO_PLIST = $$(PWD)/qtpass.plist
+    # $$PWD is the directory of this .pri, i.e. the repository root, whatever
+    # sub-project includes it. $$(PWD) was the shell's working directory, which
+    # is why every sub-project used to need its own copy of qtpass.plist and
+    # a symlinked artwork/.
+    ICON = $$PWD/artwork/icon.icns
+    QMAKE_INFO_PLIST = $$PWD/qtpass.plist
 } else:bsd {
     LIBS += -L/usr/local/lib
 }
