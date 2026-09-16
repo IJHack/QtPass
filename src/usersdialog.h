@@ -45,6 +45,30 @@ public:
    */
   ~UsersDialog() override;
 
+  /**
+   * @brief Choose whether OK runs Pass::Init on the folder.
+   *
+   * On by default. Off, the dialog only collects the selection; the caller
+   * reads selectedUsers() and initialises the folder itself (new profiles,
+   * which must not go through the backend of the active store).
+   * @param initOnAccept false to skip Pass::Init.
+   */
+  void setInitOnAccept(bool initOnAccept) { m_initOnAccept = initOnAccept; }
+
+  /**
+   * @brief The key list with the user's choice in each entry's enabled flag.
+   * @return All listed users; the selected ones have enabled == true.
+   */
+  [[nodiscard]] auto selectedUsers() const -> QList<UserInfo> {
+    return m_userList;
+  }
+
+  /**
+   * @brief Whether at least one key is ticked.
+   * @return true if Init would get a recipient.
+   */
+  [[nodiscard]] auto hasSelection() const -> bool;
+
 public slots:
   /**
    * @brief Handle dialog acceptance.
@@ -80,10 +104,12 @@ private slots:
 
 private:
   QScopedPointer<Ui::UsersDialog> ui;
-  Pass *m_pass;                          /**< Active Pass backend */
-  QString m_passStore;                   /**< Password store root path */
-  QString m_gpgExe;                      /**< GPG executable path */
-  QList<UserInfo> m_userList;            /**< List of available GPG users */
+  Pass *m_pass;               /**< Active Pass backend */
+  QString m_passStore;        /**< Password store root path */
+  QString m_gpgExe;           /**< GPG executable path */
+  QList<UserInfo> m_userList; /**< List of available GPG users */
+  bool m_initOnAccept{true};  /**< Whether accept() runs Pass::Init. */
+  void updateOkButton();
   QString m_dir;                         /**< Password store directory */
   QString m_lastFilter;                  /**< Last filter text for caching */
   QString m_cachedPatternString;         /**< Cached pattern string */

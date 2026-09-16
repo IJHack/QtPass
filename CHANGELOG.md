@@ -17,6 +17,10 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   and auto-pushed [#1685](https://github.com/IJHack/QtPass/pull/1685)
 - New folders never get an unsigned `.gpg-id` when a signing key is
   configured [#1695](https://github.com/IJHack/QtPass/pull/1695)
+- The Users dialog for a folder without a `.gpg-id` (first-run wizard, new
+  profile) came up with every key in the keyring pre-selected, because an
+  empty recipient list made `gpg --list-keys` return all of them. Nothing is
+  pre-selected now
 
 ### Bugfixes
 
@@ -95,6 +99,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 - Deselecting an entry when nothing had been copied flashed "Clipboard
   cleared" in the status bar (the empty tracker matched an empty selection);
   clearing with nothing tracked is silent now
+- Adding a profile for a new directory initialised it through the backend
+  of the _active_ store: `pass init` nested the new `.gpg-id` inside the
+  active store and `git init` ran there. The recipients file, its optional
+  signature and the first commit are now written directly into the new
+  directory, without touching the active store
+  ([#1774](https://github.com/IJHack/QtPass/issues/1774))
 
 ### Removed
 
