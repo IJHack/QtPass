@@ -520,10 +520,13 @@ auto tst_passworddisplaypanel::urlButtonAt(int row) const -> QPushButton * {
     return nullptr;
   }
   // The open-in-browser button is the only plain QPushButton in the row; the
-  // copy and QR affordances are subclasses.
+  // copy, QR and show/hide affordances are subclasses (and carry tooltips of
+  // their own, so the tooltip alone does not single it out).
   const auto buttons = item->widget()->findChildren<QPushButton *>();
   for (QPushButton *button : buttons) {
     if (qobject_cast<QPushButtonWithClipboard *>(button) == nullptr &&
+        qobject_cast<QPushButtonAsQRCode *>(button) == nullptr &&
+        qobject_cast<QPushButtonShowPassword *>(button) == nullptr &&
         !button->toolTip().isEmpty()) {
       return button;
     }
@@ -585,6 +588,9 @@ void tst_passworddisplaypanel::urlButtonToolTipShowsUrlVerbatim_data() {
 void tst_passworddisplaypanel::urlButtonToolTipShowsUrlVerbatim() {
   QFETCH(QString, url);
   AppSettings s;
+  // Copy and QR buttons in the same row must not be mistaken for it.
+  s.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
+  s.useQrencode = true;
   m_panel->displayFields(QStringLiteral("secret"), NamedValues{{"url", url}},
                          s);
   QPushButton *button = urlButtonAt(1);
