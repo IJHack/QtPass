@@ -13,7 +13,8 @@ var searchData=
   ['resolvedgpgconfcommand_10',['ResolvedGpgconfCommand',['../struct_resolved_gpgconf_command.html',1,'']]],
   ['resolvegpgconfcommand_11',['resolveGpgconfCommand',['../class_pass.html#a4425df7bb17f93be39e1142c2fd4c6a6',1,'Pass']]],
   ['resolvemovedestination_12',['resolveMoveDestination',['../class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563',1,'ImitatePass']]],
-  ['restorecursor_13',['restoreCursor',['../struct_grep_search_controller_1_1_finish_outcome.html#ac239184fd57227541a8be6147f6616b8',1,'GrepSearchController::FinishOutcome']]],
-  ['restorewindow_14',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
-  ['rootindexfor_15',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
+  ['restore_13',['restore',['../namespace_window_state_store.html#a33978c57279f86bfb1a416ad199858e8',1,'WindowStateStore']]],
+  ['restorecursor_14',['restoreCursor',['../struct_grep_search_controller_1_1_finish_outcome.html#ac239184fd57227541a8be6147f6616b8',1,'GrepSearchController::FinishOutcome']]],
+  ['restorewindow_15',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
+  ['rootindexfor_16',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
 ];

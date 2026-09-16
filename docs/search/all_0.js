@@ -10,10 +10,11 @@ var searchData=
   ['applypassphrase_7',['applyPassphrase',['../class_keygen_dialog.html#a8f57d71d0288d8088b23b8124088a62a',1,'KeygenDialog']]],
   ['appsettings_8',['AppSettings',['../struct_app_settings.html',1,'']]],
   ['arguments_9',['arguments',['../struct_resolved_gpgconf_command.html#aa06fa6189e39477786bbb118dca49556',1,'ResolvedGpgconfCommand']]],
-  ['autoclearpanelseconds_10',['autoclearPanelSeconds',['../struct_app_settings.html#a5dbc9ec5be7876610b987a0d221c28a8',1,'AppSettings']]],
-  ['autoclearseconds_11',['autoclearSeconds',['../struct_app_settings.html#a92b8e71fe0eb104d6f8f91a53db04f6d',1,'AppSettings']]],
-  ['autopull_12',['autoPull',['../struct_app_settings.html#a58078cf5ba353cf2fa920e79f5f6bd4f',1,'AppSettings']]],
-  ['autopush_13',['autoPush',['../struct_app_settings.html#aaf958d6fdb0d9d28ddf10872e9be0238',1,'AppSettings']]],
-  ['avoidcapitals_14',['avoidCapitals',['../struct_app_settings.html#a8cc6fc41d08e175473fa5b004c5a2178',1,'AppSettings']]],
-  ['avoidnumbers_15',['avoidNumbers',['../struct_app_settings.html#ac69e7514bfb4ab78d83383ab8feb5049',1,'AppSettings']]]
+  ['attach_10',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
+  ['autoclearpanelseconds_11',['autoclearPanelSeconds',['../struct_app_settings.html#a5dbc9ec5be7876610b987a0d221c28a8',1,'AppSettings']]],
+  ['autoclearseconds_12',['autoclearSeconds',['../struct_app_settings.html#a92b8e71fe0eb104d6f8f91a53db04f6d',1,'AppSettings']]],
+  ['autopull_13',['autoPull',['../struct_app_settings.html#a58078cf5ba353cf2fa920e79f5f6bd4f',1,'AppSettings']]],
+  ['autopush_14',['autoPush',['../struct_app_settings.html#aaf958d6fdb0d9d28ddf10872e9be0238',1,'AppSettings']]],
+  ['avoidcapitals_15',['avoidCapitals',['../struct_app_settings.html#a8cc6fc41d08e175473fa5b004c5a2178',1,'AppSettings']]],
+  ['avoidnumbers_16',['avoidNumbers',['../struct_app_settings.html#ac69e7514bfb4ab78d83383ab8feb5049',1,'AppSettings']]]
 ];

@@ -12,6 +12,7 @@ var searchData=
   ['removepadding_9',['removePadding',['../class_base32.html#aa1f7b5589e29a614a4894b448b90a8ca',1,'Base32']]],
   ['resolvegpgconfcommand_10',['resolveGpgconfCommand',['../class_pass.html#a4425df7bb17f93be39e1142c2fd4c6a6',1,'Pass']]],
   ['resolvemovedestination_11',['resolveMoveDestination',['../class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563',1,'ImitatePass']]],
-  ['restorewindow_12',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
-  ['rootindexfor_13',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
+  ['restore_12',['restore',['../namespace_window_state_store.html#a33978c57279f86bfb1a416ad199858e8',1,'WindowStateStore']]],
+  ['restorewindow_13',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
+  ['rootindexfor_14',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
 ];

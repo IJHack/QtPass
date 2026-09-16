@@ -126,72 +126,69 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span><a class="code hl_class" href="class_pass.html">Pass</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span>QCloseEvent;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span>QKeyEvent;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">class </span>QListWidgetItem;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_users_dialog.html">   31</a></span><span class="keyword">class </span><a class="code hl_function" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog</a> : <span class="keyword">public</span> QDialog {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  Q_OBJECT</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">   42</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog</a>(<a class="code hl_class" href="class_pass.html">Pass</a> *pass, <span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;s, QString dir,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                       QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">   47</a></span>  <a class="code hl_function" href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">~UsersDialog</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">   53</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">accept</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5">   60</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5">closeEvent</a>(QCloseEvent *event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">   65</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">keyPressEvent</a>(QKeyEvent *event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordtype">void</span> itemChange(QListWidgetItem *item);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordtype">void</span> on_lineEdit_textChanged(<span class="keyword">const</span> QString &amp;filter);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">void</span> on_checkBox_clicked();</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordtype">void</span> on_importKeyButton_clicked();</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  QScopedPointer&lt;Ui::UsersDialog&gt; ui;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <a class="code hl_class" href="class_pass.html">Pass</a> *m_pass;                          </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  QString m_passStore;                   </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  QString m_gpgExe;                      </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  QList&lt;UserInfo&gt; m_userList;            </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  QString m_dir;                         </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  QString m_lastFilter;                  </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  QString m_cachedPatternString;         </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  QRegularExpression m_cachedNameFilter; </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keyword">mutable</span> QDateTime m_cachedCurrentDateTime; </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keyword">mutable</span> <span class="keywordtype">bool</span> m_cachedDateTimeValid =</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <span class="keyword">false</span>; </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordtype">void</span> restoreDialogState();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordtype">void</span> connectSignals();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span>QKeyEvent;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span>QListWidgetItem;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_users_dialog.html">   30</a></span><span class="keyword">class </span><a class="code hl_function" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog</a> : <span class="keyword">public</span> QDialog {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  Q_OBJECT</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">   41</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog</a>(<a class="code hl_class" href="class_pass.html">Pass</a> *pass, <span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;s, QString dir,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                       QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">   46</a></span>  <a class="code hl_function" href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">~UsersDialog</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">   52</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">accept</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">   59</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">keyPressEvent</a>(QKeyEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordtype">void</span> itemChange(QListWidgetItem *item);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordtype">void</span> on_lineEdit_textChanged(<span class="keyword">const</span> QString &amp;filter);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordtype">void</span> on_checkBox_clicked();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordtype">void</span> on_importKeyButton_clicked();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  QScopedPointer&lt;Ui::UsersDialog&gt; ui;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <a class="code hl_class" href="class_pass.html">Pass</a> *m_pass;                          </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  QString m_passStore;                   </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  QString m_gpgExe;                      </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  QList&lt;UserInfo&gt; m_userList;            </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  QString m_dir;                         </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  QString m_lastFilter;                  </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  QString m_cachedPatternString;         </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  QRegularExpression m_cachedNameFilter; </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keyword">mutable</span> QDateTime m_cachedCurrentDateTime; </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keyword">mutable</span> <span class="keywordtype">bool</span> m_cachedDateTimeValid =</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordtype">void</span> restoreDialogState();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordtype">void</span> connectSignals();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keyword">auto</span> loadGpgKeys() -&gt; bool;</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="keyword">auto</span> loadGpgKeys() -&gt; bool;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="keywordtype">void</span> markSecretKeys(QList&lt;UserInfo&gt; &amp;users);</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordtype">void</span> markSecretKeys(QList&lt;UserInfo&gt; &amp;users);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span> loadRecipients();</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <span class="keywordtype">void</span> populateList(<span class="keyword">const</span> QString &amp;filter = QString());</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keywordtype">bool</span> passesFilter(<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user, <span class="keyword">const</span> QString &amp;filter,</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                    <span class="keyword">const</span> QRegularExpression &amp;nameFilter) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keyword">auto</span> isUserExpired(<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user) <span class="keyword">const</span> -&gt; bool;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  QString buildUserText(<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keywordtype">void</span> applyUserStyling(QListWidgetItem *item, <span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>};</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">void</span> loadRecipients();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span> populateList(<span class="keyword">const</span> QString &amp;filter = QString());</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordtype">bool</span> passesFilter(<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user, <span class="keyword">const</span> QString &amp;filter,</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                    <span class="keyword">const</span> QRegularExpression &amp;nameFilter) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keyword">auto</span> isUserExpired(<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user) <span class="keyword">const</span> -&gt; bool;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  QString buildUserText(<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keywordtype">void</span> applyUserStyling(QListWidgetItem *item, <span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>};</div>
 </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#endif </span><span class="comment">// SRC_USERSDIALOG_H_</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">#endif </span><span class="comment">// SRC_USERSDIALOG_H_</span></div>
 <div class="ttc" id="aclass_pass_html"><div class="ttname"><a href="class_pass.html">Pass</a></div><div class="ttdoc">Abstract base class for password store operations.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00052">pass.h:52</a></div></div>
 <div class="ttc" id="aclass_users_dialog_html_a046728922f9ad9d2bf17ff64bf639d06"><div class="ttname"><a href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">UsersDialog::~UsersDialog</a></div><div class="ttdeci">~UsersDialog() override</div><div class="ttdoc">Destructor.</div></div>
 <div class="ttc" id="aclass_users_dialog_html_a2b8e6e8605111e43bab64328add16ddb"><div class="ttname"><a href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">UsersDialog::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdoc">Handle key press.</div></div>
 <div class="ttc" id="aclass_users_dialog_html_aa1630582c14afcef9ad80398752762a4"><div class="ttname"><a href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">UsersDialog::accept</a></div><div class="ttdeci">void accept() override</div><div class="ttdoc">Handle dialog acceptance.</div></div>
 <div class="ttc" id="aclass_users_dialog_html_aadc5be04d9f54b8d827348bf9248ae22"><div class="ttname"><a href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog::UsersDialog</a></div><div class="ttdeci">UsersDialog(Pass *pass, const AppSettings &amp;s, QString dir, QWidget *parent=nullptr)</div><div class="ttdoc">Construct users dialog.</div></div>
-<div class="ttc" id="aclass_users_dialog_html_ac1ca78f350c1f7655e0d32a1f1a07ba5"><div class="ttname"><a href="class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5">UsersDialog::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">Handle close event.</div></div>
 <div class="ttc" id="astruct_app_settings_html"><div class="ttname"><a href="struct_app_settings.html">AppSettings</a></div><div class="ttdoc">Plain value-object holding all flat QtPass configuration.</div><div class="ttdef"><b>Definition</b> <a href="appsettings_8h_source.html#l00030">appsettings.h:30</a></div></div>
 <div class="ttc" id="astruct_user_info_html"><div class="ttname"><a href="struct_user_info.html">UserInfo</a></div><div class="ttdoc">Stores GPG key info including validity, creation date, and more.</div><div class="ttdef"><b>Definition</b> <a href="userinfo_8h_source.html#l00013">userinfo.h:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

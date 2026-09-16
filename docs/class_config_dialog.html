@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="class_config_dialog-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ConfigDialog Class Reference</div></div>
 </div><!--header-->
@@ -163,17 +162,12 @@ void&#160;</td><td class="memItemRight"><b>wizard</b> ()</td></tr>
 <tr class="memdesc:a97c5f924a95b30f4d6a60df361c2b3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current password configuration from the dialog controls.  <br /></td></tr>
 <tr class="memitem:a791fbb09740f62bff81c104ce61a0c1a" id="r_a791fbb09740f62bff81c104ce61a0c1a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a791fbb09740f62bff81c104ce61a0c1a">useTemplate</a> (bool useTemplate)</td></tr>
 <tr class="memdesc:a791fbb09740f62bff81c104ce61a0c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable password file templating.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:ad5f28221ebec0701bb56c43780a452b3" id="r_ad5f28221ebec0701bb56c43780a452b3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad5f28221ebec0701bb56c43780a452b3">closeEvent</a> (QCloseEvent *event) override</td></tr>
-<tr class="memdesc:ad5f28221ebec0701bb56c43780a452b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save settings and clean up on close.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_config_dialog.html" title="The ConfigDialog handles the configuration interface.">ConfigDialog</a> handles the configuration interface. </p>
 <p>Presents controls for profiles, generation tools (pwgen/pass), GPG/git/OTP/qrencode integration, template handling, tray icon and autoclear options, and exposes methods to read and update those settings. </p>
 
-<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00030">30</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00029">29</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a815d6d8ddf1de9386427ddef691a02a1" name="a815d6d8ddf1de9386427ddef691a02a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a815d6d8ddf1de9386427ddef691a02a1">&#9670;&#160;</a></span>ConfigDialog()</h2>
@@ -221,39 +215,6 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ad5f28221ebec0701bb56c43780a452b3" name="ad5f28221ebec0701bb56c43780a452b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5f28221ebec0701bb56c43780a452b3">&#9670;&#160;</a></span>closeEvent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ConfigDialog::closeEvent </td>
-          <td>(</td>
-          <td class="paramtype">QCloseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Save settings and clean up on close. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>The close event. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a99e19a79c9bfd47ee251487c6e766605" name="a99e19a79c9bfd47ee251487c6e766605"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a99e19a79c9bfd47ee251487c6e766605">&#9670;&#160;</a></span>genKey()</h2>
 

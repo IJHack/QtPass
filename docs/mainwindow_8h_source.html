@@ -307,23 +307,24 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>  <span class="keywordtype">void</span> applyTextBrowserSettings();</div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>  <span class="keywordtype">void</span> applyWindowFlagsSettings();</div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span> </div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>  <span class="keywordtype">void</span> updateGitButtonVisibility();</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  <span class="keywordtype">void</span> updateOtpButtonVisibility(<span class="keywordtype">bool</span> uiEnabled = <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>  <span class="keywordtype">void</span> updateGrepButtonVisibility();</div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>  <span class="keywordtype">void</span> enableGitButtons(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;);</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span> </div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>  <span class="keywordtype">void</span> appendProcessOutput(<span class="keyword">const</span> QString &amp;output, <span class="keywordtype">bool</span> isError,</div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>                           <span class="keyword">const</span> QString &amp;linePrefix = QString());</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>  <span class="keywordtype">void</span> updateProcessOutputVisibility();</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>  <span class="keywordtype">void</span> limitOutputLines();</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  <span class="keyword">static</span> <span class="keyword">auto</span> getProcessName(<a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid) -&gt; QString;</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>  <span class="keyword">static</span> <span class="keyword">auto</span> isSensitiveProcess(<a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid) -&gt; bool;</div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>};</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>  <span class="keywordtype">void</span> saveWindowState();</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span> </div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>  <span class="keywordtype">void</span> updateGitButtonVisibility();</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>  <span class="keywordtype">void</span> updateOtpButtonVisibility(<span class="keywordtype">bool</span> uiEnabled = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>  <span class="keywordtype">void</span> updateGrepButtonVisibility();</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  <span class="keywordtype">void</span> enableGitButtons(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;);</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span> </div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>  <span class="keywordtype">void</span> appendProcessOutput(<span class="keyword">const</span> QString &amp;output, <span class="keywordtype">bool</span> isError,</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>                           <span class="keyword">const</span> QString &amp;linePrefix = QString());</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>  <span class="keywordtype">void</span> updateProcessOutputVisibility();</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>  <span class="keywordtype">void</span> limitOutputLines();</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>  <span class="keyword">static</span> <span class="keyword">auto</span> getProcessName(<a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid) -&gt; QString;</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  <span class="keyword">static</span> <span class="keyword">auto</span> isSensitiveProcess(<a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid) -&gt; bool;</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>};</div>
 </div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span> </div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span><span class="preprocessor">#endif </span><span class="comment">// SRC_MAINWINDOW_H_</span></div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span> </div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span><span class="preprocessor">#endif </span><span class="comment">// SRC_MAINWINDOW_H_</span></div>
 <div class="ttc" id="aclass_grep_search_controller_html"><div class="ttname"><a href="class_grep_search_controller.html">GrepSearchController</a></div><div class="ttdoc">State machine for MainWindow&#39;s content-search (grep) mode.</div><div class="ttdef"><b>Definition</b> <a href="grepsearchcontroller_8h_source.html#l00018">grepsearchcontroller.h:18</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a02ec9927bda826675653c0af916c8f33"><div class="ttname"><a href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">MainWindow::startReencryptPath</a></div><div class="ttdeci">void startReencryptPath()</div><div class="ttdoc">Begin a re-encryption pass on the current path.</div></div>
 <div class="ttc" id="aclass_main_window_html_a056b66175a3d3ffc3146535726bb4e50"><div class="ttname"><a href="class_main_window.html#a056b66175a3d3ffc3146535726bb4e50">MainWindow::userDialog</a></div><div class="ttdeci">void userDialog(const QString &amp;dir=&quot;&quot;)</div><div class="ttdoc">Open the user/recipient management dialog.</div></div>

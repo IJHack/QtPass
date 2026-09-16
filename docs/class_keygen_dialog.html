@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="class_keygen_dialog-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">KeygenDialog Class Reference</div></div>
 </div><!--header-->
@@ -136,16 +135,11 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f57d71d0288d8088b23b8124088a62a" id="r_a8f57d71d0288d8088b23b8124088a62a"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="#a8f57d71d0288d8088b23b8124088a62a">applyPassphrase</a> (const QString &amp;batch, const QString &amp;passphrase)</td></tr>
 <tr class="memdesc:a8f57d71d0288d8088b23b8124088a62a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splice a passphrase into a GPG batch template.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a37012091a78f400d9bdc7b6f6b5949ef" id="r_a37012091a78f400d9bdc7b6f6b5949ef"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a37012091a78f400d9bdc7b6f6b5949ef">closeEvent</a> (QCloseEvent *event) override</td></tr>
-<tr class="memdesc:a37012091a78f400d9bdc7b6f6b5949ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle dialog close, emitting appropriate signals.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles GPG keypair generation. </p>
 
-<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00023">23</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00022">22</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9e38c0d764b8819ef19e8882c63998a0" name="a9e38c0d764b8819ef19e8882c63998a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e38c0d764b8819ef19e8882c63998a0">&#9670;&#160;</a></span>KeygenDialog()</h2>
@@ -234,39 +228,6 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Batch text ready for gpg &ndash;gen-key &ndash;batch. </dd></dl>
-
-</div>
-</div>
-<a id="a37012091a78f400d9bdc7b6f6b5949ef" name="a37012091a78f400d9bdc7b6f6b5949ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37012091a78f400d9bdc7b6f6b5949ef">&#9670;&#160;</a></span>closeEvent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void KeygenDialog::closeEvent </td>
-          <td>(</td>
-          <td class="paramtype">QCloseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Handle dialog close, emitting appropriate signals. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>The close event. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

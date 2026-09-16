@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ui_0',['Ui',['../namespace_ui.html',1,'']]]
+  ['windowstatestore_0',['WindowStateStore',['../namespace_window_state_store.html',1,'']]]
 ];
