@@ -222,13 +222,13 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  <span class="keywordtype">bool</span> m_reencryptActive = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  std::atomic&lt;bool&gt; m_reencryptCancel{<span class="keyword">false</span>};</div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  QThread *m_reencryptThread = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  <span class="keyword">auto</span> execBlocking(<span class="keyword">const</span> QString &amp;app, <span class="keyword">const</span> QStringList &amp;args,</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                    <span class="keyword">const</span> QString &amp;input = QString(),</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>                    QString *process_out = <span class="keyword">nullptr</span>,</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                    QString *process_err = <span class="keyword">nullptr</span>) -&gt; int;</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>  <span class="keyword">auto</span> execBlocking(<span class="keyword">const</span> QString &amp;app, <span class="keyword">const</span> QStringList &amp;args,</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                    QString *process_out, QString *process_err = <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>      -&gt; int;</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  [[nodiscard]] <span class="keyword">auto</span> execBlocking(<span class="keyword">const</span> QString &amp;app, <span class="keyword">const</span> QStringList &amp;args,</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                                  <span class="keyword">const</span> QString &amp;input = QString(),</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>                                  QString *process_out = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                                  QString *process_err = <span class="keyword">nullptr</span>) -&gt; int;</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>  [[nodiscard]] <span class="keyword">auto</span> execBlocking(<span class="keyword">const</span> QString &amp;app, <span class="keyword">const</span> QStringList &amp;args,</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                                  QString *process_out,</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>                                  QString *process_err = <span class="keyword">nullptr</span>) -&gt; int;</div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>  <span class="keywordtype">void</span> startReencryptWorker(<span class="keyword">const</span> QString &amp;dir);</div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>  <span class="keyword">auto</span> reencryptFiles(<span class="keyword">const</span> QString &amp;dir) -&gt; ReencryptResult;</div>
 <div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>  <span class="keywordtype">void</span> finishReencrypt(<span class="keyword">const</span> ReencryptResult &amp;result);</div>
