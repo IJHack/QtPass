@@ -63,8 +63,10 @@ auto operator<<(QDataStream &out, const dragAndDropInfoPasswordStore &info)
 auto operator>>(QDataStream &in, dragAndDropInfoPasswordStore &info)
     -> QDataStream &;
 
-/// The one MIME type the store tree drags: a serialised
-/// dragAndDropInfoPasswordStore.
+/**
+ * @brief The one MIME type the store tree drags: a serialised
+ * dragAndDropInfoPasswordStore.
+ */
 inline constexpr QLatin1StringView
     kStoreDragMimeType("application/vnd.qtpass.dragAndDropInfoPasswordStore");
 
