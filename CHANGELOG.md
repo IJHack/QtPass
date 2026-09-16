@@ -27,15 +27,17 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 - Icon: the hairline where the shackle's straight legs met the arc is gone
   (the arc now overlaps the legs instead of butting against them); PNG, ICO
   and ICNS regenerated from the SVG
-- A menu bar: File (add password/folder, edit, delete, quit), Store (users,
-  pull, push, OTP), Settings (configuration, Ctrl+,) and Help (FAQ with F1,
-  About QtPass, About Qt). Until now Push, Pull, Users and Config existed only
-  as toolbar icons and there was no About at all; on macOS the standard
-  application menu (Preferences, About, Quit) now appears because Qt builds
-  it from the menu roles. Ctrl+Q is Quit and quits, tray or not, as it does
-  in KeePassXC, Telegram and per the KDE, GNOME and macOS guidelines; what
-  Ctrl+Q used to do — close the window, which "hide on close" turns into a
-  hide — is File ▸ Close window, Ctrl+W
+- A menu bar: File (add password/folder, edit, delete, close window, quit),
+  Store (users, pull, push, OTP), Settings (configuration, Ctrl+,) and Help
+  (FAQ with F1, About QtPass, About Qt). Until now Push, Pull, Users and
+  Config existed only as toolbar icons and there was no About at all; on
+  macOS the standard application menu (Preferences, About, Quit) now appears
+  because Qt builds it from the menu roles
+- Ctrl+Q quits. It used to close the window, which with "hide on close"
+  meant hiding to the tray; that is Ctrl+W (File ▸ Close window) now, in
+  line with KeePassXC, Telegram and the KDE, GNOME and macOS guidelines,
+  where Ctrl+Q/Cmd+Q always ends the application. The window close button
+  and Alt+F4 behave as before
 - Debug output goes through one `qtpass` logging category instead of
   `#ifdef QT_DEBUG` blocks around a `dbg()` macro. Release builds keep it
   compiled in; `QT_LOGGING_RULES="qtpass.debug=true"` turns it on, so a user
