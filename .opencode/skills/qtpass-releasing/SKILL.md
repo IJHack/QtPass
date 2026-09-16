@@ -32,8 +32,6 @@ Update version in all build files:
 - `changelog.1.4.html` (gh-pages)
 - `old.html` (gh-pages)
 
-**NOTE:** `appdmg.json` has no version field to update.
-
 ```bash
 # Find version strings (replace X.Y with actual version)
 grep -rn "X\.Y" qtpass.pri qtpass.spec qtpass.iss Doxyfile
@@ -69,7 +67,8 @@ git archive --prefix=qtpass-x.y.z/ -o qtpass-x.y.z.tar.gz HEAD
 #### macOS
 
 ```bash
-./scripts/release-mac.sh
+brew install create-dmg   # once; the same tool release-installers.yml uses
+./scripts/release-mac.sh  # -> QtPass-x.y.z.dmg
 ```
 
 #### Windows

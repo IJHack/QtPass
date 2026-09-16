@@ -2,14 +2,13 @@
 # SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 set -euo pipefail
 
-README_CLEAN="README.clean"
 DOXYFILE_PATH="Doxyfile"
 DOXYFILE_BACKUP=""
 TMPFILE=""
 
 cleanup() {
 	local exit_code=$?
-	rm -f "$README_CLEAN" "${TMPFILE:-}"
+	rm -f "${TMPFILE:-}"
 	if [[ $exit_code -ne 0 && -n "${DOXYFILE_BACKUP:-}" && -f "$DOXYFILE_BACKUP" ]]; then
 		mv -f "$DOXYFILE_BACKUP" "$DOXYFILE_PATH"
 	else
@@ -25,25 +24,6 @@ require_readable_file() {
 		echo "Error: $file is missing or not readable." >&2
 		exit 1
 	fi
-}
-
-require_readable_file "README.md"
-require_readable_file "FAQ.md"
-require_readable_file "CONTRIBUTING.md"
-require_readable_file "CHANGELOG.md"
-
-echo "Processing README links..."
-sed \
-	-e 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md__f_a_q.html/' \
-	-e 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md__c_o_n_t_r_i_b_u_t_i_n_g.html/' \
-	-e 's/CHANGELOG\.md/https:\/\/qtpass.org\/docs\/md__c_h_a_n_g_e_l_o_g.html/' \
-	-e 's/\[\!.*//' \
-	<README.md >"$README_CLEAN"
-
-echo "Generating RTF documentation..."
-pandoc --standalone --from=gfm --to=rtf --output=README.rtf "$README_CLEAN" FAQ.md CONTRIBUTING.md CHANGELOG.md || {
-	echo "Error: pandoc failed while generating README.rtf from '$README_CLEAN', FAQ.md, CONTRIBUTING.md, and CHANGELOG.md. Check that input files exist and that pandoc is installed and available in PATH." >&2
-	exit 1
 }
 
 echo "Extracting version..."
@@ -124,12 +104,16 @@ macdeployqt main/QtPass.app || {
 }
 
 echo "Creating DMG..."
-if ! command -v appdmg &>/dev/null; then
-	echo "Error: appdmg is not installed or not in PATH." >&2
+# Same tool and layout as the release-installers workflow, so a local build
+# and a CI build produce the same artifact.
+if ! command -v create-dmg &>/dev/null; then
+	echo "Error: create-dmg is not installed or not in PATH (brew install create-dmg)." >&2
 	exit 1
 fi
-require_readable_file "appdmg.json"
-appdmg appdmg.json main/QtPass.dmg || {
-	echo "Error: appdmg failed." >&2
+DMG_NAME="QtPass-${VERSION}.dmg"
+rm -f "$DMG_NAME"
+create-dmg "$DMG_NAME" main/QtPass.app || {
+	echo "Error: create-dmg failed." >&2
 	exit 1
 }
+echo "Created $DMG_NAME"

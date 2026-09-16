@@ -995,17 +995,10 @@ auto ConfigDialog::checkGpgExistence() -> bool {
     criticalMessage(
         tr("GnuPG not found"),
 #ifdef Q_OS_WIN
-#ifdef WINSTORE
-        tr("Please install GnuPG on your system.<br>Install "
-           "<strong>Ubuntu</strong> from the Microsoft Store to get it.<br>"
-           "If you already did so, make sure you started it once and<br>"
-           "click \"Autodetect\" in the next dialog.")
-#else
         tr("Please install GnuPG on your system.<br>Install "
            "<strong>Ubuntu</strong> from the Microsoft Store<br>or <a "
            "href=\"https://www.gnupg.org/download/#sec-1-2\">download</a> it "
            "from GnuPG.org")
-#endif
 #else
         tr("Please install GnuPG on your system.<br>Install "
            "<strong>gpg</strong> using your favorite package manager<br>or "
