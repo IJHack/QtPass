@@ -27,6 +27,7 @@
 #include "windowstatestore.h"
 #include <QApplication>
 #include <QCloseEvent>
+#include <QDate>
 #include <QDesktopServices>
 #include <QDialog>
 #include <QDirIterator>
@@ -69,9 +70,6 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   m_qtPass = new QtPass(this);
 
-  // register shortcut ctrl/cmd + Q to close the main window
-  new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q), this, this,
-                &MainWindow::close);
   // register shortcut ctrl/cmd + C to copy the currently selected password
   new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this, this,
                 &MainWindow::copyPasswordFromTreeview);
@@ -323,6 +321,17 @@ void MainWindow::initToolBarButtons() {
   connect(ui->actionUsers, &QAction::triggered, this, &MainWindow::onUsers);
   connect(ui->actionConfig, &QAction::triggered, this, &MainWindow::onConfig);
   connect(ui->actionOtp, &QAction::triggered, this, &MainWindow::onOtp);
+
+  // Menu-only actions. Quit keeps what the old Ctrl+Q shortcut did: close(),
+  // which closeEvent() turns into a hide when "hide on close" is set. What
+  // Quit/Close/Alt+F4 should do per platform is a separate decision.
+  connect(ui->actionQuit, &QAction::triggered, this, &MainWindow::close);
+  connect(ui->actionFaq, &QAction::triggered, this, [] {
+    QDesktopServices::openUrl(
+        QUrl(QStringLiteral("https://qtpass.org/docs/md__f_a_q.html")));
+  });
+  connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::showAbout);
+  connect(ui->actionAboutQt, &QAction::triggered, qApp, &QApplication::aboutQt);
 
   ui->actionAddPassword->setIcon(
       QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg")));
@@ -907,6 +916,26 @@ void MainWindow::restoreWindow() {
  * @brief MainWindow::on_configButton_clicked run Mainwindow::config
  */
 void MainWindow::onConfig() { config(); }
+
+/**
+ * @brief MainWindow::showAbout version, link and licence in a standard box.
+ */
+void MainWindow::showAbout() {
+  QMessageBox::about(
+      this, tr("About QtPass"),
+      tr("<h3>QtPass %1</h3>"
+         "<p>A multi-platform GUI for <a "
+         "href=\"https://www.passwordstore.org/\">"
+         "pass</a>, the standard Unix password manager.</p>"
+         "<p><a href=\"https://qtpass.org/\">qtpass.org</a> &middot; "
+         "<a href=\"https://github.com/IJHack/QtPass\">Source and "
+         "issues</a></p>"
+         "<p>Copyright &copy; 2014&ndash;%2 IJhack. Licensed under the "
+         "<a href=\"https://www.gnu.org/licenses/gpl-3.0.html\">GNU GPL "
+         "version 3</a> or later.</p>")
+          .arg(QStringLiteral(VERSION),
+               QString::number(QDate::currentDate().year())));
+}
 
 /**
  * @brief Executes when the string in the search box changes, collapses the
