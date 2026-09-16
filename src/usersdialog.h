@@ -16,7 +16,6 @@ class UsersDialog;
 }
 
 class Pass;
-class QCloseEvent;
 class QKeyEvent;
 class QListWidgetItem;
 
@@ -53,11 +52,6 @@ public slots:
   void accept() override;
 
 protected:
-  /**
-   * @brief Handle close event.
-   * @param event Close event.
-   */
-  void closeEvent(QCloseEvent *event) override;
   /**
    * @brief Handle key press.
    * @param event Key event.

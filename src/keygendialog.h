@@ -14,7 +14,6 @@ class KeygenDialog;
 }
 
 class ConfigDialog;
-class QCloseEvent;
 
 /**
  * @class KeygenDialog
@@ -45,12 +44,6 @@ public:
                                  const QString &passphrase);
 
 protected:
-  /**
-   * @brief Handle dialog close, emitting appropriate signals.
-   * @param event The close event.
-   */
-  void closeEvent(QCloseEvent *event) override;
-
 private slots:
   void on_passphrase1_textChanged(const QString &arg1);
   void on_passphrase2_textChanged(const QString &arg1);

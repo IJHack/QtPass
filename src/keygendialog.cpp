@@ -28,7 +28,7 @@ KeygenDialog::KeygenDialog(const QString &gpgExe, ConfigDialog *parent)
   connect(ui->checkBox, &QCheckBox::toggled, this,
           &KeygenDialog::setExpertMode);
 
-  WindowStateStore::restore(*this, QStringLiteral("keygenDialog"));
+  WindowStateStore::attach(*this, QStringLiteral("keygenDialog"));
 
   ui->plainTextEdit->setPlainText(Pass::getDefaultKeyTemplate(gpgExe));
   // The batch template is only of interest in expert mode; keep it out of
@@ -239,13 +239,4 @@ void KeygenDialog::done(int r) {
     QDialog::done(r);
     return;
   }
-}
-
-/**
- * @brief KeygenDialog::closeEvent we are done here.
- * @param event
- */
-void KeygenDialog::closeEvent(QCloseEvent *event) {
-  WindowStateStore::save(*this, QStringLiteral("keygenDialog"));
-  event->accept();
 }

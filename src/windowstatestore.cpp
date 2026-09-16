@@ -4,6 +4,7 @@
 #include "qtpasssettings.h"
 
 #include <QCursor>
+#include <QDialog>
 #include <QGuiApplication>
 #include <QScreen>
 #include <QWidget>
@@ -29,6 +30,12 @@ auto restore(QWidget &window, const QString &key) -> bool {
 
 void save(const QWidget &window, const QString &key) {
   QtPassSettings::setDialogGeometry(key, window.saveGeometry());
+}
+
+void attach(QDialog &dialog, const QString &key) {
+  restore(dialog, key);
+  QObject::connect(&dialog, &QDialog::finished, &dialog,
+                   [&dialog, key] { save(dialog, key); });
 }
 
 void centreOnCursorScreen(QWidget &window) {

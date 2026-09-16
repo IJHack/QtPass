@@ -7,7 +7,6 @@
 #include "ui_usersdialog.h"
 #include "windowstatestore.h"
 #include <QApplication>
-#include <QCloseEvent>
 #include <QDateTime>
 #include <QKeyEvent>
 #include <QLineEdit>
@@ -65,7 +64,7 @@ void UsersDialog::connectSignals() {
  * @brief Restore dialog geometry from settings.
  */
 void UsersDialog::restoreDialogState() {
-  WindowStateStore::restore(*this, QStringLiteral("usersDialog"));
+  WindowStateStore::attach(*this, QStringLiteral("usersDialog"));
 }
 
 auto UsersDialog::loadGpgKeys() -> bool {
@@ -164,15 +163,6 @@ void UsersDialog::accept() {
   m_pass->Init(m_dir, m_userList);
 
   QDialog::accept();
-}
-
-/**
- * @brief UsersDialog::closeEvent save window state on close.
- * @param event
- */
-void UsersDialog::closeEvent(QCloseEvent *event) {
-  WindowStateStore::save(*this, QStringLiteral("usersDialog"));
-  event->accept();
 }
 
 /**

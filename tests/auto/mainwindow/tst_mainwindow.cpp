@@ -746,6 +746,8 @@ void tst_mainwindow::restoreWindowAppliesSavedGeometry() {
  *        getPos() fallback did.
  */
 void tst_mainwindow::restoreWindowCentresWhenNothingSaved() {
+  if (QGuiApplication::platformName().startsWith(QLatin1String("wayland")))
+    QSKIP("Wayland lets the compositor place windows; centring is a no-op");
   QtPassSettings::setGeometry(QByteArray());
   m_window->resize(600, 400);
   m_window->show();

@@ -5,6 +5,7 @@
 
 #include <QString>
 
+class QDialog;
 class QWidget;
 
 /**
@@ -37,6 +38,17 @@ auto restore(QWidget &window, const QString &key) -> bool;
  * @param key Settings key, e.g. the dialog's name; restore() reads it back.
  */
 void save(const QWidget &window, const QString &key);
+
+/**
+ * @brief restore() now, save() whenever the dialog finishes.
+ *
+ * QDialog::finished() fires for OK, Cancel, Escape and the window-manager
+ * close alike (the last two go through reject()), so one connection covers
+ * every way out; a closeEvent() override would miss the button paths.
+ * @param dialog Dialog to place now and record on completion.
+ * @param key Settings key for this dialog.
+ */
+void attach(QDialog &dialog, const QString &key);
 
 /**
  * @brief Move @p window so its frame is centred on the screen under the

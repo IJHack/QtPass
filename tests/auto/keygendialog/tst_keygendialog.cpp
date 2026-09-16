@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QApplication>
+#include <QByteArray>
 #include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QLineEdit>
@@ -9,6 +10,7 @@
 #include <QtTest>
 
 #include "../../../src/keygendialog.h"
+#include "../../../src/qtpasssettings.h"
 #include "../testsettings.h"
 
 /**
@@ -54,6 +56,7 @@ private Q_SLOTS:
   void applyPassphraseMatchesNoProtectionLikeGpg();
   void applyPassphraseMatchesPassphraseKeywordLikeGpg();
   void applyPassphraseMatchesCommitLikeGpg();
+  void rejectSavesGeometry();
 };
 
 /**
@@ -477,6 +480,21 @@ void tst_keygendialog::applyPassphraseMatchesCommitLikeGpg() {
                           "Passphrase: testkey123\n"
                           "  %Commit\n"
                           "%echo done"));
+}
+
+/**
+ * @brief Leaving through Cancel/Escape runs QDialog::done(), not
+ *        closeEvent(); the geometry must be recorded on that path too.
+ */
+void tst_keygendialog::rejectSavesGeometry() {
+  const QString key = QStringLiteral("keygenDialog");
+  QtPassSettings::setDialogGeometry(key, QByteArray());
+  KeygenDialog dialog(nullptr);
+  dialog.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&dialog));
+  dialog.reject();
+  QVERIFY2(!QtPassSettings::getDialogGeometry(key, QByteArray()).isEmpty(),
+           "reject() must save the dialog geometry");
 }
 
 QTEST_MAIN(tst_keygendialog)

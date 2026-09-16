@@ -38,7 +38,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   mainWindow = parent;
   ui->setupUi(this);
 
-  WindowStateStore::restore(*this, QStringLiteral("configDialog"));
+  WindowStateStore::attach(*this, QStringLiteral("configDialog"));
 
   const AppSettings s = QtPassSettings::load();
   applySettings(s);
@@ -1142,15 +1142,6 @@ void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
   bool state = ui->checkBoxUseTrayIcon->isChecked();
   ui->checkBoxHideOnClose->setEnabled(state);
   ui->checkBoxStartMinimized->setEnabled(state);
-}
-
-/**
- * @brief ConfigDialog::closeEvent close this window.
- * @param event
- */
-void ConfigDialog::closeEvent(QCloseEvent *event) {
-  WindowStateStore::save(*this, QStringLiteral("configDialog"));
-  event->accept();
 }
 
 /**
