@@ -70,6 +70,7 @@ Both inherit from `Pass` (`src/pass.h`), an abstract base exposing the password 
 - `Pass` / `RealPass` / `ImitatePass` — password store operations (add, edit, delete, copy, show, Git); `PassBackendFactory` (`src/passbackendfactory.h`) owns backend selection/lifecycle
 - `Executor` (`src/executor.h`) — FIFO queue for external process execution; all `gpg`/`git`/`pass` calls go through here
 - `StoreModel` (`src/storemodel.h`) — `QSortFilterProxyModel` wrapping `QFileSystemModel` for the password tree; `rootIndexFor()` maps a directory to the tree root
+- `ProcessOutputPanel` (`src/processoutputpanel.h`) — the dockable "Process Output" console (numbering, trimming, 1000-line cap, sticky auto-scroll, process-name/sensitivity mapping); MainWindow only feeds and shows it
 - `ClipboardManager` (`src/clipboardmanager.h`) — puts secrets on the clipboard, tracks what it copied, autoclear timer; owned by `QtPass`, emits `statusMessage` instead of touching the UI
 - `QtPassSettings` (`src/qtpasssettings.h`) — singleton managing all app configuration via `QSettings`; `AppSettings` (`src/appsettings.h`) + `SettingsSerializer` (`src/settingsserializer.h`) are the value-object/load-save facade
 - `FileContent` (`src/filecontent.h`) — parses password files; supports template fields beyond the first line

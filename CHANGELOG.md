@@ -41,6 +41,10 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   line with KeePassXC, Telegram and the KDE, GNOME and macOS guidelines,
   where Ctrl+Q/Cmd+Q always ends the application. The window close button
   and Alt+F4 behave as before ([#1788](https://github.com/IJHack/QtPass/issues/1788))
+  it from the menu roles. Quit does what the Ctrl+Q shortcut always did
+- The process output console keeps the indentation of what git and pass
+  print (rich text used to collapse the leading spaces the code carefully
+  preserved)
 - Debug output goes through one `qtpass` logging category instead of
   `#ifdef QT_DEBUG` blocks around a `dbg()` macro. Release builds keep it
   compiled in; `QT_LOGGING_RULES="qtpass.debug=true"` turns it on, so a user
