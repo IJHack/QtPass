@@ -246,11 +246,6 @@ public:
    */
   void Show(QString file) override;
   /**
-   * @brief Generate OTP.
-   * @param file Path to the password file.
-   */
-  void OtpGenerate(QString file) override;
-  /**
    * @brief Insert new password.
    * @param file Path to the password file.
    * @param newValue Password content to store.

@@ -28,7 +28,6 @@ using Enums::PASS_GREP;
 using Enums::PASS_INIT;
 using Enums::PASS_INSERT;
 using Enums::PASS_MOVE;
-using Enums::PASS_OTP_GENERATE;
 using Enums::PASS_REMOVE;
 using Enums::PASS_SHOW;
 
@@ -717,7 +716,6 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
    */
   switch (pid) {
   case PASS_SHOW:
-  case PASS_OTP_GENERATE:
   case PASS_GREP:
   case PASS_INSERT:
     break;
@@ -738,9 +736,6 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
     break;
   case PASS_SHOW:
     emit finishedShow(out);
-    break;
-  case PASS_OTP_GENERATE:
-    emit finishedOtpGenerate(out);
     break;
   case PASS_INSERT:
     emit finishedInsert(out, err);

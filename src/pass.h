@@ -123,16 +123,6 @@ public:
    */
   virtual void Show(QString file) = 0;
   /**
-   * @brief Generate OTP for password file.
-   *
-   * Legacy passthrough to the `pass otp` extension. The UI no longer calls
-   * this: MainWindow derives one-time passwords in-process via Totp, so OTP
-   * works on every platform and with either backend. Kept for API
-   * compatibility and for callers that specifically want the extension.
-   * @param file Path to password file.
-   */
-  virtual void OtpGenerate(QString file) = 0;
-  /**
    * @brief Insert or update password.
    * @param file Path to password file.
    * @param value Password content to store.
@@ -391,11 +381,6 @@ signals:
    * @param out Decrypted password file content.
    */
   void finishedShow(const QString &out);
-  /**
-   * @brief Emitted when OTP generation finishes.
-   * @param out Generated OTP value.
-   */
-  void finishedOtpGenerate(const QString &out);
   /**
    * @brief Emitted when insert finishes.
    * @param out Standard output.

@@ -346,7 +346,6 @@ private Q_SLOTS:
   void realPass_insertAndGrep();
 
   // pass-otp (skipped if extension not installed)
-  void imitatePass_otpGenerate();
 };
 
 // ---------------------------------------------------------------------------
@@ -2006,75 +2005,6 @@ void tst_integration::realPass_insertAndGrep() {
 
   const auto results = grepSpy[0][0].value<GrepResults>();
   QVERIFY2(results.size() >= 2, "grep should find both entries with 'url'");
-
-  QtPassSettings::setUsePass(false);
-}
-
-// ---------------------------------------------------------------------------
-// OTP test
-// ---------------------------------------------------------------------------
-
-void tst_integration::imitatePass_otpGenerate() {
-  const QString passExe = findPass();
-  if (passExe.isEmpty())
-    QSKIP("pass not installed – skipping OTP integration test");
-
-  const bool hasOtp =
-      QFile::exists("/usr/lib/password-store/extensions/otp.bash");
-  if (!hasOtp)
-    QSKIP("pass-otp extension not found – skipping OTP integration test");
-
-  QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-  {
-    AppSettings s = QtPassSettings::load();
-    s.passExecutable = passExe;
-    s.gpgExecutable = m_gpgExe;
-    QtPassSettings::save(s);
-  }
-  QtPassSettings::setUsePass(true);
-
-  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
-  env.insert("GNUPGHOME", m_gnupgHome.path());
-  env.insert("PASSWORD_STORE_DIR", storeDir.path());
-
-  QProcess initProc;
-  initProc.setProcessEnvironment(env);
-  initProc.start(passExe, {"init", m_keyFingerprint});
-  QVERIFY2(initProc.waitForFinished(15000), "pass init timed out");
-  QVERIFY2(initProc.exitCode() == 0, "pass init should succeed");
-
-  // A known TOTP secret (RFC 6238 test vector, base32 encoded).
-  const QString totpUri = QStringLiteral(
-      "otpauth://totp/test@example.com?secret=JBSWY3DPEHPK3PXP"
-      "&issuer=IntegrationTest&algorithm=SHA1&digits=6&period=30");
-
-  // Insert OTP entry via `pass insert` (non-interactive: pipe URI via stdin).
-  // `pass otp insert` reads the URI from stdin, so we write it there.
-  QProcess otpInsert;
-  otpInsert.setProcessEnvironment(env);
-  otpInsert.start(passExe, {"insert", "--force", "otp/testaccount"});
-  QVERIFY2(otpInsert.waitForStarted(10000), "pass insert failed to start");
-  otpInsert.write((totpUri + "\n" + totpUri + "\n").toUtf8());
-  otpInsert.closeWriteChannel();
-  QVERIFY2(otpInsert.waitForFinished(20000), "pass insert timed out");
-  if (otpInsert.exitCode() != 0)
-    QSKIP("pass insert for OTP failed – skipping OTP generation test");
-
-  // Use RealPass::OtpGenerate to generate the TOTP token.
-  RealPass pass;
-  setupPass(pass);
-
-  QSignalSpy otpSpy(&pass, &Pass::finishedOtpGenerate);
-  pass.OtpGenerate(QStringLiteral("otp/testaccount"));
-  QVERIFY2(waitForSignal(otpSpy, 20000), "finishedOtpGenerate not emitted");
-
-  const QString token = otpSpy[0][0].toString().trimmed();
-  // TOTP token is a 6-digit number.
-  QVERIFY2(QRegularExpression("^\\d{6}$").match(token).hasMatch(),
-           qPrintable("OTP token should be 6 digits, got: " + token));
 
   QtPassSettings::setUsePass(false);
 }

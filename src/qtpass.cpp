@@ -167,10 +167,6 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::statusMsg, m_mainWindow, &MainWindow::showStatusMessage);
   connect(pass, &Pass::finishedShow, m_mainWindow,
           &MainWindow::passShowHandler);
-  // Pass::finishedOtpGenerate is deliberately not connected: OTP codes are
-  // derived in-process by MainWindow::otpFromFileToClipboard, so the legacy
-  // pass-otp passthrough must not be able to append a second OTP row.
-
   connect(pass, &Pass::finishedGitInit, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedGitPull, this, &QtPass::processFinished);
   connect(pass, &Pass::finishedGitPush, this, &QtPass::processFinished);
