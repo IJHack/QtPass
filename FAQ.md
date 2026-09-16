@@ -224,7 +224,7 @@ timestamps and source locations. On Windows set the same two variables in the
 shell before starting `qtpass.exe`, or run it from a terminal to see the
 output; on macOS use `open -a QtPass --env QT_LOGGING_RULES=qtpass.debug=true`
 (macOS 14 and newer) or start the binary inside the bundle from a terminal.
-Passwords are never logged, but paths and key ids are; check a log before
+Passwords are never logged, but paths and key IDs are; check a log before
 attaching it to an issue.
 
 ### Where can I ask for help?

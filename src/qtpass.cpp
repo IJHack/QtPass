@@ -244,7 +244,7 @@ void QtPass::finishedInsert(const QString &p_output, const QString &p_errout) {
 void QtPass::onKeyGenerationComplete(const QString &p_output,
                                      const QString &p_errout) {
   if (nullptr != m_mainWindow->getKeyGenDialog()) {
-    qDebug() << "Keygen Done";
+    qCDebug(lcQtPass) << "Keygen Done";
 
     m_mainWindow->cleanKeygenDialog();
     m_mainWindow->showStatusMessage(tr("GPG key pair generated successfully"),
