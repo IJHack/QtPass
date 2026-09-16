@@ -69,6 +69,16 @@ public:
   void setTemplate(const QString &rawFields, bool useTemplate);
 
   /**
+   * @brief Whether every `key: value` line becomes a field of its own.
+   *
+   * Mirrors the "Template all fields" setting. Off, only the template's
+   * fields get widgets and every other line stays in the free-text body,
+   * where the user can edit key and value alike.
+   * @param templateAll true to split every tokenisable line into a field.
+   */
+  void templateAll(bool templateAll);
+
+  /**
    * @brief Set the desired password length shown in the dialog.
    * @param length Desired password length.
    */
@@ -163,6 +173,7 @@ private:
   QStringList m_fields;
   QString m_file;
   bool m_templating{};
+  bool m_allFields{};
   bool m_isNew{};
   /// True once the existing entry's decrypted content has been loaded, so
   /// on_accepted() can refuse to overwrite it with empty fields before the
