@@ -38,7 +38,7 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 - A gpg, pass or Git process killed by a signal left the password pane blank;
   the pane now says which program crashed
 - Right-click ▸ Users on a folder opened the recipients dialog for the folder
-  last *left*-clicked instead: the folder was remembered in a member that only
+  last _left_-clicked instead: the folder was remembered in a member that only
   the left-click handler updated. The dialog now always uses the tree's
   current item, and the first-run wizard opens its recipients dialog itself
   instead of routing through the main window
