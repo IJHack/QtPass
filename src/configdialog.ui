@@ -87,8 +87,8 @@
              </property>
              <layout class="QVBoxLayout" name="Layout_Clipboard">
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout">
-                <item>
+               <layout class="QGridLayout" name="gridLayoutClipboard">
+                <item row="0" column="0">
                  <widget class="QComboBox" name="comboBoxClipboard">
                   <property name="minimumSize">
                    <size>
@@ -98,21 +98,21 @@
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="0" column="1" colspan="2">
                  <widget class="QCheckBox" name="checkBoxSelection">
                   <property name="text">
                    <string>Use primary selection</string>
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="1" column="0">
                  <widget class="QCheckBox" name="checkBoxAutoclear">
                   <property name="text">
                    <string>Autoclear after:</string>
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="1" column="1">
                  <widget class="QSpinBox" name="spinBoxAutoclearSeconds">
                   <property name="minimum">
                    <number>5</number>
@@ -122,7 +122,7 @@
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="1" column="2">
                  <widget class="QLabel" name="labelSeconds">
                   <property name="text">
                    <string>Seconds</string>
@@ -132,8 +132,8 @@
                   </property>
                  </widget>
                 </item>
-                <item>
-                 <spacer name="horizontalSpacer_4">
+                <item row="0" column="3" rowspan="2">
+                 <spacer name="gridLayoutClipboardSpacer">
                   <property name="orientation">
                    <enum>Qt::Horizontal</enum>
                   </property>
@@ -157,25 +157,22 @@
              </property>
              <layout class="QVBoxLayout" name="Layout_PasswordBehaviour">
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_6">
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <item>
+               <layout class="QGridLayout" name="gridLayoutContentPanel">
+                <item row="0" column="0">
                  <widget class="QCheckBox" name="checkBoxHideContent">
                   <property name="text">
                    <string>Hide content</string>
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="0" column="1">
                  <widget class="QCheckBox" name="checkBoxHidePassword">
                   <property name="text">
                    <string>Hide password</string>
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="1" column="0" colspan="2">
                  <layout class="QHBoxLayout" name="horizontalLayout_7">
                   <item>
                    <widget class="QCheckBox" name="checkBoxAutoclearPanel">
@@ -212,8 +209,8 @@
                   </item>
                  </layout>
                 </item>
-                <item>
-                 <spacer name="horizontalSpacer_5">
+                <item row="0" column="2" rowspan="2">
+                 <spacer name="gridLayoutContentPanelSpacer">
                   <property name="orientation">
                    <enum>Qt::Horizontal</enum>
                   </property>
@@ -513,33 +510,30 @@
                </layout>
               </item>
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_12">
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
+               <layout class="QGridLayout" name="gridLayoutGit">
+                <item row="0" column="0">
                  <widget class="QCheckBox" name="checkBoxAddGPGId">
                   <property name="text">
                    <string>Automatically add .gpg-id files</string>
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="0" column="1">
                  <widget class="QCheckBox" name="checkBoxAutoPush">
                   <property name="text">
                    <string>Automatically push</string>
                   </property>
                  </widget>
                 </item>
-                <item>
+                <item row="1" column="0">
                  <widget class="QCheckBox" name="checkBoxAutoPull">
                   <property name="text">
                    <string>Automatically pull</string>
                   </property>
                  </widget>
                 </item>
-                <item>
-                 <spacer name="horizontalSpacer_7">
+                <item row="0" column="2" rowspan="2">
+                 <spacer name="gridLayoutGitSpacer">
                   <property name="orientation">
                    <enum>Qt::Horizontal</enum>
                   </property>
