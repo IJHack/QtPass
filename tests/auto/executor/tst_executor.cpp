@@ -97,8 +97,9 @@ void tst_executor::executeBlockingExitCode() {
 void tst_executor::executeBlockingStderr() {
   QString output;
   QString err;
-  Executor::executeBlocking("sh", {"-c", "echo error >&2"}, QString(), &output,
-                            &err);
+  const int rc = Executor::executeBlocking("sh", {"-c", "echo error >&2"},
+                                           QString(), &output, &err);
+  QCOMPARE(rc, 0);
   QVERIFY2(err.contains("error"), "stderr should contain error");
 }
 

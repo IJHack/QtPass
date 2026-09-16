@@ -158,10 +158,12 @@ public:
    * @param process_err If non-null, receives stderr output.
    * @return Process exit code.
    */
-  static auto executeBlocking(const QString &app, const QStringList &args,
-                              const QString &input = QString(),
-                              QString *process_out = nullptr,
-                              QString *process_err = nullptr) -> int;
+  [[nodiscard]] static auto executeBlocking(const QString &app,
+                                            const QStringList &args,
+                                            const QString &input = QString(),
+                                            QString *process_out = nullptr,
+                                            QString *process_err = nullptr)
+      -> int;
 
   /**
    * @brief Run a command synchronously on a caller-supplied QProcess, with
@@ -186,12 +188,12 @@ public:
    * @return Process exit code, or -1 if it failed to start, crashed or was
    * cancelled.
    */
-  static auto executeBlocking(QProcess &process, const QString &app,
-                              const QStringList &args,
-                              const QString &input = QString(),
-                              QString *process_out = nullptr,
-                              QString *process_err = nullptr,
-                              const std::atomic_bool *cancel = nullptr) -> int;
+  [[nodiscard]] static auto
+  executeBlocking(QProcess &process, const QString &app,
+                  const QStringList &args, const QString &input = QString(),
+                  QString *process_out = nullptr,
+                  QString *process_err = nullptr,
+                  const std::atomic_bool *cancel = nullptr) -> int;
 
   /**
    * @brief Run a command synchronously capturing stdout and stderr.
@@ -201,9 +203,9 @@ public:
    * @param process_err If non-null, receives stderr output.
    * @return Process exit code.
    */
-  static auto executeBlocking(const QString &app, const QStringList &args,
-                              QString *process_out,
-                              QString *process_err = nullptr) -> int;
+  [[nodiscard]] static auto
+  executeBlocking(const QString &app, const QStringList &args,
+                  QString *process_out, QString *process_err = nullptr) -> int;
 
   /**
    * @brief Run a command synchronously with a custom environment.
@@ -214,10 +216,10 @@ public:
    * @param process_err If non-null, receives stderr output.
    * @return Process exit code.
    */
-  static auto executeBlocking(const QProcessEnvironment &env,
-                              const QString &app, const QStringList &args,
-                              QString *process_out = nullptr,
-                              QString *process_err = nullptr) -> int;
+  [[nodiscard]] static auto
+  executeBlocking(const QProcessEnvironment &env, const QString &app,
+                  const QStringList &args, QString *process_out = nullptr,
+                  QString *process_err = nullptr) -> int;
 
   /**
    * @brief Build the wsl.exe argument list that runs @p command directly.
