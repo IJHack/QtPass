@@ -83,9 +83,9 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Removed
 
-- The dead packaging leftovers: `release-winstore.bat` (Qt 5 `windeployqt
-  --no-angle`, a hard-coded VS2017 redist path, the Windows Store build that
-  never shipped), `release-zip.mak` (pinned to v1.5.1, timestamps against the
+- The dead packaging leftovers: `release-winstore.bat` (Qt 5
+  `windeployqt --no-angle`, a hardcoded VS2017 redist path, the Windows Store
+  build that never shipped), `release-zip.mak` (pinned to v1.5.1, timestamps against the
   defunct StartSSL), `key_management.bat`, the `WINSTORE` build flag with its
   Store-only GnuPG hint, and the `debian/` ignore rules for a directory that
   no longer exists. `scripts/release-mac.sh` builds the DMG with `create-dmg`
