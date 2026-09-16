@@ -152,8 +152,6 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 <tr class="memdesc:a835378925ada56acd922899f64e85933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when Git push finishes.  <br /></td></tr>
 <tr class="memitem:affead66e0aca2e275dc21dbde18066fb" id="r_affead66e0aca2e275dc21dbde18066fb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#affead66e0aca2e275dc21dbde18066fb">finishedShow</a> (const QString &amp;out)</td></tr>
 <tr class="memdesc:affead66e0aca2e275dc21dbde18066fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when show finishes.  <br /></td></tr>
-<tr class="memitem:a271b2f277c8242e3542578ced47fb0b6" id="r_a271b2f277c8242e3542578ced47fb0b6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a271b2f277c8242e3542578ced47fb0b6">finishedOtpGenerate</a> (const QString &amp;out)</td></tr>
-<tr class="memdesc:a271b2f277c8242e3542578ced47fb0b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when OTP generation finishes.  <br /></td></tr>
 <tr class="memitem:a14d258f93b689ff92cea0d11b136eb83" id="r_a14d258f93b689ff92cea0d11b136eb83"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a14d258f93b689ff92cea0d11b136eb83">finishedInsert</a> (const QString &amp;out, const QString &amp;err)</td></tr>
 <tr class="memdesc:a14d258f93b689ff92cea0d11b136eb83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when insert finishes.  <br /></td></tr>
 <tr class="memitem:af08e80e76ffd6581f35e701e6c8b533e" id="r_af08e80e76ffd6581f35e701e6c8b533e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af08e80e76ffd6581f35e701e6c8b533e">finishedRemove</a> (const QString &amp;out, const QString &amp;err)</td></tr>
@@ -186,8 +184,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7b5fa97ca6f3795512ac7c10db5c8f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push changes to remote Git repository.  <br /></td></tr>
 <tr class="memitem:a6520ffa669cd7934091934b24593d99c" id="r_a6520ffa669cd7934091934b24593d99c"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a6520ffa669cd7934091934b24593d99c">Show</a> (QString file)=0</td></tr>
 <tr class="memdesc:a6520ffa669cd7934091934b24593d99c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show decrypted password file.  <br /></td></tr>
-<tr class="memitem:abfe228b7e546aeb0e33bb8102f2e7f19" id="r_abfe228b7e546aeb0e33bb8102f2e7f19"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#abfe228b7e546aeb0e33bb8102f2e7f19">OtpGenerate</a> (QString file)=0</td></tr>
-<tr class="memdesc:abfe228b7e546aeb0e33bb8102f2e7f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate OTP for password file.  <br /></td></tr>
 <tr class="memitem:a86ad2005a6517f9c304a9e156755778c" id="r_a86ad2005a6517f9c304a9e156755778c"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a86ad2005a6517f9c304a9e156755778c">Insert</a> (QString file, QString value, bool force)=0</td></tr>
 <tr class="memdesc:a86ad2005a6517f9c304a9e156755778c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert or update password.  <br /></td></tr>
 <tr class="memitem:a5aedb6df7aa57385eb19a78cdbd3e764" id="r_a5aedb6df7aa57385eb19a78cdbd3e764"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a5aedb6df7aa57385eb19a78cdbd3e764">Remove</a> (QString file, bool isDir)=0</td></tr>
@@ -1002,39 +998,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a271b2f277c8242e3542578ced47fb0b6" name="a271b2f277c8242e3542578ced47fb0b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a271b2f277c8242e3542578ced47fb0b6">&#9670;&#160;</a></span>finishedOtpGenerate</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Pass::finishedOtpGenerate </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Emitted when OTP generation finishes. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">out</td><td>Generated OTP value. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="af08e80e76ffd6581f35e701e6c8b533e" name="af08e80e76ffd6581f35e701e6c8b533e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af08e80e76ffd6581f35e701e6c8b533e">&#9670;&#160;</a></span>finishedRemove</h2>
 
@@ -1733,41 +1696,6 @@ Protected Attributes</h2></td></tr>
 </dl>
 
 <p>Implemented in <a class="el" href="class_imitate_pass.html#ae647ee1e408862bb6d66ee4d6324f0b1">ImitatePass</a>, and <a class="el" href="class_real_pass.html#acbbb510bd58cdceae53d34985453fc83">RealPass</a>.</p>
-
-</div>
-</div>
-<a id="abfe228b7e546aeb0e33bb8102f2e7f19" name="abfe228b7e546aeb0e33bb8102f2e7f19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfe228b7e546aeb0e33bb8102f2e7f19">&#9670;&#160;</a></span>OtpGenerate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Pass::OtpGenerate </td>
-          <td>(</td>
-          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generate OTP for password file. </p>
-<p>Legacy passthrough to the <span class="tt">pass otp</span> extension. The UI no longer calls this: <a class="el" href="class_main_window.html" title="Main application window orchestrating UI, user interactions, and external process handlers.">MainWindow</a> derives one-time passwords in-process via <a class="el" href="class_totp.html" title="RFC 6238 time-based one-time password generation.">Totp</a>, so OTP works on every platform and with either backend. Kept for API compatibility and for callers that specifically want the extension. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">file</td><td>Path to password file. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="class_imitate_pass.html#a18eac6111a1d77a3f8ded93b7be16270">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a39c56e5ad8b46fc6c4f00b7000bccc99">RealPass</a>.</p>
 
 </div>
 </div>

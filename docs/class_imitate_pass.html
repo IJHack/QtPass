@@ -164,8 +164,6 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 <tr class="memdesc:a835378925ada56acd922899f64e85933 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when Git push finishes.  <br /></td></tr>
 <tr class="memitem:affead66e0aca2e275dc21dbde18066fb inherit signals_class_pass" id="r_affead66e0aca2e275dc21dbde18066fb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#affead66e0aca2e275dc21dbde18066fb">finishedShow</a> (const QString &amp;out)</td></tr>
 <tr class="memdesc:affead66e0aca2e275dc21dbde18066fb inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when show finishes.  <br /></td></tr>
-<tr class="memitem:a271b2f277c8242e3542578ced47fb0b6 inherit signals_class_pass" id="r_a271b2f277c8242e3542578ced47fb0b6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a271b2f277c8242e3542578ced47fb0b6">finishedOtpGenerate</a> (const QString &amp;out)</td></tr>
-<tr class="memdesc:a271b2f277c8242e3542578ced47fb0b6 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when OTP generation finishes.  <br /></td></tr>
 <tr class="memitem:a14d258f93b689ff92cea0d11b136eb83 inherit signals_class_pass" id="r_a14d258f93b689ff92cea0d11b136eb83"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a14d258f93b689ff92cea0d11b136eb83">finishedInsert</a> (const QString &amp;out, const QString &amp;err)</td></tr>
 <tr class="memdesc:a14d258f93b689ff92cea0d11b136eb83 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when insert finishes.  <br /></td></tr>
 <tr class="memitem:af08e80e76ffd6581f35e701e6c8b533e inherit signals_class_pass" id="r_af08e80e76ffd6581f35e701e6c8b533e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#af08e80e76ffd6581f35e701e6c8b533e">finishedRemove</a> (const QString &amp;out, const QString &amp;err)</td></tr>
@@ -211,8 +209,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae61b400e69fcc32c4a80b94fb52107b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push to remote.  <br /></td></tr>
 <tr class="memitem:acfffcbf097c9d4615c01e064e335d65d" id="r_acfffcbf097c9d4615c01e064e335d65d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acfffcbf097c9d4615c01e064e335d65d">Show</a> (QString file) override</td></tr>
 <tr class="memdesc:acfffcbf097c9d4615c01e064e335d65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show decrypted password.  <br /></td></tr>
-<tr class="memitem:a18eac6111a1d77a3f8ded93b7be16270" id="r_a18eac6111a1d77a3f8ded93b7be16270"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a18eac6111a1d77a3f8ded93b7be16270">OtpGenerate</a> (QString file) override</td></tr>
-<tr class="memdesc:a18eac6111a1d77a3f8ded93b7be16270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate OTP.  <br /></td></tr>
 <tr class="memitem:a4c62fe3ae4f151582f6360599a610dd6" id="r_a4c62fe3ae4f151582f6360599a610dd6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4c62fe3ae4f151582f6360599a610dd6">Insert</a> (QString file, QString newValue, bool overwrite) override</td></tr>
 <tr class="memdesc:a4c62fe3ae4f151582f6360599a610dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert new password.  <br /></td></tr>
 <tr class="memitem:a181e512eff4b82f5078af432c369d4ee" id="r_a181e512eff4b82f5078af432c369d4ee"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a181e512eff4b82f5078af432c369d4ee">Remove</a> (QString file, bool isDir) override</td></tr>
@@ -1186,41 +1182,6 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>.</p>
-
-</div>
-</div>
-<a id="a18eac6111a1d77a3f8ded93b7be16270" name="a18eac6111a1d77a3f8ded93b7be16270"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18eac6111a1d77a3f8ded93b7be16270">&#9670;&#160;</a></span>OtpGenerate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ImitatePass::OtpGenerate </td>
-          <td>(</td>
-          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generate OTP. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">file</td><td>Path to the password file. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implements <a class="el" href="class_pass.html#abfe228b7e546aeb0e33bb8102f2e7f19">Pass</a>.</p>
 
 </div>
 </div>

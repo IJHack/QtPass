@@ -6,6 +6,5 @@ var searchData=
   ['onpush_3',['onPush',['../class_main_window.html#a6961588ebf3c0640200e0cfa920af3be',1,'MainWindow']]],
   ['otpcodewidget_4',['OtpCodeWidget',['../class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd',1,'OtpCodeWidget']]],
   ['otpfromfiletoclipboard_5',['otpFromFileToClipboard',['../class_main_window.html#a7480a2bf495584363acf5e73c5e0570c',1,'MainWindow']]],
-  ['otpgenerate_6',['OtpGenerate',['../class_imitate_pass.html#a18eac6111a1d77a3f8ded93b7be16270',1,'ImitatePass::OtpGenerate()'],['../class_pass.html#abfe228b7e546aeb0e33bb8102f2e7f19',1,'Pass::OtpGenerate()'],['../class_real_pass.html#a39c56e5ad8b46fc6c4f00b7000bccc99',1,'RealPass::OtpGenerate()']]],
-  ['overridestatus_7',['overrideStatus',['../class_ssh_auth_sock.html#abdb660987ea5a58787e0ef6a5173654e',1,'SshAuthSock']]]
+  ['overridestatus_6',['overrideStatus',['../class_ssh_auth_sock.html#abdb660987ea5a58787e0ef6a5173654e',1,'SshAuthSock']]]
 ];
