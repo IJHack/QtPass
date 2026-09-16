@@ -4,6 +4,7 @@
 #include "appsettings.h"
 #include "keygendialog.h"
 #include "mainwindow.h"
+#include "passbackendfactory.h"
 #include "profileinit.h"
 #include "qtpasssettings.h"
 #include "sshauthsock.h"
@@ -1071,10 +1072,7 @@ auto ConfigDialog::checkPasswordStore() -> bool {
       SetFileAttributes(passStore.toStdWString().c_str(),
                         FILE_ATTRIBUTE_HIDDEN);
 #endif
-      if (ui->checkBoxUseGit->isChecked()) {
-        emit mainWindow->passGitInitNeeded();
-      }
-      mainWindow->userDialog(passStore);
+      selectRecipients(passStore, ui->checkBoxUseGit->isChecked());
     }
   }
   return true;
@@ -1107,12 +1105,44 @@ void ConfigDialog::handleGpgIdFile() {
       }
       passStore = ui->storePath->text();
     }
-    if (!QFile(passStore + ".gpg-id").exists()) {
+    if (!QFile(QDir(passStore).filePath(".gpg-id")).exists()) {
 #ifdef QT_DEBUG
       dbg() << ".gpg-id file still does not exist :/";
 #endif
-      mainWindow->userDialog(passStore);
+      selectRecipients(passStore, false);
     }
+  }
+}
+
+/**
+ * @brief Let the user pick the recipients for a store that has no .gpg-id yet.
+ *
+ * First-run wizard only. The store path is saved and the backend
+ * re-initialised before use: Pass caches its settings at init(), so
+ * RealPass::Init() would otherwise make `--path` relative to the previous
+ * store and updateEnv() would export that one. The saved path is put back
+ * if the dialog is not accepted; after OK the wizard saves this same path
+ * anyway. Git is initialised first so that the .gpg-id written by pass init
+ * lands in the first commit.
+ * @param storePath Directory that becomes the password store.
+ * @param gitInit Whether to run `git init` there before selecting recipients.
+ */
+void ConfigDialog::selectRecipients(const QString &storePath, bool gitInit) {
+  // ImitatePass::Init() and Pass::getRecipientList() append ".gpg-id" to the
+  // folder, so it has to keep its trailing separator.
+  const QString store = Util::normalizeFolderPath(QDir::cleanPath(storePath));
+  const QString prevStore = QtPassSettings::getPassStore();
+  QtPassSettings::setPassStore(store);
+  PassBackendFactory::invalidate();
+  Pass *pass = QtPassSettings::getPass();
+  if (gitInit) {
+    pass->GitInit();
+  }
+  UsersDialog d(pass, QtPassSettings::load(), store, this);
+  if (d.exec() != QDialog::Accepted) {
+    // Only the saved key goes back; the backend keeps the new path so a git
+    // init already queued still runs where it was meant to.
+    QtPassSettings::setPassStore(prevStore);
   }
 }
 

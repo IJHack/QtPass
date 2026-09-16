@@ -70,12 +70,6 @@ public:
   void generateKeyPair(const QString &batch, QDialog *dialog);
 
   /**
-   * @brief Open the user/recipient management dialog.
-   * @param dir Directory for which to manage recipients.
-   */
-  void userDialog(const QString &dir = "");
-
-  /**
    * @brief Open the configuration dialog.
    *
    * On a fresh start the first-run wizard runs before the dialog is shown.
@@ -171,10 +165,6 @@ signals:
    * @param output Decrypted password file content.
    */
   void passShowHandlerFinished(const QString &output);
-  /**
-   * @brief Emitted when a Git init is required for the current store.
-   */
-  void passGitInitNeeded();
   /**
    * @brief Emitted to trigger GPG key pair generation.
    * @param batch GPG batch parameter string.
@@ -373,7 +363,6 @@ private:
   /// Init/Move/Copy (or the UI watchdog) cannot re-enable the interface
   /// while the re-encryption worker is still rewriting files.
   bool m_reencryptRunning = false;
-  QString m_currentDir;
   TrayIcon *m_tray{};
   /// Result of QtPass::init() from the constructor; main() consults it via
   /// initSucceeded() to decide whether the application should start at all.
