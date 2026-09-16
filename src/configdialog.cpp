@@ -66,7 +66,6 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   // passwords are generated in-process, so the feature no longer depends on
   // the Unix-only pass-otp extension.
   ui->checkBoxUseQrencode->hide();
-  ui->label_10->hide();
 #endif
 
   if (!isQrencodeAvailable(s.qrencodeExecutable)) {
