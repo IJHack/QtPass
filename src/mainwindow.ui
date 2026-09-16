@@ -346,7 +346,6 @@
     <addaction name="actionEdit"/>
     <addaction name="actionDelete"/>
     <addaction name="separator"/>
-    <addaction name="actionClose"/>
     <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuStore">
@@ -498,17 +497,6 @@
    </property>
    <property name="menuRole">
     <enum>QAction::PreferencesRole</enum>
-   </property>
-  </action>
-  <action name="actionClose">
-   <property name="text">
-    <string>&amp;Close window</string>
-   </property>
-   <property name="toolTip">
-    <string>Close the window; with "Hide on close" QtPass stays in the tray</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+W</string>
    </property>
   </action>
   <action name="actionQuit">

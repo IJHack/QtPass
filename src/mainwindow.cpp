@@ -322,12 +322,10 @@ void MainWindow::initToolBarButtons() {
   connect(ui->actionConfig, &QAction::triggered, this, &MainWindow::onConfig);
   connect(ui->actionOtp, &QAction::triggered, this, &MainWindow::onOtp);
 
-  // Menu-only actions. Quit really quits, as Ctrl+Q/Cmd+Q does everywhere
-  // else (KeePassXC, Telegram, the KDE/GNOME/macOS guidelines), tray or not.
-  // Close window is what the old Ctrl+Q did: close(), which "hide on close"
-  // turns into a hide for tray users.
-  connect(ui->actionQuit, &QAction::triggered, qApp, &QApplication::quit);
-  connect(ui->actionClose, &QAction::triggered, this, &MainWindow::close);
+  // Menu-only actions. Quit keeps what the old Ctrl+Q shortcut did: close(),
+  // which closeEvent() turns into a hide when "hide on close" is set. What
+  // Quit/Close/Alt+F4 should do per platform is a separate decision.
+  connect(ui->actionQuit, &QAction::triggered, this, &MainWindow::close);
   connect(ui->actionFaq, &QAction::triggered, this, [] {
     QDesktopServices::openUrl(
         QUrl(QStringLiteral("https://qtpass.org/docs/md__f_a_q.html")));

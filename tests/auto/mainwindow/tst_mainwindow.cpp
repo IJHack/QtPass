@@ -120,7 +120,7 @@ private Q_SLOTS:
   void restoreWindowCentresWhenNothingSaved();
   void menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes();
   void quitIsAnActionNotAStrayShortcut();
-  void closeWindowHonoursHideOnClose();
+  void quitHonoursHideOnCloseForNow();
   void closeEventSavesGeometryAlsoWhenHidingToTray();
 
 private:
@@ -829,8 +829,7 @@ void tst_mainwindow::menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes() {
            (QStringList{
                QStringLiteral("actionAddPassword"),
                QStringLiteral("actionAddFolder"), QStringLiteral("actionEdit"),
-               QStringLiteral("actionDelete"), QStringLiteral("actionClose"),
-               QStringLiteral("actionQuit")}));
+               QStringLiteral("actionDelete"), QStringLiteral("actionQuit")}));
   QCOMPARE(menuActionNames(bar, QStringLiteral("menuStore")),
            (QStringList{
                QStringLiteral("actionUsers"), QStringLiteral("actionUpdate"),
@@ -868,9 +867,7 @@ void tst_mainwindow::menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes() {
 
 /**
  * @brief Ctrl+Q used to be a bare QShortcut; it is the Quit action now and
- *        nothing else claims the sequence. It is wired to the application's
- *        quit, which cannot be triggered inside a test without ending it, so
- *        the connection is checked rather than fired.
+ *        nothing else claims the sequence.
  */
 void tst_mainwindow::quitIsAnActionNotAStrayShortcut() {
   auto *quit = m_window->findChild<QAction *>(QStringLiteral("actionQuit"));
@@ -880,21 +877,16 @@ void tst_mainwindow::quitIsAnActionNotAStrayShortcut() {
     QVERIFY2(shortcut->key() != QKeySequence(Qt::CTRL | Qt::Key_Q),
              "no QShortcut may compete with the Quit action");
   }
-  // disconnect() reports whether anything was connected; the window is
-  // rebuilt for the next test, so taking the connection down here is fine.
-  QVERIFY2(QObject::disconnect(quit, &QAction::triggered, nullptr, nullptr),
-           "Quit must be connected");
 }
 
 /**
- * @brief File > Close window is the old Ctrl+Q: close(), which the
- *        configurable "hide on close" turns into a hide for tray users.
+ * @brief Quit keeps the old Ctrl+Q behaviour, close(), until the
+ *        per-platform Quit/Close semantics are settled: with "hide on
+ *        close" it hides instead of quitting.
  */
-void tst_mainwindow::closeWindowHonoursHideOnClose() {
-  auto *closeAction =
-      m_window->findChild<QAction *>(QStringLiteral("actionClose"));
-  QVERIFY(closeAction != nullptr);
-  QCOMPARE(closeAction->shortcut(), QKeySequence(Qt::CTRL | Qt::Key_W));
+void tst_mainwindow::quitHonoursHideOnCloseForNow() {
+  auto *quit = m_window->findChild<QAction *>(QStringLiteral("actionQuit"));
+  QVERIFY(quit != nullptr);
   {
     AppSettings s = QtPassSettings::load();
     s.hideOnClose = true;
@@ -902,7 +894,7 @@ void tst_mainwindow::closeWindowHonoursHideOnClose() {
   }
   m_window->show();
   QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
-  closeAction->trigger();
+  quit->trigger();
   QVERIFY2(!m_window->isVisible(), "the window must hide, not quit");
 }
 
