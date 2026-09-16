@@ -42,7 +42,7 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   where Ctrl+Q/Cmd+Q always ends the application. The window close button
   and Alt+F4 behave as before ([#1788](https://github.com/IJHack/QtPass/issues/1788))
   it from the menu roles. Quit does what the Ctrl+Q shortcut always did
-- The process output console keeps the indentation of what git and pass
+- The process output console keeps the indentation of what Git and pass
   print (rich text used to collapse the leading spaces the code carefully
   preserved)
 - Debug output goes through one `qtpass` logging category instead of
