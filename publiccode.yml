@@ -27,8 +27,8 @@ intendedAudience:
 
 developmentStatus: stable
 
-softwareVersion: "1.5.1"
-releaseDate: "2026-03-21"
+softwareVersion: "1.8.1"
+releaseDate: "2026-09-15"
 
 description:
   en:
@@ -136,4 +136,4 @@ dependsOn:
     - name: gnupg
       version: "2.2"
     - name: Qt
-      versionMin: "5.12"
+      versionMin: "6.2"

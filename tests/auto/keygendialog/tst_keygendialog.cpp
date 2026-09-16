@@ -9,6 +9,7 @@
 #include <QtTest>
 
 #include "../../../src/keygendialog.h"
+#include "../testsettings.h"
 
 /**
  * @class tst_keygendialog
@@ -28,6 +29,9 @@ class tst_keygendialog : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
+  // KeygenDialog reads QtPassSettings; redirect QSettings so the developer's
+  // real configuration is neither read nor written.
+  void initTestCase() { isolateTestSettings(); }
   void constructionLoadsNonEmptyTemplate();
   void expertCheckboxTogglesTemplateEditor();
   void nameTextUpdatesNameRealLine();

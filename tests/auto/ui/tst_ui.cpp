@@ -19,6 +19,7 @@
 #include "../../../src/qpushbuttonshowpassword.h"
 #include "../../../src/qpushbuttonwithclipboard.h"
 #include "../../../src/qtpass.h"
+#include "../testsettings.h"
 #include "passwordconfiguration.h"
 
 class tst_ui : public QObject {
@@ -121,7 +122,10 @@ void tst_ui::contentRemainsSame() {
   QCOMPARE(d->getPassword(), input);
 }
 
-void tst_ui::initTestCase() {}
+// PasswordDialog's constructor reaches QtPassSettings::getPass(), which loads
+// the real settings and can mkpath() the configured store, so redirect
+// QSettings before any test runs.
+void tst_ui::initTestCase() { isolateTestSettings(); }
 
 void tst_ui::cleanupTestCase() {}
 

@@ -160,7 +160,9 @@ private Q_SLOTS:
   void getDirBasic();
   void getDirWithIndex();
   void findBinaryInPathNotFound();
-  void findPasswordStoreEnvVar();
+  void expandTildeHome();
+  void expandTildeLeavesOtherPathsAlone();
+  void findPasswordStoreAlwaysEndsWithSlash();
   void normalizeFolderPathMultipleCalls();
   void userInfoFullyValid();
   void userInfoMarginallyValid();
@@ -180,8 +182,6 @@ private Q_SLOTS:
   void linkifyUrlsLinksLaunchableWebUrls();
   void linkifyUrlsLeavesNonWebUrlsAsText();
   void utilRegexNewLines();
-  void reencryptPathNormalization();
-  void reencryptPathAbsolutePath();
   void buildClipboardMimeDataDword();
   void imitatePassResolveMoveDestination();
   void imitatePassResolveMoveDestinationForce();
@@ -1013,9 +1013,33 @@ void tst_util::findBinaryInPathNotFound() {
   QVERIFY(result.isEmpty());
 }
 
-void tst_util::findPasswordStoreEnvVar() {
-  QString result = Util::findPasswordStore();
+/// "~" and "~/..." are expanded; this is what PASSWORD_STORE_DIR set outside a
+/// shell (systemd unit, .desktop entry) hands us.
+void tst_util::expandTildeHome() {
+  QCOMPARE(Util::expandTilde(QStringLiteral("~")), QDir::homePath());
+  QCOMPARE(Util::expandTilde(QStringLiteral("~/store")),
+           QDir::homePath() + QStringLiteral("/store"));
+  QCOMPARE(Util::expandTilde(QStringLiteral("~/a/b/")),
+           QDir::homePath() + QStringLiteral("/a/b/"));
+}
+
+/// Everything else is returned untouched, "~user" forms included: resolving
+/// another user's home is deliberately not attempted.
+void tst_util::expandTildeLeavesOtherPathsAlone() {
+  for (const QString &path :
+       {QStringLiteral("/absolute/path"), QStringLiteral("relative/path"),
+        QStringLiteral("~someoneelse"), QStringLiteral("~someone/else"),
+        QStringLiteral("a~b"), QString()}) {
+    QCOMPARE(Util::expandTilde(path), path);
+  }
+}
+
+/// Whatever the environment says, the store path is a normalised folder path.
+void tst_util::findPasswordStoreAlwaysEndsWithSlash() {
+  const QString result = Util::findPasswordStore();
   QVERIFY(!result.isEmpty());
+  QVERIFY2(result.endsWith('/'), qPrintable(result));
+  QCOMPARE(result, QDir::cleanPath(result) + QStringLiteral("/"));
 }
 
 void tst_util::normalizeFolderPathMultipleCalls() {
@@ -1843,35 +1867,6 @@ void tst_util::utilRegexNewLines() {
   QVERIFY2(rex.match("\n").hasMatch(), "Should match newline");
   QVERIFY2(rex.match("line1\nline2").hasMatch(),
            "Should match embedded newline");
-}
-
-void tst_util::reencryptPathNormalization() {
-  QTemporaryDir tempDir;
-  QVERIFY2(tempDir.isValid(), "Temporary directory should be created");
-
-  QString basePath = tempDir.path();
-  QString withExtraSlashes = basePath + "/./subdir/../";
-  QString cleaned = QDir::cleanPath(withExtraSlashes);
-  QString normalized = QDir::cleanPath(basePath);
-  QVERIFY2(cleaned == normalized,
-           qPrintable(QString("cleanPath should normalize: expected %1, got %2")
-                          .arg(normalized, cleaned)));
-}
-
-void tst_util::reencryptPathAbsolutePath() {
-  QTemporaryDir tempDir;
-  QVERIFY2(tempDir.isValid(), "Temporary directory should be created");
-
-  QString tempPath = tempDir.path();
-  QVERIFY(QDir(tempPath).mkdir("testdir"));
-  QString relativePathFromTemp = tempPath + "/testdir";
-  QDir dir;
-  QString result = QDir::cleanPath(QDir(relativePathFromTemp).absolutePath());
-  QString expected = QDir::cleanPath(tempPath + "/testdir");
-  QVERIFY2(
-      result == expected,
-      qPrintable(
-          QString("Absolute path: expected %1, got %2").arg(expected, result)));
 }
 
 // Tests targeting the const-ref refactor of findBinaryInPath.

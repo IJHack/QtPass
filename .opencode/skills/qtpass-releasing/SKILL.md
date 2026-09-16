@@ -15,10 +15,16 @@ metadata:
 
 Update version in all build files:
 
-- `qtpass.pri` - `VERSION = X.Y.Z` (note: .pri not .pro, unquoted number)
-- `qtpass.spec` - `Version:`
-- `qtpass.iss` - `AppVerName=`
+- `qtpass.pri` - `VERSION = X.Y.Z` (note: .pri not .pro, unquoted number).
+  This is the single source: the release workflow reads it for the installer
+  names and fails if it cannot, so nothing else needs a fallback.
+- `qtpass.spec` - `Version:` (and reset `Release:` to 1, add a `%changelog`
+  entry)
+- `qtpass.iss` - `#define MyAppVersion`
 - `Doxyfile` - `PROJECT_NUMBER`
+- `qtpass.appdata.xml` - a new `<release version="X.Y.Z" date="...">` entry
+- `publiccode.yml` - `softwareVersion` and `releaseDate`
+- `SECURITY.md` - the supported-versions table
 - `downloads.html` (gh-pages) - multiple references
 - `index.html` (gh-pages)
 - `getting-started.html` (gh-pages)
@@ -26,7 +32,7 @@ Update version in all build files:
 - `changelog.1.4.html` (gh-pages)
 - `old.html` (gh-pages)
 
-**NOTE:** `qtpass.appdata.xml` and `appdmg.json` don't have version fields to update.
+**NOTE:** `appdmg.json` has no version field to update.
 
 ```bash
 # Find version strings (replace X.Y with actual version)

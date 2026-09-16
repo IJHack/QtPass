@@ -85,16 +85,7 @@ auto Util::findPasswordStore() -> QString {
   QString path;
   initialiseEnvironment();
   if (_env.contains("PASSWORD_STORE_DIR")) {
-    path = _env.value("PASSWORD_STORE_DIR");
-    // Expand current-user tilde forms ("~" and "~/...") — env vars set in
-    // non-shell contexts (systemd units, .desktop entries, quoted shell
-    // assignments) skip shell tilde expansion, leaving "~" literal.
-    // Note: "~username" forms are intentionally not resolved here.
-    if (path == "~") {
-      path = QDir::homePath();
-    } else if (path.startsWith("~/")) {
-      path = QDir::homePath() + path.mid(1);
-    }
+    path = Util::expandTilde(_env.value("PASSWORD_STORE_DIR"));
   } else {
 #ifdef Q_OS_WIN
     path = QDir(QDir::homePath()).filePath("password-store");
@@ -103,6 +94,23 @@ auto Util::findPasswordStore() -> QString {
 #endif
   }
   return Util::normalizeFolderPath(QDir::cleanPath(path));
+}
+
+/**
+ * @brief Expand a leading current-user tilde in a path.
+ *
+ * Environment variables set in non-shell contexts (systemd units, .desktop
+ * entries, quoted shell assignments) skip shell tilde expansion and keep a
+ * literal "~". "~username" forms are intentionally not resolved.
+ */
+auto Util::expandTilde(const QString &path) -> QString {
+  if (path == QLatin1String("~")) {
+    return QDir::homePath();
+  }
+  if (path.startsWith(QLatin1String("~/"))) {
+    return QDir::homePath() + path.mid(1);
+  }
+  return path;
 }
 
 auto Util::normalizeFolderPath(const QString &path) -> QString {
