@@ -28,32 +28,20 @@ Executor::Executor(QObject *parent) : QObject(parent) {
 }
 
 /**
- * @brief Executor::startProcess starts the internal process, handling WSL
- * prefixes.
+ * @brief Executor::startProcess starts @p process, handling the "wsl "
+ * prefix. One implementation for the queued (m_process) and the blocking
+ * (caller-owned QProcess) path, so the WSL handling cannot drift between
+ * them.
+ * @param process QProcess to start.
  * @param app Executable path (may start with "wsl ").
  * @param args Arguments to pass to the executable.
  */
-void Executor::startProcess(const QString &app, const QStringList &args) {
-  if (app.startsWith("wsl ")) {
-    m_process.start("wsl", wslExecArgs(app.mid(4), args));
+void Executor::startProcess(QProcess &process, const QString &app,
+                            const QStringList &args) {
+  if (app.startsWith(QLatin1String("wsl "))) {
+    process.start(QStringLiteral("wsl"), wslExecArgs(app.mid(4), args));
   } else {
-    m_process.start(app, args);
-  }
-}
-
-/**
- * @brief Executor::startProcessBlocking starts a given process, handling WSL
- * prefixes.
- * @param internal QProcess reference to start.
- * @param app Executable path (may start with "wsl ").
- * @param args Arguments to pass to the executable.
- */
-void Executor::startProcessBlocking(QProcess &internal, const QString &app,
-                                    const QStringList &args) {
-  if (app.startsWith("wsl ")) {
-    internal.start("wsl", wslExecArgs(app.mid(4), args));
-  } else {
-    internal.start(app, args);
+    process.start(app, args);
   }
 }
 
@@ -111,7 +99,7 @@ void Executor::executeNext() {
   if (!i.workingDir.isEmpty()) {
     m_process.setWorkingDirectory(i.workingDir);
   }
-  startProcess(i.app, i.args);
+  startProcess(m_process, i.app, i.args);
 
   // Confirm the process actually started, regardless of whether it takes stdin.
   // A process that fails to start emits errorOccurred(FailedToStart) but never
@@ -266,7 +254,7 @@ auto Executor::runBlocking(QProcess &process, const QString &app,
                            const std::atomic_bool *cancel) -> int {
   if (cancel != nullptr && cancel->load())
     return -1;
-  startProcessBlocking(process, app, args);
+  startProcess(process, app, args);
   if (!process.waitForStarted(-1)) {
 #ifdef QT_DEBUG
     dbg() << "Process failed to start:" << app;
@@ -413,31 +401,29 @@ void Executor::onProcessFinished(int exitCode,
                                  QProcess::ExitStatus exitStatus) {
   execQueueItem i = m_execQueue.dequeue();
   running = false;
+  auto [output, err] = collectOutput(i, exitCode);
   if (exitStatus == QProcess::NormalExit) {
-    QString output;
-    QString err;
-    if (i.readStdout) {
-      output = decodeAssumingUtf8(m_process.readAllStandardOutput());
-    }
-    if (i.readStderr || exitCode != 0) {
-      err = decodeAssumingUtf8(m_process.readAllStandardError());
-      if (exitCode != 0) {
 #ifdef QT_DEBUG
-        dbg() << exitCode << err;
-#endif
-      }
+    if (exitCode != 0) {
+      dbg() << exitCode << err;
     }
+#endif
     emit finished(i.id, exitCode, output, err);
   } else {
-    QString output;
-    QString err;
-    if (i.readStdout) {
-      output = decodeAssumingUtf8(m_process.readAllStandardOutput());
-    }
-    if (i.readStderr || exitCode != 0) {
-      err = decodeAssumingUtf8(m_process.readAllStandardError());
-    }
     emit error(i.id, exitCode, output, err);
   }
   executeNext();
+}
+
+auto Executor::collectOutput(const execQueueItem &item, int exitCode)
+    -> std::pair<QString, QString> {
+  QString output;
+  QString err;
+  if (item.readStdout) {
+    output = decodeAssumingUtf8(m_process.readAllStandardOutput());
+  }
+  if (item.readStderr || exitCode != 0) {
+    err = decodeAssumingUtf8(m_process.readAllStandardError());
+  }
+  return {output, err};
 }
