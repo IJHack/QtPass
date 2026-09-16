@@ -83,7 +83,7 @@ _More info → Run anyway_ on first start)
 
 #### Dependencies
 
-- QtPass requires Qt 6.2 or later (build with `qmake6`); Qt 5 support ended with QtPass 1.8
+- QtPass requires Qt 6.8 or later (build with `qmake6`); Qt 5 support ended with QtPass 1.8
 - The Linguist package is required to compile translations
 - For fallback icons, the SVG library is required
 

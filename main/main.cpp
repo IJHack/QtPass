@@ -26,7 +26,7 @@
  *
  * @subsection dependencies Dependencies
  *
- * - QtPass requires Qt 6.2 or later.
+ * - QtPass requires Qt 6.8 or later.
  * - The Linguist package is required to compile the translations.
  * - For use of the fallback icons the SVG library is required.
  *

@@ -21,7 +21,7 @@ make -j4
 make lcov
 ```
 
-Qt 6.2 or newer is required (CI tests Qt 6.8 and 6.11; Qt 5 support ended with QtPass 1.8). The project uses qmake with a subdirs layout: `src/` (library), `main/` (executable), `tests/` (unit tests), shared config in `qtpass.pri`.
+Qt 6.8 or newer is required — the floor is what CI builds, so nothing older can regress unnoticed (CI tests Qt 6.8 and 6.11; Qt 5 support ended with QtPass 1.8). The project uses qmake with a subdirs layout: `src/` (library), `main/` (executable), `tests/` (unit tests), shared config in `qtpass.pri`.
 
 ## Testing
 
