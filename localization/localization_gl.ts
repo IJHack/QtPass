@@ -2090,22 +2090,22 @@ Continuar?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="313"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Non se puido iniciar qrencode: %1</translation>
+        <translation>Non se puido iniciar qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="321"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode non rematou a tempo</translation>
+        <translation>qrencode non rematou a tempo</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="333"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode pechouse inesperadamente</translation>
+        <translation>qrencode pechouse inesperadamente</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="334"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode rematou co código %1</translation>
+        <translation>qrencode rematou co código %1</translation>
     </message>
 </context>
 <context>
