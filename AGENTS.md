@@ -161,16 +161,9 @@ Git operations are handled in `ImitatePass`:
 
 ### Testing Patterns
 
-**Test file fixtures** are in `tests/fixtures/`:
-
-```bash
-ls tests/fixtures/
-# gpg-colons-multi-key.txt
-# gpg-colons-public.txt
-# gpg-colons-secret.txt
-```
-
-These contain real GPG `--with-colons` output for deterministic testing.
+Keep test data beside the suite that consumes it. For GPG-dependent tests,
+generate a throwaway keyring when real GPG behavior is needed, or write a
+recording fake GPG implementation when testing the commands QtPass invokes.
 
 **Avoid tautology assertions:**
 
