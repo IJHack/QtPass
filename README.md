@@ -5,7 +5,6 @@
 [![latest packaged version(s)](https://repology.org/badge/latest-versions/qtpass.svg)](https://repology.org/metapackage/qtpass)
 
 [![QMake GitHub Action](https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml/badge.svg?branch=main)](https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml?query=branch%3Amain)
-[![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/main?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/main)
 [![CodeFactor](https://www.codefactor.io/repository/github/ijhack/qtpass/badge)](https://www.codefactor.io/repository/github/ijhack/qtpass)
 
 [![Coverage Status](https://coveralls.io/repos/github/IJHack/QtPass/badge.svg)](https://coveralls.io/github/IJHack/QtPass)
@@ -66,10 +65,17 @@ FreeBSD
 `pkg install qtpass`
 
 macOS
-`brew install --cask qtpass`
+Download the `.dmg` from the [releases page](https://github.com/IJHack/QtPass/releases)
+and clear the quarantine flag:
+`xattr -d com.apple.quarantine /Applications/QtPass.app`
+(the Homebrew cask was disabled in September 2026 because the app is not
+notarized — see [the macOS page on qtpass.org](https://qtpass.org/macos) and
+[#1542](https://github.com/IJHack/QtPass/issues/1542))
 
 Windows
-`choco install qtpass`
+`choco install qtpass` or `winget install IJHack.QtPass`
+(the installer is not code-signed, so SmartScreen asks for
+_More info → Run anyway_ on first start)
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/qtpass.svg)](https://repology.org/metapackage/qtpass)
 [![Translation status](https://hosted.weblate.org/widgets/qtpass/-/multi-auto.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
