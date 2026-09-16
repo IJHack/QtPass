@@ -727,11 +727,11 @@ void tst_mainwindow::windowFlagsAreOnlyRebuiltWhenAlwaysOnTopChanges() {
   QVERIFY(m_window->windowFlags().testFlag(Qt::WindowStaysOnTopHint));
   QVERIFY(m_window->windowFlags().testFlag(Qt::Window));
   QVERIFY(m_window->isVisible());
-  const WId onTop = m_window->winId();
+  const WId afterEnable = m_window->winId();
 
   // Applying "on" again: still no rebuild.
   m_window->restoreWindow();
-  QCOMPARE(m_window->winId(), onTop);
+  QCOMPARE(m_window->winId(), afterEnable);
 
   // Turning it off removes only that hint.
   {
