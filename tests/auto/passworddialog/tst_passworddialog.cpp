@@ -12,6 +12,7 @@
  */
 
 #include <QCheckBox>
+#include <QComboBox>
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QLabel>
@@ -77,6 +78,9 @@ private Q_SLOTS:
   void lateErrorAfterContentLoadIsIgnored();
   void newEntryStartsEditable();
   void showCheckBoxTogglesPasswordEcho();
+  void templateRowHiddenWithoutTemplates();
+  void templateBoxListsAndAppliesTemplates();
+  void ctrlTCyclesTemplatesAndUpdatesBox();
 };
 
 void tst_passworddialog::existingEntryLocksEditorUntilContentLoads() {
@@ -193,6 +197,81 @@ void tst_passworddialog::showCheckBoxTogglesPasswordEcho() {
 
   show->setChecked(false);
   QCOMPARE(pw->echoMode(), QLineEdit::Password);
+}
+
+namespace {
+QHash<QString, QStringList> twoTemplates() {
+  return {{QStringLiteral("login"),
+           {QStringLiteral("username"), QStringLiteral("url")}},
+          {QStringLiteral("wifi"), {QStringLiteral("ssid")}}};
+}
+} // namespace
+
+/**
+ * @brief Stores without a .templates file must not grow an empty combo box.
+ */
+void tst_passworddialog::templateRowHiddenWithoutTemplates() {
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("new.gpg"),
+                   true);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  auto *box = d.findChild<QComboBox *>(QStringLiteral("templateBox"));
+  auto *label = d.findChild<QLabel *>(QStringLiteral("label_template"));
+  QVERIFY(box != nullptr && label != nullptr);
+  QVERIFY2(!box->isVisible() && !label->isVisible(),
+           "the template row must stay hidden without templates");
+}
+
+/**
+ * @brief The active template used to be invisible: the box now names it, and
+ *        picking another one rebuilds the field rows.
+ */
+void tst_passworddialog::templateBoxListsAndAppliesTemplates() {
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("new.gpg"),
+                   true);
+  d.setAvailableTemplates(twoTemplates(), QStringLiteral("wifi"));
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+
+  auto *box = d.findChild<QComboBox *>(QStringLiteral("templateBox"));
+  QVERIFY(box != nullptr);
+  QVERIFY2(box->isVisible(), "the template row must show once templates exist");
+  QCOMPARE(box->count(), 2);
+  QCOMPARE(box->currentText(), QStringLiteral("wifi"));
+  QVERIFY2(d.findChild<QLineEdit *>(QStringLiteral("ssid")) != nullptr,
+           "the default template's field must be present");
+  QVERIFY(d.findChild<QLineEdit *>(QStringLiteral("username")) == nullptr);
+
+  box->setCurrentText(QStringLiteral("login"));
+  QVERIFY2(d.findChild<QLineEdit *>(QStringLiteral("username")) != nullptr,
+           "choosing a template in the box must apply it");
+  QVERIFY(d.findChild<QLineEdit *>(QStringLiteral("ssid")) == nullptr);
+}
+
+/**
+ * @brief Ctrl+T is owned by the dialog now and keeps the box in sync.
+ */
+void tst_passworddialog::ctrlTCyclesTemplatesAndUpdatesBox() {
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("new.gpg"),
+                   true);
+  d.setAvailableTemplates(twoTemplates(), QStringLiteral("login"));
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  d.activateWindow();
+
+  auto *box = d.findChild<QComboBox *>(QStringLiteral("templateBox"));
+  QVERIFY(box != nullptr);
+  QCOMPARE(box->currentText(), QStringLiteral("login"));
+
+  QTest::keyClick(&d, Qt::Key_T, Qt::ControlModifier);
+  QTRY_COMPARE(box->currentText(), QStringLiteral("wifi"));
+  QVERIFY(d.findChild<QLineEdit *>(QStringLiteral("ssid")) != nullptr);
+
+  QTest::keyClick(&d, Qt::Key_T, Qt::ControlModifier);
+  QTRY_COMPARE(box->currentText(), QStringLiteral("login"));
 }
 
 QTEST_MAIN(tst_passworddialog)

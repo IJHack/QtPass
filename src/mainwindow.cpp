@@ -1183,8 +1183,6 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
       QString defaultTemplate =
           TemplateIO::getFolderTemplate(folder, storePath);
       d.setAvailableTemplates(templates, defaultTemplate);
-      new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_T), &d,
-                    [&d]() { d.cycleTemplate(); });
     }
   }
 
@@ -1709,7 +1707,7 @@ void MainWindow::addFolder() {
   QString dir = Util::getDir(ui->treeView->currentIndex(), false, model,
                              proxyModel, s.passStore);
   QString newdir = QInputDialog::getText(
-      this, tr("New file"),
+      this, tr("New folder"),
       tr("New Folder: \n(Will be placed in %1 )")
           .arg(s.passStore + Util::getDir(ui->treeView->currentIndex(), true,
                                           model, proxyModel, s.passStore)),
@@ -1761,7 +1759,7 @@ void MainWindow::renameFolder() {
                                    proxyModel, QtPassSettings::getPassStore()));
   QString srcDirName = QDir(srcDir).dirName();
   QString newName =
-      QInputDialog::getText(this, tr("Rename file"), tr("Rename Folder To: "),
+      QInputDialog::getText(this, tr("Rename folder"), tr("Rename Folder To: "),
                             QLineEdit::Normal, srcDirName, &ok);
   if (!ok || newName.isEmpty()) {
     return;

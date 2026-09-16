@@ -69,6 +69,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 - Edits typed in the password dialog before the decrypt landed were silently
   discarded or overwritten; the dialog now stays inert until the content is
   in [#1690](https://github.com/IJHack/QtPass/pull/1690)
+- The "new folder" and "rename folder" prompts were titled "New file" and
+  "Rename file"
+- Field templates from `.templates` were switchable only through an
+  undocumented Ctrl+T, and the active template was never shown. The password
+  dialog now has a Template box naming it, selecting from the box applies it,
+  and Ctrl+T (owned by the dialog) still cycles
 
 ### Removed
 
