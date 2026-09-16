@@ -524,6 +524,11 @@ void tst_executor::executeAsyncCrashExitReportsNonZeroCode() {
   QTRY_COMPARE_WITH_TIMEOUT(errorSpy.count(), 1, 5000);
   QVERIFY2(errorSpy.first().at(1).toInt() != 0,
            "a crashed process must report a non-zero exit code");
+  // sh dies without writing anything, so the message has to come from us.
+  const QString err = errorSpy.first().at(3).toString();
+  QVERIFY2(
+      err.contains(sh),
+      qPrintable("crash without stderr must still name the program: " + err));
 }
 
 void tst_executor::executeAsyncStartingSignal() {

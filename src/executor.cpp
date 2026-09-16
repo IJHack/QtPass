@@ -410,6 +410,11 @@ void Executor::onProcessFinished(int exitCode,
 #endif
     emit finished(i.id, exitCode, output, err);
   } else {
+    // A signal-killed process usually leaves stderr empty; without this the
+    // password pane would show nothing at all for the failure.
+    if (err.trimmed().isEmpty()) {
+      err = tr("%1 crashed or was killed").arg(i.app);
+    }
     emit error(i.id, exitCode, output, err);
   }
   executeNext();
