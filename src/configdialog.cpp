@@ -4,6 +4,7 @@
 #include "appsettings.h"
 #include "keygendialog.h"
 #include "mainwindow.h"
+#include "passbackendfactory.h"
 #include "profileinit.h"
 #include "qtpasssettings.h"
 #include "sshauthsock.h"
@@ -1116,25 +1117,28 @@ void ConfigDialog::handleGpgIdFile() {
 /**
  * @brief Let the user pick the recipients for a store that has no .gpg-id yet.
  *
- * The active store is pointed at @p storePath while the dialog runs so that
- * `git init` and the `pass init` issued by UsersDialog::accept() operate on
- * that directory rather than on whatever path is currently saved. Git is
- * initialised first so that the .gpg-id written by pass init lands in the
- * first commit.
+ * First-run wizard only. The store path is saved and the backend
+ * re-initialised before use: Pass caches its settings at init(), so
+ * RealPass::Init() would otherwise make `--path` relative to the previous
+ * store and updateEnv() would export that one. Nothing is restored
+ * afterwards because the wizard's OK saves this same path and its Cancel
+ * exits the application. Git is initialised first so that the .gpg-id
+ * written by pass init lands in the first commit.
  * @param storePath Directory that becomes the password store.
  * @param gitInit Whether to run `git init` there before selecting recipients.
  */
 void ConfigDialog::selectRecipients(const QString &storePath, bool gitInit) {
-  const QString cleanStorePath = QDir::cleanPath(storePath);
-  const QString prevStore = QtPassSettings::getPassStore();
-  QtPassSettings::setPassStore(cleanStorePath);
+  // ImitatePass::Init() and Pass::getRecipientList() append ".gpg-id" to the
+  // folder, so it has to keep its trailing separator.
+  const QString store = Util::normalizeFolderPath(QDir::cleanPath(storePath));
+  QtPassSettings::setPassStore(store);
+  PassBackendFactory::invalidate();
+  Pass *pass = QtPassSettings::getPass();
   if (gitInit) {
-    QtPassSettings::getPass()->GitInit();
+    pass->GitInit();
   }
-  UsersDialog d(QtPassSettings::getPass(), QtPassSettings::load(),
-                cleanStorePath, this);
+  UsersDialog d(pass, QtPassSettings::load(), store, this);
   d.exec();
-  QtPassSettings::setPassStore(prevStore);
 }
 
 /**
