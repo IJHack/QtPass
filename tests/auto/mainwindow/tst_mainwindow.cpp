@@ -46,6 +46,7 @@
 #include "../../../src/filecontent.h"
 #include "../../../src/mainwindow.h"
 #include "../../../src/passworddisplaypanel.h"
+#include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/util.h"
 #include "../testsettings.h"
@@ -103,6 +104,9 @@ private Q_SLOTS:
   void onProcessOutputSkippedWhenPanelHidden();
   void passwordFromFileToClipboardCopiesFirstLine();
   void passwordFromFileToClipboardSkipsOtpSecret();
+  void clipboardAutoclearClearsTheCopiedText();
+  void clipboardAutoclearLeavesOtherContentAlone();
+  void clipboardAutoclearSurvivesShowingAnotherEntry();
   void showTextAsQRCodeReportsMissingQrencode();
   void textBrowserFollowsRuntimePaletteChange();
   void fieldFrameBorderFollowsRuntimePaletteChange();
@@ -487,6 +491,81 @@ void tst_mainwindow::passwordFromFileToClipboardCopiesFirstLine() {
            "invoking passwordFromFileToClipboard must succeed");
 
   QCOMPARE(clip->text(), QStringLiteral("hunter2"));
+}
+
+namespace {
+/**
+ * Arm a one-second autoclear on the window's QtPass and return it. The
+ * interval is read from settings when setClipboardTimer() runs, so save first.
+ */
+auto armAutoclear(MainWindow *window) -> QtPass * {
+  AppSettings s = QtPassSettings::load();
+  s.useSelection = false;
+  s.useAutoclear = true;
+  s.autoclearSeconds = 1;
+  QtPassSettings::save(s);
+  auto *qtPass = window->findChild<QtPass *>();
+  if (qtPass != nullptr) {
+    qtPass->setClipboardTimer();
+  }
+  return qtPass;
+}
+} // namespace
+
+/**
+ * @brief The autoclear timer removes what QtPass copied once it fires.
+ *        Nothing covered this before; #1607 shipped a "password stays on the
+ *        clipboard" fix without a test.
+ */
+void tst_mainwindow::clipboardAutoclearClearsTheCopiedText() {
+  QtPass *qtPass = armAutoclear(m_window.data());
+  QVERIFY2(qtPass != nullptr, "MainWindow must own a QtPass child");
+  QClipboard *clip = QApplication::clipboard();
+
+  qtPass->copyTextToClipboard(QStringLiteral("hunter2"));
+  QCOMPARE(clip->text(), QStringLiteral("hunter2"));
+  QTRY_VERIFY_WITH_TIMEOUT(clip->text().isEmpty(), 3000);
+}
+
+/**
+ * @brief Autoclear only removes its own text: if the user copied something
+ *        else in the meantime that must stay.
+ */
+void tst_mainwindow::clipboardAutoclearLeavesOtherContentAlone() {
+  QtPass *qtPass = armAutoclear(m_window.data());
+  QVERIFY(qtPass != nullptr);
+  QClipboard *clip = QApplication::clipboard();
+
+  qtPass->copyTextToClipboard(QStringLiteral("hunter2"));
+  clip->setText(QStringLiteral("grocery list"));
+  QTest::qWait(1500);
+  QCOMPARE(clip->text(), QStringLiteral("grocery list"));
+  QVERIFY2(m_window->statusBar()->currentMessage().contains(
+               QStringLiteral("not cleared")),
+           qPrintable("status must say the clipboard was left alone: " +
+                      m_window->statusBar()->currentMessage()));
+}
+
+/**
+ * @brief Regression for #1607: showing another entry while a copied
+ *        password is waiting for autoclear used to overwrite the tracker, so
+ *        the timer no longer recognised the clipboard and left the password
+ *        there indefinitely.
+ */
+void tst_mainwindow::clipboardAutoclearSurvivesShowingAnotherEntry() {
+  QtPass *qtPass = armAutoclear(m_window.data());
+  QVERIFY(qtPass != nullptr);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
+    QtPassSettings::save(s);
+  }
+  QClipboard *clip = QApplication::clipboard();
+
+  qtPass->copyTextToClipboard(QStringLiteral("hunter2"));
+  m_window->passShowHandler(QStringLiteral("otherpass\nlogin: bob"));
+  QCOMPARE(clip->text(), QStringLiteral("hunter2"));
+  QTRY_VERIFY_WITH_TIMEOUT(clip->text().isEmpty(), 3000);
 }
 
 /**

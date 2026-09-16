@@ -45,6 +45,9 @@ private Q_SLOTS:
   void executeAsyncEmptyExecutableEmitsErrorAndContinues();
   void executeAsyncCrashExitReportsNonZeroCode();
   void cancelNextWhileRunningReturnsMinusOne();
+  void cancelNextFromErrorHandlerDropsQueuedItem();
+  void executeAsyncWorkDirDoesNotCarryOver();
+  void executeAsyncNonUtf8OutputIsNotDropped();
   void executeBlockingCancelFlagEndsChild();
   void executeBlockingCancelFlagKillsChildIgnoringTerminate();
   void executeBlockingCancelFlagAlreadySetSkipsStart();
@@ -589,6 +592,89 @@ void tst_executor::cancelNextWhileRunningReturnsMinusOne() {
   exec.execute(1, sh, {"-c", "sleep 2"}, false, false);
   exec.execute(2, sh, {"-c", "echo queued"}, false, false);
   QCOMPARE(exec.cancelNext(), -1);
+}
+
+/**
+ * @brief The cancel cascade ImitatePass relies on: while the error signal for
+ *        a failed command is being handled the queue is not running, so
+ *        cancelNext() removes the next item and it never starts. A command
+ *        queued afterwards still runs.
+ */
+void tst_executor::cancelNextFromErrorHandlerDropsQueuedItem() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy finished(&exec, &Executor::finished);
+  QSignalSpy errors(&exec, &Executor::error);
+  // A non-zero exit is a normal exit, so it arrives on finished(); Pass
+  // routes both signals to the same slot.
+  int cancelled = -2;
+  connect(&exec, &Executor::finished, &exec,
+          [&exec, &cancelled](int, int exitCode) {
+            if (exitCode != 0) {
+              cancelled = exec.cancelNext();
+            }
+          });
+
+  exec.execute(1, sh, {"-c", "exit 3"}, false, true);
+  exec.execute(2, sh, {"-c", "echo must-not-run"}, true, false);
+  QTRY_COMPARE_WITH_TIMEOUT(finished.count(), 1, 5000);
+  QCOMPARE(finished.first().at(1).toInt(), 3);
+  QCOMPARE(cancelled, 2);
+
+  exec.execute(3, sh, {"-c", "echo after"}, true, false);
+  QTRY_COMPARE_WITH_TIMEOUT(finished.count(), 2, 5000);
+  QCOMPARE(finished.at(1).at(0).toInt(), 3);
+  QVERIFY2(finished.at(1).at(2).toString().contains("after"),
+           "the command queued after the cancel must run");
+  QTest::qWait(200);
+  QCOMPARE(finished.count(), 2); // item 2 never ran
+  QCOMPARE(errors.count(), 0);
+}
+
+/**
+ * @brief A queued item without a working directory runs in the application's
+ *        cwd even when the previous item set one on the shared QProcess.
+ */
+void tst_executor::executeAsyncWorkDirDoesNotCarryOver() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  Executor exec;
+  QSignalSpy spy(&exec, &Executor::finished);
+  exec.execute(1, tmp.path(), sh, {"-c", "pwd"}, true, false);
+  exec.execute(2, sh, {"-c", "pwd"}, true, false);
+  QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 2, 5000);
+  const QString first = spy.at(0).at(2).toString().trimmed();
+  const QString second = spy.at(1).at(2).toString().trimmed();
+  QCOMPARE(QFileInfo(first).canonicalFilePath(),
+           QFileInfo(tmp.path()).canonicalFilePath());
+  QCOMPARE(QFileInfo(second).canonicalFilePath(),
+           QFileInfo(QDir::currentPath()).canonicalFilePath());
+}
+
+/**
+ * @brief Output that is not valid UTF-8 (a Latin-1 byte from an old gpg or a
+ *        user's shell) still reaches the caller instead of being dropped. A
+ *        stray byte at the very end used to vanish: the stateful decoder kept
+ *        it back as the start of a multi-byte sequence.
+ */
+void tst_executor::executeAsyncNonUtf8OutputIsNotDropped() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy spy(&exec, &Executor::finished);
+  // \351 is 'é' in Latin-1 and an invalid lead byte in UTF-8.
+  exec.execute(1, sh, {"-c", "printf 'caf\\351'"}, true, false);
+  QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
+  const QString out = spy.first().at(2).toString();
+  QVERIFY2(out.startsWith(QStringLiteral("caf")),
+           qPrintable("the valid prefix must survive: " + out));
+  QCOMPARE(out.size(), 4); // one character for the odd byte, not nothing
 }
 
 namespace {

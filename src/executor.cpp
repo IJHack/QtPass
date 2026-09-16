@@ -96,9 +96,9 @@ void Executor::executeNext() {
   }
 
   running = true;
-  if (!i.workingDir.isEmpty()) {
-    m_process.setWorkingDirectory(i.workingDir);
-  }
+  // Always set it: an item without a directory runs in the application's
+  // cwd, not wherever the previous item happened to run.
+  m_process.setWorkingDirectory(i.workingDir);
   startProcess(m_process, i.app, i.args);
 
   // Confirm the process actually started, regardless of whether it takes stdin.
@@ -224,13 +224,18 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
  * @return Input bytes decoded to string
  */
 static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
-  auto converter = QStringDecoder(QStringDecoder::Utf8);
+  // Stateless: the whole output is decoded in one go, so a truncated or
+  // stray byte at the end becomes a replacement character instead of being
+  // held back for a continuation that never comes (and thereby dropped).
+  auto converter =
+      QStringDecoder(QStringDecoder::Utf8, QStringDecoder::Flag::Stateless);
   QString out = converter(in);
   if (!converter.hasError()) {
     return out;
   }
   // Fallback if UTF-8 decoding failed - try system encoding
-  auto fallback = QStringDecoder(QStringDecoder::System);
+  auto fallback =
+      QStringDecoder(QStringDecoder::System, QStringDecoder::Flag::Stateless);
   return fallback(in);
 }
 
