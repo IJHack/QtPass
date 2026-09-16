@@ -7,5 +7,6 @@ var searchData=
   ['qrrequested_4',['qrRequested',['../class_password_display_panel.html#a064002137dbd9f257e05d5571f0b9ada',1,'PasswordDisplayPanel']]],
   ['qtcompat_2eh_5',['qtcompat.h',['../qtcompat_8h.html',1,'']]],
   ['qtpass_6',['QtPass',['../class_qt_pass.html',1,'QtPass'],['../class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad',1,'QtPass::QtPass()'],['../index.html',1,'QtPass']]],
-  ['qtpasssettings_7',['QtPassSettings',['../class_qt_pass_settings.html',1,'']]]
+  ['qtpasslogging_2eh_7',['qtpasslogging.h',['../qtpasslogging_8h.html',1,'']]],
+  ['qtpasssettings_8',['QtPassSettings',['../class_qt_pass_settings.html',1,'']]]
 ];
