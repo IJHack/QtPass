@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="bn_BD">
 <context>
+    <name>ClipboardManager</name>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="48"/>
+        <source>Copied to clipboard</source>
+        <translation>ক্লিপবোর্ডে কপি করা হয়েছে</translation>
+    </message>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="71"/>
+        <source>Clipboard cleared</source>
+        <translation>ক্লিপবোর্ড মুছে ফেলা হয়েছে</translation>
+    </message>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="72"/>
+        <source>Clipboard not cleared</source>
+        <translation>ক্লিপবোর্ড মুছে ফেলা হয়নি</translation>
+    </message>
+</context>
+<context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>

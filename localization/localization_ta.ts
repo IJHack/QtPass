@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ta">
 <context>
+    <name>ClipboardManager</name>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="48"/>
+        <source>Copied to clipboard</source>
+        <translation>இடைநிலைப்பலகைக்கு நகலெடுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="71"/>
+        <source>Clipboard cleared</source>
+        <translation>இடைநிலைப்பலகை அழிக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="72"/>
+        <source>Clipboard not cleared</source>
+        <translation>இடைநிலைப்பலகை அழிக்கப்படவில்லை</translation>
+    </message>
+</context>
+<context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>

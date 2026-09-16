@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="te">
 <context>
+    <name>ClipboardManager</name>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="48"/>
+        <source>Copied to clipboard</source>
+        <translation>క్లిప్‌బోర్డ్‌కు కాపీ చేయబడింది</translation>
+    </message>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="71"/>
+        <source>Clipboard cleared</source>
+        <translation>క్లిప్‌బోర్డ్ క్లియర్ చేయబడింది</translation>
+    </message>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="72"/>
+        <source>Clipboard not cleared</source>
+        <translation>క్లిప్‌బోర్డ్ క్లియర్ చేయబడలేదు</translation>
+    </message>
+</context>
+<context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>

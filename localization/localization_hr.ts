@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="hr">
 <context>
+    <name>ClipboardManager</name>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="48"/>
+        <source>Copied to clipboard</source>
+        <translation>Kopirano u međuspremnik</translation>
+    </message>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="71"/>
+        <source>Clipboard cleared</source>
+        <translation>Međuspremnik ispražnjen</translation>
+    </message>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="72"/>
+        <source>Clipboard not cleared</source>
+        <translation>Međuspremnik nije ispražnjen</translation>
+    </message>
+</context>
+<context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>

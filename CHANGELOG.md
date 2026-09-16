@@ -92,6 +92,9 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   six bold labels that stood in for section headers are real group boxes
   (same strings, so translations carry over). The "Extensions:" header is no
   longer hidden on Windows, where OTP and content search still live under it
+- Deselecting an entry when nothing had been copied flashed "Clipboard
+  cleared" in the status bar (the empty tracker matched an empty selection);
+  clearing with nothing tracked is silent now
 
 ### Removed
 

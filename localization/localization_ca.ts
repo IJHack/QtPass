@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ca">
 <context>
+    <name>ClipboardManager</name>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="48"/>
+        <source>Copied to clipboard</source>
+        <translation>S&apos;ha copiat al porta-retalls</translation>
+    </message>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="71"/>
+        <source>Clipboard cleared</source>
+        <translation>S&apos;ha netejat el porta-retalls</translation>
+    </message>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="72"/>
+        <source>Clipboard not cleared</source>
+        <translation>No s&apos;ha netejat el porta-retalls</translation>
+    </message>
+</context>
+<context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>

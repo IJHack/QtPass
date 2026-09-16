@@ -29,7 +29,7 @@
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/pathvalidator.h"
 #include "../../../src/qprogressindicator.h"
-#include "../../../src/qtpass.h"
+#include "../../../src/clipboardmanager.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/simpletransaction.h"
 #include "../../../src/sshauthsock.h"

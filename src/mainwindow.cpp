@@ -126,8 +126,8 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   m_displayPanel = new PasswordDisplayPanel(
       ui->gridLayout, ui->verticalLayoutPassword, this, this);
-  connect(m_displayPanel, &PasswordDisplayPanel::copyRequested, m_qtPass,
-          &QtPass::copyTextToClipboard);
+  connect(m_displayPanel, &PasswordDisplayPanel::copyRequested,
+          &m_qtPass->clipboard(), &ClipboardManager::copyText);
   connect(m_displayPanel, &PasswordDisplayPanel::qrRequested, m_qtPass,
           &QtPass::showTextAsQRCode);
 
@@ -562,7 +562,7 @@ auto MainWindow::config() -> bool {
   activePass->updateEnv();
   proxyModel.setPass(activePass);
   clearPanelTimer.setInterval(MS_PER_SECOND * s.autoclearPanelSeconds);
-  m_qtPass->setClipboardTimer();
+  m_qtPass->clipboard().setAutoclearTimer();
 
   updateGitButtonVisibility();
   updateOtpButtonVisibility();
@@ -669,7 +669,7 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
 void MainWindow::deselect() {
   m_shownFile.clear();
   cancelOtpRequest();
-  m_qtPass->clearClipboard();
+  m_qtPass->clipboard().clear();
   ui->treeView->clearSelection();
   ui->actionEdit->setEnabled(false);
   ui->actionDelete->setEnabled(false);
@@ -714,7 +714,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
   // password, and writing both in one event-loop turn can leave the Windows
   // clipboard empty (two OleSetClipboard calls back to back).
   if (!m_otpRequestPending) {
-    m_qtPass->setClippedText(password, p_output);
+    m_qtPass->clipboard().copyIfAlways(password, p_output);
   }
 
   // first clear the current view:
@@ -780,7 +780,7 @@ void MainWindow::otpFromFileToClipboard(const QString &p_output) {
   // parse when no OTP row is shown (hideContent / displayAsIs / no OTP field).
   const QString shown = m_displayPanel->currentOtpCode();
   if (!shown.isEmpty()) {
-    m_qtPass->copyTextToClipboard(shown);
+    m_qtPass->clipboard().copyText(shown);
     showStatusMessage(tr("OTP code copied to clipboard"));
     setUiElementsEnabled(true);
     return;
@@ -798,7 +798,7 @@ void MainWindow::otpFromFileToClipboard(const QString &p_output) {
   const std::optional<Totp::Settings> settings =
       Totp::parse(fileContent.getOtpUri());
   if (settings.has_value()) {
-    m_qtPass->copyTextToClipboard(Totp::generateNow(*settings));
+    m_qtPass->clipboard().copyText(Totp::generateNow(*settings));
     showStatusMessage(tr("OTP code copied to clipboard"));
   } else {
     flashText(tr("No OTP code found in this password entry"), true);
@@ -1328,7 +1328,7 @@ void MainWindow::onOtp() {
   const QString shown =
       (m_shownFile == file) ? m_displayPanel->currentOtpCode() : QString();
   if (!shown.isEmpty()) {
-    m_qtPass->copyTextToClipboard(shown);
+    m_qtPass->clipboard().copyText(shown);
     showStatusMessage(tr("OTP code copied to clipboard"));
     return;
   }
@@ -1495,7 +1495,7 @@ void MainWindow::closeEvent(QCloseEvent *event) {
     this->hide();
     event->ignore();
   } else {
-    m_qtPass->clearClipboard();
+    m_qtPass->clipboard().clear();
     event->accept();
     // A visible QSystemTrayIcon keeps the application alive after the last
     // window closes, so quitOnLastWindowClosed never fires and the window
@@ -1856,7 +1856,7 @@ void MainWindow::passwordFromFileToClipboard(const QString &text) {
     flashText(tr("This entry holds an OTP secret, not a password"), true);
     return;
   }
-  m_qtPass->copyTextToClipboard(tokens[0]);
+  m_qtPass->clipboard().copyText(tokens[0]);
 }
 
 /**
