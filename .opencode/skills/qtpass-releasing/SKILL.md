@@ -156,6 +156,27 @@ announcing the release:
   review comments or replies, and no AI-agent reviews may be requested.
   Open and write the PR by hand.
 
+#### Debian `qtpass` (and everything downstream of it)
+
+- Not ours: maintained by Philip Rinn <rinni@debian.org>,
+  [salsa.debian.org/debian/qtpass](https://salsa.debian.org/debian/qtpass).
+- Ubuntu syncs the package from Debian and Linux Mint inherits Ubuntu's, so
+  Debian unstable is the only lever; an Ubuntu-only upload would be reverted
+  at the next sync.
+- `debian/watch` scrapes our GitHub releases for `QtPass-<version>.tar.gz`
+  plus the detached `.asc`, so a signed release is enough for `uscan` to see
+  it. Signing the release assets is therefore not optional.
+- If a release sits unpackaged for a while, file a wishlist bug
+  (`reportbug qtpass`, severity wishlist, subject
+  `qtpass: new upstream release X.Y.Z`) listing the security-relevant fixes,
+  and say whether they are worth stable-updates or backports. Draft used for
+  1.8.1: `~/debian-qtpass-1.8.1-bug.txt` (see #1682 packaging notes).
+- Keep the Debian delta small: patches they carry are patches to refresh on
+  every upload. `02-make-reproducible.patch` went upstream in #1757;
+  `01-disable-tests.patch` and `03-fix-gpg-detection.patch` are obsolete as of
+  1.8.x (tests run with `--platform offscreen`, and the gpg probe falls back
+  from `gpg2` to `gpg`).
+
 #### Chocolatey `qtpass`
 
 - Not ours (community maintained); nothing to do unless the maintainer asks.
