@@ -120,7 +120,8 @@ private Q_SLOTS:
   void restoreWindowCentresWhenNothingSaved();
   void menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes();
   void quitIsAnActionNotAStrayShortcut();
-  void quitHonoursHideOnCloseForNow();
+  void quitIsWiredToTheApplication();
+  void closeWindowHonoursHideOnClose();
   void closeEventSavesGeometryAlsoWhenHidingToTray();
 
 private:
@@ -829,7 +830,8 @@ void tst_mainwindow::menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes() {
            (QStringList{
                QStringLiteral("actionAddPassword"),
                QStringLiteral("actionAddFolder"), QStringLiteral("actionEdit"),
-               QStringLiteral("actionDelete"), QStringLiteral("actionQuit")}));
+               QStringLiteral("actionDelete"), QStringLiteral("actionClose"),
+               QStringLiteral("actionQuit")}));
   QCOMPARE(menuActionNames(bar, QStringLiteral("menuStore")),
            (QStringList{
                QStringLiteral("actionUsers"), QStringLiteral("actionUpdate"),
@@ -880,13 +882,27 @@ void tst_mainwindow::quitIsAnActionNotAStrayShortcut() {
 }
 
 /**
- * @brief Quit keeps the old Ctrl+Q behaviour, close(), until the
- *        per-platform Quit/Close semantics are settled: with "hide on
- *        close" it hides instead of quitting.
+ * @brief Quit ends the application (#1788). QApplication::quit() cannot be
+ *        fired inside the suite, so the connection is probed:
+ *        disconnect() reports whether one existed, and the window is
+ *        rebuilt for the next test anyway.
  */
-void tst_mainwindow::quitHonoursHideOnCloseForNow() {
+void tst_mainwindow::quitIsWiredToTheApplication() {
   auto *quit = m_window->findChild<QAction *>(QStringLiteral("actionQuit"));
   QVERIFY(quit != nullptr);
+  QVERIFY2(QObject::disconnect(quit, &QAction::triggered, nullptr, nullptr),
+           "Quit must be connected");
+}
+
+/**
+ * @brief File > Close window is what the old bare Ctrl+Q did: close(),
+ *        which the configurable "hide on close" turns into a hide.
+ */
+void tst_mainwindow::closeWindowHonoursHideOnClose() {
+  auto *closeAction =
+      m_window->findChild<QAction *>(QStringLiteral("actionClose"));
+  QVERIFY(closeAction != nullptr);
+  QCOMPARE(closeAction->shortcut(), QKeySequence(Qt::CTRL | Qt::Key_W));
   {
     AppSettings s = QtPassSettings::load();
     s.hideOnClose = true;
@@ -894,7 +910,7 @@ void tst_mainwindow::quitHonoursHideOnCloseForNow() {
   }
   m_window->show();
   QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
-  quit->trigger();
+  closeAction->trigger();
   QVERIFY2(!m_window->isVisible(), "the window must hide, not quit");
 }
 
