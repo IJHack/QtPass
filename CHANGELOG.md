@@ -20,6 +20,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Bugfixes
 
+- The Edit dialog turned every `key: value` line into a label-locked field
+  since 1.8.0, also with templates off, so those keys could no longer be
+  edited as text ([#1138](https://github.com/IJHack/QtPass/pull/1138) forced "all fields" on for [#132](https://github.com/IJHack/QtPass/issues/132)). Which lines become
+  fields follows the settings again: the template's fields when templates are
+  on, every `key: value` line only with "Template all fields", closes
+  [#1766](https://github.com/IJHack/QtPass/issues/1766)
 - "New folder" wrote a zero-byte `.gpg-id`, shadowing the parent recipients
   and breaking every insert in that folder; it is now seeded from the parent
   and staged in Git [#1688](https://github.com/IJHack/QtPass/pull/1688), [#1698](https://github.com/IJHack/QtPass/pull/1698)
