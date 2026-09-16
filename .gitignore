@@ -23,29 +23,11 @@ tests/auto/*/moc_predefs.h
 tests/auto/*/target_wrapper.sh
 tests/auto/*/*.moc
 
-tests/auto/util/tst_util
-tests/auto/ui/tst_ui
-tests/auto/model/tst_model
-tests/auto/settings/tst_settings
-tests/auto/executor/tst_executor
-tests/auto/passwordconfig/tst_passwordconfig
-tests/auto/simpletransaction/tst_simpletransaction
-tests/auto/filecontent/tst_filecontent
-tests/auto/gpgkeystate/tst_gpgkeystate
-tests/auto/integration/tst_integration
-tests/auto/imitatepass/tst_imitatepass
-tests/auto/exportpublickeydialog/tst_exportpublickeydialog
-tests/auto/importkeydialog/tst_importkeydialog
-tests/auto/keygendialog/tst_keygendialog
-tests/auto/trayicon/tst_trayicon
-tests/auto/configdialog/tst_configdialog
-tests/auto/mainwindow/tst_mainwindow
-tests/auto/profileinit/tst_profileinit
-tests/auto/userinfo/tst_userinfo
-tests/auto/locale/tst_locale
+# test binaries (the sources are tst_*.cpp)
+tests/auto/*/tst_*
+!tests/auto/*/tst_*.cpp
 tests/auto/locale/.qm/
 tests/auto/locale/qmake_qmake_qm_files.qrc
-tests/auto/passbackendfactory/tst_passbackendfactory
 **/*.gc*
 *.bak
 README.c*
@@ -69,11 +51,4 @@ opencode.json
 .opencode/package-lock.json
 .opencode/*.local.json
 .opencode/scheduled_tasks.lock
-tests/auto/grepsearchcontroller/tst_grepsearchcontroller
-tests/auto/passworddisplaypanel/tst_passworddisplaypanel
-tests/auto/passworddialog/tst_passworddialog
-tests/auto/base32/tst_base32
-tests/auto/totp/tst_totp
-tests/auto/imitatepass/tst_imitatepass
-tests/auto/singleapplication/tst_singleapplication
 flatpak/org.qtpass.QtPass.ci.yml

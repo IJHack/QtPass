@@ -108,6 +108,7 @@ SOURCES   += mainwindow.cpp \
              executor.cpp \
              simpletransaction.cpp \
              filecontent.cpp \
+             clipboardmanager.cpp \
              qtpass.cpp \
              profileinit.cpp
 
@@ -151,6 +152,7 @@ HEADERS   += mainwindow.h \
              filecontent.h \
              passwordconfiguration.h \
              userinfo.h \
+             clipboardmanager.h \
              qtpass.h \
              qtcompat.h \
              profileinit.h

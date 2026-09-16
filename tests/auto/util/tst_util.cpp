@@ -22,6 +22,7 @@
 #include <cstring>
 #endif
 
+#include "../../../src/clipboardmanager.h"
 #include "../../../src/enums.h"
 #include "../../../src/filecontent.h"
 #include "../../../src/imitatepass.h"
@@ -29,7 +30,6 @@
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/pathvalidator.h"
 #include "../../../src/qprogressindicator.h"
-#include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/simpletransaction.h"
 #include "../../../src/sshauthsock.h"

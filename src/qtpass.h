@@ -3,36 +3,18 @@
 #ifndef SRC_QTPASS_H_
 #define SRC_QTPASS_H_
 
+#include "clipboardmanager.h"
 #include <QDialog>
-#include <QMimeData>
 #include <QObject>
 #include <QPixmap>
-#include <QTimer>
 
 class MainWindow;
 class Pass;
 
 /**
- * @brief Build clipboard MIME data with platform-specific security hints.
- * @param text - Plain text to copy
- * @return QMimeData* - Ownership transferred to caller. Caller must delete
- *         or transfer to QClipboard::setMimeData which takes ownership.
- */
-auto buildClipboardMimeData(const QString &text) -> QMimeData *;
-
-/**
- * @brief Convert quint32 to byte array for Windows clipboard formats.
- * @param value - DWORD value
- * @return QByteArray with raw bytes
- */
-static inline auto dwordBytes(quint32 value) -> QByteArray {
-  return {reinterpret_cast<const char *>(&value), sizeof(value)};
-}
-
-/**
  * @class QtPass
- * @brief Orchestrates clipboard management, pass signal handling, and
- * application-level operations for the QtPass application.
+ * @brief Orchestrates pass signal handling and application-level operations
+ * for the QtPass application; owns the ClipboardManager.
  */
 class QtPass : public QObject {
   Q_OBJECT
@@ -55,21 +37,10 @@ public:
   auto init() -> bool;
 
   /**
-   * @brief Handle clipboard copying for a shown entry.
-   *
-   * In "always copy" mode (and only then) this copies @p text to the clipboard
-   * via copyTextToClipboard(), which also arms the autoclear timer and records
-   * the clipboard contents. In other modes it does nothing, leaving any pending
-   * autoclear tracking intact.
-   * @param text Password (or value) of the entry being shown.
-   * @param p_output Full decrypted output; copying is skipped when it is empty.
+   * @brief The clipboard handling for this application instance.
+   * @return The manager; lives as long as this object.
    */
-  void setClippedText(const QString &text, const QString &p_output = QString());
-
-  /**
-   * @brief Configure and start the clipboard-clear timer.
-   */
-  void setClipboardTimer();
+  auto clipboard() -> ClipboardManager & { return m_clipboard; }
 
   /**
    * @brief Return whether this instance is in a fresh-start state.
@@ -86,8 +57,7 @@ public:
 private:
   MainWindow *m_mainWindow;
 
-  QTimer clearClipboardTimer;
-  QString clippedText;
+  ClipboardManager m_clipboard;
   bool freshStart{true};
 
   void setMainWindow();
@@ -96,17 +66,6 @@ private:
 signals:
 
 public slots:
-  /**
-   * @brief Clear the system clipboard contents immediately.
-   */
-  void clearClipboard();
-
-  /**
-   * @brief Copy text into the system clipboard.
-   * @param text Text to copy.
-   */
-  void copyTextToClipboard(const QString &text);
-
   /**
    * @brief Request display of text as a QR code in the UI.
    * @param text Text to convert into a QR code.

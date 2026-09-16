@@ -134,14 +134,10 @@ modules:
       # the KDE SDK ships Qt 6 qmake as plain "qmake"
       - qmake PREFIX=/app CONFIG+=release qtpass.pro
       - make -j$FLATPAK_BUILDER_N_JOBS sub-src sub-main
+      # installs bin/qtpass, the desktop file, the metainfo and the hicolor
+      # icons under the upstream names; rename-desktop-file / rename-icon /
+      # rename-appdata-file rewrite them to the app id
       - make -C main install
-      # installed under the upstream names; rename-desktop-file / rename-icon
-      # rewrite them (and the metainfo launchable) to the app id
-      - install -Dm644 qtpass.desktop /app/share/applications/qtpass.desktop
-      - install -Dm644 artwork/qtpass-icon.svg /app/share/icons/hicolor/scalable/apps/qtpass-icon.svg
-      - install -Dm644 artwork/icon.png /app/share/icons/hicolor/512x512/apps/qtpass-icon.png
-      # same path qmake uses since 1.8.1; rename-appdata-file gives it the app id
-      - install -Dm644 qtpass.appdata.xml /app/share/metainfo/qtpass.appdata.xml
       # QtPassSettings::initExecutables() (and pass) look for "gpg2"; the runtime
       # ships "gpg". The wrapper also scrubs sandbox-only env before the host
       # gpg-agent sees it — see the comments in flatpak/gpg2.
@@ -149,42 +145,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/IJHack/QtPass.git
-        tag: v1.8.0
-        commit: 9816bf18d27179b4af2e3471c8e26e9af22d1885
+        tag: v1.8.1
+        commit: 1a389718013586bf21e3b6d603d437f57a055c88
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-      # v1.8.0 predates the Flatpak-ready metainfo, square icon and desktop-file
-      # name handling; overlay them from the repository until the next tag.
-      - type: file
-        path: ../qtpass.appdata.xml
-        dest-filename: qtpass.appdata.xml
-      - type: file
-        path: ../artwork/qtpass-icon.svg
-        dest: artwork
-        dest-filename: qtpass-icon.svg
-      - type: file
-        path: gpg2
-        dest: flatpak
-      - type: file
-        path: ../main/main.cpp
-        dest: main
-        dest-filename: main.cpp
-      - type: file
-        path: ../src/qtpasssettings.cpp
-        dest: src
-        dest-filename: qtpasssettings.cpp
-      # 1.8.1 backport of #1689/#1696 (first-run wizard cancel/re-ask): main.cpp
-      # above needs MainWindow::initSucceeded(), which v1.8.0 does not have.
-      - type: file
-        path: ../src/mainwindow.h
-        dest: src
-        dest-filename: mainwindow.h
-      - type: file
-        path: ../src/mainwindow.cpp
-        dest: src
-        dest-filename: mainwindow.cpp
-      - type: file
-        path: ../src/qtpass.cpp
-        dest: src
-        dest-filename: qtpass.cpp

@@ -6,13 +6,11 @@
 #include "settingsconstants.h"
 #include "util.h"
 #include <QApplication>
-#include <QClipboard>
 #include <QDialog>
 #include <QLabel>
 #include <QPixmap>
 #include <QVBoxLayout>
 
-#include <QMimeData>
 #include <utility>
 
 #ifdef QT_DEBUG
@@ -24,14 +22,11 @@
  * @param mainWindow The main window reference
  */
 QtPass::QtPass(MainWindow *mainWindow)
-    : QObject(mainWindow), m_mainWindow(mainWindow) {
-  setClipboardTimer();
-  clearClipboardTimer.setSingleShot(true);
-  connect(&clearClipboardTimer, &QTimer::timeout, this,
-          &QtPass::clearClipboard);
-
-  QObject::connect(QApplication::instance(), &QApplication::aboutToQuit, this,
-                   &QtPass::clearClipboard);
+    : QObject(mainWindow), m_mainWindow(mainWindow), m_clipboard(this) {
+  connect(&m_clipboard, &ClipboardManager::statusMessage, m_mainWindow,
+          [this](const QString &message) {
+            m_mainWindow->showStatusMessage(message);
+          });
 
   setMainWindow();
 }
@@ -296,103 +291,6 @@ void QtPass::showInTextBrowser(QString output, const QString &prefix,
 void QtPass::doGitPush() {
   if (QtPassSettings::isAutoPush()) {
     m_mainWindow->onPush();
-  }
-}
-
-/**
- * @brief Sets the text to be stored in clipboard and handles clipboard
- * operations.
- * @param password The password or text to store
- * @param p_output Additional output text
- */
-void QtPass::setClippedText(const QString &password, const QString &p_output) {
-  const AppSettings s = QtPassSettings::load();
-  // Only "always copy" mode actually places text on the clipboard here; in
-  // on-demand mode the copy happens later from the field's copy button.
-  // Crucially, do not touch clippedText otherwise — it tracks what is currently
-  // on the clipboard so the autoclear timer knows what to clear. Overwriting it
-  // when merely showing another entry left a previously copied password on the
-  // clipboard past its autoclear window (copyTextToClipboard sets it).
-  if (s.clipBoardType == Enums::CLIPBOARD_ALWAYS && !p_output.isEmpty()) {
-    copyTextToClipboard(password);
-  }
-}
-
-/**
- * @brief Sets the clipboard clear timer based on autoclear settings.
- */
-void QtPass::setClipboardTimer() {
-  clearClipboardTimer.setInterval(MS_PER_SECOND *
-                                  QtPassSettings::getAutoclearSeconds());
-}
-
-/**
- * @brief MainWindow::clearClipboard remove clipboard contents.
- */
-void QtPass::clearClipboard() {
-  QClipboard *clipboard = QApplication::clipboard();
-  bool cleared = false;
-  if (this->clippedText == clipboard->text(QClipboard::Selection)) {
-    clipboard->clear(QClipboard::Selection);
-    clipboard->setText(QString(""), QClipboard::Selection);
-    cleared = true;
-  }
-  if (this->clippedText == clipboard->text(QClipboard::Clipboard)) {
-    clipboard->clear(QClipboard::Clipboard);
-    cleared = true;
-  }
-  if (cleared) {
-    m_mainWindow->showStatusMessage(tr("Clipboard cleared"));
-  } else {
-    m_mainWindow->showStatusMessage(tr("Clipboard not cleared"));
-  }
-
-  clippedText.clear();
-}
-
-/**
- * @brief Build clipboard MIME data with platform-specific security hints.
- * @param text - Plain text to copy
- * @return QMimeData with text and security hints
- */
-auto buildClipboardMimeData(const QString &text) -> QMimeData * {
-  auto *mimeData = new QMimeData();
-  mimeData->setText(text);
-#ifdef Q_OS_LINUX
-  mimeData->setData("x-kde-passwordManagerHint", QByteArray("secret"));
-#endif
-#ifdef Q_OS_MAC
-  mimeData->setData("application/x-nspasteboard-concealed-type", QByteArray());
-#endif
-#ifdef Q_OS_WIN
-  mimeData->setData("ExcludeClipboardContentFromMonitorProcessing",
-                    dwordBytes(1));
-  mimeData->setData("CanIncludeInClipboardHistory", dwordBytes(0));
-  mimeData->setData("CanUploadToCloudClipboard", dwordBytes(0));
-#endif
-  return mimeData;
-}
-
-/**
- * @brief MainWindow::copyTextToClipboard copies text to your clipboard
- * @param text
- */
-void QtPass::copyTextToClipboard(const QString &text) {
-  const AppSettings s = QtPassSettings::load();
-  QClipboard *clip = QApplication::clipboard();
-
-  QClipboard::Mode mode = QClipboard::Clipboard;
-  if (s.useSelection && clip->supportsSelection()) {
-    mode = QClipboard::Selection;
-  }
-
-  auto *mimeData = buildClipboardMimeData(text);
-  clip->setMimeData(mimeData, mode);
-
-  clippedText = text;
-  m_mainWindow->showStatusMessage(tr("Copied to clipboard"));
-  if (s.useAutoclear) {
-    clearClipboardTimer.start();
   }
 }
 
