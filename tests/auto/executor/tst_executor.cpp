@@ -669,10 +669,10 @@ void tst_executor::executeAsyncNonUtf8OutputIsNotDropped() {
   Executor exec;
   QSignalSpy spy(&exec, &Executor::finished);
   // \351 is 'é' in Latin-1 and an invalid lead byte in UTF-8.
-  exec.execute(1, sh, {"-c", "printf 'caf\\351'"}, true, false);
+  exec.execute(1, sh, {"-c", "printf 'abc\\351'"}, true, false);
   QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
   const QString out = spy.first().at(2).toString();
-  QVERIFY2(out.startsWith(QStringLiteral("caf")),
+  QVERIFY2(out.startsWith(QStringLiteral("abc")),
            qPrintable("the valid prefix must survive: " + out));
   QCOMPARE(out.size(), 4); // one character for the odd byte, not nothing
 }
