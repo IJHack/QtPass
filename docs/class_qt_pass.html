@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!--header-->
 <div class="contents">
 
-<p>Orchestrates clipboard management, pass signal handling, and application-level operations for the <a class="el" href="class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application-level operations for the QtP...">QtPass</a> application.  
+<p>Orchestrates pass signal handling and application-level operations for the <a class="el" href="class_qt_pass.html" title="Orchestrates pass signal handling and application-level operations for the QtPass application; owns t...">QtPass</a> application; owns the <a class="el" href="class_clipboard_manager.html" title="Puts secrets on the system clipboard and takes them off again.">ClipboardManager</a>.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="qtpass_8h_source.html">qtpass.h</a>&gt;</code></p>
@@ -129,28 +129,20 @@ document.addEventListener('DOMContentLoaded', () => {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a3febdf740ba4d78a4149d7d7c3b9284e" id="r_a3febdf740ba4d78a4149d7d7c3b9284e"><td class="memItemLeft"><a id="a3febdf740ba4d78a4149d7d7c3b9284e" name="a3febdf740ba4d78a4149d7d7c3b9284e"></a>
-void&#160;</td><td class="memItemRight"><b>clearClipboard</b> ()</td></tr>
-<tr class="memdesc:a3febdf740ba4d78a4149d7d7c3b9284e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the system clipboard contents immediately. <br /></td></tr>
-<tr class="memitem:acba134fb5281aedee11899a03976aa95" id="r_acba134fb5281aedee11899a03976aa95"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acba134fb5281aedee11899a03976aa95">copyTextToClipboard</a> (const QString &amp;text)</td></tr>
-<tr class="memdesc:acba134fb5281aedee11899a03976aa95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy text into the system clipboard.  <br /></td></tr>
 <tr class="memitem:aef5aaf0605c7681967995ede486590ef" id="r_aef5aaf0605c7681967995ede486590ef"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aef5aaf0605c7681967995ede486590ef">showTextAsQRCode</a> (const QString &amp;text)</td></tr>
 <tr class="memdesc:aef5aaf0605c7681967995ede486590ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request display of text as a QR code in the UI.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa9f6862ff8875c387423b462ac7f9cad" id="r_aa9f6862ff8875c387423b462ac7f9cad"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa9f6862ff8875c387423b462ac7f9cad">QtPass</a> (<a class="el" href="class_main_window.html">MainWindow</a> *mainWindow)</td></tr>
-<tr class="memdesc:aa9f6862ff8875c387423b462ac7f9cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application-level operations for the QtP...">QtPass</a> instance associated with the given main window.  <br /></td></tr>
+<tr class="memdesc:aa9f6862ff8875c387423b462ac7f9cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_qt_pass.html" title="Orchestrates pass signal handling and application-level operations for the QtPass application; owns t...">QtPass</a> instance associated with the given main window.  <br /></td></tr>
 <tr class="memitem:adfa404cc09dade6c0b025d7dc1b240a5" id="r_adfa404cc09dade6c0b025d7dc1b240a5"><td class="memItemLeft"><a id="adfa404cc09dade6c0b025d7dc1b240a5" name="adfa404cc09dade6c0b025d7dc1b240a5"></a>
 &#160;</td><td class="memItemRight"><b>~QtPass</b> () override</td></tr>
-<tr class="memdesc:adfa404cc09dade6c0b025d7dc1b240a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application-level operations for the QtP...">QtPass</a> instance and clean up signal connections. <br /></td></tr>
+<tr class="memdesc:adfa404cc09dade6c0b025d7dc1b240a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_qt_pass.html" title="Orchestrates pass signal handling and application-level operations for the QtPass application; owns t...">QtPass</a> instance and clean up signal connections. <br /></td></tr>
 <tr class="memitem:ad0a4d7627e6303e412d4a832a8bad77c" id="r_ad0a4d7627e6303e412d4a832a8bad77c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad0a4d7627e6303e412d4a832a8bad77c">init</a> () -&gt; bool</td></tr>
 <tr class="memdesc:ad0a4d7627e6303e412d4a832a8bad77c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize internal state and signal connections.  <br /></td></tr>
-<tr class="memitem:a34a92aa7506eb436628c7c7ff6bfc489" id="r_a34a92aa7506eb436628c7c7ff6bfc489"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a34a92aa7506eb436628c7c7ff6bfc489">setClippedText</a> (const QString &amp;text, const QString &amp;p_output=QString())</td></tr>
-<tr class="memdesc:a34a92aa7506eb436628c7c7ff6bfc489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle clipboard copying for a shown entry.  <br /></td></tr>
-<tr class="memitem:a24eb2c0a19143db0ba3a741c66881be6" id="r_a24eb2c0a19143db0ba3a741c66881be6"><td class="memItemLeft"><a id="a24eb2c0a19143db0ba3a741c66881be6" name="a24eb2c0a19143db0ba3a741c66881be6"></a>
-void&#160;</td><td class="memItemRight"><b>setClipboardTimer</b> ()</td></tr>
-<tr class="memdesc:a24eb2c0a19143db0ba3a741c66881be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure and start the clipboard-clear timer. <br /></td></tr>
+<tr class="memitem:aa1918767cdefea447f1c90272fd95966" id="r_aa1918767cdefea447f1c90272fd95966"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa1918767cdefea447f1c90272fd95966">clipboard</a> () -&gt; <a class="el" href="class_clipboard_manager.html">ClipboardManager</a> &amp;</td></tr>
+<tr class="memdesc:aa1918767cdefea447f1c90272fd95966"><td class="mdescLeft">&#160;</td><td class="mdescRight">The clipboard handling for this application instance.  <br /></td></tr>
 <tr class="memitem:a2ac40a69378a7085bebc633984ae6a57" id="r_a2ac40a69378a7085bebc633984ae6a57"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2ac40a69378a7085bebc633984ae6a57">isFreshStart</a> () -&gt; bool</td></tr>
 <tr class="memdesc:a2ac40a69378a7085bebc633984ae6a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether this instance is in a fresh-start state.  <br /></td></tr>
 <tr class="memitem:a5b63b7418723b400f0db2afa450f1199" id="r_a5b63b7418723b400f0db2afa450f1199"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5b63b7418723b400f0db2afa450f1199">setFreshStart</a> (const bool &amp;fs)</td></tr>
@@ -162,9 +154,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a87eca9145118d654cf0e87fe3f2b7a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a modal dialog configured to display the given QR code.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Orchestrates clipboard management, pass signal handling, and application-level operations for the <a class="el" href="class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application-level operations for the QtP...">QtPass</a> application. </p>
+<div class="textblock"><p>Orchestrates pass signal handling and application-level operations for the <a class="el" href="class_qt_pass.html" title="Orchestrates pass signal handling and application-level operations for the QtPass application; owns t...">QtPass</a> application; owns the <a class="el" href="class_clipboard_manager.html" title="Puts secrets on the system clipboard and takes them off again.">ClipboardManager</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00037">37</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00019">19</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa9f6862ff8875c387423b462ac7f9cad" name="aa9f6862ff8875c387423b462ac7f9cad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9f6862ff8875c387423b462ac7f9cad">&#9670;&#160;</a></span>QtPass()</h2>
@@ -189,7 +181,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a <a class="el" href="class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application-level operations for the QtP...">QtPass</a> instance associated with the given main window. </p>
+<p>Construct a <a class="el" href="class_qt_pass.html" title="Orchestrates pass signal handling and application-level operations for the QtPass application; owns t...">QtPass</a> instance associated with the given main window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mainWindow</td><td>Pointer to the application's <a class="el" href="class_main_window.html" title="Main application window orchestrating UI, user interactions, and external process handlers.">MainWindow</a>. </td></tr>
@@ -200,8 +192,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="acba134fb5281aedee11899a03976aa95" name="acba134fb5281aedee11899a03976aa95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acba134fb5281aedee11899a03976aa95">&#9670;&#160;</a></span>copyTextToClipboard</h2>
+<a id="aa1918767cdefea447f1c90272fd95966" name="aa1918767cdefea447f1c90272fd95966"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1918767cdefea447f1c90272fd95966">&#9670;&#160;</a></span>clipboard()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,26 +202,23 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void QtPass::copyTextToClipboard </td>
+          <td class="memname">auto QtPass::clipboard </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="class_clipboard_manager.html">ClipboardManager</a> &amp;</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Copy text into the system clipboard. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">text</td><td>Text to copy. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>The clipboard handling for this application instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>The manager; lives as long as this object. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00043">43</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 
 </div>
 </div>
@@ -313,37 +302,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Return whether this instance is in a fresh-start state. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if in fresh-start state. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00078">78</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
-
-</div>
-</div>
-<a id="a34a92aa7506eb436628c7c7ff6bfc489" name="a34a92aa7506eb436628c7c7ff6bfc489"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34a92aa7506eb436628c7c7ff6bfc489">&#9670;&#160;</a></span>setClippedText()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QtPass::setClippedText </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>p_output</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Handle clipboard copying for a shown entry. </p>
-<p>In "always copy" mode (and only then) this copies <code class="param">text</code> to the clipboard via <a class="el" href="#acba134fb5281aedee11899a03976aa95" title="Copy text into the system clipboard.">copyTextToClipboard()</a>, which also arms the autoclear timer and records the clipboard contents. In other modes it does nothing, leaving any pending autoclear tracking intact. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">text</td><td>Password (or value) of the entry being shown. </td></tr>
-    <tr><td class="paramname">p_output</td><td>Full decrypted output; copying is skipped when it is empty. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00049">49</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 
 </div>
 </div>
@@ -378,7 +337,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00084">84</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00055">55</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 
 </div>
 </div>
