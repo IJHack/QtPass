@@ -7,6 +7,7 @@
 
 #include <QDialog>
 #include <QPointer>
+#include <QScopedPointer>
 
 namespace Ui {
 class PasswordDialog;
@@ -164,7 +165,7 @@ private:
    */
   void normalizeOtpField();
 
-  Ui::PasswordDialog *ui;
+  QScopedPointer<Ui::PasswordDialog> ui;
   PasswordConfiguration m_passConfig;
   Pass *m_pass{nullptr};
   QStringList m_fields;

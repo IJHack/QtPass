@@ -52,7 +52,7 @@ KeygenDialog::KeygenDialog(const QString &gpgExe, ConfigDialog *parent)
 /**
  * @brief KeygenDialog::~KeygenDialog even more basic destructor.
  */
-KeygenDialog::~KeygenDialog() { delete ui; }
+KeygenDialog::~KeygenDialog() = default;
 
 /**
  * @brief KeygenDialog::on_passphrase1_textChanged only allow OK once both

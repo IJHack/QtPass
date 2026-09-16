@@ -4,6 +4,7 @@
 #define SRC_EXPORTPUBLICKEYDIALOG_H_
 
 #include <QDialog>
+#include <QScopedPointer>
 #include <QString>
 
 namespace Ui {
@@ -54,7 +55,7 @@ private slots:
   void on_saveButton_clicked();
 
 private:
-  Ui::ExportPublicKeyDialog *ui;
+  QScopedPointer<Ui::ExportPublicKeyDialog> ui;
   QString m_keyId;
   QString m_copyButtonOriginalText;
 };

@@ -164,7 +164,7 @@ void UsersDialog::loadRecipients() {
 /**
  * @brief UsersDialog::~UsersDialog basic destructor.
  */
-UsersDialog::~UsersDialog() { delete ui; }
+UsersDialog::~UsersDialog() = default;
 
 /**
  * @brief UsersDialog::accept

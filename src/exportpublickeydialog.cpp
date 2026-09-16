@@ -35,7 +35,7 @@ ExportPublicKeyDialog::ExportPublicKeyDialog(const QString &keyId,
 /**
  * @brief ExportPublicKeyDialog::~ExportPublicKeyDialog basic destructor.
  */
-ExportPublicKeyDialog::~ExportPublicKeyDialog() { delete ui; }
+ExportPublicKeyDialog::~ExportPublicKeyDialog() = default;
 
 /**
  * @brief ExportPublicKeyDialog::sanitizeKeyIdForFilename keep only the

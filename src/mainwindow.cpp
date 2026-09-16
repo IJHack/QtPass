@@ -482,13 +482,25 @@ void MainWindow::applyTextBrowserSettings() {
 }
 
 void MainWindow::applyWindowFlagsSettings() {
-  if (QtPassSettings::isAlwaysOnTop()) {
-    Qt::WindowFlags flags = windowFlags();
-    this->setWindowFlags(flags | Qt::WindowStaysOnTopHint);
-  } else {
-    this->setWindowFlags(Qt::Window);
+  const bool wantOnTop = QtPassSettings::isAlwaysOnTop();
+  const Qt::WindowFlags flags = windowFlags();
+  if (flags.testFlag(Qt::WindowStaysOnTopHint) == wantOnTop) {
+    // Nothing to change. setWindowFlags() on a top-level widget rebuilds the
+    // native window (setParent(nullptr, flags)), which used to happen on every
+    // Settings OK because the "off" branch never compared equal — the same
+    // teardown that left ui->lineEdit dangling (see focusInput()).
+    return;
   }
-  this->show();
+  // Toggle just the one hint; the old "off" branch reset to Qt::Window and
+  // discarded every other flag with it.
+  const bool wasVisible = isVisible();
+  setWindowFlags(wantOnTop ? (flags | Qt::WindowStaysOnTopHint)
+                           : (flags & ~Qt::WindowStaysOnTopHint));
+  // setWindowFlags() hides a shown window; a window that was not shown yet
+  // (first-run wizard from the constructor) is left to its normal show.
+  if (wasVisible) {
+    show();
+  }
 }
 
 /**
@@ -505,8 +517,8 @@ void MainWindow::applyWindowFlagsSettings() {
  * asking until the configuration is usable or this returns false.
  */
 auto MainWindow::config() -> bool {
-  QScopedPointer<ConfigDialog> d(new ConfigDialog(this));
-  d->setModal(true);
+  ConfigDialog d(this);
+  d.setModal(true);
   // Automatically default to pass if it's available
   if (m_qtPass->isFreshStart() &&
       QFile(QtPassSettings::getPassExecutable()).exists()) {
@@ -514,9 +526,9 @@ auto MainWindow::config() -> bool {
   }
 
   if (m_qtPass->isFreshStart()) {
-    d->wizard(); // run initial setup wizard for first-time configuration
+    d.wizard(); // run initial setup wizard for first-time configuration
   }
-  if (d->exec() != QDialog::Accepted) {
+  if (d.exec() != QDialog::Accepted) {
     return false;
   }
 
@@ -868,11 +880,7 @@ void MainWindow::restoreWindow() {
     showMaximized();
   }
 
-  if (s.alwaysOnTop) {
-    Qt::WindowFlags flags = windowFlags();
-    setWindowFlags(flags | Qt::WindowStaysOnTopHint);
-    show();
-  }
+  applyWindowFlagsSettings();
 
   if (s.useTrayIcon && m_tray == nullptr) {
     initTrayIcon();
