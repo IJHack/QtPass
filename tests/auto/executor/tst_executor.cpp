@@ -511,9 +511,10 @@ void tst_executor::executeAsyncEmptyExecutableEmitsErrorAndContinues() {
 }
 
 void tst_executor::executeAsyncCrashExitReportsNonZeroCode() {
-  // A signal-killed process is reported by QProcess as CrashExit with an exit
-  // code equal to the signal number (never 0), so it routes through the
-  // non-zero error gate instead of being mistaken for a successful run.
+  // A signal-killed process is reported by QProcess as CrashExit with an
+  // undefined exit code (the signal number on Unix); Executor reports it as
+  // -1 so Pass::finished never mistakes it for success or for grep's
+  // exit-code-1 "no matches".
   const QString sh = QStandardPaths::findExecutable("sh");
   if (sh.isEmpty())
     QSKIP("sh not found in PATH");
@@ -522,8 +523,7 @@ void tst_executor::executeAsyncCrashExitReportsNonZeroCode() {
   QVERIFY2(errorSpy.isValid(), "spy must connect to Executor::error signal");
   exec.execute(2, sh, {"-c", "kill -SEGV $$"}, true, true);
   QTRY_COMPARE_WITH_TIMEOUT(errorSpy.count(), 1, 5000);
-  QVERIFY2(errorSpy.first().at(1).toInt() != 0,
-           "a crashed process must report a non-zero exit code");
+  QCOMPARE(errorSpy.first().at(1).toInt(), -1);
   // sh dies without writing anything, so the message has to come from us.
   const QString err = errorSpy.first().at(3).toString();
   QVERIFY2(
