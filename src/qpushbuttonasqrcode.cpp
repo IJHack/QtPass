@@ -16,6 +16,9 @@ QPushButtonAsQRCode::QPushButtonAsQRCode(QString textToCopy, QWidget *parent)
     : QPushButton(parent), textToCopy(std::move(textToCopy)),
       iconEdit(QIcon::fromTheme("qrcode", QIcon(":/icons/qrcode.svg"))) {
   setIcon(iconEdit);
+  // Icon-only: give screen readers and hovering users a name.
+  setToolTip(tr("Show as QR code"));
+  setAccessibleName(tr("Show as QR code"));
   setForegroundRole(QPalette::ButtonText);
   connect(this, &QPushButton::clicked, this,
           &QPushButtonAsQRCode::buttonClicked);

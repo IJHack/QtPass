@@ -18,6 +18,9 @@ QPushButtonShowPassword::QPushButtonShowPassword(QLineEdit *line,
       iconEditPushed(
           QIcon::fromTheme("view-hidden", QIcon(":/icons/hide.svg"))) {
   setIcon(iconEdit);
+  // Icon-only: give screen readers and hovering users a name.
+  setToolTip(tr("Show password"));
+  setAccessibleName(tr("Show password"));
   setForegroundRole(QPalette::ButtonText);
   connect(this, &QPushButton::clicked, this,
           &QPushButtonShowPassword::buttonClicked);
@@ -32,8 +35,12 @@ void QPushButtonShowPassword::buttonClicked(bool /*unused*/) {
   if (this->line->echoMode() == QLineEdit::Password) {
     this->line->setEchoMode(QLineEdit::Normal);
     setIcon(iconEditPushed);
+    setToolTip(tr("Hide password"));
+    setAccessibleName(tr("Hide password"));
   } else {
     this->line->setEchoMode(QLineEdit::Password);
     setIcon(iconEdit);
+    setToolTip(tr("Show password"));
+    setAccessibleName(tr("Show password"));
   }
 }
