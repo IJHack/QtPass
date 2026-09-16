@@ -127,13 +127,35 @@ day tends to stay unsubmitted (the FreeBSD port sat on 1.4.0 from 2023 to
 2026). Submit each update, or open a tracking issue for it, before
 announcing the release:
 
-#### FreeBSD `sysutils/qtpass`
+#### FreeBSD `sysutils/qtpass` (and OpenBSD `security/qtpass`)
 
 - Where: [Bugzilla](https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages),
   component "Individual Port(s)", summary `sysutils/qtpass: Update to X.Y.Z`.
 - How: bump `DISTVERSION`, run `make makesum`, attach the diff with the
   `maintainer-approval+` flag (we are the maintainer, so no approval wait).
-- Test in a FreeBSD VM: `make stage check-plist stage-qa` and `portlint -AC`.
+  Since 1.8.1 the port lists the desktop file, metainfo and hicolor icons
+  that `make install` produces; 2.0 adds `share/man/man1/qtpass.1.gz`.
+- Test before filing, in the port test bed:
+  [annejan/qtpass-freebsd-port-test](https://github.com/annejan/qtpass-freebsd-port-test).
+  Commit the diff as `patches/qtpass-X.Y.Z.patch` and push, or dispatch
+  _sysutils/qtpass port test_ by hand with the patch path and a ports branch
+  (`main`, `2026Q3`, ...); leave `run_suite` at its default of `true`, the
+  `make check` step below only runs with it. It applies the patch to a fresh
+  ports tree in a FreeBSD VM and runs what a committer runs: `portlint -AC`, `make checksum`
+  (and `makesum` must reproduce `distinfo`), `stage`, `check-plist`,
+  `stage-qa`, `package` + `pkg add`, `ldd`, and QtPass's own `make check`
+  offscreen — on 14.5 amd64, 15.1 amd64 and 14.5 aarch64. A second job runs
+  `poudriere testport` in clean jails (14.5, 15.1, native i386), which is the
+  one that catches a missing `*_DEPENDS`: the first job pre-installs the
+  dependencies with `pkg` and would not notice. Wait for green on all of it,
+  then attach the patch to Bugzilla; the repository's readme tracks which
+  patch became which commit.
+- OpenBSD is not ours (maintainer Stefan Hagen, `security/qtpass`), but the
+  same test bed has a third job for it: a diff against ports `-current` in
+  `patches/openbsd/` is run through `portcheck`, `makesum`, `build`, `fake`,
+  `update-plist`, `port-lib-depends-check`, `package` and `install` on an
+  OpenBSD VM. Send a tested diff to `ports@openbsd.org` with the maintainer
+  in Cc; do not expect to commit it.
 
 #### MacPorts `aqua/QtPass`
 
