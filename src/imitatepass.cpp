@@ -226,7 +226,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   }
   args.append("-");
   executeGpg(PASS_INSERT, args, newValue);
-  if (!m_settings.useWebDav && gitReady()) {
+  if (gitReady()) {
     // Git is used when enabled - this is the standard pass workflow
     if (!overwrite) {
       executeGit(GIT_ADD, {"add", pgit(file)});
@@ -503,7 +503,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     }
   }
 
-  const bool useGit = !m_settings.useWebDav && gitReady();
+  const bool useGit = gitReady();
   QString gpgIdFile = path + ".gpg-id";
   bool addFile = false;
   if (m_settings.addGPGId && useGit) {
@@ -756,7 +756,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   // Success - remove backup
   QFile::remove(backupPath);
 
-  if (!m_settings.useWebDav && gitConfigured()) {
+  if (gitConfigured()) {
     // -C the store so git runs there rather than in QtPass's launch directory
     // (executeBlocking sets no working directory).
     const QString store = pgit(m_settings.passStore);

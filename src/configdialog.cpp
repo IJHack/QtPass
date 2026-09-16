@@ -159,7 +159,7 @@ void ConfigDialog::applySettings(const AppSettings &settings) {
 
 auto ConfigDialog::readSettings() -> AppSettings {
   // Start from the persisted settings so keys this dialog does not own
-  // (window geometry, WebDAV, profiles, etc.) survive the save.
+  // (window geometry, profiles, etc.) survive the save.
   AppSettings settings = QtPassSettings::load();
 
   settings.passExecutable = ui->passPath->text();

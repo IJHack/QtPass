@@ -195,7 +195,7 @@ private:
    * @brief Build an AppSettings struct from the dialog's widgets.
    *
    * Starts from the currently persisted settings and overwrites only the
-   * fields this dialog owns, so unrelated keys (window geometry, WebDAV,
+   * fields this dialog owns, so unrelated keys (window geometry,
    * profiles, etc.) are preserved on save.
    * @return Settings reflecting the dialog state.
    */

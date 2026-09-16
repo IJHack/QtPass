@@ -102,10 +102,6 @@ auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
   s.useOtp = qs.value(SettingsConstants::useOtp, true).toBool();
   s.useQrencode = qs.value(SettingsConstants::useQrencode, false).toBool();
   s.usePwgen = qs.value(SettingsConstants::usePwgen, false).toBool();
-  s.useWebDav = qs.value(SettingsConstants::useWebDav, false).toBool();
-  s.webDavUrl = qs.value(SettingsConstants::webDavUrl).toString();
-  s.webDavUser = qs.value(SettingsConstants::webDavUser).toString();
-  s.webDavPassword = qs.value(SettingsConstants::webDavPassword).toString();
   s.autoPull = qs.value(SettingsConstants::autoPull, false).toBool();
   s.autoPush = qs.value(SettingsConstants::autoPush, false).toBool();
   s.showProcessOutput =
@@ -182,10 +178,13 @@ void SettingsSerializer::save(QSettings &qs, const AppSettings &s) {
   qs.setValue(SettingsConstants::useOtp, s.useOtp);
   qs.setValue(SettingsConstants::useQrencode, s.useQrencode);
   qs.setValue(SettingsConstants::usePwgen, s.usePwgen);
-  qs.setValue(SettingsConstants::useWebDav, s.useWebDav);
-  qs.setValue(SettingsConstants::webDavUrl, s.webDavUrl);
-  qs.setValue(SettingsConstants::webDavUser, s.webDavUser);
-  qs.setValue(SettingsConstants::webDavPassword, s.webDavPassword);
+  // The WebDAV mount was removed in 2.0; drop its keys, including the
+  // plaintext webDavPassword, from configurations written by older versions.
+  for (const auto &obsolete :
+       {QStringLiteral("useWebDav"), QStringLiteral("webDavUrl"),
+        QStringLiteral("webDavUser"), QStringLiteral("webDavPassword")}) {
+    qs.remove(obsolete);
+  }
   qs.setValue(SettingsConstants::autoPull, s.autoPull);
   qs.setValue(SettingsConstants::autoPush, s.autoPush);
   qs.setValue(SettingsConstants::showProcessOutput, s.showProcessOutput);

@@ -58,7 +58,6 @@ description:
       - Configurable shoulder surfing protection options
       - Easy onboarding for new users
       - Multiple profiles support
-      - Experimental WebDAV support
       - OTP (One-Time Password) support
       - Password generation with configurable complexity
       - Git integration for version control

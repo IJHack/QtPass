@@ -12,19 +12,8 @@
 #include <QPixmap>
 #include <QVBoxLayout>
 
-#ifndef Q_OS_WIN
-#include <QInputDialog>
-#include <QLineEdit>
 #include <QMimeData>
 #include <utility>
-#else
-#define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
-#define WIN32_EXTRA_LEAN
-#include <windows.h>
-#include <winnetwk.h>
-#undef DELETE
-#include <QMimeData>
-#endif
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -49,18 +38,7 @@ QtPass::QtPass(MainWindow *mainWindow) : m_mainWindow(mainWindow) {
 /**
  * @brief QtPass::~QtPass destroy!
  */
-QtPass::~QtPass() {
-#ifdef Q_OS_WIN
-  const AppSettings s = QtPassSettings::load();
-  if (s.useWebDav)
-    WNetCancelConnection2A(s.passStore.toUtf8().constData(), 0, 1);
-#else
-  if (fusedav.state() == QProcess::Running) {
-    fusedav.terminate();
-    fusedav.waitForFinished(2000);
-  }
-#endif
-}
+QtPass::~QtPass() = default;
 
 /**
  * @brief QtPass::init make sure we are ready to go as soon as
@@ -131,12 +109,6 @@ auto QtPass::init() -> bool {
     }
   }
 
-  // Note: WebDAV mount needs to happen before accessing the store,
-  // but ideally should be done after Window is shown to avoid long delay.
-  if (QtPassSettings::isUseWebDav()) {
-    mountWebDav();
-  }
-
   freshStart = false;
   return true;
 }
@@ -146,8 +118,6 @@ auto QtPass::init() -> bool {
  */
 void QtPass::setMainWindow() {
   m_mainWindow->restoreWindow();
-
-  fusedav.setParent(m_mainWindow);
 
   // Signal handlers are connected for both pass implementations
   // Note: When pass binary changes, QtPass restart is required to reconnect
@@ -212,79 +182,6 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::finishedGenerateGPGKeys, this,
           &QtPass::onKeyGenerationComplete);
   connect(pass, &Pass::finishedGrep, m_mainWindow, &MainWindow::onGrepFinished);
-}
-
-/**
- * @brief QtPass::mountWebDav is some scary voodoo magic
- */
-void QtPass::mountWebDav() {
-  const AppSettings s = QtPassSettings::load();
-#ifdef Q_OS_WIN
-  char dst[20] = {0};
-  NETRESOURCEA netres;
-  memset(&netres, 0, sizeof(netres));
-  netres.dwType = RESOURCETYPE_DISK;
-  netres.lpLocalName = nullptr;
-  // Store QByteArray in variables to ensure lifetime during WNetUseConnectionA
-  // call
-  QByteArray webDavUrlUtf8 = s.webDavUrl.toUtf8();
-  QByteArray webDavPasswordUtf8 = s.webDavPassword.toUtf8();
-  QByteArray webDavUserUtf8 = s.webDavUser.toUtf8();
-  netres.lpRemoteName = const_cast<char *>(webDavUrlUtf8.constData());
-  DWORD size = sizeof(dst);
-  DWORD r = WNetUseConnectionA(
-      reinterpret_cast<HWND>(m_mainWindow->effectiveWinId()), &netres,
-      const_cast<char *>(webDavPasswordUtf8.constData()),
-      const_cast<char *>(webDavUserUtf8.constData()),
-      CONNECT_TEMPORARY | CONNECT_INTERACTIVE | CONNECT_REDIRECT, dst, &size,
-      0);
-  if (r == NO_ERROR) {
-    QtPassSettings::setPassStore(dst);
-  } else {
-    char message[256] = {0};
-    FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM, 0, r, 0, message,
-                   sizeof(message), 0);
-    m_mainWindow->flashText(tr("Failed to connect WebDAV:\n") + message +
-                                " (0x" + QString::number(r, 16) + ")",
-                            true);
-  }
-#else
-  fusedav.start("fusedav", QStringList()
-                               << "-o"
-                               << "nonempty"
-                               << "-u"
-                               << "\"" + s.webDavUser + "\"" << s.webDavUrl
-                               << "\"" + s.passStore + "\"");
-  fusedav.waitForStarted();
-  if (fusedav.state() == QProcess::Running) {
-    QString pwd = s.webDavPassword;
-    bool ok = true;
-    if (pwd.isEmpty()) {
-      pwd = QInputDialog::getText(m_mainWindow, tr("QtPass WebDAV password"),
-                                  tr("Enter password to connect to WebDAV:"),
-                                  QLineEdit::Password, "", &ok);
-    }
-    if (ok && !pwd.isEmpty()) {
-      fusedav.write(pwd.toUtf8() + '\n');
-      fusedav.closeWriteChannel();
-      fusedav.waitForFinished(2000);
-    } else {
-      fusedav.terminate();
-    }
-  }
-  QString error = fusedav.readAllStandardError();
-  qsizetype prompt = error.indexOf("Password:");
-  if (prompt >= 0) {
-    error.remove(0, prompt + 10);
-  }
-  if (fusedav.state() != QProcess::Running) {
-    error = tr("fusedav exited unexpectedly\n") + error;
-  }
-  if (error.size() > 0) {
-    m_mainWindow->flashText(
-        tr("Failed to start fusedav to connect WebDAV:\n") + error, true);
-  }
-#endif
 }
 
 /**

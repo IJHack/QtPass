@@ -37,7 +37,6 @@ _Available in over 60 languages_
 - Share submenu: re-encrypt folder, export your public key, add recipients
 - Import GPG keys from file or clipboard without leaving the app
 - Process output panel with command labels, color-coded errors, and auto-scroll
-- Experimental WebDAV support
 - Easy onboarding for new users
 
 Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/File:Heart-padlock.svg).
@@ -177,11 +176,6 @@ attack I can think of at least two options:
   Or if it just provides a counter for decrypted data you could at least notice
   an attack afterwards, though at quite some effort on your part.
 - Use a different smartcard for each (group of) key.
-- If using a YubiKey or U2F module or similar that requires a "button" press for
-  other authentication methods you can use one OTP/U2F enabled WebDAV account per
-  password (or groups of passwords) as a quite inconvenient workaround.
-  Unfortunately I do not know of any WebDAV service with OTP support except ownCloud
-  (so you would have to run your own server).
 
 ## Known issues
 

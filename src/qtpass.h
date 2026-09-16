@@ -7,7 +7,6 @@
 #include <QMimeData>
 #include <QObject>
 #include <QPixmap>
-#include <QProcess>
 #include <QTimer>
 
 class MainWindow;
@@ -87,15 +86,12 @@ public:
 private:
   MainWindow *m_mainWindow;
 
-  QProcess fusedav;
-
   QTimer clearClipboardTimer;
   QString clippedText;
   bool freshStart{true};
 
   void setMainWindow();
   void connectPassSignalHandlers(Pass *pass);
-  void mountWebDav();
 
 signals:
 

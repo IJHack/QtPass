@@ -361,11 +361,6 @@ auto QtPassSettings::getPassExecutable(const QString &defaultValue) -> QString {
       .toString();
 }
 
-auto QtPassSettings::isUseWebDav(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::useWebDav, defaultValue)
-      .toBool();
-}
 auto QtPassSettings::getProfile(const QString &defaultValue) -> QString {
   return getInstance()
       ->value(SettingsConstants::profile, defaultValue)

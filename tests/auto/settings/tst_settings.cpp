@@ -55,6 +55,7 @@ private Q_SLOTS:
   void serializerLoadDefaults();
   void serializerRoundTrip();
   void serializerKeyCompatibility();
+  void serializerDropsObsoleteWebDavKeys();
   void facadeLoadReflectsSave();
   void serializerPasswordCharsSelection_data();
   void serializerPasswordCharsSelection();
@@ -210,7 +211,6 @@ const BoolSetting boolSettings[] = {
     {"autoPush", &AppSettings::autoPush},
     {"useTemplate", &AppSettings::useTemplate},
     {"templateAllFields", &AppSettings::templateAllFields},
-    {"useWebDav", &AppSettings::useWebDav},
     {"useQrencode", &AppSettings::useQrencode},
     {"useAutoclearPanel", &AppSettings::useAutoclearPanel},
     {"maximized", &AppSettings::maximized},
@@ -296,9 +296,6 @@ const StringSetting stringSettings[] = {
     {"gpgExecutable", &AppSettings::gpgExecutable},
     {"pwgenExecutable", &AppSettings::pwgenExecutable},
     {"qrencodeExecutable", &AppSettings::qrencodeExecutable},
-    {"webDavUrl", &AppSettings::webDavUrl},
-    {"webDavUser", &AppSettings::webDavUser},
-    {"webDavPassword", &AppSettings::webDavPassword},
     {"profile", &AppSettings::activeProfile},
     {"passTemplate", &AppSettings::passTemplate},
     {"sshAuthSockOverride", &AppSettings::sshAuthSockOverride},
@@ -353,12 +350,6 @@ void tst_settings::stringRoundTrip_data() {
   addString("pwgenExecutable", "/usr/local/bin/pwgen");
   addString("qrencodeExecutable", "/usr/bin/qrencode");
   addString("qrencodeExecutable", "/usr/local/bin/qrencode");
-  addString("webDavUrl", "https://dav.example.com/pass");
-  addString("webDavUrl", "https://dav2.example.com/pass");
-  addString("webDavUser", "testuser");
-  addString("webDavUser", "admin");
-  addString("webDavPassword", "secretpassword");
-  addString("webDavPassword", "anothersecret");
   addString("profile", "work");
   addString("profile", "personal");
   addString("passTemplate", "username: {username}\npassword: {password}");
@@ -631,10 +622,6 @@ void tst_settings::serializerRoundTrip() {
   out.useOtp = true;
   out.useQrencode = true;
   out.usePwgen = true;
-  out.useWebDav = true;
-  out.webDavUrl = QStringLiteral("https://dav.example/");
-  out.webDavUser = QStringLiteral("alice");
-  out.webDavPassword = QStringLiteral("s3cr3t");
   out.autoPull = true;
   out.autoPush = true;
   out.showProcessOutput = true;
@@ -688,10 +675,6 @@ void tst_settings::serializerRoundTrip() {
   QCOMPARE(in.useOtp, out.useOtp);
   QCOMPARE(in.useQrencode, out.useQrencode);
   QCOMPARE(in.usePwgen, out.usePwgen);
-  QCOMPARE(in.useWebDav, out.useWebDav);
-  QCOMPARE(in.webDavUrl, out.webDavUrl);
-  QCOMPARE(in.webDavUser, out.webDavUser);
-  QCOMPARE(in.webDavPassword, out.webDavPassword);
   QCOMPARE(in.autoPull, out.autoPull);
   QCOMPARE(in.autoPush, out.autoPush);
   QCOMPARE(in.showProcessOutput, out.showProcessOutput);
@@ -734,6 +717,42 @@ void tst_settings::serializerKeyCompatibility() {
   QCOMPARE(qs.value(SettingsConstants::passStore).toString(),
            QStringLiteral("/tmp/store"));
   QCOMPARE(qs.value(SettingsConstants::autoclearSeconds).toInt(), 13);
+}
+
+void tst_settings::serializerDropsObsoleteWebDavKeys() {
+  // The WebDAV mount was removed in 2.0. Saving over a configuration written
+  // by an older version must clear its four keys, so no plaintext
+  // webDavPassword is left behind in the ini file.
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString path = dir.filePath("webdav.ini");
+  {
+    QSettings qs(path, QSettings::IniFormat);
+    qs.setValue("useWebDav", true);
+    qs.setValue("webDavUrl", QStringLiteral("https://dav.example/"));
+    qs.setValue("webDavUser", QStringLiteral("alice"));
+    qs.setValue("webDavPassword", QStringLiteral("s3cr3t"));
+    qs.setValue(SettingsConstants::passStore, QStringLiteral("/tmp/store"));
+    qs.sync();
+  }
+
+  QSettings qs(path, QSettings::IniFormat);
+  AppSettings out = SettingsSerializer::load(qs);
+  QCOMPARE(out.passStore, QStringLiteral("/tmp/store"));
+  SettingsSerializer::save(qs, out);
+  qs.sync();
+
+  for (const QString &key :
+       {QStringLiteral("useWebDav"), QStringLiteral("webDavUrl"),
+        QStringLiteral("webDavUser"), QStringLiteral("webDavPassword")}) {
+    QVERIFY2(!qs.contains(key), qPrintable(key + " should have been removed"));
+  }
+  QFile ini(path);
+  QVERIFY(ini.open(QIODevice::ReadOnly | QIODevice::Text));
+  QVERIFY2(!QString::fromUtf8(ini.readAll()).contains("s3cr3t"),
+           "the stored WebDAV password must not survive in the ini file");
+  QCOMPARE(qs.value(SettingsConstants::passStore).toString(),
+           QStringLiteral("/tmp/store"));
 }
 
 void tst_settings::facadeLoadReflectsSave() {
