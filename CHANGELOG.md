@@ -1,5 +1,16 @@
 # Changelog
 
+## [Unreleased] — 1.8.2
+
+### Bugfixes
+
+- The Edit dialog turned every `key: value` line into a label-locked field
+  since 1.8.0, also with templates off, so those keys could no longer be
+  edited as text ([#1138](https://github.com/IJHack/QtPass/pull/1138) forced "all fields" on for [#132](https://github.com/IJHack/QtPass/issues/132)). Which lines become
+  fields follows the settings again: the template's fields when templates are
+  on, every `key: value` line only with "Template all fields", closes
+  [#1766](https://github.com/IJHack/QtPass/issues/1766) (ported from [#1767](https://github.com/IJHack/QtPass/pull/1767))
+
 ## [1.8.1](https://github.com/IJHack/QtPass/tree/v1.8.1) (2026-09-15)
 
 The security and data-loss fixes from the 2.0 branch, backported to the 1.8

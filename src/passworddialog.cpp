@@ -64,6 +64,7 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
   m_passConfig = s.passwordConfiguration;
   usePwgen(s.usePwgen);
   setTemplate(s.passTemplate, s.useTemplate);
+  templateAll(s.templateAllFields);
 
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
@@ -159,10 +160,15 @@ void PasswordDialog::on_rejected() { setPassword(QString()); }
  * @param password
  */
 void PasswordDialog::setPassword(const QString &password) {
-  // Always parse all fields as editable so users can edit any field in the
-  // password file. This fixes issue #132 where users couldn't edit
-  // fields without toggling the "Show all fields templated" setting.
-  FileContent fileContent = FileContent::parse(password, m_fields, true);
+  // Which lines become fields is the user's choice, not ours: the template's
+  // fields when templating is on, every `key: value` line only with "Template
+  // all fields". Forcing allFields (#1138, for #132) turned every such line
+  // in every store into a label-locked widget, also with templates off, and
+  // took away plain-text editing of those lines (#1766). The same rule is
+  // applied in MainWindow when rendering the entry.
+  FileContent fileContent =
+      FileContent::parse(password, m_templating ? m_fields : QStringList(),
+                         m_templating && m_allFields);
   ui->lineEditPassword->setText(fileContent.getPassword());
 
   QWidget *previous = ui->checkBoxShow;
@@ -385,6 +391,15 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
   }
 
   hookOtpField();
+}
+
+/**
+ * @brief PasswordDialog::templateAll split every `key: value` line into a
+ *        field, not only the template's.
+ * @param templateAll
+ */
+void PasswordDialog::templateAll(bool templateAll) {
+  m_allFields = templateAll;
 }
 
 /**

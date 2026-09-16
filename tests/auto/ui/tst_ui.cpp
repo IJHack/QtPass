@@ -7,6 +7,7 @@
 #include <QHash>
 #include <QLabel>
 #include <QLineEdit>
+#include <QPlainTextEdit>
 #include <QPointer>
 #include <QSignalSpy>
 #include <QSpinBox>
@@ -27,6 +28,7 @@ class tst_ui : public QObject {
 private Q_SLOTS:
   void initTestCase();
   void contentRemainsSame();
+  void keyValueLinesFollowTemplateSettings();
   void emptyPassword();
   void multilineRemainingData();
   void cleanupTestCase();
@@ -119,6 +121,87 @@ void tst_ui::contentRemainsSame() {
   d->setTemplate("name", true);
   d->setPass(input);
   QCOMPARE(d->getPassword(), input);
+
+  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
+  d->setTemplate("", false);
+  d->templateAll(true);
+  d->setPass(input);
+  QCOMPARE(d->getPassword(), input);
+
+  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
+  d->setTemplate("", true);
+  d->templateAll(true);
+  d->setPass(input);
+  QCOMPARE(d->getPassword(), input);
+
+  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
+  d->setTemplate("name", true);
+  d->templateAll(true);
+  d->setPass(input);
+  QCOMPARE(d->getPassword(), input);
+}
+
+/**
+ * @brief Which `key: value` lines become fields follows the settings, not a
+ * hard-coded "all". Regression for #1766: with templates off, every such
+ * line was turned into a label-locked field, so the key could no longer be
+ * edited as text.
+ */
+void tst_ui::keyValueLinesFollowTemplateSettings() {
+  const QString input = "pw\nDB: db-value\nlogin: user\nfree text\n";
+  const auto lineEditNamed = [](PasswordDialog *d, const char *name) {
+    return d->findChild<QLineEdit *>(QLatin1String(name));
+  };
+  const auto body = [](PasswordDialog *d) {
+    return d->findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"))
+        ->toPlainText();
+  };
+  // Templated modes write the template's fields first, so the line order can
+  // legitimately change; the content must not.
+  const auto sameLines = [](const QString &a, const QString &b) {
+    QStringList la = a.split('\n'), lb = b.split('\n');
+    la.sort();
+    lb.sort();
+    return la == lb;
+  };
+
+  // Templates off: nothing is split out, the whole rest is editable text.
+  QScopedPointer<PasswordDialog> d(
+      new PasswordDialog(PasswordConfiguration{}, nullptr));
+  d->setTemplate("login", false);
+  d->templateAll(false);
+  d->setPass(input);
+  QVERIFY2(lineEditNamed(d.data(), "DB") == nullptr,
+           "templates off: DB must not become a field");
+  QVERIFY2(lineEditNamed(d.data(), "login") == nullptr,
+           "templates off: the template's own field must not appear either");
+  QVERIFY(body(d.data()).contains(QStringLiteral("DB: db-value")));
+  QVERIFY(body(d.data()).contains(QStringLiteral("login: user")));
+  QCOMPARE(d->getPassword(), input);
+
+  // Templates on, all-fields off: only the template's field is a widget.
+  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
+  d->setTemplate("login", true);
+  d->templateAll(false);
+  d->setPass(input);
+  QVERIFY(lineEditNamed(d.data(), "login") != nullptr);
+  QCOMPARE(lineEditNamed(d.data(), "login")->text(), QStringLiteral("user"));
+  QVERIFY2(lineEditNamed(d.data(), "DB") == nullptr,
+           "all-fields off: a line outside the template stays text");
+  QVERIFY(body(d.data()).contains(QStringLiteral("DB: db-value")));
+  QVERIFY(sameLines(d->getPassword(), input));
+
+  // Templates on, all-fields on: every key: value line is a widget.
+  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
+  d->setTemplate("login", true);
+  d->templateAll(true);
+  d->setPass(input);
+  QVERIFY(lineEditNamed(d.data(), "login") != nullptr);
+  QVERIFY(lineEditNamed(d.data(), "DB") != nullptr);
+  QCOMPARE(lineEditNamed(d.data(), "DB")->text(), QStringLiteral("db-value"));
+  QVERIFY(!body(d.data()).contains(QStringLiteral("DB:")));
+  QVERIFY(body(d.data()).contains(QStringLiteral("free text")));
+  QVERIFY(sameLines(d->getPassword(), input));
 }
 
 void tst_ui::initTestCase() {}
