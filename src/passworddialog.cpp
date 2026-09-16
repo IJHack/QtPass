@@ -24,9 +24,7 @@
 #include <QSignalBlocker>
 #include <utility>
 
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
+#include "qtpasslogging.h"
 
 /**
  * @brief PasswordDialog::PasswordDialog basic constructor.

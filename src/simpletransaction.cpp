@@ -3,9 +3,7 @@
 #include "simpletransaction.h"
 #include <utility>
 
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
+#include "qtpasslogging.h"
 
 using Enums::INVALID;
 using Enums::PROCESS;
@@ -15,9 +13,7 @@ using Enums::PROCESS;
  * one operation.
  */
 void simpleTransaction::transactionStart() {
-#ifdef QT_DEBUG
-  dbg() << "START" << transactionDepth;
-#endif
+  qCDebug(lcQtPass) << "START" << transactionDepth;
   transactionDepth++;
 }
 
@@ -28,9 +24,7 @@ void simpleTransaction::transactionStart() {
  * @param id Process that shall be treated as part of the transaction
  */
 void simpleTransaction::transactionAdd(PROCESS id) {
-#ifdef QT_DEBUG
-  dbg() << "ADD" << transactionDepth << id;
-#endif
+  qCDebug(lcQtPass) << "ADD" << transactionDepth << id;
   if (transactionDepth > 0) {
     lastInTransaction = id;
   } else {
@@ -43,9 +37,7 @@ void simpleTransaction::transactionAdd(PROCESS id) {
  * @param pid Value that will be used as the result of the transaction
  */
 void simpleTransaction::transactionEnd(PROCESS pid) {
-#ifdef QT_DEBUG
-  dbg() << "END" << transactionDepth;
-#endif
+  qCDebug(lcQtPass) << "END" << transactionDepth;
   if (transactionDepth > 0) {
     transactionDepth--;
     if (transactionDepth == 0 && lastInTransaction != INVALID) {
@@ -63,9 +55,7 @@ void simpleTransaction::transactionEnd(PROCESS pid) {
  *         or PROCESS::INVALID if the transaction is not yet over
  */
 auto simpleTransaction::transactionIsOver(PROCESS id) -> PROCESS {
-#ifdef QT_DEBUG
-  dbg() << "OVER" << transactionDepth << id;
-#endif
+  qCDebug(lcQtPass) << "OVER" << transactionDepth << id;
   if (!transactionQueue.empty() && id == transactionQueue.front().first) {
     PROCESS ret = transactionQueue.front().second;
     transactionQueue.pop();

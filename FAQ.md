@@ -210,6 +210,23 @@ you prefer.
   clients handle credentials, reconnects and conflicts far better than the
   removed code did.
 
+### How do I get a debug log?
+
+Every build, including the installers, can trace what it runs. Start QtPass
+with the `qtpass` logging category switched on:
+
+```sh
+QT_LOGGING_RULES="qtpass.debug=true" qtpass
+```
+
+Add `QT_MESSAGE_PATTERN="%{time} %{file}:%{line} %{message}"` for
+timestamps and source locations. On Windows set the same two variables in the
+shell before starting `qtpass.exe`, or run it from a terminal to see the
+output; on macOS use `open -a QtPass --env QT_LOGGING_RULES=qtpass.debug=true`
+(macOS 14 and newer) or start the binary inside the bundle from a terminal.
+Passwords are never logged, but paths and key IDs are; check a log before
+attaching it to an issue.
+
 ### Where can I ask for help?
 
 - Create an issue on [GitHub](https://github.com/IJHack/QtPass/issues).

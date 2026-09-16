@@ -15,9 +15,7 @@
 #include <QTextStream>
 #include <utility>
 
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
+#include "qtpasslogging.h"
 
 using Enums::GIT_INIT;
 using Enums::GIT_PULL;
@@ -106,9 +104,7 @@ void Pass::executeWrapper(PROCESS id, const QString &app,
                           const QStringList &args, QString input,
                           bool readStdout, bool readStderr) {
   beforeExecute(id);
-#ifdef QT_DEBUG
-  dbg() << app << args;
-#endif
+  qCDebug(lcQtPass) << app << args;
   exec.execute(id, m_settings.passStore, app, args, std::move(input),
                readStdout, readStderr);
 }
@@ -162,16 +158,16 @@ void Pass::init(const AppSettings &settings) {
       env.insert(QStringLiteral("GNUPGHOME"), absHome.path());
     } else {
       if (inheritedHome.isEmpty()) {
-        qWarning() << "gpgHome" << absHome.path()
-                   << "does not exist; using the default GnuPG home";
+        qCWarning(lcQtPass) << "gpgHome" << absHome.path()
+                            << "does not exist; using the default GnuPG home";
         emit statusMsg(tr("Configured GPG home %1 does not exist, using the "
                           "default keyring")
                            .arg(absHome.path()),
                        5000);
       } else {
-        qWarning() << "gpgHome" << absHome.path()
-                   << "does not exist; using GNUPGHOME" << inheritedHome
-                   << "from the environment";
+        qCWarning(lcQtPass)
+            << "gpgHome" << absHome.path() << "does not exist; using GNUPGHOME"
+            << inheritedHome << "from the environment";
         emit statusMsg(tr("Configured GPG home %1 does not exist, using "
                           "GNUPGHOME %2 from the environment")
                            .arg(absHome.path(), inheritedHome),
@@ -217,10 +213,7 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
       passwd.remove(literalNewLines);
     } else {
       passwd.clear();
-#ifdef QT_DEBUG
-      qDebug() << __FILE__ << ":" << __LINE__ << "\t"
-               << "pwgen fail";
-#endif
+      qCDebug(lcQtPass) << "pwgen fail";
       // Error is already handled by clearing passwd; no need for critical
       // signal here
     }
@@ -443,7 +436,7 @@ void Pass::GenerateGPGKeys(QString batch) {
   killArgs << "gpg-agent";
   // Use same environment as key generation to target correct gpg-agent
   if (Executor::executeBlocking(env, resolvedGpgconf.program, killArgs) != 0) {
-    qWarning() << "Failed to kill gpg-agent";
+    qCWarning(lcQtPass) << "Failed to kill gpg-agent";
   }
 
   executeWrapper(GPG_GENKEYS, gpgPath, {"--gen-key", "--no-tty", "--batch"},
@@ -759,9 +752,7 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
     emit finishedGrep(parseGrepOutput(out));
     break;
   default:
-#ifdef QT_DEBUG
-    dbg() << "Unhandled process type" << pid;
-#endif
+    qCDebug(lcQtPass) << "Unhandled process type" << pid;
     break;
   }
 }
@@ -860,8 +851,8 @@ auto Pass::getRecipientList(const QString &for_file, const QString &passStore)
     if (!Util::isValidKeyId(recipient)) {
       // Never drop a recipient silently: the list is written back verbatim
       // by UsersDialog, so a skipped line disappears from .gpg-id.
-      qWarning() << "Skipping unusable recipient in" << gpgId.fileName() << ":"
-                 << recipient;
+      qCWarning(lcQtPass) << "Skipping unusable recipient in"
+                          << gpgId.fileName() << ":" << recipient;
       continue;
     }
     recipients += recipient;

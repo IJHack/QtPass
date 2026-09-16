@@ -6,9 +6,7 @@
 #include <QStringDecoder>
 #include <utility>
 
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
+#include "qtpasslogging.h"
 
 namespace {
 /// How often a cancellable blocking run re-checks its cancel flag.
@@ -91,9 +89,7 @@ void Executor::executeNext() {
   // completion then stalled everything (#1682). Fail it through the same
   // deferred path as a failed-to-start process so the queue keeps draining.
   if (i.app.isEmpty()) {
-#ifdef QT_DEBUG
-    dbg() << "No executable set for:" << i.id;
-#endif
+    qCDebug(lcQtPass) << "No executable set for:" << i.id;
     // Capture before dequeue() invalidates the head reference.
     const int failedId = i.id;
     m_execQueue.dequeue();
@@ -125,9 +121,7 @@ void Executor::executeNext() {
   // the normal asynchronous QProcess::finished path. A -1 exit code routes
   // through Pass::finished's non-zero error gate.
   if (!m_process.waitForStarted(-1)) {
-#ifdef QT_DEBUG
-    dbg() << "Process failed to start:" << i.id << " " << i.app;
-#endif
+    qCDebug(lcQtPass) << "Process failed to start:" << i.id << " " << i.app;
     // Capture before dequeue() invalidates the head reference.
     const int failedId = i.id;
     const QString failedApp = i.app;
@@ -148,9 +142,8 @@ void Executor::executeNext() {
   if (!i.input.isEmpty()) {
     QByteArray data = i.input.toUtf8();
     if (m_process.write(data) != data.length()) {
-#ifdef QT_DEBUG
-      dbg() << "Not all data written to process:" << i.id << " " << i.app;
-#endif
+      qCDebug(lcQtPass) << "Not all data written to process:" << i.id << " "
+                        << i.app;
     }
   }
   m_process.closeWriteChannel();
@@ -274,17 +267,13 @@ auto Executor::runBlocking(QProcess &process, const QString &app,
     return -1;
   startProcess(process, app, args);
   if (!process.waitForStarted(-1)) {
-#ifdef QT_DEBUG
-    dbg() << "Process failed to start:" << app;
-#endif
+    qCDebug(lcQtPass) << "Process failed to start:" << app;
     return -1;
   }
   if (!input.isEmpty()) {
     QByteArray data = input.toUtf8();
     if (process.write(data) != data.length()) {
-#ifdef QT_DEBUG
-      dbg() << "Not all input written:" << app;
-#endif
+      qCDebug(lcQtPass) << "Not all input written:" << app;
     }
   }
   // Always close stdin so a child blocking on EOF doesn't hang when no
@@ -421,11 +410,9 @@ void Executor::onProcessFinished(int exitCode,
   running = false;
   auto [output, err] = collectOutput(i, exitCode);
   if (exitStatus == QProcess::NormalExit) {
-#ifdef QT_DEBUG
     if (exitCode != 0) {
-      dbg() << exitCode << err;
+      qCDebug(lcQtPass) << i.app << "exited with" << exitCode << err;
     }
-#endif
     emit finished(i.id, exitCode, output, err);
   } else {
     // A signal-killed process usually leaves stderr empty; without this the

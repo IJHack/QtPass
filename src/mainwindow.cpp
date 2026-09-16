@@ -2,9 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "mainwindow.h"
 
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
+#include "qtpasslogging.h"
 
 #include "configdialog.h"
 #include "enums.h"
@@ -961,9 +959,7 @@ void MainWindow::onTimeoutSearch() {
  * Select the first possible file in the tree
  */
 void MainWindow::on_lineEdit_returnPressed() {
-#ifdef QT_DEBUG
-  dbg() << "on_lineEdit_returnPressed" << proxyModel.rowCount();
-#endif
+  qCDebug(lcQtPass) << "on_lineEdit_returnPressed" << proxyModel.rowCount();
 
   if (m_grep.inGrepMode()) {
     const QString query = ui->lineEdit->text();

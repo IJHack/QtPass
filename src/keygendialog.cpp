@@ -13,9 +13,7 @@
 #include <QRegularExpression>
 #include <algorithm>
 
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
+#include "qtpasslogging.h"
 
 /**
  * @brief KeygenDialog::KeygenDialog basic constructor.

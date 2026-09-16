@@ -26,9 +26,7 @@
 #include <windows.h>
 #endif
 
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
+#include "qtpasslogging.h"
 
 /**
  * @brief ConfigDialog::ConfigDialog this sets up the configuration screen.
@@ -1035,9 +1033,7 @@ auto ConfigDialog::checkSecretKeys() -> bool {
   QString gpg = ui->gpgPath->text();
   QStringList names = getSecretKeys();
 
-#ifdef QT_DEBUG
-  dbg() << names;
-#endif
+  qCDebug(lcQtPass) << names;
 
   if ((gpg.startsWith("wsl ") || QFile(gpg).exists()) && names.empty()) {
     KeygenDialog d(gpg, this);
@@ -1094,9 +1090,7 @@ auto ConfigDialog::checkPasswordStore() -> bool {
 void ConfigDialog::handleGpgIdFile() {
   QString passStore = ui->storePath->text();
   if (!QFile(QDir(passStore).filePath(".gpg-id")).exists()) {
-#ifdef QT_DEBUG
-    dbg() << ".gpg-id file does not exist";
-#endif
+    qCDebug(lcQtPass) << ".gpg-id file does not exist";
     criticalMessage(tr("Password store not initialised"),
                     tr("The folder %1 doesn't seem to be a password store or "
                        "is not yet initialised.")
@@ -1110,9 +1104,7 @@ void ConfigDialog::handleGpgIdFile() {
       passStore = ui->storePath->text();
     }
     if (!QFile(QDir(passStore).filePath(".gpg-id")).exists()) {
-#ifdef QT_DEBUG
-      dbg() << ".gpg-id file still does not exist :/";
-#endif
+      qCDebug(lcQtPass) << ".gpg-id file still does not exist :/";
       selectRecipients(passStore, false);
     }
   }

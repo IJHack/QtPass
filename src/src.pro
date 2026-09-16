@@ -5,7 +5,6 @@ QT        += core gui
 TARGET    = qtpass
 
 CONFIG += c++17 staticlib
-CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
 
 TRANSLATIONS    +=  ../localization/localization_ar.ts \
                     ../localization/localization_ca.ts \
@@ -110,6 +109,7 @@ SOURCES   += mainwindow.cpp \
              filecontent.cpp \
              clipboardmanager.cpp \
              qtpass.cpp \
+             qtpasslogging.cpp \
              profileinit.cpp
 
 HEADERS   += mainwindow.h \
@@ -146,7 +146,6 @@ HEADERS   += mainwindow.h \
              gpgkeystate.h \
              realpass.h \
              imitatepass.h \
-             debughelper.h \
              executor.h \
              simpletransaction.h \
              filecontent.h \
@@ -154,6 +153,7 @@ HEADERS   += mainwindow.h \
              userinfo.h \
              clipboardmanager.h \
              qtpass.h \
+             qtpasslogging.h \
              qtcompat.h \
              profileinit.h
 

@@ -22,6 +22,13 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   empty recipient list made `gpg --list-keys` return all of them. Nothing is
   pre-selected now
 
+### Changed
+
+- Debug output goes through one `qtpass` logging category instead of
+  `#ifdef QT_DEBUG` blocks around a `dbg()` macro. Release builds keep it
+  compiled in; `QT_LOGGING_RULES="qtpass.debug=true"` turns it on, so a user
+  can attach a trace to a bug report without a debug build (see the FAQ)
+
 ### Bugfixes
 
 - The main window comes back where it was left. The saved position was

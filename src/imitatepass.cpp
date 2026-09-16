@@ -14,9 +14,7 @@
 #include <QTimer>
 #include <utility>
 
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
+#include "qtpasslogging.h"
 
 using Enums::CLIPBOARD_ALWAYS;
 using Enums::CLIPBOARD_NEVER;
@@ -281,9 +279,7 @@ auto ImitatePass::checkSigningKeys(const QStringList &signingKeys) -> bool {
       QStringList{"--status-fd=1", "--list-secret-keys"} + signingKeys;
   int result = Executor::executeBlocking(m_settings.gpgExecutable, args, &out);
   if (result != 0) {
-#ifdef QT_DEBUG
-    dbg() << "GPG list-secret-keys failed with code:" << result;
-#endif
+    qCDebug(lcQtPass) << "GPG list-secret-keys failed with code:" << result;
     return false;
   }
   for (auto &key : signingKeys) {
@@ -355,20 +351,17 @@ auto ImitatePass::signGpgIdFile(const QString &gpgIdFile,
   // Use only the first signing key; multiple --default-key options would
   // override each other and only the last one would take effect.
   if (!signingKeys.isEmpty()) {
-#ifdef QT_DEBUG
     if (signingKeys.size() > 1) {
-      dbg() << "Multiple signing keys configured; using only the first key:"
-            << signingKeys.first();
+      qCDebug(lcQtPass)
+          << "Multiple signing keys configured; using only the first key:"
+          << signingKeys.first();
     }
-#endif
     args.append(QStringList{"--default-key", signingKeys.first()});
   }
   args.append(QStringList{"--yes", "--detach-sign", gpgIdFile});
   int result = Executor::executeBlocking(m_settings.gpgExecutable, args);
   if (result != 0) {
-#ifdef QT_DEBUG
-    dbg() << "GPG signing failed with code:" << result;
-#endif
+    qCDebug(lcQtPass) << "GPG signing failed with code:" << result;
     emit critical(tr("GPG signing failed!"),
                   tr("Failed to sign %1.").arg(gpgIdFile));
     return false;
@@ -545,9 +538,7 @@ auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
       QStringList{"--verify", "--status-fd=1", pgpg(file) + ".sig", pgpg(file)};
   int result = execBlocking(m_settings.gpgExecutable, args, &out);
   if (result != 0) {
-#ifdef QT_DEBUG
-    dbg() << "GPG verify failed with code:" << result;
-#endif
+    qCDebug(lcQtPass) << "GPG verify failed with code:" << result;
     return false;
   }
   QRegularExpression re(
@@ -652,9 +643,7 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
  */
 auto ImitatePass::reencryptSingleFile(const QString &fileName,
                                       const QStringList &recipients) -> bool {
-#ifdef QT_DEBUG
-  dbg() << "reencrypt " << fileName << " for " << recipients;
-#endif
+  qCDebug(lcQtPass) << "reencrypt " << fileName << " for " << recipients;
   QString local_lastDecrypt;
   QStringList args = {
       "-d",      "--quiet",     "--yes",       "--no-encrypt-to",
@@ -662,9 +651,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   int result = execBlocking(m_settings.gpgExecutable, args, &local_lastDecrypt);
 
   if (result != 0 || local_lastDecrypt.isEmpty()) {
-#ifdef QT_DEBUG
-    dbg() << "Decrypt error on re-encrypt for:" << fileName;
-#endif
+    qCDebug(lcQtPass) << "Decrypt error on re-encrypt for:" << fileName;
     return false;
   }
 
@@ -694,9 +681,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   result = execBlocking(m_settings.gpgExecutable, args, local_lastDecrypt);
 
   if (result != 0) {
-#ifdef QT_DEBUG
-    dbg() << "Encrypt error on re-encrypt for:" << fileName;
-#endif
+    qCDebug(lcQtPass) << "Encrypt error on re-encrypt for:" << fileName;
     QFile::remove(tempPath);
     return false;
   }
@@ -706,17 +691,13 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   args = QStringList{"-d", "--quiet", "--batch", "--use-agent", pgpg(tempPath)};
   result = execBlocking(m_settings.gpgExecutable, args, &verifyOutput);
   if (result != 0 || verifyOutput.isEmpty()) {
-#ifdef QT_DEBUG
-    dbg() << "Verification failed for:" << tempPath;
-#endif
+    qCDebug(lcQtPass) << "Verification failed for:" << tempPath;
     QFile::remove(tempPath);
     return false;
   }
   // Verify content matches original decrypted content (defense in depth)
   if (verifyOutput.trimmed() != local_lastDecrypt.trimmed()) {
-#ifdef QT_DEBUG
-    dbg() << "Verification content mismatch for:" << tempPath;
-#endif
+    qCDebug(lcQtPass) << "Verification content mismatch for:" << tempPath;
     QFile::remove(tempPath);
     return false;
   }
@@ -725,16 +706,12 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   // original, then remove backup
   QString backupPath = fileName + ".reencrypt.bak";
   if (!QFile::rename(fileName, backupPath)) {
-#ifdef QT_DEBUG
-    dbg() << "Failed to backup original file:" << fileName;
-#endif
+    qCDebug(lcQtPass) << "Failed to backup original file:" << fileName;
     QFile::remove(tempPath);
     return false;
   }
   if (!QFile::rename(tempPath, fileName)) {
-#ifdef QT_DEBUG
-    dbg() << "Failed to rename temp file to:" << fileName;
-#endif
+    qCDebug(lcQtPass) << "Failed to rename temp file to:" << fileName;
     // Restore backup and clean up temp file
     QFile::rename(backupPath, fileName);
     QFile::remove(tempPath);
@@ -752,9 +729,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     const QString store = pgit(m_settings.passStore);
     if (execBlocking(m_settings.gitExecutable,
                      {"-C", store, "add", pgit(fileName)}) != 0) {
-#ifdef QT_DEBUG
-      dbg() << "git add failed after re-encrypting:" << fileName;
-#endif
+      qCDebug(lcQtPass) << "git add failed after re-encrypting:" << fileName;
       // The file on disk is re-encrypted correctly; only the repository is
       // now behind. Report it so the caller counts this file as failed and
       // the run is not pushed.
@@ -765,9 +740,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     if (execBlocking(m_settings.gitExecutable,
                      {"-C", store, "commit", pgit(fileName), "-m",
                       "Re-encrypt for " + path + " using QtPass."}) != 0) {
-#ifdef QT_DEBUG
-      dbg() << "git commit failed after re-encrypting:" << fileName;
-#endif
+      qCDebug(lcQtPass) << "git commit failed after re-encrypting:" << fileName;
       return false;
     }
   }
@@ -1093,9 +1066,7 @@ auto ImitatePass::resolveMoveDestination(const QString &src,
   if (srcFileInfo.isFile()) {
     if (destFileInfo.isFile()) {
       if (!force) {
-#ifdef QT_DEBUG
-        dbg() << "Destination file already exists";
-#endif
+        qCDebug(lcQtPass) << "Destination file already exists";
         return {};
       }
       destFile = dest;
@@ -1113,17 +1084,13 @@ auto ImitatePass::resolveMoveDestination(const QString &src,
     if (destFileInfo.isDir()) {
       destFile = QDir(dest).filePath(srcFileBaseName);
     } else if (destFileInfo.isFile()) {
-#ifdef QT_DEBUG
-      dbg() << "Destination is a file";
-#endif
+      qCDebug(lcQtPass) << "Destination is a file";
       return {};
     } else {
       destFile = dest;
     }
   } else {
-#ifdef QT_DEBUG
-    dbg() << "Source file does not exist";
-#endif
+    qCDebug(lcQtPass) << "Source file does not exist";
     return {};
   }
   return destFile;
@@ -1179,10 +1146,8 @@ void ImitatePass::Move(const QString src, const QString dest,
     return;
   }
 
-#ifdef QT_DEBUG
-  dbg() << "Move Source: " << src;
-  dbg() << "Move Destination: " << destFile;
-#endif
+  qCDebug(lcQtPass) << "Move Source: " << src;
+  qCDebug(lcQtPass) << "Move Destination: " << destFile;
 
   if (gitReady()) {
     executeMoveGit(src, destFile, force);
@@ -1360,9 +1325,7 @@ void ImitatePass::executeGit(PROCESS id, const QStringList &args, QString input,
  */
 void ImitatePass::finished(int id, int exitCode, const QString &out,
                            const QString &err) {
-#ifdef QT_DEBUG
-  dbg() << "Imitate Pass";
-#endif
+  qCDebug(lcQtPass) << "Imitate Pass";
   PROCESS pid = transactionIsOver(static_cast<PROCESS>(id));
   m_transactionOutput.append(out);
 
@@ -1375,9 +1338,7 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
       id = exec.cancelNext();
       if (id == -1) {
         //  this is probably irrecoverable and shall not happen
-#ifdef QT_DEBUG
-        dbg() << "No such transaction!";
-#endif
+        qCDebug(lcQtPass) << "No such transaction!";
         return;
       }
       pid = transactionIsOver(static_cast<PROCESS>(id));

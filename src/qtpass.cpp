@@ -13,9 +13,7 @@
 
 #include <utility>
 
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
+#include "qtpasslogging.h"
 
 /**
  * @brief Constructs a QtPass instance.
@@ -50,9 +48,7 @@ auto QtPass::init() -> bool {
 
   // Config updates
   if (version.isEmpty()) {
-#ifdef QT_DEBUG
-    dbg() << "assuming fresh install";
-#endif
+    qCDebug(lcQtPass) << "assuming fresh install";
     AppSettings s = QtPassSettings::load();
     if (s.autoclearSeconds < 5)
       s.autoclearSeconds = 10;
@@ -248,9 +244,7 @@ void QtPass::finishedInsert(const QString &p_output, const QString &p_errout) {
 void QtPass::onKeyGenerationComplete(const QString &p_output,
                                      const QString &p_errout) {
   if (nullptr != m_mainWindow->getKeyGenDialog()) {
-#ifdef QT_DEBUG
-    qDebug() << "Keygen Done";
-#endif
+    qCDebug(lcQtPass) << "Keygen Done";
 
     m_mainWindow->cleanKeygenDialog();
     m_mainWindow->showStatusMessage(tr("GPG key pair generated successfully"),

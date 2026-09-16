@@ -1,14 +1,12 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "singleapplication.h"
+#include "qtpasslogging.h"
 #include <QDebug>
 #include <QLocalSocket>
 #include <QSharedPointer>
 #include <QThread>
 #include <utility>
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
 
 /**
  * @brief SingleApplication::SingleApplication this replaces the QApplication
@@ -31,9 +29,7 @@ SingleApplication::SingleApplication(
     // The segment outlived the instance that created it (a crash leaves
     // System V shared memory behind on Unix). Nobody answers on the socket,
     // so take over instead of forwarding into the void forever.
-#ifdef QT_DEBUG
-    dbg() << "Stale single instance segment, taking over.";
-#endif
+    qCDebug(lcQtPass) << "Stale single instance segment, taking over.";
     sharedMemory.detach();
   }
   becomePrimary();
@@ -127,9 +123,7 @@ void SingleApplication::becomePrimary() {
       }
       sharedMemory.detach();
     }
-#ifdef QT_DEBUG
-    dbg() << "Unable to create single instance.";
-#endif
+    qCDebug(lcQtPass) << "Unable to create single instance.";
     return;
   }
   // create local server and listen to incoming messages from other
@@ -143,8 +137,8 @@ void SingleApplication::becomePrimary() {
   connect(localServer.data(), &QLocalServer::newConnection, this,
           &SingleApplication::receiveMessage);
   if (!localServer->listen(_uniqueKey)) {
-    qWarning() << "SingleApplication: cannot listen on" << _uniqueKey << ":"
-               << localServer->errorString();
+    qCWarning(lcQtPass) << "SingleApplication: cannot listen on" << _uniqueKey
+                        << ":" << localServer->errorString();
     // Holding the segment without a server would make every later launch
     // attach, fail the probe and then fail create(): no instance could ever
     // take over while this one lives. Release it and run without IPC.
@@ -163,9 +157,7 @@ auto SingleApplication::forwardMessage(const QString &message) -> bool {
   QLocalSocket localSocket(this);
   localSocket.connectToServer(_uniqueKey, QIODevice::WriteOnly);
   if (!localSocket.waitForConnected(timeout)) {
-#ifdef QT_DEBUG
-    dbg() << localSocket.errorString().toLatin1();
-#endif
+    qCDebug(lcQtPass) << localSocket.errorString().toLatin1();
     return false;
   }
   QByteArray payload = message.toUtf8();
@@ -174,9 +166,7 @@ auto SingleApplication::forwardMessage(const QString &message) -> bool {
   }
   localSocket.write(payload);
   if (!localSocket.waitForBytesWritten(timeout)) {
-#ifdef QT_DEBUG
-    dbg() << localSocket.errorString().toLatin1();
-#endif
+    qCDebug(lcQtPass) << localSocket.errorString().toLatin1();
     return false;
   }
   localSocket.disconnectFromServer();

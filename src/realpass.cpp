@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "realpass.h"
-#include "debughelper.h"
+#include "qtpasslogging.h"
 #include "util.h"
 
 #include <QDir>
@@ -35,9 +35,7 @@ void RealPass::GitPull_b() {
   int result =
       Executor::executeBlocking(m_settings.passExecutable, {"git", "pull"});
   if (result != 0) {
-#ifdef QT_DEBUG
-    dbg() << "Git pull failed with code:" << result;
-#endif
+    qCDebug(lcQtPass) << "Git pull failed with code:" << result;
   }
 }
 

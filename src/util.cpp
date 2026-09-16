@@ -28,9 +28,7 @@
 #include <sys/time.h>
 #endif
 
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
+#include "qtpasslogging.h"
 
 QProcessEnvironment Util::_env;
 bool Util::_envInitialised = false;
@@ -67,9 +65,7 @@ void Util::initialiseEnvironment() {
       path += ";C:\\Program Files\\GnuPG\\bin";
     _env.insert("PATH", path);
 #endif
-#ifdef QT_DEBUG
-    dbg() << _env.value("PATH");
-#endif
+    qCDebug(lcQtPass) << _env.value("PATH");
     _envInitialised = true;
   }
 }
@@ -176,18 +172,16 @@ auto Util::findBinaryInPath(const QString &binary) -> QString {
         ret = cached.value();
       } else {
         QString wslCommand = QStringLiteral("wsl ") + binary;
-#ifdef QT_DEBUG
-        dbg() << "Util::findBinaryInPath(): falling back to WSL for binary"
-              << binary;
-#endif
+        qCDebug(lcQtPass)
+            << "Util::findBinaryInPath(): falling back to WSL for binary"
+            << binary;
         QString out, err;
         QString cachedResult;
         if (Executor::executeBlocking(wslCommand, {"--version"}, &out, &err) ==
                 0 &&
             !out.isEmpty() && err.isEmpty()) {
-#ifdef QT_DEBUG
-          dbg() << "Util::findBinaryInPath(): using WSL binary" << wslCommand;
-#endif
+          qCDebug(lcQtPass)
+              << "Util::findBinaryInPath(): using WSL binary" << wslCommand;
           cachedResult = wslCommand;
         }
         wslBinaryCache.insert(binary, cachedResult);

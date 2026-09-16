@@ -21,9 +21,7 @@
 #include <algorithm>
 #include <utility>
 
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
+#include "qtpasslogging.h"
 /**
  * @brief UsersDialog::UsersDialog basic constructor
  * @param pass Active Pass backend.
@@ -218,16 +216,14 @@ void UsersDialog::itemChange(QListWidgetItem *item) {
   bool ok = false;
   const int index = item->data(Qt::UserRole).toInt(&ok);
   if (!ok) {
-#ifdef QT_DEBUG
-    qWarning() << "UsersDialog::itemChange: invalid user index data for item";
-#endif
+    qCWarning(lcQtPass)
+        << "UsersDialog::itemChange: invalid user index data for item";
     return;
   }
   if (index < 0 || index >= m_userList.size()) {
-#ifdef QT_DEBUG
-    qWarning() << "UsersDialog::itemChange: user index out of range:" << index
-               << "valid range is [0," << (m_userList.size() - 1) << "]";
-#endif
+    qCWarning(lcQtPass) << "UsersDialog::itemChange: user index out of range:"
+                        << index << "valid range is [0,"
+                        << (m_userList.size() - 1) << "]";
     return;
   }
   m_userList[index].enabled = item->checkState() == Qt::Checked;

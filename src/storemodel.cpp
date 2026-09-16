@@ -3,6 +3,7 @@
 #include "storemodel.h"
 #include "pass.h"
 #include "pathvalidator.h"
+#include "qtpasslogging.h"
 #include "util.h"
 #include <QApplication>
 #include <QDebug>
@@ -246,12 +247,7 @@ auto StoreModel::mimeData(const QModelIndexList &indexes) const -> QMimeData * {
 auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
                                  int row, int column,
                                  const QModelIndex &parent) const -> bool {
-#ifdef QT_DEBUG
-  qDebug() << action << row;
-#else
-  Q_UNUSED(action)
-  Q_UNUSED(row)
-#endif
+  qCDebug(lcQtPass) << "canDropMimeData" << action << row;
 
   const auto parsed = parseDropData(data);
   if (!parsed) {
@@ -352,8 +348,9 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
   // pointing at /etc).
   if (!PathValidator::isPathInStore(store, cleanedSrc) ||
       !PathValidator::isPathInStore(store, cleanedDest)) {
-    qWarning() << "executeDropAction: rejecting drop that escapes the store"
-               << "(src=" << cleanedSrc << "dest=" << cleanedDest << ")";
+    qCWarning(lcQtPass)
+        << "executeDropAction: rejecting drop that escapes the store"
+        << "(src=" << cleanedSrc << "dest=" << cleanedDest << ")";
     return false;
   }
 
@@ -380,7 +377,8 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
             tr("overwrite %1 with %2?").arg(cleanedDest, cleanedSrc),
             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes);
   default:
-    qWarning() << "executeDropAction: unexpected ItemKind, ignoring drop";
+    qCWarning(lcQtPass)
+        << "executeDropAction: unexpected ItemKind, ignoring drop";
     return false;
   }
 }
