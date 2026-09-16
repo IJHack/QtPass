@@ -27,6 +27,34 @@ make -j4
 make lcov
 ```
 
+## Leaks and use-after-free: AddressSanitizer
+
+Do not reach for valgrind: it is 20-50x slower, trips over Qt 6 on a current
+glibc/CPU, and needs a suppression file. GCC and clang ship ASan and LSan, and
+qmake has a config for them. Use a separate build directory or a fresh
+worktree — sanitizer objects do not mix with a normal build.
+
+```bash
+qmake6 "CONFIG+=debug sanitizer sanitize_address"
+make -j8
+ASAN_OPTIONS=detect_leaks=1 QT_QPA_PLATFORM=offscreen make check
+```
+
+A leak looks like this, with the allocation site named:
+
+```text
+Direct leak of 88 byte(s) in 1 object(s) allocated from:
+    #0 ... in operator new(unsigned long)
+    #1 ... in ImportKeyDialog::ImportKeyDialog(QString const&, QWidget*) src/importkeydialog.cpp:28
+SUMMARY: AddressSanitizer: 440 byte(s) leaked in 5 allocation(s).
+```
+
+That was the `ImportKeyDialog` Ui struct (fixed in #1762). The whole suite is
+clean under ASan + LSan as of 2026-09-16 — 27 suites, no reports, **no
+suppressions needed** — so any report from this recipe is a real regression,
+not Qt noise. Run it before merging anything that changes object ownership
+(parents, `QScopedPointer`, `delete`, dialogs, `setWindowFlags`).
+
 ## Existing Test Suites
 
 > The suites below are representative, not exhaustive — `tests/auto/auto.pro`
@@ -359,15 +387,18 @@ void tst_settings::cleanupTestCase() {
 - DON'T: "ABC123DEF456", "sk-xxx", real API keys
 - DO: "testkey123", "/usr/bin/pass", "example.com"
 
-### Qt5/Qt6 Compatibility
+### Qt Version Floor
 
-When checking variant types, prefer `canConvert<T>()` over `metaType().id()` for broader compatibility:
+The floor is Qt 6.8 — the oldest version CI builds (see the `qtpass-fixing`
+skill for why). Qt 5 support ended with 1.8, so there is no Qt 5 compatibility
+to maintain in tests; do not add `QT_VERSION_CHECK` branches for it. APIs
+newer than 6.8 (e.g. `QBasicTimer::id()`, 6.8; check the docs' "since") still
+need a guard or an alternative.
+
+When checking variant types, prefer `canConvert<T>()` over `metaType().id()`;
+it reads as the intent rather than as a type-id comparison:
 
 ```cpp
-// Qt6-only (fails on Qt5)
-QVERIFY(displayData.metaType().id() == QMetaType::QString);
-
-// Qt5/Qt6 compatible
 QVERIFY(displayData.canConvert<QString>());
 ```
 
