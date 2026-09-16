@@ -45,10 +45,6 @@ public:
   static const QString gpgExecutable;
   static const QString pwgenExecutable;
   static const QString gpgHome;
-  static const QString useWebDav;
-  static const QString webDavUrl;
-  static const QString webDavUser;
-  static const QString webDavPassword;
   static const QString profile;
   static const QString useGit;
   static const QString useGrepSearch;

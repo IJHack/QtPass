@@ -74,10 +74,6 @@ struct AppSettings {
   bool useOtp{true};             ///< Enable native TOTP (OTP) support.
   bool useQrencode{false};       ///< Enable qrencode support.
   bool usePwgen{false};          ///< Use pwgen for password generation.
-  bool useWebDav{false};         ///< Enable WebDAV synchronisation.
-  QString webDavUrl;             ///< WebDAV endpoint URL.
-  QString webDavUser;            ///< WebDAV username.
-  QString webDavPassword;        ///< WebDAV password.
   bool autoPull{false};          ///< Automatically `git pull` on open.
   bool autoPush{false};          ///< Automatically `git push` after changes.
   bool showProcessOutput{false}; ///< Show external process output.

@@ -185,6 +185,31 @@ There are some things to take care of when trying to sync on some systems (espec
 
 More information: <https://doc.qt.io/qt-6/qsettings.html#platform-specific-notes>
 
+### What happened to WebDAV support?
+
+It was removed in QtPass 2.0. The feature mounted your password store from a
+WebDAV server: on Windows through `WNetUseConnectionA`, elsewhere by starting
+`fusedav`. It had no user interface — the four settings keys could only be set
+by editing the configuration file by hand — the WebDAV password was stored
+there in plain text, and the Linux side had passed literal quote characters to
+`fusedav` since 2020, so it could not have worked. Saving your settings once in
+2.0 deletes the `useWebDav`, `webDavUrl`, `webDavUser` and `webDavPassword`
+keys, including that plaintext password.
+
+Nothing is lost: the store is a directory of files, so keep syncing it the way
+you prefer.
+
+- **Git** is what `pass` itself uses and what QtPass supports directly: enable
+  _Use Git_ in the settings and point it at a remote (a private repository,
+  your own server, anything you can `git push` to). That gives you history and
+  conflict handling for free.
+- **A synced folder** works too — Nextcloud, Syncthing, Dropbox, an SMB or
+  WebDAV share your desktop already mounts. Put the store inside the synced
+  folder and select it as the password store. Mount the share with your
+  operating system's own tooling rather than asking QtPass to do it; those
+  clients handle credentials, reconnects and conflicts far better than the
+  removed code did.
+
 ### Where can I ask for help?
 
 - Create an issue on [GitHub](https://github.com/IJHack/QtPass/issues).

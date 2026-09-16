@@ -267,13 +267,6 @@ public:
   getPassExecutable(const QString &defaultValue = QVariant().toString())
       -> QString;
   /**
-   * @brief Check whether WebDAV integration is enabled.
-   * @param defaultValue Value returned if not saved.
-   * @return True if WebDAV is enabled.
-   */
-  static auto isUseWebDav(const bool &defaultValue = QVariant().toBool())
-      -> bool;
-  /**
    * @brief Get active profile name.
    * @param defaultValue String returned if not saved.
    * @return Active profile name.

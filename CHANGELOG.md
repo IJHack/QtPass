@@ -48,6 +48,13 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   Qt with a clear message. All `QT_VERSION` compatibility branches for Qt 5
   and the `splitCommandCompat()` / `disconnectSingleShot()` shims are gone
   ([#908](https://github.com/IJHack/QtPass/issues/908))
+- WebDAV mounting. It stored the WebDAV password in plain text in the
+  configuration file, had no user interface at all, and the `fusedav` call on
+  Linux and BSD had passed literal quote characters since 2020. Saving the
+  settings once in 2.0 deletes the four `webDav*` keys, the plaintext password
+  included. Sync the store with Git, or put it in a folder your system already
+  syncs or mounts — see the FAQ entry
+  [#1752](https://github.com/IJHack/QtPass/pull/1752)
 
 ## [Unreleased] — 1.8.1
 

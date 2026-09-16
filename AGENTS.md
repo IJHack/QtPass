@@ -142,7 +142,12 @@ Git operations are handled in `ImitatePass`:
 
 - `executeGit(GIT_ADD, {"add", pgit(file)})` stages files
 - `gitCommit(file, message)` commits with message
-- Always check `QtPassSettings::isUseGit()` before invoking `executeGit`
+- Always guard a call with `gitReady()` (Git enabled, executable set, status
+  message when it is not) or `gitConfigured()` (the same check without the
+  message, for const contexts). Both read the `AppSettings` copy the backend
+  was given in `Pass::init()`; do not call `QtPassSettings::isUseGit()` from a
+  backend, that reads the settings singleton instead and gives the file two
+  sources of truth.
 
 ### Qt Version Compatibility
 
