@@ -33,6 +33,12 @@ DEFINES += QT_NO_FOREACH
 CODECFORSRC     = UTF-8
 CODECFORTR      = UTF-8
 
+# Reproducible builds: rcc's default format embeds the mtime of every input
+# file in the generated source, so two builds of the same tree differ. Format
+# version 1 leaves the timestamps out. Carried by Debian as
+# 02-make-reproducible.patch since 2019.
+QMAKE_RESOURCE_FLAGS += --format-version 1
+
 macx {
     QMAKE_MAC_SDK = macosx
     QT += svg
