@@ -35,5 +35,7 @@ icon_scalable.files = ../artwork/qtpass-icon.svg
 icon_512.path = $$PREFIX/share/icons/hicolor/512x512/apps
 # installed under the desktop file's Icon= name; the source keeps its old name
 icon_512.extra = $(INSTALL_FILE) $$shell_quote($$PWD/../artwork/icon.png) $$shell_quote($(INSTALL_ROOT)$$PREFIX/share/icons/hicolor/512x512/apps/qtpass-icon.png)
+manpage.path = $$PREFIX/share/man/man1
+manpage.files = ../qtpass.1
 
-INSTALLS += target desktop metainfo icon_scalable icon_512
+INSTALLS += target desktop metainfo icon_scalable icon_512 manpage
