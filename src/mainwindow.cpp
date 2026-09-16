@@ -634,8 +634,6 @@ auto MainWindow::getFile(const QModelIndex &index, bool forPass) -> QString {
  */
 void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   bool cleared = ui->treeView->currentIndex().flags() == Qt::NoItemFlags;
-  m_currentDir = Util::getDir(ui->treeView->currentIndex(), false, model,
-                              proxyModel, QtPassSettings::getPassStore());
   QString file = getFile(index, true);
   ui->passwordName->setText(file);
   if (!file.isEmpty() && !cleared) {
@@ -669,7 +667,6 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
  * @brief MainWindow::deselect clear the selection, password and copy buffer
  */
 void MainWindow::deselect() {
-  m_currentDir = "";
   m_shownFile.clear();
   cancelOtpRequest();
   m_qtPass->clearClipboard();
@@ -1363,26 +1360,13 @@ void MainWindow::onEdit() {
 }
 
 /**
- * @brief MainWindow::userDialog see MainWindow::onUsers()
- * @param dir folder to edit users for.
- */
-void MainWindow::userDialog(const QString &dir) {
-  if (!dir.isEmpty()) {
-    m_currentDir = dir;
-  }
-  onUsers();
-}
-
-/**
  * @brief MainWindow::onUsers edit users for the current
  * folder,
  * gets lists and opens UserDialog.
  */
 void MainWindow::onUsers() {
-  QString dir = m_currentDir.isEmpty()
-                    ? Util::getDir(ui->treeView->currentIndex(), false, model,
-                                   proxyModel, QtPassSettings::getPassStore())
-                    : m_currentDir;
+  const QString dir = Util::getDir(ui->treeView->currentIndex(), false, model,
+                                   proxyModel, QtPassSettings::getPassStore());
 
   UsersDialog d(QtPassSettings::getPass(), QtPassSettings::load(), dir, this);
   if (!d.exec()) {
@@ -1612,7 +1596,6 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     ui->treeView->clearSelection();
     ui->actionDelete->setEnabled(false);
     ui->actionEdit->setEnabled(false);
-    m_currentDir = "";
     selected = false;
   }
 

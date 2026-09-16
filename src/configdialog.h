@@ -208,6 +208,7 @@ private:
   auto checkSecretKeys() -> bool;
   auto checkPasswordStore() -> bool;
   void handleGpgIdFile();
+  void selectRecipients(const QString &storePath, bool gitInit);
   void initializeNewProfiles(
       const QHash<QString, QHash<QString, QString>> &existingProfiles);
 

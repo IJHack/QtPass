@@ -37,6 +37,11 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   as invalid keys
 - A gpg, pass or Git process killed by a signal left the password pane blank;
   the pane now says which program crashed
+- Right-click ▸ Users on a folder opened the recipients dialog for the folder
+  last *left*-clicked instead: the folder was remembered in a member that only
+  the left-click handler updated. The dialog now always uses the tree's
+  current item, and the first-run wizard opens its recipients dialog itself
+  instead of routing through the main window
 - The Edit dialog turned every `key: value` line into a label-locked field
   since 1.8.0, also with templates off, so those keys could no longer be
   edited as text ([#1138](https://github.com/IJHack/QtPass/pull/1138) forced "all fields" on for [#132](https://github.com/IJHack/QtPass/issues/132)). Which lines become

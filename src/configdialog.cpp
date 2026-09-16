@@ -1071,10 +1071,7 @@ auto ConfigDialog::checkPasswordStore() -> bool {
       SetFileAttributes(passStore.toStdWString().c_str(),
                         FILE_ATTRIBUTE_HIDDEN);
 #endif
-      if (ui->checkBoxUseGit->isChecked()) {
-        emit mainWindow->passGitInitNeeded();
-      }
-      mainWindow->userDialog(passStore);
+      selectRecipients(passStore, ui->checkBoxUseGit->isChecked());
     }
   }
   return true;
@@ -1111,9 +1108,32 @@ void ConfigDialog::handleGpgIdFile() {
 #ifdef QT_DEBUG
       dbg() << ".gpg-id file still does not exist :/";
 #endif
-      mainWindow->userDialog(passStore);
+      selectRecipients(passStore, false);
     }
   }
+}
+
+/**
+ * @brief Let the user pick the recipients for a store that has no .gpg-id yet.
+ *
+ * The active store is pointed at @p storePath while the dialog runs so that
+ * `git init` and the `pass init` issued by UsersDialog::accept() operate on
+ * that directory rather than on whatever path is currently saved. Git is
+ * initialised first so that the .gpg-id written by pass init lands in the
+ * first commit.
+ * @param storePath Directory that becomes the password store.
+ * @param gitInit Whether to run `git init` there before selecting recipients.
+ */
+void ConfigDialog::selectRecipients(const QString &storePath, bool gitInit) {
+  const QString prevStore = QtPassSettings::getPassStore();
+  QtPassSettings::setPassStore(storePath);
+  if (gitInit) {
+    QtPassSettings::getPass()->GitInit();
+  }
+  UsersDialog d(QtPassSettings::getPass(), QtPassSettings::load(), storePath,
+                this);
+  d.exec();
+  QtPassSettings::setPassStore(prevStore);
 }
 
 /**
