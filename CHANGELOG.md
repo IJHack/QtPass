@@ -35,7 +35,7 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   `[EXPIRED]` and `[PARTIAL]` markers. Expired keys were dark-red text on the
   default background, unreadable on dark themes; they get the same red badge
   as invalid keys
-- A gpg/pass/git process killed by a signal left the password pane blank;
+- A gpg, pass or Git process killed by a signal left the password pane blank;
   the pane now says which program crashed
 - The Edit dialog turned every `key: value` line into a label-locked field
   since 1.8.0, also with templates off, so those keys could no longer be
