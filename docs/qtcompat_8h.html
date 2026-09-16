@@ -29,7 +29,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="doc-icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">QtPass<span id="projectnumber">&#160;1.8.0</span>
+   <div id="projectname">QtPass<span id="projectnumber">&#160;2.0.0</span>
    </div>
    <div id="projectbrief">Multi-platform GUI for pass, the standard unix password manager.</div>
   </td>
@@ -129,9 +129,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a46dc1f1121b6bc92810dff10bb872613" id="r_a46dc1f1121b6bc92810dff10bb872613"><td class="memTemplParams" colspan="2">template&lt;typename Sender, typename Signal, typename Receiver, typename Slot&gt; </td></tr>
 <tr class="memitem:a46dc1f1121b6bc92810dff10bb872613 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a46dc1f1121b6bc92810dff10bb872613">connectSingleShot</a> (Sender *sender, Signal signal, Receiver *receiver, Slot slot)</td></tr>
 <tr class="memdesc:a46dc1f1121b6bc92810dff10bb872613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arm a signal/slot connection that fires exactly once.  <br /></td></tr>
-<tr class="memitem:a66783768ad92fdfe59015e8406435125" id="r_a66783768ad92fdfe59015e8406435125"><td class="memTemplParams" colspan="2">template&lt;typename Sender, typename Signal, typename Receiver, typename Slot&gt; </td></tr>
-<tr class="memitem:a66783768ad92fdfe59015e8406435125 template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a66783768ad92fdfe59015e8406435125">disconnectSingleShot</a> (Sender *sender, Signal signal, Receiver *receiver, Slot slot)</td></tr>
-<tr class="memdesc:a66783768ad92fdfe59015e8406435125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tear down a <a class="el" href="#a46dc1f1121b6bc92810dff10bb872613" title="Arm a signal/slot connection that fires exactly once.">connectSingleShot()</a> connection from inside its slot.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Small Qt-version shims so call sites express intent in one line. </p>
@@ -178,7 +175,7 @@ template&lt;typename Sender, typename Signal, typename Receiver, typename Slot&g
 </div><div class="memdoc">
 
 <p>Arm a signal/slot connection that fires exactly once. </p>
-<p>Qt 6 has Qt::SingleShotConnection; Qt 5.15 does not, so under Qt 5 the connection must be torn down by the slot on first entry (see <a class="el" href="#a66783768ad92fdfe59015e8406435125" title="Tear down a connectSingleShot() connection from inside its slot.">disconnectSingleShot()</a>). Any stale connection to the same slot is disconnected first so repeated arming never accumulates connections.</p>
+<p>Wraps Qt::SingleShotConnection; any stale connection to the same slot is disconnected first so repeated arming never accumulates connections.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Sender</td><td>Sender object type. </td></tr>
@@ -198,71 +195,7 @@ template&lt;typename Sender, typename Signal, typename Receiver, typename Slot&g
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="qtcompat_8h_source.html#l00032">32</a> of file <a class="el" href="qtcompat_8h_source.html">qtcompat.h</a>.</p>
-
-</div>
-</div>
-<a id="a66783768ad92fdfe59015e8406435125" name="a66783768ad92fdfe59015e8406435125"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66783768ad92fdfe59015e8406435125">&#9670;&#160;</a></span>disconnectSingleShot()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Sender, typename Signal, typename Receiver, typename Slot&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void disconnectSingleShot </td>
-          <td>(</td>
-          <td class="paramtype">Sender *</td>          <td class="paramname"><span class="paramname"><em>sender</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Signal</td>          <td class="paramname"><span class="paramname"><em>signal</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Receiver *</td>          <td class="paramname"><span class="paramname"><em>receiver</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Slot</td>          <td class="paramname"><span class="paramname"><em>slot</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Tear down a <a class="el" href="#a46dc1f1121b6bc92810dff10bb872613" title="Arm a signal/slot connection that fires exactly once.">connectSingleShot()</a> connection from inside its slot. </p>
-<p>A no-op on Qt 6 (Qt::SingleShotConnection already self-disconnects). On Qt 5.15 it disconnects the slot on first entry so it cannot fire again. Call it once at the top of a slot armed with <a class="el" href="#a46dc1f1121b6bc92810dff10bb872613" title="Arm a signal/slot connection that fires exactly once.">connectSingleShot()</a>.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Sender</td><td>Sender object type. </td></tr>
-    <tr><td class="paramname">Signal</td><td>Pointer-to-member signal type. </td></tr>
-    <tr><td class="paramname">Receiver</td><td>Receiver object type. </td></tr>
-    <tr><td class="paramname">Slot</td><td>Pointer-to-member slot type. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sender</td><td>Object emitting the signal. </td></tr>
-    <tr><td class="paramname">signal</td><td>Signal that was connected. </td></tr>
-    <tr><td class="paramname">receiver</td><td>Object owning the slot. </td></tr>
-    <tr><td class="paramname">slot</td><td>Slot to disconnect. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="qtcompat_8h_source.html#l00059">59</a> of file <a class="el" href="qtcompat_8h_source.html">qtcompat.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtcompat_8h_source.html#l00030">30</a> of file <a class="el" href="qtcompat_8h_source.html">qtcompat.h</a>.</p>
 
 </div>
 </div>

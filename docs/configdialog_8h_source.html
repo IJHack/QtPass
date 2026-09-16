@@ -29,7 +29,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="doc-icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">QtPass<span id="projectnumber">&#160;1.8.0</span>
+   <div id="projectname">QtPass<span id="projectnumber">&#160;2.0.0</span>
    </div>
    <div id="projectbrief">Multi-platform GUI for pass, the standard unix password manager.</div>
   </td>
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="comment">// Qt 5.4.1 when QApplication::exec was not yet called</span></div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="keywordtype">void</span> criticalMessage(<span class="keyword">const</span> QString &amp;title, <span class="keyword">const</span> QString &amp;text);</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keyword">auto</span> isQrencodeAvailable() -&gt; bool;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keyword">auto</span> isQrencodeAvailable(<span class="keyword">const</span> QString &amp;configuredPath) -&gt; bool;</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="keywordtype">void</span> validate(QTableWidgetItem *item = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  <span class="keyword">auto</span> checkGpgExistence() -&gt; bool;</div>
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="ttc" id="aclass_config_dialog_html_ad5b80066591f19fdaaa06b7cb5ba7f15"><div class="ttname"><a href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15">ConfigDialog::wizard</a></div><div class="ttdeci">void wizard()</div><div class="ttdoc">Run the first-time setup wizard.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_ad5f28221ebec0701bb56c43780a452b3"><div class="ttname"><a href="class_config_dialog.html#ad5f28221ebec0701bb56c43780a452b3">ConfigDialog::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">Save settings and clean up on close.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_af93386c7b55bd8ae35fda6f096d46eb6"><div class="ttname"><a href="class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6">ConfigDialog::useSelection</a></div><div class="ttdeci">void useSelection(bool useSelection)</div><div class="ttdoc">Enable or disable clipboard selection mode.</div></div>
-<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Main application window orchestrating UI, user interactions, and external process handlers.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00052">mainwindow.h:52</a></div></div>
+<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Main application window orchestrating UI, user interactions, and external process handlers.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00047">mainwindow.h:47</a></div></div>
 <div class="ttc" id="astruct_app_settings_html"><div class="ttname"><a href="struct_app_settings.html">AppSettings</a></div><div class="ttdoc">Plain value-object holding all flat QtPass configuration.</div><div class="ttdef"><b>Definition</b> <a href="appsettings_8h_source.html#l00030">appsettings.h:30</a></div></div>
 <div class="ttc" id="astruct_password_configuration_html"><div class="ttname"><a href="struct_password_configuration.html">PasswordConfiguration</a></div><div class="ttdoc">Holds the password configuration settings.</div><div class="ttdef"><b>Definition</b> <a href="passwordconfiguration_8h_source.html#l00012">passwordconfiguration.h:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

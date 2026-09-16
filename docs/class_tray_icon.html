@@ -29,7 +29,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="doc-icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">QtPass<span id="projectnumber">&#160;1.8.0</span>
+   <div id="projectname">QtPass<span id="projectnumber">&#160;2.0.0</span>
    </div>
    <div id="projectbrief">Multi-platform GUI for pass, the standard unix password manager.</div>
   </td>
@@ -138,8 +138,6 @@ void&#160;</td><td class="memItemRight"><b>showHideParent</b> ()</td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a587e1467cf97c27f4269f1c47c1e4ac5" id="r_a587e1467cf97c27f4269f1c47c1e4ac5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a587e1467cf97c27f4269f1c47c1e4ac5">TrayIcon</a> (QMainWindow *parent)</td></tr>
 <tr class="memdesc:a587e1467cf97c27f4269f1c47c1e4ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_tray_icon.html" title="Handles the system tray icon and menu.">TrayIcon</a> associated with the given main window.  <br /></td></tr>
-<tr class="memitem:a40737136f8d85dad4a10ddb58619157a" id="r_a40737136f8d85dad4a10ddb58619157a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a40737136f8d85dad4a10ddb58619157a">showMessage</a> (const QString &amp;title, const QString &amp;msg, int time)</td></tr>
-<tr class="memdesc:a40737136f8d85dad4a10ddb58619157a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display a transient notification message via the tray icon.  <br /></td></tr>
 <tr class="memitem:ac43b5d2538c69cfcf6399eb29b9ddb47" id="r_ac43b5d2538c69cfcf6399eb29b9ddb47"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac43b5d2538c69cfcf6399eb29b9ddb47">getIsAllocated</a> () -&gt; bool</td></tr>
 <tr class="memdesc:ac43b5d2538c69cfcf6399eb29b9ddb47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether tray resources have been allocated and initialized.  <br /></td></tr>
 </table>
@@ -229,42 +227,6 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">reason</td><td>The activation reason provided by QSystemTrayIcon. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a40737136f8d85dad4a10ddb58619157a" name="a40737136f8d85dad4a10ddb58619157a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40737136f8d85dad4a10ddb58619157a">&#9670;&#160;</a></span>showMessage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TrayIcon::showMessage </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>time</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Display a transient notification message via the tray icon. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">title</td><td>Title text of the notification. </td></tr>
-    <tr><td class="paramname">msg</td><td>Body text of the notification. </td></tr>
-    <tr><td class="paramname">time</td><td>Duration to display the notification in milliseconds. </td></tr>
   </table>
   </dd>
 </dl>

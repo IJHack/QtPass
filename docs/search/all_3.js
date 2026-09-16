@@ -12,10 +12,9 @@ var searchData=
   ['digits_9',['digits',['../struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d',1,'Totp::Settings']]],
   ['directory_10',['Directory',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6ae73cda510e8bb947f7e61089e5581494',1,'dragAndDropInfoPasswordStore']]],
   ['discard_11',['discard',['../struct_grep_search_controller_1_1_finish_outcome.html#aa12d73ecc749e62f884be80576823595',1,'GrepSearchController::FinishOutcome']]],
-  ['disconnectsingleshot_12',['disconnectSingleShot',['../qtcompat_8h.html#a66783768ad92fdfe59015e8406435125',1,'qtcompat.h']]],
-  ['displayasis_13',['displayAsIs',['../struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d',1,'AppSettings']]],
-  ['displayfields_14',['displayFields',['../class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f',1,'PasswordDisplayPanel']]],
-  ['draganddropinfopasswordstore_15',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
-  ['dropmimedata_16',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
-  ['dropstaletoolbarpalette_17',['dropStaleToolBarPalette',['../class_main_window.html#a60ed7fe85ceeecb99a88ae9c4d6d2908',1,'MainWindow']]]
+  ['displayasis_12',['displayAsIs',['../struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d',1,'AppSettings']]],
+  ['displayfields_13',['displayFields',['../class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f',1,'PasswordDisplayPanel']]],
+  ['draganddropinfopasswordstore_14',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
+  ['dropmimedata_15',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
+  ['dropstaletoolbarpalette_16',['dropStaleToolBarPalette',['../class_main_window.html#a60ed7fe85ceeecb99a88ae9c4d6d2908',1,'MainWindow']]]
 ];

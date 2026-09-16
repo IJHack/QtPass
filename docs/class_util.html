@@ -29,7 +29,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="doc-icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">QtPass<span id="projectnumber">&#160;1.8.0</span>
+   <div id="projectname">QtPass<span id="projectnumber">&#160;2.0.0</span>
    </div>
    <div id="projectbrief">Multi-platform GUI for pass, the standard unix password manager.</div>
   </td>
@@ -117,6 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa93547aecfd166a3e0eac955370cc05c" id="r_aa93547aecfd166a3e0eac955370cc05c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa93547aecfd166a3e0eac955370cc05c">findBinaryInPath</a> (const QString &amp;binary) -&gt; QString</td></tr>
 <tr class="memdesc:aa93547aecfd166a3e0eac955370cc05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate an executable by searching the process PATH and (on Windows) falling back to WSL.  <br /></td></tr>
+<tr class="memitem:abdd60f9928354b515d9d6bd2ee837699" id="r_abdd60f9928354b515d9d6bd2ee837699"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abdd60f9928354b515d9d6bd2ee837699">findBinaryInPath</a> (const QString &amp;binary, const QStringList &amp;searchPaths) -&gt; QString</td></tr>
+<tr class="memdesc:abdd60f9928354b515d9d6bd2ee837699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate an executable in an explicit list of directories.  <br /></td></tr>
 <tr class="memitem:abfddcff8c37fbb33e86605e4fb7250db" id="r_abfddcff8c37fbb33e86605e4fb7250db"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abfddcff8c37fbb33e86605e4fb7250db">findPasswordStore</a> () -&gt; QString</td></tr>
 <tr class="memdesc:abfddcff8c37fbb33e86605e4fb7250db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the password store directory.  <br /></td></tr>
 <tr class="memitem:ab23a1afdcad63df9101660fd6e53b763" id="r_ab23a1afdcad63df9101660fd6e53b763"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab23a1afdcad63df9101660fd6e53b763">normalizeFolderPath</a> (const QString &amp;path) -&gt; QString</td></tr>
@@ -142,7 +144,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Some static utilities to be used elsewhere. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00021">21</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00022">22</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ac8926b725ca51d6e68f3f383cfae478f" name="ac8926b725ca51d6e68f3f383cfae478f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8926b725ca51d6e68f3f383cfae478f">&#9670;&#160;</a></span>configIsValid()</h2>
@@ -207,7 +209,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 </div>
 </div>
 <a id="aa93547aecfd166a3e0eac955370cc05c" name="aa93547aecfd166a3e0eac955370cc05c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa93547aecfd166a3e0eac955370cc05c">&#9670;&#160;</a></span>findBinaryInPath()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa93547aecfd166a3e0eac955370cc05c">&#9670;&#160;</a></span>findBinaryInPath() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,6 +235,45 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">binary</td><td>Executable name or relative path to locate (e.g., "gpg" or "pass"). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>QString Absolute path to the executable if found, empty QString otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="abdd60f9928354b515d9d6bd2ee837699" name="abdd60f9928354b515d9d6bd2ee837699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdd60f9928354b515d9d6bd2ee837699">&#9670;&#160;</a></span>findBinaryInPath() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::findBinaryInPath </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>binary</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>searchPaths</em></span>&#160;) -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Locate an executable in an explicit list of directories. </p>
+<p>Only regular, executable files match; a directory named like the binary is skipped. Empty entries are ignored (they never resolve to the current working directory) and an empty list finds nothing. Only bare names are searched: an absolute path, or a name containing a directory separator, finds nothing rather than escaping <code class="param">searchPaths</code>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">binary</td><td>Executable name to locate (no directory separators). </td></tr>
+    <tr><td class="paramname">searchPaths</td><td>Directories to search, in order. </td></tr>
   </table>
   </dd>
 </dl>

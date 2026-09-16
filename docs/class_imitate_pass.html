@@ -29,7 +29,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="doc-icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">QtPass<span id="projectnumber">&#160;1.8.0</span>
+   <div id="projectname">QtPass<span id="projectnumber">&#160;2.0.0</span>
    </div>
    <div id="projectbrief">Multi-platform GUI for pass, the standard unix password manager.</div>
   </td>
@@ -142,10 +142,9 @@ void&#160;</td><td class="memItemRight"><b>startReencryptPath</b> ()</td></tr>
 <tr class="memitem:a9df2c7246a8686cf92c442c00dc55af7" id="r_a9df2c7246a8686cf92c442c00dc55af7"><td class="memItemLeft"><a id="a9df2c7246a8686cf92c442c00dc55af7" name="a9df2c7246a8686cf92c442c00dc55af7"></a>
 void&#160;</td><td class="memItemRight"><b>endReencryptPath</b> ()</td></tr>
 <tr class="memdesc:a9df2c7246a8686cf92c442c00dc55af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted after finishing re-encryption. <br /></td></tr>
+<tr class="memitem:a9332f01d3ce1447fb9eba7ec8f0172af" id="r_a9332f01d3ce1447fb9eba7ec8f0172af"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9332f01d3ce1447fb9eba7ec8f0172af">reencryptProgress</a> (int current, int total)</td></tr>
+<tr class="memdesc:a9332f01d3ce1447fb9eba7ec8f0172af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-encryption progress: <code class="param">current</code> of <code class="param">total</code> files checked.  <br /></td></tr>
 <tr class="inherit_header signals_class_pass"><td colspan="2" onclick="javascript:dynsection.toggleInherit('signals_class_pass')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Signals inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
-<tr class="memitem:ad0afad0f75995803c1aa90d936e3db18 inherit signals_class_pass" id="r_ad0afad0f75995803c1aa90d936e3db18"><td class="memItemLeft">
-void&#160;</td><td class="memItemRight"><b>error</b> (QProcess::ProcessError)</td></tr>
-<tr class="memdesc:ad0afad0f75995803c1aa90d936e3db18 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when a process error occurs. <br /></td></tr>
 <tr class="memitem:a0345d3ffdb213234031e9c84fe8ca7c6 inherit signals_class_pass" id="r_a0345d3ffdb213234031e9c84fe8ca7c6"><td class="memItemLeft">
 void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></tr>
 <tr class="memdesc:a0345d3ffdb213234031e9c84fe8ca7c6 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted before executing a command. <br /></td></tr>
@@ -155,8 +154,6 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 <tr class="memdesc:adbe1f9ea5212ad3dc80b6c5d581f78c9 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emit critical error.  <br /></td></tr>
 <tr class="memitem:a9bb040e1a33322a27cd85d8a367ef24f inherit signals_class_pass" id="r_a9bb040e1a33322a27cd85d8a367ef24f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a> (int exitCode, const QString &amp;err)</td></tr>
 <tr class="memdesc:a9bb040e1a33322a27cd85d8a367ef24f inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted on process error exit.  <br /></td></tr>
-<tr class="memitem:a58d74848b312a6739031947421098a30 inherit signals_class_pass" id="r_a58d74848b312a6739031947421098a30"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a58d74848b312a6739031947421098a30">finishedAny</a> (const QString &amp;out, const QString &amp;err)</td></tr>
-<tr class="memdesc:a58d74848b312a6739031947421098a30 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when any operation finishes.  <br /></td></tr>
 <tr class="memitem:a13859dd31b009e6d362546d1c96dc303 inherit signals_class_pass" id="r_a13859dd31b009e6d362546d1c96dc303"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a13859dd31b009e6d362546d1c96dc303">finishedAnyWithPid</a> (const QString &amp;out, const QString &amp;err, <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid)</td></tr>
 <tr class="memdesc:a13859dd31b009e6d362546d1c96dc303 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when any operation finishes with process ID for filtering.  <br /></td></tr>
 <tr class="memitem:ab484c95a5b7b79e34fc6aef127f23ba8 inherit signals_class_pass" id="r_ab484c95a5b7b79e34fc6aef127f23ba8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ab484c95a5b7b79e34fc6aef127f23ba8">finishedGitInit</a> (const QString &amp;out, const QString &amp;err)</td></tr>
@@ -179,8 +176,6 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 <tr class="memdesc:a662000feacb2400a1b5f6133cce44542 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when move finishes.  <br /></td></tr>
 <tr class="memitem:a64d98203e2f37807ec39ff9fa03e70f3 inherit signals_class_pass" id="r_a64d98203e2f37807ec39ff9fa03e70f3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a64d98203e2f37807ec39ff9fa03e70f3">finishedCopy</a> (const QString &amp;out, const QString &amp;err)</td></tr>
 <tr class="memdesc:a64d98203e2f37807ec39ff9fa03e70f3 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when copy finishes.  <br /></td></tr>
-<tr class="memitem:a083b306fdca54b29b70c1541a746dc1b inherit signals_class_pass" id="r_a083b306fdca54b29b70c1541a746dc1b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a083b306fdca54b29b70c1541a746dc1b">finishedGenerate</a> (const QString &amp;out, const QString &amp;err)</td></tr>
-<tr class="memdesc:a083b306fdca54b29b70c1541a746dc1b inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when generate finishes.  <br /></td></tr>
 <tr class="memitem:a296dba6b2dc144cdd95af8da86d2170a inherit signals_class_pass" id="r_a296dba6b2dc144cdd95af8da86d2170a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a296dba6b2dc144cdd95af8da86d2170a">finishedGenerateGPGKeys</a> (const QString &amp;out, const QString &amp;err)</td></tr>
 <tr class="memdesc:a296dba6b2dc144cdd95af8da86d2170a inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when GPG key generation finishes.  <br /></td></tr>
 <tr class="memitem:a74344f203b81f87b4d42a6281a176db4 inherit signals_class_pass" id="r_a74344f203b81f87b4d42a6281a176db4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">finishedGrep</a> (const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</td></tr>
@@ -226,6 +221,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6fe6b48df3fb04071c8c2c1d5c1d1206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize store.  <br /></td></tr>
 <tr class="memitem:af331446d163c31f1fca714646c0f6244" id="r_af331446d163c31f1fca714646c0f6244"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af331446d163c31f1fca714646c0f6244">reencryptPath</a> (const QString &amp;dir)</td></tr>
 <tr class="memdesc:af331446d163c31f1fca714646c0f6244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-encrypt entire directory.  <br /></td></tr>
+<tr class="memitem:a5cbd9d68f47d53b994ec25cecbb27436" id="r_a5cbd9d68f47d53b994ec25cecbb27436"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5cbd9d68f47d53b994ec25cecbb27436">cancelReencryptPath</a> ()</td></tr>
+<tr class="memdesc:a5cbd9d68f47d53b994ec25cecbb27436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask a running <a class="el" href="#af331446d163c31f1fca714646c0f6244" title="Re-encrypt entire directory.">reencryptPath()</a> to stop.  <br /></td></tr>
 <tr class="memitem:ae647ee1e408862bb6d66ee4d6324f0b1" id="r_ae647ee1e408862bb6d66ee4d6324f0b1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae647ee1e408862bb6d66ee4d6324f0b1">Move</a> (const QString src, const QString dest, const bool force) override</td></tr>
 <tr class="memdesc:ae647ee1e408862bb6d66ee4d6324f0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move password file.  <br /></td></tr>
 <tr class="memitem:a7748aba981f125a9d663cb9b40358d4a" id="r_a7748aba981f125a9d663cb9b40358d4a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7748aba981f125a9d663cb9b40358d4a">Copy</a> (const QString src, const QString dest, const bool force) override</td></tr>
@@ -331,7 +328,7 @@ Additional Inherited Members</h2></td></tr>
 </ul>
 <p>This is used as a fallback when <a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a> cannot be initialized. </p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00026">26</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00028">28</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="afea4899feebac58489e710f4f8eba501" name="afea4899feebac58489e710f4f8eba501"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afea4899feebac58489e710f4f8eba501">&#9670;&#160;</a></span>beforeExecute()</h2>
@@ -365,6 +362,26 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a31ea796fe4d60101a9562d893647bcde">Pass</a>.</p>
+
+</div>
+</div>
+<a id="a5cbd9d68f47d53b994ec25cecbb27436" name="a5cbd9d68f47d53b994ec25cecbb27436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cbd9d68f47d53b994ec25cecbb27436">&#9670;&#160;</a></span>cancelReencryptPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImitatePass::cancelReencryptPath </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ask a running <a class="el" href="#af331446d163c31f1fca714646c0f6244" title="Re-encrypt entire directory.">reencryptPath()</a> to stop. </p>
+<p>Only sets a flag. The worker starts no further gpg or git process, and the one it is blocked on (gpg waiting on pinentry, say) is terminated by the worker itself, and killed if it is still running after a short grace period, so the cancel takes effect promptly rather than after the current file. The store stays consistent: <a class="el" href="#a662922741c9302e7ff58690a2f35808c" title="Re-encrypt single file with new recipients.">reencryptSingleFile()</a> only replaces a file once the new ciphertext is verified, so an interrupted file is left untouched, or already re-encrypted but not yet committed when git was the process that was interrupted. The remaining files are left untouched and the interrupted file is not reported as a failure. <a class="el" href="#a9df2c7246a8686cf92c442c00dc55af7" title="Emitted after finishing re-encryption.">endReencryptPath()</a> is still emitted when the worker has stopped. </p>
 
 </div>
 </div>
@@ -1225,9 +1242,47 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Re-encrypt entire directory. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Emits <a class="el" href="#aecffecc95bd1c0281849dbfe11231e36" title="Emitted before starting re-encryption.">startReencryptPath()</a> synchronously, then runs the scan and the per-file gpg calls on a worker thread. Progress is reported through <a class="el" href="#a9332f01d3ce1447fb9eba7ec8f0172af" title="Re-encryption progress: current of total files checked.">reencryptProgress()</a>; per-file failures are collected and reported in a single <a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Emit critical error.">critical()</a> once the run is over, followed by <a class="el" href="#a9df2c7246a8686cf92c442c00dc55af7" title="Emitted after finishing re-encryption.">endReencryptPath()</a>. A second call while a run is active is ignored. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dir</td><td>Directory path. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9332f01d3ce1447fb9eba7ec8f0172af" name="a9332f01d3ce1447fb9eba7ec8f0172af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9332f01d3ce1447fb9eba7ec8f0172af">&#9670;&#160;</a></span>reencryptProgress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImitatePass::reencryptProgress </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>current</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>total</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Re-encryption progress: <code class="param">current</code> of <code class="param">total</code> files checked. </p>
+<p>Emitted from the worker thread; connect with a queued (or automatic) connection. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">current</td><td>Number of files checked so far, including this one. </td></tr>
+    <tr><td class="paramname">total</td><td>Total number of files found by the scan. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1570,7 +1625,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00029">29</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00031">31</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>

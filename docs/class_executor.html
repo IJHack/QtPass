@@ -29,7 +29,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="doc-icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">QtPass<span id="projectnumber">&#160;1.8.0</span>
+   <div id="projectname">QtPass<span id="projectnumber">&#160;2.0.0</span>
    </div>
    <div id="projectbrief">Multi-platform GUI for pass, the standard unix password manager.</div>
   </td>
@@ -155,11 +155,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a554cab50d6449b456ad4e8309ee11a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the environment passed to child processes.  <br /></td></tr>
 <tr class="memitem:aee160ee2ec954bdb58a3a38555536090" id="r_aee160ee2ec954bdb58a3a38555536090"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aee160ee2ec954bdb58a3a38555536090">cancelNext</a> () -&gt; int</td></tr>
 <tr class="memdesc:aee160ee2ec954bdb58a3a38555536090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel the next queued command without executing it.  <br /></td></tr>
+<tr class="memitem:a3c5acbcdb1b3be56c5ef7082678698af" id="r_a3c5acbcdb1b3be56c5ef7082678698af"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3c5acbcdb1b3be56c5ef7082678698af">isIdle</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:a3c5acbcdb1b3be56c5ef7082678698af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether no command is running and nothing is queued.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:acd16a6a2c0d0cb55406c99b72c9d299f" id="r_acd16a6a2c0d0cb55406c99b72c9d299f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acd16a6a2c0d0cb55406c99b72c9d299f">executeBlocking</a> (const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td></tr>
 <tr class="memdesc:acd16a6a2c0d0cb55406c99b72c9d299f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously and return its exit code.  <br /></td></tr>
+<tr class="memitem:ad7f547c8721ba3dd2e3aa89492b4a8a1" id="r_ad7f547c8721ba3dd2e3aa89492b4a8a1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad7f547c8721ba3dd2e3aa89492b4a8a1">executeBlocking</a> (QProcess &amp;process, const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr, const std::atomic_bool *cancel=nullptr) -&gt; int</td></tr>
+<tr class="memdesc:ad7f547c8721ba3dd2e3aa89492b4a8a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously on a caller-supplied QProcess, with optional cancellation.  <br /></td></tr>
 <tr class="memitem:aec1ef83ae0df4b4a2773b5ad533c837e" id="r_aec1ef83ae0df4b4a2773b5ad533c837e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aec1ef83ae0df4b4a2773b5ad533c837e">executeBlocking</a> (const QString &amp;app, const QStringList &amp;args, QString *process_out, QString *process_err=nullptr) -&gt; int</td></tr>
 <tr class="memdesc:aec1ef83ae0df4b4a2773b5ad533c837e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously capturing stdout and stderr.  <br /></td></tr>
 <tr class="memitem:aa17378022bf90b96beb2a2ac0750751d" id="r_aa17378022bf90b96beb2a2ac0750751d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa17378022bf90b96beb2a2ac0750751d">executeBlocking</a> (const QProcessEnvironment &amp;env, const QString &amp;app, const QStringList &amp;args, QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td></tr>
@@ -171,7 +175,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Runs non-interactive external commands in FIFO order using a single QProcess. </p>
 <p>Queues execution requests and emits per-request completion or error signals; supports optional stdin, configurable stdout/stderr capture, and per-request working directory and environment. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00021">21</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00022">22</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa15bf32ce5a10a04dce8fe549247ac7d" name="aa15bf32ce5a10a04dce8fe549247ac7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa15bf32ce5a10a04dce8fe549247ac7d">&#9670;&#160;</a></span>Executor()</h2>
@@ -306,18 +310,6 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a9c450bcba881197a3e10eb1bf59b3a88_cgraph.svg" width="128" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a9c450bcba881197a3e10eb1bf59b3a88_icgraph.svg" width="128" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -538,7 +530,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aa17378022bf90b96beb2a2ac0750751d" name="aa17378022bf90b96beb2a2ac0750751d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa17378022bf90b96beb2a2ac0750751d">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa17378022bf90b96beb2a2ac0750751d">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -595,7 +587,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="acd16a6a2c0d0cb55406c99b72c9d299f" name="acd16a6a2c0d0cb55406c99b72c9d299f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd16a6a2c0d0cb55406c99b72c9d299f">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acd16a6a2c0d0cb55406c99b72c9d299f">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -652,7 +644,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aec1ef83ae0df4b4a2773b5ad533c837e" name="aec1ef83ae0df4b4a2773b5ad533c837e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec1ef83ae0df4b4a2773b5ad533c837e">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aec1ef83ae0df4b4a2773b5ad533c837e">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -699,6 +691,75 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Process exit code. </dd></dl>
+
+</div>
+</div>
+<a id="ad7f547c8721ba3dd2e3aa89492b4a8a1" name="ad7f547c8721ba3dd2e3aa89492b4a8a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f547c8721ba3dd2e3aa89492b4a8a1">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::executeBlocking </td>
+          <td>(</td>
+          <td class="paramtype">QProcess &amp;</td>          <td class="paramname"><span class="paramname"><em>process</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>app</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>process_out</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>process_err</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Run a command synchronously on a caller-supplied QProcess, with optional cancellation. </p>
+<p>The caller configures <code class="param">process</code> (environment, say) before the call; it must be a fresh, not yet started object. QProcess is not thread-safe, so <code class="param">process</code> belongs to the calling thread for the whole run: no other thread may call terminate(), kill() or anything else on it. To let a run be cancelled, pass <code class="param">cancel:</code> the wait then polls the flag, and once it is set the calling thread itself terminate()s the child, waits a short grace period, kill()s it if it is still running, and returns -1. Setting the flag is the only thing another thread does; it may do so at any time, before or during the run. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">process</td><td>Process object to run the command on. </td></tr>
+    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
+    <tr><td class="paramname">input</td><td>Data to write to stdin. </td></tr>
+    <tr><td class="paramname">process_out</td><td>If non-null, receives stdout output. </td></tr>
+    <tr><td class="paramname">process_err</td><td>If non-null, receives stderr output. </td></tr>
+    <tr><td class="paramname">cancel</td><td>If non-null, a flag that ends the run when set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Process exit code, or -1 if it failed to start, crashed or was cancelled. </dd></dl>
 
 </div>
 </div>
@@ -749,6 +810,48 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a3c5acbcdb1b3be56c5ef7082678698af" name="a3c5acbcdb1b3be56c5ef7082678698af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c5acbcdb1b3be56c5ef7082678698af">&#9670;&#160;</a></span>isIdle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::isIdle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether no command is running and nothing is queued. </p>
+<dl class="section return"><dt>Returns</dt><dd>true when the executor has nothing in flight. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00257">257</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a3c5acbcdb1b3be56c5ef7082678698af_cgraph.svg" width="132" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a3c5acbcdb1b3be56c5ef7082678698af_icgraph.svg" width="132" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
