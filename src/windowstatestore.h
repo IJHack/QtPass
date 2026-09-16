@@ -25,12 +25,16 @@ namespace WindowStateStore {
  * Without a saved geometry the window is centred on the screen under the
  * mouse pointer, except on Wayland, where placement belongs to the
  * compositor and a client-side move is ignored anyway.
+ * @param window Top-level widget to place.
+ * @param key Settings key the geometry was saved under (see save()).
  * @return true if a saved geometry was applied.
  */
 auto restore(QWidget &window, const QString &key) -> bool;
 
 /**
  * @brief Save @p window's geometry under @p key.
+ * @param window Top-level widget whose geometry to store.
+ * @param key Settings key, e.g. the dialog's name; restore() reads it back.
  */
 void save(const QWidget &window, const QString &key);
 
@@ -38,6 +42,7 @@ void save(const QWidget &window, const QString &key);
  * @brief Move @p window so its frame is centred on the screen under the
  *        mouse pointer (the primary screen when there is none). No-op on
  *        Wayland.
+ * @param window Top-level widget to move.
  */
 void centreOnCursorScreen(QWidget &window);
 
