@@ -59,4 +59,14 @@ CONFIG(coverage) {
 	QMAKE_DISTCLEAN += -r docs/coverage/
 }
 
-system($$QMAKE_LUPDATE -locations absolute ./src ./main -ts $$files(localization/*.ts))
+# Refreshing the translation sources is an explicit target, not something every
+# qmake run does: lupdate rewrites all 64 .ts files (line numbers included), so
+# a plain configure used to leave the whole localization/ directory dirty and
+# CI checkouts modified. Run it when you add or change a tr() string:
+#
+#   make lupdate
+#
+lupdate.target = lupdate
+lupdate.commands = $$QMAKE_LUPDATE -locations absolute $$PWD/src $$PWD/main -ts $$files($$PWD/localization/*.ts)
+lupdate.depends = FORCE
+QMAKE_EXTRA_TARGETS += lupdate

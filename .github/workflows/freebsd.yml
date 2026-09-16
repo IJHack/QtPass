@@ -40,10 +40,7 @@ jobs:
             qmake6 -v
             # the rsynced tree is owned by another uid inside the VM
             git config --global --add safe.directory "$(pwd)"
-            # qmake refreshes localization/*.ts at configure time; keep the
-            # checkout clean so the build does not depend on that side effect.
             qmake6 qtpass.pro
-            git checkout -- localization/
             make -j3
             # The suites need a display; the offscreen QPA is enough.
             export QT_QPA_PLATFORM=offscreen

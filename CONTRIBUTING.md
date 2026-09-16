@@ -36,7 +36,7 @@ To add a new language:
 - Add your language code to `src/src.pro` under TRANSLATIONS
 - If you have an existing build, run `make distclean` first (prevents stale generated files like `ui_*.h` from being included)
 - Determine which qmake command your Qt 6 installation provides: run `qmake6 -v` (or `qmake -v` if `qmake6` is unavailable) and confirm it shows Qt version 6.2 or newer.
-- Run that same command (`qmake6` or `qmake`) **at the repository root**; it runs `lupdate` over both `src/` and `main/` and updates every `.ts` file. Do not run `lupdate` on `src/src.pro` alone — that misses the strings in `main/`.
+- Run that same command (`qmake6` or `qmake`) **at the repository root**, then `make lupdate`; the target runs `lupdate` over both `src/` and `main/` and updates every `.ts` file. Do not run `lupdate` on `src/src.pro` alone — that misses the strings in `main/`. A plain `qmake6` run leaves `localization/` untouched.
 - Edit the `.ts` file with Qt Linguist: `linguist localization/qtpass_xx_YY.ts`
 
 Qt Linguist has helpful [in-context translation options](https://doc.qt.io/qt-6/linguist-translators.html).
