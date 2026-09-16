@@ -121,6 +121,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:abdd60f9928354b515d9d6bd2ee837699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate an executable in an explicit list of directories.  <br /></td></tr>
 <tr class="memitem:abfddcff8c37fbb33e86605e4fb7250db" id="r_abfddcff8c37fbb33e86605e4fb7250db"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abfddcff8c37fbb33e86605e4fb7250db">findPasswordStore</a> () -&gt; QString</td></tr>
 <tr class="memdesc:abfddcff8c37fbb33e86605e4fb7250db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the password store directory.  <br /></td></tr>
+<tr class="memitem:a0364b473e6ccf9506606f406cd927c22" id="r_a0364b473e6ccf9506606f406cd927c22"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0364b473e6ccf9506606f406cd927c22">expandTilde</a> (const QString &amp;path) -&gt; QString</td></tr>
+<tr class="memdesc:a0364b473e6ccf9506606f406cd927c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expand a leading current-user tilde in a path.  <br /></td></tr>
 <tr class="memitem:ab23a1afdcad63df9101660fd6e53b763" id="r_ab23a1afdcad63df9101660fd6e53b763"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab23a1afdcad63df9101660fd6e53b763">normalizeFolderPath</a> (const QString &amp;path) -&gt; QString</td></tr>
 <tr class="memdesc:ab23a1afdcad63df9101660fd6e53b763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure a folder path always ends with '/'.  <br /></td></tr>
 <tr class="memitem:ac8926b725ca51d6e68f3f383cfae478f" id="r_ac8926b725ca51d6e68f3f383cfae478f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac8926b725ca51d6e68f3f383cfae478f">configIsValid</a> (const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;s) -&gt; bool</td></tr>
@@ -205,6 +207,41 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 
 <p>Returns a regex to match .gpg file extensions. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
+
+</div>
+</div>
+<a id="a0364b473e6ccf9506606f406cd927c22" name="a0364b473e6ccf9506606f406cd927c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0364b473e6ccf9506606f406cd927c22">&#9670;&#160;</a></span>expandTilde()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::expandTilde </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td> -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Expand a leading current-user tilde in a path. </p>
+<p>Environment variables set outside a shell (systemd units, .desktop entries, quoted assignments) keep a literal "~", which no filesystem call resolves. "~" and "~/..." become the home directory; "~user" forms and everything else are returned unchanged.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Path that may start with a tilde. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>QString Path with a leading current-user tilde expanded. </dd></dl>
 
 </div>
 </div>

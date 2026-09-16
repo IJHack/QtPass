@@ -16,5 +16,6 @@ var searchData=
   ['executewrapper_13',['executeWrapper',['../class_pass.html#a66f59138ffe856fd421410d9af9ddc62',1,'Pass::executeWrapper(PROCESS id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)'],['../class_pass.html#a23d30214443a4bc0d0508491872f06c3',1,'Pass::executeWrapper(PROCESS id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout, bool readStderr)']]],
   ['executewrapperstarted_14',['executeWrapperStarted',['../class_main_window.html#a3550b28be1344cf5c012af794dce8c64',1,'MainWindow']]],
   ['executor_15',['Executor',['../class_executor.html#aa15bf32ce5a10a04dce8fe549247ac7d',1,'Executor']]],
-  ['exportpublickeydialog_16',['ExportPublicKeyDialog',['../class_export_public_key_dialog.html#a695a1b33857bba491078d1eb813d0dc0',1,'ExportPublicKeyDialog']]]
+  ['expandtilde_16',['expandTilde',['../class_util.html#a0364b473e6ccf9506606f406cd927c22',1,'Util']]],
+  ['exportpublickeydialog_17',['ExportPublicKeyDialog',['../class_export_public_key_dialog.html#a695a1b33857bba491078d1eb813d0dc0',1,'ExportPublicKeyDialog']]]
 ];
