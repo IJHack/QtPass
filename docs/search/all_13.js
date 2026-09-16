@@ -18,6 +18,5 @@ var searchData=
   ['usesymbols_15',['useSymbols',['../struct_app_settings.html#a1dcb264e80bf03810dc659faf83498b8',1,'AppSettings']]],
   ['usetemplate_16',['useTemplate',['../struct_app_settings.html#adcdcefd0f896681f9ec31ca33cb5232b',1,'AppSettings::useTemplate'],['../class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a',1,'ConfigDialog::useTemplate()']]],
   ['usetrayicon_17',['useTrayIcon',['../struct_app_settings.html#a7489ac000e265da73e55da7e94f313cc',1,'AppSettings::useTrayIcon'],['../class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567',1,'ConfigDialog::useTrayIcon()']]],
-  ['usewebdav_18',['useWebDav',['../struct_app_settings.html#a1476ef66c4a18bf909fb2791d169ad28',1,'AppSettings']]],
-  ['util_19',['Util',['../class_util.html',1,'']]]
+  ['util_18',['Util',['../class_util.html',1,'']]]
 ];

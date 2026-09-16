@@ -12,6 +12,5 @@ var searchData=
   ['useselection_9',['useSelection',['../struct_app_settings.html#a93f7cb2526fc655789315eca6f5590a4',1,'AppSettings']]],
   ['usesymbols_10',['useSymbols',['../struct_app_settings.html#a1dcb264e80bf03810dc659faf83498b8',1,'AppSettings']]],
   ['usetemplate_11',['useTemplate',['../struct_app_settings.html#adcdcefd0f896681f9ec31ca33cb5232b',1,'AppSettings']]],
-  ['usetrayicon_12',['useTrayIcon',['../struct_app_settings.html#a7489ac000e265da73e55da7e94f313cc',1,'AppSettings']]],
-  ['usewebdav_13',['useWebDav',['../struct_app_settings.html#a1476ef66c4a18bf909fb2791d169ad28',1,'AppSettings']]]
+  ['usetrayicon_12',['useTrayIcon',['../struct_app_settings.html#a7489ac000e265da73e55da7e94f313cc',1,'AppSettings']]]
 ];

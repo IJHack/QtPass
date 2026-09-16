@@ -31,8 +31,7 @@ var searchData=
   ['isusegit_28',['isUseGit',['../class_qt_pass_settings.html#a0bd97a8df7fb91cf461b5a1c57940710',1,'QtPassSettings']]],
   ['isusegrepsearch_29',['isUseGrepSearch',['../class_qt_pass_settings.html#a48f32603dae06c6a513bcad0de85301c',1,'QtPassSettings']]],
   ['isuseotp_30',['isUseOtp',['../class_qt_pass_settings.html#af9e41239c39581b0f3a573dfdaabff36',1,'QtPassSettings']]],
-  ['isusewebdav_31',['isUseWebDav',['../class_qt_pass_settings.html#a15e5619edfc478765e728fac1bb9c6cf',1,'QtPassSettings']]],
-  ['isvalid_32',['isValid',['../class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2',1,'Totp::isValid()'],['../struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a',1,'UserInfo::isValid()']]],
-  ['isvalidkeyid_33',['isValidKeyId',['../class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1',1,'Util']]],
-  ['itemkind_34',['ItemKind',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6',1,'dragAndDropInfoPasswordStore']]]
+  ['isvalid_31',['isValid',['../class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2',1,'Totp::isValid()'],['../struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a',1,'UserInfo::isValid()']]],
+  ['isvalidkeyid_32',['isValidKeyId',['../class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1',1,'Util']]],
+  ['itemkind_33',['ItemKind',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6',1,'dragAndDropInfoPasswordStore']]]
 ];

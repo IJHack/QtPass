@@ -27,7 +27,6 @@ var searchData=
   ['isusegit_24',['isUseGit',['../class_qt_pass_settings.html#a0bd97a8df7fb91cf461b5a1c57940710',1,'QtPassSettings']]],
   ['isusegrepsearch_25',['isUseGrepSearch',['../class_qt_pass_settings.html#a48f32603dae06c6a513bcad0de85301c',1,'QtPassSettings']]],
   ['isuseotp_26',['isUseOtp',['../class_qt_pass_settings.html#af9e41239c39581b0f3a573dfdaabff36',1,'QtPassSettings']]],
-  ['isusewebdav_27',['isUseWebDav',['../class_qt_pass_settings.html#a15e5619edfc478765e728fac1bb9c6cf',1,'QtPassSettings']]],
-  ['isvalid_28',['isValid',['../class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2',1,'Totp::isValid()'],['../struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a',1,'UserInfo::isValid()']]],
-  ['isvalidkeyid_29',['isValidKeyId',['../class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1',1,'Util']]]
+  ['isvalid_27',['isValid',['../class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2',1,'Totp::isValid()'],['../struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a',1,'UserInfo::isValid()']]],
+  ['isvalidkeyid_28',['isValidKeyId',['../class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1',1,'Util']]]
 ];
