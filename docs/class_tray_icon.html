@@ -117,13 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_tray_icon__inherit__graph.svg" width="90" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_tray_icon__inherit__graph.svg" width="87" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for TrayIcon:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_tray_icon__coll__graph.svg" width="90" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_tray_icon__coll__graph.svg" width="87" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
@@ -143,8 +143,9 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles the system tray icon and menu. </p>
+<p>A QObject parented to the main window: nothing here is a widget (the menu and the QSystemTrayIcon are children of this object), and the parent makes sure ~QSystemTrayIcon runs on quit, which is what removes the icon from the notification area on Windows. </p>
 
-<p class="definition">Definition at line <a class="el" href="trayicon_8h_source.html#l00017">17</a> of file <a class="el" href="trayicon_8h_source.html">trayicon.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trayicon_8h_source.html#l00022">22</a> of file <a class="el" href="trayicon_8h_source.html">trayicon.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a587e1467cf97c27f4269f1c47c1e4ac5" name="a587e1467cf97c27f4269f1c47c1e4ac5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a587e1467cf97c27f4269f1c47c1e4ac5">&#9670;&#160;</a></span>TrayIcon()</h2>

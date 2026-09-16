@@ -222,7 +222,7 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock"><p>Main application window orchestrating UI, user interactions, and external process handlers. </p>
 <p>Provides the central interface for managing items, folders, passwords, and OTPs; coordinates UI components (toolbars, panels, dialogs, status/tray), selection and navigation in the underlying file/store models, and lifecycle interactions with external handlers (e.g., pass, Git, GPG key generation, OTP). </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00047">47</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00046">46</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a52e97245b2f88492071e639395c4a15a" name="a52e97245b2f88492071e639395c4a15a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a52e97245b2f88492071e639395c4a15a">&#9670;&#160;</a></span>MainWindow()</h2>
@@ -611,7 +611,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return the active key generation dialog, if any. </p>
 <p>The returned pointer is non-owning: the dialog's lifetime is managed elsewhere (<a class="el" href="#ad2a9b38617b357d8fa42744c00a26fcf" title="Destroy and clear the key generation dialog.">cleanKeygenDialog()</a> closes and forgets it), so callers must observe it only and never delete it. Backed by a QPointer, so it reads back as nullptr once the dialog is destroyed. </p><dl class="section return"><dt>Returns</dt><dd>Non-owning pointer to the keygen QDialog, or nullptr when none is active. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00121">121</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00120">120</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -641,7 +641,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return whether startup configuration succeeded. </p>
 <p>Reflects the result of the initial configuration check performed in the constructor (<a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="Initialize internal state and signal connections.">QtPass::init()</a>). When it is false the application cannot be used (e.g. the user cancelled the first-run wizard), and main() should exit before ever showing the window. </p><dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="Initialize internal state and signal connections.">QtPass::init()</a> reported a working configuration. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00132">132</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00131">131</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
