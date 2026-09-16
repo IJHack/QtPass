@@ -24,6 +24,9 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Changed
 
+- Icon: the hairline where the shackle's straight legs met the arc is gone
+  (the arc now overlaps the legs instead of butting against them); PNG, ICO
+  and ICNS regenerated from the SVG
 - Debug output goes through one `qtpass` logging category instead of
   `#ifdef QT_DEBUG` blocks around a `dbg()` macro. Release builds keep it
   compiled in; `QT_LOGGING_RULES="qtpass.debug=true"` turns it on, so a user
