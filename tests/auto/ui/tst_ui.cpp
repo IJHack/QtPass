@@ -97,6 +97,7 @@ private Q_SLOTS:
   void deselectableTreeViewClickDoesNotBlock();
   void deselectableTreeViewClearsSelectionAfterDoubleClickInterval();
   void deselectableTreeViewDoubleClickKeepsSelection();
+  void deselectableTreeViewSecondClickCancelsPendingDeselect();
 };
 
 /**
@@ -750,6 +751,39 @@ void tst_ui::deselectableTreeViewDoubleClickKeepsSelection() {
   QTest::qWait(QGuiApplication::styleHints()->mouseDoubleClickInterval() + 200);
   QCOMPARE(spy.count(), 0);
   QVERIFY(view.selectionModel()->isSelected(first));
+}
+
+/// Clicking a selected item and then another item before the interval passes
+/// must not clear the new selection: the pending deselect belongs to the
+/// first click and has to be cancelled by the second press.
+void tst_ui::deselectableTreeViewSecondClickCancelsPendingDeselect() {
+  DeselectableTreeView view(nullptr);
+  QStandardItemModel model(2, 1);
+  model.setItem(0, 0, new QStandardItem(QStringLiteral("one")));
+  model.setItem(1, 0, new QStandardItem(QStringLiteral("two")));
+  view.setModel(&model);
+  view.resize(200, 200);
+
+  const QModelIndex first = model.index(0, 0);
+  const QModelIndex second = model.index(1, 0);
+  view.selectionModel()->select(first, QItemSelectionModel::Select);
+
+  QSignalSpy spy(&view, &DeselectableTreeView::emptyClicked);
+  const QPoint firstPos = view.visualRect(first).center();
+  QTest::mousePress(view.viewport(), Qt::LeftButton, Qt::NoModifier, firstPos);
+  QTest::mouseRelease(view.viewport(), Qt::LeftButton, Qt::NoModifier,
+                      firstPos);
+
+  // Second click on a different row, before the pending deselect fires.
+  const QPoint secondPos = view.visualRect(second).center();
+  QTest::mousePress(view.viewport(), Qt::LeftButton, Qt::NoModifier, secondPos);
+  QTest::mouseRelease(view.viewport(), Qt::LeftButton, Qt::NoModifier,
+                      secondPos);
+
+  QTest::qWait(QGuiApplication::styleHints()->mouseDoubleClickInterval() + 200);
+  QCOMPARE(spy.count(), 0);
+  QVERIFY2(view.selectionModel()->isSelected(second),
+           "the second row must stay selected");
 }
 
 QTEST_MAIN(tst_ui)

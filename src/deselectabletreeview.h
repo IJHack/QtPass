@@ -3,7 +3,6 @@
 #ifndef SRC_DESELECTABLETREEVIEW_H_
 #define SRC_DESELECTABLETREEVIEW_H_
 
-#include <QBasicTimer>
 #include <QGuiApplication>
 #include <QMouseEvent>
 #include <QStyleHints>
@@ -56,7 +55,11 @@ public:
    * @brief DeselectableTreeView standard constructor
    * @param parent
    */
-  explicit DeselectableTreeView(QWidget *parent) : QTreeView(parent) {}
+  explicit DeselectableTreeView(QWidget *parent) : QTreeView(parent) {
+    deselectTimer.setSingleShot(true);
+    connect(&deselectTimer, &QTimer::timeout, this,
+            &DeselectableTreeView::deselect);
+  }
   /**
    * @brief ~DeselectableTreeView standard destructor
    */
@@ -71,13 +74,16 @@ signals:
 private:
   bool doubleClickHappened = false;
   bool clickSelected = false;
-  QBasicTimer deselectTimer;
+  QTimer deselectTimer;
 
   /**
    * @brief mousePressEvent registers if the field was pre-selected
    * @param event
    */
   void mousePressEvent(QMouseEvent *event) override {
+    // A new press belongs to a new click: whatever the previous release left
+    // pending must not clear the selection this press is about to make.
+    deselectTimer.stop();
     clickSelected =
         selectionModel()->isSelected(indexAt(event->position().toPoint()));
     QTreeView::mousePressEvent(event);
@@ -107,15 +113,10 @@ private:
     // of assuming 200 ms.
     doubleClickHappened = false;
     deselectTimer.start(
-        QGuiApplication::styleHints()->mouseDoubleClickInterval(), this);
+        QGuiApplication::styleHints()->mouseDoubleClickInterval());
   }
 
-  void timerEvent(QTimerEvent *event) override {
-    if (event->id() != deselectTimer.id()) {
-      QTreeView::timerEvent(event);
-      return;
-    }
-    deselectTimer.stop();
+  void deselect() {
     if (doubleClickHappened)
       return;
     clearSelection();
