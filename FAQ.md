@@ -210,6 +210,13 @@ you prefer.
   clients handle credentials, reconnects and conflicts far better than the
   removed code did.
 
+### Ctrl+Q used to hide QtPass to the tray, now it quits
+
+Since 2.0 Ctrl+Q (Cmd+Q on macOS) quits, as it does in KeePassXC, Telegram and
+per the KDE, GNOME and macOS guidelines. Closing the _window_ is what "Hide on
+close" applies to: the close button, Alt+F4, and File ▸ Close window (Ctrl+W,
+Cmd+W) hide QtPass to the tray when that setting is on.
+
 ### How do I get a debug log?
 
 Every build, including the installers, can trace what it runs. Start QtPass
