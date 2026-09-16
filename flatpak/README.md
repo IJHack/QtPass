@@ -60,10 +60,11 @@ Flatseal or `flatpak override --user`.
 
 Bump the `tag`/`commit` of the `qtpass` module to the new release. The
 `x-checker-data` blocks let Flathub's external-data-checker propose updates of
-the bundled tools automatically. The `file` overlays in the `qtpass` module
-(metainfo, square icon, `main.cpp`, `qtpasssettings.cpp`, and for the 1.8.1
-first-run fix `mainwindow.h`, `mainwindow.cpp`, `qtpass.cpp`) exist only because
-v1.8.0 predates those changes — drop them when building from a later tag.
+the bundled tools automatically. The module builds the tag as-is: since
+v1.8.1 the tree ships `flatpak/gpg2`, and `make -C main install` puts the
+desktop file, metainfo and icons where `rename-desktop-file` /
+`rename-appdata-file` / `rename-icon` expect them, so no working-tree files
+are overlaid any more.
 
 ## CI
 
