@@ -410,7 +410,15 @@ void Executor::onProcessFinished(int exitCode,
 #endif
     emit finished(i.id, exitCode, output, err);
   } else {
-    emit error(i.id, exitCode, output, err);
+    // A signal-killed process usually leaves stderr empty; without this the
+    // password pane would show nothing at all for the failure.
+    if (err.trimmed().isEmpty()) {
+      err = tr("%1 crashed or was killed").arg(i.app);
+    }
+    // Qt leaves exitCode undefined after a CrashExit (the signal number on
+    // Unix), and Pass::finished gates on it: 0 would pass as success and 1
+    // as grep's "no matches". Report -1, like the failed-to-start path.
+    emit error(i.id, -1, output, err);
   }
   executeNext();
 }
