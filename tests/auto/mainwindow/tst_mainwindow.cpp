@@ -712,22 +712,31 @@ void tst_mainwindow::toolBarKeepsHeaderTintInSameTheme() {
 void tst_mainwindow::restoreWindowAppliesSavedGeometry() {
   m_window->show();
   QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
-  // Keep the frame inside the offscreen screen (800x600): restoreGeometry()
-  // clamps to the available screen, which is a feature, not what is tested.
-  m_window->move(37, 41);
-  m_window->resize(600, 450);
-  QTRY_COMPARE(m_window->size(), QSize(600, 450));
-  const QByteArray saved = m_window->saveGeometry();
-  QtPassSettings::setGeometry(saved);
+  // The window's minimum size depends on the platform fonts (463 wide on
+  // the Linux runner, 613 on FreeBSD), so ask for sizes well above it and
+  // record what the widget actually took rather than assuming. Keep the
+  // frame inside the offscreen screen (800x600): restoreGeometry() clamps to
+  // the available screen, which is a feature, not what is tested.
+  const QRect avail = QGuiApplication::primaryScreen()->availableGeometry();
+  const QSize big(avail.width() * 85 / 100, avail.height() * 80 / 100);
+  const QSize small(avail.width() * 75 / 100, avail.height() * 70 / 100);
+  if (small.width() <= m_window->minimumSizeHint().width() + 20) {
+    QSKIP("screen too small to resize the main window twice");
+  }
+  m_window->move(avail.left() + 37, avail.top() + 41);
+  m_window->resize(big);
+  QTRY_VERIFY(m_window->size().width() > small.width());
+  const QSize savedSize = m_window->size();
+  const QPoint savedPos = m_window->pos();
+  QtPassSettings::setGeometry(m_window->saveGeometry());
 
-  // Stay above the window's minimum size so the resize actually applies.
-  m_window->move(10, 10);
-  m_window->resize(520, 460);
-  QTRY_COMPARE(m_window->size(), QSize(520, 460));
+  m_window->move(avail.left() + 10, avail.top() + 10);
+  m_window->resize(small);
+  QTRY_VERIFY(m_window->size() != savedSize);
 
   m_window->restoreWindow();
-  QTRY_COMPARE(m_window->size(), QSize(600, 450));
-  QCOMPARE(m_window->pos(), QPoint(37, 41));
+  QTRY_COMPARE(m_window->size(), savedSize);
+  QTRY_COMPARE(m_window->pos(), savedPos);
 }
 
 /**
@@ -762,9 +771,9 @@ void tst_mainwindow::restoreWindowCentresWhenNothingSaved() {
 void tst_mainwindow::closeEventSavesGeometryAlsoWhenHidingToTray() {
   m_window->show();
   QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
-  m_window->move(222, 111);
-  m_window->resize(555, 444);
-  QTRY_COMPARE(m_window->size(), QSize(555, 444));
+  const QRect avail = QGuiApplication::primaryScreen()->availableGeometry();
+  m_window->move(avail.left() + 22, avail.top() + 11);
+  m_window->resize(avail.width() * 85 / 100, avail.height() * 80 / 100);
   QtPassSettings::setGeometry(QByteArray());
   {
     AppSettings s = QtPassSettings::load();
