@@ -812,14 +812,17 @@ void ConfigDialog::initializeNewProfiles(
 
     // Temporarily switch the active store so pass/git init operate on
     // the new profile's directory rather than the currently-saved one.
+    // Note this only moves the settings key; the backend keeps the snapshot
+    // it took at init(), see #1774.
     const QString prevStore = QtPassSettings::getPassStore();
     QtPassSettings::setPassStore(cleanPath);
 
     // Show user selection dialog for GPG recipients
-    // UsersDialog will run pass init when accepted
+    // UsersDialog will run pass init when accepted. The folder needs its
+    // trailing separator: ImitatePass::Init() appends ".gpg-id" to it.
     const AppSettings settings = QtPassSettings::load();
-    UsersDialog usersDialog(QtPassSettings::getPass(), settings, cleanPath,
-                            this);
+    UsersDialog usersDialog(QtPassSettings::getPass(), settings,
+                            Util::normalizeFolderPath(cleanPath), this);
     usersDialog.setWindowTitle(tr("Select recipients for %1").arg(name));
     const int result = usersDialog.exec();
 
@@ -1135,6 +1138,9 @@ void ConfigDialog::selectRecipients(const QString &storePath, bool gitInit) {
   QtPassSettings::setPassStore(store);
   PassBackendFactory::invalidate();
   Pass *pass = QtPassSettings::getPass();
+  // init() only records the settings; PASSWORD_STORE_DIR, which `pass`
+  // prefers over its working directory, is exported by updateEnv().
+  pass->updateEnv();
   if (gitInit) {
     pass->GitInit();
   }
