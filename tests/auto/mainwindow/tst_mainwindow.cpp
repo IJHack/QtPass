@@ -865,8 +865,9 @@ void tst_mainwindow::menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes() {
 }
 
 /**
- * @brief Ctrl+Q used to be a bare QShortcut that only closed the window; it
- *        is the Quit action now, and nothing else claims the sequence.
+ * @brief Ctrl+Q used to be a bare QShortcut; it is the Quit action now (same
+ *        close() behind it, so "hide on close" still applies) and nothing
+ *        else claims the sequence.
  */
 void tst_mainwindow::quitIsAnActionNotAStrayShortcut() {
   auto *quit = m_window->findChild<QAction *>(QStringLiteral("actionQuit"));

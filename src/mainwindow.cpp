@@ -322,10 +322,11 @@ void MainWindow::initToolBarButtons() {
   connect(ui->actionConfig, &QAction::triggered, this, &MainWindow::onConfig);
   connect(ui->actionOtp, &QAction::triggered, this, &MainWindow::onOtp);
 
-  // Menu-only actions. Quit really quits (the tray menu's Quit and macOS's
-  // Cmd+Q expect that); the window close button keeps its hide-on-close
-  // behaviour.
-  connect(ui->actionQuit, &QAction::triggered, qApp, &QApplication::quit);
+  // Menu-only actions. Quit goes through close(), exactly like the old
+  // Ctrl+Q shortcut: closeEvent() honours the user's "hide on close"
+  // setting (tray users hide, everyone else quits). The tray menu's Quit is
+  // the unconditional one.
+  connect(ui->actionQuit, &QAction::triggered, this, &MainWindow::close);
   connect(ui->actionFaq, &QAction::triggered, this, [] {
     QDesktopServices::openUrl(
         QUrl(QStringLiteral("https://qtpass.org/docs/md__f_a_q.html")));
