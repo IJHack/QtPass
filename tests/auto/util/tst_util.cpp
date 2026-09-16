@@ -30,6 +30,7 @@
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/pathvalidator.h"
 #include "../../../src/qprogressindicator.h"
+#include "../../../src/qtpasslogging.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/simpletransaction.h"
 #include "../../../src/sshauthsock.h"
@@ -303,6 +304,7 @@ private Q_SLOTS:
   // ImitatePass::Init must stage a .gpg-id that exists on disk but is not
   // tracked by git yet (follow-up to #1685)
   void initStagesUntrackedGpgId();
+  void loggingCategoryIsQuietUntilAsked();
 
 private:
   // Run git in `dir`; returns false on launch failure or non-zero exit. Stdout
@@ -3393,6 +3395,27 @@ void tst_util::initStagesUntrackedGpgId() {
   QVERIFY(written.open(QIODevice::ReadOnly | QIODevice::Text));
   QCOMPARE(QString::fromUtf8(written.readAll()),
            QStringLiteral("testkey123\n"));
+}
+
+/**
+ * @brief The "qtpass" category is compiled into release builds and only
+ *        speaks when QT_LOGGING_RULES turns it on, so users can produce a
+ *        trace without a debug build.
+ */
+void tst_util::loggingCategoryIsQuietUntilAsked() {
+  QCOMPARE(QString::fromLatin1(lcQtPass().categoryName()),
+           QStringLiteral("qtpass"));
+  if (qEnvironmentVariableIsEmpty("QT_LOGGING_RULES")) {
+    QVERIFY2(!lcQtPass().isDebugEnabled(),
+             "debug output must be off by default");
+  }
+  QLoggingCategory::setFilterRules(QStringLiteral("qtpass.debug=true"));
+  QVERIFY(lcQtPass().isDebugEnabled());
+  QTest::ignoreMessage(QtDebugMsg,
+                       QRegularExpression(QStringLiteral("trace me")));
+  qCDebug(lcQtPass) << "trace me";
+  QLoggingCategory::setFilterRules(QStringLiteral("qtpass.debug=false"));
+  QVERIFY(!lcQtPass().isDebugEnabled());
 }
 
 QTEST_MAIN(tst_util)

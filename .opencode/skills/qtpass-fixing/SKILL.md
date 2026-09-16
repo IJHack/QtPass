@@ -247,24 +247,26 @@ item->setToolTip(tr("Invalid key"));
 
 ### Debug Logging
 
-Add debug logging for validation failures using `#ifdef QT_DEBUG`:
+Use the `qtpass` logging category from `src/qtpasslogging.h`; never wrap
+logging in `#ifdef QT_DEBUG` (those blocks used to splice `else` branches
+and broke release builds more than once) and never use bare `qDebug()`:
 
 ```cpp
+#include "qtpasslogging.h"
+
 bool success = false;
 const int index = item->data(Qt::UserRole).toInt(&success);
 if (!success) {
-#ifdef QT_DEBUG
-    qWarning() << "UsersDialog::itemChange: invalid user index data for item";
-#endif
-    return;
+  qCWarning(lcQtPass) << "UsersDialog::itemChange: invalid user index data";
+  return;
 }
-if (index < 0 || index >= m_userList.size()) {
-#ifdef QT_DEBUG
-    qWarning() << "UsersDialog::itemChange: user index out of range:" << index;
-#endif
-    return;
-}
+qCDebug(lcQtPass) << "applying template" << name;
 ```
+
+`qCDebug` is compiled into release builds but silent until
+`QT_LOGGING_RULES="qtpass.debug=true"` (see the FAQ); `qCWarning` is always
+on, so reserve it for states that should not happen. Passwords and decrypted
+content never go through either.
 
 ### Qt Version Floor (Qt 6.8)
 

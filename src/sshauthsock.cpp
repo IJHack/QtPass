@@ -16,9 +16,7 @@
 #include <sys/stat.h>
 #endif
 
-#ifdef QT_DEBUG
-#include "debughelper.h"
-#endif
+#include "qtpasslogging.h"
 
 namespace {
 /**
@@ -110,10 +108,8 @@ void SshAuthSock::initialise(const QString &override) {
   // Manual override from settings takes precedence over auto-probe.
   if (!override.isEmpty()) {
     qputenv("SSH_AUTH_SOCK", override.toUtf8());
-#ifdef QT_DEBUG
-    dbg() << "SshAuthSock::initialise(): set from settings override:"
-          << override;
-#endif
+    qCDebug(lcQtPass)
+        << "SshAuthSock::initialise(): set from settings override:" << override;
     return;
   }
 
@@ -127,17 +123,14 @@ void SshAuthSock::initialise(const QString &override) {
     const QString socket = out.trimmed();
     if (!socket.isEmpty() && isSshAgentReachable(socket)) {
       qputenv("SSH_AUTH_SOCK", socket.toUtf8());
-#ifdef QT_DEBUG
-      dbg() << "SshAuthSock::initialise(): set from gpgconf:" << socket;
-#endif
+      qCDebug(lcQtPass) << "SshAuthSock::initialise(): set from gpgconf:"
+                        << socket;
       return;
     }
-#ifdef QT_DEBUG
     if (!socket.isEmpty()) {
-      dbg() << "SshAuthSock::initialise(): gpgconf reported" << socket
-            << "but ssh-add -l rejected it; not adopting";
+      qCDebug(lcQtPass) << "SshAuthSock::initialise(): gpgconf reported"
+                        << socket << "but ssh-add -l rejected it; not adopting";
     }
-#endif
   }
 
 #ifdef Q_OS_MACOS
@@ -152,16 +145,12 @@ void SshAuthSock::initialise(const QString &override) {
     const QString socket = out.trimmed();
     if (!socket.isEmpty() && isSshAgentReachable(socket)) {
       qputenv("SSH_AUTH_SOCK", socket.toUtf8());
-#ifdef QT_DEBUG
-      dbg() << "SshAuthSock::initialise(): set from launchctl:" << socket;
-#endif
+      qCDebug(lcQtPass) << "SshAuthSock::initialise(): set from launchctl:"
+                        << socket;
+    } else if (!socket.isEmpty()) {
+      qCDebug(lcQtPass) << "SshAuthSock::initialise(): launchctl reported"
+                        << socket << "but ssh-add -l rejected it; not adopting";
     }
-#ifdef QT_DEBUG
-    else if (!socket.isEmpty()) {
-      dbg() << "SshAuthSock::initialise(): launchctl reported" << socket
-            << "but ssh-add -l rejected it; not adopting";
-    }
-#endif
   }
 #endif
 }
