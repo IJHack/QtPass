@@ -95,13 +95,14 @@ jobs:
         run: |
           $ErrorActionPreference = "Stop"
 
-          $version = "1.5.1"
           if ($env:GITHUB_REF -like 'refs/tags/v*') {
             $version = $env:GITHUB_REF_NAME -replace '^v', ''
           } else {
             $line = Get-Content qtpass.pri | Where-Object { $_ -match '^VERSION\s*=' } | Select-Object -First 1
             if ($line -and ($line -match '=\s*([0-9]+\.[0-9]+\.[0-9]+)')) {
               $version = $matches[1]
+            } else {
+              throw "No VERSION found in qtpass.pri"
             }
           }
 
@@ -194,13 +195,13 @@ jobs:
         run: |
           set -euo pipefail
 
-          version="1.5.1"
           if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
             version="${GITHUB_REF_NAME#v}"
           else
-            version_from_pri="$(awk -F '=' '/^VERSION[[:space:]]*=/{ gsub(/[[:space:]]/, "", $2); print $2; exit }' qtpass.pri)"
-            if [[ -n "${version_from_pri}" ]]; then
-              version="${version_from_pri}"
+            version="$(awk -F '=' '/^VERSION[[:space:]]*=/{ gsub(/[[:space:]]/, "", $2); print $2; exit }' qtpass.pri)"
+            if [[ -z "${version}" ]]; then
+              echo "No VERSION found in qtpass.pri" >&2
+              exit 1
             fi
           fi
 

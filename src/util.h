@@ -51,6 +51,18 @@ public:
    */
   static auto findPasswordStore() -> QString;
   /**
+   * @brief Expand a leading current-user tilde in a path.
+   *
+   * Environment variables set outside a shell (systemd units, .desktop
+   * entries, quoted assignments) keep a literal "~", which no filesystem call
+   * resolves. "~" and "~/..." become the home directory; "~user" forms and
+   * everything else are returned unchanged.
+   *
+   * @param path Path that may start with a tilde.
+   * @return QString Path with a leading current-user tilde expanded.
+   */
+  static auto expandTilde(const QString &path) -> QString;
+  /**
    * @brief Ensure a folder path always ends with '/'.
    *
    * Qt normalises paths to forward slashes internally, so this function
