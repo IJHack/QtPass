@@ -160,17 +160,42 @@ announcing the release:
 
 - Not ours: maintained by Philip Rinn <rinni@debian.org>,
   [salsa.debian.org/debian/qtpass](https://salsa.debian.org/debian/qtpass).
-- Ubuntu syncs the package from Debian and Linux Mint inherits Ubuntu's, so
-  Debian unstable is the only lever; an Ubuntu-only upload would be reverted
-  at the next sync.
+- **Debian is where to coordinate**, because everything else follows it:
+  - Ubuntu auto-syncs from Debian unstable only while its merge window is
+    open (until DebianImportFreeze). After that a new version needs an
+    explicit sync request (`requestsync`) or a manual upload by an Ubuntu
+    developer, and after FeatureFreeze a Feature Freeze Exception as well.
+    Ubuntu also carries its own delta when it wants to — `1.4.0-3ubuntu1`
+    added a `Provides: pinentry` line — so an upload there is possible, just
+    more work and to be repeated every cycle.
+  - Linux Mint's main editions are rebuilt from Ubuntu, so they inherit
+    whatever Ubuntu shipped. **LMDE** is built from Debian stable instead and
+    follows Debian directly.
+  - Net effect: one upload to Debian unstable eventually reaches all of them;
+    an Ubuntu-only fix reaches neither Debian nor LMDE.
 - `debian/watch` scrapes our GitHub releases for `QtPass-<version>.tar.gz`
   plus the detached `.asc`, so a signed release is enough for `uscan` to see
   it. Signing the release assets is therefore not optional.
-- If a release sits unpackaged for a while, file a wishlist bug
-  (`reportbug qtpass`, severity wishlist, subject
-  `qtpass: new upstream release X.Y.Z`) listing the security-relevant fixes,
-  and say whether they are worth stable-updates or backports. Draft used for
-  1.8.1: `~/debian-qtpass-1.8.1-bug.txt` (see #1682 packaging notes).
+- If a release sits unpackaged for a while, file a wishlist bug against the
+  package (`reportbug qtpass`, or mail `submit@bugs.debian.org`). Skeleton:
+
+  ```text
+  Package: qtpass
+  Version: <version currently in unstable>
+  Severity: wishlist
+
+  <upstream release X.Y.Z, its date, and the releases skipped since>
+  <the security-relevant fixes, one bullet each, with what they mean for a
+   Debian user — this is also the argument for stable-updates or backports>
+  <changelog and release URLs>
+  <packaging notes: new build dependencies, files the build now installs
+   itself, which of their patches became obsolete>
+  ```
+
+  Keep it factual, leave the stable-update judgement to the maintainer, and
+  offer upstream help. See #1682 for the packaging notes behind the 1.8.1
+  report.
+
 - Keep the Debian delta small: patches they carry are patches to refresh on
   every upload. `02-make-reproducible.patch` went upstream in #1757;
   `01-disable-tests.patch` and `03-fix-gpg-detection.patch` are obsolete as of
