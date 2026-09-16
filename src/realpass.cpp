@@ -163,7 +163,9 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
     passSrc.replace(Util::endsWithGpg(), "");
   }
-  if (destFileInfo.isFile() && destFileInfo.suffix() == "gpg") {
+  // The destination usually does not exist yet; pass appends .gpg itself,
+  // so a name that already ends in .gpg would come out as "name.gpg.gpg".
+  if (!destFileInfo.isDir() && destFileInfo.suffix() == "gpg") {
     passDest.replace(Util::endsWithGpg(), "");
   }
 
