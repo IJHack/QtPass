@@ -172,9 +172,6 @@ void&#160;</td><td class="memItemRight"><b>endReencryptPath</b> ()</td></tr>
 Signals</h2></td></tr>
 <tr class="memitem:a7e1ae254673e36410d4b3a73e1e8ec8e" id="r_a7e1ae254673e36410d4b3a73e1e8ec8e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7e1ae254673e36410d4b3a73e1e8ec8e">passShowHandlerFinished</a> (const QString &amp;output)</td></tr>
 <tr class="memdesc:a7e1ae254673e36410d4b3a73e1e8ec8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when the pass show handler has finished decrypting.  <br /></td></tr>
-<tr class="memitem:a3c5e045f6f13c0c6054ff4d4cdb58498" id="r_a3c5e045f6f13c0c6054ff4d4cdb58498"><td class="memItemLeft"><a id="a3c5e045f6f13c0c6054ff4d4cdb58498" name="a3c5e045f6f13c0c6054ff4d4cdb58498"></a>
-void&#160;</td><td class="memItemRight"><b>passGitInitNeeded</b> ()</td></tr>
-<tr class="memdesc:a3c5e045f6f13c0c6054ff4d4cdb58498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when a Git init is required for the current store. <br /></td></tr>
 <tr class="memitem:a7e72f32612c2436ff4756c5c25b6b4ec" id="r_a7e72f32612c2436ff4756c5c25b6b4ec"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7e72f32612c2436ff4756c5c25b6b4ec">generateGPGKeyPair</a> (const QString &amp;batch)</td></tr>
 <tr class="memdesc:a7e72f32612c2436ff4756c5c25b6b4ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted to trigger GPG key pair generation.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -187,8 +184,6 @@ void&#160;</td><td class="memItemRight"><b>restoreWindow</b> ()</td></tr>
 <tr class="memdesc:a9630f0fe0e0941a7996d68014f837ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restore window geometry and state from saved settings. <br /></td></tr>
 <tr class="memitem:a8737aac54ea6a935210f9a35ac914aa7" id="r_a8737aac54ea6a935210f9a35ac914aa7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8737aac54ea6a935210f9a35ac914aa7">generateKeyPair</a> (const QString &amp;batch, QDialog *dialog)</td></tr>
 <tr class="memdesc:a8737aac54ea6a935210f9a35ac914aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the GPG key generation dialog.  <br /></td></tr>
-<tr class="memitem:a056b66175a3d3ffc3146535726bb4e50" id="r_a056b66175a3d3ffc3146535726bb4e50"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a056b66175a3d3ffc3146535726bb4e50">userDialog</a> (const QString &amp;dir=&quot;&quot;)</td></tr>
-<tr class="memdesc:a056b66175a3d3ffc3146535726bb4e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the user/recipient management dialog.  <br /></td></tr>
 <tr class="memitem:acc003e9dd04952c5069f87839d708073" id="r_acc003e9dd04952c5069f87839d708073"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acc003e9dd04952c5069f87839d708073">config</a> () -&gt; bool</td></tr>
 <tr class="memdesc:acc003e9dd04952c5069f87839d708073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the configuration dialog.  <br /></td></tr>
 <tr class="memitem:ac240119ea67a770e5d997a5aa0fe47a3" id="r_ac240119ea67a770e5d997a5aa0fe47a3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a> (bool state)</td></tr>
@@ -611,7 +606,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return the active key generation dialog, if any. </p>
 <p>The returned pointer is non-owning: the dialog's lifetime is managed elsewhere (<a class="el" href="#ad2a9b38617b357d8fa42744c00a26fcf" title="Destroy and clear the key generation dialog.">cleanKeygenDialog()</a> closes and forgets it), so callers must observe it only and never delete it. Backed by a QPointer, so it reads back as nullptr once the dialog is destroyed. </p><dl class="section return"><dt>Returns</dt><dd>Non-owning pointer to the keygen QDialog, or nullptr when none is active. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00120">120</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00114">114</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -641,7 +636,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return whether startup configuration succeeded. </p>
 <p>Reflects the result of the initial configuration check performed in the constructor (<a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="Initialize internal state and signal connections.">QtPass::init()</a>). When it is false the application cannot be used (e.g. the user cancelled the first-run wizard), and main() should exit before ever showing the window. </p><dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="Initialize internal state and signal connections.">QtPass::init()</a> reported a working configuration. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00131">131</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00125">125</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -1079,31 +1074,6 @@ Protected Member Functions</h2></td></tr>
 
 <p>Begin a re-encryption pass on the current path. </p>
 <p>Disables the UI, shows a cancellable progress dialog and keeps both in place until <a class="el" href="#a201fc73a7db0d404e8fd49f818696eba" title="Finish a re-encryption pass on the current path.">endReencryptPath()</a>: while the worker runs, unrelated completions must not re-enable the interface (see setUiElementsEnabled). </p>
-
-</div>
-</div>
-<a id="a056b66175a3d3ffc3146535726bb4e50" name="a056b66175a3d3ffc3146535726bb4e50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a056b66175a3d3ffc3146535726bb4e50">&#9670;&#160;</a></span>userDialog()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::userDialog </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dir</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Open the user/recipient management dialog. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dir</td><td>Directory for which to manage recipients. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
