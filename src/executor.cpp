@@ -63,6 +63,19 @@ auto Executor::wslExecArgs(const QString &command, const QStringList &args)
   return wslArgs;
 }
 
+auto Executor::translatePathForWsl(const QString &path, const QString &exe)
+    -> QString {
+  QString normalizedPath = QDir::cleanPath(path);
+  if (!exe.startsWith(QStringLiteral("wsl ")))
+    return normalizedPath;
+  QString wslPath;
+  const int rc = executeBlocking(
+      QStringLiteral("wsl"),
+      wslExecArgs(QStringLiteral("wslpath"), {normalizedPath}), &wslPath);
+  const QString translated = wslPath.trimmed();
+  return (rc == 0 && !translated.isEmpty()) ? translated : normalizedPath;
+}
+
 /**
  * @brief Executor::executeNext consumes executable tasks from the queue
  */

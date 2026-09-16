@@ -248,6 +248,18 @@ public:
       -> QStringList;
 
   /**
+   * @brief Translate a native path for a WSL-routed executable.
+   *
+   * When @p exe starts with "wsl " the path is converted with `wslpath`
+   * (the Linux binary cannot open `C:\...`); otherwise it is only cleaned.
+   * @param path Native filesystem path.
+   * @param exe Executable the path is meant for (checked for "wsl ").
+   * @return Path suitable for @p exe.
+   */
+  static auto translatePathForWsl(const QString &path, const QString &exe)
+      -> QString;
+
+  /**
    * @brief Set the environment passed to all child processes.
    * @param env Process environment for child processes.
    */

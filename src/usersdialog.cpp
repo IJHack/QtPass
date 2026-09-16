@@ -8,14 +8,17 @@
 #include "windowstatestore.h"
 #include <QApplication>
 #include <QDateTime>
+#include <QDialogButtonBox>
 #include <QKeyEvent>
 #include <QLineEdit>
 #include <QListWidget>
 #include <QMessageBox>
+#include <QPushButton>
 #include <QRegularExpression>
 #include <QSet>
 #include <QSignalBlocker>
 #include <QWidget>
+#include <algorithm>
 #include <utility>
 
 #ifdef QT_DEBUG
@@ -166,11 +169,27 @@ UsersDialog::~UsersDialog() = default;
  * @brief UsersDialog::accept
  */
 void UsersDialog::accept() {
+  if (!hasSelection()) {
+    // Nothing to encrypt to: an empty .gpg-id would make every insert fail
+    // and the wizard never offers this dialog again once the file exists.
+    return;
+  }
   if (m_initOnAccept) {
     m_pass->Init(m_dir, m_userList);
   }
 
   QDialog::accept();
+}
+
+auto UsersDialog::hasSelection() const -> bool {
+  return std::any_of(m_userList.cbegin(), m_userList.cend(),
+                     [](const UserInfo &user) { return user.enabled; });
+}
+
+void UsersDialog::updateOkButton() {
+  if (auto *ok = ui->buttonBox->button(QDialogButtonBox::Ok)) {
+    ok->setEnabled(hasSelection());
+  }
 }
 
 /**
@@ -212,6 +231,7 @@ void UsersDialog::itemChange(QListWidgetItem *item) {
     return;
   }
   m_userList[index].enabled = item->checkState() == Qt::Checked;
+  updateOkButton();
 }
 
 /**
@@ -248,6 +268,7 @@ void UsersDialog::populateList(const QString &filter) {
     item->setData(Qt::UserRole, QVariant::fromValue(i));
     ui->listWidget->addItem(item);
   }
+  updateOkButton();
 }
 
 /**

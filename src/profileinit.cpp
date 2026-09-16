@@ -97,7 +97,8 @@ auto ProfileInit::signGpgId(const QString &gpgIdFile, const AppSettings &s,
   const int rc = Executor::executeBlocking(
       s.gpgExecutable,
       {QStringLiteral("--default-key"), key, QStringLiteral("--yes"),
-       QStringLiteral("--detach-sign"), gpgIdFile},
+       QStringLiteral("--detach-sign"),
+       Executor::translatePathForWsl(gpgIdFile, s.gpgExecutable)},
       QString(), nullptr, &err);
   if (rc != 0) {
     *note =

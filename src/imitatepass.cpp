@@ -107,16 +107,7 @@ auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
 
 auto ImitatePass::translatePathForWsl(const QString &path,
                                       const QString &exe) const -> QString {
-  QString normalizedPath = QDir::cleanPath(path);
-  if (!exe.startsWith(QStringLiteral("wsl ")))
-    return normalizedPath;
-  QString wslPath;
-  const int rc = Executor::executeBlocking(
-      QStringLiteral("wsl"),
-      Executor::wslExecArgs(QStringLiteral("wslpath"), {normalizedPath}),
-      &wslPath);
-  const QString translated = wslPath.trimmed();
-  return (rc == 0 && !translated.isEmpty()) ? translated : normalizedPath;
+  return Executor::translatePathForWsl(path, exe);
 }
 
 auto ImitatePass::pgit(const QString &path) const -> QString {

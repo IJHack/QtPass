@@ -1,8 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QDialogButtonBox>
 #include <QDir>
 #include <QFile>
 #include <QListWidget>
+#include <QPushButton>
 #include <QStandardPaths>
 #include <QTemporaryDir>
 #include <QtTest>
@@ -58,6 +60,7 @@ private slots:
   void initTestCase();
   void newStoreStartsWithNothingSelected();
   void acceptRunsInitByDefault();
+  void acceptWithoutSelectionDoesNothing();
   void acceptWithoutInitOnlyCollectsTheSelection();
 
 private:
@@ -116,6 +119,31 @@ void tst_usersdialog::acceptRunsInitByDefault() {
   dialog.accept();
   QCOMPARE(pass.initCalls.size(), 1);
   QCOMPARE(pass.initCalls.first().first, m_settings.passStore);
+}
+
+/**
+ * @brief OK is greyed out until a key is ticked, and accept() refuses an
+ *        empty selection anyway: an empty .gpg-id makes every insert fail
+ *        and the wizard never shows this dialog again once the file exists.
+ */
+void tst_usersdialog::acceptWithoutSelectionDoesNothing() {
+  RecordingPass pass(m_settings);
+  UsersDialog dialog(&pass, m_settings, m_settings.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  auto *box = dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+  QVERIFY(list != nullptr && box != nullptr);
+  QVERIFY2(!box->button(QDialogButtonBox::Ok)->isEnabled(),
+           "OK must be disabled while nothing is selected");
+
+  dialog.accept();
+  QVERIFY(pass.initCalls.isEmpty());
+  QVERIFY2(dialog.result() != QDialog::Accepted,
+           "the dialog must stay open without a recipient");
+
+  list->item(0)->setCheckState(Qt::Checked);
+  QVERIFY(box->button(QDialogButtonBox::Ok)->isEnabled());
+  list->item(0)->setCheckState(Qt::Unchecked);
+  QVERIFY(!box->button(QDialogButtonBox::Ok)->isEnabled());
 }
 
 /**

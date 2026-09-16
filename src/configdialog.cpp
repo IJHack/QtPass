@@ -826,9 +826,15 @@ void ConfigDialog::initializeNewProfiles(
     QString useGitStr = newProfiles.value(name).value("useGit");
     bool useGit = useGitStr.isEmpty() ? settings.useGit : useGitStr == "true";
 
+    // Signing keys are per profile, exactly as the profile switch applies
+    // them (MainWindow::on_profileBox_currentTextChanged).
+    AppSettings profileSettings = settings;
+    profileSettings.passSigningKey =
+        newProfiles.value(name).value("signingKey");
+
     QString note;
     const bool ok = ProfileInit::initialise(
-        cleanPath, usersDialog.selectedUsers(), settings, useGit, &note);
+        cleanPath, usersDialog.selectedUsers(), profileSettings, useGit, &note);
     if (!ok) {
       QMessageBox::warning(
           this, tr("Could not initialise profile %1").arg(name), note);

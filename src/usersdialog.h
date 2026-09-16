@@ -63,6 +63,12 @@ public:
     return m_userList;
   }
 
+  /**
+   * @brief Whether at least one key is ticked.
+   * @return true if Init would get a recipient.
+   */
+  [[nodiscard]] auto hasSelection() const -> bool;
+
 public slots:
   /**
    * @brief Handle dialog acceptance.
@@ -98,15 +104,16 @@ private slots:
 
 private:
   QScopedPointer<Ui::UsersDialog> ui;
-  Pass *m_pass;                  /**< Active Pass backend */
-  QString m_passStore;           /**< Password store root path */
-  QString m_gpgExe;              /**< GPG executable path */
-  QList<UserInfo> m_userList;    /**< List of available GPG users */
-  bool m_initOnAccept{true};     /**< Whether accept() runs Pass::Init. */
-  QString m_dir;                 /**< Password store directory */
-  QString m_lastFilter;          /**< Last filter text for caching */
-  QString m_cachedPatternString; /**< Cached pattern string */
-  QRegularExpression m_cachedNameFilter;     /**< Cached regex filter */
+  Pass *m_pass;               /**< Active Pass backend */
+  QString m_passStore;        /**< Password store root path */
+  QString m_gpgExe;           /**< GPG executable path */
+  QList<UserInfo> m_userList; /**< List of available GPG users */
+  bool m_initOnAccept{true};  /**< Whether accept() runs Pass::Init. */
+  void updateOkButton();
+  QString m_dir;                         /**< Password store directory */
+  QString m_lastFilter;                  /**< Last filter text for caching */
+  QString m_cachedPatternString;         /**< Cached pattern string */
+  QRegularExpression m_cachedNameFilter; /**< Cached regex filter */
   mutable QDateTime m_cachedCurrentDateTime; /**< Cached current date/time for
                                                      expiry checks */
   mutable bool m_cachedDateTimeValid =
