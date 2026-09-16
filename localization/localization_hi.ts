@@ -32,68 +32,68 @@
         <translation>सेटिंग्स</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="72"/>
+        <location filename="../src/configdialog.ui" line="86"/>
         <source>Clipboard behaviour:</source>
         <translation>क्लिपबोर्ड व्यवहार:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="91"/>
+        <location filename="../src/configdialog.ui" line="104"/>
         <source>Use primary selection</source>
         <translation>प्राथमिक चयन का उपयोग करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="98"/>
+        <location filename="../src/configdialog.ui" line="111"/>
         <source>Autoclear after:</source>
         <translation>स्वतः साफ़ करने की अवधि:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="115"/>
-        <location filename="../src/configdialog.ui" line="198"/>
+        <location filename="../src/configdialog.ui" line="128"/>
+        <location filename="../src/configdialog.ui" line="203"/>
         <source>Seconds</source>
         <translation>सेकंड</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="147"/>
+        <location filename="../src/configdialog.ui" line="156"/>
         <source>Content panel behaviour:</source>
         <translation>सामग्री पैनल व्यवहार:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="159"/>
+        <location filename="../src/configdialog.ui" line="164"/>
         <source>Hide content</source>
         <translation>सामग्री छिपाएं</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="166"/>
+        <location filename="../src/configdialog.ui" line="171"/>
         <source>Hide password</source>
         <translation>पासवर्ड छिपाएं</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="175"/>
+        <location filename="../src/configdialog.ui" line="180"/>
         <source>Autoclear panel after:</source>
         <translation>पैनल स्वतः साफ़ करने की अवधि:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="224"/>
+        <location filename="../src/configdialog.ui" line="232"/>
         <source>Use a monospace font</source>
         <translation>मोनोस्पेस फ़ॉन्ट का उपयोग करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="231"/>
+        <location filename="../src/configdialog.ui" line="239"/>
         <source>Display the files content as-is</source>
         <translation>फ़ाइल सामग्री को जैसा है वैसा दिखाएं</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="238"/>
+        <location filename="../src/configdialog.ui" line="246"/>
         <source>No line wrapping</source>
         <translation>लाइन रैपिंग नहीं</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="245"/>
+        <location filename="../src/configdialog.ui" line="253"/>
         <source>Show process output</source>
         <translation>प्रक्रिया आउटपुट दिखाएं</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="277"/>
+        <location filename="../src/configdialog.ui" line="278"/>
         <source>Password Generation:</source>
         <translation>पासवर्ड उत्पन्न करना:</translation>
     </message>
@@ -103,102 +103,102 @@
         <translation>पासवर्ड लंबाई:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="323"/>
+        <location filename="../src/configdialog.ui" line="326"/>
         <source>Characters</source>
         <translation>वर्ण</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="351"/>
+        <location filename="../src/configdialog.ui" line="357"/>
         <source>Use characters:</source>
         <translation>वर्णों का उपयोग करें:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="369"/>
+        <location filename="../src/configdialog.ui" line="378"/>
         <source>Select character set for password generation</source>
         <translation>पासवर्ड उत्पन्न करने के लिए वर्ण सेट चुनें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="373"/>
+        <location filename="../src/configdialog.ui" line="382"/>
         <source>All Characters</source>
         <translation>सभी वर्ण</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="378"/>
+        <location filename="../src/configdialog.ui" line="387"/>
         <source>Alphabetical</source>
         <translation>वर्णमाला</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="383"/>
+        <location filename="../src/configdialog.ui" line="392"/>
         <source>Alphanumerical</source>
         <translation>अल्फ़ान्यूमेरिकल</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="388"/>
+        <location filename="../src/configdialog.ui" line="397"/>
         <source>Custom</source>
         <translation>कस्टम</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="426"/>
+        <location filename="../src/configdialog.ui" line="435"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="443"/>
+        <location filename="../src/configdialog.ui" line="452"/>
         <source>Use PWGen</source>
         <translation>PWGen का उपयोग करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="450"/>
+        <location filename="../src/configdialog.ui" line="459"/>
         <source>Exclude capital letters</source>
         <translation>बड़े अक्षरों को बाहर रखें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="460"/>
+        <location filename="../src/configdialog.ui" line="469"/>
         <source>Include special symbols</source>
         <translation>विशेष प्रतीक शामिल करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="467"/>
+        <location filename="../src/configdialog.ui" line="476"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>याद रखने में आसान लेकिन कम सुरक्षित पासवर्ड उत्पन्न करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="474"/>
+        <location filename="../src/configdialog.ui" line="483"/>
         <source>Exclude numbers</source>
         <translation>संख्याओं को बाहर रखें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="493"/>
+        <location filename="../src/configdialog.ui" line="495"/>
         <source>Git:</source>
         <translation>गिट:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="505"/>
+        <location filename="../src/configdialog.ui" line="506"/>
         <source>Use Git</source>
         <translation>गिट का उपयोग करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="519"/>
+        <location filename="../src/configdialog.ui" line="517"/>
         <source>Automatically add .gpg-id files</source>
         <translation>.gpg-id फ़ाइलें स्वचालित रूप से जोड़ें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="526"/>
+        <location filename="../src/configdialog.ui" line="524"/>
         <source>Automatically push</source>
         <translation>स्वचालित रूप से पुश करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="533"/>
+        <location filename="../src/configdialog.ui" line="531"/>
         <source>Automatically pull</source>
         <translation>स्वचालित रूप से पुल करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="565"/>
+        <location filename="../src/configdialog.ui" line="556"/>
         <source>Extensions:</source>
         <translation>एक्सटेंशन:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="574"/>
+        <location filename="../src/configdialog.ui" line="564"/>
         <source>Use QRencode</source>
         <translation>QRencode का उपयोग करें</translation>
     </message>
@@ -207,216 +207,246 @@
         <translation type="vanished">pass-otp एक्सटेंशन का उपयोग करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="588"/>
+        <location filename="../src/configdialog.ui" line="578"/>
         <source>Enable one-time password (OTP) support</source>
         <translation type="unfinished">वन-टाइम पासवर्ड (OTP) समर्थन सक्षम करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="599"/>
+        <location filename="../src/configdialog.ui" line="589"/>
         <source>Enable content search (pass grep)</source>
         <translation>सामग्री खोज सक्षम करें (pass grep)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="602"/>
+        <location filename="../src/configdialog.ui" line="592"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>पासवर्ड फ़ाइल सामग्री के अंदर खोजने की अनुमति दें। प्रत्येक फ़ाइल को डिक्रिप्ट करने की आवश्यकता है और बड़े स्टोर पर धीमा हो सकता है।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="624"/>
+        <location filename="../src/configdialog.ui" line="604"/>
         <source>System:</source>
         <translation>सिस्टम:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="636"/>
+        <location filename="../src/configdialog.ui" line="615"/>
         <source>Use TrayIcon</source>
         <translation>ट्रे आइकन का उपयोग करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="643"/>
+        <location filename="../src/configdialog.ui" line="622"/>
         <source>Start minimized</source>
         <translation>छोटा करके शुरू करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="650"/>
+        <location filename="../src/configdialog.ui" line="629"/>
         <source>Hide on close</source>
         <translation>बंद करने पर छिपाएं</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="657"/>
+        <location filename="../src/configdialog.ui" line="636"/>
         <source>Always on top</source>
         <translation>हमेशा शीर्ष पर</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="682"/>
+        <location filename="../src/configdialog.ui" line="666"/>
         <source>Programs</source>
         <translation>प्रोग्राम</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="700"/>
+        <location filename="../src/configdialog.ui" line="706"/>
         <source>Select password storage program:</source>
         <translation>पासवर्ड स्टोरेज प्रोग्राम चुनें:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="709"/>
+        <location filename="../src/configdialog.ui" line="715"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>नेटि&amp;व गिट/जीपीजी</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="716"/>
+        <location filename="../src/configdialog.ui" line="722"/>
         <source>&amp;Use pass</source>
         <translation>pass का &amp;उपयोग करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="740"/>
+        <location filename="../src/configdialog.ui" line="746"/>
         <source>Native</source>
         <translation>नेटिव</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="746"/>
+        <location filename="../src/configdialog.ui" line="752"/>
         <source>Git</source>
         <translation>गिट</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="756"/>
-        <location filename="../src/configdialog.ui" line="763"/>
-        <location filename="../src/configdialog.ui" line="806"/>
-        <location filename="../src/configdialog.ui" line="837"/>
-        <location filename="../src/configdialog.ui" line="1036"/>
+        <location filename="../src/configdialog.ui" line="765"/>
+        <location filename="../src/configdialog.ui" line="768"/>
+        <source>Choose the gpg executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="771"/>
+        <location filename="../src/configdialog.ui" line="784"/>
+        <location filename="../src/configdialog.ui" line="839"/>
+        <location filename="../src/configdialog.ui" line="879"/>
+        <location filename="../src/configdialog.ui" line="1116"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="776"/>
+        <location filename="../src/configdialog.ui" line="778"/>
+        <location filename="../src/configdialog.ui" line="781"/>
+        <source>Choose the git executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="797"/>
         <source>Generate</source>
         <translation>उत्पन्न करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="779"/>
+        <location filename="../src/configdialog.ui" line="800"/>
         <source>Generate GPG key pair</source>
         <translation>जीपीजी कुंजी जोड़ी उत्पन्न करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="786"/>
+        <location filename="../src/configdialog.ui" line="807"/>
         <source>GPG</source>
         <translation>जीपीजी</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="799"/>
+        <location filename="../src/configdialog.ui" line="823"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="816"/>
+        <location filename="../src/configdialog.ui" line="833"/>
+        <location filename="../src/configdialog.ui" line="836"/>
+        <source>Choose the pwgen executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="849"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="827"/>
+        <location filename="../src/configdialog.ui" line="860"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="846"/>
+        <location filename="../src/configdialog.ui" line="873"/>
+        <location filename="../src/configdialog.ui" line="876"/>
+        <source>Choose the pass executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="888"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="877"/>
+        <location filename="../src/configdialog.ui" line="919"/>
         <source>Autodetect</source>
         <translation>स्वत: पहचान</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="888"/>
+        <location filename="../src/configdialog.ui" line="930"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>SSH_AUTH_SOCK ओवरराइड:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="891"/>
+        <location filename="../src/configdialog.ui" line="933"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>SSH_AUTH_SOCK को ओवरराइड करने के लिए वैकल्पिक पथ। gpgconf के माध्यम से स्वतः-जांच के लिए खाली छोड़ें (issue #543).</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="898"/>
+        <location filename="../src/configdialog.ui" line="943"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(gpgconf के माध्यम से स्वतः-जांच)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="921"/>
+        <location filename="../src/configdialog.ui" line="970"/>
         <source>Profiles</source>
         <translation>प्रोफ़ाइल</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="970"/>
+        <location filename="../src/configdialog.ui" line="1041"/>
         <source>Name</source>
         <translation>नाम</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="973"/>
+        <location filename="../src/configdialog.ui" line="1044"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>प्रोफ़ाइल नाम, इस कॉन्फ़िगरेशन प्रोफ़ाइल की पहचान करने के लिए उपयोग किया जाता है</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/configdialog.ui" line="1049"/>
         <source>Path</source>
         <translation>पथ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="981"/>
+        <location filename="../src/configdialog.ui" line="1052"/>
         <source>Path to the password store directory</source>
         <translation>पासवर्ड स्टोर डायरेक्टरी का पथ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="986"/>
+        <location filename="../src/configdialog.ui" line="1057"/>
         <source>Signing Key</source>
         <translation>हस्ताक्षर कुंजी</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="989"/>
+        <location filename="../src/configdialog.ui" line="1060"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>वैकल्पिक: अखंडता सत्यापन के लिए .gpg-id फ़ाइलों पर हस्ताक्षर करने के लिए जीपीजी कुंजी। जब तक आपको उपयोगकर्ता सूची को छेड़छाड़ से बचाने की आवश्यकता न हो, खाली छोड़ दें।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="999"/>
+        <location filename="../src/configdialog.ui" line="1070"/>
         <source>Add</source>
         <translation>जोड़ें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1014"/>
+        <location filename="../src/configdialog.ui" line="1085"/>
         <source>Delete</source>
         <translation>हटाएं</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1029"/>
+        <location filename="../src/configdialog.ui" line="1100"/>
         <source>Current path</source>
         <translation>वर्तमान पथ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1049"/>
+        <location filename="../src/configdialog.ui" line="1110"/>
+        <location filename="../src/configdialog.ui" line="1113"/>
+        <source>Choose the password store folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1133"/>
         <source>Template</source>
         <translation>टेम्पलेट</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1070"/>
+        <location filename="../src/configdialog.ui" line="1176"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>टेम्पलेट पासवर्ड निर्माण संवाद में और पासवर्ड दृश्य में अतिरिक्त फ़ील्ड जोड़ते हैं।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1079"/>
+        <location filename="../src/configdialog.ui" line="1185"/>
         <source>Use template</source>
         <translation>टेम्पलेट का उपयोग करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1086"/>
+        <location filename="../src/configdialog.ui" line="1192"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>कोलन के बाद शब्द से शुरू होने वाली सभी पंक्तियों को पासवर्ड फ़ील्ड में फ़ील्ड के रूप में दिखाएं, न कि केवल सूचीबद्ध लोगों को</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1089"/>
+        <location filename="../src/configdialog.ui" line="1195"/>
         <source>Show all fields templated</source>
         <translation>सभी फ़ील्ड टेम्पलेट किए गए दिखाएं</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1101"/>
+        <location filename="../src/configdialog.ui" line="1207"/>
         <source>login
 URL
 e-mail</source>
@@ -425,12 +455,12 @@ URL
 ई-मेल</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1116"/>
+        <location filename="../src/configdialog.ui" line="1226"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; संस्करण </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="55"/>
+        <location filename="../src/configdialog.cpp" line="49"/>
         <source>System tray is not available</source>
         <translation>सिस्टम ट्रे उपलब्ध नहीं है</translation>
     </message>
@@ -439,53 +469,58 @@ URL
         <translation type="vanished">Pass OTP एक्सटेंशन इंस्टॉल करने की आवश्यकता है</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="70"/>
+        <location filename="../src/configdialog.cpp" line="60"/>
+        <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="73"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode इंस्टॉल करने की आवश्यकता है</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="81"/>
+        <location filename="../src/configdialog.cpp" line="84"/>
         <source>No Clipboard</source>
         <translation>कोई क्लिपबोर्ड नहीं</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="82"/>
+        <location filename="../src/configdialog.cpp" line="85"/>
         <source>Always copy to clipboard</source>
         <translation>हमेशा क्लिपबोर्ड पर कॉपी करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="83"/>
+        <location filename="../src/configdialog.cpp" line="86"/>
         <source>On-demand copy to clipboard</source>
         <translation>मांग पर क्लिपबोर्ड पर कॉपी करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="270"/>
-        <location filename="../src/configdialog.cpp" line="280"/>
+        <location filename="../src/configdialog.cpp" line="273"/>
+        <location filename="../src/configdialog.cpp" line="283"/>
         <source>This field is required</source>
         <translation>यह फ़ील्ड आवश्यक है</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="324"/>
+        <location filename="../src/configdialog.cpp" line="327"/>
         <source>The path does not exist.</source>
         <translation>पथ मौजूद नहीं है।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="327"/>
+        <location filename="../src/configdialog.cpp" line="330"/>
         <source>The path is not readable.</source>
         <translation>पथ पठनीय नहीं है।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="330"/>
+        <location filename="../src/configdialog.cpp" line="333"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>पथ एक Unix डोमेन सॉकेट नहीं है।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="335"/>
+        <location filename="../src/configdialog.cpp" line="338"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>संभावित रूप से अमान्य SSH_AUTH_SOCK ओवरराइड</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="336"/>
+        <location filename="../src/configdialog.cpp" line="339"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -498,78 +533,77 @@ The value will still be saved as entered.</source>
 मान अभी भी दर्ज किए गए रूप में सहेजा जाएगा।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="790"/>
+        <location filename="../src/configdialog.cpp" line="793"/>
         <source>Create profile directory?</source>
         <translation>प्रोफ़ाइल डायरेक्टरी बनाएं?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="791"/>
+        <location filename="../src/configdialog.cpp" line="794"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>क्या आप %1 पर पासवर्ड स्टोर बनाना चाहेंगे?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="798"/>
-        <location filename="../src/configdialog.cpp" line="1059"/>
+        <location filename="../src/configdialog.cpp" line="801"/>
+        <location filename="../src/configdialog.cpp" line="1062"/>
         <source>Error</source>
         <translation>त्रुटि</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="799"/>
+        <location filename="../src/configdialog.cpp" line="802"/>
         <source>Could not create profile directory: %1</source>
         <translation>प्रोफ़ाइल डायरेक्टरी नहीं बनाई जा सकी: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="819"/>
+        <location filename="../src/configdialog.cpp" line="825"/>
         <source>Select recipients for %1</source>
         <translation>%1 के लिए प्राप्तकर्ता चुनें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="844"/>
+        <location filename="../src/configdialog.cpp" line="850"/>
         <source>New Profile</source>
         <translation>नया प्रोफ़ाइल</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="892"/>
+        <location filename="../src/configdialog.cpp" line="898"/>
         <source>No profile selected</source>
         <translation>कोई प्रोफ़ाइल चयनित नहीं</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="893"/>
+        <location filename="../src/configdialog.cpp" line="899"/>
         <source>No profile selected to delete</source>
         <translation>हटाने के लिए कोई प्रोफ़ाइल चयनित नहीं</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="985"/>
+        <location filename="../src/configdialog.cpp" line="995"/>
         <source>GnuPG not found</source>
         <translation>GnuPG नहीं मिला</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="988"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>कृपया अपने सिस्टम पर GnuPG इंस्टॉल करें।&lt;br&gt;इसे प्राप्त करने के लिए Microsoft Store से &lt;strong&gt;Ubuntu&lt;/strong&gt; इंस्टॉल करें।&lt;br&gt;यदि आपने पहले ही ऐसा किया है, तो सुनिश्चित करें कि आपने इसे एक बार शुरू किया है और&lt;br&gt;अगले संवाद में &quot;स्वत: पहचान&quot; पर क्लिक करें।</translation>
+        <translation type="vanished">कृपया अपने सिस्टम पर GnuPG इंस्टॉल करें।&lt;br&gt;इसे प्राप्त करने के लिए Microsoft Store से &lt;strong&gt;Ubuntu&lt;/strong&gt; इंस्टॉल करें।&lt;br&gt;यदि आपने पहले ही ऐसा किया है, तो सुनिश्चित करें कि आपने इसे एक बार शुरू किया है और&lt;br&gt;अगले संवाद में &quot;स्वत: पहचान&quot; पर क्लिक करें।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="993"/>
+        <location filename="../src/configdialog.cpp" line="997"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>कृपया अपने सिस्टम पर GnuPG इंस्टॉल करें।&lt;br&gt;Microsoft Store से &lt;strong&gt;Ubuntu&lt;/strong&gt; इंस्टॉल करें&lt;br&gt;या GnuPG.org से इसे &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;डाउनलोड&lt;/a&gt; करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="999"/>
+        <location filename="../src/configdialog.cpp" line="1002"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>कृपया अपने सिस्टम पर GnuPG इंस्टॉल करें।&lt;br&gt;अपने पसंदीदा पैकेज मैनेजर का उपयोग करके &lt;strong&gt;gpg&lt;/strong&gt; इंस्टॉल करें&lt;br&gt;या GnuPG.org से इसे &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;डाउनलोड&lt;/a&gt; करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1053"/>
+        <location filename="../src/configdialog.cpp" line="1056"/>
         <source>Create password-store?</source>
         <translation>पासवर्ड-स्टोर बनाएं?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1054"/>
+        <location filename="../src/configdialog.cpp" line="1057"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>क्या आप %1 पर पासवर्ड-स्टोर बनाना चाहेंगे?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1060"/>
+        <location filename="../src/configdialog.cpp" line="1063"/>
         <source>Failed to create password-store at: %1</source>
         <translation>इस स्थान पर पासवर्ड-स्टोर बनाने में विफल: %1</translation>
     </message>
@@ -584,17 +618,17 @@ The value will still be saved as entered.</source>
         <translation>फ़ोल्डर %1 पासवर्ड स्टोर नहीं लगता है या अभी तक आरंभ नहीं किया गया है।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1348"/>
+        <location filename="../src/configdialog.cpp" line="1369"/>
         <source>New profile: %1 at %2</source>
         <translation>नया प्रोफ़ाइल: %2 पर %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1352"/>
+        <location filename="../src/configdialog.cpp" line="1373"/>
         <source>Profile: %1 at %2</source>
         <translation>प्रोफ़ाइल: %2 पर %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1357"/>
+        <location filename="../src/configdialog.cpp" line="1378"/>
         <source>Fill in all required fields</source>
         <translation>सभी आवश्यक फ़ील्ड भरें</translation>
     </message>
@@ -602,9 +636,19 @@ The value will still be saved as entered.</source>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="106"/>
+        <location filename="../src/executor.cpp" line="91"/>
+        <source>No executable configured for this command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/executor.cpp" line="128"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">%1 शुरू नहीं किया जा सका</translation>
+    </message>
+    <message>
+        <location filename="../src/executor.cpp" line="421"/>
+        <source>%1 crashed or was killed</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -665,150 +709,204 @@ The value will still be saved as entered.</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="145"/>
-        <location filename="../src/imitatepass.cpp" line="327"/>
-        <location filename="../src/imitatepass.cpp" line="485"/>
+        <location filename="../src/imitatepass.cpp" line="161"/>
+        <source>Git pull failed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="195"/>
+        <location filename="../src/imitatepass.cpp" line="386"/>
+        <location filename="../src/imitatepass.cpp" line="598"/>
         <source>Check .gpg-id file signature!</source>
         <translation>.gpg-id फ़ाइल हस्ताक्षर जांचें!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="146"/>
-        <location filename="../src/imitatepass.cpp" line="328"/>
-        <location filename="../src/imitatepass.cpp" line="486"/>
+        <location filename="../src/imitatepass.cpp" line="196"/>
+        <location filename="../src/imitatepass.cpp" line="387"/>
+        <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 के लिए हस्ताक्षर अमान्य है।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="153"/>
-        <location filename="../src/imitatepass.cpp" line="579"/>
+        <location filename="../src/imitatepass.cpp" line="203"/>
+        <location filename="../src/imitatepass.cpp" line="686"/>
         <source>Can not edit</source>
         <translation>संपादित नहीं किया जा सकता</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="154"/>
-        <location filename="../src/imitatepass.cpp" line="580"/>
+        <location filename="../src/imitatepass.cpp" line="204"/>
+        <location filename="../src/imitatepass.cpp" line="687"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>उपयोग करने के लिए एन्क्रिप्शन कुंजी नहीं पढ़ी जा सकी, .gpg-id फ़ाइल गुम है या अमान्य है।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="263"/>
+        <location filename="../src/imitatepass.cpp" line="322"/>
         <source>Cannot update</source>
         <translation>अपडेट नहीं किया जा सकता</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="264"/>
+        <location filename="../src/imitatepass.cpp" line="323"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>लिखने के लिए .gpg-id खोलने में विफल।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="283"/>
+        <location filename="../src/imitatepass.cpp" line="342"/>
         <source>Check selected users!</source>
         <translation>चयनित उपयोगकर्ताओं की जांच करें!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="284"/>
+        <location filename="../src/imitatepass.cpp" line="343"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>चयनित कुंजियों में से किसी के पास गुप्त कुंजी उपलब्ध नहीं है।
 आप किसी भी नए जोड़े गए पासवर्ड को डिक्रिप्ट नहीं कर पाएंगे!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="322"/>
+        <location filename="../src/imitatepass.cpp" line="381"/>
         <source>GPG signing failed!</source>
         <translation>जीपीजी हस्ताक्षर विफल!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="323"/>
+        <location filename="../src/imitatepass.cpp" line="382"/>
         <source>Failed to sign %1.</source>
         <translation>%1 पर हस्ताक्षर करने में विफल।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="390"/>
+        <location filename="../src/imitatepass.cpp" line="494"/>
         <source>No signing key!</source>
         <translation>कोई हस्ताक्षर कुंजी नहीं!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="391"/>
+        <location filename="../src/imitatepass.cpp" line="495"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>गुप्त हस्ताक्षर कुंजियों में से कोई भी उपलब्ध नहीं है।
 आप उपयोगकर्ता सूची को बदल नहीं पाएंगे!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="643"/>
-        <location filename="../src/imitatepass.cpp" line="756"/>
+        <location filename="../src/imitatepass.cpp" line="751"/>
+        <location filename="../src/imitatepass.cpp" line="1040"/>
         <source>Re-encryption failed</source>
         <translation>पुन: एन्क्रिप्शन विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="644"/>
+        <location filename="../src/imitatepass.cpp" line="752"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>%1 को बदलने में विफल। मूल पुनर्स्थापित कर दिया गया है।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="674"/>
+        <location filename="../src/imitatepass.cpp" line="795"/>
         <source>Creating backup commit</source>
         <translation>बैकअप कमिट बनाया जा रहा है</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="684"/>
-        <location filename="../src/imitatepass.cpp" line="692"/>
+        <location filename="../src/imitatepass.cpp" line="812"/>
+        <location filename="../src/imitatepass.cpp" line="821"/>
         <source>Backup commit failed</source>
         <translation>बैकअप कमिट विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="685"/>
+        <location filename="../src/imitatepass.cpp" line="813"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>गिट स्थिति का निरीक्षण नहीं किया जा सका। पुन: एन्क्रिप्शन को निरस्त कर दिया गया।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="693"/>
+        <location filename="../src/imitatepass.cpp" line="822"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>पुन: एन्क्रिप्शन को निरस्त कर दिया गया क्योंकि गिट बैकअप नहीं बनाया जा सका।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="715"/>
+        <location filename="../src/imitatepass.cpp" line="868"/>
+        <source>A re-encryption is already running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="873"/>
         <source>Re-encrypting from folder %1</source>
         <translation>फ़ोल्डर %1 से पुन: एन्क्रिप्ट किया जा रहा है</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="718"/>
-        <location filename="../src/imitatepass.cpp" line="774"/>
+        <location filename="../src/imitatepass.cpp" line="956"/>
+        <location filename="../src/imitatepass.cpp" line="1067"/>
         <source>Updating password-store</source>
         <translation>पासवर्ड-स्टोर अपडेट किया जा रहा है</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="743"/>
+        <location filename="../src/imitatepass.cpp" line="959"/>
+        <source>Git pull failed, re-encrypting the store as it is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1000"/>
         <source>GPG ID verification failed</source>
         <translation>जीपीजी आईडी सत्यापन विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="744"/>
+        <location filename="../src/imitatepass.cpp" line="1001"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>डायरेक्टरी के लिए .gpg-id सत्यापित नहीं किया जा सका।</translation>
     </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="757"/>
-        <source>Failed to re-encrypt %1</source>
-        <translation>%1 को पुन: एन्क्रिप्ट करने में विफल</translation>
+    <message numerus="yes">
+        <location filename="../src/imitatepass.cpp" line="1038"/>
+        <source>... and %n more</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/imitatepass.cpp" line="1041"/>
+        <source>%n file(s) could not be re-encrypted:</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="763"/>
+        <location filename="../src/imitatepass.cpp" line="1047"/>
+        <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1340"/>
+        <source>Git executable not configured, skipping git</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to re-encrypt %1</source>
+        <translation type="vanished">%1 को पुन: एन्क्रिप्ट करने में विफल</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1056"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>पुन: एन्क्रिप्शन पूर्ण: %1 सफल, %2 विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="769"/>
+        <location filename="../src/imitatepass.cpp" line="1061"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>पुन: एन्क्रिप्शन पूर्ण: %1 फ़ाइलें पुन: एन्क्रिप्ट की गईं</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/imitatepass.cpp" line="1070"/>
+        <source>Not pushing: %n file(s) failed to re-encrypt</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="932"/>
+        <location filename="../src/imitatepass.cpp" line="1263"/>
+        <location filename="../src/imitatepass.cpp" line="1271"/>
+        <location filename="../src/imitatepass.cpp" line="1278"/>
+        <location filename="../src/imitatepass.cpp" line="1288"/>
         <source>Copy failed</source>
         <translation type="unfinished">कॉपी विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="933"/>
+        <location filename="../src/imitatepass.cpp" line="1264"/>
+        <location filename="../src/imitatepass.cpp" line="1272"/>
+        <location filename="../src/imitatepass.cpp" line="1279"/>
+        <location filename="../src/imitatepass.cpp" line="1289"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">%1 को %2 में कॉपी नहीं किया जा सका।</translation>
     </message>
@@ -945,27 +1043,27 @@ You will not be able to change the user list!</source>
         <translation>विशेषज्ञ विकल्पों के लिए &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG मैनुअल&lt;/a&gt; देखें</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="168"/>
+        <location filename="../src/keygendialog.cpp" line="195"/>
         <source>Invalid name</source>
         <translation>अमान्य नाम</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="169"/>
+        <location filename="../src/keygendialog.cpp" line="196"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>नाम कम से कम 5 वर्णों का होना चाहिए।</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="180"/>
+        <location filename="../src/keygendialog.cpp" line="207"/>
         <source>Invalid email</source>
         <translation>अमान्य ई-मेल</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="181"/>
+        <location filename="../src/keygendialog.cpp" line="208"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>आपके द्वारा टाइप किया गया ई-मेल पता एक मान्य ई-मेल पता नहीं है।</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="201"/>
+        <location filename="../src/keygendialog.cpp" line="228"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>इस ऑपरेशन में कुछ मिनट लग सकते हैं।&lt;br /&gt;हमें बहुत सारे रैंडम बाइट उत्पन्न करने की आवश्यकता है। प्राइम जनरेशन के दौरान कुछ अन्य क्रिया करना (कीबोर्ड पर टाइप करें, माउस हिलाएं, डिस्क का उपयोग करें) एक अच्छा विचार है; यह रैंडम नंबर जनरेटर को पर्याप्त एन्ट्रॉपी प्राप्त करने का बेहतर मौका देता है।</translation>
     </message>
@@ -984,8 +1082,8 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="783"/>
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="827"/>
+        <location filename="../src/mainwindow.cpp" line="1024"/>
         <source>Search Password</source>
         <translation>पासवर्ड खोजें</translation>
     </message>
@@ -1053,7 +1151,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
         <location filename="../src/mainwindow.ui" line="379"/>
-        <location filename="../src/mainwindow.cpp" line="1561"/>
+        <location filename="../src/mainwindow.cpp" line="1612"/>
         <source>Add password</source>
         <translation>पासवर्ड जोड़ें</translation>
     </message>
@@ -1065,21 +1163,21 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="387"/>
         <location filename="../src/mainwindow.ui" line="390"/>
-        <location filename="../src/mainwindow.cpp" line="1560"/>
+        <location filename="../src/mainwindow.cpp" line="1611"/>
         <source>Add folder</source>
         <translation>फ़ोल्डर जोड़ें</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="395"/>
         <location filename="../src/mainwindow.ui" line="398"/>
-        <location filename="../src/mainwindow.cpp" line="1568"/>
+        <location filename="../src/mainwindow.cpp" line="1619"/>
         <source>Edit</source>
         <translation>संपादित करें</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="403"/>
         <location filename="../src/mainwindow.ui" line="406"/>
-        <location filename="../src/mainwindow.cpp" line="1582"/>
+        <location filename="../src/mainwindow.cpp" line="1633"/>
         <source>Delete</source>
         <translation>हटाएं</translation>
     </message>
@@ -1120,7 +1218,7 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
-        <location filename="../src/mainwindow.cpp" line="1562"/>
+        <location filename="../src/mainwindow.cpp" line="1613"/>
         <source>Users</source>
         <translation>उपयोगकर्ता</translation>
     </message>
@@ -1140,34 +1238,34 @@ You will not be able to change the user list!</source>
         <translation>कॉन्फ़िगरेशन</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="334"/>
+        <location filename="../src/mainwindow.cpp" line="351"/>
         <source>Welcome to QtPass %1</source>
         <translation>QtPass %1 में आपका स्वागत है</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="363"/>
+        <location filename="../src/mainwindow.cpp" line="380"/>
         <source>Clear</source>
         <translation>साफ़ करें</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="364"/>
+        <location filename="../src/mainwindow.cpp" line="381"/>
         <source>Clear output</source>
         <translation>आउटपुट साफ़ करें</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="372"/>
+        <location filename="../src/mainwindow.cpp" line="389"/>
         <source>Process Output</source>
         <translation>प्रक्रिया आउटपुट</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="544"/>
-        <location filename="../src/mainwindow.cpp" line="557"/>
+        <location filename="../src/mainwindow.cpp" line="593"/>
+        <location filename="../src/mainwindow.cpp" line="606"/>
         <source>Updating password-store</source>
         <translation>पासवर्ड-स्टोर अपडेट किया जा रहा है</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="679"/>
-        <location filename="../src/mainwindow.cpp" line="1021"/>
+        <location filename="../src/mainwindow.cpp" line="725"/>
+        <location filename="../src/mainwindow.cpp" line="1067"/>
         <source>Content hidden</source>
         <translation>सामग्री छिपाई गई</translation>
     </message>
@@ -1180,45 +1278,45 @@ You will not be able to change the user list!</source>
         <translation type="vanished">OTP कोड</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="740"/>
-        <location filename="../src/mainwindow.cpp" line="758"/>
-        <location filename="../src/mainwindow.cpp" line="1289"/>
+        <location filename="../src/mainwindow.cpp" line="784"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="1332"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP कोड क्लिपबोर्ड पर कॉपी किया गया</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="760"/>
-        <location filename="../src/mainwindow.cpp" line="1272"/>
+        <location filename="../src/mainwindow.cpp" line="804"/>
+        <location filename="../src/mainwindow.cpp" line="1315"/>
         <source>No OTP code found in this password entry</source>
         <translation>इस पासवर्ड प्रविष्टि में कोई OTP कोड नहीं मिला</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="787"/>
+        <location filename="../src/mainwindow.cpp" line="831"/>
         <source>Password and Content hidden</source>
         <translation>पासवर्ड और सामग्री छिपाई गई</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="875"/>
+        <location filename="../src/mainwindow.cpp" line="921"/>
         <source>Looking for: %1</source>
         <translation>खोजा जा रहा है: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="926"/>
+        <location filename="../src/mainwindow.cpp" line="972"/>
         <source>Searching…</source>
         <translation>खोजा जा रहा है…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="955"/>
+        <location filename="../src/mainwindow.cpp" line="1001"/>
         <source>Search content (regex)</source>
         <translation>सामग्री खोजें (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1007"/>
+        <location filename="../src/mainwindow.cpp" line="1053"/>
         <source>No matches found.</source>
         <translation>कोई मिलान नहीं मिला।</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1031"/>
+        <location filename="../src/mainwindow.cpp" line="1077"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n मिलान मिला</numerusform>
@@ -1226,7 +1324,7 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1032"/>
+        <location filename="../src/mainwindow.cpp" line="1078"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>%n प्रविष्टि में।</numerusform>
@@ -1234,18 +1332,17 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1112"/>
+        <location filename="../src/mainwindow.cpp" line="1158"/>
         <source>Invalid name</source>
         <translation type="unfinished">अमान्य नाम</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1113"/>
+        <location filename="../src/mainwindow.cpp" line="1159"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">यह नाम पासवर्ड स्टोर के बाहर की ओर इंगित करेगा। कृपया कोई दूसरा नाम चुनें।</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1160"/>
-        <location filename="../src/mainwindow.cpp" line="1659"/>
+        <location filename="../src/mainwindow.cpp" line="1204"/>
         <source>New file</source>
         <translation>नई फ़ाइल</translation>
     </message>
@@ -1262,164 +1359,170 @@ You will not be able to change the user list!</source>
 (यह %1 में रखा जाएगा)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="155"/>
+        <location filename="../src/mainwindow.cpp" line="153"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">ऑपरेशन का समय समाप्त हो गया; इंटरफ़ेस फिर से सक्षम किया जा रहा है।</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="727"/>
+        <location filename="../src/mainwindow.cpp" line="771"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">इस पासवर्ड प्रविष्टि को डिक्रिप्ट नहीं किया जा सका</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="960"/>
+        <location filename="../src/mainwindow.cpp" line="1006"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation type="unfinished">सामग्री खोज POSIX बेसिक रेगुलर एक्सप्रेशन का उपयोग करती है (pass grep)।</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="962"/>
+        <location filename="../src/mainwindow.cpp" line="1008"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">सामग्री खोज Perl-संगत रेगुलर एक्सप्रेशन (PCRE) का उपयोग करती है।</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1161"/>
+        <location filename="../src/mainwindow.cpp" line="1205"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>नया पासवर्ड फ़ाइल:
 (यह %1 में रखा जाएगा)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1201"/>
+        <location filename="../src/mainwindow.cpp" line="1245"/>
         <source> and the whole content?</source>
         <translation> और पूरी सामग्री?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1211"/>
+        <location filename="../src/mainwindow.cpp" line="1255"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> और पूरी सामग्री? &lt;br&gt;&lt;strong&gt;ध्यान दें: दिए गए फ़ोल्डर में अप्रत्याशित फ़ाइलें हैं, जारी रखने से पहले उन्हें जांचें।&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1220"/>
+        <location filename="../src/mainwindow.cpp" line="1264"/>
         <source>Delete folder?</source>
         <translation>फ़ोल्डर हटाएं?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1220"/>
+        <location filename="../src/mainwindow.cpp" line="1264"/>
         <source>Delete password?</source>
         <translation>पासवर्ड हटाएं?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1221"/>
+        <location filename="../src/mainwindow.cpp" line="1265"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>क्या आप निश्चित हैं कि आप %1%2 को हटाना चाहते हैं?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1267"/>
+        <location filename="../src/mainwindow.cpp" line="1310"/>
         <source>No password selected for OTP generation</source>
         <translation>OTP उत्पन्न करने के लिए कोई पासवर्ड चयनित नहीं</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1434"/>
+        <location filename="../src/mainwindow.cpp" line="1455"/>
         <source>Profile changed to %1</source>
         <translation>प्रोफ़ाइल %1 में बदल गया</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1559"/>
+        <location filename="../src/mainwindow.cpp" line="1610"/>
         <source>Open folder with file manager</source>
         <translation>फ़ाइल मैनेजर के साथ फ़ोल्डर खोलें</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1574"/>
+        <location filename="../src/mainwindow.cpp" line="1625"/>
+        <location filename="../src/mainwindow.cpp" line="1762"/>
         <source>Rename folder</source>
         <translation>फ़ोल्डर का नाम बदलें</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1578"/>
+        <location filename="../src/mainwindow.cpp" line="1629"/>
         <source>Rename password</source>
         <translation>पासवर्ड का नाम बदलें</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1588"/>
+        <location filename="../src/mainwindow.cpp" line="1639"/>
         <source>Share</source>
         <translation>साझा करें</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1598"/>
+        <location filename="../src/mainwindow.cpp" line="1649"/>
         <source>Re-encrypt all passwords</source>
         <translation>सभी पासवर्ड पुन: एन्क्रिप्ट करें</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1654"/>
         <source>Export my public key...</source>
         <translation>मेरी सार्वजनिक कुंजी निर्यात करें...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1609"/>
+        <location filename="../src/mainwindow.cpp" line="1660"/>
         <source>Add recipient...</source>
         <translation>प्राप्तकर्ता जोड़ें...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1614"/>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>What is this?</source>
         <translation>यह क्या है?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1660"/>
+        <location filename="../src/mainwindow.cpp" line="1710"/>
+        <source>New folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1711"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>नया फ़ोल्डर:
 (यह %1 में रखा जाएगा)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1672"/>
-        <location filename="../src/mainwindow.cpp" line="1681"/>
-        <location filename="../src/mainwindow.cpp" line="1828"/>
+        <location filename="../src/mainwindow.cpp" line="1723"/>
+        <location filename="../src/mainwindow.cpp" line="1745"/>
+        <location filename="../src/mainwindow.cpp" line="1879"/>
         <source>Error</source>
         <translation>त्रुटि</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1724"/>
         <source>Failed to create folder: %1</source>
         <translation>फ़ोल्डर बनाने में विफल: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1746"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>इस स्थान पर .gpg-id फ़ाइल बनाने में विफल: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1709"/>
-        <location filename="../src/mainwindow.cpp" line="1749"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>Rename file</source>
         <translation>फ़ाइल का नाम बदलें</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1709"/>
+        <location filename="../src/mainwindow.cpp" line="1762"/>
         <source>Rename Folder To: </source>
         <translation>फ़ोल्डर का नाम बदलें: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1749"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>Rename File To: </source>
         <translation>फ़ाइल का नाम बदलें: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1805"/>
+        <location filename="../src/mainwindow.cpp" line="1856"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">इस प्रविष्टि में OTP सीक्रेट है, पासवर्ड नहीं</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1829"/>
+        <location filename="../src/mainwindow.cpp" line="1880"/>
         <source>Directory does not exist: %1</source>
         <translation>डायरेक्टरी मौजूद नहीं है: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1834"/>
+        <location filename="../src/mainwindow.cpp" line="1885"/>
+        <location filename="../src/mainwindow.cpp" line="1922"/>
         <source>Re-encrypt passwords</source>
         <translation>पासवर्ड पुन: एन्क्रिप्ट करें</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1835"/>
+        <location filename="../src/mainwindow.cpp" line="1886"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -1436,18 +1539,38 @@ Continue?</source>
 जारी रखें?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1880"/>
-        <location filename="../src/mainwindow.cpp" line="1899"/>
+        <location filename="../src/mainwindow.cpp" line="1920"/>
+        <source>Re-encrypting passwords...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1921"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1929"/>
+        <source>Cancelling re-encryption</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1945"/>
+        <source>Re-encrypting passwords: %1 of %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1978"/>
+        <location filename="../src/mainwindow.cpp" line="1997"/>
         <source>Export Public Key</source>
         <translation>सार्वजनिक कुंजी निर्यात करें</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1881"/>
+        <location filename="../src/mainwindow.cpp" line="1979"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;अपनी सार्वजनिक कुंजी निर्यात करें&lt;/h3&gt;&lt;p&gt;कोई हस्ताक्षर कुंजी कॉन्फ़िगर नहीं की गई है। QtPass सेटिंग्स &amp;gt; जीपीजी कुंजियों में एक सेट करें, या टर्मिनल में यह चलाएं:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;फिर फ़ाइल को अपने टीम के सदस्यों को भेजें।&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1900"/>
+        <location filename="../src/mainwindow.cpp" line="1998"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1456,17 +1579,17 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1902"/>
+        <location filename="../src/mainwindow.cpp" line="2000"/>
         <source>No output from gpg.</source>
         <translation>gpg से कोई आउटपुट नहीं।</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1929"/>
+        <location filename="../src/mainwindow.cpp" line="2027"/>
         <source>Sharing Passwords with GPG</source>
         <translation>जीपीजी के साथ पासवर्ड साझा करना</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1930"/>
+        <location filename="../src/mainwindow.cpp" line="2028"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;जीपीजी के साथ पासवर्ड साझा करना&lt;/h3&gt;&lt;p&gt;अन्य उपयोगकर्ताओं के साथ पासवर्ड साझा करने के लिए:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;अपनी सार्वजनिक कुंजी निर्यात करें&lt;/b&gt; और इसे टीम के सदस्यों को भेजें&lt;/li&gt;&lt;li&gt;&lt;b&gt;टीम के सदस्यों की सार्वजनिक कुंजियां आयात करें&lt;/b&gt; अपनी जीपीजी कीरिंग में&lt;/li&gt;&lt;li&gt;&lt;b&gt;पासवर्ड पुन: एन्क्रिप्ट करें&lt;/b&gt; ताकि सभी प्राप्तकर्ता उन्हें डिक्रिप्ट कर सकें&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;केवल वे लोग जिनके पास मिलान करने वाली गुप्त कुंजी है, पासवर्ड को डिक्रिप्ट कर सकते हैं।&lt;/p&gt;&lt;p&gt;&lt;b&gt;टिप:&lt;/b&gt; सभी साझा फ़ोल्डर के लिए एक ही जीपीजी कुंजी का उपयोग करें।&lt;/p&gt;&lt;p&gt;अधिक विवरण के लिए FAQ देखें।&lt;/p&gt;</translation>
     </message>
@@ -1482,51 +1605,61 @@ Continue?</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="159"/>
+        <location filename="../src/pass.cpp" line="167"/>
+        <source>Configured GPG home %1 does not exist, using the default keyring</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="175"/>
+        <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="195"/>
         <source>Invalid password length</source>
         <translation>अमान्य पासवर्ड लंबाई</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="160"/>
+        <location filename="../src/pass.cpp" line="196"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>शून्य लंबाई के साथ पासवर्ड उत्पन्न नहीं किया जा सकता।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="201"/>
+        <location filename="../src/pass.cpp" line="237"/>
         <source>No characters chosen</source>
         <translation>कोई वर्ण नहीं चुना गया</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="202"/>
+        <location filename="../src/pass.cpp" line="238"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>पासवर्ड उत्पन्न नहीं किया जा सकता, कॉन्फ़िगरेशन में सेट से चुनने के लिए कोई वर्ण नहीं हैं!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="452"/>
+        <location filename="../src/pass.cpp" line="432"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">कोई GPG निष्पादन योग्य फ़ाइल कॉन्फ़िगर नहीं है</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="557"/>
-        <location filename="../src/pass.cpp" line="576"/>
+        <location filename="../src/pass.cpp" line="537"/>
+        <location filename="../src/pass.cpp" line="556"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>एन्क्रिप्शन विफल: जीपीजी कुंजी समाप्त हो गई है। कृपया इसे नवीनीकृत करें या बदलें।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="562"/>
-        <location filename="../src/pass.cpp" line="581"/>
+        <location filename="../src/pass.cpp" line="542"/>
+        <location filename="../src/pass.cpp" line="561"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>एन्क्रिप्शन विफल: जीपीजी कुंजी निरस्त कर दी गई है।</translation>
     </message>
     <message>
+        <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="566"/>
-        <location filename="../src/pass.cpp" line="586"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>एन्क्रिप्शन विफल: प्राप्तकर्ता जीपीजी कुंजी नहीं मिली या अमान्य है। जांचें कि .gpg-id में कुंजी आईडी सही है और आयात की गई है।</translation>
     </message>
     <message>
+        <location filename="../src/pass.cpp" line="550"/>
         <location filename="../src/pass.cpp" line="570"/>
-        <location filename="../src/pass.cpp" line="590"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>एन्क्रिप्शन विफल। जांचें कि आपकी जीपीजी कुंजी मान्य है।</translation>
     </message>
@@ -1580,12 +1713,27 @@ Continue?</source>
         <translation>लंबाई:</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="244"/>
+        <location filename="../src/passworddialog.ui" line="164"/>
+        <source>Template:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.ui" line="180"/>
+        <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="92"/>
+        <source>Decrypting…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="269"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI या base32 सीक्रेट</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="277"/>
+        <location filename="../src/passworddialog.cpp" line="302"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">अमान्य OTP सीक्रेट</translation>
     </message>
@@ -1593,145 +1741,166 @@ Continue?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="168"/>
-        <location filename="../main/main.cpp" line="172"/>
+        <location filename="../main/main.cpp" line="166"/>
+        <location filename="../main/main.cpp" line="170"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="81"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="159"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="192"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="78"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="148"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="191"/>
         <source>Password</source>
         <translation type="unfinished">पासवर्ड</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="168"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="166"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">%1 को ब्राउज़र में खोलें</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="320"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="333"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="311"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="324"/>
         <source>OTP Code</source>
         <translation type="unfinished">OTP कोड</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="321"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="312"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">इस पासवर्ड प्रविष्टि में कोई OTP कोड नहीं मिला</translation>
     </message>
 </context>
 <context>
+    <name>QPushButtonAsQRCode</name>
+    <message>
+        <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
+        <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
+        <source>Show as QR code</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QPushButtonShowPassword</name>
+    <message>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="22"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="23"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
+        <source>Show password</source>
+        <translation type="unfinished">पासवर्ड दिखाएं</translation>
+    </message>
+    <message>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
+        <source>Hide password</source>
+        <translation type="unfinished">पासवर्ड छिपाएं</translation>
+    </message>
+</context>
+<context>
+    <name>QPushButtonWithClipboard</name>
+    <message>
+        <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
+        <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="173"/>
+        <location filename="../src/qtpass.cpp" line="138"/>
         <source>Generating GPG key pair</source>
         <translation>जीपीजी कुंजी जोड़ी उत्पन्न की जा रही है</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="242"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>WebDAV से कनेक्ट करने में विफल:
+        <translation type="vanished">WebDAV से कनेक्ट करने में विफल:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="258"/>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV पासवर्ड</translation>
+        <translation type="vanished">QtPass WebDAV पासवर्ड</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="259"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>WebDAV से कनेक्ट करने के लिए पासवर्ड दर्ज करें:</translation>
+        <translation type="vanished">WebDAV से कनेक्ट करने के लिए पासवर्ड दर्ज करें:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="276"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav अप्रत्याशित रूप से बाहर निकला
+        <translation type="vanished">fusedav अप्रत्याशित रूप से बाहर निकला
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="280"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>WebDAV से कनेक्ट करने के लिए fusedav प्रारंभ करने में विफल:
+        <translation type="vanished">WebDAV से कनेक्ट करने के लिए fusedav प्रारंभ करने में विफल:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="293"/>
         <source>QProcess::FailedToStart</source>
-        <translation>QProcess::FailedToStart</translation>
+        <translation type="vanished">QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="296"/>
         <source>QProcess::Crashed</source>
-        <translation>QProcess::Crashed</translation>
+        <translation type="vanished">QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="299"/>
         <source>QProcess::Timedout</source>
-        <translation>QProcess::Timedout</translation>
+        <translation type="vanished">QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="302"/>
         <source>QProcess::ReadError</source>
-        <translation>QProcess::ReadError</translation>
+        <translation type="vanished">QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="305"/>
         <source>QProcess::WriteError</source>
-        <translation>QProcess::WriteError</translation>
+        <translation type="vanished">QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="308"/>
         <source>QProcess::UnknownError</source>
-        <translation>QProcess::UnknownError</translation>
+        <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="324"/>
+        <location filename="../src/qtpass.cpp" line="181"/>
         <source>GPG key pair generation failed</source>
         <translation>जीपीजी कुंजी जोड़ी निर्माण विफल</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="398"/>
+        <location filename="../src/qtpass.cpp" line="256"/>
         <source>GPG key pair generated successfully</source>
         <translation>जीपीजी कुंजी जोड़ी सफलतापूर्वक उत्पन्न की गई</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="482"/>
         <source>Clipboard cleared</source>
-        <translation>क्लिपबोर्ड साफ़ किया गया</translation>
+        <translation type="vanished">क्लिपबोर्ड साफ़ किया गया</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="484"/>
         <source>Clipboard not cleared</source>
-        <translation>क्लिपबोर्ड साफ़ नहीं किया गया</translation>
+        <translation type="vanished">क्लिपबोर्ड साफ़ नहीं किया गया</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="530"/>
         <source>Copied to clipboard</source>
-        <translation>क्लिपबोर्ड पर कॉपी किया गया</translation>
+        <translation type="vanished">क्लिपबोर्ड पर कॉपी किया गया</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="552"/>
+        <location filename="../src/qtpass.cpp" line="313"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">qrencode शुरू नहीं किया जा सका: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="560"/>
+        <location filename="../src/qtpass.cpp" line="321"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">qrencode समय पर पूरा नहीं हुआ</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="572"/>
+        <location filename="../src/qtpass.cpp" line="333"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">qrencode क्रैश हो गया</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="573"/>
+        <location filename="../src/qtpass.cpp" line="334"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">qrencode कोड %1 के साथ बंद हुआ</translation>
     </message>
@@ -1739,12 +1908,12 @@ Continue?</source>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="396"/>
+        <location filename="../src/storemodel.cpp" line="379"/>
         <source>Force overwrite?</source>
         <translation>जबरन अधिलेखित करें?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="397"/>
+        <location filename="../src/storemodel.cpp" line="380"/>
         <source>overwrite %1 with %2?</source>
         <translation>%1 को %2 से अधिलेखित करें?</translation>
     </message>
@@ -1790,17 +1959,25 @@ Continue?</source>
         <translation>पढ़ने की पहुंच वाले उपयोगकर्ता</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="45"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>चुनें कि कौन से उपयोगकर्ता इस फ़ोल्डर में संग्रहीत पासवर्ड को डिक्रिप्ट कर सकते हैं।
+        <translation type="vanished">चुनें कि कौन से उपयोगकर्ता इस फ़ोल्डर में संग्रहीत पासवर्ड को डिक्रिप्ट कर सकते हैं।
 नोट: मौजूदा फ़ाइलों को संशोधित नहीं किया जाएगा, और जब तक आप उन्हें संपादित नहीं करते तब तक पुरानी अनुमतियां बनी रहेंगी।
 नीली प्रविष्टियों में गुप्त कुंजी उपलब्ध है, डिक्रिप्ट करने में सक्षम होने के लिए इनमें से एक को चुनें।
 काली प्रविष्टियों में एन्क्रिप्शन कुंजी उपलब्ध है और यह विश्वसनीय है, अन्य लोगों को डिक्रिप्ट करने की अनुमति देने के लिए इनमें से एक को चुनें।
 लाल प्रविष्टियां मान्य नहीं हैं, आप इनके लिए एन्क्रिप्ट नहीं कर पाएंगे।</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="45"/>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: On OK every password in this folder and its subfolders is re-encrypted to the selected users; this can take a while.
+Bold entries have a secret key available, select one of these to be able to decrypt yourself.
+Plain entries have a trusted encryption key, select these to allow other people to decrypt.
+[INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
@@ -1823,42 +2000,42 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>फ़ाइल या क्लिपबोर्ड से जीपीजी कुंजी आयात करें</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="83"/>
+        <location filename="../src/usersdialog.cpp" line="73"/>
         <source>Keylist missing</source>
         <translation>कुंजी सूची गुम है</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="84"/>
+        <location filename="../src/usersdialog.cpp" line="74"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>उपलब्ध जीपीजी कुंजियों की सूची प्राप्त नहीं की जा सकी</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="158"/>
+        <location filename="../src/usersdialog.cpp" line="147"/>
         <source>Key not found in keyring</source>
         <translation>कीरिंग में कुंजी नहीं मिली</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="311"/>
+        <location filename="../src/usersdialog.cpp" line="285"/>
         <source>created</source>
         <translation>बनाया गया</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="315"/>
+        <location filename="../src/usersdialog.cpp" line="289"/>
         <source>expires</source>
         <translation>समाप्त होता है</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="338"/>
+        <location filename="../src/usersdialog.cpp" line="309"/>
         <source>[INVALID] </source>
         <translation>[अमान्य] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="341"/>
+        <location filename="../src/usersdialog.cpp" line="315"/>
         <source>[EXPIRED] </source>
         <translation>[समाप्त] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="345"/>
+        <location filename="../src/usersdialog.cpp" line="319"/>
         <source>[PARTIAL] </source>
         <translation>[आंशिक] </translation>
     </message>

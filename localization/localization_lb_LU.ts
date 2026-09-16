@@ -32,68 +32,68 @@
         <translation>Astellungen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="72"/>
+        <location filename="../src/configdialog.ui" line="86"/>
         <source>Clipboard behaviour:</source>
         <translation>Verhalen vun der Clipboard:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="91"/>
+        <location filename="../src/configdialog.ui" line="104"/>
         <source>Use primary selection</source>
         <translation>Benotzt primär Auswiel</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="98"/>
+        <location filename="../src/configdialog.ui" line="111"/>
         <source>Autoclear after:</source>
         <translation>Autoclear nach:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="115"/>
-        <location filename="../src/configdialog.ui" line="198"/>
+        <location filename="../src/configdialog.ui" line="128"/>
+        <location filename="../src/configdialog.ui" line="203"/>
         <source>Seconds</source>
         <translation>Sekonnen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="147"/>
+        <location filename="../src/configdialog.ui" line="156"/>
         <source>Content panel behaviour:</source>
         <translation>Behuelen vum Contenu:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="159"/>
+        <location filename="../src/configdialog.ui" line="164"/>
         <source>Hide content</source>
         <translation>Inhalt verstoppen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="166"/>
+        <location filename="../src/configdialog.ui" line="171"/>
         <source>Hide password</source>
         <translation>Passwuert verstoppen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="175"/>
+        <location filename="../src/configdialog.ui" line="180"/>
         <source>Autoclear panel after:</source>
         <translation>Autoclear Panel nach:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="224"/>
+        <location filename="../src/configdialog.ui" line="232"/>
         <source>Use a monospace font</source>
         <translation>Benotzt eng Monospace-Schrëft</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="231"/>
+        <location filename="../src/configdialog.ui" line="239"/>
         <source>Display the files content as-is</source>
         <translation>Den Inhalt vun de Fichieren esou weisen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="238"/>
+        <location filename="../src/configdialog.ui" line="246"/>
         <source>No line wrapping</source>
         <translation>Kee Linnenëmbroch</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="245"/>
+        <location filename="../src/configdialog.ui" line="253"/>
         <source>Show process output</source>
         <translation>Prozessausgab uweisen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="277"/>
+        <location filename="../src/configdialog.ui" line="278"/>
         <source>Password Generation:</source>
         <translation>Passwuert Generatioun:</translation>
     </message>
@@ -103,57 +103,57 @@
         <translation>Passwuert Längt:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="323"/>
+        <location filename="../src/configdialog.ui" line="326"/>
         <source>Characters</source>
         <translation>Zeechen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="351"/>
+        <location filename="../src/configdialog.ui" line="357"/>
         <source>Use characters:</source>
         <translation>Benotzt Zeechen:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="369"/>
+        <location filename="../src/configdialog.ui" line="378"/>
         <source>Select character set for password generation</source>
         <translation>Wielt Zeecheset fir Passwuert Generatioun</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="373"/>
+        <location filename="../src/configdialog.ui" line="382"/>
         <source>All Characters</source>
         <translation>All Zeechen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="378"/>
+        <location filename="../src/configdialog.ui" line="387"/>
         <source>Alphabetical</source>
         <translation>Alphabetesch</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="383"/>
+        <location filename="../src/configdialog.ui" line="392"/>
         <source>Alphanumerical</source>
         <translation>Alfanumeresch</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="388"/>
+        <location filename="../src/configdialog.ui" line="397"/>
         <source>Custom</source>
         <translation>Benotzerdefinéiert</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="426"/>
+        <location filename="../src/configdialog.ui" line="435"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="460"/>
+        <location filename="../src/configdialog.ui" line="469"/>
         <source>Include special symbols</source>
         <translation>Fëllt speziell Symboler un</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1029"/>
+        <location filename="../src/configdialog.ui" line="1100"/>
         <source>Current path</source>
         <translation>Aktuelle Wee</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="450"/>
+        <location filename="../src/configdialog.ui" line="459"/>
         <source>Exclude capital letters</source>
         <translation>Kapitalbréiwer Ausgeschloss</translation>
     </message>
@@ -162,217 +162,247 @@
         <translation type="vanished">Fëllt speziell Symboler un </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="467"/>
+        <location filename="../src/configdialog.ui" line="476"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Generéiere einfach ze memoriséieren awer manner sécher Passwierder</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="474"/>
+        <location filename="../src/configdialog.ui" line="483"/>
         <source>Exclude numbers</source>
         <translation>Nummeren ausgeschloss</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="493"/>
+        <location filename="../src/configdialog.ui" line="495"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="519"/>
+        <location filename="../src/configdialog.ui" line="517"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Füügt automatesch .gpg-id Dateien</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="526"/>
+        <location filename="../src/configdialog.ui" line="524"/>
         <source>Automatically push</source>
         <translation>Automatesch push</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="533"/>
+        <location filename="../src/configdialog.ui" line="531"/>
         <source>Automatically pull</source>
         <translation>Automatesch pull</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="565"/>
+        <location filename="../src/configdialog.ui" line="556"/>
         <source>Extensions:</source>
         <translation>Erweiterungen:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="588"/>
+        <location filename="../src/configdialog.ui" line="578"/>
         <source>Enable one-time password (OTP) support</source>
         <translation type="unfinished">Ënnerstëtzung fir Eemolpasswierder (OTP) aktivéieren</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="599"/>
+        <location filename="../src/configdialog.ui" line="589"/>
         <source>Enable content search (pass grep)</source>
         <translation>Inhaltssich aktivéieren (pass grep)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="602"/>
+        <location filename="../src/configdialog.ui" line="592"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Erlaabt d&apos;Sich am Inhalt vun enger Passwuertdatei. Erfuerdert d&apos;Entschlësselung vun all Datei a kann op grousse Späicher lues sinn.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="624"/>
+        <location filename="../src/configdialog.ui" line="604"/>
         <source>System:</source>
         <translation>System:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="636"/>
+        <location filename="../src/configdialog.ui" line="615"/>
         <source>Use TrayIcon</source>
         <translation>Benotzt System Schacht Ikon</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="643"/>
+        <location filename="../src/configdialog.ui" line="622"/>
         <source>Start minimized</source>
         <translation>Start miniméiert</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="650"/>
+        <location filename="../src/configdialog.ui" line="629"/>
         <source>Hide on close</source>
         <translation>Verstoppt sech op</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="657"/>
+        <location filename="../src/configdialog.ui" line="636"/>
         <source>Always on top</source>
         <translation>Ëmmer uewen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="682"/>
+        <location filename="../src/configdialog.ui" line="666"/>
         <source>Programs</source>
         <translation>Programmer</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="700"/>
+        <location filename="../src/configdialog.ui" line="706"/>
         <source>Select password storage program:</source>
         <translation>Wielt Passwuert Späicher Programm:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="716"/>
+        <location filename="../src/configdialog.ui" line="722"/>
         <source>&amp;Use pass</source>
         <translation>Benotzt &amp;Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="740"/>
+        <location filename="../src/configdialog.ui" line="746"/>
         <source>Native</source>
         <translation>Naturheem</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="776"/>
+        <location filename="../src/configdialog.ui" line="765"/>
+        <location filename="../src/configdialog.ui" line="768"/>
+        <source>Choose the gpg executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="778"/>
+        <location filename="../src/configdialog.ui" line="781"/>
+        <source>Choose the git executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="797"/>
         <source>Generate</source>
         <translation>Generéiere</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="779"/>
+        <location filename="../src/configdialog.ui" line="800"/>
         <source>Generate GPG key pair</source>
         <translation>GPG Schlësselpaar generéieren</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="816"/>
+        <location filename="../src/configdialog.ui" line="833"/>
+        <location filename="../src/configdialog.ui" line="836"/>
+        <source>Choose the pwgen executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="849"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="827"/>
+        <location filename="../src/configdialog.ui" line="860"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="846"/>
+        <location filename="../src/configdialog.ui" line="873"/>
+        <location filename="../src/configdialog.ui" line="876"/>
+        <source>Choose the pass executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="888"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="877"/>
+        <location filename="../src/configdialog.ui" line="919"/>
         <source>Autodetect</source>
         <translation>Autodetekt</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="888"/>
+        <location filename="../src/configdialog.ui" line="930"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>SSH_AUTH_SOCK iwwerschreiwen:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="891"/>
+        <location filename="../src/configdialog.ui" line="933"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>Optionale Pfad fir SSH_AUTH_SOCK ze iwwerschreiwen. Eidel loossen fir automatesch Detektioun via gpgconf (issue #543).</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="898"/>
+        <location filename="../src/configdialog.ui" line="943"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(automatesch Detektioun via gpgconf)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="921"/>
+        <location filename="../src/configdialog.ui" line="970"/>
         <source>Profiles</source>
         <translation>Profiler</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="970"/>
+        <location filename="../src/configdialog.ui" line="1041"/>
         <source>Name</source>
         <translation>Numm</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="973"/>
+        <location filename="../src/configdialog.ui" line="1044"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Profilnumm, deen benotzt gëtt fir dëse Konfiguratiounsprofil z&apos;identifizéieren</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/configdialog.ui" line="1049"/>
         <source>Path</source>
         <translation>Strooss</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="981"/>
+        <location filename="../src/configdialog.ui" line="1052"/>
         <source>Path to the password store directory</source>
         <translation>Wee zum Verzeichnis vum Passwuertspäicher</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="986"/>
+        <location filename="../src/configdialog.ui" line="1057"/>
         <source>Signing Key</source>
         <translation>Ënnerschrëftsschlëssel</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="989"/>
+        <location filename="../src/configdialog.ui" line="1060"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Optional: GPG-Schlëssel fir .gpg-id-Dateien fir d&apos;Integritéitsverifizéierung z&apos;ënnerschreiwen. Eidel loossen, ausser Dir musst d&apos;Benotzerlëscht viru Manipulatioun schützen.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="999"/>
+        <location filename="../src/configdialog.ui" line="1070"/>
         <source>Add</source>
         <translation>Füügt</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1014"/>
+        <location filename="../src/configdialog.ui" line="1085"/>
         <source>Delete</source>
         <translation>Läschen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1049"/>
+        <location filename="../src/configdialog.ui" line="1110"/>
+        <location filename="../src/configdialog.ui" line="1113"/>
+        <source>Choose the password store folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1133"/>
         <source>Template</source>
         <translation>Schabloun</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1079"/>
+        <location filename="../src/configdialog.ui" line="1185"/>
         <source>Use template</source>
         <translation>Benotzt Schabloun</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1086"/>
+        <location filename="../src/configdialog.ui" line="1192"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Weist all Linnen déi ufänken mat engem Wuert gefollegt vun engem Colon als Felder a Passwuert Felder, net nëmmen déi opgelëscht</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1089"/>
+        <location filename="../src/configdialog.ui" line="1195"/>
         <source>Show all fields templated</source>
         <translation>Show all Felder templéiert</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1116"/>
+        <location filename="../src/configdialog.ui" line="1226"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versioun </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="55"/>
+        <location filename="../src/configdialog.cpp" line="49"/>
         <source>System tray is not available</source>
         <translation>Systemtablett ass net verfügbar</translation>
     </message>
@@ -381,53 +411,53 @@
         <translation type="vanished">Pass OTP Extensioun muss installéiert ginn</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="70"/>
+        <location filename="../src/configdialog.cpp" line="73"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode muss installéiert ginn</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="81"/>
+        <location filename="../src/configdialog.cpp" line="84"/>
         <source>No Clipboard</source>
         <translation>Kee Clipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="82"/>
+        <location filename="../src/configdialog.cpp" line="85"/>
         <source>Always copy to clipboard</source>
         <translation>Ëmmer op Clipboard kopéieren</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="83"/>
+        <location filename="../src/configdialog.cpp" line="86"/>
         <source>On-demand copy to clipboard</source>
         <translation>On-Demande Kopie op Clipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="270"/>
-        <location filename="../src/configdialog.cpp" line="280"/>
+        <location filename="../src/configdialog.cpp" line="273"/>
+        <location filename="../src/configdialog.cpp" line="283"/>
         <source>This field is required</source>
         <translation>Dëst Feld ass obligatoresch</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="324"/>
+        <location filename="../src/configdialog.cpp" line="327"/>
         <source>The path does not exist.</source>
         <translation>De Pfad existéiert net.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="327"/>
+        <location filename="../src/configdialog.cpp" line="330"/>
         <source>The path is not readable.</source>
         <translation>De Pfad ass net liessbar.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="330"/>
+        <location filename="../src/configdialog.cpp" line="333"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>De Pfad ass kee Unix-Domänensocket.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="335"/>
+        <location filename="../src/configdialog.cpp" line="338"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Méiglicherweis onëllegeg SSH_AUTH_SOCK-Iwwerschreiwung</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="336"/>
+        <location filename="../src/configdialog.cpp" line="339"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -440,78 +470,82 @@ The value will still be saved as entered.</source>
 De Wäert gëtt nach ëmmer gespäichert wéi agiweent.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="790"/>
+        <location filename="../src/configdialog.cpp" line="793"/>
         <source>Create profile directory?</source>
         <translation>Profilverzeechnes erstellen?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="791"/>
+        <location filename="../src/configdialog.cpp" line="794"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Wëllt Dir e Passwuertspäicher op %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="799"/>
+        <location filename="../src/configdialog.cpp" line="802"/>
         <source>Could not create profile directory: %1</source>
         <translation>Konnt Profilverzeechnes net erstellen: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="819"/>
+        <location filename="../src/configdialog.cpp" line="825"/>
         <source>Select recipients for %1</source>
         <translation>Empfänger fir %1 auswielen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="844"/>
+        <location filename="../src/configdialog.cpp" line="850"/>
         <source>New Profile</source>
         <translation>Neie Profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="892"/>
+        <location filename="../src/configdialog.cpp" line="898"/>
         <source>No profile selected</source>
         <translation>Kee Profil ausgewielt</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="893"/>
+        <location filename="../src/configdialog.cpp" line="899"/>
         <source>No profile selected to delete</source>
         <translation>Kee Profil ausgewielt fir ze läschen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="985"/>
+        <location filename="../src/configdialog.cpp" line="995"/>
         <source>GnuPG not found</source>
         <translation>GnuPG net fonnt</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="988"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Installéiert GnuPG op Ärem System. &lt;br&gt; Install &lt;strong&gt; Ubuntu &lt;/strong&gt; vum Microsoft Store fir et ze kréien. &lt;br&gt; Wann Dir dëst scho gemaach hutt, gitt sécher datt Dir et eemol ugefangen hutt a klickt op &quot;Autodetekt&quot; an den nächsten Dialog.</translation>
+        <translation type="vanished">Installéiert GnuPG op Ärem System. &lt;br&gt; Install &lt;strong&gt; Ubuntu &lt;/strong&gt; vum Microsoft Store fir et ze kréien. &lt;br&gt; Wann Dir dëst scho gemaach hutt, gitt sécher datt Dir et eemol ugefangen hutt a klickt op &quot;Autodetekt&quot; an den nächsten Dialog.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="993"/>
+        <location filename="../src/configdialog.cpp" line="997"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Installéiert GnuPG op Ärem System. &lt;br&gt; Install &lt;strong&gt; Ubuntu &lt;/strong&gt; vum Microsoft Store &lt;br&gt; oder &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; download &lt;/a&gt; et vu GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="999"/>
+        <location filename="../src/configdialog.cpp" line="1002"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Installéiert GnuPG op Ärem System. &lt;br&gt; Installéiert &lt;strong&gt; gpg &lt;/strong&gt; mat Ärem Liiblingspakmanager &lt;br&gt; oder &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; download &lt;/a&gt; et vu GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1053"/>
+        <location filename="../src/configdialog.cpp" line="1056"/>
         <source>Create password-store?</source>
         <translation>Passwuertgeschäft erstellen?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1054"/>
+        <location filename="../src/configdialog.cpp" line="1057"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Wëllt Dir e Passwuertgeschäft bei %1 erstellen?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="798"/>
-        <location filename="../src/configdialog.cpp" line="1059"/>
+        <location filename="../src/configdialog.cpp" line="801"/>
+        <location filename="../src/configdialog.cpp" line="1062"/>
         <source>Error</source>
         <translation>Feeler</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1060"/>
+        <location filename="../src/configdialog.cpp" line="60"/>
+        <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1063"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Konnt de Passwuertspeicher net op %1 erstellen</translation>
     </message>
@@ -526,32 +560,32 @@ De Wäert gëtt nach ëmmer gespäichert wéi agiweent.</translation>
         <translation>Den Dossier %1 schéngt net e Passwuertgeschäft ze sinn oder nach net initialiséiert.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1348"/>
+        <location filename="../src/configdialog.cpp" line="1369"/>
         <source>New profile: %1 at %2</source>
         <translation>Neit Profil: %1 op %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1352"/>
+        <location filename="../src/configdialog.cpp" line="1373"/>
         <source>Profile: %1 at %2</source>
         <translation>Profil: %1 op %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1357"/>
+        <location filename="../src/configdialog.cpp" line="1378"/>
         <source>Fill in all required fields</source>
         <translation>Fëllt all néideg Felder aus</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="443"/>
+        <location filename="../src/configdialog.ui" line="452"/>
         <source>Use PWGen</source>
         <translation>Benotzt PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="505"/>
+        <location filename="../src/configdialog.ui" line="506"/>
         <source>Use Git</source>
         <translation>Benotzt Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="574"/>
+        <location filename="../src/configdialog.ui" line="564"/>
         <source>Use QRencode</source>
         <translation>Benotzt QRencode</translation>
     </message>
@@ -560,41 +594,41 @@ De Wäert gëtt nach ëmmer gespäichert wéi agiweent.</translation>
         <translation type="vanished">Benotzt pass-otp Extensioun</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="709"/>
+        <location filename="../src/configdialog.ui" line="715"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Ge&amp;bierteg Git/GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="746"/>
+        <location filename="../src/configdialog.ui" line="752"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="756"/>
-        <location filename="../src/configdialog.ui" line="763"/>
-        <location filename="../src/configdialog.ui" line="806"/>
-        <location filename="../src/configdialog.ui" line="837"/>
-        <location filename="../src/configdialog.ui" line="1036"/>
+        <location filename="../src/configdialog.ui" line="771"/>
+        <location filename="../src/configdialog.ui" line="784"/>
+        <location filename="../src/configdialog.ui" line="839"/>
+        <location filename="../src/configdialog.ui" line="879"/>
+        <location filename="../src/configdialog.ui" line="1116"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="786"/>
+        <location filename="../src/configdialog.ui" line="807"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="799"/>
+        <location filename="../src/configdialog.ui" line="823"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1070"/>
+        <location filename="../src/configdialog.ui" line="1176"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Template füügt extra Felder am Dialog vum Passwuertgeneratioun, an an der Passwuertbild.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1101"/>
+        <location filename="../src/configdialog.ui" line="1207"/>
         <source>login
 URL
 e-mail</source>
@@ -606,9 +640,19 @@ e-mail</translation>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="106"/>
+        <location filename="../src/executor.cpp" line="91"/>
+        <source>No executable configured for this command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/executor.cpp" line="128"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">Konnt %1 net starten</translation>
+    </message>
+    <message>
+        <location filename="../src/executor.cpp" line="421"/>
+        <source>%1 crashed or was killed</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -669,150 +713,204 @@ e-mail</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="146"/>
-        <location filename="../src/imitatepass.cpp" line="328"/>
-        <location filename="../src/imitatepass.cpp" line="486"/>
+        <location filename="../src/imitatepass.cpp" line="196"/>
+        <location filename="../src/imitatepass.cpp" line="387"/>
+        <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Signature for %1 is invalid.</source>
         <translation>D&apos;Ënnerschrëft fir %1 ass ongëlteg.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="153"/>
-        <location filename="../src/imitatepass.cpp" line="579"/>
+        <location filename="../src/imitatepass.cpp" line="203"/>
+        <location filename="../src/imitatepass.cpp" line="686"/>
         <source>Can not edit</source>
         <translation>Kann net änneren</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="154"/>
-        <location filename="../src/imitatepass.cpp" line="580"/>
+        <location filename="../src/imitatepass.cpp" line="204"/>
+        <location filename="../src/imitatepass.cpp" line="687"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Konnt de Verschlësselungsschlëssel fir ze benotzen, .gpg-id Datei feelen oder ongëlteg.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="322"/>
+        <location filename="../src/imitatepass.cpp" line="381"/>
         <source>GPG signing failed!</source>
         <translation>GPG-Ënnerschrëft ass gescheitert!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="323"/>
+        <location filename="../src/imitatepass.cpp" line="382"/>
         <source>Failed to sign %1.</source>
         <translation>Konnt %1 net ënnerschreiwen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="390"/>
+        <location filename="../src/imitatepass.cpp" line="494"/>
         <source>No signing key!</source>
         <translation>Kee Schlëssel fir eng Ënnerschrëft!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="391"/>
+        <location filename="../src/imitatepass.cpp" line="495"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Kee vun de geheime Schlësselen fir Ënnerschrëft ass verfügbar.
 Dir kënnt d&apos;Benotzerlëscht net änneren!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="263"/>
+        <location filename="../src/imitatepass.cpp" line="322"/>
         <source>Cannot update</source>
         <translation>Kann net aktualiséiert ginn</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="145"/>
-        <location filename="../src/imitatepass.cpp" line="327"/>
-        <location filename="../src/imitatepass.cpp" line="485"/>
+        <location filename="../src/imitatepass.cpp" line="161"/>
+        <source>Git pull failed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="195"/>
+        <location filename="../src/imitatepass.cpp" line="386"/>
+        <location filename="../src/imitatepass.cpp" line="598"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Kontrolléiert d&apos;Signatur vun der .gpg-id Datei!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="264"/>
+        <location filename="../src/imitatepass.cpp" line="323"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>De Feeler ass net opgemaach .gpg-id fir ze schreiwen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="283"/>
+        <location filename="../src/imitatepass.cpp" line="342"/>
         <source>Check selected users!</source>
         <translation>Préift gewielte Benotzer!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="284"/>
+        <location filename="../src/imitatepass.cpp" line="343"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Keen vun den ausgewielte Schlësselen huet e geheime Schlëssel verfügbar.
 Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="643"/>
-        <location filename="../src/imitatepass.cpp" line="756"/>
+        <location filename="../src/imitatepass.cpp" line="751"/>
+        <location filename="../src/imitatepass.cpp" line="1040"/>
         <source>Re-encryption failed</source>
         <translation>Nei Verschlësselung ass gescheitert</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="644"/>
+        <location filename="../src/imitatepass.cpp" line="752"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>Konnt %1 net ersetzen. Den Original gouf restauréiert.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="674"/>
+        <location filename="../src/imitatepass.cpp" line="795"/>
         <source>Creating backup commit</source>
         <translation>Backup-Commit erstellen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="684"/>
-        <location filename="../src/imitatepass.cpp" line="692"/>
+        <location filename="../src/imitatepass.cpp" line="812"/>
+        <location filename="../src/imitatepass.cpp" line="821"/>
         <source>Backup commit failed</source>
         <translation>Backup-Commit fehlgeschloen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="685"/>
+        <location filename="../src/imitatepass.cpp" line="813"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Konnt de Git-Status net iwwerpréiwen. D&apos;Nei-Verschlësselung gouf ofgebrach.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="693"/>
+        <location filename="../src/imitatepass.cpp" line="822"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>D&apos;Nei-Verschlësselung gouf ofgebrach, well kee Git-Backup erstallt konnt ginn.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="715"/>
+        <location filename="../src/imitatepass.cpp" line="868"/>
+        <source>A re-encryption is already running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="873"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-Verschlësselung vum Dossier %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="718"/>
-        <location filename="../src/imitatepass.cpp" line="774"/>
+        <location filename="../src/imitatepass.cpp" line="956"/>
+        <location filename="../src/imitatepass.cpp" line="1067"/>
         <source>Updating password-store</source>
         <translation>Aktualiséiert Passwuertgeschäft</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="743"/>
+        <location filename="../src/imitatepass.cpp" line="959"/>
+        <source>Git pull failed, re-encrypting the store as it is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1000"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID Verifizéierung feelgeschloen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="744"/>
+        <location filename="../src/imitatepass.cpp" line="1001"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>D&apos;.gpg-id fir den Dossier konnt net verifizéiert ginn.</translation>
     </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="757"/>
-        <source>Failed to re-encrypt %1</source>
-        <translation>Konnt %1 net nei verschlësselen</translation>
+    <message numerus="yes">
+        <location filename="../src/imitatepass.cpp" line="1038"/>
+        <source>... and %n more</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/imitatepass.cpp" line="1041"/>
+        <source>%n file(s) could not be re-encrypted:</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="763"/>
+        <location filename="../src/imitatepass.cpp" line="1047"/>
+        <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1340"/>
+        <source>Git executable not configured, skipping git</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to re-encrypt %1</source>
+        <translation type="vanished">Konnt %1 net nei verschlësselen</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1056"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Nei Verschlësselung ofgeschloss: %1 erfollegräich, %2 gescheitert</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="769"/>
+        <location filename="../src/imitatepass.cpp" line="1061"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Nei Verschlësselung ofgeschloss: %1 Dateien nei verschlësselt</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/imitatepass.cpp" line="1070"/>
+        <source>Not pushing: %n file(s) failed to re-encrypt</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="932"/>
+        <location filename="../src/imitatepass.cpp" line="1263"/>
+        <location filename="../src/imitatepass.cpp" line="1271"/>
+        <location filename="../src/imitatepass.cpp" line="1278"/>
+        <location filename="../src/imitatepass.cpp" line="1288"/>
         <source>Copy failed</source>
         <translation type="unfinished">Kopéieren feelgeschloen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="933"/>
+        <location filename="../src/imitatepass.cpp" line="1264"/>
+        <location filename="../src/imitatepass.cpp" line="1272"/>
+        <location filename="../src/imitatepass.cpp" line="1279"/>
+        <location filename="../src/imitatepass.cpp" line="1289"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Konnt %1 net op %2 kopéieren.</translation>
     </message>
@@ -981,27 +1079,27 @@ Expire-Date: 0
         <translation>Fir Expertoptiounen kuckt d&apos;&lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; Handbuch vun GnuPG &lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="168"/>
+        <location filename="../src/keygendialog.cpp" line="195"/>
         <source>Invalid name</source>
         <translation>Ongëltegen Numm</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="169"/>
+        <location filename="../src/keygendialog.cpp" line="196"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Den Numm muss op d&apos;mannst 5 Zeeche laang sinn.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="180"/>
+        <location filename="../src/keygendialog.cpp" line="207"/>
         <source>Invalid email</source>
         <translation>Ongëlteg E-Mail</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="181"/>
+        <location filename="../src/keygendialog.cpp" line="208"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Déi E-Mailadress déi Dir aginn hutt ass net eng gülteg E-Mailadress.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="201"/>
+        <location filename="../src/keygendialog.cpp" line="228"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Dës Operatioun kann e puer Minutten daueren. &lt;br /&gt; Mir musse vill zoufälleg Bytes generéieren. Et ass eng gutt Iddi eng aner Handlung ze maachen (Typ op der Tastatur, réck d&apos;Maus, benotzt d&apos;Disken) wärend der Prime Generatioun; dat gëtt der Zufallszuelgenerator besser Chance fir eng Entropie ze gewannen.</translation>
     </message>
@@ -1020,8 +1118,8 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="783"/>
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="827"/>
+        <location filename="../src/mainwindow.cpp" line="1024"/>
         <source>Search Password</source>
         <translation>Sich Passwuert</translation>
     </message>
@@ -1076,19 +1174,19 @@ Expire-Date: 0
         <translation>Wëllkomm op QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="364"/>
+        <location filename="../src/mainwindow.cpp" line="381"/>
         <source>Clear output</source>
         <translation>Ausgab läschen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="363"/>
+        <location filename="../src/mainwindow.cpp" line="380"/>
         <source>Clear</source>
         <translation>Läschen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
         <location filename="../src/mainwindow.ui" line="379"/>
-        <location filename="../src/mainwindow.cpp" line="1561"/>
+        <location filename="../src/mainwindow.cpp" line="1612"/>
         <source>Add password</source>
         <translation>Füügt Passwuert</translation>
     </message>
@@ -1100,21 +1198,21 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="387"/>
         <location filename="../src/mainwindow.ui" line="390"/>
-        <location filename="../src/mainwindow.cpp" line="1560"/>
+        <location filename="../src/mainwindow.cpp" line="1611"/>
         <source>Add folder</source>
         <translation>Füügt Dossier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="395"/>
         <location filename="../src/mainwindow.ui" line="398"/>
-        <location filename="../src/mainwindow.cpp" line="1568"/>
+        <location filename="../src/mainwindow.cpp" line="1619"/>
         <source>Edit</source>
         <translation>Ännerung</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="403"/>
         <location filename="../src/mainwindow.ui" line="406"/>
-        <location filename="../src/mainwindow.cpp" line="1582"/>
+        <location filename="../src/mainwindow.cpp" line="1633"/>
         <source>Delete</source>
         <translation>Läschen</translation>
     </message>
@@ -1163,7 +1261,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
-        <location filename="../src/mainwindow.cpp" line="1562"/>
+        <location filename="../src/mainwindow.cpp" line="1613"/>
         <source>Users</source>
         <translation>Benotzer</translation>
     </message>
@@ -1183,24 +1281,24 @@ Expire-Date: 0
         <translation>Configuratioun</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="334"/>
+        <location filename="../src/mainwindow.cpp" line="351"/>
         <source>Welcome to QtPass %1</source>
         <translation>Wëllkomm op QtPass %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="372"/>
+        <location filename="../src/mainwindow.cpp" line="389"/>
         <source>Process Output</source>
         <translation>Prozessausgab</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="544"/>
-        <location filename="../src/mainwindow.cpp" line="557"/>
+        <location filename="../src/mainwindow.cpp" line="593"/>
+        <location filename="../src/mainwindow.cpp" line="606"/>
         <source>Updating password-store</source>
         <translation>Aktualiséiert Passwuertgeschäft</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="679"/>
-        <location filename="../src/mainwindow.cpp" line="1021"/>
+        <location filename="../src/mainwindow.cpp" line="725"/>
+        <location filename="../src/mainwindow.cpp" line="1067"/>
         <source>Content hidden</source>
         <translation>Inhalt verstoppt</translation>
     </message>
@@ -1213,40 +1311,40 @@ Expire-Date: 0
         <translation type="vanished">OTP Code</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="740"/>
-        <location filename="../src/mainwindow.cpp" line="758"/>
-        <location filename="../src/mainwindow.cpp" line="1289"/>
+        <location filename="../src/mainwindow.cpp" line="784"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="1332"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP-Code an d&apos;Zwëschespäicher kopéiert</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="760"/>
-        <location filename="../src/mainwindow.cpp" line="1272"/>
+        <location filename="../src/mainwindow.cpp" line="804"/>
+        <location filename="../src/mainwindow.cpp" line="1315"/>
         <source>No OTP code found in this password entry</source>
         <translation>Kee OTP-Code an dësem Passwuert-Eingabe fonnt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="787"/>
+        <location filename="../src/mainwindow.cpp" line="831"/>
         <source>Password and Content hidden</source>
         <translation>Passwuert an Inhalt verstoppt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="875"/>
+        <location filename="../src/mainwindow.cpp" line="921"/>
         <source>Looking for: %1</source>
         <translation>Sicht no: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="926"/>
+        <location filename="../src/mainwindow.cpp" line="972"/>
         <source>Searching…</source>
         <translation>Sichen…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="955"/>
+        <location filename="../src/mainwindow.cpp" line="1001"/>
         <source>Search content (regex)</source>
         <translation>Inhalt duerchsichen (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1007"/>
+        <location filename="../src/mainwindow.cpp" line="1053"/>
         <source>No matches found.</source>
         <translation>Keng Treffer fonnt.</translation>
     </message>
@@ -1258,27 +1356,27 @@ Expire-Date: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="155"/>
+        <location filename="../src/mainwindow.cpp" line="153"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">Zäitiwwerschreidung; d&apos;Interface gëtt nees aktivéiert.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="727"/>
+        <location filename="../src/mainwindow.cpp" line="771"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">Konnt dës Passwuert-Eingabe net entschlësselen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="960"/>
+        <location filename="../src/mainwindow.cpp" line="1006"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation type="unfinished">D&apos;Inhaltssich benotzt POSIX-Basis-Regulärausdréck (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="962"/>
+        <location filename="../src/mainwindow.cpp" line="1008"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">D&apos;Inhaltssich benotzt Perl-kompatibel Regulärausdréck (PCRE).</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1031"/>
+        <location filename="../src/mainwindow.cpp" line="1077"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n Iwwerinstëmmung fonnt</numerusform>
@@ -1286,7 +1384,7 @@ Expire-Date: 0
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1032"/>
+        <location filename="../src/mainwindow.cpp" line="1078"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>an %n Entrée.</numerusform>
@@ -1294,121 +1392,146 @@ Expire-Date: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1112"/>
+        <location filename="../src/mainwindow.cpp" line="1158"/>
         <source>Invalid name</source>
         <translation type="unfinished">Ongëltegen Numm</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1113"/>
+        <location filename="../src/mainwindow.cpp" line="1159"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Dësen Numm géif ausserhalb vum Passwuertspäicher weisen. Wielt w.e.g. en aneren Numm.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1160"/>
-        <location filename="../src/mainwindow.cpp" line="1659"/>
+        <location filename="../src/mainwindow.cpp" line="1204"/>
         <source>New file</source>
         <translation>Nei Datei</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1161"/>
+        <location filename="../src/mainwindow.cpp" line="1205"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Neit Passwuert Datei:
 (Ginn an %1 gesat)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1201"/>
+        <location filename="../src/mainwindow.cpp" line="1245"/>
         <source> and the whole content?</source>
         <translation> an de ganzen Inhalt?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1211"/>
+        <location filename="../src/mainwindow.cpp" line="1255"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> an de ganzen Inhalt? &lt;br&gt; &lt;strong&gt; Opgepasst: et ginn onerwaart Dateien am gegebene Dossier, kontrolléiert se ier Dir weider geet. &lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1220"/>
+        <location filename="../src/mainwindow.cpp" line="1264"/>
         <source>Delete folder?</source>
         <translation>Dossier läschen?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1220"/>
+        <location filename="../src/mainwindow.cpp" line="1264"/>
         <source>Delete password?</source>
         <translation>Passwuert läschen?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1221"/>
+        <location filename="../src/mainwindow.cpp" line="1265"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Sidd Dir sécher, dass Dir %1%2 wëllt läschen?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1267"/>
+        <location filename="../src/mainwindow.cpp" line="1310"/>
         <source>No password selected for OTP generation</source>
         <translation>Kee Passwuert fir d&apos;Generéierung vun engem OTP ausgewielt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1434"/>
+        <location filename="../src/mainwindow.cpp" line="1455"/>
         <source>Profile changed to %1</source>
         <translation>Profil geännert an %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1559"/>
+        <location filename="../src/mainwindow.cpp" line="1610"/>
         <source>Open folder with file manager</source>
         <translation>Open Dossier mat Dateemanager</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1574"/>
+        <location filename="../src/mainwindow.cpp" line="1625"/>
+        <location filename="../src/mainwindow.cpp" line="1762"/>
         <source>Rename folder</source>
         <translation>Dossier ëmbenennen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1578"/>
+        <location filename="../src/mainwindow.cpp" line="1629"/>
         <source>Rename password</source>
         <translation>Passwuert ëmbenennen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1588"/>
+        <location filename="../src/mainwindow.cpp" line="1639"/>
         <source>Share</source>
         <translation>Deelen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1598"/>
+        <location filename="../src/mainwindow.cpp" line="1649"/>
         <source>Re-encrypt all passwords</source>
         <translation>All Passwierder nei verschlësselen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1654"/>
         <source>Export my public key...</source>
         <translation>Mäin ëffentleche Schlëssel exportéieren…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1609"/>
+        <location filename="../src/mainwindow.cpp" line="1660"/>
         <source>Add recipient...</source>
         <translation>Empfänger derbäi…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1614"/>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>What is this?</source>
         <translation>Wat ass dat?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1805"/>
+        <location filename="../src/mainwindow.cpp" line="1710"/>
+        <source>New folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1856"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Dës Eingabe enthält en OTP-Geheimnis, kee Passwuert</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1880"/>
-        <location filename="../src/mainwindow.cpp" line="1899"/>
+        <location filename="../src/mainwindow.cpp" line="1920"/>
+        <source>Re-encrypting passwords...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1921"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1929"/>
+        <source>Cancelling re-encryption</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1945"/>
+        <source>Re-encrypting passwords: %1 of %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1978"/>
+        <location filename="../src/mainwindow.cpp" line="1997"/>
         <source>Export Public Key</source>
         <translation>Ëffentleche Schlëssel exportéieren</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1881"/>
+        <location filename="../src/mainwindow.cpp" line="1979"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Ären ëffentleche Schlëssel exportéieren&lt;/h3&gt;&lt;p&gt;Et ass kee Signaturschlëssel konfiguréiert. Setzt een an de QtPass-Astellungen &amp;gt; GPG-Schlësselen, oder lafft Folgendes an engem Terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Dann schéckt d&apos;Datei un Är Teammemberen.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1900"/>
+        <location filename="../src/mainwindow.cpp" line="1998"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1417,17 +1540,17 @@ Expire-Date: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1902"/>
+        <location filename="../src/mainwindow.cpp" line="2000"/>
         <source>No output from gpg.</source>
         <translation>Keng Ausgab vum gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1929"/>
+        <location filename="../src/mainwindow.cpp" line="2027"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Passwierder mat GPG deelen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1930"/>
+        <location filename="../src/mainwindow.cpp" line="2028"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Passwierder mat GPG deelen&lt;/h3&gt;&lt;p&gt;Fir Passwierder mat anere Benotzer ze deelen:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportéiert Ären ëffentleche Schlëssel&lt;/b&gt; an schéckt en un Är Teammemberen&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importéiert d&apos;ëffentlech Schlësselen vun Ären Teammemberen&lt;/b&gt; an Äre GPG-Schlësselbond&lt;/li&gt;&lt;li&gt;&lt;b&gt;Verschlësselt d&apos;Passwierder nei&lt;/b&gt; sou datt all Empfänger se entschlësselen kann&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Nëmme Persounen mat engem passende geheime Schlëssel kënnen d&apos;Passwierder entschlësselen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tipp:&lt;/b&gt; Benotzt deeselwechte GPG-Schlëssel fir all gedeelt Dossieren.&lt;/p&gt;&lt;p&gt;Kuckt d&apos;FAQ fir méi Detailer.&lt;/p&gt;</translation>
     </message>
@@ -1436,57 +1559,57 @@ Expire-Date: 0
         <translation type="vanished">Nei verschlësselen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1660"/>
+        <location filename="../src/mainwindow.cpp" line="1711"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Neien Dossier:
 (Ginn an %1 gesat)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1672"/>
-        <location filename="../src/mainwindow.cpp" line="1681"/>
-        <location filename="../src/mainwindow.cpp" line="1828"/>
+        <location filename="../src/mainwindow.cpp" line="1723"/>
+        <location filename="../src/mainwindow.cpp" line="1745"/>
+        <location filename="../src/mainwindow.cpp" line="1879"/>
         <source>Error</source>
         <translation>Feeler</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1724"/>
         <source>Failed to create folder: %1</source>
         <translation>Konnt den Dossier net erstellen: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1746"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Konnt d&apos;.gpg-id Datei net erstellen an: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1709"/>
-        <location filename="../src/mainwindow.cpp" line="1749"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>Rename file</source>
         <translation>Rename Datei</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1709"/>
+        <location filename="../src/mainwindow.cpp" line="1762"/>
         <source>Rename Folder To: </source>
         <translation>Numm vun der Folder ëmbenennen op: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1749"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>Rename File To: </source>
         <translation>Numm vun der Datei ëmbenennen op: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1829"/>
+        <location filename="../src/mainwindow.cpp" line="1880"/>
         <source>Directory does not exist: %1</source>
         <translation>Verzeichnis existéiert net: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1834"/>
+        <location filename="../src/mainwindow.cpp" line="1885"/>
+        <location filename="../src/mainwindow.cpp" line="1922"/>
         <source>Re-encrypt passwords</source>
         <translation>Passwierder nei verschlësselen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1835"/>
+        <location filename="../src/mainwindow.cpp" line="1886"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -1525,51 +1648,61 @@ Weider?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="159"/>
+        <location filename="../src/pass.cpp" line="167"/>
+        <source>Configured GPG home %1 does not exist, using the default keyring</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="175"/>
+        <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="195"/>
         <source>Invalid password length</source>
         <translation>Ongülteg Passwuertlängt</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="160"/>
+        <location filename="../src/pass.cpp" line="196"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>Kann kee Passwuert mat enger Längt vun Null generéieren.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="201"/>
+        <location filename="../src/pass.cpp" line="237"/>
         <source>No characters chosen</source>
         <translation>Keng Zeeche gewielt</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="202"/>
+        <location filename="../src/pass.cpp" line="238"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Konnt Passwuert net generéieren, et gi keng Zeechen ze wielen déi an der Konfiguratioun gesat gëtt!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="452"/>
+        <location filename="../src/pass.cpp" line="432"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">Keng ausféierbar GPG-Datei konfiguréiert</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="557"/>
-        <location filename="../src/pass.cpp" line="576"/>
+        <location filename="../src/pass.cpp" line="537"/>
+        <location filename="../src/pass.cpp" line="556"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Verschlësselung feelgeschloen: De GPG-Schlëssel ass ofgelaf. Erneiert oder ersetzt en.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="562"/>
-        <location filename="../src/pass.cpp" line="581"/>
+        <location filename="../src/pass.cpp" line="542"/>
+        <location filename="../src/pass.cpp" line="561"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Verschlësselung feelgeschloen: De GPG-Schlëssel gouf zréckgezunn.</translation>
     </message>
     <message>
+        <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="566"/>
-        <location filename="../src/pass.cpp" line="586"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Verschlësselung feelgeschloen: Den GPG-Schlëssel vum Empfänger gouf net fonnt oder ass ongëlteg. Kontrolléiert ob d&apos;Schlëssel-ID an der .gpg-id korrekt ass an importéiert ass.</translation>
     </message>
     <message>
+        <location filename="../src/pass.cpp" line="550"/>
         <location filename="../src/pass.cpp" line="570"/>
-        <location filename="../src/pass.cpp" line="590"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Verschlësselung feelgeschloen. Kontrolléiert ob Äre GPG-Schlëssel gëlteg ass.</translation>
     </message>
@@ -1623,12 +1756,27 @@ Weider?</translation>
         <translation>Längt:</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="244"/>
+        <location filename="../src/passworddialog.ui" line="164"/>
+        <source>Template:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.ui" line="180"/>
+        <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="92"/>
+        <source>Decrypting…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="269"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth://-URI oder Base32-Geheimnis</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="277"/>
+        <location filename="../src/passworddialog.cpp" line="302"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Ongëltegt OTP-Geheimnis</translation>
     </message>
@@ -1636,145 +1784,166 @@ Weider?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="168"/>
-        <location filename="../main/main.cpp" line="172"/>
+        <location filename="../main/main.cpp" line="166"/>
+        <location filename="../main/main.cpp" line="170"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="81"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="159"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="192"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="78"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="148"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="191"/>
         <source>Password</source>
         <translation type="unfinished">Passwuert</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="168"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="166"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">%1 am Browser opmaachen</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="320"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="333"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="311"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="324"/>
         <source>OTP Code</source>
         <translation type="unfinished">OTP Code</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="321"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="312"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Kee OTP-Code an dësem Passwuert-Eingabe fonnt</translation>
     </message>
 </context>
 <context>
+    <name>QPushButtonAsQRCode</name>
+    <message>
+        <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
+        <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
+        <source>Show as QR code</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QPushButtonShowPassword</name>
+    <message>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="22"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="23"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
+        <source>Show password</source>
+        <translation type="unfinished">Show Passwuert</translation>
+    </message>
+    <message>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
+        <source>Hide password</source>
+        <translation type="unfinished">Passwuert verstoppen</translation>
+    </message>
+</context>
+<context>
+    <name>QPushButtonWithClipboard</name>
+    <message>
+        <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
+        <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="173"/>
+        <location filename="../src/qtpass.cpp" line="138"/>
         <source>Generating GPG key pair</source>
         <translation>Generéiere GPG Schlësselpaar</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="242"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>De Benotzer konnektéiert WebDAV net:
+        <translation type="vanished">De Benotzer konnektéiert WebDAV net:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="258"/>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV Passwuert</translation>
+        <translation type="vanished">QtPass WebDAV Passwuert</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="259"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Gitt d&apos;Passwuert fir un de WebDAV ze connectéieren:</translation>
+        <translation type="vanished">Gitt d&apos;Passwuert fir un de WebDAV ze connectéieren:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="276"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav existeiert onerwaart
+        <translation type="vanished">fusedav existeiert onerwaart
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="280"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>De Fusedav konnt net konnektéieren fir WebDAV ze starten:
+        <translation type="vanished">De Fusedav konnt net konnektéieren fir WebDAV ze starten:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="293"/>
         <source>QProcess::FailedToStart</source>
-        <translation>QProcess::FailedToStart</translation>
+        <translation type="vanished">QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="296"/>
         <source>QProcess::Crashed</source>
-        <translation>QProcess::Crashed</translation>
+        <translation type="vanished">QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="299"/>
         <source>QProcess::Timedout</source>
-        <translation>QProcess::Timedout</translation>
+        <translation type="vanished">QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="302"/>
         <source>QProcess::ReadError</source>
-        <translation>QProcess::ReadError</translation>
+        <translation type="vanished">QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="305"/>
         <source>QProcess::WriteError</source>
-        <translation>QProcess::WriteError</translation>
+        <translation type="vanished">QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="308"/>
         <source>QProcess::UnknownError</source>
-        <translation>QProcess::UnknownError</translation>
+        <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="324"/>
+        <location filename="../src/qtpass.cpp" line="181"/>
         <source>GPG key pair generation failed</source>
         <translation>D&apos;Generatioun vu GPG-Schlësselpaar ass gescheitert</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="398"/>
+        <location filename="../src/qtpass.cpp" line="256"/>
         <source>GPG key pair generated successfully</source>
         <translation>GPG Schlësselpaar erfollegräich generéiert</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="482"/>
         <source>Clipboard cleared</source>
-        <translation>Clipboard geläscht</translation>
+        <translation type="vanished">Clipboard geläscht</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="484"/>
         <source>Clipboard not cleared</source>
-        <translation>Clipboard net geläscht</translation>
+        <translation type="vanished">Clipboard net geläscht</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="530"/>
         <source>Copied to clipboard</source>
-        <translation>Kopéiert op Clipboard</translation>
+        <translation type="vanished">Kopéiert op Clipboard</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="552"/>
+        <location filename="../src/qtpass.cpp" line="313"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">Konnt qrencode net starten: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="560"/>
+        <location filename="../src/qtpass.cpp" line="321"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">qrencode ass net zäitlech fäerdeg ginn</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="572"/>
+        <location filename="../src/qtpass.cpp" line="333"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">qrencode ass ofgestierzt</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="573"/>
+        <location filename="../src/qtpass.cpp" line="334"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">qrencode ass mam Code %1 eriwwer</translation>
     </message>
@@ -1786,12 +1955,12 @@ Weider?</translation>
         <translation type="vanished">Kraaft iwwerschreiwe?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="396"/>
+        <location filename="../src/storemodel.cpp" line="379"/>
         <source>Force overwrite?</source>
         <translation>Kraaft iwwerschreiwe?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="397"/>
+        <location filename="../src/storemodel.cpp" line="380"/>
         <source>overwrite %1 with %2?</source>
         <translation>iwwerschreiwe %1 mat %2?</translation>
     </message>
@@ -1837,17 +2006,25 @@ Weider?</translation>
         <translation>Liesen Zougang Benotzer</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.ui" line="45"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Wielt aus, wéi eng Benotzer Passwierder, déi an dësem Dossier gespäichert sinn, entschlësselen däerfen.
+        <translation type="vanished">Wielt aus, wéi eng Benotzer Passwierder, déi an dësem Dossier gespäichert sinn, entschlësselen däerfen.
 Bemierkung: Existéierend Dateie ginn net geännert a behalen déi al Rechter, bis Dir se ännert.
 Blo Entréen hunn e geheime Schlëssel verfügbar, wielt ee vun dësen, fir se entschlësselen ze kënnen.
 Schwaarz Entréen hunn e Verschlësselungsschlëssel verfügbar, deen als vertrauenswierdeg ugesi gëtt, wielt ee vun dësen, fir datt aner Leit se entschlësselen kënnen.
 Rout Entréen sinn net gëlteg, Dir kënnt se net verschlësselen.</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="45"/>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: On OK every password in this folder and its subfolders is re-encrypted to the selected users; this can take a while.
+Bold entries have a secret key available, select one of these to be able to decrypt yourself.
+Plain entries have a trusted encryption key, select these to allow other people to decrypt.
+[INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
@@ -1894,42 +2071,42 @@ Red Entréen sinn net valabel, Dir kënnt dës net verschlësselen.</translation
         <translation>Show onbrauchbar Schlësselen</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="83"/>
+        <location filename="../src/usersdialog.cpp" line="73"/>
         <source>Keylist missing</source>
         <translation>Keylist vermësst</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="84"/>
+        <location filename="../src/usersdialog.cpp" line="74"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Konnt d&apos;Lëscht vun de verfügbaren GPG Schlësselen net ophalen</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="158"/>
+        <location filename="../src/usersdialog.cpp" line="147"/>
         <source>Key not found in keyring</source>
         <translation>Schlëssel net am Keyring fonnt</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="311"/>
+        <location filename="../src/usersdialog.cpp" line="285"/>
         <source>created</source>
         <translation>erstallt</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="315"/>
+        <location filename="../src/usersdialog.cpp" line="289"/>
         <source>expires</source>
         <translation>leeft of</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="338"/>
+        <location filename="../src/usersdialog.cpp" line="309"/>
         <source>[INVALID] </source>
         <translation>[ONGËLTIG] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="341"/>
+        <location filename="../src/usersdialog.cpp" line="315"/>
         <source>[EXPIRED] </source>
         <translation>[OFLAF] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="345"/>
+        <location filename="../src/usersdialog.cpp" line="319"/>
         <source>[PARTIAL] </source>
         <translation>[DEELFEST] </translation>
     </message>
