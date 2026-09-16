@@ -12,5 +12,6 @@ var searchData=
   ['transactionhelper_9',['transactionHelper',['../class_imitate_pass_1_1transaction_helper.html',1,'ImitatePass::transactionHelper'],['../class_imitate_pass_1_1transaction_helper.html#ab37f5a0aff46fb0aa7ae9cc9cc17f38e',1,'ImitatePass::transactionHelper::transactionHelper()']]],
   ['transactionisover_10',['transactionIsOver',['../classsimple_transaction.html#a64f6e432ff10bf083aec9040bfbee149',1,'simpleTransaction']]],
   ['transactionstart_11',['transactionStart',['../classsimple_transaction.html#aafd98f73dfc5352f307115cabc2a5ed4',1,'simpleTransaction']]],
-  ['trayicon_12',['TrayIcon',['../class_tray_icon.html',1,'TrayIcon'],['../class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5',1,'TrayIcon::TrayIcon()']]]
+  ['translatepathforwsl_12',['translatePathForWsl',['../class_executor.html#a4417d62f24842a5ff4459559b9527ead',1,'Executor']]],
+  ['trayicon_13',['TrayIcon',['../class_tray_icon.html',1,'TrayIcon'],['../class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5',1,'TrayIcon::TrayIcon()']]]
 ];

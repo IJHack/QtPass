@@ -140,6 +140,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a046728922f9ad9d2bf17ff64bf639d06" id="r_a046728922f9ad9d2bf17ff64bf639d06"><td class="memItemLeft"><a id="a046728922f9ad9d2bf17ff64bf639d06" name="a046728922f9ad9d2bf17ff64bf639d06"></a>
 &#160;</td><td class="memItemRight"><b>~UsersDialog</b> () override</td></tr>
 <tr class="memdesc:a046728922f9ad9d2bf17ff64bf639d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memitem:ab30de74144c09f81f4d3324207e911cd" id="r_ab30de74144c09f81f4d3324207e911cd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab30de74144c09f81f4d3324207e911cd">setInitOnAccept</a> (bool initOnAccept)</td></tr>
+<tr class="memdesc:ab30de74144c09f81f4d3324207e911cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose whether OK runs <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Pass::Init</a> on the folder.  <br /></td></tr>
+<tr class="memitem:a106ab7fe0698daa57d92a2a6f1a337c7" id="r_a106ab7fe0698daa57d92a2a6f1a337c7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a106ab7fe0698daa57d92a2a6f1a337c7">selectedUsers</a> () const -&gt; QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;</td></tr>
+<tr class="memdesc:a106ab7fe0698daa57d92a2a6f1a337c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The key list with the user's choice in each entry's enabled flag.  <br /></td></tr>
+<tr class="memitem:adb673bcebad1749f22183ce146b846cd" id="r_adb673bcebad1749f22183ce146b846cd"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adb673bcebad1749f22183ce146b846cd">hasSelection</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:adb673bcebad1749f22183ce146b846cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether at least one key is ticked.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -199,10 +205,44 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aadc5be04d9f54b8d827348bf9248ae22_icgraph.svg" width="451" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="adb673bcebad1749f22183ce146b846cd" name="adb673bcebad1749f22183ce146b846cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb673bcebad1749f22183ce146b846cd">&#9670;&#160;</a></span>hasSelection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto UsersDialog::hasSelection </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether at least one key is ticked. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if Init would get a recipient. </dd></dl>
+
+</div>
+</div>
 <a id="a2b8e6e8605111e43bab64328add16ddb" name="a2b8e6e8605111e43bab64328add16ddb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b8e6e8605111e43bab64328add16ddb">&#9670;&#160;</a></span>keyPressEvent()</h2>
 
@@ -233,6 +273,83 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a2b8e6e8605111e43bab64328add16ddb_cgraph.svg" width="451" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a2b8e6e8605111e43bab64328add16ddb_icgraph.svg" width="215" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a106ab7fe0698daa57d92a2a6f1a337c7" name="a106ab7fe0698daa57d92a2a6f1a337c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a106ab7fe0698daa57d92a2a6f1a337c7">&#9670;&#160;</a></span>selectedUsers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto UsersDialog::selectedUsers </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The key list with the user's choice in each entry's enabled flag. </p>
+<dl class="section return"><dt>Returns</dt><dd>All listed users; the selected ones have enabled == true. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00062">62</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="ab30de74144c09f81f4d3324207e911cd" name="ab30de74144c09f81f4d3324207e911cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab30de74144c09f81f4d3324207e911cd">&#9670;&#160;</a></span>setInitOnAccept()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::setInitOnAccept </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>initOnAccept</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Choose whether OK runs <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Pass::Init</a> on the folder. </p>
+<p>On by default. Off, the dialog only collects the selection; the caller reads <a class="el" href="#a106ab7fe0698daa57d92a2a6f1a337c7" title="The key list with the user&#39;s choice in each entry&#39;s enabled flag.">selectedUsers()</a> and initialises the folder itself (new profiles, which must not go through the backend of the active store). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initOnAccept</td><td>false to skip <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Pass::Init</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00056">56</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>

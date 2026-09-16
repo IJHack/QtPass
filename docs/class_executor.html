@@ -170,6 +170,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa17378022bf90b96beb2a2ac0750751d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously with a custom environment.  <br /></td></tr>
 <tr class="memitem:a694edbdebf865b549812969f49bc0c3d" id="r_a694edbdebf865b549812969f49bc0c3d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a694edbdebf865b549812969f49bc0c3d">wslExecArgs</a> (const QString &amp;command, const QStringList &amp;args) -&gt; QStringList</td></tr>
 <tr class="memdesc:a694edbdebf865b549812969f49bc0c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the wsl.exe argument list that runs <code class="param">command</code> directly.  <br /></td></tr>
+<tr class="memitem:a4417d62f24842a5ff4459559b9527ead" id="r_a4417d62f24842a5ff4459559b9527ead"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4417d62f24842a5ff4459559b9527ead">translatePathForWsl</a> (const QString &amp;path, const QString &amp;exe) -&gt; QString</td></tr>
+<tr class="memdesc:a4417d62f24842a5ff4459559b9527ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate a native path for a WSL-routed executable.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Runs non-interactive external commands in FIFO order using a single QProcess. </p>
@@ -839,7 +841,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Whether no command is running and nothing is queued. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when the executor has nothing in flight. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00270">270</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00282">282</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 <div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
@@ -877,6 +879,45 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a4417d62f24842a5ff4459559b9527ead" name="a4417d62f24842a5ff4459559b9527ead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4417d62f24842a5ff4459559b9527ead">&#9670;&#160;</a></span>translatePathForWsl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::translatePathForWsl </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>exe</em></span>&#160;) -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Translate a native path for a WSL-routed executable. </p>
+<p>When <code class="param">exe</code> starts with "wsl " the path is converted with <span class="tt">wslpath</span> (the Linux binary cannot open <span class="tt">C:\...</span>); otherwise it is only cleaned. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Native filesystem path. </td></tr>
+    <tr><td class="paramname">exe</td><td>Executable the path is meant for (checked for "wsl "). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Path suitable for <code class="param">exe</code>. </dd></dl>
 
 </div>
 </div>

@@ -1,8 +1,13 @@
 var searchData=
 [
-  ['qpushbuttonasqrcode_0',['QPushButtonAsQRCode',['../class_q_push_button_as_q_r_code.html#a8b9e33d9c6a605b6071267d0f5bd3c00',1,'QPushButtonAsQRCode']]],
-  ['qpushbuttonshowpassword_1',['QPushButtonShowPassword',['../class_q_push_button_show_password.html#a1e81689266a6cde3a115466da1aee783',1,'QPushButtonShowPassword']]],
-  ['qpushbuttonwithclipboard_2',['QPushButtonWithClipboard',['../class_q_push_button_with_clipboard.html#a9fcd74d855d552598d1ebf4910f53666',1,'QPushButtonWithClipboard']]],
-  ['qrrequested_3',['qrRequested',['../class_password_display_panel.html#a064002137dbd9f257e05d5571f0b9ada',1,'PasswordDisplayPanel']]],
-  ['qtpass_4',['QtPass',['../class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad',1,'QtPass']]]
+  ['parse_0',['parse',['../class_file_content.html#af8c5c3b19e2f1244c5e83aa40521ebde',1,'FileContent::parse()'],['../class_totp.html#a4b9e16c21366dc739b9855bbd1fbd7cb',1,'Totp::parse()']]],
+  ['parsegpgimportoutput_1',['parseGpgImportOutput',['../class_import_key_dialog.html#aa3e1e9caffd0ab1ca12ec0725f9ebe2e',1,'ImportKeyDialog']]],
+  ['pass_2',['Pass',['../class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9',1,'Pass']]],
+  ['passshowhandler_3',['passShowHandler',['../class_main_window.html#a35dcbf29b9cfe87b6f7d597b7abba480',1,'MainWindow']]],
+  ['passshowhandlerfinished_4',['passShowHandlerFinished',['../class_main_window.html#a7e1ae254673e36410d4b3a73e1e8ec8e',1,'MainWindow']]],
+  ['passwordconfiguration_5',['PasswordConfiguration',['../struct_password_configuration.html#ac5767646f5116892b972d32ae6bbf561',1,'PasswordConfiguration']]],
+  ['passworddialog_6',['PasswordDialog',['../class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e',1,'PasswordDialog::PasswordDialog(PasswordConfiguration passConfig, QWidget *parent=nullptr)'],['../class_password_dialog.html#a1795ae0584aa5d5237e8819aca573d4c',1,'PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &amp;s, QString file, const bool &amp;isNew, QWidget *parent=nullptr)']]],
+  ['passworddisplaypanel_7',['PasswordDisplayPanel',['../class_password_display_panel.html#a9629fe79e18a80f29101b80e3077250d',1,'PasswordDisplayPanel']]],
+  ['processerrorexit_8',['processErrorExit',['../class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f',1,'Pass']]],
+  ['protocolregex_9',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]]
 ];

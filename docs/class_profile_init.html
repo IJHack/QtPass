@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </div><!--header-->
 <div class="contents">
 
-<p>Utility class for profile initialization operations.  
+<p>Turn a directory into a password store without going through the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> backend of the currently active store.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="profileinit_8h_source.html">profileinit.h</a>&gt;</code></p>
@@ -117,12 +117,72 @@ document.addEventListener('DOMContentLoaded', () => {
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1e036856179d70b9418af13561e4c7ac" id="r_a1e036856179d70b9418af13561e4c7ac"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1e036856179d70b9418af13561e4c7ac">needsInit</a> (const QString &amp;path) -&gt; bool</td></tr>
 <tr class="memdesc:a1e036856179d70b9418af13561e4c7ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a profile path needs initialization.  <br /></td></tr>
+<tr class="memitem:ada77ef0ec16292445039c703aa996081" id="r_ada77ef0ec16292445039c703aa996081"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ada77ef0ec16292445039c703aa996081">initialise</a> (const QString &amp;dir, const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;users, const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;s, bool useGit, QString *note) -&gt; bool</td></tr>
+<tr class="memdesc:ada77ef0ec16292445039c703aa996081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the recipients and, if wanted, put the folder under git.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Utility class for profile initialization operations. </p>
+<div class="textblock"><p>Turn a directory into a password store without going through the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> backend of the currently active store. </p>
+<p>The backend is a shared singleton bound to the active store (settings snapshot, PASSWORD_STORE_DIR, one FIFO of asynchronous processes), so a new profile cannot be initialised through it without racing the active store (#1774). Everything here is synchronous and touches only <code class="param">dir</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="profileinit_8h_source.html#l00018">18</a> of file <a class="el" href="profileinit_8h_source.html">profileinit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="profileinit_8h_source.html#l00023">23</a> of file <a class="el" href="profileinit_8h_source.html">profileinit.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ada77ef0ec16292445039c703aa996081" name="ada77ef0ec16292445039c703aa996081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada77ef0ec16292445039c703aa996081">&#9670;&#160;</a></span>initialise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ProfileInit::initialise </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dir</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>users</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>useGit</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>note</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write the recipients and, if wanted, put the folder under git. </p>
+<p>Writes <span class="tt">&lt;dir&gt;/.gpg-id</span> with the enabled key ids, signs it when <code class="param">s.passSigningKey</code> is set, and when <code class="param">useGit</code> runs <span class="tt">git init</span>, <span class="tt">git add</span> and <span class="tt">git commit</span> inside <code class="param">dir</code> with blocking processes. Existing <span class="tt">*.gpg</span> files are left alone: re-encrypting them needs the backend, i.e. the profile has to be the active store; <code class="param">note</code> says so. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>Directory to initialise; created if missing. </td></tr>
+    <tr><td class="paramname">users</td><td>Key list; only entries with enabled == true are written. </td></tr>
+    <tr><td class="paramname">s</td><td>Settings for the gpg/git executables and the signing key. </td></tr>
+    <tr><td class="paramname">useGit</td><td>Whether to create a repository and commit the file. </td></tr>
+    <tr><td class="paramname">note</td><td>Receives a translated message for the user (empty on a quiet success): the error, or the warning about existing entries. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the .gpg-id (and signature/commit if requested) is in place. </dd></dl>
+
+</div>
+</div>
 <a id="a1e036856179d70b9418af13561e4c7ac" name="a1e036856179d70b9418af13561e4c7ac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1e036856179d70b9418af13561e4c7ac">&#9670;&#160;</a></span>needsInit()</h2>
 

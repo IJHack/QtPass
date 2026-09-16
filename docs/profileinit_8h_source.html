@@ -108,26 +108,46 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="headertitle"><div class="title">profileinit.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="profileinit_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_PROFILEINIT_H_</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_PROFILEINIT_H_</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_profile_init.html">   18</a></span><span class="keyword">class </span>ProfileInit {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_profile_init.html#a1e036856179d70b9418af13561e4c7ac">   25</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_profile_init.html#a1e036856179d70b9418af13561e4c7ac">needsInit</a>(<span class="keyword">const</span> QString &amp;path) -&gt; bool;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  ProfileInit() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QCoreApplication&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">struct </span><a class="code hl_struct" href="struct_app_settings.html">AppSettings</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">struct </span><a class="code hl_struct" href="struct_user_info.html">UserInfo</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_profile_init.html">   23</a></span><span class="keyword">class </span>ProfileInit {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  Q_DECLARE_TR_FUNCTIONS(ProfileInit)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_profile_init.html#a1e036856179d70b9418af13561e4c7ac">   32</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_profile_init.html#a1e036856179d70b9418af13561e4c7ac">needsInit</a>(<span class="keyword">const</span> QString &amp;path) -&gt; bool;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_profile_init.html#ada77ef0ec16292445039c703aa996081">   51</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_profile_init.html#ada77ef0ec16292445039c703aa996081">initialise</a>(<span class="keyword">const</span> QString &amp;dir, <span class="keyword">const</span> QList&lt;UserInfo&gt; &amp;users,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                         <span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;s, <span class="keywordtype">bool</span> useGit, QString *note)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      -&gt; bool;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  ProfileInit() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">static</span> <span class="keyword">auto</span> writeGpgId(<span class="keyword">const</span> QString &amp;gpgIdFile, <span class="keyword">const</span> QList&lt;UserInfo&gt; &amp;users,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                         QString *note) -&gt; bool;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">static</span> <span class="keyword">auto</span> signGpgId(<span class="keyword">const</span> QString &amp;gpgIdFile, <span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;s,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                        QString *note) -&gt; bool;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keyword">static</span> <span class="keyword">auto</span> commitGpgId(<span class="keyword">const</span> QString &amp;dir, <span class="keyword">const</span> QString &amp;gpgIdFile,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                          <span class="keyword">const</span> QString &amp;sigFile, <span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;s,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                          QString *note) -&gt; bool;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif </span><span class="comment">// SRC_PROFILEINIT_H_</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif </span><span class="comment">// SRC_PROFILEINIT_H_</span></div>
 <div class="ttc" id="aclass_profile_init_html_a1e036856179d70b9418af13561e4c7ac"><div class="ttname"><a href="class_profile_init.html#a1e036856179d70b9418af13561e4c7ac">ProfileInit::needsInit</a></div><div class="ttdeci">static auto needsInit(const QString &amp;path) -&gt; bool</div><div class="ttdoc">Check if a profile path needs initialization.</div></div>
+<div class="ttc" id="aclass_profile_init_html_ada77ef0ec16292445039c703aa996081"><div class="ttname"><a href="class_profile_init.html#ada77ef0ec16292445039c703aa996081">ProfileInit::initialise</a></div><div class="ttdeci">static auto initialise(const QString &amp;dir, const QList&lt; UserInfo &gt; &amp;users, const AppSettings &amp;s, bool useGit, QString *note) -&gt; bool</div><div class="ttdoc">Write the recipients and, if wanted, put the folder under git.</div></div>
+<div class="ttc" id="astruct_app_settings_html"><div class="ttname"><a href="struct_app_settings.html">AppSettings</a></div><div class="ttdoc">Plain value-object holding all flat QtPass configuration.</div><div class="ttdef"><b>Definition</b> <a href="appsettings_8h_source.html#l00030">appsettings.h:30</a></div></div>
+<div class="ttc" id="astruct_user_info_html"><div class="ttname"><a href="struct_user_info.html">UserInfo</a></div><div class="ttdoc">Stores GPG key info including validity, creation date, and more.</div><div class="ttdef"><b>Definition</b> <a href="userinfo_8h_source.html#l00013">userinfo.h:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
