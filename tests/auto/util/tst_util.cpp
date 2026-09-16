@@ -7,6 +7,7 @@
 #include <QList>
 #include <QProcess>
 #include <QProcessEnvironment>
+#include <QScopeGuard>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryDir>
@@ -211,9 +212,14 @@ private Q_SLOTS:
   void findBinaryInPathConsistency();
   void findBinaryInPathResultContainsBinaryName();
   void findBinaryInPathTempExecutableInTempDir();
-  void findBinaryInPathWithConstQStringRef();
+  void findBinaryInPathWithConstQString();
   void findBinaryInPathEmptyString();
   void findBinaryInPathStringLiteral();
+  void findBinaryInPathSkipsDirectoryNamedLikeBinary();
+  void findBinaryInPathSkipsNonExecutableFile();
+  void findBinaryInPathEmptyEntriesDoNotResolveToCwd();
+  void findBinaryInPathEmptySearchPathsFindsNothing();
+  void findBinaryInPathSearchPathsRejectAbsoluteAndRelativePaths();
   void setEnvVarAdds();
   void setEnvVarUpdates();
   void setEnvVarRemoves();
@@ -323,9 +329,7 @@ tst_util::~tst_util() = default;
  * @brief tst_util::init unit test init method
  */
 void tst_util::init() {
-  qRegisterMetaType<GrepResults>("GrepResults");
-  // Qt5 QSignalSpy looks up by the normalized signal type string, not the alias
-  qRegisterMetaType<GrepResults>("QList<QPair<QString,QStringList>>");
+  // Intentionally left empty: no per-test setup required.
 }
 
 /**
@@ -1907,7 +1911,7 @@ void tst_util::reencryptPathAbsolutePath() {
 // findBinaryInPath(const QString &). These tests verify that callers using
 // const-qualified variables continue to work correctly.
 
-void tst_util::findBinaryInPathWithConstQStringRef() {
+void tst_util::findBinaryInPathWithConstQString() {
   // Pass a const-qualified variable to verify the const-ref signature compiles
   // and executes correctly.
 #ifdef Q_OS_WIN
@@ -1941,6 +1945,160 @@ void tst_util::findBinaryInPathStringLiteral() {
   QVERIFY2(!resultDirect.isEmpty(),
            "findBinaryInPath with string literal should succeed");
   QCOMPARE(resultDirect, resultNamed);
+#else
+  QSKIP("Unix-only test");
+#endif
+}
+
+#ifndef Q_OS_WIN
+// Create an executable shell script `name` inside `dir`; returns its path.
+static QString writeExecutable(const QString &dir, const QString &name) {
+  const QString path = dir + QLatin1Char('/') + name;
+  QFile exec(path);
+  if (!exec.open(QIODevice::WriteOnly)) {
+    return {};
+  }
+  exec.write(QByteArrayLiteral("#!/bin/sh\n"));
+  exec.close();
+  if (!exec.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner |
+                           QFileDevice::ExeOwner)) {
+    return {};
+  }
+  return path;
+}
+#endif
+
+void tst_util::findBinaryInPathSkipsDirectoryNamedLikeBinary() {
+  // A directory is "executable" (searchable) on Unix, but it is not a binary.
+  // The old hand-rolled PATH walk returned it; the lookup must skip it and
+  // continue to the real executable later in the PATH.
+#ifndef Q_OS_WIN
+  QTemporaryDir first;
+  QTemporaryDir second;
+  QVERIFY(first.isValid());
+  QVERIFY(second.isValid());
+  const QString name = QStringLiteral("qtpass_dir_lookalike");
+  QVERIFY(QDir(first.path()).mkdir(name));
+  QVERIFY(QFileInfo(first.path() + QLatin1Char('/') + name).isExecutable());
+
+  QVERIFY(Util::findBinaryInPath(name, {first.path()}).isEmpty());
+
+  const QString real = writeExecutable(second.path(), name);
+  QVERIFY(!real.isEmpty());
+  QCOMPARE(Util::findBinaryInPath(name, {first.path(), second.path()}),
+           QFileInfo(real).absoluteFilePath());
+#else
+  QSKIP("Unix-only test");
+#endif
+}
+
+void tst_util::findBinaryInPathSkipsNonExecutableFile() {
+#ifndef Q_OS_WIN
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString name = QStringLiteral("qtpass_not_executable");
+  QFile plain(dir.path() + QLatin1Char('/') + name);
+  QVERIFY(plain.open(QIODevice::WriteOnly));
+  plain.close();
+  QVERIFY(
+      plain.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner));
+
+  QVERIFY(Util::findBinaryInPath(name, {dir.path()}).isEmpty());
+#else
+  QSKIP("Unix-only test");
+#endif
+}
+
+void tst_util::findBinaryInPathEmptyEntriesDoNotResolveToCwd() {
+  // POSIX shells treat an empty PATH entry ("::" or a leading/trailing ':')
+  // as the current directory. QtPass must not: a binary that only exists in
+  // the working directory is not "installed".
+#ifndef Q_OS_WIN
+  QTemporaryDir cwd;
+  QVERIFY(cwd.isValid());
+  const QString name = QStringLiteral("qtpass_cwd_only");
+  const QString real = writeExecutable(cwd.path(), name);
+  QVERIFY(!real.isEmpty());
+
+  const QString previousCwd = QDir::currentPath();
+  const auto restoreCwd =
+      qScopeGuard([&previousCwd] { QDir::setCurrent(previousCwd); });
+  QVERIFY(QDir::setCurrent(cwd.path()));
+
+  QVERIFY(Util::findBinaryInPath(name, {QString()}).isEmpty());
+  QVERIFY(Util::findBinaryInPath(name, {QString(), QString()}).isEmpty());
+  QVERIFY(
+      Util::findBinaryInPath(
+          name,
+          QStringLiteral("::/nonexistent-qtpass-dir:").split(QLatin1Char(':')))
+          .isEmpty());
+  // An explicit "." entry is a relative directory, not an empty one, and
+  // does resolve against the working directory. Compare canonical paths:
+  // QStandardPaths::findExecutable() resolves "." through QDir::current(),
+  // which is the physical getcwd() path, while cwd.path() is the logical one.
+  // They differ when the temp dir is reached through a symlink, as on macOS
+  // where /var/folders is a symlink into /private/var.
+  const QString dotHit = Util::findBinaryInPath(name, {QStringLiteral(".")});
+  QVERIFY(!dotHit.isEmpty());
+  QCOMPARE(QFileInfo(dotHit).canonicalFilePath(),
+           QFileInfo(real).canonicalFilePath());
+#else
+  QSKIP("Unix-only test");
+#endif
+}
+
+void tst_util::findBinaryInPathEmptySearchPathsFindsNothing() {
+  // QStandardPaths::findExecutable() falls back to the process PATH when the
+  // list is empty; the wrapper must not, otherwise PATH="" would still find
+  // things.
+#ifndef Q_OS_WIN
+  const QString binaryName = QStringLiteral("sh");
+  QVERIFY(!Util::findBinaryInPath(binaryName).isEmpty());
+  QVERIFY(Util::findBinaryInPath(binaryName, {}).isEmpty());
+  QVERIFY(Util::findBinaryInPath(binaryName, {QString()}).isEmpty());
+  QVERIFY(
+      Util::findBinaryInPath(QString(), {QStringLiteral("/bin")}).isEmpty());
+#else
+  QSKIP("Unix-only test");
+#endif
+}
+
+void tst_util::findBinaryInPathSearchPathsRejectAbsoluteAndRelativePaths() {
+  // QStandardPaths::findExecutable() returns an absolute name as-is without
+  // looking at the directory list, and joins a relative one onto each entry,
+  // so "../x" could escape it. The directory-list overload must only search
+  // for bare names inside the supplied directories.
+#ifndef Q_OS_WIN
+  QTemporaryDir outside;
+  QTemporaryDir trusted;
+  QVERIFY(outside.isValid());
+  QVERIFY(trusted.isValid());
+  const QString name = QStringLiteral("qtpass-outside-tool");
+  const QString tool = outside.filePath(name);
+  {
+    QFile f(tool);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("#!/bin/sh\nexit 0\n");
+  }
+  QVERIFY(QFile::setPermissions(tool, QFile::ReadOwner | QFile::WriteOwner |
+                                          QFile::ExeOwner));
+  // Sanity: the file is a valid executable when searched in its own dir.
+  QCOMPARE(Util::findBinaryInPath(name, {outside.path()}), tool);
+
+  // Absolute path: must not be returned when only "trusted" is searched.
+  QVERIFY(Util::findBinaryInPath(tool, {trusted.path()}).isEmpty());
+  // Relative path escaping the search directory via "..".
+  const QString escape = QStringLiteral("../") +
+                         QFileInfo(outside.path()).fileName() +
+                         QLatin1Char('/') + name;
+  QVERIFY(Util::findBinaryInPath(escape, {trusted.path()}).isEmpty());
+  // Even a relative sub-path that would stay inside is not a bare name.
+  QVERIFY(Util::findBinaryInPath(QStringLiteral("./") + name, {outside.path()})
+              .isEmpty());
+
+  // The PATH-based overload still accepts an explicit absolute path.
+  QCOMPARE(Util::findBinaryInPath(tool), tool);
+  QVERIFY(Util::findBinaryInPath(outside.filePath("missing-tool")).isEmpty());
 #else
   QSKIP("Unix-only test");
 #endif

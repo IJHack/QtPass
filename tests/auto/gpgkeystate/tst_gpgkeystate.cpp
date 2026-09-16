@@ -33,6 +33,7 @@ private Q_SLOTS:
   void secRecordSetsHaveSecretOnlyWhenSecretTrue();
   void createdDateParsedFromEpoch();
   void expiryDateParsedFromEpoch();
+  void expiryDistinguishedByValidityAndComparison();
   void fprWithEmptyKeyIdIsNoop();
   void parseGpgColonOutputEmpty();
   void parseGpgColonOutputPubWithoutUid();
@@ -458,6 +459,48 @@ void tst_gpgkeystate::expiryDateParsedFromEpoch() {
            "expiry date must be valid when epoch is present");
   QVERIFY2(result.first().expiry.toSecsSinceEpoch() == expiry,
            "expiry date must round-trip through epoch seconds");
+}
+
+void tst_gpgkeystate::expiryDistinguishedByValidityAndComparison() {
+  // GnuPG leaves field 6 empty for a key without expiry. The three cases
+  // must be told apart with isValid() and QDateTime comparison alone; no
+  // caller may rely on toSecsSinceEpoch() of a null QDateTime.
+  const QDateTime now = QDateTime::currentDateTime();
+  const qint64 created = 1700000000;
+  const qint64 pastExpiry = now.addYears(-1).toSecsSinceEpoch();
+  const qint64 futureExpiry = now.addYears(1).toSecsSinceEpoch();
+  const QString input =
+      QString("pub:u:4096:1:NOEXPIRE1:%1::u::::\n"
+              "uid:u::::%1::H::No Expiry <ne@test.org>::::\n"
+              "pub:u:4096:1:PASTEXPI1:%1:%2:u::::\n"
+              "uid:u::::%1::H::Past Expiry <pe@test.org>::::\n"
+              "pub:u:4096:1:FUTUREXP1:%1:%3:u::::\n"
+              "uid:u::::%1::H::Future Expiry <fe@test.org>::::\n")
+          .arg(created)
+          .arg(pastExpiry)
+          .arg(futureExpiry);
+  const QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QCOMPARE(result.size(), 3);
+
+  const UserInfo &noExpiry = result.at(0);
+  const UserInfo &past = result.at(1);
+  const UserInfo &future = result.at(2);
+
+  QVERIFY2(noExpiry.created.isValid(), "created is set even without expiry");
+  QVERIFY2(!noExpiry.expiry.isValid(),
+           "empty expiry field must leave a null QDateTime");
+  QVERIFY2(noExpiry.expiry.isNull(), "no-expiry sentinel is the null value");
+
+  QVERIFY2(past.expiry.isValid(), "past expiry must be a valid QDateTime");
+  QVERIFY2(past.expiry < now, "past expiry compares before now");
+
+  QVERIFY2(future.expiry.isValid(), "future expiry must be a valid QDateTime");
+  QVERIFY2(future.expiry > now, "future expiry compares after now");
+
+  QVERIFY2(past.expiry < future.expiry,
+           "expiries must be ordered by their epoch seconds");
+  QVERIFY2(past.expiry.timeSpec() == noExpiry.created.timeSpec(),
+           "parsed timestamps share one time spec");
 }
 
 void tst_gpgkeystate::fprWithEmptyKeyIdIsNoop() {

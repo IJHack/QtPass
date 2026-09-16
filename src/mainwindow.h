@@ -15,14 +15,8 @@
 #include <QProcess>
 #include <QTimer>
 
-#if SINGLE_APP
-class SingleApplication;
-#else
-#define SingleApplication QApplication
-#endif
-
 #ifdef __APPLE__
-// http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
+// https://doc.qt.io/qt-6/qkeysequence.html#qt_set_sequence_auto_mnemonic
 void qt_set_sequence_auto_mnemonic(bool b);
 #endif
 
@@ -31,6 +25,7 @@ class MainWindow;
 }
 
 class QDockWidget;
+class QProgressDialog;
 class QTextEdit;
 class QToolButton;
 class QTreeWidgetItem;
@@ -273,8 +268,19 @@ public slots:
 
   /**
    * @brief Begin a re-encryption pass on the current path.
+   *
+   * Disables the UI, shows a cancellable progress dialog and keeps both in
+   * place until endReencryptPath(): while the worker runs, unrelated
+   * completions must not re-enable the interface (see setUiElementsEnabled).
    */
   void startReencryptPath();
+
+  /**
+   * @brief Update the re-encryption progress dialog.
+   * @param current Files checked so far.
+   * @param total Files found under the re-encrypted folder.
+   */
+  void reencryptProgress(int current, int total);
 
   /**
    * @brief Finish a re-encryption pass on the current path.
@@ -297,11 +303,7 @@ private slots:
   void clearPanel(bool notify = true);
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  void on_profileBox_currentIndexChanged(const QString &);
-#else
   void on_profileBox_currentTextChanged(const QString &);
-#endif
   void showContextMenu(const QPoint &pos);
   void showBrowserContextMenu(const QPoint &pos);
   void openFolder();
@@ -365,6 +367,14 @@ private:
   // would dangle and cleanKeygenDialog()/onKeyGenerationComplete() would then
   // close freed memory.
   QPointer<QDialog> m_keyGenDialog;
+  /// Progress/cancel dialog shown between startReencryptPath() and
+  /// endReencryptPath(); QPointer so a closed dialog reads back as null.
+  QPointer<QProgressDialog> m_reencryptProgress;
+  /// True between startReencryptPath() and endReencryptPath(). While set,
+  /// setUiElementsEnabled(true) is ignored so the git completions queued by
+  /// Init/Move/Copy (or the UI watchdog) cannot re-enable the interface
+  /// while the re-encryption worker is still rewriting files.
+  bool m_reencryptRunning = false;
   QString m_currentDir;
   TrayIcon *m_tray{};
   /// Result of QtPass::init() from the constructor; main() consults it via
@@ -375,7 +385,6 @@ private:
   void initStatusBar();
   void initProcessOutputPanel();
 
-  void updateText();
   void selectFirstFile();
   auto firstFile(QModelIndex parentIndex) -> QModelIndex;
   auto getFile(const QModelIndex &, bool) -> QString;

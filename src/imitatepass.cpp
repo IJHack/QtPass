@@ -5,9 +5,13 @@
 #include "util.h"
 #include <QDirIterator>
 #include <QElapsedTimer>
+#include <QFile>
 #include <QPointer>
+#include <QProcess>
 #include <QRegularExpression>
+#include <QSaveFile>
 #include <QThread>
+#include <QTimer>
 #include <utility>
 
 #ifdef QT_DEBUG
@@ -58,6 +62,48 @@ ImitatePass::~ImitatePass() {
         t->wait(remaining);
     }
   }
+  // Unlike the grep workers, the re-encryption worker calls member functions
+  // and so must not outlive this object. Cancel it and join. A timeout on the
+  // join would not be safe, since the worker would go on touching this
+  // object's members, and none is needed: the worker polls the flag while it
+  // waits on a process (see execBlocking()), ends that process itself (gpg
+  // waiting on pinentry while the user quits, say) within the poll interval
+  // plus the kill grace, and its remaining work is not process-bound.
+  if (m_reencryptThread && m_reencryptThread->isRunning()) {
+    m_reencryptCancel.store(true);
+    m_reencryptThread->wait();
+  }
+}
+
+/**
+ * @brief Blocking process run for the re-encryption helpers.
+ *
+ * The helpers (verifyGpgIdFile(), getKeysFromFile(), reencryptSingleFile(),
+ * createBackupCommit()) are shared between the owning thread and the
+ * re-encryption worker; the ImitatePass thread affinity tells the two apart.
+ * On the worker the run is handed m_reencryptCancel: nothing is started once
+ * the flag is set, and while a process runs the wait polls the flag and, when
+ * it gets set, terminates and if need be kills the process. All of that
+ * happens on the worker thread, which owns the QProcess. The other threads
+ * (cancelReencryptPath(), the destructor) only ever set the flag; they hold
+ * neither the QProcess nor its pid, so they cannot act on a process that has
+ * exited in the meantime, nor on a pid the OS has since reused.
+ */
+auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
+                               const QString &input, QString *process_out,
+                               QString *process_err) -> int {
+  if (QThread::currentThread() == thread())
+    return Executor::executeBlocking(app, args, input, process_out,
+                                     process_err);
+  QProcess process;
+  return Executor::executeBlocking(process, app, args, input, process_out,
+                                   process_err, &m_reencryptCancel);
+}
+
+auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
+                               QString *process_out, QString *process_err)
+    -> int {
+  return execBlocking(app, args, QString(), process_out, process_err);
 }
 
 auto ImitatePass::translatePathForWsl(const QString &path,
@@ -440,13 +486,8 @@ auto ImitatePass::gitTracks(const QString &file) -> bool {
  * @return void - No return value.
  */
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList signingKeys =
       m_settings.passSigningKey.split(" ", Qt::SkipEmptyParts);
-#else
-  QStringList signingKeys =
-      m_settings.passSigningKey.split(" ", QString::SkipEmptyParts);
-#endif
   QString gpgIdSigFile = path + ".gpg-id.sig";
   bool addSigFile = false;
   if (!signingKeys.isEmpty()) {
@@ -504,20 +545,15 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
  * @return was verification successful?
  */
 auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList signingKeys =
       m_settings.passSigningKey.split(" ", Qt::SkipEmptyParts);
-#else
-  QStringList signingKeys =
-      m_settings.passSigningKey.split(" ", QString::SkipEmptyParts);
-#endif
   if (signingKeys.isEmpty()) {
     return true;
   }
   QString out;
   QStringList args =
       QStringList{"--verify", "--status-fd=1", pgpg(file) + ".sig", pgpg(file)};
-  int result = Executor::executeBlocking(m_settings.gpgExecutable, args, &out);
+  int result = execBlocking(m_settings.gpgExecutable, args, &out);
   if (result != 0) {
 #ifdef QT_DEBUG
     dbg() << "GPG verify failed with code:" << result;
@@ -558,8 +594,10 @@ auto ImitatePass::verifyGpgIdForDir(const QString &file,
   // carry a different directory's list, which would re-encrypt to wrong keys.
   if (!gpgIdFilesVerified.contains(gpgIdPath)) {
     if (!verifyGpgIdFile(gpgIdPath)) {
-      emit critical(tr("Check .gpg-id file signature!"),
-                    tr("Signature for %1 is invalid.").arg(gpgIdPath));
+      // An interrupted gpg is a cancel, not a bad signature.
+      if (!m_reencryptCancel.load())
+        emit critical(tr("Check .gpg-id file signature!"),
+                      tr("Signature for %1 is invalid.").arg(gpgIdPath));
       return false;
     }
     gpgIdFilesVerified.append(gpgIdPath);
@@ -587,18 +625,13 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
       "--list-only", "--keyid-format=long", pgpg(fileName)};
   QString keys;
   QString err;
-  const int result =
-      Executor::executeBlocking(m_settings.gpgExecutable, args, &keys, &err);
+  const int result = execBlocking(m_settings.gpgExecutable, args, &keys, &err);
   if (result != 0) {
     return {};
   }
   QStringList actualKeys;
   keys += err;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList key = keys.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
-#else
-  QStringList key = keys.split(Util::newLinesRegex(), QString::SkipEmptyParts);
-#endif
   QListIterator<QString> itr(key);
   while (itr.hasNext()) {
     QString current = itr.next();
@@ -636,8 +669,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   QStringList args = {
       "-d",      "--quiet",     "--yes",       "--no-encrypt-to",
       "--batch", "--use-agent", pgpg(fileName)};
-  int result = Executor::executeBlocking(m_settings.gpgExecutable, args,
-                                         &local_lastDecrypt);
+  int result = execBlocking(m_settings.gpgExecutable, args, &local_lastDecrypt);
 
   if (result != 0 || local_lastDecrypt.isEmpty()) {
 #ifdef QT_DEBUG
@@ -669,8 +701,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     args.append(i);
   }
   args.append("-");
-  result = Executor::executeBlocking(m_settings.gpgExecutable, args,
-                                     local_lastDecrypt);
+  result = execBlocking(m_settings.gpgExecutable, args, local_lastDecrypt);
 
   if (result != 0) {
 #ifdef QT_DEBUG
@@ -683,8 +714,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   // Verify encryption worked by attempting to decrypt the temp file
   QString verifyOutput;
   args = QStringList{"-d", "--quiet", "--batch", "--use-agent", pgpg(tempPath)};
-  result =
-      Executor::executeBlocking(m_settings.gpgExecutable, args, &verifyOutput);
+  result = execBlocking(m_settings.gpgExecutable, args, &verifyOutput);
   if (result != 0 || verifyOutput.isEmpty()) {
 #ifdef QT_DEBUG
     dbg() << "Verification failed for:" << tempPath;
@@ -730,13 +760,13 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     // -C the store so git runs there rather than in QtPass's launch directory
     // (executeBlocking sets no working directory).
     const QString store = pgit(m_settings.passStore);
-    Executor::executeBlocking(m_settings.gitExecutable,
-                              {"-C", store, "add", pgit(fileName)});
+    execBlocking(m_settings.gitExecutable,
+                 {"-C", store, "add", pgit(fileName)});
     QString path = QDir(m_settings.passStore).relativeFilePath(fileName);
     path.replace(Util::endsWithGpg(), "");
-    Executor::executeBlocking(m_settings.gitExecutable,
-                              {"-C", store, "commit", pgit(fileName), "-m",
-                               "Re-encrypt for " + path + " using QtPass."});
+    execBlocking(m_settings.gitExecutable,
+                 {"-C", store, "commit", pgit(fileName), "-m",
+                  "Re-encrypt for " + path + " using QtPass."});
   }
 
   return true;
@@ -761,21 +791,24 @@ auto ImitatePass::createBackupCommit() -> bool {
   // commit that autoPush then sends to the shared remote, so both the status
   // check and the add are restricted to what git already knows about.
   QString statusOut;
-  if (Executor::executeBlocking(
+  if (execBlocking(
           git, {"-C", store, "status", "--porcelain", "--untracked-files=no"},
           &statusOut) != 0) {
-    emit critical(
-        tr("Backup commit failed"),
-        tr("Could not inspect git status. Re-encryption was aborted."));
+    // An interrupted git is a cancel, not a failure worth a dialog.
+    if (!m_reencryptCancel.load())
+      emit critical(
+          tr("Backup commit failed"),
+          tr("Could not inspect git status. Re-encryption was aborted."));
     return false;
   }
   if (!statusOut.trimmed().isEmpty()) {
-    if (Executor::executeBlocking(git, {"-C", store, "add", "-u"}) != 0 ||
-        Executor::executeBlocking(git, {"-C", store, "commit", "-m",
-                                        "Backup before re-encryption"}) != 0) {
-      emit critical(tr("Backup commit failed"),
-                    tr("Re-encryption was aborted because a git backup could "
-                       "not be created."));
+    if (execBlocking(git, {"-C", store, "add", "-u"}) != 0 ||
+        execBlocking(git, {"-C", store, "commit", "-m",
+                           "Backup before re-encryption"}) != 0) {
+      if (!m_reencryptCancel.load())
+        emit critical(tr("Backup commit failed"),
+                      tr("Re-encryption was aborted because a git backup "
+                         "could not be created."));
       return false;
     }
   }
@@ -783,81 +816,248 @@ auto ImitatePass::createBackupCommit() -> bool {
 }
 
 /**
+ * @brief Outcome of one reencryptPath() run.
+ */
+struct ImitatePass::ReencryptResult {
+  int total = 0;          ///< `.gpg` files found under the directory.
+  int checked = 0;        ///< Files whose recipients were inspected.
+  int reencrypted = 0;    ///< Files rewritten for the current recipients.
+  QStringList failed;     ///< Files that could not be re-encrypted.
+  bool cancelled = false; ///< Stopped early by cancelReencryptPath(); the
+                          ///< interrupted file, if any, is not in `failed`.
+  bool aborted = false;   ///< Stopped early on an error already reported.
+};
+
+namespace {
+/// Poll interval while waiting for queued git commands to drain.
+constexpr int kReencryptRetryMs = 100;
+/// Cap on the file names listed in the aggregated failure dialog.
+constexpr int kReencryptMaxListedFailures = 15;
+} // namespace
+
+/**
  * @brief Re-encrypts all `.gpg` files under the given directory using the
  *        verified GPG key configuration for each folder.
  *
- * This method optionally pulls the latest changes before starting, creates a
- * backup commit, verifies `.gpg-id` files per directory, and re-encrypts files
- * whose current recipients do not match the expected keys. It emits progress,
- * status, and error signals throughout the process, and optionally pushes the
- * updated password-store when finished.
+ * Emits startReencryptPath() and hands the actual work to a worker thread
+ * (see reencryptFiles()), so the GUI stays responsive and the run can be
+ * cancelled. The worker optionally pulls first, creates a backup commit,
+ * verifies `.gpg-id` files per directory and re-encrypts files whose current
+ * recipients do not match the expected keys, reporting progress through
+ * reencryptProgress(). Per-file failures are aggregated into a single
+ * critical() by finishReencrypt(), which also pushes when configured and
+ * emits endReencryptPath().
  *
  * @param dir - Root directory to scan recursively for `.gpg` files.
  * @return void
  */
 void ImitatePass::reencryptPath(const QString &dir) {
+  if (m_reencryptActive) {
+    emit statusMsg(tr("A re-encryption is already running"), 3000);
+    return;
+  }
+  m_reencryptActive = true;
+  m_reencryptCancel.store(false);
   emit statusMsg(tr("Re-encrypting from folder %1").arg(dir), 3000);
   emit startReencryptPath();
+  startReencryptWorker(dir);
+}
+
+/**
+ * @brief Stop a running re-encryption promptly.
+ *
+ * Only sets the cancel flag. The worker starts no further process once it is
+ * set, and the process it is blocked on is ended by the worker itself: the
+ * cancellable Executor::executeBlocking() polls the flag and, on seeing it,
+ * terminate()s the child and kill()s it if it is still running after the
+ * grace period (terminate() is only a request: SIGTERM, or WM_CLOSE on
+ * Windows, which a console gpg ignores). Nothing here touches the worker's
+ * QProcess or its pid. A new run clears the flag.
+ */
+void ImitatePass::cancelReencryptPath() {
+  if (!m_reencryptActive)
+    return;
+  m_reencryptCancel.store(true);
+}
+
+/**
+ * @brief Start the re-encryption worker once the Executor queue is idle.
+ *
+ * Callers such as Init(), Move() and Copy() queue git commands on `exec`
+ * right before calling reencryptPath(). Those run asynchronously on this
+ * thread, so the worker's blocking git calls would otherwise compete with
+ * them for the repository's index lock. Poll until the queue has drained.
+ */
+void ImitatePass::startReencryptWorker(const QString &dir) {
+  if (m_reencryptCancel.load()) {
+    ReencryptResult result;
+    result.cancelled = true;
+    finishReencrypt(result);
+    return;
+  }
+  if (!exec.isIdle()) {
+    QTimer::singleShot(kReencryptRetryMs, this,
+                       [this, dir]() { startReencryptWorker(dir); });
+    return;
+  }
+
+  // The worker calls member functions, so `this` must outlive it: the
+  // destructor cancels and joins m_reencryptThread. `self` only guards the
+  // queued completion, which may run after the thread object is gone.
+  QPointer<ImitatePass> self(this);
+  QThread *thread = QThread::create([this, self, dir]() {
+    ReencryptResult result = reencryptFiles(dir);
+    QMetaObject::invokeMethod(
+        self,
+        [self, result = std::move(result)]() {
+          if (self)
+            self->finishReencrypt(result);
+        },
+        Qt::QueuedConnection);
+  });
+  m_reencryptThread = thread;
+  connect(thread, &QThread::finished, this, [this, thread]() {
+    if (m_reencryptThread == thread)
+      m_reencryptThread = nullptr;
+  });
+  connect(thread, &QThread::finished, thread, &QObject::deleteLater);
+  thread->start();
+}
+
+/**
+ * @brief Worker-thread body of reencryptPath().
+ *
+ * Only blocking helpers (execBlocking() directly and through
+ * createBackupCommit(), verifyGpgIdForDir(), getKeysFromFile() and
+ * reencryptSingleFile()) run here; anything that touches `exec` or the
+ * transaction state stays on the owning thread. Signals emitted from here
+ * (statusMsg, critical, reencryptProgress) are delivered queued to their
+ * GUI-thread receivers. The cancel flag is checked between files, and a
+ * cancel also ends the process in progress from this thread (see
+ * execBlocking()): a helper that fails while the flag is set was
+ * interrupted, so its file is neither counted as checked nor reported as
+ * failed.
+ */
+auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
+  ReencryptResult result;
   if (m_settings.autoPull && gitConfigured()) {
     emit statusMsg(tr("Updating password-store"), 2000);
-    GitPull_b();
+    execBlocking(m_settings.gitExecutable, {"pull"});
   }
 
   // Create backup before re-encryption - abort if it fails
   if (!createBackupCommit()) {
-    emit endReencryptPath();
-    return;
+    if (m_reencryptCancel.load())
+      result.cancelled = true;
+    else
+      result.aborted = true;
+    return result;
   }
 
-  QDir currentDir;
+  QStringList files;
   QDirIterator gpgFiles(dir, QStringList() << "*.gpg", QDir::Files,
                         QDirIterator::Subdirectories);
+  while (gpgFiles.hasNext()) {
+    files << gpgFiles.next();
+  }
+  result.total = files.size();
+  emit reencryptProgress(0, result.total);
+
+  QString currentDir;
   QStringList gpgIdFilesVerified;
   QStringList gpgId;
-  int successCount = 0;
-  int failCount = 0;
-  while (gpgFiles.hasNext()) {
-    QString fileName = gpgFiles.next();
-    if (gpgFiles.fileInfo().path() != currentDir.path()) {
+  for (const QString &fileName : std::as_const(files)) {
+    if (m_reencryptCancel.load()) {
+      result.cancelled = true;
+      break;
+    }
+    const QString fileDir = QFileInfo(fileName).path();
+    if (fileDir != currentDir) {
       if (!verifyGpgIdForDir(fileName, gpgIdFilesVerified, gpgId)) {
-        emit endReencryptPath();
-        return;
+        if (m_reencryptCancel.load())
+          result.cancelled = true;
+        else
+          result.aborted = true;
+        return result;
       }
       if (gpgId.isEmpty() && !gpgIdFilesVerified.isEmpty()) {
         emit critical(tr("GPG ID verification failed"),
                       tr("Could not verify .gpg-id for directory."));
-        emit endReencryptPath();
-        return;
+        result.aborted = true;
+        return result;
       }
-      currentDir = QDir(gpgFiles.fileInfo().path());
+      currentDir = fileDir;
     }
     QStringList actualKeys = getKeysFromFile(fileName);
     if (actualKeys != gpgId) {
       if (reencryptSingleFile(fileName, gpgId)) {
-        successCount++;
+        result.reencrypted++;
+      } else if (m_reencryptCancel.load()) {
+        // Interrupted by the cancel: the file is untouched, not failed.
+        result.cancelled = true;
+        break;
       } else {
-        failCount++;
-        emit critical(tr("Re-encryption failed"),
-                      tr("Failed to re-encrypt %1").arg(fileName));
+        result.failed << fileName;
+      }
+    }
+    result.checked++;
+    emit reencryptProgress(result.checked, result.total);
+  }
+  return result;
+}
+
+/**
+ * @brief Owning-thread epilogue of reencryptPath().
+ *
+ * Reports the aggregated failures in one dialog, summarises the run in the
+ * status bar, pushes when configured (not after a cancel, an abort or a
+ * per-file failure: a partially re-encrypted store must not reach the remote,
+ * and the user should inspect the result first) and releases the UI.
+ */
+void ImitatePass::finishReencrypt(const ReencryptResult &result) {
+  if (!result.failed.isEmpty()) {
+    QStringList listed = result.failed.mid(0, kReencryptMaxListedFailures);
+    const int more = result.failed.size() - listed.size();
+    if (more > 0) {
+      listed << tr("... and %n more", nullptr, more);
+    }
+    emit critical(tr("Re-encryption failed"),
+                  tr("%n file(s) could not be re-encrypted:", nullptr,
+                     result.failed.size()) +
+                      "\n\n" + listed.join('\n'));
+  }
+
+  if (result.cancelled) {
+    emit statusMsg(tr("Re-encryption cancelled: %1 of %2 files checked, "
+                      "%3 re-encrypted, %4 failed")
+                       .arg(result.checked)
+                       .arg(result.total)
+                       .arg(result.reencrypted)
+                       .arg(result.failed.size()),
+                   5000);
+  } else if (!result.aborted) {
+    if (!result.failed.isEmpty()) {
+      emit statusMsg(tr("Re-encryption completed: %1 succeeded, %2 failed")
+                         .arg(result.reencrypted)
+                         .arg(result.failed.size()),
+                     5000);
+    } else {
+      emit statusMsg(tr("Re-encryption completed: %1 files re-encrypted")
+                         .arg(result.reencrypted),
+                     3000);
+    }
+    if (m_settings.autoPush && gitConfigured()) {
+      if (result.failed.isEmpty()) {
+        emit statusMsg(tr("Updating password-store"), 2000);
+        GitPush();
+      } else {
+        emit statusMsg(tr("Not pushing: %n file(s) failed to re-encrypt",
+                          nullptr, result.failed.size()),
+                       5000);
       }
     }
   }
-
-  if (failCount > 0) {
-    emit statusMsg(tr("Re-encryption completed: %1 succeeded, %2 failed")
-                       .arg(successCount)
-                       .arg(failCount),
-                   5000);
-  } else {
-    emit statusMsg(
-        tr("Re-encryption completed: %1 files re-encrypted").arg(successCount),
-        3000);
-  }
-
-  if (m_settings.autoPush && gitConfigured()) {
-    emit statusMsg(tr("Updating password-store"), 2000);
-    GitPush();
-  }
+  m_reencryptActive = false;
   emit endReencryptPath();
 }
 
@@ -989,38 +1189,97 @@ void ImitatePass::Move(const QString src, const QString dest,
 }
 
 /**
+ * @brief Copies a regular file onto dst, replacing dst atomically.
+ *
+ * The bytes are written to a temporary sibling that QSaveFile renames over
+ * dst only once all of them are in, so a failure part-way (disk full,
+ * permissions, a vanished source) leaves an existing dst untouched instead of
+ * removed first and never rewritten. The source's permissions are carried
+ * over, as QFile::copy would.
+ * @return true on success; on failure nothing at dst has changed.
+ */
+static auto copyFileReplacing(const QString &src, const QString &dst) -> bool {
+  QFile in(src);
+  if (!QFileInfo(in).isFile() || !in.open(QIODevice::ReadOnly))
+    return false;
+  QSaveFile out(dst);
+  if (!out.open(QIODevice::WriteOnly))
+    return false;
+  out.setPermissions(in.permissions());
+  char buf[64 * 1024];
+  for (;;) {
+    const qint64 n = in.read(buf, sizeof buf);
+    if (n < 0) {
+      out.cancelWriting();
+      return false;
+    }
+    if (n == 0)
+      break;
+    if (out.write(buf, n) != n) {
+      out.cancelWriting();
+      return false;
+    }
+  }
+  return out.commit();
+}
+
+/**
  * @brief Copies a file or directory from source to destination, optionally
  * forcing overwrite.
  * @example
  * void result = ImitatePass::Copy(src, dest, force);
  *
  * @param QString src - Source path to copy from.
- * @param QString dest - Destination path to copy to.
+ * @param QString dest - Destination path to copy to: a new file name, or an
+ * existing folder to copy into (like `pass cp`).
  * @param bool force - If true, overwrites the destination when it already
  * exists.
  * @return void - This function does not return a value.
  */
 void ImitatePass::Copy(const QString src, const QString dest,
                        const bool force) {
-  QFileInfo destFileInfo(dest);
   transactionHelper trans(this, PASS_COPY);
-  if (force) {
-    QFile::remove(dest);
-  }
-  // git has no "cp" subcommand, so copy on the filesystem in both modes and,
-  // when using git, stage the new path afterwards. QFile::copy is synchronous,
-  // so the destination exists before the re-encryption below runs. It fails
-  // (without overwriting) when dest already exists, so surface that instead of
-  // committing a copy that never happened.
-  if (!QFile::copy(src, dest)) {
+  // Like `pass cp`, dest may be an existing folder (a drag-and-drop copy hands
+  // over the folder, not the new file name). Resolve the real target the same
+  // way Move does: into the folder, .gpg appended, no clobbering without force.
+  QString destFile = resolveMoveDestination(src, dest, force);
+  if (destFile.isEmpty()) {
     emit critical(tr("Copy failed"),
                   tr("Could not copy %1 to %2.").arg(src, dest));
     return;
   }
+  QFileInfo destFileInfo(destFile);
+  // A folder destination that is the source's own folder resolves to the
+  // source itself; with force that would replace the only copy with itself.
+  if (QFileInfo(src) == destFileInfo) {
+    emit critical(tr("Copy failed"),
+                  tr("Could not copy %1 to %2.").arg(src, destFile));
+    return;
+  }
+  // resolveMoveDestination only sees a clash when dest names the file; for a
+  // folder destination the resolved <folder>/<entry>.gpg may exist as well.
+  if (!force && destFileInfo.exists()) {
+    emit critical(tr("Copy failed"),
+                  tr("Could not copy %1 to %2.").arg(src, destFile));
+    return;
+  }
+  // git has no "cp" subcommand, so copy on the filesystem in both modes and,
+  // when using git, stage the new path afterwards. The copy is synchronous and
+  // replaces the destination atomically (see copyFileReplacing), so it exists
+  // before the re-encryption below runs and an entry being overwritten with
+  // force survives a copy that fails half-way.
+  if (!copyFileReplacing(src, destFile)) {
+    emit critical(tr("Copy failed"),
+                  tr("Could not copy %1 to %2.").arg(src, destFile));
+    return;
+  }
+  // QFileInfo caches; the comparison above may have looked at a path that did
+  // not exist yet, so re-read it before deciding what to re-encrypt.
+  destFileInfo.refresh();
   if (gitReady()) {
-    executeGit(GIT_COPY, {"add", pgit(dest)});
+    executeGit(GIT_COPY, {"add", pgit(destFile)});
     QString message = QString("Copied from %1 to %2 using QtPass.");
-    message = message.arg(src, dest);
+    message = message.arg(src, destFile);
     gitCommit("", message);
   }
   // reecrypt all files under the new folder

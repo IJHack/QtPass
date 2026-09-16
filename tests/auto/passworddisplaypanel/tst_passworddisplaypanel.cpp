@@ -32,7 +32,6 @@ private Q_SLOTS:
   void displayFieldsAddsRows();
   void displayFieldsSkipsEmptyPassword();
   void clearRemovesAllRows();
-  void appendFieldAddsOneRow();
   void otpFieldRendersLiveCodeInPlace();
   void otpFieldNeverShowsTheSecret();
   void otpFieldSuppressedWhenSupportDisabled();
@@ -102,13 +101,6 @@ void tst_passworddisplaypanel::clearRemovesAllRows() {
   QVERIFY2(m_grid->count() > 0, "precondition: grid populated");
   m_panel->clear();
   QVERIFY2(m_grid->count() == 0, "clear() must remove every grid row");
-}
-
-void tst_passworddisplaypanel::appendFieldAddsOneRow() {
-  AppSettings s;
-  const int before = m_grid->count();
-  m_panel->appendField(QStringLiteral("OTP Code"), QStringLiteral("123456"), s);
-  QCOMPARE(m_grid->count(), before + 2);
 }
 
 /// RFC 6238 appendix B seed, so a pinned time has a published expected code.

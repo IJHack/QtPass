@@ -25,8 +25,6 @@ public:
   static const QString dialogSize;
   static const QString dialogMaximized;
 
-  static const QString splitterLeft;
-  static const QString splitterRight;
   static const QString usePass;
   static const QString useAutoclear;
   static const QString useSelection;
@@ -52,7 +50,6 @@ public:
   static const QString webDavUser;
   static const QString webDavPassword;
   static const QString profile;
-  static const QString groupProfiles;
   static const QString useGit;
   static const QString useGrepSearch;
   static const QString useOtp;
@@ -66,7 +63,6 @@ public:
   static const QString otpMigratedToNative;
   static const QString useQrencode;
   static const QString qrencodeExecutable;
-  static const QString useClipboard;
   static const QString usePwgen;
   static const QString avoidCapitals;
   static const QString avoidNumbers;

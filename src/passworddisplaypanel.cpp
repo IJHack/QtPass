@@ -106,14 +106,6 @@ void PasswordDisplayPanel::displayFields(const QString &password,
   m_container->setSpacing(m_grid->count() == 0 ? 0 : 6);
 }
 
-void PasswordDisplayPanel::appendField(const QString &field,
-                                       const QString &value,
-                                       const AppSettings &s) {
-  // Each row is two grid items (label + value frame), so the next free row is
-  // count() / 2 — the same sequential scheme displayFields() uses.
-  addField(m_grid->count() / 2, field, value, s);
-}
-
 void PasswordDisplayPanel::addField(int position, const QString &field,
                                     const QString &value,
                                     const AppSettings &s) {
@@ -294,8 +286,9 @@ auto PasswordDisplayPanel::createFieldFrame() -> QFrame * {
  * @brief Render the live one-time password row.
  *
  * Exactly two grid items are added (label plus frame), like every other row,
- * so appendField()'s count()/2 row arithmetic stays valid. The code, its copy
- * button and the countdown all live inside the frame.
+ * so one grid row still corresponds to one step of displayFields()' position
+ * counter. The code, its copy button and the countdown all live inside the
+ * frame.
  *
  * AppSettings::hidePassword deliberately does not apply: it is keyed on the
  * password field and exists to protect a long-lived secret, whereas hiding a

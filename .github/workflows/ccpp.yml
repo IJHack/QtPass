@@ -64,8 +64,6 @@ jobs:
         qt: ["6.8"]
         include:
           - os: ubuntu-latest
-            qt: "5.15"
-          - os: ubuntu-latest
             qt: "6.11"
           - os: macos-latest
             qt: "6.11"

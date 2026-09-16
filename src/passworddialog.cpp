@@ -11,6 +11,7 @@
 #include <algorithm>
 
 #include <QAction>
+#include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QFileInfo>
 #include <QHash>
@@ -41,6 +42,8 @@ PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
   m_isNew = false;
 
   ui->setupUi(this);
+  connect(ui->checkBoxShow, &QCheckBox::toggled, this,
+          &PasswordDialog::setPasswordVisible);
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
 
@@ -59,6 +62,8 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
       m_file(std::move(file)), m_isNew(isNew) {
 
   ui->setupUi(this);
+  connect(ui->checkBoxShow, &QCheckBox::toggled, this,
+          &PasswordDialog::setPasswordVisible);
 
   setWindowTitle(this->windowTitle() + " " + m_file);
   m_passConfig = s.passwordConfiguration;
@@ -92,11 +97,11 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
 PasswordDialog::~PasswordDialog() { delete ui; }
 
 /**
- * @brief PasswordDialog::on_checkBoxShow_stateChanged hide or show passwords.
- * @param arg1
+ * @brief PasswordDialog::setPasswordVisible hide or show passwords.
+ * @param show
  */
-void PasswordDialog::on_checkBoxShow_stateChanged(int arg1) {
-  if (arg1) {
+void PasswordDialog::setPasswordVisible(bool show) {
+  if (show) {
     ui->lineEditPassword->setEchoMode(QLineEdit::Normal);
   } else {
     ui->lineEditPassword->setEchoMode(QLineEdit::Password);

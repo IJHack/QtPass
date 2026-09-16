@@ -39,11 +39,14 @@
 #include <QLineEdit>
 #include <QMenu>
 #include <QMessageBox>
+#include <QProgressDialog>
 #include <QPushButton>
 #include <QScrollBar>
 #include <QShortcut>
+#include <QTextCharFormat>
 #include <QTextCursor>
 #include <QTextEdit>
+#include <QTextStream>
 #include <QTimer>
 #include <QToolButton>
 #include <QTreeWidget>
@@ -60,7 +63,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
 #ifdef __APPLE__
   // extra treatment for mac os
-  // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
+  // see https://doc.qt.io/qt-6/qkeysequence.html#qt_set_sequence_auto_mnemonic
   qt_set_sequence_auto_mnemonic(true);
 #endif
   ui->setupUi(this);
@@ -68,20 +71,14 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   m_qtPass = new QtPass(this);
 
   // register shortcut ctrl/cmd + Q to close the main window
-  new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q), this, SLOT(close()));
+  new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Q), this, this,
+                &MainWindow::close);
   // register shortcut ctrl/cmd + C to copy the currently selected password
-  new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this,
-                SLOT(copyPasswordFromTreeview()));
+  new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this, this,
+                &MainWindow::copyPasswordFromTreeview);
 
   model.setNameFilters(QStringList() << "*.gpg");
   model.setNameFilterDisables(false);
-
-  /*
-   * I added this to solve Windows bug but now on GNU/Linux the main folder,
-   * if hidden, disappear
-   *
-   * model.setFilter(QDir::NoDot);
-   */
 
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
 
@@ -432,7 +429,7 @@ void MainWindow::cleanKeygenDialog() {
  *
  * @param const QString &text - The text content to display.
  * @param const bool isError - If true, sets the text color to red before
- * displaying the text.
+ * displaying the text; otherwise any earlier error colour is cleared.
  * @param const bool isHtml - If true, treats the text as HTML and appends it to
  * the existing HTML content.
  * @return void - No return value.
@@ -441,6 +438,16 @@ void MainWindow::flashText(const QString &text, const bool isError,
                            const bool isHtml) {
   if (isError) {
     ui->textBrowser->setTextColor(Qt::red);
+  } else {
+    // setTextColor() merges the red foreground into the browser's current
+    // char format, and setText()/setPlainText() re-applies that format to the
+    // whole new document. Without clearing it, a plain-text non-error message
+    // shown after an error would still be red. Remove the property rather
+    // than pinning a palette colour: an explicit foreground would stop the
+    // text from following runtime light/dark palette switches (#946).
+    QTextCharFormat format = ui->textBrowser->currentCharFormat();
+    format.clearForeground();
+    ui->textBrowser->setCurrentCharFormat(format);
   }
 
   if (isHtml) {
@@ -718,8 +725,6 @@ void MainWindow::passShowHandler(const QString &p_output) {
  * @return void - This function does not return a value.
  */
 void MainWindow::otpFromFileToClipboard(const QString &p_output) {
-  disconnectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
-                       &MainWindow::otpFromFileToClipboard);
   // A failed decrypt never fires finishedShow, and Qt::SingleShotConnection
   // only self-disconnects when it does fire, so a connection armed by an
   // earlier failed request can still be live here. Ignore it rather than
@@ -812,6 +817,13 @@ void MainWindow::clearPanel(bool notify) {
  * @param state
  */
 void MainWindow::setUiElementsEnabled(bool state) {
+  // A running re-encryption owns the UI state: the progress dialog's Cancel is
+  // the user's escape hatch and endReencryptPath() releases the interface, so
+  // neither an unrelated completion nor the watchdog may re-enable it early.
+  if (state && m_reencryptRunning) {
+    m_uiWatchdog.stop();
+    return;
+  }
   // Arm the watchdog while the UI is disabled; disarm once re-enabled.
   if (state) {
     m_uiWatchdog.stop();
@@ -867,7 +879,7 @@ void MainWindow::restoreWindow() {
     initTrayIcon();
     if (s.startMinimized) {
       // since we are still in constructor, can't directly hide
-      QTimer::singleShot(10, this, SLOT(hide()));
+      QTimer::singleShot(10, this, &MainWindow::hide);
     }
   } else if (!s.useTrayIcon && m_tray != nullptr) {
     destroyTrayIcon();
@@ -1257,9 +1269,8 @@ void MainWindow::onDelete() {
  * too. Unlike otpFromFileToClipboard, that slot has no pending-flag guard, so
  * its single-shot connection must be torn down here as well — otherwise a
  * connection left armed by the failed decrypt would claim the next unrelated
- * finishedShow and copy the wrong entry to the clipboard. disconnectSingleShot
- * is a no-op on Qt 6 (the never-fired connection persists until it emits), so
- * disconnect unconditionally.
+ * finishedShow and copy the wrong entry to the clipboard. A never-fired
+ * Qt::SingleShotConnection persists until it emits, so disconnect here.
  */
 void MainWindow::cancelOtpRequest() {
   m_otpRequestPending = false;
@@ -1413,14 +1424,6 @@ void MainWindow::updateProfileBox() {
 }
 
 /**
- * @brief MainWindow::on_profileBox_currentIndexChanged make sure we show the
- * correct "profile"
- * @param name
- */
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void MainWindow::on_profileBox_currentIndexChanged(const QString &name) {
-#else
-/**
  * @brief Handles changes to the selected profile in the profile combo box.
  * @details Ignores the event during a fresh start or when the selected profile
  * matches the current profile. Otherwise, it clears the password field, updates
@@ -1432,7 +1435,6 @@ void MainWindow::on_profileBox_currentIndexChanged(const QString &name) {
  *
  */
 void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
-#endif
   if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile()) {
     return;
   }
@@ -1843,8 +1845,6 @@ void MainWindow::copyPasswordFromTreeview() {
 }
 
 void MainWindow::passwordFromFileToClipboard(const QString &text) {
-  disconnectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
-                       &MainWindow::passwordFromFileToClipboard);
   m_passwordCopyPending = false;
   const QStringList tokens = text.split('\n');
   if (tokens.isEmpty()) {
@@ -1906,17 +1906,64 @@ void MainWindow::reencryptPath(const QString &dir) {
 }
 
 /**
- * @brief MainWindow::startReencryptPath disable ui elements and treeview
+ * @brief MainWindow::startReencryptPath disable ui elements and treeview and
+ * show the progress dialog. Idempotent: MainWindow::reencryptPath calls it
+ * before ImitatePass emits startReencryptPath.
  */
 void MainWindow::startReencryptPath() {
+  m_reencryptRunning = true;
   setUiElementsEnabled(false);
+  // The worker always ends with endReencryptPath(), and Cancel is available
+  // throughout, so the generic watchdog is not needed for this operation.
+  m_uiWatchdog.stop();
   ui->treeView->setDisabled(true);
+  if (m_reencryptProgress)
+    return;
+  auto *progress = new QProgressDialog(tr("Re-encrypting passwords..."),
+                                       tr("Cancel"), 0, 0, this);
+  progress->setWindowTitle(tr("Re-encrypt passwords"));
+  progress->setWindowModality(Qt::WindowModal);
+  progress->setAutoClose(false);
+  progress->setAutoReset(false);
+  progress->setMinimumDuration(0);
+  connect(progress, &QProgressDialog::canceled, this, [this]() {
+    QtPassSettings::getImitatePass()->cancelReencryptPath();
+    showStatusMessage(tr("Cancelling re-encryption"), 5000);
+  });
+  m_reencryptProgress = progress;
+  progress->show();
+}
+
+/**
+ * @brief MainWindow::reencryptProgress show how many files were checked
+ * @param current files checked so far
+ * @param total files found under the folder
+ */
+void MainWindow::reencryptProgress(int current, int total) {
+  if (!m_reencryptProgress)
+    return;
+  m_reencryptProgress->setMaximum(total);
+  m_reencryptProgress->setLabelText(
+      tr("Re-encrypting passwords: %1 of %2").arg(current).arg(total));
+  // On a modal QProgressDialog setValue() calls processEvents(), which can
+  // deliver the queued completion: endReencryptPath() then hides the dialog
+  // and resets m_reencryptProgress under our feet. Keep it last and touch
+  // nothing afterwards.
+  m_reencryptProgress->setValue(current);
 }
 
 /**
  * @brief MainWindow::endReencryptPath re-enable ui elements
  */
-void MainWindow::endReencryptPath() { setUiElementsEnabled(true); }
+void MainWindow::endReencryptPath() {
+  m_reencryptRunning = false;
+  if (m_reencryptProgress) {
+    m_reencryptProgress->hide();
+    m_reencryptProgress->deleteLater();
+    m_reencryptProgress = nullptr;
+  }
+  setUiElementsEnabled(true);
+}
 
 /**
  * @brief MainWindow::exportPublicKey export the configured signing key in

@@ -7,6 +7,7 @@
 #include <QProcess>
 #include <QProcessEnvironment>
 #include <QQueue>
+#include <atomic>
 
 /**
  * @class Executor
@@ -70,17 +71,25 @@ class Executor : public QObject {
    * @brief Shared blocking run: start @p process, optionally feed @p input on
    * stdin, wait, and capture stdout/stderr. Backs the executeBlocking
    * overloads. The caller configures @p process (e.g. environment) first.
+   *
+   * With a null @p cancel the wait is a plain waitForFinished(-1). With a
+   * non-null one the wait polls the flag; once it is set this thread
+   * terminate()s the child, gives it a short grace period, kill()s it if it
+   * is still running and returns -1. A flag that is already set skips the
+   * start altogether.
    * @param process Pre-configured QProcess to run.
    * @param app Executable path.
    * @param args Command arguments.
    * @param input Data to write to stdin (empty = none).
    * @param process_out If non-null, receives stdout.
    * @param process_err If non-null, receives stderr.
-   * @return Process exit code, or -1 on start/crash failure.
+   * @param cancel Optional flag another thread may set to end the run.
+   * @return Process exit code, or -1 on start/crash failure or cancel.
    */
   static auto runBlocking(QProcess &process, const QString &app,
                           const QStringList &args, const QString &input,
-                          QString *process_out, QString *process_err) -> int;
+                          QString *process_out, QString *process_err,
+                          const std::atomic_bool *cancel = nullptr) -> int;
 
 public:
   /**
@@ -155,6 +164,36 @@ public:
                               QString *process_err = nullptr) -> int;
 
   /**
+   * @brief Run a command synchronously on a caller-supplied QProcess, with
+   * optional cancellation.
+   *
+   * The caller configures @p process (environment, say) before the call;
+   * it must be a fresh, not yet started object. QProcess is not thread-safe,
+   * so @p process belongs to the calling thread for the whole run: no other
+   * thread may call terminate(), kill() or anything else on it. To let a run
+   * be cancelled, pass @p cancel: the wait then polls the flag, and once it
+   * is set the calling thread itself terminate()s the child, waits a short
+   * grace period, kill()s it if it is still running, and returns -1. Setting
+   * the flag is the only thing another thread does; it may do so at any time,
+   * before or during the run.
+   * @param process Process object to run the command on.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param input Data to write to stdin.
+   * @param process_out If non-null, receives stdout output.
+   * @param process_err If non-null, receives stderr output.
+   * @param cancel If non-null, a flag that ends the run when set.
+   * @return Process exit code, or -1 if it failed to start, crashed or was
+   * cancelled.
+   */
+  static auto executeBlocking(QProcess &process, const QString &app,
+                              const QStringList &args,
+                              const QString &input = QString(),
+                              QString *process_out = nullptr,
+                              QString *process_err = nullptr,
+                              const std::atomic_bool *cancel = nullptr) -> int;
+
+  /**
    * @brief Run a command synchronously capturing stdout and stderr.
    * @param app Executable path.
    * @param args Command arguments.
@@ -211,8 +250,13 @@ public:
    * @return The id of the cancelled command, or -1 if the queue was empty.
    */
   auto cancelNext() -> int;
+  /**
+   * @brief Whether no command is running and nothing is queued.
+   * @return true when the executor has nothing in flight.
+   */
+  auto isIdle() const -> bool { return !running && m_execQueue.isEmpty(); }
 private slots:
-  void finished(int exitCode, QProcess::ExitStatus exitStatus);
+  void onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 signals:
   /**
    * @brief finished    signal that is emitted when process finishes

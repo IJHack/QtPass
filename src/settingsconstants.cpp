@@ -18,10 +18,6 @@ const QString SettingsConstants::pos =
     SettingsConstants::groupMainwindow + "/pos";
 const QString SettingsConstants::size =
     SettingsConstants::groupMainwindow + "/size";
-const QString SettingsConstants::splitterLeft =
-    SettingsConstants::groupMainwindow + "/splitterLeft";
-const QString SettingsConstants::splitterRight =
-    SettingsConstants::groupMainwindow + "/splitterRight";
 const QString SettingsConstants::maximized =
     SettingsConstants::groupMainwindow + "/maximized";
 
@@ -57,14 +53,12 @@ const QString SettingsConstants::webDavUrl = "webDavUrl";
 const QString SettingsConstants::webDavUser = "webDavUser";
 const QString SettingsConstants::webDavPassword = "webDavPassword";
 const QString SettingsConstants::profile = "profile";
-const QString SettingsConstants::groupProfiles = "profiles";
 const QString SettingsConstants::useGit = "useGit";
 const QString SettingsConstants::useGrepSearch = "useGrepSearch";
 const QString SettingsConstants::useOtp = "useOtp";
 const QString SettingsConstants::otpMigratedToNative = "otpMigratedToNative";
 const QString SettingsConstants::useQrencode = "useQrencode";
 const QString SettingsConstants::qrencodeExecutable = "qrencodeExecutable";
-const QString SettingsConstants::useClipboard = "useClipboard";
 const QString SettingsConstants::usePwgen = "usePwgen";
 const QString SettingsConstants::avoidCapitals = "avoidCapitals";
 const QString SettingsConstants::avoidNumbers = "avoidNumbers";
