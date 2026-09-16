@@ -171,6 +171,14 @@ auto main(int argc, char *argv[]) -> int {
 #endif
   }
 
+  // Both must be set before the window exists: Wayland compositors read the
+  // desktop file name when the surface is created and use it to find the
+  // icon, and a window created before setWindowIcon() keeps the default one.
+  // Inside a Flatpak the desktop file is renamed to the app id.
+  QGuiApplication::setDesktopFileName(
+      qEnvironmentVariable("FLATPAK_ID", QStringLiteral("qtpass")));
+  QApplication::setWindowIcon(QIcon(":artwork/icon.png"));
+
   MainWindow w(text);
 
   // A cancelled first-run wizard (or otherwise unusable configuration) makes
@@ -183,17 +191,10 @@ auto main(int argc, char *argv[]) -> int {
 
   w.activateWindow();
 
-  QApplication::setWindowIcon(QIcon(":artwork/icon.png"));
-
 #if SINGLE_APP
   QObject::connect(&app, &SingleApplication::messageAvailable, &w,
                    &MainWindow::messageAvailable);
 #endif
-
-  // Inside a Flatpak the desktop file is renamed to the app id; Wayland
-  // compositors map the window to its icon through this name.
-  QGuiApplication::setDesktopFileName(
-      qEnvironmentVariable("FLATPAK_ID", QStringLiteral("qtpass")));
 
   // Center the MainWindow on the screen the mouse pointer is currently on
   QScreen *screen = QGuiApplication::screenAt(QCursor::pos());
