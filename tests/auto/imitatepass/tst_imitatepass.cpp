@@ -687,7 +687,13 @@ void tst_imitatepass::insertRunsNoGitWhenGitIsDisabled() {
               QStringLiteral("secret\n"), false);
   QVERIFY2(insertSpy.count() > 0 || insertSpy.wait(15000),
            "finishedInsert must be emitted when gpg exits 0");
-  QTest::qWait(300); // a wrongly queued git call would land by now
+
+  // Insert() queues its git calls right after the gpg one, and the Executor
+  // runs a single FIFO queue, so a second Insert finishing proves that
+  // everything queued by the first has already run. No sleeping involved.
+  pass.Insert(QDir(storeDir.path()).filePath("second"),
+              QStringLiteral("secret\n"), false);
+  QTRY_COMPARE_WITH_TIMEOUT(insertSpy.count(), 2, 15000);
 
   QVERIFY2(!QFile::exists(gitLog),
            "Insert must not run git when Use Git is off");
