@@ -75,16 +75,9 @@ Tests for `src/gpgkeystate.cpp`:
 
 ### Test Fixtures
 
-Store sample test data in `tests/fixtures/`:
-
-```bash
-ls tests/fixtures/
-# gpg-colons-multi-key.txt
-# gpg-colons-public.txt
-# gpg-colons-secret.txt
-```
-
-These contain real GPG `--with-colons` output for deterministic testing.
+There is no shared fixtures directory. Suites that need gpg output generate a
+throwaway keyring (`tests/auto/integration`) or write a recording fake gpg
+(`tests/auto/imitatepass`). Keep test data next to the suite that uses it.
 
 ### tests/auto/util/tst_util.cpp
 
@@ -193,59 +186,33 @@ QTEST_MAIN(tst_mymodule)
 
 ## .pro File Template
 
+Two lines. Everything a suite needs — linking `libqtpass.a`, the include path,
+the Windows resource and linker cap, the `tst_` target prefix — lives in
+`tests/auto/auto.pri`:
+
 ```pro
 !include(../auto.pri) { error("Couldn't find the auto.pri file!") }
 
 SOURCES += tst_mymodule.cpp
-
-LIBS = -L"$$OUT_PWD/../../../src/$(OBJECTS_DIR)" -lqtpass $$LIBS
-clang|gcc:PRE_TARGETDEPS += "$$OUT_PWD/../../../src/$(OBJECTS_DIR)/libqtpass.a"
-
-HEADERS   += mymodule.h
-
-OBJ_PATH += ../../../src/$(OBJECTS_DIR)
-
-VPATH += ../../../src
-INCLUDEPATH += ../../../src
-
-win32 {
-    RC_FILE = ../../../windows.rc
-    QMAKE_LINK_OBJECT_MAX=24
-}
 ```
 
-## Test plist File Template (qtpass.plist)
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>QMTestSpecification</key>
-    <dict>
-        <key>Type</key>
-        <string>Bundle</string>
-        <key>UIElement</key>
-        <dict>
-            <key>Modified</key>
-            <false/>
-            <key>SystemEntity</key>
-            <string>Test</string>
-        </dict>
-    </dict>
-</dict>
-</plist>
-```
+Do not list library headers in `HEADERS`: the static library already contains
+their moc output, and listing them here mocs them a second time into the test
+binary. Do not compile library sources into a suite either; link the library.
+A suite that needs something extra (the locale suite embeds the translations)
+adds only that.
 
 ## Adding a New Test Suite
 
 1. Create directory: `tests/auto/<name>/`
-2. Add `<name>.pro` file (copy pattern above)
-3. Add `qtpass.plist` (copy from model/)
-4. Add `tst_<name>.cpp` test file
-5. Add to `tests/auto/auto.pro`: `SUBDIRS += <name>`
-6. Rebuild: `qmake6 -r && make -j4`
-7. Run: `make check`
+2. Add `<name>.pro` (the two lines above)
+3. Add `tst_<name>.cpp`
+4. Add to `tests/auto/auto.pro`: `SUBDIRS += <name>`
+5. Rebuild: `qmake6 -r && make -j4`
+6. Run: `make check`
+
+No per-suite `qtpass.plist` or `artwork/` link: `qtpass.pri` anchors the macOS
+bundle icon and plist to the repository root with `$$PWD`.
 
 ## Best Practices
 
