@@ -9,6 +9,7 @@
 #include <QDialog>
 #include <QList>
 #include <QRegularExpression>
+#include <QScopedPointer>
 
 namespace Ui {
 class UsersDialog;
@@ -84,7 +85,7 @@ private slots:
   void on_importKeyButton_clicked();
 
 private:
-  Ui::UsersDialog *ui;
+  QScopedPointer<Ui::UsersDialog> ui;
   Pass *m_pass;                          /**< Active Pass backend */
   QString m_passStore;                   /**< Password store root path */
   QString m_gpgExe;                      /**< GPG executable path */

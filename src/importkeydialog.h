@@ -4,6 +4,7 @@
 #define SRC_IMPORTKEYDIALOG_H_
 
 #include <QDialog>
+#include <QScopedPointer>
 #include <QString>
 
 namespace Ui {
@@ -70,7 +71,7 @@ private slots:
   void on_inputTextEdit_textChanged();
 
 private:
-  Ui::ImportKeyDialog *ui;
+  QScopedPointer<Ui::ImportKeyDialog> ui;
   QString m_importedKeyId;
   QString m_gpgExe;
 

@@ -4,6 +4,7 @@
 #define SRC_KEYGENDIALOG_H_
 
 #include <QDialog>
+#include <QScopedPointer>
 #include <memory>
 
 #include "qprogressindicator.h"
@@ -65,7 +66,7 @@ private slots:
   void on_name_textChanged(const QString &arg1);
 
 private:
-  Ui::KeygenDialog *ui;
+  QScopedPointer<Ui::KeygenDialog> ui;
   void replace(const QString &, const QString &);
   void done(int r) override;
   ConfigDialog *dialog;

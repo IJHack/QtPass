@@ -14,6 +14,7 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QFileInfo>
+#include <QGuiApplication>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QSystemTrayIcon>
@@ -56,6 +57,16 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     ui->checkBoxUseTrayIcon->setToolTip(tr("System tray is not available"));
     ui->checkBoxHideOnClose->setEnabled(false);
     ui->checkBoxStartMinimized->setEnabled(false);
+  }
+
+  // Wayland has no client-side "keep above" — Qt::WindowStaysOnTopHint is
+  // silently ignored there (stacking belongs to the compositor). Say so
+  // instead of offering a checkbox that does nothing.
+  if (QGuiApplication::platformName().startsWith(QLatin1String("wayland"))) {
+    ui->checkBoxAlwaysOnTop->setEnabled(false);
+    ui->checkBoxAlwaysOnTop->setToolTip(
+        tr("Not available on Wayland; use your compositor's "
+           "\"keep above\" window rule instead"));
   }
 
 #if defined(Q_OS_WIN)

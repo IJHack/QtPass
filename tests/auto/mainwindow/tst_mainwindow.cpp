@@ -109,6 +109,7 @@ private Q_SLOTS:
   void toolBarKeepsHeaderTintInSameTheme();
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilCancelled();
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilValid();
+  void windowFlagsAreOnlyRebuiltWhenAlwaysOnTopChanges();
 
 private:
   auto runFirstRunFlow(
@@ -688,6 +689,60 @@ void tst_mainwindow::toolBarKeepsHeaderTintInSameTheme() {
   QVERIFY2(bar->testAttribute(Qt::WA_SetPalette),
            "a same-theme header tint must be kept");
   QCOMPARE(bar->palette().color(QPalette::Window), QColor(0xe3, 0xe5, 0xe7));
+}
+
+/**
+ * @brief setWindowFlags() on a top-level widget destroys and recreates the
+ *        native window. That used to happen on every Settings OK because the
+ *        "always on top: off" branch reset the flags unconditionally; the
+ *        rebuild is what left ui->lineEdit dangling. Re-applying an unchanged
+ *        setting must keep the same native window; changing it must toggle
+ *        exactly the one hint.
+ */
+void tst_mainwindow::windowFlagsAreOnlyRebuiltWhenAlwaysOnTopChanges() {
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  QVERIFY(!m_window->windowFlags().testFlag(Qt::WindowStaysOnTopHint));
+  const WId before = m_window->winId();
+
+  // Same setting, applied again (what a Settings OK does): no rebuild.
+  {
+    AppSettings s = QtPassSettings::load();
+    s.alwaysOnTop = false;
+    QtPassSettings::save(s);
+  }
+  m_window->restoreWindow();
+  m_window->restoreWindow();
+  QCOMPARE(m_window->winId(), before);
+  QVERIFY(m_window->isVisible());
+  QVERIFY(!m_window->windowFlags().testFlag(Qt::WindowStaysOnTopHint));
+
+  // Turning it on adds the hint and keeps the window shown.
+  {
+    AppSettings s = QtPassSettings::load();
+    s.alwaysOnTop = true;
+    QtPassSettings::save(s);
+  }
+  m_window->restoreWindow();
+  QVERIFY(m_window->windowFlags().testFlag(Qt::WindowStaysOnTopHint));
+  QVERIFY(m_window->windowFlags().testFlag(Qt::Window));
+  QVERIFY(m_window->isVisible());
+  const WId afterEnable = m_window->winId();
+
+  // Applying "on" again: still no rebuild.
+  m_window->restoreWindow();
+  QCOMPARE(m_window->winId(), afterEnable);
+
+  // Turning it off removes only that hint.
+  {
+    AppSettings s = QtPassSettings::load();
+    s.alwaysOnTop = false;
+    QtPassSettings::save(s);
+  }
+  m_window->restoreWindow();
+  QVERIFY(!m_window->windowFlags().testFlag(Qt::WindowStaysOnTopHint));
+  QVERIFY(m_window->windowFlags().testFlag(Qt::Window));
+  QVERIFY(m_window->isVisible());
 }
 
 // ---------------------------------------------------------------------------

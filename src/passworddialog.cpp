@@ -94,7 +94,7 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
 /**
  * @brief PasswordDialog::~PasswordDialog basic destructor.
  */
-PasswordDialog::~PasswordDialog() { delete ui; }
+PasswordDialog::~PasswordDialog() = default;
 
 /**
  * @brief PasswordDialog::setPasswordVisible hide or show passwords.
