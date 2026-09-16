@@ -1120,10 +1120,10 @@ void ConfigDialog::handleGpgIdFile() {
  * First-run wizard only. The store path is saved and the backend
  * re-initialised before use: Pass caches its settings at init(), so
  * RealPass::Init() would otherwise make `--path` relative to the previous
- * store and updateEnv() would export that one. Nothing is restored
- * afterwards because the wizard's OK saves this same path and its Cancel
- * exits the application. Git is initialised first so that the .gpg-id
- * written by pass init lands in the first commit.
+ * store and updateEnv() would export that one. The saved path is put back
+ * if the dialog is not accepted; after OK the wizard saves this same path
+ * anyway. Git is initialised first so that the .gpg-id written by pass init
+ * lands in the first commit.
  * @param storePath Directory that becomes the password store.
  * @param gitInit Whether to run `git init` there before selecting recipients.
  */
@@ -1131,6 +1131,7 @@ void ConfigDialog::selectRecipients(const QString &storePath, bool gitInit) {
   // ImitatePass::Init() and Pass::getRecipientList() append ".gpg-id" to the
   // folder, so it has to keep its trailing separator.
   const QString store = Util::normalizeFolderPath(QDir::cleanPath(storePath));
+  const QString prevStore = QtPassSettings::getPassStore();
   QtPassSettings::setPassStore(store);
   PassBackendFactory::invalidate();
   Pass *pass = QtPassSettings::getPass();
@@ -1138,7 +1139,11 @@ void ConfigDialog::selectRecipients(const QString &storePath, bool gitInit) {
     pass->GitInit();
   }
   UsersDialog d(pass, QtPassSettings::load(), store, this);
-  d.exec();
+  if (d.exec() != QDialog::Accepted) {
+    // Only the saved key goes back; the backend keeps the new path so a git
+    // init already queued still runs where it was meant to.
+    QtPassSettings::setPassStore(prevStore);
+  }
 }
 
 /**
