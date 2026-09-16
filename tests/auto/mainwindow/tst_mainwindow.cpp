@@ -27,6 +27,7 @@
 #include <QProgressDialog>
 #include <QPushButton>
 #include <QScopedPointer>
+#include <QScreen>
 #include <QStatusBar>
 #include <QTemporaryDir>
 #include <QTextBlock>
@@ -110,6 +111,9 @@ private Q_SLOTS:
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilCancelled();
   void firstRunAcceptedWithInvalidStoreAsksAgainUntilValid();
   void windowFlagsAreOnlyRebuiltWhenAlwaysOnTopChanges();
+  void restoreWindowAppliesSavedGeometry();
+  void restoreWindowCentresWhenNothingSaved();
+  void closeEventSavesGeometryAlsoWhenHidingToTray();
 
 private:
   auto runFirstRunFlow(
@@ -699,6 +703,98 @@ void tst_mainwindow::toolBarKeepsHeaderTintInSameTheme() {
  *        setting must keep the same native window; changing it must toggle
  *        exactly the one hint.
  */
+/**
+ * @brief A saved geometry is what the window comes back with. Before, the
+ *        stored pos/size were applied on top of restoreGeometry() and main()
+ *        re-centred the window unconditionally, so the saved position was
+ *        always discarded.
+ */
+void tst_mainwindow::restoreWindowAppliesSavedGeometry() {
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  // The window's minimum size depends on the platform fonts (463 wide on
+  // the Linux runner, 613 on FreeBSD), so ask for sizes well above it and
+  // record what the widget actually took rather than assuming. Keep the
+  // frame inside the offscreen screen (800x600): restoreGeometry() clamps to
+  // the available screen, which is a feature, not what is tested.
+  const QRect avail = QGuiApplication::primaryScreen()->availableGeometry();
+  const QSize big(avail.width() * 85 / 100, avail.height() * 80 / 100);
+  const QSize small(avail.width() * 75 / 100, avail.height() * 70 / 100);
+  if (small.width() <= m_window->minimumSizeHint().width() + 20) {
+    QSKIP("screen too small to resize the main window twice");
+  }
+  m_window->move(avail.left() + 37, avail.top() + 41);
+  m_window->resize(big);
+  QTRY_VERIFY(m_window->size().width() > small.width());
+  const QSize savedSize = m_window->size();
+  const QPoint savedPos = m_window->pos();
+  QtPassSettings::setGeometry(m_window->saveGeometry());
+
+  m_window->move(avail.left() + 10, avail.top() + 10);
+  m_window->resize(small);
+  QTRY_VERIFY(m_window->size() != savedSize);
+
+  m_window->restoreWindow();
+  QTRY_COMPARE(m_window->size(), savedSize);
+  QTRY_COMPARE(m_window->pos(), savedPos);
+}
+
+/**
+ * @brief With nothing saved the window is centred on the screen under the
+ *        pointer (the primary one here), not left at 0,0 and not moved so
+ *        that its top-left sits on the screen centre, which is what the old
+ *        getPos() fallback did.
+ */
+void tst_mainwindow::restoreWindowCentresWhenNothingSaved() {
+  if (QGuiApplication::platformName().startsWith(QLatin1String("wayland")))
+    QSKIP("Wayland lets the compositor place windows; centring is a no-op");
+  QtPassSettings::setGeometry(QByteArray());
+  m_window->resize(600, 400);
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  m_window->restoreWindow();
+
+  const QRect screen = QGuiApplication::primaryScreen()->availableGeometry();
+  const QPoint centre = m_window->frameGeometry().center();
+  // Allow for frame decoration rounding.
+  QVERIFY2(qAbs(centre.x() - screen.center().x()) <= 2 &&
+               qAbs(centre.y() - screen.center().y()) <= 2,
+           qPrintable(QStringLiteral("window centre %1,%2 vs screen %3,%4")
+                          .arg(centre.x())
+                          .arg(centre.y())
+                          .arg(screen.center().x())
+                          .arg(screen.center().y())));
+}
+
+/**
+ * @brief A tray user closes the window only ever to hide it; that path used
+ *        to save nothing, so their geometry was lost on every quit.
+ */
+void tst_mainwindow::closeEventSavesGeometryAlsoWhenHidingToTray() {
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  const QRect avail = QGuiApplication::primaryScreen()->availableGeometry();
+  m_window->move(avail.left() + 22, avail.top() + 11);
+  m_window->resize(avail.width() * 85 / 100, avail.height() * 80 / 100);
+  QtPassSettings::setGeometry(QByteArray());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.hideOnClose = true;
+    QtPassSettings::save(s);
+  }
+
+  m_window->close(); // hide branch: event ignored, window hidden
+  QTRY_VERIFY(!m_window->isVisible());
+  const QByteArray saved = QtPassSettings::getGeometry();
+  QVERIFY2(!saved.isEmpty(), "hide-on-close must still save the geometry");
+
+  {
+    AppSettings s = QtPassSettings::load();
+    s.hideOnClose = false;
+    QtPassSettings::save(s);
+  }
+}
+
 void tst_mainwindow::windowFlagsAreOnlyRebuiltWhenAlwaysOnTopChanges() {
   m_window->show();
   QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));

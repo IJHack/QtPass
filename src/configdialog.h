@@ -16,7 +16,6 @@ class ConfigDialog;
 } // namespace Ui
 
 class MainWindow;
-class QCloseEvent;
 class QTableWidgetItem;
 
 /**
@@ -135,12 +134,6 @@ public:
   void useTemplate(bool useTemplate);
 
 protected:
-  /**
-   * @brief Save settings and clean up on close.
-   * @param event The close event.
-   */
-  void closeEvent(QCloseEvent *event) override;
-
 private slots:
   void on_accepted();
   void on_autodetectButton_clicked();

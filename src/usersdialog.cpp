@@ -5,8 +5,8 @@
 #include "pass.h"
 #include "qtpasssettings.h"
 #include "ui_usersdialog.h"
+#include "windowstatestore.h"
 #include <QApplication>
-#include <QCloseEvent>
 #include <QDateTime>
 #include <QKeyEvent>
 #include <QLineEdit>
@@ -64,17 +64,7 @@ void UsersDialog::connectSignals() {
  * @brief Restore dialog geometry from settings.
  */
 void UsersDialog::restoreDialogState() {
-  QByteArray savedGeometry = QtPassSettings::getDialogGeometry("usersDialog");
-  bool hasSavedGeometry = !savedGeometry.isEmpty();
-  if (hasSavedGeometry) {
-    restoreGeometry(savedGeometry);
-  }
-  if (QtPassSettings::isDialogMaximized("usersDialog")) {
-    showMaximized();
-  } else if (hasSavedGeometry) {
-    move(QtPassSettings::getDialogPos("usersDialog"));
-    resize(QtPassSettings::getDialogSize("usersDialog"));
-  }
+  WindowStateStore::attach(*this, QStringLiteral("usersDialog"));
 }
 
 auto UsersDialog::loadGpgKeys() -> bool {
@@ -173,20 +163,6 @@ void UsersDialog::accept() {
   m_pass->Init(m_dir, m_userList);
 
   QDialog::accept();
-}
-
-/**
- * @brief UsersDialog::closeEvent save window state on close.
- * @param event
- */
-void UsersDialog::closeEvent(QCloseEvent *event) {
-  QtPassSettings::setDialogGeometry("usersDialog", saveGeometry());
-  if (!isMaximized()) {
-    QtPassSettings::setDialogPos("usersDialog", pos());
-    QtPassSettings::setDialogSize("usersDialog", size());
-  }
-  QtPassSettings::setDialogMaximized("usersDialog", isMaximized());
-  event->accept();
 }
 
 /**

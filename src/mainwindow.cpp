@@ -26,6 +26,7 @@
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
+#include "windowstatestore.h"
 #include <QApplication>
 #include <QCloseEvent>
 #include <QDesktopServices>
@@ -207,7 +208,22 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   // selectAll() segfaults inside Qt (see #1187, #1188).
 }
 
-MainWindow::~MainWindow() { delete m_qtPass; }
+MainWindow::~MainWindow() {
+  // Quit from the tray menu or a SIGTERM never delivers closeEvent(); the
+  // window still knows its last geometry here.
+  saveWindowState();
+  delete m_qtPass;
+}
+
+/**
+ * @brief MainWindow::saveWindowState persist geometry and dock/toolbar
+ *        layout. Idempotent, cheap, called from closeEvent() and the
+ *        destructor.
+ */
+void MainWindow::saveWindowState() {
+  QtPassSettings::setGeometry(saveGeometry());
+  QtPassSettings::setSavestate(saveState());
+}
 
 /**
  * @brief MainWindow::focusInput selects any text (if applicable) in the search
@@ -867,18 +883,17 @@ void MainWindow::setUiElementsEnabled(bool state) {
  * @return void - This function does not return a value.
  */
 void MainWindow::restoreWindow() {
-  QByteArray geometry = QtPassSettings::getGeometry(saveGeometry());
-  restoreGeometry(geometry);
-  QByteArray savestate = QtPassSettings::getSavestate(saveState());
-  restoreState(savestate);
-  QPoint position = QtPassSettings::getPos(pos());
-  move(position);
-  QSize newSize = QtPassSettings::getSize(size());
-  resize(newSize);
-  const AppSettings s = QtPassSettings::load();
-  if (s.maximized) {
-    showMaximized();
+  // saveGeometry() covers position, size, maximized state and screen; the
+  // separate pos/size/maximized keys that used to be applied on top of it
+  // are what discarded the restored position, and the unconditional
+  // re-centre in main() then discarded the rest. Centre only when nothing
+  // was saved.
+  const QByteArray geometry = QtPassSettings::getGeometry();
+  if (geometry.isEmpty() || !restoreGeometry(geometry)) {
+    WindowStateStore::centreOnCursorScreen(*this);
   }
+  restoreState(QtPassSettings::getSavestate(saveState()));
+  const AppSettings s = QtPassSettings::load();
 
   applyWindowFlagsSettings();
 
@@ -1491,19 +1506,14 @@ void MainWindow::destroyTrayIcon() {
  * @param event
  */
 void MainWindow::closeEvent(QCloseEvent *event) {
+  // Save in both branches: a tray user only ever hides the window, and
+  // used to quit through the tray menu with nothing ever written.
+  saveWindowState();
   if (QtPassSettings::isHideOnClose()) {
     this->hide();
     event->ignore();
   } else {
     m_qtPass->clearClipboard();
-
-    QtPassSettings::setGeometry(saveGeometry());
-    QtPassSettings::setSavestate(saveState());
-    QtPassSettings::setMaximized(isMaximized());
-    if (!isMaximized()) {
-      QtPassSettings::setPos(pos());
-      QtPassSettings::setSize(size());
-    }
     event->accept();
     // A visible QSystemTrayIcon keeps the application alive after the last
     // window closes, so quitOnLastWindowClosed never fires and the window

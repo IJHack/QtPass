@@ -196,17 +196,9 @@ auto main(int argc, char *argv[]) -> int {
                    &MainWindow::messageAvailable);
 #endif
 
-  // Center the MainWindow on the screen the mouse pointer is currently on
-  QScreen *screen = QGuiApplication::screenAt(QCursor::pos());
-  if (!screen)
-    screen = QGuiApplication::primaryScreen();
-  if (screen) {
-    const QPoint cursorScreenCenter = screen->geometry().center();
-    QRect windowFrameGeo = w.frameGeometry();
-    windowFrameGeo.moveCenter(cursorScreenCenter);
-    w.move(windowFrameGeo.topLeft());
-  }
-
+  // Placement is MainWindow::restoreWindow()'s job: the saved geometry when
+  // there is one, the cursor's screen otherwise. Re-centring here threw the
+  // saved position away on every start.
   w.show();
 
 #if SINGLE_APP

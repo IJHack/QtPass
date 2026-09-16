@@ -10,6 +10,7 @@
 #include "ui_configdialog.h"
 #include "usersdialog.h"
 #include "util.h"
+#include "windowstatestore.h"
 #include <QClipboard>
 #include <QDir>
 #include <QFileDialog>
@@ -37,17 +38,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   mainWindow = parent;
   ui->setupUi(this);
 
-  // Restore dialog state
-  QByteArray savedGeometry = QtPassSettings::getDialogGeometry("configDialog");
-  bool hasSavedGeometry = !savedGeometry.isEmpty();
-  if (hasSavedGeometry) {
-    restoreGeometry(savedGeometry);
-  }
-  if (QtPassSettings::isDialogMaximized("configDialog")) {
-    showMaximized();
-  } else if (!hasSavedGeometry) {
-    // Let window manager handle positioning for first launch
-  }
+  WindowStateStore::attach(*this, QStringLiteral("configDialog"));
 
   const AppSettings s = QtPassSettings::load();
   applySettings(s);
@@ -1151,20 +1142,6 @@ void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
   bool state = ui->checkBoxUseTrayIcon->isChecked();
   ui->checkBoxHideOnClose->setEnabled(state);
   ui->checkBoxStartMinimized->setEnabled(state);
-}
-
-/**
- * @brief ConfigDialog::closeEvent close this window.
- * @param event
- */
-void ConfigDialog::closeEvent(QCloseEvent *event) {
-  QtPassSettings::setDialogGeometry("configDialog", saveGeometry());
-  if (!isMaximized()) {
-    QtPassSettings::setDialogPos("configDialog", pos());
-    QtPassSettings::setDialogSize("configDialog", size());
-  }
-  QtPassSettings::setDialogMaximized("configDialog", isMaximized());
-  event->accept();
 }
 
 /**

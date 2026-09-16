@@ -41,12 +41,7 @@ private Q_SLOTS:
   void setAndGetPasswordLength();
   void autoDetectGit();
   void setAndGetSavestate();
-  void setAndGetPos();
-  void setAndGetSize();
   void setAndGetDialogGeometry();
-  void setAndGetDialogPos();
-  void setAndGetDialogSize();
-  void setAndGetDialogMaximized();
   void setAndGetPasswordCharsSelection();
   void setAndGetPasswordChars();
   void setAndGetMultipleProfiles();
@@ -213,7 +208,6 @@ const BoolSetting boolSettings[] = {
     {"templateAllFields", &AppSettings::templateAllFields},
     {"useQrencode", &AppSettings::useQrencode},
     {"useAutoclearPanel", &AppSettings::useAutoclearPanel},
-    {"maximized", &AppSettings::maximized},
     {"useGrepSearch", &AppSettings::useGrepSearch},
     {"showProcessOutput", &AppSettings::showProcessOutput},
 };
@@ -413,52 +407,12 @@ void tst_settings::setAndGetSavestate() {
   QVERIFY2(read == state, "Savestate should match");
 }
 
-void tst_settings::setAndGetPos() {
-  QPoint pos(100, 200);
-  QtPassSettings::setPos(pos);
-  QPoint read = QtPassSettings::getPos(QPoint());
-  QVERIFY2(read == pos, "Pos should match");
-}
-
-void tst_settings::setAndGetSize() {
-  QSize size(800, 600);
-  QtPassSettings::setSize(size);
-  QSize read = QtPassSettings::getSize(QSize());
-  QVERIFY2(read == size, "Size should match");
-}
-
 void tst_settings::setAndGetDialogGeometry() {
   const QString key = "testDialog";
   QByteArray geometry("test_dialog_geometry");
   QtPassSettings::setDialogGeometry(key, geometry);
   QByteArray read = QtPassSettings::getDialogGeometry(key, QByteArray());
   QVERIFY2(read == geometry, "Dialog geometry should match");
-}
-
-void tst_settings::setAndGetDialogPos() {
-  const QString key = "testDialog";
-  QPoint pos(100, 200);
-  QtPassSettings::setDialogPos(key, pos);
-  QPoint read = QtPassSettings::getDialogPos(key, QPoint());
-  QVERIFY2(read == pos, "Dialog pos should match");
-}
-
-void tst_settings::setAndGetDialogSize() {
-  const QString key = "testDialog";
-  QSize size(640, 480);
-  QtPassSettings::setDialogSize(key, size);
-  QSize read = QtPassSettings::getDialogSize(key, QSize());
-  QVERIFY2(read == size, "Dialog size should match");
-}
-
-void tst_settings::setAndGetDialogMaximized() {
-  const QString key = "testDialog";
-  QtPassSettings::setDialogMaximized(key, true);
-  bool read = QtPassSettings::isDialogMaximized(key, false);
-  QVERIFY2(read == true, "Dialog maximized should be true");
-  QtPassSettings::setDialogMaximized(key, false);
-  read = QtPassSettings::isDialogMaximized(key, true);
-  QVERIFY2(read == false, "Dialog maximized should be false");
 }
 
 void tst_settings::setAndGetPasswordCharsSelection() {
@@ -641,9 +595,6 @@ void tst_settings::serializerRoundTrip() {
   out.startMinimized = true;
   out.alwaysOnTop = true;
   out.activeProfile = QStringLiteral("work");
-  out.maximized = true;
-  out.pos = QPoint(10, 20);
-  out.size = QSize(640, 480);
 
   SettingsSerializer::save(qs, out);
   const AppSettings in = SettingsSerializer::load(qs);
@@ -695,9 +646,6 @@ void tst_settings::serializerRoundTrip() {
   QCOMPARE(in.startMinimized, out.startMinimized);
   QCOMPARE(in.alwaysOnTop, out.alwaysOnTop);
   QCOMPARE(in.activeProfile, out.activeProfile);
-  QCOMPARE(in.maximized, out.maximized);
-  QCOMPARE(in.pos, out.pos);
-  QCOMPARE(in.size, out.size);
 }
 
 void tst_settings::serializerKeyCompatibility() {

@@ -50,9 +50,6 @@ auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
   s.version = qs.value(SettingsConstants::version).toString();
   s.geometry = qs.value(SettingsConstants::geometry).toByteArray();
   s.savestate = qs.value(SettingsConstants::savestate).toByteArray();
-  s.pos = qs.value(SettingsConstants::pos).toPoint();
-  s.size = qs.value(SettingsConstants::size).toSize();
-  s.maximized = qs.value(SettingsConstants::maximized, false).toBool();
   s.activeProfile = qs.value(SettingsConstants::profile).toString();
 
   // Backend selection / store
@@ -135,9 +132,6 @@ void SettingsSerializer::save(QSettings &qs, const AppSettings &s) {
   qs.setValue(SettingsConstants::version, s.version);
   qs.setValue(SettingsConstants::geometry, s.geometry);
   qs.setValue(SettingsConstants::savestate, s.savestate);
-  qs.setValue(SettingsConstants::pos, s.pos);
-  qs.setValue(SettingsConstants::size, s.size);
-  qs.setValue(SettingsConstants::maximized, s.maximized);
   qs.setValue(SettingsConstants::profile, s.activeProfile);
 
   // Backend selection / store
