@@ -42,7 +42,7 @@ public:
    * @brief Construct a QtPass instance associated with the given main window.
    * @param mainWindow Pointer to the application's MainWindow.
    */
-  QtPass(MainWindow *mainWindow);
+  explicit QtPass(MainWindow *mainWindow);
   /**
    * @brief Destroy the QtPass instance and clean up signal connections.
    */

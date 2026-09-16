@@ -106,9 +106,9 @@ void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
 }
 
 void UsersDialog::loadRecipients() {
-  int count = 0;
-  QStringList recipients = Pass::getRecipientString(
-      m_dir.isEmpty() ? "" : m_dir, m_passStore, " ", &count);
+  const QStringList recipients =
+      Pass::getRecipientList(m_dir.isEmpty() ? "" : m_dir, m_passStore);
+  const int count = static_cast<int>(recipients.size());
 
   QList<UserInfo> selectedUsers = m_pass->listKeys(recipients);
   QSet<QString> selectedKeyIds;
@@ -122,8 +122,7 @@ void UsersDialog::loadRecipients() {
   }
 
   if (count > selectedUsers.size()) {
-    QStringList allRecipients =
-        Pass::getRecipientList(m_dir.isEmpty() ? "" : m_dir, m_passStore);
+    const QStringList &allRecipients = recipients;
 
     // Use bulk lookup to resolve all recipients at once (single gpg call)
     // This preserves the original email/UID resolution behavior

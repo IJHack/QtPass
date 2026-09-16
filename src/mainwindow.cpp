@@ -87,7 +87,6 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   proxyModel.setModelAndStore(&model, passStore);
   proxyModel.setPass(QtPassSettings::getPass());
-  selectionModel.reset(new QItemSelectionModel(&proxyModel));
 
   ui->treeView->setModel(&proxyModel);
   ui->treeView->setRootIndex(proxyModel.mapFromSource(rootDir));

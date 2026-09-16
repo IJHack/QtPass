@@ -3,8 +3,8 @@
 #ifndef SRC_TRAYICON_H_
 #define SRC_TRAYICON_H_
 
+#include <QObject>
 #include <QSystemTrayIcon>
-#include <QWidget>
 
 class QAction;
 class QMainWindow;
@@ -13,8 +13,13 @@ class QMenu;
 /**
  * @class TrayIcon
  * @brief Handles the system tray icon and menu.
+ *
+ * A QObject parented to the main window: nothing here is a widget (the menu
+ * and the QSystemTrayIcon are children of this object), and the parent makes
+ * sure ~QSystemTrayIcon runs on quit, which is what removes the icon from the
+ * notification area on Windows.
  */
-class TrayIcon : public QWidget {
+class TrayIcon : public QObject {
   Q_OBJECT
 
 public:
