@@ -221,6 +221,7 @@ private Q_SLOTS:
   void reencryptEncryptArgvCarriesNoEncryptTo();
   void reencryptPathPushesWhenAllFilesSucceed();
   void reencryptPathDoesNotPushAfterFailures();
+  void insertRunsNoGitWhenGitIsDisabled();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -653,6 +654,43 @@ void tst_imitatepass::reencryptPathPushesWhenAllFilesSucceed() {
   // The push goes through the asynchronous Executor queue, so it may land a
   // little after endReencryptPath().
   QTRY_VERIFY_WITH_TIMEOUT(hasPush(loggedCalls(gitLog)), 15000);
+#endif
+}
+
+/**
+ * @brief With Git disabled, Insert() must touch git at all: gitReady() returns
+ * m_settings.useGit, so nothing may be staged or committed even when a git
+ * executable is configured.
+ */
+void tst_imitatepass::insertRunsNoGitWhenGitIsDisabled() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as recording fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString gpgLog = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), gpgLog);
+  const QString fakeGit = writeRecordingGit(storeDir.path(), gitLog);
+  QVERIFY2(!fakeGpg.isEmpty(), "failed to write the recording fake gpg");
+  QVERIFY2(!fakeGit.isEmpty(), "failed to write the recording fake git");
+
+  AppSettings settings = settingsFor(storeDir.path(), fakeGpg);
+  settings.useGit = false;
+  settings.gitExecutable = fakeGit;
+  ImitatePass pass;
+  pass.init(settings);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+
+  pass.Insert(QDir(storeDir.path()).filePath("entry"),
+              QStringLiteral("secret\n"), false);
+  QVERIFY2(insertSpy.count() > 0 || insertSpy.wait(15000),
+           "finishedInsert must be emitted when gpg exits 0");
+  QTest::qWait(300); // a wrongly queued git call would land by now
+
+  QVERIFY2(!QFile::exists(gitLog),
+           "Insert must not run git when Use Git is off");
 #endif
 }
 
