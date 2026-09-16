@@ -1125,13 +1125,14 @@ void ConfigDialog::handleGpgIdFile() {
  * @param gitInit Whether to run `git init` there before selecting recipients.
  */
 void ConfigDialog::selectRecipients(const QString &storePath, bool gitInit) {
+  const QString cleanStorePath = QDir::cleanPath(storePath);
   const QString prevStore = QtPassSettings::getPassStore();
-  QtPassSettings::setPassStore(storePath);
+  QtPassSettings::setPassStore(cleanStorePath);
   if (gitInit) {
     QtPassSettings::getPass()->GitInit();
   }
-  UsersDialog d(QtPassSettings::getPass(), QtPassSettings::load(), storePath,
-                this);
+  UsersDialog d(QtPassSettings::getPass(), QtPassSettings::load(),
+                cleanStorePath, this);
   d.exec();
   QtPassSettings::setPassStore(prevStore);
 }
