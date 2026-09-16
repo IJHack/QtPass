@@ -27,6 +27,9 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 - Icon: the hairline where the shackle's straight legs met the arc is gone
   (the arc now overlaps the legs instead of butting against them); PNG, ICO
   and ICNS regenerated from the SVG
+- `pass mv`/`pass cp` to a destination named `x.gpg` that did not exist yet
+  produced `x.gpg.gpg`: the `.gpg` suffix was only stripped when the
+  destination already existed
 - A menu bar: File (add password/folder, edit, delete, quit), Store (users,
   pull, push, OTP), Settings (configuration, Ctrl+,) and Help (FAQ with F1,
   About QtPass, About Qt). Until now Push, Pull, Users and Config existed only
