@@ -49,14 +49,15 @@ for f in sorted(glob.glob('localization/localization_*.ts')):
 
 ### After Code Changes
 
-When source files change (strings added, moved, or refactored), run qmake to update translations:
+When source files change (strings added, moved, or refactored), run the
+`lupdate` target to update translations. It is explicit: a plain `qmake6` run
+no longer touches `localization/`.
 
 ```bash
 # IMPORTANT: Run distclean first to avoid stale generated files (ui_*.h) in translations
 make distclean
-
-# Run qmake to update translations (uses lupdate internally)
 qmake6
+make lupdate
 ```
 
 This updates all `.ts` files with:
@@ -152,10 +153,10 @@ Use the `xx_YY` form only when the translation is genuinely region-specific (Bra
 
 2. Register it in `src/src.pro` (alphabetically) under `TRANSLATIONS +=`. Note: `qtpass.pro` is the parent project file; the actual list lives in `src/src.pro`.
 
-3. Run `make distclean && qmake6` — the build's lupdate step populates the file with all 304 source strings as `type="unfinished"`. Confirm via:
+3. Run `make distclean && qmake6 && make lupdate` — the `lupdate` target populates the file with all source strings as `type="unfinished"`. Confirm via:
 
    ```bash
-   qmake6 2>&1 | grep "localization_<lang>.ts"
+   make lupdate 2>&1 | grep "localization_<lang>.ts"
    # -> Updating 'localization/localization_<lang>.ts'...
    ```
 
@@ -258,7 +259,7 @@ qmake6
 
 If you added new `tr()` strings but they don't appear:
 
-1. Run `qmake6` to update the `.ts` files
+1. Run `make lupdate` to update the `.ts` files
 2. Close and reopen Qt Linguist
 3. Check the file was actually saved after previous edit
 

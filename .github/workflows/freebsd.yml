@@ -24,7 +24,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Build and run the test suites in a FreeBSD VM
-        uses: vmactions/freebsd-vm@8b0f1a8fc0ea0def307835c258940ca358fe6480 # v1
+        uses: vmactions/freebsd-vm@8b0f1a8fc0ea0def307835c258940ca358fe6480 # v1.5.6
         with:
           release: "14"
           usesh: true
@@ -40,10 +40,7 @@ jobs:
             qmake6 -v
             # the rsynced tree is owned by another uid inside the VM
             git config --global --add safe.directory "$(pwd)"
-            # qmake refreshes localization/*.ts at configure time; keep the
-            # checkout clean so the build does not depend on that side effect.
             qmake6 qtpass.pro
-            git checkout -- localization/
             make -j3
             # The suites need a display; the offscreen QPA is enough.
             export QT_QPA_PLATFORM=offscreen

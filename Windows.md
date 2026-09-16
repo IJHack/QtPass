@@ -163,8 +163,8 @@ Add a test function name to narrow it further, e.g.
 - Qt 6 is required; Qt 5.15 does not compile with a current MSVC (see above)
 - nmake requires the MSVC environment (`VsDevCmd.bat`)
 - tests expect `bash` (provided by Git for Windows)
-- any `qmake` run rewrites `localization/*.ts`; discard with
-  `git checkout -- localization/`
+- refreshing `localization/*.ts` is the explicit `lupdate` target (`nmake lupdate`);
+  a plain `qmake` run leaves them alone
 
 ## First Run
 
