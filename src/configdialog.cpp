@@ -1105,7 +1105,7 @@ void ConfigDialog::handleGpgIdFile() {
       }
       passStore = ui->storePath->text();
     }
-    if (!QFile(passStore + ".gpg-id").exists()) {
+    if (!QFile(QDir(passStore).filePath(".gpg-id")).exists()) {
 #ifdef QT_DEBUG
       dbg() << ".gpg-id file still does not exist :/";
 #endif
