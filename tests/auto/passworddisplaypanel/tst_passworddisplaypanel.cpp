@@ -16,6 +16,8 @@
 #include "../../../src/filecontent.h"
 #include "../../../src/otpcodewidget.h"
 #include "../../../src/passworddisplaypanel.h"
+#include "../../../src/qpushbuttonasqrcode.h"
+#include "../../../src/qpushbuttonshowpassword.h"
 #include "../../../src/qpushbuttonwithclipboard.h"
 
 class tst_passworddisplaypanel : public QObject {
@@ -47,6 +49,7 @@ private Q_SLOTS:
   void currentOtpCodeEmptyAfterClear();
   void otpUriAsPasswordIsNeverRendered();
   void otpUriInDifferentlyNamedFieldIsNeverRendered();
+  void iconOnlyFieldButtonsAreNamed();
   void fieldValueRendersHtmlSpecialsVerbatim_data();
   void fieldValueRendersHtmlSpecialsVerbatim();
   void visiblePasswordRendersHtmlSpecialsVerbatim();
@@ -597,6 +600,41 @@ void tst_passworddisplaypanel::urlButtonToolTipShowsUrlVerbatim() {
   QVERIFY2(toolTipIsSingleLine(button->toolTip()),
            qPrintable(QStringLiteral("tooltip must lay out on one line: ") +
                       button->toolTip()));
+}
+
+/**
+ * @brief The copy, QR and show buttons are icon-only; a screen reader read
+ *        them as "button". Each needs an accessible name (and a tooltip),
+ *        and the show button's name follows its state.
+ */
+void tst_passworddisplaypanel::iconOnlyFieldButtonsAreNamed() {
+  AppSettings s;
+  s.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
+  s.useQrencode = true;
+  s.hidePassword = true;
+  m_panel->displayFields(QStringLiteral("secret"),
+                         NamedValues{{"url", "https://example.org"}}, s);
+
+  auto *copy = m_parent->findChild<QPushButtonWithClipboard *>();
+  QVERIFY(copy != nullptr);
+  QVERIFY2(!copy->accessibleName().isEmpty() && !copy->toolTip().isEmpty(),
+           "the copy button must be named");
+
+  auto *qr = m_parent->findChild<QPushButtonAsQRCode *>();
+  QVERIFY(qr != nullptr);
+  QVERIFY2(!qr->accessibleName().isEmpty() && !qr->toolTip().isEmpty(),
+           "the QR button must be named");
+
+  auto *show = m_parent->findChild<QPushButtonShowPassword *>();
+  QVERIFY(show != nullptr);
+  const QString hiddenName = show->accessibleName();
+  QVERIFY2(!hiddenName.isEmpty() && !show->toolTip().isEmpty(),
+           "the show button must be named");
+  show->click();
+  QVERIFY2(show->accessibleName() != hiddenName,
+           "revealing the password must rename the button to its hide role");
+  show->click();
+  QCOMPARE(show->accessibleName(), hiddenName);
 }
 
 QTEST_MAIN(tst_passworddisplaypanel)

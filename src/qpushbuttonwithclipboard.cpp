@@ -19,6 +19,9 @@ QPushButtonWithClipboard::QPushButtonWithClipboard(QString textToCopy,
       iconEditPushed(
           QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg"))) {
   setIcon(iconEdit);
+  // Icon-only: give screen readers and hovering users a name.
+  setToolTip(tr("Copy to clipboard"));
+  setAccessibleName(tr("Copy to clipboard"));
   setForegroundRole(QPalette::ButtonText);
   connect(this, &QPushButton::clicked, this,
           &QPushButtonWithClipboard::buttonClicked);

@@ -2,10 +2,12 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QApplication>
 #include <QCheckBox>
+#include <QLabel>
 #include <QLineEdit>
 #include <QSpinBox>
 #include <QSystemTrayIcon>
 #include <QTableWidget>
+#include <QToolButton>
 #include <QtTest>
 
 #include "../../../src/configdialog.h"
@@ -53,6 +55,8 @@ private Q_SLOTS:
   void customCharsetRoundTrip();
   void customCharsetPreservedWhenBuiltinSelected();
   void addProfileSelectsNewRowAfterSort();
+  void fieldLabelsHaveBuddies();
+  void browseButtonsAreNamed();
 };
 
 /**
@@ -362,6 +366,58 @@ void tst_configdialog::addProfileSelectsNewRowAfterSort() {
     QTableWidgetItem *nameItem = table->item(selected.first()->row(), 0);
     QVERIFY(nameItem != nullptr);
     QCOMPARE(nameItem->text(), QStringLiteral("New Profile"));
+  }
+}
+
+/**
+ * @brief Every label that names a field points at it, so screen readers
+ *        announce the field by that name and Alt+mnemonic could focus it.
+ */
+void tst_configdialog::fieldLabelsHaveBuddies() {
+  ConfigDialog dialog(nullptr);
+  const QList<QPair<QString, QString>> pairs = {
+      {QStringLiteral("labelGpgPath"), QStringLiteral("gpgPath")},
+      {QStringLiteral("labelGitPath"), QStringLiteral("gitPath")},
+      {QStringLiteral("labelPwgenPath"), QStringLiteral("pwgenPath")},
+      {QStringLiteral("labelPassPath"), QStringLiteral("passPath")},
+      {QStringLiteral("labelSshAuthSock"),
+       QStringLiteral("sshAuthSockOverride")},
+      {QStringLiteral("labelStorePath"), QStringLiteral("storePath")},
+      {QStringLiteral("label_7"), QStringLiteral("spinBoxPasswordLength")},
+      {QStringLiteral("labelPasswordChars"),
+       QStringLiteral("passwordCharTemplateSelector")},
+      {QStringLiteral("label_8"), QStringLiteral("comboBoxClipboard")},
+      {QStringLiteral("labelSeconds"),
+       QStringLiteral("spinBoxAutoclearSeconds")},
+      {QStringLiteral("labelPanelSeconds"),
+       QStringLiteral("spinBoxAutoclearPanelSeconds")},
+      {QStringLiteral("labelLength"), QStringLiteral("spinBoxPasswordLength")},
+  };
+  for (const auto &[labelName, fieldName] : pairs) {
+    auto *label = dialog.findChild<QLabel *>(labelName);
+    QVERIFY2(label != nullptr, qPrintable(labelName + " must exist"));
+    QVERIFY2(label->buddy() != nullptr,
+             qPrintable(labelName + " must have a buddy"));
+    QCOMPARE(label->buddy()->objectName(), fieldName);
+  }
+}
+
+/**
+ * @brief The "…" browse buttons carry no text a screen reader can use; they
+ *        need an accessible name and a tooltip.
+ */
+void tst_configdialog::browseButtonsAreNamed() {
+  ConfigDialog dialog(nullptr);
+  for (const QString &name :
+       {QStringLiteral("toolButtonGpg"), QStringLiteral("toolButtonGit"),
+        QStringLiteral("toolButtonPwgen"), QStringLiteral("toolButtonPass"),
+        QStringLiteral("toolButtonStore")}) {
+    auto *button = dialog.findChild<QToolButton *>(name);
+    QVERIFY2(button != nullptr, qPrintable(name + " must exist"));
+    QVERIFY2(!button->accessibleName().isEmpty(),
+             qPrintable(name + " must have an accessible name"));
+    QVERIFY2(!button->toolTip().isEmpty(),
+             qPrintable(name + " must have a tooltip"));
   }
 }
 

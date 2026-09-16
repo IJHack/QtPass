@@ -71,6 +71,9 @@
            <property name="text">
             <string>Clipboard behaviour:</string>
            </property>
+           <property name="buddy">
+            <cstring>comboBoxClipboard</cstring>
+           </property>
           </widget>
          </item>
          <item>
@@ -113,6 +116,9 @@
             <widget class="QLabel" name="labelSeconds">
              <property name="text">
               <string>Seconds</string>
+             </property>
+             <property name="buddy">
+              <cstring>spinBoxAutoclearSeconds</cstring>
              </property>
             </widget>
            </item>
@@ -196,6 +202,9 @@
                </property>
                <property name="text">
                 <string>Seconds</string>
+               </property>
+               <property name="buddy">
+                <cstring>spinBoxAutoclearPanelSeconds</cstring>
                </property>
               </widget>
              </item>
@@ -288,6 +297,9 @@
              <property name="text">
               <string>Password Length:</string>
              </property>
+             <property name="buddy">
+              <cstring>spinBoxPasswordLength</cstring>
+             </property>
             </widget>
            </item>
            <item row="0" column="1">
@@ -322,6 +334,9 @@
                <property name="text">
                 <string>Characters</string>
                </property>
+               <property name="buddy">
+                <cstring>spinBoxPasswordLength</cstring>
+               </property>
               </widget>
              </item>
              <item>
@@ -349,6 +364,9 @@
              </property>
              <property name="text">
               <string>Use characters:</string>
+             </property>
+             <property name="buddy">
+              <cstring>passwordCharTemplateSelector</cstring>
              </property>
             </widget>
            </item>
@@ -745,6 +763,9 @@
                <property name="text">
                 <string>Git</string>
                </property>
+               <property name="buddy">
+                <cstring>gitPath</cstring>
+               </property>
               </widget>
              </item>
              <item row="0" column="1">
@@ -752,6 +773,12 @@
              </item>
              <item row="0" column="2">
               <widget class="QToolButton" name="toolButtonGpg">
+               <property name="toolTip">
+                <string>Choose the gpg executable</string>
+               </property>
+               <property name="accessibleName">
+                <string>Choose the gpg executable</string>
+               </property>
                <property name="text">
                 <string>…</string>
                </property>
@@ -759,6 +786,12 @@
              </item>
               <item row="1" column="2">
                <widget class="QToolButton" name="toolButtonGit">
+                <property name="toolTip">
+                 <string>Choose the git executable</string>
+                </property>
+                <property name="accessibleName">
+                 <string>Choose the git executable</string>
+                </property>
                 <property name="text">
                  <string>…</string>
                 </property>
@@ -785,6 +818,9 @@
                <property name="text">
                 <string>GPG</string>
                </property>
+               <property name="buddy">
+                <cstring>gpgPath</cstring>
+               </property>
               </widget>
              </item>
              <item row="1" column="1">
@@ -798,10 +834,19 @@
                <property name="text">
                 <string>PWGen</string>
                </property>
+               <property name="buddy">
+                <cstring>pwgenPath</cstring>
+               </property>
               </widget>
              </item>
              <item row="2" column="2">
               <widget class="QToolButton" name="toolButtonPwgen">
+               <property name="toolTip">
+                <string>Choose the pwgen executable</string>
+               </property>
+               <property name="accessibleName">
+                <string>Choose the pwgen executable</string>
+               </property>
                <property name="text">
                 <string>…</string>
                </property>
@@ -826,6 +871,9 @@
                  <property name="text">
                   <string>pass</string>
                  </property>
+                 <property name="buddy">
+                  <cstring>passPath</cstring>
+                 </property>
                 </widget>
                </item>
                <item>
@@ -833,6 +881,12 @@
                </item>
                <item>
                 <widget class="QToolButton" name="toolButtonPass">
+                 <property name="toolTip">
+                  <string>Choose the pass executable</string>
+                 </property>
+                 <property name="accessibleName">
+                  <string>Choose the pass executable</string>
+                 </property>
                  <property name="text">
                   <string>…</string>
                  </property>
@@ -889,6 +943,9 @@
            </property>
            <property name="toolTip">
             <string>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</string>
+           </property>
+           <property name="buddy">
+            <cstring>sshAuthSockOverride</cstring>
            </property>
           </widget>
          </item>
@@ -1028,10 +1085,19 @@
            <property name="text">
             <string>Current path</string>
            </property>
+           <property name="buddy">
+            <cstring>storePath</cstring>
+           </property>
           </widget>
          </item>
          <item row="0" column="4">
           <widget class="QToolButton" name="toolButtonStore">
+           <property name="toolTip">
+            <string>Choose the password store folder</string>
+           </property>
+           <property name="accessibleName">
+            <string>Choose the password store folder</string>
+           </property>
            <property name="text">
             <string>…</string>
            </property>

@@ -75,6 +75,11 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   undocumented Ctrl+T, and the active template was never shown. The password
   dialog now has a Template box naming it, selecting from the box applies it,
   and Ctrl+T (owned by the dialog) still cycles
+- Accessibility basics in the settings dialog and the password pane: the
+  twelve field labels now point at their fields (`buddy`), the five "…"
+  browse buttons and the icon-only copy, QR and show/hide buttons have an
+  accessible name and a tooltip, so a screen reader no longer announces
+  them as "button"
 
 ### Removed
 
