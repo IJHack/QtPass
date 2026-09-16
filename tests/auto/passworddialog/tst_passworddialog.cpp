@@ -45,7 +45,6 @@ public:
   void GitPull_b() override {}
   void GitPush() override {}
   void Show(QString) override {}
-  void OtpGenerate(QString) override {}
   void Insert(QString, QString, bool) override {}
   void Remove(QString, bool) override {}
   void Move(const QString, const QString, const bool) override {}

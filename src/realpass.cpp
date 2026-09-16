@@ -17,7 +17,6 @@ using Enums::PASS_GREP;
 using Enums::PASS_INIT;
 using Enums::PASS_INSERT;
 using Enums::PASS_MOVE;
-using Enums::PASS_OTP_GENERATE;
 using Enums::PASS_REMOVE;
 using Enums::PASS_SHOW;
 
@@ -63,14 +62,6 @@ void RealPass::GitPush() { executePass(GIT_PUSH, {"git", "push"}); }
  */
 void RealPass::Show(QString file) {
   executePass(PASS_SHOW, {"show", file}, "", true);
-}
-
-/**
- * @brief RealPass::OtpGenerate pass otp
- * @param file      file containing OTP uri
- */
-void RealPass::OtpGenerate(QString file) {
-  executePass(PASS_OTP_GENERATE, {"otp", file}, "", true);
 }
 
 /**

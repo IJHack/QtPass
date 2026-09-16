@@ -163,7 +163,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   connect(QtPassSettings::getPass(), &Pass::finishedAnyWithPid, this,
           [this](const QString &out, const QString &err, Enums::PROCESS pid) {
             // Never route potentially-secret output through the panel:
-            // - PASS_SHOW / PASS_OTP_GENERATE go via dedicated signals to
+            // - PASS_SHOW goes via a dedicated signal to
             //   the main text browser (which clears on a timer).
             // - PASS_GREP returns lines from password files; #252 must
             //   not leak those into a long-lived panel.
@@ -2209,7 +2209,6 @@ auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
   case Enums::GPG_GENKEYS:
     return QStringLiteral("gpg --gen-key"); // no-tr
   case Enums::PASS_SHOW:
-  case Enums::PASS_OTP_GENERATE:
   case Enums::PROCESS_COUNT:
   case Enums::INVALID:
     break;
@@ -2221,7 +2220,7 @@ auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
  * @brief Checks if a process ID represents a sensitive operation whose
  * output should not be shown in the process output panel.
  *
- * Password-related commands (pass show, OTP generate, grep, insert)
+ * Password-related commands (pass show, grep, insert)
  * display their output in other UI areas, so we skip them here.
  *
  * @param pid The process ID to check.
@@ -2230,7 +2229,6 @@ auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
 auto MainWindow::isSensitiveProcess(Enums::PROCESS pid) -> bool {
   switch (pid) {
   case Enums::PASS_SHOW:
-  case Enums::PASS_OTP_GENERATE:
   case Enums::PASS_GREP:
   case Enums::PASS_INSERT:
     return true;

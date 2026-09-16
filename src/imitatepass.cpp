@@ -36,7 +36,6 @@ using Enums::PASS_GREP;
 using Enums::PASS_INIT;
 using Enums::PASS_INSERT;
 using Enums::PASS_MOVE;
-using Enums::PASS_OTP_GENERATE;
 using Enums::PASS_REMOVE;
 using Enums::PASS_SHOW;
 using Enums::PROCESS_COUNT;
@@ -168,18 +167,6 @@ void ImitatePass::Show(QString file) {
   QStringList args = {"-d",      "--quiet",     "--yes",   "--no-encrypt-to",
                       "--batch", "--use-agent", pgpg(file)};
   executeGpg(PASS_SHOW, args);
-}
-
-/**
- * @brief ImitatePass::OtpGenerate generates an otp code
- */
-void ImitatePass::OtpGenerate(QString file) {
-#ifdef QT_DEBUG
-  dbg() << "No OTP generation code for fake pass yet, attempting for file: " +
-               file;
-#else
-  Q_UNUSED(file)
-#endif
 }
 
 /**
