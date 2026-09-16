@@ -80,6 +80,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   browse buttons and the icon-only copy, QR and show/hide buttons have an
   accessible name and a tooltip, so a screen reader no longer announces
   them as "button"
+- Process output ending in a byte that is not valid UTF-8 lost that byte: the
+  decoder held it back as the start of a multi-byte sequence. It is decoded
+  statelessly now, so a stray Latin-1 character shows up as a replacement
+  character instead of disappearing
+- A queued command without a working directory of its own ran in whichever
+  directory the previous command used
 
 ### Removed
 
