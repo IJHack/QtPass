@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QApplication>
 #include <QMainWindow>
+#include <QPointer>
 #include <QSystemTrayIcon>
 #include <QtTest>
 
@@ -9,7 +10,7 @@
 
 /**
  * @class tst_trayicon
- * @brief Widget tests for TrayIcon.
+ * @brief Tests for TrayIcon.
  *
  * TrayIcon wraps QSystemTrayIcon and routes activation events back to the
  * parent QMainWindow. The QSystemTrayIcon side only initialises when the
@@ -37,6 +38,7 @@ private Q_SLOTS:
   void iconActivatedMiddleClickIsNoOp();
   void iconActivatedUnknownReasonIsNoOp();
   void getIsAllocatedMatchesPlatformTrayAvailability();
+  void isOwnedByItsParentWindow();
 };
 
 /**
@@ -52,6 +54,20 @@ void tst_trayicon::constructionStoresParent() {
   // The compiler enforces the bool return type, so this is really a
   // "doesn't crash" smoke check.
   Q_UNUSED(tray.getIsAllocated());
+}
+
+/**
+ * @brief The tray icon is owned by the window it belongs to, so destroying the
+ *        window destroys it (and with it the QSystemTrayIcon, which is what
+ *        removes the icon from the notification area).
+ */
+void tst_trayicon::isOwnedByItsParentWindow() {
+  auto *parent = new QMainWindow;
+  auto *tray = new TrayIcon(parent);
+  QCOMPARE(tray->parent(), parent);
+  QPointer<TrayIcon> guard(tray);
+  delete parent;
+  QVERIFY2(guard.isNull(), "deleting the window must delete the tray icon");
 }
 
 /**

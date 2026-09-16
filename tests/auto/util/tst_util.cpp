@@ -78,8 +78,8 @@ private:
   // Thin subclass that exposes protected members needed by env tests.
   // NOTE: environment() calls updateEnv(), which adds PASSWORD_STORE_* entries
   // to the internal env list and forwards it to exec via setEnvironment().
-  // Because Pass::setEnvVar removes all matching entries before appending,
-  // repeated calls to environment() are idempotent for PASSWORD_STORE_* vars.
+  // setEnvVar inserts into a QProcessEnvironment, so repeated calls to
+  // environment() are idempotent for PASSWORD_STORE_* vars.
   // Tests that call callSetEnvVar() directly work on the same env list, so
   // any subsequent environment() call will re-run updateEnv() and may
   // overwrite those entries — use callSetEnvVar() and environment() in the
@@ -198,7 +198,6 @@ private Q_SLOTS:
   void isValidKeyIdWithEmail();
   void isValidKeyIdUserIdSelectors();
   void isValidKeyIdInvalid();
-  void getRecipientStringCount();
   void getGpgIdPathBasic();
   void getGpgIdPathSubfolder();
   void getGpgIdPathNotFound();
@@ -1322,37 +1321,6 @@ void tst_util::isValidKeyIdInvalid() {
   QVERIFY(!Util::isValidKeyId("--list-secret-keys"));
 }
 
-void tst_util::getRecipientStringCount() {
-  QTemporaryDir tempDir;
-  QString passStore = tempDir.path();
-  QString gpgIdFile = passStore + "/.gpg-id";
-
-  QFile file(gpgIdFile);
-  QVERIFY(file.open(QIODevice::WriteOnly));
-  file.write("ABCDEF12\n34567890\n");
-  file.close();
-
-  int count = 0;
-  QStringList parsedRecipients =
-      Pass::getRecipientString(passStore, passStore, " ", &count);
-  QStringList recipientsNoCount =
-      Pass::getRecipientString(passStore, passStore, " ");
-
-  QStringList expectedRecipients = {"ABCDEF12", "34567890"};
-  // Verify count matches the expected number of parsed recipients.
-  QVERIFY(count > 0);
-  QCOMPARE(count, (int)expectedRecipients.size());
-  // Verify both overloads return the same result
-  QCOMPARE(parsedRecipients, recipientsNoCount);
-  // Verify that the parsed recipients match the expected values.
-  QVERIFY(parsedRecipients.contains("ABCDEF12"));
-  QVERIFY(parsedRecipients.contains("34567890"));
-  // Also verify that the recipients returned without count match the expected
-  // values.
-  QVERIFY(recipientsNoCount.contains("ABCDEF12"));
-  QVERIFY(recipientsNoCount.contains("34567890"));
-}
-
 void tst_util::getGpgIdPathBasic() {
   QTemporaryDir tempDir;
   QString passStore = tempDir.path();
@@ -2106,7 +2074,7 @@ void tst_util::findBinaryInPathSearchPathsRejectAbsoluteAndRelativePaths() {
 
 void tst_util::setEnvVarAdds() {
   TestPass pass;
-  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("hello"));
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY"), QStringLiteral("hello"));
   const QProcessEnvironment env = pass.environment();
   QVERIFY2(env.value(QStringLiteral("TEST_KEY")) == QStringLiteral("hello"),
            "setEnvVar should set key=value when absent");
@@ -2114,16 +2082,16 @@ void tst_util::setEnvVarAdds() {
 
 void tst_util::setEnvVarUpdates() {
   TestPass pass;
-  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("first"));
-  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("second"));
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY"), QStringLiteral("first"));
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY"), QStringLiteral("second"));
   const QProcessEnvironment env = pass.environment();
   QCOMPARE(env.value(QStringLiteral("TEST_KEY")), QStringLiteral("second"));
 }
 
 void tst_util::setEnvVarRemoves() {
   TestPass pass;
-  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("value"));
-  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QString());
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY"), QStringLiteral("value"));
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY"), QString());
   const QProcessEnvironment env = pass.environment();
   QVERIFY2(!env.contains(QStringLiteral("TEST_KEY")),
            "setEnvVar with empty value should remove the entry");
@@ -2132,7 +2100,7 @@ void tst_util::setEnvVarRemoves() {
 void tst_util::setEnvVarNoopOnMissingRemove() {
   TestPass pass;
   const QProcessEnvironment before = pass.environment();
-  pass.callSetEnvVar(QStringLiteral("NONEXISTENT_KEY="), QString());
+  pass.callSetEnvVar(QStringLiteral("NONEXISTENT_KEY"), QString());
   QCOMPARE(pass.environment(), before);
 }
 

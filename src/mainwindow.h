@@ -9,7 +9,6 @@
 
 #include <QDialog>
 #include <QFileSystemModel>
-#include <QItemSelectionModel>
 #include <QMainWindow>
 #include <QPointer>
 #include <QProcess>
@@ -356,7 +355,6 @@ private:
   QToolButton *m_clearOutputButton = nullptr;
   QFileSystemModel model;
   StoreModel proxyModel;
-  QScopedPointer<QItemSelectionModel> selectionModel;
   QTimer clearPanelTimer, searchTimer;
   // Re-enables the UI if a backend operation disables it but never reports
   // completion (see setUiElementsEnabled).

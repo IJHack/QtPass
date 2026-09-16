@@ -772,34 +772,17 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
 }
 
 /**
- * @brief Set or remove a single environment variable in the local env list.
+ * @brief Set or remove a single environment variable.
  *
- * The provided key must include a trailing '=' (e.g. "FOO="). Existing entries
- * whose text begins with the given key are removed before the new value is
- * applied. If value is non-empty the pair "key+value" is appended; if value is
- * empty the variable is removed.
- *
- * The function asserts if key does not end with '='; if the assertion is not
- * active it will emit a warning and return without modifying env.
- *
- * @param key Environment variable name with trailing '=' (anchors the lookup).
- * @param value Value to set for the variable; an empty string unsets the
- * variable.
+ * @param name Variable name, without a trailing '=' (e.g.
+ * "PASSWORD_STORE_DIR").
+ * @param value New value; an empty string removes the variable entirely.
  */
-void Pass::setEnvVar(const QString &key, const QString &value) {
-  const bool hasEq = key.endsWith('=');
-  Q_ASSERT_X(hasEq, "Pass::setEnvVar",
-             "called with malformed key (missing '=')");
-  if (!hasEq) {
-    qWarning() << "Pass::setEnvVar called with malformed key (missing '='):"
-               << key;
-    return;
-  }
-  const QString varName = key.chopped(1);
+void Pass::setEnvVar(const QString &name, const QString &value) {
   if (value.isEmpty())
-    env.remove(varName);
+    env.remove(name);
   else
-    env.insert(varName, value);
+    env.insert(name, value);
 }
 
 /**
@@ -811,15 +794,15 @@ void Pass::setEnvVar(const QString &key, const QString &value) {
  * environment to the internal executor.
  */
 void Pass::updateEnv() {
-  setEnvVar(QStringLiteral("PASSWORD_STORE_SIGNING_KEY="),
+  setEnvVar(QStringLiteral("PASSWORD_STORE_SIGNING_KEY"),
             m_settings.passSigningKey);
-  setEnvVar(QStringLiteral("PASSWORD_STORE_DIR="), m_settings.passStore);
+  setEnvVar(QStringLiteral("PASSWORD_STORE_DIR"), m_settings.passStore);
 
   const PasswordConfiguration &passConfig = m_settings.passwordConfiguration;
-  setEnvVar(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH="),
+  setEnvVar(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH"),
             QString::number(passConfig.length));
 
-  setEnvVar(QStringLiteral("PASSWORD_STORE_CHARACTER_SET="),
+  setEnvVar(QStringLiteral("PASSWORD_STORE_CHARACTER_SET"),
             effectiveCharset(passConfig));
 
   exec.setEnvironment(env);
@@ -887,24 +870,6 @@ auto Pass::getRecipientList(const QString &for_file, const QString &passStore)
       continue;
     }
     recipients += recipient;
-  }
-  return recipients;
-}
-
-/**
- * @brief Pass::getRecipientString formatted string for use with GPG
- * @param for_file which file (folder) would you like recipients for
- * @param separator formatting separator eg: " -r "
- * @param count
- * @return recipient string
- */
-auto Pass::getRecipientString(const QString &for_file, const QString &passStore,
-                              const QString &separator, int *count)
-    -> QStringList {
-  Q_UNUSED(separator)
-  QStringList recipients = Pass::getRecipientList(for_file, passStore);
-  if (count) {
-    *count = static_cast<int>(recipients.size());
   }
   return recipients;
 }

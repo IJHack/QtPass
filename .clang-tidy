@@ -1,3 +1,8 @@
 Checks: 'modernize-*,performance-*,bugprone-*,google-explicit-constructor,google-build-using-namespace,google-runtime-int,google-default-arguments,-modernize-use-trailing-return-type,-modernize-use-nodiscard,-bugprone-throwing-static-initialization,-bugprone-easily-swappable-parameters'
 WarningsAsErrors: '*'
-HeaderFilterRegex: '^(?!.*qprogressindicator).*$'
+# clang-tidy matches this with llvm::Regex (POSIX ERE), which has no
+# lookahead: the previous '^(?!.*qprogressindicator).*$' therefore matched no
+# header at all, so nothing in src/*.h was ever checked. Select our own
+# headers positively and exclude the vendored QProgressIndicator separately.
+HeaderFilterRegex: 'src/[a-z0-9_]+\.h$'
+ExcludeHeaderFilterRegex: '.*qprogressindicator.*'

@@ -54,7 +54,7 @@ public:
    * @brief DeselectableTreeView standard constructor
    * @param parent
    */
-  DeselectableTreeView(QWidget *parent) : QTreeView(parent) {}
+  explicit DeselectableTreeView(QWidget *parent) : QTreeView(parent) {}
   /**
    * @brief ~DeselectableTreeView standard destructor
    */

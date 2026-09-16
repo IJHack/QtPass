@@ -247,18 +247,6 @@ public:
   static auto getRecipientList(const QString &for_file,
                                const QString &passStore) -> QStringList;
   /**
-   * @brief Get recipients as string.
-   * @param for_file Path to password file.
-   * @param passStore Root directory of the password store.
-   * @param separator Separator between recipients.
-   * @param count Pointer to store recipient count.
-   * @return List of recipient key IDs.
-   */
-  static auto getRecipientString(const QString &for_file,
-                                 const QString &passStore,
-                                 const QString &separator = " ",
-                                 int *count = nullptr) -> QStringList;
-  /**
    * @brief Seed a new folder's .gpg-id from the recipients it inherits.
    *
    * Writes the recipient list that is in effect for @p newDir (found by
@@ -301,15 +289,10 @@ protected:
   /**
    * @brief Set or remove an environment variable.
    *
-   * The @p key must include a trailing '=' character (e.g. "FOO="). This
-   * convention anchors the lookup so that "FOO=" never accidentally matches
-   * "FOOBAR=". Callers are responsible for appending the '='; the function
-   * asserts and warns (but does not modify env) if the '=' is missing.
-   *
-   * @param key Variable name with trailing '=' (e.g. "PASSWORD_STORE_DIR=").
+   * @param name Variable name (e.g. "PASSWORD_STORE_DIR"), no trailing '='.
    * @param value New value; an empty string removes the variable entirely.
    */
-  void setEnvVar(const QString &key, const QString &value);
+  void setEnvVar(const QString &name, const QString &value);
 
   /**
    * @brief Execute wrapper with input.

@@ -15,7 +15,7 @@
  * it (currently) only Quits.
  * @param parent
  */
-TrayIcon::TrayIcon(QMainWindow *parent) {
+TrayIcon::TrayIcon(QMainWindow *parent) : QObject(parent) {
   parentwin = parent;
 
   if (QSystemTrayIcon::isSystemTrayAvailable()) {
@@ -72,7 +72,9 @@ void TrayIcon::createActions() {
  * @brief TrayIcon::createTrayIcon set up menu.
  */
 void TrayIcon::createTrayIcon() {
-  trayIconMenu = new QMenu(this);
+  // QMenu needs a widget parent; the main window owns the menu, this object
+  // owns the tray icon.
+  trayIconMenu = new QMenu(parentwin);
   trayIconMenu->addAction(showAction);
   trayIconMenu->addAction(hideAction);
   trayIconMenu->addAction(minimizeAction);
