@@ -1,10 +1,7 @@
 Makefile
-debian/qtpass*
-debian/files
-build-stamp
 qtpass
 QtPass.app
-QtPass.dmg
+QtPass-*.dmg
 qtpass.pro.user
 qtpass.xcodeproj/project.xcworkspace/xcuserdata/*
 qtpass.xcodeproj/xcuserdata/*
@@ -53,7 +50,6 @@ tests/auto/passbackendfactory/tst_passbackendfactory
 *.bak
 README.c*
 README.faq
-README.rtf
 html/**
 rtf/**
 latex/**

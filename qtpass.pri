@@ -65,8 +65,6 @@ isEmpty(QMAKE_LUPDATE) {
     }
 }
 
-winstore: DEFINES += "WINSTORE=1"
-
 win32 {
     RC_FILE = ../windows.rc
     static {

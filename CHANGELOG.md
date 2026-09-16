@@ -83,6 +83,13 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Removed
 
+- The dead packaging leftovers: `release-winstore.bat` (Qt 5
+  `windeployqt --no-angle`, a hardcoded VS2017 redist path, the Windows Store
+  build that never shipped), `release-zip.mak` (pinned to v1.5.1, timestamps against the
+  defunct StartSSL), `key_management.bat`, the `WINSTORE` build flag with its
+  Store-only GnuPG hint, and the `debian/` ignore rules for a directory that
+  no longer exists. `scripts/release-mac.sh` builds the DMG with `create-dmg`
+  like the release workflow, so `appdmg.json` and the pandoc RTF step are gone
 - Qt 5 support. QtPass 2.x requires Qt 6.8 or newer; `qmake` refuses older
   Qt with a clear message. All `QT_VERSION` compatibility branches for Qt 5
   and the `splitCommandCompat()` / `disconnectSingleShot()` shims are gone
