@@ -12,6 +12,7 @@
 
 #include <QAction>
 #include <QCheckBox>
+#include <QComboBox>
 #include <QDialogButtonBox>
 #include <QFileInfo>
 #include <QHash>
@@ -20,6 +21,7 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QShortcut>
+#include <QSignalBlocker>
 #include <utility>
 
 #ifdef QT_DEBUG
@@ -44,6 +46,7 @@ PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
   ui->setupUi(this);
   connect(ui->checkBoxShow, &QCheckBox::toggled, this,
           &PasswordDialog::setPasswordVisible);
+  setupTemplateBox();
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
 
@@ -64,6 +67,7 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
   ui->setupUi(this);
   connect(ui->checkBoxShow, &QCheckBox::toggled, this,
           &PasswordDialog::setPasswordVisible);
+  setupTemplateBox();
 
   setWindowTitle(this->windowTitle() + " " + m_file);
   m_passConfig = s.passwordConfiguration;
@@ -437,7 +441,27 @@ void PasswordDialog::usePwgen(bool usePwgen) {
 }
 
 /**
+ * @brief Hide the template row until setAvailableTemplates() fills it and
+ *        make a pick in the box apply that template.
+ */
+void PasswordDialog::setupTemplateBox() {
+  ui->label_template->hide();
+  ui->templateBox->hide();
+  connect(ui->templateBox, &QComboBox::currentTextChanged, this,
+          [this](const QString &name) {
+            // applyTemplate() rebuilds the field rows, so only act on a real
+            // change; the box is also updated from applyTemplate() itself.
+            if (name != m_currentTemplateName) {
+              applyTemplate(name);
+            }
+          });
+}
+
+/**
  * @brief Set available templates from .templates file and apply default.
+ *
+ * Shows the template row with the names, selects @p defaultTemplate (or the
+ * first name) and enables Ctrl+T to cycle through them.
  * @param templates Hash of template name to field list.
  * @param defaultTemplate Name of default template to select.
  */
@@ -450,6 +474,17 @@ void PasswordDialog::setAvailableTemplates(
     return;
   }
   std::sort(templateNames.begin(), templateNames.end());
+  {
+    const QSignalBlocker blocker(ui->templateBox);
+    ui->templateBox->clear();
+    ui->templateBox->addItems(templateNames);
+  }
+  ui->label_template->show();
+  ui->templateBox->show();
+  if (!m_templateShortcut) {
+    m_templateShortcut = new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_T), this,
+                                       this, [this] { cycleTemplate(); });
+  }
   QString selected = defaultTemplate;
   if (!templateNames.contains(selected)) {
     selected = templateNames.first();
@@ -465,6 +500,8 @@ void PasswordDialog::applyTemplate(const QString &templateName) {
   auto it = m_availableTemplates.constFind(templateName);
   if (it != m_availableTemplates.constEnd()) {
     m_currentTemplateName = templateName;
+    const QSignalBlocker blocker(ui->templateBox);
+    ui->templateBox->setCurrentText(templateName);
     QString fields = it.value().join("\n");
     setTemplate(fields, true);
   }

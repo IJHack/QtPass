@@ -16,6 +16,7 @@ class PasswordDialog;
 class Pass;
 class QAction;
 class QLineEdit;
+class QShortcut;
 class QWidget;
 
 /**
@@ -194,6 +195,8 @@ private:
   QList<QLineEdit *> m_otherLines;
   QHash<QString, QStringList> m_availableTemplates;
   QString m_currentTemplateName;
+  /// Ctrl+T, created once templates are available; owned by the dialog.
+  QShortcut *m_templateShortcut{nullptr};
   /// Warning indicator shown inside the OTP field; owned by that field.
   ///
   /// QPointer, not a raw pointer: the QAction is parented to the QLineEdit, and
@@ -205,6 +208,7 @@ private:
   bool m_otpFieldEdited{false};
 
   void applyTemplate(const QString &templateName);
+  void setupTemplateBox();
 };
 
 #endif // SRC_PASSWORDDIALOG_H_
