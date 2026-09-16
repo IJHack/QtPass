@@ -29,6 +29,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   when nothing was saved, and not on Wayland, where placement is the
   compositor's. The redundant `pos`, `size`, `maximized` and `dialog/pos|size|maximized`
   settings keys are gone
+- The Users dialog claimed "Existing files will not be modified" while OK
+  re-encrypts the whole folder; the help text now says so, describes entries
+  by weight instead of by "black" text, and explains the `[INVALID]`,
+  `[EXPIRED]` and `[PARTIAL]` markers. Expired keys were dark-red text on the
+  default background, unreadable on dark themes; they get the same red badge
+  as invalid keys
 - The Edit dialog turned every `key: value` line into a label-locked field
   since 1.8.0, also with templates off, so those keys could no longer be
   edited as text ([#1138](https://github.com/IJHack/QtPass/pull/1138) forced "all fields" on for [#132](https://github.com/IJHack/QtPass/issues/132)). Which lines become

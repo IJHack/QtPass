@@ -311,7 +311,10 @@ void UsersDialog::applyUserStyling(QListWidgetItem *item,
     item->setForeground(Qt::white);
     item->setText(tr("[INVALID] ") + originalText);
   } else if (isUserExpired(user)) {
-    item->setForeground(Qt::darkRed);
+    // Same treatment as invalid: a lone dark-red foreground is unreadable on
+    // dark themes, and gpg refuses to encrypt to expired keys anyway.
+    item->setBackground(Qt::darkRed);
+    item->setForeground(Qt::white);
     item->setText(tr("[EXPIRED] ") + originalText);
   } else if (!user.fullyValid()) {
     item->setBackground(Qt::darkYellow);
