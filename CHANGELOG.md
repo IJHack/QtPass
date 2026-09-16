@@ -86,6 +86,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   character instead of disappearing
 - A queued command without a working directory of its own ran in whichever
   directory the previous command used
+- The settings dialog opened at its layout minimum (659×728) and could not be
+  made smaller, so a wide translation pushed OK off a 1280×720 screen. Each
+  tab scrolls now, the five wide checkbox rows wrap into two columns, and the
+  six bold labels that stood in for section headers are real group boxes
+  (same strings, so translations carry over). The "Extensions:" header is no
+  longer hidden on Windows, where OTP and content search still live under it
 
 ### Removed
 

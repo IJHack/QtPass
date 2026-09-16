@@ -45,653 +45,619 @@
       <attribute name="title">
        <string>Settings</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <layout class="QVBoxLayout" name="Tab_Settings_outer">
        <property name="leftMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="topMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="rightMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="bottomMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <item>
-        <layout class="QVBoxLayout" name="Layout_Clipboard">
-         <item>
-          <widget class="QLabel" name="label_8">
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Clipboard behaviour:</string>
-           </property>
-           <property name="buddy">
-            <cstring>comboBoxClipboard</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QComboBox" name="comboBoxClipboard">
-             <property name="minimumSize">
-              <size>
-               <width>140</width>
-               <height>0</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="checkBoxSelection">
-             <property name="text">
-              <string>Use primary selection</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="checkBoxAutoclear">
-             <property name="text">
-              <string>Autoclear after:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QSpinBox" name="spinBoxAutoclearSeconds">
-             <property name="minimum">
-              <number>5</number>
-             </property>
-             <property name="value">
-              <number>10</number>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="labelSeconds">
-             <property name="text">
-              <string>Seconds</string>
-             </property>
-             <property name="buddy">
-              <cstring>spinBoxAutoclearSeconds</cstring>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_4">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="Layout_PasswordBehaviour">
-         <item>
-          <widget class="QLabel" name="label_6">
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Content panel behaviour:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_6">
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QCheckBox" name="checkBoxHideContent">
-             <property name="text">
-              <string>Hide content</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="checkBoxHidePassword">
-             <property name="text">
-              <string>Hide password</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_7">
-             <item>
-              <widget class="QCheckBox" name="checkBoxAutoclearPanel">
-               <property name="text">
-                <string>Autoclear panel after:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="spinBoxAutoclearPanelSeconds">
-               <property name="minimum">
-                <number>5</number>
-               </property>
-               <property name="value">
-                <number>10</number>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="labelPanelSeconds">
-               <property name="minimumSize">
-                <size>
-                 <width>55</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Seconds</string>
-               </property>
-               <property name="buddy">
-                <cstring>spinBoxAutoclearPanelSeconds</cstring>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_5">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_19">
-           <item>
-            <widget class="QCheckBox" name="checkBoxUseMonospace">
-             <property name="text">
-              <string>Use a monospace font</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="checkBoxDisplayAsIs">
-             <property name="text">
-              <string>Display the files content as-is</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="checkBoxNoLineWrapping">
-             <property name="text">
-              <string>No line wrapping</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="checkBoxShowProcessOutput">
-             <property name="text">
-              <string>Show process output</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_9">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="Layout_PasswordGeneration">
-         <item>
-          <widget class="QLabel" name="label_4">
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Password Generation:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QFormLayout" name="formLayout_2">
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_7">
-             <property name="text">
-              <string>Password Length:</string>
-             </property>
-             <property name="buddy">
-              <cstring>spinBoxPasswordLength</cstring>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <layout class="QHBoxLayout" name="horizontalLayout_13">
-             <item>
-              <widget class="QSpinBox" name="spinBoxPasswordLength">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>50</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="minimum">
-                <number>8</number>
-               </property>
-               <property name="maximum">
-                <number>255</number>
-               </property>
-               <property name="value">
-                <number>16</number>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="labelLength">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="text">
-                <string>Characters</string>
-               </property>
-               <property name="buddy">
-                <cstring>spinBoxPasswordLength</cstring>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeType">
-                <enum>QSizePolicy::Expanding</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="labelPasswordChars">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="text">
-              <string>Use characters:</string>
-             </property>
-             <property name="buddy">
-              <cstring>passwordCharTemplateSelector</cstring>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <layout class="QHBoxLayout" name="horizontalLayout_10">
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QComboBox" name="passwordCharTemplateSelector">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="toolTip">
-                <string>Select character set for password generation</string>
-               </property>
-               <item>
-                <property name="text">
-                 <string>All Characters</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Alphabetical</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Alphanumerical</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Custom</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_3">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </item>
-           <item row="2" column="1">
-            <widget class="QLineEdit" name="lineEditPasswordChars">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>600</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QFormLayout" name="formLayout">
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <item row="0" column="0">
-            <widget class="QCheckBox" name="checkBoxUsePwgen">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="text">
-              <string>Use PWGen</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QCheckBox" name="checkBoxAvoidCapitals">
-             <property name="text">
-              <string>Exclude capital letters</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="1">
-            <widget class="QCheckBox" name="checkBoxUseSymbols">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="text">
-              <string>Include special symbols</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QCheckBox" name="checkBoxLessRandom">
-             <property name="text">
-              <string>Generate easy to memorize but less secure passwords</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QCheckBox" name="checkBoxAvoidNumbers">
-             <property name="text">
-              <string>Exclude numbers</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="Layout_Git">
-         <item>
-          <widget class="QLabel" name="label_3">
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Git:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_9">
-           <item>
-            <widget class="QCheckBox" name="checkBoxUseGit">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="text">
-              <string>Use Git</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_12">
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QCheckBox" name="checkBoxAddGPGId">
-             <property name="text">
-              <string>Automatically add .gpg-id files</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="checkBoxAutoPush">
-             <property name="text">
-              <string>Automatically push</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="checkBoxAutoPull">
-             <property name="text">
-              <string>Automatically pull</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_7">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="Extensions">
-         <item>
-          <widget class="QLabel" name="label_10">
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Extensions:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_16">
-           <item>
-            <widget class="QCheckBox" name="checkBoxUseQrencode">
-             <property name="text">
-              <string>Use QRencode</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_14">
-           <item>
-            <widget class="QCheckBox" name="checkBoxUseOtp">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="text">
-              <string>Enable one-time password (OTP) support</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayoutUseGrep">
-           <item>
-            <widget class="QCheckBox" name="checkBoxUseGrepSearch">
-             <property name="text">
-              <string>Enable content search (pass grep)</string>
-             </property>
-             <property name="toolTip">
-              <string>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="Layout_System">
-         <property name="topMargin">
-          <number>0</number>
+        <widget class="QScrollArea" name="scrollSettings">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
          </property>
-         <item>
-          <widget class="QLabel" name="label_5">
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollSettingsContents">
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <property name="leftMargin">
+            <number>6</number>
            </property>
-           <property name="text">
-            <string>System:</string>
+           <property name="topMargin">
+            <number>6</number>
            </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_11">
+           <property name="rightMargin">
+            <number>6</number>
+           </property>
            <property name="bottomMargin">
-            <number>0</number>
+            <number>6</number>
            </property>
            <item>
-            <widget class="QCheckBox" name="checkBoxUseTrayIcon">
-             <property name="text">
-              <string>Use TrayIcon</string>
+            <widget class="QGroupBox" name="groupBoxClipboard">
+             <property name="title">
+              <string>Clipboard behaviour:</string>
              </property>
+             <layout class="QVBoxLayout" name="Layout_Clipboard">
+              <item>
+               <layout class="QGridLayout" name="gridLayoutClipboard">
+                <item row="0" column="0">
+                 <widget class="QComboBox" name="comboBoxClipboard">
+                  <property name="minimumSize">
+                   <size>
+                    <width>140</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1" colspan="2">
+                 <widget class="QCheckBox" name="checkBoxSelection">
+                  <property name="text">
+                   <string>Use primary selection</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QCheckBox" name="checkBoxAutoclear">
+                  <property name="text">
+                   <string>Autoclear after:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QSpinBox" name="spinBoxAutoclearSeconds">
+                  <property name="minimum">
+                   <number>5</number>
+                  </property>
+                  <property name="value">
+                   <number>10</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QLabel" name="labelSeconds">
+                  <property name="text">
+                   <string>Seconds</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>spinBoxAutoclearSeconds</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="3" rowspan="2">
+                 <spacer name="gridLayoutClipboardSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="checkBoxStartMinimized">
-             <property name="text">
-              <string>Start minimized</string>
+            <widget class="QGroupBox" name="groupBoxContentPanel">
+             <property name="title">
+              <string>Content panel behaviour:</string>
              </property>
+             <layout class="QVBoxLayout" name="Layout_PasswordBehaviour">
+              <item>
+               <layout class="QGridLayout" name="gridLayoutContentPanel">
+                <item row="0" column="0">
+                 <widget class="QCheckBox" name="checkBoxHideContent">
+                  <property name="text">
+                   <string>Hide content</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QCheckBox" name="checkBoxHidePassword">
+                  <property name="text">
+                   <string>Hide password</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0" colspan="2">
+                 <layout class="QHBoxLayout" name="horizontalLayout_7">
+                  <item>
+                   <widget class="QCheckBox" name="checkBoxAutoclearPanel">
+                    <property name="text">
+                     <string>Autoclear panel after:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxAutoclearPanelSeconds">
+                    <property name="minimum">
+                     <number>5</number>
+                    </property>
+                    <property name="value">
+                     <number>10</number>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="labelPanelSeconds">
+                    <property name="minimumSize">
+                     <size>
+                      <width>55</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Seconds</string>
+                    </property>
+                    <property name="buddy">
+                     <cstring>spinBoxAutoclearPanelSeconds</cstring>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="0" column="2" rowspan="2">
+                 <spacer name="gridLayoutContentPanelSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QGridLayout" name="gridLayoutPanelOptions">
+                <item row="0" column="0">
+                 <widget class="QCheckBox" name="checkBoxUseMonospace">
+                  <property name="text">
+                   <string>Use a monospace font</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QCheckBox" name="checkBoxDisplayAsIs">
+                  <property name="text">
+                   <string>Display the files content as-is</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QCheckBox" name="checkBoxNoLineWrapping">
+                  <property name="text">
+                   <string>No line wrapping</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QCheckBox" name="checkBoxShowProcessOutput">
+                  <property name="text">
+                   <string>Show process output</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2" rowspan="2">
+                 <spacer name="gridLayoutPanelOptionsSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="checkBoxHideOnClose">
-             <property name="text">
-              <string>Hide on close</string>
+            <widget class="QGroupBox" name="groupBoxPasswordGeneration">
+             <property name="title">
+              <string>Password Generation:</string>
              </property>
+             <layout class="QVBoxLayout" name="Layout_PasswordGeneration">
+              <item>
+               <layout class="QFormLayout" name="formLayout_2">
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_7">
+                  <property name="text">
+                   <string>Password Length:</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>spinBoxPasswordLength</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayout_13">
+                  <item>
+                   <widget class="QSpinBox" name="spinBoxPasswordLength">
+                    <property name="enabled">
+                     <bool>true</bool>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>50</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="minimum">
+                     <number>8</number>
+                    </property>
+                    <property name="maximum">
+                     <number>255</number>
+                    </property>
+                    <property name="value">
+                     <number>16</number>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="labelLength">
+                    <property name="enabled">
+                     <bool>true</bool>
+                    </property>
+                    <property name="text">
+                     <string>Characters</string>
+                    </property>
+                    <property name="buddy">
+                     <cstring>spinBoxPasswordLength</cstring>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_2">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Expanding</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="labelPasswordChars">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="text">
+                   <string>Use characters:</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>passwordCharTemplateSelector</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayout_10">
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QComboBox" name="passwordCharTemplateSelector">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="toolTip">
+                     <string>Select character set for password generation</string>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>All Characters</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Alphabetical</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Alphanumerical</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Custom</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="lineEditPasswordChars">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>600</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QFormLayout" name="formLayout">
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QCheckBox" name="checkBoxUsePwgen">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="text">
+                   <string>Use PWGen</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QCheckBox" name="checkBoxAvoidCapitals">
+                  <property name="text">
+                   <string>Exclude capital letters</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QCheckBox" name="checkBoxUseSymbols">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="text">
+                   <string>Include special symbols</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QCheckBox" name="checkBoxLessRandom">
+                  <property name="text">
+                   <string>Generate easy to memorize but less secure passwords</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QCheckBox" name="checkBoxAvoidNumbers">
+                  <property name="text">
+                   <string>Exclude numbers</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="checkBoxAlwaysOnTop">
-             <property name="text">
-              <string>Always on top</string>
+            <widget class="QGroupBox" name="groupBoxGit">
+             <property name="title">
+              <string>Git:</string>
              </property>
+             <layout class="QVBoxLayout" name="Layout_Git">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_9">
+                <item>
+                 <widget class="QCheckBox" name="checkBoxUseGit">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="text">
+                   <string>Use Git</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QGridLayout" name="gridLayoutGit">
+                <item row="0" column="0">
+                 <widget class="QCheckBox" name="checkBoxAddGPGId">
+                  <property name="text">
+                   <string>Automatically add .gpg-id files</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QCheckBox" name="checkBoxAutoPush">
+                  <property name="text">
+                   <string>Automatically push</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QCheckBox" name="checkBoxAutoPull">
+                  <property name="text">
+                   <string>Automatically pull</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2" rowspan="2">
+                 <spacer name="gridLayoutGitSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </widget>
            </item>
            <item>
-            <spacer name="horizontalSpacer_6">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
+            <widget class="QGroupBox" name="groupBoxExtensions">
+             <property name="title">
+              <string>Extensions:</string>
              </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
+             <layout class="QVBoxLayout" name="Extensions">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_16">
+                <item>
+                 <widget class="QCheckBox" name="checkBoxUseQrencode">
+                  <property name="text">
+                   <string>Use QRencode</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_14">
+                <item>
+                 <widget class="QCheckBox" name="checkBoxUseOtp">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="text">
+                   <string>Enable one-time password (OTP) support</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayoutUseGrep">
+                <item>
+                 <widget class="QCheckBox" name="checkBoxUseGrepSearch">
+                  <property name="text">
+                   <string>Enable content search (pass grep)</string>
+                  </property>
+                  <property name="toolTip">
+                   <string>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBoxSystem">
+             <property name="title">
+              <string>System:</string>
              </property>
-            </spacer>
+             <layout class="QVBoxLayout" name="Layout_System">
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <layout class="QGridLayout" name="gridLayoutSystem">
+                <item row="0" column="0">
+                 <widget class="QCheckBox" name="checkBoxUseTrayIcon">
+                  <property name="text">
+                   <string>Use TrayIcon</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QCheckBox" name="checkBoxStartMinimized">
+                  <property name="text">
+                   <string>Start minimized</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QCheckBox" name="checkBoxHideOnClose">
+                  <property name="text">
+                   <string>Hide on close</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QCheckBox" name="checkBoxAlwaysOnTop">
+                  <property name="text">
+                   <string>Always on top</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2" rowspan="2">
+                 <spacer name="gridLayoutSystemSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
            </item>
           </layout>
-         </item>
-        </layout>
+         </widget>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -699,277 +665,303 @@
       <attribute name="title">
        <string>Programs</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QVBoxLayout" name="Tab_Programs_outer">
        <property name="leftMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="topMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="rightMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="bottomMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <item>
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>Select password storage program:</string>
+        <widget class="QScrollArea" name="scrollPrograms">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
          </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item>
-          <widget class="QRadioButton" name="radioButtonNative">
-           <property name="text">
-            <string>Nati&amp;ve Git/GPG</string>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollProgramsContents">
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="leftMargin">
+            <number>6</number>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="radioButtonPass">
-           <property name="text">
-            <string>&amp;Use pass</string>
+           <property name="topMargin">
+            <number>6</number>
            </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QWidget" name="widget" native="true">
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QGroupBox" name="groupBoxNative">
-            <property name="title">
-             <string>Native</string>
-            </property>
-            <layout class="QGridLayout" name="gridLayout">
-             <item row="1" column="0">
-              <widget class="QLabel" name="labelGitPath">
+           <property name="rightMargin">
+            <number>6</number>
+           </property>
+           <property name="bottomMargin">
+            <number>6</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>Select password storage program:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QRadioButton" name="radioButtonNative">
                <property name="text">
-                <string>Git</string>
-               </property>
-               <property name="buddy">
-                <cstring>gitPath</cstring>
+                <string>Nati&amp;ve Git/GPG</string>
                </property>
               </widget>
              </item>
-             <item row="0" column="1">
-              <widget class="QLineEdit" name="gpgPath"/>
-             </item>
-             <item row="0" column="2">
-              <widget class="QToolButton" name="toolButtonGpg">
-               <property name="toolTip">
-                <string>Choose the gpg executable</string>
-               </property>
-               <property name="accessibleName">
-                <string>Choose the gpg executable</string>
-               </property>
+             <item>
+              <widget class="QRadioButton" name="radioButtonPass">
                <property name="text">
-                <string>…</string>
-               </property>
-              </widget>
-             </item>
-              <item row="1" column="2">
-               <widget class="QToolButton" name="toolButtonGit">
-                <property name="toolTip">
-                 <string>Choose the git executable</string>
-                </property>
-                <property name="accessibleName">
-                 <string>Choose the git executable</string>
-                </property>
-                <property name="text">
-                 <string>…</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="3">
-               <widget class="QPushButton" name="pushButtonGenerateKey">
-                <property name="maximumSize">
-                 <size>
-                  <width>100</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>Generate</string>
-                </property>
-                <property name="toolTip">
-                 <string>Generate GPG key pair</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-              <widget class="QLabel" name="labelGpgPath">
-               <property name="text">
-                <string>GPG</string>
-               </property>
-               <property name="buddy">
-                <cstring>gpgPath</cstring>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="1">
-              <widget class="QLineEdit" name="gitPath"/>
-             </item>
-             <item row="2" column="1">
-              <widget class="QLineEdit" name="pwgenPath"/>
-             </item>
-             <item row="2" column="0">
-              <widget class="QLabel" name="labelPwgenPath">
-               <property name="text">
-                <string>PWGen</string>
-               </property>
-               <property name="buddy">
-                <cstring>pwgenPath</cstring>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="2">
-              <widget class="QToolButton" name="toolButtonPwgen">
-               <property name="toolTip">
-                <string>Choose the pwgen executable</string>
-               </property>
-               <property name="accessibleName">
-                <string>Choose the pwgen executable</string>
-               </property>
-               <property name="text">
-                <string>…</string>
+                <string>&amp;Use pass</string>
                </property>
               </widget>
              </item>
             </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGroupBox" name="groupBoxPass">
-            <property name="title">
-             <string>Pass</string>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_4">
+           </item>
+           <item>
+            <widget class="QWidget" name="widget" native="true">
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QGroupBox" name="groupBoxNative">
+                <property name="title">
+                 <string>Native</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout">
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="labelGitPath">
+                   <property name="text">
+                    <string>Git</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>gitPath</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="gpgPath"/>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QToolButton" name="toolButtonGpg">
+                   <property name="toolTip">
+                    <string>Choose the gpg executable</string>
+                   </property>
+                   <property name="accessibleName">
+                    <string>Choose the gpg executable</string>
+                   </property>
+                   <property name="text">
+                    <string>…</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QToolButton" name="toolButtonGit">
+                   <property name="toolTip">
+                    <string>Choose the git executable</string>
+                   </property>
+                   <property name="accessibleName">
+                    <string>Choose the git executable</string>
+                   </property>
+                   <property name="text">
+                    <string>…</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QPushButton" name="pushButtonGenerateKey">
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Generate</string>
+                   </property>
+                   <property name="toolTip">
+                    <string>Generate GPG key pair</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="labelGpgPath">
+                   <property name="text">
+                    <string>GPG</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>gpgPath</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="gitPath"/>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLineEdit" name="pwgenPath"/>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="labelPwgenPath">
+                   <property name="text">
+                    <string>PWGen</string>
+                   </property>
+                   <property name="buddy">
+                    <cstring>pwgenPath</cstring>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QToolButton" name="toolButtonPwgen">
+                   <property name="toolTip">
+                    <string>Choose the pwgen executable</string>
+                   </property>
+                   <property name="accessibleName">
+                    <string>Choose the pwgen executable</string>
+                   </property>
+                   <property name="text">
+                    <string>…</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="groupBoxPass">
+                <property name="title">
+                 <string>Pass</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_4">
+                   <property name="sizeConstraint">
+                    <enum>QLayout::SetMinimumSize</enum>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="labelPassPath">
+                     <property name="text">
+                      <string>pass</string>
+                     </property>
+                     <property name="buddy">
+                      <cstring>passPath</cstring>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="passPath"/>
+                   </item>
+                   <item>
+                    <widget class="QToolButton" name="toolButtonPass">
+                     <property name="toolTip">
+                      <string>Choose the pass executable</string>
+                     </property>
+                     <property name="accessibleName">
+                      <string>Choose the pass executable</string>
+                     </property>
+                     <property name="text">
+                      <string>…</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="zx2c4">
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href="https://www.passwordstore.org/"&gt;&lt;span style=" text-decoration: underline;"&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="openExternalLinks">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_15">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_4">
-               <property name="sizeConstraint">
-                <enum>QLayout::SetMinimumSize</enum>
+              <spacer name="horizontalSpacer_8">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
                </property>
-               <item>
-                <widget class="QLabel" name="labelPassPath">
-                 <property name="text">
-                  <string>pass</string>
-                 </property>
-                 <property name="buddy">
-                  <cstring>passPath</cstring>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="passPath"/>
-               </item>
-               <item>
-                <widget class="QToolButton" name="toolButtonPass">
-                 <property name="toolTip">
-                  <string>Choose the pass executable</string>
-                 </property>
-                 <property name="accessibleName">
-                  <string>Choose the pass executable</string>
-                 </property>
-                 <property name="text">
-                  <string>…</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
              </item>
              <item>
-              <widget class="QLabel" name="zx2c4">
+              <widget class="QToolButton" name="autodetectButton">
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="openExternalLinks">
-                <bool>true</bool>
+                <string>Autodetect</string>
                </property>
               </widget>
              </item>
             </layout>
-           </widget>
-          </item>
-         </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_sshAuthSock">
+             <item>
+              <widget class="QLabel" name="labelSshAuthSock">
+               <property name="text">
+                <string>SSH_AUTH_SOCK override:</string>
+               </property>
+               <property name="toolTip">
+                <string>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</string>
+               </property>
+               <property name="buddy">
+                <cstring>sshAuthSockOverride</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="sshAuthSockOverride">
+               <property name="placeholderText">
+                <string>(auto-probe via gpgconf)</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
         </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_15">
-         <item>
-          <spacer name="horizontalSpacer_8">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QToolButton" name="autodetectButton">
-           <property name="text">
-            <string>Autodetect</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_sshAuthSock">
-         <item>
-          <widget class="QLabel" name="labelSshAuthSock">
-           <property name="text">
-            <string>SSH_AUTH_SOCK override:</string>
-           </property>
-           <property name="toolTip">
-            <string>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</string>
-           </property>
-           <property name="buddy">
-            <cstring>sshAuthSockOverride</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="sshAuthSockOverride">
-           <property name="placeholderText">
-            <string>(auto-probe via gpgconf)</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
        </item>
       </layout>
      </widget>
@@ -977,136 +969,162 @@
       <attribute name="title">
        <string>Profiles</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <layout class="QVBoxLayout" name="Tab_Profiles_outer">
        <property name="leftMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="topMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="rightMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="bottomMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <item>
-        <widget class="QTableWidget" name="profileTable">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
+        <widget class="QScrollArea" name="scrollProfiles">
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
-         <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
-         </property>
-         <property name="lineWidth">
-          <number>0</number>
-         </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
-         </property>
-         <property name="alternatingRowColors">
+         <property name="widgetResizable">
           <bool>true</bool>
          </property>
-         <property name="selectionMode">
-          <enum>QAbstractItemView::SingleSelection</enum>
-         </property>
-         <property name="selectionBehavior">
-          <enum>QAbstractItemView::SelectRows</enum>
-         </property>
-         <property name="sortingEnabled">
-          <bool>true</bool>
-         </property>
-<column>
-           <property name="text">
-            <string>Name</string>
+         <widget class="QWidget" name="scrollProfilesContents">
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <property name="leftMargin">
+            <number>6</number>
            </property>
-           <property name="toolTip">
-            <string>Profile name, used to identify this configuration profile</string>
+           <property name="topMargin">
+            <number>6</number>
            </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Path</string>
+           <property name="rightMargin">
+            <number>6</number>
            </property>
-           <property name="toolTip">
-            <string>Path to the password store directory</string>
+           <property name="bottomMargin">
+            <number>6</number>
            </property>
-          </column>
-         <column>
-          <property name="text">
-           <string>Signing Key</string>
-          </property>
-          <property name="toolTip">
-           <string>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</string>
-          </property>
-         </column>
+           <item>
+            <widget class="QTableWidget" name="profileTable">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Plain</enum>
+             </property>
+             <property name="lineWidth">
+              <number>0</number>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+             </property>
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::SingleSelection</enum>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectRows</enum>
+             </property>
+             <property name="sortingEnabled">
+              <bool>true</bool>
+             </property>
+             <column>
+              <property name="text">
+               <string>Name</string>
+              </property>
+              <property name="toolTip">
+               <string>Profile name, used to identify this configuration profile</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Path</string>
+              </property>
+              <property name="toolTip">
+               <string>Path to the password store directory</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Signing Key</string>
+              </property>
+              <property name="toolTip">
+               <string>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="gridLayout_11">
+             <item row="0" column="0">
+              <widget class="QToolButton" name="addButton">
+               <property name="text">
+                <string>Add</string>
+               </property>
+               <property name="icon">
+                <iconset theme="list-add">
+                 <normalon>:/icons/document-new.svg</normalon>
+                </iconset>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonFollowStyle</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QToolButton" name="deleteButton">
+               <property name="text">
+                <string>Delete</string>
+               </property>
+               <property name="icon">
+                <iconset theme="list-remove">
+                 <normalon>:/icons/edit-delete.svg</normalon>
+                </iconset>
+               </property>
+               <property name="toolButtonStyle">
+                <enum>Qt::ToolButtonFollowStyle</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="labelStorePath">
+               <property name="text">
+                <string>Current path</string>
+               </property>
+               <property name="buddy">
+                <cstring>storePath</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="4">
+              <widget class="QToolButton" name="toolButtonStore">
+               <property name="toolTip">
+                <string>Choose the password store folder</string>
+               </property>
+               <property name="accessibleName">
+                <string>Choose the password store folder</string>
+               </property>
+               <property name="text">
+                <string>…</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QLineEdit" name="storePath"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
         </widget>
-       </item>
-       <item>
-        <layout class="QGridLayout" name="gridLayout_11">
-         <item row="0" column="0">
-          <widget class="QToolButton" name="addButton">
-           <property name="text">
-            <string>Add</string>
-           </property>
-           <property name="icon">
-            <iconset theme="list-add">
-             <normalon>:/icons/document-new.svg</normalon>
-            </iconset>
-           </property>
-           <property name="toolButtonStyle">
-            <enum>Qt::ToolButtonFollowStyle</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QToolButton" name="deleteButton">
-           <property name="text">
-            <string>Delete</string>
-           </property>
-           <property name="icon">
-            <iconset theme="list-remove">
-             <normalon>:/icons/edit-delete.svg</normalon>
-            </iconset>
-           </property>
-           <property name="toolButtonStyle">
-            <enum>Qt::ToolButtonFollowStyle</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
-          <widget class="QLabel" name="labelStorePath">
-           <property name="text">
-            <string>Current path</string>
-           </property>
-           <property name="buddy">
-            <cstring>storePath</cstring>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="4">
-          <widget class="QToolButton" name="toolButtonStore">
-           <property name="toolTip">
-            <string>Choose the password store folder</string>
-           </property>
-           <property name="accessibleName">
-            <string>Choose the password store folder</string>
-           </property>
-           <property name="text">
-            <string>…</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="3">
-          <widget class="QLineEdit" name="storePath"/>
-         </item>
-        </layout>
        </item>
       </layout>
      </widget>
@@ -1114,60 +1132,86 @@
       <attribute name="title">
        <string>Template</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_6">
+      <layout class="QVBoxLayout" name="Tab_Template_outer">
        <property name="leftMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="topMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="rightMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <property name="bottomMargin">
-        <number>6</number>
+        <number>0</number>
        </property>
        <item>
-        <widget class="QLabel" name="label_2">
-         <property name="locale">
-          <locale language="German" country="Germany"/>
+        <widget class="QScrollArea" name="scrollTemplate">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
          </property>
-         <property name="text">
-          <string>Templates add extra fields in the password generation dialogue, and in the password view.</string>
+         <property name="widgetResizable">
+          <bool>true</bool>
          </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
-         <item>
-          <widget class="QCheckBox" name="checkBoxUseTemplate">
-           <property name="text">
-            <string>Use template</string>
+         <widget class="QWidget" name="scrollTemplateContents">
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <property name="leftMargin">
+            <number>6</number>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="checkBoxTemplateAllFields">
-           <property name="toolTip">
-            <string>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</string>
+           <property name="topMargin">
+            <number>6</number>
            </property>
-           <property name="text">
-            <string>Show all fields templated</string>
+           <property name="rightMargin">
+            <number>6</number>
            </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QPlainTextEdit" name="plainTextEditTemplate">
-         <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
-         </property>
-         <property name="plainText">
-          <string>login
+           <property name="bottomMargin">
+            <number>6</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="locale">
+              <locale language="German" country="Germany"/>
+             </property>
+             <property name="text">
+              <string>Templates add extra fields in the password generation dialogue, and in the password view.</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <item>
+              <widget class="QCheckBox" name="checkBoxUseTemplate">
+               <property name="text">
+                <string>Use template</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="checkBoxTemplateAllFields">
+               <property name="toolTip">
+                <string>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</string>
+               </property>
+               <property name="text">
+                <string>Show all fields templated</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPlainTextEdit" name="plainTextEditTemplate">
+             <property name="frameShadow">
+              <enum>QFrame::Plain</enum>
+             </property>
+             <property name="plainText">
+              <string>login
 URL
 e-mail</string>
-         </property>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -1179,7 +1223,7 @@ e-mail</string>
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </string>
+        <string>&lt;a href="https://QtPass.org/"&gt;QtPass&lt;/a&gt; version </string>
        </property>
        <property name="openExternalLinks">
         <bool>true</bool>
@@ -1200,32 +1244,32 @@ e-mail</string>
       </spacer>
      </item>
      <item>
-<widget class="QDialogButtonBox" name="buttonBox">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="standardButtons">
-         <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QLabel" name="statusLabel">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="textFormat">
-       <enum>Qt::PlainText</enum>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="statusLabel">
+     <property name="text">
+      <string />
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
  <tabstops>
   <tabstop>tabWidget</tabstop>
   <tabstop>radioButtonNative</tabstop>

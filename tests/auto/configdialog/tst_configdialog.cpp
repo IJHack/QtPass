@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QApplication>
 #include <QCheckBox>
+#include <QGroupBox>
 #include <QLabel>
 #include <QLineEdit>
 #include <QSpinBox>
@@ -57,6 +58,8 @@ private Q_SLOTS:
   void addProfileSelectsNewRowAfterSort();
   void fieldLabelsHaveBuddies();
   void browseButtonsAreNamed();
+  void dialogCanShrinkBelowItsOldMinimum();
+  void sectionHeadersAreGroupBoxes();
 };
 
 /**
@@ -386,7 +389,6 @@ void tst_configdialog::fieldLabelsHaveBuddies() {
       {QStringLiteral("label_7"), QStringLiteral("spinBoxPasswordLength")},
       {QStringLiteral("labelPasswordChars"),
        QStringLiteral("passwordCharTemplateSelector")},
-      {QStringLiteral("label_8"), QStringLiteral("comboBoxClipboard")},
       {QStringLiteral("labelSeconds"),
        QStringLiteral("spinBoxAutoclearSeconds")},
       {QStringLiteral("labelPanelSeconds"),
@@ -419,6 +421,54 @@ void tst_configdialog::browseButtonsAreNamed() {
     QVERIFY2(!button->toolTip().isEmpty(),
              qPrintable(name + " must have a tooltip"));
   }
+}
+
+/**
+ * @brief The dialog used to open at its layout minimum (659x728) with no
+ *        scroll area, so a long translation pushed OK off a 1280x720 screen.
+ *        Every tab now scrolls; the dialog itself has to be small enough for
+ *        a 1366x768 laptop with room to spare.
+ */
+void tst_configdialog::dialogCanShrinkBelowItsOldMinimum() {
+  ConfigDialog dialog(nullptr);
+  dialog.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&dialog));
+  const QSize minimum = dialog.minimumSizeHint();
+  QVERIFY2(minimum.height() < 400,
+           qPrintable(QStringLiteral("minimum height %1 must leave room on a "
+                                     "small screen")
+                          .arg(minimum.height())));
+  QVERIFY2(minimum.width() < 500,
+           qPrintable(QStringLiteral("minimum width %1 must allow a narrow "
+                                     "dialog")
+                          .arg(minimum.width())));
+}
+
+/**
+ * @brief The six bold labels that only pretended to be section headers are
+ *        real QGroupBoxes now, with the strings unchanged so translations
+ *        carry over.
+ */
+void tst_configdialog::sectionHeadersAreGroupBoxes() {
+  ConfigDialog dialog(nullptr);
+  const QList<QPair<QString, QString>> groups = {
+      {QStringLiteral("groupBoxClipboard"),
+       QStringLiteral("Clipboard behaviour:")},
+      {QStringLiteral("groupBoxContentPanel"),
+       QStringLiteral("Content panel behaviour:")},
+      {QStringLiteral("groupBoxPasswordGeneration"),
+       QStringLiteral("Password Generation:")},
+      {QStringLiteral("groupBoxGit"), QStringLiteral("Git:")},
+      {QStringLiteral("groupBoxExtensions"), QStringLiteral("Extensions:")},
+      {QStringLiteral("groupBoxSystem"), QStringLiteral("System:")},
+  };
+  for (const auto &[name, title] : groups) {
+    auto *box = dialog.findChild<QGroupBox *>(name);
+    QVERIFY2(box != nullptr, qPrintable(name + " must exist"));
+    QCOMPARE(box->title(), title);
+  }
+  QVERIFY2(dialog.findChild<QLabel *>(QStringLiteral("label_10")) == nullptr,
+           "the pseudo-header labels must be gone");
 }
 
 QTEST_MAIN(tst_configdialog)
