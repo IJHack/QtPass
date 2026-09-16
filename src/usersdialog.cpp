@@ -98,6 +98,12 @@ void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
 void UsersDialog::loadRecipients() {
   const QStringList recipients =
       Pass::getRecipientList(m_dir.isEmpty() ? "" : m_dir, m_passStore);
+  if (recipients.isEmpty()) {
+    // A folder without .gpg-id (new store, new profile) has no recipients
+    // yet. Without this, listKeys() with no filter returned the whole
+    // keyring and every key in it came up pre-selected.
+    return;
+  }
   const int count = static_cast<int>(recipients.size());
 
   QList<UserInfo> selectedUsers = m_pass->listKeys(recipients);
@@ -160,7 +166,9 @@ UsersDialog::~UsersDialog() = default;
  * @brief UsersDialog::accept
  */
 void UsersDialog::accept() {
-  m_pass->Init(m_dir, m_userList);
+  if (m_initOnAccept) {
+    m_pass->Init(m_dir, m_userList);
+  }
 
   QDialog::accept();
 }
