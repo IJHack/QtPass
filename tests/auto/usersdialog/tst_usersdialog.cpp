@@ -59,6 +59,8 @@ class tst_usersdialog : public QObject {
 private slots:
   void initTestCase();
   void newStoreStartsWithNothingSelected();
+  void existingStorePreselectsItsRecipients();
+  void folderOutsideTheStoreDoesNotInheritItsRecipients();
   void acceptRunsInitByDefault();
   void acceptWithoutSelectionDoesNothing();
   void acceptWithoutInitOnlyCollectsTheSelection();
@@ -77,11 +79,17 @@ void tst_usersdialog::initTestCase() {
   const QString gpg = QDir(m_dir.path()).filePath(QStringLiteral("gpg"));
   QFile script(gpg);
   QVERIFY(script.open(QIODevice::WriteOnly | QIODevice::Text));
+  // Like gpg, print only the keys matching a key id given after
+  // --list-keys, and everything when none is given.
   script.write("#!/bin/sh\n");
-  script.write("case \"$*\" in\n*--list-secret-keys*) exit 0 ;;\n");
-  script.write("*--list-keys*) cat <<'LISTING'\n");
+  script.write("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n");
+  script.write("all() { cat <<'LISTING'\n");
   script.write(kColonListing);
-  script.write("LISTING\n;;\nesac\nexit 0\n");
+  script.write("LISTING\n}\n");
+  script.write("case \"$*\" in\n");
+  script.write("*31850CF72D9CDDE9*) all | head -3 ;;\n");
+  script.write("*693A0AF3FA364E76*) all | tail -3 ;;\n");
+  script.write("*) all ;;\nesac\nexit 0\n");
   script.close();
   QVERIFY(script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
                                 QFile::ExeOwner));
@@ -91,6 +99,18 @@ void tst_usersdialog::initTestCase() {
   QVERIFY(QDir().mkpath(m_settings.passStore));
   QtPassSettings::save(m_settings);
 }
+
+namespace {
+auto checkedNames(QListWidget *list) -> QStringList {
+  QStringList names;
+  for (int i = 0; i < list->count(); ++i) {
+    if (list->item(i)->checkState() == Qt::Checked) {
+      names << list->item(i)->text().section(QLatin1Char(' '), 0, 0);
+    }
+  }
+  return names;
+}
+} // namespace
 
 /**
  * @brief A folder without .gpg-id must not come up with the entire keyring
@@ -106,6 +126,64 @@ void tst_usersdialog::newStoreStartsWithNothingSelected() {
     QVERIFY2(list->item(i)->checkState() == Qt::Unchecked,
              qPrintable(list->item(i)->text() + " must start unchecked"));
   }
+}
+
+/**
+ * @brief Sanity check for the stand-in gpg: with a .gpg-id in place the
+ *        listed recipient comes up ticked.
+ */
+void tst_usersdialog::existingStorePreselectsItsRecipients() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write("31850CF72D9CDDE9\n");
+  gpgId.close();
+  AppSettings s = m_settings;
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Alice")});
+}
+
+/**
+ * @brief A new profile lives outside the active store. Pass::getGpgIdPath()
+ *        falls back to <store>/.gpg-id for such a folder, so a dialog that
+ *        still carried the active store as its store came up with the active
+ *        store's recipients ticked — and this branch writes exactly the
+ *        ticked keys into the profile. The caller hands the profile as the
+ *        store; nothing may be pre-selected then.
+ */
+void tst_usersdialog::folderOutsideTheStoreDoesNotInheritItsRecipients() {
+  QTemporaryDir active;
+  QTemporaryDir profile;
+  QVERIFY(active.isValid() && profile.isValid());
+  QFile gpgId(QDir(active.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write("31850CF72D9CDDE9\n");
+  gpgId.close();
+
+  AppSettings activeSettings = m_settings;
+  activeSettings.passStore = active.path() + QLatin1Char('/');
+  RecordingPass pass(activeSettings);
+  {
+    // What initializeNewProfiles() used to do: the active store's settings
+    // with the profile as the folder.
+    UsersDialog wrong(&pass, activeSettings, profile.path() + QLatin1Char('/'));
+    auto *list = wrong.findChild<QListWidget *>(QStringLiteral("listWidget"));
+    QVERIFY(list != nullptr);
+    QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Alice")});
+  }
+  AppSettings profileSettings = activeSettings;
+  profileSettings.passStore = profile.path() + QLatin1Char('/');
+  UsersDialog right(&pass, profileSettings, profileSettings.passStore);
+  auto *list = right.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QVERIFY2(checkedNames(list).isEmpty(),
+           qPrintable("nothing may be pre-selected for a new profile, got: " +
+                      checkedNames(list).join(QLatin1String(", "))));
 }
 
 void tst_usersdialog::acceptRunsInitByDefault() {
@@ -141,9 +219,11 @@ void tst_usersdialog::acceptWithoutSelectionDoesNothing() {
            "the dialog must stay open without a recipient");
 
   list->item(0)->setCheckState(Qt::Checked);
-  QVERIFY(box->button(QDialogButtonBox::Ok)->isEnabled());
+  QVERIFY2(box->button(QDialogButtonBox::Ok)->isEnabled(),
+           "OK must be enabled once a key is ticked");
   list->item(0)->setCheckState(Qt::Unchecked);
-  QVERIFY(!box->button(QDialogButtonBox::Ok)->isEnabled());
+  QVERIFY2(!box->button(QDialogButtonBox::Ok)->isEnabled(),
+           "OK must be disabled again when the last key is unticked");
 }
 
 /**

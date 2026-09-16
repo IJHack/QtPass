@@ -812,10 +812,19 @@ void ConfigDialog::initializeNewProfiles(
     // The dialog only collects the recipients here (it lists keys through
     // the active backend, which is fine); the folder is initialised without
     // that backend, whose settings snapshot, PASSWORD_STORE_DIR and process
-    // queue all belong to the active store (#1774).
+    // queue all belong to the active store (#1774). It gets the profile as
+    // its store: Pass::getGpgIdPath() falls back to <store>/.gpg-id for a
+    // folder outside the store, which would pre-tick the active store's
+    // recipients for the new profile.
     const AppSettings settings = QtPassSettings::load();
-    UsersDialog usersDialog(QtPassSettings::getPass(), settings,
-                            Util::normalizeFolderPath(cleanPath), this);
+    AppSettings profileSettings = settings;
+    profileSettings.passStore = Util::normalizeFolderPath(cleanPath);
+    // Signing keys are per profile, exactly as the profile switch applies
+    // them (MainWindow::on_profileBox_currentTextChanged).
+    profileSettings.passSigningKey =
+        newProfiles.value(name).value("signingKey");
+    UsersDialog usersDialog(QtPassSettings::getPass(), profileSettings,
+                            profileSettings.passStore, this);
     usersDialog.setInitOnAccept(false);
     usersDialog.setWindowTitle(tr("Select recipients for %1").arg(name));
     if (usersDialog.exec() != QDialog::Accepted) {
@@ -825,12 +834,6 @@ void ConfigDialog::initializeNewProfiles(
     // Use per-profile useGit setting, falling back to global if not set
     QString useGitStr = newProfiles.value(name).value("useGit");
     bool useGit = useGitStr.isEmpty() ? settings.useGit : useGitStr == "true";
-
-    // Signing keys are per profile, exactly as the profile switch applies
-    // them (MainWindow::on_profileBox_currentTextChanged).
-    AppSettings profileSettings = settings;
-    profileSettings.passSigningKey =
-        newProfiles.value(name).value("signingKey");
 
     QString note;
     const bool ok = ProfileInit::initialise(
