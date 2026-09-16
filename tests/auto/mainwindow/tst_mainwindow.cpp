@@ -22,12 +22,15 @@
 #include <QDir>
 #include <QFile>
 #include <QFrame>
+#include <QMenu>
+#include <QMenuBar>
 #include <QMessageBox>
 #include <QPalette>
 #include <QProgressDialog>
 #include <QPushButton>
 #include <QScopedPointer>
 #include <QScreen>
+#include <QShortcut>
 #include <QStatusBar>
 #include <QTemporaryDir>
 #include <QTextBlock>
@@ -115,6 +118,8 @@ private Q_SLOTS:
   void windowFlagsAreOnlyRebuiltWhenAlwaysOnTopChanges();
   void restoreWindowAppliesSavedGeometry();
   void restoreWindowCentresWhenNothingSaved();
+  void menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes();
+  void quitIsAnActionNotAStrayShortcut();
   void closeEventSavesGeometryAlsoWhenHidingToTray();
 
 private:
@@ -781,6 +786,96 @@ void tst_mainwindow::restoreWindowAppliesSavedGeometry() {
   m_window->restoreWindow();
   QTRY_COMPARE(m_window->size(), savedSize);
   QTRY_COMPARE(m_window->pos(), savedPos);
+}
+
+namespace {
+auto menuActionNames(QMenuBar *bar, const QString &menuName) -> QStringList {
+  QStringList names;
+  for (QAction *top : bar->actions()) {
+    QMenu *menu = top->menu();
+    if (menu == nullptr || menu->objectName() != menuName) {
+      continue;
+    }
+    for (QAction *action : menu->actions()) {
+      if (!action->isSeparator()) {
+        names << action->objectName();
+      }
+    }
+  }
+  return names;
+}
+} // namespace
+
+/**
+ * @brief The icon-only toolbar was the only way to reach Push, Pull, Users
+ *        and Config, and there was no About or FAQ at all. Every toolbar
+ *        action now also sits in a menu, and the menu-only ones exist, with
+ *        the roles macOS needs to build its application menu.
+ */
+void tst_mainwindow::menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes() {
+  QMenuBar *bar = m_window->menuBar();
+  QVERIFY(bar != nullptr);
+  QStringList menus;
+  for (QAction *top : bar->actions()) {
+    menus << top->menu()->objectName();
+  }
+  QCOMPARE(menus,
+           (QStringList{QStringLiteral("menuFile"), QStringLiteral("menuStore"),
+                        QStringLiteral("menuSettings"),
+                        QStringLiteral("menuHelp")}));
+
+  QCOMPARE(menuActionNames(bar, QStringLiteral("menuFile")),
+           (QStringList{
+               QStringLiteral("actionAddPassword"),
+               QStringLiteral("actionAddFolder"), QStringLiteral("actionEdit"),
+               QStringLiteral("actionDelete"), QStringLiteral("actionQuit")}));
+  QCOMPARE(menuActionNames(bar, QStringLiteral("menuStore")),
+           (QStringList{
+               QStringLiteral("actionUsers"), QStringLiteral("actionUpdate"),
+               QStringLiteral("actionPush"), QStringLiteral("actionOtp")}));
+  QCOMPARE(menuActionNames(bar, QStringLiteral("menuSettings")),
+           QStringList{QStringLiteral("actionConfig")});
+  QCOMPARE(
+      menuActionNames(bar, QStringLiteral("menuHelp")),
+      (QStringList{QStringLiteral("actionFaq"), QStringLiteral("actionAbout"),
+                   QStringLiteral("actionAboutQt")}));
+
+  // The toolbar and the menus share the QAction objects, so enabled state
+  // stays in step without extra bookkeeping.
+  auto *toolBar = m_window->findChild<QToolBar *>(QStringLiteral("toolBar"));
+  QVERIFY(toolBar != nullptr);
+  for (QAction *action : toolBar->actions()) {
+    if (action->isSeparator()) {
+      continue;
+    }
+    bool inAMenu = false;
+    for (QAction *top : bar->actions()) {
+      inAMenu = inAMenu || top->menu()->actions().contains(action);
+    }
+    QVERIFY2(inAMenu, qPrintable(action->objectName() + " must be in a menu"));
+  }
+
+  auto *config = m_window->findChild<QAction *>(QStringLiteral("actionConfig"));
+  auto *about = m_window->findChild<QAction *>(QStringLiteral("actionAbout"));
+  auto *quit = m_window->findChild<QAction *>(QStringLiteral("actionQuit"));
+  QVERIFY(config != nullptr && about != nullptr && quit != nullptr);
+  QCOMPARE(config->menuRole(), QAction::PreferencesRole);
+  QCOMPARE(about->menuRole(), QAction::AboutRole);
+  QCOMPARE(quit->menuRole(), QAction::QuitRole);
+}
+
+/**
+ * @brief Ctrl+Q used to be a bare QShortcut that only closed the window; it
+ *        is the Quit action now, and nothing else claims the sequence.
+ */
+void tst_mainwindow::quitIsAnActionNotAStrayShortcut() {
+  auto *quit = m_window->findChild<QAction *>(QStringLiteral("actionQuit"));
+  QVERIFY(quit != nullptr);
+  QCOMPARE(quit->shortcut(), QKeySequence(Qt::CTRL | Qt::Key_Q));
+  for (QShortcut *shortcut : m_window->findChildren<QShortcut *>()) {
+    QVERIFY2(shortcut->key() != QKeySequence(Qt::CTRL | Qt::Key_Q),
+             "no QShortcut may compete with the Quit action");
+  }
 }
 
 /**

@@ -27,6 +27,13 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 - Icon: the hairline where the shackle's straight legs met the arc is gone
   (the arc now overlaps the legs instead of butting against them); PNG, ICO
   and ICNS regenerated from the SVG
+- A menu bar: File (add password/folder, edit, delete, quit), Store (users,
+  pull, push, OTP), Settings (configuration, Ctrl+,) and Help (FAQ with F1,
+  About QtPass, About Qt). Until now Push, Pull, Users and Config existed only
+  as toolbar icons and there was no About at all; on macOS the standard
+  application menu (Preferences, About, Quit) now appears because Qt builds
+  it from the menu roles. Ctrl+Q is the Quit action and quits — it used to
+  be a bare shortcut that only closed the window
 - Debug output goes through one `qtpass` logging category instead of
   `#ifdef QT_DEBUG` blocks around a `dbg()` macro. Release builds keep it
   compiled in; `QT_LOGGING_RULES="qtpass.debug=true"` turns it on, so a user

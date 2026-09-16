@@ -288,6 +288,10 @@ private slots:
   void onUpdate(bool block = false);
   void onUsers();
   void onConfig();
+  /**
+   * @brief Show the About box: version, project link, licence.
+   */
+  void showAbout();
   void on_treeView_doubleClicked(const QModelIndex &index);
   void clearPanel(bool notify = true);
   void on_lineEdit_textChanged(const QString &arg1);
