@@ -212,9 +212,8 @@ void TestLocale::loadIsIdempotent() {
                                                         "succeeded")
                                              .arg(locale)));
         const QString got = translator.translate("QObject", "LTR");
-        // QVERIFY rather than QCOMPARE_NE — the latter is Qt 6.4+ only and
-        // the floor is Qt 6.2. The qInfo() above identifies the locale;
-        // the values are short enough that QVERIFY's output
+        // QVERIFY rather than QCOMPARE_NE: the qInfo() above identifies the
+        // locale, and the values are short enough that QVERIFY's output
         // ("'got != staleLTR' returned FALSE") is enough to debug.
         QVERIFY(got != staleLTR);
       };

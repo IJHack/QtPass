@@ -44,10 +44,13 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Removed
 
-- Qt 5 support. QtPass 2.x requires Qt 6.2 or newer; `qmake` refuses older
+- Qt 5 support. QtPass 2.x requires Qt 6.8 or newer; `qmake` refuses older
   Qt with a clear message. All `QT_VERSION` compatibility branches for Qt 5
   and the `splitCommandCompat()` / `disconnectSingleShot()` shims are gone
-  ([#908](https://github.com/IJHack/QtPass/issues/908))
+  ([#908](https://github.com/IJHack/QtPass/issues/908)). The floor is the
+  oldest Qt the CI matrix builds (6.8 LTS), so a version that is only
+  declared and never compiled cannot silently break
+  [#1761](https://github.com/IJHack/QtPass/pull/1761)
 - WebDAV mounting. It stored the WebDAV password in plain text in the
   configuration file, had no user interface at all, and the `fusedav` call on
   Linux and BSD had passed literal quote characters since 2020. Saving the

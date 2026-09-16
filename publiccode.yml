@@ -136,4 +136,4 @@ dependsOn:
     - name: gnupg
       version: "2.2"
     - name: Qt
-      versionMin: "6.2"
+      versionMin: "6.8"

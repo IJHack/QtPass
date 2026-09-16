@@ -266,9 +266,16 @@ if (index < 0 || index >= m_userList.size()) {
 }
 ```
 
-### Qt Version Floor (Qt 6.2)
+### Qt Version Floor (Qt 6.8)
 
-QtPass 2.x requires Qt 6.2 or newer; `qtpass.pri` refuses older Qt. CI builds Qt 6.8 and 6.11. APIs newer than 6.2 (for example `QCOMPARE_NE`, 6.4) still need a `QT_VERSION_CHECK` guard or an alternative:
+QtPass 2.x requires Qt 6.8 or newer; `qtpass.pri` refuses older Qt. The floor
+is deliberately the lowest version CI builds (6.8 LTS on Linux and Windows,
+6.11 on all three), so an API that is too new cannot pass review unnoticed —
+which is exactly how a Qt 6.8-only timer API reached a PR while the floor
+still claimed 6.2. Raising the floor is cheap; testing a version nobody builds
+is not.
+
+APIs newer than 6.8 still need a `QT_VERSION_CHECK` guard or an alternative:
 
 ```cpp
 // Fine on every supported Qt

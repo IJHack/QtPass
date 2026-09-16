@@ -5,7 +5,7 @@ This file provides guidance for AI agents working on QtPass development.
 ## Build
 
 ```bash
-# Full build (Qt 6.2+; `qmake` works too when it is the Qt 6 one)
+# Full build (Qt 6.8+; `qmake` works too when it is the Qt 6 one)
 qmake6 && make -j4
 
 # With tests

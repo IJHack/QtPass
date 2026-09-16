@@ -13,8 +13,8 @@ CONFIG(debug, debug|release) {
     QMAKE_LFLAGS += -O0
 }
 
-lessThan(QT_MAJOR_VERSION, 6): error("QtPass 2.x requires Qt 6.2 or newer (Qt 5 support ended with 1.8)")
-equals(QT_MAJOR_VERSION, 6):lessThan(QT_MINOR_VERSION, 2): error("QtPass 2.x requires Qt 6.2 or newer")
+lessThan(QT_MAJOR_VERSION, 6): error("QtPass 2.x requires Qt 6.8 or newer (Qt 5 support ended with 1.8)")
+equals(QT_MAJOR_VERSION, 6):lessThan(QT_MINOR_VERSION, 8): error("QtPass 2.x requires Qt 6.8 or newer")
 QT += widgets
 
 clang|gcc:QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
