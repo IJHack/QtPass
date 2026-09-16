@@ -139,8 +139,9 @@ announcing the release:
   [annejan/qtpass-freebsd-port-test](https://github.com/annejan/qtpass-freebsd-port-test).
   Commit the diff as `patches/qtpass-X.Y.Z.patch` and push, or dispatch
   _sysutils/qtpass port test_ by hand with the patch path and a ports branch
-  (`main`, `2026Q3`, ...). It applies the patch to a fresh ports tree in a
-  FreeBSD VM and runs what a committer runs: `portlint -AC`, `make checksum`
+  (`main`, `2026Q3`, ...); leave `run_suite` at its default of `true`, the
+  `make check` step below only runs with it. It applies the patch to a fresh
+  ports tree in a FreeBSD VM and runs what a committer runs: `portlint -AC`, `make checksum`
   (and `makesum` must reproduce `distinfo`), `stage`, `check-plist`,
   `stage-qa`, `package` + `pkg add`, `ldd`, and QtPass's own `make check`
   offscreen — on 14.5 amd64, 15.1 amd64 and 14.5 aarch64. A second job runs
