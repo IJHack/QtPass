@@ -229,7 +229,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Hide on close</source>
-        <translation>Απόκρυψη σε κοντινή</translation>
+        <translation>Απόκρυψη κατά το κλείσιμο</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>

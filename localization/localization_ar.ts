@@ -2227,7 +2227,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[EXPIRED] </source>
-        <translation>[يصدر] </translation>
+        <translation>[منتهي الصلاحية] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="344"/>
