@@ -22,10 +22,11 @@ var searchData=
   ['isotpurivalue_19',['isOtpUriValue',['../class_file_content.html#a92629a218b9fce0c611d9ac1e1eca638',1,'FileContent']]],
   ['ispathinstore_20',['isPathInStore',['../class_path_validator.html#a15120558ca5dd41cdd9c485ae08030c7',1,'PathValidator']]],
   ['isrunning_21',['isRunning',['../class_single_application.html#a9408850aec7bca2e43e386f35ed780f4',1,'SingleApplication']]],
-  ['isshowprocessoutput_22',['isShowProcessOutput',['../class_qt_pass_settings.html#a86f9ccbb490cdcc4ffb3fcd6a2112def',1,'QtPassSettings']]],
-  ['isusegit_23',['isUseGit',['../class_qt_pass_settings.html#a0bd97a8df7fb91cf461b5a1c57940710',1,'QtPassSettings']]],
-  ['isusegrepsearch_24',['isUseGrepSearch',['../class_qt_pass_settings.html#a48f32603dae06c6a513bcad0de85301c',1,'QtPassSettings']]],
-  ['isuseotp_25',['isUseOtp',['../class_qt_pass_settings.html#af9e41239c39581b0f3a573dfdaabff36',1,'QtPassSettings']]],
-  ['isvalid_26',['isValid',['../class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2',1,'Totp::isValid()'],['../struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a',1,'UserInfo::isValid()']]],
-  ['isvalidkeyid_27',['isValidKeyId',['../class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1',1,'Util']]]
+  ['issensitiveprocess_22',['isSensitiveProcess',['../class_process_output_panel.html#ad6aa26912ba468c918d78d857c386da7',1,'ProcessOutputPanel']]],
+  ['isshowprocessoutput_23',['isShowProcessOutput',['../class_qt_pass_settings.html#a86f9ccbb490cdcc4ffb3fcd6a2112def',1,'QtPassSettings']]],
+  ['isusegit_24',['isUseGit',['../class_qt_pass_settings.html#a0bd97a8df7fb91cf461b5a1c57940710',1,'QtPassSettings']]],
+  ['isusegrepsearch_25',['isUseGrepSearch',['../class_qt_pass_settings.html#a48f32603dae06c6a513bcad0de85301c',1,'QtPassSettings']]],
+  ['isuseotp_26',['isUseOtp',['../class_qt_pass_settings.html#af9e41239c39581b0f3a573dfdaabff36',1,'QtPassSettings']]],
+  ['isvalid_27',['isValid',['../class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2',1,'Totp::isValid()'],['../struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a',1,'UserInfo::isValid()']]],
+  ['isvalidkeyid_28',['isValidKeyId',['../class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1',1,'Util']]]
 ];

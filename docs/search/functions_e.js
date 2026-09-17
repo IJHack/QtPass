@@ -9,5 +9,7 @@ var searchData=
   ['passworddialog_6',['PasswordDialog',['../class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e',1,'PasswordDialog::PasswordDialog(PasswordConfiguration passConfig, QWidget *parent=nullptr)'],['../class_password_dialog.html#a1795ae0584aa5d5237e8819aca573d4c',1,'PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &amp;s, QString file, const bool &amp;isNew, QWidget *parent=nullptr)']]],
   ['passworddisplaypanel_7',['PasswordDisplayPanel',['../class_password_display_panel.html#a9629fe79e18a80f29101b80e3077250d',1,'PasswordDisplayPanel']]],
   ['processerrorexit_8',['processErrorExit',['../class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f',1,'Pass']]],
-  ['protocolregex_9',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]]
+  ['processname_9',['processName',['../class_process_output_panel.html#af8ec4c669ae299698055cf9d36d50881',1,'ProcessOutputPanel']]],
+  ['processoutputpanel_10',['ProcessOutputPanel',['../class_process_output_panel.html#a5eced61630b5293e8fda4c3b92c1fe71',1,'ProcessOutputPanel']]],
+  ['protocolregex_11',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]]
 ];

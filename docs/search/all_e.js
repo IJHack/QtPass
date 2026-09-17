@@ -26,8 +26,10 @@ var searchData=
   ['process_23',['PROCESS',['../class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772',1,'Pass::PROCESS'],['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69',1,'Enums::PROCESS']]],
   ['process_5fcount_24',['PROCESS_COUNT',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e',1,'Enums']]],
   ['processerrorexit_25',['processErrorExit',['../class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f',1,'Pass']]],
-  ['profileinit_26',['ProfileInit',['../class_profile_init.html',1,'']]],
-  ['program_27',['program',['../struct_resolved_gpgconf_command.html#ae34ff02051398b8688497a4fb373e1d3',1,'ResolvedGpgconfCommand']]],
-  ['protocolregex_28',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]],
-  ['pwgenexecutable_29',['pwgenExecutable',['../struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee',1,'AppSettings']]]
+  ['processname_26',['processName',['../class_process_output_panel.html#af8ec4c669ae299698055cf9d36d50881',1,'ProcessOutputPanel']]],
+  ['processoutputpanel_27',['ProcessOutputPanel',['../class_process_output_panel.html',1,'ProcessOutputPanel'],['../class_process_output_panel.html#a5eced61630b5293e8fda4c3b92c1fe71',1,'ProcessOutputPanel::ProcessOutputPanel()']]],
+  ['profileinit_28',['ProfileInit',['../class_profile_init.html',1,'']]],
+  ['program_29',['program',['../struct_resolved_gpgconf_command.html#ae34ff02051398b8688497a4fb373e1d3',1,'ResolvedGpgconfCommand']]],
+  ['protocolregex_30',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]],
+  ['pwgenexecutable_31',['pwgenExecutable',['../struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee',1,'AppSettings']]]
 ];

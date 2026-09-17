@@ -9,7 +9,7 @@ var searchData=
   ['changeevent_6',['changeEvent',['../class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad',1,'MainWindow']]],
   ['checksigningkeys_7',['checkSigningKeys',['../class_imitate_pass.html#a607cc25575bf718f57333bb7854870b4',1,'ImitatePass']]],
   ['cleankeygendialog_8',['cleanKeygenDialog',['../class_main_window.html#ad2a9b38617b357d8fa42744c00a26fcf',1,'MainWindow']]],
-  ['clear_9',['clear',['../class_clipboard_manager.html#ab9f20e4394ee1075b4e269cd454e4fc1',1,'ClipboardManager::clear()'],['../class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2',1,'PasswordDisplayPanel::clear()']]],
+  ['clear_9',['clear',['../class_clipboard_manager.html#ab9f20e4394ee1075b4e269cd454e4fc1',1,'ClipboardManager::clear()'],['../class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2',1,'PasswordDisplayPanel::clear()'],['../class_process_output_panel.html#a40eebd4f48de276cec251ffdfed97c15',1,'ProcessOutputPanel::clear()']]],
   ['cleargrepmode_10',['clearGrepMode',['../class_grep_search_controller.html#a17428e45f4ca498d7663327dfb41be0e',1,'GrepSearchController']]],
   ['clicked_11',['clicked',['../class_q_push_button_as_q_r_code.html#a63baaf712643365fe4ebf1a9084fceb8',1,'QPushButtonAsQRCode::clicked()'],['../class_q_push_button_show_password.html#aed1d368f2dac66057349e9b7d45c62d1',1,'QPushButtonShowPassword::clicked()'],['../class_q_push_button_with_clipboard.html#a14c2e48aa665e500839ef2a3222e995a',1,'QPushButtonWithClipboard::clicked()']]],
   ['clipboard_12',['clipboard',['../class_qt_pass.html#aa1918767cdefea447f1c90272fd95966',1,'QtPass']]],

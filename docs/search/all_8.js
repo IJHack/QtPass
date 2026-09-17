@@ -25,12 +25,13 @@ var searchData=
   ['isotpurivalue_22',['isOtpUriValue',['../class_file_content.html#a92629a218b9fce0c611d9ac1e1eca638',1,'FileContent']]],
   ['ispathinstore_23',['isPathInStore',['../class_path_validator.html#a15120558ca5dd41cdd9c485ae08030c7',1,'PathValidator']]],
   ['isrunning_24',['isRunning',['../class_single_application.html#a9408850aec7bca2e43e386f35ed780f4',1,'SingleApplication']]],
-  ['isshowprocessoutput_25',['isShowProcessOutput',['../class_qt_pass_settings.html#a86f9ccbb490cdcc4ffb3fcd6a2112def',1,'QtPassSettings']]],
-  ['issuer_26',['issuer',['../struct_totp_1_1_settings.html#a386ac12f560e143771320223c395dd9f',1,'Totp::Settings']]],
-  ['isusegit_27',['isUseGit',['../class_qt_pass_settings.html#a0bd97a8df7fb91cf461b5a1c57940710',1,'QtPassSettings']]],
-  ['isusegrepsearch_28',['isUseGrepSearch',['../class_qt_pass_settings.html#a48f32603dae06c6a513bcad0de85301c',1,'QtPassSettings']]],
-  ['isuseotp_29',['isUseOtp',['../class_qt_pass_settings.html#af9e41239c39581b0f3a573dfdaabff36',1,'QtPassSettings']]],
-  ['isvalid_30',['isValid',['../class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2',1,'Totp::isValid()'],['../struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a',1,'UserInfo::isValid()']]],
-  ['isvalidkeyid_31',['isValidKeyId',['../class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1',1,'Util']]],
-  ['itemkind_32',['ItemKind',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6',1,'dragAndDropInfoPasswordStore']]]
+  ['issensitiveprocess_25',['isSensitiveProcess',['../class_process_output_panel.html#ad6aa26912ba468c918d78d857c386da7',1,'ProcessOutputPanel']]],
+  ['isshowprocessoutput_26',['isShowProcessOutput',['../class_qt_pass_settings.html#a86f9ccbb490cdcc4ffb3fcd6a2112def',1,'QtPassSettings']]],
+  ['issuer_27',['issuer',['../struct_totp_1_1_settings.html#a386ac12f560e143771320223c395dd9f',1,'Totp::Settings']]],
+  ['isusegit_28',['isUseGit',['../class_qt_pass_settings.html#a0bd97a8df7fb91cf461b5a1c57940710',1,'QtPassSettings']]],
+  ['isusegrepsearch_29',['isUseGrepSearch',['../class_qt_pass_settings.html#a48f32603dae06c6a513bcad0de85301c',1,'QtPassSettings']]],
+  ['isuseotp_30',['isUseOtp',['../class_qt_pass_settings.html#af9e41239c39581b0f3a573dfdaabff36',1,'QtPassSettings']]],
+  ['isvalid_31',['isValid',['../class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2',1,'Totp::isValid()'],['../struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a',1,'UserInfo::isValid()']]],
+  ['isvalidkeyid_32',['isValidKeyId',['../class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1',1,'Util']]],
+  ['itemkind_33',['ItemKind',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6',1,'dragAndDropInfoPasswordStore']]]
 ];
