@@ -57,6 +57,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   via reject, so `checkSecretKeys()` saw Cancel. The dialog now talks to the
   backend itself, accepts on success, and on failure shows the reason and
   gives the form back instead of vanishing
+- Every decrypt result now says which entry it belongs to, and the main
+  window, the Ctrl+C copy, the OTP request and the edit dialog each act only
+  on the one they asked for. Before, a slower decrypt of an entry the user
+  had already left could repaint the pane, be copied to the clipboard or land
+  in the edit dialog; a second Ctrl+C while one was in flight was silently
+  dropped
 - "Automatically push" and "Automatically pull" in the settings did nothing
   since 1.8.0: [#1140](https://github.com/IJHack/QtPass/pull/1140) started
   storing them per profile and stopped writing the global keys that the

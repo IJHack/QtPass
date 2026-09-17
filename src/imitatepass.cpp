@@ -164,6 +164,7 @@ void ImitatePass::GitPush() {
  * @brief ImitatePass::Show shows content of file
  */
 void ImitatePass::Show(QString file) {
+  queueShow(file);
   file = m_settings.passStore + file + ".gpg";
   QStringList args = {"-d",      "--quiet",     "--yes",   "--no-encrypt-to",
                       "--batch", "--use-agent", pgpg(file)};

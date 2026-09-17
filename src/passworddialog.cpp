@@ -529,13 +529,12 @@ void PasswordDialog::cycleTemplate() {
  * @brief Sets the password from pass show output.
  * @param output Output from pass show command
  */
-void PasswordDialog::setPass(const QString &output) {
-  // setPassword() replaces (not appends) every field, so if more than one
-  // finishedShow arrives the last one wins rather than duplicating content.
-  // We deliberately keep listening: the dialog is modal and always edits the
-  // selected entry, so its own Show is the result that matters, and we cannot
-  // safely disconnect on the first signal because finishedShow carries no
-  // request identity — a stale queued Show could otherwise be consumed as ours.
+void PasswordDialog::setPass(const QString &output, const QString &file) {
+  // finishedShow names its file: a decrypt of any other entry (a tree click
+  // that was still queued when the dialog opened) is not ours.
+  if (!file.isEmpty() && file != m_file) {
+    return;
+  }
   setPassword(output);
   m_contentLoaded = true;
   // The decrypt landed: unlock the editor and Ok, and drop the "Decrypting…"

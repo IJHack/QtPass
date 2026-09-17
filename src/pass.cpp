@@ -635,11 +635,22 @@ void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
   auto pid = static_cast<PROCESS>(id);
 
+  // Pop the Show() this completion belongs to whether it worked or not, or
+  // the next result would be attributed to the wrong file.
+  QString shownFile;
+  if (pid == PASS_SHOW && !m_pendingShows.isEmpty()) {
+    shownFile = m_pendingShows.dequeue();
+  }
+
   if (exitCode != 0) {
     handleProcessError(pid, exitCode, out, err);
     return;
   }
 
+  if (pid == PASS_SHOW) {
+    emit finishedShow(out, shownFile);
+    return;
+  }
   emitProcessFinishedSignal(pid, out, err);
 }
 
@@ -732,7 +743,7 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
     emit finishedGitPush(out, err);
     break;
   case PASS_SHOW:
-    emit finishedShow(out);
+    // Handled in finished(), which knows the file.
     break;
   case PASS_INSERT:
     emit finishedInsert(out, err);

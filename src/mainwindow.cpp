@@ -16,7 +16,6 @@
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
 #include "qpushbuttonwithclipboard.h"
-#include "qtcompat.h"
 #include "qtpass.h"
 #include "qtpasssettings.h"
 #include "templateio.h"
@@ -636,7 +635,12 @@ void MainWindow::executeWrapperStarted() {
  * @param p_output - The raw output text containing the password entry data.
  * @return void - This function does not return a value.
  */
-void MainWindow::passShowHandler(const QString &p_output) {
+void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
+  // Only the entry we most recently asked to show may repaint the panel; a
+  // slower decrypt of an entry the user has since left is dropped.
+  if (!file.isEmpty() && !m_shownFile.isEmpty() && file != m_shownFile) {
+    return;
+  }
   const AppSettings s = QtPassSettings::load();
   QStringList templ =
       s.useTemplate ? s.passTemplate.split("\n") : QStringList();
@@ -652,7 +656,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
   // Skipped for an OTP request: the user asked for a one-time code, not the
   // password, and writing both in one event-loop turn can leave the Windows
   // clipboard empty (two OleSetClipboard calls back to back).
-  if (!m_otpRequestPending) {
+  if (m_otpRequestFile.isEmpty() || m_otpRequestFile != file) {
     m_qtPass->clipboard().copyIfAlways(password, p_output);
   }
 
@@ -680,29 +684,20 @@ void MainWindow::passShowHandler(const QString &p_output) {
 /**
  * @brief Generates a one-time password from a decrypted entry and copies it.
  *
- * Connected as a one-shot to Pass::finishedShow by onOtp(). passShowHandler is
- * connected first, so by the time this runs the panel has already been
- * repainted and the UI re-enabled.
+ * Connected to Pass::finishedShow for good; reacts only to the entry onOtp()
+ * asked for. passShowHandler is connected first, so by the time this runs the
+ * panel has already been repainted and the UI re-enabled.
  *
  * @param p_output - The decrypted entry content.
  * @return void - This function does not return a value.
  */
-void MainWindow::otpFromFileToClipboard(const QString &p_output) {
-  // A failed decrypt never fires finishedShow, and Qt::SingleShotConnection
-  // only self-disconnects when it does fire, so a connection armed by an
-  // earlier failed request can still be live here. Ignore it rather than
-  // hijacking an unrelated entry's decrypted content.
-  if (!m_otpRequestPending) {
+void MainWindow::otpFromFileToClipboard(const QString &p_output,
+                                        const QString &file) {
+  // Permanently connected: only the decrypt of the entry onOtp() asked for
+  // is ours, everything else belongs to a tree click or a Ctrl+C.
+  if (m_otpRequestFile.isEmpty() || file != m_otpRequestFile) {
     return;
   }
-  // finishedShow carries no request identity, so make sure this decrypt is the
-  // one we asked for and not a tree click that happened to land first.
-  if (m_otpRequestFile != getFile(ui->treeView->currentIndex(), true)) {
-    cancelOtpRequest();
-    setUiElementsEnabled(true);
-    return;
-  }
-  m_otpRequestPending = false;
   m_otpRequestFile.clear();
 
   if (p_output.isEmpty()) {
@@ -1229,29 +1224,16 @@ void MainWindow::onDelete() {
 }
 
 /**
- * @brief MainWindow::cancelOtpRequest abandon an in-flight OTP request.
+ * @brief MainWindow::cancelOtpRequest forget the pending OTP and copy requests.
  *
  * Connected to Pass::processErrorExit, and called from deselect(). A failed
- * decrypt never emits finishedShow, and the error handler re-enables the UI —
- * which stops the watchdog that was the only other thing clearing the flag.
- * Left set, it permanently suppressed passShowHandler's copy-on-select and let
- * the still-armed one-shot claim the next unrelated decrypt.
- *
- * The same failed decrypt would otherwise leave m_passwordCopyPending stuck
- * (its only other reset is passwordFromFileToClipboard, which never runs when
- * finishedShow is not emitted), permanently blocking Ctrl+C, so clear it here
- * too. Unlike otpFromFileToClipboard, that slot has no pending-flag guard, so
- * its single-shot connection must be torn down here as well — otherwise a
- * connection left armed by the failed decrypt would claim the next unrelated
- * finishedShow and copy the wrong entry to the clipboard. A never-fired
- * Qt::SingleShotConnection persists until it emits, so disconnect here.
+ * decrypt never emits finishedShow; if the request stayed pending, the next
+ * successful decrypt of that same entry (the user clicking it again) would be
+ * taken as the answer and copy something the user no longer asked for.
  */
 void MainWindow::cancelOtpRequest() {
-  m_otpRequestPending = false;
   m_otpRequestFile.clear();
-  disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-             &MainWindow::passwordFromFileToClipboard);
-  m_passwordCopyPending = false;
+  m_copyRequestFile.clear();
 }
 
 /**
@@ -1290,14 +1272,12 @@ void MainWindow::onOtp() {
     return;
   }
 
-  // Fallback: no OTP row on screen, so decrypt once. The flag stops
+  // Fallback: no OTP row on screen, so decrypt once. The request file stops
   // passShowHandler putting the password on the clipboard for a request that
-  // only asked for a code.
-  m_otpRequestPending = true;
+  // only asked for a code, and tells otpFromFileToClipboard which decrypt is
+  // its answer.
   m_otpRequestFile = file;
   setUiElementsEnabled(false);
-  connectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
-                    &MainWindow::otpFromFileToClipboard);
   // passShowHandler repaints the panel for this Show too, so keep the marker in
   // step or a second request would decrypt again instead of taking the fast
   // path. Safe to set now: executeWrapperStarted() clears the panel on every
@@ -1780,26 +1760,22 @@ void MainWindow::copyPasswordFromTreeview() {
       model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
 
   if (fileOrFolder.isFile()) {
-    // finishedShow carries no request identity, so allow only one copy request
-    // in flight: otherwise a second Ctrl+C on a different entry would re-arm
-    // the single-shot slot and the first decrypt to finish would copy the wrong
-    // entry while the later request is silently dropped. See
-    // m_passwordCopyPending.
-    if (m_passwordCopyPending) {
-      return;
-    }
-    m_passwordCopyPending = true;
     QString file = getFile(ui->treeView->currentIndex(), true);
-    connectSingleShot(QtPassSettings::getPass(), &Pass::finishedShow, this,
-                      &MainWindow::passwordFromFileToClipboard);
+    // The newest Ctrl+C wins: finishedShow names its file, so the decrypt of
+    // an earlier request is simply not this one's.
+    m_copyRequestFile = file;
     // This Show repaints the panel as well; see onOtp().
     m_shownFile = file;
     QtPassSettings::getPass()->Show(file);
   }
 }
 
-void MainWindow::passwordFromFileToClipboard(const QString &text) {
-  m_passwordCopyPending = false;
+void MainWindow::passwordFromFileToClipboard(const QString &text,
+                                             const QString &file) {
+  if (m_copyRequestFile.isEmpty() || file != m_copyRequestFile) {
+    return;
+  }
+  m_copyRequestFile.clear();
   const QStringList tokens = text.split('\n');
   if (tokens.isEmpty()) {
     return;

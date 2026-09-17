@@ -59,6 +59,7 @@ void RealPass::GitPush() { executePass(GIT_PUSH, {"git", "push"}); }
  *          otherwise returns QProcess::NormalExit
  */
 void RealPass::Show(QString file) {
+  queueShow(file);
   executePass(PASS_SHOW, {"show", file}, "", true);
 }
 

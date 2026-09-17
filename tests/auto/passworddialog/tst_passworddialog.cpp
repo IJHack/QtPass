@@ -45,7 +45,7 @@ public:
   void GitPull() override {}
   void GitPull_b() override {}
   void GitPush() override {}
-  void Show(QString) override {}
+  void Show(QString file) override { shown = file; }
   void Insert(QString, QString, bool) override {}
   void Remove(QString, bool) override {}
   void Move(const QString, const QString, const bool) override {}
@@ -53,7 +53,12 @@ public:
   void Init(QString, const QList<UserInfo> &) override {}
   void Grep(QString, bool) override {}
 
-  void deliverShow(const QString &out) { emit finishedShow(out); }
+  /// Answer the last Show() with @p out, or another entry's decrypt when
+  /// @p file is given.
+  void deliverShow(const QString &out, const QString &file = QString()) {
+    emit finishedShow(out, file.isEmpty() ? shown : file);
+  }
+  QString shown;
   void deliverError(int exitCode, const QString &err) {
     emit processErrorExit(exitCode, err);
   }
@@ -74,6 +79,7 @@ private Q_SLOTS:
 
   void existingEntryLocksEditorUntilContentLoads();
   void contentLoadUnlocksEditorAndOk();
+  void anotherEntrysDecryptIsIgnored();
   void decryptErrorKeepsDialogOpenWithReason();
   void lateErrorAfterContentLoadIsIgnored();
   void newEntryStartsEditable();
@@ -127,6 +133,28 @@ void tst_passworddialog::contentLoadUnlocksEditorAndOk() {
   auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
   QVERIFY2(status->text().isEmpty(),
            "the status label must be cleared once the content has loaded");
+}
+
+/**
+ * @brief finishedShow names its file: a decrypt still queued from a tree
+ *        click when the dialog opened must not unlock it or fill its fields.
+ */
+void tst_passworddialog::anotherEntrysDecryptIsIgnored() {
+  FakePass pass;
+  const AppSettings s = QtPassSettings::load();
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  QCOMPARE(pass.shown, QStringLiteral("entry.gpg"));
+
+  pass.deliverShow(QStringLiteral("other-secret\n"),
+                   QStringLiteral("other.gpg"));
+  QVERIFY2(!okButton(d)->isEnabled(),
+           "another entry's decrypt must not unlock Ok");
+  auto *pw = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  QVERIFY(pw->text().isEmpty());
+
+  pass.deliverShow(QStringLiteral("mine\n"));
+  QVERIFY(okButton(d)->isEnabled());
+  QCOMPARE(pw->text(), QStringLiteral("mine"));
 }
 
 void tst_passworddialog::decryptErrorKeepsDialogOpenWithReason() {

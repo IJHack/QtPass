@@ -19,7 +19,9 @@
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
+#include <QFileSystemModel>
 #include <QFrame>
 #include <QMenu>
 #include <QMenuBar>
@@ -30,6 +32,7 @@
 #include <QScopedPointer>
 #include <QScreen>
 #include <QShortcut>
+#include <QSortFilterProxyModel>
 #include <QStatusBar>
 #include <QTemporaryDir>
 #include <QTextBlock>
@@ -104,6 +107,7 @@ private Q_SLOTS:
   void onProcessOutputSkippedWhenPanelHidden();
   void passwordFromFileToClipboardCopiesFirstLine();
   void passwordFromFileToClipboardSkipsOtpSecret();
+  void copyRequestAnswersOnlyItsOwnEntry();
   void clipboardAutoclearSurvivesShowingAnotherEntry();
   void showTextAsQRCodeReportsMissingQrencode();
   void textBrowserFollowsRuntimePaletteChange();
@@ -458,6 +462,47 @@ void tst_mainwindow::onProcessOutputSkippedWhenPanelHidden() {
   QCOMPARE(outputEdit->toPlainText(), before);
 }
 
+// QTRY_* macros return void; this variant returns a value from a helper.
+#define QTRY_VERIFY_WITH_TIMEOUT_RETURN(expr, timeout, ret)                    \
+  do {                                                                         \
+    QElapsedTimer timer;                                                       \
+    timer.start();                                                             \
+    while (!(expr) && timer.elapsed() < (timeout)) {                           \
+      QTest::qWait(20);                                                        \
+    }                                                                          \
+    if (!(expr)) {                                                             \
+      return ret;                                                              \
+    }                                                                          \
+  } while (false)
+
+namespace {
+/**
+ * Create <name>.gpg in the store, make it the tree's current entry and press
+ * Ctrl+C on it, i.e. arm a copy request for it. The backend's decrypt of the
+ * fake file fails later on the event loop; the tests below answer the
+ * request synchronously first, the way a real finishedShow would.
+ */
+auto armCopyRequest(MainWindow *window, const QString &storeDir,
+                    const QString &name) -> bool {
+  const QString path = QDir(storeDir).filePath(name + QStringLiteral(".gpg"));
+  QFile f(path);
+  if (!f.open(QIODevice::WriteOnly)) {
+    return false;
+  }
+  f.write("not really encrypted");
+  f.close();
+  auto *tree = window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  QModelIndex src;
+  QTRY_VERIFY_WITH_TIMEOUT_RETURN((src = fs->index(path)).isValid(), 5000,
+                                  false);
+  tree->setCurrentIndex(proxy->mapFromSource(src));
+  return QMetaObject::invokeMethod(window, "copyPasswordFromTreeview",
+                                   Qt::DirectConnection);
+}
+} // namespace
+
 /**
  * @brief passwordFromFileToClipboard() copies the first line of a normal entry.
  */
@@ -470,13 +515,39 @@ void tst_mainwindow::passwordFromFileToClipboardCopiesFirstLine() {
   QClipboard *clip = QApplication::clipboard();
   clip->setText(QStringLiteral("sentinel"));
 
-  QVERIFY2(QMetaObject::invokeMethod(
-               m_window.data(), "passwordFromFileToClipboard",
-               Qt::DirectConnection,
-               Q_ARG(QString, QStringLiteral("hunter2\nlogin: alice"))),
-           "invoking passwordFromFileToClipboard must succeed");
-
+  QVERIFY(armCopyRequest(m_window.data(), m_storeDir.path(),
+                         QStringLiteral("copyme")));
+  m_window->passwordFromFileToClipboard(QStringLiteral("hunter2\nlogin: alice"),
+                                        QStringLiteral("copyme"));
   QCOMPARE(clip->text(), QStringLiteral("hunter2"));
+}
+
+/**
+ * @brief finishedShow names its file, so a decrypt of another entry — a tree
+ *        click that finished first — must not be copied, and the request
+ *        stays armed for its own answer.
+ */
+void tst_mainwindow::copyRequestAnswersOnlyItsOwnEntry() {
+  AppSettings s = QtPassSettings::load();
+  s.useSelection = false;
+  s.useAutoclear = false;
+  QtPassSettings::save(s);
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("sentinel"));
+
+  QVERIFY(armCopyRequest(m_window.data(), m_storeDir.path(),
+                         QStringLiteral("wanted")));
+  m_window->passwordFromFileToClipboard(QStringLiteral("other-secret"),
+                                        QStringLiteral("someone-else"));
+  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+  m_window->passwordFromFileToClipboard(QStringLiteral("the-one"),
+                                        QStringLiteral("wanted"));
+  QCOMPARE(clip->text(), QStringLiteral("the-one"));
+  // Consumed: the same content arriving again is not copied twice.
+  clip->setText(QStringLiteral("sentinel"));
+  m_window->passwordFromFileToClipboard(QStringLiteral("the-one"),
+                                        QStringLiteral("wanted"));
+  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
 }
 
 namespace {
@@ -540,10 +611,9 @@ void tst_mainwindow::passwordFromFileToClipboardSkipsOtpSecret() {
 
   const QString otpUri = QStringLiteral(
       "otpauth://totp/Example:alice?secret=JBSWY3DPEHPK3PXP&issuer=Example");
-  QVERIFY2(
-      QMetaObject::invokeMethod(m_window.data(), "passwordFromFileToClipboard",
-                                Qt::DirectConnection, Q_ARG(QString, otpUri)),
-      "invoking passwordFromFileToClipboard must succeed");
+  QVERIFY(armCopyRequest(m_window.data(), m_storeDir.path(),
+                         QStringLiteral("otpentry")));
+  m_window->passwordFromFileToClipboard(otpUri, QStringLiteral("otpentry"));
 
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
   QVERIFY2(!clip->text().contains(QStringLiteral("JBSWY3DPEHPK3PXP")),
