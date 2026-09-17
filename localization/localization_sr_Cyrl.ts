@@ -2458,7 +2458,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="344"/>
         <source>[PARTIAL] </source>
-        <translation>[ДЕЛОВНО] </translation>
+        <translation>[ДЕЛИМИЧНО] </translation>
     </message>
 </context>
 </TS>

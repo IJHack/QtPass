@@ -2495,7 +2495,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[EXPIRED] </source>
-        <translation>[ТЕРМІН ТЕРМІНУ ВИЙШОВ] </translation>
+        <translation>[ТЕРМІН ДІЇ ВИЙШОВ] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="344"/>

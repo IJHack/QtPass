@@ -239,7 +239,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Hide on close</source>
-        <translation>ফিরে আসলে সরান</translation>
+        <translation type="unfinished">বন্ধ করলে লুকান</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
@@ -1290,7 +1290,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="508"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">উইন্ডোটি বন্ধ করুন; &quot;ফিরে আসলে সরান&quot; চালু থাকলে QtPass ট্রেতে থেকে যায়</translation>
+        <translation type="unfinished">উইন্ডোটি বন্ধ করুন; &quot;বন্ধ করলে লুকান&quot; চালু থাকলে QtPass ট্রেতে থেকে যায়</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>

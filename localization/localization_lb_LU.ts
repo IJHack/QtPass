@@ -229,7 +229,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Hide on close</source>
-        <translation>Verstoppt sech op</translation>
+        <translation type="unfinished">Beim Zoumaache verstoppen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
@@ -1226,7 +1226,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="508"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">Mécht d&apos;Fënster zou; mat &quot;Verstoppt sech op&quot; bleift QtPass am System-Tray</translation>
+        <translation type="unfinished">Mécht d&apos;Fënster zou; mat &quot;Beim Zoumaache verstoppen&quot; bleift QtPass am System-Tray</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>

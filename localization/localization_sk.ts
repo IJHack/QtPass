@@ -2516,7 +2516,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="344"/>
         <source>[PARTIAL] </source>
-        <translation>[ČÁSTOVÝ] </translation>
+        <translation>[ČIASTOČNÝ] </translation>
     </message>
 </context>
 </TS>
