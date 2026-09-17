@@ -23,8 +23,8 @@
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">
-<polygon fill="#999999" stroke="#666666" points="151,-19 77,-19 77,0 151,0 151,-19"/>
-<text text-anchor="middle" x="114" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass</text>
+<polygon fill="#999999" stroke="#666666" points="106,-19 32,-19 32,0 106,0 106,-19"/>
+<text text-anchor="middle" x="69" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass</text>
 </a>
 </g>
 </g>
@@ -41,8 +41,8 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node2&#45;&gt;Node1</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M83.05,-47.64C90.89,-38.24 100.33,-26.9 106.71,-19.25"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="80.14,-45.66 76.43,-55.58 85.52,-50.14 80.14,-45.66"/>
+<path fill="none" stroke="#63b8ff" d="M69,-45.3C69,-36.41 69,-26.28 69,-19.25"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="65.5,-45.58 69,-55.58 72.5,-45.58 65.5,-45.58"/>
 </a>
 </g>
 </g>
@@ -129,24 +129,6 @@
 </a>
 </g>
 <text text-anchor="start" x="72.5" y="-98.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">exec</text>
-</g>
-<!-- Node7 -->
-<g id="Node000007" class="node">
-<title>Node7</title>
-<g id="a_Node000007"><a xlink:href="classsimple_transaction.html" target="_top" xlink:title="Tracks a sequence of processes that should be treated as one atomic operation.">
-<polygon fill="white" stroke="#666666" points="211.5,-75 106.5,-75 106.5,-56 211.5,-56 211.5,-75"/>
-<text text-anchor="middle" x="159" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">simpleTransaction</text>
-</a>
-</g>
-</g>
-<!-- Node7&#45;&gt;Node1 -->
-<g id="edge7_Node000001_Node000007" class="edge">
-<title>Node7&#45;&gt;Node1</title>
-<g id="a_edge7_Node000001_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#8b1a1a" d="M144.95,-47.64C137.11,-38.24 127.67,-26.9 121.29,-19.25"/>
-<polygon fill="#8b1a1a" stroke="#8b1a1a" points="142.48,-50.14 151.57,-55.58 147.86,-45.66 142.48,-50.14"/>
-</a>
-</g>
 </g>
 </g>
 </svg>

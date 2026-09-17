@@ -44,6 +44,8 @@ var searchData=
   ['gitpush_41',['GitPush',['../class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9',1,'ImitatePass::GitPush()'],['../class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09',1,'Pass::GitPush()'],['../class_real_pass.html#ae32fd82fe5e57b2c45df05bfe2991b5b',1,'RealPass::GitPush()']]],
   ['gitready_42',['gitReady',['../class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219',1,'ImitatePass']]],
   ['gittracks_43',['gitTracks',['../class_imitate_pass.html#a568cee878638fa0cbc4c862060ea35b3',1,'ImitatePass']]],
-  ['gpgsupportsed25519_44',['gpgSupportsEd25519',['../class_pass.html#a407558ed7e2d88f953de7b179a1d143a',1,'Pass']]],
-  ['grep_45',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]]
+  ['gpgidsigner_44',['GpgIdSigner',['../class_gpg_id_signer.html#a4861ba0784a1a7644ca697e3a72cd5b5',1,'GpgIdSigner']]],
+  ['gpgidsigner_45',['gpgIdSigner',['../class_imitate_pass.html#aff483e62ab4ceede87aa3007c8f55588',1,'ImitatePass']]],
+  ['gpgsupportsed25519_46',['gpgSupportsEd25519',['../class_pass.html#a407558ed7e2d88f953de7b179a1d143a',1,'Pass']]],
+  ['grep_47',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]]
 ];

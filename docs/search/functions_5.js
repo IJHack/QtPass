@@ -6,7 +6,7 @@ var searchData=
   ['filteracceptsrow_3',['filterAcceptsRow',['../class_store_model.html#a02542fddfeea1874e849c0bb1d94f6c1',1,'StoreModel']]],
   ['findbinaryinpath_4',['findBinaryInPath',['../class_util.html#aa93547aecfd166a3e0eac955370cc05c',1,'Util::findBinaryInPath(const QString &amp;binary) -&gt; QString'],['../class_util.html#abdd60f9928354b515d9d6bd2ee837699',1,'Util::findBinaryInPath(const QString &amp;binary, const QStringList &amp;searchPaths) -&gt; QString']]],
   ['findpasswordstore_5',['findPasswordStore',['../class_util.html#abfddcff8c37fbb33e86605e4fb7250db',1,'Util']]],
-  ['finished_6',['finished',['../class_executor.html#ace810a6d93c74dec7188038210c5a731',1,'Executor::finished()'],['../class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4',1,'ImitatePass::finished()'],['../class_pass.html#a8efe916aa899deaed23aa445cc9a302f',1,'Pass::finished(int id, int exitCode, const QString &amp;out, const QString &amp;err)']]],
+  ['finished_6',['finished',['../class_executor.html#ace810a6d93c74dec7188038210c5a731',1,'Executor::finished()'],['../class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4',1,'ImitatePass::finished()'],['../class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a',1,'NativeGrep::finished()'],['../class_pass.html#a8efe916aa899deaed23aa445cc9a302f',1,'Pass::finished(int id, int exitCode, const QString &amp;out, const QString &amp;err)']]],
   ['finishedanywithpid_7',['finishedAnyWithPid',['../class_pass.html#a13859dd31b009e6d362546d1c96dc303',1,'Pass']]],
   ['finishedcopy_8',['finishedCopy',['../class_pass.html#a64d98203e2f37807ec39ff9fa03e70f3',1,'Pass']]],
   ['finishedgenerategpgkeys_9',['finishedGenerateGPGKeys',['../class_pass.html#a296dba6b2dc144cdd95af8da86d2170a',1,'Pass']]],
