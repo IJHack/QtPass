@@ -255,7 +255,7 @@ line ([#1709](https://github.com/IJHack/QtPass/issues/1709)). Qt 5.15 and Qt 6 a
 
 ## [1.8.0](https://github.com/IJHack/QtPass/tree/v1.8.0) (2026-09-13)
 
-### New Features
+### New Features <!-- markdownlint-disable-line MD024 -->
 
 - Built-in TOTP (RFC 6238): one-time passwords are now generated inside QtPass
   instead of shelling out to the `pass-otp` extension, so OTP works on every

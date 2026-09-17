@@ -284,8 +284,8 @@ jobs:
         if: steps.need_build.outputs.run_build == 'true'
         with:
           # The AppImage ships on Qt 6.8 (LTS), like the Windows installer.
+          # Qt SVG is part of the base install; it is not an add-on module.
           version: "6.8"
-          modules: "qtsvg"
           cache: true
 
       # linuxdeploy and its Qt plugin are AppImages themselves. The build
