@@ -69,7 +69,7 @@ void tst_firstrunwizard::initTestCase() {
       "'sec:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA:::+:::23::0:' "
       "'fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:' "
       "'uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Anne "
-      "Jan Brouwer <henk@annejan.com>::::::::::0:'\n"
+      "Jan Brouwer <anne@example.org>::::::::::0:'\n"
       ";;\n"
       "esac\n"
       "exit 0\n");
@@ -197,7 +197,10 @@ void tst_firstrunwizard::gitDefaultsFollowTheFolder() {
   {
     QFile script(git);
     QVERIFY(script.open(QIODevice::WriteOnly));
-    script.write("#!/bin/sh\nexit 0\n");
+    // Answers "config --get user.*" like a configured git; everything else
+    // succeeds silently.
+    script.write("#!/bin/sh\ncase \"$*\" in *config*) echo someone;; esac\n"
+                 "exit 0\n");
     script.close();
     QVERIFY(QFile::setPermissions(git, QFile::ReadOwner | QFile::WriteOwner |
                                            QFile::ExeOwner));
@@ -226,6 +229,23 @@ void tst_firstrunwizard::gitDefaultsFollowTheFolder() {
   QVERIFY2(boxFor(plain.path()), "a repository is on");
   QVERIFY2(boxFor(m_tmp.filePath(QStringLiteral("does-not-exist"))),
            "a store still to be made is on when git is there");
+
+  // A git without user.name/user.email cannot commit: the box is greyed
+  // with the instructions, for a new store as well.
+  {
+    QFile script(git);
+    QVERIFY(script.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    script.write("#!/bin/sh\ncase \"$*\" in *config*) exit 1;; esac\nexit 0\n");
+  }
+  s.passStore = m_tmp.filePath(QStringLiteral("does-not-exist"));
+  QtPassSettings::save(s);
+  FirstRunWizard w;
+  w.setStartId(FirstRunWizard::StorePage);
+  w.restart();
+  auto *box = w.currentPage()->findChild<QCheckBox *>();
+  QVERIFY(box != nullptr);
+  QVERIFY(!box->isEnabled());
+  QVERIFY(box->toolTip().contains(QStringLiteral("user.email")));
 }
 
 void tst_firstrunwizard::finishCreatesAndInitialisesTheStore() {

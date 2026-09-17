@@ -165,10 +165,14 @@ void FirstRunWizard::accept() {
              "to do that.")
               .arg(QDir::toNativeSeparators(store)));
     }
-  } else if (m_settings.useGit && !QDir(store).exists(QStringLiteral(".git")) &&
-             !ProfileInit::initGit(store, m_settings, &note)) {
-    QMessageBox::warning(this, tr("Password store not initialised"), note);
-    return;
+  } else if (m_settings.useGit && !QDir(store).exists(QStringLiteral(".git"))) {
+    if (!ProfileInit::initGit(store, m_settings, &note)) {
+      // Take the repository back too, so a second Finish retries the whole
+      // thing instead of skipping a .git that never got its first commit.
+      QDir(QDir(store).filePath(QStringLiteral(".git"))).removeRecursively();
+      QMessageBox::warning(this, tr("Password store not initialised"), note);
+      return;
+    }
   }
   m_settings.passStore = Util::normalizeFolderPath(store);
   QtPassSettings::save(m_settings);
@@ -309,7 +313,8 @@ void KeyWizardPage::reload() {
       label += QStringLiteral(" (%1)").arg(why);
     }
     auto *item = new QListWidgetItem(label, m_list);
-    item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
+    item->setFlags(key.enabled ? (item->flags() | Qt::ItemIsUserCheckable)
+                               : (item->flags() & ~Qt::ItemIsEnabled));
     item->setCheckState(key.enabled ? Qt::Checked : Qt::Unchecked);
   }
   m_status->setText(m_wizard->m_keys.isEmpty()
@@ -357,8 +362,6 @@ StoreWizardPage::StoreWizardPage(FirstRunWizard *wizard)
                  }));
   m_status->setWordWrap(true);
   layout->addRow(QString(), m_status);
-  m_useGit->setToolTip(tr("Every change becomes a commit; a folder that is "
-                          "no repository yet gets one"));
   layout->addRow(QString(), m_useGit);
   connect(m_path, &QLineEdit::textEdited, this, &StoreWizardPage::updateStatus);
 }
@@ -369,15 +372,31 @@ void StoreWizardPage::initializePage() {
     path = Util::findPasswordStore();
   }
   m_path->setText(QDir::toNativeSeparators(QDir::cleanPath(path)));
-  const bool haveGit = runnable(m_wizard->m_settings.gitExecutable);
+  const QString clean = QDir::cleanPath(path);
+  const bool repository = QDir(clean).exists(QStringLiteral(".git"));
+  bool haveGit = runnable(m_wizard->m_settings.gitExecutable);
+  // A first commit needs a name and an e-mail; without them Finish would
+  // fail at the very end. Ask git now and say what to do instead.
+  const bool identity =
+      haveGit && (repository ||
+                  ProfileInit::gitIdentityConfigured(
+                      QDir::homePath(), m_wizard->m_settings));
+  m_useGit->setToolTip(
+      haveGit && !identity
+          ? tr("Git has no name and e-mail to commit with yet. Run\n"
+               "git config --global user.name \"Your Name\"\n"
+               "git config --global user.email you@example.org\n"
+               "and turn Git on in Settings afterwards.")
+          : tr("Every change becomes a commit; a folder that is no "
+               "repository yet gets one"));
+  haveGit = haveGit && identity;
   m_useGit->setEnabled(haveGit);
   // On for a repository or a store still to be made, off for an existing
   // store that is no repository: turning Git on there would make every
   // remove fail in a folder git knows nothing about.
-  const QString clean = QDir::cleanPath(path);
-  const bool repository = QDir(clean).exists(QStringLiteral(".git"));
-  m_useGit->setChecked(haveGit && (m_wizard->m_settings.useGit || repository ||
-                                   !FirstRunWizard::isStore(clean)));
+  m_useGit->setChecked(
+      haveGit && (m_wizard->m_settings.useGit || repository ||
+                  !FirstRunWizard::isStore(clean)));
   updateStatus();
 }
 

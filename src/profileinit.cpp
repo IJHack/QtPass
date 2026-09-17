@@ -6,6 +6,7 @@
 #include "gpgidsigner.h"
 #include "userinfo.h"
 #include <QDir>
+#include <QDirIterator>
 #include <QFile>
 #include <QFileInfo>
 #include <QProcess>
@@ -148,8 +149,47 @@ auto ProfileInit::initGit(const QString &dir, const AppSettings &s,
     }
     return true;
   };
-  return run({QStringLiteral("init")}) &&
-         run({QStringLiteral("add"), QStringLiteral("-A")}) &&
-         run({QStringLiteral("commit"), QStringLiteral("-m"),
+  // Only what belongs to a store is staged: an existing folder may hold
+  // exports, editor swap files or other plaintext that must not enter the
+  // history (the same rule the re-encryption backup commit follows).
+  QStringList files;
+  QDirIterator it(dir,
+                  {QStringLiteral("*.gpg"), QStringLiteral(".gpg-id"),
+                   QStringLiteral(".gpg-id.sig")},
+                  QDir::Files | QDir::Hidden, QDirIterator::Subdirectories);
+  const QDir base(dir);
+  while (it.hasNext()) {
+    const QString rel = base.relativeFilePath(it.next());
+    if (!rel.startsWith(QStringLiteral(".git/"))) {
+      files << rel;
+    }
+  }
+  if (!run({QStringLiteral("init")})) {
+    return false;
+  }
+  if (!files.isEmpty() &&
+      !run(QStringList{QStringLiteral("add"), QStringLiteral("--")} + files)) {
+    return false;
+  }
+  return run({QStringLiteral("commit"), QStringLiteral("--allow-empty"),
+              QStringLiteral("-m"),
               QStringLiteral("Added password store using QtPass.")});
+}
+
+auto ProfileInit::gitIdentityConfigured(const QString &dir,
+                                        const AppSettings &s) -> bool {
+  QProcess git;
+  git.setWorkingDirectory(dir);
+  for (const char *key : {"user.name", "user.email"}) {
+    QString out;
+    if (Executor::executeBlocking(git, s.gitExecutable,
+                                  {QStringLiteral("config"),
+                                   QStringLiteral("--get"),
+                                   QString::fromLatin1(key)},
+                                  QString(), &out, nullptr) != 0 ||
+        out.trimmed().isEmpty()) {
+      return false;
+    }
+  }
+  return true;
 }

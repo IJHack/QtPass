@@ -53,14 +53,26 @@ public:
       -> bool;
 
   /**
-   * @brief Put an existing store under Git: `git init`, `git add -A` and a
-   * first commit, with blocking processes of their own in @p dir.
+   * @brief Put an existing store under Git: `git init`, stage the `.gpg`
+   * entries and the `.gpg-id` files (nothing else that may lie around in the
+   * folder) and make a first commit, with blocking processes of their own in
+   * @p dir.
    * @param dir The store.
    * @param s Settings for the git executable.
    * @param note Receives a translated error on failure.
    * @return true when the repository exists and the commit is made.
    */
   static auto initGit(const QString &dir, const AppSettings &s, QString *note)
+      -> bool;
+
+  /**
+   * @brief Whether git has a name and e-mail to commit with, i.e.
+   * `user.name` and `user.email` resolve (globally or in @p dir).
+   * @param dir Directory to ask in; a repository's own config counts.
+   * @param s Settings for the git executable.
+   * @return true when a commit would not fail for lack of an identity.
+   */
+  static auto gitIdentityConfigured(const QString &dir, const AppSettings &s)
       -> bool;
 
 private:
