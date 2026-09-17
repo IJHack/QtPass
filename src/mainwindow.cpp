@@ -374,13 +374,6 @@ auto MainWindow::getCurrentTreeViewIndex() -> QModelIndex {
   return ui->treeView->currentIndex();
 }
 
-void MainWindow::cleanKeygenDialog() {
-  if (m_keyGenDialog != nullptr) {
-    m_keyGenDialog->close();
-  }
-  m_keyGenDialog = nullptr;
-}
-
 /**
  * @brief Displays the given text in the main window text browser, optionally
  * marking it as an error and/or rendering it as HTML.
@@ -1350,16 +1343,6 @@ void MainWindow::messageAvailable(const QString &message) {
     ui->lineEdit->setText(message);
     on_lineEdit_returnPressed();
   }
-}
-
-/**
- * @brief MainWindow::generateKeyPair internal gpg keypair generator . .
- * @param batch
- * @param keygenWindow
- */
-void MainWindow::generateKeyPair(const QString &batch, QDialog *keygenWindow) {
-  m_keyGenDialog = keygenWindow;
-  emit generateGPGKeyPair(batch);
 }
 
 /**

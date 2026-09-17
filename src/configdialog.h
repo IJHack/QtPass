@@ -15,7 +15,6 @@ struct UserInfo;
 class ConfigDialog;
 } // namespace Ui
 
-class MainWindow;
 class QTableWidgetItem;
 
 /**
@@ -32,9 +31,9 @@ class ConfigDialog : public QDialog {
 public:
   /**
    * @brief Construct a ConfigDialog associated with the given main window.
-   * @param parent The application's MainWindow.
+   * @param parent Parent widget, usually the main window.
    */
-  explicit ConfigDialog(MainWindow *parent);
+  explicit ConfigDialog(QWidget *parent);
   ~ConfigDialog() override;
 
   /**
@@ -65,13 +64,6 @@ public:
    * @brief Run the first-time setup wizard.
    */
   void wizard();
-
-  /**
-   * @brief Start GPG key generation.
-   * @param batch GPG batch parameter string.
-   * @param dialog Parent dialog to return to after generation.
-   */
-  void genKey(const QString &batch, QDialog *dialog);
 
   /**
    * @brief Show or hide the system tray icon.
@@ -212,7 +204,6 @@ private:
   void initializeNewProfiles(
       const QHash<QString, QHash<QString, QString>> &existingProfiles);
 
-  MainWindow *mainWindow;
   QHash<QString, QHash<QString, QString>> m_profiles;
   /// User-defined custom charset, retained while a builtin set is selected so
   /// it is not lost when the line edit shows the builtin's characters instead.

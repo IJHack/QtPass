@@ -51,6 +51,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Bugfixes
 
+- A successful key generation in the first-run wizard still ended the wizard:
+  the result travelled KeygenDialog → ConfigDialog → MainWindow → QtPass →
+  Pass and back through a pointer in the main window, which closed the dialog
+  via reject, so `checkSecretKeys()` saw Cancel. The dialog now talks to the
+  backend itself, accepts on success, and on failure shows the reason and
+  gives the form back instead of vanishing
 - "Automatically push" and "Automatically pull" in the settings did nothing
   since 1.8.0: [#1140](https://github.com/IJHack/QtPass/pull/1140) started
   storing them per profile and stopped writing the global keys that the
