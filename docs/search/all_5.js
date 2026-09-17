@@ -23,11 +23,12 @@ var searchData=
   ['finishedshow_20',['finishedShow',['../class_pass.html#a3a1a065e12909518f3898b3557ed714c',1,'Pass']]],
   ['finishoutcome_21',['FinishOutcome',['../struct_grep_search_controller_1_1_finish_outcome.html',1,'GrepSearchController']]],
   ['finishsearch_22',['finishSearch',['../class_grep_search_controller.html#a7ba10cf18a8566d0bb3ff1312bfd5c5c',1,'GrepSearchController']]],
-  ['flagfromstring_23',['flagFromString',['../struct_profile.html#a89364a3e36a6f8b6197adc385854e023',1,'Profile']]],
-  ['flags_24',['flags',['../class_store_model.html#ab8ebcb53ce116b2ff658a6d49134531d',1,'StoreModel']]],
-  ['flagtostring_25',['flagToString',['../struct_profile.html#a5e7cc4f12dbd6e0e51a0ef93f9c37e7d',1,'Profile']]],
-  ['flashtext_26',['flashText',['../class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89',1,'MainWindow']]],
-  ['formatoutput_27',['formatOutput',['../class_qt_pass.html#a3a911b2dc52f8959aadf21ddbd21960f',1,'QtPass']]],
-  ['from_20source_28',['From source',['../index.html#source',1,'']]],
-  ['fullyvalid_29',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
+  ['firstrunwizard_23',['FirstRunWizard',['../class_first_run_wizard.html',1,'FirstRunWizard'],['../class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d',1,'FirstRunWizard::FirstRunWizard()']]],
+  ['flagfromstring_24',['flagFromString',['../struct_profile.html#a89364a3e36a6f8b6197adc385854e023',1,'Profile']]],
+  ['flags_25',['flags',['../class_store_model.html#ab8ebcb53ce116b2ff658a6d49134531d',1,'StoreModel']]],
+  ['flagtostring_26',['flagToString',['../struct_profile.html#a5e7cc4f12dbd6e0e51a0ef93f9c37e7d',1,'Profile']]],
+  ['flashtext_27',['flashText',['../class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89',1,'MainWindow']]],
+  ['formatoutput_28',['formatOutput',['../class_qt_pass.html#a3a911b2dc52f8959aadf21ddbd21960f',1,'QtPass']]],
+  ['from_20source_29',['From source',['../index.html#source',1,'']]],
+  ['fullyvalid_30',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
 ];

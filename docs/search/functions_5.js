@@ -20,10 +20,11 @@ var searchData=
   ['finishedremove_17',['finishedRemove',['../class_pass.html#af08e80e76ffd6581f35e701e6c8b533e',1,'Pass']]],
   ['finishedshow_18',['finishedShow',['../class_pass.html#a3a1a065e12909518f3898b3557ed714c',1,'Pass']]],
   ['finishsearch_19',['finishSearch',['../class_grep_search_controller.html#a7ba10cf18a8566d0bb3ff1312bfd5c5c',1,'GrepSearchController']]],
-  ['flagfromstring_20',['flagFromString',['../struct_profile.html#a89364a3e36a6f8b6197adc385854e023',1,'Profile']]],
-  ['flags_21',['flags',['../class_store_model.html#ab8ebcb53ce116b2ff658a6d49134531d',1,'StoreModel']]],
-  ['flagtostring_22',['flagToString',['../struct_profile.html#a5e7cc4f12dbd6e0e51a0ef93f9c37e7d',1,'Profile']]],
-  ['flashtext_23',['flashText',['../class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89',1,'MainWindow']]],
-  ['formatoutput_24',['formatOutput',['../class_qt_pass.html#a3a911b2dc52f8959aadf21ddbd21960f',1,'QtPass']]],
-  ['fullyvalid_25',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
+  ['firstrunwizard_20',['FirstRunWizard',['../class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d',1,'FirstRunWizard']]],
+  ['flagfromstring_21',['flagFromString',['../struct_profile.html#a89364a3e36a6f8b6197adc385854e023',1,'Profile']]],
+  ['flags_22',['flags',['../class_store_model.html#ab8ebcb53ce116b2ff658a6d49134531d',1,'StoreModel']]],
+  ['flagtostring_23',['flagToString',['../struct_profile.html#a5e7cc4f12dbd6e0e51a0ef93f9c37e7d',1,'Profile']]],
+  ['flashtext_24',['flashText',['../class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89',1,'MainWindow']]],
+  ['formatoutput_25',['formatOutput',['../class_qt_pass.html#a3a911b2dc52f8959aadf21ddbd21960f',1,'QtPass']]],
+  ['fullyvalid_26',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
 ];

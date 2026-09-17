@@ -6,6 +6,7 @@ var searchData=
   ['deselectabletreeview_3',['DeselectableTreeView',['../class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26',1,'DeselectableTreeView']]],
   ['dirfor_4',['dirFor',['../class_store_tree.html#a0af4ab5f8c00e1188af669b8aea1ab47',1,'StoreTree']]],
   ['displayfields_5',['displayFields',['../class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f',1,'PasswordDisplayPanel']]],
-  ['dropmimedata_6',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
-  ['dropstaletoolbarpalette_7',['dropStaleToolBarPalette',['../class_main_window.html#a60ed7fe85ceeecb99a88ae9c4d6d2908',1,'MainWindow']]]
+  ['donewizardpage_6',['DoneWizardPage',['../class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183',1,'DoneWizardPage']]],
+  ['dropmimedata_7',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
+  ['dropstaletoolbarpalette_8',['dropStaleToolBarPalette',['../class_main_window.html#a60ed7fe85ceeecb99a88ae9c4d6d2908',1,'MainWindow']]]
 ];

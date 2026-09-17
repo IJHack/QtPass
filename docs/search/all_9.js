@@ -6,5 +6,6 @@ var searchData=
   ['keypressevent_3',['keyPressEvent',['../class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88',1,'MainWindow::keyPressEvent()'],['../class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb',1,'UsersDialog::keyPressEvent()']]],
   ['keys_4',['keys',['../class_gpg_id_signer.html#a772cffc3e742e90ae31d253e012494e8',1,'GpgIdSigner']]],
   ['keysfromsetting_5',['keysFromSetting',['../class_gpg_id_signer.html#ae61fd84eecb96bc0214fcc3b9fe6815e',1,'GpgIdSigner']]],
-  ['kind_6',['kind',['../structdrag_and_drop_info_password_store.html#ab4bf9c0e8d5cce80a689fd57b3b97541',1,'dragAndDropInfoPasswordStore']]]
+  ['keywizardpage_6',['KeyWizardPage',['../class_key_wizard_page.html',1,'KeyWizardPage'],['../class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a',1,'KeyWizardPage::KeyWizardPage()']]],
+  ['kind_7',['kind',['../structdrag_and_drop_info_password_store.html#ab4bf9c0e8d5cce80a689fd57b3b97541',1,'dragAndDropInfoPasswordStore']]]
 ];

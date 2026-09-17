@@ -13,7 +13,8 @@ var searchData=
   ['discard_10',['discard',['../struct_grep_search_controller_1_1_finish_outcome.html#aa12d73ecc749e62f884be80576823595',1,'GrepSearchController::FinishOutcome']]],
   ['displayasis_11',['displayAsIs',['../struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d',1,'AppSettings']]],
   ['displayfields_12',['displayFields',['../class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f',1,'PasswordDisplayPanel']]],
-  ['draganddropinfopasswordstore_13',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
-  ['dropmimedata_14',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
-  ['dropstaletoolbarpalette_15',['dropStaleToolBarPalette',['../class_main_window.html#a60ed7fe85ceeecb99a88ae9c4d6d2908',1,'MainWindow']]]
+  ['donewizardpage_13',['DoneWizardPage',['../class_done_wizard_page.html',1,'DoneWizardPage'],['../class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183',1,'DoneWizardPage::DoneWizardPage()']]],
+  ['draganddropinfopasswordstore_14',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
+  ['dropmimedata_15',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
+  ['dropstaletoolbarpalette_16',['dropStaleToolBarPalette',['../class_main_window.html#a60ed7fe85ceeecb99a88ae9c4d6d2908',1,'MainWindow']]]
 ];
