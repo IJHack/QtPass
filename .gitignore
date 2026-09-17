@@ -52,3 +52,5 @@ opencode.json
 .opencode/*.local.json
 .opencode/scheduled_tasks.lock
 flatpak/org.qtpass.QtPass.ci.yml
+build-appimage/
+dist/

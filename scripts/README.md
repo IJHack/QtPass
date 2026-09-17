@@ -11,11 +11,12 @@ This directory contains helper scripts for development and releases.
 
 ## Release
 
-| Script                   | Description                     |
-| ------------------------ | ------------------------------- |
-| `release-linux.sh`       | Build and install on Linux      |
-| `release-mac.sh`         | Build and package for macOS     |
-| `sign-release-assets.sh` | Sign release artifacts with GPG |
+| Script                   | Description                        |
+| ------------------------ | ---------------------------------- |
+| `build-appimage.sh`      | Build a relocatable Linux AppImage |
+| `release-linux.sh`       | Build and install on Linux         |
+| `release-mac.sh`         | Build and package for macOS        |
+| `sign-release-assets.sh` | Sign release artifacts with GPG    |
 
 ## Usage
 
@@ -37,6 +38,21 @@ scripts\build-windows.cmd check
 ```
 
 Set `QT_DIR` to select a specific Qt. See [Windows.md](../Windows.md).
+
+### Build an AppImage
+
+Produces `dist/QtPass-<version>-x86_64.AppImage` from the working tree:
+
+```bash
+./scripts/build-appimage.sh [output-directory]
+```
+
+Needs Qt 6.8+ (`qmake6`) and network access to fetch `linuxdeploy` and its Qt
+plugin. Set `VERSION` to override the version taken from `qtpass.pri`.
+
+Only Qt and the C++ runtime are bundled: unlike the Flatpak, an AppImage is
+not sandboxed, so QtPass keeps resolving `pass`, `gpg2` and `git` from the
+host's `$PATH` and talks to the host `gpg-agent` directly.
 
 ### Release Scripts
 

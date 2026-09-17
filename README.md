@@ -76,6 +76,16 @@ Windows
 (the installer is not code-signed, so SmartScreen asks for
 _More info → Run anyway_ on first start)
 
+Linux (AppImage)
+Download `QtPass-<version>-x86_64.AppImage` from the
+[releases page](https://github.com/IJHack/QtPass/releases), then:
+`chmod +x QtPass-*.AppImage && ./QtPass-*.AppImage`
+It bundles Qt only, and uses the `pass`, `gpg2`, `git` and `gpg-agent` already
+installed on your system — so your existing `~/.password-store`, pinentry and
+smartcard all keep working, with no sandbox permissions to grant. Requires
+glibc 2.39 or newer (Ubuntu 24.04+, Debian 13+, Fedora 40+) and, on older
+systems without it, `libfuse2`.
+
 [![Packaging status](https://repology.org/badge/vertical-allrepos/qtpass.svg)](https://repology.org/metapackage/qtpass)
 [![Translation status](https://hosted.weblate.org/widgets/qtpass/-/multi-auto.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
 

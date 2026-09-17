@@ -21,6 +21,7 @@ jobs:
       src: ${{ steps.filter.outputs.src }}
       tests: ${{ steps.filter.outputs.tests }}
       qt: ${{ steps.filter.outputs.qt }}
+      packaging: ${{ steps.filter.outputs.packaging }}
     steps:
       - uses: actions/checkout@v7.0.1
         with:
@@ -42,6 +43,13 @@ jobs:
             qt:
               - "**.pro"
               - "**.pri"
+            # The AppImage bundles these but no compiled source changes with
+            # them, so the src/qt filters above would miss an edit to them.
+            packaging:
+              - "scripts/build-appimage.sh"
+              - "qtpass.desktop"
+              - "qtpass.appdata.xml"
+              - "artwork/**"
 
   build-windows:
     needs: changes
@@ -239,7 +247,119 @@ jobs:
           name: qtpass-macos-dmg-${{ steps.version.outputs.version }}
           path: QtPass-*.dmg
 
-  # Tag pushes only: attach what the two build jobs produced, plus the source
+  build-appimage:
+    needs: changes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if build needed
+        id: need_build
+        shell: bash
+        run: |
+          if [[ "${NEEDS_CHANGES_OUTPUTS_SRC}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_TESTS}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_QT}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_PACKAGING}" == "true" ]] || \
+             [[ "${{ github.event_name }}" == "merge_group" ]] || \
+             [[ "${GITHUB_REF}" =~ ^refs/tags/v ]]; then
+            echo "run_build=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_build=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          NEEDS_CHANGES_OUTPUTS_SRC: ${{ needs.changes.outputs.src }}
+          NEEDS_CHANGES_OUTPUTS_TESTS: ${{ needs.changes.outputs.tests }}
+          NEEDS_CHANGES_OUTPUTS_QT: ${{ needs.changes.outputs.qt }}
+          NEEDS_CHANGES_OUTPUTS_PACKAGING: ${{ needs.changes.outputs.packaging }}
+
+      - name: No changes - skipping
+        if: steps.need_build.outputs.run_build != 'true'
+        run: echo "No relevant changes - skipping AppImage build"
+
+      - uses: actions/checkout@v7.0.1
+        if: steps.need_build.outputs.run_build == 'true'
+        with:
+          persist-credentials: false
+
+      - uses: jurplel/install-qt-action@v4.3.1
+        if: steps.need_build.outputs.run_build == 'true'
+        with:
+          # The AppImage ships on Qt 6.8 (LTS), like the Windows installer.
+          version: "6.8"
+          modules: "qtsvg"
+          cache: true
+
+      # linuxdeploy and its Qt plugin are AppImages themselves. The build
+      # script runs them with APPIMAGE_EXTRACT_AND_RUN=1 so no FUSE is needed
+      # here, but the Qt plugin still shells out to patchelf and friends.
+      - name: Install packaging dependencies
+        if: steps.need_build.outputs.run_build == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libfuse2t64 patchelf desktop-file-utils file xvfb
+
+      - name: Resolve AppImage version
+        if: steps.need_build.outputs.run_build == 'true'
+        id: version
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            version="${GITHUB_REF_NAME#v}"
+          else
+            version="$(awk -F '=' '/^VERSION[[:space:]]*=/{ gsub(/[[:space:]]/, "", $2); print $2; exit }' qtpass.pri)"
+            if [[ -z "${version}" ]]; then
+              echo "No VERSION found in qtpass.pri" >&2
+              exit 1
+            fi
+          fi
+
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Build AppImage
+        if: steps.need_build.outputs.run_build == 'true'
+        run: ./scripts/build-appimage.sh dist
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+
+      # A broken bundle still packages cleanly, so prove it actually runs.
+      # QtPass builds its QApplication before looking at argv and has no
+      # --version short-circuit, so this needs a display and has to be killed:
+      # surviving the timeout is the pass condition, and any earlier exit means
+      # Qt, a plugin or a bundled library failed to load.
+      - name: Smoke-test the AppImage
+        if: steps.need_build.outputs.run_build == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          appimage="dist/QtPass-${STEPS_VERSION_OUTPUTS_VERSION}-x86_64.AppImage"
+          test -f "$appimage"
+          chmod +x "$appimage"
+
+          rc=0
+          # No FUSE on the runner, so run the extracted payload.
+          APPIMAGE_EXTRACT_AND_RUN=1 timeout --signal=TERM 30 \
+            xvfb-run -a "$appimage" > smoke.log 2>&1 || rc=$?
+
+          # 124: timeout fired. 143: killed by SIGTERM. Both mean it stayed up.
+          if [ "$rc" -ne 124 ] && [ "$rc" -ne 143 ]; then
+            echo "AppImage exited on its own (rc=$rc); output follows:" >&2
+            cat smoke.log >&2
+            exit 1
+          fi
+          echo "AppImage started and stayed running."
+        env:
+          STEPS_VERSION_OUTPUTS_VERSION: ${{ steps.version.outputs.version }}
+
+      - name: Upload AppImage artifact
+        if: steps.need_build.outputs.run_build == 'true'
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: qtpass-appimage-${{ steps.version.outputs.version }}
+          path: dist/QtPass-*.AppImage
+
+  # Tag pushes only: attach what the three build jobs produced, plus the source
   # archives, to the GitHub release for that tag. The release is created as a
   # draft when it does not exist yet, so the maintainer only writes the notes,
   # signs the assets (scripts/sign-release-assets.sh) and publishes. Nothing
@@ -249,6 +369,7 @@ jobs:
     needs:
       - build-windows
       - build-macos
+      - build-appimage
     runs-on: ubuntu-latest
     permissions:
       contents: write
