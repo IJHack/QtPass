@@ -369,7 +369,8 @@ jobs:
           echo "AppImage started on X11 and stayed running."
 
           export XDG_RUNTIME_DIR="${RUNNER_TEMP}/xdg-runtime"
-          mkdir -p -m 700 "$XDG_RUNTIME_DIR"
+          mkdir -p "$XDG_RUNTIME_DIR"
+          chmod 700 "$XDG_RUNTIME_DIR"
           weston --backend=headless --socket=wl-qtpass --idle-time=0 \
             > weston.log 2>&1 &
           for _ in $(seq 1 50); do
