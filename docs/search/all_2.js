@@ -33,7 +33,10 @@ var searchData=
   ['created_30',['created',['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo']]],
   ['createqrcodepopup_31',['createQRCodePopup',['../class_qt_pass.html#a87eca9145118d654cf0e87fe3f2b7a7d',1,'QtPass']]],
   ['critical_32',['critical',['../class_main_window.html#a8719b3a133e95915dd72b244db1e49bf',1,'MainWindow::critical()'],['../class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9',1,'Pass::critical()']]],
-  ['currentotpcode_33',['currentOtpCode',['../class_password_display_panel.html#ae6264ba408c200444310515749c279b1',1,'PasswordDisplayPanel']]],
-  ['currentunixtime_34',['currentUnixTime',['../class_totp.html#ad72b8ecd8fcf17055212f4e07b63d95c',1,'Totp']]],
-  ['cycletemplate_35',['cycleTemplate',['../class_password_dialog.html#a3be525fe15b6af1939dad714e3244733',1,'PasswordDialog']]]
+  ['currentdir_33',['currentDir',['../class_store_tree.html#af4af91d99f47811cd66ad9a61df2f95b',1,'StoreTree']]],
+  ['currentfile_34',['currentFile',['../class_store_tree.html#a62c3481cf1a8554c312594e67be27d95',1,'StoreTree']]],
+  ['currentindex_35',['currentIndex',['../class_store_tree.html#a2fd943329edb11eece8793a8dccff73b',1,'StoreTree']]],
+  ['currentotpcode_36',['currentOtpCode',['../class_password_display_panel.html#ae6264ba408c200444310515749c279b1',1,'PasswordDisplayPanel']]],
+  ['currentunixtime_37',['currentUnixTime',['../class_totp.html#ad72b8ecd8fcf17055212f4e07b63d95c',1,'Totp']]],
+  ['cycletemplate_38',['cycleTemplate',['../class_password_dialog.html#a3be525fe15b6af1939dad714e3244733',1,'PasswordDialog']]]
 ];

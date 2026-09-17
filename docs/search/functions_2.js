@@ -26,7 +26,10 @@ var searchData=
   ['createbackupcommit_23',['createBackupCommit',['../class_imitate_pass.html#a086365ec85674590afbd883df0b27a80',1,'ImitatePass']]],
   ['createqrcodepopup_24',['createQRCodePopup',['../class_qt_pass.html#a87eca9145118d654cf0e87fe3f2b7a7d',1,'QtPass']]],
   ['critical_25',['critical',['../class_main_window.html#a8719b3a133e95915dd72b244db1e49bf',1,'MainWindow::critical()'],['../class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9',1,'Pass::critical()']]],
-  ['currentotpcode_26',['currentOtpCode',['../class_password_display_panel.html#ae6264ba408c200444310515749c279b1',1,'PasswordDisplayPanel']]],
-  ['currentunixtime_27',['currentUnixTime',['../class_totp.html#ad72b8ecd8fcf17055212f4e07b63d95c',1,'Totp']]],
-  ['cycletemplate_28',['cycleTemplate',['../class_password_dialog.html#a3be525fe15b6af1939dad714e3244733',1,'PasswordDialog']]]
+  ['currentdir_26',['currentDir',['../class_store_tree.html#af4af91d99f47811cd66ad9a61df2f95b',1,'StoreTree']]],
+  ['currentfile_27',['currentFile',['../class_store_tree.html#a62c3481cf1a8554c312594e67be27d95',1,'StoreTree']]],
+  ['currentindex_28',['currentIndex',['../class_store_tree.html#a2fd943329edb11eece8793a8dccff73b',1,'StoreTree']]],
+  ['currentotpcode_29',['currentOtpCode',['../class_password_display_panel.html#ae6264ba408c200444310515749c279b1',1,'PasswordDisplayPanel']]],
+  ['currentunixtime_30',['currentUnixTime',['../class_totp.html#ad72b8ecd8fcf17055212f4e07b63d95c',1,'Totp']]],
+  ['cycletemplate_31',['cycleTemplate',['../class_password_dialog.html#a3be525fe15b6af1939dad714e3244733',1,'PasswordDialog']]]
 ];

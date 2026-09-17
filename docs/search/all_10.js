@@ -17,5 +17,6 @@ var searchData=
   ['restore_14',['restore',['../namespace_window_state_store.html#a33978c57279f86bfb1a416ad199858e8',1,'WindowStateStore']]],
   ['restorecursor_15',['restoreCursor',['../struct_grep_search_controller_1_1_finish_outcome.html#ac239184fd57227541a8be6147f6616b8',1,'GrepSearchController::FinishOutcome']]],
   ['restorewindow_16',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
-  ['rootindexfor_17',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
+  ['rootindex_17',['rootIndex',['../class_store_tree.html#a1e44af30d459550e26502c6733705e9d',1,'StoreTree']]],
+  ['rootindexfor_18',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
 ];

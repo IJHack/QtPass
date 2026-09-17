@@ -33,5 +33,6 @@ var searchData=
   ['profileinit_30',['ProfileInit',['../class_profile_init.html',1,'']]],
   ['program_31',['program',['../struct_resolved_gpgconf_command.html#ae34ff02051398b8688497a4fb373e1d3',1,'ResolvedGpgconfCommand']]],
   ['protocolregex_32',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]],
-  ['pwgenexecutable_33',['pwgenExecutable',['../struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee',1,'AppSettings']]]
+  ['proxy_33',['proxy',['../class_store_tree.html#ae66c7d3a2c5f172035cdeb1808ce7593',1,'StoreTree']]],
+  ['pwgenexecutable_34',['pwgenExecutable',['../struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee',1,'AppSettings']]]
 ];

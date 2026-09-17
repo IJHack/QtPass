@@ -127,8 +127,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab23a1afdcad63df9101660fd6e53b763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure a folder path always ends with '/'.  <br /></td></tr>
 <tr class="memitem:ac8926b725ca51d6e68f3f383cfae478f" id="r_ac8926b725ca51d6e68f3f383cfae478f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac8926b725ca51d6e68f3f383cfae478f">configIsValid</a> (const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;s) -&gt; bool</td></tr>
 <tr class="memdesc:ac8926b725ca51d6e68f3f383cfae478f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify that the required configuration is complete.  <br /></td></tr>
-<tr class="memitem:a6cd77a6dfdb6fbbaacce27c15ba81220" id="r_a6cd77a6dfdb6fbbaacce27c15ba81220"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6cd77a6dfdb6fbbaacce27c15ba81220">getDir</a> (const QModelIndex &amp;index, bool forPass, const QFileSystemModel &amp;model, const <a class="el" href="class_store_model.html">StoreModel</a> &amp;storeModel, const QString &amp;passStore) -&gt; QString</td></tr>
-<tr class="memdesc:a6cd77a6dfdb6fbbaacce27c15ba81220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected folder path, either relative to the configured pass store or absolute.  <br /></td></tr>
 <tr class="memitem:a8ed01cfd3773e5b0034089f2f952a030" id="r_a8ed01cfd3773e5b0034089f2f952a030"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8ed01cfd3773e5b0034089f2f952a030">endsWithGpg</a> () -&gt; const QRegularExpression &amp;</td></tr>
 <tr class="memdesc:a8ed01cfd3773e5b0034089f2f952a030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match .gpg file extensions.  <br /></td></tr>
 <tr class="memitem:a73aa66df403921fb49c57548f83490bc" id="r_a73aa66df403921fb49c57548f83490bc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a73aa66df403921fb49c57548f83490bc">protocolRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
@@ -146,7 +144,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Some static utilities to be used elsewhere. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00022">22</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00018">18</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ac8926b725ca51d6e68f3f383cfae478f" name="ac8926b725ca51d6e68f3f383cfae478f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8926b725ca51d6e68f3f383cfae478f">&#9670;&#160;</a></span>configIsValid()</h2>
@@ -343,63 +341,6 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 
 <p>Locate the password store directory. </p>
 <dl class="section return"><dt>Returns</dt><dd>QString Path to the password store, always ends with '/'. </dd></dl>
-
-</div>
-</div>
-<a id="a6cd77a6dfdb6fbbaacce27c15ba81220" name="a6cd77a6dfdb6fbbaacce27c15ba81220"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cd77a6dfdb6fbbaacce27c15ba81220">&#9670;&#160;</a></span>getDir()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto Util::getDir </td>
-          <td>(</td>
-          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>forPass</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QFileSystemModel &amp;</td>          <td class="paramname"><span class="paramname"><em>model</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="class_store_model.html">StoreModel</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>storeModel</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>passStore</em></span>&#160;) -&gt;  QString</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the selected folder path, either relative to the configured pass store or absolute. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td>Model index selecting the file or folder. </td></tr>
-    <tr><td class="paramname">forPass</td><td>If true, return the path relative to the pass store; otherwise return an absolute path. </td></tr>
-    <tr><td class="paramname">model</td><td>Filesystem model used to resolve the index. </td></tr>
-    <tr><td class="paramname">storeModel</td><td><a class="el" href="class_store_model.html" title="QSortFilterProxyModel for filtering and displaying password store.">StoreModel</a> used to map view indexes to the filesystem model. </td></tr>
-    <tr><td class="paramname">passStore</td><td>Root directory of the password store. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>QString Folder path that always ends with the native directory separator. Returns an empty string when <span class="tt">index</span> is invalid and <span class="tt">forPass</span> is true; otherwise returns the pass store root. </dd></dl>
 
 </div>
 </div>
