@@ -1330,8 +1330,7 @@ void MainWindow::messageAvailable(const QString &message) {
  * select a more appropriate one to view too
  */
 void MainWindow::updateProfileBox() {
-  QHash<QString, QHash<QString, QString>> profiles =
-      QtPassSettings::getProfiles();
+  const Profiles profiles = QtPassSettings::getProfiles();
 
   if (profiles.isEmpty()) {
     ui->profileWidget->hide();
@@ -1339,9 +1338,7 @@ void MainWindow::updateProfileBox() {
     ui->profileWidget->show();
     ui->profileBox->setEnabled(profiles.size() > 1);
     ui->profileBox->clear();
-    QHashIterator<QString, QHash<QString, QString>> i(profiles);
-    while (i.hasNext()) {
-      i.next();
+    for (auto i = profiles.cbegin(); i != profiles.cend(); ++i) {
       if (!i.key().isEmpty()) {
         ui->profileBox->addItem(i.key());
       }
@@ -1372,21 +1369,15 @@ void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
 
   ui->lineEdit->clear();
 
-  const QHash<QString, QString> prof =
-      QtPassSettings::getProfiles().value(name);
+  const Profile prof = QtPassSettings::getProfiles().value(name);
   AppSettings s = QtPassSettings::load();
   s.activeProfile = name;
-  s.passStore = prof.value("path");
-  s.passSigningKey = prof.value("signingKey");
-  // Per-profile git flags (#1140) were stored but never applied; a profile
-  // without them keeps the global values.
-  const auto flag = [&prof](const char *key, bool current) {
-    const QString value = prof.value(QLatin1String(key));
-    return value.isEmpty() ? current : value == QLatin1String("true");
-  };
-  s.useGit = flag("useGit", s.useGit);
-  s.autoPush = flag("autoPush", s.autoPush);
-  s.autoPull = flag("autoPull", s.autoPull);
+  s.passStore = prof.path;
+  s.passSigningKey = prof.signingKey;
+  // A profile without its own Git flags keeps the global values.
+  s.useGit = prof.useGit.value_or(s.useGit);
+  s.autoPush = prof.autoPush.value_or(s.autoPush);
+  s.autoPull = prof.autoPull.value_or(s.autoPull);
   QtPassSettings::save(s);
   ui->statusBar->showMessage(tr("Profile changed to %1").arg(name), 2000);
 

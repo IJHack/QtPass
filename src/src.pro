@@ -154,6 +154,7 @@ HEADERS   += mainwindow.h \
              userinfo.h \
              clipboardmanager.h \
              processoutputpanel.h \
+             profile.h \
              qtpass.h \
              qtpasslogging.h \
              profileinit.h

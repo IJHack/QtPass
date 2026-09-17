@@ -343,8 +343,7 @@ void ConfigDialog::on_accepted() {
     }
   }
 
-  const QHash<QString, QHash<QString, QString>> existingProfiles =
-      QtPassSettings::getProfiles();
+  const Profiles existingProfiles = QtPassSettings::getProfiles();
 
   // Persist via the facade, which also invalidates the cached Pass backend so
   // a changed "use pass" mode takes effect.
@@ -613,12 +612,10 @@ void ConfigDialog::on_checkBoxAutoclear_clicked() {
  * @param profiles
  * @param profile
  */
-void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
+void ConfigDialog::setProfiles(Profiles profiles,
                                const QString &currentProfile) {
-  if (profiles.contains("")) {
-    profiles.remove("");
-    // remove weird "" key value pairs
-  }
+  // remove weird "" key value pairs
+  profiles.remove(QString());
 
   // Cache profiles for use in onProfileTableSelectionChanged
   m_profiles = profiles;
@@ -632,23 +629,19 @@ void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
   ui->profileTable->setSortingEnabled(false);
 
   ui->profileTable->setRowCount(static_cast<int>(profiles.count()));
-  QHashIterator<QString, QHash<QString, QString>> i(profiles);
   int n = 0;
   QTableWidgetItem *currentItem = nullptr;
-  while (i.hasNext()) {
-    i.next();
-    if (!i.value().isEmpty() && !i.key().isEmpty()) {
-      auto *nameItem = new QTableWidgetItem(i.key());
-      ui->profileTable->setItem(n, 0, nameItem);
-      ui->profileTable->setItem(n, 1,
-                                new QTableWidgetItem(i.value().value("path")));
-      ui->profileTable->setItem(
-          n, 2, new QTableWidgetItem(i.value().value("signingKey")));
-      if (i.key() == currentProfile) {
-        currentItem = nameItem;
-      }
+  for (auto i = profiles.cbegin(); i != profiles.cend(); ++i, ++n) {
+    if (i.key().isEmpty()) {
+      continue;
     }
-    ++n;
+    auto *nameItem = new QTableWidgetItem(i.key());
+    ui->profileTable->setItem(n, 0, nameItem);
+    ui->profileTable->setItem(n, 1, new QTableWidgetItem(i.value().path));
+    ui->profileTable->setItem(n, 2, new QTableWidgetItem(i.value().signingKey));
+    if (i.key() == currentProfile) {
+      currentItem = nameItem;
+    }
   }
 
   ui->profileTable->setSortingEnabled(sortingEnabled);
@@ -663,30 +656,23 @@ void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
 /**
  * @brief Load git settings for a specific profile.
  * @param profileName The profile name.
- * @param profiles The profiles hash containing git settings.
+ * @param profiles All profiles, with their Git flags.
  */
-void ConfigDialog::loadGitSettingsForProfile(
-    const QString &profileName,
-    const QHash<QString, QHash<QString, QString>> &profiles) {
-  if (profiles.contains(profileName)) {
-    const QHash<QString, QString> &profile = profiles.value(profileName);
-    QString useGitStr = profile.value("useGit");
-    QString autoPushStr = profile.value("autoPush");
-    QString autoPullStr = profile.value("autoPull");
-
-    // Load profile-specific git settings if set, otherwise use global settings
-    if (!useGitStr.isEmpty()) {
-      useGit(useGitStr == "true");
-      ui->checkBoxAutoPush->setEnabled(ui->checkBoxUseGit->isChecked());
-      ui->checkBoxAutoPull->setEnabled(ui->checkBoxUseGit->isChecked());
-      if (autoPushStr == "true" || autoPushStr == "false") {
-        ui->checkBoxAutoPush->setChecked(autoPushStr == "true");
-      }
-      if (autoPullStr == "true" || autoPullStr == "false") {
-        ui->checkBoxAutoPull->setChecked(autoPullStr == "true");
-      }
-    }
-    // If not set (empty), leave global settings as-is for migration
+void ConfigDialog::loadGitSettingsForProfile(const QString &profileName,
+                                             const Profiles &profiles) {
+  const auto it = profiles.constFind(profileName);
+  if (it == profiles.constEnd() || !it->useGit.has_value()) {
+    // Unset (a profile from before 1.8.0): leave the global settings as-is.
+    return;
+  }
+  useGit(*it->useGit);
+  ui->checkBoxAutoPush->setEnabled(ui->checkBoxUseGit->isChecked());
+  ui->checkBoxAutoPull->setEnabled(ui->checkBoxUseGit->isChecked());
+  if (it->autoPush.has_value()) {
+    ui->checkBoxAutoPush->setChecked(*it->autoPush);
+  }
+  if (it->autoPull.has_value()) {
+    ui->checkBoxAutoPull->setChecked(*it->autoPull);
   }
 }
 
@@ -694,7 +680,7 @@ void ConfigDialog::loadGitSettingsForProfile(
  * @brief ConfigDialog::getProfiles return profile list.
  * @return
  */
-auto ConfigDialog::getProfiles() -> QHash<QString, QHash<QString, QString>> {
+auto ConfigDialog::getProfiles() -> Profiles {
   // Get currently selected profile name
   QList<QTableWidgetItem *> selected = ui->profileTable->selectedItems();
   QString selectedProfile;
@@ -703,49 +689,31 @@ auto ConfigDialog::getProfiles() -> QHash<QString, QHash<QString, QString>> {
         ui->profileTable->item(selected.first()->row(), 0)->text();
   }
 
-  // Use cached m_profiles to preserve git settings for non-selected profiles
-  QHash<QString, QHash<QString, QString>> existingProfiles = m_profiles;
-
-  QHash<QString, QHash<QString, QString>> profiles;
-  // Check?
+  // The Git checkboxes show the selected profile's flags; every other
+  // profile keeps what it had (cached in m_profiles).
+  Profiles profiles;
   for (int i = 0; i < ui->profileTable->rowCount(); ++i) {
-    QHash<QString, QString> profile;
     QTableWidgetItem *pathItem = ui->profileTable->item(i, 1);
-    if (nullptr != pathItem) {
-      QTableWidgetItem *item = ui->profileTable->item(i, 0);
-      if (item == nullptr) {
-        continue;
-      }
-      profile["path"] = pathItem->text();
-      QTableWidgetItem *signingKeyItem = ui->profileTable->item(i, 2);
-      if (nullptr != signingKeyItem) {
-        profile["signingKey"] = signingKeyItem->text();
-      }
-
-      // Only update git settings for the currently selected profile
-      // Preserve existing git settings for other profiles
-      if (item->text() == selectedProfile) {
-        profile["useGit"] = ui->checkBoxUseGit->isChecked() ? "true" : "false";
-        profile["autoPush"] =
-            ui->checkBoxAutoPush->isChecked() ? "true" : "false";
-        profile["autoPull"] =
-            ui->checkBoxAutoPull->isChecked() ? "true" : "false";
-      } else if (existingProfiles.contains(item->text())) {
-        // Preserve existing git settings for non-selected profiles
-        const QHash<QString, QString> &existing =
-            existingProfiles.value(item->text());
-        if (existing.contains("useGit")) {
-          profile["useGit"] = existing.value("useGit");
-        }
-        if (existing.contains("autoPush")) {
-          profile["autoPush"] = existing.value("autoPush");
-        }
-        if (existing.contains("autoPull")) {
-          profile["autoPull"] = existing.value("autoPull");
-        }
-      }
-      profiles.insert(item->text(), profile);
+    QTableWidgetItem *item = ui->profileTable->item(i, 0);
+    if (pathItem == nullptr || item == nullptr) {
+      continue;
     }
+    Profile profile;
+    profile.path = pathItem->text();
+    if (QTableWidgetItem *signingKeyItem = ui->profileTable->item(i, 2)) {
+      profile.signingKey = signingKeyItem->text();
+    }
+    if (item->text() == selectedProfile) {
+      profile.useGit = ui->checkBoxUseGit->isChecked();
+      profile.autoPush = ui->checkBoxAutoPush->isChecked();
+      profile.autoPull = ui->checkBoxAutoPull->isChecked();
+    } else if (const auto it = m_profiles.constFind(item->text());
+               it != m_profiles.constEnd()) {
+      profile.useGit = it->useGit;
+      profile.autoPush = it->autoPush;
+      profile.autoPull = it->autoPull;
+    }
+    profiles.insert(item->text(), profile);
   }
   // Update cache with current in-dialog state
   m_profiles = profiles;
@@ -757,20 +725,19 @@ auto ConfigDialog::getProfiles() -> QHash<QString, QHash<QString, QString>> {
  * @param existingProfiles The profiles that existed before the dialog was
  * opened.
  */
-void ConfigDialog::initializeNewProfiles(
-    const QHash<QString, QHash<QString, QString>> &existingProfiles) {
-  QHash<QString, QHash<QString, QString>> newProfiles = getProfiles();
+void ConfigDialog::initializeNewProfiles(const Profiles &existingProfiles) {
+  const Profiles newProfiles = getProfiles();
 
   // Collect keys and sort for deterministic iteration
-  QStringList keys = newProfiles.keys();
-  keys.sort();
-
-  for (const QString &name : keys) {
-    const QString &path = newProfiles.value(name).value("path");
+  // QMap iterates in name order.
+  for (auto it = newProfiles.cbegin(); it != newProfiles.cend(); ++it) {
+    const QString &name = it.key();
+    const Profile &profile = it.value();
+    const QString &path = profile.path;
 
     // Skip if already existed before (check by name and path)
-    if (existingProfiles.contains(name) &&
-        existingProfiles.value(name).value("path") == path) {
+    if (const auto old = existingProfiles.constFind(name);
+        old != existingProfiles.constEnd() && old->path == path) {
       continue;
     }
 
@@ -812,8 +779,7 @@ void ConfigDialog::initializeNewProfiles(
     profileSettings.passStore = Util::normalizeFolderPath(cleanPath);
     // Signing keys are per profile, exactly as the profile switch applies
     // them (MainWindow::on_profileBox_currentTextChanged).
-    profileSettings.passSigningKey =
-        newProfiles.value(name).value("signingKey");
+    profileSettings.passSigningKey = profile.signingKey;
     UsersDialog usersDialog(QtPassSettings::getPass(), profileSettings,
                             profileSettings.passStore, this);
     usersDialog.setInitOnAccept(false);
@@ -823,8 +789,7 @@ void ConfigDialog::initializeNewProfiles(
     }
 
     // Use per-profile useGit setting, falling back to global if not set
-    QString useGitStr = newProfiles.value(name).value("useGit");
-    bool useGit = useGitStr.isEmpty() ? settings.useGit : useGitStr == "true";
+    const bool useGit = profile.useGit.value_or(settings.useGit);
 
     QString note;
     const bool ok = ProfileInit::initialise(
