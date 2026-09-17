@@ -3,6 +3,7 @@
 #include <QDialogButtonBox>
 #include <QDir>
 #include <QFile>
+#include <QLineEdit>
 #include <QListWidget>
 #include <QPushButton>
 #include <QStandardPaths>
@@ -64,6 +65,8 @@ private slots:
   void acceptRunsInitByDefault();
   void acceptWithoutSelectionDoesNothing();
   void acceptWithoutInitOnlyCollectsTheSelection();
+  void togglingAFilteredRowEnablesTheRightKey();
+  void selectionSurvivesFilteringAndEscapeClearsTheFilter();
 
 private:
   QTemporaryDir m_dir;
@@ -256,6 +259,78 @@ void tst_usersdialog::acceptWithoutInitOnlyCollectsTheSelection() {
   const int index = list->item(1)->data(Qt::UserRole).toInt();
   QCOMPARE(enabledId, users.at(index).key_id);
   QVERIFY(!enabledId.isEmpty());
+}
+
+namespace {
+auto enabledIds(const QList<UserInfo> &users) -> QStringList {
+  QStringList ids;
+  for (const UserInfo &u : users) {
+    if (u.enabled) {
+      ids << u.key_id;
+    }
+  }
+  ids.sort();
+  return ids;
+}
+} // namespace
+
+/**
+ * @brief The list is rebuilt on every filter change and rows carry the
+ *        index into m_userList in Qt::UserRole. Ticking row 0 of a filtered
+ *        list must enable the key that row shows, not the first key
+ *        overall — this mapping decides which keys the store is
+ *        re-encrypted to.
+ */
+void tst_usersdialog::togglingAFilteredRowEnablesTheRightKey() {
+  RecordingPass pass(m_settings);
+  UsersDialog dialog(&pass, m_settings, m_settings.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  auto *filter = dialog.findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  QVERIFY(list != nullptr && filter != nullptr);
+
+  filter->setText(QStringLiteral("bob"));
+  QCOMPARE(list->count(), 1);
+  QVERIFY(list->item(0)->text().startsWith(QStringLiteral("Bob")));
+  list->item(0)->setCheckState(Qt::Checked);
+
+  dialog.accept();
+  QCOMPARE(pass.initCalls.size(), 1);
+  QCOMPARE(pass.initCalls.first().first, m_settings.passStore);
+  QCOMPARE(
+      enabledIds(pass.initCalls.first().second),
+      QStringList{QStringLiteral("4EF2550F79F4E9E68B09F71D693A0AF3FA364E76")});
+}
+
+/**
+ * @brief Ticks live in m_userList, not in the widgets, so a key ticked
+ *        before filtering it out of view is still enabled afterwards;
+ *        Escape clears the filter.
+ */
+void tst_usersdialog::selectionSurvivesFilteringAndEscapeClearsTheFilter() {
+  RecordingPass pass(m_settings);
+  UsersDialog dialog(&pass, m_settings, m_settings.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  auto *filter = dialog.findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  QVERIFY(list != nullptr && filter != nullptr);
+
+  QVERIFY(list->item(0)->text().startsWith(QStringLiteral("Alice")));
+  list->item(0)->setCheckState(Qt::Checked);
+  filter->setText(QStringLiteral("bob"));
+  QCOMPARE(list->count(), 1);
+  QVERIFY2(list->item(0)->checkState() == Qt::Unchecked,
+           "Bob was never ticked");
+
+  QTest::keyClick(&dialog, Qt::Key_Escape);
+  QVERIFY2(filter->text().isEmpty(), "Escape must clear the filter");
+  QCOMPARE(list->count(), 2);
+  QVERIFY2(list->item(0)->checkState() == Qt::Checked,
+           "Alice must come back ticked");
+
+  dialog.accept();
+  QCOMPARE(pass.initCalls.size(), 1);
+  QCOMPARE(
+      enabledIds(pass.initCalls.first().second),
+      QStringList{QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")});
 }
 
 QTEST_MAIN(tst_usersdialog)
