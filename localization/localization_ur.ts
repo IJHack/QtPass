@@ -174,6 +174,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
+        <location filename="../src/configdialog.ui" line="1179"/>
         <source>Use Git</source>
         <translation>Git استعمال کریں</translation>
     </message>
@@ -184,11 +185,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="524"/>
+        <location filename="../src/configdialog.ui" line="1186"/>
         <source>Automatically push</source>
         <translation>خودکار پش کریں</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="531"/>
+        <location filename="../src/configdialog.ui" line="1193"/>
         <source>Automatically pull</source>
         <translation>خودکار پل کریں</translation>
     </message>
@@ -287,7 +290,8 @@
         <location filename="../src/configdialog.ui" line="784"/>
         <location filename="../src/configdialog.ui" line="839"/>
         <location filename="../src/configdialog.ui" line="879"/>
-        <location filename="../src/configdialog.ui" line="1116"/>
+        <location filename="../src/configdialog.ui" line="1147"/>
+        <location filename="../src/configdialog.ui" line="1238"/>
         <source>…</source>
         <translation>…</translation>
     </message>
@@ -370,83 +374,115 @@
         <translation>پروفائلز</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1041"/>
+        <location filename="../src/configdialog.ui" line="1020"/>
+        <source>The password stores this QtPass knows; pick one to edit it</source>
+        <translation type="unfinished">وہ پاس ورڈ اسٹورز جو یہ QtPass جانتا ہے؛ ترمیم کے لیے ایک منتخب کریں</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1035"/>
+        <source>Add a profile</source>
+        <translation type="unfinished">پروفائل شامل کریں</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1053"/>
+        <source>Forget the selected profile; the store itself stays on disk</source>
+        <translation type="unfinished">منتخب پروفائل بھول جائیں؛ اسٹور خود ڈسک پر رہتا ہے</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1099"/>
+        <source>Profile</source>
+        <translation type="unfinished">پروفائل</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1105"/>
         <source>Name</source>
         <translation>نام</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1044"/>
+        <location filename="../src/configdialog.ui" line="1115"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>پروفائل کا نام، اس ترتیب پروفائل کی شناخت کے لیے استعمال ہوتا ہے</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1049"/>
+        <location filename="../src/configdialog.ui" line="1122"/>
         <source>Path</source>
         <translation>راستہ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1052"/>
+        <location filename="../src/configdialog.ui" line="1134"/>
         <source>Path to the password store directory</source>
         <translation>پاس ورڈ اسٹور ڈائریکٹری کا راستہ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1057"/>
+        <location filename="../src/configdialog.ui" line="1156"/>
         <source>Signing Key</source>
         <translation>دستخطی کلید</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1060"/>
+        <location filename="../src/configdialog.ui" line="1166"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>اختیاری: .gpg-id فائلوں پر دستخط کرنے کے لیے GPG کلید۔ خالی چھوڑیں جب تک کہ آپ کو صارف کی فہرست کو چھیڑ چھاڑ سے محفوظ رکھنے کی ضرورت نہ ہو۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1070"/>
+        <location filename="../src/configdialog.ui" line="1038"/>
         <source>Add</source>
         <translation>شامل کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1085"/>
+        <location filename="../src/configdialog.ui" line="1056"/>
         <source>Delete</source>
         <translation>حذف کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1100"/>
+        <location filename="../src/configdialog.ui" line="1222"/>
         <source>Current path</source>
         <translation>موجودہ راستہ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1110"/>
-        <location filename="../src/configdialog.ui" line="1113"/>
+        <location filename="../src/configdialog.ui" line="1141"/>
+        <location filename="../src/configdialog.ui" line="1144"/>
+        <location filename="../src/configdialog.ui" line="1232"/>
+        <location filename="../src/configdialog.ui" line="1235"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">پاس ورڈ اسٹور کا فولڈر منتخب کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1133"/>
+        <location filename="../src/configdialog.ui" line="1169"/>
+        <source>Full 40-character key fingerprint, as pass requires</source>
+        <translation type="unfinished">کلید کا مکمل 40 حرفی فنگر پرنٹ، جیسا کہ pass کو درکار ہے</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1176"/>
+        <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
+        <translation type="unfinished">اس پروفائل کی Git سیٹنگز؛ جب یہ فعال ہو تو یہ سیٹنگز ٹیب والی سیٹنگز کی جگہ لے لیتی ہیں</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1255"/>
         <source>Template</source>
         <translation>سانچہ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1176"/>
+        <location filename="../src/configdialog.ui" line="1298"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>سانچے پاس ورڈ بنانے کی ڈائیلاگ اور پاس ورڈ ویو میں اضافی فیلڈز شامل کرتے ہیں۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1185"/>
+        <location filename="../src/configdialog.ui" line="1307"/>
         <source>Use template</source>
         <translation>سانچہ استعمال کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1192"/>
+        <location filename="../src/configdialog.ui" line="1314"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>پاس ورڈ فیلڈز میں کولون کے ساتھ لفظ سے شروع ہونے والی تمام لائنیں دکھائیں، نہ کہ صرف فہرست شدہ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1195"/>
+        <location filename="../src/configdialog.ui" line="1317"/>
         <source>Show all fields templated</source>
         <translation>تمام فیلڈز سانچے میں دکھائیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1207"/>
+        <location filename="../src/configdialog.ui" line="1329"/>
         <source>login
 URL
 e-mail</source>
@@ -455,12 +491,12 @@ URL
 ای میل</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1226"/>
+        <location filename="../src/configdialog.ui" line="1348"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; ورژن </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="45"/>
+        <location filename="../src/configdialog.cpp" line="46"/>
         <source>System tray is not available</source>
         <translation>سسٹم ٹرے دستیاب نہیں ہے</translation>
     </message>
@@ -469,58 +505,63 @@ URL
         <translation type="vanished">Pass OTP ایکسٹینشن انسٹال کرنے کی ضرورت ہے</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="56"/>
+        <location filename="../src/configdialog.cpp" line="57"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation type="unfinished">Wayland پر دستیاب نہیں؛ اس کے بجائے اپنے کمپوزیٹر کا &quot;اوپر رکھیں&quot; (keep above) ونڈو رول استعمال کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="69"/>
+        <location filename="../src/configdialog.cpp" line="70"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode انسٹال کرنے کی ضرورت ہے</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="80"/>
+        <location filename="../src/configdialog.cpp" line="92"/>
         <source>No Clipboard</source>
         <translation>کلپ بورڈ نہیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="81"/>
+        <location filename="../src/configdialog.cpp" line="93"/>
         <source>Always copy to clipboard</source>
         <translation>ہمیشہ کلپ بورڈ میں کاپی کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="82"/>
+        <location filename="../src/configdialog.cpp" line="94"/>
         <source>On-demand copy to clipboard</source>
         <translation>ضرورت پر کلپ بورڈ میں کاپی کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="274"/>
-        <location filename="../src/configdialog.cpp" line="284"/>
+        <location filename="../src/configdialog.cpp" line="275"/>
+        <location filename="../src/configdialog.cpp" line="280"/>
         <source>This field is required</source>
         <translation>یہ فیلڈ ضروری ہے</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="328"/>
+        <location filename="../src/configdialog.cpp" line="277"/>
+        <source>Another profile already has this name</source>
+        <translation type="unfinished">ایک اور پروفائل کا یہی نام پہلے سے ہے</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="317"/>
         <source>The path does not exist.</source>
         <translation>راستہ موجود نہیں ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="331"/>
+        <location filename="../src/configdialog.cpp" line="320"/>
         <source>The path is not readable.</source>
         <translation>راستہ پڑھنے کے قابل نہیں ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="334"/>
+        <location filename="../src/configdialog.cpp" line="323"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>راستہ یونکس ڈومین ساکٹ نہیں ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="339"/>
+        <location filename="../src/configdialog.cpp" line="328"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>ممکنہ طور پر غلط SSH_AUTH_SOCK اوور رائیڈ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="340"/>
+        <location filename="../src/configdialog.cpp" line="329"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -533,114 +574,168 @@ The value will still be saved as entered.</source>
 قدر بہرحال درج کردہ کے مطابق محفوظ ہو جائے گی۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="751"/>
+        <location filename="../src/configdialog.cpp" line="716"/>
         <source>Create profile directory?</source>
         <translation>پروفائل ڈائریکٹری بنائیں؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="752"/>
+        <location filename="../src/configdialog.cpp" line="717"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>کیا آپ %1 پر پاس ورڈ اسٹور بنانا چاہیں گے؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="759"/>
-        <location filename="../src/configdialog.cpp" line="1025"/>
+        <location filename="../src/configdialog.cpp" line="724"/>
         <source>Error</source>
         <translation>خرابی</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="760"/>
+        <location filename="../src/configdialog.cpp" line="725"/>
         <source>Could not create profile directory: %1</source>
         <translation>پروفائل ڈائریکٹری نہیں بنائی جا سکی: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="786"/>
+        <location filename="../src/configdialog.cpp" line="751"/>
         <source>Select recipients for %1</source>
         <translation>%1 کے لیے وصول کنندگان منتخب کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="799"/>
+        <location filename="../src/configdialog.cpp" line="764"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">پروفائل %1 شروع نہیں کیا جا سکا</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="801"/>
+        <location filename="../src/configdialog.cpp" line="766"/>
         <source>Profile %1</source>
         <translation type="unfinished">پروفائل %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="815"/>
+        <location filename="../src/configdialog.cpp" line="777"/>
         <source>New Profile</source>
         <translation>نیا پروفائل</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="863"/>
+        <location filename="../src/configdialog.cpp" line="804"/>
         <source>No profile selected</source>
         <translation>کوئی پروفائل منتخب نہیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="864"/>
+        <location filename="../src/configdialog.cpp" line="805"/>
         <source>No profile selected to delete</source>
         <translation>حذف کرنے کے لیے کوئی پروفائل منتخب نہیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="960"/>
         <source>GnuPG not found</source>
-        <translation>GnuPG نہیں ملا</translation>
+        <translation type="vanished">GnuPG نہیں ملا</translation>
     </message>
     <message>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation type="vanished">براہ کرم اپنے سسٹم پر GnuPG انسٹال کریں۔&lt;br&gt;اسے حاصل کرنے کے لیے Microsoft Store سے &lt;strong&gt;Ubuntu&lt;/strong&gt; انسٹال کریں۔&lt;br&gt;اگر آپ پہلے سے ایسا کر چکے ہیں، تو یقینی بنائیں کہ آپ نے اسے ایک بار شروع کیا ہو اور&lt;br&gt;اگلی ڈائیلاگ میں &quot;خودکار تلاش&quot; پر کلک کریں۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="962"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>براہ کرم اپنے سسٹم پر GnuPG انسٹال کریں۔&lt;br&gt;Microsoft Store سے &lt;strong&gt;Ubuntu&lt;/strong&gt; انسٹال کریں&lt;br&gt;یا GnuPG.org سے &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ڈاؤن لوڈ&lt;/a&gt; کریں</translation>
+        <translation type="vanished">براہ کرم اپنے سسٹم پر GnuPG انسٹال کریں۔&lt;br&gt;Microsoft Store سے &lt;strong&gt;Ubuntu&lt;/strong&gt; انسٹال کریں&lt;br&gt;یا GnuPG.org سے &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ڈاؤن لوڈ&lt;/a&gt; کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="967"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>براہ کرم اپنے سسٹم پر GnuPG انسٹال کریں۔&lt;br&gt;اپنے پسندیدہ پیکیج منیجر کا استعمال کرتے ہوئے &lt;strong&gt;gpg&lt;/strong&gt; انسٹال کریں&lt;br&gt;یا GnuPG.org سے &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ڈاؤن لوڈ&lt;/a&gt; کریں</translation>
+        <translation type="vanished">براہ کرم اپنے سسٹم پر GnuPG انسٹال کریں۔&lt;br&gt;اپنے پسندیدہ پیکیج منیجر کا استعمال کرتے ہوئے &lt;strong&gt;gpg&lt;/strong&gt; انسٹال کریں&lt;br&gt;یا GnuPG.org سے &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ڈاؤن لوڈ&lt;/a&gt; کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1019"/>
         <source>Create password-store?</source>
-        <translation>پاس ورڈ اسٹور بنائیں؟</translation>
+        <translation type="vanished">پاس ورڈ اسٹور بنائیں؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1020"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>کیا آپ %1 پر پاس ورڈ اسٹور بنانا چاہیں گے؟</translation>
+        <translation type="vanished">کیا آپ %1 پر پاس ورڈ اسٹور بنانا چاہیں گے؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1026"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>پاس ورڈ اسٹور بنانے میں ناکامی: %1</translation>
+        <translation type="vanished">پاس ورڈ اسٹور بنانے میں ناکامی: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1052"/>
         <source>Password store not initialised</source>
-        <translation>پاس ورڈ اسٹور شروع نہیں ہوا</translation>
+        <translation type="vanished">پاس ورڈ اسٹور شروع نہیں ہوا</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1053"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>فولڈر %1 پاس ورڈ اسٹور نہیں لگتا یا ابھی تک شروع نہیں ہوا۔</translation>
+        <translation type="vanished">فولڈر %1 پاس ورڈ اسٹور نہیں لگتا یا ابھی تک شروع نہیں ہوا۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1328"/>
+        <location filename="../src/configdialog.cpp" line="1103"/>
         <source>New profile: %1 at %2</source>
         <translation>نیا پروفائل: %1 بمقام %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1332"/>
+        <location filename="../src/configdialog.cpp" line="1105"/>
         <source>Profile: %1 at %2</source>
         <translation>پروفائل: %1 بمقام %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1337"/>
+        <location filename="../src/configdialog.cpp" line="1108"/>
         <source>Fill in all required fields</source>
         <translation>تمام ضروری فیلڈز بھریں</translation>
+    </message>
+</context>
+<context>
+    <name>DoneWizardPage</name>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="458"/>
+        <source>Hide passwords until asked</source>
+        <translation type="unfinished">پاس ورڈ اس وقت تک چھپائیں جب تک نہ مانگے جائیں</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="459"/>
+        <source>Show an icon in the system tray</source>
+        <translation type="unfinished">سسٹم ٹرے میں آئیکن دکھائیں</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="460"/>
+        <source>Ready</source>
+        <translation type="unfinished">تیار</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="461"/>
+        <source>Everything else can be changed later in Settings.</source>
+        <translation type="unfinished">باقی سب کچھ بعد میں سیٹنگز میں تبدیل کیا جا سکتا ہے۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="468"/>
+        <source>Show the password line as dots; Show password reveals it</source>
+        <translation type="unfinished">پاس ورڈ کی سطر نقطوں کی صورت میں دکھائیں؛ &quot;پاس ورڈ دکھائیں&quot; اسے ظاہر کرتا ہے</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="479"/>
+        <source>Store: %1</source>
+        <translation type="unfinished">اسٹور: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="481"/>
+        <source>It is already a password store and is used as it is.</source>
+        <translation type="unfinished">یہ پہلے سے ایک پاس ورڈ اسٹور ہے اور جیسا ہے ویسا ہی استعمال ہوگا۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="483"/>
+        <source>It will be set up for the ticked keys and put under Git.</source>
+        <translation type="unfinished">اسے منتخب کردہ کلیدوں کے لیے ترتیب دیا جائے گا اور Git کے تحت رکھا جائے گا۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="485"/>
+        <source>It will be set up for the ticked keys.</source>
+        <translation type="unfinished">اسے منتخب کردہ کلیدوں کے لیے ترتیب دیا جائے گا۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="487"/>
+        <source>GnuPG: %1</source>
+        <translation type="unfinished">GnuPG: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="488"/>
+        <source>Operations run through pass.</source>
+        <translation type="unfinished">کارروائیاں pass کے ذریعے چلتی ہیں۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="489"/>
+        <source>Operations run through gpg and git directly.</source>
+        <translation type="unfinished">کارروائیاں براہ راست gpg اور git کے ذریعے چلتی ہیں۔</translation>
     </message>
 </context>
 <context>
@@ -717,147 +812,192 @@ The value will still be saved as entered.</source>
     </message>
 </context>
 <context>
+    <name>FirstRunWizard</name>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="45"/>
+        <source>Browse</source>
+        <translation type="unfinished">براؤز کریں</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="68"/>
+        <location filename="../src/firstrunwizard.cpp" line="74"/>
+        <source>Welcome to QtPass</source>
+        <translation type="unfinished">QtPass میں خوش آمدید</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="77"/>
+        <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
+        <translation type="unfinished">QtPass معیاری یونکس پاس ورڈ منیجر &lt;i&gt;pass&lt;/i&gt; کے لیے ایک گرافیکل فرنٹ اینڈ ہے: ہر پاس ورڈ GnuPG سے خفیہ کی گئی ایک فائل ہے، جو ایک ایسے فولڈر میں رکھی جاتی ہے جسے آپ Git کے تحت رکھ سکتے ہیں۔&lt;br&gt;&lt;br&gt;اگلے صفحات GnuPG تلاش کرتے ہیں، یقینی بناتے ہیں کہ آپ کے پاس خفیہ کاری کے لیے ایک کلید ہے، اور وہ فولڈر منتخب کرتے ہیں جس میں آپ کے پاس ورڈ رہتے ہیں۔ جب تک آپ &quot;مکمل&quot; نہ دبائیں کچھ بھی لکھا نہیں جاتا۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="137"/>
+        <source>Error</source>
+        <translation type="unfinished">خرابی</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="138"/>
+        <source>Failed to create password-store at: %1</source>
+        <translation type="unfinished">پاس ورڈ اسٹور بنانے میں ناکامی: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="155"/>
+        <location filename="../src/firstrunwizard.cpp" line="173"/>
+        <source>Password store not initialised</source>
+        <translation type="unfinished">پاس ورڈ اسٹور شروع نہیں ہوا</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="162"/>
+        <source>Password store</source>
+        <translation type="unfinished">پاس ورڈ اسٹور</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="163"/>
+        <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
+        <translation type="unfinished">%1 میں پہلے سے خفیہ فائلیں موجود ہیں؛ انہیں منتخب کردہ کلیدوں کے لیے دوبارہ خفیہ نہیں کیا گیا۔ ایسا کرنے کے لیے شروع ہونے کے بعد &quot;صارفین&quot; کھولیں۔</translation>
+    </message>
+</context>
+<context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="150"/>
+        <location filename="../src/imitatepass.cpp" line="142"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">Git پل ناکام: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="185"/>
-        <location filename="../src/imitatepass.cpp" line="371"/>
-        <location filename="../src/imitatepass.cpp" line="581"/>
+        <location filename="../src/imitatepass.cpp" line="177"/>
+        <location filename="../src/imitatepass.cpp" line="330"/>
+        <location filename="../src/imitatepass.cpp" line="512"/>
         <source>Check .gpg-id file signature!</source>
         <translation>.gpg-id فائل کے دستخط چیک کریں!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="186"/>
-        <location filename="../src/imitatepass.cpp" line="372"/>
-        <location filename="../src/imitatepass.cpp" line="582"/>
+        <location filename="../src/imitatepass.cpp" line="178"/>
+        <location filename="../src/imitatepass.cpp" line="331"/>
+        <location filename="../src/imitatepass.cpp" line="513"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 کے لیے دستخط غیر درست ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="193"/>
-        <location filename="../src/imitatepass.cpp" line="665"/>
+        <location filename="../src/imitatepass.cpp" line="185"/>
+        <location filename="../src/imitatepass.cpp" line="596"/>
         <source>Can not edit</source>
         <translation>ترمیم نہیں کر سکتے</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="194"/>
-        <location filename="../src/imitatepass.cpp" line="666"/>
+        <location filename="../src/imitatepass.cpp" line="186"/>
+        <location filename="../src/imitatepass.cpp" line="597"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>استعمال کرنے کے لیے خفیہ کاری کلید نہیں پڑھی جا سکی، .gpg-id فائل غائب یا غیر درست ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="310"/>
+        <location filename="../src/imitatepass.cpp" line="290"/>
         <source>Cannot update</source>
         <translation>اپ ڈیٹ نہیں کر سکتے</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="311"/>
+        <location filename="../src/imitatepass.cpp" line="291"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>.gpg-id کو لکھنے کے لیے کھولنے میں ناکامی۔</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="330"/>
+        <location filename="../src/imitatepass.cpp" line="310"/>
         <source>Check selected users!</source>
         <translation>منتخب صارفین چیک کریں!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="331"/>
+        <location filename="../src/imitatepass.cpp" line="311"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>منتخب کلیدوں میں سے کسی کے پاس خفیہ کلید دستیاب نہیں ہے۔
 آپ کسی بھی نئے شامل کردہ پاس ورڈ کو ڈکرپٹ نہیں کر سکیں گے!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="366"/>
+        <location filename="../src/imitatepass.cpp" line="325"/>
         <source>GPG signing failed!</source>
         <translation>GPG دستخط ناکام!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="367"/>
+        <location filename="../src/imitatepass.cpp" line="326"/>
         <source>Failed to sign %1.</source>
         <translation>%1 پر دستخط کرنے میں ناکامی۔</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="479"/>
+        <location filename="../src/imitatepass.cpp" line="437"/>
         <source>No signing key!</source>
         <translation>دستخطی کلید نہیں!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="480"/>
+        <location filename="../src/imitatepass.cpp" line="438"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>خفیہ دستخطی کلیدوں میں سے کوئی بھی دستیاب نہیں ہے۔
 آپ صارف کی فہرست تبدیل نہیں کر سکیں گے!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="720"/>
-        <location filename="../src/imitatepass.cpp" line="1005"/>
+        <location filename="../src/imitatepass.cpp" line="651"/>
+        <location filename="../src/imitatepass.cpp" line="936"/>
         <source>Re-encryption failed</source>
         <translation>دوبارہ خفیہ کاری ناکام</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="721"/>
+        <location filename="../src/imitatepass.cpp" line="652"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>%1 کو تبدیل کرنے میں ناکامی۔ اصل بحال کر دی گئی ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="760"/>
+        <location filename="../src/imitatepass.cpp" line="691"/>
         <source>Creating backup commit</source>
         <translation>بیک اپ کمٹ بنایا جا رہا ہے</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="777"/>
-        <location filename="../src/imitatepass.cpp" line="786"/>
+        <location filename="../src/imitatepass.cpp" line="708"/>
+        <location filename="../src/imitatepass.cpp" line="717"/>
         <source>Backup commit failed</source>
         <translation>بیک اپ کمٹ ناکام</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="778"/>
+        <location filename="../src/imitatepass.cpp" line="709"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>git کی حالت چیک نہیں کی جا سکی۔ دوبارہ خفیہ کاری منسوخ کر دی گئی۔</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="787"/>
+        <location filename="../src/imitatepass.cpp" line="718"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>دوبارہ خفیہ کاری منسوخ کر دی گئی کیونکہ git بیک اپ نہیں بنایا جا سکا۔</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="833"/>
+        <location filename="../src/imitatepass.cpp" line="764"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">دوبارہ خفیہ کاری پہلے سے جاری ہے</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="838"/>
+        <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encrypting from folder %1</source>
         <translation>فولڈر %1 سے دوبارہ خفیہ کاری</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="921"/>
-        <location filename="../src/imitatepass.cpp" line="1032"/>
+        <location filename="../src/imitatepass.cpp" line="852"/>
+        <location filename="../src/imitatepass.cpp" line="963"/>
         <source>Updating password-store</source>
         <translation>پاس ورڈ اسٹور اپ ڈیٹ ہو رہا ہے</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="924"/>
+        <location filename="../src/imitatepass.cpp" line="855"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git پل ناکام، اسٹور کو موجودہ حالت میں ہی دوبارہ خفیہ کیا جا رہا ہے</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="965"/>
+        <location filename="../src/imitatepass.cpp" line="896"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID تصدیق ناکام</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="966"/>
+        <location filename="../src/imitatepass.cpp" line="897"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>ڈائریکٹری کے لیے .gpg-id کی تصدیق نہیں کی جا سکی۔</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1003"/>
+        <location filename="../src/imitatepass.cpp" line="934"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... اور %n مزید</numerusform>
@@ -865,7 +1005,7 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1006"/>
+        <location filename="../src/imitatepass.cpp" line="937"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n فائل دوبارہ خفیہ نہیں کی جا سکی:</numerusform>
@@ -873,12 +1013,12 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1012"/>
+        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">دوبارہ خفیہ کاری منسوخ: %2 میں سے %1 فائلیں چیک کی گئیں، %3 دوبارہ خفیہ کی گئیں، %4 ناکام</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1297"/>
+        <location filename="../src/imitatepass.cpp" line="1228"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Git ایگزیکیوٹیبل ترتیب نہیں دی گئی، git چھوڑا جا رہا ہے</translation>
     </message>
@@ -887,17 +1027,17 @@ You will not be able to change the user list!</source>
         <translation type="vanished">%1 کو دوبارہ خفیہ کرنے میں ناکامی</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1021"/>
+        <location filename="../src/imitatepass.cpp" line="952"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>دوبارہ خفیہ کاری مکمل: %1 کامیاب، %2 ناکام</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1026"/>
+        <location filename="../src/imitatepass.cpp" line="957"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>دوبارہ خفیہ کاری مکمل: %1 فائلیں دوبارہ خفیہ کی گئیں</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1035"/>
+        <location filename="../src/imitatepass.cpp" line="966"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>پش نہیں کیا جا رہا: %n فائل دوبارہ خفیہ کرنے میں ناکام</numerusform>
@@ -905,18 +1045,18 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1220"/>
-        <location filename="../src/imitatepass.cpp" line="1228"/>
-        <location filename="../src/imitatepass.cpp" line="1235"/>
-        <location filename="../src/imitatepass.cpp" line="1245"/>
+        <location filename="../src/imitatepass.cpp" line="1151"/>
+        <location filename="../src/imitatepass.cpp" line="1159"/>
+        <location filename="../src/imitatepass.cpp" line="1166"/>
+        <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Copy failed</source>
         <translation type="unfinished">کاپی ناکام</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
-        <location filename="../src/imitatepass.cpp" line="1229"/>
-        <location filename="../src/imitatepass.cpp" line="1236"/>
-        <location filename="../src/imitatepass.cpp" line="1246"/>
+        <location filename="../src/imitatepass.cpp" line="1152"/>
+        <location filename="../src/imitatepass.cpp" line="1160"/>
+        <location filename="../src/imitatepass.cpp" line="1167"/>
+        <location filename="../src/imitatepass.cpp" line="1177"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">%1 کو %2 میں کاپی نہیں کیا جا سکا۔</translation>
     </message>
@@ -998,6 +1138,39 @@ You will not be able to change the user list!</source>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Successfully imported key: %1</source>
         <translation>کامیابی سے کلید درآمد: %1</translation>
+    </message>
+</context>
+<context>
+    <name>KeyWizardPage</name>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="275"/>
+        <source>Generate a new key pair…</source>
+        <translation type="unfinished">نیا کلید کا جوڑا بنائیں…</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="277"/>
+        <source>Your key</source>
+        <translation type="unfinished">آپ کی کلید</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="278"/>
+        <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
+        <translation type="unfinished">پاس ورڈ GnuPG کلیدوں کے لیے خفیہ کیے جاتے ہیں۔ وہ کلیدیں منتخب کریں جو نیا اسٹور کھول سکیں؛ آپ کو کم از کم ایک ایسی کلید درکار ہے جس کا خفیہ حصہ اس مشین پر موجود ہو۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="306"/>
+        <source>expired</source>
+        <translation type="unfinished">میعاد ختم</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="308"/>
+        <source>not usable</source>
+        <translation type="unfinished">ناقابل استعمال</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="321"/>
+        <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
+        <translation type="unfinished">GnuPG کے پاس ابھی کوئی خفیہ کلید نہیں ہے۔ یہاں ایک بنائیں، یا پہلے gpg کے ذریعے اپنی موجودہ کلید درآمد کریں۔</translation>
     </message>
 </context>
 <context>
@@ -1102,8 +1275,8 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="731"/>
-        <location filename="../src/mainwindow.cpp" line="944"/>
+        <location filename="../src/mainwindow.cpp" line="799"/>
+        <location filename="../src/mainwindow.cpp" line="1012"/>
         <source>Search Password</source>
         <translation>پاس ورڈ تلاش کریں</translation>
     </message>
@@ -1184,156 +1357,171 @@ You will not be able to change the user list!</source>
         <translation type="unfinished">سیٹنگز (&amp;E)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="371"/>
+        <location filename="../src/mainwindow.ui" line="373"/>
         <source>&amp;Help</source>
         <translation type="unfinished">مدد (&amp;H)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="421"/>
-        <location filename="../src/mainwindow.ui" line="424"/>
-        <location filename="../src/mainwindow.cpp" line="1494"/>
+        <location filename="../src/mainwindow.ui" line="423"/>
+        <location filename="../src/mainwindow.ui" line="426"/>
+        <location filename="../src/mainwindow.cpp" line="1559"/>
         <source>Add password</source>
         <translation>پاس ورڈ شامل کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="427"/>
+        <location filename="../src/mainwindow.ui" line="429"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="432"/>
-        <location filename="../src/mainwindow.ui" line="435"/>
-        <location filename="../src/mainwindow.cpp" line="1493"/>
+        <location filename="../src/mainwindow.ui" line="434"/>
+        <location filename="../src/mainwindow.ui" line="437"/>
+        <location filename="../src/mainwindow.cpp" line="1558"/>
         <source>Add folder</source>
         <translation>فولڈر شامل کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="440"/>
-        <location filename="../src/mainwindow.ui" line="443"/>
-        <location filename="../src/mainwindow.cpp" line="1501"/>
+        <location filename="../src/mainwindow.ui" line="442"/>
+        <location filename="../src/mainwindow.ui" line="445"/>
+        <location filename="../src/mainwindow.cpp" line="1566"/>
         <source>Edit</source>
         <translation>ترمیم کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="448"/>
-        <location filename="../src/mainwindow.ui" line="451"/>
-        <location filename="../src/mainwindow.cpp" line="1515"/>
+        <location filename="../src/mainwindow.ui" line="450"/>
+        <location filename="../src/mainwindow.ui" line="453"/>
+        <location filename="../src/mainwindow.cpp" line="1580"/>
         <source>Delete</source>
         <translation>حذف کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="456"/>
+        <location filename="../src/mainwindow.ui" line="458"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="459"/>
+        <location filename="../src/mainwindow.ui" line="461"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>OTP بنائیں اور کلپ بورڈ میں کاپی کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="462"/>
+        <location filename="../src/mainwindow.ui" line="464"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="467"/>
+        <location filename="../src/mainwindow.ui" line="469"/>
         <source>Push</source>
         <translation>پش</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="470"/>
+        <location filename="../src/mainwindow.ui" line="472"/>
         <source>Git push</source>
         <translation>Git پش</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="475"/>
+        <location filename="../src/mainwindow.ui" line="477"/>
         <source>Update</source>
         <translation>اپ ڈیٹ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="478"/>
+        <location filename="../src/mainwindow.ui" line="480"/>
         <source>Git pull</source>
         <translation>Git پل</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="483"/>
-        <location filename="../src/mainwindow.cpp" line="1495"/>
+        <location filename="../src/mainwindow.ui" line="485"/>
+        <location filename="../src/mainwindow.cpp" line="1560"/>
         <source>Users</source>
         <translation>صارفین</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="486"/>
+        <location filename="../src/mainwindow.ui" line="488"/>
         <source>Manage who can read password in folder</source>
         <translation>فولڈر میں پاس ورڈ پڑھنے والوں کا انتظام کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="491"/>
+        <location filename="../src/mainwindow.ui" line="499"/>
+        <source>Show &amp;menu bar</source>
+        <translation type="unfinished">مینو بار دکھائیں (&amp;M)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="502"/>
+        <source>Hide or show the menu bar; Ctrl+M brings it back</source>
+        <translation type="unfinished">مینو بار چھپائیں یا دکھائیں؛ Ctrl+M اسے واپس لاتا ہے</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="505"/>
+        <source>Ctrl+M</source>
+        <translation type="unfinished">Ctrl+M</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="510"/>
         <source>Config</source>
         <translation>کنفیگ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="494"/>
+        <location filename="../src/mainwindow.ui" line="513"/>
         <source>Configuration</source>
         <translation>ترتیبات</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="497"/>
+        <location filename="../src/mainwindow.ui" line="516"/>
         <source>Ctrl+,</source>
         <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="505"/>
+        <location filename="../src/mainwindow.ui" line="524"/>
         <source>&amp;Close window</source>
         <translation type="unfinished">ونڈو بند کریں (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="508"/>
+        <location filename="../src/mainwindow.ui" line="527"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
         <translation type="unfinished">ونڈو بند کریں؛ &quot;بند کرنے پر چھپائیں&quot; کے ساتھ QtPass ٹرے میں رہتا ہے</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="511"/>
+        <location filename="../src/mainwindow.ui" line="530"/>
         <source>Ctrl+W</source>
         <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="516"/>
+        <location filename="../src/mainwindow.ui" line="535"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">بند کریں (&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="519"/>
+        <location filename="../src/mainwindow.ui" line="538"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="527"/>
+        <location filename="../src/mainwindow.ui" line="546"/>
         <source>&amp;FAQ</source>
         <translation type="unfinished">&amp;FAQ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="530"/>
+        <location filename="../src/mainwindow.ui" line="549"/>
         <source>Open the frequently asked questions on qtpass.org</source>
         <translation type="unfinished">qtpass.org پر عمومی سوالات (FAQ) کھولیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="533"/>
+        <location filename="../src/mainwindow.ui" line="552"/>
         <source>F1</source>
         <translation type="unfinished">F1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="538"/>
+        <location filename="../src/mainwindow.ui" line="557"/>
         <source>&amp;About QtPass</source>
         <translation type="unfinished">QtPass کے بارے میں (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="546"/>
+        <location filename="../src/mainwindow.ui" line="565"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished">Qt کے بارے میں (&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="344"/>
+        <location filename="../src/mainwindow.cpp" line="415"/>
         <source>Welcome to QtPass %1</source>
         <translation>QtPass %1 میں خوش آمدید</translation>
     </message>
@@ -1350,14 +1538,14 @@ You will not be able to change the user list!</source>
         <translation type="vanished">پروسیس آؤٹ پٹ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="511"/>
-        <location filename="../src/mainwindow.cpp" line="524"/>
+        <location filename="../src/mainwindow.cpp" line="582"/>
+        <location filename="../src/mainwindow.cpp" line="595"/>
         <source>Updating password-store</source>
         <translation>پاس ورڈ اسٹور اپ ڈیٹ ہو رہا ہے</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="638"/>
-        <location filename="../src/mainwindow.cpp" line="986"/>
+        <location filename="../src/mainwindow.cpp" line="706"/>
+        <location filename="../src/mainwindow.cpp" line="1054"/>
         <source>Content hidden</source>
         <translation>مواد چھپا ہوا ہے</translation>
     </message>
@@ -1370,45 +1558,45 @@ You will not be able to change the user list!</source>
         <translation type="vanished">OTP کوڈ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="688"/>
-        <location filename="../src/mainwindow.cpp" line="706"/>
-        <location filename="../src/mainwindow.cpp" line="1230"/>
+        <location filename="../src/mainwindow.cpp" line="756"/>
+        <location filename="../src/mainwindow.cpp" line="774"/>
+        <location filename="../src/mainwindow.cpp" line="1295"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP کوڈ کلپ بورڈ میں کاپی ہو گیا</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="708"/>
-        <location filename="../src/mainwindow.cpp" line="1213"/>
+        <location filename="../src/mainwindow.cpp" line="776"/>
+        <location filename="../src/mainwindow.cpp" line="1278"/>
         <source>No OTP code found in this password entry</source>
         <translation>اس پاس ورڈ اندراج میں کوئی OTP کوڈ نہیں ملا</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="735"/>
+        <location filename="../src/mainwindow.cpp" line="803"/>
         <source>Password and Content hidden</source>
         <translation>پاس ورڈ اور مواد چھپے ہوئے ہیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="845"/>
+        <location filename="../src/mainwindow.cpp" line="913"/>
         <source>Looking for: %1</source>
         <translation>تلاش: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="893"/>
+        <location filename="../src/mainwindow.cpp" line="961"/>
         <source>Searching…</source>
         <translation>تلاش جاری ہے…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="922"/>
+        <location filename="../src/mainwindow.cpp" line="990"/>
         <source>Search content (regex)</source>
         <translation>مواد تلاش کریں (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="972"/>
+        <location filename="../src/mainwindow.cpp" line="1040"/>
         <source>No matches found.</source>
         <translation>کوئی مماثلت نہیں ملی۔</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="996"/>
+        <location filename="../src/mainwindow.cpp" line="1064"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n مماثلت ملی</numerusform>
@@ -1416,7 +1604,7 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="997"/>
+        <location filename="../src/mainwindow.cpp" line="1065"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>%n اندراج میں۔</numerusform>
@@ -1424,19 +1612,18 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1074"/>
+        <location filename="../src/mainwindow.cpp" line="1142"/>
         <source>Invalid name</source>
         <translation type="unfinished">غیر درست نام</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1075"/>
+        <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">یہ نام پاس ورڈ اسٹور سے باہر اشارہ کرے گا۔ براہ کرم کوئی دوسرا نام منتخب کریں۔</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1118"/>
         <source>New file</source>
-        <translation>نئی فائل</translation>
+        <translation type="vanished">نئی فائل</translation>
     </message>
     <message>
         <source>New password file:
@@ -1451,180 +1638,179 @@ You will not be able to change the user list!</source>
 (یہ %1 میں رکھا جائے گا)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="126"/>
+        <location filename="../src/mainwindow.cpp" line="151"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">آپریشن کا وقت ختم ہو گیا؛ انٹرفیس دوبارہ فعال کیا جا رہا ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="675"/>
+        <location filename="../src/mainwindow.cpp" line="743"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">اس پاس ورڈ اندراج کو ڈیکرپٹ نہیں کیا جا سکا</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="822"/>
+        <location filename="../src/mainwindow.cpp" line="890"/>
         <source>About QtPass</source>
         <translation type="unfinished">QtPass کے بارے میں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="823"/>
+        <location filename="../src/mainwindow.cpp" line="891"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;معیاری یونکس پاس ورڈ منیجر &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; کے لیے ایک ملٹی پلیٹ فارم GUI۔&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;سورس کوڈ اور مسائل&lt;/a&gt;&lt;/p&gt;&lt;p&gt;کاپی رائٹ &amp;copy; 2014&amp;ndash;%2 IJhack۔ &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL ورژن 3&lt;/a&gt; یا اس کے بعد کے ورژن کے تحت لائسنس یافتہ۔&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="927"/>
+        <location filename="../src/mainwindow.cpp" line="995"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation type="unfinished">مواد کی تلاش POSIX بنیادی ریگولر ایکسپریشن استعمال کرتی ہے (pass grep)۔</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="929"/>
+        <location filename="../src/mainwindow.cpp" line="997"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">مواد کی تلاش Perl سے ہم آہنگ ریگولر ایکسپریشن (PCRE) استعمال کرتی ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1119"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>نئی پاس ورڈ فائل:
+        <translation type="vanished">نئی پاس ورڈ فائل:
 (یہ %1 میں رکھی جائے گی)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1156"/>
+        <location filename="../src/mainwindow.cpp" line="1221"/>
         <source> and the whole content?</source>
         <translation> اور پورا مواد؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1166"/>
+        <location filename="../src/mainwindow.cpp" line="1231"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> اور پورا مواد؟ &lt;br&gt;&lt;strong&gt;توجہ: دی گئی فولڈر میں غیر متوقع فائلیں ہیں، جاری رکھنے سے پہلے انہیں چیک کریں۔&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="1240"/>
         <source>Delete folder?</source>
         <translation>فولڈر حذف کریں؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="1240"/>
         <source>Delete password?</source>
         <translation>پاس ورڈ حذف کریں؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1176"/>
+        <location filename="../src/mainwindow.cpp" line="1241"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>کیا آپ واقعی %1%2 حذف کرنا چاہتے ہیں؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1208"/>
+        <location filename="../src/mainwindow.cpp" line="1273"/>
         <source>No password selected for OTP generation</source>
         <translation>OTP بنانے کے لیے کوئی پاس ورڈ منتخب نہیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1340"/>
+        <location filename="../src/mainwindow.cpp" line="1405"/>
         <source>Profile changed to %1</source>
         <translation>پروفائل %1 میں تبدیل ہو گیا</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1492"/>
+        <location filename="../src/mainwindow.cpp" line="1557"/>
         <source>Open folder with file manager</source>
         <translation>فائل منیجر کے ساتھ فولڈر کھولیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1507"/>
-        <location filename="../src/mainwindow.cpp" line="1638"/>
+        <location filename="../src/mainwindow.cpp" line="1572"/>
+        <location filename="../src/mainwindow.cpp" line="1703"/>
         <source>Rename folder</source>
         <translation>فولڈر کا نام تبدیل کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1511"/>
+        <location filename="../src/mainwindow.cpp" line="1576"/>
         <source>Rename password</source>
         <translation>پاس ورڈ کا نام تبدیل کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1520"/>
+        <location filename="../src/mainwindow.cpp" line="1585"/>
         <source>Share</source>
         <translation>شیئر کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1530"/>
+        <location filename="../src/mainwindow.cpp" line="1595"/>
         <source>Re-encrypt all passwords</source>
         <translation>تمام پاس ورڈز دوبارہ خفیہ کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1535"/>
+        <location filename="../src/mainwindow.cpp" line="1600"/>
         <source>Export my public key...</source>
         <translation>میری عوامی کلید برآمد کریں...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1541"/>
+        <location filename="../src/mainwindow.cpp" line="1606"/>
         <source>Add recipient...</source>
         <translation>وصول کنندہ شامل کریں...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <location filename="../src/mainwindow.cpp" line="1611"/>
         <source>What is this?</source>
         <translation>یہ کیا ہے؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1589"/>
+        <location filename="../src/mainwindow.cpp" line="1654"/>
         <source>New folder</source>
         <translation type="unfinished">نیا فولڈر</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1590"/>
+        <location filename="../src/mainwindow.cpp" line="1655"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>نیا فولڈر:
 (یہ %1 میں رکھا جائے گا)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1601"/>
-        <location filename="../src/mainwindow.cpp" line="1623"/>
-        <location filename="../src/mainwindow.cpp" line="1750"/>
+        <location filename="../src/mainwindow.cpp" line="1666"/>
+        <location filename="../src/mainwindow.cpp" line="1688"/>
+        <location filename="../src/mainwindow.cpp" line="1815"/>
         <source>Error</source>
         <translation>خرابی</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1602"/>
+        <location filename="../src/mainwindow.cpp" line="1667"/>
         <source>Failed to create folder: %1</source>
         <translation>فولڈر بنانے میں ناکامی: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1624"/>
+        <location filename="../src/mainwindow.cpp" line="1689"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>.gpg-id فائل بنانے میں ناکامی: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1678"/>
+        <location filename="../src/mainwindow.cpp" line="1743"/>
         <source>Rename file</source>
         <translation>فائل کا نام تبدیل کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1638"/>
+        <location filename="../src/mainwindow.cpp" line="1703"/>
         <source>Rename Folder To: </source>
         <translation>فولڈر کا نام تبدیل کریں: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1678"/>
+        <location filename="../src/mainwindow.cpp" line="1743"/>
         <source>Rename File To: </source>
         <translation>فائل کا نام تبدیل کریں: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1727"/>
+        <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">اس اندراج میں OTP سیکرٹ ہے، پاس ورڈ نہیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1751"/>
+        <location filename="../src/mainwindow.cpp" line="1816"/>
         <source>Directory does not exist: %1</source>
         <translation>ڈائریکٹری موجود نہیں ہے: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1821"/>
+        <location filename="../src/mainwindow.cpp" line="1858"/>
         <source>Re-encrypt passwords</source>
         <translation>پاس ورڈز دوبارہ خفیہ کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1757"/>
+        <location filename="../src/mainwindow.cpp" line="1822"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -1641,38 +1827,38 @@ Continue?</source>
 جاری رکھیں؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1791"/>
+        <location filename="../src/mainwindow.cpp" line="1856"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">پاس ورڈز دوبارہ خفیہ کیے جا رہے ہیں...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1792"/>
+        <location filename="../src/mainwindow.cpp" line="1857"/>
         <source>Cancel</source>
         <translation type="unfinished">منسوخ کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1800"/>
+        <location filename="../src/mainwindow.cpp" line="1865"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">دوبارہ خفیہ کاری منسوخ کی جا رہی ہے</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1816"/>
+        <location filename="../src/mainwindow.cpp" line="1881"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">پاس ورڈز دوبارہ خفیہ کیے جا رہے ہیں: %2 میں سے %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1849"/>
-        <location filename="../src/mainwindow.cpp" line="1868"/>
+        <location filename="../src/mainwindow.cpp" line="1914"/>
+        <location filename="../src/mainwindow.cpp" line="1933"/>
         <source>Export Public Key</source>
         <translation>عوامی کلید برآمد کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1850"/>
+        <location filename="../src/mainwindow.cpp" line="1915"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;اپنی عوامی کلید برآمد کریں&lt;/h3&gt;&lt;p&gt;کوئی دستخطی کلید ترتیب نہیں دی گئی۔ QtPass سیٹنگز &amp;gt; GPG کلیدوں میں ایک سیٹ کریں، یا ٹرمینل میں یہ چلائیں:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;پھر فائل اپنے ٹیم کے ساتھیوں کو بھیجیں۔&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1869"/>
+        <location filename="../src/mainwindow.cpp" line="1934"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1681,17 +1867,17 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1871"/>
+        <location filename="../src/mainwindow.cpp" line="1936"/>
         <source>No output from gpg.</source>
         <translation>gpg سے کوئی آؤٹ پٹ نہیں۔</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1898"/>
+        <location filename="../src/mainwindow.cpp" line="1963"/>
         <source>Sharing Passwords with GPG</source>
         <translation>GPG کے ساتھ پاس ورڈز شیئر کرنا</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1899"/>
+        <location filename="../src/mainwindow.cpp" line="1964"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;GPG کے ساتھ پاس ورڈز شیئر کرنا&lt;/h3&gt;&lt;p&gt;دوسرے صارفین کے ساتھ پاس ورڈز شیئر کرنے کے لیے:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;اپنی عوامی کلید برآمد کریں&lt;/b&gt; اور اپنے ٹیم کے ساتھیوں کو بھیجیں&lt;/li&gt;&lt;li&gt;&lt;b&gt;ٹیم کے ساتھیوں کی عوامی کلیدیں درآمد کریں&lt;/b&gt; اپنے GPG کلید رنگ میں&lt;/li&gt;&lt;li&gt;&lt;b&gt;پاس ورڈز دوبارہ خفیہ کریں&lt;/b&gt; تاکہ تمام وصول کنندگان انہیں ڈکرپٹ کر سکیں&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;صرف وہ لوگ جن کے پاس مماثل خفیہ کلید ہو پاس ورڈز ڈکرپٹ کر سکتے ہیں۔&lt;/p&gt;&lt;p&gt;&lt;b&gt;ٹپ:&lt;/b&gt; تمام شیئرڈ فولڈرز کے لیے ایک ہی GPG کلید استعمال کریں۔&lt;/p&gt;&lt;p&gt;مزید تفصیلات کے لیے FAQ دیکھیں۔&lt;/p&gt;</translation>
     </message>
@@ -1771,72 +1957,133 @@ Continue?</source>
     <name>PasswordDialog</name>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
-        <location filename="../src/passworddialog.ui" line="65"/>
+        <location filename="../src/passworddialog.ui" line="120"/>
+        <location filename="../src/passworddialog.cpp" line="270"/>
         <source>Password</source>
         <translation>پاس ورڈ</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="75"/>
+        <location filename="../src/passworddialog.ui" line="72"/>
+        <source>Folder</source>
+        <translation type="unfinished">فولڈر</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.ui" line="82"/>
+        <source>The folder of the password store the new entry goes into</source>
+        <translation type="unfinished">پاس ورڈ اسٹور کا وہ فولڈر جس میں نیا اندراج جائے گا</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.ui" line="89"/>
+        <source>Name</source>
+        <translation type="unfinished">نام</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.ui" line="99"/>
+        <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
+        <translation type="unfinished">اندراج کا نام، جیسا کہ یہ ٹری میں نظر آتا ہے؛ / اسے ذیلی فولڈر میں رکھتا ہے</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.ui" line="102"/>
+        <source>e.g. github.com or work/vpn</source>
+        <translation type="unfinished">مثلاً github.com یا work/vpn</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.ui" line="130"/>
         <source>Generate</source>
         <translation>بنائیں</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="86"/>
+        <location filename="../src/passworddialog.ui" line="141"/>
         <source>Show password</source>
         <translation>پاس ورڈ دکھائیں</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="106"/>
+        <location filename="../src/passworddialog.ui" line="161"/>
         <source>Character Set:</source>
         <translation>حروف کا سیٹ:</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="114"/>
+        <location filename="../src/passworddialog.ui" line="169"/>
         <source>All Characters</source>
         <translation>تمام حروف</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="119"/>
+        <location filename="../src/passworddialog.ui" line="174"/>
         <source>Alphabetical</source>
         <translation>حروف تہجی</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="124"/>
+        <location filename="../src/passworddialog.ui" line="179"/>
         <source>Alphanumerical</source>
         <translation>حروف اور اعداد</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="129"/>
+        <location filename="../src/passworddialog.ui" line="184"/>
         <source>Custom</source>
         <translation>حسب ضرورت</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="143"/>
+        <location filename="../src/passworddialog.ui" line="198"/>
         <source>Length:</source>
         <translation>لمبائی:</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="164"/>
+        <location filename="../src/passworddialog.ui" line="219"/>
         <source>Template:</source>
         <translation type="unfinished">سانچہ:</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="180"/>
+        <location filename="../src/passworddialog.ui" line="235"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
         <translation type="unfinished">اسٹور کی .templates فائل سے فیلڈ سانچہ۔ Ctrl+T اگلے سانچے پر جاتا ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="90"/>
+        <location filename="../src/passworddialog.cpp" line="76"/>
+        <source>New password</source>
+        <translation type="unfinished">نیا پاس ورڈ</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="97"/>
         <source>Decrypting…</source>
         <translation type="unfinished">ڈکرپٹ کیا جا رہا ہے…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="267"/>
+        <location filename="../src/passworddialog.cpp" line="216"/>
+        <source>Give the entry a name.</source>
+        <translation type="unfinished">اندراج کو ایک نام دیں۔</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="220"/>
+        <source>A name cannot end in /.</source>
+        <translation type="unfinished">نام / پر ختم نہیں ہو سکتا۔</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="229"/>
+        <source>That name would resolve outside the password store.</source>
+        <translation type="unfinished">یہ نام پاس ورڈ اسٹور سے باہر جا نکلے گا۔</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="233"/>
+        <source>An entry called %1 already exists.</source>
+        <translation type="unfinished">%1 نام کا اندراج پہلے سے موجود ہے۔</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="237"/>
+        <source>%1 is a folder.</source>
+        <translation type="unfinished">%1 ایک فولڈر ہے۔</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="266"/>
+        <source>Could not create the folder %1.</source>
+        <translation type="unfinished">فولڈر %1 نہیں بنایا جا سکا۔</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="377"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI یا base32 سیکرٹ</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="300"/>
+        <location filename="../src/passworddialog.cpp" line="410"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">غیر درست OTP سیکرٹ</translation>
     </message>
@@ -1862,12 +2109,12 @@ Continue?</source>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="32"/>
+        <location filename="../src/profileinit.cpp" line="34"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">%1 نہیں بنایا جا سکا۔</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="54"/>
+        <location filename="../src/profileinit.cpp" line="56"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>%1 میں پہلے سے %n خفیہ شدہ فائل موجود ہے؛ اسے دوبارہ خفیہ نہیں کیا گیا۔ ایسا کرنے کے لیے پروفائل پر جائیں اور صارفین کھولیں۔</numerusform>
@@ -1875,24 +2122,83 @@ Continue?</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="72"/>
+        <location filename="../src/profileinit.cpp" line="74"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">کوئی وصول کنندہ منتخب نہیں؛ %1 نہیں لکھی گئی۔</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="79"/>
+        <location filename="../src/profileinit.cpp" line="81"/>
         <source>Could not write %1: %2</source>
         <translation type="unfinished">%1 نہیں لکھی جا سکی: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="105"/>
+        <location filename="../src/profileinit.cpp" line="98"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">%2 کے ساتھ %1 پر دستخط نہیں کیے جا سکے: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="124"/>
+        <location filename="../src/profileinit.cpp" line="118"/>
+        <location filename="../src/profileinit.cpp" line="147"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">%2 میں git %1 ناکام: %3</translation>
+    </message>
+</context>
+<context>
+    <name>ProgramsWizardPage</name>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="189"/>
+        <source>Use the pass command-line tool</source>
+        <translation type="unfinished">pass کمانڈ لائن ٹول استعمال کریں</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="191"/>
+        <source>Programs</source>
+        <translation type="unfinished">پروگرام</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="192"/>
+        <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
+        <translation type="unfinished">خفیہ کاری GnuPG کرتا ہے۔ pass اور Git اختیاری ہیں؛ QtPass ان کا کام خود کر سکتا ہے۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="196"/>
+        <source>Select executable</source>
+        <translation type="unfinished">ایگزیکیوٹیبل منتخب کریں</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="197"/>
+        <source>All files (*)</source>
+        <translation type="unfinished">تمام فائلیں (*)</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="199"/>
+        <source>GnuPG</source>
+        <translation type="unfinished">GnuPG</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="202"/>
+        <source>Git</source>
+        <translation type="unfinished">Git</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="203"/>
+        <source>pass</source>
+        <translation type="unfinished">pass</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="204"/>
+        <source>Run the pass script for every operation instead of calling gpg and git directly</source>
+        <translation type="unfinished">gpg اور git کو براہ راست کال کرنے کے بجائے ہر کارروائی کے لیے pass اسکرپٹ چلائیں</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="244"/>
+        <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
+        <translation type="unfinished">GnuPG نہیں ملا۔ اسے انسٹال کریں (gpg یا gpg2) اور یہاں اس کا مقام درج کریں۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="247"/>
+        <source>%1 is not an executable file.</source>
+        <translation type="unfinished">%1 ایگزیکیوٹیبل فائل نہیں ہے۔</translation>
     </message>
 </context>
 <context>
@@ -2023,7 +2329,7 @@ Continue?</source>
         <translation type="vanished">GPG کلید کا جوڑا بنانے میں ناکامی</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="238"/>
+        <location filename="../src/qtpass.cpp" line="181"/>
         <source>GPG key pair generated successfully</source>
         <translation>GPG کلید کا جوڑا کامیابی سے بنایا گیا</translation>
     </message>
@@ -2040,22 +2346,22 @@ Continue?</source>
         <translation type="vanished">کلپ بورڈ میں کاپی ہو گیا</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="293"/>
+        <location filename="../src/qtpass.cpp" line="225"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">qrencode شروع نہیں کیا جا سکا: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="301"/>
+        <location filename="../src/qtpass.cpp" line="233"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">qrencode وقت پر مکمل نہیں ہوا</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="313"/>
+        <location filename="../src/qtpass.cpp" line="245"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">qrencode کریش ہو گیا</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="314"/>
+        <location filename="../src/qtpass.cpp" line="246"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">qrencode کوڈ %1 کے ساتھ بند ہوا</translation>
     </message>
@@ -2071,6 +2377,83 @@ Continue?</source>
         <location filename="../src/storemodel.cpp" line="377"/>
         <source>overwrite %1 with %2?</source>
         <translation>%1 کو %2 سے اوور رائٹ کریں؟</translation>
+    </message>
+</context>
+<context>
+    <name>StoreWizardPage</name>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="351"/>
+        <source>Keep the store under Git</source>
+        <translation type="unfinished">اسٹور کو Git کے تحت رکھیں</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="353"/>
+        <source>Password store</source>
+        <translation type="unfinished">پاس ورڈ اسٹور</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="354"/>
+        <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
+        <translation type="unfinished">وہ فولڈر جس میں آپ کے پاس ورڈ رہتے ہیں۔ موجودہ اسٹور جیسا ہے ویسا ہی استعمال ہوتا ہے؛ خالی یا غیر موجود فولڈر آپ کی منتخب کردہ کلیدوں کے لیے ترتیب دیا جاتا ہے۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="358"/>
+        <source>Folder</source>
+        <translation type="unfinished">فولڈر</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="360"/>
+        <source>Choose the password store folder</source>
+        <translation type="unfinished">پاس ورڈ اسٹور کا فولڈر منتخب کریں</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="385"/>
+        <source>Git has no name and e-mail to commit with yet. Run
+git config --global user.name &quot;Your Name&quot;
+git config --global user.email you@example.org
+and turn Git on in Settings afterwards.</source>
+        <translation type="unfinished">Git کے پاس کمٹ کرنے کے لیے ابھی کوئی نام اور ای میل نہیں ہے۔ یہ چلائیں
+git config --global user.name &quot;آپ کا نام&quot;
+git config --global user.email you@example.org
+اور اس کے بعد سیٹنگز میں Git آن کریں۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="389"/>
+        <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
+        <translation type="unfinished">ہر تبدیلی ایک کمٹ بن جاتی ہے؛ جو فولڈر ابھی ریپوزٹری نہیں ہے اسے ایک ریپوزٹری بنا دیا جاتا ہے</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="413"/>
+        <source>Enter a folder.</source>
+        <translation type="unfinished">ایک فولڈر درج کریں۔</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/firstrunwizard.cpp" line="422"/>
+        <source>An existing password store with %n entries.</source>
+        <translation type="unfinished">
+            <numerusform>%n اندراج والا ایک موجودہ پاس ورڈ اسٹور۔</numerusform>
+            <numerusform>%n اندراجات والا ایک موجودہ پاس ورڈ اسٹور۔</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="425"/>
+        <source>An empty folder; it will be set up as a password store.</source>
+        <translation type="unfinished">ایک خالی فولڈر؛ اسے پاس ورڈ اسٹور کے طور پر ترتیب دیا جائے گا۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="426"/>
+        <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
+        <translation type="unfinished">یہ فولڈر ابھی پاس ورڈ اسٹور نہیں ہے؛ اس میں منتخب کردہ کلیدوں کے لیے ایک .gpg-id لکھی جائے گی۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="429"/>
+        <source>The folder does not exist yet; it will be created.</source>
+        <translation type="unfinished">یہ فولڈر ابھی موجود نہیں ہے؛ اسے بنایا جائے گا۔</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="433"/>
+        <source>Go back and tick at least one key to encrypt it to.</source>
+        <translation type="unfinished">واپس جائیں اور خفیہ کاری کے لیے کم از کم ایک کلید منتخب کریں۔</translation>
     </message>
 </context>
 <context>

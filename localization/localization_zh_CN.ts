@@ -206,27 +206,57 @@
         <translation>(通过 gpgconf 自动探测)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1044"/>
+        <location filename="../src/configdialog.ui" line="1020"/>
+        <source>The password stores this QtPass knows; pick one to edit it</source>
+        <translation type="unfinished">此 QtPass 已知的密码库；选择一个进行编辑</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1035"/>
+        <source>Add a profile</source>
+        <translation type="unfinished">添加配置文件</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1053"/>
+        <source>Forget the selected profile; the store itself stays on disk</source>
+        <translation type="unfinished">忘记所选配置文件；密码库本身仍保留在磁盘上</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1099"/>
+        <source>Profile</source>
+        <translation type="unfinished">配置文件</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1115"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>配置文件名，用于识别这个配置文件</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1052"/>
+        <location filename="../src/configdialog.ui" line="1134"/>
         <source>Path to the password store directory</source>
         <translation>密码存储目录的路径</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1057"/>
+        <location filename="../src/configdialog.ui" line="1156"/>
         <source>Signing Key</source>
         <translation>签名密钥</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1060"/>
+        <location filename="../src/configdialog.ui" line="1166"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>可选：用 GPG 密钥签署 .gpg-id 文件用于验证完整性。除非需要保护用户列表免于篡改否则请留空。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1100"/>
+        <location filename="../src/configdialog.ui" line="1169"/>
+        <source>Full 40-character key fingerprint, as pass requires</source>
+        <translation type="unfinished">完整的 40 位密钥指纹（pass 要求如此）</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1176"/>
+        <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
+        <translation type="unfinished">此配置文件的 Git 设置；在其启用期间将取代“选项”标签页中的设置</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1222"/>
         <source>Current path</source>
         <translation>当前路径</translation>
     </message>
@@ -269,11 +299,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="524"/>
+        <location filename="../src/configdialog.ui" line="1186"/>
         <source>Automatically push</source>
         <translation>自动上传</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="531"/>
+        <location filename="../src/configdialog.ui" line="1193"/>
         <source>Automatically pull</source>
         <translation>自动更新合并</translation>
     </message>
@@ -362,22 +394,22 @@
         <translation>配置文件</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1041"/>
+        <location filename="../src/configdialog.ui" line="1105"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1049"/>
+        <location filename="../src/configdialog.ui" line="1122"/>
         <source>Path</source>
         <translation>密码库路径</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1070"/>
+        <location filename="../src/configdialog.ui" line="1038"/>
         <source>Add</source>
         <translation>添加</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1085"/>
+        <location filename="../src/configdialog.ui" line="1056"/>
         <source>Delete</source>
         <translation>删除</translation>
     </message>
@@ -386,7 +418,7 @@
         <translation type="vanished">当前密码库路径</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1133"/>
+        <location filename="../src/configdialog.ui" line="1255"/>
         <source>Template</source>
         <translation>模板</translation>
     </message>
@@ -395,17 +427,17 @@
         <translation type="vanished">模版会以表单的形式显示在密码和编辑密码的窗口上（一行一个）.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1185"/>
+        <location filename="../src/configdialog.ui" line="1307"/>
         <source>Use template</source>
         <translation>使用模板</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1192"/>
+        <location filename="../src/configdialog.ui" line="1314"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>只要是密码文件中一个词或几个字加一个英文冒号的格式，都看作模版显示在密码框上，而不仅仅只显示下面列出的项目</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1195"/>
+        <location filename="../src/configdialog.ui" line="1317"/>
         <source>Show all fields templated</source>
         <translation>显示所有模板项</translation>
     </message>
@@ -418,53 +450,58 @@ email</source>
 邮箱</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1226"/>
+        <location filename="../src/configdialog.ui" line="1348"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; 版本 </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="80"/>
+        <location filename="../src/configdialog.cpp" line="92"/>
         <source>No Clipboard</source>
         <translation>不使用剪贴板</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="81"/>
+        <location filename="../src/configdialog.cpp" line="93"/>
         <source>Always copy to clipboard</source>
         <translation>总是复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="82"/>
+        <location filename="../src/configdialog.cpp" line="94"/>
         <source>On-demand copy to clipboard</source>
         <translation>手动复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="274"/>
-        <location filename="../src/configdialog.cpp" line="284"/>
+        <location filename="../src/configdialog.cpp" line="275"/>
+        <location filename="../src/configdialog.cpp" line="280"/>
         <source>This field is required</source>
         <translation>此字段必填</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="328"/>
+        <location filename="../src/configdialog.cpp" line="277"/>
+        <source>Another profile already has this name</source>
+        <translation type="unfinished">已有另一个配置文件使用此名称</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="317"/>
         <source>The path does not exist.</source>
         <translation>路径不存在。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="331"/>
+        <location filename="../src/configdialog.cpp" line="320"/>
         <source>The path is not readable.</source>
         <translation>路径不可读。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="334"/>
+        <location filename="../src/configdialog.cpp" line="323"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>路径不是 Unix 域套接字。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="339"/>
+        <location filename="../src/configdialog.cpp" line="328"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>可能无效的 SSH_AUTH_SOCK 覆盖</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="340"/>
+        <location filename="../src/configdialog.cpp" line="329"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -477,108 +514,100 @@ The value will still be saved as entered.</source>
 该值仍将按输入保存。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="751"/>
+        <location filename="../src/configdialog.cpp" line="716"/>
         <source>Create profile directory?</source>
         <translation>创建配置文件目录？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="752"/>
+        <location filename="../src/configdialog.cpp" line="717"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>要在 %1 创建密码存储吗？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="760"/>
+        <location filename="../src/configdialog.cpp" line="725"/>
         <source>Could not create profile directory: %1</source>
         <translation>无法创建配置文件目录：%1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="786"/>
+        <location filename="../src/configdialog.cpp" line="751"/>
         <source>Select recipients for %1</source>
         <translation>选择 %1 的接收者</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="799"/>
+        <location filename="../src/configdialog.cpp" line="764"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">无法初始化配置文件 %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="801"/>
+        <location filename="../src/configdialog.cpp" line="766"/>
         <source>Profile %1</source>
         <translation type="unfinished">配置文件 %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="815"/>
+        <location filename="../src/configdialog.cpp" line="777"/>
         <source>New Profile</source>
         <translation>新配置文件</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="863"/>
+        <location filename="../src/configdialog.cpp" line="804"/>
         <source>No profile selected</source>
         <translation>未选择配置文件</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="864"/>
+        <location filename="../src/configdialog.cpp" line="805"/>
         <source>No profile selected to delete</source>
         <translation>未选择要删除的配置文件</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="960"/>
         <source>GnuPG not found</source>
-        <translation>无法找到 GnuPG</translation>
+        <translation type="vanished">无法找到 GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="967"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>GnuPG未安装。&lt;br&gt;可以用系统的软件包管理器来安装&lt;strong&gt;gpg&lt;/strong&gt;&lt;br&gt;或者从 GnuPG.org &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;下载&lt;/a&gt;</translation>
+        <translation type="vanished">GnuPG未安装。&lt;br&gt;可以用系统的软件包管理器来安装&lt;strong&gt;gpg&lt;/strong&gt;&lt;br&gt;或者从 GnuPG.org &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;下载&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1019"/>
         <source>Create password-store?</source>
-        <translation>是否创建密码库？</translation>
+        <translation type="vanished">是否创建密码库？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1020"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>是否在 %1 创建密码库？</translation>
+        <translation type="vanished">是否在 %1 创建密码库？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="759"/>
-        <location filename="../src/configdialog.cpp" line="1025"/>
+        <location filename="../src/configdialog.cpp" line="724"/>
         <source>Error</source>
         <translation>出错</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="56"/>
+        <location filename="../src/configdialog.cpp" line="57"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation>Wayland 上没有；使用混成器的“保持在上方”窗口规则</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1026"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>未能在下列位置创建密码库：%1</translation>
+        <translation type="vanished">未能在下列位置创建密码库：%1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1052"/>
         <source>Password store not initialised</source>
-        <translation>密码库未初始化</translation>
+        <translation type="vanished">密码库未初始化</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1053"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>文件夹 %1 不是一个密码库或未初始化.</translation>
+        <translation type="vanished">文件夹 %1 不是一个密码库或未初始化.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1328"/>
+        <location filename="../src/configdialog.cpp" line="1103"/>
         <source>New profile: %1 at %2</source>
         <translation>位于 %2 的新配置文件：%1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1332"/>
+        <location filename="../src/configdialog.cpp" line="1105"/>
         <source>Profile: %1 at %2</source>
         <translation>位于 %2 的配置文件：%1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1337"/>
+        <location filename="../src/configdialog.cpp" line="1108"/>
         <source>Fill in all required fields</source>
         <translation>填写所有必需的字段</translation>
     </message>
@@ -616,7 +645,7 @@ The value will still be saved as entered.</source>
         <translation>自动检测</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="45"/>
+        <location filename="../src/configdialog.cpp" line="46"/>
         <source>System tray is not available</source>
         <translation>系统托盘不可用</translation>
     </message>
@@ -625,7 +654,7 @@ The value will still be saved as entered.</source>
         <translation type="vanished">需要安装pass OTP扩展</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="69"/>
+        <location filename="../src/configdialog.cpp" line="70"/>
         <source>qrencode needs to be installed</source>
         <translation>需要安装qrencode</translation>
     </message>
@@ -634,9 +663,8 @@ The value will still be saved as entered.</source>
         <translation type="vanished">请在您的系统上安装GnuPG。&lt;br&gt;从Microsoft Store安装&lt;strong&gt; Ubuntu &lt;/strong&gt;即可获取。&lt;br&gt;如果您已经这样做，请确保已启动它一次，并&lt;br&gt;单击“自动检测”在下一个对话框中。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="962"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>请在您的系统上安装GnuPG。&lt;br&gt;从Microsoft Store &lt;br&gt;安装&lt;strong&gt; Ubuntu &lt;/strong&gt;或&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;从GnuPG.org下载&lt;/a&gt;它</translation>
+        <translation type="vanished">请在您的系统上安装GnuPG。&lt;br&gt;从Microsoft Store &lt;br&gt;安装&lt;strong&gt; Ubuntu &lt;/strong&gt;或&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;从GnuPG.org下载&lt;/a&gt;它</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="452"/>
@@ -645,6 +673,7 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
+        <location filename="../src/configdialog.ui" line="1179"/>
         <source>Use Git</source>
         <translation>使用 Git</translation>
     </message>
@@ -672,7 +701,8 @@ The value will still be saved as entered.</source>
         <location filename="../src/configdialog.ui" line="784"/>
         <location filename="../src/configdialog.ui" line="839"/>
         <location filename="../src/configdialog.ui" line="879"/>
-        <location filename="../src/configdialog.ui" line="1116"/>
+        <location filename="../src/configdialog.ui" line="1147"/>
+        <location filename="../src/configdialog.ui" line="1238"/>
         <source>…</source>
         <translation>…</translation>
     </message>
@@ -687,24 +717,89 @@ The value will still be saved as entered.</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1110"/>
-        <location filename="../src/configdialog.ui" line="1113"/>
+        <location filename="../src/configdialog.ui" line="1141"/>
+        <location filename="../src/configdialog.ui" line="1144"/>
+        <location filename="../src/configdialog.ui" line="1232"/>
+        <location filename="../src/configdialog.ui" line="1235"/>
         <source>Choose the password store folder</source>
         <translation>选择密码存储文件夹</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1176"/>
+        <location filename="../src/configdialog.ui" line="1298"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>模板在“密码生成”对话框和“密码”视图中添加额外字段。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1207"/>
+        <location filename="../src/configdialog.ui" line="1329"/>
         <source>login
 URL
 e-mail</source>
         <translation>login
 URL
 e-mail</translation>
+    </message>
+</context>
+<context>
+    <name>DoneWizardPage</name>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="458"/>
+        <source>Hide passwords until asked</source>
+        <translation type="unfinished">默认隐藏密码</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="459"/>
+        <source>Show an icon in the system tray</source>
+        <translation type="unfinished">在系统托盘显示图标</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="460"/>
+        <source>Ready</source>
+        <translation type="unfinished">就绪</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="461"/>
+        <source>Everything else can be changed later in Settings.</source>
+        <translation type="unfinished">其他内容以后都可以在“选项”中更改。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="468"/>
+        <source>Show the password line as dots; Show password reveals it</source>
+        <translation type="unfinished">将密码行显示为圆点；点击“显示密码”可查看</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="479"/>
+        <source>Store: %1</source>
+        <translation type="unfinished">密码库：%1</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="481"/>
+        <source>It is already a password store and is used as it is.</source>
+        <translation type="unfinished">它已经是一个密码库，将按原样使用。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="483"/>
+        <source>It will be set up for the ticked keys and put under Git.</source>
+        <translation type="unfinished">将为勾选的密钥初始化，并纳入 Git 管理。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="485"/>
+        <source>It will be set up for the ticked keys.</source>
+        <translation type="unfinished">将为勾选的密钥初始化。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="487"/>
+        <source>GnuPG: %1</source>
+        <translation type="unfinished">GnuPG：%1</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="488"/>
+        <source>Operations run through pass.</source>
+        <translation type="unfinished">操作通过 pass 执行。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="489"/>
+        <source>Operations run through gpg and git directly.</source>
+        <translation type="unfinished">操作直接调用 gpg 和 git 执行。</translation>
     </message>
 </context>
 <context>
@@ -781,166 +876,211 @@ e-mail</translation>
     </message>
 </context>
 <context>
+    <name>FirstRunWizard</name>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="45"/>
+        <source>Browse</source>
+        <translation type="unfinished">浏览</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="68"/>
+        <location filename="../src/firstrunwizard.cpp" line="74"/>
+        <source>Welcome to QtPass</source>
+        <translation type="unfinished">欢迎使用 QtPass</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="77"/>
+        <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
+        <translation type="unfinished">QtPass 是 &lt;i&gt;pass&lt;/i&gt;（标准的 Unix 密码管理器）的图形前端：每个密码都是一个用 GnuPG 加密的文件，保存在一个可纳入 Git 管理的文件夹中。&lt;br&gt;&lt;br&gt;接下来的几页将查找 GnuPG，确认您有可用于加密的密钥，并选择存放密码的文件夹。在您按下“完成”之前不会写入任何内容。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="137"/>
+        <source>Error</source>
+        <translation type="unfinished">出错</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="138"/>
+        <source>Failed to create password-store at: %1</source>
+        <translation type="unfinished">未能在下列位置创建密码库：%1</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="155"/>
+        <location filename="../src/firstrunwizard.cpp" line="173"/>
+        <source>Password store not initialised</source>
+        <translation type="unfinished">密码库未初始化</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="162"/>
+        <source>Password store</source>
+        <translation type="unfinished">密码库</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="163"/>
+        <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
+        <translation type="unfinished">%1 中已有加密文件；它们尚未用勾选的密钥重新加密。启动后请打开“用户”来完成此操作。</translation>
+    </message>
+</context>
+<context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="186"/>
-        <location filename="../src/imitatepass.cpp" line="372"/>
-        <location filename="../src/imitatepass.cpp" line="582"/>
+        <location filename="../src/imitatepass.cpp" line="178"/>
+        <location filename="../src/imitatepass.cpp" line="331"/>
+        <location filename="../src/imitatepass.cpp" line="513"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 签名无效。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="193"/>
-        <location filename="../src/imitatepass.cpp" line="665"/>
+        <location filename="../src/imitatepass.cpp" line="185"/>
+        <location filename="../src/imitatepass.cpp" line="596"/>
         <source>Can not edit</source>
         <translation>无法编辑</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="194"/>
-        <location filename="../src/imitatepass.cpp" line="666"/>
+        <location filename="../src/imitatepass.cpp" line="186"/>
+        <location filename="../src/imitatepass.cpp" line="597"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>无法读取加密密钥，.gpg-id 文件丢失或无效.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="366"/>
+        <location filename="../src/imitatepass.cpp" line="325"/>
         <source>GPG signing failed!</source>
         <translation>GPG 签名失败！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="367"/>
+        <location filename="../src/imitatepass.cpp" line="326"/>
         <source>Failed to sign %1.</source>
         <translation>签署 %1 失败。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="479"/>
+        <location filename="../src/imitatepass.cpp" line="437"/>
         <source>No signing key!</source>
         <translation>无签名密钥！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="480"/>
+        <location filename="../src/imitatepass.cpp" line="438"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>没有一个私密签名密钥可用。
 你将无法更改用户列表！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="310"/>
+        <location filename="../src/imitatepass.cpp" line="290"/>
         <source>Cannot update</source>
         <translation>无法更新</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="150"/>
+        <location filename="../src/imitatepass.cpp" line="142"/>
         <source>Git pull failed: %1</source>
         <translation>Git 拉取失败：%1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="185"/>
-        <location filename="../src/imitatepass.cpp" line="371"/>
-        <location filename="../src/imitatepass.cpp" line="581"/>
+        <location filename="../src/imitatepass.cpp" line="177"/>
+        <location filename="../src/imitatepass.cpp" line="330"/>
+        <location filename="../src/imitatepass.cpp" line="512"/>
         <source>Check .gpg-id file signature!</source>
         <translation>检查 .gpg-id 文件签名！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="311"/>
+        <location filename="../src/imitatepass.cpp" line="291"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>.gpg-id 无法写入.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="330"/>
+        <location filename="../src/imitatepass.cpp" line="310"/>
         <source>Check selected users!</source>
         <translation>请核对所选用户！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="331"/>
+        <location filename="../src/imitatepass.cpp" line="311"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>警告：所选密钥都没有私钥可用。
 任何新添加的密码将无法解密！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="720"/>
-        <location filename="../src/imitatepass.cpp" line="1005"/>
+        <location filename="../src/imitatepass.cpp" line="651"/>
+        <location filename="../src/imitatepass.cpp" line="936"/>
         <source>Re-encryption failed</source>
         <translation>重新加密失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="721"/>
+        <location filename="../src/imitatepass.cpp" line="652"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>替换 %1 失败。已恢复原来密码。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="760"/>
+        <location filename="../src/imitatepass.cpp" line="691"/>
         <source>Creating backup commit</source>
         <translation>正在创建备份提交</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="777"/>
-        <location filename="../src/imitatepass.cpp" line="786"/>
+        <location filename="../src/imitatepass.cpp" line="708"/>
+        <location filename="../src/imitatepass.cpp" line="717"/>
         <source>Backup commit failed</source>
         <translation>备份提交失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="778"/>
+        <location filename="../src/imitatepass.cpp" line="709"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>无法检视 git 状态。重新加密被终止。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="787"/>
+        <location filename="../src/imitatepass.cpp" line="718"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>重新加密被终止，因无法创建 git 备份。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="833"/>
+        <location filename="../src/imitatepass.cpp" line="764"/>
         <source>A re-encryption is already running</source>
         <translation>已经在运行重新加密</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="838"/>
+        <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encrypting from folder %1</source>
         <translation>重新从文件夹 %1 加密</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="921"/>
-        <location filename="../src/imitatepass.cpp" line="1032"/>
+        <location filename="../src/imitatepass.cpp" line="852"/>
+        <location filename="../src/imitatepass.cpp" line="963"/>
         <source>Updating password-store</source>
         <translation>正在更新密码库</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="924"/>
+        <location filename="../src/imitatepass.cpp" line="855"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation>Git 拉取失败，按原样重新加密存储</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="965"/>
+        <location filename="../src/imitatepass.cpp" line="896"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID 验证失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="966"/>
+        <location filename="../src/imitatepass.cpp" line="897"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>无法验证目录的 .gpg-id。</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1003"/>
+        <location filename="../src/imitatepass.cpp" line="934"/>
         <source>... and %n more</source>
         <translation>
             <numerusform>... 及另外 %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1006"/>
+        <location filename="../src/imitatepass.cpp" line="937"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation>
             <numerusform>无法重新加密 %n 个文件：</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1012"/>
+        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation>取消了重新加密：勾选了 %2 个文件中的 %1 个，重新加密了 %3 个， %4 个失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1297"/>
+        <location filename="../src/imitatepass.cpp" line="1228"/>
         <source>Git executable not configured, skipping git</source>
         <translation>未配置 Git 可执行文件，跳过 git</translation>
     </message>
@@ -949,35 +1089,35 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="vanished">重新加密 %1 失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1021"/>
+        <location filename="../src/imitatepass.cpp" line="952"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>重新加密已完成: %1 个成功，%2 个失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1026"/>
+        <location filename="../src/imitatepass.cpp" line="957"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>重新加密已完成: 重新加密了 %1 个文件</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1035"/>
+        <location filename="../src/imitatepass.cpp" line="966"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation>
             <numerusform>未推送：%n 个文件重新加密失败</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1220"/>
-        <location filename="../src/imitatepass.cpp" line="1228"/>
-        <location filename="../src/imitatepass.cpp" line="1235"/>
-        <location filename="../src/imitatepass.cpp" line="1245"/>
+        <location filename="../src/imitatepass.cpp" line="1151"/>
+        <location filename="../src/imitatepass.cpp" line="1159"/>
+        <location filename="../src/imitatepass.cpp" line="1166"/>
+        <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Copy failed</source>
         <translation>复制失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
-        <location filename="../src/imitatepass.cpp" line="1229"/>
-        <location filename="../src/imitatepass.cpp" line="1236"/>
-        <location filename="../src/imitatepass.cpp" line="1246"/>
+        <location filename="../src/imitatepass.cpp" line="1152"/>
+        <location filename="../src/imitatepass.cpp" line="1160"/>
+        <location filename="../src/imitatepass.cpp" line="1167"/>
+        <location filename="../src/imitatepass.cpp" line="1177"/>
         <source>Could not copy %1 to %2.</source>
         <translation>无法复制 %1 到 %2。</translation>
     </message>
@@ -1059,6 +1199,39 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Successfully imported key: %1</source>
         <translation>成功导入了 key：%1</translation>
+    </message>
+</context>
+<context>
+    <name>KeyWizardPage</name>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="275"/>
+        <source>Generate a new key pair…</source>
+        <translation type="unfinished">生成新的密钥对…</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="277"/>
+        <source>Your key</source>
+        <translation type="unfinished">您的密钥</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="278"/>
+        <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
+        <translation type="unfinished">密码使用 GnuPG 密钥加密。请勾选应能打开新密码库的密钥；其中至少要有一个密钥的私钥在本机上。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="306"/>
+        <source>expired</source>
+        <translation type="unfinished">已过期</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="308"/>
+        <source>not usable</source>
+        <translation type="unfinished">不可用</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="321"/>
+        <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
+        <translation type="unfinished">GnuPG 中还没有私钥。请在此生成一个，或先用 gpg 导入您现有的密钥。</translation>
     </message>
 </context>
 <context>
@@ -1225,16 +1398,16 @@ Expire-Date: 0
         <translation type="vanished">新建</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="440"/>
-        <location filename="../src/mainwindow.ui" line="443"/>
-        <location filename="../src/mainwindow.cpp" line="1501"/>
+        <location filename="../src/mainwindow.ui" line="442"/>
+        <location filename="../src/mainwindow.ui" line="445"/>
+        <location filename="../src/mainwindow.cpp" line="1566"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="448"/>
-        <location filename="../src/mainwindow.ui" line="451"/>
-        <location filename="../src/mainwindow.cpp" line="1515"/>
+        <location filename="../src/mainwindow.ui" line="450"/>
+        <location filename="../src/mainwindow.ui" line="453"/>
+        <location filename="../src/mainwindow.cpp" line="1580"/>
         <source>Delete</source>
         <translation>删除</translation>
     </message>
@@ -1243,7 +1416,7 @@ Expire-Date: 0
         <translation type="vanished">git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="467"/>
+        <location filename="../src/mainwindow.ui" line="469"/>
         <source>Push</source>
         <translation>上传</translation>
     </message>
@@ -1252,18 +1425,18 @@ Expire-Date: 0
         <translation type="vanished">git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="475"/>
+        <location filename="../src/mainwindow.ui" line="477"/>
         <source>Update</source>
         <translation>更新</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="486"/>
+        <location filename="../src/mainwindow.ui" line="488"/>
         <source>Manage who can read password in folder</source>
         <translation>选择用哪个密钥来解密保存在密码库中的密码</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="483"/>
-        <location filename="../src/mainwindow.cpp" line="1495"/>
+        <location filename="../src/mainwindow.ui" line="485"/>
+        <location filename="../src/mainwindow.cpp" line="1560"/>
         <source>Users</source>
         <translation>用户</translation>
     </message>
@@ -1283,27 +1456,27 @@ Expire-Date: 0
         <translation type="unfinished">选项 (&amp;E)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="371"/>
+        <location filename="../src/mainwindow.ui" line="373"/>
         <source>&amp;Help</source>
         <translation type="unfinished">帮助 (&amp;H)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="470"/>
+        <location filename="../src/mainwindow.ui" line="472"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="478"/>
+        <location filename="../src/mainwindow.ui" line="480"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="494"/>
+        <location filename="../src/mainwindow.ui" line="513"/>
         <source>Configuration</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="491"/>
+        <location filename="../src/mainwindow.ui" line="510"/>
         <source>Config</source>
         <translation>设置</translation>
     </message>
@@ -1314,8 +1487,8 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="731"/>
-        <location filename="../src/mainwindow.cpp" line="944"/>
+        <location filename="../src/mainwindow.cpp" line="799"/>
+        <location filename="../src/mainwindow.cpp" line="1012"/>
         <source>Search Password</source>
         <translation>搜索密码库</translation>
     </message>
@@ -1324,7 +1497,7 @@ Expire-Date: 0
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="344"/>
+        <location filename="../src/mainwindow.cpp" line="415"/>
         <source>Welcome to QtPass %1</source>
         <translation>欢迎使用 QtPass %1</translation>
     </message>
@@ -1363,8 +1536,8 @@ Expire-Date: 0
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="511"/>
-        <location filename="../src/mainwindow.cpp" line="524"/>
+        <location filename="../src/mainwindow.cpp" line="582"/>
+        <location filename="../src/mainwindow.cpp" line="595"/>
         <source>Updating password-store</source>
         <translation>正在更新密码库</translation>
     </message>
@@ -1381,8 +1554,8 @@ Expire-Date: 0
         <translation type="vanished">密码已隐藏</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="638"/>
-        <location filename="../src/mainwindow.cpp" line="986"/>
+        <location filename="../src/mainwindow.cpp" line="706"/>
+        <location filename="../src/mainwindow.cpp" line="1054"/>
         <source>Content hidden</source>
         <translation>内容已隐藏</translation>
     </message>
@@ -1399,7 +1572,7 @@ Expire-Date: 0
         <translation type="vanished">剪贴板未清除</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="735"/>
+        <location filename="../src/mainwindow.cpp" line="803"/>
         <source>Password and Content hidden</source>
         <translation>密码和内容已隐藏</translation>
     </message>
@@ -1428,36 +1601,34 @@ Expire-Date: 0
         <translation type="vanished">系统错误：未知错误 QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="845"/>
+        <location filename="../src/mainwindow.cpp" line="913"/>
         <source>Looking for: %1</source>
         <translation>搜索：%1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="996"/>
+        <location filename="../src/mainwindow.cpp" line="1064"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>找到了 %n 个匹配</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1118"/>
         <source>New file</source>
-        <translation>新文件</translation>
+        <translation type="vanished">新文件</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1119"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>新建密码：
+        <translation type="vanished">新建密码：
 （将被放在 %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1176"/>
+        <location filename="../src/mainwindow.cpp" line="1241"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>确定删除 %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="1240"/>
         <source>Delete password?</source>
         <translation>删除密码？</translation>
     </message>
@@ -1466,7 +1637,7 @@ Expire-Date: 0
         <translation type="vanished">确定删除 %1 ？</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="1240"/>
         <source>Delete folder?</source>
         <translation>删除文件夹？</translation>
     </message>
@@ -1487,26 +1658,26 @@ Expire-Date: 0
         <translation type="vanished">正在生成 GPG 密钥对</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1340"/>
+        <location filename="../src/mainwindow.cpp" line="1405"/>
         <source>Profile changed to %1</source>
         <translation>配置文件已更改为 %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="432"/>
-        <location filename="../src/mainwindow.ui" line="435"/>
-        <location filename="../src/mainwindow.cpp" line="1493"/>
+        <location filename="../src/mainwindow.ui" line="434"/>
+        <location filename="../src/mainwindow.ui" line="437"/>
+        <location filename="../src/mainwindow.cpp" line="1558"/>
         <source>Add folder</source>
         <translation>新文件夹</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="421"/>
-        <location filename="../src/mainwindow.ui" line="424"/>
-        <location filename="../src/mainwindow.cpp" line="1494"/>
+        <location filename="../src/mainwindow.ui" line="423"/>
+        <location filename="../src/mainwindow.ui" line="426"/>
+        <location filename="../src/mainwindow.cpp" line="1559"/>
         <source>Add password</source>
         <translation>添加密码</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1590"/>
+        <location filename="../src/mainwindow.cpp" line="1655"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>新建文件夹：
@@ -1567,57 +1738,72 @@ Expire-Date: 0
         <translation>结果</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="497"/>
+        <location filename="../src/mainwindow.ui" line="499"/>
+        <source>Show &amp;menu bar</source>
+        <translation type="unfinished">显示菜单栏 (&amp;M)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="502"/>
+        <source>Hide or show the menu bar; Ctrl+M brings it back</source>
+        <translation type="unfinished">隐藏或显示菜单栏；按 Ctrl+M 可将其找回</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="505"/>
+        <source>Ctrl+M</source>
+        <translation type="unfinished">Ctrl+M</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="516"/>
         <source>Ctrl+,</source>
         <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="505"/>
+        <location filename="../src/mainwindow.ui" line="524"/>
         <source>&amp;Close window</source>
         <translation type="unfinished">关闭窗口 (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="508"/>
+        <location filename="../src/mainwindow.ui" line="527"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
         <translation type="unfinished">关闭窗口；启用“关闭窗口后台运行”时 QtPass 会保留在托盘中</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="511"/>
+        <location filename="../src/mainwindow.ui" line="530"/>
         <source>Ctrl+W</source>
         <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="516"/>
+        <location filename="../src/mainwindow.ui" line="535"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">退出 (&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="519"/>
+        <location filename="../src/mainwindow.ui" line="538"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="527"/>
+        <location filename="../src/mainwindow.ui" line="546"/>
         <source>&amp;FAQ</source>
         <translation type="unfinished">常见问题 (&amp;F)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="530"/>
+        <location filename="../src/mainwindow.ui" line="549"/>
         <source>Open the frequently asked questions on qtpass.org</source>
         <translation type="unfinished">打开 qtpass.org 上的常见问题</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="533"/>
+        <location filename="../src/mainwindow.ui" line="552"/>
         <source>F1</source>
         <translation type="unfinished">F1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="538"/>
+        <location filename="../src/mainwindow.ui" line="557"/>
         <source>&amp;About QtPass</source>
         <translation type="unfinished">关于 QtPass (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="546"/>
+        <location filename="../src/mainwindow.ui" line="565"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished">关于 Qt (&amp;Q)</translation>
     </message>
@@ -1630,22 +1816,22 @@ Expire-Date: 0
         <translation type="vanished">清除</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="427"/>
+        <location filename="../src/mainwindow.ui" line="429"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="456"/>
+        <location filename="../src/mainwindow.ui" line="458"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="459"/>
+        <location filename="../src/mainwindow.ui" line="461"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>生成OTP并复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="462"/>
+        <location filename="../src/mainwindow.ui" line="464"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
@@ -1654,30 +1840,30 @@ Expire-Date: 0
         <translation type="vanished">OTP码</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="688"/>
-        <location filename="../src/mainwindow.cpp" line="706"/>
-        <location filename="../src/mainwindow.cpp" line="1230"/>
+        <location filename="../src/mainwindow.cpp" line="756"/>
+        <location filename="../src/mainwindow.cpp" line="774"/>
+        <location filename="../src/mainwindow.cpp" line="1295"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP 码已复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="708"/>
-        <location filename="../src/mainwindow.cpp" line="1213"/>
+        <location filename="../src/mainwindow.cpp" line="776"/>
+        <location filename="../src/mainwindow.cpp" line="1278"/>
         <source>No OTP code found in this password entry</source>
         <translation>此密码条目中未找到 OTP 码</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="893"/>
+        <location filename="../src/mainwindow.cpp" line="961"/>
         <source>Searching…</source>
         <translation>搜索中…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="922"/>
+        <location filename="../src/mainwindow.cpp" line="990"/>
         <source>Search content (regex)</source>
         <translation>搜索内容（正则表达式）</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="972"/>
+        <location filename="../src/mainwindow.cpp" line="1040"/>
         <source>No matches found.</source>
         <translation>未找到匹配。</translation>
     </message>
@@ -1688,40 +1874,40 @@ Expire-Date: 0
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="997"/>
+        <location filename="../src/mainwindow.cpp" line="1065"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>，共 %n 项。</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1156"/>
+        <location filename="../src/mainwindow.cpp" line="1221"/>
         <source> and the whole content?</source>
         <translation> 和全部内容？</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1166"/>
+        <location filename="../src/mainwindow.cpp" line="1231"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> 和整个内容？&lt;br&gt;&lt;strong&gt;注意：给定文件夹中有意外文件，请在继续之前检查它们 &lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1208"/>
+        <location filename="../src/mainwindow.cpp" line="1273"/>
         <source>No password selected for OTP generation</source>
         <translation>未选中密码用于生成 OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1492"/>
+        <location filename="../src/mainwindow.cpp" line="1557"/>
         <source>Open folder with file manager</source>
         <translation>使用文件管理器打开文件夹</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1507"/>
-        <location filename="../src/mainwindow.cpp" line="1638"/>
+        <location filename="../src/mainwindow.cpp" line="1572"/>
+        <location filename="../src/mainwindow.cpp" line="1703"/>
         <source>Rename folder</source>
         <translation>重命名文件夹</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1511"/>
+        <location filename="../src/mainwindow.cpp" line="1576"/>
         <source>Rename password</source>
         <translation>重命名密码</translation>
     </message>
@@ -1730,7 +1916,7 @@ Expire-Date: 0
         <translation type="vanished">重新加密</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="126"/>
+        <location filename="../src/mainwindow.cpp" line="151"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation>操作超时；正重新启用接口。</translation>
     </message>
@@ -1739,104 +1925,104 @@ Expire-Date: 0
         <translation type="vanished">处理输出</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="675"/>
+        <location filename="../src/mainwindow.cpp" line="743"/>
         <source>Could not decrypt this password entry</source>
         <translation>无法解密此密码条目</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="822"/>
+        <location filename="../src/mainwindow.cpp" line="890"/>
         <source>About QtPass</source>
         <translation type="unfinished">关于 QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="823"/>
+        <location filename="../src/mainwindow.cpp" line="891"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;标准 Unix 密码管理器 &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; 的跨平台图形界面。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;源代码与问题反馈&lt;/a&gt;&lt;/p&gt;&lt;p&gt;版权所有 &amp;copy; 2014&amp;ndash;%2 IJhack。依据 &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL 第 3 版&lt;/a&gt;或更新版本授权。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="927"/>
+        <location filename="../src/mainwindow.cpp" line="995"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation>内容搜索使用 POSIX 基本正则表达式（pass grep）。</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="929"/>
+        <location filename="../src/mainwindow.cpp" line="997"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation>内容搜索使用兼容 Perl 的正则表达式（PCRE）.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1074"/>
+        <location filename="../src/mainwindow.cpp" line="1142"/>
         <source>Invalid name</source>
         <translation>无效名称</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1075"/>
+        <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation>此名称会在密码存储库外解析。请选择不同的名称。</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1520"/>
+        <location filename="../src/mainwindow.cpp" line="1585"/>
         <source>Share</source>
         <translation>分享</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1530"/>
+        <location filename="../src/mainwindow.cpp" line="1595"/>
         <source>Re-encrypt all passwords</source>
         <translation>重新加密所有密码</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1535"/>
+        <location filename="../src/mainwindow.cpp" line="1600"/>
         <source>Export my public key...</source>
         <translation>导出我的公钥…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1541"/>
+        <location filename="../src/mainwindow.cpp" line="1606"/>
         <source>Add recipient...</source>
         <translation>添加接收者…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <location filename="../src/mainwindow.cpp" line="1611"/>
         <source>What is this?</source>
         <translation>这是什么？</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1589"/>
+        <location filename="../src/mainwindow.cpp" line="1654"/>
         <source>New folder</source>
         <translation>新建文件夹</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1601"/>
-        <location filename="../src/mainwindow.cpp" line="1623"/>
-        <location filename="../src/mainwindow.cpp" line="1750"/>
+        <location filename="../src/mainwindow.cpp" line="1666"/>
+        <location filename="../src/mainwindow.cpp" line="1688"/>
+        <location filename="../src/mainwindow.cpp" line="1815"/>
         <source>Error</source>
         <translation>出错</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1602"/>
+        <location filename="../src/mainwindow.cpp" line="1667"/>
         <source>Failed to create folder: %1</source>
         <translation>未能创建文件夹：%1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1624"/>
+        <location filename="../src/mainwindow.cpp" line="1689"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>在下列位置创建 .gpg-id 文件失败：%1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1678"/>
+        <location filename="../src/mainwindow.cpp" line="1743"/>
         <source>Rename file</source>
         <translation>重命名文件</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1638"/>
+        <location filename="../src/mainwindow.cpp" line="1703"/>
         <source>Rename Folder To: </source>
         <translation>重命名文件夹为： </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1678"/>
+        <location filename="../src/mainwindow.cpp" line="1743"/>
         <source>Rename File To: </source>
         <translation>将文件重命名为： </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1727"/>
+        <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>此条目为 OTP secret 不是密码</translation>
     </message>
@@ -1845,18 +2031,18 @@ Expire-Date: 0
         <translation type="vanished">在浏览器打开 %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1751"/>
+        <location filename="../src/mainwindow.cpp" line="1816"/>
         <source>Directory does not exist: %1</source>
         <translation>目录不存在：%1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1821"/>
+        <location filename="../src/mainwindow.cpp" line="1858"/>
         <source>Re-encrypt passwords</source>
         <translation>重新加密密码</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1757"/>
+        <location filename="../src/mainwindow.cpp" line="1822"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -1873,38 +2059,38 @@ Continue?</source>
 要继续吗？</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1791"/>
+        <location filename="../src/mainwindow.cpp" line="1856"/>
         <source>Re-encrypting passwords...</source>
         <translation>正在重新加密密码…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1792"/>
+        <location filename="../src/mainwindow.cpp" line="1857"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1800"/>
+        <location filename="../src/mainwindow.cpp" line="1865"/>
         <source>Cancelling re-encryption</source>
         <translation>正在取消重新加密</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1816"/>
+        <location filename="../src/mainwindow.cpp" line="1881"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation>正重新加密密码：第%1 个，共 %2 个</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1849"/>
-        <location filename="../src/mainwindow.cpp" line="1868"/>
+        <location filename="../src/mainwindow.cpp" line="1914"/>
+        <location filename="../src/mainwindow.cpp" line="1933"/>
         <source>Export Public Key</source>
         <translation>导出公钥</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1850"/>
+        <location filename="../src/mainwindow.cpp" line="1915"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;导出公钥&lt;/h3&gt;&lt;p&gt;未配置签名 key。在 QtPass 设置 &amp;gt; GPG keys 中设置一个，或在终端中运行这个：&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;然后将文件发送给队友。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1869"/>
+        <location filename="../src/mainwindow.cpp" line="1934"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1913,17 +2099,17 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1871"/>
+        <location filename="../src/mainwindow.cpp" line="1936"/>
         <source>No output from gpg.</source>
         <translation>没有来自 gpg 的输出。</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1898"/>
+        <location filename="../src/mainwindow.cpp" line="1963"/>
         <source>Sharing Passwords with GPG</source>
         <translation>用 GPG 分享密码</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1899"/>
+        <location filename="../src/mainwindow.cpp" line="1964"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;用 GPG 分享密码&lt;/h3&gt;&lt;p&gt;如何与其他用户分享密码：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;导出你的公钥&lt;/b&gt;并发送给队友&lt;/li&gt;&lt;li&gt;&lt;b&gt;将队友的公钥导入&lt;/b&gt; 你的 GPG 密钥环&lt;/li&gt;&lt;li&gt;&lt;b&gt;重新加密密码&lt;/b&gt; 这样所有接受者均可解密它们&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;只有有匹配私钥的人可以解密密码。&lt;/p&gt;&lt;p&gt;&lt;b&gt;小提示：&lt;/b&gt; 对所有的共享文件夹使用相同的 GPG key。&lt;/p&gt;&lt;p&gt;更多详情见 FAQ。&lt;/p&gt;</translation>
     </message>
@@ -2018,72 +2204,133 @@ Continue?</source>
     <name>PasswordDialog</name>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
-        <location filename="../src/passworddialog.ui" line="65"/>
+        <location filename="../src/passworddialog.ui" line="120"/>
+        <location filename="../src/passworddialog.cpp" line="270"/>
         <source>Password</source>
         <translation>密码</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="75"/>
+        <location filename="../src/passworddialog.ui" line="72"/>
+        <source>Folder</source>
+        <translation type="unfinished">文件夹</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.ui" line="82"/>
+        <source>The folder of the password store the new entry goes into</source>
+        <translation type="unfinished">新条目所在的密码库文件夹</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.ui" line="89"/>
+        <source>Name</source>
+        <translation type="unfinished">名称</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.ui" line="99"/>
+        <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
+        <translation type="unfinished">条目在树状列表中显示的名称；使用 / 可将其放入子文件夹</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.ui" line="102"/>
+        <source>e.g. github.com or work/vpn</source>
+        <translation type="unfinished">例如 github.com 或 work/vpn</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.ui" line="130"/>
         <source>Generate</source>
         <translation>生成</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="86"/>
+        <location filename="../src/passworddialog.ui" line="141"/>
         <source>Show password</source>
         <translation>显示密码</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="106"/>
+        <location filename="../src/passworddialog.ui" line="161"/>
         <source>Character Set:</source>
         <translation>字符集：</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="114"/>
+        <location filename="../src/passworddialog.ui" line="169"/>
         <source>All Characters</source>
         <translation>所有字符</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="119"/>
+        <location filename="../src/passworddialog.ui" line="174"/>
         <source>Alphabetical</source>
         <translation>英文字母</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="124"/>
+        <location filename="../src/passworddialog.ui" line="179"/>
         <source>Alphanumerical</source>
         <translation>字母和数字</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="129"/>
+        <location filename="../src/passworddialog.ui" line="184"/>
         <source>Custom</source>
         <translation>自定义</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="143"/>
+        <location filename="../src/passworddialog.ui" line="198"/>
         <source>Length:</source>
         <translation>长度：</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="164"/>
+        <location filename="../src/passworddialog.ui" line="219"/>
         <source>Template:</source>
         <translation>模板：</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.ui" line="180"/>
+        <location filename="../src/passworddialog.ui" line="235"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
         <translation>来自存储的 .templates 文件的字段模板。Ctrl+T 切换到下一个。</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="90"/>
+        <location filename="../src/passworddialog.cpp" line="76"/>
+        <source>New password</source>
+        <translation type="unfinished">新密码</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="97"/>
         <source>Decrypting…</source>
         <translation>解密中…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="267"/>
+        <location filename="../src/passworddialog.cpp" line="216"/>
+        <source>Give the entry a name.</source>
+        <translation type="unfinished">请为条目输入名称。</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="220"/>
+        <source>A name cannot end in /.</source>
+        <translation type="unfinished">名称不能以 / 结尾。</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="229"/>
+        <source>That name would resolve outside the password store.</source>
+        <translation type="unfinished">该名称会指向密码库之外的位置。</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="233"/>
+        <source>An entry called %1 already exists.</source>
+        <translation type="unfinished">名为 %1 的条目已存在。</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="237"/>
+        <source>%1 is a folder.</source>
+        <translation type="unfinished">%1 是一个文件夹。</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="266"/>
+        <source>Could not create the folder %1.</source>
+        <translation type="unfinished">无法创建文件夹 %1。</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="377"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation>otpauth:// URI 或 base32 secret</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="300"/>
+        <location filename="../src/passworddialog.cpp" line="410"/>
         <source>Invalid OTP secret</source>
         <translation>无效的 OTP secret</translation>
     </message>
@@ -2109,36 +2356,95 @@ Continue?</source>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="32"/>
+        <location filename="../src/profileinit.cpp" line="34"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">无法创建 %1。</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="54"/>
+        <location filename="../src/profileinit.cpp" line="56"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>%1 中已有 %n 个加密文件，它们未被重新加密。请切换到该配置文件并打开“用户”进行重新加密。</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="72"/>
+        <location filename="../src/profileinit.cpp" line="74"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">未选择接收者，未写入 %1。</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="79"/>
+        <location filename="../src/profileinit.cpp" line="81"/>
         <source>Could not write %1: %2</source>
         <translation type="unfinished">无法写入 %1：%2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="105"/>
+        <location filename="../src/profileinit.cpp" line="98"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">无法用 %2 签署 %1：%3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="124"/>
+        <location filename="../src/profileinit.cpp" line="118"/>
+        <location filename="../src/profileinit.cpp" line="147"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">git %1 在 %2 中失败：%3</translation>
+    </message>
+</context>
+<context>
+    <name>ProgramsWizardPage</name>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="189"/>
+        <source>Use the pass command-line tool</source>
+        <translation type="unfinished">使用 pass 命令行工具</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="191"/>
+        <source>Programs</source>
+        <translation type="unfinished">程序</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="192"/>
+        <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
+        <translation type="unfinished">加密由 GnuPG 完成。pass 和 Git 是可选的；QtPass 可以自行完成它们的工作。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="196"/>
+        <source>Select executable</source>
+        <translation type="unfinished">选择可执行文件</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="197"/>
+        <source>All files (*)</source>
+        <translation type="unfinished">所有文件 (*)</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="199"/>
+        <source>GnuPG</source>
+        <translation type="unfinished">GnuPG</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="202"/>
+        <source>Git</source>
+        <translation type="unfinished">Git</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="203"/>
+        <source>pass</source>
+        <translation type="unfinished">pass</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="204"/>
+        <source>Run the pass script for every operation instead of calling gpg and git directly</source>
+        <translation type="unfinished">每项操作都运行 pass 脚本，而不是直接调用 gpg 和 git</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="244"/>
+        <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
+        <translation type="unfinished">未找到 GnuPG。请安装它（gpg 或 gpg2），并在此输入其位置。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="247"/>
+        <source>%1 is not an executable file.</source>
+        <translation type="unfinished">%1 不是可执行文件。</translation>
     </message>
 </context>
 <context>
@@ -2269,7 +2575,7 @@ Continue?</source>
         <translation type="vanished">GPG 密钥对生成失败</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="238"/>
+        <location filename="../src/qtpass.cpp" line="181"/>
         <source>GPG key pair generated successfully</source>
         <translation>成功生成了 GPG 密钥对</translation>
     </message>
@@ -2286,22 +2592,22 @@ Continue?</source>
         <translation type="vanished">复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="293"/>
+        <location filename="../src/qtpass.cpp" line="225"/>
         <source>Could not start qrencode: %1</source>
         <translation>无法启动 qrencode：%1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="301"/>
+        <location filename="../src/qtpass.cpp" line="233"/>
         <source>qrencode did not finish in time</source>
         <translation>qrencode 未及时完成</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="313"/>
+        <location filename="../src/qtpass.cpp" line="245"/>
         <source>qrencode crashed</source>
         <translation>qrencode 已崩溃</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="314"/>
+        <location filename="../src/qtpass.cpp" line="246"/>
         <source>qrencode exited with code %1</source>
         <translation>qrencode 退出，代码为 %1</translation>
     </message>
@@ -2321,6 +2627,82 @@ Continue?</source>
         <location filename="../src/storemodel.cpp" line="377"/>
         <source>overwrite %1 with %2?</source>
         <translation>用%2覆盖%1？</translation>
+    </message>
+</context>
+<context>
+    <name>StoreWizardPage</name>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="351"/>
+        <source>Keep the store under Git</source>
+        <translation type="unfinished">将密码库纳入 Git 管理</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="353"/>
+        <source>Password store</source>
+        <translation type="unfinished">密码库</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="354"/>
+        <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
+        <translation type="unfinished">存放密码的文件夹。已有的密码库将按原样使用；空文件夹或不存在的文件夹将为您勾选的密钥初始化。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="358"/>
+        <source>Folder</source>
+        <translation type="unfinished">文件夹</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="360"/>
+        <source>Choose the password store folder</source>
+        <translation type="unfinished">选择密码存储文件夹</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="385"/>
+        <source>Git has no name and e-mail to commit with yet. Run
+git config --global user.name &quot;Your Name&quot;
+git config --global user.email you@example.org
+and turn Git on in Settings afterwards.</source>
+        <translation type="unfinished">Git 尚未配置用于提交的姓名和电子邮箱。请运行
+git config --global user.name &quot;您的姓名&quot;
+git config --global user.email you@example.org
+然后在“选项”中启用 Git。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="389"/>
+        <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
+        <translation type="unfinished">每次更改都会成为一次提交；尚不是仓库的文件夹会被初始化为仓库</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="413"/>
+        <source>Enter a folder.</source>
+        <translation type="unfinished">请输入文件夹。</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/firstrunwizard.cpp" line="422"/>
+        <source>An existing password store with %n entries.</source>
+        <translation type="unfinished">
+            <numerusform>已有的密码库，包含 %n 个条目。</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="425"/>
+        <source>An empty folder; it will be set up as a password store.</source>
+        <translation type="unfinished">空文件夹；将被初始化为密码库。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="426"/>
+        <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
+        <translation type="unfinished">此文件夹还不是密码库；将在其中写入包含勾选密钥的 .gpg-id 文件。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="429"/>
+        <source>The folder does not exist yet; it will be created.</source>
+        <translation type="unfinished">该文件夹尚不存在；将会创建它。</translation>
+    </message>
+    <message>
+        <location filename="../src/firstrunwizard.cpp" line="433"/>
+        <source>Go back and tick at least one key to encrypt it to.</source>
+        <translation type="unfinished">请返回并至少勾选一个用于加密的密钥。</translation>
     </message>
 </context>
 <context>
