@@ -4,6 +4,7 @@
 #include "filecontent.h"
 #include "pass.h"
 #include "passwordconfiguration.h"
+#include "pathvalidator.h"
 #include "qtpasssettings.h"
 #include "totp.h"
 #include "ui_passworddialog.h"
@@ -14,6 +15,7 @@
 #include <QCheckBox>
 #include <QComboBox>
 #include <QDialogButtonBox>
+#include <QDir>
 #include <QFileInfo>
 #include <QHash>
 #include <QIcon>
@@ -66,8 +68,13 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
   connect(ui->checkBoxShow, &QCheckBox::toggled, this,
           &PasswordDialog::setPasswordVisible);
   setupTemplateBox();
+  // The name row only appears once setNewEntryLocation() says where a new
+  // entry may go; an existing entry keeps its name.
+  ui->nameRow->hide();
 
-  setWindowTitle(this->windowTitle() + " " + m_file);
+  setWindowTitle(isNew && m_file.isEmpty()
+                     ? tr("New password")
+                     : this->windowTitle() + " " + m_file);
   m_passConfig = s.passwordConfiguration;
   usePwgen(s.usePwgen);
   setTemplate(s.passTemplate, s.useTemplate);
@@ -161,6 +168,105 @@ void PasswordDialog::on_accepted() {
  * @brief PasswordDialog::on_rejected handle Cancel click for QDialog
  */
 void PasswordDialog::on_rejected() { setPassword(QString()); }
+
+/**
+ * @brief PasswordDialog::setNewEntryLocation show the folder picker and the
+ * name field for a new entry.
+ */
+void PasswordDialog::setNewEntryLocation(const QString &storeRoot,
+                                         const QStringList &folders,
+                                         const QString &currentFolder) {
+  m_storeRoot = QDir::cleanPath(storeRoot);
+  ui->folderBox->clear();
+  int current = 0;
+  for (const QString &folder : folders) {
+    const QString rel = QDir::cleanPath(folder) == QStringLiteral(".")
+                            ? QString()
+                            : QDir::cleanPath(folder);
+    if (rel == QDir::cleanPath(currentFolder) ||
+        (rel.isEmpty() &&
+         QDir::cleanPath(currentFolder) == QStringLiteral("."))) {
+      current = ui->folderBox->count();
+    }
+    ui->folderBox->addItem(rel.isEmpty() ? QStringLiteral("/") : rel + u'/',
+                           rel);
+  }
+  ui->folderBox->setCurrentIndex(current);
+  m_newEntryFolder = ui->folderBox->currentData().toString();
+  ui->nameRow->show();
+  connect(ui->nameEdit, &QLineEdit::textChanged, this,
+          &PasswordDialog::validateNewEntry);
+  connect(ui->folderBox, &QComboBox::currentIndexChanged, this,
+          &PasswordDialog::validateNewEntry);
+  validateNewEntry();
+  ui->nameEdit->setFocus();
+}
+
+/**
+ * @brief Resolve folder + typed name into an entry path, or say why not.
+ */
+auto PasswordDialog::resolveNewEntry(QString *problem) const -> QString {
+  const QString name =
+      QDir::fromNativeSeparators(ui->nameEdit->text().trimmed());
+  if (name.isEmpty()) {
+    *problem = tr("Give the entry a name.");
+    return {};
+  }
+  if (name.endsWith(u'/')) {
+    *problem = tr("A name cannot end in /.");
+    return {};
+  }
+  const QString folder = ui->folderBox->currentData().toString();
+  const QString rel =
+      QDir::cleanPath(folder.isEmpty() ? name : folder + u'/' + name);
+  const QString absolute = QDir(m_storeRoot).filePath(rel);
+  if (rel.isEmpty() || rel == QStringLiteral(".") ||
+      !PathValidator::isPathInStore(m_storeRoot, absolute)) {
+    *problem = tr("That name would resolve outside the password store.");
+    return {};
+  }
+  if (QFileInfo::exists(absolute + QStringLiteral(".gpg"))) {
+    *problem = tr("An entry called %1 already exists.").arg(rel);
+    return {};
+  }
+  if (QFileInfo(absolute).isDir()) {
+    *problem = tr("%1 is a folder.").arg(rel);
+    return {};
+  }
+  problem->clear();
+  return rel;
+}
+
+/**
+ * @brief Re-check the name after every keystroke and gate OK on it.
+ */
+void PasswordDialog::validateNewEntry() {
+  QString problem;
+  const QString rel = resolveNewEntry(&problem);
+  ui->statusLabel->setText(problem);
+  ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(!rel.isEmpty());
+}
+
+void PasswordDialog::accept() {
+  if (!m_storeRoot.isEmpty()) {
+    QString problem;
+    const QString rel = resolveNewEntry(&problem);
+    if (rel.isEmpty()) {
+      ui->statusLabel->setText(problem);
+      return;
+    }
+    // A name like work/vpn may need its folder; gpg does not create it.
+    const QString parent = QFileInfo(QDir(m_storeRoot).filePath(rel)).path();
+    if (!QDir(parent).exists() && !QDir().mkpath(parent)) {
+      ui->statusLabel->setText(
+          tr("Could not create the folder %1.").arg(parent));
+      return;
+    }
+    m_file = rel;
+    setWindowTitle(tr("Password") + QStringLiteral(" ") + m_file);
+  }
+  QDialog::accept();
+}
 
 /**
  * @brief PasswordDialog::setPassword populate the (templated) fields.

@@ -15,11 +15,14 @@
 #include <QComboBox>
 #include <QDialog>
 #include <QDialogButtonBox>
+#include <QDir>
+#include <QFile>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPlainTextEdit>
 #include <QPushButton>
 #include <QSignalSpy>
+#include <QTemporaryDir>
 #include <QToolButton>
 #include <QtTest>
 
@@ -46,7 +49,12 @@ public:
   void GitPull_b() override {}
   void GitPush() override {}
   void Show(QString file) override { shown = file; }
-  void Insert(QString, QString, bool) override {}
+  void Insert(QString file, QString, bool overwrite) override {
+    inserted = file;
+    insertedOverwrite = overwrite;
+  }
+  QString inserted;
+  bool insertedOverwrite = false;
   void Remove(QString, bool) override {}
   void Move(const QString, const QString, const bool) override {}
   void Copy(const QString, const QString, const bool) override {}
@@ -83,6 +91,9 @@ private Q_SLOTS:
   void decryptErrorKeepsDialogOpenWithReason();
   void lateErrorAfterContentLoadIsIgnored();
   void newEntryStartsEditable();
+  void nameRowOnlyForANewEntryWithALocation();
+  void newEntryNameIsValidatedAsTyped();
+  void acceptResolvesTheNameAndCreatesItsFolder();
   void showCheckBoxTogglesPasswordEcho();
   void templateRowHiddenWithoutTemplates();
   void templateBoxListsAndAppliesTemplates();
@@ -200,6 +211,95 @@ void tst_passworddialog::newEntryStartsEditable() {
            "a new entry has nothing to fetch, so Ok must be usable");
   auto *pw = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
   QVERIFY2(pw->isEnabled(), "a new entry must be editable immediately");
+}
+
+/**
+ * @brief The folder/name row appears only when the caller says where a new
+ *        entry may go; an existing entry keeps the name it was opened with.
+ */
+void tst_passworddialog::nameRowOnlyForANewEntryWithALocation() {
+  FakePass pass;
+  const AppSettings s = QtPassSettings::load();
+  PasswordDialog existing(&pass, s, QStringLiteral("entry.gpg"), false);
+  QVERIFY(!existing.findChild<QWidget *>(QStringLiteral("nameRow"))
+               ->isVisibleTo(&existing));
+  PasswordDialog fresh(&pass, s, QString(), true);
+  QVERIFY(!fresh.findChild<QWidget *>(QStringLiteral("nameRow"))
+               ->isVisibleTo(&fresh));
+  QCOMPARE(fresh.windowTitle(), QStringLiteral("New password"));
+  fresh.setNewEntryLocation(QDir::tempPath(), {QString()}, QString());
+  QVERIFY(fresh.findChild<QWidget *>(QStringLiteral("nameRow"))
+              ->isVisibleTo(&fresh));
+}
+
+/**
+ * @brief OK follows the name: empty, escaping the store, taken by an entry
+ *        or a folder keep it off with the reason in the status line.
+ */
+void tst_passworddialog::newEntryNameIsValidatedAsTyped() {
+  QTemporaryDir store;
+  QVERIFY(QDir(store.path()).mkpath(QStringLiteral("work")));
+  QFile vpn(QDir(store.path()).filePath(QStringLiteral("work/vpn.gpg")));
+  QVERIFY(vpn.open(QIODevice::WriteOnly));
+  vpn.close();
+
+  FakePass pass;
+  const AppSettings s = QtPassSettings::load();
+  PasswordDialog d(&pass, s, QString(), true);
+  d.setNewEntryLocation(store.path(), {QString(), QStringLiteral("work")},
+                        QStringLiteral("work"));
+  auto *folder = d.findChild<QComboBox *>(QStringLiteral("folderBox"));
+  auto *name = d.findChild<QLineEdit *>(QStringLiteral("nameEdit"));
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+  QVERIFY(folder != nullptr && name != nullptr && status != nullptr);
+  QCOMPARE(folder->currentData().toString(), QStringLiteral("work"));
+  QVERIFY2(!okButton(d)->isEnabled(), "no name yet");
+  QVERIFY(status->text().contains(QStringLiteral("name")));
+
+  name->setText(QStringLiteral("vpn"));
+  QVERIFY2(!okButton(d)->isEnabled(), "work/vpn exists");
+  QVERIFY(status->text().contains(QStringLiteral("already exists")));
+
+  name->setText(QStringLiteral("../../etc/passwd"));
+  QVERIFY2(!okButton(d)->isEnabled(), "escapes the store");
+  QVERIFY(status->text().contains(QStringLiteral("outside")));
+
+  folder->setCurrentIndex(0);
+  name->setText(QStringLiteral("work"));
+  QVERIFY2(!okButton(d)->isEnabled(), "work is a folder");
+  QVERIFY(status->text().contains(QStringLiteral("folder")));
+
+  name->setText(QStringLiteral("mail"));
+  QVERIFY(okButton(d)->isEnabled());
+  QVERIFY(status->text().isEmpty());
+}
+
+/**
+ * @brief Accepting composes folder and name into the entry path, creates a
+ *        subfolder the name asks for, and hands that path to Insert.
+ */
+void tst_passworddialog::acceptResolvesTheNameAndCreatesItsFolder() {
+  QTemporaryDir store;
+  QVERIFY(QDir(store.path()).mkpath(QStringLiteral("work")));
+
+  FakePass pass;
+  const AppSettings s = QtPassSettings::load();
+  PasswordDialog d(&pass, s, QString(), true);
+  d.setNewEntryLocation(store.path(), {QString(), QStringLiteral("work")},
+                        QStringLiteral("work"));
+  auto *name = d.findChild<QLineEdit *>(QStringLiteral("nameEdit"));
+  auto *password = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  name->setText(QStringLiteral("vpn/office"));
+  password->setText(QStringLiteral("s3cret"));
+  okButton(d)->click();
+
+  QCOMPARE(d.result(), int(QDialog::Accepted));
+  QCOMPARE(d.entryPath(), QStringLiteral("work/vpn/office"));
+  QCOMPARE(pass.inserted, QStringLiteral("work/vpn/office"));
+  QVERIFY2(!pass.insertedOverwrite, "a new entry is not an overwrite");
+  QVERIFY2(QDir(store.path()).exists(QStringLiteral("work/vpn")),
+           "the folder the name asked for was created");
+  QVERIFY(d.windowTitle().endsWith(QStringLiteral("work/vpn/office")));
 }
 
 /**
