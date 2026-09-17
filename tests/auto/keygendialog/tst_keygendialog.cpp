@@ -12,6 +12,7 @@
 
 #include "../../../src/keygendialog.h"
 #include "../../../src/pass.h"
+#include "../../../src/qprogressindicator.h"
 #include "../../../src/qtpasssettings.h"
 #include "../testsettings.h"
 
@@ -589,6 +590,15 @@ void tst_keygendialog::generationFailureReenablesTheForm() {
   const QString label = d.findChild<QLabel *>(QStringLiteral("label"))->text();
   QVERIFY2(label.contains(QStringLiteral("No GPG executable")),
            qPrintable("the backend's reason must be shown: " + label));
+
+  // A retry must show the spinner again, not the stopped one from before.
+  auto *spinner = d.findChild<QProgressIndicator *>();
+  QVERIFY(spinner != nullptr);
+  QVERIFY(!spinner->isVisible());
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  QVERIFY2(spinner->isVisible() && spinner->isAnimated(),
+           "the retry must restart the progress indicator");
 }
 
 void tst_keygendialog::cancelWhileGeneratingDetachesFromTheBackend() {

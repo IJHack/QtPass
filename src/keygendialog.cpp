@@ -215,11 +215,13 @@ void KeygenDialog::done(int r) {
     if (!m_progressIndicator) {
       m_progressIndicator = std::make_unique<QProgressIndicator>();
       m_progressIndicator->setParent(this);
-      m_progressIndicator->startAnimation();
       m_progressIndicator->setSizePolicy(QSizePolicy::Expanding,
                                          QSizePolicy::Expanding);
       this->layout()->addWidget(m_progressIndicator.get());
     }
+    // A retry after generationFailed() reuses the indicator it stopped and hid.
+    m_progressIndicator->show();
+    m_progressIndicator->startAnimation();
 
     ui->frame->hide();
     ui->label->setText(
