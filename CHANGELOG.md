@@ -11,7 +11,8 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   It bundles Qt only and uses the `pass`, `gpg` and `git` already on the
   system, so the existing store, pinentry and smartcard keep working with no
   sandbox permissions to grant. Needs glibc 2.39 or newer (Ubuntu 24.04,
-  Debian 13, Fedora 40) [#1803](https://github.com/IJHack/QtPass/pull/1803)
+  Debian 13, Fedora 40) [#1803](https://github.com/IJHack/QtPass/pull/1803).
+  It runs natively on Wayland as well as X11
 
 ### Security
 
