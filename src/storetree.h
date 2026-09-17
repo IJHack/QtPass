@@ -29,8 +29,9 @@ class StoreTree : public QObject {
 
 public:
   /**
-   * @brief Set the view up for the store: models, hidden columns, sorting,
-   *        context-menu policy.
+   * @brief Attach the proxy model to the view and set its look: hidden
+   *        header, indentation, scroll bars, context-menu policy. Column
+   *        hiding and sorting need a source model and happen in setStore().
    * @param view The tree view to drive.
    * @param parent Owner.
    */

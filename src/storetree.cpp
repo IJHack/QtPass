@@ -16,8 +16,6 @@ StoreTree::StoreTree(QTreeView *view, QObject *parent)
   m_view->setIndentation(15);
   m_view->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
   m_view->setContextMenuPolicy(Qt::CustomContextMenu);
-  m_view->header()->setSectionResizeMode(0, QHeaderView::Stretch);
-  m_view->sortByColumn(0, Qt::AscendingOrder);
 }
 
 void StoreTree::setStore(const QString &path) {
@@ -26,11 +24,14 @@ void StoreTree::setStore(const QString &path) {
   m_fs.fetchMore(rootDir);
   if (m_proxy.sourceModel() == nullptr) {
     m_proxy.setModelAndStore(&m_fs, path);
-    // Columns exist only once a source model is attached; hide the size,
-    // type and date ones now (a no-op before that point).
+    // Columns exist only once a source model is attached: hiding the size,
+    // type and date ones is a no-op before that point, and addressing header
+    // section 0 without any sections crashes on Qt 6.8.
     m_view->setColumnHidden(1, true);
     m_view->setColumnHidden(2, true);
     m_view->setColumnHidden(3, true);
+    m_view->header()->setSectionResizeMode(0, QHeaderView::Stretch);
+    m_view->sortByColumn(0, Qt::AscendingOrder);
   } else {
     m_proxy.setStore(path);
   }

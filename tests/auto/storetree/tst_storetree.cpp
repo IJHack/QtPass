@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QDir>
 #include <QFile>
+#include <QHeaderView>
 #include <QRegularExpression>
 #include <QTemporaryDir>
 #include <QTreeView>
@@ -87,6 +88,8 @@ void tst_storetree::setStoreRootsViewAndProxyTogether() {
   QVERIFY2(view.isColumnHidden(1) && view.isColumnHidden(2) &&
                view.isColumnHidden(3),
            "only the name column is shown");
+  QCOMPARE(view.header()->sectionResizeMode(0), QHeaderView::Stretch);
+  QCOMPARE(view.header()->sortIndicatorSection(), 0);
 }
 
 void tst_storetree::dirForFolderFileAndInvalidIndex() {
