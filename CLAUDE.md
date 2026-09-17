@@ -70,11 +70,12 @@ Both inherit from `Pass` (`src/pass.h`), an abstract base exposing the password 
 - `Pass` / `RealPass` / `ImitatePass` — password store operations (add, edit, delete, copy, show, Git); `PassBackendFactory` (`src/passbackendfactory.h`) owns backend selection/lifecycle
 - `Executor` (`src/executor.h`) — FIFO queue for external process execution; all `gpg`/`git`/`pass` calls go through here
 - `StoreModel` (`src/storemodel.h`) — `QSortFilterProxyModel` wrapping `QFileSystemModel` for the password tree; `rootIndexFor()` maps a directory to the tree root
+- `StoreTree` (`src/storetree.h`) — owns the `QFileSystemModel` + `StoreModel` behind the tree view; `setStore()` re-roots all three at once, `dirFor()/fileFor()` (and the `current*` variants) are the two index→path mappings; `Util::getDir` lived here before
 - `ProcessOutputPanel` (`src/processoutputpanel.h`) — the dockable "Process Output" console (numbering, trimming, 1000-line cap, sticky auto-scroll, process-name/sensitivity mapping); MainWindow only feeds and shows it
 - `ClipboardManager` (`src/clipboardmanager.h`) — puts secrets on the clipboard, tracks what it copied, autoclear timer; owned by `QtPass`, emits `statusMessage` instead of touching the UI
 - `QtPassSettings` (`src/qtpasssettings.h`) — singleton managing all app configuration via `QSettings`; `AppSettings` (`src/appsettings.h`) + `SettingsSerializer` (`src/settingsserializer.h`) are the value-object/load-save facade
 - `FileContent` (`src/filecontent.h`) — parses password files; supports template fields beyond the first line
-- `Util` (`src/util.h`) — static path/binary-discovery helpers, now narrowed: `PathValidator` (store-boundary checks), `SshAuthSock` (SSH_AUTH_SOCK discovery), and `TemplateIO` (`.templates`/`.default_template` I/O) are split out
+- `Util` (`src/util.h`) — static path/binary-discovery helpers, now narrowed (no model or widget includes any more): `PathValidator` (store-boundary checks), `SshAuthSock` (SSH_AUTH_SOCK discovery), and `TemplateIO` (`.templates`/`.default_template` I/O) are split out
 - `MainWindow` helpers: `GrepSearchController` (`src/grepsearchcontroller.h`) owns content-search state; `PasswordDisplayPanel` (`src/passworddisplaypanel.h`) renders decrypted fields into the grid
 
 **Signal/slot flow:** `MainWindow` calls `Pass` methods → `Pass` queues commands via `Executor` → `Executor` emits signals with stdout/stderr → `Pass` processes output and emits higher-level signals → `MainWindow` updates the UI.

@@ -5,10 +5,9 @@
 
 #include "enums.h"
 #include "grepsearchcontroller.h"
-#include "storemodel.h"
+#include "storetree.h"
 
 #include <QDialog>
-#include <QFileSystemModel>
 #include <QMainWindow>
 #include <QPointer>
 #include <QProcess>
@@ -312,8 +311,8 @@ private:
   // QMainWindow level isn't laid out and ends up obscuring the
   // centralWidget. See #1192 for the symptom.
   ProcessOutputPanel *m_processOutput = nullptr;
-  QFileSystemModel model;
-  StoreModel proxyModel;
+  /// The store as shown in the tree: models, view setup, path mapping.
+  StoreTree *m_tree = nullptr;
   QTimer clearPanelTimer, searchTimer;
   // Re-enables the UI if a backend operation disables it but never reports
   // completion (see setUiElementsEnabled).

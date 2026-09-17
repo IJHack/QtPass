@@ -78,6 +78,7 @@ SOURCES   += mainwindow.cpp \
              windowstatestore.cpp \
              configdialog.cpp \
              storemodel.cpp \
+             storetree.cpp \
              base32.cpp \
              totp.cpp \
              otpcodewidget.cpp \
@@ -118,6 +119,7 @@ HEADERS   += mainwindow.h \
              grepsearchcontroller.h \
              configdialog.h \
              storemodel.h \
+             storetree.h \
              base32.h \
              totp.h \
              otpcodewidget.h \

@@ -23,6 +23,9 @@
 #include <QDebug>
 #include <QGuiApplication>
 #include <QScreen>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
 #include <utility>
 
 bool QtPassSettings::initialized = false;

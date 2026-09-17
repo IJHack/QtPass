@@ -270,41 +270,6 @@ auto Util::configIsValid(const AppSettings &s) -> bool {
 }
 
 /**
- * @brief Returns a directory path derived from a model index, optionally
- * relative to the pass store.
- * @example
- * QString result = Util::getDir(index, true, model, storeModel, passStore);
- * std::cout << result.toStdString() << std::endl; // Expected output: relative
- * directory path with trailing separator
- *
- * @param index Source index used to resolve the file or directory path.
- * @param forPass If true, returns a path relative to the pass store;
- * otherwise returns an absolute path.
- * @param model File system model used to obtain file information.
- * @param storeModel Proxy model used to map the provided index to the source
- * model.
- * @param passStore Absolute path to the password store root directory.
- * @return QString - The resolved directory path, always ending with the
- * platform's directory separator.
- */
-auto Util::getDir(const QModelIndex &index, bool forPass,
-                  const QFileSystemModel &model, const StoreModel &storeModel,
-                  const QString &passStore) -> QString {
-  QString abspath = QDir(passStore).absolutePath() + QDir::separator();
-  if (!index.isValid()) {
-    return forPass ? "" : abspath;
-  }
-  QFileInfo info = model.fileInfo(storeModel.mapToSource(index));
-  QString filePath =
-      (info.isFile() ? info.absolutePath() : info.absoluteFilePath());
-  if (forPass) {
-    filePath = QDir(abspath).relativeFilePath(filePath);
-  }
-  filePath += QDir::separator();
-  return filePath;
-}
-
-/**
  * @brief Returns a regex matching strings that end with the .gpg extension.
  *
  * @return QRegularExpression reference
