@@ -53,6 +53,7 @@ private Q_SLOTS:
   void customCharsetRoundTrip();
   void customCharsetPreservedWhenBuiltinSelected();
   void addProfileSelectsNewRowAfterSort();
+  void acceptSavesTheGlobalAutoPushAndAutoPull();
 };
 
 /**
@@ -363,6 +364,34 @@ void tst_configdialog::addProfileSelectsNewRowAfterSort() {
     QVERIFY(nameItem != nullptr);
     QCOMPARE(nameItem->text(), QStringLiteral("New Profile"));
   }
+}
+
+/**
+ * @brief Since #1140 the dialog stored auto push/pull per profile and no
+ *        longer wrote the global keys the backends read, so both checkboxes
+ *        had no effect.
+ */
+void tst_configdialog::acceptSavesTheGlobalAutoPushAndAutoPull() {
+  {
+    AppSettings seed = QtPassSettings::load();
+    seed.useGit = false;
+    seed.autoPush = false;
+    seed.autoPull = false;
+    QtPassSettings::save(seed);
+  }
+  ConfigDialog dialog(nullptr);
+  for (const char *name :
+       {"checkBoxUseGit", "checkBoxAutoPush", "checkBoxAutoPull"}) {
+    auto *box = dialog.findChild<QCheckBox *>(QLatin1String(name));
+    QVERIFY2(box != nullptr, name);
+    box->setChecked(true);
+  }
+  dialog.accept();
+  const AppSettings s = QtPassSettings::load();
+  QVERIFY(s.useGit);
+  QVERIFY2(s.autoPush, "auto push must reach the global setting");
+  QVERIFY2(s.autoPull, "auto pull must reach the global setting");
+  QVERIFY(QtPassSettings::isAutoPush());
 }
 
 QTEST_MAIN(tst_configdialog)
