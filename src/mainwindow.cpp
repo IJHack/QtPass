@@ -70,28 +70,9 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this, this,
                 &MainWindow::copyPasswordFromTreeview);
 
-  model.setNameFilters(QStringList() << "*.gpg");
-  model.setNameFilterDisables(false);
-
-  QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
-
-  QModelIndex rootDir = model.setRootPath(passStore);
-  model.fetchMore(rootDir);
-
-  proxyModel.setModelAndStore(&model, passStore);
-  proxyModel.setPass(QtPassSettings::getPass());
-
-  ui->treeView->setModel(&proxyModel);
-  ui->treeView->setRootIndex(proxyModel.mapFromSource(rootDir));
-  ui->treeView->setColumnHidden(1, true);
-  ui->treeView->setColumnHidden(2, true);
-  ui->treeView->setColumnHidden(3, true);
-  ui->treeView->setHeaderHidden(true);
-  ui->treeView->setIndentation(15);
-  ui->treeView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-  ui->treeView->setContextMenuPolicy(Qt::CustomContextMenu);
-  ui->treeView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
-  ui->treeView->sortByColumn(0, Qt::AscendingOrder);
+  m_tree = new StoreTree(ui->treeView, this);
+  m_tree->setStore(QtPassSettings::getPassStore(Util::findPasswordStore()));
+  m_tree->setPass(QtPassSettings::getPass());
   connect(ui->treeView, &QWidget::customContextMenuRequested, this,
           &MainWindow::showContextMenu);
   connect(ui->treeView, &DeselectableTreeView::emptyClicked, this,
@@ -491,14 +472,13 @@ auto MainWindow::config() -> bool {
 
   updateProfileBox();
   const AppSettings s = QtPassSettings::load();
-  proxyModel.setStore(s.passStore);
-  ui->treeView->setRootIndex(proxyModel.rootIndexFor(s.passStore));
+  m_tree->setStore(s.passStore);
   deselect();
   ui->treeView->setCurrentIndex(QModelIndex());
 
   Pass *activePass = QtPassSettings::getPass();
   activePass->updateEnv();
-  proxyModel.setPass(activePass);
+  m_tree->setPass(activePass);
   clearPanelTimer.setInterval(MS_PER_SECOND * s.autoclearPanelSeconds);
   m_qtPass->clipboard().setAutoclearTimer();
 
@@ -554,16 +534,7 @@ void MainWindow::onPush() {
  * @return
  */
 auto MainWindow::getFile(const QModelIndex &index, bool forPass) -> QString {
-  if (!index.isValid() ||
-      !model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
-    return {};
-  }
-  QString filePath = model.filePath(proxyModel.mapToSource(index));
-  if (forPass) {
-    filePath = QDir(QtPassSettings::getPassStore()).relativeFilePath(filePath);
-    filePath.replace(Util::endsWithGpg(), "");
-  }
-  return filePath;
+  return m_tree->fileFor(index, forPass);
 }
 
 /**
@@ -593,8 +564,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
  * @param index
  */
 void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
-  QFileInfo fileOrFolder =
-      model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+  QFileInfo fileOrFolder = m_tree->fileInfo(ui->treeView->currentIndex());
 
   if (fileOrFolder.isFile()) {
     editPassword(getFile(index, true));
@@ -897,11 +867,9 @@ void MainWindow::onTimeoutSearch() {
   QRegularExpression regExp(query, QRegularExpression::CaseInsensitiveOption);
   if (!regExp.isValid())
     return;
-  proxyModel.setFilterRegularExpression(regExp);
-  ui->treeView->setRootIndex(
-      proxyModel.rootIndexFor(QtPassSettings::getPassStore()));
+  m_tree->setFilter(regExp);
 
-  if (proxyModel.rowCount() > 0 && !query.isEmpty()) {
+  if (m_tree->proxy().rowCount() > 0 && !query.isEmpty()) {
     selectFirstFile();
   } else {
     ui->actionEdit->setEnabled(false);
@@ -915,7 +883,8 @@ void MainWindow::onTimeoutSearch() {
  * Select the first possible file in the tree
  */
 void MainWindow::on_lineEdit_returnPressed() {
-  qCDebug(lcQtPass) << "on_lineEdit_returnPressed" << proxyModel.rowCount();
+  qCDebug(lcQtPass) << "on_lineEdit_returnPressed"
+                    << m_tree->proxy().rowCount();
 
   if (m_grep.inGrepMode()) {
     const QString query = ui->lineEdit->text();
@@ -937,7 +906,7 @@ void MainWindow::on_lineEdit_returnPressed() {
     return;
   }
 
-  if (proxyModel.rowCount() > 0) {
+  if (m_tree->proxy().rowCount() > 0) {
     selectFirstFile();
     on_treeView_clicked(ui->treeView->currentIndex());
   }
@@ -961,8 +930,7 @@ void MainWindow::on_grepButton_toggled(bool checked) {
                  "(PCRE)."));
     ui->lineEdit->clear();
     searchTimer.stop();
-    proxyModel.setFilterRegularExpression(QRegularExpression());
-    ui->treeView->setRootIndex(proxyModel.rootIndexFor(s.passStore));
+    m_tree->setFilter(QRegularExpression());
     ui->grepResultsList->setVisible(false);
     // Keep treeView visible until results arrive
   } else {
@@ -978,8 +946,7 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->grepResultsList->clear();
     ui->grepResultsList->setVisible(false);
     ui->treeView->setVisible(true);
-    proxyModel.setFilterRegularExpression(QRegularExpression());
-    ui->treeView->setRootIndex(proxyModel.rootIndexFor(s.passStore));
+    m_tree->setFilter(QRegularExpression());
   }
 }
 
@@ -1044,10 +1011,7 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
     return;
   const QString fullPath =
       QDir::cleanPath(QDir(s.passStore).filePath(entry + ".gpg"));
-  QModelIndex srcIndex = model.index(fullPath);
-  if (!srcIndex.isValid())
-    return;
-  QModelIndex proxyIndex = proxyModel.mapFromSource(srcIndex);
+  const QModelIndex proxyIndex = m_tree->indexFor(fullPath);
   if (!proxyIndex.isValid())
     return;
   ui->treeView->setCurrentIndex(proxyIndex);
@@ -1065,8 +1029,7 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
  * tree
  */
 void MainWindow::selectFirstFile() {
-  QModelIndex index = proxyModel.rootIndexFor(QtPassSettings::getPassStore());
-  index = firstFile(index);
+  QModelIndex index = firstFile(m_tree->rootIndex());
   ui->treeView->setCurrentIndex(index);
 }
 
@@ -1076,13 +1039,14 @@ void MainWindow::selectFirstFile() {
  * @return QModelIndex
  */
 auto MainWindow::firstFile(QModelIndex parentIndex) -> QModelIndex {
-  int numRows = proxyModel.rowCount(parentIndex);
+  StoreModel &proxy = m_tree->proxy();
+  int numRows = proxy.rowCount(parentIndex);
   for (int row = 0; row < numRows; ++row) {
-    QModelIndex index = proxyModel.index(row, 0, parentIndex);
-    if (model.fileInfo(proxyModel.mapToSource(index)).isFile()) {
+    QModelIndex index = proxy.index(row, 0, parentIndex);
+    if (m_tree->fileInfo(index).isFile()) {
       return index;
     }
-    if (proxyModel.hasChildren(index)) {
+    if (proxy.hasChildren(index)) {
       QModelIndex childFile = firstFile(index);
       if (childFile.isValid())
         return childFile;
@@ -1124,8 +1088,7 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
 
   if (isNew) {
     const QString storePath = s.passStore;
-    QString folder = Util::getDir(ui->treeView->currentIndex(), false, model,
-                                  proxyModel, s.passStore);
+    QString folder = m_tree->currentDir(false);
     if (folder.isEmpty()) {
       folder = storePath;
     }
@@ -1150,14 +1113,12 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
 void MainWindow::addPassword() {
   const QString passStore = QtPassSettings::load().passStore;
   bool ok;
-  QString dir = Util::getDir(ui->treeView->currentIndex(), true, model,
-                             proxyModel, passStore);
-  QString file = QInputDialog::getText(
-      this, tr("New file"),
-      tr("New password file: \n(Will be placed in %1 )")
-          .arg(passStore + Util::getDir(ui->treeView->currentIndex(), true,
-                                        model, proxyModel, passStore)),
-      QLineEdit::Normal, "", &ok);
+  QString dir = m_tree->currentDir(true);
+  QString file =
+      QInputDialog::getText(this, tr("New file"),
+                            tr("New password file: \n(Will be placed in %1 )")
+                                .arg(passStore + m_tree->currentDir(true)),
+                            QLineEdit::Normal, "", &ok);
   if (!ok || file.isEmpty()) {
     return;
   }
@@ -1181,22 +1142,20 @@ void MainWindow::onDelete() {
     return;
   }
 
-  QFileInfo fileOrFolder =
-      model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+  QFileInfo fileOrFolder = m_tree->fileInfo(ui->treeView->currentIndex());
   QString file = "";
   bool isDir = false;
 
   if (fileOrFolder.isFile()) {
     file = getFile(ui->treeView->currentIndex(), true);
   } else {
-    file = Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel,
-                        QtPassSettings::getPassStore());
+    file = m_tree->currentDir(true);
     isDir = true;
   }
 
   QString dirMessage = tr(" and the whole content?");
   if (isDir) {
-    QDirIterator it(model.rootPath() + QDir::separator() + file,
+    QDirIterator it(m_tree->fileSystem().rootPath() + QDir::separator() + file,
                     QDirIterator::Subdirectories);
     bool okDir = true;
     while (it.hasNext() && okDir) {
@@ -1300,8 +1259,7 @@ void MainWindow::onEdit() {
  * gets lists and opens UserDialog.
  */
 void MainWindow::onUsers() {
-  const QString dir = Util::getDir(ui->treeView->currentIndex(), false, model,
-                                   proxyModel, QtPassSettings::getPassStore());
+  const QString dir = m_tree->currentDir(false);
 
   UsersDialog d(QtPassSettings::getPass(), QtPassSettings::load(), dir, this);
   if (!d.exec()) {
@@ -1383,9 +1341,7 @@ void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
 
   QtPassSettings::getPass()->updateEnv();
 
-  const QString passStore = QtPassSettings::getPassStore();
-  proxyModel.setStore(passStore);
-  ui->treeView->setRootIndex(proxyModel.rootIndexFor(passStore));
+  m_tree->setStore(QtPassSettings::getPassStore());
   deselect();
   ui->treeView->setCurrentIndex(QModelIndex());
 }
@@ -1496,7 +1452,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     break;
   case Qt::Key_Return:
   case Qt::Key_Enter:
-    if (proxyModel.rowCount() > 0) {
+    if (m_tree->proxy().rowCount() > 0) {
       on_treeView_clicked(ui->treeView->currentIndex());
     }
     break;
@@ -1528,8 +1484,7 @@ void MainWindow::showContextMenu(const QPoint &pos) {
 
   QPoint globalPos = ui->treeView->viewport()->mapToGlobal(pos);
 
-  QFileInfo fileOrFolder =
-      model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+  QFileInfo fileOrFolder = m_tree->fileInfo(ui->treeView->currentIndex());
 
   QMenu contextMenu;
   if (!selected || fileOrFolder.isDir()) {
@@ -1560,8 +1515,7 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     QAction *deleteItem = contextMenu.addAction(tr("Delete"));
     connect(deleteItem, &QAction::triggered, this, &MainWindow::onDelete);
     if (fileOrFolder.isDir()) {
-      QString dirPath = QDir::cleanPath(Util::getDir(
-          ui->treeView->currentIndex(), false, model, proxyModel, s.passStore));
+      QString dirPath = QDir::cleanPath(m_tree->currentDir(false));
 
       auto *shareMenu = new QMenu(tr("Share"), &contextMenu);
       contextMenu.addMenu(shareMenu);
@@ -1618,8 +1572,7 @@ void MainWindow::showBrowserContextMenu(const QPoint &pos) {
  * @brief MainWindow::openFolder open the folder in the default file manager
  */
 void MainWindow::openFolder() {
-  QString dir = Util::getDir(ui->treeView->currentIndex(), false, model,
-                             proxyModel, QtPassSettings::getPassStore());
+  QString dir = m_tree->currentDir(false);
 
   QString path = QDir::toNativeSeparators(dir);
   QDesktopServices::openUrl(QUrl::fromLocalFile(path));
@@ -1631,14 +1584,12 @@ void MainWindow::openFolder() {
 void MainWindow::addFolder() {
   const AppSettings s = QtPassSettings::load();
   bool ok;
-  QString dir = Util::getDir(ui->treeView->currentIndex(), false, model,
-                             proxyModel, s.passStore);
-  QString newdir = QInputDialog::getText(
-      this, tr("New folder"),
-      tr("New Folder: \n(Will be placed in %1 )")
-          .arg(s.passStore + Util::getDir(ui->treeView->currentIndex(), true,
-                                          model, proxyModel, s.passStore)),
-      QLineEdit::Normal, "", &ok);
+  QString dir = m_tree->currentDir(false);
+  QString newdir =
+      QInputDialog::getText(this, tr("New folder"),
+                            tr("New Folder: \n(Will be placed in %1 )")
+                                .arg(s.passStore + m_tree->currentDir(true)),
+                            QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty()) {
     return;
   }
@@ -1681,9 +1632,7 @@ void MainWindow::addFolder() {
  */
 void MainWindow::renameFolder() {
   bool ok;
-  QString srcDir =
-      QDir::cleanPath(Util::getDir(ui->treeView->currentIndex(), false, model,
-                                   proxyModel, QtPassSettings::getPassStore()));
+  QString srcDir = QDir::cleanPath(m_tree->currentDir(false));
   QString srcDirName = QDir(srcDir).dirName();
   QString newName =
       QInputDialog::getText(this, tr("Rename folder"), tr("Rename Folder To: "),
@@ -1747,8 +1696,7 @@ void MainWindow::renamePassword() {
  * @return void - This function does not return a value.
  */
 void MainWindow::copyPasswordFromTreeview() {
-  QFileInfo fileOrFolder =
-      model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));
+  QFileInfo fileOrFolder = m_tree->fileInfo(ui->treeView->currentIndex());
 
   if (fileOrFolder.isFile()) {
     QString file = getFile(ui->treeView->currentIndex(), true);

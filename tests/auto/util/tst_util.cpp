@@ -158,8 +158,6 @@ private Q_SLOTS:
   void findBinaryInPath();
   void findPasswordStore();
   void configIsValid();
-  void getDirBasic();
-  void getDirWithIndex();
   void findBinaryInPathNotFound();
   void expandTildeHome();
   void expandTildeLeavesOtherPathsAlone();
@@ -923,93 +921,6 @@ void tst_util::configIsValid() {
                      "executable is invalid");
 }
 
-void tst_util::getDirBasic() {
-  QTemporaryDir tempDir;
-  QVERIFY2(tempDir.isValid(),
-           "Temporary directory should be created successfully");
-
-  QFileSystemModel fileSystemModel;
-  fileSystemModel.setRootPath(tempDir.path());
-  StoreModel storeModel;
-  storeModel.setModelAndStore(&fileSystemModel, tempDir.path());
-  QVERIFY(storeModel.sourceModel() != nullptr);
-  QVERIFY2(storeModel.getStore() == tempDir.path(),
-           "Store path should match the set value");
-  QModelIndex rootIndex = fileSystemModel.index(tempDir.path());
-  QVERIFY2(rootIndex.isValid(), "Filesystem model root index should be valid");
-
-  QString result = Util::getDir(QModelIndex(), false, fileSystemModel,
-                                storeModel, tempDir.path());
-  QString expectedDir = QDir(tempDir.path()).absolutePath();
-  if (!expectedDir.endsWith(QDir::separator())) {
-    expectedDir += QDir::separator();
-  }
-  QVERIFY2(
-      result == expectedDir,
-      qPrintable(QString("Expected '%1', got '%2'").arg(expectedDir, result)));
-}
-
-void tst_util::getDirWithIndex() {
-  QTemporaryDir tempDir;
-  QVERIFY2(tempDir.isValid(),
-           "Temporary directory should be created successfully");
-
-  const QString dirPath = tempDir.path();
-  const QString filePath =
-      QDir(dirPath).filePath(QStringLiteral("testfile.txt"));
-
-  QFile file(filePath);
-  QVERIFY2(file.open(QIODevice::WriteOnly),
-           "Failed to create test file in temporary directory");
-  const char testData[] = "dummy";
-  const qint64 bytesWritten = file.write(testData, sizeof(testData) - 1);
-  QVERIFY2(bytesWritten == static_cast<qint64>(sizeof(testData) - 1),
-           "Failed to write test data to file in temporary directory");
-  file.close();
-
-  QFileSystemModel fileSystemModel;
-  fileSystemModel.setRootPath(dirPath);
-
-  StoreModel storeModel;
-  storeModel.setModelAndStore(&fileSystemModel, dirPath);
-  QVERIFY2(storeModel.getStore() == dirPath,
-           "Store path should match the set value");
-
-  QModelIndex sourceIndex = fileSystemModel.index(filePath);
-  QVERIFY2(sourceIndex.isValid(),
-           "Source index should be valid for the test file");
-  QModelIndex fileIndex = storeModel.mapFromSource(sourceIndex);
-  QVERIFY2(fileIndex.isValid(),
-           "Proxy index should be valid for the test file");
-
-  QString result =
-      Util::getDir(fileIndex, false, fileSystemModel, storeModel, dirPath);
-  QVERIFY2(!result.isEmpty(),
-           "getDir should return a non-empty directory for a valid index");
-  QVERIFY(result.endsWith(QDir::separator()));
-
-  QString expectedPath = dirPath;
-  if (!expectedPath.endsWith(QDir::separator())) {
-    expectedPath += QDir::separator();
-  }
-  QVERIFY2(
-      result == expectedPath,
-      qPrintable(
-          QStringLiteral("Expected '%1', got '%2'").arg(expectedPath, result)));
-
-  QModelIndex invalidIndex;
-  QString invalidResult =
-      Util::getDir(invalidIndex, false, fileSystemModel, storeModel, dirPath);
-  QString expectedForInvalid = dirPath;
-  if (!expectedForInvalid.endsWith(QDir::separator())) {
-    expectedForInvalid += QDir::separator();
-  }
-  QVERIFY2(invalidResult == expectedForInvalid,
-           qPrintable(QStringLiteral("getDir should return pass store for "
-                                     "invalid index. Expected '%1', got '%2'")
-                          .arg(expectedForInvalid, invalidResult)));
-}
-
 void tst_util::findBinaryInPathNotFound() {
   QString result = Util::findBinaryInPath("this-binary-does-not-exist-12345");
   QVERIFY(result.isEmpty());
@@ -1433,8 +1344,8 @@ void tst_util::seedGpgIdFileCopiesParentRecipients() {
 }
 
 void tst_util::seedGpgIdFileTrailingSeparator() {
-  // MainWindow::addFolder builds newdir from Util::getDir, which ends in a
-  // native separator; the helper must resolve the parent all the same.
+  // MainWindow::addFolder builds newdir from StoreTree::currentDir, which ends
+  // in a native separator; the helper must resolve the parent all the same.
   QTemporaryDir tempDir;
   QVERIFY(tempDir.isValid());
   const QString passStore = tempDir.path();

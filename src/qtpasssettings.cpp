@@ -21,6 +21,9 @@
 #include <QCoreApplication>
 #include <QCursor>
 #include <QDebug>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
 #include <QGuiApplication>
 #include <QScreen>
 #include <utility>
