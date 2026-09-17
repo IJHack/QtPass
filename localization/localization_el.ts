@@ -150,12 +150,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1169"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Πλήρες αποτύπωμα κλειδιού 40 χαρακτήρων, όπως απαιτεί το pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1176"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ρυθμίσεις Git για αυτό το προφίλ· αντικαθιστούν αυτές της καρτέλας Ρυθμίσεις όσο είναι ενεργό</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1222"/>
@@ -345,22 +345,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="1020"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι χώροι αποθήκευσης κωδικών πρόσβασης που γνωρίζει αυτό το QtPass· επιλέξτε έναν για να τον επεξεργαστείτε</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1035"/>
         <source>Add a profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθήκη προφίλ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αφαίρεση του επιλεγμένου προφίλ· ο ίδιος ο χώρος αποθήκευσης παραμένει στον δίσκο</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1099"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προφίλ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1105"/>
@@ -473,7 +473,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="277"/>
         <source>Another profile already has this name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ένα άλλο προφίλ έχει ήδη αυτό το όνομα</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="317"/>
@@ -684,62 +684,62 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="458"/>
         <source>Hide passwords until asked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Απόκρυψη κωδικών πρόσβασης μέχρι να ζητηθούν</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="459"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εμφάνιση εικονιδίου στην περιοχή ειδοποιήσεων</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="460"/>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Έτοιμο</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="461"/>
         <source>Everything else can be changed later in Settings.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όλα τα υπόλοιπα μπορούν να αλλάξουν αργότερα στις Ρυθμίσεις.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="468"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εμφάνιση της γραμμής του κωδικού ως κουκκίδες· η επιλογή «Εμφάνιση κωδικού» τον αποκαλύπτει</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="479"/>
         <source>Store: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χώρος αποθήκευσης: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="481"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Είναι ήδη χώρος αποθήκευσης κωδικών πρόσβασης και χρησιμοποιείται ως έχει.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="483"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Θα ρυθμιστεί για τα επιλεγμένα κλειδιά και θα τεθεί υπό Git.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="485"/>
         <source>It will be set up for the ticked keys.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Θα ρυθμιστεί για τα επιλεγμένα κλειδιά.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="487"/>
         <source>GnuPG: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="488"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι λειτουργίες εκτελούνται μέσω του pass.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="489"/>
         <source>Operations run through gpg and git directly.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι λειτουργίες εκτελούνται απευθείας μέσω gpg και git.</translation>
     </message>
 </context>
 <context>
@@ -820,7 +820,7 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="45"/>
         <source>Browse</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αναζήτηση</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="68"/>
@@ -831,7 +831,7 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="77"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το QtPass είναι ένα γραφικό περιβάλλον για το &lt;i&gt;pass&lt;/i&gt;, τον καθιερωμένο διαχειριστή κωδικών πρόσβασης του Unix: κάθε κωδικός είναι ένα αρχείο κρυπτογραφημένο με GnuPG, αποθηκευμένο σε έναν φάκελο που μπορείτε να θέσετε υπό Git.&lt;br&gt;&lt;br&gt;Οι επόμενες σελίδες εντοπίζουν το GnuPG, βεβαιώνονται ότι έχετε ένα κλειδί για κρυπτογράφηση και επιλέγουν τον φάκελο όπου βρίσκονται οι κωδικοί σας. Τίποτα δεν γράφεται μέχρι να πατήσετε Τέλος.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="137"/>
@@ -852,12 +852,12 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="162"/>
         <source>Password store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χώρος αποθήκευσης κωδικών πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="163"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 περιέχει ήδη κρυπτογραφημένα αρχεία· δεν επανακρυπτογραφήθηκαν για τα επιλεγμένα κλειδιά. Ανοίξτε τους Χρήστες μετά την εκκίνηση για να το κάνετε.</translation>
     </message>
 </context>
 <context>
@@ -1149,32 +1149,32 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="275"/>
         <source>Generate a new key pair…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δημιουργία νέου ζεύγους κλειδιών…</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="277"/>
         <source>Your key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το κλειδί σας</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="278"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι κωδικοί πρόσβασης κρυπτογραφούνται για κλειδιά GnuPG. Επιλέξτε τα κλειδιά που θα μπορούν να ανοίγουν έναν νέο χώρο αποθήκευσης· χρειάζεστε τουλάχιστον ένα με το μυστικό του μέρος σε αυτόν τον υπολογιστή.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="306"/>
         <source>expired</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">έληξε</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="308"/>
         <source>not usable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">μη χρησιμοποιήσιμο</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="321"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το GnuPG δεν έχει ακόμα μυστικό κλειδί. Δημιουργήστε ένα εδώ ή εισαγάγετε πρώτα το υπάρχον κλειδί σας με το gpg.</translation>
     </message>
 </context>
 <context>
@@ -1393,17 +1393,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="499"/>
         <source>Show &amp;menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εμφάνιση γραμμής &amp;μενού</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="502"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Απόκρυψη ή εμφάνιση της γραμμής μενού· το Ctrl+M την επαναφέρει</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
@@ -2016,12 +2016,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Φάκελος</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ο φάκελος του χώρου αποθήκευσης κωδικών πρόσβασης στον οποίο θα μπει η νέα καταχώριση</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
@@ -2031,12 +2031,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το όνομα της καταχώρισης, όπως εμφανίζεται στο δέντρο· ένα / την τοποθετεί σε υποφάκελο</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>e.g. github.com or work/vpn</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">π.χ. github.com ή εργασία/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
@@ -2091,7 +2091,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="76"/>
         <source>New password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Νέος κωδικός πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>
@@ -2101,32 +2101,32 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="216"/>
         <source>Give the entry a name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δώστε ένα όνομα στην καταχώριση.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="220"/>
         <source>A name cannot end in /.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ένα όνομα δεν μπορεί να τελειώνει σε /.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="229"/>
         <source>That name would resolve outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτό το όνομα θα οδηγούσε εκτός του χώρου αποθήκευσης κωδικών πρόσβασης.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="233"/>
         <source>An entry called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Υπάρχει ήδη καταχώριση με το όνομα %1.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="237"/>
         <source>%1 is a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 είναι φάκελος.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="266"/>
         <source>Could not create the folder %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν ήταν δυνατή η δημιουργία του φακέλου %1.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="377"/>
@@ -2199,7 +2199,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="189"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χρήση του εργαλείου γραμμής εντολών pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="191"/>
@@ -2209,22 +2209,22 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="192"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το GnuPG κάνει την κρυπτογράφηση. Τα pass και Git είναι προαιρετικά· το QtPass μπορεί να κάνει τη δουλειά τους μόνο του.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="196"/>
         <source>Select executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επιλογή εκτελέσιμου</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="197"/>
         <source>All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όλα τα αρχεία (*)</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="199"/>
         <source>GnuPG</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
@@ -2239,17 +2239,17 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="204"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εκτέλεση του σεναρίου pass για κάθε λειτουργία αντί για απευθείας κλήση των gpg και git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="244"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το GnuPG δεν βρέθηκε. Εγκαταστήστε το (gpg ή gpg2) και εισαγάγετε τη θέση του εδώ.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="247"/>
         <source>%1 is not an executable file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 δεν είναι εκτελέσιμο αρχείο.</translation>
     </message>
 </context>
 <context>
@@ -2439,22 +2439,22 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="351"/>
         <source>Keep the store under Git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διατήρηση του χώρου αποθήκευσης υπό Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="353"/>
         <source>Password store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χώρος αποθήκευσης κωδικών πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="354"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ο φάκελος όπου βρίσκονται οι κωδικοί σας. Ένας υπάρχων χώρος αποθήκευσης χρησιμοποιείται ως έχει· ένας κενός ή ανύπαρκτος φάκελος ρυθμίζεται για τα κλειδιά που επιλέξατε.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="358"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Φάκελος</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="360"/>
@@ -2467,45 +2467,48 @@ Continue?</source>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το Git δεν έχει ακόμα όνομα και e-mail για τις υποβολές. Εκτελέστε
+git config --global user.name &quot;Το Όνομά Σας&quot;
+git config --global user.email you@example.org
+και ενεργοποιήστε έπειτα το Git στις Ρυθμίσεις.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="389"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Κάθε αλλαγή γίνεται μια υποβολή (commit)· ένας φάκελος που δεν είναι ακόμα αποθετήριο αποκτά ένα</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="413"/>
         <source>Enter a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εισαγάγετε έναν φάκελο.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="422"/>
         <source>An existing password store with %n entries.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Ένας υπάρχων χώρος αποθήκευσης κωδικών πρόσβασης με %n καταχώριση.</numerusform>
+            <numerusform>Ένας υπάρχων χώρος αποθήκευσης κωδικών πρόσβασης με %n καταχωρίσεις.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="425"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ένας κενός φάκελος· θα ρυθμιστεί ως χώρος αποθήκευσης κωδικών πρόσβασης.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="426"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτός ο φάκελος δεν είναι ακόμα χώρος αποθήκευσης κωδικών πρόσβασης· θα γραφτεί σε αυτόν ένα .gpg-id για τα επιλεγμένα κλειδιά.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="429"/>
         <source>The folder does not exist yet; it will be created.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ο φάκελος δεν υπάρχει ακόμα· θα δημιουργηθεί.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="433"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επιστρέψτε και επιλέξτε τουλάχιστον ένα κλειδί για το οποίο θα κρυπτογραφηθεί.</translation>
     </message>
 </context>
 <context>

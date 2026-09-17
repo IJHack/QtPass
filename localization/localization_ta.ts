@@ -218,22 +218,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="1020"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்த QtPass அறிந்த கடவுச்சொல் சேமிப்பகங்கள்; திருத்த ஒன்றைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1035"/>
         <source>Add a profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்தைச் சேர்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தேர்ந்தெடுத்த சுயவிவரத்தை மறக்கவும்; சேமிப்பகம் வட்டில் அப்படியே இருக்கும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1099"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரம்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1115"/>
@@ -258,12 +258,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1169"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass தேவைப்படுத்துவது போல, முழு 40-எழுத்து சாவி கைரேகை</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1176"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்தச் சுயவிவரத்திற்கான Git அமைப்புகள்; இது செயலில் இருக்கும்போது அமைப்புகள் தாவலில் உள்ளவற்றுக்குப் பதிலாக இவை பயன்படும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1222"/>
@@ -497,7 +497,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="277"/>
         <source>Another profile already has this name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்தப் பெயர் ஏற்கனவே வேறொரு சுயவிவரத்திற்கு உள்ளது</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="317"/>
@@ -740,62 +740,62 @@ e-mail</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="458"/>
         <source>Hide passwords until asked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கேட்கும் வரை கடவுச்சொற்களை மறை</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="459"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கணினித் தட்டில் ஒரு சின்னத்தைக் காட்டு</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="460"/>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தயார்</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="461"/>
         <source>Everything else can be changed later in Settings.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மற்ற அனைத்தையும் பின்னர் அமைப்புகளில் மாற்றலாம்.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="468"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் வரியைப் புள்ளிகளாகக் காட்டும்; &quot;கடவுச்சொல்லைக் காட்டு&quot; அதை வெளிப்படுத்தும்</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="479"/>
         <source>Store: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சேமிப்பகம்: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="481"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இது ஏற்கனவே ஒரு கடவுச்சொல் சேமிப்பகம்; இருக்கும் நிலையிலேயே பயன்படுத்தப்படும்.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="483"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இது தேர்வு செய்த சாவிகளுக்காக அமைக்கப்பட்டு, Git கீழ் வைக்கப்படும்.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="485"/>
         <source>It will be set up for the ticked keys.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இது தேர்வு செய்த சாவிகளுக்காக அமைக்கப்படும்.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="487"/>
         <source>GnuPG: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="488"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">செயல்பாடுகள் pass வழியாக இயங்கும்.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="489"/>
         <source>Operations run through gpg and git directly.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">செயல்பாடுகள் gpg மற்றும் git வழியாக நேரடியாக இயங்கும்.</translation>
     </message>
 </context>
 <context>
@@ -876,7 +876,7 @@ e-mail</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="45"/>
         <source>Browse</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உலாவு</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="68"/>
@@ -887,7 +887,7 @@ e-mail</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="77"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QtPass என்பது நிலையான Unix கடவுச்சொல் மேலாளரான &lt;i&gt;pass&lt;/i&gt;-க்கான வரைகலை முகப்பு: ஒவ்வொரு கடவுச்சொல்லும் GnuPG மூலம் குறியாக்கம் செய்யப்பட்ட ஒரு கோப்பு; அது நீங்கள் Git கீழ் வைக்கக்கூடிய ஒரு கோப்புறையில் சேமிக்கப்படுகிறது.&lt;br&gt;&lt;br&gt;அடுத்த பக்கங்கள் GnuPG-ஐக் கண்டறிந்து, குறியாக்கம் செய்ய உங்களிடம் ஒரு சாவி இருப்பதை உறுதி செய்து, உங்கள் கடவுச்சொற்கள் இருக்கும் கோப்புறையைத் தேர்ந்தெடுக்கும். நீங்கள் முடி என்பதை அழுத்தும் வரை எதுவும் எழுதப்படாது.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="137"/>
@@ -908,12 +908,12 @@ e-mail</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="162"/>
         <source>Password store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் சேமிப்பகம்</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="163"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 இல் ஏற்கனவே குறியாக்கம் செய்யப்பட்ட கோப்புகள் உள்ளன; அவை தேர்வு செய்த சாவிகளுக்கு மீண்டும் குறியாக்கம் செய்யப்படவில்லை. அதைச் செய்ய, தொடங்கிய பிறகு பயனர்கள் என்பதைத் திறக்கவும்.</translation>
     </message>
 </context>
 <context>
@@ -1205,32 +1205,32 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="275"/>
         <source>Generate a new key pair…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய சாவி ஜோடியை உருவாக்கு…</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="277"/>
         <source>Your key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் சாவி</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="278"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொற்கள் GnuPG சாவிகளுக்குக் குறியாக்கம் செய்யப்படுகின்றன. புதிய சேமிப்பகத்தைத் திறக்க முடிய வேண்டிய சாவிகளைத் தேர்வு செய்யவும்; இந்தக் கணினியில் ரகசியப் பகுதி உள்ள சாவி குறைந்தது ஒன்றாவது தேவை.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="306"/>
         <source>expired</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">காலாவதியானது</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="308"/>
         <source>not usable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பயன்படுத்த முடியாதது</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="321"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG-இல் இன்னும் ரகசியச் சாவி எதுவும் இல்லை. இங்கே ஒன்றை உருவாக்கவும், அல்லது முதலில் gpg மூலம் உங்கள் இருக்கும் சாவியை இறக்குமதி செய்யவும்.</translation>
     </message>
 </context>
 <context>
@@ -1597,17 +1597,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="499"/>
         <source>Show &amp;menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(&amp;M) பட்டிப் பட்டையைக் காட்டு</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="502"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பட்டிப் பட்டையை மறைக்கவும் அல்லது காட்டவும்; Ctrl+M அதை மீண்டும் கொண்டுவரும்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
@@ -2243,12 +2243,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்புறை</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய பதிவு சேரும் கடவுச்சொல் சேமிப்பகக் கோப்புறை</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
@@ -2258,12 +2258,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மரத்தில் தோன்றும்படியான பதிவின் பெயர்; / ஒரு துணைக்கோப்புறையில் வைக்கும்</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>e.g. github.com or work/vpn</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எ.கா. github.com அல்லது work/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
@@ -2318,7 +2318,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="76"/>
         <source>New password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய கடவுச்சொல்</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>
@@ -2328,32 +2328,32 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="216"/>
         <source>Give the entry a name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பதிவுக்கு ஒரு பெயரைக் கொடுக்கவும்.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="220"/>
         <source>A name cannot end in /.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பெயர் / உடன் முடிய முடியாது.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="229"/>
         <source>That name would resolve outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அந்தப் பெயர் கடவுச்சொல் சேமிப்பகத்திற்கு வெளியே சுட்டும்.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="233"/>
         <source>An entry called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 என்ற பெயரில் ஒரு பதிவு ஏற்கனவே உள்ளது.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="237"/>
         <source>%1 is a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ஒரு கோப்புறை.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="266"/>
         <source>Could not create the folder %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 கோப்புறையை உருவாக்க முடியவில்லை.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="377"/>
@@ -2426,7 +2426,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="189"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass கட்டளைவரிக் கருவியைப் பயன்படுத்து</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="191"/>
@@ -2436,22 +2436,22 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="192"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG குறியாக்கத்தைச் செய்கிறது. pass மற்றும் Git விருப்பத்தேர்வு; அவற்றின் வேலையை QtPass தானே செய்ய முடியும்.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="196"/>
         <source>Select executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இயங்குகோப்பைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="197"/>
         <source>All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அனைத்து கோப்புகள் (*)</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="199"/>
         <source>GnuPG</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
@@ -2466,17 +2466,17 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="204"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">gpg மற்றும் git ஐ நேரடியாக அழைப்பதற்குப் பதிலாக ஒவ்வொரு செயல்பாட்டிற்கும் pass ஸ்கிரிப்டை இயக்கு</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="244"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG கிடைக்கவில்லை. அதை (gpg அல்லது gpg2) நிறுவி, அதன் இருப்பிடத்தை இங்கே உள்ளிடவும்.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="247"/>
         <source>%1 is not an executable file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ஒரு இயங்குகோப்பு அல்ல.</translation>
     </message>
 </context>
 <context>
@@ -2666,22 +2666,22 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="351"/>
         <source>Keep the store under Git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சேமிப்பகத்தை Git கீழ் வை</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="353"/>
         <source>Password store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் சேமிப்பகம்</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="354"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் கடவுச்சொற்கள் இருக்கும் கோப்புறை. ஏற்கனவே உள்ள சேமிப்பகம் இருக்கும் நிலையிலேயே பயன்படுத்தப்படும்; காலியான அல்லது இல்லாத கோப்புறை நீங்கள் தேர்வு செய்த சாவிகளுக்காக அமைக்கப்படும்.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="358"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்புறை</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="360"/>
@@ -2694,45 +2694,48 @@ Continue?</source>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கமிட் செய்ய Git-இல் இன்னும் பெயரும் மின்னஞ்சலும் இல்லை. இவற்றை இயக்கவும்:
+git config --global user.name &quot;உங்கள் பெயர்&quot;
+git config --global user.email you@example.org
+பின்னர் அமைப்புகளில் Git-ஐ இயக்கவும்.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="389"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஒவ்வொரு மாற்றமும் ஒரு கமிட் ஆகும்; இன்னும் களஞ்சியமாக இல்லாத கோப்புறைக்கு ஒன்று உருவாக்கப்படும்</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="413"/>
         <source>Enter a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஒரு கோப்புறையை உள்ளிடவும்.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="422"/>
         <source>An existing password store with %n entries.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n பதிவு உள்ள ஏற்கனவே இருக்கும் கடவுச்சொல் சேமிப்பகம்.</numerusform>
+            <numerusform>%n பதிவுகள் உள்ள ஏற்கனவே இருக்கும் கடவுச்சொல் சேமிப்பகம்.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="425"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">காலியான கோப்புறை; இது கடவுச்சொல் சேமிப்பகமாக அமைக்கப்படும்.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="426"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்தக் கோப்புறை இன்னும் கடவுச்சொல் சேமிப்பகம் அல்ல; தேர்வு செய்த சாவிகளுக்கான .gpg-id இதில் எழுதப்படும்.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="429"/>
         <source>The folder does not exist yet; it will be created.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்தக் கோப்புறை இன்னும் இல்லை; இது உருவாக்கப்படும்.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="433"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பின்சென்று, குறியாக்கம் செய்ய குறைந்தது ஒரு சாவியையாவது தேர்வு செய்யவும்.</translation>
     </message>
 </context>
 <context>

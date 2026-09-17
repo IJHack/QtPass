@@ -376,22 +376,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="1020"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shrambe gesel, ki jih ta QtPass pozna; izberite eno, da jo uredite</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1035"/>
         <source>Add a profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dodaj profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pozabi izbrani profil; shramba sama ostane na disku</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1099"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1105"/>
@@ -449,12 +449,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1169"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Celoten 40-mestni prstni odtis ključa, kot ga zahteva pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1176"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nastavitve Git za ta profil; dokler je dejaven, nadomestijo tiste na zavihku Nastavitve</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1255"/>
@@ -538,7 +538,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="277"/>
         <source>Another profile already has this name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Drug profil že ima to ime</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="317"/>
@@ -680,62 +680,62 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="458"/>
         <source>Hide passwords until asked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skrij gesla, dokler jih ne zahtevate</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="459"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Prikaži ikono v sistemski vrstici</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="460"/>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pripravljeno</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="461"/>
         <source>Everything else can be changed later in Settings.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vse ostalo lahko pozneje spremenite v Nastavitvah.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="468"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vrstico z geslom prikaži kot pike; Prikaži geslo jo razkrije</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="479"/>
         <source>Store: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shramba: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="481"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Je že shramba gesel in bo uporabljena takšna, kot je.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="483"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nastavljena bo za označene ključe in dana pod Git.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="485"/>
         <source>It will be set up for the ticked keys.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nastavljena bo za označene ključe.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="487"/>
         <source>GnuPG: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="488"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Operacije potekajo prek pass.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="489"/>
         <source>Operations run through gpg and git directly.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Operacije potekajo neposredno prek gpg in git.</translation>
     </message>
 </context>
 <context>
@@ -816,7 +816,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="45"/>
         <source>Browse</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Prebrskaj</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="68"/>
@@ -827,7 +827,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="77"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QtPass je grafični vmesnik za &lt;i&gt;pass&lt;/i&gt;, standardni upravljalnik gesel za Unix: vsako geslo je datoteka, šifrirana z GnuPG, shranjena v mapi, ki jo lahko daste pod Git.&lt;br&gt;&lt;br&gt;Naslednje strani poiščejo GnuPG, poskrbijo, da imate ključ za šifriranje, in izberejo mapo, v kateri so vaša gesla. Nič se ne zapiše, dokler ne pritisnete Dokončaj.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="137"/>
@@ -848,12 +848,12 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="162"/>
         <source>Password store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shramba gesel</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="163"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 že vsebuje šifrirane datoteke; niso bile ponovno šifrirane za označene ključe. Če želite to storiti, po zagonu odprite Uporabnike.</translation>
     </message>
 </context>
 <context>
@@ -1151,32 +1151,32 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="275"/>
         <source>Generate a new key pair…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ustvari nov par ključev…</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="277"/>
         <source>Your key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vaš ključ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="278"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gesla se šifrirajo za ključe GnuPG. Označite ključe, ki naj bi lahko odpirali novo shrambo; potrebujete vsaj enega, katerega tajni del je na tem računalniku.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="306"/>
         <source>expired</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">potekel</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="308"/>
         <source>not usable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ni uporaben</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="321"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG še nima tajnega ključa. Ustvarite ga tukaj ali pa najprej uvozite svoj obstoječi ključ z gpg.</translation>
     </message>
 </context>
 <context>
@@ -1449,17 +1449,17 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="499"/>
         <source>Show &amp;menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Prikaži &amp;menijsko vrstico</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="502"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skrij ali prikaži menijsko vrstico; Ctrl+M jo vrne</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="510"/>
@@ -1963,12 +1963,12 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mapa</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mapa shrambe gesel, v katero gre nov vnos</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
@@ -1978,12 +1978,12 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ime vnosa, kot se prikaže v drevesu; / ga postavi v podmapo</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>e.g. github.com or work/vpn</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">npr. github.com ali sluzba/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
@@ -2038,7 +2038,7 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="76"/>
         <source>New password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Novo geslo</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>
@@ -2048,32 +2048,32 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="216"/>
         <source>Give the entry a name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vnosu dajte ime.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="220"/>
         <source>A name cannot end in /.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ime se ne sme končati z /.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="229"/>
         <source>That name would resolve outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">To ime bi kazalo izven shrambe gesel.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="233"/>
         <source>An entry called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vnos z imenom %1 že obstaja.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="237"/>
         <source>%1 is a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 je mapa.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="266"/>
         <source>Could not create the folder %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mape %1 ni bilo mogoče ustvariti.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="377"/>
@@ -2148,7 +2148,7 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="189"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Uporabi orodje ukazne vrstice pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="191"/>
@@ -2158,22 +2158,22 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="192"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG skrbi za šifriranje. pass in Git sta neobvezna; QtPass lahko njuno delo opravi sam.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="196"/>
         <source>Select executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izberite izvedljivo datoteko</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="197"/>
         <source>All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vse datoteke (*)</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="199"/>
         <source>GnuPG</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
@@ -2188,17 +2188,17 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="204"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Za vsako operacijo zaženi skript pass, namesto da bi neposredno klical gpg in git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="244"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG ni bil najden. Namestite ga (gpg ali gpg2) in tukaj vnesite njegovo mesto.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="247"/>
         <source>%1 is not an executable file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ni izvedljiva datoteka.</translation>
     </message>
 </context>
 <context>
@@ -2384,22 +2384,22 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="351"/>
         <source>Keep the store under Git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shrambo hrani pod Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="353"/>
         <source>Password store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shramba gesel</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="354"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mapa, v kateri so vaša gesla. Obstoječa shramba se uporabi takšna, kot je; prazna ali manjkajoča mapa se nastavi za ključe, ki ste jih označili.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="358"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mapa</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="360"/>
@@ -2412,47 +2412,50 @@ Nadaljujem?</translation>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git še nima imena in e-poštnega naslova za potrjevanje sprememb. Zaženite
+git config --global user.name &quot;Vaše ime&quot;
+git config --global user.email vi@example.org
+in nato v Nastavitvah vklopite Git.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="389"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vsaka sprememba postane potrditev (commit); mapa, ki še ni repozitorij, ga dobi</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="413"/>
         <source>Enter a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vnesite mapo.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="422"/>
         <source>An existing password store with %n entries.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Obstoječa shramba gesel, ki vsebuje %n vnos.</numerusform>
+            <numerusform>Obstoječa shramba gesel, ki vsebuje %n vnosa.</numerusform>
+            <numerusform>Obstoječa shramba gesel, ki vsebuje %n vnose.</numerusform>
+            <numerusform>Obstoječa shramba gesel, ki vsebuje %n vnosov.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="425"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Prazna mapa; nastavljena bo kot shramba gesel.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="426"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ta mapa še ni shramba gesel; vanjo bo zapisana datoteka .gpg-id za označene ključe.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="429"/>
         <source>The folder does not exist yet; it will be created.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mapa še ne obstaja; ustvarjena bo.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="433"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vrnite se nazaj in označite vsaj en ključ, za katerega naj se šifrira.</translation>
     </message>
 </context>
 <context>

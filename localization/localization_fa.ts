@@ -376,22 +376,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="1020"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مخازن رمز عبوری که این QtPass می‌شناسد؛ یکی را برای ویرایش انتخاب کنید</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1035"/>
         <source>Add a profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">افزودن نمایه</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نمایه انتخاب‌شده فراموش می‌شود؛ خود مخزن روی دیسک باقی می‌ماند</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1099"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نمایه</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1105"/>
@@ -449,12 +449,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1169"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">اثر انگشت کامل 40 کاراکتری کلید، همان‌طور که pass نیاز دارد</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1176"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تنظیمات Git برای این نمایه؛ تا زمانی که این نمایه فعال است، جایگزین تنظیمات زبانه تنظیمات می‌شوند</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1255"/>
@@ -538,7 +538,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="277"/>
         <source>Another profile already has this name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نمایه دیگری از قبل این نام را دارد</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="317"/>
@@ -680,62 +680,62 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="458"/>
         <source>Hide passwords until asked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پنهان کردن رمزهای عبور تا زمان درخواست</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="459"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نمایش آیکون در سینی سیستم</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="460"/>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">آماده</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="461"/>
         <source>Everything else can be changed later in Settings.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بقیه موارد را می‌توان بعداً در تنظیمات تغییر داد.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="468"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نمایش خط رمز عبور به صورت نقطه؛ «نمایش رمز عبور» آن را آشکار می‌کند</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="479"/>
         <source>Store: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مخزن: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="481"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">این پوشه از قبل یک مخزن رمز عبور است و به همان شکل استفاده می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="483"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">برای کلیدهای علامت‌زده راه‌اندازی و تحت Git قرار داده می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="485"/>
         <source>It will be set up for the ticked keys.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">برای کلیدهای علامت‌زده راه‌اندازی می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="487"/>
         <source>GnuPG: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="488"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">عملیات از طریق pass اجرا می‌شوند.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="489"/>
         <source>Operations run through gpg and git directly.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">عملیات مستقیماً از طریق gpg و git اجرا می‌شوند.</translation>
     </message>
 </context>
 <context>
@@ -816,7 +816,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="45"/>
         <source>Browse</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مرور</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="68"/>
@@ -827,7 +827,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="77"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QtPass یک رابط گرافیکی برای &lt;i&gt;pass&lt;/i&gt;، مدیر رمز عبور استاندارد یونیکس، است: هر رمز عبور فایلی است که با GnuPG رمزنگاری شده و در پوشه‌ای نگهداری می‌شود که می‌توانید آن را تحت Git قرار دهید.&lt;br&gt;&lt;br&gt;صفحه‌های بعدی GnuPG را پیدا می‌کنند، مطمئن می‌شوند که کلیدی برای رمزنگاری دارید و پوشه‌ای را که رمزهای عبور شما در آن قرار دارند انتخاب می‌کنند. تا زمانی که «پایان» را فشار ندهید، چیزی نوشته نمی‌شود.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="137"/>
@@ -848,12 +848,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="162"/>
         <source>Password store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مخزن رمز عبور</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="163"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 از قبل حاوی فایل‌های رمزنگاری‌شده است؛ آن‌ها برای کلیدهای علامت‌زده رمزنگاری مجدد نشدند. برای این کار، پس از شروع «کاربران» را باز کنید.</translation>
     </message>
 </context>
 <context>
@@ -1142,32 +1142,32 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="275"/>
         <source>Generate a new key pair…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تولید یک جفت کلید جدید…</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="277"/>
         <source>Your key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">کلید شما</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="278"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">رمزهای عبور با کلیدهای GnuPG رمزنگاری می‌شوند. کلیدهایی را علامت بزنید که باید بتوانند مخزن جدید را باز کنند؛ دست‌کم به یک کلید نیاز دارید که بخش خصوصی آن روی این دستگاه باشد.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="306"/>
         <source>expired</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">منقضی‌شده</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="308"/>
         <source>not usable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">غیرقابل استفاده</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="321"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG هنوز هیچ کلید خصوصی‌ای ندارد. یکی را همین‌جا تولید کنید، یا ابتدا کلید موجود خود را با gpg وارد کنید.</translation>
     </message>
 </context>
 <context>
@@ -1440,17 +1440,17 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="499"/>
         <source>Show &amp;menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;نمایش نوار منو</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="502"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پنهان کردن یا نمایش نوار منو؛ Ctrl+M آن را بازمی‌گرداند</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="510"/>
@@ -1960,12 +1960,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پوشه</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پوشه‌ای از مخزن رمز عبور که ورودی جدید در آن قرار می‌گیرد</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
@@ -1975,12 +1975,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نام ورودی، همان‌طور که در درخت نمایش داده می‌شود؛ یک / آن را در زیرپوشه قرار می‌دهد</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>e.g. github.com or work/vpn</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مثلاً github.com یا work/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
@@ -2035,7 +2035,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="76"/>
         <source>New password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">رمز عبور جدید</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>
@@ -2045,32 +2045,32 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="216"/>
         <source>Give the entry a name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">برای ورودی نامی وارد کنید.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="220"/>
         <source>A name cannot end in /.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نام نمی‌تواند به / ختم شود.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="229"/>
         <source>That name would resolve outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">این نام به مسیری خارج از مخزن رمز عبور اشاره می‌کند.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="233"/>
         <source>An entry called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ورودی‌ای با نام %1 از قبل وجود دارد.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="237"/>
         <source>%1 is a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 یک پوشه است.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="266"/>
         <source>Could not create the folder %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ایجاد پوشه %1 ممکن نبود.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="377"/>
@@ -2142,7 +2142,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="189"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">استفاده از ابزار خط فرمان pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="191"/>
@@ -2152,22 +2152,22 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="192"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">رمزنگاری را GnuPG انجام می‌دهد. pass و Git اختیاری‌اند؛ QtPass می‌تواند کار آن‌ها را خودش انجام دهد.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="196"/>
         <source>Select executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">انتخاب فایل اجرایی</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="197"/>
         <source>All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">همه فایل‌ها (*)</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="199"/>
         <source>GnuPG</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
@@ -2182,17 +2182,17 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="204"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">اجرای اسکریپت pass برای هر عملیات به جای فراخوانی مستقیم gpg و git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="244"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG پیدا نشد. آن را (gpg یا gpg2) نصب کنید و مکان آن را اینجا وارد کنید.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="247"/>
         <source>%1 is not an executable file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 یک فایل اجرایی نیست.</translation>
     </message>
 </context>
 <context>
@@ -2378,22 +2378,22 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="351"/>
         <source>Keep the store under Git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نگهداری مخزن تحت Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="353"/>
         <source>Password store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مخزن رمز عبور</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="354"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پوشه‌ای که رمزهای عبور شما در آن قرار دارند. مخزن موجود به همان شکل استفاده می‌شود؛ پوشه خالی یا ناموجود برای کلیدهایی که علامت زده‌اید راه‌اندازی می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="358"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پوشه</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="360"/>
@@ -2406,44 +2406,47 @@ Continue?</source>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git هنوز نام و ایمیلی برای کامیت کردن ندارد. دستورهای
+git config --global user.name &quot;نام شما&quot;
+git config --global user.email you@example.org
+را اجرا کنید و سپس Git را در تنظیمات روشن کنید.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="389"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">هر تغییر به یک کامیت تبدیل می‌شود؛ پوشه‌ای که هنوز مخزن Git نیست، به یکی تبدیل می‌شود</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="413"/>
         <source>Enter a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">یک پوشه وارد کنید.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="422"/>
         <source>An existing password store with %n entries.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>مخزن رمز عبور موجود با %n ورودی.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="425"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">یک پوشه خالی؛ به عنوان مخزن رمز عبور راه‌اندازی می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="426"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">این پوشه هنوز مخزن رمز عبور نیست؛ یک .gpg-id برای کلیدهای علامت‌زده در آن نوشته می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="429"/>
         <source>The folder does not exist yet; it will be created.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">این پوشه هنوز وجود ندارد؛ ایجاد خواهد شد.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="433"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بازگردید و دست‌کم یک کلید برای رمزنگاری علامت بزنید.</translation>
     </message>
 </context>
 <context>

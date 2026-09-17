@@ -376,22 +376,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="1020"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਉਹ ਪਾਸਵਰਡ ਸਟੋਰ ਜੋ ਇਹ QtPass ਜਾਣਦਾ ਹੈ; ਸੋਧਣ ਲਈ ਇੱਕ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1035"/>
         <source>Add a profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਜੋੜੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਚੁਣਿਆ ਪ੍ਰੋਫਾਈਲ ਭੁਲਾ ਦਿਓ; ਸਟੋਰ ਆਪ ਡਿਸਕ &apos;ਤੇ ਰਹਿੰਦਾ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1099"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1105"/>
@@ -449,12 +449,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1169"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕੁੰਜੀ ਦਾ ਪੂਰਾ 40-ਅੱਖਰਾਂ ਦਾ ਫਿੰਗਰਪ੍ਰਿੰਟ, ਜਿਵੇਂ pass ਨੂੰ ਚਾਹੀਦਾ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1176"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇਸ ਪ੍ਰੋਫਾਈਲ ਲਈ Git ਸੈੱਟਿੰਗਜ਼; ਜਦੋਂ ਇਹ ਸਰਗਰਮ ਹੋਵੇ ਤਾਂ ਇਹ ਸੈੱਟਿੰਗਜ਼ ਟੈਬ ਵਾਲੀਆਂ ਦੀ ਥਾਂ ਲੈਂਦੀਆਂ ਹਨ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1255"/>
@@ -538,7 +538,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="277"/>
         <source>Another profile already has this name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇਹ ਨਾਮ ਪਹਿਲਾਂ ਹੀ ਕਿਸੇ ਹੋਰ ਪ੍ਰੋਫਾਈਲ ਦਾ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="317"/>
@@ -680,62 +680,62 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="458"/>
         <source>Hide passwords until asked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਮੰਗੇ ਜਾਣ ਤੱਕ ਪਾਸਵਰਡ ਲੁਕਾਓ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="459"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸਿਸਟਮ ਟਰੇ ਵਿੱਚ ਆਈਕਨ ਦਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="460"/>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਤਿਆਰ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="461"/>
         <source>Everything else can be changed later in Settings.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਬਾਕੀ ਸਭ ਕੁਝ ਬਾਅਦ ਵਿੱਚ ਸੈੱਟਿੰਗਜ਼ ਵਿੱਚ ਬਦਲਿਆ ਜਾ ਸਕਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="468"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਵਾਲੀ ਲਾਈਨ ਬਿੰਦੀਆਂ ਵਜੋਂ ਦਿਖਾਓ; &quot;ਪਾਸਵਰਡ ਦਿਖਾਓ&quot; ਇਸਨੂੰ ਪ੍ਰਗਟ ਕਰਦਾ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="479"/>
         <source>Store: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸਟੋਰ: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="481"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇਹ ਪਹਿਲਾਂ ਹੀ ਇੱਕ ਪਾਸਵਰਡ ਸਟੋਰ ਹੈ ਅਤੇ ਜਿਵੇਂ ਹੈ ਉਵੇਂ ਹੀ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="483"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇਹ ਚੁਣੀਆਂ ਕੁੰਜੀਆਂ ਲਈ ਸੈੱਟ ਕੀਤਾ ਜਾਵੇਗਾ ਅਤੇ Git ਹੇਠ ਰੱਖਿਆ ਜਾਵੇਗਾ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="485"/>
         <source>It will be set up for the ticked keys.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇਹ ਚੁਣੀਆਂ ਕੁੰਜੀਆਂ ਲਈ ਸੈੱਟ ਕੀਤਾ ਜਾਵੇਗਾ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="487"/>
         <source>GnuPG: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="488"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕਾਰਵਾਈਆਂ pass ਰਾਹੀਂ ਚੱਲਦੀਆਂ ਹਨ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="489"/>
         <source>Operations run through gpg and git directly.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕਾਰਵਾਈਆਂ ਸਿੱਧੀਆਂ gpg ਅਤੇ git ਰਾਹੀਂ ਚੱਲਦੀਆਂ ਹਨ।</translation>
     </message>
 </context>
 <context>
@@ -816,7 +816,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="45"/>
         <source>Browse</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਬ੍ਰਾਊਜ਼ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="68"/>
@@ -827,7 +827,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="77"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QtPass, ਮਿਆਰੀ Unix ਪਾਸਵਰਡ ਮੈਨੇਜਰ &lt;i&gt;pass&lt;/i&gt; ਲਈ ਇੱਕ ਗ੍ਰਾਫ਼ਿਕਲ ਫਰੰਟ-ਐਂਡ ਹੈ: ਹਰ ਪਾਸਵਰਡ GnuPG ਨਾਲ ਐਨਕ੍ਰਿਪਟ ਕੀਤੀ ਇੱਕ ਫਾਈਲ ਹੈ, ਜੋ ਇੱਕ ਅਜਿਹੇ ਫੋਲਡਰ ਵਿੱਚ ਰੱਖੀ ਜਾਂਦੀ ਹੈ ਜਿਸਨੂੰ ਤੁਸੀਂ Git ਹੇਠ ਰੱਖ ਸਕਦੇ ਹੋ।&lt;br&gt;&lt;br&gt;ਅਗਲੇ ਪੰਨੇ GnuPG ਲੱਭਦੇ ਹਨ, ਯਕੀਨੀ ਬਣਾਉਂਦੇ ਹਨ ਕਿ ਤੁਹਾਡੇ ਕੋਲ ਐਨਕ੍ਰਿਪਟ ਕਰਨ ਲਈ ਕੋਈ ਕੁੰਜੀ ਹੈ, ਅਤੇ ਉਹ ਫੋਲਡਰ ਚੁਣਦੇ ਹਨ ਜਿਸ ਵਿੱਚ ਤੁਹਾਡੇ ਪਾਸਵਰਡ ਰਹਿੰਦੇ ਹਨ। ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ &quot;ਮੁਕੰਮਲ&quot; ਨਹੀਂ ਦਬਾਉਂਦੇ, ਕੁਝ ਵੀ ਨਹੀਂ ਲਿਖਿਆ ਜਾਂਦਾ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="137"/>
@@ -848,12 +848,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="162"/>
         <source>Password store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਸਟੋਰ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="163"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ ਐਨਕ੍ਰਿਪਟ ਕੀਤੀਆਂ ਫਾਈਲਾਂ ਹਨ; ਉਹਨਾਂ ਨੂੰ ਚੁਣੀਆਂ ਕੁੰਜੀਆਂ ਲਈ ਦੁਬਾਰਾ ਐਨਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਗਿਆ। ਅਜਿਹਾ ਕਰਨ ਲਈ ਸ਼ੁਰੂ ਹੋਣ ਤੋਂ ਬਾਅਦ &quot;ਵਿਸ਼ਵਾਸੀ&quot; ਖੋਲ੍ਹੋ।</translation>
     </message>
 </context>
 <context>
@@ -1145,32 +1145,32 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="275"/>
         <source>Generate a new key pair…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਨਵੀਂ ਕੁੰਜੀ ਜੋੜੀ ਬਣਾਓ…</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="277"/>
         <source>Your key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਤੁਹਾਡੀ ਕੁੰਜੀ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="278"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ GnuPG ਕੁੰਜੀਆਂ ਲਈ ਐਨਕ੍ਰਿਪਟ ਕੀਤੇ ਜਾਂਦੇ ਹਨ। ਉਹ ਕੁੰਜੀਆਂ ਚੁਣੋ ਜੋ ਨਵਾਂ ਸਟੋਰ ਖੋਲ੍ਹ ਸਕਣ; ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਅਜਿਹੀ ਕੁੰਜੀ ਚਾਹੀਦੀ ਹੈ ਜਿਸਦਾ ਗੁਪਤ ਹਿੱਸਾ ਇਸ ਮਸ਼ੀਨ &apos;ਤੇ ਹੋਵੇ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="306"/>
         <source>expired</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਮਿਆਦ ਪੁੱਗੀ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="308"/>
         <source>not usable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਵਰਤੋਂਯੋਗ ਨਹੀਂ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="321"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG ਕੋਲ ਅਜੇ ਕੋਈ ਗੁਪਤ ਕੁੰਜੀ ਨਹੀਂ ਹੈ। ਇੱਥੇ ਇੱਕ ਬਣਾਓ, ਜਾਂ ਪਹਿਲਾਂ gpg ਨਾਲ ਆਪਣੀ ਮੌਜੂਦਾ ਕੁੰਜੀ ਇੰਪੋਰਟ ਕਰੋ।</translation>
     </message>
 </context>
 <context>
@@ -1443,17 +1443,17 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="499"/>
         <source>Show &amp;menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;ਮੀਨੂ ਬਾਰ ਦਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="502"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਮੀਨੂ ਬਾਰ ਲੁਕਾਓ ਜਾਂ ਦਿਖਾਓ; Ctrl+M ਇਸਨੂੰ ਵਾਪਸ ਲਿਆਉਂਦਾ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="510"/>
@@ -1959,12 +1959,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਫੋਲਡਰ</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਸਟੋਰ ਦਾ ਉਹ ਫੋਲਡਰ ਜਿਸ ਵਿੱਚ ਨਵੀਂ ਐਂਟਰੀ ਜਾਂਦੀ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
@@ -1974,12 +1974,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਐਂਟਰੀ ਦਾ ਨਾਮ, ਜਿਵੇਂ ਇਹ ਟ੍ਰੀ ਵਿੱਚ ਦਿਖਾਈ ਦਿੰਦਾ ਹੈ; / ਇਸਨੂੰ ਇੱਕ ਸਬ-ਫੋਲਡਰ ਵਿੱਚ ਰੱਖਦਾ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>e.g. github.com or work/vpn</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਜਿਵੇਂ github.com ਜਾਂ work/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
@@ -2034,7 +2034,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="76"/>
         <source>New password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਨਵਾਂ ਪਾਸਵਰਡ</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>
@@ -2044,32 +2044,32 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="216"/>
         <source>Give the entry a name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਐਂਟਰੀ ਨੂੰ ਇੱਕ ਨਾਮ ਦਿਓ।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="220"/>
         <source>A name cannot end in /.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਨਾਮ / ਨਾਲ ਖ਼ਤਮ ਨਹੀਂ ਹੋ ਸਕਦਾ।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="229"/>
         <source>That name would resolve outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇਹ ਨਾਮ ਪਾਸਵਰਡ ਸਟੋਰ ਤੋਂ ਬਾਹਰ ਜਾ ਪਹੁੰਚੇਗਾ।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="233"/>
         <source>An entry called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਨਾਮ ਦੀ ਐਂਟਰੀ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="237"/>
         <source>%1 is a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਇੱਕ ਫੋਲਡਰ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="266"/>
         <source>Could not create the folder %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਫੋਲਡਰ %1 ਨਹੀਂ ਬਣਾਇਆ ਜਾ ਸਕਿਆ।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="377"/>
@@ -2142,7 +2142,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="189"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass ਕਮਾਂਡ-ਲਾਈਨ ਟੂਲ ਵਰਤੋ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="191"/>
@@ -2152,22 +2152,22 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="192"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਐਨਕ੍ਰਿਪਸ਼ਨ GnuPG ਕਰਦਾ ਹੈ। pass ਅਤੇ Git ਵਿਕਲਪਿਕ ਹਨ; QtPass ਉਹਨਾਂ ਦਾ ਕੰਮ ਆਪ ਕਰ ਸਕਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="196"/>
         <source>Select executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਐਗਜ਼ੀਕਿਊਟੇਬਲ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="197"/>
         <source>All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸਾਰੀਆਂ ਫਾਈਲਾਂ (*)</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="199"/>
         <source>GnuPG</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
@@ -2182,17 +2182,17 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="204"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">gpg ਅਤੇ git ਨੂੰ ਸਿੱਧਾ ਚਲਾਉਣ ਦੀ ਥਾਂ ਹਰ ਕਾਰਵਾਈ ਲਈ pass ਸਕ੍ਰਿਪਟ ਚਲਾਓ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="244"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG ਨਹੀਂ ਮਿਲਿਆ। ਇਸਨੂੰ ਇੰਸਟਾਲ ਕਰੋ (gpg ਜਾਂ gpg2) ਅਤੇ ਇਸਦਾ ਟਿਕਾਣਾ ਇੱਥੇ ਦਰਜ ਕਰੋ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="247"/>
         <source>%1 is not an executable file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਕੋਈ ਐਗਜ਼ੀਕਿਊਟੇਬਲ ਫਾਈਲ ਨਹੀਂ ਹੈ।</translation>
     </message>
 </context>
 <context>
@@ -2378,22 +2378,22 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="351"/>
         <source>Keep the store under Git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸਟੋਰ ਨੂੰ Git ਹੇਠ ਰੱਖੋ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="353"/>
         <source>Password store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਸਟੋਰ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="354"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਉਹ ਫੋਲਡਰ ਜਿਸ ਵਿੱਚ ਤੁਹਾਡੇ ਪਾਸਵਰਡ ਰਹਿੰਦੇ ਹਨ। ਮੌਜੂਦਾ ਸਟੋਰ ਜਿਵੇਂ ਹੈ ਉਵੇਂ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ; ਖਾਲੀ ਜਾਂ ਗ਼ੈਰ-ਮੌਜੂਦ ਫੋਲਡਰ ਤੁਹਾਡੀਆਂ ਚੁਣੀਆਂ ਕੁੰਜੀਆਂ ਲਈ ਸੈੱਟ ਕੀਤਾ ਜਾਂਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="358"/>
         <source>Folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਫੋਲਡਰ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="360"/>
@@ -2406,45 +2406,48 @@ Continue?</source>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git ਕੋਲ ਕਮਿੱਟ ਕਰਨ ਲਈ ਅਜੇ ਕੋਈ ਨਾਮ ਅਤੇ ਈ-ਮੇਲ ਨਹੀਂ ਹੈ। ਇਹ ਚਲਾਓ
+git config --global user.name &quot;ਤੁਹਾਡਾ ਨਾਮ&quot;
+git config --global user.email you@example.org
+ਅਤੇ ਬਾਅਦ ਵਿੱਚ ਸੈੱਟਿੰਗਜ਼ ਵਿੱਚ Git ਚਾਲੂ ਕਰੋ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="389"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਹਰ ਤਬਦੀਲੀ ਇੱਕ ਕਮਿੱਟ ਬਣ ਜਾਂਦੀ ਹੈ; ਜੋ ਫੋਲਡਰ ਅਜੇ ਰਿਪੋਜ਼ਟਰੀ ਨਹੀਂ ਹੈ, ਉਸ ਵਿੱਚ ਇੱਕ ਬਣਾ ਦਿੱਤੀ ਜਾਂਦੀ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="413"/>
         <source>Enter a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇੱਕ ਫੋਲਡਰ ਦਰਜ ਕਰੋ।</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="422"/>
         <source>An existing password store with %n entries.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n ਐਂਟਰੀ ਵਾਲਾ ਮੌਜੂਦਾ ਪਾਸਵਰਡ ਸਟੋਰ।</numerusform>
+            <numerusform>%n ਐਂਟਰੀਆਂ ਵਾਲਾ ਮੌਜੂਦਾ ਪਾਸਵਰਡ ਸਟੋਰ।</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="425"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਖਾਲੀ ਫੋਲਡਰ; ਇਸਨੂੰ ਪਾਸਵਰਡ ਸਟੋਰ ਵਜੋਂ ਸੈੱਟ ਕੀਤਾ ਜਾਵੇਗਾ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="426"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇਹ ਫੋਲਡਰ ਅਜੇ ਪਾਸਵਰਡ ਸਟੋਰ ਨਹੀਂ ਹੈ; ਇਸ ਵਿੱਚ ਚੁਣੀਆਂ ਕੁੰਜੀਆਂ ਲਈ ਇੱਕ .gpg-id ਲਿਖੀ ਜਾਵੇਗੀ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="429"/>
         <source>The folder does not exist yet; it will be created.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇਹ ਫੋਲਡਰ ਅਜੇ ਮੌਜੂਦ ਨਹੀਂ ਹੈ; ਇਸਨੂੰ ਬਣਾਇਆ ਜਾਵੇਗਾ।</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="433"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਿੱਛੇ ਜਾਓ ਅਤੇ ਐਨਕ੍ਰਿਪਟ ਕਰਨ ਲਈ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਕੁੰਜੀ ਚੁਣੋ।</translation>
     </message>
 </context>
 <context>
