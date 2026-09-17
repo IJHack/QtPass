@@ -477,10 +477,13 @@ void DoneWizardPage::initializePage() {
   const QString store = QDir::toNativeSeparators(QDir::cleanPath(s.passStore));
   QStringList lines;
   lines << tr("Store: %1").arg(store.toHtmlEscaped());
-  lines << (FirstRunWizard::isStore(s.passStore)
-                ? tr("It is already a password store and is used as it is.")
-                : tr("It will be set up for the ticked keys%1.")
-                      .arg(s.useGit ? tr(" and put under Git") : QString()));
+  if (FirstRunWizard::isStore(s.passStore)) {
+    lines << tr("It is already a password store and is used as it is.");
+  } else if (s.useGit) {
+    lines << tr("It will be set up for the ticked keys and put under Git.");
+  } else {
+    lines << tr("It will be set up for the ticked keys.");
+  }
   lines << tr("GnuPG: %1").arg(s.gpgExecutable.toHtmlEscaped());
   lines << (s.usePass ? tr("Operations run through pass.")
                       : tr("Operations run through gpg and git directly."));
