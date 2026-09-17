@@ -81,18 +81,29 @@ qtpass.iss
 ### 5. Git Tags
 
 ```bash
-git tag -a vX.Y.Z -m "QtPass vX.Y.Z Release"
+git tag -s vX.Y.Z -m "QtPass vX.Y.Z"
 git push origin vX.Y.Z
 ```
 
 ### 6. GitHub Release
 
+Pushing the tag runs `release-installers.yml`. Its `publish` job builds the
+Windows installer and the macOS dmg, adds `QtPass-x.y.z.tar.gz` / `.zip`
+source archives, creates the release **as a draft** if none exists yet and
+attaches all four. Re-running the workflow replaces the assets of a _draft_;
+on a published release it only adds missing ones, so signed assets are never
+swapped under their `.asc`. Then:
+
 ```bash
-gh release create vX.Y.Z \
-  --title "QtPass vX.Y.Z" \
-  --notes-file CHANGELOG.md \
-  qtpass-x.y.z.tar.gz
+gh run watch                                   # or wait for the Release Build run
+gh release edit vX.Y.Z --notes-file <(sed -n '/^## \[X.Y.Z\]/,/^## \[/p' CHANGELOG.md | sed '$d')
+./scripts/sign-release-assets.sh vX.Y.Z        # .asc for every asset (maintainer's key)
+gh release edit vX.Y.Z --draft=false
 ```
+
+If a release for the tag already exists (created by hand), the job only
+uploads into it. Nothing needs downloading from the Actions artifacts page
+any more.
 
 ### 7. GitHub Pages (site)
 
