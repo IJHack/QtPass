@@ -3,6 +3,8 @@
 #ifndef SRC_IMITATEPASS_H_
 #define SRC_IMITATEPASS_H_
 
+#include "gpgidsigner.h"
+#include "nativegrep.h"
 #include "pass.h"
 #include "simpletransaction.h"
 
@@ -25,24 +27,25 @@ class QThread;
  *
  * This is used as a fallback when RealPass cannot be initialized.
  */
-class ImitatePass : public Pass, private simpleTransaction {
+class ImitatePass : public Pass {
   Q_OBJECT
 
   friend class tst_util;
 
 protected:
   /**
-   * @brief Verify .gpg-id file exists and is valid.
-   * @param file Path to check.
-   * @return true if valid.
+   * @brief The signer for this store's `.gpg-id`, bound to the configured gpg
+   * and signing keys and to execBlocking(), so a verification on the
+   * re-encryption worker can be interrupted like every other gpg run there.
+   * @return A signer; cheap to build, valid while m_settings is.
+   */
+  auto gpgIdSigner() -> GpgIdSigner;
+  /**
+   * @brief Verify the detached signature of a `.gpg-id`.
+   * @param file The `.gpg-id`.
+   * @return true when valid, or when no signing key is configured.
    */
   auto verifyGpgIdFile(const QString &file) -> bool;
-  /**
-   * @brief Check if signing keys are valid.
-   * @param signingKeys List of key IDs.
-   * @return true if all keys valid.
-   */
-  auto checkSigningKeys(const QStringList &signingKeys) -> bool;
   /**
    * @brief Write recipients to .gpg-id file.
    * @param gpgIdFile Path to .gpg-id file.
@@ -50,13 +53,12 @@ protected:
    */
   void writeGpgIdFile(const QString &gpgIdFile, const QList<UserInfo> &users);
   /**
-   * @brief Sign .gpg-id file with signing keys.
+   * @brief Sign a `.gpg-id` with the configured key and verify the result;
+   * failures are reported through critical().
    * @param gpgIdFile Path to .gpg-id file.
-   * @param signingKeys Key IDs to sign with.
    * @return true on success, false on failure.
    */
-  auto signGpgIdFile(const QString &gpgIdFile, const QStringList &signingKeys)
-      -> bool;
+  auto signGpgIdFile(const QString &gpgIdFile) -> bool;
   /**
    * @brief Stage and commit .gpg-id (and optionally its signature) in git.
    *
@@ -341,8 +343,11 @@ public:
   void Grep(QString pattern, bool caseInsensitive) override;
 
 private:
-  int m_grepSeq = 0;
-  QList<QThread *> m_grepThreads;
+  /// Groups the git/gpg processes of one operation (Insert, Remove, Move,
+  /// Copy) into a single completion; see finished() and transactionHelper.
+  simpleTransaction m_transaction;
+  /// Background search over the decrypted store; relays to finishedGrep.
+  NativeGrep m_grep;
   QString m_transactionOutput;
 
   /**
@@ -418,14 +423,6 @@ private:
    * @return Path suitable for the configured gpg executable.
    */
   auto pgpg(const QString &path) const -> QString;
-
-  static auto grepMatchFile(const QProcessEnvironment &env,
-                            const QString &gpgExe, const QString &filePath,
-                            const QRegularExpression &rx) -> QStringList;
-  static auto grepScanStore(const QProcessEnvironment &env,
-                            const QString &gpgExe, const QString &storeDir,
-                            const QRegularExpression &rx)
-      -> QList<QPair<QString, QStringList>>;
 };
 
 #endif // SRC_IMITATEPASS_H_

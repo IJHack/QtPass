@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QCoreApplication>
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QFileInfo>
 #include <QList>
@@ -26,6 +27,7 @@
 #include "../../../src/enums.h"
 #include "../../../src/filecontent.h"
 #include "../../../src/imitatepass.h"
+#include "../../../src/nativegrep.h"
 #include "../../../src/pass.h"
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/pathvalidator.h"
@@ -258,6 +260,7 @@ private Q_SLOTS:
   // ImitatePass::Grep / helpers
   void grepMatchFileFailedDecryptReturnsEmpty();
   void grepScanStoreEmptyDirReturnsEmpty();
+  void grepCancelEndsARunningGpg();
   void grepImitatePassEmptyStoreEmitsEmpty();
   void grepImitatePassInvalidRegexEmitsEmpty();
   // SSH_AUTH_SOCK auto-probe (issue #543)
@@ -2431,8 +2434,8 @@ void tst_util::grepMatchFileFailedDecryptReturnsEmpty() {
   QRegularExpression rx(QStringLiteral(".*"));
   const QProcessEnvironment env;
   const QStringList matches =
-      ImitatePass::grepMatchFile(env, QStringLiteral("/nonexistent/gpg"),
-                                 QStringLiteral("/no/such.gpg"), rx);
+      NativeGrep::matchFile(env, QStringLiteral("/nonexistent/gpg"),
+                            QStringLiteral("/no/such.gpg"), rx);
   QVERIFY(matches.isEmpty());
 }
 
@@ -2441,9 +2444,50 @@ void tst_util::grepScanStoreEmptyDirReturnsEmpty() {
   QVERIFY(tmp.isValid());
   QRegularExpression rx(QStringLiteral(".*"));
   const QProcessEnvironment env;
-  const auto results = ImitatePass::grepScanStore(
+  const auto results = NativeGrep::scanStore(
       env, QStringLiteral("/nonexistent/gpg"), tmp.path(), rx);
   QVERIFY(results.isEmpty());
+}
+
+/**
+ * @brief cancel() does not wait for the file gpg is busy with: the flag the
+ * worker polls makes Executor terminate that gpg, so a search stuck behind a
+ * pinentry (here: a gpg that sleeps) ends within moments, not minutes.
+ */
+void tst_util::grepCancelEndsARunningGpg() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  QFile store(tmp.filePath(QStringLiteral("entry.gpg")));
+  QVERIFY(store.open(QIODevice::WriteOnly));
+  store.write("not really encrypted");
+  store.close();
+  const QString gpg = tmp.filePath(QStringLiteral("gpg"));
+  QFile script(gpg);
+  QVERIFY(script.open(QIODevice::WriteOnly));
+  script.write("#!/bin/sh\nsleep 30\n");
+  script.close();
+  QVERIFY(QFile::setPermissions(gpg, QFile::ReadOwner | QFile::WriteOwner |
+                                         QFile::ExeOwner));
+
+  NativeGrep grep;
+  QSignalSpy finished(&grep, &NativeGrep::finished);
+  QElapsedTimer elapsed;
+  elapsed.start();
+  grep.search(QStringLiteral("x"), false, gpg, tmp.path(),
+              QProcessEnvironment::systemEnvironment());
+  QTest::qWait(200); // let the worker start its gpg
+  grep.cancel();
+  QVERIFY2(finished.wait(10000), "the cancelled search must still report");
+  QVERIFY2(elapsed.elapsed() < 10000,
+           qPrintable(QStringLiteral("took %1 ms: gpg was not terminated")
+                          .arg(elapsed.elapsed())));
+  using GrepResults = QList<QPair<QString, QStringList>>;
+  const auto results = finished.first().first().value<GrepResults>();
+  QVERIFY(results.isEmpty());
+#endif
 }
 
 void tst_util::grepImitatePassEmptyStoreEmitsEmpty() {
