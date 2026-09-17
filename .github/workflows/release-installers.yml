@@ -291,12 +291,14 @@ jobs:
       # linuxdeploy and its Qt plugin are AppImages themselves. The build
       # script runs them with APPIMAGE_EXTRACT_AND_RUN=1 so no FUSE is needed
       # here, but the Qt plugin still shells out to patchelf and friends.
+      # appstream provides appstreamcli, which the script uses to validate
+      # the metainfo file.
       - name: Install packaging dependencies
         if: steps.need_build.outputs.run_build == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            libfuse2t64 patchelf desktop-file-utils file xvfb
+            libfuse2t64 patchelf desktop-file-utils file xvfb appstream
 
       - name: Resolve AppImage version
         if: steps.need_build.outputs.run_build == 'true'

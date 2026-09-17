@@ -57,7 +57,10 @@ fi
 
 echo "==> QtPass ${VERSION} (${ARCH}) using ${qmake_bin}"
 
-rm -rf "${build_dir}"
+# Start from a clean build, but keep the downloaded tools between runs.
+if [ -d "${build_dir}" ]; then
+	find "${build_dir}" -mindepth 1 -maxdepth 1 ! -name tools -exec rm -rf {} +
+fi
 mkdir -p "${appdir}" "${tools_dir}"
 
 # 1. Build and stage. main/main.pro already installs the binary, desktop file,
@@ -85,7 +88,18 @@ for required in "${binary}" "${desktop}" "${icon}"; do
 	fi
 done
 
-# 2. Fetch linuxdeploy and its Qt plugin.
+# 2. Validate the AppStream metadata ourselves. appimagetool would do it too,
+#    but its check insists on usr/share/metainfo/<id>.appdata.xml, and the
+#    file is installed as qtpass.appdata.xml because the RPM spec and the
+#    Flatpak manifest (rename-appdata-file) expect that name. Renaming it
+#    everywhere is a separate change, so appimagetool's own check is turned
+#    off below and the file is validated here when appstreamcli is around.
+if command -v appstreamcli >/dev/null 2>&1; then
+	echo "==> Validating AppStream metadata"
+	appstreamcli validate --no-net "${appdir}/usr/share/metainfo/qtpass.appdata.xml"
+fi
+
+# 3. Fetch linuxdeploy, its Qt plugin and the AppImage runtime.
 fetch_tool() {
 	local name="$1" url="$2" dest="${tools_dir}/$1"
 	if [ ! -x "${dest}" ]; then
@@ -99,14 +113,18 @@ fetch_tool() {
 
 base="https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous"
 plugin_base="https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous"
+runtime_base="https://github.com/AppImage/type2-runtime/releases/download/continuous"
 linuxdeploy="$(fetch_tool "linuxdeploy-${ARCH}.AppImage" "${base}/linuxdeploy-${ARCH}.AppImage")"
 fetch_tool "linuxdeploy-plugin-qt-${ARCH}.AppImage" \
 	"${plugin_base}/linuxdeploy-plugin-qt-${ARCH}.AppImage" >/dev/null
+# appimagetool downloads this itself when not given one, in the middle of
+# packaging and without a timeout; fetching it here keeps that step offline.
+runtime="$(fetch_tool "runtime-${ARCH}" "${runtime_base}/runtime-${ARCH}")"
 
 # The plugin is discovered on PATH by linuxdeploy, not passed as a path.
 export PATH="${tools_dir}:${PATH}"
 
-# 3. Bundle Qt and produce the AppImage.
+# 4. Bundle Qt and produce the AppImage.
 #    Extracting instead of mounting keeps this working in containers and CI
 #    runners without FUSE; the AppImage we emit is unaffected.
 export APPIMAGE_EXTRACT_AND_RUN=1
@@ -115,6 +133,9 @@ export OUTPUT="QtPass-${VERSION}-${ARCH}.AppImage"
 # QtPass draws its toolbar/tray icons from Qt's SVG image plugin; without this
 # the theme falls back to blank icons on hosts that lack qt6-svg.
 export EXTRA_QT_PLUGINS="svg"
+export LDAI_RUNTIME_FILE="${runtime}"
+# See step 2: the metadata is validated above, under the name it ships with.
+export LDAI_NO_APPSTREAM=1
 
 echo "==> Bundling Qt and packaging"
 (
