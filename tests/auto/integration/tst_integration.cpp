@@ -532,8 +532,9 @@ void tst_integration::imitatePass_insertAndGrep() {
 
 // Verifies the env-aware Executor failure path used by
 // NativeGrep::matchFile(): when gpg returns non-zero on a corrupt /
-// foreign .gpg file inside the store, NativeGrep::scanStore must drop that file's
-// results and keep walking — not abort the whole scan or surface garbage.
+// foreign .gpg file inside the store, NativeGrep::scanStore must drop that
+// file's results and keep walking — not abort the whole scan or surface
+// garbage.
 //
 // Plants two legitimate entries, then drops two non-gpg payloads with a
 // .gpg extension into the store (one with the "token" substring and one
