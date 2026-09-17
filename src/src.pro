@@ -108,6 +108,7 @@ SOURCES   += mainwindow.cpp \
              imitatepass.cpp \
              nativegrep.cpp \
              executor.cpp \
+             firstrunwizard.cpp \
              simpletransaction.cpp \
              filecontent.cpp \
              clipboardmanager.cpp \
@@ -154,6 +155,7 @@ HEADERS   += mainwindow.h \
              imitatepass.h \
              nativegrep.h \
              executor.h \
+             firstrunwizard.h \
              simpletransaction.h \
              filecontent.h \
              passwordconfiguration.h \

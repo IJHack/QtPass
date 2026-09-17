@@ -15,6 +15,7 @@
  */
 
 #include <QApplication>
+#include <QCheckBox>
 #include <QClipboard>
 #include <QDialog>
 #include <QDialogButtonBox>
@@ -51,6 +52,7 @@
 #include "../../../src/clipboardmanager.h"
 #include "../../../src/configdialog.h"
 #include "../../../src/filecontent.h"
+#include "../../../src/firstrunwizard.h"
 #include "../../../src/mainwindow.h"
 #include "../../../src/passworddisplaypanel.h"
 #include "../../../src/qtpasssettings.h"
@@ -120,8 +122,8 @@ private Q_SLOTS:
   void fieldFrameBorderFollowsRuntimePaletteChange();
   void toolBarDropsStaleStylePaletteAfterThemeSwitch();
   void toolBarKeepsHeaderTintInSameTheme();
-  void firstRunAcceptedWithInvalidStoreAsksAgainUntilCancelled();
-  void firstRunAcceptedWithInvalidStoreAsksAgainUntilValid();
+  void firstRunWizardCancelledStopsStartup();
+  void firstRunWizardSetsUpTheStore();
   void windowFlagsAreOnlyRebuiltWhenAlwaysOnTopChanges();
   void restoreWindowAppliesSavedGeometry();
   void restoreWindowCentresWhenNothingSaved();
@@ -132,9 +134,8 @@ private Q_SLOTS:
   void closeEventSavesGeometryAlsoWhenHidingToTray();
 
 private:
-  auto runFirstRunFlow(
-      const std::function<bool(ConfigDialog *, int)> &onConfigDialog,
-      bool *initSucceeded) -> int;
+  auto runFirstRunFlow(const std::function<bool(FirstRunWizard *)> &onWizard,
+                       bool *initSucceeded) -> int;
 };
 
 void tst_mainwindow::initTestCase() {
@@ -1262,27 +1263,26 @@ void tst_mainwindow::windowFlagsAreOnlyRebuiltWhenAlwaysOnTopChanges() {
 }
 
 // ---------------------------------------------------------------------------
-// First-run configuration loop (QtPass::init() -> MainWindow::config())
+// First-run configuration loop (MainWindow constructor -> config() -> wizard)
 
 /**
  * @brief Construct a MainWindow while driving every modal dialog the first-run
  * flow opens.
  *
- * The wizard's message boxes are declined ("Create password-store?" -> No, the
- * "not initialised" notice -> Ok), the store picker and any other dialog are
- * rejected, and each ConfigDialog is handed to @p onConfigDialog together with
- * its 1-based sighting count; a true return clicks OK, false cancels it. Every
- * dialog is driven once, and a dialog that stays open afterwards is rejected
- * by the guard so the test cannot hang in a modal loop.
+ * Each FirstRunWizard is handed to @p onWizard, which either walks it to
+ * Finish (returns true) or leaves it to be rejected; any other dialog is
+ * rejected. Every dialog is driven once, and a dialog that stays open
+ * afterwards is rejected by the guard so the test cannot hang in a modal
+ * loop.
  *
- * @param onConfigDialog Decides per ConfigDialog sighting whether to accept.
+ * @param onWizard Drives one wizard sighting; true means it was accepted.
  * @param initSucceeded Receives MainWindow::initSucceeded() of the window.
- * @return Number of ConfigDialog instances that were shown.
+ * @return Number of wizards that were shown.
  */
 auto tst_mainwindow::runFirstRunFlow(
-    const std::function<bool(ConfigDialog *, int)> &onConfigDialog,
-    bool *initSucceeded) -> int {
-  int configDialogsSeen = 0;
+    const std::function<bool(FirstRunWizard *)> &onWizard, bool *initSucceeded)
+    -> int {
+  int wizardsSeen = 0;
   int stuckTicks = 0;
   QTimer poker;
   poker.setInterval(50);
@@ -1302,112 +1302,131 @@ auto tst_mainwindow::runFirstRunFlow(
     modal->setProperty("tst_driven", true);
     stuckTicks = 0;
 
-    if (auto *cfg = qobject_cast<ConfigDialog *>(modal)) {
-      ++configDialogsSeen;
-      if (!onConfigDialog(cfg, configDialogsSeen)) {
-        cfg->reject();
-        return;
-      }
-      auto *box =
-          cfg->findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
-      if (box != nullptr && box->button(QDialogButtonBox::Ok) != nullptr) {
-        box->button(QDialogButtonBox::Ok)->click();
-      } else {
-        cfg->accept();
+    if (auto *wizard = qobject_cast<FirstRunWizard *>(modal)) {
+      ++wizardsSeen;
+      if (!onWizard(wizard)) {
+        wizard->reject();
       }
       return;
     }
-    if (auto *msg = qobject_cast<QMessageBox *>(modal)) {
-      if (auto *no = msg->button(QMessageBox::No)) {
-        no->click(); // "Create password-store?" -> keep the store missing
-      } else if (auto *ok = msg->button(QMessageBox::Ok)) {
-        ok->click();
-      } else {
-        msg->reject();
-      }
-      return;
-    }
-    modal->reject(); // store picker, keygen or users dialog: never proceed
+    modal->reject(); // message box, keygen or file dialog: never proceed
   });
   poker.start();
 
   MainWindow w;
   poker.stop();
   *initSucceeded = w.initSucceeded();
-  return configDialogsSeen;
+  return wizardsSeen;
 }
 
 /**
- * @brief Accepting the first-run dialog with a still-missing store must not
- * start the application; the dialog is shown again, and cancelling it then
- * makes the constructor report failure (main() exits on that).
- *
- * Regression test for the follow-up to #1689: config() used to clear the
- * fresh-start flag on any accept, so QtPass::init() returned true for an
- * invalid configuration and the window opened on a non-existent store.
+ * @brief Cancelling the first-run wizard must not start the application: the
+ * constructor reports failure (main() exits on that) and asks no second
+ * time.
  */
-void tst_mainwindow::firstRunAcceptedWithInvalidStoreAsksAgainUntilCancelled() {
+void tst_mainwindow::firstRunWizardCancelledStopsStartup() {
   m_window.reset();
   const AppSettings saved = QtPassSettings::load();
   QTemporaryDir scratch;
   QVERIFY2(scratch.isValid(), "temp dir must be created");
   const QString missingStore =
       QDir::cleanPath(QDir(scratch.path()).filePath(QStringLiteral("store")));
-  QVERIFY2(!QDir(missingStore).exists(), "the store must not exist yet");
   QtPassSettings::setPassStore(missingStore);
   QVERIFY2(!Util::configIsValid(QtPassSettings::load()),
            "a missing store must make the configuration invalid");
 
   bool initSucceeded = true;
-  const int dialogs = runFirstRunFlow(
-      [](ConfigDialog *, int sighting) { return sighting == 1; },
-      &initSucceeded);
+  const int wizards =
+      runFirstRunFlow([](FirstRunWizard *) { return false; }, &initSucceeded);
   QtPassSettings::save(saved);
 
-  QCOMPARE(dialogs, 2);
-  QVERIFY2(!initSucceeded,
-           "an accepted but still invalid first-run configuration must not "
-           "start the application once the retry is cancelled");
+  QCOMPARE(wizards, 1);
+  QVERIFY2(!initSucceeded, "a cancelled wizard must not start the application");
+  // The backend creates the folder on construction; the wizard must not
+  // have initialised it.
+  QVERIFY2(
+      !QFile::exists(QDir(missingStore).filePath(QStringLiteral(".gpg-id"))),
+      "cancel initialises nothing");
 }
 
 /**
- * @brief The retry after an accepted-but-invalid first-run dialog is a real
- * second chance: once the store is initialised and the dialog accepted again,
- * startup succeeds.
+ * @brief Walking the wizard to Finish with a store that does not exist yet
+ * creates and initialises it for the listed secret key, and startup
+ * succeeds on that configuration.
  */
-void tst_mainwindow::firstRunAcceptedWithInvalidStoreAsksAgainUntilValid() {
+void tst_mainwindow::firstRunWizardSetsUpTheStore() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
   m_window.reset();
   const AppSettings saved = QtPassSettings::load();
   QTemporaryDir scratch;
   QVERIFY2(scratch.isValid(), "temp dir must be created");
   const QString store =
       QDir::cleanPath(QDir(scratch.path()).filePath(QStringLiteral("store")));
-  QVERIFY2(!QDir(store).exists(), "the store must not exist yet");
-  QtPassSettings::setPassStore(store);
+  // A gpg that knows exactly one secret key and succeeds at everything else.
+  const QString gpg = scratch.filePath(QStringLiteral("gpg"));
+  {
+    QFile script(gpg);
+    QVERIFY(script.open(QIODevice::WriteOnly));
+    script.write(
+        "#!/bin/sh\n"
+        "case \"$*\" in\n"
+        "*--list-secret-keys*)\n"
+        "printf '%s\\n' "
+        "'sec:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA:::+:::23::0:"
+        "' "
+        "'fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:' "
+        "'uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Test "
+        "Key <test@example.org>::::::::::0:'\n"
+        ";;\n"
+        "esac\n"
+        "exit 0\n");
+    script.close();
+    QVERIFY(QFile::setPermissions(gpg, QFile::ReadOwner | QFile::WriteOwner |
+                                           QFile::ExeOwner));
+  }
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passStore = store;
+    s.gpgExecutable = gpg;
+    s.gitExecutable.clear();
+    s.useGit = false;
+    s.usePass = false;
+    QtPassSettings::save(s);
+  }
   QVERIFY2(!Util::configIsValid(QtPassSettings::load()),
            "a missing store must make the configuration invalid");
 
-  bool storeCreated = false;
   bool initSucceeded = false;
-  const int dialogs = runFirstRunFlow(
-      [&](ConfigDialog *, int sighting) {
-        if (sighting == 2) {
-          // Initialise the store behind the dialog's back, then accept.
-          storeCreated = QDir().mkpath(store);
-          QFile gpgId(QDir(store).filePath(QStringLiteral(".gpg-id")));
-          storeCreated = storeCreated && gpgId.open(QIODevice::WriteOnly) &&
-                         gpgId.write("0000000000000000\n") > 0;
-          gpgId.close();
+  const int wizards = runFirstRunFlow(
+      [](FirstRunWizard *wizard) {
+        for (int i = 0; i < 4; ++i) {
+          if (!wizard->currentPage()->isComplete()) {
+            return false;
+          }
+          if (wizard->currentId() == FirstRunWizard::StorePage) {
+            // The machine's git may be found; a commit needs a configured
+            // identity, so keep the new store out of Git here.
+            if (auto *git = wizard->currentPage()->findChild<QCheckBox *>()) {
+              git->setChecked(false);
+            }
+          }
+          wizard->next();
         }
-        return true;
+        wizard->accept();
+        return wizard->result() == QDialog::Accepted;
       },
       &initSucceeded);
+  const AppSettings after = QtPassSettings::load();
   QtPassSettings::save(saved);
 
-  QCOMPARE(dialogs, 2);
-  QVERIFY2(storeCreated, "the store must have been initialised on the retry");
-  QVERIFY2(initSucceeded,
-           "startup must succeed once the retried configuration is valid");
+  QCOMPARE(wizards, 1);
+  QVERIFY2(initSucceeded, "startup must succeed on the wizard's store");
+  QVERIFY(QFile::exists(QDir(store).filePath(QStringLiteral(".gpg-id"))));
+  QCOMPARE(QDir::cleanPath(after.passStore), store);
+  QCOMPARE(after.gpgExecutable, gpg);
+#endif
 }
 
 QTEST_MAIN(tst_mainwindow)

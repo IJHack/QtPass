@@ -9,6 +9,7 @@
 #include "executor.h"
 #include "exportpublickeydialog.h"
 #include "filecontent.h"
+#include "firstrunwizard.h"
 #include "passworddialog.h"
 #include "passworddisplaypanel.h"
 #include "pathvalidator.h"
@@ -492,8 +493,8 @@ void MainWindow::applyWindowFlagsSettings() {
 }
 
 /**
- * @brief Opens and processes the application configuration dialog, then applies
- * any accepted settings.
+ * @brief Opens the configuration dialog (or, before the first usable
+ * configuration, the first-run wizard) and applies what was accepted.
  * @example
  * if (!config()) {
  *   // the user cancelled
@@ -505,18 +506,19 @@ void MainWindow::applyWindowFlagsSettings() {
  * keeps asking until the configuration is usable or this returns false.
  */
 auto MainWindow::config() -> bool {
-  ConfigDialog d(this);
-  d.setModal(true);
-  // Automatically default to pass if it's available
-  if (m_freshStart && QFile(QtPassSettings::getPassExecutable()).exists()) {
-    QtPassSettings::setUsePass(true);
-  }
-
   if (m_freshStart) {
-    d.wizard(); // run initial setup wizard for first-time configuration
-  }
-  if (d.exec() != QDialog::Accepted) {
-    return false;
+    // No usable configuration yet: the wizard finds the programs, the key
+    // and the store, and creates the store when it has to.
+    FirstRunWizard wizard(this);
+    if (wizard.exec() != QDialog::Accepted) {
+      return false;
+    }
+  } else {
+    ConfigDialog d(this);
+    d.setModal(true);
+    if (d.exec() != QDialog::Accepted) {
+      return false;
+    }
   }
 
   applyTextBrowserSettings();

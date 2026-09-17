@@ -34,6 +34,15 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Changed
 
+- The first start is a wizard: Programs (GnuPG required, pass and Git
+  optional, with the autodetected paths filled in), Your key (the secret keys
+  gpg has, with a "Generate a new key pair" button; tick the ones a new store
+  should be encrypted to), Password store (an existing store is used as it
+  is, an empty or missing folder is created and initialised on Finish) and a
+  summary with the day-one preferences. It replaces the chain of message
+  boxes that ran before the full configuration dialog, which sent people who
+  declined "Create password-store?" into a loop and put the whole Settings
+  dialog in front of them on the first launch
 - The Profiles tab is a list with a form instead of a three-column table: pick
   a profile on the left, edit its name, store path (with a folder picker),
   signing key and its own Git flags on the right. The Git flags used to be
