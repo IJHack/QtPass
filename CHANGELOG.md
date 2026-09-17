@@ -51,6 +51,11 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Bugfixes
 
+- A gpg, Git or pass executable configured as a bare name ("gpg") ran two
+  different binaries: the background commands looked for it next to the
+  QtPass executable only (and failed unless bundled), the blocking ones
+  through `PATH`. One rule now, for both: an absolute path or `wsl …` as
+  given, otherwise the copy next to QtPass if there is one, else `PATH`
 - A successful key generation in the first-run wizard still ended the wizard:
   the result travelled KeygenDialog → ConfigDialog → MainWindow → QtPass →
   Pass and back through a pointer in the main window, which closed the dialog
