@@ -18,11 +18,11 @@
  * the QHash-of-QHash days.
  */
 struct Profile {
-  QString path;
-  QString signingKey;
-  std::optional<bool> useGit;
-  std::optional<bool> autoPush;
-  std::optional<bool> autoPull;
+  QString path;                 ///< Password store directory.
+  QString signingKey;           ///< Key(s) that sign this store's .gpg-id.
+  std::optional<bool> useGit;   ///< Git on/off; unset follows the global.
+  std::optional<bool> autoPush; ///< Push after commits; unset = global.
+  std::optional<bool> autoPull; ///< Pull on start; unset = global.
 
   /**
    * @brief Parse the on-disk tri-state.
