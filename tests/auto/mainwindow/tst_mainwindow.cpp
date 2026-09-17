@@ -29,6 +29,7 @@
 #include <QPalette>
 #include <QProgressDialog>
 #include <QPushButton>
+#include <QRegularExpression>
 #include <QScopedPointer>
 #include <QScreen>
 #include <QShortcut>
@@ -108,6 +109,10 @@ private Q_SLOTS:
   void passwordFromFileToClipboardCopiesFirstLine();
   void passwordFromFileToClipboardSkipsOtpSecret();
   void copyRequestAnswersOnlyItsOwnEntry();
+  void otpRequestAnswersOnlyItsOwnEntry();
+  void otpRequestKeepsThePasswordOffTheClipboard();
+  void otpFastPathCopiesTheVisibleCodeWithoutDecrypting();
+  void cancelOtpRequestForgetsBothPendingRequests();
   void clipboardAutoclearSurvivesShowingAnotherEntry();
   void showTextAsQRCodeReportsMissingQrencode();
   void textBrowserFollowsRuntimePaletteChange();
@@ -429,6 +434,198 @@ void tst_mainwindow::deselectDoesNotCrash() {
   // No assertion needed — reaching this line means no crash / assert fired.
 }
 
+// QTRY_* macros return void; this variant returns a value from a helper.
+#define QTRY_VERIFY_WITH_TIMEOUT_RETURN(expr, timeout, ret)                    \
+  do {                                                                         \
+    QElapsedTimer timer;                                                       \
+    timer.start();                                                             \
+    while (!(expr) && timer.elapsed() < (timeout)) {                           \
+      QTest::qWait(20);                                                        \
+    }                                                                          \
+    if (!(expr)) {                                                             \
+      return ret;                                                              \
+    }                                                                          \
+  } while (false)
+
+namespace {
+/**
+ * Create <name>.gpg in the store, make it the tree's current entry and press
+ * Ctrl+C on it, i.e. arm a copy request for it. The backend's decrypt of the
+ * fake file fails later on the event loop; the tests below answer the
+ * request synchronously first, the way a real finishedShow would.
+ */
+auto selectEntry(MainWindow *window, const QString &storeDir,
+                 const QString &name) -> bool {
+  const QString path = QDir(storeDir).filePath(name + QStringLiteral(".gpg"));
+  QFile f(path);
+  if (!f.open(QIODevice::WriteOnly)) {
+    return false;
+  }
+  f.write("not really encrypted");
+  f.close();
+  auto *tree = window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  QModelIndex src;
+  QTRY_VERIFY_WITH_TIMEOUT_RETURN((src = fs->index(path)).isValid(), 5000,
+                                  false);
+  tree->setCurrentIndex(proxy->mapFromSource(src));
+  return true;
+}
+
+auto armCopyRequest(MainWindow *window, const QString &storeDir,
+                    const QString &name) -> bool {
+  return selectEntry(window, storeDir, name) &&
+         QMetaObject::invokeMethod(window, "copyPasswordFromTreeview",
+                                   Qt::DirectConnection);
+}
+
+/// Ctrl+G on the selected entry: with no OTP row on screen this queues a
+/// decrypt and remembers the entry as the pending OTP request.
+auto armOtpRequest(MainWindow *window, const QString &storeDir,
+                   const QString &name) -> bool {
+  return selectEntry(window, storeDir, name) &&
+         QMetaObject::invokeMethod(window, "onOtp", Qt::DirectConnection);
+}
+
+/// RFC 6238 appendix B seed; the code changes every 30 s, so tests only
+/// check its shape.
+const QString kOtpUri = QStringLiteral(
+    "otpauth://totp/Example:alice?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&"
+    "issuer=Example");
+/// The pass-otp layout: password first, the otpauth URI as a bare line.
+const QString kOtpEntry =
+    QStringLiteral("hunter2\n") + kOtpUri + QStringLiteral("\n");
+
+auto looksLikeOtpCode(const QString &s) -> bool {
+  static const QRegularExpression six(QStringLiteral("^[0-9]{6}$"));
+  return six.match(s).hasMatch();
+}
+} // namespace
+
+/**
+ * @brief Ctrl+G on an entry with no code on screen decrypts it; only that
+ *        entry's decrypt yields a code, and only once.
+ */
+void tst_mainwindow::otpRequestAnswersOnlyItsOwnEntry() {
+  AppSettings s = QtPassSettings::load();
+  s.useSelection = false;
+  s.useAutoclear = false;
+  s.useOtp = true;
+  s.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
+  QtPassSettings::save(s);
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("sentinel"));
+
+  QVERIFY(armOtpRequest(m_window.data(), m_storeDir.path(),
+                        QStringLiteral("otp-me")));
+  m_window->otpFromFileToClipboard(kOtpEntry, QStringLiteral("someone-else"));
+  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+
+  m_window->otpFromFileToClipboard(kOtpEntry, QStringLiteral("otp-me"));
+  QVERIFY2(looksLikeOtpCode(clip->text()),
+           qPrintable("expected a six-digit code, got: " + clip->text()));
+
+  clip->setText(QStringLiteral("sentinel"));
+  m_window->otpFromFileToClipboard(kOtpEntry, QStringLiteral("otp-me"));
+  QVERIFY2(clip->text() == QStringLiteral("sentinel"),
+           "a consumed request must not answer twice");
+}
+
+/**
+ * @brief In "always copy" mode a decrypt normally puts the password on the
+ *        clipboard; the decrypt that answers an OTP request must not — the
+ *        user asked for a code, and two clipboard writes in one turn can
+ *        leave the Windows clipboard empty.
+ */
+void tst_mainwindow::otpRequestKeepsThePasswordOffTheClipboard() {
+  AppSettings s = QtPassSettings::load();
+  s.useSelection = false;
+  s.useAutoclear = false;
+  s.useOtp = true;
+  s.clipBoardType = Enums::CLIPBOARD_ALWAYS;
+  QtPassSettings::save(s);
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("sentinel"));
+
+  QVERIFY(armOtpRequest(m_window.data(), m_storeDir.path(),
+                        QStringLiteral("otp-always")));
+  // passShowHandler runs first for the same finishedShow ...
+  m_window->passShowHandler(kOtpEntry, QStringLiteral("otp-always"));
+  QVERIFY2(clip->text() == QStringLiteral("sentinel"),
+           "the password must not be copied for an OTP request");
+  // ... then the OTP handler copies the code.
+  m_window->otpFromFileToClipboard(kOtpEntry, QStringLiteral("otp-always"));
+  QVERIFY(looksLikeOtpCode(clip->text()));
+}
+
+/**
+ * @brief When the pane already shows a live code for the selected entry,
+ *        Ctrl+G copies it without another decrypt (and without touching
+ *        the pending-request state).
+ */
+void tst_mainwindow::otpFastPathCopiesTheVisibleCodeWithoutDecrypting() {
+  AppSettings s = QtPassSettings::load();
+  s.useSelection = false;
+  s.useAutoclear = false;
+  s.useOtp = true;
+  s.hideContent = false;
+  s.displayAsIs = false;
+  s.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
+  QtPassSettings::save(s);
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("sentinel"));
+
+  QVERIFY(
+      selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("shown")));
+  // Simulate the tree click's decrypt landing: the pane renders the OTP row.
+  QMetaObject::invokeMethod(
+      m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
+      Q_ARG(QModelIndex,
+            m_window->findChild<QTreeView *>(QStringLiteral("treeView"))
+                ->currentIndex()));
+  m_window->passShowHandler(kOtpEntry, QStringLiteral("shown"));
+
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onOtp",
+                                    Qt::DirectConnection));
+  QVERIFY2(
+      looksLikeOtpCode(clip->text()),
+      qPrintable("fast path must copy the visible code, got: " + clip->text()));
+  // No request is pending afterwards: a stray decrypt answer does nothing.
+  clip->setText(QStringLiteral("sentinel"));
+  m_window->otpFromFileToClipboard(kOtpEntry, QStringLiteral("shown"));
+  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+}
+
+/**
+ * @brief A failed decrypt never emits finishedShow; cancelOtpRequest() (on
+ *        processErrorExit and deselect) must forget both the OTP and the
+ *        Ctrl+C request, or a later decrypt of that entry would answer them.
+ */
+void tst_mainwindow::cancelOtpRequestForgetsBothPendingRequests() {
+  AppSettings s = QtPassSettings::load();
+  s.useSelection = false;
+  s.useAutoclear = false;
+  s.useOtp = true;
+  s.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
+  QtPassSettings::save(s);
+  QClipboard *clip = QApplication::clipboard();
+
+  clip->setText(QStringLiteral("sentinel"));
+  QVERIFY(armCopyRequest(m_window.data(), m_storeDir.path(),
+                         QStringLiteral("copy-cancel")));
+  m_window->cancelOtpRequest();
+  m_window->passwordFromFileToClipboard(QStringLiteral("late"),
+                                        QStringLiteral("copy-cancel"));
+  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+
+  QVERIFY(armOtpRequest(m_window.data(), m_storeDir.path(),
+                        QStringLiteral("otp-cancel")));
+  m_window->cancelOtpRequest();
+  m_window->otpFromFileToClipboard(kOtpEntry, QStringLiteral("otp-cancel"));
+  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+}
+
 /**
  * @brief onProcessOutput() appends text to the process output panel when the
  *        panel is visible.
@@ -461,47 +658,6 @@ void tst_mainwindow::onProcessOutputSkippedWhenPanelHidden() {
   m_window->onProcessOutput(QStringLiteral("should not appear"), false);
   QCOMPARE(outputEdit->toPlainText(), before);
 }
-
-// QTRY_* macros return void; this variant returns a value from a helper.
-#define QTRY_VERIFY_WITH_TIMEOUT_RETURN(expr, timeout, ret)                    \
-  do {                                                                         \
-    QElapsedTimer timer;                                                       \
-    timer.start();                                                             \
-    while (!(expr) && timer.elapsed() < (timeout)) {                           \
-      QTest::qWait(20);                                                        \
-    }                                                                          \
-    if (!(expr)) {                                                             \
-      return ret;                                                              \
-    }                                                                          \
-  } while (false)
-
-namespace {
-/**
- * Create <name>.gpg in the store, make it the tree's current entry and press
- * Ctrl+C on it, i.e. arm a copy request for it. The backend's decrypt of the
- * fake file fails later on the event loop; the tests below answer the
- * request synchronously first, the way a real finishedShow would.
- */
-auto armCopyRequest(MainWindow *window, const QString &storeDir,
-                    const QString &name) -> bool {
-  const QString path = QDir(storeDir).filePath(name + QStringLiteral(".gpg"));
-  QFile f(path);
-  if (!f.open(QIODevice::WriteOnly)) {
-    return false;
-  }
-  f.write("not really encrypted");
-  f.close();
-  auto *tree = window->findChild<QTreeView *>(QStringLiteral("treeView"));
-  auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
-  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
-  QModelIndex src;
-  QTRY_VERIFY_WITH_TIMEOUT_RETURN((src = fs->index(path)).isValid(), 5000,
-                                  false);
-  tree->setCurrentIndex(proxy->mapFromSource(src));
-  return QMetaObject::invokeMethod(window, "copyPasswordFromTreeview",
-                                   Qt::DirectConnection);
-}
-} // namespace
 
 /**
  * @brief passwordFromFileToClipboard() copies the first line of a normal entry.
