@@ -96,6 +96,7 @@ private Q_SLOTS:
   void constructionDoesNotCrash();
   void setUiElementsEnabledDisablesTreeView();
   void setUiElementsEnabledEnablesTreeView();
+  void backendCompletionReachesTheWindowThroughQtPass();
   void reencryptKeepsUiDisabledUntilEnd();
   void reencryptProgressSurvivesQueuedEnd();
   void flashTextSetsContent();
@@ -229,6 +230,43 @@ void tst_mainwindow::setUiElementsEnabledEnablesTreeView() {
   m_window->setUiElementsEnabled(false);
   m_window->setUiElementsEnabled(true);
   QVERIFY2(treeView->isEnabled(), "treeView must be re-enabled");
+}
+
+/**
+ * @brief A backend completion travels Pass -> QtPass -> MainWindow: the
+ * output lands in the text browser, the grey stderr chatter too, the status
+ * bar gets the key-generation message and the interface is enabled again.
+ * This is the window's half of the QtPass signal contract; tst_qtpass only
+ * sees the signals leave.
+ */
+void tst_mainwindow::backendCompletionReachesTheWindowThroughQtPass() {
+  auto *treeView = m_window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY(treeView != nullptr && browser != nullptr);
+
+  m_window->setUiElementsEnabled(false);
+  emit QtPassSettings::getPass()
+      -> finishedGitPull(QStringLiteral("pulled via qtpass"),
+                         QStringLiteral("already up to date"));
+  QVERIFY2(treeView->isEnabled(), "operationFinished must re-enable the UI");
+  const QString shown = browser->toPlainText();
+  QVERIFY2(shown.contains(QStringLiteral("pulled via qtpass")),
+           qPrintable(shown));
+  QVERIFY2(shown.contains(QStringLiteral("already up to date")),
+           qPrintable(shown));
+
+  m_window->setUiElementsEnabled(false);
+  emit QtPassSettings::getPass()
+      -> processErrorExit(1, QStringLiteral("gpg died"));
+  QVERIFY(treeView->isEnabled());
+  QVERIFY(browser->toPlainText().contains(QStringLiteral("gpg died")));
+
+  emit QtPassSettings::getPass()
+      -> finishedGenerateGPGKeys(QString(), QString());
+  QVERIFY2(m_window->statusBar()->currentMessage().contains(
+               QStringLiteral("generated successfully")),
+           qPrintable(m_window->statusBar()->currentMessage()));
 }
 
 /**
