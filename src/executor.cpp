@@ -50,10 +50,15 @@ auto Executor::resolveExecutable(const QString &app) -> QString {
     return app;
   }
   const QDir appDir(QCoreApplication::applicationDirPath());
-  for (const QString &candidate :
-       {appDir.absoluteFilePath(app),
-        appDir.absoluteFilePath(app + QStringLiteral(".exe"))}) {
-    if (QFileInfo(candidate).isFile()) {
+  QStringList candidates{QDir::cleanPath(appDir.absoluteFilePath(app))};
+#ifdef Q_OS_WIN
+  candidates << QDir::cleanPath(
+      appDir.absoluteFilePath(app + QStringLiteral(".exe")));
+#endif
+  for (const QString &candidate : std::as_const(candidates)) {
+    // A stray non-executable file of that name must not mask PATH.
+    const QFileInfo info(candidate);
+    if (info.isFile() && info.isExecutable()) {
       return candidate;
     }
   }

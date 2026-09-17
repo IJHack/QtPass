@@ -50,7 +50,7 @@ private Q_SLOTS:
   void executeAsyncNonUtf8OutputIsNotDropped();
   void bareNameRunsFromPathOnBothPaths();
   void bundledBinaryNextToTheApplicationWins();
-  void resolveExecutableRules();
+  void nonExecutableFileNextToTheApplicationDoesNotMaskPath();
   void executeBlockingCancelFlagEndsChild();
   void executeBlockingCancelFlagKillsChildIgnoringTerminate();
   void executeBlockingCancelFlagAlreadySetSkipsStart();
@@ -58,6 +58,8 @@ private Q_SLOTS:
   void wslPrefixAsyncUsesExec();
 #endif
   void wslExecArgsPrependsExec();
+  void resolveExecutableRules();
+  void resolveExecutableFindsBundledExeOnWindows();
   void executeBlockingNotFound();
   void executeBlockingGpgVersion();
   void gpgSupportsEd25519();
@@ -743,17 +745,6 @@ void tst_executor::bundledBinaryNextToTheApplicationWins() {
       finished.first().at(2).toString().contains(QStringLiteral("bundled")));
 }
 
-void tst_executor::resolveExecutableRules() {
-  QCOMPARE(Executor::resolveExecutable(QString()), QString());
-  QCOMPARE(Executor::resolveExecutable(QStringLiteral("wsl gpg")),
-           QStringLiteral("wsl gpg"));
-  QCOMPARE(Executor::resolveExecutable(QStringLiteral("/usr/bin/gpg")),
-           QStringLiteral("/usr/bin/gpg"));
-  // Not bundled, so left alone for PATH.
-  QCOMPARE(Executor::resolveExecutable(QStringLiteral("no-such-qtpass-tool")),
-           QStringLiteral("no-such-qtpass-tool"));
-}
-
 namespace {
 /**
  * Run @p script through `sh -c` on the cancellable executeBlocking() overload
@@ -903,7 +894,70 @@ void tst_executor::wslPrefixAsyncUsesExec() {
   QCOMPARE(argv, expected);
 }
 
+/**
+ * @brief A plain data file that happens to carry the tool's name next to the
+ *        application must not be picked over the real tool on PATH.
+ */
+void tst_executor::nonExecutableFileNextToTheApplicationDoesNotMaskPath() {
+  if (QStandardPaths::findExecutable("sh").isEmpty())
+    QSKIP("sh not found in PATH");
+  const QString name = QStringLiteral("qtpass-tst-plain-%1")
+                           .arg(QCoreApplication::applicationPid());
+  const QString path =
+      QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(name);
+  {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("not a program");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner));
+  }
+  struct Cleanup {
+    QString path;
+    ~Cleanup() { QFile::remove(path); }
+  } cleanup{path};
+  QCOMPARE(Executor::resolveExecutable(name), name);
+}
+
 #endif
+
+void tst_executor::resolveExecutableRules() {
+  QCOMPARE(Executor::resolveExecutable(QString()), QString());
+  QCOMPARE(Executor::resolveExecutable(QStringLiteral("wsl gpg")),
+           QStringLiteral("wsl gpg"));
+  QCOMPARE(Executor::resolveExecutable(QStringLiteral("/usr/bin/gpg")),
+           QStringLiteral("/usr/bin/gpg"));
+  // Not bundled, so left alone for PATH.
+  QCOMPARE(Executor::resolveExecutable(QStringLiteral("no-such-qtpass-tool")),
+           QStringLiteral("no-such-qtpass-tool"));
+}
+
+/**
+ * @brief On Windows a bundled tool is <appDir>/<name>.exe; the resolver must
+ *        add the extension itself because settings and callers use the bare
+ *        name.
+ */
+void tst_executor::resolveExecutableFindsBundledExeOnWindows() {
+#ifndef Q_OS_WIN
+  QSKIP("the .exe candidate is Windows-only");
+#else
+  const QString name = QStringLiteral("qtpass-tst-bundled-%1")
+                           .arg(QCoreApplication::applicationPid());
+  const QString path = QDir(QCoreApplication::applicationDirPath())
+                           .absoluteFilePath(name + QStringLiteral(".exe"));
+  {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("MZ");
+    f.close();
+  }
+  struct Cleanup {
+    QString path;
+    ~Cleanup() { QFile::remove(path); }
+  } cleanup{path};
+  QCOMPARE(Executor::resolveExecutable(name), QDir::cleanPath(path));
+#endif
+}
 
 QTEST_MAIN(tst_executor)
 #include "tst_executor.moc"
