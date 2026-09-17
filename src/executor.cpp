@@ -3,6 +3,7 @@
 #include "executor.h"
 #include <QCoreApplication>
 #include <QDir>
+#include <QFileInfo>
 #include <QStringDecoder>
 #include <utility>
 
@@ -39,8 +40,24 @@ void Executor::startProcess(QProcess &process, const QString &app,
   if (app.startsWith(QLatin1String("wsl "))) {
     process.start(QStringLiteral("wsl"), wslExecArgs(app.mid(4), args));
   } else {
-    process.start(app, args);
+    process.start(resolveExecutable(app), args);
   }
+}
+
+auto Executor::resolveExecutable(const QString &app) -> QString {
+  if (app.isEmpty() || app.startsWith(QLatin1String("wsl ")) ||
+      QDir::isAbsolutePath(app)) {
+    return app;
+  }
+  const QDir appDir(QCoreApplication::applicationDirPath());
+  for (const QString &candidate :
+       {appDir.absoluteFilePath(app),
+        appDir.absoluteFilePath(app + QStringLiteral(".exe"))}) {
+    if (QFileInfo(candidate).isFile()) {
+      return candidate;
+    }
+  }
+  return app;
 }
 
 /**
@@ -210,13 +227,10 @@ void Executor::execute(int id, const QString &workDir, const QString &app,
   // process ever runs, no finished()/error() is emitted, and every later
   // completion signal is swallowed for the rest of the session (#1682).
   // ExecuteNext() now surfaces it as an error instead, so keep queueing it.
-  QString appPath = app;
-  if (!appPath.isEmpty() && !appPath.startsWith("wsl ")) {
-    appPath =
-        QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(app);
-  }
+  // The executable is resolved when the process starts (startProcess), the
+  // same way the blocking path resolves it.
   m_execQueue.push_back(
-      {id, appPath, args, std::move(input), readStdout, readStderr, workDir});
+      {id, app, args, std::move(input), readStdout, readStderr, workDir});
   executeNext();
 }
 

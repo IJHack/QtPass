@@ -233,6 +233,19 @@ public:
                   QString *process_err = nullptr) -> int;
 
   /**
+   * @brief The one rule for turning a configured executable into what runs.
+   *
+   * Absolute paths and "wsl ..." commands are used as given. A bare or
+   * relative name is looked up next to the application first (the Windows
+   * and macOS bundles ship gpg/git/pass there) and otherwise left for
+   * QProcess's PATH lookup. Both the queued and the blocking path go through
+   * this, so the same setting can no longer run two different binaries.
+   * @param app Executable as configured.
+   * @return What to hand to QProcess::start().
+   */
+  static auto resolveExecutable(const QString &app) -> QString;
+
+  /**
    * @brief Build the wsl.exe argument list that runs @p command directly.
    *
    * Prefixes @p command and @p args with `--exec` so WSL launches the binary
