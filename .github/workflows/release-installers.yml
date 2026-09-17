@@ -294,10 +294,20 @@ jobs:
           # assets carry detached signatures (sign-release-assets.sh), and
           # replacing a file would leave the old .asc next to it; then only
           # assets that do not exist yet are added.
+          existing="$(gh release view "$GITHUB_REF_NAME" --json assets --jq '.assets[].name')"
           if [[ "$(gh release view "$GITHUB_REF_NAME" --json isDraft --jq .isDraft)" == "true" ]]; then
+            # A signature made while the release was still a draft would no
+            # longer match the replaced file; drop it so the signing script
+            # produces a fresh one.
+            for file in dist/*; do
+              asc="$(basename "$file").asc"
+              if grep -qxF "$asc" <<<"$existing"; then
+                echo "removing stale signature $asc"
+                gh release delete-asset "$GITHUB_REF_NAME" "$asc" --yes
+              fi
+            done
             gh release upload "$GITHUB_REF_NAME" dist/* --clobber
           else
-            existing="$(gh release view "$GITHUB_REF_NAME" --json assets --jq '.assets[].name')"
             for file in dist/*; do
               if grep -qxF "$(basename "$file")" <<<"$existing"; then
                 echo "keeping published asset $(basename "$file")"
