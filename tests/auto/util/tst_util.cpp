@@ -26,6 +26,7 @@
 #include "../../../src/enums.h"
 #include "../../../src/filecontent.h"
 #include "../../../src/imitatepass.h"
+#include "../../../src/nativegrep.h"
 #include "../../../src/pass.h"
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/pathvalidator.h"
@@ -2431,8 +2432,8 @@ void tst_util::grepMatchFileFailedDecryptReturnsEmpty() {
   QRegularExpression rx(QStringLiteral(".*"));
   const QProcessEnvironment env;
   const QStringList matches =
-      ImitatePass::grepMatchFile(env, QStringLiteral("/nonexistent/gpg"),
-                                 QStringLiteral("/no/such.gpg"), rx);
+      NativeGrep::matchFile(env, QStringLiteral("/nonexistent/gpg"),
+                            QStringLiteral("/no/such.gpg"), rx);
   QVERIFY(matches.isEmpty());
 }
 
@@ -2441,7 +2442,7 @@ void tst_util::grepScanStoreEmptyDirReturnsEmpty() {
   QVERIFY(tmp.isValid());
   QRegularExpression rx(QStringLiteral(".*"));
   const QProcessEnvironment env;
-  const auto results = ImitatePass::grepScanStore(
+  const auto results = NativeGrep::scanStore(
       env, QStringLiteral("/nonexistent/gpg"), tmp.path(), rx);
   QVERIFY(results.isEmpty());
 }

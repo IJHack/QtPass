@@ -3,9 +3,10 @@
 #include "imitatepass.h"
 #include "executor.h"
 #include "util.h"
+#include <QDir>
 #include <QDirIterator>
-#include <QElapsedTimer>
 #include <QFile>
+#include <QFileInfo>
 #include <QPointer>
 #include <QProcess>
 #include <QRegularExpression>
@@ -42,23 +43,14 @@ using Enums::PROCESS_COUNT;
  * @brief ImitatePass::ImitatePass for situations when pass is not available
  * we imitate the behavior of pass https://www.passwordstore.org/
  */
-ImitatePass::ImitatePass() = default;
+ImitatePass::ImitatePass() : m_grep(this) {
+  connect(&m_grep, &NativeGrep::finished, this, &ImitatePass::finishedGrep);
+}
 
 ImitatePass::~ImitatePass() {
-  static constexpr int kGrepThreadTimeoutMs = 5000;
-  for (QThread *t : std::as_const(m_grepThreads))
-    if (t && t->isRunning())
-      t->requestInterruption();
-  QElapsedTimer elapsed;
-  elapsed.start();
-  for (QThread *t : std::as_const(m_grepThreads)) {
-    if (t && t->isRunning()) {
-      const int remaining =
-          kGrepThreadTimeoutMs - static_cast<int>(elapsed.elapsed());
-      if (remaining > 0)
-        t->wait(remaining);
-    }
-  }
+  // Let the search workers wind down while the re-encryption worker is
+  // joined; m_grep's own destructor waits for them afterwards.
+  m_grep.cancel();
   // Unlike the grep workers, the re-encryption worker calls member functions
   // and so must not outlive this object. Cancel it and join. A timeout on the
   // join would not be safe, since the worker would go on touching this
@@ -186,7 +178,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
                   tr("Signature for %1 is invalid.").arg(gpgIdPath));
     return;
   }
-  transactionHelper trans(this, PASS_INSERT);
+  transactionHelper trans(&m_transaction, PASS_INSERT);
   QStringList recipients = Pass::getRecipientList(file, m_settings.passStore);
   if (recipients.isEmpty()) {
     // Already emit critical signal to notify user of error - no need to throw
@@ -247,7 +239,7 @@ void ImitatePass::gitCommit(const QString &file, const QString &msg) {
  */
 void ImitatePass::Remove(QString file, bool isDir) {
   file = m_settings.passStore + file;
-  transactionHelper trans(this, PASS_REMOVE);
+  transactionHelper trans(&m_transaction, PASS_REMOVE);
   if (!isDir) {
     file += ".gpg";
   }
@@ -268,27 +260,15 @@ void ImitatePass::Remove(QString file, bool isDir) {
 }
 
 /**
- * @brief ImitatePass::Init initialize pass repository
- *
- * @param path      path in which new password-store will be created
- * @param users     list of users who shall be able to decrypt passwords in
- * path
+ * @brief The `.gpg-id` signer for the configured gpg and signing keys.
  */
-auto ImitatePass::checkSigningKeys(const QStringList &signingKeys) -> bool {
-  QString out;
-  QStringList args =
-      QStringList{"--status-fd=1", "--list-secret-keys"} + signingKeys;
-  int result = Executor::executeBlocking(m_settings.gpgExecutable, args, &out);
-  if (result != 0) {
-    qCDebug(lcQtPass) << "GPG list-secret-keys failed with code:" << result;
-    return false;
-  }
-  for (auto &key : signingKeys) {
-    if (out.contains("[GNUPG:] KEY_CONSIDERED " + key)) {
-      return true;
-    }
-  }
-  return false;
+auto ImitatePass::gpgIdSigner() -> GpgIdSigner {
+  return {m_settings.gpgExecutable,
+          GpgIdSigner::keysFromSetting(m_settings.passSigningKey),
+          [this](const QString &app, const QStringList &args,
+                 const QString &input, QString *out, QString *err) {
+            return execBlocking(app, args, input, out, err);
+          }};
 }
 
 /**
@@ -334,40 +314,19 @@ void ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
 }
 
 /**
- * @brief Signs a GPG ID file and verifies its signature.
- * @example
- * bool result = ImitatePass::signGpgIdFile(gpgIdFile, signingKeys);
- * std::cout << result << std::endl; // Expected output: true if signing and
- * verification succeed
- *
- * @param QString &gpgIdFile - Path to the .gpg-id file to be signed.
- * @param QStringList &signingKeys - List of signing keys; only the first key is
- * used.
- * @return bool - True if the file was signed and its signature verified
- * successfully; otherwise false.
+ * @brief Signs a `.gpg-id` with the configured key and verifies the result.
+ * @param gpgIdFile Path to the .gpg-id file to be signed.
+ * @return true if the file was signed and its signature verified; otherwise
+ * false, after reporting the failure through critical().
  */
-auto ImitatePass::signGpgIdFile(const QString &gpgIdFile,
-                                const QStringList &signingKeys) -> bool {
-  QStringList args;
-  // Use only the first signing key; multiple --default-key options would
-  // override each other and only the last one would take effect.
-  if (!signingKeys.isEmpty()) {
-    if (signingKeys.size() > 1) {
-      qCDebug(lcQtPass)
-          << "Multiple signing keys configured; using only the first key:"
-          << signingKeys.first();
-    }
-    args.append(QStringList{"--default-key", signingKeys.first()});
-  }
-  args.append(QStringList{"--yes", "--detach-sign", gpgIdFile});
-  int result = Executor::executeBlocking(m_settings.gpgExecutable, args);
-  if (result != 0) {
-    qCDebug(lcQtPass) << "GPG signing failed with code:" << result;
+auto ImitatePass::signGpgIdFile(const QString &gpgIdFile) -> bool {
+  const GpgIdSigner signer = gpgIdSigner();
+  if (!signer.sign(gpgIdFile)) {
     emit critical(tr("GPG signing failed!"),
                   tr("Failed to sign %1.").arg(gpgIdFile));
     return false;
   }
-  if (!verifyGpgIdFile(gpgIdFile)) {
+  if (!signer.verify(gpgIdFile)) {
     emit critical(tr("Check .gpg-id file signature!"),
                   tr("Signature for %1 is invalid.").arg(gpgIdFile));
     return false;
@@ -470,12 +429,11 @@ auto ImitatePass::gitTracks(const QString &file) -> bool {
  * @return void - No return value.
  */
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
-  QStringList signingKeys =
-      m_settings.passSigningKey.split(" ", Qt::SkipEmptyParts);
+  const GpgIdSigner signer = gpgIdSigner();
   QString gpgIdSigFile = path + ".gpg-id.sig";
   bool addSigFile = false;
-  if (!signingKeys.isEmpty()) {
-    if (!checkSigningKeys(signingKeys)) {
+  if (signer.enabled()) {
+    if (!signer.haveSecretKey()) {
       emit critical(tr("No signing key!"),
                     tr("None of the secret signing keys is available.\n"
                        "You will not be able to change the user list!"));
@@ -502,8 +460,8 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   }
   writeGpgIdFile(gpgIdFile, users);
 
-  if (!signingKeys.isEmpty()) {
-    if (!signGpgIdFile(gpgIdFile, signingKeys)) {
+  if (signer.enabled()) {
+    if (!signGpgIdFile(gpgIdFile)) {
       return;
     }
   }
@@ -529,34 +487,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
  * @return was verification successful?
  */
 auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
-  QStringList signingKeys =
-      m_settings.passSigningKey.split(" ", Qt::SkipEmptyParts);
-  if (signingKeys.isEmpty()) {
-    return true;
-  }
-  QString out;
-  QStringList args =
-      QStringList{"--verify", "--status-fd=1", pgpg(file) + ".sig", pgpg(file)};
-  int result = execBlocking(m_settings.gpgExecutable, args, &out);
-  if (result != 0) {
-    qCDebug(lcQtPass) << "GPG verify failed with code:" << result;
-    return false;
-  }
-  QRegularExpression re(
-      R"(^\[GNUPG:\] VALIDSIG ([A-F0-9]{40}) .* ([A-F0-9]{40})\r?$)",
-      QRegularExpression::MultilineOption);
-  QRegularExpressionMatch m = re.match(out);
-  if (!m.hasMatch()) {
-    return false;
-  }
-  QStringList fingerprints = m.capturedTexts();
-  fingerprints.removeFirst();
-  for (auto &key : signingKeys) {
-    if (fingerprints.contains(key)) {
-      return true;
-    }
-  }
-  return false;
+  return gpgIdSigner().verify(file);
 }
 
 /**
@@ -1141,7 +1072,7 @@ void ImitatePass::executeMoveGit(const QString &src, const QString &destFile,
  */
 void ImitatePass::Move(const QString src, const QString dest,
                        const bool force) {
-  transactionHelper trans(this, PASS_MOVE);
+  transactionHelper trans(&m_transaction, PASS_MOVE);
   QString destFile = resolveMoveDestination(src, dest, force);
   if (destFile.isEmpty()) {
     return;
@@ -1211,7 +1142,7 @@ static auto copyFileReplacing(const QString &src, const QString &dst) -> bool {
  */
 void ImitatePass::Copy(const QString src, const QString dest,
                        const bool force) {
-  transactionHelper trans(this, PASS_COPY);
+  transactionHelper trans(&m_transaction, PASS_COPY);
   // Like `pass cp`, dest may be an existing folder (a drag-and-drop copy hands
   // over the folder, not the new file name). Resolve the real target the same
   // way Move does: into the folder, .gpg appended, no clobbering without force.
@@ -1327,7 +1258,7 @@ void ImitatePass::executeGit(PROCESS id, const QStringList &args, QString input,
 void ImitatePass::finished(int id, int exitCode, const QString &out,
                            const QString &err) {
   qCDebug(lcQtPass) << "Imitate Pass";
-  PROCESS pid = transactionIsOver(static_cast<PROCESS>(id));
+  PROCESS pid = m_transaction.transactionIsOver(static_cast<PROCESS>(id));
   m_transactionOutput.append(out);
 
   if (exitCode == 0) {
@@ -1342,7 +1273,7 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
         qCDebug(lcQtPass) << "No such transaction!";
         return;
       }
-      pid = transactionIsOver(static_cast<PROCESS>(id));
+      pid = m_transaction.transactionIsOver(static_cast<PROCESS>(id));
     }
   }
   Pass::finished(pid, exitCode, m_transactionOutput, err);
@@ -1356,67 +1287,8 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
  * Pass::executeWrapper calls this hook just before dispatching.
  * @param id Process identifier of the command about to run.
  */
-void ImitatePass::beforeExecute(PROCESS id) { transactionAdd(id); }
-
-/**
- * @brief Decrypt one .gpg file and return lines matching rx.
- */
-auto ImitatePass::grepMatchFile(const QProcessEnvironment &env,
-                                const QString &gpgExe, const QString &filePath,
-                                const QRegularExpression &rx) -> QStringList {
-  QString translatedPath = filePath;
-  if (gpgExe.startsWith(QStringLiteral("wsl "))) {
-    QString wslPath;
-    const int wrc = Executor::executeBlocking(
-        QStringLiteral("wsl"),
-        Executor::wslExecArgs(QStringLiteral("wslpath"), {filePath}), &wslPath);
-    const QString translated = wslPath.trimmed();
-    if (wrc == 0 && !translated.isEmpty())
-      translatedPath = translated;
-  }
-  QString plaintext;
-  const int rc =
-      Executor::executeBlocking(env, gpgExe,
-                                {"-d", "--quiet", "--yes", "--no-encrypt-to",
-                                 "--batch", "--use-agent", translatedPath},
-                                &plaintext);
-  if (rc != 0 || plaintext.isEmpty())
-    return {};
-  QStringList matches;
-  for (const QString &line : plaintext.split('\n')) {
-    QString candidate = line;
-    if (candidate.endsWith('\r'))
-      candidate.chop(1);
-    const QString t = candidate.trimmed();
-    if (!t.isEmpty() && candidate.contains(rx))
-      matches << t;
-  }
-  return matches;
-}
-
-/**
- * @brief Walk the store, decrypt every .gpg file, collect matches.
- */
-auto ImitatePass::grepScanStore(const QProcessEnvironment &env,
-                                const QString &gpgExe, const QString &storeDir,
-                                const QRegularExpression &rx)
-    -> QList<QPair<QString, QStringList>> {
-  QList<QPair<QString, QStringList>> results;
-  QDirIterator it(storeDir, QStringList() << "*.gpg", QDir::Files,
-                  QDirIterator::Subdirectories);
-  while (it.hasNext()) {
-    if (QThread::currentThread()->isInterruptionRequested())
-      return {};
-    const QString filePath = it.next();
-    const QStringList matches = grepMatchFile(env, gpgExe, filePath, rx);
-    if (!matches.isEmpty()) {
-      QString entry = QDir(storeDir).relativeFilePath(filePath);
-      if (entry.endsWith(QLatin1String(".gpg")))
-        entry.chop(4);
-      results.append({entry, matches});
-    }
-  }
-  return results;
+void ImitatePass::beforeExecute(PROCESS id) {
+  m_transaction.transactionAdd(id);
 }
 
 /**
@@ -1424,79 +1296,10 @@ auto ImitatePass::grepScanStore(const QProcessEnvironment &env,
  *
  * The pattern is evaluated with `QRegularExpression` (**PCRE**), which differs
  * from the POSIX BRE dialect of the `pass` backend — see Pass::Grep for the
- * cross-backend caveat.
- *
- * Runs a background thread to avoid blocking the UI. Results are emitted on
- * the main thread via QMetaObject::invokeMethod. A sequence counter discards
- * results from superseded searches.
+ * cross-backend caveat. The work happens on a NativeGrep thread; its result
+ * arrives on this object's thread as finishedGrep.
  */
 void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
-  for (QThread *t : std::as_const(m_grepThreads))
-    if (t && t->isRunning())
-      t->requestInterruption();
-  // No wait() — blocking the UI thread while GPG decrypts would freeze the
-  // interface. Stale results are discarded via the sequence counter.
-
-  // Advance the sequence before any early return so in-flight workers from the
-  // previous query fail the seq check and cannot publish stale results.
-  const int seq = ++m_grepSeq;
-
-  // Use trimmed() rather than isEmpty(): a whitespace-only string is a valid
-  // regex that matches every non-empty line, which is almost never intentional
-  // and would decrypt the entire store.
-  //
-  // Both early returns post finishedGrep via Qt::QueuedConnection so that the
-  // signal is always delivered asynchronously after Grep() returns, matching
-  // the contract of the threaded path.
-  if (pattern.trimmed().isEmpty()) {
-    QMetaObject::invokeMethod(
-        this,
-        [this, seq]() {
-          if (m_grepSeq == seq)
-            emit finishedGrep({});
-        },
-        Qt::QueuedConnection);
-    return;
-  }
-
-  const QRegularExpression rx(
-      pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption
-                               : QRegularExpression::PatternOptions{});
-  if (!rx.isValid()) {
-    QMetaObject::invokeMethod(
-        this,
-        [this, seq]() {
-          if (m_grepSeq == seq)
-            emit finishedGrep({});
-        },
-        Qt::QueuedConnection);
-    return;
-  }
-  const QString gpgExe = m_settings.gpgExecutable;
-  const QString storeDir = m_settings.passStore;
-  const QProcessEnvironment env = exec.environment();
-  QPointer<ImitatePass> self(this);
-
-  auto emitResults = [self, seq](QList<QPair<QString, QStringList>> results) {
-    if (!self)
-      return;
-    QMetaObject::invokeMethod(
-        self,
-        [self, seq, results = std::move(results)]() {
-          if (self && self->m_grepSeq == seq)
-            emit self->finishedGrep(results);
-        },
-        Qt::QueuedConnection);
-  };
-
-  QThread *thread = QThread::create(
-      [gpgExe, storeDir, env, rx, emitResults = std::move(emitResults)]() {
-        std::move(emitResults)(grepScanStore(env, gpgExe, storeDir, rx));
-      });
-
-  m_grepThreads.append(thread);
-  connect(thread, &QThread::finished, thread, &QObject::deleteLater);
-  connect(thread, &QThread::finished, this,
-          [this, thread]() { m_grepThreads.removeOne(thread); });
-  thread->start();
+  m_grep.search(pattern, caseInsensitive, m_settings.gpgExecutable,
+                m_settings.passStore, exec.environment());
 }

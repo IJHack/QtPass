@@ -531,8 +531,8 @@ void tst_integration::imitatePass_insertAndGrep() {
 }
 
 // Verifies the env-aware Executor failure path used by
-// ImitatePass::grepMatchFile(): when gpg returns non-zero on a corrupt /
-// foreign .gpg file inside the store, grepScanStore must drop that file's
+// NativeGrep::matchFile(): when gpg returns non-zero on a corrupt /
+// foreign .gpg file inside the store, NativeGrep::scanStore must drop that file's
 // results and keep walking — not abort the whole scan or surface garbage.
 //
 // Plants two legitimate entries, then drops two non-gpg payloads with a
@@ -561,9 +561,9 @@ void tst_integration::imitatePass_grepSkipsUndecryptableFiles() {
 
   // Plant two .gpg files that aren't valid gpg ciphertext at all. Their
   // file name contains "token" — but since gpg --decrypt will fail with
-  // non-zero exit on the garbage payload, grepMatchFile must throw away
+  // non-zero exit on the garbage payload, matchFile must throw away
   // the would-be plaintext (including the embedded "token" substring)
-  // and grepScanStore must continue past the failure.
+  // and NativeGrep::scanStore must continue past the failure.
   const QString corrupt1 = storeDir.path() + "/work/garbage-token.gpg";
   const QString corrupt2 = storeDir.path() + "/corrupt.gpg";
   QFile c1(corrupt1);
@@ -588,7 +588,7 @@ void tst_integration::imitatePass_grepSkipsUndecryptableFiles() {
   const auto results = grepSpy[0][0].value<GrepResults>();
   // The two real entries must be present; neither of the corrupt files
   // may contribute a match even though one contains "token" in its raw
-  // bytes — gpg failed to decrypt them, so grepMatchFile returned empty.
+  // bytes — gpg failed to decrypt them, so matchFile returned empty.
   QVERIFY2(
       results.size() == 2,
       qPrintable(

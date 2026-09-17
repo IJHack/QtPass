@@ -3,6 +3,7 @@
 #include "profileinit.h"
 #include "appsettings.h"
 #include "executor.h"
+#include "gpgidsigner.h"
 #include "userinfo.h"
 #include <QDir>
 #include <QFile>
@@ -89,20 +90,12 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
 
 auto ProfileInit::signGpgId(const QString &gpgIdFile, const AppSettings &s,
                             QString *note) -> bool {
-  // First key only, like ImitatePass::signGpgIdFile: repeated --default-key
-  // options override each other.
-  const QString key =
-      s.passSigningKey.split(QLatin1Char(' '), Qt::SkipEmptyParts).first();
+  const GpgIdSigner signer(s.gpgExecutable,
+                           GpgIdSigner::keysFromSetting(s.passSigningKey));
   QString err;
-  const int rc = Executor::executeBlocking(
-      s.gpgExecutable,
-      {QStringLiteral("--default-key"), key, QStringLiteral("--yes"),
-       QStringLiteral("--detach-sign"),
-       Executor::translatePathForWsl(gpgIdFile, s.gpgExecutable)},
-      QString(), nullptr, &err);
-  if (rc != 0) {
-    *note =
-        tr("Could not sign %1 with %2: %3").arg(gpgIdFile, key, err.trimmed());
+  if (!signer.sign(gpgIdFile, &err)) {
+    *note = tr("Could not sign %1 with %2: %3")
+                .arg(gpgIdFile, signer.keys().first(), err.trimmed());
     return false;
   }
   return true;
