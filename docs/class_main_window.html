@@ -172,8 +172,6 @@ void&#160;</td><td class="memItemRight"><b>endReencryptPath</b> ()</td></tr>
 Signals</h2></td></tr>
 <tr class="memitem:a7e1ae254673e36410d4b3a73e1e8ec8e" id="r_a7e1ae254673e36410d4b3a73e1e8ec8e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7e1ae254673e36410d4b3a73e1e8ec8e">passShowHandlerFinished</a> (const QString &amp;output)</td></tr>
 <tr class="memdesc:a7e1ae254673e36410d4b3a73e1e8ec8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when the pass show handler has finished decrypting.  <br /></td></tr>
-<tr class="memitem:a7e72f32612c2436ff4756c5c25b6b4ec" id="r_a7e72f32612c2436ff4756c5c25b6b4ec"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7e72f32612c2436ff4756c5c25b6b4ec">generateGPGKeyPair</a> (const QString &amp;batch)</td></tr>
-<tr class="memdesc:a7e72f32612c2436ff4756c5c25b6b4ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted to trigger GPG key pair generation.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -182,8 +180,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9630f0fe0e0941a7996d68014f837ed5" id="r_a9630f0fe0e0941a7996d68014f837ed5"><td class="memItemLeft"><a id="a9630f0fe0e0941a7996d68014f837ed5" name="a9630f0fe0e0941a7996d68014f837ed5"></a>
 void&#160;</td><td class="memItemRight"><b>restoreWindow</b> ()</td></tr>
 <tr class="memdesc:a9630f0fe0e0941a7996d68014f837ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restore window geometry and state from saved settings. <br /></td></tr>
-<tr class="memitem:a8737aac54ea6a935210f9a35ac914aa7" id="r_a8737aac54ea6a935210f9a35ac914aa7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8737aac54ea6a935210f9a35ac914aa7">generateKeyPair</a> (const QString &amp;batch, QDialog *dialog)</td></tr>
-<tr class="memdesc:a8737aac54ea6a935210f9a35ac914aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the GPG key generation dialog.  <br /></td></tr>
 <tr class="memitem:acc003e9dd04952c5069f87839d708073" id="r_acc003e9dd04952c5069f87839d708073"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acc003e9dd04952c5069f87839d708073">config</a> () -&gt; bool</td></tr>
 <tr class="memdesc:acc003e9dd04952c5069f87839d708073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the configuration dialog.  <br /></td></tr>
 <tr class="memitem:ac240119ea67a770e5d997a5aa0fe47a3" id="r_ac240119ea67a770e5d997a5aa0fe47a3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a> (bool state)</td></tr>
@@ -192,13 +188,8 @@ void&#160;</td><td class="memItemRight"><b>restoreWindow</b> ()</td></tr>
 <tr class="memdesc:aae7cd7af04cedf4a17ede44bffafec89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display a transient message in the text panel.  <br /></td></tr>
 <tr class="memitem:acc66dda09963fdddea9716163293ddda" id="r_acc66dda09963fdddea9716163293ddda"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acc66dda09963fdddea9716163293ddda">getCurrentTreeViewIndex</a> () -&gt; QModelIndex</td></tr>
 <tr class="memdesc:acc66dda09963fdddea9716163293ddda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the currently selected index in the tree view.  <br /></td></tr>
-<tr class="memitem:a8c7b9be447abef349b66c214980988d3" id="r_a8c7b9be447abef349b66c214980988d3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8c7b9be447abef349b66c214980988d3">getKeyGenDialog</a> () -&gt; QDialog *</td></tr>
-<tr class="memdesc:a8c7b9be447abef349b66c214980988d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the active key generation dialog, if any.  <br /></td></tr>
 <tr class="memitem:ac4f5f3a524aa6bf13c16b348c48074b6" id="r_ac4f5f3a524aa6bf13c16b348c48074b6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac4f5f3a524aa6bf13c16b348c48074b6">initSucceeded</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:ac4f5f3a524aa6bf13c16b348c48074b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether startup configuration succeeded.  <br /></td></tr>
-<tr class="memitem:ad2a9b38617b357d8fa42744c00a26fcf" id="r_ad2a9b38617b357d8fa42744c00a26fcf"><td class="memItemLeft"><a id="ad2a9b38617b357d8fa42744c00a26fcf" name="ad2a9b38617b357d8fa42744c00a26fcf"></a>
-void&#160;</td><td class="memItemRight"><b>cleanKeygenDialog</b> ()</td></tr>
-<tr class="memdesc:ad2a9b38617b357d8fa42744c00a26fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy and clear the key generation dialog. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -497,69 +488,6 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7e72f32612c2436ff4756c5c25b6b4ec" name="a7e72f32612c2436ff4756c5c25b6b4ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e72f32612c2436ff4756c5c25b6b4ec">&#9670;&#160;</a></span>generateGPGKeyPair</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::generateGPGKeyPair </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>batch</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Emitted to trigger GPG key pair generation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">batch</td><td>GPG batch parameter string. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8737aac54ea6a935210f9a35ac914aa7" name="a8737aac54ea6a935210f9a35ac914aa7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8737aac54ea6a935210f9a35ac914aa7">&#9670;&#160;</a></span>generateKeyPair()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::generateKeyPair </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>batch</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QDialog *</td>          <td class="paramname"><span class="paramname"><em>dialog</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Open the GPG key generation dialog. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">batch</td><td>GPG batch parameter string. </td></tr>
-    <tr><td class="paramname">dialog</td><td>Dialog to store as the active keygen dialog; it is kept as activeKeygenDialog and represents the UI used during generation. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="acc66dda09963fdddea9716163293ddda" name="acc66dda09963fdddea9716163293ddda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acc66dda09963fdddea9716163293ddda">&#9670;&#160;</a></span>getCurrentTreeViewIndex()</h2>
 
@@ -577,36 +505,6 @@ Protected Member Functions</h2></td></tr>
 
 <p>Return the currently selected index in the tree view. </p>
 <dl class="section return"><dt>Returns</dt><dd>Current QModelIndex. </dd></dl>
-
-</div>
-</div>
-<a id="a8c7b9be447abef349b66c214980988d3" name="a8c7b9be447abef349b66c214980988d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c7b9be447abef349b66c214980988d3">&#9670;&#160;</a></span>getKeyGenDialog()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto MainWindow::getKeyGenDialog </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; QDialog *</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return the active key generation dialog, if any. </p>
-<p>The returned pointer is non-owning: the dialog's lifetime is managed elsewhere (<a class="el" href="#ad2a9b38617b357d8fa42744c00a26fcf" title="Destroy and clear the key generation dialog.">cleanKeygenDialog()</a> closes and forgets it), so callers must observe it only and never delete it. Backed by a QPointer, so it reads back as nullptr once the dialog is destroyed. </p><dl class="section return"><dt>Returns</dt><dd>Non-owning pointer to the keygen QDialog, or nullptr when none is active. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00112">112</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -636,7 +534,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return whether startup configuration succeeded. </p>
 <p>Reflects the result of the initial configuration check performed in the constructor (<a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="Initialize internal state and signal connections.">QtPass::init()</a>). When it is false the application cannot be used (e.g. the user cancelled the first-run wizard), and main() should exit before ever showing the window. </p><dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="Initialize internal state and signal connections.">QtPass::init()</a> reported a working configuration. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00123">123</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00103">103</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
