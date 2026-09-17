@@ -116,93 +116,93 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;appsettings.h&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;enums.h&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;passwordconfiguration.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QDialog&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span>Ui {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">struct </span>UserInfo;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span>ConfigDialog;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>} <span class="comment">// namespace Ui</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span>QTableWidgetItem;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_config_dialog.html">   28</a></span><span class="keyword">class </span><a class="code hl_function" href="class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347">ConfigDialog</a> : <span class="keyword">public</span> QDialog {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  Q_OBJECT</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347">   36</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347">ConfigDialog</a>(QWidget *parent);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_function" href="class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347">~ConfigDialog</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6">   43</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6">useSelection</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6">useSelection</a>);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91">   49</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91">useAutoclear</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91">useAutoclear</a>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0">   55</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0">useAutoclearPanel</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0">useAutoclearPanel</a>);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a0ae43a6dc241ebbf619f61171fbbd123">   61</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_config_dialog.html#a0ae43a6dc241ebbf619f61171fbbd123">getProfiles</a>() -&gt; QHash&lt;QString, QHash&lt;QString, QString&gt;&gt;;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15">   66</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15">wizard</a>();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567">   72</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567">useTrayIcon</a>(<span class="keywordtype">bool</span> useSystray);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f">   78</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f">useGit</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f">useGit</a>);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">   84</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">useOtp</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">useOtp</a>);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a859c596a86c2ee90176c93d8c52f12a7">   90</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a859c596a86c2ee90176c93d8c52f12a7">useGrepSearch</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a859c596a86c2ee90176c93d8c52f12a7">useGrepSearch</a>);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9">   96</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9">useQrencode</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9">useQrencode</a>);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a3d42b658f6b8436e9f6ca17059703c0a">  102</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a3d42b658f6b8436e9f6ca17059703c0a">setPwgenPath</a>(<span class="keyword">const</span> QString &amp;path);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">  108</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">usePwgen</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">usePwgen</a>);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b">  114</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b">setPasswordConfiguration</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_password_configuration.html">PasswordConfiguration</a> &amp;config);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a97c5f924a95b30f4d6a60df361c2b3ba">  120</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_config_dialog.html#a97c5f924a95b30f4d6a60df361c2b3ba">getPasswordConfiguration</a>() -&gt; <a class="code hl_struct" href="struct_password_configuration.html">PasswordConfiguration</a>;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a">  126</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a">useTemplate</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a">useTemplate</a>);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <span class="keywordtype">void</span> on_accepted();</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="keywordtype">void</span> on_autodetectButton_clicked();</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordtype">void</span> on_radioButtonNative_clicked();</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordtype">void</span> on_radioButtonPass_clicked();</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keywordtype">void</span> on_toolButtonGit_clicked();</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keywordtype">void</span> on_toolButtonGpg_clicked();</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keywordtype">void</span> on_pushButtonGenerateKey_clicked();</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keywordtype">void</span> on_toolButtonPwgen_clicked();</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keywordtype">void</span> on_toolButtonPass_clicked();</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keywordtype">void</span> on_toolButtonStore_clicked();</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keywordtype">void</span> on_comboBoxClipboard_activated(<span class="keywordtype">int</span>);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  <span class="keywordtype">void</span> on_passwordCharTemplateSelector_activated(<span class="keywordtype">int</span>);</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <span class="keywordtype">void</span> on_checkBoxSelection_clicked();</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keywordtype">void</span> on_checkBoxAutoclear_clicked();</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keywordtype">void</span> on_checkBoxAutoclearPanel_clicked();</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keywordtype">void</span> on_addButton_clicked();</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keywordtype">void</span> on_deleteButton_clicked();</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="keywordtype">void</span> on_profileTable_cellDoubleClicked(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> column);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keywordtype">void</span> on_checkBoxUseTrayIcon_clicked();</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keywordtype">void</span> on_checkBoxUseGit_clicked();</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="keywordtype">void</span> on_checkBoxUsePwgen_clicked();</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keywordtype">void</span> on_checkBoxUseTemplate_clicked();</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keywordtype">void</span> onProfileTableItemChanged(QTableWidgetItem *item);</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keywordtype">void</span> onProfileTableSelectionChanged();</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keywordtype">void</span> updateProfileStatus(<span class="keywordtype">int</span> row);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keywordtype">void</span> loadGitSettingsForProfile(</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <span class="keyword">const</span> QString &amp;profileName,</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <span class="keyword">const</span> QHash&lt;QString, QHash&lt;QString, QString&gt;&gt; &amp;profiles);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;profile.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QDialog&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>Ui {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">struct </span>UserInfo;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span>ConfigDialog;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>} <span class="comment">// namespace Ui</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span>QTableWidgetItem;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_config_dialog.html">   29</a></span><span class="keyword">class </span><a class="code hl_function" href="class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347">ConfigDialog</a> : <span class="keyword">public</span> QDialog {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  Q_OBJECT</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347">   37</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347">ConfigDialog</a>(QWidget *parent);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_function" href="class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347">~ConfigDialog</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6">   44</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6">useSelection</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6">useSelection</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91">   50</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91">useAutoclear</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91">useAutoclear</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0">   56</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0">useAutoclearPanel</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0">useAutoclearPanel</a>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_config_dialog.html#abb1e0d5136bd38db9c52bdca8cf22a01">   62</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_config_dialog.html#abb1e0d5136bd38db9c52bdca8cf22a01">getProfiles</a>() -&gt; Profiles;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15">   67</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15">wizard</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567">   73</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567">useTrayIcon</a>(<span class="keywordtype">bool</span> useSystray);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f">   79</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f">useGit</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f">useGit</a>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">   85</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">useOtp</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">useOtp</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a859c596a86c2ee90176c93d8c52f12a7">   91</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a859c596a86c2ee90176c93d8c52f12a7">useGrepSearch</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a859c596a86c2ee90176c93d8c52f12a7">useGrepSearch</a>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9">   97</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9">useQrencode</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9">useQrencode</a>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a3d42b658f6b8436e9f6ca17059703c0a">  103</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a3d42b658f6b8436e9f6ca17059703c0a">setPwgenPath</a>(<span class="keyword">const</span> QString &amp;path);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">  109</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">usePwgen</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">usePwgen</a>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b">  115</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b">setPasswordConfiguration</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_password_configuration.html">PasswordConfiguration</a> &amp;config);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a97c5f924a95b30f4d6a60df361c2b3ba">  121</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_config_dialog.html#a97c5f924a95b30f4d6a60df361c2b3ba">getPasswordConfiguration</a>() -&gt; <a class="code hl_struct" href="struct_password_configuration.html">PasswordConfiguration</a>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a">  127</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a">useTemplate</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a">useTemplate</a>);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="keywordtype">void</span> on_accepted();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordtype">void</span> on_autodetectButton_clicked();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordtype">void</span> on_radioButtonNative_clicked();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keywordtype">void</span> on_radioButtonPass_clicked();</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keywordtype">void</span> on_toolButtonGit_clicked();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keywordtype">void</span> on_toolButtonGpg_clicked();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keywordtype">void</span> on_pushButtonGenerateKey_clicked();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keywordtype">void</span> on_toolButtonPwgen_clicked();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keywordtype">void</span> on_toolButtonPass_clicked();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keywordtype">void</span> on_toolButtonStore_clicked();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  <span class="keywordtype">void</span> on_comboBoxClipboard_activated(<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <span class="keywordtype">void</span> on_passwordCharTemplateSelector_activated(<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keywordtype">void</span> on_checkBoxSelection_clicked();</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keywordtype">void</span> on_checkBoxAutoclear_clicked();</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keywordtype">void</span> on_checkBoxAutoclearPanel_clicked();</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keywordtype">void</span> on_addButton_clicked();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="keywordtype">void</span> on_deleteButton_clicked();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keywordtype">void</span> on_profileTable_cellDoubleClicked(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> column);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keywordtype">void</span> on_checkBoxUseTrayIcon_clicked();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="keywordtype">void</span> on_checkBoxUseGit_clicked();</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keywordtype">void</span> on_checkBoxUsePwgen_clicked();</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keywordtype">void</span> on_checkBoxUseTemplate_clicked();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keywordtype">void</span> onProfileTableItemChanged(QTableWidgetItem *item);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keywordtype">void</span> onProfileTableSelectionChanged();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keywordtype">void</span> updateProfileStatus(<span class="keywordtype">int</span> row);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keywordtype">void</span> loadGitSettingsForProfile(<span class="keyword">const</span> QString &amp;profileName,</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                                 <span class="keyword">const</span> Profiles &amp;profiles);</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  QScopedPointer&lt;Ui::ConfigDialog&gt; ui;</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keyword">auto</span> getSecretKeys() -&gt; QStringList;</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="keywordtype">void</span> setGitPath(<span class="keyword">const</span> QString &amp;);</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordtype">void</span> setProfiles(QHash&lt;QString, QHash&lt;QString, QString&gt;&gt;, <span class="keyword">const</span> QString &amp;);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordtype">void</span> setProfiles(Profiles, <span class="keyword">const</span> QString &amp;);</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="keywordtype">void</span> usePass(<span class="keywordtype">bool</span> usePass);</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <span class="keywordtype">void</span> applySettings(<span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;settings);</div>
@@ -223,17 +223,15 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="keyword">auto</span> checkPasswordStore() -&gt; bool;</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="keywordtype">void</span> handleGpgIdFile();</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keywordtype">void</span> selectRecipients(<span class="keyword">const</span> QString &amp;storePath, <span class="keywordtype">bool</span> gitInit);</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="keywordtype">void</span> initializeNewProfiles(</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      <span class="keyword">const</span> QHash&lt;QString, QHash&lt;QString, QString&gt;&gt; &amp;existingProfiles);</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  QHash&lt;QString, QHash&lt;QString, QString&gt;&gt; m_profiles;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  QString m_customPasswordChars;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>};</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="keywordtype">void</span> initializeNewProfiles(<span class="keyword">const</span> Profiles &amp;existingProfiles);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  Profiles m_profiles;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  QString m_customPasswordChars;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>};</div>
 </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="preprocessor">#endif </span><span class="comment">// SRC_CONFIGDIALOG_H_</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">#endif </span><span class="comment">// SRC_CONFIGDIALOG_H_</span></div>
 <div class="ttc" id="aclass_config_dialog_html_a003ec5de7c29ced34f045f0843d2e95b"><div class="ttname"><a href="class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b">ConfigDialog::setPasswordConfiguration</a></div><div class="ttdeci">void setPasswordConfiguration(const PasswordConfiguration &amp;config)</div><div class="ttdoc">Apply a password configuration to the dialog controls.</div></div>
-<div class="ttc" id="aclass_config_dialog_html_a0ae43a6dc241ebbf619f61171fbbd123"><div class="ttname"><a href="class_config_dialog.html#a0ae43a6dc241ebbf619f61171fbbd123">ConfigDialog::getProfiles</a></div><div class="ttdeci">auto getProfiles() -&gt; QHash&lt; QString, QHash&lt; QString, QString &gt; &gt;</div><div class="ttdoc">Return all configured profiles.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_a2a395844557989cf343503e80b075ba0"><div class="ttname"><a href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">ConfigDialog::useOtp</a></div><div class="ttdeci">void useOtp(bool useOtp)</div><div class="ttdoc">Enable or disable OTP support.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_a3d42b658f6b8436e9f6ca17059703c0a"><div class="ttname"><a href="class_config_dialog.html#a3d42b658f6b8436e9f6ca17059703c0a">ConfigDialog::setPwgenPath</a></div><div class="ttdeci">void setPwgenPath(const QString &amp;path)</div><div class="ttdoc">Set the path to the pwgen executable.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_a4dcec976dc9117924ed9c230e9683c9f"><div class="ttname"><a href="class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f">ConfigDialog::useGit</a></div><div class="ttdeci">void useGit(bool useGit)</div><div class="ttdoc">Enable or disable git integration.</div></div>
@@ -245,6 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="ttc" id="aclass_config_dialog_html_a88795eefbcfcdd86776d1d26a1eee347"><div class="ttname"><a href="class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347">ConfigDialog::ConfigDialog</a></div><div class="ttdeci">ConfigDialog(QWidget *parent)</div><div class="ttdoc">Construct a ConfigDialog associated with the given main window.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_a97c5f924a95b30f4d6a60df361c2b3ba"><div class="ttname"><a href="class_config_dialog.html#a97c5f924a95b30f4d6a60df361c2b3ba">ConfigDialog::getPasswordConfiguration</a></div><div class="ttdeci">auto getPasswordConfiguration() -&gt; PasswordConfiguration</div><div class="ttdoc">Read the current password configuration from the dialog controls.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_aac383b23ed9b34eb52918de2b10d9567"><div class="ttname"><a href="class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567">ConfigDialog::useTrayIcon</a></div><div class="ttdeci">void useTrayIcon(bool useSystray)</div><div class="ttdoc">Show or hide the system tray icon.</div></div>
+<div class="ttc" id="aclass_config_dialog_html_abb1e0d5136bd38db9c52bdca8cf22a01"><div class="ttname"><a href="class_config_dialog.html#abb1e0d5136bd38db9c52bdca8cf22a01">ConfigDialog::getProfiles</a></div><div class="ttdeci">auto getProfiles() -&gt; Profiles</div><div class="ttdoc">Return all configured profiles.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_ac3ebb263a2b69e39c81217a6d8630995"><div class="ttname"><a href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">ConfigDialog::usePwgen</a></div><div class="ttdeci">void usePwgen(bool usePwgen)</div><div class="ttdoc">Enable or disable pwgen-based password generation.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_ad5b80066591f19fdaaa06b7cb5ba7f15"><div class="ttname"><a href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15">ConfigDialog::wizard</a></div><div class="ttdeci">void wizard()</div><div class="ttdoc">Run the first-time setup wizard.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_af93386c7b55bd8ae35fda6f096d46eb6"><div class="ttname"><a href="class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6">ConfigDialog::useSelection</a></div><div class="ttdeci">void useSelection(bool useSelection)</div><div class="ttdoc">Enable or disable clipboard selection mode.</div></div>

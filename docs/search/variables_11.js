@@ -2,7 +2,7 @@ var searchData=
 [
   ['useautoclear_0',['useAutoclear',['../struct_app_settings.html#ab7ed344d235b3e5777a94c13d50e0b66',1,'AppSettings']]],
   ['useautoclearpanel_1',['useAutoclearPanel',['../struct_app_settings.html#a457fe600e8bd16cdb5b985754deab231',1,'AppSettings']]],
-  ['usegit_2',['useGit',['../struct_app_settings.html#a95d05280efb398eb31e2440b1fcd1444',1,'AppSettings']]],
+  ['usegit_2',['useGit',['../struct_app_settings.html#a95d05280efb398eb31e2440b1fcd1444',1,'AppSettings::useGit'],['../struct_profile.html#a3943541e66642e37b2ef228c6e3bc4f3',1,'Profile::useGit']]],
   ['usegrepsearch_3',['useGrepSearch',['../struct_app_settings.html#a0cd6f1f365fafe779fbb047bc10453d7',1,'AppSettings']]],
   ['usemonospace_4',['useMonospace',['../struct_app_settings.html#abca264324f7360383c5e262223a4f97e',1,'AppSettings']]],
   ['useotp_5',['useOtp',['../struct_app_settings.html#a39b0ad93cc76f9941fe22291ea689613',1,'AppSettings']]],

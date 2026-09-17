@@ -7,8 +7,8 @@ var searchData=
   ['arguments_4',['arguments',['../struct_resolved_gpgconf_command.html#aa06fa6189e39477786bbb118dca49556',1,'ResolvedGpgconfCommand']]],
   ['autoclearpanelseconds_5',['autoclearPanelSeconds',['../struct_app_settings.html#a5dbc9ec5be7876610b987a0d221c28a8',1,'AppSettings']]],
   ['autoclearseconds_6',['autoclearSeconds',['../struct_app_settings.html#a92b8e71fe0eb104d6f8f91a53db04f6d',1,'AppSettings']]],
-  ['autopull_7',['autoPull',['../struct_app_settings.html#a58078cf5ba353cf2fa920e79f5f6bd4f',1,'AppSettings']]],
-  ['autopush_8',['autoPush',['../struct_app_settings.html#aaf958d6fdb0d9d28ddf10872e9be0238',1,'AppSettings']]],
+  ['autopull_7',['autoPull',['../struct_app_settings.html#a58078cf5ba353cf2fa920e79f5f6bd4f',1,'AppSettings::autoPull'],['../struct_profile.html#a3365fc692edf8aa98fc48afa850a792c',1,'Profile::autoPull']]],
+  ['autopush_8',['autoPush',['../struct_app_settings.html#aaf958d6fdb0d9d28ddf10872e9be0238',1,'AppSettings::autoPush'],['../struct_profile.html#a02fe0d44538b9aac07fc7e684237fefb',1,'Profile::autoPush']]],
   ['avoidcapitals_9',['avoidCapitals',['../struct_app_settings.html#a8cc6fc41d08e175473fa5b004c5a2178',1,'AppSettings']]],
   ['avoidnumbers_10',['avoidNumbers',['../struct_app_settings.html#ac69e7514bfb4ab78d83383ab8feb5049',1,'AppSettings']]]
 ];

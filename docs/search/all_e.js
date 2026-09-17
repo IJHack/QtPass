@@ -22,15 +22,16 @@ var searchData=
   ['passworddialog_19',['PasswordDialog',['../class_password_dialog.html',1,'PasswordDialog'],['../class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e',1,'PasswordDialog::PasswordDialog(PasswordConfiguration passConfig, QWidget *parent=nullptr)'],['../class_password_dialog.html#a1795ae0584aa5d5237e8819aca573d4c',1,'PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &amp;s, QString file, const bool &amp;isNew, QWidget *parent=nullptr)']]],
   ['passworddisplaypanel_20',['PasswordDisplayPanel',['../class_password_display_panel.html',1,'PasswordDisplayPanel'],['../class_password_display_panel.html#a9629fe79e18a80f29101b80e3077250d',1,'PasswordDisplayPanel::PasswordDisplayPanel()']]],
   ['passwordfromfiletoclipboard_21',['passwordFromFileToClipboard',['../class_main_window.html#a7d0d5451438004ab31c4d9d48a869378',1,'MainWindow']]],
-  ['path_22',['path',['../structdrag_and_drop_info_password_store.html#ac3d6eb02633ddfd1a290cbaf27ca5390',1,'dragAndDropInfoPasswordStore']]],
+  ['path_22',['path',['../struct_profile.html#a1e4c9f21760536f1ec3a4689b0932557',1,'Profile::path'],['../structdrag_and_drop_info_password_store.html#ac3d6eb02633ddfd1a290cbaf27ca5390',1,'dragAndDropInfoPasswordStore::path']]],
   ['pathvalidator_23',['PathValidator',['../class_path_validator.html',1,'']]],
   ['process_24',['PROCESS',['../class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772',1,'Pass::PROCESS'],['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69',1,'Enums::PROCESS']]],
   ['process_5fcount_25',['PROCESS_COUNT',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e',1,'Enums']]],
   ['processerrorexit_26',['processErrorExit',['../class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f',1,'Pass']]],
   ['processname_27',['processName',['../class_process_output_panel.html#af8ec4c669ae299698055cf9d36d50881',1,'ProcessOutputPanel']]],
   ['processoutputpanel_28',['ProcessOutputPanel',['../class_process_output_panel.html',1,'ProcessOutputPanel'],['../class_process_output_panel.html#a5eced61630b5293e8fda4c3b92c1fe71',1,'ProcessOutputPanel::ProcessOutputPanel()']]],
-  ['profileinit_29',['ProfileInit',['../class_profile_init.html',1,'']]],
-  ['program_30',['program',['../struct_resolved_gpgconf_command.html#ae34ff02051398b8688497a4fb373e1d3',1,'ResolvedGpgconfCommand']]],
-  ['protocolregex_31',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]],
-  ['pwgenexecutable_32',['pwgenExecutable',['../struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee',1,'AppSettings']]]
+  ['profile_29',['Profile',['../struct_profile.html',1,'']]],
+  ['profileinit_30',['ProfileInit',['../class_profile_init.html',1,'']]],
+  ['program_31',['program',['../struct_resolved_gpgconf_command.html#ae34ff02051398b8688497a4fb373e1d3',1,'ResolvedGpgconfCommand']]],
+  ['protocolregex_32',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]],
+  ['pwgenexecutable_33',['pwgenExecutable',['../struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee',1,'AppSettings']]]
 ];

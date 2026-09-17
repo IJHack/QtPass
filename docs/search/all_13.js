@@ -4,7 +4,7 @@ var searchData=
   ['updateenv_1',['updateEnv',['../class_pass.html#ac679a086b289cdb9245906948ba0458a',1,'Pass']]],
   ['useautoclear_2',['useAutoclear',['../struct_app_settings.html#ab7ed344d235b3e5777a94c13d50e0b66',1,'AppSettings::useAutoclear'],['../class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91',1,'ConfigDialog::useAutoclear()']]],
   ['useautoclearpanel_3',['useAutoclearPanel',['../struct_app_settings.html#a457fe600e8bd16cdb5b985754deab231',1,'AppSettings::useAutoclearPanel'],['../class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0',1,'ConfigDialog::useAutoclearPanel()']]],
-  ['usegit_4',['useGit',['../struct_app_settings.html#a95d05280efb398eb31e2440b1fcd1444',1,'AppSettings::useGit'],['../class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f',1,'ConfigDialog::useGit()']]],
+  ['usegit_4',['useGit',['../struct_app_settings.html#a95d05280efb398eb31e2440b1fcd1444',1,'AppSettings::useGit'],['../struct_profile.html#a3943541e66642e37b2ef228c6e3bc4f3',1,'Profile::useGit'],['../class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f',1,'ConfigDialog::useGit()']]],
   ['usegrepsearch_5',['useGrepSearch',['../struct_app_settings.html#a0cd6f1f365fafe779fbb047bc10453d7',1,'AppSettings::useGrepSearch'],['../class_config_dialog.html#a859c596a86c2ee90176c93d8c52f12a7',1,'ConfigDialog::useGrepSearch()']]],
   ['usemonospace_6',['useMonospace',['../struct_app_settings.html#abca264324f7360383c5e262223a4f97e',1,'AppSettings']]],
   ['useotp_7',['useOtp',['../struct_app_settings.html#a39b0ad93cc76f9941fe22291ea689613',1,'AppSettings::useOtp'],['../class_config_dialog.html#a2a395844557989cf343503e80b075ba0',1,'ConfigDialog::useOtp()']]],

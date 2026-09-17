@@ -17,7 +17,9 @@ var searchData=
   ['finishedremove_14',['finishedRemove',['../class_pass.html#af08e80e76ffd6581f35e701e6c8b533e',1,'Pass']]],
   ['finishedshow_15',['finishedShow',['../class_pass.html#a3a1a065e12909518f3898b3557ed714c',1,'Pass']]],
   ['finishsearch_16',['finishSearch',['../class_grep_search_controller.html#a7ba10cf18a8566d0bb3ff1312bfd5c5c',1,'GrepSearchController']]],
-  ['flags_17',['flags',['../class_store_model.html#ab8ebcb53ce116b2ff658a6d49134531d',1,'StoreModel']]],
-  ['flashtext_18',['flashText',['../class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89',1,'MainWindow']]],
-  ['fullyvalid_19',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
+  ['flagfromstring_17',['flagFromString',['../struct_profile.html#a89364a3e36a6f8b6197adc385854e023',1,'Profile']]],
+  ['flags_18',['flags',['../class_store_model.html#ab8ebcb53ce116b2ff658a6d49134531d',1,'StoreModel']]],
+  ['flagtostring_19',['flagToString',['../struct_profile.html#a5e7cc4f12dbd6e0e51a0ef93f9c37e7d',1,'Profile']]],
+  ['flashtext_20',['flashText',['../class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89',1,'MainWindow']]],
+  ['fullyvalid_21',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
 ];
