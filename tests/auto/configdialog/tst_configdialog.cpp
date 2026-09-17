@@ -2,9 +2,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QApplication>
 #include <QCheckBox>
+#include <QComboBox>
 #include <QGroupBox>
 #include <QLabel>
 #include <QLineEdit>
+#include <QPlainTextEdit>
 #include <QSpinBox>
 #include <QSystemTrayIcon>
 #include <QTableWidget>
@@ -60,6 +62,8 @@ private Q_SLOTS:
   void browseButtonsAreNamed();
   void dialogCanShrinkBelowItsOldMinimum();
   void sectionHeadersAreGroupBoxes();
+  void acceptRoundTripsEveryOwnedSetting();
+  void acceptSavesTheGlobalAutoPushAndAutoPull();
 };
 
 /**
@@ -469,6 +473,102 @@ void tst_configdialog::sectionHeadersAreGroupBoxes() {
   }
   QVERIFY2(dialog.findChild<QLabel *>(QStringLiteral("label_10")) == nullptr,
            "the pseudo-header labels must be gone");
+}
+
+namespace {
+template <typename T> auto child(ConfigDialog &d, const char *name) -> T * {
+  auto *w = d.findChild<T *>(QLatin1String(name));
+  if (w == nullptr) {
+    qFatal("missing widget %s", name);
+  }
+  return w;
+}
+} // namespace
+
+/**
+ * @brief The regression net for #1602's six config-clobbering paths: flip
+ *        every setting the dialog owns to a non-default value, accept, load
+ *        again, and expect exactly those values back. Keys the dialog does
+ *        not own (window geometry, profiles, ...) must survive untouched.
+ */
+void tst_configdialog::acceptRoundTripsEveryOwnedSetting() {
+  {
+    AppSettings seed = QtPassSettings::load();
+    seed.version = QStringLiteral("0.0.0-seed");
+    QtPassSettings::save(seed);
+    QtPassSettings::setGeometry(QByteArrayLiteral("keep-me"));
+  }
+  ConfigDialog dialog(nullptr);
+  child<QLineEdit>(dialog, "passPath")->setText(QStringLiteral("/opt/pass"));
+  child<QLineEdit>(dialog, "gitPath")->setText(QStringLiteral("/opt/git"));
+  child<QLineEdit>(dialog, "gpgPath")->setText(QStringLiteral("/opt/gpg"));
+  child<QLineEdit>(dialog, "pwgenPath")->setText(QStringLiteral("/opt/pwgen"));
+  child<QLineEdit>(dialog, "storePath")->setText(QStringLiteral("/tmp/store"));
+  child<QLineEdit>(dialog, "sshAuthSockOverride")->setText(QString());
+  child<QComboBox>(dialog, "comboBoxClipboard")->setCurrentIndex(2);
+  child<QSpinBox>(dialog, "spinBoxAutoclearSeconds")->setValue(42);
+  child<QSpinBox>(dialog, "spinBoxAutoclearPanelSeconds")->setValue(43);
+  child<QSpinBox>(dialog, "spinBoxPasswordLength")->setValue(31);
+  child<QPlainTextEdit>(dialog, "plainTextEditTemplate")
+      ->setPlainText(QStringLiteral("login\nurl"));
+  for (const char *box :
+       {"checkBoxAutoclear", "checkBoxAutoclearPanel", "checkBoxHidePassword",
+        "checkBoxHideContent", "checkBoxUseMonospace", "checkBoxDisplayAsIs",
+        "checkBoxNoLineWrapping", "checkBoxAddGPGId", "checkBoxUseGit",
+        "checkBoxUseOtp", "checkBoxUseGrepSearch", "checkBoxUsePwgen",
+        "checkBoxAvoidCapitals", "checkBoxAvoidNumbers", "checkBoxLessRandom",
+        "checkBoxUseSymbols", "checkBoxUseTemplate",
+        "checkBoxTemplateAllFields", "checkBoxShowProcessOutput"}) {
+    child<QCheckBox>(dialog, box)->setChecked(true);
+  }
+  dialog.accept();
+
+  const AppSettings s = QtPassSettings::load();
+  QCOMPARE(s.passExecutable, QStringLiteral("/opt/pass"));
+  QCOMPARE(s.gitExecutable, QStringLiteral("/opt/git"));
+  QCOMPARE(s.gpgExecutable, QStringLiteral("/opt/gpg"));
+  QCOMPARE(s.pwgenExecutable, QStringLiteral("/opt/pwgen"));
+  QCOMPARE(s.passStore, QStringLiteral("/tmp/store/"));
+  QCOMPARE(s.clipBoardType, Enums::CLIPBOARD_ON_DEMAND);
+  QCOMPARE(s.autoclearSeconds, 42);
+  QCOMPARE(s.autoclearPanelSeconds, 43);
+  QCOMPARE(s.passwordConfiguration.length, 31);
+  QCOMPARE(s.passTemplate, QStringLiteral("login\nurl"));
+  for (bool value :
+       {s.useAutoclear, s.useAutoclearPanel, s.hidePassword, s.hideContent,
+        s.useMonospace, s.displayAsIs, s.noLineWrapping, s.addGPGId, s.useGit,
+        s.useOtp, s.useGrepSearch, s.usePwgen, s.avoidCapitals, s.avoidNumbers,
+        s.lessRandom, s.useSymbols, s.useTemplate, s.templateAllFields,
+        s.showProcessOutput}) {
+    QVERIFY(value);
+  }
+  QCOMPARE(s.version, QStringLiteral(VERSION));
+  QCOMPARE(QtPassSettings::getGeometry(), QByteArrayLiteral("keep-me"));
+}
+
+/**
+ * @brief Since #1140 the dialog stored auto push/pull per profile and no
+ *        longer wrote the global keys the backends read, so both checkboxes
+ *        had no effect.
+ */
+void tst_configdialog::acceptSavesTheGlobalAutoPushAndAutoPull() {
+  {
+    AppSettings seed = QtPassSettings::load();
+    seed.useGit = false;
+    seed.autoPush = false;
+    seed.autoPull = false;
+    QtPassSettings::save(seed);
+  }
+  ConfigDialog dialog(nullptr);
+  child<QCheckBox>(dialog, "checkBoxUseGit")->setChecked(true);
+  child<QCheckBox>(dialog, "checkBoxAutoPush")->setChecked(true);
+  child<QCheckBox>(dialog, "checkBoxAutoPull")->setChecked(true);
+  dialog.accept();
+  const AppSettings s = QtPassSettings::load();
+  QVERIFY(s.useGit);
+  QVERIFY2(s.autoPush, "auto push must reach the global setting");
+  QVERIFY2(s.autoPull, "auto pull must reach the global setting");
+  QVERIFY(QtPassSettings::isAutoPush());
 }
 
 QTEST_MAIN(tst_configdialog)
