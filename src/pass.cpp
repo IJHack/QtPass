@@ -422,6 +422,7 @@ void Pass::GenerateGPGKeys(QString batch) {
     QMetaObject::invokeMethod(
         this,
         [this]() {
+          emit generateGPGKeysFailed(tr("No GPG executable configured"));
           emit processErrorExit(1, tr("No GPG executable configured"));
         },
         Qt::QueuedConnection);
@@ -659,6 +660,9 @@ void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &out,
     }
   }
 
+  if (pid == GPG_GENKEYS) {
+    emit generateGPGKeysFailed(err);
+  }
   emit processErrorExit(exitCode, err);
 }
 

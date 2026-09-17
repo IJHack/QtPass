@@ -3,7 +3,6 @@
 #include "configdialog.h"
 #include "appsettings.h"
 #include "keygendialog.h"
-#include "mainwindow.h"
 #include "passbackendfactory.h"
 #include "profileinit.h"
 #include "qtpasssettings.h"
@@ -32,9 +31,8 @@
  * @brief ConfigDialog::ConfigDialog this sets up the configuration screen.
  * @param parent
  */
-ConfigDialog::ConfigDialog(MainWindow *parent)
+ConfigDialog::ConfigDialog(QWidget *parent)
     : QDialog(parent), ui(new Ui::ConfigDialog) {
-  mainWindow = parent;
   ui->setupUi(this);
 
   WindowStateStore::attach(*this, QStringLiteral("configDialog"));
@@ -508,7 +506,7 @@ void ConfigDialog::on_toolButtonGpg_clicked() {
  * @brief ConfigDialog::on_pushButtonGenerateKey_clicked open keygen dialog.
  */
 void ConfigDialog::on_pushButtonGenerateKey_clicked() {
-  KeygenDialog d(ui->gpgPath->text(), this);
+  KeygenDialog d(ui->gpgPath->text(), QtPassSettings::getPass(), this);
   d.exec();
 }
 
@@ -607,16 +605,6 @@ void ConfigDialog::on_checkBoxSelection_clicked() {
  */
 void ConfigDialog::on_checkBoxAutoclear_clicked() {
   on_comboBoxClipboard_activated(ui->comboBoxClipboard->currentIndex());
-}
-
-/**
- * @brief ConfigDialog::genKey tunnel function to make MainWindow generate a
- * gpg key pair.
- * @param batch
- * @param dialog
- */
-void ConfigDialog::genKey(const QString &batch, QDialog *dialog) {
-  mainWindow->generateKeyPair(batch, dialog);
 }
 
 /**
@@ -1041,8 +1029,8 @@ auto ConfigDialog::checkSecretKeys() -> bool {
   qCDebug(lcQtPass) << names;
 
   if ((gpg.startsWith("wsl ") || QFile(gpg).exists()) && names.empty()) {
-    KeygenDialog d(gpg, this);
-    return d.exec();
+    KeygenDialog d(gpg, QtPassSettings::getPass(), this);
+    return d.exec() == QDialog::Accepted;
   }
   return true;
 }

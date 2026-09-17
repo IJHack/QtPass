@@ -29,7 +29,6 @@
  * as the parent MainWindow.
  *
  * Coverage avoided here (needs a real MainWindow / Pass singleton):
- * - genKey() — tunnels to mainWindow->generateKeyPair()
  * - on_pushButtonGenerateKey_clicked() — calls into KeygenDialog
  * - setProfiles() / profile-table flows — interact with QtPassSettings
  *   profile map

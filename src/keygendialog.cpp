@@ -19,10 +19,10 @@
  * @brief KeygenDialog::KeygenDialog basic constructor.
  * @param parent
  */
-KeygenDialog::KeygenDialog(const QString &gpgExe, ConfigDialog *parent)
-    : QDialog(parent), ui(new Ui::KeygenDialog), m_progressIndicator(nullptr) {
+KeygenDialog::KeygenDialog(const QString &gpgExe, Pass *pass, QWidget *parent)
+    : QDialog(parent), ui(new Ui::KeygenDialog), m_pass(pass),
+      m_progressIndicator(nullptr) {
   ui->setupUi(this);
-  dialog = parent;
   connect(ui->checkBox, &QCheckBox::toggled, this,
           &KeygenDialog::setExpertMode);
 
@@ -215,11 +215,13 @@ void KeygenDialog::done(int r) {
     if (!m_progressIndicator) {
       m_progressIndicator = std::make_unique<QProgressIndicator>();
       m_progressIndicator->setParent(this);
-      m_progressIndicator->startAnimation();
       m_progressIndicator->setSizePolicy(QSizePolicy::Expanding,
                                          QSizePolicy::Expanding);
       this->layout()->addWidget(m_progressIndicator.get());
     }
+    // A retry after generationFailed() reuses the indicator it stopped and hid.
+    m_progressIndicator->show();
+    m_progressIndicator->startAnimation();
 
     ui->frame->hide();
     ui->label->setText(
@@ -230,11 +232,63 @@ void KeygenDialog::done(int r) {
            "random number generator a better chance to gain enough entropy."));
 
     this->show();
-    dialog->genKey(applyPassphrase(ui->plainTextEdit->toPlainText(),
-                                   ui->passphrase1->text()),
-                   this);
+    startGeneration(applyPassphrase(ui->plainTextEdit->toPlainText(),
+                                    ui->passphrase1->text()));
   } else { //  cancel, close or exc was pressed
+    QObject::disconnect(m_finished);
+    QObject::disconnect(m_failed);
     QDialog::done(r);
     return;
   }
+}
+
+/**
+ * @brief Hand the batch to the backend and wait for its verdict.
+ *
+ * Used to travel KeygenDialog -> ConfigDialog -> MainWindow -> QtPass -> Pass
+ * with a QPointer in MainWindow relaying the result back; the dialog now
+ * listens to Pass itself. Success accepts the dialog, so a caller running it
+ * with exec() (the first-run wizard's checkSecretKeys()) sees Accepted;
+ * failure re-enables the form so the user can fix the input or cancel.
+ * @param batch The gpg --gen-key batch text, passphrase already spliced in.
+ */
+void KeygenDialog::startGeneration(const QString &batch) {
+  if (m_pass == nullptr) {
+    generationFailed(tr("No password store backend available"));
+    return;
+  }
+  m_finished = connect(m_pass, &Pass::finishedGenerateGPGKeys, this,
+                       [this](const QString &, const QString &) {
+                         QObject::disconnect(m_finished);
+                         QObject::disconnect(m_failed);
+                         QDialog::done(QDialog::Accepted);
+                       });
+  // Not processErrorExit: that fires for any command that fails while the
+  // key is being generated (a queued git push, say) and would take the
+  // dialog down while gpg is still working.
+  m_failed = connect(m_pass, &Pass::generateGPGKeysFailed, this,
+                     [this](const QString &error) {
+                       QObject::disconnect(m_finished);
+                       QObject::disconnect(m_failed);
+                       generationFailed(error);
+                     });
+  m_pass->GenerateGPGKeys(batch);
+}
+
+/**
+ * @brief Show why generation did not happen and give the form back.
+ * @param error What the backend reported.
+ */
+void KeygenDialog::generationFailed(const QString &error) {
+  if (m_progressIndicator) {
+    m_progressIndicator->stopAnimation();
+    m_progressIndicator->hide();
+  }
+  ui->frame->show();
+  ui->widget->setEnabled(true);
+  ui->buttonBox->setEnabled(true);
+  ui->checkBox->setEnabled(true);
+  ui->plainTextEdit->setEnabled(true);
+  ui->label->setText(
+      tr("Key generation failed: %1").arg(error.toHtmlEscaped()));
 }

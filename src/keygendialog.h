@@ -13,7 +13,7 @@ namespace Ui {
 class KeygenDialog;
 }
 
-class ConfigDialog;
+class Pass;
 
 /**
  * @class KeygenDialog
@@ -25,10 +25,13 @@ class KeygenDialog : public QDialog {
 public:
   /**
    * @brief Construct a KeygenDialog.
-   * @param gpgExe Path to the gpg executable.
-   * @param parent Parent dialog, or nullptr.
+   * @param gpgExe Path to the gpg executable (for the default template).
+   * @param pass Backend that runs `gpg --gen-key`; the dialog accepts on its
+   *             finishedGenerateGPGKeys() and shows generateGPGKeysFailed().
+   * @param parent Parent widget, or nullptr.
    */
-  explicit KeygenDialog(const QString &gpgExe, ConfigDialog *parent = nullptr);
+  explicit KeygenDialog(const QString &gpgExe, Pass *pass,
+                        QWidget *parent = nullptr);
   ~KeygenDialog() override;
 
   /**
@@ -62,7 +65,11 @@ private:
   QScopedPointer<Ui::KeygenDialog> ui;
   void replace(const QString &, const QString &);
   void done(int r) override;
-  ConfigDialog *dialog;
+  void startGeneration(const QString &batch);
+  void generationFailed(const QString &error);
+  Pass *m_pass;
+  QMetaObject::Connection m_finished;
+  QMetaObject::Connection m_failed;
   std::unique_ptr<QProgressIndicator> m_progressIndicator;
 };
 

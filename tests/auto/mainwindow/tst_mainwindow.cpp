@@ -12,7 +12,6 @@
  * - addPassword / addFolder / renameFolder / renamePassword — invoke Pass
  * - on_treeView_clicked / doubleClicked — need a populated store model
  * - onGrepFinished — depends on a running grep
- * - generateKeyPair — spawns gpg key generation
  */
 
 #include <QApplication>
@@ -91,8 +90,6 @@ private Q_SLOTS:
   void cleanupTestCase();
 
   void constructionDoesNotCrash();
-  void getKeygenDialogInitiallyNull();
-  void cleanKeygenDialogWithNullIsHarmless();
   void setUiElementsEnabledDisablesTreeView();
   void setUiElementsEnabledEnablesTreeView();
   void reencryptKeepsUiDisabledUntilEnd();
@@ -200,22 +197,6 @@ void tst_mainwindow::cleanupTestCase() {
 void tst_mainwindow::constructionDoesNotCrash() {
   // init() already constructed the window; reaching this line is the test.
   QVERIFY2(m_window != nullptr, "MainWindow must have been constructed");
-}
-
-/**
- * @brief getKeyGenDialog() returns nullptr before any keygen is started.
- */
-void tst_mainwindow::getKeygenDialogInitiallyNull() {
-  QCOMPARE(m_window->getKeyGenDialog(), nullptr);
-}
-
-/**
- * @brief cleanKeygenDialog() is a no-op (and harmless) when no dialog exists.
- */
-void tst_mainwindow::cleanKeygenDialogWithNullIsHarmless() {
-  QCOMPARE(m_window->getKeyGenDialog(), nullptr);
-  m_window->cleanKeygenDialog();
-  QCOMPARE(m_window->getKeyGenDialog(), nullptr);
 }
 
 /**

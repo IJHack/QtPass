@@ -4,12 +4,15 @@
 #include <QByteArray>
 #include <QCheckBox>
 #include <QDialogButtonBox>
+#include <QLabel>
 #include <QLineEdit>
 #include <QPlainTextEdit>
 #include <QPushButton>
 #include <QtTest>
 
 #include "../../../src/keygendialog.h"
+#include "../../../src/pass.h"
+#include "../../../src/qprogressindicator.h"
 #include "../../../src/qtpasssettings.h"
 #include "../testsettings.h"
 
@@ -57,6 +60,11 @@ private Q_SLOTS:
   void applyPassphraseMatchesPassphraseKeywordLikeGpg();
   void applyPassphraseMatchesCommitLikeGpg();
   void rejectSavesGeometry();
+  void acceptedDialogRunsGenerationOnThePassBackend();
+  void generationSuccessAcceptsTheDialog();
+  void generationFailureReenablesTheForm();
+  void cancelWhileGeneratingDetachesFromTheBackend();
+  void unrelatedProcessErrorsDoNotTouchTheDialog();
 };
 
 /**
@@ -64,7 +72,7 @@ private Q_SLOTS:
  *        construction, regardless of whether ed25519 is supported.
  */
 void tst_keygendialog::constructionLoadsNonEmptyTemplate() {
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   auto *editor =
       dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
   QVERIFY2(editor != nullptr, "plainTextEdit widget must exist");
@@ -83,7 +91,7 @@ void tst_keygendialog::constructionLoadsNonEmptyTemplate() {
  *        the GPG batch template.
  */
 void tst_keygendialog::expertCheckboxTogglesTemplateEditor() {
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   auto *checkBox = dialog.findChild<QCheckBox *>(QStringLiteral("checkBox"));
   auto *editor =
       dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
@@ -109,7 +117,7 @@ void tst_keygendialog::expertCheckboxTogglesTemplateEditor() {
  *        template.
  */
 void tst_keygendialog::nameTextUpdatesNameRealLine() {
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   auto *nameEdit = dialog.findChild<QLineEdit *>(QStringLiteral("name"));
   auto *editor =
       dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
@@ -127,7 +135,7 @@ void tst_keygendialog::nameTextUpdatesNameRealLine() {
  * @brief Typing in the Email field replaces the Name-Email: line.
  */
 void tst_keygendialog::emailTextUpdatesNameEmailLine() {
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   auto *emailEdit = dialog.findChild<QLineEdit *>(QStringLiteral("email"));
   auto *editor =
       dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
@@ -145,7 +153,7 @@ void tst_keygendialog::emailTextUpdatesNameEmailLine() {
  *        DialogButtonBox so OK can be clicked.
  */
 void tst_keygendialog::matchingPassphrasesEnableButtonBox() {
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   auto *pp1 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
   auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
   auto *buttonBox =
@@ -163,7 +171,7 @@ void tst_keygendialog::matchingPassphrasesEnableButtonBox() {
  * @brief Mismatched passphrases disable the DialogButtonBox.
  */
 void tst_keygendialog::mismatchedPassphrasesDisableButtonBox() {
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   auto *pp1 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
   auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
   auto *buttonBox =
@@ -178,7 +186,7 @@ void tst_keygendialog::mismatchedPassphrasesDisableButtonBox() {
 }
 
 void tst_keygendialog::emptyPassphrasesEnableButtonBox() {
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   auto *pp1 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
   auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
   auto *buttonBox =
@@ -198,7 +206,7 @@ void tst_keygendialog::emptyPassphrasesEnableButtonBox() {
 }
 
 void tst_keygendialog::secondPassphraseChangeTriggersStateUpdate() {
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   auto *pp1 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
   auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
   auto *buttonBox =
@@ -217,7 +225,7 @@ void tst_keygendialog::secondPassphraseChangeTriggersStateUpdate() {
 }
 
 void tst_keygendialog::clearingFirstPassphraseDisablesButtonBox() {
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   auto *pp1 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
   auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
   auto *buttonBox =
@@ -236,7 +244,7 @@ void tst_keygendialog::clearingFirstPassphraseDisablesButtonBox() {
 }
 
 void tst_keygendialog::nameAndEmailBothUpdateTemplate() {
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   auto *nameEdit = dialog.findChild<QLineEdit *>(QStringLiteral("name"));
   auto *emailEdit = dialog.findChild<QLineEdit *>(QStringLiteral("email"));
   auto *editor =
@@ -260,7 +268,7 @@ void tst_keygendialog::nameAndEmailBothUpdateTemplate() {
  *        placeholder until done() splices the passphrase in.
  */
 void tst_keygendialog::passphraseNeverWrittenToTemplate() {
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   auto *pp1 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
   auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
   auto *editor =
@@ -288,7 +296,7 @@ void tst_keygendialog::passphraseNeverWrittenToTemplate() {
  *        non-expert never sees a misleading %no-protection placeholder.
  */
 void tst_keygendialog::templateEditorHiddenUnlessExpert() {
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   auto *checkBox = dialog.findChild<QCheckBox *>(QStringLiteral("checkBox"));
   auto *editor =
       dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
@@ -489,12 +497,153 @@ void tst_keygendialog::applyPassphraseMatchesCommitLikeGpg() {
 void tst_keygendialog::rejectSavesGeometry() {
   const QString key = QStringLiteral("keygenDialog");
   QtPassSettings::setDialogGeometry(key, QByteArray());
-  KeygenDialog dialog(nullptr);
+  KeygenDialog dialog(QString(), nullptr);
   dialog.show();
   QVERIFY(QTest::qWaitForWindowExposed(&dialog));
   dialog.reject();
   QVERIFY2(!QtPassSettings::getDialogGeometry(key, QByteArray()).isEmpty(),
            "reject() must save the dialog geometry");
+}
+
+namespace {
+/**
+ * Pass::GenerateGPGKeys() is not virtual, so it runs for real: with no gpg
+ * configured it reports "No GPG executable configured" through
+ * processErrorExit() on a queued call. Success is simulated by emitting
+ * finishedGenerateGPGKeys() directly; failure by letting that queued error
+ * arrive.
+ */
+class FakePass : public Pass {
+public:
+  FakePass() { init(AppSettings()); }
+  void GitInit() override {}
+  void GitPull() override {}
+  void GitPull_b() override {}
+  void GitPush() override {}
+  void Show(QString) override {}
+  void Insert(QString, QString, bool) override {}
+  void Remove(QString, bool) override {}
+  void Move(const QString, const QString, const bool) override {}
+  void Copy(const QString, const QString, const bool) override {}
+  void Init(QString, const QList<UserInfo> &) override {}
+  void Grep(QString, bool) override {}
+};
+
+void fillValidIdentity(KeygenDialog &d) {
+  d.findChild<QLineEdit *>(QStringLiteral("name"))
+      ->setText(QStringLiteral("Alice Example"));
+  d.findChild<QLineEdit *>(QStringLiteral("email"))
+      ->setText(QStringLiteral("alice@example.org"));
+}
+} // namespace
+
+/**
+ * @brief OK hands the batch to Pass directly (no ConfigDialog/MainWindow/
+ *        QtPass relay) and locks the form while waiting.
+ */
+void tst_keygendialog::acceptedDialogRunsGenerationOnThePassBackend() {
+  FakePass pass;
+  KeygenDialog d(QString(), &pass);
+  fillValidIdentity(d);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  QVERIFY2(d.isVisible(), "the dialog waits for the backend");
+  QVERIFY2(!d.findChild<QLineEdit *>(QStringLiteral("name"))->isEnabled(),
+           "the form is locked while generating");
+}
+
+/**
+ * @brief The old relay closed the dialog through close() -> reject(), so a
+ *        successful keygen made checkSecretKeys()'s exec() return Rejected
+ *        and the wizard bailed out. Success now accepts.
+ */
+void tst_keygendialog::generationSuccessAcceptsTheDialog() {
+  FakePass pass;
+  KeygenDialog d(QString(), &pass);
+  fillValidIdentity(d);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  emit pass.finishedGenerateGPGKeys(QString(), QString());
+  QCOMPARE(d.result(), static_cast<int>(QDialog::Accepted));
+  QVERIFY(!d.isVisible());
+  // The queued "no gpg" error from GenerateGPGKeys() arrives now; the
+  // dialog must have let go of the backend and stay accepted.
+  QTest::qWait(50);
+  QCOMPARE(d.result(), static_cast<int>(QDialog::Accepted));
+}
+
+void tst_keygendialog::generationFailureReenablesTheForm() {
+  FakePass pass;
+  KeygenDialog d(QString(), &pass);
+  fillValidIdentity(d);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  auto *name = d.findChild<QLineEdit *>(QStringLiteral("name"));
+  QTRY_VERIFY_WITH_TIMEOUT(name->isEnabled(), 3000);
+  QVERIFY2(d.isVisible(), "a failed generation keeps the dialog open");
+  const QString label = d.findChild<QLabel *>(QStringLiteral("label"))->text();
+  QVERIFY2(label.contains(QStringLiteral("No GPG executable")),
+           qPrintable("the backend's reason must be shown: " + label));
+
+  // A retry must show the spinner again, not the stopped one from before.
+  auto *spinner = d.findChild<QProgressIndicator *>();
+  QVERIFY(spinner != nullptr);
+  QVERIFY(!spinner->isVisible());
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  QVERIFY2(spinner->isVisible() && spinner->isAnimated(),
+           "the retry must restart the progress indicator");
+}
+
+void tst_keygendialog::cancelWhileGeneratingDetachesFromTheBackend() {
+  FakePass pass;
+  KeygenDialog d(QString(), &pass);
+  fillValidIdentity(d);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  auto *name = d.findChild<QLineEdit *>(QStringLiteral("name"));
+  QVERIFY(!name->isEnabled());
+  d.reject();
+  QCOMPARE(d.result(), static_cast<int>(QDialog::Rejected));
+
+  // The dialog is still alive; late backend signals must change nothing:
+  // not the result, not the locked form.
+  emit pass.finishedGenerateGPGKeys(QString(), QString());
+  QCOMPARE(d.result(), static_cast<int>(QDialog::Rejected));
+  emit pass.generateGPGKeysFailed(QStringLiteral("late"));
+  QCOMPARE(d.result(), static_cast<int>(QDialog::Rejected));
+  QVERIFY2(!name->isEnabled(), "a late failure must not restore the form");
+  QTest::qWait(50); // the queued "no gpg" error arrives too
+  QCOMPARE(d.result(), static_cast<int>(QDialog::Rejected));
+}
+
+/**
+ * @brief Only the keygen's own failure signal reaches the dialog; another
+ *        command failing on the same backend meanwhile must not take it
+ *        down while gpg is still generating.
+ */
+void tst_keygendialog::unrelatedProcessErrorsDoNotTouchTheDialog() {
+  FakePass pass;
+  KeygenDialog d(QString(), &pass);
+  fillValidIdentity(d);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  auto *name = d.findChild<QLineEdit *>(QStringLiteral("name"));
+  emit pass.processErrorExit(1, QStringLiteral("git push failed"));
+  QVERIFY2(!name->isEnabled(), "an unrelated error must not unlock the form");
+  QVERIFY(d.isVisible());
+  emit pass.finishedGenerateGPGKeys(QString(), QString());
+  QCOMPARE(d.result(), static_cast<int>(QDialog::Accepted));
 }
 
 QTEST_MAIN(tst_keygendialog)

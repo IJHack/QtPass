@@ -60,14 +60,6 @@ public:
   void restoreWindow();
 
   /**
-   * @brief Open the GPG key generation dialog.
-   * @param batch GPG batch parameter string.
-   * @param dialog Dialog to store as the active keygen dialog; it is kept as
-   *        activeKeygenDialog and represents the UI used during generation.
-   */
-  void generateKeyPair(const QString &batch, QDialog *dialog);
-
-  /**
    * @brief Open the configuration dialog.
    *
    * On a fresh start the first-run wizard runs before the dialog is shown.
@@ -100,18 +92,6 @@ public:
   auto getCurrentTreeViewIndex() -> QModelIndex;
 
   /**
-   * @brief Return the active key generation dialog, if any.
-   *
-   * The returned pointer is non-owning: the dialog's lifetime is managed
-   * elsewhere (cleanKeygenDialog() closes and forgets it), so callers must
-   * observe it only and never delete it. Backed by a QPointer, so it reads back
-   * as nullptr once the dialog is destroyed.
-   * @return Non-owning pointer to the keygen QDialog, or nullptr when none is
-   * active.
-   */
-  auto getKeyGenDialog() -> QDialog * { return m_keyGenDialog; }
-
-  /**
    * @brief Return whether startup configuration succeeded.
    *
    * Reflects the result of the initial configuration check performed in the
@@ -121,11 +101,6 @@ public:
    * @return true when QtPass::init() reported a working configuration.
    */
   auto initSucceeded() const -> bool { return m_initSucceeded; }
-
-  /**
-   * @brief Destroy and clear the key generation dialog.
-   */
-  void cleanKeygenDialog();
 
 protected:
   /**
@@ -163,11 +138,6 @@ signals:
    * @param output Decrypted password file content.
    */
   void passShowHandlerFinished(const QString &output);
-  /**
-   * @brief Emitted to trigger GPG key pair generation.
-   * @param batch GPG batch parameter string.
-   */
-  void generateGPGKeyPair(const QString &batch);
 
 public slots:
   /**
@@ -345,11 +315,6 @@ private:
   // completion (see setUiElementsEnabled).
   QTimer m_uiWatchdog;
   static constexpr int UiWatchdogMs = 30000;
-  // QPointer so it auto-clears if the keygen dialog is destroyed (e.g. the user
-  // closes it) while an async gpg --gen-key is still running; a raw pointer
-  // would dangle and cleanKeygenDialog()/onKeyGenerationComplete() would then
-  // close freed memory.
-  QPointer<QDialog> m_keyGenDialog;
   /// Progress/cancel dialog shown between startReencryptPath() and
   /// endReencryptPath(); QPointer so a closed dialog reads back as null.
   QPointer<QProgressDialog> m_reencryptProgress;

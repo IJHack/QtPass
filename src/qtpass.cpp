@@ -127,13 +127,6 @@ void QtPass::setMainWindow() {
           m_mainWindow, &MainWindow::reencryptProgress);
   connect(QtPassSettings::getImitatePass(), &ImitatePass::endReencryptPath,
           m_mainWindow, &MainWindow::endReencryptPath);
-
-  connect(m_mainWindow, &MainWindow::generateGPGKeyPair, m_mainWindow,
-          [this](const QString &batch) {
-            QtPassSettings::getPass()->GenerateGPGKeys(batch);
-            m_mainWindow->showStatusMessage(tr("Generating GPG key pair"),
-                                            60000);
-          });
 }
 
 /**
@@ -171,14 +164,6 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
  * @param p_error The error message
  */
 void QtPass::processErrorExit(int exitCode, const QString &p_error) {
-  if (nullptr != m_mainWindow->getKeyGenDialog()) {
-    m_mainWindow->cleanKeygenDialog();
-    if (exitCode != 0) {
-      m_mainWindow->showStatusMessage(tr("GPG key pair generation failed"),
-                                      10000);
-    }
-  }
-
   if (!p_error.isEmpty()) {
     QString output;
     // Escapes and links only launchable http(s) URLs; anything else stays
@@ -243,14 +228,9 @@ void QtPass::finishedInsert(const QString &p_output, const QString &p_errout) {
  */
 void QtPass::onKeyGenerationComplete(const QString &p_output,
                                      const QString &p_errout) {
-  if (nullptr != m_mainWindow->getKeyGenDialog()) {
-    qCDebug(lcQtPass) << "Keygen Done";
-
-    m_mainWindow->cleanKeygenDialog();
-    m_mainWindow->showStatusMessage(tr("GPG key pair generated successfully"),
-                                    10000);
-  }
-
+  // The KeygenDialog listens to the same signal and closes itself.
+  m_mainWindow->showStatusMessage(tr("GPG key pair generated successfully"),
+                                  10000);
   processFinished(p_output, p_errout);
 }
 
