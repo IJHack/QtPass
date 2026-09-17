@@ -90,8 +90,9 @@ git push origin vX.Y.Z
 Pushing the tag runs `release-installers.yml`. Its `publish` job builds the
 Windows installer and the macOS dmg, adds `QtPass-x.y.z.tar.gz` / `.zip`
 source archives, creates the release **as a draft** if none exists yet and
-attaches all four with `gh release upload --clobber` (re-running the workflow
-replaces them). Then:
+attaches all four. Re-running the workflow replaces the assets of a _draft_;
+on a published release it only adds missing ones, so signed assets are never
+swapped under their `.asc`. Then:
 
 ```bash
 gh run watch                                   # or wait for the Release Build run

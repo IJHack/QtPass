@@ -253,12 +253,13 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v7.0.1
+      # This job holds a write token, so its actions are pinned to commits.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
       - name: Download the installers
-        uses: actions/download-artifact@v8.0.1
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           path: dist
           merge-multiple: true
@@ -289,4 +290,19 @@ jobs:
               --title "QtPass ${version}" \
               --notes "Draft created by the Release Build workflow. Replace this with the CHANGELOG section for ${version}."
           fi
-          gh release upload "$GITHUB_REF_NAME" dist/* --clobber
+          # A draft can be refreshed freely. Once the release is published its
+          # assets carry detached signatures (sign-release-assets.sh), and
+          # replacing a file would leave the old .asc next to it; then only
+          # assets that do not exist yet are added.
+          if [[ "$(gh release view "$GITHUB_REF_NAME" --json isDraft --jq .isDraft)" == "true" ]]; then
+            gh release upload "$GITHUB_REF_NAME" dist/* --clobber
+          else
+            existing="$(gh release view "$GITHUB_REF_NAME" --json assets --jq '.assets[].name')"
+            for file in dist/*; do
+              if grep -qxF "$(basename "$file")" <<<"$existing"; then
+                echo "keeping published asset $(basename "$file")"
+              else
+                gh release upload "$GITHUB_REF_NAME" "$file"
+              fi
+            done
+          fi
