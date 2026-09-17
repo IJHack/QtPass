@@ -536,12 +536,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="764"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished">无法初始化配置文件 %1</translation>
+        <translation>无法初始化配置文件 %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="766"/>
         <source>Profile %1</source>
-        <translation type="unfinished">配置文件 %1</translation>
+        <translation>配置文件 %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="777"/>
@@ -1378,12 +1378,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="257"/>
         <source>No password store backend available</source>
-        <translation type="unfinished">没有可用的密码库后端</translation>
+        <translation>没有密码存储库后端可用</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="293"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished">密钥生成失败：%1</translation>
+        <translation>密钥生成失败：%1</translation>
     </message>
 </context>
 <context>
@@ -1443,22 +1443,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished">文件 (&amp;F)</translation>
+        <translation>文件 (&amp;F)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished">密码库 (&amp;S)</translation>
+        <translation>密码库 (&amp;S)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished">选项 (&amp;E)</translation>
+        <translation>设置 (&amp;E)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="373"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">帮助 (&amp;H)</translation>
+        <translation>帮助 (&amp;H)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="472"/>
@@ -1755,57 +1755,57 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished">Ctrl+,</translation>
+        <translation>Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="524"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished">关闭窗口 (&amp;C)</translation>
+        <translation>关闭窗口 (&amp;C)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">关闭窗口；启用“关闭窗口后台运行”时 QtPass 会保留在托盘中</translation>
+        <translation>关闭窗口；启用“关闭窗口后台运行”时 QtPass 会停留在托盘中</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="535"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">退出 (&amp;Q)</translation>
+        <translation>退出 (&amp;Q)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished">常见问题 (&amp;F)</translation>
+        <translation>常见问题 (&amp;F)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="549"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished">打开 qtpass.org 上的常见问题</translation>
+        <translation>打开 qtpass.org 上的常见问题</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="552"/>
         <source>F1</source>
-        <translation type="unfinished">F1</translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="557"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished">关于 QtPass (&amp;A)</translation>
+        <translation>关于 QtPass (&amp;A)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="565"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished">关于 Qt (&amp;Q)</translation>
+        <translation>关于 Qt (&amp;Q)</translation>
     </message>
     <message>
         <source>Clear output</source>
@@ -1932,12 +1932,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="890"/>
         <source>About QtPass</source>
-        <translation type="unfinished">关于 QtPass</translation>
+        <translation>关于 QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="891"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;标准 Unix 密码管理器 &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; 的跨平台图形界面。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;源代码与问题反馈&lt;/a&gt;&lt;/p&gt;&lt;p&gt;版权所有 &amp;copy; 2014&amp;ndash;%2 IJhack。依据 &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL 第 3 版&lt;/a&gt;或更新版本授权。&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;标准 Unix 密码管理器 &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; 的跨平台图形用户界面。&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;源代码与问题反馈&lt;/a&gt;&lt;/p&gt;&lt;p&gt;版权所有 &amp;copy; 2014&amp;ndash;%2 IJhack。依据 &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL 第 3 版&lt;/a&gt;或更新版本授权。&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="995"/>
@@ -2340,17 +2340,17 @@ Continue?</source>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">处理输出</translation>
+        <translation>处理输出</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
         <source>Clear</source>
-        <translation type="unfinished">清除</translation>
+        <translation>清除</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="26"/>
         <source>Clear output</source>
-        <translation type="unfinished">清除输出</translation>
+        <translation>清除输出</translation>
     </message>
 </context>
 <context>
@@ -2358,35 +2358,35 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="34"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished">无法创建 %1。</translation>
+        <translation>无法创建 %1。</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="56"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 中已有 %n 个加密文件，它们未被重新加密。请切换到该配置文件并打开“用户”进行重新加密。</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="74"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished">未选择接收者，未写入 %1。</translation>
+        <translation>未选择接收者；未写入 %1。</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="81"/>
         <source>Could not write %1: %2</source>
-        <translation type="unfinished">无法写入 %1：%2</translation>
+        <translation>无法写入 %1：%2</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="98"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished">无法用 %2 签署 %1：%3</translation>
+        <translation>无法用 %2 签署 %1：%3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="118"/>
         <location filename="../src/profileinit.cpp" line="147"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished">git %1 在 %2 中失败：%3</translation>
+        <translation>git %1 在 %2 中失败：%3</translation>
     </message>
 </context>
 <context>
