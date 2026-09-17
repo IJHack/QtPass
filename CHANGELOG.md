@@ -34,6 +34,13 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Changed
 
+- The Profiles tab is a list with a form instead of a three-column table: pick
+  a profile on the left, edit its name, store path (with a folder picker),
+  signing key and its own Git flags on the right. The Git flags used to be
+  edited through the global checkboxes on the Settings tab for whichever row
+  was selected; now they sit with the profile. A profile without a name or
+  path, or with a name another profile uses, keeps OK disabled and is marked
+  in the list (a duplicate name used to overwrite the other profile silently)
 - The `QtPass` glue object no longer reaches into the main window (it used to
   call eighteen of its methods and wire the backends to its slots); it emits
   `outputReady`, `operationFinished`, `statusMessage`, `pushRequested` and

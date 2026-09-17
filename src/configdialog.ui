@@ -1005,96 +1005,218 @@
             <number>6</number>
            </property>
            <item>
-            <widget class="QTableWidget" name="profileTable">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Plain</enum>
-             </property>
-             <property name="lineWidth">
-              <number>0</number>
-             </property>
-             <property name="editTriggers">
-              <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
-             </property>
-             <property name="alternatingRowColors">
-              <bool>true</bool>
-             </property>
-             <property name="selectionMode">
-              <enum>QAbstractItemView::SingleSelection</enum>
-             </property>
-             <property name="selectionBehavior">
-              <enum>QAbstractItemView::SelectRows</enum>
-             </property>
-             <property name="sortingEnabled">
-              <bool>true</bool>
-             </property>
-             <column>
-              <property name="text">
-               <string>Name</string>
-              </property>
-              <property name="toolTip">
-               <string>Profile name, used to identify this configuration profile</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Path</string>
-              </property>
-              <property name="toolTip">
-               <string>Path to the password store directory</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Signing Key</string>
-              </property>
-              <property name="toolTip">
-               <string>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</string>
-              </property>
-             </column>
-            </widget>
+            <layout class="QHBoxLayout" name="profilesLayout" stretch="1,2">
+             <item>
+              <layout class="QVBoxLayout" name="profileListLayout">
+               <item>
+                <widget class="QListWidget" name="profileList">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                   <horstretch>1</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="toolTip">
+                  <string>The password stores this QtPass knows; pick one to edit it</string>
+                 </property>
+                 <property name="alternatingRowColors">
+                  <bool>true</bool>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::SingleSelection</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="profileButtons">
+                 <item>
+                  <widget class="QToolButton" name="addButton">
+                   <property name="toolTip">
+                    <string>Add a profile</string>
+                   </property>
+                   <property name="text">
+                    <string>Add</string>
+                   </property>
+                   <property name="icon">
+                    <iconset theme="list-add">
+                     <normalon>:/icons/document-new.svg</normalon>
+                    </iconset>
+                   </property>
+                   <property name="toolButtonStyle">
+                    <enum>Qt::ToolButtonFollowStyle</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QToolButton" name="deleteButton">
+                   <property name="toolTip">
+                    <string>Forget the selected profile; the store itself stays on disk</string>
+                   </property>
+                   <property name="text">
+                    <string>Delete</string>
+                   </property>
+                   <property name="icon">
+                    <iconset theme="list-remove">
+                     <normalon>:/icons/edit-delete.svg</normalon>
+                    </iconset>
+                   </property>
+                   <property name="toolButtonStyle">
+                    <enum>Qt::ToolButtonFollowStyle</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="profileButtonsSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="profileFormColumn">
+               <property name="sizeConstraint">
+                <enum>QLayout::SetDefaultConstraint</enum>
+               </property>
+               <item>
+              <widget class="QGroupBox" name="profileForm">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="title">
+                <string>Profile</string>
+               </property>
+               <layout class="QFormLayout" name="profileFormLayout">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="labelProfileName">
+                  <property name="text">
+                   <string>Name</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>profileName</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="profileName">
+                  <property name="toolTip">
+                   <string>Profile name, used to identify this configuration profile</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="labelProfilePath">
+                  <property name="text">
+                   <string>Path</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>profilePath</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="profilePathLayout">
+                  <item>
+                   <widget class="QLineEdit" name="profilePath">
+                    <property name="toolTip">
+                     <string>Path to the password store directory</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QToolButton" name="profilePathBrowse">
+                    <property name="toolTip">
+                     <string>Choose the password store folder</string>
+                    </property>
+                    <property name="accessibleName">
+                     <string>Choose the password store folder</string>
+                    </property>
+                    <property name="text">
+                     <string>…</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="labelProfileSigningKey">
+                  <property name="text">
+                   <string>Signing Key</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>profileSigningKey</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLineEdit" name="profileSigningKey">
+                  <property name="toolTip">
+                   <string>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</string>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Full 40-character key fingerprint, as pass requires</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QCheckBox" name="profileUseGit">
+                  <property name="toolTip">
+                   <string>Git settings for this profile; they replace the ones on the Settings tab while it is active</string>
+                  </property>
+                  <property name="text">
+                   <string>Use Git</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QCheckBox" name="profileAutoPush">
+                  <property name="text">
+                   <string>Automatically push</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QCheckBox" name="profileAutoPull">
+                  <property name="text">
+                   <string>Automatically pull</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+               </item>
+               <item>
+                <spacer name="profileFormSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
            </item>
            <item>
             <layout class="QGridLayout" name="gridLayout_11">
              <item row="0" column="0">
-              <widget class="QToolButton" name="addButton">
-               <property name="text">
-                <string>Add</string>
-               </property>
-               <property name="icon">
-                <iconset theme="list-add">
-                 <normalon>:/icons/document-new.svg</normalon>
-                </iconset>
-               </property>
-               <property name="toolButtonStyle">
-                <enum>Qt::ToolButtonFollowStyle</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QToolButton" name="deleteButton">
-               <property name="text">
-                <string>Delete</string>
-               </property>
-               <property name="icon">
-                <iconset theme="list-remove">
-                 <normalon>:/icons/edit-delete.svg</normalon>
-                </iconset>
-               </property>
-               <property name="toolButtonStyle">
-                <enum>Qt::ToolButtonFollowStyle</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="2">
               <widget class="QLabel" name="labelStorePath">
                <property name="text">
                 <string>Current path</string>
@@ -1104,7 +1226,7 @@
                </property>
               </widget>
              </item>
-             <item row="0" column="4">
+             <item row="0" column="2">
               <widget class="QToolButton" name="toolButtonStore">
                <property name="toolTip">
                 <string>Choose the password store folder</string>
@@ -1117,7 +1239,7 @@
                </property>
               </widget>
              </item>
-             <item row="0" column="3">
+             <item row="0" column="1">
               <widget class="QLineEdit" name="storePath"/>
              </item>
             </layout>
@@ -1282,9 +1404,16 @@ e-mail</string>
   <tabstop>toolButtonPwgen</tabstop>
   <tabstop>passPath</tabstop>
   <tabstop>toolButtonPass</tabstop>
-  <tabstop>profileTable</tabstop>
+  <tabstop>profileList</tabstop>
   <tabstop>addButton</tabstop>
   <tabstop>deleteButton</tabstop>
+  <tabstop>profileName</tabstop>
+  <tabstop>profilePath</tabstop>
+  <tabstop>profilePathBrowse</tabstop>
+  <tabstop>profileSigningKey</tabstop>
+  <tabstop>profileUseGit</tabstop>
+  <tabstop>profileAutoPush</tabstop>
+  <tabstop>profileAutoPull</tabstop>
   <tabstop>storePath</tabstop>
   <tabstop>toolButtonStore</tabstop>
  </tabstops>

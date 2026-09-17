@@ -3,13 +3,15 @@
 #include <QApplication>
 #include <QCheckBox>
 #include <QComboBox>
+#include <QDialogButtonBox>
 #include <QGroupBox>
 #include <QLabel>
 #include <QLineEdit>
+#include <QListWidget>
 #include <QPlainTextEdit>
+#include <QPushButton>
 #include <QSpinBox>
 #include <QSystemTrayIcon>
-#include <QTableWidget>
 #include <QToolButton>
 #include <QtTest>
 
@@ -56,7 +58,9 @@ private Q_SLOTS:
   void setAndGetPasswordConfigurationRoundTrip();
   void customCharsetRoundTrip();
   void customCharsetPreservedWhenBuiltinSelected();
-  void addProfileSelectsNewRowAfterSort();
+  void addProfileSelectsTheNewOne();
+  void profileFormEditsTheSelectedProfile();
+  void okWaitsForValidProfiles();
   void fieldLabelsHaveBuddies();
   void browseButtonsAreNamed();
   void dialogCanShrinkBelowItsOldMinimum();
@@ -327,19 +331,19 @@ void tst_configdialog::customCharsetPreservedWhenBuiltinSelected() {
            QStringLiteral("abc123!@#"));
 }
 
+template <typename T> auto child(ConfigDialog &d, const char *name) -> T * {
+  auto *w = d.findChild<T *>(QLatin1String(name));
+  if (w == nullptr) {
+    qFatal("missing widget %s", name);
+  }
+  return w;
+}
+
 /**
- * @brief Adding a profile after the user sorted by name selects the new row.
- *
- * Regression for on_addButton_clicked(): after the user sorts the table by the
- * name column, re-enabling sorting moves the freshly inserted row, so reading
- * item(n, 0) by the stale insertion index returned an existing profile — the
- * edit and selection then landed on (and would rename) that profile instead of
- * the new one. The new row must be located by item pointer.
+ * @brief Adding a profile appends it to the list, selects it and puts its
+ * default name into the form, ready to be typed over.
  */
-void tst_configdialog::addProfileSelectsNewRowAfterSort() {
-  // Restore the real profile state even if an assertion fails early (QVERIFY/
-  // QCOMPARE return immediately), so this test never leaks its synthetic
-  // profiles into later tests in the run.
+void tst_configdialog::addProfileSelectsTheNewOne() {
   struct ProfileRestorer {
     Profiles saved;
     ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
@@ -355,24 +359,151 @@ void tst_configdialog::addProfileSelectsNewRowAfterSort() {
   }
   QtPassSettings::setProfiles(profiles);
 
+  ConfigDialog dialog(nullptr);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("profileList"));
+  auto *name = dialog.findChild<QLineEdit *>(QStringLiteral("profileName"));
+  QVERIFY(list != nullptr && name != nullptr);
+  QCOMPARE(list->count(), 4);
+
+  QVERIFY(QMetaObject::invokeMethod(&dialog, "on_addButton_clicked"));
+
+  QCOMPARE(list->count(), 5);
+  QCOMPARE(list->currentRow(), 4);
+  QCOMPARE(list->currentItem()->text(), QStringLiteral("New Profile"));
+  QCOMPARE(name->text(), QStringLiteral("New Profile"));
+  QVERIFY2(name->hasSelectedText(), "the name is selected for typing over");
+}
+
+/**
+ * @brief The form edits the selected profile in place: name, path, signing
+ * key and the profile's own Git flags all end up in getProfiles(), and
+ * switching profiles keeps each one's values.
+ */
+void tst_configdialog::profileFormEditsTheSelectedProfile() {
+  struct ProfileRestorer {
+    Profiles saved;
+    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
+  } restorer{QtPassSettings::getProfiles()};
+
+  Profiles profiles;
+  Profile work;
+  work.path = QStringLiteral("/store/work");
+  work.useGit = true;
+  work.autoPush = false;
+  profiles.insert(QStringLiteral("work"), work);
+  Profile home;
+  home.path = QStringLiteral("/store/home");
+  profiles.insert(QStringLiteral("home"), home);
+  QtPassSettings::setProfiles(profiles);
   {
-    ConfigDialog dialog(nullptr);
-    auto *table =
-        dialog.findChild<QTableWidget *>(QStringLiteral("profileTable"));
-    QVERIFY2(table != nullptr, "profileTable widget must exist");
-
-    // Mimic the user sorting by the name column; this makes a later insert
-    // re-sort and move the new row away from its insertion index.
-    table->sortItems(0, Qt::DescendingOrder);
-
-    QVERIFY(QMetaObject::invokeMethod(&dialog, "on_addButton_clicked"));
-
-    const QList<QTableWidgetItem *> selected = table->selectedItems();
-    QVERIFY(!selected.isEmpty());
-    QTableWidgetItem *nameItem = table->item(selected.first()->row(), 0);
-    QVERIFY(nameItem != nullptr);
-    QCOMPARE(nameItem->text(), QStringLiteral("New Profile"));
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("work");
+    QtPassSettings::save(s);
   }
+
+  ConfigDialog dialog(nullptr);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("profileList"));
+  auto *name = child<QLineEdit>(dialog, "profileName");
+  auto *path = child<QLineEdit>(dialog, "profilePath");
+  auto *key = child<QLineEdit>(dialog, "profileSigningKey");
+  auto *useGit = dialog.findChild<QCheckBox *>(QStringLiteral("profileUseGit"));
+  auto *autoPush =
+      dialog.findChild<QCheckBox *>(QStringLiteral("profileAutoPush"));
+  QVERIFY(list != nullptr && useGit != nullptr && autoPush != nullptr);
+
+  // The active profile is selected and shown; the list is alphabetical.
+  QCOMPARE(list->currentItem()->text(), QStringLiteral("work"));
+  QCOMPARE(path->text(), QStringLiteral("/store/work"));
+  QVERIFY(useGit->isChecked());
+  QVERIFY(!autoPush->isChecked());
+
+  // Type into the form: the entry follows, the list shows the new name.
+  name->setText(QStringLiteral("office"));
+  emit name->textEdited(name->text());
+  key->setText(QStringLiteral("ABCDEF0123456789ABCDEF0123456789ABCDEF01"));
+  emit key->textEdited(key->text());
+  autoPush->click();
+  QCOMPARE(list->currentItem()->text(), QStringLiteral("office"));
+
+  // Switch to the other profile and back: nothing leaks between them.
+  list->setCurrentRow(0);
+  QCOMPARE(name->text(), QStringLiteral("home"));
+  QCOMPARE(path->text(), QStringLiteral("/store/home"));
+  QVERIFY(key->text().isEmpty());
+  path->setText(QStringLiteral("/store/home2"));
+  emit path->textEdited(path->text());
+  list->setCurrentRow(1);
+  QCOMPARE(name->text(), QStringLiteral("office"));
+
+  const Profiles edited = dialog.getProfiles();
+  QCOMPARE(edited.keys(),
+           (QStringList{QStringLiteral("home"), QStringLiteral("office")}));
+  QCOMPARE(edited.value(QStringLiteral("home")).path,
+           QStringLiteral("/store/home2"));
+  QVERIFY2(!edited.value(QStringLiteral("home")).useGit.has_value(),
+           "an untouched Git box leaves the profile without its own flag");
+  const Profile office = edited.value(QStringLiteral("office"));
+  QCOMPARE(office.path, QStringLiteral("/store/work"));
+  QCOMPARE(office.signingKey,
+           QStringLiteral("ABCDEF0123456789ABCDEF0123456789ABCDEF01"));
+  QCOMPARE(office.useGit, std::optional<bool>(true));
+  QCOMPARE(office.autoPush, std::optional<bool>(true));
+}
+
+/**
+ * @brief OK stays off while a profile has no name, no path or a name another
+ * profile already uses, and comes back once the problem is typed away.
+ */
+void tst_configdialog::okWaitsForValidProfiles() {
+  struct ProfileRestorer {
+    Profiles saved;
+    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
+  } restorer{QtPassSettings::getProfiles()};
+
+  Profiles profiles;
+  Profile one;
+  one.path = QStringLiteral("/store/one");
+  profiles.insert(QStringLiteral("one"), one);
+  profiles.insert(QStringLiteral("two"), one);
+  QtPassSettings::setProfiles(profiles);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("two");
+    QtPassSettings::save(s);
+  }
+
+  ConfigDialog dialog(nullptr);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("profileList"));
+  auto *name = child<QLineEdit>(dialog, "profileName");
+  auto *path = child<QLineEdit>(dialog, "profilePath");
+  auto *ok = dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"))
+                 ->button(QDialogButtonBox::Ok);
+  QVERIFY(list != nullptr && ok != nullptr);
+  QVERIFY(ok->isEnabled());
+
+  name->setText(QStringLiteral("one"));
+  emit name->textEdited(name->text());
+  QVERIFY2(!ok->isEnabled(), "duplicate name");
+  QVERIFY(name->toolTip().contains(QStringLiteral("already")));
+  QVERIFY(list->currentItem()->background().color() == Qt::red);
+
+  name->setText(QString());
+  emit name->textEdited(name->text());
+  QVERIFY2(!ok->isEnabled(), "empty name");
+
+  name->setText(QStringLiteral("three"));
+  emit name->textEdited(name->text());
+  QVERIFY(ok->isEnabled());
+  QVERIFY(list->currentItem()->background() == QBrush());
+
+  path->setText(QString());
+  emit path->textEdited(path->text());
+  QVERIFY2(!ok->isEnabled(), "empty path");
+
+  QVERIFY(QMetaObject::invokeMethod(&dialog, "on_deleteButton_clicked"));
+  QVERIFY2(ok->isEnabled(), "the broken profile is gone");
+  QCOMPARE(list->count(), 1);
+  QCOMPARE(dialog.getProfiles().keys(), QStringList{QStringLiteral("one")});
 }
 
 /**
@@ -389,6 +520,10 @@ void tst_configdialog::fieldLabelsHaveBuddies() {
       {QStringLiteral("labelSshAuthSock"),
        QStringLiteral("sshAuthSockOverride")},
       {QStringLiteral("labelStorePath"), QStringLiteral("storePath")},
+      {QStringLiteral("labelProfileName"), QStringLiteral("profileName")},
+      {QStringLiteral("labelProfilePath"), QStringLiteral("profilePath")},
+      {QStringLiteral("labelProfileSigningKey"),
+       QStringLiteral("profileSigningKey")},
       {QStringLiteral("label_7"), QStringLiteral("spinBoxPasswordLength")},
       {QStringLiteral("labelPasswordChars"),
        QStringLiteral("passwordCharTemplateSelector")},
@@ -474,15 +609,7 @@ void tst_configdialog::sectionHeadersAreGroupBoxes() {
            "the pseudo-header labels must be gone");
 }
 
-namespace {
-template <typename T> auto child(ConfigDialog &d, const char *name) -> T * {
-  auto *w = d.findChild<T *>(QLatin1String(name));
-  if (w == nullptr) {
-    qFatal("missing widget %s", name);
-  }
-  return w;
-}
-} // namespace
+namespace {} // namespace
 
 /**
  * @brief The regression net for #1602's six config-clobbering paths: flip

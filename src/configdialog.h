@@ -16,8 +16,6 @@ struct UserInfo;
 class ConfigDialog;
 } // namespace Ui
 
-class QTableWidgetItem;
-
 /**
  * @class ConfigDialog
  * @brief The ConfigDialog handles the configuration interface.
@@ -145,18 +143,38 @@ private slots:
   void on_checkBoxAutoclearPanel_clicked();
   void on_addButton_clicked();
   void on_deleteButton_clicked();
-  void on_profileTable_cellDoubleClicked(int row, int column);
+  void on_profilePathBrowse_clicked();
   void on_checkBoxUseTrayIcon_clicked();
   void on_checkBoxUseGit_clicked();
   void on_checkBoxUsePwgen_clicked();
   void on_checkBoxUseTemplate_clicked();
-  void onProfileTableItemChanged(QTableWidgetItem *item);
-  void onProfileTableSelectionChanged();
+  void onProfileSelected(int row);
+  void onProfileNameEdited(const QString &name);
+  void onProfilePathEdited(const QString &path);
+  void onProfileSigningKeyEdited(const QString &key);
+  void onProfileGitToggled();
 
 private:
-  void updateProfileStatus(int row);
-  void loadGitSettingsForProfile(const QString &profileName,
-                                 const Profiles &profiles);
+  /**
+   * @brief One row of the profile list while the dialog is open. A QList
+   * rather than the Profiles map so a profile can pass through an empty or
+   * duplicate name while it is being typed; getProfiles() builds the map.
+   */
+  struct ProfileEntry {
+    QString name;
+    Profile profile;
+  };
+  /// The profiles as shown; index == row in profileList.
+  QList<ProfileEntry> m_entries;
+  /// Row whose fields the form shows, -1 for none.
+  int m_currentEntry = -1;
+  /// True while loadProfileForm() sets the fields, so their edited-signals
+  /// do not write back.
+  bool m_loadingForm = false;
+
+  void loadProfileForm(int row);
+  auto currentEntry() -> ProfileEntry *;
+  void updateProfileStatus();
   QScopedPointer<Ui::ConfigDialog> ui;
 
   auto getSecretKeys() -> QStringList;
@@ -194,7 +212,7 @@ private:
   void criticalMessage(const QString &title, const QString &text);
 
   auto isQrencodeAvailable(const QString &configuredPath) -> bool;
-  void validate(QTableWidgetItem *item = nullptr);
+  void validate();
 
   auto checkGpgExistence() -> bool;
   auto checkSecretKeys() -> bool;
@@ -203,7 +221,6 @@ private:
   void selectRecipients(const QString &storePath, bool gitInit);
   void initializeNewProfiles(const Profiles &existingProfiles);
 
-  Profiles m_profiles;
   /// User-defined custom charset, retained while a builtin set is selected so
   /// it is not lost when the line edit shows the builtin's characters instead.
   QString m_customPasswordChars;

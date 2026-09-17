@@ -16,10 +16,11 @@
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QGuiApplication>
+#include <QHash>
+#include <QListWidgetItem>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QSystemTrayIcon>
-#include <QTableWidgetItem>
 #include <utility>
 #ifdef Q_OS_WIN
 #include <windows.h>
@@ -69,11 +70,20 @@ ConfigDialog::ConfigDialog(QWidget *parent)
     ui->checkBoxUseQrencode->setToolTip(tr("qrencode needs to be installed"));
   }
 
+  connect(ui->profileList, &QListWidget::currentRowChanged, this,
+          &ConfigDialog::onProfileSelected);
+  connect(ui->profileName, &QLineEdit::textEdited, this,
+          &ConfigDialog::onProfileNameEdited);
+  connect(ui->profilePath, &QLineEdit::textEdited, this,
+          &ConfigDialog::onProfilePathEdited);
+  connect(ui->profileSigningKey, &QLineEdit::textEdited, this,
+          &ConfigDialog::onProfileSigningKeyEdited);
+  for (QCheckBox *box :
+       {ui->profileUseGit, ui->profileAutoPush, ui->profileAutoPull}) {
+    connect(box, &QCheckBox::clicked, this, &ConfigDialog::onProfileGitToggled);
+  }
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
 
-  ui->profileTable->verticalHeader()->hide();
-  ui->profileTable->horizontalHeader()->setSectionResizeMode(
-      1, QHeaderView::Stretch);
   ui->label->setText(ui->label->text() + VERSION);
   ui->comboBoxClipboard->clear();
 
@@ -99,10 +109,6 @@ ConfigDialog::ConfigDialog(QWidget *parent)
     ui->tabWidget->setCurrentIndex(1);
   }
 
-  connect(ui->profileTable, &QTableWidget::itemChanged, this,
-          &ConfigDialog::onProfileTableItemChanged);
-  connect(ui->profileTable, &QTableWidget::itemSelectionChanged, this,
-          &ConfigDialog::onProfileTableSelectionChanged);
   connect(this, &ConfigDialog::accepted, this, &ConfigDialog::on_accepted);
 }
 
@@ -248,61 +254,40 @@ void ConfigDialog::usePass(bool usePass) {
 }
 
 /**
- * @brief Validates the configuration table fields and enables or disables the
- * OK button accordingly.
- * @example
- * ConfigDialog dialog;
- * QTableWidgetItem *item = dialog.findChild<QTableWidgetItem*>();
- * dialog.validate(item);
- *
- * @param QTableWidgetItem *item - The table item to validate; if null,
- * validates all relevant items in the profile table.
- * @return void - This function does not return a value.
+ * @brief Mark the profiles that cannot be saved and gate OK on all of them
+ * being fine: every profile needs a name and a path, and no two profiles may
+ * share a name (the settings key them by it, so a duplicate would silently
+ * overwrite the other). The offending rows are painted in the list and the
+ * form field of the current one carries the reason as its tooltip.
  */
-void ConfigDialog::validate(QTableWidgetItem *item) {
-  // Update the required-field marker(s): all cells when no specific item is
-  // given, otherwise just the one that changed.
-  if (item == nullptr) {
-    for (int i = 0; i < ui->profileTable->rowCount(); i++) {
-      for (int j = 0; j < ui->profileTable->columnCount(); j++) {
-        QTableWidgetItem *_item = ui->profileTable->item(i, j);
-
-        if (!_item)
-          continue;
-        if (_item->text().isEmpty() && j != 2) {
-          _item->setBackground(Qt::red);
-          _item->setToolTip(tr("This field is required"));
-        } else {
-          _item->setBackground(QBrush());
-          _item->setToolTip(QString());
-        }
-      }
-    }
-  } else {
-    if (item->text().isEmpty() && item->column() != 2) {
-      item->setBackground(Qt::red);
-      item->setToolTip(tr("This field is required"));
-    } else {
-      item->setBackground(QBrush());
-      item->setToolTip(QString());
-    }
-  }
-
-  // Enable OK only when every required cell across all rows is filled. Deriving
-  // this from a single changed item would re-enable OK while another row still
-  // has an empty required field, letting an empty-named profile be saved (and
-  // then silently dropped, losing that profile's path and signing key).
+void ConfigDialog::validate() {
   bool status = true;
-  for (int i = 0; i < ui->profileTable->rowCount() && status; i++) {
-    for (int j = 0; j < ui->profileTable->columnCount(); j++) {
-      QTableWidgetItem *_item = ui->profileTable->item(i, j);
-      if (_item && _item->text().isEmpty() && j != 2) {
-        status = false;
-        break;
-      }
-    }
+  QHash<QString, int> names;
+  for (const ProfileEntry &entry : std::as_const(m_entries)) {
+    names[entry.name]++;
   }
-
+  for (int row = 0; row < m_entries.size(); ++row) {
+    const ProfileEntry &entry = m_entries.at(row);
+    QString nameProblem;
+    if (entry.name.isEmpty()) {
+      nameProblem = tr("This field is required");
+    } else if (names.value(entry.name) > 1) {
+      nameProblem = tr("Another profile already has this name");
+    }
+    const QString pathProblem =
+        entry.profile.path.isEmpty() ? tr("This field is required") : QString();
+    QListWidgetItem *item = ui->profileList->item(row);
+    if (item != nullptr) {
+      const bool bad = !nameProblem.isEmpty() || !pathProblem.isEmpty();
+      item->setBackground(bad ? QBrush(Qt::red) : QBrush());
+      item->setToolTip(!nameProblem.isEmpty() ? nameProblem : pathProblem);
+    }
+    if (row == m_currentEntry) {
+      ui->profileName->setToolTip(nameProblem);
+      ui->profilePath->setToolTip(pathProblem);
+    }
+    status = status && nameProblem.isEmpty() && pathProblem.isEmpty();
+  }
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(status);
 }
 
@@ -350,7 +335,21 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::save(readSettings());
 
   // Profiles are not part of AppSettings yet, so persist them separately.
-  QtPassSettings::setProfiles(getProfiles());
+  const Profiles profiles = getProfiles();
+  QtPassSettings::setProfiles(profiles);
+
+  // The active profile's own Git flags replace the global ones, as they do
+  // when switching to it (MainWindow::on_profileBox_currentTextChanged).
+  const auto active = profiles.constFind(QtPassSettings::getProfile());
+  if (active != profiles.constEnd() &&
+      (active->useGit.has_value() || active->autoPush.has_value() ||
+       active->autoPull.has_value())) {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = active->useGit.value_or(s.useGit);
+    s.autoPush = active->autoPush.value_or(s.autoPush);
+    s.autoPull = active->autoPull.value_or(s.autoPull);
+    QtPassSettings::save(s);
+  }
 
   // Initialize new profiles that need pass/git initialization
   initializeNewProfiles(existingProfiles);
@@ -610,113 +609,82 @@ void ConfigDialog::on_checkBoxAutoclear_clicked() {
  * @brief ConfigDialog::setProfiles set the profiles and chosen profile from
  * MainWindow.
  * @param profiles
- * @param profile
+ * @param currentProfile
  */
 void ConfigDialog::setProfiles(Profiles profiles,
                                const QString &currentProfile) {
   // remove weird "" key value pairs
   profiles.remove(QString());
 
-  // Cache profiles for use in onProfileTableSelectionChanged
-  m_profiles = profiles;
-
-  // Populate with sorting disabled: writing into the sort column re-sorts the
-  // table between setItem calls, so the path/signingKey cells would land in a
-  // different profile's row — corrupting the display and destroying data on
-  // save. Restore the previous sort state and locate the current row by item
-  // pointer afterwards.
-  bool sortingEnabled = ui->profileTable->isSortingEnabled();
-  ui->profileTable->setSortingEnabled(false);
-
-  ui->profileTable->setRowCount(static_cast<int>(profiles.count()));
-  int n = 0;
-  QTableWidgetItem *currentItem = nullptr;
-  for (auto i = profiles.cbegin(); i != profiles.cend(); ++i, ++n) {
-    if (i.key().isEmpty()) {
-      continue;
-    }
-    auto *nameItem = new QTableWidgetItem(i.key());
-    ui->profileTable->setItem(n, 0, nameItem);
-    ui->profileTable->setItem(n, 1, new QTableWidgetItem(i.value().path));
-    ui->profileTable->setItem(n, 2, new QTableWidgetItem(i.value().signingKey));
+  m_entries.clear();
+  ui->profileList->clear();
+  int currentRow = -1;
+  for (auto i = profiles.cbegin(); i != profiles.cend(); ++i) {
     if (i.key() == currentProfile) {
-      currentItem = nameItem;
+      currentRow = m_entries.size();
     }
+    m_entries.append({i.key(), i.value()});
+    ui->profileList->addItem(i.key());
   }
-
-  ui->profileTable->setSortingEnabled(sortingEnabled);
-
-  if (currentItem != nullptr) {
-    ui->profileTable->selectRow(ui->profileTable->row(currentItem));
-    // Load git settings for current profile
-    loadGitSettingsForProfile(currentProfile, m_profiles);
+  ui->profileList->setCurrentRow(currentRow);
+  if (currentRow < 0) {
+    loadProfileForm(-1);
   }
+  validate();
 }
 
 /**
- * @brief Load git settings for a specific profile.
- * @param profileName The profile name.
- * @param profiles All profiles, with their Git flags.
+ * @brief The entry the form is showing.
+ * @return The entry, or nullptr when nothing is selected.
  */
-void ConfigDialog::loadGitSettingsForProfile(const QString &profileName,
-                                             const Profiles &profiles) {
-  const auto it = profiles.constFind(profileName);
-  if (it == profiles.constEnd() || !it->useGit.has_value()) {
-    // Unset (a profile from before 1.8.0): leave the global settings as-is.
-    return;
+auto ConfigDialog::currentEntry() -> ProfileEntry * {
+  if (m_currentEntry < 0 || m_currentEntry >= m_entries.size()) {
+    return nullptr;
   }
-  useGit(*it->useGit);
-  ui->checkBoxAutoPush->setEnabled(ui->checkBoxUseGit->isChecked());
-  ui->checkBoxAutoPull->setEnabled(ui->checkBoxUseGit->isChecked());
-  if (it->autoPush.has_value()) {
-    ui->checkBoxAutoPush->setChecked(*it->autoPush);
-  }
-  if (it->autoPull.has_value()) {
-    ui->checkBoxAutoPull->setChecked(*it->autoPull);
-  }
+  return &m_entries[m_currentEntry];
+}
+
+/**
+ * @brief Show one profile in the form, or clear and disable the form.
+ *
+ * The Git boxes show the profile's own flags when it has them and the
+ * global ones from the Settings tab otherwise; only a click on a box turns
+ * the value into the profile's own.
+ * @param row Index into m_entries, or -1 for none.
+ */
+void ConfigDialog::loadProfileForm(int row) {
+  m_currentEntry = (row >= 0 && row < m_entries.size()) ? row : -1;
+  const ProfileEntry *entry = currentEntry();
+  m_loadingForm = true;
+  ui->profileForm->setEnabled(entry != nullptr);
+  ui->deleteButton->setEnabled(entry != nullptr);
+  ui->profileName->setText(entry ? entry->name : QString());
+  ui->profilePath->setText(entry ? entry->profile.path : QString());
+  ui->profileSigningKey->setText(entry ? entry->profile.signingKey : QString());
+  const bool useGit =
+      entry && entry->profile.useGit.value_or(ui->checkBoxUseGit->isChecked());
+  ui->profileUseGit->setChecked(useGit);
+  ui->profileAutoPush->setChecked(
+      entry &&
+      entry->profile.autoPush.value_or(ui->checkBoxAutoPush->isChecked()));
+  ui->profileAutoPull->setChecked(
+      entry &&
+      entry->profile.autoPull.value_or(ui->checkBoxAutoPull->isChecked()));
+  ui->profileAutoPush->setEnabled(useGit);
+  ui->profileAutoPull->setEnabled(useGit);
+  m_loadingForm = false;
+  updateProfileStatus();
 }
 
 /**
  * @brief ConfigDialog::getProfiles return profile list.
- * @return
+ * @return The profiles as edited, keyed by name.
  */
 auto ConfigDialog::getProfiles() -> Profiles {
-  // Get currently selected profile name
-  QList<QTableWidgetItem *> selected = ui->profileTable->selectedItems();
-  QString selectedProfile;
-  if (!selected.isEmpty()) {
-    selectedProfile =
-        ui->profileTable->item(selected.first()->row(), 0)->text();
-  }
-
-  // The Git checkboxes show the selected profile's flags; every other
-  // profile keeps what it had (cached in m_profiles).
   Profiles profiles;
-  for (int i = 0; i < ui->profileTable->rowCount(); ++i) {
-    QTableWidgetItem *pathItem = ui->profileTable->item(i, 1);
-    QTableWidgetItem *item = ui->profileTable->item(i, 0);
-    if (pathItem == nullptr || item == nullptr) {
-      continue;
-    }
-    Profile profile;
-    profile.path = pathItem->text();
-    if (QTableWidgetItem *signingKeyItem = ui->profileTable->item(i, 2)) {
-      profile.signingKey = signingKeyItem->text();
-    }
-    if (item->text() == selectedProfile) {
-      profile.useGit = ui->checkBoxUseGit->isChecked();
-      profile.autoPush = ui->checkBoxAutoPush->isChecked();
-      profile.autoPull = ui->checkBoxAutoPull->isChecked();
-    } else if (const auto it = m_profiles.constFind(item->text());
-               it != m_profiles.constEnd()) {
-      profile.useGit = it->useGit;
-      profile.autoPush = it->autoPush;
-      profile.autoPull = it->autoPull;
-    }
-    profiles.insert(item->text(), profile);
+  for (const ProfileEntry &entry : std::as_const(m_entries)) {
+    profiles.insert(entry.name, entry.profile);
   }
-  // Update cache with current in-dialog state
-  m_profiles = profiles;
   return profiles;
 }
 
@@ -804,80 +772,46 @@ void ConfigDialog::initializeNewProfiles(const Profiles &existingProfiles) {
 }
 
 /**
- * @brief ConfigDialog::on_addButton_clicked add a profile row.
+ * @brief ConfigDialog::on_addButton_clicked add a profile and start editing
+ * its name.
  */
 void ConfigDialog::on_addButton_clicked() {
-  bool sortingEnabled = ui->profileTable->isSortingEnabled();
-  ui->profileTable->setSortingEnabled(false);
-
-  int n = ui->profileTable->rowCount();
-  ui->profileTable->insertRow(n);
-  auto *nameItem = new QTableWidgetItem(tr("New Profile"));
-  ui->profileTable->setItem(n, 0, nameItem);
-  ui->profileTable->setItem(n, 1, new QTableWidgetItem(ui->storePath->text()));
-  ui->profileTable->setItem(n, 2, new QTableWidgetItem());
-
-  ui->profileTable->setSortingEnabled(sortingEnabled);
-
-  // Re-enabling sorting may move the new row, so locate it by item pointer
-  // rather than the stale insertion index — item(n, 0) could now be a
-  // different, existing profile, which we would then wrongly rename/select.
-  int currentRow = ui->profileTable->row(nameItem);
-  ui->profileTable->selectRow(currentRow);
-  ui->deleteButton->setEnabled(true);
-
-  ui->profileTable->editItem(nameItem);
-  nameItem->setSelected(true);
-
+  ProfileEntry entry;
+  entry.name = tr("New Profile");
+  entry.profile.path = ui->storePath->text();
+  m_entries.append(entry);
+  ui->profileList->addItem(entry.name);
+  ui->profileList->setCurrentRow(m_entries.size() - 1);
+  ui->profileName->setFocus();
+  ui->profileName->selectAll();
   validate();
-  updateProfileStatus(currentRow);
 }
 
 /**
- * @brief ConfigDialog::on_profileTable_cellDoubleClicked open folder browser
- * for path column (column 1).
+ * @brief Pick the store folder for the profile in the form.
  */
-void ConfigDialog::on_profileTable_cellDoubleClicked(int row, int column) {
-  if (column == 1) {
-    QString dir = selectFolder();
-    if (!dir.isEmpty()) {
-      // QTableWidget emits cellDoubleClicked even for cells with no item, so
-      // guard against a null path cell rather than dereferencing it.
-      QTableWidgetItem *pathItem = ui->profileTable->item(row, 1);
-      if (pathItem != nullptr) {
-        pathItem->setText(dir);
-      } else {
-        ui->profileTable->setItem(row, 1, new QTableWidgetItem(dir));
-      }
-    }
+void ConfigDialog::on_profilePathBrowse_clicked() {
+  const QString dir = selectFolder();
+  if (!dir.isEmpty()) {
+    ui->profilePath->setText(dir);
+    onProfilePathEdited(dir);
   }
 }
 
 /**
- * @brief ConfigDialog::on_deleteButton_clicked remove a profile row.
+ * @brief ConfigDialog::on_deleteButton_clicked forget the selected profile.
  */
 void ConfigDialog::on_deleteButton_clicked() {
-  QSet<int> selectedRows; //  we use a set to prevent doubles
-  const QList<QTableWidgetItem *> itemList = ui->profileTable->selectedItems();
-  if (itemList.count() == 0) {
+  const int row = ui->profileList->currentRow();
+  if (row < 0 || row >= m_entries.size()) {
     QMessageBox::warning(this, tr("No profile selected"),
                          tr("No profile selected to delete"));
     return;
   }
-  for (const QTableWidgetItem *item : itemList)
-    selectedRows.insert(item->row());
-  // get a list, and sort it big to small
-  QList<int> rows = selectedRows.values();
-  std::sort(rows.begin(), rows.end(), std::greater<>());
-  // now actually do the removing:
-  for (int row : std::as_const(rows))
-    ui->profileTable->removeRow(row);
-  if (ui->profileTable->rowCount() < 1) {
-    ui->deleteButton->setEnabled(false);
-  }
-
+  m_entries.removeAt(row);
+  delete ui->profileList->takeItem(row);
+  // currentRowChanged has re-pointed the form at the neighbour (or nothing).
   validate();
-  updateProfileStatus(-1);
 }
 
 /**
@@ -1288,50 +1222,71 @@ void ConfigDialog::on_checkBoxUseTemplate_clicked() {
       ui->checkBoxUseTemplate->isChecked());
 }
 
-void ConfigDialog::onProfileTableItemChanged(QTableWidgetItem *item) {
-  validate(item);
-  updateProfileStatus(item ? item->row() : -1);
+void ConfigDialog::onProfileSelected(int row) { loadProfileForm(row); }
+
+void ConfigDialog::onProfileNameEdited(const QString &name) {
+  ProfileEntry *entry = currentEntry();
+  if (m_loadingForm || entry == nullptr) {
+    return;
+  }
+  entry->name = name;
+  if (QListWidgetItem *item = ui->profileList->item(m_currentEntry)) {
+    item->setText(name);
+  }
+  validate();
+  updateProfileStatus();
 }
 
-void ConfigDialog::onProfileTableSelectionChanged() {
-  QList<QTableWidgetItem *> selected = ui->profileTable->selectedItems();
-  if (selected.isEmpty()) {
+void ConfigDialog::onProfilePathEdited(const QString &path) {
+  ProfileEntry *entry = currentEntry();
+  if (m_loadingForm || entry == nullptr) {
     return;
   }
-  QTableWidgetItem *nameItem =
-      ui->profileTable->item(selected.first()->row(), 0);
-  if (nameItem == nullptr) {
+  entry->profile.path = path;
+  validate();
+  updateProfileStatus();
+}
+
+void ConfigDialog::onProfileSigningKeyEdited(const QString &key) {
+  ProfileEntry *entry = currentEntry();
+  if (m_loadingForm || entry == nullptr) {
     return;
   }
-  QString profileName = nameItem->text();
-  loadGitSettingsForProfile(profileName, m_profiles);
+  entry->profile.signingKey = key;
 }
 
 /**
- * @brief Update status bar with profile preview for given row.
- * @param row The row index to preview, or -1 to clear.
+ * @brief A Git box was clicked: the profile now has its own flags.
  */
-void ConfigDialog::updateProfileStatus(int row) {
-  if (row < 0 || row >= ui->profileTable->rowCount()) {
+void ConfigDialog::onProfileGitToggled() {
+  ProfileEntry *entry = currentEntry();
+  if (m_loadingForm || entry == nullptr) {
+    return;
+  }
+  entry->profile.useGit = ui->profileUseGit->isChecked();
+  entry->profile.autoPush = ui->profileAutoPush->isChecked();
+  entry->profile.autoPull = ui->profileAutoPull->isChecked();
+  ui->profileAutoPush->setEnabled(ui->profileUseGit->isChecked());
+  ui->profileAutoPull->setEnabled(ui->profileUseGit->isChecked());
+}
+
+/**
+ * @brief Update the status line with a preview of the profile in the form.
+ */
+void ConfigDialog::updateProfileStatus() {
+  const ProfileEntry *entry = currentEntry();
+  if (entry == nullptr) {
     ui->statusLabel->setText(QString());
     return;
   }
 
-  QTableWidgetItem *nameItem = ui->profileTable->item(row, 0);
-  QTableWidgetItem *pathItem = ui->profileTable->item(row, 1);
-
   QString statusMessage;
-  if (nameItem && !nameItem->text().isEmpty() && pathItem &&
-      !pathItem->text().isEmpty()) {
-    QDir dir(QDir::cleanPath(pathItem->text()));
-    if (!dir.exists()) {
-      statusMessage = tr("New profile: %1 at %2")
-                          .arg(nameItem->text())
-                          .arg(QDir::cleanPath(pathItem->text()));
+  if (!entry->name.isEmpty() && !entry->profile.path.isEmpty()) {
+    const QString path = QDir::cleanPath(entry->profile.path);
+    if (!QDir(path).exists()) {
+      statusMessage = tr("New profile: %1 at %2").arg(entry->name, path);
     } else {
-      statusMessage = tr("Profile: %1 at %2")
-                          .arg(nameItem->text())
-                          .arg(QDir::cleanPath(pathItem->text()));
+      statusMessage = tr("Profile: %1 at %2").arg(entry->name, path);
     }
   } else {
     statusMessage = tr("Fill in all required fields");
