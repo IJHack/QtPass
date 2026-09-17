@@ -51,11 +51,21 @@ struct Profile {
     return *flag ? QStringLiteral("true") : QStringLiteral("false");
   }
 
+  /**
+   * @brief Field-wise equality, including the unset state of each flag.
+   * @param other Profile to compare with.
+   * @return true when every field matches.
+   */
   auto operator==(const Profile &other) const -> bool {
     return path == other.path && signingKey == other.signingKey &&
            useGit == other.useGit && autoPush == other.autoPush &&
            autoPull == other.autoPull;
   }
+  /**
+   * @brief Negation of operator==.
+   * @param other Profile to compare with.
+   * @return true when any field differs.
+   */
   auto operator!=(const Profile &other) const -> bool {
     return !(*this == other);
   }
