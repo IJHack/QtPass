@@ -170,13 +170,13 @@
         <location filename="../src/configdialog.ui" line="765"/>
         <location filename="../src/configdialog.ui" line="768"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished">Виберіть виконуваний файл gpg</translation>
+        <translation>Виберіть виконуваний файл gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
         <location filename="../src/configdialog.ui" line="781"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished">Виберіть виконуваний файл git</translation>
+        <translation>Виберіть виконуваний файл git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="797"/>
@@ -192,13 +192,13 @@
         <location filename="../src/configdialog.ui" line="833"/>
         <location filename="../src/configdialog.ui" line="836"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished">Виберіть виконуваний файл pwgen</translation>
+        <translation>Виберіть виконуваний файл pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="873"/>
         <location filename="../src/configdialog.ui" line="876"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished">Виберіть виконуваний файл pass</translation>
+        <translation>Виберіть виконуваний файл pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="930"/>
@@ -518,12 +518,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="799"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished">Не вдалося ініціалізувати профіль %1</translation>
+        <translation>Не вдалося ініціалізувати профіль %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="801"/>
         <source>Profile %1</source>
-        <translation type="unfinished">Профіль %1</translation>
+        <translation>Профіль %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="815"/>
@@ -569,7 +569,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="56"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished">Недоступно у Wayland; натомість скористайтеся правилом вікна «поверх інших» у своєму композиторі</translation>
+        <translation>Недоступно у Wayland; натомість скористайтеся правилом вікна «поверх інших» у своєму композиторі</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1026"/>
@@ -686,7 +686,7 @@ The value will still be saved as entered.</source>
         <location filename="../src/configdialog.ui" line="1110"/>
         <location filename="../src/configdialog.ui" line="1113"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Виберіть папку сховища паролів</translation>
+        <translation>Виберіть папку сховища паролів</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1176"/>
@@ -708,7 +708,7 @@ URL
     <message>
         <location filename="../src/executor.cpp" line="122"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished">Для цієї команди не налаштовано виконуваний файл</translation>
+        <translation>Для цієї команди не налаштовано виконуваний файл</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="157"/>
@@ -718,7 +718,7 @@ URL
     <message>
         <location filename="../src/executor.cpp" line="440"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished">%1 аварійно завершився або був примусово зупинений</translation>
+        <translation>%1 аварійно завершився або був примусово зупинений</translation>
     </message>
 </context>
 <context>
@@ -827,7 +827,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished">Не вдалося виконати Git pull: %1</translation>
+        <translation>Не вдалося виконати Git pull: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="185"/>
@@ -888,7 +888,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished">Повторне шифрування вже виконується</translation>
+        <translation>Повторне шифрування вже виконується</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="838"/>
@@ -904,7 +904,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished">Не вдалося виконати Git pull, сховище повторно шифрується в поточному стані</translation>
+        <translation>Не вдалося виконати Git pull, сховище повторно шифрується в поточному стані</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="965"/>
@@ -919,7 +919,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1003"/>
         <source>... and %n more</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>... і ще %n файл</numerusform>
             <numerusform>... і ще %n файли</numerusform>
             <numerusform>... і ще %n файлів</numerusform>
@@ -928,7 +928,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1006"/>
         <source>%n file(s) could not be re-encrypted:</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Не вдалося повторно зашифрувати %n файл:</numerusform>
             <numerusform>Не вдалося повторно зашифрувати %n файли:</numerusform>
             <numerusform>Не вдалося повторно зашифрувати %n файлів:</numerusform>
@@ -937,12 +937,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1012"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished">Повторне шифрування скасовано: перевірено %1 з %2 файлів, %3 повторно зашифровано, %4 не вдалося</translation>
+        <translation>Повторне шифрування скасовано: перевірено %1 з %2 файлів, %3 повторно зашифровано, %4 не вдалося</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1297"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished">Виконуваний файл Git не налаштовано, git пропускається</translation>
+        <translation>Виконуваний файл Git не налаштовано, git пропускається</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -961,7 +961,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1035"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Git push не виконується: не вдалося повторно зашифрувати %n файл</numerusform>
             <numerusform>Git push не виконується: не вдалося повторно зашифрувати %n файли</numerusform>
             <numerusform>Git push не виконується: не вдалося повторно зашифрувати %n файлів</numerusform>
@@ -1175,12 +1175,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="257"/>
         <source>No password store backend available</source>
-        <translation type="unfinished">Немає доступного бекенда сховища паролів</translation>
+        <translation>Немає доступного бекенда сховища паролів</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="293"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished">Не вдалося згенерувати ключ: %1</translation>
+        <translation>Не вдалося згенерувати ключ: %1</translation>
     </message>
 </context>
 <context>
@@ -1375,77 +1375,77 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Файл</translation>
+        <translation>&amp;Файл</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished">&amp;Сховище</translation>
+        <translation>&amp;Сховище</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished">&amp;Налаштування</translation>
+        <translation>&amp;Налаштування</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">&amp;Довідка</translation>
+        <translation>&amp;Довідка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished">Ctrl+,</translation>
+        <translation>Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished">&amp;Закрити вікно</translation>
+        <translation>&amp;Закрити вікно</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="508"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">Закрити вікно; з увімкненим параметром «Приховувати при закритті» QtPass залишається в системному лотку</translation>
+        <translation>Закрити вікно; з увімкненим параметром «Приховувати при закритті» QtPass залишається в системному лотку</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Вийти</translation>
+        <translation>&amp;Вийти</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished">&amp;Часті запитання</translation>
+        <translation>&amp;Часті запитання</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished">Відкрити часті запитання на qtpass.org</translation>
+        <translation>Відкрити часті запитання на qtpass.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="533"/>
         <source>F1</source>
-        <translation type="unfinished">F1</translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished">&amp;Про QtPass</translation>
+        <translation>&amp;Про QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished">Про &amp;Qt</translation>
+        <translation>Про &amp;Qt</translation>
     </message>
     <message>
         <source>Clear output</source>
@@ -1766,12 +1766,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="822"/>
         <source>About QtPass</source>
-        <translation type="unfinished">Про QtPass</translation>
+        <translation>Про QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="823"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Багатоплатформний графічний інтерфейс для &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандартного менеджера паролів Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Вихідний код і звіти про помилки&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Авторське право &amp;copy; 2014&amp;ndash;%2 IJhack. Ліцензовано на умовах &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL версії 3&lt;/a&gt; або новішої.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Багатоплатформний графічний інтерфейс для &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандартного менеджера паролів Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Вихідний код і звіти про помилки&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Авторське право &amp;copy; 2014&amp;ndash;%2 IJhack. Ліцензовано на умовах &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL версії 3&lt;/a&gt; або новішої.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="927"/>
@@ -1821,7 +1821,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1589"/>
         <source>New folder</source>
-        <translation type="unfinished">Нова папка</translation>
+        <translation>Нова папка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1601"/>
@@ -1895,22 +1895,22 @@ Continue?</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished">Повторне шифрування паролів...</translation>
+        <translation>Повторне шифрування паролів...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Cancel</source>
-        <translation type="unfinished">Скасувати</translation>
+        <translation>Скасувати</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1800"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished">Скасування повторного шифрування</translation>
+        <translation>Скасування повторного шифрування</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1816"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished">Повторне шифрування паролів: %1 з %2</translation>
+        <translation>Повторне шифрування паролів: %1 з %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1849"/>
@@ -1976,12 +1976,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="163"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished">Налаштований домашній каталог GPG %1 не існує, використовується брелок за замовчуванням</translation>
+        <translation>Налаштований домашній каталог GPG %1 не існує, використовується брелок за замовчуванням</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="171"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished">Налаштований домашній каталог GPG %1 не існує, використовується GNUPGHOME %2 із середовища</translation>
+        <translation>Налаштований домашній каталог GPG %1 не існує, використовується GNUPGHOME %2 із середовища</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="191"/>
@@ -2085,17 +2085,17 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="164"/>
         <source>Template:</source>
-        <translation type="unfinished">Шаблон:</translation>
+        <translation>Шаблон:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="180"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished">Шаблон полів із файлу .templates сховища. Ctrl+T перемикає на наступний.</translation>
+        <translation>Шаблон полів із файлу .templates сховища. Ctrl+T перемикає на наступний.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="90"/>
         <source>Decrypting…</source>
-        <translation type="unfinished">Розшифрування…</translation>
+        <translation>Розшифрування…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="267"/>
@@ -2113,17 +2113,17 @@ Continue?</source>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Вихід процесу</translation>
+        <translation>Вихід процесу</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
         <source>Clear</source>
-        <translation type="unfinished">Очистити</translation>
+        <translation>Очистити</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="26"/>
         <source>Clear output</source>
-        <translation type="unfinished">Очистити результати</translation>
+        <translation>Очистити результати</translation>
     </message>
 </context>
 <context>
@@ -2131,12 +2131,12 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="32"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished">Не вдалося створити %1.</translation>
+        <translation>Не вдалося створити %1.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="54"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 вже містить %n зашифрований файл; повторне шифрування не виконувалося. Щоб зробити це, перейдіть до профілю та відкрийте «Користувачі».</numerusform>
             <numerusform>%1 вже містить %n зашифровані файли; повторне шифрування не виконувалося. Щоб зробити це, перейдіть до профілю та відкрийте «Користувачі».</numerusform>
             <numerusform>%1 вже містить %n зашифрованих файлів; повторне шифрування не виконувалося. Щоб зробити це, перейдіть до профілю та відкрийте «Користувачі».</numerusform>
@@ -2145,22 +2145,22 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="72"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished">Одержувача не вибрано; %1 не записано.</translation>
+        <translation>Одержувача не вибрано; %1 не записано.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="79"/>
         <source>Could not write %1: %2</source>
-        <translation type="unfinished">Не вдалося записати %1: %2</translation>
+        <translation>Не вдалося записати %1: %2</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="105"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished">Не вдалося підписати %1 за допомогою %2: %3</translation>
+        <translation>Не вдалося підписати %1 за допомогою %2: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="124"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished">Не вдалося виконати git %1 у %2: %3</translation>
+        <translation>Не вдалося виконати git %1 у %2: %3</translation>
     </message>
 </context>
 <context>
@@ -2201,7 +2201,7 @@ Continue?</source>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished">Показати як QR-код</translation>
+        <translation>Показати як QR-код</translation>
     </message>
 </context>
 <context>
@@ -2212,13 +2212,13 @@ Continue?</source>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
         <source>Show password</source>
-        <translation type="unfinished">Показати пароль</translation>
+        <translation>Показати пароль</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
         <source>Hide password</source>
-        <translation type="unfinished">Сховати пароль</translation>
+        <translation>Сховати пароль</translation>
     </message>
 </context>
 <context>
@@ -2227,7 +2227,7 @@ Continue?</source>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Копіювати в буфер обміну</translation>
+        <translation>Копіювати в буфер обміну</translation>
     </message>
 </context>
 <context>
@@ -2404,7 +2404,7 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished">Виберіть, які користувачі повинні мати можливість розшифровувати паролі, що зберігаються в цій папці.
+        <translation>Виберіть, які користувачі повинні мати можливість розшифровувати паролі, що зберігаються в цій папці.
 Примітка: після натискання OK кожен пароль у цій папці та її підпапках повторно шифрується для вибраних користувачів; це може зайняти деякий час.
 Записи жирним шрифтом мають доступний секретний ключ, виберіть один із них, щоб мати змогу розшифровувати самостійно.
 Звичайні записи мають надійний ключ шифрування, виберіть їх, щоб дозволити іншим людям розшифровувати.
