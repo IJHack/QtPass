@@ -610,18 +610,18 @@ void tst_mainwindow::cancelOtpRequestForgetsBothPendingRequests() {
   s.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
   QtPassSettings::save(s);
   QClipboard *clip = QApplication::clipboard();
-
   clip->setText(QStringLiteral("sentinel"));
+
+  // Both requests pending at once, one cancel.
   QVERIFY(armCopyRequest(m_window.data(), m_storeDir.path(),
                          QStringLiteral("copy-cancel")));
-  m_window->cancelOtpRequest();
-  m_window->passwordFromFileToClipboard(QStringLiteral("late"),
-                                        QStringLiteral("copy-cancel"));
-  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
-
   QVERIFY(armOtpRequest(m_window.data(), m_storeDir.path(),
                         QStringLiteral("otp-cancel")));
   m_window->cancelOtpRequest();
+
+  m_window->passwordFromFileToClipboard(QStringLiteral("late"),
+                                        QStringLiteral("copy-cancel"));
+  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
   m_window->otpFromFileToClipboard(kOtpEntry, QStringLiteral("otp-cancel"));
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
 }
