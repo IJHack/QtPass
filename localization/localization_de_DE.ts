@@ -1285,7 +1285,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Schließen</translation>
+        <translation>&amp;Beenden</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="519"/>
@@ -2323,7 +2323,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="61"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Schließen</translation>
+        <translation>&amp;Beenden</translation>
     </message>
 </context>
 <context>

@@ -2464,17 +2464,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="334"/>
         <source>[INVALID] </source>
-        <translation>[NEVAZILO] </translation>
+        <translation>[NEVAŽEĆI] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[EXPIRED] </source>
-        <translation>[ISTKAO] </translation>
+        <translation>[ISTEKAO] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="344"/>
         <source>[PARTIAL] </source>
-        <translation>[DELOVAN] </translation>
+        <translation>[DELIMIČAN] </translation>
     </message>
 </context>
 </TS>

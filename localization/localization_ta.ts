@@ -314,7 +314,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Hide on close</source>
-        <translation>நெருக்கமாக மறைக்க</translation>
+        <translation>மூடும்போது மறை</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
@@ -1444,7 +1444,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;வெளியேறு</translation>
+        <translation>(&amp;Q) வெளியேறு</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="519"/>
@@ -2385,7 +2385,7 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="61"/>
         <source>&amp;Quit</source>
-        <translation>&amp;வெளியேறு</translation>
+        <translation>(&amp;Q) வெளியேறு</translation>
     </message>
 </context>
 <context>

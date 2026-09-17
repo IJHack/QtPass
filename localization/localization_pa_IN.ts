@@ -2180,7 +2180,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
     <message>
         <location filename="../src/usersdialog.cpp" line="334"/>
         <source>[INVALID] </source>
-        <translation>ਅਜਿਹਾ ਕੁਝ ਵਿਅਰਥ ਹੈ </translation>
+        <translation>[ਅਵੈਧ] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
