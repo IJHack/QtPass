@@ -22,7 +22,7 @@ Update version in all build files:
   entry)
 - `qtpass.iss` - `#define MyAppVersion`
 - `Doxyfile` - `PROJECT_NUMBER`
-- `qtpass.appdata.xml` - a new `<release version="X.Y.Z" date="...">` entry
+- `org.qtpass.QtPass.metainfo.xml` - a new `<release version="X.Y.Z" date="...">` entry
 - `publiccode.yml` - `softwareVersion` and `releaseDate`
 - `SECURITY.md` - the supported-versions table
 - `downloads.html` (gh-pages) - multiple references
@@ -189,7 +189,8 @@ announcing the release:
 
 - Where: PR to the Flathub app repository.
 - How: bump the `qtpass` module tag/commit in `flatpak/org.qtpass.QtPass.yml`,
-  add a `<release>` to `qtpass.appdata.xml`, run `flatpak-builder-lint`.
+  add a `<release>` to `org.qtpass.QtPass.metainfo.xml`, run
+  `flatpak-builder-lint`.
 - Flathub's [generative-AI policy](https://docs.flathub.org/docs/for-app-authors/requirements#generative-ai-policy):
   AI-generated code, packaging or metadata must be disclosed (which parts,
   how much) and is accepted at reviewer discretion; AI tools must not open

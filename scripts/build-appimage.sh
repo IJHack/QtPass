@@ -90,15 +90,15 @@ for required in "${binary}" "${desktop}" "${icon}"; do
 	fi
 done
 
-# 2. Validate the AppStream metadata ourselves. appimagetool would do it too,
-#    but its check insists on usr/share/metainfo/<id>.appdata.xml, and the
-#    file is installed as qtpass.appdata.xml because the RPM spec and the
-#    Flatpak manifest (rename-appdata-file) expect that name. Renaming it
-#    everywhere is a separate change, so appimagetool's own check is turned
-#    off below and the file is validated here when appstreamcli is around.
+# 2. Validate the AppStream metadata ourselves. appimagetool only looks for
+#    usr/share/metainfo/<desktop file name>.appdata.xml, i.e. the legacy
+#    qtpass.appdata.xml, and never sees the file under its component id, so
+#    its own check is turned off below and the file is validated here when
+#    appstreamcli is around.
 if command -v appstreamcli >/dev/null 2>&1; then
 	echo "==> Validating AppStream metadata"
-	appstreamcli validate --no-net "${appdir}/usr/share/metainfo/qtpass.appdata.xml"
+	appstreamcli validate --no-net \
+		"${appdir}/usr/share/metainfo/org.qtpass.QtPass.metainfo.xml"
 fi
 
 # 3. Fetch linuxdeploy, its Qt plugin and the AppImage runtime: pinned

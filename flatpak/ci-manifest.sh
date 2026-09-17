@@ -8,7 +8,10 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 out=org.qtpass.QtPass.ci.yml
-sed '/^  - name: qtpass$/,$ { /^    sources:$/,$d }' org.qtpass.QtPass.yml >"$out"
+# The tree installs the metainfo as org.qtpass.QtPass.metainfo.xml already;
+# rename-appdata-file is only there for the tagged 1.8.x source.
+sed -e '/^  - name: qtpass$/,$ { /^    sources:$/,$d }' \
+	-e '/^rename-appdata-file:/d' org.qtpass.QtPass.yml >"$out"
 printf '%s\n' \
 	'    sources:' \
 	'      - type: dir' \

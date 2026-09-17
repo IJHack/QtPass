@@ -48,7 +48,7 @@ jobs:
             packaging:
               - "scripts/build-appimage.sh"
               - "qtpass.desktop"
-              - "qtpass.appdata.xml"
+              - "org.qtpass.QtPass.metainfo.xml"
               - "qtpass.1"
               - "artwork/**"
               - ".github/workflows/release-installers.yml"

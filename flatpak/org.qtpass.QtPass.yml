@@ -22,6 +22,8 @@ sdk: org.kde.Sdk
 command: qtpass
 rename-desktop-file: qtpass.desktop
 rename-icon: qtpass-icon
+# v1.8.x installs the metainfo as qtpass.appdata.xml; 2.0 installs it under
+# the component id already. Drop this line with the first 2.0 tag.
 rename-appdata-file: qtpass.appdata.xml
 finish-args:
   - --share=ipc
@@ -135,8 +137,8 @@ modules:
       - qmake PREFIX=/app CONFIG+=release qtpass.pro
       - make -j$FLATPAK_BUILDER_N_JOBS sub-src sub-main
       # installs bin/qtpass, the desktop file, the metainfo and the hicolor
-      # icons under the upstream names; rename-desktop-file / rename-icon /
-      # rename-appdata-file rewrite them to the app id
+      # icons under the upstream names; rename-desktop-file / rename-icon
+      # (and rename-appdata-file, for 1.8.x tags) rewrite them to the app id
       - make -C main install
       # QtPassSettings::initExecutables() (and pass) look for "gpg2"; the runtime
       # ships "gpg". The wrapper also scrubs sandbox-only env before the host

@@ -55,7 +55,7 @@ Features:
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/qtpass.desktop
-appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/qtpass.appdata.xml
+appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.qtpass.QtPass.metainfo.xml
 
 %files
 %license LICENSE
@@ -64,7 +64,7 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/qtpass.ap
 %{_datadir}/applications/qtpass.desktop
 %{_datadir}/icons/hicolor/512x512/apps/qtpass-icon.png
 %{_datadir}/icons/hicolor/scalable/apps/qtpass-icon.svg
-%{_datadir}/metainfo/qtpass.appdata.xml
+%{_datadir}/metainfo/org.qtpass.QtPass.metainfo.xml
 %{_mandir}/man1/qtpass.1*
 
 %changelog
