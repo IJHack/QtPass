@@ -34,6 +34,11 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Changed
 
+- Adding a password is one dialog: the folder (picked from the store's
+  folders, the tree's current one preselected) and the name sit above the
+  password and fields, and OK stays off while the name is empty, taken,
+  a folder, or would land outside the store. The separate "New file" prompt
+  is gone; a name like `work/vpn` still creates the folder it needs
 - The first start is a wizard: Programs (GnuPG required, pass and Git
   optional, with the autodetected paths filled in), Your key (the secret keys
   gpg has, with a "Generate a new key pair" button; tick the ones a new store

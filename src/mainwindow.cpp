@@ -48,6 +48,7 @@
 #include <QTimer>
 #include <QTreeWidget>
 #include <QUrl>
+#include <algorithm>
 #include <utility>
 
 /**
@@ -1143,6 +1144,20 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
     if (folder.isEmpty()) {
       folder = storePath;
     }
+    // The dialog names the entry itself: every folder of the store to pick
+    // from, the tree's current one preselected.
+    QStringList folders{QString()};
+    QDirIterator it(storePath, QDir::Dirs | QDir::NoDotAndDotDot,
+                    QDirIterator::Subdirectories);
+    while (it.hasNext()) {
+      const QString rel = QDir(storePath).relativeFilePath(it.next());
+      if (!rel.startsWith(u'.') && !rel.contains(QStringLiteral("/."))) {
+        folders << rel;
+      }
+    }
+    std::sort(folders.begin() + 1, folders.end());
+    d.setNewEntryLocation(storePath, folders,
+                          QDir(storePath).relativeFilePath(folder));
     QHash<QString, QStringList> templates =
         TemplateIO::readTemplates(storePath);
     if (!templates.isEmpty()) {
@@ -1158,27 +1173,10 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
 }
 
 /**
- * @brief MainWindow::addPassword add a new password by showing a
- * number of dialogs.
+ * @brief MainWindow::addPassword add a new password: one dialog with the
+ * folder, the name and the content.
  */
-void MainWindow::addPassword() {
-  const QString passStore = QtPassSettings::load().passStore;
-  bool ok;
-  QString dir = m_tree->currentDir(true);
-  QString file =
-      QInputDialog::getText(this, tr("New file"),
-                            tr("New password file: \n(Will be placed in %1 )")
-                                .arg(passStore + m_tree->currentDir(true)),
-                            QLineEdit::Normal, "", &ok);
-  if (!ok || file.isEmpty()) {
-    return;
-  }
-  file = dir + file;
-  if (!confirmPathInStore(passStore + file)) {
-    return;
-  }
-  setPassword(file);
-}
+void MainWindow::addPassword() { setPassword(QString()); }
 
 /**
  * @brief MainWindow::onDelete remove password, if you are

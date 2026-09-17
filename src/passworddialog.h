@@ -50,6 +50,36 @@ public:
   ~PasswordDialog() override;
 
   /**
+   * @brief OK: for a new entry, resolve and check the name first and stay
+   * open when it is not usable; then close as accepted (on_accepted() does
+   * the insert).
+   */
+  void accept() override;
+
+  /**
+   * @brief Let a new entry be named inside the dialog: a folder picker over
+   * the store's folders and a name field, instead of a separate prompt.
+   *
+   * The dialog validates as the user types (empty, escaping the store,
+   * already taken) and keeps OK off until the name is good; accept() then
+   * creates any subfolder the name needs and inserts the entry at
+   * entryPath(). Only meaningful for a dialog constructed with isNew.
+   * @param storeRoot Absolute path of the password store.
+   * @param folders Folders relative to the store, "" for the root; shown in
+   *        the picker in this order.
+   * @param currentFolder The folder to preselect (relative, may be "").
+   */
+  void setNewEntryLocation(const QString &storeRoot, const QStringList &folders,
+                           const QString &currentFolder);
+
+  /**
+   * @brief The entry the dialog writes to, relative to the store and
+   * without the `.gpg` suffix (for example `work/vpn`).
+   * @return The path; for an existing entry the one given at construction.
+   */
+  auto entryPath() const -> QString { return m_file; }
+
+  /**
    * @brief Populate the dialog's password field with the given text.
    * @param password Password text to display.
    * @sa getPassword
@@ -181,6 +211,19 @@ private:
   Pass *m_pass{nullptr};
   QStringList m_fields;
   QString m_file;
+  /// Absolute store root while a new entry is being named; empty otherwise.
+  QString m_storeRoot;
+  /// Folder chosen when the dialog opened; the template default follows the
+  /// picker, so this is what setAvailableTemplates() was computed for.
+  QString m_newEntryFolder;
+
+  /**
+   * @brief The name the user typed, resolved against the picked folder.
+   * @param problem Receives a translated reason when the name is unusable.
+   * @return The relative entry path, or an empty string on a problem.
+   */
+  auto resolveNewEntry(QString *problem) const -> QString;
+  void validateNewEntry();
   bool m_templating{};
   bool m_allFields{};
   bool m_isNew{};
