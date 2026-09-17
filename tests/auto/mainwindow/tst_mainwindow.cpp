@@ -15,6 +15,7 @@
  */
 
 #include <QApplication>
+#include <QCheckBox>
 #include <QClipboard>
 #include <QDialog>
 #include <QDialogButtonBox>
@@ -1403,6 +1404,13 @@ void tst_mainwindow::firstRunWizardSetsUpTheStore() {
         for (int i = 0; i < 4; ++i) {
           if (!wizard->currentPage()->isComplete()) {
             return false;
+          }
+          if (wizard->currentId() == FirstRunWizard::StorePage) {
+            // The machine's git may be found; a commit needs a configured
+            // identity, so keep the new store out of Git here.
+            if (auto *git = wizard->currentPage()->findChild<QCheckBox *>()) {
+              git->setChecked(false);
+            }
           }
           wizard->next();
         }

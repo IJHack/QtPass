@@ -3,12 +3,14 @@
 #include "firstrunwizard.h"
 #include "executor.h"
 #include "gpgkeystate.h"
+#include "imitatepass.h"
 #include "keygendialog.h"
 #include "passbackendfactory.h"
 #include "profileinit.h"
 #include "qtpasssettings.h"
 #include "util.h"
 #include <QCheckBox>
+#include <QDateTime>
 #include <QDir>
 #include <QDirIterator>
 #include <QFile>
@@ -121,6 +123,7 @@ void FirstRunWizard::accept() {
     return;
   }
   const QString store = QDir::cleanPath(m_settings.passStore);
+  QString note;
   if (!isStore(store)) {
     QList<UserInfo> recipients;
     for (const UserInfo &key : std::as_const(m_keys)) {
@@ -128,24 +131,44 @@ void FirstRunWizard::accept() {
         recipients.append(key);
       }
     }
-    if (!QDir(store).exists() && !QDir().mkpath(store)) {
+    const bool created = !QDir(store).exists();
+    if (created && !QDir().mkpath(store)) {
       QMessageBox::warning(
           this, tr("Error"),
           tr("Failed to create password-store at: %1").arg(store));
       return;
     }
 #ifdef Q_OS_WIN
-    SetFileAttributes(store.toStdWString().c_str(), FILE_ATTRIBUTE_HIDDEN);
+    // Only a folder made here is hidden, like ~/.password-store on Unix; a
+    // folder the user picked keeps its attributes.
+    if (created) {
+      SetFileAttributes(store.toStdWString().c_str(), FILE_ATTRIBUTE_HIDDEN);
+    }
 #endif
-    QString note;
     if (!ProfileInit::initialise(store, recipients, m_settings,
                                  m_settings.useGit, &note)) {
+      // ProfileInit writes .gpg-id before it signs and commits; take it back
+      // so a second Finish runs the whole initialisation again instead of
+      // finding a store that looks finished.
+      QFile::remove(QDir(store).filePath(QStringLiteral(".gpg-id")));
+      QFile::remove(QDir(store).filePath(QStringLiteral(".gpg-id.sig")));
       QMessageBox::warning(this, tr("Password store not initialised"), note);
       return;
     }
     if (!note.isEmpty()) {
-      QMessageBox::information(this, tr("Password store"), note);
+      // ProfileInit's own note talks of switching profiles; on the first run
+      // the folder simply becomes the store.
+      QMessageBox::information(
+          this, tr("Password store"),
+          tr("%1 already contains encrypted files; they were not "
+             "re-encrypted to the ticked keys. Open Users after the start "
+             "to do that.")
+              .arg(QDir::toNativeSeparators(store)));
     }
+  } else if (m_settings.useGit && !QDir(store).exists(QStringLiteral(".git")) &&
+             !ProfileInit::initGit(store, m_settings, &note)) {
+    QMessageBox::warning(this, tr("Password store not initialised"), note);
+    return;
   }
   m_settings.passStore = Util::normalizeFolderPath(store);
   QtPassSettings::save(m_settings);
@@ -160,7 +183,6 @@ ProgramsWizardPage::ProgramsWizardPage(FirstRunWizard *wizard)
     : QWizardPage(wizard), m_wizard(wizard), m_gpg(new QLineEdit(this)),
       m_git(new QLineEdit(this)), m_pass(new QLineEdit(this)),
       m_usePass(new QCheckBox(tr("Use the pass command-line tool"), this)),
-      m_useGit(new QCheckBox(tr("Keep the store under Git"), this)),
       m_gpgStatus(new QLabel(this)) {
   setTitle(tr("Programs"));
   setSubTitle(tr("GnuPG does the encrypting. pass and Git are optional; "
@@ -174,7 +196,6 @@ ProgramsWizardPage::ProgramsWizardPage(FirstRunWizard *wizard)
   m_gpgStatus->setWordWrap(true);
   layout->addRow(QString(), m_gpgStatus);
   layout->addRow(tr("Git"), pathRow(m_git, this, pickExe));
-  layout->addRow(QString(), m_useGit);
   layout->addRow(tr("pass"), pathRow(m_pass, this, pickExe));
   m_usePass->setToolTip(tr("Run the pass script for every operation instead "
                            "of calling gpg and git directly"));
@@ -186,12 +207,30 @@ ProgramsWizardPage::ProgramsWizardPage(FirstRunWizard *wizard)
 }
 
 void ProgramsWizardPage::initializePage() {
-  const AppSettings &s = m_wizard->m_settings;
+  AppSettings &s = m_wizard->m_settings;
+  // QtPassSettings::initExecutables() fills empty paths from PATH only; a
+  // stored path whose binary has moved would be shown as an error here, so
+  // look it up again in that case.
+  auto detect = [](QString &stored, const QStringList &names) {
+    if (runnable(stored)) {
+      return;
+    }
+    for (const QString &name : names) {
+      const QString found = Util::findBinaryInPath(name);
+      if (!found.isEmpty()) {
+        stored = found;
+        return;
+      }
+    }
+  };
+  detect(s.gpgExecutable, {QStringLiteral("gpg2"), QStringLiteral("gpg")});
+  detect(s.gitExecutable, {QStringLiteral("git")});
+  detect(s.passExecutable, {QStringLiteral("pass")});
+  detect(s.pwgenExecutable, {QStringLiteral("pwgen")});
   m_gpg->setText(s.gpgExecutable);
   m_git->setText(s.gitExecutable);
   m_pass->setText(s.passExecutable);
   m_usePass->setChecked(s.usePass || runnable(s.passExecutable));
-  m_useGit->setChecked(s.useGit || runnable(s.gitExecutable));
   updateStatus();
 }
 
@@ -204,10 +243,6 @@ void ProgramsWizardPage::updateStatus() {
     m_gpgStatus->setText(tr("%1 is not an executable file.").arg(gpg));
   } else {
     m_gpgStatus->setText(QString());
-  }
-  m_useGit->setEnabled(runnable(m_git->text().trimmed()));
-  if (!m_useGit->isEnabled()) {
-    m_useGit->setChecked(false);
   }
   m_usePass->setEnabled(runnable(m_pass->text().trimmed()));
   if (!m_usePass->isEnabled()) {
@@ -226,7 +261,6 @@ auto ProgramsWizardPage::validatePage() -> bool {
   s.gitExecutable = m_git->text().trimmed();
   s.passExecutable = m_pass->text().trimmed();
   s.usePass = m_usePass->isChecked();
-  s.useGit = m_useGit->isChecked();
   return true;
 }
 
@@ -259,12 +293,24 @@ void KeyWizardPage::reload() {
   m_wizard->m_keys =
       FirstRunWizard::secretKeys(m_wizard->m_settings.gpgExecutable);
   m_list->clear();
+  const QDateTime now = QDateTime::currentDateTime();
   for (UserInfo &key : m_wizard->m_keys) {
-    key.enabled = true;
-    auto *item = new QListWidgetItem(
-        QStringLiteral("%1\n%2").arg(key.name, key.key_id), m_list);
+    // An expired or otherwise unusable key would make every encryption to
+    // the new store fail; list it, but do not tick it.
+    QString why;
+    if (key.expiry.isValid() && key.expiry < now) {
+      why = tr("expired");
+    } else if (!key.isValid()) {
+      why = tr("not usable");
+    }
+    key.enabled = why.isEmpty();
+    QString label = QStringLiteral("%1\n%2").arg(key.name, key.key_id);
+    if (!why.isEmpty()) {
+      label += QStringLiteral(" (%1)").arg(why);
+    }
+    auto *item = new QListWidgetItem(label, m_list);
     item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
-    item->setCheckState(Qt::Checked);
+    item->setCheckState(key.enabled ? Qt::Checked : Qt::Unchecked);
   }
   m_status->setText(m_wizard->m_keys.isEmpty()
                         ? tr("GnuPG has no secret key yet. Generate one here, "
@@ -274,26 +320,17 @@ void KeyWizardPage::reload() {
 }
 
 void KeyWizardPage::generate() {
-  // KeygenDialog drives the backend, which reads the executables from the
-  // settings: put the chosen gpg there before it starts.
-  AppSettings s = QtPassSettings::load();
-  s.gpgExecutable = m_wizard->m_settings.gpgExecutable;
-  QtPassSettings::save(s);
-  PassBackendFactory::invalidate();
-  KeygenDialog d(m_wizard->m_settings.gpgExecutable, QtPassSettings::getPass(),
-                 this);
+  // A backend of the wizard's own, set up from its copy of the settings, so
+  // the chosen gpg is used and nothing is written before Finish. Each Pass
+  // owns its Executor; the shared backend is not involved.
+  ImitatePass pass;
+  pass.init(m_wizard->m_settings);
+  KeygenDialog d(m_wizard->m_settings.gpgExecutable, &pass, this);
   d.exec();
   reload();
 }
 
-auto KeyWizardPage::isComplete() const -> bool {
-  for (int i = 0; i < m_list->count(); ++i) {
-    if (m_list->item(i)->checkState() == Qt::Checked) {
-      return true;
-    }
-  }
-  return false;
-}
+auto KeyWizardPage::isComplete() const -> bool { return true; }
 
 auto KeyWizardPage::validatePage() -> bool {
   for (int i = 0; i < m_list->count() && i < m_wizard->m_keys.size(); ++i) {
@@ -306,6 +343,7 @@ auto KeyWizardPage::validatePage() -> bool {
 
 StoreWizardPage::StoreWizardPage(FirstRunWizard *wizard)
     : QWizardPage(wizard), m_wizard(wizard), m_path(new QLineEdit(this)),
+      m_useGit(new QCheckBox(tr("Keep the store under Git"), this)),
       m_status(new QLabel(this)) {
   setTitle(tr("Password store"));
   setSubTitle(tr("The folder your passwords live in. An existing store is "
@@ -319,6 +357,9 @@ StoreWizardPage::StoreWizardPage(FirstRunWizard *wizard)
                  }));
   m_status->setWordWrap(true);
   layout->addRow(QString(), m_status);
+  m_useGit->setToolTip(tr("Every change becomes a commit; a folder that is "
+                          "no repository yet gets one"));
+  layout->addRow(QString(), m_useGit);
   connect(m_path, &QLineEdit::textEdited, this, &StoreWizardPage::updateStatus);
 }
 
@@ -328,7 +369,24 @@ void StoreWizardPage::initializePage() {
     path = Util::findPasswordStore();
   }
   m_path->setText(QDir::toNativeSeparators(QDir::cleanPath(path)));
+  const bool haveGit = runnable(m_wizard->m_settings.gitExecutable);
+  m_useGit->setEnabled(haveGit);
+  // On for a repository or a store still to be made, off for an existing
+  // store that is no repository: turning Git on there would make every
+  // remove fail in a folder git knows nothing about.
+  const QString clean = QDir::cleanPath(path);
+  const bool repository = QDir(clean).exists(QStringLiteral(".git"));
+  m_useGit->setChecked(haveGit && (m_wizard->m_settings.useGit || repository ||
+                                   !FirstRunWizard::isStore(clean)));
   updateStatus();
+}
+
+auto StoreWizardPage::recipients() const -> int {
+  int ticked = 0;
+  for (const UserInfo &key : std::as_const(m_wizard->m_keys)) {
+    ticked += key.enabled ? 1 : 0;
+  }
+  return ticked;
 }
 
 void StoreWizardPage::updateStatus() {
@@ -353,17 +411,26 @@ void StoreWizardPage::updateStatus() {
   } else {
     text = tr("The folder does not exist yet; it will be created.");
   }
+  if (!path.isEmpty() && !FirstRunWizard::isStore(path) && recipients() == 0) {
+    text += QLatin1Char(' ') +
+            tr("Go back and tick at least one key to encrypt it to.");
+  }
   m_status->setText(text);
   emit completeChanged();
 }
 
 auto StoreWizardPage::isComplete() const -> bool {
-  return !m_path->text().trimmed().isEmpty();
+  const QString path = QDir::cleanPath(m_path->text().trimmed());
+  if (path.isEmpty()) {
+    return false;
+  }
+  return FirstRunWizard::isStore(path) || recipients() > 0;
 }
 
 auto StoreWizardPage::validatePage() -> bool {
   m_wizard->m_settings.passStore =
       QDir::fromNativeSeparators(m_path->text().trimmed());
+  m_wizard->m_settings.useGit = m_useGit->isEnabled() && m_useGit->isChecked();
   return true;
 }
 

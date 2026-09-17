@@ -81,7 +81,8 @@ private:
 
 /**
  * @class ProgramsWizardPage
- * @brief Where gpg, pass and git are; gpg is required, the rest optional.
+ * @brief Where gpg, pass and git are; gpg is required, the rest optional. A
+ * stored path that no longer runs is replaced by what PATH has.
  */
 class ProgramsWizardPage : public QWizardPage {
   Q_OBJECT
@@ -113,7 +114,6 @@ private:
   QLineEdit *m_git;
   QLineEdit *m_pass;
   QCheckBox *m_usePass;
-  QCheckBox *m_useGit;
   QLabel *m_gpgStatus;
 
   void updateStatus();
@@ -139,8 +139,10 @@ public:
    */
   void initializePage() override;
   /**
-   * @brief Whether at least one key is listed and enabled.
-   * @return true when a store can be encrypted to something.
+   * @brief Always passable: an existing store needs no recipient choice
+   * here (and its key may not be imported yet); the store page insists on a
+   * ticked key when it has to initialise.
+   * @return true.
    */
   auto isComplete() const -> bool override;
   /**
@@ -162,7 +164,10 @@ private:
 /**
  * @class StoreWizardPage
  * @brief The folder the passwords live in: an existing store is used as-is,
- * a folder without `.gpg-id` (or no folder) is initialised on Finish.
+ * a folder without `.gpg-id` (or no folder) is initialised on Finish. The
+ * Git box lives here because its sensible default depends on the folder: on
+ * for a repository or a store still to be created, off for an existing
+ * store that is no repository.
  */
 class StoreWizardPage : public QWizardPage {
   Q_OBJECT
@@ -178,12 +183,13 @@ public:
    */
   void initializePage() override;
   /**
-   * @brief Whether a path is given.
-   * @return true when the field is not empty.
+   * @brief Whether a path is given and, for a folder that is not a store
+   * yet, at least one key was ticked to encrypt it to.
+   * @return true when Finish can do its job.
    */
   auto isComplete() const -> bool override;
   /**
-   * @brief Store the path.
+   * @brief Store the path and the Git choice.
    * @return Always true.
    */
   auto validatePage() -> bool override;
@@ -191,8 +197,10 @@ public:
 private:
   FirstRunWizard *m_wizard;
   QLineEdit *m_path;
+  QCheckBox *m_useGit;
   QLabel *m_status;
 
+  auto recipients() const -> int;
   void updateStatus();
 };
 

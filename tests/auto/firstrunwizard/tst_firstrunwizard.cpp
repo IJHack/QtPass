@@ -42,6 +42,7 @@ private slots:
   void programsPageWaitsForGpg();
   void keyPageListsAndTicksTheSecretKeys();
   void storePageDescribesThePath();
+  void gitDefaultsFollowTheFolder();
   void finishCreatesAndInitialisesTheStore();
   void finishLeavesAnExistingStoreAlone();
 };
@@ -52,7 +53,12 @@ void tst_firstrunwizard::initTestCase() {
   QSKIP("uses a shell script as the gpg stand-in");
 #endif
   QVERIFY(m_tmp.isValid());
-  m_gpg = m_tmp.filePath(QStringLiteral("gpg"));
+  // The Programs page looks binaries up on PATH when a stored path does not
+  // run; keep that deterministic: nothing on PATH, the stand-in off it.
+  QVERIFY(QDir(m_tmp.path()).mkpath(QStringLiteral("empty")));
+  QVERIFY(QDir(m_tmp.path()).mkpath(QStringLiteral("tools")));
+  qputenv("PATH", m_tmp.filePath(QStringLiteral("empty")).toUtf8());
+  m_gpg = m_tmp.filePath(QStringLiteral("tools/gpg"));
   QFile script(m_gpg);
   QVERIFY(script.open(QIODevice::WriteOnly));
   script.write(
@@ -85,7 +91,7 @@ void tst_firstrunwizard::init() {
 
 void tst_firstrunwizard::secretKeysNeedARunnableGpg() {
   QVERIFY(FirstRunWizard::secretKeys(QString()).isEmpty());
-  QVERIFY(FirstRunWizard::secretKeys(m_tmp.filePath("nope")).isEmpty());
+  QVERIFY(FirstRunWizard::secretKeys(m_tmp.filePath("tools/nope")).isEmpty());
   const QList<UserInfo> keys = FirstRunWizard::secretKeys(m_gpg);
   QCOMPARE(keys.size(), 1);
   QCOMPARE(keys.first().key_id, QString::fromLatin1(kKeyId));
@@ -106,7 +112,7 @@ void tst_firstrunwizard::programsPageWaitsForGpg() {
 
   QLineEdit *gpg = lineEdit(page, 0);
   QVERIFY(gpg != nullptr);
-  gpg->setText(m_tmp.filePath("nope"));
+  gpg->setText(m_tmp.filePath("tools/nope"));
   emit gpg->textEdited(gpg->text());
   QVERIFY2(!page->isComplete(), "a path that is not executable does not do");
   gpg->setText(m_gpg);
@@ -135,17 +141,38 @@ void tst_firstrunwizard::keyPageListsAndTicksTheSecretKeys() {
   QCOMPARE(list->item(0)->checkState(), Qt::Checked);
   QVERIFY(page->isComplete());
 
+  // Unticking everything is allowed here (an existing store needs no
+  // recipients); the store page decides whether that is enough.
   list->item(0)->setCheckState(Qt::Unchecked);
-  QVERIFY2(!page->isComplete(), "a store needs at least one recipient");
-  list->item(0)->setCheckState(Qt::Checked);
   QVERIFY(page->isComplete());
+  QVERIFY(page->validatePage());
+  w.next();
+  QCOMPARE(w.currentId(), int(FirstRunWizard::StorePage));
+  QWizardPage *store = w.currentPage();
+  QLineEdit *path = lineEdit(store, 0);
+  QVERIFY(path != nullptr);
+  QTemporaryDir fresh;
+  path->setText(fresh.filePath(QStringLiteral("new")));
+  emit path->textEdited(path->text());
+  QVERIFY2(!store->isComplete(), "a new store needs at least one recipient");
+  QVERIFY(store->findChild<QLabel *>()->text().contains(
+      QStringLiteral("tick at least one key")));
+  QFile gpgId(QDir(fresh.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly));
+  gpgId.write("X\n");
+  gpgId.close();
+  path->setText(fresh.path());
+  emit path->textEdited(path->text());
+  QVERIFY2(store->isComplete(), "an existing store needs no ticked key");
 }
 
 void tst_firstrunwizard::storePageDescribesThePath() {
   QTemporaryDir store;
   FirstRunWizard w;
-  w.setStartId(FirstRunWizard::StorePage);
+  w.setStartId(FirstRunWizard::KeyPage); // loads and ticks the key
   w.restart();
+  w.next();
+  QCOMPARE(w.currentId(), int(FirstRunWizard::StorePage));
   QWizardPage *page = w.currentPage();
   QLineEdit *path = lineEdit(page, 0);
   QVERIFY(path != nullptr);
@@ -157,8 +184,48 @@ void tst_firstrunwizard::storePageDescribesThePath() {
   path->setText(store.filePath(QStringLiteral("new")));
   emit path->textEdited(path->text());
   QVERIFY(page->isComplete());
+  auto *useGit = page->findChild<QCheckBox *>();
+  QVERIFY(useGit != nullptr);
+  QVERIFY2(!useGit->isEnabled(), "no git configured: the box is greyed");
   QVERIFY(page->validatePage());
   QCOMPARE(w.settings().passStore, store.filePath(QStringLiteral("new")));
+  QVERIFY(!w.settings().useGit);
+}
+
+void tst_firstrunwizard::gitDefaultsFollowTheFolder() {
+  const QString git = m_tmp.filePath(QStringLiteral("tools/git"));
+  {
+    QFile script(git);
+    QVERIFY(script.open(QIODevice::WriteOnly));
+    script.write("#!/bin/sh\nexit 0\n");
+    script.close();
+    QVERIFY(QFile::setPermissions(git, QFile::ReadOwner | QFile::WriteOwner |
+                                           QFile::ExeOwner));
+  }
+  AppSettings s = QtPassSettings::load();
+  s.gitExecutable = git;
+  QtPassSettings::save(s);
+
+  auto boxFor = [&](const QString &path) {
+    s.passStore = path;
+    QtPassSettings::save(s);
+    FirstRunWizard w;
+    w.setStartId(FirstRunWizard::StorePage);
+    w.restart();
+    auto *box = w.currentPage()->findChild<QCheckBox *>();
+    return box != nullptr && box->isEnabled() && box->isChecked();
+  };
+  QTemporaryDir plain;
+  QFile gpgId(QDir(plain.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly));
+  gpgId.write("X\n");
+  gpgId.close();
+  QVERIFY2(!boxFor(plain.path()),
+           "an existing store that is no repository stays off Git");
+  QVERIFY(QDir(plain.path()).mkdir(QStringLiteral(".git")));
+  QVERIFY2(boxFor(plain.path()), "a repository is on");
+  QVERIFY2(boxFor(m_tmp.filePath(QStringLiteral("does-not-exist"))),
+           "a store still to be made is on when git is there");
 }
 
 void tst_firstrunwizard::finishCreatesAndInitialisesTheStore() {

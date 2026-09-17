@@ -52,6 +52,17 @@ public:
                          const AppSettings &s, bool useGit, QString *note)
       -> bool;
 
+  /**
+   * @brief Put an existing store under Git: `git init`, `git add -A` and a
+   * first commit, with blocking processes of their own in @p dir.
+   * @param dir The store.
+   * @param s Settings for the git executable.
+   * @param note Receives a translated error on failure.
+   * @return true when the repository exists and the commit is made.
+   */
+  static auto initGit(const QString &dir, const AppSettings &s, QString *note)
+      -> bool;
+
 private:
   ProfileInit() = default;
   static auto writeGpgId(const QString &gpgIdFile, const QList<UserInfo> &users,

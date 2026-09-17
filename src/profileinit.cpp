@@ -132,3 +132,24 @@ auto ProfileInit::commitGpgId(const QString &dir, const QString &gpgIdFile,
       files;
   return run({QStringLiteral("init")}) && run(add) && run(commit);
 }
+
+auto ProfileInit::initGit(const QString &dir, const AppSettings &s,
+                          QString *note) -> bool {
+  QProcess git;
+  git.setWorkingDirectory(dir);
+  auto run = [&](const QStringList &args) -> bool {
+    QString err;
+    const int rc = Executor::executeBlocking(git, s.gitExecutable, args,
+                                             QString(), nullptr, &err);
+    if (rc != 0) {
+      *note =
+          tr("git %1 failed in %2: %3").arg(args.first(), dir, err.trimmed());
+      return false;
+    }
+    return true;
+  };
+  return run({QStringLiteral("init")}) &&
+         run({QStringLiteral("add"), QStringLiteral("-A")}) &&
+         run({QStringLiteral("commit"), QStringLiteral("-m"),
+              QStringLiteral("Added password store using QtPass.")});
+}
