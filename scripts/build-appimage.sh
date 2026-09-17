@@ -134,7 +134,9 @@ fetch_tool() {
 	fi
 	# stdout is captured by the caller, so progress goes to stderr.
 	echo "==> Fetching ${name}" >&2
-	curl --fail --location --silent --show-error --output "${dest}.part" "${url}"
+	curl --fail --location --silent --show-error \
+		--connect-timeout 30 --max-time 600 --retry 3 --retry-delay 5 \
+		--output "${dest}.part" "${url}"
 	if ! echo "${sha}  ${dest}.part" | sha256sum --check --quiet --status; then
 		echo "Error: ${name} does not match its pinned SHA-256." >&2
 		rm -f "${dest}.part"

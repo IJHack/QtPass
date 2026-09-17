@@ -49,6 +49,7 @@ jobs:
               - "scripts/build-appimage.sh"
               - "qtpass.desktop"
               - "qtpass.appdata.xml"
+              - "qtpass.1"
               - "artwork/**"
               - ".github/workflows/release-installers.yml"
 
