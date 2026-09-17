@@ -21,7 +21,13 @@ GpgIdSigner::GpgIdSigner(QString gpgExecutable, QStringList signingKeys,
 
 auto GpgIdSigner::keysFromSetting(const QString &passSigningKey)
     -> QStringList {
-  return passSigningKey.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+  QStringList keys = passSigningKey.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+  // gpg prints fingerprints in upper case in its status lines; accept them
+  // typed either way.
+  for (QString &key : keys) {
+    key = key.toUpper();
+  }
+  return keys;
 }
 
 auto GpgIdSigner::run(const QStringList &args, QString *out, QString *err) const
@@ -30,21 +36,21 @@ auto GpgIdSigner::run(const QStringList &args, QString *out, QString *err) const
 }
 
 auto GpgIdSigner::haveSecretKey() const -> bool {
+  if (!enabled()) {
+    return false;
+  }
+  // Only the first key signs (see sign()), so only its secret key matters:
+  // a usable second key would let Init start and fail at the signature.
+  const QString &key = m_keys.first();
   QString out;
-  const QStringList args = QStringList{QStringLiteral("--status-fd=1"),
-                                       QStringLiteral("--list-secret-keys")} +
-                           m_keys;
-  const int rc = run(args, &out);
+  const int rc = run({QStringLiteral("--status-fd=1"),
+                      QStringLiteral("--list-secret-keys"), key},
+                     &out);
   if (rc != 0) {
     qCDebug(lcQtPass) << "GPG list-secret-keys failed with code:" << rc;
     return false;
   }
-  for (const QString &key : m_keys) {
-    if (out.contains(QStringLiteral("[GNUPG:] KEY_CONSIDERED ") + key)) {
-      return true;
-    }
-  }
-  return false;
+  return out.contains(QStringLiteral("[GNUPG:] KEY_CONSIDERED ") + key);
 }
 
 auto GpgIdSigner::sign(const QString &gpgIdFile, QString *error) const -> bool {

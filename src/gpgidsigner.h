@@ -44,7 +44,8 @@ public:
               Exec exec = Exec());
 
   /**
-   * @brief Split the settings value into keys.
+   * @brief Split the settings value into keys, upper-cased the way gpg
+   * prints fingerprints.
    * @param passSigningKey The space-separated setting.
    * @return The keys, without empties.
    */
@@ -63,8 +64,9 @@ public:
   auto keys() const -> const QStringList & { return m_keys; }
 
   /**
-   * @brief Whether gpg has a secret key for at least one configured key.
-   * @return true when signing can work.
+   * @brief Whether gpg has the secret key that sign() will use, i.e. the
+   * first configured key.
+   * @return true when signing can work; false when no key is configured.
    */
   auto haveSecretKey() const -> bool;
 

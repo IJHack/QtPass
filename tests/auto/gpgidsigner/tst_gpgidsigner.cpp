@@ -64,6 +64,9 @@ void tst_gpgidsigner::keysFromSettingSplitsOnSpaces() {
   QCOMPARE(GpgIdSigner::keysFromSetting(QStringLiteral("  ")), QStringList());
   QCOMPARE(GpgIdSigner::keysFromSetting(QStringLiteral("A  B ")),
            (QStringList{QStringLiteral("A"), QStringLiteral("B")}));
+  // gpg's status lines carry fingerprints in upper case; a lower-case
+  // fingerprint in the settings must still match them.
+  QCOMPARE(GpgIdSigner::keysFromSetting(kFpr.toLower()), QStringList{kFpr});
 }
 
 void tst_gpgidsigner::noKeysMeansNothingToSignAndVerifyPasses() {
@@ -78,18 +81,23 @@ void tst_gpgidsigner::noKeysMeansNothingToSignAndVerifyPasses() {
 
 void tst_gpgidsigner::haveSecretKeyReadsKeyConsidered() {
   FakeGpg gpg;
-  gpg.out = QStringLiteral("[GNUPG:] KEY_CONSIDERED %1 0\nsec   rsa4096\n")
-                .arg(kPrimary);
+  gpg.out =
+      QStringLiteral("[GNUPG:] KEY_CONSIDERED %1 0\nsec   rsa4096\n").arg(kFpr);
   const GpgIdSigner signer(QStringLiteral("gpg"), {kFpr, kPrimary}, gpg.exec());
   QVERIFY(signer.haveSecretKey());
   QCOMPARE(gpg.calls.size(), 1);
   QCOMPARE(gpg.calls.first().app, QStringLiteral("gpg"));
+  // Only the first key is asked about: it is the one sign() will use.
   QCOMPARE(gpg.calls.first().args,
            (QStringList{QStringLiteral("--status-fd=1"),
-                        QStringLiteral("--list-secret-keys"), kFpr, kPrimary}));
+                        QStringLiteral("--list-secret-keys"), kFpr}));
 
-  gpg.out = QStringLiteral("[GNUPG:] KEY_CONSIDERED SOMEOTHERKEY 0\n");
-  QVERIFY2(!signer.haveSecretKey(), "a different key does not count");
+  gpg.out = QStringLiteral("[GNUPG:] KEY_CONSIDERED %1 0\n").arg(kPrimary);
+  QVERIFY2(!signer.haveSecretKey(),
+           "a secret key for the second entry does not make the first sign");
+
+  const GpgIdSigner none(QStringLiteral("gpg"), {}, gpg.exec());
+  QVERIFY2(!none.haveSecretKey(), "nothing configured, nothing to sign with");
 }
 
 void tst_gpgidsigner::haveSecretKeyFailsOnGpgError() {

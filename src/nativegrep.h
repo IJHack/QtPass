@@ -9,6 +9,8 @@
 #include <QProcessEnvironment>
 #include <QString>
 #include <QStringList>
+#include <atomic>
+#include <memory>
 
 class QRegularExpression;
 class QThread;
@@ -49,7 +51,9 @@ public:
               const QProcessEnvironment &env);
 
   /**
-   * @brief Ask running searches to stop without waiting for them.
+   * @brief Ask running searches to stop without waiting for them: the walk
+   * ends at the next file and a gpg that is decrypting is terminated by its
+   * own worker thread.
    */
   void cancel();
 
@@ -59,10 +63,14 @@ public:
    * @param gpgExe The gpg executable.
    * @param filePath The encrypted file.
    * @param rx The pattern.
-   * @return Matching lines; empty when gpg fails or nothing matches.
+   * @param cancel When set, gpg is not started, or is terminated while it
+   *        runs; nullptr to run to completion.
+   * @return Matching lines; empty when gpg fails, is cancelled or nothing
+   *         matches.
    */
   static auto matchFile(const QProcessEnvironment &env, const QString &gpgExe,
-                        const QString &filePath, const QRegularExpression &rx)
+                        const QString &filePath, const QRegularExpression &rx,
+                        const std::atomic_bool *cancel = nullptr)
       -> QStringList;
   /**
    * @brief Walk @p storeDir, decrypt every .gpg file and collect the matches.
@@ -70,11 +78,14 @@ public:
    * @param gpgExe The gpg executable.
    * @param storeDir The store.
    * @param rx The pattern.
+   * @param cancel Stops the walk and the running gpg when set; nullptr to
+   *        rely on QThread::isInterruptionRequested() alone.
    * @return (entry name without .gpg, matching lines) per file with matches;
-   *         empty when the current thread is asked to stop.
+   *         empty when the search is stopped.
    */
   static auto scanStore(const QProcessEnvironment &env, const QString &gpgExe,
-                        const QString &storeDir, const QRegularExpression &rx)
+                        const QString &storeDir, const QRegularExpression &rx,
+                        const std::atomic_bool *cancel = nullptr)
       -> QList<QPair<QString, QStringList>>;
 
 signals:
@@ -85,8 +96,15 @@ signals:
   void finished(const QList<QPair<QString, QStringList>> &results);
 
 private:
+  /// A running search: its thread and the flag its gpg runs poll. The flag
+  /// is shared with the thread's lambda so it outlives this object if a
+  /// search is still winding down when it is destroyed.
+  struct Worker {
+    QThread *thread;
+    std::shared_ptr<std::atomic_bool> cancel;
+  };
   int m_seq = 0;
-  QList<QThread *> m_threads;
+  QList<Worker> m_workers;
 };
 
 #endif // SRC_NATIVEGREP_H_
