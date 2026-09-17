@@ -1673,7 +1673,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1654"/>
         <source>New folder</source>
-        <translation type="unfinished">Neuer Ordner</translation>
+        <translation>Neuer Ordner</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1655"/>
@@ -2246,7 +2246,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="219"/>
         <source>Template:</source>
-        <translation type="unfinished">Vorlage:</translation>
+        <translation>Vorlage:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
