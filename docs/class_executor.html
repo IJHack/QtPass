@@ -168,6 +168,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:aec1ef83ae0df4b4a2773b5ad533c837e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously capturing stdout and stderr.  <br /></td></tr>
 <tr class="memitem:aa17378022bf90b96beb2a2ac0750751d" id="r_aa17378022bf90b96beb2a2ac0750751d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa17378022bf90b96beb2a2ac0750751d">executeBlocking</a> (const QProcessEnvironment &amp;env, const QString &amp;app, const QStringList &amp;args, QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td></tr>
 <tr class="memdesc:aa17378022bf90b96beb2a2ac0750751d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously with a custom environment.  <br /></td></tr>
+<tr class="memitem:a9fbf09f8da63419fa052c9d8ebf08408" id="r_a9fbf09f8da63419fa052c9d8ebf08408"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9fbf09f8da63419fa052c9d8ebf08408">resolveExecutable</a> (const QString &amp;app) -&gt; QString</td></tr>
+<tr class="memdesc:a9fbf09f8da63419fa052c9d8ebf08408"><td class="mdescLeft">&#160;</td><td class="mdescRight">The one rule for turning a configured executable into what runs.  <br /></td></tr>
 <tr class="memitem:a694edbdebf865b549812969f49bc0c3d" id="r_a694edbdebf865b549812969f49bc0c3d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a694edbdebf865b549812969f49bc0c3d">wslExecArgs</a> (const QString &amp;command, const QStringList &amp;args) -&gt; QStringList</td></tr>
 <tr class="memdesc:a694edbdebf865b549812969f49bc0c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the wsl.exe argument list that runs <code class="param">command</code> directly.  <br /></td></tr>
 <tr class="memitem:a4417d62f24842a5ff4459559b9527ead" id="r_a4417d62f24842a5ff4459559b9527ead"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4417d62f24842a5ff4459559b9527ead">translatePathForWsl</a> (const QString &amp;path, const QString &amp;exe) -&gt; QString</td></tr>
@@ -841,7 +843,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Whether no command is running and nothing is queued. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when the executor has nothing in flight. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00282">282</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00295">295</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 <div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
@@ -854,6 +856,40 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a3c5acbcdb1b3be56c5ef7082678698af_icgraph.svg" width="132" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="a9fbf09f8da63419fa052c9d8ebf08408" name="a9fbf09f8da63419fa052c9d8ebf08408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fbf09f8da63419fa052c9d8ebf08408">&#9670;&#160;</a></span>resolveExecutable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::resolveExecutable </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>app</em></span></td><td>)</td>
+          <td> -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The one rule for turning a configured executable into what runs. </p>
+<p>Absolute paths and "wsl ..." commands are used as given. A bare or relative name is looked up next to the application first (the Windows and macOS bundles ship gpg/git/pass there) and otherwise left for QProcess's PATH lookup. Both the queued and the blocking path go through this, so the same setting can no longer run two different binaries. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">app</td><td>Executable as configured. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>What to hand to QProcess::start(). </dd></dl>
 
 </div>
 </div>

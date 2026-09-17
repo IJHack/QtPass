@@ -11,10 +11,11 @@ var searchData=
   ['remove_8',['Remove',['../class_imitate_pass.html#a181e512eff4b82f5078af432c369d4ee',1,'ImitatePass::Remove()'],['../class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764',1,'Pass::Remove()'],['../class_real_pass.html#a0fcac7c5005e6d1a0d09373b5476ca9c',1,'RealPass::Remove()']]],
   ['removepadding_9',['removePadding',['../class_base32.html#aa1f7b5589e29a614a4894b448b90a8ca',1,'Base32']]],
   ['resolvedgpgconfcommand_10',['ResolvedGpgconfCommand',['../struct_resolved_gpgconf_command.html',1,'']]],
-  ['resolvegpgconfcommand_11',['resolveGpgconfCommand',['../class_pass.html#a4425df7bb17f93be39e1142c2fd4c6a6',1,'Pass']]],
-  ['resolvemovedestination_12',['resolveMoveDestination',['../class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563',1,'ImitatePass']]],
-  ['restore_13',['restore',['../namespace_window_state_store.html#a33978c57279f86bfb1a416ad199858e8',1,'WindowStateStore']]],
-  ['restorecursor_14',['restoreCursor',['../struct_grep_search_controller_1_1_finish_outcome.html#ac239184fd57227541a8be6147f6616b8',1,'GrepSearchController::FinishOutcome']]],
-  ['restorewindow_15',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
-  ['rootindexfor_16',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
+  ['resolveexecutable_11',['resolveExecutable',['../class_executor.html#a9fbf09f8da63419fa052c9d8ebf08408',1,'Executor']]],
+  ['resolvegpgconfcommand_12',['resolveGpgconfCommand',['../class_pass.html#a4425df7bb17f93be39e1142c2fd4c6a6',1,'Pass']]],
+  ['resolvemovedestination_13',['resolveMoveDestination',['../class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563',1,'ImitatePass']]],
+  ['restore_14',['restore',['../namespace_window_state_store.html#a33978c57279f86bfb1a416ad199858e8',1,'WindowStateStore']]],
+  ['restorecursor_15',['restoreCursor',['../struct_grep_search_controller_1_1_finish_outcome.html#ac239184fd57227541a8be6147f6616b8',1,'GrepSearchController::FinishOutcome']]],
+  ['restorewindow_16',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
+  ['rootindexfor_17',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
 ];
