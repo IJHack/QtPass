@@ -441,33 +441,33 @@ URL
         <translation>کپی به کلیپ‌بورد در صورت درخواست</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="270"/>
-        <location filename="../src/configdialog.cpp" line="280"/>
+        <location filename="../src/configdialog.cpp" line="275"/>
+        <location filename="../src/configdialog.cpp" line="285"/>
         <source>This field is required</source>
         <translation>این فیلد الزامی است</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="324"/>
+        <location filename="../src/configdialog.cpp" line="329"/>
         <source>The path does not exist.</source>
         <translation>مسیر وجود ندارد.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="327"/>
+        <location filename="../src/configdialog.cpp" line="332"/>
         <source>The path is not readable.</source>
         <translation>مسیر قابل خواندن نیست.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="330"/>
+        <location filename="../src/configdialog.cpp" line="335"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>مسیر یک سوکت دامنه یونیکس نیست.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="335"/>
+        <location filename="../src/configdialog.cpp" line="340"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>بازنویسی SSH_AUTH_SOCK احتمالاً نامعتبر است</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="336"/>
+        <location filename="../src/configdialog.cpp" line="341"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -480,103 +480,103 @@ The value will still be saved as entered.</source>
 مقدار همچنان مطابق ورودی ذخیره خواهد شد.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="790"/>
+        <location filename="../src/configdialog.cpp" line="795"/>
         <source>Create profile directory?</source>
         <translation>پوشه نمایه ایجاد شود؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="791"/>
+        <location filename="../src/configdialog.cpp" line="796"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>آیا می‌خواهید یک مخزن رمز عبور در %1 ایجاد کنید؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="798"/>
-        <location filename="../src/configdialog.cpp" line="1059"/>
+        <location filename="../src/configdialog.cpp" line="803"/>
+        <location filename="../src/configdialog.cpp" line="1064"/>
         <source>Error</source>
         <translation>خطا</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="799"/>
+        <location filename="../src/configdialog.cpp" line="804"/>
         <source>Could not create profile directory: %1</source>
         <translation>نتوانست پوشه نمایه ایجاد کند: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="819"/>
+        <location filename="../src/configdialog.cpp" line="824"/>
         <source>Select recipients for %1</source>
         <translation>انتخاب گیرندگان برای %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="844"/>
+        <location filename="../src/configdialog.cpp" line="849"/>
         <source>New Profile</source>
         <translation>نمایه جدید</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="892"/>
+        <location filename="../src/configdialog.cpp" line="897"/>
         <source>No profile selected</source>
         <translation>هیچ نمایه‌ای انتخاب نشده</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="893"/>
+        <location filename="../src/configdialog.cpp" line="898"/>
         <source>No profile selected to delete</source>
         <translation>هیچ نمایه‌ای برای حذف انتخاب نشده</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="985"/>
+        <location filename="../src/configdialog.cpp" line="990"/>
         <source>GnuPG not found</source>
         <translation>GnuPG یافت نشد</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="988"/>
+        <location filename="../src/configdialog.cpp" line="993"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>لطفاً GnuPG را بر روی سیستم خود نصب کنید.&lt;br&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt; را از فروشگاه Microsoft نصب کنید تا آن را دریافت کنید.&lt;br&gt;اگر قبلاً این کار را انجام داده‌اید، مطمئن شوید که یک بار آن را راه‌اندازی کرده‌اید و&lt;br&gt;در گفتگوی بعدی روی &quot;تشخیص خودکار&quot; کلیک کنید.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="993"/>
+        <location filename="../src/configdialog.cpp" line="998"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>لطفاً GnuPG را بر روی سیستم خود نصب کنید.&lt;br&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt; را از فروشگاه Microsoft نصب کنید&lt;br&gt;یا آن را از GnuPG.org &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;دانلود&lt;/a&gt; کنید</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="999"/>
+        <location filename="../src/configdialog.cpp" line="1004"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>لطفاً GnuPG را بر روی سیستم خود نصب کنید.&lt;br&gt;&lt;strong&gt;gpg&lt;/strong&gt; را با استفاده از مدیر بسته مورد علاقه خود نصب کنید&lt;br&gt;یا آن را از GnuPG.org &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;دانلود&lt;/a&gt; کنید</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1053"/>
+        <location filename="../src/configdialog.cpp" line="1058"/>
         <source>Create password-store?</source>
         <translation>مخزن رمز عبور ایجاد شود؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1054"/>
+        <location filename="../src/configdialog.cpp" line="1059"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>آیا می‌خواهید یک مخزن رمز عبور در %1 ایجاد کنید؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1060"/>
+        <location filename="../src/configdialog.cpp" line="1065"/>
         <source>Failed to create password-store at: %1</source>
         <translation>ایجاد مخزن رمز عبور در %1 ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1091"/>
+        <location filename="../src/configdialog.cpp" line="1096"/>
         <source>Password store not initialised</source>
         <translation>مخزن رمز عبور مقداردهی اولیه نشده</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1092"/>
+        <location filename="../src/configdialog.cpp" line="1097"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>به نظر نمی‌رسد پوشه %1 یک مخزن رمز عبور باشد یا هنوز مقداردهی اولیه نشده است.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1348"/>
+        <location filename="../src/configdialog.cpp" line="1353"/>
         <source>New profile: %1 at %2</source>
         <translation>نمایه جدید: %1 در %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1352"/>
+        <location filename="../src/configdialog.cpp" line="1357"/>
         <source>Profile: %1 at %2</source>
         <translation>نمایه: %1 در %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1357"/>
+        <location filename="../src/configdialog.cpp" line="1362"/>
         <source>Fill in all required fields</source>
         <translation>تمام فیلدهای الزامی را پر کنید</translation>
     </message>
@@ -584,7 +584,12 @@ The value will still be saved as entered.</source>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="106"/>
+        <location filename="../src/executor.cpp" line="105"/>
+        <source>No executable configured for this command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/executor.cpp" line="142"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">راه‌اندازی %1 ناموفق بود</translation>
     </message>
@@ -647,152 +652,163 @@ The value will still be saved as entered.</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="145"/>
-        <location filename="../src/imitatepass.cpp" line="327"/>
-        <location filename="../src/imitatepass.cpp" line="485"/>
+        <location filename="../src/imitatepass.cpp" line="152"/>
+        <location filename="../src/imitatepass.cpp" line="343"/>
+        <location filename="../src/imitatepass.cpp" line="563"/>
         <source>Check .gpg-id file signature!</source>
         <translation>امضای فایل .gpg-id را بررسی کنید!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="146"/>
-        <location filename="../src/imitatepass.cpp" line="328"/>
-        <location filename="../src/imitatepass.cpp" line="486"/>
+        <location filename="../src/imitatepass.cpp" line="153"/>
+        <location filename="../src/imitatepass.cpp" line="344"/>
+        <location filename="../src/imitatepass.cpp" line="564"/>
         <source>Signature for %1 is invalid.</source>
         <translation>امضا برای %1 نامعتبر است.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="153"/>
-        <location filename="../src/imitatepass.cpp" line="579"/>
+        <location filename="../src/imitatepass.cpp" line="160"/>
+        <location filename="../src/imitatepass.cpp" line="657"/>
         <source>Can not edit</source>
         <translation>نمی‌توان ویرایش کرد</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="154"/>
-        <location filename="../src/imitatepass.cpp" line="580"/>
+        <location filename="../src/imitatepass.cpp" line="161"/>
+        <location filename="../src/imitatepass.cpp" line="658"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>نتوانست کلید رمزنگاری را برای استفاده بخواند، فایل .gpg-id موجود نیست یا نامعتبر است.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="263"/>
+        <location filename="../src/imitatepass.cpp" line="279"/>
         <source>Cannot update</source>
         <translation>نمی‌توان به‌روزرسانی کرد</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="264"/>
+        <location filename="../src/imitatepass.cpp" line="280"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>باز کردن .gpg-id برای نوشتن ناموفق بود.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="283"/>
+        <location filename="../src/imitatepass.cpp" line="299"/>
         <source>Check selected users!</source>
         <translation>کاربران انتخاب‌شده را بررسی کنید!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="284"/>
+        <location filename="../src/imitatepass.cpp" line="300"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>هیچ‌یک از کلیدهای انتخاب‌شده کلید خصوصی در دسترس ندارند.
 شما نخواهید توانست هیچ رمز عبور جدیدی را رمزگشایی کنید!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="322"/>
+        <location filename="../src/imitatepass.cpp" line="338"/>
         <source>GPG signing failed!</source>
         <translation>امضای GPG ناموفق بود!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="323"/>
+        <location filename="../src/imitatepass.cpp" line="339"/>
         <source>Failed to sign %1.</source>
         <translation>امضای %1 ناموفق بود.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="390"/>
+        <location filename="../src/imitatepass.cpp" line="456"/>
         <source>No signing key!</source>
         <translation>کلید امضا موجود نیست!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="391"/>
+        <location filename="../src/imitatepass.cpp" line="457"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>هیچ‌یک از کلیدهای امضای خصوصی در دسترس نیستند.
 شما نخواهید توانست لیست کاربران را تغییر دهید!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="643"/>
-        <location filename="../src/imitatepass.cpp" line="756"/>
+        <location filename="../src/imitatepass.cpp" line="724"/>
+        <location filename="../src/imitatepass.cpp" line="842"/>
         <source>Re-encryption failed</source>
         <translation>رمزنگاری مجدد ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="644"/>
+        <location filename="../src/imitatepass.cpp" line="725"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>جایگزینی %1 ناموفق بود. نسخه اصلی بازیابی شده است.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="674"/>
+        <location filename="../src/imitatepass.cpp" line="755"/>
         <source>Creating backup commit</source>
         <translation>ایجاد کامیت پشتیبان</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="684"/>
-        <location filename="../src/imitatepass.cpp" line="692"/>
+        <location filename="../src/imitatepass.cpp" line="770"/>
+        <location filename="../src/imitatepass.cpp" line="778"/>
         <source>Backup commit failed</source>
         <translation>کامیت پشتیبان ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="685"/>
+        <location filename="../src/imitatepass.cpp" line="771"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>نتوانست وضعیت git را بررسی کند. رمزنگاری مجدد لغو شد.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="693"/>
+        <location filename="../src/imitatepass.cpp" line="779"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>رمزنگاری مجدد لغو شد زیرا نتوانست پشتیبان git ایجاد کند.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="715"/>
+        <location filename="../src/imitatepass.cpp" line="801"/>
         <source>Re-encrypting from folder %1</source>
         <translation>رمزنگاری مجدد از پوشه %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="718"/>
-        <location filename="../src/imitatepass.cpp" line="774"/>
+        <location filename="../src/imitatepass.cpp" line="804"/>
+        <location filename="../src/imitatepass.cpp" line="860"/>
         <source>Updating password-store</source>
         <translation>به‌روزرسانی مخزن رمز عبور</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="743"/>
+        <location filename="../src/imitatepass.cpp" line="829"/>
         <source>GPG ID verification failed</source>
         <translation>تأیید GPG ID ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="744"/>
+        <location filename="../src/imitatepass.cpp" line="830"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>نتوانست .gpg-id را برای پوشه تأیید کند.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="757"/>
+        <location filename="../src/imitatepass.cpp" line="843"/>
         <source>Failed to re-encrypt %1</source>
         <translation>رمزنگاری مجدد %1 ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="763"/>
+        <location filename="../src/imitatepass.cpp" line="849"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>رمزنگاری مجدد تکمیل شد: %1 موفق، %2 ناموفق</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="769"/>
+        <location filename="../src/imitatepass.cpp" line="855"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>رمزنگاری مجدد تکمیل شد: %1 فایل رمزنگاری مجدد شدند</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="932"/>
+        <location filename="../src/imitatepass.cpp" line="1049"/>
+        <location filename="../src/imitatepass.cpp" line="1057"/>
+        <location filename="../src/imitatepass.cpp" line="1064"/>
+        <location filename="../src/imitatepass.cpp" line="1074"/>
         <source>Copy failed</source>
         <translation type="unfinished">کپی ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="933"/>
+        <location filename="../src/imitatepass.cpp" line="1050"/>
+        <location filename="../src/imitatepass.cpp" line="1058"/>
+        <location filename="../src/imitatepass.cpp" line="1065"/>
+        <location filename="../src/imitatepass.cpp" line="1075"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">کپی %1 به %2 ممکن نبود.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1126"/>
+        <source>Git executable not configured, skipping git</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -927,27 +943,27 @@ You will not be able to change the user list!</source>
         <translation>برای گزینه‌های پیشرفته &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;راهنمای GnuPG&lt;/a&gt; را بررسی کنید</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="168"/>
+        <location filename="../src/keygendialog.cpp" line="214"/>
         <source>Invalid name</source>
         <translation>نام نامعتبر</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="169"/>
+        <location filename="../src/keygendialog.cpp" line="215"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>نام باید حداقل 5 کاراکتر طول داشته باشد.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="180"/>
+        <location filename="../src/keygendialog.cpp" line="226"/>
         <source>Invalid email</source>
         <translation>ایمیل نامعتبر</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="181"/>
+        <location filename="../src/keygendialog.cpp" line="227"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>آدرس ایمیلی که وارد کردید یک آدرس ایمیل معتبر نیست.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="201"/>
+        <location filename="../src/keygendialog.cpp" line="247"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>این عملیات می‌تواند چند دقیقه طول بکشد.&lt;br /&gt;ما باید تعداد زیادی بایت تصادفی تولید کنیم. ایده خوبی است که در طول تولید اعداد اول، اقدامات دیگری انجام دهید (روی صفحه‌کلید تایپ کنید، ماوس را حرکت دهید، از دیسک‌ها استفاده کنید)؛ این به مولد اعداد تصادفی شانس بهتری برای به دست آوردن آنتروپی کافی می‌دهد.</translation>
     </message>
@@ -966,8 +982,8 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="783"/>
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="798"/>
+        <location filename="../src/mainwindow.cpp" line="993"/>
         <source>Search Password</source>
         <translation>جستجوی رمز عبور</translation>
     </message>
@@ -1035,7 +1051,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="376"/>
         <location filename="../src/mainwindow.ui" line="379"/>
-        <location filename="../src/mainwindow.cpp" line="1561"/>
+        <location filename="../src/mainwindow.cpp" line="1621"/>
         <source>Add password</source>
         <translation>افزودن رمز عبور</translation>
     </message>
@@ -1047,21 +1063,21 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="387"/>
         <location filename="../src/mainwindow.ui" line="390"/>
-        <location filename="../src/mainwindow.cpp" line="1560"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Add folder</source>
         <translation>افزودن پوشه</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="395"/>
         <location filename="../src/mainwindow.ui" line="398"/>
-        <location filename="../src/mainwindow.cpp" line="1568"/>
+        <location filename="../src/mainwindow.cpp" line="1628"/>
         <source>Edit</source>
         <translation>ویرایش</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="403"/>
         <location filename="../src/mainwindow.ui" line="406"/>
-        <location filename="../src/mainwindow.cpp" line="1582"/>
+        <location filename="../src/mainwindow.cpp" line="1642"/>
         <source>Delete</source>
         <translation>حذف</translation>
     </message>
@@ -1102,7 +1118,7 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
-        <location filename="../src/mainwindow.cpp" line="1562"/>
+        <location filename="../src/mainwindow.cpp" line="1622"/>
         <source>Users</source>
         <translation>کاربران</translation>
     </message>
@@ -1122,34 +1138,34 @@ You will not be able to change the user list!</source>
         <translation>پیکربندی</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="334"/>
+        <location filename="../src/mainwindow.cpp" line="339"/>
         <source>Welcome to QtPass %1</source>
         <translation>به QtPass %1 خوش آمدید</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="363"/>
+        <location filename="../src/mainwindow.cpp" line="368"/>
         <source>Clear</source>
         <translation>پاک کردن</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="364"/>
+        <location filename="../src/mainwindow.cpp" line="369"/>
         <source>Clear output</source>
         <translation>پاک کردن خروجی</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="372"/>
+        <location filename="../src/mainwindow.cpp" line="377"/>
         <source>Process Output</source>
         <translation>خروجی فرایند</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="544"/>
-        <location filename="../src/mainwindow.cpp" line="557"/>
+        <location filename="../src/mainwindow.cpp" line="559"/>
+        <location filename="../src/mainwindow.cpp" line="572"/>
         <source>Updating password-store</source>
         <translation>به‌روزرسانی مخزن رمز عبور</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="679"/>
-        <location filename="../src/mainwindow.cpp" line="1021"/>
+        <location filename="../src/mainwindow.cpp" line="694"/>
+        <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Content hidden</source>
         <translation>محتوا پنهان شده</translation>
     </message>
@@ -1162,70 +1178,70 @@ You will not be able to change the user list!</source>
         <translation type="vanished">کد OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="740"/>
-        <location filename="../src/mainwindow.cpp" line="758"/>
-        <location filename="../src/mainwindow.cpp" line="1289"/>
+        <location filename="../src/mainwindow.cpp" line="755"/>
+        <location filename="../src/mainwindow.cpp" line="773"/>
+        <location filename="../src/mainwindow.cpp" line="1304"/>
         <source>OTP code copied to clipboard</source>
         <translation>کد OTP در کلیپ‌بورد کپی شد</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="760"/>
-        <location filename="../src/mainwindow.cpp" line="1272"/>
+        <location filename="../src/mainwindow.cpp" line="775"/>
+        <location filename="../src/mainwindow.cpp" line="1287"/>
         <source>No OTP code found in this password entry</source>
         <translation>هیچ کد OTP در این ورودی رمز عبور یافت نشد</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="787"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
         <source>Password and Content hidden</source>
         <translation>رمز عبور و محتوا پنهان شده</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="875"/>
+        <location filename="../src/mainwindow.cpp" line="890"/>
         <source>Looking for: %1</source>
         <translation>جستجو برای: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="926"/>
+        <location filename="../src/mainwindow.cpp" line="941"/>
         <source>Searching…</source>
         <translation>در حال جستجو…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="955"/>
+        <location filename="../src/mainwindow.cpp" line="970"/>
         <source>Search content (regex)</source>
         <translation>جستجوی محتوا (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1007"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>No matches found.</source>
         <translation>هیچ تطابقی یافت نشد.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1031"/>
+        <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n تطابق یافت شد</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1032"/>
+        <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>در %n ورودی.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1112"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
         <source>Invalid name</source>
         <translation type="unfinished">نام نامعتبر</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1113"/>
+        <location filename="../src/mainwindow.cpp" line="1128"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">این نام خارج از مخزن رمز عبور حل می‌شود. لطفاً نام دیگری انتخاب کنید.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1160"/>
-        <location filename="../src/mainwindow.cpp" line="1659"/>
+        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="1719"/>
         <source>New file</source>
         <translation>فایل جدید</translation>
     </message>
@@ -1242,164 +1258,164 @@ You will not be able to change the user list!</source>
 (در %1 قرار خواهد گرفت)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="155"/>
+        <location filename="../src/mainwindow.cpp" line="156"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">مهلت عملیات به پایان رسید؛ رابط کاربری مجدداً فعال می‌شود.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="727"/>
+        <location filename="../src/mainwindow.cpp" line="742"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">رمزگشایی این ورودی رمز عبور ممکن نبود</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="960"/>
+        <location filename="../src/mainwindow.cpp" line="975"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation type="unfinished">جستجوی محتوا از عبارات منظم پایه POSIX استفاده می‌کند (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="962"/>
+        <location filename="../src/mainwindow.cpp" line="977"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">جستجوی محتوا از عبارات منظم سازگار با Perl استفاده می‌کند (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1161"/>
+        <location filename="../src/mainwindow.cpp" line="1176"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>فایل رمز عبور جدید:
 (در %1 قرار خواهد گرفت)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1201"/>
+        <location filename="../src/mainwindow.cpp" line="1216"/>
         <source> and the whole content?</source>
         <translation> و تمام محتوا؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1211"/>
+        <location filename="../src/mainwindow.cpp" line="1226"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> و تمام محتوا؟ &lt;br&gt;&lt;strong&gt;توجه: فایل‌های غیرمنتظره‌ای در پوشه داده شده وجود دارد، قبل از ادامه آنها را بررسی کنید.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1220"/>
+        <location filename="../src/mainwindow.cpp" line="1235"/>
         <source>Delete folder?</source>
         <translation>حذف پوشه؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1220"/>
+        <location filename="../src/mainwindow.cpp" line="1235"/>
         <source>Delete password?</source>
         <translation>حذف رمز عبور؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1221"/>
+        <location filename="../src/mainwindow.cpp" line="1236"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>آیا مطمئن هستید که می‌خواهید %1%2 را حذف کنید؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1267"/>
+        <location filename="../src/mainwindow.cpp" line="1282"/>
         <source>No password selected for OTP generation</source>
         <translation>هیچ رمز عبوری برای تولید OTP انتخاب نشده</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1434"/>
+        <location filename="../src/mainwindow.cpp" line="1458"/>
         <source>Profile changed to %1</source>
         <translation>نمایه به %1 تغییر یافت</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1559"/>
+        <location filename="../src/mainwindow.cpp" line="1619"/>
         <source>Open folder with file manager</source>
         <translation>باز کردن پوشه با مدیر فایل</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1574"/>
+        <location filename="../src/mainwindow.cpp" line="1634"/>
         <source>Rename folder</source>
         <translation>تغییر نام پوشه</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1578"/>
+        <location filename="../src/mainwindow.cpp" line="1638"/>
         <source>Rename password</source>
         <translation>تغییر نام رمز عبور</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1588"/>
+        <location filename="../src/mainwindow.cpp" line="1648"/>
         <source>Share</source>
         <translation>اشتراک‌گذاری</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1598"/>
+        <location filename="../src/mainwindow.cpp" line="1658"/>
         <source>Re-encrypt all passwords</source>
         <translation>رمزنگاری مجدد تمام رمزهای عبور</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1663"/>
         <source>Export my public key...</source>
         <translation>صادرات کلید عمومی من...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1609"/>
+        <location filename="../src/mainwindow.cpp" line="1669"/>
         <source>Add recipient...</source>
         <translation>افزودن گیرنده...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1614"/>
+        <location filename="../src/mainwindow.cpp" line="1674"/>
         <source>What is this?</source>
         <translation>این چیست؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1660"/>
+        <location filename="../src/mainwindow.cpp" line="1720"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>پوشه جدید:
 (در %1 قرار خواهد گرفت)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1672"/>
-        <location filename="../src/mainwindow.cpp" line="1681"/>
-        <location filename="../src/mainwindow.cpp" line="1828"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
+        <location filename="../src/mainwindow.cpp" line="1890"/>
         <source>Error</source>
         <translation>خطا</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1733"/>
         <source>Failed to create folder: %1</source>
         <translation>ایجاد پوشه ناموفق بود: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1755"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>ایجاد فایل .gpg-id در %1 ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1709"/>
-        <location filename="../src/mainwindow.cpp" line="1749"/>
+        <location filename="../src/mainwindow.cpp" line="1771"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>Rename file</source>
         <translation>تغییر نام فایل</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1709"/>
+        <location filename="../src/mainwindow.cpp" line="1771"/>
         <source>Rename Folder To: </source>
         <translation>تغییر نام پوشه به: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1749"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>Rename File To: </source>
         <translation>تغییر نام فایل به: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1805"/>
+        <location filename="../src/mainwindow.cpp" line="1867"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">این ورودی حاوی راز OTP است، نه رمز عبور</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1829"/>
+        <location filename="../src/mainwindow.cpp" line="1891"/>
         <source>Directory does not exist: %1</source>
         <translation>پوشه وجود ندارد: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1834"/>
+        <location filename="../src/mainwindow.cpp" line="1896"/>
         <source>Re-encrypt passwords</source>
         <translation>رمزنگاری مجدد رمزهای عبور</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1835"/>
+        <location filename="../src/mainwindow.cpp" line="1897"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -1416,18 +1432,18 @@ Continue?</source>
 ادامه؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1880"/>
-        <location filename="../src/mainwindow.cpp" line="1899"/>
+        <location filename="../src/mainwindow.cpp" line="1942"/>
+        <location filename="../src/mainwindow.cpp" line="1961"/>
         <source>Export Public Key</source>
         <translation>صادرات کلید عمومی</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1881"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;صادرات کلید عمومی شما&lt;/h3&gt;&lt;p&gt;کلید امضا پیکربندی نشده است. یکی را در تنظیمات QtPass &amp;gt; کلیدهای GPG تنظیم کنید، یا این دستور را در ترمینال اجرا کنید:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;سپس فایل را برای همتیمی‌های خود ارسال کنید.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1900"/>
+        <location filename="../src/mainwindow.cpp" line="1962"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1436,17 +1452,17 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1902"/>
+        <location filename="../src/mainwindow.cpp" line="1964"/>
         <source>No output from gpg.</source>
         <translation>هیچ خروجی از gpg وجود ندارد.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1929"/>
+        <location filename="../src/mainwindow.cpp" line="1991"/>
         <source>Sharing Passwords with GPG</source>
         <translation>اشتراک‌گذاری رمزهای عبور با GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1930"/>
+        <location filename="../src/mainwindow.cpp" line="1992"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;اشتراک‌گذاری رمزهای عبور با GPG&lt;/h3&gt;&lt;p&gt;برای اشتراک‌گذاری رمزهای عبور با سایر کاربران:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;کلید عمومی خود را صادر کنید&lt;/b&gt; و برای همتیمی‌ها ارسال کنید&lt;/li&gt;&lt;li&gt;&lt;b&gt;کلیدهای عمومی همتیمی‌ها را وارد کنید&lt;/b&gt; به دسته‌کلیدهای GPG خود&lt;/li&gt;&lt;li&gt;&lt;b&gt;رمزهای عبور را رمزنگاری مجدد کنید&lt;/b&gt; تا همه گیرندگان بتوانند آنها را رمزگشایی کنند&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;فقط افرادی که کلید خصوصی مطابق دارند می‌توانند رمزهای عبور را رمزگشایی کنند.&lt;/p&gt;&lt;p&gt;&lt;b&gt;نکته:&lt;/b&gt; از همان کلید GPG برای تمام پوشه‌های اشتراکی استفاده کنید.&lt;/p&gt;&lt;p&gt;برای جزئیات بیشتر به سوالات متداول مراجعه کنید.&lt;/p&gt;</translation>
     </message>
@@ -1462,51 +1478,61 @@ Continue?</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="159"/>
+        <location filename="../src/pass.cpp" line="171"/>
+        <source>Configured GPG home %1 does not exist, using the default keyring</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="179"/>
+        <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="199"/>
         <source>Invalid password length</source>
         <translation>طول رمز عبور نامعتبر</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="160"/>
+        <location filename="../src/pass.cpp" line="200"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>نمی‌توان رمز عبور با طول صفر تولید کرد.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="201"/>
+        <location filename="../src/pass.cpp" line="241"/>
         <source>No characters chosen</source>
         <translation>هیچ کاراکتری انتخاب نشده</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="202"/>
+        <location filename="../src/pass.cpp" line="242"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>نمی‌توان رمز عبور تولید کرد، هیچ کاراکتری برای انتخاب از مجموعه در پیکربندی وجود ندارد!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="452"/>
+        <location filename="../src/pass.cpp" line="498"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">هیچ فایل اجرایی GPG پیکربندی نشده است</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="557"/>
-        <location filename="../src/pass.cpp" line="576"/>
+        <location filename="../src/pass.cpp" line="603"/>
+        <location filename="../src/pass.cpp" line="622"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>رمزنگاری ناموفق بود: کلید GPG منقضی شده است. لطفاً آن را تمدید یا جایگزین کنید.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="562"/>
-        <location filename="../src/pass.cpp" line="581"/>
+        <location filename="../src/pass.cpp" line="608"/>
+        <location filename="../src/pass.cpp" line="627"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>رمزنگاری ناموفق بود: کلید GPG لغو شده است.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="566"/>
-        <location filename="../src/pass.cpp" line="586"/>
+        <location filename="../src/pass.cpp" line="612"/>
+        <location filename="../src/pass.cpp" line="632"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>رمزنگاری ناموفق بود: کلید GPG گیرنده یافت نشد یا نامعتبر است. بررسی کنید که شناسه کلید در .gpg-id صحیح و وارد شده باشد.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="570"/>
-        <location filename="../src/pass.cpp" line="590"/>
+        <location filename="../src/pass.cpp" line="616"/>
+        <location filename="../src/pass.cpp" line="636"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>رمزنگاری ناموفق بود. بررسی کنید که کلید GPG شما معتبر باشد.</translation>
     </message>
@@ -1560,12 +1586,17 @@ Continue?</source>
         <translation>طول:</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="244"/>
+        <location filename="../src/passworddialog.cpp" line="83"/>
+        <source>Decrypting…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="260"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">نشانی otpauth:// یا راز base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="277"/>
+        <location filename="../src/passworddialog.cpp" line="293"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">راز OTP نامعتبر</translation>
     </message>
@@ -1573,31 +1604,31 @@ Continue?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="168"/>
-        <location filename="../main/main.cpp" line="172"/>
+        <location filename="../main/main.cpp" line="171"/>
+        <location filename="../main/main.cpp" line="175"/>
         <source>LTR</source>
         <translation>RTL</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="81"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="159"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="192"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="78"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="156"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="199"/>
         <source>Password</source>
         <translation type="unfinished">رمز عبور</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="168"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="174"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">باز کردن %1 در مرورگر</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="320"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="333"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="318"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <source>OTP Code</source>
         <translation type="unfinished">کد OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="321"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="319"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">هیچ کد OTP در این ورودی رمز عبور یافت نشد</translation>
     </message>
@@ -1605,113 +1636,113 @@ Continue?</source>
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="173"/>
+        <location filename="../src/qtpass.cpp" line="177"/>
         <source>Generating GPG key pair</source>
         <translation>تولید جفت کلید GPG</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="242"/>
+        <location filename="../src/qtpass.cpp" line="246"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>اتصال به WebDAV ناموفق بود:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="258"/>
+        <location filename="../src/qtpass.cpp" line="262"/>
         <source>QtPass WebDAV password</source>
         <translation>رمز عبور WebDAV برای QtPass</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="259"/>
+        <location filename="../src/qtpass.cpp" line="263"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>رمز عبور را برای اتصال به WebDAV وارد کنید:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="276"/>
+        <location filename="../src/qtpass.cpp" line="280"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav به طور غیرمنتظره خارج شد
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="280"/>
+        <location filename="../src/qtpass.cpp" line="284"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>راه‌اندازی fusedav برای اتصال به WebDAV ناموفق بود:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="293"/>
+        <location filename="../src/qtpass.cpp" line="297"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="296"/>
+        <location filename="../src/qtpass.cpp" line="300"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="299"/>
+        <location filename="../src/qtpass.cpp" line="303"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="302"/>
+        <location filename="../src/qtpass.cpp" line="306"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="305"/>
+        <location filename="../src/qtpass.cpp" line="309"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="308"/>
+        <location filename="../src/qtpass.cpp" line="312"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="324"/>
+        <location filename="../src/qtpass.cpp" line="328"/>
         <source>GPG key pair generation failed</source>
         <translation>تولید جفت کلید GPG ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="398"/>
+        <location filename="../src/qtpass.cpp" line="403"/>
         <source>GPG key pair generated successfully</source>
         <translation>جفت کلید GPG با موفقیت تولید شد</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="482"/>
+        <location filename="../src/qtpass.cpp" line="487"/>
         <source>Clipboard cleared</source>
         <translation>کلیپ‌بورد پاک شد</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="484"/>
+        <location filename="../src/qtpass.cpp" line="489"/>
         <source>Clipboard not cleared</source>
         <translation>کلیپ‌بورد پاک نشد</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="530"/>
+        <location filename="../src/qtpass.cpp" line="535"/>
         <source>Copied to clipboard</source>
         <translation>در کلیپ‌بورد کپی شد</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="552"/>
+        <location filename="../src/qtpass.cpp" line="557"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">راه‌اندازی qrencode ناموفق بود: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="560"/>
+        <location filename="../src/qtpass.cpp" line="565"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">qrencode به‌موقع پایان نیافت</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="572"/>
+        <location filename="../src/qtpass.cpp" line="577"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">qrencode از کار افتاد</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="573"/>
+        <location filename="../src/qtpass.cpp" line="578"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">qrencode با کد %1 خارج شد</translation>
     </message>

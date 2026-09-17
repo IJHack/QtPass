@@ -23,7 +23,7 @@ Lint the way Flathub does:
 
 ```sh
 flatpak run --command=flatpak-builder-lint org.flatpak.Builder manifest flatpak/org.qtpass.QtPass.yml
-flatpak run --command=flatpak-builder-lint org.flatpak.Builder appstream qtpass.appdata.xml
+flatpak run --command=flatpak-builder-lint org.flatpak.Builder appstream org.qtpass.QtPass.metainfo.xml
 ```
 
 ## How GnuPG works inside the sandbox
@@ -64,6 +64,10 @@ the bundled tools automatically. The `file` overlays in the `qtpass` module
 (metainfo, square icon, `main.cpp`, `qtpasssettings.cpp`, and for the 1.8.1
 first-run fix `mainwindow.h`, `mainwindow.cpp`, `qtpass.cpp`) exist only because
 v1.8.0 predates those changes — drop them when building from a later tag.
+Since 1.8.2 the metainfo is installed under its component ID
+(`org.qtpass.QtPass.metainfo.xml`): drop `rename-appdata-file` when the
+module moves to the 1.8.2 tag (`ci-manifest.sh` strips it for the tree build
+meanwhile).
 
 ## CI
 
