@@ -15,7 +15,9 @@
 #
 # Environment:
 #   VERSION   override the version string (default: VERSION from qtpass.pri)
-#   ARCH      target architecture (default: uname -m)
+#   ARCH      architecture (default: uname -m). It has to be the host's:
+#             linuxdeploy runs here and inspects the freshly built binary,
+#             so there is no cross-building an AppImage this way.
 #   JOBS      parallel make jobs (default: nproc)
 
 set -euo pipefail
@@ -99,27 +101,61 @@ if command -v appstreamcli >/dev/null 2>&1; then
 	appstreamcli validate --no-net "${appdir}/usr/share/metainfo/qtpass.appdata.xml"
 fi
 
-# 3. Fetch linuxdeploy, its Qt plugin and the AppImage runtime.
+# 3. Fetch linuxdeploy, its Qt plugin and the AppImage runtime: pinned
+#    releases, checked against the SHA-256 GitHub publishes for the asset.
+#    Bump the three tags and the sums together.
+linuxdeploy_tag="1-alpha-20251107-1"
+plugin_qt_tag="1-alpha-20250213-1"
+runtime_tag="20251108"
+case "${ARCH}" in
+x86_64)
+	linuxdeploy_sha="c20cd71e3a4e3b80c3483cef793cda3f4e990aca14014d23c544ca3ce1270b4d"
+	plugin_qt_sha="15106be885c1c48a021198e7e1e9a48ce9d02a86dd0a1848f00bdbf3c1c92724"
+	runtime_sha="2fca8b443c92510f1483a883f60061ad09b46b978b2631c807cd873a47ec260d"
+	;;
+aarch64)
+	linuxdeploy_sha="620095110d693282b8ebeb244a95b5e911cf8f65f76c88b4b47d16ae6346fcff"
+	plugin_qt_sha="bf1c24aff6d749b5cf423afad6f15abd4440f81dec1aab95706b25f6667cdcf1"
+	runtime_sha="00cbdfcf917cc6c0ff6d3347d59e0ca1f7f45a6df1a428a0d6d8a78664d87444"
+	;;
+*)
+	echo "Error: no pinned linuxdeploy checksums for ${ARCH}." >&2
+	exit 1
+	;;
+esac
+
+# fetch_tool NAME URL SHA256: download into the tools cache unless the copy
+# there already has the expected checksum; refuse anything that does not.
 fetch_tool() {
-	local name="$1" url="$2" dest="${tools_dir}/$1"
-	if [ ! -x "${dest}" ]; then
-		# stdout is captured by the caller, so progress goes to stderr.
-		echo "==> Fetching ${name}" >&2
-		curl --fail --location --silent --show-error --output "${dest}" "${url}"
-		chmod +x "${dest}"
+	local name="$1" url="$2" sha="$3" dest="${tools_dir}/$1"
+	if [ -f "${dest}" ] && echo "${sha}  ${dest}" | sha256sum --check --quiet --status; then
+		printf '%s' "${dest}"
+		return
 	fi
+	# stdout is captured by the caller, so progress goes to stderr.
+	echo "==> Fetching ${name}" >&2
+	curl --fail --location --silent --show-error --output "${dest}.part" "${url}"
+	if ! echo "${sha}  ${dest}.part" | sha256sum --check --quiet --status; then
+		echo "Error: ${name} does not match its pinned SHA-256." >&2
+		rm -f "${dest}.part"
+		exit 1
+	fi
+	chmod +x "${dest}.part"
+	mv "${dest}.part" "${dest}"
 	printf '%s' "${dest}"
 }
 
-base="https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous"
-plugin_base="https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous"
-runtime_base="https://github.com/AppImage/type2-runtime/releases/download/continuous"
-linuxdeploy="$(fetch_tool "linuxdeploy-${ARCH}.AppImage" "${base}/linuxdeploy-${ARCH}.AppImage")"
+linuxdeploy="$(fetch_tool "linuxdeploy-${ARCH}.AppImage" \
+	"https://github.com/linuxdeploy/linuxdeploy/releases/download/${linuxdeploy_tag}/linuxdeploy-${ARCH}.AppImage" \
+	"${linuxdeploy_sha}")"
 fetch_tool "linuxdeploy-plugin-qt-${ARCH}.AppImage" \
-	"${plugin_base}/linuxdeploy-plugin-qt-${ARCH}.AppImage" >/dev/null
+	"https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/${plugin_qt_tag}/linuxdeploy-plugin-qt-${ARCH}.AppImage" \
+	"${plugin_qt_sha}" >/dev/null
 # appimagetool downloads this itself when not given one, in the middle of
 # packaging and without a timeout; fetching it here keeps that step offline.
-runtime="$(fetch_tool "runtime-${ARCH}" "${runtime_base}/runtime-${ARCH}")"
+runtime="$(fetch_tool "runtime-${ARCH}" \
+	"https://github.com/AppImage/type2-runtime/releases/download/${runtime_tag}/runtime-${ARCH}" \
+	"${runtime_sha}")"
 
 # The plugin is discovered on PATH by linuxdeploy, not passed as a path.
 export PATH="${tools_dir}:${PATH}"

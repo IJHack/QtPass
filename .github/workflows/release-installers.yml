@@ -50,6 +50,7 @@ jobs:
               - "qtpass.desktop"
               - "qtpass.appdata.xml"
               - "artwork/**"
+              - ".github/workflows/release-installers.yml"
 
   build-windows:
     needs: changes
