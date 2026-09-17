@@ -60,11 +60,6 @@ public:
   auto getProfiles() -> Profiles;
 
   /**
-   * @brief Run the first-time setup wizard.
-   */
-  void wizard();
-
-  /**
    * @brief Show or hide the system tray icon.
    * @param useSystray true to enable the tray icon.
    */
@@ -183,8 +178,6 @@ private:
   void updateProfileStatus();
   QScopedPointer<Ui::ConfigDialog> ui;
 
-  auto getSecretKeys() -> QStringList;
-
   void setGitPath(const QString &);
   void setProfiles(Profiles, const QString &);
   void usePass(bool usePass);
@@ -220,11 +213,6 @@ private:
   auto isQrencodeAvailable(const QString &configuredPath) -> bool;
   void validate();
 
-  auto checkGpgExistence() -> bool;
-  auto checkSecretKeys() -> bool;
-  auto checkPasswordStore() -> bool;
-  void handleGpgIdFile();
-  void selectRecipients(const QString &storePath, bool gitInit);
   void initializeNewProfiles(const Profiles &existingProfiles);
 
   /// User-defined custom charset, retained while a builtin set is selected so
