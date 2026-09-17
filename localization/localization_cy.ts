@@ -460,7 +460,7 @@ e-mail</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; fersiwn </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="49"/>
+        <location filename="../src/configdialog.cpp" line="45"/>
         <source>System tray is not available</source>
         <translation>Dydy hambwrdd system ddim ar gael</translation>
     </message>
@@ -469,53 +469,53 @@ e-mail</translation>
         <translation type="vanished">Mae angen gosod estyniad Pass OTP</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="73"/>
+        <location filename="../src/configdialog.cpp" line="69"/>
         <source>qrencode needs to be installed</source>
         <translation>Mae angen gosod qrencode</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="84"/>
+        <location filename="../src/configdialog.cpp" line="80"/>
         <source>No Clipboard</source>
         <translation>Dim Clipfwrdd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="85"/>
+        <location filename="../src/configdialog.cpp" line="81"/>
         <source>Always copy to clipboard</source>
         <translation>Copïo i&apos;r Clipfwrdd bob tro</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="86"/>
+        <location filename="../src/configdialog.cpp" line="82"/>
         <source>On-demand copy to clipboard</source>
         <translation>Copi ar alw i&apos;r Clipfwrdd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="273"/>
-        <location filename="../src/configdialog.cpp" line="283"/>
+        <location filename="../src/configdialog.cpp" line="274"/>
+        <location filename="../src/configdialog.cpp" line="284"/>
         <source>This field is required</source>
         <translation>Mae&apos;r maes hwn yn ofynnol</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="327"/>
+        <location filename="../src/configdialog.cpp" line="328"/>
         <source>The path does not exist.</source>
         <translation>Nid yw&apos;r llwybr yn bodoli.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="330"/>
+        <location filename="../src/configdialog.cpp" line="331"/>
         <source>The path is not readable.</source>
         <translation>Nid yw&apos;r llwybr yn ddarllenadwy.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="333"/>
+        <location filename="../src/configdialog.cpp" line="334"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Nid yw&apos;r llwybr yn soced parth Unix.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="338"/>
+        <location filename="../src/configdialog.cpp" line="339"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Goruchwylio SSH_AUTH_SOCK annilys o bosibl</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="339"/>
+        <location filename="../src/configdialog.cpp" line="340"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -528,42 +528,52 @@ The value will still be saved as entered.</source>
 Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="793"/>
+        <location filename="../src/configdialog.cpp" line="751"/>
         <source>Create profile directory?</source>
         <translation>Creu cyfeiriadur proffil?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="794"/>
+        <location filename="../src/configdialog.cpp" line="752"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Hoffech chi greu storfa gyfrineiriau yn %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="802"/>
+        <location filename="../src/configdialog.cpp" line="760"/>
         <source>Could not create profile directory: %1</source>
         <translation>Methwyd creu cyfeiriadur proffil: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="825"/>
+        <location filename="../src/configdialog.cpp" line="786"/>
         <source>Select recipients for %1</source>
         <translation>Dewiswch dderbynwyr ar gyfer %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="850"/>
+        <location filename="../src/configdialog.cpp" line="799"/>
+        <source>Could not initialise profile %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="801"/>
+        <source>Profile %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="815"/>
         <source>New Profile</source>
         <translation>Proffil newydd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="898"/>
+        <location filename="../src/configdialog.cpp" line="863"/>
         <source>No profile selected</source>
         <translation>Dim proffil wedi&apos;i ddewis</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="899"/>
+        <location filename="../src/configdialog.cpp" line="864"/>
         <source>No profile selected to delete</source>
         <translation>Dim proffil wedi&apos;i ddewis i&apos;w ddileu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="995"/>
+        <location filename="../src/configdialog.cpp" line="960"/>
         <source>GnuPG not found</source>
         <translation>Heb ganfod GnuPG</translation>
     </message>
@@ -572,63 +582,63 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
         <translation type="vanished">Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; Ubuntu &lt;/strong&gt; o&apos;r Microsoft Store i&apos;w gael. &lt;br&gt; Os gwnaethoch hynny eisoes, gwnewch yn siŵr eich bod wedi ei gychwyn unwaith a &lt;br&gt; cliciwch &quot;Autodetect&quot; yn yr ymgom nesaf.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="997"/>
+        <location filename="../src/configdialog.cpp" line="962"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Gosodwch GnuPG ar eich system.&lt;br&gt;Gosodwch &lt;strong&gt;Ubuntu&lt;/strong&gt; o Microsoft Store&lt;br&gt;neu &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lawrlwythwch&lt;/a&gt; hi o GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1002"/>
+        <location filename="../src/configdialog.cpp" line="967"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Gosodwch GnuPG ar eich system.&lt;br&gt;Gosodwch &lt;strong&gt;gpg&lt;/strong&gt; gan ddefnyddio eich hoff rheolwr pecyn&lt;br&gt;neu &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lawrlwythwch&lt;/a&gt; hi o GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1056"/>
+        <location filename="../src/configdialog.cpp" line="1019"/>
         <source>Create password-store?</source>
         <translation>Creu siop cyfrinair?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1057"/>
+        <location filename="../src/configdialog.cpp" line="1020"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Hoffech chi greu siop-gyfrinair yn %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="801"/>
-        <location filename="../src/configdialog.cpp" line="1062"/>
+        <location filename="../src/configdialog.cpp" line="759"/>
+        <location filename="../src/configdialog.cpp" line="1025"/>
         <source>Error</source>
         <translation>Gwall</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="60"/>
+        <location filename="../src/configdialog.cpp" line="56"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1063"/>
+        <location filename="../src/configdialog.cpp" line="1026"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Methwyd creu storfa-gyfrinair yn: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1091"/>
+        <location filename="../src/configdialog.cpp" line="1052"/>
         <source>Password store not initialised</source>
         <translation>Storfa cyfrinair heb ei ymgychwyn</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1092"/>
+        <location filename="../src/configdialog.cpp" line="1053"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Nid yw&apos;r ffolder %1 yn ymddangos fel storfa cyfrinair neu nid yw wedi&apos;i ymgychwyn eto.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1369"/>
+        <location filename="../src/configdialog.cpp" line="1328"/>
         <source>New profile: %1 at %2</source>
         <translation>Proffil newydd: %1 yn %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1373"/>
+        <location filename="../src/configdialog.cpp" line="1332"/>
         <source>Profile: %1 at %2</source>
         <translation>Proffil: %1 yn %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1378"/>
+        <location filename="../src/configdialog.cpp" line="1337"/>
         <source>Fill in all required fields</source>
         <translation>Llenwch yr holl feysydd gofynnol</translation>
     </message>
@@ -636,17 +646,17 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="91"/>
+        <location filename="../src/executor.cpp" line="122"/>
         <source>No executable configured for this command</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="128"/>
+        <location filename="../src/executor.cpp" line="157"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">Methwyd cychwyn %1</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="421"/>
+        <location filename="../src/executor.cpp" line="440"/>
         <source>%1 crashed or was killed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -709,145 +719,145 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="196"/>
-        <location filename="../src/imitatepass.cpp" line="387"/>
-        <location filename="../src/imitatepass.cpp" line="599"/>
+        <location filename="../src/imitatepass.cpp" line="186"/>
+        <location filename="../src/imitatepass.cpp" line="372"/>
+        <location filename="../src/imitatepass.cpp" line="582"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Llofnod %1 yn annilys.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="203"/>
-        <location filename="../src/imitatepass.cpp" line="686"/>
+        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="665"/>
         <source>Can not edit</source>
         <translation>Methu golygu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="204"/>
-        <location filename="../src/imitatepass.cpp" line="687"/>
+        <location filename="../src/imitatepass.cpp" line="194"/>
+        <location filename="../src/imitatepass.cpp" line="666"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Methwyd darllen allwedd amgryptio i&apos;w ddefnyddio, .gpg-id File ar goll neu annilys.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="381"/>
+        <location filename="../src/imitatepass.cpp" line="366"/>
         <source>GPG signing failed!</source>
         <translation>Methodd llofnodi GPG!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="382"/>
+        <location filename="../src/imitatepass.cpp" line="367"/>
         <source>Failed to sign %1.</source>
         <translation>Methwyd llofnodi %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="494"/>
+        <location filename="../src/imitatepass.cpp" line="479"/>
         <source>No signing key!</source>
         <translation>Dim allwedd lofnodi!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="495"/>
+        <location filename="../src/imitatepass.cpp" line="480"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Nid oes yr un o&apos;r allweddi lofnodi cyfrinachol ar gael.
 Ni fyddwch yn gallu newid y rhestr defnyddwyr!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="322"/>
+        <location filename="../src/imitatepass.cpp" line="310"/>
         <source>Cannot update</source>
         <translation>Methu diweddaru</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="161"/>
+        <location filename="../src/imitatepass.cpp" line="150"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="195"/>
-        <location filename="../src/imitatepass.cpp" line="386"/>
-        <location filename="../src/imitatepass.cpp" line="598"/>
+        <location filename="../src/imitatepass.cpp" line="185"/>
+        <location filename="../src/imitatepass.cpp" line="371"/>
+        <location filename="../src/imitatepass.cpp" line="581"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Gwiriwch llofnod y ffeil .gpg-id!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="323"/>
+        <location filename="../src/imitatepass.cpp" line="311"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Methwyd agor .gpg-id ar gyfer ysgrifennu.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="342"/>
+        <location filename="../src/imitatepass.cpp" line="330"/>
         <source>Check selected users!</source>
         <translation>Gwirio&apos;r defnyddwyr a ddewiswyd!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="343"/>
+        <location filename="../src/imitatepass.cpp" line="331"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Does dim allwedd gyfrinachol ar gael gan yr un o&apos;r bysellau a ddewiswyd.
 Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="751"/>
-        <location filename="../src/imitatepass.cpp" line="1040"/>
+        <location filename="../src/imitatepass.cpp" line="720"/>
+        <location filename="../src/imitatepass.cpp" line="1005"/>
         <source>Re-encryption failed</source>
         <translation>Methodd ail-amgryptio</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="752"/>
+        <location filename="../src/imitatepass.cpp" line="721"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>Methwyd disodli %1. Mae&apos;r gwreiddiol wedi&apos;i adfer.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="795"/>
+        <location filename="../src/imitatepass.cpp" line="760"/>
         <source>Creating backup commit</source>
         <translation>Creu ymrwymiad wrth gefn</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="812"/>
-        <location filename="../src/imitatepass.cpp" line="821"/>
+        <location filename="../src/imitatepass.cpp" line="777"/>
+        <location filename="../src/imitatepass.cpp" line="786"/>
         <source>Backup commit failed</source>
         <translation>Methodd yr ymrwymiad wrth gefn</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="813"/>
+        <location filename="../src/imitatepass.cpp" line="778"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Methwyd archwilio statws git. Cafodd yr ail-amgryptio ei atal.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="822"/>
+        <location filename="../src/imitatepass.cpp" line="787"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Cafodd yr ail-amgryptio ei atal oherwydd na ellid creu copi wrth gefn git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="868"/>
+        <location filename="../src/imitatepass.cpp" line="833"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="873"/>
+        <location filename="../src/imitatepass.cpp" line="838"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Ail-amgryptio o blygell %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="956"/>
-        <location filename="../src/imitatepass.cpp" line="1067"/>
+        <location filename="../src/imitatepass.cpp" line="921"/>
+        <location filename="../src/imitatepass.cpp" line="1032"/>
         <source>Updating password-store</source>
         <translation>Diweddaru&apos;r siop cyfrinair</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="959"/>
+        <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1000"/>
+        <location filename="../src/imitatepass.cpp" line="965"/>
         <source>GPG ID verification failed</source>
         <translation>Methodd dilysu ID GPG</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1001"/>
+        <location filename="../src/imitatepass.cpp" line="966"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Methwyd gwirio .gpg-id ar gyfer y cyfeiriadur.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1038"/>
+        <location filename="../src/imitatepass.cpp" line="1003"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -858,7 +868,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1041"/>
+        <location filename="../src/imitatepass.cpp" line="1006"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -869,12 +879,12 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1047"/>
+        <location filename="../src/imitatepass.cpp" line="1012"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1340"/>
+        <location filename="../src/imitatepass.cpp" line="1297"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished"></translation>
     </message>
@@ -883,17 +893,17 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         <translation type="vanished">Methwyd ail-amgryptio %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1056"/>
+        <location filename="../src/imitatepass.cpp" line="1021"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Ail-amgryptio wedi&apos;i gwblhau: llwyddodd %1, methodd %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1061"/>
+        <location filename="../src/imitatepass.cpp" line="1026"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Ail-amgryptio wedi&apos;i gwblhau: %1 ffeil wedi&apos;u hail-amgryptio</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1070"/>
+        <location filename="../src/imitatepass.cpp" line="1035"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -904,18 +914,18 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1263"/>
-        <location filename="../src/imitatepass.cpp" line="1271"/>
-        <location filename="../src/imitatepass.cpp" line="1278"/>
-        <location filename="../src/imitatepass.cpp" line="1288"/>
+        <location filename="../src/imitatepass.cpp" line="1220"/>
+        <location filename="../src/imitatepass.cpp" line="1228"/>
+        <location filename="../src/imitatepass.cpp" line="1235"/>
+        <location filename="../src/imitatepass.cpp" line="1245"/>
         <source>Copy failed</source>
         <translation type="unfinished">Methodd y copïo</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1264"/>
-        <location filename="../src/imitatepass.cpp" line="1272"/>
-        <location filename="../src/imitatepass.cpp" line="1279"/>
-        <location filename="../src/imitatepass.cpp" line="1289"/>
+        <location filename="../src/imitatepass.cpp" line="1221"/>
+        <location filename="../src/imitatepass.cpp" line="1229"/>
+        <location filename="../src/imitatepass.cpp" line="1236"/>
+        <location filename="../src/imitatepass.cpp" line="1246"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Methwyd copïo %1 i %2.</translation>
     </message>
@@ -1116,22 +1126,22 @@ Expire-Date: 0
         <translation>Ar gyfer dewisiadau arbenigol edrychwch ar y &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; GnuPG manual &lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="195"/>
+        <location filename="../src/keygendialog.cpp" line="193"/>
         <source>Invalid name</source>
         <translation>Enw annilys</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="194"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Rhaid i&apos;r enw fod o leiaf 5 nod o hyd.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="207"/>
+        <location filename="../src/keygendialog.cpp" line="205"/>
         <source>Invalid email</source>
         <translation>E-bost annilys</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="208"/>
+        <location filename="../src/keygendialog.cpp" line="206"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Dydy&apos;r cyfeiriad e-bost deipioch chi ddim yn gyfeiriad e-bost dilys.</translation>
     </message>
@@ -1139,6 +1149,16 @@ Expire-Date: 0
         <location filename="../src/keygendialog.cpp" line="228"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Gall y llawdriniaeth hon gymryd rhai munudau. &lt;br /&gt; Mae angen i ni gynhyrchu llawer o bytes ar hap. Mae&apos;n syniad da cyflawni rhyw weithred arall (teipiwch ar y bysellfwrdd, symud y llygoden, defnyddio&apos;r disgiau) yn ystod y brif genhedlaeth; mae hyn yn rhoi gwell cyfle i&apos;r generadur rhif ar hap ennill digon o entropi.</translation>
+    </message>
+    <message>
+        <location filename="../src/keygendialog.cpp" line="257"/>
+        <source>No password store backend available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/keygendialog.cpp" line="293"/>
+        <source>Key generation failed: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1155,8 +1175,8 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="827"/>
-        <location filename="../src/mainwindow.cpp" line="1024"/>
+        <location filename="../src/mainwindow.cpp" line="731"/>
+        <location filename="../src/mainwindow.cpp" line="944"/>
         <source>Search Password</source>
         <translation>Cyfrinair chwilio</translation>
     </message>
@@ -1222,123 +1242,195 @@ Expire-Date: 0
 &lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Cod Ffynhonnell &lt;/a&gt; &lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="381"/>
         <source>Clear output</source>
-        <translation>Clirio&apos;r allbwn</translation>
+        <translation type="vanished">Clirio&apos;r allbwn</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="380"/>
         <source>Clear</source>
-        <translation>Clirio</translation>
+        <translation type="vanished">Clirio</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="376"/>
-        <location filename="../src/mainwindow.ui" line="379"/>
-        <location filename="../src/mainwindow.cpp" line="1612"/>
+        <location filename="../src/mainwindow.ui" line="341"/>
+        <source>&amp;File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="354"/>
+        <source>&amp;Store</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="365"/>
+        <source>S&amp;ettings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="371"/>
+        <source>&amp;Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="421"/>
+        <location filename="../src/mainwindow.ui" line="424"/>
+        <location filename="../src/mainwindow.cpp" line="1494"/>
         <source>Add password</source>
         <translation>Ychwanegu cyfrinair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="382"/>
+        <location filename="../src/mainwindow.ui" line="427"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="387"/>
-        <location filename="../src/mainwindow.ui" line="390"/>
-        <location filename="../src/mainwindow.cpp" line="1611"/>
+        <location filename="../src/mainwindow.ui" line="432"/>
+        <location filename="../src/mainwindow.ui" line="435"/>
+        <location filename="../src/mainwindow.cpp" line="1493"/>
         <source>Add folder</source>
         <translation>Ychwanegu plygell</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="395"/>
-        <location filename="../src/mainwindow.ui" line="398"/>
-        <location filename="../src/mainwindow.cpp" line="1619"/>
+        <location filename="../src/mainwindow.ui" line="440"/>
+        <location filename="../src/mainwindow.ui" line="443"/>
+        <location filename="../src/mainwindow.cpp" line="1501"/>
         <source>Edit</source>
         <translation>Golygu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="403"/>
-        <location filename="../src/mainwindow.ui" line="406"/>
-        <location filename="../src/mainwindow.cpp" line="1633"/>
+        <location filename="../src/mainwindow.ui" line="448"/>
+        <location filename="../src/mainwindow.ui" line="451"/>
+        <location filename="../src/mainwindow.cpp" line="1515"/>
         <source>Delete</source>
         <translation>Dileu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="411"/>
+        <location filename="../src/mainwindow.ui" line="456"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="414"/>
+        <location filename="../src/mainwindow.ui" line="459"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Cynhyrchu OTP a chopïo i&apos;r Clipfwrdd</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="417"/>
+        <location filename="../src/mainwindow.ui" line="462"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="422"/>
+        <location filename="../src/mainwindow.ui" line="467"/>
         <source>Push</source>
         <translation>Gwthio</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="425"/>
+        <location filename="../src/mainwindow.ui" line="470"/>
         <source>Git push</source>
         <translation>Git gwthio</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="430"/>
+        <location filename="../src/mainwindow.ui" line="475"/>
         <source>Update</source>
         <translation>Diweddaru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="433"/>
+        <location filename="../src/mainwindow.ui" line="478"/>
         <source>Git pull</source>
         <translation>Git tynnu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="438"/>
-        <location filename="../src/mainwindow.cpp" line="1613"/>
+        <location filename="../src/mainwindow.ui" line="483"/>
+        <location filename="../src/mainwindow.cpp" line="1495"/>
         <source>Users</source>
         <translation>Defnyddwyr</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="441"/>
+        <location filename="../src/mainwindow.ui" line="486"/>
         <source>Manage who can read password in folder</source>
         <translation>Rheoli pwy all ddarllen cyfrinair mewn ffolder</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="446"/>
+        <location filename="../src/mainwindow.ui" line="491"/>
         <source>Config</source>
         <translation>Ffurfweddu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="449"/>
+        <location filename="../src/mainwindow.ui" line="494"/>
         <source>Configuration</source>
         <translation>Ffurfweddiad</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="351"/>
+        <location filename="../src/mainwindow.ui" line="497"/>
+        <source>Ctrl+,</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="505"/>
+        <source>&amp;Close window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="508"/>
+        <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="511"/>
+        <source>Ctrl+W</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="516"/>
+        <source>&amp;Quit</source>
+        <translation type="unfinished">&amp;Gadael</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="519"/>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="527"/>
+        <source>&amp;FAQ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="530"/>
+        <source>Open the frequently asked questions on qtpass.org</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="533"/>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="538"/>
+        <source>&amp;About QtPass</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="546"/>
+        <source>About &amp;Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="344"/>
         <source>Welcome to QtPass %1</source>
         <translation>Croeso i QtPass %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="389"/>
         <source>Process Output</source>
-        <translation>Allbwn y broses</translation>
+        <translation type="vanished">Allbwn y broses</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="593"/>
-        <location filename="../src/mainwindow.cpp" line="606"/>
+        <location filename="../src/mainwindow.cpp" line="511"/>
+        <location filename="../src/mainwindow.cpp" line="524"/>
         <source>Updating password-store</source>
         <translation>Diweddaru&apos;r siop cyfrinair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="725"/>
-        <location filename="../src/mainwindow.cpp" line="1067"/>
+        <location filename="../src/mainwindow.cpp" line="638"/>
+        <location filename="../src/mainwindow.cpp" line="986"/>
         <source>Content hidden</source>
         <translation>Cynnwys wedi&apos;i guddio</translation>
     </message>
@@ -1351,40 +1443,40 @@ Expire-Date: 0
         <translation type="vanished">Cod OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="784"/>
-        <location filename="../src/mainwindow.cpp" line="802"/>
-        <location filename="../src/mainwindow.cpp" line="1332"/>
+        <location filename="../src/mainwindow.cpp" line="688"/>
+        <location filename="../src/mainwindow.cpp" line="706"/>
+        <location filename="../src/mainwindow.cpp" line="1230"/>
         <source>OTP code copied to clipboard</source>
         <translation>Cod OTP wedi&apos;i gopïo i&apos;r clipfwrdd</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="804"/>
-        <location filename="../src/mainwindow.cpp" line="1315"/>
+        <location filename="../src/mainwindow.cpp" line="708"/>
+        <location filename="../src/mainwindow.cpp" line="1213"/>
         <source>No OTP code found in this password entry</source>
         <translation>Ni chanfuwyd cod OTP yn y cofnod cyfrinair hwn</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="831"/>
+        <location filename="../src/mainwindow.cpp" line="735"/>
         <source>Password and Content hidden</source>
         <translation>Cyfrinair a chynnwys wedi&apos;i guddio</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="921"/>
+        <location filename="../src/mainwindow.cpp" line="845"/>
         <source>Looking for: %1</source>
         <translation>Wrthi&apos;n chwilio am: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="972"/>
+        <location filename="../src/mainwindow.cpp" line="893"/>
         <source>Searching…</source>
         <translation>Yn chwilio…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1001"/>
+        <location filename="../src/mainwindow.cpp" line="922"/>
         <source>Search content (regex)</source>
         <translation>Chwilio cynnwys (mynegiant rheolaidd)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1053"/>
+        <location filename="../src/mainwindow.cpp" line="972"/>
         <source>No matches found.</source>
         <translation>Ni chanfuwyd unrhyw gyfatebiaethau.</translation>
     </message>
@@ -1399,27 +1491,37 @@ Expire-Date: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="153"/>
+        <location filename="../src/mainwindow.cpp" line="126"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">Mae&apos;r weithred wedi cymryd gormod o amser; yn ailalluogi&apos;r rhyngwyneb.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="771"/>
+        <location filename="../src/mainwindow.cpp" line="675"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">Methwyd dadgryptio&apos;r cofnod cyfrinair hwn</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1006"/>
+        <location filename="../src/mainwindow.cpp" line="822"/>
+        <source>About QtPass</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="823"/>
+        <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="927"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation type="unfinished">Mae chwilio cynnwys yn defnyddio mynegiadau rheolaidd sylfaenol POSIX (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1008"/>
+        <location filename="../src/mainwindow.cpp" line="929"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">Mae chwilio cynnwys yn defnyddio mynegiadau rheolaidd cydnaws â Perl (PCRE).</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1077"/>
+        <location filename="../src/mainwindow.cpp" line="996"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Ni chanfuwyd cyfatebiad</numerusform>
@@ -1430,7 +1532,7 @@ Expire-Date: 0
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1078"/>
+        <location filename="../src/mainwindow.cpp" line="997"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>mewn dim cofnod.</numerusform>
@@ -1441,146 +1543,146 @@ Expire-Date: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1158"/>
+        <location filename="../src/mainwindow.cpp" line="1074"/>
         <source>Invalid name</source>
         <translation type="unfinished">Enw annilys</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1159"/>
+        <location filename="../src/mainwindow.cpp" line="1075"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Byddai&apos;r enw hwnnw yn datrys y tu allan i&apos;r storfa cyfrineiriau. Dewiswch enw gwahanol.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1204"/>
+        <location filename="../src/mainwindow.cpp" line="1118"/>
         <source>New file</source>
         <translation>Ffeil newydd</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1205"/>
+        <location filename="../src/mainwindow.cpp" line="1119"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Ffeil cyfrinair newydd: 
 (Bydd yn cael ei roi yn %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1245"/>
+        <location filename="../src/mainwindow.cpp" line="1156"/>
         <source> and the whole content?</source>
         <translation> a&apos;r holl gynnwys?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1255"/>
+        <location filename="../src/mainwindow.cpp" line="1166"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> a&apos;r holl gynnwys? &lt;br&gt; &lt;strong&gt; sylw: Mae ffeiliau annisgwyl yn y ffolder a roddir, gwiriwch nhw cyn parhau. &lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1264"/>
+        <location filename="../src/mainwindow.cpp" line="1175"/>
         <source>Delete folder?</source>
         <translation>Dileu plygell?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1264"/>
+        <location filename="../src/mainwindow.cpp" line="1175"/>
         <source>Delete password?</source>
         <translation>Dileu cyfrinair?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1265"/>
+        <location filename="../src/mainwindow.cpp" line="1176"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Ydych chi&apos;n siŵr eich bod am ddileu %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1310"/>
+        <location filename="../src/mainwindow.cpp" line="1208"/>
         <source>No password selected for OTP generation</source>
         <translation>Dim cyfrinair wedi&apos;i ddewis ar gyfer cynhyrchu OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1455"/>
+        <location filename="../src/mainwindow.cpp" line="1340"/>
         <source>Profile changed to %1</source>
         <translation>Wedi newid y proffil i %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1610"/>
+        <location filename="../src/mainwindow.cpp" line="1492"/>
         <source>Open folder with file manager</source>
         <translation>Agor plygell gyda&apos;r rheolwr ffeiliau</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1625"/>
-        <location filename="../src/mainwindow.cpp" line="1762"/>
+        <location filename="../src/mainwindow.cpp" line="1507"/>
+        <location filename="../src/mainwindow.cpp" line="1638"/>
         <source>Rename folder</source>
         <translation>Ailenwi plygell</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1629"/>
+        <location filename="../src/mainwindow.cpp" line="1511"/>
         <source>Rename password</source>
         <translation>Ailenwi&apos;r cyfrinair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1639"/>
+        <location filename="../src/mainwindow.cpp" line="1520"/>
         <source>Share</source>
         <translation>Rhannu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1649"/>
+        <location filename="../src/mainwindow.cpp" line="1530"/>
         <source>Re-encrypt all passwords</source>
         <translation>Ail-amgryptio pob cyfrinair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1654"/>
+        <location filename="../src/mainwindow.cpp" line="1535"/>
         <source>Export my public key...</source>
         <translation>Allforio fy allwedd gyhoeddus…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1660"/>
+        <location filename="../src/mainwindow.cpp" line="1541"/>
         <source>Add recipient...</source>
         <translation>Ychwanegu derbynnydd…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>What is this?</source>
         <translation>Beth yw hwn?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1710"/>
+        <location filename="../src/mainwindow.cpp" line="1589"/>
         <source>New folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1856"/>
+        <location filename="../src/mainwindow.cpp" line="1727"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Mae&apos;r cofnod hwn yn cynnwys cyfrinach OTP, nid cyfrinair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1920"/>
+        <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1921"/>
+        <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1929"/>
+        <location filename="../src/mainwindow.cpp" line="1800"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1945"/>
+        <location filename="../src/mainwindow.cpp" line="1816"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1978"/>
-        <location filename="../src/mainwindow.cpp" line="1997"/>
+        <location filename="../src/mainwindow.cpp" line="1849"/>
+        <location filename="../src/mainwindow.cpp" line="1868"/>
         <source>Export Public Key</source>
         <translation>Allforio&apos;r allwedd gyhoeddus</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1979"/>
+        <location filename="../src/mainwindow.cpp" line="1850"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Allforio&apos;ch allwedd gyhoeddus&lt;/h3&gt;&lt;p&gt;Nid oes allwedd lofnodi wedi&apos;i ffurfweddu. Gosodwch un yn Gosodiadau QtPass &amp;gt; allweddi GPG, neu rhedwch hwn mewn terfynell:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Yna anfonwch y ffeil at aelodau eich tîm.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1998"/>
+        <location filename="../src/mainwindow.cpp" line="1869"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1589,17 +1691,17 @@ Expire-Date: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2000"/>
+        <location filename="../src/mainwindow.cpp" line="1871"/>
         <source>No output from gpg.</source>
         <translation>Dim allbwn gan gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2027"/>
+        <location filename="../src/mainwindow.cpp" line="1898"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Rhannu cyfrineiriau gyda GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2028"/>
+        <location filename="../src/mainwindow.cpp" line="1899"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Rhannu cyfrineiriau gyda GPG&lt;/h3&gt;&lt;p&gt;I rannu cyfrineiriau gyda defnyddwyr eraill:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Allforiwch eich allwedd gyhoeddus&lt;/b&gt; ac anfonwch hi at aelodau eich tîm&lt;/li&gt;&lt;li&gt;&lt;b&gt;Mewnforiwch allweddi cyhoeddus aelodau eich tîm&lt;/b&gt; i&apos;ch allweddell GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ail-amgryptiwch y cyfrineiriau&lt;/b&gt; fel y gall pob derbynnydd eu dadgryptio&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Dim ond pobl sydd ag allwedd gyfrinachol gyfatebol sy&apos;n gallu dadgryptio&apos;r cyfrineiriau.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Awgrym:&lt;/b&gt; Defnyddiwch yr un allwedd GPG ar gyfer pob ffolder a rennir.&lt;/p&gt;&lt;p&gt;Gweler y Cwestiynau Cyffredin am ragor o fanylion.&lt;/p&gt;</translation>
     </message>
@@ -1608,57 +1710,57 @@ Expire-Date: 0
         <translation type="vanished">Ail-amgryptio</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1711"/>
+        <location filename="../src/mainwindow.cpp" line="1590"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Plygell newydd: 
 (Bydd yn cael ei roi yn %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1723"/>
-        <location filename="../src/mainwindow.cpp" line="1745"/>
-        <location filename="../src/mainwindow.cpp" line="1879"/>
+        <location filename="../src/mainwindow.cpp" line="1601"/>
+        <location filename="../src/mainwindow.cpp" line="1623"/>
+        <location filename="../src/mainwindow.cpp" line="1750"/>
         <source>Error</source>
         <translation>Gwall</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1724"/>
+        <location filename="../src/mainwindow.cpp" line="1602"/>
         <source>Failed to create folder: %1</source>
         <translation>Methwyd creu ffolder: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
+        <location filename="../src/mainwindow.cpp" line="1624"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Methwyd creu ffeil .gpg-id yn: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1802"/>
+        <location filename="../src/mainwindow.cpp" line="1678"/>
         <source>Rename file</source>
         <translation>Ailenwi ffeil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1762"/>
+        <location filename="../src/mainwindow.cpp" line="1638"/>
         <source>Rename Folder To: </source>
         <translation>Ailenwi plygell yn: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1802"/>
+        <location filename="../src/mainwindow.cpp" line="1678"/>
         <source>Rename File To: </source>
         <translation>Ailenwi ffeil i: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1880"/>
+        <location filename="../src/mainwindow.cpp" line="1751"/>
         <source>Directory does not exist: %1</source>
         <translation>Nid yw&apos;r cyfeiriadur yn bodoli: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1885"/>
-        <location filename="../src/mainwindow.cpp" line="1922"/>
+        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1793"/>
         <source>Re-encrypt passwords</source>
         <translation>Ail-amgryptio cyfrineiriau</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1886"/>
+        <location filename="../src/mainwindow.cpp" line="1757"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -1686,61 +1788,62 @@ Parhau?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="167"/>
+        <location filename="../src/pass.cpp" line="163"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="175"/>
+        <location filename="../src/pass.cpp" line="171"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="195"/>
+        <location filename="../src/pass.cpp" line="191"/>
         <source>Invalid password length</source>
         <translation>Hyd cyfrinair annilys</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="196"/>
+        <location filename="../src/pass.cpp" line="192"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>Methu cynhyrchu cyfrinair gyda hyd sero.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="237"/>
+        <location filename="../src/pass.cpp" line="230"/>
         <source>No characters chosen</source>
         <translation>Dim nodau wedi&apos;u dewis</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="238"/>
+        <location filename="../src/pass.cpp" line="231"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Does dim modd creu cyfrinair, does dim nodau i&apos;w dewis o&apos;r set yn y cyfluniad!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="432"/>
+        <location filename="../src/pass.cpp" line="425"/>
+        <location filename="../src/pass.cpp" line="426"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">Nid oes ffeil weithredadwy GPG wedi&apos;i ffurfweddu</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="537"/>
-        <location filename="../src/pass.cpp" line="556"/>
+        <location filename="../src/pass.cpp" line="531"/>
+        <location filename="../src/pass.cpp" line="550"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Methodd amgryptio: Mae allwedd GPG wedi dod i ben. Adnewyddwch neu amnewidiwch hi.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="542"/>
-        <location filename="../src/pass.cpp" line="561"/>
+        <location filename="../src/pass.cpp" line="536"/>
+        <location filename="../src/pass.cpp" line="555"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Methodd amgryptio: Mae allwedd GPG wedi&apos;i dirymu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="546"/>
-        <location filename="../src/pass.cpp" line="566"/>
+        <location filename="../src/pass.cpp" line="540"/>
+        <location filename="../src/pass.cpp" line="560"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Methodd amgryptio: ni chanfuwyd allwedd GPG y derbynnydd neu mae&apos;n annilys. Gwiriwch fod ID yr allwedd yn .gpg-id yn gywir ac wedi&apos;i fewnforio.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="550"/>
-        <location filename="../src/pass.cpp" line="570"/>
+        <location filename="../src/pass.cpp" line="544"/>
+        <location filename="../src/pass.cpp" line="564"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Methodd amgryptio. Gwiriwch fod eich allwedd GPG yn ddilys.</translation>
     </message>
@@ -1804,19 +1907,76 @@ Parhau?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="92"/>
+        <location filename="../src/passworddialog.cpp" line="90"/>
         <source>Decrypting…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="269"/>
+        <location filename="../src/passworddialog.cpp" line="267"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">URI otpauth:// neu gyfrinach base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="302"/>
+        <location filename="../src/passworddialog.cpp" line="300"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Cyfrinach OTP annilys</translation>
+    </message>
+</context>
+<context>
+    <name>ProcessOutputPanel</name>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process Output</source>
+        <translation type="unfinished">Allbwn y broses</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="25"/>
+        <source>Clear</source>
+        <translation type="unfinished">Clirio</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="26"/>
+        <source>Clear output</source>
+        <translation type="unfinished">Clirio&apos;r allbwn</translation>
+    </message>
+</context>
+<context>
+    <name>ProfileInit</name>
+    <message>
+        <location filename="../src/profileinit.cpp" line="32"/>
+        <source>Could not create %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/profileinit.cpp" line="54"/>
+        <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="72"/>
+        <source>No recipient selected; %1 was not written.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="79"/>
+        <source>Could not write %1: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="105"/>
+        <source>Could not sign %1 with %2: %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="124"/>
+        <source>git %1 failed in %2: %3</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1889,9 +2049,8 @@ Parhau?</translation>
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="138"/>
         <source>Generating GPG key pair</source>
-        <translation>Cynhyrchu pâr allweddol GPG</translation>
+        <translation type="vanished">Cynhyrchu pâr allweddol GPG</translation>
     </message>
     <message>
         <source>Failed to connect WebDAV:
@@ -1944,12 +2103,11 @@ Parhau?</translation>
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="181"/>
         <source>GPG key pair generation failed</source>
-        <translation>Methodd cynhyrchu pâr allweddi GPG</translation>
+        <translation type="vanished">Methodd cynhyrchu pâr allweddi GPG</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="256"/>
+        <location filename="../src/qtpass.cpp" line="238"/>
         <source>GPG key pair generated successfully</source>
         <translation>Pâr allweddi GPG wedi&apos;i gynhyrchu&apos;n llwyddiannus</translation>
     </message>
@@ -1966,22 +2124,22 @@ Parhau?</translation>
         <translation type="vanished">Copïo i&apos;r Clipfwrdd</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="313"/>
+        <location filename="../src/qtpass.cpp" line="293"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">Methwyd cychwyn qrencode: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="321"/>
+        <location filename="../src/qtpass.cpp" line="301"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">Ni orffennodd qrencode mewn pryd</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="333"/>
+        <location filename="../src/qtpass.cpp" line="313"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">Chwalodd qrencode</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="334"/>
+        <location filename="../src/qtpass.cpp" line="314"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">Gorffennodd qrencode gyda&apos;r cod %1</translation>
     </message>
@@ -1993,12 +2151,12 @@ Parhau?</translation>
         <translation type="vanished">gorfodi trosysgrifo?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="379"/>
+        <location filename="../src/storemodel.cpp" line="376"/>
         <source>Force overwrite?</source>
         <translation>Gorfodi trosysgrifennu?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="380"/>
+        <location filename="../src/storemodel.cpp" line="377"/>
         <source>overwrite %1 with %2?</source>
         <translation>trosysgrifo %1 gyda %2?</translation>
     </message>
@@ -2006,32 +2164,32 @@ Parhau?</translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="52"/>
+        <location filename="../src/trayicon.cpp" line="47"/>
         <source>&amp;Show</source>
         <translation>&amp;Dangos</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="54"/>
+        <location filename="../src/trayicon.cpp" line="49"/>
         <source>&amp;Hide</source>
         <translation>&amp;Cuddio</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="57"/>
+        <location filename="../src/trayicon.cpp" line="52"/>
         <source>Mi&amp;nimize</source>
         <translation>&amp;Lleihau</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="60"/>
+        <location filename="../src/trayicon.cpp" line="55"/>
         <source>Ma&amp;ximize</source>
         <translation>&amp;Uchafu</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="63"/>
+        <location filename="../src/trayicon.cpp" line="58"/>
         <source>&amp;Restore</source>
         <translation>&amp;Adfer</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="66"/>
+        <location filename="../src/trayicon.cpp" line="61"/>
         <source>&amp;Quit</source>
         <translation>&amp;Gadael</translation>
     </message>
@@ -2095,42 +2253,42 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <translation>Mewnforio allwedd GPG o ffeil neu o&apos;r clipfwrdd</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="73"/>
+        <location filename="../src/usersdialog.cpp" line="74"/>
         <source>Keylist missing</source>
         <translation>Keylist ar goll</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="74"/>
+        <location filename="../src/usersdialog.cpp" line="75"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Methwyd cyrchu rhestr o allweddi GPG sydd ar gael</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="147"/>
+        <location filename="../src/usersdialog.cpp" line="154"/>
         <source>Key not found in keyring</source>
         <translation>Bysell heb ei ganfod yn y cylch allweddi</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="285"/>
+        <location filename="../src/usersdialog.cpp" line="310"/>
         <source>created</source>
         <translation>creu</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="289"/>
+        <location filename="../src/usersdialog.cpp" line="314"/>
         <source>expires</source>
         <translation>i ben</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="309"/>
+        <location filename="../src/usersdialog.cpp" line="334"/>
         <source>[INVALID] </source>
         <translation>[ANNILYS] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="315"/>
+        <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[EXPIRED] </source>
         <translation>[WEDI DOD I BEN] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="319"/>
+        <location filename="../src/usersdialog.cpp" line="344"/>
         <source>[PARTIAL] </source>
         <translation>[RHANNOL] </translation>
     </message>
