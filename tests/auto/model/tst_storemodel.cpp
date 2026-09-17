@@ -8,6 +8,7 @@
 #include <QMimeData>
 #include <QtTest>
 
+#include "../../../src/pass.h"
 #include "../../../src/storemodel.h"
 
 class tst_storemodel : public QObject {
@@ -34,6 +35,11 @@ private Q_SLOTS:
   void dropMimeDataRejectsSourceOutsideStore();
   void dropMimeDataRejectsAbsoluteOutsideSource();
   void dropMimeDataRejectsSymlinkEscape();
+  void dropWithoutBackendDoesNothing();
+  void dropIgnoreActionAcceptsWithoutCallingTheBackend();
+  void dropFileOntoFolderMovesItIntoTheFolder();
+  void dropFileOntoFolderWithCopyActionCopies();
+  void dropFolderOntoFolderNestsIt();
   void lessThan();
   void lessThanDirsFirst();
   void supportedDropActions();
@@ -307,6 +313,39 @@ auto makeMimeData(dragAndDropInfoPasswordStore::ItemKind kind,
   return mime;
 }
 
+/**
+ * A Pass that only records what the drop asked for. The accept paths of
+ * dropMimeData() were never exercised: without setPass() performDrop()
+ * returns false at its null check, which is how the file-onto-folder Copy
+ * regression (#1748) slipped through.
+ */
+class RecordingPass : public Pass {
+public:
+  struct Op {
+    QString what;
+    QString src;
+    QString dest;
+    bool force;
+  };
+  RecordingPass() { init(AppSettings()); }
+  void GitInit() override {}
+  void GitPull() override {}
+  void GitPull_b() override {}
+  void GitPush() override {}
+  void Show(QString) override {}
+  void Insert(QString, QString, bool) override {}
+  void Remove(QString, bool) override {}
+  void Init(QString, const QList<UserInfo> &) override {}
+  void Grep(QString, bool) override {}
+  void Move(const QString src, const QString dest, const bool force) override {
+    ops.append({QStringLiteral("move"), src, dest, force});
+  }
+  void Copy(const QString src, const QString dest, const bool force) override {
+    ops.append({QStringLiteral("copy"), src, dest, force});
+  }
+  QList<Op> ops;
+};
+
 struct DropFixture {
   QTemporaryDir tempDir;
   QFileSystemModel fsm;
@@ -342,6 +381,81 @@ struct DropFixture {
   }
 };
 } // namespace
+
+void tst_storemodel::dropWithoutBackendDoesNothing() {
+  DropFixture fx;
+  auto mime =
+      makeMimeData(dragAndDropInfoPasswordStore::ItemKind::File, fx.filePath);
+  QVERIFY2(
+      !fx.sm.dropMimeData(mime.get(), Qt::MoveAction, 0, 0, fx.folderProxy()),
+      "with no Pass set the drop must be refused, not crash");
+}
+
+void tst_storemodel::dropIgnoreActionAcceptsWithoutCallingTheBackend() {
+  DropFixture fx;
+  RecordingPass pass;
+  fx.sm.setPass(&pass);
+  auto mime =
+      makeMimeData(dragAndDropInfoPasswordStore::ItemKind::File, fx.filePath);
+  QVERIFY(
+      fx.sm.dropMimeData(mime.get(), Qt::IgnoreAction, 0, 0, fx.folderProxy()));
+  QVERIFY(pass.ops.isEmpty());
+}
+
+/**
+ * @brief The accept path: a file dropped on a folder is moved into it, no
+ *        force, with the store-side absolute paths.
+ */
+void tst_storemodel::dropFileOntoFolderMovesItIntoTheFolder() {
+  DropFixture fx;
+  RecordingPass pass;
+  fx.sm.setPass(&pass);
+  auto mime =
+      makeMimeData(dragAndDropInfoPasswordStore::ItemKind::File, fx.filePath);
+  QVERIFY(
+      fx.sm.dropMimeData(mime.get(), Qt::MoveAction, 0, 0, fx.folderProxy()));
+  QCOMPARE(pass.ops.size(), 1);
+  QCOMPARE(pass.ops.first().what, QStringLiteral("move"));
+  QCOMPARE(pass.ops.first().src, QDir::cleanPath(fx.filePath));
+  QCOMPARE(pass.ops.first().dest, QDir::cleanPath(fx.folderPath));
+  QVERIFY2(!pass.ops.first().force, "dropping into a folder never forces");
+}
+
+void tst_storemodel::dropFileOntoFolderWithCopyActionCopies() {
+  DropFixture fx;
+  RecordingPass pass;
+  fx.sm.setPass(&pass);
+  auto mime =
+      makeMimeData(dragAndDropInfoPasswordStore::ItemKind::File, fx.filePath);
+  QVERIFY(
+      fx.sm.dropMimeData(mime.get(), Qt::CopyAction, 0, 0, fx.folderProxy()));
+  QCOMPARE(pass.ops.size(), 1);
+  QCOMPARE(pass.ops.first().what, QStringLiteral("copy"));
+  QCOMPARE(pass.ops.first().dest, QDir::cleanPath(fx.folderPath));
+  QVERIFY(!pass.ops.first().force);
+}
+
+/**
+ * @brief A folder dropped on a folder goes *inside* it: the destination
+ *        is target/<source name>, not the target itself.
+ */
+void tst_storemodel::dropFolderOntoFolderNestsIt() {
+  DropFixture fx;
+  const QString other = fx.tempDir.path() + QStringLiteral("/other");
+  QVERIFY(QDir().mkdir(other));
+  QTRY_VERIFY(fx.fsm.index(other).isValid());
+  RecordingPass pass;
+  fx.sm.setPass(&pass);
+  auto mime =
+      makeMimeData(dragAndDropInfoPasswordStore::ItemKind::Directory, other);
+  QVERIFY(
+      fx.sm.dropMimeData(mime.get(), Qt::MoveAction, 0, 0, fx.folderProxy()));
+  QCOMPARE(pass.ops.size(), 1);
+  QCOMPARE(pass.ops.first().src, QDir::cleanPath(other));
+  QCOMPARE(pass.ops.first().dest,
+           QDir::cleanPath(fx.folderPath + QStringLiteral("/other")));
+  QVERIFY(!pass.ops.first().force);
+}
 
 void tst_storemodel::mimeDataRoundTripFile() {
   dragAndDropInfoPasswordStore in;
