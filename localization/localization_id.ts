@@ -280,7 +280,7 @@
         <location filename="../src/configdialog.ui" line="765"/>
         <location filename="../src/configdialog.ui" line="768"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pilih berkas eksekusi gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="771"/>
@@ -295,7 +295,7 @@
         <location filename="../src/configdialog.ui" line="778"/>
         <location filename="../src/configdialog.ui" line="781"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pilih berkas eksekusi git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="797"/>
@@ -321,7 +321,7 @@
         <location filename="../src/configdialog.ui" line="833"/>
         <location filename="../src/configdialog.ui" line="836"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pilih berkas eksekusi pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="849"/>
@@ -337,7 +337,7 @@
         <location filename="../src/configdialog.ui" line="873"/>
         <location filename="../src/configdialog.ui" line="876"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pilih berkas eksekusi pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
@@ -418,7 +418,7 @@
         <location filename="../src/configdialog.ui" line="1110"/>
         <location filename="../src/configdialog.ui" line="1113"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pilih folder penyimpanan kata sandi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1133"/>
@@ -471,7 +471,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="56"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak tersedia di Wayland; sebagai gantinya gunakan aturan jendela &quot;selalu di atas&quot; dari kompositor Anda</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="69"/>
@@ -561,12 +561,12 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="799"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat menginisialisasi profil %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="801"/>
         <source>Profile %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Profil %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="815"/>
@@ -648,7 +648,7 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/executor.cpp" line="122"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak ada berkas eksekusi yang dikonfigurasi untuk perintah ini</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="157"/>
@@ -658,7 +658,7 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/executor.cpp" line="440"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 mengalami crash atau dihentikan paksa</translation>
     </message>
 </context>
 <context>
@@ -721,7 +721,7 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull gagal: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="185"/>
@@ -828,7 +828,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Enkripsi ulang sedang berjalan</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="838"/>
@@ -844,7 +844,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull gagal, mengenkripsi ulang penyimpanan apa adanya</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="965"/>
@@ -860,25 +860,25 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <location filename="../src/imitatepass.cpp" line="1003"/>
         <source>... and %n more</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>... dan %n lainnya</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1006"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%n berkas tidak dapat dienkripsi ulang:</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1012"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Enkripsi ulang dibatalkan: %1 dari %2 berkas diperiksa, %3 dienkripsi ulang, %4 gagal</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1297"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Berkas eksekusi Git tidak dikonfigurasi, melewati git</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -898,7 +898,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <location filename="../src/imitatepass.cpp" line="1035"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>Tidak melakukan push: %n berkas gagal dienkripsi ulang</numerusform>
         </translation>
     </message>
     <message>
@@ -1077,12 +1077,12 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/keygendialog.cpp" line="257"/>
         <source>No password store backend available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak ada backend penyimpanan kata sandi yang tersedia</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="293"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pembuatan kunci gagal: %1</translation>
     </message>
 </context>
 <context>
@@ -1168,22 +1168,22 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Berkas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Penyimpanan</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pen&amp;gaturan</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">B&amp;antuan</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="421"/>
@@ -1277,22 +1277,22 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Tutup jendela</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="508"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tutup jendela; dengan &quot;Sembunyikan saat ditutup&quot; QtPass tetap berada di tray</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
@@ -1302,32 +1302,32 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;FAQ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Buka pertanyaan yang sering diajukan di qtpass.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="533"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Tentang QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tentang &amp;Qt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="344"/>
@@ -1397,12 +1397,12 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="822"/>
         <source>About QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tentang QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="823"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;GUI multiplatform untuk &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, pengelola kata sandi standar Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Kode sumber dan isu&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Hak cipta &amp;copy; 2014&amp;ndash;%2 IJhack. Berlisensi &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL versi 3&lt;/a&gt; atau yang lebih baru.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="845"/>
@@ -1549,7 +1549,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1589"/>
         <source>New folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Folder baru</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1590"/>
@@ -1626,22 +1626,22 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mengenkripsi ulang kata sandi...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Batal</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1800"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Membatalkan enkripsi ulang</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1816"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mengenkripsi ulang kata sandi: %1 dari %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1849"/>
@@ -1692,12 +1692,12 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="163"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Direktori home GPG yang dikonfigurasi %1 tidak ada, menggunakan keyring bawaan</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="171"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Direktori home GPG yang dikonfigurasi %1 tidak ada, menggunakan GNUPGHOME %2 dari lingkungan</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="191"/>
@@ -1801,17 +1801,17 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="164"/>
         <source>Template:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Templat:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="180"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Templat kolom dari berkas .templates penyimpanan. Ctrl+T beralih ke templat berikutnya.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="90"/>
         <source>Decrypting…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mendekripsi…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="267"/>
@@ -1847,34 +1847,34 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="32"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat membuat %1.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="54"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%1 sudah berisi %n berkas terenkripsi; berkas tersebut tidak dienkripsi ulang. Beralih ke profil tersebut dan buka Pengguna untuk melakukannya.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="72"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak ada penerima yang dipilih; %1 tidak ditulis.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="79"/>
         <source>Could not write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat menulis %1: %2</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="105"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat menandatangani %1 dengan %2: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="124"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">git %1 gagal di %2: %3</translation>
     </message>
 </context>
 <context>
@@ -1915,7 +1915,7 @@ Lanjutkan?</translation>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tampilkan sebagai kode QR</translation>
     </message>
 </context>
 <context>
@@ -1941,7 +1941,7 @@ Lanjutkan?</translation>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Salin ke clipboard</translation>
     </message>
 </context>
 <context>
@@ -2114,7 +2114,11 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pilih pengguna mana yang dapat mendekripsi kata sandi yang disimpan di folder ini.
+Catatan: Saat OK ditekan, setiap kata sandi di folder ini dan subfoldernya dienkripsi ulang untuk pengguna yang dipilih; ini bisa memakan waktu.
+Entri tebal memiliki kunci rahasia yang tersedia, pilih salah satu agar Anda sendiri dapat mendekripsi.
+Entri biasa memiliki kunci enkripsi yang dipercaya, pilih entri ini agar orang lain dapat mendekripsi.
+Enkripsi tidak dapat dilakukan ke entri [INVALID] dan [EXPIRED]; entri [PARTIAL] memiliki kunci yang tidak sepenuhnya dipercaya.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>

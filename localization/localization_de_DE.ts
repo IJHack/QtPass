@@ -423,7 +423,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="56"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Unter Wayland nicht verfügbar; verwenden Sie stattdessen die Fensterregel &quot;Immer im Vordergrund&quot; Ihres Compositors</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="80"/>
@@ -502,12 +502,12 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="799"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Profil %1 konnte nicht initialisiert werden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="801"/>
         <source>Profile %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Profil %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="815"/>
@@ -599,7 +599,7 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
         <location filename="../src/configdialog.ui" line="765"/>
         <location filename="../src/configdialog.ui" line="768"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ausführbare Datei für gpg auswählen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="771"/>
@@ -614,7 +614,7 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
         <location filename="../src/configdialog.ui" line="778"/>
         <location filename="../src/configdialog.ui" line="781"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ausführbare Datei für git auswählen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="797"/>
@@ -640,13 +640,13 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
         <location filename="../src/configdialog.ui" line="833"/>
         <location filename="../src/configdialog.ui" line="836"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ausführbare Datei für pwgen auswählen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="873"/>
         <location filename="../src/configdialog.ui" line="876"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ausführbare Datei für pass auswählen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="930"/>
@@ -687,7 +687,7 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
         <location filename="../src/configdialog.ui" line="1110"/>
         <location filename="../src/configdialog.ui" line="1113"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ordner des Kennwortspeichers auswählen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1176"/>
@@ -709,7 +709,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="122"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Für diesen Befehl ist keine ausführbare Datei konfiguriert</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="157"/>
@@ -719,7 +719,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="440"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ist abgestürzt oder wurde beendet</translation>
     </message>
 </context>
 <context>
@@ -828,7 +828,7 @@ Sie können die Benutzerliste nicht ändern!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull fehlgeschlagen: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="185"/>
@@ -889,7 +889,7 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Es läuft bereits eine Neuverschlüsselung</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="838"/>
@@ -905,7 +905,7 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
     <message>
         <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull fehlgeschlagen, der Kennwortspeicher wird im aktuellen Zustand neu verschlüsselt</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="965"/>
@@ -921,27 +921,27 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
         <location filename="../src/imitatepass.cpp" line="1003"/>
         <source>... and %n more</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>... und eine weitere</numerusform>
+            <numerusform>... und %n weitere</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1006"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n Datei konnte nicht neu verschlüsselt werden:</numerusform>
+            <numerusform>%n Dateien konnten nicht neu verschlüsselt werden:</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1012"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neuverschlüsselung abgebrochen: %1 von %2 Dateien geprüft, %3 neu verschlüsselt, %4 fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1297"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Keine ausführbare Git-Datei konfiguriert, git wird übersprungen</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -961,8 +961,8 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
         <location filename="../src/imitatepass.cpp" line="1035"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Kein Git push: %n Datei konnte nicht neu verschlüsselt werden</numerusform>
+            <numerusform>Kein Git push: %n Dateien konnten nicht neu verschlüsselt werden</numerusform>
         </translation>
     </message>
     <message>
@@ -1174,12 +1174,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="257"/>
         <source>No password store backend available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kein Kennwortspeicher-Backend verfügbar</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="293"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Schlüsselgenerierung fehlgeschlagen: %1</translation>
     </message>
 </context>
 <context>
@@ -1265,57 +1265,57 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Fenster schließen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="508"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Schließt das Fenster; mit &quot;Nur minimieren nicht beenden&quot; bleibt QtPass im System Tray</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Schließen</translation>
+        <translation>&amp;Beenden</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;FAQ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die häufig gestellten Fragen auf qtpass.org öffnen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="533"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Über QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Über &amp;Qt</translation>
     </message>
     <message>
         <source>Clear output</source>
@@ -1354,22 +1354,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Datei</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Kennwortspeicher</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Einstellungen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Hilfe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="494"/>
@@ -1425,12 +1425,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="822"/>
         <source>About QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Über QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="823"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Eine plattformübergreifende grafische Oberfläche für &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, den Standard-Passwortmanager unter Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Quellcode und Fehlerberichte&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Lizenziert unter der &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL Version 3&lt;/a&gt; oder neuer.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="927"/>
@@ -1485,7 +1485,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1589"/>
         <source>New folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neuer Ordner</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1590"/>
@@ -1497,22 +1497,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kennwörter werden neu verschlüsselt...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1800"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neuverschlüsselung wird abgebrochen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1816"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kennwörter werden neu verschlüsselt: %1 von %2</translation>
     </message>
     <message>
         <source>Open %1 in browser</source>
@@ -1925,12 +1925,12 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/pass.cpp" line="163"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Das konfigurierte GPG-Home-Verzeichnis %1 existiert nicht, der Standard-Schlüsselbund wird verwendet</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="171"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Das konfigurierte GPG-Home-Verzeichnis %1 existiert nicht, GNUPGHOME %2 aus der Umgebung wird verwendet</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="191"/>
@@ -2034,17 +2034,17 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="164"/>
         <source>Template:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vorlage:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="180"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Feldvorlage aus der .templates-Datei des Kennwortspeichers. Strg+T wechselt zur nächsten.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="90"/>
         <source>Decrypting…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wird entschlüsselt…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="267"/>
@@ -2080,35 +2080,35 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="32"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 konnte nicht erstellt werden.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="54"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%1 enthält bereits %n verschlüsselte Datei; sie wurde nicht neu verschlüsselt. Wechseln Sie dazu zum Profil und öffnen Sie &quot;Benutzer&quot;.</numerusform>
+            <numerusform>%1 enthält bereits %n verschlüsselte Dateien; sie wurden nicht neu verschlüsselt. Wechseln Sie dazu zum Profil und öffnen Sie &quot;Benutzer&quot;.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="72"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kein Empfänger ausgewählt; %1 wurde nicht geschrieben.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="79"/>
         <source>Could not write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 konnte nicht geschrieben werden: %2</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="105"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 konnte nicht mit %2 signiert werden: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="124"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">git %1 in %2 fehlgeschlagen: %3</translation>
     </message>
 </context>
 <context>
@@ -2149,7 +2149,7 @@ Fortfahren?</translation>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Als QR-Code anzeigen</translation>
     </message>
 </context>
 <context>
@@ -2175,7 +2175,7 @@ Fortfahren?</translation>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">In Zwischenablage kopieren</translation>
     </message>
 </context>
 <context>
@@ -2323,7 +2323,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="61"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Schließen</translation>
+        <translation>&amp;Beenden</translation>
     </message>
 </context>
 <context>
@@ -2352,7 +2352,11 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wählen Sie aus, welche Benutzer die in diesem Ordner gespeicherten Kennwörter entschlüsseln dürfen.
+Hinweis: Mit OK wird jedes Kennwort in diesem Ordner und seinen Unterordnern für die ausgewählten Benutzer neu verschlüsselt; das kann eine Weile dauern.
+Fett dargestellte Einträge haben einen geheimen Schlüssel; wählen Sie einen davon aus, um selbst entschlüsseln zu können.
+Normal dargestellte Einträge haben einen vertrauenswürdigen Verschlüsselungsschlüssel; wählen Sie diese aus, damit andere Personen entschlüsseln können.
+Für [UNGÜLTIG]- und [ABGELAUFEN]-Einträge kann nicht verschlüsselt werden; [TEILWEISE]-Einträge haben einen Schlüssel, der nicht vollständig vertrauenswürdig ist.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>

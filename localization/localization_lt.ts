@@ -280,7 +280,7 @@
         <location filename="../src/configdialog.ui" line="765"/>
         <location filename="../src/configdialog.ui" line="768"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirinkite gpg vykdomąjį failą</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="771"/>
@@ -295,7 +295,7 @@
         <location filename="../src/configdialog.ui" line="778"/>
         <location filename="../src/configdialog.ui" line="781"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirinkite git vykdomąjį failą</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="797"/>
@@ -321,7 +321,7 @@
         <location filename="../src/configdialog.ui" line="833"/>
         <location filename="../src/configdialog.ui" line="836"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirinkite pwgen vykdomąjį failą</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="849"/>
@@ -337,7 +337,7 @@
         <location filename="../src/configdialog.ui" line="873"/>
         <location filename="../src/configdialog.ui" line="876"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirinkite pass vykdomąjį failą</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
@@ -418,7 +418,7 @@
         <location filename="../src/configdialog.ui" line="1110"/>
         <location filename="../src/configdialog.ui" line="1113"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirinkite slaptažodžių saugyklos aplanką</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1133"/>
@@ -471,7 +471,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="56"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepasiekiama Wayland aplinkoje; vietoj to naudokite savo kompozitoriaus lango taisyklę „laikyti viršuje“</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="69"/>
@@ -561,12 +561,12 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="799"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepavyko inicijuoti profilio %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="801"/>
         <source>Profile %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Profilis %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="815"/>
@@ -648,7 +648,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/executor.cpp" line="122"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Šiai komandai nesukonfigūruotas vykdomasis failas</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="157"/>
@@ -658,7 +658,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/executor.cpp" line="440"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nulūžo arba buvo priverstinai nutraukta</translation>
     </message>
 </context>
 <context>
@@ -721,7 +721,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git gavimas nepavyko: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="185"/>
@@ -828,7 +828,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pakartotinis šifravimas jau vykdomas</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="838"/>
@@ -844,7 +844,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git gavimas nepavyko, saugykla iš naujo užšifruojama tokia, kokia yra</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="965"/>
@@ -860,29 +860,29 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/imitatepass.cpp" line="1003"/>
         <source>... and %n more</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>... ir dar %n</numerusform>
+            <numerusform>... ir dar %n</numerusform>
+            <numerusform>... ir dar %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1006"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Nepavyko iš naujo užšifruoti %n failo:</numerusform>
+            <numerusform>Nepavyko iš naujo užšifruoti %n failų:</numerusform>
+            <numerusform>Nepavyko iš naujo užšifruoti %n failų:</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1012"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pakartotinis šifravimas atšauktas: patikrinta %1 iš %2 failų, %3 iš naujo užšifruota, %4 nepavyko</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1297"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git vykdomasis failas nesukonfigūruotas, git praleidžiamas</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -902,9 +902,9 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/imitatepass.cpp" line="1035"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Nesiunčiama: %n failo nepavyko iš naujo užšifruoti</numerusform>
+            <numerusform>Nesiunčiama: %n failų nepavyko iš naujo užšifruoti</numerusform>
+            <numerusform>Nesiunčiama: %n failų nepavyko iš naujo užšifruoti</numerusform>
         </translation>
     </message>
     <message>
@@ -1083,12 +1083,12 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.cpp" line="257"/>
         <source>No password store backend available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nėra pasiekiamos slaptažodžių saugojimo programos</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="293"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rakto generavimas nepavyko: %1</translation>
     </message>
 </context>
 <context>
@@ -1174,22 +1174,22 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Failas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Saugykla</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Nustatymai</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Pagalba</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="421"/>
@@ -1283,22 +1283,22 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Už&amp;verti langą</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="508"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Užverti langą; įjungus „Slėpti uždarant“ QtPass lieka sistemos dėkle</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
@@ -1308,32 +1308,32 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;DUK</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atverti dažnai užduodamus klausimus svetainėje qtpass.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="533"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Apie QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Apie &amp;Qt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="344"/>
@@ -1403,12 +1403,12 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="822"/>
         <source>About QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Apie QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="823"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Daugiaplatformė grafinė sąsaja, skirta &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; – standartinei Unix slaptažodžių tvarkytuvei.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Pirminis kodas ir klaidų pranešimai&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Autorių teisės &amp;copy; 2014&amp;ndash;%2 IJhack. Licencijuota pagal &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL 3 versiją&lt;/a&gt; arba naujesnę.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="845"/>
@@ -1559,7 +1559,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1589"/>
         <source>New folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Naujas aplankas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1590"/>
@@ -1636,22 +1636,22 @@ Tęsti?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Slaptažodžiai užšifruojami iš naujo...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atšaukti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1800"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atšaukiamas pakartotinis šifravimas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1816"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Slaptažodžiai užšifruojami iš naujo: %1 iš %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1849"/>
@@ -1702,12 +1702,12 @@ Tęsti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="163"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sukonfigūruotas GPG namų katalogas %1 neegzistuoja, naudojamas numatytasis raktų rinkinys</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="171"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sukonfigūruotas GPG namų katalogas %1 neegzistuoja, naudojamas aplinkos kintamasis GNUPGHOME %2</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="191"/>
@@ -1811,17 +1811,17 @@ Tęsti?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="164"/>
         <source>Template:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Šablonas:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="180"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Laukų šablonas iš saugyklos .templates failo. Ctrl+T perjungia į kitą.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="90"/>
         <source>Decrypting…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iššifruojama…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="267"/>
@@ -1857,36 +1857,36 @@ Tęsti?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="32"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepavyko sukurti %1.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="54"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%1 jau turi %n užšifruotą failą; jis nebuvo iš naujo užšifruotas. Norėdami tai padaryti, persijunkite į šį profilį ir atverkite „Vartotojai“.</numerusform>
+            <numerusform>%1 jau turi %n užšifruotus failus; jie nebuvo iš naujo užšifruoti. Norėdami tai padaryti, persijunkite į šį profilį ir atverkite „Vartotojai“.</numerusform>
+            <numerusform>%1 jau turi %n užšifruotų failų; jie nebuvo iš naujo užšifruoti. Norėdami tai padaryti, persijunkite į šį profilį ir atverkite „Vartotojai“.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="72"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepasirinktas joks gavėjas; %1 nebuvo įrašytas.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="79"/>
         <source>Could not write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepavyko įrašyti %1: %2</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="105"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepavyko pasirašyti %1 raktu %2: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="124"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">git %1 nepavyko kataloge %2: %3</translation>
     </message>
 </context>
 <context>
@@ -1927,7 +1927,7 @@ Tęsti?</translation>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rodyti kaip QR kodą</translation>
     </message>
 </context>
 <context>
@@ -1953,7 +1953,7 @@ Tęsti?</translation>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kopijuoti į iškarpinę</translation>
     </message>
 </context>
 <context>
@@ -2126,7 +2126,11 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirinkite, kurie vartotojai galės iššifruoti šiame aplanke saugomus slaptažodžius.
+Pastaba: paspaudus OK, visi šio aplanko ir jo poaplankių slaptažodžiai iš naujo užšifruojami pasirinktiems vartotojams; tai gali užtrukti.
+Paryškinti įrašai turi prieinamą slaptąjį raktą – pasirinkite vieną iš jų, kad galėtumėte iššifruoti patys.
+Paprasti įrašai turi patikimą šifravimo raktą – pasirinkite juos, kad leistumėte iššifruoti kitiems.
+[INVALID] ir [EXPIRED] įrašams užšifruoti negalima; [PARTIAL] įrašų raktas nėra visiškai patikimas.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>

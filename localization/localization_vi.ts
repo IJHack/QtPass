@@ -280,7 +280,7 @@
         <location filename="../src/configdialog.ui" line="765"/>
         <location filename="../src/configdialog.ui" line="768"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chọn tệp thực thi gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="771"/>
@@ -295,7 +295,7 @@
         <location filename="../src/configdialog.ui" line="778"/>
         <location filename="../src/configdialog.ui" line="781"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chọn tệp thực thi git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="797"/>
@@ -321,7 +321,7 @@
         <location filename="../src/configdialog.ui" line="833"/>
         <location filename="../src/configdialog.ui" line="836"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chọn tệp thực thi pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="849"/>
@@ -337,7 +337,7 @@
         <location filename="../src/configdialog.ui" line="873"/>
         <location filename="../src/configdialog.ui" line="876"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chọn tệp thực thi pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
@@ -418,7 +418,7 @@
         <location filename="../src/configdialog.ui" line="1110"/>
         <location filename="../src/configdialog.ui" line="1113"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chọn thư mục kho mật khẩu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1133"/>
@@ -471,7 +471,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="56"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không khả dụng trên Wayland; thay vào đó hãy dùng quy tắc cửa sổ &quot;luôn ở trên&quot; của compositor</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="69"/>
@@ -561,12 +561,12 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="799"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không thể khởi tạo hồ sơ %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="801"/>
         <source>Profile %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hồ sơ %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="815"/>
@@ -648,7 +648,7 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/executor.cpp" line="122"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chưa cấu hình tệp thực thi cho lệnh này</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="157"/>
@@ -658,7 +658,7 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/executor.cpp" line="440"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 đã gặp sự cố hoặc bị buộc dừng</translation>
     </message>
 </context>
 <context>
@@ -721,7 +721,7 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull thất bại: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="185"/>
@@ -828,7 +828,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Một quá trình mã hóa lại đang chạy</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="838"/>
@@ -844,7 +844,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull thất bại, đang mã hóa lại kho ở trạng thái hiện tại</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="965"/>
@@ -860,25 +860,25 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <location filename="../src/imitatepass.cpp" line="1003"/>
         <source>... and %n more</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>... và %n tệp khác</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1006"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>Không thể mã hóa lại %n tệp:</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1012"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mã hóa lại đã bị hủy: đã kiểm tra %1 trên %2 tệp, %3 đã mã hóa lại, %4 thất bại</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1297"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chưa cấu hình tệp thực thi Git, bỏ qua git</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -898,7 +898,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <location filename="../src/imitatepass.cpp" line="1035"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>Không push: %n tệp mã hóa lại thất bại</numerusform>
         </translation>
     </message>
     <message>
@@ -1077,12 +1077,12 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/keygendialog.cpp" line="257"/>
         <source>No password store backend available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không có backend kho mật khẩu nào khả dụng</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="293"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tạo khóa thất bại: %1</translation>
     </message>
 </context>
 <context>
@@ -1168,22 +1168,22 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tệp (&amp;F)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kho (&amp;S)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cài đặt (&amp;E)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Trợ giúp (&amp;H)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="421"/>
@@ -1277,22 +1277,22 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Đóng cửa sổ (&amp;C)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="508"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Đóng cửa sổ; với &quot;Ẩn khi đóng&quot;, QtPass vẫn nằm trong khay hệ thống</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
@@ -1302,32 +1302,32 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Câu hỏi thường gặp (&amp;F)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mở trang câu hỏi thường gặp trên qtpass.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="533"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Giới thiệu QtPass (&amp;A)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Giới thiệu Qt (&amp;Q)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="344"/>
@@ -1458,12 +1458,12 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="822"/>
         <source>About QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Giới thiệu QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="823"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Giao diện đồ họa đa nền tảng cho &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, trình quản lý mật khẩu chuẩn Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Mã nguồn và vấn đề&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Bản quyền &amp;copy; 2014&amp;ndash;%2 IJhack. Được cấp phép theo &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL phiên bản 3&lt;/a&gt; hoặc mới hơn.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="927"/>
@@ -1561,7 +1561,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1589"/>
         <source>New folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Thư mục mới</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1590"/>
@@ -1638,22 +1638,22 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Đang mã hóa lại mật khẩu...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hủy</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1800"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Đang hủy mã hóa lại</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1816"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Đang mã hóa lại mật khẩu: %1 trên %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1849"/>
@@ -1704,12 +1704,12 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/pass.cpp" line="163"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Thư mục GPG home đã cấu hình %1 không tồn tại, đang sử dụng kho khóa mặc định</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="171"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Thư mục GPG home đã cấu hình %1 không tồn tại, đang sử dụng GNUPGHOME %2 từ biến môi trường</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="191"/>
@@ -1813,17 +1813,17 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="164"/>
         <source>Template:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mẫu:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="180"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mẫu trường từ tệp .templates của kho. Ctrl+T chuyển sang mẫu tiếp theo.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="90"/>
         <source>Decrypting…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Đang giải mã…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="267"/>
@@ -1859,34 +1859,34 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="32"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không thể tạo %1.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="54"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%1 đã chứa %n tệp mã hóa; chúng chưa được mã hóa lại. Hãy chuyển sang hồ sơ này và mở Người dùng để thực hiện.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="72"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chưa chọn người nhận nào; %1 chưa được ghi.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="79"/>
         <source>Could not write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không thể ghi %1: %2</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="105"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không thể ký %1 bằng %2: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="124"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">git %1 thất bại trong %2: %3</translation>
     </message>
 </context>
 <context>
@@ -1927,7 +1927,7 @@ Tiếp tục?</translation>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hiển thị dưới dạng mã QR</translation>
     </message>
 </context>
 <context>
@@ -1953,7 +1953,7 @@ Tiếp tục?</translation>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sao chép vào clipboard</translation>
     </message>
 </context>
 <context>
@@ -2126,7 +2126,11 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chọn người dùng nào có thể giải mã mật khẩu được lưu trữ trong thư mục này.
+Lưu ý: Khi nhấn OK, mọi mật khẩu trong thư mục này và các thư mục con sẽ được mã hóa lại cho những người dùng đã chọn; việc này có thể mất một lúc.
+Các mục in đậm có khóa bí mật khả dụng, chọn một trong số này để chính bạn có thể giải mã.
+Các mục thường có khóa mã hóa đáng tin cậy, chọn những mục này để cho phép người khác giải mã.
+Không thể mã hóa cho các mục [KHÔNG HỢP LỆ] và [HẾT HẠN]; các mục [MỘT PHẦN] có khóa chưa được tin cậy hoàn toàn.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>

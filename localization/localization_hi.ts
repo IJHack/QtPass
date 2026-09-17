@@ -280,7 +280,7 @@
         <location filename="../src/configdialog.ui" line="765"/>
         <location filename="../src/configdialog.ui" line="768"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">gpg निष्पादन योग्य फ़ाइल चुनें</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="771"/>
@@ -295,7 +295,7 @@
         <location filename="../src/configdialog.ui" line="778"/>
         <location filename="../src/configdialog.ui" line="781"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">git निष्पादन योग्य फ़ाइल चुनें</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="797"/>
@@ -321,7 +321,7 @@
         <location filename="../src/configdialog.ui" line="833"/>
         <location filename="../src/configdialog.ui" line="836"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pwgen निष्पादन योग्य फ़ाइल चुनें</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="849"/>
@@ -337,7 +337,7 @@
         <location filename="../src/configdialog.ui" line="873"/>
         <location filename="../src/configdialog.ui" line="876"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass निष्पादन योग्य फ़ाइल चुनें</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
@@ -418,7 +418,7 @@
         <location filename="../src/configdialog.ui" line="1110"/>
         <location filename="../src/configdialog.ui" line="1113"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">पासवर्ड स्टोर फ़ोल्डर चुनें</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1133"/>
@@ -471,7 +471,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="56"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wayland पर उपलब्ध नहीं; इसके बजाय अपने कंपोज़िटर के &quot;ऊपर रखें&quot; (keep above) विंडो नियम का उपयोग करें</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="69"/>
@@ -561,12 +561,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="799"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">प्रोफ़ाइल %1 आरंभ नहीं किया जा सका</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="801"/>
         <source>Profile %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">प्रोफ़ाइल %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="815"/>
@@ -648,7 +648,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/executor.cpp" line="122"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">इस कमांड के लिए कोई निष्पादन योग्य फ़ाइल कॉन्फ़िगर नहीं है</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="157"/>
@@ -658,7 +658,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/executor.cpp" line="440"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 क्रैश हो गया या बलपूर्वक बंद कर दिया गया</translation>
     </message>
 </context>
 <context>
@@ -721,7 +721,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git पुल विफल: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="185"/>
@@ -828,7 +828,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">एक पुन: एन्क्रिप्शन पहले से चल रहा है</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="838"/>
@@ -844,7 +844,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git पुल विफल, स्टोर को जैसा है वैसा ही पुन: एन्क्रिप्ट किया जा रहा है</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="965"/>
@@ -860,27 +860,27 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="1003"/>
         <source>... and %n more</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>... और %n अन्य</numerusform>
+            <numerusform>... और %n अन्य</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1006"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n फ़ाइल पुन: एन्क्रिप्ट नहीं की जा सकी:</numerusform>
+            <numerusform>%n फ़ाइलें पुन: एन्क्रिप्ट नहीं की जा सकीं:</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1012"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">पुन: एन्क्रिप्शन रद्द किया गया: %2 में से %1 फ़ाइलें जांची गईं, %3 पुन: एन्क्रिप्ट की गईं, %4 विफल</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1297"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git निष्पादन योग्य फ़ाइल कॉन्फ़िगर नहीं है, git छोड़ा जा रहा है</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -900,8 +900,8 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="1035"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>पुश नहीं किया जा रहा: %n फ़ाइल पुन: एन्क्रिप्ट करने में विफल</numerusform>
+            <numerusform>पुश नहीं किया जा रहा: %n फ़ाइलें पुन: एन्क्रिप्ट करने में विफल</numerusform>
         </translation>
     </message>
     <message>
@@ -1080,12 +1080,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="257"/>
         <source>No password store backend available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">कोई पासवर्ड स्टोर बैकएंड उपलब्ध नहीं है</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="293"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">कुंजी निर्माण विफल: %1</translation>
     </message>
 </context>
 <context>
@@ -1171,22 +1171,22 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;फ़ाइल</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;स्टोर</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">से&amp;टिंग्स</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="371"/>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">स&amp;हायता</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="421"/>
@@ -1280,22 +1280,22 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;विंडो बंद करें</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="508"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">विंडो बंद करें; &quot;बंद करने पर छिपाएं&quot; के साथ QtPass ट्रे में रहता है</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
@@ -1305,32 +1305,32 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;FAQ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qtpass.org पर अक्सर पूछे जाने वाले प्रश्न खोलें</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="533"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QtPass के &amp;बारे में</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Qt के बारे में</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="344"/>
@@ -1463,12 +1463,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="822"/>
         <source>About QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QtPass के बारे में</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="823"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;मानक Unix पासवर्ड मैनेजर &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; के लिए एक मल्टी-प्लेटफ़ॉर्म GUI।&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;स्रोत कोड और समस्याएं&lt;/a&gt;&lt;/p&gt;&lt;p&gt;कॉपीराइट &amp;copy; 2014&amp;ndash;%2 IJhack. &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL संस्करण 3&lt;/a&gt; या उसके बाद के संस्करण के अंतर्गत लाइसेंस प्राप्त।&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="927"/>
@@ -1566,7 +1566,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1589"/>
         <source>New folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">नया फ़ोल्डर</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1590"/>
@@ -1643,22 +1643,22 @@ Continue?</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">पासवर्ड पुन: एन्क्रिप्ट किए जा रहे हैं...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">रद्द करें</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1800"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">पुन: एन्क्रिप्शन रद्द किया जा रहा है</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1816"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">पासवर्ड पुन: एन्क्रिप्ट किए जा रहे हैं: %2 में से %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1849"/>
@@ -1709,12 +1709,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="163"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">कॉन्फ़िगर किया गया GPG होम %1 मौजूद नहीं है, डिफ़ॉल्ट कीरिंग का उपयोग किया जा रहा है</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="171"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">कॉन्फ़िगर किया गया GPG होम %1 मौजूद नहीं है, परिवेश से GNUPGHOME %2 का उपयोग किया जा रहा है</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="191"/>
@@ -1818,17 +1818,17 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="164"/>
         <source>Template:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">टेम्पलेट:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="180"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">स्टोर की .templates फ़ाइल से फ़ील्ड टेम्पलेट। Ctrl+T अगले टेम्पलेट पर स्विच करता है।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="90"/>
         <source>Decrypting…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">डिक्रिप्ट किया जा रहा है…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="267"/>
@@ -1864,35 +1864,35 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="32"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 नहीं बनाया जा सका।</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="54"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%1 में पहले से %n एन्क्रिप्टेड फ़ाइल है; उसे पुन: एन्क्रिप्ट नहीं किया गया। ऐसा करने के लिए प्रोफ़ाइल पर स्विच करें और &quot;उपयोगकर्ता&quot; खोलें।</numerusform>
+            <numerusform>%1 में पहले से %n एन्क्रिप्टेड फ़ाइलें हैं; उन्हें पुन: एन्क्रिप्ट नहीं किया गया। ऐसा करने के लिए प्रोफ़ाइल पर स्विच करें और &quot;उपयोगकर्ता&quot; खोलें।</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="72"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">कोई प्राप्तकर्ता चयनित नहीं; %1 नहीं लिखा गया।</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="79"/>
         <source>Could not write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 नहीं लिखा जा सका: %2</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="105"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%2 से %1 पर हस्ताक्षर नहीं किया जा सका: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="124"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%2 में git %1 विफल: %3</translation>
     </message>
 </context>
 <context>
@@ -1933,7 +1933,7 @@ Continue?</source>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QR कोड के रूप में दिखाएं</translation>
     </message>
 </context>
 <context>
@@ -1959,7 +1959,7 @@ Continue?</source>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">क्लिपबोर्ड पर कॉपी करें</translation>
     </message>
 </context>
 <context>
@@ -2132,7 +2132,11 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">चुनें कि कौन से उपयोगकर्ता इस फ़ोल्डर में संग्रहीत पासवर्ड को डिक्रिप्ट कर सकें।
+नोट: OK पर इस फ़ोल्डर और इसके उपफ़ोल्डरों का प्रत्येक पासवर्ड चयनित उपयोगकर्ताओं के लिए पुन: एन्क्रिप्ट किया जाता है; इसमें कुछ समय लग सकता है।
+बोल्ड प्रविष्टियों में गुप्त कुंजी उपलब्ध है, स्वयं डिक्रिप्ट कर पाने के लिए इनमें से एक चुनें।
+सादी प्रविष्टियों में विश्वसनीय एन्क्रिप्शन कुंजी है, अन्य लोगों को डिक्रिप्ट करने की अनुमति देने के लिए इन्हें चुनें।
+[अमान्य] और [समाप्त] प्रविष्टियों के लिए एन्क्रिप्ट नहीं किया जा सकता; [आंशिक] प्रविष्टियों की कुंजी पूरी तरह विश्वसनीय नहीं है।</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
