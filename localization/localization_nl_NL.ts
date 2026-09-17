@@ -170,13 +170,13 @@
         <location filename="../src/configdialog.ui" line="765"/>
         <location filename="../src/configdialog.ui" line="768"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies de gpg executable</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
         <location filename="../src/configdialog.ui" line="781"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies de git executable</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="797"/>
@@ -192,13 +192,13 @@
         <location filename="../src/configdialog.ui" line="833"/>
         <location filename="../src/configdialog.ui" line="836"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies de pwgen executable</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="873"/>
         <location filename="../src/configdialog.ui" line="876"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies de pass executable</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="930"/>
@@ -569,7 +569,7 @@ De waarde wordt nog steeds opgeslagen zoals ingevoerd.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="56"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet beschikbaar op Wayland; gebruik in plaats daarvan de vensterregel &apos;altijd bovenop&apos; van je compositor</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1026"/>
@@ -690,7 +690,7 @@ De waarde wordt nog steeds opgeslagen zoals ingevoerd.</translation>
         <location filename="../src/configdialog.ui" line="1110"/>
         <location filename="../src/configdialog.ui" line="1113"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies de map voor de wachtwoordopslag</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1176"/>
@@ -712,7 +712,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="122"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen uitvoerbaar bestand geconfigureerd voor dit commando</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="157"/>
@@ -722,7 +722,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="440"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 is gecrasht of beëindigd</translation>
     </message>
 </context>
 <context>
@@ -831,7 +831,7 @@ Je kan de gebruikerslijst niet aanpassen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Git pull mislukt: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="185"/>
@@ -892,7 +892,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is al een herversleuteling bezig</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="838"/>
@@ -908,7 +908,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished"></translation>
+        <translation>Git pull mislukt; de opslag wordt opnieuw versleuteld in de huidige staat</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="965"/>
@@ -923,28 +923,28 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1003"/>
         <source>... and %n more</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>... en nog eentje</numerusform>
+            <numerusform>... en nog %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1006"/>
         <source>%n file(s) could not be re-encrypted:</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Bestand %n kon niet opnieuw worden versleuteld:</numerusform>
+            <numerusform>Bestand %n kon niet opnieuw worden versleuteld:</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1012"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Herversleuteling geannuleerd: %1 van de %2 bestanden gecontroleerd, %3 opnieuw versleuteld, %4 mislukt</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1297"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git-uitvoerbaar bestand niet geconfigureerd, Git wordt overgeslagen</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -963,9 +963,9 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1035"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Niet pushen: bij %n bestand is het opnieuw versleutelen mislukt</numerusform>
+            <numerusform>Niet pushen: bij %n bestanden is het opnieuw versleutelen mislukt</numerusform>
         </translation>
     </message>
     <message>
@@ -1858,7 +1858,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1589"/>
         <source>New folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuwe map</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1601"/>
@@ -1932,22 +1932,22 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoorden opnieuw versleutelen...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Annuleren</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1800"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Herversleuteling annuleren</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1816"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoorden opnieuw versleutelen: %1 van %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1849"/>
@@ -2013,12 +2013,12 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="163"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished"></translation>
+        <translation>De geconfigureerde GPG map %1 bestaat niet; de standaard-sleutelbos wordt gebruikt</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="171"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished"></translation>
+        <translation>De geconfigureerde GPG-homemap %1 bestaat niet; GNUPGHOME %2 uit de omgevingsvariabelen wordt gebruikt</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="191"/>
@@ -2122,17 +2122,17 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="164"/>
         <source>Template:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjabloon:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="180"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjabloon voor het veld uit het .templates-bestand van de store. Met Ctrl+T schakelt u over naar het volgende sjabloon.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="90"/>
         <source>Decrypting…</source>
-        <translation type="unfinished"></translation>
+        <translation>Ontsleutelen…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="267"/>
@@ -2237,7 +2237,7 @@ Doorgaan?</translation>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished"></translation>
+        <translation>Als QR-code weergeven</translation>
     </message>
 </context>
 <context>
@@ -2248,13 +2248,13 @@ Doorgaan?</translation>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
         <source>Show password</source>
-        <translation type="unfinished">Wachtwoord tonen</translation>
+        <translation>Wachtwoord tonen</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
         <source>Hide password</source>
-        <translation type="unfinished">Wachtwoord verbergen</translation>
+        <translation>Wachtwoord verbergen</translation>
     </message>
 </context>
 <context>
@@ -2263,7 +2263,7 @@ Doorgaan?</translation>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiëren naar klembord</translation>
     </message>
 </context>
 <context>
@@ -2440,7 +2440,11 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer welke gebruikers wachtwoorden in deze map moeten kunnen ontsleutelen.
+Let op: bij het bevestigen (OK) worden alle wachtwoorden in deze map en de bijbehorende submappen opnieuw versleuteld voor de geselecteerde gebruikers; dit kan enige tijd duren.
+Vetgedrukte items beschikken over een geheime sleutel; selecteer er een om zelf te kunnen ontsleutelen.
+Normale items beschikken over een vertrouwde versleutelingssleutel; selecteer deze om anderen in staat te stellen te ontsleutelen.
+Items met de status [INVALID] of [EXPIRED] kunnen niet worden versleuteld; items met de status [PARTIAL] hebben een sleutel die niet volledig wordt vertrouwd.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
