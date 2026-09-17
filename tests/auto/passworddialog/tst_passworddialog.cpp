@@ -272,6 +272,15 @@ void tst_passworddialog::newEntryNameIsValidatedAsTyped() {
   name->setText(QStringLiteral("mail"));
   QVERIFY(okButton(d)->isEnabled());
   QVERIFY(status->text().isEmpty());
+
+  // A typed .gpg suffix is the file's, not the entry's.
+  folder->setCurrentIndex(1);
+  name->setText(QStringLiteral("vpn.GPG"));
+  QVERIFY2(!okButton(d)->isEnabled(), "still the existing work/vpn");
+  name->setText(QStringLiteral("mail.gpg"));
+  QVERIFY(okButton(d)->isEnabled());
+  okButton(d)->click();
+  QCOMPARE(d.entryPath(), QStringLiteral("work/mail"));
 }
 
 /**

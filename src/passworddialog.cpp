@@ -206,8 +206,12 @@ void PasswordDialog::setNewEntryLocation(const QString &storeRoot,
  * @brief Resolve folder + typed name into an entry path, or say why not.
  */
 auto PasswordDialog::resolveNewEntry(QString *problem) const -> QString {
-  const QString name =
-      QDir::fromNativeSeparators(ui->nameEdit->text().trimmed());
+  QString name = QDir::fromNativeSeparators(ui->nameEdit->text().trimmed());
+  // The suffix belongs to the file, not the entry: Insert() appends it, so a
+  // typed "github.gpg" would otherwise become github.gpg.gpg.
+  if (name.endsWith(QStringLiteral(".gpg"), Qt::CaseInsensitive)) {
+    name.chop(4);
+  }
   if (name.isEmpty()) {
     *problem = tr("Give the entry a name.");
     return {};
