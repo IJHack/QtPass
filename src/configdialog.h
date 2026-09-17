@@ -6,6 +6,7 @@
 #include "appsettings.h"
 #include "enums.h"
 #include "passwordconfiguration.h"
+#include "profile.h"
 
 #include <QDialog>
 
@@ -58,7 +59,7 @@ public:
    * @brief Return all configured profiles.
    * @return Hash of profile name to key-value settings map.
    */
-  auto getProfiles() -> QHash<QString, QHash<QString, QString>>;
+  auto getProfiles() -> Profiles;
 
   /**
    * @brief Run the first-time setup wizard.
@@ -154,15 +155,14 @@ private slots:
 
 private:
   void updateProfileStatus(int row);
-  void loadGitSettingsForProfile(
-      const QString &profileName,
-      const QHash<QString, QHash<QString, QString>> &profiles);
+  void loadGitSettingsForProfile(const QString &profileName,
+                                 const Profiles &profiles);
   QScopedPointer<Ui::ConfigDialog> ui;
 
   auto getSecretKeys() -> QStringList;
 
   void setGitPath(const QString &);
-  void setProfiles(QHash<QString, QHash<QString, QString>>, const QString &);
+  void setProfiles(Profiles, const QString &);
   void usePass(bool usePass);
 
   /**
@@ -201,10 +201,9 @@ private:
   auto checkPasswordStore() -> bool;
   void handleGpgIdFile();
   void selectRecipients(const QString &storePath, bool gitInit);
-  void initializeNewProfiles(
-      const QHash<QString, QHash<QString, QString>> &existingProfiles);
+  void initializeNewProfiles(const Profiles &existingProfiles);
 
-  QHash<QString, QHash<QString, QString>> m_profiles;
+  Profiles m_profiles;
   /// User-defined custom charset, retained while a builtin set is selected so
   /// it is not lost when the line edit shows the builtin's characters instead.
   QString m_customPasswordChars;

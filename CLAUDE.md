@@ -72,6 +72,7 @@ Both inherit from `Pass` (`src/pass.h`), an abstract base exposing the password 
 - `StoreModel` (`src/storemodel.h`) — `QSortFilterProxyModel` wrapping `QFileSystemModel` for the password tree; `rootIndexFor()` maps a directory to the tree root
 - `ProcessOutputPanel` (`src/processoutputpanel.h`) — the dockable "Process Output" console (numbering, trimming, 1000-line cap, sticky auto-scroll, process-name/sensitivity mapping); MainWindow only feeds and shows it
 - `ClipboardManager` (`src/clipboardmanager.h`) — puts secrets on the clipboard, tracks what it copied, autoclear timer; owned by `QtPass`, emits `statusMessage` instead of touching the UI
+- `Profile` / `Profiles` (`src/profile.h`) — one named store (path, signing key, tri-state Git flags as `std::optional<bool>`) and the name→Profile map `QtPassSettings::getProfiles()/setProfiles()` trade in; on-disk keys unchanged
 - `QtPassSettings` (`src/qtpasssettings.h`) — singleton managing all app configuration via `QSettings`; `AppSettings` (`src/appsettings.h`) + `SettingsSerializer` (`src/settingsserializer.h`) are the value-object/load-save facade
 - `FileContent` (`src/filecontent.h`) — parses password files; supports template fields beyond the first line
 - `Util` (`src/util.h`) — static path/binary-discovery helpers, now narrowed: `PathValidator` (store-boundary checks), `SshAuthSock` (SSH_AUTH_SOCK discovery), and `TemplateIO` (`.templates`/`.default_template` I/O) are split out

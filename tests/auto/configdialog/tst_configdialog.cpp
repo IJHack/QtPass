@@ -341,16 +341,16 @@ void tst_configdialog::addProfileSelectsNewRowAfterSort() {
   // QCOMPARE return immediately), so this test never leaks its synthetic
   // profiles into later tests in the run.
   struct ProfileRestorer {
-    QHash<QString, QHash<QString, QString>> saved;
+    Profiles saved;
     ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
   } restorer{QtPassSettings::getProfiles()};
 
-  QHash<QString, QHash<QString, QString>> profiles;
+  Profiles profiles;
   for (const QString &name :
        {QStringLiteral("alpha"), QStringLiteral("beta"),
         QStringLiteral("gamma"), QStringLiteral("delta")}) {
-    QHash<QString, QString> profile;
-    profile.insert("path", "/store/" + name);
+    Profile profile;
+    profile.path = "/store/" + name;
     profiles.insert(name, profile);
   }
   QtPassSettings::setProfiles(profiles);

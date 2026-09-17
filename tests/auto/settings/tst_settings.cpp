@@ -105,28 +105,24 @@ void tst_settings::setAndGetPasswordConfiguration() {
 }
 
 void tst_settings::getProfilesEmpty() {
-  QHash<QString, QHash<QString, QString>> emptyProfiles;
-  QtPassSettings::setProfiles(emptyProfiles);
-
-  QHash<QString, QHash<QString, QString>> profiles =
-      QtPassSettings::getProfiles();
-  QVERIFY(profiles.isEmpty());
+  QtPassSettings::setProfiles(Profiles());
+  QVERIFY(QtPassSettings::getProfiles().isEmpty());
 }
 
 void tst_settings::setAndGetProfiles() {
-  QHash<QString, QHash<QString, QString>> profiles;
-  QHash<QString, QString> profile1;
-  profile1.insert("path", "/test/path");
-  profile1.insert("signingKey", "ABC123");
+  Profiles profiles;
+  Profile profile1;
+  profile1.path = "/test/path";
+  profile1.signingKey = "ABC123";
   profiles.insert("profile1", profile1);
 
   QtPassSettings::setProfiles(profiles);
 
-  QHash<QString, QHash<QString, QString>> readProfiles =
-      QtPassSettings::getProfiles();
+  const Profiles readProfiles = QtPassSettings::getProfiles();
   QVERIFY(!readProfiles.isEmpty());
   QVERIFY(readProfiles.contains("profile1"));
-  QCOMPARE(readProfiles["profile1"]["path"], QString("/test/path"));
+  QCOMPARE(readProfiles["profile1"].path, QString("/test/path"));
+  QCOMPARE(readProfiles["profile1"].signingKey, QString("ABC123"));
 }
 
 void tst_settings::setProfilesPreservesActiveProfile() {
@@ -139,9 +135,9 @@ void tst_settings::setProfilesPreservesActiveProfile() {
   QtPassSettings::save(s);
   QCOMPARE(QtPassSettings::getProfile(), QStringLiteral("work"));
 
-  QHash<QString, QHash<QString, QString>> profiles;
-  QHash<QString, QString> profile;
-  profile.insert("path", "/store/work");
+  Profiles profiles;
+  Profile profile;
+  profile.path = ("/store/work");
   profiles.insert("work", profile);
   QtPassSettings::setProfiles(profiles);
 
@@ -445,69 +441,55 @@ void tst_settings::setAndGetPasswordChars() {
 }
 
 void tst_settings::setAndGetMultipleProfiles() {
-  QHash<QString, QHash<QString, QString>> profiles;
-  QHash<QString, QString> profile1;
-  profile1["path"] = "/path/to/store1";
+  Profiles profiles;
+  Profile profile1;
+  profile1.path = "/path/to/store1";
   profiles["profile1"] = profile1;
 
-  QHash<QString, QString> profile2;
-  profile2["path"] = "/path/to/store2";
+  Profile profile2;
+  profile2.path = "/path/to/store2";
   profiles["profile2"] = profile2;
 
   QtPassSettings::setProfiles(profiles);
-  QHash<QString, QHash<QString, QString>> readProfiles =
-      QtPassSettings::getProfiles();
-  QVERIFY(!readProfiles.isEmpty());
+  const Profiles readProfiles = QtPassSettings::getProfiles();
   QVERIFY2(readProfiles.size() == 2, "Should have exactly 2 profiles");
-  QVERIFY(readProfiles.contains("profile1"));
-  QVERIFY(readProfiles.contains("profile2"));
-  QVERIFY(readProfiles["profile1"].contains("path"));
-  QVERIFY(readProfiles["profile2"].contains("path"));
-  // Verify new git options are in all profiles (issue #112)
-  const QStringList profileNames = {"profile1", "profile2"};
-  for (const QString &profileName : profileNames) {
-    QVERIFY(readProfiles[profileName].contains("useGit"));
-    QVERIFY(readProfiles[profileName].contains("autoPush"));
-    QVERIFY(readProfiles[profileName].contains("autoPull"));
-    // Verify git options default to empty (unset) - compare QString directly
-    // instead of toInt() which treats "true" as 0
-    QVERIFY2(readProfiles[profileName].value("useGit").isEmpty(),
-             "useGit should default to empty");
-    QVERIFY2(readProfiles[profileName].value("autoPush").isEmpty(),
-             "autoPush should default to empty");
-    QVERIFY2(readProfiles[profileName].value("autoPull").isEmpty(),
-             "autoPull should default to empty");
+  QCOMPARE(readProfiles["profile1"].path, QString("/path/to/store1"));
+  QCOMPARE(readProfiles["profile2"].path, QString("/path/to/store2"));
+  // Git flags stay unset (follow the global setting) unless written (#112)
+  for (const QString &profileName : {"profile1", "profile2"}) {
+    QVERIFY2(!readProfiles[profileName].useGit.has_value(),
+             "useGit must be unset for a fresh profile");
+    QVERIFY(!readProfiles[profileName].autoPush.has_value());
+    QVERIFY(!readProfiles[profileName].autoPull.has_value());
   }
 }
 
+/**
+ * @brief The per-profile Git flags round-trip as a tri-state: unset, true and
+ *        false are each preserved, on the same on-disk keys as before.
+ */
 void tst_settings::profileGitOptions() {
-  const QString profileName = "test-git-profile";
+  Profiles profiles;
+  Profile work;
+  work.path = "/work";
+  work.useGit = true;
+  work.autoPush = false;
+  // autoPull deliberately left unset
+  profiles["work"] = work;
+  QtPassSettings::setProfiles(profiles);
 
-  // Initially should return defaults
-  QVERIFY(!QtPassSettings::getProfileAutoPush(profileName, false));
-  QVERIFY(!QtPassSettings::getProfileAutoPull(profileName, false));
-  QVERIFY(!QtPassSettings::getProfileUseGit(profileName, false));
+  const Profiles read = QtPassSettings::getProfiles();
+  QCOMPARE(read["work"].useGit, std::optional<bool>(true));
+  QCOMPARE(read["work"].autoPush, std::optional<bool>(false));
+  QVERIFY(!read["work"].autoPull.has_value());
+  QCOMPARE(read["work"], work);
 
-  // Set values
-  QtPassSettings::setProfileUseGit(profileName, true);
-  QtPassSettings::setProfileAutoPush(profileName, true);
-  QtPassSettings::setProfileAutoPull(profileName, true);
-
-  // Verify values persisted
-  QVERIFY(QtPassSettings::getProfileUseGit(profileName, false));
-  QVERIFY(QtPassSettings::getProfileAutoPush(profileName, false));
-  QVERIFY(QtPassSettings::getProfileAutoPull(profileName, false));
-
-  // Reset to false
-  QtPassSettings::setProfileUseGit(profileName, false);
-  QtPassSettings::setProfileAutoPush(profileName, false);
-  QtPassSettings::setProfileAutoPull(profileName, false);
-
-  QVERIFY(!QtPassSettings::getProfileUseGit(profileName, true));
-  QVERIFY(!QtPassSettings::getProfileAutoPush(profileName, true));
-  QVERIFY(!QtPassSettings::getProfileAutoPull(profileName, true));
-
-  // Cleanup moved to cleanupTestCase() to ensure it runs even on test failure
+  // The on-disk representation is unchanged: "" / "true" / "false".
+  QCOMPARE(Profile::flagToString(std::nullopt), QString());
+  QCOMPARE(Profile::flagToString(true), QStringLiteral("true"));
+  QCOMPARE(Profile::flagFromString(QStringLiteral("false")),
+           std::optional<bool>(false));
+  QVERIFY(!Profile::flagFromString(QStringLiteral("maybe")).has_value());
 }
 
 void tst_settings::setAndGetProfileDefault() {
