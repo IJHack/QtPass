@@ -163,7 +163,13 @@ private:
   struct ProfileEntry {
     QString name;
     Profile profile;
+    /// The name the profile had when the dialog opened (empty for one added
+    /// here), so a rename of the active profile can follow it.
+    QString originalName;
   };
+  /// Designer tooltips of the form fields, put back when validate() has no
+  /// complaint about them.
+  QString m_nameTip, m_pathTip;
   /// The profiles as shown; index == row in profileList.
   QList<ProfileEntry> m_entries;
   /// Row whose fields the form shows, -1 for none.

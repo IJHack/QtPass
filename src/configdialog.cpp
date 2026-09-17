@@ -21,6 +21,7 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QSystemTrayIcon>
+#include <algorithm>
 #include <utility>
 #ifdef Q_OS_WIN
 #include <windows.h>
@@ -82,6 +83,8 @@ ConfigDialog::ConfigDialog(QWidget *parent)
        {ui->profileUseGit, ui->profileAutoPush, ui->profileAutoPull}) {
     connect(box, &QCheckBox::clicked, this, &ConfigDialog::onProfileGitToggled);
   }
+  m_nameTip = ui->profileName->toolTip();
+  m_pathTip = ui->profilePath->toolTip();
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
 
   ui->label->setText(ui->label->text() + VERSION);
@@ -283,8 +286,10 @@ void ConfigDialog::validate() {
       item->setToolTip(!nameProblem.isEmpty() ? nameProblem : pathProblem);
     }
     if (row == m_currentEntry) {
-      ui->profileName->setToolTip(nameProblem);
-      ui->profilePath->setToolTip(pathProblem);
+      ui->profileName->setToolTip(nameProblem.isEmpty() ? m_nameTip
+                                                        : nameProblem);
+      ui->profilePath->setToolTip(pathProblem.isEmpty() ? m_pathTip
+                                                        : pathProblem);
     }
     status = status && nameProblem.isEmpty() && pathProblem.isEmpty();
   }
@@ -338,16 +343,25 @@ void ConfigDialog::on_accepted() {
   const Profiles profiles = getProfiles();
   QtPassSettings::setProfiles(profiles);
 
-  // The active profile's own Git flags replace the global ones, as they do
-  // when switching to it (MainWindow::on_profileBox_currentTextChanged).
-  const auto active = profiles.constFind(QtPassSettings::getProfile());
-  if (active != profiles.constEnd() &&
-      (active->useGit.has_value() || active->autoPush.has_value() ||
-       active->autoPull.has_value())) {
+  // The active profile follows a rename and is forgotten with a deletion;
+  // its own Git flags replace the global ones, as they do when switching to
+  // it (MainWindow::on_profileBox_currentTextChanged).
+  {
     AppSettings s = QtPassSettings::load();
-    s.useGit = active->useGit.value_or(s.useGit);
-    s.autoPush = active->autoPush.value_or(s.autoPush);
-    s.autoPull = active->autoPull.value_or(s.autoPull);
+    const QString wasActive = s.activeProfile;
+    QString nowActive;
+    for (const ProfileEntry &entry : std::as_const(m_entries)) {
+      if (!wasActive.isEmpty() && entry.originalName == wasActive) {
+        nowActive = entry.name;
+      }
+    }
+    s.activeProfile = nowActive;
+    const auto active = profiles.constFind(nowActive);
+    if (active != profiles.constEnd()) {
+      s.useGit = active->useGit.value_or(s.useGit);
+      s.autoPush = active->autoPush.value_or(s.autoPush);
+      s.autoPull = active->autoPull.value_or(s.autoPull);
+    }
     QtPassSettings::save(s);
   }
 
@@ -623,7 +637,7 @@ void ConfigDialog::setProfiles(Profiles profiles,
     if (i.key() == currentProfile) {
       currentRow = m_entries.size();
     }
-    m_entries.append({i.key(), i.value()});
+    m_entries.append({i.key(), i.value(), i.key()});
     ui->profileList->addItem(i.key());
   }
   ui->profileList->setCurrentRow(currentRow);
@@ -674,6 +688,7 @@ void ConfigDialog::loadProfileForm(int row) {
   ui->profileAutoPull->setEnabled(useGit);
   m_loadingForm = false;
   updateProfileStatus();
+  validate();
 }
 
 /**
@@ -703,9 +718,10 @@ void ConfigDialog::initializeNewProfiles(const Profiles &existingProfiles) {
     const Profile &profile = it.value();
     const QString &path = profile.path;
 
-    // Skip if already existed before (check by name and path)
-    if (const auto old = existingProfiles.constFind(name);
-        old != existingProfiles.constEnd() && old->path == path) {
+    // Skip a store that was already a profile when the dialog opened, under
+    // this or another name: a rename is not a new store.
+    if (std::any_of(existingProfiles.cbegin(), existingProfiles.cend(),
+                    [&path](const Profile &old) { return old.path == path; })) {
       continue;
     }
 

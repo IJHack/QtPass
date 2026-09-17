@@ -4,6 +4,8 @@
 #include <QCheckBox>
 #include <QComboBox>
 #include <QDialogButtonBox>
+#include <QDir>
+#include <QFile>
 #include <QGroupBox>
 #include <QLabel>
 #include <QLineEdit>
@@ -12,6 +14,7 @@
 #include <QPushButton>
 #include <QSpinBox>
 #include <QSystemTrayIcon>
+#include <QTemporaryDir>
 #include <QToolButton>
 #include <QtTest>
 
@@ -61,6 +64,7 @@ private Q_SLOTS:
   void addProfileSelectsTheNewOne();
   void profileFormEditsTheSelectedProfile();
   void okWaitsForValidProfiles();
+  void activeProfileFollowsRenameAndDeletion();
   void fieldLabelsHaveBuddies();
   void browseButtonsAreNamed();
   void dialogCanShrinkBelowItsOldMinimum();
@@ -504,6 +508,68 @@ void tst_configdialog::okWaitsForValidProfiles() {
   QVERIFY2(ok->isEnabled(), "the broken profile is gone");
   QCOMPARE(list->count(), 1);
   QCOMPARE(dialog.getProfiles().keys(), QStringList{QStringLiteral("one")});
+}
+
+/**
+ * @brief Renaming the active profile keeps it active under its new name;
+ * deleting it clears the active profile instead of leaving a name behind
+ * that no longer exists. A rename is not a new store, so no initialisation
+ * prompt appears for it.
+ */
+void tst_configdialog::activeProfileFollowsRenameAndDeletion() {
+  struct ProfileRestorer {
+    Profiles saved;
+    AppSettings settings;
+    ~ProfileRestorer() {
+      QtPassSettings::setProfiles(saved);
+      QtPassSettings::save(settings);
+    }
+  } restorer{QtPassSettings::getProfiles(), QtPassSettings::load()};
+
+  QTemporaryDir work;
+  QTemporaryDir home;
+  for (const QTemporaryDir *dir : {&work, &home}) {
+    QFile gpgId(QDir(dir->path()).filePath(QStringLiteral(".gpg-id")));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly));
+    gpgId.write("0000000000000000\n");
+  }
+  Profiles profiles;
+  Profile w;
+  w.path = work.path();
+  profiles.insert(QStringLiteral("work"), w);
+  Profile h;
+  h.path = home.path();
+  profiles.insert(QStringLiteral("home"), h);
+  QtPassSettings::setProfiles(profiles);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("work");
+    QtPassSettings::save(s);
+  }
+
+  {
+    ConfigDialog dialog(nullptr);
+    auto *name = child<QLineEdit>(dialog, "profileName");
+    QCOMPARE(name->text(), QStringLiteral("work"));
+    name->setText(QStringLiteral("office"));
+    emit name->textEdited(name->text());
+    QVERIFY(QMetaObject::invokeMethod(&dialog, "on_accepted"));
+  }
+  QCOMPARE(QtPassSettings::getProfile(), QStringLiteral("office"));
+  QCOMPARE(QtPassSettings::getProfiles().keys(),
+           (QStringList{QStringLiteral("home"), QStringLiteral("office")}));
+
+  {
+    ConfigDialog dialog(nullptr);
+    auto *list = dialog.findChild<QListWidget *>(QStringLiteral("profileList"));
+    QCOMPARE(list->currentItem()->text(), QStringLiteral("office"));
+    QVERIFY(QMetaObject::invokeMethod(&dialog, "on_deleteButton_clicked"));
+    QVERIFY(QMetaObject::invokeMethod(&dialog, "on_accepted"));
+  }
+  QVERIFY2(QtPassSettings::getProfile().isEmpty(),
+           qPrintable(QtPassSettings::getProfile()));
+  QCOMPARE(QtPassSettings::getProfiles().keys(),
+           QStringList{QStringLiteral("home")});
 }
 
 /**
