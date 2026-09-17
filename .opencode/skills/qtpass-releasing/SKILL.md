@@ -62,6 +62,9 @@ make check
 
 # Or manually:
 git archive --prefix=qtpass-x.y.z/ -o qtpass-x.y.z.tar.gz HEAD
+
+# AppImage (CI builds it too; needs Qt 6.8+ and network for linuxdeploy)
+./scripts/build-appimage.sh   # -> dist/QtPass-x.y.z-x86_64.AppImage
 ```
 
 #### macOS
@@ -88,9 +91,9 @@ git push origin vX.Y.Z
 ### 6. GitHub Release
 
 Pushing the tag runs `release-installers.yml`. Its `publish` job builds the
-Windows installer and the macOS dmg, adds `QtPass-x.y.z.tar.gz` / `.zip`
-source archives, creates the release **as a draft** if none exists yet and
-attaches all four. Re-running the workflow replaces the assets of a _draft_;
+Windows installer, the macOS dmg and the Linux AppImage, adds
+`QtPass-x.y.z.tar.gz` / `.zip` source archives, creates the release **as a
+draft** if none exists yet and attaches all five. Re-running the workflow replaces the assets of a _draft_;
 on a published release it only adds missing ones, so signed assets are never
 swapped under their `.asc`. Then:
 
@@ -263,11 +266,12 @@ Follow semantic versioning: MAJOR.MINOR.PATCH
 
 ## Build Locations
 
-| Platform | Output                   |
-| -------- | ------------------------ |
-| Linux    | `qtpass-x.y.z.tar.gz`    |
-| macOS    | `QtPass-x.y.z.dmg`       |
-| Windows  | `QtPass-Setup-x.y.z.exe` |
+| Platform | Output                         |
+| -------- | ------------------------------ |
+| Linux    | `QtPass-x.y.z-x86_64.AppImage` |
+| Source   | `QtPass-x.y.z.tar.gz` / `.zip` |
+| macOS    | `QtPass-x.y.z.dmg`             |
+| Windows  | `QtPass-Setup-x.y.z.exe`       |
 
 ## CI/CD
 

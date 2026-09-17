@@ -4,6 +4,15 @@
 
 First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPass/issues/1682), umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
+### New Features
+
+- A Linux AppImage (`QtPass-x.y.z-x86_64.AppImage`) is built by CI and
+  attached to every release next to the Windows installer and the macOS dmg.
+  It bundles Qt only and uses the `pass`, `gpg` and `git` already on the
+  system, so the existing store, pinentry and smartcard keep working with no
+  sandbox permissions to grant. Needs glibc 2.39 or newer (Ubuntu 24.04,
+  Debian 13, Fedora 40) [#1803](https://github.com/IJHack/QtPass/pull/1803)
+
 ### Security
 
 - WSL commands run through `wsl --exec` instead of the distribution's login
@@ -246,7 +255,7 @@ line ([#1709](https://github.com/IJHack/QtPass/issues/1709)). Qt 5.15 and Qt 6 a
 
 ## [1.8.0](https://github.com/IJHack/QtPass/tree/v1.8.0) (2026-09-13)
 
-### New Features
+### New Features <!-- markdownlint-disable-line MD024 -->
 
 - Built-in TOTP (RFC 6238): one-time passwords are now generated inside QtPass
   instead of shelling out to the `pass-otp` extension, so OTP works on every
