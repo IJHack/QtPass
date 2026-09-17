@@ -716,8 +716,8 @@ void tst_executor::bundledBinaryNextToTheApplicationWins() {
     QSKIP("sh not found in PATH");
   const QString name = QStringLiteral("qtpass-tst-bundled-%1")
                            .arg(QCoreApplication::applicationPid());
-  const QString path =
-      QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(name);
+  const QString path = QDir::cleanPath(
+      QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(name));
   {
     QFile f(path);
     QVERIFY2(f.open(QIODevice::WriteOnly),
@@ -903,8 +903,8 @@ void tst_executor::nonExecutableFileNextToTheApplicationDoesNotMaskPath() {
     QSKIP("sh not found in PATH");
   const QString name = QStringLiteral("qtpass-tst-plain-%1")
                            .arg(QCoreApplication::applicationPid());
-  const QString path =
-      QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(name);
+  const QString path = QDir::cleanPath(
+      QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(name));
   {
     QFile f(path);
     QVERIFY(f.open(QIODevice::WriteOnly));
@@ -943,8 +943,9 @@ void tst_executor::resolveExecutableFindsBundledExeOnWindows() {
 #else
   const QString name = QStringLiteral("qtpass-tst-bundled-%1")
                            .arg(QCoreApplication::applicationPid());
-  const QString path = QDir(QCoreApplication::applicationDirPath())
-                           .absoluteFilePath(name + QStringLiteral(".exe"));
+  const QString path =
+      QDir::cleanPath(QDir(QCoreApplication::applicationDirPath())
+                          .absoluteFilePath(name + QStringLiteral(".exe")));
   {
     QFile f(path);
     QVERIFY(f.open(QIODevice::WriteOnly));
@@ -955,7 +956,7 @@ void tst_executor::resolveExecutableFindsBundledExeOnWindows() {
     QString path;
     ~Cleanup() { QFile::remove(path); }
   } cleanup{path};
-  QCOMPARE(Executor::resolveExecutable(name), QDir::cleanPath(path));
+  QCOMPARE(Executor::resolveExecutable(name), path);
 #endif
 }
 
