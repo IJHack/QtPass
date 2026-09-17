@@ -66,6 +66,7 @@ const QString SettingsConstants::passTemplate = "passTemplate";
 const QString SettingsConstants::useTemplate = "useTemplate";
 const QString SettingsConstants::templateAllFields = "templateAllFields";
 const QString SettingsConstants::showProcessOutput = "showProcessOutput";
+const QString SettingsConstants::showMenuBar = "showMenuBar";
 // actual persisted legacy key (capital B, lowercase t); keep unchanged for
 // backward compatibility with existing user settings - QtPassSettings reads
 // this key

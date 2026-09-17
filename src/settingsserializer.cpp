@@ -103,6 +103,7 @@ auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
   s.autoPush = qs.value(SettingsConstants::autoPush, false).toBool();
   s.showProcessOutput =
       qs.value(SettingsConstants::showProcessOutput, false).toBool();
+  s.showMenuBar = qs.value(SettingsConstants::showMenuBar, true).toBool();
 
   // Templates
   s.passTemplate = qs.value(SettingsConstants::passTemplate).toString();
@@ -182,6 +183,7 @@ void SettingsSerializer::save(QSettings &qs, const AppSettings &s) {
   qs.setValue(SettingsConstants::autoPull, s.autoPull);
   qs.setValue(SettingsConstants::autoPush, s.autoPush);
   qs.setValue(SettingsConstants::showProcessOutput, s.showProcessOutput);
+  qs.setValue(SettingsConstants::showMenuBar, s.showMenuBar);
 
   // Templates
   qs.setValue(SettingsConstants::passTemplate, s.passTemplate);

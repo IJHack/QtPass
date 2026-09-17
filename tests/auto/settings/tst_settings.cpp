@@ -206,6 +206,7 @@ const BoolSetting boolSettings[] = {
     {"useAutoclearPanel", &AppSettings::useAutoclearPanel},
     {"useGrepSearch", &AppSettings::useGrepSearch},
     {"showProcessOutput", &AppSettings::showProcessOutput},
+    {"showMenuBar", &AppSettings::showMenuBar},
 };
 } // namespace
 
@@ -513,6 +514,7 @@ void tst_settings::serializerLoadDefaults() {
   QCOMPARE(s.usePass, false);
   QCOMPARE(s.useGit, false);
   QCOMPARE(s.showProcessOutput, false);
+  QCOMPARE(s.showMenuBar, true); // the bar is on until Ctrl+M says otherwise
   QCOMPARE(s.useGrepSearch, false);
   QCOMPARE(s.clipBoardType, Enums::CLIPBOARD_NEVER);
   // addGPGId defaults to true (every isAddGPGId() call site passes true).

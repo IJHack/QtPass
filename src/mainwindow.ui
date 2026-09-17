@@ -365,6 +365,8 @@
      <string>S&amp;ettings</string>
     </property>
     <addaction name="actionConfig"/>
+    <addaction name="separator"/>
+    <addaction name="actionShowMenuBar"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -484,6 +486,23 @@
    </property>
    <property name="toolTip">
     <string>Manage who can read password in folder</string>
+   </property>
+  </action>
+  <action name="actionShowMenuBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show &amp;menu bar</string>
+   </property>
+   <property name="toolTip">
+    <string>Hide or show the menu bar; Ctrl+M brings it back</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
    </property>
   </action>
   <action name="actionConfig">

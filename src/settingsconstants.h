@@ -71,6 +71,7 @@ public:
   static const QString useTemplate;
   static const QString templateAllFields;
   static const QString showProcessOutput;
+  static const QString showMenuBar;
   static const QString clipBoardType;
 
   // Static-only namespace-like class — instantiation is meaningless.
