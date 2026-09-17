@@ -327,6 +327,7 @@ void tst_usersdialog::selectionSurvivesFilteringAndEscapeClearsTheFilter() {
            "Alice must come back ticked");
 
   dialog.accept();
+  QCOMPARE(pass.initCalls.size(), 1);
   QCOMPARE(
       enabledIds(pass.initCalls.first().second),
       QStringList{QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")});
