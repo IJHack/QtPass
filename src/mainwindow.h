@@ -23,10 +23,8 @@ namespace Ui {
 class MainWindow;
 }
 
-class QDockWidget;
+class ProcessOutputPanel;
 class QProgressDialog;
-class QTextEdit;
-class QToolButton;
 class QTreeWidgetItem;
 class QtPass;
 class PasswordDisplayPanel;
@@ -279,7 +277,6 @@ public slots:
 private slots:
   void on_grepButton_toggled(bool checked);
   void on_grepResultsList_itemClicked(QTreeWidgetItem *item, int column);
-  void on_clearOutputButton_clicked();
   void addPassword();
   void addFolder();
   void onEdit();
@@ -314,7 +311,6 @@ private:
   GrepSearchController m_grep;
   PasswordDisplayPanel *m_displayPanel = nullptr;
   bool m_firstShowCompleted = false;
-  bool m_autoScroll = true;
   /// True between onOtp() starting a decrypt and otpFromFileToClipboard
   /// consuming it. Suppresses passShowHandler's password copy for that request,
   /// and makes a connection left armed by a failed decrypt inert.
@@ -335,18 +331,13 @@ private:
   /// keeps each Show(file) completion matched to the file it was asked for.
   /// Cleared on completion and, for a failed decrypt, by cancelOtpRequest().
   bool m_passwordCopyPending = false;
-  int m_outputCounter = 0;
-  static constexpr int MaxOutputLines = 1000;
-  // The process output panel is a QDockWidget at the bottom dock area,
-  // created programmatically in initProcessOutputPanel(). It isn't part
-  // of the .ui because uic places its QMainWindow children in
-  // centralWidget / statusBar / menuBar / toolBars / dock-widget slots
-  // only — a sibling widget at the QMainWindow level isn't laid out and
-  // ends up obscuring the centralWidget. See #1192 for the symptom.
-  QDockWidget *m_processOutputDock = nullptr;
-  QWidget *m_processOutputWidget = nullptr;
-  QTextEdit *m_processOutputEdit = nullptr;
-  QToolButton *m_clearOutputButton = nullptr;
+  // The process output console is a QDockWidget at the bottom dock area,
+  // created programmatically. It isn't part of the .ui because uic places
+  // its QMainWindow children in centralWidget / statusBar / menuBar /
+  // toolBars / dock-widget slots only — a sibling widget at the
+  // QMainWindow level isn't laid out and ends up obscuring the
+  // centralWidget. See #1192 for the symptom.
+  ProcessOutputPanel *m_processOutput = nullptr;
   QFileSystemModel model;
   StoreModel proxyModel;
   QTimer clearPanelTimer, searchTimer;
@@ -374,7 +365,6 @@ private:
 
   void initToolBarButtons();
   void initStatusBar();
-  void initProcessOutputPanel();
 
   void selectFirstFile();
   auto firstFile(QModelIndex parentIndex) -> QModelIndex;
@@ -404,13 +394,7 @@ private:
   void updateGrepButtonVisibility();
   void enableGitButtons(const bool &);
 
-  void appendProcessOutput(const QString &output, bool isError,
-                           const QString &linePrefix = QString());
   void updateProcessOutputVisibility();
-  void limitOutputLines();
-
-  static auto getProcessName(Enums::PROCESS pid) -> QString;
-  static auto isSensitiveProcess(Enums::PROCESS pid) -> bool;
 };
 
 #endif // SRC_MAINWINDOW_H_

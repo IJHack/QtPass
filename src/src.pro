@@ -108,6 +108,7 @@ SOURCES   += mainwindow.cpp \
              simpletransaction.cpp \
              filecontent.cpp \
              clipboardmanager.cpp \
+             processoutputpanel.cpp \
              qtpass.cpp \
              qtpasslogging.cpp \
              profileinit.cpp
@@ -152,6 +153,7 @@ HEADERS   += mainwindow.h \
              passwordconfiguration.h \
              userinfo.h \
              clipboardmanager.h \
+             processoutputpanel.h \
              qtpass.h \
              qtpasslogging.h \
              qtcompat.h \

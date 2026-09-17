@@ -12,6 +12,7 @@
 #include "passworddialog.h"
 #include "passworddisplaypanel.h"
 #include "pathvalidator.h"
+#include "processoutputpanel.h"
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
 #include "qpushbuttonwithclipboard.h"
@@ -41,14 +42,10 @@
 #include <QMessageBox>
 #include <QProgressDialog>
 #include <QPushButton>
-#include <QScrollBar>
 #include <QShortcut>
 #include <QTextCharFormat>
-#include <QTextCursor>
-#include <QTextEdit>
 #include <QTextStream>
 #include <QTimer>
-#include <QToolButton>
 #include <QTreeWidget>
 #include <QUrl>
 #include <utility>
@@ -155,7 +152,13 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   initToolBarButtons();
   initStatusBar();
-  initProcessOutputPanel();
+  m_processOutput = new ProcessOutputPanel(this);
+  addDockWidget(Qt::BottomDockWidgetArea, m_processOutput);
+  // setVisible after addDockWidget so our explicit preference wins even if
+  // QMainWindow applies any cached state when the dock is attached.
+  // restoreWindow() runs before this (from the QtPass ctor above), so the
+  // saved layout has already been processed.
+  m_processOutput->setVisible(QtPassSettings::isShowProcessOutput());
 
   connect(QtPassSettings::getPass(), &Pass::finishedAnyWithPid, this,
           [this](const QString &out, const QString &err, Enums::PROCESS pid) {
@@ -167,7 +170,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
             // - PASS_INSERT's stdin is the password; stdout normally
             //   carries gpg/git progress only, but exclude defensively
             //   in case a future code path uses --echo or similar.
-            if (isSensitiveProcess(pid)) {
+            if (ProcessOutputPanel::isSensitiveProcess(pid)) {
               return;
             }
             if (!out.isEmpty()) {
@@ -365,73 +368,6 @@ void MainWindow::initStatusBar() {
   auto *logoApp = new QLabel(statusBar());
   logoApp->setPixmap(logo);
   statusBar()->addPermanentWidget(logoApp);
-}
-
-/**
- * @brief Build the process-output panel as a bottom QDockWidget.
- *
- * The panel is constructed programmatically rather than declared in
- * mainwindow.ui: uic only places QMainWindow's top-level children into
- * the centralWidget / statusBar / menuBar / toolBars / dock-widget
- * slots, and the previous home (statusBar()->addPermanentWidget()) made
- * an 80–150 px tall QTextEdit sit inside what is otherwise a thin
- * status row. A QDockWidget at the bottom dock area is the conventional
- * place for an IDE-style output console, and it gives users
- * detach/move for free.
- */
-void MainWindow::initProcessOutputPanel() {
-  m_processOutputWidget = new QWidget;
-  m_processOutputWidget->setObjectName(QStringLiteral("processOutputWidget"));
-  auto *outputLayout = new QHBoxLayout(m_processOutputWidget);
-  outputLayout->setObjectName(QStringLiteral("processOutputLayout"));
-  outputLayout->setContentsMargins(0, 0, 0, 0);
-  m_clearOutputButton = new QToolButton(m_processOutputWidget);
-  m_clearOutputButton->setObjectName(QStringLiteral("clearOutputButton"));
-  m_clearOutputButton->setText(tr("Clear"));
-  m_clearOutputButton->setToolTip(tr("Clear output"));
-  outputLayout->addWidget(m_clearOutputButton);
-  m_processOutputEdit = new QTextEdit(m_processOutputWidget);
-  m_processOutputEdit->setObjectName(QStringLiteral("processOutputEdit"));
-  m_processOutputEdit->setReadOnly(true);
-  m_processOutputEdit->setAcceptRichText(false);
-  outputLayout->addWidget(m_processOutputEdit);
-
-  m_processOutputDock = new QDockWidget(tr("Process Output"), this);
-  m_processOutputDock->setObjectName(QStringLiteral("processOutputDock"));
-  m_processOutputDock->setFeatures(QDockWidget::DockWidgetMovable |
-                                   QDockWidget::DockWidgetFloatable);
-  m_processOutputDock->setAllowedAreas(Qt::BottomDockWidgetArea |
-                                       Qt::TopDockWidgetArea);
-  m_processOutputDock->setWidget(m_processOutputWidget);
-  addDockWidget(Qt::BottomDockWidgetArea, m_processOutputDock);
-  // setVisible after addDockWidget so our explicit preference wins
-  // even if QMainWindow applies any cached state when the dock is
-  // attached. restoreWindow() runs before this method (it's called
-  // from the QtPass ctor, which is constructed at the top of the
-  // MainWindow ctor), so the saved layout has already been processed
-  // by the time we get here.
-  m_processOutputDock->setVisible(QtPassSettings::isShowProcessOutput());
-
-  connect(m_clearOutputButton, &QToolButton::clicked, this,
-          &MainWindow::on_clearOutputButton_clicked);
-
-  // Hysteresis: while the user is actively dragging the slider, don't
-  // touch m_autoScroll on every tick — a brief overshoot at maximum
-  // would silently re-arm auto-scroll without an explicit release. Only
-  // commit on slider release. Wheel/keyboard scroll never sets
-  // isSliderDown(), so they still update immediately.
-  connect(m_processOutputEdit->verticalScrollBar(), &QScrollBar::valueChanged,
-          this, [this]() {
-            auto *sb = m_processOutputEdit->verticalScrollBar();
-            if (sb->isSliderDown())
-              return;
-            m_autoScroll = sb->value() >= sb->maximum();
-          });
-  connect(m_processOutputEdit->verticalScrollBar(), &QScrollBar::sliderReleased,
-          this, [this]() {
-            auto *sb = m_processOutputEdit->verticalScrollBar();
-            m_autoScroll = sb->value() >= sb->maximum();
-          });
 }
 
 auto MainWindow::getCurrentTreeViewIndex() -> QModelIndex {
@@ -693,7 +629,7 @@ void MainWindow::executeWrapperStarted() {
   setUiElementsEnabled(false);
   clearPanelTimer.stop();
   if (QtPassSettings::isShowProcessOutput()) {
-    m_processOutputDock->setVisible(true);
+    m_processOutput->setVisible(true);
   }
 }
 
@@ -2119,202 +2055,24 @@ void MainWindow::critical(const QString &title, const QString &msg) {
 }
 
 /**
- * @brief Appends processed command output to the output panel.
- *
- * Appends text to the process output text edit, with per-line numbering,
- * optional command prefix, and color coding for errors vs. success.
- * Handles auto-scrolling and line limits.
- *
- * @param output The raw output text from the command.
- * @param isError true if this is error output (stderr).
- * @param linePrefix Optional command name to prefix each line with.
- */
-void MainWindow::appendProcessOutput(const QString &output, bool isError,
-                                     const QString &linePrefix) {
-  if (!QtPassSettings::isShowProcessOutput()) {
-    return;
-  }
-
-  QStringList lines = output.split('\n', Qt::SkipEmptyParts);
-  for (QString &line : lines) {
-    // Right-trim only: remove trailing CR and whitespace, preserve leading
-    // indentation
-    line.remove('\r');
-    while (!line.isEmpty() && line.back().isSpace()) {
-      line.chop(1);
-    }
-    if (line.isEmpty()) {
-      continue;
-    }
-
-    m_outputCounter++;
-    QString lineNumber = QString::number(m_outputCounter);
-
-    QColor textColor =
-        isError ? QColor(Qt::red)
-                : m_processOutputEdit->palette().color(QPalette::Text);
-    QString colorHex = textColor.name();
-    // Apply the optional prefix per line so multi-line output stays
-    // attributed to its command (e.g. all 3 lines of a `git push` show
-    // "git push: ..." rather than only the first).
-    QString prefixed =
-        linePrefix.isEmpty() ? line : linePrefix + QStringLiteral(": ") + line;
-    QString coloredOutput =
-        QString("<span style=\"color: %1;\">%2: %3</span>")
-            .arg(colorHex, lineNumber, prefixed.toHtmlEscaped());
-
-    m_processOutputEdit->append(coloredOutput);
-  }
-
-  limitOutputLines();
-
-  if (m_autoScroll) {
-    m_processOutputEdit->verticalScrollBar()->setValue(
-        m_processOutputEdit->verticalScrollBar()->maximum());
-  }
-}
-
-/**
- * @brief Handles process output from the Pass executor.
- *
- * Called when any non-sensitive process completes. Filters out password-
- * related commands (pass show, insert, etc.) and delegates to
- * appendProcessOutput.
- *
+ * @brief Route a process's output to the console, unless the panel is
+ *        switched off in the settings.
  * @param output The stdout/stderr text from the process.
  * @param isError true if this is error output (stderr).
- * @param pid The process ID identifying which command ran.
+ * @param pid The process that ran, for the line prefix.
  */
 void MainWindow::onProcessOutput(const QString &output, bool isError,
                                  Enums::PROCESS pid) {
-  appendProcessOutput(output, isError, getProcessName(pid));
-}
-
-/**
- * @brief Maps a process ID to its human-readable command name.
- *
- * Returns static strings for git/pass commands that appear in output.
- * Password-related commands return empty (they are filtered).
- *
- * @param pid The process ID to look up.
- * @return QString with command name, or empty if filtered.
- */
-auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
-  switch (pid) {
-  case Enums::GIT_INIT:
-    return QStringLiteral("git init"); // no-tr
-  case Enums::GIT_ADD:
-    return QStringLiteral("git add"); // no-tr
-  case Enums::GIT_COMMIT:
-    return QStringLiteral("git commit"); // no-tr
-  case Enums::GIT_RM:
-    return QStringLiteral("git rm"); // no-tr
-  case Enums::GIT_PULL:
-    return QStringLiteral("git pull"); // no-tr
-  case Enums::GIT_PUSH:
-    return QStringLiteral("git push"); // no-tr
-  case Enums::GIT_MOVE:
-    return QStringLiteral("git mv"); // no-tr
-  case Enums::GIT_COPY:
-    // ImitatePass::Copy literally invokes `git cp` (a git-extras
-    // subcommand), so the label matches what's run. Stock-git users
-    // without git-extras will see the underlying "'cp' is not a git
-    // command" failure surfaced in the process output panel.
-    return QStringLiteral("git cp"); // no-tr
-  case Enums::PASS_INSERT:
-    return QStringLiteral("pass insert"); // no-tr
-  case Enums::PASS_REMOVE:
-    return QStringLiteral("pass rm"); // no-tr
-  case Enums::PASS_INIT:
-    return QStringLiteral("pass init"); // no-tr
-  case Enums::PASS_MOVE:
-    return QStringLiteral("pass mv"); // no-tr
-  case Enums::PASS_COPY:
-    return QStringLiteral("pass cp"); // no-tr
-  case Enums::PASS_GREP:
-    return QStringLiteral("pass grep"); // no-tr
-  case Enums::GPG_GENKEYS:
-    return QStringLiteral("gpg --gen-key"); // no-tr
-  case Enums::PASS_SHOW:
-  case Enums::PROCESS_COUNT:
-  case Enums::INVALID:
-    break;
-  }
-  return {};
-}
-
-/**
- * @brief Checks if a process ID represents a sensitive operation whose
- * output should not be shown in the process output panel.
- *
- * Password-related commands (pass show, grep, insert)
- * display their output in other UI areas, so we skip them here.
- *
- * @param pid The process ID to check.
- * @return true if the process is sensitive and should be filtered.
- */
-auto MainWindow::isSensitiveProcess(Enums::PROCESS pid) -> bool {
-  switch (pid) {
-  case Enums::PASS_SHOW:
-  case Enums::PASS_GREP:
-  case Enums::PASS_INSERT:
-    return true;
-  case Enums::GIT_INIT:
-  case Enums::GIT_ADD:
-  case Enums::GIT_COMMIT:
-  case Enums::GIT_RM:
-  case Enums::GIT_PULL:
-  case Enums::GIT_PUSH:
-  case Enums::GIT_MOVE:
-  case Enums::GIT_COPY:
-  case Enums::PASS_REMOVE:
-  case Enums::PASS_INIT:
-  case Enums::PASS_MOVE:
-  case Enums::PASS_COPY:
-  case Enums::GPG_GENKEYS:
-  case Enums::PROCESS_COUNT:
-  case Enums::INVALID:
-    break;
-  }
-  return false;
-}
-
-/**
- * @brief Updates the visibility of the process output panel.
- *
- * Shows or hides the process output widget based on the user's
- * showProcessOutput setting.
- */
-void MainWindow::updateProcessOutputVisibility() {
-  m_processOutputDock->setVisible(QtPassSettings::isShowProcessOutput());
-}
-
-/**
- * @brief Limits the output panel to max lines, trimming old excess.
- *
- * Removes the oldest lines when the document exceeds MaxOutputLines (1000).
- * Called after each append to prevent unbounded growth.
- */
-void MainWindow::limitOutputLines() {
-  QTextDocument *doc = m_processOutputEdit->document();
-  int excess = doc->blockCount() - MaxOutputLines;
-  if (excess <= 0) {
+  if (!QtPassSettings::isShowProcessOutput()) {
     return;
   }
-
-  QTextCursor cursor(doc);
-  cursor.movePosition(QTextCursor::Start);
-  cursor.movePosition(QTextCursor::NextBlock, QTextCursor::KeepAnchor, excess);
-  cursor.removeSelectedText();
+  m_processOutput->append(output, isError,
+                          ProcessOutputPanel::processName(pid));
 }
 
 /**
- * @brief Clears the process output panel.
- *
- * Clears all output, resets the line counter, and re-enables auto-scroll.
+ * @brief Show or hide the console per the showProcessOutput setting.
  */
-void MainWindow::on_clearOutputButton_clicked() {
-  m_processOutputEdit->clear();
-  m_outputCounter = 0;
-  m_autoScroll = true;
+void MainWindow::updateProcessOutputVisibility() {
+  m_processOutput->setVisible(QtPassSettings::isShowProcessOutput());
 }
