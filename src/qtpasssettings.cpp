@@ -21,11 +21,11 @@
 #include <QCoreApplication>
 #include <QCursor>
 #include <QDebug>
-#include <QGuiApplication>
-#include <QScreen>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QGuiApplication>
+#include <QScreen>
 #include <utility>
 
 bool QtPassSettings::initialized = false;
