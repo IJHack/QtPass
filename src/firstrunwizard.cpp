@@ -378,9 +378,8 @@ void StoreWizardPage::initializePage() {
   // A first commit needs a name and an e-mail; without them Finish would
   // fail at the very end. Ask git now and say what to do instead.
   const bool identity =
-      haveGit && (repository ||
-                  ProfileInit::gitIdentityConfigured(
-                      QDir::homePath(), m_wizard->m_settings));
+      haveGit && (repository || ProfileInit::gitIdentityConfigured(
+                                    QDir::homePath(), m_wizard->m_settings));
   m_useGit->setToolTip(
       haveGit && !identity
           ? tr("Git has no name and e-mail to commit with yet. Run\n"
@@ -394,9 +393,8 @@ void StoreWizardPage::initializePage() {
   // On for a repository or a store still to be made, off for an existing
   // store that is no repository: turning Git on there would make every
   // remove fail in a folder git knows nothing about.
-  m_useGit->setChecked(
-      haveGit && (m_wizard->m_settings.useGit || repository ||
-                  !FirstRunWizard::isStore(clean)));
+  m_useGit->setChecked(haveGit && (m_wizard->m_settings.useGit || repository ||
+                                   !FirstRunWizard::isStore(clean)));
   updateStatus();
 }
 
