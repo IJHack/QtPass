@@ -35,7 +35,7 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 ### Changed
 
 - The AppStream metainfo installs as `org.qtpass.QtPass.metainfo.xml`, the
-  file name the spec derives from the component id, instead of
+  filename the spec derives from the component ID, instead of
   `qtpass.appdata.xml`. Packagers: the RPM spec follows; the Flatpak manifest
   drops `rename-appdata-file` with the first 2.0 tag
 - Icon: the hairline where the shackle's straight legs met the arc is gone

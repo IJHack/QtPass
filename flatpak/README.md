@@ -65,7 +65,7 @@ v1.8.1 the tree ships `flatpak/gpg2`, and `make -C main install` puts the
 desktop file, metainfo and icons where `rename-desktop-file` /
 `rename-appdata-file` / `rename-icon` expect them, so no working-tree files
 are overlaid any more. Since 2.0 the metainfo is installed under its
-component id (`org.qtpass.QtPass.metainfo.xml`) already: drop
+component ID (`org.qtpass.QtPass.metainfo.xml`) already: drop
 `rename-appdata-file` when the module moves to a 2.0 tag (`ci-manifest.sh`
 strips it for the tree build meanwhile).
 
