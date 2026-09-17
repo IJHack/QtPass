@@ -92,7 +92,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_qt_pass.html" target="_top" xlink:title="Orchestrates pass signal handling and application&#45;level operations for the QtPass application; owns t...">
+<g id="a_Node000008"><a xlink:href="class_qt_pass.html" target="_top" xlink:title="Application&#45;level glue between the pass backends and whatever shows their results: turns the backends...">
 <polygon fill="white" stroke="#666666" points="179.5,-130 129.5,-130 129.5,-111 179.5,-111 179.5,-130"/>
 <text text-anchor="middle" x="154.5" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass</text>
 </a>

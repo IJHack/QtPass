@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
-<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="class_main_window-members.html">List of all members</a>  </div>
@@ -170,11 +169,6 @@ void&#160;</td><td class="memItemRight"><b>onPush</b> ()</td></tr>
 void&#160;</td><td class="memItemRight"><b>endReencryptPath</b> ()</td></tr>
 <tr class="memdesc:a201fc73a7db0d404e8fd49f818696eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish a re-encryption pass on the current path. <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
-Signals</h2></td></tr>
-<tr class="memitem:a7e1ae254673e36410d4b3a73e1e8ec8e" id="r_a7e1ae254673e36410d4b3a73e1e8ec8e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7e1ae254673e36410d4b3a73e1e8ec8e">passShowHandlerFinished</a> (const QString &amp;output)</td></tr>
-<tr class="memdesc:a7e1ae254673e36410d4b3a73e1e8ec8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when the pass show handler has finished decrypting.  <br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a52e97245b2f88492071e639395c4a15a" id="r_a52e97245b2f88492071e639395c4a15a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a52e97245b2f88492071e639395c4a15a">MainWindow</a> (const QString &amp;searchText=QString(), QWidget *parent=nullptr)</td></tr>
@@ -210,7 +204,7 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock"><p>Main application window orchestrating UI, user interactions, and external process handlers. </p>
 <p>Provides the central interface for managing items, folders, passwords, and OTPs; coordinates UI components (toolbars, panels, dialogs, status/tray), selection and navigation in the underlying file/store models, and lifecycle interactions with external handlers (e.g., pass, Git, GPG key generation, OTP). </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00043">43</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00045">45</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a52e97245b2f88492071e639395c4a15a" name="a52e97245b2f88492071e639395c4a15a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a52e97245b2f88492071e639395c4a15a">&#9670;&#160;</a></span>MainWindow()</h2>
@@ -373,7 +367,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Open the configuration dialog. </p>
-<p>On a fresh start the first-run wizard runs before the dialog is shown. Accepting the dialog does not guarantee a usable configuration: the OK button is not gated on <a class="el" href="class_util.html#ac8926b725ca51d6e68f3f383cfae478f" title="Verify that the required configuration is complete.">Util::configIsValid()</a>, so <a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="Initialize internal state and signal connections.">QtPass::init()</a> uses the return value to decide whether to ask again or to give up. </p><dl class="section return"><dt>Returns</dt><dd>true when the dialog was accepted, false when it was cancelled. </dd></dl>
+<p>On a fresh start the first-run wizard runs before the dialog is shown. Accepting the dialog does not guarantee a usable configuration: the OK button is not gated on <a class="el" href="class_util.html#ac8926b725ca51d6e68f3f383cfae478f" title="Verify that the required configuration is complete.">Util::configIsValid()</a>, so <a class="el" href="class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65" title="Resolve the password store and the executables and migrate the settings of an older version (fresh-in...">QtPass::init()</a> uses the return value to decide whether to ask again or to give up. </p><dl class="section return"><dt>Returns</dt><dd>true when the dialog was accepted, false when it was cancelled. </dd></dl>
 
 </div>
 </div>
@@ -534,9 +528,9 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return whether startup configuration succeeded. </p>
-<p>Reflects the result of the initial configuration check performed in the constructor (<a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="Initialize internal state and signal connections.">QtPass::init()</a>). When it is false the application cannot be used (e.g. the user cancelled the first-run wizard), and main() should exit before ever showing the window. </p><dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="Initialize internal state and signal connections.">QtPass::init()</a> reported a working configuration. </dd></dl>
+<p>Reflects the result of the initial configuration check performed in the constructor (<a class="el" href="class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65" title="Resolve the password store and the executables and migrate the settings of an older version (fresh-in...">QtPass::init()</a>). When it is false the application cannot be used (e.g. the user cancelled the first-run wizard), and main() should exit before ever showing the window. </p><dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65" title="Resolve the password store and the executables and migrate the settings of an older version (fresh-in...">QtPass::init()</a> reported a working configuration. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00102">102</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00104">104</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -782,39 +776,6 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handle output from the pass show command. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">output</td><td>Decrypted password file content. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a7e1ae254673e36410d4b3a73e1e8ec8e" name="a7e1ae254673e36410d4b3a73e1e8ec8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e1ae254673e36410d4b3a73e1e8ec8e">&#9670;&#160;</a></span>passShowHandlerFinished</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::passShowHandlerFinished </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Emitted when the pass show handler has finished decrypting. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">output</td><td>Decrypted password file content. </td></tr>

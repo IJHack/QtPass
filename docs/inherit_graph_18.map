@@ -8,7 +8,7 @@
 <area shape="poly" id="edge13_Node000000_Node000003" title=" " alt="" coords="93,148,127,138,185,121,187,126,129,143,94,154"/>
 <area shape="rect" id="Node000007" href="$class_password_display_panel.html" title="Renders decrypted password&#45;file fields into MainWindow&#39;s grid." alt="" coords="128,153,295,179"/>
 <area shape="poly" id="edge16_Node000000_Node000007" title=" " alt="" coords="94,163,128,163,128,169,94,169"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass.html" title="Orchestrates pass signal handling and application&#45;level operations for the QtPass application; owns t..." alt="" coords="178,203,245,228"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass.html" title="Application&#45;level glue between the pass backends and whatever shows their results: turns the backends..." alt="" coords="178,203,245,228"/>
 <area shape="poly" id="edge17_Node000000_Node000008" title=" " alt="" coords="94,178,179,203,177,208,92,183"/>
 <area shape="rect" id="Node000009" href="$class_store_tree.html" title="The password store as shown in the tree: the QFileSystemModel, the StoreModel proxy on top of it and ..." alt="" coords="170,252,253,277"/>
 <area shape="poly" id="edge18_Node000000_Node000009" title=" " alt="" coords="66,187,95,213,129,237,171,253,169,258,127,242,92,217,63,190"/>
