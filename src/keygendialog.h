@@ -27,7 +27,7 @@ public:
    * @brief Construct a KeygenDialog.
    * @param gpgExe Path to the gpg executable (for the default template).
    * @param pass Backend that runs `gpg --gen-key`; the dialog accepts on its
-   *             finishedGenerateGPGKeys() and shows its processErrorExit().
+   *             finishedGenerateGPGKeys() and shows generateGPGKeysFailed().
    * @param parent Parent widget, or nullptr.
    */
   explicit KeygenDialog(const QString &gpgExe, Pass *pass,

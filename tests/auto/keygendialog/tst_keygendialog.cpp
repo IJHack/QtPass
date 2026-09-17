@@ -63,6 +63,7 @@ private Q_SLOTS:
   void generationSuccessAcceptsTheDialog();
   void generationFailureReenablesTheForm();
   void cancelWhileGeneratingDetachesFromTheBackend();
+  void unrelatedProcessErrorsDoNotTouchTheDialog();
 };
 
 /**
@@ -592,19 +593,47 @@ void tst_keygendialog::generationFailureReenablesTheForm() {
 
 void tst_keygendialog::cancelWhileGeneratingDetachesFromTheBackend() {
   FakePass pass;
-  {
-    KeygenDialog d(QString(), &pass);
-    fillValidIdentity(d);
-    d.show();
-    QVERIFY(QTest::qWaitForWindowExposed(&d));
-    QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
-                              Q_ARG(int, QDialog::Accepted));
-    d.reject();
-    QCOMPARE(d.result(), static_cast<int>(QDialog::Rejected));
-  }
-  // Late signals from the backend must not reach a dialog that is gone.
+  KeygenDialog d(QString(), &pass);
+  fillValidIdentity(d);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  auto *name = d.findChild<QLineEdit *>(QStringLiteral("name"));
+  QVERIFY(!name->isEnabled());
+  d.reject();
+  QCOMPARE(d.result(), static_cast<int>(QDialog::Rejected));
+
+  // The dialog is still alive; late backend signals must change nothing:
+  // not the result, not the locked form.
   emit pass.finishedGenerateGPGKeys(QString(), QString());
-  QTest::qWait(50);
+  QCOMPARE(d.result(), static_cast<int>(QDialog::Rejected));
+  emit pass.generateGPGKeysFailed(QStringLiteral("late"));
+  QCOMPARE(d.result(), static_cast<int>(QDialog::Rejected));
+  QVERIFY2(!name->isEnabled(), "a late failure must not restore the form");
+  QTest::qWait(50); // the queued "no gpg" error arrives too
+  QCOMPARE(d.result(), static_cast<int>(QDialog::Rejected));
+}
+
+/**
+ * @brief Only the keygen's own failure signal reaches the dialog; another
+ *        command failing on the same backend meanwhile must not take it
+ *        down while gpg is still generating.
+ */
+void tst_keygendialog::unrelatedProcessErrorsDoNotTouchTheDialog() {
+  FakePass pass;
+  KeygenDialog d(QString(), &pass);
+  fillValidIdentity(d);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  auto *name = d.findChild<QLineEdit *>(QStringLiteral("name"));
+  emit pass.processErrorExit(1, QStringLiteral("git push failed"));
+  QVERIFY2(!name->isEnabled(), "an unrelated error must not unlock the form");
+  QVERIFY(d.isVisible());
+  emit pass.finishedGenerateGPGKeys(QString(), QString());
+  QCOMPARE(d.result(), static_cast<int>(QDialog::Accepted));
 }
 
 QTEST_MAIN(tst_keygendialog)

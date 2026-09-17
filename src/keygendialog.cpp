@@ -261,8 +261,11 @@ void KeygenDialog::startGeneration(const QString &batch) {
                          QObject::disconnect(m_failed);
                          QDialog::done(QDialog::Accepted);
                        });
-  m_failed = connect(m_pass, &Pass::processErrorExit, this,
-                     [this](int, const QString &error) {
+  // Not processErrorExit: that fires for any command that fails while the
+  // key is being generated (a queued git push, say) and would take the
+  // dialog down while gpg is still working.
+  m_failed = connect(m_pass, &Pass::generateGPGKeysFailed, this,
+                     [this](const QString &error) {
                        QObject::disconnect(m_finished);
                        QObject::disconnect(m_failed);
                        generationFailed(error);

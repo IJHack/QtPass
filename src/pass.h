@@ -418,6 +418,13 @@ signals:
    */
   void finishedGenerateGPGKeys(const QString &out, const QString &err);
   /**
+   * @brief Emitted when GPG key generation fails, alongside the generic
+   *        processErrorExit(); lets the keygen dialog react to its own
+   *        failure only, not to any other command failing meanwhile.
+   * @param err What gpg (or the setup) reported.
+   */
+  void generateGPGKeysFailed(const QString &err);
+  /**
    * @brief Emitted when grep finishes with matching results.
    * @param results List of (entry path, matching lines) pairs.
    */
