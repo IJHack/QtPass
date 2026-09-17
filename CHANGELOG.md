@@ -4,6 +4,12 @@
 
 ### Bugfixes
 
+- "Automatically push" and "Automatically pull" in the settings did nothing
+  since 1.8.0: [#1140](https://github.com/IJHack/QtPass/pull/1140) started
+  storing them per profile and stopped writing the global keys that the
+  backends and the pull-on-start actually read. Both are saved again, and
+  switching profiles now applies that profile's Git flags along with its path
+  and signing key (ported from [#1792](https://github.com/IJHack/QtPass/pull/1792))
 - The Edit dialog turned every `key: value` line into a label-locked field
   since 1.8.0, also with templates off, so those keys could no longer be
   edited as text ([#1138](https://github.com/IJHack/QtPass/pull/1138) forced "all fields" on for [#132](https://github.com/IJHack/QtPass/issues/132)). Which lines become

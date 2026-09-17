@@ -1445,6 +1445,15 @@ void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
   s.activeProfile = name;
   s.passStore = prof.value("path");
   s.passSigningKey = prof.value("signingKey");
+  // Per-profile git flags (#1140) were stored but never applied; a profile
+  // without them keeps the global values.
+  const auto flag = [&prof](const char *key, bool current) {
+    const QString value = prof.value(QLatin1String(key));
+    return value.isEmpty() ? current : value == QLatin1String("true");
+  };
+  s.useGit = flag("useGit", s.useGit);
+  s.autoPush = flag("autoPush", s.autoPush);
+  s.autoPull = flag("autoPull", s.autoPull);
   QtPassSettings::save(s);
   ui->statusBar->showMessage(tr("Profile changed to %1").arg(name), 2000);
 
