@@ -19,7 +19,7 @@ var searchData=
   ['setinitonaccept_16',['setInitOnAccept',['../class_users_dialog.html#ab30de74144c09f81f4d3324207e911cd',1,'UsersDialog']]],
   ['setlength_17',['setLength',['../class_password_dialog.html#a6dabd26913d6885e270545b85d477b0d',1,'PasswordDialog']]],
   ['setmodelandstore_18',['setModelAndStore',['../class_store_model.html#a71787f93027b50575cfbdcbb1d8de071',1,'StoreModel']]],
-  ['setpass_19',['setPass',['../class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8',1,'PasswordDialog::setPass()'],['../class_store_model.html#a90d7f788202bdb64c4722ee897a01363',1,'StoreModel::setPass()']]],
+  ['setpass_19',['setPass',['../class_password_dialog.html#a9f195fa828f16aca14d26f5a3ca7f965',1,'PasswordDialog::setPass()'],['../class_store_model.html#a90d7f788202bdb64c4722ee897a01363',1,'StoreModel::setPass()']]],
   ['setpassstore_20',['setPassStore',['../class_qt_pass_settings.html#a87ce0a9a9a6510a621e6429f2d090862',1,'QtPassSettings']]],
   ['setpassword_21',['setPassword',['../class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172',1,'PasswordDialog']]],
   ['setpasswordchartemplate_22',['setPasswordCharTemplate',['../class_password_dialog.html#abf3ff0128bdd1931b1c332789c1e1931',1,'PasswordDialog']]],

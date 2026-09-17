@@ -150,8 +150,8 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 <tr class="memdesc:a7a6b3a9abf7c6c1a58d1e1b6f3c72b82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when Git pull finishes.  <br /></td></tr>
 <tr class="memitem:a835378925ada56acd922899f64e85933" id="r_a835378925ada56acd922899f64e85933"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a835378925ada56acd922899f64e85933">finishedGitPush</a> (const QString &amp;out, const QString &amp;err)</td></tr>
 <tr class="memdesc:a835378925ada56acd922899f64e85933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when Git push finishes.  <br /></td></tr>
-<tr class="memitem:affead66e0aca2e275dc21dbde18066fb" id="r_affead66e0aca2e275dc21dbde18066fb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#affead66e0aca2e275dc21dbde18066fb">finishedShow</a> (const QString &amp;out)</td></tr>
-<tr class="memdesc:affead66e0aca2e275dc21dbde18066fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when show finishes.  <br /></td></tr>
+<tr class="memitem:a3a1a065e12909518f3898b3557ed714c" id="r_a3a1a065e12909518f3898b3557ed714c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3a1a065e12909518f3898b3557ed714c">finishedShow</a> (const QString &amp;out, const QString &amp;file)</td></tr>
+<tr class="memdesc:a3a1a065e12909518f3898b3557ed714c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> succeeds.  <br /></td></tr>
 <tr class="memitem:a14d258f93b689ff92cea0d11b136eb83" id="r_a14d258f93b689ff92cea0d11b136eb83"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a14d258f93b689ff92cea0d11b136eb83">finishedInsert</a> (const QString &amp;out, const QString &amp;err)</td></tr>
 <tr class="memdesc:a14d258f93b689ff92cea0d11b136eb83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when insert finishes.  <br /></td></tr>
 <tr class="memitem:af08e80e76ffd6581f35e701e6c8b533e" id="r_af08e80e76ffd6581f35e701e6c8b533e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af08e80e76ffd6581f35e701e6c8b533e">finishedRemove</a> (const QString &amp;out, const QString &amp;err)</td></tr>
@@ -237,6 +237,8 @@ Protected Slots</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a36a6f3e2815272e10ff895edc487d388" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
+<tr class="memdesc:a36a6f3e2815272e10ff895edc487d388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remember what a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> asked for, so its completion can say so.  <br /></td></tr>
 <tr class="memitem:a66f59138ffe856fd421410d9af9ddc62" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
 <tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute external wrapper command.  <br /></td></tr>
 <tr class="memitem:aff660edce34d33f5a2adfa8c130470f0" id="r_aff660edce34d33f5a2adfa8c130470f0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aff660edce34d33f5a2adfa8c130470f0">generateRandomPassword</a> (const QString &amp;charset, unsigned int length) -&gt; QString</td></tr>
@@ -1038,8 +1040,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="affead66e0aca2e275dc21dbde18066fb" name="affead66e0aca2e275dc21dbde18066fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affead66e0aca2e275dc21dbde18066fb">&#9670;&#160;</a></span>finishedShow</h2>
+<a id="a3a1a065e12909518f3898b3557ed714c" name="a3a1a065e12909518f3898b3557ed714c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a1a065e12909518f3898b3557ed714c">&#9670;&#160;</a></span>finishedShow</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1050,8 +1052,12 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Pass::finishedShow </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1061,10 +1067,11 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Emitted when show finishes. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Emitted when a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> succeeds. </p>
+<p>Requests complete in the order they were queued, so <code class="param">file</code> is the argument of the <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> this result belongs to. Every receiver checks it against what it asked for; a failed decrypt emits <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit.">processErrorExit()</a> instead and never <a class="el" href="#a3a1a065e12909518f3898b3557ed714c" title="Emitted when a Show() succeeds.">finishedShow()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">out</td><td>Decrypted password file content. </td></tr>
+    <tr><td class="paramname">file</td><td>The <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> argument this content is for. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1769,6 +1776,41 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a36a6f3e2815272e10ff895edc487d388" name="a36a6f3e2815272e10ff895edc487d388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36a6f3e2815272e10ff895edc487d388">&#9670;&#160;</a></span>queueShow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pass::queueShow </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remember what a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> asked for, so its completion can say so. </p>
+<p>Backends call this first thing in <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a>; <a class="el" href="#a8efe916aa899deaed23aa445cc9a302f" title="Handle process completion.">Pass::finished()</a> pops the entry again on success or failure. The <a class="el" href="class_executor.html" title="Runs non-interactive external commands in FIFO order using a single QProcess.">Executor</a> runs one queue in order, so the two stay aligned. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> argument. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00263">263</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>

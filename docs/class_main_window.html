@@ -144,12 +144,14 @@ void&#160;</td><td class="memItemRight"><b>executeWrapperStarted</b> ()</td></tr
 <tr class="memdesc:a3550b28be1344cf5c012af794dce8c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot called when an external process wrapper has started. <br /></td></tr>
 <tr class="memitem:a69f4a122336a6fc3875fc94741e4d1cf" id="r_a69f4a122336a6fc3875fc94741e4d1cf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a69f4a122336a6fc3875fc94741e4d1cf">showStatusMessage</a> (const QString &amp;msg, int timeout=2000)</td></tr>
 <tr class="memdesc:a69f4a122336a6fc3875fc94741e4d1cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show a message in the status bar for the given duration.  <br /></td></tr>
-<tr class="memitem:a35dcbf29b9cfe87b6f7d597b7abba480" id="r_a35dcbf29b9cfe87b6f7d597b7abba480"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a35dcbf29b9cfe87b6f7d597b7abba480">passShowHandler</a> (const QString &amp;output)</td></tr>
-<tr class="memdesc:a35dcbf29b9cfe87b6f7d597b7abba480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle output from the pass show command.  <br /></td></tr>
-<tr class="memitem:a7480a2bf495584363acf5e73c5e0570c" id="r_a7480a2bf495584363acf5e73c5e0570c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7480a2bf495584363acf5e73c5e0570c">otpFromFileToClipboard</a> (const QString &amp;output)</td></tr>
-<tr class="memdesc:a7480a2bf495584363acf5e73c5e0570c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a one-time password from decrypted content and copy it.  <br /></td></tr>
+<tr class="memitem:ad8dfb7651169c5fe73440315926d6abc" id="r_ad8dfb7651169c5fe73440315926d6abc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad8dfb7651169c5fe73440315926d6abc">passShowHandler</a> (const QString &amp;output, const QString &amp;file=QString())</td></tr>
+<tr class="memdesc:ad8dfb7651169c5fe73440315926d6abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle output from the pass show command.  <br /></td></tr>
+<tr class="memitem:ab7a805923a61f2441932d8d358fb040e" id="r_ab7a805923a61f2441932d8d358fb040e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab7a805923a61f2441932d8d358fb040e">otpFromFileToClipboard</a> (const QString &amp;output, const QString &amp;file)</td></tr>
+<tr class="memdesc:ab7a805923a61f2441932d8d358fb040e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a one-time password from decrypted content and copy it. Ignores decrypts of anything but the entry onOtp() asked for.  <br /></td></tr>
+<tr class="memitem:a7d0d5451438004ab31c4d9d48a869378" id="r_a7d0d5451438004ab31c4d9d48a869378"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7d0d5451438004ab31c4d9d48a869378">passwordFromFileToClipboard</a> (const QString &amp;text, const QString &amp;file)</td></tr>
+<tr class="memdesc:a7d0d5451438004ab31c4d9d48a869378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the first line of a decrypted entry (Ctrl+C). Ignores decrypts of anything but the entry copyPasswordFromTreeview() asked for; an otpauth:// first line is refused.  <br /></td></tr>
 <tr class="memitem:a083c74efb3eabf7f2ccd7fa691bf8841" id="r_a083c74efb3eabf7f2ccd7fa691bf8841"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a083c74efb3eabf7f2ccd7fa691bf8841">cancelOtpRequest</a> ()</td></tr>
-<tr class="memdesc:a083c74efb3eabf7f2ccd7fa691bf8841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abandon an in-flight OTP request.  <br /></td></tr>
+<tr class="memdesc:a083c74efb3eabf7f2ccd7fa691bf8841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forget the pending OTP and copy requests.  <br /></td></tr>
 <tr class="memitem:a60ed7fe85ceeecb99a88ae9c4d6d2908" id="r_a60ed7fe85ceeecb99a88ae9c4d6d2908"><td class="memItemLeft"><a id="a60ed7fe85ceeecb99a88ae9c4d6d2908" name="a60ed7fe85ceeecb99a88ae9c4d6d2908"></a>
 void&#160;</td><td class="memItemRight"><b>dropStaleToolBarPalette</b> ()</td></tr>
 <tr class="memdesc:a60ed7fe85ceeecb99a88ae9c4d6d2908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop a style-imposed toolbar palette that belongs to the other theme (Breeze header palette after a light/dark switch). <br /></td></tr>
@@ -284,8 +286,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Abandon an in-flight OTP request. </p>
-<p>A failed decrypt never emits <a class="el" href="class_pass.html#affead66e0aca2e275dc21dbde18066fb" title="Emitted when show finishes.">Pass::finishedShow</a>, so without this the request would stay pending for the rest of the session. </p>
+<p>Forget the pending OTP and copy requests. </p>
+<p>A failed decrypt never emits <a class="el" href="class_pass.html#a3a1a065e12909518f3898b3557ed714c" title="Emitted when a Show() succeeds.">Pass::finishedShow</a>; without this a later decrypt of the same entry (the user retrying) would be taken as the answer to a request the user has long given up on. </p>
 
 </div>
 </div>
@@ -714,8 +716,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7480a2bf495584363acf5e73c5e0570c" name="a7480a2bf495584363acf5e73c5e0570c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7480a2bf495584363acf5e73c5e0570c">&#9670;&#160;</a></span>otpFromFileToClipboard</h2>
+<a id="ab7a805923a61f2441932d8d358fb040e" name="ab7a805923a61f2441932d8d358fb040e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7a805923a61f2441932d8d358fb040e">&#9670;&#160;</a></span>otpFromFileToClipboard</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -726,8 +728,12 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void MainWindow::otpFromFileToClipboard </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -737,18 +743,19 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Generate a one-time password from decrypted content and copy it. </p>
+<p>Generate a one-time password from decrypted content and copy it. Ignores decrypts of anything but the entry onOtp() asked for. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">output</td><td>Decrypted entry content. </td></tr>
+    <tr><td class="paramname">file</td><td>Entry the content belongs to. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a35dcbf29b9cfe87b6f7d597b7abba480" name="a35dcbf29b9cfe87b6f7d597b7abba480"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35dcbf29b9cfe87b6f7d597b7abba480">&#9670;&#160;</a></span>passShowHandler</h2>
+<a id="ad8dfb7651169c5fe73440315926d6abc" name="ad8dfb7651169c5fe73440315926d6abc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8dfb7651169c5fe73440315926d6abc">&#9670;&#160;</a></span>passShowHandler</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -759,8 +766,12 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void MainWindow::passShowHandler </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -807,6 +818,44 @@ Protected Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">output</td><td>Decrypted password file content. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7d0d5451438004ab31c4d9d48a869378" name="a7d0d5451438004ab31c4d9d48a869378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d0d5451438004ab31c4d9d48a869378">&#9670;&#160;</a></span>passwordFromFileToClipboard</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::passwordFromFileToClipboard </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy the first line of a decrypted entry (Ctrl+C). Ignores decrypts of anything but the entry copyPasswordFromTreeview() asked for; an otpauth:// first line is refused. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>Decrypted entry content. </td></tr>
+    <tr><td class="paramname">file</td><td>Entry the content belongs to. </td></tr>
   </table>
   </dd>
 </dl>
