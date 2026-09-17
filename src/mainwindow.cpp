@@ -367,6 +367,22 @@ void MainWindow::initToolBarButtons() {
   // is set. The X button and Alt+F4 are close() as well.
   connect(ui->actionQuit, &QAction::triggered, qApp, &QApplication::quit);
   connect(ui->actionClose, &QAction::triggered, this, &MainWindow::close);
+#ifdef Q_OS_MACOS
+  // The menu bar is the system's up there; nothing to hide.
+  ui->actionShowMenuBar->setVisible(false);
+#else
+  // The action lives in the menu it hides, so it has to be on the window as
+  // well for Ctrl+M to keep working while the bar is gone.
+  addAction(ui->actionShowMenuBar);
+  ui->actionShowMenuBar->setChecked(QtPassSettings::load().showMenuBar);
+  menuBar()->setVisible(ui->actionShowMenuBar->isChecked());
+  connect(ui->actionShowMenuBar, &QAction::toggled, this, [this](bool show) {
+    menuBar()->setVisible(show);
+    AppSettings s = QtPassSettings::load();
+    s.showMenuBar = show;
+    QtPassSettings::save(s);
+  });
+#endif
   connect(ui->actionFaq, &QAction::triggered, this, [] {
     QDesktopServices::openUrl(
         QUrl(QStringLiteral("https://qtpass.org/docs/md__f_a_q.html")));

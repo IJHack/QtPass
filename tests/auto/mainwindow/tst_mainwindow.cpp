@@ -128,6 +128,7 @@ private Q_SLOTS:
   void restoreWindowAppliesSavedGeometry();
   void restoreWindowCentresWhenNothingSaved();
   void menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes();
+  void menuBarCanBeHiddenAndComesBackWithCtrlM();
   void quitIsAnActionNotAStrayShortcut();
   void quitIsWiredToTheApplication();
   void closeWindowHonoursHideOnClose();
@@ -1055,6 +1056,40 @@ auto menuActionNames(QMenuBar *bar, const QString &menuName) -> QStringList {
 } // namespace
 
 /**
+ * @brief Settings > Show menu bar (Ctrl+M) hides the bar for those who liked
+ *        the bare window, remembers the choice, and still answers Ctrl+M
+ *        while the bar - and with it the menu the action sits in - is gone.
+ */
+void tst_mainwindow::menuBarCanBeHiddenAndComesBackWithCtrlM() {
+#ifdef Q_OS_MACOS
+  QSKIP("the menu bar is the system's on macOS");
+#else
+  auto *toggle =
+      m_window->findChild<QAction *>(QStringLiteral("actionShowMenuBar"));
+  QVERIFY(toggle != nullptr);
+  QVERIFY(toggle->isCheckable() && toggle->isChecked());
+  QVERIFY(m_window->menuBar()->isVisibleTo(m_window.get()));
+  QCOMPARE(toggle->shortcut(), QKeySequence(QStringLiteral("Ctrl+M")));
+
+  toggle->trigger();
+  QVERIFY2(!m_window->menuBar()->isVisibleTo(m_window.get()),
+           "the bar hides on the first toggle");
+  QVERIFY2(!QtPassSettings::load().showMenuBar, "and the choice is saved");
+
+  // The action is on the window itself, so the shortcut survives its menu.
+  QVERIFY(m_window->actions().contains(toggle));
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  m_window->activateWindow();
+  QTest::qWaitForWindowActive(m_window.data());
+  QTest::keyClick(m_window.get(), Qt::Key_M, Qt::ControlModifier);
+  QVERIFY2(m_window->menuBar()->isVisibleTo(m_window.get()),
+           "Ctrl+M brings the bar back");
+  QVERIFY(QtPassSettings::load().showMenuBar);
+#endif
+}
+
+/**
  * @brief The icon-only toolbar was the only way to reach Push, Pull, Users
  *        and Config, and there was no About or FAQ at all. Every toolbar
  *        action now also sits in a menu, and the menu-only ones exist, with
@@ -1083,7 +1118,8 @@ void tst_mainwindow::menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes() {
                QStringLiteral("actionUsers"), QStringLiteral("actionUpdate"),
                QStringLiteral("actionPush"), QStringLiteral("actionOtp")}));
   QCOMPARE(menuActionNames(bar, QStringLiteral("menuSettings")),
-           QStringList{QStringLiteral("actionConfig")});
+           (QStringList{QStringLiteral("actionConfig"),
+                        QStringLiteral("actionShowMenuBar")}));
   QCOMPARE(
       menuActionNames(bar, QStringLiteral("menuHelp")),
       (QStringList{QStringLiteral("actionFaq"), QStringLiteral("actionAbout"),
