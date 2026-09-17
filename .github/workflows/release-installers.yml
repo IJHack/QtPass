@@ -294,13 +294,15 @@ jobs:
       # script runs them with APPIMAGE_EXTRACT_AND_RUN=1 so no FUSE is needed
       # here, but the Qt plugin still shells out to patchelf and friends.
       # appstream provides appstreamcli, which the script uses to validate
-      # the metainfo file.
+      # the metainfo file; xvfb and weston are the X11 and Wayland displays
+      # for the smoke tests below.
       - name: Install packaging dependencies
         if: steps.need_build.outputs.run_build == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            libfuse2t64 patchelf desktop-file-utils file xvfb appstream
+            libfuse2t64 patchelf desktop-file-utils file appstream \
+            xvfb weston
 
       - name: Resolve AppImage version
         if: steps.need_build.outputs.run_build == 'true'
@@ -327,11 +329,13 @@ jobs:
         env:
           VERSION: ${{ steps.version.outputs.version }}
 
-      # A broken bundle still packages cleanly, so prove it actually runs.
-      # QtPass builds its QApplication before looking at argv and has no
-      # --version short-circuit, so this needs a display and has to be killed:
-      # surviving the timeout is the pass condition, and any earlier exit means
-      # Qt, a plugin or a bundled library failed to load.
+      # A broken bundle still packages cleanly, so prove it actually runs, on
+      # X11 (Xvfb) and on Wayland (headless Weston, exercising the bundled
+      # libqwayland-generic.so, its shell-integration plugins and their
+      # libraries). QtPass builds its QApplication before looking at argv and
+      # has no --version short-circuit, so each run has to be killed:
+      # surviving the timeout is the pass condition, and any earlier exit
+      # means Qt, a plugin or a bundled library failed to load.
       - name: Smoke-test the AppImage
         if: steps.need_build.outputs.run_build == 'true'
         shell: bash
@@ -340,19 +344,49 @@ jobs:
           appimage="dist/QtPass-${STEPS_VERSION_OUTPUTS_VERSION}-x86_64.AppImage"
           test -f "$appimage"
           chmod +x "$appimage"
+          # Qt's own packages ship the Wayland client plugins, so the build
+          # script must have bundled them.
+          test -f build-appimage/AppDir/usr/plugins/platforms/libqwayland-generic.so
+          test -d build-appimage/AppDir/usr/plugins/wayland-shell-integration
+
+          # No FUSE on the runner, so run the extracted payload.
+          export APPIMAGE_EXTRACT_AND_RUN=1
+
+          # stayed_up LOG: 124 means the timeout fired, 143 killed by SIGTERM;
+          # anything else is an exit of its own.
+          stayed_up() {
+            local rc=$1 log=$2
+            if [ "$rc" -ne 124 ] && [ "$rc" -ne 143 ]; then
+              echo "AppImage exited on its own (rc=$rc); output follows:" >&2
+              cat "$log" >&2
+              return 1
+            fi
+          }
 
           rc=0
-          # No FUSE on the runner, so run the extracted payload.
-          APPIMAGE_EXTRACT_AND_RUN=1 timeout --signal=TERM 30 \
-            xvfb-run -a "$appimage" > smoke.log 2>&1 || rc=$?
+          timeout --signal=TERM 30 xvfb-run -a "$appimage" > smoke-x11.log 2>&1 || rc=$?
+          stayed_up "$rc" smoke-x11.log
+          echo "AppImage started on X11 and stayed running."
 
-          # 124: timeout fired. 143: killed by SIGTERM. Both mean it stayed up.
-          if [ "$rc" -ne 124 ] && [ "$rc" -ne 143 ]; then
-            echo "AppImage exited on its own (rc=$rc); output follows:" >&2
-            cat smoke.log >&2
-            exit 1
-          fi
-          echo "AppImage started and stayed running."
+          export XDG_RUNTIME_DIR="${RUNNER_TEMP}/xdg-runtime"
+          mkdir -p "$XDG_RUNTIME_DIR"
+          chmod 700 "$XDG_RUNTIME_DIR"
+          weston --backend=headless --socket=wl-qtpass --idle-time=0 \
+            > weston.log 2>&1 &
+          for _ in $(seq 1 50); do
+            [ -S "$XDG_RUNTIME_DIR/wl-qtpass" ] && break
+            sleep 0.2
+          done
+          test -S "$XDG_RUNTIME_DIR/wl-qtpass" || { cat weston.log >&2; exit 1; }
+
+          rc=0
+          QT_QPA_PLATFORM=wayland WAYLAND_DISPLAY=wl-qtpass \
+            timeout --signal=TERM 30 "$appimage" > smoke-wayland.log 2>&1 || rc=$?
+          stayed_up "$rc" smoke-wayland.log
+          # QT_QPA_PLATFORM names wayland alone, no fallback: had the plugin
+          # failed to load, Qt would have aborted, so surviving means it ran
+          # on Wayland.
+          echo "AppImage started on Wayland and stayed running."
         env:
           STEPS_VERSION_OUTPUTS_VERSION: ${{ steps.version.outputs.version }}
 

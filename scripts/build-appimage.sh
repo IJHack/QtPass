@@ -168,9 +168,30 @@ export PATH="${tools_dir}:${PATH}"
 export APPIMAGE_EXTRACT_AND_RUN=1
 export QMAKE="${qmake_bin}"
 export OUTPUT="QtPass-${VERSION}-${ARCH}.AppImage"
-# QtPass draws its toolbar/tray icons from Qt's SVG image plugin; without this
-# the theme falls back to blank icons on hosts that lack qt6-svg.
-export EXTRA_QT_PLUGINS="svg"
+# svg: QtPass draws its toolbar/tray icons through Qt's SVG image plugin;
+# without it the theme falls back to blank icons on hosts that lack qt6-svg.
+extra_modules="svg"
+# Native Wayland when this Qt has the client platform plugins (Qt's own
+# packages do; a distribution Qt may keep them in a separate package such as
+# qt6-wayland). "waylandcompositor" is the name under which
+# linuxdeploy-plugin-qt bundles the client-side shell-integration and
+# decoration plugins that libqwayland-*.so load at runtime. Without all of
+# this the AppImage still runs on a Wayland desktop, through XWayland.
+qt_platforms="$("${qmake_bin}" -query QT_INSTALL_PLUGINS)/platforms"
+platform_plugins=""
+for plugin in libqwayland-generic.so libqwayland-egl.so; do
+	if [ -f "${qt_platforms}/${plugin}" ]; then
+		platform_plugins="${platform_plugins:+${platform_plugins};}${plugin}"
+	fi
+done
+if [ -n "${platform_plugins}" ]; then
+	echo "==> Bundling Wayland platform plugins: ${platform_plugins}"
+	extra_modules="${extra_modules};waylandcompositor"
+	export EXTRA_PLATFORM_PLUGINS="${platform_plugins}"
+else
+	echo "==> No Wayland platform plugin in ${qt_platforms}; xcb only"
+fi
+export EXTRA_QT_MODULES="${extra_modules}"
 export LDAI_RUNTIME_FILE="${runtime}"
 # See step 2: the metadata is validated above, under the name it ships with.
 export LDAI_NO_APPSTREAM=1
