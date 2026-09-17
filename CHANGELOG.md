@@ -51,6 +51,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Bugfixes
 
+- "Automatically push" and "Automatically pull" in the settings did nothing
+  since 1.8.0: [#1140](https://github.com/IJHack/QtPass/pull/1140) started
+  storing them per profile and stopped writing the global keys that the
+  backends and the pull-on-start actually read. Both are saved again, and
+  switching profiles now applies that profile's Git flags along with its path
+  and signing key
 - The main window comes back where it was left. The saved position was
   discarded on every start (stale position/size keys were applied on top of
   the restored geometry, then `main()` re-centred the window on the cursor's

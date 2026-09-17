@@ -195,6 +195,11 @@ auto ConfigDialog::readSettings() -> AppSettings {
     settings.startMinimized = ui->checkBoxStartMinimized->isChecked();
   }
   settings.useGit = ui->checkBoxUseGit->isChecked();
+  // The backends and the auto-pull-on-start read the global keys; #1140
+  // started storing these per profile as well and stopped writing the
+  // globals, which left both checkboxes without effect.
+  settings.autoPush = ui->checkBoxAutoPush->isChecked();
+  settings.autoPull = ui->checkBoxAutoPull->isChecked();
   settings.useOtp = ui->checkBoxUseOtp->isChecked();
   settings.useGrepSearch = ui->checkBoxUseGrepSearch->isChecked();
   settings.useQrencode = ui->checkBoxUseQrencode->isChecked();
