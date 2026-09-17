@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['accept_0',['accept',['../class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180',1,'FirstRunWizard::accept()'],['../class_users_dialog.html#aa1630582c14afcef9ad80398752762a4',1,'UsersDialog::accept()']]],
+  ['accept_0',['accept',['../class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180',1,'FirstRunWizard::accept()'],['../class_password_dialog.html#a4f6e842cc9039c5501b95693321ae736',1,'PasswordDialog::accept()'],['../class_users_dialog.html#aa1630582c14afcef9ad80398752762a4',1,'UsersDialog::accept()']]],
   ['addpadding_1',['addPadding',['../class_base32.html#a0333781f29fc93e20b3792c243a666db',1,'Base32']]],
   ['append_2',['append',['../class_process_output_panel.html#ae513643a2ccb1d663e79a2b480e0a1ac',1,'ProcessOutputPanel']]],
   ['applypassphrase_3',['applyPassphrase',['../class_keygen_dialog.html#a8f57d71d0288d8088b23b8124088a62a',1,'KeygenDialog']]],
