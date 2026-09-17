@@ -4,6 +4,7 @@
 #include <QSignalSpy>
 #include <QtTest>
 
+#include "../../../src/pass.h"
 #include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/settingsconstants.h"
@@ -55,10 +56,11 @@ void tst_qtpass::formatOutputEscapesLinksAndBreaksLines() {
 
 void tst_qtpass::failedProcessShowsRedErrorAndFinishes() {
   QtPass qtPass;
+  Pass *real = QtPassSettings::getRealPass();
   QSignalSpy output(&qtPass, &QtPass::outputReady);
   QSignalSpy finished(&qtPass, &QtPass::operationFinished);
 
-  emit QtPassSettings::getRealPass() -> processErrorExit(
+  emit real->processErrorExit(
       1, QStringLiteral("gpg: decryption failed\nNo secret key"));
 
   QCOMPARE(output.count(), 1);
@@ -73,11 +75,11 @@ void tst_qtpass::failedProcessShowsRedErrorAndFinishes() {
 
 void tst_qtpass::successfulProcessShowsGreyChatterOnce() {
   QtPass qtPass;
+  Pass *real = QtPassSettings::getRealPass();
   QSignalSpy output(&qtPass, &QtPass::outputReady);
   QSignalSpy finished(&qtPass, &QtPass::operationFinished);
 
-  emit QtPassSettings::getRealPass()
-      -> processErrorExit(0, QStringLiteral("Already up to date."));
+  emit real->processErrorExit(0, QStringLiteral("Already up to date."));
 
   QCOMPARE(output.count(), 1);
   QVERIFY(output.first().first().toString().startsWith(
@@ -87,10 +89,11 @@ void tst_qtpass::successfulProcessShowsGreyChatterOnce() {
 
 void tst_qtpass::silentFailureOnlyFinishes() {
   QtPass qtPass;
+  Pass *real = QtPassSettings::getRealPass();
   QSignalSpy output(&qtPass, &QtPass::outputReady);
   QSignalSpy finished(&qtPass, &QtPass::operationFinished);
 
-  emit QtPassSettings::getRealPass() -> processErrorExit(2, QString());
+  emit real->processErrorExit(2, QString());
 
   QCOMPARE(output.count(), 0);
   QCOMPARE(finished.count(), 1);
@@ -98,11 +101,12 @@ void tst_qtpass::silentFailureOnlyFinishes() {
 
 void tst_qtpass::finishedProcessShowsOutputAndChatter() {
   QtPass qtPass;
+  Pass *real = QtPassSettings::getRealPass();
   QSignalSpy output(&qtPass, &QtPass::outputReady);
   QSignalSpy finished(&qtPass, &QtPass::operationFinished);
 
-  emit QtPassSettings::getRealPass() -> finishedGitPull(
-      QStringLiteral("Updating 1..2"), QStringLiteral("From origin"));
+  emit real->finishedGitPull(QStringLiteral("Updating 1..2"),
+                             QStringLiteral("From origin"));
 
   QCOMPARE(output.count(), 2);
   QCOMPARE(output.at(0).first().toString(), QStringLiteral("Updating 1..2"));
@@ -114,47 +118,52 @@ void tst_qtpass::finishedProcessShowsOutputAndChatter() {
 
 void tst_qtpass::storeChangePushesOnlyWhenAutoPushIsOn() {
   QtPass qtPass;
+  Pass *real = QtPassSettings::getRealPass();
   QSignalSpy push(&qtPass, &QtPass::pushRequested);
   QSignalSpy finished(&qtPass, &QtPass::operationFinished);
 
-  emit QtPassSettings::getRealPass() -> finishedRemove(QString(), QString());
+  emit real->finishedRemove(QString(), QString());
   QCOMPARE(push.count(), 0);
   QCOMPARE(finished.count(), 1);
 
   AppSettings s = QtPassSettings::load();
   s.autoPush = true;
   QtPassSettings::save(s);
-  emit QtPassSettings::getRealPass() -> finishedMove(QString(), QString());
-  emit QtPassSettings::getRealPass() -> finishedCopy(QString(), QString());
-  emit QtPassSettings::getRealPass() -> finishedGitInit(QString(), QString());
-  emit QtPassSettings::getRealPass() -> finishedInit(QString(), QString());
+  emit real->finishedMove(QString(), QString());
+  emit real->finishedCopy(QString(), QString());
+  emit real->finishedGitInit(QString(), QString());
+  emit real->finishedInit(QString(), QString());
   QCOMPARE(push.count(), 4);
   QCOMPARE(finished.count(), 5);
 }
 
 void tst_qtpass::insertReselectsTheEntry() {
   QtPass qtPass;
+  Pass *real = QtPassSettings::getRealPass();
   QSignalSpy inserted(&qtPass, &QtPass::entryInserted);
   QSignalSpy push(&qtPass, &QtPass::pushRequested);
   QSignalSpy finished(&qtPass, &QtPass::operationFinished);
+  QSignalSpy output(&qtPass, &QtPass::outputReady);
 
   AppSettings s = QtPassSettings::load();
   s.autoPush = true;
   QtPassSettings::save(s);
-  emit QtPassSettings::getRealPass() -> finishedInsert(QString(), QString());
+  emit real->finishedInsert(QString(), QString());
 
   QCOMPARE(inserted.count(), 1);
   QCOMPARE(push.count(), 1);
   QCOMPARE(finished.count(), 1);
+  QCOMPARE(output.count(), 0); // nothing printed, nothing to show
 }
 
 void tst_qtpass::keyGenerationReportsSuccess() {
   QtPass qtPass;
+  Pass *real = QtPassSettings::getRealPass();
   QSignalSpy status(&qtPass, &QtPass::statusMessage);
   QSignalSpy output(&qtPass, &QtPass::outputReady);
   QSignalSpy finished(&qtPass, &QtPass::operationFinished);
 
-  emit QtPassSettings::getRealPass() -> finishedGenerateGPGKeys(
+  emit real->finishedGenerateGPGKeys(
       QStringLiteral("gpg: key ABCD marked as ultimately trusted"), QString());
 
   QCOMPARE(status.count(), 1);
@@ -167,10 +176,12 @@ void tst_qtpass::keyGenerationReportsSuccess() {
 
 void tst_qtpass::bothBackendsAreListenedTo() {
   QtPass qtPass;
+  Pass *real = QtPassSettings::getRealPass();
+  Pass *imitate = QtPassSettings::getImitatePass();
   QSignalSpy finished(&qtPass, &QtPass::operationFinished);
 
-  emit QtPassSettings::getImitatePass() -> processErrorExit(1, QString());
-  emit QtPassSettings::getRealPass() -> processErrorExit(1, QString());
+  emit imitate->processErrorExit(1, QString());
+  emit real->processErrorExit(1, QString());
 
   QCOMPARE(finished.count(), 2);
 }

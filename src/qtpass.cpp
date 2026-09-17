@@ -140,7 +140,11 @@ void QtPass::processErrorExit(int exitCode, const QString &error) {
  * @param errout stderr from a process
  */
 void QtPass::processFinished(const QString &output, const QString &errout) {
-  emit outputReady(formatOutput(output));
+  // A silent command (git push with nothing to push, say) has nothing to
+  // show; re-setting the browser's HTML for it would only reset its scroll.
+  if (!output.isEmpty()) {
+    emit outputReady(formatOutput(output));
+  }
   reportError(0, errout);
   emit operationFinished();
 }
