@@ -265,13 +265,13 @@
         <location filename="../src/configdialog.ui" line="765"/>
         <location filename="../src/configdialog.ui" line="768"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Elixe o executable gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
         <location filename="../src/configdialog.ui" line="781"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Elixe o executable git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="797"/>
@@ -287,7 +287,7 @@
         <location filename="../src/configdialog.ui" line="833"/>
         <location filename="../src/configdialog.ui" line="836"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Elixe o executable pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="860"/>
@@ -298,7 +298,7 @@
         <location filename="../src/configdialog.ui" line="873"/>
         <location filename="../src/configdialog.ui" line="876"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Elixe o executable pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
@@ -374,7 +374,7 @@
         <location filename="../src/configdialog.ui" line="1110"/>
         <location filename="../src/configdialog.ui" line="1113"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Elixe o cartafol para password store</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1133"/>
@@ -552,7 +552,7 @@ O valor seguirase a gardar tal como se introduciu.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="56"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished"></translation>
+        <translation>Non dispoñible en Wayland; no seu lugar usa a regra do compositor de xanelas «manter enriba»</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1026"/>
@@ -719,7 +719,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="122"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished"></translation>
+        <translation>Non hai un executable configurado para esta orde</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="157"/>
@@ -729,7 +729,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="440"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 fallou ou foi fechado</translation>
     </message>
 </context>
 <context>
@@ -844,7 +844,7 @@ Non poderás cambiar a lista de usuarias!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallou a obtención con git: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="185"/>
@@ -905,7 +905,7 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished"></translation>
+        <translation>Xa se está a realizar a re-cifraxe</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="838"/>
@@ -915,7 +915,7 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallou a obtención con git, re-cifrando a almacenaxe tal como está</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="965"/>
@@ -930,28 +930,28 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1003"/>
         <source>... and %n more</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>… e %n máis</numerusform>
+            <numerusform>… e %n máis</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1006"/>
         <source>%n file(s) could not be re-encrypted:</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n ficheiro non se puido volver a cifrar:</numerusform>
+            <numerusform>%n ficheiros non se puideron volver a cifrar:</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1012"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelouse a re-cifraxe: %1 de %2 ficheiros comprobados, %3 re-cifrados, %4 con fallo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1297"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished"></translation>
+        <translation>O executable git non está configurado, omitindo git</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -970,9 +970,9 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1035"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Sen envío: fallou a re-cifraxe de %n ficheiro</numerusform>
+            <numerusform>Sen envío: fallou a re-cifraxe de %n ficheiros</numerusform>
         </translation>
     </message>
     <message>
@@ -1754,7 +1754,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1589"/>
         <source>New folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo cartafol</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1727"/>
@@ -1764,22 +1764,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1791"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished"></translation>
+        <translation>Volvendo a cifrar os contrasinais…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1800"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelando a nova cifraxe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1816"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Volvendo a cifrar os contrasinais: %1 de %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1849"/>
@@ -1912,12 +1912,12 @@ Continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="163"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished"></translation>
+        <translation>Non existe o almacén GPG %1 configurado, utilizando o anel de claves predeterminado</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="171"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished"></translation>
+        <translation>Non existe o almacén GPG %1 configurado, usando GNUPGHOME %2 desde as variable de entorno</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="191"/>
@@ -2021,17 +2021,17 @@ Continuar?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="164"/>
         <source>Template:</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="180"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelo de campo desde o ficheiro .templates do almacén. Ctrl+T cambia ao seguinte.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="90"/>
         <source>Decrypting…</source>
-        <translation type="unfinished"></translation>
+        <translation>Descifrando…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="267"/>
@@ -2136,7 +2136,7 @@ Continuar?</translation>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar como código QR</translation>
     </message>
 </context>
 <context>
@@ -2147,13 +2147,13 @@ Continuar?</translation>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
         <source>Show password</source>
-        <translation type="unfinished">Mostrar contrasinal</translation>
+        <translation>Mostrar contrasinal</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
         <source>Hide password</source>
-        <translation type="unfinished">Ocultar contrasinal</translation>
+        <translation>Ocultar contrasinal</translation>
     </message>
 </context>
 <context>
@@ -2162,7 +2162,7 @@ Continuar?</translation>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar ao portapapeis</translation>
     </message>
 </context>
 <context>
@@ -2349,7 +2349,11 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar as usuarias do ordenador que van poder descifrar os contrasinais gardados neste cartafol.
+Nota: Ao premer OK todos os contrasinais deste cartafol e subcartafoles vanse volver a cifrar para as usuarias seleccionadas; podería demorarse.
+As entradas con letra grosa teñen unha clave secreta dispoñible, selecciona unha delas para poder ti descifrar.
+As entradas con letra normal teñen unha clave de cifraxe de confianza, selecciona estas para permitir que outras persoas descifren.
+As entradas con [NON VÁLIDA] ou [CADUCADA] non se poden cifrar; as entradas [PARCIAL] teñen unha clave sen confianza completa.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
