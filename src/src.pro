@@ -156,7 +156,6 @@ HEADERS   += mainwindow.h \
              processoutputpanel.h \
              qtpass.h \
              qtpasslogging.h \
-             qtcompat.h \
              profileinit.h
 
 FORMS     += mainwindow.ui \

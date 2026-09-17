@@ -253,6 +253,16 @@ public:
 
 protected:
   /**
+   * @brief Remember what a Show() asked for, so its completion can say so.
+   *
+   * Backends call this first thing in Show(); Pass::finished() pops the
+   * entry again on success or failure. The Executor runs one queue in
+   * order, so the two stay aligned.
+   * @param file The Show() argument.
+   */
+  void queueShow(const QString &file) { m_pendingShows.enqueue(file); }
+
+  /**
    * @brief Execute external wrapper command.
    * @param id Process identifier.
    * @param app Executable path.
@@ -317,6 +327,8 @@ protected slots:
                         const QString &err);
 
 private:
+  /// Files of the Show() calls still in flight, oldest first.
+  QQueue<QString> m_pendingShows;
   void handleProcessError(PROCESS pid, int exitCode, const QString &out,
                           const QString &err);
   void handleGrepError(int exitCode, const QString &err);
@@ -377,10 +389,16 @@ signals:
    */
   void finishedGitPush(const QString &out, const QString &err);
   /**
-   * @brief Emitted when show finishes.
+   * @brief Emitted when a Show() succeeds.
+   *
+   * Requests complete in the order they were queued, so @p file is the
+   * argument of the Show() this result belongs to. Every receiver checks it
+   * against what it asked for; a failed decrypt emits processErrorExit()
+   * instead and never finishedShow().
    * @param out Decrypted password file content.
+   * @param file The Show() argument this content is for.
    */
-  void finishedShow(const QString &out);
+  void finishedShow(const QString &out, const QString &file);
   /**
    * @brief Emitted when insert finishes.
    * @param out Standard output.

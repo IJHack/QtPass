@@ -135,8 +135,8 @@ void QtPass::setMainWindow() {
  */
 void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::processErrorExit, this, &QtPass::processErrorExit);
-  // A failed decrypt never emits finishedShow, so an OTP request would
-  // otherwise stay pending for the rest of the session.
+  // A failed decrypt never emits finishedShow; drop the pending OTP/copy
+  // request so a later decrypt of the same entry is not taken as its answer.
   connect(pass, &Pass::processErrorExit, m_mainWindow,
           &MainWindow::cancelOtpRequest);
   connect(pass, &Pass::critical, m_mainWindow, &MainWindow::critical);
@@ -145,6 +145,12 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::statusMsg, m_mainWindow, &MainWindow::showStatusMessage);
   connect(pass, &Pass::finishedShow, m_mainWindow,
           &MainWindow::passShowHandler);
+  // Both check the file against their own pending request and ignore the
+  // rest, so they can stay connected for good.
+  connect(pass, &Pass::finishedShow, m_mainWindow,
+          &MainWindow::otpFromFileToClipboard);
+  connect(pass, &Pass::finishedShow, m_mainWindow,
+          &MainWindow::passwordFromFileToClipboard);
   connect(pass, &Pass::finishedGitInit, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedGitPull, this, &QtPass::processFinished);
   connect(pass, &Pass::finishedGitPush, this, &QtPass::processFinished);

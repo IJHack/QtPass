@@ -116,7 +116,7 @@ public slots:
    * @brief Populate the dialog's password field from pass show output.
    * @param output Output from the pass show command.
    */
-  void setPass(const QString &output);
+  void setPass(const QString &output, const QString &file = QString());
 
 private slots:
   /**

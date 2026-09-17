@@ -184,19 +184,31 @@ public slots:
    * @brief Handle output from the pass show command.
    * @param output Decrypted password file content.
    */
-  void passShowHandler(const QString &output);
+  void passShowHandler(const QString &output, const QString &file = QString());
 
   /**
    * @brief Generate a one-time password from decrypted content and copy it.
+   *        Ignores decrypts of anything but the entry onOtp() asked for.
    * @param output Decrypted entry content.
+   * @param file Entry the content belongs to.
    */
-  void otpFromFileToClipboard(const QString &output);
+  void otpFromFileToClipboard(const QString &output, const QString &file);
 
   /**
-   * @brief Abandon an in-flight OTP request.
+   * @brief Copy the first line of a decrypted entry (Ctrl+C). Ignores
+   *        decrypts of anything but the entry copyPasswordFromTreeview()
+   *        asked for; an otpauth:// first line is refused.
+   * @param text Decrypted entry content.
+   * @param file Entry the content belongs to.
+   */
+  void passwordFromFileToClipboard(const QString &text, const QString &file);
+
+  /**
+   * @brief Forget the pending OTP and copy requests.
    *
-   * A failed decrypt never emits Pass::finishedShow, so without this the
-   * request would stay pending for the rest of the session.
+   * A failed decrypt never emits Pass::finishedShow; without this a later
+   * decrypt of the same entry (the user retrying) would be taken as the
+   * answer to a request the user has long given up on.
    */
   void cancelOtpRequest();
 
@@ -272,7 +284,6 @@ private slots:
   void renamePassword();
   void focusInput();
   void copyPasswordFromTreeview();
-  void passwordFromFileToClipboard(const QString &text);
   void onTimeoutSearch();
 
 private:
@@ -281,26 +292,19 @@ private:
   GrepSearchController m_grep;
   PasswordDisplayPanel *m_displayPanel = nullptr;
   bool m_firstShowCompleted = false;
-  /// True between onOtp() starting a decrypt and otpFromFileToClipboard
-  /// consuming it. Suppresses passShowHandler's password copy for that request,
-  /// and makes a connection left armed by a failed decrypt inert.
-  bool m_otpRequestPending = false;
   /// Entry the display panel is currently rendering. The tree's currentIndex
   /// can move without a repaint (arrow keys and right-click do not emit
   /// QTreeView::clicked), so onOtp() must not assume the visible code belongs
   /// to the selected entry.
   QString m_shownFile;
-  /// Entry the in-flight OTP request asked for, so a decrypt triggered by
-  /// something else cannot be mistaken for its answer.
+  /// Entry the in-flight OTP request asked for; empty when none. finishedShow
+  /// names its file, so otpFromFileToClipboard() simply ignores everything
+  /// else and passShowHandler() skips the password copy for this one.
   QString m_otpRequestFile;
-  /// True between copyPasswordFromTreeview() arming a decrypt and
-  /// passwordFromFileToClipboard() consuming it. finishedShow carries no
-  /// request identity, so a second copy request while one is in flight would
-  /// let the single-shot slot fire on the earlier decrypt's output (copying the
-  /// wrong entry) and drop the later one. Serialising to one in-flight request
-  /// keeps each Show(file) completion matched to the file it was asked for.
-  /// Cleared on completion and, for a failed decrypt, by cancelOtpRequest().
-  bool m_passwordCopyPending = false;
+  /// Entry the in-flight Ctrl+C request asked for; empty when none. Each
+  /// finishedShow is matched to it by file, so a second Ctrl+C on another
+  /// entry just replaces the request instead of racing it.
+  QString m_copyRequestFile;
   // The process output console is a QDockWidget at the bottom dock area,
   // created programmatically. It isn't part of the .ui because uic places
   // its QMainWindow children in centralWidget / statusBar / menuBar /
