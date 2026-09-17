@@ -8,33 +8,38 @@
 #include <QObject>
 #include <QPixmap>
 
-class MainWindow;
 class Pass;
 
 /**
  * @class QtPass
- * @brief Orchestrates pass signal handling and application-level operations
- * for the QtPass application; owns the ClipboardManager.
+ * @brief Application-level glue between the pass backends and whatever shows
+ * their results: turns the backends' completion signals into UI-neutral
+ * signals (formatted output, status messages, "the operation is over"), owns
+ * the ClipboardManager, migrates the settings of older versions on start-up
+ * and renders QR codes. It knows nothing about the main window; the window
+ * connects to the signals below.
  */
 class QtPass : public QObject {
   Q_OBJECT
 
 public:
   /**
-   * @brief Construct a QtPass instance associated with the given main window.
-   * @param mainWindow Pointer to the application's MainWindow.
+   * @brief Construct the glue and connect it to both pass backends.
+   * @param parent Owner.
    */
-  explicit QtPass(MainWindow *mainWindow);
+  explicit QtPass(QObject *parent = nullptr);
   /**
    * @brief Destroy the QtPass instance and clean up signal connections.
    */
   ~QtPass() override;
 
   /**
-   * @brief Initialize internal state and signal connections.
-   * @return true if initialization succeeded.
+   * @brief Resolve the password store and the executables and migrate the
+   * settings of an older version (fresh-install defaults, the native-OTP
+   * switch). Whether the resulting configuration is usable is the caller's
+   * question: see Util::configIsValid().
    */
-  auto init() -> bool;
+  void init();
 
   /**
    * @brief The clipboard handling for this application instance.
@@ -43,36 +48,17 @@ public:
   auto clipboard() -> ClipboardManager & { return m_clipboard; }
 
   /**
-   * @brief Return whether this instance is in a fresh-start state.
-   * @return true if in fresh-start state.
+   * @brief Turn a process' plain-text output into the HTML the text browser
+   * shows: http(s) URLs become links, everything else is escaped, line breaks
+   * become `<br />`.
+   * @param output Plain text from a process.
+   * @param prefix HTML placed before the converted output.
+   * @param postfix HTML placed after it.
+   * @return The HTML.
    */
-  auto isFreshStart() -> bool { return this->freshStart; }
+  static auto formatOutput(QString output, const QString &prefix = QString(),
+                           const QString &postfix = QString()) -> QString;
 
-  /**
-   * @brief Set the fresh-start state.
-   * @param fs New fresh-start state value.
-   */
-  void setFreshStart(const bool &fs) { this->freshStart = fs; }
-
-private:
-  MainWindow *m_mainWindow;
-
-  ClipboardManager m_clipboard;
-  bool freshStart{true};
-
-  void setMainWindow();
-  void connectPassSignalHandlers(Pass *pass);
-
-signals:
-
-public slots:
-  /**
-   * @brief Request display of text as a QR code in the UI.
-   * @param text Text to convert into a QR code.
-   */
-  void showTextAsQRCode(const QString &text);
-
-public:
   /**
    * @brief Create a modal dialog configured to display the given QR code.
    * @param image Pixmap containing the rendered QR code.
@@ -80,20 +66,56 @@ public:
    */
   static QDialog *createQRCodePopup(const QPixmap &image);
 
-private slots:
-  void processErrorExit(int exitCode, const QString &);
-  void processFinished(const QString &, const QString &);
+public slots:
+  /**
+   * @brief Render text as a QR code with qrencode and show it in a popup at
+   * the cursor; failures are reported through statusMessage().
+   * @param text Text to convert into a QR code.
+   */
+  void showTextAsQRCode(const QString &text);
 
-  void passStoreChanged(const QString &, const QString &);
-  void passShowHandlerFinished(QString output);
+signals:
+  /**
+   * @brief Formatted output (see formatOutput()) or an error rendered in
+   * colour, ready for the text browser.
+   * @param html The HTML to show.
+   */
+  void outputReady(const QString &html);
+  /**
+   * @brief A backend operation is over, successfully or not; the interface
+   * can be enabled again.
+   */
+  void operationFinished();
+  /**
+   * @brief A short message for the status bar.
+   * @param message The text.
+   * @param timeout Milliseconds to keep it, as QStatusBar::showMessage().
+   */
+  void statusMessage(const QString &message, int timeout);
+  /**
+   * @brief The store changed and the settings ask for an automatic push.
+   */
+  void pushRequested();
+  /**
+   * @brief An entry was written; the view of the current entry is stale.
+   */
+  void entryInserted();
+
+private:
+  ClipboardManager m_clipboard;
+
+  void connectPassSignalHandlers(Pass *pass);
+  void reportError(int exitCode, const QString &error);
+
+private slots:
+  void processErrorExit(int exitCode, const QString &error);
+  void processFinished(const QString &output, const QString &errout);
+
+  void passStoreChanged(const QString &output, const QString &errout);
 
   void doGitPush();
-  void finishedInsert(const QString &, const QString &);
-  void onKeyGenerationComplete(const QString &p_output,
-                               const QString &p_errout);
-
-  void showInTextBrowser(QString output, const QString &prefix = QString(),
-                         const QString &postfix = QString());
+  void finishedInsert(const QString &output, const QString &errout);
+  void onKeyGenerationComplete(const QString &output, const QString &errout);
 };
 
 #endif // SRC_QTPASS_H_

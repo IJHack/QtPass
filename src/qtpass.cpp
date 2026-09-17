@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2018 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "qtpass.h"
-#include "mainwindow.h"
+#include "imitatepass.h"
 #include "qtpasssettings.h"
 #include "settingsconstants.h"
 #include "util.h"
@@ -11,22 +11,17 @@
 #include <QPixmap>
 #include <QVBoxLayout>
 
-#include <utility>
-
 #include "qtpasslogging.h"
 
 /**
- * @brief Constructs a QtPass instance.
- * @param mainWindow The main window reference
+ * @brief Constructs a QtPass instance and listens to both backends.
+ * @param parent Owner.
  */
-QtPass::QtPass(MainWindow *mainWindow)
-    : QObject(mainWindow), m_mainWindow(mainWindow), m_clipboard(this) {
-  connect(&m_clipboard, &ClipboardManager::statusMessage, m_mainWindow,
-          [this](const QString &message) {
-            m_mainWindow->showStatusMessage(message);
-          });
-
-  setMainWindow();
+QtPass::QtPass(QObject *parent) : QObject(parent), m_clipboard(this) {
+  // Both implementations are wired up: the active one can change through the
+  // configuration dialog, and reconnecting on every switch is not worth it.
+  connectPassSignalHandlers(QtPassSettings::getRealPass());
+  connectPassSignalHandlers(QtPassSettings::getImitatePass());
 }
 
 /**
@@ -38,7 +33,7 @@ QtPass::~QtPass() = default;
  * @brief QtPass::init make sure we are ready to go as soon as
  * possible
  */
-auto QtPass::init() -> bool {
+void QtPass::init() {
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
   QtPassSettings::setPassStore(passStore);
 
@@ -89,68 +84,15 @@ auto QtPass::init() -> bool {
   }
 
   QtPassSettings::setVersion(VERSION);
-
-  // Ask again until the configuration is usable or the user gives up. The
-  // dialog's OK button is not gated on Util::configIsValid(), so an accepted
-  // first-run configuration can still point at a store without a .gpg-id
-  // (the user declined to create it); only a cancel ends the loop, which
-  // main() turns into an exit before the window is shown.
-  while (!Util::configIsValid(QtPassSettings::load())) {
-    if (!m_mainWindow->config()) {
-      return false;
-    }
-  }
-
-  freshStart = false;
-  return true;
 }
 
 /**
- * @brief Sets up the main window and connects signal handlers.
- */
-void QtPass::setMainWindow() {
-  m_mainWindow->restoreWindow();
-
-  // Signal handlers are connected for both pass implementations
-  // Note: When pass binary changes, QtPass restart is required to reconnect
-  // This is acceptable as pass binary change is infrequent
-  connectPassSignalHandlers(QtPassSettings::getRealPass());
-  connectPassSignalHandlers(QtPassSettings::getImitatePass());
-
-  connect(m_mainWindow, &MainWindow::passShowHandlerFinished, this,
-          &QtPass::passShowHandlerFinished);
-
-  // only for ipass
-  connect(QtPassSettings::getImitatePass(), &ImitatePass::startReencryptPath,
-          m_mainWindow, &MainWindow::startReencryptPath);
-  connect(QtPassSettings::getImitatePass(), &ImitatePass::reencryptProgress,
-          m_mainWindow, &MainWindow::reencryptProgress);
-  connect(QtPassSettings::getImitatePass(), &ImitatePass::endReencryptPath,
-          m_mainWindow, &MainWindow::endReencryptPath);
-}
-
-/**
- * @brief Connects pass signal handlers to QtPass slots.
+ * @brief Connects the completion signals of one backend to the slots that
+ * turn them into output, status and "finished" signals.
  * @param pass The pass instance to connect
  */
 void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::processErrorExit, this, &QtPass::processErrorExit);
-  // A failed decrypt never emits finishedShow; drop the pending OTP/copy
-  // request so a later decrypt of the same entry is not taken as its answer.
-  connect(pass, &Pass::processErrorExit, m_mainWindow,
-          &MainWindow::cancelOtpRequest);
-  connect(pass, &Pass::critical, m_mainWindow, &MainWindow::critical);
-  connect(pass, &Pass::startingExecuteWrapper, m_mainWindow,
-          &MainWindow::executeWrapperStarted);
-  connect(pass, &Pass::statusMsg, m_mainWindow, &MainWindow::showStatusMessage);
-  connect(pass, &Pass::finishedShow, m_mainWindow,
-          &MainWindow::passShowHandler);
-  // Both check the file against their own pending request and ignore the
-  // rest, so they can stay connected for good.
-  connect(pass, &Pass::finishedShow, m_mainWindow,
-          &MainWindow::otpFromFileToClipboard);
-  connect(pass, &Pass::finishedShow, m_mainWindow,
-          &MainWindow::passwordFromFileToClipboard);
   connect(pass, &Pass::finishedGitInit, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedGitPull, this, &QtPass::processFinished);
   connect(pass, &Pass::finishedGitPush, this, &QtPass::processFinished);
@@ -161,116 +103,107 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::finishedCopy, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedGenerateGPGKeys, this,
           &QtPass::onKeyGenerationComplete);
-  connect(pass, &Pass::finishedGrep, m_mainWindow, &MainWindow::onGrepFinished);
+}
+
+/**
+ * @brief Show a process' stderr in colour: red for a failure, dark grey for
+ * the chatter a successful command prints (see issue #111). Nothing is shown
+ * for empty output.
+ * @param exitCode The exit code
+ * @param error The error message
+ */
+void QtPass::reportError(int exitCode, const QString &error) {
+  if (error.isEmpty()) {
+    return;
+  }
+  const QString colour =
+      exitCode == 0 ? QStringLiteral("darkgray") : QStringLiteral("red");
+  emit outputReady(formatOutput(
+      error, QStringLiteral("<span style=\"color: %1;\">").arg(colour),
+      QStringLiteral("</span><br />")));
 }
 
 /**
  * @brief Handles process error exit.
  * @param exitCode The exit code
- * @param p_error The error message
+ * @param error The error message
  */
-void QtPass::processErrorExit(int exitCode, const QString &p_error) {
-  if (!p_error.isEmpty()) {
-    QString output;
-    // Escapes and links only launchable http(s) URLs; anything else stays
-    // plain text (the text browser opens external links on click).
-    const QString error = Util::linkifyUrls(p_error);
-    if (exitCode == 0) {
-      //  https://github.com/IJHack/qtpass/issues/111
-      output = "<span style=\"color: darkgray;\">" + error + "</span><br />";
-    } else {
-      output = "<span style=\"color: red;\">" + error + "</span><br />";
-    }
-
-    output.replace(QStringLiteral("\n"), "<br />");
-
-    m_mainWindow->flashText(output, false, true);
-  }
-
-  m_mainWindow->setUiElementsEnabled(true);
+void QtPass::processErrorExit(int exitCode, const QString &error) {
+  reportError(exitCode, error);
+  emit operationFinished();
 }
 
 /**
- * @brief QtPass::processFinished background process has finished
- * @param exitCode
- * @param exitStatus
- * @param output    stdout from a process
- * @param errout    stderr from a process
+ * @brief A background process has finished: show its stdout, and its stderr
+ * as grey chatter (a zero exit code is assumed here).
+ * @param output stdout from a process
+ * @param errout stderr from a process
  */
-void QtPass::processFinished(const QString &p_output, const QString &p_errout) {
-  showInTextBrowser(p_output);
-  //    Sometimes there is error output even with 0 exit code, which is
-  //    assumed in this function
-  processErrorExit(0, p_errout);
-
-  m_mainWindow->setUiElementsEnabled(true);
+void QtPass::processFinished(const QString &output, const QString &errout) {
+  // A silent command (git push with nothing to push, say) has nothing to
+  // show; re-setting the browser's HTML for it would only reset its scroll.
+  if (!output.isEmpty()) {
+    emit outputReady(formatOutput(output));
+  }
+  reportError(0, errout);
+  emit operationFinished();
 }
 
 /**
  * @brief Called when pass store has changed.
- * @param p_out Output from the process
- * @param p_err Error output
+ * @param output Output from the process
+ * @param errout Error output
  */
-void QtPass::passStoreChanged(const QString &p_out, const QString &p_err) {
-  processFinished(p_out, p_err);
+void QtPass::passStoreChanged(const QString &output, const QString &errout) {
+  processFinished(output, errout);
   doGitPush();
 }
 
 /**
  * @brief Called when an insert operation has finished.
- * @param p_output Output from the process
- * @param p_errout Error output
+ * @param output Output from the process
+ * @param errout Error output
  */
-void QtPass::finishedInsert(const QString &p_output, const QString &p_errout) {
-  processFinished(p_output, p_errout);
+void QtPass::finishedInsert(const QString &output, const QString &errout) {
+  processFinished(output, errout);
   doGitPush();
-  m_mainWindow->on_treeView_clicked(m_mainWindow->getCurrentTreeViewIndex());
+  emit entryInserted();
 }
 
 /**
  * @brief Called when GPG key generation is complete.
- * @param p_output Standard output from the key generation process
- * @param p_errout Standard error output from the key generation process
+ * @param output Standard output from the key generation process
+ * @param errout Standard error output from the key generation process
  */
-void QtPass::onKeyGenerationComplete(const QString &p_output,
-                                     const QString &p_errout) {
+void QtPass::onKeyGenerationComplete(const QString &output,
+                                     const QString &errout) {
   // The KeygenDialog listens to the same signal and closes itself.
-  m_mainWindow->showStatusMessage(tr("GPG key pair generated successfully"),
-                                  10000);
-  processFinished(p_output, p_errout);
+  emit statusMessage(tr("GPG key pair generated successfully"), 10000);
+  processFinished(output, errout);
 }
 
 /**
- * @brief Called when the password show handler has finished.
- * @param output The password content to display
- */
-void QtPass::passShowHandlerFinished(QString output) {
-  showInTextBrowser(std::move(output));
-}
-
-/**
- * @brief Displays output text in the main window's text browser.
+ * @brief Turn process output into HTML for the text browser.
  * @param output The text to display
  * @param prefix Optional prefix to prepend to the output
  * @param postfix Optional postfix to append to the output
+ * @return The HTML.
  */
-void QtPass::showInTextBrowser(QString output, const QString &prefix,
-                               const QString &postfix) {
+auto QtPass::formatOutput(QString output, const QString &prefix,
+                          const QString &postfix) -> QString {
   // Escapes and links only launchable http(s) URLs; anything else stays
   // plain text (the text browser opens external links on click).
   output = Util::linkifyUrls(output);
   output.replace(QStringLiteral("\n"), "<br />");
-  output = prefix + output + postfix;
-
-  m_mainWindow->flashText(output, false, true);
+  return prefix + output + postfix;
 }
 
 /**
- * @brief Performs automatic git push if enabled in settings.
+ * @brief Ask for a git push when the settings want one after every change.
  */
 void QtPass::doGitPush() {
   if (QtPassSettings::isAutoPush()) {
-    m_mainWindow->onPush();
+    emit pushRequested();
   }
 }
 
@@ -289,8 +222,7 @@ void QtPass::showTextAsQRCode(const QString &text) {
   // A missing or non-executable binary never "finishes": exitStatus() stays
   // NormalExit and exitCode() 0, which used to fall through to an empty popup.
   if (!qrencode.waitForStarted()) {
-    m_mainWindow->showStatusMessage(
-        tr("Could not start qrencode: %1").arg(qrExe));
+    emit statusMessage(tr("Could not start qrencode: %1").arg(qrExe), 2000);
     return;
   }
   qrencode.write(text.toUtf8());
@@ -298,7 +230,7 @@ void QtPass::showTextAsQRCode(const QString &text) {
   // A hung qrencode also leaves exitStatus()/exitCode() at their defaults.
   if (!qrencode.waitForFinished()) {
     qrencode.kill();
-    m_mainWindow->showStatusMessage(tr("qrencode did not finish in time"));
+    emit statusMessage(tr("qrencode did not finish in time"), 2000);
     return;
   }
   QByteArray output(qrencode.readAllStandardOutput());
@@ -313,7 +245,7 @@ void QtPass::showTextAsQRCode(const QString &text) {
                   ? tr("qrencode crashed")
                   : tr("qrencode exited with code %1").arg(qrencode.exitCode());
     }
-    m_mainWindow->showStatusMessage(error);
+    emit statusMessage(error, 2000);
   } else {
     QPixmap image;
     image.loadFromData(output, "PNG");

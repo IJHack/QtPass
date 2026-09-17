@@ -20,8 +20,10 @@ void qt_set_sequence_auto_mnemonic(bool b);
 
 namespace Ui {
 class MainWindow;
-}
+class Pass;
+} // namespace Ui
 
+class Pass;
 class ProcessOutputPanel;
 class QProgressDialog;
 class QTreeWidgetItem;
@@ -130,13 +132,6 @@ protected:
    * @return true if the event was consumed.
    */
   auto eventFilter(QObject *obj, QEvent *event) -> bool override;
-
-signals:
-  /**
-   * @brief Emitted when the pass show handler has finished decrypting.
-   * @param output Decrypted password file content.
-   */
-  void passShowHandlerFinished(const QString &output);
 
 public slots:
   /**
@@ -327,12 +322,17 @@ private:
   /// while the re-encryption worker is still rewriting files.
   bool m_reencryptRunning = false;
   TrayIcon *m_tray{};
-  /// Result of QtPass::init() from the constructor; main() consults it via
-  /// initSucceeded() to decide whether the application should start at all.
+  /// Whether the constructor ended with a usable configuration; main()
+  /// consults it via initSucceeded() to decide whether the application should
+  /// start at all.
   bool m_initSucceeded = false;
+  /// No usable configuration has been accepted yet: config() runs the
+  /// first-run wizard and defaults to pass when it is installed.
+  bool m_freshStart = true;
 
   void initToolBarButtons();
   void initStatusBar();
+  void connectPassSignals(Pass *pass);
 
   void selectFirstFile();
   auto firstFile(QModelIndex parentIndex) -> QModelIndex;

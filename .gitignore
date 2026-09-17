@@ -1,5 +1,7 @@
 Makefile
-qtpass
+# the built binary (in-tree build); not tests/auto/qtpass/
+/qtpass
+/main/qtpass
 QtPass.app
 QtPass-*.dmg
 qtpass.pro.user

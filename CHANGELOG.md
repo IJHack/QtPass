@@ -34,6 +34,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Changed
 
+- The `QtPass` glue object no longer reaches into the main window (it used to
+  call eighteen of its methods and wire the backends to its slots); it emits
+  `outputReady`, `operationFinished`, `statusMessage`, `pushRequested` and
+  `entryInserted` and the window connects to them. The first-run configuration
+  loop and the fresh-start state live in the window, the settings migration in
+  `QtPass::init()`, which finally has a test suite (`tst_qtpass`)
 - The AppStream metainfo installs as `org.qtpass.QtPass.metainfo.xml`, the
   filename the spec derives from the component ID, instead of
   `qtpass.appdata.xml`. Packagers: the RPM spec follows; the Flatpak manifest

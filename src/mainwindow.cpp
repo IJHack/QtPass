@@ -65,6 +65,29 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   ui->setupUi(this);
 
   m_qtPass = new QtPass(this);
+  restoreWindow();
+  connect(m_qtPass, &QtPass::outputReady, this,
+          [this](const QString &html) { flashText(html, false, true); });
+  connect(m_qtPass, &QtPass::operationFinished, this,
+          [this]() { setUiElementsEnabled(true); });
+  connect(m_qtPass, &QtPass::statusMessage, this,
+          &MainWindow::showStatusMessage);
+  connect(m_qtPass, &QtPass::pushRequested, this, &MainWindow::onPush);
+  connect(m_qtPass, &QtPass::entryInserted, this,
+          [this]() { on_treeView_clicked(getCurrentTreeViewIndex()); });
+  connect(&m_qtPass->clipboard(), &ClipboardManager::statusMessage, this,
+          [this](const QString &message) { showStatusMessage(message); });
+  // Both backends: the active one can change through the configuration
+  // dialog without a restart.
+  connectPassSignals(QtPassSettings::getRealPass());
+  connectPassSignals(QtPassSettings::getImitatePass());
+  ImitatePass *ipass = QtPassSettings::getImitatePass();
+  connect(ipass, &ImitatePass::startReencryptPath, this,
+          &MainWindow::startReencryptPath);
+  connect(ipass, &ImitatePass::reencryptProgress, this,
+          &MainWindow::reencryptProgress);
+  connect(ipass, &ImitatePass::endReencryptPath, this,
+          &MainWindow::endReencryptPath);
 
   // register shortcut ctrl/cmd + C to copy the currently selected password
   new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this, this,
@@ -136,7 +159,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   addDockWidget(Qt::BottomDockWidgetArea, m_processOutput);
   // setVisible after addDockWidget so our explicit preference wins even if
   // QMainWindow applies any cached state when the dock is attached.
-  // restoreWindow() runs before this (from the QtPass ctor above), so the
+  // restoreWindow() ran right after the QtPass construction above, so the
   // saved layout has already been processed.
   m_processOutput->setVisible(QtPassSettings::isShowProcessOutput());
 
@@ -173,10 +196,18 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   // still ahead in main()) is a documented no-op, so a cancelled first-run
   // wizard used to leave the half-configured window showing anyway. main()
   // consults initSucceeded() and exits before show() when this is false.
-  m_initSucceeded = m_qtPass->init();
-  if (!m_initSucceeded) {
-    return;
+  m_qtPass->init();
+  // Ask again until the configuration is usable or the user gives up. The
+  // dialog's OK button is not gated on Util::configIsValid(), so an accepted
+  // first-run configuration can still point at a store without a .gpg-id
+  // (the user declined to create it); only a cancel ends the loop.
+  while (!Util::configIsValid(QtPassSettings::load())) {
+    if (!config()) {
+      return;
+    }
   }
+  m_freshStart = false;
+  m_initSucceeded = true;
 
   // Initial focus is handled in showEvent() once the window is actually
   // mapped. Scheduling it here via a 10 ms QTimer was racy: if the timer
@@ -192,6 +223,28 @@ MainWindow::~MainWindow() {
   // window still knows its last geometry here.
   saveWindowState();
   delete m_qtPass;
+}
+
+/**
+ * @brief Connect the signals of one backend that the window answers itself:
+ * decrypt results, errors, status text and the grep results.
+ * @param pass The backend.
+ */
+void MainWindow::connectPassSignals(Pass *pass) {
+  // A failed decrypt never emits finishedShow; drop the pending OTP/copy
+  // request so a later decrypt of the same entry is not taken as its answer.
+  connect(pass, &Pass::processErrorExit, this, &MainWindow::cancelOtpRequest);
+  connect(pass, &Pass::critical, this, &MainWindow::critical);
+  connect(pass, &Pass::startingExecuteWrapper, this,
+          &MainWindow::executeWrapperStarted);
+  connect(pass, &Pass::statusMsg, this, &MainWindow::showStatusMessage);
+  connect(pass, &Pass::finishedShow, this, &MainWindow::passShowHandler);
+  // Both check the file against their own pending request and ignore the
+  // rest, so they can stay connected for good.
+  connect(pass, &Pass::finishedShow, this, &MainWindow::otpFromFileToClipboard);
+  connect(pass, &Pass::finishedShow, this,
+          &MainWindow::passwordFromFileToClipboard);
+  connect(pass, &Pass::finishedGrep, this, &MainWindow::onGrepFinished);
 }
 
 /**
@@ -448,19 +501,18 @@ void MainWindow::applyWindowFlagsSettings() {
  *
  * @return bool - True when the dialog was accepted, false when it was
  * cancelled. An accepted dialog can still leave the configuration invalid
- * (the OK button is not gated on Util::configIsValid()); QtPass::init() keeps
- * asking until the configuration is usable or this returns false.
+ * (the OK button is not gated on Util::configIsValid()); the constructor
+ * keeps asking until the configuration is usable or this returns false.
  */
 auto MainWindow::config() -> bool {
   ConfigDialog d(this);
   d.setModal(true);
   // Automatically default to pass if it's available
-  if (m_qtPass->isFreshStart() &&
-      QFile(QtPassSettings::getPassExecutable()).exists()) {
+  if (m_freshStart && QFile(QtPassSettings::getPassExecutable()).exists()) {
     QtPassSettings::setUsePass(true);
   }
 
-  if (m_qtPass->isFreshStart()) {
+  if (m_freshStart) {
     d.wizard(); // run initial setup wizard for first-time configuration
   }
   if (d.exec() != QDialog::Accepted) {
@@ -494,12 +546,12 @@ auto MainWindow::config() -> bool {
 
   // Leave the fresh-start state in place while the accepted configuration is
   // still unusable (for example the user declined to create the store), so
-  // the next attempt from QtPass::init() runs the first-run wizard again
-  // instead of showing the bare dialog. The re-prompt itself lives in init():
-  // recursing here re-ran the dialog on this stack frame and never reported
-  // a cancel back to the caller.
+  // the next attempt from the constructor's loop runs the first-run wizard
+  // again instead of showing the bare dialog. The re-prompt itself lives
+  // there: recursing here re-ran the dialog on this stack frame and never
+  // reported a cancel back to the caller.
   if (Util::configIsValid(s)) {
-    m_qtPass->setFreshStart(false);
+    m_freshStart = false;
   }
   return true;
 }
@@ -596,14 +648,11 @@ void MainWindow::executeWrapperStarted() {
 }
 
 /**
- * @brief Handles displaying parsed password entry content in the main window.
- * @example
- * void result = MainWindow::passShowHandler(p_output);
- * // Updates the UI with parsed fields and emits
- * passShowHandlerFinished(output)
- *
+ * @brief Handles displaying parsed password entry content in the main window:
+ * the panel shows the parsed fields, the text browser what is left over.
  * @param p_output - The raw output text containing the password entry data.
- * @return void - This function does not return a value.
+ * @param file - The entry the output belongs to; anything but the entry most
+ * recently asked for is dropped.
  */
 void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
   // Only the entry we most recently asked to show may repaint the panel; a
@@ -647,7 +696,7 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
     clearPanelTimer.start();
   }
 
-  emit passShowHandlerFinished(output);
+  flashText(QtPass::formatOutput(output), false, true);
   setUiElementsEnabled(true);
 }
 
@@ -1321,7 +1370,7 @@ void MainWindow::updateProfileBox() {
  *
  */
 void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
-  if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile()) {
+  if (m_freshStart || name == QtPassSettings::getProfile()) {
     return;
   }
 
