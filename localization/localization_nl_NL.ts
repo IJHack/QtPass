@@ -932,8 +932,8 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
         <location filename="../src/imitatepass.cpp" line="1006"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation>
-            <numerusform>Bestand %n kon niet opnieuw worden versleuteld:</numerusform>
-            <numerusform>Bestand %n kon niet opnieuw worden versleuteld:</numerusform>
+            <numerusform>%n bestand kon niet opnieuw worden versleuteld:</numerusform>
+            <numerusform>%n bestanden konden niet opnieuw worden versleuteld:</numerusform>
         </translation>
     </message>
     <message>
