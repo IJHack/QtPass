@@ -19,7 +19,7 @@ import sys
 
 REPO_BLOB = "https://github.com/IJHack/QtPass/blob/main/"
 VERSION = "1.8.1"
-ASSET_VERSION = "?v=1.8.1-4"
+ASSET_VERSION = "?v=1.8.1-5"
 
 # Repository files that are pages on the site.
 SITE_PAGES = {
@@ -70,7 +70,6 @@ HEAD = """<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{title}</title>
     <meta name="description" content="{description}" />
     <link rel="stylesheet" href="stylesheets/styles.css{v}" />
@@ -80,18 +79,46 @@ HEAD = """<!doctype html>
       content="width=device-width, initial-scale=1, user-scalable=yes"
     />
     <meta name="color-scheme" content="light dark" />
+    <link
+      rel="preload"
+      href="fonts/lato-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/lato-latin-700-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="icon" type="image/svg+xml" href="images/logo.svg{v}" />
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png{v}" />
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png{v}" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png{v}" />
     <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#fafbfc"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#14181d"
+    />
     <meta property="og:title" content="{title}" />
     <meta property="og:site_name" content="QtPass" />
     <meta property="og:url" content="https://qtpass.org/{slug}" />
-    <meta property="og:image" content="https://qtpass.org/images/og.png" />
+    <meta property="og:image" content="https://qtpass.org/images/og.png{v}" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="640" />
+    <meta
+      property="og:image:alt"
+      content="The QtPass padlocked heart next to the name and the address qtpass.org"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:description" content="{description}" />
     <meta property="og:type" content="website" />
     <script type="application/ld+json">
@@ -116,6 +143,7 @@ HEAD = """<!doctype html>
     </script>
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
     <div class="background"></div>
     <div class="wrapper">
       <aside class="sidebar">
@@ -159,7 +187,7 @@ HEAD = """<!doctype html>
           </p>
         </footer>
       </aside>
-      <section>
+      <section id="main">
 """
 
 TAIL = """      </section>

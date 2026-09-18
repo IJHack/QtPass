@@ -2,13 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Getting Started with QtPass</title>
     <meta
       name="description"
       content="Get started with QtPass in just a few steps. Learn how to install, initialize, and manage your passwords securely."
     />
-    <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.1-4" />
+    <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.1-5" />
     <link rel="canonical" href="https://qtpass.org/getting-started" />
     <meta
       name="viewport"
@@ -16,88 +15,119 @@
     />
     <meta name="color-scheme" content="light dark" />
     <link
+      rel="preload"
+      href="fonts/lato-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/lato-latin-700-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
       rel="apple-touch-icon"
       sizes="57x57"
-      href="./images/apple-icon-57x57.png?v=1.8.1-4"
+      href="./images/apple-icon-57x57.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="60x60"
-      href="./images/apple-icon-60x60.png?v=1.8.1-4"
+      href="./images/apple-icon-60x60.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="72x72"
-      href="./images/apple-icon-72x72.png?v=1.8.1-4"
+      href="./images/apple-icon-72x72.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="./images/apple-icon-76x76.png?v=1.8.1-4"
+      href="./images/apple-icon-76x76.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="114x114"
-      href="./images/apple-icon-114x114.png?v=1.8.1-4"
+      href="./images/apple-icon-114x114.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="120x120"
-      href="./images/apple-icon-120x120.png?v=1.8.1-4"
+      href="./images/apple-icon-120x120.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="144x144"
-      href="./images/apple-icon-144x144.png?v=1.8.1-4"
+      href="./images/apple-icon-144x144.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="152x152"
-      href="./images/apple-icon-152x152.png?v=1.8.1-4"
+      href="./images/apple-icon-152x152.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./images/apple-icon-180x180.png?v=1.8.1-4"
+      href="./images/apple-icon-180x180.png?v=1.8.1-5"
     />
-    <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=1.8.1-4" />
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=1.8.1-5" />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="./images/android-icon-192x192.png?v=1.8.1-4"
+      href="./images/android-icon-192x192.png?v=1.8.1-5"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png?v=1.8.1-4"
+      href="./images/favicon-32x32.png?v=1.8.1-5"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="./images/favicon-96x96.png?v=1.8.1-4"
+      href="./images/favicon-96x96.png?v=1.8.1-5"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./images/favicon-16x16.png?v=1.8.1-4"
+      href="./images/favicon-16x16.png?v=1.8.1-5"
     />
     <link rel="manifest" href="/manifest.json" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta
       name="msapplication-TileImage"
-      content="./images/ms-icon-144x144.png?v=1.8.1-4"
+      content="./images/ms-icon-144x144.png?v=1.8.1-5"
     />
-    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#fafbfc"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#14181d"
+    />
     <meta property="og:title" content="Getting Started with QtPass" />
     <meta property="og:site_name" content="QtPass" />
     <meta property="og:url" content="https://qtpass.org/getting-started" />
-    <meta property="og:image" content="https://qtpass.org/images/og.png" />
+    <meta
+      property="og:image"
+      content="https://qtpass.org/images/og.png?v=1.8.1-5"
+    />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="640" />
+    <meta
+      property="og:image:alt"
+      content="The QtPass padlocked heart next to the name and the address qtpass.org"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
       property="og:description"
       content="Get started with QtPass in just a few steps. Learn how to install, initialize, and manage your passwords securely."
@@ -125,6 +155,7 @@
     </script>
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
     <div class="background"></div>
     <div class="wrapper">
       <aside class="sidebar">
@@ -161,7 +192,7 @@
           </p>
         </footer>
       </aside>
-      <section>
+      <section id="main">
         <h2>
           <a
             id="prerequisites"
@@ -349,9 +380,7 @@
             look at 2.0
           </li>
           <li>
-            <a href="/index.html#security-considerations"
-              >Security Considerations</a
-            >
+            <a href="/old#security-considerations">Security Considerations</a>
             - Important security notes
           </li>
           <li>
@@ -363,6 +392,6 @@
         </ul>
       </section>
     </div>
-    <script src="javascripts/main.js?v=1.8.1-4" defer></script>
+    <script src="javascripts/main.js?v=1.8.1-5" defer></script>
   </body>
 </html>

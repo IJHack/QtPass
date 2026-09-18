@@ -2,13 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>QtPass 1.1 changelog</title>
     <meta
       name="description"
       content="Release notes for the QtPass 1.1.x series."
     />
-    <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.1-4" />
+    <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.1-5" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=yes"
@@ -16,88 +15,119 @@
     <link rel="canonical" href="https://qtpass.org/changelog.1.1" />
     <meta name="color-scheme" content="light dark" />
     <link
+      rel="preload"
+      href="fonts/lato-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/lato-latin-700-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
       rel="apple-touch-icon"
       sizes="57x57"
-      href="./images/apple-icon-57x57.png?v=1.8.1-4"
+      href="./images/apple-icon-57x57.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="60x60"
-      href="./images/apple-icon-60x60.png?v=1.8.1-4"
+      href="./images/apple-icon-60x60.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="72x72"
-      href="./images/apple-icon-72x72.png?v=1.8.1-4"
+      href="./images/apple-icon-72x72.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="76x76"
-      href="./images/apple-icon-76x76.png?v=1.8.1-4"
+      href="./images/apple-icon-76x76.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="114x114"
-      href="./images/apple-icon-114x114.png?v=1.8.1-4"
+      href="./images/apple-icon-114x114.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="120x120"
-      href="./images/apple-icon-120x120.png?v=1.8.1-4"
+      href="./images/apple-icon-120x120.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="144x144"
-      href="./images/apple-icon-144x144.png?v=1.8.1-4"
+      href="./images/apple-icon-144x144.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="152x152"
-      href="./images/apple-icon-152x152.png?v=1.8.1-4"
+      href="./images/apple-icon-152x152.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./images/apple-icon-180x180.png?v=1.8.1-4"
+      href="./images/apple-icon-180x180.png?v=1.8.1-5"
     />
-    <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=1.8.1-4" />
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=1.8.1-5" />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="./images/android-icon-192x192.png?v=1.8.1-4"
+      href="./images/android-icon-192x192.png?v=1.8.1-5"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png?v=1.8.1-4"
+      href="./images/favicon-32x32.png?v=1.8.1-5"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="./images/favicon-96x96.png?v=1.8.1-4"
+      href="./images/favicon-96x96.png?v=1.8.1-5"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./images/favicon-16x16.png?v=1.8.1-4"
+      href="./images/favicon-16x16.png?v=1.8.1-5"
     />
     <link rel="manifest" href="/manifest.json" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta
       name="msapplication-TileImage"
-      content="./images/ms-icon-144x144.png?v=1.8.1-4"
+      content="./images/ms-icon-144x144.png?v=1.8.1-5"
     />
-    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#fafbfc"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#14181d"
+    />
     <meta property="og:title" content="QtPass 1.1 changelog" />
     <meta property="og:site_name" content="QtPass" />
     <meta property="og:url" content="https://qtpass.org/changelog.1.1" />
-    <meta property="og:image" content="https://qtpass.org/images/og.png" />
+    <meta
+      property="og:image"
+      content="https://qtpass.org/images/og.png?v=1.8.1-5"
+    />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="640" />
+    <meta
+      property="og:image:alt"
+      content="The QtPass padlocked heart next to the name and the address qtpass.org"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
       property="og:description"
       content="Release notes for the QtPass 1.1.x series."
@@ -117,7 +147,7 @@
         "operatingSystem": "Linux, BSD, macOS, Windows",
         "requirements": "pass or git and gpg2",
         "license": "https://www.gnu.org/licenses/gpl-3.0.html",
-        "screenshot": "https://qtpass.org/images/qtpass.png?v=1.8.1-4",
+        "screenshot": "https://qtpass.org/images/qtpass.png?v=1.8.1-5",
         "softwareVersion": "1.3",
         "applicationCategory": "Security, Utility",
         "offers": {
@@ -129,6 +159,7 @@
     </script>
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
     <div class="background"></div>
     <div class="wrapper">
       <aside class="sidebar">
@@ -136,7 +167,7 @@
           <p class="brand">
             <img
               class="mark"
-              src="images/logo.svg?v=1.8.1-4"
+              src="images/logo.svg?v=1.8.1-5"
               alt=""
               width="32"
               height="32"
@@ -201,8 +232,8 @@
                 />
                 <source srcset="images/qtpass@2x.webp" type="image/webp" />
                 <img
-                  src="images/qtpass.png?v=1.8.1-4"
-                  srcset="images/qtpass.png?v=1.8.1-4, images/qtpass@2x.png 2x"
+                  src="images/qtpass.png?v=1.8.1-5"
+                  srcset="images/qtpass.png?v=1.8.1-5, images/qtpass@2x.png 2x"
                   width="1110"
                   height="918"
                   alt="QtPass main window with a password store, one entry open"
@@ -227,8 +258,8 @@
                 />
                 <source srcset="images/config@2x.webp" type="image/webp" />
                 <img
-                  src="images/config.png?v=1.8.1-4"
-                  srcset="images/config.png?v=1.8.1-4, images/config@2x.png 2x"
+                  src="images/config.png?v=1.8.1-5"
+                  srcset="images/config.png?v=1.8.1-5, images/config@2x.png 2x"
                   loading="lazy"
                   decoding="async"
                   width="821"
@@ -275,7 +306,7 @@
           </p>
         </footer>
       </aside>
-      <section>
+      <section id="main">
         <h1>QtPass 1.1 changelog</h1>
         <h2>
           <a id="v1.1.6" class="anchor" href="#v1.1.6" aria-hidden="true"
@@ -1069,6 +1100,6 @@
         "url": "https://qtpass.org"
       }
     </script>
-    <script src="javascripts/main.js?v=1.8.1-4" defer></script>
+    <script src="javascripts/main.js?v=1.8.1-5" defer></script>
   </body>
 </html>

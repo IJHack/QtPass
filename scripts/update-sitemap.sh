@@ -16,8 +16,9 @@ priority() {
   case "$1" in
     index) echo 1.0 ;;
     downloads|getting-started) echo 0.9 ;;
-    advanced|macos|changelog) echo 0.8 ;;
-    privacy) echo 0.5 ;;
+    advanced|macos|changelog|faq) echo 0.8 ;;
+    screenshots) echo 0.7 ;;
+    privacy|contributing) echo 0.5 ;;
     changelog.*|old) echo 0.3 ;;
     *) echo 0.5 ;;
   esac
@@ -26,7 +27,7 @@ priority() {
 changefreq() {
   case "$1" in
     index|downloads|changelog) echo weekly ;;
-    macos) echo monthly ;;
+    macos|faq|contributing|screenshots) echo monthly ;;
     changelog.*|old|privacy) echo yearly ;;
     *) echo monthly ;;
   esac
