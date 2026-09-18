@@ -347,9 +347,18 @@ header > p {
 header p.view a strong {
   font-weight: 700;
 }
+/* site pages: a two-column list under the tagline */
+header .site {
+  margin: 0 0 0.9em;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 0.15em 1.5em;
+  font-weight: 700;
+}
 header p.view a small {
   display: inline;
   margin: 0;
+  white-space: nowrap;
 }
 
 /* download buttons: three equal cells */
