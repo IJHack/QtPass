@@ -61,6 +61,7 @@
       sizes="180x180"
       href="./images/apple-icon-180x180.png"
     />
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
     <link
       rel="icon"
       type="image/png"
@@ -131,72 +132,150 @@
   <body>
     <div class="background"></div>
     <div class="wrapper">
-      <header>
-        <p class="brand">QtPass <small>1.5</small></p>
-        <p>
-          <a
-            title="QtPass GUI for pass, the standard UNIX password manager"
-            href="https://qtpass.org/"
-            >QtPass</a
-          >
-          is a multi-platform GUI for
-          <a
-            title="pass, the standard unix password manager"
-            href="https://www.passwordstore.org/"
-            >pass</a
-          >, the standard unix password manager.
-        </p>
-
-        <p class="view">
-          <a title="QtPass project" href="https://github.com/IJHack/QtPass"
-            >View the Project on GitHub <small>IJHack/QtPass</small></a
-          >
-        </p>
-
-        <ul>
-          <li>
+      <aside class="sidebar">
+        <header>
+          <p class="brand">
+            <img
+              class="mark"
+              src="images/logo.svg"
+              alt=""
+              width="32"
+              height="32"
+            />QtPass <small>1.5</small>
+          </p>
+          <p>
             <a
-              title="QtPass releases"
-              href="https://github.com/IJHack/QtPass/releases"
-              >Download <strong>Releases</strong></a
+              title="QtPass GUI for pass, the standard UNIX password manager"
+              href="https://qtpass.org/"
+              >QtPass</a
             >
-          </li>
-          <li>
-            <a title="QtPass Windows" href="/downloads#Windows"
-              >Installer .exe <strong>Windows</strong></a
-            >
-          </li>
-          <li>
-            <a title="QtPass macOS" href="/downloads#macOS"
-              >Get a .dmg <strong>macOS</strong></a
-            >
-          </li>
-        </ul>
+            is a multi-platform GUI for
+            <a
+              title="pass, the standard unix password manager"
+              href="https://www.passwordstore.org/"
+              >pass</a
+            >, the standard unix password manager.
+          </p>
 
-        <div class="screenshots">
-          <picture
-            ><source srcset="images/qtpass.webp" type="image/webp" />
-            <img
+          <p class="view">
+            <a title="QtPass project" href="https://github.com/IJHack/QtPass"
+              >View the Project on GitHub <small>IJHack/QtPass</small></a
+            >
+          </p>
+
+          <ul>
+            <li>
+              <a
+                title="QtPass releases"
+                href="https://github.com/IJHack/QtPass/releases"
+                >Download <strong>Releases</strong></a
+              >
+            </li>
+            <li>
+              <a title="QtPass Windows" href="/downloads#Windows"
+                >Installer .exe <strong>Windows</strong></a
+              >
+            </li>
+            <li>
+              <a title="QtPass macOS" href="/downloads#macOS"
+                >Get a .dmg <strong>macOS</strong></a
+              >
+            </li>
+          </ul>
+
+          <div class="screenshots">
+            <figure
               id="qtpass"
-              src="images/qtpass.png"
-              width="768"
-              height="596"
-              alt="QtPass MainWindow"
-          /></picture>
-          <picture
-            ><source srcset="images/config.webp" type="image/webp" />
-            <img
+              class="window"
+              data-title="QtPass"
+              title="Click to see the settings"
+            >
+              <picture>
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcset="images/qtpass-dark@2x.webp"
+                  type="image/webp"
+                />
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcset="images/qtpass-dark.png, images/qtpass-dark@2x.png 2x"
+                />
+                <source srcset="images/qtpass@2x.webp" type="image/webp" />
+                <img
+                  src="images/qtpass.png"
+                  srcset="images/qtpass.png, images/qtpass@2x.png 2x"
+                  width="1110"
+                  height="918"
+                  alt="QtPass main window with a password store, one entry open"
+                />
+              </picture>
+            </figure>
+            <figure
               id="config"
-              class="hidden"
-              src="images/config.png"
-              loading="lazy"
-              decoding="async"
-              width="900"
-              height="637"
-              alt="QtPass Configuration"
-          /></picture>
-        </div>
-      </header>
+              class="window hidden"
+              data-title="Configuration"
+              title="Click to close the settings"
+            >
+              <picture>
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcset="images/config-dark@2x.webp"
+                  type="image/webp"
+                />
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcset="images/config-dark.png, images/config-dark@2x.png 2x"
+                />
+                <source srcset="images/config@2x.webp" type="image/webp" />
+                <img
+                  src="images/config.png"
+                  srcset="images/config.png, images/config@2x.png 2x"
+                  loading="lazy"
+                  decoding="async"
+                  width="821"
+                  height="918"
+                  alt="QtPass settings dialog"
+                />
+              </picture>
+            </figure>
+          </div>
+        </header>
+        <footer>
+          <p>
+            This project is maintained by
+            <a title="IJhack on GitHub" href="https://github.com/IJHack"
+              >IJHack</a
+            >
+          </p>
+          <p>
+            Doxygen autogenerated
+            <a title="Latest documentation" href="/docs/">documentation</a>
+          </p>
+          <a href="https://repology.org/metapackage/qtpass">
+            <img
+              src="https://repology.org/badge/latest-versions/qtpass.svg"
+              alt="latest packaged version(s)"
+            />
+          </a>
+          <p>
+            <small
+              >Based on a theme by
+              <a href="https://github.com/orderedlist">orderedlist</a></small
+            >
+          </p>
+          <img
+            src="https://github.com/IJHack/QtPass/workflows/QMake/badge.svg"
+            alt="GitHub Build Status"
+          />
+          <img
+            src="https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true"
+            alt="AppVeyor Build Status"
+          />
+          <p>
+            <small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small>
+          </p>
+        </footer>
+      </aside>
       <section>
         <h1>QtPass 1.5 changelog</h1>
         <h2>
@@ -379,41 +458,6 @@
           </li>
         </ul>
       </section>
-      <footer>
-        <p>
-          This project is maintained by
-          <a title="IJhack on GitHub" href="https://github.com/IJHack"
-            >IJHack</a
-          >
-        </p>
-        <p>
-          Doxygen autogenerated
-          <a title="Latest documentation" href="/docs/">documentation</a>
-        </p>
-        <a href="https://repology.org/metapackage/qtpass">
-          <img
-            src="https://repology.org/badge/latest-versions/qtpass.svg"
-            alt="latest packaged version(s)"
-          />
-        </a>
-        <p>
-          <small
-            >Based on a theme by
-            <a href="https://github.com/orderedlist">orderedlist</a></small
-          >
-        </p>
-        <img
-          src="https://github.com/IJHack/QtPass/workflows/QMake/badge.svg"
-          alt="GitHub Build Status"
-        />
-        <img
-          src="https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true"
-          alt="AppVeyor Build Status"
-        />
-        <p>
-          <small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small>
-        </p>
-      </footer>
     </div>
     <script type="application/ld+json">
       {
@@ -422,7 +466,6 @@
         "url": "https://qtpass.org"
       }
     </script>
-    <script src="javascripts/scale.fix.js" defer></script>
     <script src="javascripts/main.js" defer></script>
   </body>
 </html>

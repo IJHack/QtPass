@@ -1,7 +1,7 @@
-const CACHE_NAME = "qtpass::v1.8.1::static";
+const CACHE_NAME = "qtpass::v1.8.1-2::static";
 
 // Cache-bust: include version in SW URL to force update
-const SW_VERSION = "?v1.8.1";
+const SW_VERSION = "?v1.8.1-2";
 
 const PRECACHE_URLS = [
   "/",
@@ -24,14 +24,12 @@ const PRECACHE_URLS = [
   "/stylesheets/pygment_trac.css",
   "/stylesheets/styles.css",
   "/javascripts/main.js",
-  "/javascripts/scale.fix.js",
   "/docs/",
   "/images/android-icon-144x144.png",
   "/images/apple-icon-120x120.png",
   "/images/apple-icon-76x76.png",
   "/images/favicon-32x32.png",
   "/images/ms-icon-144x144.png",
-  "/images/win10.png",
   "/images/win11.png",
   "/images/android-icon-192x192.png",
   "/images/apple-icon-144x144.png",
@@ -57,10 +55,19 @@ const PRECACHE_URLS = [
   "/images/android-icon-96x96.png",
   "/images/apple-icon-60x60.png",
   "/images/config.png",
+  "/images/config@2x.png",
+  "/images/config@2x.webp",
+  "/images/config-dark.png",
+  "/images/config-dark@2x.png",
+  "/images/config-dark@2x.webp",
   "/images/logo.png",
+  "/images/logo.svg",
   "/images/qtpass.png",
-  "/images/qtpass.webp",
-  "/images/config.webp",
+  "/images/qtpass@2x.png",
+  "/images/qtpass@2x.webp",
+  "/images/qtpass-dark.png",
+  "/images/qtpass-dark@2x.png",
+  "/images/qtpass-dark@2x.webp",
   "/images/apple-icon-114x114.png",
   "/images/apple-icon-72x72.png",
   "/images/favicon-16x16.png",
