@@ -93,7 +93,10 @@ html {
 }
 body {
   margin: 0;
-  padding-block: clamp(2rem, 5vw, 3.5rem);
+  /* The sticky sidebar uses the same offset, so it never shifts relative to
+     the viewport when the page starts or stops scrolling. */
+  --page-top: clamp(2rem, 5vw, 3.5rem);
+  padding-block: var(--page-top);
   padding-inline: clamp(1rem, 4vw, 3rem);
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -305,7 +308,7 @@ a img {
 .sidebar {
   grid-area: side;
   position: sticky;
-  top: clamp(1rem, 4vw, 3rem);
+  top: var(--page-top);
 }
 .sidebar.flows {
   position: static;
