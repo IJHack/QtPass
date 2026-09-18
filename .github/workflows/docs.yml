@@ -83,7 +83,7 @@ jobs:
           # Pinned Doxygen release. doxygen.nl has intermittent outages, so try
           # the identical GitHub release asset (CDN-backed) first and fall back
           # to doxygen.nl, retrying each source before giving up.
-          DOXYGEN_VERSION=1.17.0
+          DOXYGEN_VERSION=1.18.0
           tarball="doxygen-${DOXYGEN_VERSION}.linux.bin.tar.gz"
           github_tag="Release_${DOXYGEN_VERSION//./_}"
           urls=(
@@ -202,6 +202,9 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./docs
           destination_dir: docs
-          keep_files: true
+          # Replace docs/ wholesale: with keep_files pages for removed or
+          # renamed sources (and the CHANGELOG page dropped from INPUT in
+          # #1087) lingered on the site for good.
+          keep_files: false
           user_name: "GitHub Actions"
           user_email: "github-actions[bot]@users.noreply.github.com"
