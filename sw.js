@@ -1,7 +1,10 @@
-const CACHE_NAME = "qtpass::v1.8.1-2::static";
+const CACHE_NAME = "qtpass::v1.8.1-3::static";
 
-// Cache-bust: include version in SW URL to force update
-const SW_VERSION = "?v1.8.1-2";
+// Cache-bust: the pages append this to asset URLs whose names do not
+// change between releases (styles.css, logo.svg, the favicons), so the
+// browser's HTTP cache (up to a year on this server) cannot hand out a
+// stale copy after a redesign. Bump it together with CACHE_NAME.
+const SW_VERSION = "?v=1.8.1-3";
 
 const PRECACHE_URLS = [
   "/",
@@ -96,7 +99,9 @@ self.addEventListener("install", (event) => {
 
         let response;
         try {
-          response = await fetch(url, { redirect: "follow" });
+          // "reload": straight from the server, never the HTTP cache, or a
+          // fresh service worker would precache last month's stylesheet.
+          response = await fetch(url, { redirect: "follow", cache: "reload" });
         } catch (error) {
           console.error("[sw] network error while fetching", url, error);
           throw error;
@@ -164,7 +169,9 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
       (async () => {
         try {
-          const networkResponse = await fetch(request);
+          // Revalidate with the server (ETag) rather than trusting the HTTP
+          // cache's max-age, so a republished page shows up on the next load.
+          const networkResponse = await fetch(request, { cache: "no-cache" });
           if (networkResponse.ok) {
             const cache = await caches.open(CACHE_NAME);
             cache.put(request, networkResponse.clone());
@@ -186,7 +193,11 @@ self.addEventListener("fetch", (event) => {
   // Static assets: cache first.
   event.respondWith(
     (async () => {
-      const cachedResponse = await caches.match(request);
+      // The precache list holds bare paths; the pages ask for them with the
+      // SW_VERSION query appended, so match ignoring the query.
+      const cachedResponse = await caches.match(request, {
+        ignoreSearch: true,
+      });
 
       if (cachedResponse) {
         return cachedResponse;
