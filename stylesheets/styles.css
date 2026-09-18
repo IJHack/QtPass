@@ -93,7 +93,10 @@ html {
 }
 body {
   margin: 0;
-  padding-block: clamp(2rem, 5vw, 3.5rem);
+  /* The sticky sidebar uses the same offset, so it never shifts relative to
+     the viewport when the page starts or stops scrolling. */
+  --page-top: clamp(2rem, 5vw, 3.5rem);
+  padding-block: var(--page-top);
   padding-inline: clamp(1rem, 4vw, 3rem);
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -270,6 +273,24 @@ a img {
   top: 3px;
 }
 
+/* Keyboard users land on the content, not on the sidebar's link list. */
+.skip {
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: -10rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 0 0 8px 8px;
+  font-weight: 700;
+  z-index: 10;
+}
+.skip:focus-visible {
+  inset-block-start: 0;
+  outline: 2px solid var(--ink-strong);
+  outline-offset: 2px;
+}
+
 /* ---- page grid: sidebar | content, footer under the sidebar ------------ */
 .wrapper {
   max-width: 72rem;
@@ -280,12 +301,17 @@ a img {
   column-gap: clamp(2rem, 6vw, 5rem);
   align-items: start;
 }
-/* Header and footer share one sticky sidebar. On viewports shorter than the
-   sidebar it flows with the page instead of clipping. */
+/* Header and footer share one sticky sidebar. When it is taller than the
+   viewport it must flow with the page instead: a pinned sidebar with its
+   bottom clipped lurches when the content column runs out. main.js measures
+   and sets .flows; the height query is the fallback without JavaScript. */
 .sidebar {
   grid-area: side;
   position: sticky;
-  top: clamp(1rem, 4vw, 3rem);
+  top: var(--page-top);
+}
+.sidebar.flows {
+  position: static;
 }
 @media (max-height: 52rem) {
   .sidebar {
@@ -324,9 +350,18 @@ header > p {
 header p.view a strong {
   font-weight: 700;
 }
+/* site pages: a two-column list under the tagline */
+header .site {
+  margin: 0 0 0.9em;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 0.15em 1.5em;
+  font-weight: 700;
+}
 header p.view a small {
   display: inline;
   margin: 0;
+  white-space: nowrap;
 }
 
 /* download buttons: three equal cells */

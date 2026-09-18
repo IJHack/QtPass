@@ -2,45 +2,75 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>QtPass Screenshots</title>
     <meta
       name="description"
       content="Screenshots of QtPass 1.8.1 in light and dark mode, and a video tour of what is coming in QtPass 2.0: the first-run wizard, the new password dialog, the menu bar and profiles."
     />
-    <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.1-4" />
+    <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.1-5" />
     <link rel="canonical" href="https://qtpass.org/screenshots" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=yes"
     />
     <meta name="color-scheme" content="light dark" />
-    <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=1.8.1-4" />
+    <link
+      rel="preload"
+      href="fonts/lato-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/lato-latin-700-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=1.8.1-5" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/images/favicon-32x32.png?v=1.8.1-4"
+      href="/images/favicon-32x32.png?v=1.8.1-5"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/images/favicon-16x16.png?v=1.8.1-4"
+      href="/images/favicon-16x16.png?v=1.8.1-5"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/images/apple-icon-180x180.png?v=1.8.1-4"
+      href="/images/apple-icon-180x180.png?v=1.8.1-5"
     />
     <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#fafbfc"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#14181d"
+    />
     <meta property="og:title" content="QtPass Screenshots" />
     <meta property="og:site_name" content="QtPass" />
     <meta property="og:url" content="https://qtpass.org/screenshots" />
-    <meta property="og:image" content="https://qtpass.org/images/og.png" />
+    <meta
+      property="og:image"
+      content="https://qtpass.org/images/og.png?v=1.8.1-5"
+    />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="640" />
+    <meta
+      property="og:image:alt"
+      content="The QtPass padlocked heart next to the name and the address qtpass.org"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
       property="og:description"
       content="Screenshots of QtPass 1.8.1 in light and dark mode, and a video tour of what is coming in QtPass 2.0: the first-run wizard, the new password dialog, the menu bar and profiles."
@@ -68,6 +98,7 @@
     </script>
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
     <div class="background"></div>
     <div class="wrapper">
       <aside class="sidebar">
@@ -107,7 +138,7 @@
           </p>
         </footer>
       </aside>
-      <section class="gallery">
+      <section id="main" class="gallery">
         <h2>
           <a id="current" class="anchor" href="#current" aria-hidden="true"
             ><span class="octicon octicon-link"></span></a
@@ -130,8 +161,8 @@
             />
             <source srcset="images/qtpass@2x.webp" type="image/webp" />
             <img
-              src="images/qtpass.png?v=1.8.1-4"
-              srcset="images/qtpass.png?v=1.8.1-4, images/qtpass@2x.png 2x"
+              src="images/qtpass.png?v=1.8.1-5"
+              srcset="images/qtpass.png?v=1.8.1-5, images/qtpass@2x.png 2x"
               width="1110"
               height="918"
               alt="QtPass main window: the password store as a tree on the left, one entry open on the right"
@@ -155,8 +186,8 @@
             />
             <source srcset="images/config@2x.webp" type="image/webp" />
             <img
-              src="images/config.png?v=1.8.1-4"
-              srcset="images/config.png?v=1.8.1-4, images/config@2x.png 2x"
+              src="images/config.png?v=1.8.1-5"
+              srcset="images/config.png?v=1.8.1-5, images/config@2x.png 2x"
               width="821"
               height="918"
               alt="QtPass configuration dialog"
@@ -405,6 +436,6 @@
         </p>
       </section>
     </div>
-    <script src="javascripts/main.js?v=1.8.1-4" defer></script>
+    <script src="javascripts/main.js?v=1.8.1-5" defer></script>
   </body>
 </html>

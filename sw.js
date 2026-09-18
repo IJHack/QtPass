@@ -1,10 +1,10 @@
-const CACHE_NAME = "qtpass::v1.8.1-4::static";
+const CACHE_NAME = "qtpass::v1.8.1-5::static";
 
 // Cache-bust: the pages append this to asset URLs whose names do not
 // change between releases (styles.css, logo.svg, the favicons), so the
 // browser's HTTP cache (up to a year on this server) cannot hand out a
 // stale copy after a redesign. Bump it together with CACHE_NAME.
-const SW_VERSION = "?v=1.8.1-4";
+const SW_VERSION = "?v=1.8.1-5";
 
 const PRECACHE_URLS = [
   "/",
