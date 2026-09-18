@@ -160,6 +160,12 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // Third-party assets (badges, repology) are the browser's business: a
+  // failing remote host should not turn into a service worker error.
+  if (new URL(request.url).origin !== self.location.origin) {
+    return;
+  }
+
   // HTML: network first, so a republished page reaches returning visitors
   // immediately; fall back to the cached copy when offline.
   if (
