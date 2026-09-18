@@ -2419,7 +2419,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="199"/>
         <source>GnuPG</source>
-        <translation type="unfinished">GnuPG</translation>
+        <translation>GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
