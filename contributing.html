@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Contributing to QtPass</title>
+    <meta
+      name="description"
+      content="How to contribute to QtPass: the pull request process, the rules for AI-assisted changes, translations on Weblate, and building on Windows."
+    />
+    <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.1-4" />
+    <link rel="canonical" href="https://qtpass.org/contributing" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=1.8.1-4" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png?v=1.8.1-4"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png?v=1.8.1-4"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-icon-180x180.png?v=1.8.1-4"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="Contributing to QtPass" />
+    <meta property="og:site_name" content="QtPass" />
+    <meta property="og:url" content="https://qtpass.org/contributing" />
+    <meta property="og:image" content="https://qtpass.org/images/og.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta
+      property="og:description"
+      content="How to contribute to QtPass: the pull request process, the rules for AI-assisted changes, translations on Weblate, and building on Windows."
+    />
+    <meta property="og:type" content="website" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "QtPass",
+            "item": "https://qtpass.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contributing",
+            "item": "https://qtpass.org/contributing"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="wrapper">
+      <aside class="sidebar">
+        <header>
+          <h1>Contributing <small>1.8.1</small></h1>
+          <p>
+            Pull requests, translations, bug reports: what helps and how to send
+            it.
+          </p>
+
+          <p class="view">
+            <a href="/">Back to QtPass Home</a>
+          </p>
+          <p>
+            <small
+              >Generated from
+              <a
+                href="https://github.com/IJHack/QtPass/blob/main/CONTRIBUTING.md"
+                >CONTRIBUTING.md</a
+              >
+              in the repository; improve it there.</small
+            >
+          </p>
+        </header>
+        <footer>
+          <p>
+            This project is maintained by
+            <a title="IJhack on GitHub" href="https://github.com/IJHack"
+              >IJHack</a
+            >
+          </p>
+          <p>
+            <small
+              >Based on a theme by
+              <a href="https://github.com/orderedlist">orderedlist</a></small
+            >
+          </p>
+          <p>
+            <small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small>
+          </p>
+          <p>
+            <small
+              ><a title="QtPass privacy policy" href="/privacy"
+                >Privacy</a
+              ></small
+            >
+          </p>
+        </footer>
+      </aside>
+      <section>
+        <nav class="toc" aria-label="Sections">
+          <ul>
+            <li><a href="#pull-request-process">Pull Request Process</a></li>
+            <li><a href="#ai-assistance">AI assistance</a></li>
+            <li><a href="#translations">Translations</a></li>
+            <li>
+              <a href="#windows-developers-symlink-setup"
+                >Windows Developers: Symlink Setup</a
+              >
+            </li>
+            <li><a href="#getting-help">Getting Help</a></li>
+            <li><a href="#license">License</a></li>
+          </ul>
+        </nav>
+        <p>Make sure you have read the <a href="/faq">FAQ</a></p>
+        <p>Thank you for wanting to contribute to making QtPass awesome.</p>
+        <h2>
+          <a
+            id="pull-request-process"
+            class="anchor"
+            href="#pull-request-process"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Pull Request Process
+        </h2>
+        <ol>
+          <li>
+            <strong>Sign your commits</strong> - All commits must be signed with
+            GPG using <code>git commit -S -m &quot;description&quot;</code>.
+          </li>
+          <li>
+            Ensure install or build dependencies and artifacts are not
+            committed.
+          </li>
+          <li>
+            When adding big new features or changes to the build tool, update
+            the
+            <a href="https://github.com/IJHack/QtPass/blob/main/README.md"
+              >README.md</a
+            >
+            to reflect those.
+          </li>
+          <li>
+            Make sure you update all the CI configs if needed. These run on
+            every Pull Request.
+          </li>
+          <li>
+            Increase the version numbers in relevant files when applicable. The
+            versioning scheme we use is
+            <a href="https://pridever.org/">PrideVer</a>.
+          </li>
+          <li>
+            You may merge the Pull Request once you have the sign-off of one
+            other developer, or if you do not have permission to do that, you
+            may request a reviewer to merge it for you.
+          </li>
+        </ol>
+        <h2>
+          <a
+            id="ai-assistance"
+            class="anchor"
+            href="#ai-assistance"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >AI assistance
+        </h2>
+        <p>Using an AI coding assistant is fine. The rules:</p>
+        <ul>
+          <li>
+            <strong>Disclose it.</strong> Add a
+            <code>Co-Authored-By:</code> trailer naming the tool or model to
+            each assisted commit (for example
+            <code
+              >Co-Authored-By: Claude Opus 5 &lt;noreply@anthropic.com&gt;</code
+            >), or say so in the pull request description.
+          </li>
+          <li>
+            <strong>You are the author.</strong> Read, understand and test
+            everything you submit; do not open a pull request with output you
+            cannot explain. The DCO sign-off applies to assisted commits exactly
+            as to hand-written ones.
+          </li>
+          <li>
+            <strong>Keep secrets out.</strong> Never paste password-store
+            contents, GPG key material or other private data into an assistant.
+          </li>
+          <li>
+            <strong>AI review findings are advisory.</strong> CodeRabbit and
+            Copilot comment on pull requests; verify each finding against the
+            code, fix what is real, and answer false positives with a short
+            explanation instead of a change.
+          </li>
+          <li>
+            <strong
+              >Machine-drafted translations stay
+              <code>type=&quot;unfinished&quot;</code></strong
+            >
+            in the <code>.ts</code> files so native speakers can finalise them
+            on Weblate.
+          </li>
+        </ul>
+        <p>
+          Agents working on this repository should read
+          <a href="https://github.com/IJHack/QtPass/blob/main/AGENTS.md"
+            >AGENTS.md</a
+          >
+          and the skills under <code>.opencode/skills/</code>.
+        </p>
+        <h2>
+          <a
+            id="translations"
+            class="anchor"
+            href="#translations"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Translations
+        </h2>
+        <p>
+          QtPass uses
+          <a href="https://hosted.weblate.org/projects/qtpass/qtpass/"
+            >Weblate</a
+          >
+          for translations.
+        </p>
+        <p>To add a new language:</p>
+        <ul>
+          <li>
+            Add your language code to <code>src/src.pro</code> under
+            TRANSLATIONS
+          </li>
+          <li>
+            If you have an existing build, run <code>make distclean</code> first
+            (prevents stale generated files like <code>ui_*.h</code> from being
+            included)
+          </li>
+          <li>
+            Determine which qmake command your Qt 6 installation provides: run
+            <code>qmake6 -v</code> (or <code>qmake -v</code> if
+            <code>qmake6</code> is unavailable) and confirm it shows Qt version
+            6.8 or newer.
+          </li>
+          <li>
+            Run that same command (<code>qmake6</code> or <code>qmake</code>)
+            <strong>at the repository root</strong>, then
+            <code>make lupdate</code>; the target runs <code>lupdate</code> over
+            both <code>src/</code> and <code>main/</code> and updates every
+            <code>.ts</code> file. Do not run <code>lupdate</code> on
+            <code>src/src.pro</code> alone — that misses the strings in
+            <code>main/</code>. A plain <code>qmake6</code> run leaves
+            <code>localization/</code> untouched.
+          </li>
+          <li>
+            Edit the <code>.ts</code> file with Qt Linguist:
+            <code>linguist localization/qtpass_xx_YY.ts</code>
+          </li>
+        </ul>
+        <p>
+          Qt Linguist has helpful
+          <a href="https://doc.qt.io/qt-6/linguist-translators.html"
+            >in-context translation options</a
+          >.
+        </p>
+        <h2>
+          <a
+            id="windows-developers-symlink-setup"
+            class="anchor"
+            href="#windows-developers-symlink-setup"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Windows Developers: Symlink Setup
+        </h2>
+        <p>
+          This repository contains a symlink (<code>.claude</code> -&gt;
+          <code>.opencode</code>). Windows developers need to enable symlink
+          support:
+        </p>
+        <p>
+          <strong>Option 1:</strong> Enable Developer Mode on Windows 10+
+          (recommended)
+        </p>
+        <ul>
+          <li>Go to Settings &gt; Update &amp; Security &gt; For developers</li>
+          <li>Enable &quot;Developer Mode&quot;</li>
+        </ul>
+        <p><strong>Option 2:</strong> Configure Git to use symlinks</p>
+        <pre><code class="language-bash">git config core.symlinks true
+</code></pre>
+        <p>Set this before cloning the repository.</p>
+        <p>
+          <strong>Warning:</strong> Without symlink support enabled,
+          <code>.claude</code> will be checked out as a regular text file
+          containing the path &quot;.opencode&quot; instead of a proper symlink.
+        </p>
+        <p><strong>Troubleshooting:</strong> After cloning:</p>
+        <ul>
+          <li>
+            Run <code>ls -l .claude</code> (Git Bash) or
+            <code>dir .claude</code> (CMD) to verify it shows as a symlink, not
+            a regular file.
+          </li>
+          <li>
+            If it appears as a regular file, set
+            <code>core.symlinks=true</code> in your Git config, then re-checkout
+            the file or re-clone the repository to restore the proper symlink.
+          </li>
+        </ul>
+        <h2>
+          <a
+            id="getting-help"
+            class="anchor"
+            href="#getting-help"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Getting Help
+        </h2>
+        <ul>
+          <li>
+            Open an
+            <a href="https://github.com/IJHack/QtPass/issues">issue</a> for bugs
+            or feature requests
+          </li>
+          <li>
+            Email <a href="mailto:help@qtpass.org">help@qtpass.org</a> for
+            general questions
+          </li>
+        </ul>
+        <h2>
+          <a id="license" class="anchor" href="#license" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >License
+        </h2>
+        <p>
+          QtPass is released under the GNU GPL v3.0 license.
+          <a href="https://www.gnu.org/licenses/gpl-3.0.html"
+            >https://www.gnu.org/licenses/gpl-3.0.html</a
+          >
+        </p>
+      </section>
+    </div>
+    <script src="javascripts/main.js?v=1.8.1-4" defer></script>
+  </body>
+</html>

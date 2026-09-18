@@ -57,7 +57,7 @@ Redirect 301 /changelogs /changelog
 # packaging metadata and search results.
 Redirect 301 /docs/md__f_a_q.html /faq
 Redirect 301 /docs/md__c_h_a_n_g_e_l_o_g.html https://github.com/IJHack/QtPass/blob/main/CHANGELOG.md
-Redirect 301 /docs/md__c_o_n_t_r_i_b_u_t_i_n_g.html https://github.com/IJHack/QtPass/blob/main/CONTRIBUTING.md
+Redirect 301 /docs/md__c_o_n_t_r_i_b_u_t_i_n_g.html /contributing
 Redirect 301 /docs/md__r_e_a_d_m_e.html https://github.com/IJHack/QtPass/blob/main/README.md
 
 # Canonical URLs are extension-less: /downloads.html -> /downloads.

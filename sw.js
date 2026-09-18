@@ -19,6 +19,7 @@ const PRECACHE_URLS = [
   "/changelog.1.6",
   "/changelog.beta",
   "/changelog.old",
+  "/contributing",
   "/downloads",
   "/faq",
   "/getting-started",

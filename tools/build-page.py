@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Render FAQ.md from the QtPass repository as /faq on the site.
+"""Render a Markdown file from the QtPass repository as a page of the site.
 
-    git show origin/1.8:FAQ.md | tools/build-faq.py > faq.html
-    npx prettier --write faq.html
+    git show origin/1.8:FAQ.md | tools/build-page.py faq > faq.html
+    git show origin/main:CONTRIBUTING.md | tools/build-page.py contributing > contributing.html
+    npx prettier --write faq.html contributing.html
 
 The Markdown goes through marked (GFM); headings get the same anchor
 markup as the hand-written pages and GitHub-style ids, so links into
-FAQ.md#some-question keep working on the site. Relative links to other
-files in the repository are pointed at GitHub. A list of the questions,
-grouped by section, is inserted before the first section.
+FAQ.md#some-question keep working on the site. Relative links to files
+that have a page here go to that page, the rest to GitHub. A list of the
+sections (and, for the FAQ, the questions) is inserted up top.
 """
 
 import html
@@ -20,18 +21,60 @@ REPO_BLOB = "https://github.com/IJHack/QtPass/blob/main/"
 VERSION = "1.8.1"
 ASSET_VERSION = "?v=1.8.1-4"
 
+# Repository files that are pages on the site.
+SITE_PAGES = {
+    "FAQ.md": "/faq",
+    "CONTRIBUTING.md": "/contributing",
+}
+
+PAGES = {
+    "faq": {
+        "source": "FAQ.md",
+        "slug": "faq",
+        "title": "QtPass FAQ",
+        "heading": "QtPass FAQ",
+        "description": (
+            "Frequently asked questions about QtPass: GnuPG and pinentry "
+            "problems, Git on Windows, one-time passwords, where settings "
+            "live, and how to help."
+        ),
+        "blurb": (
+            "Answers to the questions that reach the issue tracker and the "
+            "mailing list most often."
+        ),
+        "crumb": "FAQ",
+        "toc_label": "Questions",
+        "toc_depth": 3,
+    },
+    "contributing": {
+        "source": "CONTRIBUTING.md",
+        "slug": "contributing",
+        "title": "Contributing to QtPass",
+        "heading": "Contributing",
+        "description": (
+            "How to contribute to QtPass: the pull request process, the "
+            "rules for AI-assisted changes, translations on Weblate, and "
+            "building on Windows."
+        ),
+        "blurb": (
+            "Pull requests, translations, bug reports: what helps and how to "
+            "send it."
+        ),
+        "crumb": "Contributing",
+        "toc_label": "Sections",
+        "toc_depth": 2,
+    },
+}
+
 HEAD = """<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>QtPass FAQ</title>
-    <meta
-      name="description"
-      content="Frequently asked questions about QtPass: GnuPG and pinentry problems, Git on Windows, one-time passwords, where settings live, and how to help."
-    />
+    <title>{title}</title>
+    <meta name="description" content="{description}" />
     <link rel="stylesheet" href="stylesheets/styles.css{v}" />
-    <link rel="canonical" href="https://qtpass.org/faq" />
+    <link rel="canonical" href="https://qtpass.org/{slug}" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=yes"
@@ -43,16 +86,13 @@ HEAD = """<!doctype html>
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png{v}" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#ffffff" />
-    <meta property="og:title" content="QtPass FAQ" />
+    <meta property="og:title" content="{title}" />
     <meta property="og:site_name" content="QtPass" />
-    <meta property="og:url" content="https://qtpass.org/faq" />
+    <meta property="og:url" content="https://qtpass.org/{slug}" />
     <meta property="og:image" content="https://qtpass.org/images/og.png" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="640" />
-    <meta
-      property="og:description"
-      content="Frequently asked questions about QtPass: GnuPG and pinentry problems, Git on Windows, one-time passwords, where settings live, and how to help."
-    />
+    <meta property="og:description" content="{description}" />
     <meta property="og:type" content="website" />
     <script type="application/ld+json">
       {{
@@ -68,8 +108,8 @@ HEAD = """<!doctype html>
           {{
             "@type": "ListItem",
             "position": 2,
-            "name": "FAQ",
-            "item": "https://qtpass.org/faq"
+            "name": "{crumb}",
+            "item": "https://qtpass.org/{slug}"
           }}
         ]
       }}
@@ -80,11 +120,8 @@ HEAD = """<!doctype html>
     <div class="wrapper">
       <aside class="sidebar">
         <header>
-          <h1>QtPass FAQ <small>{version}</small></h1>
-          <p>
-            Answers to the questions that reach the issue tracker and the
-            mailing list most often.
-          </p>
+          <h1>{heading} <small>{version}</small></h1>
+          <p>{blurb}</p>
 
           <p class="view">
             <a href="/">Back to QtPass Home</a>
@@ -92,8 +129,8 @@ HEAD = """<!doctype html>
           <p>
             <small
               >Generated from
-              <a href="{blob}FAQ.md">FAQ.md</a> in the repository; improve it
-              there.</small
+              <a href="{blob}{source}">{source}</a> in the repository; improve
+              it there.</small
             >
           </p>
         </header>
@@ -156,6 +193,9 @@ def anchor(level, slug, text):
 
 
 def main():
+    if len(sys.argv) != 2 or sys.argv[1] not in PAGES:
+        sys.exit(f"usage: build-page.py {{{'|'.join(PAGES)}}} < FILE.md")
+    page = PAGES[sys.argv[1]]
     source = sys.stdin.read()
     body = subprocess.run(
         ["npx", "--yes", "marked", "--gfm"],
@@ -168,12 +208,16 @@ def main():
     # The title lives in the sidebar.
     body = re.sub(r"^<h1>.*?</h1>\n?", "", body, count=1)
 
-    # Links to sibling files in the repository.
-    body = re.sub(
-        r'href="(?!https?:|mailto:|#|/)([^"]+)"',
-        lambda m: f'href="{REPO_BLOB}{m.group(1)}"',
-        body,
-    )
+    # Links to sibling files in the repository: to their page here if they
+    # have one, otherwise to GitHub.
+    def repo_link(m):
+        target = m.group(1)
+        name, _, fragment = target.partition("#")
+        if name in SITE_PAGES:
+            return f'href="{SITE_PAGES[name]}{"#" + fragment if fragment else ""}"'
+        return f'href="{REPO_BLOB}{target}"'
+
+    body = re.sub(r'href="(?!https?:|mailto:|#|/)([^"]+)"', repo_link, body)
 
     seen = set()
     outline = []  # (level, slug, text)
@@ -186,23 +230,32 @@ def main():
 
     body = re.sub(r"<h([23])>(.*?)</h\1>", heading, body)
 
-    toc = ['<nav class="toc" aria-label="Questions">']
-    open_list = False
-    for level, slug, text in outline:
-        if level == 2:
-            if open_list:
-                toc.append("</ul>")
-            toc.append(f'<p><a href="#{slug}">{text}</a></p>')
-            toc.append("<ul>")
-            open_list = True
-        else:
-            toc.append(f'<li><a href="#{slug}">{text}</a></li>')
-    if open_list:
+    toc = [f'<nav class="toc" aria-label="{page["toc_label"]}">']
+    if page["toc_depth"] == 2:
+        toc.append("<ul>")
+        toc += [
+            f'<li><a href="#{slug}">{text}</a></li>'
+            for level, slug, text in outline
+            if level == 2
+        ]
         toc.append("</ul>")
+    else:
+        open_list = False
+        for level, slug, text in outline:
+            if level == 2:
+                if open_list:
+                    toc.append("</ul>")
+                toc.append(f'<p><a href="#{slug}">{text}</a></p>')
+                toc.append("<ul>")
+                open_list = True
+            else:
+                toc.append(f'<li><a href="#{slug}">{text}</a></li>')
+        if open_list:
+            toc.append("</ul>")
     toc.append("</nav>")
 
     sys.stdout.write(
-        HEAD.format(v=ASSET_VERSION, version=VERSION, blob=REPO_BLOB)
+        HEAD.format(v=ASSET_VERSION, version=VERSION, blob=REPO_BLOB, **page)
         + "\n".join(toc)
         + "\n"
         + body
