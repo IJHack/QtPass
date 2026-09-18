@@ -527,12 +527,12 @@ Wartość zostanie zapisana we wprowadzonej postaci.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="764"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished">Nie udało się zainicjować profilu %1</translation>
+        <translation>Nie udało się zainicjować profilu %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="766"/>
         <source>Profile %1</source>
-        <translation type="unfinished">Profil %1</translation>
+        <translation>Profil %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="777"/>
@@ -1320,12 +1320,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="257"/>
         <source>No password store backend available</source>
-        <translation type="unfinished">Brak dostępnego backendu magazynu haseł</translation>
+        <translation>Brak dostępnego backendu magazynu haseł</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="293"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished">Generowanie klucza nie powiodło się: %1</translation>
+        <translation>Nie udało się wygenerować klucza: %1</translation>
     </message>
 </context>
 <context>
@@ -1419,57 +1419,57 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished">Ctrl+,</translation>
+        <translation>Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="524"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished">&amp;Zamknij okno</translation>
+        <translation>&amp;Zamknij okno</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">Zamyka okno; z włączoną opcją „Ukryj przy zamknięciu” QtPass pozostaje w zasobniku systemowym</translation>
+        <translation>Zamyka okno; z włączoną opcją „Ukryj przy zamknięciu” QtPass pozostaje w zasobniku systemowym</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="535"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Wyjdź</translation>
+        <translation>&amp;Wyjdź</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished">&amp;FAQ</translation>
+        <translation>&amp;FAQ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="549"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished">Otwiera często zadawane pytania na stronie qtpass.org</translation>
+        <translation>Otwiera często zadawane pytania na stronie qtpass.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="552"/>
         <source>F1</source>
-        <translation type="unfinished">F1</translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="557"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished">&amp;O programie QtPass</translation>
+        <translation>&amp;O programie QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="565"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished">O &amp;Qt</translation>
+        <translation>O &amp;Qt</translation>
     </message>
     <message>
         <source>Clear output</source>
@@ -1550,22 +1550,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Plik</translation>
+        <translation>&amp;Plik</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished">&amp;Magazyn</translation>
+        <translation>&amp;Magazyn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished">&amp;Ustawienia</translation>
+        <translation>&amp;Ustawienia</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="373"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">Pomo&amp;c</translation>
+        <translation>Pomo&amp;c</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="485"/>
@@ -1676,12 +1676,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="890"/>
         <source>About QtPass</source>
-        <translation type="unfinished">O programie QtPass</translation>
+        <translation>O programie QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="891"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Wieloplatformowy graficzny interfejs użytkownika dla &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardowego menedżera haseł w systemach uniksowych.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Kod źródłowy i zgłaszanie problemów&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Na licencji &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL w wersji 3&lt;/a&gt; lub późniejszej.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Wieloplatformowy graficzny interfejs użytkownika dla &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardowego menedżera haseł w systemach uniksowych.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Kod źródłowy i zgłaszanie problemów&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Na licencji &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL w wersji 3&lt;/a&gt; lub późniejszej.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="995"/>
@@ -2116,7 +2116,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation>Szablon pola ze sklepowego pliku .templates. Klawisz Ctrl+T przełącza na kolejny.</translation>
+        <translation>Szablon pola z magazynowego pliku .templates. Klawisz Ctrl+T przełącza na kolejny.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="76"/>
@@ -2174,17 +2174,17 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Dane wyjściowe procesu</translation>
+        <translation>Dane wyjściowe procesu</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
         <source>Clear</source>
-        <translation type="unfinished">Wyczyść</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="26"/>
         <source>Clear output</source>
-        <translation type="unfinished">Wyczyść dane wyjściowe</translation>
+        <translation>Wyczyść dane wyjściowe</translation>
     </message>
 </context>
 <context>
@@ -2192,12 +2192,12 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="34"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished">Nie udało się utworzyć %1.</translation>
+        <translation>Nie udało się utworzyć %1.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="56"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 zawiera już %n zaszyfrowany plik; nie został on ponownie zaszyfrowany. Przełącz się na ten profil i otwórz okno Użytkownicy, aby to zrobić.</numerusform>
             <numerusform>%1 zawiera już %n zaszyfrowane pliki; nie zostały one ponownie zaszyfrowane. Przełącz się na ten profil i otwórz okno Użytkownicy, aby to zrobić.</numerusform>
             <numerusform>%1 zawiera już %n zaszyfrowanych plików; nie zostały one ponownie zaszyfrowane. Przełącz się na ten profil i otwórz okno Użytkownicy, aby to zrobić.</numerusform>
@@ -2206,23 +2206,23 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="74"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished">Nie wybrano odbiorcy; nie zapisano %1.</translation>
+        <translation>Nie wybrano odbiorcy; nie zapisano %1.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="81"/>
         <source>Could not write %1: %2</source>
-        <translation type="unfinished">Nie udało się zapisać %1: %2</translation>
+        <translation>Nie udało się zapisać %1: %2</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="98"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished">Nie udało się podpisać %1 kluczem %2: %3</translation>
+        <translation>Nie udało się podpisać %1 za pomocą %2: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="118"/>
         <location filename="../src/profileinit.cpp" line="147"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished">Polecenie git %1 nie powiodło się w %2: %3</translation>
+        <translation>Polecenie git %1 nie powiodło się w %2: %3</translation>
     </message>
 </context>
 <context>
