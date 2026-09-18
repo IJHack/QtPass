@@ -1,6 +1,0 @@
-<map id="Executor::execute" name="Executor::execute">
-<area shape="rect" id="Node000001" title="Executor::execute executes an app from a workDir." alt="" coords="5,29,143,55"/>
-<area shape="rect" id="Node000002" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app." alt="" coords="191,29,328,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,39,177,39,177,45,143,45"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="229,31,222,21,226,11,238,5,259,3,285,6,295,15,292,19,283,11,259,8,240,10,230,15,228,20,233,28"/>
-</map>

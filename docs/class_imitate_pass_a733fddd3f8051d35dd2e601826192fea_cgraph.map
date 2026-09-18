@@ -1,8 +1,0 @@
-<map id="ImitatePass::executeWrapper" name="ImitatePass::executeWrapper">
-<area shape="rect" id="Node000001" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="5,59,217,84"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title=" " alt="" coords="265,29,431,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,56,252,51,252,57,214,61"/>
-<area shape="rect" id="Node000003" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="274,79,422,119"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="218,81,261,86,260,92,217,87"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="310,31,302,21,306,11,322,5,348,3,381,7,394,16,390,20,379,11,348,8,323,10,309,15,307,20,314,27"/>
-</map>

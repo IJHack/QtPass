@@ -1,4 +1,4 @@
 <map id="ConfigDialog::useAutoclearPanel" name="ConfigDialog::useAutoclearPanel">
-<area shape="rect" id="Node000001" title="Enable or disable autoclear of the panel." alt="" coords="5,29,204,69"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="138,18,126,11,105,8,86,10,75,15,70,21,73,28,67,30,65,20,71,11,84,5,105,3,128,6,141,13"/>
+<area shape="rect" id="Node000001" title="Enable or disable autoclear of the panel." alt="" coords="5,29,186,72"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="123,14,113,10,95,8,79,10,69,14,65,21,66,30,61,28,59,19,65,10,77,5,96,3,115,5,128,14"/>
 </map>

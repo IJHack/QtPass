@@ -1,7 +1,0 @@
-<map id="TrayIcon::iconActivated" name="TrayIcon::iconActivated">
-<area shape="rect" id="Node000001" title="TrayIcon::iconActivated you clicked on the trayicon." alt="" coords="5,31,179,56"/>
-<area shape="rect" id="Node000002" href="$class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc" title="TrayIcon::showHideParent toggle app visibility." alt="" coords="227,5,416,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,31,213,27,214,33,179,36"/>
-<area shape="rect" id="Node000003" href="$class_tray_icon.html#a40737136f8d85dad4a10ddb58619157a" title="TrayIcon::showMessage show a systray message for notification." alt="" coords="233,55,409,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,50,220,54,219,59,179,55"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="QtPass::copyTextToClipboard" name="QtPass::copyTextToClipboard">
-<area shape="rect" id="Node000001" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="224,5,432,31"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="Sets the text to be stored in clipboard and handles clipboard operations." alt="" coords="5,5,176,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,21,176,21,176,15,210,15"/>
-</map>

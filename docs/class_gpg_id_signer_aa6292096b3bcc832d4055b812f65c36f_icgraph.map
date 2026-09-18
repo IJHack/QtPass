@@ -1,4 +1,4 @@
 <map id="GpgIdSigner::validSigFingerprints" name="GpgIdSigner::validSigFingerprints">
-<area shape="rect" id="Node000001" title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line." alt="" coords="5,29,244,55"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="167,20,156,11,125,8,99,10,86,15,83,20,90,27,86,31,78,21,82,11,98,5,125,3,158,7,171,16"/>
+<area shape="rect" id="Node000001" title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line." alt="" coords="5,29,221,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="148,14,137,10,113,8,90,10,78,15,75,20,81,29,76,28,70,21,75,11,89,5,113,3,139,5,154,14"/>
 </map>

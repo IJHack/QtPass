@@ -1,9 +1,0 @@
-<map id="Pass::Pass" name="Pass::Pass">
-<area shape="rect" id="Node000001" title="Construct a Pass instance." alt="" coords="5,55,93,80"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion." alt="" coords="193,5,304,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,52,141,39,179,30,181,35,142,45,94,57"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#acfcfc18b0b973791530302eb8179e038" title="starting signal that is emited when process starts" alt="" coords="181,55,317,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,65,167,65,167,70,93,70"/>
-<area shape="rect" id="Node000004" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted before executing a command." alt="" coords="141,104,356,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="94,76,142,89,180,98,179,103,141,94,93,81"/>
-</map>

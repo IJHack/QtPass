@@ -1,6 +1,0 @@
-<map id="SingleApplication::sendMessage" name="SingleApplication::sendMessage">
-<area shape="rect" id="Node000001" title="SingleApplication::sendMessage send a message (from commandline) to an already running QtPass instanc..." alt="" coords="108,29,251,69"/>
-<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="203,17,195,11,179,8,166,10,158,14,155,21,156,28,151,29,149,20,154,11,164,5,179,3,197,6,207,13"/>
-<area shape="rect" id="Node000002" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="main" alt="" coords="5,37,60,62"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,52,60,52,60,47,94,47"/>
-</map>

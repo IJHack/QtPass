@@ -1,4 +1,4 @@
 <map id="StoreModel::mimeTypes" name="StoreModel::mimeTypes">
-<area shape="rect" id="Node000001" title="Get supported MIME types for drag/drop." alt="" coords="5,29,184,55"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="126,19,117,11,95,8,76,10,66,15,64,20,69,28,65,31,59,21,62,11,74,5,95,3,119,6,130,15"/>
+<area shape="rect" id="Node000001" title="Get supported MIME types for drag/drop." alt="" coords="5,29,168,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="113,14,104,10,86,8,70,10,61,15,59,20,63,29,58,28,53,21,57,11,68,5,87,3,106,5,118,14"/>
 </map>

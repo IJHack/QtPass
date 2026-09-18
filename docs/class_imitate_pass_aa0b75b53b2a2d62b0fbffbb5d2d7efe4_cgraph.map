@@ -1,7 +1,0 @@
-<map id="ImitatePass::finished" name="ImitatePass::finished">
-<area shape="rect" id="Node000001" title="Handle process completion." alt="" coords="5,35,163,60"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion." alt="" coords="229,5,340,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,33,215,25,216,31,163,38"/>
-<area shape="rect" id="Node000003" href="$classsimple_transaction.html#a3914acc39e65586cd6671aff1ac3afe9" title="transactionIsOver checks wheather currently finished process is last in current transaction" alt="" coords="211,55,359,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,56,197,60,196,66,163,61"/>
-</map>

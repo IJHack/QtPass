@@ -1,4 +1,4 @@
 <map id="FileContent::isOtpUriValue" name="FileContent::isOtpUriValue">
-<area shape="rect" id="Node000001" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="5,29,199,55"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="136,19,126,11,102,8,82,10,71,15,69,20,75,28,70,31,64,21,67,11,80,5,102,3,128,6,139,15"/>
+<area shape="rect" id="Node000001" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="5,29,182,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="122,14,113,10,93,8,75,10,65,15,63,20,68,29,63,28,58,21,62,11,74,5,94,3,115,5,127,14"/>
 </map>

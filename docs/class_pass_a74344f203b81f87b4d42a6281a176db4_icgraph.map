@@ -1,5 +1,0 @@
-<map id="Pass::finishedGrep" name="Pass::finishedGrep">
-<area shape="rect" id="Node000001" title="Emitted when grep finishes with matching results." alt="" coords="191,5,332,31"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a7789a916aca076ad7ceaf4ef093239d3" title="Search all password content by GPG&#45;decrypting each .gpg file." alt="" coords="5,5,143,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,21,143,21,143,15,177,15"/>
-</map>

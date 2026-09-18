@@ -1,4 +1,4 @@
 <map id="ExportPublicKeyDialog::ExportPublicKeyDialog" name="ExportPublicKeyDialog::ExportPublicKeyDialog">
-<area shape="rect" id="Node000001" title="Construct an ExportPublicKeyDialog." alt="" coords="5,29,183,69"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="123,17,113,11,94,8,77,10,67,15,64,21,66,28,60,30,58,20,64,11,76,5,94,3,115,6,126,13"/>
+<area shape="rect" id="Node000001" title="Construct an ExportPublicKeyDialog." alt="" coords="5,29,169,72"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="112,14,103,10,87,8,72,10,63,14,59,20,60,29,55,28,54,19,59,11,70,5,87,3,105,5,117,14"/>
 </map>

@@ -1,9 +1,0 @@
-<map id="QtPassSettings::setGitExecutable" name="QtPassSettings::setGitExecutable">
-<area shape="rect" id="Node000001" title="Save git executable path." alt="" coords="423,31,660,56"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="Initialize executable paths by auto&#45;detecting them." alt="" coords="148,5,375,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="409,34,374,31,375,26,409,29"/>
-<area shape="rect" id="Node000004" href="$class_config_dialog.html#a1b7b022b97d128fb1f749c9190f20b4a" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,..." alt="" coords="158,55,365,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="409,57,365,61,364,56,409,52"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="5,5,100,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="134,21,100,21,100,15,134,15"/>
-</map>

@@ -1,4 +1,4 @@
 <map id="FileContent::getPasswordForDisplay" name="FileContent::getPasswordForDisplay">
-<area shape="rect" id="Node000001" title="Like getPassword but empty when the password line is itself an otpauth URI." alt="" coords="5,29,192,69"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="130,17,119,11,99,8,81,10,70,15,66,21,68,28,63,30,61,20,67,11,80,5,99,3,121,6,133,13"/>
+<area shape="rect" id="Node000001" title="Like getPassword but empty when the password line is itself an otpauth URI." alt="" coords="5,29,178,72"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="118,14,109,10,91,8,76,10,66,14,62,20,63,29,58,28,57,19,62,10,74,5,92,3,110,5,123,14"/>
 </map>

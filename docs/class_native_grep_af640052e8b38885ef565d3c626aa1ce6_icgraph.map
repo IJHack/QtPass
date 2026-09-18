@@ -1,0 +1,9 @@
+<map id="NativeGrep::cancel" name="NativeGrep::cancel">
+<area shape="rect" id="Node000001" title="Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that ..." alt="" coords="208,56,341,83"/>
+<area shape="rect" id="Node000002" href="$class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over." alt="" coords="12,5,153,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,52,136,35,136,30,209,50"/>
+<area shape="rect" id="Node000003" href="$class_native_grep.html#a58e093d9bb7bae2d02fcf9ea7fa0132a" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="6,56,159,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,70,159,72,159,67,195,69"/>
+<area shape="rect" id="Node000004" href="$class_native_grep.html#ad9b99ac184ab94d539f2937efbf13ed1" title="Walk storeDir, decrypt every .gpg file and collect the matches." alt="" coords="5,107,160,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="209,87,137,109,135,103,203,88"/>
+</map>
