@@ -130,12 +130,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1169"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished">Pełny 40-znakowy odcisk klucza, jakiego wymaga pass</translation>
+        <translation>Pełny 40-znakowy odcisk klucza, jakiego wymaga pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1176"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
-        <translation type="unfinished">Ustawienia Git dla tego profilu; zastępują one ustawienia z karty Ustawienia, gdy profil jest aktywny</translation>
+        <translation>Ustawienia Git dla tego profilu; zastępują one ustawienia z karty Ustawienia, gdy profil jest aktywny</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1222"/>
@@ -341,22 +341,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="1020"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished">Magazyny haseł znane temu QtPass; wybierz jeden, aby go edytować</translation>
+        <translation>Magazyny haseł znane temu QtPass; wybierz jeden, aby go edytować</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1035"/>
         <source>Add a profile</source>
-        <translation type="unfinished">Dodaj profil</translation>
+        <translation>Dodaj profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation type="unfinished">Zapomnij wybrany profil; sam magazyn pozostaje na dysku</translation>
+        <translation>Zapomnij wybrany profil; sam magazyn pozostaje na dysku</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1099"/>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1105"/>
@@ -469,7 +469,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="277"/>
         <source>Another profile already has this name</source>
-        <translation type="unfinished">Inny profil ma już tę nazwę</translation>
+        <translation>Inny profil ma już tę nazwę</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="317"/>
@@ -680,62 +680,62 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="458"/>
         <source>Hide passwords until asked</source>
-        <translation type="unfinished">Ukrywaj hasła, dopóki o to nie poprosisz</translation>
+        <translation>Ukrywaj hasła, dopóki o to nie poprosisz</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="459"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished">Pokazuj ikonę w zasobniku systemowym</translation>
+        <translation>Pokazuj ikonę w zasobniku systemowym</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="460"/>
         <source>Ready</source>
-        <translation type="unfinished">Gotowe</translation>
+        <translation>Gotowe</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="461"/>
         <source>Everything else can be changed later in Settings.</source>
-        <translation type="unfinished">Wszystko inne można później zmienić w Ustawieniach.</translation>
+        <translation>Wszystko inne można później zmienić w Ustawieniach.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="468"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation type="unfinished">Wyświetlaj wiersz z hasłem jako kropki; opcja Pokaż hasło go odsłania</translation>
+        <translation>Wyświetlaj wiersz z hasłem jako kropki; opcja Pokaż hasło go odsłania</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="479"/>
         <source>Store: %1</source>
-        <translation type="unfinished">Magazyn: %1</translation>
+        <translation>Magazyn: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="481"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation type="unfinished">Jest już magazynem haseł i zostanie użyty w obecnym stanie.</translation>
+        <translation>Jest już magazynem haseł i zostanie użyty w obecnym stanie.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="483"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
-        <translation type="unfinished">Zostanie skonfigurowany dla zaznaczonych kluczy i objęty kontrolą Git.</translation>
+        <translation>Zostanie skonfigurowany dla zaznaczonych kluczy i objęty kontrolą Git.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="485"/>
         <source>It will be set up for the ticked keys.</source>
-        <translation type="unfinished">Zostanie skonfigurowany dla zaznaczonych kluczy.</translation>
+        <translation>Zostanie skonfigurowany dla zaznaczonych kluczy.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="487"/>
         <source>GnuPG: %1</source>
-        <translation type="unfinished">GnuPG: %1</translation>
+        <translation>GnuPG: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="488"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished">Operacje są wykonywane przez pass.</translation>
+        <translation>Operacje są wykonywane przez pass.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="489"/>
         <source>Operations run through gpg and git directly.</source>
-        <translation type="unfinished">Operacje są wykonywane bezpośrednio przez gpg i git.</translation>
+        <translation>Operacje są wykonywane bezpośrednio przez gpg i git.</translation>
     </message>
 </context>
 <context>
@@ -816,44 +816,44 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="45"/>
         <source>Browse</source>
-        <translation type="unfinished">Przeglądaj</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="68"/>
         <location filename="../src/firstrunwizard.cpp" line="74"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished">Witamy w QtPass</translation>
+        <translation>Witamy w QtPass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="77"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished">QtPass to graficzna nakładka na &lt;i&gt;pass&lt;/i&gt;, standardowy menedżer haseł w systemach uniksowych: każde hasło jest plikiem zaszyfrowanym za pomocą GnuPG, przechowywanym w folderze, który możesz objąć kontrolą Git.&lt;br&gt;&lt;br&gt;Kolejne strony odnajdą GnuPG, upewnią się, że masz klucz, dla którego można szyfrować, i pozwolą wybrać folder, w którym znajdują się Twoje hasła. Nic nie zostanie zapisane, dopóki nie naciśniesz Zakończ.</translation>
+        <translation>QtPass to graficzna nakładka na &lt;i&gt;pass&lt;/i&gt;, standardowy menedżer haseł w systemach uniksowych: każde hasło jest plikiem zaszyfrowanym za pomocą GnuPG, przechowywanym w folderze, który możesz objąć kontrolą Git.&lt;br&gt;&lt;br&gt;Kolejne strony odnajdą GnuPG, upewnią się, że masz klucz, dla którego można szyfrować, i pozwolą wybrać folder, w którym znajdują się Twoje hasła. Nic nie zostanie zapisane, dopóki nie naciśniesz Zakończ.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="137"/>
         <source>Error</source>
-        <translation type="unfinished">Błąd</translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="138"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">Nie udało się utworzyć magazynu haseł w: %1</translation>
+        <translation>Nie udało się utworzyć magazynu haseł w: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="155"/>
         <location filename="../src/firstrunwizard.cpp" line="173"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Magazyn haseł nie został zainicjowany</translation>
+        <translation>Magazyn haseł nie został zainicjowany</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="162"/>
         <source>Password store</source>
-        <translation type="unfinished">Magazyn haseł</translation>
+        <translation>Magazyn haseł</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="163"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished">%1 zawiera już zaszyfrowane pliki; nie zostały one ponownie zaszyfrowane dla zaznaczonych kluczy. Aby to zrobić, po uruchomieniu otwórz okno Użytkownicy.</translation>
+        <translation>%1 zawiera już zaszyfrowane pliki; nie zostały one ponownie zaszyfrowane dla zaznaczonych kluczy. Aby to zrobić, po uruchomieniu otwórz okno Użytkownicy.</translation>
     </message>
 </context>
 <context>
@@ -1148,32 +1148,32 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="275"/>
         <source>Generate a new key pair…</source>
-        <translation type="unfinished">Wygeneruj nową parę kluczy…</translation>
+        <translation>Wygeneruj nową parę kluczy…</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="277"/>
         <source>Your key</source>
-        <translation type="unfinished">Twój klucz</translation>
+        <translation>Twój klucz</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="278"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation type="unfinished">Hasła są szyfrowane dla kluczy GnuPG. Zaznacz klucze, które mają móc otwierać nowy magazyn; potrzebujesz co najmniej jednego, którego część tajna znajduje się na tym komputerze.</translation>
+        <translation>Hasła są szyfrowane dla kluczy GnuPG. Zaznacz klucze, które mają móc otwierać nowy magazyn; potrzebujesz co najmniej jednego, którego część tajna znajduje się na tym komputerze.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="306"/>
         <source>expired</source>
-        <translation type="unfinished">wygasł</translation>
+        <translation>wygasł</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="308"/>
         <source>not usable</source>
-        <translation type="unfinished">nie do użycia</translation>
+        <translation>nie do użycia</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="321"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
-        <translation type="unfinished">GnuPG nie ma jeszcze klucza tajnego. Wygeneruj go tutaj albo najpierw zaimportuj swój istniejący klucz za pomocą gpg.</translation>
+        <translation>GnuPG nie ma jeszcze klucza tajnego. Wygeneruj go tutaj albo najpierw zaimportuj swój istniejący klucz za pomocą gpg.</translation>
     </message>
 </context>
 <context>
@@ -1404,17 +1404,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="499"/>
         <source>Show &amp;menu bar</source>
-        <translation type="unfinished">Pokaż pasek &amp;menu</translation>
+        <translation>Pokaż pasek &amp;menu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="502"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
-        <translation type="unfinished">Ukryj lub pokaż pasek menu; Ctrl+M przywraca go</translation>
+        <translation>Ukryj lub pokaż pasek menu; Ctrl+M przywraca go</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished">Ctrl+M</translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
@@ -2046,27 +2046,27 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
         <source>Folder</source>
-        <translation type="unfinished">Folder</translation>
+        <translation>Folder</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation type="unfinished">Folder magazynu haseł, do którego trafi nowy wpis</translation>
+        <translation>Folder magazynu haseł, do którego trafi nowy wpis</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">Nazwa</translation>
+        <translation>Nazwa</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
-        <translation type="unfinished">Nazwa wpisu, tak jak pojawia się w drzewie; znak / umieszcza go w podfolderze</translation>
+        <translation>Nazwa wpisu, tak jak pojawia się w drzewie; znak / umieszcza go w podfolderze</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>e.g. github.com or work/vpn</source>
-        <translation type="unfinished">np. github.com lub praca/vpn</translation>
+        <translation>np. github.com lub praca/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
@@ -2121,7 +2121,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="76"/>
         <source>New password</source>
-        <translation type="unfinished">Nowe hasło</translation>
+        <translation>Nowe hasło</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>
@@ -2131,32 +2131,32 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="216"/>
         <source>Give the entry a name.</source>
-        <translation type="unfinished">Nadaj wpisowi nazwę.</translation>
+        <translation>Nadaj wpisowi nazwę.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="220"/>
         <source>A name cannot end in /.</source>
-        <translation type="unfinished">Nazwa nie może kończyć się znakiem /.</translation>
+        <translation>Nazwa nie może kończyć się znakiem /.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="229"/>
         <source>That name would resolve outside the password store.</source>
-        <translation type="unfinished">Ta nazwa wskazywałaby miejsce poza magazynem haseł.</translation>
+        <translation>Ta nazwa wskazywałaby miejsce poza magazynem haseł.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="233"/>
         <source>An entry called %1 already exists.</source>
-        <translation type="unfinished">Wpis o nazwie %1 już istnieje.</translation>
+        <translation>Wpis o nazwie %1 już istnieje.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="237"/>
         <source>%1 is a folder.</source>
-        <translation type="unfinished">%1 jest folderem.</translation>
+        <translation>%1 jest folderem.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="266"/>
         <source>Could not create the folder %1.</source>
-        <translation type="unfinished">Nie można utworzyć folderu %1.</translation>
+        <translation>Nie można utworzyć folderu %1.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="377"/>
@@ -2230,57 +2230,57 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="189"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished">Użyj narzędzia wiersza poleceń pass</translation>
+        <translation>Użyj narzędzia wiersza poleceń pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="191"/>
         <source>Programs</source>
-        <translation type="unfinished">Programy</translation>
+        <translation>Programy</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="192"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished">GnuPG zajmuje się szyfrowaniem. pass i Git są opcjonalne; QtPass może sam wykonać ich pracę.</translation>
+        <translation>GnuPG zajmuje się szyfrowaniem. pass i Git są opcjonalne; QtPass może sam wykonać ich pracę.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="196"/>
         <source>Select executable</source>
-        <translation type="unfinished">Wybierz plik wykonywalny</translation>
+        <translation>Wybierz plik wykonywalny</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="197"/>
         <source>All files (*)</source>
-        <translation type="unfinished">Wszystkie pliki (*)</translation>
+        <translation>Wszystkie pliki (*)</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="199"/>
         <source>GnuPG</source>
-        <translation type="unfinished">GnuPG</translation>
+        <translation>GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
         <source>Git</source>
-        <translation type="unfinished">Git</translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="203"/>
         <source>pass</source>
-        <translation type="unfinished">pass</translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="204"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished">Uruchamiaj skrypt pass dla każdej operacji zamiast wywoływać gpg i git bezpośrednio</translation>
+        <translation>Uruchamiaj skrypt pass dla każdej operacji zamiast wywoływać gpg i git bezpośrednio</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="244"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
-        <translation type="unfinished">Nie znaleziono GnuPG. Zainstaluj go (gpg lub gpg2) i podaj tutaj jego lokalizację.</translation>
+        <translation>Nie znaleziono GnuPG. Zainstaluj go (gpg lub gpg2) i podaj tutaj jego lokalizację.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="247"/>
         <source>%1 is not an executable file.</source>
-        <translation type="unfinished">%1 nie jest plikiem wykonywalnym.</translation>
+        <translation>%1 nie jest plikiem wykonywalnym.</translation>
     </message>
 </context>
 <context>
@@ -2470,27 +2470,27 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="351"/>
         <source>Keep the store under Git</source>
-        <translation type="unfinished">Trzymaj magazyn pod kontrolą Git</translation>
+        <translation>Trzymaj magazyn pod kontrolą Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="353"/>
         <source>Password store</source>
-        <translation type="unfinished">Magazyn haseł</translation>
+        <translation>Magazyn haseł</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="354"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation type="unfinished">Folder, w którym znajdują się Twoje hasła. Istniejący magazyn zostanie użyty w obecnym stanie; pusty lub nieistniejący folder zostanie skonfigurowany dla zaznaczonych kluczy.</translation>
+        <translation>Folder, w którym znajdują się Twoje hasła. Istniejący magazyn zostanie użyty w obecnym stanie; pusty lub nieistniejący folder zostanie skonfigurowany dla zaznaczonych kluczy.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="358"/>
         <source>Folder</source>
-        <translation type="unfinished">Folder</translation>
+        <translation>Folder</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="360"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Wybierz folder magazynu haseł</translation>
+        <translation>Wybierz folder magazynu haseł</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="385"/>
@@ -2498,7 +2498,7 @@ Kontynuować?</translation>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished">Git nie ma jeszcze nazwy i adresu e-mail do tworzenia commitów. Uruchom
+        <translation>Git nie ma jeszcze nazwy i adresu e-mail do tworzenia commitów. Uruchom
 git config --global user.name &quot;Imię Nazwisko&quot;
 git config --global user.email ty@example.org
 i włącz potem Git w Ustawieniach.</translation>
@@ -2506,17 +2506,17 @@ i włącz potem Git w Ustawieniach.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="389"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished">Każda zmiana staje się commitem; folder, który nie jest jeszcze repozytorium, zostanie nim</translation>
+        <translation>Każda zmiana staje się commitem; folder, który nie jest jeszcze repozytorium, zostanie nim</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="413"/>
         <source>Enter a folder.</source>
-        <translation type="unfinished">Podaj folder.</translation>
+        <translation>Podaj folder.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="422"/>
         <source>An existing password store with %n entries.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Istniejący magazyn haseł z %n wpisem.</numerusform>
             <numerusform>Istniejący magazyn haseł z %n wpisami.</numerusform>
             <numerusform>Istniejący magazyn haseł z %n wpisami.</numerusform>
@@ -2525,22 +2525,22 @@ i włącz potem Git w Ustawieniach.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="425"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation type="unfinished">Pusty folder; zostanie skonfigurowany jako magazyn haseł.</translation>
+        <translation>Pusty folder; zostanie skonfigurowany jako magazyn haseł.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="426"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation type="unfinished">Ten folder nie jest jeszcze magazynem haseł; zostanie w nim zapisany plik .gpg-id dla zaznaczonych kluczy.</translation>
+        <translation>Ten folder nie jest jeszcze magazynem haseł; zostanie w nim zapisany plik .gpg-id dla zaznaczonych kluczy.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="429"/>
         <source>The folder does not exist yet; it will be created.</source>
-        <translation type="unfinished">Folder jeszcze nie istnieje; zostanie utworzony.</translation>
+        <translation>Folder jeszcze nie istnieje; zostanie utworzony.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="433"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
-        <translation type="unfinished">Wróć i zaznacz co najmniej jeden klucz, dla którego ma być szyfrowany.</translation>
+        <translation>Wróć i zaznacz co najmniej jeden klucz, dla którego ma być szyfrowany.</translation>
     </message>
 </context>
 <context>
