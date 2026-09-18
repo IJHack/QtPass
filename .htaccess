@@ -45,13 +45,24 @@ Redirect 301 /dependencies /downloads#dependencies
 Redirect 301 /security-considerations /old#security-considerations
 Redirect 301 /planned-features /old#planned-features
 Redirect 301 /known-issues /old#known-issues
-Redirect 301 /faq /old#faq
+# The maintained FAQ is FAQ.md in the repository until the site has a page
+# of its own; the application's Help menu opens /faq, so keep this one
+# temporary (302) rather than letting browsers cache a 301 to GitHub.
+Redirect 302 /faq https://github.com/IJHack/QtPass/blob/main/FAQ.md
 Redirect 301 /cant-save-a-password /old#cant-save-a-password
 Redirect 301 /i-have-an-issue-with-gnome-keyring /old#i-have-an-issue-with-gnome-keyring
 Redirect 301 /can-i-import-from-keepass-lastpass-or-x /old#can-i-import-from-keepass-lastpass-or-x
-Redirect 301 /current-FAQ /old#faq
+Redirect 302 /current-FAQ https://github.com/IJHack/QtPass/blob/main/FAQ.md
 Redirect 301 /where-can-i-ask-for-help /old#where-can-i-ask-for-help
 Redirect 301 /changelogs /changelog
+
+# Doxygen stopped rendering the Markdown files in April 2026 (#1087); these
+# pages were removed from /docs/ in September 2026 but are still linked from
+# packaging metadata and search results.
+Redirect 301 /docs/md__f_a_q.html /faq
+Redirect 301 /docs/md__c_h_a_n_g_e_l_o_g.html https://github.com/IJHack/QtPass/blob/main/CHANGELOG.md
+Redirect 301 /docs/md__c_o_n_t_r_i_b_u_t_i_n_g.html https://github.com/IJHack/QtPass/blob/main/CONTRIBUTING.md
+Redirect 301 /docs/md__r_e_a_d_m_e.html https://github.com/IJHack/QtPass/blob/main/README.md
 
 # Canonical URLs are extension-less: /downloads.html -> /downloads.
 # Not applied under /docs/ (Doxygen links use .html) and not to 404.html.
