@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>QtPass FAQ</title>
+    <meta
+      name="description"
+      content="Frequently asked questions about QtPass: GnuPG and pinentry problems, Git on Windows, one-time passwords, where settings live, and how to help."
+    />
+    <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.1-4" />
+    <link rel="canonical" href="https://qtpass.org/faq" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=1.8.1-4" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png?v=1.8.1-4"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png?v=1.8.1-4"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-icon-180x180.png?v=1.8.1-4"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="QtPass FAQ" />
+    <meta property="og:site_name" content="QtPass" />
+    <meta property="og:url" content="https://qtpass.org/faq" />
+    <meta property="og:image" content="https://qtpass.org/images/og.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta
+      property="og:description"
+      content="Frequently asked questions about QtPass: GnuPG and pinentry problems, Git on Windows, one-time passwords, where settings live, and how to help."
+    />
+    <meta property="og:type" content="website" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "QtPass",
+            "item": "https://qtpass.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "FAQ",
+            "item": "https://qtpass.org/faq"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="wrapper">
+      <aside class="sidebar">
+        <header>
+          <h1>QtPass FAQ <small>1.8.1</small></h1>
+          <p>
+            Answers to the questions that reach the issue tracker and the
+            mailing list most often.
+          </p>
+
+          <p class="view">
+            <a href="/">Back to QtPass Home</a>
+          </p>
+          <p>
+            <small
+              >Generated from
+              <a href="https://github.com/IJHack/QtPass/blob/main/FAQ.md"
+                >FAQ.md</a
+              >
+              in the repository; improve it there.</small
+            >
+          </p>
+        </header>
+        <footer>
+          <p>
+            This project is maintained by
+            <a title="IJhack on GitHub" href="https://github.com/IJHack"
+              >IJHack</a
+            >
+          </p>
+          <p>
+            <small
+              >Based on a theme by
+              <a href="https://github.com/orderedlist">orderedlist</a></small
+            >
+          </p>
+          <p>
+            <small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small>
+          </p>
+          <p>
+            <small
+              ><a title="QtPass privacy policy" href="/privacy"
+                >Privacy</a
+              ></small
+            >
+          </p>
+        </footer>
+      </aside>
+      <section>
+        <nav class="toc" aria-label="Questions">
+          <p><a href="#issues">Issues</a></p>
+          <ul>
+            <li>
+              <a href="#cant-save-a-password">Can&#39;t save a password</a>
+            </li>
+            <li>
+              <a href="#i-have-an-issue-with-gnome-keyring"
+                >I have an issue with GNOME keyring</a
+              >
+            </li>
+            <li>
+              <a href="#i-dont-get-a-passphrase--pin-dialog"
+                >I don&#39;t get a passphrase / PIN dialog</a
+              >
+            </li>
+            <li>
+              <a href="#i-have-another-issue-with-gpg"
+                >I have another issue with gpg</a
+              >
+            </li>
+            <li>
+              <a href="#git-doesnt-work-on-windows"
+                >Git doesn&#39;t work on Windows</a
+              >
+            </li>
+            <li>
+              <a href="#git-has-issues-with-gpg-ssh-authentication"
+                >Git has issues with GPG SSH Authentication</a
+              >
+            </li>
+            <li>
+              <a href="#gpg-reports-a-missing-tmptst_integration-pubringkbx"
+                >gpg reports a missing
+                <code>/tmp/tst_integration-…/pubring.kbx</code></a
+              >
+            </li>
+            <li>
+              <a href="#gpg-says-public-key-unusable-or-no-secret-key"
+                >GPG says &quot;Public key unusable&quot; or &quot;No secret
+                key&quot;</a
+              >
+            </li>
+            <li>
+              <a href="#what-is-the-signing-key-in-profile-settings"
+                >What is the &quot;Signing Key&quot; in profile settings?</a
+              >
+            </li>
+            <li>
+              <a href="#how-do-i-import-someone-elses-gpg-key"
+                >How do I import someone else&#39;s GPG key?</a
+              >
+            </li>
+            <li>
+              <a href="#what-does-the-share-submenu-do"
+                >What does the Share submenu do?</a
+              >
+            </li>
+            <li>
+              <a href="#how-do-i-set-up-a-one-time-password-otptotp"
+                >How do I set up a one-time password (OTP/TOTP)?</a
+              >
+            </li>
+            <li>
+              <a href="#qtpass-shows-an-otp-code-and-i-dont-want-it-to"
+                >QtPass shows an OTP code and I don&#39;t want it to</a
+              >
+            </li>
+            <li>
+              <a href="#otp-qr-codes-dont-work-on-macos"
+                >OTP QR codes don&#39;t work on macOS</a
+              >
+            </li>
+            <li>
+              <a href="#qtpass-doesnt-follow-my-system-language"
+                >QtPass doesn&#39;t follow my system language</a
+              >
+            </li>
+            <li>
+              <a href="#where-is-the-configuration-stored"
+                >Where is the configuration stored?</a
+              >
+            </li>
+            <li>
+              <a href="#where-can-i-ask-for-help">Where can I ask for help?</a>
+            </li>
+            <li>
+              <a href="#can-i-import-from-keepass-lastpass-or-x"
+                >Can I import from KeePass, LastPass or X?</a
+              >
+            </li>
+            <li>
+              <a href="#i-dont-see-icons-on-the-buttons"
+                >I don&#39;t see icons on the buttons</a
+              >
+            </li>
+            <li>
+              <a href="#i-get-icons-that-do-not-fit-my-x11-default"
+                >I get icons that do not fit my (X11) default</a
+              >
+            </li>
+            <li>
+              <a href="#can-not-find-either-qmake-or-qmake6"
+                >Can not find either qmake or qmake6</a
+              >
+            </li>
+            <li>
+              <a href="#qt-installation-issues">Qt installation issues</a>
+            </li>
+            <li>
+              <a href="#i-dont-like-the-design-what-gives"
+                >I don&#39;t like the design, what gives?</a
+              >
+            </li>
+            <li>
+              <a href="#qtpass-is-not-in-my-native-language"
+                >QtPass is not in my native language</a
+              >
+            </li>
+            <li>
+              <a href="#how-do-i-set-the-language-manually"
+                >How do I set the language manually?</a
+              >
+            </li>
+          </ul>
+          <p>
+            <a href="#how-can-i-help-improve-qtpass"
+              >How can I help improve QtPass?</a
+            >
+          </p>
+          <ul>
+            <li>
+              <a href="#i-would-like-to-donate">I would like to donate</a>
+            </li>
+          </ul>
+        </nav>
+        <h2>
+          <a id="issues" class="anchor" href="#issues" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Issues
+        </h2>
+        <h3>
+          <a
+            id="cant-save-a-password"
+            class="anchor"
+            href="#cant-save-a-password"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Can&#39;t save a password
+        </h3>
+        <ul>
+          <li>
+            Is the folder initialized? Easiest way is to use the [Users] button
+            and make sure you can encrypt for someone (e.g. yourself)
+          </li>
+          <li>Are you using Git? If not, make sure it is switched off.</li>
+        </ul>
+        <h3>
+          <a
+            id="i-have-an-issue-with-gnome-keyring"
+            class="anchor"
+            href="#i-have-an-issue-with-gnome-keyring"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >I have an issue with GNOME keyring
+        </h3>
+        <ul>
+          <li>Disable GNOME keyring</li>
+          <li>Create a <code>~/.gnupg/gpg-agent.conf</code> containing:</li>
+        </ul>
+        <pre><code class="language-bash">enable-ssh-support
+write-env-file
+use-standard-socket
+default-cache-ttl 600
+max-cache-ttl 7200
+</code></pre>
+        <ul>
+          <li>
+            See the
+            <a href="https://www.passwordstore.org/#faq">pass FAQ</a> for more
+            troubleshooting tips.
+          </li>
+        </ul>
+        <h3>
+          <a
+            id="i-dont-get-a-passphrase--pin-dialog"
+            class="anchor"
+            href="#i-dont-get-a-passphrase--pin-dialog"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >I don&#39;t get a passphrase / PIN dialog
+        </h3>
+        <ul>
+          <li>
+            You&#39;ll need to install a pinentry package. On modern
+            distributions <code>pinentry-qt</code> (Qt 6) is the usual choice;
+            <code>pinentry-qt5</code> and <code>pinentry-gtk</code> are common
+            fallbacks if your distro hasn&#39;t moved to Qt 6 yet. Search your
+            package manager. You may also need to set the full path to that
+            executable in your <code>~/.gnupg/gpg-agent.conf</code>, for
+            example: <code>pinentry-program /usr/bin/pinentry-qt</code>
+          </li>
+          <li>
+            On some systems it might be necessary to create a symbolic link
+            <code>/usr/bin/pinentry</code> to your pinentry application of
+            choice eg: <code>ln -s /usr/bin/pinentry-qt /usr/bin/pinentry</code>
+          </li>
+          <li>
+            On macOS
+            <code>pinentry-program /usr/local/bin/pinentry-mac</code> works
+            after installing <code>pinentry-mac</code> from Homebrew.
+          </li>
+        </ul>
+        <h3>
+          <a
+            id="i-have-another-issue-with-gpg"
+            class="anchor"
+            href="#i-have-another-issue-with-gpg"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >I have another issue with gpg
+        </h3>
+        <ul>
+          <li>
+            On modern systems, <code>gpg</code> is usually GnuPG 2.x already. If
+            your system has separate <code>gpg</code> and
+            <code>gpg2</code> keyrings (typically older or custom setups), your
+            key may exist in one but not the other.
+          </li>
+        </ul>
+        <pre><code class="language-bash">gpg --export [ID] &gt; public.key
+gpg --export-secret-key [ID] &gt; private.key
+gpg2 --import public.key
+gpg2 --import private.key
+rm public.key private.key
+</code></pre>
+        <p>
+          Where [ID] is your gpg key-id. If your setup is reversed, exchange
+          <code>gpg</code> and <code>gpg2</code> accordingly.
+        </p>
+        <h3>
+          <a
+            id="git-doesnt-work-on-windows"
+            class="anchor"
+            href="#git-doesnt-work-on-windows"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Git doesn&#39;t work on Windows
+        </h3>
+        <p>
+          Git for Windows comes with an <code>ssh-askpass</code> compatible
+          command, <code>git-gui--askpass</code> (located in
+          <code>/mingw64/libexec/git-core/git-gui--askpass</code> on PortableGit
+          version, presumably some place similar for the installed version).
+        </p>
+        <p>To use it:</p>
+        <ol>
+          <li>
+            <p>
+              Set <code>SSH_ASKPASS</code> environment variable to the full path
+              of <code>git-gui--askpass</code>, for example:
+            </p>
+            <pre><code class="language-text">C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe
+</code></pre>
+          </li>
+          <li>
+            <p>
+              Optionally set <code>GIT_ASKPASS</code> to the same value so Git
+              uses the same helper.
+            </p>
+          </li>
+          <li>
+            <p>Restart QtPass after setting the environment variables.</p>
+          </li>
+        </ol>
+        <p>Example using PowerShell:</p>
+        <pre><code class="language-powershell">$env:SSH_ASKPASS = &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
+$env:GIT_ASKPASS = &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
+</code></pre>
+        <p>Or to make it permanent:</p>
+        <pre><code class="language-powershell">setx SSH_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
+setx GIT_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
+</code></pre>
+        <p>
+          <strong>Note:</strong> After using <code>setx</code>, you&#39;ll need
+          to start QtPass in a new session (close and reopen your terminal, or
+          log out and back in) for the environment variables to take effect.
+        </p>
+        <h3>
+          <a
+            id="git-has-issues-with-gpg-ssh-authentication"
+            class="anchor"
+            href="#git-has-issues-with-gpg-ssh-authentication"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Git has issues with GPG SSH Authentication
+        </h3>
+        <p>
+          This tutorial might resolve your issues.
+          <a href="https://gitforwindows.org/OpenSSH-Integration-with-Pageant"
+            >https://gitforwindows.org/OpenSSH-Integration-with-Pageant</a
+          >
+        </p>
+        <h3>
+          <a
+            id="gpg-reports-a-missing-tmptst_integration-pubringkbx"
+            class="anchor"
+            href="#gpg-reports-a-missing-tmptst_integration-pubringkbx"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >gpg reports a missing <code>/tmp/tst_integration-…/pubring.kbx</code>
+        </h3>
+        <p>
+          QtPass is pointing gpg at a <code>GNUPGHOME</code> that no longer
+          exists. The 1.7.0 test suite wrote its temporary keyring path into the
+          live configuration when <code>make check</code> was run as your own
+          user (for example by a distribution package build), and never removed
+          it. Delete the <code>gpgHome=</code> line from
+          <code>~/.config/IJHack/QtPass.conf</code> (or set it to empty) and
+          restart QtPass. Since 1.8.1 QtPass ignores a configured GPG home that
+          does not exist and shows a status message instead.
+        </p>
+        <h3>
+          <a
+            id="gpg-says-public-key-unusable-or-no-secret-key"
+            class="anchor"
+            href="#gpg-says-public-key-unusable-or-no-secret-key"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >GPG says &quot;Public key unusable&quot; or &quot;No secret key&quot;
+        </h3>
+        <p>
+          Your GPG key may not be trusted or has expired. Run
+          <code>gpg --edit-key &lt;KEYID&gt;</code> and:
+        </p>
+        <ul>
+          <li>
+            Set the trust level to &quot;ultimate&quot; (<code>trust</code>
+            command)
+          </li>
+          <li>
+            Check if the key has expired (<code>expire</code> command to extend
+            if needed)
+          </li>
+          <li>
+            For smartcards/YubiKeys, ensure the card is connected and unlocked
+            (you can verify with <code>gpg --card-status</code>)
+          </li>
+        </ul>
+        <h3>
+          <a
+            id="what-is-the-signing-key-in-profile-settings"
+            class="anchor"
+            href="#what-is-the-signing-key-in-profile-settings"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >What is the &quot;Signing Key&quot; in profile settings?
+        </h3>
+        <p>
+          The Signing Key field in profile configuration is
+          <strong>optional</strong> and usually should be
+          <strong>left empty</strong>.
+        </p>
+        <p>
+          It is only needed if you want to create
+          <strong>detached signatures</strong> for your
+          <code>.gpg-id</code> files to verify the recipients list hasn&#39;t
+          been tampered with. Most users can ignore this field.
+        </p>
+        <p>
+          Common mistake: Putting your GPG key ID here will cause
+          &quot;Signature does not exist&quot; errors when saving passwords.
+          Leave it empty unless you specifically need signature verification.
+        </p>
+        <h3>
+          <a
+            id="how-do-i-import-someone-elses-gpg-key"
+            class="anchor"
+            href="#how-do-i-import-someone-elses-gpg-key"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >How do I import someone else&#39;s GPG key?
+        </h3>
+        <p>
+          Open the <strong>Users</strong> dialog (the <em>Users</em> button in
+          the toolbar) and click <strong>Import key</strong>. You can:
+        </p>
+        <ul>
+          <li>Pick an ASCII-armored <code>.asc</code> file from disk, or</li>
+          <li>Paste the armored key block from your clipboard.</li>
+        </ul>
+        <p>
+          Once imported, QtPass refreshes the user list and selects the new key
+          so you can tick it as a recipient. Binary keyrings aren&#39;t accepted
+          in this dialog — convert them first with
+          <code>gpg --armor --export &lt;KEYID&gt;</code>.
+        </p>
+        <h3>
+          <a
+            id="what-does-the-share-submenu-do"
+            class="anchor"
+            href="#what-does-the-share-submenu-do"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >What does the Share submenu do?
+        </h3>
+        <p>
+          Right-click on a <strong>folder</strong> in the password tree to
+          access the <strong>Share</strong> submenu. It bundles the
+          recipient-management actions in one place:
+        </p>
+        <ul>
+          <li>
+            <strong>Re-encrypt all passwords</strong> — runs
+            <code>pass init</code> on the folder so its contents match the
+            current <code>.gpg-id</code> recipients.
+          </li>
+          <li>
+            <strong>Export my public key…</strong> — saves your public key as an
+            ASCII-armored file you can hand to a teammate.
+          </li>
+          <li>
+            <strong>Add recipient…</strong> — opens the user dialog scoped to
+            this folder so you can toggle who can decrypt its passwords.
+          </li>
+          <li>
+            <strong>What is this?</strong> — short explainer dialog linking the
+            three flows.
+          </li>
+        </ul>
+        <p>
+          The submenu only appears on folders, not individual password files.
+        </p>
+        <h3>
+          <a
+            id="how-do-i-set-up-a-one-time-password-otptotp"
+            class="anchor"
+            href="#how-do-i-set-up-a-one-time-password-otptotp"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >How do I set up a one-time password (OTP/TOTP)?
+        </h3>
+        <p>
+          QtPass generates TOTP codes itself (RFC 6238) — you no longer need the
+          <code>pass-otp</code> extension, and it works on every platform.
+        </p>
+        <ol>
+          <li>
+            Make sure <strong>Enable one-time password (OTP) support</strong> is
+            checked on the <strong>Settings</strong> tab of the configuration
+            dialog (it is on by default).
+          </li>
+          <li>
+            Store the account&#39;s <code>otpauth://</code> URI in the entry.
+            Put it in the <code>OTP</code> template field, or on its own line in
+            the body (the form <code>pass otp insert</code> writes). A bare
+            base32 secret works too.
+          </li>
+          <li>
+            Select the entry: QtPass shows a live code with a countdown and a
+            copy button, refreshing automatically. SHA-1/SHA-256/SHA-512 and
+            Steam Guard codes are all supported.
+          </li>
+        </ol>
+        <p>
+          The shared secret itself is never shown on screen or copied — only the
+          current code is.
+        </p>
+        <h3>
+          <a
+            id="qtpass-shows-an-otp-code-and-i-dont-want-it-to"
+            class="anchor"
+            href="#qtpass-shows-an-otp-code-and-i-dont-want-it-to"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >QtPass shows an OTP code and I don&#39;t want it to
+        </h3>
+        <p>
+          OTP support is enabled by default. To hide the live codes, uncheck
+          <strong>Enable one-time password (OTP) support</strong> on the
+          <strong>Settings</strong> tab of the configuration dialog. The choice
+          is remembered. Your entries are unchanged — the
+          <code>otpauth://</code> secret stays in the file and QtPass simply
+          stops rendering a code for it.
+        </p>
+        <h3>
+          <a
+            id="otp-qr-codes-dont-work-on-macos"
+            class="anchor"
+            href="#otp-qr-codes-dont-work-on-macos"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >OTP QR codes don&#39;t work on macOS
+        </h3>
+        <p>
+          Applications launched from Finder don&#39;t inherit the shell PATH.
+          Install QtPass via Homebrew (which sets up PATH correctly) or create a
+          wrapper script that sets PATH before launching QtPass, for example:
+        </p>
+        <pre><code class="language-bash">#!/usr/bin/env bash
+# Adjust PATH as needed for your Homebrew / QtPass installation
+export PATH=&quot;/usr/local/bin:/opt/homebrew/bin:$PATH&quot;
+exec /Applications/QtPass.app/Contents/MacOS/qtpass &quot;$@&quot;
+</code></pre>
+        <p>
+          Save this script (e.g. as <code>~/bin/qtpass-wrapper.sh</code>), make
+          it executable with <code>chmod +x ~/bin/qtpass-wrapper.sh</code>, and
+          configure your launcher (Automator app, custom .app bundle, or
+          shortcut) to run this script instead of starting QtPass directly.
+        </p>
+        <h3>
+          <a
+            id="qtpass-doesnt-follow-my-system-language"
+            class="anchor"
+            href="#qtpass-doesnt-follow-my-system-language"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >QtPass doesn&#39;t follow my system language
+        </h3>
+        <p>
+          QtPass uses the system language at startup. On some desktop
+          environments, you may need to launch QtPass from the terminal or
+          configure your desktop environment to pass the correct locale
+          environment variables.
+        </p>
+        <h3>
+          <a
+            id="where-is-the-configuration-stored"
+            class="anchor"
+            href="#where-is-the-configuration-stored"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Where is the configuration stored?
+        </h3>
+        <p>
+          QtPass tries to use the native configuration location for the
+          operating system it is running on.
+        </p>
+        <ul>
+          <li>Linux and BSD: <code>$HOME/.config/IJHack/QtPass.conf</code></li>
+          <li>
+            macOS:
+            <code>$HOME/Library/Preferences/com.IJHack.QtPass.plist</code>
+          </li>
+          <li>
+            Windows registry:
+            <code>HKEY_CURRENT_USER\Software\IJHack\QtPass</code>
+          </li>
+        </ul>
+        <p>
+          These settings can be overridden by a <code>qtpass.ini</code> file in
+          the folder where the application resides. So-called &quot;portable
+          config&quot;.
+        </p>
+        <p>
+          There are some things to take care of when trying to sync on some
+          systems (especially macOS, with regards to text and binary .plist
+          files).
+        </p>
+        <p>
+          More information:
+          <a
+            href="https://doc.qt.io/qt-6/qsettings.html#platform-specific-notes"
+            >https://doc.qt.io/qt-6/qsettings.html#platform-specific-notes</a
+          >
+        </p>
+        <h3>
+          <a
+            id="where-can-i-ask-for-help"
+            class="anchor"
+            href="#where-can-i-ask-for-help"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Where can I ask for help?
+        </h3>
+        <ul>
+          <li>
+            Create an issue on
+            <a href="https://github.com/IJHack/QtPass/issues">GitHub</a>.
+          </li>
+          <li>
+            Send an email to
+            <a href="mailto:help@qtpass.org">help@qtpass.org</a>
+          </li>
+          <li>
+            Visit the <a href="https://qtpass.org/">Official QtPass site</a>
+          </li>
+        </ul>
+        <h3>
+          <a
+            id="can-i-import-from-keepass-lastpass-or-x"
+            class="anchor"
+            href="#can-i-import-from-keepass-lastpass-or-x"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Can I import from KeePass, LastPass or X?
+        </h3>
+        <ul>
+          <li>
+            Yes, check
+            <a href="https://www.passwordstore.org/#migration"
+              >passwordstore.org/#migration</a
+            >
+            for more info.
+          </li>
+        </ul>
+        <h3>
+          <a
+            id="i-dont-see-icons-on-the-buttons"
+            class="anchor"
+            href="#i-dont-see-icons-on-the-buttons"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >I don&#39;t see icons on the buttons
+        </h3>
+        <p>
+          You do not have the Qt SVG library installed. Please install using
+          your favorite package manager.
+        </p>
+        <h3>
+          <a
+            id="i-get-icons-that-do-not-fit-my-x11-default"
+            class="anchor"
+            href="#i-get-icons-that-do-not-fit-my-x11-default"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >I get icons that do not fit my (X11) default
+        </h3>
+        <ul>
+          <li>
+            On some WindowManagers, Qt doesn&#39;t know what icon set to use. A
+            trick:
+          </li>
+        </ul>
+        <pre><code class="language-sh">export DESKTOP_SESSION=gnome
+</code></pre>
+        <h3>
+          <a
+            id="can-not-find-either-qmake-or-qmake6"
+            class="anchor"
+            href="#can-not-find-either-qmake-or-qmake6"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Can not find either qmake or qmake6
+        </h3>
+        <p>QtPass uses Qt6 by default. Use:</p>
+        <ul>
+          <li><code>qmake6</code> - for Qt6 (recommended, default)</li>
+          <li><code>qmake</code> - for Qt5</li>
+        </ul>
+        <p>
+          If you get an error like &quot;QApplication&quot; not found or Qt
+          installation issues, make sure you&#39;re using the correct qmake
+          version for your Qt installation.
+        </p>
+        <p>
+          On some systems, you may need to specify the full path, e.g.,
+          <code>/usr/lib/qt6/bin/qmake6</code>.
+        </p>
+        <h3>
+          <a
+            id="qt-installation-issues"
+            class="anchor"
+            href="#qt-installation-issues"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Qt installation issues
+        </h3>
+        <p>
+          If you encounter Qt installation issues, you&#39;ll have to install
+          the current version via your package manager or download it from
+          <a href="https://www.qt.io/download/">https://www.qt.io/download/</a>
+          and build from source.
+        </p>
+        <h3>
+          <a
+            id="i-dont-like-the-design-what-gives"
+            class="anchor"
+            href="#i-dont-like-the-design-what-gives"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >I don&#39;t like the design, what gives?
+        </h3>
+        <ul>
+          <li>
+            It&#39;s all on GitHub, clone, change and send a pull request.
+          </li>
+          <li>
+            Open an issue and point out defects or better yet propose changes.
+          </li>
+        </ul>
+        <h3>
+          <a
+            id="qtpass-is-not-in-my-native-language"
+            class="anchor"
+            href="#qtpass-is-not-in-my-native-language"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >QtPass is not in my native language
+        </h3>
+        <ul>
+          <li>
+            Unfortunately, QtPass might not support your native language, or the
+            translations might be incomplete. Check if newer versions of QtPass
+            support it.
+          </li>
+          <li>
+            If translations are available but aren&#39;t working, try to set the
+            language manually (see below) or open an issue.
+          </li>
+        </ul>
+        <h3>
+          <a
+            id="how-do-i-set-the-language-manually"
+            class="anchor"
+            href="#how-do-i-set-the-language-manually"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >How do I set the language manually?
+        </h3>
+        <p>
+          QtPass uses the system language (via <code>QLocale::system()</code>).
+          Changing it depends on your platform:
+        </p>
+        <ul>
+          <li>
+            <p>
+              <strong>Linux / BSD:</strong> <code>LANGUAGE=fr qtpass</code> will
+              run QtPass in French. <code>LC_ALL</code> and
+              <code>LANG</code> work too; see the GNU gettext docs for the
+              precedence order.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>macOS:</strong> environment variables like
+              <code>LANG</code> are <strong>not</strong> honored by Qt on macOS
+              — Qt reads CoreFoundation locale instead. Override per-app with:
+            </p>
+            <pre><code class="language-sh">defaults write com.IJHack.QtPass AppleLanguages &#39;(fr)&#39;
+</code></pre>
+            <p>Or pass the override as a launch argument:</p>
+            <pre><code class="language-sh">open -a QtPass --args -AppleLanguages &#39;(fr)&#39;
+</code></pre>
+            <p>
+              Use
+              <code>defaults delete com.IJHack.QtPass AppleLanguages</code> to
+              revert.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Windows:</strong> there is no environment-variable
+              override — Qt reads the Windows display language via
+              <code>GetUserDefaultLocaleName()</code>. Change the
+              <strong>system display language</strong> in
+              <em>Settings → Time &amp; Language → Language</em>, or add the
+              desired language and move it to the top of your preferred-language
+              list.
+            </p>
+          </li>
+        </ul>
+        <h2>
+          <a
+            id="how-can-i-help-improve-qtpass"
+            class="anchor"
+            href="#how-can-i-help-improve-qtpass"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >How can I help improve QtPass?
+        </h2>
+        <h3>
+          <a
+            id="i-would-like-to-donate"
+            class="anchor"
+            href="#i-would-like-to-donate"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >I would like to donate
+        </h3>
+        <ul>
+          <li>
+            Time:
+            <ul>
+              <li>
+                Read
+                <a
+                  href="https://github.com/IJHack/QtPass/blob/main/CONTRIBUTING.md"
+                  >contributing</a
+                >
+                documentation.
+              </li>
+              <li>Fork, clone, hack and send a pull request.</li>
+              <li>
+                Find an
+                <a href="https://github.com/IJHack/QtPass/issues">issue</a> to
+                work on.
+              </li>
+              <li>
+                Participate in our bug bounty, you submit an issue and help us
+                fix it, I send you a bounty.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script src="javascripts/main.js?v=1.8.1-4" defer></script>
+  </body>
+</html>

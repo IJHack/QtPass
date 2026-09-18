@@ -45,14 +45,10 @@ Redirect 301 /dependencies /downloads#dependencies
 Redirect 301 /security-considerations /old#security-considerations
 Redirect 301 /planned-features /old#planned-features
 Redirect 301 /known-issues /old#known-issues
-# The maintained FAQ is FAQ.md in the repository until the site has a page
-# of its own; the application's Help menu opens /faq, so keep this one
-# temporary (302) rather than letting browsers cache a 301 to GitHub.
-Redirect 302 /faq https://github.com/IJHack/QtPass/blob/main/FAQ.md
 Redirect 301 /cant-save-a-password /old#cant-save-a-password
 Redirect 301 /i-have-an-issue-with-gnome-keyring /old#i-have-an-issue-with-gnome-keyring
 Redirect 301 /can-i-import-from-keepass-lastpass-or-x /old#can-i-import-from-keepass-lastpass-or-x
-Redirect 302 /current-FAQ https://github.com/IJHack/QtPass/blob/main/FAQ.md
+Redirect 301 /current-FAQ /faq
 Redirect 301 /where-can-i-ask-for-help /old#where-can-i-ask-for-help
 Redirect 301 /changelogs /changelog
 

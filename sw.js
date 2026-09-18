@@ -1,10 +1,10 @@
-const CACHE_NAME = "qtpass::v1.8.1-3::static";
+const CACHE_NAME = "qtpass::v1.8.1-4::static";
 
 // Cache-bust: the pages append this to asset URLs whose names do not
 // change between releases (styles.css, logo.svg, the favicons), so the
 // browser's HTTP cache (up to a year on this server) cannot hand out a
 // stale copy after a redesign. Bump it together with CACHE_NAME.
-const SW_VERSION = "?v=1.8.1-3";
+const SW_VERSION = "?v=1.8.1-4";
 
 const PRECACHE_URLS = [
   "/",
@@ -20,11 +20,12 @@ const PRECACHE_URLS = [
   "/changelog.beta",
   "/changelog.old",
   "/downloads",
+  "/faq",
   "/getting-started",
   "/macos",
   "/old",
   "/privacy",
-  "/stylesheets/pygment_trac.css",
+  "/screenshots",
   "/stylesheets/styles.css",
   "/javascripts/main.js",
   "/docs/",
@@ -47,12 +48,9 @@ const PRECACHE_URLS = [
   "/images/ms-icon-310x310.png",
   "/images/android-icon-48x48.png",
   "/images/apple-icon-180x180.png",
-  "/images/bg_hr.png",
-  "/images/icon_download.png",
   "/images/ms-icon-70x70.png",
   "/images/android-icon-72x72.png",
   "/images/apple-icon-57x57.png",
-  "/images/blacktocat.png",
   "/images/linux.png",
   "/images/og.png",
   "/images/android-icon-96x96.png",
@@ -75,7 +73,6 @@ const PRECACHE_URLS = [
   "/images/apple-icon-72x72.png",
   "/images/favicon-16x16.png",
   "/images/macos.png",
-  "/images/sprite_download.png",
   "/fonts/lato-latin-300-normal.woff2",
   "/fonts/lato-latin-400-italic.woff2",
   "/fonts/lato-latin-400-normal.woff2",

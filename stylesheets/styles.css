@@ -439,6 +439,81 @@ header ul a:active {
   pointer-events: none;
 }
 
+/* FAQ: the list of questions, two columns when there is room */
+.toc {
+  padding: 0.9rem 1.1rem;
+  margin-block-end: 1.5rem;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  font-size: 0.92em;
+}
+.toc p {
+  margin: 0.6rem 0 0.25rem;
+  font-weight: 700;
+  color: var(--ink-strong);
+}
+.toc p:first-child {
+  margin-block-start: 0;
+}
+.toc ul {
+  margin: 0;
+  padding-inline-start: 1.1em;
+  columns: 2 16rem;
+  column-gap: 2rem;
+}
+.toc li {
+  break-inside: avoid;
+  margin-block-end: 0.15em;
+}
+
+/* Screenshots page: the content column widens for pictures; each figure
+   is one window at its natural size, the 2.0 renders have no decoration. */
+.gallery {
+  max-width: 60rem;
+}
+.gallery figure {
+  margin: 0 0 1.75rem;
+}
+.gallery figure img,
+.gallery video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  background: var(--panel);
+}
+/* The 1.8.1 captures carry their own window frame and shadow. */
+.gallery .bare img {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+}
+.gallery figcaption {
+  margin-block-start: 0.5rem;
+  font-size: 0.9em;
+  color: var(--muted);
+}
+.gallery .steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1.25rem 1.5rem;
+}
+.gallery .steps figure {
+  margin: 0;
+}
+.gallery .clips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1.25rem 1.5rem;
+}
+.gallery .clips figure {
+  margin: 0;
+}
+
 /* ---- one column ------------------------------------------------------- */
 @media (max-width: 60rem) {
   /* One column: the sidebar is the whole first screen, so it must scroll
