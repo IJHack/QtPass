@@ -6,12 +6,23 @@
 <!-- Title: GpgIdSigner::verify Pages: 1 -->
 <svg width="118pt" height="45pt"
  viewBox="0.00 0.00 118.00 45.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="page0,1_graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 41)">
+
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+
+<style type="text/css"><![CDATA[
+.node, .edge {opacity: 0.7;}
+.node.selected, .edge.selected {opacity: 1;}
+.edge:hover path { stroke: red; }
+.edge:hover polygon { stroke: red; fill: red; }
+]]></style>
+<script type="application/ecmascript" xlink:href="svg.min.js"/>
+<svg id="graph" class="graph">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 41)">
 <title>GpgIdSigner::verify</title>
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Check &lt;file&gt;.sig against gpgIdFile: gpg must report a VALIDSIG whose key or primary&#45;key fingerprint i...">
+<g id="a_Node000001"><a xlink:title="Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary&#45;k...">
 <polygon fill="#999999" stroke="#666666" points="110,-19 0,-19 0,0 110,0 110,-19"/>
 <text text-anchor="middle" x="55" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">GpgIdSigner::verify</text>
 </a>
@@ -27,4 +38,13 @@
 </g>
 </g>
 </g>
+</svg>
+</svg>
+
+<style type='text/css'>
+<![CDATA[
+[data-mouse-over-selected='false'] { opacity: 0.7; }
+[data-mouse-over-selected='true']  { opacity: 1.0; }
+]]>
+</style>
 </svg>

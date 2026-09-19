@@ -126,8 +126,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aefa1594ea06e773745d73b9752d2dda7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether gpg has the secret key that <a class="el" href="#a2c7940de574498a041e45edca1615e5f" title="Write &lt;file&gt;.sig, a detached signature by the first key.">sign()</a> will use, i.e. the first configured key.  <br /></td></tr>
 <tr class="memitem:a2c7940de574498a041e45edca1615e5f" id="r_a2c7940de574498a041e45edca1615e5f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2c7940de574498a041e45edca1615e5f">sign</a> (const QString &amp;gpgIdFile, QString *error=nullptr) const -&gt; bool</td></tr>
 <tr class="memdesc:a2c7940de574498a041e45edca1615e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <span class="tt">&lt;file&gt;.sig</span>, a detached signature by the first key.  <br /></td></tr>
-<tr class="memitem:ab31c2779ebe2a4599a7841ef18ca2962" id="r_ab31c2779ebe2a4599a7841ef18ca2962"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab31c2779ebe2a4599a7841ef18ca2962">verify</a> (const QString &amp;gpgIdFile) const -&gt; bool</td></tr>
-<tr class="memdesc:ab31c2779ebe2a4599a7841ef18ca2962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check <span class="tt">&lt;file&gt;.sig</span> against <code class="param">gpgIdFile:</code> gpg must report a VALIDSIG whose key or primary-key fingerprint is one of the configured keys.  <br /></td></tr>
+<tr class="memitem:adf8bf20ff4e46bdb5b8b8b7ff8c2d858" id="r_adf8bf20ff4e46bdb5b8b8b7ff8c2d858"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adf8bf20ff4e46bdb5b8b8b7ff8c2d858">verify</a> (const QByteArray &amp;contents, const QString &amp;signatureFile) const -&gt; bool</td></tr>
+<tr class="memdesc:adf8bf20ff4e46bdb5b8b8b7ff8c2d858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary-key fingerprint is one of the configured keys.  <br /></td></tr>
+<tr class="memitem:aa22ae26377898dfe7fb0c780d451719f" id="r_aa22ae26377898dfe7fb0c780d451719f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa22ae26377898dfe7fb0c780d451719f">verifyFile</a> (const QString &amp;gpgIdFile, QByteArray *contents) const -&gt; bool</td></tr>
+<tr class="memdesc:aa22ae26377898dfe7fb0c780d451719f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read <code class="param">gpgIdFile</code> and verify it against <span class="tt">&lt;file&gt;.sig</span>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -193,7 +195,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gpgExecutable</td><td>The gpg binary; a <span class="tt">wsl </span> prefix routes file paths through wslpath. </td></tr>
-    <tr><td class="paramname">signingKeys</td><td>Full 40-hex fingerprints from the settings, as pass's PASSWORD_STORE_SIGNING_KEY requires: gpg reports fingerprints in its KEY_CONSIDERED and VALIDSIG status lines, so a short key ID would sign (via &ndash;default-key) but never pass <a class="el" href="#aefa1594ea06e773745d73b9752d2dda7" title="Whether gpg has the secret key that sign() will use, i.e. the first configured key.">haveSecretKey()</a> or <a class="el" href="#ab31c2779ebe2a4599a7841ef18ca2962" title="Check &lt;file&gt;.sig against gpgIdFile: gpg must report a VALIDSIG whose key or primary-key fingerprint i...">verify()</a>. The first one signs, any of them verifies. </td></tr>
+    <tr><td class="paramname">signingKeys</td><td>Full 40-hex fingerprints from the settings, as pass's PASSWORD_STORE_SIGNING_KEY requires: gpg reports fingerprints in its KEY_CONSIDERED and VALIDSIG status lines, so a short key ID would sign (via &ndash;default-key) but never pass <a class="el" href="#aefa1594ea06e773745d73b9752d2dda7" title="Whether gpg has the secret key that sign() will use, i.e. the first configured key.">haveSecretKey()</a> or <a class="el" href="#adf8bf20ff4e46bdb5b8b8b7ff8c2d858" title="Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary-k...">verify()</a>. The first one signs, any of them verifies. </td></tr>
     <tr><td class="paramname">exec</td><td>Process runner; <a class="el" href="class_executor.html#acd16a6a2c0d0cb55406c99b72c9d299f" title="Run a command synchronously and return its exit code.">Executor::executeBlocking()</a> when empty. </td></tr>
   </table>
   </dd>
@@ -405,8 +407,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab31c2779ebe2a4599a7841ef18ca2962" name="ab31c2779ebe2a4599a7841ef18ca2962"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab31c2779ebe2a4599a7841ef18ca2962">&#9670;&#160;</a></span>verify()</h2>
+<a id="adf8bf20ff4e46bdb5b8b8b7ff8c2d858" name="adf8bf20ff4e46bdb5b8b8b7ff8c2d858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8bf20ff4e46bdb5b8b8b7ff8c2d858">&#9670;&#160;</a></span>verify()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -414,16 +416,21 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">auto GpgIdSigner::verify </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span></td><td>)</td>
-          <td> const -&gt;  bool</td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>contents</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>signatureFile</em></span>&#160;) const -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Check <span class="tt">&lt;file&gt;.sig</span> against <code class="param">gpgIdFile:</code> gpg must report a VALIDSIG whose key or primary-key fingerprint is one of the configured keys. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary-key fingerprint is one of the configured keys. </p>
+<p>The data goes to gpg on stdin, so the caller verifies exactly the bytes it is about to use as the recipient list; verifying a path and reading it again afterwards would let anyone who can write to the store swap the file in between (#1842). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span>. </td></tr>
+    <tr><td class="paramname">contents</td><td>The <span class="tt">.gpg-id</span> bytes. </td></tr>
+    <tr><td class="paramname">signatureFile</td><td>The <span class="tt">.gpg-id.sig</span> next to it. </td></tr>
   </table>
   </dd>
 </dl>
@@ -432,13 +439,56 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
 <div id="dynsection-4-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_signer_ab31c2779ebe2a4599a7841ef18ca2962_cgraph.svg" width="158" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_signer_adf8bf20ff4e46bdb5b8b8b7ff8c2d858_cgraph.svg" width="158" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
 <div id="dynsection-5-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_signer_ab31c2779ebe2a4599a7841ef18ca2962_icgraph.svg" width="158" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_signer_adf8bf20ff4e46bdb5b8b8b7ff8c2d858_icgraph.svg" width="158" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aa22ae26377898dfe7fb0c780d451719f" name="aa22ae26377898dfe7fb0c780d451719f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa22ae26377898dfe7fb0c780d451719f">&#9670;&#160;</a></span>verifyFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto GpgIdSigner::verifyFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray *</td>          <td class="paramname"><span class="paramname"><em>contents</em></span>&#160;) const -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read <code class="param">gpgIdFile</code> and verify it against <span class="tt">&lt;file&gt;.sig</span>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span>. </td></tr>
+    <tr><td class="paramname">contents</td><td>Receives the bytes that were verified, so the caller can parse those and nothing else. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the signature is good, or when no key is configured. false when the file cannot be read. </dd></dl>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_signer_aa22ae26377898dfe7fb0c780d451719f_cgraph.svg" width="180" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_signer_aa22ae26377898dfe7fb0c780d451719f_icgraph.svg" width="180" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

@@ -216,6 +216,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7b85488c618db05c5ed43788765ccc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get .gpg-id file path for a password file.  <br /></td></tr>
 <tr class="memitem:aecbf5f13da209c44955bad681a63a388" id="r_aecbf5f13da209c44955bad681a63a388"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aecbf5f13da209c44955bad681a63a388">getRecipientList</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QStringList</td></tr>
 <tr class="memdesc:aecbf5f13da209c44955bad681a63a388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of recipients for a password file.  <br /></td></tr>
+<tr class="memitem:a1f0cee3a2fb00cb379fb814edf056c4c" id="r_a1f0cee3a2fb00cb379fb814edf056c4c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1f0cee3a2fb00cb379fb814edf056c4c">parseRecipients</a> (const QByteArray &amp;contents, const QString &amp;sourceName) -&gt; QStringList</td></tr>
+<tr class="memdesc:a1f0cee3a2fb00cb379fb814edf056c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the contents of a .gpg-id: one recipient per line, <span class="tt">#</span> starts a comment, unusable lines are logged and skipped.  <br /></td></tr>
 <tr class="memitem:a1ed10aadc40a4f13667f235d3a2d67b7" id="r_a1ed10aadc40a4f13667f235d3a2d67b7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1ed10aadc40a4f13667f235d3a2d67b7">seedGpgIdFile</a> (const QString &amp;newDir, const QString &amp;passStore) -&gt; bool</td></tr>
 <tr class="memdesc:a1ed10aadc40a4f13667f235d3a2d67b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seed a new folder's .gpg-id from the recipients it inherits.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -1735,6 +1737,45 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a1f0cee3a2fb00cb379fb814edf056c4c" name="a1f0cee3a2fb00cb379fb814edf056c4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f0cee3a2fb00cb379fb814edf056c4c">&#9670;&#160;</a></span>parseRecipients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::parseRecipients </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>contents</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>sourceName</em></span>&#160;) -&gt;  QStringList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse the contents of a .gpg-id: one recipient per line, <span class="tt">#</span> starts a comment, unusable lines are logged and skipped. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">contents</td><td>The file's bytes. </td></tr>
+    <tr><td class="paramname">sourceName</td><td>Where they came from, for the log. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The recipient key IDs in file order. </dd></dl>
+
+</div>
+</div>
 <a id="a9bb040e1a33322a27cd85d8a367ef24f" name="a9bb040e1a33322a27cd85d8a367ef24f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9bb040e1a33322a27cd85d8a367ef24f">&#9670;&#160;</a></span>processErrorExit</h2>
 
@@ -1804,7 +1845,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00263">263</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00272">272</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>

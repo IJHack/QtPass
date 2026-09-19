@@ -35,7 +35,7 @@ var searchData=
   ['getstore_32',['getStore',['../class_store_model.html#a0adadb60fe309f7f5dad9f27cec9b7d2',1,'StoreModel']]],
   ['gettexttocopy_33',['getTextToCopy',['../class_q_push_button_as_q_r_code.html#ac760ad4c81ab153edbe4ab0e6215aae4',1,'QPushButtonAsQRCode::getTextToCopy()'],['../class_q_push_button_with_clipboard.html#ab3e53e28b6caaa7276eec98432020cff',1,'QPushButtonWithClipboard::getTextToCopy()']]],
   ['getversion_34',['getVersion',['../class_qt_pass_settings.html#a6f238c4845f87423bcd4cedbf12fc390',1,'QtPassSettings']]],
-  ['gitaddgpgid_35',['gitAddGpgId',['../class_imitate_pass.html#ae915cb06772e2d7f4ac5654f45b628bc',1,'ImitatePass']]],
+  ['gitaddgpgid_35',['gitAddGpgId',['../class_imitate_pass.html#aae90cebd2128422bd41e32fc292a49a0',1,'ImitatePass']]],
   ['gitcommit_36',['gitCommit',['../class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb',1,'ImitatePass']]],
   ['gitconfigured_37',['gitConfigured',['../class_imitate_pass.html#af1e911c908f7848aa229190053cf6e87',1,'ImitatePass']]],
   ['gitidentityconfigured_38',['gitIdentityConfigured',['../class_profile_init.html#a2db989b34729065973f61b5964fd7d49',1,'ProfileInit']]],

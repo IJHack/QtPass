@@ -44,7 +44,7 @@ var searchData=
   ['git_5fpull_41',['GIT_PULL',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4',1,'Enums']]],
   ['git_5fpush_42',['GIT_PUSH',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40',1,'Enums']]],
   ['git_5frm_43',['GIT_RM',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36',1,'Enums']]],
-  ['gitaddgpgid_44',['gitAddGpgId',['../class_imitate_pass.html#ae915cb06772e2d7f4ac5654f45b628bc',1,'ImitatePass']]],
+  ['gitaddgpgid_44',['gitAddGpgId',['../class_imitate_pass.html#aae90cebd2128422bd41e32fc292a49a0',1,'ImitatePass']]],
   ['gitcommit_45',['gitCommit',['../class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb',1,'ImitatePass']]],
   ['gitconfigured_46',['gitConfigured',['../class_imitate_pass.html#af1e911c908f7848aa229190053cf6e87',1,'ImitatePass']]],
   ['gitexecutable_47',['gitExecutable',['../struct_app_settings.html#a50480ce075727936c03f0ad797e5f4ae',1,'AppSettings']]],
