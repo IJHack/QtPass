@@ -92,14 +92,12 @@
         <translation>ప్రాసెస్ అవుట్‌పుట్ చూపించు</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>పాస్‌వర్డ్ తయారీ:</translation>
+        <translation type="vanished">పాస్‌వర్డ్ తయారీ:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>పాస్‌వర్డ్ పొడవు:</translation>
+        <translation type="vanished">పాస్‌వర్డ్ పొడవు:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -117,9 +115,8 @@
         <translation>పాస్‌వర్డ్ తయారీ కోసం అక్షర సముదాయాన్ని ఎంచుకోండి</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>అన్ని అక్షరాలు</translation>
+        <translation type="vanished">అన్ని అక్షరాలు</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -305,6 +302,21 @@
         <translation type="unfinished">Ctrl+M కూడా ప్రధాన విండో నుండి దాన్ని చూపిస్తుంది లేదా దాచుతుంది</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>పాస్‌వర్డ్ తయారీ:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>పాస్‌వర్డ్ పొడవు:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>అన్ని అక్షరాలు</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
         <source>Choose the gpg executable</source>
@@ -439,9 +451,8 @@
         <translation>పాస్‌వర్డ్ స్టోర్ డైరెక్టరీకి మార్గం</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>సంతకం కీ</translation>
+        <translation type="vanished">సంతకం కీ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -514,6 +525,11 @@ e-mail</source>
         <translation>లాగిన్
 URL
 ఇ-మెయిల్</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>సంతకం కీ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
@@ -639,8 +655,12 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>కొత్త ప్రొఫైల్</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">కొత్త ప్రొఫైల్</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -788,8 +808,12 @@ The value will still be saved as entered.</source>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">పబ్లిక్ కీని ఎగుమతి చేయి</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>పబ్లిక్ కీని ఎగుమతి చేయి</translation>
     </message>
     <message>
@@ -803,13 +827,17 @@ The value will still be saved as entered.</source>
         <translation type="unfinished">క్లిప్‌బోర్డ్‌కు కాపీ చేయి</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>ఫైల్‌కు సేవ్ చేయి...</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">క్లిప్‌బోర్డ్‌కు కాపీ చేయి</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>ఫైల్‌కు సేవ్ చేయి...</translation>
+        <translation type="vanished">ఫైల్‌కు సేవ్ చేయి...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -822,10 +850,14 @@ The value will still be saved as entered.</source>
         <translation>కాపీ చేయబడింది!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">పబ్లిక్ కీని సేవ్ చేయి</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>పబ్లిక్ కీని సేవ్ చేయి</translation>
     </message>
     <message>
@@ -1115,10 +1147,8 @@ You will not be able to change the user list!</source>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>జిపిజి కీని దిగుమతి చేయి</translation>
+        <translation type="vanished">జిపిజి కీని దిగుమతి చేయి</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1126,9 +1156,8 @@ You will not be able to change the user list!</source>
         <translation>ఫైల్ నుండి జిపిజి పబ్లిక్ కీని దిగుమతి చేయండి లేదా క్రింద పేస్ట్ చేయండి. కీ ASCII-armored ఫార్మాట్‌లో ఉండాలి.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>ఫైల్ నుండి...</translation>
+        <translation type="vanished">ఫైల్ నుండి...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1138,6 +1167,17 @@ You will not be able to change the user list!</source>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">క్లిప్‌బోర్డ్ నుండి</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>జిపిజి కీని దిగుమతి చేయి</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>ఫైల్ నుండి...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1155,17 +1195,12 @@ You will not be able to change the user list!</source>
         <translation>ASCII-armored జిపిజి కీ</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>అన్ని ఫైళ్లు</translation>
+        <translation type="vanished">అన్ని ఫైళ్లు</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>కీని దిగుమతి చేయి</translation>
+        <translation type="vanished">కీని దిగుమతి చేయి</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1180,6 +1215,19 @@ You will not be able to change the user list!</source>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 ASCII-armored జిపిజి కీ లాగా కనిపించడం లేదు. మొదట &lt;code&gt;gpg --armor --export&lt;/code&gt; తో దీన్ని మార్చండి, లేదా &lt;b&gt;క్లిప్‌బోర్డ్ నుండి&lt;/b&gt; ద్వారా armored బ్లాక్‌ను పేస్ట్ చేయండి.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>అన్ని ఫైళ్లు</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>కీని దిగుమతి చేయి</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1333,10 +1381,14 @@ You will not be able to change the user list!</source>
         <translation>ప్రొఫైల్ ఎంచుకోండి</translation>
     </message>
     <message>
+        <source>Search Password</source>
+        <translation type="vanished">పాస్‌వర్డ్ శోధించు</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="808"/>
         <location filename="../src/mainwindow.cpp" line="1022"/>
-        <source>Search Password</source>
+        <source>Search password</source>
         <translation>పాస్‌వర్డ్ శోధించు</translation>
     </message>
     <message>
@@ -1640,9 +1692,8 @@ You will not be able to change the user list!</source>
         <translation>ఈ పాస్‌వర్డ్ ఎంట్రీలో OTP కోడ్ కనుగొనబడలేదు</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>పాస్‌వర్డ్ మరియు కంటెంట్ దాచబడ్డాయి</translation>
+        <translation type="vanished">పాస్‌వర్డ్ మరియు కంటెంట్ దాచబడ్డాయి</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -1726,10 +1777,9 @@ You will not be able to change the user list!</source>
         <translation type="unfinished">కొత్త ఫోల్డర్</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>కొత్త ఫోల్డర్: 
+        <translation type="vanished">కొత్త ఫోల్డర్: 
 (%1 లో ఉంచబడుతుంది)</translation>
     </message>
     <message>
@@ -1737,6 +1787,11 @@ You will not be able to change the user list!</source>
 (Will be placed in %1 )</source>
         <translation type="vanished">కొత్త పాస్‌వర్డ్ ఫైల్:
 (%1 లో ఉంచబడుతుంది)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>పాస్‌వర్డ్ మరియు కంటెంట్ దాచబడ్డాయి</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1231"/>
@@ -1815,6 +1870,39 @@ You will not be able to change the user list!</source>
         <translation>ఇది ఏమిటి?</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <source>New folder: 
+(Will be placed in %1 )</source>
+        <translation>కొత్త ఫోల్డర్: 
+(%1 లో ఉంచబడుతుంది)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>ఫైల్‌ను ఇలా పేరు మార్చు: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
+        <source>Export public key</source>
+        <translation>పబ్లిక్ కీని ఎగుమతి చేయి</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1925"/>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;మీ పబ్లిక్ కీని ఎగుమతి చేయండి&lt;/h3&gt;&lt;p&gt;సంతకం కీ కాన్ఫిగర్ చేయబడలేదు. QtPass సెట్టింగులు &amp;gt; జిపిజి కీలలో ఒకదానిని సెట్ చేయండి, లేదా టెర్మినల్‌లో దీన్ని అమలు చేయండి:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;తర్వాత ఫైల్‌ను మీ టీమ్‌మేట్స్‌కు పంపండి.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>జిపిజితో పాస్‌వర్డ్‌లను భాగస్వామ్యం చేయడం</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;జిపిజితో పాస్‌వర్డ్‌లను భాగస్వామ్యం చేయడం&lt;/h3&gt;&lt;p&gt;ఇతర వినియోగదారులతో పాస్‌వర్డ్‌లను భాగస్వామ్యం చేయడానికి:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;మీ పబ్లిక్ కీని ఎగుమతి చేయండి&lt;/b&gt; మరియు దీన్ని టీమ్‌మేట్స్‌కు పంపండి&lt;/li&gt;&lt;li&gt;&lt;b&gt;టీమ్‌మేట్స్ పబ్లిక్ కీలను దిగుమతి చేయండి&lt;/b&gt; మీ జిపిజి కీరింగ్‌లోకి&lt;/li&gt;&lt;li&gt;&lt;b&gt;పాస్‌వర్డ్‌లను రీ-ఎన్క్రిప్ట్ చేయండి&lt;/b&gt; తద్వారా అన్ని గ్రహీతలు వాటిని డీక్రిప్ట్ చేయగలరు&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;సరిపోలే సీక్రెట్ కీని కలిగి ఉన్న వ్యక్తులు మాత్రమే పాస్‌వర్డ్‌లను డీక్రిప్ట్ చేయగలరు.&lt;/p&gt;&lt;p&gt;&lt;b&gt;చిట్కా:&lt;/b&gt; అన్ని భాగస్వామ్య ఫోల్డర్‌ల కోసం అదే జిపిజి కీని ఉపయోగించండి.&lt;/p&gt;&lt;p&gt;మరిన్ని వివరాల కోసం FAQ చూడండి.&lt;/p&gt;</translation>
+    </message>
+    <message>
         <source>New Folder:
 (Will be placed in %1 )</source>
         <translation type="vanished">కొత్త ఫోల్డర్:
@@ -1838,19 +1926,22 @@ You will not be able to change the user list!</source>
         <translation>%1 లో .gpg-id ఫైల్‌ను సృష్టించడం విఫలమైంది</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>ఫోల్డర్‌ను ఇలా పేరు మార్చు: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
         <translation>ఫైల్‌ను పేరు మార్చు</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>ఫోల్డర్‌ను ఇలా పేరు మార్చు: </translation>
+        <translation type="vanished">ఫోల్డర్‌ను ఇలా పేరు మార్చు: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>ఫైల్‌ను ఇలా పేరు మార్చు: </translation>
+        <translation type="vanished">ఫైల్‌ను ఇలా పేరు మార్చు: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -1906,15 +1997,12 @@ Continue?</source>
         <translation type="unfinished">పాస్‌వర్డ్‌లను రీ-ఎన్క్రిప్ట్ చేస్తోంది: %2 లో %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
-        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
-        <translation>పబ్లిక్ కీని ఎగుమతి చేయి</translation>
+        <translation type="vanished">పబ్లిక్ కీని ఎగుమతి చేయి</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1925"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;మీ పబ్లిక్ కీని ఎగుమతి చేయండి&lt;/h3&gt;&lt;p&gt;సంతకం కీ కాన్ఫిగర్ చేయబడలేదు. QtPass సెట్టింగులు &amp;gt; జిపిజి కీలలో ఒకదానిని సెట్ చేయండి, లేదా టెర్మినల్‌లో దీన్ని అమలు చేయండి:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;తర్వాత ఫైల్‌ను మీ టీమ్‌మేట్స్‌కు పంపండి.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;మీ పబ్లిక్ కీని ఎగుమతి చేయండి&lt;/h3&gt;&lt;p&gt;సంతకం కీ కాన్ఫిగర్ చేయబడలేదు. QtPass సెట్టింగులు &amp;gt; జిపిజి కీలలో ఒకదానిని సెట్ చేయండి, లేదా టెర్మినల్‌లో దీన్ని అమలు చేయండి:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;తర్వాత ఫైల్‌ను మీ టీమ్‌మేట్స్‌కు పంపండి.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1944"/>
@@ -1931,14 +2019,12 @@ Continue?</source>
         <translation>gpg నుండి అవుట్‌పుట్ లేదు.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>జిపిజితో పాస్‌వర్డ్‌లను భాగస్వామ్యం చేయడం</translation>
+        <translation type="vanished">జిపిజితో పాస్‌వర్డ్‌లను భాగస్వామ్యం చేయడం</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;జిపిజితో పాస్‌వర్డ్‌లను భాగస్వామ్యం చేయడం&lt;/h3&gt;&lt;p&gt;ఇతర వినియోగదారులతో పాస్‌వర్డ్‌లను భాగస్వామ్యం చేయడానికి:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;మీ పబ్లిక్ కీని ఎగుమతి చేయండి&lt;/b&gt; మరియు దీన్ని టీమ్‌మేట్స్‌కు పంపండి&lt;/li&gt;&lt;li&gt;&lt;b&gt;టీమ్‌మేట్స్ పబ్లిక్ కీలను దిగుమతి చేయండి&lt;/b&gt; మీ జిపిజి కీరింగ్‌లోకి&lt;/li&gt;&lt;li&gt;&lt;b&gt;పాస్‌వర్డ్‌లను రీ-ఎన్క్రిప్ట్ చేయండి&lt;/b&gt; తద్వారా అన్ని గ్రహీతలు వాటిని డీక్రిప్ట్ చేయగలరు&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;సరిపోలే సీక్రెట్ కీని కలిగి ఉన్న వ్యక్తులు మాత్రమే పాస్‌వర్డ్‌లను డీక్రిప్ట్ చేయగలరు.&lt;/p&gt;&lt;p&gt;&lt;b&gt;చిట్కా:&lt;/b&gt; అన్ని భాగస్వామ్య ఫోల్డర్‌ల కోసం అదే జిపిజి కీని ఉపయోగించండి.&lt;/p&gt;&lt;p&gt;మరిన్ని వివరాల కోసం FAQ చూడండి.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;జిపిజితో పాస్‌వర్డ్‌లను భాగస్వామ్యం చేయడం&lt;/h3&gt;&lt;p&gt;ఇతర వినియోగదారులతో పాస్‌వర్డ్‌లను భాగస్వామ్యం చేయడానికి:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;మీ పబ్లిక్ కీని ఎగుమతి చేయండి&lt;/b&gt; మరియు దీన్ని టీమ్‌మేట్స్‌కు పంపండి&lt;/li&gt;&lt;li&gt;&lt;b&gt;టీమ్‌మేట్స్ పబ్లిక్ కీలను దిగుమతి చేయండి&lt;/b&gt; మీ జిపిజి కీరింగ్‌లోకి&lt;/li&gt;&lt;li&gt;&lt;b&gt;పాస్‌వర్డ్‌లను రీ-ఎన్క్రిప్ట్ చేయండి&lt;/b&gt; తద్వారా అన్ని గ్రహీతలు వాటిని డీక్రిప్ట్ చేయగలరు&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;సరిపోలే సీక్రెట్ కీని కలిగి ఉన్న వ్యక్తులు మాత్రమే పాస్‌వర్డ్‌లను డీక్రిప్ట్ చేయగలరు.&lt;/p&gt;&lt;p&gt;&lt;b&gt;చిట్కా:&lt;/b&gt; అన్ని భాగస్వామ్య ఫోల్డర్‌ల కోసం అదే జిపిజి కీని ఉపయోగించండి.&lt;/p&gt;&lt;p&gt;మరిన్ని వివరాల కోసం FAQ చూడండి.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2058,13 +2144,21 @@ Continue?</source>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>అక్షర సముదాయం:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>అన్ని అక్షరాలు</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">అక్షర సముదాయం:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">అన్ని అక్షరాలు</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2160,9 +2254,13 @@ Continue?</source>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">ప్రాసెస్ అవుట్‌పుట్</translation>
+        <translation type="obsolete">ప్రాసెస్ అవుట్‌పుట్</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>ప్రాసెస్ అవుట్‌పుట్</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2293,8 +2391,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>OTP కోడ్</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP కోడ్</translation>
+        <translation type="obsolete">OTP కోడ్</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

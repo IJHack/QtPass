@@ -96,14 +96,12 @@
         <translation>Показване на изхода на процеса</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>Генериране на парола:</translation>
+        <translation type="vanished">Генериране на парола:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Дължина на паролата:</translation>
+        <translation type="vanished">Дължина на паролата:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -121,9 +119,8 @@
         <translation>Избери набор от символи за генериране на парола</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Всички символи</translation>
+        <translation type="vanished">Всички символи</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -189,6 +186,21 @@
         <location filename="../src/configdialog.ui" line="237"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Позволява търсене в съдържанието на файловете с пароли. Изисква декриптиране на всеки файл и може да е бавно при големи хранилища.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Генериране на парола:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Дължина на паролата:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Всички символи</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1047"/>
@@ -271,8 +283,12 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1435"/>
-        <source>Signing Key</source>
+        <source>Signing key</source>
         <translation>Ключ за подписи</translation>
+    </message>
+    <message>
+        <source>Signing Key</source>
+        <translation type="vanished">Ключ за подписи</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -592,8 +608,12 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Нов профил</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Нов профил</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -848,8 +868,12 @@ e-mail</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Изнасяне на публичен ключ</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Изнасяне на публичен ключ</translation>
     </message>
     <message>
@@ -863,13 +887,17 @@ e-mail</translation>
         <translation type="unfinished">Копиране в буфера</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>Запис във файл…</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">Копиране в клипборда</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Запис във файл…</translation>
+        <translation type="vanished">Запис във файл…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -882,10 +910,14 @@ e-mail</translation>
         <translation>Копирано!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Запис на публичния ключ</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Запис на публичния ключ</translation>
     </message>
     <message>
@@ -1175,10 +1207,8 @@ You will not be able to decrypt any newly added passwords!</source>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>Внасяне на GPG ключ</translation>
+        <translation type="vanished">Внасяне на GPG ключ</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1186,9 +1216,8 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>Внесете публичен GPG ключ от файл или го поставете по-долу. Ключът трябва да е във формат ASCII-armored.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>От файл…</translation>
+        <translation type="vanished">От файл…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1198,6 +1227,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">От клипборда</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>Внасяне на GPG ключ</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>От файл…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1215,17 +1255,12 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>GPG ключ във формат ASCII-armored</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Всички файлове</translation>
+        <translation type="vanished">Всички файлове</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Внасяне на ключ</translation>
+        <translation type="vanished">Внасяне на ключ</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1240,6 +1275,19 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 не изглежда като GPG ключ във формат ASCII-armored. Първо го преобразувайте с &lt;code&gt;gpg --armor --export&lt;/code&gt;, или поставете блока ASCII-armored чрез &lt;b&gt;От клипборда&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Всички файлове</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Внасяне на ключ</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1520,6 +1568,13 @@ p, li { white-space: pre-wrap; }
         <translation>Изберете профил</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="120"/>
+        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <source>Search password</source>
+        <translation>Търсене на парола</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
         <translation>Търсене в съдържанието на паролите (pass grep)</translation>
@@ -1668,11 +1723,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Изчистване</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="808"/>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Search Password</source>
-        <translation>Търсене на парола</translation>
+        <translation type="vanished">Търсене на парола</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -1758,9 +1810,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Clipboard not cleared</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Паролата и съдържанието са скрити</translation>
+        <translation type="vanished">Паролата и съдържанието са скрити</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -1883,10 +1934,9 @@ p, li { white-space: pre-wrap; }
         <translation>Добавяне на парола</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Нова папка: 
+        <translation type="vanished">Нова папка: 
 (Ще бъде поставен в %1 )</translation>
     </message>
     <message>
@@ -1919,6 +1969,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1288"/>
         <source>No OTP code found in this password entry</source>
         <translation>В този запис за парола не е намерен OTP код</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Паролата и съдържанието са скрити</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -2015,6 +2070,23 @@ p, li { white-space: pre-wrap; }
         <translation>Какво е това?</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <source>New folder: 
+(Will be placed in %1 )</source>
+        <translation>Нова папка: 
+(Ще бъде поставен в %1 )</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Преименуване на папката на: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Преименувайте файла на: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1866"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Повторно криптиране на паролите...</translation>
@@ -2035,19 +2107,37 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Повторно криптиране на паролите: %1 от %2</translation>
     </message>
     <message>
-        <source>Open %1 in browser</source>
-        <translation type="obsolete">Отвори %1 в браузъра</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.cpp" line="1924"/>
         <location filename="../src/mainwindow.cpp" line="1943"/>
-        <source>Export Public Key</source>
+        <source>Export public key</source>
         <translation>Изнасяне на публичен ключ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
-        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Изнасяне на вашия публичен ключ&lt;/h3&gt;&lt;p&gt;Не е настроен ключ за подписване. Задайте го в Настройки на QtPass &amp;gt; GPG ключове, или изпълнете това в терминал:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;След това изпратете файла на колегите си.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>Споделяне на пароли чрез GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Споделяне на пароли чрез GPG&lt;/h3&gt;&lt;p&gt;За да споделяте пароли с други потребители:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Изнесете своя публичен ключ&lt;/b&gt; и го изпратете на колегите си&lt;/li&gt;&lt;li&gt;&lt;b&gt;Внесете публичните ключове на колегите си&lt;/b&gt; в своя GPG ключодържател&lt;/li&gt;&lt;li&gt;&lt;b&gt;Криптирайте паролите наново&lt;/b&gt;, така че всички получатели да могат да ги декриптират&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Само хора със съответен таен ключ могат да декриптират паролите.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Съвет:&lt;/b&gt; Използвайте един и същ GPG ключ за всички споделени папки.&lt;/p&gt;&lt;p&gt;Вижте ЧЗВ за повече подробности.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Open %1 in browser</source>
+        <translation type="obsolete">Отвори %1 в браузъра</translation>
+    </message>
+    <message>
+        <source>Export Public Key</source>
+        <translation type="vanished">Изнасяне на публичен ключ</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Изнасяне на вашия публичен ключ&lt;/h3&gt;&lt;p&gt;Не е настроен ключ за подписване. Задайте го в Настройки на QtPass &amp;gt; GPG ключове, или изпълнете това в терминал:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;След това изпратете файла на колегите си.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1944"/>
@@ -2064,14 +2154,12 @@ p, li { white-space: pre-wrap; }
         <translation>Няма изход от gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Споделяне на пароли чрез GPG</translation>
+        <translation type="vanished">Споделяне на пароли чрез GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Споделяне на пароли чрез GPG&lt;/h3&gt;&lt;p&gt;За да споделяте пароли с други потребители:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Изнесете своя публичен ключ&lt;/b&gt; и го изпратете на колегите си&lt;/li&gt;&lt;li&gt;&lt;b&gt;Внесете публичните ключове на колегите си&lt;/b&gt; в своя GPG ключодържател&lt;/li&gt;&lt;li&gt;&lt;b&gt;Криптирайте паролите наново&lt;/b&gt;, така че всички получатели да могат да ги декриптират&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Само хора със съответен таен ключ могат да декриптират паролите.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Съвет:&lt;/b&gt; Използвайте един и същ GPG ключ за всички споделени папки.&lt;/p&gt;&lt;p&gt;Вижте ЧЗВ за повече подробности.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Споделяне на пароли чрез GPG&lt;/h3&gt;&lt;p&gt;За да споделяте пароли с други потребители:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Изнесете своя публичен ключ&lt;/b&gt; и го изпратете на колегите си&lt;/li&gt;&lt;li&gt;&lt;b&gt;Внесете публичните ключове на колегите си&lt;/b&gt; в своя GPG ключодържател&lt;/li&gt;&lt;li&gt;&lt;b&gt;Криптирайте паролите наново&lt;/b&gt;, така че всички получатели да могат да ги декриптират&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Само хора със съответен таен ключ могат да декриптират паролите.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Съвет:&lt;/b&gt; Използвайте един и същ GPG ключ за всички споделени папки.&lt;/p&gt;&lt;p&gt;Вижте ЧЗВ за повече подробности.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
@@ -2100,9 +2188,8 @@ p, li { white-space: pre-wrap; }
         <translation>Преименуване на файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>Преименуване на папката на: </translation>
+        <translation type="vanished">Преименуване на папката на: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1664"/>
@@ -2110,9 +2197,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Нова папка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>Преименувайте файла на: </translation>
+        <translation type="vanished">Преименувайте файла на: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -2276,13 +2362,21 @@ Continue?</source>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Набор от знаци:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Всички знаци</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Набор от знаци:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Всички знаци</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2378,9 +2472,13 @@ Continue?</source>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Изход на процеса</translation>
+        <translation type="obsolete">Изход на процеса</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>Изход на процеса</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2511,8 +2609,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>OTP код</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP код</translation>
+        <translation type="obsolete">OTP код</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

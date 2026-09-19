@@ -548,7 +548,7 @@
              <item>
               <widget class="QGroupBox" name="groupBoxPasswordGeneration">
                <property name="title">
-                <string>Password Generation:</string>
+                <string>Password generation:</string>
                </property>
                <layout class="QVBoxLayout" name="Layout_PasswordGeneration">
                 <item>
@@ -559,7 +559,7 @@
                   <item row="0" column="0">
                    <widget class="QLabel" name="label_7">
                     <property name="text">
-                     <string>Password Length:</string>
+                     <string>Password length:</string>
                     </property>
                     <property name="buddy">
                      <cstring>spinBoxPasswordLength</cstring>
@@ -652,7 +652,7 @@
                       </property>
                       <item>
                        <property name="text">
-                        <string>All Characters</string>
+                        <string>All characters</string>
                        </property>
                       </item>
                       <item>
@@ -1432,7 +1432,7 @@ e-mail</string>
                     <item row="2" column="0">
                      <widget class="QLabel" name="labelProfileSigningKey">
                       <property name="text">
-                       <string>Signing Key</string>
+                       <string>Signing key</string>
                       </property>
                       <property name="buddy">
                        <cstring>profileSigningKey</cstring>

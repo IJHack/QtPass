@@ -109,15 +109,13 @@
         <translation>Prozessausgabe anzeigen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
         <translatorcomment>Erzeugung würde auch funktionieren</translatorcomment>
-        <translation>Passwortgenerierung:</translation>
+        <translation type="vanished">Passwortgenerierung:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Passwortlänge:</translation>
+        <translation type="vanished">Passwortlänge:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="630"/>
@@ -130,9 +128,8 @@
         <translation>Zeichensatz für Kennwortgenerator auswählen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Alle Zeichen</translation>
+        <translation type="vanished">Alle Zeichen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -201,6 +198,11 @@
         <location filename="../src/configdialog.ui" line="1142"/>
         <source>pass</source>
         <translation>pass</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>Signierschlüssel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1448"/>
@@ -523,8 +525,12 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Neues Profil</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Neues Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="815"/>
@@ -634,6 +640,21 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
         <translation type="unfinished">Strg+M blendet sie auch im Hauptfenster ein oder aus</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Passwortgenerierung:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Passwortlänge:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Alle Zeichen</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
         <source>Choose the gpg executable</source>
@@ -733,9 +754,8 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
         <translation>Pfad zum Passwortspeicherverzeichnis</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>Signierschlüssel</translation>
+        <translation type="vanished">Signierschlüssel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -849,8 +869,12 @@ e-mail</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Öffentlichen Schlüssel exportieren</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Öffentlichen Schlüssel exportieren</translation>
     </message>
     <message>
@@ -864,13 +888,17 @@ e-mail</translation>
         <translation type="unfinished">In Zwischenablage kopieren</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>In Datei speichern …</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">In Zwischenablage kopieren</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>In Datei speichern …</translation>
+        <translation type="vanished">In Datei speichern …</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -883,10 +911,14 @@ e-mail</translation>
         <translation>Kopiert!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Öffentlichen Schlüssel speichern</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Öffentlichen Schlüssel speichern</translation>
     </message>
     <message>
@@ -1176,10 +1208,8 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>GPG-Schlüssel importieren</translation>
+        <translation type="vanished">GPG-Schlüssel importieren</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1187,9 +1217,8 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
         <translation>Importieren Sie einen öffentlichen GPG-Schlüssel aus einer Datei oder fügen Sie ihn unten ein. Der Schlüssel sollte im ASCII-armored Format vorliegen.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Aus Datei…</translation>
+        <translation type="vanished">Aus Datei…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1199,6 +1228,17 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">Aus Zwischenablage</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>GPG-Schlüssel importieren</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>Aus Datei…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1216,17 +1256,12 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
         <translation>ASCII-armored GPG-Schlüssel</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Alle Dateien</translation>
+        <translation type="vanished">Alle Dateien</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Schlüssel importieren</translation>
+        <translation type="vanished">Schlüssel importieren</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1241,6 +1276,19 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 sieht nicht wie ein ASCII-armored GPG-Schlüssel aus. Konvertieren Sie ihn zuerst mit &lt;code&gt;gpg --armor --export&lt;/code&gt; oder fügen Sie den ASCII-armored Block über &lt;b&gt;Aus Zwischenablage&lt;/b&gt; ein.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Alle Dateien</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Schlüssel importieren</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1450,6 +1498,13 @@ Expire-Date: 0
         <translation>Generiere OTP und kopiere in die Zwischenablage</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="120"/>
+        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <source>Search password</source>
+        <translation>Kennwort suchen</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
         <translation>Suche innerhalb von Passwort Inhalt (pass grep)</translation>
@@ -1639,11 +1694,8 @@ Expire-Date: 0
         <translation>Willkommen bei QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="808"/>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Search Password</source>
-        <translation>Kennwort suchen</translation>
+        <translation type="vanished">Kennwort suchen</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -1668,6 +1720,11 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="752"/>
         <source>Could not decrypt this password entry</source>
         <translation>Konnte diesen Passworteintrag nicht entschlüsseln</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Kennwort und Inhalt ausgeblendet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -1736,9 +1793,41 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1665"/>
-        <source>New Folder: 
+        <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Neuer Ordner:
+(Wird in %1 platziert werden)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Datei umbenennen in: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
+        <source>Export public key</source>
+        <translation>Öffentlichen Schlüssel exportieren</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1925"/>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Ihren öffentlichen Schlüssel exportieren&lt;/h3&gt;&lt;p&gt;Es ist kein Signaturschlüssel konfiguriert. Legen Sie einen in den QtPass-Einstellungen &amp;gt; GPG-Schlüssel fest oder führen Sie folgenden Befehl in einem Terminal aus:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Senden Sie die Datei anschließend an Ihre Teammitglieder.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>Passwörter mit GPG teilen</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Passwörter mit GPG teilen&lt;/h3&gt;&lt;p&gt;So teilen Sie Passwörter mit anderen Benutzern:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportieren Sie Ihren öffentlichen Schlüssel&lt;/b&gt; und senden Sie ihn an die Teammitglieder&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importieren Sie die öffentlichen Schlüssel der Teammitglieder&lt;/b&gt; in Ihren GPG-Schlüsselbund&lt;/li&gt;&lt;li&gt;&lt;b&gt;Verschlüsseln Sie die Passwörter neu&lt;/b&gt;, damit alle Empfänger sie entschlüsseln können&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Nur Personen mit einem passenden geheimen Schlüssel können die Passwörter entschlüsseln.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tipp:&lt;/b&gt; Verwenden Sie denselben GPG-Schlüssel für alle freigegebenen Ordner.&lt;/p&gt;&lt;p&gt;Weitere Details finden Sie in den FAQ.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>New Folder: 
+(Will be placed in %1 )</source>
+        <translation type="vanished">Neuer Ordner:
 (Wird in %1 platziert werden)</translation>
     </message>
     <message>
@@ -1766,15 +1855,12 @@ Expire-Date: 0
         <translation type="obsolete">Öffne %1 im Browser</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
-        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
-        <translation>Öffentlichen Schlüssel exportieren</translation>
+        <translation type="vanished">Öffentlichen Schlüssel exportieren</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1925"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Ihren öffentlichen Schlüssel exportieren&lt;/h3&gt;&lt;p&gt;Es ist kein Signaturschlüssel konfiguriert. Legen Sie einen in den QtPass-Einstellungen &amp;gt; GPG-Schlüssel fest oder führen Sie folgenden Befehl in einem Terminal aus:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Senden Sie die Datei anschließend an Ihre Teammitglieder.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Ihren öffentlichen Schlüssel exportieren&lt;/h3&gt;&lt;p&gt;Es ist kein Signaturschlüssel konfiguriert. Legen Sie einen in den QtPass-Einstellungen &amp;gt; GPG-Schlüssel fest oder führen Sie folgenden Befehl in einem Terminal aus:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Senden Sie die Datei anschließend an Ihre Teammitglieder.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1944"/>
@@ -1791,14 +1877,12 @@ Expire-Date: 0
         <translation>Keine Ausgabe von gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Passwörter mit GPG teilen</translation>
+        <translation type="vanished">Passwörter mit GPG teilen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Passwörter mit GPG teilen&lt;/h3&gt;&lt;p&gt;So teilen Sie Passwörter mit anderen Benutzern:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportieren Sie Ihren öffentlichen Schlüssel&lt;/b&gt; und senden Sie ihn an die Teammitglieder&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importieren Sie die öffentlichen Schlüssel der Teammitglieder&lt;/b&gt; in Ihren GPG-Schlüsselbund&lt;/li&gt;&lt;li&gt;&lt;b&gt;Verschlüsseln Sie die Passwörter neu&lt;/b&gt;, damit alle Empfänger sie entschlüsseln können&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Nur Personen mit einem passenden geheimen Schlüssel können die Passwörter entschlüsseln.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tipp:&lt;/b&gt; Verwenden Sie denselben GPG-Schlüssel für alle freigegebenen Ordner.&lt;/p&gt;&lt;p&gt;Weitere Details finden Sie in den FAQ.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Passwörter mit GPG teilen&lt;/h3&gt;&lt;p&gt;So teilen Sie Passwörter mit anderen Benutzern:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportieren Sie Ihren öffentlichen Schlüssel&lt;/b&gt; und senden Sie ihn an die Teammitglieder&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importieren Sie die öffentlichen Schlüssel der Teammitglieder&lt;/b&gt; in Ihren GPG-Schlüsselbund&lt;/li&gt;&lt;li&gt;&lt;b&gt;Verschlüsseln Sie die Passwörter neu&lt;/b&gt;, damit alle Empfänger sie entschlüsseln können&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Nur Personen mit einem passenden geheimen Schlüssel können die Passwörter entschlüsseln.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tipp:&lt;/b&gt; Verwenden Sie denselben GPG-Schlüssel für alle freigegebenen Ordner.&lt;/p&gt;&lt;p&gt;Weitere Details finden Sie in den FAQ.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Failed to connect WebDAV:
@@ -1854,9 +1938,8 @@ Expire-Date: 0
         <translation type="vanished">Zwischenablage nicht geleert</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Kennwort und Inhalt ausgeblendet</translation>
+        <translation type="vanished">Kennwort und Inhalt ausgeblendet</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -2098,19 +2181,22 @@ Expire-Date: 0
         <translation>Fehler beim Erstellen der .gpg-id-Datei in: %1</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Ordner umbenennen in: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
         <translation>Datei umbenennen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>Ordner umbenennen in: </translation>
+        <translation type="vanished">Ordner umbenennen in: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>Datei umbenennen in: </translation>
+        <translation type="vanished">Datei umbenennen in: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -2274,13 +2360,21 @@ Fortfahren?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Zeichensatz:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Alle Zeichen</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Zeichensatz:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Alle Zeichen</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2376,9 +2470,13 @@ Fortfahren?</translation>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Prozessausgabe</translation>
+        <translation type="obsolete">Prozessausgabe</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>Prozessausgabe</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2509,8 +2607,12 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
-        <source>OTP Code</source>
+        <source>OTP code</source>
         <translation>OTP-Code</translation>
+    </message>
+    <message>
+        <source>OTP Code</source>
+        <translation type="vanished">OTP-Code</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

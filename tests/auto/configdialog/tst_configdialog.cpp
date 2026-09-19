@@ -376,8 +376,8 @@ void tst_configdialog::addProfileSelectsTheNewOne() {
 
   QCOMPARE(list->count(), 5);
   QCOMPARE(list->currentRow(), 4);
-  QCOMPARE(list->currentItem()->text(), QStringLiteral("New Profile"));
-  QCOMPARE(name->text(), QStringLiteral("New Profile"));
+  QCOMPARE(list->currentItem()->text(), QStringLiteral("New profile"));
+  QCOMPARE(name->text(), QStringLiteral("New profile"));
   QVERIFY2(name->hasSelectedText(), "the name is selected for typing over");
 }
 
@@ -664,7 +664,7 @@ void tst_configdialog::sectionHeadersAreGroupBoxes() {
       {QStringLiteral("groupBoxContentPanel"),
        QStringLiteral("Content panel behaviour:")},
       {QStringLiteral("groupBoxPasswordGeneration"),
-       QStringLiteral("Password Generation:")},
+       QStringLiteral("Password generation:")},
       {QStringLiteral("groupBoxGit"), QStringLiteral("Git:")},
       {QStringLiteral("groupBoxExtensions"), QStringLiteral("Extensions:")},
       {QStringLiteral("groupBoxSystem"), QStringLiteral("System:")},

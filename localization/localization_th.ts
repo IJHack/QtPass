@@ -92,14 +92,12 @@
         <translation>แสดงผลลัพธ์ของกระบวนการ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>การสร้างรหัสผ่าน:</translation>
+        <translation type="vanished">การสร้างรหัสผ่าน:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>ความยาวรหัสผ่าน:</translation>
+        <translation type="vanished">ความยาวรหัสผ่าน:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -117,9 +115,8 @@
         <translation>เลือกชุดตัวอักษรสำหรับการสร้างรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>ตัวอักษรทั้งหมด</translation>
+        <translation type="vanished">ตัวอักษรทั้งหมด</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -305,6 +302,21 @@
         <translation type="unfinished">กด Ctrl+M ในหน้าต่างหลักก็แสดงหรือซ่อนแถบเมนูได้เช่นกัน</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>การสร้างรหัสผ่าน:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>ความยาวรหัสผ่าน:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>ตัวอักษรทั้งหมด</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
         <source>Choose the gpg executable</source>
@@ -439,9 +451,8 @@
         <translation>เส้นทางไปยังไดเรกทอรีที่เก็บรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>กุญแจลงนาม</translation>
+        <translation type="vanished">กุญแจลงนาม</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -514,6 +525,11 @@ e-mail</source>
         <translation>login
 URL
 e-mail</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>กุญแจลงนาม</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
@@ -639,8 +655,12 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>โปรไฟล์ใหม่</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">โปรไฟล์ใหม่</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -788,8 +808,12 @@ The value will still be saved as entered.</source>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">ส่งออกกุญแจสาธารณะ</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>ส่งออกกุญแจสาธารณะ</translation>
     </message>
     <message>
@@ -803,13 +827,17 @@ The value will still be saved as entered.</source>
         <translation type="unfinished">คัดลอกไปยังคลิปบอร์ด</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>บันทึกเป็นไฟล์...</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">คัดลอกไปยังคลิปบอร์ด</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>บันทึกเป็นไฟล์...</translation>
+        <translation type="vanished">บันทึกเป็นไฟล์...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -822,10 +850,14 @@ The value will still be saved as entered.</source>
         <translation>คัดลอกแล้ว!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">บันทึกกุญแจสาธารณะ</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>บันทึกกุญแจสาธารณะ</translation>
     </message>
     <message>
@@ -1112,10 +1144,8 @@ You will not be able to change the user list!</source>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>นำเข้ากุญแจ GPG</translation>
+        <translation type="vanished">นำเข้ากุญแจ GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1123,9 +1153,8 @@ You will not be able to change the user list!</source>
         <translation>นำเข้ากุญแจสาธารณะ GPG จากไฟล์หรือวางด้านล่าง กุญแจควรอยู่ในรูปแบบ ASCII-armored</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>จากไฟล์...</translation>
+        <translation type="vanished">จากไฟล์...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1135,6 +1164,17 @@ You will not be able to change the user list!</source>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">จากคลิปบอร์ด</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>นำเข้ากุญแจ GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>จากไฟล์...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1152,17 +1192,12 @@ You will not be able to change the user list!</source>
         <translation>กุญแจ GPG แบบ ASCII-armored</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>ไฟล์ทั้งหมด</translation>
+        <translation type="vanished">ไฟล์ทั้งหมด</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>นำเข้ากุญแจ</translation>
+        <translation type="vanished">นำเข้ากุญแจ</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1177,6 +1212,19 @@ You will not be able to change the user list!</source>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 ดูเหมือนจะไม่ใช่กุญแจ GPG แบบ ASCII-armored แปลงด้วย &lt;code&gt;gpg --armor --export&lt;/code&gt; ก่อนหรือวางบล็อก armored ผ่าน &lt;b&gt;จากคลิปบอร์ด&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>ไฟล์ทั้งหมด</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>นำเข้ากุญแจ</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1330,10 +1378,14 @@ You will not be able to change the user list!</source>
         <translation>เลือกโปรไฟล์</translation>
     </message>
     <message>
+        <source>Search Password</source>
+        <translation type="vanished">ค้นหารหัสผ่าน</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="808"/>
         <location filename="../src/mainwindow.cpp" line="1022"/>
-        <source>Search Password</source>
+        <source>Search password</source>
         <translation>ค้นหารหัสผ่าน</translation>
     </message>
     <message>
@@ -1627,9 +1679,8 @@ You will not be able to change the user list!</source>
         <translation>ไม่พบรหัส OTP ในรายการรหัสผ่านนี้</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>ซ่อนรหัสผ่านและเนื้อหา</translation>
+        <translation type="vanished">ซ่อนรหัสผ่านและเนื้อหา</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="923"/>
@@ -1700,6 +1751,11 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="752"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">ไม่สามารถถอดรหัสรายการรหัสผ่านนี้</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>ซ่อนรหัสผ่านและเนื้อหา</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -1810,9 +1866,41 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1665"/>
-        <source>New Folder: 
+        <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>โฟลเดอร์ใหม่:
+(จะถูกวางไว้ใน %1 )</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>เปลี่ยนชื่อไฟล์เป็น: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
+        <source>Export public key</source>
+        <translation>ส่งออกกุญแจสาธารณะ</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1925"/>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;ส่งออกกุญแจสาธารณะของคุณ&lt;/h3&gt;&lt;p&gt;ไม่ได้กำหนดค่ากุญแจลงนาม ตั้งค่าหนึ่งในการตั้งค่า QtPass &amp;gt; กุญแจ GPG หรือรันคำสั่งนี้ในเทอร์มินัล:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;จากนั้นส่งไฟล์ไปยังเพื่อนร่วมทีมของคุณ&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>การแชร์รหัสผ่านด้วย GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;การแชร์รหัสผ่านด้วย GPG&lt;/h3&gt;&lt;p&gt;เพื่อแชร์รหัสผ่านกับผู้ใช้อื่น:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;ส่งออกกุญแจสาธารณะของคุณ&lt;/b&gt; และส่งไปยังเพื่อนร่วมทีม&lt;/li&gt;&lt;li&gt;&lt;b&gt;นำเข้ากุญแจสาธารณะของเพื่อนร่วมทีม&lt;/b&gt; เข้าสู่พวงกุญแจ GPG ของคุณ&lt;/li&gt;&lt;li&gt;&lt;b&gt;เข้ารหัสรหัสผ่านใหม่&lt;/b&gt; เพื่อให้ผู้รับทั้งหมดสามารถถอดรหัสได้&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;เฉพาะผู้ที่มีกุญแจลับที่ตรงกันเท่านั้นที่สามารถถอดรหัสรหัสผ่านได้&lt;/p&gt;&lt;p&gt;&lt;b&gt;เคล็ดลับ:&lt;/b&gt; ใช้กุญแจ GPG เดียวกันสำหรับโฟลเดอร์ที่แชร์ทั้งหมด&lt;/p&gt;&lt;p&gt;ดู FAQ สำหรับรายละเอียดเพิ่มเติม&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>New Folder: 
+(Will be placed in %1 )</source>
+        <translation type="vanished">โฟลเดอร์ใหม่:
 (จะถูกวางไว้ใน %1 )</translation>
     </message>
     <message>
@@ -1833,19 +1921,22 @@ You will not be able to change the user list!</source>
         <translation>ไม่สามารถสร้างไฟล์ .gpg-id ใน: %1</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>เปลี่ยนชื่อโฟลเดอร์เป็น: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
         <translation>เปลี่ยนชื่อไฟล์</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>เปลี่ยนชื่อโฟลเดอร์เป็น: </translation>
+        <translation type="vanished">เปลี่ยนชื่อโฟลเดอร์เป็น: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>เปลี่ยนชื่อไฟล์เป็น: </translation>
+        <translation type="vanished">เปลี่ยนชื่อไฟล์เป็น: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -1901,15 +1992,12 @@ Continue?</source>
         <translation type="unfinished">กำลังเข้ารหัสรหัสผ่านใหม่: %1 จาก %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
-        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
-        <translation>ส่งออกกุญแจสาธารณะ</translation>
+        <translation type="vanished">ส่งออกกุญแจสาธารณะ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1925"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;ส่งออกกุญแจสาธารณะของคุณ&lt;/h3&gt;&lt;p&gt;ไม่ได้กำหนดค่ากุญแจลงนาม ตั้งค่าหนึ่งในการตั้งค่า QtPass &amp;gt; กุญแจ GPG หรือรันคำสั่งนี้ในเทอร์มินัล:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;จากนั้นส่งไฟล์ไปยังเพื่อนร่วมทีมของคุณ&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;ส่งออกกุญแจสาธารณะของคุณ&lt;/h3&gt;&lt;p&gt;ไม่ได้กำหนดค่ากุญแจลงนาม ตั้งค่าหนึ่งในการตั้งค่า QtPass &amp;gt; กุญแจ GPG หรือรันคำสั่งนี้ในเทอร์มินัล:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;จากนั้นส่งไฟล์ไปยังเพื่อนร่วมทีมของคุณ&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1944"/>
@@ -1926,14 +2014,12 @@ Continue?</source>
         <translation>ไม่มีผลลัพธ์จาก gpg</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>การแชร์รหัสผ่านด้วย GPG</translation>
+        <translation type="vanished">การแชร์รหัสผ่านด้วย GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;การแชร์รหัสผ่านด้วย GPG&lt;/h3&gt;&lt;p&gt;เพื่อแชร์รหัสผ่านกับผู้ใช้อื่น:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;ส่งออกกุญแจสาธารณะของคุณ&lt;/b&gt; และส่งไปยังเพื่อนร่วมทีม&lt;/li&gt;&lt;li&gt;&lt;b&gt;นำเข้ากุญแจสาธารณะของเพื่อนร่วมทีม&lt;/b&gt; เข้าสู่พวงกุญแจ GPG ของคุณ&lt;/li&gt;&lt;li&gt;&lt;b&gt;เข้ารหัสรหัสผ่านใหม่&lt;/b&gt; เพื่อให้ผู้รับทั้งหมดสามารถถอดรหัสได้&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;เฉพาะผู้ที่มีกุญแจลับที่ตรงกันเท่านั้นที่สามารถถอดรหัสรหัสผ่านได้&lt;/p&gt;&lt;p&gt;&lt;b&gt;เคล็ดลับ:&lt;/b&gt; ใช้กุญแจ GPG เดียวกันสำหรับโฟลเดอร์ที่แชร์ทั้งหมด&lt;/p&gt;&lt;p&gt;ดู FAQ สำหรับรายละเอียดเพิ่มเติม&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;การแชร์รหัสผ่านด้วย GPG&lt;/h3&gt;&lt;p&gt;เพื่อแชร์รหัสผ่านกับผู้ใช้อื่น:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;ส่งออกกุญแจสาธารณะของคุณ&lt;/b&gt; และส่งไปยังเพื่อนร่วมทีม&lt;/li&gt;&lt;li&gt;&lt;b&gt;นำเข้ากุญแจสาธารณะของเพื่อนร่วมทีม&lt;/b&gt; เข้าสู่พวงกุญแจ GPG ของคุณ&lt;/li&gt;&lt;li&gt;&lt;b&gt;เข้ารหัสรหัสผ่านใหม่&lt;/b&gt; เพื่อให้ผู้รับทั้งหมดสามารถถอดรหัสได้&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;เฉพาะผู้ที่มีกุญแจลับที่ตรงกันเท่านั้นที่สามารถถอดรหัสรหัสผ่านได้&lt;/p&gt;&lt;p&gt;&lt;b&gt;เคล็ดลับ:&lt;/b&gt; ใช้กุญแจ GPG เดียวกันสำหรับโฟลเดอร์ที่แชร์ทั้งหมด&lt;/p&gt;&lt;p&gt;ดู FAQ สำหรับรายละเอียดเพิ่มเติม&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2053,13 +2139,21 @@ Continue?</source>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>ชุดตัวอักษร:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>ตัวอักษรทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">ชุดตัวอักษร:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">ตัวอักษรทั้งหมด</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2155,9 +2249,13 @@ Continue?</source>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">ผลลัพธ์ของกระบวนการ</translation>
+        <translation type="obsolete">ผลลัพธ์ของกระบวนการ</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>ผลลัพธ์ของกระบวนการ</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2287,8 +2385,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>รหัส OTP</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">รหัส OTP</translation>
+        <translation type="obsolete">รหัส OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

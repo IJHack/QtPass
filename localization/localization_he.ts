@@ -92,16 +92,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
-        <source>Password Generation:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="562"/>
-        <source>Password Length:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Characters</source>
         <translation>תווים</translation>
@@ -117,9 +107,8 @@
         <translation>בחר ערכת תווים ליצירת סיסמאות</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>כל התווים</translation>
+        <translation type="vanished">כל התווים</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -145,6 +134,11 @@
         <location filename="../src/configdialog.ui" line="742"/>
         <source>Include special symbols</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>מפתח חתימה</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1448"/>
@@ -278,6 +272,21 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>כל התווים</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="988"/>
         <source>Select password storage program:</source>
         <translation type="unfinished"></translation>
@@ -407,9 +416,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation type="unfinished">מפתח חתימה</translation>
+        <translation type="obsolete">מפתח חתימה</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -561,7 +569,7 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -743,7 +751,7 @@ e-mail</source>
     <name>ExportPublicKeyDialog</name>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
-        <source>Export Public Key</source>
+        <source>Export public key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -758,7 +766,7 @@ e-mail</source>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
-        <source>Save to File...</source>
+        <source>Save to file...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -775,7 +783,7 @@ e-mail</source>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1059,19 +1067,19 @@ You will not be able to decrypt any newly added passwords!</source>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
-        <source>Import GPG Key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
-        <source>From File...</source>
+        <source>From file...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1096,7 +1104,7 @@ You will not be able to decrypt any newly added passwords!</source>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="42"/>
-        <source>All Files</source>
+        <source>All files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1104,7 +1112,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/importkeydialog.cpp" line="65"/>
         <location filename="../src/importkeydialog.cpp" line="163"/>
         <location filename="../src/importkeydialog.cpp" line="167"/>
-        <source>Import Key</source>
+        <source>Import key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1268,13 +1276,6 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="808"/>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
-        <source>Search Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
         <translation type="unfinished"></translation>
@@ -1399,6 +1400,13 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/mainwindow.ui" line="426"/>
         <location filename="../src/mainwindow.cpp" line="1569"/>
         <source>Add password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="120"/>
+        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <source>Search password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1536,11 +1544,6 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/mainwindow.cpp" line="785"/>
         <location filename="../src/mainwindow.cpp" line="1288"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
-        <source>Password and Content hidden</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1691,6 +1694,22 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <source>New folder: 
+(Will be placed in %1 )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished"></translation>
@@ -1718,12 +1737,22 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1924"/>
         <location filename="../src/mainwindow.cpp" line="1943"/>
-        <source>Export Public Key</source>
+        <source>Export public key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
-        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1739,24 +1768,13 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
-        <source>Sharing Passwords with GPG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
-        <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
-        <source>New Folder: 
-(Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.cpp" line="157"/>
         <source>Operation timed out; re-enabling interface.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1779,16 +1797,6 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
-        <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
-        <source>Rename File To: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1939,13 +1947,17 @@ Continue?</source>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>כל התווים</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">כל התווים</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2042,7 +2054,7 @@ Continue?</source>
     <name>ProcessOutputPanel</name>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="12"/>
-        <source>Process Output</source>
+        <source>Process output</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2175,7 +2187,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
-        <source>OTP Code</source>
+        <source>OTP code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

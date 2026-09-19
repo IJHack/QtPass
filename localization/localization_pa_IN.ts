@@ -92,14 +92,12 @@
         <translation>ਪ੍ਰਕਿਰਿਆ ਦਾ ਸਾਹਮਣਾ ਵਿਖਾਉਣ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>ਪਾਸਵਰਡ ਤਿਆਰ ਕਰਨ ਦੀ ਪ੍ਰਕਿਰਿਆ:</translation>
+        <translation type="vanished">ਪਾਸਵਰਡ ਤਿਆਰ ਕਰਨ ਦੀ ਪ੍ਰਕਿਰਿਆ:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>ਪਾਸਵਰਡ ਲੰਬਾਈ:</translation>
+        <translation type="vanished">ਪਾਸਵਰਡ ਲੰਬਾਈ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -117,9 +115,8 @@
         <translation>ਪਾਸਵਰਡ ਉਤਪੱਤੀ ਲਈ ਚਰਿੱਤਰ ਸੈੱਟ ਦੀ ਚੋਣ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>ਸਾਰੇ ਚਰਿੱਤਰ</translation>
+        <translation type="vanished">ਸਾਰੇ ਚਰਿੱਤਰ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -305,6 +302,21 @@
         <translation type="unfinished">Ctrl+M ਮੁੱਖ ਵਿੰਡੋ ਤੋਂ ਵੀ ਇਸਨੂੰ ਦਿਖਾਉਂਦਾ ਜਾਂ ਲੁਕਾਉਂਦਾ ਹੈ</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>ਪਾਸਵਰਡ ਤਿਆਰ ਕਰਨ ਦੀ ਪ੍ਰਕਿਰਿਆ:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>ਪਾਸਵਰਡ ਲੰਬਾਈ:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>ਸਾਰੇ ਚਰਿੱਤਰ</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
         <source>Choose the gpg executable</source>
@@ -439,9 +451,8 @@
         <translation>ਪਾਸਵਰਡ ਸਟੋਰ ਦਰਜਾਖ਼ਾਨ ਦਾ ਮਾਰਗ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>ਸਾਈਨਿੰਗ ਕੀ</translation>
+        <translation type="vanished">ਸਾਈਨਿੰਗ ਕੀ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -514,6 +525,11 @@ e-mail</source>
         <translation>ਲੋਗਿਨ
 URL
 ਈ‑ਮੇਲ</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>ਸਾਈਨਿੰਗ ਕੀ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
@@ -639,8 +655,12 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>ਨਵਾਂ ਪ੍ਰੋਫਾਈਲ</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">ਨਵਾਂ ਪ੍ਰੋਫਾਈਲ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -788,8 +808,12 @@ The value will still be saved as entered.</source>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">ਐਕਸਪੋਰਟ ਪਬਲਿਕ ਕੀ ਦੇ ਸ਼ਬਦ</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>ਐਕਸਪੋਰਟ ਪਬਲਿਕ ਕੀ ਦੇ ਸ਼ਬਦ</translation>
     </message>
     <message>
@@ -803,13 +827,17 @@ The value will still be saved as entered.</source>
         <translation type="unfinished">ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>ਫਾਇਲ ਵਿੱਚ ਸੰਭਾਲ...</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>ਫਾਇਲ ਵਿੱਚ ਸੰਭਾਲ...</translation>
+        <translation type="vanished">ਫਾਇਲ ਵਿੱਚ ਸੰਭਾਲ...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -822,10 +850,14 @@ The value will still be saved as entered.</source>
         <translation>ਕੋਪੀ ਕੀਤਾ ਹੈ!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">ਜਨਤਕ ਕੀ ਸੰਭਾਲੋ</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>ਜਨਤਕ ਕੀ ਸੰਭਾਲੋ</translation>
     </message>
     <message>
@@ -1115,10 +1147,8 @@ You will not be able to change the user list!</source>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>ਇੰਪੋਰਟ ਜੀਪੀਜੀ ਕੀ</translation>
+        <translation type="vanished">ਇੰਪੋਰਟ ਜੀਪੀਜੀ ਕੀ</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1126,9 +1156,8 @@ You will not be able to change the user list!</source>
         <translation>ਫਾਈਲ ਤੋਂ GPG ਜਨਤਕ ਕੀ ਆਯਾਤ ਕਰੋ ਜਾਂ ਇਸਨੂੰ ਹੇਠਾਂ ਪੇਸਟ ਕਰੋ। ਕੀ ASCII-armored ਫਾਰਮੈਟ ਵਿੱਚ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>ਫਾਈਲ ਤੋਂ...</translation>
+        <translation type="vanished">ਫਾਈਲ ਤੋਂ...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1138,6 +1167,17 @@ You will not be able to change the user list!</source>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">ਕਲਪੀਬੋਰਡ ਤੋਂ</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>ਇੰਪੋਰਟ ਜੀਪੀਜੀ ਕੀ</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>ਫਾਈਲ ਤੋਂ...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1155,17 +1195,12 @@ You will not be able to change the user list!</source>
         <translation>ਏਸ਼ੀ-ਅਰਮਾਰ ਜੀਪੀਐਗੀ ਕੀ</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>ਸਾਰੀਆਂ ਫਾਈਲਾਂ</translation>
+        <translation type="vanished">ਸਾਰੀਆਂ ਫਾਈਲਾਂ</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>ਇੰਪੋਰਟ ਕੀ ਲਾਓ</translation>
+        <translation type="vanished">ਇੰਪੋਰਟ ਕੀ ਲਾਓ</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1180,6 +1215,19 @@ You will not be able to change the user list!</source>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 ASCII-armored GPG ਕੀ ਵਰਗੀ ਨਹੀਂ ਲੱਗਦੀ। ਪਹਿਲਾਂ ਇਸਨੂੰ &lt;code&gt;gpg --armor --export&lt;/code&gt; ਨਾਲ ਬਦਲੋ, ਜਾਂ &lt;b&gt;From Clipboard&lt;/b&gt; ਰਾਹੀਂ armored block ਨੂੰ ਪੇਸਟ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>ਸਾਰੀਆਂ ਫਾਈਲਾਂ</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>ਇੰਪੋਰਟ ਕੀ ਲਾਓ</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1333,10 +1381,14 @@ You will not be able to change the user list!</source>
         <translation>ਪ੍ਰੋਫਾਈਲ ਚੁਣੋ</translation>
     </message>
     <message>
+        <source>Search Password</source>
+        <translation type="vanished">ਪਾਸਵਰਡ ਖੋਜੋ</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="808"/>
         <location filename="../src/mainwindow.cpp" line="1022"/>
-        <source>Search Password</source>
+        <source>Search password</source>
         <translation>ਪਾਸਵਰਡ ਖੋਜੋ</translation>
     </message>
     <message>
@@ -1630,9 +1682,8 @@ You will not be able to change the user list!</source>
         <translation>ਇਸ ਪਾਸਵਰਡ ਵਿੱਚ ਆਟੀਓ ਕੋਡ ਨਹੀਂ ਮਿਲਦਾ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>ਪਾਸਵਰਡ ਅਤੇ ਕੰਟੈਂਟ ਗੁਪਤ ਹੈ</translation>
+        <translation type="vanished">ਪਾਸਵਰਡ ਅਤੇ ਕੰਟੈਂਟ ਗੁਪਤ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="923"/>
@@ -1699,6 +1750,11 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="752"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">ਇਸ ਪਾਸਵਰਡ ਐਂਟਰੀ ਨੂੰ ਡੀਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>ਪਾਸਵਰਡ ਅਤੇ ਕੰਟੈਂਟ ਗੁਪਤ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -1809,9 +1865,41 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1665"/>
-        <source>New Folder: 
+        <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>ਨਵਾਂ ਫੋਲਡਰ:
+(%1 ਵਿੱਚ ਰੱਖਿਆ ਜਾਵੇਗਾ)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>ਰਿਨੇਮ ਫਾਈਲ ਨੂੰ ਕਿਉਂਜ਼ ਕਰੋ </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
+        <source>Export public key</source>
+        <translation>ਜਨਤਕ ਕੀ ਐਕਸਪੋਰਟ ਕਰੋ</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1925"/>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;ਆਪਣੀ ਜਨਤਕ ਕੀ ਐਕਸਪੋਰਟ ਕਰੋ&lt;/h3&gt;&lt;p&gt;ਕੋਈ ਸਾਈਨਿੰਗ ਕੀ ਸੰਰਚਿਤ ਨਹੀਂ ਹੈ। QtPass ਸੈਟਿੰਗਜ਼ &amp;gt; GPG ਕੁੰਜੀਆਂ ਵਿੱਚ ਇੱਕ ਸੈੱਟ ਕਰੋ, ਜਾਂ ਟਰਮੀਨਲ ਵਿੱਚ ਇਹ ਚਲਾਓ:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;ਫਿਰ ਫਾਈਲ ਆਪਣੇ ਸਾਥੀਆਂ ਨੂੰ ਭੇਜੋ।&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>GPG ਨਾਲ ਪਾਸਵਰਡ ਸਾਂਝੇ ਕਰਨਾ</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;GPG ਨਾਲ ਪਾਸਵਰਡ ਸਾਂਝੇ ਕਰਨਾ&lt;/h3&gt;&lt;p&gt;ਹੋਰ ਵਰਤੋਂਕਾਰਾਂ ਨਾਲ ਪਾਸਵਰਡ ਸਾਂਝੇ ਕਰਨ ਲਈ:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;ਆਪਣੀ ਜਨਤਕ ਕੁੰਜੀ ਐਕਸਪੋਰਟ ਕਰੋ&lt;/b&gt; ਅਤੇ ਇਸਨੂੰ ਸਾਥੀਆਂ ਨੂੰ ਭੇਜੋ&lt;/li&gt;&lt;li&gt;&lt;b&gt;ਸਾਥੀਆਂ ਦੀਆਂ ਜਨਤਕ ਕੁੰਜੀਆਂ ਨੂੰ ਆਯਾਤ ਕਰੋ&lt;/b&gt; ਆਪਣੀ GPG keyring ਵਿੱਚ&lt;/li&gt;&lt;li&gt;&lt;b&gt;ਪਾਸਵਰਡਾਂ ਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਕਰੋ&lt;/b&gt; ਤਾਂ ਜੋ ਸਾਰੇ ਪ੍ਰਾਪਤਕਰਤਾ ਉਹਨਾਂ ਨੂੰ ਡਿਕ੍ਰਿਪਟ ਕਰ ਸਕਣ&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;ਸਿਰਫ਼ ਉਹ ਲੋਕ ਜਿਨ੍ਹਾਂ ਕੋਲ ਮੇਲ ਖਾਂਦੀ ਗੁਪਤ ਕੁੰਜੀ ਹੈ, ਪਾਸਵਰਡਾਂ ਨੂੰ ਡਿਕ੍ਰਿਪਟ ਕਰ ਸਕਦੇ ਹਨ।&lt;/p&gt;&lt;p&gt;&lt;b&gt;ਸੁਝਾਅ:&lt;/b&gt; ਸਾਰੇ ਸਾਂਝੇ ਫੋਲਡਰਾਂ ਲਈ ਇੱਕੋ GPG ਕੁੰਜੀ ਦੀ ਵਰਤੋਂ ਕਰੋ।&lt;/p&gt;&lt;p&gt;ਹੋਰ ਵੇਰਵਿਆਂ ਲਈ FAQ ਵੇਖੋ।&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>New Folder: 
+(Will be placed in %1 )</source>
+        <translation type="vanished">ਨਵਾਂ ਫੋਲਡਰ:
 (%1 ਵਿੱਚ ਰੱਖਿਆ ਜਾਵੇਗਾ)</translation>
     </message>
     <message>
@@ -1832,19 +1920,22 @@ You will not be able to change the user list!</source>
         <translation>.gpg-ਐਇਡ ਫਾਈਲ ਬਣਾਉਣ ਵਿੱਚ ਅਸਫਲਤਾ: %1</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>ਰਿਨੈਮ ਫੋਰਡਰ ਟੂ: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
         <translation>ਰਿਨੈਮ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>ਰਿਨੈਮ ਫੋਰਡਰ ਟੂ: </translation>
+        <translation type="vanished">ਰਿਨੈਮ ਫੋਰਡਰ ਟੂ: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>ਰਿਨੇਮ ਫਾਈਲ ਨੂੰ ਕਿਉਂਜ਼ ਕਰੋ </translation>
+        <translation type="vanished">ਰਿਨੇਮ ਫਾਈਲ ਨੂੰ ਕਿਉਂਜ਼ ਕਰੋ </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -1900,15 +1991,12 @@ Continue?</source>
         <translation type="unfinished">ਪਾਸਵਰਡ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ: %2 ਵਿੱਚੋਂ %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
-        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
-        <translation>ਜਨਤਕ ਕੀ ਐਕਸਪੋਰਟ ਕਰੋ</translation>
+        <translation type="vanished">ਜਨਤਕ ਕੀ ਐਕਸਪੋਰਟ ਕਰੋ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1925"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;ਆਪਣੀ ਜਨਤਕ ਕੀ ਐਕਸਪੋਰਟ ਕਰੋ&lt;/h3&gt;&lt;p&gt;ਕੋਈ ਸਾਈਨਿੰਗ ਕੀ ਸੰਰਚਿਤ ਨਹੀਂ ਹੈ। QtPass ਸੈਟਿੰਗਜ਼ &amp;gt; GPG ਕੁੰਜੀਆਂ ਵਿੱਚ ਇੱਕ ਸੈੱਟ ਕਰੋ, ਜਾਂ ਟਰਮੀਨਲ ਵਿੱਚ ਇਹ ਚਲਾਓ:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;ਫਿਰ ਫਾਈਲ ਆਪਣੇ ਸਾਥੀਆਂ ਨੂੰ ਭੇਜੋ।&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;ਆਪਣੀ ਜਨਤਕ ਕੀ ਐਕਸਪੋਰਟ ਕਰੋ&lt;/h3&gt;&lt;p&gt;ਕੋਈ ਸਾਈਨਿੰਗ ਕੀ ਸੰਰਚਿਤ ਨਹੀਂ ਹੈ। QtPass ਸੈਟਿੰਗਜ਼ &amp;gt; GPG ਕੁੰਜੀਆਂ ਵਿੱਚ ਇੱਕ ਸੈੱਟ ਕਰੋ, ਜਾਂ ਟਰਮੀਨਲ ਵਿੱਚ ਇਹ ਚਲਾਓ:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;ਫਿਰ ਫਾਈਲ ਆਪਣੇ ਸਾਥੀਆਂ ਨੂੰ ਭੇਜੋ।&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1944"/>
@@ -1925,14 +2013,12 @@ Continue?</source>
         <translation>gpg ਤੋਂ ਕੋਈ ਆਉਟਪੁੱਟ ਨਹੀਂ।</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>GPG ਨਾਲ ਪਾਸਵਰਡ ਸਾਂਝੇ ਕਰਨਾ</translation>
+        <translation type="vanished">GPG ਨਾਲ ਪਾਸਵਰਡ ਸਾਂਝੇ ਕਰਨਾ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;GPG ਨਾਲ ਪਾਸਵਰਡ ਸਾਂਝੇ ਕਰਨਾ&lt;/h3&gt;&lt;p&gt;ਹੋਰ ਵਰਤੋਂਕਾਰਾਂ ਨਾਲ ਪਾਸਵਰਡ ਸਾਂਝੇ ਕਰਨ ਲਈ:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;ਆਪਣੀ ਜਨਤਕ ਕੁੰਜੀ ਐਕਸਪੋਰਟ ਕਰੋ&lt;/b&gt; ਅਤੇ ਇਸਨੂੰ ਸਾਥੀਆਂ ਨੂੰ ਭੇਜੋ&lt;/li&gt;&lt;li&gt;&lt;b&gt;ਸਾਥੀਆਂ ਦੀਆਂ ਜਨਤਕ ਕੁੰਜੀਆਂ ਨੂੰ ਆਯਾਤ ਕਰੋ&lt;/b&gt; ਆਪਣੀ GPG keyring ਵਿੱਚ&lt;/li&gt;&lt;li&gt;&lt;b&gt;ਪਾਸਵਰਡਾਂ ਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਕਰੋ&lt;/b&gt; ਤਾਂ ਜੋ ਸਾਰੇ ਪ੍ਰਾਪਤਕਰਤਾ ਉਹਨਾਂ ਨੂੰ ਡਿਕ੍ਰਿਪਟ ਕਰ ਸਕਣ&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;ਸਿਰਫ਼ ਉਹ ਲੋਕ ਜਿਨ੍ਹਾਂ ਕੋਲ ਮੇਲ ਖਾਂਦੀ ਗੁਪਤ ਕੁੰਜੀ ਹੈ, ਪਾਸਵਰਡਾਂ ਨੂੰ ਡਿਕ੍ਰਿਪਟ ਕਰ ਸਕਦੇ ਹਨ।&lt;/p&gt;&lt;p&gt;&lt;b&gt;ਸੁਝਾਅ:&lt;/b&gt; ਸਾਰੇ ਸਾਂਝੇ ਫੋਲਡਰਾਂ ਲਈ ਇੱਕੋ GPG ਕੁੰਜੀ ਦੀ ਵਰਤੋਂ ਕਰੋ।&lt;/p&gt;&lt;p&gt;ਹੋਰ ਵੇਰਵਿਆਂ ਲਈ FAQ ਵੇਖੋ।&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;GPG ਨਾਲ ਪਾਸਵਰਡ ਸਾਂਝੇ ਕਰਨਾ&lt;/h3&gt;&lt;p&gt;ਹੋਰ ਵਰਤੋਂਕਾਰਾਂ ਨਾਲ ਪਾਸਵਰਡ ਸਾਂਝੇ ਕਰਨ ਲਈ:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;ਆਪਣੀ ਜਨਤਕ ਕੁੰਜੀ ਐਕਸਪੋਰਟ ਕਰੋ&lt;/b&gt; ਅਤੇ ਇਸਨੂੰ ਸਾਥੀਆਂ ਨੂੰ ਭੇਜੋ&lt;/li&gt;&lt;li&gt;&lt;b&gt;ਸਾਥੀਆਂ ਦੀਆਂ ਜਨਤਕ ਕੁੰਜੀਆਂ ਨੂੰ ਆਯਾਤ ਕਰੋ&lt;/b&gt; ਆਪਣੀ GPG keyring ਵਿੱਚ&lt;/li&gt;&lt;li&gt;&lt;b&gt;ਪਾਸਵਰਡਾਂ ਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਕਰੋ&lt;/b&gt; ਤਾਂ ਜੋ ਸਾਰੇ ਪ੍ਰਾਪਤਕਰਤਾ ਉਹਨਾਂ ਨੂੰ ਡਿਕ੍ਰਿਪਟ ਕਰ ਸਕਣ&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;ਸਿਰਫ਼ ਉਹ ਲੋਕ ਜਿਨ੍ਹਾਂ ਕੋਲ ਮੇਲ ਖਾਂਦੀ ਗੁਪਤ ਕੁੰਜੀ ਹੈ, ਪਾਸਵਰਡਾਂ ਨੂੰ ਡਿਕ੍ਰਿਪਟ ਕਰ ਸਕਦੇ ਹਨ।&lt;/p&gt;&lt;p&gt;&lt;b&gt;ਸੁਝਾਅ:&lt;/b&gt; ਸਾਰੇ ਸਾਂਝੇ ਫੋਲਡਰਾਂ ਲਈ ਇੱਕੋ GPG ਕੁੰਜੀ ਦੀ ਵਰਤੋਂ ਕਰੋ।&lt;/p&gt;&lt;p&gt;ਹੋਰ ਵੇਰਵਿਆਂ ਲਈ FAQ ਵੇਖੋ।&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2052,13 +2138,21 @@ Continue?</source>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>ਚਰਿੱਤਰ ਸੈੱਟ:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>ਸਾਰੇ ਚਿੱਤਰ</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">ਚਰਿੱਤਰ ਸੈੱਟ:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">ਸਾਰੇ ਚਿੱਤਰ</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2154,9 +2248,13 @@ Continue?</source>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">ਪ੍ਰਕਿਰਿਆ ਨਿਕਾਸ</translation>
+        <translation type="obsolete">ਪ੍ਰਕਿਰਿਆ ਨਿਕਾਸ</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>ਪ੍ਰਕਿਰਿਆ ਨਿਕਾਸ</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2287,8 +2385,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>ਆਟੀਓ ਕੋਡ</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">ਆਟੀਓ ਕੋਡ</translation>
+        <translation type="obsolete">ਆਟੀਓ ਕੋਡ</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

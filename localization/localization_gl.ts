@@ -86,14 +86,12 @@
         <translation>Autolimpar panel após:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>Xerar Contrasinal:</translation>
+        <translation type="vanished">Xerar Contrasinal:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Lonxitude do contrasinal:</translation>
+        <translation type="vanished">Lonxitude do contrasinal:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -111,9 +109,8 @@
         <translation>Elixe o conxunto de caracteres para a creación do contrasinal</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Todos os caracteres</translation>
+        <translation type="vanished">Todos os caracteres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -139,6 +136,11 @@
         <location filename="../src/configdialog.ui" line="742"/>
         <source>Include special symbols</source>
         <translation>Incluír símbolos especiais</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>Clave de sinatura</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1448"/>
@@ -288,6 +290,21 @@
         <translation type="unfinished">Ctrl+M tamén a mostra ou a oculta desde a xanela principal</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Xerar Contrasinal:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Lonxitude do contrasinal:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Todos os caracteres</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="988"/>
         <source>Select password storage program:</source>
         <translation>Elixir o programa de almacenaxe de contrasinais:</translation>
@@ -407,9 +424,8 @@
         <translation>Ruta ao directorio do almacén de contrasinais</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>Clave de sinatura</translation>
+        <translation type="vanished">Clave de sinatura</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -568,8 +584,12 @@ O valor seguirase a gardar tal como se introduciu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Novo perfil</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Novo perfil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -859,8 +879,12 @@ e-mail</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Exportar chave pública</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Exportar chave pública</translation>
     </message>
     <message>
@@ -874,13 +898,17 @@ e-mail</translation>
         <translation type="unfinished">Copiar ao portapapeis</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>Gardar no ficheiro…</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">Copiar ao portapapeis</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Gardar no ficheiro…</translation>
+        <translation type="vanished">Gardar no ficheiro…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -893,10 +921,14 @@ e-mail</translation>
         <translation>Copiado!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Gardar a chave pública</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Gardar a chave pública</translation>
     </message>
     <message>
@@ -1186,10 +1218,8 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>Importar chave GPG</translation>
+        <translation type="vanished">Importar chave GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1197,9 +1227,8 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
         <translation>Importa unha chave pública GPG dun ficheiro ou pégaa abaixo. A chave debe estar en formato ASCII-armored.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Desde ficheiro…</translation>
+        <translation type="vanished">Desde ficheiro…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1209,6 +1238,17 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">Desde o portapapeis</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>Importar chave GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>Desde ficheiro…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1226,17 +1266,12 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
         <translation>Chave GPG ASCII-armored</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Todos os ficheiros</translation>
+        <translation type="vanished">Todos os ficheiros</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Importar chave</translation>
+        <translation type="vanished">Importar chave</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1251,6 +1286,19 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 non parece unha chave GPG en formato ASCII-armored. Convértea primeiro con &lt;code&gt;gpg --armor --export&lt;/code&gt;, ou pega o bloque ASCII-armored a través de &lt;b&gt;Desde o portapapeis&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Todos os ficheiros</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Importar chave</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1463,6 +1511,13 @@ Expire-Date: 0
         <translation>QtPass</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="120"/>
+        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <source>Search password</source>
+        <translation>Buscar contrasinal</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
         <translation type="unfinished">&amp;Ficheiro</translation>
@@ -1601,11 +1656,8 @@ p, li { white-space: pre-wrap; }
         <translation>Elixir perfil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="808"/>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Search Password</source>
-        <translation>Buscar contrasinal</translation>
+        <translation type="vanished">Buscar contrasinal</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
@@ -1840,9 +1892,8 @@ p, li { white-space: pre-wrap; }
         <translation>Non se atopa código OTP para esta entrada de contrasinal</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Contrasinal e contido oculto</translation>
+        <translation type="vanished">Contrasinal e contido oculto</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -1919,6 +1970,11 @@ p, li { white-space: pre-wrap; }
 (Will be placed in %1 )</source>
         <translation type="vanished">Novo ficheiro de contrasinal: 
 (situarase en %1)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Contrasinal e contido oculto</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1231"/>
@@ -2002,6 +2058,23 @@ p, li { white-space: pre-wrap; }
         <translation>Novo cartafol</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <source>New folder: 
+(Will be placed in %1 )</source>
+        <translation>Novo cartafol: 
+(situarase en %1)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Novo nome do cartafol: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Novo nome do ficheiro: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Esta entrada contén unha configuración OTP, non un contrasinal</translation>
@@ -2029,13 +2102,31 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1924"/>
         <location filename="../src/mainwindow.cpp" line="1943"/>
-        <source>Export Public Key</source>
+        <source>Export public key</source>
         <translation>Exportar chave pública</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
-        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Exporta a túa chave pública&lt;/h3&gt;&lt;p&gt;Non hai ningunha chave de sinatura configurada. Configura unha en Axustes de QtPass &amp;gt; chaves GPG, ou executa isto nun terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Logo envía o ficheiro aos teus compañeiros de equipo.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>Compartir contrasinais con GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Compartir contrasinais con GPG&lt;/h3&gt;&lt;p&gt;Para compartir contrasinais con outros usuarios:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporta a túa chave pública&lt;/b&gt; e envíaa aos compañeiros de equipo&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importa as chaves públicas dos compañeiros&lt;/b&gt; ao teu chaveiro GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Cifra de novo os contrasinais&lt;/b&gt; para que todos os destinatarios poidan descifralos&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Só as persoas que teñan unha chave secreta correspondente poden descifrar os contrasinais.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Suxestión:&lt;/b&gt; Usa a mesma chave GPG para todos os cartafoles compartidos.&lt;/p&gt;&lt;p&gt;Consulta as preguntas frecuentes para máis detalles.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Export Public Key</source>
+        <translation type="vanished">Exportar chave pública</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Exporta a túa chave pública&lt;/h3&gt;&lt;p&gt;Non hai ningunha chave de sinatura configurada. Configura unha en Axustes de QtPass &amp;gt; chaves GPG, ou executa isto nun terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Logo envía o ficheiro aos teus compañeiros de equipo.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1944"/>
@@ -2052,24 +2143,21 @@ p, li { white-space: pre-wrap; }
         <translation>Sen saída de gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Compartir contrasinais con GPG</translation>
+        <translation type="vanished">Compartir contrasinais con GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Compartir contrasinais con GPG&lt;/h3&gt;&lt;p&gt;Para compartir contrasinais con outros usuarios:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporta a túa chave pública&lt;/b&gt; e envíaa aos compañeiros de equipo&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importa as chaves públicas dos compañeiros&lt;/b&gt; ao teu chaveiro GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Cifra de novo os contrasinais&lt;/b&gt; para que todos os destinatarios poidan descifralos&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Só as persoas que teñan unha chave secreta correspondente poden descifrar os contrasinais.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Suxestión:&lt;/b&gt; Usa a mesma chave GPG para todos os cartafoles compartidos.&lt;/p&gt;&lt;p&gt;Consulta as preguntas frecuentes para máis detalles.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Compartir contrasinais con GPG&lt;/h3&gt;&lt;p&gt;Para compartir contrasinais con outros usuarios:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporta a túa chave pública&lt;/b&gt; e envíaa aos compañeiros de equipo&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importa as chaves públicas dos compañeiros&lt;/b&gt; ao teu chaveiro GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Cifra de novo os contrasinais&lt;/b&gt; para que todos os destinatarios poidan descifralos&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Só as persoas que teñan unha chave secreta correspondente poden descifrar os contrasinais.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Suxestión:&lt;/b&gt; Usa a mesma chave GPG para todos os cartafoles compartidos.&lt;/p&gt;&lt;p&gt;Consulta as preguntas frecuentes para máis detalles.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
         <translation type="vanished">Volver cifrar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Novo cartafol: 
+        <translation type="vanished">Novo cartafol: 
 (situarase en %1)</translation>
     </message>
     <message>
@@ -2095,14 +2183,12 @@ p, li { white-space: pre-wrap; }
         <translation>Cambiar nome ao ficheiro</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>Novo nome do cartafol: </translation>
+        <translation type="vanished">Novo nome do cartafol: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>Novo nome do ficheiro: </translation>
+        <translation type="vanished">Novo nome do ficheiro: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1826"/>
@@ -2261,13 +2347,21 @@ Continuar?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Conxunto de caracteres:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Todos os caracteres</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Conxunto de caracteres:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Todos os caracteres</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2363,9 +2457,13 @@ Continuar?</translation>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Saída do proceso</translation>
+        <translation type="obsolete">Saída do proceso</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>Saída do proceso</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2496,8 +2594,12 @@ Continuar?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
-        <source>OTP Code</source>
+        <source>OTP code</source>
         <translation>Código OTP</translation>
+    </message>
+    <message>
+        <source>OTP Code</source>
+        <translation type="vanished">Código OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

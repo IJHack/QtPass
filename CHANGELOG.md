@@ -109,6 +109,10 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   `#ifdef QT_DEBUG` blocks around a `dbg()` macro. Release builds keep it
   compiled in; `QT_LOGGING_RULES="qtpass.debug=true"` turns it on, so a user
   can attach a trace to a bug report without a debug build (see the FAQ)
+- User-interface strings use sentence case throughout ("Export public key",
+  "Password length:", "OTP code", "Rename folder to:", …); the handful that
+  still capitalised Every Word were separate strings for translators, who get
+  the existing translations carried over
 - The configuration dialog is a sidebar of pages instead of four tabs with a
   long scrolling first one: General (window and tray, extensions), Clipboard
   (clipboard and content panel), Passwords (generation and template), Git,

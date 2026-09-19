@@ -92,14 +92,12 @@
         <translation>Εμφάνιση εξόδου διεργασίας</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>Δημιουργία κωδικού πρόσβασης:</translation>
+        <translation type="vanished">Δημιουργία κωδικού πρόσβασης:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Μήκος κωδικού πρόσβασης:</translation>
+        <translation type="vanished">Μήκος κωδικού πρόσβασης:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -117,9 +115,8 @@
         <translation>Επιλογή συνόλου χαρακτήρων για τη δημιουργία κωδικού πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Όλοι οι χαρακτήρες</translation>
+        <translation type="vanished">Όλοι οι χαρακτήρες</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -145,6 +142,11 @@
         <location filename="../src/configdialog.ui" line="742"/>
         <source>Include special symbols</source>
         <translation>Συμπεριλάβετε ειδικά σύμβολα</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>Κλειδί υπογραφής</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1448"/>
@@ -278,6 +280,21 @@
         <translation type="unfinished">Το Ctrl+M την εμφανίζει ή την αποκρύπτει και από το κύριο παράθυρο</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Δημιουργία κωδικού πρόσβασης:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Μήκος κωδικού πρόσβασης:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Όλοι οι χαρακτήρες</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="988"/>
         <source>Select password storage program:</source>
         <translation>Επιλέξτε πρόγραμμα αποθήκευσης κωδικού πρόσβασης:</translation>
@@ -407,9 +424,8 @@
         <translation>Διαδρομή προς τον κατάλογο αποθήκευσης κωδικών πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>Κλειδί υπογραφής</translation>
+        <translation type="vanished">Κλειδί υπογραφής</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -568,8 +584,12 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Νέο Προφίλ</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Νέο Προφίλ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -792,8 +812,12 @@ e-mail</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Εξαγωγή δημόσιου κλειδιού</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Εξαγωγή δημόσιου κλειδιού</translation>
     </message>
     <message>
@@ -807,13 +831,17 @@ e-mail</translation>
         <translation type="unfinished">Αντιγραφή στο πρόχειρο</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>Αποθήκευση σε αρχείο…</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">Αντιγραφή στο πρόχειρο</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Αποθήκευση σε αρχείο…</translation>
+        <translation type="vanished">Αποθήκευση σε αρχείο…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -826,10 +854,14 @@ e-mail</translation>
         <translation>Αντιγράφηκε!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Αποθήκευση δημόσιου κλειδιού</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Αποθήκευση δημόσιου κλειδιού</translation>
     </message>
     <message>
@@ -1119,10 +1151,8 @@ You will not be able to decrypt any newly added passwords!</source>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>Εισαγωγή κλειδιού GPG</translation>
+        <translation type="vanished">Εισαγωγή κλειδιού GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1130,9 +1160,8 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>Εισαγάγετε ένα δημόσιο κλειδί GPG από αρχείο ή επικολλήστε το παρακάτω. Το κλειδί πρέπει να είναι σε μορφή ASCII-armored.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Από αρχείο…</translation>
+        <translation type="vanished">Από αρχείο…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1142,6 +1171,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">Από το πρόχειρο</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>Εισαγωγή κλειδιού GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>Από αρχείο…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1159,17 +1199,12 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>Κλειδί GPG ASCII-armored</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Όλα τα αρχεία</translation>
+        <translation type="vanished">Όλα τα αρχεία</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Εισαγωγή κλειδιού</translation>
+        <translation type="vanished">Εισαγωγή κλειδιού</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1184,6 +1219,19 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">Το %1 δεν μοιάζει με κλειδί GPG ASCII-armored. Μετατρέψτε το πρώτα με &lt;code&gt;gpg --armor --export&lt;/code&gt;, ή επικολλήστε το ASCII-armored μπλοκ μέσω &lt;b&gt;Από το πρόχειρο&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Όλα τα αρχεία</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Εισαγωγή κλειδιού</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1373,10 +1421,14 @@ Expire-Date: 0
         <translation>Επιλογή προφίλ</translation>
     </message>
     <message>
+        <source>Search Password</source>
+        <translation type="vanished">Αναζήτηση κωδικού πρόσβασης</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="808"/>
         <location filename="../src/mainwindow.cpp" line="1022"/>
-        <source>Search Password</source>
+        <source>Search password</source>
         <translation>Αναζήτηση κωδικού πρόσβασης</translation>
     </message>
     <message>
@@ -1667,9 +1719,8 @@ Expire-Date: 0
         <translation>Κανένας κωδικός OTP που βρέθηκε σε αυτόν τον κωδικό πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Απόκρυψη κωδικού πρόσβασης και περιεχομένου</translation>
+        <translation type="vanished">Απόκρυψη κωδικού πρόσβασης και περιεχομένου</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="923"/>
@@ -1707,6 +1758,11 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="752"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">Αδυναμία αποκρυπτογράφησης αυτής της καταχώρησης κωδικού πρόσβασης</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Απόκρυψη κωδικού πρόσβασης και περιεχομένου</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -1841,6 +1897,23 @@ Expire-Date: 0
         <translation>Τι είναι αυτό;</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <source>New folder: 
+(Will be placed in %1 )</source>
+        <translation>Νέος φάκελος:
+(Θα τοποθετηθεί στο %1)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Μετονομασία φακέλου σε: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Μετονομασία αρχείου σε: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1866"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Επανακρυπτογράφηση κωδικών πρόσβασης...</translation>
@@ -1861,19 +1934,37 @@ Expire-Date: 0
         <translation type="unfinished">Επανακρυπτογράφηση κωδικών πρόσβασης: %1 από %2</translation>
     </message>
     <message>
-        <source>Open %1 in browser</source>
-        <translation type="obsolete">Άνοιγμα %1 στο πρόγραμμα περιήγησης</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.cpp" line="1924"/>
         <location filename="../src/mainwindow.cpp" line="1943"/>
-        <source>Export Public Key</source>
+        <source>Export public key</source>
         <translation>Εξαγωγή δημόσιου κλειδιού</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
-        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Εξαγωγή του δημόσιου κλειδιού σας&lt;/h3&gt;&lt;p&gt;Δεν έχει διαμορφωθεί κλειδί υπογραφής. Ορίστε ένα στις Ρυθμίσεις QtPass &amp;gt; Κλειδιά GPG, ή εκτελέστε σε τερματικό:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Στη συνέχεια στείλτε το αρχείο στα μέλη της ομάδας σας.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>Κοινή χρήση κωδικών με GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Κοινή χρήση κωδικών με GPG&lt;/h3&gt;&lt;p&gt;Για να μοιραστείτε κωδικούς με άλλους χρήστες:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Εξαγάγετε το δημόσιο κλειδί σας&lt;/b&gt; και στείλτε το στα μέλη της ομάδας σας&lt;/li&gt;&lt;li&gt;&lt;b&gt;Εισαγάγετε τα δημόσια κλειδιά των μελών της ομάδας&lt;/b&gt; στην κλειδοθήκη GPG σας&lt;/li&gt;&lt;li&gt;&lt;b&gt;Επανακρυπτογραφήστε τους κωδικούς&lt;/b&gt; ώστε όλοι οι παραλήπτες να μπορούν να τους αποκρυπτογραφήσουν&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Μόνο τα άτομα με αντίστοιχο μυστικό κλειδί μπορούν να αποκρυπτογραφήσουν τους κωδικούς.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Συμβουλή:&lt;/b&gt; Χρησιμοποιήστε το ίδιο κλειδί GPG για όλους τους κοινόχρηστους φακέλους.&lt;/p&gt;&lt;p&gt;Δείτε τις Συχνές Ερωτήσεις για περισσότερες λεπτομέρειες.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Open %1 in browser</source>
+        <translation type="obsolete">Άνοιγμα %1 στο πρόγραμμα περιήγησης</translation>
+    </message>
+    <message>
+        <source>Export Public Key</source>
+        <translation type="vanished">Εξαγωγή δημόσιου κλειδιού</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Εξαγωγή του δημόσιου κλειδιού σας&lt;/h3&gt;&lt;p&gt;Δεν έχει διαμορφωθεί κλειδί υπογραφής. Ορίστε ένα στις Ρυθμίσεις QtPass &amp;gt; Κλειδιά GPG, ή εκτελέστε σε τερματικό:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Στη συνέχεια στείλτε το αρχείο στα μέλη της ομάδας σας.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1944"/>
@@ -1890,24 +1981,21 @@ Expire-Date: 0
         <translation>Καμία έξοδος από το gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Κοινή χρήση κωδικών με GPG</translation>
+        <translation type="vanished">Κοινή χρήση κωδικών με GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Κοινή χρήση κωδικών με GPG&lt;/h3&gt;&lt;p&gt;Για να μοιραστείτε κωδικούς με άλλους χρήστες:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Εξαγάγετε το δημόσιο κλειδί σας&lt;/b&gt; και στείλτε το στα μέλη της ομάδας σας&lt;/li&gt;&lt;li&gt;&lt;b&gt;Εισαγάγετε τα δημόσια κλειδιά των μελών της ομάδας&lt;/b&gt; στην κλειδοθήκη GPG σας&lt;/li&gt;&lt;li&gt;&lt;b&gt;Επανακρυπτογραφήστε τους κωδικούς&lt;/b&gt; ώστε όλοι οι παραλήπτες να μπορούν να τους αποκρυπτογραφήσουν&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Μόνο τα άτομα με αντίστοιχο μυστικό κλειδί μπορούν να αποκρυπτογραφήσουν τους κωδικούς.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Συμβουλή:&lt;/b&gt; Χρησιμοποιήστε το ίδιο κλειδί GPG για όλους τους κοινόχρηστους φακέλους.&lt;/p&gt;&lt;p&gt;Δείτε τις Συχνές Ερωτήσεις για περισσότερες λεπτομέρειες.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Κοινή χρήση κωδικών με GPG&lt;/h3&gt;&lt;p&gt;Για να μοιραστείτε κωδικούς με άλλους χρήστες:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Εξαγάγετε το δημόσιο κλειδί σας&lt;/b&gt; και στείλτε το στα μέλη της ομάδας σας&lt;/li&gt;&lt;li&gt;&lt;b&gt;Εισαγάγετε τα δημόσια κλειδιά των μελών της ομάδας&lt;/b&gt; στην κλειδοθήκη GPG σας&lt;/li&gt;&lt;li&gt;&lt;b&gt;Επανακρυπτογραφήστε τους κωδικούς&lt;/b&gt; ώστε όλοι οι παραλήπτες να μπορούν να τους αποκρυπτογραφήσουν&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Μόνο τα άτομα με αντίστοιχο μυστικό κλειδί μπορούν να αποκρυπτογραφήσουν τους κωδικούς.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Συμβουλή:&lt;/b&gt; Χρησιμοποιήστε το ίδιο κλειδί GPG για όλους τους κοινόχρηστους φακέλους.&lt;/p&gt;&lt;p&gt;Δείτε τις Συχνές Ερωτήσεις για περισσότερες λεπτομέρειες.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
         <translation type="vanished">Επανακρυπτογράφηση</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Νέος φάκελος:
+        <translation type="vanished">Νέος φάκελος:
 (Θα τοποθετηθεί στο %1)</translation>
     </message>
     <message>
@@ -1933,9 +2021,8 @@ Expire-Date: 0
         <translation>Μετονομασία αρχείου</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>Μετονομασία φακέλου σε: </translation>
+        <translation type="vanished">Μετονομασία φακέλου σε: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1664"/>
@@ -1943,9 +2030,8 @@ Expire-Date: 0
         <translation type="unfinished">Νέος φάκελος</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>Μετονομασία αρχείου σε: </translation>
+        <translation type="vanished">Μετονομασία αρχείου σε: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -2109,13 +2195,21 @@ Continue?</source>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Σύνολο χαρακτήρων:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Όλοι οι χαρακτήρες</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Σύνολο χαρακτήρων:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Όλοι οι χαρακτήρες</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2211,9 +2305,13 @@ Continue?</source>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Έξοδος διεργασίας</translation>
+        <translation type="obsolete">Έξοδος διεργασίας</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>Έξοδος διεργασίας</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2344,8 +2442,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>Κωδικός OTP</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">Κωδικός OTP</translation>
+        <translation type="obsolete">Κωδικός OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Import GPG Key</string>
+   <string>Import GPG key</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../resources.qrc">
@@ -39,7 +39,7 @@
      <item>
       <widget class="QPushButton" name="fileButton">
        <property name="text">
-        <string>From File...</string>
+        <string>From file...</string>
        </property>
       </widget>
      </item>

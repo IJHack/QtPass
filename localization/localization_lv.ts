@@ -92,14 +92,12 @@
         <translation>Rādīt procesa izvadi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>Paroles ģenerēšana:</translation>
+        <translation type="vanished">Paroles ģenerēšana:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Paroles garums:</translation>
+        <translation type="vanished">Paroles garums:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -117,9 +115,8 @@
         <translation>Atlasīt rakstzīmju kopu paroles ģenerēšanai</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Visas rakstzīmes</translation>
+        <translation type="vanished">Visas rakstzīmes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -305,6 +302,21 @@
         <translation type="unfinished">Ctrl+M to rāda vai slēpj arī no galvenā loga</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Paroles ģenerēšana:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Paroles garums:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Visas rakstzīmes</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
         <source>Choose the gpg executable</source>
@@ -439,9 +451,8 @@
         <translation>Ceļš uz paroļu glabātuves katalogu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>Parakstīšanas atslēga</translation>
+        <translation type="vanished">Parakstīšanas atslēga</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -514,6 +525,11 @@ e-mail</source>
         <translation>lietotājvārds
 URL
 e-pasts</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>Parakstīšanas atslēga</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
@@ -639,8 +655,12 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Jauns Profils</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Jauns Profils</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -788,8 +808,12 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Eksportēt publisku atslēgu</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Eksportēt publisku atslēgu</translation>
     </message>
     <message>
@@ -803,13 +827,17 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <translation type="unfinished">Kopēt starpliktuvē</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>Saglabāt failā...</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">Kopēt starpliktuvē</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Saglabāt failā...</translation>
+        <translation type="vanished">Saglabāt failā...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -822,10 +850,14 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <translation>Nokopēts!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Saglabājiet publisko atslēgu</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Saglabājiet publisko atslēgu</translation>
     </message>
     <message>
@@ -1118,10 +1150,8 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>Importēt GPG atslēgu</translation>
+        <translation type="vanished">Importēt GPG atslēgu</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1129,9 +1159,8 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <translation>Importējiet GPG publisko atslēgu no faila vai ielīmējiet to zemāk. Atslēgai jābūt ASCII armor-formātā.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>No faila...</translation>
+        <translation type="vanished">No faila...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1141,6 +1170,17 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">No starpliktuves</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>Importēt GPG atslēgu</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>No faila...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1158,17 +1198,12 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <translation>GPG atslēga ASCII armor-formātā</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Visi faili</translation>
+        <translation type="vanished">Visi faili</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Importēt atslēgu</translation>
+        <translation type="vanished">Importēt atslēgu</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1183,6 +1218,19 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 neizskatās pēc ASCII armor-formātā GPG atslēgas. Vispirms pārveidojiet to ar &lt;code&gt;gpg --armor --export&lt;/code&gt; vai ielīmējiet ASCII armor-formātā bloku no &lt;b&gt;starpliktuves&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Visi faili</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Importēt atslēgu</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1336,10 +1384,14 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <translation>Izvēlieties profiļu</translation>
     </message>
     <message>
+        <source>Search Password</source>
+        <translation type="vanished">Meklēt paroli</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="808"/>
         <location filename="../src/mainwindow.cpp" line="1022"/>
-        <source>Search Password</source>
+        <source>Search password</source>
         <translation>Meklēt paroli</translation>
     </message>
     <message>
@@ -1643,9 +1695,8 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <translation>Nav atrasts OTP kods šajā paroles ievades virzienā</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Parole un saturs paslēpts</translation>
+        <translation type="vanished">Parole un saturs paslēpts</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -1724,6 +1775,11 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
 (Will be placed in %1 )</source>
         <translation type="vanished">Jaunais paroles faila nosaukums: 
 (Tiks ievietots %1)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Parole un saturs paslēpts</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1231"/>
@@ -1808,9 +1864,41 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1665"/>
-        <source>New Folder: 
+        <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Jauna mape:
+(Tiks ievietota mapē %1)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Pārveidot failu uz: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
+        <source>Export public key</source>
+        <translation>Eksportēt publisko atslēgu</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1925"/>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Eksportējiet Jūsu Publisko Atslēgu&lt;/h3&gt;&lt;p&gt;Nav konfigurēta parakstīšanas atslēga. Iestatiet to QtPass iestatījumos &amp;gt; GPG atslēgas vai izpildiet šo terminālī:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jūsu-atslēgas-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Tad nosūtiet failu savai komandai.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>Paroļu kopīgums ar GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Paroļu kopīgošana ar GPG&lt;/h3&gt;&lt;p&gt;Lai kopīgotu paroles ar citiem lietotājiem:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksportējiet savu publisko atslēgu&lt;/b&gt; un nosūtiet to komandas biedriem&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importējiet komandas biedru publiskās atslēgas&lt;/b&gt; savā GPG atslēgu saišķī&lt;/li&gt;&lt;li&gt;&lt;b&gt;Pāršifrējiet paroles&lt;/b&gt;, lai visi saņēmēji varētu tās atšifrēt&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Paroles var atšifrēt tikai tie, kuriem ir atbilstoša slepenā atslēga.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Padoms:&lt;/b&gt; Izmantojiet vienu un to pašu GPG atslēgu visām koplietotajām mapēm.&lt;/p&gt;&lt;p&gt;Plašāku informāciju skatiet BUJ.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>New Folder: 
+(Will be placed in %1 )</source>
+        <translation type="vanished">Jauna mape:
 (Tiks ievietota mapē %1)</translation>
     </message>
     <message>
@@ -1831,19 +1919,22 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <translation>Neizdevās izveidot .gpg-id failu: %1</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Pārveidot mapi uz: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
         <translation>Pārveidot failu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>Pārveidot mapi uz: </translation>
+        <translation type="vanished">Pārveidot mapi uz: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>Pārveidot failu uz: </translation>
+        <translation type="vanished">Pārveidot failu uz: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -1899,15 +1990,12 @@ Turpināt?</translation>
         <translation type="unfinished">Notiek paroļu pāršifrēšana: %1 no %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
-        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
-        <translation>Eksportēt publisko atslēgu</translation>
+        <translation type="vanished">Eksportēt publisko atslēgu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1925"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Eksportējiet Jūsu Publisko Atslēgu&lt;/h3&gt;&lt;p&gt;Nav konfigurēta parakstīšanas atslēga. Iestatiet to QtPass iestatījumos &amp;gt; GPG atslēgas vai izpildiet šo terminālī:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jūsu-atslēgas-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Tad nosūtiet failu savai komandai.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Eksportējiet Jūsu Publisko Atslēgu&lt;/h3&gt;&lt;p&gt;Nav konfigurēta parakstīšanas atslēga. Iestatiet to QtPass iestatījumos &amp;gt; GPG atslēgas vai izpildiet šo terminālī:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jūsu-atslēgas-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Tad nosūtiet failu savai komandai.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1944"/>
@@ -1924,14 +2012,12 @@ Turpināt?</translation>
         <translation>Nav gpg izvades.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Paroļu kopīgums ar GPG</translation>
+        <translation type="vanished">Paroļu kopīgums ar GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Paroļu kopīgošana ar GPG&lt;/h3&gt;&lt;p&gt;Lai kopīgotu paroles ar citiem lietotājiem:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksportējiet savu publisko atslēgu&lt;/b&gt; un nosūtiet to komandas biedriem&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importējiet komandas biedru publiskās atslēgas&lt;/b&gt; savā GPG atslēgu saišķī&lt;/li&gt;&lt;li&gt;&lt;b&gt;Pāršifrējiet paroles&lt;/b&gt;, lai visi saņēmēji varētu tās atšifrēt&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Paroles var atšifrēt tikai tie, kuriem ir atbilstoša slepenā atslēga.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Padoms:&lt;/b&gt; Izmantojiet vienu un to pašu GPG atslēgu visām koplietotajām mapēm.&lt;/p&gt;&lt;p&gt;Plašāku informāciju skatiet BUJ.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Paroļu kopīgošana ar GPG&lt;/h3&gt;&lt;p&gt;Lai kopīgotu paroles ar citiem lietotājiem:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksportējiet savu publisko atslēgu&lt;/b&gt; un nosūtiet to komandas biedriem&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importējiet komandas biedru publiskās atslēgas&lt;/b&gt; savā GPG atslēgu saišķī&lt;/li&gt;&lt;li&gt;&lt;b&gt;Pāršifrējiet paroles&lt;/b&gt;, lai visi saņēmēji varētu tās atšifrēt&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Paroles var atšifrēt tikai tie, kuriem ir atbilstoša slepenā atslēga.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Padoms:&lt;/b&gt; Izmantojiet vienu un to pašu GPG atslēgu visām koplietotajām mapēm.&lt;/p&gt;&lt;p&gt;Plašāku informāciju skatiet BUJ.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2051,13 +2137,21 @@ Turpināt?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Rakstzīmju kopa:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Visas rakstzīmes</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Rakstzīmju kopa:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Visas rakstzīmes</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2153,9 +2247,13 @@ Turpināt?</translation>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Procesa izvade</translation>
+        <translation type="obsolete">Procesa izvade</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>Procesa izvade</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2287,8 +2385,12 @@ Turpināt?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>OTP kods</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP kods</translation>
+        <translation type="obsolete">OTP kods</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

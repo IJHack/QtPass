@@ -15,7 +15,7 @@ class QPushButtonWithClipboard;
  * @class OtpCodeWidget
  * @brief Live one-time password display: code, copy button and countdown.
  *
- * Rendered by PasswordDisplayPanel as the value side of the "OTP Code" row. It
+ * Rendered by PasswordDisplayPanel as the value side of the "OTP code" row. It
  * is a widget rather than a set of loose children so that its refresh timer is
  * a child of the thing it updates: PasswordDisplayPanel::clear() deletes the
  * row's widgets, which destroys this widget and therefore the timer. A timer

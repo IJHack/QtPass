@@ -92,14 +92,12 @@
         <translation>İşlem çıktısını göster</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>Parola Oluşturma:</translation>
+        <translation type="vanished">Parola Oluşturma:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Parola Uzunluğu:</translation>
+        <translation type="vanished">Parola Uzunluğu:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -117,9 +115,8 @@
         <translation>Parola oluşturmak için karakter setini seçin</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Tüm Karakterler</translation>
+        <translation type="vanished">Tüm Karakterler</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -309,6 +306,21 @@
         <translation type="unfinished">Ctrl+M de ana pencerede gösterir veya gizler</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Parola Oluşturma:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Parola Uzunluğu:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Tüm Karakterler</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
         <source>Choose the gpg executable</source>
@@ -443,9 +455,8 @@
         <translation>Parola deposu dizininin yolu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>İmzalama Anahtarı</translation>
+        <translation type="vanished">İmzalama Anahtarı</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -518,6 +529,11 @@ e-mail</source>
         <translation>giriş
 URL
 e-posta</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>İmzalama Anahtarı</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
@@ -633,8 +649,12 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Yeni Profil</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Yeni Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -792,8 +812,12 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Genel Anahtarı Dışa Aktar</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Genel Anahtarı Dışa Aktar</translation>
     </message>
     <message>
@@ -807,13 +831,17 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
         <translation type="unfinished">Panoya kopyala</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>Dosyaya Kaydet...</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">Panoya kopyala</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Dosyaya Kaydet...</translation>
+        <translation type="vanished">Dosyaya Kaydet...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -826,10 +854,14 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
         <translation>Kopyalandı!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Genel Anahtarı Kaydet</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Genel Anahtarı Kaydet</translation>
     </message>
     <message>
@@ -1116,10 +1148,8 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>GPG Anahtarını İçe Aktar</translation>
+        <translation type="vanished">GPG Anahtarını İçe Aktar</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1127,9 +1157,8 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
         <translation>GPG genel anahtarını dosyadan içe aktarın veya aşağıya yapıştırın. Anahtar ASCII-armored formatında olmalıdır.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Dosyadan...</translation>
+        <translation type="vanished">Dosyadan...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1139,6 +1168,17 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">Panodan</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>GPG Anahtarını İçe Aktar</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>Dosyadan...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1156,17 +1196,12 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
         <translation>ASCII-armored GPG anahtarı</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Tüm Dosyalar</translation>
+        <translation type="vanished">Tüm Dosyalar</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Anahtarı İçe Aktar</translation>
+        <translation type="vanished">Anahtarı İçe Aktar</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1181,6 +1216,19 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1, ASCII-armored bir GPG anahtarı gibi görünmüyor. Önce &lt;code&gt;gpg --armor --export&lt;/code&gt; komutuyla dönüştürün veya ASCII-armored bloğu &lt;b&gt;Panodan&lt;/b&gt; yapıştırın.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Tüm Dosyalar</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Anahtarı İçe Aktar</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1398,10 +1446,14 @@ Expire-Date: 0
         <translation>Profil seç</translation>
     </message>
     <message>
+        <source>Search Password</source>
+        <translation type="vanished">Parola Ara</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="808"/>
         <location filename="../src/mainwindow.cpp" line="1022"/>
-        <source>Search Password</source>
+        <source>Search password</source>
         <translation>Parola Ara</translation>
     </message>
     <message>
@@ -1703,9 +1755,8 @@ Expire-Date: 0
         <translation>Bu parola girişinde OTP kodu bulunamadı</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Parola ve İçerik gizlendi</translation>
+        <translation type="vanished">Parola ve İçerik gizlendi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="923"/>
@@ -1742,6 +1793,11 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="752"/>
         <source>Could not decrypt this password entry</source>
         <translation>Bu parola girdisinin şifresi çözülemedi</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Parola ve İçerik gizlendi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -1879,6 +1935,23 @@ Expire-Date: 0
         <translation type="unfinished">Yeni klasör</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <source>New folder: 
+(Will be placed in %1 )</source>
+        <translation>Yeni Klasör: 
+(%1 içine konulacak)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Klasörü Yeniden Adlandır: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Dosyayı Yeniden Adlandır: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Bu girdi bir parola değil, bir OTP şifresi içerir</translation>
@@ -1906,13 +1979,31 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1924"/>
         <location filename="../src/mainwindow.cpp" line="1943"/>
-        <source>Export Public Key</source>
+        <source>Export public key</source>
         <translation>Açık Anahtarı Dışa Aktar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
-        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Genel Anahtarınızı Dışa Aktarın&lt;/h3&gt;&lt;p&gt;Yapılandırılmış bir imzalama anahtarı yok. QtPass Ayarları &amp;gt; GPG anahtarları içinden bir tane ayarlayın veya bunu bir terminalde çalıştırın:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ardından dosyayı takım arkadaşlarınıza gönderin.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>GPG ile Parola Paylaşımı</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;GPG ile Parolaları Paylaşma&lt;/h3&gt;&lt;p&gt;Diğer kullanıcılarla parolaları paylaşmak için:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Genel anahtarınızı dışa aktarın&lt;/b&gt; ve takım arkadaşlarınıza gönderin&lt;/li&gt;&lt;li&gt;&lt;b&gt;Takım arkadaşlarınızın genel anahtarlarını içe aktarın&lt;/b&gt; GPG anahtarlık halkanıza&lt;/li&gt;&lt;li&gt;&lt;b&gt;Parolaları yeniden şifreleyin&lt;/b&gt; böylece tüm alıcılar şifresini çözebilir&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Yalnızca eşleşen gizli anahtara sahip kişiler parolaların şifresini çözebilir.&lt;/p&gt;&lt;p&gt;&lt;b&gt;İpucu:&lt;/b&gt; Tüm paylaşılan klasörler için aynı GPG anahtarını kullanın.&lt;/p&gt;&lt;p&gt;Daha fazla ayrıntı için SSS sayfasına bakın.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Export Public Key</source>
+        <translation type="vanished">Açık Anahtarı Dışa Aktar</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Genel Anahtarınızı Dışa Aktarın&lt;/h3&gt;&lt;p&gt;Yapılandırılmış bir imzalama anahtarı yok. QtPass Ayarları &amp;gt; GPG anahtarları içinden bir tane ayarlayın veya bunu bir terminalde çalıştırın:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ardından dosyayı takım arkadaşlarınıza gönderin.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1944"/>
@@ -1929,9 +2020,8 @@ Expire-Date: 0
         <translation>gpg&apos;den çıktı yok.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;GPG ile Parolaları Paylaşma&lt;/h3&gt;&lt;p&gt;Diğer kullanıcılarla parolaları paylaşmak için:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Genel anahtarınızı dışa aktarın&lt;/b&gt; ve takım arkadaşlarınıza gönderin&lt;/li&gt;&lt;li&gt;&lt;b&gt;Takım arkadaşlarınızın genel anahtarlarını içe aktarın&lt;/b&gt; GPG anahtarlık halkanıza&lt;/li&gt;&lt;li&gt;&lt;b&gt;Parolaları yeniden şifreleyin&lt;/b&gt; böylece tüm alıcılar şifresini çözebilir&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Yalnızca eşleşen gizli anahtara sahip kişiler parolaların şifresini çözebilir.&lt;/p&gt;&lt;p&gt;&lt;b&gt;İpucu:&lt;/b&gt; Tüm paylaşılan klasörler için aynı GPG anahtarını kullanın.&lt;/p&gt;&lt;p&gt;Daha fazla ayrıntı için SSS sayfasına bakın.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;GPG ile Parolaları Paylaşma&lt;/h3&gt;&lt;p&gt;Diğer kullanıcılarla parolaları paylaşmak için:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Genel anahtarınızı dışa aktarın&lt;/b&gt; ve takım arkadaşlarınıza gönderin&lt;/li&gt;&lt;li&gt;&lt;b&gt;Takım arkadaşlarınızın genel anahtarlarını içe aktarın&lt;/b&gt; GPG anahtarlık halkanıza&lt;/li&gt;&lt;li&gt;&lt;b&gt;Parolaları yeniden şifreleyin&lt;/b&gt; böylece tüm alıcılar şifresini çözebilir&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Yalnızca eşleşen gizli anahtara sahip kişiler parolaların şifresini çözebilir.&lt;/p&gt;&lt;p&gt;&lt;b&gt;İpucu:&lt;/b&gt; Tüm paylaşılan klasörler için aynı GPG anahtarını kullanın.&lt;/p&gt;&lt;p&gt;Daha fazla ayrıntı için SSS sayfasına bakın.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;To export your public GPG key, run this in terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc %1&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;&lt;p&gt;Your key ID: You can find it in QtPass Settings &amp;gt; GPG keys.&lt;/p&gt;</source>
@@ -1946,9 +2036,8 @@ Expire-Date: 0
         <translation type="vanished">&lt;h3&gt;Alıcı Ekle&lt;/h3&gt;&lt;p&gt;Bir takım arkadaşınızın açık anahtarını eklemek için:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Açık anahtarını .asc dosyası olarak kaydedin&lt;/li&gt;&lt;li&gt;Anahtar metnini kopyalayın&lt;/li&gt;&lt;li&gt;%1 dosyasını açın&lt;/li&gt;&lt;li&gt;Dosyaya yeni anahtar kimliğini ekleyin&lt;/li&gt;&lt;li&gt;Onlarla paylaşmak için parolaları yeniden şifreleyin&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Doğruluğu sağlamak için tam parmak izini kullanın.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>GPG ile Parola Paylaşımı</translation>
+        <translation type="vanished">GPG ile Parola Paylaşımı</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; to their own folders&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
@@ -1959,10 +2048,9 @@ Expire-Date: 0
         <translation type="vanished">Yeniden şifre</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Yeni Klasör: 
+        <translation type="vanished">Yeni Klasör: 
 (%1 içine konulacak)</translation>
     </message>
     <message>
@@ -1988,14 +2076,12 @@ Expire-Date: 0
         <translation>Dosyayı yeniden adlandır</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>Klasörü Yeniden Adlandır: </translation>
+        <translation type="vanished">Klasörü Yeniden Adlandır: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>Dosyayı Yeniden Adlandır: </translation>
+        <translation type="vanished">Dosyayı Yeniden Adlandır: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1826"/>
@@ -2143,13 +2229,21 @@ Devam edilsin mi?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Karakter Kümesi:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Tüm Karakterler</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Karakter Kümesi:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Tüm Karakterler</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2245,9 +2339,13 @@ Devam edilsin mi?</translation>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">İşlem çıktısı</translation>
+        <translation type="obsolete">İşlem çıktısı</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>İşlem çıktısı</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2377,8 +2475,12 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
-        <source>OTP Code</source>
+        <source>OTP code</source>
         <translation>OTP Kodu</translation>
+    </message>
+    <message>
+        <source>OTP Code</source>
+        <translation type="vanished">OTP Kodu</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

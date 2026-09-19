@@ -92,14 +92,12 @@
         <translation>Vis prosessens utdata</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>Generering av passord:</translation>
+        <translation type="vanished">Generering av passord:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Passordslengde:</translation>
+        <translation type="vanished">Passordslengde:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -117,9 +115,8 @@
         <translation>Velg tegnsett for generering av passord</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Alle tegn</translation>
+        <translation type="vanished">Alle tegn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -145,6 +142,11 @@
         <location filename="../src/configdialog.ui" line="742"/>
         <source>Include special symbols</source>
         <translation>Inkluder spesialsymboler</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>Signeringsnøkkel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1448"/>
@@ -278,6 +280,21 @@
         <translation type="unfinished">Ctrl+M viser eller skjuler den også fra hovedvinduet</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Generering av passord:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Passordslengde:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Alle tegn</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="988"/>
         <source>Select password storage program:</source>
         <translation>Velg passordslagringsprogram:</translation>
@@ -407,9 +424,8 @@
         <translation>Sti til passordlagerets katalog</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>Signeringsnøkkel</translation>
+        <translation type="vanished">Signeringsnøkkel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -568,8 +584,12 @@ Verdien vil fortsatt bli lagret som oppgitt.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Ny profil</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Ny profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -792,8 +812,12 @@ e-post</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Eksporter offentlig nøkkel</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Eksporter offentlig nøkkel</translation>
     </message>
     <message>
@@ -807,13 +831,17 @@ e-post</translation>
         <translation type="unfinished">Kopier til utklippstavle</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>Lagre til fil…</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">Kopier til utklippstavle</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Lagre til fil…</translation>
+        <translation type="vanished">Lagre til fil…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -826,10 +854,14 @@ e-post</translation>
         <translation>Kopiert!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Lagre offentlig nøkkel</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Lagre offentlig nøkkel</translation>
     </message>
     <message>
@@ -1119,10 +1151,8 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>Importer GPG-nøkkel</translation>
+        <translation type="vanished">Importer GPG-nøkkel</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1130,9 +1160,8 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
         <translation>Importer en offentlig GPG-nøkkel fra fil eller lim den inn nedenfor. Nøkkelen må være i ASCII-armored format.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Fra fil…</translation>
+        <translation type="vanished">Fra fil…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1142,6 +1171,17 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">Fra utklippstavle</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>Importer GPG-nøkkel</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>Fra fil…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1159,17 +1199,12 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
         <translation>ASCII-armored GPG-nøkkel</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Alle filer</translation>
+        <translation type="vanished">Alle filer</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Importer nøkkel</translation>
+        <translation type="vanished">Importer nøkkel</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1184,6 +1219,19 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 ser ikke ut som en ASCII-armored GPG-nøkkel. Konverter den først med &lt;code&gt;gpg --armor --export&lt;/code&gt;, eller lim inn den armored blokken via &lt;b&gt;Fra utklippstavle&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Alle filer</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Importer nøkkel</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1369,11 +1417,8 @@ Utløpsdato: 0
         <translation>Velg profil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="808"/>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Search Password</source>
-        <translation>Søk etter passord</translation>
+        <translation type="vanished">Søk etter passord</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
@@ -1583,6 +1628,13 @@ Utløpsdato: 0
         <translation>Oppdater</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="120"/>
+        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <source>Search password</source>
+        <translation>Søk etter passord</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
         <translation type="unfinished">&amp;Fil</translation>
@@ -1676,9 +1728,8 @@ Utløpsdato: 0
         <translation>Ingen engangskode funnet i denne passordoppføringen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Passord og innhold skjult</translation>
+        <translation type="vanished">Passord og innhold skjult</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -1755,6 +1806,11 @@ Utløpsdato: 0
 (Will be placed in %1 )</source>
         <translation type="vanished">Ny passordsfil:
 (Vil bli plassert i %1)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Passord og innhold skjult</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1231"/>
@@ -1838,6 +1894,23 @@ Utløpsdato: 0
         <translation type="unfinished">Ny mappe</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <source>New folder: 
+(Will be placed in %1 )</source>
+        <translation>Ny mappe: 
+(Vil bli plassert i %1 )</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Endre navn på mappe til: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Endre filnavn til: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Denne oppføringen inneholder en OTP-hemmelighet, ikke et passord</translation>
@@ -1865,13 +1938,31 @@ Utløpsdato: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1924"/>
         <location filename="../src/mainwindow.cpp" line="1943"/>
-        <source>Export Public Key</source>
+        <source>Export public key</source>
         <translation>Eksporter offentlig nøkkel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
-        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Eksporter din offentlige nøkkel&lt;/h3&gt;&lt;p&gt;Ingen signeringsnøkkel er konfigurert. Sett en i QtPass-innstillingene &amp;gt; GPG-nøkler, eller kjør dette i et terminalvindu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Send deretter filen til lagkameratene dine.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>Dele passord med GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Dele passord med GPG&lt;/h3&gt;&lt;p&gt;For å dele passord med andre brukere:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksporter din offentlige nøkkel&lt;/b&gt; og send den til lagkameratene&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importer lagkameratenes offentlige nøkler&lt;/b&gt; til ditt GPG-nøkkelknippe&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-krypter passord&lt;/b&gt; slik at alle mottakere kan dekryptere dem&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Bare personer som har en tilsvarende hemmelig nøkkel kan dekryptere passordene.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tips:&lt;/b&gt; Bruk samme GPG-nøkkel for alle delte mapper.&lt;/p&gt;&lt;p&gt;Se OSS for flere detaljer.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Export Public Key</source>
+        <translation type="vanished">Eksporter offentlig nøkkel</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Eksporter din offentlige nøkkel&lt;/h3&gt;&lt;p&gt;Ingen signeringsnøkkel er konfigurert. Sett en i QtPass-innstillingene &amp;gt; GPG-nøkler, eller kjør dette i et terminalvindu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Send deretter filen til lagkameratene dine.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1944"/>
@@ -1888,24 +1979,21 @@ Utløpsdato: 0
         <translation>Ingen utdata fra gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Dele passord med GPG</translation>
+        <translation type="vanished">Dele passord med GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Dele passord med GPG&lt;/h3&gt;&lt;p&gt;For å dele passord med andre brukere:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksporter din offentlige nøkkel&lt;/b&gt; og send den til lagkameratene&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importer lagkameratenes offentlige nøkler&lt;/b&gt; til ditt GPG-nøkkelknippe&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-krypter passord&lt;/b&gt; slik at alle mottakere kan dekryptere dem&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Bare personer som har en tilsvarende hemmelig nøkkel kan dekryptere passordene.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tips:&lt;/b&gt; Bruk samme GPG-nøkkel for alle delte mapper.&lt;/p&gt;&lt;p&gt;Se OSS for flere detaljer.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Dele passord med GPG&lt;/h3&gt;&lt;p&gt;For å dele passord med andre brukere:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksporter din offentlige nøkkel&lt;/b&gt; og send den til lagkameratene&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importer lagkameratenes offentlige nøkler&lt;/b&gt; til ditt GPG-nøkkelknippe&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-krypter passord&lt;/b&gt; slik at alle mottakere kan dekryptere dem&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Bare personer som har en tilsvarende hemmelig nøkkel kan dekryptere passordene.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tips:&lt;/b&gt; Bruk samme GPG-nøkkel for alle delte mapper.&lt;/p&gt;&lt;p&gt;Se OSS for flere detaljer.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
         <translation type="vanished">Krypter på nytt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Ny mappe: 
+        <translation type="vanished">Ny mappe: 
 (Vil bli plassert i %1 )</translation>
     </message>
     <message>
@@ -1931,14 +2019,12 @@ Utløpsdato: 0
         <translation>Gi fil nytt navn</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>Endre navn på mappe til: </translation>
+        <translation type="vanished">Endre navn på mappe til: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>Endre filnavn til: </translation>
+        <translation type="vanished">Endre filnavn til: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1826"/>
@@ -2086,13 +2172,21 @@ Fortsette?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Tegnsett:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Alle tegn</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Tegnsett:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Alle tegn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2188,9 +2282,13 @@ Fortsette?</translation>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Prosessutdata</translation>
+        <translation type="obsolete">Prosessutdata</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>Prosessutdata</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2321,8 +2419,12 @@ Fortsette?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>Engangskode</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">Engangskode</translation>
+        <translation type="obsolete">Engangskode</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

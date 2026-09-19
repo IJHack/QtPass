@@ -96,14 +96,12 @@
         <translation>プロセス出力を表示</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>パスワード生成:</translation>
+        <translation type="vanished">パスワード生成:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>パスワードの長さ:</translation>
+        <translation type="vanished">パスワードの長さ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -121,9 +119,8 @@
         <translation>パスワード生成で使用する文字セットを選択</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>全ての文字</translation>
+        <translation type="vanished">全ての文字</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -189,6 +186,21 @@
         <location filename="../src/configdialog.ui" line="237"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>パスワードファイルの内容内を検索できるようにします。すべてのファイルを復号する必要があり、大規模なストアでは遅くなる場合があります。</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>パスワード生成:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>パスワードの長さ:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>全ての文字</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1047"/>
@@ -271,8 +283,12 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1435"/>
-        <source>Signing Key</source>
+        <source>Signing key</source>
         <translation>署名キー</translation>
+    </message>
+    <message>
+        <source>Signing Key</source>
+        <translation type="vanished">署名キー</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -592,8 +608,12 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>新規プロファイル</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">新規プロファイル</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -848,8 +868,12 @@ URL
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">公開鍵をエクスポート</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>公開鍵をエクスポート</translation>
     </message>
     <message>
@@ -863,13 +887,17 @@ URL
         <translation type="unfinished">クリップボードにコピー</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>ファイルに保存…</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">クリップボードにコピー</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>ファイルに保存…</translation>
+        <translation type="vanished">ファイルに保存…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -882,10 +910,14 @@ URL
         <translation>コピーしました!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">公開鍵を保存</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>公開鍵を保存</translation>
     </message>
     <message>
@@ -1172,10 +1204,8 @@ You will not be able to decrypt any newly added passwords!</source>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>GPG 鍵をインポート</translation>
+        <translation type="vanished">GPG 鍵をインポート</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1183,9 +1213,8 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>GPG 公開鍵をファイルからインポートするか、下に貼り付けてください。鍵は ASCII-armored 形式である必要があります。</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>ファイルから…</translation>
+        <translation type="vanished">ファイルから…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1195,6 +1224,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">クリップボードから</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>GPG 鍵をインポート</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>ファイルから…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1212,17 +1252,12 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>ASCII-armored GPG 鍵</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>すべてのファイル</translation>
+        <translation type="vanished">すべてのファイル</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>鍵をインポート</translation>
+        <translation type="vanished">鍵をインポート</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1237,6 +1272,19 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 は ASCII-armored の GPG 鍵には見えません。先に &lt;code&gt;gpg --armor --export&lt;/code&gt; で変換するか、armored ブロックを &lt;b&gt;クリップボードから&lt;/b&gt; 貼り付けてください。</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>すべてのファイル</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>鍵をインポート</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1549,6 +1597,13 @@ p, li { white-space: pre-wrap; }
         <translation>プロファイルの選択</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="120"/>
+        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <source>Search password</source>
+        <translation>パスワードを検索</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
         <translation>パスワード内容内を検索 (pass grep)</translation>
@@ -1697,11 +1752,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">クリア</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="808"/>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Search Password</source>
-        <translation>パスワードを検索</translation>
+        <translation type="vanished">パスワードを検索</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -1786,9 +1838,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">クリップボードをクリアできませんでした</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>パスワードとコンテンツを隠す</translation>
+        <translation type="vanished">パスワードとコンテンツを隠す</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -1910,10 +1961,9 @@ p, li { white-space: pre-wrap; }
         <translation>パスワードを追加</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>新しいフォルダ:
+        <translation type="vanished">新しいフォルダ:
 (%1 に配置されます）</translation>
     </message>
     <message>
@@ -1946,6 +1996,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1288"/>
         <source>No OTP code found in this password entry</source>
         <translation>このパスワード入力欄にOTPコードが見つかりませんでした</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>パスワードとコンテンツを隠す</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -2046,6 +2101,23 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">新しいフォルダー</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <source>New folder: 
+(Will be placed in %1 )</source>
+        <translation>新しいフォルダ:
+(%1 に配置されます）</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>フォルダ名を変更: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>ファイル名を変更: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">この項目にはパスワードではなく OTP シークレットが含まれています</translation>
@@ -2073,13 +2145,31 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1924"/>
         <location filename="../src/mainwindow.cpp" line="1943"/>
-        <source>Export Public Key</source>
+        <source>Export public key</source>
         <translation>公開鍵をエクスポート</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
-        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;公開鍵をエクスポート&lt;/h3&gt;&lt;p&gt;署名鍵が設定されていません。QtPass の設定 &amp;gt; GPG 鍵 で設定するか、ターミナルで次を実行してください:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;その後、ファイルをチームメンバーに送ってください。&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>GPG でパスワードを共有</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;GPG でパスワードを共有&lt;/h3&gt;&lt;p&gt;他のユーザーとパスワードを共有するには:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;自分の公開鍵をエクスポート&lt;/b&gt;してチームメンバーに送る&lt;/li&gt;&lt;li&gt;&lt;b&gt;チームメンバーの公開鍵をインポート&lt;/b&gt;して GPG 鍵束に追加する&lt;/li&gt;&lt;li&gt;&lt;b&gt;パスワードを再暗号化&lt;/b&gt;して、すべての受信者が復号できるようにする&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;対応する秘密鍵を持っている人だけがパスワードを復号できます。&lt;/p&gt;&lt;p&gt;&lt;b&gt;ヒント:&lt;/b&gt; 共有フォルダーすべてに同じ GPG 鍵を使用してください。&lt;/p&gt;&lt;p&gt;詳細は FAQ を参照してください。&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Export Public Key</source>
+        <translation type="vanished">公開鍵をエクスポート</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation type="vanished">&lt;h3&gt;公開鍵をエクスポート&lt;/h3&gt;&lt;p&gt;署名鍵が設定されていません。QtPass の設定 &amp;gt; GPG 鍵 で設定するか、ターミナルで次を実行してください:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;その後、ファイルをチームメンバーに送ってください。&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1944"/>
@@ -2096,14 +2186,12 @@ p, li { white-space: pre-wrap; }
         <translation>gpg からの出力がありません。</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>GPG でパスワードを共有</translation>
+        <translation type="vanished">GPG でパスワードを共有</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;GPG でパスワードを共有&lt;/h3&gt;&lt;p&gt;他のユーザーとパスワードを共有するには:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;自分の公開鍵をエクスポート&lt;/b&gt;してチームメンバーに送る&lt;/li&gt;&lt;li&gt;&lt;b&gt;チームメンバーの公開鍵をインポート&lt;/b&gt;して GPG 鍵束に追加する&lt;/li&gt;&lt;li&gt;&lt;b&gt;パスワードを再暗号化&lt;/b&gt;して、すべての受信者が復号できるようにする&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;対応する秘密鍵を持っている人だけがパスワードを復号できます。&lt;/p&gt;&lt;p&gt;&lt;b&gt;ヒント:&lt;/b&gt; 共有フォルダーすべてに同じ GPG 鍵を使用してください。&lt;/p&gt;&lt;p&gt;詳細は FAQ を参照してください。&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;GPG でパスワードを共有&lt;/h3&gt;&lt;p&gt;他のユーザーとパスワードを共有するには:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;自分の公開鍵をエクスポート&lt;/b&gt;してチームメンバーに送る&lt;/li&gt;&lt;li&gt;&lt;b&gt;チームメンバーの公開鍵をインポート&lt;/b&gt;して GPG 鍵束に追加する&lt;/li&gt;&lt;li&gt;&lt;b&gt;パスワードを再暗号化&lt;/b&gt;して、すべての受信者が復号できるようにする&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;対応する秘密鍵を持っている人だけがパスワードを復号できます。&lt;/p&gt;&lt;p&gt;&lt;b&gt;ヒント:&lt;/b&gt; 共有フォルダーすべてに同じ GPG 鍵を使用してください。&lt;/p&gt;&lt;p&gt;詳細は FAQ を参照してください。&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
@@ -2132,14 +2220,12 @@ p, li { white-space: pre-wrap; }
         <translation>ファイル名を変更する</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>フォルダ名を変更: </translation>
+        <translation type="vanished">フォルダ名を変更: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>ファイル名を変更: </translation>
+        <translation type="vanished">ファイル名を変更: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1826"/>
@@ -2298,13 +2384,21 @@ Continue?</source>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>文字セット:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>全ての文字</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">文字セット:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">全ての文字</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2400,9 +2494,13 @@ Continue?</source>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">プロセス出力</translation>
+        <translation type="obsolete">プロセス出力</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>プロセス出力</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2532,8 +2630,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>OTP コード</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP コード</translation>
+        <translation type="obsolete">OTP コード</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

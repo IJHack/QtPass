@@ -96,14 +96,12 @@
         <translation>Toon de procesuitvoer</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>Wachtwoordgenerator:</translation>
+        <translation type="vanished">Wachtwoordgenerator:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Wachtwoordlengte:</translation>
+        <translation type="vanished">Wachtwoordlengte:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -121,9 +119,8 @@
         <translation>Kies de door de generator te gebruiken tekenset</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Alle tekens</translation>
+        <translation type="vanished">Alle tekens</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -189,6 +186,21 @@
         <location filename="../src/configdialog.ui" line="237"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Maakt het mogelijk om te zoeken in de inhoud van wachtwoordbestanden. Vereist het decoderen van elk bestand en kan traag zijn bij grote gegevensbestanden.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Wachtwoordgenerator:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Wachtwoordlengte:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Alle tekens</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1047"/>
@@ -271,8 +283,12 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1435"/>
-        <source>Signing Key</source>
+        <source>Signing key</source>
         <translation>Ondertekening</translation>
+    </message>
+    <message>
+        <source>Signing Key</source>
+        <translation type="vanished">Ondertekening</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -592,8 +608,12 @@ De waarde wordt nog steeds opgeslagen zoals ingevoerd.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Nieuw profiel</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Nieuw profiel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -852,8 +872,12 @@ e-mail</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Exporteer publieke sleutel</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Exporteer publieke sleutel</translation>
     </message>
     <message>
@@ -867,13 +891,17 @@ e-mail</translation>
         <translation type="unfinished">Kopiëren naar klembord</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>Opslaan naar bestand…</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">Naar klembord kopiëren</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Opslaan naar bestand…</translation>
+        <translation type="vanished">Opslaan naar bestand…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -886,10 +914,14 @@ e-mail</translation>
         <translation>Gekopieerd!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Sla publieke sleutel op</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Sla publieke sleutel op</translation>
     </message>
     <message>
@@ -1179,10 +1211,8 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>GPG-sleutel importeren</translation>
+        <translation type="vanished">GPG-sleutel importeren</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1190,9 +1220,8 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
         <translation>Importeer een publieke GPG-sleutel uit een bestand of plak deze hieronder. De sleutel moet ASCII-armored zijn.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Uit bestand...</translation>
+        <translation type="vanished">Uit bestand...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1202,6 +1231,17 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">Van klembord</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>GPG-sleutel importeren</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>Uit bestand...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1219,17 +1259,12 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
         <translation>ASCII-armored GPG-sleutel</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Alle bestanden</translation>
+        <translation type="vanished">Alle bestanden</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Sleutel importeren</translation>
+        <translation type="vanished">Sleutel importeren</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1244,6 +1279,19 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 lijkt niet op een ASCII-armored GPG-sleutel. Converteer deze eerst met &lt;code&gt;gpg --armor --export&lt;/code&gt; of plak het ASCII-armored blok via &lt;b&gt;Van klembord&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Alle bestanden</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Sleutel importeren</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1582,6 +1630,13 @@ p, li { white-space: pre-wrap; }
         <translation>Kies een profiel</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="120"/>
+        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <source>Search password</source>
+        <translation>Wachtwoord zoeken</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
         <translation>Zoek in de inhoud van wachtwoorden (pass grep)</translation>
@@ -1730,11 +1785,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Wissen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="808"/>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Search Password</source>
-        <translation>Wachtwoord zoeken</translation>
+        <translation type="vanished">Wachtwoord zoeken</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -1819,9 +1871,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Klembord niet leeg gemaakt aangezien er geen wachtwoord in stond</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Wachtwoord en inhoud verborgen</translation>
+        <translation type="vanished">Wachtwoord en inhoud verborgen</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -1940,10 +1991,9 @@ p, li { white-space: pre-wrap; }
         <translation>Wachtwoord toevoegen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Nieuwe map: 
+        <translation type="vanished">Nieuwe map: 
 (wordt geplaatst in &apos;%1&apos;)</translation>
     </message>
     <message>
@@ -2046,6 +2096,11 @@ p, li { white-space: pre-wrap; }
         <translation>Kon dit wachtwoordbestand niet ontsleutelen</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Wachtwoord en inhoud verborgen</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
         <source>About QtPass</source>
         <translation>Over QtPass</translation>
@@ -2106,6 +2161,13 @@ p, li { white-space: pre-wrap; }
         <translation>Nieuwe map</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <source>New folder: 
+(Will be placed in %1 )</source>
+        <translation>Nieuwe map: 
+(wordt geplaatst in &apos;%1&apos;)</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1676"/>
         <location filename="../src/mainwindow.cpp" line="1698"/>
         <location filename="../src/mainwindow.cpp" line="1825"/>
@@ -2123,19 +2185,48 @@ p, li { white-space: pre-wrap; }
         <translation>Het is niet gelukt om het .gpg-id-bestand aan te maken in: %1</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Mapnaam wijzigen in: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
         <translation>Bestandsnaam wijzigen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
-        <source>Rename Folder To: </source>
-        <translation>Mapnaam wijzigen in: </translation>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Bestandsnaam wijzigen in: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
+        <source>Export public key</source>
+        <translation>Exporteer de publieke sleutel</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1925"/>
+        <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Exporteer je publieke sleutel&lt;/h3&gt;&lt;p&gt;Er is geen ondertekeningssleutel geconfigureerd. Stel er een in bij QtPass-instellingen &gt; GPG-sleutels, of voer dit uit in een terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Stuur het bestand vervolgens naar je teamgenoten.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>Wachtwoorden delen met GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Wachtwoorden delen met GPG&lt;/h3&gt;&lt;p&gt;Om wachtwoorden met andere gebruikers te delen:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporteer je publieke sleutel&lt;/b&gt; en stuur deze naar je teamgenoten&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importeer de publieke sleutels van je teamgenoten&lt;/b&gt; in je GPG-sleutelring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Versleutel de wachtwoorden opnieuw&lt;/b&gt; zodat alle ontvangers ze kunnen ontsleutelen&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Alleen personen met een overeenkomende geheime sleutel kunnen de wachtwoorden ontsleutelen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Gebruik dezelfde GPG-sleutel voor alle gedeelde mappen.&lt;/p&gt;&lt;p&gt;Zie de FAQ voor meer informatie.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Rename Folder To: </source>
+        <translation type="vanished">Mapnaam wijzigen in: </translation>
+    </message>
+    <message>
         <source>Rename File To: </source>
-        <translation>Bestandsnaam wijzigen in: </translation>
+        <translation type="vanished">Bestandsnaam wijzigen in: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -2195,15 +2286,12 @@ Doorgaan?</translation>
         <translation>Wachtwoorden opnieuw versleutelen: %1 van %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
-        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
-        <translation>Exporteer de publieke sleutel</translation>
+        <translation type="vanished">Exporteer de publieke sleutel</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1925"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Exporteer je publieke sleutel&lt;/h3&gt;&lt;p&gt;Er is geen ondertekeningssleutel geconfigureerd. Stel er een in bij QtPass-instellingen &gt; GPG-sleutels, of voer dit uit in een terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Stuur het bestand vervolgens naar je teamgenoten.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Exporteer je publieke sleutel&lt;/h3&gt;&lt;p&gt;Er is geen ondertekeningssleutel geconfigureerd. Stel er een in bij QtPass-instellingen &gt; GPG-sleutels, of voer dit uit in een terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Stuur het bestand vervolgens naar je teamgenoten.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1944"/>
@@ -2220,14 +2308,12 @@ Doorgaan?</translation>
         <translation>Geen uitvoer van gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Wachtwoorden delen met GPG</translation>
+        <translation type="vanished">Wachtwoorden delen met GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Wachtwoorden delen met GPG&lt;/h3&gt;&lt;p&gt;Om wachtwoorden met andere gebruikers te delen:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporteer je publieke sleutel&lt;/b&gt; en stuur deze naar je teamgenoten&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importeer de publieke sleutels van je teamgenoten&lt;/b&gt; in je GPG-sleutelring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Versleutel de wachtwoorden opnieuw&lt;/b&gt; zodat alle ontvangers ze kunnen ontsleutelen&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Alleen personen met een overeenkomende geheime sleutel kunnen de wachtwoorden ontsleutelen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Gebruik dezelfde GPG-sleutel voor alle gedeelde mappen.&lt;/p&gt;&lt;p&gt;Zie de FAQ voor meer informatie.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Wachtwoorden delen met GPG&lt;/h3&gt;&lt;p&gt;Om wachtwoorden met andere gebruikers te delen:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporteer je publieke sleutel&lt;/b&gt; en stuur deze naar je teamgenoten&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importeer de publieke sleutels van je teamgenoten&lt;/b&gt; in je GPG-sleutelring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Versleutel de wachtwoorden opnieuw&lt;/b&gt; zodat alle ontvangers ze kunnen ontsleutelen&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Alleen personen met een overeenkomende geheime sleutel kunnen de wachtwoorden ontsleutelen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Gebruik dezelfde GPG-sleutel voor alle gedeelde mappen.&lt;/p&gt;&lt;p&gt;Zie de FAQ voor meer informatie.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; to their own folders&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
@@ -2362,13 +2448,21 @@ Doorgaan?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Tekenset:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Alle tekens</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Tekenset:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Alle tekens</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2464,8 +2558,12 @@ Doorgaan?</translation>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
+        <translation type="vanished">Procesuitvoer</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
         <translation>Procesuitvoer</translation>
     </message>
     <message>
@@ -2597,8 +2695,12 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
-        <source>OTP Code</source>
+        <source>OTP code</source>
         <translation>OTP-code</translation>
+    </message>
+    <message>
+        <source>OTP Code</source>
+        <translation type="vanished">OTP-code</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

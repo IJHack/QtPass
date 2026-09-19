@@ -328,7 +328,7 @@ void PasswordDisplayPanel::addOtpField(int position, const QString &otpConfig,
     AppSettings inert = s;
     inert.clipBoardType = Enums::CLIPBOARD_NEVER;
     inert.useQrencode = false;
-    addField(position, QObject::tr("OTP Code"),
+    addField(position, QObject::tr("OTP code"),
              QObject::tr("No OTP code found in this password entry"), inert);
     return;
   }
@@ -341,5 +341,5 @@ void PasswordDisplayPanel::addOtpField(int position, const QString &otpConfig,
           &PasswordDisplayPanel::copyRequested);
   frame->layout()->addWidget(otpWidget);
 
-  addRow(position, new QLabel(QObject::tr("OTP Code")), frame);
+  addRow(position, new QLabel(QObject::tr("OTP code")), frame);
 }
