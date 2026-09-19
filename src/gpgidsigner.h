@@ -83,13 +83,30 @@ public:
   auto sign(const QString &gpgIdFile, QString *error = nullptr) const -> bool;
 
   /**
-   * @brief Check `<file>.sig` against @p gpgIdFile: gpg must report a
-   * VALIDSIG whose key or primary-key fingerprint is one of the configured
-   * keys.
-   * @param gpgIdFile The `.gpg-id`.
+   * @brief Check a detached signature against the given bytes: gpg must
+   * report a VALIDSIG whose key or primary-key fingerprint is one of the
+   * configured keys.
+   *
+   * The data goes to gpg on stdin, so the caller verifies exactly the bytes
+   * it is about to use as the recipient list; verifying a path and reading
+   * it again afterwards would let anyone who can write to the store swap
+   * the file in between (#1842).
+   * @param contents The `.gpg-id` bytes.
+   * @param signatureFile The `.gpg-id.sig` next to it.
    * @return true when the signature is good, or when no key is configured.
    */
-  auto verify(const QString &gpgIdFile) const -> bool;
+  auto verify(const QByteArray &contents, const QString &signatureFile) const
+      -> bool;
+
+  /**
+   * @brief Read @p gpgIdFile and verify it against `<file>.sig`.
+   * @param gpgIdFile The `.gpg-id`.
+   * @param contents Receives the bytes that were verified, so the caller can
+   *        parse those and nothing else.
+   * @return true when the signature is good, or when no key is configured.
+   *         false when the file cannot be read.
+   */
+  auto verifyFile(const QString &gpgIdFile, QByteArray *contents) const -> bool;
 
   /**
    * @brief Pick the fingerprints out of gpg's `--status-fd` VALIDSIG line.
@@ -105,7 +122,8 @@ private:
   Exec m_exec;
 
   auto run(const QStringList &args, QString *out = nullptr,
-           QString *err = nullptr) const -> int;
+           QString *err = nullptr, const QString &input = QString()) const
+      -> int;
 };
 
 #endif // SRC_GPGIDSIGNER_H_

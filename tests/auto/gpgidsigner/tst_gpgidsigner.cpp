@@ -1,5 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QFile>
+#include <QTemporaryDir>
 #include <QtTest>
 
 #include "../../../src/gpgidsigner.h"
@@ -15,6 +17,7 @@ class tst_gpgidsigner : public QObject {
   struct Call {
     QString app;
     QStringList args;
+    QString input;
   };
   /// A fake runner that records calls and answers with canned output.
   struct FakeGpg {
@@ -24,8 +27,8 @@ class tst_gpgidsigner : public QObject {
     QString err;
     auto exec() -> GpgIdSigner::Exec {
       return [this](const QString &app, const QStringList &args,
-                    const QString &, QString *o, QString *e) {
-        calls.append({app, args});
+                    const QString &input, QString *o, QString *e) {
+        calls.append({app, args, input});
         if (o)
           *o = out;
         if (e)
@@ -35,6 +38,7 @@ class tst_gpgidsigner : public QObject {
     }
   };
 
+  static const inline QByteArray kGpgId = QByteArrayLiteral("ALICE\nBOB\n");
   static const inline QString kFpr =
       QStringLiteral("0123456789ABCDEF0123456789ABCDEF01234567");
   static const inline QString kPrimary =
@@ -54,6 +58,7 @@ private slots:
   void signUsesTheFirstKeyOnlyAndReportsStderr();
   void signPassesTheFilePathThroughTheWslTranslation();
   void verifyPassesArgsAndAcceptsEitherFingerprint();
+  void verifyFileHandsBackTheBytesItVerified();
   void verifyRejectsUnknownSignerAndGpgFailure();
   void validSigFingerprintsParsesStatusLines();
   void defaultRunnerIsTheExecutor();
@@ -75,7 +80,7 @@ void tst_gpgidsigner::noKeysMeansNothingToSignAndVerifyPasses() {
   const GpgIdSigner signer(QStringLiteral("gpg"), {}, gpg.exec());
   QVERIFY(!signer.enabled());
   QVERIFY(signer.sign(QStringLiteral("/store/.gpg-id")));
-  QVERIFY(signer.verify(QStringLiteral("/store/.gpg-id")));
+  QVERIFY(signer.verify(kGpgId, QStringLiteral("/store/.gpg-id.sig")));
   QVERIFY2(gpg.calls.isEmpty(), "no key configured: gpg must not run");
 }
 
@@ -136,10 +141,10 @@ void tst_gpgidsigner::signPassesTheFilePathThroughTheWslTranslation() {
   QVERIFY(signer.sign(QStringLiteral("/store//sub/../.gpg-id")));
   QCOMPARE(gpg.calls.first().args.last(), QStringLiteral("/store/.gpg-id"));
   gpg.out = validSig(kFpr, kPrimary);
-  QVERIFY(signer.verify(QStringLiteral("/store//.gpg-id")));
-  QCOMPARE(gpg.calls.last().args.mid(2),
-           (QStringList{QStringLiteral("/store/.gpg-id.sig"),
-                        QStringLiteral("/store/.gpg-id")}));
+  QVERIFY(signer.verify(kGpgId, QStringLiteral("/store//.gpg-id.sig")));
+  QCOMPARE(
+      gpg.calls.last().args.mid(2),
+      (QStringList{QStringLiteral("/store/.gpg-id.sig"), QStringLiteral("-")}));
 }
 
 void tst_gpgidsigner::verifyPassesArgsAndAcceptsEitherFingerprint() {
@@ -147,17 +152,19 @@ void tst_gpgidsigner::verifyPassesArgsAndAcceptsEitherFingerprint() {
   gpg.out = validSig(kFpr, kPrimary);
   {
     const GpgIdSigner bySubkey(QStringLiteral("gpg"), {kFpr}, gpg.exec());
-    QVERIFY(bySubkey.verify(QStringLiteral("/store/.gpg-id")));
+    QVERIFY(bySubkey.verify(kGpgId, QStringLiteral("/store/.gpg-id.sig")));
+    // The signed data goes to gpg on stdin: the very bytes the caller holds,
+    // not whatever is in the file by the time gpg opens it.
     QCOMPARE(gpg.calls.first().args,
-             (QStringList{QStringLiteral("--verify"),
-                          QStringLiteral("--status-fd=1"),
-                          QStringLiteral("/store/.gpg-id.sig"),
-                          QStringLiteral("/store/.gpg-id")}));
+             (QStringList{
+                 QStringLiteral("--verify"), QStringLiteral("--status-fd=1"),
+                 QStringLiteral("/store/.gpg-id.sig"), QStringLiteral("-")}));
+    QCOMPARE(gpg.calls.first().input, QString::fromUtf8(kGpgId));
   }
   {
     const GpgIdSigner byPrimary(
         QStringLiteral("gpg"), {QStringLiteral("OTHER"), kPrimary}, gpg.exec());
-    QVERIFY2(byPrimary.verify(QStringLiteral("/store/.gpg-id")),
+    QVERIFY2(byPrimary.verify(kGpgId, QStringLiteral("/store/.gpg-id.sig")),
              "the primary key's fingerprint is accepted too");
   }
 }
@@ -168,16 +175,42 @@ void tst_gpgidsigner::verifyRejectsUnknownSignerAndGpgFailure() {
   const GpgIdSigner signer(
       QStringLiteral("gpg"),
       {QStringLiteral("1111111111111111111111111111111111111111")}, gpg.exec());
-  QVERIFY2(!signer.verify(QStringLiteral("/store/.gpg-id")),
+  QVERIFY2(!signer.verify(kGpgId, QStringLiteral("/store/.gpg-id.sig")),
            "a valid signature by someone else is not good enough");
 
   const GpgIdSigner mine(QStringLiteral("gpg"), {kFpr}, gpg.exec());
   gpg.rc = 1; // BADSIG: gpg exits non-zero, whatever it prints
-  QVERIFY(!mine.verify(QStringLiteral("/store/.gpg-id")));
+  QVERIFY(!mine.verify(kGpgId, QStringLiteral("/store/.gpg-id.sig")));
   gpg.rc = 0;
   gpg.out = QStringLiteral("[GNUPG:] NEWSIG\n[GNUPG:] ERRSIG 1 2 3\n");
-  QVERIFY2(!mine.verify(QStringLiteral("/store/.gpg-id")),
+  QVERIFY2(!mine.verify(kGpgId, QStringLiteral("/store/.gpg-id.sig")),
            "exit 0 without VALIDSIG is not a verification");
+}
+
+void tst_gpgidsigner::verifyFileHandsBackTheBytesItVerified() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString gpgId = dir.filePath(QStringLiteral(".gpg-id"));
+  {
+    QFile f(gpgId);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write(kGpgId);
+  }
+  FakeGpg gpg;
+  gpg.out = validSig(kFpr, kPrimary);
+  const GpgIdSigner signer(QStringLiteral("gpg"), {kFpr}, gpg.exec());
+  QByteArray contents;
+  QVERIFY(signer.verifyFile(gpgId, &contents));
+  QCOMPARE(contents, kGpgId);
+  QCOMPARE(gpg.calls.first().input, QString::fromUtf8(kGpgId));
+  QCOMPARE(gpg.calls.first().args.mid(2),
+           (QStringList{gpgId + QStringLiteral(".sig"), QStringLiteral("-")}));
+
+  QByteArray none;
+  QVERIFY2(!signer.verifyFile(dir.filePath(QStringLiteral("missing")), &none),
+           "an unreadable .gpg-id cannot be verified");
+  QVERIFY(none.isEmpty());
+  QCOMPARE(gpg.calls.size(), 1);
 }
 
 void tst_gpgidsigner::validSigFingerprintsParsesStatusLines() {
@@ -197,7 +230,7 @@ void tst_gpgidsigner::defaultRunnerIsTheExecutor() {
   // exist cannot have a secret key, and must not be reported as having one.
   const GpgIdSigner signer(QStringLiteral("/nonexistent/qtpass-gpg"), {kFpr});
   QVERIFY(!signer.haveSecretKey());
-  QVERIFY(!signer.verify(QStringLiteral("/nonexistent/.gpg-id")));
+  QVERIFY(!signer.verify(kGpgId, QStringLiteral("/nonexistent/.gpg-id.sig")));
 }
 
 QTEST_MAIN(tst_gpgidsigner)

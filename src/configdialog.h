@@ -36,6 +36,14 @@ public:
   ~ConfigDialog() override;
 
   /**
+   * @brief Whether a signing-key setting holds only full key fingerprints
+   * (40 or 64 hexadecimal characters each, space separated); empty passes.
+   * @param setting The profile's signing key field.
+   * @return true when every token is a fingerprint.
+   */
+  static auto isFingerprintList(const QString &setting) -> bool;
+
+  /**
    * @brief Enable or disable clipboard selection mode.
    * @param useSelection true to enable selection mode.
    */
@@ -164,7 +172,7 @@ private:
   };
   /// Designer tooltips of the form fields, put back when validate() has no
   /// complaint about them.
-  QString m_nameTip, m_pathTip;
+  QString m_nameTip, m_pathTip, m_keyTip;
   /// The profiles as shown; index == row in profileList.
   QList<ProfileEntry> m_entries;
   /// Row whose fields the form shows, -1 for none.

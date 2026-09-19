@@ -1,7 +1,9 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "gpgidsigner.h"
+
 #include "executor.h"
+#include <QFile>
 #include <QRegularExpression>
 #include <utility>
 
@@ -30,9 +32,9 @@ auto GpgIdSigner::keysFromSetting(const QString &passSigningKey)
   return keys;
 }
 
-auto GpgIdSigner::run(const QStringList &args, QString *out, QString *err) const
-    -> int {
-  return m_exec(m_gpg, args, QString(), out, err);
+auto GpgIdSigner::run(const QStringList &args, QString *out, QString *err,
+                      const QString &input) const -> int {
+  return m_exec(m_gpg, args, input, out, err);
 }
 
 auto GpgIdSigner::haveSecretKey() const -> bool {
@@ -85,16 +87,18 @@ auto GpgIdSigner::validSigFingerprints(const QString &statusOutput)
   return {m.captured(1), m.captured(2)};
 }
 
-auto GpgIdSigner::verify(const QString &gpgIdFile) const -> bool {
+auto GpgIdSigner::verify(const QByteArray &contents,
+                         const QString &signatureFile) const -> bool {
   if (!enabled()) {
     return true;
   }
   QString out;
-  const QString file = Executor::translatePathForWsl(gpgIdFile, m_gpg);
+  const QString sig = Executor::translatePathForWsl(signatureFile, m_gpg);
+  // "-" makes gpg read the signed data from stdin: the bytes we hold.
   const int rc =
-      run({QStringLiteral("--verify"), QStringLiteral("--status-fd=1"),
-           file + QStringLiteral(".sig"), file},
-          &out);
+      run({QStringLiteral("--verify"), QStringLiteral("--status-fd=1"), sig,
+           QStringLiteral("-")},
+          &out, nullptr, QString::fromUtf8(contents));
   if (rc != 0) {
     qCDebug(lcQtPass) << "GPG verify failed with code:" << rc;
     return false;
@@ -106,4 +110,15 @@ auto GpgIdSigner::verify(const QString &gpgIdFile) const -> bool {
     }
   }
   return false;
+}
+
+auto GpgIdSigner::verifyFile(const QString &gpgIdFile,
+                             QByteArray *contents) const -> bool {
+  QFile file(gpgIdFile);
+  if (!file.open(QIODevice::ReadOnly)) {
+    contents->clear();
+    return false;
+  }
+  *contents = file.readAll();
+  return verify(*contents, gpgIdFile + QStringLiteral(".sig"));
 }

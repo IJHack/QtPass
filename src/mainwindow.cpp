@@ -1678,7 +1678,7 @@ void MainWindow::addFolder() {
     return;
   }
   // A .gpg-id only counts when it is signed once a signing key is configured:
-  // ImitatePass::verifyGpgIdFile and pass (PASSWORD_STORE_SIGNING_KEY) both
+  // ImitatePass::loadVerifiedRecipients and pass (PASSWORD_STORE_SIGNING_KEY) both
   // refuse to encrypt into a folder whose .gpg-id has no matching
   // .gpg-id.sig. Signing here would need the signing secret key and a
   // passphrase prompt just to create a folder, so in that case leave the

@@ -65,6 +65,7 @@ private Q_SLOTS:
   void addProfileSelectsTheNewOne();
   void profileFormEditsTheSelectedProfile();
   void okWaitsForValidProfiles();
+  void signingKeyMustBeAFullFingerprint();
   void activeProfileFollowsRenameAndDeletion();
   void fieldLabelsHaveBuddies();
   void browseButtonsAreNamed();
@@ -676,6 +677,55 @@ void tst_configdialog::sectionHeadersAreGroupBoxes() {
   }
   QVERIFY2(dialog.findChild<QLabel *>(QStringLiteral("label_10")) == nullptr,
            "the pseudo-header labels must be gone");
+}
+
+/**
+ * @brief pass matches PASSWORD_STORE_SIGNING_KEY against VALIDSIG
+ *        fingerprints, so a short key ID would sign and never verify; the
+ *        form refuses anything but full fingerprints.
+ */
+void tst_configdialog::signingKeyMustBeAFullFingerprint() {
+  struct ProfileRestorer {
+    Profiles saved;
+    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
+  } restorer{QtPassSettings::getProfiles()};
+  Profiles profiles;
+  Profile one;
+  one.path = QStringLiteral("/store/one");
+  profiles.insert(QStringLiteral("one"), one);
+  QtPassSettings::setProfiles(profiles);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("one");
+    QtPassSettings::save(s);
+  }
+
+  ConfigDialog dialog(nullptr);
+  auto *key = child<QLineEdit>(dialog, "profileSigningKey");
+  auto *ok = dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"))
+                 ->button(QDialogButtonBox::Ok);
+  QVERIFY(key != nullptr && ok != nullptr);
+  const QString tip = key->toolTip();
+  QVERIFY(ok->isEnabled());
+
+  key->setText(QStringLiteral("0123456789ABCDEF"));
+  emit key->textEdited(key->text());
+  QVERIFY2(!ok->isEnabled(), "a long key ID is not a fingerprint");
+  QVERIFY(key->toolTip().contains(QStringLiteral("40")));
+
+  key->setText(QStringLiteral("0123456789abcdef0123456789abcdef01234567 "
+                              "FEDCBA9876543210FEDCBA9876543210FEDCBA98"));
+  emit key->textEdited(key->text());
+  QVERIFY2(ok->isEnabled(), "two fingerprints, either case, are fine");
+  QCOMPARE(key->toolTip(), tip);
+
+  key->setText(QString());
+  emit key->textEdited(key->text());
+  QVERIFY2(ok->isEnabled(), "no signing key is a valid choice");
+  QVERIFY(ConfigDialog::isFingerprintList(QString()));
+  QVERIFY(
+      !ConfigDialog::isFingerprintList(QStringLiteral("alice@example.org")));
+  QVERIFY(ConfigDialog::isFingerprintList(QString(64, QLatin1Char('a'))));
 }
 
 /**

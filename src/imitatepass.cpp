@@ -67,16 +67,16 @@ ImitatePass::~ImitatePass() {
 /**
  * @brief Blocking process run for the re-encryption helpers.
  *
- * The helpers (verifyGpgIdFile(), getKeysFromFile(), reencryptSingleFile(),
- * createBackupCommit()) are shared between the owning thread and the
- * re-encryption worker; the ImitatePass thread affinity tells the two apart.
- * On the worker the run is handed m_reencryptCancel: nothing is started once
- * the flag is set, and while a process runs the wait polls the flag and, when
- * it gets set, terminates and if need be kills the process. All of that
- * happens on the worker thread, which owns the QProcess. The other threads
- * (cancelReencryptPath(), the destructor) only ever set the flag; they hold
- * neither the QProcess nor its pid, so they cannot act on a process that has
- * exited in the meantime, nor on a pid the OS has since reused.
+ * The helpers (loadVerifiedRecipients(), getKeysFromFile(),
+ * reencryptSingleFile(), createBackupCommit()) are shared between the owning
+ * thread and the re-encryption worker; the ImitatePass thread affinity tells
+ * the two apart. On the worker the run is handed m_reencryptCancel: nothing is
+ * started once the flag is set, and while a process runs the wait polls the
+ * flag and, when it gets set, terminates and if need be kills the process. All
+ * of that happens on the worker thread, which owns the QProcess. The other
+ * threads (cancelReencryptPath(), the destructor) only ever set the flag; they
+ * hold neither the QProcess nor its pid, so they cannot act on a process that
+ * has exited in the meantime, nor on a pid the OS has since reused.
  */
 auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
                                const QString &input, QString *process_out,
@@ -173,13 +173,13 @@ void ImitatePass::Show(QString file) {
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   file = file + ".gpg";
   QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);
-  if (!verifyGpgIdFile(gpgIdPath)) {
+  QStringList recipients;
+  if (!loadVerifiedRecipients(gpgIdPath, &recipients)) {
     emit critical(tr("Check .gpg-id file signature!"),
                   tr("Signature for %1 is invalid.").arg(gpgIdPath));
     return;
   }
   transactionHelper trans(&m_transaction, PASS_INSERT);
-  QStringList recipients = Pass::getRecipientList(file, m_settings.passStore);
   if (recipients.isEmpty()) {
     // Already emit critical signal to notify user of error - no need to throw
     emit critical(tr("Can not edit"),
@@ -326,7 +326,8 @@ auto ImitatePass::signGpgIdFile(const QString &gpgIdFile) -> bool {
                   tr("Failed to sign %1.").arg(gpgIdFile));
     return false;
   }
-  if (!signer.verify(gpgIdFile)) {
+  QByteArray signedBytes;
+  if (!signer.verifyFile(gpgIdFile, &signedBytes)) {
     emit critical(tr("Check .gpg-id file signature!"),
                   tr("Signature for %1 is invalid.").arg(gpgIdFile));
     return false;
@@ -335,8 +336,7 @@ auto ImitatePass::signGpgIdFile(const QString &gpgIdFile) -> bool {
 }
 
 /**
- * @brief Adds a GPG ID file and optionally its signature file to git, then
- * creates corresponding commit(s).
+ * @brief Commit a `.gpg-id` together with its signature.
  *
  * Git runs synchronously here on purpose: Init follows up with reencryptPath,
  * whose backup and re-encryption commits are blocking as well. Queuing the
@@ -345,23 +345,13 @@ auto ImitatePass::signGpgIdFile(const QString &gpgIdFile) -> bool {
  * cancelled commit left the .gpg-id untracked) or the backup commit absorbed
  * the file first and `git commit -- .gpg-id` failed with nothing to commit.
  *
- * @example
- * int rc = ImitatePass::gitAddGpgId(gpgIdFile, gpgIdSigFile, true, true,
- *                                   &out, &err);
- *
- * @param const QString &gpgIdFile - Path to the GPG ID file to add and commit.
- * @param const QString &gpgIdSigFile - Path to the signature file associated
- * with the GPG ID file.
- * @param bool addFile - Whether to stage the GPG ID file before committing.
- * @param bool addSigFile - Whether to stage and commit the signature file.
- * @param QString *out - Receives the concatenated stdout of the git commands.
- * @param QString *err - Receives the concatenated stderr of the git commands.
- * @return int - Exit code of the first failing git command, 0 on success.
+ * Both files go into one commit: two commits left a moment (and, when the
+ * second failed, a history) in which the repository held a new recipient
+ * list with the old signature, which every clone then refused.
  */
 auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
-                              const QString &gpgIdSigFile, bool addFile,
-                              bool addSigFile, QString *out, QString *err)
-    -> int {
+                              const QString &gpgIdSigFile, QString *out,
+                              QString *err) -> int {
   const QString git = m_settings.gitExecutable;
   const QString store = pgit(m_settings.passStore);
   auto run = [&](const QStringList &args) -> int {
@@ -377,28 +367,25 @@ auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
     }
     return rc;
   };
-  int rc = 0;
-  if (addFile) {
-    rc = run({"add", pgit(gpgIdFile)});
-    if (rc != 0) {
-      return rc;
-    }
+  QStringList paths{pgit(gpgIdFile)};
+  if (!gpgIdSigFile.isEmpty()) {
+    paths << pgit(gpgIdSigFile);
   }
-  QString commitPath = gpgIdFile;
-  commitPath.replace(Util::endsWithGpg(), "");
-  rc = run({"commit", "-m", "Added " + commitPath + " using QtPass.", "--",
-            pgit(gpgIdFile)});
-  if (rc != 0 || !addSigFile) {
-    return rc;
-  }
-  rc = run({"add", pgit(gpgIdSigFile)});
+  // add stages new and modified files alike; already-clean ones are a no-op.
+  int rc = run(QStringList{"add", "--"} + paths);
   if (rc != 0) {
     return rc;
   }
-  commitPath = gpgIdSigFile;
-  commitPath.replace(QRegularExpression("\\.gpg$"), "");
-  return run({"commit", "-m", "Added " + commitPath + " using QtPass.", "--",
-              pgit(gpgIdSigFile)});
+  // Re-initialising with the same recipients changes nothing; that is not a
+  // failure, and `git commit` would make it one.
+  if (run(QStringList{"diff", "--cached", "--quiet", "--"} + paths) == 0) {
+    return 0;
+  }
+  QString commitPath = gpgIdFile;
+  commitPath.replace(Util::endsWithGpg(), "");
+  return run(QStringList{"commit", "-m",
+                         "Added " + commitPath + " using QtPass.", "--"} +
+             paths);
 }
 
 /**
@@ -430,34 +417,16 @@ auto ImitatePass::gitTracks(const QString &file) -> bool {
  */
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   const GpgIdSigner signer = gpgIdSigner();
-  QString gpgIdSigFile = path + ".gpg-id.sig";
-  bool addSigFile = false;
-  if (signer.enabled()) {
-    if (!signer.haveSecretKey()) {
-      emit critical(tr("No signing key!"),
-                    tr("None of the secret signing keys is available.\n"
-                       "You will not be able to change the user list!"));
-      return;
-    }
-    QFileInfo checkFile(gpgIdSigFile);
-    if (!checkFile.exists() || !checkFile.isFile()) {
-      addSigFile = true;
-    }
+  const QString gpgIdSigFile = path + ".gpg-id.sig";
+  if (signer.enabled() && !signer.haveSecretKey()) {
+    emit critical(tr("No signing key!"),
+                  tr("None of the secret signing keys is available.\n"
+                     "You will not be able to change the user list!"));
+    return;
   }
 
   const bool useGit = gitReady();
-  QString gpgIdFile = path + ".gpg-id";
-  bool addFile = false;
-  if (m_settings.addGPGId && useGit) {
-    // Stage the .gpg-id unless git already tracks it. Checking the working
-    // tree instead is not enough: MainWindow::addFolder writes a folder's
-    // .gpg-id without staging it, and since the backup commit before
-    // re-encryption only picks up tracked files (#1685) nothing else ever
-    // would. Without the add, `git commit -- <file>` below fails for the
-    // untracked pathspec and the re-encrypted entries get pushed without
-    // the recipients file they were encrypted to (#1682).
-    addFile = !gitTracks(gpgIdFile);
-  }
+  const QString gpgIdFile = path + ".gpg-id";
   writeGpgIdFile(gpgIdFile, users);
 
   if (signer.enabled()) {
@@ -466,28 +435,55 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     }
   }
 
-  int gitExit = 0;
-  QString gitOut;
-  QString gitErr;
-  if (useGit) {
-    gitExit = gitAddGpgId(gpgIdFile, gpgIdSigFile, addFile, addSigFile, &gitOut,
-                          &gitErr);
+  if (useGit && m_settings.addGPGId) {
+    // The .gpg-id (and its signature) must be in the repository before any
+    // entry is re-encrypted to it: the backup commit before re-encryption
+    // only picks up tracked files (#1685), and MainWindow::addFolder writes
+    // a folder's .gpg-id without staging it, so without this the
+    // re-encrypted entries were pushed without the recipients file they
+    // were encrypted to (#1682). When the commit fails the re-encryption
+    // does not start, or the working tree would follow a recipient list the
+    // repository does not have.
+    QString gitOut;
+    QString gitErr;
+    const int gitExit =
+        gitAddGpgId(gpgIdFile, signer.enabled() ? gpgIdSigFile : QString(),
+                    &gitOut, &gitErr);
+    if (gitExit != 0) {
+      Pass::finished(PASS_INIT, gitExit, gitOut, gitErr);
+      return;
+    }
+    reencryptPath(path);
+    // Same contract the asynchronous add/commit transaction used to provide:
+    // finishedInit once the .gpg-id landed in git.
+    Pass::finished(PASS_INIT, 0, gitOut, gitErr);
+    return;
   }
   reencryptPath(path);
   if (useGit) {
-    // Same contract the asynchronous add/commit transaction used to provide:
-    // finishedInit when the .gpg-id landed in git, processErrorExit otherwise.
-    Pass::finished(PASS_INIT, gitExit, gitOut, gitErr);
+    Pass::finished(PASS_INIT, 0, QString(), QString());
   }
 }
 
-/**
- * @brief ImitatePass::verifyGpgIdFile verify detached gpgid file signature.
- * @param file which gpgid file.
- * @return was verification successful?
- */
-auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
-  return gpgIdSigner().verify(file);
+auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
+                                         QStringList *recipients) -> bool {
+  recipients->clear();
+  QByteArray contents;
+  const GpgIdSigner signer = gpgIdSigner();
+  if (signer.enabled()) {
+    if (!signer.verifyFile(gpgIdFile, &contents)) {
+      return false;
+    }
+  } else {
+    QFile file(gpgIdFile);
+    if (!file.open(QIODevice::ReadOnly)) {
+      // No file is not a bad signature; the empty list says it all.
+      return true;
+    }
+    contents = file.readAll();
+  }
+  *recipients = Pass::parseRecipients(contents, gpgIdFile);
+  return true;
 }
 
 /**
@@ -498,25 +494,29 @@ auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
  * @param dir
  */
 auto ImitatePass::verifyGpgIdForDir(const QString &file,
-                                    QStringList &gpgIdFilesVerified,
+                                    QHash<QString, QStringList> &verified,
                                     QStringList &gpgId) -> bool {
-  QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);
-  // Verify each .gpg-id signature only once, but always refresh the recipient
-  // list for the current file: a cache hit means the signature was already
-  // checked, not that gpgId still holds this directory's recipients — it may
-  // carry a different directory's list, which would re-encrypt to wrong keys.
-  if (!gpgIdFilesVerified.contains(gpgIdPath)) {
-    if (!verifyGpgIdFile(gpgIdPath)) {
-      // An interrupted gpg is a cancel, not a bad signature.
-      if (!m_reencryptCancel.load())
-        emit critical(tr("Check .gpg-id file signature!"),
-                      tr("Signature for %1 is invalid.").arg(gpgIdPath));
-      return false;
-    }
-    gpgIdFilesVerified.append(gpgIdPath);
+  const QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);
+  // The cache maps each .gpg-id to the recipients its verified bytes held,
+  // so every file under it is encrypted to exactly the list the signature
+  // covered; a second directory sharing the .gpg-id gets the same list, a
+  // different .gpg-id is read and verified on its own.
+  const auto cached = verified.constFind(gpgIdPath);
+  if (cached != verified.constEnd()) {
+    gpgId = cached.value();
+    return true;
   }
-  gpgId = getRecipientList(file, m_settings.passStore);
-  gpgId.sort();
+  QStringList recipients;
+  if (!loadVerifiedRecipients(gpgIdPath, &recipients)) {
+    // An interrupted gpg is a cancel, not a bad signature.
+    if (!m_reencryptCancel.load())
+      emit critical(tr("Check .gpg-id file signature!"),
+                    tr("Signature for %1 is invalid.").arg(gpgIdPath));
+    return false;
+  }
+  recipients.sort();
+  verified.insert(gpgIdPath, recipients);
+  gpgId = recipients;
   return true;
 }
 
@@ -852,6 +852,20 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
     emit statusMsg(tr("Updating password-store"), 2000);
     if (execBlocking(m_settings.gitExecutable,
                      {"-C", pgit(m_settings.passStore), "pull"}) != 0) {
+      // A pull that could not reach the remote leaves the store as it was;
+      // one that stopped in a merge leaves conflict markers and an unmerged
+      // index, and re-encrypting on top of that would commit the mess.
+      QString unmerged;
+      execBlocking(m_settings.gitExecutable,
+                   {"-C", pgit(m_settings.passStore), "ls-files", "--unmerged"},
+                   &unmerged);
+      if (!unmerged.trimmed().isEmpty()) {
+        emit critical(tr("Git pull failed"),
+                      tr("The pull left the store with unmerged files. Resolve "
+                         "the conflict before re-encrypting."));
+        result.aborted = true;
+        return result;
+      }
       emit statusMsg(tr("Git pull failed, re-encrypting the store as it is"),
                      5000);
     }
@@ -876,7 +890,7 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
   emit reencryptProgress(0, result.total);
 
   QString currentDir;
-  QStringList gpgIdFilesVerified;
+  QHash<QString, QStringList> gpgIdFilesVerified;
   QStringList gpgId;
   for (const QString &fileName : std::as_const(files)) {
     if (m_reencryptCancel.load()) {
