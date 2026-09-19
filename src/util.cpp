@@ -426,7 +426,9 @@ namespace {
  * when @p visit returns true for it.
  */
 template <typename Visit> void walkStore(const QString &dir, Visit visit) {
-  QStringList pending{QDir::cleanPath(dir)};
+  // Absolute, so the results are whatever the caller's cwd; not canonical,
+  // so a linked root keeps the name it was configured under.
+  QStringList pending{QDir(QDir::cleanPath(dir)).absolutePath()};
   while (!pending.isEmpty()) {
     const QDir current(pending.takeLast());
     // Every entry once, links and hidden entries included, so the decision

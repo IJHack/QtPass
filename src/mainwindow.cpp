@@ -1252,9 +1252,13 @@ void MainWindow::onDelete() {
     return;
   }
   if (isDir) {
+    // A link, junction or special file inside is as unexpected as a stray
+    // plain file: the walker leaves them out of content and reports them.
+    QStringList skipped;
     const QStringList content =
-        Util::regularFilesUnder(folder, {QStringLiteral("*")});
+        Util::regularFilesUnder(folder, {QStringLiteral("*")}, &skipped);
     const bool unexpected =
+        !skipped.isEmpty() ||
         std::any_of(content.cbegin(), content.cend(), [](const QString &path) {
           return QFileInfo(path).suffix() != QLatin1String("gpg");
         });

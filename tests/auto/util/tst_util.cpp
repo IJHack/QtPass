@@ -3491,6 +3491,15 @@ void tst_util::regularFilesUnderWalksRealDirectoriesOnly() {
   QCOMPARE(withHidden, expectedWithHidden);
   QCOMPARE(Util::regularFilesUnder(storeDir.path(), {QStringLiteral("*.txt")}),
            QStringList{root.filePath(QStringLiteral("notes.txt"))});
+  // A relative root still yields absolute paths.
+  const QString cwd = QDir::currentPath();
+  QVERIFY(QDir::setCurrent(storeDir.path()));
+  QCOMPARE(
+      Util::regularFilesUnder(QStringLiteral("."), {QStringLiteral("*.txt")}),
+      QStringList{root.filePath(QStringLiteral("notes.txt"))});
+  QCOMPARE(Util::directoriesUnder(QStringLiteral("sub")),
+           QStringList{root.filePath(QStringLiteral("sub/deeper"))});
+  QVERIFY(QDir::setCurrent(cwd));
 }
 
 /**
