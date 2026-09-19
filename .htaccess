@@ -37,13 +37,13 @@ Redirect 301 /windows /#windows-quick
 Redirect 301 /osx /#macos-quick
 Redirect 301 /dependencies /downloads#dependencies
 Redirect 301 /security-considerations /security#considerations
-Redirect 301 /planned-features /old#planned-features
-Redirect 301 /known-issues /old#known-issues
-Redirect 301 /cant-save-a-password /old#cant-save-a-password
-Redirect 301 /i-have-an-issue-with-gnome-keyring /old#i-have-an-issue-with-gnome-keyring
-Redirect 301 /can-i-import-from-keepass-lastpass-or-x /old#can-i-import-from-keepass-lastpass-or-x
+Redirect 301 /planned-features https://github.com/IJHack/QtPass/issues/1812
+Redirect 301 /known-issues https://github.com/IJHack/QtPass/issues
+Redirect 301 /cant-save-a-password /faq#cant-save-a-password
+Redirect 301 /i-have-an-issue-with-gnome-keyring /faq#i-have-an-issue-with-gnome-keyring
+Redirect 301 /can-i-import-from-keepass-lastpass-or-x /faq#can-i-import-from-keepass-lastpass-or-x
 Redirect 301 /current-FAQ /faq
-Redirect 301 /where-can-i-ask-for-help /old#where-can-i-ask-for-help
+Redirect 301 /where-can-i-ask-for-help /faq#where-can-i-ask-for-help
 Redirect 301 /changelogs /changelog
 
 # Doxygen stopped rendering the Markdown files in April 2026 (#1087); these
@@ -53,6 +53,10 @@ Redirect 301 /docs/md__f_a_q.html /faq
 Redirect 301 /docs/md__c_h_a_n_g_e_l_o_g.html https://github.com/IJHack/QtPass/blob/main/CHANGELOG.md
 Redirect 301 /docs/md__c_o_n_t_r_i_b_u_t_i_n_g.html /contributing
 Redirect 301 /docs/md__r_e_a_d_m_e.html https://github.com/IJHack/QtPass/blob/main/README.md
+
+# The 1.6-era single page is gone (September 2026); its sections live on
+# /security, /faq and the front page.
+RewriteRule ^old(\.html)?$ / [R=301,L]
 
 # Canonical URLs are extension-less: /downloads.html -> /downloads.
 # Not applied under /docs/ (Doxygen links use .html) and not to 404.html.

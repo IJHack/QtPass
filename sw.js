@@ -24,7 +24,6 @@ const PRECACHE_URLS = [
   "/faq",
   "/getting-started",
   "/macos",
-  "/old",
   "/privacy",
   "/screenshots",
   "/security",
