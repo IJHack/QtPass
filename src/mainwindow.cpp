@@ -31,7 +31,6 @@
 #include <QDate>
 #include <QDesktopServices>
 #include <QDialog>
-#include <QDirIterator>
 #include <QDockWidget>
 #include <QFileInfo>
 #include <QHBoxLayout>
@@ -1178,11 +1177,12 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
     }
     // The dialog names the entry itself: every folder of the store to pick
     // from, the tree's current one preselected.
+    // Real folders of the store only: a linked or junctioned folder would
+    // offer (and write the new entry to) somewhere outside it.
     QStringList folders{QString()};
-    QDirIterator it(storePath, QDir::Dirs | QDir::NoDotAndDotDot,
-                    QDirIterator::Subdirectories);
-    while (it.hasNext()) {
-      const QString rel = QDir(storePath).relativeFilePath(it.next());
+    const QStringList found = Util::directoriesUnder(storePath);
+    for (const QString &path : found) {
+      const QString rel = QDir(storePath).relativeFilePath(path);
       if (!rel.startsWith(u'.') && !rel.contains(QStringLiteral("/."))) {
         folders << rel;
       }
@@ -1236,19 +1236,17 @@ void MainWindow::onDelete() {
 
   QString dirMessage = tr(" and the whole content?");
   if (isDir) {
-    QDirIterator it(m_tree->fileSystem().rootPath() + QDir::separator() + file,
-                    QDirIterator::Subdirectories);
-    bool okDir = true;
-    while (it.hasNext() && okDir) {
-      it.next();
-      if (QFileInfo(it.filePath()).isFile()) {
-        if (QFileInfo(it.filePath()).suffix() != "gpg") {
-          okDir = false;
-          dirMessage = tr(" and the whole content? <br><strong>Attention: "
-                          "there are unexpected files in the given folder, "
-                          "check them before continue.</strong>");
-        }
-      }
+    const QStringList content = Util::regularFilesUnder(
+        m_tree->fileSystem().rootPath() + QDir::separator() + file,
+        {QStringLiteral("*")});
+    const bool unexpected =
+        std::any_of(content.cbegin(), content.cend(), [](const QString &path) {
+          return QFileInfo(path).suffix() != QLatin1String("gpg");
+        });
+    if (unexpected) {
+      dirMessage = tr(" and the whole content? <br><strong>Attention: "
+                      "there are unexpected files in the given folder, "
+                      "check them before continue.</strong>");
     }
   }
 

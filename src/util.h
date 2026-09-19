@@ -139,6 +139,50 @@ public:
    * @return true if gpg may be given the token, false otherwise.
    */
   static auto isValidKeyId(const QString &keyId) -> bool;
+  /**
+   * @brief Regular files under @p dir whose name matches one of
+   * @p nameFilters, found by walking only real directories.
+   *
+   * Symbolic links and NTFS junctions are never entered and never listed:
+   * either can point outside the tree, and QDirIterator's own recursion
+   * treats a junction as an ordinary directory (Qt marks it JunctionType,
+   * not LinkType, so QDir::NoSymLinks does not see it). Hidden directories
+   * (`.git`, a sync tool's version folder) are not entered either, as with
+   * QDirIterator without QDir::Hidden.
+   * @param dir Directory to walk.
+   * @param nameFilters Wildcards, as for QDir::setNameFilters().
+   * @param skipped Receives what was left out although it is in the way: every
+   *        linked directory, and every link or special file (FIFO, socket,
+   *        device) whose name matches @p nameFilters. Null to not care.
+   * @param hiddenFiles List hidden files too (`.gpg-id`); hidden directories
+   *        stay closed regardless.
+   * @return Absolute paths, sorted by name within each directory, a
+   *         directory's files before its subdirectories.
+   */
+  static auto regularFilesUnder(const QString &dir,
+                                const QStringList &nameFilters,
+                                QStringList *skipped = nullptr,
+                                bool hiddenFiles = false) -> QStringList;
+  /**
+   * @brief Every real, visible directory under @p dir, walked by the same
+   * rules as regularFilesUnder(): links, junctions and hidden directories
+   * are neither listed nor entered.
+   * @param dir Directory to walk.
+   * @return Absolute paths, parents before children.
+   */
+  static auto directoriesUnder(const QString &dir) -> QStringList;
+  /**
+   * @brief Remove @p dir and everything in it, the way `rm -rf` does: a
+   * symbolic link or NTFS junction, @p dir itself or anything inside, is
+   * removed as an entry and what it points to is never entered. A trailing
+   * separator on @p dir does not change that.
+   *
+   * QDir::removeRecursively() descends into junctions (it stops only at what
+   * Qt calls a symlink) and would empty the junction's target.
+   * @param dir Directory to remove.
+   * @return true when @p dir is gone.
+   */
+  static auto removeTree(const QString &dir) -> bool;
 
 private:
   static void initialiseEnvironment();

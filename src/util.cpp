@@ -418,3 +418,128 @@ auto Util::newLinesRegex() -> const QRegularExpression & {
 auto Util::isValidKeyId(const QString &keyId) -> bool {
   return !keyId.isEmpty() && !keyId.startsWith('-');
 }
+
+namespace {
+/**
+ * @brief Walk @p dir's real, visible directories in sorted pre-order and hand
+ * every entry to @p visit before any recursion; a directory is entered only
+ * when @p visit returns true for it.
+ */
+template <typename Visit> void walkStore(const QString &dir, Visit visit) {
+  QStringList pending{QDir::cleanPath(dir)};
+  while (!pending.isEmpty()) {
+    const QDir current(pending.takeLast());
+    // Every entry once, links and hidden entries included, so the decision
+    // what to do with each is taken here, before any recursion. QDir::System
+    // keeps dangling links in the listing.
+    const QFileInfoList entries =
+        current.entryInfoList(QDir::Dirs | QDir::Files | QDir::Hidden |
+                                  QDir::System | QDir::NoDotAndDotDot,
+                              QDir::Name);
+    QStringList subdirs;
+    for (const QFileInfo &entry : entries) {
+      if (visit(entry)) {
+        subdirs << entry.filePath();
+      }
+    }
+    // Pushed last-to-first so the next one taken is the first by name.
+    for (auto it = subdirs.crbegin(); it != subdirs.crend(); ++it) {
+      pending << *it;
+    }
+  }
+}
+
+/// A symlink or an NTFS junction: never entered, never listed.
+auto isLink(const QFileInfo &entry) -> bool {
+  return entry.isSymLink() || entry.isJunction();
+}
+
+/// A real directory that is part of the store: .git, .stversions,
+/// .Trash-1000 are not, as with QDirIterator without QDir::Hidden.
+auto isStoreDirectory(const QFileInfo &entry) -> bool {
+  return !isLink(entry) && entry.isDir() && !entry.isHidden();
+}
+} // namespace
+
+auto Util::regularFilesUnder(const QString &dir, const QStringList &nameFilters,
+                             QStringList *skipped, bool hiddenFiles)
+    -> QStringList {
+  QStringList files;
+  walkStore(dir, [&](const QFileInfo &entry) {
+    if (isStoreDirectory(entry)) {
+      return true;
+    }
+    const bool named = QDir::match(nameFilters, entry.fileName());
+    if (isLink(entry) || (!entry.isDir() && !entry.isFile())) {
+      // A linked directory hides everything behind it; a linked file, or a
+      // FIFO, socket or device, is only of interest under a name the caller
+      // asked for.
+      if (skipped != nullptr && (entry.isDir() || named)) {
+        qCWarning(lcQtPass) << "Skipping" << entry.filePath()
+                            << ": not a regular file or directory";
+        *skipped << entry.filePath();
+      }
+      return false;
+    }
+    if (entry.isFile() && named && (hiddenFiles || !entry.isHidden())) {
+      files << entry.filePath();
+    }
+    return false;
+  });
+  return files;
+}
+
+auto Util::directoriesUnder(const QString &dir) -> QStringList {
+  QStringList dirs;
+  walkStore(dir, [&](const QFileInfo &entry) {
+    if (!isStoreDirectory(entry)) {
+      return false;
+    }
+    dirs << entry.filePath();
+    return true;
+  });
+  return dirs;
+}
+
+auto Util::removeTree(const QString &dir) -> bool {
+  // A trailing separator makes lstat follow a link ("link/" is the target
+  // directory); the link itself is what this is about.
+  const QString path = QDir::cleanPath(dir);
+  const QFileInfo top(path);
+  if (isLink(top)) {
+    // rm -rf on a link removes the link.
+    return QFile::remove(path) || QDir().rmdir(path);
+  }
+  if (!top.isDir()) {
+    return false;
+  }
+  bool ok = true;
+  const QFileInfoList entries =
+      QDir(path).entryInfoList(QDir::Dirs | QDir::Files | QDir::Hidden |
+                                   QDir::System | QDir::NoDotAndDotDot,
+                               QDir::Name);
+  for (const QFileInfo &entry : entries) {
+    const QString entryPath = entry.filePath();
+    if (isLink(entry)) {
+      // The entry itself, never the target. A junction or a directory
+      // symlink on Windows is a directory entry and goes with rmdir.
+      if (!QFile::remove(entryPath) && !QDir().rmdir(entryPath)) {
+        qCWarning(lcQtPass) << "Could not remove link" << entryPath;
+        ok = false;
+      }
+    } else if (entry.isDir()) {
+      ok = removeTree(entryPath) && ok;
+    } else if (!QFile::remove(entryPath)) {
+      // A read-only file blocks deletion on Windows; give it write access
+      // and try once more, as QDir::removeRecursively() does.
+      const QFile::Permissions perms = QFile::permissions(entryPath);
+      if (perms.testFlag(QFile::WriteUser) ||
+          !QFile::setPermissions(entryPath, perms | QFile::WriteUser) ||
+          !QFile::remove(entryPath)) {
+        qCWarning(lcQtPass) << "Could not remove" << entryPath;
+        ok = false;
+      }
+    }
+  }
+  return ok && QDir().rmdir(path);
+}

@@ -37,6 +37,9 @@
 #include <QTextStream>
 #include <QtTest>
 #include <algorithm>
+#ifndef Q_OS_WIN
+#include <sys/stat.h>
+#endif
 
 #include "../../../src/imitatepass.h"
 #include "../testsettings.h"
@@ -337,7 +340,9 @@ private Q_SLOTS:
   void reencryptStopsWhenBackupAndOriginalBothExist();
   void reencryptRemovesStaleTemporaries();
   void recoveryDoesNotPromoteASymlinkToAnEntry();
+  void recoveryDoesNotPromoteASpecialFileToAnEntry();
   void reencryptSkipsSymlinkedEntries();
+  void removeFolderWithoutGitLeavesLinkTargetsAlone();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -1244,6 +1249,32 @@ void tst_imitatepass::recoveryDoesNotPromoteASymlinkToAnEntry() {
 }
 
 /**
+ * @brief A FIFO under a backup's name is no backup either: reported, not
+ *        renamed into place, and the run stops for the user to look.
+ */
+void tst_imitatepass::recoveryDoesNotPromoteASpecialFileToAnEntry() {
+#ifdef Q_OS_WIN
+  QSKIP("uses mkfifo and a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString entry = QDir(storeDir.path()).filePath("entry0.gpg");
+  QCOMPARE(
+      mkfifo(QFile::encodeName(entry + ".reencrypt.bak").constData(), 0600), 0);
+  Recorder rec;
+  int encrypts = 0;
+  bool aborted = false;
+  QVERIFY2(runReencrypt(storeDir.path(), rec, &encrypts, &aborted),
+           "re-encryption must finish");
+  QVERIFY(aborted);
+  QVERIFY(rec.criticals.first().contains("not a regular file"));
+  QVERIFY2(!QFileInfo::exists(entry), "no entry may appear under the name");
+  QCOMPARE(encrypts, 0);
+#endif
+}
+
+/**
  * @brief A symlinked .gpg is not a password entry: the run leaves it alone,
  *        re-encrypts the regular files, and says how many it skipped.
  */
@@ -1278,6 +1309,50 @@ void tst_imitatepass::reencryptSkipsSymlinkedEntries() {
   QVERIFY2(std::any_of(rec.statusMessages.cbegin(), rec.statusMessages.cend(),
                        [](const QString &m) { return m.contains("symlink"); }),
            "the user is told an entry was skipped");
+#endif
+}
+
+/**
+ * @brief Deleting a folder without git must not reach through a link: a link
+ *        inside the folder goes as an entry, and a folder that is itself a
+ *        link (the tree shows those) is unlinked, not emptied.
+ *        QDir::removeRecursively() would have listed through the top-level
+ *        link and deleted the target's files.
+ */
+void tst_imitatepass::removeFolderWithoutGitLeavesLinkTargetsAlone() {
+#ifdef Q_OS_WIN
+  QSKIP("creating a symlink needs a privilege a CI runner may lack");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  const QDir root(storeDir.path());
+  const QDir outside(outsideDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("folder")));
+  for (const QString &path : {root.filePath(QStringLiteral("folder/a.gpg")),
+                              outside.filePath(QStringLiteral("secret.gpg"))}) {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  QVERIFY(QFile::link(outsideDir.path(),
+                      root.filePath(QStringLiteral("folder/elsewhere"))));
+  QVERIFY(QFile::link(outsideDir.path(),
+                      root.filePath(QStringLiteral("linked-folder"))));
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), QStringLiteral("/nonexistent/gpg")));
+  pass.Remove(QStringLiteral("folder"), true);
+  QVERIFY(!QFileInfo::exists(root.filePath(QStringLiteral("folder"))));
+  QVERIFY2(QFile::exists(outside.filePath(QStringLiteral("secret.gpg"))),
+           "the link's target must keep its files");
+  // The tree names a folder with a trailing separator; that must not turn
+  // the link into its target.
+  pass.Remove(QStringLiteral("linked-folder/"), true);
+  QVERIFY2(
+      !QFileInfo(root.filePath(QStringLiteral("linked-folder"))).isSymLink(),
+      "the link itself is what gets removed");
+  QVERIFY2(QFile::exists(outside.filePath(QStringLiteral("secret.gpg"))),
+           "a folder that is a link must not have its target emptied");
 #endif
 }
 

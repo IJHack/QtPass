@@ -12,7 +12,6 @@
 #include <QCheckBox>
 #include <QDateTime>
 #include <QDir>
-#include <QDirIterator>
 #include <QFile>
 #include <QFileDialog>
 #include <QFileInfo>
@@ -412,13 +411,8 @@ void StoreWizardPage::updateStatus() {
   if (path.isEmpty()) {
     text = tr("Enter a folder.");
   } else if (FirstRunWizard::isStore(path)) {
-    int entries = 0;
-    QDirIterator it(path, {QStringLiteral("*.gpg")}, QDir::Files,
-                    QDirIterator::Subdirectories);
-    while (it.hasNext()) {
-      it.next();
-      ++entries;
-    }
+    const int entries = static_cast<int>(
+        Util::regularFilesUnder(path, {QStringLiteral("*.gpg")}).size());
     text = tr("An existing password store with %n entries.", nullptr, entries);
   } else if (QDir(path).exists()) {
     text = QDir(path).isEmpty()

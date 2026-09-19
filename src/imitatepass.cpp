@@ -4,7 +4,6 @@
 #include "executor.h"
 #include "util.h"
 #include <QDir>
-#include <QDirIterator>
 #include <QFile>
 #include <QFileInfo>
 #include <QPointer>
@@ -252,8 +251,9 @@ void ImitatePass::Remove(QString file, bool isDir) {
     gitCommit(file, "Remove for " + path + " using QtPass.");
   } else {
     if (isDir) {
-      QDir dir(file);
-      dir.removeRecursively();
+      // Never QDir::removeRecursively(): it follows a junction inside the
+      // folder and empties whatever that points to.
+      Util::removeTree(file);
     } else {
       QFile(file).remove();
     }
@@ -528,21 +528,44 @@ auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
   //                      valid ciphertexts and it is not for QtPass to pick
   //                      one: report and leave both.
   bool clean = true;
-  QDirIterator leftovers(
-      QDir::cleanPath(dir), {"*.gpg.??????.tmp", "*.gpg.reencrypt.bak"},
-      QDir::Files | QDir::System, QDirIterator::Subdirectories);
-  while (leftovers.hasNext()) {
-    const QString path = leftovers.next();
+  // Only regular files are walked and listed. A symlink, junction or special
+  // file under a leftover's name is handed back separately: QtPass never
+  // made one, and renaming a link into an entry's place would make the run
+  // decrypt and re-encrypt whatever it points to, inside the store or not.
+  // Linked directories are handed back too; they are not leftovers and are
+  // left to reencryptFiles() to mention.
+  const QStringList leftoverNames{QStringLiteral("*.gpg.??????.tmp"),
+                                  QStringLiteral("*.gpg.reencrypt.bak")};
+  QStringList skipped;
+  const QStringList leftovers =
+      Util::regularFilesUnder(QDir::cleanPath(dir), leftoverNames, &skipped);
+  for (const QString &path : skipped) {
+    if (!QDir::match(leftoverNames, QFileInfo(path).fileName())) {
+      continue;
+    }
     if (path.endsWith(QStringLiteral(".tmp"))) {
-      // QFile::remove on a symlink removes the link, never what it points to.
+      // Removing a link removes the link, never what it points to; a
+      // junction or a directory symlink on Windows is a directory entry and
+      // goes with rmdir.
+      if (!QFile::remove(path) && !QDir().rmdir(path)) {
+        qCWarning(lcQtPass) << "Could not remove stale temporary" << path;
+      }
+      continue;
+    }
+    emit critical(tr("Leftover from an earlier re-encryption"),
+                  tr("%1 is not a regular file and was not restored. Look "
+                     "at it and remove it, then re-encrypt again.")
+                      .arg(path));
+    clean = false;
+  }
+  for (const QString &path : leftovers) {
+    if (path.endsWith(QStringLiteral(".tmp"))) {
       if (!QFile::remove(path)) {
         qCWarning(lcQtPass) << "Could not remove stale temporary" << path;
       }
       continue;
     }
-    // Only a regular file is a backup QtPass made. A symlink under that name
-    // would be renamed into place as a symlink, and the run would then
-    // decrypt and re-encrypt whatever it points to, inside the store or not.
+    // Belt and braces: the walker only lists regular files.
     const QFileInfo backup(path);
     if (backup.isSymLink() || !backup.isFile()) {
       emit critical(tr("Leftover from an earlier re-encryption"),
@@ -1011,29 +1034,15 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
     return result;
   }
 
-  QStringList files;
-  // Regular files only: a symlink is not a password entry, and following
-  // one would decrypt and rewrite something outside the store's control.
-  QDirIterator gpgFiles(dir, QStringList() << "*.gpg",
-                        QDir::Files | QDir::NoSymLinks,
-                        QDirIterator::Subdirectories);
-  while (gpgFiles.hasNext()) {
-    files << gpgFiles.next();
-  }
-  QDirIterator links(dir, QStringList() << "*.gpg", QDir::Files,
-                     QDirIterator::Subdirectories);
-  int skipped = 0;
-  while (links.hasNext()) {
-    links.next();
-    if (links.fileInfo().isSymLink()) {
-      qCWarning(lcQtPass) << "Skipping symlinked entry" << links.filePath();
-      ++skipped;
-    }
-  }
-  if (skipped > 0) {
-    emit statusMsg(tr("%n symlinked entr(y/ies) skipped: a symlink is not a "
-                      "password file.",
-                      "", skipped),
+  // Regular files only: a symlink or junction is not a password entry, and
+  // following one would decrypt and rewrite something outside the store.
+  QStringList skipped;
+  const QStringList files =
+      Util::regularFilesUnder(dir, QStringList() << "*.gpg", &skipped);
+  if (!skipped.isEmpty()) {
+    emit statusMsg(tr("%n entr(y/ies) skipped: a symlink, junction or special "
+                      "file is not part of the store.",
+                      "", static_cast<int>(skipped.size())),
                    5000);
   }
   result.total = files.size();

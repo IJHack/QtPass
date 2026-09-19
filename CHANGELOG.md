@@ -50,6 +50,18 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   directory is not descended into, and a symlink found under a backup's name
   is reported instead of renamed into place, where the run would have
   decrypted and rewritten whatever it pointed to [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- NTFS junctions get the same treatment as symlinks: Qt does not report a
+  junction as a link, so `QDir::NoSymLinks` let one through and a recursive
+  listing walked into it. Every walk over the store (re-encryption and its
+  leftover recovery, the native search, the first-run entry count, the files
+  staged by a fresh `git init`, the folder list of a new entry, the check
+  before a folder is deleted) now visits real, visible directories only, in
+  name order, and reports what it left out: a linked folder, or a link or
+  special file under an entry's name. Deleting a folder without git no
+  longer goes through `QDir::removeRecursively()`, which walked into a
+  junction on Windows and, given the trailing separator the tree uses to
+  name a folder, into a symlinked folder anywhere, and emptied the target
+  [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - Re-encryption checks its own bookkeeping: when the new ciphertext cannot
   be put in place and the original cannot be put back either, the message
   says where the original still is; a backup that cannot be removed after
