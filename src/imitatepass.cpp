@@ -980,17 +980,19 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
     }
   }
 
+  // Leftovers of an interrupted run first: a restored entry then goes into
+  // the backup commit like everything else, and a stale temporary does not.
+  if (!recoverReencryptLeftovers(dir)) {
+    result.aborted = true;
+    return result;
+  }
+
   // Create backup before re-encryption - abort if it fails
   if (!createBackupCommit()) {
     if (m_reencryptCancel.load())
       result.cancelled = true;
     else
       result.aborted = true;
-    return result;
-  }
-
-  if (!recoverReencryptLeftovers(dir)) {
-    result.aborted = true;
     return result;
   }
 
