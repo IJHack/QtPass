@@ -452,7 +452,7 @@ jobs:
           if ! gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
             gh release create "$GITHUB_REF_NAME" --draft --verify-tag \
               --title "QtPass ${version}" \
-              --notes "Draft created by the Release Build workflow. Replace this with the CHANGELOG section for ${version}."
+              --notes "Draft created by the Release installers workflow. Replace this with the CHANGELOG section for ${version}."
           fi
           # A draft can be refreshed freely. Once the release is published its
           # assets carry detached signatures (sign-release-assets.sh), and
