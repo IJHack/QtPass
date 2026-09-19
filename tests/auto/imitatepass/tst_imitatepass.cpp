@@ -312,6 +312,7 @@ private Q_SLOTS:
   void initCommitsGpgIdAndSignatureTogether();
   void initDoesNotReencryptWhenTheGpgIdCommitFails();
   void initRemovesTheOldSignatureWhenSigningIsOff();
+  void reencryptWritesThroughItsOwnTemporaryFileOnly();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -1032,6 +1033,65 @@ void tst_imitatepass::initRemovesTheOldSignatureWhenSigningIsOff() {
   pass.Init(QDir(storeDir.path()).path() + QLatin1Char('/'), {alice});
   QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
   QVERIFY2(!QFile::exists(sig), "the stale .gpg-id.sig must be gone");
+#endif
+}
+
+/**
+ * @brief The new ciphertext goes to a file QtPass created itself. A file (or
+ *        symlink) planted at the old predictable <file>.reencrypt.tmp is
+ *        never written through, and the temporary is gone afterwards.
+ */
+void tst_imitatepass::reencryptWritesThroughItsOwnTemporaryFileOnly() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg and a symlink");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString entry = QDir(storeDir.path()).filePath("entry0.gpg");
+  const QString canary = QDir(storeDir.path()).filePath("canary");
+  {
+    QFile f(canary);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("untouched");
+  }
+  // The attacker's guess at the old name, pointing at something they want
+  // overwritten.
+  QVERIFY(QFile::link(canary, entry + ".reencrypt.tmp"));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QObject ctx;
+  Recorder rec;
+  record(pass, ctx, rec);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(storeDir.path());
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCoreApplication::processEvents();
+  QVERIFY2(rec.criticals.isEmpty(), qPrintable(rec.criticals.join("; ")));
+
+  QFile check(canary);
+  QVERIFY(check.open(QIODevice::ReadOnly));
+  QCOMPARE(check.readAll(), QByteArrayLiteral("untouched"));
+  const QList<QStringList> enc = encryptCalls(loggedCalls(logPath));
+  QCOMPARE(enc.size(), 1);
+  const QString output =
+      enc.first().value(enc.first().indexOf(QStringLiteral("--output")) + 1);
+  QVERIFY2(output != entry + ".reencrypt.tmp" &&
+               output.startsWith(entry + ".") && output.endsWith(".tmp"),
+           qPrintable("gpg must write to QtPass's own temporary: " + output));
+  QVERIFY2(!QFile::exists(output), "the temporary must not be left behind");
+  QFile result(entry);
+  QVERIFY(result.open(QIODevice::ReadOnly));
+  QCOMPARE(result.readAll(), QByteArrayLiteral("ciphertext\n"));
+  const QStringList leftovers =
+      QDir(storeDir.path())
+          .entryList({QStringLiteral("*.tmp"), QStringLiteral("*.bak")},
+                     QDir::Files | QDir::System);
+  QCOMPARE(leftovers, QStringList{QStringLiteral("entry0.gpg.reencrypt.tmp")});
 #endif
 }
 
