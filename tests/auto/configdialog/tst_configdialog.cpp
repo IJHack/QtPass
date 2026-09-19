@@ -711,7 +711,7 @@ void tst_configdialog::signingKeyMustBeAFullFingerprint() {
   key->setText(QStringLiteral("0123456789ABCDEF"));
   emit key->textEdited(key->text());
   QVERIFY2(!ok->isEnabled(), "a long key ID is not a fingerprint");
-  QVERIFY(key->toolTip().contains(QStringLiteral("40")));
+  QVERIFY(key->toolTip().contains(QStringLiteral("40 or 64")));
 
   key->setText(QStringLiteral("0123456789abcdef0123456789abcdef01234567 "
                               "FEDCBA9876543210FEDCBA9876543210FEDCBA98"));

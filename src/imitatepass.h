@@ -55,11 +55,17 @@ protected:
   auto loadVerifiedRecipients(const QString &gpgIdFile, QStringList *recipients)
       -> bool;
   /**
-   * @brief Write recipients to .gpg-id file.
+   * @brief Write the enabled recipients to a .gpg-id, atomically: a write
+   * that fails halfway (full disk, dead network share) leaves the previous
+   * file in place instead of a truncated list that would then be signed
+   * and encrypted to.
    * @param gpgIdFile Path to .gpg-id file.
    * @param users List of recipients.
+   * @return true when the file was written; false after reporting through
+   *         critical().
    */
-  void writeGpgIdFile(const QString &gpgIdFile, const QList<UserInfo> &users);
+  auto writeGpgIdFile(const QString &gpgIdFile, const QList<UserInfo> &users)
+      -> bool;
   /**
    * @brief Sign a `.gpg-id` with the configured key and verify the result;
    * failures are reported through critical().

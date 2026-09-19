@@ -283,34 +283,41 @@ auto ImitatePass::gpgIdSigner() -> GpgIdSigner {
  * @return void - This function does not return a value.
  *
  */
-void ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
-                                 const QList<UserInfo> &users) {
-  QFile gpgId(gpgIdFile);
-  if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
-    emit critical(tr("Cannot update"),
-                  tr("Failed to open .gpg-id for writing."));
-    return;
-  }
+auto ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
+                                 const QList<UserInfo> &users) -> bool {
+  QByteArray contents;
   bool secret_selected = false;
   for (const UserInfo &user : users) {
     if (user.enabled) {
-      gpgId.write((user.key_id + "\n").toUtf8());
+      contents += (user.key_id + "\n").toUtf8();
       secret_selected |= user.have_secret;
     }
   }
-  gpgId.close();
+  QSaveFile gpgId(gpgIdFile);
+  if (!gpgId.open(QIODevice::WriteOnly)) {
+    emit critical(tr("Cannot update"),
+                  tr("Failed to open .gpg-id for writing."));
+    return false;
+  }
   // Lock the file to owner-only access. The .gpg-id leaks which keys the
   // store is encrypted to; while the typical ~/.password-store is 0700,
   // users may relocate the store onto NFS/SMB/USB where the parent dir
   // perms are more lax. On platforms where setPermissions is a no-op
   // (Windows), this is silently best-effort.
-  QFile::setPermissions(gpgIdFile, QFile::ReadOwner | QFile::WriteOwner);
+  gpgId.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
+  if (gpgId.write(contents) != contents.size() || !gpgId.commit()) {
+    emit critical(
+        tr("Cannot update"),
+        tr("Failed to write %1: %2").arg(gpgIdFile, gpgId.errorString()));
+    return false;
+  }
   if (!secret_selected) {
     emit critical(
         tr("Check selected users!"),
         tr("None of the selected keys have a secret key available.\n"
            "You will not be able to decrypt any newly added passwords!"));
   }
+  return true;
 }
 
 /**
@@ -377,9 +384,14 @@ auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
     return rc;
   }
   // Re-initialising with the same recipients changes nothing; that is not a
-  // failure, and `git commit` would make it one.
-  if (run(QStringList{"diff", "--cached", "--quiet", "--"} + paths) == 0) {
+  // failure, and `git commit` would make it one. diff --quiet: 0 nothing
+  // staged, 1 something staged, anything else is git failing.
+  rc = run(QStringList{"diff", "--cached", "--quiet", "--"} + paths);
+  if (rc == 0) {
     return 0;
+  }
+  if (rc != 1) {
+    return rc;
   }
   QString commitPath = gpgIdFile;
   commitPath.replace(Util::endsWithGpg(), "");
@@ -427,7 +439,9 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
 
   const bool useGit = gitReady();
   const QString gpgIdFile = path + ".gpg-id";
-  writeGpgIdFile(gpgIdFile, users);
+  if (!writeGpgIdFile(gpgIdFile, users)) {
+    return;
+  }
 
   if (signer.enabled()) {
     if (!signGpgIdFile(gpgIdFile)) {

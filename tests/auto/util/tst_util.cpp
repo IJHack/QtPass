@@ -280,6 +280,7 @@ private Q_SLOTS:
   void isPathInStoreRejectsEmptyArgs();
   // .gpg-id permission hardening (security)
   void writeGpgIdFileSetsOwnerOnlyPerms();
+  void writeGpgIdFileKeepsTheOldListWhenTheWriteFails();
   // SSH_AUTH_SOCK override soft-validation (Settings dialog warning)
   void sshAuthSockOverrideStatusDoesNotExist();
   void sshAuthSockOverrideStatusRegularFileRejected();
@@ -2758,6 +2759,46 @@ void tst_util::isPathInStoreRejectsEmptyArgs() {
 }
 
 /**
+ * @brief A .gpg-id that cannot be written must not be half-written: the
+ *        previous list stays, the caller hears about it, and nothing gets
+ *        signed or re-encrypted to a truncated list.
+ */
+void tst_util::writeGpgIdFileKeepsTheOldListWhenTheWriteFails() {
+#ifdef Q_OS_WIN
+  QSKIP("relies on Unix directory permissions");
+#else
+  if (::geteuid() == 0)
+    QSKIP("root writes anywhere");
+  QTemporaryDir tempDir;
+  QVERIFY(tempDir.isValid());
+  const QString gpgIdFile = tempDir.path() + "/.gpg-id";
+  {
+    QFile old(gpgIdFile);
+    QVERIFY(old.open(QIODevice::WriteOnly));
+    old.write("OLDKEY0000000000\n");
+  }
+  // A read-only directory: the temporary file QSaveFile needs cannot be
+  // created, which is the same failure a full disk produces at commit().
+  QVERIFY(QFile::setPermissions(tempDir.path(),
+                                QFile::ReadOwner | QFile::ExeOwner));
+  UserInfo user;
+  user.key_id = QStringLiteral("NEWKEY0000000000");
+  user.enabled = true;
+  user.have_secret = true;
+  ImitatePass pass;
+  QSignalSpy criticals(&pass, &Pass::critical);
+  const bool written = pass.writeGpgIdFile(gpgIdFile, {user});
+  QFile::setPermissions(tempDir.path(),
+                        QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
+  QVERIFY2(!written, "a failed write must be reported as such");
+  QCOMPARE(criticals.count(), 1);
+  QFile check(gpgIdFile);
+  QVERIFY(check.open(QIODevice::ReadOnly));
+  QCOMPARE(check.readAll(), QByteArrayLiteral("OLDKEY0000000000\n"));
+#endif
+}
+
+/**
  * @brief writeGpgIdFile should lock the produced .gpg-id to owner-only
  *        permissions, regardless of the process umask. On Windows
  *        setPermissions is best-effort and Qt's Unix-permission bits don't
@@ -2782,7 +2823,7 @@ void tst_util::writeGpgIdFileSetsOwnerOnlyPerms() {
   QList<UserInfo> users{user};
 
   ImitatePass pass;
-  pass.writeGpgIdFile(gpgIdFile, users);
+  QVERIFY(pass.writeGpgIdFile(gpgIdFile, users));
 
   ::umask(oldUmask);
 

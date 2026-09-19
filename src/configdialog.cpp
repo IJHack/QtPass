@@ -306,8 +306,8 @@ void ConfigDialog::validate() {
     const QString keyProblem =
         isFingerprintList(entry.profile.signingKey)
             ? QString()
-            : tr("Full key fingerprints only (40 hexadecimal characters), "
-                 "separated by spaces");
+            : tr("Full key fingerprints only (40 or 64 hexadecimal "
+                 "characters), separated by spaces");
     QListWidgetItem *item = ui->profileList->item(row);
     if (item != nullptr) {
       const bool bad = !nameProblem.isEmpty() || !pathProblem.isEmpty() ||
