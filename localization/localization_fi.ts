@@ -155,17 +155,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">Yleiset</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished">Leikepöytä</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished">Salasanat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
@@ -941,17 +941,17 @@ sähköposti</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">Kaksoisnapsauta nimetäksesi tämän kentän uudelleen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">Nimeä kenttä uudelleen…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">Poista kenttä</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2479,12 +2479,12 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished">Poista kenttä</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">Kenttä nimeltä %1 on jo olemassa.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>
