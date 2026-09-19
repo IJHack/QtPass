@@ -60,7 +60,7 @@ jobs:
               - "localization/**"
 
   build:
-    name: Lint code base
+    name: Lint codebase
     needs: changes
     runs-on: ubuntu-latest
     permissions:
@@ -129,7 +129,7 @@ jobs:
       - if: steps.need_lint.outputs.run_lint == 'true'
         run: cat .github/super-linter.env >> "$GITHUB_ENV"
 
-      - name: Lint code base
+      - name: Lint codebase
         if: steps.need_lint.outputs.run_lint == 'true'
         uses: super-linter/super-linter@4ce20838b8ab83717e78138c5b3a1407148e0918 # v8.7.0
         env:
