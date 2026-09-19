@@ -191,7 +191,9 @@
             />QtPass <small>1.8.1</small>
           </h1>
           <p>
-            A password manager for everyone. Works on Linux, Windows, and macOS.
+            A graphical front end for pass, the standard Unix password manager:
+            GnuPG-encrypted files you control, synced with Git. Linux, Windows,
+            macOS and BSD.
           </p>
 
           <nav class="site" aria-label="Site">
@@ -456,16 +458,22 @@
 
         <p>
           It runs on Linux, macOS, Windows, and FreeBSD with a native look and
-          feel on each platform. Your password store syncs easily via Git, so
-          you always have a backup and can access your passwords across all your
-          devices.
+          feel on each platform. Your password store
+          <a href="/advanced#git">syncs via Git</a>, so you always have a backup
+          and can access your passwords across all your devices. Already using
+          <code>pass</code>? QtPass works on your existing store:
+          <a href="/getting-started">point it at the folder and go</a>.
         </p>
 
         <p>
-          QtPass is open source and free. It includes a secure password
-          generator, built-in one-time passwords (TOTP, incl. Steam Guard),
-          clipboard with auto-clear, support for smartcards and YubiKeys, and is
-          available in over 60 languages.
+          QtPass is open source and free. It includes a
+          <a href="/advanced#password-generation">secure password generator</a>,
+          <a href="/advanced#otp">built-in one-time passwords</a> (TOTP, incl.
+          Steam Guard), a
+          <a href="/advanced#clipboard">clipboard with auto-clear</a>, support
+          for smartcards and YubiKeys through GnuPG,
+          <a href="/advanced#profiles">several password stores</a> side by side,
+          and is available in over 60 languages.
         </p>
         <p>
           No accounts, no telemetry, no network code: QtPass never phones home.
@@ -551,6 +559,15 @@ qmake6 &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
         </p>
       </section>
     </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "QtPass",
+        "url": "https://qtpass.org/",
+        "description": "QtPass is a cross-platform GUI for pass, the standard Unix password manager."
+      }
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",

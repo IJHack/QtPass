@@ -1,7 +1,7 @@
 {
   "name": "QtPass",
   "short_name": "QtPass",
-  "description": "A password manager for everyone: GnuPG-encrypted files you control, on Linux, Windows and macOS.",
+  "description": "A graphical front end for pass, the standard Unix password manager: GnuPG-encrypted files you control, synced with Git. Linux, Windows, macOS and BSD.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

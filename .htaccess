@@ -74,6 +74,12 @@ RewriteRule ^([^.]+)\.html$ /%1 [R=301,L]
   <Files "sw.js">
     Header set Cache-Control "no-cache, max-age=0, must-revalidate"
   </Files>
+  # The Doxygen API reference under /docs/ is hundreds of generated pages
+  # about C++ classes; keep them out of search results so they do not
+  # compete with the pages about the program (Search Console 2026-09).
+  <If "%{REQUEST_URI} =~ m#^/docs/#">
+    Header set X-Robots-Tag "noindex, follow"
+  </If>
 </IfModule>
 
 <IfModule mod_filter.c>
