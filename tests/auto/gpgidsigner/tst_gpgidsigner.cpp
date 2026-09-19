@@ -59,6 +59,7 @@ private slots:
   void signPassesTheFilePathThroughTheWslTranslation();
   void verifyPassesArgsAndAcceptsEitherFingerprint();
   void verifyFileHandsBackTheBytesItVerified();
+  void linkedGpgIdOrSignatureIsNotVerified();
   void verifyRefusesBytesThatAreNotUtf8();
   void verifyRejectsUnknownSignerAndGpgFailure();
   void validSigFingerprintsParsesStatusLines();
@@ -188,6 +189,59 @@ void tst_gpgidsigner::verifyRejectsUnknownSignerAndGpgFailure() {
   gpg.out = QStringLiteral("[GNUPG:] NEWSIG\n[GNUPG:] ERRSIG 1 2 3\n");
   QVERIFY2(!mine.verify(kGpgId, QStringLiteral("/store/.gpg-id.sig")),
            "exit 0 without VALIDSIG is not a verification");
+}
+
+/**
+ * @brief A .gpg-id or .gpg-id.sig that is a link is refused before gpg is
+ *        asked: a validly signed pair replayed from elsewhere through two
+ *        links is not this folder's list.
+ */
+void tst_gpgidsigner::linkedGpgIdOrSignatureIsNotVerified() {
+#ifdef Q_OS_WIN
+  QSKIP("uses symlinks");
+#else
+  QTemporaryDir dir;
+  QTemporaryDir outside;
+  QVERIFY(dir.isValid() && outside.isValid());
+  const QString realId = outside.filePath(QStringLiteral(".gpg-id"));
+  const QString realSig = outside.filePath(QStringLiteral(".gpg-id.sig"));
+  for (const QString &path : {realId, realSig}) {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write(kGpgId);
+  }
+  FakeGpg gpg;
+  gpg.out = validSig(kFpr, kPrimary);
+  const GpgIdSigner signer(QStringLiteral("gpg"), {kFpr}, gpg.exec());
+  QByteArray contents;
+
+  // Both linked.
+  const QString gpgId = dir.filePath(QStringLiteral(".gpg-id"));
+  QVERIFY(QFile::link(realId, gpgId));
+  QVERIFY(QFile::link(realSig, gpgId + QStringLiteral(".sig")));
+  QVERIFY(!signer.verifyFile(gpgId, &contents));
+  QVERIFY(contents.isEmpty());
+
+  // Real list, linked signature.
+  QVERIFY(QFile::remove(gpgId));
+  {
+    QFile f(gpgId);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write(kGpgId);
+  }
+  QVERIFY(!signer.verifyFile(gpgId, &contents));
+  QVERIFY2(gpg.calls.isEmpty(), "gpg is never asked about a linked pair");
+
+  // Real pair: verified as before.
+  QVERIFY(QFile::remove(gpgId + QStringLiteral(".sig")));
+  {
+    QFile f(gpgId + QStringLiteral(".sig"));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("sig");
+  }
+  QVERIFY(signer.verifyFile(gpgId, &contents));
+  QCOMPARE(gpg.calls.size(), 1);
+#endif
 }
 
 void tst_gpgidsigner::verifyRefusesBytesThatAreNotUtf8() {

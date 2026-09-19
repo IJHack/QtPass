@@ -2,6 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QDir>
 #include <QFile>
+#include <QScopeGuard>
+#include <QSignalSpy>
 #include <QTemporaryDir>
 #include <QtTest>
 
@@ -32,6 +34,7 @@ private slots:
   void genericOutputSignalIsAnAllowList();
   void moveAndCopyUseStoreRelativeNamesWithoutGpg();
   void moveBetweenExistingFilesNeedsForce();
+  void linkedEntriesAndFoldersAreRefusedBeforePassRuns();
 
 private:
   struct Call {
@@ -301,6 +304,55 @@ void tst_realpass::moveBetweenExistingFilesNeedsForce() {
       waitForCall().args,
       (QStringList{QStringLiteral("mv"), QStringLiteral("-f"),
                    QStringLiteral("folder/x"), QStringLiteral("folder/y")}));
+}
+
+/**
+ * @brief pass follows links as readily as gpg does, so the guard sits in
+ *        front of it: show, insert, mv, cp and init on a linked entry or a
+ *        folder behind a link never reach the stand-in; rm of the link itself
+ *        does, rm of something behind one does not.
+ */
+void tst_realpass::linkedEntriesAndFoldersAreRefusedBeforePassRuns() {
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  QVERIFY(QDir(outsideDir.path()).mkpath(QStringLiteral("sub")));
+  {
+    QFile f(QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const QString bank = m_store + QStringLiteral("Bank.gpg");
+  const QString shared = m_store + QStringLiteral("shared");
+  QVERIFY(QFile::link(
+      QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg")), bank));
+  QVERIFY(QFile::link(outsideDir.path(), shared));
+  const auto cleanup = qScopeGuard([&] {
+    QFile::remove(bank);
+    QFile::remove(shared);
+  });
+  QScopedPointer<RealPass> pass(makePass());
+  QSignalSpy criticalSpy(pass.data(), &Pass::critical);
+  pass->Show(QStringLiteral("Bank"));
+  pass->Show(QStringLiteral("shared/sub/deep"));
+  pass->Insert(QStringLiteral("Bank"), QStringLiteral("v"), true);
+  pass->Insert(QStringLiteral("shared/fresh"), QStringLiteral("v"), false);
+  pass->Move(bank, m_store + QStringLiteral("Moved.gpg"), false);
+  pass->Move(m_store + QStringLiteral("folder/entry.gpg"), shared, false);
+  pass->Copy(bank, m_store + QStringLiteral("Copied.gpg"), false);
+  pass->Remove(QStringLiteral("shared/sub/deep"), false);
+  UserInfo alice;
+  alice.key_id = QStringLiteral("AAAA");
+  alice.enabled = true;
+  pass->Init(shared + QLatin1Char('/'), {alice});
+  QTest::qWait(300);
+  QCOMPARE(criticalSpy.count(), 9);
+  QVERIFY2(!QFile::exists(m_log), "the stand-in pass must not have run");
+  // Unlinking the link itself is a store operation.
+  pass->Remove(QStringLiteral("Bank"), false);
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("rm"), QStringLiteral("-f"),
+                        QStringLiteral("Bank")}));
+  QCOMPARE(criticalSpy.count(), 9);
 }
 
 QTEST_MAIN(tst_realpass)

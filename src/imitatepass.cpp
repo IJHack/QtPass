@@ -156,6 +156,9 @@ void ImitatePass::GitPush() {
  * @brief ImitatePass::Show shows content of file
  */
 void ImitatePass::Show(QString file) {
+  if (refuseLinkedPath(file + ".gpg")) {
+    return;
+  }
   queueShow(file);
   file = m_settings.passStore + file + ".gpg";
   QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
@@ -172,6 +175,9 @@ void ImitatePass::Show(QString file) {
  */
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   file = file + ".gpg";
+  if (refuseLinkedPath(file)) {
+    return;
+  }
   QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);
   QStringList recipients;
   if (!loadVerifiedRecipients(gpgIdPath, &recipients)) {
@@ -239,10 +245,15 @@ void ImitatePass::gitCommit(const QString &file, const QString &msg) {
  */
 void ImitatePass::Remove(QString file, bool isDir) {
   file = m_settings.passStore + file;
-  transactionHelper trans(&m_transaction, PASS_REMOVE);
   if (!isDir) {
     file += ".gpg";
   }
+  // A link itself may go (git rm and QFile::remove unlink it); anything
+  // behind one is not the store's to delete.
+  if (refuseLinkedPath(file, false)) {
+    return;
+  }
+  transactionHelper trans(&m_transaction, PASS_REMOVE);
   if (gitReady()) {
     executeGit(GIT_RM, {"rm", (isDir ? "-rf" : "-f"), "--", pgit(file)});
     // Normalize path the same way as add/edit operations
@@ -429,6 +440,12 @@ auto ImitatePass::gitTracks(const QString &file) -> bool {
  * @return void - No return value.
  */
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
+  // Writing a .gpg-id through a linked folder would re-key what it points
+  // to, with the store's signing key.
+  if (refuseLinkedPath(path)) {
+    emit processErrorExit(1, tr("Not part of the store"));
+    return;
+  }
   const GpgIdSigner signer = gpgIdSigner();
   const QString gpgIdSigFile = path + ".gpg-id.sig";
   if (signer.enabled() && !signer.haveSecretKey()) {
@@ -497,6 +514,11 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
 auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
                                          QStringList *recipients) -> bool {
   recipients->clear();
+  // A link under the .gpg-id name is not the store's list: with signing
+  // off it reads as missing, with signing on verifyFile() refuses it.
+  if (Util::isLinkedFolder(gpgIdFile)) {
+    return !gpgIdSigner().enabled();
+  }
   QByteArray contents;
   const GpgIdSigner signer = gpgIdSigner();
   if (signer.enabled()) {
@@ -1257,6 +1279,9 @@ void ImitatePass::executeMoveGit(const QString &src, const QString &destFile,
  */
 void ImitatePass::Move(const QString src, const QString dest,
                        const bool force) {
+  if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
+    return;
+  }
   transactionHelper trans(&m_transaction, PASS_MOVE);
   QString destFile = resolveMoveDestination(src, dest, force);
   if (destFile.isEmpty()) {
@@ -1327,6 +1352,11 @@ static auto copyFileReplacing(const QString &src, const QString &dst) -> bool {
  */
 void ImitatePass::Copy(const QString src, const QString dest,
                        const bool force) {
+  // QFile::copy reads through a link: the target's bytes would become an
+  // entry of the store.
+  if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
+    return;
+  }
   transactionHelper trans(&m_transaction, PASS_COPY);
   // Like `pass cp`, dest may be an existing folder (a drag-and-drop copy hands
   // over the folder, not the new file name). Resolve the real target the same

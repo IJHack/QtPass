@@ -60,6 +60,10 @@ void RealPass::GitPush() { executePass(GIT_PUSH, {"git", "push"}); }
  *          otherwise returns QProcess::NormalExit
  */
 void RealPass::Show(QString file) {
+  // pass follows links as readily as gpg does.
+  if (refuseLinkedPath(file + ".gpg")) {
+    return;
+  }
   queueShow(file);
   executePass(PASS_SHOW, {"show", file}, "", true);
 }
@@ -68,6 +72,9 @@ void RealPass::Show(QString file) {
  * @brief RealPass::Insert pass insert
  */
 void RealPass::Insert(QString file, QString newValue, bool overwrite) {
+  if (refuseLinkedPath(file + ".gpg")) {
+    return;
+  }
   QStringList args = {"insert", "-m"};
   if (overwrite) {
     args.append("-f");
@@ -80,6 +87,10 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
  * @brief RealPass::Remove pass remove wrapper
  */
 void RealPass::Remove(QString file, bool isDir) {
+  // A link itself may go (pass rm unlinks it); nothing behind one.
+  if (refuseLinkedPath(isDir ? file : file + ".gpg", false)) {
+    return;
+  }
   executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), file});
 }
 
@@ -90,6 +101,10 @@ void RealPass::Remove(QString file, bool isDir) {
  * @param users list of users with ability to decrypt new password-store
  */
 void RealPass::Init(QString path, const QList<UserInfo> &users) {
+  if (refuseLinkedPath(path)) {
+    emit processErrorExit(1, tr("Not part of the store"));
+    return;
+  }
   // remove the passStore directory otherwise,
   // pass would create a passStore/passStore/dir
   // but you want passStore/dir
@@ -145,6 +160,9 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
 void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
                               const QString &src, const QString &dest,
                               const bool force) {
+  if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
+    return;
+  }
   QFileInfo srcFileInfo = QFileInfo(src);
   QFileInfo destFileInfo = QFileInfo(dest);
 

@@ -3,6 +3,7 @@
 #include "gpgidsigner.h"
 
 #include "executor.h"
+#include "util.h"
 #include <QFile>
 #include <QRegularExpression>
 #include <utility>
@@ -105,6 +106,13 @@ auto GpgIdSigner::verify(const QByteArray &contents,
                       << ": the signed file is not valid UTF-8";
     return false;
   }
+  // Same for the signature: a valid pair replayed from elsewhere through two
+  // links is not this folder's list.
+  if (Util::isLinkedFolder(signatureFile)) {
+    qCDebug(lcQtPass) << "Refusing to verify" << signatureFile
+                      << ": the signature file is a link";
+    return false;
+  }
   QString out;
   const QString sig = Executor::translatePathForWsl(signatureFile, m_gpg);
   // "-" makes gpg read the signed data from stdin: the bytes we hold.
@@ -127,6 +135,12 @@ auto GpgIdSigner::verify(const QByteArray &contents,
 
 auto GpgIdSigner::verifyFile(const QString &gpgIdFile,
                              QByteArray *contents) const -> bool {
+  // A link under the name is not the store's .gpg-id, whatever it points
+  // to and however well that is signed.
+  if (Util::isLinkedFolder(gpgIdFile)) {
+    contents->clear();
+    return false;
+  }
   QFile file(gpgIdFile);
   if (!file.open(QIODevice::ReadOnly)) {
     contents->clear();

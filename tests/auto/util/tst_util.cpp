@@ -3832,6 +3832,10 @@ void tst_util::isUnderLinkChecksEveryFolderOnTheWay() {
   QVERIFY(Util::isUnderLink(link + QLatin1Char('/'), store));
   QVERIFY(Util::isUnderLink(link + QStringLiteral("/sub/"), store));
   QVERIFY(Util::isUnderLink(link + QStringLiteral("/sub/entry.gpg"), store));
+  // Without the leaf: the link itself is not behind a link, its children are.
+  QVERIFY(!Util::isUnderLink(link, store, false));
+  QVERIFY(!Util::isUnderLink(link + QLatin1Char('/'), store, false));
+  QVERIFY(Util::isUnderLink(link + QStringLiteral("/sub"), store, false));
   QVERIFY(
       !Util::isUnderLink(root.filePath(QStringLiteral("real/sub/")), store));
   QVERIFY(

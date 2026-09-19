@@ -55,6 +55,16 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Security
 
+- A link inside the store is not part of it, at every operation and not
+  only in the walks: show, edit, add, move, copy and re-key refuse an entry
+  or folder that is, or lies behind, a symbolic link or NTFS junction,
+  before gpg, pass or git is asked anything, with both backends; deleting
+  a link removes the link and nothing behind it. A linked `.gpg-id` is not
+  a folder's recipient list (the parent's applies, a linked root list reads
+  as missing), and a linked `.gpg-id` or `.gpg-id.sig` is never handed to
+  `gpg --verify`. A shared store's co-writer can make `git pull` create such
+  links; SECURITY.md now says what QtPass does with them and that the
+  configured store root itself may be a link [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - A new profile's `.gpg-id` is written the way the Users dialog writes one:
   to a temporary in the same folder, owner-only, renamed into place whole,
   so an interrupted first run leaves no half list for the signing step or a

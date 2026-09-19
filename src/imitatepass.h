@@ -31,6 +31,7 @@ class ImitatePass : public Pass {
   Q_OBJECT
 
   friend class tst_util;
+  friend class tst_imitatepass;
 
 protected:
   /**
