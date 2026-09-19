@@ -228,16 +228,17 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>                                  QString *process_err = <span class="keyword">nullptr</span>) -&gt; int;</div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  <span class="keywordtype">void</span> startReencryptWorker(<span class="keyword">const</span> QString &amp;dir);</div>
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  <span class="keyword">auto</span> reencryptFiles(<span class="keyword">const</span> QString &amp;dir) -&gt; ReencryptResult;</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>  <span class="keywordtype">void</span> finishReencrypt(<span class="keyword">const</span> ReencryptResult &amp;result);</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span></div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>  <span class="keyword">auto</span> translatePathForWsl(<span class="keyword">const</span> QString &amp;path, <span class="keyword">const</span> QString &amp;exe) <span class="keyword">const</span></div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>      -&gt; QString;</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>  <span class="keyword">auto</span> pgit(<span class="keyword">const</span> QString &amp;path) <span class="keyword">const</span> -&gt; QString;</div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>  <span class="keyword">auto</span> pgpg(<span class="keyword">const</span> QString &amp;path) <span class="keyword">const</span> -&gt; QString;</div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>};</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>  <span class="keyword">auto</span> recoverReencryptLeftovers(<span class="keyword">const</span> QString &amp;dir) -&gt; bool;</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>  <span class="keywordtype">void</span> finishReencrypt(<span class="keyword">const</span> ReencryptResult &amp;result);</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span></div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>  <span class="keyword">auto</span> translatePathForWsl(<span class="keyword">const</span> QString &amp;path, <span class="keyword">const</span> QString &amp;exe) <span class="keyword">const</span></div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>      -&gt; QString;</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>  <span class="keyword">auto</span> pgit(<span class="keyword">const</span> QString &amp;path) <span class="keyword">const</span> -&gt; QString;</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>  <span class="keyword">auto</span> pgpg(<span class="keyword">const</span> QString &amp;path) <span class="keyword">const</span> -&gt; QString;</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>};</div>
 </div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span> </div>
-<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span><span class="preprocessor">#endif </span><span class="comment">// SRC_IMITATEPASS_H_</span></div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span> </div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span><span class="preprocessor">#endif </span><span class="comment">// SRC_IMITATEPASS_H_</span></div>
 <div class="ttc" id="aclass_gpg_id_signer_html"><div class="ttname"><a href="class_gpg_id_signer.html">GpgIdSigner</a></div><div class="ttdoc">The detached signature on a store&#39;s .gpg-id: whether the configured signing key is usable,...</div><div class="ttdef"><b>Definition</b> <a href="gpgidsigner_8h_source.html#l00022">gpgidsigner.h:22</a></div></div>
 <div class="ttc" id="aclass_imitate_pass_1_1transaction_helper_html_aa359cfd5a9b65156dbca7b159cda9f2b"><div class="ttname"><a href="class_imitate_pass_1_1transaction_helper.html#aa359cfd5a9b65156dbca7b159cda9f2b">ImitatePass::transactionHelper::~transactionHelper</a></div><div class="ttdeci">~transactionHelper()</div><div class="ttdoc">End transaction on destruction.</div><div class="ttdef"><b>Definition</b> <a href="#l00209">imitatepass.h:209</a></div></div>
 <div class="ttc" id="aclass_imitate_pass_1_1transaction_helper_html_ab37f5a0aff46fb0aa7ae9cc9cc17f38e"><div class="ttname"><a href="class_imitate_pass_1_1transaction_helper.html#ab37f5a0aff46fb0aa7ae9cc9cc17f38e">ImitatePass::transactionHelper::transactionHelper</a></div><div class="ttdeci">transactionHelper(simpleTransaction *trans, PROCESS result)</div><div class="ttdoc">Start transaction.</div><div class="ttdef"><b>Definition</b> <a href="#l00202">imitatepass.h:202</a></div></div>

@@ -180,6 +180,7 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Identifies different subprocess operations used in <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>. </p>
+<p>Adding a value: decide whether its stdout may contain a secret (a decrypted entry, a search hit in one). If it may not, add it to the allow list in Pass::emitProcessFinishedSignal(), which forwards output to the process output panel; anything not listed there stays silent. Then extend tst_realpass::genericOutputSignalIsAnAllowList() either way. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48" name="ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48"></a>GIT_INIT&#160;</td><td class="fielddoc"><p>Initialize Git repository </p>
 </td></tr>
@@ -219,7 +220,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="enums_8h_source.html#l00028">28</a> of file <a class="el" href="enums_8h_source.html">enums.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="enums_8h_source.html#l00034">34</a> of file <a class="el" href="enums_8h_source.html">enums.h</a>.</p>
 
 </div>
 </div>
