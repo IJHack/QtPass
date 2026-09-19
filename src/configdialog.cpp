@@ -105,11 +105,13 @@ ConfigDialog::ConfigDialog(QWidget *parent)
     useSelection(s.useSelection);
   }
 
-  if (!Util::configIsValid(s)) {
-    // Show Programs tab, which is likely
-    // what the user needs to fix now.
-    ui->tabWidget->setCurrentIndex(1);
-  }
+  connect(ui->pageList, &QListWidget::currentRowChanged, ui->pages,
+          &QStackedWidget::setCurrentIndex);
+  ui->pageList->setCurrentRow(
+      Util::configIsValid(s)
+          ? 0
+          // Programs is what needs fixing when the configuration is not valid.
+          : ui->pages->indexOf(ui->pagePrograms));
 
   connect(this, &ConfigDialog::accepted, this, &ConfigDialog::on_accepted);
 }
