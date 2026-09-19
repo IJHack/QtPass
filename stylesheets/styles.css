@@ -215,6 +215,15 @@ th {
   color: var(--ink-strong);
   font-weight: 700;
 }
+dl {
+  margin-block: 0 1.1em;
+}
+dt {
+  margin-block-start: 0.6em;
+}
+dd {
+  margin: 0.15em 0 0 1.25em;
+}
 hr {
   border: 0;
   background: var(--rule);
