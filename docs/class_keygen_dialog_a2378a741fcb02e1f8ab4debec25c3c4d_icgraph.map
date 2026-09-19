@@ -1,4 +1,6 @@
 <map id="KeygenDialog::KeygenDialog" name="KeygenDialog::KeygenDialog">
-<area shape="rect" id="Node000001" title="Construct a KeygenDialog." alt="" coords="5,29,216,55"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="148,20,138,11,111,8,89,10,77,15,74,20,81,28,77,31,69,21,73,11,87,5,111,3,140,6,151,15"/>
+<area shape="rect" id="Node000001" title="Construct a KeygenDialog." alt="" coords="283,29,493,55"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="436,20,433,16,425,12,388,8,359,10,344,15,341,20,349,27,345,31,336,21,340,11,358,5,388,3,426,7,437,12,440,18"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a8f57d71d0288d8088b23b8124088a62a" title="Splice a passphrase into a GPG batch template." alt="" coords="5,29,235,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,45,235,45,235,39,269,39"/>
 </map>
