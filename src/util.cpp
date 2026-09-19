@@ -509,7 +509,9 @@ auto Util::isLinkedFolder(const QString &path) -> bool {
 
 auto Util::isUnderLink(const QString &path, const QString &storeRoot) -> bool {
   const QString root = QDir::cleanPath(storeRoot);
-  const QString prefix = root + QLatin1Char('/');
+  // A root of "/" or "C:/" already ends in the separator.
+  const QString prefix =
+      root.endsWith(QLatin1Char('/')) ? root : root + QLatin1Char('/');
   QString current = QDir::cleanPath(path);
   if (!current.startsWith(prefix)) {
     // Not under the store as named: only the entry itself can be judged.
