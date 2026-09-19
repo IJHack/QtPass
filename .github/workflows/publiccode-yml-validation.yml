@@ -1,5 +1,5 @@
 ---
-name: publiccode.yml validation
+name: publiccode.yml
 
 on:
   push:
@@ -12,6 +12,7 @@ permissions: {}
 
 jobs:
   changes:
+    name: Detect changes (publiccode.yml)
     runs-on: ubuntu-latest
     outputs:
       publiccode: ${{ steps.filter.outputs.publiccode }}
@@ -28,6 +29,7 @@ jobs:
               - "publiccode.yml"
 
   publiccode_yml_validation:
+    name: Validate publiccode.yml
     needs: changes
     runs-on: ubuntu-latest
     permissions:

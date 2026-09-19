@@ -98,7 +98,7 @@ on a published release it only adds missing ones, so signed assets are never
 swapped under their `.asc`. Then:
 
 ```bash
-gh run watch                                   # or wait for the Release Build run
+gh run watch                                   # or wait for the Release installers run
 gh release edit vX.Y.Z --notes-file <(sed -n '/^## \[X.Y.Z\]/,/^## \[/p' CHANGELOG.md | sed '$d')
 ./scripts/sign-release-assets.sh vX.Y.Z        # .asc for every asset (maintainer's key)
 gh release edit vX.Y.Z --draft=false

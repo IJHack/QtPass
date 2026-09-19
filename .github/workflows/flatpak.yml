@@ -28,7 +28,7 @@ permissions:
 
 jobs:
   flatpak:
-    name: Build org.qtpass.QtPass
+    name: Build Flatpak (org.qtpass.QtPass)
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/flathub-infra/flatpak-github-actions:kde-6.10

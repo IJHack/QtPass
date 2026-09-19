@@ -1,5 +1,5 @@
 ---
-name: "CodeQL"
+name: CodeQL
 
 on:
   push:
@@ -14,6 +14,7 @@ permissions: {}
 
 jobs:
   changes:
+    name: Detect changes (CodeQL)
     runs-on: ubuntu-latest
     outputs:
       src: ${{ steps.filter.outputs.src }}
@@ -37,8 +38,8 @@ jobs:
               - "tests/**"
 
   analyze:
+    name: Analyze with CodeQL (${{ matrix.language }})
     needs: changes
-    name: Analyze
     runs-on: ubuntu-latest
     permissions:
       actions: read

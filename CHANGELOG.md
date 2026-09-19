@@ -126,6 +126,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Changed
 
+- CI workflow and job names follow one scheme: the workflow says what it is
+  for (Build and test, Lint, Documentation, Release installers, CodeQL,
+  Flatpak, FreeBSD, REUSE, publiccode.yml) and every job says what it does
+  and where ("Build and test on ubuntu-latest (Qt 6.8)", "Lint codebase",
+  "Build Windows installer"), the way the FreeBSD job already did, so the
+  check list on a pull request reads without decoding job IDs
 - Adding a password is one dialog: the folder (picked from the store's
   folders, the tree's current one preselected) and the name sit above the
   password and fields, and OK stays off while the name is empty, taken,

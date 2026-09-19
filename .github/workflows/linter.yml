@@ -1,5 +1,5 @@
 ---
-name: Lint Code Base
+name: Lint
 
 on:
   push:
@@ -12,6 +12,7 @@ permissions: {}
 
 jobs:
   changes:
+    name: Detect changes (lint)
     runs-on: ubuntu-latest
     outputs:
       src: ${{ steps.filter.outputs.src }}
@@ -59,8 +60,8 @@ jobs:
               - "localization/**"
 
   build:
+    name: Lint codebase
     needs: changes
-    name: Lint Code Base
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -128,7 +129,7 @@ jobs:
       - if: steps.need_lint.outputs.run_lint == 'true'
         run: cat .github/super-linter.env >> "$GITHUB_ENV"
 
-      - name: Lint Code Base
+      - name: Lint codebase
         if: steps.need_lint.outputs.run_lint == 'true'
         uses: super-linter/super-linter@4ce20838b8ab83717e78138c5b3a1407148e0918 # v8.7.0
         env:

@@ -1,5 +1,5 @@
 ---
-name: QMake
+name: Build and test
 
 on:
   push:
@@ -12,6 +12,7 @@ permissions: {}
 
 jobs:
   changes:
+    name: Detect changes (build)
     runs-on: ubuntu-latest
     outputs:
       src: ${{ steps.filter.outputs.src }}
@@ -49,6 +50,7 @@ jobs:
               - "docs/**"
 
   build:
+    name: Build and test on ${{ matrix.os }} (Qt ${{ matrix.qt }})
     needs: changes
     permissions:
       contents: read
