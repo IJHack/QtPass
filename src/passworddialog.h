@@ -14,6 +14,7 @@ class PasswordDialog;
 }
 
 class Pass;
+class FieldLabel;
 class QAction;
 class QLineEdit;
 class QShortcut;
@@ -224,6 +225,15 @@ private:
    */
   auto resolveNewEntry(QString *problem) const -> QString;
   void validateNewEntry();
+  /**
+   * @brief Give a `key: value` field a new key (#132). Refused, with the
+   *        reason in the status label, when another field has that name.
+   */
+  void renameField(QLineEdit *line, FieldLabel *label, const QString &to);
+  /**
+   * @brief Drop a `key: value` field and its row from the form.
+   */
+  void removeField(QLineEdit *line);
   bool m_templating{};
   bool m_allFields{};
   bool m_isNew{};
@@ -235,6 +245,8 @@ private:
   /// after setEditorEnabled() re-enables the character-set widgets.
   bool m_usePwgen{};
   QList<QLineEdit *> m_templateLines;
+  /// Fields that came from the entry rather than the template; their names
+  /// are the user's, so their labels are FieldLabels that can be renamed.
   QList<QLineEdit *> m_otherLines;
   QHash<QString, QStringList> m_availableTemplates;
   QString m_currentTemplateName;

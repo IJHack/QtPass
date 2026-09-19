@@ -89,6 +89,7 @@ SOURCES   += mainwindow.cpp \
              usersdialog.cpp \
              keygendialog.cpp \
              trayicon.cpp \
+             fieldlabel.cpp \
              passworddialog.cpp \
              exportpublickeydialog.cpp \
              importkeydialog.cpp \
@@ -133,6 +134,7 @@ HEADERS   += mainwindow.h \
              usersdialog.h \
              keygendialog.h \
              trayicon.h \
+             fieldlabel.h \
              passworddialog.h \
              exportpublickeydialog.h \
              importkeydialog.h \
