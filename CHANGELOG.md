@@ -41,6 +41,20 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 - The profile form only accepts full key fingerprints (40 or 64 hexadecimal
   characters) as signing key, which is what `pass` compares against gpg's
   VALIDSIG; a short key ID would sign but never verify [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- Process output reaches the generic listeners (the process output panel)
+  by allow list: a process kind that nobody has classified stays silent,
+  where it used to be broadcast until someone remembered to exclude it. The
+  comment had claimed the opposite of what the code did [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- Re-encryption writes the new ciphertext to a temporary file it created
+  itself, exclusively and with an unguessable name, instead of a fixed
+  `<file>.reencrypt.tmp` that anyone able to write to the store could
+  pre-create [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- The debug log redacts the values of `--passphrase` and friends and
+  `otpauth://` URIs should they ever appear in a command line; a `.gpg-id`
+  that is not valid UTF-8 is refused rather than verified as something else,
+  and gpg's VALIDSIG line is understood with 64-character fingerprints too [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- A key's fingerprint is only taken from gpg's `fpr` record when it is
+  shaped like one (40 or 64 hexadecimal characters) [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - WSL commands run through `wsl --exec` instead of the distribution's login
   shell, so entry paths, `.gpg-id` recipients and commit messages are no
   longer word-split or `$()`-expanded [#1686](https://github.com/IJHack/QtPass/pull/1686)
@@ -128,6 +142,17 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   `#ifdef QT_DEBUG` blocks around a `dbg()` macro. Release builds keep it
   compiled in; `QT_LOGGING_RULES="qtpass.debug=true"` turns it on, so a user
   can attach a trace to a bug report without a debug build (see the FAQ)
+- The search box matches its words literally, in order, with anything in
+  between ("work mail" finds work/acme/mail); it used to be a regular
+  expression, so a typed `[` or `(` silently switched filtering off
+- `pass init` for a folder is given the folder relative to the store only
+  when the folder is inside the store; a directory whose name merely started
+  with the store's was handed a mangled path
+- The key import dialog says what an import means: the key is in your
+  keyring, its owner is still yours to verify
+- SECURITY.md spells out the threat model: a cloned store's Git hooks run
+  with your rights, path checks catch mistakes rather than a hostile local
+  writer, what is and is not logged
 - The manual page describes the current program (it dated from 2015 and
   still advertised WebDAV): arguments as search text and the single
   instance, the Qt options, `GNUPGHOME`, `SSH_AUTH_SOCK` and

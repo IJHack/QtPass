@@ -233,6 +233,12 @@ void tst_gpgidsigner::validSigFingerprintsParsesStatusLines() {
   QCOMPARE(GpgIdSigner::validSigFingerprints(
                validSig(kFpr, kPrimary).replace('\n', "\r\n")),
            (QStringList{kFpr, kPrimary}));
+  // A v5/v6 key signs with a 64-hex fingerprint; the primary may be either.
+  const QString v5 = QString(64, QLatin1Char('A'));
+  QCOMPARE(GpgIdSigner::validSigFingerprints(validSig(v5, kPrimary)),
+           (QStringList{v5, kPrimary}));
+  QCOMPARE(GpgIdSigner::validSigFingerprints(validSig(kFpr, v5)),
+           (QStringList{kFpr, v5}));
   QVERIFY(GpgIdSigner::validSigFingerprints(QString()).isEmpty());
   QVERIFY(GpgIdSigner::validSigFingerprints(
               QStringLiteral("VALIDSIG %1 x %2").arg(kFpr, kPrimary))

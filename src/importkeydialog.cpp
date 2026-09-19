@@ -165,5 +165,9 @@ void ImportKeyDialog::showError(const QString &message) {
 
 void ImportKeyDialog::showSuccess(const QString &keyId) {
   QMessageBox::information(this, tr("Import key"),
-                           tr("Successfully imported key: %1").arg(keyId));
+                           tr("Public key %1 imported. Check its fingerprint "
+                              "with its owner before encrypting to it: "
+                              "importing a key says nothing about who holds "
+                              "it.")
+                               .arg(keyId));
 }

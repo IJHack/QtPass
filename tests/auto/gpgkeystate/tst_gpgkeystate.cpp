@@ -297,14 +297,31 @@ void tst_gpgkeystate::handleFprEdgeCases() {
   handleFprRecord(nonMatchingProps, user);
   QVERIFY2(user.key_id == "id123", "Non-matching fpr should not change key_id");
 
-  user.key_id = "id456";
+  user.key_id = "0123456789ABCDEF";
   QStringList matchingProps;
   for (int i = 0; i < 10; ++i)
     matchingProps.append("");
+  matchingProps[9] = "FEDCBA98765432100123456789ABCDEF0123456789ABCDEF";
+  handleFprRecord(matchingProps, user);
+  QVERIFY2(user.key_id == "0123456789ABCDEF",
+           "48 hex characters are not a fingerprint, keep the key ID");
+  matchingProps[9] = "FEDCBA9876543210FEDCBA980123456789ABCDEF";
+  handleFprRecord(matchingProps, user);
+  QVERIFY2(user.key_id == "FEDCBA9876543210FEDCBA980123456789ABCDEF",
+           "a 40-hex fpr ending with the key ID becomes the key ID");
+
+  // v5/v6 keys: 64 hex characters.
+  user.key_id = "0123456789ABCDEF";
+  matchingProps[9] = QString(48, QLatin1Char('A')) + "0123456789ABCDEF";
+  handleFprRecord(matchingProps, user);
+  QCOMPARE(user.key_id, QString(48, QLatin1Char('A')) + "0123456789ABCDEF");
+
+  // Anything else shaped like text is not taken as an identity.
+  user.key_id = "id456";
   matchingProps[9] = "full fingerprint id456";
   handleFprRecord(matchingProps, user);
-  QVERIFY2(user.key_id == "full fingerprint id456",
-           "fpr ending with key_id should update to full fingerprint");
+  QVERIFY2(user.key_id == "id456",
+           "a non-hex fpr field must not become the key ID");
 }
 
 // Tests targeting the const-ref refactor in gpgkeystate.cpp.

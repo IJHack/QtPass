@@ -104,9 +104,37 @@ void Pass::executeWrapper(PROCESS id, const QString &app,
                           const QStringList &args, QString input,
                           bool readStdout, bool readStderr) {
   beforeExecute(id);
-  qCDebug(lcQtPass) << app << args;
+  qCDebug(lcQtPass) << app << loggableArgs(args);
   exec.execute(id, m_settings.passStore, app, args, std::move(input),
                readStdout, readStderr);
+}
+
+auto Pass::loggableArgs(const QStringList &args) -> QStringList {
+  // Secrets travel on stdin (Insert's content, KeygenDialog's batch file),
+  // never in argv; this keeps the log honest should that ever change.
+  static const QStringList secretOptions{
+      QStringLiteral("--passphrase"), QStringLiteral("--override-session-key")};
+  QStringList out;
+  bool hide = false;
+  for (const QString &arg : args) {
+    if (hide) {
+      out << QStringLiteral("<redacted>");
+      hide = false;
+      continue;
+    }
+    if (arg.startsWith(QStringLiteral("otpauth://"))) {
+      out << QStringLiteral("<redacted>");
+      continue;
+    }
+    if (arg.startsWith(QStringLiteral("--passphrase=")) ||
+        arg.startsWith(QStringLiteral("--override-session-key="))) {
+      out << arg.left(arg.indexOf(u'=') + 1) + QStringLiteral("<redacted>");
+      continue;
+    }
+    hide = secretOptions.contains(arg);
+    out << arg;
+  }
+  return out;
 }
 
 void Pass::beforeExecute(PROCESS /*id*/) {}
@@ -712,23 +740,35 @@ auto Pass::formatInsertError(const QString &friendly, const QString &err)
 void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
                                      const QString &err) {
   /**
-   * @brief Filter sensitive commands to prevent password leakage.
+   * @brief Only output that cannot contain a secret reaches the generic
+   * listeners (the process output panel among them).
    *
-   * Sensitive commands (PASS_SHOW, etc.) output plaintext passwords or
-   * searchable content that should not be exposed to any UI listener.
-   *
-   * Using a default branch: if new PASS_* values are added, they
-   * default to NOT leaking (safe by default). Making this
-   * exhaustive would require updating here for every new
-   * command and risk silent password leakage if forgotten.
+   * An allow list, on purpose: the previous deny list of PASS_SHOW, PASS_GREP
+   * and PASS_INSERT meant that any process kind added later was broadcast
+   * until someone remembered to exclude it. Now a new kind is silent until
+   * someone decides its output is harmless and adds it here.
    */
   switch (pid) {
+  case GIT_INIT:
+  case Enums::GIT_ADD:
+  case Enums::GIT_COMMIT:
+  case Enums::GIT_RM:
+  case GIT_PULL:
+  case GIT_PUSH:
+  case Enums::GIT_MOVE:
+  case Enums::GIT_COPY:
+  case PASS_REMOVE:
+  case PASS_INIT:
+  case PASS_MOVE:
+  case PASS_COPY:
+  case GPG_GENKEYS:
+    emit finishedAnyWithPid(out, err, pid);
+    break;
   case PASS_SHOW:
   case PASS_GREP:
   case PASS_INSERT:
-    break;
-  default:
-    emit finishedAnyWithPid(out, err, pid);
+  case Enums::PROCESS_COUNT:
+  case Enums::INVALID:
     break;
   }
 

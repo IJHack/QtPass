@@ -78,7 +78,9 @@ auto GpgIdSigner::sign(const QString &gpgIdFile, QString *error) const -> bool {
 auto GpgIdSigner::validSigFingerprints(const QString &statusOutput)
     -> QStringList {
   static const QRegularExpression re(
-      R"(^\[GNUPG:\] VALIDSIG ([A-F0-9]{40}) .* ([A-F0-9]{40})\r?$)",
+      // 40 hex for v4 keys, 64 for v5/v6 (gpg 2.5+), either position.
+      R"(^\[GNUPG:\] VALIDSIG ([A-F0-9]{40}(?:[A-F0-9]{24})?) .* )"
+      R"(([A-F0-9]{40}(?:[A-F0-9]{24})?)\r?$)",
       QRegularExpression::MultilineOption);
   const QRegularExpressionMatch m = re.match(statusOutput);
   if (!m.hasMatch()) {

@@ -33,11 +33,12 @@ public:
    * @brief Create a signer.
    * @param gpgExecutable The gpg binary; a `wsl ` prefix routes file paths
    *        through wslpath.
-   * @param signingKeys Full 40-hex fingerprints from the settings, as pass's
-   *        PASSWORD_STORE_SIGNING_KEY requires: gpg reports fingerprints in
-   *        its KEY_CONSIDERED and VALIDSIG status lines, so a short key ID
-   *        would sign (via --default-key) but never pass haveSecretKey() or
-   *        verify(). The first one signs, any of them verifies.
+   * @param signingKeys Full fingerprints from the settings (40 hex characters
+   *        for v4 keys, 64 for v5/v6), as pass's PASSWORD_STORE_SIGNING_KEY
+   *        requires: gpg reports fingerprints in its KEY_CONSIDERED and
+   *        VALIDSIG status lines, so a short key ID would sign (via
+   *        --default-key) but never pass haveSecretKey() or verify(). The
+   *        first one signs, any of them verifies.
    * @param exec Process runner; Executor::executeBlocking() when empty.
    */
   GpgIdSigner(QString gpgExecutable, QStringList signingKeys,

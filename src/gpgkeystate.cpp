@@ -14,6 +14,9 @@ constexpr int GPG_FIELD_KEY_ID = 4;
 constexpr int GPG_FIELD_CREATED = 5;
 constexpr int GPG_FIELD_EXPIRY = 6;
 constexpr int GPG_FIELD_USERID = 9;
+/// Field 9 of an `fpr` record: the fingerprint, in the slot the user ID
+/// occupies in a `uid` record.
+constexpr int GPG_FIELD_FINGERPRINT = 9;
 
 /**
  * @brief Classify a GPG colon output record type
@@ -98,9 +101,15 @@ void handleFprRecord(const QStringList &props, UserInfo &current_user) {
   if (props.size() < GPG_MIN_FIELDS) {
     return;
   }
-  if (!current_user.key_id.isEmpty() &&
-      props[GPG_FIELD_USERID].endsWith(current_user.key_id)) {
-    current_user.key_id = props[GPG_FIELD_USERID];
+  // The key ID from the pub/sec record is the fingerprint's tail; take the
+  // whole fingerprint, but only something shaped like one (40 hex for v4,
+  // 64 for v5/v6): it becomes a recipient and a signing identity later.
+  static const QRegularExpression shape(
+      QStringLiteral("^(?:[0-9A-Fa-f]{40}|[0-9A-Fa-f]{64})$"));
+  const QString &fingerprint = props[GPG_FIELD_FINGERPRINT];
+  if (!current_user.key_id.isEmpty() && shape.match(fingerprint).hasMatch() &&
+      fingerprint.endsWith(current_user.key_id, Qt::CaseInsensitive)) {
+    current_user.key_id = fingerprint;
   }
 }
 
