@@ -10,11 +10,13 @@ var searchData=
   ['refreshpalette_7',['refreshPalette',['../class_password_display_panel.html#a399a1b0ecdea8fe814a7c418e8e96c0f',1,'PasswordDisplayPanel']]],
   ['remove_8',['Remove',['../class_imitate_pass.html#a181e512eff4b82f5078af432c369d4ee',1,'ImitatePass::Remove()'],['../class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764',1,'Pass::Remove()'],['../class_real_pass.html#a0fcac7c5005e6d1a0d09373b5476ca9c',1,'RealPass::Remove()']]],
   ['removepadding_9',['removePadding',['../class_base32.html#aa1f7b5589e29a614a4894b448b90a8ca',1,'Base32']]],
-  ['resolveexecutable_10',['resolveExecutable',['../class_executor.html#a9fbf09f8da63419fa052c9d8ebf08408',1,'Executor']]],
-  ['resolvegpgconfcommand_11',['resolveGpgconfCommand',['../class_pass.html#a4425df7bb17f93be39e1142c2fd4c6a6',1,'Pass']]],
-  ['resolvemovedestination_12',['resolveMoveDestination',['../class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563',1,'ImitatePass']]],
-  ['restore_13',['restore',['../namespace_window_state_store.html#a33978c57279f86bfb1a416ad199858e8',1,'WindowStateStore']]],
-  ['restorewindow_14',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
-  ['rootindex_15',['rootIndex',['../class_store_tree.html#a1e44af30d459550e26502c6733705e9d',1,'StoreTree']]],
-  ['rootindexfor_16',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
+  ['removerequested_10',['removeRequested',['../class_field_label.html#a656a2fae4db3fbc2ff06e154b1ecbcee',1,'FieldLabel']]],
+  ['renamed_11',['renamed',['../class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00',1,'FieldLabel']]],
+  ['resolveexecutable_12',['resolveExecutable',['../class_executor.html#a9fbf09f8da63419fa052c9d8ebf08408',1,'Executor']]],
+  ['resolvegpgconfcommand_13',['resolveGpgconfCommand',['../class_pass.html#a4425df7bb17f93be39e1142c2fd4c6a6',1,'Pass']]],
+  ['resolvemovedestination_14',['resolveMoveDestination',['../class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563',1,'ImitatePass']]],
+  ['restore_15',['restore',['../namespace_window_state_store.html#a33978c57279f86bfb1a416ad199858e8',1,'WindowStateStore']]],
+  ['restorewindow_16',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
+  ['rootindex_17',['rootIndex',['../class_store_tree.html#a1e44af30d459550e26502c6733705e9d',1,'StoreTree']]],
+  ['rootindexfor_18',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
 ];
