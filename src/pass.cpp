@@ -853,21 +853,26 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
 auto Pass::getRecipientList(const QString &for_file, const QString &passStore)
     -> QStringList {
   QFile gpgId(getGpgIdPath(for_file, passStore));
-  if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text)) {
+  if (!gpgId.open(QIODevice::ReadOnly)) {
     return {};
   }
+  return parseRecipients(gpgId.readAll(), gpgId.fileName());
+}
+
+auto Pass::parseRecipients(const QByteArray &contents,
+                           const QString &sourceName) -> QStringList {
   QStringList recipients;
-  while (!gpgId.atEnd()) {
-    QString recipient(gpgId.readLine());
-    recipient = recipient.split("#")[0].trimmed();
+  const QString text = QString::fromUtf8(contents);
+  for (const QString &line : text.split(QLatin1Char('\n'))) {
+    QString recipient = line.split(QLatin1Char('#')).first().trimmed();
     if (recipient.isEmpty()) {
       continue;
     }
     if (!Util::isValidKeyId(recipient)) {
       // Never drop a recipient silently: the list is written back verbatim
       // by UsersDialog, so a skipped line disappears from .gpg-id.
-      qCWarning(lcQtPass) << "Skipping unusable recipient in"
-                          << gpgId.fileName() << ":" << recipient;
+      qCWarning(lcQtPass) << "Skipping unusable recipient in" << sourceName
+                          << ":" << recipient;
       continue;
     }
     recipients += recipient;

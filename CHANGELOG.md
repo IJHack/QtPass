@@ -22,6 +22,25 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Security
 
+- A signed `.gpg-id` is verified and parsed from the same bytes: the
+  signature check used to run on the path and the recipient list was read
+  from the file afterwards, so anyone able to write to the store in between
+  could choose the recipients a new or re-encrypted entry was encrypted to.
+  `gpg --verify` now gets the data on stdin, and the re-encryption run
+  remembers the verified list per `.gpg-id` [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- `.gpg-id` and `.gpg-id.sig` land in one commit, and when that commit fails
+  the re-encryption does not start; before, the signature followed in a
+  second commit (or not at all) and the store was re-encrypted to a list the
+  repository did not have [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- Re-encryption stops when the automatic pull before it left unmerged files,
+  instead of committing on top of a half-merged store; a pull that only failed
+  to reach the remote still continues with the local store [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- `.gpg-id` is written atomically and a failed write stops the operation;
+  a full disk used to leave a truncated recipient list that was then signed
+  and encrypted to [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- The profile form only accepts full key fingerprints (40 or 64 hexadecimal
+  characters) as signing key, which is what `pass` compares against gpg's
+  VALIDSIG; a short key ID would sign but never verify [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - WSL commands run through `wsl --exec` instead of the distribution's login
   shell, so entry paths, `.gpg-id` recipients and commit messages are no
   longer word-split or `$()`-expanded [#1686](https://github.com/IJHack/QtPass/pull/1686)

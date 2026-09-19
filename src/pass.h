@@ -237,6 +237,15 @@ public:
   static auto getRecipientList(const QString &for_file,
                                const QString &passStore) -> QStringList;
   /**
+   * @brief Parse the contents of a .gpg-id: one recipient per line, `#`
+   * starts a comment, unusable lines are logged and skipped.
+   * @param contents The file's bytes.
+   * @param sourceName Where they came from, for the log.
+   * @return The recipient key IDs in file order.
+   */
+  static auto parseRecipients(const QByteArray &contents,
+                              const QString &sourceName) -> QStringList;
+  /**
    * @brief Seed a new folder's .gpg-id from the recipients it inherits.
    *
    * Writes the recipient list that is in effect for @p newDir (found by

@@ -41,17 +41,31 @@ protected:
    */
   auto gpgIdSigner() -> GpgIdSigner;
   /**
-   * @brief Verify the detached signature of a `.gpg-id`.
-   * @param file The `.gpg-id`.
-   * @return true when valid, or when no signing key is configured.
+   * @brief Read a `.gpg-id`, verify its detached signature and parse the
+   * recipients from the bytes that were verified.
+   *
+   * One read serves both the check and the parse, so a file swapped in
+   * between cannot smuggle in a recipient the signature never covered.
+   * @param gpgIdFile The `.gpg-id`.
+   * @param recipients Receives the recipients; empty on failure.
+   * @return false when the file cannot be read or the signature is bad (with
+   *         a signing key configured). true otherwise, also for an empty
+   *         list; the caller decides what an empty list means.
    */
-  auto verifyGpgIdFile(const QString &file) -> bool;
+  auto loadVerifiedRecipients(const QString &gpgIdFile, QStringList *recipients)
+      -> bool;
   /**
-   * @brief Write recipients to .gpg-id file.
+   * @brief Write the enabled recipients to a .gpg-id, atomically: a write
+   * that fails halfway (full disk, dead network share) leaves the previous
+   * file in place instead of a truncated list that would then be signed
+   * and encrypted to.
    * @param gpgIdFile Path to .gpg-id file.
    * @param users List of recipients.
+   * @return true when the file was written; false after reporting through
+   *         critical().
    */
-  void writeGpgIdFile(const QString &gpgIdFile, const QList<UserInfo> &users);
+  auto writeGpgIdFile(const QString &gpgIdFile, const QList<UserInfo> &users)
+      -> bool;
   /**
    * @brief Sign a `.gpg-id` with the configured key and verify the result;
    * failures are reported through critical().
@@ -60,21 +74,19 @@ protected:
    */
   auto signGpgIdFile(const QString &gpgIdFile) -> bool;
   /**
-   * @brief Stage and commit .gpg-id (and optionally its signature) in git.
-   *
-   * Runs git synchronously so that the blocking re-encryption that follows
-   * in Init cannot race the add/commit for the index lock.
-   * @param gpgIdFile .gpg-id file path.
-   * @param gpgIdSigFile Signature file path.
-   * @param addFile Stage .gpg-id file.
-   * @param addSigFile Stage signature file.
-   * @param out Receives stdout of the git commands.
-   * @param err Receives stderr of the git commands.
+   * @brief Stage a `.gpg-id` and, when given, its `.sig`, and commit both in
+   * one commit, so no commit in the history has a recipient list without
+   * the signature that covers it. Nothing is committed when neither file
+   * changed.
+   * @param gpgIdFile Absolute path of the `.gpg-id`.
+   * @param gpgIdSigFile Absolute path of the `.gpg-id.sig`, or empty when no
+   *        signing key is configured.
+   * @param out Receives the concatenated stdout of the git commands.
+   * @param err Receives the concatenated stderr of the git commands.
    * @return Exit code of the first failing git command, 0 on success.
    */
   auto gitAddGpgId(const QString &gpgIdFile, const QString &gpgIdSigFile,
-                   bool addFile, bool addSigFile, QString *out = nullptr,
-                   QString *err = nullptr) -> int;
+                   QString *out, QString *err) -> int;
   /**
    * @brief Check whether git already tracks a file in the store.
    * @param file Absolute path inside the password store.
@@ -82,13 +94,17 @@ protected:
    */
   auto gitTracks(const QString &file) -> bool;
   /**
-   * @brief Verify .gpg-id file for a directory.
+   * @brief Recipients for the directory of @p file, from its verified
+   * `.gpg-id`.
    * @param file Password file path.
-   * @param gpgIdFilesVerified List of already verified .gpg-id files.
-   * @param gpgId Output parameter for recipient key IDs.
-   * @return true on success, false on failure.
+   * @param verified Cache of `.gpg-id` path to the recipients its verified
+   *        contents held; a hit skips gpg and reuses exactly that list.
+   * @param gpgId Output parameter for recipient key IDs, sorted.
+   * @return true on success, false when the file is unreadable or its
+   *         signature is bad (reported through critical()).
    */
-  auto verifyGpgIdForDir(const QString &file, QStringList &gpgIdFilesVerified,
+  auto verifyGpgIdForDir(const QString &file,
+                         QHash<QString, QStringList> &verified,
                          QStringList &gpgId) -> bool;
   /**
    * @brief Create git backup commit before re-encryption.

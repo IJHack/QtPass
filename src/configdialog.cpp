@@ -19,6 +19,7 @@
 #include <QListWidgetItem>
 #include <QMessageBox>
 #include <QPushButton>
+#include <QRegularExpression>
 #include <QSystemTrayIcon>
 #include <algorithm>
 #include <utility>
@@ -84,6 +85,7 @@ ConfigDialog::ConfigDialog(QWidget *parent)
   }
   m_nameTip = ui->profileName->toolTip();
   m_pathTip = ui->profilePath->toolTip();
+  m_keyTip = ui->profileSigningKey->toolTip();
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
 
   ui->label->setText(ui->label->text() + VERSION);
@@ -272,6 +274,16 @@ void ConfigDialog::usePass(bool usePass) {
  * overwrite the other). The offending rows are painted in the list and the
  * form field of the current one carries the reason as its tooltip.
  */
+auto ConfigDialog::isFingerprintList(const QString &setting) -> bool {
+  // 40 hex characters for OpenPGP v4 keys, 64 for v5/v6 (gpg 2.5+).
+  static const QRegularExpression fingerprint(
+      QStringLiteral("^(?:[0-9A-Fa-f]{40}|[0-9A-Fa-f]{64})$"));
+  const QStringList keys = setting.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+  return std::all_of(keys.cbegin(), keys.cend(), [](const QString &key) {
+    return fingerprint.match(key).hasMatch();
+  });
+}
+
 void ConfigDialog::validate() {
   bool status = true;
   QHash<QString, int> names;
@@ -288,19 +300,33 @@ void ConfigDialog::validate() {
     }
     const QString pathProblem =
         entry.profile.path.isEmpty() ? tr("This field is required") : QString();
+    // pass compares PASSWORD_STORE_SIGNING_KEY against the fingerprints in
+    // gpg's VALIDSIG line, so anything shorter than a fingerprint would sign
+    // and then never verify. Refuse it here instead of failing at first use.
+    const QString keyProblem =
+        isFingerprintList(entry.profile.signingKey)
+            ? QString()
+            : tr("Full key fingerprints only (40 or 64 hexadecimal "
+                 "characters), separated by spaces");
     QListWidgetItem *item = ui->profileList->item(row);
     if (item != nullptr) {
-      const bool bad = !nameProblem.isEmpty() || !pathProblem.isEmpty();
+      const bool bad = !nameProblem.isEmpty() || !pathProblem.isEmpty() ||
+                       !keyProblem.isEmpty();
       item->setBackground(bad ? QBrush(Qt::red) : QBrush());
-      item->setToolTip(!nameProblem.isEmpty() ? nameProblem : pathProblem);
+      item->setToolTip(!nameProblem.isEmpty()   ? nameProblem
+                       : !pathProblem.isEmpty() ? pathProblem
+                                                : keyProblem);
     }
     if (row == m_currentEntry) {
       ui->profileName->setToolTip(nameProblem.isEmpty() ? m_nameTip
                                                         : nameProblem);
       ui->profilePath->setToolTip(pathProblem.isEmpty() ? m_pathTip
                                                         : pathProblem);
+      ui->profileSigningKey->setToolTip(keyProblem.isEmpty() ? m_keyTip
+                                                             : keyProblem);
     }
-    status = status && nameProblem.isEmpty() && pathProblem.isEmpty();
+    status = status && nameProblem.isEmpty() && pathProblem.isEmpty() &&
+             keyProblem.isEmpty();
   }
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(status);
 }
@@ -1079,6 +1105,7 @@ void ConfigDialog::onProfileSigningKeyEdited(const QString &key) {
     return;
   }
   entry->profile.signingKey = key;
+  validate();
 }
 
 /**
