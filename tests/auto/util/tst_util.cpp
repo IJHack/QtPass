@@ -3502,11 +3502,14 @@ void tst_util::regularFilesUnderWalksRealDirectoriesOnly() {
   const QString cwd = QDir::currentPath();
   const auto restoreCwd = qScopeGuard([&cwd] { QDir::setCurrent(cwd); });
   QVERIFY(QDir::setCurrent(storeDir.path()));
+  // Against currentPath(): on macOS the temp dir is reached through the
+  // /var -> /private/var link and the cwd is the resolved form.
+  const QDir here(QDir::currentPath());
   QCOMPARE(
       Util::regularFilesUnder(QStringLiteral("."), {QStringLiteral("*.txt")}),
-      QStringList{root.filePath(QStringLiteral("notes.txt"))});
+      QStringList{here.filePath(QStringLiteral("notes.txt"))});
   QCOMPARE(Util::directoriesUnder(QStringLiteral("sub")),
-           QStringList{root.filePath(QStringLiteral("sub/deeper"))});
+           QStringList{here.filePath(QStringLiteral("sub/deeper"))});
 }
 
 /**
