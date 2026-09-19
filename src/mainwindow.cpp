@@ -805,11 +805,11 @@ void MainWindow::clearPanel(bool notify) {
       ui->lineEdit->blockSignals(true);
       ui->lineEdit->clear();
       ui->lineEdit->blockSignals(false);
-      ui->lineEdit->setPlaceholderText(tr("Search Password"));
+      ui->lineEdit->setPlaceholderText(tr("Search password"));
     }
   }
   if (notify) {
-    QString output = "***" + tr("Password and Content hidden") + "***";
+    QString output = "***" + tr("Password and content hidden") + "***";
     ui->textBrowser->setHtml(output);
   } else {
     ui->textBrowser->setHtml("");
@@ -1019,7 +1019,7 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->lineEdit->blockSignals(true);
     ui->lineEdit->clear();
     ui->lineEdit->blockSignals(false);
-    ui->lineEdit->setPlaceholderText(tr("Search Password"));
+    ui->lineEdit->setPlaceholderText(tr("Search password"));
     ui->lineEdit->setToolTip(QString());
     ui->grepResultsList->clear();
     ui->grepResultsList->setVisible(false);
@@ -1662,7 +1662,7 @@ void MainWindow::addFolder() {
   QString dir = m_tree->currentDir(false);
   QString newdir =
       QInputDialog::getText(this, tr("New folder"),
-                            tr("New Folder: \n(Will be placed in %1 )")
+                            tr("New folder: \n(Will be placed in %1 )")
                                 .arg(s.passStore + m_tree->currentDir(true)),
                             QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty()) {
@@ -1710,7 +1710,7 @@ void MainWindow::renameFolder() {
   QString srcDir = QDir::cleanPath(m_tree->currentDir(false));
   QString srcDirName = QDir(srcDir).dirName();
   QString newName =
-      QInputDialog::getText(this, tr("Rename folder"), tr("Rename Folder To: "),
+      QInputDialog::getText(this, tr("Rename folder"), tr("Rename folder to: "),
                             QLineEdit::Normal, srcDirName, &ok);
   if (!ok || newName.isEmpty()) {
     return;
@@ -1750,7 +1750,7 @@ void MainWindow::renamePassword() {
   }
 
   QString newName =
-      QInputDialog::getText(this, tr("Rename file"), tr("Rename File To: "),
+      QInputDialog::getText(this, tr("Rename file"), tr("Rename file to: "),
                             QLineEdit::Normal, fileName, &ok);
   if (!ok || newName.isEmpty()) {
     return;
@@ -1921,7 +1921,7 @@ void MainWindow::exportPublicKey() {
   const QString identity = s.passSigningKey;
   if (identity.isEmpty()) {
     QMessageBox::information(
-        this, tr("Export Public Key"),
+        this, tr("Export public key"),
         tr("<h3>Export Your Public Key</h3>"
            "<p>No signing key is configured. Set one in QtPass Settings "
            "&gt; GPG keys, or run this in a terminal:</p>"
@@ -1940,7 +1940,7 @@ void MainWindow::exportPublicKey() {
   QString stdErr;
   int exitCode = Executor::executeBlocking(gpgExe, args, &stdOut, &stdErr);
   if (exitCode != 0 || stdOut.isEmpty()) {
-    QMessageBox::warning(this, tr("Export Public Key"),
+    QMessageBox::warning(this, tr("Export public key"),
                          tr("Could not export public key for %1.\n\n%2")
                              .arg(identity, stdErr.isEmpty()
                                                 ? tr("No output from gpg.")
@@ -1970,8 +1970,8 @@ void MainWindow::addRecipient(const QString &dir) {
  */
 void MainWindow::showShareHelp() {
   QMessageBox::information(
-      this, tr("Sharing Passwords with GPG"),
-      tr("<h3>Sharing Passwords with GPG</h3>"
+      this, tr("Sharing passwords with GPG"),
+      tr("<h3>Sharing passwords with GPG</h3>"
          "<p>To share passwords with other users:</p>"
          "<ol>"
          "<li><b>Export your public key</b> and send it to teammates</li>"

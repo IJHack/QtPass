@@ -66,14 +66,12 @@
         <translation>Vymazat panel po:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>Generování hesel:</translation>
+        <translation type="vanished">Generování hesel:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Délka hesla:</translation>
+        <translation type="vanished">Délka hesla:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -173,6 +171,11 @@
         <location filename="../src/configdialog.ui" line="988"/>
         <source>Select password storage program:</source>
         <translation>Vybrat program správce hesel:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>Podpisový klíč</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1448"/>
@@ -394,8 +397,12 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Nový profil</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Nový profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -496,9 +503,8 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
         <translation>Vyberte znakovou sadu pro generování hesla</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Všechny znaky</translation>
+        <translation type="vanished">Všechny znaky</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -663,6 +669,21 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
         <translation type="unfinished">Ctrl+M jej zobrazí nebo skryje také z hlavního okna</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Generování hesel:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Délka hesla:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Všechny znaky</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1053"/>
         <location filename="../src/configdialog.ui" line="1066"/>
         <location filename="../src/configdialog.ui" line="1121"/>
@@ -728,9 +749,8 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
         <translation>Cesta do adresáře pro ukládání hesel</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>Podpisový klíč</translation>
+        <translation type="vanished">Podpisový klíč</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -844,8 +864,12 @@ e-mail</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Exportovat veřejný klíč</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Exportovat veřejný klíč</translation>
     </message>
     <message>
@@ -859,13 +883,17 @@ e-mail</translation>
         <translation type="unfinished">Kopírovat do schránky</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>Uložit do souboru…</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">Kopírovat do schránky</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Uložit do souboru…</translation>
+        <translation type="vanished">Uložit do souboru…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -878,10 +906,14 @@ e-mail</translation>
         <translation>Zkopírováno!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Uložit veřejný klíč</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Uložit veřejný klíč</translation>
     </message>
     <message>
@@ -1174,10 +1206,8 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>Importovat klíč GPG</translation>
+        <translation type="vanished">Importovat klíč GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1185,9 +1215,8 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
         <translation>Importujte veřejný klíč GPG ze souboru nebo jej vložte níže. Klíč musí být ve formátu ASCII-armored.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Ze souboru…</translation>
+        <translation type="vanished">Ze souboru…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1197,6 +1226,17 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">Ze schránky</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>Importovat klíč GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>Ze souboru…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1214,17 +1254,12 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
         <translation>ASCII-armored GPG klíč</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Všechny soubory</translation>
+        <translation type="vanished">Všechny soubory</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Importovat klíč</translation>
+        <translation type="vanished">Importovat klíč</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1239,6 +1274,19 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 nevypadá jako klíč GPG ve formátu ASCII-armored. Nejprve jej převeďte pomocí &lt;code&gt;gpg --armor --export&lt;/code&gt;, nebo vložte ASCII-armored blok přes &lt;b&gt;Ze schránky&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Všechny soubory</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Importovat klíč</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1506,11 +1554,8 @@ Expire-Date: 0
         <translation>Nastavení</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="808"/>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Search Password</source>
-        <translation>Hledat heslo</translation>
+        <translation type="vanished">Hledat heslo</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -1592,9 +1637,8 @@ Expire-Date: 0
         <translation type="vanished">Schránka nevymazána</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Skryté heslo i obsah</translation>
+        <translation type="vanished">Skryté heslo i obsah</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -1699,10 +1743,9 @@ Expire-Date: 0
         <translation>Přidat heslo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Nový adresář: 
+        <translation type="vanished">Nový adresář: 
 (Bude umístěn do %1 )</translation>
     </message>
     <message>
@@ -1713,6 +1756,13 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
         <translation>Vybrat profil</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="120"/>
+        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <source>Search password</source>
+        <translation>Hledat heslo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
@@ -1961,6 +2011,11 @@ Expire-Date: 0
         <translation type="unfinished">Tento záznam hesla se nepodařilo dešifrovat</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Skryté heslo i obsah</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
         <source>About QtPass</source>
         <translation type="unfinished">O QtPass</translation>
@@ -2021,6 +2076,13 @@ Expire-Date: 0
         <translation type="unfinished">Nová složka</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <source>New folder: 
+(Will be placed in %1 )</source>
+        <translation>Nový adresář: 
+(Bude umístěn do %1 )</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1676"/>
         <location filename="../src/mainwindow.cpp" line="1698"/>
         <location filename="../src/mainwindow.cpp" line="1825"/>
@@ -2038,19 +2100,43 @@ Expire-Date: 0
         <translation>Nepodařilo se vytvořit soubor .gpg-id v: %1</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Přejmenovat složku na: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
         <translation>Přejmenovat soubor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
-        <source>Rename Folder To: </source>
-        <translation>Přejmenovat složku na: </translation>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Přejmenovat soubor na: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
+        <source>Export public key</source>
+        <translation>Exportovat veřejný klíč</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>Sdílení hesel pomocí GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Sdílení hesel pomocí GPG&lt;/h3&gt;&lt;p&gt;Pro sdílení hesel s ostatními uživateli:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportujte svůj veřejný klíč&lt;/b&gt; a pošlete jej členům týmu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importujte veřejné klíče členů týmu&lt;/b&gt; do svého klíčového kruhu GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Znovu zašifrujte hesla&lt;/b&gt;, aby je všichni příjemci mohli dešifrovat&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Hesla mohou dešifrovat pouze osoby s odpovídajícím tajným klíčem.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Pro všechny sdílené složky používejte stejný klíč GPG.&lt;/p&gt;&lt;p&gt;Další podrobnosti najdete v častých dotazech.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Rename Folder To: </source>
+        <translation type="vanished">Přejmenovat složku na: </translation>
+    </message>
+    <message>
         <source>Rename File To: </source>
-        <translation>Přejmenovat soubor na: </translation>
+        <translation type="vanished">Přejmenovat soubor na: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -2110,10 +2196,8 @@ Pokračovat?</translation>
         <translation type="unfinished">Opětovné šifrování hesel: %1 z %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
-        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
-        <translation>Exportovat veřejný klíč</translation>
+        <translation type="vanished">Exportovat veřejný klíč</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
@@ -2135,14 +2219,12 @@ Pokračovat?</translation>
         <translation>Žádný výstup od gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Sdílení hesel pomocí GPG</translation>
+        <translation type="vanished">Sdílení hesel pomocí GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Sdílení hesel pomocí GPG&lt;/h3&gt;&lt;p&gt;Pro sdílení hesel s ostatními uživateli:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportujte svůj veřejný klíč&lt;/b&gt; a pošlete jej členům týmu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importujte veřejné klíče členů týmu&lt;/b&gt; do svého klíčového kruhu GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Znovu zašifrujte hesla&lt;/b&gt;, aby je všichni příjemci mohli dešifrovat&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Hesla mohou dešifrovat pouze osoby s odpovídajícím tajným klíčem.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Pro všechny sdílené složky používejte stejný klíč GPG.&lt;/p&gt;&lt;p&gt;Další podrobnosti najdete v častých dotazech.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Sdílení hesel pomocí GPG&lt;/h3&gt;&lt;p&gt;Pro sdílení hesel s ostatními uživateli:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportujte svůj veřejný klíč&lt;/b&gt; a pošlete jej členům týmu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importujte veřejné klíče členů týmu&lt;/b&gt; do svého klíčového kruhu GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Znovu zašifrujte hesla&lt;/b&gt;, aby je všichni příjemci mohli dešifrovat&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Hesla mohou dešifrovat pouze osoby s odpovídajícím tajným klíčem.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Pro všechny sdílené složky používejte stejný klíč GPG.&lt;/p&gt;&lt;p&gt;Další podrobnosti najdete v častých dotazech.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="319"/>
@@ -2273,13 +2355,21 @@ Pokračovat?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Nastavení znaků:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Všechny znaky</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Nastavení znaků:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Všechny znaky</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2375,9 +2465,13 @@ Pokračovat?</translation>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Výstup procesu</translation>
+        <translation type="obsolete">Výstup procesu</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>Výstup procesu</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2509,8 +2603,12 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>Kód OTP</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">Kód OTP</translation>
+        <translation type="obsolete">Kód OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

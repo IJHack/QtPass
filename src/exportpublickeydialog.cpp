@@ -80,14 +80,14 @@ void ExportPublicKeyDialog::on_saveButton_clicked() {
                             ? QStringLiteral("public_key.asc")
                             : QStringLiteral("%1.asc").arg(safeKeyId);
   QString fileName = QFileDialog::getSaveFileName(
-      this, tr("Save Public Key"), defaultName,
+      this, tr("Save public key"), defaultName,
       tr("ASCII-armored key (*.asc);;All files (*)"));
   if (fileName.isEmpty()) {
     return;
   }
   QSaveFile file(fileName);
   if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-    QMessageBox::warning(this, tr("Save Public Key"),
+    QMessageBox::warning(this, tr("Save public key"),
                          tr("Could not open %1 for writing: %2")
                              .arg(fileName, file.errorString()));
     return;
@@ -97,7 +97,7 @@ void ExportPublicKeyDialog::on_saveButton_clicked() {
   out.flush();
   if (out.status() != QTextStream::Ok || !file.commit()) {
     QMessageBox::warning(
-        this, tr("Save Public Key"),
+        this, tr("Save public key"),
         tr("Could not write to %1: %2").arg(fileName, file.errorString()));
   }
 }

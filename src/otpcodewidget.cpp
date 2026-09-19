@@ -49,7 +49,7 @@ OtpCodeWidget::OtpCodeWidget(Totp::Settings settings, bool withCopyButton,
   }
 
   m_codeLabel = new QLabel(this);
-  m_codeLabel->setObjectName(QStringLiteral("OTP Code"));
+  m_codeLabel->setObjectName(QStringLiteral("OTP code"));
   m_codeLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
   if (monospace) {
     m_codeLabel->setStyleSheet("QLabel { font-family: monospace; }");

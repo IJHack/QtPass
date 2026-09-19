@@ -92,14 +92,12 @@
         <translation>Tampilkan keluaran proses</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>Pembuatan Kata Sandi:</translation>
+        <translation type="vanished">Pembuatan Kata Sandi:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Panjang Kata Sandi:</translation>
+        <translation type="vanished">Panjang Kata Sandi:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -117,9 +115,8 @@
         <translation>Pilih kumpulan karakter untuk pembuatan kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Semua Karakter</translation>
+        <translation type="vanished">Semua Karakter</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -305,6 +302,21 @@
         <translation type="unfinished">Ctrl+M juga menampilkan atau menyembunyikannya dari jendela utama</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Pembuatan Kata Sandi:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Panjang Kata Sandi:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Semua Karakter</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
         <source>Choose the gpg executable</source>
@@ -439,9 +451,8 @@
         <translation>Jalur ke direktori penyimpanan kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>Kunci Penandatangan</translation>
+        <translation type="vanished">Kunci Penandatangan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -514,6 +525,11 @@ e-mail</source>
         <translation>login
 URL
 email</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>Kunci Penandatangan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
@@ -639,8 +655,12 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Profil Baru</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Profil Baru</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -788,8 +808,12 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Ekspor Kunci Publik</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Ekspor Kunci Publik</translation>
     </message>
     <message>
@@ -803,13 +827,17 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
         <translation type="unfinished">Salin ke clipboard</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>Simpan ke Berkas…</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">Salin ke Clipboard</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Simpan ke Berkas…</translation>
+        <translation type="vanished">Simpan ke Berkas…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -822,10 +850,14 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
         <translation>Disalin!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Simpan Kunci Publik</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Simpan Kunci Publik</translation>
     </message>
     <message>
@@ -1112,10 +1144,8 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>Impor Kunci GPG</translation>
+        <translation type="vanished">Impor Kunci GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1123,9 +1153,8 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation>Impor kunci publik GPG dari berkas atau tempel di bawah. Kunci harus dalam format ASCII-armored.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Dari Berkas…</translation>
+        <translation type="vanished">Dari Berkas…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1135,6 +1164,17 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">Dari Clipboard</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>Impor Kunci GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>Dari Berkas…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1152,17 +1192,12 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation>Kunci GPG ASCII-armored</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Semua Berkas</translation>
+        <translation type="vanished">Semua Berkas</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Impor Kunci</translation>
+        <translation type="vanished">Impor Kunci</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1177,6 +1212,19 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 tidak terlihat seperti kunci GPG ASCII-armored. Konversi terlebih dahulu dengan &lt;code&gt;gpg --armor --export&lt;/code&gt;, atau tempel blok ASCII-armored melalui &lt;b&gt;Dari Clipboard&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Semua Berkas</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Impor Kunci</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1330,10 +1378,14 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation>Pilih profil</translation>
     </message>
     <message>
+        <source>Search Password</source>
+        <translation type="vanished">Cari Kata Sandi</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="808"/>
         <location filename="../src/mainwindow.cpp" line="1022"/>
-        <source>Search Password</source>
+        <source>Search password</source>
         <translation>Cari Kata Sandi</translation>
     </message>
     <message>
@@ -1637,9 +1689,8 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation>Tidak ada kode OTP yang ditemukan di entri kata sandi ini</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Kata sandi dan konten disembunyikan</translation>
+        <translation type="vanished">Kata sandi dan konten disembunyikan</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -1714,6 +1765,11 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
 (Will be placed in %1 )</source>
         <translation type="vanished">Berkas kata sandi baru: 
 (Akan ditempatkan di %1 )</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Kata sandi dan konten disembunyikan</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1231"/>
@@ -1798,9 +1854,36 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1665"/>
-        <source>New Folder: 
+        <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Folder Baru: 
+(Akan ditempatkan di %1 )</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Ubah Nama Berkas Menjadi: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
+        <source>Export public key</source>
+        <translation>Ekspor Kunci Publik</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>Berbagi Kata Sandi dengan GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Berbagi Kata Sandi dengan GPG&lt;/h3&gt;&lt;p&gt;Untuk berbagi kata sandi dengan pengguna lain:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Ekspor kunci publik Anda&lt;/b&gt; dan kirim ke rekan tim&lt;/li&gt;&lt;li&gt;&lt;b&gt;Impor kunci publik rekan tim&lt;/b&gt; ke keyring GPG Anda&lt;/li&gt;&lt;li&gt;&lt;b&gt;Enkripsi ulang kata sandi&lt;/b&gt; agar semua penerima dapat mendekripsinya&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Hanya orang dengan kunci rahasia yang cocok yang dapat mendekripsi kata sandi.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Gunakan kunci GPG yang sama untuk semua folder bersama.&lt;/p&gt;&lt;p&gt;Lihat FAQ untuk detail lebih lanjut.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>New Folder: 
+(Will be placed in %1 )</source>
+        <translation type="vanished">Folder Baru: 
 (Akan ditempatkan di %1 )</translation>
     </message>
     <message>
@@ -1821,19 +1904,22 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation>Gagal membuat berkas .gpg-id di: %1</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Ubah Nama Folder Menjadi: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
         <translation>Ubah nama berkas</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>Ubah Nama Folder Menjadi: </translation>
+        <translation type="vanished">Ubah Nama Folder Menjadi: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>Ubah Nama Berkas Menjadi: </translation>
+        <translation type="vanished">Ubah Nama Berkas Menjadi: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -1889,10 +1975,8 @@ Lanjutkan?</translation>
         <translation type="unfinished">Mengenkripsi ulang kata sandi: %1 dari %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
-        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
-        <translation>Ekspor Kunci Publik</translation>
+        <translation type="vanished">Ekspor Kunci Publik</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
@@ -1914,14 +1998,12 @@ Lanjutkan?</translation>
         <translation>Tidak ada keluaran dari gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Berbagi Kata Sandi dengan GPG</translation>
+        <translation type="vanished">Berbagi Kata Sandi dengan GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Berbagi Kata Sandi dengan GPG&lt;/h3&gt;&lt;p&gt;Untuk berbagi kata sandi dengan pengguna lain:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Ekspor kunci publik Anda&lt;/b&gt; dan kirim ke rekan tim&lt;/li&gt;&lt;li&gt;&lt;b&gt;Impor kunci publik rekan tim&lt;/b&gt; ke keyring GPG Anda&lt;/li&gt;&lt;li&gt;&lt;b&gt;Enkripsi ulang kata sandi&lt;/b&gt; agar semua penerima dapat mendekripsinya&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Hanya orang dengan kunci rahasia yang cocok yang dapat mendekripsi kata sandi.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Gunakan kunci GPG yang sama untuk semua folder bersama.&lt;/p&gt;&lt;p&gt;Lihat FAQ untuk detail lebih lanjut.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Berbagi Kata Sandi dengan GPG&lt;/h3&gt;&lt;p&gt;Untuk berbagi kata sandi dengan pengguna lain:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Ekspor kunci publik Anda&lt;/b&gt; dan kirim ke rekan tim&lt;/li&gt;&lt;li&gt;&lt;b&gt;Impor kunci publik rekan tim&lt;/b&gt; ke keyring GPG Anda&lt;/li&gt;&lt;li&gt;&lt;b&gt;Enkripsi ulang kata sandi&lt;/b&gt; agar semua penerima dapat mendekripsinya&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Hanya orang dengan kunci rahasia yang cocok yang dapat mendekripsi kata sandi.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Gunakan kunci GPG yang sama untuk semua folder bersama.&lt;/p&gt;&lt;p&gt;Lihat FAQ untuk detail lebih lanjut.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2041,13 +2123,21 @@ Lanjutkan?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Kumpulan Karakter:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Semua Karakter</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Kumpulan Karakter:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Semua Karakter</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2143,9 +2233,13 @@ Lanjutkan?</translation>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Keluaran Proses</translation>
+        <translation type="obsolete">Keluaran Proses</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>Keluaran Proses</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2275,8 +2369,12 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>Kode OTP</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">Kode OTP</translation>
+        <translation type="obsolete">Kode OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

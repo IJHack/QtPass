@@ -96,14 +96,12 @@
         <translation>Näita protsessi väljundit</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>Salasõna loomine:</translation>
+        <translation type="vanished">Salasõna loomine:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Salasõna pikkus:</translation>
+        <translation type="vanished">Salasõna pikkus:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -121,9 +119,8 @@
         <translation>Vali märgid, mida soovid salasõnade loomisel kasutada</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Kõik tähemärgid</translation>
+        <translation type="vanished">Kõik tähemärgid</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -189,6 +186,21 @@
         <location filename="../src/configdialog.ui" line="237"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Lubab otsida salasõnafailide sisust. Nõuab iga faili dekrüptimist ja võib suurte hoidlate puhul olla aeglane.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Salasõna loomine:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Salasõna pikkus:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Kõik tähemärgid</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1047"/>
@@ -271,8 +283,12 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1435"/>
-        <source>Signing Key</source>
+        <source>Signing key</source>
         <translation>Allkirjastamise võti</translation>
+    </message>
+    <message>
+        <source>Signing Key</source>
+        <translation type="vanished">Allkirjastamise võti</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -592,8 +608,12 @@ Väärtus salvestatakse ikkagi sisestatud kujul.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Uus profiil</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Uus profiil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -848,8 +868,12 @@ e-posti aadress</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Ekspordi avalik võti</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Ekspordi avalik võti</translation>
     </message>
     <message>
@@ -863,13 +887,17 @@ e-posti aadress</translation>
         <translation type="unfinished">Kopeeri lõikelauale</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>Salvesta faili…</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">Kopeeri lõikelauale</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Salvesta faili…</translation>
+        <translation type="vanished">Salvesta faili…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -882,10 +910,14 @@ e-posti aadress</translation>
         <translation>Kopeeritud!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Salvesta avalik võti</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Salvesta avalik võti</translation>
     </message>
     <message>
@@ -1175,10 +1207,8 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>Impordi GPG võti</translation>
+        <translation type="vanished">Impordi GPG võti</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1186,9 +1216,8 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
         <translation>Impordi GPG avalik võti failist või kleebi see allapoole. Võti peab olema ASCII-armored vormingus.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Failist…</translation>
+        <translation type="vanished">Failist…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1198,6 +1227,17 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">Lõikelaualt</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>Impordi GPG võti</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>Failist…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1215,17 +1255,12 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
         <translation>ASCII-armored GPG võti</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Kõik failid</translation>
+        <translation type="vanished">Kõik failid</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Impordi võti</translation>
+        <translation type="vanished">Impordi võti</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1240,6 +1275,19 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 ei tundu olevat ASCII-armored GPG võti. Teisenda see esmalt käsuga &lt;code&gt;gpg --armor --export&lt;/code&gt;, või kleebi armored plokk &lt;b&gt;Lõikelaualt&lt;/b&gt; kaudu.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Kõik failid</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Impordi võti</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1584,6 +1632,13 @@ p, li { white-space: pre-wrap; }
         <translation>Vali profiil</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="120"/>
+        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <source>Search password</source>
+        <translation>Otsi salasõna</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
         <translation>Otsi salasõnade sisust (pass grep)</translation>
@@ -1732,11 +1787,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Tühjenda</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="808"/>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Search Password</source>
-        <translation>Otsi salasõna</translation>
+        <translation type="vanished">Otsi salasõna</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -1822,9 +1874,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Clipboard not cleared</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Salasõna ja sisu on peidetud</translation>
+        <translation type="vanished">Salasõna ja sisu on peidetud</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -1947,10 +1998,9 @@ p, li { white-space: pre-wrap; }
         <translation>Lisa salasõna</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Uus kaust: 
+        <translation type="vanished">Uus kaust: 
 (asukohas %1)</translation>
     </message>
     <message>
@@ -1983,6 +2033,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1288"/>
         <source>No OTP code found in this password entry</source>
         <translation>Selle salasõna kirje juures ei leidu ühekordset 2FA koodi</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Salasõna ja sisu on peidetud</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -2079,6 +2134,23 @@ p, li { white-space: pre-wrap; }
         <translation>Mis see on?</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <source>New folder: 
+(Will be placed in %1 )</source>
+        <translation>Uus kaust: 
+(asukohas %1)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Uus kausta nimi: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Uus faili nimi: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1866"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Krüptime salasõnu uuesti...</translation>
@@ -2099,14 +2171,28 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Krüptime salasõnu uuesti: %1 / %2</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
+        <source>Export public key</source>
+        <translation>Ekspordi avalik võti</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>Salasõnade jagamine GPG-ga</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Salasõnade jagamine GPG-ga&lt;/h3&gt;&lt;p&gt;Salasõnade jagamiseks teiste kasutajatega:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Ekspordi oma avalik võti&lt;/b&gt; ja saada see meeskonnakaaslastele&lt;/li&gt;&lt;li&gt;&lt;b&gt;Impordi meeskonnakaaslaste avalikud võtmed&lt;/b&gt; oma GPG võtmehoidlasse&lt;/li&gt;&lt;li&gt;&lt;b&gt;Krüpti salasõnad uuesti&lt;/b&gt;, et kõik saajad saaksid neid dekrüptida&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Salasõnu saavad dekrüptida ainult need, kellel on vastav salajane võti.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vihje:&lt;/b&gt; Kasuta kõikide jagatud kaustade jaoks sama GPG võtit.&lt;/p&gt;&lt;p&gt;Lisateavet leiad KKK-st.&lt;/p&gt;</translation>
+    </message>
+    <message>
         <source>Open %1 in browser</source>
         <translation type="vanished">Ava %1 veebibrauseris</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
-        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
-        <translation>Ekspordi avalik võti</translation>
+        <translation type="vanished">Ekspordi avalik võti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
@@ -2128,14 +2214,12 @@ p, li { white-space: pre-wrap; }
         <translation>Gpg väljund puudub.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Salasõnade jagamine GPG-ga</translation>
+        <translation type="vanished">Salasõnade jagamine GPG-ga</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Salasõnade jagamine GPG-ga&lt;/h3&gt;&lt;p&gt;Salasõnade jagamiseks teiste kasutajatega:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Ekspordi oma avalik võti&lt;/b&gt; ja saada see meeskonnakaaslastele&lt;/li&gt;&lt;li&gt;&lt;b&gt;Impordi meeskonnakaaslaste avalikud võtmed&lt;/b&gt; oma GPG võtmehoidlasse&lt;/li&gt;&lt;li&gt;&lt;b&gt;Krüpti salasõnad uuesti&lt;/b&gt;, et kõik saajad saaksid neid dekrüptida&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Salasõnu saavad dekrüptida ainult need, kellel on vastav salajane võti.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vihje:&lt;/b&gt; Kasuta kõikide jagatud kaustade jaoks sama GPG võtit.&lt;/p&gt;&lt;p&gt;Lisateavet leiad KKK-st.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Salasõnade jagamine GPG-ga&lt;/h3&gt;&lt;p&gt;Salasõnade jagamiseks teiste kasutajatega:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Ekspordi oma avalik võti&lt;/b&gt; ja saada see meeskonnakaaslastele&lt;/li&gt;&lt;li&gt;&lt;b&gt;Impordi meeskonnakaaslaste avalikud võtmed&lt;/b&gt; oma GPG võtmehoidlasse&lt;/li&gt;&lt;li&gt;&lt;b&gt;Krüpti salasõnad uuesti&lt;/b&gt;, et kõik saajad saaksid neid dekrüptida&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Salasõnu saavad dekrüptida ainult need, kellel on vastav salajane võti.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vihje:&lt;/b&gt; Kasuta kõikide jagatud kaustade jaoks sama GPG võtit.&lt;/p&gt;&lt;p&gt;Lisateavet leiad KKK-st.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
@@ -2164,9 +2248,8 @@ p, li { white-space: pre-wrap; }
         <translation>Muuda faili nime</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>Uus kausta nimi: </translation>
+        <translation type="vanished">Uus kausta nimi: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1664"/>
@@ -2174,9 +2257,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Uus kaust</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>Uus faili nimi: </translation>
+        <translation type="vanished">Uus faili nimi: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -2340,13 +2422,21 @@ Kas jätkame?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Märgistik:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Kõik märgid</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Märgistik:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Kõik märgid</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2442,9 +2532,13 @@ Kas jätkame?</translation>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Protsessi väljund</translation>
+        <translation type="obsolete">Protsessi väljund</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>Protsessi väljund</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2575,8 +2669,12 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
-        <source>OTP Code</source>
+        <source>OTP code</source>
         <translation>Ühekordse salasõna (OTP) kood</translation>
+    </message>
+    <message>
+        <source>OTP Code</source>
+        <translation type="vanished">Ühekordse salasõna (OTP) kood</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

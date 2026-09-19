@@ -784,7 +784,7 @@ void ConfigDialog::initializeNewProfiles(const Profiles &existingProfiles) {
  */
 void ConfigDialog::on_addButton_clicked() {
   ProfileEntry entry;
-  entry.name = tr("New Profile");
+  entry.name = tr("New profile");
   entry.profile.path = ui->storePath->text();
   m_entries.append(entry);
   ui->profileList->addItem(entry.name);

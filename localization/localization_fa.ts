@@ -92,14 +92,12 @@
         <translation>نمایش خروجی فرایند</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>تولید رمز عبور:</translation>
+        <translation type="vanished">تولید رمز عبور:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>طول رمز عبور:</translation>
+        <translation type="vanished">طول رمز عبور:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -117,9 +115,8 @@
         <translation>انتخاب مجموعه کاراکتر برای تولید رمز عبور</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>همه کاراکترها</translation>
+        <translation type="vanished">همه کاراکترها</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -305,6 +302,21 @@
         <translation type="unfinished">Ctrl+M نیز آن را از پنجرهٔ اصلی نمایش می‌دهد یا پنهان می‌کند</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>تولید رمز عبور:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>طول رمز عبور:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>همه کاراکترها</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
         <source>Choose the gpg executable</source>
@@ -439,9 +451,8 @@
         <translation>مسیر به پوشه مخزن رمز عبور</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>کلید امضا</translation>
+        <translation type="vanished">کلید امضا</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -514,6 +525,11 @@ e-mail</source>
         <translation>نام کاربری
 URL
 ایمیل</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>کلید امضا</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
@@ -639,8 +655,12 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>نمایه جدید</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">نمایه جدید</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -788,8 +808,12 @@ The value will still be saved as entered.</source>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">صادرات کلید عمومی</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>صادرات کلید عمومی</translation>
     </message>
     <message>
@@ -803,13 +827,17 @@ The value will still be saved as entered.</source>
         <translation type="unfinished">کپی به کلیپ‌بورد</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>ذخیره در فایل...</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">کپی به کلیپ‌بورد</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>ذخیره در فایل...</translation>
+        <translation type="vanished">ذخیره در فایل...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -822,10 +850,14 @@ The value will still be saved as entered.</source>
         <translation>کپی شد!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">ذخیره کلید عمومی</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>ذخیره کلید عمومی</translation>
     </message>
     <message>
@@ -1112,10 +1144,8 @@ You will not be able to change the user list!</source>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>وارد کردن کلید GPG</translation>
+        <translation type="vanished">وارد کردن کلید GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1123,9 +1153,8 @@ You will not be able to change the user list!</source>
         <translation>کلید عمومی GPG را از فایل وارد کنید یا در زیر بچسبانید. کلید باید در قالب ASCII-armored باشد.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>از فایل...</translation>
+        <translation type="vanished">از فایل...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1135,6 +1164,17 @@ You will not be able to change the user list!</source>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">از کلیپ‌بورد</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>وارد کردن کلید GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>از فایل...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1152,17 +1192,12 @@ You will not be able to change the user list!</source>
         <translation>کلید GPG با قالب ASCII-armored</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>همه فایل‌ها</translation>
+        <translation type="vanished">همه فایل‌ها</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>وارد کردن کلید</translation>
+        <translation type="vanished">وارد کردن کلید</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1177,6 +1212,19 @@ You will not be able to change the user list!</source>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 به نظر نمی‌رسد یک کلید GPG با قالب ASCII-armored باشد. ابتدا آن را با &lt;code&gt;gpg --armor --export&lt;/code&gt; تبدیل کنید، یا بلاک armored را از طریق &lt;b&gt;از کلیپ‌بورد&lt;/b&gt; بچسبانید.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>همه فایل‌ها</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>وارد کردن کلید</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1330,10 +1378,14 @@ You will not be able to change the user list!</source>
         <translation>انتخاب نمایه</translation>
     </message>
     <message>
+        <source>Search Password</source>
+        <translation type="vanished">جستجوی رمز عبور</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="808"/>
         <location filename="../src/mainwindow.cpp" line="1022"/>
-        <source>Search Password</source>
+        <source>Search password</source>
         <translation>جستجوی رمز عبور</translation>
     </message>
     <message>
@@ -1627,9 +1679,8 @@ You will not be able to change the user list!</source>
         <translation>هیچ کد OTP در این ورودی رمز عبور یافت نشد</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>رمز عبور و محتوا پنهان شده</translation>
+        <translation type="vanished">رمز عبور و محتوا پنهان شده</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="923"/>
@@ -1700,6 +1751,11 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="752"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">رمزگشایی این ورودی رمز عبور ممکن نبود</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>رمز عبور و محتوا پنهان شده</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -1810,9 +1866,36 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1665"/>
-        <source>New Folder: 
+        <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>پوشه جدید:
+(در %1 قرار خواهد گرفت)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>تغییر نام فایل به: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
+        <source>Export public key</source>
+        <translation>صادرات کلید عمومی</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>اشتراک‌گذاری رمزهای عبور با GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;اشتراک‌گذاری رمزهای عبور با GPG&lt;/h3&gt;&lt;p&gt;برای اشتراک‌گذاری رمزهای عبور با سایر کاربران:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;کلید عمومی خود را صادر کنید&lt;/b&gt; و برای همتیمی‌ها ارسال کنید&lt;/li&gt;&lt;li&gt;&lt;b&gt;کلیدهای عمومی همتیمی‌ها را وارد کنید&lt;/b&gt; به دسته‌کلیدهای GPG خود&lt;/li&gt;&lt;li&gt;&lt;b&gt;رمزهای عبور را رمزنگاری مجدد کنید&lt;/b&gt; تا همه گیرندگان بتوانند آنها را رمزگشایی کنند&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;فقط افرادی که کلید خصوصی مطابق دارند می‌توانند رمزهای عبور را رمزگشایی کنند.&lt;/p&gt;&lt;p&gt;&lt;b&gt;نکته:&lt;/b&gt; از همان کلید GPG برای تمام پوشه‌های اشتراکی استفاده کنید.&lt;/p&gt;&lt;p&gt;برای جزئیات بیشتر به سوالات متداول مراجعه کنید.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>New Folder: 
+(Will be placed in %1 )</source>
+        <translation type="vanished">پوشه جدید:
 (در %1 قرار خواهد گرفت)</translation>
     </message>
     <message>
@@ -1833,19 +1916,22 @@ You will not be able to change the user list!</source>
         <translation>ایجاد فایل .gpg-id در %1 ناموفق بود</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>تغییر نام پوشه به: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
         <translation>تغییر نام فایل</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>تغییر نام پوشه به: </translation>
+        <translation type="vanished">تغییر نام پوشه به: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>تغییر نام فایل به: </translation>
+        <translation type="vanished">تغییر نام فایل به: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -1901,10 +1987,8 @@ Continue?</source>
         <translation type="unfinished">در حال رمزنگاری مجدد رمزهای عبور: %1 از %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
-        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
-        <translation>صادرات کلید عمومی</translation>
+        <translation type="vanished">صادرات کلید عمومی</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
@@ -1926,14 +2010,12 @@ Continue?</source>
         <translation>هیچ خروجی از gpg وجود ندارد.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>اشتراک‌گذاری رمزهای عبور با GPG</translation>
+        <translation type="vanished">اشتراک‌گذاری رمزهای عبور با GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;اشتراک‌گذاری رمزهای عبور با GPG&lt;/h3&gt;&lt;p&gt;برای اشتراک‌گذاری رمزهای عبور با سایر کاربران:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;کلید عمومی خود را صادر کنید&lt;/b&gt; و برای همتیمی‌ها ارسال کنید&lt;/li&gt;&lt;li&gt;&lt;b&gt;کلیدهای عمومی همتیمی‌ها را وارد کنید&lt;/b&gt; به دسته‌کلیدهای GPG خود&lt;/li&gt;&lt;li&gt;&lt;b&gt;رمزهای عبور را رمزنگاری مجدد کنید&lt;/b&gt; تا همه گیرندگان بتوانند آنها را رمزگشایی کنند&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;فقط افرادی که کلید خصوصی مطابق دارند می‌توانند رمزهای عبور را رمزگشایی کنند.&lt;/p&gt;&lt;p&gt;&lt;b&gt;نکته:&lt;/b&gt; از همان کلید GPG برای تمام پوشه‌های اشتراکی استفاده کنید.&lt;/p&gt;&lt;p&gt;برای جزئیات بیشتر به سوالات متداول مراجعه کنید.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;اشتراک‌گذاری رمزهای عبور با GPG&lt;/h3&gt;&lt;p&gt;برای اشتراک‌گذاری رمزهای عبور با سایر کاربران:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;کلید عمومی خود را صادر کنید&lt;/b&gt; و برای همتیمی‌ها ارسال کنید&lt;/li&gt;&lt;li&gt;&lt;b&gt;کلیدهای عمومی همتیمی‌ها را وارد کنید&lt;/b&gt; به دسته‌کلیدهای GPG خود&lt;/li&gt;&lt;li&gt;&lt;b&gt;رمزهای عبور را رمزنگاری مجدد کنید&lt;/b&gt; تا همه گیرندگان بتوانند آنها را رمزگشایی کنند&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;فقط افرادی که کلید خصوصی مطابق دارند می‌توانند رمزهای عبور را رمزگشایی کنند.&lt;/p&gt;&lt;p&gt;&lt;b&gt;نکته:&lt;/b&gt; از همان کلید GPG برای تمام پوشه‌های اشتراکی استفاده کنید.&lt;/p&gt;&lt;p&gt;برای جزئیات بیشتر به سوالات متداول مراجعه کنید.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2053,13 +2135,21 @@ Continue?</source>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>مجموعه کاراکتر:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>همه کاراکترها</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">مجموعه کاراکتر:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">همه کاراکترها</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2155,9 +2245,13 @@ Continue?</source>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">خروجی فرایند</translation>
+        <translation type="obsolete">خروجی فرایند</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>خروجی فرایند</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2287,8 +2381,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>کد OTP</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">کد OTP</translation>
+        <translation type="obsolete">کد OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

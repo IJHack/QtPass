@@ -12,7 +12,7 @@ class QToolButton;
 
 /**
  * @class ProcessOutputPanel
- * @brief The dockable "Process Output" console: numbered, colour-coded
+ * @brief The dockable "Process output" console: numbered, colour-coded
  *        lines of git/pass/gpg output with a line cap and sticky
  *        auto-scroll.
  *

@@ -9,7 +9,7 @@
 #include <QToolButton>
 
 ProcessOutputPanel::ProcessOutputPanel(QWidget *parent)
-    : QDockWidget(tr("Process Output"), parent) {
+    : QDockWidget(tr("Process output"), parent) {
   setObjectName(QStringLiteral("processOutputDock"));
   setFeatures(QDockWidget::DockWidgetMovable |
               QDockWidget::DockWidgetFloatable);

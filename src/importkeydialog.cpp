@@ -38,8 +38,8 @@ auto ImportKeyDialog::importedKeyId() const -> QString {
 
 void ImportKeyDialog::on_fileButton_clicked() {
   const QString fileName = QFileDialog::getOpenFileName(
-      this, tr("Import GPG Key"), QString(),
-      tr("ASCII-armored GPG key") + " (*.asc);;" + tr("All Files") + " (*)");
+      this, tr("Import GPG key"), QString(),
+      tr("ASCII-armored GPG key") + " (*.asc);;" + tr("All files") + " (*)");
 
   if (fileName.isEmpty()) {
     return;
@@ -47,7 +47,7 @@ void ImportKeyDialog::on_fileButton_clicked() {
 
   QFile file(fileName);
   if (!file.open(QIODevice::ReadOnly)) {
-    QMessageBox::warning(this, tr("Import Key"),
+    QMessageBox::warning(this, tr("Import key"),
                          tr("Could not open file: %1").arg(fileName));
     return;
   }
@@ -62,7 +62,7 @@ void ImportKeyDialog::on_fileButton_clicked() {
     // Message body is rich text (uses <code>/<b>); escape the path so any
     // characters in it cannot reach the HTML subset Qt renders.
     QMessageBox::warning(
-        this, tr("Import Key"),
+        this, tr("Import key"),
         tr("%1 does not look like an ASCII-armored GPG key. Convert it with "
            "<code>gpg --armor --export</code> first, or paste the armored "
            "block via <b>From clipboard</b>.")
@@ -160,10 +160,10 @@ auto ImportKeyDialog::parseGpgImportOutput(const QString &output) -> QString {
 }
 
 void ImportKeyDialog::showError(const QString &message) {
-  QMessageBox::warning(this, tr("Import Key"), message);
+  QMessageBox::warning(this, tr("Import key"), message);
 }
 
 void ImportKeyDialog::showSuccess(const QString &keyId) {
-  QMessageBox::information(this, tr("Import Key"),
+  QMessageBox::information(this, tr("Import key"),
                            tr("Successfully imported key: %1").arg(keyId));
 }

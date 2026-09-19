@@ -96,14 +96,12 @@
         <translation>Näytä prosessin tuloste</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>Salasanan luonti:</translation>
+        <translation type="vanished">Salasanan luonti:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Salasanan pituus:</translation>
+        <translation type="vanished">Salasanan pituus:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -121,9 +119,8 @@
         <translation>Valitse merkkijoukko salasanan luontiin</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Kaikki merkit</translation>
+        <translation type="vanished">Kaikki merkit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -189,6 +186,21 @@
         <location filename="../src/configdialog.ui" line="237"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Salli haku salasanatiedostojen sisällöstä. Vaatii jokaisen tiedoston salauksen purkamisen ja voi olla hidas suurissa varastoissa.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Salasanan luonti:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Salasanan pituus:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Kaikki merkit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1047"/>
@@ -271,8 +283,12 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1435"/>
-        <source>Signing Key</source>
+        <source>Signing key</source>
         <translation>Allekirjoitusavain</translation>
+    </message>
+    <message>
+        <source>Signing Key</source>
+        <translation type="vanished">Allekirjoitusavain</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -592,8 +608,12 @@ Arvo tallennetaan silti sellaisenaan kuin se on syötetty.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Uusi profiili</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Uusi profiili</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -848,8 +868,12 @@ sähköposti</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Vie julkinen avain</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Vie julkinen avain</translation>
     </message>
     <message>
@@ -863,13 +887,17 @@ sähköposti</translation>
         <translation type="unfinished">Kopioi leikepöydälle</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>Tallenna tiedostoon…</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">Kopioi leikepöydälle</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Tallenna tiedostoon…</translation>
+        <translation type="vanished">Tallenna tiedostoon…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -882,10 +910,14 @@ sähköposti</translation>
         <translation>Kopioitu!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Tallenna julkinen avain</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Tallenna julkinen avain</translation>
     </message>
     <message>
@@ -1175,10 +1207,8 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>Tuo GPG-avain</translation>
+        <translation type="vanished">Tuo GPG-avain</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1186,9 +1216,8 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
         <translation>Tuo GPG-julkinen avain tiedostosta tai liitä se alle. Avaimen on oltava ASCII-armored-muodossa.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Tiedostosta…</translation>
+        <translation type="vanished">Tiedostosta…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1198,6 +1227,17 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">Leikepöydältä</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>Tuo GPG-avain</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>Tiedostosta…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1215,17 +1255,12 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
         <translation>ASCII-armored GPG-avain</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Kaikki tiedostot</translation>
+        <translation type="vanished">Kaikki tiedostot</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Tuo avain</translation>
+        <translation type="vanished">Tuo avain</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1240,6 +1275,19 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 ei näytä ASCII-armored GPG-avaimelta. Muunna se ensin komennolla &lt;code&gt;gpg --armor --export&lt;/code&gt;, tai liitä ASCII-armored-lohko valitsemalla &lt;b&gt;Leikepöydältä&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Kaikki tiedostot</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Tuo avain</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1552,6 +1600,13 @@ p, li { white-space: pre-wrap; }
         <translation>Valitse profiili</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="120"/>
+        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <source>Search password</source>
+        <translation>Etsi salasana</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
         <translation>Etsi salasanan sisällöstä (pass grep)</translation>
@@ -1700,11 +1755,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Tyhjennä</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="808"/>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Search Password</source>
-        <translation>Etsi salasana</translation>
+        <translation type="vanished">Etsi salasana</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -1790,9 +1842,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Clipboard not cleared</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Salasana ja sisältö piilotettu</translation>
+        <translation type="vanished">Salasana ja sisältö piilotettu</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -1915,10 +1966,9 @@ p, li { white-space: pre-wrap; }
         <translation>Lisää salasana</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Uusi kansio:
+        <translation type="vanished">Uusi kansio:
 (Sijoitetaan sijaintiin %1 )</translation>
     </message>
     <message>
@@ -1951,6 +2001,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1288"/>
         <source>No OTP code found in this password entry</source>
         <translation>Tässä salasanassa ei löytynyt OTP-koodia</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Salasana ja sisältö piilotettu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -2052,6 +2107,23 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Uusi kansio</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <source>New folder: 
+(Will be placed in %1 )</source>
+        <translation>Uusi kansio:
+(Sijoitetaan sijaintiin %1 )</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Nimeä kansio uudelleen seuraavaksi: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Nimeä tiedosto uudelleen seuraavaksi: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Tämä kohde sisältää OTP-salaisuuden, ei salasanaa</translation>
@@ -2079,8 +2151,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1924"/>
         <location filename="../src/mainwindow.cpp" line="1943"/>
-        <source>Export Public Key</source>
+        <source>Export public key</source>
         <translation>Vie julkinen avain</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>Salasanojen jakaminen GPG:llä</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Salasanojen jakaminen GPG:llä&lt;/h3&gt;&lt;p&gt;Salasanojen jakamiseen muiden käyttäjien kanssa:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Vie julkinen avaimesi&lt;/b&gt; ja lähetä se tiimisi jäsenille&lt;/li&gt;&lt;li&gt;&lt;b&gt;Tuo tiimin jäsenten julkiset avaimet&lt;/b&gt; GPG-avainnippuusi&lt;/li&gt;&lt;li&gt;&lt;b&gt;Salaa salasanat uudelleen&lt;/b&gt; jotta kaikki vastaanottajat voivat purkaa salauksen&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Vain henkilöt, joilla on vastaava salainen avain, voivat purkaa salasanojen salauksen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vinkki:&lt;/b&gt; Käytä samaa GPG-avainta kaikissa jaetuissa kansioissa.&lt;/p&gt;&lt;p&gt;Lisätietoja löydät UKK-osiosta.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Export Public Key</source>
+        <translation type="vanished">Vie julkinen avain</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
@@ -2102,14 +2188,12 @@ p, li { white-space: pre-wrap; }
         <translation>gpg ei tuottanut tulostetta.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Salasanojen jakaminen GPG:llä</translation>
+        <translation type="vanished">Salasanojen jakaminen GPG:llä</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Salasanojen jakaminen GPG:llä&lt;/h3&gt;&lt;p&gt;Salasanojen jakamiseen muiden käyttäjien kanssa:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Vie julkinen avaimesi&lt;/b&gt; ja lähetä se tiimisi jäsenille&lt;/li&gt;&lt;li&gt;&lt;b&gt;Tuo tiimin jäsenten julkiset avaimet&lt;/b&gt; GPG-avainnippuusi&lt;/li&gt;&lt;li&gt;&lt;b&gt;Salaa salasanat uudelleen&lt;/b&gt; jotta kaikki vastaanottajat voivat purkaa salauksen&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Vain henkilöt, joilla on vastaava salainen avain, voivat purkaa salasanojen salauksen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vinkki:&lt;/b&gt; Käytä samaa GPG-avainta kaikissa jaetuissa kansioissa.&lt;/p&gt;&lt;p&gt;Lisätietoja löydät UKK-osiosta.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Salasanojen jakaminen GPG:llä&lt;/h3&gt;&lt;p&gt;Salasanojen jakamiseen muiden käyttäjien kanssa:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Vie julkinen avaimesi&lt;/b&gt; ja lähetä se tiimisi jäsenille&lt;/li&gt;&lt;li&gt;&lt;b&gt;Tuo tiimin jäsenten julkiset avaimet&lt;/b&gt; GPG-avainnippuusi&lt;/li&gt;&lt;li&gt;&lt;b&gt;Salaa salasanat uudelleen&lt;/b&gt; jotta kaikki vastaanottajat voivat purkaa salauksen&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Vain henkilöt, joilla on vastaava salainen avain, voivat purkaa salasanojen salauksen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vinkki:&lt;/b&gt; Käytä samaa GPG-avainta kaikissa jaetuissa kansioissa.&lt;/p&gt;&lt;p&gt;Lisätietoja löydät UKK-osiosta.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
@@ -2138,14 +2222,12 @@ p, li { white-space: pre-wrap; }
         <translation>Nimeä tiedosto uudelleen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>Nimeä kansio uudelleen seuraavaksi: </translation>
+        <translation type="vanished">Nimeä kansio uudelleen seuraavaksi: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>Nimeä tiedosto uudelleen seuraavaksi: </translation>
+        <translation type="vanished">Nimeä tiedosto uudelleen seuraavaksi: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1826"/>
@@ -2304,13 +2386,21 @@ Jatketaanko?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Merkkijoukko:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Kaikki merkit</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Merkkijoukko:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Kaikki merkit</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2406,9 +2496,13 @@ Jatketaanko?</translation>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Prosessin tuloste</translation>
+        <translation type="obsolete">Prosessin tuloste</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>Prosessin tuloste</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2539,8 +2633,12 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>OTP koodi</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP koodi</translation>
+        <translation type="obsolete">OTP koodi</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>

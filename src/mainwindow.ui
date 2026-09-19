@@ -117,7 +117,7 @@
              <string/>
             </property>
             <property name="placeholderText">
-             <string>Search Password</string>
+             <string>Search password</string>
             </property>
            </widget>
           </item>

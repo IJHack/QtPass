@@ -92,14 +92,12 @@
         <translation>Onyesha matokeo ya mchakato</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
-        <translation>Uundaji wa Nenosiri:</translation>
+        <translation type="vanished">Uundaji wa Nenosiri:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
-        <translation>Urefu wa Nenosiri:</translation>
+        <translation type="vanished">Urefu wa Nenosiri:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -117,9 +115,8 @@
         <translation>Chagua seti ya herufi kwa uundaji wa nenosiri</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
-        <translation>Herufi Zote</translation>
+        <translation type="vanished">Herufi Zote</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
@@ -305,6 +302,21 @@
         <translation type="unfinished">Ctrl+M pia huuonyesha au kuuficha kutoka dirisha kuu</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="551"/>
+        <source>Password generation:</source>
+        <translation>Uundaji wa Nenosiri:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="562"/>
+        <source>Password length:</source>
+        <translation>Urefu wa Nenosiri:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="655"/>
+        <source>All characters</source>
+        <translation>Herufi Zote</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
         <source>Choose the gpg executable</source>
@@ -439,9 +451,8 @@
         <translation>Njia ya saraka ya hifadhi ya nenosiri</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
-        <translation>Funguo ya Kusaini</translation>
+        <translation type="vanished">Funguo ya Kusaini</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
@@ -514,6 +525,11 @@ e-mail</source>
         <translation>kuingia
 URL
 barua pepe</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1435"/>
+        <source>Signing key</source>
+        <translation>Funguo ya Kusaini</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
@@ -639,8 +655,12 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="787"/>
-        <source>New Profile</source>
+        <source>New profile</source>
         <translation>Wasifu Mpya</translation>
+    </message>
+    <message>
+        <source>New Profile</source>
+        <translation type="vanished">Wasifu Mpya</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="814"/>
@@ -788,8 +808,12 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
+        <translation type="vanished">Hamisha Funguo ya Umma</translation>
+    </message>
+    <message>
+        <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <source>Export public key</source>
         <translation>Hamisha Funguo ya Umma</translation>
     </message>
     <message>
@@ -803,13 +827,17 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
         <translation type="unfinished">Nakili kwenye ubao wa kunakili</translation>
     </message>
     <message>
+        <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <source>Save to file...</source>
+        <translation>Hifadhi kwenye Faili...</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
         <translation type="vanished">Nakili kwenye Ubao wa Kunakili</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Hifadhi kwenye Faili...</translation>
+        <translation type="vanished">Hifadhi kwenye Faili...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -822,10 +850,14 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
         <translation>Imenakiliwa!</translation>
     </message>
     <message>
+        <source>Save Public Key</source>
+        <translation type="vanished">Hifadhi Funguo ya Umma</translation>
+    </message>
+    <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
-        <source>Save Public Key</source>
+        <source>Save public key</source>
         <translation>Hifadhi Funguo ya Umma</translation>
     </message>
     <message>
@@ -1115,10 +1147,8 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
 <context>
     <name>ImportKeyDialog</name>
     <message>
-        <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation>Leta Funguo ya GPG</translation>
+        <translation type="vanished">Leta Funguo ya GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
@@ -1126,9 +1156,8 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         <translation>Leta funguo ya umma ya GPG kutoka failini au ibandike hapa chini. Funguo inapaswa kuwa katika muundo wa ASCII-armored.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Kutoka Failini...</translation>
+        <translation type="vanished">Kutoka Failini...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -1138,6 +1167,17 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     <message>
         <source>From Clipboard</source>
         <translation type="vanished">Kutoka Ubao wa Kunakili</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="14"/>
+        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <source>Import GPG key</source>
+        <translation>Leta Funguo ya GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.ui" line="42"/>
+        <source>From file...</source>
+        <translation>Kutoka Failini...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1155,17 +1195,12 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         <translation>Funguo ya GPG ya ASCII-armored</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation>Faili Zote</translation>
+        <translation type="vanished">Faili Zote</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation>Leta Funguo</translation>
+        <translation type="vanished">Leta Funguo</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -1180,6 +1215,19 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
         <translation type="vanished">%1 haionekani kama funguo ya GPG ya ASCII-armored. Ibadilishe kwa &lt;code&gt;gpg --armor --export&lt;/code&gt; kwanza, au bandika kizuizi cha armored kupitia &lt;b&gt;Kutoka Ubao wa Kunakili&lt;/b&gt;.</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <source>All files</source>
+        <translation>Faili Zote</translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="50"/>
+        <location filename="../src/importkeydialog.cpp" line="65"/>
+        <location filename="../src/importkeydialog.cpp" line="163"/>
+        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <source>Import key</source>
+        <translation>Leta Funguo</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1333,10 +1381,14 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         <translation>Chagua wasifu</translation>
     </message>
     <message>
+        <source>Search Password</source>
+        <translation type="vanished">Tafuta Nenosiri</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="808"/>
         <location filename="../src/mainwindow.cpp" line="1022"/>
-        <source>Search Password</source>
+        <source>Search password</source>
         <translation>Tafuta Nenosiri</translation>
     </message>
     <message>
@@ -1630,9 +1682,8 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         <translation>Hakuna msimbo wa OTP uliokutwa katika ingizo hili la nenosiri</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
-        <translation>Nenosiri na Maudhui yamefichwa</translation>
+        <translation type="vanished">Nenosiri na Maudhui yamefichwa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="923"/>
@@ -1705,6 +1756,11 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         <location filename="../src/mainwindow.cpp" line="752"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">Haikuweza kusimbua ingizo hili la nenosiri</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="812"/>
+        <source>Password and content hidden</source>
+        <translation>Nenosiri na Maudhui yamefichwa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
@@ -1815,9 +1871,36 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1665"/>
-        <source>New Folder: 
+        <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Folda Mpya:
+(Itawekwa katika %1 )</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <source>Rename file to: </source>
+        <translation>Badilisha Jina la Faili Kuwa: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
+        <source>Export public key</source>
+        <translation>Hamisha Funguo ya Umma</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <source>Sharing passwords with GPG</source>
+        <translation>Kushiriki Nenosiri kwa GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
+        <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Kushiriki Nenosiri kwa GPG&lt;/h3&gt;&lt;p&gt;Ili kushiriki nenosiri na watumiaji wengine:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Hamisha funguo yako ya umma&lt;/b&gt; na uitume kwa wenzako wa timu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Leta funguo za umma za wenzako&lt;/b&gt; katika pete yako ya funguo za GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Simba fiche tena nenosiri&lt;/b&gt; ili wapokeaji wote waweze kuzisimua&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Ni watu wanaofanana na funguo ya siri pekee wanaoweza kusimua nenosiri.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Kidokezo:&lt;/b&gt; Tumia funguo sawa ya GPG kwa folda zote zinazoshirikishwa.&lt;/p&gt;&lt;p&gt;Angalia FAQ kwa maelezo zaidi.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>New Folder: 
+(Will be placed in %1 )</source>
+        <translation type="vanished">Folda Mpya:
 (Itawekwa katika %1 )</translation>
     </message>
     <message>
@@ -1838,19 +1921,22 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         <translation>Imeshindwa kuunda faili ya .gpg-id katika: %1</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <source>Rename folder to: </source>
+        <translation>Badilisha Jina la Folda Kuwa: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
         <translation>Badilisha jina la faili</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
-        <translation>Badilisha Jina la Folda Kuwa: </translation>
+        <translation type="vanished">Badilisha Jina la Folda Kuwa: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
-        <translation>Badilisha Jina la Faili Kuwa: </translation>
+        <translation type="vanished">Badilisha Jina la Faili Kuwa: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1802"/>
@@ -1906,10 +1992,8 @@ Endelea?</translation>
         <translation type="unfinished">Inasimba fiche tena nenosiri: %1 kati ya %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1924"/>
-        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
-        <translation>Hamisha Funguo ya Umma</translation>
+        <translation type="vanished">Hamisha Funguo ya Umma</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1925"/>
@@ -1931,14 +2015,12 @@ Endelea?</translation>
         <translation>Hakuna matokeo kutoka gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Kushiriki Nenosiri kwa GPG</translation>
+        <translation type="vanished">Kushiriki Nenosiri kwa GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Kushiriki Nenosiri kwa GPG&lt;/h3&gt;&lt;p&gt;Ili kushiriki nenosiri na watumiaji wengine:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Hamisha funguo yako ya umma&lt;/b&gt; na uitume kwa wenzako wa timu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Leta funguo za umma za wenzako&lt;/b&gt; katika pete yako ya funguo za GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Simba fiche tena nenosiri&lt;/b&gt; ili wapokeaji wote waweze kuzisimua&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Ni watu wanaofanana na funguo ya siri pekee wanaoweza kusimua nenosiri.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Kidokezo:&lt;/b&gt; Tumia funguo sawa ya GPG kwa folda zote zinazoshirikishwa.&lt;/p&gt;&lt;p&gt;Angalia FAQ kwa maelezo zaidi.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Kushiriki Nenosiri kwa GPG&lt;/h3&gt;&lt;p&gt;Ili kushiriki nenosiri na watumiaji wengine:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Hamisha funguo yako ya umma&lt;/b&gt; na uitume kwa wenzako wa timu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Leta funguo za umma za wenzako&lt;/b&gt; katika pete yako ya funguo za GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Simba fiche tena nenosiri&lt;/b&gt; ili wapokeaji wote waweze kuzisimua&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Ni watu wanaofanana na funguo ya siri pekee wanaoweza kusimua nenosiri.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Kidokezo:&lt;/b&gt; Tumia funguo sawa ya GPG kwa folda zote zinazoshirikishwa.&lt;/p&gt;&lt;p&gt;Angalia FAQ kwa maelezo zaidi.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2058,13 +2140,21 @@ Endelea?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <source>Character Set:</source>
+        <source>Character set:</source>
         <translation>Seti ya Herufi:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <source>All Characters</source>
+        <source>All characters</source>
         <translation>Herufi Zote</translation>
+    </message>
+    <message>
+        <source>Character Set:</source>
+        <translation type="vanished">Seti ya Herufi:</translation>
+    </message>
+    <message>
+        <source>All Characters</source>
+        <translation type="vanished">Herufi Zote</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
@@ -2160,9 +2250,13 @@ Endelea?</translation>
 <context>
     <name>ProcessOutputPanel</name>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
         <source>Process Output</source>
-        <translation type="unfinished">Matokeo ya Mchakato</translation>
+        <translation type="obsolete">Matokeo ya Mchakato</translation>
+    </message>
+    <message>
+        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <source>Process output</source>
+        <translation>Matokeo ya Mchakato</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
@@ -2293,8 +2387,12 @@ Endelea?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="331"/>
         <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <source>OTP code</source>
+        <translation>Msimbo wa OTP</translation>
+    </message>
+    <message>
         <source>OTP Code</source>
-        <translation type="unfinished">Msimbo wa OTP</translation>
+        <translation type="obsolete">Msimbo wa OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="332"/>
