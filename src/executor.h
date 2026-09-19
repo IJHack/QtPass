@@ -252,16 +252,21 @@ public:
    * The one definition of "a WSL command" in QtPass; see parseWslCommand().
    */
   struct WslCommand {
-    /// What to start. On Windows a bare `wsl`/`wsl.exe` in any case becomes
-    /// `wsl`, which the PATH lookup resolves; elsewhere (QtPass itself
-    /// running inside WSL, where `wsl.exe` is reachable through interop but
-    /// `wsl` need not be) and for a launcher given as a path it stays as
-    /// configured.
+    /**
+     * @brief What to start.
+     *
+     * On Windows a bare `wsl`/`wsl.exe` in any case becomes `wsl`, which the
+     * PATH lookup resolves; elsewhere (QtPass itself running inside WSL,
+     * where `wsl.exe` is reachable through interop but `wsl` need not be)
+     * and for a launcher given as a path it stays as configured.
+     */
     QString launcher;
-    /// wsl.exe options that go before the program (`-d Debian`, `-u me`),
-    /// without any `-e`/`--exec`: that is always added by argv().
+    /**
+     * @brief wsl.exe options that go before the program (`-d Debian`,
+     * `-u me`), without any `-e`/`--exec`: argv() always adds that.
+     */
     QStringList options;
-    /// The Linux program to run, looked up on the WSL PATH.
+    /** @brief The Linux program to run, looked up on the WSL PATH. */
     QString command;
     /**
      * @brief Arguments for @ref launcher that run @ref command with @p args.
