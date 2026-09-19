@@ -139,6 +139,83 @@ public:
    * @return true if gpg may be given the token, false otherwise.
    */
   static auto isValidKeyId(const QString &keyId) -> bool;
+  /**
+   * @brief Regular files under @p dir whose name matches one of
+   * @p nameFilters, found by walking only real directories.
+   *
+   * Symbolic links and NTFS junctions are never entered and never listed:
+   * either can point outside the tree, and QDirIterator's own recursion
+   * treats a junction as an ordinary directory (Qt marks it JunctionType,
+   * not LinkType, so QDir::NoSymLinks does not see it). Hidden directories
+   * (`.git`, a sync tool's version folder) are not entered either, as with
+   * QDirIterator without QDir::Hidden.
+   *
+   * @p dir itself is followed whatever it is: the configured store root is
+   * commonly a symlink (`~/.password-store` to a synced folder), and it is
+   * the user's choice, not something found inside the store. A caller that
+   * gets its folder from the store tree decides with isLinkedFolder() first.
+   *
+   * The walk is a listing, not a lock: what is a regular file when listed
+   * can be replaced before it is opened. That is the store's trust boundary
+   * (SECURITY.md), not something a walk can close.
+   * @param dir Directory to walk.
+   * @param nameFilters Wildcards, as for QDir::setNameFilters().
+   * @param skipped Receives what was left out although it is in the way: every
+   *        linked directory, and every link or special file (FIFO, socket,
+   *        device) whose name matches @p nameFilters. Null to not care.
+   * @param hiddenFiles List hidden files too (`.gpg-id`); hidden directories
+   *        stay closed regardless.
+   * @return Absolute paths, sorted by name within each directory, a
+   *         directory's files before its subdirectories.
+   */
+  static auto regularFilesUnder(const QString &dir,
+                                const QStringList &nameFilters,
+                                QStringList *skipped = nullptr,
+                                bool hiddenFiles = false) -> QStringList;
+  /**
+   * @brief Every real, visible directory under @p dir, walked by the same
+   * rules as regularFilesUnder(): links, junctions and hidden directories
+   * are neither listed nor entered.
+   * @param dir Directory to walk.
+   * @return Absolute paths, parents before children.
+   */
+  static auto directoriesUnder(const QString &dir) -> QStringList;
+  /**
+   * @brief Whether @p path names a symbolic link or NTFS junction, with or
+   * without a trailing separator (which would otherwise make the check look
+   * at the target instead).
+   *
+   * The store tree shows linked folders like any other; an operation on one
+   * (re-encrypt, recipients, delete) must not reach through it.
+   * @param path Folder path, as the tree names it.
+   * @return true for a link or junction.
+   */
+  static auto isLinkedFolder(const QString &path) -> bool;
+  /**
+   * @brief Whether the way from @p storeRoot down to @p path passes through
+   * a symbolic link or NTFS junction: @p path itself or any folder between.
+   *
+   * The tree shows a linked folder's children too, and a pick of one of
+   * them names a place outside the store as much as the link does. The root
+   * itself is not checked: a linked store root is the user's setup.
+   * @param path File or folder under the store, as the tree names it.
+   * @param storeRoot The configured store.
+   * @return true when something on the way is a link.
+   */
+  static auto isUnderLink(const QString &path, const QString &storeRoot)
+      -> bool;
+  /**
+   * @brief Remove @p dir and everything in it, the way `rm -rf` does: a
+   * symbolic link or NTFS junction, @p dir itself or anything inside, is
+   * removed as an entry and what it points to is never entered. A trailing
+   * separator on @p dir does not change that.
+   *
+   * QDir::removeRecursively() descends into junctions (it stops only at what
+   * Qt calls a symlink) and would empty the junction's target.
+   * @param dir Directory to remove.
+   * @return true when @p dir is gone.
+   */
+  static auto removeTree(const QString &dir) -> bool;
 
 private:
   static void initialiseEnvironment();

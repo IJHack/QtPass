@@ -346,6 +346,7 @@ private:
   void reencryptPath(const QString &dir);
   void exportPublicKey();
   void addRecipient(const QString &dir);
+  auto refuseLinkedFolder(const QString &dir) -> bool;
   void showShareHelp();
 
   void applyTextBrowserSettings();

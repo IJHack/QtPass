@@ -5,8 +5,8 @@
 #include "executor.h"
 #include "gpgidsigner.h"
 #include "userinfo.h"
+#include "util.h"
 #include <QDir>
-#include <QDirIterator>
 #include <QFile>
 #include <QFileInfo>
 #include <QProcess>
@@ -152,17 +152,19 @@ auto ProfileInit::initGit(const QString &dir, const AppSettings &s,
   // Only what belongs to a store is staged: an existing folder may hold
   // exports, editor swap files or other plaintext that must not enter the
   // history (the same rule the re-encryption backup commit follows).
+  // Regular files only: a link or junction is not part of the store and
+  // must not have what it points to staged.
   QStringList files;
-  QDirIterator it(dir,
-                  {QStringLiteral("*.gpg"), QStringLiteral(".gpg-id"),
-                   QStringLiteral(".gpg-id.sig")},
-                  QDir::Files | QDir::Hidden, QDirIterator::Subdirectories);
   const QDir base(dir);
-  while (it.hasNext()) {
-    const QString rel = base.relativeFilePath(it.next());
-    if (!rel.startsWith(QStringLiteral(".git/"))) {
-      files << rel;
-    }
+  // Hidden directories (.git among them) are not walked, hidden files are:
+  // .gpg-id is one.
+  const QStringList found = Util::regularFilesUnder(
+      dir,
+      {QStringLiteral("*.gpg"), QStringLiteral(".gpg-id"),
+       QStringLiteral(".gpg-id.sig")},
+      nullptr, true);
+  for (const QString &path : found) {
+    files << base.relativeFilePath(path);
   }
   if (!run({QStringLiteral("init")})) {
     return false;
