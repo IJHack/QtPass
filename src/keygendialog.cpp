@@ -25,6 +25,9 @@ KeygenDialog::KeygenDialog(const QString &gpgExe, Pass *pass, QWidget *parent)
   ui->setupUi(this);
   connect(ui->checkBox, &QCheckBox::toggled, this,
           &KeygenDialog::setExpertMode);
+  connect(ui->noPassphrase, &QCheckBox::toggled, this,
+          &KeygenDialog::setNoPassphrase);
+  updateOkState();
 
   WindowStateStore::attach(*this, QStringLiteral("keygenDialog"));
 
@@ -42,7 +45,7 @@ KeygenDialog::~KeygenDialog() = default;
 
 /**
  * @brief KeygenDialog::on_passphrase1_textChanged only allow OK once both
- * passphrase fields agree.
+ * passphrase fields agree and one was given (or waived).
  *
  * The passphrase is deliberately never written into the template box: that
  * widget is readable (and selectable) at all times, which would defeat the
@@ -52,7 +55,27 @@ KeygenDialog::~KeygenDialog() = default;
  */
 void KeygenDialog::on_passphrase1_textChanged(const QString &arg1) {
   Q_UNUSED(arg1)
-  ui->buttonBox->setEnabled(ui->passphrase1->text() == ui->passphrase2->text());
+  updateOkState();
+}
+
+auto KeygenDialog::passphraseChosen() const -> bool {
+  const QString passphrase = ui->passphrase1->text();
+  const bool agreed = passphrase == ui->passphrase2->text();
+  return agreed && (!passphrase.isEmpty() || ui->noPassphrase->isChecked());
+}
+
+void KeygenDialog::updateOkState() {
+  ui->buttonBox->setEnabled(passphraseChosen());
+}
+
+void KeygenDialog::setNoPassphrase(bool checked) {
+  if (checked) {
+    ui->passphrase1->clear();
+    ui->passphrase2->clear();
+  }
+  ui->passphrase1->setEnabled(!checked);
+  ui->passphrase2->setEnabled(!checked);
+  updateOkState();
 }
 
 /**
@@ -188,7 +211,14 @@ QString KeygenDialog::applyPassphrase(const QString &batch,
  */
 void KeygenDialog::done(int r) {
   if (QDialog::Accepted == r) { //  ok was pressed
-                                // check name
+    // The button is disabled without a passphrase choice, but done() can be
+    // reached otherwise (a default button, a script); the rule holds here.
+    // No dialog: the disabled OK already says what is missing.
+    if (!passphraseChosen()) {
+      updateOkState();
+      return;
+    }
+    // check name
     if (ui->name->text().length() < 5) {
       QMessageBox::critical(this, tr("Invalid name"),
                             tr("Name must be at least 5 characters long."));
@@ -286,9 +316,11 @@ void KeygenDialog::generationFailed(const QString &error) {
   }
   ui->frame->show();
   ui->widget->setEnabled(true);
-  ui->buttonBox->setEnabled(true);
   ui->checkBox->setEnabled(true);
   ui->plainTextEdit->setEnabled(true);
+  // OK comes back under the same rule as before the attempt, not
+  // unconditionally: the passphrase choice still has to stand.
+  updateOkState();
   ui->label->setText(
       tr("Key generation failed: %1").arg(error.toHtmlEscaped()));
 }

@@ -22,6 +22,11 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Security
 
+- Generating a GPG key without a passphrase is an explicit choice: the
+  key-generation dialog's OK stays off with empty passphrase fields until a
+  passphrase is typed twice or "No passphrase: store the private key
+  unprotected" is ticked, which clears and disables the fields. Two empty
+  fields used to produce an unprotected key without a word [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - The executor test suite runs on Windows CI too; it had been left out of
   the Windows build since 2018, so the WSL command parser, the bundled-binary
   lookup and the gpgconf resolution were never exercised where they matter

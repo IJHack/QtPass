@@ -51,6 +51,12 @@ private slots:
   void on_passphrase1_textChanged(const QString &arg1);
   void on_passphrase2_textChanged(const QString &arg1);
   /**
+   * @brief Ticking "no passphrase" clears and disables the passphrase
+   * fields and makes OK available; unticking it asks for one again.
+   * @param checked The checkbox state.
+   */
+  void setNoPassphrase(bool checked);
+  /**
    * @brief Enable or disable expert mode (the editable batch template).
    *
    * Connected explicitly to QCheckBox::toggled in the constructor; the box
@@ -62,6 +68,17 @@ private slots:
   void on_name_textChanged(const QString &arg1);
 
 private:
+  /**
+   * @brief OK is available when a passphrase is typed twice the same, or
+   * when no passphrase was asked for explicitly. Empty fields alone are not
+   * a choice: the key would be stored unprotected without anyone saying so.
+   */
+  void updateOkState();
+  /**
+   * @brief Whether the passphrase question has an answer: typed twice the
+   * same, or waived with the checkbox. Empty fields alone are neither.
+   */
+  auto passphraseChosen() const -> bool;
   QScopedPointer<Ui::KeygenDialog> ui;
   void replace(const QString &, const QString &);
   void done(int r) override;
