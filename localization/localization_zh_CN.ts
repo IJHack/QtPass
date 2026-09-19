@@ -145,17 +145,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">常规</translation>
+        <translation>常规</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished">剪贴板</translation>
+        <translation>剪贴板</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished">密码</translation>
+        <translation>密码</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
@@ -945,17 +945,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">双击以重命名此字段</translation>
+        <translation>双击重命名该字段</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">重命名字段…</translation>
+        <translation>重命名字段…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">删除字段</translation>
+        <translation>删除字段</translation>
     </message>
 </context>
 <context>
@@ -2480,12 +2480,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished">删除字段</translation>
+        <translation>删除字段</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">名为 %1 的字段已存在。</translation>
+        <translation>已经有叫 %1 的字段。</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>
