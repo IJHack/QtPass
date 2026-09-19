@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
 #ifndef FIELDLABEL_H_
 #define FIELDLABEL_H_
 
@@ -19,6 +21,11 @@ class FieldLabel : public QLabel {
   Q_OBJECT
 
 public:
+  /**
+   * @brief Label for the field called @p name.
+   * @param name the field's key, as shown and as written back
+   * @param parent owning widget
+   */
   explicit FieldLabel(const QString &name, QWidget *parent = nullptr);
 
 public slots:
@@ -40,11 +47,29 @@ signals:
   void removeRequested();
 
 protected:
+  /**
+   * @brief A left double-click starts editing the name.
+   * @param event the mouse event
+   */
   void mouseDoubleClickEvent(QMouseEvent *event) override;
+  /**
+   * @brief Menu with Rename field and Remove field.
+   * @param event the context menu event
+   */
   void contextMenuEvent(QContextMenuEvent *event) override;
+  /**
+   * @brief Escape in the editor cancels the edit.
+   * @param watched the editor
+   * @param event the event to inspect
+   * @return true when the event was consumed
+   */
   auto eventFilter(QObject *watched, QEvent *event) -> bool override;
 
 private:
+  /**
+   * @brief Close the editor, putting the label back in its place.
+   * @param commit emit renamed() for a changed, non-empty name
+   */
   void finishEdit(bool commit);
 
   QPointer<QLineEdit> m_editor;

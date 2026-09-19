@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "fieldlabel.h"
 
 #include <QContextMenuEvent>
