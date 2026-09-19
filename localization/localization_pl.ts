@@ -253,17 +253,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">Ogólne</translation>
+        <translation>Ogólne</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished">Schowek</translation>
+        <translation>Schowek</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished">Hasła</translation>
+        <translation>Hasła</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
@@ -881,17 +881,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">Kliknij dwukrotnie, aby zmienić nazwę tego pola</translation>
+        <translation>Kliknij dwukrotnie, aby zmienić nazwę tego pola</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">Zmień nazwę pola…</translation>
+        <translation>Zmień nazwę pola…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">Usuń pole</translation>
+        <translation>Usuń pole</translation>
     </message>
 </context>
 <context>
@@ -2314,12 +2314,12 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished">Usuń pole</translation>
+        <translation>Usuń pole</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">Pole o nazwie %1 już istnieje.</translation>
+        <translation>Pole o nazwie %1 już istnieje.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>
