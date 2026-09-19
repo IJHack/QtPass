@@ -1341,6 +1341,18 @@ void tst_util::getGpgIdPathSiblingStoreIsOutside() {
         QDir::cleanPath(Pass::getGpgIdPath(store + "/sub/password.gpg", given)),
         expected);
   }
+#ifdef Q_OS_WIN
+  // The file system does not care about case; a store configured in another
+  // case than the tree reports must still find its nested .gpg-id.
+  {
+    QFile f(store + "/sub/.gpg-id");
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("SUBKEY\n");
+  }
+  QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(store + "/sub/password.gpg",
+                                              store.toUpper())),
+           QDir::cleanPath(store + "/sub/.gpg-id"));
+#endif
 }
 
 void tst_util::getGpgIdPathNotFound() {

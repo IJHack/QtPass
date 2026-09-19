@@ -850,6 +850,21 @@ void Pass::updateEnv() {
  * @param for_file which file (folder) would you like the gpgid file path for.
  * @return path to the gpgid file.
  */
+namespace {
+/// Whether @p path is @p dir or lies under it, compared the way the
+/// platform's file system compares names: "C:/Store" and "c:/store" are the
+/// same directory on Windows.
+auto isAtOrUnder(const QString &path, const QString &dir,
+                 const QString &dirPrefix) -> bool {
+#ifdef Q_OS_WIN
+  constexpr auto cs = Qt::CaseInsensitive;
+#else
+  constexpr auto cs = Qt::CaseSensitive;
+#endif
+  return path.compare(dir, cs) == 0 || path.startsWith(dirPrefix, cs);
+}
+} // namespace
+
 auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
     -> QString {
   QString normalizedStore = QDir::fromNativeSeparators(passStore);
@@ -861,8 +876,7 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
                                   ? storeDir
                                   : storeDir + QLatin1Char('/');
   const QString cleanFile = QDir::cleanPath(normalizedFile);
-  const bool insideStore =
-      cleanFile == storeDir || cleanFile.startsWith(storePrefix);
+  const bool insideStore = isAtOrUnder(cleanFile, storeDir, storePrefix);
   // A relative name is one inside the store; an absolute path outside it
   // stays what it is and the walk below stops at once.
   const QString fullPath = insideStore || QDir::isAbsolutePath(cleanFile)
@@ -874,7 +888,7 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
   bool found = false;
   while (gpgIdDir.exists()) {
     QString currentPath = QDir::cleanPath(gpgIdDir.absolutePath());
-    if (currentPath != storeDir && !currentPath.startsWith(storePrefix)) {
+    if (!isAtOrUnder(currentPath, storeDir, storePrefix)) {
       break;
     }
     if (QFile(gpgIdDir.absoluteFilePath(".gpg-id")).exists()) {
