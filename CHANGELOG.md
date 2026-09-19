@@ -22,6 +22,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Security
 
+- A new profile's `.gpg-id` is written the way the Users dialog writes one:
+  to a temporary in the same folder, owner-only, renamed into place whole,
+  so an interrupted first run leaves no half list for the signing step or a
+  later start to take for the recipients. And the lookup of the `.gpg-id`
+  that governs a file treats "inside the store" as a path boundary: a
+  sibling folder whose name merely begins with the store's is outside it [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - CI: the Flatpak build container, which runs privileged on every pull
   request, is pinned by image digest instead of a mutable tag; the Doxygen
   archive the documentation job downloads (from GitHub or the doxygen.nl
