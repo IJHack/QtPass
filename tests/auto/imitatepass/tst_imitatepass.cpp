@@ -336,6 +336,8 @@ private Q_SLOTS:
   void reencryptRestoresABackupWhoseOriginalIsMissing();
   void reencryptStopsWhenBackupAndOriginalBothExist();
   void reencryptRemovesStaleTemporaries();
+  void recoveryDoesNotPromoteASymlinkToAnEntry();
+  void reencryptSkipsSymlinkedEntries();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -1201,6 +1203,81 @@ void tst_imitatepass::reencryptRemovesStaleTemporaries() {
                .entryList({QStringLiteral("*.tmp"), QStringLiteral("*.bak")},
                           QDir::Files),
            QStringList());
+#endif
+}
+
+/**
+ * @brief A symlink under a backup's name is not a backup QtPass made:
+ *        renaming it into place would make a symlink the entry and the run
+ *        would re-encrypt whatever it points to. It is reported, not used.
+ */
+void tst_imitatepass::recoveryDoesNotPromoteASymlinkToAnEntry() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a symlink and a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString outside = QDir(outsideDir.path()).filePath("secret.gpg");
+  {
+    QFile f(outside);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("somebody else's ciphertext");
+  }
+  const QString entry = QDir(storeDir.path()).filePath("entry0.gpg");
+  QVERIFY(QFile::link(outside, entry + ".reencrypt.bak"));
+  Recorder rec;
+  int encrypts = 0;
+  bool aborted = false;
+  QVERIFY2(runReencrypt(storeDir.path(), rec, &encrypts, &aborted),
+           "re-encryption must finish");
+  QVERIFY(aborted);
+  QVERIFY(rec.criticals.first().contains("not a regular file"));
+  QVERIFY2(!QFileInfo::exists(entry) && !QFileInfo(entry).isSymLink(),
+           "no entry may appear under the backup's name");
+  QCOMPARE(encrypts, 0);
+  QFile check(outside);
+  QVERIFY(check.open(QIODevice::ReadOnly));
+  QCOMPARE(check.readAll(), QByteArrayLiteral("somebody else's ciphertext"));
+#endif
+}
+
+/**
+ * @brief A symlinked .gpg is not a password entry: the run leaves it alone,
+ *        re-encrypts the regular files, and says how many it skipped.
+ */
+void tst_imitatepass::reencryptSkipsSymlinkedEntries() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a symlink and a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString outside = QDir(outsideDir.path()).filePath("secret.gpg");
+  {
+    QFile f(outside);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("somebody else's ciphertext");
+  }
+  QVERIFY(QFile::link(outside, QDir(storeDir.path()).filePath("escape.gpg")));
+  // A symlinked directory must not be descended into either.
+  QVERIFY(QFile::link(outsideDir.path(),
+                      QDir(storeDir.path()).filePath("elsewhere")));
+  Recorder rec;
+  int encrypts = 0;
+  bool aborted = true;
+  QVERIFY2(runReencrypt(storeDir.path(), rec, &encrypts, &aborted),
+           "re-encryption must finish");
+  QVERIFY2(!aborted, qPrintable(rec.criticals.join("; ")));
+  QCOMPARE(encrypts, 1);
+  QFile check(outside);
+  QVERIFY(check.open(QIODevice::ReadOnly));
+  QCOMPARE(check.readAll(), QByteArrayLiteral("somebody else's ciphertext"));
+  QVERIFY2(std::any_of(rec.statusMessages.cbegin(), rec.statusMessages.cend(),
+                       [](const QString &m) { return m.contains("symlink"); }),
+           "the user is told an entry was skipped");
 #endif
 }
 
