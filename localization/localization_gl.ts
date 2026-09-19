@@ -27,23 +27,23 @@
         <translation>Axustes</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="128"/>
-        <location filename="../src/configdialog.ui" line="203"/>
+        <location filename="../src/configdialog.ui" line="336"/>
+        <location filename="../src/configdialog.ui" line="411"/>
         <source>Seconds</source>
         <translation>Segundos</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="164"/>
+        <location filename="../src/configdialog.ui" line="372"/>
         <source>Hide content</source>
         <translation>Ocultar contido</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="171"/>
+        <location filename="../src/configdialog.ui" line="379"/>
         <source>Hide password</source>
         <translation>Ocultar contrasinal</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="746"/>
+        <location filename="../src/configdialog.ui" line="1018"/>
         <source>Native</source>
         <translation>Nativo</translation>
     </message>
@@ -52,386 +52,400 @@
         <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="849"/>
+        <location filename="../src/configdialog.ui" line="1121"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="46"/>
         <source>Settings</source>
-        <translation>Axustes</translation>
+        <translation type="vanished">Axustes</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="86"/>
+        <location filename="../src/configdialog.ui" line="294"/>
         <source>Clipboard behaviour:</source>
         <translation>Comportamento do portapapeis:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="104"/>
+        <location filename="../src/configdialog.ui" line="312"/>
         <source>Use primary selection</source>
         <translation>Usar selección primaria</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="111"/>
+        <location filename="../src/configdialog.ui" line="319"/>
         <source>Autoclear after:</source>
         <translation>Autolimpar após:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="156"/>
+        <location filename="../src/configdialog.ui" line="364"/>
         <source>Content panel behaviour:</source>
         <translation>Comportamento do panel de contido:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="180"/>
+        <location filename="../src/configdialog.ui" line="388"/>
         <source>Autoclear panel after:</source>
         <translation>Autolimpar panel após:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="278"/>
+        <location filename="../src/configdialog.ui" line="541"/>
         <source>Password Generation:</source>
         <translation>Xerar Contrasinal:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="289"/>
+        <location filename="../src/configdialog.ui" line="552"/>
         <source>Password Length:</source>
         <translation>Lonxitude do contrasinal:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="326"/>
+        <location filename="../src/configdialog.ui" line="589"/>
         <source>Characters</source>
         <translation>Caracteres</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="357"/>
+        <location filename="../src/configdialog.ui" line="620"/>
         <source>Use characters:</source>
         <translation>Usar caracteres:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="378"/>
+        <location filename="../src/configdialog.ui" line="641"/>
         <source>Select character set for password generation</source>
         <translation>Elixe o conxunto de caracteres para a creación do contrasinal</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="382"/>
+        <location filename="../src/configdialog.ui" line="645"/>
         <source>All Characters</source>
         <translation>Todos os caracteres</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="387"/>
+        <location filename="../src/configdialog.ui" line="650"/>
         <source>Alphabetical</source>
         <translation>Alfabéticos</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="392"/>
+        <location filename="../src/configdialog.ui" line="655"/>
         <source>Alphanumerical</source>
         <translation>Alfanuméricos</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="397"/>
+        <location filename="../src/configdialog.ui" line="660"/>
         <source>Custom</source>
         <translation>Personalizado</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="435"/>
+        <location filename="../src/configdialog.ui" line="698"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="469"/>
+        <location filename="../src/configdialog.ui" line="732"/>
         <source>Include special symbols</source>
         <translation>Incluír símbolos especiais</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1169"/>
+        <location filename="../src/configdialog.ui" line="1438"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">Pegada dixital completa da chave, de 40 caracteres, tal como require pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1176"/>
+        <location filename="../src/configdialog.ui" line="1445"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
         <translation type="unfinished">Axustes de Git para este perfil; substitúen os da lapela Axustes mentres estea activo</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1222"/>
+        <location filename="../src/configdialog.ui" line="1491"/>
         <source>Current path</source>
         <translation>Ruta actual</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="459"/>
+        <location filename="../src/configdialog.ui" line="722"/>
         <source>Exclude capital letters</source>
         <translation>Excluír maiúsculas</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="232"/>
+        <location filename="../src/configdialog.ui" line="440"/>
         <source>Use a monospace font</source>
         <translation>Usar letra monoespazo</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="239"/>
+        <location filename="../src/configdialog.ui" line="447"/>
         <source>Display the files content as-is</source>
         <translation>Mostrar o contido do ficheiro tal como é</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="246"/>
+        <location filename="../src/configdialog.ui" line="454"/>
         <source>No line wrapping</source>
         <translation>Sen axustes de liña</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="253"/>
+        <location filename="../src/configdialog.ui" line="461"/>
         <source>Show process output</source>
         <translation>Mostrar a saída do proceso</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="476"/>
+        <location filename="../src/configdialog.ui" line="739"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Crear contrasinais fáciles de lembrar pero menos seguros</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="483"/>
+        <location filename="../src/configdialog.ui" line="746"/>
         <source>Exclude numbers</source>
         <translation>Excluír números</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="495"/>
+        <location filename="../src/configdialog.ui" line="862"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="517"/>
+        <location filename="../src/configdialog.ui" line="884"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Engadir automáticamente ficheiros .gpg-id</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="524"/>
-        <location filename="../src/configdialog.ui" line="1186"/>
+        <location filename="../src/configdialog.ui" line="891"/>
+        <location filename="../src/configdialog.ui" line="1455"/>
         <source>Automatically push</source>
         <translation>Push automático</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="531"/>
-        <location filename="../src/configdialog.ui" line="1193"/>
+        <location filename="../src/configdialog.ui" line="898"/>
+        <location filename="../src/configdialog.ui" line="1462"/>
         <source>Automatically pull</source>
         <translation>Pull automático</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="556"/>
+        <location filename="../src/configdialog.ui" line="191"/>
         <source>Extensions:</source>
         <translation>Extensións:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="578"/>
+        <location filename="../src/configdialog.ui" line="213"/>
         <source>Enable one-time password (OTP) support</source>
         <translation>Activar a compatibilidade con contrasinal dun só uso (OTP)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="589"/>
+        <location filename="../src/configdialog.ui" line="224"/>
         <source>Enable content search (pass grep)</source>
         <translation>Activar a busca no contido (pass grep)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="592"/>
+        <location filename="../src/configdialog.ui" line="227"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Permite buscar dentro do contido dos ficheiros de contrasinais. Require descifrar cada ficheiro e pode ser lento en almacéns grandes.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="604"/>
+        <location filename="../src/configdialog.ui" line="134"/>
         <source>System:</source>
         <translation>Sistema:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="615"/>
+        <location filename="../src/configdialog.ui" line="145"/>
         <source>Use TrayIcon</source>
         <translation>Usar icona na bandexa</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="622"/>
+        <location filename="../src/configdialog.ui" line="152"/>
         <source>Start minimized</source>
         <translation>Iniciar minimizada</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="629"/>
+        <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide on close</source>
         <translation>Agochar ao pechar</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="636"/>
+        <location filename="../src/configdialog.ui" line="166"/>
         <source>Always on top</source>
         <translation>Sempre enriba</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="666"/>
+        <location filename="../src/configdialog.ui" line="80"/>
         <source>Programs</source>
         <translation>Programas</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="706"/>
+        <location filename="../src/configdialog.ui" line="60"/>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="65"/>
+        <source>Clipboard</source>
+        <translation type="unfinished">Portapapeis</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="70"/>
+        <source>Passwords</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="978"/>
         <source>Select password storage program:</source>
         <translation>Elixir o programa de almacenaxe de contrasinais:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="722"/>
+        <location filename="../src/configdialog.ui" line="994"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Usar pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="765"/>
-        <location filename="../src/configdialog.ui" line="768"/>
+        <location filename="../src/configdialog.ui" line="1037"/>
+        <location filename="../src/configdialog.ui" line="1040"/>
         <source>Choose the gpg executable</source>
         <translation>Elixe o executable gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="778"/>
-        <location filename="../src/configdialog.ui" line="781"/>
+        <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/configdialog.ui" line="1053"/>
         <source>Choose the git executable</source>
         <translation>Elixe o executable git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="797"/>
+        <location filename="../src/configdialog.ui" line="1069"/>
         <source>Generate</source>
         <translation>Crear</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="800"/>
+        <location filename="../src/configdialog.ui" line="1072"/>
         <source>Generate GPG key pair</source>
         <translation>Crear par de claves GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="833"/>
-        <location filename="../src/configdialog.ui" line="836"/>
+        <location filename="../src/configdialog.ui" line="1105"/>
+        <location filename="../src/configdialog.ui" line="1108"/>
         <source>Choose the pwgen executable</source>
         <translation>Elixe o executable pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="860"/>
+        <location filename="../src/configdialog.ui" line="1132"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="873"/>
-        <location filename="../src/configdialog.ui" line="876"/>
+        <location filename="../src/configdialog.ui" line="1145"/>
+        <location filename="../src/configdialog.ui" line="1148"/>
         <source>Choose the pass executable</source>
         <translation>Elixe o executable pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="888"/>
+        <location filename="../src/configdialog.ui" line="1160"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="919"/>
+        <location filename="../src/configdialog.ui" line="1191"/>
         <source>Autodetect</source>
         <translation>Detección automática</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="930"/>
+        <location filename="../src/configdialog.ui" line="1202"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>Sobrescribir SSH_AUTH_SOCK:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="933"/>
+        <location filename="../src/configdialog.ui" line="1205"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>Ruta opcional para sobrescribir SSH_AUTH_SOCK. Deixa baleiro para detección automática mediante gpgconf (issue #543).</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="943"/>
+        <location filename="../src/configdialog.ui" line="1215"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(detección automática mediante gpgconf)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="970"/>
+        <location filename="../src/configdialog.ui" line="85"/>
         <source>Profiles</source>
         <translation>Perfís</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1020"/>
+        <location filename="../src/configdialog.ui" line="1289"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">Os almacéns de contrasinais que coñece este QtPass; escolle un para editalo</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1035"/>
+        <location filename="../src/configdialog.ui" line="1304"/>
         <source>Add a profile</source>
         <translation type="unfinished">Engadir un perfil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1053"/>
+        <location filename="../src/configdialog.ui" line="1322"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">Esquecer o perfil seleccionado; o almacén en si queda no disco</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1099"/>
+        <location filename="../src/configdialog.ui" line="1368"/>
         <source>Profile</source>
         <translation type="unfinished">Perfil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1105"/>
+        <location filename="../src/configdialog.ui" line="1374"/>
         <source>Name</source>
         <translation>Nome</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1115"/>
+        <location filename="../src/configdialog.ui" line="1384"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Nome do perfil, usado para identificar este perfil de configuración</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1122"/>
+        <location filename="../src/configdialog.ui" line="1391"/>
         <source>Path</source>
         <translation>Ruta</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1134"/>
+        <location filename="../src/configdialog.ui" line="1403"/>
         <source>Path to the password store directory</source>
         <translation>Ruta ao directorio do almacén de contrasinais</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1156"/>
+        <location filename="../src/configdialog.ui" line="1425"/>
         <source>Signing Key</source>
         <translation>Clave de sinatura</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1166"/>
+        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Optativo: clave GPG para asinar ficheiros .gpg-id para a verificación de integridade. Deixar baleiro a non ser que precises protexer a lista de usuarios das manipulacións.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1038"/>
+        <location filename="../src/configdialog.ui" line="1307"/>
         <source>Add</source>
         <translation>Engadir</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1056"/>
+        <location filename="../src/configdialog.ui" line="1325"/>
         <source>Delete</source>
         <translation>Eliminar</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1141"/>
-        <location filename="../src/configdialog.ui" line="1144"/>
-        <location filename="../src/configdialog.ui" line="1232"/>
-        <location filename="../src/configdialog.ui" line="1235"/>
+        <location filename="../src/configdialog.ui" line="1410"/>
+        <location filename="../src/configdialog.ui" line="1413"/>
+        <location filename="../src/configdialog.ui" line="1501"/>
+        <location filename="../src/configdialog.ui" line="1504"/>
         <source>Choose the password store folder</source>
         <translation>Elixe o cartafol para password store</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1255"/>
+        <location filename="../src/configdialog.ui" line="758"/>
         <source>Template</source>
         <translation>Modelo</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1307"/>
+        <location filename="../src/configdialog.ui" line="773"/>
         <source>Use template</source>
         <translation>Usar modelo</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1314"/>
+        <location filename="../src/configdialog.ui" line="780"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Mostra todas as liñas que comecen cunha palabra seguida por dous puntos como campos nos campos de contrasinal, non só os listados</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1317"/>
+        <location filename="../src/configdialog.ui" line="783"/>
         <source>Show all fields templated</source>
         <translation>Mostra todos os campos dos modelos</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1348"/>
+        <location filename="../src/configdialog.ui" line="1531"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>Versión &lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; </translation>
     </message>
@@ -465,38 +479,38 @@
         <translation>Copiar ao portapapeis cando se solicite</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="275"/>
-        <location filename="../src/configdialog.cpp" line="280"/>
+        <location filename="../src/configdialog.cpp" line="277"/>
+        <location filename="../src/configdialog.cpp" line="282"/>
         <source>This field is required</source>
         <translation>Este campo é obrigatorio</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="277"/>
+        <location filename="../src/configdialog.cpp" line="279"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">Xa hai outro perfil con este nome</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="317"/>
+        <location filename="../src/configdialog.cpp" line="319"/>
         <source>The path does not exist.</source>
         <translation>A ruta non existe.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="320"/>
+        <location filename="../src/configdialog.cpp" line="322"/>
         <source>The path is not readable.</source>
         <translation>A ruta non é lexible.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="323"/>
+        <location filename="../src/configdialog.cpp" line="325"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>A ruta non é un socket de dominio Unix.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="328"/>
+        <location filename="../src/configdialog.cpp" line="330"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Posíbel substitución inválida de SSH_AUTH_SOCK</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="329"/>
+        <location filename="../src/configdialog.cpp" line="331"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -509,47 +523,47 @@ The value will still be saved as entered.</source>
 O valor seguirase a gardar tal como se introduciu.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="716"/>
+        <location filename="../src/configdialog.cpp" line="718"/>
         <source>Create profile directory?</source>
         <translation>Crear o directorio do perfil?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="717"/>
+        <location filename="../src/configdialog.cpp" line="719"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Queres crear un almacén de contrasinais en %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="725"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>Could not create profile directory: %1</source>
         <translation>Non se puido crear o directorio do perfil: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="751"/>
+        <location filename="../src/configdialog.cpp" line="753"/>
         <source>Select recipients for %1</source>
         <translation>Selecciona os destinatarios para %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="764"/>
+        <location filename="../src/configdialog.cpp" line="766"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">Non se puido inicializar o perfil %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="766"/>
+        <location filename="../src/configdialog.cpp" line="768"/>
         <source>Profile %1</source>
         <translation type="unfinished">Perfil %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="777"/>
+        <location filename="../src/configdialog.cpp" line="779"/>
         <source>New Profile</source>
         <translation>Novo perfil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="804"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>No profile selected</source>
         <translation>Sen perfil seleccionado</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="805"/>
+        <location filename="../src/configdialog.cpp" line="807"/>
         <source>No profile selected to delete</source>
         <translation>Non hai perfil seleccionado para eliminar</translation>
     </message>
@@ -578,7 +592,7 @@ O valor seguirase a gardar tal como se introduciu.</translation>
         <translation type="vanished">Queres crear unha password-store en %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="724"/>
+        <location filename="../src/configdialog.cpp" line="726"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
@@ -600,33 +614,33 @@ O valor seguirase a gardar tal como se introduciu.</translation>
         <translation type="vanished">O cartafol %1 non semella ser unha password-store ou aínda non se inicializou.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1103"/>
+        <location filename="../src/configdialog.cpp" line="1105"/>
         <source>New profile: %1 at %2</source>
         <translation>Novo perfil: %1 en %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1105"/>
+        <location filename="../src/configdialog.cpp" line="1107"/>
         <source>Profile: %1 at %2</source>
         <translation>Perfil: %1 en %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1108"/>
+        <location filename="../src/configdialog.cpp" line="1110"/>
         <source>Fill in all required fields</source>
         <translation>Enche todos os campos obrigatorios</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="452"/>
+        <location filename="../src/configdialog.ui" line="715"/>
         <source>Use PWGen</source>
         <translation>Usar PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="506"/>
-        <location filename="../src/configdialog.ui" line="1179"/>
+        <location filename="../src/configdialog.ui" line="873"/>
+        <location filename="../src/configdialog.ui" line="1448"/>
         <source>Use Git</source>
         <translation>Usar Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="564"/>
+        <location filename="../src/configdialog.ui" line="199"/>
         <source>Use QRencode</source>
         <translation>Usar QRencode</translation>
     </message>
@@ -635,42 +649,43 @@ O valor seguirase a gardar tal como se introduciu.</translation>
         <translation type="vanished">Usar extensión pass-otp</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="715"/>
+        <location filename="../src/configdialog.ui" line="987"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Git/GPG &amp;nativos</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="752"/>
+        <location filename="../src/configdialog.ui" line="75"/>
+        <location filename="../src/configdialog.ui" line="1024"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="771"/>
-        <location filename="../src/configdialog.ui" line="784"/>
-        <location filename="../src/configdialog.ui" line="839"/>
-        <location filename="../src/configdialog.ui" line="879"/>
-        <location filename="../src/configdialog.ui" line="1147"/>
-        <location filename="../src/configdialog.ui" line="1238"/>
+        <location filename="../src/configdialog.ui" line="1043"/>
+        <location filename="../src/configdialog.ui" line="1056"/>
+        <location filename="../src/configdialog.ui" line="1111"/>
+        <location filename="../src/configdialog.ui" line="1151"/>
+        <location filename="../src/configdialog.ui" line="1416"/>
+        <location filename="../src/configdialog.ui" line="1507"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="807"/>
+        <location filename="../src/configdialog.ui" line="1079"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="823"/>
+        <location filename="../src/configdialog.ui" line="1095"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1298"/>
+        <location filename="../src/configdialog.ui" line="764"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Os modelos engaden campos extra nos cadros de diálogo de creación de contrasinais e na vista de contrasinais.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1329"/>
+        <location filename="../src/configdialog.ui" line="795"/>
         <source>login
 URL
 e-mail</source>
@@ -880,6 +895,24 @@ e-mail</translation>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
         <translation>Non se puido escribir en %1: %2</translation>
+    </message>
+</context>
+<context>
+    <name>FieldLabel</name>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="13"/>
+        <source>Double-click to rename this field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="26"/>
+        <source>Rename field…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="27"/>
+        <source>Remove field</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2161,7 +2194,7 @@ Continuar?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="270"/>
+        <location filename="../src/passworddialog.cpp" line="271"/>
         <source>Password</source>
         <translation>Contrasinal</translation>
     </message>
@@ -2241,52 +2274,62 @@ Continuar?</translation>
         <translation>Modelo de campo desde o ficheiro .templates do almacén. Ctrl+T cambia ao seguinte.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="76"/>
+        <location filename="../src/passworddialog.cpp" line="77"/>
         <source>New password</source>
         <translation type="unfinished">Novo contrasinal</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="97"/>
+        <location filename="../src/passworddialog.cpp" line="98"/>
         <source>Decrypting…</source>
         <translation>Descifrando…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="216"/>
+        <location filename="../src/passworddialog.cpp" line="217"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">Dálle un nome á entrada.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="220"/>
+        <location filename="../src/passworddialog.cpp" line="221"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">Un nome non pode rematar en /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="229"/>
+        <location filename="../src/passworddialog.cpp" line="230"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">Ese nome apuntaría fóra do almacén de contrasinais.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="233"/>
+        <location filename="../src/passworddialog.cpp" line="234"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Xa existe unha entrada chamada %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="237"/>
+        <location filename="../src/passworddialog.cpp" line="238"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 é un cartafol.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="266"/>
+        <location filename="../src/passworddialog.cpp" line="267"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Non se puido crear o cartafol %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="377"/>
+        <location filename="../src/passworddialog.cpp" line="329"/>
+        <source>Remove field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="349"/>
+        <source>A field called %1 already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="420"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation>Secreto otpauth:// URI ou base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="410"/>
+        <location filename="../src/passworddialog.cpp" line="453"/>
         <source>Invalid OTP secret</source>
         <translation>Secreto OTP non válido</translation>
     </message>

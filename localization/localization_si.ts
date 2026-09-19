@@ -27,28 +27,27 @@
         <translation>වින්‍යාසය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="46"/>
         <source>Settings</source>
-        <translation>සැකසුම්</translation>
+        <translation type="vanished">සැකසුම්</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="86"/>
+        <location filename="../src/configdialog.ui" line="294"/>
         <source>Clipboard behaviour:</source>
         <translation>පිටපත් පුවරුව හැසිරීම:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="104"/>
+        <location filename="../src/configdialog.ui" line="312"/>
         <source>Use primary selection</source>
         <translation>ප්‍රාථමික තේරීම භාවිතා කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="111"/>
+        <location filename="../src/configdialog.ui" line="319"/>
         <source>Autoclear after:</source>
         <translation>ස්වයංක්‍රීයව මකා දමන්නේ පසු:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="128"/>
-        <location filename="../src/configdialog.ui" line="203"/>
+        <location filename="../src/configdialog.ui" line="336"/>
+        <location filename="../src/configdialog.ui" line="411"/>
         <source>Seconds</source>
         <translation>තත්පර</translation>
     </message>
@@ -57,216 +56,231 @@
         <translation type="vanished">Password Behaviour:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="156"/>
+        <location filename="../src/configdialog.ui" line="364"/>
         <source>Content panel behaviour:</source>
         <translation>අන්තර්ගත පැනලයේ හැසිරීම:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="164"/>
+        <location filename="../src/configdialog.ui" line="372"/>
         <source>Hide content</source>
         <translation>අන්තර්ගතය සඟවන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="171"/>
+        <location filename="../src/configdialog.ui" line="379"/>
         <source>Hide password</source>
         <translation>මුරපදය සඟවන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="180"/>
+        <location filename="../src/configdialog.ui" line="388"/>
         <source>Autoclear panel after:</source>
         <translation>පැනලය ස්වයංක්‍රීයව මකා දැමීම:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="232"/>
+        <location filename="../src/configdialog.ui" line="440"/>
         <source>Use a monospace font</source>
         <translation>මොනෝස්පේස් අකුරු රටාව භාවිතා කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="239"/>
+        <location filename="../src/configdialog.ui" line="447"/>
         <source>Display the files content as-is</source>
         <translation>ගොනු අන්තර්ගතය මුල් අයුරින් ම පෙන්වන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="246"/>
+        <location filename="../src/configdialog.ui" line="454"/>
         <source>No line wrapping</source>
         <translation>පේළි එතීම අක්‍රිය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="253"/>
+        <location filename="../src/configdialog.ui" line="461"/>
         <source>Show process output</source>
         <translation>ක්‍රියාවලි ප්‍රතිදානය පෙන්වන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="278"/>
+        <location filename="../src/configdialog.ui" line="541"/>
         <source>Password Generation:</source>
         <translation>මුරපද ජනනය:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="289"/>
+        <location filename="../src/configdialog.ui" line="552"/>
         <source>Password Length:</source>
         <translation>මුරපද දිග:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="326"/>
+        <location filename="../src/configdialog.ui" line="589"/>
         <source>Characters</source>
         <translation>අකුරු</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="357"/>
+        <location filename="../src/configdialog.ui" line="620"/>
         <source>Use characters:</source>
         <translation>අක්ෂර භාවිතා කරන්න:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="378"/>
+        <location filename="../src/configdialog.ui" line="641"/>
         <source>Select character set for password generation</source>
         <translation>මුරපද උත්පාදනය සඳහා අක්ෂර කට්ටලය තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="382"/>
+        <location filename="../src/configdialog.ui" line="645"/>
         <source>All Characters</source>
         <translation>සියලු අක්ෂරවල</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="387"/>
+        <location filename="../src/configdialog.ui" line="650"/>
         <source>Alphabetical</source>
         <translation>අක්ෂර සංගමනය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="392"/>
+        <location filename="../src/configdialog.ui" line="655"/>
         <source>Alphanumerical</source>
         <translation>අකුරු සංඛ්‍යාත්මක</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="397"/>
+        <location filename="../src/configdialog.ui" line="660"/>
         <source>Custom</source>
         <translation>අභිරුචි</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="435"/>
+        <location filename="../src/configdialog.ui" line="698"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="469"/>
+        <location filename="../src/configdialog.ui" line="732"/>
         <source>Include special symbols</source>
         <translation>විශේෂ සංකේත ඇතුළත් කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="578"/>
+        <location filename="../src/configdialog.ui" line="213"/>
         <source>Enable one-time password (OTP) support</source>
         <translation type="unfinished">එක්-වර මුරපද (OTP) සහාය සක්‍රීය කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="589"/>
+        <location filename="../src/configdialog.ui" line="60"/>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="65"/>
+        <source>Clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="70"/>
+        <source>Passwords</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="224"/>
         <source>Enable content search (pass grep)</source>
         <translation>අන්තර්ගත සෙවුම සක්‍රීය කරන්න (pass grep)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="592"/>
+        <location filename="../src/configdialog.ui" line="227"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>මුරපද ගොනු අන්තර්ගතය තුළ සෙවීම සඳහා අවසර දෙයි. මෙයට සෑම ගොනුවක්ම විකේතනය කිරීම අවශ්‍ය වන අතර විශාල ගබඩා සඳහා මෙය මන්දගාමී විය හැක.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="765"/>
-        <location filename="../src/configdialog.ui" line="768"/>
+        <location filename="../src/configdialog.ui" line="1037"/>
+        <location filename="../src/configdialog.ui" line="1040"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">gpg ක්‍රියාත්මක ගොනුව තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="778"/>
-        <location filename="../src/configdialog.ui" line="781"/>
+        <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/configdialog.ui" line="1053"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">git ක්‍රියාත්මක ගොනුව තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="797"/>
+        <location filename="../src/configdialog.ui" line="1069"/>
         <source>Generate</source>
         <translation>ජනනය කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="800"/>
+        <location filename="../src/configdialog.ui" line="1072"/>
         <source>Generate GPG key pair</source>
         <translation>GPG යතුරු යුගලය ජනනය කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="833"/>
-        <location filename="../src/configdialog.ui" line="836"/>
+        <location filename="../src/configdialog.ui" line="1105"/>
+        <location filename="../src/configdialog.ui" line="1108"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">pwgen ක්‍රියාත්මක ගොනුව තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="873"/>
-        <location filename="../src/configdialog.ui" line="876"/>
+        <location filename="../src/configdialog.ui" line="1145"/>
+        <location filename="../src/configdialog.ui" line="1148"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">pass ක්‍රියාත්මක ගොනුව තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="930"/>
+        <location filename="../src/configdialog.ui" line="1202"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>SSH_AUTH_SOCK අභිබවා යෑම:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="933"/>
+        <location filename="../src/configdialog.ui" line="1205"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>SSH_AUTH_SOCK අභිබවා යෑම සඳහා විකල්ප මාර්ගය. gpgconf මගින් ස්වයංක්‍රීය විමර්ශනය සඳහා හිස්ව තබන්න (ගැටළුව #543).</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="943"/>
+        <location filename="../src/configdialog.ui" line="1215"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(gpgconf මගින් ස්වයංක්‍රීය විමර්ශනය)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1020"/>
+        <location filename="../src/configdialog.ui" line="1289"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">මෙම QtPass දන්නා මුරපද ගබඩා; සංස්කරණය කිරීමට එකක් තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1035"/>
+        <location filename="../src/configdialog.ui" line="1304"/>
         <source>Add a profile</source>
         <translation type="unfinished">පැතිකඩක් එක් කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1053"/>
+        <location filename="../src/configdialog.ui" line="1322"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">තෝරාගත් පැතිකඩ අමතක කරන්න; ගබඩාව තැටියේ එලෙසම පවතී</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1099"/>
+        <location filename="../src/configdialog.ui" line="1368"/>
         <source>Profile</source>
         <translation type="unfinished">පැතිකඩ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1115"/>
+        <location filename="../src/configdialog.ui" line="1384"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>පැතිකඩ නම, මෙම වින්‍යාස පැතිකඩ හඳුනා ගැනීමට භාවිතා කරයි</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1134"/>
+        <location filename="../src/configdialog.ui" line="1403"/>
         <source>Path to the password store directory</source>
         <translation>මුරපද ගබඩා නාමාවලියට යන මාර්ගය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1156"/>
+        <location filename="../src/configdialog.ui" line="1425"/>
         <source>Signing Key</source>
         <translation>අත්සන් කිරීමේ යතුර</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1166"/>
+        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>විකල්පය: අඛණ්ඩතාව තහවුරු කිරීම සඳහා .gpg-id ගොනු අත්සන් කිරීමට GPG යතුරක්. පරිශීලක ලැයිස්තුව වෙනස් කිරීමෙන් ආරක්ෂා කිරීමට අවශ්‍ය නොවේ නම් මෙය හිස්ව තබන්න.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1169"/>
+        <location filename="../src/configdialog.ui" line="1438"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">pass ට අවශ්‍ය පරිදි, අක්ෂර 40 ක සම්පූර්ණ යතුරු ඇඟිලි සලකුණ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1176"/>
+        <location filename="../src/configdialog.ui" line="1445"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
         <translation type="unfinished">මෙම පැතිකඩ සඳහා Git සැකසුම්; එය සක්‍රීයව ඇති විට මේවා සැකසුම් පටිත්තේ ඇති ඒවා වෙනුවට යෙදේ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1222"/>
+        <location filename="../src/configdialog.ui" line="1491"/>
         <source>Current path</source>
         <translation>වත්මන් මාර්ගය</translation>
     </message>
@@ -275,7 +289,7 @@
         <translation type="vanished">Use pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="459"/>
+        <location filename="../src/configdialog.ui" line="722"/>
         <source>Exclude capital letters</source>
         <translation>විශාල අකුරු ඉවත් කරන්න</translation>
     </message>
@@ -284,17 +298,17 @@
         <translation type="vanished">Include special symbols </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="476"/>
+        <location filename="../src/configdialog.ui" line="739"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>මතක තබා ගැනීමට පහසු නමුත් අඩු ආරක්ෂිත මුරපද ජනනය කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="483"/>
+        <location filename="../src/configdialog.ui" line="746"/>
         <source>Exclude numbers</source>
         <translation>අංක ඇතුළත් නොකරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="495"/>
+        <location filename="../src/configdialog.ui" line="862"/>
         <source>Git:</source>
         <translation>ගිත්:</translation>
     </message>
@@ -303,24 +317,24 @@
         <translation type="vanished">Use git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="517"/>
+        <location filename="../src/configdialog.ui" line="884"/>
         <source>Automatically add .gpg-id files</source>
         <translation>.gpg-id ගොනු ස්වයංක්‍රීයව එක් කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="524"/>
-        <location filename="../src/configdialog.ui" line="1186"/>
+        <location filename="../src/configdialog.ui" line="891"/>
+        <location filename="../src/configdialog.ui" line="1455"/>
         <source>Automatically push</source>
         <translation>ස්වයංක්‍රීයව තල්ලු කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="531"/>
-        <location filename="../src/configdialog.ui" line="1193"/>
+        <location filename="../src/configdialog.ui" line="898"/>
+        <location filename="../src/configdialog.ui" line="1462"/>
         <source>Automatically pull</source>
         <translation>ස්වයංක්‍රීයව ලබා ගන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="556"/>
+        <location filename="../src/configdialog.ui" line="191"/>
         <source>Extensions:</source>
         <translation>විස්තාරක:</translation>
     </message>
@@ -329,37 +343,37 @@
         <translation type="vanished">Use pass otp extension</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="604"/>
+        <location filename="../src/configdialog.ui" line="134"/>
         <source>System:</source>
         <translation>පද්ධතිය:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="615"/>
+        <location filename="../src/configdialog.ui" line="145"/>
         <source>Use TrayIcon</source>
         <translation>පද්ධති තැටි අයිකනය භාවිත කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="622"/>
+        <location filename="../src/configdialog.ui" line="152"/>
         <source>Start minimized</source>
         <translation>අවම කළ තත්ත්වයෙන් ආරම්භ කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="629"/>
+        <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide on close</source>
         <translation>වසා දමන විට සඟවන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="636"/>
+        <location filename="../src/configdialog.ui" line="166"/>
         <source>Always on top</source>
         <translation>සෑමවිටම ඉහළින්</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="666"/>
+        <location filename="../src/configdialog.ui" line="80"/>
         <source>Programs</source>
         <translation>වැඩසටහන්</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="706"/>
+        <location filename="../src/configdialog.ui" line="978"/>
         <source>Select password storage program:</source>
         <translation>මුරපද ගබඩා කිරීමේ වැඩසටහන තෝරන්න:</translation>
     </message>
@@ -368,12 +382,12 @@
         <translation type="vanished">Nati&amp;ve git/gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="722"/>
+        <location filename="../src/configdialog.ui" line="994"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Pass භාවිතා කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="746"/>
+        <location filename="../src/configdialog.ui" line="1018"/>
         <source>Native</source>
         <translation>සැඳිහිටු</translation>
     </message>
@@ -394,12 +408,12 @@
         <translation type="vanished">pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="849"/>
+        <location filename="../src/configdialog.ui" line="1121"/>
         <source>Pass</source>
         <translation>පසු</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="860"/>
+        <location filename="../src/configdialog.ui" line="1132"/>
         <source>pass</source>
         <translation>පසු</translation>
     </message>
@@ -408,27 +422,27 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="970"/>
+        <location filename="../src/configdialog.ui" line="85"/>
         <source>Profiles</source>
         <translation>පැතිකඩ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1105"/>
+        <location filename="../src/configdialog.ui" line="1374"/>
         <source>Name</source>
         <translation>නම</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1122"/>
+        <location filename="../src/configdialog.ui" line="1391"/>
         <source>Path</source>
         <translation>මාර්ගය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1038"/>
+        <location filename="../src/configdialog.ui" line="1307"/>
         <source>Add</source>
         <translation>එකතු කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1056"/>
+        <location filename="../src/configdialog.ui" line="1325"/>
         <source>Delete</source>
         <translation>මකන්න</translation>
     </message>
@@ -437,7 +451,7 @@
         <translation type="vanished">Current password-store</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1255"/>
+        <location filename="../src/configdialog.ui" line="758"/>
         <source>Template</source>
         <translation>මූලික පාත්වය</translation>
     </message>
@@ -446,17 +460,17 @@
         <translation type="vanished">Templates add extra fields in the password generation dialogue and in the password view.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1307"/>
+        <location filename="../src/configdialog.ui" line="773"/>
         <source>Use template</source>
         <translation>මූලික පාත්වය සඳහන්</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1314"/>
+        <location filename="../src/configdialog.ui" line="780"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>ලැයිස්තුගත කර ඇති ඒවා පමණක් නොව, වචනයකින් ආරම්භ වී එයට පසු කොලනයක් (:) ඇති සියලු පේළි මුරපද ක්ෂේත්‍ර ලෙස පෙන්වන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1317"/>
+        <location filename="../src/configdialog.ui" line="783"/>
         <source>Show all fields templated</source>
         <translation>සියලු තෝල ලේන් මත පාත්වය</translation>
     </message>
@@ -469,7 +483,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1348"/>
+        <location filename="../src/configdialog.ui" line="1531"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; අනුවාදය </translation>
     </message>
@@ -489,38 +503,38 @@ email</translation>
         <translation>අවශ්‍ය විට පසුරු පුවරුවට පිටපත් කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="275"/>
-        <location filename="../src/configdialog.cpp" line="280"/>
+        <location filename="../src/configdialog.cpp" line="277"/>
+        <location filename="../src/configdialog.cpp" line="282"/>
         <source>This field is required</source>
         <translation>මෙම ක්ෂේත්‍රය අවශ්‍ය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="277"/>
+        <location filename="../src/configdialog.cpp" line="279"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">වෙනත් පැතිකඩකට දැනටමත් මෙම නම ඇත</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="317"/>
+        <location filename="../src/configdialog.cpp" line="319"/>
         <source>The path does not exist.</source>
         <translation>මාර්ගය නොපවතී.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="320"/>
+        <location filename="../src/configdialog.cpp" line="322"/>
         <source>The path is not readable.</source>
         <translation>මාර්ගය කියවිය නොහැක.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="323"/>
+        <location filename="../src/configdialog.cpp" line="325"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>මාර්ගය Unix වසම් සොකට් එකක් නොවේ.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="328"/>
+        <location filename="../src/configdialog.cpp" line="330"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>විභව වලංගු නොවන SSH_AUTH_SOCK අභිබවා යෑම</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="329"/>
+        <location filename="../src/configdialog.cpp" line="331"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -533,47 +547,47 @@ The value will still be saved as entered.</source>
 අගය ඇතුළත් කළ පරිදි තවමත් සුරැකෙනු ඇත.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="716"/>
+        <location filename="../src/configdialog.cpp" line="718"/>
         <source>Create profile directory?</source>
         <translation>පැතිකඩ නාමාවලිය සෑදීමට අවශ්‍යද?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="717"/>
+        <location filename="../src/configdialog.cpp" line="719"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>ඔබට %1 හි මුරපද ගබඩාවක් සාදීමට අවශ්‍යද?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="725"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>Could not create profile directory: %1</source>
         <translation>පැතිකඩ නාමාවලිය සෑදිය නොහැකි විය: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="751"/>
+        <location filename="../src/configdialog.cpp" line="753"/>
         <source>Select recipients for %1</source>
         <translation>%1 සඳහා ලබන්නන් තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="764"/>
+        <location filename="../src/configdialog.cpp" line="766"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">%1 පැතිකඩ ආරම්භ කළ නොහැකි විය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="766"/>
+        <location filename="../src/configdialog.cpp" line="768"/>
         <source>Profile %1</source>
         <translation type="unfinished">පැතිකඩ %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="777"/>
+        <location filename="../src/configdialog.cpp" line="779"/>
         <source>New Profile</source>
         <translation>නව පැතිකඩ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="804"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>No profile selected</source>
         <translation>කිසිදු පැතිකඩක් තෝරා නැත</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="805"/>
+        <location filename="../src/configdialog.cpp" line="807"/>
         <source>No profile selected to delete</source>
         <translation>මකා දැමීමට පැතිකඩක් තෝරා නොමැත</translation>
     </message>
@@ -594,7 +608,7 @@ The value will still be saved as entered.</source>
         <translation type="vanished">%1 හි මුරපද ගබඩාවක් සෑදීමට ඔබ කැමතිද?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="724"/>
+        <location filename="../src/configdialog.cpp" line="726"/>
         <source>Error</source>
         <translation>දෝෂය</translation>
     </message>
@@ -616,27 +630,27 @@ The value will still be saved as entered.</source>
         <translation type="vanished">%1 ෆෝල්ඩරය මුරපද ගබඩාවක් ලෙස නොපෙනේ හෝ තවම ආරම්භ කර නොමැත.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1103"/>
+        <location filename="../src/configdialog.cpp" line="1105"/>
         <source>New profile: %1 at %2</source>
         <translation>%2 හි %1 නව පැතිකඩ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1105"/>
+        <location filename="../src/configdialog.cpp" line="1107"/>
         <source>Profile: %1 at %2</source>
         <translation>පැතිකඩ: %2 හි %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1108"/>
+        <location filename="../src/configdialog.cpp" line="1110"/>
         <source>Fill in all required fields</source>
         <translation>අවශ්‍ය සියලු ක්ෂේත්‍ර පුරවන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="888"/>
+        <location filename="../src/configdialog.ui" line="1160"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="919"/>
+        <location filename="../src/configdialog.ui" line="1191"/>
         <source>Autodetect</source>
         <translation>ස්වයංක්‍රීය හඳුනාගැනීම</translation>
     </message>
@@ -663,18 +677,18 @@ The value will still be saved as entered.</source>
         <translation type="vanished">කරුණාකර ඔබේ පද්ධතියේ GnuPG ස්ථාපනය කරන්න.&lt;br&gt;Microsoft Store වෙතින් &lt;strong&gt;Ubuntu&lt;/strong&gt; ස්ථාපනය කරන්න&lt;br&gt;නැතහොත් GnuPG.org වෙතින් &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;බාගන්න&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="452"/>
+        <location filename="../src/configdialog.ui" line="715"/>
         <source>Use PWGen</source>
         <translation>PWGen භාවිතා කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="506"/>
-        <location filename="../src/configdialog.ui" line="1179"/>
+        <location filename="../src/configdialog.ui" line="873"/>
+        <location filename="../src/configdialog.ui" line="1448"/>
         <source>Use Git</source>
         <translation>Git භාවිතා කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="564"/>
+        <location filename="../src/configdialog.ui" line="199"/>
         <source>Use QRencode</source>
         <translation>QRencode සහය කරන්න</translation>
     </message>
@@ -683,50 +697,51 @@ The value will still be saved as entered.</source>
         <translation type="vanished">pass-otp දිගුව භාවිතා කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="715"/>
+        <location filename="../src/configdialog.ui" line="987"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>ස්වදේශීය (&amp;V) Git/GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="752"/>
+        <location filename="../src/configdialog.ui" line="75"/>
+        <location filename="../src/configdialog.ui" line="1024"/>
         <source>Git</source>
         <translation>ගිත්</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="771"/>
-        <location filename="../src/configdialog.ui" line="784"/>
-        <location filename="../src/configdialog.ui" line="839"/>
-        <location filename="../src/configdialog.ui" line="879"/>
-        <location filename="../src/configdialog.ui" line="1147"/>
-        <location filename="../src/configdialog.ui" line="1238"/>
+        <location filename="../src/configdialog.ui" line="1043"/>
+        <location filename="../src/configdialog.ui" line="1056"/>
+        <location filename="../src/configdialog.ui" line="1111"/>
+        <location filename="../src/configdialog.ui" line="1151"/>
+        <location filename="../src/configdialog.ui" line="1416"/>
+        <location filename="../src/configdialog.ui" line="1507"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="807"/>
+        <location filename="../src/configdialog.ui" line="1079"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="823"/>
+        <location filename="../src/configdialog.ui" line="1095"/>
         <source>PWGen</source>
         <translation>ප්‍රතිබදු කණ්ඩායම</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1141"/>
-        <location filename="../src/configdialog.ui" line="1144"/>
-        <location filename="../src/configdialog.ui" line="1232"/>
-        <location filename="../src/configdialog.ui" line="1235"/>
+        <location filename="../src/configdialog.ui" line="1410"/>
+        <location filename="../src/configdialog.ui" line="1413"/>
+        <location filename="../src/configdialog.ui" line="1501"/>
+        <location filename="../src/configdialog.ui" line="1504"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">මුරපද ගබඩා ෆෝල්ඩරය තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1298"/>
+        <location filename="../src/configdialog.ui" line="764"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>මුරපද උත්පාදන සංවාදයේදී සහ මුරපද දර්ශනයේදී සැකිලි අමතර ක්ෂේත්‍ර එක් කරයි.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1329"/>
+        <location filename="../src/configdialog.ui" line="795"/>
         <source>login
 URL
 e-mail</source>
@@ -869,6 +884,24 @@ e-mail</translation>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
         <translation>%1 වෙත ලියීමට නොහැකි විය: %2</translation>
+    </message>
+</context>
+<context>
+    <name>FieldLabel</name>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="13"/>
+        <source>Double-click to rename this field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="26"/>
+        <source>Rename field…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="27"/>
+        <source>Remove field</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2168,7 +2201,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="270"/>
+        <location filename="../src/passworddialog.cpp" line="271"/>
         <source>Password</source>
         <translation>මුරපදය</translation>
     </message>
@@ -2248,52 +2281,62 @@ Continue?</source>
         <translation type="unfinished">ගබඩාවේ .templates ගොනුවෙන් ලැබෙන ක්ෂේත්‍ර සැකිල්ල. Ctrl+T මඟින් ඊළඟ එකට මාරු වේ.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="76"/>
+        <location filename="../src/passworddialog.cpp" line="77"/>
         <source>New password</source>
         <translation type="unfinished">නව මුරපදය</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="97"/>
+        <location filename="../src/passworddialog.cpp" line="98"/>
         <source>Decrypting…</source>
         <translation type="unfinished">විකේතනය කරමින්…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="216"/>
+        <location filename="../src/passworddialog.cpp" line="217"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">ඇතුළත් කිරීමට නමක් දෙන්න.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="220"/>
+        <location filename="../src/passworddialog.cpp" line="221"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">නමක් / වලින් අවසන් විය නොහැක.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="229"/>
+        <location filename="../src/passworddialog.cpp" line="230"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">එම නම මුරපද ගබඩාවෙන් පිටතට යොමු වේ.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="233"/>
+        <location filename="../src/passworddialog.cpp" line="234"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">%1 නමින් ඇතුළත් කිරීමක් දැනටමත් පවතී.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="237"/>
+        <location filename="../src/passworddialog.cpp" line="238"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 ෆෝල්ඩරයකි.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="266"/>
+        <location filename="../src/passworddialog.cpp" line="267"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">%1 ෆෝල්ඩරය සෑදිය නොහැකි විය.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="377"/>
+        <location filename="../src/passworddialog.cpp" line="329"/>
+        <source>Remove field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="349"/>
+        <source>A field called %1 already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="420"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI හෝ base32 රහස</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="410"/>
+        <location filename="../src/passworddialog.cpp" line="453"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">වලංගු නොවන OTP රහස</translation>
     </message>

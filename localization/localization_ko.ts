@@ -27,28 +27,27 @@
         <translation>환경 구성</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="46"/>
         <source>Settings</source>
-        <translation>설정</translation>
+        <translation type="vanished">설정</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="86"/>
+        <location filename="../src/configdialog.ui" line="294"/>
         <source>Clipboard behaviour:</source>
         <translation>클립보드 동작:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="104"/>
+        <location filename="../src/configdialog.ui" line="312"/>
         <source>Use primary selection</source>
         <translation>기본 선택 사용</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="111"/>
+        <location filename="../src/configdialog.ui" line="319"/>
         <source>Autoclear after:</source>
         <translation>다음시간 후 자동 비우기:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="128"/>
-        <location filename="../src/configdialog.ui" line="203"/>
+        <location filename="../src/configdialog.ui" line="336"/>
+        <location filename="../src/configdialog.ui" line="411"/>
         <source>Seconds</source>
         <translation>초</translation>
     </message>
@@ -57,216 +56,231 @@
         <translation type="vanished">Password Behaviour:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="156"/>
+        <location filename="../src/configdialog.ui" line="364"/>
         <source>Content panel behaviour:</source>
         <translation>콘텐츠 패널 동작:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="164"/>
+        <location filename="../src/configdialog.ui" line="372"/>
         <source>Hide content</source>
         <translation>내용 숨기기</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="171"/>
+        <location filename="../src/configdialog.ui" line="379"/>
         <source>Hide password</source>
         <translation>비밀번호 숨기기</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="180"/>
+        <location filename="../src/configdialog.ui" line="388"/>
         <source>Autoclear panel after:</source>
         <translation>다음시간 후 패널 자동 비우기:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="232"/>
+        <location filename="../src/configdialog.ui" line="440"/>
         <source>Use a monospace font</source>
         <translation>고정폭 글꼴 사용</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="239"/>
+        <location filename="../src/configdialog.ui" line="447"/>
         <source>Display the files content as-is</source>
         <translation>파일 콘텐츠를 있는 그대로 표시</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="246"/>
+        <location filename="../src/configdialog.ui" line="454"/>
         <source>No line wrapping</source>
         <translation>줄 바꿈 없음</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="253"/>
+        <location filename="../src/configdialog.ui" line="461"/>
         <source>Show process output</source>
         <translation>프로세스 출력 보기</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="278"/>
+        <location filename="../src/configdialog.ui" line="541"/>
         <source>Password Generation:</source>
         <translation>비밀번호 생성:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="289"/>
+        <location filename="../src/configdialog.ui" line="552"/>
         <source>Password Length:</source>
         <translation>비밀번호 길이:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="326"/>
+        <location filename="../src/configdialog.ui" line="589"/>
         <source>Characters</source>
         <translation>문자</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="357"/>
+        <location filename="../src/configdialog.ui" line="620"/>
         <source>Use characters:</source>
         <translation>사용할 문자 집합:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="378"/>
+        <location filename="../src/configdialog.ui" line="641"/>
         <source>Select character set for password generation</source>
         <translation>비밀번호 생성에 사용할 문자집합 선택</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="382"/>
+        <location filename="../src/configdialog.ui" line="645"/>
         <source>All Characters</source>
         <translation>모든 문자</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="387"/>
+        <location filename="../src/configdialog.ui" line="650"/>
         <source>Alphabetical</source>
         <translation>알파벳</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="392"/>
+        <location filename="../src/configdialog.ui" line="655"/>
         <source>Alphanumerical</source>
         <translation>영숫자</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="397"/>
+        <location filename="../src/configdialog.ui" line="660"/>
         <source>Custom</source>
         <translation>사용자 정의</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="435"/>
+        <location filename="../src/configdialog.ui" line="698"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="469"/>
+        <location filename="../src/configdialog.ui" line="732"/>
         <source>Include special symbols</source>
         <translation>특수문자 포함</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="578"/>
+        <location filename="../src/configdialog.ui" line="213"/>
         <source>Enable one-time password (OTP) support</source>
         <translation type="unfinished">일회용 비밀번호(OTP) 지원 사용</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="589"/>
+        <location filename="../src/configdialog.ui" line="60"/>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="65"/>
+        <source>Clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="70"/>
+        <source>Passwords</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="224"/>
         <source>Enable content search (pass grep)</source>
         <translation>내용 검색 사용 (pass grep)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="592"/>
+        <location filename="../src/configdialog.ui" line="227"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>비밀번호 파일 내용에서 검색할 수 있도록 합니다. 모든 파일을 복호화해야 하므로 대규모 저장소에서는 느릴 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="765"/>
-        <location filename="../src/configdialog.ui" line="768"/>
+        <location filename="../src/configdialog.ui" line="1037"/>
+        <location filename="../src/configdialog.ui" line="1040"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">gpg 실행 파일 선택</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="778"/>
-        <location filename="../src/configdialog.ui" line="781"/>
+        <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/configdialog.ui" line="1053"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">git 실행 파일 선택</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="797"/>
+        <location filename="../src/configdialog.ui" line="1069"/>
         <source>Generate</source>
         <translation>생성</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="800"/>
+        <location filename="../src/configdialog.ui" line="1072"/>
         <source>Generate GPG key pair</source>
         <translation>GPG 키 쌍 생성</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="833"/>
-        <location filename="../src/configdialog.ui" line="836"/>
+        <location filename="../src/configdialog.ui" line="1105"/>
+        <location filename="../src/configdialog.ui" line="1108"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">pwgen 실행 파일 선택</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="873"/>
-        <location filename="../src/configdialog.ui" line="876"/>
+        <location filename="../src/configdialog.ui" line="1145"/>
+        <location filename="../src/configdialog.ui" line="1148"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">pass 실행 파일 선택</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="930"/>
+        <location filename="../src/configdialog.ui" line="1202"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>SSH_AUTH_SOCK 재정의:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="933"/>
+        <location filename="../src/configdialog.ui" line="1205"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>SSH_AUTH_SOCK를 재정의할 선택 경로. gpgconf를 통한 자동 탐지를 위해 비워 두세요 (이슈 #543).</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="943"/>
+        <location filename="../src/configdialog.ui" line="1215"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(gpgconf를 통한 자동 탐지)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1020"/>
+        <location filename="../src/configdialog.ui" line="1289"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">이 QtPass가 알고 있는 비밀번호 저장소입니다. 편집하려면 하나를 선택하세요</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1035"/>
+        <location filename="../src/configdialog.ui" line="1304"/>
         <source>Add a profile</source>
         <translation type="unfinished">프로필 추가</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1053"/>
+        <location filename="../src/configdialog.ui" line="1322"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">선택한 프로필을 제거합니다. 저장소 자체는 디스크에 그대로 남습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1099"/>
+        <location filename="../src/configdialog.ui" line="1368"/>
         <source>Profile</source>
         <translation type="unfinished">프로필</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1115"/>
+        <location filename="../src/configdialog.ui" line="1384"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>프로필 이름, 이 구성 프로필을 식별하는 데 사용됩니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1134"/>
+        <location filename="../src/configdialog.ui" line="1403"/>
         <source>Path to the password store directory</source>
         <translation>비밀번호 저장소 디렉터리 경로</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1156"/>
+        <location filename="../src/configdialog.ui" line="1425"/>
         <source>Signing Key</source>
         <translation>서명 키</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1166"/>
+        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>선택 사항: 무결성 검증을 위해 .gpg-id 파일에 서명하는 GPG 키. 사용자 목록 변조로부터 보호해야 하는 경우가 아니면 비워 두십시오.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1169"/>
+        <location filename="../src/configdialog.ui" line="1438"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">pass에서 요구하는 40자 전체 키 지문</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1176"/>
+        <location filename="../src/configdialog.ui" line="1445"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
         <translation type="unfinished">이 프로필의 Git 설정입니다. 프로필이 활성화된 동안 설정 탭의 Git 설정을 대체합니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1222"/>
+        <location filename="../src/configdialog.ui" line="1491"/>
         <source>Current path</source>
         <translation>현재 경로</translation>
     </message>
@@ -275,7 +289,7 @@
         <translation type="vanished">Use pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="459"/>
+        <location filename="../src/configdialog.ui" line="722"/>
         <source>Exclude capital letters</source>
         <translation>대문자 제외</translation>
     </message>
@@ -284,17 +298,17 @@
         <translation type="vanished">Include special symbols </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="476"/>
+        <location filename="../src/configdialog.ui" line="739"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>기억하기 쉽지만 덜 안전한 암호 생성</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="483"/>
+        <location filename="../src/configdialog.ui" line="746"/>
         <source>Exclude numbers</source>
         <translation>숫자 제외</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="495"/>
+        <location filename="../src/configdialog.ui" line="862"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
@@ -303,24 +317,24 @@
         <translation type="vanished">Use git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="517"/>
+        <location filename="../src/configdialog.ui" line="884"/>
         <source>Automatically add .gpg-id files</source>
         <translation>자동으로 .gpg-id 파일에 추가</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="524"/>
-        <location filename="../src/configdialog.ui" line="1186"/>
+        <location filename="../src/configdialog.ui" line="891"/>
+        <location filename="../src/configdialog.ui" line="1455"/>
         <source>Automatically push</source>
         <translation>자동으로 올리기(Push)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="531"/>
-        <location filename="../src/configdialog.ui" line="1193"/>
+        <location filename="../src/configdialog.ui" line="898"/>
+        <location filename="../src/configdialog.ui" line="1462"/>
         <source>Automatically pull</source>
         <translation>자동으로 내려받기(Pull)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="556"/>
+        <location filename="../src/configdialog.ui" line="191"/>
         <source>Extensions:</source>
         <translation>확장 프로그램:</translation>
     </message>
@@ -329,37 +343,37 @@
         <translation type="vanished">Use pass otp extension</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="604"/>
+        <location filename="../src/configdialog.ui" line="134"/>
         <source>System:</source>
         <translation>시스템:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="615"/>
+        <location filename="../src/configdialog.ui" line="145"/>
         <source>Use TrayIcon</source>
         <translation>트레이 아이콘 사용</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="622"/>
+        <location filename="../src/configdialog.ui" line="152"/>
         <source>Start minimized</source>
         <translation>시작시 최소화</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="629"/>
+        <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide on close</source>
         <translation>종료시 숨기기</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="636"/>
+        <location filename="../src/configdialog.ui" line="166"/>
         <source>Always on top</source>
         <translation>항상 최상위</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="666"/>
+        <location filename="../src/configdialog.ui" line="80"/>
         <source>Programs</source>
         <translation>프로그램</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="706"/>
+        <location filename="../src/configdialog.ui" line="978"/>
         <source>Select password storage program:</source>
         <translation>비밀번호 저장 프로그램 선택:</translation>
     </message>
@@ -368,12 +382,12 @@
         <translation type="vanished">Nati&amp;ve git/gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="722"/>
+        <location filename="../src/configdialog.ui" line="994"/>
         <source>&amp;Use pass</source>
         <translation>Pass 사용(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="746"/>
+        <location filename="../src/configdialog.ui" line="1018"/>
         <source>Native</source>
         <translation>네이티브</translation>
     </message>
@@ -394,12 +408,12 @@
         <translation type="vanished">pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="849"/>
+        <location filename="../src/configdialog.ui" line="1121"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="860"/>
+        <location filename="../src/configdialog.ui" line="1132"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
@@ -408,27 +422,27 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="970"/>
+        <location filename="../src/configdialog.ui" line="85"/>
         <source>Profiles</source>
         <translation>프로필</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1105"/>
+        <location filename="../src/configdialog.ui" line="1374"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1122"/>
+        <location filename="../src/configdialog.ui" line="1391"/>
         <source>Path</source>
         <translation>경로</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1038"/>
+        <location filename="../src/configdialog.ui" line="1307"/>
         <source>Add</source>
         <translation>추가</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1056"/>
+        <location filename="../src/configdialog.ui" line="1325"/>
         <source>Delete</source>
         <translation>삭제</translation>
     </message>
@@ -437,7 +451,7 @@
         <translation type="vanished">Current password-store</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1255"/>
+        <location filename="../src/configdialog.ui" line="758"/>
         <source>Template</source>
         <translation>템플릿</translation>
     </message>
@@ -446,17 +460,17 @@
         <translation type="vanished">Templates add extra fields in the password generation dialogue and in the password view.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1307"/>
+        <location filename="../src/configdialog.ui" line="773"/>
         <source>Use template</source>
         <translation>템플릿 사용</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1314"/>
+        <location filename="../src/configdialog.ui" line="780"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>비밀번호 필드에서 단어 뒤에 콜론이 오는 모든 줄을 필드로 표시 (나열된 항목뿐만 아니라)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1317"/>
+        <location filename="../src/configdialog.ui" line="783"/>
         <source>Show all fields templated</source>
         <translation>템플릿이 적용된 모든 필드 표시</translation>
     </message>
@@ -469,7 +483,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1348"/>
+        <location filename="../src/configdialog.ui" line="1531"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; 버전 </translation>
     </message>
@@ -489,38 +503,38 @@ email</translation>
         <translation>필요할 때 클립보드로 복사</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="275"/>
-        <location filename="../src/configdialog.cpp" line="280"/>
+        <location filename="../src/configdialog.cpp" line="277"/>
+        <location filename="../src/configdialog.cpp" line="282"/>
         <source>This field is required</source>
         <translation>이 필드는 필수 항목입니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="277"/>
+        <location filename="../src/configdialog.cpp" line="279"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">같은 이름의 프로필이 이미 있습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="317"/>
+        <location filename="../src/configdialog.cpp" line="319"/>
         <source>The path does not exist.</source>
         <translation>경로가 존재하지 않습니다.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="320"/>
+        <location filename="../src/configdialog.cpp" line="322"/>
         <source>The path is not readable.</source>
         <translation>경로를 읽을 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="323"/>
+        <location filename="../src/configdialog.cpp" line="325"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>경로가 Unix 도메인 소켓이 아닙니다.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="328"/>
+        <location filename="../src/configdialog.cpp" line="330"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>잠재적으로 잘못된 SSH_AUTH_SOCK 재정의</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="329"/>
+        <location filename="../src/configdialog.cpp" line="331"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -533,47 +547,47 @@ The value will still be saved as entered.</source>
 값은 입력된 대로 여전히 저장됩니다.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="716"/>
+        <location filename="../src/configdialog.cpp" line="718"/>
         <source>Create profile directory?</source>
         <translation>프로필 디렉터리를 만드시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="717"/>
+        <location filename="../src/configdialog.cpp" line="719"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>%1에 비밀번호 저장소를 만드시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="725"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>Could not create profile directory: %1</source>
         <translation>프로필 디렉터리를 만들 수 없습니다: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="751"/>
+        <location filename="../src/configdialog.cpp" line="753"/>
         <source>Select recipients for %1</source>
         <translation>%1의 수신자 선택</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="764"/>
+        <location filename="../src/configdialog.cpp" line="766"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">프로필 %1을(를) 초기화할 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="766"/>
+        <location filename="../src/configdialog.cpp" line="768"/>
         <source>Profile %1</source>
         <translation type="unfinished">프로필 %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="777"/>
+        <location filename="../src/configdialog.cpp" line="779"/>
         <source>New Profile</source>
         <translation>새 프로필</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="804"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>No profile selected</source>
         <translation>프로필이 선택 되지 않았습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="805"/>
+        <location filename="../src/configdialog.cpp" line="807"/>
         <source>No profile selected to delete</source>
         <translation>삭제할 프로필을 선택하세요</translation>
     </message>
@@ -594,7 +608,7 @@ The value will still be saved as entered.</source>
         <translation type="vanished">%1에 비밀번호 저장소를 생성하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="724"/>
+        <location filename="../src/configdialog.cpp" line="726"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
@@ -616,27 +630,27 @@ The value will still be saved as entered.</source>
         <translation type="vanished">%1 폴더가 비밀번호 저장소가 아니거나 초기화되지 않았습니다.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1103"/>
+        <location filename="../src/configdialog.cpp" line="1105"/>
         <source>New profile: %1 at %2</source>
         <translation>새 프로필: %2의 %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1105"/>
+        <location filename="../src/configdialog.cpp" line="1107"/>
         <source>Profile: %1 at %2</source>
         <translation>프로필: %2의 %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1108"/>
+        <location filename="../src/configdialog.cpp" line="1110"/>
         <source>Fill in all required fields</source>
         <translation>모든 필수 필드를 입력하십시오</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="888"/>
+        <location filename="../src/configdialog.ui" line="1160"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="919"/>
+        <location filename="../src/configdialog.ui" line="1191"/>
         <source>Autodetect</source>
         <translation>자동감지</translation>
     </message>
@@ -663,18 +677,18 @@ The value will still be saved as entered.</source>
         <translation type="vanished">시스템에 GnuPG를 설치하세요.&lt;br&gt;마이크로소프트 스토어에서 &lt;strong&gt;우분투&lt;/strong&gt;를 설치하거나&lt;br&gt;GnuPG.org에서 &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;다운로드&lt;/a&gt;받으세요.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="452"/>
+        <location filename="../src/configdialog.ui" line="715"/>
         <source>Use PWGen</source>
         <translation>PWGen 사용</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="506"/>
-        <location filename="../src/configdialog.ui" line="1179"/>
+        <location filename="../src/configdialog.ui" line="873"/>
+        <location filename="../src/configdialog.ui" line="1448"/>
         <source>Use Git</source>
         <translation>Git 사용</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="564"/>
+        <location filename="../src/configdialog.ui" line="199"/>
         <source>Use QRencode</source>
         <translation>QRencode 사용</translation>
     </message>
@@ -683,50 +697,51 @@ The value will still be saved as entered.</source>
         <translation type="vanished">pass-otp 확장 사용</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="715"/>
+        <location filename="../src/configdialog.ui" line="987"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>네이티브 Git/GPG(&amp;v)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="752"/>
+        <location filename="../src/configdialog.ui" line="75"/>
+        <location filename="../src/configdialog.ui" line="1024"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="771"/>
-        <location filename="../src/configdialog.ui" line="784"/>
-        <location filename="../src/configdialog.ui" line="839"/>
-        <location filename="../src/configdialog.ui" line="879"/>
-        <location filename="../src/configdialog.ui" line="1147"/>
-        <location filename="../src/configdialog.ui" line="1238"/>
+        <location filename="../src/configdialog.ui" line="1043"/>
+        <location filename="../src/configdialog.ui" line="1056"/>
+        <location filename="../src/configdialog.ui" line="1111"/>
+        <location filename="../src/configdialog.ui" line="1151"/>
+        <location filename="../src/configdialog.ui" line="1416"/>
+        <location filename="../src/configdialog.ui" line="1507"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="807"/>
+        <location filename="../src/configdialog.ui" line="1079"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="823"/>
+        <location filename="../src/configdialog.ui" line="1095"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1141"/>
-        <location filename="../src/configdialog.ui" line="1144"/>
-        <location filename="../src/configdialog.ui" line="1232"/>
-        <location filename="../src/configdialog.ui" line="1235"/>
+        <location filename="../src/configdialog.ui" line="1410"/>
+        <location filename="../src/configdialog.ui" line="1413"/>
+        <location filename="../src/configdialog.ui" line="1501"/>
+        <location filename="../src/configdialog.ui" line="1504"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">비밀번호 저장소 폴더 선택</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1298"/>
+        <location filename="../src/configdialog.ui" line="764"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>템플릿은 비밀번호 생성 대화 상자와 비밀번호 보기에 확장 필드를 추가합니다.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1329"/>
+        <location filename="../src/configdialog.ui" line="795"/>
         <source>login
 URL
 e-mail</source>
@@ -869,6 +884,24 @@ e-mail</translation>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
         <translation>%1에 쓸 수 없습니다: %2</translation>
+    </message>
+</context>
+<context>
+    <name>FieldLabel</name>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="13"/>
+        <source>Double-click to rename this field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="26"/>
+        <source>Rename field…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="27"/>
+        <source>Remove field</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2199,7 +2232,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="270"/>
+        <location filename="../src/passworddialog.cpp" line="271"/>
         <source>Password</source>
         <translation>비밀번호</translation>
     </message>
@@ -2279,52 +2312,62 @@ Continue?</source>
         <translation type="unfinished">저장소의 .templates 파일에 있는 필드 템플릿입니다. Ctrl+T를 누르면 다음 템플릿으로 전환됩니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="76"/>
+        <location filename="../src/passworddialog.cpp" line="77"/>
         <source>New password</source>
         <translation type="unfinished">새 비밀번호</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="97"/>
+        <location filename="../src/passworddialog.cpp" line="98"/>
         <source>Decrypting…</source>
         <translation type="unfinished">복호화 중…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="216"/>
+        <location filename="../src/passworddialog.cpp" line="217"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">항목 이름을 입력하세요.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="220"/>
+        <location filename="../src/passworddialog.cpp" line="221"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">이름은 /로 끝날 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="229"/>
+        <location filename="../src/passworddialog.cpp" line="230"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">이 이름은 비밀번호 저장소 밖을 가리키게 됩니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="233"/>
+        <location filename="../src/passworddialog.cpp" line="234"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">%1(이)라는 항목이 이미 있습니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="237"/>
+        <location filename="../src/passworddialog.cpp" line="238"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1은(는) 폴더입니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="266"/>
+        <location filename="../src/passworddialog.cpp" line="267"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">%1 폴더를 만들 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="377"/>
+        <location filename="../src/passworddialog.cpp" line="329"/>
+        <source>Remove field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="349"/>
+        <source>A field called %1 already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="420"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI 또는 base32 비밀 키</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="410"/>
+        <location filename="../src/passworddialog.cpp" line="453"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">잘못된 OTP 비밀 키</translation>
     </message>

@@ -27,181 +27,180 @@
         <translation>ترتیبات</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="46"/>
         <source>Settings</source>
-        <translation>سیٹنگز</translation>
+        <translation type="vanished">سیٹنگز</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="86"/>
+        <location filename="../src/configdialog.ui" line="294"/>
         <source>Clipboard behaviour:</source>
         <translation>کلپ بورڈ کا رویہ:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="104"/>
+        <location filename="../src/configdialog.ui" line="312"/>
         <source>Use primary selection</source>
         <translation>بنیادی انتخاب استعمال کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="111"/>
+        <location filename="../src/configdialog.ui" line="319"/>
         <source>Autoclear after:</source>
         <translation>خودکار صاف کریں:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="128"/>
-        <location filename="../src/configdialog.ui" line="203"/>
+        <location filename="../src/configdialog.ui" line="336"/>
+        <location filename="../src/configdialog.ui" line="411"/>
         <source>Seconds</source>
         <translation>سیکنڈ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="156"/>
+        <location filename="../src/configdialog.ui" line="364"/>
         <source>Content panel behaviour:</source>
         <translation>مواد پینل کا رویہ:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="164"/>
+        <location filename="../src/configdialog.ui" line="372"/>
         <source>Hide content</source>
         <translation>مواد چھپائیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="171"/>
+        <location filename="../src/configdialog.ui" line="379"/>
         <source>Hide password</source>
         <translation>پاس ورڈ چھپائیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="180"/>
+        <location filename="../src/configdialog.ui" line="388"/>
         <source>Autoclear panel after:</source>
         <translation>پینل خودکار صاف کریں:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="232"/>
+        <location filename="../src/configdialog.ui" line="440"/>
         <source>Use a monospace font</source>
         <translation>مونو اسپیس فونٹ استعمال کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="239"/>
+        <location filename="../src/configdialog.ui" line="447"/>
         <source>Display the files content as-is</source>
         <translation>فائل کا مواد جیسے ہے دکھائیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="246"/>
+        <location filename="../src/configdialog.ui" line="454"/>
         <source>No line wrapping</source>
         <translation>لائن ریپنگ نہیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="253"/>
+        <location filename="../src/configdialog.ui" line="461"/>
         <source>Show process output</source>
         <translation>پروسیس آؤٹ پٹ دکھائیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="278"/>
+        <location filename="../src/configdialog.ui" line="541"/>
         <source>Password Generation:</source>
         <translation>پاس ورڈ بنانا:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="289"/>
+        <location filename="../src/configdialog.ui" line="552"/>
         <source>Password Length:</source>
         <translation>پاس ورڈ کی لمبائی:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="326"/>
+        <location filename="../src/configdialog.ui" line="589"/>
         <source>Characters</source>
         <translation>حروف</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="357"/>
+        <location filename="../src/configdialog.ui" line="620"/>
         <source>Use characters:</source>
         <translation>حروف استعمال کریں:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="378"/>
+        <location filename="../src/configdialog.ui" line="641"/>
         <source>Select character set for password generation</source>
         <translation>پاس ورڈ بنانے کے لیے حروف کا سیٹ منتخب کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="382"/>
+        <location filename="../src/configdialog.ui" line="645"/>
         <source>All Characters</source>
         <translation>تمام حروف</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="387"/>
+        <location filename="../src/configdialog.ui" line="650"/>
         <source>Alphabetical</source>
         <translation>حروف تہجی</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="392"/>
+        <location filename="../src/configdialog.ui" line="655"/>
         <source>Alphanumerical</source>
         <translation>حروف اور اعداد</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="397"/>
+        <location filename="../src/configdialog.ui" line="660"/>
         <source>Custom</source>
         <translation>حسب ضرورت</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="435"/>
+        <location filename="../src/configdialog.ui" line="698"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="452"/>
+        <location filename="../src/configdialog.ui" line="715"/>
         <source>Use PWGen</source>
         <translation>PWGen استعمال کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="459"/>
+        <location filename="../src/configdialog.ui" line="722"/>
         <source>Exclude capital letters</source>
         <translation>بڑے حروف شامل نہ کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="469"/>
+        <location filename="../src/configdialog.ui" line="732"/>
         <source>Include special symbols</source>
         <translation>خاص علامات شامل کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="476"/>
+        <location filename="../src/configdialog.ui" line="739"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>یاد رکھنے میں آسان لیکن کم محفوظ پاس ورڈ بنائیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="483"/>
+        <location filename="../src/configdialog.ui" line="746"/>
         <source>Exclude numbers</source>
         <translation>اعداد شامل نہ کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="495"/>
+        <location filename="../src/configdialog.ui" line="862"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="506"/>
-        <location filename="../src/configdialog.ui" line="1179"/>
+        <location filename="../src/configdialog.ui" line="873"/>
+        <location filename="../src/configdialog.ui" line="1448"/>
         <source>Use Git</source>
         <translation>Git استعمال کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="517"/>
+        <location filename="../src/configdialog.ui" line="884"/>
         <source>Automatically add .gpg-id files</source>
         <translation>.gpg-id فائلیں خودکار شامل کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="524"/>
-        <location filename="../src/configdialog.ui" line="1186"/>
+        <location filename="../src/configdialog.ui" line="891"/>
+        <location filename="../src/configdialog.ui" line="1455"/>
         <source>Automatically push</source>
         <translation>خودکار پش کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="531"/>
-        <location filename="../src/configdialog.ui" line="1193"/>
+        <location filename="../src/configdialog.ui" line="898"/>
+        <location filename="../src/configdialog.ui" line="1462"/>
         <source>Automatically pull</source>
         <translation>خودکار پل کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="556"/>
+        <location filename="../src/configdialog.ui" line="191"/>
         <source>Extensions:</source>
         <translation>ایکسٹینشنز:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="564"/>
+        <location filename="../src/configdialog.ui" line="199"/>
         <source>Use QRencode</source>
         <translation>QRencode استعمال کریں</translation>
     </message>
@@ -210,279 +209,295 @@
         <translation type="vanished">pass-otp ایکسٹینشن استعمال کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="578"/>
+        <location filename="../src/configdialog.ui" line="213"/>
         <source>Enable one-time password (OTP) support</source>
         <translation type="unfinished">ون ٹائم پاس ورڈ (OTP) کی معاونت فعال کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="589"/>
+        <location filename="../src/configdialog.ui" line="224"/>
         <source>Enable content search (pass grep)</source>
         <translation>مواد تلاش فعال کریں (pass grep)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="592"/>
+        <location filename="../src/configdialog.ui" line="227"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>پاس ورڈ فائل کے مواد میں تلاش کی اجازت دیں۔ ہر فائل کو ڈکرپٹ کرنے کی ضرورت ہے اور بڑے اسٹورز پر سست ہو سکتا ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="604"/>
+        <location filename="../src/configdialog.ui" line="134"/>
         <source>System:</source>
         <translation>سسٹم:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="615"/>
+        <location filename="../src/configdialog.ui" line="145"/>
         <source>Use TrayIcon</source>
         <translation>ٹرے آئیکن استعمال کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="622"/>
+        <location filename="../src/configdialog.ui" line="152"/>
         <source>Start minimized</source>
         <translation>چھوٹا کر کے شروع کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="629"/>
+        <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide on close</source>
         <translation>بند کرنے پر چھپائیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="636"/>
+        <location filename="../src/configdialog.ui" line="166"/>
         <source>Always on top</source>
         <translation>ہمیشہ اوپر رہے</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="666"/>
+        <location filename="../src/configdialog.ui" line="80"/>
         <source>Programs</source>
         <translation>پروگرام</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="706"/>
+        <location filename="../src/configdialog.ui" line="978"/>
         <source>Select password storage program:</source>
         <translation>پاس ورڈ اسٹوریج پروگرام منتخب کریں:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="715"/>
+        <location filename="../src/configdialog.ui" line="987"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>مقامی Git/GPG (&amp;v)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="722"/>
+        <location filename="../src/configdialog.ui" line="994"/>
         <source>&amp;Use pass</source>
         <translation>pass استعمال کریں (&amp;U)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="746"/>
+        <location filename="../src/configdialog.ui" line="1018"/>
         <source>Native</source>
         <translation>مقامی</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="752"/>
+        <location filename="../src/configdialog.ui" line="75"/>
+        <location filename="../src/configdialog.ui" line="1024"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="765"/>
-        <location filename="../src/configdialog.ui" line="768"/>
+        <location filename="../src/configdialog.ui" line="60"/>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="65"/>
+        <source>Clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="70"/>
+        <source>Passwords</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1037"/>
+        <location filename="../src/configdialog.ui" line="1040"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">gpg ایگزیکیوٹیبل منتخب کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="771"/>
-        <location filename="../src/configdialog.ui" line="784"/>
-        <location filename="../src/configdialog.ui" line="839"/>
-        <location filename="../src/configdialog.ui" line="879"/>
-        <location filename="../src/configdialog.ui" line="1147"/>
-        <location filename="../src/configdialog.ui" line="1238"/>
+        <location filename="../src/configdialog.ui" line="1043"/>
+        <location filename="../src/configdialog.ui" line="1056"/>
+        <location filename="../src/configdialog.ui" line="1111"/>
+        <location filename="../src/configdialog.ui" line="1151"/>
+        <location filename="../src/configdialog.ui" line="1416"/>
+        <location filename="../src/configdialog.ui" line="1507"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="778"/>
-        <location filename="../src/configdialog.ui" line="781"/>
+        <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/configdialog.ui" line="1053"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">git ایگزیکیوٹیبل منتخب کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="797"/>
+        <location filename="../src/configdialog.ui" line="1069"/>
         <source>Generate</source>
         <translation>بنائیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="800"/>
+        <location filename="../src/configdialog.ui" line="1072"/>
         <source>Generate GPG key pair</source>
         <translation>GPG کلید کا جوڑا بنائیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="807"/>
+        <location filename="../src/configdialog.ui" line="1079"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="823"/>
+        <location filename="../src/configdialog.ui" line="1095"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="833"/>
-        <location filename="../src/configdialog.ui" line="836"/>
+        <location filename="../src/configdialog.ui" line="1105"/>
+        <location filename="../src/configdialog.ui" line="1108"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">pwgen ایگزیکیوٹیبل منتخب کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="849"/>
+        <location filename="../src/configdialog.ui" line="1121"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="860"/>
+        <location filename="../src/configdialog.ui" line="1132"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="873"/>
-        <location filename="../src/configdialog.ui" line="876"/>
+        <location filename="../src/configdialog.ui" line="1145"/>
+        <location filename="../src/configdialog.ui" line="1148"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">pass ایگزیکیوٹیبل منتخب کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="888"/>
+        <location filename="../src/configdialog.ui" line="1160"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="919"/>
+        <location filename="../src/configdialog.ui" line="1191"/>
         <source>Autodetect</source>
         <translation>خودکار تلاش</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="930"/>
+        <location filename="../src/configdialog.ui" line="1202"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>SSH_AUTH_SOCK اوور رائیڈ:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="933"/>
+        <location filename="../src/configdialog.ui" line="1205"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>SSH_AUTH_SOCK کو اوور رائیڈ کرنے کے لیے اختیاری راستہ۔ gpgconf کے ذریعے خودکار پڑتال کے لیے خالی چھوڑ دیں (issue #543)۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="943"/>
+        <location filename="../src/configdialog.ui" line="1215"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(gpgconf کے ذریعے خودکار پڑتال)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="970"/>
+        <location filename="../src/configdialog.ui" line="85"/>
         <source>Profiles</source>
         <translation>پروفائلز</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1020"/>
+        <location filename="../src/configdialog.ui" line="1289"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">وہ پاس ورڈ اسٹورز جو یہ QtPass جانتا ہے؛ ترمیم کے لیے ایک منتخب کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1035"/>
+        <location filename="../src/configdialog.ui" line="1304"/>
         <source>Add a profile</source>
         <translation type="unfinished">پروفائل شامل کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1053"/>
+        <location filename="../src/configdialog.ui" line="1322"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">منتخب پروفائل بھول جائیں؛ اسٹور خود ڈسک پر رہتا ہے</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1099"/>
+        <location filename="../src/configdialog.ui" line="1368"/>
         <source>Profile</source>
         <translation type="unfinished">پروفائل</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1105"/>
+        <location filename="../src/configdialog.ui" line="1374"/>
         <source>Name</source>
         <translation>نام</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1115"/>
+        <location filename="../src/configdialog.ui" line="1384"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>پروفائل کا نام، اس ترتیب پروفائل کی شناخت کے لیے استعمال ہوتا ہے</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1122"/>
+        <location filename="../src/configdialog.ui" line="1391"/>
         <source>Path</source>
         <translation>راستہ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1134"/>
+        <location filename="../src/configdialog.ui" line="1403"/>
         <source>Path to the password store directory</source>
         <translation>پاس ورڈ اسٹور ڈائریکٹری کا راستہ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1156"/>
+        <location filename="../src/configdialog.ui" line="1425"/>
         <source>Signing Key</source>
         <translation>دستخطی کلید</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1166"/>
+        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>اختیاری: .gpg-id فائلوں پر دستخط کرنے کے لیے GPG کلید۔ خالی چھوڑیں جب تک کہ آپ کو صارف کی فہرست کو چھیڑ چھاڑ سے محفوظ رکھنے کی ضرورت نہ ہو۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1038"/>
+        <location filename="../src/configdialog.ui" line="1307"/>
         <source>Add</source>
         <translation>شامل کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1056"/>
+        <location filename="../src/configdialog.ui" line="1325"/>
         <source>Delete</source>
         <translation>حذف کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1222"/>
+        <location filename="../src/configdialog.ui" line="1491"/>
         <source>Current path</source>
         <translation>موجودہ راستہ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1141"/>
-        <location filename="../src/configdialog.ui" line="1144"/>
-        <location filename="../src/configdialog.ui" line="1232"/>
-        <location filename="../src/configdialog.ui" line="1235"/>
+        <location filename="../src/configdialog.ui" line="1410"/>
+        <location filename="../src/configdialog.ui" line="1413"/>
+        <location filename="../src/configdialog.ui" line="1501"/>
+        <location filename="../src/configdialog.ui" line="1504"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">پاس ورڈ اسٹور کا فولڈر منتخب کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1169"/>
+        <location filename="../src/configdialog.ui" line="1438"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">کلید کا مکمل 40 حرفی فنگر پرنٹ، جیسا کہ pass کو درکار ہے</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1176"/>
+        <location filename="../src/configdialog.ui" line="1445"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
         <translation type="unfinished">اس پروفائل کی Git سیٹنگز؛ جب یہ فعال ہو تو یہ سیٹنگز ٹیب والی سیٹنگز کی جگہ لے لیتی ہیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1255"/>
+        <location filename="../src/configdialog.ui" line="758"/>
         <source>Template</source>
         <translation>سانچہ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1298"/>
+        <location filename="../src/configdialog.ui" line="764"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>سانچے پاس ورڈ بنانے کی ڈائیلاگ اور پاس ورڈ ویو میں اضافی فیلڈز شامل کرتے ہیں۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1307"/>
+        <location filename="../src/configdialog.ui" line="773"/>
         <source>Use template</source>
         <translation>سانچہ استعمال کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1314"/>
+        <location filename="../src/configdialog.ui" line="780"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>پاس ورڈ فیلڈز میں کولون کے ساتھ لفظ سے شروع ہونے والی تمام لائنیں دکھائیں، نہ کہ صرف فہرست شدہ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1317"/>
+        <location filename="../src/configdialog.ui" line="783"/>
         <source>Show all fields templated</source>
         <translation>تمام فیلڈز سانچے میں دکھائیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1329"/>
+        <location filename="../src/configdialog.ui" line="795"/>
         <source>login
 URL
 e-mail</source>
@@ -491,7 +506,7 @@ URL
 ای میل</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1348"/>
+        <location filename="../src/configdialog.ui" line="1531"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; ورژن </translation>
     </message>
@@ -530,38 +545,38 @@ URL
         <translation>ضرورت پر کلپ بورڈ میں کاپی کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="275"/>
-        <location filename="../src/configdialog.cpp" line="280"/>
+        <location filename="../src/configdialog.cpp" line="277"/>
+        <location filename="../src/configdialog.cpp" line="282"/>
         <source>This field is required</source>
         <translation>یہ فیلڈ ضروری ہے</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="277"/>
+        <location filename="../src/configdialog.cpp" line="279"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">ایک اور پروفائل کا یہی نام پہلے سے ہے</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="317"/>
+        <location filename="../src/configdialog.cpp" line="319"/>
         <source>The path does not exist.</source>
         <translation>راستہ موجود نہیں ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="320"/>
+        <location filename="../src/configdialog.cpp" line="322"/>
         <source>The path is not readable.</source>
         <translation>راستہ پڑھنے کے قابل نہیں ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="323"/>
+        <location filename="../src/configdialog.cpp" line="325"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>راستہ یونکس ڈومین ساکٹ نہیں ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="328"/>
+        <location filename="../src/configdialog.cpp" line="330"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>ممکنہ طور پر غلط SSH_AUTH_SOCK اوور رائیڈ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="329"/>
+        <location filename="../src/configdialog.cpp" line="331"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -574,52 +589,52 @@ The value will still be saved as entered.</source>
 قدر بہرحال درج کردہ کے مطابق محفوظ ہو جائے گی۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="716"/>
+        <location filename="../src/configdialog.cpp" line="718"/>
         <source>Create profile directory?</source>
         <translation>پروفائل ڈائریکٹری بنائیں؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="717"/>
+        <location filename="../src/configdialog.cpp" line="719"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>کیا آپ %1 پر پاس ورڈ اسٹور بنانا چاہیں گے؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="724"/>
+        <location filename="../src/configdialog.cpp" line="726"/>
         <source>Error</source>
         <translation>خرابی</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="725"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>Could not create profile directory: %1</source>
         <translation>پروفائل ڈائریکٹری نہیں بنائی جا سکی: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="751"/>
+        <location filename="../src/configdialog.cpp" line="753"/>
         <source>Select recipients for %1</source>
         <translation>%1 کے لیے وصول کنندگان منتخب کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="764"/>
+        <location filename="../src/configdialog.cpp" line="766"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">پروفائل %1 شروع نہیں کیا جا سکا</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="766"/>
+        <location filename="../src/configdialog.cpp" line="768"/>
         <source>Profile %1</source>
         <translation type="unfinished">پروفائل %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="777"/>
+        <location filename="../src/configdialog.cpp" line="779"/>
         <source>New Profile</source>
         <translation>نیا پروفائل</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="804"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>No profile selected</source>
         <translation>کوئی پروفائل منتخب نہیں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="805"/>
+        <location filename="../src/configdialog.cpp" line="807"/>
         <source>No profile selected to delete</source>
         <translation>حذف کرنے کے لیے کوئی پروفائل منتخب نہیں</translation>
     </message>
@@ -660,17 +675,17 @@ The value will still be saved as entered.</source>
         <translation type="vanished">فولڈر %1 پاس ورڈ اسٹور نہیں لگتا یا ابھی تک شروع نہیں ہوا۔</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1103"/>
+        <location filename="../src/configdialog.cpp" line="1105"/>
         <source>New profile: %1 at %2</source>
         <translation>نیا پروفائل: %1 بمقام %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1105"/>
+        <location filename="../src/configdialog.cpp" line="1107"/>
         <source>Profile: %1 at %2</source>
         <translation>پروفائل: %1 بمقام %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1108"/>
+        <location filename="../src/configdialog.cpp" line="1110"/>
         <source>Fill in all required fields</source>
         <translation>تمام ضروری فیلڈز بھریں</translation>
     </message>
@@ -809,6 +824,24 @@ The value will still be saved as entered.</source>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
         <translation>%1 میں نہیں لکھا جا سکا: %2</translation>
+    </message>
+</context>
+<context>
+    <name>FieldLabel</name>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="13"/>
+        <source>Double-click to rename this field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="26"/>
+        <source>Rename field…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="27"/>
+        <source>Remove field</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1958,7 +1991,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="270"/>
+        <location filename="../src/passworddialog.cpp" line="271"/>
         <source>Password</source>
         <translation>پاس ورڈ</translation>
     </message>
@@ -2038,52 +2071,62 @@ Continue?</source>
         <translation type="unfinished">اسٹور کی .templates فائل سے فیلڈ سانچہ۔ Ctrl+T اگلے سانچے پر جاتا ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="76"/>
+        <location filename="../src/passworddialog.cpp" line="77"/>
         <source>New password</source>
         <translation type="unfinished">نیا پاس ورڈ</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="97"/>
+        <location filename="../src/passworddialog.cpp" line="98"/>
         <source>Decrypting…</source>
         <translation type="unfinished">ڈکرپٹ کیا جا رہا ہے…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="216"/>
+        <location filename="../src/passworddialog.cpp" line="217"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">اندراج کو ایک نام دیں۔</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="220"/>
+        <location filename="../src/passworddialog.cpp" line="221"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">نام / پر ختم نہیں ہو سکتا۔</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="229"/>
+        <location filename="../src/passworddialog.cpp" line="230"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">یہ نام پاس ورڈ اسٹور سے باہر جا نکلے گا۔</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="233"/>
+        <location filename="../src/passworddialog.cpp" line="234"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">%1 نام کا اندراج پہلے سے موجود ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="237"/>
+        <location filename="../src/passworddialog.cpp" line="238"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 ایک فولڈر ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="266"/>
+        <location filename="../src/passworddialog.cpp" line="267"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">فولڈر %1 نہیں بنایا جا سکا۔</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="377"/>
+        <location filename="../src/passworddialog.cpp" line="329"/>
+        <source>Remove field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="349"/>
+        <source>A field called %1 already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="420"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI یا base32 سیکرٹ</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="410"/>
+        <location filename="../src/passworddialog.cpp" line="453"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">غیر درست OTP سیکرٹ</translation>
     </message>

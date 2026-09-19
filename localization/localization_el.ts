@@ -27,143 +27,142 @@
         <translation>Διαμόρφωση</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="46"/>
         <source>Settings</source>
-        <translation>Ρυθμίσεις</translation>
+        <translation type="vanished">Ρυθμίσεις</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="86"/>
+        <location filename="../src/configdialog.ui" line="294"/>
         <source>Clipboard behaviour:</source>
         <translation>Συμπεριφορά Προχείρου:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="104"/>
+        <location filename="../src/configdialog.ui" line="312"/>
         <source>Use primary selection</source>
         <translation>Χρήση κύριας επιλογής</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="111"/>
+        <location filename="../src/configdialog.ui" line="319"/>
         <source>Autoclear after:</source>
         <translation>Αυτόματη μετά από:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="128"/>
-        <location filename="../src/configdialog.ui" line="203"/>
+        <location filename="../src/configdialog.ui" line="336"/>
+        <location filename="../src/configdialog.ui" line="411"/>
         <source>Seconds</source>
         <translation>Δευτερόλεπτα</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="156"/>
+        <location filename="../src/configdialog.ui" line="364"/>
         <source>Content panel behaviour:</source>
         <translation>Συμπεριφορά πίνακα περιεχομένου:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="164"/>
+        <location filename="../src/configdialog.ui" line="372"/>
         <source>Hide content</source>
         <translation>Απόκρυψη περιεχομένου</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="171"/>
+        <location filename="../src/configdialog.ui" line="379"/>
         <source>Hide password</source>
         <translation>Απόκρυψη κωδικού</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="180"/>
+        <location filename="../src/configdialog.ui" line="388"/>
         <source>Autoclear panel after:</source>
         <translation>Αυτόματη μετά πίνακα από:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="232"/>
+        <location filename="../src/configdialog.ui" line="440"/>
         <source>Use a monospace font</source>
         <translation>Χρήση γραμματοσειράς σταθερού πλάτους</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="239"/>
+        <location filename="../src/configdialog.ui" line="447"/>
         <source>Display the files content as-is</source>
         <translation>Εμφάνιση του περιεχομένου των αρχείων ως έχει</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="246"/>
+        <location filename="../src/configdialog.ui" line="454"/>
         <source>No line wrapping</source>
         <translation>Χωρίς μακριές γραμμές περιτύλιξης</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="253"/>
+        <location filename="../src/configdialog.ui" line="461"/>
         <source>Show process output</source>
         <translation>Εμφάνιση εξόδου διεργασίας</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="278"/>
+        <location filename="../src/configdialog.ui" line="541"/>
         <source>Password Generation:</source>
         <translation>Δημιουργία κωδικού πρόσβασης:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="289"/>
+        <location filename="../src/configdialog.ui" line="552"/>
         <source>Password Length:</source>
         <translation>Μήκος κωδικού πρόσβασης:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="326"/>
+        <location filename="../src/configdialog.ui" line="589"/>
         <source>Characters</source>
         <translation>Χαρακτήρες</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="357"/>
+        <location filename="../src/configdialog.ui" line="620"/>
         <source>Use characters:</source>
         <translation>Χρήση χαρακτήρων:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="378"/>
+        <location filename="../src/configdialog.ui" line="641"/>
         <source>Select character set for password generation</source>
         <translation>Επιλογή συνόλου χαρακτήρων για τη δημιουργία κωδικού πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="382"/>
+        <location filename="../src/configdialog.ui" line="645"/>
         <source>All Characters</source>
         <translation>Όλοι οι χαρακτήρες</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="387"/>
+        <location filename="../src/configdialog.ui" line="650"/>
         <source>Alphabetical</source>
         <translation>Αλφαβητική</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="392"/>
+        <location filename="../src/configdialog.ui" line="655"/>
         <source>Alphanumerical</source>
         <translation>Αλφαριθμητικό</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="397"/>
+        <location filename="../src/configdialog.ui" line="660"/>
         <source>Custom</source>
         <translation>Προσαρμοσμένο</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="435"/>
+        <location filename="../src/configdialog.ui" line="698"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="469"/>
+        <location filename="../src/configdialog.ui" line="732"/>
         <source>Include special symbols</source>
         <translation>Συμπεριλάβετε ειδικά σύμβολα</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1169"/>
+        <location filename="../src/configdialog.ui" line="1438"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">Πλήρες αποτύπωμα κλειδιού 40 χαρακτήρων, όπως απαιτεί το pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1176"/>
+        <location filename="../src/configdialog.ui" line="1445"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
         <translation type="unfinished">Ρυθμίσεις Git για αυτό το προφίλ· αντικαθιστούν αυτές της καρτέλας Ρυθμίσεις όσο είναι ενεργό</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1222"/>
+        <location filename="../src/configdialog.ui" line="1491"/>
         <source>Current path</source>
         <translation>Τρέχουσα διαδρομή</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="459"/>
+        <location filename="../src/configdialog.ui" line="722"/>
         <source>Exclude capital letters</source>
         <translation>Εξαίρεση κεφαλαίων γραμμάτων</translation>
     </message>
@@ -172,266 +171,281 @@
         <translation type="vanished">Συμπεριλάβετε ειδικά σύμβολα </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="476"/>
+        <location filename="../src/configdialog.ui" line="739"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Δημιουργήστε εύκολα απομνημόνευση αλλά λιγότερο ασφαλείς κωδικούς πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="483"/>
+        <location filename="../src/configdialog.ui" line="746"/>
         <source>Exclude numbers</source>
         <translation>Εξαίρεση αριθμών</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="495"/>
+        <location filename="../src/configdialog.ui" line="862"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="517"/>
+        <location filename="../src/configdialog.ui" line="884"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Αυτόματη προσθήκη αρχείων .gpg-id</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="524"/>
-        <location filename="../src/configdialog.ui" line="1186"/>
+        <location filename="../src/configdialog.ui" line="891"/>
+        <location filename="../src/configdialog.ui" line="1455"/>
         <source>Automatically push</source>
         <translation>Αυτόματα push</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="531"/>
-        <location filename="../src/configdialog.ui" line="1193"/>
+        <location filename="../src/configdialog.ui" line="898"/>
+        <location filename="../src/configdialog.ui" line="1462"/>
         <source>Automatically pull</source>
         <translation>Αυτόματα pull</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="556"/>
+        <location filename="../src/configdialog.ui" line="191"/>
         <source>Extensions:</source>
         <translation>Επεκτάσεις:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="578"/>
+        <location filename="../src/configdialog.ui" line="213"/>
         <source>Enable one-time password (OTP) support</source>
         <translation type="unfinished">Ενεργοποίηση υποστήριξης κωδικών μίας χρήσης (OTP)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="589"/>
+        <location filename="../src/configdialog.ui" line="224"/>
         <source>Enable content search (pass grep)</source>
         <translation>Ενεργοποίηση αναζήτησης περιεχομένου (pass grep)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="592"/>
+        <location filename="../src/configdialog.ui" line="227"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Επιτρέπεται η αναζήτηση μέσα στα περιεχόμενα του αρχείου κωδικού πρόσβασης. Απαιτείται αποκρυπτογράφηση κάθε αρχείου και μπορεί να είναι αργή σε μεγάλα αποθηκευτικά μέσα.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="604"/>
+        <location filename="../src/configdialog.ui" line="134"/>
         <source>System:</source>
         <translation>Σύστημα:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="615"/>
+        <location filename="../src/configdialog.ui" line="145"/>
         <source>Use TrayIcon</source>
         <translation>Χρησιμοποιήστε το εικονίδιο Τρέης</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="622"/>
+        <location filename="../src/configdialog.ui" line="152"/>
         <source>Start minimized</source>
         <translation>Έναρξη ελαχιστοποιημένου</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="629"/>
+        <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide on close</source>
         <translation>Απόκρυψη κατά το κλείσιμο</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="636"/>
+        <location filename="../src/configdialog.ui" line="166"/>
         <source>Always on top</source>
         <translation>Πάντα στην κορυφή</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="666"/>
+        <location filename="../src/configdialog.ui" line="80"/>
         <source>Programs</source>
         <translation>Προγράμματα</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="706"/>
+        <location filename="../src/configdialog.ui" line="60"/>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="65"/>
+        <source>Clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="70"/>
+        <source>Passwords</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="978"/>
         <source>Select password storage program:</source>
         <translation>Επιλέξτε πρόγραμμα αποθήκευσης κωδικού πρόσβασης:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="722"/>
+        <location filename="../src/configdialog.ui" line="994"/>
         <source>&amp;Use pass</source>
         <translation>Χρήση &amp;pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="746"/>
+        <location filename="../src/configdialog.ui" line="1018"/>
         <source>Native</source>
         <translation>Ντόπιος</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="765"/>
-        <location filename="../src/configdialog.ui" line="768"/>
+        <location filename="../src/configdialog.ui" line="1037"/>
+        <location filename="../src/configdialog.ui" line="1040"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">Επιλέξτε το εκτελέσιμο gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="778"/>
-        <location filename="../src/configdialog.ui" line="781"/>
+        <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/configdialog.ui" line="1053"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">Επιλέξτε το εκτελέσιμο git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="797"/>
+        <location filename="../src/configdialog.ui" line="1069"/>
         <source>Generate</source>
         <translation>Δημιουργία</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="800"/>
+        <location filename="../src/configdialog.ui" line="1072"/>
         <source>Generate GPG key pair</source>
         <translation>Θα δημιουργηθεί ζεύγος κλειδιών GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="833"/>
-        <location filename="../src/configdialog.ui" line="836"/>
+        <location filename="../src/configdialog.ui" line="1105"/>
+        <location filename="../src/configdialog.ui" line="1108"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">Επιλέξτε το εκτελέσιμο pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="849"/>
+        <location filename="../src/configdialog.ui" line="1121"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="860"/>
+        <location filename="../src/configdialog.ui" line="1132"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="873"/>
-        <location filename="../src/configdialog.ui" line="876"/>
+        <location filename="../src/configdialog.ui" line="1145"/>
+        <location filename="../src/configdialog.ui" line="1148"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">Επιλέξτε το εκτελέσιμο pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="888"/>
+        <location filename="../src/configdialog.ui" line="1160"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="919"/>
+        <location filename="../src/configdialog.ui" line="1191"/>
         <source>Autodetect</source>
         <translation>Αυτόματη ανίχνευση</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="930"/>
+        <location filename="../src/configdialog.ui" line="1202"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>Παράκαμψη SSH_AUTH_SOCK:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="933"/>
+        <location filename="../src/configdialog.ui" line="1205"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>Προαιρετική διαδρομή για παράκαμψη του SSH_AUTH_SOCK. Αφήστε κενό για αυτόματο εντοπισμό μέσω gpgconf (ζήτημα #543).</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="943"/>
+        <location filename="../src/configdialog.ui" line="1215"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(αυτόματος εντοπισμός μέσω gpgconf)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="970"/>
+        <location filename="../src/configdialog.ui" line="85"/>
         <source>Profiles</source>
         <translation>Προφίλ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1020"/>
+        <location filename="../src/configdialog.ui" line="1289"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">Οι χώροι αποθήκευσης κωδικών πρόσβασης που γνωρίζει αυτό το QtPass· επιλέξτε έναν για να τον επεξεργαστείτε</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1035"/>
+        <location filename="../src/configdialog.ui" line="1304"/>
         <source>Add a profile</source>
         <translation type="unfinished">Προσθήκη προφίλ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1053"/>
+        <location filename="../src/configdialog.ui" line="1322"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">Αφαίρεση του επιλεγμένου προφίλ· ο ίδιος ο χώρος αποθήκευσης παραμένει στον δίσκο</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1099"/>
+        <location filename="../src/configdialog.ui" line="1368"/>
         <source>Profile</source>
         <translation type="unfinished">Προφίλ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1105"/>
+        <location filename="../src/configdialog.ui" line="1374"/>
         <source>Name</source>
         <translation>Όνομα</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1115"/>
+        <location filename="../src/configdialog.ui" line="1384"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Όνομα Προφίλ, που χρησιμοποιείται για τον εντοπισμό αυτού του προφίλ διαμόρφωσης</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1122"/>
+        <location filename="../src/configdialog.ui" line="1391"/>
         <source>Path</source>
         <translation>Διαδρομή</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1134"/>
+        <location filename="../src/configdialog.ui" line="1403"/>
         <source>Path to the password store directory</source>
         <translation>Διαδρομή προς τον κατάλογο αποθήκευσης κωδικών πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1156"/>
+        <location filename="../src/configdialog.ui" line="1425"/>
         <source>Signing Key</source>
         <translation>Κλειδί υπογραφής</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1166"/>
+        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Προαιρετικό: GPG κλειδί για να υπογράψουν αρχεία .gpg-id για επαλήθευση ακεραιότητας. Αφήστε άδεια εκτός και αν πρέπει να προστατεύσετε τη λίστα χρήστη από την παράκαμψη.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1038"/>
+        <location filename="../src/configdialog.ui" line="1307"/>
         <source>Add</source>
         <translation>Προσθήκη</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1056"/>
+        <location filename="../src/configdialog.ui" line="1325"/>
         <source>Delete</source>
         <translation>Διαγραφή</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1141"/>
-        <location filename="../src/configdialog.ui" line="1144"/>
-        <location filename="../src/configdialog.ui" line="1232"/>
-        <location filename="../src/configdialog.ui" line="1235"/>
+        <location filename="../src/configdialog.ui" line="1410"/>
+        <location filename="../src/configdialog.ui" line="1413"/>
+        <location filename="../src/configdialog.ui" line="1501"/>
+        <location filename="../src/configdialog.ui" line="1504"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">Επιλέξτε τον φάκελο του χώρου αποθήκευσης κωδικών πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1255"/>
+        <location filename="../src/configdialog.ui" line="758"/>
         <source>Template</source>
         <translation>Πρότυπο</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1307"/>
+        <location filename="../src/configdialog.ui" line="773"/>
         <source>Use template</source>
         <translation>Χρησιμοποιήστε πρότυπο</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1314"/>
+        <location filename="../src/configdialog.ui" line="780"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Εμφάνιση όλων των γραμμών που ξεκινούν με μια λέξη που ακολουθείται από άνω και κάτω τελεία ως πεδία σε πεδία κωδικού πρόσβασης, όχι μόνο στα αναφερόμενα</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1317"/>
+        <location filename="../src/configdialog.ui" line="783"/>
         <source>Show all fields templated</source>
         <translation>Εμφάνιση όλων των πεδίων με πρότυπο</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1348"/>
+        <location filename="../src/configdialog.ui" line="1531"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; έκδοση </translation>
     </message>
@@ -465,38 +479,38 @@
         <translation>Αντίγραφο κατ &apos; απαίτηση στο Πρόχειρο</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="275"/>
-        <location filename="../src/configdialog.cpp" line="280"/>
+        <location filename="../src/configdialog.cpp" line="277"/>
+        <location filename="../src/configdialog.cpp" line="282"/>
         <source>This field is required</source>
         <translation>Αυτό το πεδίο απαιτείται</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="277"/>
+        <location filename="../src/configdialog.cpp" line="279"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">Ένα άλλο προφίλ έχει ήδη αυτό το όνομα</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="317"/>
+        <location filename="../src/configdialog.cpp" line="319"/>
         <source>The path does not exist.</source>
         <translation>Η διαδρομή δεν υπάρχει.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="320"/>
+        <location filename="../src/configdialog.cpp" line="322"/>
         <source>The path is not readable.</source>
         <translation>Η διαδρομή δεν είναι αναγνώσιμη.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="323"/>
+        <location filename="../src/configdialog.cpp" line="325"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Η διαδρομή δεν είναι Unix domain socket.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="328"/>
+        <location filename="../src/configdialog.cpp" line="330"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Πιθανώς μη έγκυρη παράκαμψη SSH_AUTH_SOCK</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="329"/>
+        <location filename="../src/configdialog.cpp" line="331"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -509,47 +523,47 @@ The value will still be saved as entered.</source>
 Η τιμή θα αποθηκευτεί όπως εισήχθη.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="716"/>
+        <location filename="../src/configdialog.cpp" line="718"/>
         <source>Create profile directory?</source>
         <translation>Δημιουργία καταλόγου προφίλ;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="717"/>
+        <location filename="../src/configdialog.cpp" line="719"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Θέλετε να δημιουργήσετε ένα αποθετήριο κωδικών στο %1;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="725"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>Could not create profile directory: %1</source>
         <translation>Αδυναμία δημιουργίας καταλόγου προφίλ: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="751"/>
+        <location filename="../src/configdialog.cpp" line="753"/>
         <source>Select recipients for %1</source>
         <translation>Επιλέξτε παραλήπτες για %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="764"/>
+        <location filename="../src/configdialog.cpp" line="766"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">Αδυναμία αρχικοποίησης του προφίλ %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="766"/>
+        <location filename="../src/configdialog.cpp" line="768"/>
         <source>Profile %1</source>
         <translation type="unfinished">Προφίλ %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="777"/>
+        <location filename="../src/configdialog.cpp" line="779"/>
         <source>New Profile</source>
         <translation>Νέο Προφίλ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="804"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>No profile selected</source>
         <translation>Δεν έχει επιλεγεί προφίλ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="805"/>
+        <location filename="../src/configdialog.cpp" line="807"/>
         <source>No profile selected to delete</source>
         <translation>Δεν έχει επιλεγεί προφίλ για διαγραφή</translation>
     </message>
@@ -578,7 +592,7 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Θέλετε να δημιουργήσετε ένα χώρο αποθήκευσης κωδικών πρόσβασης στο %1;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="724"/>
+        <location filename="../src/configdialog.cpp" line="726"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
@@ -600,33 +614,33 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Ο φάκελος %1 δεν φαίνεται να είναι χώρος αποθήκευσης κωδικών πρόσβασης ή δεν έχει προετοιμαστεί ακόμα.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1103"/>
+        <location filename="../src/configdialog.cpp" line="1105"/>
         <source>New profile: %1 at %2</source>
         <translation>Νέο προφίλ: %1 στο %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1105"/>
+        <location filename="../src/configdialog.cpp" line="1107"/>
         <source>Profile: %1 at %2</source>
         <translation>Προφίλ: %1 στο %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1108"/>
+        <location filename="../src/configdialog.cpp" line="1110"/>
         <source>Fill in all required fields</source>
         <translation>Συμπληρώστε όλα τα απαιτούμενα πεδία</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="452"/>
+        <location filename="../src/configdialog.ui" line="715"/>
         <source>Use PWGen</source>
         <translation>Χρησιμοποιήστε PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="506"/>
-        <location filename="../src/configdialog.ui" line="1179"/>
+        <location filename="../src/configdialog.ui" line="873"/>
+        <location filename="../src/configdialog.ui" line="1448"/>
         <source>Use Git</source>
         <translation>Χρησιμοποιήστε το Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="564"/>
+        <location filename="../src/configdialog.ui" line="199"/>
         <source>Use QRencode</source>
         <translation>Χρησιμοποιήστε QRencode</translation>
     </message>
@@ -635,42 +649,43 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Χρησιμοποιήστε επέκταση pass-otp</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="715"/>
+        <location filename="../src/configdialog.ui" line="987"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Εγγε&amp;νές Git/GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="752"/>
+        <location filename="../src/configdialog.ui" line="75"/>
+        <location filename="../src/configdialog.ui" line="1024"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="771"/>
-        <location filename="../src/configdialog.ui" line="784"/>
-        <location filename="../src/configdialog.ui" line="839"/>
-        <location filename="../src/configdialog.ui" line="879"/>
-        <location filename="../src/configdialog.ui" line="1147"/>
-        <location filename="../src/configdialog.ui" line="1238"/>
+        <location filename="../src/configdialog.ui" line="1043"/>
+        <location filename="../src/configdialog.ui" line="1056"/>
+        <location filename="../src/configdialog.ui" line="1111"/>
+        <location filename="../src/configdialog.ui" line="1151"/>
+        <location filename="../src/configdialog.ui" line="1416"/>
+        <location filename="../src/configdialog.ui" line="1507"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="807"/>
+        <location filename="../src/configdialog.ui" line="1079"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="823"/>
+        <location filename="../src/configdialog.ui" line="1095"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1298"/>
+        <location filename="../src/configdialog.ui" line="764"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Τα πρότυπα προσθέτουν επιπλέον πεδία στον διάλογο δημιουργίας κωδικού πρόσβασης και στην προβολή κωδικού πρόσβασης.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1329"/>
+        <location filename="../src/configdialog.ui" line="795"/>
         <source>login
 URL
 e-mail</source>
@@ -813,6 +828,24 @@ e-mail</translation>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
         <translation>Αδυναμία εγγραφής στο %1: %2</translation>
+    </message>
+</context>
+<context>
+    <name>FieldLabel</name>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="13"/>
+        <source>Double-click to rename this field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="26"/>
+        <source>Rename field…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/fieldlabel.cpp" line="27"/>
+        <source>Remove field</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2009,7 +2042,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="270"/>
+        <location filename="../src/passworddialog.cpp" line="271"/>
         <source>Password</source>
         <translation>Κωδικός πρόσβασης</translation>
     </message>
@@ -2089,52 +2122,62 @@ Continue?</source>
         <translation type="unfinished">Πρότυπο πεδίων από το αρχείο .templates του χώρου αποθήκευσης. Το Ctrl+T μεταβαίνει στο επόμενο.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="76"/>
+        <location filename="../src/passworddialog.cpp" line="77"/>
         <source>New password</source>
         <translation type="unfinished">Νέος κωδικός πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="97"/>
+        <location filename="../src/passworddialog.cpp" line="98"/>
         <source>Decrypting…</source>
         <translation type="unfinished">Αποκρυπτογράφηση…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="216"/>
+        <location filename="../src/passworddialog.cpp" line="217"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">Δώστε ένα όνομα στην καταχώριση.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="220"/>
+        <location filename="../src/passworddialog.cpp" line="221"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">Ένα όνομα δεν μπορεί να τελειώνει σε /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="229"/>
+        <location filename="../src/passworddialog.cpp" line="230"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">Αυτό το όνομα θα οδηγούσε εκτός του χώρου αποθήκευσης κωδικών πρόσβασης.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="233"/>
+        <location filename="../src/passworddialog.cpp" line="234"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Υπάρχει ήδη καταχώριση με το όνομα %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="237"/>
+        <location filename="../src/passworddialog.cpp" line="238"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">Το %1 είναι φάκελος.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="266"/>
+        <location filename="../src/passworddialog.cpp" line="267"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Δεν ήταν δυνατή η δημιουργία του φακέλου %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="377"/>
+        <location filename="../src/passworddialog.cpp" line="329"/>
+        <source>Remove field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="349"/>
+        <source>A field called %1 already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="420"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">URI otpauth:// ή μυστικό base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="410"/>
+        <location filename="../src/passworddialog.cpp" line="453"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Μη έγκυρο μυστικό OTP</translation>
     </message>
