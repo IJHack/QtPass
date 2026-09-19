@@ -3439,6 +3439,7 @@ void tst_util::regularFilesUnderWalksRealDirectoriesOnly() {
   QVERIFY(root.mkpath(QStringLiteral("sub/deeper")));
   QVERIFY(root.mkpath(QStringLiteral(".git/objects")));
   QVERIFY(root.mkpath(QStringLiteral("folder.gpg")));
+  QVERIFY(root.mkpath(QStringLiteral("attr")));
   const QStringList wanted{
       root.filePath(QStringLiteral("top.gpg")),
       root.filePath(QStringLiteral("sub/mid.gpg")),
@@ -3451,34 +3452,38 @@ void tst_util::regularFilesUnderWalksRealDirectoriesOnly() {
       root.filePath(QStringLiteral(".git/objects/stash.gpg")),
       root.filePath(QStringLiteral(".git/.gpg-id")),
       root.filePath(QStringLiteral("sub/.dotfile.gpg")),
+      root.filePath(QStringLiteral("attr/inside.gpg")),
   };
   for (const QString &path : wanted + unwanted) {
     QFile f(path);
     QVERIFY2(f.open(QIODevice::WriteOnly), qPrintable(path));
     f.write("x");
   }
+  // A dot name is hidden everywhere (the convention, applied by QtPass
+  // itself since Qt's isHidden() does not on every platform); "attr" is
+  // hidden by attribute where there is one, and a plain folder elsewhere.
 #ifdef Q_OS_WIN
-  // Dot names are not hidden on Windows; the attribute is.
-  for (const QString &rel :
-       {QStringLiteral(".git"), QStringLiteral("sub/.gpg-id"),
-        QStringLiteral("sub/.dotfile.gpg")}) {
-    QVERIFY(SetFileAttributesW(
-        reinterpret_cast<LPCWSTR>(
-            QDir::toNativeSeparators(root.filePath(rel)).utf16()),
-        FILE_ATTRIBUTE_HIDDEN));
-  }
+  QVERIFY(SetFileAttributesW(
+      reinterpret_cast<LPCWSTR>(
+          QDir::toNativeSeparators(root.filePath(QStringLiteral("attr")))
+              .utf16()),
+      FILE_ATTRIBUTE_HIDDEN));
+  const QStringList attrHidden;
+#else
+  const QStringList attrHidden{
+      root.filePath(QStringLiteral("attr/inside.gpg"))};
 #endif
   QStringList skipped;
   const QStringList found = Util::regularFilesUnder(
       storeDir.path(), QStringList() << QStringLiteral("*.gpg"), &skipped);
   // A directory's files first, then its subdirectories by name: the order
   // the native search shows its results in.
-  QCOMPARE(found, (QStringList{
-                      root.filePath(QStringLiteral("top.gpg")),
-                      root.filePath(QStringLiteral("folder.gpg/inside.gpg")),
-                      root.filePath(QStringLiteral("sub/mid.gpg")),
-                      root.filePath(QStringLiteral("sub/deeper/low.gpg")),
-                  }));
+  const QStringList expectedOrder =
+      QStringList{root.filePath(QStringLiteral("top.gpg"))} + attrHidden +
+      QStringList{root.filePath(QStringLiteral("folder.gpg/inside.gpg")),
+                  root.filePath(QStringLiteral("sub/mid.gpg")),
+                  root.filePath(QStringLiteral("sub/deeper/low.gpg"))};
+  QCOMPARE(found, expectedOrder);
   QVERIFY(skipped.isEmpty());
   // Hidden files on request, hidden directories never.
   QStringList withHidden = Util::regularFilesUnder(
@@ -3486,8 +3491,9 @@ void tst_util::regularFilesUnderWalksRealDirectoriesOnly() {
       nullptr, true);
   withHidden.sort();
   QStringList expectedWithHidden =
-      wanted + QStringList{root.filePath(QStringLiteral("sub/.gpg-id")),
-                           root.filePath(QStringLiteral("sub/.dotfile.gpg"))};
+      wanted + attrHidden +
+      QStringList{root.filePath(QStringLiteral("sub/.gpg-id")),
+                  root.filePath(QStringLiteral("sub/.dotfile.gpg"))};
   expectedWithHidden.sort();
   QCOMPARE(withHidden, expectedWithHidden);
   QCOMPARE(Util::regularFilesUnder(storeDir.path(), {QStringLiteral("*.txt")}),

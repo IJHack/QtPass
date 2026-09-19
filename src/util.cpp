@@ -456,10 +456,19 @@ auto isLink(const QFileInfo &entry) -> bool {
   return entry.isSymLink() || entry.isJunction();
 }
 
+/// Hidden by attribute, or by the dot convention on every platform: Qt 6.11
+/// on macOS answers isHidden() from the UF_HIDDEN flag alone once an entry
+/// was lstat()ed (qfilesystemengine_unix.cpp marks the attribute known there
+/// without the dot check), and Windows does not consider .stversions hidden
+/// at all.
+auto isHiddenEntry(const QFileInfo &entry) -> bool {
+  return entry.isHidden() || entry.fileName().startsWith(QLatin1Char('.'));
+}
+
 /// A real directory that is part of the store: .git, .stversions,
 /// .Trash-1000 are not, as with QDirIterator without QDir::Hidden.
 auto isStoreDirectory(const QFileInfo &entry) -> bool {
-  return !isLink(entry) && entry.isDir() && !entry.isHidden();
+  return !isLink(entry) && entry.isDir() && !isHiddenEntry(entry);
 }
 } // namespace
 
@@ -483,7 +492,7 @@ auto Util::regularFilesUnder(const QString &dir, const QStringList &nameFilters,
       }
       return false;
     }
-    if (entry.isFile() && named && (hiddenFiles || !entry.isHidden())) {
+    if (entry.isFile() && named && (hiddenFiles || !isHiddenEntry(entry))) {
       files << entry.filePath();
     }
     return false;
