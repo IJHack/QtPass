@@ -31,7 +31,7 @@ PAGES = {
     "faq": {
         "source": "FAQ.md",
         "slug": "faq",
-        "title": "QtPass FAQ",
+        "title": "QtPass FAQ: GnuPG, Git, OTP and setup questions",
         "heading": "QtPass FAQ",
         "description": (
             "Frequently asked questions about QtPass: GnuPG and pinentry "
@@ -45,6 +45,7 @@ PAGES = {
         "crumb": "FAQ",
         "toc_label": "Questions",
         "toc_depth": 3,
+        "faq_schema": True,
     },
     "contributing": {
         "source": "CONTRIBUTING.md",
@@ -63,6 +64,7 @@ PAGES = {
         "crumb": "Contributing",
         "toc_label": "Sections",
         "toc_depth": 2,
+        "faq_schema": False,
     },
 }
 
@@ -140,7 +142,7 @@ HEAD = """<!doctype html>
           }}
         ]
       }}
-    </script>
+    </script>{extra_head}
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -217,6 +219,42 @@ def anchor(level, slug, text):
     )
 
 
+def faq_schema(body):
+    """schema.org FAQPage: every h3 question with the text up to the next
+    heading as its answer (tags stripped, links kept as plain text)."""
+    import json
+
+    entries = []
+    parts = re.split(r"(?=<h[23]>)", body)
+    for part in parts:
+        m = re.match(r"<h3>(.*?)</h3>(.*)", part, re.S)
+        if not m:
+            continue
+        question = re.sub(r"<[^>]+>", "", m.group(1))
+        question = html.unescape(re.sub(r"\s+", " ", question)).strip()
+        answer = re.sub(r"<[^>]+>", "", m.group(2))
+        answer = html.unescape(re.sub(r"\s+", " ", answer)).strip()
+        if not answer:
+            continue
+        entries.append(
+            {
+                "@type": "Question",
+                "name": question,
+                "acceptedAnswer": {"@type": "Answer", "text": answer},
+            }
+        )
+    data = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": entries,
+    }
+    return (
+        '\n    <script type="application/ld+json">\n'
+        + json.dumps(data, ensure_ascii=False, indent=2)
+        + "\n    </script>"
+    )
+
+
 def main():
     if len(sys.argv) != 2 or sys.argv[1] not in PAGES:
         sys.exit(f"usage: build-page.py {{{'|'.join(PAGES)}}} < FILE.md")
@@ -279,8 +317,15 @@ def main():
             toc.append("</ul>")
     toc.append("</nav>")
 
+    extra_head = faq_schema(body) if page["faq_schema"] else ""
     sys.stdout.write(
-        HEAD.format(v=ASSET_VERSION, version=VERSION, blob=REPO_BLOB, **page)
+        HEAD.format(
+            v=ASSET_VERSION,
+            version=VERSION,
+            blob=REPO_BLOB,
+            extra_head=extra_head,
+            **page,
+        )
         + "\n".join(toc)
         + "\n"
         + body
