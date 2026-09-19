@@ -55,7 +55,7 @@ auto pathRow(QLineEdit *edit, QWidget *parent,
 }
 
 auto runnable(const QString &exe) -> bool {
-  return exe.startsWith(QStringLiteral("wsl ")) ||
+  return Executor::parseWslCommand(exe).has_value() ||
          (!exe.isEmpty() && QFileInfo(exe).isExecutable());
 }
 

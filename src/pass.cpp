@@ -395,31 +395,27 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
     return {"gpgconf", {}};
   }
 
-  QStringList parts = QProcess::splitCommand(gpgPath);
+  // A WSL command: gpgconf next to the gpg the user configured, run in the
+  // same distribution and, like everything else, through --exec rather than
+  // the distribution's shell. A WSL form that does not parse (`wsl sh -c
+  // ...`, a bare `wsl`) falls back to whatever gpgconf is on the Windows
+  // PATH, as it always did.
+  if (const auto wsl = Executor::parseWslCommand(gpgPath)) {
+    if (!QFileInfo(wsl->command).fileName().startsWith("gpg")) {
+      return {"gpgconf", {}};
+    }
+    const auto gpgconf = wsl->with(resolveWslGpgconfPath(wsl->command));
+    return {gpgconf.launcher, gpgconf.argv({})};
+  }
 
+  const QStringList parts = QProcess::splitCommand(gpgPath);
   if (parts.isEmpty()) {
     return {"gpgconf", {}};
   }
-
   const QString first = parts.first();
-  if (first.compare("wsl", Qt::CaseInsensitive) == 0 ||
-      first.compare("wsl.exe", Qt::CaseInsensitive) == 0) {
-    if (parts.size() >= 2 && parts.at(1).startsWith("sh")) {
-      return {"gpgconf", {}};
-    }
-    if (parts.size() >= 2 &&
-        QFileInfo(parts.last()).fileName().startsWith("gpg")) {
-      QString wslGpgconf = resolveWslGpgconfPath(parts.last());
-      parts.removeLast();
-      // Run gpgconf directly rather than through the distribution's default
-      // shell, which would word-split and expand the arguments. Keep any
-      // --exec/-e the user already put in the command.
-      if (!parts.contains("--exec") && !parts.contains("-e")) {
-        parts.append("--exec");
-      }
-      parts.append(wslGpgconf);
-      return {parts.first(), parts.mid(1)};
-    }
+  if (QFileInfo(first).fileName().compare("wsl", Qt::CaseInsensitive) == 0 ||
+      QFileInfo(first).fileName().compare("wsl.exe", Qt::CaseInsensitive) ==
+          0) {
     return {"gpgconf", {}};
   }
 

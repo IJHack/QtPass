@@ -77,6 +77,16 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 - WSL commands run through `wsl --exec` instead of the distribution's login
   shell, so entry paths, `.gpg-id` recipients and commit messages are no
   longer word-split or `$()`-expanded [#1686](https://github.com/IJHack/QtPass/pull/1686)
+- One definition of "a WSL command": `wsl` or `wsl.exe` in any case, bare or
+  as a path, with wsl.exe options such as `-d Debian` or `-u me` before the
+  program, is parsed in one place and always started through `--exec` with
+  those options kept: process start, `wslpath` translation, the gpgconf
+  lookup, the validity probes. On Windows a bare launcher is started as
+  `wsl`; elsewhere (QtPass inside WSL) it is started as written. Before, `wsl.exe gpg` was accepted by the
+  gpgconf lookup but never started at all, and a `-d` option ran nothing.
+  Anything that is not exactly one program (`wsl sh -c …`) is not a WSL
+  command and is started as written, which fails visibly rather than
+  reaching a shell [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - The key-generation dialog keeps the passphrase out of the always-visible
   batch template; it is spliced in only when the key is generated, and batch
   keywords are matched the way gpg does [#1687](https://github.com/IJHack/QtPass/pull/1687), [#1694](https://github.com/IJHack/QtPass/pull/1694)
