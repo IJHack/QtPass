@@ -114,9 +114,10 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Password-store path-boundary checks. </p>
-<p>Extracted from <a class="el" href="class_util.html" title="Some static utilities to be used elsewhere.">Util</a>. Guards file/folder create, rename, and drag-drop against paths that resolve outside the configured password store. </p>
+<p>Extracted from <a class="el" href="class_util.html" title="Some static utilities to be used elsewhere.">Util</a>. Guards file/folder create, rename, and drag-drop against paths that resolve outside the configured password store.</p>
+<p>Threat model: this catches mistakes and malformed input, such as a typed <span class="tt">..</span>, a pasted absolute path or a symlink that happens to point outside the store. It is not a defence against another process that can write to the store while <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> runs: the check and the file operation that follows it are separate steps, and a symlink swapped in between them is not seen (the usual time-of-check/time-of-use gap of a path-based API). Anyone who can write to your password store can also replace its contents, so that is outside what <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> can protect. </p>
 
-<p class="definition">Definition at line <a class="el" href="pathvalidator_8h_source.html#l00015">15</a> of file <a class="el" href="pathvalidator_8h_source.html">pathvalidator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pathvalidator_8h_source.html#l00024">24</a> of file <a class="el" href="pathvalidator_8h_source.html">pathvalidator.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a15120558ca5dd41cdd9c485ae08030c7" name="a15120558ca5dd41cdd9c485ae08030c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a15120558ca5dd41cdd9c485ae08030c7">&#9670;&#160;</a></span>isPathInStore()</h2>
