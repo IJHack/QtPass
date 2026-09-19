@@ -296,7 +296,8 @@ class tst_imitatepass : public QObject {
 
   /// Run reencryptPath() on @p storeDir with the recording fake gpg and
   /// collect what it reported.
-  static void runReencrypt(const QString &storeDir, Recorder &rec,
+  /// Returns false when the run did not finish in time.
+  static bool runReencrypt(const QString &storeDir, Recorder &rec,
                            int *encrypts, bool *aborted) {
     const QString logPath = QDir(storeDir).filePath("gpg-argv.log");
     const QString fakeGpg = writeRecordingGpg(storeDir, logPath);
@@ -306,11 +307,11 @@ class tst_imitatepass : public QObject {
     record(pass, ctx, rec);
     QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
     pass.reencryptPath(storeDir);
-    if (endSpy.count() == 0)
-      endSpy.wait(15000);
+    const bool finished = endSpy.count() > 0 || endSpy.wait(15000);
     QCoreApplication::processEvents();
     *encrypts = encryptCalls(loggedCalls(logPath)).size();
     *aborted = !rec.criticals.isEmpty();
+    return finished;
   }
 
 private Q_SLOTS:
@@ -1134,7 +1135,8 @@ void tst_imitatepass::reencryptRestoresABackupWhoseOriginalIsMissing() {
   Recorder rec;
   int encrypts = 0;
   bool aborted = true;
-  runReencrypt(storeDir.path(), rec, &encrypts, &aborted);
+  QVERIFY2(runReencrypt(storeDir.path(), rec, &encrypts, &aborted),
+           "re-encryption must finish");
   QVERIFY2(!aborted, qPrintable(rec.criticals.join("; ")));
   QVERIFY2(QFile::exists(entry), "the entry must be back under its name");
   QVERIFY(!QFile::exists(entry + ".reencrypt.bak"));
@@ -1161,7 +1163,8 @@ void tst_imitatepass::reencryptStopsWhenBackupAndOriginalBothExist() {
   Recorder rec;
   int encrypts = 0;
   bool aborted = false;
-  runReencrypt(storeDir.path(), rec, &encrypts, &aborted);
+  QVERIFY2(runReencrypt(storeDir.path(), rec, &encrypts, &aborted),
+           "re-encryption must finish");
   QVERIFY(aborted);
   QVERIFY(rec.criticals.first().contains(".reencrypt.bak"));
   QCOMPARE(encrypts, 0);
@@ -1189,7 +1192,8 @@ void tst_imitatepass::reencryptRemovesStaleTemporaries() {
   Recorder rec;
   int encrypts = 0;
   bool aborted = true;
-  runReencrypt(storeDir.path(), rec, &encrypts, &aborted);
+  QVERIFY2(runReencrypt(storeDir.path(), rec, &encrypts, &aborted),
+           "re-encryption must finish");
   QVERIFY2(!aborted, qPrintable(rec.criticals.join("; ")));
   QVERIFY(!QFile::exists(stale));
   QCOMPARE(encrypts, 1);

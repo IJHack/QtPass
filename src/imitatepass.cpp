@@ -528,9 +528,9 @@ auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
   //                      valid ciphertexts and it is not for QtPass to pick
   //                      one: report and leave both.
   bool clean = true;
-  QDirIterator leftovers(dir, {"*.gpg.??????.tmp", "*.gpg.reencrypt.bak"},
-                         QDir::Files | QDir::System,
-                         QDirIterator::Subdirectories);
+  QDirIterator leftovers(
+      QDir::cleanPath(dir), {"*.gpg.??????.tmp", "*.gpg.reencrypt.bak"},
+      QDir::Files | QDir::System, QDirIterator::Subdirectories);
   while (leftovers.hasNext()) {
     const QString path = leftovers.next();
     if (path.endsWith(QStringLiteral(".tmp"))) {
