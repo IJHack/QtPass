@@ -155,17 +155,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">பொது</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished">இடைநிலைப்பலகை</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished">கடவுச்சொற்கள்</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
@@ -941,17 +941,17 @@ e-mail</source>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">இந்தப் புலத்தை மறுபெயரிட இருமுறை கிளிக் செய்யவும்</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">புலத்தை மறுபெயரிடு…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">புலத்தை நீக்கு</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2511,12 +2511,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished">புலத்தை நீக்கு</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">%1 என்ற பெயரில் ஒரு புலம் ஏற்கனவே உள்ளது.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>
