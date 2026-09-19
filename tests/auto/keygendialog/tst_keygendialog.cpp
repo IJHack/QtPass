@@ -676,9 +676,11 @@ void tst_keygendialog::acceptingWithoutAPassphraseChoiceStartsNothing() {
   QVERIFY2(d.isVisible(), "the dialog stays open");
   QVERIFY2(spinner == nullptr || !spinner->isVisible(),
            "no generation may have started");
-  QVERIFY(d.findChild<QLineEdit *>(QStringLiteral("name"))->isEnabled());
+  auto *name = d.findChild<QLineEdit *>(QStringLiteral("name"));
+  QVERIFY2(name != nullptr, "name widget must exist");
+  QVERIFY2(name->isEnabled(), "the form must remain enabled");
   auto *waive = d.findChild<QCheckBox *>(QStringLiteral("noPassphrase"));
-  QVERIFY(waive != nullptr);
+  QVERIFY2(waive != nullptr, "noPassphrase checkbox must exist");
   waive->setChecked(true);
   QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
                             Q_ARG(int, QDialog::Accepted));
