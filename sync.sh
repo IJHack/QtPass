@@ -37,11 +37,16 @@ for arg in "$@"; do
   esac
 done
 
+# gzip twins for the .htaccess rewrite (see scripts/precompress.sh); they are
+# gitignored, so include them explicitly before the .gitignore filter.
+./scripts/precompress.sh
+
 ARGS=(
   -avh
   --itemize-changes
   --exclude=.git/
   --exclude=.github/
+  --include='*.gz'
   --filter=':- .gitignore'
 )
 

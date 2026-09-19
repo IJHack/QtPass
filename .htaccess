@@ -2,12 +2,6 @@
 AddType image/webp .webp
 AddType font/woff2 .woff2
 
-# BEGIN GZIP
-<ifmodule mod_deflate.c>
-AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
-</ifmodule>
-# END GZIP
-
 RewriteEngine On
 RewriteBase /
 RewriteCond %{HTTP_HOST} !^qtpass.org$ [NC]
@@ -69,44 +63,55 @@ RewriteCond %{REQUEST_URI} !^/docs/
 RewriteCond %{REQUEST_URI} !^/404\.html$
 RewriteRule ^([^.]+)\.html$ /%1 [R=301,L]
 
-# Service worker must never be served from a long-lived cache.
+# Compression. This host does not run mod_deflate (its directives are
+# accepted and do nothing), so scripts/precompress.sh writes a .gz twin next
+# to every text asset before deploy and the server hands that out when the
+# client accepts gzip. Extension-less URLs (/faq) map to name.html.gz.
+RewriteCond %{HTTP:Accept-Encoding} gzip
+RewriteCond %{REQUEST_FILENAME}.gz -f
+RewriteRule ^(.+)$ $1.gz [L]
+RewriteCond %{HTTP:Accept-Encoding} gzip
+RewriteCond %{REQUEST_FILENAME}.html.gz -f
+RewriteRule ^([^.]+)$ $1.html.gz [L]
+RewriteCond %{HTTP:Accept-Encoding} gzip
+RewriteCond %{DOCUMENT_ROOT}/index.html.gz -f
+RewriteRule ^$ index.html.gz [L]
+<FilesMatch "\.gz$">
+  RemoveType .gz
+  AddEncoding gzip .gz
+</FilesMatch>
+<FilesMatch "\.html\.gz$">
+  ForceType text/html
+</FilesMatch>
+<FilesMatch "\.css\.gz$">
+  ForceType text/css
+</FilesMatch>
+<FilesMatch "\.js\.gz$">
+  ForceType text/javascript
+</FilesMatch>
+<FilesMatch "\.svg\.gz$">
+  ForceType image/svg+xml
+</FilesMatch>
+<FilesMatch "\.xml\.gz$">
+  ForceType application/xml
+</FilesMatch>
+<FilesMatch "\.json\.gz$">
+  ForceType application/json
+</FilesMatch>
+<FilesMatch "\.txt\.gz$">
+  ForceType text/plain
+</FilesMatch>
+<FilesMatch "\.webmanifest\.gz$">
+  ForceType application/manifest+json
+</FilesMatch>
+
 <IfModule mod_headers.c>
-  <Files "sw.js">
+  <FilesMatch "\.(html|css|js|svg|xml|json|txt)(\.gz)?$">
+    Header append Vary Accept-Encoding
+  </FilesMatch>
+  # Service worker must never be served from a long-lived cache.
+  <FilesMatch "^sw\.js(\.gz)?$">
     Header set Cache-Control "no-cache, max-age=0, must-revalidate"
-  </Files>
+  </FilesMatch>
 </IfModule>
 
-<IfModule mod_filter.c>
-    AddOutputFilterByType DEFLATE "application/atom+xml" \
-                                  "application/javascript" \
-                                  "application/json" \
-                                  "application/ld+json" \
-                                  "application/manifest+json" \
-                                  "application/rdf+xml" \
-                                  "application/rss+xml" \
-                                  "application/schema+json" \
-                                  "application/vnd.geo+json" \
-                                  "application/vnd.ms-fontobject" \
-                                  "application/x-font-ttf" \
-                                  "application/x-javascript" \
-                                  "application/x-web-app-manifest+json" \
-                                  "application/xhtml+xml" \
-                                  "application/xml" \
-                                  "font/eot" \
-                                  "font/opentype" \
-                                  "image/bmp" \
-                                  "image/svg+xml" \
-                                  "image/vnd.microsoft.icon" \
-                                  "image/x-icon" \
-                                  "text/cache-manifest" \
-                                  "text/css" \
-                                  "text/html" \
-                                  "text/javascript" \
-                                  "text/plain" \
-                                  "text/vcard" \
-                                  "text/vnd.rim.location.xloc" \
-                                  "text/vtt" \
-                                  "text/x-component" \
-                                  "text/x-cross-domain-policy" \
-                                  "text/xml"
-</IfModule>

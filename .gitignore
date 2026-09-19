@@ -16,3 +16,6 @@ rtf
 src
 main
 tests
+
+# gzip twins written by scripts/precompress.sh before deploy
+*.gz
