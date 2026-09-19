@@ -2704,7 +2704,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="376"/>
         <source>Force overwrite?</source>
-        <translation>перезаписать?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="377"/>
