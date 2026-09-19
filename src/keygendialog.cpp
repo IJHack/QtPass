@@ -306,9 +306,11 @@ void KeygenDialog::generationFailed(const QString &error) {
   }
   ui->frame->show();
   ui->widget->setEnabled(true);
-  ui->buttonBox->setEnabled(true);
   ui->checkBox->setEnabled(true);
   ui->plainTextEdit->setEnabled(true);
+  // OK comes back under the same rule as before the attempt, not
+  // unconditionally: the passphrase choice still has to stand.
+  updateOkState();
   ui->label->setText(
       tr("Key generation failed: %1").arg(error.toHtmlEscaped()));
 }

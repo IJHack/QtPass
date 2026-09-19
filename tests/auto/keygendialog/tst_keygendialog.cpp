@@ -65,6 +65,7 @@ private Q_SLOTS:
   void acceptedDialogRunsGenerationOnThePassBackend();
   void generationSuccessAcceptsTheDialog();
   void generationFailureReenablesTheForm();
+  void generationFailureKeepsThePassphraseGate();
   void cancelWhileGeneratingDetachesFromTheBackend();
   void unrelatedProcessErrorsDoNotTouchTheDialog();
 };
@@ -649,6 +650,40 @@ void tst_keygendialog::generationFailureReenablesTheForm() {
                             Q_ARG(int, QDialog::Accepted));
   QVERIFY2(spinner->isVisible() && spinner->isAnimated(),
            "the retry must restart the progress indicator");
+}
+
+/**
+ * @brief After a failed attempt OK follows the passphrase rule again rather
+ *        than coming back enabled: with the fields empty and the waiver
+ *        unticked it stays off, with a passphrase typed it is on.
+ */
+void tst_keygendialog::generationFailureKeepsThePassphraseGate() {
+  FakePass pass;
+  KeygenDialog d(QString(), &pass);
+  fillValidIdentity(d);
+  auto *pp1 = d.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
+  auto *pp2 = d.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
+  auto *buttonBox =
+      d.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+  QVERIFY(pp1 && pp2 && buttonBox);
+  QVERIFY(!buttonBox->isEnabled());
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  // Drive done() directly, as a stray Enter or a script could.
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  auto *name = d.findChild<QLineEdit *>(QStringLiteral("name"));
+  QTRY_VERIFY_WITH_TIMEOUT(name->isEnabled(), 3000);
+  QVERIFY2(!buttonBox->isEnabled(),
+           "a failed attempt must not hand out OK without a passphrase choice");
+  pp1->setText(QStringLiteral("chosen"));
+  pp2->setText(QStringLiteral("chosen"));
+  QVERIFY(buttonBox->isEnabled());
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  QTRY_VERIFY_WITH_TIMEOUT(name->isEnabled(), 3000);
+  QVERIFY2(buttonBox->isEnabled(),
+           "with a passphrase standing, OK comes back after a failure");
 }
 
 void tst_keygendialog::cancelWhileGeneratingDetachesFromTheBackend() {
