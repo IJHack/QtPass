@@ -268,12 +268,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
         <source>Show menu bar</source>
-        <translation type="unfinished">Pokaż pasek menu</translation>
+        <translation>Pokaż pasek menu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
-        <translation type="unfinished">Ctrl+M pokazuje lub ukrywa go również z głównego okna</translation>
+        <translation>Ctrl+M pokazuje lub ukrywa go również z głównego okna</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="551"/>
@@ -492,7 +492,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="92"/>
         <source>No clipboard</source>
-        <translation type="unfinished">Bez schowka</translation>
+        <translation>Bez schowka</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
@@ -824,7 +824,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Skopiuj do schowka</translation>
+        <translation>Skopiuj do schowka</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -1165,7 +1165,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished">Ze schowka</translation>
+        <translation>Ze schowka</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1213,7 +1213,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">%1 nie wygląda jak klucz GPG w formacie ASCII-armored. Najpierw przekonwertuj go za pomocą polecenia &lt;code&gt;gpg --armor --export&lt;/code&gt; lub wklej blok ASCII-armored za pomocą funkcji &lt;b&gt;Ze schowka&lt;/b&gt;.</translation>
+        <translation>%1 nie wygląda jak klucz GPG w formacie ASCII-armored. Najpierw przekonwertuj go za pomocą polecenia &lt;code&gt;gpg --armor --export&lt;/code&gt; lub wklej blok ASCII-armored za pomocą funkcji &lt;b&gt;Ze schowka&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
