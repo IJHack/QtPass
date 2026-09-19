@@ -65,7 +65,7 @@ void ImportKeyDialog::on_fileButton_clicked() {
         this, tr("Import Key"),
         tr("%1 does not look like an ASCII-armored GPG key. Convert it with "
            "<code>gpg --armor --export</code> first, or paste the armored "
-           "block via <b>From Clipboard</b>.")
+           "block via <b>From clipboard</b>.")
             .arg(fileName.toHtmlEscaped()));
     return;
   }
