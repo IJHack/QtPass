@@ -1,6 +1,6 @@
 <map id="StoreModel::canDropMimeData" name="StoreModel::canDropMimeData">
-<area shape="rect" id="Node000001" title="Check if drop is possible." alt="" coords="5,29,210,56"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="71,28,65,21,70,11,84,5,108,3,133,5,147,14,142,14,131,10,107,8,85,10,74,15,71,20,77,29"/>
-<area shape="rect" id="Node000002" href="$class_store_model.html#a18097d60174b1d370e13d6a04ab7847f" title="Get display data for index." alt="" coords="258,29,378,56"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="210,40,245,43,239,43,210,45"/>
+<area shape="rect" id="Node000001" title="Check if drop is possible." alt="" coords="5,29,232,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="82,31,74,21,78,11,93,5,119,3,151,7,163,16,159,20,149,11,119,8,94,10,82,15,79,20,86,27"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#a18097d60174b1d370e13d6a04ab7847f" title="Get display data for index." alt="" coords="280,29,413,55"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="232,39,266,39,266,45,232,45"/>
 </map>

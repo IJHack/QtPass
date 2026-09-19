@@ -1,4 +1,4 @@
 <map id="WindowStateStore::centreOnCursorScreen" name="WindowStateStore::centreOnCursorScreen">
-<area shape="rect" id="Node000001" title="Move window so its frame is centred on the screen under the mouse pointer (the primary screen when th..." alt="" coords="5,29,180,72"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="59,28,57,19,63,10,75,5,93,3,111,5,124,14,119,14,110,10,92,8,76,10,67,14,63,20,64,29"/>
+<area shape="rect" id="Node000001" title="Move window so its frame is centred on the screen under the mouse pointer (the primary screen when th..." alt="" coords="5,29,196,69"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="65,30,63,20,68,11,81,5,101,3,123,6,135,13,132,17,121,11,101,8,83,10,72,15,68,21,70,28"/>
 </map>

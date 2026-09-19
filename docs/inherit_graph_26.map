@@ -1,11 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,81,108,108"/>
-<area shape="rect" id="Node000001" href="$class_done_wizard_page.html" title="A summary and the two preferences worth asking on day one." alt="" coords="168,5,292,32"/>
-<area shape="poly" id="edge29_Node000000_Node000001" title=" " alt="" coords="94,71,155,42,187,31,183,34,157,46,97,76"/>
-<area shape="rect" id="Node000002" href="$class_key_wizard_page.html" title="The secret keys gpg knows; a new pair can be generated here. The enabled ones become the recipients o..." alt="" coords="172,56,288,83"/>
-<area shape="poly" id="edge30_Node000000_Node000002" title=" " alt="" coords="122,82,174,76,170,79,124,88"/>
-<area shape="rect" id="Node000003" href="$class_programs_wizard_page.html" title="Where gpg, pass and git are; gpg is required, the rest optional. A stored path that no longer runs is..." alt="" coords="156,107,304,133"/>
-<area shape="poly" id="edge31_Node000000_Node000003" title=" " alt="" coords="123,102,158,108,153,110,123,107"/>
-<area shape="rect" id="Node000004" href="$class_store_wizard_page.html" title="The folder the passwords live in: an existing store is used as&#45;is, a folder without ...." alt="" coords="168,157,292,184"/>
-<area shape="poly" id="edge32_Node000000_Node000004" title=" " alt="" coords="96,113,157,143,188,157,182,157,155,148,95,118"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,80,113,105"/>
+<area shape="rect" id="Node000001" href="$class_done_wizard_page.html" title="A summary and the two preferences worth asking on day one." alt="" coords="175,5,307,31"/>
+<area shape="poly" id="edge29_Node000000_Node000001" title=" " alt="" coords="94,71,160,40,192,28,194,33,162,44,96,76"/>
+<area shape="rect" id="Node000002" href="$class_key_wizard_page.html" title="The secret keys gpg knows; a new pair can be generated here. The enabled ones become the recipients o..." alt="" coords="180,55,303,80"/>
+<area shape="poly" id="edge30_Node000000_Node000002" title=" " alt="" coords="127,81,180,73,180,78,127,86"/>
+<area shape="rect" id="Node000003" href="$class_programs_wizard_page.html" title="Where gpg, pass and git are; gpg is required, the rest optional. A stored path that no longer runs is..." alt="" coords="161,104,321,129"/>
+<area shape="poly" id="edge31_Node000000_Node000003" title=" " alt="" coords="127,99,162,103,161,109,127,104"/>
+<area shape="rect" id="Node000004" href="$class_store_wizard_page.html" title="The folder the passwords live in: an existing store is used as&#45;is, a folder without ...." alt="" coords="175,153,307,179"/>
+<area shape="poly" id="edge32_Node000000_Node000004" title=" " alt="" coords="98,109,162,138,198,151,196,156,160,143,96,114"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="NativeGrep" name="NativeGrep">
-<area shape="rect" id="Node000001" title="Full&#45;text search over a password store without pass grep: every .gpg file is decrypted with gpg on a ..." alt="" coords="5,80,93,107"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="14,5,84,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,46,52,80,46,79,47,50"/>
+<area shape="rect" id="Node000001" title="Full&#45;text search over a password store without pass grep: every .gpg file is decrypted with gpg on a ..." alt="" coords="5,79,101,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="16,5,91,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,44,56,79,51,79,51,44"/>
 </map>

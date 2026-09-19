@@ -1,5 +1,5 @@
 <map id="UserInfo::marginallyValid" name="UserInfo::marginallyValid">
-<area shape="rect" id="Node000001" title="Check marginal validity per GnuPG validity codes." alt="" coords="171,5,337,32"/>
-<area shape="rect" id="Node000002" href="$struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a" title="Check whether the key has any usable validity level." alt="" coords="5,5,123,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,19,123,21,123,16,158,18"/>
+<area shape="rect" id="Node000001" title="Check marginal validity per GnuPG validity codes." alt="" coords="181,5,368,31"/>
+<area shape="rect" id="Node000002" href="$struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a" title="Check whether the key has any usable validity level." alt="" coords="5,5,133,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,21,133,21,133,15,167,15"/>
 </map>

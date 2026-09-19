@@ -1,23 +1,23 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,183,75,209"/>
-<area shape="rect" id="Node000001" href="$class_clipboard_manager.html" title="Puts secrets on the system clipboard and takes them off again." alt="" coords="138,5,264,32"/>
-<area shape="poly" id="edge11_Node000000_Node000001" title=" " alt="" coords="47,167,73,104,94,71,121,42,143,30,140,35,124,46,98,74,78,107,52,169"/>
-<area shape="rect" id="Node000002" href="$class_executor.html" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="164,56,238,83"/>
-<area shape="poly" id="edge12_Node000000_Node000002" title=" " alt="" coords="54,168,82,129,121,93,142,81,166,75,162,78,144,86,124,97,86,133,59,171"/>
-<area shape="rect" id="Node000003" href="$class_native_grep.html" title="Full&#45;text search over a password store without pass grep: every .gpg file is decrypted with gpg on a ..." alt="" coords="157,107,244,133"/>
-<area shape="poly" id="edge13_Node000000_Node000003" title=" " alt="" coords="71,172,122,143,158,130,155,134,124,148,75,176"/>
-<area shape="rect" id="Node000004" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="175,157,226,184"/>
-<area shape="poly" id="edge14_Node000000_Node000004" title=" " alt="" coords="89,186,177,173,173,177,91,191"/>
-<area shape="rect" id="Node000007" href="$class_password_display_panel.html" title="Renders decrypted password&#45;file fields into MainWindow&#39;s grid." alt="" coords="123,208,279,235"/>
-<area shape="poly" id="edge17_Node000000_Node000007" title=" " alt="" coords="89,201,124,207,120,210,91,206"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass.html" title="Application&#45;level glue between the pass backends and whatever shows their results: turns the backends..." alt="" coords="168,259,234,285"/>
-<area shape="poly" id="edge18_Node000000_Node000008" title=" " alt="" coords="73,216,124,244,170,262,165,264,122,249,73,221"/>
-<area shape="rect" id="Node000009" href="$class_store_tree.html" title="The password store as shown in the tree: the QFileSystemModel, the StoreModel proxy on top of it and ..." alt="" coords="162,309,240,336"/>
-<area shape="poly" id="edge19_Node000000_Node000009" title=" " alt="" coords="57,220,86,259,124,295,164,314,159,315,121,300,82,263,56,225"/>
-<area shape="rect" id="Node000010" href="$class_tray_icon.html" title="Handles the system tray icon and menu." alt="" coords="165,360,237,387"/>
-<area shape="poly" id="edge20_Node000000_Node000010" title=" " alt="" coords="50,222,78,285,98,318,124,346,144,358,167,368,162,368,141,363,121,350,94,321,73,288,48,227"/>
-<area shape="rect" id="Node000005" href="$class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable." alt="" coords="327,132,418,159"/>
-<area shape="poly" id="edge15_Node000004_Node000005" title=" " alt="" coords="241,162,329,151,324,153,243,167"/>
-<area shape="rect" id="Node000006" href="$class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command&#45;line tool." alt="" coords="334,183,412,209"/>
-<area shape="poly" id="edge16_Node000004_Node000006" title=" " alt="" coords="242,174,336,189,331,191,243,179"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,179,80,204"/>
+<area shape="rect" id="Node000001" href="$class_clipboard_manager.html" title="Puts secrets on the system clipboard and takes them off again." alt="" coords="141,5,282,31"/>
+<area shape="poly" id="edge11_Node000000_Node000001" title=" " alt="" coords="49,164,77,102,98,68,126,40,146,29,148,33,130,44,103,72,81,104,54,166"/>
+<area shape="rect" id="Node000002" href="$class_executor.html" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="172,55,251,80"/>
+<area shape="poly" id="edge12_Node000000_Node000002" title=" " alt="" coords="56,166,85,126,105,106,127,89,148,78,171,71,172,76,150,83,129,94,108,110,90,130,61,169"/>
+<area shape="rect" id="Node000003" href="$class_native_grep.html" title="Full&#45;text search over a password store without pass grep: every .gpg file is decrypted with gpg on a ..." alt="" coords="163,104,259,129"/>
+<area shape="poly" id="edge13_Node000000_Node000003" title=" " alt="" coords="72,169,127,138,162,126,164,131,129,143,75,173"/>
+<area shape="rect" id="Node000004" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="186,153,237,179"/>
+<area shape="poly" id="edge14_Node000000_Node000004" title=" " alt="" coords="93,181,185,167,186,172,94,186"/>
+<area shape="rect" id="Node000007" href="$class_password_display_panel.html" title="Renders decrypted password&#45;file fields into MainWindow&#39;s grid." alt="" coords="128,203,295,228"/>
+<area shape="poly" id="edge17_Node000000_Node000007" title=" " alt="" coords="94,196,128,201,127,206,93,201"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass.html" title="Application&#45;level glue between the pass backends and whatever shows their results: turns the backends..." alt="" coords="178,252,245,277"/>
+<area shape="poly" id="edge18_Node000000_Node000008" title=" " alt="" coords="76,209,129,237,179,254,177,259,127,242,74,214"/>
+<area shape="rect" id="Node000009" href="$class_store_tree.html" title="The password store as shown in the tree: the QFileSystemModel, the StoreModel proxy on top of it and ..." alt="" coords="170,301,253,327"/>
+<area shape="poly" id="edge19_Node000000_Node000009" title=" " alt="" coords="61,214,90,252,129,286,171,304,169,309,127,291,86,255,57,217"/>
+<area shape="rect" id="Node000010" href="$class_tray_icon.html" title="Handles the system tray icon and menu." alt="" coords="173,351,249,376"/>
+<area shape="poly" id="edge20_Node000000_Node000010" title=" " alt="" coords="54,216,82,276,103,309,130,336,151,348,174,356,172,361,149,353,126,340,99,312,77,279,50,218"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable." alt="" coords="343,129,441,155"/>
+<area shape="poly" id="edge15_Node000004_Node000005" title=" " alt="" coords="250,158,342,146,343,151,251,164"/>
+<area shape="rect" id="Node000006" href="$class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command&#45;line tool." alt="" coords="352,179,432,204"/>
+<area shape="poly" id="edge16_Node000004_Node000006" title=" " alt="" coords="251,169,352,183,351,188,250,174"/>
 </map>

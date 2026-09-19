@@ -1,4 +1,4 @@
 <map id="QPushButtonWithClipboard::setTextToCopy" name="QPushButtonWithClipboard::setTextToCopy">
-<area shape="rect" id="Node000001" title="Update the stored text used for copying." alt="" coords="5,29,187,72"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="124,14,114,10,96,8,79,10,69,14,65,21,66,30,61,28,60,19,65,10,78,5,96,3,116,5,129,14"/>
+<area shape="rect" id="Node000001" title="Update the stored text used for copying." alt="" coords="5,29,204,69"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="138,18,126,11,105,8,86,10,75,15,70,21,73,28,67,30,65,20,71,11,84,5,105,3,128,6,141,13"/>
 </map>

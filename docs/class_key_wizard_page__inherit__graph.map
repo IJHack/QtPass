@@ -1,5 +1,5 @@
 <map id="KeyWizardPage" name="KeyWizardPage">
-<area shape="rect" id="Node000001" title="The secret keys gpg knows; a new pair can be generated here. The enabled ones become the recipients o..." alt="" coords="5,80,121,107"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="12,5,114,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,46,66,80,60,79,61,50"/>
+<area shape="rect" id="Node000001" title="The secret keys gpg knows; a new pair can be generated here. The enabled ones become the recipients o..." alt="" coords="5,79,128,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="13,5,121,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,44,69,79,64,79,64,44"/>
 </map>

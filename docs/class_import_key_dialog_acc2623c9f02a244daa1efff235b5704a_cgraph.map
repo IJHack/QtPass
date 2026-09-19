@@ -1,4 +1,4 @@
 <map id="ImportKeyDialog::ImportKeyDialog" name="ImportKeyDialog::ImportKeyDialog">
-<area shape="rect" id="Node000001" title="Construct an ImportKeyDialog." alt="" coords="5,29,192,72"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="63,28,61,19,67,10,80,5,99,3,119,5,132,14,127,14,117,10,98,8,81,10,71,15,66,21,68,30"/>
+<area shape="rect" id="Node000001" title="Construct an ImportKeyDialog." alt="" coords="5,29,212,69"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="70,30,68,20,74,11,88,5,109,3,133,6,146,13,143,18,131,11,109,8,89,10,77,15,73,21,75,28"/>
 </map>

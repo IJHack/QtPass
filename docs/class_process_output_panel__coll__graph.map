@@ -1,5 +1,5 @@
 <map id="ProcessOutputPanel" name="ProcessOutputPanel">
-<area shape="rect" id="Node000001" title="The dockable &quot;Process Output&quot; console: numbered, colour&#45;coded lines of git/pass/gpg output with a lin..." alt="" coords="5,80,147,107"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="24,5,128,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,46,79,80,73,79,74,50"/>
+<area shape="rect" id="Node000001" title="The dockable &quot;Process Output&quot; console: numbered, colour&#45;coded lines of git/pass/gpg output with a lin..." alt="" coords="5,79,156,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="25,5,136,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,44,83,79,78,79,78,44"/>
 </map>
