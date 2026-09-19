@@ -534,9 +534,22 @@ auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
   while (leftovers.hasNext()) {
     const QString path = leftovers.next();
     if (path.endsWith(QStringLiteral(".tmp"))) {
+      // QFile::remove on a symlink removes the link, never what it points to.
       if (!QFile::remove(path)) {
         qCWarning(lcQtPass) << "Could not remove stale temporary" << path;
       }
+      continue;
+    }
+    // Only a regular file is a backup QtPass made. A symlink under that name
+    // would be renamed into place as a symlink, and the run would then
+    // decrypt and re-encrypt whatever it points to, inside the store or not.
+    const QFileInfo backup(path);
+    if (backup.isSymLink() || !backup.isFile()) {
+      emit critical(tr("Leftover from an earlier re-encryption"),
+                    tr("%1 is not a regular file and was not restored. Look "
+                       "at it and remove it, then re-encrypt again.")
+                        .arg(path));
+      clean = false;
       continue;
     }
     const QString original =
@@ -999,10 +1012,29 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
   }
 
   QStringList files;
-  QDirIterator gpgFiles(dir, QStringList() << "*.gpg", QDir::Files,
+  // Regular files only: a symlink is not a password entry, and following
+  // one would decrypt and rewrite something outside the store's control.
+  QDirIterator gpgFiles(dir, QStringList() << "*.gpg",
+                        QDir::Files | QDir::NoSymLinks,
                         QDirIterator::Subdirectories);
   while (gpgFiles.hasNext()) {
     files << gpgFiles.next();
+  }
+  QDirIterator links(dir, QStringList() << "*.gpg", QDir::Files,
+                     QDirIterator::Subdirectories);
+  int skipped = 0;
+  while (links.hasNext()) {
+    links.next();
+    if (links.fileInfo().isSymLink()) {
+      qCWarning(lcQtPass) << "Skipping symlinked entry" << links.filePath();
+      ++skipped;
+    }
+  }
+  if (skipped > 0) {
+    emit statusMsg(tr("%n symlinked entr(y/ies) skipped: a symlink is not a "
+                      "password file.",
+                      "", skipped),
+                   5000);
   }
   result.total = files.size();
   emit reencryptProgress(0, result.total);

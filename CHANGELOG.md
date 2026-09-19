@@ -45,6 +45,11 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   by allow list: a process kind that nobody has classified stays silent,
   where it used to be broadcast until someone remembered to exclude it. The
   comment had claimed the opposite of what the code did [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- Re-encryption treats only regular files as entries: a symlinked `.gpg` is
+  skipped (and counted in a status message) rather than followed, a symlinked
+  directory is not descended into, and a symlink found under a backup's name
+  is reported instead of renamed into place, where the run would have
+  decrypted and rewritten whatever it pointed to [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - Re-encryption checks its own bookkeeping: when the new ciphertext cannot
   be put in place and the original cannot be put back either, the message
   says where the original still is; a backup that cannot be removed after
