@@ -28,32 +28,32 @@ directly (the \(lqnative\(rq backend, which needs neither pass nor a shell).
 .PP
 Features, all switched on or off in
 .BR Configuration :
-.IP \(bu 3
+.IP \[u2022] 3
 Several password stores side by side as profiles, each with its own Git
 settings and, when the store demands it, signing key for
 .IR .gpg-id .
-.IP \(bu 3
+.IP \[u2022] 3
 Per-folder recipients: choose who can decrypt a folder and re-encrypt it
 for them.
-.IP \(bu 3
+.IP \[u2022] 3
 Templates that turn
 .I key: value
 lines of an entry into fields; field names can be renamed in place.
-.IP \(bu 3
+.IP \[u2022] 3
 Built-in one-time passwords (TOTP per RFC 6238, SHA-1/256/512, Steam
 Guard) from an
 .I otpauth://
 URI or a
 .I TOTP:
 line; the secret is never shown.
-.IP \(bu 3
+.IP \[u2022] 3
 A password generator using the system's random source or
 .BR pwgen (1),
 with a choice of character sets.
-.IP \(bu 3
+.IP \[u2022] 3
 Clipboard modes (always, on demand, never) with a clearing timeout, and
 options to hide the password or the whole entry against shoulder surfing.
-.IP \(bu 3
+.IP \[u2022] 3
 Full-text search through decrypted entries with
 .BR "pass grep" ,
 QR codes for a value, a system tray icon, and a menu bar that is off by
