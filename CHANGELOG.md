@@ -501,7 +501,7 @@ line ([#1709](https://github.com/IJHack/QtPass/issues/1709)). Qt 5.15 and Qt 6 a
   closes [#132](https://github.com/IJHack/QtPass/issues/132)
 - Status bar feedback while creating a profile [#1136](https://github.com/IJHack/QtPass/pull/1136), closes [#1034](https://github.com/IJHack/QtPass/issues/1034)
 
-### Upgrade Notes
+### Upgrade Notes <!-- markdownlint-disable-line MD024 -->
 
 - OTP support is now on by default, so upgrading shows live one-time-password
   codes for entries that contain an `otpauth://` secret, even if you had it off
