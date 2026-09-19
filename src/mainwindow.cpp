@@ -1678,8 +1678,8 @@ void MainWindow::addFolder() {
     return;
   }
   // A .gpg-id only counts when it is signed once a signing key is configured:
-  // ImitatePass::loadVerifiedRecipients and pass (PASSWORD_STORE_SIGNING_KEY) both
-  // refuse to encrypt into a folder whose .gpg-id has no matching
+  // ImitatePass::loadVerifiedRecipients and pass (PASSWORD_STORE_SIGNING_KEY)
+  // both refuse to encrypt into a folder whose .gpg-id has no matching
   // .gpg-id.sig. Signing here would need the signing secret key and a
   // passphrase prompt just to create a folder, so in that case leave the
   // folder without its own .gpg-id: it inherits the parent's signed list,
