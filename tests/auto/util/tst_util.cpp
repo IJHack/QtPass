@@ -280,6 +280,7 @@ private Q_SLOTS:
   void isPathInStoreRejectsEmptyArgs();
   // .gpg-id permission hardening (security)
   void writeGpgIdFileSetsOwnerOnlyPerms();
+  void writeGpgIdFileCanBeWrittenAgainAfterLockingDown();
   void writeGpgIdFileKeepsTheOldListWhenTheWriteFails();
   // SSH_AUTH_SOCK override soft-validation (Settings dialog warning)
   void sshAuthSockOverrideStatusDoesNotExist();
@@ -2796,6 +2797,40 @@ void tst_util::writeGpgIdFileKeepsTheOldListWhenTheWriteFails() {
   QVERIFY(check.open(QIODevice::ReadOnly));
   QCOMPARE(check.readAll(), QByteArrayLiteral("OLDKEY0000000000\n"));
 #endif
+}
+
+/**
+ * @brief The permissions set on the QSaveFile before commit() must not get
+ *        in the way of the next write: on Windows setPermissions() maps to
+ *        the read-only attribute (and, with NTFS permission lookup on, to
+ *        ACLs), and a .gpg-id left read-only would make the next commit()'s
+ *        rename fail. Write twice, expect the second list, expect a file
+ *        QtPass can still write to. This runs on every CI platform.
+ */
+void tst_util::writeGpgIdFileCanBeWrittenAgainAfterLockingDown() {
+  QTemporaryDir tempDir;
+  QVERIFY(tempDir.isValid());
+  const QString gpgIdFile = tempDir.path() + "/.gpg-id";
+  UserInfo alice;
+  alice.key_id = QStringLiteral("0123456789ABCDEF0123456789ABCDEF01234567");
+  alice.enabled = true;
+  alice.have_secret = true;
+  UserInfo bob = alice;
+  bob.key_id = QStringLiteral("89ABCDEF0123456789ABCDEF0123456789ABCDEF");
+  ImitatePass pass;
+  QVERIFY(pass.writeGpgIdFile(gpgIdFile, {alice}));
+  QVERIFY(pass.writeGpgIdFile(gpgIdFile, {alice, bob}));
+  QVERIFY(pass.writeGpgIdFile(gpgIdFile, {bob}));
+  QFile check(gpgIdFile);
+  QVERIFY(check.open(QIODevice::ReadOnly));
+  QCOMPARE(check.readAll(), (bob.key_id + "\n").toUtf8());
+  check.close();
+  const QFileInfo info(gpgIdFile);
+  QVERIFY2(info.isReadable() && info.isWritable(),
+           "the .gpg-id must stay readable and writable for its owner");
+  QVERIFY2(QFile::permissions(gpgIdFile).testFlag(QFile::WriteOwner),
+           "WriteOwner must survive the lock-down");
+  QVERIFY2(QFile::remove(gpgIdFile), "and it must still be removable");
 }
 
 /**
