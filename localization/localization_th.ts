@@ -279,17 +279,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">ทั่วไป</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished">คลิปบอร์ด</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished">รหัสผ่าน</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
@@ -881,17 +881,17 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">ดับเบิลคลิกเพื่อเปลี่ยนชื่อฟิลด์นี้</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">เปลี่ยนชื่อฟิลด์…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">ลบฟิลด์</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2228,12 +2228,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished">ลบฟิลด์</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">มีฟิลด์ชื่อ %1 อยู่แล้ว</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>
