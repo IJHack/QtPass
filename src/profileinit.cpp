@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QProcess>
+#include <QSaveFile>
 
 auto ProfileInit::needsInit(const QString &path) -> bool {
   if (path.isEmpty()) {
@@ -74,18 +75,23 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
     *note = tr("No recipient selected; %1 was not written.").arg(gpgIdFile);
     return false;
   }
-  QFile file(gpgIdFile);
-  if (!file.open(QIODevice::WriteOnly | QIODevice::Text) ||
-      file.write((ids.join(QLatin1Char('\n')) + QLatin1Char('\n')).toUtf8()) <
-          0) {
+  // Same primitive as ImitatePass::writeGpgIdFile: the list is written to a
+  // temporary in the same directory and renamed into place whole, so an
+  // interrupted write leaves no half .gpg-id for the signing step (or a
+  // later run without signing) to take for the recipient list. Owner-only
+  // before commit: the list leaks which keys the store is encrypted to.
+  const QByteArray contents =
+      (ids.join(QLatin1Char('\n')) + QLatin1Char('\n')).toUtf8();
+  QSaveFile file(gpgIdFile);
+  if (!file.open(QIODevice::WriteOnly)) {
     *note = tr("Could not write %1: %2").arg(gpgIdFile, file.errorString());
     return false;
   }
-  file.close();
-  // Same as ImitatePass::writeGpgIdFile: the recipient list leaks which keys
-  // the store is encrypted to, so keep it owner-only where that means
-  // anything.
-  QFile::setPermissions(gpgIdFile, QFile::ReadOwner | QFile::WriteOwner);
+  file.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
+  if (file.write(contents) != contents.size() || !file.commit()) {
+    *note = tr("Could not write %1: %2").arg(gpgIdFile, file.errorString());
+    return false;
+  }
   return true;
 }
 

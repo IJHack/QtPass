@@ -4,9 +4,13 @@
 #include <QDir>
 #include <QFile>
 #include <QProcess>
+#include <QScopeGuard>
 #include <QStandardPaths>
 #include <QTemporaryDir>
 #include <QtTest>
+#ifndef Q_OS_WIN
+#include <unistd.h>
+#endif
 
 #include "../../../src/appsettings.h"
 #include "../../../src/profileinit.h"
@@ -26,6 +30,7 @@ private Q_SLOTS:
   void initialiseCreatesTheDirectory();
   void initialiseCommitsUnderGit();
   void initialiseWarnsAboutExistingEntries();
+  void initialiseLeavesNoHalfWrittenGpgId();
 
 private:
   static auto twoUsers() -> QList<UserInfo>;
@@ -118,6 +123,38 @@ void tst_profileinit::initialiseWritesEnabledKeysOnly() {
   const auto perms = QFileInfo(gpgId).permissions();
   QVERIFY2(!(perms & (QFile::ReadGroup | QFile::ReadOther)),
            ".gpg-id must be owner-only");
+#endif
+}
+
+/**
+ * @brief The .gpg-id is put in place whole or not at all: when the folder
+ *        cannot be written to, initialise() fails with a note and leaves no
+ *        file behind for a signing step or a later run to take for the list.
+ */
+void tst_profileinit::initialiseLeavesNoHalfWrittenGpgId() {
+#ifdef Q_OS_WIN
+  QSKIP("a read-only directory does not stop writes on Windows");
+#else
+  if (::geteuid() == 0) {
+    QSKIP("root writes into read-only directories");
+  }
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  QVERIFY(
+      QFile::setPermissions(dir.path(), QFile::ReadOwner | QFile::ExeOwner));
+  const auto restore = qScopeGuard([&dir] {
+    QFile::setPermissions(dir.path(), QFile::ReadOwner | QFile::WriteOwner |
+                                          QFile::ExeOwner);
+  });
+  QString note;
+  QVERIFY(!ProfileInit::initialise(dir.path(), twoUsers(), AppSettings(), false,
+                                   &note));
+  QVERIFY2(note.contains(QStringLiteral(".gpg-id")), qPrintable(note));
+  QVERIFY2(
+      QDir(dir.path())
+          .entryList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot)
+          .isEmpty(),
+      "nothing may be left behind, no temporary either");
 #endif
 }
 

@@ -205,6 +205,7 @@ private Q_SLOTS:
   void getGpgIdPathBasic();
   void getGpgIdPathSubfolder();
   void getGpgIdPathNotFound();
+  void getGpgIdPathSiblingStoreIsOutside();
   void seedGpgIdFileCopiesParentRecipients();
   void seedGpgIdFileTrailingSeparator();
   void seedGpgIdFileNoParentRecipients();
@@ -1308,6 +1309,50 @@ void tst_util::getGpgIdPathSubfolder() {
   QString expected = QDir::cleanPath(gpgIdFile);
   QVERIFY2(path == expected,
            qPrintable(QString("Expected %1, got %2").arg(expected, path)));
+}
+
+/**
+ * @brief "/store-other" is not inside "/store": its .gpg-id must never be
+ *        taken for the store's, whether the store is given with or without
+ *        a trailing separator, and a relative name still resolves inside.
+ */
+void tst_util::getGpgIdPathSiblingStoreIsOutside() {
+  QTemporaryDir tempDir;
+  QVERIFY(tempDir.isValid());
+  const QString store = tempDir.path() + "/store";
+  const QString sibling = tempDir.path() + "/store-other";
+  QVERIFY(QDir().mkpath(store + "/sub"));
+  QVERIFY(QDir().mkpath(sibling + "/sub"));
+  for (const QString &path : {store + "/.gpg-id", sibling + "/.gpg-id"}) {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("KEY\n");
+  }
+  const QString expected = QDir::cleanPath(store + "/.gpg-id");
+  for (const QString &given : {store, store + "/"}) {
+    QCOMPARE(QDir::cleanPath(
+                 Pass::getGpgIdPath(sibling + "/sub/password.gpg", given)),
+             expected);
+    QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(sibling, given)), expected);
+    QCOMPARE(QDir::cleanPath(
+                 Pass::getGpgIdPath(QStringLiteral("sub/password.gpg"), given)),
+             expected);
+    QCOMPARE(
+        QDir::cleanPath(Pass::getGpgIdPath(store + "/sub/password.gpg", given)),
+        expected);
+  }
+#ifdef Q_OS_WIN
+  // The file system does not care about case; a store configured in another
+  // case than the tree reports must still find its nested .gpg-id.
+  {
+    QFile f(store + "/sub/.gpg-id");
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("SUBKEY\n");
+  }
+  QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(store + "/sub/password.gpg",
+                                              store.toUpper())),
+           QDir::cleanPath(store + "/sub/.gpg-id"));
+#endif
 }
 
 void tst_util::getGpgIdPathNotFound() {

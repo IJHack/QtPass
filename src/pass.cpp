@@ -850,23 +850,45 @@ void Pass::updateEnv() {
  * @param for_file which file (folder) would you like the gpgid file path for.
  * @return path to the gpgid file.
  */
+namespace {
+/// Whether @p path is @p dir or lies under it, compared the way the
+/// platform's file system compares names: "C:/Store" and "c:/store" are the
+/// same directory on Windows.
+auto isAtOrUnder(const QString &path, const QString &dir,
+                 const QString &dirPrefix) -> bool {
+#ifdef Q_OS_WIN
+  constexpr auto cs = Qt::CaseInsensitive;
+#else
+  constexpr auto cs = Qt::CaseSensitive;
+#endif
+  return path.compare(dir, cs) == 0 || path.startsWith(dirPrefix, cs);
+}
+} // namespace
+
 auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
     -> QString {
   QString normalizedStore = QDir::fromNativeSeparators(passStore);
   QString normalizedFile = QDir::fromNativeSeparators(for_file);
-  QString fullPath = normalizedFile.startsWith(normalizedStore)
-                         ? normalizedFile
-                         : normalizedStore + "/" + normalizedFile;
+  // Inside the store means at a path boundary: "/store-other/x" is not
+  // under "/store", however the prefix compares.
+  const QString storeDir = QDir::cleanPath(normalizedStore);
+  const QString storePrefix = storeDir.endsWith(QLatin1Char('/'))
+                                  ? storeDir
+                                  : storeDir + QLatin1Char('/');
+  const QString cleanFile = QDir::cleanPath(normalizedFile);
+  const bool insideStore = isAtOrUnder(cleanFile, storeDir, storePrefix);
+  // A relative name is one inside the store; an absolute path outside it
+  // stays what it is and the walk below stops at once.
+  const QString fullPath = insideStore || QDir::isAbsolutePath(cleanFile)
+                               ? cleanFile
+                               : storePrefix + cleanFile;
   QDir gpgIdDir(QFileInfo(fullPath).absoluteDir());
   // QDir::cleanPath() always normalises to forward slashes, so use '/'
   // here rather than QDir::separator() (which returns '\\' on Windows).
-  QString cleanPassStore = QDir::cleanPath(normalizedStore);
   bool found = false;
   while (gpgIdDir.exists()) {
     QString currentPath = QDir::cleanPath(gpgIdDir.absolutePath());
-    const QString prefix =
-        cleanPassStore.endsWith('/') ? cleanPassStore : cleanPassStore + "/";
-    if (currentPath != cleanPassStore && !currentPath.startsWith(prefix)) {
+    if (!isAtOrUnder(currentPath, storeDir, storePrefix)) {
       break;
     }
     if (QFile(gpgIdDir.absoluteFilePath(".gpg-id")).exists()) {
