@@ -911,6 +911,19 @@ void ImitatePass::reencryptPath(const QString &dir) {
     emit statusMsg(tr("A re-encryption is already running"), 3000);
     return;
   }
+  // The walk follows its starting point (the store root is allowed to be a
+  // link); a folder inside the store that is, or lies behind, a link is not
+  // part of it. MainWindow refuses such a pick already; this holds for every
+  // caller, Init() included.
+  if (Util::isUnderLink(dir, m_settings.passStore)) {
+    emit critical(tr("Not a folder of the store"),
+                  tr("%1 is, or lies behind, a symbolic link or junction. What "
+                     "that points to is not part of the password store and "
+                     "was not re-encrypted.")
+                      .arg(QDir::toNativeSeparators(QDir::cleanPath(dir))));
+    emit endReencryptPath();
+    return;
+  }
   m_reencryptActive = true;
   m_reencryptCancel.store(false);
   emit statusMsg(tr("Re-encrypting from folder %1").arg(dir), 3000);

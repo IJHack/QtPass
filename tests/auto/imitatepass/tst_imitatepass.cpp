@@ -343,6 +343,7 @@ private Q_SLOTS:
   void recoveryDoesNotPromoteASpecialFileToAnEntry();
   void reencryptSkipsSymlinkedEntries();
   void removeFolderWithoutGitLeavesLinkTargetsAlone();
+  void reencryptRefusesAFolderBehindALink();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -1353,6 +1354,54 @@ void tst_imitatepass::removeFolderWithoutGitLeavesLinkTargetsAlone() {
       "the link itself is what gets removed");
   QVERIFY2(QFile::exists(outside.filePath(QStringLiteral("secret.gpg"))),
            "a folder that is a link must not have its target emptied");
+#endif
+}
+
+/**
+ * @brief A run started on a linked folder, or on a folder behind one, is
+ *        refused before anything is walked: the files behind the link are
+ *        not the store's, whatever .gpg-id a lexical walk up would find.
+ *        The store root itself may be a link and is not refused.
+ */
+void tst_imitatepass::reencryptRefusesAFolderBehindALink() {
+#ifdef Q_OS_WIN
+  QSKIP("creating a symlink needs a privilege a CI runner may lack");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir outside(outsideDir.path());
+  QVERIFY(outside.mkpath(QStringLiteral("sub")));
+  {
+    QFile f(outside.filePath(QStringLiteral("sub/secret.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("somebody else's ciphertext");
+  }
+  QVERIFY(
+      QFile::link(outsideDir.path(),
+                  QDir(storeDir.path()).filePath(QStringLiteral("shared"))));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  for (const QString &pick :
+       {QDir(storeDir.path()).filePath(QStringLiteral("shared")),
+        QDir(storeDir.path()).filePath(QStringLiteral("shared/sub/"))}) {
+    pass.reencryptPath(pick);
+    QCOMPARE(endSpy.count(), 1);
+    QCOMPARE(criticalSpy.count(), 1);
+    QVERIFY(criticalSpy.takeFirst().at(1).toString().contains("link"));
+    endSpy.clear();
+  }
+  QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
+           "nothing behind the link may be touched");
+  QFile check(outside.filePath(QStringLiteral("sub/secret.gpg")));
+  QVERIFY(check.open(QIODevice::ReadOnly));
+  QCOMPARE(check.readAll(), QByteArrayLiteral("somebody else's ciphertext"));
 #endif
 }
 
