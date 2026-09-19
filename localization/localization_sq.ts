@@ -257,17 +257,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">Të përgjithshme</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished">Klipboardi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished">Fjalëkalimet</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
@@ -885,17 +885,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">Klikoni dy herë për të riemërtuar këtë fushë</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">Riemërto fushën…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">Hiq fushën</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2276,12 +2276,12 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished">Hiq fushën</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">Një fushë me emrin %1 ekziston tashmë.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>
