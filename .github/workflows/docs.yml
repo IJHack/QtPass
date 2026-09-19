@@ -89,8 +89,13 @@ jobs:
         run: |
           # Pinned Doxygen release. doxygen.nl has intermittent outages, so try
           # the identical GitHub release asset (CDN-backed) first and fall back
-          # to doxygen.nl, retrying each source before giving up.
+          # to doxygen.nl, retrying each source before giving up. Whichever
+          # answered, the archive has to match the recorded checksum: it runs
+          # here before the build and the coverage uploads, so a mirror is a
+          # place to fetch from, not a source of trust. Update the sum with
+          # the version.
           DOXYGEN_VERSION=1.18.0
+          DOXYGEN_SHA256=14fa81bdc34171edb5f1f02b1d60e74802f0439b77fa44e592565d517d72df90
           tarball="doxygen-${DOXYGEN_VERSION}.linux.bin.tar.gz"
           github_tag="Release_${DOXYGEN_VERSION//./_}"
           urls=(
@@ -109,6 +114,10 @@ jobs:
           done
           if [ "${downloaded}" -ne 1 ]; then
             echo "::error::Could not download Doxygen ${DOXYGEN_VERSION}"
+            exit 1
+          fi
+          if ! echo "${DOXYGEN_SHA256}  doxygen.tar.gz" | sha256sum --check --strict -; then
+            echo "::error::Doxygen ${DOXYGEN_VERSION} archive does not match its recorded SHA-256"
             exit 1
           fi
           tar -xzf doxygen.tar.gz

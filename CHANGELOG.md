@@ -23,10 +23,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 ### Security
 
 - CI: the Flatpak build container, which runs privileged on every pull
-  request, is pinned by image digest instead of a mutable tag; and the
-  documentation workflow builds and tests with a read-only token, handing
-  the result to a separate deploy job that alone holds `contents: write`
-  and runs nothing from the repository [#1842](https://github.com/IJHack/QtPass/issues/1842)
+  request, is pinned by image digest instead of a mutable tag; the Doxygen
+  archive the documentation job downloads (from GitHub or the doxygen.nl
+  mirror) must match a recorded SHA-256 before it is unpacked and run; and
+  the documentation workflow builds and tests with a read-only token,
+  handing the result to a separate deploy job that alone holds
+  `contents: write` and runs nothing from the repository [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - Generating a GPG key without a passphrase is an explicit choice: the
   key-generation dialog's OK stays off with empty passphrase fields until a
   passphrase is typed twice or "No passphrase: store the private key
