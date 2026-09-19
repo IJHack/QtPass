@@ -143,7 +143,7 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   compiled in; `QT_LOGGING_RULES="qtpass.debug=true"` turns it on, so a user
   can attach a trace to a bug report without a debug build (see the FAQ)
 - The search box matches its words literally, in order, with anything in
-  between ("work vpn" finds work/acme/vpn); it used to be a regular
+  between ("work mail" finds work/acme/mail); it used to be a regular
   expression, so a typed `[` or `(` silently switched filtering off
 - `pass init` for a folder is given the folder relative to the store only
   when the folder is inside the store; a directory whose name merely started
