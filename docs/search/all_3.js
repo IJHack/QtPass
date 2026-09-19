@@ -8,13 +8,14 @@ var searchData=
   ['deselect_5',['deselect',['../class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e',1,'MainWindow']]],
   ['deselectabletreeview_6',['DeselectableTreeView',['../class_deselectable_tree_view.html',1,'DeselectableTreeView'],['../class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26',1,'DeselectableTreeView::DeselectableTreeView()']]],
   ['digits_7',['digits',['../struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d',1,'Totp::Settings']]],
-  ['directory_8',['Directory',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6ae73cda510e8bb947f7e61089e5581494',1,'dragAndDropInfoPasswordStore']]],
-  ['dirfor_9',['dirFor',['../class_store_tree.html#a0af4ab5f8c00e1188af669b8aea1ab47',1,'StoreTree']]],
-  ['discard_10',['discard',['../struct_grep_search_controller_1_1_finish_outcome.html#aa12d73ecc749e62f884be80576823595',1,'GrepSearchController::FinishOutcome']]],
-  ['displayasis_11',['displayAsIs',['../struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d',1,'AppSettings']]],
-  ['displayfields_12',['displayFields',['../class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f',1,'PasswordDisplayPanel']]],
-  ['donewizardpage_13',['DoneWizardPage',['../class_done_wizard_page.html',1,'DoneWizardPage'],['../class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183',1,'DoneWizardPage::DoneWizardPage()']]],
-  ['draganddropinfopasswordstore_14',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
-  ['dropmimedata_15',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
-  ['dropstaletoolbarpalette_16',['dropStaleToolBarPalette',['../class_main_window.html#a60ed7fe85ceeecb99a88ae9c4d6d2908',1,'MainWindow']]]
+  ['directoriesunder_8',['directoriesUnder',['../class_util.html#afaab47cf531353235a5ec8f2c6424c5e',1,'Util']]],
+  ['directory_9',['Directory',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6ae73cda510e8bb947f7e61089e5581494',1,'dragAndDropInfoPasswordStore']]],
+  ['dirfor_10',['dirFor',['../class_store_tree.html#a0af4ab5f8c00e1188af669b8aea1ab47',1,'StoreTree']]],
+  ['discard_11',['discard',['../struct_grep_search_controller_1_1_finish_outcome.html#aa12d73ecc749e62f884be80576823595',1,'GrepSearchController::FinishOutcome']]],
+  ['displayasis_12',['displayAsIs',['../struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d',1,'AppSettings']]],
+  ['displayfields_13',['displayFields',['../class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f',1,'PasswordDisplayPanel']]],
+  ['donewizardpage_14',['DoneWizardPage',['../class_done_wizard_page.html',1,'DoneWizardPage'],['../class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183',1,'DoneWizardPage::DoneWizardPage()']]],
+  ['draganddropinfopasswordstore_15',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
+  ['dropmimedata_16',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
+  ['dropstaletoolbarpalette_17',['dropStaleToolBarPalette',['../class_main_window.html#a60ed7fe85ceeecb99a88ae9c4d6d2908',1,'MainWindow']]]
 ];

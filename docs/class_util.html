@@ -134,6 +134,16 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a7a6dcbde6840aab13f34a83a4ce9f3c1" id="r_a7a6dcbde6840aab13f34a83a4ce9f3c1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7a6dcbde6840aab13f34a83a4ce9f3c1">isValidKeyId</a> (const QString &amp;keyId) -&gt; bool</td></tr>
 <tr class="memdesc:a7a6dcbde6840aab13f34a83a4ce9f3c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a <span class="tt">.gpg-id</span> token may be passed to gpg as a key selector. Accepts any non-empty token that does not start with <span class="tt">-</span>, exactly as <span class="tt">pass</span> does: key IDs and fingerprints of every version, emails, <span class="tt">=Exact
 User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  <br /></td></tr>
+<tr class="memitem:a77bcdde819b9f0bd6a68c84cd8198e23" id="r_a77bcdde819b9f0bd6a68c84cd8198e23"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a77bcdde819b9f0bd6a68c84cd8198e23">regularFilesUnder</a> (const QString &amp;dir, const QStringList &amp;nameFilters, QStringList *skipped=nullptr, bool hiddenFiles=false) -&gt; QStringList</td></tr>
+<tr class="memdesc:a77bcdde819b9f0bd6a68c84cd8198e23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regular files under <code class="param">dir</code> whose name matches one of <code class="param">nameFilters</code>, found by walking only real directories.  <br /></td></tr>
+<tr class="memitem:afaab47cf531353235a5ec8f2c6424c5e" id="r_afaab47cf531353235a5ec8f2c6424c5e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afaab47cf531353235a5ec8f2c6424c5e">directoriesUnder</a> (const QString &amp;dir) -&gt; QStringList</td></tr>
+<tr class="memdesc:afaab47cf531353235a5ec8f2c6424c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every real, visible directory under <code class="param">dir</code>, walked by the same rules as <a class="el" href="#a77bcdde819b9f0bd6a68c84cd8198e23" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">regularFilesUnder()</a>: links, junctions and hidden directories are neither listed nor entered.  <br /></td></tr>
+<tr class="memitem:a746306345314ca148272abc2dd3e9e3c" id="r_a746306345314ca148272abc2dd3e9e3c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a746306345314ca148272abc2dd3e9e3c">isLinkedFolder</a> (const QString &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a746306345314ca148272abc2dd3e9e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">path</code> names a symbolic link or NTFS junction, with or without a trailing separator (which would otherwise make the check look at the target instead).  <br /></td></tr>
+<tr class="memitem:aee92c6a311b7c8885e04df75fa221734" id="r_aee92c6a311b7c8885e04df75fa221734"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aee92c6a311b7c8885e04df75fa221734">isUnderLink</a> (const QString &amp;path, const QString &amp;storeRoot) -&gt; bool</td></tr>
+<tr class="memdesc:aee92c6a311b7c8885e04df75fa221734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the way from <code class="param">storeRoot</code> down to <code class="param">path</code> passes through a symbolic link or NTFS junction: <code class="param">path</code> itself or any folder between.  <br /></td></tr>
+<tr class="memitem:ad23339038f3f09d99359f1a25d659a6f" id="r_ad23339038f3f09d99359f1a25d659a6f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad23339038f3f09d99359f1a25d659a6f">removeTree</a> (const QString &amp;dir) -&gt; bool</td></tr>
+<tr class="memdesc:ad23339038f3f09d99359f1a25d659a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove <code class="param">dir</code> and everything in it, the way <span class="tt">rm -rf</span> does: a symbolic link or NTFS junction, <code class="param">dir</code> itself or anything inside, is removed as an entry and what it points to is never entered. A trailing separator on <code class="param">dir</code> does not change that.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Some static utilities to be used elsewhere. </p>
@@ -171,6 +181,40 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool <span class="tt">true</span> if the password store's <span class="tt">.gpg-id</span> exists AND the configured executable (pass or gpg, depending on settings) exists or is a WSL wrapper; <span class="tt">false</span> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="afaab47cf531353235a5ec8f2c6424c5e" name="afaab47cf531353235a5ec8f2c6424c5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaab47cf531353235a5ec8f2c6424c5e">&#9670;&#160;</a></span>directoriesUnder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::directoriesUnder </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dir</em></span></td><td>)</td>
+          <td> -&gt;  QStringList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Every real, visible directory under <code class="param">dir</code>, walked by the same rules as <a class="el" href="#a77bcdde819b9f0bd6a68c84cd8198e23" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">regularFilesUnder()</a>: links, junctions and hidden directories are neither listed nor entered. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>Directory to walk. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Absolute paths, parents before children. </dd></dl>
 
 </div>
 </div>
@@ -380,6 +424,79 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 
 </div>
 </div>
+<a id="a746306345314ca148272abc2dd3e9e3c" name="a746306345314ca148272abc2dd3e9e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a746306345314ca148272abc2dd3e9e3c">&#9670;&#160;</a></span>isLinkedFolder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::isLinkedFolder </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether <code class="param">path</code> names a symbolic link or NTFS junction, with or without a trailing separator (which would otherwise make the check look at the target instead). </p>
+<p>The store tree shows linked folders like any other; an operation on one (re-encrypt, recipients, delete) must not reach through it. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Folder path, as the tree names it. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true for a link or junction. </dd></dl>
+
+</div>
+</div>
+<a id="aee92c6a311b7c8885e04df75fa221734" name="aee92c6a311b7c8885e04df75fa221734"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee92c6a311b7c8885e04df75fa221734">&#9670;&#160;</a></span>isUnderLink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::isUnderLink </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storeRoot</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the way from <code class="param">storeRoot</code> down to <code class="param">path</code> passes through a symbolic link or NTFS junction: <code class="param">path</code> itself or any folder between. </p>
+<p>The tree shows a linked folder's children too, and a pick of one of them names a place outside the store as much as the link does. The root itself is not checked: a linked store root is the user's setup. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>File or folder under the store, as the tree names it. </td></tr>
+    <tr><td class="paramname">storeRoot</td><td>The configured store. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when something on the way is a link. </dd></dl>
+
+</div>
+</div>
 <a id="a7a6dcbde6840aab13f34a83a4ce9f3c1" name="a7a6dcbde6840aab13f34a83a4ce9f3c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a6dcbde6840aab13f34a83a4ce9f3c1">&#9670;&#160;</a></span>isValidKeyId()</h2>
 
@@ -543,6 +660,93 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 
 <p>Returns a regex to match URL protocols. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
+
+</div>
+</div>
+<a id="a77bcdde819b9f0bd6a68c84cd8198e23" name="a77bcdde819b9f0bd6a68c84cd8198e23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77bcdde819b9f0bd6a68c84cd8198e23">&#9670;&#160;</a></span>regularFilesUnder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::regularFilesUnder </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dir</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>nameFilters</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QStringList *</td>          <td class="paramname"><span class="paramname"><em>skipped</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>hiddenFiles</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;) -&gt;  QStringList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Regular files under <code class="param">dir</code> whose name matches one of <code class="param">nameFilters</code>, found by walking only real directories. </p>
+<p>Symbolic links and NTFS junctions are never entered and never listed: either can point outside the tree, and QDirIterator's own recursion treats a junction as an ordinary directory (Qt marks it JunctionType, not LinkType, so QDir::NoSymLinks does not see it). Hidden directories (<span class="tt">.git</span>, a sync tool's version folder) are not entered either, as with QDirIterator without QDir::Hidden.</p>
+<p><code class="param">dir</code> itself is followed whatever it is: the configured store root is commonly a symlink (<span class="tt">~/.password-store</span> to a synced folder), and it is the user's choice, not something found inside the store. A caller that gets its folder from the store tree decides with <a class="el" href="#a746306345314ca148272abc2dd3e9e3c" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul...">isLinkedFolder()</a> first.</p>
+<p>The walk is a listing, not a lock: what is a regular file when listed can be replaced before it is opened. That is the store's trust boundary (SECURITY.md), not something a walk can close. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>Directory to walk. </td></tr>
+    <tr><td class="paramname">nameFilters</td><td>Wildcards, as for QDir::setNameFilters(). </td></tr>
+    <tr><td class="paramname">skipped</td><td>Receives what was left out although it is in the way: every linked directory, and every link or special file (FIFO, socket, device) whose name matches <code class="param">nameFilters</code>. Null to not care. </td></tr>
+    <tr><td class="paramname">hiddenFiles</td><td>List hidden files too (<span class="tt">.gpg-id</span>); hidden directories stay closed regardless. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Absolute paths, sorted by name within each directory, a directory's files before its subdirectories. </dd></dl>
+
+</div>
+</div>
+<a id="ad23339038f3f09d99359f1a25d659a6f" name="ad23339038f3f09d99359f1a25d659a6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad23339038f3f09d99359f1a25d659a6f">&#9670;&#160;</a></span>removeTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::removeTree </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dir</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove <code class="param">dir</code> and everything in it, the way <span class="tt">rm -rf</span> does: a symbolic link or NTFS junction, <code class="param">dir</code> itself or anything inside, is removed as an entry and what it points to is never entered. A trailing separator on <code class="param">dir</code> does not change that. </p>
+<p>QDir::removeRecursively() descends into junctions (it stops only at what Qt calls a symlink) and would empty the junction's target. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>Directory to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when <code class="param">dir</code> is gone. </dd></dl>
 
 </div>
 </div>

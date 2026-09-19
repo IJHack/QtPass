@@ -271,22 +271,23 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  <span class="keywordtype">void</span> reencryptPath(<span class="keyword">const</span> QString &amp;dir);</div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  <span class="keywordtype">void</span> exportPublicKey();</div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>  <span class="keywordtype">void</span> addRecipient(<span class="keyword">const</span> QString &amp;dir);</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  <span class="keywordtype">void</span> showShareHelp();</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  <span class="keywordtype">void</span> applyTextBrowserSettings();</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>  <span class="keywordtype">void</span> applyWindowFlagsSettings();</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  <span class="keywordtype">void</span> saveWindowState();</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span></div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  <span class="keywordtype">void</span> updateGitButtonVisibility(<span class="keywordtype">bool</span> uiEnabled = <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>  <span class="keywordtype">void</span> updateOtpButtonVisibility(<span class="keywordtype">bool</span> uiEnabled = <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>  <span class="keywordtype">void</span> updateGrepButtonVisibility();</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>  <span class="keywordtype">void</span> enableGitButtons(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;);</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span> </div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>  <span class="keywordtype">void</span> updateProcessOutputVisibility();</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>};</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  <span class="keyword">auto</span> refuseLinkedFolder(<span class="keyword">const</span> QString &amp;dir) -&gt; bool;</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>  <span class="keywordtype">void</span> showShareHelp();</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> </div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>  <span class="keywordtype">void</span> applyTextBrowserSettings();</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  <span class="keywordtype">void</span> applyWindowFlagsSettings();</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  <span class="keywordtype">void</span> saveWindowState();</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span></div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  <span class="keywordtype">void</span> updateGitButtonVisibility(<span class="keywordtype">bool</span> uiEnabled = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>  <span class="keywordtype">void</span> updateOtpButtonVisibility(<span class="keywordtype">bool</span> uiEnabled = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>  <span class="keywordtype">void</span> updateGrepButtonVisibility();</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>  <span class="keywordtype">void</span> enableGitButtons(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;);</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span> </div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>  <span class="keywordtype">void</span> updateProcessOutputVisibility();</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>};</div>
 </div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span> </div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span><span class="preprocessor">#endif </span><span class="comment">// SRC_MAINWINDOW_H_</span></div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span><span class="preprocessor">#endif </span><span class="comment">// SRC_MAINWINDOW_H_</span></div>
 <div class="ttc" id="aclass_grep_search_controller_html"><div class="ttname"><a href="class_grep_search_controller.html">GrepSearchController</a></div><div class="ttdoc">State machine for MainWindow&#39;s content-search (grep) mode.</div><div class="ttdef"><b>Definition</b> <a href="grepsearchcontroller_8h_source.html#l00018">grepsearchcontroller.h:18</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a02ec9927bda826675653c0af916c8f33"><div class="ttname"><a href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">MainWindow::startReencryptPath</a></div><div class="ttdeci">void startReencryptPath()</div><div class="ttdoc">Begin a re-encryption pass on the current path.</div></div>
 <div class="ttc" id="aclass_main_window_html_a05fb9d72c044aa3bb7d187b994704e2f"><div class="ttname"><a href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">MainWindow::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">Save window state and geometry on close.</div></div>
