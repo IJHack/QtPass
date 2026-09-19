@@ -20,7 +20,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:href="class_process_output_panel.html" target="_top" xlink:title="The dockable &quot;Process Output&quot; console: numbered, colour&#45;coded lines of git/pass/gpg output with a lin...">
+<g id="a_Node000001"><a xlink:href="class_process_output_panel.html" target="_top" xlink:title="The dockable &quot;Process output&quot; console: numbered, colour&#45;coded lines of git/pass/gpg output with a lin...">
 <polygon fill="white" stroke="#666666" points="232,-19 119,-19 119,0 232,0 232,-19"/>
 <text text-anchor="middle" x="175.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ProcessOutputPanel</text>
 </a>
