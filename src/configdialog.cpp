@@ -89,7 +89,7 @@ ConfigDialog::ConfigDialog(QWidget *parent)
   ui->label->setText(ui->label->text() + VERSION);
   ui->comboBoxClipboard->clear();
 
-  ui->comboBoxClipboard->addItem(tr("No Clipboard"));
+  ui->comboBoxClipboard->addItem(tr("No clipboard"));
   ui->comboBoxClipboard->addItem(tr("Always copy to clipboard"));
   ui->comboBoxClipboard->addItem(tr("On-demand copy to clipboard"));
 

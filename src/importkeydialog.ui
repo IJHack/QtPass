@@ -46,7 +46,7 @@
      <item>
       <widget class="QPushButton" name="pasteButton">
        <property name="text">
-        <string>From Clipboard</string>
+        <string>From clipboard</string>
        </property>
       </widget>
      </item>
