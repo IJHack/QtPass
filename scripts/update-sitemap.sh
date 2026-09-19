@@ -18,6 +18,7 @@ priority() {
     downloads|getting-started) echo 0.9 ;;
     advanced|macos|changelog|faq) echo 0.8 ;;
     screenshots) echo 0.7 ;;
+    security) echo 0.6 ;;
     privacy|contributing) echo 0.5 ;;
     changelog.*|old) echo 0.3 ;;
     *) echo 0.5 ;;
@@ -27,7 +28,7 @@ priority() {
 changefreq() {
   case "$1" in
     index|downloads|changelog) echo weekly ;;
-    macos|faq|contributing|screenshots) echo monthly ;;
+    macos|faq|contributing|screenshots|security) echo monthly ;;
     changelog.*|old|privacy) echo yearly ;;
     *) echo monthly ;;
   esac

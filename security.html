@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      QtPass security: how passwords are protected, what is not covered,
+      reporting
+    </title>
+    <meta
+      name="description"
+      content="How QtPass protects your passwords with GnuPG and what it cannot protect against, clipboard and screen safeguards, verifying downloads, the 2016 password generator advisory, and how to report a vulnerability."
+    />
+    <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.1-6" />
+    <link rel="canonical" href="https://qtpass.org/security" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="preload"
+      href="fonts/lato-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/lato-latin-700-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=1.8.1-6" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png?v=1.8.1-6"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png?v=1.8.1-6"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-icon-180x180.png?v=1.8.1-6"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="me" href="https://mastodon.social/@annejan" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#fafbfc"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#14181d"
+    />
+    <meta property="og:title" content="QtPass security" />
+    <meta property="og:site_name" content="QtPass" />
+    <meta property="og:url" content="https://qtpass.org/security" />
+    <meta
+      property="og:image"
+      content="https://qtpass.org/images/og.png?v=1.8.1-6"
+    />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta
+      property="og:image:alt"
+      content="The QtPass padlocked heart next to the name and the address qtpass.org"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="og:description"
+      content="How QtPass protects your passwords with GnuPG and what it cannot protect against, clipboard and screen safeguards, verifying downloads, the 2016 password generator advisory, and how to report a vulnerability."
+    />
+    <meta property="og:type" content="website" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "QtPass",
+            "item": "https://qtpass.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Security",
+            "item": "https://qtpass.org/security"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="background"></div>
+    <div class="wrapper">
+      <aside class="sidebar">
+        <header>
+          <h1>QtPass security <small>1.8.1</small></h1>
+          <p>
+            What protects your passwords, what does not, and how to reach us
+            when you find a hole.
+          </p>
+
+          <p class="view">
+            <a href="/">Back to QtPass Home</a>
+          </p>
+          <p>
+            <small
+              >Found a vulnerability? Mail
+              <a href="mailto:help@qtpass.org">help@qtpass.org</a>, see
+              <a href="#reporting">reporting</a>.</small
+            >
+          </p>
+        </header>
+        <footer>
+          <p>
+            This project is maintained by
+            <a title="IJhack on GitHub" href="https://github.com/IJHack"
+              >IJHack</a
+            >
+          </p>
+          <p>
+            <small
+              >Based on a theme by
+              <a href="https://github.com/orderedlist">orderedlist</a></small
+            >
+          </p>
+          <p class="fine">
+            <small
+              ><a title="QtPass Sitemap" href="/sitemap">Sitemap</a> ·
+              <a title="QtPass privacy policy" href="/privacy">Privacy</a> ·
+              <a title="Latest documentation" href="/docs/">API docs</a></small
+            >
+          </p>
+        </footer>
+      </aside>
+      <section id="main">
+        <h2>
+          <a
+            id="model"
+            class="anchor"
+            href="#model"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span class="octicon octicon-link"></span></a
+          >How your passwords are stored
+        </h2>
+        <p>
+          QtPass does not encrypt anything itself. Every password is a file in
+          your password store, encrypted by
+          <a href="https://gnupg.org/">GnuPG</a> to the public keys listed in
+          the folder's <code>.gpg-id</code>; only the matching secret keys can
+          open it. The store is a plain folder (usually
+          <code>~/.password-store</code>) that you can read with
+          <a href="https://www.passwordstore.org/">pass</a>, back up, or put
+          under Git. QtPass is the window onto it: it asks GnuPG to decrypt an
+          entry when you select it and to encrypt when you save.
+        </p>
+        <p>
+          Nothing leaves your computer unless you turn on Git and push to a
+          remote of your choosing. QtPass has no accounts, no telemetry and no
+          network code of its own (<a href="/privacy">privacy policy</a>).
+        </p>
+
+        <h2>
+          <a
+            id="considerations"
+            class="anchor"
+            href="#considerations"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span class="octicon octicon-link"></span></a
+          >What it protects against, and what it does not
+        </h2>
+        <p>
+          Someone who obtains your password store, but not your secret key, gets
+          nothing: the files are ciphertext. That covers a stolen backup, a
+          leaked Git remote, a shared server.
+        </p>
+        <p>
+          Someone who controls the computer you decrypt on gets everything you
+          decrypt there. No password manager can change that. A smartcard or
+          YubiKey narrows it: the secret key never leaves the card, so an
+          attacker who copies your disk or logs your keystrokes still cannot
+          decrypt on another machine. But once the card is plugged in and the
+          PIN entered, any software on that machine can ask it to decrypt (with
+          an old GnuPG, thanks to
+          <a href="https://www.cve.org/CVERecord?id=CVE-2015-3298"
+            >CVE-2015-3298</a
+          >, even without the PIN). Two things help against a targeted attack:
+        </p>
+        <ul>
+          <li>
+            A card that requires a touch or a confirmation for every decryption,
+            or at least keeps a counter you can compare afterwards.
+          </li>
+          <li>
+            Different cards, or at least different keys, for different groups of
+            passwords, so one unlocked key does not unlock the whole store.
+          </li>
+        </ul>
+        <p>
+          The <a href="https://annejan.com/media/qtpass.pdf">whitepaper</a>
+          from the early days goes through the model in more detail; the
+          conclusions still hold.
+        </p>
+
+        <h2>
+          <a
+            id="screen"
+            class="anchor"
+            href="#screen"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span class="octicon octicon-link"></span></a
+          >Clipboard and screen
+        </h2>
+        <p>
+          A decrypted password is only as private as the screen and the
+          clipboard it ends up on. QtPass gives you the knobs in
+          <strong>Configuration</strong>:
+        </p>
+        <ul>
+          <li>
+            <strong>Clipboard</strong>: copy always, on demand, or never; clear
+            it again after a timeout (45 seconds by default). On X11 the primary
+            selection can be left out of it.
+          </li>
+          <li>
+            <strong>Content panel</strong>: hide the password, hide all content,
+            and clear the panel after a timeout, for working with someone
+            looking over your shoulder.
+          </li>
+          <li>
+            One-time password secrets are never shown, only the current code.
+          </li>
+        </ul>
+
+        <h2>
+          <a
+            id="verify"
+            class="anchor"
+            href="#verify"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span class="octicon octicon-link"></span></a
+          >Verifying downloads
+        </h2>
+        <p>
+          Every release asset on the
+          <a href="https://github.com/IJHack/QtPass/releases">releases page</a>
+          has a detached signature next to it (<code>.asc</code>), made with the
+          maintainer's OpenPGP key:
+        </p>
+        <pre><code>DF7F EF8D FBA7 21E3 20B1  8F56 15B6 3ADC A003 4B9E</code></pre>
+        <pre><code>gpg --keyserver hkps://keys.openpgp.org --recv-keys DF7FEF8DFBA721E320B18F5615B63ADCA0034B9E
+gpg --verify QtPass-1.8.1.tar.gz.asc QtPass-1.8.1.tar.gz</code></pre>
+        <p>
+          The same key is at
+          <a href="https://annejan.com/key.asc">annejan.com/key.asc</a>.
+          Packages from your distribution are signed by the distribution
+          instead; the <a href="/downloads">downloads page</a> lists them. The
+          macOS <code>.dmg</code> and the Windows installer are not code-signed
+          by Apple or Microsoft; the OpenPGP signature is what you have there,
+          see <a href="/macos">macOS</a>.
+        </p>
+
+        <h2>
+          <a
+            id="generator"
+            class="anchor"
+            href="#generator"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span class="octicon octicon-link"></span></a
+          >Password generator
+        </h2>
+        <p>
+          The built-in generator has used a proper random source since 1.2.1;
+          today that is the operating system's
+          (<code>QRandomGenerator::system()</code>), with rejection sampling so
+          no character is favoured. Or it calls <code>pwgen</code> if you
+          prefer.
+        </p>
+        <p>
+          <strong>Advisory, 2016:</strong> passwords generated by QtPass
+          <em>before 1.2.1</em> are predictable. The generator used libc's
+          <code>random()</code> seeded with the millisecond within the current
+          second, so there were only 1000 possible sequences (<a
+            href="https://github.com/IJHack/QtPass/issues/338"
+            >#338</a
+          >). This was a QtPass bug, not one in pass or GnuPG. If you still have
+          passwords generated by a QtPass older than 1.2.1, change them.
+        </p>
+
+        <h2>
+          <a
+            id="reporting"
+            class="anchor"
+            href="#reporting"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span class="octicon octicon-link"></span></a
+          >Reporting a vulnerability
+        </h2>
+        <p>
+          Please do not open a public issue for a security problem. Instead:
+        </p>
+        <ul>
+          <li>
+            mail <a href="mailto:help@qtpass.org">help@qtpass.org</a>, encrypted
+            to the key above if you like, or
+          </li>
+          <li>
+            open a
+            <a href="https://github.com/IJHack/QtPass/security/advisories/new"
+              >private security advisory</a
+            >
+            on GitHub.
+          </li>
+        </ul>
+        <p>
+          Include what you found, how to reproduce it and what you think the
+          impact is; a suggested fix is welcome but not required. You get an
+          acknowledgement within 48 hours and a first assessment within a week;
+          fixes are prioritised by severity. Security fixes go into the current
+          1.8.x release; older versions are not maintained. The machine-readable
+          version of this is
+          <a href="/.well-known/security.txt">/.well-known/security.txt</a>, the
+          source of record is
+          <a href="https://github.com/IJHack/QtPass/blob/main/SECURITY.md"
+            >SECURITY.md</a
+          >.
+        </p>
+      </section>
+    </div>
+    <script src="javascripts/main.js?v=1.8.1-6" defer></script>
+  </body>
+</html>

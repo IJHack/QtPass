@@ -36,7 +36,7 @@ Redirect 301 /linux /#linux
 Redirect 301 /windows /#windows-quick
 Redirect 301 /osx /#macos-quick
 Redirect 301 /dependencies /downloads#dependencies
-Redirect 301 /security-considerations /old#security-considerations
+Redirect 301 /security-considerations /security#considerations
 Redirect 301 /planned-features /old#planned-features
 Redirect 301 /known-issues /old#known-issues
 Redirect 301 /cant-save-a-password /old#cant-save-a-password

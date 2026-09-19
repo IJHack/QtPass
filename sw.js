@@ -27,6 +27,7 @@ const PRECACHE_URLS = [
   "/old",
   "/privacy",
   "/screenshots",
+  "/security",
   "/stylesheets/styles.css",
   "/javascripts/main.js",
   "/docs/",
