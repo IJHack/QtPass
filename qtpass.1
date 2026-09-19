@@ -1,21 +1,136 @@
-.TH QtPass "1" "Sep 16, 2015"
+.\" SPDX-FileCopyrightText: 2015 Philip Rinn, 2026 Anne Jan Brouwer
+.\" SPDX-License-Identifier: GPL-3.0-or-later
+.TH QTPASS 1 "September 2026" "QtPass 2.0" "User Commands"
 .SH NAME
-qtpass \- GUI for password manager pass
+qtpass \- graphical front end for pass, the standard Unix password manager
 .SH SYNOPSIS
-\fBqtpass\fP [fuzzy name]
+.B qtpass
+.RI [ "Qt options" ]
+.RI [ "search text" ...]
 .SH DESCRIPTION
-\fBQtPass\fP is a GUI password manager based on pass with the following
- features:
-  * Reading pass password stores
-  * Decrypting and displaying the password info
-  * Updating from the git repository
-  * Editing and adding of passwords
-  * Adding and removing people from gpg-id per folder
-  * Read operations also supported without pass (using gpg and git)
-  * Configuration options for backends and executable/folder locations
-  * Copying password to clipboard
-  * Hiding of password against shouldersurfing
-  * Experimental WebDAV support
-.SH AUTHOR
-This  manual page was written by Philip Rinn <rinni@inventati.org> for the
-Debian GNU/Linux system (but may be used by others).
+.B QtPass
+shows a password store as a tree, decrypts an entry when it is selected
+and lets you add, edit, delete, move and share entries. The store is the
+same directory that
+.BR pass (1)
+uses, usually
+.IR ~/.password-store :
+one GnuPG-encrypted file per password, encrypted to the keys listed in the
+nearest
+.I .gpg-id
+file, optionally kept under Git. QtPass does no encryption itself; it runs
+.BR gpg (1),
+and either
+.BR pass (1)
+or
+.BR git (1)
+directly (the \(lqnative\(rq backend, which needs neither pass nor a shell).
+.PP
+Features, all switched on or off in
+.BR Configuration :
+.IP \[u2022] 3
+Several password stores side by side as profiles, each with its own Git
+settings and, when the store demands it, signing key for
+.IR .gpg-id .
+.IP \[u2022] 3
+Per-folder recipients: choose who can decrypt a folder and re-encrypt it
+for them.
+.IP \[u2022] 3
+Templates that turn
+.I key: value
+lines of an entry into fields; field names can be renamed in place.
+.IP \[u2022] 3
+Built-in one-time passwords (TOTP per RFC 6238, SHA-1/256/512, Steam
+Guard) from an
+.I otpauth://
+URI or a
+.I TOTP:
+line; the secret is never shown.
+.IP \[u2022] 3
+A password generator using the system's random source or
+.BR pwgen (1),
+with a choice of character sets.
+.IP \[u2022] 3
+Clipboard modes (always, on demand, never) with a clearing timeout, and
+options to hide the password or the whole entry against shoulder surfing.
+.IP \[u2022] 3
+Full-text search through decrypted entries with
+.BR "pass grep" ,
+QR codes for a value, a system tray icon, and a menu bar that is off by
+default (Ctrl+M).
+.SH ARGUMENTS
+Any non-option argument is used as the initial search text: the tree is
+expanded and filtered to it, and an exact match is opened. When
+QtPass is already running, the arguments are handed to that instance
+instead of starting a second one, and its window is raised.
+.SH OPTIONS
+QtPass has no options of its own. The standard Qt options apply, among
+them
+.BR \-platform ,
+.BR \-style ,
+.BR \-qwindowgeometry ,
+.BR \-qwindowtitle ,
+.BR \-reverse
+and
+.BR \-session .
+Options are not passed on to a running instance.
+.SH ENVIRONMENT
+.TP
+.B GNUPGHOME
+Passed through to
+.BR gpg (1)
+unless a GnuPG home directory is set in Configuration, which then wins.
+.TP
+.B SSH_AUTH_SOCK
+Used by
+.BR git (1)
+for SSH remotes. QtPass probes
+.B gpgconf
+for the agent's socket when the variable is unset; an explicit path can be
+set in Configuration.
+.TP
+.B QT_LOGGING_RULES
+.B QT_LOGGING_RULES=qtpass.debug=true
+prints every command QtPass runs, with its arguments and exit status, to
+standard error. Useful for bug reports; what is fed to those commands
+(passwords, passphrases) is not logged.
+.SH FILES
+.TP
+.I ~/.password-store
+The default password store; another directory can be chosen per profile.
+.TP
+.I ~/.config/IJHack/QtPass.conf
+Settings on Linux and BSD. macOS uses
+.IR ~/Library/Preferences/com.IJHack.QtPass.plist ,
+Windows the registry key
+.IR HKEY_CURRENT_USER\eSoftware\eIJHack\eQtPass .
+.TP
+.I .gpg-id
+Per folder, the recipients an entry below it is encrypted to; managed with
+the Users dialog.
+.TP
+.I .gpg-id.sig
+The signature pass requires when
+.B PASSWORD_STORE_SIGNING_KEY
+is in use; QtPass writes it with the profile's signing key.
+.SH EXIT STATUS
+0 on a normal exit, also when the arguments were handed to an instance
+that was already running.
+.SH SEE ALSO
+.BR pass (1),
+.BR gpg (1),
+.BR git (1),
+.BR pwgen (1)
+.PP
+.UR https://qtpass.org/
+.UE ,
+the FAQ at
+.UR https://qtpass.org/faq
+.UE ,
+and the issue tracker at
+.UR https://github.com/IJHack/QtPass/issues
+.UE .
+.SH AUTHORS
+QtPass is written by Anne Jan Brouwer and contributors, and translated by
+the Weblate community. This manual page was first written by Philip Rinn
+for the Debian GNU/Linux system.

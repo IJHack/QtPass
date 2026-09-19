@@ -109,6 +109,10 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   `#ifdef QT_DEBUG` blocks around a `dbg()` macro. Release builds keep it
   compiled in; `QT_LOGGING_RULES="qtpass.debug=true"` turns it on, so a user
   can attach a trace to a bug report without a debug build (see the FAQ)
+- The manual page describes the current program (it dated from 2015 and
+  still advertised WebDAV): arguments as search text and the single
+  instance, the Qt options, `GNUPGHOME`, `SSH_AUTH_SOCK` and
+  `QT_LOGGING_RULES`, the settings and store locations
 - User-interface strings use sentence case throughout ("Export public key",
   "Password length:", "OTP code", "Rename folder to:", …); the handful that
   still capitalised Every Word were separate strings for translators, who get
