@@ -306,7 +306,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="92"/>
         <source>No clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bez schránky</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
@@ -640,27 +640,27 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Obecné</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Schránka</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hesla</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
         <source>Show menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zobrazit panel nabídek</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+M jej zobrazí nebo skryje také z hlavního okna</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
@@ -905,17 +905,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dvojklikem toto pole přejmenujete</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Přejmenovat pole…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Odebrat pole</translation>
     </message>
 </context>
 <context>
@@ -1192,7 +1192,7 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ze schránky</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1234,7 +1234,7 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nevypadá jako klíč GPG ve formátu ASCII-armored. Nejprve jej převeďte pomocí &lt;code&gt;gpg --armor --export&lt;/code&gt;, nebo vložte ASCII-armored blok přes &lt;b&gt;Ze schránky&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -2354,12 +2354,12 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Odebrat pole</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pole s názvem %1 již existuje.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>

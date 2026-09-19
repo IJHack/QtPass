@@ -158,27 +158,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Üldine</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lõikelaud</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Salasõnad</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
         <source>Show menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Näita menüüriba</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+M näitab või peidab selle ka peaaknas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
@@ -504,7 +504,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="92"/>
         <source>No clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lõikelauda ei kasutata</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
@@ -909,17 +909,17 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Välja nime muutmiseks tee topeltklõps</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Muuda välja nime…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Eemalda väli</translation>
     </message>
 </context>
 <context>
@@ -1193,7 +1193,7 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lõikelaualt</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1235,7 +1235,7 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ei tundu olevat ASCII-armored GPG võti. Teisenda see esmalt käsuga &lt;code&gt;gpg --armor --export&lt;/code&gt; või kleebi armored plokk nupu &lt;b&gt;Lõikelaualt&lt;/b&gt; kaudu.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -2421,12 +2421,12 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Eemalda väli</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Väli nimega %1 on juba olemas.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>

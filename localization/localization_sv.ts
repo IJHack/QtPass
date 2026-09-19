@@ -333,27 +333,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Allmänt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Urklipp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lösenord</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
         <source>Show menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Visa menyrad</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+M visar eller döljer den även från huvudfönstret</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
@@ -538,7 +538,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="92"/>
         <source>No clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inget urklipp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
@@ -881,17 +881,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dubbelklicka för att byta namn på det här fältet</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Byt namn på fält…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ta bort fält</translation>
     </message>
 </context>
 <context>
@@ -1165,7 +1165,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Från urklipp</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1207,7 +1207,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ser inte ut som en ASCII-bepansrad GPG-nyckel. Konvertera den med &lt;code&gt;gpg --armor --export&lt;/code&gt; först, eller klistra in det bepansrade blocket via &lt;b&gt;Från urklipp&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -2318,12 +2318,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ta bort fält</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ett fält med namnet %1 finns redan.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>

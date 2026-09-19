@@ -158,27 +158,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">일반</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">클립보드</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">비밀번호</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
         <source>Show menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">메뉴 모음 표시</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">메인 창에서도 Ctrl+M으로 표시하거나 숨길 수 있습니다</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
@@ -504,7 +504,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="92"/>
         <source>No clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">클립보드 사용 안 함</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
@@ -909,17 +909,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">두 번 클릭하여 이 필드의 이름을 바꿉니다</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">필드 이름 바꾸기…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">필드 제거</translation>
     </message>
 </context>
 <context>
@@ -1190,7 +1190,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">클립보드에서</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1232,7 +1232,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1은(는) ASCII-armored GPG 키처럼 보이지 않습니다. 먼저 &lt;code&gt;gpg --armor --export&lt;/code&gt;로 변환하거나, &lt;b&gt;클립보드에서&lt;/b&gt;를 통해 armored 블록을 붙여 넣으십시오.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -2380,12 +2380,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">필드 제거</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1(이)라는 필드가 이미 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>

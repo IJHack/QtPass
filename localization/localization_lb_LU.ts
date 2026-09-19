@@ -255,27 +255,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Allgemeng</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Clipboard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Passwierder</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
         <source>Show menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Menüleescht weisen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+M weist oder verstoppt se och aus der Haaptfënster eraus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="988"/>
@@ -480,7 +480,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="92"/>
         <source>No clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kee Clipboard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
@@ -853,17 +853,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Duebelklickt, fir dëst Feld ëmzebenennen</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Feld ëmbenennen…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Feld ewechhuelen</translation>
     </message>
 </context>
 <context>
@@ -1137,7 +1137,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aus Zwëscheaflag</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1179,7 +1179,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 gesäit net wéi en ASCII-armored GPG-Schlëssel aus. Konvertéiert en éischt mat &lt;code&gt;gpg --armor --export&lt;/code&gt;, oder fëgt den ASCII-armored Block iwwer &lt;b&gt;Aus Zwëscheaflag&lt;/b&gt; an.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -2182,12 +2182,12 @@ Weider?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Feld ewechhuelen</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">E Feld mam Numm %1 gëtt et schonn.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>

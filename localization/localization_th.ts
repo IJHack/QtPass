@@ -282,27 +282,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ทั่วไป</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">คลิปบอร์ด</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">รหัสผ่าน</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
         <source>Show menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">แสดงแถบเมนู</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">กด Ctrl+M ในหน้าต่างหลักก็แสดงหรือซ่อนแถบเมนูได้เช่นกัน</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1047"/>
@@ -546,7 +546,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="92"/>
         <source>No clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ไม่ใช้คลิปบอร์ด</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
@@ -849,17 +849,17 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ดับเบิลคลิกเพื่อเปลี่ยนชื่อฟิลด์นี้</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">เปลี่ยนชื่อฟิลด์…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ลบฟิลด์</translation>
     </message>
 </context>
 <context>
@@ -1130,7 +1130,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">จากคลิปบอร์ด</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1172,7 +1172,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ดูเหมือนจะไม่ใช่กุญแจ GPG แบบ ASCII-armored แปลงด้วย &lt;code&gt;gpg --armor --export&lt;/code&gt; ก่อน หรือวางบล็อก armored ผ่าน &lt;b&gt;จากคลิปบอร์ด&lt;/b&gt;</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -2134,12 +2134,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ลบฟิลด์</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">มีฟิลด์ชื่อ %1 อยู่แล้ว</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>

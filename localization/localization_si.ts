@@ -158,27 +158,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">සාමාන්‍ය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">පසුරු පුවරුව</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">මුරපද</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
         <source>Show menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">මෙනු තීරුව පෙන්වන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+M මගින් ප්‍රධාන කවුළුවෙන්ද එය පෙන්වීම හෝ සැඟවීම කළ හැකිය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
@@ -504,7 +504,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="92"/>
         <source>No clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">පසුරු පුවරුවක් නැත</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
@@ -909,17 +909,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">මෙම ක්ෂේත්‍රය නැවත නම් කිරීමට දෙවරක් ක්ලික් කරන්න</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ක්ෂේත්‍රය නැවත නම් කරන්න…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ක්ෂේත්‍රය ඉවත් කරන්න</translation>
     </message>
 </context>
 <context>
@@ -1193,7 +1193,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">පසුරු පුවරුවෙන්</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1235,7 +1235,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ASCII-සන්නද්ධ GPG යතුරක් ලෙස නොපෙනේ. එය මුලින්ම &lt;code&gt;gpg --armor --export&lt;/code&gt; සමඟ පරිවර්තනය කරන්න, නැතහොත් සන්නද්ධ කොටස &lt;b&gt;පසුරු පුවරුවෙන්&lt;/b&gt; හරහා අලවන්න.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -2349,12 +2349,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ක්ෂේත්‍රය ඉවත් කරන්න</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 නමින් ක්ෂේත්‍රයක් දැනටමත් පවතී.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>

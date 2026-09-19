@@ -282,27 +282,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਆਮ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕਲਿੱਪਬੋਰਡ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
         <source>Show menu bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਮੀਨੂ ਬਾਰ ਦਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+M ਮੁੱਖ ਵਿੰਡੋ ਤੋਂ ਵੀ ਇਸਨੂੰ ਦਿਖਾਉਂਦਾ ਜਾਂ ਲੁਕਾਉਂਦਾ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1047"/>
@@ -546,7 +546,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="92"/>
         <source>No clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕੋਈ ਕਲਿੱਪਬੋਰਡ ਨਹੀਂ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
@@ -849,17 +849,17 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇਸ ਫੀਲਡ ਦਾ ਨਾਂ ਬਦਲਣ ਲਈ ਡਬਲ-ਕਲਿੱਕ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਫੀਲਡ ਦਾ ਨਾਂ ਬਦਲੋ…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਫੀਲਡ ਹਟਾਓ</translation>
     </message>
 </context>
 <context>
@@ -1133,7 +1133,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕਲਿੱਪਬੋਰਡ ਤੋਂ</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1175,7 +1175,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ASCII-armored GPG ਕੀ ਵਰਗੀ ਨਹੀਂ ਲੱਗਦੀ। ਇਸਨੂੰ ਪਹਿਲਾਂ &lt;code&gt;gpg --armor --export&lt;/code&gt; ਨਾਲ ਬਦਲੋ, ਜਾਂ armored ਬਲਾਕ ਨੂੰ &lt;b&gt;ਕਲਿੱਪਬੋਰਡ ਤੋਂ&lt;/b&gt; ਰਾਹੀਂ ਪੇਸਟ ਕਰੋ।</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -2133,12 +2133,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਫੀਲਡ ਹਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਨਾਂ ਦੀ ਫੀਲਡ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>
