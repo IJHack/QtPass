@@ -22,6 +22,11 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Security
 
+- Generating a GPG key without a passphrase is an explicit choice: the
+  key-generation dialog's OK stays off with empty passphrase fields until a
+  passphrase is typed twice or "No passphrase: store the private key
+  unprotected" is ticked, which clears and disables the fields. Two empty
+  fields used to produce an unprotected key without a word [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - A signed `.gpg-id` is verified and parsed from the same bytes: the
   signature check used to run on the path and the recipient list was read
   from the file afterwards, so anyone able to write to the store in between
