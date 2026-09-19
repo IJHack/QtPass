@@ -6,6 +6,12 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### New Features
 
+- Field names in the password dialog can be edited in place: double-click a
+  `key: value` field's label (or use Rename in its context menu) to change
+  the key; the × at the end of the value, or the context menu, removes the
+  field. Applies to the fields
+  "Show all fields templated" creates from the entry; the template's own
+  fields keep their names (#132)
 - A Linux AppImage (`QtPass-x.y.z-x86_64.AppImage`) is built by CI and
   attached to every release next to the Windows installer and the macOS dmg.
   It bundles Qt only and uses the `pass`, `gpg` and `git` already on the

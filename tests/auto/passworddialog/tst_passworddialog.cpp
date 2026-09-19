@@ -11,6 +11,7 @@
  * error keeps the dialog open with the reason shown instead of closing it.
  */
 
+#include <QAction>
 #include <QCheckBox>
 #include <QComboBox>
 #include <QDialog>
@@ -20,12 +21,14 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QPlainTextEdit>
+#include <QPointer>
 #include <QPushButton>
 #include <QSignalSpy>
 #include <QTemporaryDir>
 #include <QToolButton>
 #include <QtTest>
 
+#include "../../../src/fieldlabel.h"
 #include "../../../src/pass.h"
 #include "../../../src/passworddialog.h"
 #include "../../../src/qtpasssettings.h"
@@ -98,7 +101,156 @@ private Q_SLOTS:
   void templateRowHiddenWithoutTemplates();
   void templateBoxListsAndAppliesTemplates();
   void ctrlTCyclesTemplatesAndUpdatesBox();
+  void fieldLabelRenamesTheField();
+  void fieldLabelRefusesADuplicateName();
+  void fieldLabelEscapeCancelsAndRemoveDropsTheRow();
+  void templateFieldsKeepPlainLabels();
 };
+
+namespace {
+/**
+ * @brief Settings with an empty template and "Template all fields" on, so
+ *        every `key: value` line of the entry becomes a form row (all-fields
+ *        only applies while templating is on, see #1766).
+ */
+auto allFieldsSettings() -> AppSettings {
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate.clear();
+  s.templateAllFields = true;
+  return s;
+}
+
+auto fieldLabel(PasswordDialog &d, const QString &name) -> FieldLabel * {
+  const auto labels = d.findChildren<FieldLabel *>();
+  for (FieldLabel *label : labels) {
+    if (label->text() == name) {
+      return label;
+    }
+  }
+  return nullptr;
+}
+} // namespace
+
+/**
+ * @brief #132: double-click on a field name (or Rename in its context menu)
+ *        edits it in place; Enter renames the field and the entry is written
+ *        back under the new key.
+ */
+void tst_passworddialog::fieldLabelRenamesTheField() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\nurl: example.com\n"));
+
+  FieldLabel *label = fieldLabel(d, QStringLiteral("login"));
+  QVERIFY2(label != nullptr, "an all-fields row must get a FieldLabel");
+  QVERIFY2(!label->toolTip().isEmpty(), "the label must say it can be renamed");
+  label->startEdit();
+  auto *editor = d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY2(editor != nullptr, "startEdit() must open an editor");
+  QCOMPARE(editor->text(), QStringLiteral("login"));
+  editor->setText(QStringLiteral(" user:name "));
+  QTest::keyClick(editor, Qt::Key_Return);
+
+  QCOMPARE(label->text(), QStringLiteral("username"));
+  const QString written = d.getPassword();
+  QVERIFY2(
+      written.contains(QStringLiteral("username: bob\n")),
+      qPrintable("the entry must be written under the new key:\n" + written));
+  QVERIFY2(!written.contains(QStringLiteral("login:")),
+           "the old key must be gone");
+  QVERIFY2(written.contains(QStringLiteral("url: example.com\n")),
+           "other fields must be untouched");
+}
+
+/**
+ * @brief Two fields cannot share a key: the rename is refused, the status
+ *        label says why, and the field keeps its name.
+ */
+void tst_passworddialog::fieldLabelRefusesADuplicateName() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\nurl: example.com\n"));
+
+  FieldLabel *label = fieldLabel(d, QStringLiteral("login"));
+  QVERIFY(label != nullptr);
+  label->startEdit();
+  auto *editor = d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY(editor != nullptr);
+  editor->setText(QStringLiteral("url"));
+  QTest::keyClick(editor, Qt::Key_Return);
+
+  QCOMPARE(label->text(), QStringLiteral("login"));
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+  QVERIFY(status != nullptr);
+  QVERIFY2(
+      status->text().contains(QStringLiteral("url")),
+      qPrintable("the status label must name the clash: " + status->text()));
+  QVERIFY(d.getPassword().contains(QStringLiteral("login: bob\n")));
+}
+
+/**
+ * @brief Escape leaves the name alone; "Remove field" drops the row and the
+ *        line is no longer written back.
+ */
+void tst_passworddialog::fieldLabelEscapeCancelsAndRemoveDropsTheRow() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\nurl: example.com\n"));
+
+  FieldLabel *label = fieldLabel(d, QStringLiteral("login"));
+  QVERIFY(label != nullptr);
+  label->startEdit();
+  auto *editor = d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY(editor != nullptr);
+  editor->setText(QStringLiteral("nope"));
+  QTest::keyClick(editor, Qt::Key_Escape);
+  QCOMPARE(label->text(), QStringLiteral("login"));
+  QVERIFY(d.getPassword().contains(QStringLiteral("login: bob\n")));
+
+  QPointer<QLineEdit> line = d.findChild<QLineEdit *>(QStringLiteral("login"));
+  QVERIFY(line != nullptr);
+  auto *remove =
+      line->findChild<QAction *>(QStringLiteral("removeFieldAction"));
+  QVERIFY2(remove != nullptr, "the value field must carry a remove action");
+  QCOMPARE(remove->toolTip(), QStringLiteral("Remove field"));
+  remove->trigger();
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY2(line.isNull(), "the field's line edit must be deleted with its row");
+  const QString written = d.getPassword();
+  QVERIFY2(!written.contains(QStringLiteral("login")),
+           qPrintable("a removed field must not be written back:\n" + written));
+  QVERIFY(written.contains(QStringLiteral("url: example.com\n")));
+}
+
+/**
+ * @brief Fields that come from the template are named by the template, so
+ *        their labels stay plain: renaming one would only create a stray key.
+ */
+void tst_passworddialog::templateFieldsKeepPlainLabels() {
+  FakePass pass;
+  AppSettings s = allFieldsSettings();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("login");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\nurl: example.com\n"));
+
+  QVERIFY2(fieldLabel(d, QStringLiteral("login")) == nullptr,
+           "the template's own field must not get a FieldLabel");
+  QVERIFY2(fieldLabel(d, QStringLiteral("url")) != nullptr,
+           "the entry's extra field must still be renameable");
+}
 
 void tst_passworddialog::existingEntryLocksEditorUntilContentLoads() {
   FakePass pass;

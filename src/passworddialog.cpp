@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2015 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "passworddialog.h"
+#include "fieldlabel.h"
 #include "filecontent.h"
 #include "pass.h"
 #include "passwordconfiguration.h"
@@ -305,10 +306,29 @@ void PasswordDialog::setPassword(const QString &password) {
     auto *line = new QLineEdit();
     line->setObjectName(nv.name);
     line->setText(nv.value);
-    ui->formLayout->addRow(new QLabel(nv.name), line);
+    auto *label = new FieldLabel(nv.name);
+    label->setBuddy(line);
+    ui->formLayout->addRow(label, line);
     setTabOrder(previous, line);
     m_otherLines.append(line);
     previous = line;
+    // Both widgets are rows of the form; removeRow() deletes them together,
+    // so a rename or removal that arrives afterwards finds no receiver.
+    connect(label, &FieldLabel::renamed, this,
+            [this, line, label](const QString &, const QString &to) {
+              renameField(line, label, to);
+            });
+    connect(label, &FieldLabel::removeRequested, this,
+            [this, line] { removeField(line); });
+    // The visible way to remove the field; the context menu is the other.
+    auto *remove = line->addAction(
+        QIcon::fromTheme(QStringLiteral("edit-delete"),
+                         QIcon(QStringLiteral(":/icons/edit-delete.svg"))),
+        QLineEdit::TrailingPosition);
+    remove->setObjectName(QStringLiteral("removeFieldAction"));
+    remove->setToolTip(tr("Remove field"));
+    connect(remove, &QAction::triggered, this,
+            [this, line] { removeField(line); });
   }
 
   // setPlainText (not insertPlainText) so re-populating replaces the body
@@ -317,6 +337,29 @@ void PasswordDialog::setPassword(const QString &password) {
   ui->plainTextEdit->setPlainText(fileContent.getRemainingData());
 
   // m_otherLines was just rebuilt, so the OTP field may be a new widget.
+  hookOtpField();
+}
+
+void PasswordDialog::renameField(QLineEdit *line, FieldLabel *label,
+                                 const QString &to) {
+  QList<QLineEdit *> allLines(m_templateLines);
+  allLines.append(m_otherLines);
+  for (QLineEdit *other : std::as_const(allLines)) {
+    if (other != line && other->objectName() == to) {
+      ui->statusLabel->setText(tr("A field called %1 already exists.").arg(to));
+      return;
+    }
+  }
+  ui->statusLabel->clear();
+  line->setObjectName(to);
+  label->setText(to);
+  // The field may have become, or stopped being, the OTP one.
+  hookOtpField();
+}
+
+void PasswordDialog::removeField(QLineEdit *line) {
+  m_otherLines.removeAll(line);
+  ui->formLayout->removeRow(line);
   hookOtpField();
 }
 
