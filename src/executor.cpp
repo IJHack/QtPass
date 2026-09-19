@@ -92,8 +92,15 @@ auto Executor::parseWslCommand(const QString &app)
     return std::nullopt;
   }
   WslCommand wsl;
-  // A bare wsl or wsl.exe is looked up on PATH as `wsl`; a path stays as is.
+#ifdef Q_OS_WIN
+  // A bare wsl or wsl.exe in any case is looked up on PATH as `wsl`; a path
+  // stays as is.
   wsl.launcher = separator < 0 ? QStringLiteral("wsl") : launcher;
+#else
+  // QtPass running inside WSL reaches wsl.exe through interop under exactly
+  // that name; nothing says `wsl` resolves too, so start what was written.
+  wsl.launcher = launcher;
+#endif
   // wsl.exe options that take a value; anything else starting with `-` is a
   // flag. A user-written -e/--exec is dropped, argv() always adds one.
   static const QStringList valued{

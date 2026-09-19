@@ -57,11 +57,11 @@ private Q_SLOTS:
   void executeBlockingCancelFlagAlreadySetSkipsStart();
   void wslPrefixBlockingUsesExec();
   void wslPrefixAsyncUsesExec();
-  void parseWslCommandAcceptsEveryWslSpelling();
-  void parseWslCommandRejectsShellCommandLines();
   void everyWslSpellingReachesTheSameArgv();
   void translatePathForWslUsesTheConfiguredDistribution();
 #endif
+  void parseWslCommandAcceptsEveryWslSpelling();
+  void parseWslCommandRejectsShellCommandLines();
   void wslExecArgsPrependsExec();
   void resolveExecutableRules();
   void resolveExecutableFindsBundledExeOnWindows();
@@ -234,6 +234,87 @@ void tst_executor::executeBlockingConstQString() {
 
 #endif
 
+/**
+ * @brief Every way of writing the launcher is one WSL command: bare or as a
+ *        path, any case, with wsl.exe options before the program.
+ */
+void tst_executor::parseWslCommandAcceptsEveryWslSpelling() {
+  const struct {
+    const char *app;
+    const char *launcher;
+    QStringList options;
+    const char *command;
+  } cases[] = {
+      {"wsl gpg", "wsl", {}, "gpg"},
+      {"wsl.exe gpg", "wsl.exe", {}, "gpg"},
+      {"WSL /usr/bin/gpg", "WSL", {}, "/usr/bin/gpg"},
+      {"WSL.EXE gpg2", "WSL.EXE", {}, "gpg2"},
+      {"wsl -e gpg", "wsl", {}, "gpg"},
+      {"wsl --exec gpg", "wsl", {}, "gpg"},
+      {"wsl -d Debian gpg", "wsl", {"-d", "Debian"}, "gpg"},
+      {"wsl --distribution Debian -u me gpg",
+       "wsl",
+       {"--distribution", "Debian", "-u", "me"},
+       "gpg"},
+      {"wsl -d Debian --exec gpg", "wsl", {"-d", "Debian"}, "gpg"},
+      {"wsl \"/usr/local bin/gpg\"", "wsl", {}, "/usr/local bin/gpg"},
+      {"C:\\Windows\\System32\\wsl.exe gpg",
+       "C:\\Windows\\System32\\wsl.exe",
+       {},
+       "gpg"},
+      {"/mnt/c/Windows/System32/WSL.EXE gpg",
+       "/mnt/c/Windows/System32/WSL.EXE",
+       {},
+       "gpg"},
+  };
+  for (const auto &c : cases) {
+    const auto wsl = Executor::parseWslCommand(QString::fromLatin1(c.app));
+    QVERIFY2(wsl.has_value(), c.app);
+    // A bare spelling starts as written outside Windows; on Windows it is
+    // `wsl`. A path stays a path anywhere.
+    QString launcher = QString::fromLatin1(c.launcher);
+#ifdef Q_OS_WIN
+    if (!launcher.contains(QLatin1Char('/')) &&
+        !launcher.contains(QLatin1Char('\\'))) {
+      launcher = QStringLiteral("wsl");
+    }
+#endif
+    QCOMPARE(wsl->launcher, launcher);
+    QCOMPARE(wsl->options, c.options);
+    QCOMPARE(wsl->command, QString::fromLatin1(c.command));
+    const QStringList expectedArgv =
+        c.options + QStringList{QStringLiteral("--exec"),
+                                QString::fromLatin1(c.command),
+                                QStringLiteral("--version")};
+    QCOMPARE(wsl->argv({QStringLiteral("--version")}), expectedArgv);
+  }
+}
+
+/**
+ * @brief What is not one program for wsl.exe to start is not a WSL command:
+ *        it is started as written, and fails to start, rather than being
+ *        handed to a shell.
+ */
+void tst_executor::parseWslCommandRejectsShellCommandLines() {
+  const char *rejected[] = {
+      "",
+      "wsl",
+      "wsl.exe",
+      "wsl sh -c \"gpg --version\"",
+      "wsl gpg --homedir /x",
+      "wsl -d",
+      "wsl -d Debian",
+      "wslx gpg",
+      "gpg",
+      "C:\\Program Files\\GnuPG\\bin\\gpg.exe",
+      "/usr/bin/gpg",
+      "wsl-wrapper gpg",
+  };
+  for (const char *app : rejected) {
+    QVERIFY2(!Executor::parseWslCommand(QString::fromLatin1(app)), app);
+  }
+}
+
 void tst_executor::wslExecArgsPrependsExec() {
   const QStringList args = Executor::wslExecArgs(
       QStringLiteral("wslpath"), {QStringLiteral("C:\\store\\$(id).gpg")});
@@ -367,7 +448,12 @@ void tst_executor::resolveGpgconfCommand() {
   {
     auto result = Pass::resolveGpgconfCommand("WSL.EXE /usr/bin/gpg");
     QStringList expectedArgs = {"--exec", "/usr/bin/gpgconf"};
-    QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
+#ifdef Q_OS_WIN
+    const QString launcher = QStringLiteral("wsl");
+#else
+    const QString launcher = QStringLiteral("WSL.EXE");
+#endif
+    QVERIFY2(result.program == launcher && result.arguments == expectedArgs,
              "wsl.exe must be recognised like wsl");
   }
 
@@ -877,14 +963,18 @@ public:
     if (!m_dir.isValid()) {
       return;
     }
-    QFile script(m_dir.filePath("wsl"));
-    if (!script.open(QIODevice::WriteOnly)) {
-      return;
+    // Every spelling a configuration may use; outside Windows the launcher
+    // is started exactly as written.
+    for (const char *name : {"wsl", "wsl.exe", "WSL", "WSL.EXE"}) {
+      QFile script(m_dir.filePath(QLatin1String(name)));
+      if (!script.open(QIODevice::WriteOnly)) {
+        return;
+      }
+      script.write("#!/bin/sh\nprintf '%s\\n' \"$@\"\n");
+      script.close();
+      script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                            QFile::ExeOwner);
     }
-    script.write("#!/bin/sh\nprintf '%s\\n' \"$@\"\n");
-    script.close();
-    script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
-                          QFile::ExeOwner);
     qputenv(
         "PATH",
         (m_dir.path() + ':' + QString::fromLocal8Bit(m_oldPath)).toLocal8Bit());
@@ -899,78 +989,6 @@ private:
   bool m_ok = false;
 };
 } // namespace
-
-/**
- * @brief Every way of writing the launcher is one WSL command: bare or as a
- *        path, any case, with wsl.exe options before the program.
- */
-void tst_executor::parseWslCommandAcceptsEveryWslSpelling() {
-  const struct {
-    const char *app;
-    const char *launcher;
-    QStringList options;
-    const char *command;
-  } cases[] = {
-      {"wsl gpg", "wsl", {}, "gpg"},
-      {"wsl.exe gpg", "wsl", {}, "gpg"},
-      {"WSL /usr/bin/gpg", "wsl", {}, "/usr/bin/gpg"},
-      {"WSL.EXE gpg2", "wsl", {}, "gpg2"},
-      {"wsl -e gpg", "wsl", {}, "gpg"},
-      {"wsl --exec gpg", "wsl", {}, "gpg"},
-      {"wsl -d Debian gpg", "wsl", {"-d", "Debian"}, "gpg"},
-      {"wsl --distribution Debian -u me gpg",
-       "wsl",
-       {"--distribution", "Debian", "-u", "me"},
-       "gpg"},
-      {"wsl -d Debian --exec gpg", "wsl", {"-d", "Debian"}, "gpg"},
-      {"wsl \"/usr/local bin/gpg\"", "wsl", {}, "/usr/local bin/gpg"},
-      {"C:\\Windows\\System32\\wsl.exe gpg",
-       "C:\\Windows\\System32\\wsl.exe",
-       {},
-       "gpg"},
-      {"/mnt/c/Windows/System32/WSL.EXE gpg",
-       "/mnt/c/Windows/System32/WSL.EXE",
-       {},
-       "gpg"},
-  };
-  for (const auto &c : cases) {
-    const auto wsl = Executor::parseWslCommand(QString::fromLatin1(c.app));
-    QVERIFY2(wsl.has_value(), c.app);
-    QCOMPARE(wsl->launcher, QString::fromLatin1(c.launcher));
-    QCOMPARE(wsl->options, c.options);
-    QCOMPARE(wsl->command, QString::fromLatin1(c.command));
-    const QStringList expectedArgv =
-        c.options + QStringList{QStringLiteral("--exec"),
-                                QString::fromLatin1(c.command),
-                                QStringLiteral("--version")};
-    QCOMPARE(wsl->argv({QStringLiteral("--version")}), expectedArgv);
-  }
-}
-
-/**
- * @brief What is not one program for wsl.exe to start is not a WSL command:
- *        it is started as written, and fails to start, rather than being
- *        handed to a shell.
- */
-void tst_executor::parseWslCommandRejectsShellCommandLines() {
-  const char *rejected[] = {
-      "",
-      "wsl",
-      "wsl.exe",
-      "wsl sh -c \"gpg --version\"",
-      "wsl gpg --homedir /x",
-      "wsl -d",
-      "wsl -d Debian",
-      "wslx gpg",
-      "gpg",
-      "C:\\Program Files\\GnuPG\\bin\\gpg.exe",
-      "/usr/bin/gpg",
-      "wsl-wrapper gpg",
-  };
-  for (const char *app : rejected) {
-    QVERIFY2(!Executor::parseWslCommand(QString::fromLatin1(app)), app);
-  }
-}
 
 /**
  * @brief The launcher spelling changes nothing about what wsl.exe receives:

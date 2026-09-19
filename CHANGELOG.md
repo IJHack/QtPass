@@ -81,7 +81,8 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   as a path, with wsl.exe options such as `-d Debian` or `-u me` before the
   program, is parsed in one place and always started through `--exec` with
   those options kept: process start, `wslpath` translation, the gpgconf
-  lookup, the validity probes. Before, `wsl.exe gpg` was accepted by the
+  lookup, the validity probes. On Windows a bare launcher is started as
+  `wsl`; elsewhere (QtPass inside WSL) it is started as written. Before, `wsl.exe gpg` was accepted by the
   gpgconf lookup but never started at all, and a `-d` option ran nothing.
   Anything that is not exactly one program (`wsl sh -c …`) is not a WSL
   command and is started as written, which fails visibly rather than
