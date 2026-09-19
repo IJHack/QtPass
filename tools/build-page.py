@@ -211,7 +211,7 @@ def anchor(level, slug, text):
     return (
         f'<h{level}>\n'
         f'  <a id="{slug}" class="anchor" href="#{slug}" aria-hidden="true"'
-        f'><span class="octicon octicon-link"></span></a\n'
+        f' tabindex="-1"><span class="octicon octicon-link"></span></a\n'
         f"  >{text}\n"
         f"</h{level}>"
     )
