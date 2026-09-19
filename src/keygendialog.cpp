@@ -25,6 +25,9 @@ KeygenDialog::KeygenDialog(const QString &gpgExe, Pass *pass, QWidget *parent)
   ui->setupUi(this);
   connect(ui->checkBox, &QCheckBox::toggled, this,
           &KeygenDialog::setExpertMode);
+  connect(ui->noPassphrase, &QCheckBox::toggled, this,
+          &KeygenDialog::setNoPassphrase);
+  updateOkState();
 
   WindowStateStore::attach(*this, QStringLiteral("keygenDialog"));
 
@@ -42,7 +45,7 @@ KeygenDialog::~KeygenDialog() = default;
 
 /**
  * @brief KeygenDialog::on_passphrase1_textChanged only allow OK once both
- * passphrase fields agree.
+ * passphrase fields agree and one was given (or waived).
  *
  * The passphrase is deliberately never written into the template box: that
  * widget is readable (and selectable) at all times, which would defeat the
@@ -52,7 +55,24 @@ KeygenDialog::~KeygenDialog() = default;
  */
 void KeygenDialog::on_passphrase1_textChanged(const QString &arg1) {
   Q_UNUSED(arg1)
-  ui->buttonBox->setEnabled(ui->passphrase1->text() == ui->passphrase2->text());
+  updateOkState();
+}
+
+void KeygenDialog::updateOkState() {
+  const QString passphrase = ui->passphrase1->text();
+  const bool agreed = passphrase == ui->passphrase2->text();
+  const bool chosen = !passphrase.isEmpty() || ui->noPassphrase->isChecked();
+  ui->buttonBox->setEnabled(agreed && chosen);
+}
+
+void KeygenDialog::setNoPassphrase(bool checked) {
+  if (checked) {
+    ui->passphrase1->clear();
+    ui->passphrase2->clear();
+  }
+  ui->passphrase1->setEnabled(!checked);
+  ui->passphrase2->setEnabled(!checked);
+  updateOkState();
 }
 
 /**
