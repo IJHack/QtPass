@@ -11,12 +11,13 @@ var searchData=
   ['applypassphrase_8',['applyPassphrase',['../class_keygen_dialog.html#a8f57d71d0288d8088b23b8124088a62a',1,'KeygenDialog']]],
   ['appsettings_9',['AppSettings',['../struct_app_settings.html',1,'']]],
   ['arguments_10',['arguments',['../struct_resolved_gpgconf_command.html#aa06fa6189e39477786bbb118dca49556',1,'ResolvedGpgconfCommand']]],
-  ['attach_11',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
-  ['autoclearpanelseconds_12',['autoclearPanelSeconds',['../struct_app_settings.html#a5dbc9ec5be7876610b987a0d221c28a8',1,'AppSettings']]],
-  ['autoclearseconds_13',['autoclearSeconds',['../struct_app_settings.html#a92b8e71fe0eb104d6f8f91a53db04f6d',1,'AppSettings']]],
-  ['autopull_14',['autoPull',['../struct_app_settings.html#a58078cf5ba353cf2fa920e79f5f6bd4f',1,'AppSettings::autoPull'],['../struct_profile.html#a3365fc692edf8aa98fc48afa850a792c',1,'Profile::autoPull']]],
-  ['autopush_15',['autoPush',['../struct_app_settings.html#aaf958d6fdb0d9d28ddf10872e9be0238',1,'AppSettings::autoPush'],['../struct_profile.html#a02fe0d44538b9aac07fc7e684237fefb',1,'Profile::autoPush']]],
-  ['autoscroll_16',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]],
-  ['avoidcapitals_17',['avoidCapitals',['../struct_app_settings.html#a8cc6fc41d08e175473fa5b004c5a2178',1,'AppSettings']]],
-  ['avoidnumbers_18',['avoidNumbers',['../struct_app_settings.html#ac69e7514bfb4ab78d83383ab8feb5049',1,'AppSettings']]]
+  ['argv_11',['argv',['../struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b',1,'Executor::WslCommand']]],
+  ['attach_12',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
+  ['autoclearpanelseconds_13',['autoclearPanelSeconds',['../struct_app_settings.html#a5dbc9ec5be7876610b987a0d221c28a8',1,'AppSettings']]],
+  ['autoclearseconds_14',['autoclearSeconds',['../struct_app_settings.html#a92b8e71fe0eb104d6f8f91a53db04f6d',1,'AppSettings']]],
+  ['autopull_15',['autoPull',['../struct_app_settings.html#a58078cf5ba353cf2fa920e79f5f6bd4f',1,'AppSettings::autoPull'],['../struct_profile.html#a3365fc692edf8aa98fc48afa850a792c',1,'Profile::autoPull']]],
+  ['autopush_16',['autoPush',['../struct_app_settings.html#aaf958d6fdb0d9d28ddf10872e9be0238',1,'AppSettings::autoPush'],['../struct_profile.html#a02fe0d44538b9aac07fc7e684237fefb',1,'Profile::autoPush']]],
+  ['autoscroll_17',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]],
+  ['avoidcapitals_18',['avoidCapitals',['../struct_app_settings.html#a8cc6fc41d08e175473fa5b004c5a2178',1,'AppSettings']]],
+  ['avoidnumbers_19',['avoidNumbers',['../struct_app_settings.html#ac69e7514bfb4ab78d83383ab8feb5049',1,'AppSettings']]]
 ];

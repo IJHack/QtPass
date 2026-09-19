@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
@@ -121,6 +122,11 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor__coll__graph.svg" width="90" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:WslCommand" id="r_WslCommand"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_executor_1_1_wsl_command.html">WslCommand</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A configured executable that runs a Linux program through WSL.  <a href="struct_executor_1_1_wsl_command.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:ace810a6d93c74dec7188038210c5a731" id="r_ace810a6d93c74dec7188038210c5a731"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ace810a6d93c74dec7188038210c5a731">finished</a> (int id, int exitCode, const QString &amp;output, const QString &amp;errout)</td></tr>
@@ -164,6 +170,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa17378022bf90b96beb2a2ac0750751d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously with a custom environment.  <br /></td></tr>
 <tr class="memitem:a9fbf09f8da63419fa052c9d8ebf08408" id="r_a9fbf09f8da63419fa052c9d8ebf08408"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9fbf09f8da63419fa052c9d8ebf08408">resolveExecutable</a> (const QString &amp;app) -&gt; QString</td></tr>
 <tr class="memdesc:a9fbf09f8da63419fa052c9d8ebf08408"><td class="mdescLeft">&#160;</td><td class="mdescRight">The one rule for turning a configured executable into what runs.  <br /></td></tr>
+<tr class="memitem:a78f8f16776f308c83b48b00a941c944e" id="r_a78f8f16776f308c83b48b00a941c944e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a78f8f16776f308c83b48b00a941c944e">parseWslCommand</a> (const QString &amp;app) -&gt; std::optional&lt; <a class="el" href="struct_executor_1_1_wsl_command.html">WslCommand</a> &gt;</td></tr>
+<tr class="memdesc:a78f8f16776f308c83b48b00a941c944e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a configured executable as a WSL command.  <br /></td></tr>
 <tr class="memitem:a694edbdebf865b549812969f49bc0c3d" id="r_a694edbdebf865b549812969f49bc0c3d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a694edbdebf865b549812969f49bc0c3d">wslExecArgs</a> (const QString &amp;command, const QStringList &amp;args) -&gt; QStringList</td></tr>
 <tr class="memdesc:a694edbdebf865b549812969f49bc0c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the wsl.exe argument list that runs <code class="param">command</code> directly.  <br /></td></tr>
 <tr class="memitem:a4417d62f24842a5ff4459559b9527ead" id="r_a4417d62f24842a5ff4459559b9527ead"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4417d62f24842a5ff4459559b9527ead">translatePathForWsl</a> (const QString &amp;path, const QString &amp;exe) -&gt; QString</td></tr>
@@ -173,7 +181,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Runs non-interactive external commands in FIFO order using a single QProcess. </p>
 <p>Queues execution requests and emits per-request completion or error signals; supports optional stdin, configurable stdout/stderr capture, and per-request working directory and environment. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00023">23</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00024">24</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa15bf32ce5a10a04dce8fe549247ac7d" name="aa15bf32ce5a10a04dce8fe549247ac7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa15bf32ce5a10a04dce8fe549247ac7d">&#9670;&#160;</a></span>Executor()</h2>
@@ -837,7 +845,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Whether no command is running and nothing is queued. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when the executor has nothing in flight. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00295">295</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00351">351</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -850,6 +858,42 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-5-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a3c5acbcdb1b3be56c5ef7082678698af_icgraph.svg" width="132" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="a78f8f16776f308c83b48b00a941c944e" name="a78f8f16776f308c83b48b00a941c944e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78f8f16776f308c83b48b00a941c944e">&#9670;&#160;</a></span>parseWslCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::parseWslCommand </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>app</em></span></td><td>)</td>
+          <td> -&gt;  std::optional&lt; <a class="el" href="struct_executor_1_1_wsl_command.html">WslCommand</a> &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse a configured executable as a WSL command. </p>
+<p>Accepts <span class="tt">wsl</span> or <span class="tt">wsl.exe</span> in any case, bare or as a path, followed by wsl.exe options and exactly one program: <span class="tt">wsl gpg</span>, <span class="tt">WSL.EXE -d Debian
+/usr/bin/gpg</span>, <span class="tt">C:\Windows\System32\wsl.exe -u me gpg</span>. A <span class="tt">-e</span>/<span class="tt">--exec</span> the user wrote is dropped (argv() adds it), anything after the program (<span class="tt">wsl sh -c "gpg"</span>) or a <span class="tt">wsl</span> with no program is not a WSL command.</p>
+<p>Every place that starts, probes or translates paths for a configured executable goes through this, so a form one of them accepts cannot be started differently by another. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">app</td><td>Executable as configured. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The parsed command, or nothing when <code class="param">app</code> is not one. </dd></dl>
 
 </div>
 </div>
@@ -940,10 +984,10 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Translate a native path for a WSL-routed executable. </p>
-<p>When <code class="param">exe</code> starts with "wsl " the path is converted with <span class="tt">wslpath</span> (the Linux binary cannot open <span class="tt">C:\...</span>); otherwise it is only cleaned. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>When <code class="param">exe</code> is a WSL command (<a class="el" href="#a78f8f16776f308c83b48b00a941c944e" title="Parse a configured executable as a WSL command.">parseWslCommand()</a>) the path is converted with <span class="tt">wslpath</span> in the same distribution (the Linux binary cannot open <span class="tt">C:\...</span>); otherwise it is only cleaned. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>Native filesystem path. </td></tr>
-    <tr><td class="paramname">exe</td><td>Executable the path is meant for (checked for "wsl "). </td></tr>
+    <tr><td class="paramname">exe</td><td>Executable the path is meant for. </td></tr>
   </table>
   </dd>
 </dl>
@@ -979,7 +1023,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Build the wsl.exe argument list that runs <code class="param">command</code> directly. </p>
-<p>Prefixes <code class="param">command</code> and <code class="param">args</code> with <span class="tt">--exec</span> so WSL launches the binary itself instead of handing the joined command line to the distribution's default shell. Without it every argument (entry paths, .gpg-id recipients, commit messages) is word-split and <span class="tt">$()</span>-expanded by that shell, so a hostile password store gets code execution. </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">command</td><td>Linux command to run (looked up on the WSL PATH). </td></tr>
     <tr><td class="paramname">args</td><td>Arguments for <code class="param">command</code>, passed through verbatim. </td></tr>
@@ -987,6 +1031,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Arguments for <span class="tt">wsl</span>: <span class="tt">--exec</span>, <code class="param">command</code>, then <code class="param">args</code>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b" title="Arguments for launcher that run command with args.">WslCommand::argv</a> </dd></dl>
 
 </div>
 </div>
