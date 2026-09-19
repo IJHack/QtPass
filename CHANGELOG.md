@@ -22,6 +22,10 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Security
 
+- The executor test suite runs on Windows CI too; it had been left out of
+  the Windows build since 2018, so the WSL command parser, the bundled-binary
+  lookup and the gpgconf resolution were never exercised where they matter
+  [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - A signed `.gpg-id` is verified and parsed from the same bytes: the
   signature check used to run on the path and the recipient list was read
   from the file afterwards, so anyone able to write to the store in between
