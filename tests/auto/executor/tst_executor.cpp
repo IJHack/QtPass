@@ -24,6 +24,7 @@ private Q_SLOTS:
   void executeBlockingEcho();
   void executeBlockingWithArgs();
   void executeBlockingWithInput();
+  void executeBlockingLargeInputRoundTrips();
   void executeBlockingExitCode();
   void executeBlockingStderr();
   void executeBlockingEmptyArgs();
@@ -94,6 +95,30 @@ void tst_executor::executeBlockingWithInput() {
   int result = Executor::executeBlocking("cat", {}, input, &output);
   QVERIFY2(result == 0, "cat should exit successfully");
   QVERIFY2(output.contains("test input"), "output should echo input");
+}
+
+/**
+ * @brief Plaintext for gpg goes in on stdin, and a re-encrypted entry can be
+ *        large. QProcess::write() only queues; the whole buffer must reach
+ *        the child before the write channel closes, or an entry would be
+ *        encrypted truncated with exit status 0.
+ */
+void tst_executor::executeBlockingLargeInputRoundTrips() {
+#ifdef Q_OS_WIN
+  QSKIP("relies on cat");
+#else
+  QString input;
+  input.reserve(4 * 1024 * 1024 + 64);
+  const QString line = QStringLiteral("0123456789abcdefghijklmnopqrstuvwxyz\n");
+  while (input.size() < 4 * 1024 * 1024) {
+    input += line;
+  }
+  QString output;
+  const int rc = Executor::executeBlocking("cat", {}, input, &output);
+  QCOMPARE(rc, 0);
+  QCOMPARE(output.size(), input.size());
+  QVERIFY2(output == input, "every byte must come back, in order");
+#endif
 }
 
 void tst_executor::executeBlockingExitCode() {
