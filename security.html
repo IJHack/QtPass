@@ -217,6 +217,47 @@
           conclusions still hold.
         </p>
 
+        <h3>
+          <a
+            id="boundaries"
+            class="anchor"
+            href="#boundaries"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span class="octicon octicon-link"></span></a
+          >Three boundaries worth knowing
+        </h3>
+        <ul>
+          <li>
+            <strong>A signed <code>.gpg-id</code></strong> protects the
+            recipient list against someone who can change the store but does not
+            hold the signing key. QtPass verifies the signature over the exact
+            bytes it then encrypts to, so a file swapped between the check and
+            its use is not a way in (fixed in 2.0, see
+            <a href="https://github.com/IJHack/QtPass/issues/1842">#1842</a>).
+          </li>
+          <li>
+            <strong
+              >A store's <code>.git</code> directory is not inert data.</strong
+            >
+            With Git enabled, QtPass runs <code>git</code> in the store, and Git
+            runs the hooks in <code>.git/hooks</code> with your rights. A plain
+            <code>git clone</code> does not copy a remote's hooks, but a store
+            received as an archive, an existing checkout, or one on storage
+            others can write to may carry them. Treat such a
+            <code>.git</code> as you would treat a script.
+          </li>
+          <li>
+            <strong
+              >Path checks catch mistakes, not a hostile local writer.</strong
+            >
+            Store-boundary checks (<code>..</code>, symlinks, absolute paths)
+            run before a file operation, not atomically with it. Another process
+            that can write to your store while QtPass runs can also replace what
+            is in it; that is outside what QtPass can protect.
+          </li>
+        </ul>
+
         <h2>
           <a
             id="screen"
@@ -245,6 +286,13 @@
           </li>
           <li>
             One-time password secrets are never shown, only the current code.
+          </li>
+          <li>
+            Nothing that goes to <code>gpg</code> or <code>pass</code> on
+            standard input (passwords, passphrases) is ever logged. With
+            <code>QT_LOGGING_RULES=qtpass.debug=true</code> the commands and
+            their arguments are; values of options such as
+            <code>--passphrase</code> are redacted should they ever appear.
           </li>
         </ul>
 
