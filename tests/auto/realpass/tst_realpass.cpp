@@ -28,6 +28,8 @@ private slots:
   void insertPipesTheValue();
   void removeFileAndFolder();
   void initWritesEnabledKeysRelativeToTheStore();
+  void loggedArgvRedactsSecretShapedValues();
+  void genericOutputSignalIsAnAllowList();
   void moveAndCopyUseStoreRelativeNamesWithoutGpg();
   void moveBetweenExistingFilesNeedsForce();
 
@@ -205,6 +207,62 @@ void tst_realpass::initWritesEnabledKeysRelativeToTheStore() {
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("init"), QStringLiteral("--path="),
                         QStringLiteral("AAAA")}));
+  // A directory whose name merely starts with the store's is not inside it;
+  // the old prefix test turned /store-other into --path=-other.
+  QFile::remove(m_log);
+  const QString sibling = QDir::cleanPath(m_store) + QStringLiteral("-other");
+  QVERIFY(QDir().mkpath(sibling));
+  pass->Init(sibling, {alice});
+  QCOMPARE(waitForCall().args, (QStringList{QStringLiteral("init"),
+                                            QStringLiteral("--path=") + sibling,
+                                            QStringLiteral("AAAA")}));
+}
+
+/**
+ * @brief The debug log shows argv, minus anything shaped like a secret.
+ */
+void tst_realpass::loggedArgvRedactsSecretShapedValues() {
+  QCOMPARE(Pass::loggableArgs({QStringLiteral("--batch"), QStringLiteral("-r"),
+                               QStringLiteral("ABCD")}),
+           (QStringList{QStringLiteral("--batch"), QStringLiteral("-r"),
+                        QStringLiteral("ABCD")}));
+  QCOMPARE(
+      Pass::loggableArgs({QStringLiteral("--passphrase"),
+                          QStringLiteral("hunter2"), QStringLiteral("-d")}),
+      (QStringList{QStringLiteral("--passphrase"), QStringLiteral("<redacted>"),
+                   QStringLiteral("-d")}));
+  QCOMPARE(Pass::loggableArgs({QStringLiteral("--passphrase=hunter2")}),
+           QStringList{QStringLiteral("--passphrase=<redacted>")});
+  QCOMPARE(Pass::loggableArgs({QStringLiteral("otpauth://totp/x?secret=S")}),
+           QStringList{QStringLiteral("<redacted>")});
+}
+
+/**
+ * @brief Only process kinds whose output cannot hold a secret reach the
+ *        generic finishedAnyWithPid listeners; the decrypt, grep and insert
+ *        kinds never do, and a kind nobody has classified stays silent.
+ */
+void tst_realpass::genericOutputSignalIsAnAllowList() {
+  QScopedPointer<RealPass> pass(makePass());
+  QSignalSpy any(pass.data(), &Pass::finishedAnyWithPid);
+  const auto deliver = [&](Enums::PROCESS pid) -> qsizetype {
+    any.clear();
+    if (!QMetaObject::invokeMethod(
+            pass.data(), "finished", Qt::DirectConnection, Q_ARG(int, pid),
+            Q_ARG(int, 0), Q_ARG(QString, QStringLiteral("secret")),
+            Q_ARG(QString, QString()))) {
+      return -1;
+    }
+    return any.count();
+  };
+  QCOMPARE(deliver(Enums::PASS_SHOW), 0);
+  QCOMPARE(deliver(Enums::PASS_GREP), 0);
+  QCOMPARE(deliver(Enums::PASS_INSERT), 0);
+  QCOMPARE(deliver(Enums::INVALID), 0);
+  QCOMPARE(deliver(Enums::PROCESS_COUNT), 0);
+  QCOMPARE(deliver(Enums::GIT_PUSH), 1);
+  QCOMPARE(deliver(Enums::PASS_REMOVE), 1);
+  QCOMPARE(deliver(Enums::GPG_GENKEYS), 1);
 }
 
 void tst_realpass::moveAndCopyUseStoreRelativeNamesWithoutGpg() {

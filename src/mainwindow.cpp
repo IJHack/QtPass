@@ -941,10 +941,16 @@ void MainWindow::onTimeoutSearch() {
     deselect();
   }
 
-  query.replace(QStringLiteral(" "), ".*");
-  QRegularExpression regExp(query, QRegularExpression::CaseInsensitiveOption);
-  if (!regExp.isValid())
-    return;
+  // The words are matched literally, in order, with anything in between:
+  // "work vpn" finds work/acme/vpn. Regular expressions belong to the
+  // content search; here a typed "[" or "(" must not switch filtering off.
+  QStringList words;
+  for (const QString &word :
+       query.split(QLatin1Char(' '), Qt::SkipEmptyParts)) {
+    words << QRegularExpression::escape(word);
+  }
+  QRegularExpression regExp(words.join(QStringLiteral(".*")),
+                            QRegularExpression::CaseInsensitiveOption);
   m_tree->setFilter(regExp);
 
   if (m_tree->proxy().rowCount() > 0 && !query.isEmpty()) {

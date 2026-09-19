@@ -11,6 +11,7 @@
 #include <QProcess>
 #include <QRegularExpression>
 #include <QSaveFile>
+#include <QTemporaryFile>
 #include <QThread>
 #include <QTimer>
 #include <utility>
@@ -603,7 +604,8 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
  */
 auto ImitatePass::reencryptSingleFile(const QString &fileName,
                                       const QStringList &recipients) -> bool {
-  qCDebug(lcQtPass) << "reencrypt " << fileName << " for " << recipients;
+  qCDebug(lcQtPass) << "reencrypt" << fileName << "for" << recipients.size()
+                    << "recipients";
   QString local_lastDecrypt;
   QStringList args = {
       "-d",      "--quiet",     "--yes",       "--no-encrypt-to",
@@ -627,8 +629,19 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     return false;
   }
 
-  // Encrypt to temporary file for atomic replacement
-  QString tempPath = fileName + ".reencrypt.tmp";
+  // gpg writes the new ciphertext to a file we create first, exclusively and
+  // with an unguessable name, in the same directory so the rename below
+  // stays on one filesystem. A fixed name like <file>.reencrypt.tmp could
+  // be pre-created (or symlinked elsewhere) by anyone with write access to
+  // the store, and gpg --yes would have written through it.
+  QTemporaryFile temp(fileName + ".XXXXXX.tmp");
+  temp.setAutoRemove(false);
+  if (!temp.open()) {
+    qCDebug(lcQtPass) << "Cannot create a temporary file next to:" << fileName;
+    return false;
+  }
+  const QString tempPath = temp.fileName();
+  temp.close();
   // Same encrypt-only flags as Insert(): gpg.conf must not add recipients.
   args = QStringList{
       "--yes",           "--batch",  "-eq",         "--compress-algo=none",
@@ -662,9 +675,11 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     return false;
   }
 
-  // Atomic replace with backup: rename original to .bak, rename temp to
-  // original, then remove backup
-  QString backupPath = fileName + ".reencrypt.bak";
+  // Replace the original through a backup so a failed second rename can be
+  // rolled back; the two renames are not one atomic step, but the original
+  // exists (under one name or the other) at every point, and the new
+  // ciphertext was decrypted and compared before any of this.
+  const QString backupPath = fileName + ".reencrypt.bak";
   if (!QFile::rename(fileName, backupPath)) {
     qCDebug(lcQtPass) << "Failed to backup original file:" << fileName;
     QFile::remove(tempPath);

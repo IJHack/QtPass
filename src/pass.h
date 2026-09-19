@@ -246,6 +246,13 @@ public:
   static auto parseRecipients(const QByteArray &contents,
                               const QString &sourceName) -> QStringList;
   /**
+   * @brief The arguments as they may appear in the debug log: the value of
+   * `--passphrase` and friends, and otpauth URIs, are replaced.
+   * @param args The argv about to be run.
+   * @return The same list with secret-shaped values redacted.
+   */
+  static auto loggableArgs(const QStringList &args) -> QStringList;
+  /**
    * @brief Seed a new folder's .gpg-id from the recipients it inherits.
    *
    * Writes the recipient list that is in effect for @p newDir (found by

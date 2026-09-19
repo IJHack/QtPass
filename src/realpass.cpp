@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "realpass.h"
+#include "pathvalidator.h"
 #include "qtpasslogging.h"
 #include "util.h"
 
@@ -92,16 +93,17 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
   // remove the passStore directory otherwise,
   // pass would create a passStore/passStore/dir
   // but you want passStore/dir
-  QString normalizedPath = QDir::cleanPath(path);
-  QString normalizedStore = QDir::cleanPath(m_settings.passStore);
-  QString dirWithoutPassdir;
-  if (normalizedPath.startsWith(normalizedStore)) {
-    dirWithoutPassdir = normalizedPath.mid(normalizedStore.size());
-    if (dirWithoutPassdir.startsWith('/')) {
-      dirWithoutPassdir.remove(0, 1);
+  // A plain prefix test would take /home/me/store-other for a folder of
+  // /home/me/store; ask the same question every other store-boundary check
+  // asks, then let QDir compute the relative part.
+  const QString normalizedPath = QDir::cleanPath(path);
+  const QString normalizedStore = QDir::cleanPath(m_settings.passStore);
+  QString dirWithoutPassdir = normalizedPath;
+  if (PathValidator::isPathInStore(normalizedStore, normalizedPath)) {
+    dirWithoutPassdir = QDir(normalizedStore).relativeFilePath(normalizedPath);
+    if (dirWithoutPassdir == QStringLiteral(".")) {
+      dirWithoutPassdir.clear();
     }
-  } else {
-    dirWithoutPassdir = normalizedPath;
   }
   QStringList args = {"init", "--path=" + dirWithoutPassdir};
   for (const UserInfo &user : users) {

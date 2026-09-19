@@ -11,6 +11,15 @@
  *
  * Extracted from Util. Guards file/folder create, rename, and drag-drop
  * against paths that resolve outside the configured password store.
+ *
+ * Threat model: this catches mistakes and malformed input, such as a typed
+ * `..`, a pasted absolute path or a symlink that happens to point outside
+ * the store. It is not a defence against another process that can write to
+ * the store while QtPass runs: the check and the file operation that
+ * follows it are separate steps, and a symlink swapped in between them is
+ * not seen (the usual time-of-check/time-of-use gap of a path-based API).
+ * Anyone who can write to your password store can also replace its
+ * contents, so that is outside what QtPass can protect.
  */
 class PathValidator {
 public:

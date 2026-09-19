@@ -24,6 +24,7 @@
 #include <QFile>
 #include <QFileSystemModel>
 #include <QFrame>
+#include <QLineEdit>
 #include <QMenu>
 #include <QMenuBar>
 #include <QMessageBox>
@@ -130,6 +131,7 @@ private Q_SLOTS:
   void menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes();
   void menuBarCanBeHiddenAndComesBackWithCtrlM();
   void gitButtonsOnlyExistWhenGitIsInUse();
+  void searchMatchesWordsLiterallyAndInOrder();
   void quitIsAnActionNotAStrayShortcut();
   void quitIsWiredToTheApplication();
   void closeWindowHonoursHideOnClose();
@@ -1094,6 +1096,50 @@ void tst_mainwindow::menuBarCanBeHiddenAndComesBackWithCtrlM() {
            "Ctrl+M brings the bar back");
   QVERIFY(QtPassSettings::load().showMenuBar);
 #endif
+}
+
+/**
+ * @brief The search box matches its words literally, in order, with anything
+ *        between them; a bracket used to be regex syntax that made the
+ *        filter silently stop applying.
+ */
+void tst_mainwindow::searchMatchesWordsLiterallyAndInOrder() {
+  QVERIFY(QDir(m_storeDir.path()).mkpath(QStringLiteral("work/acme")));
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("work/acme/vpn")));
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("notes [draft]")));
+  auto *tree = m_window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  auto *search = m_window->findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  QVERIFY(tree != nullptr && proxy != nullptr && search != nullptr);
+  const QModelIndex vpn = fs->index(
+      QDir(m_storeDir.path()).filePath(QStringLiteral("work/acme/vpn.gpg")));
+  const QModelIndex notes = fs->index(
+      QDir(m_storeDir.path()).filePath(QStringLiteral("notes [draft].gpg")));
+  QVERIFY(vpn.isValid() && notes.isValid());
+  const auto filter = [&](const QString &text) {
+    search->setText(text);
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                      Qt::DirectConnection));
+  };
+
+  filter(QStringLiteral("work vpn"));
+  QVERIFY2(proxy->mapFromSource(vpn).isValid(),
+           "words in order with anything between them match");
+  QVERIFY(!proxy->mapFromSource(notes).isValid());
+
+  filter(QStringLiteral("[draft"));
+  QVERIFY2(proxy->mapFromSource(notes).isValid(),
+           "a bracket is a character to find, not regex syntax");
+  QVERIFY(!proxy->mapFromSource(vpn).isValid());
+
+  filter(QStringLiteral("("));
+  QVERIFY2(!proxy->mapFromSource(vpn).isValid() &&
+               !proxy->mapFromSource(notes).isValid(),
+           "an unmatched parenthesis filters everything out instead of "
+           "leaving the previous filter in place");
 }
 
 /**
