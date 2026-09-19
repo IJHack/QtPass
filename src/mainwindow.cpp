@@ -1237,6 +1237,10 @@ void MainWindow::onDelete() {
   QString dirMessage = tr(" and the whole content?");
   const QString folder =
       m_tree->fileSystem().rootPath() + QDir::separator() + file;
+  if (!(isDir && Util::isLinkedFolder(folder)) && refuseLinkedFolder(folder)) {
+    // Behind a link: deleting would reach outside the store.
+    return;
+  }
   if (isDir && Util::isLinkedFolder(folder)) {
     // Only the link goes (ImitatePass::Remove unlinks it); nothing behind it
     // is looked at or mentioned.
@@ -2007,14 +2011,13 @@ void MainWindow::addRecipient(const QString &dir) {
  * @return true when the operation must not go ahead.
  */
 auto MainWindow::refuseLinkedFolder(const QString &dir) -> bool {
-  const QString store = QDir::cleanPath(QtPassSettings::load().passStore);
-  if (QDir::cleanPath(dir) == store || !Util::isLinkedFolder(dir)) {
+  if (!Util::isUnderLink(dir, QtPassSettings::load().passStore)) {
     return false;
   }
   QMessageBox::critical(
       this, tr("Not a folder of the store"),
-      tr("%1 is a symbolic link or junction. What it points to is not part "
-         "of the password store and is left alone.")
+      tr("%1 is, or lies behind, a symbolic link or junction. What that "
+         "points to is not part of the password store and is left alone.")
           .arg(QDir::toNativeSeparators(QDir::cleanPath(dir))));
   return true;
 }

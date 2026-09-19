@@ -192,6 +192,19 @@ public:
    */
   static auto isLinkedFolder(const QString &path) -> bool;
   /**
+   * @brief Whether the way from @p storeRoot down to @p path passes through
+   * a symbolic link or NTFS junction: @p path itself or any folder between.
+   *
+   * The tree shows a linked folder's children too, and a pick of one of
+   * them names a place outside the store as much as the link does. The root
+   * itself is not checked: a linked store root is the user's setup.
+   * @param path File or folder under the store, as the tree names it.
+   * @param storeRoot The configured store.
+   * @return true when something on the way is a link.
+   */
+  static auto isUnderLink(const QString &path, const QString &storeRoot)
+      -> bool;
+  /**
    * @brief Remove @p dir and everything in it, the way `rm -rf` does: a
    * symbolic link or NTFS junction, @p dir itself or anything inside, is
    * removed as an entry and what it points to is never entered. A trailing

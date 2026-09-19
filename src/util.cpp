@@ -507,6 +507,23 @@ auto Util::isLinkedFolder(const QString &path) -> bool {
   return isLink(QFileInfo(QDir::cleanPath(path)));
 }
 
+auto Util::isUnderLink(const QString &path, const QString &storeRoot) -> bool {
+  const QString root = QDir::cleanPath(storeRoot);
+  const QString prefix = root + QLatin1Char('/');
+  QString current = QDir::cleanPath(path);
+  if (!current.startsWith(prefix)) {
+    // Not under the store as named: only the entry itself can be judged.
+    return current != root && isLinkedFolder(current);
+  }
+  for (; current != root && current.startsWith(prefix);
+       current = QFileInfo(current).path()) {
+    if (isLinkedFolder(current)) {
+      return true;
+    }
+  }
+  return false;
+}
+
 auto Util::removeTree(const QString &dir) -> bool {
   // A trailing separator makes lstat follow a link ("link/" is the target
   // directory); the link itself is what this is about.

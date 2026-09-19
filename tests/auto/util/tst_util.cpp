@@ -316,6 +316,7 @@ private Q_SLOTS:
   void regularFilesUnderReportsSpecialFilesUnderAWantedName();
   void directoriesUnderListsRealVisibleFoldersOnly();
   void isLinkedFolderSeesThroughATrailingSeparator();
+  void isUnderLinkChecksEveryFolderOnTheWay();
   void removeTreeDoesNotFollowSymlinks();
   void removeTreeDoesNotFollowJunctions();
 
@@ -3705,6 +3706,51 @@ void tst_util::isLinkedFolderSeesThroughATrailingSeparator() {
   // A linked root is walked on purpose (see the header); the caller decides.
   QCOMPARE(Util::regularFilesUnder(link, {QStringLiteral("*.gpg")}),
            QStringList{QDir(link).filePath(QStringLiteral("secret.gpg"))});
+#ifdef Q_OS_WIN
+  QVERIFY(QDir().rmdir(link));
+#endif
+}
+
+/**
+ * @brief A child of a linked folder is behind the link as much as the link
+ *        is; a real folder is not, and the store root is never judged.
+ */
+void tst_util::isUnderLinkChecksEveryFolderOnTheWay() {
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("real/sub")));
+  QVERIFY(QDir(outsideDir.path()).mkpath(QStringLiteral("sub")));
+  const QString link = root.filePath(QStringLiteral("shared"));
+#ifdef Q_OS_WIN
+  QProcess cmd;
+  cmd.start(QStringLiteral("cmd.exe"),
+            {QStringLiteral("/c"), QStringLiteral("mklink"),
+             QStringLiteral("/J"), QDir::toNativeSeparators(link),
+             QDir::toNativeSeparators(outsideDir.path())});
+  if (!cmd.waitForFinished(10000) || cmd.exitCode() != 0) {
+    if (qEnvironmentVariableIsSet("GITHUB_ACTIONS")) {
+      QFAIL("could not create a junction on the CI runner");
+    }
+    QSKIP("could not create a junction here");
+  }
+#else
+  QVERIFY(QFile::link(outsideDir.path(), link));
+#endif
+  const QString store = storeDir.path() + QLatin1Char('/');
+  QVERIFY(Util::isUnderLink(link, store));
+  QVERIFY(Util::isUnderLink(link + QLatin1Char('/'), store));
+  QVERIFY(Util::isUnderLink(link + QStringLiteral("/sub/"), store));
+  QVERIFY(Util::isUnderLink(link + QStringLiteral("/sub/entry.gpg"), store));
+  QVERIFY(
+      !Util::isUnderLink(root.filePath(QStringLiteral("real/sub/")), store));
+  QVERIFY(
+      !Util::isUnderLink(root.filePath(QStringLiteral("real/x.gpg")), store));
+  QVERIFY(!Util::isUnderLink(store, store));
+  QVERIFY(!Util::isUnderLink(storeDir.path(), store));
+  // A path not under the store as named is judged on its own.
+  QVERIFY(!Util::isUnderLink(outsideDir.path(), store));
 #ifdef Q_OS_WIN
   QVERIFY(QDir().rmdir(link));
 #endif
