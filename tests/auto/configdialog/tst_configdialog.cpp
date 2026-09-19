@@ -13,6 +13,7 @@
 #include <QPlainTextEdit>
 #include <QPushButton>
 #include <QSpinBox>
+#include <QStackedWidget>
 #include <QSystemTrayIcon>
 #include <QTemporaryDir>
 #include <QToolButton>
@@ -69,6 +70,8 @@ private Q_SLOTS:
   void browseButtonsAreNamed();
   void dialogCanShrinkBelowItsOldMinimum();
   void sectionHeadersAreGroupBoxes();
+  void pagesFollowTheSidebar();
+  void invalidConfigurationOpensPrograms();
   void acceptRoundTripsEveryOwnedSetting();
   void acceptSavesTheGlobalAutoPushAndAutoPull();
 };
@@ -675,7 +678,61 @@ void tst_configdialog::sectionHeadersAreGroupBoxes() {
            "the pseudo-header labels must be gone");
 }
 
-namespace {} // namespace
+/**
+ * @brief The dialog is a sidebar of pages: one list entry per stacked page,
+ *        every old group box on one of them, and the list drives the stack.
+ */
+void tst_configdialog::pagesFollowTheSidebar() {
+  ConfigDialog dialog(nullptr);
+  auto *list = child<QListWidget>(dialog, "pageList");
+  auto *pages = child<QStackedWidget>(dialog, "pages");
+  QCOMPARE(list->count(), pages->count());
+  QCOMPARE(list->count(), 6);
+  list->setCurrentRow(0);
+  QCOMPARE(pages->currentIndex(), 0);
+  list->setCurrentRow(3);
+  QCOMPARE(pages->currentIndex(), 3);
+  const QList<QPair<QString, QString>> homes = {
+      {QStringLiteral("groupBoxSystem"), QStringLiteral("pageGeneral")},
+      {QStringLiteral("groupBoxExtensions"), QStringLiteral("pageGeneral")},
+      {QStringLiteral("groupBoxClipboard"), QStringLiteral("pageClipboard")},
+      {QStringLiteral("groupBoxContentPanel"), QStringLiteral("pageClipboard")},
+      {QStringLiteral("groupBoxPasswordGeneration"),
+       QStringLiteral("pagePasswords")},
+      {QStringLiteral("groupBoxTemplate"), QStringLiteral("pagePasswords")},
+      {QStringLiteral("groupBoxGit"), QStringLiteral("pageGit")},
+      {QStringLiteral("groupBoxNative"), QStringLiteral("pagePrograms")},
+      {QStringLiteral("profileForm"), QStringLiteral("pageProfiles")},
+  };
+  for (const auto &[box, page] : homes) {
+    auto *widget = dialog.findChild<QGroupBox *>(box);
+    QVERIFY2(widget != nullptr, qPrintable(box + " must exist"));
+    QVERIFY2(child<QWidget>(dialog, page.toLatin1().constData())
+                 ->isAncestorOf(widget),
+             qPrintable(box + " must live on " + page));
+  }
+}
+
+/**
+ * @brief A configuration that cannot work (no programs found) opens on the
+ *        Programs page, where the fix is.
+ */
+void tst_configdialog::invalidConfigurationOpensPrograms() {
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable.clear();
+    s.gpgExecutable.clear();
+    s.gitExecutable.clear();
+    s.usePass = false;
+    QtPassSettings::save(s);
+  }
+  ConfigDialog dialog(nullptr);
+  auto *pages = child<QStackedWidget>(dialog, "pages");
+  QCOMPARE(pages->currentWidget()->objectName(),
+           QStringLiteral("pagePrograms"));
+  QCOMPARE(child<QListWidget>(dialog, "pageList")->currentRow(),
+           pages->currentIndex());
+}
 
 /**
  * @brief The regression net for #1602's six config-clobbering paths: flip
