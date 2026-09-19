@@ -89,6 +89,10 @@ void tst_executor::executeBlockingWithArgs() {
   QVERIFY2(output.contains("hello world"), "output should contain both args");
 }
 
+/**
+ * @brief Verifies that executeBlocking() sends input to the child process and
+ *        captures its standard output.
+ */
 void tst_executor::executeBlockingWithInput() {
   QString output;
   QString input = "test input";
@@ -121,6 +125,9 @@ void tst_executor::executeBlockingLargeInputRoundTrips() {
 #endif
 }
 
+/**
+ * @brief Verifies that executeBlocking() returns a child's non-zero exit code.
+ */
 void tst_executor::executeBlockingExitCode() {
   QString output;
   int result = Executor::executeBlocking("false", {}, QString(), &output);
