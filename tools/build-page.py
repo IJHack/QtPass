@@ -100,6 +100,7 @@ HEAD = """<!doctype html>
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png{v}" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png{v}" />
     <link rel="manifest" href="/manifest.json" />
+    <link rel="me" href="https://mastodon.social/@annejan" />
     <meta
       name="theme-color"
       media="(prefers-color-scheme: light)"
