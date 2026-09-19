@@ -14,6 +14,9 @@
 #include <QTemporaryDir>
 #include <QUuid>
 #include <QtTest>
+#ifdef Q_OS_WIN
+#include <qt_windows.h>
+#endif
 #ifndef Q_OS_WIN
 #include <sys/socket.h>
 #include <sys/stat.h>
@@ -307,6 +310,15 @@ private Q_SLOTS:
   // tracked by git yet (follow-up to #1685)
   void initStagesUntrackedGpgId();
   void loggingCategoryIsQuietUntilAsked();
+  void regularFilesUnderWalksRealDirectoriesOnly();
+  void regularFilesUnderLeavesSymlinksOut();
+  void regularFilesUnderLeavesJunctionsOut();
+  void regularFilesUnderReportsSpecialFilesUnderAWantedName();
+  void directoriesUnderListsRealVisibleFoldersOnly();
+  void isLinkedFolderSeesThroughATrailingSeparator();
+  void isUnderLinkChecksEveryFolderOnTheWay();
+  void removeTreeDoesNotFollowSymlinks();
+  void removeTreeDoesNotFollowJunctions();
 
 private:
   // Run git in `dir`; returns false on launch failure or non-zero exit. Stdout
@@ -3412,6 +3424,431 @@ void tst_util::loggingCategoryIsQuietUntilAsked() {
   qCDebug(lcQtPass) << "trace me";
   QLoggingCategory::setFilterRules(QStringLiteral("qtpass.debug=false"));
   QVERIFY(!lcQtPass().isDebugEnabled());
+}
+
+/**
+ * @brief The walker lists matching regular files at every depth and nothing
+ *        else: a directory whose own name matches is entered, not listed; a
+ *        hidden directory (.git, .stversions) is not entered at all; a hidden
+ *        file is listed only when asked for.
+ */
+void tst_util::regularFilesUnderWalksRealDirectoriesOnly() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("sub/deeper")));
+  QVERIFY(root.mkpath(QStringLiteral(".git/objects")));
+  QVERIFY(root.mkpath(QStringLiteral("folder.gpg")));
+  const QStringList wanted{
+      root.filePath(QStringLiteral("top.gpg")),
+      root.filePath(QStringLiteral("sub/mid.gpg")),
+      root.filePath(QStringLiteral("sub/deeper/low.gpg")),
+      root.filePath(QStringLiteral("folder.gpg/inside.gpg")),
+  };
+  const QStringList unwanted{
+      root.filePath(QStringLiteral("notes.txt")),
+      root.filePath(QStringLiteral("sub/.gpg-id")),
+      root.filePath(QStringLiteral(".git/objects/stash.gpg")),
+      root.filePath(QStringLiteral(".git/.gpg-id")),
+      root.filePath(QStringLiteral("sub/.dotfile.gpg")),
+  };
+  for (const QString &path : wanted + unwanted) {
+    QFile f(path);
+    QVERIFY2(f.open(QIODevice::WriteOnly), qPrintable(path));
+    f.write("x");
+  }
+#ifdef Q_OS_WIN
+  // Dot names are not hidden on Windows; the attribute is.
+  for (const QString &rel :
+       {QStringLiteral(".git"), QStringLiteral("sub/.gpg-id"),
+        QStringLiteral("sub/.dotfile.gpg")}) {
+    QVERIFY(SetFileAttributesW(
+        reinterpret_cast<LPCWSTR>(
+            QDir::toNativeSeparators(root.filePath(rel)).utf16()),
+        FILE_ATTRIBUTE_HIDDEN));
+  }
+#endif
+  QStringList skipped;
+  const QStringList found = Util::regularFilesUnder(
+      storeDir.path(), QStringList() << QStringLiteral("*.gpg"), &skipped);
+  // A directory's files first, then its subdirectories by name: the order
+  // the native search shows its results in.
+  QCOMPARE(found, (QStringList{
+                      root.filePath(QStringLiteral("top.gpg")),
+                      root.filePath(QStringLiteral("folder.gpg/inside.gpg")),
+                      root.filePath(QStringLiteral("sub/mid.gpg")),
+                      root.filePath(QStringLiteral("sub/deeper/low.gpg")),
+                  }));
+  QVERIFY(skipped.isEmpty());
+  // Hidden files on request, hidden directories never.
+  QStringList withHidden = Util::regularFilesUnder(
+      storeDir.path(), {QStringLiteral("*.gpg"), QStringLiteral(".gpg-id")},
+      nullptr, true);
+  withHidden.sort();
+  QStringList expectedWithHidden =
+      wanted + QStringList{root.filePath(QStringLiteral("sub/.gpg-id")),
+                           root.filePath(QStringLiteral("sub/.dotfile.gpg"))};
+  expectedWithHidden.sort();
+  QCOMPARE(withHidden, expectedWithHidden);
+  QCOMPARE(Util::regularFilesUnder(storeDir.path(), {QStringLiteral("*.txt")}),
+           QStringList{root.filePath(QStringLiteral("notes.txt"))});
+  // A relative root still yields absolute paths.
+  const QString cwd = QDir::currentPath();
+  const auto restoreCwd = qScopeGuard([&cwd] { QDir::setCurrent(cwd); });
+  QVERIFY(QDir::setCurrent(storeDir.path()));
+  QCOMPARE(
+      Util::regularFilesUnder(QStringLiteral("."), {QStringLiteral("*.txt")}),
+      QStringList{root.filePath(QStringLiteral("notes.txt"))});
+  QCOMPARE(Util::directoriesUnder(QStringLiteral("sub")),
+           QStringList{root.filePath(QStringLiteral("sub/deeper"))});
+}
+
+/**
+ * @brief A symlink is neither listed nor entered, whether it points at a
+ *        file or a directory. Every linked directory and every linked file
+ *        whose name matches is reported as skipped; a linked file under
+ *        another name is nobody's business.
+ */
+void tst_util::regularFilesUnderLeavesSymlinksOut() {
+#ifdef Q_OS_WIN
+  QSKIP("creating a symlink needs a privilege a CI runner may lack");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  const QDir root(storeDir.path());
+  const QDir outside(outsideDir.path());
+  for (const QString &path : {root.filePath(QStringLiteral("real.gpg")),
+                              outside.filePath(QStringLiteral("secret.gpg"))}) {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  QVERIFY(QFile::link(outside.filePath(QStringLiteral("secret.gpg")),
+                      root.filePath(QStringLiteral("file-link.gpg"))));
+  QVERIFY(QFile::link(outsideDir.path(),
+                      root.filePath(QStringLiteral("dir-link"))));
+  QVERIFY(QFile::link(outsideDir.path(),
+                      root.filePath(QStringLiteral("dir-link.gpg"))));
+  QVERIFY(QFile::link(outside.filePath(QStringLiteral("secret.gpg")),
+                      root.filePath(QStringLiteral("notes.txt"))));
+  QVERIFY(QFile::link(root.filePath(QStringLiteral("nowhere")),
+                      root.filePath(QStringLiteral("dangling.gpg"))));
+  QStringList skipped;
+  const QStringList found = Util::regularFilesUnder(
+      storeDir.path(), QStringList() << QStringLiteral("*.gpg"), &skipped);
+  QCOMPARE(found, QStringList{root.filePath(QStringLiteral("real.gpg"))});
+  skipped.sort();
+  QCOMPARE(skipped,
+           (QStringList{root.filePath(QStringLiteral("dangling.gpg")),
+                        root.filePath(QStringLiteral("dir-link")),
+                        root.filePath(QStringLiteral("dir-link.gpg")),
+                        root.filePath(QStringLiteral("file-link.gpg"))}));
+#endif
+}
+
+/**
+ * @brief An NTFS junction is a directory reparse point that Qt does not
+ *        report as a symlink (QDir::NoSymLinks lets it through and
+ *        QDirIterator recurses into it), so the walker has to refuse it
+ *        itself: nothing behind a junction may be listed, and every junction
+ *        is reported as skipped.
+ */
+void tst_util::regularFilesUnderLeavesJunctionsOut() {
+#ifndef Q_OS_WIN
+  QSKIP("junctions exist on NTFS only");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  const QDir root(storeDir.path());
+  const QDir outside(outsideDir.path());
+  for (const QString &path : {root.filePath(QStringLiteral("real.gpg")),
+                              outside.filePath(QStringLiteral("secret.gpg"))}) {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  // mklink /J needs no privilege, unlike mklink /D.
+  const auto junction = [&](const QString &name) {
+    const QString link = QDir::toNativeSeparators(root.filePath(name));
+    const QString target = QDir::toNativeSeparators(outsideDir.path());
+    QProcess cmd;
+    cmd.start(QStringLiteral("cmd.exe"),
+              {QStringLiteral("/c"), QStringLiteral("mklink"),
+               QStringLiteral("/J"), link, target});
+    return cmd.waitForFinished(10000) && cmd.exitCode() == 0 &&
+           QFileInfo(root.filePath(name)).isJunction();
+  };
+  if (!junction(QStringLiteral("dir-junction"))) {
+    // CI must not lose this test quietly.
+    if (qEnvironmentVariableIsSet("GITHUB_ACTIONS")) {
+      QFAIL("could not create a junction on the CI runner");
+    }
+    QSKIP("could not create a junction here");
+  }
+  QVERIFY(junction(QStringLiteral("dir-junction.gpg")));
+  // The precondition this test guards against: Qt sees a plain directory.
+  QVERIFY(
+      !QFileInfo(root.filePath(QStringLiteral("dir-junction"))).isSymLink());
+  QStringList skipped;
+  const QStringList found = Util::regularFilesUnder(
+      storeDir.path(), QStringList() << QStringLiteral("*.gpg"), &skipped);
+  QCOMPARE(found, QStringList{root.filePath(QStringLiteral("real.gpg"))});
+  skipped.sort();
+  QCOMPARE(skipped,
+           (QStringList{root.filePath(QStringLiteral("dir-junction")),
+                        root.filePath(QStringLiteral("dir-junction.gpg"))}));
+  // Removing a junction must not touch what it points at.
+  QVERIFY(QDir().rmdir(root.filePath(QStringLiteral("dir-junction"))));
+  QVERIFY(QDir().rmdir(root.filePath(QStringLiteral("dir-junction.gpg"))));
+  QVERIFY(QFile::exists(outside.filePath(QStringLiteral("secret.gpg"))));
+#endif
+}
+
+/**
+ * @brief A FIFO, socket or device is not a regular file: never listed, and
+ *        reported as skipped when it sits under a name the caller wants, so
+ *        the recovery pass can refuse to treat it as a backup.
+ */
+void tst_util::regularFilesUnderReportsSpecialFilesUnderAWantedName() {
+#ifdef Q_OS_WIN
+  QSKIP("no mkfifo on Windows");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QDir root(storeDir.path());
+  {
+    QFile f(root.filePath(QStringLiteral("real.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const QString fifo = root.filePath(QStringLiteral("odd.gpg"));
+  const QString ignoredFifo = root.filePath(QStringLiteral("odd.txt"));
+  QCOMPARE(mkfifo(QFile::encodeName(fifo).constData(), 0600), 0);
+  QCOMPARE(mkfifo(QFile::encodeName(ignoredFifo).constData(), 0600), 0);
+  QStringList skipped;
+  const QStringList found = Util::regularFilesUnder(
+      storeDir.path(), QStringList() << QStringLiteral("*.gpg"), &skipped);
+  QCOMPARE(found, QStringList{root.filePath(QStringLiteral("real.gpg"))});
+  QCOMPARE(skipped, QStringList{fifo});
+#endif
+}
+
+/**
+ * @brief directoriesUnder lists real, visible folders parents first; a
+ *        hidden folder and a linked one are neither listed nor entered.
+ */
+void tst_util::directoriesUnderListsRealVisibleFoldersOnly() {
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("work/mail")));
+  QVERIFY(root.mkpath(QStringLiteral("bank")));
+  QVERIFY(root.mkpath(QStringLiteral(".git/objects")));
+  QVERIFY(QDir(outsideDir.path()).mkpath(QStringLiteral("elsewhere")));
+#ifdef Q_OS_WIN
+  QVERIFY(SetFileAttributesW(
+      reinterpret_cast<LPCWSTR>(
+          QDir::toNativeSeparators(root.filePath(QStringLiteral(".git")))
+              .utf16()),
+      FILE_ATTRIBUTE_HIDDEN));
+#else
+  QVERIFY(
+      QFile::link(outsideDir.path(), root.filePath(QStringLiteral("shared"))));
+#endif
+  QCOMPARE(Util::directoriesUnder(storeDir.path()),
+           (QStringList{root.filePath(QStringLiteral("bank")),
+                        root.filePath(QStringLiteral("work")),
+                        root.filePath(QStringLiteral("work/mail"))}));
+}
+
+/**
+ * @brief isLinkedFolder answers for the entry named, not for what it points
+ *        to, whether or not the path ends in a separator; a real folder, a
+ *        file and a missing path are not links. The walkers, by contrast,
+ *        follow a root that is a link: the configured store commonly is one.
+ */
+void tst_util::isLinkedFolderSeesThroughATrailingSeparator() {
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("real")));
+  {
+    QFile f(QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  QVERIFY(!Util::isLinkedFolder(root.filePath(QStringLiteral("real"))));
+  QVERIFY(!Util::isLinkedFolder(root.filePath(QStringLiteral("real/"))));
+  QVERIFY(!Util::isLinkedFolder(root.filePath(QStringLiteral("missing/"))));
+  QVERIFY(!Util::isLinkedFolder(storeDir.path() + QLatin1Char('/')));
+  const QString link = root.filePath(QStringLiteral("shared"));
+#ifdef Q_OS_WIN
+  QProcess cmd;
+  cmd.start(QStringLiteral("cmd.exe"),
+            {QStringLiteral("/c"), QStringLiteral("mklink"),
+             QStringLiteral("/J"), QDir::toNativeSeparators(link),
+             QDir::toNativeSeparators(outsideDir.path())});
+  if (!cmd.waitForFinished(10000) || cmd.exitCode() != 0) {
+    if (qEnvironmentVariableIsSet("GITHUB_ACTIONS")) {
+      QFAIL("could not create a junction on the CI runner");
+    }
+    QSKIP("could not create a junction here");
+  }
+#else
+  QVERIFY(QFile::link(outsideDir.path(), link));
+#endif
+  QVERIFY(Util::isLinkedFolder(link));
+  QVERIFY(Util::isLinkedFolder(link + QLatin1Char('/')));
+  // A linked root is walked on purpose (see the header); the caller decides.
+  QCOMPARE(Util::regularFilesUnder(link, {QStringLiteral("*.gpg")}),
+           QStringList{QDir(link).filePath(QStringLiteral("secret.gpg"))});
+#ifdef Q_OS_WIN
+  QVERIFY(QDir().rmdir(link));
+#endif
+}
+
+/**
+ * @brief A child of a linked folder is behind the link as much as the link
+ *        is; a real folder is not, and the store root is never judged.
+ */
+void tst_util::isUnderLinkChecksEveryFolderOnTheWay() {
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("real/sub")));
+  QVERIFY(QDir(outsideDir.path()).mkpath(QStringLiteral("sub")));
+  const QString link = root.filePath(QStringLiteral("shared"));
+#ifdef Q_OS_WIN
+  QProcess cmd;
+  cmd.start(QStringLiteral("cmd.exe"),
+            {QStringLiteral("/c"), QStringLiteral("mklink"),
+             QStringLiteral("/J"), QDir::toNativeSeparators(link),
+             QDir::toNativeSeparators(outsideDir.path())});
+  if (!cmd.waitForFinished(10000) || cmd.exitCode() != 0) {
+    if (qEnvironmentVariableIsSet("GITHUB_ACTIONS")) {
+      QFAIL("could not create a junction on the CI runner");
+    }
+    QSKIP("could not create a junction here");
+  }
+#else
+  QVERIFY(QFile::link(outsideDir.path(), link));
+#endif
+  const QString store = storeDir.path() + QLatin1Char('/');
+  QVERIFY(Util::isUnderLink(link, store));
+  QVERIFY(Util::isUnderLink(link + QLatin1Char('/'), store));
+  QVERIFY(Util::isUnderLink(link + QStringLiteral("/sub/"), store));
+  QVERIFY(Util::isUnderLink(link + QStringLiteral("/sub/entry.gpg"), store));
+  QVERIFY(
+      !Util::isUnderLink(root.filePath(QStringLiteral("real/sub/")), store));
+  QVERIFY(
+      !Util::isUnderLink(root.filePath(QStringLiteral("real/x.gpg")), store));
+  QVERIFY(!Util::isUnderLink(store, store));
+  QVERIFY(!Util::isUnderLink(storeDir.path(), store));
+  // A path not under the store as named is judged on its own.
+  QVERIFY(!Util::isUnderLink(outsideDir.path(), store));
+#ifdef Q_OS_WIN
+  QVERIFY(QDir().rmdir(link));
+#endif
+}
+
+/**
+ * @brief removeTree takes a folder down like rm -rf: nested folders and
+ *        hidden files go, a symlink inside goes as an entry and its target
+ *        is left alone, and a folder that is itself a symlink is removed as
+ *        a link, not emptied.
+ */
+void tst_util::removeTreeDoesNotFollowSymlinks() {
+#ifdef Q_OS_WIN
+  QSKIP("creating a symlink needs a privilege a CI runner may lack");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  const QDir root(storeDir.path());
+  const QDir outside(outsideDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("folder/.hidden")));
+  for (const QString &path :
+       {root.filePath(QStringLiteral("folder/a.gpg")),
+        root.filePath(QStringLiteral("folder/.hidden/b.gpg")),
+        outside.filePath(QStringLiteral("secret.gpg"))}) {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  QVERIFY(QFile::link(outsideDir.path(),
+                      root.filePath(QStringLiteral("folder/dir-link"))));
+  QVERIFY(QFile::link(outside.filePath(QStringLiteral("secret.gpg")),
+                      root.filePath(QStringLiteral("folder/file-link.gpg"))));
+  QVERIFY(Util::removeTree(root.filePath(QStringLiteral("folder"))));
+  QVERIFY(!QFileInfo::exists(root.filePath(QStringLiteral("folder"))));
+  QVERIFY(QFile::exists(outside.filePath(QStringLiteral("secret.gpg"))));
+
+  // The folder to remove is itself a link: the link goes, the target stays.
+  // With a trailing separator too, which is how the tree names a folder and
+  // what makes lstat("link/") look at the target instead.
+  for (const QString &suffix : {QString(), QStringLiteral("/")}) {
+    QVERIFY(QFile::link(outsideDir.path(),
+                        root.filePath(QStringLiteral("linked-folder"))));
+    QVERIFY(Util::removeTree(root.filePath(QStringLiteral("linked-folder")) +
+                             suffix));
+    QVERIFY(
+        !QFileInfo(root.filePath(QStringLiteral("linked-folder"))).isSymLink());
+    QVERIFY2(
+        QFile::exists(outside.filePath(QStringLiteral("secret.gpg"))),
+        qPrintable(
+            QStringLiteral("target emptied with suffix '%1'").arg(suffix)));
+  }
+
+  QVERIFY2(!Util::removeTree(root.filePath(QStringLiteral("missing"))),
+           "a folder that is not there is not reported as removed");
+#endif
+}
+
+/**
+ * @brief QDir::removeRecursively() empties a junction's target; removeTree
+ *        removes the junction and leaves the target alone.
+ */
+void tst_util::removeTreeDoesNotFollowJunctions() {
+#ifndef Q_OS_WIN
+  QSKIP("junctions exist on NTFS only");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  const QDir root(storeDir.path());
+  const QDir outside(outsideDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("folder")));
+  for (const QString &path : {root.filePath(QStringLiteral("folder/a.gpg")),
+                              outside.filePath(QStringLiteral("secret.gpg"))}) {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  QProcess cmd;
+  cmd.start(QStringLiteral("cmd.exe"),
+            {QStringLiteral("/c"), QStringLiteral("mklink"),
+             QStringLiteral("/J"),
+             QDir::toNativeSeparators(
+                 root.filePath(QStringLiteral("folder/junction"))),
+             QDir::toNativeSeparators(outsideDir.path())});
+  if (!cmd.waitForFinished(10000) || cmd.exitCode() != 0 ||
+      !QFileInfo(root.filePath(QStringLiteral("folder/junction")))
+           .isJunction()) {
+    if (qEnvironmentVariableIsSet("GITHUB_ACTIONS")) {
+      QFAIL("could not create a junction on the CI runner");
+    }
+    QSKIP("could not create a junction here");
+  }
+  QVERIFY(Util::removeTree(root.filePath(QStringLiteral("folder"))));
+  QVERIFY(!QFileInfo::exists(root.filePath(QStringLiteral("folder"))));
+  QVERIFY2(QFile::exists(outside.filePath(QStringLiteral("secret.gpg"))),
+           "the junction's target must be untouched");
+#endif
 }
 
 QTEST_MAIN(tst_util)

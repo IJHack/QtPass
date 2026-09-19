@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "nativegrep.h"
 #include "executor.h"
+#include "util.h"
 #include <QDir>
-#include <QDirIterator>
 #include <QElapsedTimer>
 #include <QPointer>
 #include <QProcess>
@@ -71,13 +71,14 @@ auto NativeGrep::scanStore(const QProcessEnvironment &env,
                            const std::atomic_bool *cancel)
     -> QList<QPair<QString, QStringList>> {
   QList<QPair<QString, QStringList>> results;
-  QDirIterator it(storeDir, QStringList() << "*.gpg", QDir::Files,
-                  QDirIterator::Subdirectories);
-  while (it.hasNext()) {
+  // Regular files only: a link or junction is not an entry, and searching
+  // through one would decrypt files outside the store.
+  const QStringList files =
+      Util::regularFilesUnder(storeDir, QStringList() << "*.gpg");
+  for (const QString &filePath : files) {
     if (QThread::currentThread()->isInterruptionRequested() ||
         (cancel != nullptr && cancel->load()))
       return {};
-    const QString filePath = it.next();
     const QStringList matches = matchFile(env, gpgExe, filePath, rx, cancel);
     if (!matches.isEmpty()) {
       QString entry = QDir(storeDir).relativeFilePath(filePath);
