@@ -65,6 +65,10 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   `otpauth://` URIs should they ever appear in a command line; a `.gpg-id`
   that is not valid UTF-8 is refused rather than verified as something else,
   and gpg's VALIDSIG line is understood with 64-character fingerprints too [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- Every GitHub Action in every workflow is pinned to a commit, with the
+  version as a comment for Dependabot; the build, CodeQL, docs, lint, REUSE
+  and publiccode workflows still referenced tags, which a compromised
+  upstream can move [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - Every path handed to `git` or `gpg` as a positional argument comes after
   `--`, so a name starting with a dash can never be read as an option; the
   paths QtPass builds are absolute today, this makes the rule explicit [#1842](https://github.com/IJHack/QtPass/issues/1842)
