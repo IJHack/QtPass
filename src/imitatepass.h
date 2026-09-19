@@ -411,6 +411,16 @@ private:
    */
   auto reencryptFiles(const QString &dir) -> ReencryptResult;
   /**
+   * @brief Deal with what a crashed or failed earlier run left under @p dir
+   * before touching anything: stale temporaries are removed, a backup whose
+   * original is missing is put back, a backup next to a present original is
+   * reported and left alone (both are valid ciphertexts, the choice is the
+   * user's).
+   * @param dir Directory to scan, recursively.
+   * @return false when something was reported that needs a human first.
+   */
+  auto recoverReencryptLeftovers(const QString &dir) -> bool;
+  /**
    * @brief Report the outcome of a run and emit endReencryptPath().
    * @param result Outcome produced by reencryptFiles().
    */

@@ -24,6 +24,12 @@ enum clipBoardType {
 /**
  * @enum PROCESS
  * @brief Identifies different subprocess operations used in QtPass.
+ *
+ * Adding a value: decide whether its stdout may contain a secret (a
+ * decrypted entry, a search hit in one). If it may not, add it to the allow
+ * list in Pass::emitProcessFinishedSignal(), which forwards output to the
+ * process output panel; anything not listed there stays silent. Then extend
+ * tst_realpass::genericOutputSignalIsAnAllowList() either way.
  */
 enum PROCESS {
   GIT_INIT = 0,  /**< Initialize Git repository */

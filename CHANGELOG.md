@@ -45,6 +45,13 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   by allow list: a process kind that nobody has classified stays silent,
   where it used to be broadcast until someone remembered to exclude it. The
   comment had claimed the opposite of what the code did [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- Re-encryption checks its own bookkeeping: when the new ciphertext cannot
+  be put in place and the original cannot be put back either, the message
+  says where the original still is; a backup that cannot be removed after
+  success is mentioned instead of ignored; and before a run, leftovers of an
+  interrupted one are dealt with — a stale temporary is removed, a backup
+  whose original is missing is restored, a backup next to a present original
+  is reported and left for the user to decide [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - Re-encryption writes the new ciphertext to a temporary file it created
   itself, exclusively and with an unguessable name, instead of a fixed
   `<file>.reencrypt.tmp` that anyone able to write to the store could
