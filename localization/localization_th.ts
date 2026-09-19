@@ -31,176 +31,176 @@
         <translation type="vanished">การตั้งค่า</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="294"/>
+        <location filename="../src/configdialog.ui" line="304"/>
         <source>Clipboard behaviour:</source>
         <translation>พฤติกรรมคลิปบอร์ด:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="312"/>
+        <location filename="../src/configdialog.ui" line="322"/>
         <source>Use primary selection</source>
         <translation>ใช้การเลือกหลัก</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="319"/>
+        <location filename="../src/configdialog.ui" line="329"/>
         <source>Autoclear after:</source>
         <translation>ลบอัตโนมัติหลังจาก:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="336"/>
-        <location filename="../src/configdialog.ui" line="411"/>
+        <location filename="../src/configdialog.ui" line="346"/>
+        <location filename="../src/configdialog.ui" line="421"/>
         <source>Seconds</source>
         <translation>วินาที</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="364"/>
+        <location filename="../src/configdialog.ui" line="374"/>
         <source>Content panel behaviour:</source>
         <translation>พฤติกรรมแผงเนื้อหา:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="372"/>
+        <location filename="../src/configdialog.ui" line="382"/>
         <source>Hide content</source>
         <translation>ซ่อนเนื้อหา</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="379"/>
+        <location filename="../src/configdialog.ui" line="389"/>
         <source>Hide password</source>
         <translation>ซ่อนรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="388"/>
+        <location filename="../src/configdialog.ui" line="398"/>
         <source>Autoclear panel after:</source>
         <translation>ล้างแผงอัตโนมัติหลังจาก:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="440"/>
+        <location filename="../src/configdialog.ui" line="450"/>
         <source>Use a monospace font</source>
         <translation>ใช้แบบอักษรความกว้างคงที่</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="447"/>
+        <location filename="../src/configdialog.ui" line="457"/>
         <source>Display the files content as-is</source>
         <translation>แสดงเนื้อหาไฟล์ตามที่เป็น</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="454"/>
+        <location filename="../src/configdialog.ui" line="464"/>
         <source>No line wrapping</source>
         <translation>ไม่ตัดบรรทัด</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="461"/>
+        <location filename="../src/configdialog.ui" line="471"/>
         <source>Show process output</source>
         <translation>แสดงผลลัพธ์ของกระบวนการ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="541"/>
+        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
         <translation>การสร้างรหัสผ่าน:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="552"/>
+        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
         <translation>ความยาวรหัสผ่าน:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="589"/>
+        <location filename="../src/configdialog.ui" line="599"/>
         <source>Characters</source>
         <translation>ตัวอักษร</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="620"/>
+        <location filename="../src/configdialog.ui" line="630"/>
         <source>Use characters:</source>
         <translation>ใช้ตัวอักษร:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="641"/>
+        <location filename="../src/configdialog.ui" line="651"/>
         <source>Select character set for password generation</source>
         <translation>เลือกชุดตัวอักษรสำหรับการสร้างรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="645"/>
+        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
         <translation>ตัวอักษรทั้งหมด</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="650"/>
+        <location filename="../src/configdialog.ui" line="660"/>
         <source>Alphabetical</source>
         <translation>ตัวอักษรภาษาอังกฤษ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
+        <location filename="../src/configdialog.ui" line="665"/>
         <source>Alphanumerical</source>
         <translation>ตัวอักษรและตัวเลข</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="660"/>
+        <location filename="../src/configdialog.ui" line="670"/>
         <source>Custom</source>
         <translation>กำหนดเอง</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="698"/>
+        <location filename="../src/configdialog.ui" line="708"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="715"/>
+        <location filename="../src/configdialog.ui" line="725"/>
         <source>Use PWGen</source>
         <translation>ใช้ PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="722"/>
+        <location filename="../src/configdialog.ui" line="732"/>
         <source>Exclude capital letters</source>
         <translation>ไม่รวมตัวอักษรตัวพิมพ์ใหญ่</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="732"/>
+        <location filename="../src/configdialog.ui" line="742"/>
         <source>Include special symbols</source>
         <translation>รวมสัญลักษณ์พิเศษ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="739"/>
+        <location filename="../src/configdialog.ui" line="749"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>สร้างรหัสผ่านที่จำง่ายแต่มีความปลอดภัยน้อยกว่า</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="746"/>
+        <location filename="../src/configdialog.ui" line="756"/>
         <source>Exclude numbers</source>
         <translation>ไม่รวมตัวเลข</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="862"/>
+        <location filename="../src/configdialog.ui" line="872"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="873"/>
-        <location filename="../src/configdialog.ui" line="1448"/>
+        <location filename="../src/configdialog.ui" line="883"/>
+        <location filename="../src/configdialog.ui" line="1458"/>
         <source>Use Git</source>
         <translation>ใช้ Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="884"/>
+        <location filename="../src/configdialog.ui" line="894"/>
         <source>Automatically add .gpg-id files</source>
         <translation>เพิ่มไฟล์ .gpg-id อัตโนมัติ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="891"/>
-        <location filename="../src/configdialog.ui" line="1455"/>
+        <location filename="../src/configdialog.ui" line="901"/>
+        <location filename="../src/configdialog.ui" line="1465"/>
         <source>Automatically push</source>
         <translation>ส่งข้อมูลอัตโนมัติ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="898"/>
-        <location filename="../src/configdialog.ui" line="1462"/>
+        <location filename="../src/configdialog.ui" line="908"/>
+        <location filename="../src/configdialog.ui" line="1472"/>
         <source>Automatically pull</source>
         <translation>ดึงข้อมูลอัตโนมัติ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="191"/>
+        <location filename="../src/configdialog.ui" line="201"/>
         <source>Extensions:</source>
         <translation>ส่วนขยาย:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="199"/>
+        <location filename="../src/configdialog.ui" line="209"/>
         <source>Use QRencode</source>
         <translation>ใช้ QRencode</translation>
     </message>
@@ -209,17 +209,17 @@
         <translation type="vanished">ใช้ส่วนขยาย pass-otp</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="213"/>
+        <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable one-time password (OTP) support</source>
         <translation type="unfinished">เปิดใช้การรองรับรหัสผ่านแบบใช้ครั้งเดียว (OTP)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="224"/>
+        <location filename="../src/configdialog.ui" line="234"/>
         <source>Enable content search (pass grep)</source>
         <translation>เปิดใช้การค้นหาเนื้อหา (pass grep)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="227"/>
+        <location filename="../src/configdialog.ui" line="237"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>อนุญาตให้ค้นหาภายในเนื้อหาไฟล์รหัสผ่าน ต้องถอดรหัสทุกไฟล์และอาจช้าในที่เก็บข้อมูลขนาดใหญ่</translation>
     </message>
@@ -254,132 +254,142 @@
         <translation>โปรแกรม</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/configdialog.ui" line="988"/>
         <source>Select password storage program:</source>
         <translation>เลือกโปรแกรมจัดเก็บรหัสผ่าน:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="987"/>
+        <location filename="../src/configdialog.ui" line="997"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Git/GPG แบบเนทีฟ (&amp;v)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="994"/>
+        <location filename="../src/configdialog.ui" line="1004"/>
         <source>&amp;Use pass</source>
         <translation>ใช้ pass (&amp;U)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1018"/>
+        <location filename="../src/configdialog.ui" line="1028"/>
         <source>Native</source>
         <translation>เนทีฟ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
-        <location filename="../src/configdialog.ui" line="1024"/>
+        <location filename="../src/configdialog.ui" line="1034"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ทั่วไป</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">คลิปบอร์ด</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">รหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1037"/>
-        <location filename="../src/configdialog.ui" line="1040"/>
+        <location filename="../src/configdialog.ui" line="173"/>
+        <source>Show menu bar</source>
+        <translation type="unfinished">แสดงแถบเมนู</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="176"/>
+        <source>Ctrl+M shows or hides it from the main window as well</source>
+        <translation type="unfinished">กด Ctrl+M ในหน้าต่างหลักก็แสดงหรือซ่อนแถบเมนูได้เช่นกัน</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1047"/>
+        <location filename="../src/configdialog.ui" line="1050"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">เลือกไฟล์ปฏิบัติการ gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1043"/>
-        <location filename="../src/configdialog.ui" line="1056"/>
-        <location filename="../src/configdialog.ui" line="1111"/>
-        <location filename="../src/configdialog.ui" line="1151"/>
-        <location filename="../src/configdialog.ui" line="1416"/>
-        <location filename="../src/configdialog.ui" line="1507"/>
+        <location filename="../src/configdialog.ui" line="1053"/>
+        <location filename="../src/configdialog.ui" line="1066"/>
+        <location filename="../src/configdialog.ui" line="1121"/>
+        <location filename="../src/configdialog.ui" line="1161"/>
+        <location filename="../src/configdialog.ui" line="1426"/>
+        <location filename="../src/configdialog.ui" line="1517"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1050"/>
-        <location filename="../src/configdialog.ui" line="1053"/>
+        <location filename="../src/configdialog.ui" line="1060"/>
+        <location filename="../src/configdialog.ui" line="1063"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">เลือกไฟล์ปฏิบัติการ git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1069"/>
+        <location filename="../src/configdialog.ui" line="1079"/>
         <source>Generate</source>
         <translation>สร้าง</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1072"/>
+        <location filename="../src/configdialog.ui" line="1082"/>
         <source>Generate GPG key pair</source>
         <translation>สร้างคู่กุญแจ GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1079"/>
+        <location filename="../src/configdialog.ui" line="1089"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1095"/>
+        <location filename="../src/configdialog.ui" line="1105"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1105"/>
-        <location filename="../src/configdialog.ui" line="1108"/>
+        <location filename="../src/configdialog.ui" line="1115"/>
+        <location filename="../src/configdialog.ui" line="1118"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">เลือกไฟล์ปฏิบัติการ pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1121"/>
+        <location filename="../src/configdialog.ui" line="1131"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1132"/>
+        <location filename="../src/configdialog.ui" line="1142"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1145"/>
-        <location filename="../src/configdialog.ui" line="1148"/>
+        <location filename="../src/configdialog.ui" line="1155"/>
+        <location filename="../src/configdialog.ui" line="1158"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">เลือกไฟล์ปฏิบัติการ pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1160"/>
+        <location filename="../src/configdialog.ui" line="1170"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1191"/>
+        <location filename="../src/configdialog.ui" line="1201"/>
         <source>Autodetect</source>
         <translation>ตรวจจับอัตโนมัติ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1202"/>
+        <location filename="../src/configdialog.ui" line="1212"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>การแทนที่ SSH_AUTH_SOCK:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1205"/>
+        <location filename="../src/configdialog.ui" line="1215"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>เส้นทางเลือกสำหรับแทนที่ SSH_AUTH_SOCK เว้นว่างไว้เพื่อตรวจจับอัตโนมัติผ่าน gpgconf (issue #543)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1215"/>
+        <location filename="../src/configdialog.ui" line="1225"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(ตรวจจับอัตโนมัติผ่าน gpgconf)</translation>
     </message>
@@ -389,115 +399,115 @@
         <translation>โปรไฟล์</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1289"/>
+        <location filename="../src/configdialog.ui" line="1299"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">ที่เก็บรหัสผ่านที่ QtPass นี้รู้จัก เลือกรายการหนึ่งเพื่อแก้ไข</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1304"/>
+        <location filename="../src/configdialog.ui" line="1314"/>
         <source>Add a profile</source>
         <translation type="unfinished">เพิ่มโปรไฟล์</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1322"/>
+        <location filename="../src/configdialog.ui" line="1332"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">ลืมโปรไฟล์ที่เลือก ตัวที่เก็บรหัสผ่านเองยังคงอยู่ในดิสก์</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1368"/>
+        <location filename="../src/configdialog.ui" line="1378"/>
         <source>Profile</source>
         <translation type="unfinished">โปรไฟล์</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1374"/>
+        <location filename="../src/configdialog.ui" line="1384"/>
         <source>Name</source>
         <translation>ชื่อ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1384"/>
+        <location filename="../src/configdialog.ui" line="1394"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>ชื่อโปรไฟล์ที่ใช้ระบุโปรไฟล์การกำหนดค่านี้</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1391"/>
+        <location filename="../src/configdialog.ui" line="1401"/>
         <source>Path</source>
         <translation>เส้นทาง</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1403"/>
+        <location filename="../src/configdialog.ui" line="1413"/>
         <source>Path to the password store directory</source>
         <translation>เส้นทางไปยังไดเรกทอรีที่เก็บรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1425"/>
+        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
         <translation>กุญแจลงนาม</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
+        <location filename="../src/configdialog.ui" line="1445"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>ตัวเลือก: กุญแจ GPG สำหรับลงนามไฟล์ .gpg-id เพื่อตรวจสอบความสมบูรณ์ ปล่อยว่างเว้นแต่คุณต้องการป้องกันรายชื่อผู้ใช้จากการถูกแก้ไข</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1307"/>
+        <location filename="../src/configdialog.ui" line="1317"/>
         <source>Add</source>
         <translation>เพิ่ม</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1325"/>
+        <location filename="../src/configdialog.ui" line="1335"/>
         <source>Delete</source>
         <translation>ลบ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1491"/>
+        <location filename="../src/configdialog.ui" line="1501"/>
         <source>Current path</source>
         <translation>เส้นทางปัจจุบัน</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1410"/>
-        <location filename="../src/configdialog.ui" line="1413"/>
-        <location filename="../src/configdialog.ui" line="1501"/>
-        <location filename="../src/configdialog.ui" line="1504"/>
+        <location filename="../src/configdialog.ui" line="1420"/>
+        <location filename="../src/configdialog.ui" line="1423"/>
+        <location filename="../src/configdialog.ui" line="1511"/>
+        <location filename="../src/configdialog.ui" line="1514"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">เลือกโฟลเดอร์ที่เก็บรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1438"/>
+        <location filename="../src/configdialog.ui" line="1448"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">ลายนิ้วมือกุญแจแบบเต็ม 40 อักขระ ตามที่ pass ต้องการ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1445"/>
+        <location filename="../src/configdialog.ui" line="1455"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
         <translation type="unfinished">การตั้งค่า Git สำหรับโปรไฟล์นี้ จะใช้แทนค่าในแท็บการตั้งค่าขณะที่โปรไฟล์นี้ใช้งานอยู่</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="758"/>
+        <location filename="../src/configdialog.ui" line="768"/>
         <source>Template</source>
         <translation>แม่แบบ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="764"/>
+        <location filename="../src/configdialog.ui" line="774"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>แม่แบบเพิ่มฟิลด์เพิ่มเติมในกล่องโต้ตอบการสร้างรหัสผ่านและในมุมมองรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="773"/>
+        <location filename="../src/configdialog.ui" line="783"/>
         <source>Use template</source>
         <translation>ใช้แม่แบบ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="780"/>
+        <location filename="../src/configdialog.ui" line="790"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>แสดงทุกบรรทัดที่ขึ้นต้นด้วยคำตามด้วยโคลอนเป็นฟิลด์ในฟิลด์รหัสผ่าน ไม่ใช่เฉพาะรายการที่ระบุ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="783"/>
+        <location filename="../src/configdialog.ui" line="793"/>
         <source>Show all fields templated</source>
         <translation>แสดงทุกฟิลด์แบบแม่แบบ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="795"/>
+        <location filename="../src/configdialog.ui" line="805"/>
         <source>login
 URL
 e-mail</source>
@@ -506,7 +516,7 @@ URL
 e-mail</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1531"/>
+        <location filename="../src/configdialog.ui" line="1541"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; เวอร์ชัน </translation>
     </message>
@@ -530,9 +540,13 @@ e-mail</translation>
         <translation>ต้องติดตั้ง qrencode</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="92"/>
         <source>No Clipboard</source>
-        <translation>ไม่มีคลิปบอร์ด</translation>
+        <translation type="vanished">ไม่มีคลิปบอร์ด</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="92"/>
+        <source>No clipboard</source>
+        <translation type="unfinished">ไม่ใช้คลิปบอร์ด</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
@@ -545,38 +559,38 @@ e-mail</translation>
         <translation>คัดลอกไปยังคลิปบอร์ดเมื่อต้องการ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="277"/>
-        <location filename="../src/configdialog.cpp" line="282"/>
+        <location filename="../src/configdialog.cpp" line="285"/>
+        <location filename="../src/configdialog.cpp" line="290"/>
         <source>This field is required</source>
         <translation>ต้องระบุฟิลด์นี้</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="279"/>
+        <location filename="../src/configdialog.cpp" line="287"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">มีโปรไฟล์อื่นใช้ชื่อนี้อยู่แล้ว</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="319"/>
+        <location filename="../src/configdialog.cpp" line="327"/>
         <source>The path does not exist.</source>
         <translation>ไม่มีเส้นทางดังกล่าว</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="322"/>
+        <location filename="../src/configdialog.cpp" line="330"/>
         <source>The path is not readable.</source>
         <translation>ไม่สามารถอ่านเส้นทางได้</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="325"/>
+        <location filename="../src/configdialog.cpp" line="333"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>เส้นทางไม่ใช่ซ็อกเก็ตโดเมน Unix</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="330"/>
+        <location filename="../src/configdialog.cpp" line="338"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>การแทนที่ SSH_AUTH_SOCK ที่อาจไม่ถูกต้อง</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="331"/>
+        <location filename="../src/configdialog.cpp" line="339"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -589,52 +603,52 @@ The value will still be saved as entered.</source>
 ค่ายังคงถูกบันทึกตามที่ป้อนไว้</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="718"/>
+        <location filename="../src/configdialog.cpp" line="726"/>
         <source>Create profile directory?</source>
         <translation>สร้างไดเรกทอรีโปรไฟล์?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="719"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>คุณต้องการสร้างที่เก็บรหัสผ่านที่ %1 หรือไม่?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="726"/>
+        <location filename="../src/configdialog.cpp" line="734"/>
         <source>Error</source>
         <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="727"/>
+        <location filename="../src/configdialog.cpp" line="735"/>
         <source>Could not create profile directory: %1</source>
         <translation>ไม่สามารถสร้างไดเรกทอรีโปรไฟล์: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="753"/>
+        <location filename="../src/configdialog.cpp" line="761"/>
         <source>Select recipients for %1</source>
         <translation>เลือกผู้รับสำหรับ %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="766"/>
+        <location filename="../src/configdialog.cpp" line="774"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">ไม่สามารถเริ่มต้นโปรไฟล์ %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="768"/>
+        <location filename="../src/configdialog.cpp" line="776"/>
         <source>Profile %1</source>
         <translation type="unfinished">โปรไฟล์ %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="779"/>
+        <location filename="../src/configdialog.cpp" line="787"/>
         <source>New Profile</source>
         <translation>โปรไฟล์ใหม่</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="806"/>
+        <location filename="../src/configdialog.cpp" line="814"/>
         <source>No profile selected</source>
         <translation>ไม่ได้เลือกโปรไฟล์</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="807"/>
+        <location filename="../src/configdialog.cpp" line="815"/>
         <source>No profile selected to delete</source>
         <translation>ไม่ได้เลือกโปรไฟล์เพื่อลบ</translation>
     </message>
@@ -675,17 +689,17 @@ The value will still be saved as entered.</source>
         <translation type="vanished">โฟลเดอร์ %1 ดูเหมือนจะไม่ใช่ที่เก็บรหัสผ่านหรือยังไม่ได้เริ่มต้น</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1105"/>
+        <location filename="../src/configdialog.cpp" line="1113"/>
         <source>New profile: %1 at %2</source>
         <translation>โปรไฟล์ใหม่: %1 ที่ %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1107"/>
+        <location filename="../src/configdialog.cpp" line="1115"/>
         <source>Profile: %1 at %2</source>
         <translation>โปรไฟล์: %1 ที่ %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1110"/>
+        <location filename="../src/configdialog.cpp" line="1118"/>
         <source>Fill in all required fields</source>
         <translation>กรอกข้อมูลในฟิลด์ที่ต้องการทั้งหมด</translation>
     </message>
@@ -785,8 +799,12 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished">คัดลอกไปยังคลิปบอร์ด</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
-        <translation>คัดลอกไปยังคลิปบอร์ด</translation>
+        <translation type="vanished">คัดลอกไปยังคลิปบอร์ด</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -831,17 +849,17 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ดับเบิลคลิกเพื่อเปลี่ยนชื่อฟิลด์นี้</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">เปลี่ยนชื่อฟิลด์…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ลบฟิลด์</translation>
     </message>
 </context>
 <context>
@@ -1111,8 +1129,12 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
+        <source>From clipboard</source>
+        <translation type="unfinished">จากคลิปบอร์ด</translation>
+    </message>
+    <message>
         <source>From Clipboard</source>
-        <translation>จากคลิปบอร์ด</translation>
+        <translation type="vanished">จากคลิปบอร์ด</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1149,8 +1171,12 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
+        <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
+        <translation type="unfinished">%1 ดูเหมือนจะไม่ใช่กุญแจ GPG แบบ ASCII-armored แปลงด้วย &lt;code&gt;gpg --armor --export&lt;/code&gt; ก่อน หรือวางบล็อก armored ผ่าน &lt;b&gt;จากคลิปบอร์ด&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 ดูเหมือนจะไม่ใช่กุญแจ GPG แบบ ASCII-armored แปลงด้วย &lt;code&gt;gpg --armor --export&lt;/code&gt; ก่อนหรือวางบล็อก armored ผ่าน &lt;b&gt;จากคลิปบอร์ด&lt;/b&gt;</translation>
+        <translation type="vanished">%1 ดูเหมือนจะไม่ใช่กุญแจ GPG แบบ ASCII-armored แปลงด้วย &lt;code&gt;gpg --armor --export&lt;/code&gt; ก่อนหรือวางบล็อก armored ผ่าน &lt;b&gt;จากคลิปบอร์ด&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1305,8 +1331,8 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="799"/>
-        <location filename="../src/mainwindow.cpp" line="1012"/>
+        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Search Password</source>
         <translation>ค้นหารหัสผ่าน</translation>
     </message>
@@ -1394,7 +1420,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="423"/>
         <location filename="../src/mainwindow.ui" line="426"/>
-        <location filename="../src/mainwindow.cpp" line="1559"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
         <source>Add password</source>
         <translation>เพิ่มรหัสผ่าน</translation>
     </message>
@@ -1406,21 +1432,21 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="434"/>
         <location filename="../src/mainwindow.ui" line="437"/>
-        <location filename="../src/mainwindow.cpp" line="1558"/>
+        <location filename="../src/mainwindow.cpp" line="1568"/>
         <source>Add folder</source>
         <translation>เพิ่มโฟลเดอร์</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="442"/>
         <location filename="../src/mainwindow.ui" line="445"/>
-        <location filename="../src/mainwindow.cpp" line="1566"/>
+        <location filename="../src/mainwindow.cpp" line="1576"/>
         <source>Edit</source>
         <translation>แก้ไข</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="450"/>
         <location filename="../src/mainwindow.ui" line="453"/>
-        <location filename="../src/mainwindow.cpp" line="1580"/>
+        <location filename="../src/mainwindow.cpp" line="1590"/>
         <source>Delete</source>
         <translation>ลบ</translation>
     </message>
@@ -1461,7 +1487,7 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="485"/>
-        <location filename="../src/mainwindow.cpp" line="1560"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Users</source>
         <translation>ผู้ใช้</translation>
     </message>
@@ -1551,7 +1577,7 @@ You will not be able to change the user list!</source>
         <translation type="unfinished">เกี่ยวกับ Qt (&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="415"/>
+        <location filename="../src/mainwindow.cpp" line="420"/>
         <source>Welcome to QtPass %1</source>
         <translation>ยินดีต้อนรับสู่ QtPass %1</translation>
     </message>
@@ -1568,14 +1594,14 @@ You will not be able to change the user list!</source>
         <translation type="vanished">ผลลัพธ์ของกระบวนการ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="582"/>
-        <location filename="../src/mainwindow.cpp" line="595"/>
+        <location filename="../src/mainwindow.cpp" line="591"/>
+        <location filename="../src/mainwindow.cpp" line="604"/>
         <source>Updating password-store</source>
         <translation>กำลังอัปเดตที่เก็บรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="706"/>
-        <location filename="../src/mainwindow.cpp" line="1054"/>
+        <location filename="../src/mainwindow.cpp" line="715"/>
+        <location filename="../src/mainwindow.cpp" line="1064"/>
         <source>Content hidden</source>
         <translation>ซ่อนเนื้อหา</translation>
     </message>
@@ -1588,64 +1614,64 @@ You will not be able to change the user list!</source>
         <translation type="vanished">รหัส OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="756"/>
-        <location filename="../src/mainwindow.cpp" line="774"/>
-        <location filename="../src/mainwindow.cpp" line="1295"/>
+        <location filename="../src/mainwindow.cpp" line="765"/>
+        <location filename="../src/mainwindow.cpp" line="783"/>
+        <location filename="../src/mainwindow.cpp" line="1305"/>
         <source>OTP code copied to clipboard</source>
         <translation>คัดลอกรหัส OTP ไปยังคลิปบอร์ดแล้ว</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="776"/>
-        <location filename="../src/mainwindow.cpp" line="1278"/>
+        <location filename="../src/mainwindow.cpp" line="785"/>
+        <location filename="../src/mainwindow.cpp" line="1288"/>
         <source>No OTP code found in this password entry</source>
         <translation>ไม่พบรหัส OTP ในรายการรหัสผ่านนี้</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="803"/>
+        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
         <translation>ซ่อนรหัสผ่านและเนื้อหา</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="913"/>
+        <location filename="../src/mainwindow.cpp" line="923"/>
         <source>Looking for: %1</source>
         <translation>กำลังมองหา: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="961"/>
+        <location filename="../src/mainwindow.cpp" line="971"/>
         <source>Searching…</source>
         <translation>กำลังค้นหา…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="990"/>
+        <location filename="../src/mainwindow.cpp" line="1000"/>
         <source>Search content (regex)</source>
         <translation>ค้นหาเนื้อหา (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1040"/>
+        <location filename="../src/mainwindow.cpp" line="1050"/>
         <source>No matches found.</source>
         <translation>ไม่พบรายการที่ตรงกัน</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1064"/>
+        <location filename="../src/mainwindow.cpp" line="1074"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>พบ %n รายการที่ตรงกัน</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1065"/>
+        <location filename="../src/mainwindow.cpp" line="1075"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>ใน %n รายการ</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1142"/>
+        <location filename="../src/mainwindow.cpp" line="1152"/>
         <source>Invalid name</source>
         <translation type="unfinished">ชื่อไม่ถูกต้อง</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1143"/>
+        <location filename="../src/mainwindow.cpp" line="1153"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">ชื่อนี้จะชี้ออกไปนอกที่เก็บรหัสผ่าน โปรดเลือกชื่ออื่น</translation>
     </message>
@@ -1666,32 +1692,32 @@ You will not be able to change the user list!</source>
 (จะถูกวางไว้ใน %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="151"/>
+        <location filename="../src/mainwindow.cpp" line="157"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">การดำเนินการหมดเวลา กำลังเปิดใช้อินเทอร์เฟซอีกครั้ง</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="743"/>
+        <location filename="../src/mainwindow.cpp" line="752"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">ไม่สามารถถอดรหัสรายการรหัสผ่านนี้</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="890"/>
+        <location filename="../src/mainwindow.cpp" line="900"/>
         <source>About QtPass</source>
         <translation type="unfinished">เกี่ยวกับ QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="891"/>
+        <location filename="../src/mainwindow.cpp" line="901"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;GUI ข้ามแพลตฟอร์มสำหรับ &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; ตัวจัดการรหัสผ่านมาตรฐานของ Unix&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;ซอร์สโค้ดและรายงานปัญหา&lt;/a&gt;&lt;/p&gt;&lt;p&gt;สงวนลิขสิทธิ์ &amp;copy; 2014&amp;ndash;%2 IJhack เผยแพร่ภายใต้สัญญาอนุญาต &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL เวอร์ชัน 3&lt;/a&gt; หรือใหม่กว่า&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="995"/>
+        <location filename="../src/mainwindow.cpp" line="1005"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation type="unfinished">การค้นหาเนื้อหาใช้นิพจน์ปรกติพื้นฐานแบบ POSIX (pass grep)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="997"/>
+        <location filename="../src/mainwindow.cpp" line="1007"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">การค้นหาเนื้อหาใช้นิพจน์ปรกติที่เข้ากันได้กับ Perl (PCRE)</translation>
     </message>
@@ -1702,143 +1728,143 @@ You will not be able to change the user list!</source>
 (จะถูกวางไว้ใน %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1221"/>
+        <location filename="../src/mainwindow.cpp" line="1231"/>
         <source> and the whole content?</source>
         <translation> และเนื้อหาทั้งหมด?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1231"/>
+        <location filename="../src/mainwindow.cpp" line="1241"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> และเนื้อหาทั้งหมด? &lt;br&gt;&lt;strong&gt;ระวัง: มีไฟล์ที่ไม่คาดคิดในโฟลเดอร์ที่กำหนด ตรวจสอบก่อนดำเนินการต่อ&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1240"/>
+        <location filename="../src/mainwindow.cpp" line="1250"/>
         <source>Delete folder?</source>
         <translation>ลบโฟลเดอร์?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1240"/>
+        <location filename="../src/mainwindow.cpp" line="1250"/>
         <source>Delete password?</source>
         <translation>ลบรหัสผ่าน?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1241"/>
+        <location filename="../src/mainwindow.cpp" line="1251"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>คุณแน่ใจหรือไม่ว่าต้องการลบ %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1273"/>
+        <location filename="../src/mainwindow.cpp" line="1283"/>
         <source>No password selected for OTP generation</source>
         <translation>ไม่ได้เลือกรหัสผ่านสำหรับการสร้าง OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1405"/>
+        <location filename="../src/mainwindow.cpp" line="1415"/>
         <source>Profile changed to %1</source>
         <translation>เปลี่ยนโปรไฟล์เป็น %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1557"/>
+        <location filename="../src/mainwindow.cpp" line="1567"/>
         <source>Open folder with file manager</source>
         <translation>เปิดโฟลเดอร์ด้วยตัวจัดการไฟล์</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1572"/>
-        <location filename="../src/mainwindow.cpp" line="1703"/>
+        <location filename="../src/mainwindow.cpp" line="1582"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename folder</source>
         <translation>เปลี่ยนชื่อโฟลเดอร์</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1576"/>
+        <location filename="../src/mainwindow.cpp" line="1586"/>
         <source>Rename password</source>
         <translation>เปลี่ยนชื่อรหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1585"/>
+        <location filename="../src/mainwindow.cpp" line="1595"/>
         <source>Share</source>
         <translation>แชร์</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1595"/>
+        <location filename="../src/mainwindow.cpp" line="1605"/>
         <source>Re-encrypt all passwords</source>
         <translation>เข้ารหัสรหัสผ่านทั้งหมดใหม่</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1600"/>
+        <location filename="../src/mainwindow.cpp" line="1610"/>
         <source>Export my public key...</source>
         <translation>ส่งออกกุญแจสาธารณะของฉัน...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1606"/>
+        <location filename="../src/mainwindow.cpp" line="1616"/>
         <source>Add recipient...</source>
         <translation>เพิ่มผู้รับ...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1611"/>
+        <location filename="../src/mainwindow.cpp" line="1621"/>
         <source>What is this?</source>
         <translation>นี่คืออะไร?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1654"/>
+        <location filename="../src/mainwindow.cpp" line="1664"/>
         <source>New folder</source>
         <translation type="unfinished">โฟลเดอร์ใหม่</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>โฟลเดอร์ใหม่:
 (จะถูกวางไว้ใน %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1666"/>
-        <location filename="../src/mainwindow.cpp" line="1688"/>
-        <location filename="../src/mainwindow.cpp" line="1815"/>
+        <location filename="../src/mainwindow.cpp" line="1676"/>
+        <location filename="../src/mainwindow.cpp" line="1698"/>
+        <location filename="../src/mainwindow.cpp" line="1825"/>
         <source>Error</source>
         <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1667"/>
+        <location filename="../src/mainwindow.cpp" line="1677"/>
         <source>Failed to create folder: %1</source>
         <translation>ไม่สามารถสร้างโฟลเดอร์: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1689"/>
+        <location filename="../src/mainwindow.cpp" line="1699"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>ไม่สามารถสร้างไฟล์ .gpg-id ใน: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1743"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
         <translation>เปลี่ยนชื่อไฟล์</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1703"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
         <translation>เปลี่ยนชื่อโฟลเดอร์เป็น: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1743"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
         <translation>เปลี่ยนชื่อไฟล์เป็น: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1792"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">รายการนี้มีข้อมูลลับ OTP ไม่ใช่รหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1816"/>
+        <location filename="../src/mainwindow.cpp" line="1826"/>
         <source>Directory does not exist: %1</source>
         <translation>ไดเรกทอรีไม่มีอยู่: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1821"/>
-        <location filename="../src/mainwindow.cpp" line="1858"/>
+        <location filename="../src/mainwindow.cpp" line="1831"/>
+        <location filename="../src/mainwindow.cpp" line="1868"/>
         <source>Re-encrypt passwords</source>
         <translation>เข้ารหัสรหัสผ่านใหม่</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1822"/>
+        <location filename="../src/mainwindow.cpp" line="1832"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -1855,38 +1881,38 @@ Continue?</source>
 ดำเนินการต่อ?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1856"/>
+        <location filename="../src/mainwindow.cpp" line="1866"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">กำลังเข้ารหัสรหัสผ่านใหม่...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1857"/>
+        <location filename="../src/mainwindow.cpp" line="1867"/>
         <source>Cancel</source>
         <translation type="unfinished">ยกเลิก</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1865"/>
+        <location filename="../src/mainwindow.cpp" line="1875"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">กำลังยกเลิกการเข้ารหัสใหม่</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1881"/>
+        <location filename="../src/mainwindow.cpp" line="1891"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">กำลังเข้ารหัสรหัสผ่านใหม่: %1 จาก %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1914"/>
-        <location filename="../src/mainwindow.cpp" line="1933"/>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
         <translation>ส่งออกกุญแจสาธารณะ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1915"/>
+        <location filename="../src/mainwindow.cpp" line="1925"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;ส่งออกกุญแจสาธารณะของคุณ&lt;/h3&gt;&lt;p&gt;ไม่ได้กำหนดค่ากุญแจลงนาม ตั้งค่าหนึ่งในการตั้งค่า QtPass &amp;gt; กุญแจ GPG หรือรันคำสั่งนี้ในเทอร์มินัล:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;จากนั้นส่งไฟล์ไปยังเพื่อนร่วมทีมของคุณ&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1934"/>
+        <location filename="../src/mainwindow.cpp" line="1944"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1895,17 +1921,17 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1936"/>
+        <location filename="../src/mainwindow.cpp" line="1946"/>
         <source>No output from gpg.</source>
         <translation>ไม่มีผลลัพธ์จาก gpg</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1963"/>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
         <translation>การแชร์รหัสผ่านด้วย GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1964"/>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;การแชร์รหัสผ่านด้วย GPG&lt;/h3&gt;&lt;p&gt;เพื่อแชร์รหัสผ่านกับผู้ใช้อื่น:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;ส่งออกกุญแจสาธารณะของคุณ&lt;/b&gt; และส่งไปยังเพื่อนร่วมทีม&lt;/li&gt;&lt;li&gt;&lt;b&gt;นำเข้ากุญแจสาธารณะของเพื่อนร่วมทีม&lt;/b&gt; เข้าสู่พวงกุญแจ GPG ของคุณ&lt;/li&gt;&lt;li&gt;&lt;b&gt;เข้ารหัสรหัสผ่านใหม่&lt;/b&gt; เพื่อให้ผู้รับทั้งหมดสามารถถอดรหัสได้&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;เฉพาะผู้ที่มีกุญแจลับที่ตรงกันเท่านั้นที่สามารถถอดรหัสรหัสผ่านได้&lt;/p&gt;&lt;p&gt;&lt;b&gt;เคล็ดลับ:&lt;/b&gt; ใช้กุญแจ GPG เดียวกันสำหรับโฟลเดอร์ที่แชร์ทั้งหมด&lt;/p&gt;&lt;p&gt;ดู FAQ สำหรับรายละเอียดเพิ่มเติม&lt;/p&gt;</translation>
     </message>
@@ -2108,12 +2134,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ลบฟิลด์</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">มีฟิลด์ชื่อ %1 อยู่แล้ว</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>
@@ -2247,25 +2273,25 @@ Continue?</source>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="78"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="148"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="191"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="79"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="149"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
         <translation type="unfinished">รหัสผ่าน</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="166"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="167"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">เปิด %1 ในเบราว์เซอร์</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="311"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="324"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="331"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="344"/>
         <source>OTP Code</source>
         <translation type="unfinished">รหัส OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="312"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="332"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">ไม่พบรหัส OTP ในรายการรหัสผ่านนี้</translation>
     </message>

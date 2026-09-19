@@ -35,7 +35,7 @@
         <translation type="vanished">git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1121"/>
+        <location filename="../src/configdialog.ui" line="1131"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
@@ -44,33 +44,33 @@
         <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1018"/>
+        <location filename="../src/configdialog.ui" line="1028"/>
         <source>Native</source>
         <translation>Nativ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="994"/>
+        <location filename="../src/configdialog.ui" line="1004"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Använd pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="884"/>
+        <location filename="../src/configdialog.ui" line="894"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Skapa .gpg-id filer automatiskt</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="336"/>
-        <location filename="../src/configdialog.ui" line="411"/>
+        <location filename="../src/configdialog.ui" line="346"/>
+        <location filename="../src/configdialog.ui" line="421"/>
         <source>Seconds</source>
         <translation>Sekunder</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="379"/>
+        <location filename="../src/configdialog.ui" line="389"/>
         <source>Hide password</source>
         <translation>Dölj lösenord</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1132"/>
+        <location filename="../src/configdialog.ui" line="1142"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
@@ -88,7 +88,7 @@
         <translation type="vanished">Inställningar</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="589"/>
+        <location filename="../src/configdialog.ui" line="599"/>
         <source>Characters</source>
         <translation>Tecken</translation>
     </message>
@@ -107,14 +107,14 @@
         <translation>Dölj vid nerstängning</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="891"/>
-        <location filename="../src/configdialog.ui" line="1455"/>
+        <location filename="../src/configdialog.ui" line="901"/>
+        <location filename="../src/configdialog.ui" line="1465"/>
         <source>Automatically push</source>
         <translation>Automatisk push</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="898"/>
-        <location filename="../src/configdialog.ui" line="1462"/>
+        <location filename="../src/configdialog.ui" line="908"/>
+        <location filename="../src/configdialog.ui" line="1472"/>
         <source>Automatically pull</source>
         <translation>Automatisk pull</translation>
     </message>
@@ -127,7 +127,7 @@
         <translation type="vanished">Inkludera specialtecken </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="698"/>
+        <location filename="../src/configdialog.ui" line="708"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
@@ -142,17 +142,17 @@
         <translation>Profiler</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1374"/>
+        <location filename="../src/configdialog.ui" line="1384"/>
         <source>Name</source>
         <translation>Namn</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1391"/>
+        <location filename="../src/configdialog.ui" line="1401"/>
         <source>Path</source>
         <translation>Sökväg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1307"/>
+        <location filename="../src/configdialog.ui" line="1317"/>
         <source>Add</source>
         <translation>Lägg till</translation>
     </message>
@@ -161,27 +161,27 @@
         <translation type="vanished">Nuvarande lösenordsutrymme</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="758"/>
+        <location filename="../src/configdialog.ui" line="768"/>
         <source>Template</source>
         <translation>Mall</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="773"/>
+        <location filename="../src/configdialog.ui" line="783"/>
         <source>Use template</source>
         <translation>Använd mall</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="783"/>
+        <location filename="../src/configdialog.ui" line="793"/>
         <source>Show all fields templated</source>
         <translation>Visa samtliga fält i mallen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1325"/>
+        <location filename="../src/configdialog.ui" line="1335"/>
         <source>Delete</source>
         <translation>Ta bort</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="372"/>
+        <location filename="../src/configdialog.ui" line="382"/>
         <source>Hide content</source>
         <translation>Dölj innehåll</translation>
     </message>
@@ -206,261 +206,271 @@
         <translation type="vanished">Lösenordsutrymme ej initialiserat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="806"/>
+        <location filename="../src/configdialog.cpp" line="814"/>
         <source>No profile selected</source>
         <translation>Ingen profil vald</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="807"/>
+        <location filename="../src/configdialog.cpp" line="815"/>
         <source>No profile selected to delete</source>
         <translation>Ingen profil vald att tas bort</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="294"/>
+        <location filename="../src/configdialog.ui" line="304"/>
         <source>Clipboard behaviour:</source>
         <translation>Urklippsbeteende:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="312"/>
+        <location filename="../src/configdialog.ui" line="322"/>
         <source>Use primary selection</source>
         <translation>Använd primärval</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="319"/>
+        <location filename="../src/configdialog.ui" line="329"/>
         <source>Autoclear after:</source>
         <translation>Automatisk tömning efter:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="364"/>
+        <location filename="../src/configdialog.ui" line="374"/>
         <source>Content panel behaviour:</source>
         <translation>Beteende på innehållspanelen:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="388"/>
+        <location filename="../src/configdialog.ui" line="398"/>
         <source>Autoclear panel after:</source>
         <translation>Rensa panel automatiskt efter:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="440"/>
+        <location filename="../src/configdialog.ui" line="450"/>
         <source>Use a monospace font</source>
         <translation>Använd ett monospace teckensnitt</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="447"/>
+        <location filename="../src/configdialog.ui" line="457"/>
         <source>Display the files content as-is</source>
         <translation>Visa filernas innehåll som det är</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="454"/>
+        <location filename="../src/configdialog.ui" line="464"/>
         <source>No line wrapping</source>
         <translation>Ingen linjeomslutning</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="461"/>
+        <location filename="../src/configdialog.ui" line="471"/>
         <source>Show process output</source>
         <translation>Visa processutdata</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="541"/>
+        <location filename="../src/configdialog.ui" line="551"/>
         <source>Password Generation:</source>
         <translation>Lösenordgenerering:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="552"/>
+        <location filename="../src/configdialog.ui" line="562"/>
         <source>Password Length:</source>
         <translation>Lösenords längd:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="620"/>
+        <location filename="../src/configdialog.ui" line="630"/>
         <source>Use characters:</source>
         <translation>Använd tecken:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="641"/>
+        <location filename="../src/configdialog.ui" line="651"/>
         <source>Select character set for password generation</source>
         <translation>Välj teckenuppsättning för lösenordsgenerering</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="645"/>
+        <location filename="../src/configdialog.ui" line="655"/>
         <source>All Characters</source>
         <translation>Alla tecken</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="650"/>
+        <location filename="../src/configdialog.ui" line="660"/>
         <source>Alphabetical</source>
         <translation>Alfabetisk</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
+        <location filename="../src/configdialog.ui" line="665"/>
         <source>Alphanumerical</source>
         <translation>Alfanumerisk</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="660"/>
+        <location filename="../src/configdialog.ui" line="670"/>
         <source>Custom</source>
         <translation>Anpassad</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="722"/>
+        <location filename="../src/configdialog.ui" line="732"/>
         <source>Exclude capital letters</source>
         <translation>Uteslut stora bokstäver</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="732"/>
+        <location filename="../src/configdialog.ui" line="742"/>
         <source>Include special symbols</source>
         <translation>Inkludera speciella symboler</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="739"/>
+        <location filename="../src/configdialog.ui" line="749"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Generera lätt att memorera men mindre säkra lösenord</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="746"/>
+        <location filename="../src/configdialog.ui" line="756"/>
         <source>Exclude numbers</source>
         <translation>Uteslut siffror</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="862"/>
+        <location filename="../src/configdialog.ui" line="872"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="191"/>
+        <location filename="../src/configdialog.ui" line="201"/>
         <source>Extensions:</source>
         <translation>Tillägg:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Allmänt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Urklipp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lösenord</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="213"/>
+        <location filename="../src/configdialog.ui" line="173"/>
+        <source>Show menu bar</source>
+        <translation type="unfinished">Visa menyrad</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="176"/>
+        <source>Ctrl+M shows or hides it from the main window as well</source>
+        <translation type="unfinished">Ctrl+M visar eller döljer den även från huvudfönstret</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable one-time password (OTP) support</source>
         <translation>Aktivera stöd för engångslösenord (OTP)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="224"/>
+        <location filename="../src/configdialog.ui" line="234"/>
         <source>Enable content search (pass grep)</source>
         <translation>Aktivera innehållssökning (med grep)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="227"/>
+        <location filename="../src/configdialog.ui" line="237"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Tillåt sökning i lösenordsfiler. Kräver att varje fil dekrypteras och kan vara långsamt på stora lagringsplatser.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1037"/>
-        <location filename="../src/configdialog.ui" line="1040"/>
+        <location filename="../src/configdialog.ui" line="1047"/>
+        <location filename="../src/configdialog.ui" line="1050"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">Välj den körbara gpg-filen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1050"/>
-        <location filename="../src/configdialog.ui" line="1053"/>
+        <location filename="../src/configdialog.ui" line="1060"/>
+        <location filename="../src/configdialog.ui" line="1063"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">Välj den körbara git-filen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1069"/>
+        <location filename="../src/configdialog.ui" line="1079"/>
         <source>Generate</source>
         <translation>Generera</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1072"/>
+        <location filename="../src/configdialog.ui" line="1082"/>
         <source>Generate GPG key pair</source>
         <translation>Generera GPG-nyckelpar</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1105"/>
-        <location filename="../src/configdialog.ui" line="1108"/>
+        <location filename="../src/configdialog.ui" line="1115"/>
+        <location filename="../src/configdialog.ui" line="1118"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">Välj den körbara pwgen-filen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1145"/>
-        <location filename="../src/configdialog.ui" line="1148"/>
+        <location filename="../src/configdialog.ui" line="1155"/>
+        <location filename="../src/configdialog.ui" line="1158"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">Välj den körbara pass-filen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1202"/>
+        <location filename="../src/configdialog.ui" line="1212"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>SSH_AUTH_SOCK-åsidosättning:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1205"/>
+        <location filename="../src/configdialog.ui" line="1215"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>Valfri sökväg för att åsidosätta SSH_AUTH_SOCK. Lämna tomt för automatisk sökning via gpgconf (issue #543).</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1215"/>
+        <location filename="../src/configdialog.ui" line="1225"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(automatisk sökning via gpgconf)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1289"/>
+        <location filename="../src/configdialog.ui" line="1299"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">De lösenordsutrymmen som den här QtPass känner till; välj ett för att redigera det</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1304"/>
+        <location filename="../src/configdialog.ui" line="1314"/>
         <source>Add a profile</source>
         <translation type="unfinished">Lägg till en profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1322"/>
+        <location filename="../src/configdialog.ui" line="1332"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">Glöm den valda profilen; själva lösenordsutrymmet finns kvar på disken</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1368"/>
+        <location filename="../src/configdialog.ui" line="1378"/>
         <source>Profile</source>
         <translation type="unfinished">Profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1384"/>
+        <location filename="../src/configdialog.ui" line="1394"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Profilnamn, som används för att identifiera denna konfigurationsprofil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1403"/>
+        <location filename="../src/configdialog.ui" line="1413"/>
         <source>Path to the password store directory</source>
         <translation>Sökväg till katalogen för lösenordslagring</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1425"/>
+        <location filename="../src/configdialog.ui" line="1435"/>
         <source>Signing Key</source>
         <translation>Signeringsnyckel</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
+        <location filename="../src/configdialog.ui" line="1445"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Valfritt: GPG-nyckel för att signera .gpg-id filer för integritetsverifiering. Lämna tomt om du inte behöver skydda användarlistan från manipulation.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1438"/>
+        <location filename="../src/configdialog.ui" line="1448"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">Fullständigt nyckelfingeravtryck på 40 tecken, så som pass kräver</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1445"/>
+        <location filename="../src/configdialog.ui" line="1455"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
         <translation type="unfinished">Git-inställningar för den här profilen; de ersätter inställningarna på fliken Inställningar medan profilen är aktiv</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1491"/>
+        <location filename="../src/configdialog.ui" line="1501"/>
         <source>Current path</source>
         <translation>Aktuella sökvägen</translation>
     </message>
@@ -475,35 +485,35 @@
         <translation>Alltid överst</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/configdialog.ui" line="988"/>
         <source>Select password storage program:</source>
         <translation>Välj lösenordslagringsprogram:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1160"/>
+        <location filename="../src/configdialog.ui" line="1170"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1191"/>
+        <location filename="../src/configdialog.ui" line="1201"/>
         <source>Autodetect</source>
         <translation>Autodetektera</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1410"/>
-        <location filename="../src/configdialog.ui" line="1413"/>
-        <location filename="../src/configdialog.ui" line="1501"/>
-        <location filename="../src/configdialog.ui" line="1504"/>
+        <location filename="../src/configdialog.ui" line="1420"/>
+        <location filename="../src/configdialog.ui" line="1423"/>
+        <location filename="../src/configdialog.ui" line="1511"/>
+        <location filename="../src/configdialog.ui" line="1514"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">Välj mapp för lösenordsutrymmet</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="780"/>
+        <location filename="../src/configdialog.ui" line="790"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Visa alla rader som börjar med ett ord följt av en kolon som fält i lösenordsfält, inte bara de listade</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1531"/>
+        <location filename="../src/configdialog.ui" line="1541"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
@@ -522,9 +532,13 @@
         <translation>qrencode måste installeras</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="92"/>
         <source>No Clipboard</source>
-        <translation>Ingen Urklipp</translation>
+        <translation type="vanished">Ingen Urklipp</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="92"/>
+        <source>No clipboard</source>
+        <translation type="unfinished">Inget urklipp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
@@ -537,38 +551,38 @@
         <translation>Kopia på begäran till urklipp</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="277"/>
-        <location filename="../src/configdialog.cpp" line="282"/>
+        <location filename="../src/configdialog.cpp" line="285"/>
+        <location filename="../src/configdialog.cpp" line="290"/>
         <source>This field is required</source>
         <translation>Detta fält är obligatoriskt</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="279"/>
+        <location filename="../src/configdialog.cpp" line="287"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">En annan profil har redan det här namnet</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="319"/>
+        <location filename="../src/configdialog.cpp" line="327"/>
         <source>The path does not exist.</source>
         <translation>Sökvägen finns inte.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="322"/>
+        <location filename="../src/configdialog.cpp" line="330"/>
         <source>The path is not readable.</source>
         <translation>Sökvägen är inte läsbar.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="325"/>
+        <location filename="../src/configdialog.cpp" line="333"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Sökvägen är inte en Unix-domänsocket.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="330"/>
+        <location filename="../src/configdialog.cpp" line="338"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Potentiellt ogiltig SSH_AUTH_SOCK-åsidosättning</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="331"/>
+        <location filename="../src/configdialog.cpp" line="339"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -581,37 +595,37 @@ The value will still be saved as entered.</source>
 Värdet kommer ändå att sparas som angivet.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="718"/>
+        <location filename="../src/configdialog.cpp" line="726"/>
         <source>Create profile directory?</source>
         <translation>Skapa profil katalog?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="719"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Vill du skapa ett lösenordsarkiv på %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="727"/>
+        <location filename="../src/configdialog.cpp" line="735"/>
         <source>Could not create profile directory: %1</source>
         <translation>Kunde inte skapa profil katalog: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="753"/>
+        <location filename="../src/configdialog.cpp" line="761"/>
         <source>Select recipients for %1</source>
         <translation>Välj mottagare för %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="766"/>
+        <location filename="../src/configdialog.cpp" line="774"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">Kunde inte initialisera profilen %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="768"/>
+        <location filename="../src/configdialog.cpp" line="776"/>
         <source>Profile %1</source>
         <translation type="unfinished">Profil %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="779"/>
+        <location filename="../src/configdialog.cpp" line="787"/>
         <source>New Profile</source>
         <translation>Ny profil</translation>
     </message>
@@ -624,7 +638,7 @@ Värdet kommer ändå att sparas som angivet.</translation>
         <translation type="vanished">Installera GnuPG på ditt system.&lt;br&gt;Installera &lt;strong&gt;Ubuntu&lt;/strong&gt; från Microsoft Store&lt;br&gt;eller &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ladda ner&lt;/a&gt; det från GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="726"/>
+        <location filename="../src/configdialog.cpp" line="734"/>
         <source>Error</source>
         <translation>Fel</translation>
     </message>
@@ -642,33 +656,33 @@ Värdet kommer ändå att sparas som angivet.</translation>
         <translation type="vanished">Mappen %1 verkar inte vara ett lösenordslager eller har ännu inte initialiserats.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1105"/>
+        <location filename="../src/configdialog.cpp" line="1113"/>
         <source>New profile: %1 at %2</source>
         <translation>Ny profil: %1 på %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1107"/>
+        <location filename="../src/configdialog.cpp" line="1115"/>
         <source>Profile: %1 at %2</source>
         <translation>Profil: %1 på %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1110"/>
+        <location filename="../src/configdialog.cpp" line="1118"/>
         <source>Fill in all required fields</source>
         <translation>Fyll i alla obligatoriska fält</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="715"/>
+        <location filename="../src/configdialog.ui" line="725"/>
         <source>Use PWGen</source>
         <translation>Använd PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="873"/>
-        <location filename="../src/configdialog.ui" line="1448"/>
+        <location filename="../src/configdialog.ui" line="883"/>
+        <location filename="../src/configdialog.ui" line="1458"/>
         <source>Use Git</source>
         <translation>Använd Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="199"/>
+        <location filename="../src/configdialog.ui" line="209"/>
         <source>Use QRencode</source>
         <translation>Använd QRencode</translation>
     </message>
@@ -677,43 +691,43 @@ Värdet kommer ändå att sparas som angivet.</translation>
         <translation type="vanished">Använd pass-otp-tillägg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="987"/>
+        <location filename="../src/configdialog.ui" line="997"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>I&amp;nfödda Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
-        <location filename="../src/configdialog.ui" line="1024"/>
+        <location filename="../src/configdialog.ui" line="1034"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1043"/>
-        <location filename="../src/configdialog.ui" line="1056"/>
-        <location filename="../src/configdialog.ui" line="1111"/>
-        <location filename="../src/configdialog.ui" line="1151"/>
-        <location filename="../src/configdialog.ui" line="1416"/>
-        <location filename="../src/configdialog.ui" line="1507"/>
+        <location filename="../src/configdialog.ui" line="1053"/>
+        <location filename="../src/configdialog.ui" line="1066"/>
+        <location filename="../src/configdialog.ui" line="1121"/>
+        <location filename="../src/configdialog.ui" line="1161"/>
+        <location filename="../src/configdialog.ui" line="1426"/>
+        <location filename="../src/configdialog.ui" line="1517"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1079"/>
+        <location filename="../src/configdialog.ui" line="1089"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1095"/>
+        <location filename="../src/configdialog.ui" line="1105"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="764"/>
+        <location filename="../src/configdialog.ui" line="774"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Mallar lägger till extra fält i dialogrutan för lösenordgenerering och i lösenordsvyn.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="795"/>
+        <location filename="../src/configdialog.ui" line="805"/>
         <source>login
 URL
 e-mail</source>
@@ -817,8 +831,12 @@ e-mail</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished">Kopiera till urklipp</translation>
+    </message>
+    <message>
         <source>Copy to Clipboard</source>
-        <translation>Kopiera till urklipp</translation>
+        <translation type="vanished">Kopiera till urklipp</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -863,17 +881,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dubbelklicka för att byta namn på det här fältet</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Byt namn på fält…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ta bort fält</translation>
     </message>
 </context>
 <context>
@@ -1146,8 +1164,12 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
+        <source>From clipboard</source>
+        <translation type="unfinished">Från urklipp</translation>
+    </message>
+    <message>
         <source>From Clipboard</source>
-        <translation>Från urklipp</translation>
+        <translation type="vanished">Från urklipp</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -1184,8 +1206,12 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
+        <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
+        <translation type="unfinished">%1 ser inte ut som en ASCII-bepansrad GPG-nyckel. Konvertera den med &lt;code&gt;gpg --armor --export&lt;/code&gt; först, eller klistra in det bepansrade blocket via &lt;b&gt;Från urklipp&lt;/b&gt;.</translation>
+    </message>
+    <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 ser inte ut som en ASCII-bepansrad GPG-nyckel. Konvertera den med &lt;code&gt;gpg --armor --export&lt;/code&gt; först, eller klistra in det pansrade blocket via &lt;b&gt;Från urklipp&lt;/b&gt;.</translation>
+        <translation type="vanished">%1 ser inte ut som en ASCII-bepansrad GPG-nyckel. Konvertera den med &lt;code&gt;gpg --armor --export&lt;/code&gt; först, eller klistra in det pansrade blocket via &lt;b&gt;Från urklipp&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
@@ -1400,14 +1426,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="442"/>
         <location filename="../src/mainwindow.ui" line="445"/>
-        <location filename="../src/mainwindow.cpp" line="1566"/>
+        <location filename="../src/mainwindow.cpp" line="1576"/>
         <source>Edit</source>
         <translation>Ändra</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="450"/>
         <location filename="../src/mainwindow.ui" line="453"/>
-        <location filename="../src/mainwindow.cpp" line="1580"/>
+        <location filename="../src/mainwindow.cpp" line="1590"/>
         <source>Delete</source>
         <translation>Ta bort</translation>
     </message>
@@ -1433,7 +1459,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="485"/>
-        <location filename="../src/mainwindow.cpp" line="1560"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Users</source>
         <translation>Användare</translation>
     </message>
@@ -1452,8 +1478,8 @@ Expire-Date: 0
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="582"/>
-        <location filename="../src/mainwindow.cpp" line="595"/>
+        <location filename="../src/mainwindow.cpp" line="591"/>
+        <location filename="../src/mainwindow.cpp" line="604"/>
         <source>Updating password-store</source>
         <translation>Uppdaterar lösenordsutrymmet</translation>
     </message>
@@ -1462,7 +1488,7 @@ Expire-Date: 0
         <translation type="vanished">Urklippet rensat</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1241"/>
+        <location filename="../src/mainwindow.cpp" line="1251"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Vill du verkligen ta bort %1%2?</translation>
     </message>
@@ -1494,8 +1520,8 @@ Expire-Date: 0
         <translation type="vanished">Gömt lösenord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="706"/>
-        <location filename="../src/mainwindow.cpp" line="1054"/>
+        <location filename="../src/mainwindow.cpp" line="715"/>
+        <location filename="../src/mainwindow.cpp" line="1064"/>
         <source>Content hidden</source>
         <translation>Gömt innehåll</translation>
     </message>
@@ -1508,7 +1534,7 @@ Expire-Date: 0
         <translation type="vanished">Urklippet ej rensat</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="803"/>
+        <location filename="../src/mainwindow.cpp" line="812"/>
         <source>Password and Content hidden</source>
         <translation>Gömt lösenord och innehåll</translation>
     </message>
@@ -1519,19 +1545,19 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="434"/>
         <location filename="../src/mainwindow.ui" line="437"/>
-        <location filename="../src/mainwindow.cpp" line="1558"/>
+        <location filename="../src/mainwindow.cpp" line="1568"/>
         <source>Add folder</source>
         <translation>Lägg till mapp</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="423"/>
         <location filename="../src/mainwindow.ui" line="426"/>
-        <location filename="../src/mainwindow.cpp" line="1559"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
         <source>Add password</source>
         <translation>Lägg till lösenord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="415"/>
+        <location filename="../src/mainwindow.cpp" line="420"/>
         <source>Welcome to QtPass %1</source>
         <translation>Välkommen till QtPass %1</translation>
     </message>
@@ -1540,7 +1566,7 @@ Expire-Date: 0
         <translation type="vanished">Processutdata</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="913"/>
+        <location filename="../src/mainwindow.cpp" line="923"/>
         <source>Looking for: %1</source>
         <translation>Söker efter: %1</translation>
     </message>
@@ -1553,7 +1579,7 @@ Expire-Date: 0
         <translation type="vanished">Ny fil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1240"/>
+        <location filename="../src/mainwindow.cpp" line="1250"/>
         <source>Delete password?</source>
         <translation>Ta bort lösenord?</translation>
     </message>
@@ -1562,7 +1588,7 @@ Expire-Date: 0
         <translation type="vanished">Vill du verkligen ta bort %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1240"/>
+        <location filename="../src/mainwindow.cpp" line="1250"/>
         <source>Delete folder?</source>
         <translation>Ta bort mapp?</translation>
     </message>
@@ -1587,7 +1613,7 @@ Expire-Date: 0
         <translation type="vanished">Skapar GPG nyckelpar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1405"/>
+        <location filename="../src/mainwindow.cpp" line="1415"/>
         <source>Profile changed to %1</source>
         <translation>Profil ändrad till %1</translation>
     </message>
@@ -1603,8 +1629,8 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="799"/>
-        <location filename="../src/mainwindow.cpp" line="1012"/>
+        <location filename="../src/mainwindow.cpp" line="808"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Search Password</source>
         <translation>Sök lösenord</translation>
     </message>
@@ -1794,30 +1820,30 @@ Expire-Date: 0
         <translation type="vanished">OTP-kod</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="756"/>
-        <location filename="../src/mainwindow.cpp" line="774"/>
-        <location filename="../src/mainwindow.cpp" line="1295"/>
+        <location filename="../src/mainwindow.cpp" line="765"/>
+        <location filename="../src/mainwindow.cpp" line="783"/>
+        <location filename="../src/mainwindow.cpp" line="1305"/>
         <source>OTP code copied to clipboard</source>
         <translation>engångslösenord-kod kopierad till urklipp</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="776"/>
-        <location filename="../src/mainwindow.cpp" line="1278"/>
+        <location filename="../src/mainwindow.cpp" line="785"/>
+        <location filename="../src/mainwindow.cpp" line="1288"/>
         <source>No OTP code found in this password entry</source>
         <translation>Ingen engångslösenord-kod hittades i den här lösenordsposten</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="961"/>
+        <location filename="../src/mainwindow.cpp" line="971"/>
         <source>Searching…</source>
         <translation>Söker…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="990"/>
+        <location filename="../src/mainwindow.cpp" line="1000"/>
         <source>Search content (regex)</source>
         <translation>Sök innehåll (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1040"/>
+        <location filename="../src/mainwindow.cpp" line="1050"/>
         <source>No matches found.</source>
         <translation>Inga träffar hittades.</translation>
     </message>
@@ -1829,7 +1855,7 @@ Expire-Date: 0
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1064"/>
+        <location filename="../src/mainwindow.cpp" line="1074"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Hittade %n träff</numerusform>
@@ -1837,7 +1863,7 @@ Expire-Date: 0
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1065"/>
+        <location filename="../src/mainwindow.cpp" line="1075"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>i %n post.</numerusform>
@@ -1845,12 +1871,12 @@ Expire-Date: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1142"/>
+        <location filename="../src/mainwindow.cpp" line="1152"/>
         <source>Invalid name</source>
         <translation>Ogiltigt namn</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1143"/>
+        <location filename="../src/mainwindow.cpp" line="1153"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation>Det namnet skulle tolkas utanför lösenordslagret. Välj ett annat namn.</translation>
     </message>
@@ -1861,33 +1887,33 @@ Expire-Date: 0
 (Kommer att placeras i %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1221"/>
+        <location filename="../src/mainwindow.cpp" line="1231"/>
         <source> and the whole content?</source>
         <translation> och hela innehållet?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1231"/>
+        <location filename="../src/mainwindow.cpp" line="1241"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> och hela innehållet? &lt;br&gt; &lt;strong&gt; Uppmärksamhet: det finns oväntade filer i den givna mappen, kolla dem innan du fortsätter. &lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1273"/>
+        <location filename="../src/mainwindow.cpp" line="1283"/>
         <source>No password selected for OTP generation</source>
         <translation>Inget lösenord valt för generering av engångslösenord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1557"/>
+        <location filename="../src/mainwindow.cpp" line="1567"/>
         <source>Open folder with file manager</source>
         <translation>Öppna mapp med filhanterare</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1572"/>
-        <location filename="../src/mainwindow.cpp" line="1703"/>
+        <location filename="../src/mainwindow.cpp" line="1582"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename folder</source>
         <translation>Byt namn på mapp</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1576"/>
+        <location filename="../src/mainwindow.cpp" line="1586"/>
         <source>Rename password</source>
         <translation>Byt namn på lösenord</translation>
     </message>
@@ -1896,122 +1922,122 @@ Expire-Date: 0
         <translation type="vanished">Kryptera om</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="151"/>
+        <location filename="../src/mainwindow.cpp" line="157"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation>Åtgärd har nått tidsgränsen; återaktiver gränssnittet.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="743"/>
+        <location filename="../src/mainwindow.cpp" line="752"/>
         <source>Could not decrypt this password entry</source>
         <translation>Kunde inte dekryptera den här lösenordsposten</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="995"/>
+        <location filename="../src/mainwindow.cpp" line="1005"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation>Innehållssökning använder grundläggande reguljära uttryck i POSIX (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="997"/>
+        <location filename="../src/mainwindow.cpp" line="1007"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation>Innehållssök använder Perl-kompatibla reguljära uttryck (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1585"/>
+        <location filename="../src/mainwindow.cpp" line="1595"/>
         <source>Share</source>
         <translation>Dela</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1595"/>
+        <location filename="../src/mainwindow.cpp" line="1605"/>
         <source>Re-encrypt all passwords</source>
         <translation>Kryptera alla lösenord igen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1600"/>
+        <location filename="../src/mainwindow.cpp" line="1610"/>
         <source>Export my public key...</source>
         <translation>Exportera min publika nyckel...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1606"/>
+        <location filename="../src/mainwindow.cpp" line="1616"/>
         <source>Add recipient...</source>
         <translation>Lägg till mottagare...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1611"/>
+        <location filename="../src/mainwindow.cpp" line="1621"/>
         <source>What is this?</source>
         <translation>Vad är det här?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1654"/>
+        <location filename="../src/mainwindow.cpp" line="1664"/>
         <source>New folder</source>
         <translation type="unfinished">Ny mapp</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Ny mapp: 
 (Kommer att placeras i %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1666"/>
-        <location filename="../src/mainwindow.cpp" line="1688"/>
-        <location filename="../src/mainwindow.cpp" line="1815"/>
+        <location filename="../src/mainwindow.cpp" line="1676"/>
+        <location filename="../src/mainwindow.cpp" line="1698"/>
+        <location filename="../src/mainwindow.cpp" line="1825"/>
         <source>Error</source>
         <translation>Fel</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1667"/>
+        <location filename="../src/mainwindow.cpp" line="1677"/>
         <source>Failed to create folder: %1</source>
         <translation>Misslyckades att skapa mapp: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1689"/>
+        <location filename="../src/mainwindow.cpp" line="1699"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Misslyckades att skapa .gpg-id fil på: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1743"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename file</source>
         <translation>Byt namn på fil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1703"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Rename Folder To: </source>
         <translation>Byt namn på mapp till: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="890"/>
+        <location filename="../src/mainwindow.cpp" line="900"/>
         <source>About QtPass</source>
         <translation type="unfinished">Om QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="891"/>
+        <location filename="../src/mainwindow.cpp" line="901"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Ett plattformsoberoende grafiskt gränssnitt för &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardlösenordshanteraren för Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Källkod och ärenden&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensierad under &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; eller senare.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1743"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>Rename File To: </source>
         <translation>Byt namn på fil till: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1792"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Den här posten innehåller en engångslösenordshemlighet, inte ett lösenord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1816"/>
+        <location filename="../src/mainwindow.cpp" line="1826"/>
         <source>Directory does not exist: %1</source>
         <translation>Katalogen finns inte: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1821"/>
-        <location filename="../src/mainwindow.cpp" line="1858"/>
+        <location filename="../src/mainwindow.cpp" line="1831"/>
+        <location filename="../src/mainwindow.cpp" line="1868"/>
         <source>Re-encrypt passwords</source>
         <translation>Kryptera lösenord på nytt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1822"/>
+        <location filename="../src/mainwindow.cpp" line="1832"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2028,38 +2054,38 @@ Detta kan skriva om många filer och kan inte enkelt ångras.
 Fortsätta?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1856"/>
+        <location filename="../src/mainwindow.cpp" line="1866"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Omkrypterar lösenord...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1857"/>
+        <location filename="../src/mainwindow.cpp" line="1867"/>
         <source>Cancel</source>
         <translation type="unfinished">Avbryt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1865"/>
+        <location filename="../src/mainwindow.cpp" line="1875"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Avbryter omkryptering</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1881"/>
+        <location filename="../src/mainwindow.cpp" line="1891"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Omkrypterar lösenord: %1 av %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1914"/>
-        <location filename="../src/mainwindow.cpp" line="1933"/>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1943"/>
         <source>Export Public Key</source>
         <translation>Exportera publik nyckel</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1915"/>
+        <location filename="../src/mainwindow.cpp" line="1925"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Exportera din publika nyckel&lt;/h3&gt;&lt;p&gt;Ingen signeringsnyckel är konfigurerad. Ställ in en i QtPass-inställningar &gt; GPG-nycklar, eller kör detta i en terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;ditt-nyckel-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Skicka sedan filen till dina lagkamrater.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1934"/>
+        <location filename="../src/mainwindow.cpp" line="1944"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2068,17 +2094,17 @@ Fortsätta?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1936"/>
+        <location filename="../src/mainwindow.cpp" line="1946"/>
         <source>No output from gpg.</source>
         <translation>Ingen utdata från gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1963"/>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Dela lösenord med GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1964"/>
+        <location filename="../src/mainwindow.cpp" line="1974"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Dela lösenord med GPG&lt;/h3&gt;&lt;p&gt;för att dela lösenord med andra användare:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportera din publika nyckel&lt;/b&gt; och skicka den till lagkamraterna&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importera lagkamraternas offentliga nycklar&lt;/b&gt; till din GPG nyckelring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Kryptera lösenord på nytt&lt;/b&gt; så att alla mottagare kan dekryptera dem&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Endast personer som har en matchande hemliga nyckeln kan dekryptera lösenorden.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tips:&lt;/b&gt; Använd samma GPG-nyckel för alla delade mappar.&lt;/p&gt;&lt;p&gt;Se FAQ för mer detaljer.&lt;/p&gt;</translation>
     </message>
@@ -2292,12 +2318,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ta bort fält</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ett fält med namnet %1 finns redan.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>
@@ -2432,25 +2458,25 @@ Fortsätta?</translation>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="78"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="148"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="191"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="79"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="149"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
         <translation>Lösenord</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="166"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="167"/>
         <source>Open %1 in browser</source>
         <translation>Öppna %1 i webbläsare</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="311"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="324"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="331"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="344"/>
         <source>OTP Code</source>
         <translation>OTP kod</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="312"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="332"/>
         <source>No OTP code found in this password entry</source>
         <translation>Ingen engångskod hittades i den här lösenordsposten</translation>
     </message>
