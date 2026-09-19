@@ -1605,8 +1605,9 @@ void MainWindow::showContextMenu(const QPoint &pos) {
       bool gpgIdExists = !gpgIdPath.isEmpty() && QFile(gpgIdPath).exists();
 
       const QString exePath = s.usePass ? s.passExecutable : s.gpgExecutable;
-      bool gpgAvailable = !exePath.isEmpty() && (exePath.startsWith("wsl ") ||
-                                                 QFile(exePath).exists());
+      bool gpgAvailable =
+          !exePath.isEmpty() &&
+          (Executor::parseWslCommand(exePath) || QFile(exePath).exists());
 
       QAction *reencrypt = shareMenu->addAction(tr("Re-encrypt all passwords"));
       reencrypt->setEnabled(gpgIdExists && gpgAvailable);

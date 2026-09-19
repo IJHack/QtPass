@@ -8,6 +8,7 @@
 #include <QProcessEnvironment>
 #include <QQueue>
 #include <atomic>
+#include <optional>
 #include <utility>
 
 /**
@@ -246,16 +247,58 @@ public:
   static auto resolveExecutable(const QString &app) -> QString;
 
   /**
-   * @brief Build the wsl.exe argument list that runs @p command directly.
+   * @brief A configured executable that runs a Linux program through WSL.
    *
-   * Prefixes @p command and @p args with `--exec` so WSL launches the binary
-   * itself instead of handing the joined command line to the distribution's
-   * default shell. Without it every argument (entry paths, .gpg-id
-   * recipients, commit messages) is word-split and `$()`-expanded by that
-   * shell, so a hostile password store gets code execution.
+   * The one definition of "a WSL command" in QtPass; see parseWslCommand().
+   */
+  struct WslCommand {
+    /// What to start: `wsl` for a bare `wsl`/`wsl.exe`, else the launcher
+    /// path as configured.
+    QString launcher;
+    /// wsl.exe options that go before the program (`-d Debian`, `-u me`),
+    /// without any `-e`/`--exec`: that is always added by argv().
+    QStringList options;
+    /// The Linux program to run, looked up on the WSL PATH.
+    QString command;
+    /**
+     * @brief Arguments for @ref launcher that run @ref command with @p args.
+     *
+     * Always through `--exec`, so WSL starts the program itself instead of
+     * handing the joined command line to the distribution's default shell.
+     * Without it every argument (entry paths, .gpg-id recipients, commit
+     * messages) is word-split and `$()`-expanded by that shell, and a
+     * hostile password store gets code execution.
+     * @param args Arguments for @ref command, passed through verbatim.
+     * @return @ref options, `--exec`, @ref command, then @p args.
+     */
+    auto argv(const QStringList &args) const -> QStringList;
+    /// The same launcher and options running @p program instead.
+    auto with(const QString &program) const -> WslCommand;
+  };
+
+  /**
+   * @brief Parse a configured executable as a WSL command.
+   *
+   * Accepts `wsl` or `wsl.exe` in any case, bare or as a path, followed by
+   * wsl.exe options and exactly one program: `wsl gpg`, `WSL.EXE -d Debian
+   * /usr/bin/gpg`, `C:\Windows\System32\wsl.exe -u me gpg`. A `-e`/`--exec`
+   * the user wrote is dropped (argv() adds it), anything after the program
+   * (`wsl sh -c "gpg"`) or a `wsl` with no program is not a WSL command.
+   *
+   * Every place that starts, probes or translates paths for a configured
+   * executable goes through this, so a form one of them accepts cannot be
+   * started differently by another.
+   * @param app Executable as configured.
+   * @return The parsed command, or nothing when @p app is not one.
+   */
+  static auto parseWslCommand(const QString &app) -> std::optional<WslCommand>;
+
+  /**
+   * @brief Build the wsl.exe argument list that runs @p command directly.
    * @param command Linux command to run (looked up on the WSL PATH).
    * @param args Arguments for @p command, passed through verbatim.
    * @return Arguments for `wsl`: `--exec`, @p command, then @p args.
+   * @see WslCommand::argv
    */
   static auto wslExecArgs(const QString &command, const QStringList &args)
       -> QStringList;
@@ -263,10 +306,11 @@ public:
   /**
    * @brief Translate a native path for a WSL-routed executable.
    *
-   * When @p exe starts with "wsl " the path is converted with `wslpath`
-   * (the Linux binary cannot open `C:\...`); otherwise it is only cleaned.
+   * When @p exe is a WSL command (parseWslCommand()) the path is converted
+   * with `wslpath` in the same distribution (the Linux binary cannot open
+   * `C:\...`); otherwise it is only cleaned.
    * @param path Native filesystem path.
-   * @param exe Executable the path is meant for (checked for "wsl ").
+   * @param exe Executable the path is meant for.
    * @return Path suitable for @p exe.
    */
   static auto translatePathForWsl(const QString &path, const QString &exe)

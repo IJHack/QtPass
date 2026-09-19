@@ -251,13 +251,13 @@ auto Util::configIsValid(const AppSettings &s) -> bool {
 
   const QString executable = s.usePass ? s.passExecutable : s.gpgExecutable;
 
-  if (executable.startsWith(QStringLiteral("wsl "))) {
+  if (const auto wsl = Executor::parseWslCommand(executable)) {
     // Probe WSL once per session — availability doesn't change at runtime
     // and the executeBlocking call is a blocking subprocess.
-    static const bool wslAvailable = []() {
+    static const bool wslAvailable = [&wsl]() {
       QString out;
       QString err;
-      return Executor::executeBlocking(QStringLiteral("wsl"),
+      return Executor::executeBlocking(wsl->launcher,
                                        {QStringLiteral("--version")}, &out,
                                        &err) == 0 &&
              !out.isEmpty() && err.isEmpty();

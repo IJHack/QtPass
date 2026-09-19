@@ -35,16 +35,8 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
                            const QString &gpgExe, const QString &filePath,
                            const QRegularExpression &rx,
                            const std::atomic_bool *cancel) -> QStringList {
-  QString translatedPath = filePath;
-  if (gpgExe.startsWith(QStringLiteral("wsl "))) {
-    QString wslPath;
-    const int wrc = Executor::executeBlocking(
-        QStringLiteral("wsl"),
-        Executor::wslExecArgs(QStringLiteral("wslpath"), {filePath}), &wslPath);
-    const QString translated = wslPath.trimmed();
-    if (wrc == 0 && !translated.isEmpty())
-      translatedPath = translated;
-  }
+  const QString translatedPath =
+      Executor::translatePathForWsl(filePath, gpgExe);
   QString plaintext;
   // The QProcess overload is the one that takes the cancel flag; it polls
   // the flag while waiting and terminates (then kills) gpg from this thread,

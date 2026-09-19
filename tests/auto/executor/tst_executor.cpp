@@ -57,6 +57,10 @@ private Q_SLOTS:
   void executeBlockingCancelFlagAlreadySetSkipsStart();
   void wslPrefixBlockingUsesExec();
   void wslPrefixAsyncUsesExec();
+  void parseWslCommandAcceptsEveryWslSpelling();
+  void parseWslCommandRejectsShellCommandLines();
+  void everyWslSpellingReachesTheSameArgv();
+  void translatePathForWslUsesTheConfiguredDistribution();
 #endif
   void wslExecArgsPrependsExec();
   void resolveExecutableRules();
@@ -342,22 +346,29 @@ void tst_executor::resolveGpgconfCommand() {
   // WSL with an explicit --exec / -e is not doubled
   {
     auto result = Pass::resolveGpgconfCommand("wsl -e gpg2");
-    QStringList expectedArgs = {"-e", "gpgconf"};
+    QStringList expectedArgs = {"--exec", "gpgconf"};
     QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
-             "WSL with -e should keep the user's flag and not add --exec");
+             "WSL with -e should run gpgconf through a single --exec");
     result = Pass::resolveGpgconfCommand("wsl --exec gpg2");
-    expectedArgs = {"--exec", "gpgconf"};
     QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
              "WSL with --exec should not add a second --exec");
   }
 
   // WSL with distro
   {
-    auto result = Pass::resolveGpgconfCommand("wsl --distro Debian gpg2");
+    auto result = Pass::resolveGpgconfCommand("wsl -d Debian gpg2");
     QVERIFY2(result.program == "wsl", "WSL distro preserves wsl");
-    QStringList expectedArgs = {"--distro", "Debian", "--exec", "gpgconf"};
+    QStringList expectedArgs = {"-d", "Debian", "--exec", "gpgconf"};
     QVERIFY2(result.arguments == expectedArgs,
              "WSL distro arguments should be preserved before --exec");
+  }
+
+  // wsl.exe, in any case, is the same launcher
+  {
+    auto result = Pass::resolveGpgconfCommand("WSL.EXE /usr/bin/gpg");
+    QStringList expectedArgs = {"--exec", "/usr/bin/gpgconf"};
+    QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
+             "wsl.exe must be recognised like wsl");
   }
 
   // WSL with full path
@@ -888,6 +899,133 @@ private:
   bool m_ok = false;
 };
 } // namespace
+
+/**
+ * @brief Every way of writing the launcher is one WSL command: bare or as a
+ *        path, any case, with wsl.exe options before the program.
+ */
+void tst_executor::parseWslCommandAcceptsEveryWslSpelling() {
+  const struct {
+    const char *app;
+    const char *launcher;
+    QStringList options;
+    const char *command;
+  } cases[] = {
+      {"wsl gpg", "wsl", {}, "gpg"},
+      {"wsl.exe gpg", "wsl", {}, "gpg"},
+      {"WSL /usr/bin/gpg", "wsl", {}, "/usr/bin/gpg"},
+      {"WSL.EXE gpg2", "wsl", {}, "gpg2"},
+      {"wsl -e gpg", "wsl", {}, "gpg"},
+      {"wsl --exec gpg", "wsl", {}, "gpg"},
+      {"wsl -d Debian gpg", "wsl", {"-d", "Debian"}, "gpg"},
+      {"wsl --distribution Debian -u me gpg",
+       "wsl",
+       {"--distribution", "Debian", "-u", "me"},
+       "gpg"},
+      {"wsl -d Debian --exec gpg", "wsl", {"-d", "Debian"}, "gpg"},
+      {"wsl \"/usr/local bin/gpg\"", "wsl", {}, "/usr/local bin/gpg"},
+      {"C:\\Windows\\System32\\wsl.exe gpg",
+       "C:\\Windows\\System32\\wsl.exe",
+       {},
+       "gpg"},
+      {"/mnt/c/Windows/System32/WSL.EXE gpg",
+       "/mnt/c/Windows/System32/WSL.EXE",
+       {},
+       "gpg"},
+  };
+  for (const auto &c : cases) {
+    const auto wsl = Executor::parseWslCommand(QString::fromLatin1(c.app));
+    QVERIFY2(wsl.has_value(), c.app);
+    QCOMPARE(wsl->launcher, QString::fromLatin1(c.launcher));
+    QCOMPARE(wsl->options, c.options);
+    QCOMPARE(wsl->command, QString::fromLatin1(c.command));
+    const QStringList expectedArgv =
+        c.options + QStringList{QStringLiteral("--exec"),
+                                QString::fromLatin1(c.command),
+                                QStringLiteral("--version")};
+    QCOMPARE(wsl->argv({QStringLiteral("--version")}), expectedArgv);
+  }
+}
+
+/**
+ * @brief What is not one program for wsl.exe to start is not a WSL command:
+ *        it is started as written, and fails to start, rather than being
+ *        handed to a shell.
+ */
+void tst_executor::parseWslCommandRejectsShellCommandLines() {
+  const char *rejected[] = {
+      "",
+      "wsl",
+      "wsl.exe",
+      "wsl sh -c \"gpg --version\"",
+      "wsl gpg --homedir /x",
+      "wsl -d",
+      "wsl -d Debian",
+      "wslx gpg",
+      "gpg",
+      "C:\\Program Files\\GnuPG\\bin\\gpg.exe",
+      "/usr/bin/gpg",
+      "wsl-wrapper gpg",
+  };
+  for (const char *app : rejected) {
+    QVERIFY2(!Executor::parseWslCommand(QString::fromLatin1(app)), app);
+  }
+}
+
+/**
+ * @brief The launcher spelling changes nothing about what wsl.exe receives:
+ *        `--exec`, the program, then the arguments verbatim, so the store's
+ *        file names never meet a shell whichever way WSL was configured.
+ */
+void tst_executor::everyWslSpellingReachesTheSameArgv() {
+  FakeWsl fake;
+  QVERIFY2(fake.ok(), "fake wsl script should be installed on PATH");
+  const QString hostile = QStringLiteral("foo; touch /tmp/pwned $(id)");
+  const QStringList expected = {QStringLiteral("--exec"),
+                                QStringLiteral("gpg2"),
+                                QStringLiteral("--decrypt"), hostile};
+  for (const char *app : {"wsl gpg2", "wsl.exe gpg2", "WSL gpg2",
+                          "WSL.EXE gpg2", "wsl -e gpg2", "wsl --exec gpg2"}) {
+    QString output;
+    const int rc = Executor::executeBlocking(
+        QString::fromLatin1(app), {QStringLiteral("--decrypt"), hostile},
+        QString(), &output);
+    QVERIFY2(rc == 0, app);
+    QCOMPARE(output.split('\n', Qt::SkipEmptyParts), expected);
+  }
+  QString output;
+  QCOMPARE(Executor::executeBlocking(QStringLiteral("wsl -d Debian -u me gpg2"),
+                                     {hostile}, QString(), &output),
+           0);
+  QCOMPARE(
+      output.split('\n', Qt::SkipEmptyParts),
+      (QStringList{QStringLiteral("-d"), QStringLiteral("Debian"),
+                   QStringLiteral("-u"), QStringLiteral("me"),
+                   QStringLiteral("--exec"), QStringLiteral("gpg2"), hostile}));
+}
+
+/**
+ * @brief wslpath runs in the distribution the gpg was configured for, and a
+ *        non-WSL executable gets the path back untranslated.
+ */
+void tst_executor::translatePathForWslUsesTheConfiguredDistribution() {
+  FakeWsl fake;
+  QVERIFY2(fake.ok(), "fake wsl script should be installed on PATH");
+  // The fake prints its argv one per line; that is the "translated" path.
+  const QString translated =
+      Executor::translatePathForWsl(QStringLiteral("C:/store/x.gpg"),
+                                    QStringLiteral("wsl.exe -d Debian gpg"));
+  QCOMPARE(translated.split('\n', Qt::SkipEmptyParts),
+           (QStringList{QStringLiteral("-d"), QStringLiteral("Debian"),
+                        QStringLiteral("--exec"), QStringLiteral("wslpath"),
+                        QStringLiteral("C:/store/x.gpg")}));
+  QCOMPARE(Executor::translatePathForWsl(QStringLiteral("C:/store//x.gpg"),
+                                         QStringLiteral("gpg")),
+           QStringLiteral("C:/store/x.gpg"));
+  QCOMPARE(Executor::translatePathForWsl(QStringLiteral("C:/store/x.gpg"),
+                                         QStringLiteral("wsl sh -c gpg")),
+           QStringLiteral("C:/store/x.gpg"));
+}
 
 // A "wsl <binary>" executable must reach wsl.exe as `--exec <binary> args...`
 // so the arguments are not word-split or $()-expanded by the default shell.

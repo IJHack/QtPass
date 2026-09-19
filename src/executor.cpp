@@ -5,6 +5,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QStringDecoder>
+#include <algorithm>
 #include <utility>
 
 #include "qtpasslogging.h"
@@ -27,26 +28,25 @@ Executor::Executor(QObject *parent) : QObject(parent) {
 }
 
 /**
- * @brief Executor::startProcess starts @p process, handling the "wsl "
- * prefix. One implementation for the queued (m_process) and the blocking
- * (caller-owned QProcess) path, so the WSL handling cannot drift between
- * them.
+ * @brief Executor::startProcess starts @p process, routing a WSL command
+ * through `wsl --exec`. One implementation for the queued (m_process) and the
+ * blocking (caller-owned QProcess) path, so the WSL handling cannot drift
+ * between them.
  * @param process QProcess to start.
- * @param app Executable path (may start with "wsl ").
+ * @param app Executable path (may be a WSL command, see parseWslCommand()).
  * @param args Arguments to pass to the executable.
  */
 void Executor::startProcess(QProcess &process, const QString &app,
                             const QStringList &args) {
-  if (app.startsWith(QLatin1String("wsl "))) {
-    process.start(QStringLiteral("wsl"), wslExecArgs(app.mid(4), args));
+  if (const auto wsl = parseWslCommand(app)) {
+    process.start(wsl->launcher, wsl->argv(args));
   } else {
     process.start(resolveExecutable(app), args);
   }
 }
 
 auto Executor::resolveExecutable(const QString &app) -> QString {
-  if (app.isEmpty() || app.startsWith(QLatin1String("wsl ")) ||
-      QDir::isAbsolutePath(app)) {
+  if (app.isEmpty() || QDir::isAbsolutePath(app)) {
     return app;
   }
   const QDir appDir(QCoreApplication::applicationDirPath());
@@ -65,33 +65,81 @@ auto Executor::resolveExecutable(const QString &app) -> QString {
   return app;
 }
 
-/**
- * @brief Executor::wslExecArgs builds the wsl.exe argv for @p command.
- *
- * `wsl <command> <args>` hands the joined command line to the default Linux
- * shell, which word-splits and expands `$()` in every argument. `--exec`
- * makes WSL launch the binary directly so arguments arrive verbatim.
- * @param command Linux command to run.
- * @param args Arguments for @p command.
- * @return `--exec`, @p command, then @p args.
- */
+auto Executor::WslCommand::argv(const QStringList &args) const -> QStringList {
+  return options + QStringList{QStringLiteral("--exec"), command} + args;
+}
+
+auto Executor::WslCommand::with(const QString &program) const -> WslCommand {
+  return {launcher, options, program};
+}
+
+auto Executor::parseWslCommand(const QString &app)
+    -> std::optional<WslCommand> {
+  const QStringList parts = QProcess::splitCommand(app);
+  if (parts.size() < 2) {
+    return std::nullopt;
+  }
+  // The file name after the last separator of either kind: a Windows path
+  // has to be recognised as such wherever the parser runs.
+  const QString &launcher = parts.first();
+  const qsizetype separator = std::max(launcher.lastIndexOf(QLatin1Char('/')),
+                                       launcher.lastIndexOf(QLatin1Char('\\')));
+  const QString launcherName = launcher.mid(separator + 1);
+  const bool isWsl =
+      launcherName.compare(QLatin1String("wsl"), Qt::CaseInsensitive) == 0 ||
+      launcherName.compare(QLatin1String("wsl.exe"), Qt::CaseInsensitive) == 0;
+  if (!isWsl) {
+    return std::nullopt;
+  }
+  WslCommand wsl;
+  // A bare wsl or wsl.exe is looked up on PATH as `wsl`; a path stays as is.
+  wsl.launcher = separator < 0 ? QStringLiteral("wsl") : launcher;
+  // wsl.exe options that take a value; anything else starting with `-` is a
+  // flag. A user-written -e/--exec is dropped, argv() always adds one.
+  static const QStringList valued{
+      QStringLiteral("-d"),   QStringLiteral("--distribution"),
+      QStringLiteral("-u"),   QStringLiteral("--user"),
+      QStringLiteral("--cd"), QStringLiteral("--shell-type")};
+  qsizetype i = 1;
+  for (; i < parts.size() && parts.at(i).startsWith(QLatin1Char('-')); ++i) {
+    const QString &option = parts.at(i);
+    if (option == QLatin1String("-e") || option == QLatin1String("--exec")) {
+      continue;
+    }
+    if (valued.contains(option)) {
+      if (i + 1 >= parts.size()) {
+        return std::nullopt;
+      }
+      wsl.options << option << parts.at(++i);
+    } else {
+      wsl.options << option;
+    }
+  }
+  // Exactly one program. More is a shell command line (`sh -c "..."`),
+  // which is what --exec exists to keep out.
+  if (i != parts.size() - 1) {
+    return std::nullopt;
+  }
+  wsl.command = parts.at(i);
+  return wsl;
+}
+
 auto Executor::wslExecArgs(const QString &command, const QStringList &args)
     -> QStringList {
-  QStringList wslArgs = args;
-  wslArgs.prepend(command);
-  wslArgs.prepend(QStringLiteral("--exec"));
-  return wslArgs;
+  return WslCommand{QStringLiteral("wsl"), {}, command}.argv(args);
 }
 
 auto Executor::translatePathForWsl(const QString &path, const QString &exe)
     -> QString {
   QString normalizedPath = QDir::cleanPath(path);
-  if (!exe.startsWith(QStringLiteral("wsl ")))
+  const auto wsl = parseWslCommand(exe);
+  if (!wsl) {
     return normalizedPath;
+  }
   QString wslPath;
-  const int rc = executeBlocking(
-      QStringLiteral("wsl"),
-      wslExecArgs(QStringLiteral("wslpath"), {normalizedPath}), &wslPath);
+  const auto wslpath = wsl->with(QStringLiteral("wslpath"));
+  const int rc = executeBlocking(wslpath.launcher,
+                                 wslpath.argv({normalizedPath}), &wslPath);
   const QString translated = wslPath.trimmed();
   return (rc == 0 && !translated.isEmpty()) ? translated : normalizedPath;
 }
