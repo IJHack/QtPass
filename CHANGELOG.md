@@ -57,7 +57,7 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   staged by a fresh `git init`, the folder list of a new entry, the check
   before a folder is deleted) now visits real, visible directories only, in
   name order, and reports what it left out: a linked folder, or a link or
-  special file under an entry's name. Deleting a folder without git no
+  special file under an entry's name. Deleting a folder without Git no
   longer goes through `QDir::removeRecursively()`, which walked into a
   junction on Windows and, given the trailing separator the tree uses to
   name a folder, into a symlinked folder anywhere, and emptied the target
