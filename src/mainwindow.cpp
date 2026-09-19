@@ -1922,7 +1922,7 @@ void MainWindow::exportPublicKey() {
   if (identity.isEmpty()) {
     QMessageBox::information(
         this, tr("Export public key"),
-        tr("<h3>Export Your Public Key</h3>"
+        tr("<h3>Export your public key</h3>"
            "<p>No signing key is configured. Set one in QtPass Settings "
            "&gt; GPG keys, or run this in a terminal:</p>"
            "<pre>gpg --armor --export --output my_key.asc &lt;your-key-id"
