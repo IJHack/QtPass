@@ -1,5 +1,5 @@
 ---
-name: Documentation and public code coverage
+name: Documentation
 
 on:
   push:
@@ -13,6 +13,7 @@ permissions:
 
 jobs:
   changes:
+    name: Detect changes (documentation)
     runs-on: ubuntu-latest
     outputs:
       src: ${{ steps.filter.outputs.src }}
@@ -42,6 +43,7 @@ jobs:
               - "docs/**"
 
   docs:
+    name: Build documentation and code coverage
     needs: changes
     runs-on: ubuntu-latest
     permissions:
