@@ -31,7 +31,10 @@ jobs:
     name: Build Flatpak (org.qtpass.QtPass)
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/flathub-infra/flatpak-github-actions:kde-6.10
+      # By digest, as the actions are by commit: this container runs
+      # privileged on every pull request, so the image it starts from is not
+      # left to whatever a mutable tag points at. Move the digest on purpose.
+      image: ghcr.io/flathub-infra/flatpak-github-actions@sha256:27be7b43ffcfee935e4f0a049bfab6749c0db2ef31035e62ce87d32c25156f1a # kde-6.10
       options: --privileged
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

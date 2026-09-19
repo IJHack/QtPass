@@ -46,8 +46,13 @@ jobs:
     name: Build documentation and code coverage
     needs: changes
     runs-on: ubuntu-latest
+    # Read only: this job builds and runs the repository's own code. The
+    # write token lives in the deploy job below, which only unpacks what this
+    # one produced.
     permissions:
-      contents: write
+      contents: read
+    outputs:
+      run_docs: ${{ steps.need_docs.outputs.run_docs }}
     steps:
       - name: Check if docs needed
         id: need_docs
@@ -84,8 +89,13 @@ jobs:
         run: |
           # Pinned Doxygen release. doxygen.nl has intermittent outages, so try
           # the identical GitHub release asset (CDN-backed) first and fall back
-          # to doxygen.nl, retrying each source before giving up.
+          # to doxygen.nl, retrying each source before giving up. Whichever
+          # answered, the archive has to match the recorded checksum: it runs
+          # here before the build and the coverage uploads, so a mirror is a
+          # place to fetch from, not a source of trust. Update the sum with
+          # the version.
           DOXYGEN_VERSION=1.18.0
+          DOXYGEN_SHA256=14fa81bdc34171edb5f1f02b1d60e74802f0439b77fa44e592565d517d72df90
           tarball="doxygen-${DOXYGEN_VERSION}.linux.bin.tar.gz"
           github_tag="Release_${DOXYGEN_VERSION//./_}"
           urls=(
@@ -104,6 +114,10 @@ jobs:
           done
           if [ "${downloaded}" -ne 1 ]; then
             echo "::error::Could not download Doxygen ${DOXYGEN_VERSION}"
+            exit 1
+          fi
+          if ! echo "${DOXYGEN_SHA256}  doxygen.tar.gz" | sha256sum --check --strict -; then
+            echo "::error::Doxygen ${DOXYGEN_VERSION} archive does not match its recorded SHA-256"
             exit 1
           fi
           tar -xzf doxygen.tar.gz
@@ -196,8 +210,31 @@ jobs:
           format: lcov
           fail-on-error: false
 
-      - name: Deploy to GitHub Pages
+      - name: Hand the documentation to the deploy job
         if: steps.need_docs.outputs.run_docs == 'true' && github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: docs
+          path: docs
+          include-hidden-files: true
+          retention-days: 1
+          if-no-files-found: error
+
+  deploy:
+    name: Deploy documentation to GitHub Pages
+    needs: docs
+    if: needs.docs.outputs.run_docs == 'true' && github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    # The only job with a write token, and it runs nothing from the
+    # repository: it unpacks the artifact and pushes it to gh-pages.
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: docs
+          path: docs
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
