@@ -1235,10 +1235,25 @@ void MainWindow::onDelete() {
   }
 
   QString dirMessage = tr(" and the whole content?");
+  const QString folder =
+      m_tree->fileSystem().rootPath() + QDir::separator() + file;
+  if (isDir && Util::isLinkedFolder(folder)) {
+    // Only the link goes (ImitatePass::Remove unlinks it); nothing behind it
+    // is looked at or mentioned.
+    if (QMessageBox::question(
+            this, tr("Delete link?"),
+            tr("%1 is a symbolic link or junction. Remove the link? What it "
+               "points to is left alone.")
+                .arg(QDir::separator() + file),
+            QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
+      return;
+    }
+    QtPassSettings::getPass()->Remove(file, isDir);
+    return;
+  }
   if (isDir) {
-    const QStringList content = Util::regularFilesUnder(
-        m_tree->fileSystem().rootPath() + QDir::separator() + file,
-        {QStringLiteral("*")});
+    const QStringList content =
+        Util::regularFilesUnder(folder, {QStringLiteral("*")});
     const bool unexpected =
         std::any_of(content.cbegin(), content.cend(), [](const QString &path) {
           return QFileInfo(path).suffix() != QLatin1String("gpg");
@@ -1339,6 +1354,9 @@ void MainWindow::onEdit() {
  */
 void MainWindow::onUsers() {
   const QString dir = m_tree->currentDir(false);
+  if (refuseLinkedFolder(dir)) {
+    return;
+  }
 
   UsersDialog d(QtPassSettings::getPass(), QtPassSettings::load(), dir, this);
   if (!d.exec()) {
@@ -1831,6 +1849,9 @@ void MainWindow::reencryptPath(const QString &dir) {
                           tr("Directory does not exist: %1").arg(dir));
     return;
   }
+  if (refuseLinkedFolder(dir)) {
+    return;
+  }
 
   int ret = QMessageBox::question(
       this, tr("Re-encrypt passwords"),
@@ -1966,8 +1987,32 @@ void MainWindow::exportPublicKey() {
  * keyring still has to happen via gpg (or QtPass settings) first.
  */
 void MainWindow::addRecipient(const QString &dir) {
+  if (refuseLinkedFolder(dir)) {
+    return;
+  }
   UsersDialog d(QtPassSettings::getPass(), QtPassSettings::load(), dir, this);
   d.exec();
+}
+
+/**
+ * @brief A folder picked in the tree that is a symlink or junction is not a
+ *        folder of the store: say so instead of re-encrypting, re-keying or
+ *        listing whatever it points to. The store root itself may be a link
+ *        (a synced folder); that is configuration, not a tree pick.
+ * @param dir Folder as the tree names it.
+ * @return true when the operation must not go ahead.
+ */
+auto MainWindow::refuseLinkedFolder(const QString &dir) -> bool {
+  const QString store = QDir::cleanPath(QtPassSettings::load().passStore);
+  if (QDir::cleanPath(dir) == store || !Util::isLinkedFolder(dir)) {
+    return false;
+  }
+  QMessageBox::critical(
+      this, tr("Not a folder of the store"),
+      tr("%1 is a symbolic link or junction. What it points to is not part "
+         "of the password store and is left alone.")
+          .arg(QDir::toNativeSeparators(QDir::cleanPath(dir))));
+  return true;
 }
 
 /**

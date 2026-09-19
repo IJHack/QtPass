@@ -315,6 +315,7 @@ private Q_SLOTS:
   void regularFilesUnderLeavesJunctionsOut();
   void regularFilesUnderReportsSpecialFilesUnderAWantedName();
   void directoriesUnderListsRealVisibleFoldersOnly();
+  void isLinkedFolderSeesThroughATrailingSeparator();
   void removeTreeDoesNotFollowSymlinks();
   void removeTreeDoesNotFollowJunctions();
 
@@ -3651,6 +3652,53 @@ void tst_util::directoriesUnderListsRealVisibleFoldersOnly() {
            (QStringList{root.filePath(QStringLiteral("bank")),
                         root.filePath(QStringLiteral("work")),
                         root.filePath(QStringLiteral("work/mail"))}));
+}
+
+/**
+ * @brief isLinkedFolder answers for the entry named, not for what it points
+ *        to, whether or not the path ends in a separator; a real folder, a
+ *        file and a missing path are not links. The walkers, by contrast,
+ *        follow a root that is a link: the configured store commonly is one.
+ */
+void tst_util::isLinkedFolderSeesThroughATrailingSeparator() {
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("real")));
+  {
+    QFile f(QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  QVERIFY(!Util::isLinkedFolder(root.filePath(QStringLiteral("real"))));
+  QVERIFY(!Util::isLinkedFolder(root.filePath(QStringLiteral("real/"))));
+  QVERIFY(!Util::isLinkedFolder(root.filePath(QStringLiteral("missing/"))));
+  QVERIFY(!Util::isLinkedFolder(storeDir.path() + QLatin1Char('/')));
+  const QString link = root.filePath(QStringLiteral("shared"));
+#ifdef Q_OS_WIN
+  QProcess cmd;
+  cmd.start(QStringLiteral("cmd.exe"),
+            {QStringLiteral("/c"), QStringLiteral("mklink"),
+             QStringLiteral("/J"), QDir::toNativeSeparators(link),
+             QDir::toNativeSeparators(outsideDir.path())});
+  if (!cmd.waitForFinished(10000) || cmd.exitCode() != 0) {
+    if (qEnvironmentVariableIsSet("GITHUB_ACTIONS")) {
+      QFAIL("could not create a junction on the CI runner");
+    }
+    QSKIP("could not create a junction here");
+  }
+#else
+  QVERIFY(QFile::link(outsideDir.path(), link));
+#endif
+  QVERIFY(Util::isLinkedFolder(link));
+  QVERIFY(Util::isLinkedFolder(link + QLatin1Char('/')));
+  // A linked root is walked on purpose (see the header); the caller decides.
+  QCOMPARE(Util::regularFilesUnder(link, {QStringLiteral("*.gpg")}),
+           QStringList{QDir(link).filePath(QStringLiteral("secret.gpg"))});
+#ifdef Q_OS_WIN
+  QVERIFY(QDir().rmdir(link));
+#endif
 }
 
 /**

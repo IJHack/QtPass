@@ -501,6 +501,10 @@ auto Util::directoriesUnder(const QString &dir) -> QStringList {
   return dirs;
 }
 
+auto Util::isLinkedFolder(const QString &path) -> bool {
+  return isLink(QFileInfo(QDir::cleanPath(path)));
+}
+
 auto Util::removeTree(const QString &dir) -> bool {
   // A trailing separator makes lstat follow a link ("link/" is the target
   // directory); the link itself is what this is about.

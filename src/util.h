@@ -149,6 +149,15 @@ public:
    * not LinkType, so QDir::NoSymLinks does not see it). Hidden directories
    * (`.git`, a sync tool's version folder) are not entered either, as with
    * QDirIterator without QDir::Hidden.
+   *
+   * @p dir itself is followed whatever it is: the configured store root is
+   * commonly a symlink (`~/.password-store` to a synced folder), and it is
+   * the user's choice, not something found inside the store. A caller that
+   * gets its folder from the store tree decides with isLinkedFolder() first.
+   *
+   * The walk is a listing, not a lock: what is a regular file when listed
+   * can be replaced before it is opened. That is the store's trust boundary
+   * (SECURITY.md), not something a walk can close.
    * @param dir Directory to walk.
    * @param nameFilters Wildcards, as for QDir::setNameFilters().
    * @param skipped Receives what was left out although it is in the way: every
@@ -171,6 +180,17 @@ public:
    * @return Absolute paths, parents before children.
    */
   static auto directoriesUnder(const QString &dir) -> QStringList;
+  /**
+   * @brief Whether @p path names a symbolic link or NTFS junction, with or
+   * without a trailing separator (which would otherwise make the check look
+   * at the target instead).
+   *
+   * The store tree shows linked folders like any other; an operation on one
+   * (re-encrypt, recipients, delete) must not reach through it.
+   * @param path Folder path, as the tree names it.
+   * @return true for a link or junction.
+   */
+  static auto isLinkedFolder(const QString &path) -> bool;
   /**
    * @brief Remove @p dir and everything in it, the way `rm -rf` does: a
    * symbolic link or NTFS junction, @p dir itself or anything inside, is

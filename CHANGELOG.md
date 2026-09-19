@@ -60,8 +60,11 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   special file under an entry's name. Deleting a folder without Git no
   longer goes through `QDir::removeRecursively()`, which walked into a
   junction on Windows and, given the trailing separator the tree uses to
-  name a folder, into a symlinked folder anywhere, and emptied the target
-  [#1842](https://github.com/IJHack/QtPass/issues/1842)
+  name a folder, into a symlinked folder anywhere, and emptied the target.
+  A folder picked in the tree that is a link is refused for re-encryption
+  and recipient changes, and deleting one removes the link only. The
+  configured store root itself may still be a link: that is the user's
+  setup, not something found inside the store [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - Re-encryption checks its own bookkeeping: when the new ciphertext cannot
   be put in place and the original cannot be put back either, the message
   says where the original still is; a backup that cannot be removed after
