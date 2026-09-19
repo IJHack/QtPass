@@ -74,7 +74,7 @@ struct AppSettings {
   bool autoPull{false};          ///< Automatically `git pull` on open.
   bool autoPush{false};          ///< Automatically `git push` after changes.
   bool showProcessOutput{false}; ///< Show external process output.
-  bool showMenuBar{true};        ///< Show the menu bar (Ctrl+M toggles it).
+  bool showMenuBar{false};       ///< Show the menu bar (Ctrl+M toggles it).
 
   // --- Templates ---
   QString passTemplate;          ///< Newline-separated template field names.

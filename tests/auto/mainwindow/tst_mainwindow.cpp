@@ -129,6 +129,7 @@ private Q_SLOTS:
   void restoreWindowCentresWhenNothingSaved();
   void menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes();
   void menuBarCanBeHiddenAndComesBackWithCtrlM();
+  void gitButtonsOnlyExistWhenGitIsInUse();
   void quitIsAnActionNotAStrayShortcut();
   void quitIsWiredToTheApplication();
   void closeWindowHonoursHideOnClose();
@@ -1067,14 +1068,20 @@ void tst_mainwindow::menuBarCanBeHiddenAndComesBackWithCtrlM() {
   auto *toggle =
       m_window->findChild<QAction *>(QStringLiteral("actionShowMenuBar"));
   QVERIFY(toggle != nullptr);
-  QVERIFY(toggle->isCheckable() && toggle->isChecked());
-  QVERIFY(m_window->menuBar()->isVisibleTo(m_window.get()));
+  QVERIFY(toggle->isCheckable());
+  QVERIFY2(!toggle->isChecked() &&
+               !m_window->menuBar()->isVisibleTo(m_window.get()),
+           "the window starts bare; the menu bar is opt-in");
   QCOMPARE(toggle->shortcut(), QKeySequence(QStringLiteral("Ctrl+M")));
 
   toggle->trigger();
+  QVERIFY2(m_window->menuBar()->isVisibleTo(m_window.get()),
+           "the bar shows on the first toggle");
+  QVERIFY2(QtPassSettings::load().showMenuBar, "and the choice is saved");
+  toggle->trigger();
   QVERIFY2(!m_window->menuBar()->isVisibleTo(m_window.get()),
-           "the bar hides on the first toggle");
-  QVERIFY2(!QtPassSettings::load().showMenuBar, "and the choice is saved");
+           "and hides again");
+  QVERIFY(!QtPassSettings::load().showMenuBar);
 
   // The action is on the window itself, so the shortcut survives its menu.
   QVERIFY(m_window->actions().contains(toggle));
@@ -1087,6 +1094,37 @@ void tst_mainwindow::menuBarCanBeHiddenAndComesBackWithCtrlM() {
            "Ctrl+M brings the bar back");
   QVERIFY(QtPassSettings::load().showMenuBar);
 #endif
+}
+
+/**
+ * @brief Push and Pull are for Git; without it they are not greyed out but
+ *        gone, from the toolbar and the menu alike, and come back when Git
+ *        is switched on again.
+ */
+void tst_mainwindow::gitButtonsOnlyExistWhenGitIsInUse() {
+  auto *push = m_window->findChild<QAction *>(QStringLiteral("actionPush"));
+  auto *pull = m_window->findChild<QAction *>(QStringLiteral("actionUpdate"));
+  QVERIFY(push != nullptr && pull != nullptr);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false;
+    QtPassSettings::save(s);
+  }
+  m_window->setUiElementsEnabled(true);
+  QVERIFY2(!push->isVisible() && !pull->isVisible(),
+           "no Git, no push and pull buttons");
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = true;
+    s.gitExecutable = QStringLiteral("/usr/bin/git");
+    QtPassSettings::save(s);
+  }
+  m_window->setUiElementsEnabled(true);
+  QVERIFY2(push->isVisible() && pull->isVisible() && push->isEnabled(),
+           "with Git they are back and usable");
+  m_window->setUiElementsEnabled(false);
+  QVERIFY2(push->isVisible() && !push->isEnabled(),
+           "while an operation runs they stay but are disabled");
 }
 
 /**

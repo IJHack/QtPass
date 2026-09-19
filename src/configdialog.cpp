@@ -144,6 +144,11 @@ void ConfigDialog::applySettings(const AppSettings &settings) {
   ui->checkBoxAutoPull->setChecked(settings.autoPull);
   ui->checkBoxAutoPush->setChecked(settings.autoPush);
   ui->checkBoxAlwaysOnTop->setChecked(settings.alwaysOnTop);
+  ui->checkBoxShowMenuBar->setChecked(settings.showMenuBar);
+#ifdef Q_OS_MACOS
+  // The menu bar is the system's up there; nothing to hide.
+  ui->checkBoxShowMenuBar->setVisible(false);
+#endif
 
   // Dependent helpers: set after the plain values above so the enable/disable
   // logic they trigger sees the final widget states.
@@ -223,6 +228,9 @@ auto ConfigDialog::readSettings() -> AppSettings {
   settings.templateAllFields = ui->checkBoxTemplateAllFields->isChecked();
   settings.showProcessOutput = ui->checkBoxShowProcessOutput->isChecked();
   settings.alwaysOnTop = ui->checkBoxAlwaysOnTop->isChecked();
+#ifndef Q_OS_MACOS
+  settings.showMenuBar = ui->checkBoxShowMenuBar->isChecked();
+#endif
   settings.version = VERSION;
 
   return settings;

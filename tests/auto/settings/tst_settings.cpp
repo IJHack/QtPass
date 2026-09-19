@@ -514,7 +514,7 @@ void tst_settings::serializerLoadDefaults() {
   QCOMPARE(s.usePass, false);
   QCOMPARE(s.useGit, false);
   QCOMPARE(s.showProcessOutput, false);
-  QCOMPARE(s.showMenuBar, true); // the bar is on until Ctrl+M says otherwise
+  QCOMPARE(s.showMenuBar, false); // a bare window; Ctrl+M or Settings show it
   QCOMPARE(s.useGrepSearch, false);
   QCOMPARE(s.clipBoardType, Enums::CLIPBOARD_NEVER);
   // addGPGId defaults to true (every isAddGPGId() call site passes true).

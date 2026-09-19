@@ -167,7 +167,17 @@
                     </property>
                    </widget>
                   </item>
-                  <item row="0" column="2" rowspan="2">
+                  <item row="2" column="0">
+                   <widget class="QCheckBox" name="checkBoxShowMenuBar">
+                    <property name="text">
+                     <string>Show menu bar</string>
+                    </property>
+                    <property name="toolTip">
+                     <string>Ctrl+M shows or hides it from the main window as well</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="2" rowspan="3">
                    <spacer name="gridLayoutSystemSpacer">
                     <property name="orientation">
                      <enum>Qt::Horizontal</enum>
