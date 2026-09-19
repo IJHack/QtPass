@@ -279,17 +279,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">Cyffredinol</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished">Clipfwrdd</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished">Cyfrineiriau</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
@@ -881,17 +881,17 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">Cliciwch ddwywaith i ailenwi&apos;r maes hwn</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">Ailenwi maes…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">Tynnu maes</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2314,12 +2314,12 @@ Parhau?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished">Tynnu maes</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">Mae maes o&apos;r enw %1 yn bodoli eisoes.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>
