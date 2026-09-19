@@ -92,6 +92,8 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   bare as it was: Ctrl+M or Configuration ▸ General ▸ Show menu bar turns it
   on (not on macOS, where the bar is the system's) and the choice is
   remembered
+- Double-clicking a field in the password panel opens the entry for editing,
+  as double-clicking it in the tree does
 - Push and Pull are gone from the toolbar and the Store menu while Git is
   off, instead of sitting there greyed out; they are back the moment Git is
   enabled

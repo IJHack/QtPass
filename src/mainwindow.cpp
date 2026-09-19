@@ -128,6 +128,12 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
           &m_qtPass->clipboard(), &ClipboardManager::copyText);
   connect(m_displayPanel, &PasswordDisplayPanel::qrRequested, m_qtPass,
           &QtPass::showTextAsQRCode);
+  // Double-click on what is shown edits it, as in the tree.
+  connect(m_displayPanel, &PasswordDisplayPanel::editRequested, this, [this] {
+    if (ui->actionEdit->isEnabled()) {
+      onEdit();
+    }
+  });
 
   QtPassSettings::getPass()->updateEnv();
   clearPanelTimer.setSingleShot(true);

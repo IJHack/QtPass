@@ -25,6 +25,7 @@
 #include <QIcon>
 #include <QLabel>
 #include <QLineEdit>
+#include <QMouseEvent>
 #include <QPalette>
 #include <QPushButton>
 #include <QTextBrowser>
@@ -237,9 +238,28 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     frame->layout()->addWidget(contentTextBrowser);
   }
 
-  // set into the layout
-  m_grid->addWidget(new QLabel(trimmedField), position, 0);
+  addRow(position, new QLabel(trimmedField), frame);
+}
+
+void PasswordDisplayPanel::addRow(int position, QLabel *label, QFrame *frame) {
+  m_grid->addWidget(label, position, 0);
   m_grid->addWidget(frame, position, 1);
+  label->installEventFilter(this);
+  frame->installEventFilter(this);
+  // The value widgets swallow mouse events before the frame sees them.
+  for (QWidget *child : frame->findChildren<QWidget *>()) {
+    child->installEventFilter(this);
+  }
+}
+
+auto PasswordDisplayPanel::eventFilter(QObject *watched, QEvent *event)
+    -> bool {
+  if (event->type() == QEvent::MouseButtonDblClick &&
+      static_cast<QMouseEvent *>(event)->button() == Qt::LeftButton) {
+    emit editRequested();
+    return true;
+  }
+  return QObject::eventFilter(watched, event);
 }
 
 /**
@@ -321,6 +341,5 @@ void PasswordDisplayPanel::addOtpField(int position, const QString &otpConfig,
           &PasswordDisplayPanel::copyRequested);
   frame->layout()->addWidget(otpWidget);
 
-  m_grid->addWidget(new QLabel(QObject::tr("OTP Code")), position, 0);
-  m_grid->addWidget(frame, position, 1);
+  addRow(position, new QLabel(QObject::tr("OTP Code")), frame);
 }
