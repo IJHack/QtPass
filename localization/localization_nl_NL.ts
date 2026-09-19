@@ -155,27 +155,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">Algemeen</translation>
+        <translation>Algemeen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished">Klembord</translation>
+        <translation>Klembord</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished">Wachtwoorden</translation>
+        <translation>Wachtwoorden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
         <source>Show menu bar</source>
-        <translation type="unfinished">Menubalk tonen</translation>
+        <translation>Menubalk tonen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
-        <translation type="unfinished">Met Ctrl+M kun je hem ook vanuit het hoofdvenster tonen of verbergen</translation>
+        <translation>Met Ctrl+M kun je hem ook vanuit het hoofdvenster tonen of verbergen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
@@ -520,7 +520,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="92"/>
         <source>No clipboard</source>
-        <translation type="unfinished">Geen klembord</translation>
+        <translation>Geen klembord</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
@@ -888,7 +888,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Kopiëren naar klembord</translation>
+        <translation>Kopiëren naar klembord</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -945,17 +945,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">Dubbelklik om de naam van dit veld te wijzigen</translation>
+        <translation>Dubbelklik om de naam van dit veld te wijzigen</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">Veldnaam wijzigen…</translation>
+        <translation>Veldnaam wijzigen…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">Veld verwijderen</translation>
+        <translation>Veld verwijderen</translation>
     </message>
 </context>
 <context>
@@ -1226,7 +1226,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished">Van klembord</translation>
+        <translation>Van klembord</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1274,7 +1274,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">%1 lijkt niet op een ASCII-armored GPG-sleutel. Converteer deze eerst met &lt;code&gt;gpg --armor --export&lt;/code&gt; of plak het ASCII-armored blok via &lt;b&gt;Van klembord&lt;/b&gt;.</translation>
+        <translation>%1 lijkt niet op een ASCII-armored GPG-sleutel. Converteer deze eerst met &lt;code&gt;gpg --armor --export&lt;/code&gt; of plak het ASCII-armored blok via &lt;b&gt;Van klembord&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -2537,12 +2537,12 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished">Veld verwijderen</translation>
+        <translation>Veld verwijderen</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">Er bestaat al een veld met de naam %1.</translation>
+        <translation>Er bestaat al een veld met de naam %1.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>
