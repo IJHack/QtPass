@@ -23,7 +23,6 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
-        <location filename="../src/ui_configdialog.h" line="1182"/>
         <source>Configuration</source>
         <translation>پیکربندی</translation>
     </message>
@@ -33,75 +32,62 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="304"/>
-        <location filename="../src/ui_configdialog.h" line="1216"/>
         <source>Clipboard behaviour:</source>
         <translation>رفتار کلیپ‌بورد:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="322"/>
-        <location filename="../src/ui_configdialog.h" line="1217"/>
         <source>Use primary selection</source>
         <translation>استفاده از انتخاب اصلی</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
-        <location filename="../src/ui_configdialog.h" line="1218"/>
         <source>Autoclear after:</source>
         <translation>پاک‌سازی خودکار بعد از:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="346"/>
         <location filename="../src/configdialog.ui" line="421"/>
-        <location filename="../src/ui_configdialog.h" line="1219"/>
-        <location filename="../src/ui_configdialog.h" line="1224"/>
         <source>Seconds</source>
         <translation>ثانیه</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="374"/>
-        <location filename="../src/ui_configdialog.h" line="1220"/>
         <source>Content panel behaviour:</source>
         <translation>رفتار پنل محتوا:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="382"/>
-        <location filename="../src/ui_configdialog.h" line="1221"/>
         <source>Hide content</source>
         <translation>مخفی کردن محتوا</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="389"/>
-        <location filename="../src/ui_configdialog.h" line="1222"/>
         <source>Hide password</source>
         <translation>مخفی کردن رمز عبور</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="398"/>
-        <location filename="../src/ui_configdialog.h" line="1223"/>
         <source>Autoclear panel after:</source>
         <translation>پاک‌سازی خودکار پنل پس از:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
-        <location filename="../src/ui_configdialog.h" line="1225"/>
         <source>Use a monospace font</source>
         <translation>استفاده از فونت تک‌عرض</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="457"/>
-        <location filename="../src/ui_configdialog.h" line="1226"/>
         <source>Display the files content as-is</source>
         <translation>نمایش محتوای فایل بدون تغییر</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="464"/>
-        <location filename="../src/ui_configdialog.h" line="1227"/>
         <source>No line wrapping</source>
         <translation>بدون شکست خط</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="471"/>
-        <location filename="../src/ui_configdialog.h" line="1228"/>
         <source>Show process output</source>
         <translation>نمایش خروجی فرایند</translation>
     </message>
@@ -115,19 +101,16 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
-        <location filename="../src/ui_configdialog.h" line="1231"/>
         <source>Characters</source>
         <translation>کاراکترها</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="630"/>
-        <location filename="../src/ui_configdialog.h" line="1232"/>
         <source>Use characters:</source>
         <translation>استفاده از کاراکترها:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="651"/>
-        <location filename="../src/ui_configdialog.h" line="1239"/>
         <source>Select character set for password generation</source>
         <translation>انتخاب مجموعه کاراکتر برای تولید رمز عبور</translation>
     </message>
@@ -137,103 +120,84 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
-        <location filename="../src/ui_configdialog.h" line="1234"/>
         <source>Alphabetical</source>
         <translation>الفبایی</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="665"/>
-        <location filename="../src/ui_configdialog.h" line="1235"/>
         <source>Alphanumerical</source>
         <translation>الفبایی-عددی</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="670"/>
-        <location filename="../src/ui_configdialog.h" line="1236"/>
         <source>Custom</source>
         <translation>سفارشی</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="708"/>
-        <location filename="../src/ui_configdialog.h" line="1241"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
-        <location filename="../src/ui_configdialog.h" line="1242"/>
         <source>Use PWGen</source>
         <translation>استفاده از PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="732"/>
-        <location filename="../src/ui_configdialog.h" line="1243"/>
         <source>Exclude capital letters</source>
         <translation>حذف حروف بزرگ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="742"/>
-        <location filename="../src/ui_configdialog.h" line="1244"/>
         <source>Include special symbols</source>
         <translation>شامل نمادهای ویژه</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="749"/>
-        <location filename="../src/ui_configdialog.h" line="1245"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>تولید رمزهای عبور آسان‌تر برای به خاطر سپردن اما کم‌امنیت‌تر</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="756"/>
-        <location filename="../src/ui_configdialog.h" line="1246"/>
         <source>Exclude numbers</source>
         <translation>حذف اعداد</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="872"/>
-        <location filename="../src/ui_configdialog.h" line="1257"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="883"/>
         <location filename="../src/configdialog.ui" line="1458"/>
-        <location filename="../src/ui_configdialog.h" line="1258"/>
-        <location filename="../src/ui_configdialog.h" line="1345"/>
         <source>Use Git</source>
         <translation>استفاده از Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="894"/>
-        <location filename="../src/ui_configdialog.h" line="1259"/>
         <source>Automatically add .gpg-id files</source>
         <translation>افزودن خودکار فایل‌های .gpg-id</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="901"/>
         <location filename="../src/configdialog.ui" line="1465"/>
-        <location filename="../src/ui_configdialog.h" line="1260"/>
-        <location filename="../src/ui_configdialog.h" line="1346"/>
         <source>Automatically push</source>
         <translation>ارسال خودکار</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="908"/>
         <location filename="../src/configdialog.ui" line="1472"/>
-        <location filename="../src/ui_configdialog.h" line="1261"/>
-        <location filename="../src/ui_configdialog.h" line="1347"/>
         <source>Automatically pull</source>
         <translation>دریافت خودکار</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="201"/>
-        <location filename="../src/ui_configdialog.h" line="1209"/>
         <source>Extensions:</source>
         <translation>افزونه‌ها:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="209"/>
-        <location filename="../src/ui_configdialog.h" line="1210"/>
         <source>Use QRencode</source>
         <translation>استفاده از QRencode</translation>
     </message>
@@ -243,143 +207,118 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
-        <location filename="../src/ui_configdialog.h" line="1211"/>
         <source>Enable one-time password (OTP) support</source>
         <translation type="unfinished">فعال‌سازی پشتیبانی از رمز عبور یک‌بارمصرف (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
-        <location filename="../src/ui_configdialog.h" line="1212"/>
         <source>Enable content search (pass grep)</source>
         <translation>فعال‌سازی جستجوی محتوا (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="237"/>
-        <location filename="../src/ui_configdialog.h" line="1214"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>اجازه جستجو در محتوای فایل‌های رمز عبور. نیاز به رمزگشایی تمام فایل‌ها دارد و می‌تواند در مخازن بزرگ کند باشد.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="134"/>
-        <location filename="../src/ui_configdialog.h" line="1200"/>
         <source>System:</source>
         <translation>سیستم:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="145"/>
-        <location filename="../src/ui_configdialog.h" line="1201"/>
         <source>Use TrayIcon</source>
         <translation>استفاده از آیکون سینی</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="152"/>
-        <location filename="../src/ui_configdialog.h" line="1202"/>
         <source>Start minimized</source>
         <translation>شروع در حالت کوچک‌شده</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
-        <location filename="../src/ui_configdialog.h" line="1203"/>
         <source>Hide on close</source>
         <translation>پنهان کردن هنگام بستن</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
-        <location filename="../src/ui_configdialog.h" line="1204"/>
         <source>Always on top</source>
         <translation>همیشه در بالا</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="80"/>
-        <location filename="../src/ui_configdialog.h" line="1195"/>
         <source>Programs</source>
         <translation>برنامه‌ها</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="988"/>
-        <location filename="../src/ui_configdialog.h" line="1262"/>
         <source>Select password storage program:</source>
         <translation>انتخاب برنامه ذخیره‌ساز رمز عبور:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="997"/>
-        <location filename="../src/ui_configdialog.h" line="1263"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>&amp;بومی Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
-        <location filename="../src/ui_configdialog.h" line="1264"/>
         <source>&amp;Use pass</source>
         <translation>&amp;استفاده از pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
-        <location filename="../src/ui_configdialog.h" line="1265"/>
         <source>Native</source>
         <translation>بومی</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
         <location filename="../src/configdialog.ui" line="1034"/>
-        <location filename="../src/ui_configdialog.h" line="1193"/>
-        <location filename="../src/ui_configdialog.h" line="1266"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
-        <location filename="../src/ui_configdialog.h" line="1187"/>
         <source>General</source>
         <translation type="unfinished">عمومی</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
-        <location filename="../src/ui_configdialog.h" line="1189"/>
         <source>Clipboard</source>
         <translation type="unfinished">کلیپ‌بورد</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
-        <location filename="../src/ui_configdialog.h" line="1191"/>
         <source>Passwords</source>
         <translation type="unfinished">رمزهای عبور</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
-        <location filename="../src/ui_configdialog.h" line="1205"/>
         <source>Show menu bar</source>
         <translation type="unfinished">نمایش نوار منو</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
-        <location filename="../src/ui_configdialog.h" line="1207"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
         <translation type="unfinished">Ctrl+M نیز آن را از پنجرهٔ اصلی نمایش می‌دهد یا پنهان می‌کند</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="551"/>
-        <location filename="../src/ui_configdialog.h" line="1229"/>
         <source>Password generation:</source>
         <translation>تولید رمز عبور:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="562"/>
-        <location filename="../src/ui_configdialog.h" line="1230"/>
         <source>Password length:</source>
         <translation>طول رمز عبور:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="655"/>
-        <location filename="../src/ui_configdialog.h" line="1233"/>
         <source>All characters</source>
         <translation>همه کاراکترها</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
-        <location filename="../src/ui_configdialog.h" line="1268"/>
-        <location filename="../src/ui_configdialog.h" line="1271"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">فایل اجرایی gpg را انتخاب کنید</translation>
     </message>
@@ -390,156 +329,124 @@
         <location filename="../src/configdialog.ui" line="1161"/>
         <location filename="../src/configdialog.ui" line="1426"/>
         <location filename="../src/configdialog.ui" line="1517"/>
-        <location filename="../src/ui_configdialog.h" line="1273"/>
-        <location filename="../src/ui_configdialog.h" line="1280"/>
-        <location filename="../src/ui_configdialog.h" line="1293"/>
-        <location filename="../src/ui_configdialog.h" line="1302"/>
-        <location filename="../src/ui_configdialog.h" line="1336"/>
-        <location filename="../src/ui_configdialog.h" line="1355"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1060"/>
         <location filename="../src/configdialog.ui" line="1063"/>
-        <location filename="../src/ui_configdialog.h" line="1275"/>
-        <location filename="../src/ui_configdialog.h" line="1278"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">فایل اجرایی git را انتخاب کنید</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1079"/>
-        <location filename="../src/ui_configdialog.h" line="1281"/>
         <source>Generate</source>
         <translation>تولید</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1082"/>
-        <location filename="../src/ui_configdialog.h" line="1283"/>
         <source>Generate GPG key pair</source>
         <translation>تولید جفت کلید GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1089"/>
-        <location filename="../src/ui_configdialog.h" line="1285"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1105"/>
-        <location filename="../src/ui_configdialog.h" line="1286"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1115"/>
         <location filename="../src/configdialog.ui" line="1118"/>
-        <location filename="../src/ui_configdialog.h" line="1288"/>
-        <location filename="../src/ui_configdialog.h" line="1291"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">فایل اجرایی pwgen را انتخاب کنید</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1131"/>
-        <location filename="../src/ui_configdialog.h" line="1294"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
-        <location filename="../src/ui_configdialog.h" line="1295"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1155"/>
         <location filename="../src/configdialog.ui" line="1158"/>
-        <location filename="../src/ui_configdialog.h" line="1297"/>
-        <location filename="../src/ui_configdialog.h" line="1300"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">فایل اجرایی pass را انتخاب کنید</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1170"/>
-        <location filename="../src/ui_configdialog.h" line="1303"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1201"/>
-        <location filename="../src/ui_configdialog.h" line="1304"/>
         <source>Autodetect</source>
         <translation>تشخیص خودکار</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1212"/>
-        <location filename="../src/ui_configdialog.h" line="1305"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>بازنویسی SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1215"/>
-        <location filename="../src/ui_configdialog.h" line="1307"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>مسیر اختیاری برای بازنویسی SSH_AUTH_SOCK. خالی بگذارید تا به‌صورت خودکار از طریق gpgconf بررسی شود (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1225"/>
-        <location filename="../src/ui_configdialog.h" line="1309"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(بررسی خودکار از طریق gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="85"/>
-        <location filename="../src/ui_configdialog.h" line="1197"/>
         <source>Profiles</source>
         <translation>نمایه‌ها</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1299"/>
-        <location filename="../src/ui_configdialog.h" line="1311"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">مخازن رمز عبوری که این QtPass می‌شناسد؛ یکی را برای ویرایش انتخاب کنید</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1314"/>
-        <location filename="../src/ui_configdialog.h" line="1314"/>
         <source>Add a profile</source>
         <translation type="unfinished">افزودن نمایه</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1332"/>
-        <location filename="../src/ui_configdialog.h" line="1318"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">نمایه انتخاب‌شده فراموش می‌شود؛ خود مخزن روی دیسک باقی می‌ماند</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1378"/>
-        <location filename="../src/ui_configdialog.h" line="1321"/>
         <source>Profile</source>
         <translation type="unfinished">نمایه</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1384"/>
-        <location filename="../src/ui_configdialog.h" line="1322"/>
         <source>Name</source>
         <translation>نام</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1394"/>
-        <location filename="../src/ui_configdialog.h" line="1324"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>نام نمایه، برای شناسایی این نمایه پیکربندی استفاده می‌شود</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1401"/>
-        <location filename="../src/ui_configdialog.h" line="1326"/>
         <source>Path</source>
         <translation>مسیر</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
-        <location filename="../src/ui_configdialog.h" line="1328"/>
         <source>Path to the password store directory</source>
         <translation>مسیر به پوشه مخزن رمز عبور</translation>
     </message>
@@ -549,25 +456,21 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
-        <location filename="../src/ui_configdialog.h" line="1339"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>اختیاری: کلید GPG برای امضای فایل‌های .gpg-id جهت تأیید یکپارچگی. خالی بگذارید مگر اینکه نیاز به محافظت از لیست کاربران در برابر دستکاری داشته باشید.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1317"/>
-        <location filename="../src/ui_configdialog.h" line="1316"/>
         <source>Add</source>
         <translation>افزودن</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1335"/>
-        <location filename="../src/ui_configdialog.h" line="1320"/>
         <source>Delete</source>
         <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1501"/>
-        <location filename="../src/ui_configdialog.h" line="1348"/>
         <source>Current path</source>
         <translation>مسیر فعلی</translation>
     </message>
@@ -576,58 +479,46 @@
         <location filename="../src/configdialog.ui" line="1423"/>
         <location filename="../src/configdialog.ui" line="1511"/>
         <location filename="../src/configdialog.ui" line="1514"/>
-        <location filename="../src/ui_configdialog.h" line="1331"/>
-        <location filename="../src/ui_configdialog.h" line="1334"/>
-        <location filename="../src/ui_configdialog.h" line="1350"/>
-        <location filename="../src/ui_configdialog.h" line="1353"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">پوشه مخزن رمز عبور را انتخاب کنید</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1448"/>
-        <location filename="../src/ui_configdialog.h" line="1341"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">اثر انگشت کامل 40 کاراکتری کلید، همان‌طور که pass نیاز دارد</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1455"/>
-        <location filename="../src/ui_configdialog.h" line="1343"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
         <translation type="unfinished">تنظیمات Git برای این نمایه؛ تا زمانی که این نمایه فعال است، جایگزین تنظیمات زبانه تنظیمات می‌شوند</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="768"/>
-        <location filename="../src/ui_configdialog.h" line="1247"/>
         <source>Template</source>
         <translation>قالب</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="774"/>
-        <location filename="../src/ui_configdialog.h" line="1248"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>قالب‌ها فیلدهای اضافی را در گفتگوی تولید رمز عبور و در نمای رمز عبور اضافه می‌کنند.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="783"/>
-        <location filename="../src/ui_configdialog.h" line="1249"/>
         <source>Use template</source>
         <translation>استفاده از قالب</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="790"/>
-        <location filename="../src/ui_configdialog.h" line="1251"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>نمایش تمام خطوطی که با یک کلمه و به دنبال آن دو نقطه شروع می‌شوند به عنوان فیلد در فیلدهای رمز عبور، نه فقط موارد فهرست‌شده</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="793"/>
-        <location filename="../src/ui_configdialog.h" line="1253"/>
         <source>Show all fields templated</source>
         <translation>نمایش تمام فیلدهای قالب‌دار</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="805"/>
-        <location filename="../src/ui_configdialog.h" line="1254"/>
         <source>login
 URL
 e-mail</source>
@@ -637,13 +528,11 @@ URL
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1435"/>
-        <location filename="../src/ui_configdialog.h" line="1337"/>
         <source>Signing key</source>
         <translation>کلید امضا</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
-        <location filename="../src/ui_configdialog.h" line="1356"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; نسخه </translation>
     </message>
@@ -924,25 +813,21 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="99"/>
         <source>Export public key</source>
         <translation>صادرات کلید عمومی</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="100"/>
         <source>Public key</source>
         <translation>کلید عمومی</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="101"/>
         <source>Copy to clipboard</source>
         <translation type="unfinished">کپی به کلیپ‌بورد</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="102"/>
         <source>Save to file...</source>
         <translation>ذخیره در فایل...</translation>
     </message>
@@ -1264,7 +1149,6 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
-        <location filename="../src/ui_importkeydialog.h" line="121"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
         <translation>کلید عمومی GPG را از فایل وارد کنید یا در زیر بچسبانید. کلید باید در قالب ASCII-armored باشد.</translation>
     </message>
@@ -1274,7 +1158,6 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
-        <location filename="../src/ui_importkeydialog.h" line="123"/>
         <source>From clipboard</source>
         <translation type="unfinished">از کلیپ‌بورد</translation>
     </message>
@@ -1285,25 +1168,21 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="41"/>
-        <location filename="../src/ui_importkeydialog.h" line="120"/>
         <source>Import GPG key</source>
         <translation>وارد کردن کلید GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
-        <location filename="../src/ui_importkeydialog.h" line="122"/>
         <source>From file...</source>
         <translation>از فایل...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
-        <location filename="../src/ui_importkeydialog.h" line="124"/>
         <source>Paste an ASCII-armored GPG key here...</source>
         <translation>یک کلید GPG با قالب ASCII-armored را اینجا بچسبانید...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
-        <location filename="../src/ui_importkeydialog.h" line="125"/>
         <source>Import</source>
         <translation>وارد کردن</translation>
     </message>
@@ -1402,61 +1281,51 @@ You will not be able to change the user list!</source>
     <name>KeygenDialog</name>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
-        <location filename="../src/ui_keygendialog.h" line="230"/>
         <source>Generate GnuPG keypair</source>
         <translation>تولید جفت کلید GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
-        <location filename="../src/ui_keygendialog.h" line="231"/>
         <source>Generate a new key pair</source>
         <translation>تولید یک جفت کلید جدید</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
-        <location filename="../src/ui_keygendialog.h" line="232"/>
         <source>Email</source>
         <translation>ایمیل</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
-        <location filename="../src/ui_keygendialog.h" line="233"/>
         <source>Name</source>
         <translation>نام</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
-        <location filename="../src/ui_keygendialog.h" line="234"/>
         <source>Passphrase</source>
         <translation>عبارت عبور</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
-        <location filename="../src/ui_keygendialog.h" line="235"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;هیچ محدودیتی برای طول عبارت عبور وجود ندارد و باید با دقت انتخاب شود. از منظر امنیت، عبارت عبور برای باز کردن کلید خصوصی یکی از ضعیف‌ترین نقاط در GnuPG (و سایر سیستم‌های رمزنگاری کلید عمومی) است زیرا تنها محافظتی است که اگر فرد دیگری کلید خصوصی شما را به دست آورد، دارید. &lt;br/&gt;در حالت ایده‌آل، عبارت عبور نباید از کلمات فرهنگ لغت استفاده کند و باید حروف بزرگ و کوچک الفبا را مخلوط کند و همچنین از کاراکترهای غیر الفبایی استفاده کند.&lt;br/&gt;یک عبارت عبور خوب برای استفاده ایمن از GnuPG حیاتی است.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
-        <location filename="../src/ui_keygendialog.h" line="236"/>
         <source>Repeat pass</source>
         <translation>تکرار عبارت عبور</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
-        <location filename="../src/ui_keygendialog.h" line="237"/>
         <source>Expert</source>
         <translation>پیشرفته</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
-        <location filename="../src/ui_keygendialog.h" line="238"/>
         <source>Template contents will be set based on GPG version.</source>
         <translation>محتویات قالب بر اساس نسخه GPG تنظیم خواهد شد.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
-        <location filename="../src/ui_keygendialog.h" line="239"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>برای گزینه‌های پیشرفته &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;راهنمای GnuPG&lt;/a&gt; را بررسی کنید</translation>
     </message>
@@ -1500,13 +1369,11 @@ You will not be able to change the user list!</source>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <location filename="../src/ui_mainwindow.h" line="373"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
-        <location filename="../src/ui_mainwindow.h" line="446"/>
         <source>Select profile</source>
         <translation>انتخاب نمایه</translation>
     </message>
@@ -1518,73 +1385,61 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="808"/>
         <location filename="../src/mainwindow.cpp" line="1022"/>
-        <location filename="../src/ui_mainwindow.h" line="448"/>
         <source>Search password</source>
         <translation>جستجوی رمز عبور</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
-        <location filename="../src/ui_mainwindow.h" line="450"/>
         <source>Search inside password content (pass grep)</source>
         <translation>جستجو در محتوای رمز عبور (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
-        <location filename="../src/ui_mainwindow.h" line="452"/>
         <source>⌕</source>
         <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
-        <location filename="../src/ui_mainwindow.h" line="454"/>
         <source>Content search toggle</source>
         <translation>تغییر وضعیت جستجوی محتوا</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
-        <location filename="../src/ui_mainwindow.h" line="457"/>
         <source>Toggle content search mode to search inside password files</source>
         <translation>تغییر وضعیت حالت جستجوی محتوا برای جستجو در فایل‌های رمز عبور</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
-        <location filename="../src/ui_mainwindow.h" line="460"/>
         <source>Case-insensitive search</source>
         <translation>جستجوی بدون حساسیت به حروف کوچک و بزرگ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
-        <location filename="../src/ui_mainwindow.h" line="462"/>
         <source>Aa</source>
         <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
-        <location filename="../src/ui_mainwindow.h" line="464"/>
         <source>Case-insensitive toggle</source>
         <translation>تغییر وضعیت حساسیت به حروف</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
-        <location filename="../src/ui_mainwindow.h" line="467"/>
         <source>Toggle case-insensitive content search</source>
         <translation>تغییر وضعیت جستجوی محتوا بدون حساسیت به حروف کوچک و بزرگ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
-        <location filename="../src/ui_mainwindow.h" line="470"/>
         <source>Results</source>
         <translation>نتایج</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
-        <location filename="../src/ui_mainwindow.h" line="471"/>
         <source>Welcome to QtPass</source>
         <translation>به QtPass خوش آمدید</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="319"/>
-        <location filename="../src/ui_mainwindow.h" line="472"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -1596,25 +1451,21 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
-        <location filename="../src/ui_mainwindow.h" line="476"/>
         <source>&amp;File</source>
         <translation type="unfinished">&amp;فایل</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
-        <location filename="../src/ui_mainwindow.h" line="477"/>
         <source>&amp;Store</source>
         <translation type="unfinished">&amp;مخزن</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
-        <location filename="../src/ui_mainwindow.h" line="478"/>
         <source>S&amp;ettings</source>
         <translation type="unfinished">&amp;تنظیمات</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="373"/>
-        <location filename="../src/ui_mainwindow.h" line="479"/>
         <source>&amp;Help</source>
         <translation type="unfinished">&amp;راهنما</translation>
     </message>
@@ -1622,14 +1473,11 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.ui" line="423"/>
         <location filename="../src/mainwindow.ui" line="426"/>
         <location filename="../src/mainwindow.cpp" line="1569"/>
-        <location filename="../src/ui_mainwindow.h" line="374"/>
-        <location filename="../src/ui_mainwindow.h" line="376"/>
         <source>Add password</source>
         <translation>افزودن رمز عبور</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="429"/>
-        <location filename="../src/ui_mainwindow.h" line="379"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
@@ -1637,8 +1485,6 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.ui" line="434"/>
         <location filename="../src/mainwindow.ui" line="437"/>
         <location filename="../src/mainwindow.cpp" line="1568"/>
-        <location filename="../src/ui_mainwindow.h" line="381"/>
-        <location filename="../src/ui_mainwindow.h" line="383"/>
         <source>Add folder</source>
         <translation>افزودن پوشه</translation>
     </message>
@@ -1646,8 +1492,6 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.ui" line="442"/>
         <location filename="../src/mainwindow.ui" line="445"/>
         <location filename="../src/mainwindow.cpp" line="1576"/>
-        <location filename="../src/ui_mainwindow.h" line="385"/>
-        <location filename="../src/ui_mainwindow.h" line="387"/>
         <source>Edit</source>
         <translation>ویرایش</translation>
     </message>
@@ -1655,159 +1499,132 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.ui" line="450"/>
         <location filename="../src/mainwindow.ui" line="453"/>
         <location filename="../src/mainwindow.cpp" line="1590"/>
-        <location filename="../src/ui_mainwindow.h" line="389"/>
-        <location filename="../src/ui_mainwindow.h" line="391"/>
         <source>Delete</source>
         <translation>حذف</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="458"/>
-        <location filename="../src/ui_mainwindow.h" line="393"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="461"/>
-        <location filename="../src/ui_mainwindow.h" line="395"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>تولید OTP و کپی به کلیپ‌بورد</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="464"/>
-        <location filename="../src/ui_mainwindow.h" line="398"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="469"/>
-        <location filename="../src/ui_mainwindow.h" line="400"/>
         <source>Push</source>
         <translation>ارسال</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="472"/>
-        <location filename="../src/ui_mainwindow.h" line="402"/>
         <source>Git push</source>
         <translation>ارسال Git</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="477"/>
-        <location filename="../src/ui_mainwindow.h" line="404"/>
         <source>Update</source>
         <translation>به‌روزرسانی</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="480"/>
-        <location filename="../src/ui_mainwindow.h" line="406"/>
         <source>Git pull</source>
         <translation>دریافت Git</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="485"/>
         <location filename="../src/mainwindow.cpp" line="1570"/>
-        <location filename="../src/ui_mainwindow.h" line="408"/>
         <source>Users</source>
         <translation>کاربران</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="488"/>
-        <location filename="../src/ui_mainwindow.h" line="410"/>
         <source>Manage who can read password in folder</source>
         <translation>مدیریت اینکه چه کسی می‌تواند رمز عبور در پوشه را بخواند</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="499"/>
-        <location filename="../src/ui_mainwindow.h" line="412"/>
         <source>Show &amp;menu bar</source>
         <translation type="unfinished">&amp;نمایش نوار منو</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="502"/>
-        <location filename="../src/ui_mainwindow.h" line="414"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
         <translation type="unfinished">پنهان کردن یا نمایش نوار منو؛ Ctrl+M آن را بازمی‌گرداند</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
-        <location filename="../src/ui_mainwindow.h" line="417"/>
         <source>Ctrl+M</source>
         <translation type="unfinished">Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="510"/>
-        <location filename="../src/ui_mainwindow.h" line="419"/>
         <source>Config</source>
         <translation>پیکربندی</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="513"/>
-        <location filename="../src/ui_mainwindow.h" line="421"/>
         <source>Configuration</source>
         <translation>پیکربندی</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
-        <location filename="../src/ui_mainwindow.h" line="424"/>
         <source>Ctrl+,</source>
         <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="524"/>
-        <location filename="../src/ui_mainwindow.h" line="426"/>
         <source>&amp;Close window</source>
         <translation type="unfinished">&amp;بستن پنجره</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
-        <location filename="../src/ui_mainwindow.h" line="428"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
         <translation type="unfinished">بستن پنجره؛ با &quot;پنهان کردن هنگام بستن&quot; QtPass در سینی سیستم باقی می‌ماند</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
-        <location filename="../src/ui_mainwindow.h" line="431"/>
         <source>Ctrl+W</source>
         <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="535"/>
-        <location filename="../src/ui_mainwindow.h" line="433"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">&amp;خروج</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
-        <location filename="../src/ui_mainwindow.h" line="435"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
-        <location filename="../src/ui_mainwindow.h" line="437"/>
         <source>&amp;FAQ</source>
         <translation type="unfinished">&amp;سوالات متداول</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="549"/>
-        <location filename="../src/ui_mainwindow.h" line="439"/>
         <source>Open the frequently asked questions on qtpass.org</source>
         <translation type="unfinished">باز کردن سوالات متداول در qtpass.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="552"/>
-        <location filename="../src/ui_mainwindow.h" line="442"/>
         <source>F1</source>
         <translation type="unfinished">F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="557"/>
-        <location filename="../src/ui_mainwindow.h" line="444"/>
         <source>&amp;About QtPass</source>
         <translation type="unfinished">&amp;درباره QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="565"/>
-        <location filename="../src/ui_mainwindow.h" line="445"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished">درباره &amp;Qt</translation>
     </message>
@@ -2282,62 +2099,51 @@ Continue?</source>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
         <location filename="../src/passworddialog.cpp" line="271"/>
-        <location filename="../src/ui_passworddialog.h" line="247"/>
-        <location filename="../src/ui_passworddialog.h" line="258"/>
         <source>Password</source>
         <translation>رمز عبور</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
-        <location filename="../src/ui_passworddialog.h" line="248"/>
         <source>Folder</source>
         <translation type="unfinished">پوشه</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
-        <location filename="../src/ui_passworddialog.h" line="250"/>
         <source>The folder of the password store the new entry goes into</source>
         <translation type="unfinished">پوشه‌ای از مخزن رمز عبور که ورودی جدید در آن قرار می‌گیرد</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
-        <location filename="../src/ui_passworddialog.h" line="252"/>
         <source>Name</source>
         <translation type="unfinished">نام</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
-        <location filename="../src/ui_passworddialog.h" line="254"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
         <translation type="unfinished">نام ورودی، همان‌طور که در درخت نمایش داده می‌شود؛ یک / آن را در زیرپوشه قرار می‌دهد</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
-        <location filename="../src/ui_passworddialog.h" line="256"/>
         <source>e.g. github.com or work/vpn</source>
         <translation type="unfinished">مثلاً github.com یا work/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
-        <location filename="../src/ui_passworddialog.h" line="259"/>
         <source>Generate</source>
         <translation>تولید</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
-        <location filename="../src/ui_passworddialog.h" line="260"/>
         <source>Show password</source>
         <translation>نمایش رمز عبور</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <location filename="../src/ui_passworddialog.h" line="261"/>
         <source>Character set:</source>
         <translation>مجموعه کاراکتر:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <location filename="../src/ui_passworddialog.h" line="262"/>
         <source>All characters</source>
         <translation>همه کاراکترها</translation>
     </message>
@@ -2351,37 +2157,31 @@ Continue?</source>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
-        <location filename="../src/ui_passworddialog.h" line="263"/>
         <source>Alphabetical</source>
         <translation>الفبایی</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="179"/>
-        <location filename="../src/ui_passworddialog.h" line="264"/>
         <source>Alphanumerical</source>
         <translation>الفبایی-عددی</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="184"/>
-        <location filename="../src/ui_passworddialog.h" line="265"/>
         <source>Custom</source>
         <translation>سفارشی</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="198"/>
-        <location filename="../src/ui_passworddialog.h" line="267"/>
         <source>Length:</source>
         <translation>طول:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="219"/>
-        <location filename="../src/ui_passworddialog.h" line="268"/>
         <source>Template:</source>
         <translation type="unfinished">قالب:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
-        <location filename="../src/ui_passworddialog.h" line="270"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
         <translation type="unfinished">قالب فیلدها از فایل .templates مخزن. Ctrl+T به قالب بعدی می‌رود.</translation>
     </message>
@@ -2857,7 +2657,6 @@ git config --global user.email you@example.org
     <name>UsersDialog</name>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
-        <location filename="../src/ui_usersdialog.h" line="111"/>
         <source>Read access users</source>
         <translation>کاربران با دسترسی خواندن</translation>
     </message>
@@ -2875,7 +2674,6 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
-        <location filename="../src/ui_usersdialog.h" line="112"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: On OK every password in this folder and its subfolders is re-encrypted to the selected users; this can take a while.
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
@@ -2889,25 +2687,21 @@ Plain entries have a trusted encryption key, select these to allow other people 
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
-        <location filename="../src/ui_usersdialog.h" line="117"/>
         <source>Search for users</source>
         <translation>جستجوی کاربران</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
-        <location filename="../src/ui_usersdialog.h" line="118"/>
         <source>Show unusable keys</source>
         <translation>نمایش کلیدهای غیرقابل استفاده</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
-        <location filename="../src/ui_usersdialog.h" line="119"/>
         <source>Import key...</source>
         <translation>وارد کردن کلید...</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
-        <location filename="../src/ui_usersdialog.h" line="121"/>
         <source>Import a GPG key from file or clipboard</source>
         <translation>وارد کردن کلید GPG از فایل یا کلیپ‌بورد</translation>
     </message>
