@@ -1,3 +1,6 @@
 User-Agent: *
 Allow: /
+# The Doxygen API reference: hundreds of generated pages about C++ classes
+# that would compete with the pages about the program.
+Disallow: /docs/
 Sitemap: https://qtpass.org/sitemap.xml
