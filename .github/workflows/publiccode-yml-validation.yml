@@ -16,10 +16,10 @@ jobs:
     outputs:
       publiccode: ${{ steps.filter.outputs.publiccode }}
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d  # v4.0.3
+      - uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4.0.3
         id: filter
         with:
           base: main
@@ -50,12 +50,12 @@ jobs:
         if: steps.need_validation.outputs.run_validation != 'true'
         run: echo "No relevant changes - skipping publiccode validation"
 
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         if: steps.need_validation.outputs.run_validation == 'true'
         with:
           persist-credentials: false
 
-      - uses: italia/publiccode-parser-action@0deab88c3f094aa12c5826e52ac2c4f176446821  # v1.6.0
+      - uses: italia/publiccode-parser-action@0deab88c3f094aa12c5826e52ac2c4f176446821 # v1.6.0
         if: steps.need_validation.outputs.run_validation == 'true'
         with:
           publiccode: "publiccode.yml"
