@@ -2140,9 +2140,9 @@ p, li { white-space: pre-wrap; }
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1081"/>
         <source>in %n entr(ies).</source>
-        <translation>
-            <numerusform>%n kirje.</numerusform>
-            <numerusform>%n kirjet.</numerusform>
+        <translation type="unfinished">
+            <numerusform>%n kirjes.</numerusform>
+            <numerusform>%n kirjes.</numerusform>
         </translation>
     </message>
     <message>
