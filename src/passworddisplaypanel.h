@@ -13,6 +13,7 @@ struct AppSettings;
 class QGridLayout;
 class QBoxLayout;
 class QFrame;
+class QLabel;
 class QWidget;
 
 /**
@@ -98,10 +99,29 @@ signals:
    * @param text Value to render as a QR code.
    */
   void qrRequested(const QString &text);
+  /**
+   * @brief Emitted on a double-click anywhere on a field row: the user wants
+   *        to change what they are looking at.
+   */
+  void editRequested();
+
+protected:
+  /**
+   * @brief Turn a left double-click on a field row into editRequested().
+   * @param watched the row's label or value frame
+   * @param event the event to inspect
+   * @return true when the double-click was consumed
+   */
+  auto eventFilter(QObject *watched, QEvent *event) -> bool override;
 
 private:
   void addField(int position, const QString &field, const QString &value,
                 const AppSettings &s);
+  /**
+   * @brief Put a row's label and value frame into the grid, listening for a
+   *        double-click on either.
+   */
+  void addRow(int position, QLabel *label, QFrame *frame);
   void addOtpField(int position, const QString &otpConfig,
                    const AppSettings &s);
   auto createFieldFrame() -> QFrame *;

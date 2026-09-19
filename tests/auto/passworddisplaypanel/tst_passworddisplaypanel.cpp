@@ -32,6 +32,7 @@ private Q_SLOTS:
   void init();
   void cleanup();
   void displayFieldsAddsRows();
+  void doubleClickOnARowAsksForEdit();
   void displayFieldsSkipsEmptyPassword();
   void clearRemovesAllRows();
   void otpFieldRendersLiveCodeInPlace();
@@ -89,6 +90,31 @@ void tst_passworddisplaypanel::displayFieldsAddsRows() {
                          NamedValues{{"url", "https://example.org"}}, s);
   // Two fields (password + url), each a label + value widget => 4 grid items.
   QCOMPARE(m_grid->count(), 4);
+}
+
+/**
+ * @brief A double-click on a field's label or on its value asks the window
+ *        to open the editor; a single click does not.
+ */
+void tst_passworddisplaypanel::doubleClickOnARowAsksForEdit() {
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"),
+                         NamedValues{{"url", "https://example.org"}}, s);
+  m_parent->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_parent));
+  QSignalSpy spy(m_panel, &PasswordDisplayPanel::editRequested);
+
+  QWidget *label = m_grid->itemAtPosition(1, 0)->widget();
+  QWidget *frame = m_grid->itemAtPosition(1, 1)->widget();
+  QVERIFY(label != nullptr && frame != nullptr);
+  QTest::mouseClick(label, Qt::LeftButton);
+  QCOMPARE(spy.count(), 0);
+  QTest::mouseDClick(label, Qt::LeftButton);
+  QCOMPARE(spy.count(), 1);
+  auto *browser = frame->findChild<QTextBrowser *>();
+  QVERIFY2(browser != nullptr, "the value is shown in a text browser");
+  QTest::mouseDClick(browser->viewport(), Qt::LeftButton);
+  QCOMPARE(spy.count(), 2);
 }
 
 void tst_passworddisplaypanel::displayFieldsSkipsEmptyPassword() {

@@ -352,7 +352,12 @@ private:
   void applyWindowFlagsSettings();
   void saveWindowState();
 
-  void updateGitButtonVisibility();
+  /**
+   * @brief Show Push and Pull only when Git is in use; enable them only while
+   *        the interface is.
+   * @param uiEnabled false while an operation runs
+   */
+  void updateGitButtonVisibility(bool uiEnabled = true);
   /**
    * @brief Refresh the OTP toolbar action from settings.
    * @param uiEnabled false while a backend operation is in flight, so the

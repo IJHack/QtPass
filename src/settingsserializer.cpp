@@ -103,7 +103,7 @@ auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
   s.autoPush = qs.value(SettingsConstants::autoPush, false).toBool();
   s.showProcessOutput =
       qs.value(SettingsConstants::showProcessOutput, false).toBool();
-  s.showMenuBar = qs.value(SettingsConstants::showMenuBar, true).toBool();
+  s.showMenuBar = qs.value(SettingsConstants::showMenuBar, false).toBool();
 
   // Templates
   s.passTemplate = qs.value(SettingsConstants::passTemplate).toString();

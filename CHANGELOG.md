@@ -88,9 +88,15 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   About QtPass, About Qt). Until now Push, Pull, Users and Config existed only
   as toolbar icons and there was no About at all; on macOS the standard
   application menu (Preferences, About, Quit) now appears because Qt builds
-  it from the menu roles. Settings ▸ Show menu bar (Ctrl+M) hides it again
-  for those who liked the bare window (not on macOS, where the bar is the
-  system's); the choice is remembered and Ctrl+M brings it back
+  it from the menu roles. The bar is off by default so the window stays as
+  bare as it was: Ctrl+M or Configuration ▸ General ▸ Show menu bar turns it
+  on (not on macOS, where the bar is the system's) and the choice is
+  remembered
+- Double-clicking a field in the password panel opens the entry for editing,
+  as double-clicking it in the tree does
+- Push and Pull are gone from the toolbar and the Store menu while Git is
+  off, instead of sitting there greyed out; they are back the moment Git is
+  enabled
 - Ctrl+Q quits. It used to close the window, which with "hide on close"
   meant hiding to the tray; that is Ctrl+W (File ▸ Close window) now, in
   line with KeePassXC, Telegram and the KDE, GNOME and macOS guidelines,

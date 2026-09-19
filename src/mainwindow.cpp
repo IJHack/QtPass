@@ -128,6 +128,12 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
           &m_qtPass->clipboard(), &ClipboardManager::copyText);
   connect(m_displayPanel, &PasswordDisplayPanel::qrRequested, m_qtPass,
           &QtPass::showTextAsQRCode);
+  // Double-click on what is shown edits it, as in the tree.
+  connect(m_displayPanel, &PasswordDisplayPanel::editRequested, this, [this] {
+    if (ui->actionEdit->isEnabled()) {
+      onEdit();
+    }
+  });
 
   QtPassSettings::getPass()->updateEnv();
   clearPanelTimer.setSingleShot(true);
@@ -384,8 +390,7 @@ void MainWindow::initToolBarButtons() {
   });
 #endif
   connect(ui->actionFaq, &QAction::triggered, this, [] {
-    QDesktopServices::openUrl(
-        QUrl(QStringLiteral("https://qtpass.org/docs/md__f_a_q.html")));
+    QDesktopServices::openUrl(QUrl(QStringLiteral("https://qtpass.org/faq")));
   });
   connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::showAbout);
   connect(ui->actionAboutQt, &QAction::triggered, qApp, &QApplication::aboutQt);
@@ -557,6 +562,10 @@ auto MainWindow::config() -> bool {
   updateOtpButtonVisibility();
   updateGrepButtonVisibility();
   updateProcessOutputVisibility();
+#ifndef Q_OS_MACOS
+  // The action's toggled handler shows or hides the bar (and saves again).
+  ui->actionShowMenuBar->setChecked(s.showMenuBar);
+#endif
   if (s.useTrayIcon && m_tray == nullptr) {
     initTrayIcon();
   } else if (!s.useTrayIcon && m_tray != nullptr) {
@@ -832,11 +841,12 @@ void MainWindow::setUiElementsEnabled(bool state) {
   ui->actionAddFolder->setEnabled(state);
   ui->actionUsers->setEnabled(state);
   ui->actionConfig->setEnabled(state);
+  const bool uiEnabled = state;
   // is a file selected?
   state &= ui->treeView->currentIndex().isValid();
   ui->actionDelete->setEnabled(state);
   ui->actionEdit->setEnabled(state);
-  updateGitButtonVisibility();
+  updateGitButtonVisibility(uiEnabled);
   // `state` is now "UI enabled AND a file is selected", which is exactly when
   // generating an OTP makes sense.
   updateOtpButtonVisibility(state);
@@ -1975,13 +1985,21 @@ void MainWindow::showShareHelp() {
          "<p>See the FAQ for more details.</p>"));
 }
 
-void MainWindow::updateGitButtonVisibility() {
+void MainWindow::updateGitButtonVisibility(bool uiEnabled) {
   const AppSettings s = QtPassSettings::load();
-  if (!s.useGit || (s.gitExecutable.isEmpty() && s.passExecutable.isEmpty())) {
-    enableGitButtons(false);
-  } else {
-    enableGitButtons(true);
+  // Without Git there is nothing to push or pull, ever: the buttons go, not
+  // grey out. While an operation runs they stay and are disabled.
+  const bool usable =
+      s.useGit && !(s.gitExecutable.isEmpty() && s.passExecutable.isEmpty());
+  ui->actionPush->setVisible(usable);
+  ui->actionUpdate->setVisible(usable);
+  // The separator in front of them would otherwise sit next to the next one.
+  const QList<QAction *> actions = ui->toolBar->actions();
+  const qsizetype at = actions.indexOf(ui->actionPush);
+  if (at > 0 && actions.at(at - 1)->isSeparator()) {
+    actions.at(at - 1)->setVisible(usable);
   }
+  enableGitButtons(usable && uiEnabled);
 }
 
 void MainWindow::updateOtpButtonVisibility(bool uiEnabled) {
@@ -2012,7 +2030,6 @@ void MainWindow::updateGrepButtonVisibility() {
 }
 
 void MainWindow::enableGitButtons(const bool &state) {
-  // Following GNOME guidelines is preferable disable buttons instead of hide
   ui->actionPush->setEnabled(state);
   ui->actionUpdate->setEnabled(state);
 }

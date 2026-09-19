@@ -770,6 +770,9 @@ void tst_configdialog::acceptRoundTripsEveryOwnedSetting() {
         "checkBoxTemplateAllFields", "checkBoxShowProcessOutput"}) {
     child<QCheckBox>(dialog, box)->setChecked(true);
   }
+#ifndef Q_OS_MACOS
+  child<QCheckBox>(dialog, "checkBoxShowMenuBar")->setChecked(true);
+#endif
   dialog.accept();
 
   const AppSettings s = QtPassSettings::load();
@@ -791,6 +794,9 @@ void tst_configdialog::acceptRoundTripsEveryOwnedSetting() {
         s.showProcessOutput}) {
     QVERIFY(value);
   }
+#ifndef Q_OS_MACOS
+  QVERIFY2(s.showMenuBar, "the General page owns the menu bar setting");
+#endif
   QCOMPARE(s.version, QStringLiteral(VERSION));
   QCOMPARE(QtPassSettings::getGeometry(), QByteArrayLiteral("keep-me"));
 }
