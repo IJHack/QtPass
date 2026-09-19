@@ -159,8 +159,8 @@ void ImitatePass::GitPush() {
 void ImitatePass::Show(QString file) {
   queueShow(file);
   file = m_settings.passStore + file + ".gpg";
-  QStringList args = {"-d",      "--quiet",     "--yes",   "--no-encrypt-to",
-                      "--batch", "--use-agent", pgpg(file)};
+  QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
+                      "--batch", "--use-agent", "--",    pgpg(file)};
   executeGpg(PASS_SHOW, args);
 }
 
@@ -211,7 +211,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   if (gitReady()) {
     // Git is used when enabled - this is the standard pass workflow
     if (!overwrite) {
-      executeGit(GIT_ADD, {"add", pgit(file)});
+      executeGit(GIT_ADD, {"add", "--", pgit(file)});
     }
     QString path = QDir(m_settings.passStore).relativeFilePath(file);
     path.replace(Util::endsWithGpg(), "");
@@ -245,7 +245,7 @@ void ImitatePass::Remove(QString file, bool isDir) {
     file += ".gpg";
   }
   if (gitReady()) {
-    executeGit(GIT_RM, {"rm", (isDir ? "-rf" : "-f"), pgit(file)});
+    executeGit(GIT_RM, {"rm", (isDir ? "-rf" : "-f"), "--", pgit(file)});
     // Normalize path the same way as add/edit operations
     QString path = QDir(m_settings.passStore).relativeFilePath(file);
     path.replace(Util::endsWithGpg(), "");
@@ -616,7 +616,8 @@ auto ImitatePass::verifyGpgIdForDir(const QString &file,
 auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
   QStringList args = {
       "-v",          "--no-secmem-warning", "--no-permission-warning",
-      "--list-only", "--keyid-format=long", pgpg(fileName)};
+      "--list-only", "--keyid-format=long", "--",
+      pgpg(fileName)};
   QString keys;
   QString err;
   const int result = execBlocking(m_settings.gpgExecutable, args, &keys, &err);
@@ -659,9 +660,8 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   qCDebug(lcQtPass) << "reencrypt" << fileName << "for" << recipients.size()
                     << "recipients";
   QString local_lastDecrypt;
-  QStringList args = {
-      "-d",      "--quiet",     "--yes",       "--no-encrypt-to",
-      "--batch", "--use-agent", pgpg(fileName)};
+  QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
+                      "--batch", "--use-agent", "--",    pgpg(fileName)};
   int result = execBlocking(m_settings.gpgExecutable, args, &local_lastDecrypt);
 
   if (result != 0 || local_lastDecrypt.isEmpty()) {
@@ -713,7 +713,8 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
 
   // Verify encryption worked by attempting to decrypt the temp file
   QString verifyOutput;
-  args = QStringList{"-d", "--quiet", "--batch", "--use-agent", pgpg(tempPath)};
+  args = QStringList{"-d",          "--quiet", "--batch",
+                     "--use-agent", "--",      pgpg(tempPath)};
   result = execBlocking(m_settings.gpgExecutable, args, &verifyOutput);
   if (result != 0 || verifyOutput.isEmpty()) {
     qCDebug(lcQtPass) << "Verification failed for:" << tempPath;
@@ -769,7 +770,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     // (executeBlocking sets no working directory).
     const QString store = pgit(m_settings.passStore);
     if (execBlocking(m_settings.gitExecutable,
-                     {"-C", store, "add", pgit(fileName)}) != 0) {
+                     {"-C", store, "add", "--", pgit(fileName)}) != 0) {
       qCDebug(lcQtPass) << "git add failed after re-encrypting:" << fileName;
       // The file on disk is re-encrypted correctly; only the repository is
       // now behind. Report it so the caller counts this file as failed and
@@ -779,8 +780,9 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     QString path = QDir(m_settings.passStore).relativeFilePath(fileName);
     path.replace(Util::endsWithGpg(), "");
     if (execBlocking(m_settings.gitExecutable,
-                     {"-C", store, "commit", pgit(fileName), "-m",
-                      "Re-encrypt for " + path + " using QtPass."}) != 0) {
+                     {"-C", store, "commit", "-m",
+                      "Re-encrypt for " + path + " using QtPass.", "--",
+                      pgit(fileName)}) != 0) {
       qCDebug(lcQtPass) << "git commit failed after re-encrypting:" << fileName;
       return false;
     }
@@ -1176,8 +1178,7 @@ void ImitatePass::executeMoveGit(const QString &src, const QString &destFile,
   if (force) {
     args << "-f";
   }
-  args << pgit(src);
-  args << pgit(destFile);
+  args << "--" << pgit(src) << pgit(destFile);
   executeGit(GIT_MOVE, args);
 
   QString relSrc = QDir(m_settings.passStore).relativeFilePath(src);
@@ -1311,7 +1312,7 @@ void ImitatePass::Copy(const QString src, const QString dest,
   // not exist yet, so re-read it before deciding what to re-encrypt.
   destFileInfo.refresh();
   if (gitReady()) {
-    executeGit(GIT_COPY, {"add", pgit(destFile)});
+    executeGit(GIT_COPY, {"add", "--", pgit(destFile)});
     QString message = QString("Copied from %1 to %2 using QtPass.");
     message = message.arg(src, destFile);
     gitCommit("", message);

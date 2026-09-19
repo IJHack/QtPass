@@ -66,6 +66,7 @@ auto GpgIdSigner::sign(const QString &gpgIdFile, QString *error) const -> bool {
   }
   const int rc = run({QStringLiteral("--default-key"), m_keys.first(),
                       QStringLiteral("--yes"), QStringLiteral("--detach-sign"),
+                      QStringLiteral("--"),
                       Executor::translatePathForWsl(gpgIdFile, m_gpg)},
                      nullptr, error);
   if (rc != 0) {
@@ -108,8 +109,8 @@ auto GpgIdSigner::verify(const QByteArray &contents,
   const QString sig = Executor::translatePathForWsl(signatureFile, m_gpg);
   // "-" makes gpg read the signed data from stdin: the bytes we hold.
   const int rc =
-      run({QStringLiteral("--verify"), QStringLiteral("--status-fd=1"), sig,
-           QStringLiteral("-")},
+      run({QStringLiteral("--verify"), QStringLiteral("--status-fd=1"),
+           QStringLiteral("--"), sig, QStringLiteral("-")},
           &out, nullptr, text);
   if (rc != 0) {
     qCDebug(lcQtPass) << "GPG verify failed with code:" << rc;
