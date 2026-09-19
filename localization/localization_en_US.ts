@@ -2714,7 +2714,7 @@ Continue?</translation>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation>Copy to clipboard</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
