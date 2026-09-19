@@ -59,6 +59,7 @@ private slots:
   void signPassesTheFilePathThroughTheWslTranslation();
   void verifyPassesArgsAndAcceptsEitherFingerprint();
   void verifyFileHandsBackTheBytesItVerified();
+  void verifyRefusesBytesThatAreNotUtf8();
   void verifyRejectsUnknownSignerAndGpgFailure();
   void validSigFingerprintsParsesStatusLines();
   void defaultRunnerIsTheExecutor();
@@ -185,6 +186,19 @@ void tst_gpgidsigner::verifyRejectsUnknownSignerAndGpgFailure() {
   gpg.out = QStringLiteral("[GNUPG:] NEWSIG\n[GNUPG:] ERRSIG 1 2 3\n");
   QVERIFY2(!mine.verify(kGpgId, QStringLiteral("/store/.gpg-id.sig")),
            "exit 0 without VALIDSIG is not a verification");
+}
+
+void tst_gpgidsigner::verifyRefusesBytesThatAreNotUtf8() {
+  // stdin reaches gpg as UTF-8 text; bytes that would change on the way
+  // are not verified as something else, they are not verified.
+  FakeGpg gpg;
+  gpg.out = validSig(kFpr, kPrimary);
+  const GpgIdSigner signer(QStringLiteral("gpg"), {kFpr}, gpg.exec());
+  QVERIFY(!signer.verify(QByteArrayLiteral("ALICE\xff\n"),
+                         QStringLiteral("/store/.gpg-id.sig")));
+  QVERIFY2(gpg.calls.isEmpty(), "gpg must not be asked about altered bytes");
+  QVERIFY(signer.verify(QByteArrayLiteral("ALICE \xc3\xa9\n"),
+                        QStringLiteral("/store/.gpg-id.sig")));
 }
 
 void tst_gpgidsigner::verifyFileHandsBackTheBytesItVerified() {

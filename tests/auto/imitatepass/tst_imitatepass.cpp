@@ -254,6 +254,15 @@ class tst_imitatepass : public QObject {
     return false;
   }
 
+  /// Every value that follows a -r in @p argv, in order.
+  static QStringList recipientsOf(const QStringList &argv) {
+    QStringList out;
+    for (int i = 0; i + 1 < argv.size(); ++i)
+      if (argv.at(i) == QStringLiteral("-r"))
+        out << argv.at(i + 1);
+    return out;
+  }
+
   /// Only the encrypt (-eq) calls out of @p calls.
   static QList<QStringList> encryptCalls(const QList<QStringList> &calls) {
     QList<QStringList> out;
@@ -302,6 +311,7 @@ private Q_SLOTS:
   void reencryptUsesTheRecipientsWhoseSignatureWasChecked();
   void initCommitsGpgIdAndSignatureTogether();
   void initDoesNotReencryptWhenTheGpgIdCommitFails();
+  void initRemovesTheOldSignatureWhenSigningIsOff();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -863,10 +873,8 @@ void tst_imitatepass::insertEncryptsToTheRecipientsWhoseSignatureWasChecked() {
            "the signature must be checked against stdin, not a path");
   const QList<QStringList> enc = encryptCalls(calls);
   QCOMPARE(enc.size(), 1);
-  const int r = enc.first().indexOf(QStringLiteral("-r"));
-  QCOMPARE(enc.first().value(r + 1), QStringLiteral("0123456789ABCDEF"));
-  QVERIFY2(!enc.first().contains(QStringLiteral("MALLORY0MALLORY0")),
-           "the recipient written after verification must not be used");
+  QCOMPARE(recipientsOf(enc.first()),
+           QStringList{QStringLiteral("0123456789ABCDEF")});
 #endif
 }
 
@@ -898,8 +906,8 @@ void tst_imitatepass::reencryptUsesTheRecipientsWhoseSignatureWasChecked() {
   const QList<QStringList> enc = encryptCalls(loggedCalls(logPath));
   QCOMPARE(enc.size(), 2);
   for (const QStringList &argv : enc) {
-    const int r = argv.indexOf(QStringLiteral("-r"));
-    QCOMPARE(argv.value(r + 1), QStringLiteral("0123456789ABCDEF"));
+    QCOMPARE(recipientsOf(argv),
+             QStringList{QStringLiteral("0123456789ABCDEF")});
   }
 #endif
 }
@@ -992,6 +1000,38 @@ void tst_imitatepass::initDoesNotReencryptWhenTheGpgIdCommitFails() {
   QCOMPARE(startSpy.count(), 0);
   QVERIFY2(encryptCalls(loggedCalls(gpgLog)).isEmpty(),
            "nothing may be re-encrypted to a list the repository lacks");
+#endif
+}
+
+/**
+ * @brief Switching signing off must not leave the previous list's signature
+ *        next to the new list, where pass would reject it.
+ */
+void tst_imitatepass::initRemovesTheOldSignatureWhenSigningIsOff() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString sig = QDir(storeDir.path()).filePath(".gpg-id.sig");
+  {
+    QFile f(sig);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("old signature");
+  }
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg)); // no signing key
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  UserInfo alice;
+  alice.key_id = QStringLiteral("0123456789ABCDEF");
+  alice.enabled = true;
+  pass.Init(QDir(storeDir.path()).path() + QLatin1Char('/'), {alice});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QVERIFY2(!QFile::exists(sig), "the stale .gpg-id.sig must be gone");
 #endif
 }
 

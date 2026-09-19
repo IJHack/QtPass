@@ -443,9 +443,25 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     return;
   }
 
+  QString sigToCommit;
   if (signer.enabled()) {
     if (!signGpgIdFile(gpgIdFile)) {
       return;
+    }
+    sigToCommit = gpgIdSigFile;
+  } else if (QFile::exists(gpgIdSigFile)) {
+    // Signing was switched off: a signature of the previous list must not
+    // stay behind, where pass and other clients would reject the new list
+    // under it. Its removal goes into the same commit.
+    const bool tracked = useGit && gitTracks(gpgIdSigFile);
+    if (!QFile::remove(gpgIdSigFile)) {
+      emit critical(
+          tr("Cannot update"),
+          tr("Failed to remove the old signature %1.").arg(gpgIdSigFile));
+      return;
+    }
+    if (tracked) {
+      sigToCommit = gpgIdSigFile;
     }
   }
 
@@ -460,9 +476,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     // repository does not have.
     QString gitOut;
     QString gitErr;
-    const int gitExit =
-        gitAddGpgId(gpgIdFile, signer.enabled() ? gpgIdSigFile : QString(),
-                    &gitOut, &gitErr);
+    const int gitExit = gitAddGpgId(gpgIdFile, sigToCommit, &gitOut, &gitErr);
     if (gitExit != 0) {
       Pass::finished(PASS_INIT, gitExit, gitOut, gitErr);
       return;

@@ -92,13 +92,23 @@ auto GpgIdSigner::verify(const QByteArray &contents,
   if (!enabled()) {
     return true;
   }
+  // The executor feeds stdin as UTF-8 text. A .gpg-id is one: key IDs,
+  // fingerprints, e-mail addresses, comments. Bytes that would not survive
+  // the round trip cannot be verified faithfully, so they are not verified
+  // at all rather than as something else.
+  const QString text = QString::fromUtf8(contents);
+  if (text.toUtf8() != contents) {
+    qCDebug(lcQtPass) << "Refusing to verify" << signatureFile
+                      << ": the signed file is not valid UTF-8";
+    return false;
+  }
   QString out;
   const QString sig = Executor::translatePathForWsl(signatureFile, m_gpg);
   // "-" makes gpg read the signed data from stdin: the bytes we hold.
   const int rc =
       run({QStringLiteral("--verify"), QStringLiteral("--status-fd=1"), sig,
            QStringLiteral("-")},
-          &out, nullptr, QString::fromUtf8(contents));
+          &out, nullptr, text);
   if (rc != 0) {
     qCDebug(lcQtPass) << "GPG verify failed with code:" << rc;
     return false;

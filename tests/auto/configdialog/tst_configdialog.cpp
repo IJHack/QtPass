@@ -687,8 +687,15 @@ void tst_configdialog::sectionHeadersAreGroupBoxes() {
 void tst_configdialog::signingKeyMustBeAFullFingerprint() {
   struct ProfileRestorer {
     Profiles saved;
-    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
-  } restorer{QtPassSettings::getProfiles()};
+    QString active;
+    ~ProfileRestorer() {
+      QtPassSettings::setProfiles(saved);
+      AppSettings s = QtPassSettings::load();
+      s.activeProfile = active;
+      QtPassSettings::save(s);
+    }
+  } restorer{QtPassSettings::getProfiles(),
+             QtPassSettings::load().activeProfile};
   Profiles profiles;
   Profile one;
   one.path = QStringLiteral("/store/one");
