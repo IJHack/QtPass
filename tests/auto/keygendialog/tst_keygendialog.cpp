@@ -6,8 +6,10 @@
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QLineEdit>
+#include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QPushButton>
+#include <QTimer>
 #include <QtTest>
 
 #include "../../../src/keygendialog.h"
@@ -66,6 +68,7 @@ private Q_SLOTS:
   void generationSuccessAcceptsTheDialog();
   void generationFailureReenablesTheForm();
   void generationFailureKeepsThePassphraseGate();
+  void acceptingWithoutAPassphraseChoiceStartsNothing();
   void cancelWhileGeneratingDetachesFromTheBackend();
   void unrelatedProcessErrorsDoNotTouchTheDialog();
 };
@@ -580,11 +583,15 @@ public:
   void Grep(QString, bool) override {}
 };
 
-void fillValidIdentity(KeygenDialog &d) {
+/// Name, e-mail and a passphrase choice (waived): what done(Accepted) needs
+/// to get as far as the backend.
+void fillValidIdentity(KeygenDialog &d, bool waivePassphrase = true) {
   d.findChild<QLineEdit *>(QStringLiteral("name"))
       ->setText(QStringLiteral("Alice Example"));
   d.findChild<QLineEdit *>(QStringLiteral("email"))
       ->setText(QStringLiteral("alice@example.org"));
+  d.findChild<QCheckBox *>(QStringLiteral("noPassphrase"))
+      ->setChecked(waivePassphrase);
 }
 } // namespace
 
@@ -653,6 +660,34 @@ void tst_keygendialog::generationFailureReenablesTheForm() {
 }
 
 /**
+ * @brief done(Accepted) without a passphrase choice starts no generation and
+ *        keeps the dialog open, however it was reached; with the waiver
+ *        ticked it goes ahead.
+ */
+void tst_keygendialog::acceptingWithoutAPassphraseChoiceStartsNothing() {
+  FakePass pass;
+  KeygenDialog d(QString(), &pass);
+  fillValidIdentity(d, false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  auto *spinner = d.findChild<QProgressIndicator *>();
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  QVERIFY2(d.isVisible(), "the dialog stays open");
+  QVERIFY2(spinner == nullptr || !spinner->isVisible(),
+           "no generation may have started");
+  QVERIFY(d.findChild<QLineEdit *>(QStringLiteral("name"))->isEnabled());
+  auto *waive = d.findChild<QCheckBox *>(QStringLiteral("noPassphrase"));
+  QVERIFY(waive != nullptr);
+  waive->setChecked(true);
+  QMetaObject::invokeMethod(&d, "done", Qt::DirectConnection,
+                            Q_ARG(int, QDialog::Accepted));
+  spinner = d.findChild<QProgressIndicator *>();
+  QVERIFY2(spinner != nullptr && spinner->isVisible(),
+           "with the waiver, generation is attempted");
+}
+
+/**
  * @brief After a failed attempt OK follows the passphrase rule again rather
  *        than coming back enabled: with the fields empty and the waiver
  *        unticked it stays off, with a passphrase typed it is on.
@@ -660,7 +695,7 @@ void tst_keygendialog::generationFailureReenablesTheForm() {
 void tst_keygendialog::generationFailureKeepsThePassphraseGate() {
   FakePass pass;
   KeygenDialog d(QString(), &pass);
-  fillValidIdentity(d);
+  fillValidIdentity(d, false);
   auto *pp1 = d.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
   auto *pp2 = d.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
   auto *buttonBox =

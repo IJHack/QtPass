@@ -74,6 +74,11 @@ private:
    * a choice: the key would be stored unprotected without anyone saying so.
    */
   void updateOkState();
+  /**
+   * @brief Whether the passphrase question has an answer: typed twice the
+   * same, or waived with the checkbox. Empty fields alone are neither.
+   */
+  auto passphraseChosen() const -> bool;
   QScopedPointer<Ui::KeygenDialog> ui;
   void replace(const QString &, const QString &);
   void done(int r) override;

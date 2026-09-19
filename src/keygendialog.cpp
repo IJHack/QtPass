@@ -58,11 +58,14 @@ void KeygenDialog::on_passphrase1_textChanged(const QString &arg1) {
   updateOkState();
 }
 
-void KeygenDialog::updateOkState() {
+auto KeygenDialog::passphraseChosen() const -> bool {
   const QString passphrase = ui->passphrase1->text();
   const bool agreed = passphrase == ui->passphrase2->text();
-  const bool chosen = !passphrase.isEmpty() || ui->noPassphrase->isChecked();
-  ui->buttonBox->setEnabled(agreed && chosen);
+  return agreed && (!passphrase.isEmpty() || ui->noPassphrase->isChecked());
+}
+
+void KeygenDialog::updateOkState() {
+  ui->buttonBox->setEnabled(passphraseChosen());
 }
 
 void KeygenDialog::setNoPassphrase(bool checked) {
@@ -208,7 +211,14 @@ QString KeygenDialog::applyPassphrase(const QString &batch,
  */
 void KeygenDialog::done(int r) {
   if (QDialog::Accepted == r) { //  ok was pressed
-                                // check name
+    // The button is disabled without a passphrase choice, but done() can be
+    // reached otherwise (a default button, a script); the rule holds here.
+    // No dialog: the disabled OK already says what is missing.
+    if (!passphraseChosen()) {
+      updateOkState();
+      return;
+    }
+    // check name
     if (ui->name->text().length() < 5) {
       QMessageBox::critical(this, tr("Invalid name"),
                             tr("Name must be at least 5 characters long."));
