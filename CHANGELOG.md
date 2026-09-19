@@ -4,6 +4,39 @@
 
 First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPass/issues/1682), umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
+### Upgrade Notes
+
+- **Qt 6.8 or newer.** Qt 5 support ended with 1.8; `qmake` refuses older Qt
+  with a clear message. Packagers building 1.8.x against Qt 5 need the
+  `1.8` branch for that.
+- **Ctrl+Q quits.** It used to close the window, which with "hide on close"
+  meant hiding to the tray; that is Ctrl+W (File ▸ Close window) now. The
+  window close button and Alt+F4 behave as before.
+- **The menu bar is off by default** so the window looks as it did; Ctrl+M
+  or Configuration ▸ General ▸ Show menu bar turns it on and the choice is
+  remembered. On macOS the bar is the system's and always there.
+- **Generating a GPG key asks for a passphrase.** Leaving the fields empty
+  used to produce an unprotected private key silently; now OK waits until a
+  passphrase is typed twice or "No passphrase" is ticked on purpose.
+- **A link inside the store is not part of it.** A symbolic link or NTFS
+  junction found in the store (a shared repository can carry one) is skipped
+  by re-encryption and search and refused by show, edit, add, move, copy and
+  re-key, with a message; deleting one removes the link. The configured
+  store root itself may still be a link. See SECURITY.md.
+- **Debug output** comes from the `qtpass` logging category in every build:
+  `QT_LOGGING_RULES="qtpass.debug=true"` turns it on, no debug build needed
+  (see the FAQ). The `#ifdef QT_DEBUG` tracing is gone.
+- **Linux AppImage**: new, attached to every release; needs glibc 2.39 or
+  newer (Ubuntu 24.04, Debian 13, Fedora 40). It bundles Qt only and uses the
+  system's `pass`, `gpg` and `git`.
+- **Packagers**: the AppStream metainfo installs as
+  `org.qtpass.QtPass.metainfo.xml` (was `qtpass.appdata.xml`); `main/main.pro`
+  installs the desktop file, metainfo, icons and man page; the RPM spec
+  follows; the Flatpak manifest drops `rename-appdata-file` with the 2.0 tag.
+- Still true from 1.8: the macOS `.dmg` is not signed or notarized (see the
+  [macOS page](https://qtpass.org/macos), [#1542](https://github.com/IJHack/QtPass/issues/1542))
+  and the Windows installer is not code-signed ([#1643](https://github.com/IJHack/QtPass/issues/1643)).
+
 ### New Features
 
 - Field names in the password dialog can be edited in place: double-click a
@@ -373,7 +406,7 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   syncs or mounts — see the FAQ entry
   [#1752](https://github.com/IJHack/QtPass/pull/1752)
 
-## [Unreleased] — 1.8.1
+## [1.8.1](https://github.com/IJHack/QtPass/tree/v1.8.1) (2026-09-15)
 
 The security and data-loss fixes from the 2.0 branch, backported to the 1.8
 line ([#1709](https://github.com/IJHack/QtPass/issues/1709)). Qt 5.15 and Qt 6 are both still supported.

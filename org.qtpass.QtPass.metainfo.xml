@@ -59,14 +59,19 @@
   </branding>
   <screenshots>
     <screenshot type="default">
-      <caption>QtPass main window</caption>
-      <caption xml:lang="nl_NL">QtPass hoofdscherm</caption>
-      <image width="768" height="596">https://qtpass.org/images/qtpass.png</image>
+      <caption>QtPass main window with the menu bar</caption>
+      <caption xml:lang="nl_NL">QtPass hoofdscherm met de menubalk</caption>
+      <image width="1157" height="484">https://qtpass.org/images/2.0/menubar-2.0.png</image>
     </screenshot>
     <screenshot>
-      <caption>QtPass Configuration window</caption>
-      <caption xml:lang="nl_NL">QtPass Configuratie scherm</caption>
-      <image width="900" height="637">https://qtpass.org/images/config.png</image>
+      <caption>Configuration: profiles</caption>
+      <caption xml:lang="nl_NL">Configuratie: profielen</caption>
+      <image width="760" height="560">https://qtpass.org/images/2.0/configdialog-profiles-2.0.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Adding a password</caption>
+      <caption xml:lang="nl_NL">Een wachtwoord toevoegen</caption>
+      <image width="520" height="420">https://qtpass.org/images/2.0/passworddialog-new-entry-2.0.png</image>
     </screenshot>
   </screenshots>
   <releases>
