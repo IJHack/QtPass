@@ -43,7 +43,9 @@ private Q_SLOTS:
   void emailTextUpdatesNameEmailLine();
   void matchingPassphrasesEnableButtonBox();
   void mismatchedPassphrasesDisableButtonBox();
-  void emptyPassphrasesEnableButtonBox();
+  void emptyPassphrasesDisableButtonBoxUntilWaived();
+  void noPassphraseCheckboxClearsAndDisablesTheFields();
+  void freshDialogHasOkDisabled();
   void secondPassphraseChangeTriggersStateUpdate();
   void clearingFirstPassphraseDisablesButtonBox();
   void nameAndEmailBothUpdateTemplate();
@@ -185,24 +187,72 @@ void tst_keygendialog::mismatchedPassphrasesDisableButtonBox() {
   QVERIFY2(!buttonBox->isEnabled(), "mismatched passphrases disable OK");
 }
 
-void tst_keygendialog::emptyPassphrasesEnableButtonBox() {
+/**
+ * @brief Two empty fields are not a decision: the key would be stored
+ *        unprotected without anyone saying so. OK stays off until a
+ *        passphrase is typed or "no passphrase" is ticked on purpose.
+ */
+void tst_keygendialog::emptyPassphrasesDisableButtonBoxUntilWaived() {
   KeygenDialog dialog(QString(), nullptr);
   auto *pp1 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
   auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
+  auto *waive = dialog.findChild<QCheckBox *>(QStringLiteral("noPassphrase"));
   auto *buttonBox =
       dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
   QVERIFY2(pp1 != nullptr, "passphrase1 widget must exist");
   QVERIFY2(pp2 != nullptr, "passphrase2 widget must exist");
+  QVERIFY2(waive != nullptr, "noPassphrase checkbox must exist");
   QVERIFY2(buttonBox != nullptr, "buttonBox widget must exist");
+  QVERIFY(!waive->isChecked());
 
   // Set to non-empty first to ensure signals fire when cleared.
   pp1->setText(QStringLiteral("testkey123"));
   pp2->setText(QStringLiteral("testkey123"));
   pp1->setText(QString());
   pp2->setText(QString());
-  QVERIFY2(
-      buttonBox->isEnabled(),
-      "both empty passphrases should enable buttonBox (no-protection mode)");
+  QVERIFY2(!buttonBox->isEnabled(),
+           "two empty passphrases must not enable OK by themselves");
+  waive->setChecked(true);
+  QVERIFY2(buttonBox->isEnabled(), "waiving the passphrase enables OK");
+  waive->setChecked(false);
+  QVERIFY2(!buttonBox->isEnabled(),
+           "taking the waiver back asks for a passphrase again");
+}
+
+/**
+ * @brief Ticking "no passphrase" empties and disables the fields, so a
+ *        passphrase typed earlier cannot be sent by accident, and unticking
+ *        hands them back.
+ */
+void tst_keygendialog::noPassphraseCheckboxClearsAndDisablesTheFields() {
+  KeygenDialog dialog(QString(), nullptr);
+  auto *pp1 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
+  auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
+  auto *waive = dialog.findChild<QCheckBox *>(QStringLiteral("noPassphrase"));
+  auto *buttonBox =
+      dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+  QVERIFY(pp1 && pp2 && waive && buttonBox);
+  pp1->setText(QStringLiteral("typed"));
+  pp2->setText(QStringLiteral("typed"));
+  waive->setChecked(true);
+  QVERIFY(pp1->text().isEmpty() && pp2->text().isEmpty());
+  QVERIFY(!pp1->isEnabled() && !pp2->isEnabled());
+  QVERIFY(buttonBox->isEnabled());
+  waive->setChecked(false);
+  QVERIFY(pp1->isEnabled() && pp2->isEnabled());
+  QVERIFY(!buttonBox->isEnabled());
+  pp1->setText(QStringLiteral("again"));
+  pp2->setText(QStringLiteral("again"));
+  QVERIFY(buttonBox->isEnabled());
+}
+
+/// A freshly opened dialog cannot be accepted as it is.
+void tst_keygendialog::freshDialogHasOkDisabled() {
+  KeygenDialog dialog(QString(), nullptr);
+  auto *buttonBox =
+      dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+  QVERIFY(buttonBox != nullptr);
+  QVERIFY(!buttonBox->isEnabled());
 }
 
 void tst_keygendialog::secondPassphraseChangeTriggersStateUpdate() {
