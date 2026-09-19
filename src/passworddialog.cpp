@@ -320,6 +320,15 @@ void PasswordDialog::setPassword(const QString &password) {
             });
     connect(label, &FieldLabel::removeRequested, this,
             [this, line] { removeField(line); });
+    // The visible way to remove the field; the context menu is the other.
+    auto *remove = line->addAction(
+        QIcon::fromTheme(QStringLiteral("edit-delete"),
+                         QIcon(QStringLiteral(":/icons/edit-delete.svg"))),
+        QLineEdit::TrailingPosition);
+    remove->setObjectName(QStringLiteral("removeFieldAction"));
+    remove->setToolTip(tr("Remove field"));
+    connect(remove, &QAction::triggered, this,
+            [this, line] { removeField(line); });
   }
 
   // setPlainText (not insertPlainText) so re-populating replaces the body

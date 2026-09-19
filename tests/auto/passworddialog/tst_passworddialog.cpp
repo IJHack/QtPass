@@ -11,6 +11,7 @@
  * error keeps the dialog open with the reason shown instead of closing it.
  */
 
+#include <QAction>
 #include <QCheckBox>
 #include <QComboBox>
 #include <QDialog>
@@ -218,7 +219,11 @@ void tst_passworddialog::fieldLabelEscapeCancelsAndRemoveDropsTheRow() {
 
   QPointer<QLineEdit> line = d.findChild<QLineEdit *>(QStringLiteral("login"));
   QVERIFY(line != nullptr);
-  emit label->removeRequested();
+  auto *remove =
+      line->findChild<QAction *>(QStringLiteral("removeFieldAction"));
+  QVERIFY2(remove != nullptr, "the value field must carry a remove action");
+  QCOMPARE(remove->toolTip(), QStringLiteral("Remove field"));
+  remove->trigger();
   QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
   QVERIFY2(line.isNull(), "the field's line edit must be deleted with its row");
   const QString written = d.getPassword();
