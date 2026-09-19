@@ -515,6 +515,58 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
   return true;
 }
 
+auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
+  // What an earlier run can have left, and what each means:
+  //   X.gpg.XXXXXX.tmp   a ciphertext gpg was writing or that was never
+  //                      verified; it is never a source of truth: delete.
+  //   X.gpg.reencrypt.bak with no X.gpg
+  //                      a crash between the two renames; the backup is the
+  //                      only copy of the entry: put it back.
+  //   X.gpg.reencrypt.bak next to an X.gpg
+  //                      the run finished but the backup could not be
+  //                      removed, or X.gpg was recreated since; both are
+  //                      valid ciphertexts and it is not for QtPass to pick
+  //                      one: report and leave both.
+  bool clean = true;
+  QDirIterator leftovers(dir, {"*.gpg.??????.tmp", "*.gpg.reencrypt.bak"},
+                         QDir::Files | QDir::System,
+                         QDirIterator::Subdirectories);
+  while (leftovers.hasNext()) {
+    const QString path = leftovers.next();
+    if (path.endsWith(QStringLiteral(".tmp"))) {
+      if (!QFile::remove(path)) {
+        qCWarning(lcQtPass) << "Could not remove stale temporary" << path;
+      }
+      continue;
+    }
+    const QString original =
+        path.chopped(QStringLiteral(".reencrypt.bak").size());
+    if (QFileInfo::exists(original)) {
+      emit critical(tr("Leftover from an earlier re-encryption"),
+                    tr("%1 exists next to %2. Both are encrypted copies of the "
+                       "entry; check which one you want and delete the other, "
+                       "then re-encrypt again.")
+                        .arg(path, original));
+      clean = false;
+      continue;
+    }
+    if (QFile::rename(path, original)) {
+      qCWarning(lcQtPass) << "Restored" << original << "from" << path;
+      emit statusMsg(tr("Restored %1 from the backup an interrupted "
+                        "re-encryption left behind.")
+                         .arg(original),
+                     5000);
+    } else {
+      emit critical(tr("Leftover from an earlier re-encryption"),
+                    tr("%1 is missing and its backup %2 could not be renamed "
+                       "back. Rename it by hand, then re-encrypt again.")
+                        .arg(original, path));
+      clean = false;
+    }
+  }
+  return clean;
+}
+
 /**
  * @brief ImitatePass::reencryptPath reencrypt all files under the chosen
  * directory
@@ -687,16 +739,30 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   }
   if (!QFile::rename(tempPath, fileName)) {
     qCDebug(lcQtPass) << "Failed to rename temp file to:" << fileName;
-    // Restore backup and clean up temp file
-    QFile::rename(backupPath, fileName);
     QFile::remove(tempPath);
-    emit critical(
-        tr("Re-encryption failed"),
-        tr("Failed to replace %1. Original has been restored.").arg(fileName));
+    if (QFile::rename(backupPath, fileName)) {
+      emit critical(tr("Re-encryption failed"),
+                    tr("Failed to replace %1. Original has been restored.")
+                        .arg(fileName));
+    } else {
+      // The only copy of the entry is now the backup; say exactly where.
+      emit critical(tr("Re-encryption failed"),
+                    tr("Failed to replace %1, and the original could not be "
+                       "put back. It is still there as %2; rename it by hand.")
+                        .arg(fileName, backupPath));
+    }
     return false;
   }
-  // Success - remove backup
-  QFile::remove(backupPath);
+  if (!QFile::remove(backupPath)) {
+    // The entry is fine; the leftover would be picked up by the next run's
+    // recovery pass (and would look alarming until then), so say so.
+    qCWarning(lcQtPass) << "Re-encrypted" << fileName
+                        << "but could not remove its backup" << backupPath;
+    emit statusMsg(tr("Could not remove the backup %1 after re-encrypting; "
+                      "it is safe to delete.")
+                       .arg(backupPath),
+                   5000);
+  }
 
   if (gitConfigured()) {
     // -C the store so git runs there rather than in QtPass's launch directory
@@ -920,6 +986,11 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
       result.cancelled = true;
     else
       result.aborted = true;
+    return result;
+  }
+
+  if (!recoverReencryptLeftovers(dir)) {
+    result.aborted = true;
     return result;
   }
 

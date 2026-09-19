@@ -294,6 +294,25 @@ class tst_imitatepass : public QObject {
         Qt::QueuedConnection);
   }
 
+  /// Run reencryptPath() on @p storeDir with the recording fake gpg and
+  /// collect what it reported.
+  static void runReencrypt(const QString &storeDir, Recorder &rec,
+                           int *encrypts, bool *aborted) {
+    const QString logPath = QDir(storeDir).filePath("gpg-argv.log");
+    const QString fakeGpg = writeRecordingGpg(storeDir, logPath);
+    ImitatePass pass;
+    pass.init(settingsFor(storeDir, fakeGpg));
+    QObject ctx;
+    record(pass, ctx, rec);
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir);
+    if (endSpy.count() == 0)
+      endSpy.wait(15000);
+    QCoreApplication::processEvents();
+    *encrypts = encryptCalls(loggedCalls(logPath)).size();
+    *aborted = !rec.criticals.isEmpty();
+  }
+
 private Q_SLOTS:
   void initTestCase();
   void reencryptPathEmitsStartSynchronouslyAndEndLater();
@@ -313,6 +332,9 @@ private Q_SLOTS:
   void initDoesNotReencryptWhenTheGpgIdCommitFails();
   void initRemovesTheOldSignatureWhenSigningIsOff();
   void reencryptWritesThroughItsOwnTemporaryFileOnly();
+  void reencryptRestoresABackupWhoseOriginalIsMissing();
+  void reencryptStopsWhenBackupAndOriginalBothExist();
+  void reencryptRemovesStaleTemporaries();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -1092,6 +1114,89 @@ void tst_imitatepass::reencryptWritesThroughItsOwnTemporaryFileOnly() {
           .entryList({QStringLiteral("*.tmp"), QStringLiteral("*.bak")},
                      QDir::Files | QDir::System);
   QCOMPARE(leftovers, QStringList{QStringLiteral("entry0.gpg.reencrypt.tmp")});
+#endif
+}
+
+/**
+ * @brief A crash between the two renames leaves X.gpg.reencrypt.bak and no
+ *        X.gpg: the backup is the only copy, so the next run puts it back
+ *        first and then re-encrypts it like any other entry.
+ */
+void tst_imitatepass::reencryptRestoresABackupWhoseOriginalIsMissing() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString entry = QDir(storeDir.path()).filePath("entry0.gpg");
+  QVERIFY(QFile::rename(entry, entry + ".reencrypt.bak"));
+  Recorder rec;
+  int encrypts = 0;
+  bool aborted = true;
+  runReencrypt(storeDir.path(), rec, &encrypts, &aborted);
+  QVERIFY2(!aborted, qPrintable(rec.criticals.join("; ")));
+  QVERIFY2(QFile::exists(entry), "the entry must be back under its name");
+  QVERIFY(!QFile::exists(entry + ".reencrypt.bak"));
+  QCOMPARE(encrypts, 1);
+  QVERIFY2(std::any_of(rec.statusMessages.cbegin(), rec.statusMessages.cend(),
+                       [](const QString &m) { return m.contains("Restored"); }),
+           "the user is told what happened");
+#endif
+}
+
+/**
+ * @brief A backup next to a present original: two valid ciphertexts, and
+ *        QtPass must not pick one. It reports and does nothing.
+ */
+void tst_imitatepass::reencryptStopsWhenBackupAndOriginalBothExist() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString entry = QDir(storeDir.path()).filePath("entry0.gpg");
+  QVERIFY(QFile::copy(entry, entry + ".reencrypt.bak"));
+  Recorder rec;
+  int encrypts = 0;
+  bool aborted = false;
+  runReencrypt(storeDir.path(), rec, &encrypts, &aborted);
+  QVERIFY(aborted);
+  QVERIFY(rec.criticals.first().contains(".reencrypt.bak"));
+  QCOMPARE(encrypts, 0);
+  QVERIFY(QFile::exists(entry) && QFile::exists(entry + ".reencrypt.bak"));
+#endif
+}
+
+/**
+ * @brief A temporary gpg was writing when the process died is never a
+ *        source of truth; it is removed before the run.
+ */
+void tst_imitatepass::reencryptRemovesStaleTemporaries() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString stale = QDir(storeDir.path()).filePath("entry0.gpg.aB3xYz.tmp");
+  {
+    QFile f(stale);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("half a ciphertext");
+  }
+  Recorder rec;
+  int encrypts = 0;
+  bool aborted = true;
+  runReencrypt(storeDir.path(), rec, &encrypts, &aborted);
+  QVERIFY2(!aborted, qPrintable(rec.criticals.join("; ")));
+  QVERIFY(!QFile::exists(stale));
+  QCOMPARE(encrypts, 1);
+  QCOMPARE(QDir(storeDir.path())
+               .entryList({QStringLiteral("*.tmp"), QStringLiteral("*.bak")},
+                          QDir::Files),
+           QStringList());
 #endif
 }
 
