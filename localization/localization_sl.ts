@@ -588,7 +588,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Samo celotni prstni odtisi ključev (40 ali 64 šestnajstiških znakov), ločeni s presledki</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -992,7 +992,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zapisovanje %1 ni uspelo: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1031,28 +1031,28 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Starega podpisa %1 ni bilo mogoče odstraniti.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ostanek prejšnjega ponovnega šifriranja</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 obstaja poleg %2. Obe datoteki sta šifrirani kopiji vnosa; preverite, katero želite obdržati, izbrišite drugo in nato znova ponovno šifrirajte.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 je bila obnovljena iz varnostne kopije, ki jo je pustilo prekinjeno ponovno šifriranje.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 manjka, njene varnostne kopije %2 pa ni bilo mogoče preimenovati nazaj. Preimenujte jo ročno in nato znova ponovno šifrirajte.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1069,12 +1069,12 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zamenjava %1 ni uspela, izvirnika pa ni bilo mogoče vrniti. Še vedno je na voljo kot %2; preimenujte ga ročno.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Varnostne kopije %1 po ponovnem šifriranju ni bilo mogoče odstraniti; lahko jo varno izbrišete.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1116,12 +1116,12 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git povlek ni uspel</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Po povleku so v shrambi ostale nezdružene datoteke. Pred ponovnim šifriranjem razrešite spor.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1309,7 +1309,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Javni ključ %1 je uvožen. Pred šifriranjem zanj preverite njegov prstni odtis pri lastniku: uvoz ključa ne pove ničesar o tem, kdo ga ima.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

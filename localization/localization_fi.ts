@@ -546,7 +546,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vain avainten täydet sormenjäljet (40 tai 64 heksadesimaalimerkkiä) välilyönnein eroteltuina</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1074,7 +1074,7 @@ Et voi muuttaa käyttäjäluetteloa!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kohteen %1 kirjoittaminen epäonnistui: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1091,28 +1091,28 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vanhan allekirjoituksen %1 poistaminen epäonnistui.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aiemman uudelleensalauksen jäänne</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 on olemassa kohteen %2 rinnalla. Molemmat ovat merkinnän salattuja kopioita; tarkista, kumman haluat säilyttää, poista toinen ja salaa sitten uudelleen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 palautettiin varmuuskopiosta, jonka keskeytynyt uudelleensalaus jätti jälkeensä.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 puuttuu, eikä sen varmuuskopiota %2 voitu nimetä takaisin. Nimeä se uudelleen käsin ja salaa sitten uudelleen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1129,12 +1129,12 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kohteen %1 korvaaminen epäonnistui, eikä alkuperäistä voitu palauttaa. Se on yhä tallessa nimellä %2; nimeä se uudelleen käsin.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Varmuuskopiota %1 ei voitu poistaa uudelleensalauksen jälkeen; sen voi turvallisesti poistaa.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1176,12 +1176,12 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull epäonnistui</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull jätti säilöön yhdistämättömiä tiedostoja. Ratkaise ristiriita ennen uudelleensalausta.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1363,7 +1363,7 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Julkinen avain %1 tuotiin. Tarkista sen sormenjälki avaimen omistajalta ennen kuin salaat sille: avaimen tuonti ei kerro mitään siitä, kenen hallussa se on.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

@@ -580,7 +580,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Endast fullständiga nyckelfingeravtryck (40 eller 64 hexadecimala tecken), åtskilda med mellanslag</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1046,7 +1046,7 @@ Du kommer inte att kunna ändra användarlista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Misslyckades med att skriva %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1063,28 +1063,28 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Misslyckades med att ta bort den gamla signaturen %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kvarleva från en tidigare omkryptering</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 finns bredvid %2. Båda är krypterade kopior av posten; kontrollera vilken du vill behålla och ta bort den andra, omkryptera sedan igen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Återställde %1 från säkerhetskopian som en avbruten omkryptering lämnade kvar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 saknas och dess säkerhetskopia %2 kunde inte få tillbaka sitt namn. Byt namn på den för hand, omkryptera sedan igen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1101,12 +1101,12 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Misslyckades med att ersätta %1, och originalet kunde inte återställas. Det finns fortfarande kvar som %2; byt namn på det för hand.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kunde inte ta bort säkerhetskopian %1 efter omkrypteringen; den kan tas bort utan risk.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1143,12 +1143,12 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull misslyckades</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Efter pull finns det osammanfogade filer i lösenordsutrymmet. Lös konflikten innan du omkrypterar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1335,7 +1335,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Publik nyckel %1 importerad. Kontrollera dess fingeravtryck med ägaren innan du krypterar till den: att importera en nyckel säger ingenting om vem som innehar den.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

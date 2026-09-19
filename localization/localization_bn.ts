@@ -588,7 +588,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">শুধুমাত্র পূর্ণ কী ফিঙ্গারপ্রিন্ট (৪০ বা ৬৪টি হেক্সাডেসিমেল অক্ষর), স্পেস দিয়ে আলাদা করা</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -992,7 +992,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 লিখতে ব্যর্থ: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1031,28 +1031,28 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পুরনো স্বাক্ষর %1 সরাতে ব্যর্থ।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আগের একটি পুনরায় এনক্রিপশনের অবশিষ্টাংশ</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%2-এর পাশে %1 রয়েছে। দুটিই এন্ট্রির এনক্রিপ্ট করা কপি; কোনটি রাখতে চান তা যাচাই করে অন্যটি মুছে ফেলুন, তারপর আবার পুনরায় এনক্রিপ্ট করুন।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি বাধাপ্রাপ্ত পুনরায় এনক্রিপশন যে ব্যাকআপ রেখে গিয়েছিল, তা থেকে %1 পুনরুদ্ধার করা হয়েছে।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 অনুপস্থিত এবং এর ব্যাকআপ %2-এর নাম ফিরিয়ে পরিবর্তন করা যায়নি। নিজ হাতে এর নাম পরিবর্তন করুন, তারপর আবার পুনরায় এনক্রিপ্ট করুন।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1069,12 +1069,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 প্রতিস্থাপন করতে ব্যর্থ, এবং মূলটি ফিরিয়ে রাখা যায়নি। এটি এখনও %2 নামে রয়েছে; নিজ হাতে এর নাম পরিবর্তন করুন।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পুনরায় এনক্রিপ্ট করার পর ব্যাকআপ %1 সরানো যায়নি; এটি নিরাপদে মুছে ফেলা যায়।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1116,12 +1116,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git পুল ব্যর্থ হয়েছে</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পুলের পর স্টোরে অমিলিত (unmerged) ফাইল রয়ে গেছে। পুনরায় এনক্রিপ্ট করার আগে দ্বন্দ্বটি সমাধান করুন।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1303,7 +1303,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাবলিক কী %1 আমদানি করা হয়েছে। এটির জন্য এনক্রিপ্ট করার আগে এর মালিকের সাথে ফিঙ্গারপ্রিন্ট যাচাই করুন: কী আমদানি করা থেকে কে এটি ধরে রেখেছে তা জানা যায় না।</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

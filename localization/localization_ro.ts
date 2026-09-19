@@ -546,7 +546,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Doar amprente complete ale cheilor (40 sau 64 de caractere hexazecimale), separate prin spații</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1074,7 +1074,7 @@ Nu veți putea modifica lista de utilizatori!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nu s-a putut scrie %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1091,28 +1091,28 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nu s-a putut șterge semnătura veche %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rămășiță a unei recriptări anterioare</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 există alături de %2. Ambele sunt copii criptate ale intrării; verificați care dintre ele o doriți și ștergeți-o pe cealaltă, apoi recriptați din nou.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 a fost restaurat din copia de rezervă lăsată de o recriptare întreruptă.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 lipsește, iar copia sa de rezervă %2 nu a putut fi redenumită la loc. Redenumiți-o manual, apoi recriptați din nou.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1129,12 +1129,12 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Înlocuirea %1 a eșuat, iar originalul nu a putut fi pus la loc. Acesta există în continuare ca %2; redenumiți-l manual.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Copia de rezervă %1 nu a putut fi ștearsă după recriptare; poate fi ștearsă fără riscuri.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1176,12 +1176,12 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull a eșuat</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">În urma operației pull, depozitul a rămas cu fișiere neîmbinate. Rezolvați conflictul înainte de a recripta.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1366,7 +1366,7 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cheia publică %1 a fost importată. Verificați amprenta ei cu proprietarul înainte de a cripta pentru ea: importarea unei chei nu spune nimic despre cine o deține.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

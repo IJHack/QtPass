@@ -522,7 +522,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vetëm gjurma të plota çelësash (40 ose 64 karaktere heksadecimale), të ndara me hapësira</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1018,7 +1018,7 @@ Nuk do të jeni në gjendje të ndryshoni listën e përdoruesve!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dështoi shkrimi i %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1035,28 +1035,28 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dështoi heqja e nënshkrimit të vjetër %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mbetje nga një ri-enkriptim i mëparshëm</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ekziston pranë %2. Të dyja janë kopje të enkriptuara të zërit; kontrolloni cilën doni dhe fshini tjetrën, pastaj ri-enkriptoni sërish.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 u rikthye nga kopja rezervë që la pas një ri-enkriptim i ndërprerë.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 mungon dhe kopja e tij rezervë %2 nuk u riemërtua dot mbrapsht. Riemërtojeni me dorë, pastaj ri-enkriptoni sërish.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1073,12 +1073,12 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dështoi zëvendësimi i %1 dhe origjinali nuk u rikthye dot. Ai ndodhet ende si %2; riemërtojeni me dorë.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kopja rezervë %1 nuk u hoq dot pas ri-enkriptimit; mund të fshihet pa rrezik.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1120,12 +1120,12 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull dështoi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull-i e la depon me skedarë të pabashkuar. Zgjidhni konfliktin përpara ri-enkriptimit.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1307,7 +1307,7 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Çelësi publik %1 u importua. Verifikoni gjurmën e tij me pronarin përpara se të enkriptoni për të: importimi i një çelësi nuk thotë asgjë për atë që e mban.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

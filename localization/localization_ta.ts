@@ -546,7 +546,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முழு சாவி கைரேகைகள் மட்டும் (40 அல்லது 64 பதினறும எழுத்துகள்), இடைவெளிகளால் பிரிக்கப்பட்டவை</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1074,7 +1074,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ஐ எழுத முடியவில்லை: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1091,28 +1091,28 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பழைய கையொப்பம் %1 ஐ நீக்க முடியவில்லை.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முந்தைய மீள் குறியாக்கத்தின் எச்சம்</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%2 அருகில் %1 உள்ளது. இரண்டும் இந்தப் பதிவின் குறியாக்கம் செய்யப்பட்ட நகல்கள்; எது தேவை என்பதைச் சரிபார்த்து மற்றொன்றை நீக்கிய பின், மீண்டும் குறியாக்கம் செய்யவும்.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இடையில் நிறுத்தப்பட்ட மீள் குறியாக்கம் விட்டுச் சென்ற காப்புப்பிரதியிலிருந்து %1 மீட்டமைக்கப்பட்டது.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 காணவில்லை, அதன் காப்புப்பிரதி %2 ஐ மீண்டும் பழைய பெயருக்கு மாற்ற முடியவில்லை. அதைக் கைமுறையாக மறுபெயரிட்ட பின், மீண்டும் குறியாக்கம் செய்யவும்.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1129,12 +1129,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ஐ மாற்ற முடியவில்லை, அசலையும் மீண்டும் வைக்க முடியவில்லை. அது இன்னும் %2 என்ற பெயரில் உள்ளது; அதைக் கைமுறையாக மறுபெயரிடவும்.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மீண்டும் குறியாக்கம் செய்த பின் காப்புப்பிரதி %1 ஐ நீக்க முடியவில்லை; அதை நீக்குவது பாதுகாப்பானது.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1176,12 +1176,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull தோல்வியடைந்தது</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இழுத்தலுக்குப் பின் சேமிப்பகத்தில் ஒன்றிணைக்கப்படாத கோப்புகள் உள்ளன. மீண்டும் குறியாக்கம் செய்வதற்கு முன் முரண்பாட்டைத் தீர்க்கவும்.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1363,7 +1363,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பொதுச் சாவி %1 இறக்குமதி செய்யப்பட்டது. அதற்குக் குறியாக்கம் செய்வதற்கு முன் அதன் கைரேகையை அதன் உரிமையாளரிடம் சரிபார்க்கவும்: ஒரு சாவியை இறக்குமதி செய்வது அது யாரிடம் உள்ளது என்பதைப் பற்றி எதுவும் கூறாது.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

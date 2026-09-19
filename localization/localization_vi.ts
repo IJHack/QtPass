@@ -588,7 +588,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chỉ chấp nhận dấu vân tay khóa đầy đủ (40 hoặc 64 ký tự thập lục phân), phân cách bằng dấu cách</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -992,7 +992,7 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không thể ghi %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1031,28 +1031,28 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không thể xóa chữ ký cũ %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Còn sót lại từ một lần mã hóa lại trước đó</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 tồn tại bên cạnh %2. Cả hai đều là bản sao đã mã hóa của mục này; hãy kiểm tra xem bạn muốn giữ bản nào và xóa bản còn lại, rồi mã hóa lại lần nữa.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Đã khôi phục %1 từ bản sao lưu do một lần mã hóa lại bị gián đoạn để lại.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 bị thiếu và không thể đổi tên bản sao lưu %2 trở lại. Hãy đổi tên thủ công, rồi mã hóa lại lần nữa.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1069,12 +1069,12 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không thể thay thế %1 và cũng không thể khôi phục bản gốc. Bản gốc vẫn còn đó với tên %2; hãy đổi tên thủ công.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không thể xóa bản sao lưu %1 sau khi mã hóa lại; bạn có thể xóa nó một cách an toàn.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1116,12 +1116,12 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull thất bại</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lệnh pull để lại các tệp chưa được hợp nhất trong kho. Hãy giải quyết xung đột trước khi mã hóa lại.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1300,7 +1300,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Đã nhập khóa công khai %1. Hãy xác minh dấu vân tay của khóa với chủ sở hữu trước khi mã hóa cho khóa này: việc nhập khóa không nói lên điều gì về người đang nắm giữ nó.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

@@ -587,7 +587,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yalnızca tam anahtar parmak izleri (40 veya 64 onaltılık karakter), boşlukla ayrılmış</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1018,7 +1018,7 @@ Kullanıcı listesini değiştiremeyeceksiniz!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 yazılamadı: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1035,28 +1035,28 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Eski imza %1 kaldırılamadı.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Önceki bir yeniden şifrelemeden kalan</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1, %2 ile yan yana bulunuyor. Her ikisi de girdinin şifrelenmiş kopyaları; hangisini istediğinizi kontrol edip diğerini silin, ardından yeniden şifreleyin.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1, yarıda kesilen bir yeniden şifrelemenin geride bıraktığı yedekten geri yüklendi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 eksik ve yedeği %2 eski adına geri döndürülemedi. Elle yeniden adlandırın, ardından yeniden şifreleyin.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1073,12 +1073,12 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 değiştirilemedi ve orijinali geri konulamadı. Hâlâ %2 olarak duruyor; elle yeniden adlandırın.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yeniden şifrelemeden sonra %1 yedeği kaldırılamadı; güvenle silinebilir.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1120,12 +1120,12 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull işlemi depoda birleştirilmemiş dosyalar bıraktı. Yeniden şifrelemeden önce çakışmayı çözün.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1304,7 +1304,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Genel anahtar %1 içe aktarıldı. Bu anahtara şifrelemeden önce parmak izini sahibiyle doğrulayın: bir anahtarı içe aktarmak, onu kimin elinde tuttuğu hakkında hiçbir şey söylemez.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

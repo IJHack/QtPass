@@ -588,7 +588,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hanya sidik jari kunci lengkap (40 atau 64 karakter heksadesimal), dipisahkan dengan spasi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -992,7 +992,7 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gagal menulis %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1031,28 +1031,28 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gagal menghapus tanda tangan lama %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sisa dari enkripsi ulang sebelumnya</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ada di samping %2. Keduanya adalah salinan terenkripsi dari entri ini; periksa mana yang Anda inginkan dan hapus yang lain, lalu enkripsi ulang lagi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 dipulihkan dari cadangan yang ditinggalkan oleh enkripsi ulang yang terputus.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 hilang dan cadangannya %2 tidak dapat dikembalikan namanya. Ubah namanya secara manual, lalu enkripsi ulang lagi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1069,12 +1069,12 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gagal mengganti %1, dan yang asli tidak dapat dikembalikan. Berkas itu masih ada sebagai %2; ubah namanya secara manual.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat menghapus cadangan %1 setelah enkripsi ulang; berkas ini aman untuk dihapus.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1116,12 +1116,12 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull gagal</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull tersebut meninggalkan berkas yang belum digabungkan di penyimpanan. Selesaikan konflik tersebut sebelum mengenkripsi ulang.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1300,7 +1300,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kunci publik %1 diimpor. Periksa sidik jarinya bersama pemiliknya sebelum mengenkripsi ke kunci tersebut: mengimpor kunci tidak mengatakan apa pun tentang siapa yang memegangnya.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

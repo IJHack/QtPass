@@ -335,7 +335,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pouze úplné otisky klíčů (40 nebo 64 šestnáctkových znaků), oddělené mezerami</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1070,7 +1070,7 @@ Seznam uživatelů nebudete moci změnit!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepodařilo se zapsat %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1087,28 +1087,28 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepodařilo se odstranit starý podpis %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pozůstatek dřívějšího opětovného šifrování</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 existuje vedle %2. Obě jsou zašifrované kopie položky; zkontrolujte, kterou chcete zachovat, druhou smažte a poté znovu spusťte opětovné šifrování.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 obnoveno ze zálohy, kterou zanechalo přerušené opětovné šifrování.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 chybí a jeho zálohu %2 se nepodařilo přejmenovat zpět. Přejmenujte ji ručně a poté znovu spusťte opětovné šifrování.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1125,12 +1125,12 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepodařilo se nahradit %1 a původní soubor se nepodařilo vrátit zpět. Stále existuje jako %2; přejmenujte ho ručně.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Po opětovném šifrování se nepodařilo odstranit zálohu %1; lze ji bezpečně smazat.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1172,12 +1172,12 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull selhal</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Po operaci pull zůstaly v úložišti nesloučené soubory. Před opětovným šifrováním vyřešte konflikt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1362,7 +1362,7 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Veřejný klíč %1 byl importován. Než pro něj začnete šifrovat, ověřte si jeho otisk u vlastníka: import klíče nic nevypovídá o tom, kdo ho drží.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

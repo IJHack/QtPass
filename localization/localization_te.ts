@@ -588,7 +588,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">పూర్తి కీ ఫింగర్‌ప్రింట్‌లు మాత్రమే (40 లేదా 64 హెక్సాడెసిమల్ అక్షరాలు), ఖాళీలతో వేరు చేయబడినవి</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -992,7 +992,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ను వ్రాయడం విఫలమైంది: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1031,28 +1031,28 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">పాత సంతకం %1 ను తొలగించడం విఫలమైంది.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">మునుపటి రీ-ఎన్క్రిప్షన్ నుండి మిగిలిపోయినది</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%2 పక్కనే %1 ఉంది. రెండూ ఎంట్రీ యొక్క ఎన్క్రిప్ట్ చేసిన కాపీలు; మీకు ఏది కావాలో తనిఖీ చేసి మరొకదాన్ని తొలగించండి, ఆపై మళ్లీ రీ-ఎన్క్రిప్ట్ చేయండి.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">అంతరాయం కలిగిన రీ-ఎన్క్రిప్షన్ వదిలిపెట్టిన బ్యాకప్ నుండి %1 పునరుద్ధరించబడింది.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 లేదు మరియు దాని బ్యాకప్ %2 ను తిరిగి పేరు మార్చలేకపోయింది. దాన్ని మీరే స్వయంగా పేరు మార్చి, ఆపై మళ్లీ రీ-ఎన్క్రిప్ట్ చేయండి.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1069,12 +1069,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ను భర్తీ చేయడం విఫలమైంది, మరియు అసలును తిరిగి ఉంచలేకపోయింది. అది ఇప్పటికీ %2 గా ఉంది; దాన్ని మీరే స్వయంగా పేరు మార్చండి.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">రీ-ఎన్క్రిప్ట్ చేసిన తరువాత బ్యాకప్ %1 ను తొలగించలేకపోయింది; దాన్ని తొలగించడం సురక్షితం.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1116,12 +1116,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">గిట్ పుల్ విఫలమైంది</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">పుల్ తరువాత స్టోర్‌లో విలీనం కాని ఫైళ్లు మిగిలాయి. రీ-ఎన్క్రిప్ట్ చేయడానికి ముందు వైరుధ్యాన్ని పరిష్కరించండి.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1303,7 +1303,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">పబ్లిక్ కీ %1 దిగుమతి చేయబడింది. దానికి ఎన్క్రిప్ట్ చేయడానికి ముందు దాని ఫింగర్‌ప్రింట్‌ను దాని యజమానితో తనిఖీ చేయండి: కీని దిగుమతి చేయడం అది ఎవరి వద్ద ఉందో ఏమీ చెప్పదు.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

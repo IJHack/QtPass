@@ -583,7 +583,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Olion bysedd llawn yr allweddi yn unig (40 neu 64 nod hecsadegol), wedi&apos;u gwahanu â bylchau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1014,7 +1014,7 @@ Ni fyddwch yn gallu newid y rhestr defnyddwyr!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Methwyd ysgrifennu %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1031,28 +1031,28 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Methwyd dileu&apos;r hen lofnod %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gweddill o ail-amgryptio cynharach</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mae %1 yn bodoli wrth ymyl %2. Mae&apos;r ddau yn gopïau wedi&apos;u hamgryptio o&apos;r cofnod; gwiriwch pa un sydd ei angen arnoch a dilëwch y llall, yna ail-amgryptiwch eto.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Adferwyd %1 o&apos;r copi wrth gefn a adawyd ar ôl gan ail-amgryptio a dorrwyd ar ei draws.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mae %1 ar goll ac ni ellid ailenwi ei gopi wrth gefn %2 yn ôl. Ailenwch ef â llaw, yna ail-amgryptiwch eto.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1069,12 +1069,12 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Methwyd disodli %1, ac ni ellid rhoi&apos;r gwreiddiol yn ôl. Mae&apos;n dal yno fel %2; ailenwch ef â llaw.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Methwyd dileu&apos;r copi wrth gefn %1 ar ôl ail-amgryptio; mae&apos;n ddiogel ei ddileu.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1116,12 +1116,12 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Methodd Git tynnu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gadawodd y tynnu ffeiliau heb eu cyfuno yn y storfa. Datryswch y gwrthdaro cyn ail-amgryptio.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1312,7 +1312,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mewnforiwyd yr allwedd gyhoeddus %1. Gwiriwch ei hôl bys gyda&apos;i pherchennog cyn amgryptio iddi: nid yw mewnforio allwedd yn dweud dim am bwy sy&apos;n ei dal.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

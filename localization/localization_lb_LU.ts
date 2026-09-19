@@ -522,7 +522,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nëmme komplett Schlëssel-Fangerofdréck (40 oder 64 hexadezimal Zeechen), duerch Leerzeechen getrennt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1018,7 +1018,7 @@ Dir kënnt d&apos;Benotzerlëscht net änneren!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konnt %1 net schreiwen: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1035,28 +1035,28 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konnt déi al Ënnerschrëft %1 net läschen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iwwerrescht vun enger fréierer Nei-Verschlësselung</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 existéiert niewent %2. Béid sinn verschlësselt Kopien vun der Entrée; kontrolléiert, wéi eng Dir wëllt, a läscht déi aner, da verschlësselt nach eng Kéier nei.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 gouf aus dem Backup restauréiert, deen eng ënnerbrach Nei-Verschlësselung hannerlooss huet.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 feelt a säi Backup %2 konnt net zréck ëmbenannt ginn. Benennt en mat der Hand ëm, da verschlësselt nach eng Kéier nei.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1073,12 +1073,12 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konnt %1 net ersetzen, an den Original konnt net zréckgesat ginn. En ass nach als %2 do; benennt en mat der Hand ëm.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konnt de Backup %1 no der Nei-Verschlësselung net läschen; e kann ouni Gefor geläscht ginn.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1120,12 +1120,12 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull feelgeschloen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">No dem Pull sinn net fusionéiert Dateien am Späicher bliwwen. Léist de Konflikt, ier Dir nei verschlësselt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1307,7 +1307,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ëffentleche Schlëssel %1 importéiert. Kontrolléiert säi Fangerofdrock bei sengem Besëtzer, ier Dir dorop verschlësselt: e Schlëssel z&apos;importéieren seet näischt doriwwer, wien en huet.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

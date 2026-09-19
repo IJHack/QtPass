@@ -522,7 +522,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μόνο πλήρη αποτυπώματα κλειδιών (40 ή 64 δεκαεξαδικοί χαρακτήρες), χωρισμένα με κενά</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1018,7 +1018,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αποτυχία εγγραφής του %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1035,28 +1035,28 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αποτυχία αφαίρεσης της παλιάς υπογραφής %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Υπόλειμμα από προηγούμενη επανακρυπτογράφηση</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 υπάρχει δίπλα στο %2. Και τα δύο είναι κρυπτογραφημένα αντίγραφα της καταχώρισης· ελέγξτε ποιο θέλετε και διαγράψτε το άλλο, και έπειτα επανακρυπτογραφήστε ξανά.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 αποκαταστάθηκε από το αντίγραφο ασφαλείας που άφησε πίσω μια διακοπείσα επανακρυπτογράφηση.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 λείπει και το αντίγραφο ασφαλείας του %2 δεν ήταν δυνατό να μετονομαστεί πίσω. Μετονομάστε το χειροκίνητα και έπειτα επανακρυπτογραφήστε ξανά.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1073,12 +1073,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αποτυχία αντικατάστασης του %1, και το πρωτότυπο δεν ήταν δυνατό να επανέλθει. Βρίσκεται ακόμα εκεί ως %2· μετονομάστε το χειροκίνητα.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν ήταν δυνατή η αφαίρεση του αντιγράφου ασφαλείας %1 μετά την επανακρυπτογράφηση· μπορείτε να το διαγράψετε με ασφάλεια.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1120,12 +1120,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το Git pull απέτυχε</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το pull άφησε τον χώρο αποθήκευσης με μη συγχωνευμένα αρχεία. Επιλύστε τη σύγκρουση πριν την επανακρυπτογράφηση.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1307,7 +1307,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το δημόσιο κλειδί %1 εισήχθη. Επαληθεύστε το αποτύπωμά του με τον κάτοχό του πριν κρυπτογραφήσετε προς αυτό: η εισαγωγή ενός κλειδιού δεν λέει τίποτα για το ποιος το κατέχει.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

@@ -588,7 +588,7 @@ barua pepe</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alama kamili za vidole za funguo pekee (herufi 40 au 64 za heksadesimali), zikitenganishwa kwa nafasi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -992,7 +992,7 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Imeshindwa kuandika %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1031,28 +1031,28 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Imeshindwa kuondoa saini ya zamani %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mabaki ya usimbaji fiche tena wa awali</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ipo kando ya %2. Zote mbili ni nakala zilizosimbwa fiche za kipengee hiki; angalia unayoitaka na ufute nyingine, kisha usimbe fiche tena.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 imerejeshwa kutoka nakala ya chelezo iliyoachwa na usimbaji fiche tena uliokatizwa.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 inakosekana na nakala yake ya chelezo %2 haikuweza kurudishiwa jina lake. Badilisha jina lake kwa mkono, kisha usimbe fiche tena.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1069,12 +1069,12 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Imeshindwa kubadilisha %1, na ya asili haikuweza kurudishwa. Bado ipo kama %2; badilisha jina lake kwa mkono.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Haikuweza kuondoa nakala ya chelezo %1 baada ya kusimba fiche tena; ni salama kuifuta.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1116,12 +1116,12 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull imeshindwa</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pull imeacha hifadhi ikiwa na faili zisizounganishwa. Tatua mgongano kabla ya kusimba fiche tena.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1303,7 +1303,7 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Funguo ya umma %1 imeletwa. Thibitisha alama yake ya vidole na mmiliki wake kabla ya kusimba fiche kwake: kuleta funguo hakusemi chochote kuhusu anayeishikilia.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

@@ -566,7 +566,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Csak teljes kulcsujjlenyomatok (40 vagy 64 hexadecimális karakter), szóközzel elválasztva</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1076,7 +1076,7 @@ A felhasználói listát nem fogja tudni módosítani!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nem sikerült írni a(z) %1 fájlt: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1093,28 +1093,28 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nem sikerült eltávolítani a régi %1 aláírást.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Egy korábbi újratitkosításból maradt vissza</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A(z) %1 a(z) %2 mellett létezik. Mindkettő a bejegyzés titkosított másolata; ellenőrizze, melyikre van szüksége, törölje a másikat, majd futtassa újra az újratitkosítást.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A(z) %1 visszaállítva a megszakadt újratitkosítás által hagyott biztonsági mentésből.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A(z) %1 hiányzik, és a(z) %2 biztonsági mentését nem sikerült visszanevezni. Nevezze át kézzel, majd futtassa újra az újratitkosítást.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1131,12 +1131,12 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nem sikerült lecserélni a(z) %1 fájlt, és az eredetit sem sikerült visszaállítani. Továbbra is megtalálható %2 néven; nevezze át kézzel.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Az újratitkosítás után nem sikerült eltávolítani a(z) %1 biztonsági mentést; biztonságosan törölhető.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1172,12 +1172,12 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A Git pull sikertelen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A pull után egyesítetlen fájlok maradtak a tárolóban. Oldja fel az ütközést az újratitkosítás előtt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1356,7 +1356,7 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A(z) %1 nyilvános kulcs importálva. Mielőtt erre a kulcsra titkosítana, egyeztesse az ujjlenyomatát a tulajdonosával: egy kulcs importálása semmit nem mond arról, hogy ki birtokolja.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

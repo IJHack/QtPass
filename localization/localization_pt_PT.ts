@@ -506,7 +506,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Apenas impressões digitais completas das chaves (40 ou 64 carateres hexadecimais), separadas por espaços</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1054,7 +1054,7 @@ Não poderá alterar a lista de utilizadores!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Falha ao escrever %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1071,28 +1071,28 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Falha ao remover a assinatura antiga %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Resto de uma recifragem anterior</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 existe ao lado de %2. Ambos são cópias cifradas da entrada; verifique qual pretende manter e apague a outra, depois recifre novamente.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 foi restaurado a partir da cópia de segurança deixada por uma recifragem interrompida.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 não existe e não foi possível repor o nome da sua cópia de segurança %2. Renomeie-a manualmente e depois recifre novamente.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1109,12 +1109,12 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Falha ao substituir %1 e não foi possível repor o original. Continua lá como %2; renomeie-o manualmente.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Não foi possível remover a cópia de segurança %1 após a recifragem; pode ser apagada em segurança.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1156,12 +1156,12 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">O Git pull falhou</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">O pull deixou o armazém com ficheiros por fundir. Resolva o conflito antes de recifrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1343,7 +1343,7 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chave pública %1 importada. Confirme a sua impressão digital com o respetivo dono antes de cifrar para ela: importar uma chave nada diz sobre quem a detém.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>

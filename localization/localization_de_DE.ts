@@ -463,7 +463,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nur vollständige Schlüssel-Fingerabdrücke (40 oder 64 Hexadezimalzeichen), durch Leerzeichen getrennt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1075,7 +1075,7 @@ Sie können die Benutzerliste nicht ändern!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="312"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 konnte nicht geschrieben werden: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="317"/>
@@ -1092,28 +1092,28 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
     <message>
         <location filename="../src/imitatepass.cpp" line="461"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die alte Signatur %1 konnte nicht entfernt werden.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="545"/>
         <location filename="../src/imitatepass.cpp" line="560"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Überbleibsel einer früheren Neuverschlüsselung</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="546"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 liegt neben %2. Beide sind verschlüsselte Kopien des Eintrags; prüfen Sie, welche Sie behalten möchten, löschen Sie die andere und verschlüsseln Sie dann erneut neu.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 wurde aus dem Backup wiederhergestellt, das eine unterbrochene Neuverschlüsselung hinterlassen hat.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="561"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 fehlt und das Backup %2 konnte nicht zurückbenannt werden. Benennen Sie es von Hand um und verschlüsseln Sie dann erneut neu.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
@@ -1130,12 +1130,12 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 konnte nicht ersetzt werden, und das Original konnte nicht zurückgelegt werden. Es liegt noch als %2 vor; benennen Sie es von Hand um.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Das Backup %1 konnte nach der Neuverschlüsselung nicht entfernt werden; es kann gefahrlos gelöscht werden.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="800"/>
@@ -1177,12 +1177,12 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
     <message>
         <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Git pull failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git pull fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="973"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nach dem Pull enthält der Kennwortspeicher nicht zusammengeführte Dateien. Lösen Sie den Konflikt, bevor Sie neu verschlüsseln.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="978"/>
@@ -1364,7 +1364,7 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Öffentlicher Schlüssel %1 importiert. Prüfen Sie seinen Fingerabdruck mit dem Besitzer, bevor Sie dafür verschlüsseln: Der Import eines Schlüssels sagt nichts darüber aus, wer ihn besitzt.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>
