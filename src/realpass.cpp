@@ -101,8 +101,9 @@ void RealPass::Remove(QString file, bool isDir) {
   const QString full = QDir::cleanPath(m_settings.passStore + file);
   if (isDir && Util::isLinkedFolder(full)) {
     if (!Util::removeTree(full)) {
-      emit critical(tr("Delete failed"),
-                    tr("Could not remove the link %1.").arg(full));
+      const QString why = tr("Could not remove the link %1.").arg(full);
+      emit critical(tr("Delete failed"), why);
+      emit processErrorExit(1, why);
       return;
     }
     if (m_settings.useGit) {
@@ -122,8 +123,12 @@ void RealPass::Remove(QString file, bool isDir) {
         executePass(PASS_REMOVE,
                     {"git", "commit", "-q", "-m",
                      "Remove for " + rel + " using QtPass.", "--", rel});
+        return;
       }
     }
+    // Nothing ran for pass to finish: the removal is done here, and the
+    // store changed.
+    emit finishedRemove(QString(), QString());
     return;
   }
   executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), file});

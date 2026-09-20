@@ -444,12 +444,15 @@ void tst_realpass::linkedEntriesAndFoldersAreRefusedBeforePassRuns() {
   AppSettings withGit = m_settings;
   withGit.useGit = true;
   pass->init(withGit);
+  QSignalSpy removedSpy(pass.data(), &Pass::finishedRemove);
   pass->Remove(QStringLiteral("shared/"), true);
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("git"), QStringLiteral("ls-files"),
                         QStringLiteral("--"), QStringLiteral("shared")}));
   QTest::qWait(300);
   QVERIFY(!QFileInfo(shared).isSymLink());
+  QVERIFY2(removedSpy.count() == 1,
+           "a removal done locally still finishes like one pass did");
   QVERIFY(QFile::exists(
       QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg"))));
   QCOMPARE(criticalSpy.count(), 11);
