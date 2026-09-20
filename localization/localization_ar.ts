@@ -947,50 +947,50 @@ e-mail</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="179"/>
-        <location filename="../src/imitatepass.cpp" line="340"/>
-        <location filename="../src/imitatepass.cpp" line="631"/>
+        <location filename="../src/imitatepass.cpp" line="185"/>
+        <location filename="../src/imitatepass.cpp" line="369"/>
+        <location filename="../src/imitatepass.cpp" line="678"/>
         <source>Signature for %1 is invalid.</source>
         <translation>توقيع النسبة المئوية %1 غير صحيح.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="185"/>
-        <location filename="../src/imitatepass.cpp" line="714"/>
+        <location filename="../src/imitatepass.cpp" line="191"/>
+        <location filename="../src/imitatepass.cpp" line="761"/>
         <source>Can not edit</source>
         <translation>لا يمكن تحريره</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="186"/>
-        <location filename="../src/imitatepass.cpp" line="715"/>
+        <location filename="../src/imitatepass.cpp" line="192"/>
+        <location filename="../src/imitatepass.cpp" line="762"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>تعذر قراءة مفتاح التشفير المراد استخدامه، ملف .gpg-id مفقود أو غير صالح.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="333"/>
+        <location filename="../src/imitatepass.cpp" line="362"/>
         <source>GPG signing failed!</source>
         <translation>فشل توقيع GPG!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="334"/>
+        <location filename="../src/imitatepass.cpp" line="363"/>
         <source>Failed to sign %1.</source>
         <translation>عدم التوقيع على النسبة المئوية %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="435"/>
+        <location filename="../src/imitatepass.cpp" line="477"/>
         <source>No signing key!</source>
         <translation>لا يوجد مفتاح توقيع!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="436"/>
+        <location filename="../src/imitatepass.cpp" line="478"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>لا تتوفر أي من مفاتيح التوقيع السرية.
 لن تتمكن من تغيير قائمة المستخدمين!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="299"/>
-        <location filename="../src/imitatepass.cpp" line="311"/>
-        <location filename="../src/imitatepass.cpp" line="460"/>
+        <location filename="../src/imitatepass.cpp" line="328"/>
+        <location filename="../src/imitatepass.cpp" line="340"/>
+        <location filename="../src/imitatepass.cpp" line="502"/>
         <source>Cannot update</source>
         <translation>لا أستطيع التحديث</translation>
     </message>
@@ -1000,154 +1000,164 @@ You will not be able to change the user list!</source>
         <translation type="unfinished">فشل Git pull: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="178"/>
-        <location filename="../src/imitatepass.cpp" line="339"/>
-        <location filename="../src/imitatepass.cpp" line="630"/>
+        <location filename="../src/imitatepass.cpp" line="184"/>
+        <location filename="../src/imitatepass.cpp" line="368"/>
+        <location filename="../src/imitatepass.cpp" line="677"/>
         <source>Check .gpg-id file signature!</source>
         <translation>تحقق من توقيع ملف .gpg-id!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="300"/>
+        <location filename="../src/imitatepass.cpp" line="264"/>
+        <source>Delete failed</source>
+        <translation type="unfinished">فشل الحذف</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="265"/>
+        <source>Could not remove the link %1.</source>
+        <translation type="unfinished">تعذر إزالة الرابط %1.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="329"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>فشل فتح ملف .gpg-id للكتابة.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="312"/>
+        <location filename="../src/imitatepass.cpp" line="341"/>
         <source>Failed to write %1: %2</source>
         <translation type="unfinished">فشلت كتابة %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="317"/>
+        <location filename="../src/imitatepass.cpp" line="346"/>
         <source>Check selected users!</source>
         <translation>تحقق من مستعملين مختارين!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="318"/>
+        <location filename="../src/imitatepass.cpp" line="347"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>لا أحد من المفاتيح المختارة لديه مفتاح سري
 لن تكون قادراً على فك شفرة أي كلمة سر مضافة حديثاً!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="461"/>
+        <location filename="../src/imitatepass.cpp" line="503"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">فشلت إزالة التوقيع القديم %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="555"/>
-        <location filename="../src/imitatepass.cpp" line="571"/>
-        <location filename="../src/imitatepass.cpp" line="581"/>
-        <location filename="../src/imitatepass.cpp" line="596"/>
+        <location filename="../src/imitatepass.cpp" line="602"/>
+        <location filename="../src/imitatepass.cpp" line="618"/>
+        <location filename="../src/imitatepass.cpp" line="628"/>
+        <location filename="../src/imitatepass.cpp" line="643"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">بقايا من إعادة تشفير سابقة</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="556"/>
-        <location filename="../src/imitatepass.cpp" line="572"/>
+        <location filename="../src/imitatepass.cpp" line="603"/>
+        <location filename="../src/imitatepass.cpp" line="619"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 ليس ملفًا عاديًا ولم تتم استعادته. افحصه وأزله، ثم أعد التشفير مرة أخرى.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="582"/>
+        <location filename="../src/imitatepass.cpp" line="629"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 موجود بجوار %2. كلاهما نسختان مشفّرتان من المدخل؛ تحقق من النسخة التي تريدها واحذف الأخرى، ثم أعد التشفير مرة أخرى.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="591"/>
+        <location filename="../src/imitatepass.cpp" line="638"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">تمت استعادة %1 من النسخة الاحتياطية التي خلّفتها إعادة تشفير مُنقطعة.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="597"/>
+        <location filename="../src/imitatepass.cpp" line="644"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 مفقود وتعذّر إعادة تسمية نسخته الاحتياطية %2 إلى اسمه الأصلي. أعد تسميته يدويًا، ثم أعد التشفير مرة أخرى.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="781"/>
-        <location filename="../src/imitatepass.cpp" line="786"/>
-        <location filename="../src/imitatepass.cpp" line="1122"/>
+        <location filename="../src/imitatepass.cpp" line="828"/>
+        <location filename="../src/imitatepass.cpp" line="833"/>
+        <location filename="../src/imitatepass.cpp" line="1169"/>
         <source>Re-encryption failed</source>
         <translation>فشل إعادة التشفير</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="782"/>
+        <location filename="../src/imitatepass.cpp" line="829"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>فشل استبدال %1. تم استعادة الملف الأصلي.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="787"/>
+        <location filename="../src/imitatepass.cpp" line="834"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
         <translation type="unfinished">فشل استبدال %1، وتعذّرت إعادة الملف الأصلي إلى مكانه. لا يزال موجودًا باسم %2؛ أعد تسميته يدويًا.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="798"/>
+        <location filename="../src/imitatepass.cpp" line="845"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
         <translation type="unfinished">تعذّرت إزالة النسخة الاحتياطية %1 بعد إعادة التشفير؛ يمكن حذفها بأمان.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="838"/>
+        <location filename="../src/imitatepass.cpp" line="885"/>
         <source>Creating backup commit</source>
         <translation>إنشاء احتياطي</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="855"/>
-        <location filename="../src/imitatepass.cpp" line="864"/>
+        <location filename="../src/imitatepass.cpp" line="902"/>
+        <location filename="../src/imitatepass.cpp" line="911"/>
         <source>Backup commit failed</source>
         <translation>المساندة فشلت</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="856"/>
+        <location filename="../src/imitatepass.cpp" line="903"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>تعذر فحص حالة git. تم إيقاف إعادة التشفير.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="865"/>
+        <location filename="../src/imitatepass.cpp" line="912"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>تم إيقاف عملية إعادة التشفير لأنه تعذر إنشاء نسخة احتياطية باستخدام git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="911"/>
+        <location filename="../src/imitatepass.cpp" line="958"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">هناك عملية إعادة تشفير قيد التنفيذ بالفعل</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="919"/>
+        <location filename="../src/imitatepass.cpp" line="966"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">ليس مجلدًا من المخزن</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="920"/>
+        <location filename="../src/imitatepass.cpp" line="967"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 رابط رمزي أو نقطة وصل، أو يقع خلف أحدهما. ما يشير إليه ذلك ليس جزءًا من مخزن كلمات المرور ولم يُعَد تشفيره.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="929"/>
+        <location filename="../src/imitatepass.cpp" line="976"/>
         <source>Re-encrypting from folder %1</source>
         <translation>إعادة التشفير من المجلد %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1012"/>
-        <location filename="../src/imitatepass.cpp" line="1149"/>
+        <location filename="../src/imitatepass.cpp" line="1059"/>
+        <location filename="../src/imitatepass.cpp" line="1196"/>
         <source>Updating password-store</source>
         <translation>تحديث كلمة السر</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1023"/>
+        <location filename="../src/imitatepass.cpp" line="1070"/>
         <source>Git pull failed</source>
         <translation type="unfinished">فشل Git pull</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1024"/>
+        <location filename="../src/imitatepass.cpp" line="1071"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">ترك السحب المخزن وفيه ملفات غير مدمجة. حلّ التعارض قبل إعادة التشفير.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1029"/>
+        <location filename="../src/imitatepass.cpp" line="1076"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">فشل Git pull، تتم إعادة تشفير المخزن كما هو</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1056"/>
+        <location filename="../src/imitatepass.cpp" line="1103"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>تم تخطي %n مدخل: الرابط الرمزي أو نقطة الوصل أو الملف الخاص ليس جزءًا من المخزن.</numerusform>
@@ -1159,17 +1169,17 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1082"/>
+        <location filename="../src/imitatepass.cpp" line="1129"/>
         <source>GPG ID verification failed</source>
         <translation>فشل التحقق من هوية GPG</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1083"/>
+        <location filename="../src/imitatepass.cpp" line="1130"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>تعذر التحقق من معرف .gpg-id للمجلد.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1120"/>
+        <location filename="../src/imitatepass.cpp" line="1167"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... و%n أخرى</numerusform>
@@ -1181,7 +1191,7 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1123"/>
+        <location filename="../src/imitatepass.cpp" line="1170"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>تعذر إعادة تشفير %n ملف:</numerusform>
@@ -1193,12 +1203,12 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1129"/>
+        <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">أُلغيت إعادة التشفير: تم فحص %1 من أصل %2 من الملفات، وأُعيد تشفير %3، وفشل %4</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1413"/>
+        <location filename="../src/imitatepass.cpp" line="1477"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">لم يتم ضبط الملف التنفيذي لـ Git، سيتم تخطي git</translation>
     </message>
@@ -1207,17 +1217,17 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="vanished">الفشل في إعادة التشفير%1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1138"/>
+        <location filename="../src/imitatepass.cpp" line="1185"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>استكمال إعادة التشفير: %1 نجحت، %2 فشل</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1143"/>
+        <location filename="../src/imitatepass.cpp" line="1190"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>استكمال إعادة التشفير: %1 الملفات المعاد شفاؤها</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1152"/>
+        <location filename="../src/imitatepass.cpp" line="1199"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>لن يتم تنفيذ git push: فشلت إعادة تشفير %n ملف</numerusform>
@@ -1229,18 +1239,18 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1336"/>
-        <location filename="../src/imitatepass.cpp" line="1344"/>
-        <location filename="../src/imitatepass.cpp" line="1351"/>
-        <location filename="../src/imitatepass.cpp" line="1361"/>
+        <location filename="../src/imitatepass.cpp" line="1394"/>
+        <location filename="../src/imitatepass.cpp" line="1408"/>
+        <location filename="../src/imitatepass.cpp" line="1415"/>
+        <location filename="../src/imitatepass.cpp" line="1425"/>
         <source>Copy failed</source>
         <translation>فشل النسخ</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1337"/>
-        <location filename="../src/imitatepass.cpp" line="1345"/>
-        <location filename="../src/imitatepass.cpp" line="1352"/>
-        <location filename="../src/imitatepass.cpp" line="1362"/>
+        <location filename="../src/imitatepass.cpp" line="1395"/>
+        <location filename="../src/imitatepass.cpp" line="1409"/>
+        <location filename="../src/imitatepass.cpp" line="1416"/>
+        <location filename="../src/imitatepass.cpp" line="1426"/>
         <source>Could not copy %1 to %2.</source>
         <translation>تعذر نسخ %1 إلى %2.</translation>
     </message>
@@ -1630,7 +1640,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="423"/>
         <location filename="../src/mainwindow.ui" line="426"/>
-        <location filename="../src/mainwindow.cpp" line="1599"/>
+        <location filename="../src/mainwindow.cpp" line="1607"/>
         <source>Add password</source>
         <translation>أضف كلمة المرور</translation>
     </message>
@@ -1642,21 +1652,21 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="434"/>
         <location filename="../src/mainwindow.ui" line="437"/>
-        <location filename="../src/mainwindow.cpp" line="1598"/>
+        <location filename="../src/mainwindow.cpp" line="1606"/>
         <source>Add folder</source>
         <translation>يضاف الملف</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="442"/>
         <location filename="../src/mainwindow.ui" line="445"/>
-        <location filename="../src/mainwindow.cpp" line="1606"/>
+        <location filename="../src/mainwindow.cpp" line="1614"/>
         <source>Edit</source>
         <translation>يحرر</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="450"/>
         <location filename="../src/mainwindow.ui" line="453"/>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1628"/>
         <source>Delete</source>
         <translation>تحذف</translation>
     </message>
@@ -1724,7 +1734,7 @@ You will not be able to decrypt any newly added passwords!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="485"/>
-        <location filename="../src/mainwindow.cpp" line="1600"/>
+        <location filename="../src/mainwindow.cpp" line="1608"/>
         <source>Users</source>
         <translation>المستخدمون</translation>
     </message>
@@ -1775,13 +1785,13 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="764"/>
         <location filename="../src/mainwindow.cpp" line="782"/>
-        <location filename="../src/mainwindow.cpp" line="1332"/>
+        <location filename="../src/mainwindow.cpp" line="1340"/>
         <source>OTP code copied to clipboard</source>
         <translation>تم نسخ رمز التحقق لمرة واحدة إلى الحافظة</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
-        <location filename="../src/mainwindow.cpp" line="1315"/>
+        <location filename="../src/mainwindow.cpp" line="1323"/>
         <source>No OTP code found in this password entry</source>
         <translation>لم يتم العثور على رمز استخدام لمرة واحدة في إدخال كلمة المرور هذا</translation>
     </message>
@@ -1935,121 +1945,121 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>هل أنت متأكد من أنك تريد حذف %1%2؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1310"/>
+        <location filename="../src/mainwindow.cpp" line="1318"/>
         <source>No password selected for OTP generation</source>
         <translation>لم يتم تحديد كلمة مرور لإنشاء رمز الاستخدام الفردي</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1445"/>
+        <location filename="../src/mainwindow.cpp" line="1453"/>
         <source>Profile changed to %1</source>
         <translation>تم تغيير الملف الشخصي إلى %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1597"/>
+        <location filename="../src/mainwindow.cpp" line="1605"/>
         <source>Open folder with file manager</source>
         <translation>ملف مفتوح مع مدير ملف</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1612"/>
-        <location filename="../src/mainwindow.cpp" line="1744"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1752"/>
         <source>Rename folder</source>
         <translation>إعادة تسمية المجلد</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1616"/>
+        <location filename="../src/mainwindow.cpp" line="1624"/>
         <source>Rename password</source>
         <translation>إعادة تسمية كلمة المرور</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1625"/>
+        <location filename="../src/mainwindow.cpp" line="1633"/>
         <source>Share</source>
         <translation>مشاركة</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1636"/>
+        <location filename="../src/mainwindow.cpp" line="1644"/>
         <source>Re-encrypt all passwords</source>
         <translation>إعادة تشفير جميع كلمات السر</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1641"/>
+        <location filename="../src/mainwindow.cpp" line="1649"/>
         <source>Export my public key...</source>
         <translation>تصدير مفتاحي العمومي…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1647"/>
+        <location filename="../src/mainwindow.cpp" line="1655"/>
         <source>Add recipient...</source>
         <translation>إضافة مستلم…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1652"/>
+        <location filename="../src/mainwindow.cpp" line="1660"/>
         <source>What is this?</source>
         <translation>ما هذا؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1704"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>مجلد جديد:
 (سيتم وضعه في %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1744"/>
+        <location filename="../src/mainwindow.cpp" line="1752"/>
         <source>Rename folder to: </source>
         <translation>أعد تسمية المجلد إلى: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Rename file to: </source>
         <translation>أعد تسمية الملف إلى: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1900"/>
+        <location filename="../src/mainwindow.cpp" line="1908"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">تتم إعادة تشفير كلمات المرور...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1901"/>
+        <location filename="../src/mainwindow.cpp" line="1909"/>
         <source>Cancel</source>
         <translation type="unfinished">إلغاء</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1909"/>
+        <location filename="../src/mainwindow.cpp" line="1917"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">يتم إلغاء إعادة التشفير</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1925"/>
+        <location filename="../src/mainwindow.cpp" line="1933"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">إعادة تشفير كلمات المرور: %1 من %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1958"/>
-        <location filename="../src/mainwindow.cpp" line="1977"/>
+        <location filename="../src/mainwindow.cpp" line="1966"/>
+        <location filename="../src/mainwindow.cpp" line="1985"/>
         <source>Export public key</source>
         <translation>تصدير المفتاح العمومي</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1959"/>
+        <location filename="../src/mainwindow.cpp" line="1967"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;صدّر مفتاحك العمومي&lt;/h3&gt;&lt;p&gt;لم يتم إعداد أي مفتاح توقيع. حدد واحداً في إعدادات QtPass &amp;gt; مفاتيح GPG، أو شغّل ما يلي في الطرفية:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;ثم أرسل الملف إلى أعضاء فريقك.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2018"/>
+        <location filename="../src/mainwindow.cpp" line="2026"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">ليس مجلدًا من المخزن</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2019"/>
+        <location filename="../src/mainwindow.cpp" line="2027"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 رابط رمزي أو نقطة وصل، أو يقع خلف أحدهما. ما يشير إليه ذلك ليس جزءًا من مخزن كلمات المرور ويُترك كما هو.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2030"/>
+        <location filename="../src/mainwindow.cpp" line="2038"/>
         <source>Sharing passwords with GPG</source>
         <translation>مشاركة كلمات السر باستخدام GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2031"/>
+        <location filename="../src/mainwindow.cpp" line="2039"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;مشاركة كلمات السر باستخدام GPG&lt;/h3&gt;&lt;p&gt;لمشاركة كلمات السر مع المستخدمين الآخرين:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;صدّر مفتاحك العمومي&lt;/b&gt; وأرسله إلى أعضاء الفريق&lt;/li&gt;&lt;li&gt;&lt;b&gt;استورد المفاتيح العمومية لأعضاء الفريق&lt;/b&gt; إلى حلقة مفاتيح GPG الخاصة بك&lt;/li&gt;&lt;li&gt;&lt;b&gt;أعد تشفير كلمات السر&lt;/b&gt; حتى يتمكن جميع المستلمين من فك تشفيرها&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;فقط الأشخاص الذين لديهم مفتاح سري مطابق يمكنهم فك تشفير كلمات السر.&lt;/p&gt;&lt;p&gt;&lt;b&gt;نصيحة:&lt;/b&gt; استخدم نفس مفتاح GPG لجميع المجلدات المشتركة.&lt;/p&gt;&lt;p&gt;انظر الأسئلة الشائعة لمزيد من التفاصيل.&lt;/p&gt;</translation>
     </message>
@@ -2066,7 +2076,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="vanished">&lt;h3&gt;صدّر مفتاحك العمومي&lt;/h3&gt;&lt;p&gt;لم يتم إعداد أي مفتاح توقيع. حدد واحداً في إعدادات QtPass &amp;gt; مفاتيح GPG، أو شغّل ما يلي في الطرفية:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;ثم أرسل الملف إلى أعضاء فريقك.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1978"/>
+        <location filename="../src/mainwindow.cpp" line="1986"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2075,7 +2085,7 @@ You will not be able to decrypt any newly added passwords!</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1980"/>
+        <location filename="../src/mainwindow.cpp" line="1988"/>
         <source>No output from gpg.</source>
         <translation>لا توجد مخرجات من gpg.</translation>
     </message>
@@ -2098,24 +2108,24 @@ You will not be able to decrypt any newly added passwords!</source>
 (سيتم وضعه في %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1707"/>
-        <location filename="../src/mainwindow.cpp" line="1729"/>
-        <location filename="../src/mainwindow.cpp" line="1856"/>
+        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1864"/>
         <source>Error</source>
         <translation>خطأ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1708"/>
+        <location filename="../src/mainwindow.cpp" line="1716"/>
         <source>Failed to create folder: %1</source>
         <translation>لم يخلق الملف: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1730"/>
+        <location filename="../src/mainwindow.cpp" line="1738"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>لم يُنشأ ملف (gpg-id) في: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Rename file</source>
         <translation>ملف الاسم</translation>
     </message>
@@ -2124,7 +2134,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="vanished">أعد تسمية المجلد إلى: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1703"/>
         <source>New folder</source>
         <translation type="unfinished">مجلد جديد</translation>
     </message>
@@ -2133,23 +2143,23 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="vanished">أعد تسمية الملف إلى: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1833"/>
+        <location filename="../src/mainwindow.cpp" line="1841"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>يحتوي هذا الإدخال على سر OTP وليس كلمة مرور</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1857"/>
+        <location filename="../src/mainwindow.cpp" line="1865"/>
         <source>Directory does not exist: %1</source>
         <translation>الدليل غير موجود: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1865"/>
-        <location filename="../src/mainwindow.cpp" line="1902"/>
+        <location filename="../src/mainwindow.cpp" line="1873"/>
+        <location filename="../src/mainwindow.cpp" line="1910"/>
         <source>Re-encrypt passwords</source>
         <translation>كلمات السر المُبَتة</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1866"/>
+        <location filename="../src/mainwindow.cpp" line="1874"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2246,6 +2256,16 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="588"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>فشلت عملية التشفير. يرجى التأكد من صحة مفتاح GPG الخاص بك.</translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="876"/>
+        <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
+        <translation type="unfinished">%1 رابط رمزي أو نقطة وصل، أو يقع خلف أحدهما. ما يشير إليه ذلك ليس جزءًا من مخزن كلمات المرور ويُترك كما هو.</translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="884"/>
+        <source>Not part of the store</source>
+        <translation type="unfinished">ليس جزءًا من المخزن</translation>
     </message>
 </context>
 <context>
@@ -2426,12 +2446,12 @@ Continue?</source>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="34"/>
+        <location filename="../src/profileinit.cpp" line="35"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">تعذر إنشاء %1.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="56"/>
+        <location filename="../src/profileinit.cpp" line="57"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>%1 يحتوي بالفعل على %n ملف مشفر؛ لم تتم إعادة تشفيرها. انتقل إلى الملف الشخصي وافتح «المستخدمون» للقيام بذلك.</numerusform>
@@ -2443,23 +2463,24 @@ Continue?</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="74"/>
+        <location filename="../src/profileinit.cpp" line="75"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">لم يتم تحديد أي مستلم؛ لم تتم كتابة %1.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="81"/>
+        <location filename="../src/profileinit.cpp" line="87"/>
+        <location filename="../src/profileinit.cpp" line="92"/>
         <source>Could not write %1: %2</source>
         <translation type="unfinished">تعذر كتابة %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="98"/>
+        <location filename="../src/profileinit.cpp" line="104"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">تعذر توقيع %1 باستخدام %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="118"/>
-        <location filename="../src/profileinit.cpp" line="147"/>
+        <location filename="../src/profileinit.cpp" line="124"/>
+        <location filename="../src/profileinit.cpp" line="153"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">فشل git %1 في %2: %3</translation>
     </message>
@@ -2690,6 +2711,24 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="246"/>
         <source>qrencode exited with code %1</source>
         <translation>انتهى qrencode بالرمز %1</translation>
+    </message>
+</context>
+<context>
+    <name>RealPass</name>
+    <message>
+        <location filename="../src/realpass.cpp" line="104"/>
+        <source>Could not remove the link %1.</source>
+        <translation type="unfinished">تعذر إزالة الرابط %1.</translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="105"/>
+        <source>Delete failed</source>
+        <translation type="unfinished">فشل الحذف</translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="272"/>
+        <source>Search needs the GPG executable to be configured.</source>
+        <translation type="unfinished">يتطلب البحث ضبط الملف التنفيذي لـ GPG.</translation>
     </message>
 </context>
 <context>
