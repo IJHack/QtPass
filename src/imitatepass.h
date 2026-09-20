@@ -350,9 +350,8 @@ public:
   /**
    * @brief Search all password content by GPG-decrypting each .gpg file.
    *
-   * Pattern is interpreted as a QRegularExpression (PCRE-like), which differs
-   * from RealPass::Grep which uses system `pass grep` (POSIX BRE via grep).
-   * The same pattern may produce different matches across the two backends.
+   * Pattern is interpreted as a QRegularExpression (PCRE-like); RealPass::Grep
+   * uses the same search, so both backends match alike.
    *
    * @param pattern Search pattern (QRegularExpression).
    * @param caseInsensitive true for case-insensitive search.

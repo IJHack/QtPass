@@ -27,6 +27,7 @@ private slots:
   void init();
   void gitCommands();
   void showAndGrep();
+  void grepDecryptsRealEntriesOnlyNeverThroughALink();
   void insertPipesTheValue();
   void removeFileAndFolder();
   void initWritesEnabledKeysRelativeToTheStore();
@@ -155,10 +156,81 @@ void tst_realpass::showAndGrep() {
   QCOMPARE(waitForCall().args, (QStringList{QStringLiteral("show"),
                                             QStringLiteral("folder/entry")}));
   QFile::remove(m_log);
+  // Search does not go through pass any more (its `find -L` follows links);
+  // with no GPG executable it answers empty instead.
+  AppSettings noGpg = m_settings;
+  noGpg.gpgExecutable.clear();
+  pass->init(noGpg);
+  QSignalSpy grepSpy(pass.data(), &Pass::finishedGrep);
   pass->Grep(QStringLiteral("-needle"), true);
-  QCOMPARE(waitForCall().args,
-           (QStringList{QStringLiteral("grep"), QStringLiteral("-i"),
-                        QStringLiteral("--"), QStringLiteral("-needle")}));
+  QCOMPARE(grepSpy.count(), 1);
+  QTest::qWait(200);
+  QVERIFY2(!QFile::exists(m_log), "pass grep must not run");
+  pass->init(m_settings);
+}
+
+/**
+ * @brief The pass backend's search decrypts the store's real .gpg files with
+ *        gpg and nothing behind a link: `pass grep` runs `find -L`, which
+ *        would have followed Bank.gpg -> outside and searched a file that is
+ *        not the store's.
+ */
+void tst_realpass::grepDecryptsRealEntriesOnlyNeverThroughALink() {
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString outsideSecret =
+      QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg"));
+  for (const QString &path :
+       {m_store + QStringLiteral("folder/real.gpg"), outsideSecret}) {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("ciphertext");
+  }
+  const QString bank = m_store + QStringLiteral("Bank.gpg");
+  QVERIFY(QFile::link(outsideSecret, bank));
+  // A gpg that "decrypts" by echoing which file it was given.
+  const QString gpgLog = QDir(m_dir.path()).filePath(QStringLiteral("gpg.log"));
+  const QString fakeGpg = QDir(m_dir.path()).filePath(QStringLiteral("gpg"));
+  {
+    QFile f(fakeGpg);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\n");
+    f.write(QStringLiteral("for a in \"$@\"; do last=\"$a\"; done\n"
+                           "printf '%s\\n' \"$last\" >> '%1'\n"
+                           "printf 'needle in %s\\n' \"$last\"\n")
+                .arg(gpgLog)
+                .toUtf8());
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  const auto cleanup = qScopeGuard([&] {
+    QFile::remove(bank);
+    QFile::remove(m_store + QStringLiteral("folder/real.gpg"));
+    QFile::remove(gpgLog);
+    QFile::remove(fakeGpg);
+  });
+  AppSettings withGpg = m_settings;
+  withGpg.gpgExecutable = fakeGpg;
+  QScopedPointer<RealPass> pass(makePass());
+  pass->init(withGpg);
+  QSignalSpy grepSpy(pass.data(), &Pass::finishedGrep);
+  pass->Grep(QStringLiteral("needle"), false);
+  QVERIFY(grepSpy.count() > 0 || grepSpy.wait(10000));
+  const auto results =
+      grepSpy.takeFirst().at(0).value<QList<QPair<QString, QStringList>>>();
+  QStringList entries;
+  for (const auto &r : results) {
+    entries << r.first;
+  }
+  QCOMPARE(entries, QStringList{QStringLiteral("folder/real")});
+  QFile log(gpgLog);
+  QVERIFY(log.open(QIODevice::ReadOnly));
+  const QString decrypted = QString::fromUtf8(log.readAll());
+  QVERIFY2(!decrypted.contains(QStringLiteral("Bank.gpg")) &&
+               !decrypted.contains(outsideSecret),
+           qPrintable("gpg was handed: " + decrypted));
+  QVERIFY2(!QFile::exists(m_log), "pass itself is not involved in a search");
 }
 
 void tst_realpass::insertPipesTheValue() {

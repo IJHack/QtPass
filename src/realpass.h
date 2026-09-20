@@ -3,6 +3,7 @@
 #ifndef SRC_REALPASS_H_
 #define SRC_REALPASS_H_
 
+#include "nativegrep.h"
 #include "pass.h"
 
 /**
@@ -19,6 +20,10 @@
  * This is the primary implementation when 'pass' is available on the system.
  */
 class RealPass : public Pass {
+  /// The store's own search: `pass grep` runs `find -L`, which follows a
+  /// link out of the store and decrypts what it finds there.
+  NativeGrep m_grep;
+
   /**
    * @brief Execute pass command with arguments.
    * @param id Process identifier.
@@ -48,9 +53,9 @@ public:
    */
   RealPass();
   /**
-   * @brief Destructor.
+   * @brief Destructor; lets the search workers wind down.
    */
-  ~RealPass() override = default;
+  ~RealPass() override;
 
   // Git operations
   /**
@@ -113,8 +118,13 @@ public:
    */
   void Copy(const QString src, const QString dest, const bool force) override;
   /**
-   * @brief Search password content via 'pass grep'.
-   * @param pattern Search pattern.
+   * @brief Search all password content by GPG-decrypting each real `.gpg`
+   * file, as ImitatePass does.
+   *
+   * Not `pass grep`: that enumerates with `find -L`, which follows a link
+   * out of the store and decrypts what it finds there. Same pattern
+   * semantics as ImitatePass::Grep (QRegularExpression).
+   * @param pattern Search pattern (QRegularExpression).
    * @param caseInsensitive true for case-insensitive search.
    */
   void Grep(QString pattern, bool caseInsensitive) override;

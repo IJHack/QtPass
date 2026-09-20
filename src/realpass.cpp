@@ -15,14 +15,17 @@ using Enums::GIT_INIT;
 using Enums::GIT_PULL;
 using Enums::GIT_PUSH;
 using Enums::PASS_COPY;
-using Enums::PASS_GREP;
 using Enums::PASS_INIT;
 using Enums::PASS_INSERT;
 using Enums::PASS_MOVE;
 using Enums::PASS_REMOVE;
 using Enums::PASS_SHOW;
 
-RealPass::RealPass() = default;
+RealPass::RealPass() : m_grep(this) {
+  connect(&m_grep, &NativeGrep::finished, this, &RealPass::finishedGrep);
+}
+
+RealPass::~RealPass() { m_grep.cancel(); }
 
 /**
  * @brief RealPass::GitInit pass git init wrapper
@@ -251,12 +254,23 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
  * @param pattern Search pattern (POSIX BRE).
  * @param caseInsensitive true for case-insensitive search.
  */
+/**
+ * @brief RealPass::Grep searches the store the way ImitatePass does.
+ *
+ * `pass grep` enumerates with `find -L`, which follows a link out of the
+ * store and hands what it finds there to gpg; the native search walks real
+ * files only (Util::regularFilesUnder) and needs the GPG executable, which
+ * the pass backend has configured for everything else gpg does.
+ */
 void RealPass::Grep(QString pattern, bool caseInsensitive) {
-  QStringList args = {"grep"};
-  if (caseInsensitive)
-    args << "-i";
-  args << "--" << pattern;
-  executePass(PASS_GREP, args, QString(), true);
+  if (m_settings.gpgExecutable.isEmpty()) {
+    emit statusMsg(tr("Search needs the GPG executable to be configured."),
+                   5000);
+    emit finishedGrep({});
+    return;
+  }
+  m_grep.search(pattern, caseInsensitive, m_settings.gpgExecutable,
+                m_settings.passStore, exec.environment());
 }
 
 /**

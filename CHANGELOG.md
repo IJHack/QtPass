@@ -68,7 +68,10 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   resulting filename, and a linked folder is unlinked by QtPass itself
   rather than handed to `pass rm -rf` or `git rm -rf`, which would empty the
   target or fail on the trailing separator. A refused operation releases the
-  interface like any failed one. A shared store's co-writer can make
+  interface like any failed one. With the `pass` backend, Search no longer
+  runs `pass grep`, whose `find -L` follows a link out of the store and
+  decrypts what it finds there; both backends use the same native search
+  over real files now, with the same pattern semantics. A shared store's co-writer can make
   `git pull` create such links; SECURITY.md now says what QtPass does with
   them and that the configured store root itself may be a link [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - A new profile's `.gpg-id` is written the way the Users dialog writes one:
