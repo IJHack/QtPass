@@ -183,11 +183,12 @@ public:
   /**
    * @brief Whether @p path names a symbolic link or NTFS junction, with or
    * without a trailing separator (which would otherwise make the check look
-   * at the target instead).
+   * at the target instead). Folder or file: a linked `.gpg`, `.gpg-id` or
+   * `.gpg-id.sig` is judged the same way.
    *
-   * The store tree shows linked folders like any other; an operation on one
-   * (re-encrypt, recipients, delete) must not reach through it.
-   * @param path Folder path, as the tree names it.
+   * The store tree shows linked entries like any other; an operation on one
+   * (show, edit, re-encrypt, recipients, delete) must not reach through it.
+   * @param path Path as the tree or a caller names it.
    * @return true for a link or junction.
    */
   static auto isLinkedFolder(const QString &path) -> bool;
@@ -200,10 +201,12 @@ public:
    * itself is not checked: a linked store root is the user's setup.
    * @param path File or folder under the store, as the tree names it.
    * @param storeRoot The configured store.
+   * @param includeSelf Whether @p path itself counts; false for a removal,
+   *        which unlinks a link and touches nothing behind it.
    * @return true when something on the way is a link.
    */
-  static auto isUnderLink(const QString &path, const QString &storeRoot)
-      -> bool;
+  static auto isUnderLink(const QString &path, const QString &storeRoot,
+                          bool includeSelf = true) -> bool;
   /**
    * @brief Remove @p dir and everything in it, the way `rm -rf` does: a
    * symbolic link or NTFS junction, @p dir itself or anything inside, is

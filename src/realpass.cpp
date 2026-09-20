@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "realpass.h"
+#include "executor.h"
 #include "pathvalidator.h"
 #include "qtpasslogging.h"
 #include "util.h"
@@ -14,14 +15,17 @@ using Enums::GIT_INIT;
 using Enums::GIT_PULL;
 using Enums::GIT_PUSH;
 using Enums::PASS_COPY;
-using Enums::PASS_GREP;
 using Enums::PASS_INIT;
 using Enums::PASS_INSERT;
 using Enums::PASS_MOVE;
 using Enums::PASS_REMOVE;
 using Enums::PASS_SHOW;
 
-RealPass::RealPass() = default;
+RealPass::RealPass() : m_grep(this) {
+  connect(&m_grep, &NativeGrep::finished, this, &RealPass::finishedGrep);
+}
+
+RealPass::~RealPass() { m_grep.cancel(); }
 
 /**
  * @brief RealPass::GitInit pass git init wrapper
@@ -60,6 +64,10 @@ void RealPass::GitPush() { executePass(GIT_PUSH, {"git", "push"}); }
  *          otherwise returns QProcess::NormalExit
  */
 void RealPass::Show(QString file) {
+  // pass follows links as readily as gpg does.
+  if (refuseLinkedPath(file + ".gpg")) {
+    return;
+  }
   queueShow(file);
   executePass(PASS_SHOW, {"show", file}, "", true);
 }
@@ -68,6 +76,9 @@ void RealPass::Show(QString file) {
  * @brief RealPass::Insert pass insert
  */
 void RealPass::Insert(QString file, QString newValue, bool overwrite) {
+  if (refuseLinkedPath(file + ".gpg")) {
+    return;
+  }
   QStringList args = {"insert", "-m"};
   if (overwrite) {
     args.append("-f");
@@ -80,6 +91,46 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
  * @brief RealPass::Remove pass remove wrapper
  */
 void RealPass::Remove(QString file, bool isDir) {
+  // Nothing behind a link is the store's to delete.
+  if (refuseLinkedPath(isDir ? file : file + ".gpg", false)) {
+    return;
+  }
+  // pass rm turns a folder into "<folder>/" and rm -rf then follows a link
+  // and empties its target, so a linked folder is unlinked here and pass's
+  // git is only asked to forget it. pass rm -f on a linked .gpg unlinks.
+  const QString full = QDir::cleanPath(m_settings.passStore + file);
+  if (isDir && Util::isLinkedFolder(full)) {
+    if (!Util::removeTree(full)) {
+      const QString why = tr("Could not remove the link %1.").arg(full);
+      emit critical(tr("Delete failed"), why);
+      emit processErrorExit(1, why);
+      return;
+    }
+    if (m_settings.useGit) {
+      // `pass git` exits 0 whatever git did, so ask by output whether git
+      // knew the link, and run the rm blocking so the one commit is the one
+      // PASS_REMOVE that finishes.
+      const QString rel = QDir(m_settings.passStore).relativeFilePath(full);
+      // With the store's environment (PASSWORD_STORE_DIR), as executePass.
+      QString known;
+      QString err;
+      Executor::executeBlocking(exec.environment(), m_settings.passExecutable,
+                                {"git", "ls-files", "--", rel}, &known, &err);
+      if (!known.trimmed().isEmpty()) {
+        Executor::executeBlocking(exec.environment(), m_settings.passExecutable,
+                                  {"git", "rm", "-q", "--cached", "--", rel},
+                                  &known, &err);
+        executePass(PASS_REMOVE,
+                    {"git", "commit", "-q", "-m",
+                     "Remove for " + rel + " using QtPass.", "--", rel});
+        return;
+      }
+    }
+    // Nothing ran for pass to finish: the removal is done here, and the
+    // store changed.
+    emit finishedRemove(QString(), QString());
+    return;
+  }
   executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), file});
 }
 
@@ -90,6 +141,14 @@ void RealPass::Remove(QString file, bool isDir) {
  * @param users list of users with ability to decrypt new password-store
  */
 void RealPass::Init(QString path, const QList<UserInfo> &users) {
+  // pass init writes .gpg-id with a shell redirection and gpg writes the
+  // signature with --output; both follow a link planted under those names.
+  const QString folder = QDir::cleanPath(path);
+  if (refuseLinkedPath(path) ||
+      refuseLinkedPath(folder + QStringLiteral("/.gpg-id")) ||
+      refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig"))) {
+    return;
+  }
   // remove the passStore directory otherwise,
   // pass would create a passStore/passStore/dir
   // but you want passStore/dir
@@ -145,8 +204,17 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
 void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
                               const QString &src, const QString &dest,
                               const bool force) {
+  if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
+    return;
+  }
   QFileInfo srcFileInfo = QFileInfo(src);
   QFileInfo destFileInfo = QFileInfo(dest);
+  // A drop hands over the folder; pass then writes <folder>/<name>, and cp
+  // writes through a link planted under that name.
+  if (destFileInfo.isDir() &&
+      refuseLinkedPath(QDir(dest).filePath(srcFileInfo.fileName()))) {
+    return;
+  }
 
   // force mode?
   // pass uses always the force mode, when call from eg. QT. so we have to
@@ -191,12 +259,23 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
  * @param pattern Search pattern (POSIX BRE).
  * @param caseInsensitive true for case-insensitive search.
  */
+/**
+ * @brief RealPass::Grep searches the store the way ImitatePass does.
+ *
+ * `pass grep` enumerates with `find -L`, which follows a link out of the
+ * store and hands what it finds there to gpg; the native search walks real
+ * files only (Util::regularFilesUnder) and needs the GPG executable, which
+ * the pass backend has configured for everything else gpg does.
+ */
 void RealPass::Grep(QString pattern, bool caseInsensitive) {
-  QStringList args = {"grep"};
-  if (caseInsensitive)
-    args << "-i";
-  args << "--" << pattern;
-  executePass(PASS_GREP, args, QString(), true);
+  if (m_settings.gpgExecutable.isEmpty()) {
+    emit statusMsg(tr("Search needs the GPG executable to be configured."),
+                   5000);
+    emit finishedGrep({});
+    return;
+  }
+  m_grep.search(pattern, caseInsensitive, m_settings.gpgExecutable,
+                m_settings.passStore, exec.environment());
 }
 
 /**

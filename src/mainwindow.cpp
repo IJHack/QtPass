@@ -240,7 +240,7 @@ MainWindow::~MainWindow() {
 void MainWindow::connectPassSignals(Pass *pass) {
   // A failed decrypt never emits finishedShow; drop the pending OTP/copy
   // request so a later decrypt of the same entry is not taken as its answer.
-  connect(pass, &Pass::processErrorExit, this, &MainWindow::cancelOtpRequest);
+  connect(pass, &Pass::processErrorExit, this, &MainWindow::onOperationError);
   connect(pass, &Pass::critical, this, &MainWindow::critical);
   connect(pass, &Pass::startingExecuteWrapper, this,
           &MainWindow::executeWrapperStarted);
@@ -1295,6 +1295,14 @@ void MainWindow::onDelete() {
 void MainWindow::cancelOtpRequest() {
   m_otpRequestFile.clear();
   m_copyRequestFile.clear();
+}
+
+void MainWindow::onOperationError() {
+  cancelOtpRequest();
+  // executeWrapperStarted() emptied the panel and the browser when the
+  // operation started (a refusal says so too); what is left to forget is
+  // which entry the panel was about to show.
+  m_shownFile.clear();
 }
 
 /**

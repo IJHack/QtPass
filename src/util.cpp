@@ -516,7 +516,8 @@ auto Util::isLinkedFolder(const QString &path) -> bool {
   return isLink(QFileInfo(QDir::cleanPath(path)));
 }
 
-auto Util::isUnderLink(const QString &path, const QString &storeRoot) -> bool {
+auto Util::isUnderLink(const QString &path, const QString &storeRoot,
+                       bool includeSelf) -> bool {
   const QString root = QDir::cleanPath(storeRoot);
   // A root of "/" or "C:/" already ends in the separator.
   const QString prefix =
@@ -524,7 +525,10 @@ auto Util::isUnderLink(const QString &path, const QString &storeRoot) -> bool {
   QString current = QDir::cleanPath(path);
   if (!current.startsWith(prefix)) {
     // Not under the store as named: only the entry itself can be judged.
-    return current != root && isLinkedFolder(current);
+    return includeSelf && current != root && isLinkedFolder(current);
+  }
+  if (!includeSelf) {
+    current = QFileInfo(current).path();
   }
   for (; current != root && current.startsWith(prefix);
        current = QFileInfo(current).path()) {

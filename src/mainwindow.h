@@ -205,6 +205,16 @@ public slots:
    * answer to a request the user has long given up on.
    */
   void cancelOtpRequest();
+  /**
+   * @brief An operation ended in an error before or instead of a result:
+   * forget the pending requests and what the panel was about to show.
+   *
+   * Connected to Pass::processErrorExit. A Show that never ran (a linked
+   * entry refused at the store boundary) leaves the previous entry's fields
+   * on the panel under the new name otherwise, and onOtp()'s fast path would
+   * take that entry's code for the refused one.
+   */
+  void onOperationError();
 
   /**
    * @brief Drop a style-imposed toolbar palette that belongs to the other

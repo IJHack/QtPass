@@ -2,6 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QDir>
 #include <QFile>
+#include <QScopeGuard>
+#include <QSignalSpy>
 #include <QTemporaryDir>
 #include <QtTest>
 
@@ -25,6 +27,7 @@ private slots:
   void init();
   void gitCommands();
   void showAndGrep();
+  void grepDecryptsRealEntriesOnlyNeverThroughALink();
   void insertPipesTheValue();
   void removeFileAndFolder();
   void initWritesEnabledKeysRelativeToTheStore();
@@ -32,6 +35,7 @@ private slots:
   void genericOutputSignalIsAnAllowList();
   void moveAndCopyUseStoreRelativeNamesWithoutGpg();
   void moveBetweenExistingFilesNeedsForce();
+  void linkedEntriesAndFoldersAreRefusedBeforePassRuns();
 
 private:
   struct Call {
@@ -152,10 +156,81 @@ void tst_realpass::showAndGrep() {
   QCOMPARE(waitForCall().args, (QStringList{QStringLiteral("show"),
                                             QStringLiteral("folder/entry")}));
   QFile::remove(m_log);
+  // Search does not go through pass any more (its `find -L` follows links);
+  // with no GPG executable it answers empty instead.
+  AppSettings noGpg = m_settings;
+  noGpg.gpgExecutable.clear();
+  pass->init(noGpg);
+  QSignalSpy grepSpy(pass.data(), &Pass::finishedGrep);
   pass->Grep(QStringLiteral("-needle"), true);
-  QCOMPARE(waitForCall().args,
-           (QStringList{QStringLiteral("grep"), QStringLiteral("-i"),
-                        QStringLiteral("--"), QStringLiteral("-needle")}));
+  QCOMPARE(grepSpy.count(), 1);
+  QTest::qWait(200);
+  QVERIFY2(!QFile::exists(m_log), "pass grep must not run");
+  pass->init(m_settings);
+}
+
+/**
+ * @brief The pass backend's search decrypts the store's real .gpg files with
+ *        gpg and nothing behind a link: `pass grep` runs `find -L`, which
+ *        would have followed Bank.gpg -> outside and searched a file that is
+ *        not the store's.
+ */
+void tst_realpass::grepDecryptsRealEntriesOnlyNeverThroughALink() {
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString outsideSecret =
+      QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg"));
+  for (const QString &path :
+       {m_store + QStringLiteral("folder/real.gpg"), outsideSecret}) {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("ciphertext");
+  }
+  const QString bank = m_store + QStringLiteral("Bank.gpg");
+  QVERIFY(QFile::link(outsideSecret, bank));
+  // A gpg that "decrypts" by echoing which file it was given.
+  const QString gpgLog = QDir(m_dir.path()).filePath(QStringLiteral("gpg.log"));
+  const QString fakeGpg = QDir(m_dir.path()).filePath(QStringLiteral("gpg"));
+  {
+    QFile f(fakeGpg);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\n");
+    f.write(QStringLiteral("for a in \"$@\"; do last=\"$a\"; done\n"
+                           "printf '%s\\n' \"$last\" >> '%1'\n"
+                           "printf 'needle in %s\\n' \"$last\"\n")
+                .arg(gpgLog)
+                .toUtf8());
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  const auto cleanup = qScopeGuard([&] {
+    QFile::remove(bank);
+    QFile::remove(m_store + QStringLiteral("folder/real.gpg"));
+    QFile::remove(gpgLog);
+    QFile::remove(fakeGpg);
+  });
+  AppSettings withGpg = m_settings;
+  withGpg.gpgExecutable = fakeGpg;
+  QScopedPointer<RealPass> pass(makePass());
+  pass->init(withGpg);
+  QSignalSpy grepSpy(pass.data(), &Pass::finishedGrep);
+  pass->Grep(QStringLiteral("needle"), false);
+  QVERIFY(grepSpy.count() > 0 || grepSpy.wait(10000));
+  const auto results =
+      grepSpy.takeFirst().at(0).value<QList<QPair<QString, QStringList>>>();
+  QStringList entries;
+  for (const auto &r : results) {
+    entries << r.first;
+  }
+  QCOMPARE(entries, QStringList{QStringLiteral("folder/real")});
+  QFile log(gpgLog);
+  QVERIFY(log.open(QIODevice::ReadOnly));
+  const QString decrypted = QString::fromUtf8(log.readAll());
+  QVERIFY2(!decrypted.contains(QStringLiteral("Bank.gpg")) &&
+               !decrypted.contains(outsideSecret),
+           qPrintable("gpg was handed: " + decrypted));
+  QVERIFY2(!QFile::exists(m_log), "pass itself is not involved in a search");
 }
 
 void tst_realpass::insertPipesTheValue() {
@@ -301,6 +376,94 @@ void tst_realpass::moveBetweenExistingFilesNeedsForce() {
       waitForCall().args,
       (QStringList{QStringLiteral("mv"), QStringLiteral("-f"),
                    QStringLiteral("folder/x"), QStringLiteral("folder/y")}));
+}
+
+/**
+ * @brief pass follows links as readily as gpg does, so the guard sits in
+ *        front of it: show, insert, mv, cp and init on a linked entry or a
+ *        folder behind a link never reach the stand-in; rm of the link itself
+ *        does, rm of something behind one does not.
+ */
+void tst_realpass::linkedEntriesAndFoldersAreRefusedBeforePassRuns() {
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  QVERIFY(QDir(outsideDir.path()).mkpath(QStringLiteral("sub")));
+  {
+    QFile f(QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const QString bank = m_store + QStringLiteral("Bank.gpg");
+  const QString shared = m_store + QStringLiteral("shared");
+  QVERIFY(QFile::link(
+      QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg")), bank));
+  QVERIFY(QFile::link(outsideDir.path(), shared));
+  const auto cleanup = qScopeGuard([&] {
+    QFile::remove(bank);
+    QFile::remove(shared);
+  });
+  QScopedPointer<RealPass> pass(makePass());
+  QSignalSpy criticalSpy(pass.data(), &Pass::critical);
+  pass->Show(QStringLiteral("Bank"));
+  pass->Show(QStringLiteral("shared/sub/deep"));
+  pass->Insert(QStringLiteral("Bank"), QStringLiteral("v"), true);
+  pass->Insert(QStringLiteral("shared/fresh"), QStringLiteral("v"), false);
+  pass->Move(bank, m_store + QStringLiteral("Moved.gpg"), false);
+  pass->Move(m_store + QStringLiteral("folder/entry.gpg"), shared, false);
+  pass->Copy(bank, m_store + QStringLiteral("Copied.gpg"), false);
+  pass->Remove(QStringLiteral("shared/sub/deep"), false);
+  UserInfo alice;
+  alice.key_id = QStringLiteral("AAAA");
+  alice.enabled = true;
+  pass->Init(shared + QLatin1Char('/'), {alice});
+  // A real folder with a link under the .gpg-id name: pass init would write
+  // through it.
+  QVERIFY(QDir(m_store).mkpath(QStringLiteral("team")));
+  const QString plantedId = m_store + QStringLiteral("team/.gpg-id");
+  QVERIFY(QFile::link(
+      QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg")),
+      plantedId));
+  pass->Init(m_store + QStringLiteral("team/"), {alice});
+  // A drop copies onto the folder; pass cp writes <folder>/<name>, and a
+  // link planted there is what cp would write through.
+  const QString plantedEntry = m_store + QStringLiteral("team/entry.gpg");
+  QVERIFY(QFile::link(
+      QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg")),
+      plantedEntry));
+  pass->Copy(m_store + QStringLiteral("folder/entry.gpg"),
+             m_store + QStringLiteral("team"), false);
+  QTest::qWait(300);
+  QCOMPARE(criticalSpy.count(), 11);
+  QVERIFY2(!QFile::exists(m_log), "the stand-in pass must not have run");
+  QVERIFY(QFile::remove(plantedId) && QFile::remove(plantedEntry));
+  QVERIFY(QDir(m_store).rmdir(QStringLiteral("team")));
+  // A linked folder is unlinked here, never handed to pass rm (which would
+  // rm -rf "<link>/" and empty the target). With git on, pass is asked
+  // whether git knew the link; the stand-in prints nothing, so it did not,
+  // and no rm --cached or commit follows.
+  AppSettings withGit = m_settings;
+  withGit.useGit = true;
+  pass->init(withGit);
+  QSignalSpy removedSpy(pass.data(), &Pass::finishedRemove);
+  pass->Remove(QStringLiteral("shared/"), true);
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("git"), QStringLiteral("ls-files"),
+                        QStringLiteral("--"), QStringLiteral("shared")}));
+  QTest::qWait(300);
+  QVERIFY(!QFileInfo(shared).isSymLink());
+  QVERIFY2(removedSpy.count() == 1,
+           "a removal done locally still finishes like one pass did");
+  QVERIFY(QFile::exists(
+      QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg"))));
+  QCOMPARE(criticalSpy.count(), 11);
+  pass->init(m_settings);
+  QFile::remove(m_log);
+  // Unlinking the link itself is a store operation.
+  pass->Remove(QStringLiteral("Bank"), false);
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("rm"), QStringLiteral("-f"),
+                        QStringLiteral("Bank")}));
+  QCOMPARE(criticalSpy.count(), 11);
 }
 
 QTEST_MAIN(tst_realpass)

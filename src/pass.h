@@ -277,6 +277,23 @@ protected:
    * @param file The Show() argument.
    */
   void queueShow(const QString &file) { m_pendingShows.enqueue(file); }
+  /**
+   * @brief Refuse an operation on something that is, or lies behind, a
+   * symbolic link or NTFS junction inside the store.
+   *
+   * The store tree shows a linked entry or folder like any other, and gpg,
+   * pass and QFile all follow links, so without this a planted link would
+   * have an entry shown, edited, copied or written outside the store, with
+   * the store's recipients. The configured store root itself may be a link
+   * (a synced folder); that is not judged.
+   * @param path Store-relative (as Show/Insert/Remove get it, `.gpg`
+   *        included where it applies) or absolute (as Move/Copy get it).
+   * @param includeSelf Whether the entry itself counts; false for a removal,
+   *        which unlinks a link and touches nothing behind it.
+   * @return true when critical() and processErrorExit() were emitted and
+   *         the caller must stop.
+   */
+  auto refuseLinkedPath(const QString &path, bool includeSelf = true) -> bool;
 
   /**
    * @brief Execute external wrapper command.

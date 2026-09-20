@@ -865,6 +865,27 @@ auto isAtOrUnder(const QString &path, const QString &dir,
 }
 } // namespace
 
+auto Pass::refuseLinkedPath(const QString &path, bool includeSelf) -> bool {
+  const QString full = QDir::isAbsolutePath(path)
+                           ? path
+                           : QDir(m_settings.passStore).filePath(path);
+  if (!Util::isUnderLink(full, m_settings.passStore, includeSelf)) {
+    return false;
+  }
+  const QString why =
+      tr("%1 is, or lies behind, a symbolic link or junction. What that "
+         "points to is not part of the password store and is left alone.")
+          .arg(QDir::toNativeSeparators(QDir::cleanPath(full)));
+  // The interface clears the previous entry's panel and text when an
+  // operation starts, arms itself (disabled widgets, a pending OTP or copy
+  // request, an edit dialog at "Decrypting…") and is released by finished
+  // or processErrorExit. A refusal starts nothing, so it says both itself.
+  emit startingExecuteWrapper();
+  emit critical(tr("Not part of the store"), why);
+  emit processErrorExit(1, why);
+  return true;
+}
+
 auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
     -> QString {
   QString normalizedStore = QDir::fromNativeSeparators(passStore);
@@ -891,7 +912,11 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
     if (!isAtOrUnder(currentPath, storeDir, storePrefix)) {
       break;
     }
-    if (QFile(gpgIdDir.absoluteFilePath(".gpg-id")).exists()) {
+    // A link under the name is not the folder's .gpg-id: whoever planted it
+    // chose the recipients elsewhere. The parent's list applies instead.
+    const QFileInfo candidate(gpgIdDir.absoluteFilePath(".gpg-id"));
+    if (candidate.exists() && !candidate.isSymLink() &&
+        !candidate.isJunction()) {
       found = true;
       break;
     }
@@ -910,7 +935,12 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
  */
 auto Pass::getRecipientList(const QString &for_file, const QString &passStore)
     -> QStringList {
-  QFile gpgId(getGpgIdPath(for_file, passStore));
+  const QString gpgIdPath = getGpgIdPath(for_file, passStore);
+  // The root .gpg-id comes back whatever it is; a link is not a list.
+  if (Util::isLinkedFolder(gpgIdPath)) {
+    return {};
+  }
+  QFile gpgId(gpgIdPath);
   if (!gpgId.open(QIODevice::ReadOnly)) {
     return {};
   }

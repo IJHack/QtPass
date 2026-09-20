@@ -344,6 +344,9 @@ private Q_SLOTS:
   void reencryptSkipsSymlinkedEntries();
   void removeFolderWithoutGitLeavesLinkTargetsAlone();
   void reencryptRefusesAFolderBehindALink();
+  void operationsRefuseLinkedEntriesAndFoldersButRemoveUnlinks();
+  void linkedGpgIdIsNotARecipientList();
+  void removeLinkedFolderWithGitUnlinksAndForgets();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -1402,6 +1405,238 @@ void tst_imitatepass::reencryptRefusesAFolderBehindALink() {
   QFile check(outside.filePath(QStringLiteral("sub/secret.gpg")));
   QVERIFY(check.open(QIODevice::ReadOnly));
   QCOMPARE(check.readAll(), QByteArrayLiteral("somebody else's ciphertext"));
+#endif
+}
+
+/**
+ * @brief Show, edit (Insert), Move and Copy refuse an entry that is a link or
+ *        lies behind a linked folder, before gpg or git is asked anything;
+ *        Remove of the link itself unlinks it and leaves the target alone,
+ *        Remove of something behind a link is refused. Init on a linked
+ *        folder is refused as well.
+ */
+void tst_imitatepass::
+    operationsRefuseLinkedEntriesAndFoldersButRemoveUnlinks() {
+#ifdef Q_OS_WIN
+  QSKIP("uses symlinks and a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir root(storeDir.path());
+  const QDir outside(outsideDir.path());
+  QVERIFY(outside.mkpath(QStringLiteral("sub")));
+  for (const QString &name :
+       {QStringLiteral("secret.gpg"), QStringLiteral("sub/deep.gpg")}) {
+    QFile f(outside.filePath(name));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("somebody else's ciphertext");
+  }
+  QVERIFY(QFile::link(outside.filePath(QStringLiteral("secret.gpg")),
+                      root.filePath(QStringLiteral("Bank.gpg"))));
+  QVERIFY(
+      QFile::link(outsideDir.path(), root.filePath(QStringLiteral("shared"))));
+  const QString logPath = root.filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+
+  pass.Show(QStringLiteral("Bank"));
+  pass.Show(QStringLiteral("shared/sub/deep"));
+  pass.Insert(QStringLiteral("Bank"), QStringLiteral("new secret"), true);
+  pass.Insert(QStringLiteral("shared/fresh"), QStringLiteral("new"), false);
+  pass.Move(root.filePath(QStringLiteral("Bank.gpg")),
+            root.filePath(QStringLiteral("Moved.gpg")), false);
+  pass.Move(root.filePath(QStringLiteral("entry0.gpg")),
+            root.filePath(QStringLiteral("shared/")), false);
+  pass.Copy(root.filePath(QStringLiteral("Bank.gpg")),
+            root.filePath(QStringLiteral("Copied.gpg")), false);
+  pass.Copy(root.filePath(QStringLiteral("entry0.gpg")),
+            root.filePath(QStringLiteral("shared/sub/")), false);
+  pass.Remove(QStringLiteral("shared/sub/deep"), false);
+  pass.Remove(QStringLiteral("shared/sub"), true);
+  UserInfo alice;
+  alice.key_id = QStringLiteral("0123456789ABCDEF");
+  alice.enabled = true;
+  pass.Init(root.filePath(QStringLiteral("shared/")), {alice});
+  // A real folder with a link planted under the .gpg-id name: QSaveFile
+  // would write the recipient list through it.
+  QVERIFY(root.mkpath(QStringLiteral("team")));
+  {
+    QFile f(outside.filePath(QStringLiteral("victim.txt")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("precious");
+  }
+  QVERIFY(QFile::link(outside.filePath(QStringLiteral("victim.txt")),
+                      root.filePath(QStringLiteral("team/.gpg-id"))));
+  pass.Init(root.filePath(QStringLiteral("team/")), {alice});
+  // A drop copies onto the folder; the file written is <folder>/<name>, and
+  // a dangling link there passes exists().
+  QVERIFY(root.mkpath(QStringLiteral("other")));
+  QVERIFY(QFile::link(outside.filePath(QStringLiteral("not-yet.gpg")),
+                      root.filePath(QStringLiteral("other/entry0.gpg"))));
+  pass.Copy(root.filePath(QStringLiteral("entry0.gpg")),
+            root.filePath(QStringLiteral("other")), false);
+  QTest::qWait(300);
+  QCOMPARE(criticalSpy.count(), 13);
+  QVERIFY2(errorSpy.count() == 13,
+           "every refusal ends the operation for the interface as well");
+  {
+    QFile check(outside.filePath(QStringLiteral("victim.txt")));
+    QVERIFY(check.open(QIODevice::ReadOnly));
+    QCOMPARE(check.readAll(), QByteArrayLiteral("precious"));
+  }
+  QVERIFY(!QFileInfo::exists(outside.filePath(QStringLiteral("not-yet.gpg"))));
+  for (const QList<QVariant> &sig : criticalSpy) {
+    QVERIFY2(sig.at(1).toString().contains(QStringLiteral("link")),
+             qPrintable(sig.at(1).toString()));
+  }
+  QCOMPARE(showSpy.count(), 0);
+  QVERIFY2(loggedCalls(logPath).isEmpty(), "gpg must not have been run");
+  QVERIFY(!QFileInfo::exists(root.filePath(QStringLiteral("Moved.gpg"))));
+  QVERIFY(!QFileInfo::exists(root.filePath(QStringLiteral("Copied.gpg"))));
+  QVERIFY(!QFileInfo::exists(outside.filePath(QStringLiteral("entry0.gpg"))));
+  QVERIFY(!QFileInfo::exists(outside.filePath(QStringLiteral("fresh.gpg"))));
+  QVERIFY(!QFileInfo::exists(outside.filePath(QStringLiteral(".gpg-id"))));
+  QVERIFY(QFile::exists(outside.filePath(QStringLiteral("sub/deep.gpg"))));
+
+  // The link itself may be removed; what it pointed to stays.
+  pass.Remove(QStringLiteral("Bank"), false);
+  pass.Remove(QStringLiteral("shared"), true);
+  QVERIFY(!QFileInfo(root.filePath(QStringLiteral("Bank.gpg"))).isSymLink());
+  QVERIFY(!QFileInfo(root.filePath(QStringLiteral("shared"))).isSymLink());
+  QCOMPARE(criticalSpy.count(), 13);
+  QFile check(outside.filePath(QStringLiteral("secret.gpg")));
+  QVERIFY(check.open(QIODevice::ReadOnly));
+  QCOMPARE(check.readAll(), QByteArrayLiteral("somebody else's ciphertext"));
+  QVERIFY(QFile::exists(outside.filePath(QStringLiteral("sub/deep.gpg"))));
+
+  // A real entry still works: the guard is not a blanket refusal.
+  pass.Show(QStringLiteral("entry0"));
+  QVERIFY(showSpy.count() > 0 || showSpy.wait(5000));
+#endif
+}
+
+/**
+ * @brief With Git on, deleting a linked folder named the way the tree names
+ *        it ("shared/") unlinks it and asks git only to forget it; a
+ *        recursive "git rm" on "shared/" used to fail on the pathspec and
+ *        leave the link.
+ */
+void tst_imitatepass::removeLinkedFolderWithGitUnlinksAndForgets() {
+#ifdef Q_OS_WIN
+  QSKIP("uses symlinks and a shell script as a fake git");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  {
+    QFile f(QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  QVERIFY(
+      QFile::link(outsideDir.path(), root.filePath(QStringLiteral("shared"))));
+  const QString gitLog = root.filePath("git-argv.log");
+  const QString fakeGit =
+      writeGitFailingOn(storeDir.path(), gitLog, QStringLiteral("never"));
+  QVERIFY(!fakeGit.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), QStringLiteral("/nonexistent"));
+  s.useGit = true;
+  s.gitExecutable = fakeGit;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  pass.Remove(QStringLiteral("shared/"), true);
+  // ls-files (tracked? the fake says yes), rm --cached, commit.
+  QTRY_VERIFY_WITH_TIMEOUT(loggedCalls(gitLog).size() >= 3, 5000);
+  QCOMPARE(criticalSpy.count(), 0);
+  QVERIFY(!QFileInfo(root.filePath(QStringLiteral("shared"))).isSymLink());
+  QVERIFY(QFile::exists(
+      QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg"))));
+  const QList<QStringList> calls = loggedCalls(gitLog);
+  QVERIFY2(calls.at(0).contains(QStringLiteral("ls-files")),
+           qPrintable(calls.at(0).join(' ')));
+  QVERIFY2(calls.at(1).contains(QStringLiteral("rm")) &&
+               calls.at(1).contains(QStringLiteral("--cached")) &&
+               !calls.at(1).last().endsWith(QLatin1Char('/')),
+           qPrintable(calls.at(1).join(' ')));
+  QVERIFY2(calls.at(2).contains(QStringLiteral("commit")),
+           qPrintable(calls.at(2).join(' ')));
+  QTest::qWait(200);
+  QCOMPARE(errorSpy.count(), 0);
+
+  // A link git never knew (synced or planted, not committed): unlinked, and
+  // git is not asked to commit a pathspec that matches nothing.
+  QVERIFY(
+      QFile::link(outsideDir.path(), root.filePath(QStringLiteral("stray"))));
+  QFile::remove(gitLog);
+  const QString refusingGit =
+      writeGitFailingOn(storeDir.path(), gitLog, QStringLiteral("ls-files"));
+  s.gitExecutable = refusingGit;
+  pass.init(s);
+  pass.Remove(QStringLiteral("stray"), true);
+  QTRY_VERIFY_WITH_TIMEOUT(loggedCalls(gitLog).size() >= 1, 5000);
+  QTest::qWait(300);
+  QCOMPARE(loggedCalls(gitLog).size(), 1);
+  QVERIFY(!QFileInfo(root.filePath(QStringLiteral("stray"))).isSymLink());
+  QCOMPARE(criticalSpy.count(), 0);
+  QCOMPARE(errorSpy.count(), 0);
+#endif
+}
+
+/**
+ * @brief A link under the .gpg-id name is not the folder's recipient list:
+ *        the parent's list applies, and a linked list at the root reads as
+ *        missing.
+ */
+void tst_imitatepass::linkedGpgIdIsNotARecipientList() {
+#ifdef Q_OS_WIN
+  QSKIP("uses symlinks");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("team")));
+  {
+    QFile f(QDir(outsideDir.path()).filePath(QStringLiteral(".gpg-id")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("EVIL\n");
+  }
+  QVERIFY(
+      QFile::link(QDir(outsideDir.path()).filePath(QStringLiteral(".gpg-id")),
+                  root.filePath(QStringLiteral("team/.gpg-id"))));
+  const QString store = storeDir.path() + QLatin1Char('/');
+  QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(
+               root.filePath(QStringLiteral("team/x.gpg")), store)),
+           QDir::cleanPath(root.filePath(QStringLiteral(".gpg-id"))));
+  QVERIFY(!Pass::getRecipientList(root.filePath(QStringLiteral("team/x.gpg")),
+                                  store)
+               .contains(QStringLiteral("EVIL")));
+  // The root list itself as a link: nothing to encrypt to.
+  QVERIFY(QFile::remove(root.filePath(QStringLiteral(".gpg-id"))));
+  QVERIFY(
+      QFile::link(QDir(outsideDir.path()).filePath(QStringLiteral(".gpg-id")),
+                  root.filePath(QStringLiteral(".gpg-id"))));
+  QVERIFY(
+      Pass::getRecipientList(root.filePath(QStringLiteral("team/x.gpg")), store)
+          .isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), QStringLiteral("/nonexistent/gpg")));
+  QStringList recipients{QStringLiteral("stale")};
+  QVERIFY(pass.loadVerifiedRecipients(root.filePath(QStringLiteral(".gpg-id")),
+                                      &recipients));
+  QVERIFY(recipients.isEmpty());
 #endif
 }
 
