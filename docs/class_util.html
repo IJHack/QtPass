@@ -139,9 +139,9 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 <tr class="memitem:afaab47cf531353235a5ec8f2c6424c5e" id="r_afaab47cf531353235a5ec8f2c6424c5e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afaab47cf531353235a5ec8f2c6424c5e">directoriesUnder</a> (const QString &amp;dir) -&gt; QStringList</td></tr>
 <tr class="memdesc:afaab47cf531353235a5ec8f2c6424c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every real, visible directory under <code class="param">dir</code>, walked by the same rules as <a class="el" href="#a77bcdde819b9f0bd6a68c84cd8198e23" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">regularFilesUnder()</a>: links, junctions and hidden directories are neither listed nor entered.  <br /></td></tr>
 <tr class="memitem:a746306345314ca148272abc2dd3e9e3c" id="r_a746306345314ca148272abc2dd3e9e3c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a746306345314ca148272abc2dd3e9e3c">isLinkedFolder</a> (const QString &amp;path) -&gt; bool</td></tr>
-<tr class="memdesc:a746306345314ca148272abc2dd3e9e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">path</code> names a symbolic link or NTFS junction, with or without a trailing separator (which would otherwise make the check look at the target instead).  <br /></td></tr>
-<tr class="memitem:aee92c6a311b7c8885e04df75fa221734" id="r_aee92c6a311b7c8885e04df75fa221734"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aee92c6a311b7c8885e04df75fa221734">isUnderLink</a> (const QString &amp;path, const QString &amp;storeRoot) -&gt; bool</td></tr>
-<tr class="memdesc:aee92c6a311b7c8885e04df75fa221734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the way from <code class="param">storeRoot</code> down to <code class="param">path</code> passes through a symbolic link or NTFS junction: <code class="param">path</code> itself or any folder between.  <br /></td></tr>
+<tr class="memdesc:a746306345314ca148272abc2dd3e9e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">path</code> names a symbolic link or NTFS junction, with or without a trailing separator (which would otherwise make the check look at the target instead). Folder or file: a linked <span class="tt">.gpg</span>, <span class="tt">.gpg-id</span> or <span class="tt">.gpg-id.sig</span> is judged the same way.  <br /></td></tr>
+<tr class="memitem:af4112ecd778ae8225a12fa96ce611425" id="r_af4112ecd778ae8225a12fa96ce611425"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af4112ecd778ae8225a12fa96ce611425">isUnderLink</a> (const QString &amp;path, const QString &amp;storeRoot, bool includeSelf=true) -&gt; bool</td></tr>
+<tr class="memdesc:af4112ecd778ae8225a12fa96ce611425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the way from <code class="param">storeRoot</code> down to <code class="param">path</code> passes through a symbolic link or NTFS junction: <code class="param">path</code> itself or any folder between.  <br /></td></tr>
 <tr class="memitem:ad23339038f3f09d99359f1a25d659a6f" id="r_ad23339038f3f09d99359f1a25d659a6f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad23339038f3f09d99359f1a25d659a6f">removeTree</a> (const QString &amp;dir) -&gt; bool</td></tr>
 <tr class="memdesc:ad23339038f3f09d99359f1a25d659a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove <code class="param">dir</code> and everything in it, the way <span class="tt">rm -rf</span> does: a symbolic link or NTFS junction, <code class="param">dir</code> itself or anything inside, is removed as an entry and what it points to is never entered. A trailing separator on <code class="param">dir</code> does not change that.  <br /></td></tr>
 </table>
@@ -447,10 +447,10 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 </table>
 </div><div class="memdoc">
 
-<p>Whether <code class="param">path</code> names a symbolic link or NTFS junction, with or without a trailing separator (which would otherwise make the check look at the target instead). </p>
-<p>The store tree shows linked folders like any other; an operation on one (re-encrypt, recipients, delete) must not reach through it. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Whether <code class="param">path</code> names a symbolic link or NTFS junction, with or without a trailing separator (which would otherwise make the check look at the target instead). Folder or file: a linked <span class="tt">.gpg</span>, <span class="tt">.gpg-id</span> or <span class="tt">.gpg-id.sig</span> is judged the same way. </p>
+<p>The store tree shows linked entries like any other; an operation on one (show, edit, re-encrypt, recipients, delete) must not reach through it. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>Folder path, as the tree names it. </td></tr>
+    <tr><td class="paramname">path</td><td>Path as the tree or a caller names it. </td></tr>
   </table>
   </dd>
 </dl>
@@ -458,8 +458,8 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 
 </div>
 </div>
-<a id="aee92c6a311b7c8885e04df75fa221734" name="aee92c6a311b7c8885e04df75fa221734"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee92c6a311b7c8885e04df75fa221734">&#9670;&#160;</a></span>isUnderLink()</h2>
+<a id="af4112ecd778ae8225a12fa96ce611425" name="af4112ecd778ae8225a12fa96ce611425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4112ecd778ae8225a12fa96ce611425">&#9670;&#160;</a></span>isUnderLink()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -475,7 +475,12 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storeRoot</em></span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storeRoot</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>includeSelf</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -490,6 +495,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
   <table class="params">
     <tr><td class="paramname">path</td><td>File or folder under the store, as the tree names it. </td></tr>
     <tr><td class="paramname">storeRoot</td><td>The configured store. </td></tr>
+    <tr><td class="paramname">includeSelf</td><td>Whether <code class="param">path</code> itself counts; false for a removal, which unlinks a link and touches nothing behind it. </td></tr>
   </table>
   </dd>
 </dl>

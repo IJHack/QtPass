@@ -145,6 +145,8 @@ void&#160;</td><td class="memItemRight"><b>executeWrapperStarted</b> ()</td></tr
 <tr class="memdesc:a7d0d5451438004ab31c4d9d48a869378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the first line of a decrypted entry (Ctrl+C). Ignores decrypts of anything but the entry copyPasswordFromTreeview() asked for; an otpauth:// first line is refused.  <br /></td></tr>
 <tr class="memitem:a083c74efb3eabf7f2ccd7fa691bf8841" id="r_a083c74efb3eabf7f2ccd7fa691bf8841"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a083c74efb3eabf7f2ccd7fa691bf8841">cancelOtpRequest</a> ()</td></tr>
 <tr class="memdesc:a083c74efb3eabf7f2ccd7fa691bf8841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forget the pending OTP and copy requests.  <br /></td></tr>
+<tr class="memitem:a770b38c0ee4e6ffcd234857b039061ee" id="r_a770b38c0ee4e6ffcd234857b039061ee"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a770b38c0ee4e6ffcd234857b039061ee">onOperationError</a> ()</td></tr>
+<tr class="memdesc:a770b38c0ee4e6ffcd234857b039061ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">An operation ended in an error before or instead of a result: forget the pending requests and what the panel was about to show.  <br /></td></tr>
 <tr class="memitem:a60ed7fe85ceeecb99a88ae9c4d6d2908" id="r_a60ed7fe85ceeecb99a88ae9c4d6d2908"><td class="memItemLeft"><a id="a60ed7fe85ceeecb99a88ae9c4d6d2908" name="a60ed7fe85ceeecb99a88ae9c4d6d2908"></a>
 void&#160;</td><td class="memItemRight"><b>dropStaleToolBarPalette</b> ()</td></tr>
 <tr class="memdesc:a60ed7fe85ceeecb99a88ae9c4d6d2908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop a style-imposed toolbar palette that belongs to the other theme (Breeze header palette after a light/dark switch). <br /></td></tr>
@@ -657,6 +659,34 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a770b38c0ee4e6ffcd234857b039061ee" name="a770b38c0ee4e6ffcd234857b039061ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a770b38c0ee4e6ffcd234857b039061ee">&#9670;&#160;</a></span>onOperationError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::onOperationError </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An operation ended in an error before or instead of a result: forget the pending requests and what the panel was about to show. </p>
+<p>Connected to <a class="el" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit.">Pass::processErrorExit</a>. A Show that never ran (a linked entry refused at the store boundary) leaves the previous entry's fields on the panel under the new name otherwise, and onOtp()'s fast path would take that entry's code for the refused one. </p>
 
 </div>
 </div>

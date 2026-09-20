@@ -237,6 +237,8 @@ Protected Slots</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a36a6f3e2815272e10ff895edc487d388" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
 <tr class="memdesc:a36a6f3e2815272e10ff895edc487d388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remember what a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> asked for, so its completion can say so.  <br /></td></tr>
+<tr class="memitem:a9e4a43d75fb8f1dd3419a9d6c7e07b29" id="r_a9e4a43d75fb8f1dd3419a9d6c7e07b29"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9e4a43d75fb8f1dd3419a9d6c7e07b29">refuseLinkedPath</a> (const QString &amp;path, bool includeSelf=true) -&gt; bool</td></tr>
+<tr class="memdesc:a9e4a43d75fb8f1dd3419a9d6c7e07b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the store.  <br /></td></tr>
 <tr class="memitem:a66f59138ffe856fd421410d9af9ddc62" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
 <tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute external wrapper command.  <br /></td></tr>
 <tr class="memitem:aff660edce34d33f5a2adfa8c130470f0" id="r_aff660edce34d33f5a2adfa8c130470f0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aff660edce34d33f5a2adfa8c130470f0">generateRandomPassword</a> (const QString &amp;charset, unsigned int length) -&gt; QString</td></tr>
@@ -1882,6 +1884,45 @@ Protected Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00279">279</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
+<a id="a9e4a43d75fb8f1dd3419a9d6c7e07b29" name="a9e4a43d75fb8f1dd3419a9d6c7e07b29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e4a43d75fb8f1dd3419a9d6c7e07b29">&#9670;&#160;</a></span>refuseLinkedPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::refuseLinkedPath </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>includeSelf</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the store. </p>
+<p>The store tree shows a linked entry or folder like any other, and gpg, pass and QFile all follow links, so without this a planted link would have an entry shown, edited, copied or written outside the store, with the store's recipients. The configured store root itself may be a link (a synced folder); that is not judged. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Store-relative (as Show/Insert/Remove get it, <span class="tt">.gpg</span> included where it applies) or absolute (as Move/Copy get it). </td></tr>
+    <tr><td class="paramname">includeSelf</td><td>Whether the entry itself counts; false for a removal, which unlinks a link and touches nothing behind it. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Emit critical error.">critical()</a> and <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit.">processErrorExit()</a> were emitted and the caller must stop. </dd></dl>
 
 </div>
 </div>

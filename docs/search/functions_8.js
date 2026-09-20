@@ -30,7 +30,7 @@ var searchData=
   ['issensitiveprocess_27',['isSensitiveProcess',['../class_process_output_panel.html#ad6aa26912ba468c918d78d857c386da7',1,'ProcessOutputPanel']]],
   ['isshowprocessoutput_28',['isShowProcessOutput',['../class_qt_pass_settings.html#a86f9ccbb490cdcc4ffb3fcd6a2112def',1,'QtPassSettings']]],
   ['isstore_29',['isStore',['../class_first_run_wizard.html#afb93850960a89ed80e166fa1ee4fc124',1,'FirstRunWizard']]],
-  ['isunderlink_30',['isUnderLink',['../class_util.html#aee92c6a311b7c8885e04df75fa221734',1,'Util']]],
+  ['isunderlink_30',['isUnderLink',['../class_util.html#af4112ecd778ae8225a12fa96ce611425',1,'Util']]],
   ['isusegit_31',['isUseGit',['../class_qt_pass_settings.html#a0bd97a8df7fb91cf461b5a1c57940710',1,'QtPassSettings']]],
   ['isusegrepsearch_32',['isUseGrepSearch',['../class_qt_pass_settings.html#a48f32603dae06c6a513bcad0de85301c',1,'QtPassSettings']]],
   ['isuseotp_33',['isUseOtp',['../class_qt_pass_settings.html#af9e41239c39581b0f3a573dfdaabff36',1,'QtPassSettings']]],

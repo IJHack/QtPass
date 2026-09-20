@@ -124,9 +124,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6bfb05f4c53a784e8c3ab12a787c74f6" id="r_a6bfb05f4c53a784e8c3ab12a787c74f6"><td class="memItemLeft"><a id="a6bfb05f4c53a784e8c3ab12a787c74f6" name="a6bfb05f4c53a784e8c3ab12a787c74f6"></a>
 &#160;</td><td class="memItemRight"><b>RealPass</b> ()</td></tr>
 <tr class="memdesc:a6bfb05f4c53a784e8c3ab12a787c74f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a> instance. <br /></td></tr>
-<tr class="memitem:a6052a58fe3e9ed707143b3e6d05b787c" id="r_a6052a58fe3e9ed707143b3e6d05b787c"><td class="memItemLeft"><a id="a6052a58fe3e9ed707143b3e6d05b787c" name="a6052a58fe3e9ed707143b3e6d05b787c"></a>
-&#160;</td><td class="memItemRight"><b>~RealPass</b> () override=default</td></tr>
-<tr class="memdesc:a6052a58fe3e9ed707143b3e6d05b787c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memitem:a629d63af70047e502c91d7a3da7c5809" id="r_a629d63af70047e502c91d7a3da7c5809"><td class="memItemLeft"><a id="a629d63af70047e502c91d7a3da7c5809" name="a629d63af70047e502c91d7a3da7c5809"></a>
+&#160;</td><td class="memItemRight"><b>~RealPass</b> () override</td></tr>
+<tr class="memdesc:a629d63af70047e502c91d7a3da7c5809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor; lets the search workers wind down. <br /></td></tr>
 <tr class="memitem:aacaf85a65fc1398c356dd44370e5e22f" id="r_aacaf85a65fc1398c356dd44370e5e22f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aacaf85a65fc1398c356dd44370e5e22f">GitInit</a> () override</td></tr>
 <tr class="memdesc:aacaf85a65fc1398c356dd44370e5e22f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize Git repository in password store.  <br /></td></tr>
 <tr class="memitem:ac3206e85bc586214e6cc75186cff65c3" id="r_ac3206e85bc586214e6cc75186cff65c3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac3206e85bc586214e6cc75186cff65c3">GitPull</a> () override</td></tr>
@@ -148,7 +148,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a18b236aa64e27f35289a7c51a46abb0e" id="r_a18b236aa64e27f35289a7c51a46abb0e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a18b236aa64e27f35289a7c51a46abb0e">Copy</a> (const QString src, const QString dest, const bool force) override</td></tr>
 <tr class="memdesc:a18b236aa64e27f35289a7c51a46abb0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy password file or directory.  <br /></td></tr>
 <tr class="memitem:af2aa9ea3311b5a9470392759e20516b3" id="r_af2aa9ea3311b5a9470392759e20516b3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af2aa9ea3311b5a9470392759e20516b3">Grep</a> (QString pattern, bool caseInsensitive) override</td></tr>
-<tr class="memdesc:af2aa9ea3311b5a9470392759e20516b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search password content via 'pass grep'.  <br /></td></tr>
+<tr class="memdesc:af2aa9ea3311b5a9470392759e20516b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search all password content by GPG-decrypting each real <span class="tt">.gpg</span> file, as <a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a> does.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
 <tr class="memitem:a5d0cea4019f5c123fb4a4417de8d95b9 inherit pub_methods_class_pass" id="r_a5d0cea4019f5c123fb4a4417de8d95b9"><td class="memItemLeft">
 &#160;</td><td class="memItemRight"><b>Pass</b> ()</td></tr>
@@ -231,6 +231,8 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 <tr class="inherit_header pro_methods_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
 <tr class="memitem:a36a6f3e2815272e10ff895edc487d388 inherit pro_methods_class_pass" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
 <tr class="memdesc:a36a6f3e2815272e10ff895edc487d388 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remember what a <a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> asked for, so its completion can say so.  <br /></td></tr>
+<tr class="memitem:a9e4a43d75fb8f1dd3419a9d6c7e07b29 inherit pro_methods_class_pass" id="r_a9e4a43d75fb8f1dd3419a9d6c7e07b29"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a9e4a43d75fb8f1dd3419a9d6c7e07b29">refuseLinkedPath</a> (const QString &amp;path, bool includeSelf=true) -&gt; bool</td></tr>
+<tr class="memdesc:a9e4a43d75fb8f1dd3419a9d6c7e07b29 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the store.  <br /></td></tr>
 <tr class="memitem:a66f59138ffe856fd421410d9af9ddc62 inherit pro_methods_class_pass" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
 <tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute external wrapper command.  <br /></td></tr>
 <tr class="memitem:aff660edce34d33f5a2adfa8c130470f0 inherit pro_methods_class_pass" id="r_aff660edce34d33f5a2adfa8c130470f0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">generateRandomPassword</a> (const QString &amp;charset, unsigned int length) -&gt; QString</td></tr>
@@ -259,7 +261,7 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 </ul>
 <p>This is the primary implementation when 'pass' is available on the system. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00021">21</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00022">22</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a18b236aa64e27f35289a7c51a46abb0e" name="a18b236aa64e27f35289a7c51a46abb0e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a18b236aa64e27f35289a7c51a46abb0e">&#9670;&#160;</a></span>Copy()</h2>
@@ -450,10 +452,10 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 </table>
 </div><div class="memdoc">
 
-<p>Search password content via 'pass grep'. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Search all password content by GPG-decrypting each real <span class="tt">.gpg</span> file, as <a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a> does. </p>
+<p>Not <span class="tt">pass grep</span>: that enumerates with <span class="tt">find -L</span>, which follows a link out of the store and decrypts what it finds there. Same pattern semantics as <a class="el" href="class_imitate_pass.html#a4c18253700bd6127c546325448f14829" title="Search all password content by GPG-decrypting each .gpg file.">ImitatePass::Grep</a> (QRegularExpression). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pattern</td><td>Search pattern. </td></tr>
+    <tr><td class="paramname">pattern</td><td>Search pattern (QRegularExpression). </td></tr>
     <tr><td class="paramname">caseInsensitive</td><td>true for case-insensitive search. </td></tr>
   </table>
   </dd>
