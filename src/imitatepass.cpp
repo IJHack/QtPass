@@ -244,21 +244,36 @@ void ImitatePass::gitCommit(const QString &file, const QString &msg) {
  * @brief ImitatePass::Remove custom implementation of "pass remove"
  */
 void ImitatePass::Remove(QString file, bool isDir) {
-  file = m_settings.passStore + file;
+  // No trailing separator: "link/" makes git look for what is behind the
+  // link ("pathspec did not match") and rm follow it.
+  file = QDir::cleanPath(m_settings.passStore + file);
   if (!isDir) {
     file += ".gpg";
   }
-  // A link itself may go (git rm and QFile::remove unlink it); anything
-  // behind one is not the store's to delete.
+  // A link itself may go; anything behind one is not the store's to delete.
   if (refuseLinkedPath(file, false)) {
     return;
   }
   transactionHelper trans(&m_transaction, PASS_REMOVE);
+  QString path = QDir(m_settings.passStore).relativeFilePath(file);
+  path.replace(Util::endsWithGpg(), "");
+  if (Util::isLinkedFolder(file)) {
+    // Unlink it here, never through a recursive rm: the link goes, what it
+    // points to stays. Git then only has to forget it, if it knew it.
+    if (!Util::removeTree(file)) {
+      emit critical(tr("Delete failed"),
+                    tr("Could not remove the link %1.").arg(file));
+      return;
+    }
+    if (gitReady()) {
+      executeGit(GIT_RM, {"rm", "-q", "--cached", "--ignore-unmatch", "--",
+                          pgit(file)});
+      gitCommit(file, "Remove for " + path + " using QtPass.");
+    }
+    return;
+  }
   if (gitReady()) {
     executeGit(GIT_RM, {"rm", (isDir ? "-rf" : "-f"), "--", pgit(file)});
-    // Normalize path the same way as add/edit operations
-    QString path = QDir(m_settings.passStore).relativeFilePath(file);
-    path.replace(Util::endsWithGpg(), "");
     gitCommit(file, "Remove for " + path + " using QtPass.");
   } else {
     if (isDir) {
@@ -440,10 +455,13 @@ auto ImitatePass::gitTracks(const QString &file) -> bool {
  * @return void - No return value.
  */
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
-  // Writing a .gpg-id through a linked folder would re-key what it points
-  // to, with the store's signing key.
-  if (refuseLinkedPath(path)) {
-    emit processErrorExit(1, tr("Not part of the store"));
+  // Writing a .gpg-id through a linked folder, or through a link planted
+  // under the .gpg-id or .gpg-id.sig name (QSaveFile and gpg --output both
+  // follow one), would re-key or overwrite what it points to.
+  const QString folder = QDir::cleanPath(path);
+  if (refuseLinkedPath(path) ||
+      refuseLinkedPath(folder + QStringLiteral("/.gpg-id")) ||
+      refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig"))) {
     return;
   }
   const GpgIdSigner signer = gpgIdSigner();
@@ -1287,6 +1305,9 @@ void ImitatePass::Move(const QString src, const QString dest,
   if (destFile.isEmpty()) {
     return;
   }
+  if (refuseLinkedPath(destFile)) {
+    return;
+  }
 
   qCDebug(lcQtPass) << "Move Source: " << src;
   qCDebug(lcQtPass) << "Move Destination: " << destFile;
@@ -1365,6 +1386,12 @@ void ImitatePass::Copy(const QString src, const QString dest,
   if (destFile.isEmpty()) {
     emit critical(tr("Copy failed"),
                   tr("Could not copy %1 to %2.").arg(src, dest));
+    return;
+  }
+  // dest may have been a folder; the file that ends up written is destFile,
+  // and a link planted under that name (dangling ones pass exists()) is what
+  // QSaveFile would write through.
+  if (refuseLinkedPath(destFile)) {
     return;
   }
   QFileInfo destFileInfo(destFile);

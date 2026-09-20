@@ -290,7 +290,8 @@ protected:
    *        included where it applies) or absolute (as Move/Copy get it).
    * @param includeSelf Whether the entry itself counts; false for a removal,
    *        which unlinks a link and touches nothing behind it.
-   * @return true when critical() was emitted and the caller must stop.
+   * @return true when critical() and processErrorExit() were emitted and
+   *         the caller must stop.
    */
   auto refuseLinkedPath(const QString &path, bool includeSelf = true) -> bool;
 

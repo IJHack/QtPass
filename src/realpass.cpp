@@ -87,8 +87,28 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
  * @brief RealPass::Remove pass remove wrapper
  */
 void RealPass::Remove(QString file, bool isDir) {
-  // A link itself may go (pass rm unlinks it); nothing behind one.
+  // Nothing behind a link is the store's to delete.
   if (refuseLinkedPath(isDir ? file : file + ".gpg", false)) {
+    return;
+  }
+  // pass rm turns a folder into "<folder>/" and rm -rf then follows a link
+  // and empties its target, so a linked folder is unlinked here and pass's
+  // git is only asked to forget it. pass rm -f on a linked .gpg unlinks.
+  const QString full = QDir::cleanPath(m_settings.passStore + file);
+  if (isDir && Util::isLinkedFolder(full)) {
+    if (!Util::removeTree(full)) {
+      emit critical(tr("Delete failed"),
+                    tr("Could not remove the link %1.").arg(full));
+      return;
+    }
+    if (m_settings.useGit) {
+      const QString rel = QDir(m_settings.passStore).relativeFilePath(full);
+      executePass(PASS_REMOVE, {"git", "rm", "-q", "--cached",
+                                "--ignore-unmatch", "--", rel});
+      executePass(PASS_REMOVE,
+                  {"git", "commit", "-q", "-m",
+                   "Remove for " + rel + " using QtPass.", "--", rel});
+    }
     return;
   }
   executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), file});
@@ -101,8 +121,12 @@ void RealPass::Remove(QString file, bool isDir) {
  * @param users list of users with ability to decrypt new password-store
  */
 void RealPass::Init(QString path, const QList<UserInfo> &users) {
-  if (refuseLinkedPath(path)) {
-    emit processErrorExit(1, tr("Not part of the store"));
+  // pass init writes .gpg-id with a shell redirection and gpg writes the
+  // signature with --output; both follow a link planted under those names.
+  const QString folder = QDir::cleanPath(path);
+  if (refuseLinkedPath(path) ||
+      refuseLinkedPath(folder + QStringLiteral("/.gpg-id")) ||
+      refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig"))) {
     return;
   }
   // remove the passStore directory otherwise,
@@ -165,6 +189,12 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   }
   QFileInfo srcFileInfo = QFileInfo(src);
   QFileInfo destFileInfo = QFileInfo(dest);
+  // A drop hands over the folder; pass then writes <folder>/<name>, and cp
+  // writes through a link planted under that name.
+  if (destFileInfo.isDir() &&
+      refuseLinkedPath(QDir(dest).filePath(srcFileInfo.fileName()))) {
+    return;
+  }
 
   // force mode?
   // pass uses always the force mode, when call from eg. QT. so we have to

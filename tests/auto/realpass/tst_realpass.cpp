@@ -344,15 +344,42 @@ void tst_realpass::linkedEntriesAndFoldersAreRefusedBeforePassRuns() {
   alice.key_id = QStringLiteral("AAAA");
   alice.enabled = true;
   pass->Init(shared + QLatin1Char('/'), {alice});
+  // A real folder with a link under the .gpg-id name: pass init would write
+  // through it.
+  QVERIFY(QDir(m_store).mkpath(QStringLiteral("team")));
+  const QString plantedId = m_store + QStringLiteral("team/.gpg-id");
+  QVERIFY(QFile::link(
+      QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg")),
+      plantedId));
+  pass->Init(m_store + QStringLiteral("team/"), {alice});
+  // A drop copies onto the folder; pass cp writes <folder>/<name>, and a
+  // link planted there is what cp would write through.
+  const QString plantedEntry = m_store + QStringLiteral("team/entry.gpg");
+  QVERIFY(QFile::link(
+      QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg")),
+      plantedEntry));
+  pass->Copy(m_store + QStringLiteral("folder/entry.gpg"),
+             m_store + QStringLiteral("team"), false);
   QTest::qWait(300);
-  QCOMPARE(criticalSpy.count(), 9);
+  QCOMPARE(criticalSpy.count(), 11);
   QVERIFY2(!QFile::exists(m_log), "the stand-in pass must not have run");
+  QVERIFY(QFile::remove(plantedId) && QFile::remove(plantedEntry));
+  QVERIFY(QDir(m_store).rmdir(QStringLiteral("team")));
+  // A linked folder is unlinked here, never handed to pass rm (which would
+  // rm -rf "<link>/" and empty the target); without git nothing runs.
+  pass->Remove(QStringLiteral("shared/"), true);
+  QTest::qWait(300);
+  QVERIFY(!QFileInfo(shared).isSymLink());
+  QVERIFY(QFile::exists(
+      QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg"))));
+  QVERIFY2(!QFile::exists(m_log), "pass rm must not see a linked folder");
+  QCOMPARE(criticalSpy.count(), 11);
   // Unlinking the link itself is a store operation.
   pass->Remove(QStringLiteral("Bank"), false);
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("rm"), QStringLiteral("-f"),
                         QStringLiteral("Bank")}));
-  QCOMPARE(criticalSpy.count(), 9);
+  QCOMPARE(criticalSpy.count(), 11);
 }
 
 QTEST_MAIN(tst_realpass)
