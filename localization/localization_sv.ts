@@ -330,27 +330,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">Allmänt</translation>
+        <translation>Allmänt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <source>Clipboard</source>
-        <translation type="unfinished">Urklipp</translation>
+        <translation>Urklipp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Passwords</source>
-        <translation type="unfinished">Lösenord</translation>
+        <translation>Lösenord</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
         <source>Show menu bar</source>
-        <translation type="unfinished">Visa menyrad</translation>
+        <translation>Visa menyrad</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
-        <translation type="unfinished">Ctrl+M visar eller döljer den även från huvudfönstret</translation>
+        <translation>Ctrl+M visar eller döljer det även från huvudfönstret</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
@@ -386,13 +386,13 @@
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished">Välj den körbara gpg-filen</translation>
+        <translation>Välj den körbara gpg-filen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1060"/>
         <location filename="../src/configdialog.ui" line="1063"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished">Välj den körbara git-filen</translation>
+        <translation>Välj den körbara git-filen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1079"/>
@@ -408,13 +408,13 @@
         <location filename="../src/configdialog.ui" line="1115"/>
         <location filename="../src/configdialog.ui" line="1118"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished">Välj den körbara pwgen-filen</translation>
+        <translation>Välj den körbara pwgen-filen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1155"/>
         <location filename="../src/configdialog.ui" line="1158"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished">Välj den körbara pass-filen</translation>
+        <translation>Välj den körbara pass-filen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1212"/>
@@ -434,22 +434,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="1299"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished">De lösenordsutrymmen som den här QtPass känner till; välj ett för att redigera det</translation>
+        <translation>De lösenordsutrymmen som den här QtPass känner till; välj ett för att redigera det</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1314"/>
         <source>Add a profile</source>
-        <translation type="unfinished">Lägg till en profil</translation>
+        <translation>Lägg till en profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1332"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation type="unfinished">Glöm den valda profilen; själva lösenordsutrymmet finns kvar på disken</translation>
+        <translation>Glöm den valda profilen; själva lösenordsutrymmet finns kvar på disken</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1378"/>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1394"/>
@@ -473,12 +473,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1448"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished">Fullständigt nyckelfingeravtryck på 40 tecken, så som pass kräver</translation>
+        <translation>Fullständigt nyckelfingeravtryck på 40 tecken, så som pass kräver</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1455"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
-        <translation type="unfinished">Git-inställningar för den här profilen; de ersätter inställningarna på fliken Inställningar medan profilen är aktiv</translation>
+        <translation>Git-inställningar för den här profilen; de ersätter inställningarna på fliken Inställningar medan profilen är aktiv</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1501"/>
@@ -516,7 +516,7 @@
         <location filename="../src/configdialog.ui" line="1511"/>
         <location filename="../src/configdialog.ui" line="1514"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Välj mapp för lösenordsutrymmet</translation>
+        <translation>Välj mapp för lösenordsutrymmet</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="790"/>
@@ -554,7 +554,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="94"/>
         <source>No clipboard</source>
-        <translation type="unfinished">Inget urklipp</translation>
+        <translation>Inget urklipp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
@@ -575,12 +575,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="299"/>
         <source>Another profile already has this name</source>
-        <translation type="unfinished">En annan profil har redan det här namnet</translation>
+        <translation>En annan profil har redan det här namnet</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished">Endast fullständiga nyckelfingeravtryck (40 eller 64 hexadecimala tecken), åtskilda med mellanslag</translation>
+        <translation>Endast fullständiga nyckelfingeravtryck (40 eller 64 hexadecimala tecken), åtskilda med mellanslag</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -638,12 +638,12 @@ Värdet kommer ändå att sparas som angivet.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="800"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished">Kunde inte initialisera profilen %1</translation>
+        <translation>Kunde inte initialisera profilen %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="802"/>
         <source>Profile %1</source>
-        <translation type="unfinished">Profil %1</translation>
+        <translation>Profil %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="813"/>
@@ -670,7 +670,7 @@ Värdet kommer ändå att sparas som angivet.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="58"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished">Inte tillgängligt på Wayland; använd i stället din kompositors fönsterregel för &quot;behåll överst&quot;</translation>
+        <translation>Inte tillgängligt på Wayland; använd i stället din kompositors fönsterregel för &quot;behåll överst&quot;</translation>
     </message>
     <message>
         <source>Failed to create password-store at: %1</source>
@@ -766,62 +766,62 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="452"/>
         <source>Hide passwords until asked</source>
-        <translation type="unfinished">Dölj lösenord tills du ber om att se dem</translation>
+        <translation>Dölj lösenord tills du ber om att se dem</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="453"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished">Visa en ikon i systemfältet</translation>
+        <translation>Visa en ikon i systemfältet</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="454"/>
         <source>Ready</source>
-        <translation type="unfinished">Klart</translation>
+        <translation>Redo</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="455"/>
         <source>Everything else can be changed later in Settings.</source>
-        <translation type="unfinished">Allt annat kan ändras senare under Inställningar.</translation>
+        <translation>Allt annat kan ändras senare under Inställningar.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="462"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation type="unfinished">Visa lösenordsraden som prickar; Visa lösenord avslöjar den</translation>
+        <translation>Visa lösenordsraden som prickar; Visa lösenord avslöjar den</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="473"/>
         <source>Store: %1</source>
-        <translation type="unfinished">Lösenordsutrymme: %1</translation>
+        <translation>Lösenordsutrymme: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="475"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation type="unfinished">Det är redan ett lösenordsutrymme och används som det är.</translation>
+        <translation>Det är redan ett lösenordsutrymme och används som det är.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="477"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
-        <translation type="unfinished">Det kommer att sättas upp för de ikryssade nycklarna och läggas under Git.</translation>
+        <translation>Det kommer att sättas upp för de ikryssade nycklarna och läggas under Git.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="479"/>
         <source>It will be set up for the ticked keys.</source>
-        <translation type="unfinished">Det kommer att sättas upp för de ikryssade nycklarna.</translation>
+        <translation>Det kommer att sättas upp för de ikryssade nycklarna.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="481"/>
         <source>GnuPG: %1</source>
-        <translation type="unfinished">GnuPG: %1</translation>
+        <translation>GnuPG: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="482"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished">Åtgärder körs via pass.</translation>
+        <translation>Åtgärder körs via pass.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="483"/>
         <source>Operations run through gpg and git directly.</source>
-        <translation type="unfinished">Åtgärder körs direkt via gpg och git.</translation>
+        <translation>Åtgärder körs direkt via gpg och git.</translation>
     </message>
 </context>
 <context>
@@ -829,7 +829,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="177"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished">Ingen körbar fil har konfigurerats för det här kommandot</translation>
+        <translation>Ingen körbar fil har konfigurerats för det här kommandot</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="212"/>
@@ -839,7 +839,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="495"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished">%1 kraschade eller dödades</translation>
+        <translation>%1 kraschade eller dödades</translation>
     </message>
 </context>
 <context>
@@ -861,7 +861,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Kopiera till urklipp</translation>
+        <translation>Kopiera till urklipp</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -918,17 +918,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">Dubbelklicka för att byta namn på det här fältet</translation>
+        <translation>Dubbelklicka för att byta namn på det här fältet</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">Byt namn på fält…</translation>
+        <translation>Byt namn på fält…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">Ta bort fält</translation>
+        <translation>Ta bort fält</translation>
     </message>
 </context>
 <context>
@@ -936,44 +936,44 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="44"/>
         <source>Browse</source>
-        <translation type="unfinished">Bläddra</translation>
+        <translation>Bläddra</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="67"/>
         <location filename="../src/firstrunwizard.cpp" line="73"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished">Välkommen till QtPass</translation>
+        <translation>Välkommen till QtPass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="76"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished">QtPass är ett grafiskt gränssnitt för &lt;i&gt;pass&lt;/i&gt;, Unix standardlösenordshanterare: varje lösenord är en fil krypterad med GnuPG, som ligger i en mapp du kan lägga under Git.&lt;br&gt;&lt;br&gt;De följande sidorna hittar GnuPG, ser till att du har en nyckel att kryptera till och väljer mappen där dina lösenord finns. Ingenting skrivs förrän du trycker på Slutför.</translation>
+        <translation>QtPass är ett grafiskt gränssnitt för &lt;i&gt;pass&lt;/i&gt;, Unix standardlösenordshanterare: varje lösenord är en fil krypterad med GnuPG, som ligger i en mapp du kan lägga under Git.&lt;br&gt;&lt;br&gt;De följande sidorna hittar GnuPG, ser till att du har en nyckel att kryptera till och väljer mappen där dina lösenord finns. Ingenting skrivs förrän du trycker på Slutför.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="136"/>
         <source>Error</source>
-        <translation type="unfinished">Fel</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="137"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">Misslyckades med att skapa lösenordsarkiv på: %1</translation>
+        <translation>Misslyckades med att skapa lösenordsarkiv på: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="154"/>
         <location filename="../src/firstrunwizard.cpp" line="172"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Lösenordsutrymme ej initialiserat</translation>
+        <translation>Lösenordsutrymme ej initialiserat</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="161"/>
         <source>Password store</source>
-        <translation type="unfinished">Lösenordsutrymme</translation>
+        <translation>Lösenordsutrymme</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="162"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished">%1 innehåller redan krypterade filer; de omkrypterades inte till de ikryssade nycklarna. Öppna Användare efter starten för att göra det.</translation>
+        <translation>%1 innehåller redan krypterade filer; de omkrypterades inte till de ikryssade nycklarna. Öppna Användare efter starten för att göra det.</translation>
     </message>
 </context>
 <context>
@@ -1029,7 +1029,7 @@ Du kommer inte att kunna ändra användarlista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished">Git pull misslyckades: %1</translation>
+        <translation>Git pull misslyckades: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="184"/>
@@ -1056,7 +1056,7 @@ Du kommer inte att kunna ändra användarlista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished">Misslyckades med att skriva %1: %2</translation>
+        <translation>Misslyckades med att skriva %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="346"/>
@@ -1073,7 +1073,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="503"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished">Misslyckades med att ta bort den gamla signaturen %1.</translation>
+        <translation>Misslyckades med att ta bort den gamla signaturen %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="602"/>
@@ -1081,28 +1081,28 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
         <location filename="../src/imitatepass.cpp" line="628"/>
         <location filename="../src/imitatepass.cpp" line="643"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished">Kvarleva från en tidigare omkryptering</translation>
+        <translation>Kvarleva från en tidigare omkryptering</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="603"/>
         <location filename="../src/imitatepass.cpp" line="619"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
-        <translation type="unfinished">%1 är inte en vanlig fil och återställdes inte. Titta på den och ta bort den, omkryptera sedan igen.</translation>
+        <translation>%1 är inte en vanlig fil och återställdes inte. Titta på den och ta bort den, omkryptera sedan igen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="629"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished">%1 finns bredvid %2. Båda är krypterade kopior av posten; kontrollera vilken du vill behålla och ta bort den andra, omkryptera sedan igen.</translation>
+        <translation>%1 finns bredvid %2. Båda är krypterade kopior av posten; kontrollera vilken du vill behålla och ta bort den andra, omkryptera sedan igen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished">Återställde %1 från säkerhetskopian som en avbruten omkryptering lämnade kvar.</translation>
+        <translation>Återställde %1 från säkerhetskopian som en avbruten omkryptering lämnade kvar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="644"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished">%1 saknas och dess säkerhetskopia %2 kunde inte få tillbaka sitt namn. Byt namn på den för hand, omkryptera sedan igen.</translation>
+        <translation>%1 saknas och dess säkerhetskopia %2 kunde inte få tillbaka sitt namn. Byt namn på den för hand, omkryptera sedan igen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="828"/>
@@ -1119,12 +1119,12 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="834"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished">Misslyckades med att ersätta %1, och originalet kunde inte återställas. Det finns fortfarande kvar som %2; byt namn på det för hand.</translation>
+        <translation>Misslyckades med att ersätta %1, och originalet kunde inte återställas. Det finns fortfarande kvar som %2; byt namn på det för hand.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="845"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished">Kunde inte ta bort säkerhetskopian %1 efter omkrypteringen; den kan tas bort utan risk.</translation>
+        <translation>Kunde inte ta bort säkerhetskopian %1 efter omkrypteringen; den kan tas bort utan risk.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="885"/>
@@ -1150,17 +1150,17 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="958"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished">En omkryptering pågår redan</translation>
+        <translation>En omkryptering pågår redan</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="966"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">Inte en mapp i lösenordsutrymmet</translation>
+        <translation>Inte en mapp i lösenordsutrymmet</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="967"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
-        <translation type="unfinished">%1 är, eller ligger bakom, en symbolisk länk eller knutpunkt. Det den pekar på ingår inte i lösenordsutrymmet och omkrypterades inte.</translation>
+        <translation>%1 är, eller ligger bakom, en symbolisk länk eller knutpunkt. Det den pekar på ingår inte i lösenordsutrymmet och omkrypterades inte.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1059"/>
@@ -1171,22 +1171,22 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1070"/>
         <source>Git pull failed</source>
-        <translation type="unfinished">Git pull misslyckades</translation>
+        <translation>Git pull misslyckades</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1071"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished">Efter pull finns det osammanfogade filer i lösenordsutrymmet. Lös konflikten innan du omkrypterar.</translation>
+        <translation>Efter pull finns det osammanfogade filer i lösenordsutrymmet. Lös konflikten innan du omkrypterar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1076"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished">Git pull misslyckades, omkrypterar lösenordsutrymmet som det är</translation>
+        <translation>Git pull misslyckades, omkrypterar lösenordsutrymmet som det är</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1103"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n post hoppades över: en symbolisk länk, knutpunkt eller specialfil ingår inte i lösenordsutrymmet.</numerusform>
             <numerusform>%n poster hoppades över: en symbolisk länk, knutpunkt eller specialfil ingår inte i lösenordsutrymmet.</numerusform>
         </translation>
@@ -1204,7 +1204,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1167"/>
         <source>... and %n more</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>... och %n till</numerusform>
             <numerusform>... och %n till</numerusform>
         </translation>
@@ -1212,7 +1212,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1170"/>
         <source>%n file(s) could not be re-encrypted:</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n fil kunde inte omkrypteras:</numerusform>
             <numerusform>%n filer kunde inte omkrypteras:</numerusform>
         </translation>
@@ -1220,12 +1220,12 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished">Omkryptering avbruten: %1 av %2 filer kontrollerade, %3 omkrypterade, %4 misslyckades</translation>
+        <translation>Omkryptering avbruten: %1 av %2 filer kontrollerade, %3 omkrypterade, %4 misslyckades</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1477"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished">Ingen körbar git-fil har konfigurerats, hoppar över git</translation>
+        <translation>Ingen körbar git-fil har konfigurerats, hoppar över git</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -1244,7 +1244,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1199"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Ingen push: %n fil kunde inte omkrypteras</numerusform>
             <numerusform>Ingen push: %n filer kunde inte omkrypteras</numerusform>
         </translation>
@@ -1289,7 +1289,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished">Från urklipp</translation>
+        <translation>Från urklipp</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1337,7 +1337,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">%1 ser inte ut som en ASCII-bepansrad GPG-nyckel. Konvertera den med &lt;code&gt;gpg --armor --export&lt;/code&gt; först, eller klistra in det bepansrade blocket via &lt;b&gt;Från urklipp&lt;/b&gt;.</translation>
+        <translation>%1 ser inte ut som en ASCII-bepansrad GPG-nyckel. Konvertera den med &lt;code&gt;gpg --armor --export&lt;/code&gt; först, eller klistra in det bepansrade blocket via &lt;b&gt;Från urklipp&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -1371,7 +1371,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished">Publik nyckel %1 importerad. Kontrollera dess fingeravtryck med ägaren innan du krypterar till den: att importera en nyckel säger ingenting om vem som innehar den.</translation>
+        <translation>Publik nyckel %1 importerad. Kontrollera dess fingeravtryck med ägaren innan du krypterar till den: att importera en nyckel säger ingenting om vem som innehar den.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>
@@ -1383,32 +1383,32 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/firstrunwizard.cpp" line="274"/>
         <source>Generate a new key pair…</source>
-        <translation type="unfinished">Skapa nytt nyckelpar…</translation>
+        <translation>Skapa nytt nyckelpar…</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="276"/>
         <source>Your key</source>
-        <translation type="unfinished">Din nyckel</translation>
+        <translation>Din nyckel</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="277"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation type="unfinished">Lösenord krypteras till GnuPG-nycklar. Kryssa i de nycklar som ska kunna öppna ett nytt lösenordsutrymme; du behöver minst en vars hemliga del finns på den här datorn.</translation>
+        <translation>Lösenord krypteras till GnuPG-nycklar. Kryssa i de nycklar som ska kunna öppna ett nytt lösenordsutrymme; du behöver minst en vars hemliga del finns på den här datorn.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="305"/>
         <source>expired</source>
-        <translation type="unfinished">utgången</translation>
+        <translation>utgången</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="307"/>
         <source>not usable</source>
-        <translation type="unfinished">ej användbar</translation>
+        <translation>ej användbar</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="320"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
-        <translation type="unfinished">GnuPG har ingen hemlig nyckel ännu. Skapa en här, eller importera först din befintliga nyckel med gpg.</translation>
+        <translation>GnuPG har ingen hemlig nyckel ännu. Skapa en här, eller importera först din befintliga nyckel med gpg.</translation>
     </message>
 </context>
 <context>
@@ -1442,12 +1442,12 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
-        <translation type="unfinished">Den som får tag på den privata nyckelfilen kan då läsa varje lösenord utan att bli tillfrågad om något.</translation>
+        <translation>Den som får tag på den privata nyckelfilen kan då läsa varje lösenord utan att bli tillfrågad om något.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
         <source>No passphrase: store the private key unprotected</source>
-        <translation type="unfinished">Ingen lösenfras: spara den privata nyckeln oskyddad</translation>
+        <translation>Ingen lösenfras: spara den privata nyckeln oskyddad</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -1566,12 +1566,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="287"/>
         <source>No password store backend available</source>
-        <translation type="unfinished">Ingen backend för lösenordsutrymme tillgänglig</translation>
+        <translation>Ingen backend för lösenordsutrymme tillgänglig</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="325"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished">Nyckelgenerering misslyckades: %1</translation>
+        <translation>Nyckelgenerering misslyckades: %1</translation>
     </message>
 </context>
 <context>
@@ -1847,92 +1847,92 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Arkiv</translation>
+        <translation>&amp;Arkiv</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished">&amp;Lager</translation>
+        <translation>&amp;Lager</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished">&amp;Inställningar</translation>
+        <translation>I&amp;nställningar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="373"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">&amp;Hjälp</translation>
+        <translation>&amp;Hjälp</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="499"/>
         <source>Show &amp;menu bar</source>
-        <translation type="unfinished">Visa &amp;menyrad</translation>
+        <translation>Visa &amp;menyrad</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="502"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
-        <translation type="unfinished">Dölj eller visa menyraden; Ctrl+M tar tillbaka den</translation>
+        <translation>Dölj eller visa menyraden; Ctrl+M tar tillbaka den</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished">Ctrl+M</translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished">Ctrl+,</translation>
+        <translation>Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="524"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished">&amp;Stäng fönster</translation>
+        <translation>&amp;Stäng fönster</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">Stänger fönstret; med &quot;Dölj vid nerstängning&quot; ligger QtPass kvar i systemfältet</translation>
+        <translation>Stänger fönstret; med &quot;Dölj vid nerstängning&quot; ligger QtPass kvar i systemfältet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="535"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Avsluta</translation>
+        <translation>&amp;Avsluta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished">&amp;FAQ</translation>
+        <translation>&amp;FAQ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="549"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished">Öppna vanliga frågor (FAQ) på qtpass.org</translation>
+        <translation>Öppna vanliga frågor (FAQ) på qtpass.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="552"/>
         <source>F1</source>
-        <translation type="unfinished">F1</translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="557"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished">&amp;Om QtPass</translation>
+        <translation>&amp;Om QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="565"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished">Om &amp;Qt</translation>
+        <translation>Om &amp;Qt</translation>
     </message>
     <message>
         <source>Clear output</source>
@@ -2109,12 +2109,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>Delete link?</source>
-        <translation type="unfinished">Ta bort länk?</translation>
+        <translation>Ta bort länk?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1249"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
-        <translation type="unfinished">%1 är en symbolisk länk eller knutpunkt. Ta bort länken? Det den pekar på lämnas orört.</translation>
+        <translation>%1 är en symbolisk länk eller knutpunkt. Ta bort länken? Det den pekar på lämnas orört.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1633"/>
@@ -2144,7 +2144,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
         <source>New folder</source>
-        <translation type="unfinished">Ny mapp</translation>
+        <translation>Ny mapp</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1704"/>
@@ -2172,12 +2172,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="2026"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">Inte en mapp i lösenordsutrymmet</translation>
+        <translation>Inte en mapp i lösenordsutrymmet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="2027"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 är, eller ligger bakom, en symbolisk länk eller knutpunkt. Det den pekar på ingår inte i lösenordsutrymmet och lämnas orört.</translation>
+        <translation>%1 är, eller ligger bakom, en symbolisk länk eller knutpunkt. Det den pekar på ingår inte i lösenordsutrymmet och lämnas orört.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="2038"/>
@@ -2229,12 +2229,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="899"/>
         <source>About QtPass</source>
-        <translation type="unfinished">Om QtPass</translation>
+        <translation>Om QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="900"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Ett plattformsoberoende grafiskt gränssnitt för &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardlösenordshanteraren för Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Källkod och ärenden&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensierad under &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; eller senare.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Ett plattformsoberoende grafiskt gränssnitt för &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardlösenordshanteraren för Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Källkod och ärenden&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensierad under &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; eller senare.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Rename File To: </source>
@@ -2276,22 +2276,22 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1908"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished">Omkrypterar lösenord...</translation>
+        <translation>Omkrypterar lösenord...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1909"/>
         <source>Cancel</source>
-        <translation type="unfinished">Avbryt</translation>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1917"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished">Avbryter omkryptering</translation>
+        <translation>Avbryter omkryptering</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1933"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished">Omkrypterar lösenord: %1 av %2</translation>
+        <translation>Omkrypterar lösenord: %1 av %2</translation>
     </message>
     <message>
         <source>Export Public Key</source>
@@ -2348,12 +2348,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="191"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished">Den konfigurerade GPG-hemkatalogen %1 finns inte, använder standardnyckelringen</translation>
+        <translation>Den konfigurerade GPG-hemkatalogen %1 finns inte, använder standardnyckelringen</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="199"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished">Den konfigurerade GPG-hemkatalogen %1 finns inte, använder GNUPGHOME %2 från miljön</translation>
+        <translation>Den konfigurerade GPG-hemkatalogen %1 finns inte, använder GNUPGHOME %2 från miljön</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="219"/>
@@ -2428,27 +2428,27 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
         <source>Folder</source>
-        <translation type="unfinished">Mapp</translation>
+        <translation>Mapp</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation type="unfinished">Mappen i lösenordsutrymmet som den nya posten hamnar i</translation>
+        <translation>Mappen i lösenordsutrymmet som den nya posten hamnar i</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">Namn</translation>
+        <translation>Namn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
-        <translation type="unfinished">Postens namn, så som det visas i trädet; ett / lägger den i en undermapp</translation>
+        <translation>Postens namn, så som det visas i trädet; ett / lägger den i en undermapp</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>e.g. github.com or work/vpn</source>
-        <translation type="unfinished">t.ex. github.com eller jobb/vpn</translation>
+        <translation>t.ex. github.com eller jobb/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
@@ -2501,62 +2501,62 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="219"/>
         <source>Template:</source>
-        <translation type="unfinished">Mall:</translation>
+        <translation>Mall:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished">Fältmall från lösenordsutrymmets .templates-fil. Ctrl+T växlar till nästa.</translation>
+        <translation>Fältmall från lösenordsutrymmets .templates-fil. Ctrl+T växlar till nästa.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="77"/>
         <source>New password</source>
-        <translation type="unfinished">Nytt lösenord</translation>
+        <translation>Nytt lösenord</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="98"/>
         <source>Decrypting…</source>
-        <translation type="unfinished">Dekrypterar…</translation>
+        <translation>Dekrypterar…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="217"/>
         <source>Give the entry a name.</source>
-        <translation type="unfinished">Ge posten ett namn.</translation>
+        <translation>Ge posten ett namn.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="221"/>
         <source>A name cannot end in /.</source>
-        <translation type="unfinished">Ett namn kan inte sluta med /.</translation>
+        <translation>Ett namn kan inte sluta med /.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="230"/>
         <source>That name would resolve outside the password store.</source>
-        <translation type="unfinished">Det namnet skulle hamna utanför lösenordsutrymmet.</translation>
+        <translation>Det namnet skulle hamna utanför lösenordsutrymmet.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="234"/>
         <source>An entry called %1 already exists.</source>
-        <translation type="unfinished">En post med namnet %1 finns redan.</translation>
+        <translation>En post med namnet %1 finns redan.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="238"/>
         <source>%1 is a folder.</source>
-        <translation type="unfinished">%1 är en mapp.</translation>
+        <translation>%1 är en mapp.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="267"/>
         <source>Could not create the folder %1.</source>
-        <translation type="unfinished">Kunde inte skapa mappen %1.</translation>
+        <translation>Kunde inte skapa mappen %1.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Remove field</source>
-        <translation type="unfinished">Ta bort fält</translation>
+        <translation>Ta bort fält</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">Ett fält med namnet %1 finns redan.</translation>
+        <translation>Ett fält med namnet %1 finns redan.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="420"/>
@@ -2583,12 +2583,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="25"/>
         <source>Clear</source>
-        <translation type="unfinished">Rensa</translation>
+        <translation>Rensa</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="26"/>
         <source>Clear output</source>
-        <translation type="unfinished">Rensa utdata</translation>
+        <translation>Rensa utdata</translation>
     </message>
 </context>
 <context>
@@ -2596,12 +2596,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="35"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished">Kunde inte skapa %1.</translation>
+        <translation>Kunde inte skapa %1.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="57"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 innehåller redan %n krypterad fil; den omkrypterades inte. Byt till profilen och öppna Användare för att göra det.</numerusform>
             <numerusform>%1 innehåller redan %n krypterade filer; de omkrypterades inte. Byt till profilen och öppna Användare för att göra det.</numerusform>
         </translation>
@@ -2609,24 +2609,24 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="75"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished">Ingen mottagare vald; %1 skrevs inte.</translation>
+        <translation>Ingen mottagare vald; %1 skrevs inte.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="87"/>
         <location filename="../src/profileinit.cpp" line="92"/>
         <source>Could not write %1: %2</source>
-        <translation type="unfinished">Kunde inte skriva %1: %2</translation>
+        <translation>Kunde inte skriva %1: %2</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="104"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished">Kunde inte signera %1 med %2: %3</translation>
+        <translation>Kunde inte signera %1 med %2: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="124"/>
         <location filename="../src/profileinit.cpp" line="153"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished">git %1 misslyckades i %2: %3</translation>
+        <translation>git %1 misslyckades i %2: %3</translation>
     </message>
 </context>
 <context>
@@ -2634,57 +2634,57 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="188"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished">Använd kommandoradsverktyget pass</translation>
+        <translation>Använd kommandoradsverktyget pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="190"/>
         <source>Programs</source>
-        <translation type="unfinished">Program</translation>
+        <translation>Program</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="191"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished">GnuPG sköter krypteringen. pass och Git är valfria; QtPass kan göra deras arbete själv.</translation>
+        <translation>GnuPG sköter krypteringen. pass och Git är valfria; QtPass kan göra deras arbete själv.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="195"/>
         <source>Select executable</source>
-        <translation type="unfinished">Välj körbar fil</translation>
+        <translation>Välj körbar fil</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="196"/>
         <source>All files (*)</source>
-        <translation type="unfinished">Alla filer (*)</translation>
+        <translation>Alla filer (*)</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="198"/>
         <source>GnuPG</source>
-        <translation type="unfinished">GnuPG</translation>
+        <translation>GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="201"/>
         <source>Git</source>
-        <translation type="unfinished">Git</translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
         <source>pass</source>
-        <translation type="unfinished">pass</translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="203"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished">Kör pass-skriptet för varje åtgärd i stället för att anropa gpg och git direkt</translation>
+        <translation>Kör pass-skriptet för varje åtgärd i stället för att anropa gpg och git direkt</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="243"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
-        <translation type="unfinished">GnuPG hittades inte. Installera det (gpg eller gpg2) och ange dess sökväg här.</translation>
+        <translation>GnuPG hittades inte. Installera det (gpg eller gpg2) och ange dess sökväg här.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="246"/>
         <source>%1 is not an executable file.</source>
-        <translation type="unfinished">%1 är inte en körbar fil.</translation>
+        <translation>%1 är inte en körbar fil.</translation>
     </message>
 </context>
 <context>
@@ -2729,7 +2729,7 @@ Fortsätta?</translation>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished">Visa som QR-kod</translation>
+        <translation>Visa som QR-kod</translation>
     </message>
 </context>
 <context>
@@ -2740,13 +2740,13 @@ Fortsätta?</translation>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
         <source>Show password</source>
-        <translation type="unfinished">Visa lösenord</translation>
+        <translation>Visa lösenord</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
         <source>Hide password</source>
-        <translation type="unfinished">Dölj lösenord</translation>
+        <translation>Dölj lösenord</translation>
     </message>
 </context>
 <context>
@@ -2755,7 +2755,7 @@ Fortsätta?</translation>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Kopiera till urklipp</translation>
+        <translation>Kopiera till urklipp</translation>
     </message>
 </context>
 <context>
@@ -2896,27 +2896,27 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="350"/>
         <source>Keep the store under Git</source>
-        <translation type="unfinished">Håll lösenordsutrymmet under Git</translation>
+        <translation>Håll lösenordsutrymmet under Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="352"/>
         <source>Password store</source>
-        <translation type="unfinished">Lösenordsutrymme</translation>
+        <translation>Lösenordsutrymme</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="353"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation type="unfinished">Mappen där dina lösenord finns. Ett befintligt lösenordsutrymme används som det är; en tom eller saknad mapp sätts upp för de nycklar du kryssade i.</translation>
+        <translation>Mappen där dina lösenord finns. Ett befintligt lösenordsutrymme används som det är; en tom eller saknad mapp sätts upp för de nycklar du kryssade i.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="357"/>
         <source>Folder</source>
-        <translation type="unfinished">Mapp</translation>
+        <translation>Mapp</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="359"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Välj mapp för lösenordsutrymmet</translation>
+        <translation>Välj mapp för lösenordsutrymmet</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="384"/>
@@ -2924,7 +2924,7 @@ Fortsätta?</translation>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished">Git har ännu inget namn och ingen e-postadress att göra commit med. Kör
+        <translation>Git har ännu inget namn och ingen e-postadress att göra commit med. Kör
 git config --global user.name &quot;Ditt Namn&quot;
 git config --global user.email du@example.org
 och slå sedan på Git under Inställningar.</translation>
@@ -2932,17 +2932,17 @@ och slå sedan på Git under Inställningar.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="388"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished">Varje ändring blir en commit; en mapp som ännu inte är ett arkiv får ett</translation>
+        <translation>Varje ändring blir en commit; en mapp som ännu inte är ett arkiv får ett</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="412"/>
         <source>Enter a folder.</source>
-        <translation type="unfinished">Ange en mapp.</translation>
+        <translation>Ange en mapp.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="416"/>
         <source>An existing password store with %n entries.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Ett befintligt lösenordsutrymme med %n post.</numerusform>
             <numerusform>Ett befintligt lösenordsutrymme med %n poster.</numerusform>
         </translation>
@@ -2950,22 +2950,22 @@ och slå sedan på Git under Inställningar.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="419"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation type="unfinished">En tom mapp; den kommer att sättas upp som ett lösenordsutrymme.</translation>
+        <translation>En tom mapp; den kommer att sättas upp som ett lösenordsutrymme.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="420"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation type="unfinished">Den här mappen är ännu inte ett lösenordsutrymme; en .gpg-id för de ikryssade nycklarna kommer att skrivas i den.</translation>
+        <translation>Den här mappen är ännu inte ett lösenordsutrymme; en .gpg-id för de ikryssade nycklarna kommer att skrivas i den.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="423"/>
         <source>The folder does not exist yet; it will be created.</source>
-        <translation type="unfinished">Mappen finns inte ännu; den kommer att skapas.</translation>
+        <translation>Mappen finns inte ännu; den kommer att skapas.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="427"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
-        <translation type="unfinished">Gå tillbaka och kryssa i minst en nyckel att kryptera det till.</translation>
+        <translation>Gå tillbaka och kryssa i minst en nyckel att kryptera det till.</translation>
     </message>
 </context>
 <context>
@@ -3027,7 +3027,7 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished">Välj vilka användare som ska kunna dekryptera lösenord som lagras i den här mappen.
+        <translation>Välj vilka användare som ska kunna dekryptera lösenord som lagras i den här mappen.
 Obs: Vid OK omkrypteras alla lösenord i den här mappen och dess undermappar till de valda användarna; det kan ta en stund.
 Fetstilta poster har en hemlig nyckel tillgänglig, välj en av dessa för att själv kunna dekryptera.
 Vanliga poster har en betrodd krypteringsnyckel, välj dessa för att tillåta andra personer att dekryptera.
