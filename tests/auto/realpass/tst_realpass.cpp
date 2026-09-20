@@ -366,14 +366,23 @@ void tst_realpass::linkedEntriesAndFoldersAreRefusedBeforePassRuns() {
   QVERIFY(QFile::remove(plantedId) && QFile::remove(plantedEntry));
   QVERIFY(QDir(m_store).rmdir(QStringLiteral("team")));
   // A linked folder is unlinked here, never handed to pass rm (which would
-  // rm -rf "<link>/" and empty the target); without git nothing runs.
+  // rm -rf "<link>/" and empty the target). With git on, pass is asked
+  // whether git knew the link; the stand-in prints nothing, so it did not,
+  // and no rm --cached or commit follows.
+  AppSettings withGit = m_settings;
+  withGit.useGit = true;
+  pass->init(withGit);
   pass->Remove(QStringLiteral("shared/"), true);
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("git"), QStringLiteral("ls-files"),
+                        QStringLiteral("--"), QStringLiteral("shared")}));
   QTest::qWait(300);
   QVERIFY(!QFileInfo(shared).isSymLink());
   QVERIFY(QFile::exists(
       QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg"))));
-  QVERIFY2(!QFile::exists(m_log), "pass rm must not see a linked folder");
   QCOMPARE(criticalSpy.count(), 11);
+  pass->init(m_settings);
+  QFile::remove(m_log);
   // Unlinking the link itself is a store operation.
   pass->Remove(QStringLiteral("Bank"), false);
   QCOMPARE(waitForCall().args,

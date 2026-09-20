@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "realpass.h"
+#include "executor.h"
 #include "pathvalidator.h"
 #include "qtpasslogging.h"
 #include "util.h"
@@ -102,12 +103,23 @@ void RealPass::Remove(QString file, bool isDir) {
       return;
     }
     if (m_settings.useGit) {
+      // `pass git` exits 0 whatever git did, so ask by output whether git
+      // knew the link, and run the rm blocking so the one commit is the one
+      // PASS_REMOVE that finishes.
       const QString rel = QDir(m_settings.passStore).relativeFilePath(full);
-      executePass(PASS_REMOVE, {"git", "rm", "-q", "--cached",
-                                "--ignore-unmatch", "--", rel});
-      executePass(PASS_REMOVE,
-                  {"git", "commit", "-q", "-m",
-                   "Remove for " + rel + " using QtPass.", "--", rel});
+      // With the store's environment (PASSWORD_STORE_DIR), as executePass.
+      QString known;
+      QString err;
+      Executor::executeBlocking(exec.environment(), m_settings.passExecutable,
+                                {"git", "ls-files", "--", rel}, &known, &err);
+      if (!known.trimmed().isEmpty()) {
+        Executor::executeBlocking(exec.environment(), m_settings.passExecutable,
+                                  {"git", "rm", "-q", "--cached", "--", rel},
+                                  &known, &err);
+        executePass(PASS_REMOVE,
+                    {"git", "commit", "-q", "-m",
+                     "Remove for " + rel + " using QtPass.", "--", rel});
+      }
     }
     return;
   }

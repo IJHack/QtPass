@@ -1554,20 +1554,42 @@ void tst_imitatepass::removeLinkedFolderWithGitUnlinksAndForgets() {
   s.gitExecutable = fakeGit;
   pass.init(s);
   QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
   pass.Remove(QStringLiteral("shared/"), true);
-  QTRY_VERIFY_WITH_TIMEOUT(loggedCalls(gitLog).size() >= 2, 5000);
+  // ls-files (tracked? the fake says yes), rm --cached, commit.
+  QTRY_VERIFY_WITH_TIMEOUT(loggedCalls(gitLog).size() >= 3, 5000);
   QCOMPARE(criticalSpy.count(), 0);
   QVERIFY(!QFileInfo(root.filePath(QStringLiteral("shared"))).isSymLink());
   QVERIFY(QFile::exists(
       QDir(outsideDir.path()).filePath(QStringLiteral("secret.gpg"))));
   const QList<QStringList> calls = loggedCalls(gitLog);
-  QVERIFY2(calls.at(0).contains(QStringLiteral("rm")) &&
-               calls.at(0).contains(QStringLiteral("--cached")) &&
-               calls.at(0).contains(QStringLiteral("--ignore-unmatch")) &&
-               !calls.at(0).last().endsWith(QLatin1Char('/')),
+  QVERIFY2(calls.at(0).contains(QStringLiteral("ls-files")),
            qPrintable(calls.at(0).join(' ')));
-  QVERIFY2(calls.at(1).contains(QStringLiteral("commit")),
+  QVERIFY2(calls.at(1).contains(QStringLiteral("rm")) &&
+               calls.at(1).contains(QStringLiteral("--cached")) &&
+               !calls.at(1).last().endsWith(QLatin1Char('/')),
            qPrintable(calls.at(1).join(' ')));
+  QVERIFY2(calls.at(2).contains(QStringLiteral("commit")),
+           qPrintable(calls.at(2).join(' ')));
+  QTest::qWait(200);
+  QCOMPARE(errorSpy.count(), 0);
+
+  // A link git never knew (synced or planted, not committed): unlinked, and
+  // git is not asked to commit a pathspec that matches nothing.
+  QVERIFY(
+      QFile::link(outsideDir.path(), root.filePath(QStringLiteral("stray"))));
+  QFile::remove(gitLog);
+  const QString refusingGit =
+      writeGitFailingOn(storeDir.path(), gitLog, QStringLiteral("ls-files"));
+  s.gitExecutable = refusingGit;
+  pass.init(s);
+  pass.Remove(QStringLiteral("stray"), true);
+  QTRY_VERIFY_WITH_TIMEOUT(loggedCalls(gitLog).size() >= 1, 5000);
+  QTest::qWait(300);
+  QCOMPARE(loggedCalls(gitLog).size(), 1);
+  QVERIFY(!QFileInfo(root.filePath(QStringLiteral("stray"))).isSymLink());
+  QCOMPARE(criticalSpy.count(), 0);
+  QCOMPARE(errorSpy.count(), 0);
 #endif
 }
 

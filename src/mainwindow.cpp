@@ -1299,9 +1299,9 @@ void MainWindow::cancelOtpRequest() {
 
 void MainWindow::onOperationError() {
   cancelOtpRequest();
-  // The text browser keeps the red reason QtPass::reportError() just put
-  // there; the fields of whatever was shown before are not this entry's.
-  m_displayPanel->clear();
+  // executeWrapperStarted() emptied the panel and the browser when the
+  // operation started (a refusal says so too); what is left to forget is
+  // which entry the panel was about to show.
   m_shownFile.clear();
 }
 

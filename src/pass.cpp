@@ -876,10 +876,12 @@ auto Pass::refuseLinkedPath(const QString &path, bool includeSelf) -> bool {
       tr("%1 is, or lies behind, a symbolic link or junction. What that "
          "points to is not part of the password store and is left alone.")
           .arg(QDir::toNativeSeparators(QDir::cleanPath(full)));
+  // The interface clears the previous entry's panel and text when an
+  // operation starts, arms itself (disabled widgets, a pending OTP or copy
+  // request, an edit dialog at "Decrypting…") and is released by finished
+  // or processErrorExit. A refusal starts nothing, so it says both itself.
+  emit startingExecuteWrapper();
   emit critical(tr("Not part of the store"), why);
-  // The interface arms itself before an operation (disabled widgets, a
-  // pending OTP or copy request, an edit dialog at "Decrypting…") and is
-  // released by finished or processErrorExit; a refusal is the latter.
   emit processErrorExit(1, why);
   return true;
 }

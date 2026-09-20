@@ -58,14 +58,14 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 - A link inside the store is not part of it, at every operation and not
   only in the walks: show, edit, add, move, copy and re-key refuse an entry
   or folder that is, or lies behind, a symbolic link or NTFS junction,
-  before gpg, pass or git is asked anything, with both backends; deleting
+  before `gpg`, `pass` or `git` is asked anything, with both backends; deleting
   a link removes the link and nothing behind it. A linked `.gpg-id` is not
   a folder's recipient list (the parent's applies, a linked root list reads
   as missing), and a linked `.gpg-id` or `.gpg-id.sig` is never handed to
   `gpg --verify`. Re-keying a folder refuses a link planted under its
   `.gpg-id` or `.gpg-id.sig` name (QSaveFile, `pass init` and `gpg --output`
   all write through one), a copy onto a folder refuses a link under the
-  resulting file name, and a linked folder is unlinked by QtPass itself
+  resulting filename, and a linked folder is unlinked by QtPass itself
   rather than handed to `pass rm -rf` or `git rm -rf`, which would empty the
   target or fail on the trailing separator. A refused operation releases the
   interface like any failed one. A shared store's co-writer can make

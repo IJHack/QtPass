@@ -265,9 +265,12 @@ void ImitatePass::Remove(QString file, bool isDir) {
                     tr("Could not remove the link %1.").arg(file));
       return;
     }
-    if (gitReady()) {
-      executeGit(GIT_RM, {"rm", "-q", "--cached", "--ignore-unmatch", "--",
-                          pgit(file)});
+    // Only when git knew it: a commit whose pathspec matches nothing (a link
+    // synced or planted, never committed) exits 1, and that would be
+    // reported as the removal failing. ls-files reads the index, so it still
+    // answers now that the link is gone.
+    if (gitReady() && gitTracks(file)) {
+      executeGit(GIT_RM, {"rm", "-q", "--cached", "--", pgit(file)});
       gitCommit(file, "Remove for " + path + " using QtPass.");
     }
     return;
@@ -455,6 +458,10 @@ auto ImitatePass::gitTracks(const QString &file) -> bool {
  * @return void - No return value.
  */
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
+  // The .gpg-id is written as path + ".gpg-id": without the trailing
+  // separator (the context menu hands over a cleaned path) that would be a
+  // file beside the folder, not the folder's own list.
+  path = Util::normalizeFolderPath(path);
   // Writing a .gpg-id through a linked folder, or through a link planted
   // under the .gpg-id or .gpg-id.sig name (QSaveFile and gpg --output both
   // follow one), would re-key or overwrite what it points to.

@@ -24,6 +24,7 @@
 #include <QFile>
 #include <QFileSystemModel>
 #include <QFrame>
+#include <QLabel>
 #include <QLineEdit>
 #include <QMenu>
 #include <QMenuBar>
@@ -32,6 +33,7 @@
 #include <QProgressDialog>
 #include <QPushButton>
 #include <QRegularExpression>
+#include <QScopeGuard>
 #include <QScopedPointer>
 #include <QScreen>
 #include <QShortcut>
@@ -117,6 +119,7 @@ private Q_SLOTS:
   void otpRequestKeepsThePasswordOffTheClipboard();
   void otpFastPathCopiesTheVisibleCodeWithoutDecrypting();
   void cancelOtpRequestForgetsBothPendingRequests();
+  void refusedShowClearsThePreviousEntryAndReleasesTheInterface();
   void clipboardAutoclearSurvivesShowingAnotherEntry();
   void showTextAsQRCodeReportsMissingQrencode();
   void textBrowserFollowsRuntimePaletteChange();
@@ -638,6 +641,103 @@ void tst_mainwindow::otpFastPathCopiesTheVisibleCodeWithoutDecrypting() {
   clip->setText(QStringLiteral("sentinel"));
   m_window->otpFromFileToClipboard(kOtpEntry, QStringLiteral("shown"));
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+}
+
+/**
+ * @brief Clicking a planted link entry starts no decrypt; the refusal must
+ *        still behave like a failed operation: the previous entry's fields,
+ *        text and OTP code leave the panel, the interface is enabled again
+ *        at once, and onOtp() finds no code to copy for the refused name.
+ */
+void tst_mainwindow::
+    refusedShowClearsThePreviousEntryAndReleasesTheInterface() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a symlink");
+#else
+  AppSettings s = QtPassSettings::load();
+  s.useSelection = false;
+  s.useAutoclear = false;
+  s.useOtp = true;
+  s.hideContent = false;
+  s.displayAsIs = false;
+  s.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
+  QtPassSettings::save(s);
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("sentinel"));
+
+  // A real entry on screen, with an OTP code and a leftover line.
+  QVERIFY(
+      selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("shown")));
+  m_window->passShowHandler(kOtpEntry + QStringLiteral("leftover line\n"),
+                            QStringLiteral("shown"));
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY(browser != nullptr);
+  QVERIFY(browser->toPlainText().contains(QStringLiteral("leftover line")));
+
+  // Then a planted link, clicked. The refusal's message box is dismissed
+  // from a timer so the click can return.
+  QTemporaryDir outside;
+  QVERIFY(outside.isValid());
+  {
+    QFile f(outside.filePath(QStringLiteral("secret.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const QString bank =
+      QDir(m_storeDir.path()).filePath(QStringLiteral("Bank.gpg"));
+  QVERIFY(QFile::link(outside.filePath(QStringLiteral("secret.gpg")), bank));
+  const auto cleanup = qScopeGuard([&bank] { QFile::remove(bank); });
+  auto *tree = m_window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  QModelIndex src;
+  QTRY_VERIFY_WITH_TIMEOUT((src = fs->index(bank)).isValid(), 5000);
+  tree->setCurrentIndex(proxy->mapFromSource(src));
+  int boxes = 0;
+  QTimer poker;
+  poker.setInterval(20);
+  QObject::connect(&poker, &QTimer::timeout, [&boxes]() {
+    if (auto *box =
+            qobject_cast<QMessageBox *>(QApplication::activeModalWidget())) {
+      ++boxes;
+      box->accept();
+    }
+  });
+  poker.start();
+  QMetaObject::invokeMethod(m_window.data(), "on_treeView_clicked",
+                            Qt::DirectConnection,
+                            Q_ARG(QModelIndex, tree->currentIndex()));
+  QTRY_VERIFY_WITH_TIMEOUT(boxes == 1, 5000);
+  poker.stop();
+
+  QCOMPARE(
+      m_window->findChild<QLabel *>(QStringLiteral("passwordName"))->text(),
+      QStringLiteral("Bank"));
+  QVERIFY2(!browser->toPlainText().contains(QStringLiteral("leftover line")),
+           qPrintable(browser->toPlainText()));
+  QVERIFY2(browser->toPlainText().contains(QStringLiteral("link")),
+           "the reason is what the browser shows");
+  QTRY_VERIFY_WITH_TIMEOUT(tree->isEnabled(), 3000);
+  // No code on the panel and nothing pending: onOtp() decrypts, which is
+  // refused again, and copies nothing.
+  // QFileSystemModel re-resolves a fresh symlink node when the directory
+  // changes under it, which can retire the index: select the row again, as a
+  // user with the row highlighted has it.
+  QTRY_VERIFY_WITH_TIMEOUT((src = fs->index(bank)).isValid(), 5000);
+  tree->setCurrentIndex(proxy->mapFromSource(src));
+  poker.start();
+  QSignalSpy critSpy(QtPassSettings::getPass(), &Pass::critical);
+  QSignalSpy errSpy(QtPassSettings::getPass(), &Pass::processErrorExit);
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onOtp",
+                                    Qt::DirectConnection));
+  QCOMPARE(critSpy.count(), 1);
+  QCOMPARE(errSpy.count(), 1);
+  QTRY_VERIFY_WITH_TIMEOUT(boxes == 2, 5000);
+  poker.stop();
+  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+  QTRY_VERIFY_WITH_TIMEOUT(tree->isEnabled(), 3000);
+#endif
 }
 
 /**
