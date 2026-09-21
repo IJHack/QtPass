@@ -79,13 +79,29 @@ private:
   ProfileInit() = default;
   /**
    * @brief Write the enabled recipients to @p gpgIdFile, whole or not at
-   * all; with @p signed the list carries the generation and folder header a
+   * all; with @p signed_ the list carries the generation and folder header a
    * signed store's lists are checked against (GpgIdGeneration).
+   * @param gpgIdFile The `.gpg-id` to write.
+   * @param users The recipients; the enabled ones are written.
+   * @param signed_ Whether the store gets a signing key, i.e. the header.
+   * @param note Receives the reason on failure.
+   * @param written Receives the exact bytes written, if not null.
+   * @return Whether the file was written.
    */
   static auto writeGpgId(const QString &gpgIdFile, const QList<UserInfo> &users,
-                         bool signed_, QString *note) -> bool;
-  static auto signGpgId(const QString &gpgIdFile, const AppSettings &s,
-                        QString *note) -> bool;
+                         bool signed_, QString *note,
+                         QByteArray *written = nullptr) -> bool;
+  /**
+   * @brief Sign the list just written as @p gpgIdFile, over the bytes
+   * @p contents that were written.
+   * @param gpgIdFile The `.gpg-id`; `<gpgIdFile>.sig` is written.
+   * @param contents The bytes written as that file.
+   * @param s The settings naming gpg and the signing key.
+   * @param note Receives the reason on failure.
+   * @return Whether the signature is in place.
+   */
+  static auto signGpgId(const QString &gpgIdFile, const QByteArray &contents,
+                        const AppSettings &s, QString *note) -> bool;
   static auto commitGpgId(const QString &dir, const QString &gpgIdFile,
                           const QString &sigFile, const AppSettings &s,
                           QString *note) -> bool;

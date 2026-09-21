@@ -72,16 +72,29 @@ public:
   auto haveSecretKey() const -> bool;
 
   /**
-   * @brief Write `<file>.sig`, a detached signature by the first key.
+   * @brief Write `<file>.sig`, a detached signature by the first key over
+   * @p contents, the bytes the caller just wrote as @p gpgIdFile.
+   *
+   * gpg signs what it is fed on stdin, not what is under the file's name by
+   * the time it reads it (a co-writer of the store could have swapped the
+   * list between the write and the signing, and the user's key would have
+   * vouched for theirs), and writes the signature into a directory of
+   * QtPass's own; the signature then goes next to the list through
+   * Util::writeFileReplacing(), never by opening the `.sig` name.
    *
    * Only the first key is used: repeated `--default-key` options override
    * each other and only the last would count.
-   * @param gpgIdFile The `.gpg-id` to sign.
-   * @param error Receives gpg's stderr when it fails.
-   * @return true when gpg exited with 0. Does nothing and returns true when no
-   *         key is configured.
+   * @param gpgIdFile The `.gpg-id` the signature is for; `<gpgIdFile>.sig`
+   *        is written.
+   * @param contents The exact bytes of that file, as written. UTF-8 text,
+   *        as a recipient list is; anything else is refused, as verify()
+   *        refuses it.
+   * @param error Receives gpg's stderr, or the reason, when it fails.
+   * @return true when the signature is in place. Does nothing and returns
+   *         true when no key is configured.
    */
-  auto sign(const QString &gpgIdFile, QString *error = nullptr) const -> bool;
+  auto sign(const QString &gpgIdFile, const QByteArray &contents,
+            QString *error = nullptr) const -> bool;
 
   /**
    * @brief Check a detached signature against the given bytes: gpg must

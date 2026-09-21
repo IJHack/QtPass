@@ -4,8 +4,10 @@
 
 #include "executor.h"
 #include "util.h"
+#include <QCoreApplication>
 #include <QFile>
 #include <QRegularExpression>
+#include <QTemporaryDir>
 #include <utility>
 
 #include "qtpasslogging.h"
@@ -56,7 +58,8 @@ auto GpgIdSigner::haveSecretKey() const -> bool {
   return out.contains(QStringLiteral("[GNUPG:] KEY_CONSIDERED ") + key);
 }
 
-auto GpgIdSigner::sign(const QString &gpgIdFile, QString *error) const -> bool {
+auto GpgIdSigner::sign(const QString &gpgIdFile, const QByteArray &contents,
+                       QString *error) const -> bool {
   if (!enabled()) {
     return true;
   }
@@ -65,16 +68,39 @@ auto GpgIdSigner::sign(const QString &gpgIdFile, QString *error) const -> bool {
         << "Multiple signing keys configured; using only the first key:"
         << m_keys.first();
   }
-  const int rc = run({QStringLiteral("--default-key"), m_keys.first(),
-                      QStringLiteral("--yes"), QStringLiteral("--detach-sign"),
-                      QStringLiteral("--"),
-                      Executor::translatePathForWsl(gpgIdFile, m_gpg)},
-                     nullptr, error);
+  // The executor feeds stdin as UTF-8 text (see verify()).
+  const QString text = QString::fromUtf8(contents);
+  if (text.toUtf8() != contents) {
+    if (error)
+      *error = QCoreApplication::translate(
+          "GpgIdSigner", "the recipient list is not valid UTF-8");
+    return false;
+  }
+  QTemporaryDir scratch;
+  if (!scratch.isValid()) {
+    if (error)
+      *error = scratch.errorString();
+    return false;
+  }
+  const QString output = scratch.filePath(QStringLiteral("sig"));
+  const int rc = run(
+      {QStringLiteral("--default-key"), m_keys.first(), QStringLiteral("--yes"),
+       QStringLiteral("--detach-sign"), QStringLiteral("--output"),
+       Executor::translatePathForWsl(output, m_gpg), QStringLiteral("-")},
+      nullptr, error, text);
   if (rc != 0) {
     qCDebug(lcQtPass) << "GPG signing failed with code:" << rc;
     return false;
   }
-  return true;
+  QFile signature(output);
+  if (!signature.open(QIODevice::ReadOnly) || signature.size() <= 0) {
+    if (error)
+      *error =
+          QCoreApplication::translate("GpgIdSigner", "gpg wrote no signature");
+    return false;
+  }
+  return Util::writeFileReplacing(gpgIdFile + QStringLiteral(".sig"),
+                                  signature.readAll(), true, error);
 }
 
 auto GpgIdSigner::validSigFingerprints(const QString &statusOutput)

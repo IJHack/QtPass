@@ -322,6 +322,7 @@ private Q_SLOTS:
   void isUnderLinkChecksEveryFolderOnTheWay();
   void replaceFileRenamesOverALinkAndNeverThroughIt();
   void openRegularFileDoesNotFollowLinksOrOpenSpecialFiles();
+  void writeFileReplacingStagesAndNeverWritesThroughALink();
   void removeTreeDoesNotFollowSymlinks();
   void removeTreeDoesNotFollowJunctions();
 
@@ -2868,8 +2869,8 @@ void tst_util::writeGpgIdFileKeepsTheOldListWhenTheWriteFails() {
     QVERIFY(old.open(QIODevice::WriteOnly));
     old.write("OLDKEY0000000000\n");
   }
-  // A read-only directory: the temporary file QSaveFile needs cannot be
-  // created, which is the same failure a full disk produces at commit().
+  // A read-only directory: the staged temporary the write needs cannot be
+  // created, which is the same failure a full disk produces at the end.
   QVERIFY(QFile::setPermissions(tempDir.path(),
                                 QFile::ReadOwner | QFile::ExeOwner));
   UserInfo user;
@@ -4037,6 +4038,79 @@ void tst_util::openRegularFileDoesNotFollowLinksOrOpenSpecialFiles() {
   QFile pipe;
   QVERIFY2(!Util::openRegularFile(fifo, pipe),
            "a FIFO is refused without blocking on it");
+#endif
+}
+
+/**
+ * @brief writeFileReplacing puts the bytes under the name owner-only through
+ *        a staged sibling and a rename, leaves no temporary, refuses to
+ *        replace without replace, and replaces a link under the name as an
+ *        entry with its target untouched.
+ */
+void tst_util::writeFileReplacingStagesAndNeverWritesThroughALink() {
+  QTemporaryDir dir;
+  QTemporaryDir outside;
+  QVERIFY(dir.isValid() && outside.isValid());
+  const QDir root(dir.path());
+  const QString file = root.filePath(QStringLiteral(".gpg-id"));
+  QString error;
+  QVERIFY2(Util::writeFileReplacing(file, "ALICE\n", false, &error),
+           qPrintable(error));
+  {
+    QFile f(file);
+    QVERIFY(f.open(QIODevice::ReadOnly));
+    QCOMPARE(f.readAll(), QByteArrayLiteral("ALICE\n"));
+  }
+#ifndef Q_OS_WIN
+  QCOMPARE(QFileInfo(file).permissions() &
+               (QFile::ReadGroup | QFile::WriteGroup | QFile::ReadOther |
+                QFile::WriteOther),
+           QFile::Permissions());
+#endif
+  QVERIFY(!Util::writeFileReplacing(file, "BOB\n", false, &error));
+  QVERIFY2(error.contains(QStringLiteral("already exists")), qPrintable(error));
+  QVERIFY(Util::writeFileReplacing(file, "BOB\n", true, &error));
+  {
+    QFile f(file);
+    QVERIFY(f.open(QIODevice::ReadOnly));
+    QCOMPARE(f.readAll(), QByteArrayLiteral("BOB\n"));
+  }
+  QCOMPARE(root.entryList({QStringLiteral(".qtpass-*.tmp")},
+                          QDir::Files | QDir::Hidden)
+               .size(),
+           0);
+#ifndef Q_OS_WIN
+  const QString victim = QDir(outside.path()).filePath(QStringLiteral("v"));
+  QVERIFY(Util::writeFileReplacing(victim, "precious", false));
+  const QString linked = root.filePath(QStringLiteral(".gpg-id.sig"));
+  QVERIFY(QFile::link(victim, linked));
+  QVERIFY(Util::writeFileReplacing(linked, "sig", true, &error));
+  QVERIFY(!QFileInfo(linked).isSymLink());
+  QFile v(victim);
+  QVERIFY(v.open(QIODevice::ReadOnly));
+  QCOMPARE(v.readAll(), QByteArrayLiteral("precious"));
+#else
+  // A junction under the name: MoveFileEx does not replace a directory, so
+  // the write fails closed, the junction stays and its target is untouched.
+  const QString target = QDir(outside.path()).filePath(QStringLiteral("t"));
+  QVERIFY(QDir().mkpath(target));
+  const QString junction = root.filePath(QStringLiteral(".gpg-id.sig"));
+  QProcess cmd;
+  cmd.start(QStringLiteral("cmd.exe"),
+            {QStringLiteral("/c"), QStringLiteral("mklink"),
+             QStringLiteral("/J"), QDir::toNativeSeparators(junction),
+             QDir::toNativeSeparators(target)});
+  if (!cmd.waitForFinished(10000) || cmd.exitCode() != 0) {
+    if (qEnvironmentVariableIsSet("GITHUB_ACTIONS")) {
+      QFAIL("could not create a junction on the CI runner");
+    }
+    QSKIP("could not create a junction here");
+  }
+  QVERIFY(!Util::writeFileReplacing(junction, "sig", true, &error));
+  QVERIFY2(error.contains(QStringLiteral("replace")), qPrintable(error));
+  QVERIFY(QFileInfo(junction).isJunction());
+  QVERIFY(QDir(target).entryList(QDir::Files | QDir::Hidden).isEmpty());
+  QVERIFY(QDir().rmdir(junction));
 #endif
 }
 
