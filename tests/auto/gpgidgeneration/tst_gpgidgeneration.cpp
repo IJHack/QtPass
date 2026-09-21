@@ -315,6 +315,24 @@ void tst_gpgidgeneration::reserveNextNeverExceedsWhatParseAccepts() {
   QVERIFY2(why.contains(QStringLiteral("highest")), qPrintable(why));
   QCOMPARE(GpgIdGeneration::remembered(file),
            std::optional<qint64>(GpgIdGeneration::kMaxGeneration));
+  // A rollback or an unbound list against a record at the ceiling does not
+  // promise a save that reserveNext() would refuse: the record goes first.
+  why.clear();
+  QCOMPARE(GpgIdGeneration::accept(
+               file,
+               GpgIdGeneration::withHeader(5, QStringLiteral("."), "ALICE\n"),
+               dir.path(), &why),
+           GpgIdGeneration::Verdict::Rollback);
+  QVERIFY2(why.contains(QStringLiteral("highest")) &&
+               why.contains(GpgIdGeneration::recordFile()) &&
+               !why.contains(QStringLiteral("1000000000000000000")),
+           qPrintable(why));
+  why.clear();
+  QCOMPARE(GpgIdGeneration::accept(file, "ALICE\n", dir.path(), &why),
+           GpgIdGeneration::Verdict::Unbound);
+  QVERIFY2(why.contains(QStringLiteral("highest")) &&
+               !why.contains(QStringLiteral("1000000000000000000")),
+           qPrintable(why));
 }
 
 /// The record is on disk when a reservation returns, in a file of its own.
