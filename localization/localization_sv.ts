@@ -1045,7 +1045,7 @@ e-mail</translation>
     <message>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0. %3</source>
         <translation>Den signerade mottagarlistan %1 har ingen generationsrad, medan generation %2 tidigare har accepterats här. pass skriver ingen generationsrad (inte heller genom QtPass pass-backend), och det gjorde inte QtPass före 2.0 heller. %3</translation>
-=    </message>
+    </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="319"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
