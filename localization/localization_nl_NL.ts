@@ -1013,32 +1013,32 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="162"/>
         <source>The list carries more than one generation line.</source>
-        <translation type="unfinished">De lijst bevat meer dan één generatieregel.</translation>
+        <translation>De lijst bevat meer dan één generatieregel.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="163"/>
         <source>The generation line is malformed: %1</source>
-        <translation type="unfinished">De generatieregel is ongeldig: %1</translation>
+        <translation>De generatieregel is ongeldig: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="174"/>
         <source>The list carries more than one folder line.</source>
-        <translation type="unfinished">De lijst bevat meer dan één mapregel.</translation>
+        <translation>De lijst bevat meer dan één mapregel.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="175"/>
         <source>The folder line is malformed: %1</source>
-        <translation type="unfinished">De mapregel is ongeldig: %1</translation>
+        <translation>De mapregel is ongeldig: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="184"/>
         <source>The header line is malformed: %1</source>
-        <translation type="unfinished">De kopregel is ongeldig: %1</translation>
+        <translation>De kopregel is ongeldig: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="189"/>
         <source>The list carries a generation line but no folder line.</source>
-        <translation type="unfinished">De lijst bevat wel een generatieregel, maar geen mapregel.</translation>
+        <translation>De lijst bevat wel een generatieregel, maar geen mapregel.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="253"/>
@@ -1048,7 +1048,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="263"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
-        <translation type="unfinished">De ondertekende ontvangerslijst %1 is geschreven voor de map &quot;%2&quot; van de opslag, niet voor &quot;%3&quot;, en wordt niet gebruikt. Mogelijk is deze door iemand anders hierheen gekopieerd; als de map in plaats daarvan is verplaatst of hernoemd, opent een houder van de ondertekeningssleutel Gebruikers op die map en slaat de ontvangers op, waarmee de lijst wordt gekoppeld aan de plek waar deze nu staat.</translation>
+        <translation>De ondertekende ontvangerslijst %1 is geschreven voor de map &quot;%2&quot; van de opslag, niet voor &quot;%3&quot;, en wordt niet gebruikt. Mogelijk is deze door iemand anders hierheen gekopieerd; als de map in plaats daarvan is verplaatst of hernoemd, opent een houder van de ondertekeningssleutel Gebruikers op die map en slaat de ontvangers op, waarmee de lijst wordt gekoppeld aan de plek waar deze nu staat.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="288"/>
@@ -1072,16 +1072,16 @@ e-mail</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
-        <translation type="obsolete">Een houder van de ondertekeningssleutel komt verder door Gebruikers te openen en de ontvangers op te slaan, waarmee generatie %1 wordt geschreven: de daar voorgeselecteerde ontvangers zijn die van deze lijst, dus verwijder eerst iedereen die geen toegang meer hoort te hebben. Als je %2 verwijdert, vergeet dit apparaat wat het eerder heeft geaccepteerd.</translation>
+        <translation>Een houder van de ondertekeningssleutel komt verder door Gebruikers te openen en de ontvangers op te slaan, waarmee generatie %1 wordt geschreven: de daar voorgeselecteerde ontvangers zijn die van deze lijst, dus verwijder eerst iedereen die geen toegang meer hoort te hebben. Als je %2 verwijdert, vergeet dit apparaat wat het eerder heeft geaccepteerd.</translation>
     </message>
     <message>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0. %3</source>
-        <translation type="obsolete">De ondertekende ontvangerslijst %1 bevat geen generatieregel, terwijl hier eerder generatie %2 is geaccepteerd. pass schrijft geen generatieregel (ook niet via de pass-backend van QtPass), en QtPass vóór 2.0 deed dat ook niet. %3</translation>
+        <translation>De ondertekende ontvangerslijst %1 bevat geen generatieregel, terwijl hier eerder generatie %2 is geaccepteerd. pass schrijft geen generatieregel (ook niet via de pass-backend van QtPass), en QtPass vóór 2.0 deed dat ook niet. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="319"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
-        <translation type="unfinished">De ondertekende ontvangerslijst %1 is generatie %2, ouder dan generatie %3, de laatste die QtPass hier heeft geaccepteerd. Mogelijk is deze door iemand anders teruggezet. %4</translation>
+        <translation>De ondertekende ontvangerslijst %1 is generatie %2, ouder dan generatie %3, de laatste die QtPass hier heeft geaccepteerd. Mogelijk is deze door iemand anders teruggezet. %4</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="325"/>
@@ -1091,7 +1091,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="350"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
-        <translation type="unfinished">De ontvangerslijst %1 heeft generatie %2 bereikt, de hoogste die er is; de lijst kan niet worden geschreven.</translation>
+        <translation>De ontvangerslijst %1 heeft generatie %2 bereikt, de hoogste die er is; de lijst kan niet worden geschreven.</translation>
     </message>
 </context>
 <context>
@@ -1170,7 +1170,7 @@ Je kan de gebruikerslijst niet aanpassen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store.</source>
-        <translation type="unfinished">%1 bevindt zich niet in de wachtwoordopslag.</translation>
+        <translation>%1 bevindt zich niet in de wachtwoordopslag.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="366"/>
