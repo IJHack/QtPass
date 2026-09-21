@@ -61,12 +61,15 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   appended, the signature left as it was) became a genuinely signed list
   with one click. A list that does not verify preselects nothing and the
   dialog says why; so does one that verifies but was written for another
-  folder, is malformed, or cannot be judged for want of a record; a verified
-  list that the generation record calls older is the one exception, it is
-  authentic, preselected with the reason shown for review; without a signing
-  key the list is taken as it is, as before. On the way, asking for a
-  folder's own recipient list with the separator the tree appends had
-  answered with the parent's since #1857; it answers with the folder's again [#1842](https://github.com/IJHack/QtPass/issues/1842)
+  folder, is malformed, or cannot be judged for want of a record, and so does
+  a headerless one (`pass`, or QtPass before 2.0, wrote it) once a generation
+  was accepted for the folder, since without a folder line it may be any
+  folder's old pair; a verified list bound to the folder that the generation
+  record calls older is the one exception, it is authentic, preselected with
+  the reason shown for review; without a signing key the list is taken as it
+  is, as before. On the way, asking for a folder's own recipient list with
+  the separator the tree appends had answered with the parent's since #1857;
+  it answers with the folder's again [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - Rollback detection for signed `.gpg-id` files: a signature proved the
   recipient list authentic, not current and not placed, so whoever can write
   to a shared store could put back an older, genuinely signed list that

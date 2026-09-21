@@ -67,6 +67,7 @@ private slots:
   void withSigningATamperedListPreselectsNothing();
   void withSigningAnOlderVerifiedListIsPreselectedWithAWarning();
   void withSigningAListForAnotherFolderPreselectsNothing();
+  void withSigningAHeaderlessListBelowTheRecordPreselectsNothing();
   void folderOutsideTheStoreDoesNotInheritItsRecipients();
   void acceptRunsInitByDefault();
   void acceptWithoutSelectionDoesNothing();
@@ -357,6 +358,59 @@ void tst_usersdialog::withSigningAListForAnotherFolderPreselectsNothing() {
   QVERIFY(banner != nullptr);
   QVERIFY2(
       banner->text().contains(QStringLiteral("\"team\"")) &&
+          banner->text().contains(QStringLiteral("Nothing is preselected")),
+      qPrintable(banner->text()));
+}
+
+/**
+ * @brief A signed list without a header (pass, or QtPass before 2.0, wrote
+ *        it) in a folder where this device has accepted a generation is not
+ *        the authentic rollback the dialog recovers: with no folder line it
+ *        may be any folder's old pair, planted from history. Nothing is
+ *        preselected and the banner says so.
+ */
+void tst_usersdialog::
+    withSigningAHeaderlessListBelowTheRecordPreselectsNothing() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString gpgIdFile =
+      QDir(store.path()).filePath(QStringLiteral(".gpg-id"));
+  const QString signedCopy =
+      QDir(m_dir.path()).filePath(QStringLiteral("signed-bytes-headerless"));
+  const QByteArray headerless = "31850CF72D9CDDE9\n693A0AF3FA364E76\n";
+  for (const QString &path : {gpgIdFile, signedCopy}) {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write(headerless);
+  }
+  {
+    QFile sig(gpgIdFile + QStringLiteral(".sig"));
+    QVERIFY(sig.open(QIODevice::WriteOnly));
+    sig.write("sig");
+  }
+  // This device has accepted generation 2 of this folder's list before.
+  QCOMPARE(
+      GpgIdGeneration::accept(gpgIdFile,
+                              GpgIdGeneration::withHeader(
+                                  2, QStringLiteral("."), "31850CF72D9CDDE9\n"),
+                              store.path()),
+      GpgIdGeneration::Verdict::Accepted);
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeVerifyingGpg(signedCopy);
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  s.passSigningKey = kSigner;
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QVERIFY2(checkedNames(list).isEmpty(),
+           qPrintable("preselected: " + checkedNames(list).join(", ")));
+  auto *banner = dialog.findChild<QLabel *>(QStringLiteral("recipientWarning"));
+  QVERIFY(banner != nullptr);
+  QVERIFY2(
+      banner->text().contains(QStringLiteral("no generation line")) &&
+          banner->text().contains(QStringLiteral("generation 2")) &&
           banner->text().contains(QStringLiteral("Nothing is preselected")),
       qPrintable(banner->text()));
 }

@@ -278,34 +278,41 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
     return Verdict::RecordUnavailable;
   }
   const qint64 generation = header->generation;
+  if (generation < *last && !header->folder) {
+    // Below what was accepted here and with no folder line to say it was
+    // written here at all: an authentic headerless pair from any folder's
+    // history would pass as this folder's rollback otherwise.
+    if (error)
+      *error = tr("The signed recipient list %1 carries no generation line, "
+                  "while generation %2 was accepted here before. pass writes "
+                  "no generation line (also through QtPass's pass backend), "
+                  "nor did QtPass before 2.0; without one the list may also "
+                  "have been written for another folder of the store and "
+                  "copied here. A holder of the signing key gets through by "
+                  "opening Users, selecting the recipients afresh and saving, "
+                  "which writes generation %3. Removing %4 forgets what this "
+                  "device accepted before.")
+                   .arg(gpgIdFile)
+                   .arg(*last)
+                   .arg(*last + 1)
+                   .arg(record->fileName());
+    return Verdict::Unbound;
+  }
   if (generation < *last) {
-    if (error) {
-      const QString wayOut =
-          tr("A holder of the signing key gets through by opening Users and "
-             "saving the recipients, which writes generation %1: the "
-             "preselected recipients there are this list's, so remove "
-             "anyone who should no longer have access first. Removing %2 "
-             "forgets what this device accepted before.")
-              .arg(*last + 1)
-              .arg(record->fileName());
-      if (generation == 0) {
-        *error = tr("The signed recipient list %1 carries no generation "
-                    "line, while generation %2 was accepted here before. "
-                    "pass writes no generation line (also through QtPass's "
-                    "pass backend), nor did QtPass before 2.0. %3")
-                     .arg(gpgIdFile)
-                     .arg(*last)
-                     .arg(wayOut);
-      } else {
-        *error = tr("The signed recipient list %1 is generation %2, older "
-                    "than generation %3, the last one QtPass accepted here. "
-                    "It may have been put back by someone else. %4")
-                     .arg(gpgIdFile)
-                     .arg(generation)
-                     .arg(*last)
-                     .arg(wayOut);
-      }
-    }
+    if (error)
+      *error = tr("The signed recipient list %1 is generation %2, older than "
+                  "generation %3, the last one QtPass accepted here. It may "
+                  "have been put back by someone else. A holder of the "
+                  "signing key gets through by opening Users and saving the "
+                  "recipients, which writes generation %4: the preselected "
+                  "recipients there are this list's, so remove anyone who "
+                  "should no longer have access first. Removing %5 forgets "
+                  "what this device accepted before.")
+                   .arg(gpgIdFile)
+                   .arg(generation)
+                   .arg(*last)
+                   .arg(*last + 1)
+                   .arg(record->fileName());
     return Verdict::Rollback;
   }
   if (generation > *last &&

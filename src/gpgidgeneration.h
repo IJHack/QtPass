@@ -113,11 +113,18 @@ public:
       -> std::optional<qint64>;
 
   /// The outcome of accept(). Only Accepted means the list may be used;
-  /// the others say why not, and Rollback alone is an authentic list.
+  /// the others say why not, and Rollback alone is an authentic list of
+  /// this folder.
   enum class Verdict {
+    /// Folder, generation and record all agree; remembered.
     Accepted,
-    /// Authentic, but older than a generation this device accepted.
+    /// Authentic and bound to this folder, but older than a generation this
+    /// device accepted.
     Rollback,
+    /// Older than a generation this device accepted and without a folder
+    /// line: authentic, but written for who knows which folder (`pass`, or
+    /// QtPass before 2.0, wrote it), so not this folder's to recover.
+    Unbound,
     /// Written for another folder of the store.
     WrongFolder,
     /// A header line malformed or duplicated.

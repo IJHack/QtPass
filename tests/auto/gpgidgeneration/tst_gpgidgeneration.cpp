@@ -179,8 +179,9 @@ void tst_gpgidgeneration::keyIsTheCanonicalPathHashed() {
  *        generation is accepted and remembered, an equal one is accepted, a
  *        lower one is refused with a reason that names both numbers and
  *        warns about the preselected recipients, a headerless one is
- *        refused with its own explanation, a malformed one is refused, and
- *        a reservation climbs above the refused one.
+ *        refused as unbound with its own explanation while one with only a
+ *        folder line is an ordinary rollback, a malformed one is refused,
+ *        and a reservation climbs above the refused one.
  */
 void tst_gpgidgeneration::acceptRefusesARollbackAndRemembersTheHighest() {
   QTemporaryDir dir;
@@ -212,12 +213,21 @@ void tst_gpgidgeneration::acceptRefusesARollbackAndRemembersTheHighest() {
                why.contains(GpgIdGeneration::recordFile()),
            qPrintable(why));
   why.clear();
-  QVERIFY2(GpgIdGeneration::accept(file, "ALICE\nBOB\n", store, &why) !=
-               GpgIdGeneration::Verdict::Accepted,
-           "a list from before generations existed, or from pass, is below");
+  QVERIFY2(GpgIdGeneration::accept(file, "ALICE\nBOB\n", store, &why) ==
+               GpgIdGeneration::Verdict::Unbound,
+           "a list from before generations existed, or from pass, is below, "
+           "and with no folder line it is nobody's rollback to recover");
   QVERIFY2(why.contains(QStringLiteral("no generation line")) &&
-               why.contains(QStringLiteral("pass")),
+               why.contains(QStringLiteral("pass")) &&
+               why.contains(QStringLiteral("another folder")) &&
+               why.contains(QStringLiteral("afresh")) &&
+               !why.contains(QStringLiteral("preselected")),
            qPrintable(why));
+  why.clear();
+  QVERIFY2(GpgIdGeneration::accept(file, "# QtPass-GpgId-Folder: .\nALICE\n",
+                                   store,
+                                   &why) == GpgIdGeneration::Verdict::Rollback,
+           "a folder line alone binds the list here: an ordinary rollback");
   QVERIFY(GpgIdGeneration::accept(
               file,
               "# QtPass-GpgId-Generation: x\n# QtPass-GpgId-Folder: .\nALICE\n",

@@ -245,10 +245,12 @@ public:
       Unsigned,
       /// Signature and generation and folder all accepted.
       Verified,
-      /// Signed and authentic, but older than a generation this device has
-      /// accepted: preselected for the recovery, flagged for review.
+      /// Signed, authentic and bound to this folder, but older than a
+      /// generation this device has accepted: preselected for the recovery,
+      /// flagged for review.
       VerifiedRollback,
-      /// Not to be used: signature invalid, written for another folder,
+      /// Not to be used: signature invalid, written for another folder or
+      /// for no folder in particular while a generation was accepted here,
       /// malformed header, or no freshness record to judge by.
       Rejected,
     };

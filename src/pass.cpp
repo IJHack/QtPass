@@ -977,17 +977,18 @@ auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
     result.recipients = parseRecipients(contents, gpgIdPath);
     break;
   case GpgIdGeneration::Verdict::Rollback:
-    // Authentic, only older: the recovery goes through this dialog, so it
-    // is preselected, with the reason in view.
+    // Authentic and this folder's, only older: the recovery goes through
+    // this dialog, so it is preselected, with the reason in view.
     result.state = RecipientsForEditing::State::VerifiedRollback;
     result.recipients = parseRecipients(contents, gpgIdPath);
     result.warning = why;
     break;
+  case GpgIdGeneration::Verdict::Unbound:
   case GpgIdGeneration::Verdict::WrongFolder:
   case GpgIdGeneration::Verdict::Malformed:
   case GpgIdGeneration::Verdict::RecordUnavailable:
-    // Signed, but not this folder's list, not a list to trust, or nothing to
-    // judge it by: preselecting it would sign it in.
+    // Signed, but not shown to be this folder's list, not a list to trust,
+    // or nothing to judge it by: preselecting it would sign it in.
     result.state = RecipientsForEditing::State::Rejected;
     result.warning =
         tr("%1 Nothing is preselected: saving would sign whatever is in it. "
