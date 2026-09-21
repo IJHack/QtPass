@@ -455,11 +455,11 @@ header ul a:active {
 
 /* homepage hero: wordmark, proposition, download action and a product shot */
 .hero {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: center;
-  text-align: center;
-  padding: clamp(2rem, 4vw, 3rem);
+  padding: clamp(1.4rem, 2.5vw, 2.25rem);
   margin-block-end: 1.5rem;
   background:
     linear-gradient(135deg, var(--tint), transparent 55%),
@@ -467,34 +467,34 @@ header ul a:active {
   border: 1px solid var(--rule);
   border-radius: 12px;
 }
+.hero-text {
+  min-width: 0;
+}
 .hero .mark {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   display: block;
-  margin-block-end: 1.1rem;
+  margin-block-end: 0.9rem;
 }
 .hero h2 {
-  max-width: 22ch;
-  margin-inline: auto;
-  font-size: clamp(1.75rem, 1.35rem + 1.4vw, 2.6rem);
+  max-width: 20ch;
+  font-size: clamp(1.6rem, 1.25rem + 1vw, 2.15rem);
   margin-block-end: 0.45em;
 }
 .hero .lede {
-  max-width: 52ch;
-  margin-inline: auto;
-  font-size: clamp(1.08rem, 1rem + 0.3vw, 1.25rem);
-  margin-block-end: 1.5rem;
+  max-width: 46ch;
+  font-size: clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem);
+  margin-block-end: 1.3rem;
 }
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 0.75rem;
   margin-block-end: 0;
 }
 .hero-shot {
-  width: min(100%, 54rem);
-  margin: clamp(1.75rem, 4vw, 3rem) 0 0;
+  margin: 0;
+  min-width: 0;
 }
 .hero-shot img {
   display: block;
@@ -816,6 +816,9 @@ header ul a:active {
     max-width: none;
     border-block: 1px solid var(--rule);
     padding-block: 1.5rem;
+  }
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
   }
   .screenshots {
     max-width: 32rem;
