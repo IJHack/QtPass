@@ -1115,7 +1115,8 @@ void tst_mainwindow::toolsAreaBarDropsStaleStylePaletteAfterThemeSwitch() {
   staleDark.setColor(QPalette::Window, QColor(0x29, 0x2c, 0x30));
   widget->setProperty("breeze_has_toolsarea_palette", true);
   widget->setPalette(staleDark);
-  QVERIFY(widget->testAttribute(Qt::WA_SetPalette));
+  QVERIFY2(widget->testAttribute(Qt::WA_SetPalette),
+           "the stale stamp must have taken before the reset is judged");
 
   QTRY_VERIFY2(!widget->testAttribute(Qt::WA_SetPalette),
                "stale dark bar palette must be dropped on a light app");
@@ -1185,7 +1186,8 @@ void tst_mainwindow::toolsAreaBarKeepsAnyHeaderBeforeAThemeSwitch() {
   QVERIFY2(widget->testAttribute(Qt::WA_SetPalette),
            "no theme switch happened, so the header is the scheme's");
   QCOMPARE(widget->palette().color(QPalette::Window), QColor(0x31, 0x36, 0x3b));
-  QVERIFY(!widget->autoFillBackground());
+  QVERIFY2(!widget->autoFillBackground(),
+           "a kept header is painted by the style, not by the bar itself");
 }
 
 /**
