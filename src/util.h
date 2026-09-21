@@ -220,6 +220,23 @@ public:
    */
   static auto removeTree(const QString &dir) -> bool;
 
+  /**
+   * @brief Give the file at @p from the name @p to, atomically and without
+   * following anything: the operating system's rename (`rename(2)`,
+   * `MoveFileEx`), never QFile::rename(), whose fallback when the plain
+   * rename fails is to copy by opening @p to for writing, through whatever
+   * link sits under that name by then. With @p replace, whatever entry is
+   * at @p to (a file, a link) is replaced as an entry; without it, the
+   * call fails when anything is there (`link(2)` and unlink on POSIX, where
+   * a no-replace rename is not portable).
+   * @param from An existing regular file, on the same filesystem as @p to.
+   * @param to The name to give it.
+   * @param replace Whether an existing entry at @p to may go.
+   * @return Whether @p to is now that file.
+   */
+  static auto replaceFile(const QString &from, const QString &to, bool replace)
+      -> bool;
+
 private:
   static void initialiseEnvironment();
   static QProcessEnvironment _env;

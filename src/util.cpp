@@ -25,7 +25,9 @@
 #ifdef Q_OS_WIN
 #include <windows.h>
 #else
+#include <cstdio>
 #include <sys/time.h>
+#include <unistd.h>
 #endif
 
 #include "qtpasslogging.h"
@@ -549,6 +551,31 @@ auto Util::isUnderLink(const QString &path, const QString &storeRoot,
     }
   }
   return false;
+}
+
+auto Util::replaceFile(const QString &from, const QString &to, bool replace)
+    -> bool {
+#ifdef Q_OS_WIN
+  const std::wstring source =
+      QDir::toNativeSeparators(QFileInfo(from).absoluteFilePath())
+          .toStdWString();
+  const std::wstring target =
+      QDir::toNativeSeparators(QFileInfo(to).absoluteFilePath()).toStdWString();
+  return MoveFileExW(source.c_str(), target.c_str(),
+                     replace ? MOVEFILE_REPLACE_EXISTING : 0) != 0;
+#else
+  const QByteArray source = QFile::encodeName(from);
+  const QByteArray target = QFile::encodeName(to);
+  if (replace) {
+    return ::rename(source.constData(), target.constData()) == 0;
+  }
+  // link() makes no second name where one exists and follows nothing.
+  if (::link(source.constData(), target.constData()) != 0) {
+    return false;
+  }
+  ::unlink(source.constData());
+  return true;
+#endif
 }
 
 auto Util::removeTree(const QString &dir) -> bool {

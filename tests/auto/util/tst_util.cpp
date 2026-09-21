@@ -320,6 +320,7 @@ private Q_SLOTS:
   void directoriesUnderListsRealVisibleFoldersOnly();
   void isLinkedFolderSeesThroughATrailingSeparator();
   void isUnderLinkChecksEveryFolderOnTheWay();
+  void replaceFileRenamesOverALinkAndNeverThroughIt();
   void removeTreeDoesNotFollowSymlinks();
   void removeTreeDoesNotFollowJunctions();
 
@@ -3891,6 +3892,76 @@ void tst_util::isUnderLinkChecksEveryFolderOnTheWay() {
   QVERIFY(
       !Util::isUnderLink(root.filePath(QStringLiteral("REAL/x.gpg")), store));
   QVERIFY(QDir().rmdir(link));
+#endif
+}
+
+/**
+ * @brief replaceFile gives a file a new name with the operating system's
+ *        rename: an entry under the target name goes, a link included, and
+ *        what the link pointed at is untouched (QFile::rename would fall
+ *        back to copying through it); without replace, anything under the
+ *        name fails the call and stays.
+ */
+void tst_util::replaceFileRenamesOverALinkAndNeverThroughIt() {
+  QTemporaryDir dir;
+  QTemporaryDir outside;
+  QVERIFY(dir.isValid() && outside.isValid());
+  const QDir root(dir.path());
+  const auto write = [](const QString &path, const QByteArray &bytes) {
+    QFile f(path);
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Truncate))
+      return false;
+    return f.write(bytes) == bytes.size();
+  };
+  const auto read = [](const QString &path) {
+    QFile f(path);
+    return f.open(QIODevice::ReadOnly) ? f.readAll() : QByteArray("<none>");
+  };
+  const QString victim = QDir(outside.path()).filePath(QStringLiteral("v"));
+  QVERIFY(write(victim, "precious"));
+
+  // Replace a regular file.
+  QVERIFY(write(root.filePath(QStringLiteral("a")), "new"));
+  QVERIFY(write(root.filePath(QStringLiteral("b")), "old"));
+  QVERIFY(Util::replaceFile(root.filePath(QStringLiteral("a")),
+                            root.filePath(QStringLiteral("b")), true));
+  QCOMPARE(read(root.filePath(QStringLiteral("b"))), QByteArray("new"));
+  QVERIFY(!QFileInfo::exists(root.filePath(QStringLiteral("a"))));
+
+  // No replace: the existing entry stays, the source stays.
+  QVERIFY(write(root.filePath(QStringLiteral("c")), "newer"));
+  QVERIFY(!Util::replaceFile(root.filePath(QStringLiteral("c")),
+                             root.filePath(QStringLiteral("b")), false));
+  QCOMPARE(read(root.filePath(QStringLiteral("b"))), QByteArray("new"));
+  QCOMPARE(read(root.filePath(QStringLiteral("c"))), QByteArray("newer"));
+  QVERIFY(Util::replaceFile(root.filePath(QStringLiteral("c")),
+                            root.filePath(QStringLiteral("d")), false));
+  QCOMPARE(read(root.filePath(QStringLiteral("d"))), QByteArray("newer"));
+
+#ifndef Q_OS_WIN
+  // A link under the target name, dangling or not: replaced as an entry.
+  const QString linked = root.filePath(QStringLiteral("l"));
+  QVERIFY(QFile::link(victim, linked));
+  QVERIFY(write(root.filePath(QStringLiteral("e")), "cipher"));
+  QVERIFY(Util::replaceFile(root.filePath(QStringLiteral("e")), linked, true));
+  QVERIFY(!QFileInfo(linked).isSymLink());
+  QCOMPARE(read(linked), QByteArray("cipher"));
+  QCOMPARE(read(victim), QByteArray("precious"));
+  const QString dangling = root.filePath(QStringLiteral("g"));
+  QVERIFY(QFile::link(QDir(outside.path()).filePath(QStringLiteral("nope")),
+                      dangling));
+  QVERIFY(write(root.filePath(QStringLiteral("f")), "cipher2"));
+  QVERIFY(
+      !Util::replaceFile(root.filePath(QStringLiteral("f")), dangling, false));
+  QVERIFY2(QFileInfo(dangling).isSymLink(), "no replace keeps the link");
+  QVERIFY(!QFileInfo::exists(
+      QDir(outside.path()).filePath(QStringLiteral("nope"))));
+  QVERIFY(
+      Util::replaceFile(root.filePath(QStringLiteral("f")), dangling, true));
+  QVERIFY(!QFileInfo(dangling).isSymLink());
+  QCOMPARE(read(dangling), QByteArray("cipher2"));
+  QVERIFY(!QFileInfo::exists(
+      QDir(outside.path()).filePath(QStringLiteral("nope"))));
 #endif
 }
 

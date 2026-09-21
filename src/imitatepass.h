@@ -7,8 +7,11 @@
 #include "nativegrep.h"
 #include "pass.h"
 #include "simpletransaction.h"
+#include <QQueue>
+#include <QTemporaryDir>
 
 #include <atomic>
+#include <memory>
 
 class QRegularExpression;
 class QThread;
@@ -369,6 +372,35 @@ private:
   /// Background search over the decrypted store; relays to finishedGrep.
   NativeGrep m_grep;
   QString m_transactionOutput;
+
+  /// An Insert() whose gpg is running or queued: the private directory gpg
+  /// writes into (removed with it), the entry it is for, and whether an
+  /// existing entry may be replaced. Consumed by finished() when the gpg
+  /// step ends; one per Insert(), in order.
+  struct PendingInsert {
+    std::shared_ptr<QTemporaryDir> scratch;
+    QString output;
+    QString file;
+    bool overwrite = false;
+  };
+  QQueue<PendingInsert> m_pendingInserts;
+
+  /**
+   * @brief Bring the ciphertext gpg wrote to @p output into the store as
+   * @p file: through a temporary created next to the entry and written by
+   * its open handle, then the operating system's rename, which replaces the
+   * entry under that name (or, without @p overwrite, fails when one has
+   * appeared) and follows nothing. Called from finished(), so it reports
+   * nothing itself: the reason comes back for the caller to route through
+   * the failed-operation path once the queued git steps are cancelled.
+   * @param output The file gpg wrote, in a directory of QtPass's own.
+   * @param file The entry's path.
+   * @param overwrite Whether an entry already there may be replaced.
+   * @param error Receives why @p file could not be written, if not.
+   * @return Whether @p file now holds the new ciphertext.
+   */
+  auto placeEncryptedFile(const QString &output, const QString &file,
+                          bool overwrite, QString *error) -> bool;
 
   /**
    * @brief Outcome of one reencryptPath() run; filled on the worker thread and
