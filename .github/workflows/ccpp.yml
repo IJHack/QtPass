@@ -154,7 +154,8 @@ jobs:
         if: steps.need_build.outputs.run_build == 'true'
         # Without a console, Qt on Windows sends QtTest's report to the
         # debugger (OutputDebugString) and the job log shows nmake's exit code
-        # alone; this makes it write to stdout, where the log can see it.
+        # alone (QPlainTestLogger::outputMessage checks shouldLogToStderr());
+        # this makes it write to the standard streams, where the log can see it.
         env:
-          QT_LOGGING_TO_CONSOLE: 1
+          QT_FORCE_STDERR_LOGGING: 1
         run: ${{ runner.os == 'Windows' && 'nmake' || 'make' }} check TESTARGS="--platform offscreen"
