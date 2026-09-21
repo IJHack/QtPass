@@ -1037,27 +1037,55 @@ e-mail</translation>
         <translation type="unfinished">Listen indeholder en generationslinje, men ingen mappelinje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="261"/>
+        <location filename="../src/gpgidgeneration.cpp" line="253"/>
+        <source>The signed recipient list %1 is not one to trust: %2</source>
+        <translation type="unfinished">Den signerede modtagerliste %1 er ikke til at stole på: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="263"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">Den signerede modtagerliste %1 blev skrevet til mappen &quot;%2&quot; i lageret, ikke til &quot;%3&quot;, og bruges ikke. Den kan være kopieret hertil af en anden; hvis mappen i stedet er blevet flyttet eller omdøbt, kan en indehaver af signeringsnøglen åbne Brugere på den og gemme modtagerne, hvilket binder listen til det sted, hvor den ligger nu.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="283"/>
+        <location filename="../src/gpgidgeneration.cpp" line="288"/>
+        <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
+        <translation type="unfinished">Generation %1 er den højeste, der findes, så ingen nyere liste kan skrives her: fjernes %2, glemmer denne enhed, hvad den tidligere har accepteret, hvorefter en indehaver af signeringsnøglen kommer videre ved at åbne Brugere og %3.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="294"/>
+        <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
+        <translation type="unfinished">En indehaver af signeringsnøglen kommer videre ved at åbne Brugere og %1, hvilket skriver generation %2. Fjernes %3, glemmer denne enhed, hvad den tidligere har accepteret.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="307"/>
+        <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
+        <translation type="unfinished">Den signerede modtagerliste %1 har ingen generationslinje, mens generation %2 tidligere er blevet accepteret her. pass skriver ingen generationslinje (heller ikke via QtPass&apos; pass-backend), og det gjorde QtPass før 2.0 heller ikke; uden en sådan kan listen også være skrevet til en anden mappe i lageret og kopieret hertil. %3</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="314"/>
+        <source>selecting the recipients afresh and saving</source>
+        <translation type="unfinished">vælge modtagerne på ny og gemme</translation>
+    </message>
+    <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
-        <translation type="unfinished">En indehaver af signeringsnøglen kommer videre ved at åbne Brugere og gemme modtagerne, hvilket skriver generation %1: de forvalgte modtagere dér er denne listes, så fjern først alle, der ikke længere skal have adgang. Fjernes %2, glemmer denne enhed, hvad den tidligere har accepteret.</translation>
+        <translation type="obsolete">En indehaver af signeringsnøglen kommer videre ved at åbne Brugere og gemme modtagerne, hvilket skriver generation %1: de forvalgte modtagere dér er denne listes, så fjern først alle, der ikke længere skal have adgang. Fjernes %2, glemmer denne enhed, hvad den tidligere har accepteret.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="291"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0. %3</source>
-        <translation type="unfinished">Den signerede modtagerliste %1 har ingen generationslinje, mens generation %2 tidligere er blevet accepteret her. pass skriver ingen generationslinje (heller ikke via QtPass&apos; pass-backend), og det gjorde QtPass før 2.0 heller ikke. %3</translation>
+        <translation type="obsolete">Den signerede modtagerliste %1 har ingen generationslinje, mens generation %2 tidligere er blevet accepteret her. pass skriver ingen generationslinje (heller ikke via QtPass&apos; pass-backend), og det gjorde QtPass før 2.0 heller ikke. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="299"/>
+        <location filename="../src/gpgidgeneration.cpp" line="319"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">Den signerede modtagerliste %1 er generation %2, ældre end generation %3, som er den seneste, QtPass har accepteret her. Den kan være lagt tilbage af en anden. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="330"/>
+        <location filename="../src/gpgidgeneration.cpp" line="325"/>
+        <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
+        <translation type="unfinished">gemme modtagerne: de forvalgte modtagere dér er denne listes, så fjern først alle, der ikke længere skal have adgang</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="350"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">Modtagerlisten %1 har nået generation %2, den højeste der findes; listen kan ikke skrives.</translation>
     </message>
@@ -1072,13 +1100,13 @@ e-mail</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="192"/>
-        <location filename="../src/imitatepass.cpp" line="813"/>
+        <location filename="../src/imitatepass.cpp" line="814"/>
         <source>Can not edit</source>
         <translation>Ude af stand til at redigere</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="193"/>
-        <location filename="../src/imitatepass.cpp" line="814"/>
+        <location filename="../src/imitatepass.cpp" line="815"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Kunne ikke læse krypteringsnøglen der skal benyttes, filen .gpg-id mangler eller er ugyldig.</translation>
     </message>
@@ -1121,7 +1149,7 @@ Du vil ikke kunne ændre brugerlisten!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="186"/>
         <location filename="../src/imitatepass.cpp" line="405"/>
-        <location filename="../src/imitatepass.cpp" line="730"/>
+        <location filename="../src/imitatepass.cpp" line="731"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Tjek .gpg-id-filens signatur!</translation>
     </message>
@@ -1168,120 +1196,120 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
         <translation type="unfinished">Kunne ikke fjerne den gamle signatur %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="654"/>
-        <location filename="../src/imitatepass.cpp" line="670"/>
-        <location filename="../src/imitatepass.cpp" line="680"/>
-        <location filename="../src/imitatepass.cpp" line="695"/>
+        <location filename="../src/imitatepass.cpp" line="655"/>
+        <location filename="../src/imitatepass.cpp" line="671"/>
+        <location filename="../src/imitatepass.cpp" line="681"/>
+        <location filename="../src/imitatepass.cpp" line="696"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Rest fra en tidligere genkryptering</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="655"/>
-        <location filename="../src/imitatepass.cpp" line="671"/>
+        <location filename="../src/imitatepass.cpp" line="656"/>
+        <location filename="../src/imitatepass.cpp" line="672"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 er ikke en almindelig fil og blev ikke gendannet. Se den efter og fjern den, og genkryptér derefter igen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="681"/>
+        <location filename="../src/imitatepass.cpp" line="682"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 findes ved siden af %2. Begge er krypterede kopier af posten; tjek, hvilken du vil beholde, slet den anden, og genkryptér derefter igen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="690"/>
+        <location filename="../src/imitatepass.cpp" line="691"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">Gendannede %1 fra den backup, som en afbrudt genkryptering efterlod.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="696"/>
+        <location filename="../src/imitatepass.cpp" line="697"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 mangler, og dens backup %2 kunne ikke omdøbes tilbage. Omdøb den manuelt, og genkryptér derefter igen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="880"/>
-        <location filename="../src/imitatepass.cpp" line="885"/>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
+        <location filename="../src/imitatepass.cpp" line="881"/>
+        <location filename="../src/imitatepass.cpp" line="886"/>
+        <location filename="../src/imitatepass.cpp" line="1222"/>
         <source>Re-encryption failed</source>
         <translation>Genkryptering mislykkedes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="881"/>
+        <location filename="../src/imitatepass.cpp" line="882"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>Kunne ikke erstatte %1. Originalen er blevet gendannet.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="886"/>
+        <location filename="../src/imitatepass.cpp" line="887"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
         <translation type="unfinished">Kunne ikke erstatte %1, og originalen kunne ikke lægges tilbage. Den findes stadig som %2; omdøb den manuelt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="897"/>
+        <location filename="../src/imitatepass.cpp" line="898"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
         <translation type="unfinished">Kunne ikke fjerne backuppen %1 efter genkrypteringen; den kan trygt slettes.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="937"/>
+        <location filename="../src/imitatepass.cpp" line="938"/>
         <source>Creating backup commit</source>
         <translation>Opretter backup-commit</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="954"/>
-        <location filename="../src/imitatepass.cpp" line="963"/>
+        <location filename="../src/imitatepass.cpp" line="955"/>
+        <location filename="../src/imitatepass.cpp" line="964"/>
         <source>Backup commit failed</source>
         <translation>Backup-commit mislykkedes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="955"/>
+        <location filename="../src/imitatepass.cpp" line="956"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Kunne ikke inspicere git-status. Genkryptering blev afbrudt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="964"/>
+        <location filename="../src/imitatepass.cpp" line="965"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Genkrypteringen blev afbrudt, fordi der ikke kunne oprettes en git-backup.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1010"/>
+        <location filename="../src/imitatepass.cpp" line="1011"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">En genkryptering er allerede i gang</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1018"/>
+        <location filename="../src/imitatepass.cpp" line="1019"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Ikke en mappe i lageret</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1019"/>
+        <location filename="../src/imitatepass.cpp" line="1020"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 er, eller ligger bag, et symbolsk link eller en junction. Det, der peges på, er ikke en del af kodeordslageret og blev ikke genkrypteret.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1028"/>
+        <location filename="../src/imitatepass.cpp" line="1029"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Genkrypterer fra mappen %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1111"/>
-        <location filename="../src/imitatepass.cpp" line="1248"/>
+        <location filename="../src/imitatepass.cpp" line="1112"/>
+        <location filename="../src/imitatepass.cpp" line="1249"/>
         <source>Updating password-store</source>
         <translation>Opdaterer kodeordslager</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1122"/>
+        <location filename="../src/imitatepass.cpp" line="1123"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull mislykkedes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1123"/>
+        <location filename="../src/imitatepass.cpp" line="1124"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Pull efterlod lageret med ikke-sammenflettede filer. Løs konflikten, før du genkrypterer.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1128"/>
+        <location filename="../src/imitatepass.cpp" line="1129"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull mislykkedes, genkrypterer lageret som det er</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1155"/>
+        <location filename="../src/imitatepass.cpp" line="1156"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n post sprunget over: et symlink, en junction eller en specialfil er ikke en del af lageret.</numerusform>
@@ -1289,17 +1317,17 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1181"/>
+        <location filename="../src/imitatepass.cpp" line="1182"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID-bekræftelse mislykkedes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1182"/>
+        <location filename="../src/imitatepass.cpp" line="1183"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Kunne ikke verificere .gpg-id for mappen.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1219"/>
+        <location filename="../src/imitatepass.cpp" line="1220"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... og %n mere</numerusform>
@@ -1307,7 +1335,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1222"/>
+        <location filename="../src/imitatepass.cpp" line="1223"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n fil kunne ikke genkrypteres:</numerusform>
@@ -1315,12 +1343,12 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1228"/>
+        <location filename="../src/imitatepass.cpp" line="1229"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Genkryptering annulleret: %1 af %2 filer kontrolleret, %3 genkrypteret, %4 mislykkedes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1529"/>
+        <location filename="../src/imitatepass.cpp" line="1530"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Kørbar git-fil ikke konfigureret, springer git over</translation>
     </message>
@@ -1329,17 +1357,17 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
         <translation type="vanished">Kunne ikke genkryptere %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1237"/>
+        <location filename="../src/imitatepass.cpp" line="1238"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Genkryptering fuldført: %1 lykkedes, %2 mislykkedes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Genkryptering fuldført: %1 filer genkrypteret</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <location filename="../src/imitatepass.cpp" line="1252"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Pusher ikke: %n fil kunne ikke genkrypteres</numerusform>
@@ -1347,18 +1375,18 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1446"/>
-        <location filename="../src/imitatepass.cpp" line="1460"/>
-        <location filename="../src/imitatepass.cpp" line="1467"/>
-        <location filename="../src/imitatepass.cpp" line="1477"/>
-        <source>Copy failed</source>
-        <translation>Kopiering mislykkedes</translation>
-    </message>
-    <message>
         <location filename="../src/imitatepass.cpp" line="1447"/>
         <location filename="../src/imitatepass.cpp" line="1461"/>
         <location filename="../src/imitatepass.cpp" line="1468"/>
         <location filename="../src/imitatepass.cpp" line="1478"/>
+        <source>Copy failed</source>
+        <translation>Kopiering mislykkedes</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1448"/>
+        <location filename="../src/imitatepass.cpp" line="1462"/>
+        <location filename="../src/imitatepass.cpp" line="1469"/>
+        <location filename="../src/imitatepass.cpp" line="1479"/>
         <source>Could not copy %1 to %2.</source>
         <translation>Kunne ikke kopiere %1 til %2.</translation>
     </message>
@@ -2488,74 +2516,84 @@ Fortsætte?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="191"/>
+        <location filename="../src/pass.cpp" line="193"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished">Den konfigurerede GPG-hjemmemappe %1 findes ikke, bruger standardnøgleringen</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="199"/>
+        <location filename="../src/pass.cpp" line="201"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished">Den konfigurerede GPG-hjemmemappe %1 findes ikke, bruger GNUPGHOME %2 fra miljøet</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="219"/>
+        <location filename="../src/pass.cpp" line="221"/>
         <source>Invalid password length</source>
         <translation>Ugyldig adgangskodelængde</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="220"/>
+        <location filename="../src/pass.cpp" line="222"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>Kan ikke generere en adgangskode med en længde på nul.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="258"/>
+        <location filename="../src/pass.cpp" line="260"/>
         <source>No characters chosen</source>
         <translation>Ingen tegn valgt</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="259"/>
+        <location filename="../src/pass.cpp" line="261"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Ude af stand til at generere kodeord: Der er ingen tegn at vælge mellem i det indstillede tegnsæt!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="449"/>
-        <location filename="../src/pass.cpp" line="450"/>
+        <location filename="../src/pass.cpp" line="451"/>
+        <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
         <translation>Der er ikke konfigureret en kørbar GPG-fil</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="555"/>
-        <location filename="../src/pass.cpp" line="574"/>
+        <location filename="../src/pass.cpp" line="557"/>
+        <location filename="../src/pass.cpp" line="576"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Kryptering mislykkedes: GPG-nøglen er udløbet. Forny eller erstat den venligst.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="560"/>
-        <location filename="../src/pass.cpp" line="579"/>
+        <location filename="../src/pass.cpp" line="562"/>
+        <location filename="../src/pass.cpp" line="581"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Kryptering mislykkedes: GPG-nøglen er blevet tilbagekaldt.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="564"/>
-        <location filename="../src/pass.cpp" line="584"/>
+        <location filename="../src/pass.cpp" line="566"/>
+        <location filename="../src/pass.cpp" line="586"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Kryptering mislykkedes: Modtagerens GPG-nøgle blev ikke fundet eller er ugyldig. Kontroller, at nøgle-ID&apos;et i .gpg-id er korrekt og importeret.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="568"/>
-        <location filename="../src/pass.cpp" line="588"/>
+        <location filename="../src/pass.cpp" line="570"/>
+        <location filename="../src/pass.cpp" line="590"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Kryptering mislykkedes. Kontroller, at din GPG-nøgle er gyldig.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="876"/>
+        <location filename="../src/pass.cpp" line="878"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 er, eller ligger bag, et symbolsk link eller en junction. Det, der peges på, er ikke en del af kodeordslageret og bliver ikke rørt.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="884"/>
+        <location filename="../src/pass.cpp" line="886"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Ikke en del af lageret</translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="967"/>
+        <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
+        <translation type="unfinished">Modtagerlisten %1 kan ikke verificeres mod signeringsnøglen, så intet er forvalgt: at gemme ville signere, hvad der end står i den. Vælg modtagerne selv; OK skriver og signerer en ny liste.</translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="994"/>
+        <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
+        <translation type="unfinished">%1 Intet er forvalgt: at gemme ville signere, hvad der end står i den. Vælg modtagerne selv.</translation>
     </message>
 </context>
 <context>
@@ -3228,42 +3266,42 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="74"/>
+        <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Keylist missing</source>
         <translation>Nøglelisten mangler</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="75"/>
+        <location filename="../src/usersdialog.cpp" line="78"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Kunne ikke hente listen over tilgængelige GPG-nøgler</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="154"/>
+        <location filename="../src/usersdialog.cpp" line="179"/>
         <source>Key not found in keyring</source>
         <translation>Nøgle ikke fundet i nøglering</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="310"/>
+        <location filename="../src/usersdialog.cpp" line="335"/>
         <source>created</source>
         <translation>oprettet</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="314"/>
+        <location filename="../src/usersdialog.cpp" line="339"/>
         <source>expires</source>
         <translation>udløber</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="334"/>
+        <location filename="../src/usersdialog.cpp" line="359"/>
         <source>[INVALID] </source>
         <translation>[UGYLDIG] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="340"/>
+        <location filename="../src/usersdialog.cpp" line="365"/>
         <source>[EXPIRED] </source>
         <translation>[UDLØBET] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="344"/>
+        <location filename="../src/usersdialog.cpp" line="369"/>
         <source>[PARTIAL] </source>
         <translation>[DELVIS] </translation>
     </message>

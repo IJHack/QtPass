@@ -977,27 +977,55 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
         <translation type="unfinished">Mae&apos;r rhestr yn cynnwys llinell genhedlaeth ond dim llinell blygell.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="261"/>
+        <location filename="../src/gpgidgeneration.cpp" line="253"/>
+        <source>The signed recipient list %1 is not one to trust: %2</source>
+        <translation type="unfinished">Nid yw&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn un i ymddiried ynddi: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="263"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">Ysgrifennwyd y rhestr derbynwyr wedi&apos;i llofnodi %1 ar gyfer y blygell &quot;%2&quot; yn y storfa, nid ar gyfer &quot;%3&quot;, ac ni chaiff ei defnyddio. Efallai iddi gael ei chopïo yma gan rywun arall; os cafodd y blygell ei symud neu ei hailenwi yn hytrach, mae deiliad yr allwedd lofnodi yn agor Defnyddwyr arni ac yn cadw&apos;r derbynwyr, sy&apos;n rhwymo&apos;r rhestr i&apos;r lle y mae hi bellach.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="283"/>
+        <location filename="../src/gpgidgeneration.cpp" line="288"/>
+        <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
+        <translation type="unfinished">Cenhedlaeth %1 yw&apos;r uchaf sy&apos;n bod, felly ni ellir ysgrifennu rhestr newyddach yma: mae dileu %2 yn anghofio&apos;r hyn a dderbyniodd y ddyfais hon o&apos;r blaen, ac ar ôl hynny gall deiliad yr allwedd lofnodi fynd heibio i hyn drwy agor Defnyddwyr ac yna %3.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="294"/>
+        <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
+        <translation type="unfinished">Gall deiliad yr allwedd lofnodi fynd heibio i hyn drwy agor Defnyddwyr ac yna %1, sy&apos;n ysgrifennu cenhedlaeth %2. Mae dileu %3 yn anghofio&apos;r hyn a dderbyniodd y ddyfais hon o&apos;r blaen.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="307"/>
+        <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
+        <translation type="unfinished">Nid yw&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn cynnwys llinell genhedlaeth, er i genhedlaeth %2 gael ei derbyn yma o&apos;r blaen. Nid yw pass yn ysgrifennu llinell genhedlaeth (gan gynnwys pan fydd QtPass yn defnyddio pass), ac nid oedd QtPass yn gwneud hynny cyn 2.0 chwaith; heb un, gallai&apos;r rhestr hefyd fod wedi&apos;i hysgrifennu ar gyfer plygell arall yn y storfa a&apos;i chopïo yma. %3</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="314"/>
+        <source>selecting the recipients afresh and saving</source>
+        <translation type="unfinished">dewis y derbynwyr o&apos;r newydd a chadw</translation>
+    </message>
+    <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
-        <translation type="unfinished">Gall deiliad yr allwedd lofnodi fynd heibio i hyn drwy agor Defnyddwyr a chadw&apos;r derbynwyr, sy&apos;n ysgrifennu cenhedlaeth %1: derbynwyr y rhestr hon yw&apos;r rhai a ragddewiswyd yno, felly tynnwch yn gyntaf unrhyw un na ddylai gael mynediad mwyach. Mae dileu %2 yn anghofio&apos;r hyn a dderbyniodd y ddyfais hon o&apos;r blaen.</translation>
+        <translation type="obsolete">Gall deiliad yr allwedd lofnodi fynd heibio i hyn drwy agor Defnyddwyr a chadw&apos;r derbynwyr, sy&apos;n ysgrifennu cenhedlaeth %1: derbynwyr y rhestr hon yw&apos;r rhai a ragddewiswyd yno, felly tynnwch yn gyntaf unrhyw un na ddylai gael mynediad mwyach. Mae dileu %2 yn anghofio&apos;r hyn a dderbyniodd y ddyfais hon o&apos;r blaen.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="291"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0. %3</source>
-        <translation type="unfinished">Nid yw&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn cynnwys llinell genhedlaeth, er i genhedlaeth %2 gael ei derbyn yma o&apos;r blaen. Nid yw pass yn ysgrifennu llinell genhedlaeth (gan gynnwys pan fydd QtPass yn defnyddio pass), ac nid oedd QtPass yn gwneud hynny cyn 2.0 chwaith. %3</translation>
+        <translation type="obsolete">Nid yw&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn cynnwys llinell genhedlaeth, er i genhedlaeth %2 gael ei derbyn yma o&apos;r blaen. Nid yw pass yn ysgrifennu llinell genhedlaeth (gan gynnwys pan fydd QtPass yn defnyddio pass), ac nid oedd QtPass yn gwneud hynny cyn 2.0 chwaith. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="299"/>
+        <location filename="../src/gpgidgeneration.cpp" line="319"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">Mae&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn genhedlaeth %2, sy&apos;n hŷn na chenhedlaeth %3, yr un olaf a dderbyniodd QtPass yma. Efallai iddi gael ei rhoi yn ôl gan rywun arall. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="330"/>
+        <location filename="../src/gpgidgeneration.cpp" line="325"/>
+        <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
+        <translation type="unfinished">cadw&apos;r derbynwyr: derbynwyr y rhestr hon yw&apos;r rhai a ragddewiswyd yno, felly tynnwch yn gyntaf unrhyw un na ddylai gael mynediad mwyach</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="350"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">Mae&apos;r rhestr derbynwyr %1 wedi cyrraedd cenhedlaeth %2, yr uchaf sy&apos;n bod; ni ellir ysgrifennu&apos;r rhestr.</translation>
     </message>
@@ -1012,13 +1040,13 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="192"/>
-        <location filename="../src/imitatepass.cpp" line="813"/>
+        <location filename="../src/imitatepass.cpp" line="814"/>
         <source>Can not edit</source>
         <translation>Methu golygu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="193"/>
-        <location filename="../src/imitatepass.cpp" line="814"/>
+        <location filename="../src/imitatepass.cpp" line="815"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Methwyd darllen allwedd amgryptio i&apos;w ddefnyddio, .gpg-id File ar goll neu annilys.</translation>
     </message>
@@ -1061,7 +1089,7 @@ Ni fyddwch yn gallu newid y rhestr defnyddwyr!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="186"/>
         <location filename="../src/imitatepass.cpp" line="405"/>
-        <location filename="../src/imitatepass.cpp" line="730"/>
+        <location filename="../src/imitatepass.cpp" line="731"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Gwiriwch llofnod y ffeil .gpg-id!</translation>
     </message>
@@ -1108,120 +1136,120 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         <translation type="unfinished">Methwyd dileu&apos;r hen lofnod %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="654"/>
-        <location filename="../src/imitatepass.cpp" line="670"/>
-        <location filename="../src/imitatepass.cpp" line="680"/>
-        <location filename="../src/imitatepass.cpp" line="695"/>
+        <location filename="../src/imitatepass.cpp" line="655"/>
+        <location filename="../src/imitatepass.cpp" line="671"/>
+        <location filename="../src/imitatepass.cpp" line="681"/>
+        <location filename="../src/imitatepass.cpp" line="696"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Gweddill o ail-amgryptio cynharach</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="655"/>
-        <location filename="../src/imitatepass.cpp" line="671"/>
+        <location filename="../src/imitatepass.cpp" line="656"/>
+        <location filename="../src/imitatepass.cpp" line="672"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">Nid yw %1 yn ffeil gyffredin ac ni chafodd ei hadfer. Edrychwch arni a&apos;i dileu, yna ail-amgryptiwch eto.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="681"/>
+        <location filename="../src/imitatepass.cpp" line="682"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">Mae %1 yn bodoli wrth ymyl %2. Mae&apos;r ddau yn gopïau wedi&apos;u hamgryptio o&apos;r cofnod; gwiriwch pa un sydd ei angen arnoch a dilëwch y llall, yna ail-amgryptiwch eto.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="690"/>
+        <location filename="../src/imitatepass.cpp" line="691"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">Adferwyd %1 o&apos;r copi wrth gefn a adawyd ar ôl gan ail-amgryptio a dorrwyd ar ei draws.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="696"/>
+        <location filename="../src/imitatepass.cpp" line="697"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">Mae %1 ar goll ac ni ellid ailenwi ei gopi wrth gefn %2 yn ôl. Ailenwch ef â llaw, yna ail-amgryptiwch eto.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="880"/>
-        <location filename="../src/imitatepass.cpp" line="885"/>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
+        <location filename="../src/imitatepass.cpp" line="881"/>
+        <location filename="../src/imitatepass.cpp" line="886"/>
+        <location filename="../src/imitatepass.cpp" line="1222"/>
         <source>Re-encryption failed</source>
         <translation>Methodd ail-amgryptio</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="881"/>
+        <location filename="../src/imitatepass.cpp" line="882"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>Methwyd disodli %1. Mae&apos;r gwreiddiol wedi&apos;i adfer.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="886"/>
+        <location filename="../src/imitatepass.cpp" line="887"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
         <translation type="unfinished">Methwyd disodli %1, ac ni ellid rhoi&apos;r gwreiddiol yn ôl. Mae&apos;n dal yno fel %2; ailenwch ef â llaw.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="897"/>
+        <location filename="../src/imitatepass.cpp" line="898"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
         <translation type="unfinished">Methwyd dileu&apos;r copi wrth gefn %1 ar ôl ail-amgryptio; mae&apos;n ddiogel ei ddileu.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="937"/>
+        <location filename="../src/imitatepass.cpp" line="938"/>
         <source>Creating backup commit</source>
         <translation>Creu ymrwymiad wrth gefn</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="954"/>
-        <location filename="../src/imitatepass.cpp" line="963"/>
+        <location filename="../src/imitatepass.cpp" line="955"/>
+        <location filename="../src/imitatepass.cpp" line="964"/>
         <source>Backup commit failed</source>
         <translation>Methodd yr ymrwymiad wrth gefn</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="955"/>
+        <location filename="../src/imitatepass.cpp" line="956"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Methwyd archwilio statws git. Cafodd yr ail-amgryptio ei atal.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="964"/>
+        <location filename="../src/imitatepass.cpp" line="965"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Cafodd yr ail-amgryptio ei atal oherwydd na ellid creu copi wrth gefn git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1010"/>
+        <location filename="../src/imitatepass.cpp" line="1011"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Mae ail-amgryptio eisoes ar y gweill</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1018"/>
+        <location filename="../src/imitatepass.cpp" line="1019"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Nid yw&apos;n blygell o&apos;r storfa</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1019"/>
+        <location filename="../src/imitatepass.cpp" line="1020"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">Mae %1 yn ddolen symbolaidd neu gyffordd, neu&apos;n gorwedd y tu ôl i un. Nid yw&apos;r hyn y mae honno&apos;n pwyntio ato yn rhan o&apos;r storfa gyfrineiriau ac ni chafodd ei ail-amgryptio.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1028"/>
+        <location filename="../src/imitatepass.cpp" line="1029"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Ail-amgryptio o blygell %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1111"/>
-        <location filename="../src/imitatepass.cpp" line="1248"/>
+        <location filename="../src/imitatepass.cpp" line="1112"/>
+        <location filename="../src/imitatepass.cpp" line="1249"/>
         <source>Updating password-store</source>
         <translation>Diweddaru&apos;r siop cyfrinair</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1122"/>
+        <location filename="../src/imitatepass.cpp" line="1123"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Methodd Git tynnu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1123"/>
+        <location filename="../src/imitatepass.cpp" line="1124"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Gadawodd y tynnu ffeiliau heb eu cyfuno yn y storfa. Datryswch y gwrthdaro cyn ail-amgryptio.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1128"/>
+        <location filename="../src/imitatepass.cpp" line="1129"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Methodd Git tynnu, yn ail-amgryptio&apos;r storfa fel y mae</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1155"/>
+        <location filename="../src/imitatepass.cpp" line="1156"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>Hepgorwyd %n cofnod: nid yw dolen symbolaidd, cyffordd na ffeil arbennig yn rhan o&apos;r storfa.</numerusform>
@@ -1232,17 +1260,17 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1181"/>
+        <location filename="../src/imitatepass.cpp" line="1182"/>
         <source>GPG ID verification failed</source>
         <translation>Methodd dilysu ID GPG</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1182"/>
+        <location filename="../src/imitatepass.cpp" line="1183"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Methwyd gwirio .gpg-id ar gyfer y cyfeiriadur.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1219"/>
+        <location filename="../src/imitatepass.cpp" line="1220"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... a %n arall</numerusform>
@@ -1253,7 +1281,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1222"/>
+        <location filename="../src/imitatepass.cpp" line="1223"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>Methwyd ail-amgryptio %n ffeil:</numerusform>
@@ -1264,12 +1292,12 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1228"/>
+        <location filename="../src/imitatepass.cpp" line="1229"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Ail-amgryptio wedi&apos;i ddiddymu: gwiriwyd %1 o %2 ffeil, ail-amgryptiwyd %3, methodd %4</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1529"/>
+        <location filename="../src/imitatepass.cpp" line="1530"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Ffeil weithredadwy Git heb ei ffurfweddu, yn hepgor git</translation>
     </message>
@@ -1278,17 +1306,17 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         <translation type="vanished">Methwyd ail-amgryptio %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1237"/>
+        <location filename="../src/imitatepass.cpp" line="1238"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Ail-amgryptio wedi&apos;i gwblhau: llwyddodd %1, methodd %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Ail-amgryptio wedi&apos;i gwblhau: %1 ffeil wedi&apos;u hail-amgryptio</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <location filename="../src/imitatepass.cpp" line="1252"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Ddim yn gwthio: methwyd ail-amgryptio %n ffeil</numerusform>
@@ -1299,18 +1327,18 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1446"/>
-        <location filename="../src/imitatepass.cpp" line="1460"/>
-        <location filename="../src/imitatepass.cpp" line="1467"/>
-        <location filename="../src/imitatepass.cpp" line="1477"/>
-        <source>Copy failed</source>
-        <translation type="unfinished">Methodd y copïo</translation>
-    </message>
-    <message>
         <location filename="../src/imitatepass.cpp" line="1447"/>
         <location filename="../src/imitatepass.cpp" line="1461"/>
         <location filename="../src/imitatepass.cpp" line="1468"/>
         <location filename="../src/imitatepass.cpp" line="1478"/>
+        <source>Copy failed</source>
+        <translation type="unfinished">Methodd y copïo</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1448"/>
+        <location filename="../src/imitatepass.cpp" line="1462"/>
+        <location filename="../src/imitatepass.cpp" line="1469"/>
+        <location filename="../src/imitatepass.cpp" line="1479"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Methwyd copïo %1 i %2.</translation>
     </message>
@@ -2315,74 +2343,84 @@ Parhau?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="191"/>
+        <location filename="../src/pass.cpp" line="193"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished">Nid yw cyfeiriadur cartref GPG %1 a ffurfweddwyd yn bodoli, yn defnyddio&apos;r cylch allweddi rhagosodedig</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="199"/>
+        <location filename="../src/pass.cpp" line="201"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished">Nid yw cyfeiriadur cartref GPG %1 a ffurfweddwyd yn bodoli, yn defnyddio GNUPGHOME %2 o&apos;r amgylchedd</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="219"/>
+        <location filename="../src/pass.cpp" line="221"/>
         <source>Invalid password length</source>
         <translation>Hyd cyfrinair annilys</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="220"/>
+        <location filename="../src/pass.cpp" line="222"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>Methu cynhyrchu cyfrinair gyda hyd sero.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="258"/>
+        <location filename="../src/pass.cpp" line="260"/>
         <source>No characters chosen</source>
         <translation>Dim nodau wedi&apos;u dewis</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="259"/>
+        <location filename="../src/pass.cpp" line="261"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Does dim modd creu cyfrinair, does dim nodau i&apos;w dewis o&apos;r set yn y cyfluniad!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="449"/>
-        <location filename="../src/pass.cpp" line="450"/>
+        <location filename="../src/pass.cpp" line="451"/>
+        <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">Nid oes ffeil weithredadwy GPG wedi&apos;i ffurfweddu</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="555"/>
-        <location filename="../src/pass.cpp" line="574"/>
+        <location filename="../src/pass.cpp" line="557"/>
+        <location filename="../src/pass.cpp" line="576"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Methodd amgryptio: Mae allwedd GPG wedi dod i ben. Adnewyddwch neu amnewidiwch hi.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="560"/>
-        <location filename="../src/pass.cpp" line="579"/>
+        <location filename="../src/pass.cpp" line="562"/>
+        <location filename="../src/pass.cpp" line="581"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Methodd amgryptio: Mae allwedd GPG wedi&apos;i dirymu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="564"/>
-        <location filename="../src/pass.cpp" line="584"/>
+        <location filename="../src/pass.cpp" line="566"/>
+        <location filename="../src/pass.cpp" line="586"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Methodd amgryptio: ni chanfuwyd allwedd GPG y derbynnydd neu mae&apos;n annilys. Gwiriwch fod ID yr allwedd yn .gpg-id yn gywir ac wedi&apos;i fewnforio.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="568"/>
-        <location filename="../src/pass.cpp" line="588"/>
+        <location filename="../src/pass.cpp" line="570"/>
+        <location filename="../src/pass.cpp" line="590"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Methodd amgryptio. Gwiriwch fod eich allwedd GPG yn ddilys.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="876"/>
+        <location filename="../src/pass.cpp" line="878"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">Mae %1 yn ddolen symbolaidd neu gyffordd, neu&apos;n gorwedd y tu ôl i un. Nid yw&apos;r hyn y mae honno&apos;n pwyntio ato yn rhan o&apos;r storfa gyfrineiriau ac ni chyffyrddir ag ef.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="884"/>
+        <location filename="../src/pass.cpp" line="886"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Ddim yn rhan o&apos;r storfa</translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="967"/>
+        <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
+        <translation type="unfinished">Ni ellir dilysu&apos;r rhestr derbynwyr %1 yn erbyn yr allwedd lofnodi, felly nid oes dim wedi&apos;i ragddewis: byddai cadw yn llofnodi beth bynnag sydd ynddi. Dewiswch y derbynwyr eich hun; mae OK yn ysgrifennu ac yn llofnodi rhestr newydd.</translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="994"/>
+        <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
+        <translation type="unfinished">%1 Nid oes dim wedi&apos;i ragddewis: byddai cadw yn llofnodi beth bynnag sydd ynddi. Dewiswch y derbynwyr eich hun.</translation>
     </message>
 </context>
 <context>
@@ -3039,42 +3077,42 @@ Ni ellir amgryptio i gofnodion [ANNILYS] a [WEDI DOD I BEN]; mae gan gofnodion [
         <translation>Mewnforio allwedd GPG o ffeil neu o&apos;r clipfwrdd</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="74"/>
+        <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Keylist missing</source>
         <translation>Keylist ar goll</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="75"/>
+        <location filename="../src/usersdialog.cpp" line="78"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Methwyd cyrchu rhestr o allweddi GPG sydd ar gael</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="154"/>
+        <location filename="../src/usersdialog.cpp" line="179"/>
         <source>Key not found in keyring</source>
         <translation>Bysell heb ei ganfod yn y cylch allweddi</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="310"/>
+        <location filename="../src/usersdialog.cpp" line="335"/>
         <source>created</source>
         <translation>creu</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="314"/>
+        <location filename="../src/usersdialog.cpp" line="339"/>
         <source>expires</source>
         <translation>i ben</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="334"/>
+        <location filename="../src/usersdialog.cpp" line="359"/>
         <source>[INVALID] </source>
         <translation>[ANNILYS] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="340"/>
+        <location filename="../src/usersdialog.cpp" line="365"/>
         <source>[EXPIRED] </source>
         <translation>[WEDI DOD I BEN] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="344"/>
+        <location filename="../src/usersdialog.cpp" line="369"/>
         <source>[PARTIAL] </source>
         <translation>[RHANNOL] </translation>
     </message>
