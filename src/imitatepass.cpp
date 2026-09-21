@@ -1649,10 +1649,10 @@ auto ImitatePass::placeEncryptedFile(const QString &output, const QString &file,
   }
   // The store-side file: created exclusively next to the entry, written
   // through this handle, never opened by name again. pass writes entries
-  // with umask 077, and so does QTemporaryFile.
-  const QFileInfo target(file);
-  QTemporaryFile staged(target.path() + QStringLiteral("/.") +
-                        target.fileName() + QStringLiteral(".XXXXXX.tmp"));
+  // with umask 077, and so does QTemporaryFile. An opaque name: one built
+  // from the entry's would exceed the name length limit for a long entry.
+  QTemporaryFile staged(QFileInfo(file).path() +
+                        QStringLiteral("/.qtpass-XXXXXX.tmp"));
   staged.setAutoRemove(false);
   if (!staged.open()) {
     *error = tr("Cannot create a temporary file next to %1: %2")
