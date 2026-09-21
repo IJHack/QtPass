@@ -2,17 +2,27 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QApplication>
 #include <QClipboard>
+#include <QDir>
+#include <QFile>
+#include <QFileDialog>
+#include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QPushButton>
 #include <QScopeGuard>
+#include <QTemporaryDir>
+#include <QTimer>
 #include <QtTest>
 
+#include <functional>
+
 #include "../../../src/importkeydialog.h"
+#include "../testsettings.h"
 
 class tst_importkeydialog : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
+  void initTestCase();
   void parseGpgImportOutput_data();
   void parseGpgImportOutput();
   void parseGpgImportOutputPrefersStatusOverHumanLine();
@@ -31,7 +41,56 @@ private Q_SLOTS:
   void importButtonEnabledAfterTextInput();
   void importButtonDisabledForWhitespaceOnlyInput();
   void pasteButtonSetsTextFromClipboard();
+  void pasteButtonKeepsInputForEmptyClipboard();
+  void importButtonIgnoresEmptyInput();
+  void importSuccessAcceptsWithKeyIdAndFeedsInputToGpg();
+  void importFailureShowsStderrAndStaysOpen();
+  void importUnparseableOutputShowsParseErrorAndStaysOpen();
+  void importFallsBackToStderrForKeyId();
+  void fileButtonCancelLeavesInputUntouched();
+  void fileButtonLoadsArmoredFileIntoInput();
+  void fileButtonRejectsNonArmoredFile();
+  void fileButtonWarnsWhenFileCannotBeOpened();
+
+private:
+  /**
+   * @brief Outcome of driving the modal dialogs a slot opens.
+   */
+  struct ModalRun {
+    int fileDialogs = 0;
+    int messageBoxes = 0;
+    QString messageText;
+    QStringList selectedFiles;
+  };
+
+  /// A stand-in gpg at m_dir/@p name: "#!/bin/sh" followed by @p body.
+  /// Empty when it could not be written.
+  auto writeGpg(const QString &name, const QString &body) -> QString;
+  /// Run @p trigger while a timer drives every modal it opens: a QFileDialog
+  /// gets @p filePath selected and accepted (or is cancelled when the path
+  /// is empty), a QMessageBox has its text captured and is accepted.
+  auto driveModals(const std::function<void()> &trigger,
+                   const QString &filePath = QString()) -> ModalRun;
+  /// Write @p bytes to m_dir/@p name; empty when that failed.
+  auto writeFile(const QString &name, const QByteArray &bytes) -> QString;
+
+  QTemporaryDir m_dir;
 };
+
+/**
+ * @brief Isolate settings, force Qt's own dialogs and claim the scratch dir.
+ *
+ * driveModals() finds the dialogs a slot opens through
+ * QApplication::activeModalWidget(). A native (platform-theme) file dialog
+ * or message box never enters that modal-widget stack, so with a desktop
+ * theme such as gtk3 the poker would wait forever; the widget-based dialogs
+ * behave the same on every platform.
+ */
+void tst_importkeydialog::initTestCase() {
+  isolateTestSettings();
+  QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
+  QVERIFY2(m_dir.isValid(), qPrintable(m_dir.errorString()));
+}
 
 void tst_importkeydialog::parseGpgImportOutput_data() {
   QTest::addColumn<QString>("output");
@@ -298,6 +357,437 @@ void tst_importkeydialog::pasteButtonSetsTextFromClipboard() {
   pasteButton->click();
 
   QCOMPARE(edit->toPlainText(), payload);
+}
+
+// ---------------------------------------------------------------------------
+// Import and file-button behaviour, driven through fake gpg and the modal
+// dialogs the slots open
+// ---------------------------------------------------------------------------
+
+auto tst_importkeydialog::writeGpg(const QString &name, const QString &body)
+    -> QString {
+  const QString gpg = QDir(m_dir.path()).filePath(name);
+  QFile script(gpg);
+  if (!script.open(QIODevice::WriteOnly | QIODevice::Truncate))
+    return {};
+  QTextStream out(&script);
+  out << "#!/bin/sh\n" << body;
+  out.flush();
+  script.close();
+  if (!script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner))
+    return {};
+  return gpg;
+}
+
+auto tst_importkeydialog::writeFile(const QString &name,
+                                    const QByteArray &bytes) -> QString {
+  const QString path = QDir(m_dir.path()).filePath(name);
+  QFile file(path);
+  if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate))
+    return {};
+  if (file.write(bytes) != bytes.size())
+    return {};
+  file.close();
+  return path;
+}
+
+auto tst_importkeydialog::driveModals(const std::function<void()> &trigger,
+                                      const QString &filePath) -> ModalRun {
+  ModalRun run;
+  QTimer poker;
+  poker.setInterval(20);
+  QObject::connect(&poker, &QTimer::timeout, [&]() {
+    QWidget *modal = QApplication::activeModalWidget();
+    if (modal == nullptr || modal->property("tst_driven").toBool()) {
+      return;
+    }
+    if (auto *fileDialog = qobject_cast<QFileDialog *>(modal)) {
+      modal->setProperty("tst_driven", true);
+      ++run.fileDialogs;
+      if (filePath.isEmpty()) {
+        fileDialog->reject();
+      } else {
+        // selectFile() leaves the name edit alone while it has focus (a
+        // user is typing); drop focus first so the selection lands.
+        if (QWidget *focused = fileDialog->focusWidget()) {
+          focused->clearFocus();
+        }
+        fileDialog->selectFile(filePath);
+        run.selectedFiles = fileDialog->selectedFiles();
+        // QFileDialog re-declares accept() protected; the QDialog view of it
+        // is public and still dispatches virtually to the QFileDialog logic.
+        static_cast<QDialog *>(fileDialog)->accept();
+      }
+      return;
+    }
+    if (auto *box = qobject_cast<QMessageBox *>(modal)) {
+      modal->setProperty("tst_driven", true);
+      ++run.messageBoxes;
+      run.messageText = box->text();
+      box->accept();
+    }
+  });
+  poker.start();
+  // The trigger runs the slot, and thus the nested modal loops,
+  // synchronously.
+  trigger();
+  poker.stop();
+  return run;
+}
+
+/**
+ * @brief Pins the empty-clipboard guard of the paste button: whatever the
+ *        user already typed or loaded must survive a paste from an empty
+ *        clipboard instead of being wiped.
+ */
+void tst_importkeydialog::pasteButtonKeepsInputForEmptyClipboard() {
+  QClipboard *clipboard = QApplication::clipboard();
+  const QString originalClipboard = clipboard->text();
+  const auto restoreClipboard = qScopeGuard([clipboard, originalClipboard]() {
+    clipboard->setText(originalClipboard);
+  });
+  clipboard->clear();
+  if (!clipboard->text().isEmpty()) {
+    QSKIP("Clipboard cannot be cleared on this platform");
+  }
+
+  ImportKeyDialog dialog(QString{});
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  auto *pasteButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("pasteButton"));
+  QVERIFY2(edit != nullptr, "inputTextEdit widget must exist");
+  QVERIFY2(pasteButton != nullptr, "pasteButton widget must exist");
+  const QString typed = QStringLiteral("-----BEGIN PGP PUBLIC KEY BLOCK-----");
+  edit->setPlainText(typed);
+
+  pasteButton->click();
+
+  QCOMPARE(edit->toPlainText(), typed);
+}
+
+/**
+ * @brief Pins that the import slot is a no-op on empty input: no gpg is
+ *        spawned (the fake would leave a marker file), no message box opens
+ *        and the dialog stays open with an empty key id. The button itself
+ *        is disabled then, so the slot is invoked directly.
+ */
+void tst_importkeydialog::importButtonIgnoresEmptyInput() {
+#ifdef Q_OS_WIN
+  QSKIP("Fake gpg is a shell script");
+#endif
+  const QString gpg = writeGpg(QStringLiteral("gpg-never"),
+                               QStringLiteral("touch \"$0.ran\"\nexit 0\n"));
+  QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
+  ImportKeyDialog dialog(gpg);
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  QVERIFY2(edit != nullptr, "inputTextEdit widget must exist");
+  edit->setPlainText(QStringLiteral("  \n\t "));
+  QSignalSpy accepted(&dialog, &QDialog::accepted);
+
+  const ModalRun run = driveModals([&]() {
+    QVERIFY2(QMetaObject::invokeMethod(&dialog, "on_importButton_clicked",
+                                       Qt::DirectConnection),
+             "on_importButton_clicked slot must be invokable");
+  });
+
+  QCOMPARE(run.messageBoxes, 0);
+  QVERIFY2(!QFile::exists(gpg + QStringLiteral(".ran")),
+           "gpg must not run for empty input");
+  QCOMPARE(accepted.count(), 0);
+  QVERIFY2(dialog.importedKeyId().isEmpty(), "no key id without an import");
+}
+
+/**
+ * @brief Pins the happy path: the armored text is fed to gpg on stdin with
+ *        --import and --status-fd 1, the fingerprint from IMPORT_OK is
+ *        stored, the success box names it and warns about verifying the
+ *        owner, and the dialog accepts itself.
+ */
+void tst_importkeydialog::importSuccessAcceptsWithKeyIdAndFeedsInputToGpg() {
+#ifdef Q_OS_WIN
+  QSKIP("Fake gpg is a shell script");
+#endif
+  const QString fingerprint =
+      QStringLiteral("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+  const QString gpg = writeGpg(
+      QStringLiteral("gpg-ok"),
+      QStringLiteral("cat > \"$0.stdin\"\nprintf '%s\\n' \"$*\" > \"$0.args\"\n"
+                     "printf '[GNUPG:] IMPORTED DEADBEEFCAFE0123 "
+                     "user@example.com\\n'\n"
+                     "printf '[GNUPG:] IMPORT_OK 1 %1\\n'\nexit 0\n")
+          .arg(fingerprint));
+  QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
+  ImportKeyDialog dialog(gpg);
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  auto *importButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("importButton"));
+  QVERIFY2(edit != nullptr, "inputTextEdit widget must exist");
+  QVERIFY2(importButton != nullptr, "importButton widget must exist");
+  const QString armored =
+      QStringLiteral("-----BEGIN PGP PUBLIC KEY BLOCK-----\nABC\n"
+                     "-----END PGP PUBLIC KEY BLOCK-----");
+  edit->setPlainText(armored + QStringLiteral("\n\n"));
+  QVERIFY2(importButton->isEnabled(), "armored input must enable Import");
+  QSignalSpy accepted(&dialog, &QDialog::accepted);
+
+  const ModalRun run = driveModals([&]() { importButton->click(); });
+
+  QCOMPARE(run.messageBoxes, 1);
+  QVERIFY2(run.messageText.contains(fingerprint),
+           qPrintable(QStringLiteral("success box must name the key: %1")
+                          .arg(run.messageText)));
+  QVERIFY2(run.messageText.contains(QStringLiteral("fingerprint")),
+           "success box must tell the user to check the fingerprint");
+  QCOMPARE(dialog.importedKeyId(), fingerprint);
+  QCOMPARE(accepted.count(), 1);
+  QCOMPARE(dialog.result(), static_cast<int>(QDialog::Accepted));
+
+  QFile stdinFile(gpg + QStringLiteral(".stdin"));
+  QVERIFY2(stdinFile.open(QIODevice::ReadOnly), "gpg must have read stdin");
+  // The slot trims the input before handing it to gpg: the surrounding
+  // blank lines typed above must not reach stdin.
+  QCOMPARE(QString::fromUtf8(stdinFile.readAll()), armored);
+  QFile argsFile(gpg + QStringLiteral(".args"));
+  QVERIFY2(argsFile.open(QIODevice::ReadOnly), "gpg must have been invoked");
+  const QString args = QString::fromUtf8(argsFile.readAll());
+  QVERIFY2(args.contains(QStringLiteral("--import")), qPrintable(args));
+  QVERIFY2(args.contains(QStringLiteral("--status-fd 1")), qPrintable(args));
+  QVERIFY2(args.contains(QStringLiteral("--batch")), qPrintable(args));
+}
+
+/**
+ * @brief Pins the failure path: a non-zero gpg exit shows gpg's own stderr
+ *        in a warning box, stores no key id and keeps the dialog open so the
+ *        user can fix the input.
+ */
+void tst_importkeydialog::importFailureShowsStderrAndStaysOpen() {
+#ifdef Q_OS_WIN
+  QSKIP("Fake gpg is a shell script");
+#endif
+  const QString gpg = writeGpg(
+      QStringLiteral("gpg-fail"),
+      QStringLiteral("echo 'gpg: no valid OpenPGP data found.' >&2\nexit 2\n"));
+  QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
+  ImportKeyDialog dialog(gpg);
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  auto *importButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("importButton"));
+  QVERIFY2(edit != nullptr, "inputTextEdit widget must exist");
+  QVERIFY2(importButton != nullptr, "importButton widget must exist");
+  edit->setPlainText(QStringLiteral("not a key"));
+  QSignalSpy accepted(&dialog, &QDialog::accepted);
+
+  const ModalRun run = driveModals([&]() { importButton->click(); });
+
+  QCOMPARE(run.messageBoxes, 1);
+  QVERIFY2(run.messageText.startsWith(QStringLiteral("GPG import failed")),
+           qPrintable(run.messageText));
+  QVERIFY2(run.messageText.contains(
+               QStringLiteral("gpg: no valid OpenPGP data found.")),
+           qPrintable(run.messageText));
+  QVERIFY2(dialog.importedKeyId().isEmpty(), "failed import stores no id");
+  QCOMPARE(accepted.count(), 0);
+  QCOMPARE(dialog.result(), static_cast<int>(QDialog::Rejected));
+}
+
+/**
+ * @brief Pins the parse-failure path: gpg exiting 0 without any recognisable
+ *        key line yields a dedicated warning, no key id and no accept, rather
+ *        than reporting success for an import we cannot identify.
+ */
+void tst_importkeydialog::importUnparseableOutputShowsParseErrorAndStaysOpen() {
+#ifdef Q_OS_WIN
+  QSKIP("Fake gpg is a shell script");
+#endif
+  const QString gpg = writeGpg(
+      QStringLiteral("gpg-noid"),
+      QStringLiteral("echo 'gpg: Total number processed: 0'\n"
+                     "echo '[GNUPG:] IMPORT_RES 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "
+                     "0'\nexit 0\n"));
+  QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
+  ImportKeyDialog dialog(gpg);
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  auto *importButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("importButton"));
+  QVERIFY2(edit != nullptr, "inputTextEdit widget must exist");
+  QVERIFY2(importButton != nullptr, "importButton widget must exist");
+  edit->setPlainText(QStringLiteral("-----BEGIN PGP PUBLIC KEY BLOCK-----"));
+  QSignalSpy accepted(&dialog, &QDialog::accepted);
+
+  const ModalRun run = driveModals([&]() { importButton->click(); });
+
+  QCOMPARE(run.messageBoxes, 1);
+  QCOMPARE(run.messageText,
+           QStringLiteral("Could not parse imported key id from GPG output."));
+  QVERIFY2(dialog.importedKeyId().isEmpty(), "unparsed import stores no id");
+  QCOMPARE(accepted.count(), 0);
+}
+
+/**
+ * @brief Pins the stderr fallback: when stdout carries no key line (older
+ *        gpg without --status-fd honoured, or a wrapper that swallows it) the
+ *        human-readable line on stderr still identifies the imported key.
+ */
+void tst_importkeydialog::importFallsBackToStderrForKeyId() {
+#ifdef Q_OS_WIN
+  QSKIP("Fake gpg is a shell script");
+#endif
+  const QString gpg = writeGpg(
+      QStringLiteral("gpg-stderr"),
+      QStringLiteral("echo 'gpg: key DEADBEEFCAFE0123: public key \"u\" "
+                     "imported' >&2\nexit 0\n"));
+  QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
+  ImportKeyDialog dialog(gpg);
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  auto *importButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("importButton"));
+  QVERIFY2(edit != nullptr, "inputTextEdit widget must exist");
+  QVERIFY2(importButton != nullptr, "importButton widget must exist");
+  edit->setPlainText(QStringLiteral("-----BEGIN PGP PUBLIC KEY BLOCK-----"));
+  QSignalSpy accepted(&dialog, &QDialog::accepted);
+
+  const ModalRun run = driveModals([&]() { importButton->click(); });
+
+  QCOMPARE(run.messageBoxes, 1);
+  QVERIFY2(run.messageText.contains(QStringLiteral("DEADBEEFCAFE0123")),
+           qPrintable(run.messageText));
+  QCOMPARE(dialog.importedKeyId(), QStringLiteral("DEADBEEFCAFE0123"));
+  QCOMPARE(accepted.count(), 1);
+}
+
+/**
+ * @brief Pins that cancelling the file picker is harmless: the input keeps
+ *        what the user already had and no message box appears.
+ */
+void tst_importkeydialog::fileButtonCancelLeavesInputUntouched() {
+  ImportKeyDialog dialog(QString{});
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  auto *fileButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("fileButton"));
+  QVERIFY2(edit != nullptr, "inputTextEdit widget must exist");
+  QVERIFY2(fileButton != nullptr, "fileButton widget must exist");
+  const QString typed = QStringLiteral("keep me");
+  edit->setPlainText(typed);
+
+  const ModalRun run = driveModals([&]() { fileButton->click(); });
+
+  QCOMPARE(run.fileDialogs, 1);
+  QCOMPARE(run.messageBoxes, 0);
+  QCOMPARE(edit->toPlainText(), typed);
+}
+
+/**
+ * @brief Pins the file happy path: picking an ASCII-armored .asc loads its
+ *        exact contents into the input, which in turn enables Import.
+ */
+void tst_importkeydialog::fileButtonLoadsArmoredFileIntoInput() {
+  const QByteArray armored =
+      QByteArrayLiteral("\n-----BEGIN PGP PUBLIC KEY BLOCK-----\nABC\n"
+                        "-----END PGP PUBLIC KEY BLOCK-----\n");
+  const QString path = writeFile(QStringLiteral("key.asc"), armored);
+  QVERIFY2(!path.isEmpty(), "could not write key file");
+  ImportKeyDialog dialog(QString{});
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  auto *fileButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("fileButton"));
+  auto *importButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("importButton"));
+  QVERIFY2(edit != nullptr, "inputTextEdit widget must exist");
+  QVERIFY2(fileButton != nullptr, "fileButton widget must exist");
+  QVERIFY2(importButton != nullptr, "importButton widget must exist");
+  QVERIFY2(!importButton->isEnabled(), "Import starts disabled");
+
+  const ModalRun run = driveModals([&]() { fileButton->click(); }, path);
+
+  QCOMPARE(run.fileDialogs, 1);
+  QCOMPARE(run.selectedFiles, QStringList{path});
+  QCOMPARE(run.messageBoxes, 0);
+  QCOMPARE(edit->toPlainText(), QString::fromUtf8(armored));
+  QVERIFY2(importButton->isEnabled(), "loaded key must enable Import");
+}
+
+/**
+ * @brief Pins the armor check: a binary keyring is refused with a warning
+ *        that names the (HTML-escaped) path and points at --armor, and the
+ *        input stays empty so bytes are never mangled through UTF-8.
+ */
+void tst_importkeydialog::fileButtonRejectsNonArmoredFile() {
+  const QByteArray binary = QByteArrayLiteral("\x99\x01\x0d\x04\x00\xff<b>");
+  const QString path = writeFile(QStringLiteral("key<b>.gpg"), binary);
+  QVERIFY2(!path.isEmpty(), "could not write key file");
+  ImportKeyDialog dialog(QString{});
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  auto *fileButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("fileButton"));
+  QVERIFY2(edit != nullptr, "inputTextEdit widget must exist");
+  QVERIFY2(fileButton != nullptr, "fileButton widget must exist");
+
+  const ModalRun run = driveModals([&]() { fileButton->click(); }, path);
+
+  QCOMPARE(run.fileDialogs, 1);
+  QCOMPARE(run.selectedFiles, QStringList{path});
+  QCOMPARE(run.messageBoxes, 1);
+  QVERIFY2(run.messageText.contains(path.toHtmlEscaped()),
+           qPrintable(run.messageText));
+  QVERIFY2(!run.messageText.contains(QStringLiteral("key<b>.gpg")),
+           "raw path must not reach the rich-text body");
+  QVERIFY2(run.messageText.contains(QStringLiteral("--armor --export")),
+           qPrintable(run.messageText));
+  QVERIFY2(edit->toPlainText().isEmpty(), "binary content must not be shown");
+}
+
+/**
+ * @brief Pins the open-failure warning: an unreadable file yields a
+ *        "Could not open file" box naming the path and leaves the input
+ *        untouched.
+ */
+void tst_importkeydialog::fileButtonWarnsWhenFileCannotBeOpened() {
+#ifdef Q_OS_WIN
+  QSKIP("Permission bits are POSIX");
+#endif
+  const QString path = writeFile(QStringLiteral("locked.asc"),
+                                 QByteArrayLiteral("-----BEGIN PGP"));
+  QVERIFY2(!path.isEmpty(), "could not write key file");
+  QVERIFY2(QFile::setPermissions(path, QFile::Permissions()),
+           "could not strip the file permissions");
+  const auto restore = qScopeGuard([path]() {
+    QFile::setPermissions(path, QFile::ReadOwner | QFile::WriteOwner);
+  });
+  {
+    QFile probe(path);
+    if (probe.open(QIODevice::ReadOnly)) {
+      QSKIP("File stays readable (running as root?)");
+    }
+  }
+  ImportKeyDialog dialog(QString{});
+  auto *edit =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+  auto *fileButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("fileButton"));
+  QVERIFY2(edit != nullptr, "inputTextEdit widget must exist");
+  QVERIFY2(fileButton != nullptr, "fileButton widget must exist");
+  const QString typed = QStringLiteral("keep me");
+  edit->setPlainText(typed);
+
+  const ModalRun run = driveModals([&]() { fileButton->click(); }, path);
+
+  QCOMPARE(run.fileDialogs, 1);
+  QCOMPARE(run.selectedFiles, QStringList{path});
+  QCOMPARE(run.messageBoxes, 1);
+  QVERIFY2(run.messageText.startsWith(QStringLiteral("Could not open file")),
+           qPrintable(run.messageText));
+  QVERIFY2(run.messageText.contains(path), qPrintable(run.messageText));
+  QCOMPARE(edit->toPlainText(), typed);
 }
 
 QTEST_MAIN(tst_importkeydialog)

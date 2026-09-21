@@ -14,19 +14,25 @@
 #include <QAction>
 #include <QCheckBox>
 #include <QComboBox>
+#include <QContextMenuEvent>
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QDir>
 #include <QFile>
+#include <QFormLayout>
 #include <QLabel>
 #include <QLineEdit>
+#include <QMenu>
 #include <QPlainTextEdit>
 #include <QPointer>
 #include <QPushButton>
 #include <QSignalSpy>
 #include <QTemporaryDir>
+#include <QTimer>
 #include <QToolButton>
 #include <QtTest>
+
+#include <functional>
 
 #include "../../../src/fieldlabel.h"
 #include "../../../src/pass.h"
@@ -52,11 +58,13 @@ public:
   void GitPull_b() override {}
   void GitPush() override {}
   void Show(QString file) override { shown = file; }
-  void Insert(QString file, QString, bool overwrite) override {
+  void Insert(QString file, QString content, bool overwrite) override {
     inserted = file;
+    insertedContent = content;
     insertedOverwrite = overwrite;
   }
   QString inserted;
+  QString insertedContent;
   bool insertedOverwrite = false;
   void Remove(QString, bool) override {}
   void Move(const QString, const QString, const bool) override {}
@@ -105,6 +113,24 @@ private Q_SLOTS:
   void fieldLabelRefusesADuplicateName();
   void fieldLabelEscapeCancelsAndRemoveDropsTheRow();
   void templateFieldsKeepPlainLabels();
+  void fieldLabelDoubleClickStartsTheEdit();
+  void fieldLabelContextMenuRenamesAndRemoves();
+  void fieldLabelEditorTakesTheFormCell();
+  void generateButtonFillsThePasswordField();
+  void generateButtonIgnoresAnUnknownCharset();
+  void okBeforeTheContentLoadedWritesNothing();
+  void okWritesTheEntryBackWithATrailingNewline();
+  void cancelClearsTheFields();
+  void newEntryNameCannotEndInASlash();
+  void acceptRefusesAnInvalidNameAndAnUncreatableFolder();
+  void unknownDefaultTemplateFallsBackToTheFirst();
+  void reloadAndTemplateChangeDropOldFieldRows();
+  void otpFieldFlagsAnInvalidSecret();
+  void otpWarningSurvivesAReloadOnlyOnce();
+  void otpUriIsNormalisedOnLeavingTheField();
+  void otpUntouchedValueIsWrittenBackVerbatim();
+  void otpPopulatedFieldWinsOverTheEmptyTemplateOne();
+  void renamingTheOtpFieldAwayDropsItsValidation();
 };
 
 namespace {
@@ -561,6 +587,548 @@ void tst_passworddialog::ctrlTCyclesTemplatesAndUpdatesBox() {
 
   QTest::keyClick(&d, Qt::Key_T, Qt::ControlModifier);
   QTRY_COMPARE(box->currentText(), QStringLiteral("login"));
+}
+
+namespace {
+/**
+ * @brief Run @p drive on the QMenu that @p owner is about to exec(): the
+ *        menu blocks the caller, so the choice has to come from the event
+ *        loop the menu runs. @p drive must close the menu.
+ */
+void whenContextMenuOpens(QWidget *owner,
+                          const std::function<void(QMenu *)> &drive) {
+  auto *poll = new QTimer(owner);
+  poll->setInterval(0);
+  QObject::connect(poll, &QTimer::timeout, poll, [owner, drive, poll] {
+    auto *menu = owner->findChild<QMenu *>();
+    if (menu == nullptr || !menu->isVisible()) {
+      return;
+    }
+    poll->stop();
+    poll->deleteLater();
+    drive(menu);
+  });
+  poll->start();
+}
+
+/**
+ * @brief Deliver a mouse-triggered QContextMenuEvent at the centre of
+ *        @p owner, the way a right click would.
+ */
+void openContextMenu(QWidget *owner) {
+  const QPoint pos = owner->rect().center();
+  QContextMenuEvent ev(QContextMenuEvent::Mouse, pos, owner->mapToGlobal(pos));
+  QCoreApplication::sendEvent(owner, &ev);
+}
+} // namespace
+
+/**
+ * @brief A left double-click on the label opens the editor, a right one is
+ *        left to QLabel; a second startEdit() re-uses the editor instead of
+ *        opening another.
+ */
+void tst_passworddialog::fieldLabelDoubleClickStartsTheEdit() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\n"));
+
+  FieldLabel *label = fieldLabel(d, QStringLiteral("login"));
+  QVERIFY(label != nullptr);
+  QTest::mouseDClick(label, Qt::RightButton);
+  QVERIFY2(d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor")) ==
+               nullptr,
+           "a right double-click must not start the edit");
+
+  QTest::mouseDClick(label, Qt::LeftButton);
+  QPointer<QLineEdit> editor =
+      d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY2(!editor.isNull(), "a left double-click must open the editor");
+  QCOMPARE(editor->text(), QStringLiteral("login"));
+
+  label->startEdit();
+  QVERIFY2(!editor.isNull(),
+           "a second startEdit() must keep the editor already open");
+  QCOMPARE(
+      d.findChildren<QLineEdit *>(QStringLiteral("fieldNameEditor")).size(), 1);
+  QVERIFY2(d.focusWidget() == editor,
+           "a second startEdit() must only focus the existing editor");
+}
+
+/**
+ * @brief The context menu offers Rename field and Remove field; choosing
+ *        Rename opens the editor on that field.
+ *
+ * Remove is only checked for being offered. Choosing it is a crash in src
+ * today: removeRequested() makes PasswordDialog::removeField() delete the
+ * label synchronously, and QObject's destructor then `delete`s the stack
+ * QMenu still inside exec() (free(): invalid size). Drive that path once
+ * FieldLabel defers the signal or heap-allocates the menu.
+ */
+void tst_passworddialog::fieldLabelContextMenuRenamesAndRemoves() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\nurl: example.com\n"));
+
+  FieldLabel *label = fieldLabel(d, QStringLiteral("login"));
+  QVERIFY(label != nullptr);
+  QStringList offered;
+  whenContextMenuOpens(label, [&offered](QMenu *menu) {
+    for (QAction *action : menu->actions()) {
+      offered.append(action->text());
+    }
+    menu->setActiveAction(menu->actions().first());
+    QTest::keyClick(menu, Qt::Key_Return);
+  });
+  openContextMenu(label);
+  QCOMPARE(offered.size(), 2);
+  QVERIFY2(offered.at(0).startsWith(QStringLiteral("Rename field")),
+           qPrintable(offered.join(QStringLiteral(" | "))));
+  QCOMPARE(offered.at(1), QStringLiteral("Remove field"));
+
+  auto *editor = d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY2(editor != nullptr, "Rename field must open the editor");
+  QCOMPARE(editor->text(), QStringLiteral("login"));
+  editor->setText(QStringLiteral("user"));
+  QTest::keyClick(editor, Qt::Key_Return);
+  QCOMPARE(label->text(), QStringLiteral("user"));
+  QVERIFY(d.getPassword().contains(QStringLiteral("user: bob\n")));
+  QVERIFY2(!d.getPassword().contains(QStringLiteral("login")),
+           "the field must be written under the new name only");
+}
+
+/**
+ * @brief When the label sits directly in a QFormLayout, the editor takes its
+ *        cell (so the label column widens for it) and the label gets the
+ *        cell back once the edit ends; the rename is reported as a signal.
+ */
+void tst_passworddialog::fieldLabelEditorTakesTheFormCell() {
+  QWidget w;
+  auto *form = new QFormLayout(&w);
+  auto *label = new FieldLabel(QStringLiteral("login"), &w);
+  auto *value = new QLineEdit(&w);
+  form->addRow(label, value);
+  w.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&w));
+  QSignalSpy renamed(label, &FieldLabel::renamed);
+
+  label->startEdit();
+  auto *editor = w.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY(editor != nullptr);
+  int row = -1;
+  QFormLayout::ItemRole role{};
+  form->getWidgetPosition(editor, &row, &role);
+  QCOMPARE(row, 0);
+  QCOMPARE(role, QFormLayout::LabelRole);
+  QVERIFY2(label->isHidden(), "the label must give its cell to the editor");
+  form->getWidgetPosition(label, &row, &role);
+  QCOMPARE(row, -1);
+
+  editor->setText(QStringLiteral("user"));
+  QTest::keyClick(editor, Qt::Key_Return);
+  QCOMPARE(renamed.size(), 1);
+  QCOMPARE(renamed.first().at(0).toString(), QStringLiteral("login"));
+  QCOMPARE(renamed.first().at(1).toString(), QStringLiteral("user"));
+  form->getWidgetPosition(label, &row, &role);
+  QCOMPARE(row, 0);
+  QCOMPARE(role, QFormLayout::LabelRole);
+  QVERIFY2(!label->isHidden(), "the label must be back in its cell");
+  QCOMPARE(label->text(), QStringLiteral("login"));
+}
+
+/**
+ * @brief The generate button fills the password field with a password of the
+ *        configured length and leaves the editor enabled afterwards.
+ */
+void tst_passworddialog::generateButtonFillsThePasswordField() {
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("new.gpg"),
+                   true);
+  d.setLength(12);
+  d.setPasswordCharTemplate(0);
+  auto *generate =
+      d.findChild<QToolButton *>(QStringLiteral("createPasswordButton"));
+  auto *pw = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  auto *editor = d.findChild<QWidget *>(QStringLiteral("widget"));
+  QVERIFY(generate != nullptr && pw != nullptr && editor != nullptr);
+  QVERIFY(pw->text().isEmpty());
+
+  generate->click();
+  QCOMPARE(pw->text().size(), 12);
+  QVERIFY2(editor->isEnabled(), "the editor must be re-enabled afterwards");
+  const QString first = pw->text();
+  generate->click();
+  QVERIFY2(pw->text() != first, "each click must generate a new password");
+}
+
+/**
+ * @brief Without a valid character set selected there is nothing to
+ *        generate from: the field is left alone and the editor unlocked.
+ */
+void tst_passworddialog::generateButtonIgnoresAnUnknownCharset() {
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("new.gpg"),
+                   true);
+  d.setPasswordCharTemplate(-1);
+  auto *generate =
+      d.findChild<QToolButton *>(QStringLiteral("createPasswordButton"));
+  auto *pw = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  auto *editor = d.findChild<QWidget *>(QStringLiteral("widget"));
+  QVERIFY(generate != nullptr && pw != nullptr && editor != nullptr);
+  pw->setText(QStringLiteral("keep"));
+
+  generate->click();
+  QCOMPARE(pw->text(), QStringLiteral("keep"));
+  QVERIFY2(editor->isEnabled(),
+           "the editor must not stay locked when nothing was generated");
+}
+
+/**
+ * @brief Accepting an existing entry before its decrypt arrived must not
+ *        write the empty fields over it.
+ */
+void tst_passworddialog::okBeforeTheContentLoadedWritesNothing() {
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("entry.gpg"),
+                   false);
+  QSignalSpy accepted(&d, &QDialog::accepted);
+  d.accept();
+  QCOMPARE(accepted.size(), 1);
+  QVERIFY2(pass.inserted.isEmpty(),
+           "nothing may be inserted before the content has loaded");
+}
+
+/**
+ * @brief OK on a loaded entry hands Insert the joined fields as an overwrite,
+ *        terminated by a newline even when the notes lack one.
+ */
+void tst_passworddialog::okWritesTheEntryBackWithATrailingNewline() {
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("entry.gpg"),
+                   false);
+  pass.deliverShow(QStringLiteral("secret\nnote"));
+  auto *notes = d.findChild<QPlainTextEdit *>();
+  QVERIFY(notes != nullptr);
+  QCOMPARE(notes->toPlainText(), QStringLiteral("note"));
+
+  okButton(d)->click();
+  QCOMPARE(pass.inserted, QStringLiteral("entry.gpg"));
+  QVERIFY2(pass.insertedOverwrite, "an existing entry is overwritten");
+  QCOMPARE(pass.insertedContent, QStringLiteral("secret\nnote\n"));
+}
+
+/**
+ * @brief Cancel empties the dialog: the password and every field row go, so
+ *        nothing lingers in a dialog that is reused or inspected later.
+ */
+void tst_passworddialog::cancelClearsTheFields() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\nnotes\n"));
+  QVERIFY(d.findChild<QLineEdit *>(QStringLiteral("login")) != nullptr);
+
+  d.reject();
+  QCOMPARE(d.result(), int(QDialog::Rejected));
+  QVERIFY(pass.inserted.isEmpty());
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY2(d.findChild<QLineEdit *>(QStringLiteral("login")) == nullptr,
+           "the field rows must be gone");
+  QCOMPARE(d.getPassword(), QStringLiteral("\n"));
+}
+
+/**
+ * @brief A name ending in / names a folder, not an entry: OK stays off and
+ *        the status line says why.
+ */
+void tst_passworddialog::newEntryNameCannotEndInASlash() {
+  QTemporaryDir store;
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QString(), true);
+  d.setNewEntryLocation(store.path(), {QString()}, QString());
+  auto *name = d.findChild<QLineEdit *>(QStringLiteral("nameEdit"));
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+  QVERIFY(name != nullptr && status != nullptr);
+
+  name->setText(QStringLiteral("work/"));
+  QVERIFY2(!okButton(d)->isEnabled(), "a trailing slash is not a name");
+  QVERIFY2(status->text().contains(QStringLiteral("end in /")),
+           qPrintable("the status must explain: " + status->text()));
+}
+
+/**
+ * @brief accept() re-checks the name itself (Enter can bypass the disabled
+ *        OK) and refuses when the folder the name asks for cannot be made.
+ */
+void tst_passworddialog::acceptRefusesAnInvalidNameAndAnUncreatableFolder() {
+  QTemporaryDir store;
+  QFile blocker(QDir(store.path()).filePath(QStringLiteral("blocker")));
+  QVERIFY(blocker.open(QIODevice::WriteOnly));
+  blocker.close();
+
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QString(), true);
+  d.setNewEntryLocation(store.path(), {QString()}, QString());
+  auto *name = d.findChild<QLineEdit *>(QStringLiteral("nameEdit"));
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+  QVERIFY(name != nullptr && status != nullptr);
+  QSignalSpy accepted(&d, &QDialog::accepted);
+
+  name->setText(QStringLiteral("  "));
+  d.accept();
+  QVERIFY2(accepted.isEmpty(), "an empty name must not be accepted");
+  QVERIFY(status->text().contains(QStringLiteral("name")));
+  QVERIFY(pass.inserted.isEmpty());
+
+  // "blocker" is a file, so the folder blocker/ can never be created.
+  name->setText(QStringLiteral("blocker/vpn"));
+  QVERIFY2(okButton(d)->isEnabled(), "nothing wrong with the name as typed");
+  okButton(d)->click();
+  QVERIFY2(accepted.isEmpty(), "an uncreatable folder must block accepting");
+  QVERIFY2(status->text().contains(QStringLiteral("Could not create")),
+           qPrintable("the status must name the failure: " + status->text()));
+  QVERIFY(pass.inserted.isEmpty());
+  QVERIFY(d.entryPath().isEmpty());
+}
+
+/**
+ * @brief A default template that the .templates file no longer has falls
+ *        back to the first name, so the dialog never shows no template.
+ */
+void tst_passworddialog::unknownDefaultTemplateFallsBackToTheFirst() {
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("new.gpg"),
+                   true);
+  d.setAvailableTemplates(twoTemplates(), QStringLiteral("gone"));
+  auto *box = d.findChild<QComboBox *>(QStringLiteral("templateBox"));
+  QVERIFY(box != nullptr);
+  QCOMPARE(box->currentText(), QStringLiteral("login"));
+  QVERIFY2(d.findChild<QLineEdit *>(QStringLiteral("username")) != nullptr,
+           "the fallback template must be applied");
+}
+
+/**
+ * @brief Re-populating the dialog (a second decrypt) and switching template
+ *        both discard the previous entry-defined rows instead of stacking
+ *        duplicates that would be written back twice.
+ */
+void tst_passworddialog::reloadAndTemplateChangeDropOldFieldRows() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\n"));
+  pass.deliverShow(QStringLiteral("secret\nlogin: alice\n"));
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  const auto logins = d.findChildren<QLineEdit *>(QStringLiteral("login"));
+  QCOMPARE(logins.size(), 1);
+  QCOMPARE(logins.first()->text(), QStringLiteral("alice"));
+  QCOMPARE(d.getPassword().count(QStringLiteral("login:")), 1);
+
+  d.setAvailableTemplates(twoTemplates(), QStringLiteral("wifi"));
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY2(d.findChild<QLineEdit *>(QStringLiteral("login")) == nullptr,
+           "applying a template must drop the entry-defined rows");
+  QVERIFY(d.findChild<QLineEdit *>(QStringLiteral("ssid")) != nullptr);
+  QVERIFY(!d.getPassword().contains(QStringLiteral("login:")));
+}
+
+/**
+ * @brief The OTP template field explains what it takes and flags a value
+ *        that is not a usable secret with a trailing icon and tooltip, which
+ *        both go away once the value is fixed or cleared.
+ */
+void tst_passworddialog::otpFieldFlagsAnInvalidSecret() {
+  FakePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("OTP");
+  PasswordDialog d(&pass, s, QStringLiteral("new.gpg"), true);
+  auto *otp = d.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  QVERIFY(otp != nullptr);
+  QVERIFY2(!otp->placeholderText().isEmpty(),
+           "the OTP field must say what it takes");
+  const int plainActions = otp->actions().size();
+  QVERIFY(otp->toolTip().isEmpty());
+
+  otp->setText(QStringLiteral("otpauth://broken"));
+  QCOMPARE(otp->actions().size(), plainActions + 1);
+  QCOMPARE(otp->toolTip(), QStringLiteral("Invalid OTP secret"));
+
+  otp->setText(QStringLiteral("otpauth://still broken"));
+  QVERIFY2(otp->actions().size() == plainActions + 1,
+           "a second bad value must not add a second icon");
+
+  otp->setText(QStringLiteral("JBSWY3DPEHPK3PXP"));
+  QCOMPARE(otp->actions().size(), plainActions);
+  QVERIFY2(otp->toolTip().isEmpty(), "a valid secret clears the warning");
+
+  otp->setText(QStringLiteral("otpauth://broken"));
+  otp->clear();
+  QCOMPARE(otp->actions().size(), plainActions);
+  QVERIFY(otp->toolTip().isEmpty());
+}
+
+/**
+ * @brief A template OTP widget survives setPassword(); its warning icon must
+ *        be removed when the field is re-hooked, not stacked or leaked.
+ */
+void tst_passworddialog::otpWarningSurvivesAReloadOnlyOnce() {
+  FakePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("OTP");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  auto *otp = d.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  QVERIFY(otp != nullptr);
+  const int plainActions = otp->actions().size();
+
+  otp->setText(QStringLiteral("otpauth://broken"));
+  QCOMPARE(otp->actions().size(), plainActions + 1);
+
+  pass.deliverShow(QStringLiteral("secret\nOTP: otpauth://also broken\n"));
+  QCOMPARE(otp->text(), QStringLiteral("otpauth://also broken"));
+  QCOMPARE(otp->actions().size(), plainActions + 1);
+  QCOMPARE(otp->toolTip(), QStringLiteral("Invalid OTP secret"));
+
+  pass.deliverShow(QStringLiteral("secret\n"));
+  QVERIFY(otp->text().isEmpty());
+  QCOMPARE(otp->actions().size(), plainActions);
+  QVERIFY(otp->toolTip().isEmpty());
+}
+
+/**
+ * @brief An otpauth:// URI entered in the field is canonicalised (label from
+ *        the entry name, explicit digits and period) as soon as the field is
+ *        left, so what is saved is what was shown; a broken URI is left as
+ *        typed for the user to fix.
+ *
+ * Only the URI route is driven here: the "user typed a bare secret" route
+ * relies on a textEdited lambda that src connects with Qt::UniqueConnection,
+ * which Qt refuses for functors, so m_otpFieldEdited never becomes true.
+ */
+void tst_passworddialog::otpUriIsNormalisedOnLeavingTheField() {
+  FakePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("OTP");
+  PasswordDialog d(&pass, s, QStringLiteral("github.com"), true);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  auto *otp = d.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  QVERIFY(otp != nullptr);
+
+  QTest::keyClicks(otp,
+                   QStringLiteral("otpauth://totp/?secret=JBSWY3DPEHPK3PXP"));
+  QTest::keyClick(otp, Qt::Key_Return);
+  QVERIFY2(
+      otp->text().startsWith(QStringLiteral("otpauth://totp/github.com?")),
+      qPrintable("the URI must be labelled with the entry: " + otp->text()));
+  QVERIFY(otp->text().contains(QStringLiteral("secret=JBSWY3DPEHPK3PXP")));
+  QVERIFY2(otp->text().contains(QStringLiteral("digits=6")),
+           qPrintable("the URI must be made explicit: " + otp->text()));
+
+  // The typed value is invalid: the field is left as typed for the user to fix.
+  otp->clear();
+  QTest::keyClicks(otp, QStringLiteral("otpauth://broken"));
+  QTest::keyClick(otp, Qt::Key_Return);
+  QCOMPARE(otp->text(), QStringLiteral("otpauth://broken"));
+
+  // An empty field has nothing to normalise and stays empty.
+  otp->clear();
+  QTest::keyClick(otp, Qt::Key_Return);
+  QVERIFY(otp->text().isEmpty());
+}
+
+/**
+ * @brief A value that came from the entry and was not touched is written
+ *        back byte-for-byte (a backup code like 12345678 looks like base32),
+ *        while an otpauth:// URI is canonicalised on save.
+ */
+void tst_passworddialog::otpUntouchedValueIsWrittenBackVerbatim() {
+  FakePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("OTP");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  pass.deliverShow(QStringLiteral("secret\nOTP: 12345678\n"));
+  okButton(d)->click();
+  QVERIFY2(
+      pass.insertedContent.contains(QStringLiteral("OTP: 12345678\n")),
+      qPrintable("an untouched value must be kept:\n" + pass.insertedContent));
+
+  FakePass uriPass;
+  PasswordDialog e(&uriPass, s, QStringLiteral("entry.gpg"), false);
+  uriPass.deliverShow(QStringLiteral(
+      "secret\nOTP: otpauth://totp/x?secret=jbswy3dpehpk3pxp\n"));
+  okButton(e)->click();
+  QVERIFY2(
+      uriPass.insertedContent.contains(QStringLiteral(
+          "OTP: otpauth://totp/x?secret=jbswy3dpehpk3pxp&digits=6")),
+      qPrintable("a URI must be canonicalised:\n" + uriPass.insertedContent));
+  QVERIFY(uriPass.insertedContent.contains(QStringLiteral("period=30")));
+}
+
+/**
+ * @brief An entry storing its secret under `totp:` leaves the template's
+ *        `OTP` widget empty; validation must follow the populated field.
+ */
+void tst_passworddialog::otpPopulatedFieldWinsOverTheEmptyTemplateOne() {
+  FakePass pass;
+  AppSettings s = allFieldsSettings();
+  s.passTemplate = QStringLiteral("OTP");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  pass.deliverShow(QStringLiteral("secret\ntotp: otpauth://broken\n"));
+  auto *templ = d.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  auto *stored = d.findChild<QLineEdit *>(QStringLiteral("totp"));
+  QVERIFY(templ != nullptr && stored != nullptr);
+  QVERIFY(templ->text().isEmpty());
+
+  QVERIFY2(!stored->placeholderText().isEmpty(),
+           "the populated field must be the hooked one");
+  QCOMPARE(stored->toolTip(), QStringLiteral("Invalid OTP secret"));
+  QVERIFY2(templ->toolTip().isEmpty(),
+           "the empty template widget must not carry the warning");
+}
+
+/**
+ * @brief Renaming the only OTP field to a plain name makes it an ordinary
+ *        field: the warning icon goes with the OTP role, and editing the value
+ *        afterwards (its textChanged hook is still wired) must neither flag it
+ *        again nor crash for want of an OTP field.
+ */
+void tst_passworddialog::renamingTheOtpFieldAwayDropsItsValidation() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret\ntotp: otpauth://broken\n"));
+  auto *line = d.findChild<QLineEdit *>(QStringLiteral("totp"));
+  QVERIFY(line != nullptr);
+  QCOMPARE(line->toolTip(), QStringLiteral("Invalid OTP secret"));
+  const int flagged = line->actions().size();
+
+  FieldLabel *label = fieldLabel(d, QStringLiteral("totp"));
+  QVERIFY(label != nullptr);
+  label->startEdit();
+  auto *editor = d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY(editor != nullptr);
+  editor->setText(QStringLiteral("backup"));
+  QTest::keyClick(editor, Qt::Key_Return);
+  QCOMPARE(line->objectName(), QStringLiteral("backup"));
+  QCOMPARE(line->actions().size(), flagged - 1);
+
+  line->setText(QStringLiteral("otpauth://also broken"));
+  QVERIFY2(line->actions().size() == flagged - 1,
+           "a field that is no longer the OTP one must not be flagged");
+  QVERIFY2(d.getPassword().contains(
+               QStringLiteral("backup: otpauth://also broken\n")),
+           qPrintable(d.getPassword()));
 }
 
 QTEST_MAIN(tst_passworddialog)
