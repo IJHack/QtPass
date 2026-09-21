@@ -81,13 +81,13 @@ act push -W .github/workflows/lint.yml -j build
 
 ### Quick Reference
 
-| Task                      | Command                                             |
-| ------------------------- | --------------------------------------------------- |
-| Run linter                | `act push -W .github/workflows/lint.yml`          |
-| Run linter (specific job) | `act push -W .github/workflows/lint.yml -j build` |
-| Run build & tests         | `act push -W .github/workflows/build-and-test.yml`            |
-| Run docs                  | `act push -W .github/workflows/documentation.yml`            |
-| Run reuse check           | `act push -W .github/workflows/reuse.yml`           |
+| Task                      | Command                                            |
+| ------------------------- | -------------------------------------------------- |
+| Run linter                | `act push -W .github/workflows/lint.yml`           |
+| Run linter (specific job) | `act push -W .github/workflows/lint.yml -j build`  |
+| Run build & tests         | `act push -W .github/workflows/build-and-test.yml` |
+| Run docs                  | `act push -W .github/workflows/documentation.yml`  |
+| Run reuse check           | `act push -W .github/workflows/reuse.yml`          |
 
 ## Available Workflows
 
@@ -380,13 +380,13 @@ act push -W .github/workflows/build-and-test.yml --secret-map "CODECOV_TOKEN=fak
 
 ## GitHub Actions Files
 
-| File                           | Purpose                    |
-| ------------------------------ | -------------------------- |
-| `.github/workflows/lint.yml` | Super-linter (many checks) |
-| `.github/workflows/build-and-test.yml`   | Build & test with Qt       |
-| `.github/workflows/documentation.yml`   | Doxygen docs generation    |
-| `.github/workflows/reuse.yml`  | REUSE compliance           |
-| `.github/super-linter.env`     | Linter configuration       |
+| File                                   | Purpose                    |
+| -------------------------------------- | -------------------------- |
+| `.github/workflows/lint.yml`           | Super-linter (many checks) |
+| `.github/workflows/build-and-test.yml` | Build & test with Qt       |
+| `.github/workflows/documentation.yml`  | Doxygen docs generation    |
+| `.github/workflows/reuse.yml`          | REUSE compliance           |
+| `.github/super-linter.env`             | Linter configuration       |
 
 ## Run Before PR Checklist
 
