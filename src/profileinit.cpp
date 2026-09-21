@@ -81,10 +81,17 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
   // interrupted write leaves no half .gpg-id for the signing step (or a
   // later run without signing) to take for the recipient list. Owner-only
   // before commit: the list leaks which keys the store is encrypted to.
-  // Same generation rule as ImitatePass::writeGpgIdFile (GpgIdGeneration).
-  const qint64 generation = GpgIdGeneration::next(gpgIdFile);
+  // Same generation rule as ImitatePass::writeGpgIdFile: reserved and
+  // recorded before the write (GpgIdGeneration).
+  QString why;
+  const std::optional<qint64> generation =
+      GpgIdGeneration::reserveNext(gpgIdFile, &why);
+  if (!generation) {
+    *note = why;
+    return false;
+  }
   const QByteArray contents = GpgIdGeneration::withHeader(
-      generation, (ids.join(QLatin1Char('\n')) + QLatin1Char('\n')).toUtf8());
+      *generation, (ids.join(QLatin1Char('\n')) + QLatin1Char('\n')).toUtf8());
   QSaveFile file(gpgIdFile);
   if (!file.open(QIODevice::WriteOnly)) {
     *note = tr("Could not write %1: %2").arg(gpgIdFile, file.errorString());
@@ -95,7 +102,6 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
     *note = tr("Could not write %1: %2").arg(gpgIdFile, file.errorString());
     return false;
   }
-  GpgIdGeneration::remember(gpgIdFile, generation);
   return true;
 }
 

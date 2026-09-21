@@ -7,7 +7,10 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QMutex>
+#include <QMutexLocker>
 #include <QSettings>
+#include <memory>
 
 const QByteArray GpgIdGeneration::kPrefix =
     QByteArrayLiteral("# QtPass-GpgId-Generation: ");
@@ -15,16 +18,97 @@ const QByteArray GpgIdGeneration::kPrefix =
 namespace {
 constexpr int kMaxDigits = 18;
 
+/// One lock for every read-compare-write on the generation record: a fresh
+/// QSettings per transaction (the same QSettings object is not thread-safe,
+/// and the re-encryption worker reads while the interface may write), and
+/// no interleaving of two transactions.
+QMutex &recordLock() {
+  static QMutex mutex;
+  return mutex;
+}
+
 /// Security state of its own, apart from the user's configuration: the
 /// application's settings scope, a separate file, no fallback locations.
-auto store() -> QSettings * {
-  static QSettings settings(QSettings::defaultFormat(), QSettings::UserScope,
-                            QCoreApplication::organizationName().isEmpty()
-                                ? QStringLiteral("IJHack")
-                                : QCoreApplication::organizationName(),
-                            QStringLiteral("QtPass-gpgid-generations"));
-  settings.setFallbacksEnabled(false);
-  return &settings;
+auto openRecord() -> std::unique_ptr<QSettings> {
+  auto settings = std::make_unique<QSettings>(
+      QSettings::defaultFormat(), QSettings::UserScope,
+      QCoreApplication::organizationName().isEmpty()
+          ? QStringLiteral("IJHack")
+          : QCoreApplication::organizationName(),
+      QStringLiteral("QtPass-gpgid-generations"));
+  settings->setFallbacksEnabled(false);
+  return settings;
+}
+
+auto statusText(QSettings::Status status) -> QString {
+  return status == QSettings::AccessError
+             ? QCoreApplication::translate("GpgIdGeneration",
+                                           "the record cannot be accessed")
+             : QCoreApplication::translate("GpgIdGeneration",
+                                           "the record is not readable");
+}
+
+/// Once the record failed to parse, Qt's process-wide cache of the file
+/// goes on as if it were empty, which would turn "unreadable" into "never
+/// seen"; so a format error is remembered for the rest of the process.
+bool recordCorrupt = false;
+
+/// The remembered generation, read fresh; nothing when the record cannot be
+/// read. Caller holds recordLock().
+auto readRemembered(QSettings &record, const QString &key, QString *error)
+    -> std::optional<qint64> {
+  record.sync();
+  if (record.status() == QSettings::FormatError) {
+    recordCorrupt = true;
+  }
+  if (recordCorrupt) {
+    if (error)
+      *error = QCoreApplication::translate(
+                   "GpgIdGeneration",
+                   "The generation record of the recipient lists, %1, is not "
+                   "readable. Signed recipient lists are not accepted until it "
+                   "is repaired or removed (which forgets what was accepted "
+                   "before) and QtPass is started again.")
+                   .arg(record.fileName());
+    return std::nullopt;
+  }
+  if (record.status() != QSettings::NoError) {
+    if (error)
+      *error = QCoreApplication::translate(
+                   "GpgIdGeneration",
+                   "The generation record of the recipient lists could not "
+                   "be read (%1).")
+                   .arg(statusText(record.status()));
+    return std::nullopt;
+  }
+  return record.value(key, 0).toLongLong();
+}
+
+/// Write @p generation through to disk. Caller holds recordLock().
+auto writeRemembered(QSettings &record, const QString &key, qint64 generation,
+                     qint64 previous, QString *error) -> bool {
+  record.setValue(key, generation);
+  record.sync();
+  if (record.status() != QSettings::NoError) {
+    // Qt keeps the file's contents in a process-wide cache with the failed
+    // write pending; put the previous value back so a later, successful
+    // sync does not record a generation nobody accepted.
+    if (previous == 0) {
+      record.remove(key);
+    } else {
+      record.setValue(key, previous);
+    }
+    qCWarning(lcQtPass) << "Could not record the .gpg-id generation" << key
+                        << "status" << record.status();
+    if (error)
+      *error = QCoreApplication::translate(
+                   "GpgIdGeneration",
+                   "The generation record of the recipient lists could not "
+                   "be written (%1).")
+                   .arg(statusText(record.status()));
+    return false;
+  }
+  return true;
 }
 } // namespace
 
@@ -100,23 +184,11 @@ auto GpgIdGeneration::key(const QString &gpgIdFile) -> QString {
           .toHex());
 }
 
-auto GpgIdGeneration::remembered(const QString &gpgIdFile) -> qint64 {
-  QSettings *s = store();
-  s->sync();
-  return s->value(key(gpgIdFile), 0).toLongLong();
-}
-
-auto GpgIdGeneration::remember(const QString &gpgIdFile, qint64 generation)
-    -> bool {
-  QSettings *s = store();
-  s->setValue(key(gpgIdFile), generation);
-  s->sync();
-  if (s->status() != QSettings::NoError) {
-    qCWarning(lcQtPass) << "Could not record the .gpg-id generation for"
-                        << gpgIdFile << "status" << s->status();
-    return false;
-  }
-  return true;
+auto GpgIdGeneration::remembered(const QString &gpgIdFile, QString *error)
+    -> std::optional<qint64> {
+  QMutexLocker lock(&recordLock());
+  auto record = openRecord();
+  return readRemembered(*record, key(gpgIdFile), error);
 }
 
 auto GpgIdGeneration::accept(const QString &gpgIdFile,
@@ -129,8 +201,14 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
       *error = why;
     return false;
   }
-  const qint64 last = remembered(gpgIdFile);
-  if (*generation < last) {
+  QMutexLocker lock(&recordLock());
+  auto record = openRecord();
+  const QString k = key(gpgIdFile);
+  const std::optional<qint64> last = readRemembered(*record, k, error);
+  if (!last) {
+    return false;
+  }
+  if (*generation < *last) {
     if (error)
       *error = QCoreApplication::translate(
                    "GpgIdGeneration",
@@ -140,27 +218,33 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
                    "again.")
                    .arg(gpgIdFile)
                    .arg(*generation)
-                   .arg(last);
+                   .arg(*last);
     return false;
   }
-  if (*generation > last && !remember(gpgIdFile, *generation)) {
-    if (error)
-      *error = QCoreApplication::translate(
-                   "GpgIdGeneration",
-                   "Could not record that generation %1 of %2 was accepted; "
-                   "the list was not used.")
-                   .arg(*generation)
-                   .arg(gpgIdFile);
+  if (*generation > *last &&
+      !writeRemembered(*record, k, *generation, *last, error)) {
     return false;
   }
   return true;
 }
 
-auto GpgIdGeneration::next(const QString &gpgIdFile) -> qint64 {
+auto GpgIdGeneration::reserveNext(const QString &gpgIdFile, QString *error)
+    -> std::optional<qint64> {
   qint64 onDisk = 0;
   QFile file(gpgIdFile);
   if (file.open(QIODevice::ReadOnly)) {
     onDisk = parse(file.readAll()).value_or(0);
   }
-  return qMax(onDisk, remembered(gpgIdFile)) + 1;
+  QMutexLocker lock(&recordLock());
+  auto record = openRecord();
+  const QString k = key(gpgIdFile);
+  const std::optional<qint64> last = readRemembered(*record, k, error);
+  if (!last) {
+    return std::nullopt;
+  }
+  const qint64 generation = qMax(onDisk, *last) + 1;
+  if (!writeRemembered(*record, k, generation, *last, error)) {
+    return std::nullopt;
+  }
+  return generation;
 }

@@ -61,36 +61,48 @@ public:
 
   /**
    * @brief The highest generation this device has accepted or written for
-   * the `.gpg-id` at @p gpgIdFile; 0 when it has never seen one.
+   * the `.gpg-id` at @p gpgIdFile: 0 when it has never seen one, nothing
+   * when the record cannot be read. Unreadable is not "never seen": a
+   * signed list must then be refused, not compared against 0.
+   * @param gpgIdFile The `.gpg-id`.
+   * @param error Receives why the record could not be read, if not null.
    */
-  static auto remembered(const QString &gpgIdFile) -> qint64;
-
-  /**
-   * @brief Record @p generation as accepted for @p gpgIdFile, written
-   * through to disk before returning: a generation only in memory when the
-   * process dies would let the old list back in on the next start.
-   * @return false when the record could not be written; the caller must
-   *         then treat the list as not accepted.
-   */
-  static auto remember(const QString &gpgIdFile, qint64 generation) -> bool;
+  static auto remembered(const QString &gpgIdFile, QString *error = nullptr)
+      -> std::optional<qint64>;
 
   /**
    * @brief Decide about a verified list: its generation against the
-   * remembered one, and remember it when it passes.
+   * remembered one, and remember it when it passes. One transaction under
+   * the process-wide lock: read, compare, write through.
    * @param gpgIdFile The `.gpg-id` the bytes came from.
    * @param contents The verified bytes.
    * @param error Receives the reason for a refusal, if not null.
-   * @return true when the list may be used.
+   * @return true when the list may be used. false when its generation is
+   *         lower, its metadata malformed, or the record could not be read
+   *         or written: without established freshness state nothing is
+   *         accepted.
    */
   static auto accept(const QString &gpgIdFile, const QByteArray &contents,
                      QString *error = nullptr) -> bool;
 
   /**
-   * @brief The generation to write next for @p gpgIdFile: one above both
-   * what the file on disk declares (0 when it declares nothing usable) and
-   * what this device remembers.
+   * @brief Reserve the generation to write next for @p gpgIdFile: one above
+   * both what the file on disk declares (0 when it declares nothing usable)
+   * and what this device remembers, recorded as remembered before it is
+   * returned. One transaction under the lock, so two writers in this
+   * process cannot get the same number.
+   *
+   * Reserving before the file is written is what makes a failed write
+   * harmless (the record is ahead, the old list stays refused until a save
+   * succeeds) and a failed record fatal for the write: a list written but
+   * not recorded would let the previous one back in.
+   * @param gpgIdFile The `.gpg-id` about to be written.
+   * @param error Receives why nothing could be reserved, if not null.
+   * @return The generation to write, or nothing when the record could not
+   *         be read or written; the caller must not write the list then.
    */
-  static auto next(const QString &gpgIdFile) -> qint64;
+  static auto reserveNext(const QString &gpgIdFile, QString *error = nullptr)
+      -> std::optional<qint64>;
 
   /**
    * @brief The settings key for @p gpgIdFile: a hash of its canonical path,

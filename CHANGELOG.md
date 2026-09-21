@@ -64,7 +64,9 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   signature); per list, the highest generation accepted or written on this
   device is remembered, written through before it counts, and a signed list
   with a lower generation is refused with a message that names both
-  numbers. A deliberate revert is refused too: saving the recipients again
+  numbers. Without that record nothing is established: a record that cannot
+  be read or written refuses every signed list and every save, rather than
+  counting as "never seen". A deliberate revert is refused too: saving the recipients again
   writes the next generation. A malformed or duplicated generation line
   makes a signed list unusable rather than generation 0. Limits, in
   SECURITY.md: detection needs a device that has seen the newer list; two

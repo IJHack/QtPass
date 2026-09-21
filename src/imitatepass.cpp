@@ -324,11 +324,19 @@ auto ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
       secret_selected |= user.have_secret;
     }
   }
-  // One generation above whatever is on disk and whatever this device has
-  // accepted: the signature will cover the number, and a later, older signed
-  // list cannot come back (GpgIdGeneration).
-  const qint64 generation = GpgIdGeneration::next(gpgIdFile);
-  contents = GpgIdGeneration::withHeader(generation, contents);
+  // Reserve one generation above whatever is on disk and whatever this
+  // device has accepted, recorded before the file is written: the signature
+  // will cover the number, a later, older signed list cannot come back, and
+  // a list that could not be recorded is not written at all (it would let
+  // the previous one back in).
+  QString why;
+  const std::optional<qint64> generation =
+      GpgIdGeneration::reserveNext(gpgIdFile, &why);
+  if (!generation) {
+    emit critical(tr("Cannot update"), why);
+    return false;
+  }
+  contents = GpgIdGeneration::withHeader(*generation, contents);
   QSaveFile gpgId(gpgIdFile);
   if (!gpgId.open(QIODevice::WriteOnly)) {
     emit critical(tr("Cannot update"),
@@ -346,12 +354,6 @@ auto ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
         tr("Cannot update"),
         tr("Failed to write %1: %2").arg(gpgIdFile, gpgId.errorString()));
     return false;
-  }
-  if (!GpgIdGeneration::remember(gpgIdFile, generation)) {
-    emit critical(tr("Cannot update"),
-                  tr("The recipient list was written, but its generation %1 "
-                     "could not be recorded; the next save will record it.")
-                      .arg(generation));
   }
   if (!secret_selected) {
     emit critical(

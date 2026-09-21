@@ -995,9 +995,13 @@ auto Pass::seedGpgIdFile(const QString &newDir, const QString &passStore)
   }
   // The same first line every list QtPass writes carries (GpgIdGeneration):
   // unsigned here, so no freshness is checked, but the format is one.
-  const qint64 generation = GpgIdGeneration::next(gpgIdFile);
+  const std::optional<qint64> generation =
+      GpgIdGeneration::reserveNext(gpgIdFile);
+  if (!generation) {
+    return false;
+  }
   QTextStream out(&gpgId);
-  out << GpgIdGeneration::header(generation);
+  out << GpgIdGeneration::header(*generation);
   for (const QString &recipient : recipients) {
     out << recipient << '\n';
   }
@@ -1005,7 +1009,6 @@ auto Pass::seedGpgIdFile(const QString &newDir, const QString &passStore)
   if (out.status() != QTextStream::Ok || !gpgId.commit()) {
     return false;
   }
-  GpgIdGeneration::remember(gpgIdFile, generation);
   // Lock to owner-only access; see ImitatePass::writeGpgIdFile for the
   // rationale (NFS / USB / unusual umask). Best-effort where setPermissions
   // is a no-op.
