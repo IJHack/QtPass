@@ -333,6 +333,7 @@ private Q_SLOTS:
   void insertRunsNoGitWhenGitIsDisabled();
   void insertEncryptsToTheRecipientsWhoseSignatureWasChecked();
   void anOlderSignedGpgIdIsRefusedUntilSavedAgain();
+  void aDifferentListOfTheSameGenerationIsAConflict();
   void aSignedGpgIdCopiedIntoAnotherFolderIsRefused();
   void aPlantedGenerationDoesNotMoveTheCounter();
   void reencryptUsesTheRecipientsWhoseSignatureWasChecked();
@@ -1015,6 +1016,93 @@ void tst_imitatepass::anOlderSignedGpgIdIsRefusedUntilSavedAgain() {
   QVERIFY(g3.open(QIODevice::ReadOnly));
   QVERIFY(g3.readAll().startsWith("# QtPass-GpgId-Generation: 3\n"));
   g3.close();
+  QFile::remove(logPath);
+  pass.Insert(QDir(storeDir.path()).filePath("entry"),
+              QStringLiteral("secret\n"), false);
+  QVERIFY(insertSpy.count() > 0 || insertSpy.wait(15000));
+  QCOMPARE(criticalSpy.count(), 0);
+  QCOMPARE(recipientsOf(encryptCalls(loggedCalls(logPath)).first()),
+           QStringList{kSigner});
+#endif
+}
+
+/**
+ * @brief Two devices both write generation 2 from 1 (Git's conflict); the
+ *        device that wrote one of them meets the other, genuinely signed,
+ *        with its own generation number: not a rollback, a conflict. Nothing
+ *        is encrypted to it until a holder of the signing key saves again,
+ *        which writes generation 3.
+ */
+void tst_imitatepass::aDifferentListOfTheSameGenerationIsAConflict() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString gpgIdFile = QDir(storeDir.path()).filePath(".gpg-id");
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeSigningGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.passSigningKey = kSigner;
+  pass.init(s);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  UserInfo alice;
+  alice.key_id = kSigner;
+  alice.enabled = true;
+  alice.have_secret = true;
+  const QString bob =
+      QStringLiteral("89ABCDEF0123456789ABCDEF0123456789ABCDEF");
+  const QString store = QDir(storeDir.path()).path() + QLatin1Char('/');
+
+  // Generations 1 and 2, this device's.
+  pass.Init(store, {alice});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  endSpy.clear();
+  pass.Init(store, {alice});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  endSpy.clear();
+  {
+    QFile g2(gpgIdFile);
+    QVERIFY(g2.open(QIODevice::ReadOnly));
+    QVERIFY(g2.readAll().startsWith("# QtPass-GpgId-Generation: 2\n"));
+  }
+  QCOMPARE(criticalSpy.count(), 0);
+
+  // The other device's generation 2, Bob included, arrives with the pull
+  // (the fake gpg verifies it, as the real one would: it is signed).
+  {
+    QFile g(gpgIdFile);
+    QVERIFY(g.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    g.write(GpgIdGeneration::withHeader(
+        2, QStringLiteral("."), (kSigner + "\n" + bob + "\n").toUtf8()));
+  }
+  QFile::remove(logPath);
+  pass.Insert(QDir(storeDir.path()).filePath("entry"),
+              QStringLiteral("secret\n"), false);
+  QTest::qWait(500);
+  QCOMPARE(insertSpy.count(), 0);
+  QCOMPARE(criticalSpy.count(), 1);
+  const QString why = criticalSpy.takeFirst().at(1).toString();
+  QVERIFY2(why.contains(QStringLiteral("generation 2")) &&
+               why.contains(QStringLiteral("same generation")) &&
+               why.contains(QStringLiteral("Users")),
+           qPrintable(why));
+  QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
+           "nothing may be encrypted to a list this device did not accept");
+
+  // The way through: a save, which writes generation 3 over the conflict.
+  pass.Init(store, {alice});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  {
+    QFile g3(gpgIdFile);
+    QVERIFY(g3.open(QIODevice::ReadOnly));
+    QVERIFY(g3.readAll().startsWith("# QtPass-GpgId-Generation: 3\n"));
+  }
   QFile::remove(logPath);
   pass.Insert(QDir(storeDir.path()).filePath("entry"),
               QStringLiteral("secret\n"), false);

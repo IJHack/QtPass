@@ -32,12 +32,16 @@
  * newer list. A device seeing a store for the first time, or one that was
  * offline, has nothing to compare against. The generation is monotonic per
  * observer, not a distributed sequence number: two devices can both produce
- * generation 19 from 18, and Git is what sorts that out. A list without the
- * lines (written by `pass`, or by QtPass before 2.0) is generation 0 and is
- * refused once anything higher was accepted; a holder of the signing key
- * saving the recipients from QtPass writes the next generation. Without a
- * readable and writable record nothing is accepted or written: unknown
- * state is not "never seen".
+ * generation 19 from 18, and Git is what sorts that out; a device that
+ * accepted one of the two then meets the other as the same generation with
+ * different bytes, which is a conflict, not a rollback, and is refused until
+ * a holder of the signing key saves the recipients once more. For that the
+ * record keeps, next to the generation, a digest of the exact bytes it
+ * accepted or wrote. A list without the lines (written by `pass`, or by
+ * QtPass before 2.0) is generation 0 and is refused once anything higher
+ * was accepted; a holder of the signing key saving the recipients from
+ * QtPass writes the next generation. Without a readable and writable record
+ * nothing is accepted or written: unknown state is not "never seen".
  */
 class GpgIdGeneration {
 public:
@@ -132,6 +136,12 @@ public:
      * recover.
      */
     Unbound,
+    /**
+     * @brief The generation this device accepted last, but not the bytes:
+     * two devices saved at once (Git shows that as a conflict), or an
+     * authentic list of that generation was swapped in.
+     */
+    Conflict,
     /** @brief Written for another folder of the store. */
     WrongFolder,
     /** @brief A header line malformed or duplicated. */
@@ -142,9 +152,9 @@ public:
 
   /**
    * @brief Decide about a verified list: its folder against where it sits,
-   * its generation against the remembered one, and remember it when it
-   * passes. One transaction under the process-wide lock: read, compare,
-   * write through.
+   * its generation against the remembered one, its bytes against the
+   * remembered digest when the generations are equal, and remember it when
+   * it passes. One transaction under the lock: read, compare, write through.
    * @param gpgIdFile The `.gpg-id` the bytes came from.
    * @param contents The verified bytes.
    * @param storeRoot The configured store, for the folder check.
@@ -182,6 +192,31 @@ public:
   static auto reserveNext(const QString &gpgIdFile,
                           std::optional<qint64> verifiedOnDisk,
                           QString *error = nullptr) -> std::optional<qint64>;
+
+  /**
+   * @brief Record the bytes just written for @p gpgIdFile, so that this
+   * device recognises its own list afterwards and refuses another list of
+   * the same generation. Called after the file is on disk; the generation
+   * in @p contents must be the one reserveNext() gave.
+   * @param gpgIdFile The `.gpg-id` just written.
+   * @param contents The exact bytes written.
+   * @param error Receives why the record could not be written, if not null.
+   * @return Whether the digest was recorded. A list written but not
+   *         digested is still recognised by its generation; only a second
+   *         list of that generation would pass until it is read once.
+   */
+  static auto recordWritten(const QString &gpgIdFile,
+                            const QByteArray &contents,
+                            QString *error = nullptr) -> bool;
+
+  /**
+   * @brief The digest of a list as the record keeps it: SHA-256 of the
+   * exact bytes, hexadecimal, so that two authentic lists of one generation
+   * can be told apart.
+   * @param contents The bytes.
+   * @return 64 hexadecimal characters.
+   */
+  static auto digest(const QByteArray &contents) -> QString;
 
   /**
    * @brief The settings key for a `.gpg-id`: a hash of its canonical path,

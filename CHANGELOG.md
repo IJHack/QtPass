@@ -91,6 +91,23 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   in SECURITY.md: detection needs a device that has seen the newer list; two
   devices can both produce the same next generation, which Git sorts out;
   a list written by `pass` carries no generation [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- The same generation is the same list only if the bytes are: the record
+  keeps a SHA-256 of the exact bytes it accepted or wrote next to the
+  generation, and a signed list of the remembered generation with other
+  bytes is refused as a conflict (nothing encrypted, nothing preselected)
+  rather than taken for the list this device knows. That is what the device
+  that wrote one of two racing generation-19 lists sees when Git brings it
+  the other, and what a swap between two authentic lists of one generation
+  looks like; a signing-key holder gets through by checking the recipients
+  and saving. Headerless lists (`pass` writes one for every change) are
+  generation 0 and not pinned. The writer records its bytes right after
+  writing them. The record itself is a JSON file of QtPass's own next to the
+  settings now (`QtPass-gpgid-generations.json`), read afresh and locked
+  between processes for every transaction, where it used to be a QSettings
+  store: cached per process, and on Windows a registry key that the lock
+  would have taken for a folder. A record from an earlier 2.0 development
+  build is not carried over; the device starts as one that has not seen the
+  store
 - A link inside the store is not part of it, at every operation and not
   only in the walks: show, edit, add, move, copy and re-key refuse an entry
   or folder that is, or lies behind, a symbolic link or NTFS junction,
