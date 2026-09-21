@@ -949,57 +949,57 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="162"/>
         <source>The list carries more than one generation line.</source>
-        <translation type="unfinished">Lista zawiera więcej niż jeden wiersz generacji.</translation>
+        <translation>Lista zawiera więcej niż jeden wiersz generacji.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="163"/>
         <source>The generation line is malformed: %1</source>
-        <translation type="unfinished">Wiersz generacji ma nieprawidłowy format: %1</translation>
+        <translation>Wiersz generacji ma nieprawidłowy format: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="174"/>
         <source>The list carries more than one folder line.</source>
-        <translation type="unfinished">Lista zawiera więcej niż jeden wiersz folderu.</translation>
+        <translation>Lista zawiera więcej niż jeden wiersz folderu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="175"/>
         <source>The folder line is malformed: %1</source>
-        <translation type="unfinished">Wiersz folderu ma nieprawidłowy format: %1</translation>
+        <translation>Wiersz folderu ma nieprawidłowy format: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="184"/>
         <source>The header line is malformed: %1</source>
-        <translation type="unfinished">Wiersz nagłówka ma nieprawidłowy format: %1</translation>
+        <translation>Wiersz nagłówka ma nieprawidłowy format: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="189"/>
         <source>The list carries a generation line but no folder line.</source>
-        <translation type="unfinished">Lista zawiera wiersz generacji, ale nie zawiera wiersza folderu.</translation>
+        <translation>Lista zawiera wiersz generacji, ale nie zawiera wiersza folderu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="261"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
-        <translation type="unfinished">Podpisana lista odbiorców %1 została zapisana dla folderu &quot;%2&quot; magazynu, a nie dla &quot;%3&quot;, i nie jest używana. Mogła zostać tu skopiowana przez kogoś innego; jeśli natomiast folder został przeniesiony lub zmieniono jego nazwę, posiadacz klucza podpisującego otwiera na nim okno Użytkownicy i zapisuje odbiorców, co wiąże listę z jej obecnym miejscem.</translation>
+        <translation>Podpisana lista odbiorców %1 została zapisana dla folderu &quot;%2&quot; magazynu, a nie dla &quot;%3&quot;, i nie jest używana. Mogła zostać tu skopiowana przez kogoś innego; jeśli natomiast folder został przeniesiony lub zmieniono jego nazwę, posiadacz klucza podpisującego otwiera na nim okno Użytkownicy i zapisuje odbiorców, co wiąże listę z jej obecnym miejscem.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="283"/>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
-        <translation type="unfinished">Posiadacz klucza podpisującego może przejść dalej, otwierając okno Użytkownicy i zapisując odbiorców, co powoduje zapis generacji %1: wstępnie zaznaczeni odbiorcy pochodzą z tej listy, więc najpierw usuń każdego, kto nie powinien już mieć dostępu. Usunięcie pliku %2 sprawia, że to urządzenie zapomni, co wcześniej zaakceptowało.</translation>
+        <translation>Posiadacz klucza podpisującego może przejść dalej, otwierając okno Użytkownicy i zapisując odbiorców, co powoduje zapis generacji %1: wstępnie zaznaczeni odbiorcy pochodzą z tej listy, więc najpierw usuń każdego, kto nie powinien już mieć dostępu. Usunięcie pliku %2 sprawia, że to urządzenie zapomni, co wcześniej zaakceptowało.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="291"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0. %3</source>
-        <translation type="unfinished">Podpisana lista odbiorców %1 nie zawiera wiersza generacji, choć wcześniej zaakceptowano tu generację %2. pass nie zapisuje wiersza generacji (także przez backend pass w QtPass), nie robił tego też QtPass przed wersją 2.0. %3</translation>
+        <translation>Podpisana lista odbiorców %1 nie zawiera wiersza generacji, choć wcześniej zaakceptowano tu generację %2. pass nie zapisuje wiersza generacji (także przez backend pass w QtPass), nie robił tego też QtPass przed wersją 2.0. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="299"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
-        <translation type="unfinished">Podpisana lista odbiorców %1 to generacja %2, starsza niż generacja %3, ostatnia zaakceptowana tu przez QtPass. Mogła zostać przywrócona przez kogoś innego. %4</translation>
+        <translation>Podpisana lista odbiorców %1 to generacja %2, starsza niż generacja %3, ostatnia zaakceptowana tu przez QtPass. Mogła zostać przywrócona przez kogoś innego. %4</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="330"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
-        <translation type="unfinished">Lista odbiorców %1 osiągnęła generację %2, najwyższą możliwą; listy nie można zapisać.</translation>
+        <translation>Lista odbiorców %1 osiągnęła generację %2, najwyższą możliwą; listy nie można zapisać.</translation>
     </message>
 </context>
 <context>
@@ -1078,7 +1078,7 @@ Nie będzie można zmienić listy użytkowników!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store.</source>
-        <translation type="unfinished">%1 nie znajduje się w magazynie haseł.</translation>
+        <translation>%1 nie znajduje się w magazynie haseł.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="366"/>
