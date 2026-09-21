@@ -1391,7 +1391,8 @@ void tst_util::seedGpgIdFileCopiesParentRecipients() {
   QVERIFY(seeded.exists());
   QVERIFY(seeded.open(QIODevice::ReadOnly | QIODevice::Text));
   const QString content = QString::fromUtf8(seeded.readAll());
-  QCOMPARE(content, QString("0123456789ABCDEF0123456789ABCDEF01234567\n"
+  QCOMPARE(content, QString("# QtPass-GpgId-Generation: 1\n"
+                            "0123456789ABCDEF0123456789ABCDEF01234567\n"
                             "alice@example.com\n"));
   // The new folder now resolves to its own file with the parent's list.
   QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(newDir + "/x.gpg", passStore)),
@@ -2880,7 +2881,9 @@ void tst_util::writeGpgIdFileCanBeWrittenAgainAfterLockingDown() {
   QVERIFY(pass.writeGpgIdFile(gpgIdFile, {bob}));
   QFile check(gpgIdFile);
   QVERIFY(check.open(QIODevice::ReadOnly));
-  QCOMPARE(check.readAll(), (bob.key_id + "\n").toUtf8());
+  // Three writes, three generations.
+  QCOMPARE(check.readAll(),
+           ("# QtPass-GpgId-Generation: 3\n" + bob.key_id + "\n").toUtf8());
   check.close();
   const QFileInfo info(gpgIdFile);
   QVERIFY2(info.isReadable() && info.isWritable(),
@@ -3482,7 +3485,7 @@ void tst_util::initStagesUntrackedGpgId() {
   QFile written(folder + ".gpg-id");
   QVERIFY(written.open(QIODevice::ReadOnly | QIODevice::Text));
   QCOMPARE(QString::fromUtf8(written.readAll()),
-           QStringLiteral("testkey123\n"));
+           QStringLiteral("# QtPass-GpgId-Generation: 1\ntestkey123\n"));
 }
 
 /**

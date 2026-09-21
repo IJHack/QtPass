@@ -331,6 +331,7 @@ private Q_SLOTS:
   void reencryptPathDoesNotPushAfterFailures();
   void insertRunsNoGitWhenGitIsDisabled();
   void insertEncryptsToTheRecipientsWhoseSignatureWasChecked();
+  void anOlderSignedGpgIdIsRefusedUntilSavedAgain();
   void reencryptUsesTheRecipientsWhoseSignatureWasChecked();
   void initCommitsGpgIdAndSignatureTogether();
   void initDoesNotReencryptWhenTheGpgIdCommitFails();
@@ -910,6 +911,112 @@ void tst_imitatepass::insertEncryptsToTheRecipientsWhoseSignatureWasChecked() {
   QCOMPARE(enc.size(), 1);
   QCOMPARE(recipientsOf(enc.first()),
            QStringList{QStringLiteral("0123456789ABCDEF")});
+#endif
+}
+
+/**
+ * @brief Rollback: a genuinely signed recipient list that names a member
+ *        since removed is put back into the store. The signature is valid,
+ *        so before generations it was accepted and the next entry encrypted
+ *        to the removed member. Now: Init writes generation 1 and then 2;
+ *        the generation-1 pair restored is refused with a message naming
+ *        both numbers, nothing is encrypted; saving the list again writes 3
+ *        and the store works again.
+ */
+void tst_imitatepass::anOlderSignedGpgIdIsRefusedUntilSavedAgain() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString gpgIdFile = QDir(storeDir.path()).filePath(".gpg-id");
+  const QString sigFile = gpgIdFile + ".sig";
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeSigningGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.passSigningKey = kSigner;
+  pass.init(s);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  UserInfo alice;
+  alice.key_id = kSigner;
+  alice.enabled = true;
+  alice.have_secret = true;
+  UserInfo bob;
+  bob.key_id = QStringLiteral("89ABCDEF0123456789ABCDEF0123456789ABCDEF");
+  bob.enabled = true;
+  const QString store = QDir(storeDir.path()).path() + QLatin1Char('/');
+
+  // Generation 1: Alice and Bob.
+  pass.Init(store, {alice, bob});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  endSpy.clear();
+  QFile g1(gpgIdFile);
+  QVERIFY(g1.open(QIODevice::ReadOnly));
+  const QByteArray gen1 = g1.readAll();
+  g1.close();
+  QVERIFY2(gen1.startsWith("# QtPass-GpgId-Generation: 1\n"), gen1.constData());
+  QVERIFY(gen1.contains(bob.key_id.toUtf8()));
+  QFile s1(sigFile);
+  QVERIFY(s1.open(QIODevice::ReadOnly));
+  const QByteArray sig1 = s1.readAll();
+  s1.close();
+
+  // Generation 2: Bob is out.
+  pass.Init(store, {alice});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  endSpy.clear();
+  {
+    QFile g2(gpgIdFile);
+    QVERIFY(g2.open(QIODevice::ReadOnly));
+    const QByteArray gen2 = g2.readAll();
+    QVERIFY2(gen2.startsWith("# QtPass-GpgId-Generation: 2\n"),
+             gen2.constData());
+    QVERIFY(!gen2.contains(bob.key_id.toUtf8()));
+  }
+  QCOMPARE(criticalSpy.count(), 0);
+
+  // The attacker puts the generation-1 pair back. Its signature is genuine.
+  {
+    QFile g(gpgIdFile);
+    QVERIFY(g.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    g.write(gen1);
+    QFile sg(sigFile);
+    QVERIFY(sg.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    sg.write(sig1);
+  }
+  QFile::remove(logPath);
+  pass.Insert(QDir(storeDir.path()).filePath("entry"),
+              QStringLiteral("secret\n"), false);
+  QTest::qWait(500);
+  QCOMPARE(insertSpy.count(), 0);
+  QCOMPARE(criticalSpy.count(), 1);
+  const QString why = criticalSpy.takeFirst().at(1).toString();
+  QVERIFY2(why.contains(QStringLiteral("generation 1")) &&
+               why.contains(QStringLiteral("generation 2")) &&
+               why.contains(QStringLiteral("Users")),
+           qPrintable(why));
+  QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
+           "nothing may be encrypted to the rolled-back list");
+
+  // The way through: save the list again, which writes generation 3.
+  pass.Init(store, {alice});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QFile g3(gpgIdFile);
+  QVERIFY(g3.open(QIODevice::ReadOnly));
+  QVERIFY(g3.readAll().startsWith("# QtPass-GpgId-Generation: 3\n"));
+  g3.close();
+  QFile::remove(logPath);
+  pass.Insert(QDir(storeDir.path()).filePath("entry"),
+              QStringLiteral("secret\n"), false);
+  QVERIFY(insertSpy.count() > 0 || insertSpy.wait(15000));
+  QCOMPARE(criticalSpy.count(), 0);
+  QCOMPARE(recipientsOf(encryptCalls(loggedCalls(logPath)).first()),
+           QStringList{kSigner});
 #endif
 }
 

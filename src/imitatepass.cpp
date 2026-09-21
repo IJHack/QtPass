@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "imitatepass.h"
 #include "executor.h"
+#include "gpgidgeneration.h"
 #include "util.h"
 #include <QDir>
 #include <QFile>
@@ -180,9 +181,9 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   }
   QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);
   QStringList recipients;
-  if (!loadVerifiedRecipients(gpgIdPath, &recipients)) {
-    emit critical(tr("Check .gpg-id file signature!"),
-                  tr("Signature for %1 is invalid.").arg(gpgIdPath));
+  QString why;
+  if (!loadVerifiedRecipients(gpgIdPath, &recipients, &why)) {
+    emit critical(tr("Check .gpg-id file signature!"), why);
     return;
   }
   transactionHelper trans(&m_transaction, PASS_INSERT);
@@ -323,6 +324,11 @@ auto ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
       secret_selected |= user.have_secret;
     }
   }
+  // One generation above whatever is on disk and whatever this device has
+  // accepted: the signature will cover the number, and a later, older signed
+  // list cannot come back (GpgIdGeneration).
+  const qint64 generation = GpgIdGeneration::next(gpgIdFile);
+  contents = GpgIdGeneration::withHeader(generation, contents);
   QSaveFile gpgId(gpgIdFile);
   if (!gpgId.open(QIODevice::WriteOnly)) {
     emit critical(tr("Cannot update"),
@@ -340,6 +346,12 @@ auto ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
         tr("Cannot update"),
         tr("Failed to write %1: %2").arg(gpgIdFile, gpgId.errorString()));
     return false;
+  }
+  if (!GpgIdGeneration::remember(gpgIdFile, generation)) {
+    emit critical(tr("Cannot update"),
+                  tr("The recipient list was written, but its generation %1 "
+                     "could not be recorded; the next save will record it.")
+                      .arg(generation));
   }
   if (!secret_selected) {
     emit critical(
@@ -537,8 +549,12 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
 }
 
 auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
-                                         QStringList *recipients) -> bool {
+                                         QStringList *recipients, QString *why)
+    -> bool {
   recipients->clear();
+  if (why != nullptr) {
+    *why = tr("Signature for %1 is invalid.").arg(gpgIdFile);
+  }
   // A link under the .gpg-id name is not the store's list: with signing
   // off it reads as missing, with signing on verifyFile() refuses it.
   if (Util::isLinkedFolder(gpgIdFile)) {
@@ -548,6 +564,16 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
   const GpgIdSigner signer = gpgIdSigner();
   if (signer.enabled()) {
     if (!signer.verifyFile(gpgIdFile, &contents)) {
+      return false;
+    }
+    // Authentic and unmodified is not the same as current: an older signed
+    // list put back into the store is refused once this device has seen a
+    // newer one.
+    QString reason;
+    if (!GpgIdGeneration::accept(gpgIdFile, contents, &reason)) {
+      if (why != nullptr) {
+        *why = reason;
+      }
       return false;
     }
   } else {
@@ -671,11 +697,11 @@ auto ImitatePass::verifyGpgIdForDir(const QString &file,
     return true;
   }
   QStringList recipients;
-  if (!loadVerifiedRecipients(gpgIdPath, &recipients)) {
+  QString why;
+  if (!loadVerifiedRecipients(gpgIdPath, &recipients, &why)) {
     // An interrupted gpg is a cancel, not a bad signature.
     if (!m_reencryptCancel.load())
-      emit critical(tr("Check .gpg-id file signature!"),
-                    tr("Signature for %1 is invalid.").arg(gpgIdPath));
+      emit critical(tr("Check .gpg-id file signature!"), why);
     return false;
   }
   recipients.sort();

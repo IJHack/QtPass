@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "pass.h"
+#include "gpgidgeneration.h"
 #include "gpgkeystate.h"
 #include "util.h"
 #include <QCoreApplication>
@@ -992,7 +993,11 @@ auto Pass::seedGpgIdFile(const QString &newDir, const QString &passStore)
   if (!gpgId.open(QIODevice::WriteOnly)) {
     return false;
   }
+  // The same first line every list QtPass writes carries (GpgIdGeneration):
+  // unsigned here, so no freshness is checked, but the format is one.
+  const qint64 generation = GpgIdGeneration::next(gpgIdFile);
   QTextStream out(&gpgId);
+  out << GpgIdGeneration::header(generation);
   for (const QString &recipient : recipients) {
     out << recipient << '\n';
   }
@@ -1000,6 +1005,7 @@ auto Pass::seedGpgIdFile(const QString &newDir, const QString &passStore)
   if (out.status() != QTextStream::Ok || !gpgId.commit()) {
     return false;
   }
+  GpgIdGeneration::remember(gpgIdFile, generation);
   // Lock to owner-only access; see ImitatePass::writeGpgIdFile for the
   // rationale (NFS / USB / unusual umask). Best-effort where setPermissions
   // is a no-op.

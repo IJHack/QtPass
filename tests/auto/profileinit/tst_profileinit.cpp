@@ -116,8 +116,10 @@ void tst_profileinit::initialiseWritesEnabledKeysOnly() {
   QVERIFY2(note.isEmpty(), qPrintable("quiet success expected: " + note));
   QFile gpgId(QDir(dir.path()).filePath(QStringLiteral(".gpg-id")));
   QVERIFY(gpgId.open(QIODevice::ReadOnly | QIODevice::Text));
+  // First line: the generation (GpgIdGeneration), a comment to pass.
   QCOMPARE(QString::fromUtf8(gpgId.readAll()),
-           QStringLiteral("AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111\n"));
+           QStringLiteral("# QtPass-GpgId-Generation: 1\n"
+                          "AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111\n"));
   QVERIFY(!ProfileInit::needsInit(dir.path()));
 #ifndef Q_OS_WIN
   const auto perms = QFileInfo(gpgId).permissions();

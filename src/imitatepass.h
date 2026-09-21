@@ -49,12 +49,16 @@ protected:
    * between cannot smuggle in a recipient the signature never covered.
    * @param gpgIdFile The `.gpg-id`.
    * @param recipients Receives the recipients; empty on failure.
-   * @return false when the file cannot be read or the signature is bad (with
-   *         a signing key configured). true otherwise, also for an empty
-   *         list; the caller decides what an empty list means.
+   * @param why Receives, if not null, what to tell the user on failure: a
+   *        bad signature, or a signed list older than one accepted before
+   *        (GpgIdGeneration).
+   * @return false when the file cannot be read, the signature is bad or the
+   *         list is a rollback (with a signing key configured). true
+   *         otherwise, also for an empty list; the caller decides what an
+   *         empty list means.
    */
-  auto loadVerifiedRecipients(const QString &gpgIdFile, QStringList *recipients)
-      -> bool;
+  auto loadVerifiedRecipients(const QString &gpgIdFile, QStringList *recipients,
+                              QString *why = nullptr) -> bool;
   /**
    * @brief Write the enabled recipients to a .gpg-id, atomically: a write
    * that fails halfway (full disk, dead network share) leaves the previous

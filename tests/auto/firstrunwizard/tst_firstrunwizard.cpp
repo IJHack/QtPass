@@ -274,7 +274,8 @@ void tst_firstrunwizard::finishCreatesAndInitialisesTheStore() {
   QFile gpgId(QDir(store).filePath(QStringLiteral(".gpg-id")));
   QVERIFY2(gpgId.open(QIODevice::ReadOnly), ".gpg-id was written");
   QCOMPARE(QString::fromUtf8(gpgId.readAll()).trimmed(),
-           QString::fromLatin1(kKeyId));
+           QStringLiteral("# QtPass-GpgId-Generation: 1\n") +
+               QString::fromLatin1(kKeyId));
 
   const AppSettings saved = QtPassSettings::load();
   QCOMPARE(QDir::cleanPath(saved.passStore), QDir::cleanPath(store));
