@@ -947,64 +947,69 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="162"/>
+        <location filename="../src/gpgidgeneration.cpp" line="293"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">Daftar ini memuat lebih dari satu baris generasi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="163"/>
+        <location filename="../src/gpgidgeneration.cpp" line="294"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">Baris generasi salah bentuk: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="174"/>
+        <location filename="../src/gpgidgeneration.cpp" line="305"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">Daftar ini memuat lebih dari satu baris folder.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="175"/>
+        <location filename="../src/gpgidgeneration.cpp" line="306"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">Baris folder salah bentuk: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="184"/>
+        <location filename="../src/gpgidgeneration.cpp" line="315"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">Baris tajuk salah bentuk: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="189"/>
+        <location filename="../src/gpgidgeneration.cpp" line="320"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">Daftar ini memuat baris generasi tetapi tidak memuat baris folder.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="253"/>
+        <location filename="../src/gpgidgeneration.cpp" line="389"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">Daftar penerima bertanda tangan %1 tidak dapat dipercaya: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="263"/>
+        <location filename="../src/gpgidgeneration.cpp" line="399"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">Daftar penerima bertanda tangan %1 ditulis untuk folder &quot;%2&quot; di penyimpanan, bukan untuk &quot;%3&quot;, dan tidak digunakan. Daftar itu mungkin disalin ke sini oleh orang lain; jika foldernya justru dipindahkan atau diubah namanya, pemegang kunci penandatangan dapat membuka Pengguna pada folder tersebut dan menyimpan penerima, yang akan mengikat daftar itu ke lokasinya sekarang.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="288"/>
+        <location filename="../src/gpgidgeneration.cpp" line="422"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">Generasi %1 adalah generasi tertinggi yang ada, sehingga tidak ada daftar yang lebih baru yang dapat ditulis di sini: menghapus %2 membuat perangkat ini melupakan apa yang pernah diterimanya sebelumnya, setelah itu pemegang kunci penandatangan dapat melanjutkan dengan membuka Pengguna dan %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="294"/>
+        <location filename="../src/gpgidgeneration.cpp" line="428"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Pemegang kunci penandatangan dapat melanjutkan dengan membuka Pengguna dan %1, yang akan menulis generasi %2. Menghapus %3 membuat perangkat ini melupakan apa yang pernah diterimanya sebelumnya.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="307"/>
+        <location filename="../src/gpgidgeneration.cpp" line="442"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">Daftar penerima bertanda tangan %1 tidak memuat baris generasi, padahal generasi %2 pernah diterima di sini sebelumnya. pass tidak menulis baris generasi (juga melalui backend pass milik QtPass), begitu pula QtPass sebelum versi 2.0; tanpa baris itu, daftar tersebut mungkin juga ditulis untuk folder lain di penyimpanan dan disalin ke sini. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="314"/>
+        <location filename="../src/gpgidgeneration.cpp" line="449"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">memilih ulang penerima dari awal lalu menyimpannya</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="549"/>
+        <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
+        <translation type="unfinished">Catatan generasi daftar penerima, %1, telah beralih ke generasi %2 sementara generasi %3 sedang ditulis.</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
@@ -1015,17 +1020,27 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
         <translation type="obsolete">Daftar penerima bertanda tangan %1 tidak memuat baris generasi, padahal generasi %2 pernah diterima di sini sebelumnya. pass tidak menulis baris generasi (juga melalui backend pass milik QtPass), begitu pula QtPass sebelum versi 2.0. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="319"/>
+        <location filename="../src/gpgidgeneration.cpp" line="454"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">Daftar penerima bertanda tangan %1 adalah generasi %2, lebih lama daripada generasi %3, yang terakhir diterima QtPass di sini. Daftar itu mungkin dikembalikan oleh orang lain. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="325"/>
+        <location filename="../src/gpgidgeneration.cpp" line="460"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">menyimpan penerima: penerima yang sudah terpilih di sana adalah penerima dari daftar ini, jadi hapus dulu siapa pun yang seharusnya tidak lagi memiliki akses</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="350"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
+        <translation type="unfinished">Daftar penerima bertanda tangan %1 adalah generasi %2, generasi yang sama dengan daftar lain yang pernah diterima perangkat ini sebelumnya. Entah dua perangkat menyimpan penerima pada saat yang sama (Git tentu sudah menampilkan konfliknya), atau sebuah daftar autentik dari generasi itu ditukar ke sini. %3</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="491"/>
+        <source>checking the recipients and saving</source>
+        <translation type="unfinished">memeriksa penerima lalu menyimpannya</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="517"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">Daftar penerima %1 telah mencapai generasi %2, generasi tertinggi yang ada; daftar itu tidak dapat ditulis.</translation>
     </message>
@@ -1039,26 +1054,26 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="186"/>
-        <location filename="../src/imitatepass.cpp" line="405"/>
-        <location filename="../src/imitatepass.cpp" line="731"/>
+        <location filename="../src/imitatepass.cpp" line="421"/>
+        <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Periksa tanda tangan berkas .gpg-id!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="406"/>
-        <location filename="../src/imitatepass.cpp" line="581"/>
+        <location filename="../src/imitatepass.cpp" line="422"/>
+        <location filename="../src/imitatepass.cpp" line="597"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Tanda tangan untuk %1 tidak valid.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="192"/>
-        <location filename="../src/imitatepass.cpp" line="814"/>
+        <location filename="../src/imitatepass.cpp" line="830"/>
         <source>Can not edit</source>
         <translation>Tidak dapat mengedit</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="193"/>
-        <location filename="../src/imitatepass.cpp" line="815"/>
+        <location filename="../src/imitatepass.cpp" line="831"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Tidak dapat membaca kunci enkripsi yang akan digunakan, berkas .gpg-id hilang atau tidak valid.</translation>
     </message>
@@ -1077,7 +1092,7 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
         <location filename="../src/imitatepass.cpp" line="358"/>
         <location filename="../src/imitatepass.cpp" line="365"/>
         <location filename="../src/imitatepass.cpp" line="377"/>
-        <location filename="../src/imitatepass.cpp" line="539"/>
+        <location filename="../src/imitatepass.cpp" line="555"/>
         <source>Cannot update</source>
         <translation>Tidak dapat memperbarui</translation>
     </message>
@@ -1097,195 +1112,205 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
         <translation type="unfinished">Gagal menulis %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="383"/>
+        <location filename="../src/imitatepass.cpp" line="393"/>
+        <source>Recipient list written, but not recorded</source>
+        <translation type="unfinished">Daftar penerima ditulis, tetapi tidak tercatat</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="394"/>
+        <source>%1 Save the recipients once more to get through.</source>
+        <translation type="unfinished">%1 Simpan penerima sekali lagi untuk melanjutkan.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="399"/>
         <source>Check selected users!</source>
         <translation>Periksa pengguna yang dipilih!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="384"/>
+        <location filename="../src/imitatepass.cpp" line="400"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Tidak ada kunci yang dipilih memiliki kunci rahasia yang tersedia.
 Anda tidak akan dapat mendekripsi kata sandi yang baru ditambahkan!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="399"/>
+        <location filename="../src/imitatepass.cpp" line="415"/>
         <source>GPG signing failed!</source>
         <translation>Penandatanganan GPG gagal!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="400"/>
+        <location filename="../src/imitatepass.cpp" line="416"/>
         <source>Failed to sign %1.</source>
         <translation>Gagal menandatangani %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="514"/>
+        <location filename="../src/imitatepass.cpp" line="530"/>
         <source>No signing key!</source>
         <translation>Tidak ada kunci penandatangan!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="515"/>
+        <location filename="../src/imitatepass.cpp" line="531"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Tidak ada kunci penandatangan rahasia yang tersedia.
 Anda tidak akan dapat mengubah daftar pengguna!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="540"/>
+        <location filename="../src/imitatepass.cpp" line="556"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Gagal menghapus tanda tangan lama %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="655"/>
         <location filename="../src/imitatepass.cpp" line="671"/>
-        <location filename="../src/imitatepass.cpp" line="681"/>
-        <location filename="../src/imitatepass.cpp" line="696"/>
+        <location filename="../src/imitatepass.cpp" line="687"/>
+        <location filename="../src/imitatepass.cpp" line="697"/>
+        <location filename="../src/imitatepass.cpp" line="712"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Sisa dari enkripsi ulang sebelumnya</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="656"/>
         <location filename="../src/imitatepass.cpp" line="672"/>
+        <location filename="../src/imitatepass.cpp" line="688"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 bukan berkas biasa dan tidak dipulihkan. Periksa berkas tersebut dan hapus, lalu enkripsi ulang lagi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="682"/>
+        <location filename="../src/imitatepass.cpp" line="698"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 ada di samping %2. Keduanya adalah salinan terenkripsi dari entri ini; periksa mana yang Anda inginkan dan hapus yang lain, lalu enkripsi ulang lagi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="691"/>
+        <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">%1 dipulihkan dari cadangan yang ditinggalkan oleh enkripsi ulang yang terputus.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="697"/>
+        <location filename="../src/imitatepass.cpp" line="713"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 hilang dan cadangannya %2 tidak dapat dikembalikan namanya. Ubah namanya secara manual, lalu enkripsi ulang lagi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="881"/>
-        <location filename="../src/imitatepass.cpp" line="886"/>
-        <location filename="../src/imitatepass.cpp" line="1222"/>
+        <location filename="../src/imitatepass.cpp" line="897"/>
+        <location filename="../src/imitatepass.cpp" line="902"/>
+        <location filename="../src/imitatepass.cpp" line="1238"/>
         <source>Re-encryption failed</source>
         <translation>Enkripsi ulang gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="882"/>
+        <location filename="../src/imitatepass.cpp" line="898"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>Gagal mengganti %1. Yang asli telah dipulihkan.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="887"/>
+        <location filename="../src/imitatepass.cpp" line="903"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
         <translation type="unfinished">Gagal mengganti %1, dan yang asli tidak dapat dikembalikan. Berkas itu masih ada sebagai %2; ubah namanya secara manual.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="898"/>
+        <location filename="../src/imitatepass.cpp" line="914"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
         <translation type="unfinished">Tidak dapat menghapus cadangan %1 setelah enkripsi ulang; berkas ini aman untuk dihapus.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="938"/>
+        <location filename="../src/imitatepass.cpp" line="954"/>
         <source>Creating backup commit</source>
         <translation>Membuat commit cadangan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="955"/>
-        <location filename="../src/imitatepass.cpp" line="964"/>
+        <location filename="../src/imitatepass.cpp" line="971"/>
+        <location filename="../src/imitatepass.cpp" line="980"/>
         <source>Backup commit failed</source>
         <translation>Commit cadangan gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="956"/>
+        <location filename="../src/imitatepass.cpp" line="972"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Tidak dapat memeriksa status git. Enkripsi ulang dibatalkan.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="965"/>
+        <location filename="../src/imitatepass.cpp" line="981"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Enkripsi ulang dibatalkan karena cadangan git tidak dapat dibuat.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1011"/>
+        <location filename="../src/imitatepass.cpp" line="1027"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Enkripsi ulang sedang berjalan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1019"/>
+        <location filename="../src/imitatepass.cpp" line="1035"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Bukan folder dari penyimpanan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1020"/>
+        <location filename="../src/imitatepass.cpp" line="1036"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 adalah, atau berada di balik, tautan simbolik atau junction. Tujuan yang ditunjuknya bukan bagian dari penyimpanan kata sandi dan tidak dienkripsi ulang.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1029"/>
+        <location filename="../src/imitatepass.cpp" line="1045"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Mengenkripsi ulang dari folder %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1112"/>
-        <location filename="../src/imitatepass.cpp" line="1249"/>
+        <location filename="../src/imitatepass.cpp" line="1128"/>
+        <location filename="../src/imitatepass.cpp" line="1265"/>
         <source>Updating password-store</source>
         <translation>Memperbarui penyimpanan kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1123"/>
+        <location filename="../src/imitatepass.cpp" line="1139"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1124"/>
+        <location filename="../src/imitatepass.cpp" line="1140"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Pull tersebut meninggalkan berkas yang belum digabungkan di penyimpanan. Selesaikan konflik tersebut sebelum mengenkripsi ulang.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1129"/>
+        <location filename="../src/imitatepass.cpp" line="1145"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull gagal, mengenkripsi ulang penyimpanan apa adanya</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1156"/>
+        <location filename="../src/imitatepass.cpp" line="1172"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n entri dilewati: tautan simbolik, junction, atau berkas khusus bukan bagian dari penyimpanan.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1182"/>
+        <location filename="../src/imitatepass.cpp" line="1198"/>
         <source>GPG ID verification failed</source>
         <translation>Verifikasi GPG ID gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1183"/>
+        <location filename="../src/imitatepass.cpp" line="1199"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Tidak dapat memverifikasi .gpg-id untuk direktori.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1220"/>
+        <location filename="../src/imitatepass.cpp" line="1236"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... dan %n lainnya</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1223"/>
+        <location filename="../src/imitatepass.cpp" line="1239"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n berkas tidak dapat dienkripsi ulang:</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1229"/>
+        <location filename="../src/imitatepass.cpp" line="1245"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Enkripsi ulang dibatalkan: %1 dari %2 berkas diperiksa, %3 dienkripsi ulang, %4 gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1530"/>
+        <location filename="../src/imitatepass.cpp" line="1546"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Berkas eksekusi Git tidak dikonfigurasi, melewati git</translation>
     </message>
@@ -1294,35 +1319,35 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation type="vanished">Gagal mengenkripsi ulang %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1238"/>
+        <location filename="../src/imitatepass.cpp" line="1254"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Enkripsi ulang selesai: %1 berhasil, %2 gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1243"/>
+        <location filename="../src/imitatepass.cpp" line="1259"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Enkripsi ulang selesai: %1 berkas dienkripsi ulang</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1252"/>
+        <location filename="../src/imitatepass.cpp" line="1268"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Tidak melakukan push: %n berkas gagal dienkripsi ulang</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1447"/>
-        <location filename="../src/imitatepass.cpp" line="1461"/>
-        <location filename="../src/imitatepass.cpp" line="1468"/>
-        <location filename="../src/imitatepass.cpp" line="1478"/>
+        <location filename="../src/imitatepass.cpp" line="1463"/>
+        <location filename="../src/imitatepass.cpp" line="1477"/>
+        <location filename="../src/imitatepass.cpp" line="1484"/>
+        <location filename="../src/imitatepass.cpp" line="1494"/>
         <source>Copy failed</source>
         <translation type="unfinished">Penyalinan gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1448"/>
-        <location filename="../src/imitatepass.cpp" line="1462"/>
-        <location filename="../src/imitatepass.cpp" line="1469"/>
-        <location filename="../src/imitatepass.cpp" line="1479"/>
+        <location filename="../src/imitatepass.cpp" line="1464"/>
+        <location filename="../src/imitatepass.cpp" line="1478"/>
+        <location filename="../src/imitatepass.cpp" line="1485"/>
+        <location filename="../src/imitatepass.cpp" line="1495"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Tidak dapat menyalin %1 ke %2.</translation>
     </message>
@@ -1583,8 +1608,8 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="807"/>
-        <location filename="../src/mainwindow.cpp" line="1027"/>
+        <location filename="../src/mainwindow.cpp" line="824"/>
+        <location filename="../src/mainwindow.cpp" line="1044"/>
         <source>Search password</source>
         <translation>Cari Kata Sandi</translation>
     </message>
@@ -1672,7 +1697,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="423"/>
         <location filename="../src/mainwindow.ui" line="426"/>
-        <location filename="../src/mainwindow.cpp" line="1607"/>
+        <location filename="../src/mainwindow.cpp" line="1647"/>
         <source>Add password</source>
         <translation>Tambah kata sandi</translation>
     </message>
@@ -1684,21 +1709,21 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="434"/>
         <location filename="../src/mainwindow.ui" line="437"/>
-        <location filename="../src/mainwindow.cpp" line="1606"/>
+        <location filename="../src/mainwindow.cpp" line="1646"/>
         <source>Add folder</source>
         <translation>Tambah folder</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="442"/>
         <location filename="../src/mainwindow.ui" line="445"/>
-        <location filename="../src/mainwindow.cpp" line="1614"/>
+        <location filename="../src/mainwindow.cpp" line="1654"/>
         <source>Edit</source>
         <translation>Edit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="450"/>
         <location filename="../src/mainwindow.ui" line="453"/>
-        <location filename="../src/mainwindow.cpp" line="1628"/>
+        <location filename="../src/mainwindow.cpp" line="1668"/>
         <source>Delete</source>
         <translation>Hapus</translation>
     </message>
@@ -1739,7 +1764,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="485"/>
-        <location filename="../src/mainwindow.cpp" line="1608"/>
+        <location filename="../src/mainwindow.cpp" line="1648"/>
         <source>Users</source>
         <translation>Pengguna</translation>
     </message>
@@ -1829,7 +1854,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation type="unfinished">Tentang &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="419"/>
+        <location filename="../src/mainwindow.cpp" line="436"/>
         <source>Welcome to QtPass %1</source>
         <translation>Selamat datang di QtPass %1</translation>
     </message>
@@ -1846,14 +1871,14 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation type="vanished">Keluaran Proses</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="590"/>
-        <location filename="../src/mainwindow.cpp" line="603"/>
+        <location filename="../src/mainwindow.cpp" line="607"/>
+        <location filename="../src/mainwindow.cpp" line="620"/>
         <source>Updating password-store</source>
         <translation>Memperbarui penyimpanan kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="714"/>
-        <location filename="../src/mainwindow.cpp" line="1069"/>
+        <location filename="../src/mainwindow.cpp" line="731"/>
+        <location filename="../src/mainwindow.cpp" line="1086"/>
         <source>Content hidden</source>
         <translation>Konten disembunyikan</translation>
     </message>
@@ -1862,7 +1887,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation type="vanished">Kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="156"/>
+        <location filename="../src/mainwindow.cpp" line="160"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">Operasi melebihi batas waktu; antarmuka diaktifkan kembali.</translation>
     </message>
@@ -1871,20 +1896,20 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation type="vanished">Kode OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="751"/>
+        <location filename="../src/mainwindow.cpp" line="768"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">Tidak dapat mendekripsi entri kata sandi ini</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="764"/>
-        <location filename="../src/mainwindow.cpp" line="782"/>
-        <location filename="../src/mainwindow.cpp" line="1340"/>
+        <location filename="../src/mainwindow.cpp" line="781"/>
+        <location filename="../src/mainwindow.cpp" line="799"/>
+        <location filename="../src/mainwindow.cpp" line="1357"/>
         <source>OTP code copied to clipboard</source>
         <translation>Kode OTP disalin ke clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="784"/>
-        <location filename="../src/mainwindow.cpp" line="1323"/>
+        <location filename="../src/mainwindow.cpp" line="801"/>
+        <location filename="../src/mainwindow.cpp" line="1340"/>
         <source>No OTP code found in this password entry</source>
         <translation>Tidak ada kode OTP yang ditemukan di entri kata sandi ini</translation>
     </message>
@@ -1893,66 +1918,66 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation type="vanished">Kata sandi dan konten disembunyikan</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="899"/>
+        <location filename="../src/mainwindow.cpp" line="916"/>
         <source>About QtPass</source>
         <translation type="unfinished">Tentang QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="900"/>
+        <location filename="../src/mainwindow.cpp" line="917"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;GUI multiplatform untuk &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, pengelola kata sandi standar Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Kode sumber dan isu&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Hak cipta &amp;copy; 2014&amp;ndash;%2 IJhack. Berlisensi &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL versi 3&lt;/a&gt; atau yang lebih baru.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="922"/>
+        <location filename="../src/mainwindow.cpp" line="939"/>
         <source>Looking for: %1</source>
         <translation>Mencari: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="976"/>
+        <location filename="../src/mainwindow.cpp" line="993"/>
         <source>Searching…</source>
         <translation>Mencari…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1005"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Search content (regex)</source>
         <translation>Cari konten (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1010"/>
+        <location filename="../src/mainwindow.cpp" line="1027"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation type="unfinished">Pencarian konten menggunakan ekspresi reguler dasar POSIX (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1012"/>
+        <location filename="../src/mainwindow.cpp" line="1029"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">Pencarian konten menggunakan ekspresi reguler yang kompatibel dengan Perl (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1055"/>
+        <location filename="../src/mainwindow.cpp" line="1072"/>
         <source>No matches found.</source>
         <translation>Tidak ada kecocokan ditemukan.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1079"/>
+        <location filename="../src/mainwindow.cpp" line="1096"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Ditemukan %n kecocokan</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1080"/>
+        <location filename="../src/mainwindow.cpp" line="1097"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>di %n entri.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1157"/>
+        <location filename="../src/mainwindow.cpp" line="1174"/>
         <source>Invalid name</source>
         <translation type="unfinished">Nama tidak valid</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1158"/>
+        <location filename="../src/mainwindow.cpp" line="1175"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Nama itu akan mengarah ke luar penyimpanan kata sandi. Silakan pilih nama lain.</translation>
     </message>
@@ -1967,141 +1992,141 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
 (Akan ditempatkan di %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="811"/>
+        <location filename="../src/mainwindow.cpp" line="828"/>
         <source>Password and content hidden</source>
         <translation>Kata sandi dan konten disembunyikan</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1237"/>
+        <location filename="../src/mainwindow.cpp" line="1254"/>
         <source> and the whole content?</source>
         <translation> dan seluruh isinya?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1248"/>
+        <location filename="../src/mainwindow.cpp" line="1265"/>
         <source>Delete link?</source>
         <translation type="unfinished">Hapus tautan?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1249"/>
+        <location filename="../src/mainwindow.cpp" line="1266"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 adalah tautan simbolik atau junction. Hapus tautannya? Tujuan yang ditunjuknya dibiarkan apa adanya.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1270"/>
+        <location filename="../src/mainwindow.cpp" line="1287"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> dan seluruh isinya? &lt;br&gt;&lt;strong&gt;Perhatian: ada berkas tidak terduga di folder yang diberikan, periksa sebelum melanjutkan.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1277"/>
+        <location filename="../src/mainwindow.cpp" line="1294"/>
         <source>Delete folder?</source>
         <translation>Hapus folder?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1277"/>
+        <location filename="../src/mainwindow.cpp" line="1294"/>
         <source>Delete password?</source>
         <translation>Hapus kata sandi?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1278"/>
+        <location filename="../src/mainwindow.cpp" line="1295"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Apakah Anda yakin ingin menghapus %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1318"/>
+        <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>No password selected for OTP generation</source>
         <translation>Tidak ada kata sandi yang dipilih untuk pembuatan OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1453"/>
+        <location filename="../src/mainwindow.cpp" line="1470"/>
         <source>Profile changed to %1</source>
         <translation>Profil diubah ke %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1605"/>
+        <location filename="../src/mainwindow.cpp" line="1645"/>
         <source>Open folder with file manager</source>
         <translation>Buka folder dengan pengelola berkas</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
-        <location filename="../src/mainwindow.cpp" line="1752"/>
+        <location filename="../src/mainwindow.cpp" line="1660"/>
+        <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Rename folder</source>
         <translation>Ubah nama folder</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1624"/>
+        <location filename="../src/mainwindow.cpp" line="1664"/>
         <source>Rename password</source>
         <translation>Ubah nama kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1633"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Share</source>
         <translation>Bagikan</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1644"/>
+        <location filename="../src/mainwindow.cpp" line="1684"/>
         <source>Re-encrypt all passwords</source>
         <translation>Enkripsi ulang semua kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1649"/>
+        <location filename="../src/mainwindow.cpp" line="1689"/>
         <source>Export my public key...</source>
         <translation>Ekspor kunci publik saya…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1695"/>
         <source>Add recipient...</source>
         <translation>Tambah penerima…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1660"/>
+        <location filename="../src/mainwindow.cpp" line="1700"/>
         <source>What is this?</source>
         <translation>Apa ini?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1703"/>
+        <location filename="../src/mainwindow.cpp" line="1743"/>
         <source>New folder</source>
         <translation type="unfinished">Folder baru</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1744"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Folder Baru: 
 (Akan ditempatkan di %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1792"/>
+        <location filename="../src/mainwindow.cpp" line="1832"/>
         <source>Rename file to: </source>
         <translation>Ubah Nama Berkas Menjadi: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1966"/>
-        <location filename="../src/mainwindow.cpp" line="1985"/>
+        <location filename="../src/mainwindow.cpp" line="2006"/>
+        <location filename="../src/mainwindow.cpp" line="2025"/>
         <source>Export public key</source>
         <translation>Ekspor Kunci Publik</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1967"/>
+        <location filename="../src/mainwindow.cpp" line="2007"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Ekspor Kunci Publik Anda&lt;/h3&gt;&lt;p&gt;Tidak ada kunci penandatangan yang dikonfigurasi. Atur satu di Pengaturan QtPass &amp;gt; Kunci GPG, atau jalankan ini di terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Lalu kirim berkas tersebut ke rekan tim Anda.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2026"/>
+        <location filename="../src/mainwindow.cpp" line="2066"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Bukan folder dari penyimpanan</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2027"/>
+        <location filename="../src/mainwindow.cpp" line="2067"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 adalah, atau berada di balik, tautan simbolik atau junction. Tujuan yang ditunjuknya bukan bagian dari penyimpanan kata sandi dan dibiarkan apa adanya.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2038"/>
+        <location filename="../src/mainwindow.cpp" line="2078"/>
         <source>Sharing passwords with GPG</source>
         <translation>Berbagi Kata Sandi dengan GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2039"/>
+        <location filename="../src/mainwindow.cpp" line="2079"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Berbagi Kata Sandi dengan GPG&lt;/h3&gt;&lt;p&gt;Untuk berbagi kata sandi dengan pengguna lain:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Ekspor kunci publik Anda&lt;/b&gt; dan kirim ke rekan tim&lt;/li&gt;&lt;li&gt;&lt;b&gt;Impor kunci publik rekan tim&lt;/b&gt; ke keyring GPG Anda&lt;/li&gt;&lt;li&gt;&lt;b&gt;Enkripsi ulang kata sandi&lt;/b&gt; agar semua penerima dapat mendekripsinya&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Hanya orang dengan kunci rahasia yang cocok yang dapat mendekripsi kata sandi.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Gunakan kunci GPG yang sama untuk semua folder bersama.&lt;/p&gt;&lt;p&gt;Lihat FAQ untuk detail lebih lanjut.&lt;/p&gt;</translation>
     </message>
@@ -2112,29 +2137,29 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
 (Akan ditempatkan di %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
-        <location filename="../src/mainwindow.cpp" line="1864"/>
+        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1777"/>
+        <location filename="../src/mainwindow.cpp" line="1904"/>
         <source>Error</source>
         <translation>Galat</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1716"/>
+        <location filename="../src/mainwindow.cpp" line="1756"/>
         <source>Failed to create folder: %1</source>
         <translation>Gagal membuat folder: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1738"/>
+        <location filename="../src/mainwindow.cpp" line="1778"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Gagal membuat berkas .gpg-id di: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1752"/>
+        <location filename="../src/mainwindow.cpp" line="1792"/>
         <source>Rename folder to: </source>
         <translation>Ubah Nama Folder Menjadi: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1792"/>
+        <location filename="../src/mainwindow.cpp" line="1832"/>
         <source>Rename file</source>
         <translation>Ubah nama berkas</translation>
     </message>
@@ -2147,23 +2172,23 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation type="vanished">Ubah Nama Berkas Menjadi: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1841"/>
+        <location filename="../src/mainwindow.cpp" line="1881"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Entri ini berisi rahasia OTP, bukan kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1865"/>
+        <location filename="../src/mainwindow.cpp" line="1905"/>
         <source>Directory does not exist: %1</source>
         <translation>Direktori tidak ada: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1873"/>
-        <location filename="../src/mainwindow.cpp" line="1910"/>
+        <location filename="../src/mainwindow.cpp" line="1913"/>
+        <location filename="../src/mainwindow.cpp" line="1950"/>
         <source>Re-encrypt passwords</source>
         <translation>Enkripsi ulang kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1874"/>
+        <location filename="../src/mainwindow.cpp" line="1914"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2180,22 +2205,22 @@ Ini dapat menulis ulang banyak berkas dan tidak mudah dibatalkan.
 Lanjutkan?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1908"/>
+        <location filename="../src/mainwindow.cpp" line="1948"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Mengenkripsi ulang kata sandi...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1909"/>
+        <location filename="../src/mainwindow.cpp" line="1949"/>
         <source>Cancel</source>
         <translation type="unfinished">Batal</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1917"/>
+        <location filename="../src/mainwindow.cpp" line="1957"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Membatalkan enkripsi ulang</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1933"/>
+        <location filename="../src/mainwindow.cpp" line="1973"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Mengenkripsi ulang kata sandi: %1 dari %2</translation>
     </message>
@@ -2208,7 +2233,7 @@ Lanjutkan?</translation>
         <translation type="vanished">&lt;h3&gt;Ekspor Kunci Publik Anda&lt;/h3&gt;&lt;p&gt;Tidak ada kunci penandatangan yang dikonfigurasi. Atur satu di Pengaturan QtPass &amp;gt; Kunci GPG, atau jalankan ini di terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Lalu kirim berkas tersebut ke rekan tim Anda.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1986"/>
+        <location filename="../src/mainwindow.cpp" line="2026"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2217,7 +2242,7 @@ Lanjutkan?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1988"/>
+        <location filename="../src/mainwindow.cpp" line="2028"/>
         <source>No output from gpg.</source>
         <translation>Tidak ada keluaran dari gpg.</translation>
     </message>
@@ -2316,7 +2341,7 @@ Lanjutkan?</translation>
         <translation type="unfinished">Daftar penerima %1 tidak terverifikasi terhadap kunci penandatangan, sehingga tidak ada yang terpilih sebelumnya: menyimpan akan menandatangani apa pun isinya. Pilih penerimanya sendiri; OK akan menulis dan menandatangani daftar yang baru.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="994"/>
+        <location filename="../src/pass.cpp" line="995"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Tidak ada yang terpilih sebelumnya: menyimpan akan menandatangani apa pun isinya. Pilih penerimanya sendiri.</translation>
     </message>
@@ -2499,36 +2524,36 @@ Lanjutkan?</translation>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="36"/>
+        <location filename="../src/profileinit.cpp" line="37"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">Tidak dapat membuat %1.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="59"/>
+        <location filename="../src/profileinit.cpp" line="60"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>%1 sudah berisi %n berkas terenkripsi; berkas tersebut tidak dienkripsi ulang. Beralih ke profil tersebut dan buka Pengguna untuk melakukannya.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="77"/>
+        <location filename="../src/profileinit.cpp" line="78"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">Tidak ada penerima yang dipilih; %1 tidak ditulis.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="103"/>
-        <location filename="../src/profileinit.cpp" line="108"/>
+        <location filename="../src/profileinit.cpp" line="104"/>
+        <location filename="../src/profileinit.cpp" line="109"/>
         <source>Could not write %1: %2</source>
         <translation type="unfinished">Tidak dapat menulis %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="120"/>
+        <location filename="../src/profileinit.cpp" line="129"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">Tidak dapat menandatangani %1 dengan %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="140"/>
-        <location filename="../src/profileinit.cpp" line="169"/>
+        <location filename="../src/profileinit.cpp" line="149"/>
+        <location filename="../src/profileinit.cpp" line="178"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">git %1 gagal di %2: %3</translation>
     </message>
@@ -2865,6 +2890,14 @@ lalu aktifkan Git di Pengaturan.</translation>
         <location filename="../src/firstrunwizard.cpp" line="427"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
         <translation type="unfinished">Kembali dan centang setidaknya satu kunci sebagai tujuan enkripsi.</translation>
+    </message>
+</context>
+<context>
+    <name>Transaction</name>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="191"/>
+        <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
+        <translation type="unfinished">Catatan generasi daftar penerima, %1, tidak dapat dikunci: QtPass lain mungkin sedang menggunakannya, atau foldernya tidak dapat ditulis.</translation>
     </message>
 </context>
 <context>
