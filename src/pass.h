@@ -237,28 +237,35 @@ public:
   static auto getRecipientList(const QString &for_file,
                                const QString &passStore) -> QStringList;
 
-  /// What a dialog may do with the list of a folder (recipientsForEditing()).
+  /**
+   * @brief What a dialog may do with the list of a folder
+   * (recipientsForEditing()).
+   */
   struct RecipientsForEditing {
-    /// How the list on disk stood up.
+    /** @brief How the list on disk stood up. */
     enum class State {
-      /// No signing key: the list as it is.
+      /** @brief No signing key: the list as it is. */
       Unsigned,
-      /// Signature and generation and folder all accepted.
+      /** @brief Signature and generation and folder all accepted. */
       Verified,
-      /// Signed, authentic and bound to this folder, but older than a
-      /// generation this device has accepted: preselected for the recovery,
-      /// flagged for review.
+      /**
+       * @brief Signed, authentic and bound to this folder, but older than a
+       * generation this device has accepted: preselected for the recovery,
+       * flagged for review.
+       */
       VerifiedRollback,
-      /// Not to be used: signature invalid, written for another folder or
-      /// for no folder in particular while a generation was accepted here,
-      /// malformed header, or no freshness record to judge by.
+      /**
+       * @brief Not to be used: signature invalid, written for another folder
+       * or for no folder in particular while a generation was accepted here,
+       * malformed header, or no freshness record to judge by.
+       */
       Rejected,
     };
-    /// How the list on disk stood up.
+    /** @brief How the list on disk stood up. */
     State state = State::Unsigned;
-    /// The recipients to preselect; empty when Rejected.
+    /** @brief The recipients to preselect; empty when Rejected. */
     QStringList recipients;
-    /// What the dialog should show, if anything.
+    /** @brief What the dialog should show, if anything. */
     QString warning;
   };
 

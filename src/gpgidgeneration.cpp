@@ -250,7 +250,8 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
   const std::optional<Header> header = parse(contents, &why);
   if (!header) {
     if (error)
-      *error = why;
+      *error = tr("The signed recipient list %1 is not one to trust: %2")
+                   .arg(gpgIdFile, why);
     return Verdict::Malformed;
   }
   // A pair is only valid where it was written for: copied into another

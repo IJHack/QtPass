@@ -3,6 +3,7 @@
 #include <QDialogButtonBox>
 #include <QDir>
 #include <QFile>
+#include <QFileInfo>
 #include <QLabel>
 #include <QLineEdit>
 #include <QListWidget>
@@ -11,6 +12,9 @@
 #include <QTemporaryDir>
 #include <QTextStream>
 #include <QtTest>
+#ifndef Q_OS_WIN
+#include <unistd.h>
+#endif
 
 #include "../../../src/appsettings.h"
 #include "../../../src/gpgidgeneration.h"
@@ -68,6 +72,8 @@ private slots:
   void withSigningAnOlderVerifiedListIsPreselectedWithAWarning();
   void withSigningAListForAnotherFolderPreselectsNothing();
   void withSigningAHeaderlessListBelowTheRecordPreselectsNothing();
+  void withSigningAMalformedHeaderPreselectsNothing();
+  void withSigningAnUnreadableRecordPreselectsNothing();
   void folderOutsideTheStoreDoesNotInheritItsRecipients();
   void acceptRunsInitByDefault();
   void acceptWithoutSelectionDoesNothing();
@@ -81,6 +87,11 @@ private:
   /// @p signedBytes, and with failure otherwise. A signature bound to bytes,
   /// in a shell script.
   auto writeVerifyingGpg(const QString &signedBytes) -> QString;
+  /// A signed pair: @p list as `.gpg-id` at @p gpgIdFile with a `.sig`
+  /// beside it, and settings whose gpg verifies exactly those bytes by
+  /// kSigner. Empty gpgExecutable when something could not be written.
+  auto signedPair(const QString &gpgIdFile, const QByteArray &list,
+                  const QString &store) -> AppSettings;
 
   QTemporaryDir m_dir;
   AppSettings m_settings;
@@ -120,6 +131,33 @@ auto tst_usersdialog::writeVerifyingGpg(const QString &signedBytes) -> QString {
                              QFile::ExeOwner))
     return {};
   return gpg;
+}
+
+auto tst_usersdialog::signedPair(const QString &gpgIdFile,
+                                 const QByteArray &list, const QString &store)
+    -> AppSettings {
+  AppSettings s = m_settings;
+  s.gpgExecutable.clear();
+  const QString signedCopy =
+      QDir(m_dir.path())
+          .filePath(
+              QStringLiteral("signed-bytes-") +
+              QString::number(QFileInfo(gpgIdFile).absoluteFilePath().size()) +
+              QString::number(list.size()));
+  for (const QString &path : {gpgIdFile, signedCopy}) {
+    QFile f(path);
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Truncate) ||
+        f.write(list) != list.size())
+      return s;
+  }
+  QFile sig(gpgIdFile + QStringLiteral(".sig"));
+  if (!sig.open(QIODevice::WriteOnly | QIODevice::Truncate) ||
+      sig.write("sig") != 3)
+    return s;
+  s.gpgExecutable = writeVerifyingGpg(signedCopy);
+  s.passSigningKey = kSigner;
+  s.passStore = store + QLatin1Char('/');
+  return s;
 }
 
 void tst_usersdialog::initTestCase() {
@@ -413,6 +451,80 @@ void tst_usersdialog::
           banner->text().contains(QStringLiteral("generation 2")) &&
           banner->text().contains(QStringLiteral("Nothing is preselected")),
       qPrintable(banner->text()));
+}
+
+/**
+ * @brief A signed list whose header does not parse (a generation line that
+ *        is not a number) is not a list to trust, signature or not: nothing
+ *        is preselected and the banner says so.
+ */
+void tst_usersdialog::withSigningAMalformedHeaderPreselectsNothing() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString gpgIdFile =
+      QDir(store.path()).filePath(QStringLiteral(".gpg-id"));
+  const AppSettings s =
+      signedPair(gpgIdFile,
+                 "# QtPass-GpgId-Generation: x\n# QtPass-GpgId-Folder: .\n"
+                 "31850CF72D9CDDE9\n693A0AF3FA364E76\n",
+                 store.path());
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QVERIFY2(checkedNames(list).isEmpty(),
+           qPrintable("preselected: " + checkedNames(list).join(", ")));
+  auto *banner = dialog.findChild<QLabel *>(QStringLiteral("recipientWarning"));
+  QVERIFY(banner != nullptr);
+  QVERIFY2(banner->text().contains(QStringLiteral("Nothing is preselected")) &&
+               banner->text().contains(gpgIdFile),
+           qPrintable(banner->text()));
+}
+
+/**
+ * @brief With the generation record unreadable there is nothing to judge a
+ *        signed list by, and a list that cannot be judged is not preselected
+ *        (it would be signed in): nothing ticked, the record named.
+ */
+void tst_usersdialog::withSigningAnUnreadableRecordPreselectsNothing() {
+#ifdef Q_OS_WIN
+  QSKIP("permission bits do not stop reads on Windows");
+#else
+  if (::geteuid() == 0) {
+    QSKIP("root reads anywhere");
+  }
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString gpgIdFile =
+      QDir(store.path()).filePath(QStringLiteral(".gpg-id"));
+  const AppSettings s = signedPair(
+      gpgIdFile,
+      GpgIdGeneration::withHeader(3, QStringLiteral("."),
+                                  "31850CF72D9CDDE9\n693A0AF3FA364E76\n"),
+      store.path());
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  // Bring the record into being, then take it away.
+  QCOMPARE(GpgIdGeneration::remembered(gpgIdFile), std::optional<qint64>(0));
+  const QString recordFile = GpgIdGeneration::recordFile();
+  const QString recordDir = QFileInfo(recordFile).absolutePath();
+  QVERIFY(QDir().mkpath(recordDir));
+  const QFile::Permissions was = QFile::permissions(recordDir);
+  QVERIFY(QFile::setPermissions(recordDir, QFile::Permissions()));
+  const auto restore =
+      qScopeGuard([&] { QFile::setPermissions(recordDir, was); });
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QVERIFY2(checkedNames(list).isEmpty(),
+           qPrintable("preselected: " + checkedNames(list).join(", ")));
+  auto *banner = dialog.findChild<QLabel *>(QStringLiteral("recipientWarning"));
+  QVERIFY(banner != nullptr);
+  QVERIFY2(banner->text().contains(QStringLiteral("Nothing is preselected")) &&
+               banner->text().contains(recordFile),
+           qPrintable(banner->text()));
+#endif
 }
 
 /**
