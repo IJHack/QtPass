@@ -175,7 +175,7 @@
       }
     </script>
   </head>
-  <body>
+  <body class="home">
     <a class="skip" href="#main">Skip to content</a>
     <div class="background"></div>
     <div class="wrapper">
@@ -320,22 +320,30 @@
         </footer>
       </aside>
       <section id="main">
-        <h2>
-          <a
-            id="overview"
-            class="anchor"
-            href="#overview"
-            aria-hidden="true"
-            tabindex="-1"
-            ><span class="octicon octicon-link"></span></a
-          >Your passwords, safely stored and synced
-        </h2>
-
-        <p>
-          QtPass is a password manager with a simple interface. Your passwords
-          are encrypted with GPG and stored in files you control. Sync them
-          across all your devices with Git.
-        </p>
+        <div class="hero">
+          <img
+            class="mark"
+            src="images/logo.svg?v=1.8.1-6"
+            alt=""
+            width="72"
+            height="72"
+          />
+          <h2 id="overview">Password management without the password cloud.</h2>
+          <p class="lede">
+            QtPass is a password manager with a simple interface. Your passwords
+            are encrypted with GPG and stored in files you control. Sync them
+            across all your devices with Git.
+          </p>
+          <p class="hero-cta">
+            <a
+              class="btn"
+              title="QtPass releases on GitHub"
+              href="https://github.com/IJHack/QtPass/releases"
+              >Download QtPass</a
+            >
+            <a class="btn ghost" href="/getting-started">Get Started</a>
+          </p>
+        </div>
 
         <p>
           <a title="Install on Linux" href="/downloads#linux-bsd"
@@ -451,9 +459,130 @@
         <p>
           QtPass works with <a href="https://www.passwordstore.org/">pass</a>,
           the standard UNIX password manager. Your passwords are encrypted with
-          GPG using open standards - no vendor lock-in, no cloud dependency,
-          fully portable and under your control.
+          GPG using open standards &mdash; no vendor lock-in, fully portable
+          and under your control.
         </p>
+
+        <ul class="philosophy" aria-label="What sets QtPass apart">
+          <li>
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <div>
+              <strong>GPG encrypted</strong>
+              <span>Open-standard encryption with your keys</span>
+            </div>
+          </li>
+          <li>
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 12a9 9 0 1 1-9-9c2.5 0 4.7 1 6.4 2.6L21 8"></path>
+              <path d="M21 3v5h-5"></path>
+            </svg>
+            <div>
+              <strong>Git synced</strong>
+              <span>Versioned store, synced across devices</span>
+            </div>
+          </li>
+          <li>
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M8.5 6.5 3 12l5.5 5.5"></path>
+              <path d="M15.5 6.5 21 12l-5.5 5.5"></path>
+            </svg>
+            <div>
+              <strong>Open source</strong>
+              <span>Free software you can read and audit</span>
+            </div>
+          </li>
+          <li>
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M17 8l5 5"></path>
+              <path d="M22 8l-5 5"></path>
+            </svg>
+            <div>
+              <strong>No account</strong>
+              <span>Nothing to sign up for</span>
+            </div>
+          </li>
+          <li>
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M22 12h-4l-3 8-4-16-3 8H2"></path>
+              <path d="M3 3l18 18"></path>
+            </svg>
+            <div>
+              <strong>No telemetry</strong>
+              <span>QtPass never phones home</span>
+            </div>
+          </li>
+          <li>
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M17.5 19H9a7 7 0 1 1 6.7-9h1.8a4.5 4.5 0 1 1 0 9z"
+              ></path>
+              <path d="M3 3l18 18"></path>
+            </svg>
+            <div>
+              <strong>No cloud dependency</strong>
+              <span>Local files, under your control</span>
+            </div>
+          </li>
+        </ul>
 
         <p>
           It runs on Linux, macOS, Windows, and FreeBSD with a native look and
@@ -476,8 +605,8 @@
         </p>
         <p>
           No accounts, no telemetry, no network code: QtPass never phones home.
+          <a href="/privacy">Read the privacy policy</a>, it is short.
         </p>
-        <p><a href="/privacy">Read the privacy policy</a>, it is short.</p>
 
         <p>
           New to QtPass?

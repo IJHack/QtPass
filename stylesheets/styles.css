@@ -453,6 +453,117 @@ header ul a:active {
   display: none;
 }
 
+/* homepage hero: wordmark, one-line proposition, download action */
+.hero {
+  border-block-end: 1px solid var(--rule);
+  margin-block-end: 1.5rem;
+  padding-block-end: 1.75rem;
+}
+.hero .mark {
+  width: 4.25rem;
+  height: 4.25rem;
+  display: block;
+  margin-block-end: 1rem;
+}
+.hero h2 {
+  max-width: 24ch;
+  font-size: clamp(1.75rem, 1.35rem + 1.4vw, 2.6rem);
+  margin-block-end: 0.4em;
+}
+.hero .lede {
+  max-width: 58ch;
+  font-size: clamp(1.08rem, 1rem + 0.3vw, 1.25rem);
+  margin-block-end: 1.4rem;
+}
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-end: 0;
+}
+.btn {
+  display: inline-block;
+  padding: 0.6em 1.3em;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  text-decoration: none;
+  text-underline-offset: 0.15em;
+}
+.btn:hover,
+.btn:focus-visible {
+  background: var(--accent-strong);
+  color: var(--bg);
+  text-decoration: none;
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--accent-strong);
+  border: 1px solid var(--rule);
+}
+.btn.ghost:hover,
+.btn.ghost:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+/* homepage "why" grid: the product differentiators as a panel block */
+.philosophy {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.6rem;
+}
+.philosophy li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.9rem 1rem;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+.philosophy .icon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--accent);
+  margin-block-start: 0.2em;
+}
+.philosophy strong {
+  display: block;
+  font-size: 0.95em;
+  line-height: 1.2;
+}
+.philosophy span {
+  display: block;
+  margin-block-start: 0.15em;
+  color: var(--muted);
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+
+/* On the homepage the releases item is the primary action. */
+.home header ul a:first-child {
+  background: var(--accent);
+  color: var(--bg);
+}
+.home header ul a:first-child strong {
+  color: inherit;
+}
+.home header ul a:first-child:hover,
+.home header ul a:first-child:focus-visible {
+  background: var(--accent-strong);
+  color: var(--bg);
+  outline-offset: -2px;
+}
+.home header ul a:first-child:active {
+  background: var(--accent-strong);
+}
+
 /* platform badges, app icons, watermark */
 .compatible {
   width: auto;
