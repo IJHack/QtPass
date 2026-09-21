@@ -61,13 +61,17 @@ void tst_firstrunwizard::initTestCase() {
   m_gpg = m_tmp.filePath(QStringLiteral("tools/gpg"));
   QFile script(m_gpg);
   QVERIFY(script.open(QIODevice::WriteOnly));
+  // echo, not printf: PATH is empty here, and printf is not a builtin of
+  // every /bin/sh (OpenBSD's ksh has echo only).
   script.write(
       "#!/bin/sh\n"
       "case \"$*\" in\n"
       "*--list-secret-keys*)\n"
-      "printf '%s\\n' "
-      "'sec:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA:::+:::23::0:' "
-      "'fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:' "
+      "echo "
+      "'sec:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA:::+:::23::0:'"
+      "\n"
+      "echo 'fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:'\n"
+      "echo "
       "'uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Anne "
       "Jan Brouwer <anne@example.org>::::::::::0:'\n"
       ";;\n"
