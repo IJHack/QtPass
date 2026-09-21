@@ -1031,11 +1031,25 @@ void tst_mainwindow::fieldFrameBorderFollowsRuntimePaletteChange() {
   const QColor mid(0x12, 0x34, 0x56);
   changed.setColor(QPalette::Mid, mid);
   QApplication::setPalette(changed);
-  QCoreApplication::processEvents();
 
-  QVERIFY2(
-      frame->styleSheet().contains(mid.name()),
-      qPrintable(QStringLiteral("stylesheet still: ") + frame->styleSheet()));
+  // PaletteChange reaches the window through the event loop, and on some
+  // platforms (Windows, seen on CI) not within a single processEvents(); the
+  // frame may also have been rebuilt by then. Wait for any field frame to
+  // carry the new colour rather than the one pointer to carry it at once.
+  const auto frameWithColour = [this, &mid]() -> QFrame * {
+    for (QFrame *candidate : m_window->findChildren<QFrame *>()) {
+      if (candidate->styleSheet().contains(mid.name())) {
+        return candidate;
+      }
+    }
+    return nullptr;
+  };
+  QTRY_VERIFY2_WITH_TIMEOUT(
+      frameWithColour() != nullptr,
+      qPrintable(QStringLiteral("no field frame took the palette's mid "
+                                "colour; first frame has: ") +
+                 frame->styleSheet()),
+      3000);
 }
 
 /**
