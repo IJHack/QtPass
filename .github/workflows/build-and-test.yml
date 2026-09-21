@@ -55,7 +55,7 @@ jobs:
               - ".github/workflows/build-and-test.yml"
 
   build:
-    name: Build and test on ${{ matrix.os }} (Qt ${{ matrix.qt }})
+    name: Build and test on ${{ matrix.name }} (Qt ${{ matrix.qt }})
     needs: changes
     permissions:
       contents: read
@@ -66,13 +66,21 @@ jobs:
         # Qt 6.8 (LTS) is verified on Linux and Windows. macOS is not tested on
         # 6.8: the macos-latest runner's Xcode 26.x cannot compile Qt 6.8.x
         # (qyieldcpu.h uses the ARM __yield intrinsic, unfixed until 6.11.1).
-        # macOS is covered by the 6.11 entry below, matching what the dmg ships.
-        os: [ubuntu-latest, windows-latest]
-        qt: ["6.8"]
+        # macOS is covered by the 6.11 entry, matching what the dmg ships.
+        # `name` is what the job is called (and what branch protection
+        # requires): the platform, not the runner image.
         include:
-          - os: ubuntu-latest
+          - name: Ubuntu
+            os: ubuntu-latest
+            qt: "6.8"
+          - name: Ubuntu
+            os: ubuntu-latest
             qt: "6.11"
-          - os: macos-latest
+          - name: Windows
+            os: windows-latest
+            qt: "6.8"
+          - name: macOS
+            os: macos-latest
             qt: "6.11"
 
     steps:
