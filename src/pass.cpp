@@ -992,6 +992,9 @@ auto Pass::seedGpgIdFile(const QString &newDir, const QString &passStore)
   if (!gpgId.open(QIODevice::WriteOnly)) {
     return false;
   }
+  // Only reached without a signing key (MainWindow seeds only then), so no
+  // generation header: nothing checks freshness, and a plain list stays
+  // readable for clients that take a comment for a recipient.
   QTextStream out(&gpgId);
   for (const QString &recipient : recipients) {
     out << recipient << '\n';

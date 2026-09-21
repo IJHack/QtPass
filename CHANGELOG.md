@@ -55,6 +55,27 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Security
 
+- Rollback detection for signed `.gpg-id` files: a signature proved the
+  recipient list authentic, not current and not placed, so whoever can write
+  to a shared store could put back an older, genuinely signed list that
+  still named a member since removed, or copy such a pair into a folder that
+  never had a list, and every later encryption there would include them
+  again. A list QtPass writes for a store with a signing key now starts with
+  `# QtPass-GpgId-Generation: N` and `# QtPass-GpgId-Folder: <folder>`
+  (comments to `pass` 1.7.4+ and QtPass 1.8+, covered by the signature);
+  per list, the highest generation accepted or written on this device is
+  remembered, written through before it counts, and a signed list with a
+  lower generation, or written for another folder (also after the folder was
+  moved or renamed), is refused with a message that says what happened and
+  how a signing-key holder gets through: saving the recipients again. Without
+  that record nothing is established: a record that cannot be read or
+  written refuses every signed list and every save, rather than counting as
+  "never seen". A malformed or duplicated header line makes a signed list
+  unusable rather than generation 0, and the counter cannot leave the
+  grammar. Stores without a signing key get plain lists, as before. Limits,
+  in SECURITY.md: detection needs a device that has seen the newer list; two
+  devices can both produce the same next generation, which Git sorts out;
+  a list written by `pass` carries no generation [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - A link inside the store is not part of it, at every operation and not
   only in the walks: show, edit, add, move, copy and re-key refuse an entry
   or folder that is, or lies behind, a symbolic link or NTFS junction,
@@ -185,9 +206,9 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 - New folders never get an unsigned `.gpg-id` when a signing key is
   configured [#1695](https://github.com/IJHack/QtPass/pull/1695)
 - The Users dialog for a folder without a `.gpg-id` (first-run wizard, new
-  profile) came up with every key in the keyring pre-selected, because an
+  profile) came up with every key in the keyring preselected, because an
   empty recipient list made `gpg --list-keys` return all of them. Nothing is
-  pre-selected now
+  preselected now
 
 ### Changed
 

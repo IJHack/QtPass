@@ -117,7 +117,7 @@ auto checkedNames(QListWidget *list) -> QStringList {
 
 /**
  * @brief A folder without .gpg-id must not come up with the entire keyring
- *        pre-selected: listKeys() with an empty filter lists every key.
+ *        preselected: listKeys() with an empty filter lists every key.
  */
 void tst_usersdialog::newStoreStartsWithNothingSelected() {
   RecordingPass pass(m_settings);
@@ -157,7 +157,7 @@ void tst_usersdialog::existingStorePreselectsItsRecipients() {
  *        still carried the active store as its store came up with the active
  *        store's recipients ticked — and this branch writes exactly the
  *        ticked keys into the profile. The caller hands the profile as the
- *        store; nothing may be pre-selected then.
+ *        store; nothing may be preselected then.
  */
 void tst_usersdialog::folderOutsideTheStoreDoesNotInheritItsRecipients() {
   QTemporaryDir active;
@@ -185,7 +185,7 @@ void tst_usersdialog::folderOutsideTheStoreDoesNotInheritItsRecipients() {
   auto *list = right.findChild<QListWidget *>(QStringLiteral("listWidget"));
   QVERIFY(list != nullptr);
   QVERIFY2(checkedNames(list).isEmpty(),
-           qPrintable("nothing may be pre-selected for a new profile, got: " +
+           qPrintable("nothing may be preselected for a new profile, got: " +
                       checkedNames(list).join(QLatin1String(", "))));
 }
 

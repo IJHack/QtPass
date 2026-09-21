@@ -3,6 +3,7 @@
 #include "profileinit.h"
 #include "appsettings.h"
 #include "executor.h"
+#include "gpgidgeneration.h"
 #include "gpgidsigner.h"
 #include "userinfo.h"
 #include "util.h"
@@ -36,7 +37,8 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
     return false;
   }
   const QString gpgIdFile = folder.filePath(QStringLiteral(".gpg-id"));
-  if (!writeGpgId(gpgIdFile, users, &out)) {
+  if (!writeGpgId(gpgIdFile, users, !s.passSigningKey.trimmed().isEmpty(),
+                  &out)) {
     return false;
   }
   QString sigFile;
@@ -63,8 +65,8 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
 }
 
 auto ProfileInit::writeGpgId(const QString &gpgIdFile,
-                             const QList<UserInfo> &users, QString *note)
-    -> bool {
+                             const QList<UserInfo> &users, bool signed_,
+                             QString *note) -> bool {
   QStringList ids;
   for (const UserInfo &user : users) {
     if (user.enabled) {
@@ -80,8 +82,22 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
   // interrupted write leaves no half .gpg-id for the signing step (or a
   // later run without signing) to take for the recipient list. Owner-only
   // before commit: the list leaks which keys the store is encrypted to.
-  const QByteArray contents =
+  QByteArray contents =
       (ids.join(QLatin1Char('\n')) + QLatin1Char('\n')).toUtf8();
+  if (signed_) {
+    // Same rule as ImitatePass::writeGpgIdFile: reserved and recorded
+    // before the write, bound to the store root (GpgIdGeneration). A new
+    // profile has no list on disk to take a generation from.
+    QString why;
+    const std::optional<qint64> generation =
+        GpgIdGeneration::reserveNext(gpgIdFile, std::nullopt, &why);
+    if (!generation) {
+      *note = why;
+      return false;
+    }
+    contents =
+        GpgIdGeneration::withHeader(*generation, QStringLiteral("."), contents);
+  }
   QSaveFile file(gpgIdFile);
   if (!file.open(QIODevice::WriteOnly)) {
     *note = tr("Could not write %1: %2").arg(gpgIdFile, file.errorString());

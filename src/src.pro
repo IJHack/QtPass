@@ -105,6 +105,7 @@ SOURCES   += mainwindow.cpp \
              pass.cpp \
              gpgkeystate.cpp \
              realpass.cpp \
+             gpgidgeneration.cpp \
              gpgidsigner.cpp \
              imitatepass.cpp \
              nativegrep.cpp \
@@ -153,6 +154,7 @@ HEADERS   += mainwindow.h \
              pass.h \
              gpgkeystate.h \
              realpass.h \
+             gpgidgeneration.h \
              gpgidsigner.h \
              imitatepass.h \
              nativegrep.h \

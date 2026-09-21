@@ -77,8 +77,13 @@ public:
 
 private:
   ProfileInit() = default;
+  /**
+   * @brief Write the enabled recipients to @p gpgIdFile, whole or not at
+   * all; with @p signed the list carries the generation and folder header a
+   * signed store's lists are checked against (GpgIdGeneration).
+   */
   static auto writeGpgId(const QString &gpgIdFile, const QList<UserInfo> &users,
-                         QString *note) -> bool;
+                         bool signed_, QString *note) -> bool;
   static auto signGpgId(const QString &gpgIdFile, const AppSettings &s,
                         QString *note) -> bool;
   static auto commitGpgId(const QString &dir, const QString &gpgIdFile,
