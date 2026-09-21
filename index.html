@@ -321,28 +321,54 @@
       </aside>
       <section id="main">
         <div class="hero">
-          <img
-            class="mark"
-            src="images/logo.svg?v=1.8.1-6"
-            alt=""
-            width="72"
-            height="72"
-          />
-          <h2 id="overview">Password management without the password cloud.</h2>
-          <p class="lede">
-            QtPass is a password manager with a simple interface. Your passwords
-            are encrypted with GPG and stored in files you control. Sync them
-            across all your devices with Git.
-          </p>
-          <p class="hero-cta">
-            <a
-              class="btn"
-              title="QtPass releases on GitHub"
-              href="https://github.com/IJHack/QtPass/releases"
-              >Download QtPass</a
-            >
-            <a class="btn ghost" href="/getting-started">Get Started</a>
-          </p>
+          <div class="hero-text">
+            <img
+              class="mark"
+              src="images/logo.svg?v=1.8.1-6"
+              alt=""
+              width="72"
+              height="72"
+            />
+            <h2 id="overview">
+              Password management without the password cloud.
+            </h2>
+            <p class="lede">
+              QtPass is a password manager with a simple interface. Your
+              passwords are encrypted with GPG and stored in files you control.
+              Sync them across all your devices with Git.
+            </p>
+            <p class="hero-cta">
+              <a
+                class="btn"
+                title="QtPass releases on GitHub"
+                href="https://github.com/IJHack/QtPass/releases"
+                >Download QtPass</a
+              >
+              <a class="btn ghost" href="/getting-started">Get Started</a>
+            </p>
+          </div>
+          <figure class="hero-shot">
+            <picture>
+              <source
+                media="(prefers-color-scheme: dark)"
+                srcset="images/qtpass-dark@2x.webp"
+                type="image/webp"
+              />
+              <source
+                media="(prefers-color-scheme: dark)"
+                srcset="images/qtpass-dark.png, images/qtpass-dark@2x.png 2x"
+              />
+              <source srcset="images/qtpass@2x.webp" type="image/webp" />
+              <img
+                src="images/qtpass.png?v=1.8.1-6"
+                srcset="images/qtpass.png?v=1.8.1-6, images/qtpass@2x.png 2x"
+                width="1110"
+                height="918"
+                decoding="async"
+                alt="QtPass main window with a password store, one entry open"
+              />
+            </picture>
+          </figure>
         </div>
 
         <p>
