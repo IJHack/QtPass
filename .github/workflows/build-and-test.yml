@@ -97,9 +97,9 @@ jobs:
              [[ "${NEEDS_CHANGES_OUTPUTS_ICONS}" == "true" ]] || \
              [[ "${NEEDS_CHANGES_OUTPUTS_DOCS}" == "true" ]] || \
              [[ "${NEEDS_CHANGES_OUTPUTS_WORKFLOW}" == "true" ]] || \
-             [[ "${{ github.event_name }}" == "merge_group" ]] || \
-             [[ "${{ github.event_name }}" == "workflow_dispatch" ]] || \
-             [[ "${{ github.ref }}" == refs/tags/* ]]; then
+             [[ "${GITHUB_EVENT_NAME}" == "merge_group" ]] || \
+             [[ "${GITHUB_EVENT_NAME}" == "workflow_dispatch" ]] || \
+             [[ "${GITHUB_REF}" == refs/tags/* ]]; then
             echo "run_build=true" >> "$GITHUB_OUTPUT"
           else
             echo "run_build=false" >> "$GITHUB_OUTPUT"
