@@ -30,6 +30,7 @@
 #include <io.h>
 #include <windows.h>
 #else
+#include <cerrno>
 #include <cstdio>
 #include <fcntl.h>
 #include <sys/stat.h>
@@ -587,11 +588,16 @@ auto Util::replaceFile(const QString &from, const QString &to, bool replace)
     ::unlink(source.constData());
   }
   // The directory entry too, so a crash right after does not lose the new
-  // name; best effort, as the rename itself has happened.
+  // name. Best effort: the rename has happened and the file's own bytes
+  // were synced before it, so a directory that cannot be synced (some
+  // network filesystems) is no reason to report the write as failed.
   const int dir = ::open(QFile::encodeName(QFileInfo(to).path()).constData(),
                          O_RDONLY | O_DIRECTORY | O_CLOEXEC);
   if (dir >= 0) {
-    ::fsync(dir);
+    int rc;
+    do {
+      rc = ::fsync(dir);
+    } while (rc != 0 && errno == EINTR);
     ::close(dir);
   }
   return true;

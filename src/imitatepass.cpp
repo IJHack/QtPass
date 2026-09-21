@@ -1486,7 +1486,9 @@ static auto copyFileReplacing(const QString &src, const QString &dst,
     QFile::remove(staged);
     return false;
   }
-  return true;
+  // The staged name swapped for a link before the rename: the bytes went
+  // into an unnamed inode and the entry is the link. Not a copy.
+  return !QFileInfo(dst).isSymLink();
 }
 
 /**
