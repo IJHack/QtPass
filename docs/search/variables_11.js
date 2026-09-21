@@ -7,6 +7,7 @@ var searchData=
   ['signingkey_4',['signingKey',['../struct_profile.html#aca298d5aa8281c8ee91f97744dcdcc48',1,'Profile']]],
   ['sshauthsockoverride_5',['sshAuthSockOverride',['../struct_app_settings.html#a175df77744647e5759f0e2f1a0d177a1',1,'AppSettings']]],
   ['startminimized_6',['startMinimized',['../struct_app_settings.html#a663732cc2174f4adeadc4244bbfbe7e2',1,'AppSettings']]],
-  ['steam_5fdigits_7',['STEAM_DIGITS',['../class_totp.html#a81979cc4e9b6933626ef5c62277649f0',1,'Totp']]],
-  ['step_8',['step',['../struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28',1,'Totp::Settings']]]
+  ['state_7',['state',['../struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3',1,'Pass::RecipientsForEditing']]],
+  ['steam_5fdigits_8',['STEAM_DIGITS',['../class_totp.html#a81979cc4e9b6933626ef5c62277649f0',1,'Totp']]],
+  ['step_9',['step',['../struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28',1,'Totp::Settings']]]
 ];

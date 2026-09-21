@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_gpg_id_generation-members.html">List of all members</a>  </div>
@@ -114,6 +115,20 @@ Classes</h2></td></tr>
 <tr class="memitem:Header" id="r_Header"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_gpg_id_generation_1_1_header.html">Header</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">What a list's header says.  <a href="struct_gpg_id_generation_1_1_header.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aa4ec78f9896b8cbb9ea3f82151e9e8b9" id="r_aa4ec78f9896b8cbb9ea3f82151e9e8b9"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">Verdict</a> { <br />
+&#160;&#160;<a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9a382ab522931673c11e398ead1b7b1678">Accepted</a>
+, <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9a446c9e952debe114c86bbd9e5eea7d61">Rollback</a>
+, <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9aedac80248b7bf68ccfaa9c78bfb81c32">Unbound</a>
+, <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9">WrongFolder</a>
+, <br />
+&#160;&#160;<a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9a0dc7301026e66d38061d7eaba481c9a5">Malformed</a>
+, <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9a390ae4f038021219bbd1af349d76b737">RecordUnavailable</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:aa4ec78f9896b8cbb9ea3f82151e9e8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The outcome of <a class="el" href="#a490cff66a5b86f14e762192bbfddd93d" title="Decide about a verified list: its folder against where it sits, its generation against the remembered...">accept()</a>. Only Accepted means the list may be used; the others say why not, and Rollback alone is an authentic list of this folder.  <a href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">More...</a><br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af9a3ef307c6046bf57c489ad730366d6" id="r_af9a3ef307c6046bf57c489ad730366d6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af9a3ef307c6046bf57c489ad730366d6">parse</a> (const QByteArray &amp;contents, QString *error=nullptr) -&gt; std::optional&lt; <a class="el" href="struct_gpg_id_generation_1_1_header.html">Header</a> &gt;</td></tr>
@@ -126,8 +141,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a09b1614889db306cfd1efe17acc4ea8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The store-relative folder of <code class="param">gpgIdFile</code>, as written in and compared against the folder line: <span class="tt">.</span> for the store root, <span class="tt">/</span>-separated, from canonical paths, lower-cased on Windows.  <br /></td></tr>
 <tr class="memitem:a495c019fdefb8cb6c7349d4ff2f52cd5" id="r_a495c019fdefb8cb6c7349d4ff2f52cd5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a495c019fdefb8cb6c7349d4ff2f52cd5">remembered</a> (const QString &amp;gpgIdFile, QString *error=nullptr) -&gt; std::optional&lt; qint64 &gt;</td></tr>
 <tr class="memdesc:a495c019fdefb8cb6c7349d4ff2f52cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The highest generation this device has accepted or written for the <span class="tt">.gpg-id</span> at <code class="param">gpgIdFile</code>. Unreadable is not "never seen": a signed list must then be refused, not compared against 0.  <br /></td></tr>
-<tr class="memitem:aebbf04272ea6a6c5b2b4892b8b7d4a47" id="r_aebbf04272ea6a6c5b2b4892b8b7d4a47"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aebbf04272ea6a6c5b2b4892b8b7d4a47">accept</a> (const QString &amp;gpgIdFile, const QByteArray &amp;contents, const QString &amp;storeRoot, QString *error=nullptr) -&gt; bool</td></tr>
-<tr class="memdesc:aebbf04272ea6a6c5b2b4892b8b7d4a47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decide about a verified list: its folder against where it sits, its generation against the remembered one, and remember it when it passes. One transaction under the process-wide lock: read, compare, write through.  <br /></td></tr>
+<tr class="memitem:a490cff66a5b86f14e762192bbfddd93d" id="r_a490cff66a5b86f14e762192bbfddd93d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a490cff66a5b86f14e762192bbfddd93d">accept</a> (const QString &amp;gpgIdFile, const QByteArray &amp;contents, const QString &amp;storeRoot, QString *error=nullptr) -&gt; <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">Verdict</a></td></tr>
+<tr class="memdesc:a490cff66a5b86f14e762192bbfddd93d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decide about a verified list: its folder against where it sits, its generation against the remembered one, and remember it when it passes. One transaction under the process-wide lock: read, compare, write through.  <br /></td></tr>
 <tr class="memitem:aca79157e6460c0bb20028e1d8b46b3fb" id="r_aca79157e6460c0bb20028e1d8b46b3fb"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aca79157e6460c0bb20028e1d8b46b3fb">reserveNext</a> (const QString &amp;gpgIdFile, std::optional&lt; qint64 &gt; verifiedOnDisk, QString *error=nullptr) -&gt; std::optional&lt; qint64 &gt;</td></tr>
 <tr class="memdesc:aca79157e6460c0bb20028e1d8b46b3fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserve the generation to write next for <code class="param">gpgIdFile:</code> one above both what this device remembers and <code class="param">verifiedOnDisk</code>, recorded as remembered before it is returned. One transaction under the lock, so two writers in this process cannot get the same number.  <br /></td></tr>
 <tr class="memitem:a8c27985a5dc102614c0c7b39ea7d81b5" id="r_a8c27985a5dc102614c0c7b39ea7d81b5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8c27985a5dc102614c0c7b39ea7d81b5">key</a> (const QString &amp;gpgIdFile) -&gt; QString</td></tr>
@@ -148,9 +163,50 @@ Static Public Attributes</h2></td></tr>
 <p>What this is and is not: rollback detection on a device that has seen the newer list. A device seeing a store for the first time, or one that was offline, has nothing to compare against. The generation is monotonic per observer, not a distributed sequence number: two devices can both produce generation 19 from 18, and Git is what sorts that out. A list without the lines (written by <span class="tt">pass</span>, or by <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> before 2.0) is generation 0 and is refused once anything higher was accepted; a holder of the signing key saving the recipients from <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> writes the next generation. Without a readable and writable record nothing is accepted or written: unknown state is not "never seen". </p>
 
 <p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00042">42</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="aebbf04272ea6a6c5b2b4892b8b7d4a47" name="aebbf04272ea6a6c5b2b4892b8b7d4a47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebbf04272ea6a6c5b2b4892b8b7d4a47">&#9670;&#160;</a></span>accept()</h2>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">&#9670;&#160;</a></span>Verdict</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">GpgIdGeneration::Verdict</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The outcome of <a class="el" href="#a490cff66a5b86f14e762192bbfddd93d" title="Decide about a verified list: its folder against where it sits, its generation against the remembered...">accept()</a>. Only Accepted means the list may be used; the others say why not, and Rollback alone is an authentic list of this folder. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9a382ab522931673c11e398ead1b7b1678" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9a382ab522931673c11e398ead1b7b1678"></a>Accepted&#160;</td><td class="fielddoc"><p>Folder, generation and record all agree; remembered. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9a446c9e952debe114c86bbd9e5eea7d61" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9a446c9e952debe114c86bbd9e5eea7d61"></a>Rollback&#160;</td><td class="fielddoc"><p>Authentic and bound to this folder, but older than a generation this device accepted. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9aedac80248b7bf68ccfaa9c78bfb81c32" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9aedac80248b7bf68ccfaa9c78bfb81c32"></a>Unbound&#160;</td><td class="fielddoc"><p>Older than a generation this device accepted and without a folder line: authentic, but written for who knows which folder (<span class="tt">pass</span>, or <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> before 2.0, wrote it), so not this folder's to recover. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9"></a>WrongFolder&#160;</td><td class="fielddoc"><p>Written for another folder of the store. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9a0dc7301026e66d38061d7eaba481c9a5" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9a0dc7301026e66d38061d7eaba481c9a5"></a>Malformed&#160;</td><td class="fielddoc"><p>A header line malformed or duplicated. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9a390ae4f038021219bbd1af349d76b737" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9a390ae4f038021219bbd1af349d76b737"></a>RecordUnavailable&#160;</td><td class="fielddoc"><p>The record could not be read or written. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00120">120</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a490cff66a5b86f14e762192bbfddd93d" name="a490cff66a5b86f14e762192bbfddd93d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a490cff66a5b86f14e762192bbfddd93d">&#9670;&#160;</a></span>accept()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,7 +232,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">Verdict</a></td>
         </tr>
       </table>
   </td>
@@ -196,7 +252,7 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true when the list may be used. false when its generation is lower, it was written for another folder, its metadata is malformed, or the record could not be read or written: without established freshness state nothing is accepted. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Accepted when the list may be used; otherwise why not. Without established freshness state nothing is accepted. </dd></dl>
 
 </div>
 </div>
