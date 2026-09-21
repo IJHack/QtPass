@@ -26,6 +26,7 @@ var searchData=
   ['flags_23',['flags',['../class_store_model.html#ab8ebcb53ce116b2ff658a6d49134531d',1,'StoreModel']]],
   ['flagtostring_24',['flagToString',['../struct_profile.html#a5e7cc4f12dbd6e0e51a0ef93f9c37e7d',1,'Profile']]],
   ['flashtext_25',['flashText',['../class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89',1,'MainWindow']]],
-  ['formatoutput_26',['formatOutput',['../class_qt_pass.html#a3a911b2dc52f8959aadf21ddbd21960f',1,'QtPass']]],
-  ['fullyvalid_27',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
+  ['folderof_26',['folderOf',['../class_gpg_id_generation.html#a09b1614889db306cfd1efe17acc4ea8c',1,'GpgIdGeneration']]],
+  ['formatoutput_27',['formatOutput',['../class_qt_pass.html#a3a911b2dc52f8959aadf21ddbd21960f',1,'QtPass']]],
+  ['fullyvalid_28',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
 ];

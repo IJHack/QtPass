@@ -243,8 +243,8 @@ void&#160;</td><td class="memItemRight"><b>updateEnv</b> ()</td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aff483e62ab4ceede87aa3007c8f55588" id="r_aff483e62ab4ceede87aa3007c8f55588"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aff483e62ab4ceede87aa3007c8f55588">gpgIdSigner</a> () -&gt; <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a></td></tr>
 <tr class="memdesc:aff483e62ab4ceede87aa3007c8f55588"><td class="mdescLeft">&#160;</td><td class="mdescRight">The signer for this store's <span class="tt">.gpg-id</span>, bound to the configured gpg and signing keys and to execBlocking(), so a verification on the re-encryption worker can be interrupted like every other gpg run there.  <br /></td></tr>
-<tr class="memitem:ae7c819e433b0e72edc3333e4f81b32a3" id="r_ae7c819e433b0e72edc3333e4f81b32a3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae7c819e433b0e72edc3333e4f81b32a3">loadVerifiedRecipients</a> (const QString &amp;gpgIdFile, QStringList *recipients) -&gt; bool</td></tr>
-<tr class="memdesc:ae7c819e433b0e72edc3333e4f81b32a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a <span class="tt">.gpg-id</span>, verify its detached signature and parse the recipients from the bytes that were verified.  <br /></td></tr>
+<tr class="memitem:a70e0a1c01484ea4d62aa659bd444e89e" id="r_a70e0a1c01484ea4d62aa659bd444e89e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a70e0a1c01484ea4d62aa659bd444e89e">loadVerifiedRecipients</a> (const QString &amp;gpgIdFile, QStringList *recipients, QString *why=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:a70e0a1c01484ea4d62aa659bd444e89e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a <span class="tt">.gpg-id</span>, verify its detached signature and parse the recipients from the bytes that were verified.  <br /></td></tr>
 <tr class="memitem:abe23c13e1f89b5966c44d3a9f4bdedab" id="r_abe23c13e1f89b5966c44d3a9f4bdedab"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abe23c13e1f89b5966c44d3a9f4bdedab">writeGpgIdFile</a> (const QString &amp;gpgIdFile, const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;users) -&gt; bool</td></tr>
 <tr class="memdesc:abe23c13e1f89b5966c44d3a9f4bdedab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the enabled recipients to a .gpg-id, atomically: a write that fails halfway (full disk, dead network share) leaves the previous file in place instead of a truncated list that would then be signed and encrypted to.  <br /></td></tr>
 <tr class="memitem:a3d233ed3e8c314d36f2dc56c24c8deef" id="r_a3d233ed3e8c314d36f2dc56c24c8deef"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3d233ed3e8c314d36f2dc56c24c8deef">signGpgIdFile</a> (const QString &amp;gpgIdFile) -&gt; bool</td></tr>
@@ -1126,8 +1126,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ae7c819e433b0e72edc3333e4f81b32a3" name="ae7c819e433b0e72edc3333e4f81b32a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7c819e433b0e72edc3333e4f81b32a3">&#9670;&#160;</a></span>loadVerifiedRecipients()</h2>
+<a id="a70e0a1c01484ea4d62aa659bd444e89e" name="a70e0a1c01484ea4d62aa659bd444e89e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70e0a1c01484ea4d62aa659bd444e89e">&#9670;&#160;</a></span>loadVerifiedRecipients()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1143,7 +1143,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QStringList *</td>          <td class="paramname"><span class="paramname"><em>recipients</em></span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">QStringList *</td>          <td class="paramname"><span class="paramname"><em>recipients</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>why</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1158,10 +1163,11 @@ Additional Inherited Members</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span>. </td></tr>
     <tr><td class="paramname">recipients</td><td>Receives the recipients; empty on failure. </td></tr>
+    <tr><td class="paramname">why</td><td>Receives, if not null, what to tell the user on failure: a bad signature, or a signed list older than one accepted before (<a class="el" href="class_gpg_id_generation.html" title="Rollback detection for signed .gpg-id files.">GpgIdGeneration</a>). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>false when the file cannot be read or the signature is bad (with a signing key configured). true otherwise, also for an empty list; the caller decides what an empty list means. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>false when the file cannot be read, the signature is bad or the list is a rollback (with a signing key configured). true otherwise, also for an empty list; the caller decides what an empty list means. </dd></dl>
 
 </div>
 </div>

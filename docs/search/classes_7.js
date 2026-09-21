@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['imitatepass_0',['ImitatePass',['../class_imitate_pass.html',1,'']]],
-  ['importkeydialog_1',['ImportKeyDialog',['../class_import_key_dialog.html',1,'']]]
+  ['header_0',['Header',['../struct_gpg_id_generation_1_1_header.html',1,'GpgIdGeneration']]]
 ];

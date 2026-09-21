@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['templateio_0',['TemplateIO',['../class_template_i_o.html',1,'']]],
-  ['totp_1',['Totp',['../class_totp.html',1,'']]],
-  ['transactionhelper_2',['transactionHelper',['../class_imitate_pass_1_1transaction_helper.html',1,'ImitatePass']]],
-  ['trayicon_3',['TrayIcon',['../class_tray_icon.html',1,'']]]
+  ['settings_0',['Settings',['../struct_totp_1_1_settings.html',1,'Totp']]],
+  ['settingsserializer_1',['SettingsSerializer',['../class_settings_serializer.html',1,'']]],
+  ['simpletransaction_2',['simpleTransaction',['../classsimple_transaction.html',1,'']]],
+  ['singleapplication_3',['SingleApplication',['../class_single_application.html',1,'']]],
+  ['sshauthsock_4',['SshAuthSock',['../class_ssh_auth_sock.html',1,'']]],
+  ['storemodel_5',['StoreModel',['../class_store_model.html',1,'']]],
+  ['storetree_6',['StoreTree',['../class_store_tree.html',1,'']]],
+  ['storewizardpage_7',['StoreWizardPage',['../class_store_wizard_page.html',1,'']]]
 ];

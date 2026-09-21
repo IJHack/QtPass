@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,116,31"/>
-<area shape="rect" id="Node000001" href="$class_process_output_panel.html" title="The dockable &quot;Process output&quot; console: numbered, colour&#45;coded lines of git/pass/gpg output with a lin..." alt="" coords="164,5,315,31"/>
-<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="130,15,164,15,164,21,130,21"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,111,31"/>
+<area shape="rect" id="Node000001" href="$class_single_application.html" title="QApplication subclass enforcing single&#45;instance behavior via IPC." alt="" coords="159,5,293,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="124,15,158,15,158,21,124,21"/>
 </map>

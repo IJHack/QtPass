@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['settings_0',['Settings',['../struct_totp_1_1_settings.html',1,'Totp']]],
-  ['settingsserializer_1',['SettingsSerializer',['../class_settings_serializer.html',1,'']]],
-  ['simpletransaction_2',['simpleTransaction',['../classsimple_transaction.html',1,'']]],
-  ['singleapplication_3',['SingleApplication',['../class_single_application.html',1,'']]],
-  ['sshauthsock_4',['SshAuthSock',['../class_ssh_auth_sock.html',1,'']]],
-  ['storemodel_5',['StoreModel',['../class_store_model.html',1,'']]],
-  ['storetree_6',['StoreTree',['../class_store_tree.html',1,'']]],
-  ['storewizardpage_7',['StoreWizardPage',['../class_store_wizard_page.html',1,'']]]
+  ['realpass_0',['RealPass',['../class_real_pass.html',1,'']]],
+  ['resolvedgpgconfcommand_1',['ResolvedGpgconfCommand',['../struct_resolved_gpgconf_command.html',1,'']]]
 ];
