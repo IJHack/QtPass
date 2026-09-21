@@ -110,6 +110,11 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   over real files now, with the same pattern semantics. A shared store's co-writer can make
   `git pull` create such links; SECURITY.md now says what QtPass does with
   them and that the configured store root itself may be a link [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- On Windows the link check behind that compared paths with case, so an
+  entry named in the other case than the store root ("c:/store/..." for a
+  root "C:/Store") skipped the walk up to the root and a link on the way
+  went unseen; names compare as the file system does now, as
+  `Pass::getGpgIdPath()` already did
 - A new profile's `.gpg-id` is written the way the Users dialog writes one:
   to a temporary in the same folder, owner-only, renamed into place whole,
   so an interrupted first run leaves no half list for the signing step or a

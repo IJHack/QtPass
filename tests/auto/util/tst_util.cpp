@@ -3876,6 +3876,20 @@ void tst_util::isUnderLinkChecksEveryFolderOnTheWay() {
   // A path not under the store as named is judged on its own.
   QVERIFY(!Util::isUnderLink(outsideDir.path(), store));
 #ifdef Q_OS_WIN
+  // Windows compares names without case: a path spelled in the other case
+  // is the same path, and the walk must not be skipped for it (before, the
+  // prefix check was case-sensitive and a differently cased path bypassed
+  // every link on the way).
+  const QString entry = link + QStringLiteral("/sub/entry.gpg");
+  QVERIFY2(Util::isUnderLink(entry.toUpper(), store),
+           "upper-cased path must still be seen behind the link");
+  QVERIFY2(Util::isUnderLink(entry.toLower(), store),
+           "lower-cased path must still be seen behind the link");
+  QVERIFY2(Util::isUnderLink(entry, store.toUpper()),
+           "an upper-cased store root is the same store");
+  QVERIFY(!Util::isUnderLink(storeDir.path().toUpper(), store));
+  QVERIFY(
+      !Util::isUnderLink(root.filePath(QStringLiteral("REAL/x.gpg")), store));
   QVERIFY(QDir().rmdir(link));
 #endif
 }

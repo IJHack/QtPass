@@ -518,19 +518,31 @@ auto Util::isLinkedFolder(const QString &path) -> bool {
 
 auto Util::isUnderLink(const QString &path, const QString &storeRoot,
                        bool includeSelf) -> bool {
+  // Names compare the way the platform's file system compares them:
+  // "C:/Store" and "c:/store" are one directory on Windows, and a path
+  // spelled the other way must not skip the walk (Pass::getGpgIdPath does
+  // the same).
+#ifdef Q_OS_WIN
+  constexpr auto cs = Qt::CaseInsensitive;
+#else
+  constexpr auto cs = Qt::CaseSensitive;
+#endif
   const QString root = QDir::cleanPath(storeRoot);
   // A root of "/" or "C:/" already ends in the separator.
   const QString prefix =
       root.endsWith(QLatin1Char('/')) ? root : root + QLatin1Char('/');
+  const auto isRoot = [&](const QString &p) {
+    return p.compare(root, cs) == 0;
+  };
   QString current = QDir::cleanPath(path);
-  if (!current.startsWith(prefix)) {
+  if (!current.startsWith(prefix, cs)) {
     // Not under the store as named: only the entry itself can be judged.
-    return includeSelf && current != root && isLinkedFolder(current);
+    return includeSelf && !isRoot(current) && isLinkedFolder(current);
   }
   if (!includeSelf) {
     current = QFileInfo(current).path();
   }
-  for (; current != root && current.startsWith(prefix);
+  for (; !isRoot(current) && current.startsWith(prefix, cs);
        current = QFileInfo(current).path()) {
     if (isLinkedFolder(current)) {
       return true;
