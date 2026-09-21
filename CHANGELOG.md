@@ -286,6 +286,9 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Changed
 
+- CI builds and runs the test suites on OpenBSD 7.9 (Qt 6, `qmake-qt6`,
+  `gmake`) in a VM on every pull request, next to the FreeBSD job, so the
+  `security/qtpass` port has a build to point at before a release
 - CI workflow and job names follow one scheme: the workflow says what it is
   for (Build and test, Lint, Documentation, Release installers, CodeQL,
   Flatpak, FreeBSD, REUSE, publiccode.yml) and every job says what it does

@@ -63,6 +63,9 @@ Sabayon
 FreeBSD
 `pkg install qtpass`
 
+OpenBSD
+`pkg_add qtpass`
+
 macOS
 Download the `.dmg` from the [releases page](https://github.com/IJHack/QtPass/releases)
 and clear the quarantine flag:
