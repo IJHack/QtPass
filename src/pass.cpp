@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "pass.h"
+#include "gpgidgeneration.h"
+#include "gpgidsigner.h"
 #include "gpgkeystate.h"
 #include "util.h"
 #include <QCoreApplication>
@@ -933,6 +935,41 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
  * @param for_file which file (folder) would you like recipients for
  * @return recipients gpg-id contents
  */
+auto Pass::recipientsForEditing(const QString &dir, const QString &passStore,
+                                QString *warning) -> QStringList {
+  if (warning != nullptr) {
+    warning->clear();
+  }
+  const QString gpgIdPath =
+      getGpgIdPath(dir.isEmpty() ? QString() : dir, passStore);
+  const GpgIdSigner signer(
+      m_settings.gpgExecutable,
+      GpgIdSigner::keysFromSetting(m_settings.passSigningKey));
+  if (!signer.enabled()) {
+    return getRecipientList(dir.isEmpty() ? QString() : dir, passStore);
+  }
+  if (!QFileInfo::exists(gpgIdPath)) {
+    return {};
+  }
+  QByteArray contents;
+  if (!signer.verifyFile(gpgIdPath, &contents)) {
+    if (warning != nullptr) {
+      *warning = tr("The recipient list %1 does not verify against the "
+                    "signing key, so nothing is preselected: saving would "
+                    "sign whatever is in it. Select the recipients yourself; "
+                    "OK writes and signs a fresh list.")
+                     .arg(gpgIdPath);
+    }
+    return {};
+  }
+  QString why;
+  if (!GpgIdGeneration::accept(gpgIdPath, contents, passStore, &why) &&
+      warning != nullptr) {
+    *warning = why;
+  }
+  return parseRecipients(contents, gpgIdPath);
+}
+
 auto Pass::getRecipientList(const QString &for_file, const QString &passStore)
     -> QStringList {
   const QString gpgIdPath = getGpgIdPath(for_file, passStore);

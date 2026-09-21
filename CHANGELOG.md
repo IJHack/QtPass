@@ -55,6 +55,14 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Security
 
+- With a signing key, the Users dialog preselects only a recipient list that
+  verifies. It read the list as it was on disk, and OK writes and signs the
+  selection, so an unsigned edit planted in a shared store (a member
+  appended, the signature left as it was) became a genuinely signed list
+  with one click. A list that does not verify preselects nothing and the
+  dialog says why; a verified list that the generation record calls older
+  is preselected, it is authentic, with the reason shown for review; without
+  a signing key the list is taken as it is, as before [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - Rollback detection for signed `.gpg-id` files: a signature proved the
   recipient list authentic, not current and not placed, so whoever can write
   to a shared store could put back an older, genuinely signed list that

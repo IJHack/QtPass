@@ -234,6 +234,25 @@ public:
    * @param passStore Root directory of the password store.
    * @return List of recipient key IDs.
    */
+  /**
+   * @brief The recipients a dialog may preselect for editing the list of
+   * @p dir.
+   *
+   * With a signing key configured, only a list that verifies: the Users
+   * dialog preselects what it loads and OK writes and signs the selection,
+   * so a list read unauthenticated would turn an attacker's unsigned edit
+   * into a genuinely signed one with one click. A list that does not verify
+   * preselects nothing and says so; a verified list that is a rollback
+   * (GpgIdGeneration) is preselected, it is authentic, with the reason shown
+   * so the user reviews it. Without a signing key, the list as it is.
+   * @param dir Folder whose list is edited; empty for the store root.
+   * @param passStore The store the folder belongs to: the dialog's, which
+   *        for a profile being set up is not this backend's.
+   * @param warning Receives what the dialog should show, if anything.
+   * @return The recipients to preselect.
+   */
+  auto recipientsForEditing(const QString &dir, const QString &passStore,
+                            QString *warning) -> QStringList;
   static auto getRecipientList(const QString &for_file,
                                const QString &passStore) -> QStringList;
   /**

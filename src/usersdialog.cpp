@@ -10,6 +10,7 @@
 #include <QDateTime>
 #include <QDialogButtonBox>
 #include <QKeyEvent>
+#include <QLabel>
 #include <QLineEdit>
 #include <QListWidget>
 #include <QMessageBox>
@@ -97,8 +98,20 @@ void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
 }
 
 void UsersDialog::loadRecipients() {
+  // Through the backend: with a signing key only a verified list may be
+  // preselected, since OK signs whatever is selected.
+  QString warning;
   const QStringList recipients =
-      Pass::getRecipientList(m_dir.isEmpty() ? "" : m_dir, m_passStore);
+      m_pass->recipientsForEditing(m_dir, m_passStore, &warning);
+  if (!warning.isEmpty()) {
+    auto *banner = new QLabel(warning, this);
+    banner->setObjectName(QStringLiteral("recipientWarning"));
+    banner->setWordWrap(true);
+    banner->setTextFormat(Qt::PlainText);
+    banner->setStyleSheet(QStringLiteral(
+        "QLabel { font-weight: bold; color: #b00020; padding: 4px; }"));
+    ui->verticalLayout->insertWidget(1, banner);
+  }
   if (recipients.isEmpty()) {
     // A folder without .gpg-id (new store, new profile) has no recipients
     // yet. Without this, listKeys() with no filter returned the whole
