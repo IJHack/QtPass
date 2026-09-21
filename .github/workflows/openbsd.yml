@@ -1,0 +1,46 @@
+---
+name: OpenBSD
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and test on OpenBSD 7.9 (Qt 6)
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Build and run the test suites in an OpenBSD VM
+        uses: vmactions/openbsd-vm@86cdc08415d9d0865267e686561e276c52d62530 # v1.4.7
+        with:
+          release: "7.9"
+          usesh: true
+          mem: 6144
+          cpu: 3
+          sync: rsync
+          copyback: false
+          prepare: |
+            pkg_add -I qt6-qtbase qt6-qttools qt6-qtsvg gnupg git gmake
+          run: |
+            set -e
+            sysctl -n kern.version | head -1
+            qmake-qt6 -v
+            # the rsynced tree is owned by another uid inside the VM
+            git config --global --add safe.directory "$(pwd)"
+            qmake-qt6 qtpass.pro
+            gmake -j3
+            # The suites need a display; the offscreen QPA is enough.
+            export QT_QPA_PLATFORM=offscreen
+            gmake check
