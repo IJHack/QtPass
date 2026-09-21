@@ -949,23 +949,23 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="90"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
-        <translation type="unfinished">Nie można uzyskać dostępu do rejestru generacji list odbiorców, %1.</translation>
+        <translation>Nie można uzyskać dostępu do rejestru generacji list odbiorców, %1.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="99"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
-        <translation type="unfinished">Rejestr generacji list odbiorców, %1, jest nieczytelny. Podpisane listy odbiorców nie są akceptowane, dopóki nie zostanie on naprawiony lub usunięty (co powoduje zapomnienie tego, co wcześniej zaakceptowano).</translation>
+        <translation>Rejestr generacji list odbiorców, %1, jest nieczytelny. Podpisane listy odbiorców nie są akceptowane, dopóki nie zostanie on naprawiony lub usunięty (co powoduje zapomnienie tego, co wcześniej zaakceptowano).</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="163"/>
         <location filename="../src/gpgidgeneration.cpp" line="176"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
-        <translation type="unfinished">Nie można zapisać rejestru generacji list odbiorców, %1.</translation>
+        <translation>Nie można zapisać rejestru generacji list odbiorców, %1.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="204"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
-        <translation type="unfinished">Nie udało się zablokować rejestru generacji list odbiorców, %1: może go używać inna instancja QtPass albo w jego folderze nie można zapisywać.</translation>
+        <translation>Nie udało się zablokować rejestru generacji list odbiorców, %1: może go używać inna instancja QtPass albo w jego folderze nie można zapisywać.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="308"/>
@@ -1030,7 +1030,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="564"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
-        <translation type="unfinished">Rejestr generacji list odbiorców, %1, przeszedł do generacji %2, podczas gdy zapisywana była generacja %3.</translation>
+        <translation>Rejestr generacji list odbiorców, %1, przeszedł do generacji %2, podczas gdy zapisywana była generacja %3.</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
@@ -1053,12 +1053,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
-        <translation type="unfinished">Podpisana lista odbiorców %1 to generacja %2, ta sama generacja, co inna lista, którą to urządzenie zaakceptowało wcześniej. Albo dwa urządzenia zapisały odbiorców w tym samym czasie (Git zgłosił wówczas konflikt), albo podstawiono autentyczną listę tej generacji. %3</translation>
+        <translation>Podpisana lista odbiorców %1 to generacja %2, ta sama generacja, co inna lista, którą to urządzenie zaakceptowało wcześniej. Albo dwa urządzenia zapisały odbiorców w tym samym czasie (Git zgłosił wówczas konflikt), albo podstawiono autentyczną listę tej generacji. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="506"/>
         <source>checking the recipients and saving</source>
-        <translation type="unfinished">sprawdzając odbiorców i zapisując</translation>
+        <translation>sprawdzając odbiorców i zapisując</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="532"/>
@@ -1188,12 +1188,12 @@ Nie będzie można zmienić listy użytkowników!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="413"/>
         <source>Recipient list written, but not recorded</source>
-        <translation type="unfinished">Lista odbiorców zapisana, ale nie zarejestrowana</translation>
+        <translation>Lista odbiorców zapisana, ale nie jest zarejestrowana</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="414"/>
         <source>%1 Save the recipients once more to get through.</source>
-        <translation type="unfinished">%1 Zapisz odbiorców jeszcze raz, aby przejść dalej.</translation>
+        <translation>%1 Zapisz odbiorców jeszcze raz, aby przejść dalej.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="419"/>
