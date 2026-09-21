@@ -1,0 +1,6 @@
+<map id="MainWindow::eventFilter" name="MainWindow::eventFilter">
+<area shape="rect" id="Node000001" title="Filter events from watched objects." alt="" coords="5,29,188,55"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#ac307f0d609d781011c2c35ad57ae070c" title="Notice an application palette change, the theme switch that makes a style&#45;imposed bar palette suspect..." alt="" coords="236,29,387,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,39,222,39,222,45,189,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="276,31,269,21,273,11,287,5,311,3,341,6,353,15,350,20,339,11,311,8,289,10,277,15,274,20,281,28"/>
+</map>

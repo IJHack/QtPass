@@ -1,0 +1,14 @@
+<map id="MainWindow::event" name="MainWindow::event">
+<area shape="rect" id="Node000001" title="Notice an application palette change, the theme switch that makes a style&#45;imposed bar palette suspect..." alt="" coords="261,104,412,129"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="377,95,367,86,337,83,312,85,300,90,297,95,304,102,300,106,292,96,296,86,311,80,337,77,369,81,381,91"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad" title="React to language or window state changes." alt="" coords="11,5,208,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="306,98,263,70,212,44,178,33,180,28,214,40,265,66,309,94"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f" title="Save window state and geometry on close." alt="" coords="17,55,201,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="264,104,168,83,169,77,265,98"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#aa07eb275a856e189c141fde5b69a7166" title="Filter events from watched objects." alt="" coords="18,104,201,129"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="248,119,201,119,201,114,248,114"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="Handle keyboard shortcuts." alt="" coords="5,153,213,179"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="265,135,169,156,168,151,264,130"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a3febb9ef08a8e0f7fc00848ea540a899" title="First&#45;show hook used to focus the search input once the window is actually mapped (avoids races with ..." alt="" coords="17,203,201,228"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="308,140,265,167,214,192,176,205,174,200,212,188,262,162,305,135"/>
+</map>

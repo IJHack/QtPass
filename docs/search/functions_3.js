@@ -9,5 +9,5 @@ var searchData=
   ['displayfields_6',['displayFields',['../class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f',1,'PasswordDisplayPanel']]],
   ['donewizardpage_7',['DoneWizardPage',['../class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183',1,'DoneWizardPage']]],
   ['dropmimedata_8',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
-  ['dropstaletoolbarpalette_9',['dropStaleToolBarPalette',['../class_main_window.html#a60ed7fe85ceeecb99a88ae9c4d6d2908',1,'MainWindow']]]
+  ['dropstaletoolsareapalettes_9',['dropStaleToolsAreaPalettes',['../class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168',1,'MainWindow']]]
 ];

@@ -147,9 +147,9 @@ void&#160;</td><td class="memItemRight"><b>executeWrapperStarted</b> ()</td></tr
 <tr class="memdesc:a083c74efb3eabf7f2ccd7fa691bf8841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forget the pending OTP and copy requests.  <br /></td></tr>
 <tr class="memitem:a770b38c0ee4e6ffcd234857b039061ee" id="r_a770b38c0ee4e6ffcd234857b039061ee"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a770b38c0ee4e6ffcd234857b039061ee">onOperationError</a> ()</td></tr>
 <tr class="memdesc:a770b38c0ee4e6ffcd234857b039061ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">An operation ended in an error before or instead of a result: forget the pending requests and what the panel was about to show.  <br /></td></tr>
-<tr class="memitem:a60ed7fe85ceeecb99a88ae9c4d6d2908" id="r_a60ed7fe85ceeecb99a88ae9c4d6d2908"><td class="memItemLeft"><a id="a60ed7fe85ceeecb99a88ae9c4d6d2908" name="a60ed7fe85ceeecb99a88ae9c4d6d2908"></a>
-void&#160;</td><td class="memItemRight"><b>dropStaleToolBarPalette</b> ()</td></tr>
-<tr class="memdesc:a60ed7fe85ceeecb99a88ae9c4d6d2908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop a style-imposed toolbar palette that belongs to the other theme (Breeze header palette after a light/dark switch). <br /></td></tr>
+<tr class="memitem:a02c5373d61038b8d1dfe4dea1bf0a168" id="r_a02c5373d61038b8d1dfe4dea1bf0a168"><td class="memItemLeft"><a id="a02c5373d61038b8d1dfe4dea1bf0a168" name="a02c5373d61038b8d1dfe4dea1bf0a168"></a>
+void&#160;</td><td class="memItemRight"><b>dropStaleToolsAreaPalettes</b> ()</td></tr>
+<tr class="memdesc:a02c5373d61038b8d1dfe4dea1bf0a168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop a style-imposed menu bar or toolbar palette that belongs to the other theme (Breeze header palette after a light/dark switch). <br /></td></tr>
 <tr class="memitem:a270b5f2701f275c3de734f4150a3d897" id="r_a270b5f2701f275c3de734f4150a3d897"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a270b5f2701f275c3de734f4150a3d897">onGrepFinished</a> (const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</td></tr>
 <tr class="memdesc:a270b5f2701f275c3de734f4150a3d897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle results from a completed grep search.  <br /></td></tr>
 <tr class="memitem:a6961588ebf3c0640200e0cfa920af3be" id="r_a6961588ebf3c0640200e0cfa920af3be"><td class="memItemLeft"><a id="a6961588ebf3c0640200e0cfa920af3be" name="a6961588ebf3c0640200e0cfa920af3be"></a>
@@ -191,6 +191,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a55ae3e0d4303334ccabae0a5050cfd88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle keyboard shortcuts.  <br /></td></tr>
 <tr class="memitem:a416ae2140ac1aa9f03a6279316abdcad" id="r_a416ae2140ac1aa9f03a6279316abdcad"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a416ae2140ac1aa9f03a6279316abdcad">changeEvent</a> (QEvent *event) override</td></tr>
 <tr class="memdesc:a416ae2140ac1aa9f03a6279316abdcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">React to language or window state changes.  <br /></td></tr>
+<tr class="memitem:ac307f0d609d781011c2c35ad57ae070c" id="r_ac307f0d609d781011c2c35ad57ae070c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac307f0d609d781011c2c35ad57ae070c">event</a> (QEvent *event) -&gt; bool override</td></tr>
+<tr class="memdesc:ac307f0d609d781011c2c35ad57ae070c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notice an application palette change, the theme switch that makes a style-imposed bar palette suspect; see <a class="el" href="#a02c5373d61038b8d1dfe4dea1bf0a168" title="Drop a style-imposed menu bar or toolbar palette that belongs to the other theme (Breeze header palet...">dropStaleToolsAreaPalettes()</a>.  <br /></td></tr>
 <tr class="memitem:a3febb9ef08a8e0f7fc00848ea540a899" id="r_a3febb9ef08a8e0f7fc00848ea540a899"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3febb9ef08a8e0f7fc00848ea540a899">showEvent</a> (QShowEvent *event) override</td></tr>
 <tr class="memdesc:a3febb9ef08a8e0f7fc00848ea540a899"><td class="mdescLeft">&#160;</td><td class="mdescRight">First-show hook used to focus the search input once the window is actually mapped (avoids races with timers fired before show).  <br /></td></tr>
 <tr class="memitem:aa07eb275a856e189c141fde5b69a7166" id="r_aa07eb275a856e189c141fde5b69a7166"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa07eb275a856e189c141fde5b69a7166">eventFilter</a> (QObject *obj, QEvent *event) -&gt; bool override</td></tr>
@@ -311,6 +313,12 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a416ae2140ac1aa9f03a6279316abdcad_cgraph.svg" width="407" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -344,6 +352,12 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a05fb9d72c044aa3bb7d187b994704e2f_cgraph.svg" width="394" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -405,6 +419,52 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ac307f0d609d781011c2c35ad57ae070c" name="ac307f0d609d781011c2c35ad57ae070c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac307f0d609d781011c2c35ad57ae070c">&#9670;&#160;</a></span>event()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto MainWindow::event </td>
+          <td>(</td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Notice an application palette change, the theme switch that makes a style-imposed bar palette suspect; see <a class="el" href="#a02c5373d61038b8d1dfe4dea1bf0a168" title="Drop a style-imposed menu bar or toolbar palette that belongs to the other theme (Breeze header palet...">dropStaleToolsAreaPalettes()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>The event. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the event was consumed. </dd></dl>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_ac307f0d609d781011c2c35ad57ae070c_cgraph.svg" width="162" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_ac307f0d609d781011c2c35ad57ae070c_icgraph.svg" width="418" height="234"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="aa07eb275a856e189c141fde5b69a7166" name="aa07eb275a856e189c141fde5b69a7166"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa07eb275a856e189c141fde5b69a7166">&#9670;&#160;</a></span>eventFilter()</h2>
 
@@ -441,6 +501,12 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the event was consumed. </dd></dl>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_aa07eb275a856e189c141fde5b69a7166_cgraph.svg" width="392" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -560,6 +626,12 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a55ae3e0d4303334ccabae0a5050cfd88_cgraph.svg" width="418" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -940,6 +1012,12 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a3febb9ef08a8e0f7fc00848ea540a899_cgraph.svg" width="394" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>

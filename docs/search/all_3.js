@@ -17,5 +17,5 @@ var searchData=
   ['donewizardpage_14',['DoneWizardPage',['../class_done_wizard_page.html',1,'DoneWizardPage'],['../class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183',1,'DoneWizardPage::DoneWizardPage()']]],
   ['draganddropinfopasswordstore_15',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
   ['dropmimedata_16',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
-  ['dropstaletoolbarpalette_17',['dropStaleToolBarPalette',['../class_main_window.html#a60ed7fe85ceeecb99a88ae9c4d6d2908',1,'MainWindow']]]
+  ['dropstaletoolsareapalettes_17',['dropStaleToolsAreaPalettes',['../class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168',1,'MainWindow']]]
 ];
