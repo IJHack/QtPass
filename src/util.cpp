@@ -568,19 +568,32 @@ auto Util::replaceFile(const QString &from, const QString &to, bool replace)
           .toStdWString();
   const std::wstring target =
       QDir::toNativeSeparators(QFileInfo(to).absoluteFilePath()).toStdWString();
+  // WRITE_THROUGH: the new entry is on the device when this returns.
   return MoveFileExW(source.c_str(), target.c_str(),
-                     replace ? MOVEFILE_REPLACE_EXISTING : 0) != 0;
+                     (replace ? MOVEFILE_REPLACE_EXISTING : 0) |
+                         MOVEFILE_WRITE_THROUGH) != 0;
 #else
   const QByteArray source = QFile::encodeName(from);
   const QByteArray target = QFile::encodeName(to);
   if (replace) {
-    return ::rename(source.constData(), target.constData()) == 0;
+    if (::rename(source.constData(), target.constData()) != 0) {
+      return false;
+    }
+  } else {
+    // link() makes no second name where one exists and follows nothing.
+    if (::link(source.constData(), target.constData()) != 0) {
+      return false;
+    }
+    ::unlink(source.constData());
   }
-  // link() makes no second name where one exists and follows nothing.
-  if (::link(source.constData(), target.constData()) != 0) {
-    return false;
+  // The directory entry too, so a crash right after does not lose the new
+  // name; best effort, as the rename itself has happened.
+  const int dir = ::open(QFile::encodeName(QFileInfo(to).path()).constData(),
+                         O_RDONLY | O_DIRECTORY | O_CLOEXEC);
+  if (dir >= 0) {
+    ::fsync(dir);
+    ::close(dir);
   }
-  ::unlink(source.constData());
   return true;
 #endif
 }
@@ -659,31 +672,38 @@ auto Util::syncToDisk(QFileDevice &file) -> bool {
 
 auto Util::writeFileReplacing(const QString &path, const QByteArray &bytes,
                               bool replace, QString *error) -> bool {
-  QTemporaryFile staged(QFileInfo(path).path() +
-                        QStringLiteral("/.qtpass-XXXXXX.tmp"));
-  staged.setAutoRemove(false);
-  if (!staged.open()) {
-    if (error)
-      *error = QCoreApplication::translate(
-                   "Util", "Cannot create a temporary file next to %1: %2")
-                   .arg(path, staged.errorString());
-    return false;
+  QString stagedPath;
+  QString why;
+  {
+    // The QTemporaryFile goes out of scope before the rename: it keeps its
+    // handle open for as long as it lives, also after close(), and Windows
+    // does not rename an open file.
+    QTemporaryFile staged(QFileInfo(path).path() +
+                          QStringLiteral("/.qtpass-XXXXXX.tmp"));
+    staged.setAutoRemove(false);
+    if (!staged.open()) {
+      if (error)
+        *error = QCoreApplication::translate(
+                     "Util", "Cannot create a temporary file next to %1: %2")
+                     .arg(path, staged.errorString());
+      return false;
+    }
+    stagedPath = staged.fileName();
+    // Owner-only: a .gpg-id names the keys a store is encrypted to, an
+    // entry is an entry. QTemporaryFile creates 0600 already; say so for
+    // platforms where it may not.
+    staged.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
+    if (staged.write(bytes) != bytes.size() || !syncToDisk(staged)) {
+      why = staged.errorString();
+    }
   }
-  const QString stagedPath = staged.fileName();
-  // Owner-only: a .gpg-id names the keys a store is encrypted to, an entry
-  // is an entry. QTemporaryFile creates 0600 already; say so for platforms
-  // where it may not.
-  staged.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
-  if (staged.write(bytes) != bytes.size() || !syncToDisk(staged)) {
-    const QString why = staged.errorString();
-    staged.close();
+  if (!why.isEmpty()) {
     QFile::remove(stagedPath);
     if (error)
       *error = QCoreApplication::translate("Util", "Cannot write %1: %2")
                    .arg(path, why);
     return false;
   }
-  staged.close();
   if (!replaceFile(stagedPath, path, replace)) {
     QFile::remove(stagedPath);
     if (error) {

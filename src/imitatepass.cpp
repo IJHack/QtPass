@@ -1452,30 +1452,36 @@ static auto copyFileReplacing(const QString &src, const QString &dst,
   QFile in;
   if (!Util::openRegularFile(src, in))
     return false;
-  QTemporaryFile out(QFileInfo(dst).path() +
-                     QStringLiteral("/.qtpass-XXXXXX.tmp"));
-  out.setAutoRemove(false);
-  if (!out.open())
-    return false;
-  const QString staged = out.fileName();
-  out.setPermissions(in.permissions());
-  char buf[64 * 1024];
-  for (;;) {
-    const qint64 n = in.read(buf, sizeof buf);
-    if (n < 0 || (n > 0 && out.write(buf, n) != n)) {
-      out.close();
-      QFile::remove(staged);
+  // Scoped: the QTemporaryFile keeps its handle for as long as it lives,
+  // and Windows does not rename an open file.
+  QString staged;
+  bool written = false;
+  {
+    QTemporaryFile out(QFileInfo(dst).path() +
+                       QStringLiteral("/.qtpass-XXXXXX.tmp"));
+    out.setAutoRemove(false);
+    if (!out.open())
       return false;
+    staged = out.fileName();
+    out.setPermissions(in.permissions());
+    char buf[64 * 1024];
+    written = true;
+    for (;;) {
+      const qint64 n = in.read(buf, sizeof buf);
+      if (n < 0 || (n > 0 && out.write(buf, n) != n)) {
+        written = false;
+        break;
+      }
+      if (n == 0)
+        break;
     }
-    if (n == 0)
-      break;
+    if (written && !Util::syncToDisk(out))
+      written = false;
   }
-  if (!Util::syncToDisk(out)) {
-    out.close();
+  if (!written) {
     QFile::remove(staged);
     return false;
   }
-  out.close();
   if (!Util::replaceFile(staged, dst, replace)) {
     QFile::remove(staged);
     return false;
@@ -1676,38 +1682,45 @@ auto ImitatePass::placeEncryptedFile(const QString &output, const QString &file,
   // through this handle, never opened by name again. pass writes entries
   // with umask 077, and so does QTemporaryFile. An opaque name: one built
   // from the entry's would exceed the name length limit for a long entry.
-  QTemporaryFile staged(QFileInfo(file).path() +
-                        QStringLiteral("/.qtpass-XXXXXX.tmp"));
-  staged.setAutoRemove(false);
-  if (!staged.open()) {
-    *error = tr("Cannot create a temporary file next to %1: %2")
-                 .arg(file, staged.errorString());
-    return false;
+  // The QTemporaryFile goes out of scope before the rename: it keeps its
+  // handle open for as long as it lives, and Windows does not rename an
+  // open file.
+  QString stagedPath;
+  QString why;
+  {
+    QTemporaryFile staged(QFileInfo(file).path() +
+                          QStringLiteral("/.qtpass-XXXXXX.tmp"));
+    staged.setAutoRemove(false);
+    if (!staged.open()) {
+      *error = tr("Cannot create a temporary file next to %1: %2")
+                   .arg(file, staged.errorString());
+      return false;
+    }
+    stagedPath = staged.fileName();
+    char buf[64 * 1024];
+    for (;;) {
+      const qint64 n = source.read(buf, sizeof buf);
+      if (n < 0) {
+        why = tr("Cannot read what gpg wrote for %1.").arg(file);
+        break;
+      }
+      if (n == 0) {
+        break;
+      }
+      if (staged.write(buf, n) != n) {
+        why = tr("Cannot write %1: %2").arg(file, staged.errorString());
+        break;
+      }
+    }
+    if (why.isEmpty() && !Util::syncToDisk(staged)) {
+      why = tr("Cannot write %1: %2").arg(file, staged.errorString());
+    }
   }
-  const QString stagedPath = staged.fileName();
-  const auto fail = [&](const QString &why) {
-    staged.close();
+  if (!why.isEmpty()) {
     QFile::remove(stagedPath);
     *error = why;
     return false;
-  };
-  char buf[64 * 1024];
-  for (;;) {
-    const qint64 n = source.read(buf, sizeof buf);
-    if (n < 0) {
-      return fail(tr("Cannot read what gpg wrote for %1.").arg(file));
-    }
-    if (n == 0) {
-      break;
-    }
-    if (staged.write(buf, n) != n) {
-      return fail(tr("Cannot write %1: %2").arg(file, staged.errorString()));
-    }
   }
-  if (!Util::syncToDisk(staged)) {
-    return fail(tr("Cannot write %1: %2").arg(file, staged.errorString()));
-  }
-  staged.close();
   // rename(2) / MoveFileEx: the entry under the name is replaced as an
   // entry, a link planted since the check included; without overwrite,
   // anything that appeared under the name since the check fails the add.
