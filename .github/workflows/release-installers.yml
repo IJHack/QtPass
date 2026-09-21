@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   changes:
-    name: Detect changes (release)
+    name: Detect changes (Release installers)
     runs-on: ubuntu-latest
     outputs:
       src: ${{ steps.filter.outputs.src }}

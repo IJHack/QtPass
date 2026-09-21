@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   changes:
-    name: Detect changes (documentation)
+    name: Detect changes (Documentation)
     runs-on: ubuntu-latest
     outputs:
       src: ${{ steps.filter.outputs.src }}

@@ -7,7 +7,7 @@
 <!-- Describe how you tested the changes -->
 
 - [ ] Tests pass locally: `make check`
-- [ ] Linter passes locally: `act push -W .github/workflows/linter.yml -j build`
+- [ ] Linter passes locally: `act push -W .github/workflows/lint.yml -j build`
 
 ## AI assistance
 

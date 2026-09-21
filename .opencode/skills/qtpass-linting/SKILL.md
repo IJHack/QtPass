@@ -73,7 +73,7 @@ Or install native binaries: `cargo install zizmor`, distro packages for clang-fo
 git add .
 
 # 2. Run linter locally (this is the pattern)
-act push -W .github/workflows/linter.yml -j build
+act push -W .github/workflows/lint.yml -j build
 
 # 3. Fix any issues
 # 4. Push only when act passes
@@ -83,15 +83,15 @@ act push -W .github/workflows/linter.yml -j build
 
 | Task                      | Command                                             |
 | ------------------------- | --------------------------------------------------- |
-| Run linter                | `act push -W .github/workflows/linter.yml`          |
-| Run linter (specific job) | `act push -W .github/workflows/linter.yml -j build` |
-| Run build & tests         | `act push -W .github/workflows/ccpp.yml`            |
-| Run docs                  | `act push -W .github/workflows/docs.yml`            |
+| Run linter                | `act push -W .github/workflows/lint.yml`          |
+| Run linter (specific job) | `act push -W .github/workflows/lint.yml -j build` |
+| Run build & tests         | `act push -W .github/workflows/build-and-test.yml`            |
+| Run docs                  | `act push -W .github/workflows/documentation.yml`            |
 | Run reuse check           | `act push -W .github/workflows/reuse.yml`           |
 
 ## Available Workflows
 
-### Linter Workflow (.github/workflows/linter.yml)
+### Linter Workflow (.github/workflows/lint.yml)
 
 Runs super-linter with many linters:
 
@@ -106,16 +106,16 @@ Runs super-linter with many linters:
 
 ```bash
 # Run linter locally
-act push -W .github/workflows/linter.yml -j build
+act push -W .github/workflows/lint.yml -j build
 ```
 
-### Build & Test Workflow (.github/workflows/ccpp.yml)
+### Build & Test Workflow (.github/workflows/build-and-test.yml)
 
 QtPass build with Qt5/Qt6 matrix, runs unit tests, generates coverage:
 
 ```bash
 # Run build workflow
-act push -W .github/workflows/ccpp.yml
+act push -W .github/workflows/build-and-test.yml
 ```
 
 Tests against:
@@ -126,11 +126,11 @@ Tests against:
 
 Note: Qt installation may fail in act due to environment limitations. Real CI handles this.
 
-### Documentation Workflow (.github/workflows/docs.yml)
+### Documentation Workflow (.github/workflows/documentation.yml)
 
 ```bash
 # Run docs workflow
-act push -W .github/workflows/docs.yml
+act push -W .github/workflows/documentation.yml
 ```
 
 ### Reuse Compliance (.github/workflows/reuse.yml)
@@ -144,9 +144,9 @@ act push -W .github/workflows/reuse.yml
 
 ## Doxygen Documentation Linting
 
-The CI enforces zero Doxygen warnings via `docs.yml`. `WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile` causes the step to fail on any undocumented public symbol.
+The CI enforces zero Doxygen warnings via `documentation.yml`. `WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile` causes the step to fail on any undocumented public symbol.
 
-CI pins **Doxygen 1.17.0** (local Doxygen may be older and miss/add warnings). The `docs.yml` install step downloads that pinned binary from the GitHub release mirror first, falling back to doxygen.nl, with retries — doxygen.nl has intermittent outages that previously caused spurious `docs` failures (a red `docs` check is often a download blip, not your change; re-run before debugging).
+CI pins **Doxygen 1.17.0** (local Doxygen may be older and miss/add warnings). The `documentation.yml` install step downloads that pinned binary from the GitHub release mirror first, falling back to doxygen.nl, with retries — doxygen.nl has intermittent outages that previously caused spurious `docs` failures (a red `docs` check is often a download blip, not your change; re-run before debugging).
 
 ### Run Doxygen Locally
 
@@ -332,7 +332,7 @@ If NATURAL_LANGUAGE fails:
 npx prettier --write README.md
 
 # Then check again
-act push -W .github/workflows/linter.yml -j build
+act push -W .github/workflows/lint.yml -j build
 ```
 
 ## Troubleshooting
@@ -375,16 +375,16 @@ Some linters need secrets or tokens. In local act, these may not be available:
 
 ```bash
 # Pass fake token for codecov
-act push -W .github/workflows/ccpp.yml --secret-map "CODECOV_TOKEN=fake"
+act push -W .github/workflows/build-and-test.yml --secret-map "CODECOV_TOKEN=fake"
 ```
 
 ## GitHub Actions Files
 
 | File                           | Purpose                    |
 | ------------------------------ | -------------------------- |
-| `.github/workflows/linter.yml` | Super-linter (many checks) |
-| `.github/workflows/ccpp.yml`   | Build & test with Qt       |
-| `.github/workflows/docs.yml`   | Doxygen docs generation    |
+| `.github/workflows/lint.yml` | Super-linter (many checks) |
+| `.github/workflows/build-and-test.yml`   | Build & test with Qt       |
+| `.github/workflows/documentation.yml`   | Doxygen docs generation    |
 | `.github/workflows/reuse.yml`  | REUSE compliance           |
 | `.github/super-linter.env`     | Linter configuration       |
 
@@ -400,7 +400,7 @@ npx prettier --write "**/*.md" "**/*.yml"
 npx prettier --check "**/*.md"
 
 # 3. Run act linter (recommended before opening PR)
-act push -W .github/workflows/linter.yml -j build
+act push -W .github/workflows/lint.yml -j build
 
 # 4. Update with latest main (if branch is behind)
 git fetch upstream

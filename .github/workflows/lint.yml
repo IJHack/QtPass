@@ -12,7 +12,7 @@ permissions: {}
 
 jobs:
   changes:
-    name: Detect changes (lint)
+    name: Detect changes (Lint)
     runs-on: ubuntu-latest
     outputs:
       src: ${{ steps.filter.outputs.src }}

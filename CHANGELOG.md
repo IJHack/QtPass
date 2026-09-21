@@ -286,6 +286,11 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Changed
 
+- Workflow files are named after their workflows (`build-and-test.yml`,
+  `lint.yml`, `documentation.yml`, `publiccode.yml`; `ccpp.yml`,
+  `linter.yml`, `docs.yml` and `publiccode-yml-validation.yml` were the
+  old names) and every "Detect changes (…)" job names the workflow it gates
+  the same way. Required-check names are unchanged
 - CI builds and runs the test suites on OpenBSD 7.9 (Qt 6, `qmake-qt6`,
   `gmake`) in a VM on every pull request, next to the FreeBSD job, so the
   `security/qtpass` port has a build to point at before a release

@@ -12,7 +12,7 @@ permissions: {}
 
 jobs:
   changes:
-    name: Detect changes (build)
+    name: Detect changes (Build and test)
     runs-on: ubuntu-latest
     outputs:
       src: ${{ steps.filter.outputs.src }}
@@ -52,7 +52,7 @@ jobs:
             # A change to this workflow must run it: #1867 went two rounds
             # with every build job skipped.
             workflow:
-              - ".github/workflows/ccpp.yml"
+              - ".github/workflows/build-and-test.yml"
 
   build:
     name: Build and test on ${{ matrix.os }} (Qt ${{ matrix.qt }})

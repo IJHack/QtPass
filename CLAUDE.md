@@ -52,7 +52,7 @@ npx prettier --write "**/*.md" "**/*.yml"
 npx prettier --check "**/*.md" "**/*.yml"
 
 # Local CI check
-act push -W .github/workflows/linter.yml -j build
+act push -W .github/workflows/lint.yml -j build
 ```
 
 ## Architecture

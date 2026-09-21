@@ -284,7 +284,7 @@ See `qtpass-linting` skill for full CI workflow. Pattern:
 
 ```bash
 # Run linter locally BEFORE pushing
-act push -W .github/workflows/linter.yml -j build
+act push -W .github/workflows/lint.yml -j build
 ```
 
 ## Protected Main Branch
