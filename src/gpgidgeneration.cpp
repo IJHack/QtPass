@@ -26,6 +26,11 @@ namespace {
 constexpr int kMaxDigits = 18;
 const QByteArray kOurComment = QByteArrayLiteral("# QtPass-GpgId-");
 
+// GpgIdGeneration is not a QObject; its messages are looked up under its
+// name. In the class's own methods a plain tr() is enough for lupdate, which
+// takes the context from the enclosing class; in the free functions and
+// structs here lupdate finds no context and drops the string, so those spell
+// the context out with QCoreApplication::translate().
 auto tr(const char *text) -> QString {
   return QCoreApplication::translate("GpgIdGeneration", text);
 }
@@ -82,17 +87,21 @@ auto loadRecord(const QString &path, QString *error) -> std::optional<Entries> {
   QFile file(path);
   if (!file.open(QIODevice::ReadOnly)) {
     if (error)
-      *error = tr("The generation record of the recipient lists, %1, cannot "
-                  "be accessed.")
+      *error = QCoreApplication::translate(
+                   "GpgIdGeneration",
+                   "The generation record of the recipient lists, %1, cannot "
+                   "be accessed.")
                    .arg(path);
     return std::nullopt;
   }
   const auto unreadable = [&] {
     if (error)
-      *error = tr("The generation record of the recipient lists, %1, is not "
-                  "readable. Signed recipient lists are not accepted until "
-                  "it is repaired or removed (which forgets what was accepted "
-                  "before).")
+      *error = QCoreApplication::translate(
+                   "GpgIdGeneration",
+                   "The generation record of the recipient lists, %1, is not "
+                   "readable. Signed recipient lists are not accepted until "
+                   "it is repaired or removed (which forgets what was accepted "
+                   "before).")
                    .arg(path);
     return std::nullopt;
   };
@@ -151,8 +160,10 @@ auto saveRecord(const QString &path, const Entries &entries, QString *error)
   QSaveFile file(path);
   if (!file.open(QIODevice::WriteOnly)) {
     if (error)
-      *error = tr("The generation record of the recipient lists, %1, cannot "
-                  "be written.")
+      *error = QCoreApplication::translate(
+                   "GpgIdGeneration",
+                   "The generation record of the recipient lists, %1, cannot "
+                   "be written.")
                    .arg(path);
     return false;
   }
@@ -162,8 +173,10 @@ auto saveRecord(const QString &path, const Entries &entries, QString *error)
     qCWarning(lcQtPass) << "Could not write the .gpg-id generation record"
                         << path << file.errorString();
     if (error)
-      *error = tr("The generation record of the recipient lists, %1, cannot "
-                  "be written.")
+      *error = QCoreApplication::translate(
+                   "GpgIdGeneration",
+                   "The generation record of the recipient lists, %1, cannot "
+                   "be written.")
                    .arg(path);
     return false;
   }
@@ -188,9 +201,11 @@ struct Transaction {
 
   Transaction() {
     if (!locked) {
-      problem = tr("The generation record of the recipient lists, %1, could "
-                   "not be locked: another QtPass may be using it, or its "
-                   "folder cannot be written.")
+      problem = QCoreApplication::translate(
+                    "GpgIdGeneration",
+                    "The generation record of the recipient lists, %1, could "
+                    "not be locked: another QtPass may be using it, or its "
+                    "folder cannot be written.")
                     .arg(path);
       return;
     }

@@ -23,6 +23,7 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
+        <location filename="../src/ui_configdialog.h" line="1182"/>
         <source>Configuration</source>
         <translation>Configuració</translation>
     </message>
@@ -32,22 +33,27 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="304"/>
+        <location filename="../src/ui_configdialog.h" line="1216"/>
         <source>Clipboard behaviour:</source>
         <translation>Comportament del porta-retalls:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="322"/>
+        <location filename="../src/ui_configdialog.h" line="1217"/>
         <source>Use primary selection</source>
         <translation>Utilitza la selecció primària</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
+        <location filename="../src/ui_configdialog.h" line="1218"/>
         <source>Autoclear after:</source>
         <translation>Neteja automàticament després de:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="346"/>
         <location filename="../src/configdialog.ui" line="421"/>
+        <location filename="../src/ui_configdialog.h" line="1219"/>
+        <location filename="../src/ui_configdialog.h" line="1224"/>
         <source>Seconds</source>
         <translation>segons</translation>
     </message>
@@ -57,41 +63,49 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="374"/>
+        <location filename="../src/ui_configdialog.h" line="1220"/>
         <source>Content panel behaviour:</source>
         <translation>Comportament del plafó del contingut:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="382"/>
+        <location filename="../src/ui_configdialog.h" line="1221"/>
         <source>Hide content</source>
         <translation>Oculta el contingut</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="389"/>
+        <location filename="../src/ui_configdialog.h" line="1222"/>
         <source>Hide password</source>
         <translation>Oculta la contrasenya</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="398"/>
+        <location filename="../src/ui_configdialog.h" line="1223"/>
         <source>Autoclear panel after:</source>
         <translation>Neteja automàticament el plafó després de:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
+        <location filename="../src/ui_configdialog.h" line="1225"/>
         <source>Use a monospace font</source>
         <translation>Utilitzeu una font monoespaiada</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="457"/>
+        <location filename="../src/ui_configdialog.h" line="1226"/>
         <source>Display the files content as-is</source>
         <translation>Mostra el contingut dels fitxers tal com és</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="464"/>
+        <location filename="../src/ui_configdialog.h" line="1227"/>
         <source>No line wrapping</source>
         <translation>Sense ajust de línia</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="471"/>
+        <location filename="../src/ui_configdialog.h" line="1228"/>
         <source>Show process output</source>
         <translation>Mostra la sortida del procés</translation>
     </message>
@@ -105,16 +119,19 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
+        <location filename="../src/ui_configdialog.h" line="1231"/>
         <source>Characters</source>
         <translation>caràcters</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="630"/>
+        <location filename="../src/ui_configdialog.h" line="1232"/>
         <source>Use characters:</source>
         <translation>Utilitza els caràcters:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="651"/>
+        <location filename="../src/ui_configdialog.h" line="1239"/>
         <source>Select character set for password generation</source>
         <translation>Seleccioneu el conjunt de caràcters per a la generació de la contrasenya</translation>
     </message>
@@ -124,165 +141,201 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
+        <location filename="../src/ui_configdialog.h" line="1234"/>
         <source>Alphabetical</source>
         <translation>Alfabètic</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="665"/>
+        <location filename="../src/ui_configdialog.h" line="1235"/>
         <source>Alphanumerical</source>
         <translation>Alfanumèric</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="670"/>
+        <location filename="../src/ui_configdialog.h" line="1236"/>
         <source>Custom</source>
         <translation>Personalitzat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="708"/>
+        <location filename="../src/ui_configdialog.h" line="1241"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcçdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="742"/>
+        <location filename="../src/ui_configdialog.h" line="1244"/>
         <source>Include special symbols</source>
         <translation>Inclou símbols especials</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
+        <location filename="../src/ui_configdialog.h" line="1211"/>
         <source>Enable one-time password (OTP) support</source>
         <translation type="unfinished">Habilita la compatibilitat amb contrasenyes d&apos;un sol ús (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
+        <location filename="../src/ui_configdialog.h" line="1187"/>
         <source>General</source>
         <translation type="unfinished">General</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
+        <location filename="../src/ui_configdialog.h" line="1189"/>
         <source>Clipboard</source>
         <translation type="unfinished">Porta-retalls</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
+        <location filename="../src/ui_configdialog.h" line="1191"/>
         <source>Passwords</source>
         <translation type="unfinished">Contrasenyes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
+        <location filename="../src/ui_configdialog.h" line="1205"/>
         <source>Show menu bar</source>
         <translation type="unfinished">Mostra la barra de menús</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
+        <location filename="../src/ui_configdialog.h" line="1207"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
         <translation type="unfinished">Ctrl+M també la mostra o l&apos;oculta des de la finestra principal</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
+        <location filename="../src/ui_configdialog.h" line="1212"/>
         <source>Enable content search (pass grep)</source>
         <translation>Habilita la cerca de contingut (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="237"/>
+        <location filename="../src/ui_configdialog.h" line="1214"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Permet la cerca dins del contingut dels fitxers de contrasenyes. Cal desxifrar tots els fitxers i pot ser lent en grans magatzems.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="551"/>
+        <location filename="../src/ui_configdialog.h" line="1229"/>
         <source>Password generation:</source>
         <translation>Generació de contrasenyes:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="562"/>
+        <location filename="../src/ui_configdialog.h" line="1230"/>
         <source>Password length:</source>
         <translation>Longitud de la contrasenya:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="655"/>
+        <location filename="../src/ui_configdialog.h" line="1233"/>
         <source>All characters</source>
         <translation>Tots els caràcters</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/ui_configdialog.h" line="1268"/>
+        <location filename="../src/ui_configdialog.h" line="1271"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">Tria l&apos;executable de gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1060"/>
         <location filename="../src/configdialog.ui" line="1063"/>
+        <location filename="../src/ui_configdialog.h" line="1275"/>
+        <location filename="../src/ui_configdialog.h" line="1278"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">Tria l&apos;executable de git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1079"/>
+        <location filename="../src/ui_configdialog.h" line="1281"/>
         <source>Generate</source>
         <translation>Genera</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1082"/>
+        <location filename="../src/ui_configdialog.h" line="1283"/>
         <source>Generate GPG key pair</source>
         <translation>Genera un parell de claus GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1115"/>
         <location filename="../src/configdialog.ui" line="1118"/>
+        <location filename="../src/ui_configdialog.h" line="1288"/>
+        <location filename="../src/ui_configdialog.h" line="1291"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">Tria l&apos;executable de pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1155"/>
         <location filename="../src/configdialog.ui" line="1158"/>
+        <location filename="../src/ui_configdialog.h" line="1297"/>
+        <location filename="../src/ui_configdialog.h" line="1300"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">Tria l&apos;executable de pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1212"/>
+        <location filename="../src/ui_configdialog.h" line="1305"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>Substitució de SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1215"/>
+        <location filename="../src/ui_configdialog.h" line="1307"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>Ruta opcional per substituir SSH_AUTH_SOCK. Deixeu en blanc per a la detecció automàtica via gpgconf (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1225"/>
+        <location filename="../src/ui_configdialog.h" line="1309"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(detecció automàtica via gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1299"/>
+        <location filename="../src/ui_configdialog.h" line="1311"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">Els magatzems de contrasenyes que coneix aquest QtPass; trieu-ne un per editar-lo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1314"/>
+        <location filename="../src/ui_configdialog.h" line="1314"/>
         <source>Add a profile</source>
         <translation type="unfinished">Afegeix un perfil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1332"/>
+        <location filename="../src/ui_configdialog.h" line="1318"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">Oblida el perfil seleccionat; el magatzem es manté al disc</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1378"/>
+        <location filename="../src/ui_configdialog.h" line="1321"/>
         <source>Profile</source>
         <translation type="unfinished">Perfil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1394"/>
+        <location filename="../src/ui_configdialog.h" line="1324"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Nom del perfil, utilitzat per identificar aquest perfil de configuració</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
+        <location filename="../src/ui_configdialog.h" line="1328"/>
         <source>Path to the password store directory</source>
         <translation>Camí al directori d&apos;emmagatzematge de contrasenyes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1435"/>
+        <location filename="../src/ui_configdialog.h" line="1337"/>
         <source>Signing key</source>
         <translation>Clau de signatura</translation>
     </message>
@@ -292,21 +345,25 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
+        <location filename="../src/ui_configdialog.h" line="1339"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Opcional: Clau GPG per signar els fitxers .gpg-id per a la verificació de la integritat. Deixeu-ho en blanc tret que necessiteu protegir la llista d&apos;usuaris contra manipulacions.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1448"/>
+        <location filename="../src/ui_configdialog.h" line="1341"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">Empremta completa de la clau (40 caràcters), tal com requereix pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1455"/>
+        <location filename="../src/ui_configdialog.h" line="1343"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
         <translation type="unfinished">Paràmetres de Git d&apos;aquest perfil; substitueixen els de la pestanya Paràmetres mentre el perfil és actiu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1501"/>
+        <location filename="../src/ui_configdialog.h" line="1348"/>
         <source>Current path</source>
         <translation>Camí actual</translation>
     </message>
@@ -316,6 +373,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="732"/>
+        <location filename="../src/ui_configdialog.h" line="1243"/>
         <source>Exclude capital letters</source>
         <translation>Exclou les lletres en majúscula</translation>
     </message>
@@ -325,16 +383,19 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="749"/>
+        <location filename="../src/ui_configdialog.h" line="1245"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Genera contrasenyes fàcils de recordar però menys segures</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="756"/>
+        <location filename="../src/ui_configdialog.h" line="1246"/>
         <source>Exclude numbers</source>
         <translation>Exclou els nombres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="872"/>
+        <location filename="../src/ui_configdialog.h" line="1257"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
@@ -344,23 +405,29 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="894"/>
+        <location filename="../src/ui_configdialog.h" line="1259"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Afegeix automàticament els fitxers .gpg-id</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="901"/>
         <location filename="../src/configdialog.ui" line="1465"/>
+        <location filename="../src/ui_configdialog.h" line="1260"/>
+        <location filename="../src/ui_configdialog.h" line="1346"/>
         <source>Automatically push</source>
         <translation>Pujada automàtica</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="908"/>
         <location filename="../src/configdialog.ui" line="1472"/>
+        <location filename="../src/ui_configdialog.h" line="1261"/>
+        <location filename="../src/ui_configdialog.h" line="1347"/>
         <source>Automatically pull</source>
         <translation>Baixada automàtica</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="201"/>
+        <location filename="../src/ui_configdialog.h" line="1209"/>
         <source>Extensions:</source>
         <translation>Extensions:</translation>
     </message>
@@ -370,36 +437,43 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="134"/>
+        <location filename="../src/ui_configdialog.h" line="1200"/>
         <source>System:</source>
         <translation>Sistema:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="145"/>
+        <location filename="../src/ui_configdialog.h" line="1201"/>
         <source>Use TrayIcon</source>
         <translation>Utilitza la safata del sistema</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="152"/>
+        <location filename="../src/ui_configdialog.h" line="1202"/>
         <source>Start minimized</source>
         <translation>Comença minimitzat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
+        <location filename="../src/ui_configdialog.h" line="1203"/>
         <source>Hide on close</source>
         <translation>Oculta amb el tancament</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
+        <location filename="../src/ui_configdialog.h" line="1204"/>
         <source>Always on top</source>
         <translation>Sempre al capdamunt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="80"/>
+        <location filename="../src/ui_configdialog.h" line="1195"/>
         <source>Programs</source>
         <translation>Programes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="988"/>
+        <location filename="../src/ui_configdialog.h" line="1262"/>
         <source>Select password storage program:</source>
         <translation>Seleccioneu el programa d&apos;emmagatzematge de contrasenyes:</translation>
     </message>
@@ -409,11 +483,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
+        <location filename="../src/ui_configdialog.h" line="1264"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Utilitza pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
+        <location filename="../src/ui_configdialog.h" line="1265"/>
         <source>Native</source>
         <translation>Natiu</translation>
     </message>
@@ -435,11 +511,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1131"/>
+        <location filename="../src/ui_configdialog.h" line="1294"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
+        <location filename="../src/ui_configdialog.h" line="1295"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
@@ -449,26 +527,31 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="85"/>
+        <location filename="../src/ui_configdialog.h" line="1197"/>
         <source>Profiles</source>
         <translation>Perfils</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1384"/>
+        <location filename="../src/ui_configdialog.h" line="1322"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1401"/>
+        <location filename="../src/ui_configdialog.h" line="1326"/>
         <source>Path</source>
         <translation>Camí</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1317"/>
+        <location filename="../src/ui_configdialog.h" line="1316"/>
         <source>Add</source>
         <translation>Afegeix</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1335"/>
+        <location filename="../src/ui_configdialog.h" line="1320"/>
         <source>Delete</source>
         <translation>Suprimeix</translation>
     </message>
@@ -478,6 +561,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="768"/>
+        <location filename="../src/ui_configdialog.h" line="1247"/>
         <source>Template</source>
         <translation>Plantilla</translation>
     </message>
@@ -487,16 +571,19 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="783"/>
+        <location filename="../src/ui_configdialog.h" line="1249"/>
         <source>Use template</source>
         <translation>Utilitza la plantilla</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="790"/>
+        <location filename="../src/ui_configdialog.h" line="1251"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Mostra totes les línies que comencen amb una paraula seguida de dos punts com a camps als camps de la contrasenya, no només les que figuren a la llista</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="793"/>
+        <location filename="../src/ui_configdialog.h" line="1253"/>
         <source>Show all fields templated</source>
         <translation>Mostra tota la plantilla de camps</translation>
     </message>
@@ -510,6 +597,7 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
+        <location filename="../src/ui_configdialog.h" line="1356"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versió </translation>
     </message>
@@ -685,11 +773,13 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1170"/>
+        <location filename="../src/ui_configdialog.h" line="1303"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1201"/>
+        <location filename="../src/ui_configdialog.h" line="1304"/>
         <source>Autodetect</source>
         <translation>Detecció automàtica</translation>
     </message>
@@ -717,17 +807,21 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
+        <location filename="../src/ui_configdialog.h" line="1242"/>
         <source>Use PWGen</source>
         <translation>Utilitzeu PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="883"/>
         <location filename="../src/configdialog.ui" line="1458"/>
+        <location filename="../src/ui_configdialog.h" line="1258"/>
+        <location filename="../src/ui_configdialog.h" line="1345"/>
         <source>Use Git</source>
         <translation>Utilitzeu Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="209"/>
+        <location filename="../src/ui_configdialog.h" line="1210"/>
         <source>Use QRencode</source>
         <translation>Utilitzeu QRencode</translation>
     </message>
@@ -737,12 +831,15 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="997"/>
+        <location filename="../src/ui_configdialog.h" line="1263"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Git/GPG &amp;natius</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
         <location filename="../src/configdialog.ui" line="1034"/>
+        <location filename="../src/ui_configdialog.h" line="1193"/>
+        <location filename="../src/ui_configdialog.h" line="1266"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
@@ -753,16 +850,24 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
         <location filename="../src/configdialog.ui" line="1161"/>
         <location filename="../src/configdialog.ui" line="1426"/>
         <location filename="../src/configdialog.ui" line="1517"/>
+        <location filename="../src/ui_configdialog.h" line="1273"/>
+        <location filename="../src/ui_configdialog.h" line="1280"/>
+        <location filename="../src/ui_configdialog.h" line="1293"/>
+        <location filename="../src/ui_configdialog.h" line="1302"/>
+        <location filename="../src/ui_configdialog.h" line="1336"/>
+        <location filename="../src/ui_configdialog.h" line="1355"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1089"/>
+        <location filename="../src/ui_configdialog.h" line="1285"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1105"/>
+        <location filename="../src/ui_configdialog.h" line="1286"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
@@ -771,16 +876,22 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
         <location filename="../src/configdialog.ui" line="1423"/>
         <location filename="../src/configdialog.ui" line="1511"/>
         <location filename="../src/configdialog.ui" line="1514"/>
+        <location filename="../src/ui_configdialog.h" line="1331"/>
+        <location filename="../src/ui_configdialog.h" line="1334"/>
+        <location filename="../src/ui_configdialog.h" line="1350"/>
+        <location filename="../src/ui_configdialog.h" line="1353"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">Tria la carpeta del magatzem de contrasenyes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="774"/>
+        <location filename="../src/ui_configdialog.h" line="1248"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Les plantilles afegeixen camps addicionals al diàleg de generació de contrasenya i a la vista de contrasenya.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="805"/>
+        <location filename="../src/ui_configdialog.h" line="1254"/>
         <source>login
 URL
 e-mail</source>
@@ -878,21 +989,25 @@ e-mail</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <location filename="../src/ui_exportpublickeydialog.h" line="99"/>
         <source>Export public key</source>
         <translation>Exporta la clau pública</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
+        <location filename="../src/ui_exportpublickeydialog.h" line="100"/>
         <source>Public key</source>
         <translation>Clau pública</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
+        <location filename="../src/ui_exportpublickeydialog.h" line="101"/>
         <source>Copy to clipboard</source>
         <translation type="unfinished">Copia al porta-retalls</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <location filename="../src/ui_exportpublickeydialog.h" line="102"/>
         <source>Save to file...</source>
         <translation>Desa al fitxer…</translation>
     </message>
@@ -1007,67 +1122,88 @@ e-mail</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="293"/>
+        <location filename="../src/gpgidgeneration.cpp" line="90"/>
+        <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
+        <translation type="unfinished">El registre de generacions de les llistes de destinataris, %1, no és accessible.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="99"/>
+        <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
+        <translation type="unfinished">El registre de generacions de les llistes de destinataris, %1, no és llegible. Les llistes de destinataris signades no s&apos;accepten fins que no es repari o se suprimeixi (cosa que oblida el que s&apos;havia acceptat abans).</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="163"/>
+        <location filename="../src/gpgidgeneration.cpp" line="176"/>
+        <source>The generation record of the recipient lists, %1, cannot be written.</source>
+        <translation type="unfinished">El registre de generacions de les llistes de destinataris, %1, no es pot escriure.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="204"/>
+        <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
+        <translation type="unfinished">El registre de generacions de les llistes de destinataris, %1, no s&apos;ha pogut bloquejar: pot ser que un altre QtPass l&apos;estigui utilitzant, o que no es pugui escriure a la seva carpeta.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="308"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">La llista conté més d&apos;una línia de generació.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="294"/>
+        <location filename="../src/gpgidgeneration.cpp" line="309"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">La línia de generació té un format incorrecte: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="305"/>
+        <location filename="../src/gpgidgeneration.cpp" line="320"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">La llista conté més d&apos;una línia de carpeta.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="306"/>
+        <location filename="../src/gpgidgeneration.cpp" line="321"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">La línia de carpeta té un format incorrecte: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="315"/>
+        <location filename="../src/gpgidgeneration.cpp" line="330"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">La línia de capçalera té un format incorrecte: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="320"/>
+        <location filename="../src/gpgidgeneration.cpp" line="335"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">La llista conté una línia de generació però cap línia de carpeta.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="389"/>
+        <location filename="../src/gpgidgeneration.cpp" line="404"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">La llista de destinataris signada %1 no és de fiar: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="399"/>
+        <location filename="../src/gpgidgeneration.cpp" line="414"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">La llista de destinataris signada %1 es va escriure per a la carpeta «%2» del magatzem, no per a «%3», i no s&apos;utilitza. Pot ser que algú altre l&apos;hagi copiat aquí; si, en canvi, la carpeta s&apos;ha mogut o se n&apos;ha canviat el nom, qui tingui la clau de signatura hi obre Usuaris i desa els destinataris, cosa que vincula la llista al lloc on és ara.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="422"/>
+        <location filename="../src/gpgidgeneration.cpp" line="437"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">La generació %1 és la més alta que existeix, així que aquí no es pot escriure cap llista més nova: si se suprimeix %2, aquest dispositiu oblida el que havia acceptat abans, i després qui tingui la clau de signatura ho pot resoldre obrint Usuaris i %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="428"/>
+        <location filename="../src/gpgidgeneration.cpp" line="443"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Qui tingui la clau de signatura ho pot resoldre obrint Usuaris i %1, cosa que escriu la generació %2. Si se suprimeix %3, aquest dispositiu oblida el que havia acceptat abans.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="442"/>
+        <location filename="../src/gpgidgeneration.cpp" line="457"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">La llista de destinataris signada %1 no conté cap línia de generació, mentre que aquí ja s&apos;havia acceptat la generació %2. pass no escriu cap línia de generació (tampoc a través del rerefons pass de QtPass), ni ho feia QtPass abans de la 2.0; sense aquesta línia, la llista també pot haver estat escrita per a una altra carpeta del magatzem i copiada aquí. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="449"/>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">seleccionant de nou els destinataris i desant</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="549"/>
+        <location filename="../src/gpgidgeneration.cpp" line="564"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">El registre de generacions de les llistes de destinataris, %1, ha passat a la generació %2 mentre s&apos;escrivia la generació %3.</translation>
     </message>
@@ -1080,27 +1216,27 @@ e-mail</translation>
         <translation type="obsolete">La llista de destinataris signada %1 no conté cap línia de generació, mentre que aquí ja s&apos;havia acceptat la generació %2. pass no escriu cap línia de generació (tampoc a través del rerefons pass de QtPass), ni ho feia QtPass abans de la 2.0. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="454"/>
+        <location filename="../src/gpgidgeneration.cpp" line="469"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">La llista de destinataris signada %1 és de la generació %2, anterior a la generació %3, la darrera que QtPass ha acceptat aquí. Pot ser que algú altre l&apos;hagi tornat a posar. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="460"/>
+        <location filename="../src/gpgidgeneration.cpp" line="475"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">desant els destinataris: els destinataris preseleccionats allà són els d&apos;aquesta llista, així que primer traieu-ne qui ja no hi hagi de tenir accés</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">La llista de destinataris signada %1 és de la generació %2, la mateixa generació que una altra llista que aquest dispositiu havia acceptat abans. O bé dos dispositius han desat els destinataris al mateix temps (Git haurà mostrat el conflicte), o bé s&apos;hi ha posat, en lloc de la que hi havia, una llista autèntica d&apos;aquella generació. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="491"/>
+        <location filename="../src/gpgidgeneration.cpp" line="506"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">comprovant els destinataris i desant</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="517"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">La llista de destinataris %1 ha arribat a la generació %2, la més alta que existeix; no es pot escriure la llista.</translation>
     </message>
@@ -1424,6 +1560,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
+        <location filename="../src/ui_importkeydialog.h" line="121"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
         <translation>Importeu una clau pública GPG des d&apos;un fitxer o enganxeu-la a continuació. La clau ha d&apos;estar en format ASCII-armored.</translation>
     </message>
@@ -1433,6 +1570,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
+        <location filename="../src/ui_importkeydialog.h" line="123"/>
         <source>From clipboard</source>
         <translation type="unfinished">Des del porta-retalls</translation>
     </message>
@@ -1443,21 +1581,25 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="41"/>
+        <location filename="../src/ui_importkeydialog.h" line="120"/>
         <source>Import GPG key</source>
         <translation>Importa una clau GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
+        <location filename="../src/ui_importkeydialog.h" line="122"/>
         <source>From file...</source>
         <translation>Des d&apos;un fitxer…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
+        <location filename="../src/ui_importkeydialog.h" line="124"/>
         <source>Paste an ASCII-armored GPG key here...</source>
         <translation>Enganxeu aquí una clau GPG ASCII-armored…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
+        <location filename="../src/ui_importkeydialog.h" line="125"/>
         <source>Import</source>
         <translation>Importa</translation>
     </message>
@@ -1560,56 +1702,67 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <name>KeygenDialog</name>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
+        <location filename="../src/ui_keygendialog.h" line="236"/>
         <source>Generate GnuPG keypair</source>
         <translation>Generació del parell de claus GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
+        <location filename="../src/ui_keygendialog.h" line="237"/>
         <source>Generate a new key pair</source>
         <translation>Genera un nou parell de claus</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
+        <location filename="../src/ui_keygendialog.h" line="240"/>
         <source>Passphrase</source>
         <translation>Contrasenya</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
+        <location filename="../src/ui_keygendialog.h" line="238"/>
         <source>Email</source>
         <translation>Correu electrònic</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
+        <location filename="../src/ui_keygendialog.h" line="239"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
+        <location filename="../src/ui_keygendialog.h" line="242"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
         <translation type="unfinished">Qualsevol que aconsegueixi el fitxer de la clau privada podrà llegir totes les contrasenyes sense que se li demani res.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
+        <location filename="../src/ui_keygendialog.h" line="244"/>
         <source>No passphrase: store the private key unprotected</source>
         <translation type="unfinished">Sense contrasenya: desa la clau privada sense protecció</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
+        <location filename="../src/ui_keygendialog.h" line="245"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No hi ha cap límit sobre la llargada d&apos;una contrasenya, i s&apos;ha de seleccionar acuradament. Des de la perspectiva de la seguretat, la contrasenya per desbloquejar la clau privada és un dels punts més febles de GnuPG (i altres sistemes de xifratge de clau pública), ja que és l&apos;única protecció que teniu si una altra persona obté la vostra clau privada. &lt;br/&gt;El més ideal seria que per a la contrasenya no s&apos;utilitzessin les paraules d&apos;un diccionari i s&apos;utilitzés una mescla de caràcters alfabètics i no alfabètics.&lt;br/&gt;Una bona contrasenya és crucial per a l&apos;ús segur de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="220"/>
+        <location filename="../src/ui_keygendialog.h" line="246"/>
         <source>Repeat pass</source>
         <translation>Repetiu la contrasenya</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="237"/>
+        <location filename="../src/ui_keygendialog.h" line="247"/>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="256"/>
+        <location filename="../src/ui_keygendialog.h" line="248"/>
         <source>Template contents will be set based on GPG version.</source>
         <translation>El contingut de la plantilla es definirà en funció de la versió de GPG.</translation>
     </message>
@@ -1647,6 +1800,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="269"/>
+        <location filename="../src/ui_keygendialog.h" line="249"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Per obtenir opcions d&apos;experts consulteu el &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual de GnuPG&lt;/a&gt;</translation>
     </message>
@@ -1690,6 +1844,7 @@ Expire-Date: 0
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
+        <location filename="../src/ui_mainwindow.h" line="373"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
@@ -1701,6 +1856,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="442"/>
         <location filename="../src/mainwindow.ui" line="445"/>
         <location filename="../src/mainwindow.cpp" line="1654"/>
+        <location filename="../src/ui_mainwindow.h" line="385"/>
+        <location filename="../src/ui_mainwindow.h" line="387"/>
         <source>Edit</source>
         <translation>Edita</translation>
     </message>
@@ -1708,6 +1865,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="450"/>
         <location filename="../src/mainwindow.ui" line="453"/>
         <location filename="../src/mainwindow.cpp" line="1668"/>
+        <location filename="../src/ui_mainwindow.h" line="389"/>
+        <location filename="../src/ui_mainwindow.h" line="391"/>
         <source>Delete</source>
         <translation>Suprimeix</translation>
     </message>
@@ -1717,6 +1876,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="469"/>
+        <location filename="../src/ui_mainwindow.h" line="400"/>
         <source>Push</source>
         <translation>Puja</translation>
     </message>
@@ -1740,31 +1900,37 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="429"/>
+        <location filename="../src/ui_mainwindow.h" line="379"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="458"/>
+        <location filename="../src/ui_mainwindow.h" line="393"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="461"/>
+        <location filename="../src/ui_mainwindow.h" line="395"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Genera l&apos;OTP i copia&apos;l al porta-retalls</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="464"/>
+        <location filename="../src/ui_mainwindow.h" line="398"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="472"/>
+        <location filename="../src/ui_mainwindow.h" line="402"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="480"/>
+        <location filename="../src/ui_mainwindow.h" line="406"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
@@ -1774,6 +1940,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="477"/>
+        <location filename="../src/ui_mainwindow.h" line="404"/>
         <source>Update</source>
         <translation>Actualitza</translation>
     </message>
@@ -1790,12 +1957,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="488"/>
+        <location filename="../src/ui_mainwindow.h" line="410"/>
         <source>Manage who can read password in folder</source>
         <translation>Gestioneu qui pot llegir la contrasenya a la carpeta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="485"/>
         <location filename="../src/mainwindow.cpp" line="1648"/>
+        <location filename="../src/ui_mainwindow.h" line="408"/>
         <source>Users</source>
         <translation>Usuaris</translation>
     </message>
@@ -1812,16 +1981,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="513"/>
+        <location filename="../src/ui_mainwindow.h" line="421"/>
         <source>Configuration</source>
         <translation>Configuració</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="510"/>
+        <location filename="../src/ui_mainwindow.h" line="419"/>
         <source>Config</source>
         <translation>Configura</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
+        <location filename="../src/ui_mainwindow.h" line="446"/>
         <source>Select profile</source>
         <translation>Selecciona un perfil</translation>
     </message>
@@ -1829,146 +2001,175 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="824"/>
         <location filename="../src/mainwindow.cpp" line="1044"/>
+        <location filename="../src/ui_mainwindow.h" line="448"/>
         <source>Search password</source>
         <translation>Cerca la contrasenya</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
+        <location filename="../src/ui_mainwindow.h" line="450"/>
         <source>Search inside password content (pass grep)</source>
         <translation>Cerca dins del contingut de la contrasenya (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
+        <location filename="../src/ui_mainwindow.h" line="452"/>
         <source>⌕</source>
         <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
+        <location filename="../src/ui_mainwindow.h" line="454"/>
         <source>Content search toggle</source>
         <translation>Cerca de contingut activa/desactiva</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
+        <location filename="../src/ui_mainwindow.h" line="457"/>
         <source>Toggle content search mode to search inside password files</source>
         <translation>Activa el mode de cerca de contingut per cercar dins dels fitxers de contrasenyes</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
+        <location filename="../src/ui_mainwindow.h" line="460"/>
         <source>Case-insensitive search</source>
         <translation>Cerca sense distinció entre majúscules i minúscules</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
+        <location filename="../src/ui_mainwindow.h" line="462"/>
         <source>Aa</source>
         <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
+        <location filename="../src/ui_mainwindow.h" line="464"/>
         <source>Case-insensitive toggle</source>
         <translation>Insensible a majúscules i minúscules</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
+        <location filename="../src/ui_mainwindow.h" line="467"/>
         <source>Toggle case-insensitive content search</source>
         <translation>Activa/desactiva la cerca de contingut sense distinció entre majúscules i minúscules</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
+        <location filename="../src/ui_mainwindow.h" line="470"/>
         <source>Results</source>
         <translation>Resultats</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
+        <location filename="../src/ui_mainwindow.h" line="471"/>
         <source>Welcome to QtPass</source>
         <translation>Benvingut a QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
+        <location filename="../src/ui_mainwindow.h" line="476"/>
         <source>&amp;File</source>
         <translation type="unfinished">&amp;Fitxer</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
+        <location filename="../src/ui_mainwindow.h" line="477"/>
         <source>&amp;Store</source>
         <translation type="unfinished">&amp;Magatzem</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
+        <location filename="../src/ui_mainwindow.h" line="478"/>
         <source>S&amp;ettings</source>
         <translation type="unfinished">&amp;Paràmetres</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="373"/>
+        <location filename="../src/ui_mainwindow.h" line="479"/>
         <source>&amp;Help</source>
         <translation type="unfinished">&amp;Ajuda</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="499"/>
+        <location filename="../src/ui_mainwindow.h" line="412"/>
         <source>Show &amp;menu bar</source>
         <translation type="unfinished">Mostra la barra de &amp;menús</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="502"/>
+        <location filename="../src/ui_mainwindow.h" line="414"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
         <translation type="unfinished">Oculta o mostra la barra de menús; Ctrl+M la torna a mostrar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
+        <location filename="../src/ui_mainwindow.h" line="417"/>
         <source>Ctrl+M</source>
         <translation type="unfinished">Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
+        <location filename="../src/ui_mainwindow.h" line="424"/>
         <source>Ctrl+,</source>
         <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="524"/>
+        <location filename="../src/ui_mainwindow.h" line="426"/>
         <source>&amp;Close window</source>
         <translation type="unfinished">&amp;Tanca la finestra</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
+        <location filename="../src/ui_mainwindow.h" line="428"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
         <translation type="unfinished">Tanca la finestra; amb «Oculta amb el tancament» QtPass es manté a la safata del sistema</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
+        <location filename="../src/ui_mainwindow.h" line="431"/>
         <source>Ctrl+W</source>
         <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="535"/>
+        <location filename="../src/ui_mainwindow.h" line="433"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">&amp;Surt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
+        <location filename="../src/ui_mainwindow.h" line="435"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
+        <location filename="../src/ui_mainwindow.h" line="437"/>
         <source>&amp;FAQ</source>
         <translation type="unfinished">&amp;PMF</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="549"/>
+        <location filename="../src/ui_mainwindow.h" line="439"/>
         <source>Open the frequently asked questions on qtpass.org</source>
         <translation type="unfinished">Obre les preguntes més freqüents a qtpass.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="552"/>
+        <location filename="../src/ui_mainwindow.h" line="442"/>
         <source>F1</source>
         <translation type="unfinished">F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="557"/>
+        <location filename="../src/ui_mainwindow.h" line="444"/>
         <source>&amp;About QtPass</source>
         <translation type="unfinished">&amp;Quant a QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="565"/>
+        <location filename="../src/ui_mainwindow.h" line="445"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished">Quant a Q&amp;t</translation>
     </message>
@@ -2181,6 +2382,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="434"/>
         <location filename="../src/mainwindow.ui" line="437"/>
         <location filename="../src/mainwindow.cpp" line="1646"/>
+        <location filename="../src/ui_mainwindow.h" line="381"/>
+        <location filename="../src/ui_mainwindow.h" line="383"/>
         <source>Add folder</source>
         <translation>Afegeix una carpeta</translation>
     </message>
@@ -2188,6 +2391,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="423"/>
         <location filename="../src/mainwindow.ui" line="426"/>
         <location filename="../src/mainwindow.cpp" line="1647"/>
+        <location filename="../src/ui_mainwindow.h" line="374"/>
+        <location filename="../src/ui_mainwindow.h" line="376"/>
         <source>Add password</source>
         <translation>Afegeix una contrasenya</translation>
     </message>
@@ -2520,6 +2725,7 @@ Voleu continuar?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="319"/>
+        <location filename="../src/ui_mainwindow.h" line="472"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -2627,51 +2833,62 @@ Voleu continuar?</translation>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
         <location filename="../src/passworddialog.cpp" line="271"/>
+        <location filename="../src/ui_passworddialog.h" line="247"/>
+        <location filename="../src/ui_passworddialog.h" line="258"/>
         <source>Password</source>
         <translation>Contrasenya</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
+        <location filename="../src/ui_passworddialog.h" line="248"/>
         <source>Folder</source>
         <translation type="unfinished">Carpeta</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
+        <location filename="../src/ui_passworddialog.h" line="250"/>
         <source>The folder of the password store the new entry goes into</source>
         <translation type="unfinished">La carpeta del magatzem de contrasenyes on va l&apos;entrada nova</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
+        <location filename="../src/ui_passworddialog.h" line="252"/>
         <source>Name</source>
         <translation type="unfinished">Nom</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
+        <location filename="../src/ui_passworddialog.h" line="254"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
         <translation type="unfinished">El nom de l&apos;entrada, tal com apareix a l&apos;arbre; una / la posa en una subcarpeta</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
+        <location filename="../src/ui_passworddialog.h" line="256"/>
         <source>e.g. github.com or work/vpn</source>
         <translation type="unfinished">p. ex. github.com o feina/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
+        <location filename="../src/ui_passworddialog.h" line="259"/>
         <source>Generate</source>
         <translation>Genera</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
+        <location filename="../src/ui_passworddialog.h" line="260"/>
         <source>Show password</source>
         <translation>Mostra la contrasenya</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
+        <location filename="../src/ui_passworddialog.h" line="261"/>
         <source>Character set:</source>
         <translation>Conjunt de caràcters:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
+        <location filename="../src/ui_passworddialog.h" line="262"/>
         <source>All characters</source>
         <translation>Tots els caràcters</translation>
     </message>
@@ -2685,31 +2902,37 @@ Voleu continuar?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
+        <location filename="../src/ui_passworddialog.h" line="263"/>
         <source>Alphabetical</source>
         <translation>Alfabètics</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="179"/>
+        <location filename="../src/ui_passworddialog.h" line="264"/>
         <source>Alphanumerical</source>
         <translation>Alfanumèrics</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="184"/>
+        <location filename="../src/ui_passworddialog.h" line="265"/>
         <source>Custom</source>
         <translation>Personalitzat</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="198"/>
+        <location filename="../src/ui_passworddialog.h" line="267"/>
         <source>Length:</source>
         <translation>Longitud:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="219"/>
+        <location filename="../src/ui_passworddialog.h" line="268"/>
         <source>Template:</source>
         <translation type="unfinished">Plantilla:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
+        <location filename="../src/ui_passworddialog.h" line="270"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
         <translation type="unfinished">Plantilla de camps del fitxer .templates del magatzem. Ctrl+T canvia a la següent.</translation>
     </message>
@@ -3174,14 +3397,6 @@ i després activeu Git a Paràmetres.</translation>
     </message>
 </context>
 <context>
-    <name>Transaction</name>
-    <message>
-        <location filename="../src/gpgidgeneration.cpp" line="191"/>
-        <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
-        <translation type="unfinished">El registre de generacions de les llistes de destinataris, %1, no s&apos;ha pogut bloquejar: pot ser que un altre QtPass l&apos;estigui utilitzant, o que no es pugui escriure a la seva carpeta.</translation>
-    </message>
-</context>
-<context>
     <name>TrayIcon</name>
     <message>
         <location filename="../src/trayicon.cpp" line="47"/>
@@ -3218,6 +3433,7 @@ i després activeu Git a Paràmetres.</translation>
     <name>UsersDialog</name>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
+        <location filename="../src/ui_usersdialog.h" line="111"/>
         <source>Read access users</source>
         <translation>Usuaris d&apos;accés de lectura</translation>
     </message>
@@ -3235,6 +3451,7 @@ Les entrades vermelles no són vàlides; no podreu xifrar-les.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
+        <location filename="../src/ui_usersdialog.h" line="112"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: On OK every password in this folder and its subfolders is re-encrypted to the selected users; this can take a while.
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
@@ -3248,11 +3465,13 @@ No es pot xifrar per a les entrades [INVALID] i [EXPIRED]; les entrades [PARTIAL
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
+        <location filename="../src/ui_usersdialog.h" line="119"/>
         <source>Import key...</source>
         <translation>Importa una clau…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
+        <location filename="../src/ui_usersdialog.h" line="121"/>
         <source>Import a GPG key from file or clipboard</source>
         <translation>Importa una clau GPG des d&apos;un fitxer o del porta-retalls</translation>
     </message>
@@ -3268,6 +3487,7 @@ Les entrades en vermell no són vàlides, no podreu xifrar-les.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
+        <location filename="../src/ui_usersdialog.h" line="117"/>
         <source>Search for users</source>
         <translation>Cerca d’usuaris</translation>
     </message>
@@ -3287,6 +3507,7 @@ Les entrades vermelles no són vàlides, no podreu xifrar.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
+        <location filename="../src/ui_usersdialog.h" line="118"/>
         <source>Show unusable keys</source>
         <translation>Mostra les claus inutilitzables</translation>
     </message>
