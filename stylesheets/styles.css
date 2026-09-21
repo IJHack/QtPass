@@ -453,70 +453,65 @@ header ul a:active {
   display: none;
 }
 
-/* homepage hero: wordmark, proposition, download action and a product shot */
+/* home hero: the QtPass lockup is the headline, with a tagline,
+   download action and the app window below it, fitting first screen. */
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: clamp(1.4rem, 2.5vw, 2.25rem);
+  text-align: center;
+  padding-block: clamp(1.25rem, 3.5vh, 2.25rem) clamp(0.75rem, 1.5vh, 1.25rem);
   margin-block-end: 1.5rem;
-  background:
-    linear-gradient(135deg, var(--tint), transparent 55%),
-    var(--panel);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
 }
-.hero-text {
-  min-width: 0;
-}
-.hero-wordmark {
+.hero-lockup {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin: 0 0 0.9rem;
-  font-size: 1.35rem;
+  justify-content: center;
+  gap: 0.75em;
+  margin: 0 0 0.4em;
+  font-size: clamp(2.75rem, 8.5vw, 4.75rem);
   font-weight: 900;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  line-height: 1;
   color: var(--ink-strong);
 }
-.hero-wordmark small {
-  font-size: 0.55em;
-  font-weight: 400;
+.hero-lockup small {
+  align-self: flex-start;
+  margin-inline-start: 0.5em;
+  font-size: 0.17em;
+  font-weight: 600;
   color: var(--muted);
-  margin-inline-start: 0.1em;
   letter-spacing: 0;
+  padding-block-start: 0.4em;
 }
 .hero .mark {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 0.62em;
+  height: 0.62em;
   display: block;
+  flex: none;
 }
 .hero h2 {
-  max-width: 20ch;
-  font-size: clamp(1.6rem, 1.25rem + 1vw, 2.15rem);
-  margin-block-end: 0.45em;
-}
-.hero .lede {
-  max-width: 46ch;
-  font-size: clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem);
-  margin-block-end: 1.3rem;
+  max-width: 24ch;
+  margin: 0 auto 0.9em;
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.4;
 }
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.75rem;
-  margin-block-end: 0;
+  margin: 0;
 }
 .hero-shot {
-  margin: 0;
-  min-width: 0;
+  margin: clamp(1.5rem, 3.5vh, 2.5rem) 0 0;
+  width: min(100%, 27rem);
 }
 .hero-shot img {
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid var(--rule);
   border-radius: 10px;
   box-shadow: var(--shadow);
 }
@@ -833,8 +828,8 @@ header ul a:active {
     border-block: 1px solid var(--rule);
     padding-block: 1.5rem;
   }
-  .hero {
-    grid-template-columns: minmax(0, 1fr);
+  .hero-lockup {
+    font-size: clamp(3rem, 13vw, 4.5rem);
   }
   .screenshots {
     max-width: 32rem;
