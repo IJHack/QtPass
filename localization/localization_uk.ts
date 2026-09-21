@@ -1009,32 +1009,32 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="162"/>
         <source>The list carries more than one generation line.</source>
-        <translation type="unfinished">Список містить більше ніж один рядок покоління.</translation>
+        <translation>Список містить більше ніж один рядок покоління.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="163"/>
         <source>The generation line is malformed: %1</source>
-        <translation type="unfinished">Рядок покоління має неправильний формат: %1</translation>
+        <translation>Рядок покоління має неправильний формат: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="174"/>
         <source>The list carries more than one folder line.</source>
-        <translation type="unfinished">Список містить більше ніж один рядок папки.</translation>
+        <translation>Список містить більше ніж один рядок папки.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="175"/>
         <source>The folder line is malformed: %1</source>
-        <translation type="unfinished">Рядок папки має неправильний формат: %1</translation>
+        <translation>Рядок папки має неправильний формат: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="184"/>
         <source>The header line is malformed: %1</source>
-        <translation type="unfinished">Рядок заголовка має неправильний формат: %1</translation>
+        <translation>Рядок заголовка має неправильний формат: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="189"/>
         <source>The list carries a generation line but no folder line.</source>
-        <translation type="unfinished">Список містить рядок покоління, але не містить рядка папки.</translation>
+        <translation>Список містить рядок покоління, але не містить рядка папки.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="253"/>
@@ -1044,7 +1044,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="263"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
-        <translation type="unfinished">Підписаний список одержувачів %1 було записано для папки «%2» сховища, а не для «%3», тому він не використовується. Можливо, його скопіював сюди хтось інший; якщо ж папку було переміщено або перейменовано, власник ключа підписання відкриває для неї «Користувачі» та зберігає одержувачів, що прив&apos;язує список до його поточного розташування.</translation>
+        <translation>Підписаний список одержувачів %1 було записано для папки «%2» сховища, а не для «%3», тому він не використовується. Можливо, його скопіював сюди хтось інший; якщо ж папку було переміщено або перейменовано, власник ключа підписання відкриває для неї «Користувачі» та зберігає одержувачів, що прив&apos;язує список до його поточного розташування.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="288"/>
@@ -1068,16 +1068,16 @@ URL
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
-        <translation type="obsolete">Власник ключа підписання може зняти це блокування, відкривши «Користувачі» та зберігши одержувачів, що запише покоління %1: попередньо вибрані там одержувачі взяті з цього списку, тому спочатку видаліть усіх, хто більше не повинен мати доступу. Якщо видалити %2, цей пристрій забуде, що він приймав раніше.</translation>
+        <translation>Власник ключа підписання може зняти це блокування, відкривши «Користувачі» та зберігши одержувачів, що запише покоління %1: попередньо вибрані там одержувачі взяті з цього списку, тому спочатку видаліть усіх, хто більше не повинен мати доступу. Якщо видалити %2, цей пристрій забуде, що він приймав раніше.</translation>
     </message>
     <message>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0. %3</source>
-        <translation type="obsolete">Підписаний список одержувачів %1 не містить рядка покоління, хоча раніше тут було прийнято покоління %2. pass не записує рядок покоління (у тому числі через бекенд pass у QtPass), як і QtPass до версії 2.0. %3</translation>
+        <translation>Підписаний список одержувачів %1 не містить рядка покоління, хоча раніше тут було прийнято покоління %2. pass не записує рядок покоління (у тому числі через бекенд pass у QtPass), як і QtPass до версії 2.0. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="319"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
-        <translation type="unfinished">Підписаний список одержувачів %1 має покоління %2, старіше за покоління %3 — останнє, яке QtPass прийняв тут. Можливо, хтось інший повернув його назад. %4</translation>
+        <translation>Підписаний список одержувачів %1 має покоління %2, старіше за покоління %3 — останнє, яке QtPass прийняв тут. Можливо, хтось інший повернув його назад. %4</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="325"/>
@@ -1087,7 +1087,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="350"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
-        <translation type="unfinished">Список одержувачів %1 досяг покоління %2 — найвищого з можливих; список неможливо записати.</translation>
+        <translation>Список одержувачів %1 досяг покоління %2 — найвищого з можливих; список неможливо записати.</translation>
     </message>
 </context>
 <context>
@@ -1166,7 +1166,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store.</source>
-        <translation type="unfinished">%1 розташовано за межами сховища паролів.</translation>
+        <translation>%1 розташовано за межами сховища паролів.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="366"/>

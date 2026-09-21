@@ -981,32 +981,32 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="162"/>
         <source>The list carries more than one generation line.</source>
-        <translation type="unfinished">Listan innehåller mer än en generationsrad.</translation>
+        <translation>Listan innehåller mer än en generationsrad.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="163"/>
         <source>The generation line is malformed: %1</source>
-        <translation type="unfinished">Generationsraden är felformaterad: %1</translation>
+        <translation>Generationsraden är felformaterad: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="174"/>
         <source>The list carries more than one folder line.</source>
-        <translation type="unfinished">Listan innehåller mer än en mapprad.</translation>
+        <translation>Listan innehåller mer än en mapprad.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="175"/>
         <source>The folder line is malformed: %1</source>
-        <translation type="unfinished">Mappraden är felformaterad: %1</translation>
+        <translation>Mappraden är felformaterad: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="184"/>
         <source>The header line is malformed: %1</source>
-        <translation type="unfinished">Huvudraden är felformaterad: %1</translation>
+        <translation>Huvudraden är felformaterad: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="189"/>
         <source>The list carries a generation line but no folder line.</source>
-        <translation type="unfinished">Listan innehåller en generationsrad men ingen mapprad.</translation>
+        <translation>Listan innehåller en generationsrad men ingen mapprad.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="253"/>
@@ -1016,7 +1016,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="263"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
-        <translation type="unfinished">Den signerade mottagarlistan %1 skrevs för mappen &quot;%2&quot; i lösenordsutrymmet, inte för &quot;%3&quot;, och används inte. Den kan ha kopierats hit av någon annan; om mappen i stället har flyttats eller bytt namn öppnar en innehavare av signeringsnyckeln Användare för den och sparar mottagarna, vilket binder listan till platsen där den nu ligger.</translation>
+        <translation>Den signerade mottagarlistan %1 skrevs för mappen &quot;%2&quot; i lösenordsutrymmet, inte för &quot;%3&quot;, och används inte. Den kan ha kopierats hit av någon annan; om mappen i stället har flyttats eller bytt namn öppnar en innehavare av signeringsnyckeln Användare för den och sparar mottagarna, vilket binder listan till platsen där den nu ligger.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="288"/>
@@ -1040,16 +1040,16 @@ e-mail</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
-        <translation type="obsolete">En innehavare av signeringsnyckeln kommer vidare genom att öppna Användare och spara mottagarna, vilket skriver generation %1: de förvalda mottagarna där är den här listans, så ta först bort alla som inte längre ska ha åtkomst. Att ta bort %2 gör att den här enheten glömmer vad den tidigare har accepterat.</translation>
+        <translation>En innehavare av signeringsnyckeln kommer vidare genom att öppna Användare och spara mottagarna, vilket skriver generation %1: de förvalda mottagarna där är den här listans, så ta först bort alla som inte längre ska ha åtkomst. Att ta bort %2 gör att den här enheten glömmer vad den tidigare har accepterat.</translation>
     </message>
     <message>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0. %3</source>
-        <translation type="obsolete">Den signerade mottagarlistan %1 har ingen generationsrad, medan generation %2 tidigare har accepterats här. pass skriver ingen generationsrad (inte heller genom QtPass pass-backend), och det gjorde inte QtPass före 2.0 heller. %3</translation>
+        <translation>Den signerade mottagarlistan %1 har ingen generationsrad, medan generation %2 tidigare har accepterats här. pass skriver ingen generationsrad (inte heller genom QtPass pass-backend), och det gjorde inte QtPass före 2.0 heller. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="319"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
-        <translation type="unfinished">Den signerade mottagarlistan %1 är generation %2, äldre än generation %3, den senaste som QtPass accepterade här. Den kan ha lagts tillbaka av någon annan. %4</translation>
+        <translation>Den signerade mottagarlistan %1 är generation %2, äldre än generation %3, den senaste som QtPass accepterade här. Den kan ha lagts tillbaka av någon annan. %4</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="325"/>
@@ -1059,7 +1059,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="350"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
-        <translation type="unfinished">Mottagarlistan %1 har nått generation %2, den högsta som finns; listan kan inte skrivas.</translation>
+        <translation>Mottagarlistan %1 har nått generation %2, den högsta som finns; listan kan inte skrivas.</translation>
     </message>
 </context>
 <context>
@@ -1138,7 +1138,7 @@ Du kommer inte att kunna ändra användarlista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store.</source>
-        <translation type="unfinished">%1 ligger inte i lösenordsutrymmet.</translation>
+        <translation>%1 ligger inte i lösenordsutrymmet.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="366"/>
