@@ -10,7 +10,6 @@
 #include <QPointer>
 #include <QProcess>
 #include <QRegularExpression>
-#include <QSaveFile>
 #include <QTemporaryFile>
 #include <QThread>
 #include <QTimer>
@@ -329,18 +328,20 @@ auto ImitatePass::gpgIdSigner() -> GpgIdSigner {
 
 /**
  * @brief Writes the selected users' GPG key IDs to a .gpg-id file.
- * @details Opens the specified file for writing, stores the key ID of each
- * enabled user on a separate line, and warns if none of the selected users has
- * a secret key available.
- *
- * @param QString &gpgIdFile - Path to the .gpg-id file to be written.
- * @param QList<UserInfo> &users - List of users to evaluate and write to the
- * file.
- * @return void - This function does not return a value.
- *
+ * @details Composes one key ID per enabled user (with the generation and
+ * folder header for a signed store), writes the list through a staged
+ * sibling and a rename (Util::writeFileReplacing), hands the bytes back for
+ * the signature, and warns if none of the selected users has a secret key
+ * available.
+ * @param gpgIdFile Path to the .gpg-id file to be written.
+ * @param users List of users to evaluate and write to the file.
+ * @param written Receives the exact bytes written, if not null.
+ * @return true when the file was written; false after reporting through
+ * critical().
  */
 auto ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
-                                 const QList<UserInfo> &users) -> bool {
+                                 const QList<UserInfo> &users,
+                                 QByteArray *written) -> bool {
   QByteArray contents;
   bool secret_selected = false;
   for (const UserInfo &user : users) {
@@ -385,23 +386,17 @@ auto ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
     }
     contents = GpgIdGeneration::withHeader(*generation, *folder, contents);
   }
-  QSaveFile gpgId(gpgIdFile);
-  if (!gpgId.open(QIODevice::WriteOnly)) {
-    emit critical(tr("Cannot update"),
-                  tr("Failed to open .gpg-id for writing."));
+  // Whole or not at all, owner-only (the list names the keys the store is
+  // encrypted to), and never by opening the name: a link planted under it
+  // since Init's check is replaced as an entry, not written through
+  // (Util::writeFileReplacing).
+  QString writeError;
+  if (!Util::writeFileReplacing(gpgIdFile, contents, true, &writeError)) {
+    emit critical(tr("Cannot update"), writeError);
     return false;
   }
-  // Lock the file to owner-only access. The .gpg-id leaks which keys the
-  // store is encrypted to; while the typical ~/.password-store is 0700,
-  // users may relocate the store onto NFS/SMB/USB where the parent dir
-  // perms are more lax. On platforms where setPermissions is a no-op
-  // (Windows), this is silently best-effort.
-  gpgId.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
-  if (gpgId.write(contents) != contents.size() || !gpgId.commit()) {
-    emit critical(
-        tr("Cannot update"),
-        tr("Failed to write %1: %2").arg(gpgIdFile, gpgId.errorString()));
-    return false;
+  if (written != nullptr) {
+    *written = contents;
   }
   if (signer.enabled()) {
     // The bytes on disk are the ones this device recognises from now on;
@@ -431,14 +426,21 @@ auto ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
 /**
  * @brief Signs a `.gpg-id` with the configured key and verifies the result.
  * @param gpgIdFile Path to the .gpg-id file to be signed.
+ * @param contents The bytes just written as that file; the signature is made
+ * over these.
  * @return true if the file was signed and its signature verified; otherwise
  * false, after reporting the failure through critical().
  */
-auto ImitatePass::signGpgIdFile(const QString &gpgIdFile) -> bool {
+auto ImitatePass::signGpgIdFile(const QString &gpgIdFile,
+                                const QByteArray &contents) -> bool {
   const GpgIdSigner signer = gpgIdSigner();
-  if (!signer.sign(gpgIdFile)) {
-    emit critical(tr("GPG signing failed!"),
-                  tr("Failed to sign %1.").arg(gpgIdFile));
+  QString why;
+  if (!signer.sign(gpgIdFile, contents, &why)) {
+    emit critical(
+        tr("GPG signing failed!"),
+        why.trimmed().isEmpty()
+            ? tr("Failed to sign %1.").arg(gpgIdFile)
+            : tr("Failed to sign %1: %2").arg(gpgIdFile, why.trimmed()));
     return false;
   }
   QByteArray signedBytes;
@@ -540,9 +542,10 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   // separator (the context menu hands over a cleaned path) that would be a
   // file beside the folder, not the folder's own list.
   path = Util::normalizeFolderPath(path);
-  // Writing a .gpg-id through a linked folder, or through a link planted
-  // under the .gpg-id or .gpg-id.sig name (QSaveFile and gpg --output both
-  // follow one), would re-key or overwrite what it points to.
+  // A linked folder, or a link planted under the .gpg-id or .gpg-id.sig
+  // name, is not this store's: refused up front, and the writes below go
+  // through staged files and renames so that one planted afterwards is
+  // replaced as an entry, not written through.
   const QString folder = QDir::cleanPath(path);
   if (refuseLinkedPath(path) ||
       refuseLinkedPath(folder + QStringLiteral("/.gpg-id")) ||
@@ -560,13 +563,14 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
 
   const bool useGit = gitReady();
   const QString gpgIdFile = path + ".gpg-id";
-  if (!writeGpgIdFile(gpgIdFile, users)) {
+  QByteArray written;
+  if (!writeGpgIdFile(gpgIdFile, users, &written)) {
     return;
   }
 
   QString sigToCommit;
   if (signer.enabled()) {
-    if (!signGpgIdFile(gpgIdFile)) {
+    if (!signGpgIdFile(gpgIdFile, written)) {
       return;
     }
     sigToCommit = gpgIdSigFile;
@@ -1466,7 +1470,7 @@ static auto copyFileReplacing(const QString &src, const QString &dst,
     if (n == 0)
       break;
   }
-  if (!out.flush()) {
+  if (!Util::syncToDisk(out)) {
     out.close();
     QFile::remove(staged);
     return false;
@@ -1510,8 +1514,8 @@ void ImitatePass::Copy(const QString src, const QString dest,
     return;
   }
   // dest may have been a folder; the file that ends up written is destFile,
-  // and a link planted under that name (dangling ones pass exists()) is what
-  // QSaveFile would write through.
+  // and a link planted under that name (dangling ones pass exists()) is not
+  // an entry to write.
   if (refuseLinkedPath(destFile)) {
     return;
   }
@@ -1700,7 +1704,7 @@ auto ImitatePass::placeEncryptedFile(const QString &output, const QString &file,
       return fail(tr("Cannot write %1: %2").arg(file, staged.errorString()));
     }
   }
-  if (!staged.flush()) {
+  if (!Util::syncToDisk(staged)) {
     return fail(tr("Cannot write %1: %2").arg(file, staged.errorString()));
   }
   staged.close();

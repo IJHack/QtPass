@@ -14,13 +14,16 @@
 #include "util.h"
 #include "appsettings.h"
 #include "executor.h"
+#include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
 #include <QFile>
+#include <QFileDevice>
 #include <QFileInfo>
 #include <QHash>
 #include <QRegularExpressionMatchIterator>
 #include <QStandardPaths>
+#include <QTemporaryFile>
 #include <QUrl>
 #ifdef Q_OS_WIN
 #include <fcntl.h>
@@ -640,6 +643,74 @@ auto Util::openRegularFile(const QString &path, QFile &file) -> bool {
   }
   return true;
 #endif
+}
+
+auto Util::syncToDisk(QFileDevice &file) -> bool {
+  if (!file.flush()) {
+    return false;
+  }
+#ifdef Q_OS_WIN
+  const HANDLE handle = reinterpret_cast<HANDLE>(_get_osfhandle(file.handle()));
+  return handle != INVALID_HANDLE_VALUE && FlushFileBuffers(handle) != 0;
+#else
+  return ::fsync(file.handle()) == 0;
+#endif
+}
+
+auto Util::writeFileReplacing(const QString &path, const QByteArray &bytes,
+                              bool replace, QString *error) -> bool {
+  QTemporaryFile staged(QFileInfo(path).path() +
+                        QStringLiteral("/.qtpass-XXXXXX.tmp"));
+  staged.setAutoRemove(false);
+  if (!staged.open()) {
+    if (error)
+      *error = QCoreApplication::translate(
+                   "Util", "Cannot create a temporary file next to %1: %2")
+                   .arg(path, staged.errorString());
+    return false;
+  }
+  const QString stagedPath = staged.fileName();
+  // Owner-only: a .gpg-id names the keys a store is encrypted to, an entry
+  // is an entry. QTemporaryFile creates 0600 already; say so for platforms
+  // where it may not.
+  staged.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
+  if (staged.write(bytes) != bytes.size() || !syncToDisk(staged)) {
+    const QString why = staged.errorString();
+    staged.close();
+    QFile::remove(stagedPath);
+    if (error)
+      *error = QCoreApplication::translate("Util", "Cannot write %1: %2")
+                   .arg(path, why);
+    return false;
+  }
+  staged.close();
+  if (!replaceFile(stagedPath, path, replace)) {
+    QFile::remove(stagedPath);
+    if (error) {
+      const QFileInfo taken(path);
+      if (replace) {
+        *error = QCoreApplication::translate("Util", "Failed to replace %1.")
+                     .arg(path);
+      } else if (taken.exists() || taken.isSymLink()) {
+        *error =
+            QCoreApplication::translate("Util", "%1 already exists.").arg(path);
+      } else {
+        *error = QCoreApplication::translate("Util", "Failed to write %1.")
+                     .arg(path);
+      }
+    }
+    return false;
+  }
+  if (QFileInfo(path).isSymLink()) {
+    // The temporary's name was swapped for a link before the rename; the
+    // bytes went into an unnamed inode, nothing through the link.
+    if (error)
+      *error = QCoreApplication::translate(
+                   "Util", "%1 was replaced by a link while it was written.")
+                   .arg(path);
+    return false;
+  }
+  return true;
 }
 
 auto Util::removeTree(const QString &dir) -> bool {

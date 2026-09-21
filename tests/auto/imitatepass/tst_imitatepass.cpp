@@ -191,7 +191,7 @@ class tst_imitatepass : public QObject {
         << "  decrypt) printf 'plaintext\\n';;\n"
         << "  encrypt) cat >/dev/null; printf 'ciphertext\\n' > "
            "\"$outfile\";;\n"
-        << "  sign) : > \"" << QDir(dir).filePath(".gpg-id.sig") << "\";;\n"
+        << "  sign) cat >/dev/null; printf 'sig' > \"$outfile\";;\n"
         << "  seckeys) printf '[GNUPG:] KEY_CONSIDERED " << kSigner
         << " 0\\n';;\n"
         << "  verify) cat >/dev/null\n";
@@ -2137,8 +2137,9 @@ void tst_imitatepass::
   alice.key_id = QStringLiteral("0123456789ABCDEF");
   alice.enabled = true;
   pass.Init(root.filePath(QStringLiteral("shared/")), {alice});
-  // A real folder with a link planted under the .gpg-id name: QSaveFile
-  // would write the recipient list through it.
+  // A real folder with a link planted under the .gpg-id name: not this
+  // store's list, refused up front (and a write would replace it as an
+  // entry, never through it).
   QVERIFY(root.mkpath(QStringLiteral("team")));
   {
     QFile f(outside.filePath(QStringLiteral("victim.txt")));

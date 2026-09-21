@@ -69,18 +69,23 @@ protected:
    * and encrypted to.
    * @param gpgIdFile Path to .gpg-id file.
    * @param users List of recipients.
+   * @param written Receives the exact bytes written, if not null: what the
+   *        signature is then made over.
    * @return true when the file was written; false after reporting through
    *         critical().
    */
-  auto writeGpgIdFile(const QString &gpgIdFile, const QList<UserInfo> &users)
-      -> bool;
+  auto writeGpgIdFile(const QString &gpgIdFile, const QList<UserInfo> &users,
+                      QByteArray *written = nullptr) -> bool;
   /**
    * @brief Sign a `.gpg-id` with the configured key and verify the result;
    * failures are reported through critical().
    * @param gpgIdFile Path to .gpg-id file.
+   * @param contents The bytes just written as that file: the signature is
+   *        made over these, not over whatever is under the name by then.
    * @return true on success, false on failure.
    */
-  auto signGpgIdFile(const QString &gpgIdFile) -> bool;
+  auto signGpgIdFile(const QString &gpgIdFile, const QByteArray &contents)
+      -> bool;
   /**
    * @brief Stage a `.gpg-id` and, when given, its `.sig`, and commit both in
    * one commit, so no commit in the history has a recipient list without

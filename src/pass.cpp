@@ -13,7 +13,6 @@
 #include <QProcess>
 #include <QRandomGenerator>
 #include <QRegularExpression>
-#include <QSaveFile>
 #include <QTextStream>
 #include <utility>
 
@@ -1055,26 +1054,16 @@ auto Pass::seedGpgIdFile(const QString &newDir, const QString &passStore)
   if (recipients.isEmpty()) {
     return false;
   }
-  QSaveFile gpgId(gpgIdFile);
-  if (!gpgId.open(QIODevice::WriteOnly)) {
-    return false;
-  }
   // Only reached without a signing key (MainWindow seeds only then), so no
   // generation header: nothing checks freshness, and a plain list stays
-  // readable for clients that take a comment for a recipient.
-  QTextStream out(&gpgId);
-  for (const QString &recipient : recipients) {
-    out << recipient << '\n';
-  }
-  out.flush();
-  if (out.status() != QTextStream::Ok || !gpgId.commit()) {
-    return false;
-  }
-  // Lock to owner-only access; see ImitatePass::writeGpgIdFile for the
-  // rationale (NFS / USB / unusual umask). Best-effort where setPermissions
-  // is a no-op.
-  QFile::setPermissions(gpgIdFile, QFile::ReadOwner | QFile::WriteOwner);
-  return true;
+  // readable for clients that take a comment for a recipient. Written
+  // owner-only through a staged sibling, never by opening the name, and
+  // replacing nothing: a link a co-writer plants under the name between
+  // the exists() above and this (a dangling one passes exists()) fails the
+  // seed rather than getting the list written through it.
+  return Util::writeFileReplacing(
+      gpgIdFile,
+      (recipients.join(QLatin1Char('\n')) + QLatin1Char('\n')).toUtf8(), false);
 }
 
 /* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.

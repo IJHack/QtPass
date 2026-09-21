@@ -12,7 +12,6 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QProcess>
-#include <QSaveFile>
 
 auto ProfileInit::needsInit(const QString &path) -> bool {
   if (path.isEmpty()) {
@@ -38,13 +37,14 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
     return false;
   }
   const QString gpgIdFile = folder.filePath(QStringLiteral(".gpg-id"));
-  if (!writeGpgId(gpgIdFile, users, !s.passSigningKey.trimmed().isEmpty(),
-                  &out)) {
+  QByteArray written;
+  if (!writeGpgId(gpgIdFile, users, !s.passSigningKey.trimmed().isEmpty(), &out,
+                  &written)) {
     return false;
   }
   QString sigFile;
   if (!s.passSigningKey.trimmed().isEmpty()) {
-    if (!signGpgId(gpgIdFile, s, &out)) {
+    if (!signGpgId(gpgIdFile, written, s, &out)) {
       return false;
     }
     sigFile = gpgIdFile + QStringLiteral(".sig");
@@ -67,7 +67,7 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
 
 auto ProfileInit::writeGpgId(const QString &gpgIdFile,
                              const QList<UserInfo> &users, bool signed_,
-                             QString *note) -> bool {
+                             QString *note, QByteArray *written) -> bool {
   QStringList ids;
   for (const UserInfo &user : users) {
     if (user.enabled) {
@@ -99,15 +99,13 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
     contents =
         GpgIdGeneration::withHeader(*generation, QStringLiteral("."), contents);
   }
-  QSaveFile file(gpgIdFile);
-  if (!file.open(QIODevice::WriteOnly)) {
-    *note = tr("Could not write %1: %2").arg(gpgIdFile, file.errorString());
+  QString why;
+  if (!Util::writeFileReplacing(gpgIdFile, contents, true, &why)) {
+    *note = why;
     return false;
   }
-  file.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
-  if (file.write(contents) != contents.size() || !file.commit()) {
-    *note = tr("Could not write %1: %2").arg(gpgIdFile, file.errorString());
-    return false;
+  if (written != nullptr) {
+    *written = contents;
   }
   if (signed_) {
     // Same as ImitatePass::writeGpgIdFile: the bytes written are the ones
@@ -120,14 +118,18 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
   return true;
 }
 
-auto ProfileInit::signGpgId(const QString &gpgIdFile, const AppSettings &s,
+auto ProfileInit::signGpgId(const QString &gpgIdFile,
+                            const QByteArray &contents, const AppSettings &s,
                             QString *note) -> bool {
   const GpgIdSigner signer(s.gpgExecutable,
                            GpgIdSigner::keysFromSetting(s.passSigningKey));
   QString err;
-  if (!signer.sign(gpgIdFile, &err)) {
-    *note = tr("Could not sign %1 with %2: %3")
-                .arg(gpgIdFile, signer.keys().first(), err.trimmed());
+  if (!signer.sign(gpgIdFile, contents, &err)) {
+    *note = err.trimmed().isEmpty()
+                ? tr("Could not sign %1 with %2.")
+                      .arg(gpgIdFile, signer.keys().first())
+                : tr("Could not sign %1 with %2: %3")
+                      .arg(gpgIdFile, signer.keys().first(), err.trimmed());
     return false;
   }
   return true;

@@ -10,6 +10,7 @@
 #include <QStringList>
 
 class QFile;
+class QFileDevice;
 
 constexpr int MS_PER_SECOND = 1000;
 
@@ -251,6 +252,33 @@ public:
    * @return Whether @p file is open on a regular file.
    */
   static auto openRegularFile(const QString &path, QFile &file) -> bool;
+
+  /**
+   * @brief Write @p bytes as the file @p path, owner-only, through a
+   * temporary created next to it (an opaque name, exclusive) and written by
+   * its open handle, then replaceFile(): the name is never opened for
+   * writing, so a link a co-writer plants under it between the caller's
+   * check and the write is replaced as an entry rather than written
+   * through (QSaveFile resolves such a link at open).
+   * @param path The file to write.
+   * @param bytes Its contents.
+   * @param replace Whether an existing entry under the name may go.
+   * @param error Receives why not, if not null.
+   * @return Whether @p path now holds @p bytes.
+   */
+  static auto writeFileReplacing(const QString &path, const QByteArray &bytes,
+                                 bool replace, QString *error = nullptr)
+      -> bool;
+
+  /**
+   * @brief Flush @p file's bytes to the device (`fsync`, `FlushFileBuffers`)
+   * before it is renamed into place, so that a crash right after the rename
+   * does not leave the name pointing at an empty file. QSaveFile did this
+   * on commit; the staged writes here do it themselves.
+   * @param file An open file.
+   * @return Whether the data is on the device.
+   */
+  static auto syncToDisk(QFileDevice &file) -> bool;
 
 private:
   static void initialiseEnvironment();

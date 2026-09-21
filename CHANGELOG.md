@@ -152,6 +152,18 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   system's rename, as an added entry does; an unforced copy replaces
   nothing that appeared under the name since the check
   ([#1842](https://github.com/IJHack/QtPass/issues/1842))
+- The recipient list and its signature were the last writes of entries,
+  lists and signatures that opened a store path by name after the link
+  check: `.gpg-id` through `QSaveFile` (which resolves a link at open, from
+  the Users dialog, a new profile and a new folder seeded with its parent's
+  list) and `.gpg-id.sig` by `gpg --detach-sign` in place, with `gpg`
+  reading the list back by name to sign it, so a co-writer of the store who
+  swapped the list in between would have had the user's key vouch for
+  theirs. `gpg` now signs the bytes QtPass just wrote, fed on its standard
+  input, into a directory of QtPass's own, and both files go into the store
+  through a staged sibling, flushed to disk, and the operating system's
+  rename, like entries do
+  ([#1842](https://github.com/IJHack/QtPass/issues/1842))
 - On Windows the link check behind that compared paths with case, so an
   entry named in the other case than the store root ("c:/store/..." for a
   root "C:/Store") skipped the walk up to the root and a link on the way
