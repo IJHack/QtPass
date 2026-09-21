@@ -1288,7 +1288,7 @@ auto tst_configdialog::browse(ConfigDialog &dialog, const char *button,
         }
         fileDialog->selectFile(choose);
       }
-      // QFileDialog re-declares accept() protected; the QDialog view of it
+      // QFileDialog redeclares accept() protected; the QDialog view of it
       // is public and still dispatches virtually to the QFileDialog logic.
       // Run it from a posted event rather than inside the driver's timer
       // slot: a nested exec() started from a timer activation (QFileDialog's

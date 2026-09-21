@@ -129,7 +129,7 @@ auto tst_firstrunwizard::driveModals(const std::function<void()> &trigger,
       } else {
         fileDialog->selectFile(pick);
       }
-      // QFileDialog re-declares accept() protected; the QDialog view of it
+      // QFileDialog redeclares accept() protected; the QDialog view of it
       // is public and still dispatches virtually to the QFileDialog logic.
       static_cast<QDialog *>(fileDialog)->accept();
       return;
