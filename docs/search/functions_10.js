@@ -19,12 +19,13 @@ var searchData=
   ['removerequested_16',['removeRequested',['../class_field_label.html#a656a2fae4db3fbc2ff06e154b1ecbcee',1,'FieldLabel']]],
   ['removetree_17',['removeTree',['../class_util.html#ad23339038f3f09d99359f1a25d659a6f',1,'Util']]],
   ['renamed_18',['renamed',['../class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00',1,'FieldLabel']]],
-  ['reservenext_19',['reserveNext',['../class_gpg_id_generation.html#aca79157e6460c0bb20028e1d8b46b3fb',1,'GpgIdGeneration']]],
-  ['resolveexecutable_20',['resolveExecutable',['../class_executor.html#a9fbf09f8da63419fa052c9d8ebf08408',1,'Executor']]],
-  ['resolvegpgconfcommand_21',['resolveGpgconfCommand',['../class_pass.html#a4425df7bb17f93be39e1142c2fd4c6a6',1,'Pass']]],
-  ['resolvemovedestination_22',['resolveMoveDestination',['../class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563',1,'ImitatePass']]],
-  ['restore_23',['restore',['../namespace_window_state_store.html#a33978c57279f86bfb1a416ad199858e8',1,'WindowStateStore']]],
-  ['restorewindow_24',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
-  ['rootindex_25',['rootIndex',['../class_store_tree.html#a1e44af30d459550e26502c6733705e9d',1,'StoreTree']]],
-  ['rootindexfor_26',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
+  ['replacefile_19',['replaceFile',['../class_util.html#a98fa003a6d00d1936da437f3d16d3568',1,'Util']]],
+  ['reservenext_20',['reserveNext',['../class_gpg_id_generation.html#aca79157e6460c0bb20028e1d8b46b3fb',1,'GpgIdGeneration']]],
+  ['resolveexecutable_21',['resolveExecutable',['../class_executor.html#a9fbf09f8da63419fa052c9d8ebf08408',1,'Executor']]],
+  ['resolvegpgconfcommand_22',['resolveGpgconfCommand',['../class_pass.html#a4425df7bb17f93be39e1142c2fd4c6a6',1,'Pass']]],
+  ['resolvemovedestination_23',['resolveMoveDestination',['../class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563',1,'ImitatePass']]],
+  ['restore_24',['restore',['../namespace_window_state_store.html#a33978c57279f86bfb1a416ad199858e8',1,'WindowStateStore']]],
+  ['restorewindow_25',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
+  ['rootindex_26',['rootIndex',['../class_store_tree.html#a1e44af30d459550e26502c6733705e9d',1,'StoreTree']]],
+  ['rootindexfor_27',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
 ];

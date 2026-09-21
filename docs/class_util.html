@@ -144,6 +144,8 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 <tr class="memdesc:af4112ecd778ae8225a12fa96ce611425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the way from <code class="param">storeRoot</code> down to <code class="param">path</code> passes through a symbolic link or NTFS junction: <code class="param">path</code> itself or any folder between.  <br /></td></tr>
 <tr class="memitem:ad23339038f3f09d99359f1a25d659a6f" id="r_ad23339038f3f09d99359f1a25d659a6f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad23339038f3f09d99359f1a25d659a6f">removeTree</a> (const QString &amp;dir) -&gt; bool</td></tr>
 <tr class="memdesc:ad23339038f3f09d99359f1a25d659a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove <code class="param">dir</code> and everything in it, the way <span class="tt">rm -rf</span> does: a symbolic link or NTFS junction, <code class="param">dir</code> itself or anything inside, is removed as an entry and what it points to is never entered. A trailing separator on <code class="param">dir</code> does not change that.  <br /></td></tr>
+<tr class="memitem:a98fa003a6d00d1936da437f3d16d3568" id="r_a98fa003a6d00d1936da437f3d16d3568"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a98fa003a6d00d1936da437f3d16d3568">replaceFile</a> (const QString &amp;from, const QString &amp;to, bool replace) -&gt; bool</td></tr>
+<tr class="memdesc:a98fa003a6d00d1936da437f3d16d3568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give the file at <code class="param">from</code> the name <code class="param">to</code>, atomically and without following anything: the operating system's rename (<span class="tt">rename(2)</span>, <span class="tt">MoveFileEx</span>), never QFile::rename(), whose fallback when the plain rename fails is to copy by opening <code class="param">to</code> for writing, through whatever link sits under that name by then. With <code class="param">replace</code>, whatever entry is at <code class="param">to</code> (a file, a link) is replaced as an entry; without it, the call fails when anything is there (<span class="tt">link(2)</span> and unlink on POSIX, where a no-replace rename is not portable).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Some static utilities to be used elsewhere. </p>
@@ -753,6 +755,51 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when <code class="param">dir</code> is gone. </dd></dl>
+
+</div>
+</div>
+<a id="a98fa003a6d00d1936da437f3d16d3568" name="a98fa003a6d00d1936da437f3d16d3568"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98fa003a6d00d1936da437f3d16d3568">&#9670;&#160;</a></span>replaceFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::replaceFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>from</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>to</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>replace</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Give the file at <code class="param">from</code> the name <code class="param">to</code>, atomically and without following anything: the operating system's rename (<span class="tt">rename(2)</span>, <span class="tt">MoveFileEx</span>), never QFile::rename(), whose fallback when the plain rename fails is to copy by opening <code class="param">to</code> for writing, through whatever link sits under that name by then. With <code class="param">replace</code>, whatever entry is at <code class="param">to</code> (a file, a link) is replaced as an entry; without it, the call fails when anything is there (<span class="tt">link(2)</span> and unlink on POSIX, where a no-replace rename is not portable). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>An existing regular file, on the same filesystem as <code class="param">to</code>. </td></tr>
+    <tr><td class="paramname">to</td><td>The name to give it. </td></tr>
+    <tr><td class="paramname">replace</td><td>Whether an existing entry at <code class="param">to</code> may go. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">to</code> is now that file. </dd></dl>
 
 </div>
 </div>
