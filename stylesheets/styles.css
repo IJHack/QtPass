@@ -669,6 +669,41 @@ header ul a:active {
   margin: 0;
 }
 
+/* Screenshots page: current release vs. the 2.0 preview are separated now,
+   the development section reads as a preview, not as documentation. */
+.release {
+  padding-block-end: 2.5rem;
+}
+.release + .release {
+  margin-block-start: 0.5rem;
+  padding-block-start: 2rem;
+  border-block-start: 1px dashed var(--rule);
+}
+.badge {
+  display: inline-block;
+  vertical-align: 0.25em;
+  margin-inline-end: 0.5em;
+  padding: 0.22em 0.7em;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: 999px;
+  background: var(--tint);
+  color: var(--accent-strong);
+  font-size: 0.72em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.release.preview h2 {
+  color: var(--muted);
+}
+.release.preview h2 .badge.dev {
+  background: transparent;
+  border-color: var(--rule);
+  border-style: dashed;
+  color: var(--muted);
+}
+
 /* ---- one column ------------------------------------------------------- */
 @media (max-width: 60rem) {
   /* One column: the sidebar is the whole first screen, so it must scroll
