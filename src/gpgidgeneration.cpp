@@ -259,8 +259,11 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
     if (!here || *here != *header->folder) {
       if (error)
         *error = tr("The signed recipient list %1 was written for the folder "
-                    "\"%2\" of the store, not for \"%3\". It may have been "
-                    "copied here by someone else and is not used.")
+                    "\"%2\" of the store, not for \"%3\", and is not used. It "
+                    "may have been copied here by someone else; if the folder "
+                    "was moved or renamed instead, a holder of the signing key "
+                    "opens Users on it and saves the recipients, which binds "
+                    "the list to where it is now.")
                      .arg(gpgIdFile, *header->folder,
                           here.value_or(QStringLiteral("?")));
       return false;

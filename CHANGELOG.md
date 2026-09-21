@@ -65,8 +65,9 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   (comments to `pass` 1.7.4+ and QtPass 1.8+, covered by the signature);
   per list, the highest generation accepted or written on this device is
   remembered, written through before it counts, and a signed list with a
-  lower generation, or written for another folder, is refused with a message
-  that says what happened and how a signing-key holder gets through. Without
+  lower generation, or written for another folder (also after the folder was
+  moved or renamed), is refused with a message that says what happened and
+  how a signing-key holder gets through: saving the recipients again. Without
   that record nothing is established: a record that cannot be read or
   written refuses every signed list and every save, rather than counting as
   "never seen". A malformed or duplicated header line makes a signed list
