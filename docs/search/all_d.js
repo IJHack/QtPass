@@ -5,13 +5,14 @@ var searchData=
   ['onoperationerror_2',['onOperationError',['../class_main_window.html#a770b38c0ee4e6ffcd234857b039061ee',1,'MainWindow']]],
   ['onprocessoutput_3',['onProcessOutput',['../class_main_window.html#ad84f015fe7d94961af6fcfc26532e33c',1,'MainWindow']]],
   ['onpush_4',['onPush',['../class_main_window.html#a6961588ebf3c0640200e0cfa920af3be',1,'MainWindow']]],
-  ['operationfinished_5',['operationFinished',['../class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb',1,'QtPass']]],
-  ['operator_21_3d_6',['operator!=',['../struct_profile.html#a61ce06694c6c8e7dab43504a29e80db2',1,'Profile']]],
-  ['operator_3d_3d_7',['operator==',['../struct_profile.html#a2cbcbd0c1c062264c3952449f512aa06',1,'Profile']]],
-  ['options_8',['options',['../struct_executor_1_1_wsl_command.html#a940314bd002f5f843b5d0b5358fb0e50',1,'Executor::WslCommand']]],
-  ['otpcodewidget_9',['OtpCodeWidget',['../class_otp_code_widget.html',1,'OtpCodeWidget'],['../class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd',1,'OtpCodeWidget::OtpCodeWidget()']]],
-  ['otpfromfiletoclipboard_10',['otpFromFileToClipboard',['../class_main_window.html#ab7a805923a61f2441932d8d358fb040e',1,'MainWindow']]],
-  ['outputready_11',['outputReady',['../class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6',1,'QtPass']]],
-  ['overridestatus_12',['OverrideStatus',['../class_ssh_auth_sock.html#a35b8c125fcc1d0a8166271436057d5b2',1,'SshAuthSock']]],
-  ['overridestatus_13',['overrideStatus',['../class_ssh_auth_sock.html#abdb660987ea5a58787e0ef6a5173654e',1,'SshAuthSock']]]
+  ['openregularfile_5',['openRegularFile',['../class_util.html#a4cb272a3c3c392bfb4c9fd2c57e6bb15',1,'Util']]],
+  ['operationfinished_6',['operationFinished',['../class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb',1,'QtPass']]],
+  ['operator_21_3d_7',['operator!=',['../struct_profile.html#a61ce06694c6c8e7dab43504a29e80db2',1,'Profile']]],
+  ['operator_3d_3d_8',['operator==',['../struct_profile.html#a2cbcbd0c1c062264c3952449f512aa06',1,'Profile']]],
+  ['options_9',['options',['../struct_executor_1_1_wsl_command.html#a940314bd002f5f843b5d0b5358fb0e50',1,'Executor::WslCommand']]],
+  ['otpcodewidget_10',['OtpCodeWidget',['../class_otp_code_widget.html',1,'OtpCodeWidget'],['../class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd',1,'OtpCodeWidget::OtpCodeWidget()']]],
+  ['otpfromfiletoclipboard_11',['otpFromFileToClipboard',['../class_main_window.html#ab7a805923a61f2441932d8d358fb040e',1,'MainWindow']]],
+  ['outputready_12',['outputReady',['../class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6',1,'QtPass']]],
+  ['overridestatus_13',['OverrideStatus',['../class_ssh_auth_sock.html#a35b8c125fcc1d0a8166271436057d5b2',1,'SshAuthSock']]],
+  ['overridestatus_14',['overrideStatus',['../class_ssh_auth_sock.html#abdb660987ea5a58787e0ef6a5173654e',1,'SshAuthSock']]]
 ];
