@@ -1,21 +1,29 @@
 // SPDX-FileCopyrightText: 2018 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QApplication>
 #include <QCheckBox>
 #include <QComboBox>
 #include <QCoreApplication>
 #include <QDialog>
+#include <QDir>
 #include <QElapsedTimer>
+#include <QFile>
 #include <QHash>
+#include <QImage>
 #include <QLabel>
 #include <QLineEdit>
+#include <QPainter>
 #include <QPlainTextEdit>
 #include <QPointer>
 #include <QSignalSpy>
 #include <QSpinBox>
 #include <QStandardItemModel>
 #include <QStyleHints>
+#include <QTemporaryDir>
+#include <QTimer>
 #include <QtTest>
 
+#include "../../../src/appsettings.h"
 #include "../../../src/deselectabletreeview.h"
 #include "../../../src/passworddialog.h"
 #include "../../../src/qprogressindicator.h"
@@ -23,6 +31,7 @@
 #include "../../../src/qpushbuttonshowpassword.h"
 #include "../../../src/qpushbuttonwithclipboard.h"
 #include "../../../src/qtpass.h"
+#include "../../../src/qtpasssettings.h"
 #include "../testsettings.h"
 #include "passwordconfiguration.h"
 
@@ -92,6 +101,18 @@ private Q_SLOTS:
   void progressIndicatorHeightForWidth();
   void progressIndicatorStopWhenNotRunningIsHarmless();
   void progressIndicatorStartTwiceDoesNotDuplicate();
+  void progressIndicatorPaintsNothingWhileStoppedByDefault();
+  void progressIndicatorPaintsWhenStoppedIfDisplayedWhenStopped();
+  void progressIndicatorPaintsCapsulesWhileAnimated();
+  void progressIndicatorPaintsInTheChosenColour();
+  void progressIndicatorPaintsInThePaletteColourByDefault();
+  void progressIndicatorSetAnimationDelayWhileRunningKeepsTicking();
+
+  // QtPass::showTextAsQRCode with a stand-in qrencode
+  void showTextAsQRCodeFeedsTextToQrencodeAndShowsItsImage();
+  void showTextAsQRCodeReportsQrencodeStderr();
+  void showTextAsQRCodeReportsExitCodeWhenStderrIsEmpty();
+  void showTextAsQRCodeReportsACrash();
 
   // DeselectableTreeView tests
   void deselectableTreeViewConstruction();
@@ -747,6 +768,354 @@ void tst_ui::progressIndicatorStartTwiceDoesNotDuplicate() {
   QVERIFY(indicator.isAnimated());
   indicator.stopAnimation();
   QVERIFY(!indicator.isAnimated());
+}
+
+namespace {
+
+/**
+ * @brief Paint the indicator at the given square size into a transparent
+ * image, so what paintEvent() draws can be inspected pixel by pixel. render()
+ * works on hidden widgets and the flags leave the window background out.
+ */
+auto renderIndicator(QProgressIndicator &indicator, int size) -> QImage {
+  indicator.resize(size, size);
+  QImage image(size, size, QImage::Format_ARGB32_Premultiplied);
+  image.fill(Qt::transparent);
+  indicator.render(&image, QPoint(), QRegion(), QWidget::RenderFlags());
+  return image;
+}
+
+/**
+ * @brief Whether any pixel of the image has been painted at all.
+ */
+auto hasOpaquePixel(const QImage &image) -> bool {
+  for (int y = 0; y < image.height(); ++y) {
+    for (int x = 0; x < image.width(); ++x) {
+      if (qAlpha(image.pixel(x, y)) > 0) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+/**
+ * @brief Whether some fully opaque pixel has the given RGB colour: the
+ * first capsule is drawn with alpha 1.0, so the chosen colour must appear
+ * unblended somewhere.
+ */
+auto hasOpaquePixelOfColour(const QImage &image, const QColor &colour) -> bool {
+  for (int y = 0; y < image.height(); ++y) {
+    for (int x = 0; x < image.width(); ++x) {
+      const QRgb px = image.pixel(x, y);
+      if (qAlpha(px) == 255 && QColor(px).rgb() == colour.rgb()) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+/**
+ * @brief Write an executable /bin/sh script standing in for qrencode into
+ * dir and point the (isolated) settings at it.
+ * @return The script's path, empty when it could not be written.
+ */
+auto installFakeQrencode(const QTemporaryDir &dir, const QByteArray &body)
+    -> QString {
+  const QString path = QDir(dir.path()).filePath(QStringLiteral("qrencode"));
+  QFile script(path);
+  if (!script.open(QIODevice::WriteOnly | QIODevice::Text)) {
+    return QString();
+  }
+  script.write("#!/bin/sh\n");
+  script.write(body);
+  script.close();
+  if (!script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner)) {
+    return QString();
+  }
+  AppSettings s = QtPassSettings::load();
+  s.qrencodeExecutable = path;
+  QtPassSettings::save(s);
+  return path;
+}
+
+} // namespace
+
+/**
+ * @brief tst_ui::progressIndicatorPaintsNothingWhileStoppedByDefault pins the
+ * early return in paintEvent(): a stopped indicator that is not displayed
+ * when stopped leaves the widget untouched, so it disappears from the toolbar
+ * between operations instead of showing a frozen spinner.
+ */
+void tst_ui::progressIndicatorPaintsNothingWhileStoppedByDefault() {
+  QProgressIndicator indicator;
+  QVERIFY(!indicator.isAnimated());
+  QVERIFY(!indicator.isDisplayedWhenStopped());
+  const QImage image = renderIndicator(indicator, 40);
+  QVERIFY2(!hasOpaquePixel(image),
+           "a stopped indicator must not paint anything by default");
+}
+
+/**
+ * @brief tst_ui::progressIndicatorPaintsWhenStoppedIfDisplayedWhenStopped
+ * pins that setDisplayedWhenStopped(true) makes the spinner visible even while
+ * no animation is running.
+ */
+void tst_ui::progressIndicatorPaintsWhenStoppedIfDisplayedWhenStopped() {
+  QProgressIndicator indicator;
+  indicator.setDisplayedWhenStopped(true);
+  QVERIFY(!indicator.isAnimated());
+  const QImage image = renderIndicator(indicator, 40);
+  QVERIFY2(hasOpaquePixel(image),
+           "displayedWhenStopped must paint the spinner while stopped");
+}
+
+/**
+ * @brief tst_ui::progressIndicatorPaintsCapsulesWhileAnimated pins the
+ * geometry of the twelve capsules: something is drawn near the rim, nothing
+ * in the hollow centre, for both the small (<= 32 px) and large capsule width
+ * branch.
+ */
+void tst_ui::progressIndicatorPaintsCapsulesWhileAnimated() {
+  QProgressIndicator indicator;
+  indicator.startAnimation();
+  QVERIFY(indicator.isAnimated());
+
+  for (int size : {20, 64}) {
+    const QImage image = renderIndicator(indicator, size);
+    QVERIFY2(hasOpaquePixel(image),
+             qPrintable(
+                 QStringLiteral("size %1: spinner must be painted").arg(size)));
+    // The capsules start at innerRadius = 0.38 * outerRadius from the centre,
+    // so the very middle stays clear.
+    const QRgb centre = image.pixel(size / 2, size / 2);
+    QVERIFY2(
+        qAlpha(centre) == 0,
+        qPrintable(
+            QStringLiteral("size %1: the centre must stay empty").arg(size)));
+  }
+  indicator.stopAnimation();
+}
+
+/**
+ * @brief tst_ui::progressIndicatorPaintsInTheChosenColour pins that a valid
+ * colour set through setColor() is what the capsules are drawn in.
+ */
+void tst_ui::progressIndicatorPaintsInTheChosenColour() {
+  QProgressIndicator indicator;
+  indicator.setDisplayedWhenStopped(true);
+  const QColor paletteColour(0x12, 0x34, 0x56);
+  QPalette palette = indicator.palette();
+  palette.setColor(QPalette::WindowText, paletteColour);
+  indicator.setPalette(palette);
+  indicator.setColor(Qt::red);
+  const QImage image = renderIndicator(indicator, 64);
+  QVERIFY2(hasOpaquePixelOfColour(image, QColor(Qt::red)),
+           "the leading capsule must be drawn fully opaque in the set colour");
+  QVERIFY2(!hasOpaquePixelOfColour(image, paletteColour),
+           "the palette text colour must not be used once a colour is set");
+}
+
+/**
+ * @brief tst_ui::progressIndicatorPaintsInThePaletteColourByDefault pins the
+ * fallback: with no colour set the spinner follows the palette's window text
+ * colour, so it stays legible in both light and dark themes.
+ */
+void tst_ui::progressIndicatorPaintsInThePaletteColourByDefault() {
+  QProgressIndicator indicator;
+  indicator.setDisplayedWhenStopped(true);
+  QPalette palette = indicator.palette();
+  palette.setColor(QPalette::WindowText, QColor(0x12, 0x34, 0x56));
+  indicator.setPalette(palette);
+  QVERIFY(!indicator.color().isValid());
+  const QImage image = renderIndicator(indicator, 64);
+  QVERIFY2(hasOpaquePixelOfColour(image, QColor(0x12, 0x34, 0x56)),
+           "without a colour the capsules follow palette().windowText()");
+}
+
+/**
+ * @brief tst_ui::progressIndicatorSetAnimationDelayWhileRunningKeepsTicking
+ * pins that changing the delay of a running spinner restarts its timer
+ * rather than silently stopping the animation: the rendering keeps changing
+ * afterwards and isAnimated() stays true.
+ */
+void tst_ui::progressIndicatorSetAnimationDelayWhileRunningKeepsTicking() {
+  QProgressIndicator indicator;
+  indicator.startAnimation();
+  QVERIFY(indicator.isAnimated());
+  indicator.setAnimationDelay(10);
+  QCOMPARE(indicator.animationDelay(), 10);
+  QVERIFY2(indicator.isAnimated(),
+           "changing the delay must not stop a running animation");
+
+  const QImage before = renderIndicator(indicator, 64);
+  QVERIFY(hasOpaquePixel(before));
+  // Each tick rotates the capsules by 30 degrees, so the picture changes.
+  QTRY_VERIFY2(renderIndicator(indicator, 64) != before,
+               "the timer must keep firing after setAnimationDelay()");
+  indicator.stopAnimation();
+  QVERIFY(!indicator.isAnimated());
+}
+
+// ---- QtPass::showTextAsQRCode tests ----
+
+/**
+ * @brief tst_ui::showTextAsQRCodeFeedsTextToQrencodeAndShowsItsImage pins the
+ * success path: the text goes to qrencode's stdin, its PNG on stdout ends up
+ * as the popup label's pixmap, the popup is shown modally and no status
+ * message is emitted.
+ */
+void tst_ui::showTextAsQRCodeFeedsTextToQrencodeAndShowsItsImage() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in qrencode is a shell script");
+#else
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString pngPath = QDir(dir.path()).filePath(QStringLiteral("qr.png"));
+  const QString stdinPath =
+      QDir(dir.path()).filePath(QStringLiteral("stdin.txt"));
+  QImage qr(23, 23, QImage::Format_RGB32);
+  qr.fill(Qt::black);
+  qr.setPixelColor(3, 3, Qt::white);
+  QVERIFY(qr.save(pngPath, "PNG"));
+
+  const QString exe =
+      installFakeQrencode(dir, "cat > \"" + stdinPath.toUtf8() + "\"\ncat \"" +
+                                   pngPath.toUtf8() + "\"\nexit 0\n");
+  QVERIFY(!exe.isEmpty());
+
+  QtPass qtpass;
+  QSignalSpy status(&qtpass, &QtPass::statusMessage);
+
+  // The popup runs a nested event loop; poke it closed from a timer once it
+  // is up, remembering what it showed.
+  QImage shown;
+  bool popupSeen = false;
+  QTimer poker;
+  poker.setInterval(20);
+  QObject::connect(&poker, &QTimer::timeout, [&]() {
+    for (QWidget *w : QApplication::topLevelWidgets()) {
+      auto *dialog = qobject_cast<QDialog *>(w);
+      if (dialog == nullptr || dialog->windowType() != Qt::Popup ||
+          !dialog->isVisible()) {
+        continue;
+      }
+      auto *label = dialog->findChild<QLabel *>();
+      if (label != nullptr) {
+        shown = label->pixmap().toImage();
+      }
+      popupSeen = true;
+      dialog->close();
+      poker.stop();
+    }
+  });
+  poker.start();
+  // Never hang the suite if the popup is not found.
+  QTimer::singleShot(10000, &poker, [&]() {
+    for (QWidget *w : QApplication::topLevelWidgets()) {
+      if (auto *dialog = qobject_cast<QDialog *>(w)) {
+        dialog->close();
+      }
+    }
+  });
+
+  qtpass.showTextAsQRCode(QStringLiteral("hunter2\nline two"));
+  poker.stop();
+
+  QVERIFY2(popupSeen, "a visible popup dialog must have been exec()ed");
+  // The bytes qrencode wrote to stdout are what the label shows, decoded.
+  QCOMPARE(shown.size(), QSize(23, 23));
+  QCOMPARE(shown.pixelColor(3, 3), QColor(Qt::white));
+  QCOMPARE(shown.pixelColor(0, 0), QColor(Qt::black));
+  QVERIFY2(status.isEmpty(), "no status message on success");
+
+  QFile captured(stdinPath);
+  QVERIFY(captured.open(QIODevice::ReadOnly));
+  QCOMPARE(QString::fromUtf8(captured.readAll()),
+           QStringLiteral("hunter2\nline two"));
+#endif
+}
+
+/**
+ * @brief tst_ui::showTextAsQRCodeReportsQrencodeStderr pins that a failing
+ * qrencode's own error text (non-zero exit, something on stderr) is what the
+ * status bar gets, verbatim.
+ */
+void tst_ui::showTextAsQRCodeReportsQrencodeStderr() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in qrencode is a shell script");
+#else
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  QVERIFY(!installFakeQrencode(dir, "cat > /dev/null\n"
+                                    "echo 'too much data' >&2\n"
+                                    "exit 1\n")
+               .isEmpty());
+
+  QtPass qtpass;
+  QSignalSpy status(&qtpass, &QtPass::statusMessage);
+  // Would block in QDialog::exec() if the error path were not taken.
+  qtpass.showTextAsQRCode(QStringLiteral("hunter2"));
+
+  QCOMPARE(status.count(), 1);
+  QCOMPARE(status.first().at(0).toString().trimmed(),
+           QStringLiteral("too much data"));
+  QCOMPARE(status.first().at(1).toInt(), 2000);
+#endif
+}
+
+/**
+ * @brief tst_ui::showTextAsQRCodeReportsExitCodeWhenStderrIsEmpty pins the
+ * fallback message for a silent failure: the exit code is named instead of
+ * showing an empty status.
+ */
+void tst_ui::showTextAsQRCodeReportsExitCodeWhenStderrIsEmpty() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in qrencode is a shell script");
+#else
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  QVERIFY(!installFakeQrencode(dir, "cat > /dev/null\nexit 3\n").isEmpty());
+
+  QtPass qtpass;
+  QSignalSpy status(&qtpass, &QtPass::statusMessage);
+  qtpass.showTextAsQRCode(QStringLiteral("hunter2"));
+
+  QCOMPARE(status.count(), 1);
+  QCOMPARE(status.first().at(0).toString(),
+           QStringLiteral("qrencode exited with code 3"));
+  QCOMPARE(status.first().at(1).toInt(), 2000);
+#endif
+}
+
+/**
+ * @brief tst_ui::showTextAsQRCodeReportsACrash pins that a qrencode killed by
+ * a signal is reported as a crash and that its (meaningless) exit code is not
+ * consulted.
+ */
+void tst_ui::showTextAsQRCodeReportsACrash() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in qrencode is a shell script");
+#else
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  QVERIFY(
+      !installFakeQrencode(dir, "cat > /dev/null\nkill -SEGV $$\n").isEmpty());
+
+  QtPass qtpass;
+  QSignalSpy status(&qtpass, &QtPass::statusMessage);
+  qtpass.showTextAsQRCode(QStringLiteral("hunter2"));
+
+  QCOMPARE(status.count(), 1);
+  QVERIFY2(status.first().at(0).toString() ==
+               QStringLiteral("qrencode crashed"),
+           qPrintable(QStringLiteral("status must report the crash, not an "
+                                     "exit code: ") +
+                      status.first().at(0).toString()));
+  QCOMPARE(status.first().at(1).toInt(), 2000);
+#endif
 }
 
 // ---- DeselectableTreeView tests ----

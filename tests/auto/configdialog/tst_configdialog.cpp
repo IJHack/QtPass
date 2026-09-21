@@ -6,23 +6,127 @@
 #include <QDialogButtonBox>
 #include <QDir>
 #include <QFile>
+#include <QFileDialog>
+#include <QFileInfo>
 #include <QGroupBox>
 #include <QLabel>
 #include <QLineEdit>
 #include <QListWidget>
+#include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QPushButton>
+#include <QRadioButton>
+#include <QScopeGuard>
 #include <QSpinBox>
 #include <QStackedWidget>
 #include <QSystemTrayIcon>
 #include <QTemporaryDir>
+#include <QTimer>
 #include <QToolButton>
 #include <QtTest>
+#include <functional>
+#include <memory>
 
 #include "../../../src/configdialog.h"
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/qtpasssettings.h"
 #include "../testsettings.h"
+
+namespace {
+/// A two-key `gpg --with-colons` listing for the stand-in gpg, so a
+/// recipients dialog opened for a new profile has something to offer.
+const char kColonListing[] =
+    "pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA::::::23::0:\n"
+    "fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:\n"
+    "uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Alice "
+    "<alice@example.org>::::::::::0:\n"
+    "pub:f:4096:1:693A0AF3FA364E76:1775005968:::f:::escarESCA::::::23::0:\n"
+    "fpr:::::::::4EF2550F79F4E9E68B09F71D693A0AF3FA364E76:\n"
+    "uid:f::::1775005968::8AA011711F27F6E08DF71653718C299A13B323A0::Bob "
+    "<bob@example.org>::::::::::0:\n";
+
+/**
+ * @brief Write an executable /bin/sh script that stands in for an external
+ * program. The script restores a sane PATH for its own tools, since the
+ * suite narrows the process PATH to the directory holding these stand-ins.
+ */
+auto writeScript(const QString &path, const QByteArray &body) -> bool {
+  QFile script(path);
+  if (!script.open(QIODevice::WriteOnly | QIODevice::Text)) {
+    return false;
+  }
+  script.write("#!/bin/sh\nPATH=/usr/bin:/bin:/usr/local/bin\n");
+  script.write(body);
+  script.close();
+  return script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                               QFile::ExeOwner);
+}
+
+/**
+ * @brief Drives the modal dialogs a slot opens while it blocks in exec().
+ *
+ * A timer polls QApplication::activeModalWidget() from the nested event loop
+ * and hands every modal to the handler exactly once; the handler closes it.
+ * seen() counts the modals that came by, so a test can also assert that none
+ * did.
+ *
+ * accept()/reject() hide a dialog synchronously, so meeting a driven modal
+ * on a later tick means the handler did not close it (QFileDialog refusing a
+ * name, UsersDialog with nothing ticked). It is rejected rather than left to
+ * block the slot under test forever, and stuck() names it so the test fails
+ * with a reason. A handler that closes its modal from a posted event marks
+ * it "tst_pending" until that event has run.
+ */
+class ModalDriver {
+public:
+  explicit ModalDriver(std::function<void(QWidget *)> handler)
+      : m_handler(std::move(handler)) {
+    m_timer.setInterval(10);
+    QObject::connect(&m_timer, &QTimer::timeout, &m_timer, [this]() {
+      QWidget *modal = QApplication::activeModalWidget();
+      if (modal == nullptr) {
+        return;
+      }
+      if (modal->property("tst_driven").toBool()) {
+        if (modal->property("tst_pending").toBool()) {
+          return;
+        }
+        m_stuck << QString::fromLatin1(modal->metaObject()->className());
+        if (auto *dialog = qobject_cast<QDialog *>(modal)) {
+          dialog->reject();
+        } else {
+          modal->hide();
+        }
+        return;
+      }
+      modal->setProperty("tst_driven", true);
+      ++m_seen;
+      m_handler(modal);
+    });
+    m_timer.start();
+  }
+  auto seen() const -> int { return m_seen; }
+  auto stuck() const -> const QStringList & { return m_stuck; }
+
+private:
+  QTimer m_timer;
+  std::function<void(QWidget *)> m_handler;
+  int m_seen = 0;
+  QStringList m_stuck;
+};
+
+/**
+ * @brief Put the profiles and the settings back the way a test found them.
+ */
+struct SettingsRestorer {
+  Profiles profiles = QtPassSettings::getProfiles();
+  AppSettings settings = QtPassSettings::load();
+  ~SettingsRestorer() {
+    QtPassSettings::setProfiles(profiles);
+    QtPassSettings::save(settings);
+  }
+};
+} // namespace
 
 /**
  * @class tst_configdialog
@@ -34,12 +138,14 @@
  * pure widget-state setters and testable in isolation by passing nullptr
  * as the parent MainWindow.
  *
- * Coverage avoided here (needs a real MainWindow / Pass singleton):
- * - on_pushButtonGenerateKey_clicked() — calls into KeygenDialog
- * - setProfiles() / profile-table flows — interact with QtPassSettings
- *   profile map
- * - Settings persistence (on_accepted) — already covered by the
- *   tst_util sshAuthSockOverrideStatus tests in #1469
+ * The slots that open other dialogs (the browse buttons, "Generate key", the
+ * SSH_AUTH_SOCK warnings and the new-profile initialisation) are driven
+ * through ModalDriver against stand-in programs on a narrowed PATH, so no
+ * real gpg, git or pass ever runs.
+ *
+ * Not coverable here: the Wayland-only "always on top" note, the clipboard
+ * without a primary selection, and everything behind
+ * QSystemTrayIcon::isSystemTrayAvailable() (the suite runs offscreen).
  */
 class tst_configdialog : public QObject {
   Q_OBJECT
@@ -75,13 +181,78 @@ private Q_SLOTS:
   void invalidConfigurationOpensPrograms();
   void acceptRoundTripsEveryOwnedSetting();
   void acceptSavesTheGlobalAutoPushAndAutoPull();
+  void qrencodeMissingDisablesTheCheckbox();
+  void qrencodeConfiguredExecutableEnablesTheCheckbox();
+  void qrencodeOnPathIsStored();
+  void trayIconCheckboxGatesItsCompanions();
+  void autodetectFindsTheProgramsOnPath();
+  void backendRadioButtonsToggleTheGroupBoxes();
+  void charsetSelectorFollowsTheSavedSets();
+  void browseButtonsTakeTheChosenFile();
+  void browseButtonsLeaveTheFieldWhenCancelled();
+  void folderBrowseButtonsTakeTheChosenFolder();
+  void folderBrowseCancelLeavesTheField();
+  void generateKeyOpensTheKeygenDialog();
+  void deleteWithoutASelectionWarns();
+  void sshAuthSockOverrideWarnsWhenMissing();
+  void sshAuthSockOverrideWarnsForARegularFile();
+  void sshAuthSockOverrideWarnsWhenUnreadable();
+  void newProfileDirectoryQuestionCanBeDeclined();
+  void newProfileDirectoryCreationFailureIsReported();
+  void newProfileWithAGpgIdNeedsNoInitialisation();
+  void newProfileRecipientsCancelSkipsInitialisation();
+  void newProfileIsInitialisedWithTheChosenRecipients();
+  void newProfileInitialisationFailureIsReported();
+
+private:
+  /// Stand-in programs (shell scripts) the narrowed PATH consists of.
+  QTemporaryDir m_bin;
+  QString m_gpg, m_git, m_pass, m_pwgen;
+
+  auto browse(ConfigDialog &dialog, const char *button, const QString &choose)
+      -> QString;
+  auto dialogWithNewProfile(const QString &store, const QString &name,
+                            const QString &path, const QString &signingKey)
+      -> std::unique_ptr<ConfigDialog>;
 };
 
 /**
- * @brief Construct ConfigDialog with a nullptr MainWindow and return — the
- *        constructor doesn't dereference its parent.
+ * @brief Isolate the settings, pin Qt's own dialogs and lay out the stand-in
+ *        programs.
+ *
+ * ModalDriver finds the dialogs a slot opens through
+ * QApplication::activeModalWidget(). A native (platform-theme) file dialog
+ * or message box never enters that modal-widget stack, so with a desktop
+ * theme such as gtk3 the driver would wait forever; the widget-based dialogs
+ * behave the same on every platform.
  */
-void tst_configdialog::initTestCase() { isolateTestSettings(); }
+void tst_configdialog::initTestCase() {
+  isolateTestSettings();
+  QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
+#ifndef Q_OS_WIN
+  // Narrow PATH to a directory of stand-ins: pass, gpg (no gpg2, so the
+  // fallback lookup is what finds it), git and pwgen, and no qrencode. The
+  // dialog then never sees or runs the machine's real programs, and the
+  // autodetect and availability probes have a known answer.
+  QVERIFY2(m_bin.isValid(), qPrintable(m_bin.errorString()));
+  const QDir bin(m_bin.path());
+  m_gpg = bin.filePath(QStringLiteral("gpg"));
+  m_git = bin.filePath(QStringLiteral("git"));
+  m_pass = bin.filePath(QStringLiteral("pass"));
+  m_pwgen = bin.filePath(QStringLiteral("pwgen"));
+  QByteArray gpg = "case \"$*\" in\n";
+  gpg += "*--version*) echo \"gpg (GnuPG) 2.4.0\"; exit 0 ;;\n";
+  gpg += "*--list-secret-keys*) exit 0 ;;\n";
+  gpg += "*--list-keys*) cat <<'LISTING'\n";
+  gpg += kColonListing;
+  gpg += "LISTING\nexit 0 ;;\nesac\nexit 0\n";
+  QVERIFY2(writeScript(m_gpg, gpg), qPrintable("cannot write " + m_gpg));
+  for (const QString &tool : {m_git, m_pass, m_pwgen}) {
+    QVERIFY2(writeScript(tool, "exit 0\n"), qPrintable("cannot write " + tool));
+  }
+  qputenv("PATH", QFile::encodeName(m_bin.path()));
+#endif
+}
 
 void tst_configdialog::constructionDoesNotCrash() {
   ConfigDialog dialog(nullptr);
@@ -881,6 +1052,843 @@ void tst_configdialog::acceptSavesTheGlobalAutoPushAndAutoPull() {
   QVERIFY2(s.autoPush, "auto push must reach the global setting");
   QVERIFY2(s.autoPull, "auto pull must reach the global setting");
   QVERIFY(QtPassSettings::isAutoPush());
+}
+
+/**
+ * @brief With no qrencode on PATH and none configured, the QR checkbox is
+ *        disabled and says why, and the stored path is left empty rather
+ *        than being filled with a guess.
+ */
+void tst_configdialog::qrencodeMissingDisablesTheCheckbox() {
+  SettingsRestorer restorer;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.qrencodeExecutable.clear();
+    QtPassSettings::save(s);
+  }
+  ConfigDialog dialog(nullptr);
+  auto *box = child<QCheckBox>(dialog, "checkBoxUseQrencode");
+  QVERIFY2(!box->isEnabled(), "no qrencode anywhere must disable the box");
+  QVERIFY2(box->toolTip().contains(QStringLiteral("qrencode needs")),
+           qPrintable(box->toolTip()));
+  QVERIFY2(QtPassSettings::load().qrencodeExecutable.isEmpty(),
+           "a miss must not store a path");
+}
+
+/**
+ * @brief A configured qrencode path that names an executable file is taken
+ *        as is: the checkbox is usable, PATH is not consulted and the stored
+ *        path is left alone (no qrencode is on the narrowed PATH here).
+ */
+void tst_configdialog::qrencodeConfiguredExecutableEnablesTheCheckbox() {
+#ifdef Q_OS_WIN
+  QSKIP("qrencode is never available on Windows");
+#endif
+  SettingsRestorer restorer;
+  {
+    AppSettings s = QtPassSettings::load();
+    // Any executable file will do for the probe; the stand-in gpg is one.
+    s.qrencodeExecutable = m_gpg;
+    QtPassSettings::save(s);
+  }
+  ConfigDialog dialog(nullptr);
+  auto *box = child<QCheckBox>(dialog, "checkBoxUseQrencode");
+  QVERIFY2(box->isEnabled(),
+           "a configured executable qrencode must enable the box");
+  QVERIFY2(!box->toolTip().contains(QStringLiteral("qrencode needs")),
+           qPrintable(box->toolTip()));
+  QCOMPARE(QtPassSettings::load().qrencodeExecutable, m_gpg);
+}
+
+/**
+ * @brief With no usable configured path, a qrencode found on PATH is stored
+ *        so the QR display can run it, and the checkbox is usable.
+ */
+void tst_configdialog::qrencodeOnPathIsStored() {
+#ifdef Q_OS_WIN
+  QSKIP("qrencode is never available on Windows");
+#endif
+  SettingsRestorer restorer;
+  {
+    AppSettings s = QtPassSettings::load();
+    // A path that is not a file: the configured value must be ignored.
+    s.qrencodeExecutable = m_bin.path();
+    QtPassSettings::save(s);
+  }
+  const QString qrencode =
+      QDir(m_bin.path()).filePath(QStringLiteral("qrencode"));
+  QVERIFY2(writeScript(qrencode, "exit 0\n"),
+           qPrintable("cannot write " + qrencode));
+  const auto removeStandIn =
+      qScopeGuard([&qrencode]() { QFile::remove(qrencode); });
+
+  ConfigDialog dialog(nullptr);
+  auto *box = child<QCheckBox>(dialog, "checkBoxUseQrencode");
+  QVERIFY2(box->isEnabled(), "qrencode on PATH must enable the box");
+  QCOMPARE(
+      QFileInfo(QtPassSettings::load().qrencodeExecutable).canonicalFilePath(),
+      QFileInfo(qrencode).canonicalFilePath());
+}
+
+/**
+ * @brief Clicking the tray checkbox gates "hide on close" and "start
+ *        minimized": both only make sense with a tray icon to come back
+ *        from. Offscreen has no tray, so the constructor disables the box;
+ *        the test re-enables it to drive the click as a desktop user would.
+ */
+void tst_configdialog::trayIconCheckboxGatesItsCompanions() {
+  ConfigDialog dialog(nullptr);
+  auto *tray = child<QCheckBox>(dialog, "checkBoxUseTrayIcon");
+  auto *hideOnClose = child<QCheckBox>(dialog, "checkBoxHideOnClose");
+  auto *startMinimized = child<QCheckBox>(dialog, "checkBoxStartMinimized");
+  tray->setEnabled(true);
+  tray->setChecked(false);
+  hideOnClose->setEnabled(false);
+  startMinimized->setEnabled(false);
+
+  tray->click();
+  QVERIFY2(tray->isChecked(), "the click ticks the box");
+  QVERIFY2(hideOnClose->isEnabled(),
+           "a tray icon makes hide-on-close selectable");
+  QVERIFY2(startMinimized->isEnabled(),
+           "a tray icon makes start-minimized selectable");
+
+  tray->click();
+  QVERIFY2(!tray->isChecked(), "the second click clears the box");
+  QVERIFY2(!hideOnClose->isEnabled(),
+           "no tray icon, nowhere to hide to on close");
+  QVERIFY2(!startMinimized->isEnabled(),
+           "no tray icon, nowhere to start minimized into");
+}
+
+/**
+ * @brief Autodetect fills every program field from PATH, falls back from
+ *        gpg2 to gpg, and switches to pass mode when pass is found.
+ */
+void tst_configdialog::autodetectFindsTheProgramsOnPath() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in programs are shell scripts");
+#endif
+  ConfigDialog dialog(nullptr);
+  for (const char *field : {"passPath", "gpgPath", "gitPath", "pwgenPath"}) {
+    child<QLineEdit>(dialog, field)->clear();
+  }
+  child<QRadioButton>(dialog, "radioButtonNative")->click();
+  QVERIFY2(!child<QRadioButton>(dialog, "radioButtonPass")->isChecked(),
+           "precondition: native mode before autodetect");
+
+  child<QToolButton>(dialog, "autodetectButton")->click();
+
+  const auto canonical = [](const QString &path) {
+    return QFileInfo(path).canonicalFilePath();
+  };
+  QCOMPARE(canonical(child<QLineEdit>(dialog, "passPath")->text()),
+           canonical(m_pass));
+  QCOMPARE(canonical(child<QLineEdit>(dialog, "gpgPath")->text()),
+           canonical(m_gpg));
+  QCOMPARE(canonical(child<QLineEdit>(dialog, "gitPath")->text()),
+           canonical(m_git));
+  QCOMPARE(canonical(child<QLineEdit>(dialog, "pwgenPath")->text()),
+           canonical(m_pwgen));
+  QVERIFY2(child<QRadioButton>(dialog, "radioButtonPass")->isChecked(),
+           "finding pass selects pass mode");
+  QVERIFY2(child<QGroupBox>(dialog, "groupBoxPass")->isEnabled(),
+           "pass mode enables the pass group box");
+}
+
+/**
+ * @brief The backend radio buttons enable their own group box and, in pass
+ *        mode, switch off every password-generation control (pass generates
+ *        itself); native mode gives them back, pwgen only with a path.
+ */
+void tst_configdialog::backendRadioButtonsToggleTheGroupBoxes() {
+  ConfigDialog dialog(nullptr);
+  auto *pwgenPath = child<QLineEdit>(dialog, "pwgenPath");
+  pwgenPath->setText(QStringLiteral("/opt/pwgen"));
+
+  child<QRadioButton>(dialog, "radioButtonPass")->click();
+  QVERIFY2(child<QGroupBox>(dialog, "groupBoxPass")->isEnabled(),
+           "pass mode enables the pass group box");
+  QVERIFY2(!child<QGroupBox>(dialog, "groupBoxNative")->isEnabled(),
+           "pass mode disables the native group box");
+  for (const char *control :
+       {"spinBoxPasswordLength", "checkBoxUsePwgen", "checkBoxAvoidCapitals",
+        "checkBoxUseSymbols", "checkBoxLessRandom", "checkBoxAvoidNumbers",
+        "passwordCharTemplateSelector", "lineEditPasswordChars",
+        "labelPasswordChars"}) {
+    QVERIFY2(!child<QWidget>(dialog, control)->isEnabled(),
+             qPrintable(QLatin1String(control) + " must be off in pass mode"));
+  }
+
+  child<QRadioButton>(dialog, "radioButtonNative")->click();
+  QVERIFY2(!child<QGroupBox>(dialog, "groupBoxPass")->isEnabled(),
+           "native mode disables the pass group box");
+  QVERIFY2(child<QGroupBox>(dialog, "groupBoxNative")->isEnabled(),
+           "native mode enables the native group box");
+  QVERIFY2(child<QSpinBox>(dialog, "spinBoxPasswordLength")->isEnabled(),
+           "native mode gives the length spinner back");
+  QVERIFY2(child<QCheckBox>(dialog, "checkBoxUsePwgen")->isEnabled(),
+           "a pwgen path makes pwgen selectable again");
+
+  pwgenPath->clear();
+  child<QRadioButton>(dialog, "radioButtonNative")->click();
+  QVERIFY2(!child<QCheckBox>(dialog, "checkBoxUsePwgen")->isEnabled(),
+           "without a pwgen path the box stays off in native mode");
+}
+
+/**
+ * @brief Picking a character set in the selector shows that set's saved
+ *        characters and only lets the custom one be edited.
+ */
+void tst_configdialog::charsetSelectorFollowsTheSavedSets() {
+  SettingsRestorer restorer;
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM] =
+        QStringLiteral("xyz789");
+    QtPassSettings::save(s);
+  }
+  ConfigDialog dialog(nullptr);
+  auto *selector = child<QComboBox>(dialog, "passwordCharTemplateSelector");
+  auto *chars = child<QLineEdit>(dialog, "lineEditPasswordChars");
+
+  emit selector->activated(PasswordConfiguration::ALPHANUMERIC);
+  QCOMPARE(
+      chars->text(),
+      PasswordConfiguration().Characters[PasswordConfiguration::ALPHANUMERIC]);
+  QVERIFY2(!chars->isEnabled(), "a builtin set is read-only");
+
+  emit selector->activated(PasswordConfiguration::CUSTOM);
+  QCOMPARE(chars->text(), QStringLiteral("xyz789"));
+  QVERIFY2(chars->isEnabled(), "the custom set is editable");
+}
+
+/**
+ * @brief Click a browse button and answer the file dialog it opens: with a
+ *        path, select it and accept; with none, cancel.
+ * @return empty when exactly one dialog came by and closed as driven; else
+ *         what went wrong (a QFileDialog that refused the name shows up as
+ *         its "file not found" QMessageBox plus the dialog left stuck).
+ */
+auto tst_configdialog::browse(ConfigDialog &dialog, const char *button,
+                              const QString &choose) -> QString {
+  ModalDriver driver([&choose](QWidget *modal) {
+    if (auto *fileDialog = qobject_cast<QFileDialog *>(modal)) {
+      if (choose.isEmpty()) {
+        fileDialog->reject();
+        return;
+      }
+      if (fileDialog->fileMode() == QFileDialog::Directory) {
+        fileDialog->setDirectory(choose);
+      } else {
+        // selectFile() leaves the name edit alone while it has focus (a
+        // user is typing); drop focus first so the selection lands.
+        if (QWidget *focused = fileDialog->focusWidget()) {
+          focused->clearFocus();
+        }
+        fileDialog->selectFile(choose);
+      }
+      // QFileDialog re-declares accept() protected; the QDialog view of it
+      // is public and still dispatches virtually to the QFileDialog logic.
+      // Run it from a posted event rather than inside the driver's timer
+      // slot: a nested exec() started from a timer activation (QFileDialog's
+      // own "file not found" complaint) no longer receives that timer's
+      // timeouts, so the driver could neither answer it nor unstick the
+      // dialog.
+      modal->setProperty("tst_pending", true);
+      QMetaObject::invokeMethod(
+          fileDialog,
+          [fileDialog]() {
+            fileDialog->setProperty("tst_pending", false);
+            static_cast<QDialog *>(fileDialog)->accept();
+          },
+          Qt::QueuedConnection);
+      return;
+    }
+    QMetaObject::invokeMethod(modal, "reject");
+  });
+  child<QToolButton>(dialog, button)->click();
+  if (!driver.stuck().isEmpty()) {
+    return QStringLiteral("%1: dialog(s) did not close when driven: %2")
+        .arg(QLatin1String(button), driver.stuck().join(QLatin1String(", ")));
+  }
+  if (driver.seen() != 1) {
+    return QStringLiteral("%1: expected exactly one dialog, saw %2")
+        .arg(QLatin1String(button))
+        .arg(driver.seen());
+  }
+  return {};
+}
+
+/**
+ * @brief The four program browse buttons put the chosen file into their
+ *        field; git and pwgen also switch their "use" checkbox back on.
+ */
+void tst_configdialog::browseButtonsTakeTheChosenFile() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in programs are shell scripts");
+#endif
+  ConfigDialog dialog(nullptr);
+  const QList<std::tuple<const char *, const char *, QString>> picks = {
+      {"toolButtonGit", "gitPath", m_git},
+      {"toolButtonGpg", "gpgPath", m_gpg},
+      {"toolButtonPass", "passPath", m_pass},
+      {"toolButtonPwgen", "pwgenPath", m_pwgen},
+  };
+  child<QCheckBox>(dialog, "checkBoxUseGit")->setEnabled(false);
+  child<QCheckBox>(dialog, "checkBoxUsePwgen")->setEnabled(false);
+  for (const auto &[button, field, path] : picks) {
+    // Each browse button lives in the group box of its backend, and only the
+    // selected backend's group is enabled; a disabled button ignores click().
+    const bool passButton = qstrcmp(button, "toolButtonPass") == 0;
+    child<QRadioButton>(dialog,
+                        passButton ? "radioButtonPass" : "radioButtonNative")
+        ->click();
+    QVERIFY2(child<QToolButton>(dialog, button)->isEnabled(), button);
+    child<QLineEdit>(dialog, field)->clear();
+    const QString problem = browse(dialog, button, path);
+    QVERIFY2(problem.isEmpty(), qPrintable(problem));
+    QCOMPARE(child<QLineEdit>(dialog, field)->text(), path);
+  }
+  QVERIFY2(child<QCheckBox>(dialog, "checkBoxUseGit")->isEnabled(),
+           "a git binary makes git selectable");
+  QVERIFY2(child<QCheckBox>(dialog, "checkBoxUsePwgen")->isEnabled(),
+           "a pwgen binary makes pwgen selectable");
+}
+
+/**
+ * @brief Cancelling a program browse leaves gpg and pass alone, but git and
+ *        pwgen are switched off: their file dialog is the only way to say
+ *        "none" and the checkbox must not promise a tool that is not there.
+ */
+void tst_configdialog::browseButtonsLeaveTheFieldWhenCancelled() {
+  ConfigDialog dialog(nullptr);
+  child<QLineEdit>(dialog, "gpgPath")->setText(QStringLiteral("/opt/gpg"));
+  child<QLineEdit>(dialog, "passPath")->setText(QStringLiteral("/opt/pass"));
+  // The pass button sits in the pass group box, enabled only in pass mode.
+  child<QRadioButton>(dialog, "radioButtonPass")->click();
+  QString problem = browse(dialog, "toolButtonPass", QString());
+  QVERIFY2(problem.isEmpty(), qPrintable(problem));
+  child<QRadioButton>(dialog, "radioButtonNative")->click();
+  problem = browse(dialog, "toolButtonGpg", QString());
+  QVERIFY2(problem.isEmpty(), qPrintable(problem));
+  QCOMPARE(child<QLineEdit>(dialog, "gpgPath")->text(),
+           QStringLiteral("/opt/gpg"));
+  QCOMPARE(child<QLineEdit>(dialog, "passPath")->text(),
+           QStringLiteral("/opt/pass"));
+
+  auto *useGit = child<QCheckBox>(dialog, "checkBoxUseGit");
+  useGit->setEnabled(true);
+  useGit->setChecked(true);
+  problem = browse(dialog, "toolButtonGit", QString());
+  QVERIFY2(problem.isEmpty(), qPrintable(problem));
+  QVERIFY2(!useGit->isChecked(), "no git binary means no git");
+  QVERIFY2(!useGit->isEnabled(), "and none to select");
+  QVERIFY2(!child<QCheckBox>(dialog, "checkBoxAutoPush")->isEnabled(),
+           "no git means nothing to push with");
+
+  auto *usePwgen = child<QCheckBox>(dialog, "checkBoxUsePwgen");
+  usePwgen->setEnabled(true);
+  usePwgen->setChecked(true);
+  problem = browse(dialog, "toolButtonPwgen", QString());
+  QVERIFY2(problem.isEmpty(), qPrintable(problem));
+  QVERIFY2(!usePwgen->isChecked(), "no pwgen binary means no pwgen");
+  QVERIFY2(!usePwgen->isEnabled(), "and none to select");
+}
+
+/**
+ * @brief The store and profile-path browse buttons take a folder; the
+ *        profile one also writes it into the selected profile.
+ */
+void tst_configdialog::folderBrowseButtonsTakeTheChosenFolder() {
+  SettingsRestorer restorer;
+  Profiles profiles;
+  Profile one;
+  one.path = QStringLiteral("/store/one");
+  profiles.insert(QStringLiteral("one"), one);
+  QtPassSettings::setProfiles(profiles);
+
+  QTemporaryDir folder;
+  QVERIFY2(folder.isValid(), qPrintable(folder.errorString()));
+  const QString chosen = QDir(folder.path()).canonicalPath();
+
+  ConfigDialog dialog(nullptr);
+  QString problem = browse(dialog, "toolButtonStore", chosen);
+  QVERIFY2(problem.isEmpty(), qPrintable(problem));
+  QCOMPARE(QDir(child<QLineEdit>(dialog, "storePath")->text()).canonicalPath(),
+           chosen);
+
+  child<QListWidget>(dialog, "profileList")->setCurrentRow(0);
+  problem = browse(dialog, "profilePathBrowse", chosen);
+  QVERIFY2(problem.isEmpty(), qPrintable(problem));
+  QCOMPARE(
+      QDir(child<QLineEdit>(dialog, "profilePath")->text()).canonicalPath(),
+      chosen);
+  QCOMPARE(QDir(dialog.getProfiles().value(QStringLiteral("one")).path)
+               .canonicalPath(),
+           chosen);
+}
+
+/**
+ * @brief Cancelling a folder browse keeps what was in the field.
+ */
+void tst_configdialog::folderBrowseCancelLeavesTheField() {
+  ConfigDialog dialog(nullptr);
+  child<QLineEdit>(dialog, "storePath")->setText(QStringLiteral("/keep/me"));
+  const QString problem = browse(dialog, "toolButtonStore", QString());
+  QVERIFY2(problem.isEmpty(), qPrintable(problem));
+  QCOMPARE(child<QLineEdit>(dialog, "storePath")->text(),
+           QStringLiteral("/keep/me"));
+}
+
+/**
+ * @brief "Generate key" opens the keygen dialog against the gpg named in the
+ *        form (its template follows what that gpg reports), not against
+ *        whatever is saved.
+ */
+void tst_configdialog::generateKeyOpensTheKeygenDialog() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in gpg is a shell script");
+#endif
+  SettingsRestorer restorer;
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passStore = store.path() + QLatin1Char('/');
+    s.usePass = false;
+    s.gpgExecutable = m_gpg;
+    QtPassSettings::save(s);
+  }
+  ConfigDialog dialog(nullptr);
+  child<QLineEdit>(dialog, "gpgPath")->setText(m_gpg);
+
+  QString className;
+  QString keyTemplate;
+  ModalDriver driver([&](QWidget *modal) {
+    className = QLatin1String(modal->metaObject()->className());
+    if (auto *edit = modal->findChild<QPlainTextEdit *>(
+            QStringLiteral("plainTextEdit"))) {
+      keyTemplate = edit->toPlainText();
+    }
+    QMetaObject::invokeMethod(modal, "reject");
+  });
+  child<QPushButton>(dialog, "pushButtonGenerateKey")->click();
+
+  QCOMPARE(driver.seen(), 1);
+  QCOMPARE(className, QStringLiteral("KeygenDialog"));
+  QVERIFY2(
+      keyTemplate.contains(QStringLiteral("Ed25519")),
+      qPrintable("gpg 2.4 gets the Ed25519 template, got: " + keyTemplate));
+}
+
+/**
+ * @brief Delete with nothing selected explains itself instead of failing
+ *        silently, and changes nothing.
+ */
+void tst_configdialog::deleteWithoutASelectionWarns() {
+  SettingsRestorer restorer;
+  QtPassSettings::setProfiles(Profiles());
+  ConfigDialog dialog(nullptr);
+  QCOMPARE(child<QListWidget>(dialog, "profileList")->count(), 0);
+
+  QString title;
+  ModalDriver driver([&title](QWidget *modal) {
+    if (auto *box = qobject_cast<QMessageBox *>(modal)) {
+      title = box->windowTitle();
+    }
+    QMetaObject::invokeMethod(modal, "reject");
+  });
+  QVERIFY(QMetaObject::invokeMethod(&dialog, "on_deleteButton_clicked"));
+
+  QCOMPARE(driver.seen(), 1);
+  QCOMPARE(title, QStringLiteral("No profile selected"));
+  QVERIFY2(dialog.getProfiles().isEmpty(), "nothing to delete, nothing gone");
+}
+
+namespace {
+/**
+ * @brief Accept the dialog and return the text of the one message box that
+ *        comes by (empty when none did).
+ */
+auto acceptAndCollectWarning(ConfigDialog &dialog, QString *title) -> QString {
+  QString text;
+  ModalDriver driver([&](QWidget *modal) {
+    if (auto *box = qobject_cast<QMessageBox *>(modal)) {
+      *title = box->windowTitle();
+      text = box->text();
+    }
+    QMetaObject::invokeMethod(modal, "reject");
+  });
+  dialog.accept();
+  return driver.seen() == 1 ? text
+                            : QStringLiteral("<%1 dialogs>").arg(driver.seen());
+}
+} // namespace
+
+/**
+ * @brief An SSH_AUTH_SOCK override that points nowhere is saved as typed,
+ *        but the user is told the path does not exist.
+ */
+void tst_configdialog::sshAuthSockOverrideWarnsWhenMissing() {
+  SettingsRestorer restorer;
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString missing = QDir(dir.path()).filePath(QStringLiteral("gone"));
+
+  ConfigDialog dialog(nullptr);
+  child<QLineEdit>(dialog, "sshAuthSockOverride")->setText(missing);
+  QString title;
+  const QString text = acceptAndCollectWarning(dialog, &title);
+
+  QCOMPARE(title, QStringLiteral("Potentially invalid SSH_AUTH_SOCK override"));
+  QVERIFY2(text.contains(QStringLiteral("does not exist")), qPrintable(text));
+  QVERIFY2(text.contains(QStringLiteral("still be saved")), qPrintable(text));
+  QCOMPARE(QtPassSettings::load().sshAuthSockOverride, missing);
+}
+
+/**
+ * @brief A regular file is not an agent socket; the warning says so and the
+ *        value is still saved.
+ */
+void tst_configdialog::sshAuthSockOverrideWarnsForARegularFile() {
+#ifdef Q_OS_WIN
+  QSKIP("only Unix can tell a socket from a file");
+#endif
+  SettingsRestorer restorer;
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString file = QDir(dir.path()).filePath(QStringLiteral("plain"));
+  {
+    QFile f(file);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+
+  ConfigDialog dialog(nullptr);
+  child<QLineEdit>(dialog, "sshAuthSockOverride")->setText(file);
+  QString title;
+  const QString text = acceptAndCollectWarning(dialog, &title);
+
+  QCOMPARE(title, QStringLiteral("Potentially invalid SSH_AUTH_SOCK override"));
+  QVERIFY2(text.contains(QStringLiteral("not a Unix domain socket")),
+           qPrintable(text));
+  QCOMPARE(QtPassSettings::load().sshAuthSockOverride, file);
+}
+
+/**
+ * @brief A path we cannot read is reported as such before the socket check.
+ */
+void tst_configdialog::sshAuthSockOverrideWarnsWhenUnreadable() {
+  SettingsRestorer restorer;
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString file = QDir(dir.path()).filePath(QStringLiteral("locked"));
+  {
+    QFile f(file);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+    f.close();
+    QVERIFY(f.setPermissions(QFileDevice::Permissions()));
+  }
+  if (QFileInfo(file).isReadable()) {
+    QFile(file).setPermissions(QFile::ReadOwner | QFile::WriteOwner);
+    QSKIP("permissions are not enforced here (root or a lax filesystem)");
+  }
+
+  ConfigDialog dialog(nullptr);
+  child<QLineEdit>(dialog, "sshAuthSockOverride")->setText(file);
+  QString title;
+  const QString text = acceptAndCollectWarning(dialog, &title);
+  QFile(file).setPermissions(QFile::ReadOwner | QFile::WriteOwner);
+
+  QCOMPARE(title, QStringLiteral("Potentially invalid SSH_AUTH_SOCK override"));
+  QVERIFY2(text.contains(QStringLiteral("not readable")), qPrintable(text));
+  QCOMPARE(QtPassSettings::load().sshAuthSockOverride, file);
+}
+
+/**
+ * @brief Open the dialog with no profiles, the store at @p store and the
+ *        stand-in gpg as the gpg, then add one profile through the form.
+ */
+auto tst_configdialog::dialogWithNewProfile(const QString &store,
+                                            const QString &name,
+                                            const QString &path,
+                                            const QString &signingKey)
+    -> std::unique_ptr<ConfigDialog> {
+  QtPassSettings::setProfiles(Profiles());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passStore = store + QLatin1Char('/');
+    s.usePass = false;
+    s.useGit = false;
+    s.gpgExecutable = m_gpg;
+    s.passSigningKey.clear();
+    s.activeProfile.clear();
+    QtPassSettings::save(s);
+  }
+  auto dialog = std::make_unique<ConfigDialog>(nullptr);
+  child<QLineEdit>(*dialog, "storePath")->setText(store);
+  child<QLineEdit>(*dialog, "gpgPath")->setText(m_gpg);
+  child<QCheckBox>(*dialog, "checkBoxUseGit")->setChecked(false);
+  QMetaObject::invokeMethod(dialog.get(), "on_addButton_clicked");
+  auto *nameEdit = child<QLineEdit>(*dialog, "profileName");
+  nameEdit->setText(name);
+  emit nameEdit->textEdited(name);
+  auto *pathEdit = child<QLineEdit>(*dialog, "profilePath");
+  pathEdit->setText(path);
+  emit pathEdit->textEdited(path);
+  auto *keyEdit = child<QLineEdit>(*dialog, "profileSigningKey");
+  keyEdit->setText(signingKey);
+  emit keyEdit->textEdited(signingKey);
+  return dialog;
+}
+
+/**
+ * @brief A new profile at a folder that does not exist asks before creating
+ *        it; "No" keeps the profile but creates nothing.
+ */
+void tst_configdialog::newProfileDirectoryQuestionCanBeDeclined() {
+  SettingsRestorer restorer;
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString path = QDir(store.path()).filePath(QStringLiteral("fresh"));
+  auto dialog = dialogWithNewProfile(store.path(), QStringLiteral("fresh"),
+                                     path, QString());
+
+  QString title, text;
+  ModalDriver driver([&](QWidget *modal) {
+    if (auto *box = qobject_cast<QMessageBox *>(modal)) {
+      title = box->windowTitle();
+      text = box->text();
+      if (auto *no = box->button(QMessageBox::No)) {
+        no->click();
+        return;
+      }
+    }
+    QMetaObject::invokeMethod(modal, "reject");
+  });
+  QVERIFY(QMetaObject::invokeMethod(dialog.get(), "on_accepted"));
+
+  QCOMPARE(driver.seen(), 1);
+  QCOMPARE(title, QStringLiteral("Create profile directory?"));
+  QVERIFY2(text.contains(path), qPrintable(text));
+  QVERIFY2(!QDir(path).exists(), "No means no folder");
+  QCOMPARE(QtPassSettings::getProfiles().value(QStringLiteral("fresh")).path,
+           path);
+}
+
+/**
+ * @brief "Yes" to creating the folder, but the folder cannot be made (its
+ *        parent is a file): the failure is reported and nothing else runs.
+ */
+void tst_configdialog::newProfileDirectoryCreationFailureIsReported() {
+  SettingsRestorer restorer;
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString blocker =
+      QDir(store.path()).filePath(QStringLiteral("blocker"));
+  {
+    QFile f(blocker);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("not a directory");
+  }
+  const QString path = blocker + QStringLiteral("/sub");
+  auto dialog = dialogWithNewProfile(store.path(), QStringLiteral("fresh"),
+                                     path, QString());
+
+  QStringList titles, texts;
+  ModalDriver driver([&](QWidget *modal) {
+    if (auto *box = qobject_cast<QMessageBox *>(modal)) {
+      titles << box->windowTitle();
+      texts << box->text();
+      if (auto *yes = box->button(QMessageBox::Yes)) {
+        yes->click();
+        return;
+      }
+    }
+    QMetaObject::invokeMethod(modal, "reject");
+  });
+  QVERIFY(QMetaObject::invokeMethod(dialog.get(), "on_accepted"));
+
+  QCOMPARE(titles, (QStringList{QStringLiteral("Create profile directory?"),
+                                QStringLiteral("Error")}));
+  QVERIFY2(texts.last().contains(QStringLiteral("Could not create")),
+           qPrintable(texts.last()));
+  QVERIFY2(texts.last().contains(path), qPrintable(texts.last()));
+  QVERIFY2(!QDir(path).exists(), "a failed mkpath leaves no folder behind");
+}
+
+/**
+ * @brief A new profile pointing at a store that already has a .gpg-id is
+ *        taken as is: no question, no recipients dialog.
+ */
+void tst_configdialog::newProfileWithAGpgIdNeedsNoInitialisation() {
+  SettingsRestorer restorer;
+  QTemporaryDir store;
+  QTemporaryDir existing;
+  QVERIFY(store.isValid() && existing.isValid());
+  const QString gpgIdPath =
+      QDir(existing.path()).filePath(QStringLiteral(".gpg-id"));
+  {
+    QFile gpgId(gpgIdPath);
+    QVERIFY(gpgId.open(QIODevice::WriteOnly));
+    gpgId.write("0000000000000000\n");
+  }
+  auto dialog = dialogWithNewProfile(store.path(), QStringLiteral("ready"),
+                                     existing.path(), QString());
+
+  ModalDriver driver(
+      [](QWidget *modal) { QMetaObject::invokeMethod(modal, "reject"); });
+  QVERIFY(QMetaObject::invokeMethod(dialog.get(), "on_accepted"));
+
+  QCOMPARE(driver.seen(), 0);
+  QFile gpgId(gpgIdPath);
+  QVERIFY2(gpgId.open(QIODevice::ReadOnly), ".gpg-id must still be there");
+  QCOMPARE(gpgId.readAll(), QByteArrayLiteral("0000000000000000\n"));
+  QCOMPARE(QtPassSettings::getProfiles().value(QStringLiteral("ready")).path,
+           existing.path());
+}
+
+/**
+ * @brief An existing folder without .gpg-id gets the recipients dialog,
+ *        named for the profile; cancelling it leaves the folder alone.
+ */
+void tst_configdialog::newProfileRecipientsCancelSkipsInitialisation() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in gpg is a shell script");
+#endif
+  SettingsRestorer restorer;
+  QTemporaryDir store;
+  QTemporaryDir empty;
+  QVERIFY(store.isValid() && empty.isValid());
+  auto dialog = dialogWithNewProfile(store.path(), QStringLiteral("fresh"),
+                                     empty.path(), QString());
+
+  QString className, title;
+  int listed = -1;
+  ModalDriver driver([&](QWidget *modal) {
+    className = QLatin1String(modal->metaObject()->className());
+    title = modal->windowTitle();
+    if (auto *list =
+            modal->findChild<QListWidget *>(QStringLiteral("listWidget"))) {
+      listed = list->count();
+    }
+    QMetaObject::invokeMethod(modal, "reject");
+  });
+  QVERIFY(QMetaObject::invokeMethod(dialog.get(), "on_accepted"));
+
+  QCOMPARE(driver.seen(), 1);
+  QCOMPARE(className, QStringLiteral("UsersDialog"));
+  QCOMPARE(title, QStringLiteral("Select recipients for fresh"));
+  QCOMPARE(listed, 2);
+  QVERIFY2(
+      !QFile::exists(QDir(empty.path()).filePath(QStringLiteral(".gpg-id"))),
+      "cancel writes nothing");
+}
+
+/**
+ * @brief Ticking a recipient and accepting writes that key's fingerprint to
+ *        the new profile's .gpg-id; encrypted files already in the folder
+ *        are left alone and the note about them is shown.
+ */
+void tst_configdialog::newProfileIsInitialisedWithTheChosenRecipients() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in gpg is a shell script");
+#endif
+  SettingsRestorer restorer;
+  QTemporaryDir store;
+  QTemporaryDir folder;
+  QVERIFY(store.isValid() && folder.isValid());
+  {
+    QFile old(QDir(folder.path()).filePath(QStringLiteral("old.gpg")));
+    QVERIFY(old.open(QIODevice::WriteOnly));
+    old.write("ciphertext");
+  }
+  auto dialog = dialogWithNewProfile(store.path(), QStringLiteral("fresh"),
+                                     folder.path(), QString());
+
+  QStringList classNames, texts;
+  ModalDriver driver([&](QWidget *modal) {
+    classNames << QLatin1String(modal->metaObject()->className());
+    if (auto *box = qobject_cast<QMessageBox *>(modal)) {
+      texts << box->text();
+      QMetaObject::invokeMethod(modal, "reject");
+      return;
+    }
+    auto *list = modal->findChild<QListWidget *>(QStringLiteral("listWidget"));
+    auto *buttons =
+        modal->findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    if (list == nullptr || buttons == nullptr || list->count() == 0) {
+      QMetaObject::invokeMethod(modal, "reject");
+      return;
+    }
+    list->item(0)->setCheckState(Qt::Checked);
+    buttons->button(QDialogButtonBox::Ok)->click();
+  });
+  QVERIFY(QMetaObject::invokeMethod(dialog.get(), "on_accepted"));
+
+  QCOMPARE(classNames, (QStringList{QStringLiteral("UsersDialog"),
+                                    QStringLiteral("QMessageBox")}));
+  QVERIFY2(texts.first().contains(QStringLiteral("already contains")),
+           qPrintable(texts.first()));
+  QFile gpgId(QDir(folder.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY2(gpgId.open(QIODevice::ReadOnly), ".gpg-id must be written");
+  const QString written = QString::fromUtf8(gpgId.readAll());
+  QVERIFY2(written.contains(QStringLiteral("31850CF72D9CDDE9")),
+           qPrintable(written));
+  QVERIFY2(!written.contains(QStringLiteral("693A0AF3FA364E76")),
+           "only the ticked key is a recipient");
+  QVERIFY2(
+      QFile::exists(QDir(folder.path()).filePath(QStringLiteral("old.gpg"))),
+      "existing files are not touched");
+}
+
+/**
+ * @brief When initialising fails (here: the profile's signing key, and a gpg
+ *        that writes no signature) the failure is reported under the
+ *        profile's name instead of being swallowed.
+ */
+void tst_configdialog::newProfileInitialisationFailureIsReported() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in gpg is a shell script");
+#endif
+  SettingsRestorer restorer;
+  QTemporaryDir store;
+  QTemporaryDir folder;
+  QVERIFY(store.isValid() && folder.isValid());
+  auto dialog = dialogWithNewProfile(
+      store.path(), QStringLiteral("signed"), folder.path(),
+      QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9"));
+
+  QStringList titles, texts;
+  ModalDriver driver([&](QWidget *modal) {
+    if (auto *box = qobject_cast<QMessageBox *>(modal)) {
+      titles << box->windowTitle();
+      texts << box->text();
+      QMetaObject::invokeMethod(modal, "reject");
+      return;
+    }
+    auto *list = modal->findChild<QListWidget *>(QStringLiteral("listWidget"));
+    auto *buttons =
+        modal->findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    if (list == nullptr || buttons == nullptr || list->count() == 0) {
+      QMetaObject::invokeMethod(modal, "reject");
+      return;
+    }
+    list->item(0)->setCheckState(Qt::Checked);
+    buttons->button(QDialogButtonBox::Ok)->click();
+  });
+  QVERIFY(QMetaObject::invokeMethod(dialog.get(), "on_accepted"));
+
+  QCOMPARE(driver.seen(), 2);
+  QCOMPARE(titles, QStringList{QStringLiteral("Could not initialise profile "
+                                              "signed")});
+  QVERIFY2(texts.first().contains(QStringLiteral("signature")),
+           qPrintable(texts.first()));
+  QVERIFY2(!QFile::exists(
+               QDir(folder.path()).filePath(QStringLiteral(".gpg-id.sig"))),
+           "no signature was produced");
 }
 
 QTEST_MAIN(tst_configdialog)

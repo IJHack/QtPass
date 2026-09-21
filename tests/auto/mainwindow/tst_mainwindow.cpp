@@ -8,15 +8,22 @@
  * Each test gets a fresh window instance; a single QTemporaryDir serves as
  * the pass store for the whole run.
  *
- * Coverage deferred here (requires live GPG / pass / git operations):
- * - addPassword / addFolder / renameFolder / renamePassword — invoke Pass
- * - on_treeView_clicked / doubleClicked — need a populated store model
- * - onGrepFinished — depends on a running grep
+ * Where a path needs the backend to answer (decrypts, grep, key listing, git),
+ * the window is rebuilt over shell scripts standing in for gpg and git
+ * (rebuildWithFakeGpg, writeFakeGit), so nothing reaches a keyring, an agent
+ * or a remote. Modal dialogs and popup menus are driven by ModalDriver.
+ *
+ * Deliberately not covered here:
+ * - the UI watchdog (a 30 s constant, no seam to shorten it)
+ * - closeEvent's quit branch (QApplication::quit() would end the run)
+ * - destroyTrayIcon() with a live icon (needs a real system tray)
  */
 
 #include <QApplication>
 #include <QCheckBox>
 #include <QClipboard>
+#include <QComboBox>
+#include <QDesktopServices>
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QDir>
@@ -24,12 +31,16 @@
 #include <QFile>
 #include <QFileSystemModel>
 #include <QFrame>
+#include <QInputDialog>
+#include <QKeyEvent>
 #include <QLabel>
 #include <QLineEdit>
 #include <QMenu>
 #include <QMenuBar>
 #include <QMessageBox>
 #include <QPalette>
+#include <QPlainTextEdit>
+#include <QPointer>
 #include <QProgressDialog>
 #include <QPushButton>
 #include <QRegularExpression>
@@ -39,6 +50,7 @@
 #include <QShortcut>
 #include <QSortFilterProxyModel>
 #include <QStatusBar>
+#include <QSystemTrayIcon>
 #include <QTemporaryDir>
 #include <QTextBlock>
 #include <QTextBrowser>
@@ -47,18 +59,26 @@
 #include <QTextEdit>
 #include <QTimer>
 #include <QToolBar>
+#include <QToolButton>
 #include <QTreeView>
+#include <QTreeWidget>
+#include <QUrl>
 #include <QtTest>
 
 #include <functional>
 
 #include "../../../src/clipboardmanager.h"
 #include "../../../src/configdialog.h"
+#include "../../../src/exportpublickeydialog.h"
 #include "../../../src/filecontent.h"
 #include "../../../src/firstrunwizard.h"
 #include "../../../src/mainwindow.h"
+#include "../../../src/pass.h"
+#include "../../../src/passworddialog.h"
 #include "../../../src/passworddisplaypanel.h"
 #include "../../../src/qtpasssettings.h"
+#include "../../../src/trayicon.h"
+#include "../../../src/usersdialog.h"
 #include "../../../src/util.h"
 #include "../testsettings.h"
 
@@ -83,12 +103,259 @@ QList<QTextCharFormat> fragmentFormats(const QTextDocument *document) {
   return formats;
 }
 
+/**
+ * @brief Drives every modal dialog and popup menu that opens while it lives.
+ *
+ * The handler runs once per new modal or popup widget, from a timer, so a
+ * blocking exec() started on the test's own stack still gets answered. A
+ * handler may itself open a nested dialog (a menu action that asks a
+ * question): the timer keeps ticking inside that nested loop and the driver
+ * re-enters for the new widget. Anything still open after the handler ran is
+ * closed from the stuck guard, so a test cannot hang in a modal loop.
+ */
+class ModalDriver {
+public:
+  using Handler = std::function<void(QWidget *)>;
+
+  explicit ModalDriver(Handler handler) : m_handler(std::move(handler)) {
+    schedule();
+  }
+  ~ModalDriver() = default;
+  ModalDriver(const ModalDriver &) = delete;
+  auto operator=(const ModalDriver &) -> ModalDriver & = delete;
+
+  /// Widgets the handler was invoked for, in order of appearance.
+  int seen = 0;
+  /// Class names of those widgets, for a failure message.
+  QStringList seenClasses;
+  /// Window titles of the message boxes the handler saw, for asserting.
+  QStringList boxTitles;
+  /// Plain text of the message boxes the handler saw.
+  QStringList boxTexts;
+
+private:
+  /// One fresh single-shot timer per tick: a repeating QTimer does not fire
+  /// again while its own slot is still on the stack, which is exactly the
+  /// case when the handler opens a nested dialog from inside a menu.
+  void schedule() {
+    QTimer::singleShot(20, &m_context, [this]() { tick(); });
+  }
+
+  void tick() {
+    schedule();
+    QWidget *widget = QApplication::activeModalWidget();
+    if (widget == nullptr) {
+      widget = QApplication::activePopupWidget();
+    }
+    if (widget == nullptr) {
+      return;
+    }
+    if (widget->property("tst_driven").toBool()) {
+      if (++m_stuckTicks > 150) { // 3 s: the handler did not close it
+        m_stuckTicks = 0;
+        widget->close();
+      }
+      return;
+    }
+    widget->setProperty("tst_driven", true);
+    m_stuckTicks = 0;
+    ++seen;
+    seenClasses << QString::fromLatin1(widget->metaObject()->className());
+    if (auto *box = qobject_cast<QMessageBox *>(widget)) {
+      boxTitles << box->windowTitle();
+      boxTexts << box->text();
+    }
+    m_handler(widget);
+  }
+
+  Handler m_handler;
+  /// Owns the pending tick: destroying the driver cancels it.
+  QObject m_context;
+  int m_stuckTicks = 0;
+};
+
+/// Click the given standard button of a message box; anything else is closed.
+auto answerBox(QMessageBox::StandardButton button) -> ModalDriver::Handler {
+  return [button](QWidget *widget) {
+    if (auto *box = qobject_cast<QMessageBox *>(widget)) {
+      if (QAbstractButton *b = box->button(button)) {
+        b->click();
+        return;
+      }
+      box->accept();
+      return;
+    }
+    if (qobject_cast<QProgressDialog *>(widget) != nullptr) {
+      return; // a running operation's own dialog: not a question to answer
+    }
+    if (auto *dialog = qobject_cast<QDialog *>(widget)) {
+      dialog->reject();
+      return;
+    }
+    widget->close();
+  };
+}
+
+/// Type @p text into a QInputDialog and accept it; message boxes are
+/// acknowledged, any other dialog is rejected.
+auto typeIntoInputDialog(const QString &text) -> ModalDriver::Handler {
+  return [text](QWidget *widget) {
+    if (auto *input = qobject_cast<QInputDialog *>(widget)) {
+      input->setTextValue(text);
+      input->accept();
+      return;
+    }
+    answerBox(QMessageBox::Ok)(widget);
+  };
+}
+
+/**
+ * @brief Receives what the application asks the desktop to open, so a test
+ * can assert the URL without a browser or file manager being launched.
+ */
+class UrlCatcher : public QObject {
+  Q_OBJECT
+public:
+  QList<QUrl> urls;
+public Q_SLOTS:
+  void catchUrl(const QUrl &url) { urls << url; }
+};
+
+/**
+ * @brief Write an executable shell script standing in for gpg: it lists one
+ * public key, "exports" an armored block (or fails for the key NOKEY) and
+ * "decrypts" a file by printing it as is. Nothing reaches a keyring or an
+ * agent.
+ * @return The script path, or an empty string when it could not be written.
+ */
+auto writeFakeGpg(const QString &dir) -> QString {
+  const QString gpg = QDir(dir).filePath(QStringLiteral("gpg"));
+  QFile script(gpg);
+  if (!script.open(QIODevice::WriteOnly)) {
+    return {};
+  }
+  script.write(
+      "#!/bin/sh\n"
+      "for a in \"$@\"; do last=\"$a\"; done\n"
+      "case \"$*\" in\n"
+      "*--list-secret-keys*|*--list-keys*)\n"
+      "printf '%s\\n' "
+      "'pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escaESCA::::::23::0:' "
+      "'fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:' "
+      "'uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Test "
+      "Key <test@example.org>::::::::::0:'\n"
+      ";;\n"
+      "*--export*NOKEY*)\n"
+      "echo 'gpg: nothing exported' >&2\n"
+      "exit 2\n"
+      ";;\n"
+      "*--export*)\n"
+      "printf '%s\\n' '-----BEGIN PGP PUBLIC KEY BLOCK-----' 'mQINBFakeKey' "
+      "'-----END PGP PUBLIC KEY BLOCK-----'\n"
+      ";;\n"
+      "-d\\ *|*\\ -d\\ *)\n"
+      "cat \"$last\"\n"
+      ";;\n"
+      "esac\n"
+      "exit 0\n");
+  script.close();
+  if (!QFile::setPermissions(gpg, QFile::ReadOwner | QFile::WriteOwner |
+                                      QFile::ExeOwner)) {
+    return {};
+  }
+  return gpg;
+}
+
+/**
+ * @brief Write an executable shell script standing in for git: it appends
+ * one line per call to @p log, the physical working directory first and
+ * then the arguments (see fakeGitCalls), and exits with @p exitCode.
+ * @return The script path, or an empty string when it could not be written.
+ */
+auto writeFakeGit(const QString &dir, const QString &log, int exitCode)
+    -> QString {
+  const QString git = QDir(dir).filePath(QStringLiteral("git"));
+  QFile script(git);
+  if (!script.open(QIODevice::WriteOnly)) {
+    return {};
+  }
+  script.write(QStringLiteral("#!/bin/sh\n"
+                              "echo \"$(pwd -P) $@\" >> '%1'\n"
+                              "echo 'fake git says no' >&2\n"
+                              "exit %2\n")
+                   .arg(log)
+                   .arg(exitCode)
+                   .toUtf8());
+  script.close();
+  if (!QFile::setPermissions(git, QFile::ReadOwner | QFile::WriteOwner |
+                                      QFile::ExeOwner)) {
+    return {};
+  }
+  return git;
+}
+
+/**
+ * @brief The calls a fake git logged, as (working directory, arguments)
+ * pairs in the order they were made; the directory is canonical so it
+ * compares with QFileInfo::canonicalFilePath() of the store.
+ */
+auto fakeGitCalls(const QString &log) -> QList<QPair<QString, QString>> {
+  QList<QPair<QString, QString>> calls;
+  QFile logFile(log);
+  if (!logFile.open(QIODevice::ReadOnly)) {
+    return calls;
+  }
+  const QStringList lines =
+      QString::fromUtf8(logFile.readAll()).split(u'\n', Qt::SkipEmptyParts);
+  for (const QString &line : lines) {
+    const qsizetype space = line.indexOf(u' ');
+    calls << qMakePair(line.left(space), line.mid(space + 1));
+  }
+  return calls;
+}
+
+/**
+ * @brief Counts the decrypts the backend answers, with content or with a
+ * failure, from the moment it is created.
+ *
+ * A test that starts a decrypt through the tree (a click, Return, Ctrl+G)
+ * and answers it itself must still wait for the backend's own answer before
+ * its window goes: the backend outlives the window, and a late answer would
+ * otherwise land in the next test's window. The files are not encrypted, so
+ * with the real gpg the answer is a failure.
+ */
+class ShowAnswers {
+public:
+  ShowAnswers()
+      : m_shown(QtPassSettings::getPass(), &Pass::finishedShow),
+        m_failed(QtPassSettings::getPass(), &Pass::processErrorExit) {}
+
+  /// Spin until @p count answers arrived; false when they did not in time.
+  auto waitFor(int count, int timeoutMs = 10000) -> bool {
+    QElapsedTimer timer;
+    timer.start();
+    while (m_shown.count() + m_failed.count() < count &&
+           timer.elapsed() < timeoutMs) {
+      QTest::qWait(20);
+    }
+    return m_shown.count() + m_failed.count() >= count;
+  }
+
+private:
+  QSignalSpy m_shown;
+  QSignalSpy m_failed;
+};
+
 } // namespace
 
 class tst_mainwindow : public QObject {
   Q_OBJECT
 
   QTemporaryDir m_storeDir;
+  /// GNUPGHOME for every gpg this suite starts: the real gpg the tree clicks
+  /// run (on files that are not encrypted) must never open the user's
+  /// keyring, nor reach the user's agent.
+  QTemporaryDir m_gnupgHome;
   QScopedPointer<MainWindow> m_window;
   QString m_gpgPath;
 
@@ -144,16 +411,74 @@ private Q_SLOTS:
   void closeWindowHonoursHideOnClose();
   void closeEventSavesGeometryAlsoWhenHidingToTray();
 
+  void constructorAppliesMonospaceAndNoWrap();
+  void backendOutputReachesTheConsoleUnlessSensitive();
+  void faqOpensTheWebsite();
+  void clickingNothingClearsThePanel();
+  void staleDecryptDoesNotRepaintThePanel();
+  void hiddenContentIsClearedFromThePanelOnTheTimer();
+  void otpAnswerWithoutContentReportsTheFailedDecrypt();
+  void otpAnswerWithoutACodeSaysSo();
+  void otpNeedsASelectionAndTheSetting();
+  void editRequestIsIgnoredWhileEditIsDisabled();
+  void editPullsFirstWhenAutoPullIsOn();
+  void doubleClickEditsAnEntryButNotAFolder();
+  void pullAndPushRunGitInTheStore();
+  void grepModeChangesTheSearchBox();
+  void grepFindsContentAndNavigatesToTheEntry();
+  void deselectLeavesGrepModeWhenResultsAreShown();
+  void searchForAFolderWithoutFilesSelectsNothing();
+  void enterInTheSearchBoxOpensTheFirstMatch();
+  void messageFromAnotherInstanceShowsAndSearches();
+  void configDialogAcceptedReappliesTheSettings();
+  void configDialogCancelledChangesNothing();
+  void aboutBoxNamesTheProgramAndLicence();
+  void profilesFillTheBoxAndSwitchTheStore();
+  void trayIconFollowsTheSetting();
+  void keyPressesReachTheWindow();
+  void downArrowInTheSearchBoxMovesToTheTree();
+  void browserContextMenuBelongsToTheWindow();
+  void contextMenuOnEmptySpaceOffersFolderActions();
+  void contextMenuOnAPasswordOffersEditRenameDelete();
+  void contextMenuOnAFolderOffersSharing();
+  void shareMenuExportsThePublicKey();
+  void shareMenuReencryptAsksFirst();
+  void addFolderCreatesItWithAGpgId();
+  void addFolderRefusesEscapesAndDuplicates();
+  void renameFolderMovesIt();
+  void renamePasswordMovesIt();
+  void deleteNeedsASelection();
+  void deletePasswordAsksFirst();
+  void deleteFolderWarnsAboutStrayFiles();
+  void deleteLinkedFolderRemovesOnlyTheLink();
+  void usersDialogOpensForTheStoreButNotForALink();
+  void addPasswordOffersTheStoreFolders();
+  void reencryptCancelIsReportedInTheStatusBar();
+
 private:
   auto runFirstRunFlow(const std::function<bool(FirstRunWizard *)> &onWizard,
                        bool *initSucceeded) -> int;
   static void toolsAreaBars();
   auto toolsAreaBar(const QString &name) -> QWidget *;
+  void rebuildWindow(const std::function<void(AppSettings &)> &tweak);
+  auto rebuildWithFakeGpg(QTemporaryDir &scratch,
+                          const std::function<void(AppSettings &)> &tweak = {})
+      -> QString;
+  auto selectPath(const QString &absolutePath) -> bool;
+  auto treeView() -> QTreeView *;
+  auto browser() -> QTextBrowser *;
+  auto searchBox() -> QLineEdit *;
+  auto passwordName() -> QLabel *;
 };
 
 void tst_mainwindow::initTestCase() {
   isolateTestSettings();
   QVERIFY2(m_storeDir.isValid(), "temp store dir must be created");
+  QVERIFY2(m_gnupgHome.isValid(), "temp GNUPGHOME must be created");
+  // Pass::init() hands the inherited GNUPGHOME to every gpg it starts, and
+  // the blocking calls inherit the process environment: set it before the
+  // first backend is built.
+  QVERIFY(qputenv("GNUPGHOME", m_gnupgHome.path().toLocal8Bit()));
 
   // Minimal valid pass store: just a .gpg-id file
   QFile gpgId(QDir::cleanPath(
@@ -1741,6 +2066,1972 @@ void tst_mainwindow::firstRunWizardSetsUpTheStore() {
   QCOMPARE(QDir::cleanPath(after.passStore), store);
   QCOMPARE(after.gpgExecutable, gpg);
 #endif
+}
+
+// ---------------------------------------------------------------------------
+// Helpers for the tests below
+
+/**
+ * @brief Tear the window down, change the settings it will be built on, and
+ * build it again. save() also drops the cached backend, so the new window's
+ * Pass takes the changed settings too.
+ */
+void tst_mainwindow::rebuildWindow(
+    const std::function<void(AppSettings &)> &tweak) {
+  m_window.reset();
+  AppSettings s = QtPassSettings::load();
+  tweak(s);
+  QtPassSettings::save(s);
+  m_window.reset(new MainWindow);
+}
+
+/**
+ * @brief Rebuild the window over a fake gpg written into @p scratch, so
+ * every decrypt the window asks for succeeds with the file's own bytes and
+ * no keyring or agent is touched.
+ * @return The fake gpg's path; empty when it could not be written.
+ */
+auto tst_mainwindow::rebuildWithFakeGpg(
+    QTemporaryDir &scratch, const std::function<void(AppSettings &)> &tweak)
+    -> QString {
+  const QString gpg = writeFakeGpg(scratch.path());
+  if (gpg.isEmpty()) {
+    return {};
+  }
+  rebuildWindow([&](AppSettings &s) {
+    s.gpgExecutable = gpg;
+    s.useGit = false;
+    s.hideContent = false;
+    s.displayAsIs = false;
+    s.useAutoclearPanel = false;
+    s.useSelection = false;
+    s.useAutoclear = false;
+    s.clipBoardType = Enums::CLIPBOARD_NEVER;
+    if (tweak) {
+      tweak(s);
+    }
+  });
+  return gpg;
+}
+
+/// Make the entry or folder at @p absolutePath the tree's current index.
+auto tst_mainwindow::selectPath(const QString &absolutePath) -> bool {
+  auto *tree = treeView();
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  QModelIndex src;
+  QTRY_VERIFY_WITH_TIMEOUT_RETURN((src = fs->index(absolutePath)).isValid(),
+                                  5000, false);
+  tree->setCurrentIndex(proxy->mapFromSource(src));
+  return tree->currentIndex().isValid();
+}
+
+auto tst_mainwindow::treeView() -> QTreeView * {
+  return m_window->findChild<QTreeView *>(QStringLiteral("treeView"));
+}
+
+auto tst_mainwindow::browser() -> QTextBrowser * {
+  return m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+}
+
+auto tst_mainwindow::searchBox() -> QLineEdit * {
+  return m_window->findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+}
+
+auto tst_mainwindow::passwordName() -> QLabel * {
+  return m_window->findChild<QLabel *>(QStringLiteral("passwordName"));
+}
+
+// ---------------------------------------------------------------------------
+
+/**
+ * @brief The constructor honours the monospace and no-line-wrapping
+ *        preferences straight away, not only after a Settings round trip.
+ */
+void tst_mainwindow::constructorAppliesMonospaceAndNoWrap() {
+  rebuildWindow([](AppSettings &s) {
+    s.useMonospace = true;
+    s.noLineWrapping = true;
+  });
+  QCOMPARE(browser()->font().styleHint(), QFont::Monospace);
+  QCOMPARE(browser()->lineWrapMode(), QTextBrowser::NoWrap);
+
+  rebuildWindow([](AppSettings &s) {
+    s.useMonospace = false;
+    s.noLineWrapping = false;
+  });
+  QVERIFY2(browser()->font().styleHint() != QFont::Monospace,
+           "the default font comes back when the preference is off");
+  QCOMPARE(browser()->lineWrapMode(), QTextBrowser::WidgetWidth);
+}
+
+/**
+ * @brief Backend chatter lands in the console panel, stdout and stderr
+ *        alike, except for the processes whose output may hold secrets:
+ *        a decrypt's plaintext must never end up in a long-lived panel.
+ */
+void tst_mainwindow::backendOutputReachesTheConsoleUnlessSensitive() {
+  auto *console =
+      m_window->findChild<QTextEdit *>(QStringLiteral("processOutputEdit"));
+  QVERIFY2(console != nullptr, "processOutputEdit must exist");
+
+  emit QtPassSettings::getPass() -> finishedAnyWithPid(
+      QStringLiteral("pull-stdout-line"), QStringLiteral("pull-stderr-line"),
+      Enums::GIT_PULL);
+  const QString shown = console->toPlainText();
+  QVERIFY2(shown.contains(QStringLiteral("pull-stdout-line")),
+           qPrintable(shown));
+  QVERIFY2(shown.contains(QStringLiteral("pull-stderr-line")),
+           qPrintable(shown));
+
+  emit QtPassSettings::getPass()
+      -> finishedAnyWithPid(QStringLiteral("hunter2-plaintext"),
+                            QStringLiteral("gpg: decrypted"), Enums::PASS_SHOW);
+  QVERIFY2(!console->toPlainText().contains(QStringLiteral("hunter2")),
+           "a decrypt's output must not reach the console");
+  QVERIFY2(!console->toPlainText().contains(QStringLiteral("decrypted")),
+           "not even its stderr");
+}
+
+/**
+ * @brief Help > FAQ opens the FAQ page of the website. The desktop's URL
+ *        handler is replaced for the test so no browser starts.
+ */
+void tst_mainwindow::faqOpensTheWebsite() {
+  UrlCatcher catcher;
+  QDesktopServices::setUrlHandler(QStringLiteral("https"), &catcher,
+                                  "catchUrl");
+  const auto restore = qScopeGuard(
+      [] { QDesktopServices::unsetUrlHandler(QStringLiteral("https")); });
+
+  auto *faq = m_window->findChild<QAction *>(QStringLiteral("actionFaq"));
+  QVERIFY(faq != nullptr);
+  faq->trigger();
+  QCOMPARE(catcher.urls.size(), 1);
+  QCOMPARE(catcher.urls.first(),
+           QUrl(QStringLiteral("https://qtpass.org/faq")));
+}
+
+/**
+ * @brief A click that lands on nothing (the tree's current index invalid)
+ *        empties the panel and the name and leaves Edit disabled; Delete
+ *        stays enabled as before.
+ */
+void tst_mainwindow::clickingNothingClearsThePanel() {
+  m_window->passShowHandler(QStringLiteral("secret\nleftover line"));
+  QVERIFY(browser()->toPlainText().contains(QStringLiteral("leftover line")));
+  passwordName()->setText(QStringLiteral("stale name"));
+
+  treeView()->setCurrentIndex(QModelIndex());
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "on_treeView_clicked",
+                                    Qt::DirectConnection,
+                                    Q_ARG(QModelIndex, QModelIndex())));
+  QVERIFY2(passwordName()->text().isEmpty(),
+           qPrintable(passwordName()->text()));
+  QVERIFY2(browser()->toPlainText().isEmpty(),
+           qPrintable(browser()->toPlainText()));
+  auto *edit = m_window->findChild<QAction *>(QStringLiteral("actionEdit"));
+  auto *del = m_window->findChild<QAction *>(QStringLiteral("actionDelete"));
+  QVERIFY(edit != nullptr && del != nullptr);
+  QVERIFY(!edit->isEnabled());
+  QVERIFY(del->isEnabled());
+}
+
+/**
+ * @brief A slower decrypt of an entry the user has since left must not
+ *        repaint the panel: only the entry most recently asked for may.
+ */
+void tst_mainwindow::staleDecryptDoesNotRepaintThePanel() {
+  ShowAnswers answers;
+  QVERIFY(
+      selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("fresh")));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
+      Q_ARG(QModelIndex, treeView()->currentIndex())));
+  QCOMPARE(passwordName()->text(), QStringLiteral("fresh"));
+
+  m_window->passShowHandler(QStringLiteral("old-secret\nstale leftover"),
+                            QStringLiteral("stale"));
+  QVERIFY2(!browser()->toPlainText().contains(QStringLiteral("stale leftover")),
+           qPrintable(browser()->toPlainText()));
+
+  m_window->passShowHandler(QStringLiteral("new-secret\nfresh leftover"),
+                            QStringLiteral("fresh"));
+  QVERIFY2(browser()->toPlainText().contains(QStringLiteral("fresh leftover")),
+           qPrintable(browser()->toPlainText()));
+  QVERIFY2(answers.waitFor(1), "the click's own decrypt must come back");
+}
+
+/**
+ * @brief With "hide content" on, the panel shows a placeholder instead of the
+ *        entry, and with the panel autoclear on, the placeholder gives way
+ *        to the "hidden" notice when the timer fires.
+ */
+void tst_mainwindow::hiddenContentIsClearedFromThePanelOnTheTimer() {
+  rebuildWindow([](AppSettings &s) {
+    s.hideContent = true;
+    s.useAutoclearPanel = true;
+    s.autoclearPanelSeconds = 1;
+    s.clipBoardType = Enums::CLIPBOARD_NEVER;
+  });
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.hideContent = false;
+    s.useAutoclearPanel = false;
+    QtPassSettings::save(s);
+  });
+
+  m_window->passShowHandler(QStringLiteral("secret\nurl: example.org"));
+  QString shown = browser()->toPlainText();
+  QVERIFY2(shown.contains(QStringLiteral("Content hidden")), qPrintable(shown));
+  QVERIFY2(!shown.contains(QStringLiteral("example.org")), qPrintable(shown));
+
+  QTRY_VERIFY_WITH_TIMEOUT(browser()->toPlainText().contains(
+                               QStringLiteral("Password and content hidden")),
+                           3000);
+}
+
+/**
+ * @brief An OTP request answered with empty content is a failed decrypt,
+ *        which is said as such, and the interface is released again.
+ */
+void tst_mainwindow::otpAnswerWithoutContentReportsTheFailedDecrypt() {
+  AppSettings s = QtPassSettings::load();
+  s.useOtp = true;
+  QtPassSettings::save(s);
+  ShowAnswers answers;
+  QVERIFY(armOtpRequest(m_window.data(), m_storeDir.path(),
+                        QStringLiteral("otp-empty")));
+  QVERIFY(!treeView()->isEnabled());
+
+  m_window->otpFromFileToClipboard(QString(), QStringLiteral("otp-empty"));
+  QVERIFY2(browser()->toPlainText().contains(
+               QStringLiteral("Could not decrypt this password entry")),
+           qPrintable(browser()->toPlainText()));
+  QVERIFY(treeView()->isEnabled());
+  QVERIFY2(answers.waitFor(1), "Ctrl+G's own decrypt must come back");
+}
+
+/**
+ * @brief When the panel shows no code (content hidden) the answer is parsed
+ *        afresh; an entry without an otpauth line yields a clear message and
+ *        leaves the clipboard alone.
+ */
+void tst_mainwindow::otpAnswerWithoutACodeSaysSo() {
+  rebuildWindow([](AppSettings &s) {
+    s.useOtp = true;
+    s.hideContent = true;
+    s.useSelection = false;
+    s.useAutoclear = false;
+    s.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
+  });
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.hideContent = false;
+    QtPassSettings::save(s);
+  });
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("sentinel"));
+
+  ShowAnswers answers;
+  QVERIFY(armOtpRequest(m_window.data(), m_storeDir.path(),
+                        QStringLiteral("otp-none")));
+  m_window->passShowHandler(QStringLiteral("hunter2\nlogin: alice\n"),
+                            QStringLiteral("otp-none"));
+  m_window->otpFromFileToClipboard(QStringLiteral("hunter2\nlogin: alice\n"),
+                                   QStringLiteral("otp-none"));
+  QVERIFY2(browser()->toPlainText().contains(
+               QStringLiteral("No OTP code found in this password entry")),
+           qPrintable(browser()->toPlainText()));
+  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+
+  // The same, with an otpauth line: parsed and copied without a visible row.
+  QVERIFY(armOtpRequest(m_window.data(), m_storeDir.path(),
+                        QStringLiteral("otp-hidden")));
+  m_window->otpFromFileToClipboard(kOtpEntry, QStringLiteral("otp-hidden"));
+  QVERIFY2(looksLikeOtpCode(clip->text()),
+           qPrintable("expected a six-digit code, got: " + clip->text()));
+  QVERIFY2(answers.waitFor(2), "both Ctrl+G decrypts must come back");
+}
+
+/**
+ * @brief Ctrl+G without a selected entry, or with OTP switched off, says so
+ *        in the panel instead of failing silently.
+ */
+void tst_mainwindow::otpNeedsASelectionAndTheSetting() {
+  m_window->deselect();
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onOtp",
+                                    Qt::DirectConnection));
+  QVERIFY2(browser()->toPlainText().contains(
+               QStringLiteral("No password selected for OTP generation")),
+           qPrintable(browser()->toPlainText()));
+
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useOtp = false;
+    QtPassSettings::save(s);
+  }
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useOtp = true;
+    QtPassSettings::save(s);
+  });
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("otp-off")));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onOtp",
+                                    Qt::DirectConnection));
+  QVERIFY2(browser()->toPlainText().contains(
+               QStringLiteral("No OTP code found in this password entry")),
+           qPrintable(browser()->toPlainText()));
+  QVERIFY2(treeView()->isEnabled(), "nothing was started, nothing to wait for");
+}
+
+/**
+ * @brief A double-click on the panel edits the shown entry only while Edit
+ *        is available; with nothing selected it must not open a dialog.
+ */
+void tst_mainwindow::editRequestIsIgnoredWhileEditIsDisabled() {
+  auto *panel = m_window->findChild<PasswordDisplayPanel *>();
+  QVERIFY(panel != nullptr);
+  auto *edit = m_window->findChild<QAction *>(QStringLiteral("actionEdit"));
+  QVERIFY(edit != nullptr);
+  m_window->deselect();
+  QVERIFY(!edit->isEnabled());
+
+  int dialogs = 0;
+  ModalDriver driver([&dialogs](QWidget *w) {
+    ++dialogs;
+    answerBox(QMessageBox::Ok)(w);
+  });
+  emit panel->editRequested();
+  QTest::qWait(100);
+  QCOMPARE(dialogs, 0);
+}
+
+/**
+ * @brief Editing an entry with Git and auto-pull on first pulls, blocking,
+ *        and a failed pull is reported in the status bar; the edit dialog
+ *        then opens for the entry and asks the backend to decrypt it.
+ */
+void tst_mainwindow::editPullsFirstWhenAutoPullIsOn() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as the gpg and git stand-ins");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  const QString log = scratch.filePath(QStringLiteral("git.log"));
+  const QString git = writeFakeGit(scratch.path(), log, 1);
+  QVERIFY(!git.isEmpty());
+  QVERIFY(!rebuildWithFakeGpg(scratch, [&git](AppSettings &s) {
+             s.useGit = true;
+             s.autoPull = true;
+             s.gitExecutable = git;
+           }).isEmpty());
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false;
+    s.autoPull = false;
+    QtPassSettings::save(s);
+  });
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("edit-me")));
+  m_window->setUiElementsEnabled(true);
+  auto *edit = m_window->findChild<QAction *>(QStringLiteral("actionEdit"));
+  QVERIFY(edit != nullptr && edit->isEnabled());
+
+  QString dialogTitle;
+  ModalDriver driver([&dialogTitle](QWidget *w) {
+    if (auto *dialog = qobject_cast<PasswordDialog *>(w)) {
+      dialogTitle = dialog->windowTitle();
+      dialog->reject();
+      return;
+    }
+    answerBox(QMessageBox::Ok)(w);
+  });
+  QSignalSpy shown(QtPassSettings::getPass(), &Pass::finishedShow);
+  auto *panel = m_window->findChild<PasswordDisplayPanel *>();
+  QVERIFY(panel != nullptr);
+  emit panel->editRequested();
+
+  QVERIFY2(dialogTitle.contains(QStringLiteral("edit-me")),
+           qPrintable(QStringLiteral("dialog title: ") + dialogTitle));
+  const auto calls = fakeGitCalls(log);
+  QVERIFY2(calls.size() == 1,
+           qPrintable(QStringLiteral("one blocking pull expected, git ran %1 "
+                                     "times")
+                          .arg(calls.size())));
+  // The blocking pull names the store with -C: Executor::executeBlocking
+  // sets no working directory.
+  const QStringList args = calls.first().second.split(u' ');
+  QCOMPARE(args.size(), 3);
+  QCOMPARE(args.at(0), QStringLiteral("-C"));
+  QCOMPARE(QDir::cleanPath(args.at(1)), QDir::cleanPath(m_storeDir.path()));
+  QCOMPARE(args.at(2), QStringLiteral("pull"));
+  const QString status = m_window->statusBar()->currentMessage();
+  QVERIFY2(status.contains(QStringLiteral("Git pull failed")),
+           qPrintable(status));
+  QVERIFY2(status.contains(QStringLiteral("fake git says no")),
+           qPrintable(status));
+  QVERIFY2(shown.count() == 1 || shown.wait(3000),
+           "the dialog's decrypt must have been asked for");
+#endif
+}
+
+/**
+ * @brief A double-click on an entry opens the edit dialog for it and asks
+ *        the backend to decrypt it; a double-click on a folder opens nothing.
+ */
+void tst_mainwindow::doubleClickEditsAnEntryButNotAFolder() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  const QDir store(m_storeDir.path());
+  QVERIFY(store.mkpath(QStringLiteral("dbl-folder")));
+  QVERIFY(selectPath(store.filePath(QStringLiteral("dbl-folder"))));
+
+  int dialogs = 0;
+  QString dialogTitle;
+  ModalDriver driver([&](QWidget *w) {
+    ++dialogs;
+    if (auto *dialog = qobject_cast<PasswordDialog *>(w)) {
+      dialogTitle = dialog->windowTitle();
+      dialog->reject();
+      return;
+    }
+    answerBox(QMessageBox::Ok)(w);
+  });
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_treeView_doubleClicked", Qt::DirectConnection,
+      Q_ARG(QModelIndex, treeView()->currentIndex())));
+  QTest::qWait(100);
+  QCOMPARE(dialogs, 0);
+
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("dbl-entry")));
+  QSignalSpy shown(QtPassSettings::getPass(), &Pass::finishedShow);
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_treeView_doubleClicked", Qt::DirectConnection,
+      Q_ARG(QModelIndex, treeView()->currentIndex())));
+  QCOMPARE(dialogs, 1);
+  QVERIFY2(dialogTitle.contains(QStringLiteral("dbl-entry")),
+           qPrintable(QStringLiteral("dialog title: ") + dialogTitle));
+  QVERIFY2(shown.count() == 1 || shown.wait(5000),
+           "the dialog's decrypt must have been asked for");
+  QCOMPARE(shown.first().at(1).toString(), QStringLiteral("dbl-entry"));
+#endif
+}
+
+/**
+ * @brief The Pull and Push actions run `git pull` and `git push` in the
+ *        store through the backend, with the status bar saying so.
+ */
+void tst_mainwindow::pullAndPushRunGitInTheStore() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the git stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  const QString log = scratch.filePath(QStringLiteral("git.log"));
+  const QString git = writeFakeGit(scratch.path(), log, 0);
+  QVERIFY(!git.isEmpty());
+  rebuildWindow([&git](AppSettings &s) {
+    s.useGit = true;
+    s.gitExecutable = git;
+  });
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false;
+    QtPassSettings::save(s);
+  });
+  auto *pull = m_window->findChild<QAction *>(QStringLiteral("actionUpdate"));
+  auto *push = m_window->findChild<QAction *>(QStringLiteral("actionPush"));
+  QVERIFY(pull != nullptr && push != nullptr);
+
+  QSignalSpy pulled(QtPassSettings::getPass(), &Pass::finishedGitPull);
+  pull->trigger();
+  QCOMPARE(m_window->statusBar()->currentMessage(),
+           QStringLiteral("Updating password-store"));
+  QVERIFY2(pulled.count() == 1 || pulled.wait(5000), "git pull must finish");
+
+  QSignalSpy pushed(QtPassSettings::getPass(), &Pass::finishedGitPush);
+  push->trigger();
+  QVERIFY2(pushed.count() == 1 || pushed.wait(5000), "git push must finish");
+
+  // Both ran in the store (the executor's working directory), as bare
+  // `git pull` and `git push`.
+  const auto calls = fakeGitCalls(log);
+  QCOMPARE(calls.size(), 2);
+  QCOMPARE(calls.at(0).second, QStringLiteral("pull"));
+  QCOMPARE(calls.at(1).second, QStringLiteral("push"));
+  const QString store = QFileInfo(m_storeDir.path()).canonicalFilePath();
+  QCOMPARE(calls.at(0).first, store);
+  QCOMPARE(calls.at(1).first, store);
+#endif
+}
+
+/**
+ * @brief Toggling content search re-labels the search box, tells which regex
+ *        dialect applies (PCRE natively, POSIX BRE through pass), and
+ *        toggling it off restores the file filter's box.
+ */
+void tst_mainwindow::grepModeChangesTheSearchBox() {
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  QVERIFY(grep != nullptr && grep->isCheckable());
+  auto *search = searchBox();
+  search->setText(QStringLiteral("leftover filter"));
+
+  grep->setChecked(true);
+  QCOMPARE(search->placeholderText(), QStringLiteral("Search content (regex)"));
+  QVERIFY2(search->toolTip().contains(QStringLiteral("Perl-compatible")),
+           qPrintable(search->toolTip()));
+  QVERIFY2(search->text().isEmpty(), "entering grep mode clears the filter");
+
+  grep->setChecked(false);
+  QCOMPARE(search->placeholderText(), QStringLiteral("Search password"));
+  QVERIFY(search->toolTip().isEmpty());
+  QVERIFY(treeView()->isVisibleTo(m_window.data()));
+
+  // The pass backend greps with POSIX basic regular expressions.
+  QtPassSettings::setUsePass(true);
+  const auto restore = qScopeGuard([] { QtPassSettings::setUsePass(false); });
+  grep->setChecked(true);
+  QVERIFY2(search->toolTip().contains(QStringLiteral("POSIX")),
+           qPrintable(search->toolTip()));
+  grep->setChecked(false);
+}
+
+/**
+ * @brief Enter in content-search mode greps the store through the backend;
+ *        the matches are listed per entry, clicking a match opens that entry
+ *        in the tree, and Enter on an empty query drops the results.
+ */
+void tst_mainwindow::grepFindsContentAndNavigatesToTheEntry() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch, [](AppSettings &s) {
+             s.useGrepSearch = true;
+           }).isEmpty());
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("grep-target")));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  auto *results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(grep != nullptr && results != nullptr);
+  grep->setChecked(true);
+
+  QSignalSpy finished(QtPassSettings::getPass(), &Pass::finishedGrep);
+  searchBox()->setText(QStringLiteral("really encrypted"));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_lineEdit_returnPressed", Qt::DirectConnection));
+  QCOMPARE(m_window->statusBar()->currentMessage(),
+           QStringLiteral("Searching…"));
+  QVERIFY2(finished.count() == 1 || finished.wait(10000),
+           "the grep must finish");
+  QTRY_VERIFY(results->isVisible());
+  QVERIFY(!treeView()->isVisible());
+  QVERIFY2(results->topLevelItemCount() >= 1, "every fake entry matches");
+  QVERIFY2(
+      m_window->statusBar()->currentMessage().contains(QStringLiteral("match")),
+      qPrintable(m_window->statusBar()->currentMessage()));
+  QTreeWidgetItem *entry = nullptr;
+  for (int i = 0; i < results->topLevelItemCount(); ++i) {
+    if (results->topLevelItem(i)->text(0) == QLatin1String("grep-target")) {
+      entry = results->topLevelItem(i);
+    }
+  }
+  QVERIFY2(entry != nullptr, "the entry written for this test is listed");
+  QCOMPARE(entry->childCount(), 1);
+  QCOMPARE(entry->child(0)->text(0), QStringLiteral("not really encrypted"));
+
+  // Clicking the match line opens the entry: the tree is back, current on
+  // it, and the fake decrypt lands in the panel. With the panel autoclear on
+  // the matches (which are content) are dropped from the list as well.
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useAutoclearPanel = true;
+    QtPassSettings::save(s);
+  }
+  QSignalSpy shown(QtPassSettings::getPass(), &Pass::finishedShow);
+  emit results->itemClicked(entry->child(0), 0);
+  QCOMPARE(passwordName()->text(), QStringLiteral("grep-target"));
+  QVERIFY(treeView()->isVisible());
+  QVERIFY(!results->isVisible());
+  QCOMPARE(results->topLevelItemCount(), 0);
+  QVERIFY2(shown.count() == 1 || shown.wait(5000), "the entry is decrypted");
+  QCOMPARE(shown.first().at(1).toString(), QStringLiteral("grep-target"));
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useAutoclearPanel = false;
+    QtPassSettings::save(s);
+  }
+
+  // Enter on an empty query while a search runs cancels it: the wait cursor
+  // goes, and the results arriving later are discarded.
+  finished.clear();
+  searchBox()->setText(QStringLiteral("really"));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_lineEdit_returnPressed", Qt::DirectConnection));
+  QVERIFY2(QApplication::overrideCursor() != nullptr,
+           "a running search shows the wait cursor");
+  searchBox()->clear();
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_lineEdit_returnPressed", Qt::DirectConnection));
+  QVERIFY2(QApplication::overrideCursor() == nullptr,
+           "the cancel restores the cursor");
+  QVERIFY(!results->isVisible());
+  QVERIFY2(finished.count() == 1 || finished.wait(10000),
+           "the cancelled grep still finishes");
+  QVERIFY2(!results->isVisible() && results->topLevelItemCount() == 0,
+           "results of a cancelled search are not shown");
+  QVERIFY(treeView()->isEnabled());
+
+  // Leaving grep mode while a search runs restores the cursor too.
+  finished.clear();
+  searchBox()->setText(QStringLiteral("really"));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_lineEdit_returnPressed", Qt::DirectConnection));
+  QVERIFY(QApplication::overrideCursor() != nullptr);
+  grep->setChecked(false);
+  QVERIFY2(QApplication::overrideCursor() == nullptr,
+           "leaving grep mode restores the cursor");
+  QVERIFY2(finished.count() == 1 || finished.wait(10000),
+           "the abandoned grep still finishes");
+  QVERIFY2(!results->isVisible() && results->topLevelItemCount() == 0,
+           "and shows nothing outside grep mode");
+#endif
+}
+
+/**
+ * @brief Clearing the panel while grep results are on screen (the deselect
+ *        of an empty click) puts the tree back and leaves grep mode, with
+ *        the search box relabelled and the grep button released.
+ */
+void tst_mainwindow::deselectLeavesGrepModeWhenResultsAreShown() {
+  rebuildWindow([](AppSettings &s) {
+    s.useGrepSearch = true;
+    s.useAutoclearPanel = false;
+    s.autoclearPanelSeconds = 1;
+  });
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  auto *results =
+      m_window->findChild<QTreeWidget *>(QStringLiteral("grepResultsList"));
+  QVERIFY(grep != nullptr && results != nullptr);
+  grep->setChecked(true);
+
+  m_window->onGrepFinished(
+      {{QStringLiteral("work/acme/vpn"), {QStringLiteral("login: alice")}}});
+  QTRY_VERIFY(results->isVisible());
+  QCOMPARE(results->topLevelItemCount(), 1);
+  QCOMPARE(results->topLevelItem(0)->child(0)->text(0),
+           QStringLiteral("login: alice"));
+
+  m_window->deselect();
+  QVERIFY(!results->isVisible());
+  QVERIFY(treeView()->isVisible());
+  QVERIFY2(!grep->isChecked(), "grep mode is left");
+  QCOMPARE(searchBox()->placeholderText(), QStringLiteral("Search password"));
+
+  // No matches: the tree stays and the status bar says so.
+  grep->setChecked(true);
+  m_window->onGrepFinished({});
+  QCOMPARE(m_window->statusBar()->currentMessage(),
+           QStringLiteral("No matches found."));
+  QVERIFY(!results->isVisible());
+
+  // With the panel autoclear on, matches (content) are cleared by its timer.
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useAutoclearPanel = true;
+    QtPassSettings::save(s);
+  }
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useAutoclearPanel = false;
+    QtPassSettings::save(s);
+  });
+  m_window->onGrepFinished(
+      {{QStringLiteral("work/acme/vpn"), {QStringLiteral("login: alice")}}});
+  QVERIFY(results->isVisible());
+  QTRY_VERIFY_WITH_TIMEOUT(!results->isVisible(), 3000);
+  QCOMPARE(results->topLevelItemCount(), 0);
+  QVERIFY2(browser()->toPlainText().contains(
+               QStringLiteral("Password and content hidden")),
+           qPrintable(browser()->toPlainText()));
+  QVERIFY2(!grep->isChecked(), "the timer's clear leaves grep mode too");
+}
+
+/**
+ * @brief A filter that matches only a folder without any entry selects
+ *        nothing: the first-file search comes back empty-handed rather than
+ *        selecting the folder, and Edit and Delete stay disabled.
+ */
+void tst_mainwindow::searchForAFolderWithoutFilesSelectsNothing() {
+  QVERIFY(QDir(m_storeDir.path()).mkpath(QStringLiteral("hollow-folder")));
+  QVERIFY(selectPath(
+      QDir(m_storeDir.path()).filePath(QStringLiteral("hollow-folder"))));
+  searchBox()->setText(QStringLiteral("hollow-folder"));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  auto *tree = treeView();
+  QVERIFY2(tree->model()->rowCount(tree->rootIndex()) >= 1,
+           "the folder itself matches the filter");
+  QVERIFY2(!tree->currentIndex().isValid(),
+           "no file to select in a folder without files");
+  auto *edit = m_window->findChild<QAction *>(QStringLiteral("actionEdit"));
+  auto *del = m_window->findChild<QAction *>(QStringLiteral("actionDelete"));
+  QVERIFY(!edit->isEnabled() && !del->isEnabled());
+
+  // Emptying the box collapses the tree and deselects.
+  passwordName()->setText(QStringLiteral("stale"));
+  searchBox()->clear();
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  QVERIFY(passwordName()->text().isEmpty());
+  QVERIFY(!tree->isExpanded(tree->model()->index(0, 0, tree->rootIndex())));
+}
+
+/**
+ * @brief Enter in the search box opens the first entry the filter left: it
+ *        becomes current and is decrypted into the panel.
+ */
+void tst_mainwindow::enterInTheSearchBoxOpensTheFirstMatch() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("enter-me")));
+  treeView()->setCurrentIndex(QModelIndex());
+
+  searchBox()->setText(QStringLiteral("enter-me"));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  QSignalSpy shown(QtPassSettings::getPass(), &Pass::finishedShow);
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_lineEdit_returnPressed", Qt::DirectConnection));
+  QCOMPARE(passwordName()->text(), QStringLiteral("enter-me"));
+  QVERIFY2(shown.count() == 1 || shown.wait(5000), "the entry is decrypted");
+  QCOMPARE(shown.first().at(1).toString(), QStringLiteral("enter-me"));
+#endif
+}
+
+/**
+ * @brief A message from a second instance brings the window up: empty, it
+ *        focuses the search box; with text, it types that into the search
+ *        box and presses Enter, which opens the first entry the tree offers
+ *        (the filter itself follows on the search timer) and decrypts it.
+ */
+void tst_mainwindow::messageFromAnotherInstanceShowsAndSearches() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("from-afar")));
+  m_window->hide();
+
+  m_window->messageAvailable(QString());
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  QVERIFY2(m_window->isVisible(), "an empty message still shows the window");
+  QCOMPARE(m_window->focusWidget(), searchBox());
+
+  QSignalSpy shown(QtPassSettings::getPass(), &Pass::finishedShow);
+  m_window->messageAvailable(QStringLiteral("from-afar"));
+  QCOMPARE(searchBox()->text(), QStringLiteral("from-afar"));
+  QVERIFY2(m_window->statusBar()->currentMessage().contains(
+               QStringLiteral("Looking for: from-afar")),
+           qPrintable(m_window->statusBar()->currentMessage()));
+  QVERIFY2(!passwordName()->text().isEmpty(),
+           "Enter on the query opened an entry");
+  QVERIFY2(shown.count() >= 1 || shown.wait(5000), "and decrypted it");
+  QCOMPARE(shown.first().at(1).toString(), passwordName()->text());
+#endif
+}
+
+/**
+ * @brief Settings OK re-applies what the dialog changed without a restart:
+ *        the browser font and wrapping, the menu bar, the tray icon, and a
+ *        grep mode that is left when content search is switched off.
+ */
+void tst_mainwindow::configDialogAcceptedReappliesTheSettings() {
+#ifdef Q_OS_MACOS
+  QSKIP("the menu bar is the system's on macOS");
+#else
+  rebuildWindow([](AppSettings &s) {
+    s.useGrepSearch = true;
+    s.useMonospace = false;
+    s.noLineWrapping = false;
+    s.showMenuBar = false;
+  });
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useMonospace = false;
+    s.noLineWrapping = false;
+    s.showMenuBar = false;
+    s.useGrepSearch = false;
+    s.useTrayIcon = false;
+    QtPassSettings::save(s);
+  });
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  QVERIFY(grep != nullptr);
+  grep->setChecked(true);
+  QCOMPARE(searchBox()->placeholderText(),
+           QStringLiteral("Search content (regex)"));
+  {
+    // What the user ticks in the dialog: it reads these when it opens.
+    AppSettings s = QtPassSettings::load();
+    s.useMonospace = true;
+    s.noLineWrapping = true;
+    s.showMenuBar = true;
+    s.useGrepSearch = false;
+    s.useTrayIcon = true;
+    QtPassSettings::save(s);
+  }
+
+  ModalDriver driver([](QWidget *w) {
+    if (auto *dialog = qobject_cast<ConfigDialog *>(w)) {
+      dialog->accept();
+      return;
+    }
+    answerBox(QMessageBox::Ok)(w);
+  });
+  auto *config = m_window->findChild<QAction *>(QStringLiteral("actionConfig"));
+  QVERIFY(config != nullptr);
+  config->trigger();
+
+  QCOMPARE(driver.seen, 1);
+  QCOMPARE(browser()->font().styleHint(), QFont::Monospace);
+  QCOMPARE(browser()->lineWrapMode(), QTextBrowser::NoWrap);
+  QVERIFY2(m_window->menuBar()->isVisibleTo(m_window.data()),
+           "the menu bar follows the accepted setting");
+  QVERIFY2(!grep->isChecked(), "content search off leaves grep mode");
+  QCOMPARE(searchBox()->placeholderText(), QStringLiteral("Search password"));
+  QVERIFY2(!grep->isVisibleTo(m_window.data()), "and hides the button");
+  // The tray icon is created on the spot, where the desktop offers a tray.
+  QCOMPARE(m_window->findChild<TrayIcon *>() != nullptr,
+           QSystemTrayIcon::isSystemTrayAvailable());
+#endif
+}
+
+/**
+ * @brief A cancelled Settings dialog reports the cancel and changes nothing
+ *        about the window.
+ */
+void tst_mainwindow::configDialogCancelledChangesNothing() {
+  const QTextBrowser::LineWrapMode wrap = browser()->lineWrapMode();
+  ModalDriver driver(answerBox(QMessageBox::Cancel));
+  QVERIFY2(!m_window->config(), "a rejected dialog is a cancel");
+  QCOMPARE(driver.seen, 1);
+  QCOMPARE(browser()->lineWrapMode(), wrap);
+}
+
+/**
+ * @brief Help > About shows the standard box with the program name, the
+ *        project link and the licence.
+ */
+void tst_mainwindow::aboutBoxNamesTheProgramAndLicence() {
+  ModalDriver driver(answerBox(QMessageBox::Ok));
+  auto *about = m_window->findChild<QAction *>(QStringLiteral("actionAbout"));
+  QVERIFY(about != nullptr);
+  about->trigger();
+  QCOMPARE(driver.seen, 1);
+  QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("About QtPass")});
+  const QString text = driver.boxTexts.value(0);
+  QVERIFY2(text.contains(QStringLiteral("QtPass ")), qPrintable(text));
+  QVERIFY2(text.contains(QStringLiteral("qtpass.org")), qPrintable(text));
+  QVERIFY2(text.contains(QStringLiteral("GNU GPL")), qPrintable(text));
+  QVERIFY2(text.contains(QString::number(QDate::currentDate().year())),
+           qPrintable(text));
+}
+
+/**
+ * @brief With profiles configured the profile box lists them, the active
+ *        one selected, and picking another switches the store the tree
+ *        shows and the settings point at.
+ */
+void tst_mainwindow::profilesFillTheBoxAndSwitchTheStore() {
+  QTemporaryDir other;
+  QVERIFY(other.isValid());
+  const QString otherStore = QDir::cleanPath(other.path());
+  {
+    QFile gpgId(QDir(otherStore).filePath(QStringLiteral(".gpg-id")));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly));
+    gpgId.write("0000000000000000\n");
+  }
+  const QString mainStore = QDir::cleanPath(m_storeDir.path());
+  Profiles profiles;
+  Profile mainProfile;
+  mainProfile.path = mainStore;
+  Profile otherProfile;
+  otherProfile.path = otherStore;
+  otherProfile.useGit = false;
+  profiles.insert(QStringLiteral("main"), mainProfile);
+  profiles.insert(QStringLiteral("other"), otherProfile);
+  QtPassSettings::setProfiles(profiles);
+  rebuildWindow(
+      [](AppSettings &s) { s.activeProfile = QStringLiteral("main"); });
+  const auto restore = qScopeGuard([this] {
+    m_window.reset();
+    QtPassSettings::setProfiles({});
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile.clear();
+    s.passStore = QDir::cleanPath(m_storeDir.path());
+    QtPassSettings::save(s);
+  });
+
+  auto *box = m_window->findChild<QComboBox *>(QStringLiteral("profileBox"));
+  auto *widget =
+      m_window->findChild<QWidget *>(QStringLiteral("profileWidget"));
+  QVERIFY(box != nullptr && widget != nullptr);
+  QVERIFY2(widget->isVisibleTo(m_window.data()),
+           "the profile row shows once profiles exist");
+  QVERIFY(box->isEnabled());
+  QCOMPARE(box->count(), 2);
+  QCOMPARE(box->itemText(0), QStringLiteral("main"));
+  QCOMPARE(box->itemText(1), QStringLiteral("other"));
+  QCOMPARE(box->currentText(), QStringLiteral("main"));
+
+  passwordName()->setText(QStringLiteral("stale"));
+  box->setCurrentText(QStringLiteral("other"));
+  QCOMPARE(m_window->statusBar()->currentMessage(),
+           QStringLiteral("Profile changed to other"));
+  const AppSettings after = QtPassSettings::load();
+  QCOMPARE(QDir::cleanPath(after.passStore), otherStore);
+  QCOMPARE(after.activeProfile, QStringLiteral("other"));
+  QVERIFY2(!after.useGit, "the profile's own Git flag is taken over");
+  QVERIFY2(passwordName()->text().isEmpty(), "the switch deselects");
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(treeView()->model());
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  QCOMPARE(QDir::cleanPath(fs->rootPath()), otherStore);
+
+  // The handler ignores the profile that is already active (the box does
+  // not even emit for it, so call the slot as the box would).
+  m_window->statusBar()->clearMessage();
+  passwordName()->setText(QStringLiteral("kept"));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_profileBox_currentTextChanged", Qt::DirectConnection,
+      Q_ARG(QString, QStringLiteral("other"))));
+  QVERIFY(m_window->statusBar()->currentMessage().isEmpty());
+  QCOMPARE(passwordName()->text(), QStringLiteral("kept"));
+}
+
+/**
+ * @brief restoreWindow() creates the tray icon when the setting asks for
+ *        one and drops it again when it does not; where no system tray is
+ *        available the icon is released straight away. "Start minimized"
+ *        hides the window a moment later.
+ */
+void tst_mainwindow::trayIconFollowsTheSetting() {
+  const bool trayAvailable = QSystemTrayIcon::isSystemTrayAvailable();
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useTrayIcon = true;
+    s.startMinimized = true;
+    QtPassSettings::save(s);
+  }
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.useTrayIcon = false;
+    s.startMinimized = false;
+    QtPassSettings::save(s);
+  });
+
+  m_window->restoreWindow();
+  auto *tray = m_window->findChild<TrayIcon *>();
+  QCOMPARE(tray != nullptr, trayAvailable);
+  QTRY_VERIFY2_WITH_TIMEOUT(!m_window->isVisible(), "start minimized hides",
+                            2000);
+
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useTrayIcon = false;
+    QtPassSettings::save(s);
+  }
+  m_window->restoreWindow();
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY2(m_window->findChild<TrayIcon *>() == nullptr,
+           "the tray icon goes when the setting is switched off");
+}
+
+/**
+ * @brief Keys the window handles itself: Escape empties the search box,
+ *        Return opens the current entry, Delete with nothing selected asks
+ *        nothing (it used to be able to delete the whole store, #556).
+ */
+void tst_mainwindow::keyPressesReachTheWindow() {
+  ShowAnswers answers;
+  searchBox()->setText(QStringLiteral("typed"));
+  QKeyEvent escape(QEvent::KeyPress, Qt::Key_Escape, Qt::NoModifier);
+  QApplication::sendEvent(m_window.data(), &escape);
+  QVERIFY2(searchBox()->text().isEmpty(), "Escape clears the search box");
+
+  treeView()->setCurrentIndex(QModelIndex());
+  int dialogs = 0;
+  ModalDriver driver([&dialogs](QWidget *w) {
+    ++dialogs;
+    answerBox(QMessageBox::No)(w);
+  });
+  QKeyEvent del(QEvent::KeyPress, Qt::Key_Delete, Qt::NoModifier);
+  QApplication::sendEvent(m_window.data(), &del);
+  QTest::qWait(100);
+  QCOMPARE(dialogs, 0);
+
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("return-me")));
+  QKeyEvent ret(QEvent::KeyPress, Qt::Key_Return, Qt::NoModifier);
+  QApplication::sendEvent(m_window.data(), &ret);
+  QCOMPARE(passwordName()->text(), QStringLiteral("return-me"));
+  QVERIFY2(answers.waitFor(1), "Return's own decrypt must come back");
+}
+
+/**
+ * @brief Arrow down in the search box hands the focus to the tree, so the
+ *        keyboard goes on to the filtered entries.
+ */
+void tst_mainwindow::downArrowInTheSearchBoxMovesToTheTree() {
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  searchBox()->setFocus();
+  QCOMPARE(m_window->focusWidget(), searchBox());
+
+  QKeyEvent down(QEvent::KeyPress, Qt::Key_Down, Qt::NoModifier);
+  QApplication::sendEvent(searchBox(), &down);
+  QCOMPARE(m_window->focusWidget(), treeView());
+}
+
+/**
+ * @brief The browser's context menu is reparented to the main window, so a
+ *        stylesheet on the browser cannot leak into it.
+ */
+void tst_mainwindow::browserContextMenuBelongsToTheWindow() {
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  QWidget *menuParent = nullptr;
+  bool wasMenu = false;
+  ModalDriver driver([&](QWidget *w) {
+    wasMenu = qobject_cast<QMenu *>(w) != nullptr;
+    menuParent = w->parentWidget();
+    w->close();
+  });
+  emit browser() -> customContextMenuRequested(QPoint(5, 5));
+  QCOMPARE(driver.seen, 1);
+  QVERIFY(wasMenu);
+  QCOMPARE(menuParent, m_window.data());
+}
+
+namespace {
+/// The texts of a menu's actions, separators as "-".
+auto actionTexts(QMenu *menu) -> QStringList {
+  QStringList texts;
+  for (QAction *action : menu->actions()) {
+    texts << (action->isSeparator() ? QStringLiteral("-") : action->text());
+  }
+  return texts;
+}
+
+auto actionByText(QMenu *menu, const QString &text) -> QAction * {
+  for (QAction *action : menu->actions()) {
+    if (action->text() == text) {
+      return action;
+    }
+  }
+  return nullptr;
+}
+} // namespace
+
+/**
+ * @brief Right-clicking empty space in the tree offers the folder actions
+ *        for the store root and no entry actions; "Open folder" hands the
+ *        store to the file manager.
+ */
+void tst_mainwindow::contextMenuOnEmptySpaceOffersFolderActions() {
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  // An impossible filter empties the tree, so any point is empty space.
+  searchBox()->setText(QStringLiteral("no-such-entry-anywhere"));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  auto *del = m_window->findChild<QAction *>(QStringLiteral("actionDelete"));
+  del->setEnabled(true);
+
+  UrlCatcher catcher;
+  QDesktopServices::setUrlHandler(QStringLiteral("file"), &catcher, "catchUrl");
+  const auto restore = qScopeGuard(
+      [] { QDesktopServices::unsetUrlHandler(QStringLiteral("file")); });
+
+  QStringList texts;
+  ModalDriver driver([&texts](QWidget *w) {
+    auto *menu = qobject_cast<QMenu *>(w);
+    if (menu == nullptr) {
+      w->close();
+      return;
+    }
+    texts = actionTexts(menu);
+    if (QAction *open = actionByText(
+            menu, QStringLiteral("Open folder with file manager"))) {
+      open->trigger();
+    }
+    menu->close();
+  });
+  emit treeView() -> customContextMenuRequested(QPoint(10, 10));
+  QCOMPARE(driver.seen, 1);
+  QCOMPARE(texts, (QStringList{QStringLiteral("Open folder with file manager"),
+                               QStringLiteral("Add folder"),
+                               QStringLiteral("Add password"),
+                               QStringLiteral("Users")}));
+  QVERIFY2(!del->isEnabled(), "nothing is selected, nothing to delete");
+  QCOMPARE(catcher.urls.size(), 1);
+  QCOMPARE(QDir::cleanPath(catcher.urls.first().toLocalFile()),
+           QDir::cleanPath(m_storeDir.path()));
+}
+
+/**
+ * @brief Right-clicking an entry offers Edit, Rename password and Delete,
+ *        and nothing meant for folders.
+ */
+void tst_mainwindow::contextMenuOnAPasswordOffersEditRenameDelete() {
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("menu-entry")));
+  searchBox()->setText(QStringLiteral("menu-entry"));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  auto *tree = treeView();
+  QTRY_VERIFY(tree->currentIndex().isValid());
+  const QPoint pos = tree->visualRect(tree->currentIndex()).center();
+  QVERIFY(tree->indexAt(pos) == tree->currentIndex());
+
+  QStringList texts;
+  ModalDriver driver([&texts](QWidget *w) {
+    if (auto *menu = qobject_cast<QMenu *>(w)) {
+      texts = actionTexts(menu);
+    }
+    w->close();
+  });
+  emit tree->customContextMenuRequested(pos);
+  QCOMPARE(driver.seen, 1);
+  QCOMPARE(texts, (QStringList{QStringLiteral("Edit"), QStringLiteral("-"),
+                               QStringLiteral("Rename password"),
+                               QStringLiteral("Delete")}));
+}
+
+/**
+ * @brief Right-clicking a folder offers the folder actions, Rename folder,
+ *        Delete and a Share submenu whose entries are enabled when a .gpg-id
+ *        and gpg are at hand; "What is this?" explains sharing.
+ */
+void tst_mainwindow::contextMenuOnAFolderOffersSharing() {
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  QVERIFY(QDir(m_storeDir.path()).mkpath(QStringLiteral("shared-folder")));
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("shared-folder/inside")));
+  QVERIFY(selectPath(
+      QDir(m_storeDir.path()).filePath(QStringLiteral("shared-folder"))));
+  searchBox()->setText(QStringLiteral("shared-folder"));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  QVERIFY(selectPath(
+      QDir(m_storeDir.path()).filePath(QStringLiteral("shared-folder"))));
+  auto *tree = treeView();
+  const QPoint pos = tree->visualRect(tree->currentIndex()).center();
+  QVERIFY(tree->indexAt(pos) == tree->currentIndex());
+
+  QStringList texts;
+  QStringList shareTexts;
+  QList<bool> shareEnabled;
+  ModalDriver driver([&](QWidget *w) {
+    auto *menu = qobject_cast<QMenu *>(w);
+    if (menu == nullptr) {
+      answerBox(QMessageBox::Ok)(w);
+      return;
+    }
+    texts = actionTexts(menu);
+    QPointer<QMenu> keep(menu);
+    if (QAction *share = actionByText(menu, QStringLiteral("Share"))) {
+      QMenu *sub = share->menu();
+      shareTexts = actionTexts(sub);
+      for (QAction *action : sub->actions()) {
+        shareEnabled << action->isEnabled();
+      }
+      if (QAction *help = actionByText(sub, QStringLiteral("What is this?"))) {
+        help->trigger(); // opens a box; the driver answers it from a tick
+      }
+    }
+    if (keep) {
+      keep->close();
+    }
+  });
+  emit tree->customContextMenuRequested(pos);
+  QCOMPARE(texts,
+           (QStringList{QStringLiteral("Open folder with file manager"),
+                        QStringLiteral("Add folder"),
+                        QStringLiteral("Add password"), QStringLiteral("Users"),
+                        QStringLiteral("-"), QStringLiteral("Rename folder"),
+                        QStringLiteral("Delete"), QStringLiteral("Share")}));
+  QCOMPARE(shareTexts, (QStringList{QStringLiteral("Re-encrypt all passwords"),
+                                    QStringLiteral("Export my public key..."),
+                                    QStringLiteral("Add recipient..."),
+                                    QStringLiteral("What is this?")}));
+  QCOMPARE(shareEnabled, (QList<bool>{true, true, true, true}));
+  QCOMPARE(driver.seen, 2);
+  QCOMPARE(driver.boxTitles,
+           QStringList{QStringLiteral("Sharing passwords with GPG")});
+  QVERIFY2(driver.boxTexts.value(0).contains(
+               QStringLiteral("Export your public key")),
+           qPrintable(driver.boxTexts.value(0)));
+}
+
+namespace {
+/**
+ * Open the tree's context menu on @p folder (the tree filtered to it) and
+ * trigger the Share submenu action @p actionText; everything it opens is
+ * handed to @p onDialog. Returns false when the menu or the action was not
+ * found.
+ */
+auto triggerShareAction(MainWindow *window, const QString &storeDir,
+                        const QString &folder, const QString &actionText,
+                        const ModalDriver::Handler &onDialog,
+                        QStringList *boxTitles = nullptr,
+                        QStringList *boxTexts = nullptr,
+                        const std::function<void()> &beforeTrigger = {})
+    -> bool {
+  auto *tree = window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *search = window->findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  const QString path = QDir(storeDir).filePath(folder);
+  QModelIndex src;
+  QTRY_VERIFY_WITH_TIMEOUT_RETURN((src = fs->index(path)).isValid(), 5000,
+                                  false);
+  search->setText(folder);
+  QMetaObject::invokeMethod(window, "onTimeoutSearch", Qt::DirectConnection);
+  tree->setCurrentIndex(proxy->mapFromSource(fs->index(path)));
+  if (!tree->currentIndex().isValid()) {
+    return false;
+  }
+  const QPoint pos = tree->visualRect(tree->currentIndex()).center();
+  if (tree->indexAt(pos) != tree->currentIndex()) {
+    return false;
+  }
+  bool found = false;
+  ModalDriver driver([&](QWidget *w) {
+    auto *menu = qobject_cast<QMenu *>(w);
+    if (menu == nullptr) {
+      onDialog(w);
+      return;
+    }
+    QPointer<QMenu> keep(menu);
+    if (QAction *share = actionByText(menu, QStringLiteral("Share"))) {
+      if (QAction *action = actionByText(share->menu(), actionText)) {
+        found = true;
+        if (beforeTrigger) {
+          beforeTrigger();
+        }
+        action->trigger();
+      }
+    }
+    if (keep) {
+      keep->close();
+    }
+  });
+  emit tree->customContextMenuRequested(pos);
+  if (boxTitles != nullptr) {
+    *boxTitles = driver.boxTitles;
+  }
+  if (boxTexts != nullptr) {
+    *boxTexts = driver.boxTexts;
+  }
+  return found;
+}
+} // namespace
+
+/**
+ * @brief Share > Export my public key explains itself when no signing key
+ *        is configured, and with one runs gpg --export and shows the armored
+ *        key in the export dialog.
+ */
+void tst_mainwindow::shareMenuExportsThePublicKey() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  const QString gpg = rebuildWithFakeGpg(
+      scratch, [](AppSettings &s) { s.passSigningKey.clear(); });
+  QVERIFY(!gpg.isEmpty());
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  QVERIFY(QDir(m_storeDir.path()).mkpath(QStringLiteral("export-folder")));
+
+  QStringList titles;
+  QStringList texts;
+  QVERIFY(triggerShareAction(m_window.data(), m_storeDir.path(),
+                             QStringLiteral("export-folder"),
+                             QStringLiteral("Export my public key..."),
+                             answerBox(QMessageBox::Ok), &titles, &texts));
+  QCOMPARE(titles, QStringList{QStringLiteral("Export public key")});
+  QVERIFY2(texts.value(0).contains(QStringLiteral("No signing key")),
+           qPrintable(texts.value(0)));
+
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey = QStringLiteral("31850CF72D9CDDE9");
+    QtPassSettings::save(s);
+  }
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey.clear();
+    QtPassSettings::save(s);
+  });
+  QString exported;
+  QVERIFY(triggerShareAction(
+      m_window.data(), m_storeDir.path(), QStringLiteral("export-folder"),
+      QStringLiteral("Export my public key..."), [&exported](QWidget *w) {
+        if (auto *dialog = qobject_cast<ExportPublicKeyDialog *>(w)) {
+          if (auto *text = dialog->findChild<QPlainTextEdit *>()) {
+            exported = text->toPlainText();
+          } else if (auto *edit = dialog->findChild<QTextEdit *>()) {
+            exported = edit->toPlainText();
+          }
+          dialog->reject();
+          return;
+        }
+        answerBox(QMessageBox::Ok)(w);
+      }));
+  QVERIFY2(exported.contains(QStringLiteral("BEGIN PGP PUBLIC KEY BLOCK")),
+           qPrintable(QStringLiteral("export dialog showed: ") + exported));
+  QVERIFY2(exported.contains(QStringLiteral("mQINBFakeKey")),
+           qPrintable(exported));
+
+  // gpg refusing the export: reported with gpg's own words.
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey = QStringLiteral("NOKEY");
+    QtPassSettings::save(s);
+  }
+  QVERIFY(triggerShareAction(m_window.data(), m_storeDir.path(),
+                             QStringLiteral("export-folder"),
+                             QStringLiteral("Export my public key..."),
+                             answerBox(QMessageBox::Ok), &titles, &texts));
+  QCOMPARE(titles, QStringList{QStringLiteral("Export public key")});
+  QVERIFY2(texts.value(0).contains(
+               QStringLiteral("Could not export public key for NOKEY")),
+           qPrintable(texts.value(0)));
+  QVERIFY2(texts.value(0).contains(QStringLiteral("nothing exported")),
+           qPrintable(texts.value(0)));
+#endif
+}
+
+/**
+ * @brief Share > Re-encrypt asks before rewriting anything and does nothing
+ *        on No; a folder that vanished since the menu opened is reported
+ *        instead of asked about. Add recipient opens the users dialog.
+ */
+void tst_mainwindow::shareMenuReencryptAsksFirst() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  m_window->show();
+  QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
+  const QString folder = QStringLiteral("reenc-folder");
+  QVERIFY(QDir(m_storeDir.path()).mkpath(folder));
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      folder + QStringLiteral("/inside")));
+
+  QStringList titles;
+  QStringList texts;
+  QVERIFY(triggerShareAction(m_window.data(), m_storeDir.path(), folder,
+                             QStringLiteral("Re-encrypt all passwords"),
+                             answerBox(QMessageBox::No), &titles, &texts));
+  QCOMPARE(titles, QStringList{QStringLiteral("Re-encrypt passwords")});
+  QVERIFY2(texts.value(0).contains(folder), qPrintable(texts.value(0)));
+  QVERIFY2(m_window->findChild<QProgressDialog *>() == nullptr,
+           "No starts nothing");
+  QVERIFY(treeView()->isEnabled());
+
+  // Add recipient: the users dialog for that folder.
+  bool usersSeen = false;
+  QVERIFY(triggerShareAction(
+      m_window.data(), m_storeDir.path(), folder,
+      QStringLiteral("Add recipient..."), [&usersSeen](QWidget *w) {
+        if (auto *dialog = qobject_cast<UsersDialog *>(w)) {
+          usersSeen = true;
+          dialog->reject();
+          return;
+        }
+        answerBox(QMessageBox::Ok)(w);
+      }));
+  QVERIFY2(usersSeen, "Add recipient opens the users dialog");
+
+  // The folder goes away between the menu opening and the click.
+  const QString doomed = QStringLiteral("gone-folder");
+  const QString doomedPath = QDir(m_storeDir.path()).filePath(doomed);
+  QVERIFY(QDir(m_storeDir.path()).mkpath(doomed));
+  QVERIFY(triggerShareAction(m_window.data(), m_storeDir.path(), doomed,
+                             QStringLiteral("Re-encrypt all passwords"),
+                             answerBox(QMessageBox::Ok), &titles, &texts,
+                             [doomedPath] { QDir().rmdir(doomedPath); }));
+  QCOMPARE(titles, QStringList{QStringLiteral("Error")});
+  QVERIFY2(texts.value(0).contains(QStringLiteral("Directory does not exist")),
+           qPrintable(texts.value(0)));
+  QVERIFY2(texts.value(0).contains(doomed), qPrintable(texts.value(0)));
+
+  // Yes on a folder without entries: the run starts, holds the interface
+  // with its progress dialog, and ends with nothing to rewrite.
+  const QString empty = QStringLiteral("reenc-empty");
+  QVERIFY(QDir(m_storeDir.path()).mkpath(empty));
+  QVERIFY(triggerShareAction(
+      m_window.data(), m_storeDir.path(), empty,
+      QStringLiteral("Re-encrypt all passwords"),
+      [](QWidget *w) {
+        if (qobject_cast<QProgressDialog *>(w) != nullptr) {
+          return; // the run's own dialog; it goes when the run ends
+        }
+        answerBox(QMessageBox::Yes)(w);
+      },
+      &titles, &texts));
+  QCOMPARE(titles, QStringList{QStringLiteral("Re-encrypt passwords")});
+  QTRY_VERIFY_WITH_TIMEOUT(treeView()->isEnabled(), 10000);
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY(m_window->findChild<QProgressDialog *>() == nullptr);
+  QVERIFY2(m_window->statusBar()->currentMessage().contains(
+               QStringLiteral("Re-encryption completed")),
+           qPrintable(m_window->statusBar()->currentMessage()));
+
+  // Add recipient on a folder behind a link is refused.
+  QTemporaryDir outside;
+  QVERIFY(outside.isValid());
+  const QString link =
+      QDir(m_storeDir.path()).filePath(QStringLiteral("share-link"));
+  QVERIFY(QFile::link(outside.path(), link));
+  const auto cleanup = qScopeGuard([&link] { QFile::remove(link); });
+  usersSeen = false;
+  QVERIFY(triggerShareAction(
+      m_window.data(), m_storeDir.path(), QStringLiteral("share-link"),
+      QStringLiteral("Add recipient..."),
+      [&usersSeen](QWidget *w) {
+        usersSeen = usersSeen || qobject_cast<UsersDialog *>(w) != nullptr;
+        answerBox(QMessageBox::Ok)(w);
+      },
+      &titles, &texts));
+  QVERIFY(!usersSeen);
+  QCOMPARE(titles, QStringList{QStringLiteral("Not a folder of the store")});
+  QVERIFY2(texts.value(0).contains(QStringLiteral("share-link")),
+           qPrintable(texts.value(0)));
+#endif
+}
+
+/**
+ * @brief "Add folder" asks for a name, creates the folder in the current
+ *        one and, with "add .gpg-id" on and no signing key, seeds its
+ *        .gpg-id from the recipients in effect for the parent (#1682 left
+ *        an empty file there). A cancelled prompt creates nothing.
+ */
+void tst_mainwindow::addFolderCreatesItWithAGpgId() {
+  {
+    AppSettings s = QtPassSettings::load();
+    s.addGPGId = true;
+    s.passSigningKey.clear();
+    QtPassSettings::save(s);
+  }
+  treeView()->setCurrentIndex(QModelIndex());
+  const QDir store(m_storeDir.path());
+  {
+    ModalDriver driver(typeIntoInputDialog(QStringLiteral("brand-new")));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "addFolder",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.seen, 1);
+  }
+  QVERIFY2(QFileInfo(store.filePath(QStringLiteral("brand-new"))).isDir(),
+           "the folder is created in the store root");
+  QFile gpgId(store.filePath(QStringLiteral("brand-new/.gpg-id")));
+  QVERIFY2(gpgId.open(QIODevice::ReadOnly), ".gpg-id must be seeded");
+  QCOMPARE(QString::fromUtf8(gpgId.readAll()).trimmed(),
+           QStringLiteral("0000000000000000"));
+
+  {
+    ModalDriver driver(answerBox(QMessageBox::Cancel));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "addFolder",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.seen, 1);
+  }
+  QCOMPARE(store.entryList(QStringList{QStringLiteral("brand-*")}, QDir::Dirs),
+           QStringList{QStringLiteral("brand-new")});
+}
+
+/**
+ * @brief A folder name that resolves outside the store is refused with a
+ *        warning, and a name already taken is reported as a failed create.
+ */
+void tst_mainwindow::addFolderRefusesEscapesAndDuplicates() {
+  treeView()->setCurrentIndex(QModelIndex());
+  const QDir store(m_storeDir.path());
+  const QString escaped =
+      QDir::cleanPath(store.filePath(QStringLiteral("../escaped-folder")));
+  QVERIFY(!QFileInfo::exists(escaped));
+  {
+    ModalDriver driver(
+        typeIntoInputDialog(QStringLiteral("../escaped-folder")));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "addFolder",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.seen, 2);
+    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Invalid name")});
+    QVERIFY2(driver.boxTexts.value(0).contains(
+                 QStringLiteral("outside the password store")),
+             qPrintable(driver.boxTexts.value(0)));
+  }
+  QVERIFY2(!QFileInfo::exists(escaped), "nothing is created outside");
+
+  QVERIFY(store.mkpath(QStringLiteral("taken")));
+  {
+    ModalDriver driver(typeIntoInputDialog(QStringLiteral("taken")));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "addFolder",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.seen, 2);
+    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Error")});
+    QVERIFY2(driver.boxTexts.value(0).contains(
+                 QStringLiteral("Failed to create folder")),
+             qPrintable(driver.boxTexts.value(0)));
+  }
+
+  // No recipients to seed from (an empty root .gpg-id): the folder is made
+  // but the missing .gpg-id is reported.
+  const QString rootGpgId = store.filePath(QStringLiteral(".gpg-id"));
+  QFile gpgId(rootGpgId);
+  QVERIFY(gpgId.open(QIODevice::ReadOnly));
+  const QByteArray recipients = gpgId.readAll();
+  gpgId.close();
+  const auto restoreGpgId = qScopeGuard([&rootGpgId, &recipients] {
+    QFile f(rootGpgId);
+    if (f.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+      f.write(recipients);
+    }
+  });
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Truncate));
+  gpgId.close();
+  {
+    AppSettings s = QtPassSettings::load();
+    s.addGPGId = true;
+    s.passSigningKey.clear();
+    QtPassSettings::save(s);
+  }
+  treeView()->setCurrentIndex(QModelIndex());
+  {
+    ModalDriver driver(typeIntoInputDialog(QStringLiteral("seedless")));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "addFolder",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.seen, 2);
+    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Error")});
+    QVERIFY2(driver.boxTexts.value(0).contains(
+                 QStringLiteral("Failed to create .gpg-id file")),
+             qPrintable(driver.boxTexts.value(0)));
+  }
+  QVERIFY(QFileInfo(store.filePath(QStringLiteral("seedless"))).isDir());
+  QVERIFY(
+      !QFileInfo::exists(store.filePath(QStringLiteral("seedless/.gpg-id"))));
+}
+
+/**
+ * @brief "Rename folder" moves the current folder to the typed name inside
+ *        its parent; a name escaping the store is refused; cancel keeps it.
+ */
+void tst_mainwindow::renameFolderMovesIt() {
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false;
+    QtPassSettings::save(s);
+  }
+  const QDir store(m_storeDir.path());
+  QVERIFY(store.mkpath(QStringLiteral("ren-src")));
+  QVERIFY(selectPath(store.filePath(QStringLiteral("ren-src"))));
+  {
+    ModalDriver driver(answerBox(QMessageBox::Cancel));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "renameFolder",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.seen, 1);
+  }
+  QVERIFY(QFileInfo(store.filePath(QStringLiteral("ren-src"))).isDir());
+  // The file system model settles the new folder's node while a dialog runs,
+  // which can retire the current index: select again before each action.
+  QVERIFY(selectPath(store.filePath(QStringLiteral("ren-src"))));
+  {
+    ModalDriver driver(typeIntoInputDialog(QStringLiteral("../ren-escape")));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "renameFolder",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Invalid name")});
+  }
+  QVERIFY(QFileInfo(store.filePath(QStringLiteral("ren-src"))).isDir());
+  QVERIFY(!QFileInfo::exists(
+      QDir::cleanPath(store.filePath(QStringLiteral("../ren-escape")))));
+
+  QVERIFY(selectPath(store.filePath(QStringLiteral("ren-src"))));
+  ModalDriver driver(typeIntoInputDialog(QStringLiteral("ren-dst")));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "renameFolder",
+                                    Qt::DirectConnection));
+  QVERIFY2(driver.seen == 1,
+           qPrintable(driver.seenClasses.join(QStringLiteral(", ")) +
+                      driver.boxTexts.join(QStringLiteral(" | "))));
+  QTRY_VERIFY(QFileInfo(store.filePath(QStringLiteral("ren-dst"))).isDir());
+  QVERIFY(!QFileInfo::exists(store.filePath(QStringLiteral("ren-src"))));
+}
+
+/**
+ * @brief "Rename password" offers the entry's name without .gpg, moves the
+ *        file to the typed name next to it, and refuses a name that would
+ *        leave the store.
+ */
+void tst_mainwindow::renamePasswordMovesIt() {
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false;
+    QtPassSettings::save(s);
+  }
+  const QDir store(m_storeDir.path());
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("ren-file")));
+  QString offered;
+  {
+    ModalDriver driver([&offered](QWidget *w) {
+      if (auto *input = qobject_cast<QInputDialog *>(w)) {
+        offered = input->textValue();
+        input->setTextValue(QStringLiteral("../ren-file-escape"));
+        input->accept();
+        return;
+      }
+      answerBox(QMessageBox::Ok)(w);
+    });
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "renamePassword",
+                                      Qt::DirectConnection));
+    QCOMPARE(offered, QStringLiteral("ren-file"));
+    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Invalid name")});
+  }
+  QVERIFY(QFileInfo::exists(store.filePath(QStringLiteral("ren-file.gpg"))));
+
+  QVERIFY(selectPath(store.filePath(QStringLiteral("ren-file.gpg"))));
+  ModalDriver driver(typeIntoInputDialog(QStringLiteral("ren-file-2")));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "renamePassword",
+                                    Qt::DirectConnection));
+  QVERIFY2(driver.seen == 1,
+           qPrintable(driver.seenClasses.join(QStringLiteral(", ")) +
+                      driver.boxTexts.join(QStringLiteral(" | "))));
+  QTRY_VERIFY(
+      QFileInfo::exists(store.filePath(QStringLiteral("ren-file-2.gpg"))));
+  QVERIFY(!QFileInfo::exists(store.filePath(QStringLiteral("ren-file.gpg"))));
+}
+
+/**
+ * @brief Delete with nothing selected does nothing at all: no question, no
+ *        removal (#556: it used to offer to delete the whole store).
+ */
+void tst_mainwindow::deleteNeedsASelection() {
+  treeView()->setCurrentIndex(QModelIndex());
+  const int before =
+      QDir(m_storeDir.path())
+          .entryList(QDir::AllEntries | QDir::NoDotAndDotDot | QDir::Hidden)
+          .size();
+  ModalDriver driver(answerBox(QMessageBox::Yes));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
+                                    Qt::DirectConnection));
+  QTest::qWait(50);
+  QCOMPARE(driver.seen, 0);
+  QCOMPARE(
+      QDir(m_storeDir.path())
+          .entryList(QDir::AllEntries | QDir::NoDotAndDotDot | QDir::Hidden)
+          .size(),
+      before);
+}
+
+/**
+ * @brief Deleting an entry asks first, naming it; No keeps the file, Yes
+ *        removes it through the backend.
+ */
+void tst_mainwindow::deletePasswordAsksFirst() {
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false;
+    QtPassSettings::save(s);
+  }
+  const QString file =
+      QDir(m_storeDir.path()).filePath(QStringLiteral("doomed-file.gpg"));
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("doomed-file")));
+  {
+    ModalDriver driver(answerBox(QMessageBox::No));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Delete password?")});
+    QVERIFY2(driver.boxTexts.value(0).contains(QStringLiteral("doomed-file")),
+             qPrintable(driver.boxTexts.value(0)));
+  }
+  QVERIFY2(QFileInfo::exists(file), "No keeps the entry");
+
+  QVERIFY(selectPath(file));
+  ModalDriver driver(answerBox(QMessageBox::Yes));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
+                                    Qt::DirectConnection));
+  QCOMPARE(driver.seen, 1);
+  QTRY_VERIFY2(!QFileInfo::exists(file), "Yes removes the entry");
+}
+
+/**
+ * @brief Deleting a folder says the whole content goes, and points out
+ *        files in it that are not encrypted entries before asking.
+ */
+void tst_mainwindow::deleteFolderWarnsAboutStrayFiles() {
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false;
+    QtPassSettings::save(s);
+  }
+  const QDir store(m_storeDir.path());
+  QVERIFY(store.mkpath(QStringLiteral("doomed-dir")));
+  {
+    QFile stray(store.filePath(QStringLiteral("doomed-dir/notes.txt")));
+    QVERIFY(stray.open(QIODevice::WriteOnly));
+    stray.write("plain text");
+  }
+  QVERIFY(selectPath(store.filePath(QStringLiteral("doomed-dir"))));
+  {
+    ModalDriver driver(answerBox(QMessageBox::No));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Delete folder?")});
+    const QString text = driver.boxTexts.value(0);
+    QVERIFY2(text.contains(QStringLiteral("whole content")), qPrintable(text));
+    QVERIFY2(text.contains(QStringLiteral("unexpected files")),
+             qPrintable(text));
+  }
+  QVERIFY(QFileInfo(store.filePath(QStringLiteral("doomed-dir"))).isDir());
+
+  // Only entries inside: no warning about the content.
+  QVERIFY(
+      QFile::remove(store.filePath(QStringLiteral("doomed-dir/notes.txt"))));
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("doomed-dir/entry")));
+  QVERIFY(selectPath(store.filePath(QStringLiteral("doomed-dir"))));
+  ModalDriver driver(answerBox(QMessageBox::Yes));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
+                                    Qt::DirectConnection));
+  QCOMPARE(driver.seen, 1);
+  QVERIFY2(!driver.boxTexts.value(0).contains(QStringLiteral("unexpected")),
+           qPrintable(driver.boxTexts.value(0)));
+  QTRY_VERIFY2(!QFileInfo::exists(store.filePath(QStringLiteral("doomed-dir"))),
+               "Yes removes the folder and its entries");
+}
+
+/**
+ * @brief A linked folder in the tree is deleted as a link: the question
+ *        says so, and what it points to stays. An entry seen through a link
+ *        is refused, as it is not the store's to delete.
+ */
+void tst_mainwindow::deleteLinkedFolderRemovesOnlyTheLink() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a symlink");
+#else
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false;
+    QtPassSettings::save(s);
+  }
+  QTemporaryDir outside;
+  QVERIFY(outside.isValid());
+  {
+    QFile f(outside.filePath(QStringLiteral("behind.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const QDir store(m_storeDir.path());
+  const QString link = store.filePath(QStringLiteral("linked-dir"));
+  QVERIFY(QFile::link(outside.path(), link));
+  const auto cleanup = qScopeGuard([&link] { QFile::remove(link); });
+
+  // The entry behind the link: refused, nothing asked.
+  QVERIFY(selectPath(link + QStringLiteral("/behind.gpg")));
+  {
+    ModalDriver driver(answerBox(QMessageBox::Yes));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.boxTitles,
+             QStringList{QStringLiteral("Not a folder of the store")});
+    QVERIFY2(driver.boxTexts.value(0).contains(QStringLiteral("symbolic link")),
+             qPrintable(driver.boxTexts.value(0)));
+  }
+  QVERIFY(QFileInfo::exists(outside.filePath(QStringLiteral("behind.gpg"))));
+
+  // The link itself: asked as a link, removed as a link.
+  QVERIFY(selectPath(link));
+  ModalDriver driver(answerBox(QMessageBox::Yes));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
+                                    Qt::DirectConnection));
+  QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Delete link?")});
+  QVERIFY2(driver.boxTexts.value(0).contains(QStringLiteral("left alone")),
+           qPrintable(driver.boxTexts.value(0)));
+  QTRY_VERIFY(!QFileInfo(link).isSymLink() && !QFileInfo::exists(link));
+  QVERIFY2(QFileInfo::exists(outside.filePath(QStringLiteral("behind.gpg"))),
+           "what the link pointed to is untouched");
+#endif
+}
+
+/**
+ * @brief Users opens the recipients dialog for the current folder; for a
+ *        folder behind a link it refuses with a message instead.
+ */
+void tst_mainwindow::usersDialogOpensForTheStoreButNotForALink() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in and a symlink");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  treeView()->setCurrentIndex(QModelIndex());
+  bool usersSeen = false;
+  {
+    ModalDriver driver([&usersSeen](QWidget *w) {
+      if (auto *dialog = qobject_cast<UsersDialog *>(w)) {
+        usersSeen = true;
+        dialog->reject();
+        return;
+      }
+      answerBox(QMessageBox::Ok)(w);
+    });
+    auto *users = m_window->findChild<QAction *>(QStringLiteral("actionUsers"));
+    QVERIFY(users != nullptr);
+    users->trigger();
+    QVERIFY2(usersSeen, "the users dialog opens for the store root");
+    QVERIFY2(driver.boxTitles.isEmpty(),
+             qPrintable(driver.boxTitles.join(QStringLiteral(", "))));
+  }
+
+  QTemporaryDir outside;
+  QVERIFY(outside.isValid());
+  const QString link =
+      QDir(m_storeDir.path()).filePath(QStringLiteral("users-link"));
+  QVERIFY(QFile::link(outside.path(), link));
+  const auto cleanup = qScopeGuard([&link] { QFile::remove(link); });
+  QVERIFY(selectPath(link));
+  usersSeen = false;
+  ModalDriver driver([&usersSeen](QWidget *w) {
+    usersSeen = usersSeen || qobject_cast<UsersDialog *>(w) != nullptr;
+    answerBox(QMessageBox::Ok)(w);
+  });
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onUsers",
+                                    Qt::DirectConnection));
+  QVERIFY2(!usersSeen, "no dialog for a folder behind a link");
+  QCOMPARE(driver.boxTitles,
+           QStringList{QStringLiteral("Not a folder of the store")});
+  QVERIFY2(driver.boxTexts.value(0).contains(QStringLiteral("users-link")),
+           qPrintable(driver.boxTexts.value(0)));
+#endif
+}
+
+/**
+ * @brief "Add password" opens the entry dialog with every real folder of
+ *        the store to choose from, the tree's current folder preselected,
+ *        and the store's templates with the folder's default chosen.
+ */
+void tst_mainwindow::addPasswordOffersTheStoreFolders() {
+  const QDir store(m_storeDir.path());
+  QVERIFY(store.mkpath(QStringLiteral("offered/deeper")));
+  QVERIFY(store.mkpath(QStringLiteral(".hidden-offered/inside")));
+  // Store templates, with the deeper folder's own default.
+  const QString templatesFile = store.filePath(QStringLiteral(".templates"));
+  {
+    QFile f(templatesFile);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("[work]\nlogin\nurl\n\n[home]\nlogin\n");
+    QFile d(store.filePath(QStringLiteral("offered/deeper/.default_template")));
+    QVERIFY(d.open(QIODevice::WriteOnly));
+    d.write("home\n");
+  }
+  const auto cleanup =
+      qScopeGuard([&templatesFile] { QFile::remove(templatesFile); });
+  QVERIFY(selectPath(store.filePath(QStringLiteral("offered/deeper"))));
+  QStringList folders;
+  QString current;
+  QStringList templates;
+  QString chosenTemplate;
+  bool escaped = false;
+  ModalDriver driver([&](QWidget *w) {
+    if (auto *dialog = qobject_cast<PasswordDialog *>(w)) {
+      if (auto *box =
+              dialog->findChild<QComboBox *>(QStringLiteral("folderBox"))) {
+        for (int i = 0; i < box->count(); ++i) {
+          folders << box->itemData(i).toString();
+        }
+        current = box->currentData().toString();
+      }
+      if (auto *box =
+              dialog->findChild<QComboBox *>(QStringLiteral("templateBox"))) {
+        for (int i = 0; i < box->count(); ++i) {
+          templates << box->itemText(i);
+        }
+        chosenTemplate = box->currentText();
+      }
+      dialog->reject();
+      return;
+    }
+    escaped = true;
+    answerBox(QMessageBox::Ok)(w);
+  });
+  auto *add =
+      m_window->findChild<QAction *>(QStringLiteral("actionAddPassword"));
+  QVERIFY(add != nullptr);
+  add->trigger();
+  QCOMPARE(driver.seen, 1);
+  QVERIFY(!escaped);
+  QVERIFY2(folders.contains(QString()), "the store root is offered");
+  QVERIFY2(folders.contains(QStringLiteral("offered")),
+           qPrintable(folders.join(QStringLiteral(", "))));
+  QVERIFY2(folders.contains(QStringLiteral("offered/deeper")),
+           qPrintable(folders.join(QStringLiteral(", "))));
+  QVERIFY2(!folders.contains(QStringLiteral(".hidden-offered")) &&
+               !folders.contains(QStringLiteral(".hidden-offered/inside")),
+           qPrintable(QStringLiteral("hidden folders are not offered: ") +
+                      folders.join(QStringLiteral(", "))));
+  QCOMPARE(current, QStringLiteral("offered/deeper"));
+  QCOMPARE(templates,
+           (QStringList{QStringLiteral("home"), QStringLiteral("work")}));
+  QCOMPARE(chosenTemplate, QStringLiteral("home"));
+  QCOMPARE(m_window->focusWidget(), treeView());
+}
+
+/**
+ * @brief Cancel on the re-encryption progress dialog says so in the status
+ *        bar (the backend's cancel flag is not observable from here), and
+ *        the end of the run releases the interface.
+ */
+void tst_mainwindow::reencryptCancelIsReportedInTheStatusBar() {
+  m_window->startReencryptPath();
+  auto *progress = m_window->findChild<QProgressDialog *>();
+  QVERIFY2(progress != nullptr, "a progress dialog must be shown");
+  auto *cancel = progress->findChild<QPushButton *>();
+  QVERIFY2(cancel != nullptr, "the dialog has its Cancel button");
+  cancel->click();
+  QCOMPARE(m_window->statusBar()->currentMessage(),
+           QStringLiteral("Cancelling re-encryption"));
+  m_window->endReencryptPath();
+  QVERIFY(treeView()->isEnabled());
 }
 
 QTEST_MAIN(tst_mainwindow)
