@@ -546,7 +546,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished">Alleen volledige sleutelvingerafdrukken (40 of 64 hexadecimale tekens), gescheiden door spaties</translation>
+        <translation>Alleen volledige sleutelvingerafdrukken (40 of 64 hexadecimale tekens), gescheiden door spaties</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1132,12 +1132,12 @@ Je kan de gebruikerslijst niet aanpassen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="265"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Verwijderen mislukt</translation>
+        <translation>Verwijderen mislukt</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="266"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Kon de link %1 niet verwijderen.</translation>
+        <translation>Kon de link %1 niet verwijderen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
@@ -1152,7 +1152,7 @@ Je kan de gebruikerslijst niet aanpassen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="378"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished">Kon %1 niet schrijven: %2</translation>
+        <translation>Kon %1 niet schrijven: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
@@ -1169,7 +1169,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="540"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished">Kon de oude ondertekening %1 niet verwijderen.</translation>
+        <translation>Kon de oude ondertekening %1 niet verwijderen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="654"/>
@@ -1177,28 +1177,28 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
         <location filename="../src/imitatepass.cpp" line="680"/>
         <location filename="../src/imitatepass.cpp" line="695"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished">Overgebleven van een eerdere herversleuteling</translation>
+        <translation>Overgebleven van een eerdere herversleuteling</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="655"/>
         <location filename="../src/imitatepass.cpp" line="671"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
-        <translation type="unfinished">%1 is geen gewoon bestand en is niet hersteld. Bekijk het en verwijder het, en herversleutel daarna opnieuw.</translation>
+        <translation>%1 is geen gewoon bestand en is niet hersteld. Bekijk het en verwijder het, en herversleutel daarna opnieuw.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="681"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished">%1 staat naast %2. Beide zijn versleutelde kopieën van het wachtwoordbestand; controleer welke je wilt houden en verwijder de andere, en herversleutel daarna opnieuw.</translation>
+        <translation>%1 staat naast %2. Beide zijn versleutelde kopieën van het wachtwoordbestand; controleer welke je wilt houden en verwijder de andere, en herversleutel daarna opnieuw.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="690"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished">%1 is hersteld uit de back-up die een onderbroken herversleuteling heeft achtergelaten.</translation>
+        <translation>%1 is hersteld uit de back-up die een onderbroken herversleuteling heeft achtergelaten.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="696"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished">%1 ontbreekt en de back-up %2 kon niet worden teruggezet. Wijzig de naam handmatig en herversleutel daarna opnieuw.</translation>
+        <translation>%1 ontbreekt en de back-up %2 kon niet worden teruggezet. Wijzig de naam handmatig en herversleutel daarna opnieuw.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="880"/>
@@ -1215,12 +1215,12 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="886"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished">Vervanging van %1 is mislukt en het origineel kon niet worden teruggezet. Het staat er nog als %2; wijzig de naam handmatig.</translation>
+        <translation>Vervanging van %1 is mislukt en het origineel kon niet worden teruggezet. Het staat er nog als %2; wijzig de naam handmatig.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="897"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished">Kon de back-up %1 na het herversleutelen niet verwijderen; deze kan veilig worden verwijderd.</translation>
+        <translation>Kon de back-up %1 na het herversleutelen niet verwijderen; deze kan veilig worden verwijderd.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="937"/>
@@ -1251,12 +1251,12 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1018"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">Map hoort niet bij de opslag</translation>
+        <translation>Map hoort niet bij de opslag</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1019"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
-        <translation type="unfinished">%1 is een symbolische link of junction, of ligt daarachter. Waar die naar verwijst, hoort niet bij de wachtwoordopslag en is niet herversleuteld.</translation>
+        <translation>%1 is een symbolische link of junction, of ligt daarachter. Waar die naar verwijst, hoort niet bij de wachtwoordopslag en is niet herversleuteld.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1028"/>
@@ -1272,12 +1272,12 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1122"/>
         <source>Git pull failed</source>
-        <translation type="unfinished">Git pull mislukt</translation>
+        <translation>Git pull mislukt</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1123"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished">Na de pull bevat de opslag niet-samengevoegde bestanden. Los het conflict op voordat je herversleutelt.</translation>
+        <translation>Na de pull bevat de opslag niet-samengevoegde bestanden. Los het conflict op voordat je herversleutelt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1128"/>
@@ -1287,7 +1287,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1155"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n item overgeslagen: een symlink, junction of speciaal bestand hoort niet bij de opslag.</numerusform>
             <numerusform>%n items overgeslagen: een symlink, junction of speciaal bestand hoort niet bij de opslag.</numerusform>
         </translation>
@@ -1467,7 +1467,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished">Publieke sleutel %1 geïmporteerd. Controleer de vingerafdruk bij de eigenaar voordat je ermee versleutelt: het importeren van een sleutel zegt niets over wie hem bezit.</translation>
+        <translation>Publieke sleutel %1 geïmporteerd. Controleer de vingerafdruk bij de eigenaar voordat je ermee versleutelt: het importeren van een sleutel zegt niets over wie hem bezit.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>
@@ -1537,12 +1537,12 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
-        <translation type="unfinished">Iedereen die het bestand met de privésleutel in handen krijgt, kan dan elk wachtwoord lezen zonder dat er iets wordt gevraagd.</translation>
+        <translation>Iedereen die het bestand met de privésleutel in handen krijgt, kan dan elk wachtwoord lezen zonder dat er iets wordt gevraagd.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
         <source>No passphrase: store the private key unprotected</source>
-        <translation type="unfinished">Geen wachtwoordzin: de privésleutel onbeschermd opslaan</translation>
+        <translation>Geen wachtwoordzin: de privésleutel onbeschermd opslaan</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -2306,12 +2306,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>Delete link?</source>
-        <translation type="unfinished">Link verwijderen?</translation>
+        <translation>Link verwijderen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1249"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
-        <translation type="unfinished">%1 is een symbolische link of junction. De link verwijderen? Waar die naar verwijst, blijft ongemoeid.</translation>
+        <translation>%1 is een symbolische link of junction. De link verwijderen? Waar die naar verwijst, blijft ongemoeid.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1633"/>
@@ -2396,12 +2396,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="2026"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">Map hoort niet bij de opslag</translation>
+        <translation>Map hoort niet bij de opslag</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="2027"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 is een symbolische link of junction, of ligt daarachter. Waar die naar verwijst, hoort niet bij de wachtwoordopslag en blijft ongemoeid.</translation>
+        <translation>%1 is een symbolische link of junction, of ligt daarachter. Waar die naar verwijst, hoort niet bij de wachtwoordopslag en blijft ongemoeid.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="2038"/>
@@ -2597,12 +2597,12 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="876"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 is een symbolische link of junction, of ligt daarachter. Waar die naar verwijst, hoort niet bij de wachtwoordopslag en blijft ongemoeid.</translation>
+        <translation>%1 is een symbolische link of junction, of ligt daarachter. Waar die naar verwijst, hoort niet bij de wachtwoordopslag en blijft ongemoeid.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="884"/>
         <source>Not part of the store</source>
-        <translation type="unfinished">Hoort niet bij de opslag</translation>
+        <translation>Hoort niet bij de opslag</translation>
     </message>
 </context>
 <context>
@@ -3050,17 +3050,17 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="104"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Kon de link %1 niet verwijderen.</translation>
+        <translation>Kon de link %1 niet verwijderen.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="105"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Verwijderen mislukt</translation>
+        <translation>Verwijderen mislukt</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="272"/>
         <source>Search needs the GPG executable to be configured.</source>
-        <translation type="unfinished">Voor zoeken moet het GPG-programma geconfigureerd zijn.</translation>
+        <translation>Voor zoeken moet het GPG-programma geconfigureerd zijn.</translation>
     </message>
 </context>
 <context>

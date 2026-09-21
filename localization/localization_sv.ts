@@ -1100,12 +1100,12 @@ Du kommer inte att kunna ändra användarlista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="265"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Borttagning misslyckades</translation>
+        <translation>Borttagning misslyckades</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="266"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Kunde inte ta bort länken %1.</translation>
+        <translation>Kunde inte ta bort länken %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
@@ -2472,12 +2472,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="876"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 är, eller ligger bakom, en symbolisk länk eller knutpunkt. Det den pekar på ingår inte i lösenordsutrymmet och lämnas orört.</translation>
+        <translation>%1 är, eller ligger bakom, en symbolisk länk eller knutpunkt. Det den pekar på ingår inte i lösenordsutrymmet och lämnas orört.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="884"/>
         <source>Not part of the store</source>
-        <translation type="unfinished">Ingår inte i lösenordsutrymmet</translation>
+        <translation>Ingår inte i lösenordsutrymmet</translation>
     </message>
 </context>
 <context>
@@ -2925,17 +2925,17 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="104"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Kunde inte ta bort länken %1.</translation>
+        <translation>Kunde inte ta bort länken %1.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="105"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Borttagning misslyckades</translation>
+        <translation>Borttagning misslyckades</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="272"/>
         <source>Search needs the GPG executable to be configured.</source>
-        <translation type="unfinished">Sökning kräver att den körbara GPG-filen har konfigurerats.</translation>
+        <translation>Sökning kräver att den körbara GPG-filen har konfigurerats.</translation>
     </message>
 </context>
 <context>
