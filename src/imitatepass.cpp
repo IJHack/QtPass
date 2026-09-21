@@ -175,8 +175,20 @@ void ImitatePass::Show(QString file) {
  * @param overwrite whether to overwrite existing file
  */
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
-  file = file + ".gpg";
+  // The dialog names a new entry relative to the store; gpg used to resolve
+  // that in its working directory. Everything below works on the one path.
+  file =
+      QDir::cleanPath(QDir::isAbsolutePath(file)
+                          ? file + ".gpg"
+                          : QDir(m_settings.passStore).filePath(file) + ".gpg");
   if (refuseLinkedPath(file)) {
+    return;
+  }
+  // gpg used to refuse an existing output without --yes; it writes
+  // elsewhere now, so the check is ours here, and again at the rename.
+  const QFileInfo target(file);
+  if (!overwrite && (target.exists() || target.isSymLink())) {
+    emit critical(tr("Cannot add"), tr("%1 already exists.").arg(file));
     return;
   }
   QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);
@@ -186,7 +198,6 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
     emit critical(tr("Check .gpg-id file signature!"), why);
     return;
   }
-  transactionHelper trans(&m_transaction, PASS_INSERT);
   if (recipients.isEmpty()) {
     // Already emit critical signal to notify user of error - no need to throw
     emit critical(tr("Can not edit"),
@@ -194,6 +205,22 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
                      "file missing or invalid."));
     return;
   }
+  // gpg never opens a path in the store for output: refuseLinkedPath()
+  // judged the name a moment ago, and whoever can write to the store could
+  // make it, or any name in the store, a link to somewhere else before gpg
+  // opens it. gpg writes into a directory of QtPass's own (0700, in the
+  // temporary location), which no co-writer of the store can reach;
+  // placeEncryptedFile() then brings the bytes into the store through an
+  // open handle and the operating system's rename.
+  auto scratch = std::make_shared<QTemporaryDir>();
+  if (!scratch->isValid()) {
+    emit critical(tr("Cannot write"),
+                  tr("Cannot create a temporary directory: %1")
+                      .arg(scratch->errorString()));
+    return;
+  }
+  const QString output = scratch->filePath(QStringLiteral("entry.gpg"));
+  transactionHelper trans(&m_transaction, PASS_INSERT);
   // --no-encrypt-to keeps an `encrypt-to` line in the user's gpg.conf from
   // adding a recipient that is not listed in the (possibly signed) .gpg-id;
   // --compress-algo=none mirrors pass(1). Both belong on every encrypt call.
@@ -204,15 +231,13 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
                       "--compress-algo=none",
                       "--no-encrypt-to",
                       "--output",
-                      pgpg(file)};
+                      pgpg(output)};
   for (auto &r : recipients) {
     args.append("-r");
     args.append(r);
   }
-  if (overwrite) {
-    args.append("--yes");
-  }
   args.append("-");
+  m_pendingInserts.enqueue({std::move(scratch), output, file, overwrite});
   executeGpg(PASS_INSERT, args, newValue);
   if (gitReady()) {
     // Git is used when enabled - this is the standard pass workflow
@@ -1576,6 +1601,22 @@ void ImitatePass::executeGit(PROCESS id, const QStringList &args, QString input,
 void ImitatePass::finished(int id, int exitCode, const QString &out,
                            const QString &err) {
   qCDebug(lcQtPass) << "Imitate Pass";
+  QString error = err;
+  if (id == PASS_INSERT && !m_pendingInserts.isEmpty()) {
+    // The gpg step of an Insert(): its ciphertext goes into the store now,
+    // before the git steps queued behind it run (the executor starts the
+    // next item only after this returns). When it cannot, the insert failed
+    // like a gpg error would have: the git steps are cancelled below and
+    // the reason reaches the interface through the failed-operation path.
+    // Nothing is shown from here: a dialog would spin the event loop and
+    // let the queued git steps run first. The scratch directory goes with
+    // the pending entry.
+    const PendingInsert pending = m_pendingInserts.dequeue();
+    if (exitCode == 0 && !placeEncryptedFile(pending.output, pending.file,
+                                             pending.overwrite, &error)) {
+      exitCode = 1;
+    }
+  }
   PROCESS pid = m_transaction.transactionIsOver(static_cast<PROCESS>(id));
   m_transactionOutput.append(out);
 
@@ -1594,8 +1635,73 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
       pid = m_transaction.transactionIsOver(static_cast<PROCESS>(id));
     }
   }
-  Pass::finished(pid, exitCode, m_transactionOutput, err);
+  Pass::finished(pid, exitCode, m_transactionOutput, error);
   m_transactionOutput.clear();
+}
+
+auto ImitatePass::placeEncryptedFile(const QString &output, const QString &file,
+                                     bool overwrite, QString *error) -> bool {
+  QFile source(output);
+  if (!source.open(QIODevice::ReadOnly) || source.size() <= 0) {
+    // gpg reported success and wrote nothing: not an entry.
+    *error = tr("gpg wrote no ciphertext for %1.").arg(file);
+    return false;
+  }
+  // The store-side file: created exclusively next to the entry, written
+  // through this handle, never opened by name again. pass writes entries
+  // with umask 077, and so does QTemporaryFile.
+  const QFileInfo target(file);
+  QTemporaryFile staged(target.path() + QStringLiteral("/.") +
+                        target.fileName() + QStringLiteral(".XXXXXX.tmp"));
+  staged.setAutoRemove(false);
+  if (!staged.open()) {
+    *error = tr("Cannot create a temporary file next to %1: %2")
+                 .arg(file, staged.errorString());
+    return false;
+  }
+  const QString stagedPath = staged.fileName();
+  const auto fail = [&](const QString &why) {
+    staged.close();
+    QFile::remove(stagedPath);
+    *error = why;
+    return false;
+  };
+  char buf[64 * 1024];
+  for (;;) {
+    const qint64 n = source.read(buf, sizeof buf);
+    if (n < 0) {
+      return fail(tr("Cannot read what gpg wrote for %1.").arg(file));
+    }
+    if (n == 0) {
+      break;
+    }
+    if (staged.write(buf, n) != n) {
+      return fail(tr("Cannot write %1: %2").arg(file, staged.errorString()));
+    }
+  }
+  if (!staged.flush()) {
+    return fail(tr("Cannot write %1: %2").arg(file, staged.errorString()));
+  }
+  staged.close();
+  // rename(2) / MoveFileEx: the entry under the name is replaced as an
+  // entry, a link planted since the check included; without overwrite,
+  // anything that appeared under the name since the check fails the add.
+  if (!Util::replaceFile(stagedPath, file, overwrite)) {
+    QFile::remove(stagedPath);
+    *error = overwrite ? tr("Failed to replace %1.").arg(file)
+                       : tr("%1 already exists.").arg(file);
+    return false;
+  }
+  // The temporary's own name could have been swapped for a link in the
+  // window between its creation and the rename; the bytes then went into
+  // an unnamed inode and the entry is the link. Nothing was written through
+  // it, but it is not the entry either.
+  if (QFileInfo(file).isSymLink()) {
+    *error =
+        tr("%1 was replaced by a link while it was being written.").arg(file);
+    return false;
+  }
+  return true;
 }
 
 /**

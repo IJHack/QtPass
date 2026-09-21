@@ -332,6 +332,10 @@ private Q_SLOTS:
   void reencryptPathDoesNotPushAfterFailures();
   void insertRunsNoGitWhenGitIsDisabled();
   void insertEncryptsToTheRecipientsWhoseSignatureWasChecked();
+  void insertEncryptsIntoATemporaryAndMovesItIntoPlace();
+  void insertDoesNotWriteThroughALinkPlantedAfterTheCheck();
+  void insertDoesNotReplaceAnEntryThatAppearedWhileAdding();
+  void insertRemovesTheTemporaryWhenGpgFails();
   void anOlderSignedGpgIdIsRefusedUntilSavedAgain();
   void aDifferentListOfTheSameGenerationIsAConflict();
   void aSignedGpgIdCopiedIntoAnotherFolderIsRefused();
@@ -915,6 +919,272 @@ void tst_imitatepass::insertEncryptsToTheRecipientsWhoseSignatureWasChecked() {
   QCOMPARE(enc.size(), 1);
   QCOMPARE(recipientsOf(enc.first()),
            QStringList{QStringLiteral("0123456789ABCDEF")});
+#endif
+}
+
+/**
+ * @brief gpg never opens a path in the store for output: it writes into a
+ *        directory of QtPass's own outside the store, from where the bytes
+ *        go into the store through a temporary next to the entry and a
+ *        rename; the scratch is gone afterwards, the entry holds the
+ *        ciphertext, no temporary is left, and an overwrite replaces an
+ *        existing entry the same way. The dialog names a new entry relative
+ *        to the store, and that lands in the store, not in the working
+ *        directory.
+ */
+void tst_imitatepass::insertEncryptsIntoATemporaryAndMovesItIntoPlace() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+
+  const QString entry = QDir(storeDir.path()).filePath("new.gpg");
+  pass.Insert(QStringLiteral("new"), QStringLiteral("s\n"), false);
+  QVERIFY(insertSpy.count() > 0 || insertSpy.wait(15000));
+  QCOMPARE(criticalSpy.count(), 0);
+  QVERIFY2(!QFileInfo::exists(QDir::current().filePath("new.gpg")),
+           "a store-relative name is not resolved against the working "
+           "directory");
+  const QList<QStringList> enc = encryptCalls(loggedCalls(logPath));
+  QCOMPARE(enc.size(), 1);
+  const QString output = enc.first().at(enc.first().indexOf("--output") + 1);
+  QVERIFY2(output != entry, qPrintable(output));
+  QVERIFY2(!output.startsWith(storeDir.path()),
+           qPrintable("gpg must not write into the store: " + output));
+  QVERIFY2(!QFileInfo::exists(QFileInfo(output).path()),
+           "the scratch directory is gone once the entry is in place");
+  QFile written(entry);
+  QVERIFY(written.open(QIODevice::ReadOnly));
+  QCOMPARE(written.readAll(), QByteArray("ciphertext\n"));
+  QVERIFY(!QFileInfo(entry).isSymLink());
+  QVERIFY(!QFile::exists(entry + QStringLiteral(".insert.bak")));
+
+  // Adding over an existing entry is refused before gpg runs; editing it
+  // replaces its bytes.
+  QFile::remove(logPath);
+  pass.Insert(QDir(storeDir.path()).filePath("entry0"), QStringLiteral("s\n"),
+              false);
+  QTest::qWait(200);
+  QCOMPARE(criticalSpy.count(), 1);
+  QVERIFY(criticalSpy.takeFirst().at(1).toString().contains("already exists"));
+  QVERIFY(loggedCalls(logPath).isEmpty());
+  insertSpy.clear();
+  pass.Insert(QDir(storeDir.path()).filePath("entry0"), QStringLiteral("s\n"),
+              true);
+  QVERIFY(insertSpy.count() > 0 || insertSpy.wait(15000));
+  QCOMPARE(criticalSpy.count(), 0);
+  QFile edited(QDir(storeDir.path()).filePath("entry0.gpg"));
+  QVERIFY(edited.open(QIODevice::ReadOnly));
+  QCOMPARE(edited.readAll(), QByteArray("ciphertext\n"));
+  QVERIFY(
+      !QFile::exists(QDir(storeDir.path()).filePath("entry0.gpg.insert.bak")));
+  QCOMPARE(
+      QDir(storeDir.path())
+          .entryList({QStringLiteral(".*.tmp")}, QDir::Files | QDir::Hidden)
+          .size(),
+      0);
+#endif
+}
+
+/**
+ * @brief The race #1864 could not close: the entry becomes a link to a file
+ *        outside the store between the check and gpg's open. gpg now writes
+ *        elsewhere, and the link goes aside as an entry when the ciphertext
+ *        moves in; the file it pointed at is untouched.
+ */
+void tst_imitatepass::insertDoesNotWriteThroughALinkPlantedAfterTheCheck() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString victim = QDir(outsideDir.path()).filePath("important");
+  {
+    QFile f(victim);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("do not touch");
+  }
+  const QString entry = QDir(storeDir.path()).filePath("entry0.gpg");
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  // A fake gpg that, when asked to encrypt, first makes the entry a link to
+  // the victim (the attacker winning the race), then writes its output
+  // where told.
+  const QString script = QDir(storeDir.path()).filePath("racing-gpg.sh");
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    QTextStream out(&f);
+    out << "#!/bin/sh\n"
+        << "printf '%s\\n' \"$*\" >> '" << logPath << "'\n"
+        << "mode=''; outfile=''; prev=''\n"
+        << "for a in \"$@\"; do\n"
+        << "  case \"$a\" in -d) mode=decrypt;; -eq) mode=encrypt;; esac\n"
+        << "  [ \"$prev\" = '--output' ] && outfile=\"$a\"\n"
+        << "  prev=\"$a\"\n"
+        << "done\n"
+        << "case \"$mode\" in\n"
+        << "  decrypt) printf 'plaintext\\n';;\n"
+        << "  encrypt) cat >/dev/null; rm -f '" << entry << "'; ln -s '"
+        << victim << "' '" << entry
+        << "'; printf 'ciphertext\\n' > "
+           "\"$outfile\";;\n"
+        << "esac\n"
+        << "exit 0\n";
+    out.flush();
+    f.close();
+    QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                              QFile::ExeOwner));
+  }
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), script));
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  pass.Insert(QDir(storeDir.path()).filePath("entry0"), QStringLiteral("s\n"),
+              true);
+  QVERIFY(insertSpy.count() > 0 || insertSpy.wait(15000));
+  QCOMPARE(criticalSpy.count(), 0);
+  QFile v(victim);
+  QVERIFY(v.open(QIODevice::ReadOnly));
+  QCOMPARE(v.readAll(), QByteArray("do not touch"));
+  QVERIFY2(!QFileInfo(entry).isSymLink(), "the planted link went aside");
+  QFile written(entry);
+  QVERIFY(written.open(QIODevice::ReadOnly));
+  QCOMPARE(written.readAll(), QByteArray("ciphertext\n"));
+  QVERIFY(!QFile::exists(entry + QStringLiteral(".insert.bak")));
+#endif
+}
+
+/**
+ * @brief Adding (not editing) an entry whose name gains a regular file
+ *        while gpg runs: the rename refuses to replace it, the add fails
+ *        through the ordinary failed-operation path, the file that
+ *        appeared is kept, and the git steps queued behind gpg do not run.
+ */
+void tst_imitatepass::insertDoesNotReplaceAnEntryThatAppearedWhileAdding() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  QVERIFY(QDir(storeDir.path()).mkpath(QStringLiteral(".git")));
+  const QString entry = QDir(storeDir.path()).filePath("new.gpg");
+  const QString logPath = QDir(storeDir.path()).filePath("argv.log");
+  const QString script = QDir(storeDir.path()).filePath("appearing-gpg.sh");
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    QTextStream out(&f);
+    out << "#!/bin/sh\n"
+        << "printf 'gpg %s\\n' \"$*\" >> '" << logPath << "'\n"
+        << "mode=''; outfile=''; prev=''\n"
+        << "for a in \"$@\"; do\n"
+        << "  case \"$a\" in -d) mode=decrypt;; -eq) mode=encrypt;; esac\n"
+        << "  [ \"$prev\" = '--output' ] && outfile=\"$a\"\n"
+        << "  prev=\"$a\"\n"
+        << "done\n"
+        << "case \"$mode\" in\n"
+        << "  decrypt) printf 'plaintext\\n';;\n"
+        << "  encrypt) cat >/dev/null; printf 'theirs' > '" << entry
+        << "'; printf 'ciphertext\\n' > \"$outfile\";;\n"
+        << "esac\n"
+        << "exit 0\n";
+    out.flush();
+    f.close();
+    QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                              QFile::ExeOwner));
+  }
+  const QString fakeGit = writeRecordingGit(storeDir.path(), logPath);
+  QVERIFY(!fakeGit.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), script);
+  s.useGit = true;
+  s.gitExecutable = fakeGit;
+  pass.init(s);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  pass.Insert(QStringLiteral("new"), QStringLiteral("s\n"), false);
+  QVERIFY(errorSpy.count() > 0 || errorSpy.wait(15000));
+  QCOMPARE(insertSpy.count(), 0);
+  QVERIFY2(errorSpy.first().at(1).toString().contains("already exists"),
+           qPrintable(errorSpy.first().at(1).toString()));
+  QFile kept(entry);
+  QVERIFY(kept.open(QIODevice::ReadOnly));
+  QCOMPARE(kept.readAll(), QByteArray("theirs"));
+  QTest::qWait(300);
+  const QList<QStringList> calls = loggedCalls(logPath);
+  QVERIFY2(std::none_of(calls.cbegin(), calls.cend(),
+                        [](const QStringList &c) {
+                          return c.first() == QStringLiteral("git") &&
+                                 (c.contains(QStringLiteral("add")) ||
+                                  c.contains(QStringLiteral("commit")));
+                        }),
+           "no git step of a failed add may run");
+  QCOMPARE(
+      QDir(storeDir.path())
+          .entryList({QStringLiteral(".*.tmp")}, QDir::Files | QDir::Hidden)
+          .size(),
+      0);
+#endif
+}
+
+/**
+ * @brief When gpg fails, the temporary it was to write is removed, the
+ *        entry is left as it was, and the failure is reported.
+ */
+void tst_imitatepass::insertRemovesTheTemporaryWhenGpgFails() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString script = QDir(storeDir.path()).filePath("failing-gpg.sh");
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write(QStringLiteral("#!/bin/sh\nprintf '%s\\n' \"$*\" >> '%1'\ncat "
+                           ">/dev/null\nexit 2\n")
+                .arg(logPath)
+                .toUtf8());
+    f.close();
+    QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                              QFile::ExeOwner));
+  }
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), script));
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QDir(storeDir.path()).filePath("entry0"), QStringLiteral("s\n"),
+              true);
+  QVERIFY(errorSpy.count() > 0 || errorSpy.wait(15000));
+  QCOMPARE(insertSpy.count(), 0);
+  QFile kept(QDir(storeDir.path()).filePath("entry0.gpg"));
+  QVERIFY(kept.open(QIODevice::ReadOnly));
+  QCOMPARE(kept.readAll(), QByteArray("not really encrypted"));
+  const QList<QStringList> enc = encryptCalls(loggedCalls(logPath));
+  QCOMPARE(enc.size(), 1);
+  const QString output = enc.first().at(enc.first().indexOf("--output") + 1);
+  QVERIFY2(!QFileInfo::exists(QFileInfo(output).path()),
+           "the scratch directory goes with the failed insert");
+  QCOMPARE(
+      QDir(storeDir.path())
+          .entryList({QStringLiteral(".*.tmp")}, QDir::Files | QDir::Hidden)
+          .size(),
+      0);
 #endif
 }
 

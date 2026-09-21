@@ -127,6 +127,21 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   over real files now, with the same pattern semantics. A shared store's co-writer can make
   `git pull` create such links; SECURITY.md now says what QtPass does with
   them and that the configured store root itself may be a link [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- Adding or editing an entry encrypted to the entry's own path: `gpg`
+  opened `Bank.gpg` for output after QtPass had checked that the name was
+  not a link, and a co-writer of the store who made it one in between (the
+  race the link checks cannot close) had the ciphertext written through to
+  the file the link pointed at, corrupting it. `gpg` now writes into a
+  directory of QtPass's own outside the store, and the bytes go into the
+  store through a file created next to the entry and the operating
+  system's rename, which replaces the entry under the name as an entry,
+  a planted link included, and never writes through one (QFile::rename
+  would have: its fallback copies). Adding over an entry that exists, or
+  that appears while `gpg` runs, is refused (it used to be `gpg` refusing),
+  and a failed placement cancels the Git steps queued behind it. Entries
+  are written with mode 0600, as `pass` writes them. The `pass` backend
+  keeps `pass insert`'s behaviour, as SECURITY.md says
+  ([#1842](https://github.com/IJHack/QtPass/issues/1842))
 - On Windows the link check behind that compared paths with case, so an
   entry named in the other case than the store root ("c:/store/..." for a
   root "C:/Store") skipped the walk up to the root and a link on the way
