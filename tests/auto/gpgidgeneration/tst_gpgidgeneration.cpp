@@ -23,66 +23,121 @@ class tst_gpgidgeneration : public QObject {
     QVERIFY(f.open(QIODevice::WriteOnly));
     QCOMPARE(f.write(bytes), bytes.size());
   }
+  static auto gen(const std::optional<GpgIdGeneration::Header> &h) -> qint64 {
+    return h ? h->generation : -1;
+  }
 
 private slots:
   void initTestCase() { isolateTestSettings(); }
   void parseIsStrict();
   void headerRoundTripsAndIsIgnoredByTheRecipientParser();
+  void folderOfIsStoreRelativeAndCanonical();
   void keyIsTheCanonicalPathHashed();
   void acceptRefusesARollbackAndRemembersTheHighest();
-  void reserveNextIsOneAboveDiskAndMemoryAndRecorded();
+  void acceptRefusesAListWrittenForAnotherFolder();
+  void reserveNextIsOneAboveRecordAndVerifiedDiskAndRecorded();
+  void reserveNextNeverExceedsWhatParseAccepts();
   void reservationIsWrittenThrough();
   void unreadableRecordFailsClosed();
 };
 
 /**
- * @brief Missing is generation 0 (a list from pass or from before), exactly
- *        one well-formed line is that generation, anything else under the
- *        same name is not a list to trust.
+ * @brief No header is generation 0 (a list from pass or from before), one
+ *        generation line with one folder line is that header, anything else
+ *        under our name is not a list to trust.
  */
 void tst_gpgidgeneration::parseIsStrict() {
   QString err;
-  QCOMPARE(GpgIdGeneration::parse("ALICE\nBOB\n"), std::optional<qint64>(0));
-  QCOMPARE(GpgIdGeneration::parse(""), std::optional<qint64>(0));
-  QCOMPARE(GpgIdGeneration::parse("# just a comment\nALICE\n"),
-           std::optional<qint64>(0));
-  QCOMPARE(GpgIdGeneration::parse("# QtPass-GpgId-Generation: 17\nALICE\n"),
-           std::optional<qint64>(17));
-  QCOMPARE(GpgIdGeneration::parse("ALICE\n# QtPass-GpgId-Generation: 3\r\n"),
-           std::optional<qint64>(3));
-  QCOMPARE(GpgIdGeneration::parse("# QtPass-GpgId-Generation: "
-                                  "999999999999999999\n"),
-           std::optional<qint64>(999999999999999999LL));
+  QCOMPARE(gen(GpgIdGeneration::parse("ALICE\nBOB\n")), 0);
+  QCOMPARE(gen(GpgIdGeneration::parse("")), 0);
+  QCOMPARE(gen(GpgIdGeneration::parse("# just a comment\nALICE\n")), 0);
+  QVERIFY(!GpgIdGeneration::parse("ALICE\n")->folder.has_value());
+  const auto ok = GpgIdGeneration::parse(
+      "# QtPass-GpgId-Generation: 17\n# QtPass-GpgId-Folder: .\nALICE\n");
+  QCOMPARE(gen(ok), 17);
+  QCOMPARE(ok->folder, std::optional<QString>(QStringLiteral(".")));
+  const auto crlf = GpgIdGeneration::parse(
+      "ALICE\n# QtPass-GpgId-Folder: work/mail\r\n# QtPass-GpgId-Generation: "
+      "3\r\n");
+  QCOMPARE(gen(crlf), 3);
+  QCOMPARE(crlf->folder, std::optional<QString>(QStringLiteral("work/mail")));
+  QCOMPARE(gen(GpgIdGeneration::parse("# QtPass-GpgId-Generation: "
+                                      "999999999999999999\n# "
+                                      "QtPass-GpgId-Folder: .\n")),
+           999999999999999999LL);
   const char *bad[] = {
-      "# QtPass-GpgId-Generation: banana\n",
-      "# QtPass-GpgId-Generation: -1\n",
-      "# QtPass-GpgId-Generation: 17 \n",
-      "# QtPass-GpgId-Generation: 1999999999999999999\n",
-      "# QtPass-GpgId-Generation:17\n",
-      "# QtPass-GpgId-Generation: \n",
-      "# QtPass-GpgId-Generation: 1\n# QtPass-GpgId-Generation: 2\n",
-      "# QtPass-GpgId-Generation: 5\n# QtPass-GpgId-Generation: 5\n",
+      "# QtPass-GpgId-Generation: banana\n# QtPass-GpgId-Folder: .\n",
+      "# QtPass-GpgId-Generation: -1\n# QtPass-GpgId-Folder: .\n",
+      "# QtPass-GpgId-Generation: 17 \n# QtPass-GpgId-Folder: .\n",
+      "# QtPass-GpgId-Generation: 1999999999999999999\n# QtPass-GpgId-Folder: "
+      ".\n",
+      "# QtPass-GpgId-Generation:17\n# QtPass-GpgId-Folder: .\n",
+      "# QtPass-GpgId-Generation: \n# QtPass-GpgId-Folder: .\n",
+      "# QtPass-GpgId-Generation: 1\n# QtPass-GpgId-Generation: 2\n# "
+      "QtPass-GpgId-Folder: .\n",
+      "# QtPass-GpgId-Generation: 5\n# QtPass-GpgId-Folder: .\n# "
+      "QtPass-GpgId-Folder: .\n",
       "# QtPass-GpgId-Generation\n",
-      "# QtPass-GpgId-Generation: 0x10\n",
+      "# QtPass-GpgId-Generation: 0x10\n# QtPass-GpgId-Folder: .\n",
+      "# QtPass-GpgId-Generation: 7\n",
+      "# QtPass-GpgId-Folder: \n# QtPass-GpgId-Generation: 7\n",
+      "# QtPass-GpgId-Something: 7\n",
   };
   for (const char *b : bad) {
     err.clear();
     QVERIFY2(!GpgIdGeneration::parse(b, &err).has_value(), b);
     QVERIFY2(!err.isEmpty(), b);
   }
+  // A folder line alone (no generation) is odd but not a lie about
+  // freshness; it parses as generation 0 with a folder.
+  const auto folderOnly = GpgIdGeneration::parse("# QtPass-GpgId-Folder: x\n");
+  QCOMPARE(gen(folderOnly), 0);
 }
 
 /**
- * @brief The header QtPass writes parses back to its number and is a
- *        comment to the recipient parser, as it is to pass.
+ * @brief The header QtPass writes parses back, and is comments to the
+ *        recipient parser, as it is to pass 1.7.4 and later.
  */
 void tst_gpgidgeneration::headerRoundTripsAndIsIgnoredByTheRecipientParser() {
-  const QByteArray list = GpgIdGeneration::withHeader(42, "ALICE\nBOB\n");
+  const QByteArray list = GpgIdGeneration::withHeader(
+      42, QStringLiteral("work/mail"), "ALICE\nBOB\n");
   QCOMPARE(list,
-           QByteArrayLiteral("# QtPass-GpgId-Generation: 42\nALICE\nBOB\n"));
-  QCOMPARE(GpgIdGeneration::parse(list), std::optional<qint64>(42));
+           QByteArrayLiteral("# QtPass-GpgId-Generation: 42\n# "
+                             "QtPass-GpgId-Folder: work/mail\nALICE\nBOB\n"));
+  const auto header = GpgIdGeneration::parse(list);
+  QCOMPARE(gen(header), 42);
+  QCOMPARE(header->folder, std::optional<QString>(QStringLiteral("work/mail")));
   QCOMPARE(Pass::parseRecipients(list, QStringLiteral("test")),
            (QStringList{QStringLiteral("ALICE"), QStringLiteral("BOB")}));
+}
+
+/// The folder a list is bound to: `.` at the root, `/`-separated below, the
+/// same through a link or a `..`, nothing outside the store.
+void tst_gpgidgeneration::folderOfIsStoreRelativeAndCanonical() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QDir root(dir.path());
+  QVERIFY(root.mkpath(QStringLiteral("store/work/mail")));
+  QVERIFY(root.mkpath(QStringLiteral("elsewhere")));
+  const QString store = root.filePath(QStringLiteral("store"));
+  QCOMPARE(GpgIdGeneration::folderOf(store + "/.gpg-id", store),
+           std::optional<QString>(QStringLiteral(".")));
+  QCOMPARE(GpgIdGeneration::folderOf(store + "/.gpg-id", store + "/"),
+           std::optional<QString>(QStringLiteral(".")));
+  QCOMPARE(GpgIdGeneration::folderOf(store + "/work/mail/.gpg-id", store),
+           std::optional<QString>(QStringLiteral("work/mail")));
+  QCOMPARE(
+      GpgIdGeneration::folderOf(store + "/work/../work/mail/.gpg-id", store),
+      std::optional<QString>(QStringLiteral("work/mail")));
+  QVERIFY(!GpgIdGeneration::folderOf(
+               root.filePath(QStringLiteral("elsewhere/.gpg-id")), store)
+               .has_value());
+#ifndef Q_OS_WIN
+  QVERIFY(QFile::link(store, root.filePath(QStringLiteral("link"))));
+  QCOMPARE(GpgIdGeneration::folderOf(
+               root.filePath(QStringLiteral("link/work/mail/.gpg-id")), store),
+           std::optional<QString>(QStringLiteral("work/mail")));
+#endif
 }
 
 /**
@@ -122,60 +177,126 @@ void tst_gpgidgeneration::keyIsTheCanonicalPathHashed() {
 /**
  * @brief First sight is accepted (nothing to compare against), a higher
  *        generation is accepted and remembered, an equal one is accepted, a
- *        lower one is refused with a reason that names both numbers, a
- *        malformed one is refused, and a reservation climbs above the
- *        refused one so the way back is to save again.
+ *        lower one is refused with a reason that names both numbers and
+ *        warns about the pre-selected recipients, a headerless one is
+ *        refused with its own explanation, a malformed one is refused, and
+ *        a reservation climbs above the refused one.
  */
 void tst_gpgidgeneration::acceptRefusesARollbackAndRemembersTheHighest() {
   QTemporaryDir dir;
   QVERIFY(dir.isValid());
-  const QString file = QDir(dir.path()).filePath(QStringLiteral(".gpg-id"));
-  write(file, GpgIdGeneration::withHeader(17, "ALICE\n"));
+  const QString store = dir.path();
+  const QString file = QDir(store).filePath(QStringLiteral(".gpg-id"));
+  const auto list = [](qint64 g, const char *who) {
+    return GpgIdGeneration::withHeader(g, QStringLiteral("."), who);
+  };
+  write(file, list(17, "ALICE\n"));
   QString why;
   QCOMPARE(GpgIdGeneration::remembered(file), std::optional<qint64>(0));
-  QVERIFY(GpgIdGeneration::accept(
-      file, GpgIdGeneration::withHeader(17, "ALICE\n"), &why));
+  QVERIFY(GpgIdGeneration::accept(file, list(17, "ALICE\n"), store, &why));
   QCOMPARE(GpgIdGeneration::remembered(file), std::optional<qint64>(17));
-  QVERIFY(GpgIdGeneration::accept(
-      file, GpgIdGeneration::withHeader(18, "ALICE\nBOB\n")));
+  QVERIFY(GpgIdGeneration::accept(file, list(18, "ALICE\nBOB\n"), store));
   QCOMPARE(GpgIdGeneration::remembered(file), std::optional<qint64>(18));
-  QVERIFY2(GpgIdGeneration::accept(
-               file, GpgIdGeneration::withHeader(18, "ALICE\nCAROL\n")),
+  QVERIFY2(GpgIdGeneration::accept(file, list(18, "ALICE\nCAROL\n"), store),
            "two devices both making 18 from 17 is git's conflict, not a "
            "rollback");
-  QVERIFY(!GpgIdGeneration::accept(
-      file, GpgIdGeneration::withHeader(17, "ALICE\nBOB\n"), &why));
-  QVERIFY2(why.contains(QStringLiteral("17")) &&
-               why.contains(QStringLiteral("18")) &&
-               why.contains(QStringLiteral("Users")),
+  QVERIFY(
+      !GpgIdGeneration::accept(file, list(17, "ALICE\nBOB\n"), store, &why));
+  QVERIFY2(why.contains(QStringLiteral("generation 17")) &&
+               why.contains(QStringLiteral("generation 18")) &&
+               why.contains(QStringLiteral("Users")) &&
+               why.contains(QStringLiteral("pre-selected")) &&
+               why.contains(GpgIdGeneration::recordFile()),
            qPrintable(why));
-  QVERIFY2(!GpgIdGeneration::accept(file, "ALICE\nBOB\n", &why),
-           "a list from before generations existed is a rollback too");
+  why.clear();
+  QVERIFY2(!GpgIdGeneration::accept(file, "ALICE\nBOB\n", store, &why),
+           "a list from before generations existed, or from pass, is below");
+  QVERIFY2(why.contains(QStringLiteral("no generation line")) &&
+               why.contains(QStringLiteral("pass")),
+           qPrintable(why));
   QVERIFY(!GpgIdGeneration::accept(
-      file, "# QtPass-GpgId-Generation: x\nALICE\n", &why));
+      file, "# QtPass-GpgId-Generation: x\n# QtPass-GpgId-Folder: .\nALICE\n",
+      store, &why));
   QCOMPARE(GpgIdGeneration::remembered(file), std::optional<qint64>(18));
   // Saving again is the way through: one above the highest known, and the
   // reservation itself moves the record.
-  write(file, GpgIdGeneration::withHeader(17, "ALICE\nBOB\n"));
-  QCOMPARE(GpgIdGeneration::reserveNext(file), std::optional<qint64>(19));
+  QCOMPARE(GpgIdGeneration::reserveNext(file, 17), std::optional<qint64>(19));
   QCOMPARE(GpgIdGeneration::remembered(file), std::optional<qint64>(19));
 }
 
-/// A reservation is one above both the file on disk and the record, and is
-/// recorded at once: two writers cannot get the same number.
-void tst_gpgidgeneration::reserveNextIsOneAboveDiskAndMemoryAndRecorded() {
+/**
+ * @brief A signed pair is only valid where it was written for: copied into
+ *        a folder that never had a list (a key this device has not seen, so
+ *        first sight would accept it) it is refused by its folder line.
+ */
+void tst_gpgidgeneration::acceptRefusesAListWrittenForAnotherFolder() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString store = dir.path();
+  QVERIFY(QDir(store).mkpath(QStringLiteral("team")));
+  const QByteArray rootList =
+      GpgIdGeneration::withHeader(1, QStringLiteral("."), "ALICE\nBOB\n");
+  const QString planted = QDir(store).filePath(QStringLiteral("team/.gpg-id"));
+  write(planted, rootList);
+  QString why;
+  QVERIFY(!GpgIdGeneration::accept(planted, rootList, store, &why));
+  QVERIFY2(why.contains(QStringLiteral("\".\"")) &&
+               why.contains(QStringLiteral("\"team\"")),
+           qPrintable(why));
+  QCOMPARE(GpgIdGeneration::remembered(planted), std::optional<qint64>(0));
+  // Written for team, it is accepted in team.
+  const QByteArray teamList =
+      GpgIdGeneration::withHeader(1, QStringLiteral("team"), "ALICE\n");
+  QVERIFY(GpgIdGeneration::accept(planted, teamList, store));
+  // And a list outside the store as named is nowhere.
+  QTemporaryDir outside;
+  QVERIFY(outside.isValid());
+  const QString foreign =
+      QDir(outside.path()).filePath(QStringLiteral(".gpg-id"));
+  write(foreign, rootList);
+  QVERIFY(!GpgIdGeneration::accept(foreign, rootList, store, &why));
+}
+
+/// A reservation is one above the record and the verified list on disk, and
+/// is recorded at once: two writers cannot get the same number.
+void tst_gpgidgeneration::
+    reserveNextIsOneAboveRecordAndVerifiedDiskAndRecorded() {
   QTemporaryDir dir;
   QVERIFY(dir.isValid());
   const QString file = QDir(dir.path()).filePath(QStringLiteral(".gpg-id"));
-  QCOMPARE(GpgIdGeneration::reserveNext(file), std::optional<qint64>(1));
-  QCOMPARE(GpgIdGeneration::reserveNext(file), std::optional<qint64>(2));
-  write(file, "ALICE\n");
-  QCOMPARE(GpgIdGeneration::reserveNext(file), std::optional<qint64>(3));
-  write(file, GpgIdGeneration::withHeader(7, "ALICE\n"));
-  QCOMPARE(GpgIdGeneration::reserveNext(file), std::optional<qint64>(8));
-  write(file, "# QtPass-GpgId-Generation: broken\nALICE\n");
-  QCOMPARE(GpgIdGeneration::reserveNext(file), std::optional<qint64>(9));
+  QCOMPARE(GpgIdGeneration::reserveNext(file, std::nullopt),
+           std::optional<qint64>(1));
+  QCOMPARE(GpgIdGeneration::reserveNext(file, std::nullopt),
+           std::optional<qint64>(2));
+  QCOMPARE(GpgIdGeneration::reserveNext(file, 7), std::optional<qint64>(8));
+  QCOMPARE(GpgIdGeneration::reserveNext(file, 3), std::optional<qint64>(9));
   QCOMPARE(GpgIdGeneration::remembered(file), std::optional<qint64>(9));
+}
+
+/**
+ * @brief The counter cannot leave the grammar: a planted 18-nines line (not
+ *        verified, so not taken) does not move it, a verified list at the
+ *        ceiling refuses the save instead of writing a 19-digit header the
+ *        parser would reject for good.
+ */
+void tst_gpgidgeneration::reserveNextNeverExceedsWhatParseAccepts() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString file = QDir(dir.path()).filePath(QStringLiteral(".gpg-id"));
+  QCOMPARE(GpgIdGeneration::reserveNext(file, std::nullopt),
+           std::optional<qint64>(1));
+  QString why;
+  QCOMPARE(
+      GpgIdGeneration::reserveNext(file, GpgIdGeneration::kMaxGeneration - 1),
+      std::optional<qint64>(GpgIdGeneration::kMaxGeneration));
+  QVERIFY(GpgIdGeneration::parse(
+              GpgIdGeneration::withHeader(GpgIdGeneration::kMaxGeneration,
+                                          QStringLiteral("."), "ALICE\n"))
+              .has_value());
+  QVERIFY(!GpgIdGeneration::reserveNext(file, std::nullopt, &why).has_value());
+  QVERIFY2(why.contains(QStringLiteral("highest")), qPrintable(why));
+  QCOMPARE(GpgIdGeneration::remembered(file),
+           std::optional<qint64>(GpgIdGeneration::kMaxGeneration));
 }
 
 /// The record is on disk when a reservation returns, in a file of its own.
@@ -183,12 +304,14 @@ void tst_gpgidgeneration::reservationIsWrittenThrough() {
   QTemporaryDir dir;
   QVERIFY(dir.isValid());
   const QString file = QDir(dir.path()).filePath(QStringLiteral(".gpg-id"));
-  QCOMPARE(GpgIdGeneration::reserveNext(file), std::optional<qint64>(1));
+  QCOMPARE(GpgIdGeneration::reserveNext(file, std::nullopt),
+           std::optional<qint64>(1));
   QSettings other(QSettings::defaultFormat(), QSettings::UserScope,
                   QStringLiteral("IJHack"),
                   QStringLiteral("QtPass-gpgid-generations"));
   other.sync();
   QCOMPARE(other.value(GpgIdGeneration::key(file)).toLongLong(), 1);
+  QCOMPARE(other.fileName(), GpgIdGeneration::recordFile());
   QVERIFY2(!other.fileName().contains(QStringLiteral("QtPass.conf")),
            qPrintable(other.fileName()));
 }
@@ -199,7 +322,7 @@ void tst_gpgidgeneration::reservationIsWrittenThrough() {
  *        reservation, and a signed list above anything known is still
  *        refused because accepting it means recording it. A record that
  *        cannot be parsed (garbage where the ini was) reads as nothing, not
- *        as 0, and refuses too.
+ *        as 0, and keeps refusing.
  */
 void tst_gpgidgeneration::unreadableRecordFailsClosed() {
 #ifdef Q_OS_WIN
@@ -210,12 +333,14 @@ void tst_gpgidgeneration::unreadableRecordFailsClosed() {
   }
   QTemporaryDir dir;
   QVERIFY(dir.isValid());
-  const QString file = QDir(dir.path()).filePath(QStringLiteral(".gpg-id"));
-  QCOMPARE(GpgIdGeneration::reserveNext(file), std::optional<qint64>(1));
-  QSettings probe(QSettings::defaultFormat(), QSettings::UserScope,
-                  QStringLiteral("IJHack"),
-                  QStringLiteral("QtPass-gpgid-generations"));
-  const QString recordFile = probe.fileName();
+  const QString store = dir.path();
+  const QString file = QDir(store).filePath(QStringLiteral(".gpg-id"));
+  const auto list = [](qint64 g) {
+    return GpgIdGeneration::withHeader(g, QStringLiteral("."), "ALICE\n");
+  };
+  QCOMPARE(GpgIdGeneration::reserveNext(file, std::nullopt),
+           std::optional<qint64>(1));
+  const QString recordFile = GpgIdGeneration::recordFile();
   QVERIFY(QFile::exists(recordFile));
   const QString recordDir = QFileInfo(recordFile).absolutePath();
   const QFile::Permissions was = QFile::permissions(recordDir);
@@ -223,24 +348,21 @@ void tst_gpgidgeneration::unreadableRecordFailsClosed() {
   const auto restore =
       qScopeGuard([&] { QFile::setPermissions(recordDir, was); });
   QString why;
-  QVERIFY2(!GpgIdGeneration::reserveNext(file, &why).has_value(),
+  QVERIFY2(!GpgIdGeneration::reserveNext(file, std::nullopt, &why).has_value(),
            "no record, no generation to write");
   QVERIFY(!why.isEmpty());
   why.clear();
-  QVERIFY2(!GpgIdGeneration::accept(
-               file, GpgIdGeneration::withHeader(5, "ALICE\n"), &why),
+  QVERIFY2(!GpgIdGeneration::accept(file, list(5), store, &why),
            "accepting means recording; when that fails, nothing is accepted");
   QVERIFY(!why.isEmpty());
   why.clear();
-  QVERIFY2(!GpgIdGeneration::accept(
-               file, GpgIdGeneration::withHeader(1, "ALICE\n"), &why),
+  QVERIFY2(!GpgIdGeneration::accept(file, list(1), store, &why),
            "while the record cannot be written, nothing is established");
   QVERIFY(QFile::setPermissions(recordDir, was));
   QVERIFY2(GpgIdGeneration::remembered(file) == std::optional<qint64>(1),
            "the refused 5 was not left pending in Qt's cache to be flushed "
            "later");
-  QVERIFY(
-      GpgIdGeneration::accept(file, GpgIdGeneration::withHeader(1, "ALICE\n")));
+  QVERIFY(GpgIdGeneration::accept(file, list(1), store));
 
   // Garbage where the record was: QSettings reports a format error, and
   // that is "unknown", not "0".
@@ -257,10 +379,9 @@ void tst_gpgidgeneration::unreadableRecordFailsClosed() {
   // And it stays that way for the process: Qt's cache would otherwise carry
   // on with an empty record, which is "never seen", not "unknown".
   why.clear();
-  QVERIFY(!GpgIdGeneration::accept(
-      file, GpgIdGeneration::withHeader(5, "ALICE\n"), &why));
+  QVERIFY(!GpgIdGeneration::accept(file, list(5), store, &why));
   QVERIFY(!why.isEmpty());
-  QVERIFY(!GpgIdGeneration::reserveNext(file).has_value());
+  QVERIFY(!GpgIdGeneration::reserveNext(file, std::nullopt).has_value());
 #endif
 }
 

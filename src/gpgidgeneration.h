@@ -11,53 +11,88 @@
  * @brief Rollback detection for signed `.gpg-id` files.
  *
  * A signature proves that a recipient list is authentic and unmodified; it
- * does not prove that it is the current one. Whoever can write to a shared
- * store can put back an older, genuinely signed list that still names a
- * member since removed, and every later encryption would include them again.
+ * does not prove that it is the current one, nor that it was written for
+ * the folder it sits in. Whoever can write to a shared store can put back an
+ * older, genuinely signed list that still names a member since removed, or
+ * copy such a pair into a folder that never had a list of its own, and every
+ * later encryption there would include them again.
  *
- * So a `.gpg-id` QtPass writes starts with one comment line,
- * `# QtPass-GpgId-Generation: N`, that `pass` and QtPass's own recipient
- * parser ignore and the signature covers. QtPass remembers, per `.gpg-id`
- * file, the highest generation it has accepted, and refuses a signed list
- * whose generation is lower.
+ * So a `.gpg-id` QtPass writes for a store with a signing key starts with two
+ * comment lines, `# QtPass-GpgId-Generation: N` and
+ * `# QtPass-GpgId-Folder: <store-relative folder>`, which `pass` (1.7.4 and
+ * later), QtPass (1.8 and later) and QtPass's own recipient parser ignore
+ * and the signature covers. QtPass remembers, per `.gpg-id` file, the
+ * highest generation it has accepted or written, and refuses a signed list
+ * whose generation is lower or whose folder is not the one it sits in.
+ * Stores without a signing key get plain lists, as before: nothing checks
+ * their freshness, and older clients (pass up to 1.7.3, Android Password
+ * Store) take a comment for a recipient.
  *
  * What this is and is not: rollback detection on a device that has seen the
  * newer list. A device seeing a store for the first time, or one that was
  * offline, has nothing to compare against. The generation is monotonic per
  * observer, not a distributed sequence number: two devices can both produce
- * generation 19 from 18, and Git is what sorts that out. A legitimate
- * revert to an older signed list is refused too, on purpose; saving the
- * recipients again writes a higher generation and is the way through.
+ * generation 19 from 18, and Git is what sorts that out. A list without the
+ * lines (written by `pass`, or by QtPass before 2.0) is generation 0 and is
+ * refused once anything higher was accepted; a holder of the signing key
+ * saving the recipients from QtPass writes the next generation. Without a
+ * readable and writable record nothing is accepted or written: unknown
+ * state is not "never seen".
  */
 class GpgIdGeneration {
 public:
-  /// The one line format. The grammar is strict: this prefix, one ASCII
+  /// The generation line. The grammar is strict: this prefix, one ASCII
   /// decimal number of at most 18 digits, nothing else on the line.
-  static const QByteArray kPrefix;
+  static const QByteArray kGenerationPrefix;
+  /// The folder line: this prefix and the store-relative folder the list was
+  /// written for, `.` for the store root, `/`-separated.
+  static const QByteArray kFolderPrefix;
+  /// The largest generation the grammar admits (18 nines). reserveNext()
+  /// never goes above it: a header QtPass writes must be one it reads back.
+  static const qint64 kMaxGeneration;
+
+  /// What a list's header says.
+  struct Header {
+    /// 0 when the list carries no generation line.
+    qint64 generation = 0;
+    /// Nothing when the list carries no folder line.
+    std::optional<QString> folder;
+  };
 
   /**
-   * @brief The generation a `.gpg-id`'s bytes declare.
+   * @brief The header a `.gpg-id`'s bytes declare.
    * @param contents The file, as verified.
    * @param error Receives why the metadata is unusable, if not null.
-   * @return 0 when no generation line is present (a list written before
-   *         generations existed, or by `pass`); the number when exactly one
-   *         well-formed line is; nothing when a line is malformed or there
-   *         is more than one, which is not a list to trust.
+   * @return The header (generation 0 and no folder for a list written
+   *         before generations existed, or by `pass`); nothing when a line
+   *         is malformed, appears twice, or a generation line comes without
+   *         a folder line, which is not a list to trust.
    */
   static auto parse(const QByteArray &contents, QString *error = nullptr)
-      -> std::optional<qint64>;
+      -> std::optional<Header>;
 
   /**
-   * @brief The generation line for @p generation, newline included.
+   * @brief The two header lines for @p generation and @p folder, newlines
+   * included.
    */
-  static auto header(qint64 generation) -> QByteArray;
+  static auto header(qint64 generation, const QString &folder) -> QByteArray;
 
   /**
-   * @brief @p recipients (one per line, no generation line) with the
-   * generation line in front.
+   * @brief @p recipients (one per line, no header) with the header in front.
    */
-  static auto withHeader(qint64 generation, const QByteArray &recipients)
-      -> QByteArray;
+  static auto withHeader(qint64 generation, const QString &folder,
+                         const QByteArray &recipients) -> QByteArray;
+
+  /**
+   * @brief The store-relative folder of @p gpgIdFile, as written in and
+   * compared against the folder line: `.` for the store root, `/`-separated,
+   * from canonical paths, lower-cased on Windows.
+   * @param gpgIdFile The `.gpg-id`.
+   * @param storeRoot The configured store.
+   * @return The folder, or nothing when @p gpgIdFile is not under the store.
+   */
+  static auto folderOf(const QString &gpgIdFile, const QString &storeRoot)
+      -> std::optional<QString>;
 
   /**
    * @brief The highest generation this device has accepted or written for
@@ -71,38 +106,49 @@ public:
       -> std::optional<qint64>;
 
   /**
-   * @brief Decide about a verified list: its generation against the
-   * remembered one, and remember it when it passes. One transaction under
-   * the process-wide lock: read, compare, write through.
+   * @brief Decide about a verified list: its folder against where it sits,
+   * its generation against the remembered one, and remember it when it
+   * passes. One transaction under the process-wide lock: read, compare,
+   * write through.
    * @param gpgIdFile The `.gpg-id` the bytes came from.
    * @param contents The verified bytes.
-   * @param error Receives the reason for a refusal, if not null.
+   * @param storeRoot The configured store, for the folder check.
+   * @param error Receives the reason for a refusal, if not null. Where the
+   *        way through is saving the list again, the text says so, and that
+   *        the recipients the dialog then pre-selects are this list's.
    * @return true when the list may be used. false when its generation is
-   *         lower, its metadata malformed, or the record could not be read
-   *         or written: without established freshness state nothing is
-   *         accepted.
+   *         lower, it was written for another folder, its metadata is
+   *         malformed, or the record could not be read or written: without
+   *         established freshness state nothing is accepted.
    */
   static auto accept(const QString &gpgIdFile, const QByteArray &contents,
-                     QString *error = nullptr) -> bool;
+                     const QString &storeRoot, QString *error = nullptr)
+      -> bool;
 
   /**
    * @brief Reserve the generation to write next for @p gpgIdFile: one above
-   * both what the file on disk declares (0 when it declares nothing usable)
-   * and what this device remembers, recorded as remembered before it is
-   * returned. One transaction under the lock, so two writers in this
-   * process cannot get the same number.
+   * both what this device remembers and @p verifiedOnDisk, recorded as
+   * remembered before it is returned. One transaction under the lock, so two
+   * writers in this process cannot get the same number.
    *
    * Reserving before the file is written is what makes a failed write
    * harmless (the record is ahead, the old list stays refused until a save
    * succeeds) and a failed record fatal for the write: a list written but
    * not recorded would let the previous one back in.
    * @param gpgIdFile The `.gpg-id` about to be written.
+   * @param verifiedOnDisk The generation of the list currently on disk, if
+   *        its signature verified; nothing otherwise. An unverified number
+   *        is not taken: planted at the top of the grammar it would exhaust
+   *        the counter, planted high it would make every other device see a
+   *        jump.
    * @param error Receives why nothing could be reserved, if not null.
    * @return The generation to write, or nothing when the record could not
-   *         be read or written; the caller must not write the list then.
+   *         be read or written or the counter is exhausted; the caller must
+   *         not write the list then.
    */
-  static auto reserveNext(const QString &gpgIdFile, QString *error = nullptr)
-      -> std::optional<qint64>;
+  static auto reserveNext(const QString &gpgIdFile,
+                          std::optional<qint64> verifiedOnDisk,
+                          QString *error = nullptr) -> std::optional<qint64>;
 
   /**
    * @brief The settings key for @p gpgIdFile: a hash of its canonical path,
@@ -110,6 +156,11 @@ public:
    * treatment of `/` do not matter.
    */
   static auto key(const QString &gpgIdFile) -> QString;
+
+  /// The file the accepted generations are recorded in, so a refusal can
+  /// name it: removing it forgets what was accepted, which is the manual way
+  /// out for a device that cannot save the list itself.
+  static auto recordFile() -> QString;
 };
 
 #endif // SRC_GPGIDGENERATION_H_

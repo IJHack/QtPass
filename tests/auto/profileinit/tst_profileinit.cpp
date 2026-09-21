@@ -15,12 +15,15 @@
 #include "../../../src/appsettings.h"
 #include "../../../src/profileinit.h"
 #include "../../../src/userinfo.h"
+#include "../testsettings.h"
 
 class tst_profileinit : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
+  void initTestCase() { isolateTestSettings(); }
   void needsInitFalseForNonexistentPath();
+  void initialiseWithASigningKeyWritesTheGenerationHeader();
   void needsInitFalseForEmptyPath();
   void needsInitTrueForDirWithoutGpgId();
   void needsInitFalseForDirWithGpgId();
@@ -116,10 +119,10 @@ void tst_profileinit::initialiseWritesEnabledKeysOnly() {
   QVERIFY2(note.isEmpty(), qPrintable("quiet success expected: " + note));
   QFile gpgId(QDir(dir.path()).filePath(QStringLiteral(".gpg-id")));
   QVERIFY(gpgId.open(QIODevice::ReadOnly | QIODevice::Text));
-  // First line: the generation (GpgIdGeneration), a comment to pass.
+  // No signing key, so a plain list: nothing checks its freshness and every
+  // client reads it.
   QCOMPARE(QString::fromUtf8(gpgId.readAll()),
-           QStringLiteral("# QtPass-GpgId-Generation: 1\n"
-                          "AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111\n"));
+           QStringLiteral("AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111\n"));
   QVERIFY(!ProfileInit::needsInit(dir.path()));
 #ifndef Q_OS_WIN
   const auto perms = QFileInfo(gpgId).permissions();
@@ -158,6 +161,28 @@ void tst_profileinit::initialiseLeavesNoHalfWrittenGpgId() {
           .isEmpty(),
       "nothing may be left behind, no temporary either");
 #endif
+}
+
+/**
+ * @brief With a signing key configured the list carries the generation and
+ *        folder header the store's lists are checked against; signing itself
+ *        fails here (no gpg), which is reported, but the file is what a
+ *        signed store's first list looks like.
+ */
+void tst_profileinit::initialiseWithASigningKeyWritesTheGenerationHeader() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  AppSettings s;
+  s.passSigningKey = QStringLiteral("AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111");
+  s.gpgExecutable = QStringLiteral("/nonexistent/gpg");
+  QString note;
+  ProfileInit::initialise(dir.path(), twoUsers(), s, false, &note);
+  QFile gpgId(QDir(dir.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::ReadOnly | QIODevice::Text));
+  QCOMPARE(QString::fromUtf8(gpgId.readAll()),
+           QStringLiteral("# QtPass-GpgId-Generation: 1\n"
+                          "# QtPass-GpgId-Folder: .\n"
+                          "AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111\n"));
 }
 
 void tst_profileinit::initialiseRefusesWithoutRecipients() {

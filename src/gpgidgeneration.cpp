@@ -12,11 +12,19 @@
 #include <QSettings>
 #include <memory>
 
-const QByteArray GpgIdGeneration::kPrefix =
+const QByteArray GpgIdGeneration::kGenerationPrefix =
     QByteArrayLiteral("# QtPass-GpgId-Generation: ");
+const QByteArray GpgIdGeneration::kFolderPrefix =
+    QByteArrayLiteral("# QtPass-GpgId-Folder: ");
+const qint64 GpgIdGeneration::kMaxGeneration = 999999999999999999LL;
 
 namespace {
 constexpr int kMaxDigits = 18;
+const QByteArray kOurComment = QByteArrayLiteral("# QtPass-GpgId-");
+
+auto tr(const char *text) -> QString {
+  return QCoreApplication::translate("GpgIdGeneration", text);
+}
 
 /// One lock for every read-compare-write on the generation record: a fresh
 /// QSettings per transaction (the same QSettings object is not thread-safe,
@@ -40,17 +48,9 @@ auto openRecord() -> std::unique_ptr<QSettings> {
   return settings;
 }
 
-auto statusText(QSettings::Status status) -> QString {
-  return status == QSettings::AccessError
-             ? QCoreApplication::translate("GpgIdGeneration",
-                                           "the record cannot be accessed")
-             : QCoreApplication::translate("GpgIdGeneration",
-                                           "the record is not readable");
-}
-
-/// Once the record failed to parse, Qt's process-wide cache of the file
-/// goes on as if it were empty, which would turn "unreadable" into "never
-/// seen"; so a format error is remembered for the rest of the process.
+/// Once the record failed to parse, Qt's process-wide cache of the file goes
+/// on as if it were empty, which would turn "unreadable" into "never seen";
+/// so a format error is remembered for the rest of the process.
 bool recordCorrupt = false;
 
 /// The remembered generation, read fresh; nothing when the record cannot be
@@ -63,22 +63,18 @@ auto readRemembered(QSettings &record, const QString &key, QString *error)
   }
   if (recordCorrupt) {
     if (error)
-      *error = QCoreApplication::translate(
-                   "GpgIdGeneration",
-                   "The generation record of the recipient lists, %1, is not "
-                   "readable. Signed recipient lists are not accepted until it "
-                   "is repaired or removed (which forgets what was accepted "
-                   "before) and QtPass is started again.")
+      *error = tr("The generation record of the recipient lists, %1, is not "
+                  "readable. Signed recipient lists are not accepted until "
+                  "it is repaired or removed (which forgets what was accepted "
+                  "before) and QtPass is started again.")
                    .arg(record.fileName());
     return std::nullopt;
   }
   if (record.status() != QSettings::NoError) {
     if (error)
-      *error = QCoreApplication::translate(
-                   "GpgIdGeneration",
-                   "The generation record of the recipient lists could not "
-                   "be read (%1).")
-                   .arg(statusText(record.status()));
+      *error = tr("The generation record of the recipient lists, %1, cannot "
+                  "be accessed.")
+                   .arg(record.fileName());
     return std::nullopt;
   }
   return record.value(key, 0).toLongLong();
@@ -101,68 +97,119 @@ auto writeRemembered(QSettings &record, const QString &key, qint64 generation,
     qCWarning(lcQtPass) << "Could not record the .gpg-id generation" << key
                         << "status" << record.status();
     if (error)
-      *error = QCoreApplication::translate(
-                   "GpgIdGeneration",
-                   "The generation record of the recipient lists could not "
-                   "be written (%1).")
-                   .arg(statusText(record.status()));
+      *error = tr("The generation record of the recipient lists, %1, cannot "
+                  "be written.")
+                   .arg(record.fileName());
     return false;
   }
   return true;
 }
+
+/// Store-relative, `/`-separated, canonical, `.` for the root; nothing when
+/// @p path is not under @p root.
+auto relativeFolder(const QString &path, const QString &root)
+    -> std::optional<QString> {
+  QString folder = QFileInfo(path).absoluteDir().canonicalPath();
+  if (folder.isEmpty()) {
+    folder = QFileInfo(path).absolutePath();
+  }
+  QString store = QFileInfo(root).canonicalFilePath();
+  if (store.isEmpty()) {
+    store = QDir::cleanPath(QFileInfo(root).absoluteFilePath());
+  }
+  folder = QDir::fromNativeSeparators(QDir::cleanPath(folder));
+  store = QDir::fromNativeSeparators(QDir::cleanPath(store));
+#ifdef Q_OS_WIN
+  folder = folder.toLower();
+  store = store.toLower();
+#endif
+  if (folder == store) {
+    return QStringLiteral(".");
+  }
+  const QString prefix =
+      store.endsWith(QLatin1Char('/')) ? store : store + QLatin1Char('/');
+  if (!folder.startsWith(prefix)) {
+    return std::nullopt;
+  }
+  return folder.mid(prefix.size());
+}
 } // namespace
 
 auto GpgIdGeneration::parse(const QByteArray &contents, QString *error)
-    -> std::optional<qint64> {
-  std::optional<qint64> found;
+    -> std::optional<Header> {
+  std::optional<qint64> generation;
+  std::optional<QString> folder;
   for (const QByteArray &rawLine : contents.split('\n')) {
     QByteArray line = rawLine;
     if (line.endsWith('\r')) {
       line.chop(1);
     }
-    // Only a line that starts with the prefix is a generation line; any other
-    // comment is somebody else's. But a near miss under the same name is
-    // suspicious, not ignorable.
-    if (!line.startsWith(QByteArrayLiteral("# QtPass-GpgId-Generation"))) {
+    // Only a line under our name is ours; any other comment is somebody
+    // else's. But a near miss under the same name is suspicious, not
+    // ignorable.
+    if (!line.startsWith(kOurComment)) {
       continue;
     }
-    if (!line.startsWith(kPrefix)) {
-      if (error)
-        *error = QCoreApplication::translate(
-                     "GpgIdGeneration", "The generation line is malformed: %1")
-                     .arg(QString::fromUtf8(line));
-      return std::nullopt;
+    if (line.startsWith(kGenerationPrefix)) {
+      const QByteArray digits = line.mid(kGenerationPrefix.size());
+      bool ok = digits.size() >= 1 && digits.size() <= kMaxDigits;
+      for (const char c : digits) {
+        ok = ok && c >= '0' && c <= '9';
+      }
+      if (!ok || generation) {
+        if (error)
+          *error = generation
+                       ? tr("The list carries more than one generation line.")
+                       : tr("The generation line is malformed: %1")
+                             .arg(QString::fromUtf8(line));
+        return std::nullopt;
+      }
+      generation = digits.toLongLong();
+      continue;
     }
-    const QByteArray digits = line.mid(kPrefix.size());
-    bool ok = digits.size() >= 1 && digits.size() <= kMaxDigits;
-    for (const char c : digits) {
-      ok = ok && c >= '0' && c <= '9';
+    if (line.startsWith(kFolderPrefix)) {
+      const QByteArray value = line.mid(kFolderPrefix.size());
+      if (value.isEmpty() || folder) {
+        if (error)
+          *error = folder ? tr("The list carries more than one folder line.")
+                          : tr("The folder line is malformed: %1")
+                                .arg(QString::fromUtf8(line));
+        return std::nullopt;
+      }
+      folder = QString::fromUtf8(value);
+      continue;
     }
-    if (!ok) {
-      if (error)
-        *error = QCoreApplication::translate(
-                     "GpgIdGeneration", "The generation line is malformed: %1")
-                     .arg(QString::fromUtf8(line));
-      return std::nullopt;
-    }
-    if (found) {
-      if (error)
-        *error = QCoreApplication::translate(
-            "GpgIdGeneration", "The list carries more than one generation.");
-      return std::nullopt;
-    }
-    found = digits.toLongLong();
+    if (error)
+      *error =
+          tr("The header line is malformed: %1").arg(QString::fromUtf8(line));
+    return std::nullopt;
   }
-  return found.value_or(0);
+  if (generation && !folder) {
+    if (error)
+      *error = tr("The list carries a generation line but no folder line.");
+    return std::nullopt;
+  }
+  Header header;
+  header.generation = generation.value_or(0);
+  header.folder = folder;
+  return header;
 }
 
-auto GpgIdGeneration::header(qint64 generation) -> QByteArray {
-  return kPrefix + QByteArray::number(generation) + '\n';
+auto GpgIdGeneration::header(qint64 generation, const QString &folder)
+    -> QByteArray {
+  return kGenerationPrefix + QByteArray::number(generation) + '\n' +
+         kFolderPrefix + folder.toUtf8() + '\n';
 }
 
-auto GpgIdGeneration::withHeader(qint64 generation,
+auto GpgIdGeneration::withHeader(qint64 generation, const QString &folder,
                                  const QByteArray &recipients) -> QByteArray {
-  return header(generation) + recipients;
+  return header(generation, folder) + recipients;
+}
+
+auto GpgIdGeneration::folderOf(const QString &gpgIdFile,
+                               const QString &storeRoot)
+    -> std::optional<QString> {
+  return relativeFolder(gpgIdFile, storeRoot);
 }
 
 auto GpgIdGeneration::key(const QString &gpgIdFile) -> QString {
@@ -184,6 +231,10 @@ auto GpgIdGeneration::key(const QString &gpgIdFile) -> QString {
           .toHex());
 }
 
+auto GpgIdGeneration::recordFile() -> QString {
+  return openRecord()->fileName();
+}
+
 auto GpgIdGeneration::remembered(const QString &gpgIdFile, QString *error)
     -> std::optional<qint64> {
   QMutexLocker lock(&recordLock());
@@ -192,14 +243,28 @@ auto GpgIdGeneration::remembered(const QString &gpgIdFile, QString *error)
 }
 
 auto GpgIdGeneration::accept(const QString &gpgIdFile,
-                             const QByteArray &contents, QString *error)
-    -> bool {
+                             const QByteArray &contents,
+                             const QString &storeRoot, QString *error) -> bool {
   QString why;
-  const std::optional<qint64> generation = parse(contents, &why);
-  if (!generation) {
+  const std::optional<Header> header = parse(contents, &why);
+  if (!header) {
     if (error)
       *error = why;
     return false;
+  }
+  // A pair is only valid where it was written for: copied into another
+  // folder it is a rollback in disguise (that folder's first list).
+  if (header->folder) {
+    const std::optional<QString> here = folderOf(gpgIdFile, storeRoot);
+    if (!here || *here != *header->folder) {
+      if (error)
+        *error = tr("The signed recipient list %1 was written for the folder "
+                    "\"%2\" of the store, not for \"%3\". It may have been "
+                    "copied here by someone else and is not used.")
+                     .arg(gpgIdFile, *header->folder,
+                          here.value_or(QStringLiteral("?")));
+      return false;
+    }
   }
   QMutexLocker lock(&recordLock());
   auto record = openRecord();
@@ -208,33 +273,47 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
   if (!last) {
     return false;
   }
-  if (*generation < *last) {
-    if (error)
-      *error = QCoreApplication::translate(
-                   "GpgIdGeneration",
-                   "The signed recipient list %1 is generation %2, older than "
-                   "generation %3, the last one QtPass accepted here. If going "
-                   "back to it is intended, open Users and save the list "
-                   "again.")
-                   .arg(gpgIdFile)
-                   .arg(*generation)
-                   .arg(*last);
+  const qint64 generation = header->generation;
+  if (generation < *last) {
+    if (error) {
+      const QString wayOut =
+          tr("A holder of the signing key gets through by opening Users and "
+             "saving the recipients, which writes generation %1: the "
+             "pre-selected recipients there are this list's, so remove "
+             "anyone who should no longer have access first. Removing %2 "
+             "forgets what this device accepted before.")
+              .arg(*last + 1)
+              .arg(record->fileName());
+      if (generation == 0) {
+        *error = tr("The signed recipient list %1 carries no generation "
+                    "line, while generation %2 was accepted here before. "
+                    "pass writes no generation line (also through QtPass's "
+                    "pass backend), nor did QtPass before 2.0. %3")
+                     .arg(gpgIdFile)
+                     .arg(*last)
+                     .arg(wayOut);
+      } else {
+        *error = tr("The signed recipient list %1 is generation %2, older "
+                    "than generation %3, the last one QtPass accepted here. "
+                    "It may have been put back by someone else. %4")
+                     .arg(gpgIdFile)
+                     .arg(generation)
+                     .arg(*last)
+                     .arg(wayOut);
+      }
+    }
     return false;
   }
-  if (*generation > *last &&
-      !writeRemembered(*record, k, *generation, *last, error)) {
+  if (generation > *last &&
+      !writeRemembered(*record, k, generation, *last, error)) {
     return false;
   }
   return true;
 }
 
-auto GpgIdGeneration::reserveNext(const QString &gpgIdFile, QString *error)
-    -> std::optional<qint64> {
-  qint64 onDisk = 0;
-  QFile file(gpgIdFile);
-  if (file.open(QIODevice::ReadOnly)) {
-    onDisk = parse(file.readAll()).value_or(0);
-  }
+auto GpgIdGeneration::reserveNext(const QString &gpgIdFile,
+                                  std::optional<qint64> verifiedOnDisk,
+                                  QString *error) -> std::optional<qint64> {
   QMutexLocker lock(&recordLock());
   auto record = openRecord();
   const QString k = key(gpgIdFile);
@@ -242,7 +321,16 @@ auto GpgIdGeneration::reserveNext(const QString &gpgIdFile, QString *error)
   if (!last) {
     return std::nullopt;
   }
-  const qint64 generation = qMax(onDisk, *last) + 1;
+  const qint64 base = qMax(*last, verifiedOnDisk.value_or(0));
+  if (base >= kMaxGeneration) {
+    if (error)
+      *error = tr("The recipient list %1 has reached generation %2, the "
+                  "highest there is; the list cannot be written.")
+                   .arg(gpgIdFile)
+                   .arg(base);
+    return std::nullopt;
+  }
+  const qint64 generation = base + 1;
   if (!writeRemembered(*record, k, generation, *last, error)) {
     return std::nullopt;
   }

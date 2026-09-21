@@ -1,7 +1,6 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "pass.h"
-#include "gpgidgeneration.h"
 #include "gpgkeystate.h"
 #include "util.h"
 #include <QCoreApplication>
@@ -993,15 +992,10 @@ auto Pass::seedGpgIdFile(const QString &newDir, const QString &passStore)
   if (!gpgId.open(QIODevice::WriteOnly)) {
     return false;
   }
-  // The same first line every list QtPass writes carries (GpgIdGeneration):
-  // unsigned here, so no freshness is checked, but the format is one.
-  const std::optional<qint64> generation =
-      GpgIdGeneration::reserveNext(gpgIdFile);
-  if (!generation) {
-    return false;
-  }
+  // Only reached without a signing key (MainWindow seeds only then), so no
+  // generation header: nothing checks freshness, and a plain list stays
+  // readable for clients that take a comment for a recipient.
   QTextStream out(&gpgId);
-  out << GpgIdGeneration::header(*generation);
   for (const QString &recipient : recipients) {
     out << recipient << '\n';
   }

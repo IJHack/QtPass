@@ -41,6 +41,7 @@
 #include <sys/stat.h>
 #endif
 
+#include "../../../src/gpgidgeneration.h"
 #include "../../../src/imitatepass.h"
 #include "../testsettings.h"
 
@@ -332,6 +333,8 @@ private Q_SLOTS:
   void insertRunsNoGitWhenGitIsDisabled();
   void insertEncryptsToTheRecipientsWhoseSignatureWasChecked();
   void anOlderSignedGpgIdIsRefusedUntilSavedAgain();
+  void aSignedGpgIdCopiedIntoAnotherFolderIsRefused();
+  void aPlantedGenerationDoesNotMoveTheCounter();
   void reencryptUsesTheRecipientsWhoseSignatureWasChecked();
   void initCommitsGpgIdAndSignatureTogether();
   void initDoesNotReencryptWhenTheGpgIdCommitFails();
@@ -959,7 +962,9 @@ void tst_imitatepass::anOlderSignedGpgIdIsRefusedUntilSavedAgain() {
   QVERIFY(g1.open(QIODevice::ReadOnly));
   const QByteArray gen1 = g1.readAll();
   g1.close();
-  QVERIFY2(gen1.startsWith("# QtPass-GpgId-Generation: 1\n"), gen1.constData());
+  QVERIFY2(gen1.startsWith(
+               "# QtPass-GpgId-Generation: 1\n# QtPass-GpgId-Folder: .\n"),
+           gen1.constData());
   QVERIFY(gen1.contains(bob.key_id.toUtf8()));
   QFile s1(sigFile);
   QVERIFY(s1.open(QIODevice::ReadOnly));
@@ -1017,6 +1022,135 @@ void tst_imitatepass::anOlderSignedGpgIdIsRefusedUntilSavedAgain() {
   QCOMPARE(criticalSpy.count(), 0);
   QCOMPARE(recipientsOf(encryptCalls(loggedCalls(logPath)).first()),
            QStringList{kSigner});
+#endif
+}
+
+/**
+ * @brief Relocation: the root's signed pair (still naming Bob) copied into
+ *        a folder that never had a list of its own. The folder's record is
+ *        empty, so first sight would accept it; the folder line says it was
+ *        written for ".", and nothing is encrypted to it.
+ */
+void tst_imitatepass::aSignedGpgIdCopiedIntoAnotherFolderIsRefused() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  const QString logPath = root.filePath("gpg-argv.log");
+  const QString fakeGpg = writeSigningGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.passSigningKey = kSigner;
+  pass.init(s);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  UserInfo alice;
+  alice.key_id = kSigner;
+  alice.enabled = true;
+  alice.have_secret = true;
+  UserInfo bob;
+  bob.key_id = QStringLiteral("89ABCDEF0123456789ABCDEF0123456789ABCDEF");
+  bob.enabled = true;
+  const QString store = root.path() + QLatin1Char('/');
+  pass.Init(store, {alice, bob});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  endSpy.clear();
+  pass.Init(store, {alice});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCOMPARE(criticalSpy.count(), 0);
+  // The attacker kept the generation-1 pair and plants it in a new folder.
+  QVERIFY(root.mkpath(QStringLiteral("team")));
+  QVERIFY(QFile::copy(root.filePath(".gpg-id"), root.filePath("team/.gpg-id")));
+  QVERIFY(QFile::copy(root.filePath(".gpg-id.sig"),
+                      root.filePath("team/.gpg-id.sig")));
+  {
+    // ... the old one, with Bob: rewrite team/.gpg-id from the gen-1 shape.
+    QFile f(root.filePath("team/.gpg-id"));
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write(GpgIdGeneration::withHeader(
+        1, QStringLiteral("."),
+        (alice.key_id + "\n" + bob.key_id + "\n").toUtf8()));
+  }
+  QFile::remove(logPath);
+  pass.Insert(root.filePath("team/entry"), QStringLiteral("secret\n"), false);
+  QTest::qWait(500);
+  QCOMPARE(insertSpy.count(), 0);
+  QCOMPARE(criticalSpy.count(), 1);
+  const QString why = criticalSpy.takeFirst().at(1).toString();
+  QVERIFY2(why.contains(QStringLiteral("\".\"")) &&
+               why.contains(QStringLiteral("\"team\"")),
+           qPrintable(why));
+  QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
+           "nothing may be encrypted to a relocated list");
+#endif
+}
+
+/**
+ * @brief A planted, unsigned header at the top of the grammar must not
+ *        drive the counter: the save after it still writes a small number
+ *        (the list on disk did not verify, so its number is not taken), and
+ *        the store keeps working.
+ */
+void tst_imitatepass::aPlantedGenerationDoesNotMoveTheCounter() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  const QString gpgIdFile = root.filePath(".gpg-id");
+  const QString logPath = root.filePath("gpg-argv.log");
+  // This fake reports VALIDSIG for anything, so make the planted list fail
+  // the read some other way: the folder line names another folder.
+  const QString fakeGpg = writeSigningGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.passSigningKey = kSigner;
+  pass.init(s);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  UserInfo alice;
+  alice.key_id = kSigner;
+  alice.enabled = true;
+  alice.have_secret = true;
+  const QString store = root.path() + QLatin1Char('/');
+  pass.Init(store, {alice});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  endSpy.clear();
+  {
+    QFile f(gpgIdFile);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write("# QtPass-GpgId-Generation: 999999999999999999\n"
+            "# QtPass-GpgId-Folder: elsewhere\n" +
+            alice.key_id.toUtf8() + "\n");
+  }
+  // Insert is refused (the list is not this folder's) ...
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  pass.Insert(root.filePath("entry"), QStringLiteral("secret\n"), false);
+  QTest::qWait(500);
+  QCOMPARE(insertSpy.count(), 0);
+  QVERIFY(criticalSpy.count() >= 1);
+  criticalSpy.clear();
+  // ... and the save that follows writes generation 2, not 10^18.
+  pass.Init(store, {alice});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCOMPARE(criticalSpy.count(), 0);
+  QFile g(gpgIdFile);
+  QVERIFY(g.open(QIODevice::ReadOnly));
+  const QByteArray written = g.readAll();
+  QVERIFY2(written.startsWith("# QtPass-GpgId-Generation: 2\n"),
+           written.constData());
+  QVERIFY(GpgIdGeneration::parse(written).has_value());
+  QFile::remove(logPath);
+  pass.Insert(root.filePath("entry"), QStringLiteral("secret\n"), false);
+  QVERIFY(insertSpy.count() > 0 || insertSpy.wait(15000));
 #endif
 }
 

@@ -56,22 +56,25 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 ### Security
 
 - Rollback detection for signed `.gpg-id` files: a signature proved the
-  recipient list authentic, not current, so whoever can write to a shared
-  store could put back an older, genuinely signed list that still named a
-  member since removed, and every later encryption would include them
-  again. Every list QtPass writes now starts with
-  `# QtPass-GpgId-Generation: N` (a comment to `pass`, covered by the
-  signature); per list, the highest generation accepted or written on this
-  device is remembered, written through before it counts, and a signed list
-  with a lower generation is refused with a message that names both
-  numbers. Without that record nothing is established: a record that cannot
-  be read or written refuses every signed list and every save, rather than
-  counting as "never seen". A deliberate revert is refused too: saving the recipients again
-  writes the next generation. A malformed or duplicated generation line
-  makes a signed list unusable rather than generation 0. Limits, in
-  SECURITY.md: detection needs a device that has seen the newer list; two
+  recipient list authentic, not current and not placed, so whoever can write
+  to a shared store could put back an older, genuinely signed list that
+  still named a member since removed, or copy such a pair into a folder that
+  never had a list, and every later encryption there would include them
+  again. A list QtPass writes for a store with a signing key now starts with
+  `# QtPass-GpgId-Generation: N` and `# QtPass-GpgId-Folder: <folder>`
+  (comments to `pass` 1.7.4+ and QtPass 1.8+, covered by the signature);
+  per list, the highest generation accepted or written on this device is
+  remembered, written through before it counts, and a signed list with a
+  lower generation, or written for another folder, is refused with a message
+  that says what happened and how a signing-key holder gets through. Without
+  that record nothing is established: a record that cannot be read or
+  written refuses every signed list and every save, rather than counting as
+  "never seen". A malformed or duplicated header line makes a signed list
+  unusable rather than generation 0, and the counter cannot leave the
+  grammar. Stores without a signing key get plain lists, as before. Limits,
+  in SECURITY.md: detection needs a device that has seen the newer list; two
   devices can both produce the same next generation, which Git sorts out;
-  `pass` itself knows no generations [#1842](https://github.com/IJHack/QtPass/issues/1842)
+  a list written by `pass` carries no generation [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - A link inside the store is not part of it, at every operation and not
   only in the walks: show, edit, add, move, copy and re-key refuse an entry
   or folder that is, or lies behind, a symbolic link or NTFS junction,

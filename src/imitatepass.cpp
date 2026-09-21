@@ -324,19 +324,42 @@ auto ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
       secret_selected |= user.have_secret;
     }
   }
-  // Reserve one generation above whatever is on disk and whatever this
-  // device has accepted, recorded before the file is written: the signature
-  // will cover the number, a later, older signed list cannot come back, and
-  // a list that could not be recorded is not written at all (it would let
-  // the previous one back in).
-  QString why;
-  const std::optional<qint64> generation =
-      GpgIdGeneration::reserveNext(gpgIdFile, &why);
-  if (!generation) {
-    emit critical(tr("Cannot update"), why);
-    return false;
+  // With a signing key: reserve one generation above whatever this device
+  // has accepted and whatever the list on disk says, if that list verifies
+  // (an unverified number is not taken), recorded before the file is
+  // written, and bind the list to its folder. The signature will cover both
+  // lines; a later, older or relocated signed list cannot come back, and a
+  // list that could not be recorded is not written at all (it would let the
+  // previous one back in). Without a signing key nothing checks freshness,
+  // and the plain list stays readable for every client (GpgIdGeneration).
+  const GpgIdSigner signer = gpgIdSigner();
+  if (signer.enabled()) {
+    const std::optional<QString> folder =
+        GpgIdGeneration::folderOf(gpgIdFile, m_settings.passStore);
+    if (!folder) {
+      emit critical(tr("Cannot update"),
+                    tr("%1 is not inside the password store.").arg(gpgIdFile));
+      return false;
+    }
+    // The list on disk counts only if it is this folder's own, verified
+    // list: a signature vouches for the bytes, the folder line for the place.
+    std::optional<qint64> verifiedOnDisk;
+    QByteArray current;
+    if (signer.verifyFile(gpgIdFile, &current)) {
+      const auto header = GpgIdGeneration::parse(current);
+      if (header && (!header->folder || *header->folder == *folder)) {
+        verifiedOnDisk = header->generation;
+      }
+    }
+    QString why;
+    const std::optional<qint64> generation =
+        GpgIdGeneration::reserveNext(gpgIdFile, verifiedOnDisk, &why);
+    if (!generation) {
+      emit critical(tr("Cannot update"), why);
+      return false;
+    }
+    contents = GpgIdGeneration::withHeader(*generation, *folder, contents);
   }
-  contents = GpgIdGeneration::withHeader(*generation, contents);
   QSaveFile gpgId(gpgIdFile);
   if (!gpgId.open(QIODevice::WriteOnly)) {
     emit critical(tr("Cannot update"),
@@ -572,7 +595,8 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
     // list put back into the store is refused once this device has seen a
     // newer one.
     QString reason;
-    if (!GpgIdGeneration::accept(gpgIdFile, contents, &reason)) {
+    if (!GpgIdGeneration::accept(gpgIdFile, contents, m_settings.passStore,
+                                 &reason)) {
       if (why != nullptr) {
         *why = reason;
       }
