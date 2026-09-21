@@ -9,10 +9,13 @@
 #include <QApplication>
 #include <QDateTime>
 #include <QDialogButtonBox>
+#include <QFont>
 #include <QKeyEvent>
+#include <QLabel>
 #include <QLineEdit>
 #include <QListWidget>
 #include <QMessageBox>
+#include <QPalette>
 #include <QPushButton>
 #include <QRegularExpression>
 #include <QSet>
@@ -97,8 +100,30 @@ void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
 }
 
 void UsersDialog::loadRecipients() {
+  // Through the backend: with a signing key only a verified list may be
+  // preselected, since OK signs whatever is selected.
+  const Pass::RecipientsForEditing loaded =
+      m_pass->recipientsForEditing(m_dir, m_passStore);
   const QStringList recipients =
-      Pass::getRecipientList(m_dir.isEmpty() ? "" : m_dir, m_passStore);
+      loaded.state == Pass::RecipientsForEditing::State::Rejected
+          ? QStringList()
+          : loaded.recipients;
+  if (!loaded.warning.isEmpty()) {
+    auto *banner = new QLabel(loaded.warning, this);
+    banner->setObjectName(QStringLiteral("recipientWarning"));
+    banner->setWordWrap(true);
+    banner->setTextFormat(Qt::PlainText);
+    // Palette, not a stylesheet colour, so it reads on dark themes too; red
+    // as ProcessOutputPanel paints error lines.
+    QFont bold = banner->font();
+    bold.setBold(true);
+    banner->setFont(bold);
+    QPalette palette = banner->palette();
+    palette.setColor(QPalette::WindowText, QColor(Qt::red));
+    banner->setPalette(palette);
+    banner->setContentsMargins(4, 4, 4, 4);
+    ui->verticalLayout->insertWidget(1, banner);
+  }
   if (recipients.isEmpty()) {
     // A folder without .gpg-id (new store, new profile) has no recipients
     // yet. Without this, listKeys() with no filter returned the whole

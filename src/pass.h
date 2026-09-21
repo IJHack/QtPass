@@ -236,6 +236,59 @@ public:
    */
   static auto getRecipientList(const QString &for_file,
                                const QString &passStore) -> QStringList;
+
+  /**
+   * @brief What a dialog may do with the list of a folder
+   * (recipientsForEditing()).
+   */
+  struct RecipientsForEditing {
+    /** @brief How the list on disk stood up. */
+    enum class State {
+      /** @brief No signing key: the list as it is. */
+      Unsigned,
+      /** @brief Signature and generation and folder all accepted. */
+      Verified,
+      /**
+       * @brief Signed, authentic and bound to this folder, but older than a
+       * generation this device has accepted: preselected for the recovery,
+       * flagged for review.
+       */
+      VerifiedRollback,
+      /**
+       * @brief Not to be used: signature invalid, written for another folder
+       * or for no folder in particular while a generation was accepted here,
+       * malformed header, or no freshness record to judge by.
+       */
+      Rejected,
+    };
+    /** @brief How the list on disk stood up. */
+    State state = State::Unsigned;
+    /** @brief The recipients to preselect; empty when Rejected. */
+    QStringList recipients;
+    /** @brief What the dialog should show, if anything. */
+    QString warning;
+  };
+
+  /**
+   * @brief The recipients a dialog may preselect for editing the list of
+   * @p dir.
+   *
+   * With a signing key configured, only a list whose signature, generation
+   * and folder binding are all accepted: the Users dialog preselects what it
+   * loads and OK writes and signs the selection, so a list read
+   * unauthenticated would turn an attacker's unsigned edit into a genuinely
+   * signed one with one click. The one exception is an authentic list the
+   * generation record calls older (the recovery from a rollback goes through
+   * this dialog): preselected, with the reason shown for review. Anything
+   * else that fails preselects nothing and says why. Without a signing key,
+   * the list as it is.
+   * @param dir Folder whose list is edited; empty for the store root.
+   * @param passStore The store the folder belongs to: the dialog's, which
+   *        for a profile being set up is not this backend's.
+   * @return The state, the recipients to preselect and the warning to show.
+   */
+  auto recipientsForEditing(const QString &dir, const QString &passStore)
+      -> RecipientsForEditing;
   /**
    * @brief Parse the contents of a .gpg-id: one recipient per line, `#`
    * starts a comment, unusable lines are logged and skipped.

@@ -113,6 +113,34 @@ public:
       -> std::optional<qint64>;
 
   /**
+   * @brief The outcome of accept(). Only Accepted means the list may be
+   * used; the others say why not, and Rollback alone is an authentic list
+   * of this folder.
+   */
+  enum class Verdict {
+    /** @brief Folder, generation and record all agree; remembered. */
+    Accepted,
+    /**
+     * @brief Authentic and bound to this folder, but older than a
+     * generation this device accepted.
+     */
+    Rollback,
+    /**
+     * @brief Older than a generation this device accepted and without a
+     * folder line: authentic, but written for who knows which folder
+     * (`pass`, or QtPass before 2.0, wrote it), so not this folder's to
+     * recover.
+     */
+    Unbound,
+    /** @brief Written for another folder of the store. */
+    WrongFolder,
+    /** @brief A header line malformed or duplicated. */
+    Malformed,
+    /** @brief The record could not be read or written. */
+    RecordUnavailable,
+  };
+
+  /**
    * @brief Decide about a verified list: its folder against where it sits,
    * its generation against the remembered one, and remember it when it
    * passes. One transaction under the process-wide lock: read, compare,
@@ -123,14 +151,12 @@ public:
    * @param error Receives the reason for a refusal, if not null. Where the
    *        way through is saving the list again, the text says so, and that
    *        the recipients the dialog then preselects are this list's.
-   * @return true when the list may be used. false when its generation is
-   *         lower, it was written for another folder, its metadata is
-   *         malformed, or the record could not be read or written: without
+   * @return Accepted when the list may be used; otherwise why not. Without
    *         established freshness state nothing is accepted.
    */
   static auto accept(const QString &gpgIdFile, const QByteArray &contents,
                      const QString &storeRoot, QString *error = nullptr)
-      -> bool;
+      -> Verdict;
 
   /**
    * @brief Reserve the generation to write next for @p gpgIdFile: one above

@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "pass.h"
+#include "gpgidgeneration.h"
+#include "gpgidsigner.h"
 #include "gpgkeystate.h"
 #include "util.h"
 #include <QCoreApplication>
@@ -903,7 +905,13 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
   const QString fullPath = insideStore || QDir::isAbsolutePath(cleanFile)
                                ? cleanFile
                                : storePrefix + cleanFile;
-  QDir gpgIdDir(QFileInfo(fullPath).absoluteDir());
+  // A folder's own list is wanted when the caller names a folder: with the
+  // trailing separator the tree appends (cleanPath() took it off above), or
+  // as an existing directory. Anything else is an entry, whose list is its
+  // folder's.
+  const bool isFolder =
+      normalizedFile.endsWith(QLatin1Char('/')) || QFileInfo(fullPath).isDir();
+  QDir gpgIdDir(isFolder ? fullPath : QFileInfo(fullPath).absolutePath());
   // QDir::cleanPath() always normalises to forward slashes, so use '/'
   // here rather than QDir::separator() (which returns '\\' on Windows).
   bool found = false;
@@ -933,6 +941,64 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
  * @param for_file which file (folder) would you like recipients for
  * @return recipients gpg-id contents
  */
+auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
+    -> RecipientsForEditing {
+  RecipientsForEditing result;
+  const QString folder = dir.isEmpty() ? QString() : dir;
+  const QString gpgIdPath = getGpgIdPath(folder, passStore);
+  const GpgIdSigner signer(
+      m_settings.gpgExecutable,
+      GpgIdSigner::keysFromSetting(m_settings.passSigningKey));
+  if (!signer.enabled()) {
+    result.state = RecipientsForEditing::State::Unsigned;
+    result.recipients = getRecipientList(folder, passStore);
+    return result;
+  }
+  if (!QFileInfo::exists(gpgIdPath)) {
+    // A folder without a list yet (new store, new profile): nothing to
+    // verify and nothing to preselect.
+    result.state = RecipientsForEditing::State::Verified;
+    return result;
+  }
+  QByteArray contents;
+  if (!signer.verifyFile(gpgIdPath, &contents)) {
+    result.state = RecipientsForEditing::State::Rejected;
+    result.warning =
+        tr("The recipient list %1 does not verify against the signing key, "
+           "so nothing is preselected: saving would sign whatever is in it. "
+           "Select the recipients yourself; OK writes and signs a fresh list.")
+            .arg(gpgIdPath);
+    return result;
+  }
+  QString why;
+  switch (GpgIdGeneration::accept(gpgIdPath, contents, passStore, &why)) {
+  case GpgIdGeneration::Verdict::Accepted:
+    result.state = RecipientsForEditing::State::Verified;
+    result.recipients = parseRecipients(contents, gpgIdPath);
+    break;
+  case GpgIdGeneration::Verdict::Rollback:
+    // Authentic and this folder's, only older: the recovery goes through
+    // this dialog, so it is preselected, with the reason in view.
+    result.state = RecipientsForEditing::State::VerifiedRollback;
+    result.recipients = parseRecipients(contents, gpgIdPath);
+    result.warning = why;
+    break;
+  case GpgIdGeneration::Verdict::Unbound:
+  case GpgIdGeneration::Verdict::WrongFolder:
+  case GpgIdGeneration::Verdict::Malformed:
+  case GpgIdGeneration::Verdict::RecordUnavailable:
+    // Signed, but not shown to be this folder's list, not a list to trust,
+    // or nothing to judge it by: preselecting it would sign it in.
+    result.state = RecipientsForEditing::State::Rejected;
+    result.warning =
+        tr("%1 Nothing is preselected: saving would sign whatever is in it. "
+           "Select the recipients yourself.")
+            .arg(why);
+    break;
+  }
+  return result;
+}
+
 auto Pass::getRecipientList(const QString &for_file, const QString &passStore)
     -> QStringList {
   const QString gpgIdPath = getGpgIdPath(for_file, passStore);

@@ -595,8 +595,9 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
     // list put back into the store is refused once this device has seen a
     // newer one.
     QString reason;
-    if (!GpgIdGeneration::accept(gpgIdFile, contents, m_settings.passStore,
-                                 &reason)) {
+    if (GpgIdGeneration::accept(gpgIdFile, contents, m_settings.passStore,
+                                &reason) !=
+        GpgIdGeneration::Verdict::Accepted) {
       if (why != nullptr) {
         *why = reason;
       }
