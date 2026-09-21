@@ -1115,7 +1115,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="404"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
-        <translation type="unfinished">Podpisanej liście odbiorców %1 nie można ufać: %2</translation>
+        <translation>Podpisanej liście odbiorców %1 nie można ufać: %2</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="414"/>
@@ -1125,22 +1125,22 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="437"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
-        <translation type="unfinished">Generacja %1 jest najwyższą możliwą, więc nie można tu zapisać nowszej listy: usunięcie pliku %2 sprawia, że to urządzenie zapomni, co wcześniej zaakceptowało, po czym posiadacz klucza podpisującego może przejść dalej, otwierając okno Użytkownicy i %3.</translation>
+        <translation>Generacja %1 jest najwyższą możliwą, więc nie można tu zapisać nowszej listy: usunięcie pliku %2 sprawia, że to urządzenie zapomni, co wcześniej zaakceptowało, po czym posiadacz klucza podpisującego może przejść dalej, otwierając okno Użytkownicy i %3.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="443"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
-        <translation type="unfinished">Posiadacz klucza podpisującego może przejść dalej, otwierając okno Użytkownicy i %1, co powoduje zapis generacji %2. Usunięcie pliku %3 sprawia, że to urządzenie zapomni, co wcześniej zaakceptowało.</translation>
+        <translation>Posiadacz klucza podpisującego może przejść dalej, otwierając okno Użytkownicy i %1, co powoduje zapis generacji %2. Usunięcie pliku %3 sprawia, że to urządzenie zapomni, co wcześniej zaakceptowało.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="457"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
-        <translation type="unfinished">Podpisana lista odbiorców %1 nie zawiera wiersza generacji, choć wcześniej zaakceptowano tu generację %2. pass nie zapisuje wiersza generacji (także przez backend pass w QtPass), nie robił tego też QtPass przed wersją 2.0; bez niego lista mogła też zostać zapisana dla innego folderu magazynu i skopiowana tutaj. %3</translation>
+        <translation>Podpisana lista odbiorców %1 nie zawiera wiersza generacji, choć wcześniej zaakceptowano tu generację %2. pass nie zapisuje wiersza generacji (także przez backend pass w QtPass), nie robił tego też QtPass przed wersją 2.0; bez niego lista mogła też zostać zapisana dla innego folderu magazynu i skopiowana tutaj. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>selecting the recipients afresh and saving</source>
-        <translation type="unfinished">wybierając odbiorców od nowa i zapisując</translation>
+        <translation>wybierając odbiorców od nowa i zapisując</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="564"/>
@@ -1163,7 +1163,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="475"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
-        <translation type="unfinished">zapisując odbiorców: wstępnie zaznaczeni są tam odbiorcy z tej listy, więc najpierw usuń każdego, kto nie powinien już mieć dostępu</translation>
+        <translation>zapisując odbiorców: wstępnie zaznaczeni są tam odbiorcy z tej listy, więc najpierw usuń każdego, kto nie powinien już mieć dostępu</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="499"/>
@@ -2644,12 +2644,12 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/pass.cpp" line="967"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Lista odbiorców %1 nie przechodzi weryfikacji względem klucza podpisującego, więc nic nie jest wstępnie zaznaczone: zapisanie podpisałoby to, co lista obecnie zawiera. Wybierz odbiorców samodzielnie; OK zapisuje i podpisuje nową listę.</translation>
+        <translation>Lista odbiorców %1 nie przechodzi weryfikacji względem klucza podpisującego, więc nic nie jest wstępnie zaznaczone: zapisanie podpisałoby to, co lista obecnie zawiera. Wybierz odbiorców samodzielnie; OK zapisuje i podpisuje nową listę.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="995"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
-        <translation type="unfinished">%1 Nic nie jest wstępnie zaznaczone: zapisanie podpisałoby to, co lista obecnie zawiera. Wybierz odbiorców samodzielnie.</translation>
+        <translation>%1 Nic nie jest wstępnie zaznaczone: zapisanie podpisałoby to, co lista obecnie zawiera. Wybierz odbiorców samodzielnie.</translation>
     </message>
 </context>
 <context>

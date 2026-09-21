@@ -1179,7 +1179,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="404"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
-        <translation type="unfinished">De ondertekende ontvangerslijst %1 is niet te vertrouwen: %2</translation>
+        <translation>De ondertekende ontvangerslijst %1 is niet te vertrouwen: %2</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="414"/>
@@ -1189,22 +1189,22 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="437"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
-        <translation type="unfinished">Generatie %1 is de hoogste die er is, dus hier kan geen nieuwere lijst worden geschreven: als je %2 verwijdert, vergeet dit apparaat wat het eerder heeft geaccepteerd, waarna een houder van de ondertekeningssleutel verder komt door Gebruikers te openen en %3.</translation>
+        <translation>Generatie %1 is de hoogste die er is, dus hier kan geen nieuwere lijst worden geschreven: als je %2 verwijdert, vergeet dit apparaat wat het eerder heeft geaccepteerd, waarna een houder van de ondertekeningssleutel verder komt door Gebruikers te openen en %3.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="443"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
-        <translation type="unfinished">Een houder van de ondertekeningssleutel komt verder door Gebruikers te openen en %1, waarmee generatie %2 wordt geschreven. Als je %3 verwijdert, vergeet dit apparaat wat het eerder heeft geaccepteerd.</translation>
+        <translation>Een houder van de ondertekeningssleutel komt verder door Gebruikers te openen en %1, waarmee generatie %2 wordt geschreven. Als je %3 verwijdert, vergeet dit apparaat wat het eerder heeft geaccepteerd.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="457"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
-        <translation type="unfinished">De ondertekende ontvangerslijst %1 bevat geen generatieregel, terwijl hier eerder generatie %2 is geaccepteerd. pass schrijft geen generatieregel (ook niet via de pass-backend van QtPass), en QtPass vóór 2.0 deed dat ook niet; zonder generatieregel kan de lijst ook voor een andere map van de opslag zijn geschreven en hierheen gekopieerd. %3</translation>
+        <translation>De ondertekende ontvangerslijst %1 bevat geen generatieregel, terwijl hier eerder generatie %2 is geaccepteerd. pass schrijft geen generatieregel (ook niet via de pass-backend van QtPass), en QtPass vóór 2.0 deed dat ook niet; zonder generatieregel kan de lijst ook voor een andere map van de opslag zijn geschreven en hierheen gekopieerd. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>selecting the recipients afresh and saving</source>
-        <translation type="unfinished">de ontvangers opnieuw te selecteren en op te slaan</translation>
+        <translation>selecteer de ontvangers om opnieuw op te slaan</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="564"/>
@@ -1227,7 +1227,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="475"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
-        <translation type="unfinished">de ontvangers op te slaan: de daar voorgeselecteerde ontvangers zijn die van deze lijst, dus verwijder eerst iedereen die geen toegang meer hoort te hebben</translation>
+        <translation>de ontvangers op te slaan: de daar voorgeselecteerde ontvangers zijn die van deze lijst, dus verwijder eerst iedereen die geen toegang meer hoort te hebben</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="499"/>
@@ -2866,12 +2866,12 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="967"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">De ontvangerslijst %1 kan niet worden geverifieerd met de ondertekeningssleutel, dus er is niets voorgeselecteerd: bij opslaan zou worden ondertekend wat erin staat. Selecteer de ontvangers zelf; OK schrijft en ondertekent een nieuwe lijst.</translation>
+        <translation>De ontvangerslijst %1 kan niet worden geverifieerd met de ondertekeningssleutel, dus er is niets voorgeselecteerd: bij opslaan zou worden ondertekend wat erin staat. Selecteer de ontvangers zelf; OK schrijft en ondertekent een nieuwe lijst.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="995"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
-        <translation type="unfinished">%1 Er is niets voorgeselecteerd: bij opslaan zou worden ondertekend wat erin staat. Selecteer de ontvangers zelf.</translation>
+        <translation>%1 Er is niets voorgeselecteerd: bij opslaan zou worden ondertekend wat erin staat. Selecteer de ontvangers zelf.</translation>
     </message>
 </context>
 <context>
