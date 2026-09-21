@@ -102,7 +102,7 @@ void UsersDialog::loadRecipients() {
   if (recipients.isEmpty()) {
     // A folder without .gpg-id (new store, new profile) has no recipients
     // yet. Without this, listKeys() with no filter returned the whole
-    // keyring and every key in it came up pre-selected.
+    // keyring and every key in it came up preselected.
     return;
   }
   const int count = static_cast<int>(recipients.size());

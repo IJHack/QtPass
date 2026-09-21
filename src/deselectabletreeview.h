@@ -77,7 +77,7 @@ private:
   QTimer deselectTimer;
 
   /**
-   * @brief mousePressEvent registers if the field was pre-selected
+   * @brief mousePressEvent registers if the field was preselected
    * @param event
    */
   void mousePressEvent(QMouseEvent *event) override {

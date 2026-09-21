@@ -178,7 +178,7 @@ void tst_gpgidgeneration::keyIsTheCanonicalPathHashed() {
  * @brief First sight is accepted (nothing to compare against), a higher
  *        generation is accepted and remembered, an equal one is accepted, a
  *        lower one is refused with a reason that names both numbers and
- *        warns about the pre-selected recipients, a headerless one is
+ *        warns about the preselected recipients, a headerless one is
  *        refused with its own explanation, a malformed one is refused, and
  *        a reservation climbs above the refused one.
  */
@@ -205,7 +205,7 @@ void tst_gpgidgeneration::acceptRefusesARollbackAndRemembersTheHighest() {
   QVERIFY2(why.contains(QStringLiteral("generation 17")) &&
                why.contains(QStringLiteral("generation 18")) &&
                why.contains(QStringLiteral("Users")) &&
-               why.contains(QStringLiteral("pre-selected")) &&
+               why.contains(QStringLiteral("preselected")) &&
                why.contains(GpgIdGeneration::recordFile()),
            qPrintable(why));
   why.clear();

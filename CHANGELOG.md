@@ -205,9 +205,9 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 - New folders never get an unsigned `.gpg-id` when a signing key is
   configured [#1695](https://github.com/IJHack/QtPass/pull/1695)
 - The Users dialog for a folder without a `.gpg-id` (first-run wizard, new
-  profile) came up with every key in the keyring pre-selected, because an
+  profile) came up with every key in the keyring preselected, because an
   empty recipient list made `gpg --list-keys` return all of them. Nothing is
-  pre-selected now
+  preselected now
 
 ### Changed
 

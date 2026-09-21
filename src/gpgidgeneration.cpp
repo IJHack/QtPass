@@ -279,7 +279,7 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
       const QString wayOut =
           tr("A holder of the signing key gets through by opening Users and "
              "saving the recipients, which writes generation %1: the "
-             "pre-selected recipients there are this list's, so remove "
+             "preselected recipients there are this list's, so remove "
              "anyone who should no longer have access first. Removing %2 "
              "forgets what this device accepted before.")
               .arg(*last + 1)

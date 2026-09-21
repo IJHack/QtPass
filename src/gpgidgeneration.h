@@ -122,7 +122,7 @@ public:
    * @param storeRoot The configured store, for the folder check.
    * @param error Receives the reason for a refusal, if not null. Where the
    *        way through is saving the list again, the text says so, and that
-   *        the recipients the dialog then pre-selects are this list's.
+   *        the recipients the dialog then preselects are this list's.
    * @return true when the list may be used. false when its generation is
    *         lower, it was written for another folder, its metadata is
    *         malformed, or the record could not be read or written: without
