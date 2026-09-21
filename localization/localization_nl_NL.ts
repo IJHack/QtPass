@@ -1013,23 +1013,23 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="90"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
-        <translation type="unfinished">Het generatieregister van de ontvangerslijsten, %1, is niet toegankelijk.</translation>
+        <translation>Het generatieregister van de ontvangerslijsten, %1, is niet toegankelijk.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="99"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
-        <translation type="unfinished">Het generatieregister van de ontvangerslijsten, %1, is niet leesbaar. Ondertekende ontvangerslijsten worden niet geaccepteerd totdat het is hersteld of verwijderd (waarbij wordt vergeten wat eerder is geaccepteerd).</translation>
+        <translation>Het generatieregister van de ontvangerslijsten, %1, is niet leesbaar. Ondertekende ontvangerslijsten worden niet geaccepteerd totdat het is hersteld of verwijderd (waarbij wordt vergeten wat eerder is geaccepteerd).</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="163"/>
         <location filename="../src/gpgidgeneration.cpp" line="176"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
-        <translation type="unfinished">Het generatieregister van de ontvangerslijsten, %1, kan niet worden geschreven.</translation>
+        <translation>Het generatieregister van de ontvangerslijsten, %1, kan niet worden geschreven.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="204"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
-        <translation type="unfinished">Het generatieregister van de ontvangerslijsten, %1, kon niet worden vergrendeld: mogelijk is het in gebruik bij een andere QtPass, of de map ervan is niet beschrijfbaar.</translation>
+        <translation>Het generatieregister van de ontvangerslijsten, %1, kon niet worden vergrendeld: mogelijk is het in gebruik bij een andere QtPass, of de map ervan is niet beschrijfbaar.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="308"/>
@@ -1094,7 +1094,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="564"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
-        <translation type="unfinished">Het generatieregister van de ontvangerslijsten, %1, is verdergegaan naar generatie %2 terwijl generatie %3 werd geschreven.</translation>
+        <translation>Het generatieregister van de ontvangerslijsten, %1, is verdergegaan naar generatie %2 terwijl generatie %3 werd geschreven.</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
@@ -1117,12 +1117,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
-        <translation type="unfinished">De ondertekende ontvangerslijst %1 is generatie %2, dezelfde generatie als een andere lijst die dit apparaat eerder heeft geaccepteerd. Ofwel hebben twee apparaten tegelijk ontvangers opgeslagen (Git zal het conflict hebben getoond), ofwel is een authentieke lijst van die generatie ervoor in de plaats gezet. %3</translation>
+        <translation>De ondertekende ontvangerslijst %1 is generatie %2, dezelfde generatie als een andere lijst die dit apparaat eerder heeft geaccepteerd. Ofwel hebben twee apparaten tegelijk ontvangers opgeslagen (Git zal het conflict hebben getoond), ofwel is een authentieke lijst van die generatie ervoor in de plaats gezet. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="506"/>
         <source>checking the recipients and saving</source>
-        <translation type="unfinished">de ontvangers te controleren en op te slaan</translation>
+        <translation>de ontvangers controleren en opslaan</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="532"/>
@@ -1135,12 +1135,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="75"/>
         <source>the recipient list is not valid UTF-8</source>
-        <translation type="unfinished">de ontvangerslijst is geen geldige UTF-8</translation>
+        <translation>de ontvangerslijst is geen geldige UTF-8</translation>
     </message>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="99"/>
         <source>gpg wrote no signature</source>
-        <translation type="unfinished">gpg heeft geen ondertekening geschreven</translation>
+        <translation>gpg heeft geen ondertekening geschreven</translation>
     </message>
 </context>
 <context>
@@ -1160,13 +1160,13 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <source>Cannot add</source>
-        <translation type="unfinished">Kan niet toevoegen</translation>
+        <translation>Kan niet toevoegen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <location filename="../src/imitatepass.cpp" line="1732"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 bestaat al.</translation>
+        <translation>%1 bestaat al.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="203"/>
@@ -1177,12 +1177,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="216"/>
         <source>Cannot write</source>
-        <translation type="unfinished">Kan niet schrijven</translation>
+        <translation>Kan niet schrijven</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="217"/>
         <source>Cannot create a temporary directory: %1</source>
-        <translation type="unfinished">Kan geen tijdelijke map aanmaken: %1</translation>
+        <translation>Kan geen tijdelijke map aanmaken: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="440"/>
@@ -1252,12 +1252,12 @@ Je kan de gebruikerslijst niet aanpassen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="413"/>
         <source>Recipient list written, but not recorded</source>
-        <translation type="unfinished">Ontvangerslijst geschreven, maar niet geregistreerd</translation>
+        <translation>Ontvangerslijst geschreven, maar niet geregistreerd</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="414"/>
         <source>%1 Save the recipients once more to get through.</source>
-        <translation type="unfinished">%1 Sla de ontvangers nog een keer op om verder te komen.</translation>
+        <translation>%1 Sla de ontvangers nog een keer op om verder te komen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="419"/>
@@ -1274,7 +1274,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="443"/>
         <source>Failed to sign %1: %2</source>
-        <translation type="unfinished">Kon %1 niet ondertekenen: %2</translation>
+        <translation>Kon %1 niet ondertekenen: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="585"/>
@@ -1441,33 +1441,33 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1680"/>
         <source>gpg wrote no ciphertext for %1.</source>
-        <translation type="unfinished">gpg heeft geen versleutelde tekst voor %1 geschreven.</translation>
+        <translation>gpg heeft geen versleutelde tekst voor %1 geschreven.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1697"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Kan geen tijdelijk bestand naast %1 aanmaken: %2</translation>
+        <translation>Kan geen tijdelijk bestand naast %1 aanmaken: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1706"/>
         <source>Cannot read what gpg wrote for %1.</source>
-        <translation type="unfinished">Kan niet lezen wat gpg voor %1 heeft geschreven.</translation>
+        <translation>Kan niet lezen wat gpg voor %1 heeft geschreven.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1713"/>
         <location filename="../src/imitatepass.cpp" line="1718"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Kan %1 niet schrijven: %2</translation>
+        <translation>Kan %1 niet schrijven: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1731"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Vervanging van %1 is mislukt.</translation>
+        <translation>Vervanging van %1 is mislukt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1741"/>
         <source>%1 was replaced by a link while it was being written.</source>
-        <translation type="unfinished">%1 is door een link vervangen terwijl het werd geschreven.</translation>
+        <translation>%1 is door een link vervangen terwijl het werd geschreven.</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -2954,7 +2954,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="129"/>
         <source>Could not sign %1 with %2.</source>
-        <translation type="unfinished">Kon %1 niet ondertekenen met %2.</translation>
+        <translation>Kon %1 niet ondertekenen met %2.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -3474,32 +3474,32 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
     <message>
         <location filename="../src/util.cpp" line="692"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Kan geen tijdelijk bestand naast %1 aanmaken: %2</translation>
+        <translation>Kan geen tijdelijk bestand naast %1 aanmaken: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="709"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Kan %1 niet schrijven: %2</translation>
+        <translation>Kan %1 niet schrijven: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="718"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Vervanging van %1 is mislukt.</translation>
+        <translation>Vervanging van %1 is mislukt.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="722"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 bestaat al.</translation>
+        <translation>%1 bestaat al.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="724"/>
         <source>Failed to write %1.</source>
-        <translation type="unfinished">Kon %1 niet schrijven.</translation>
+        <translation>Kon %1 niet schrijven.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="734"/>
         <source>%1 was replaced by a link while it was written.</source>
-        <translation type="unfinished">%1 is door een link vervangen terwijl het werd geschreven.</translation>
+        <translation>%1 is door een link vervangen terwijl het werd geschreven.</translation>
     </message>
 </context>
 </TS>
