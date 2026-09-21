@@ -1055,7 +1055,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
         <location filename="../src/imitatepass.cpp" line="603"/>
         <location filename="../src/imitatepass.cpp" line="619"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
-        <translation type="unfinished">%1 nie jest zwykłym plikiem i nie został przywrócony. Sprawdź go i usuń, a następnie ponownie uruchom szyfrowanie.</translation>
+        <translation>%1 nie jest zwykłym plikiem i nie został przywrócony. Sprawdź go i usuń, a następnie ponownie uruchom szyfrowanie.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="629"/>
@@ -1123,12 +1123,12 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="966"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">To nie jest folder magazynu</translation>
+        <translation>To nie jest folder magazynu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="967"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
-        <translation type="unfinished">%1 jest dowiązaniem symbolicznym lub punktem połączenia (junction) albo znajduje się za takim dowiązaniem. To, na co wskazuje, nie należy do magazynu haseł i nie zostało ponownie zaszyfrowane.</translation>
+        <translation>%1 jest dowiązaniem symbolicznym lub punktem połączenia (junction) albo znajduje się za takim dowiązaniem. To, na co wskazuje, nie należy do magazynu haseł i nie zostało ponownie zaszyfrowane.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="976"/>
@@ -1159,7 +1159,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1103"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Pominięto %n wpis: dowiązanie symboliczne, punkt połączenia lub plik specjalny nie należy do magazynu.</numerusform>
             <numerusform>Pominięto %n wpisy: dowiązania symboliczne, punkty połączenia i pliki specjalne nie należą do magazynu.</numerusform>
             <numerusform>Pominięto %n wpisów: dowiązania symboliczne, punkty połączenia i pliki specjalne nie należą do magazynu.</numerusform>
@@ -1413,12 +1413,12 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
-        <translation type="unfinished">Każdy, kto zdobędzie plik klucza prywatnego, będzie mógł odczytać każde hasło i nie zostanie o nic zapytany.</translation>
+        <translation>Każdy, kto zdobędzie plik klucza prywatnego, będzie mógł odczytać każde hasło i nie zostanie o nic zapytany.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
         <source>No passphrase: store the private key unprotected</source>
-        <translation type="unfinished">Bez hasła: zapisz klucz prywatny bez zabezpieczenia</translation>
+        <translation>Bez hasła: zapisz klucz prywatny bez zabezpieczenia</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -1964,12 +1964,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>Delete link?</source>
-        <translation type="unfinished">Usunąć dowiązanie?</translation>
+        <translation>Usunąć dowiązanie?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1249"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
-        <translation type="unfinished">%1 jest dowiązaniem symbolicznym lub punktem połączenia (junction). Usunąć dowiązanie? To, na co wskazuje, pozostanie nietknięte.</translation>
+        <translation>%1 jest dowiązaniem symbolicznym lub punktem połączenia (junction). Usunąć dowiązanie? To, na co wskazuje, pozostanie nietknięte.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1270"/>
@@ -2093,12 +2093,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="2026"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">To nie jest folder magazynu</translation>
+        <translation>To nie jest folder magazynu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="2027"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 jest dowiązaniem symbolicznym lub punktem połączenia (junction) albo znajduje się za takim dowiązaniem. To, na co wskazuje, nie należy do magazynu haseł i pozostanie nietknięte.</translation>
+        <translation>%1 jest dowiązaniem symbolicznym lub punktem połączenia (junction) albo znajduje się za takim dowiązaniem. To, na co wskazuje, nie należy do magazynu haseł i pozostanie nietknięte.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="2038"/>
