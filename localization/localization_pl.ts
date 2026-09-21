@@ -949,23 +949,23 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="90"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
-        <translation type="unfinished">Nie można uzyskać dostępu do rejestru generacji list odbiorców, %1.</translation>
+        <translation>Nie można uzyskać dostępu do rejestru generacji list odbiorców, %1.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="99"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
-        <translation type="unfinished">Rejestr generacji list odbiorców, %1, jest nieczytelny. Podpisane listy odbiorców nie są akceptowane, dopóki nie zostanie on naprawiony lub usunięty (co powoduje zapomnienie tego, co wcześniej zaakceptowano).</translation>
+        <translation>Rejestr generacji list odbiorców, %1, jest nieczytelny. Podpisane listy odbiorców nie są akceptowane, dopóki nie zostanie on naprawiony lub usunięty (co powoduje zapomnienie tego, co wcześniej zaakceptowano).</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="163"/>
         <location filename="../src/gpgidgeneration.cpp" line="176"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
-        <translation type="unfinished">Nie można zapisać rejestru generacji list odbiorców, %1.</translation>
+        <translation>Nie można zapisać rejestru generacji list odbiorców, %1.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="204"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
-        <translation type="unfinished">Nie udało się zablokować rejestru generacji list odbiorców, %1: może go używać inna instancja QtPass albo w jego folderze nie można zapisywać.</translation>
+        <translation>Nie udało się zablokować rejestru generacji list odbiorców, %1: może go używać inna instancja QtPass albo w jego folderze nie można zapisywać.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="308"/>
@@ -1030,7 +1030,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="564"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
-        <translation type="unfinished">Rejestr generacji list odbiorców, %1, przeszedł do generacji %2, podczas gdy zapisywana była generacja %3.</translation>
+        <translation>Rejestr generacji list odbiorców, %1, przeszedł do generacji %2, podczas gdy zapisywana była generacja %3.</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
@@ -1053,12 +1053,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
-        <translation type="unfinished">Podpisana lista odbiorców %1 to generacja %2, ta sama generacja, co inna lista, którą to urządzenie zaakceptowało wcześniej. Albo dwa urządzenia zapisały odbiorców w tym samym czasie (Git zgłosił wówczas konflikt), albo podstawiono autentyczną listę tej generacji. %3</translation>
+        <translation>Podpisana lista odbiorców %1 to generacja %2, ta sama generacja, co inna lista, którą to urządzenie zaakceptowało wcześniej. Albo dwa urządzenia zapisały odbiorców w tym samym czasie (Git zgłosił wówczas konflikt), albo podstawiono autentyczną listę tej generacji. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="506"/>
         <source>checking the recipients and saving</source>
-        <translation type="unfinished">sprawdzając odbiorców i zapisując</translation>
+        <translation>sprawdzając odbiorców i zapisując</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="532"/>
@@ -1071,12 +1071,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="75"/>
         <source>the recipient list is not valid UTF-8</source>
-        <translation type="unfinished">lista odbiorców nie jest poprawnym tekstem UTF-8</translation>
+        <translation>lista odbiorców nie jest poprawnym tekstem UTF-8</translation>
     </message>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="99"/>
         <source>gpg wrote no signature</source>
-        <translation type="unfinished">gpg nie zapisał podpisu</translation>
+        <translation>gpg nie zapisał podpisu</translation>
     </message>
 </context>
 <context>
@@ -1096,13 +1096,13 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <source>Cannot add</source>
-        <translation type="unfinished">Nie można dodać</translation>
+        <translation>Nie można dodać</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <location filename="../src/imitatepass.cpp" line="1732"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 już istnieje.</translation>
+        <translation>%1 już istnieje.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="203"/>
@@ -1113,12 +1113,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="216"/>
         <source>Cannot write</source>
-        <translation type="unfinished">Nie można zapisać</translation>
+        <translation>Nie można zapisać</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="217"/>
         <source>Cannot create a temporary directory: %1</source>
-        <translation type="unfinished">Nie można utworzyć katalogu tymczasowego: %1</translation>
+        <translation>Nie można utworzyć katalogu tymczasowego: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="440"/>
@@ -1188,12 +1188,12 @@ Nie będzie można zmienić listy użytkowników!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="413"/>
         <source>Recipient list written, but not recorded</source>
-        <translation type="unfinished">Lista odbiorców zapisana, ale nie zarejestrowana</translation>
+        <translation>Lista odbiorców zapisana, ale nie jest zarejestrowana</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="414"/>
         <source>%1 Save the recipients once more to get through.</source>
-        <translation type="unfinished">%1 Zapisz odbiorców jeszcze raz, aby przejść dalej.</translation>
+        <translation>%1 Zapisz odbiorców jeszcze raz, aby przejść dalej.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="419"/>
@@ -1210,7 +1210,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="443"/>
         <source>Failed to sign %1: %2</source>
-        <translation type="unfinished">Nie udało się podpisać %1: %2</translation>
+        <translation>Nie udało się podpisać %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="585"/>
@@ -1380,33 +1380,33 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1680"/>
         <source>gpg wrote no ciphertext for %1.</source>
-        <translation type="unfinished">gpg nie zapisał zaszyfrowanych danych dla %1.</translation>
+        <translation>gpg nie zapisał zaszyfrowanych danych dla %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1697"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Nie można utworzyć pliku tymczasowego obok %1: %2</translation>
+        <translation>Nie można utworzyć pliku tymczasowego obok %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1706"/>
         <source>Cannot read what gpg wrote for %1.</source>
-        <translation type="unfinished">Nie można odczytać tego, co gpg zapisał dla %1.</translation>
+        <translation>Nie można odczytać tego, co gpg zapisał dla %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1713"/>
         <location filename="../src/imitatepass.cpp" line="1718"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Nie można zapisać %1: %2</translation>
+        <translation>Nie można zapisać %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1731"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Nie udało się zastąpić %1.</translation>
+        <translation>Nie udało się zastąpić %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1741"/>
         <source>%1 was replaced by a link while it was being written.</source>
-        <translation type="unfinished">%1 został zastąpiony dowiązaniem podczas zapisywania.</translation>
+        <translation>%1 został zastąpiony dowiązaniem podczas zapisywania.</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -2733,7 +2733,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="129"/>
         <source>Could not sign %1 with %2.</source>
-        <translation type="unfinished">Nie udało się podpisać %1 kluczem %2.</translation>
+        <translation>Nie udało się podpisać %1 kluczem %2.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -3232,32 +3232,32 @@ Wpisy oznaczone jako [NIEPRAWIDŁOWY] i&#xa0;[WYGASŁY] nie mogą być użyte do
     <message>
         <location filename="../src/util.cpp" line="692"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Nie można utworzyć pliku tymczasowego obok %1: %2</translation>
+        <translation>Nie można utworzyć pliku tymczasowego obok %1: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="709"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Nie można zapisać %1: %2</translation>
+        <translation>Nie można zapisać %1: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="718"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Nie udało się zastąpić %1.</translation>
+        <translation>Nie udało się zastąpić %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="722"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 już istnieje.</translation>
+        <translation>%1 już istnieje.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="724"/>
         <source>Failed to write %1.</source>
-        <translation type="unfinished">Nie udało się zapisać %1.</translation>
+        <translation>Nie udało się zapisać %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="734"/>
         <source>%1 was replaced by a link while it was written.</source>
-        <translation type="unfinished">%1 został zastąpiony dowiązaniem podczas zapisywania.</translation>
+        <translation>%1 został zastąpiony dowiązaniem podczas zapisywania.</translation>
     </message>
 </context>
 </TS>

@@ -1009,23 +1009,23 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="90"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
-        <translation type="unfinished">Реєстр поколінь списків одержувачів, %1, недоступний.</translation>
+        <translation>Реєстр поколінь списків одержувачів, %1, недоступний.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="99"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
-        <translation type="unfinished">Реєстр поколінь списків одержувачів, %1, неможливо прочитати. Підписані списки одержувачів не приймаються, доки його не буде виправлено або видалено (після видалення буде забуто, що приймалося раніше).</translation>
+        <translation>Реєстр поколінь списків одержувачів, %1, неможливо прочитати. Підписані списки одержувачів не приймаються, доки його не буде виправлено або видалено (після видалення буде забуто, що приймалося раніше).</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="163"/>
         <location filename="../src/gpgidgeneration.cpp" line="176"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
-        <translation type="unfinished">Реєстр поколінь списків одержувачів, %1, неможливо записати.</translation>
+        <translation>Реєстр поколінь списків одержувачів, %1, неможливо записати.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="204"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
-        <translation type="unfinished">Реєстр поколінь списків одержувачів, %1, не вдалося заблокувати: можливо, його використовує інший екземпляр QtPass або його папка недоступна для запису.</translation>
+        <translation>Реєстр поколінь списків одержувачів, %1, не вдалося заблокувати: можливо, його використовує інший екземпляр QtPass або його папка недоступна для запису.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="308"/>
@@ -1060,7 +1060,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="404"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
-        <translation type="unfinished">Підписаному списку одержувачів %1 не можна довіряти: %2</translation>
+        <translation>Підписаному списку одержувачів %1 не можна довіряти: %2</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="414"/>
@@ -1070,27 +1070,27 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="437"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
-        <translation type="unfinished">Покоління %1 — найвище з можливих, тому новіший список тут записати неможливо: після видалення %2 цей пристрій забуде, що він приймав раніше, і тоді власник ключа підписання зможе зняти це блокування, відкривши «Користувачі» та %3.</translation>
+        <translation>Покоління %1 — найвище з можливих, тому новіший список тут записати неможливо: після видалення %2 цей пристрій забуде, що він приймав раніше, і тоді власник ключа підписання зможе зняти це блокування, відкривши «Користувачі» та %3.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="443"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
-        <translation type="unfinished">Власник ключа підписання може зняти це блокування, відкривши «Користувачі» та %1. Під час збереження буде записано покоління %2. Якщо видалити %3, цей пристрій забуде, що він приймав раніше.</translation>
+        <translation>Власник ключа підписання може зняти це блокування, відкривши «Користувачі» та %1. Під час збереження буде записано покоління %2. Якщо видалити %3, цей пристрій забуде, що він приймав раніше.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="457"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
-        <translation type="unfinished">Підписаний список одержувачів %1 не містить рядка покоління, хоча раніше тут було прийнято покоління %2. pass не записує рядок покоління (у тому числі через бекенд pass у QtPass), як і QtPass до версії 2.0; без нього список також могло бути записано для іншої папки сховища та скопійовано сюди. %3</translation>
+        <translation>Підписаний список одержувачів %1 не містить рядка покоління, хоча раніше тут було прийнято покоління %2. pass не записує рядок покоління (у тому числі через бекенд pass у QtPass), як і QtPass до версії 2.0; без нього список також могло бути записано для іншої папки сховища та скопійовано сюди. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>selecting the recipients afresh and saving</source>
-        <translation type="unfinished">заново вибравши одержувачів і зберігши їх</translation>
+        <translation>заново вибравши одержувачів і зберігши їх</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="564"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
-        <translation type="unfinished">Реєстр поколінь списків одержувачів, %1, перейшов до покоління %2, поки записувалося покоління %3.</translation>
+        <translation>Реєстр поколінь списків одержувачів, %1, перейшов до покоління %2, поки записувалося покоління %3.</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
@@ -1108,17 +1108,17 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="475"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
-        <translation type="unfinished">зберігши одержувачів: попередньо вибрані там одержувачі взяті з цього списку, тому спочатку видаліть усіх, хто більше не повинен мати доступу</translation>
+        <translation>зберігши одержувачів: попередньо вибрані там одержувачі взяті з цього списку, тому спочатку видаліть усіх, хто більше не повинен мати доступу</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
-        <translation type="unfinished">Підписаний список одержувачів %1 має покоління %2 — те саме, що й інший список, який цей пристрій приймав раніше. Або два пристрої зберегли одержувачів одночасно (Git мав показати конфлікт), або замість нього було підставлено автентичний список того покоління. %3</translation>
+        <translation>Підписаний список одержувачів %1 має покоління %2 — те саме, що й інший список, який цей пристрій приймав раніше. Або два пристрої зберегли одержувачів одночасно (Git мав показати конфлікт), або замість нього було підставлено автентичний список того покоління. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="506"/>
         <source>checking the recipients and saving</source>
-        <translation type="unfinished">перевіривши одержувачів і зберігши їх</translation>
+        <translation>перевіривши одержувачів і зберігши їх</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="532"/>
@@ -1131,12 +1131,12 @@ URL
     <message>
         <location filename="../src/gpgidsigner.cpp" line="75"/>
         <source>the recipient list is not valid UTF-8</source>
-        <translation type="unfinished">список одержувачів не є дійсним UTF-8</translation>
+        <translation>список одержувачів не є дійсним UTF-8</translation>
     </message>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="99"/>
         <source>gpg wrote no signature</source>
-        <translation type="unfinished">gpg не записав підпис</translation>
+        <translation>gpg не записав підпис</translation>
     </message>
 </context>
 <context>
@@ -1156,13 +1156,13 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <source>Cannot add</source>
-        <translation type="unfinished">Не вдається додати</translation>
+        <translation>Не вдається додати</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <location filename="../src/imitatepass.cpp" line="1732"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 уже існує.</translation>
+        <translation>%1 уже існує.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="203"/>
@@ -1173,12 +1173,12 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="216"/>
         <source>Cannot write</source>
-        <translation type="unfinished">Не вдається записати</translation>
+        <translation>Не вдається записати</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="217"/>
         <source>Cannot create a temporary directory: %1</source>
-        <translation type="unfinished">Не вдалося створити тимчасовий каталог: %1</translation>
+        <translation>Не вдалося створити тимчасовий каталог: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="440"/>
@@ -1248,12 +1248,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="413"/>
         <source>Recipient list written, but not recorded</source>
-        <translation type="unfinished">Список одержувачів записано, але не зареєстровано</translation>
+        <translation>Список одержувачів записано, але не зареєстровано</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="414"/>
         <source>%1 Save the recipients once more to get through.</source>
-        <translation type="unfinished">%1 Збережіть одержувачів ще раз, щоб продовжити.</translation>
+        <translation>%1 Збережіть одержувачів ще раз, щоб продовжити.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="419"/>
@@ -1270,7 +1270,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="443"/>
         <source>Failed to sign %1: %2</source>
-        <translation type="unfinished">Не вдалося підписати %1: %2</translation>
+        <translation>Не вдалося підписати %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="585"/>
@@ -1440,33 +1440,33 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1680"/>
         <source>gpg wrote no ciphertext for %1.</source>
-        <translation type="unfinished">gpg не записав шифротекст для %1.</translation>
+        <translation>gpg не записав шифротекст для %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1697"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Не вдалося створити тимчасовий файл поруч із %1: %2</translation>
+        <translation>Не вдалося створити тимчасовий файл поруч із %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1706"/>
         <source>Cannot read what gpg wrote for %1.</source>
-        <translation type="unfinished">Не вдалося прочитати те, що gpg записав для %1.</translation>
+        <translation>Не вдалося прочитати те, що gpg записав для %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1713"/>
         <location filename="../src/imitatepass.cpp" line="1718"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Не вдалося записати %1: %2</translation>
+        <translation>Не вдалося записати %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1731"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Не вдалося замінити %1.</translation>
+        <translation>Не вдалося замінити %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1741"/>
         <source>%1 was replaced by a link while it was being written.</source>
-        <translation type="unfinished">%1 було замінено посиланням під час запису.</translation>
+        <translation>%1 було замінено посиланням під час запису.</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -2712,12 +2712,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="966"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Список одержувачів %1 не проходить перевірку за ключем підписання, тому нічого попередньо не вибрано: збереження підписало б усе, що в ньому є. Виберіть одержувачів самостійно; кнопка OK запише й підпише новий список.</translation>
+        <translation>Список одержувачів %1 не проходить перевірку за ключем підписання, тому нічого попередньо не вибрано: збереження підписало б усе, що в ньому є. Виберіть одержувачів самостійно; кнопка OK запише й підпише новий список.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="994"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
-        <translation type="unfinished">%1 Нічого попередньо не вибрано: збереження підписало б усе, що в ньому є. Виберіть одержувачів самостійно.</translation>
+        <translation>%1 Нічого попередньо не вибрано: збереження підписало б усе, що в ньому є. Виберіть одержувачів самостійно.</translation>
     </message>
 </context>
 <context>
@@ -2919,7 +2919,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="129"/>
         <source>Could not sign %1 with %2.</source>
-        <translation type="unfinished">Не вдалося підписати %1 за допомогою %2.</translation>
+        <translation>Не вдалося підписати %1 за допомогою %2.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -3440,32 +3440,32 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/util.cpp" line="692"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Не вдалося створити тимчасовий файл поруч із %1: %2</translation>
+        <translation>Не вдалося створити тимчасовий файл поруч із %1: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="709"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Не вдалося записати %1: %2</translation>
+        <translation>Не вдалося записати %1: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="718"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Не вдалося замінити %1.</translation>
+        <translation>Не вдалося замінити %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="722"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 уже існує.</translation>
+        <translation>%1 уже існує.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="724"/>
         <source>Failed to write %1.</source>
-        <translation type="unfinished">Не вдалося записати %1.</translation>
+        <translation>Не вдалося записати %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="734"/>
         <source>%1 was replaced by a link while it was written.</source>
-        <translation type="unfinished">%1 було замінено посиланням під час запису.</translation>
+        <translation>%1 було замінено посиланням під час запису.</translation>
     </message>
 </context>
 </TS>
