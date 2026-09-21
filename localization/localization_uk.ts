@@ -546,7 +546,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="309"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished">Лише повні відбитки ключів (40 або 64 шістнадцяткових символи), розділені пробілами</translation>
+        <translation>Лише повні відбитки ключів (40 або 64 шістнадцяткових символи), розділені пробілами</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="353"/>
@@ -1128,12 +1128,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="265"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Помилка видалення</translation>
+        <translation>Помилка видалення</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="266"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Не вдалося видалити посилання %1.</translation>
+        <translation>Не вдалося видалити посилання %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
@@ -1148,7 +1148,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="378"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished">Не вдалося записати %1: %2</translation>
+        <translation>Не вдалося записати %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
@@ -1165,7 +1165,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="540"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished">Не вдалося видалити старий підпис %1.</translation>
+        <translation>Не вдалося видалити старий підпис %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="654"/>
@@ -1173,28 +1173,28 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="680"/>
         <location filename="../src/imitatepass.cpp" line="695"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished">Залишок від попереднього повторного шифрування</translation>
+        <translation>Залишок від попереднього повторного шифрування</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="655"/>
         <location filename="../src/imitatepass.cpp" line="671"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
-        <translation type="unfinished">%1 не є звичайним файлом, тому його не було відновлено. Перегляньте його й видаліть, а потім повторіть повторне шифрування.</translation>
+        <translation>%1 не є звичайним файлом, тому його не було відновлено. Перегляньте його й видаліть, а потім повторіть повторне шифрування.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="681"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished">%1 існує поруч із %2. Обидва файли є зашифрованими копіями запису; перевірте, який із них потрібний, видаліть інший, а потім повторіть повторне шифрування.</translation>
+        <translation>%1 існує поруч із %2. Обидва файли є зашифрованими копіями запису; перевірте, який із них потрібний, видаліть інший, а потім повторіть повторне шифрування.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="690"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished">%1 відновлено з резервної копії, яку залишило перерване повторне шифрування.</translation>
+        <translation>%1 відновлено з резервної копії, яку залишило перерване повторне шифрування.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="696"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished">%1 відсутній, а його резервну копію %2 не вдалося перейменувати назад. Перейменуйте її вручну, а потім повторіть повторне шифрування.</translation>
+        <translation>%1 відсутній, а його резервну копію %2 не вдалося перейменувати назад. Перейменуйте її вручну, а потім повторіть повторне шифрування.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="880"/>
@@ -1211,12 +1211,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="886"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished">Не вдалося замінити %1, і оригінал не вдалося повернути на місце. Він і далі існує як %2; перейменуйте його вручну.</translation>
+        <translation>Не вдалося замінити %1, і оригінал не вдалося повернути на місце. Він і далі існує як %2; перейменуйте його вручну.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="897"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished">Не вдалося видалити резервну копію %1 після повторного шифрування; її можна безпечно видалити.</translation>
+        <translation>Не вдалося видалити резервну копію %1 після повторного шифрування; її можна безпечно видалити.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="937"/>
@@ -1247,12 +1247,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1018"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">Це не папка сховища</translation>
+        <translation>Це не папка сховища</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1019"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
-        <translation type="unfinished">%1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і не було повторно зашифроване.</translation>
+        <translation>%1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і не було повторно зашифроване.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1028"/>
@@ -1268,12 +1268,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1122"/>
         <source>Git pull failed</source>
-        <translation type="unfinished">Не вдалося виконати Git pull</translation>
+        <translation>Не вдалося виконати Git pull</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1123"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished">Після pull у сховищі залишилися незлиті файли. Розв&apos;яжіть конфлікт перед повторним шифруванням.</translation>
+        <translation>Після pull у сховищі залишилися незлиті файли. Розв&apos;яжіть конфлікт перед повторним шифруванням.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1128"/>
@@ -1283,7 +1283,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1155"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Пропущено %n запис: символічне посилання, точка з&apos;єднання чи спеціальний файл не є частиною сховища.</numerusform>
             <numerusform>Пропущено %n записи: символічне посилання, точка з&apos;єднання чи спеціальний файл не є частиною сховища.</numerusform>
             <numerusform>Пропущено %n записів: символічне посилання, точка з&apos;єднання чи спеціальний файл не є частиною сховища.</numerusform>
@@ -1467,7 +1467,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished">Відкритий ключ %1 імпортовано. Перш ніж шифрувати для нього, звірте його відбиток із власником: імпорт ключа нічого не говорить про те, хто ним володіє.</translation>
+        <translation>Відкритий ключ %1 імпортовано. Перш ніж шифрувати для нього, звірте його відбиток із власником: імпорт ключа нічого не говорить про те, хто ним володіє.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>
@@ -1537,12 +1537,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
-        <translation type="unfinished">Будь-хто, хто заволодіє файлом приватного ключа, зможе прочитати кожен пароль, і його ні про що не запитають.</translation>
+        <translation>Будь-хто, хто заволодіє файлом приватного ключа, зможе прочитати кожен пароль, і його ні про що не запитають.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
         <source>No passphrase: store the private key unprotected</source>
-        <translation type="unfinished">Без парольної фрази: зберігати приватний ключ незахищеним</translation>
+        <translation>Без парольної фрази: зберігати приватний ключ незахищеним</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -2270,12 +2270,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>Delete link?</source>
-        <translation type="unfinished">Видалити посилання?</translation>
+        <translation>Видалити посилання?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1249"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
-        <translation type="unfinished">%1 є символічним посиланням або точкою з&apos;єднання. Видалити посилання? Те, на що воно вказує, залишиться без змін.</translation>
+        <translation>%1 є символічним посиланням або точкою з&apos;єднання. Видалити посилання? Те, на що воно вказує, залишиться без змін.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1633"/>
@@ -2360,12 +2360,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="2026"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">Це не папка сховища</translation>
+        <translation>Це не папка сховища</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="2027"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і залишається без змін.</translation>
+        <translation>%1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і залишається без змін.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="2038"/>
@@ -2561,12 +2561,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="876"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і залишається без змін.</translation>
+        <translation>%1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і залишається без змін.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="884"/>
         <source>Not part of the store</source>
-        <translation type="unfinished">Не є частиною сховища</translation>
+        <translation>Не є частиною сховища</translation>
     </message>
 </context>
 <context>
@@ -3015,17 +3015,17 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="104"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Не вдалося видалити посилання %1.</translation>
+        <translation>Не вдалося видалити посилання %1.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="105"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Помилка видалення</translation>
+        <translation>Помилка видалення</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="272"/>
         <source>Search needs the GPG executable to be configured.</source>
-        <translation type="unfinished">Для пошуку потрібно налаштувати виконуваний файл GPG.</translation>
+        <translation>Для пошуку потрібно налаштувати виконуваний файл GPG.</translation>
     </message>
 </context>
 <context>
