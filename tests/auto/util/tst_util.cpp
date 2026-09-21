@@ -206,6 +206,7 @@ private Q_SLOTS:
   void getGpgIdPathSubfolder();
   void getGpgIdPathNotFound();
   void getGpgIdPathSiblingStoreIsOutside();
+  void getGpgIdPathOfAFolderIsTheFoldersOwn();
   void seedGpgIdFileCopiesParentRecipients();
   void seedGpgIdFileTrailingSeparator();
   void seedGpgIdFileNoParentRecipients();
@@ -1353,6 +1354,36 @@ void tst_util::getGpgIdPathSiblingStoreIsOutside() {
                                               store.toUpper())),
            QDir::cleanPath(store + "/sub/.gpg-id"));
 #endif
+}
+
+/**
+ * @brief Naming a folder, with the separator the tree appends or as an
+ *        existing directory, asks for the folder's own list; naming an entry
+ *        in it asks for the same. cleanPath() in #1857 had taken the
+ *        separator off and made "sub/" resolve to the parent's list.
+ */
+void tst_util::getGpgIdPathOfAFolderIsTheFoldersOwn() {
+  QTemporaryDir tempDir;
+  QVERIFY(tempDir.isValid());
+  const QString store = tempDir.path();
+  QVERIFY(QDir().mkpath(store + "/sub"));
+  for (const QString &path : {store + "/.gpg-id", store + "/sub/.gpg-id"}) {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("KEY\n");
+  }
+  const QString own = QDir::cleanPath(store + "/sub/.gpg-id");
+  QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(store + "/sub/", store)), own);
+  QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(store + "/sub", store)), own);
+  QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(store + "/sub/x.gpg", store)),
+           own);
+  QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(QStringLiteral("sub/"), store)),
+           own);
+  QCOMPARE(
+      QDir::cleanPath(Pass::getGpgIdPath(QStringLiteral("sub/new.gpg"), store)),
+      own);
+  QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(store + "/", store)),
+           QDir::cleanPath(store + "/.gpg-id"));
 }
 
 void tst_util::getGpgIdPathNotFound() {

@@ -193,15 +193,18 @@ void tst_gpgidgeneration::acceptRefusesARollbackAndRemembersTheHighest() {
   write(file, list(17, "ALICE\n"));
   QString why;
   QCOMPARE(GpgIdGeneration::remembered(file), std::optional<qint64>(0));
-  QVERIFY(GpgIdGeneration::accept(file, list(17, "ALICE\n"), store, &why));
+  QVERIFY(GpgIdGeneration::accept(file, list(17, "ALICE\n"), store, &why) ==
+          GpgIdGeneration::Verdict::Accepted);
   QCOMPARE(GpgIdGeneration::remembered(file), std::optional<qint64>(17));
-  QVERIFY(GpgIdGeneration::accept(file, list(18, "ALICE\nBOB\n"), store));
+  QVERIFY(GpgIdGeneration::accept(file, list(18, "ALICE\nBOB\n"), store) ==
+          GpgIdGeneration::Verdict::Accepted);
   QCOMPARE(GpgIdGeneration::remembered(file), std::optional<qint64>(18));
-  QVERIFY2(GpgIdGeneration::accept(file, list(18, "ALICE\nCAROL\n"), store),
+  QVERIFY2(GpgIdGeneration::accept(file, list(18, "ALICE\nCAROL\n"), store) ==
+               GpgIdGeneration::Verdict::Accepted,
            "two devices both making 18 from 17 is git's conflict, not a "
            "rollback");
-  QVERIFY(
-      !GpgIdGeneration::accept(file, list(17, "ALICE\nBOB\n"), store, &why));
+  QCOMPARE(GpgIdGeneration::accept(file, list(17, "ALICE\nBOB\n"), store, &why),
+           GpgIdGeneration::Verdict::Rollback);
   QVERIFY2(why.contains(QStringLiteral("generation 17")) &&
                why.contains(QStringLiteral("generation 18")) &&
                why.contains(QStringLiteral("Users")) &&
@@ -209,14 +212,16 @@ void tst_gpgidgeneration::acceptRefusesARollbackAndRemembersTheHighest() {
                why.contains(GpgIdGeneration::recordFile()),
            qPrintable(why));
   why.clear();
-  QVERIFY2(!GpgIdGeneration::accept(file, "ALICE\nBOB\n", store, &why),
+  QVERIFY2(GpgIdGeneration::accept(file, "ALICE\nBOB\n", store, &why) !=
+               GpgIdGeneration::Verdict::Accepted,
            "a list from before generations existed, or from pass, is below");
   QVERIFY2(why.contains(QStringLiteral("no generation line")) &&
                why.contains(QStringLiteral("pass")),
            qPrintable(why));
-  QVERIFY(!GpgIdGeneration::accept(
-      file, "# QtPass-GpgId-Generation: x\n# QtPass-GpgId-Folder: .\nALICE\n",
-      store, &why));
+  QVERIFY(GpgIdGeneration::accept(
+              file,
+              "# QtPass-GpgId-Generation: x\n# QtPass-GpgId-Folder: .\nALICE\n",
+              store, &why) != GpgIdGeneration::Verdict::Accepted);
   QCOMPARE(GpgIdGeneration::remembered(file), std::optional<qint64>(18));
   // Saving again is the way through: one above the highest known, and the
   // reservation itself moves the record.
@@ -239,7 +244,8 @@ void tst_gpgidgeneration::acceptRefusesAListWrittenForAnotherFolder() {
   const QString planted = QDir(store).filePath(QStringLiteral("team/.gpg-id"));
   write(planted, rootList);
   QString why;
-  QVERIFY(!GpgIdGeneration::accept(planted, rootList, store, &why));
+  QCOMPARE(GpgIdGeneration::accept(planted, rootList, store, &why),
+           GpgIdGeneration::Verdict::WrongFolder);
   QVERIFY2(why.contains(QStringLiteral("\".\"")) &&
                why.contains(QStringLiteral("\"team\"")),
            qPrintable(why));
@@ -247,14 +253,16 @@ void tst_gpgidgeneration::acceptRefusesAListWrittenForAnotherFolder() {
   // Written for team, it is accepted in team.
   const QByteArray teamList =
       GpgIdGeneration::withHeader(1, QStringLiteral("team"), "ALICE\n");
-  QVERIFY(GpgIdGeneration::accept(planted, teamList, store));
+  QVERIFY(GpgIdGeneration::accept(planted, teamList, store) ==
+          GpgIdGeneration::Verdict::Accepted);
   // And a list outside the store as named is nowhere.
   QTemporaryDir outside;
   QVERIFY(outside.isValid());
   const QString foreign =
       QDir(outside.path()).filePath(QStringLiteral(".gpg-id"));
   write(foreign, rootList);
-  QVERIFY(!GpgIdGeneration::accept(foreign, rootList, store, &why));
+  QVERIFY(GpgIdGeneration::accept(foreign, rootList, store, &why) !=
+          GpgIdGeneration::Verdict::Accepted);
 }
 
 /// A reservation is one above the record and the verified list on disk, and
@@ -352,17 +360,20 @@ void tst_gpgidgeneration::unreadableRecordFailsClosed() {
            "no record, no generation to write");
   QVERIFY(!why.isEmpty());
   why.clear();
-  QVERIFY2(!GpgIdGeneration::accept(file, list(5), store, &why),
+  QVERIFY2(GpgIdGeneration::accept(file, list(5), store, &why) !=
+               GpgIdGeneration::Verdict::Accepted,
            "accepting means recording; when that fails, nothing is accepted");
   QVERIFY(!why.isEmpty());
   why.clear();
-  QVERIFY2(!GpgIdGeneration::accept(file, list(1), store, &why),
+  QVERIFY2(GpgIdGeneration::accept(file, list(1), store, &why) !=
+               GpgIdGeneration::Verdict::Accepted,
            "while the record cannot be written, nothing is established");
   QVERIFY(QFile::setPermissions(recordDir, was));
   QVERIFY2(GpgIdGeneration::remembered(file) == std::optional<qint64>(1),
            "the refused 5 was not left pending in Qt's cache to be flushed "
            "later");
-  QVERIFY(GpgIdGeneration::accept(file, list(1), store));
+  QVERIFY(GpgIdGeneration::accept(file, list(1), store) ==
+          GpgIdGeneration::Verdict::Accepted);
 
   // Garbage where the record was: QSettings reports a format error, and
   // that is "unknown", not "0".
@@ -379,7 +390,8 @@ void tst_gpgidgeneration::unreadableRecordFailsClosed() {
   // And it stays that way for the process: Qt's cache would otherwise carry
   // on with an empty record, which is "never seen", not "unknown".
   why.clear();
-  QVERIFY(!GpgIdGeneration::accept(file, list(5), store, &why));
+  QVERIFY(GpgIdGeneration::accept(file, list(5), store, &why) !=
+          GpgIdGeneration::Verdict::Accepted);
   QVERIFY(!why.isEmpty());
   QVERIFY(!GpgIdGeneration::reserveNext(file, std::nullopt).has_value());
 #endif

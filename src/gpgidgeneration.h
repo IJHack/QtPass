@@ -112,6 +112,20 @@ public:
   static auto remembered(const QString &gpgIdFile, QString *error = nullptr)
       -> std::optional<qint64>;
 
+  /// The outcome of accept(). Only Accepted means the list may be used;
+  /// the others say why not, and Rollback alone is an authentic list.
+  enum class Verdict {
+    Accepted,
+    /// Authentic, but older than a generation this device accepted.
+    Rollback,
+    /// Written for another folder of the store.
+    WrongFolder,
+    /// A header line malformed or duplicated.
+    Malformed,
+    /// The record could not be read or written.
+    RecordUnavailable,
+  };
+
   /**
    * @brief Decide about a verified list: its folder against where it sits,
    * its generation against the remembered one, and remember it when it
@@ -123,14 +137,12 @@ public:
    * @param error Receives the reason for a refusal, if not null. Where the
    *        way through is saving the list again, the text says so, and that
    *        the recipients the dialog then preselects are this list's.
-   * @return true when the list may be used. false when its generation is
-   *         lower, it was written for another folder, its metadata is
-   *         malformed, or the record could not be read or written: without
+   * @return Accepted when the list may be used; otherwise why not. Without
    *         established freshness state nothing is accepted.
    */
   static auto accept(const QString &gpgIdFile, const QByteArray &contents,
                      const QString &storeRoot, QString *error = nullptr)
-      -> bool;
+      -> Verdict;
 
   /**
    * @brief Reserve the generation to write next for @p gpgIdFile: one above

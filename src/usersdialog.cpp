@@ -100,11 +100,14 @@ void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
 void UsersDialog::loadRecipients() {
   // Through the backend: with a signing key only a verified list may be
   // preselected, since OK signs whatever is selected.
-  QString warning;
+  const Pass::RecipientsForEditing loaded =
+      m_pass->recipientsForEditing(m_dir, m_passStore);
   const QStringList recipients =
-      m_pass->recipientsForEditing(m_dir, m_passStore, &warning);
-  if (!warning.isEmpty()) {
-    auto *banner = new QLabel(warning, this);
+      loaded.state == Pass::RecipientsForEditing::State::Rejected
+          ? QStringList()
+          : loaded.recipients;
+  if (!loaded.warning.isEmpty()) {
+    auto *banner = new QLabel(loaded.warning, this);
     banner->setObjectName(QStringLiteral("recipientWarning"));
     banner->setWordWrap(true);
     banner->setTextFormat(Qt::PlainText);

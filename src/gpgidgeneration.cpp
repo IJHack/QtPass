@@ -244,13 +244,14 @@ auto GpgIdGeneration::remembered(const QString &gpgIdFile, QString *error)
 
 auto GpgIdGeneration::accept(const QString &gpgIdFile,
                              const QByteArray &contents,
-                             const QString &storeRoot, QString *error) -> bool {
+                             const QString &storeRoot, QString *error)
+    -> Verdict {
   QString why;
   const std::optional<Header> header = parse(contents, &why);
   if (!header) {
     if (error)
       *error = why;
-    return false;
+    return Verdict::Malformed;
   }
   // A pair is only valid where it was written for: copied into another
   // folder it is a rollback in disguise (that folder's first list).
@@ -266,7 +267,7 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
                     "the list to where it is now.")
                      .arg(gpgIdFile, *header->folder,
                           here.value_or(QStringLiteral("?")));
-      return false;
+      return Verdict::WrongFolder;
     }
   }
   QMutexLocker lock(&recordLock());
@@ -274,7 +275,7 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
   const QString k = key(gpgIdFile);
   const std::optional<qint64> last = readRemembered(*record, k, error);
   if (!last) {
-    return false;
+    return Verdict::RecordUnavailable;
   }
   const qint64 generation = header->generation;
   if (generation < *last) {
@@ -305,13 +306,13 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
                      .arg(wayOut);
       }
     }
-    return false;
+    return Verdict::Rollback;
   }
   if (generation > *last &&
       !writeRemembered(*record, k, generation, *last, error)) {
-    return false;
+    return Verdict::RecordUnavailable;
   }
-  return true;
+  return Verdict::Accepted;
 }
 
 auto GpgIdGeneration::reserveNext(const QString &gpgIdFile,

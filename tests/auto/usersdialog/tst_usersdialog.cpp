@@ -66,6 +66,7 @@ private slots:
   void existingStorePreselectsItsRecipients();
   void withSigningATamperedListPreselectsNothing();
   void withSigningAnOlderVerifiedListIsPreselectedWithAWarning();
+  void withSigningAListForAnotherFolderPreselectsNothing();
   void folderOutsideTheStoreDoesNotInheritItsRecipients();
   void acceptRunsInitByDefault();
   void acceptWithoutSelectionDoesNothing();
@@ -290,10 +291,12 @@ void tst_usersdialog::
     sig.write("sig");
   }
   // This device has accepted generation 2 of that list before.
-  QVERIFY(GpgIdGeneration::accept(
-      gpgIdFile,
-      GpgIdGeneration::withHeader(2, QStringLiteral("."), "31850CF72D9CDDE9\n"),
-      store.path()));
+  QCOMPARE(
+      GpgIdGeneration::accept(gpgIdFile,
+                              GpgIdGeneration::withHeader(
+                                  2, QStringLiteral("."), "31850CF72D9CDDE9\n"),
+                              store.path()),
+      GpgIdGeneration::Verdict::Accepted);
   AppSettings s = m_settings;
   s.gpgExecutable = writeVerifyingGpg(signedCopy);
   QVERIFY(!s.gpgExecutable.isEmpty());
@@ -311,6 +314,51 @@ void tst_usersdialog::
                banner->text().contains(QStringLiteral("generation 2")) &&
                banner->text().contains(QStringLiteral("preselected")),
            qPrintable(banner->text()));
+}
+
+/**
+ * @brief A signed list that verifies but was written for another folder is
+ *        not this folder's: nothing is preselected (saving would sign it in
+ *        here) and the banner says so. Only the authentic rollback keeps its
+ *        recipients ticked.
+ */
+void tst_usersdialog::withSigningAListForAnotherFolderPreselectsNothing() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QVERIFY(QDir(store.path()).mkpath(QStringLiteral("team")));
+  const QString gpgIdFile =
+      QDir(store.path()).filePath(QStringLiteral("team/.gpg-id"));
+  const QString signedCopy =
+      QDir(m_dir.path()).filePath(QStringLiteral("signed-bytes-root"));
+  const QByteArray rootList = GpgIdGeneration::withHeader(
+      1, QStringLiteral("."), "31850CF72D9CDDE9\n693A0AF3FA364E76\n");
+  for (const QString &path : {gpgIdFile, signedCopy}) {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write(rootList);
+  }
+  {
+    QFile sig(gpgIdFile + QStringLiteral(".sig"));
+    QVERIFY(sig.open(QIODevice::WriteOnly));
+    sig.write("sig");
+  }
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeVerifyingGpg(signedCopy);
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  s.passSigningKey = kSigner;
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore + QStringLiteral("team/"));
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QVERIFY2(checkedNames(list).isEmpty(),
+           qPrintable("preselected: " + checkedNames(list).join(", ")));
+  auto *banner = dialog.findChild<QLabel *>(QStringLiteral("recipientWarning"));
+  QVERIFY(banner != nullptr);
+  QVERIFY2(
+      banner->text().contains(QStringLiteral("\"team\"")) &&
+          banner->text().contains(QStringLiteral("Nothing is preselected")),
+      qPrintable(banner->text()));
 }
 
 /**
