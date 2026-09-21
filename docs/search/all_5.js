@@ -1,7 +1,7 @@
 var searchData=
 [
   ['fieldlabel_0',['FieldLabel',['../class_field_label.html',1,'FieldLabel'],['../class_field_label.html#a02ed94111b21b7f6419fb4e35ead4d62',1,'FieldLabel::FieldLabel()']]],
-  ['file_1',['File',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6a0b27918290ff5323bea1e3b78a9cf04e',1,'dragAndDropInfoPasswordStore']]],
+  ['file_1',['File',['../struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4a0b27918290ff5323bea1e3b78a9cf04e',1,'StoreDragItem']]],
   ['filecontent_2',['FileContent',['../class_file_content.html',1,'']]],
   ['filefor_3',['fileFor',['../class_store_tree.html#a70b4b23a457f2b396a91433aaf9b9437',1,'StoreTree']]],
   ['fileinfo_4',['fileInfo',['../class_store_tree.html#a11258ee615d83fdeee5a23685c407227',1,'StoreTree']]],

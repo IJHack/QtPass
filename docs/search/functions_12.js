@@ -4,11 +4,11 @@ var searchData=
   ['templateall_1',['templateAll',['../class_password_dialog.html#ac2af2ce4836edf9d5fda52d5ec66af82',1,'PasswordDialog']]],
   ['touri_2',['toUri',['../class_totp.html#a0d3e89bdf41b159eebe128efa9b8c5dc',1,'Totp']]],
   ['trackedtext_3',['trackedText',['../class_clipboard_manager.html#a17d1e93dc5cddccbd6f486f3d772b5cc',1,'ClipboardManager']]],
-  ['transactionadd_4',['transactionAdd',['../classsimple_transaction.html#ae50cf2a5a1691cbef223f130127bd327',1,'simpleTransaction']]],
-  ['transactionend_5',['transactionEnd',['../classsimple_transaction.html#abd46863a44123f4422ec533effc2f262',1,'simpleTransaction']]],
-  ['transactionhelper_6',['transactionHelper',['../class_imitate_pass_1_1transaction_helper.html#ab37f5a0aff46fb0aa7ae9cc9cc17f38e',1,'ImitatePass::transactionHelper']]],
-  ['transactionisover_7',['transactionIsOver',['../classsimple_transaction.html#a64f6e432ff10bf083aec9040bfbee149',1,'simpleTransaction']]],
-  ['transactionstart_8',['transactionStart',['../classsimple_transaction.html#aafd98f73dfc5352f307115cabc2a5ed4',1,'simpleTransaction']]],
+  ['transactionadd_4',['transactionAdd',['../class_simple_transaction.html#a09853d5e4cf4b047fa185705487e67f9',1,'SimpleTransaction']]],
+  ['transactionend_5',['transactionEnd',['../class_simple_transaction.html#a645199551e3d56f002a92ca800b1b00f',1,'SimpleTransaction']]],
+  ['transactionhelper_6',['TransactionHelper',['../class_imitate_pass_1_1_transaction_helper.html#a6ec9134c9e606f93ad7adb598d6b233d',1,'ImitatePass::TransactionHelper']]],
+  ['transactionisover_7',['transactionIsOver',['../class_simple_transaction.html#a342b1b5c98d1a38143680619f0566ff1',1,'SimpleTransaction']]],
+  ['transactionstart_8',['transactionStart',['../class_simple_transaction.html#a49f52e0304088d6491e3bd5670b47e24',1,'SimpleTransaction']]],
   ['translatepathforwsl_9',['translatePathForWsl',['../class_executor.html#a4417d62f24842a5ff4459559b9527ead',1,'Executor']]],
   ['trayicon_10',['TrayIcon',['../class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5',1,'TrayIcon']]]
 ];

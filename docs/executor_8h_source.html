@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_executor.html">   24</a></span><span class="keyword">class </span><a class="code hl_function" href="class_executor.html#aa15bf32ce5a10a04dce8fe549247ac7d">Executor</a> : <span class="keyword">public</span> QObject {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  Q_OBJECT</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">struct </span>execQueueItem {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">struct </span>ExecQueueItem {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">int</span> id;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    QString app;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    QStringList args;</div>
@@ -130,13 +130,13 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    QString workingDir;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  };</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  QQueue&lt;execQueueItem&gt; m_execQueue;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  QQueue&lt;ExecQueueItem&gt; m_execQueue;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  QProcess m_process;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordtype">bool</span> running{<span class="keyword">false</span>};</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">void</span> executeNext();</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> startProcess(QProcess &amp;process, <span class="keyword">const</span> QString &amp;app,</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                           <span class="keyword">const</span> QStringList &amp;args);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">auto</span> collectOutput(<span class="keyword">const</span> execQueueItem &amp;item, <span class="keywordtype">int</span> exitCode)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">auto</span> collectOutput(<span class="keyword">const</span> ExecQueueItem &amp;item, <span class="keywordtype">int</span> exitCode)</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      -&gt; std::pair&lt;QString, QString&gt;;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keyword">static</span> <span class="keyword">auto</span> runBlocking(QProcess &amp;process, <span class="keyword">const</span> QString &amp;app,</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                          <span class="keyword">const</span> QStringList &amp;args, <span class="keyword">const</span> QString &amp;input,</div>

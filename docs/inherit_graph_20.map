@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,116,31"/>
-<area shape="rect" id="Node000001" href="$class_process_output_panel.html" title="The dockable &quot;Process output&quot; console: numbered, colour&#45;coded lines of git/pass/gpg output with a lin..." alt="" coords="164,5,315,31"/>
-<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="130,15,164,15,164,21,130,21"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,72,31"/>
+<area shape="rect" id="Node000001" href="$class_field_label.html" title="The name of a key: value field in PasswordDialog, editable in place: double&#45;click or the context menu..." alt="" coords="120,5,208,31"/>
+<area shape="poly" id="edge9_Node000000_Node000001" title=" " alt="" coords="86,15,120,15,120,21,86,21"/>
 </map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QtPass: simpleTransaction Class Reference</title>
+<title>QtPass: SimpleTransaction Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classsimple_transaction-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">simpleTransaction Class Reference</div></div>
+<a href="class_simple_transaction-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">SimpleTransaction Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -109,25 +109,25 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac798d38ad0b66f05cd58b5c9e9845491" id="r_ac798d38ad0b66f05cd58b5c9e9845491"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac798d38ad0b66f05cd58b5c9e9845491">simpleTransaction</a> ()</td></tr>
-<tr class="memdesc:ac798d38ad0b66f05cd58b5c9e9845491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classsimple_transaction.html" title="Tracks a sequence of processes that should be treated as one atomic operation.">simpleTransaction</a> in its initial idle state.  <br /></td></tr>
-<tr class="memitem:aafd98f73dfc5352f307115cabc2a5ed4" id="r_aafd98f73dfc5352f307115cabc2a5ed4"><td class="memItemLeft"><a id="aafd98f73dfc5352f307115cabc2a5ed4" name="aafd98f73dfc5352f307115cabc2a5ed4"></a>
+<tr class="memitem:addd388511742931041e60cf7a2604fb5" id="r_addd388511742931041e60cf7a2604fb5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#addd388511742931041e60cf7a2604fb5">SimpleTransaction</a> ()</td></tr>
+<tr class="memdesc:addd388511742931041e60cf7a2604fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_simple_transaction.html" title="Tracks a sequence of processes that should be treated as one atomic operation.">SimpleTransaction</a> in its initial idle state.  <br /></td></tr>
+<tr class="memitem:a49f52e0304088d6491e3bd5670b47e24" id="r_a49f52e0304088d6491e3bd5670b47e24"><td class="memItemLeft"><a id="a49f52e0304088d6491e3bd5670b47e24" name="a49f52e0304088d6491e3bd5670b47e24"></a>
 void&#160;</td><td class="memItemRight"><b>transactionStart</b> ()</td></tr>
-<tr class="memdesc:aafd98f73dfc5352f307115cabc2a5ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">transactionStart this function is used to mark start of the sequence of processes that shall be treated as one operation. <br /></td></tr>
-<tr class="memitem:ae50cf2a5a1691cbef223f130127bd327" id="r_ae50cf2a5a1691cbef223f130127bd327"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae50cf2a5a1691cbef223f130127bd327">transactionAdd</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> process)</td></tr>
-<tr class="memdesc:ae50cf2a5a1691cbef223f130127bd327"><td class="mdescLeft">&#160;</td><td class="mdescRight">transactionAdd If called after call to <a class="el" href="#aafd98f73dfc5352f307115cabc2a5ed4" title="transactionStart this function is used to mark start of the sequence of processes that shall be treat...">transactionStart()</a> and before <a class="el" href="#abd46863a44123f4422ec533effc2f262" title="transactionEnd marks end of transaction">transactionEnd()</a>, this method marks given process as next step in transaction. Otherwise it marks given process as the only step in transaction(it's value is treated as transaction result).  <br /></td></tr>
-<tr class="memitem:abd46863a44123f4422ec533effc2f262" id="r_abd46863a44123f4422ec533effc2f262"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abd46863a44123f4422ec533effc2f262">transactionEnd</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> process)</td></tr>
-<tr class="memdesc:abd46863a44123f4422ec533effc2f262"><td class="mdescLeft">&#160;</td><td class="mdescRight">transactionEnd marks end of transaction  <br /></td></tr>
-<tr class="memitem:a64f6e432ff10bf083aec9040bfbee149" id="r_a64f6e432ff10bf083aec9040bfbee149"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a64f6e432ff10bf083aec9040bfbee149">transactionIsOver</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> current) -&gt; <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></td></tr>
-<tr class="memdesc:a64f6e432ff10bf083aec9040bfbee149"><td class="mdescLeft">&#160;</td><td class="mdescRight">transactionIsOver checks whether currently finished process is last in current transaction  <br /></td></tr>
+<tr class="memdesc:a49f52e0304088d6491e3bd5670b47e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">transactionStart this function is used to mark start of the sequence of processes that shall be treated as one operation. <br /></td></tr>
+<tr class="memitem:a09853d5e4cf4b047fa185705487e67f9" id="r_a09853d5e4cf4b047fa185705487e67f9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a09853d5e4cf4b047fa185705487e67f9">transactionAdd</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> process)</td></tr>
+<tr class="memdesc:a09853d5e4cf4b047fa185705487e67f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">transactionAdd If called after call to <a class="el" href="#a49f52e0304088d6491e3bd5670b47e24" title="transactionStart this function is used to mark start of the sequence of processes that shall be treat...">transactionStart()</a> and before <a class="el" href="#a645199551e3d56f002a92ca800b1b00f" title="transactionEnd marks end of transaction">transactionEnd()</a>, this method marks given process as next step in transaction. Otherwise it marks given process as the only step in transaction(it's value is treated as transaction result).  <br /></td></tr>
+<tr class="memitem:a645199551e3d56f002a92ca800b1b00f" id="r_a645199551e3d56f002a92ca800b1b00f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a645199551e3d56f002a92ca800b1b00f">transactionEnd</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> process)</td></tr>
+<tr class="memdesc:a645199551e3d56f002a92ca800b1b00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">transactionEnd marks end of transaction  <br /></td></tr>
+<tr class="memitem:a342b1b5c98d1a38143680619f0566ff1" id="r_a342b1b5c98d1a38143680619f0566ff1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a342b1b5c98d1a38143680619f0566ff1">transactionIsOver</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> current) -&gt; <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></td></tr>
+<tr class="memdesc:a342b1b5c98d1a38143680619f0566ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">transactionIsOver checks whether currently finished process is last in current transaction  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Tracks a sequence of processes that should be treated as one atomic operation. </p>
 
 <p class="definition">Definition at line <a class="el" href="simpletransaction_8h_source.html#l00014">14</a> of file <a class="el" href="simpletransaction_8h_source.html">simpletransaction.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac798d38ad0b66f05cd58b5c9e9845491" name="ac798d38ad0b66f05cd58b5c9e9845491"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac798d38ad0b66f05cd58b5c9e9845491">&#9670;&#160;</a></span>simpleTransaction()</h2>
+<a id="addd388511742931041e60cf7a2604fb5" name="addd388511742931041e60cf7a2604fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addd388511742931041e60cf7a2604fb5">&#9670;&#160;</a></span>SimpleTransaction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -136,7 +136,7 @@ void&#160;</td><td class="memItemRight"><b>transactionStart</b> ()</td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">simpleTransaction::simpleTransaction </td>
+          <td class="memname">SimpleTransaction::SimpleTransaction </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -149,21 +149,21 @@ void&#160;</td><td class="memItemRight"><b>transactionStart</b> ()</td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a <a class="el" href="classsimple_transaction.html" title="Tracks a sequence of processes that should be treated as one atomic operation.">simpleTransaction</a> in its initial idle state. </p>
+<p>Construct a <a class="el" href="class_simple_transaction.html" title="Tracks a sequence of processes that should be treated as one atomic operation.">SimpleTransaction</a> in its initial idle state. </p>
 
 <p class="definition">Definition at line <a class="el" href="simpletransaction_8h_source.html#l00023">23</a> of file <a class="el" href="simpletransaction_8h_source.html">simpletransaction.h</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ae50cf2a5a1691cbef223f130127bd327" name="ae50cf2a5a1691cbef223f130127bd327"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae50cf2a5a1691cbef223f130127bd327">&#9670;&#160;</a></span>transactionAdd()</h2>
+<a id="a09853d5e4cf4b047fa185705487e67f9" name="a09853d5e4cf4b047fa185705487e67f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09853d5e4cf4b047fa185705487e67f9">&#9670;&#160;</a></span>transactionAdd()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void simpleTransaction::transactionAdd </td>
+          <td class="memname">void SimpleTransaction::transactionAdd </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></td>          <td class="paramname"><span class="paramname"><em>process</em></span></td><td>)</td>
           <td></td>
@@ -171,7 +171,7 @@ void&#160;</td><td class="memItemRight"><b>transactionStart</b> ()</td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>transactionAdd If called after call to <a class="el" href="#aafd98f73dfc5352f307115cabc2a5ed4" title="transactionStart this function is used to mark start of the sequence of processes that shall be treat...">transactionStart()</a> and before <a class="el" href="#abd46863a44123f4422ec533effc2f262" title="transactionEnd marks end of transaction">transactionEnd()</a>, this method marks given process as next step in transaction. Otherwise it marks given process as the only step in transaction(it's value is treated as transaction result). </p>
+<p>transactionAdd If called after call to <a class="el" href="#a49f52e0304088d6491e3bd5670b47e24" title="transactionStart this function is used to mark start of the sequence of processes that shall be treat...">transactionStart()</a> and before <a class="el" href="#a645199551e3d56f002a92ca800b1b00f" title="transactionEnd marks end of transaction">transactionEnd()</a>, this method marks given process as next step in transaction. Otherwise it marks given process as the only step in transaction(it's value is treated as transaction result). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">process</td><td>process that shall be treated as part of transaction </td></tr>
@@ -181,14 +181,14 @@ void&#160;</td><td class="memItemRight"><b>transactionStart</b> ()</td></tr>
 
 </div>
 </div>
-<a id="abd46863a44123f4422ec533effc2f262" name="abd46863a44123f4422ec533effc2f262"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd46863a44123f4422ec533effc2f262">&#9670;&#160;</a></span>transactionEnd()</h2>
+<a id="a645199551e3d56f002a92ca800b1b00f" name="a645199551e3d56f002a92ca800b1b00f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a645199551e3d56f002a92ca800b1b00f">&#9670;&#160;</a></span>transactionEnd()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void simpleTransaction::transactionEnd </td>
+          <td class="memname">void SimpleTransaction::transactionEnd </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></td>          <td class="paramname"><span class="paramname"><em>process</em></span></td><td>)</td>
           <td></td>
@@ -206,14 +206,14 @@ void&#160;</td><td class="memItemRight"><b>transactionStart</b> ()</td></tr>
 
 </div>
 </div>
-<a id="a64f6e432ff10bf083aec9040bfbee149" name="a64f6e432ff10bf083aec9040bfbee149"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64f6e432ff10bf083aec9040bfbee149">&#9670;&#160;</a></span>transactionIsOver()</h2>
+<a id="a342b1b5c98d1a38143680619f0566ff1" name="a342b1b5c98d1a38143680619f0566ff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a342b1b5c98d1a38143680619f0566ff1">&#9670;&#160;</a></span>transactionIsOver()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto simpleTransaction::transactionIsOver </td>
+          <td class="memname">auto SimpleTransaction::transactionIsOver </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></td>          <td class="paramname"><span class="paramname"><em>current</em></span></td><td>)</td>
           <td> -&gt;  <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></td>

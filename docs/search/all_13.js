@@ -1,7 +1,7 @@
 var searchData=
 [
   ['unbound_0',['Unbound',['../class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9aedac80248b7bf68ccfaa9c78bfb81c32',1,'GpgIdGeneration']]],
-  ['unknown_1',['Unknown',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6a88183b946cc5f0e8c96b2e66e1c74a7e',1,'dragAndDropInfoPasswordStore']]],
+  ['unknown_1',['Unknown',['../struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4a88183b946cc5f0e8c96b2e66e1c74a7e',1,'StoreDragItem']]],
   ['unsigned_2',['Unsigned',['../struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073aa1a914735b205424ba6c40b85528d78a',1,'Pass::RecipientsForEditing']]],
   ['updateenv_3',['updateEnv',['../class_pass.html#ac679a086b289cdb9245906948ba0458a',1,'Pass']]],
   ['useautoclear_4',['useAutoclear',['../struct_app_settings.html#ab7ed344d235b3e5777a94c13d50e0b66',1,'AppSettings::useAutoclear'],['../class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91',1,'ConfigDialog::useAutoclear()']]],

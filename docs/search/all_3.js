@@ -10,13 +10,12 @@ var searchData=
   ['digest_7',['digest',['../class_gpg_id_generation.html#a593383b668ee43317c32dfac0170fb08',1,'GpgIdGeneration']]],
   ['digits_8',['digits',['../struct_totp_1_1_settings.html#a3a6aaba070bd9ae68bef14a711bd217d',1,'Totp::Settings']]],
   ['directoriesunder_9',['directoriesUnder',['../class_util.html#afaab47cf531353235a5ec8f2c6424c5e',1,'Util']]],
-  ['directory_10',['Directory',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6ae73cda510e8bb947f7e61089e5581494',1,'dragAndDropInfoPasswordStore']]],
+  ['directory_10',['Directory',['../struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4ae73cda510e8bb947f7e61089e5581494',1,'StoreDragItem']]],
   ['dirfor_11',['dirFor',['../class_store_tree.html#a0af4ab5f8c00e1188af669b8aea1ab47',1,'StoreTree']]],
   ['discard_12',['discard',['../struct_grep_search_controller_1_1_finish_outcome.html#aa12d73ecc749e62f884be80576823595',1,'GrepSearchController::FinishOutcome']]],
   ['displayasis_13',['displayAsIs',['../struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d',1,'AppSettings']]],
   ['displayfields_14',['displayFields',['../class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f',1,'PasswordDisplayPanel']]],
   ['donewizardpage_15',['DoneWizardPage',['../class_done_wizard_page.html',1,'DoneWizardPage'],['../class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183',1,'DoneWizardPage::DoneWizardPage()']]],
-  ['draganddropinfopasswordstore_16',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
-  ['dropmimedata_17',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
-  ['dropstaletoolsareapalettes_18',['dropStaleToolsAreaPalettes',['../class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168',1,'MainWindow']]]
+  ['dropmimedata_16',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]],
+  ['dropstaletoolsareapalettes_17',['dropStaleToolsAreaPalettes',['../class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168',1,'MainWindow']]]
 ];

@@ -7,11 +7,11 @@ var searchData=
   ['totp_4',['Totp',['../class_totp.html',1,'']]],
   ['touri_5',['toUri',['../class_totp.html#a0d3e89bdf41b159eebe128efa9b8c5dc',1,'Totp']]],
   ['trackedtext_6',['trackedText',['../class_clipboard_manager.html#a17d1e93dc5cddccbd6f486f3d772b5cc',1,'ClipboardManager']]],
-  ['transactionadd_7',['transactionAdd',['../classsimple_transaction.html#ae50cf2a5a1691cbef223f130127bd327',1,'simpleTransaction']]],
-  ['transactionend_8',['transactionEnd',['../classsimple_transaction.html#abd46863a44123f4422ec533effc2f262',1,'simpleTransaction']]],
-  ['transactionhelper_9',['transactionHelper',['../class_imitate_pass_1_1transaction_helper.html',1,'ImitatePass::transactionHelper'],['../class_imitate_pass_1_1transaction_helper.html#ab37f5a0aff46fb0aa7ae9cc9cc17f38e',1,'ImitatePass::transactionHelper::transactionHelper()']]],
-  ['transactionisover_10',['transactionIsOver',['../classsimple_transaction.html#a64f6e432ff10bf083aec9040bfbee149',1,'simpleTransaction']]],
-  ['transactionstart_11',['transactionStart',['../classsimple_transaction.html#aafd98f73dfc5352f307115cabc2a5ed4',1,'simpleTransaction']]],
+  ['transactionadd_7',['transactionAdd',['../class_simple_transaction.html#a09853d5e4cf4b047fa185705487e67f9',1,'SimpleTransaction']]],
+  ['transactionend_8',['transactionEnd',['../class_simple_transaction.html#a645199551e3d56f002a92ca800b1b00f',1,'SimpleTransaction']]],
+  ['transactionhelper_9',['TransactionHelper',['../class_imitate_pass_1_1_transaction_helper.html',1,'ImitatePass::TransactionHelper'],['../class_imitate_pass_1_1_transaction_helper.html#a6ec9134c9e606f93ad7adb598d6b233d',1,'ImitatePass::TransactionHelper::TransactionHelper()']]],
+  ['transactionisover_10',['transactionIsOver',['../class_simple_transaction.html#a342b1b5c98d1a38143680619f0566ff1',1,'SimpleTransaction']]],
+  ['transactionstart_11',['transactionStart',['../class_simple_transaction.html#a49f52e0304088d6491e3bd5670b47e24',1,'SimpleTransaction']]],
   ['translatepathforwsl_12',['translatePathForWsl',['../class_executor.html#a4417d62f24842a5ff4459559b9527ead',1,'Executor']]],
   ['trayicon_13',['TrayIcon',['../class_tray_icon.html',1,'TrayIcon'],['../class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5',1,'TrayIcon::TrayIcon()']]]
 ];

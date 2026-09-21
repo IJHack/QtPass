@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['itemkind_0',['ItemKind',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6',1,'dragAndDropInfoPasswordStore']]]
+  ['itemkind_0',['ItemKind',['../struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4',1,'StoreDragItem']]]
 ];

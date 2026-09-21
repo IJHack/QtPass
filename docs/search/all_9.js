@@ -9,6 +9,6 @@ var searchData=
   ['keywizardpage_6',['KeyWizardPage',['../class_key_wizard_page.html',1,'KeyWizardPage'],['../class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a',1,'KeyWizardPage::KeyWizardPage()']]],
   ['kfolderprefix_7',['kFolderPrefix',['../class_gpg_id_generation.html#abcdc85e16f816169a5bd5b665bb99000',1,'GpgIdGeneration']]],
   ['kgenerationprefix_8',['kGenerationPrefix',['../class_gpg_id_generation.html#aec962bd7ca805bf9164a35f07ca68c88',1,'GpgIdGeneration']]],
-  ['kind_9',['kind',['../structdrag_and_drop_info_password_store.html#ab4bf9c0e8d5cce80a689fd57b3b97541',1,'dragAndDropInfoPasswordStore']]],
+  ['kind_9',['kind',['../struct_store_drag_item.html#aa143fe18023b8dba5836cc930cfb3904',1,'StoreDragItem']]],
   ['kmaxgeneration_10',['kMaxGeneration',['../class_gpg_id_generation.html#ad1838a8d88e4b98e3f573bf89556a164',1,'GpgIdGeneration']]]
 ];

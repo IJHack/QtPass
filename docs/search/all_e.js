@@ -24,7 +24,7 @@ var searchData=
   ['passworddialog_21',['PasswordDialog',['../class_password_dialog.html',1,'PasswordDialog'],['../class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e',1,'PasswordDialog::PasswordDialog(PasswordConfiguration passConfig, QWidget *parent=nullptr)'],['../class_password_dialog.html#a1795ae0584aa5d5237e8819aca573d4c',1,'PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &amp;s, QString file, const bool &amp;isNew, QWidget *parent=nullptr)']]],
   ['passworddisplaypanel_22',['PasswordDisplayPanel',['../class_password_display_panel.html',1,'PasswordDisplayPanel'],['../class_password_display_panel.html#a9629fe79e18a80f29101b80e3077250d',1,'PasswordDisplayPanel::PasswordDisplayPanel()']]],
   ['passwordfromfiletoclipboard_23',['passwordFromFileToClipboard',['../class_main_window.html#a7d0d5451438004ab31c4d9d48a869378',1,'MainWindow']]],
-  ['path_24',['path',['../struct_profile.html#a1e4c9f21760536f1ec3a4689b0932557',1,'Profile::path'],['../structdrag_and_drop_info_password_store.html#ac3d6eb02633ddfd1a290cbaf27ca5390',1,'dragAndDropInfoPasswordStore::path']]],
+  ['path_24',['path',['../struct_profile.html#a1e4c9f21760536f1ec3a4689b0932557',1,'Profile::path'],['../struct_store_drag_item.html#a67b80e2d0b8d10ca06559f0551e7e106',1,'StoreDragItem::path']]],
   ['pathvalidator_25',['PathValidator',['../class_path_validator.html',1,'']]],
   ['process_26',['PROCESS',['../class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772',1,'Pass::PROCESS'],['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69',1,'Enums::PROCESS']]],
   ['process_5fcount_27',['PROCESS_COUNT',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e',1,'Enums']]],

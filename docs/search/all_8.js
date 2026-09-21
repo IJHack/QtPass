@@ -40,5 +40,5 @@ var searchData=
   ['isuseotp_37',['isUseOtp',['../class_qt_pass_settings.html#af9e41239c39581b0f3a573dfdaabff36',1,'QtPassSettings']]],
   ['isvalid_38',['isValid',['../class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2',1,'Totp::isValid()'],['../struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a',1,'UserInfo::isValid()']]],
   ['isvalidkeyid_39',['isValidKeyId',['../class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1',1,'Util']]],
-  ['itemkind_40',['ItemKind',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6',1,'dragAndDropInfoPasswordStore']]]
+  ['itemkind_40',['ItemKind',['../struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4',1,'StoreDragItem']]]
 ];

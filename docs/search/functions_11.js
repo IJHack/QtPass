@@ -45,7 +45,7 @@ var searchData=
   ['showthis_42',['showThis',['../class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691',1,'StoreModel']]],
   ['sign_43',['sign',['../class_gpg_id_signer.html#a2b57de99acd94df386ea1a0e52efbbe7',1,'GpgIdSigner']]],
   ['signgpgidfile_44',['signGpgIdFile',['../class_imitate_pass.html#a9055e77fb0300ace61fde6386b50705f',1,'ImitatePass']]],
-  ['simpletransaction_45',['simpleTransaction',['../classsimple_transaction.html#ac798d38ad0b66f05cd58b5c9e9845491',1,'simpleTransaction']]],
+  ['simpletransaction_45',['SimpleTransaction',['../class_simple_transaction.html#addd388511742931041e60cf7a2604fb5',1,'SimpleTransaction']]],
   ['singleapplication_46',['SingleApplication',['../class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5',1,'SingleApplication']]],
   ['startedit_47',['startEdit',['../class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e',1,'FieldLabel']]],
   ['starting_48',['starting',['../class_executor.html#acfcfc18b0b973791530302eb8179e038',1,'Executor']]],
