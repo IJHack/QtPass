@@ -1071,12 +1071,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="75"/>
         <source>the recipient list is not valid UTF-8</source>
-        <translation type="unfinished">lista odbiorców nie jest poprawnym tekstem UTF-8</translation>
+        <translation>lista odbiorców nie jest poprawnym tekstem UTF-8</translation>
     </message>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="99"/>
         <source>gpg wrote no signature</source>
-        <translation type="unfinished">gpg nie zapisał podpisu</translation>
+        <translation>gpg nie zapisał podpisu</translation>
     </message>
 </context>
 <context>
@@ -1096,13 +1096,13 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <source>Cannot add</source>
-        <translation type="unfinished">Nie można dodać</translation>
+        <translation>Nie można dodać</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <location filename="../src/imitatepass.cpp" line="1732"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 już istnieje.</translation>
+        <translation>%1 już istnieje.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="203"/>
@@ -1113,12 +1113,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="216"/>
         <source>Cannot write</source>
-        <translation type="unfinished">Nie można zapisać</translation>
+        <translation>Nie można zapisać</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="217"/>
         <source>Cannot create a temporary directory: %1</source>
-        <translation type="unfinished">Nie można utworzyć katalogu tymczasowego: %1</translation>
+        <translation>Nie można utworzyć katalogu tymczasowego: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="440"/>
@@ -1210,7 +1210,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="443"/>
         <source>Failed to sign %1: %2</source>
-        <translation type="unfinished">Nie udało się podpisać %1: %2</translation>
+        <translation>Nie udało się podpisać %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="585"/>
@@ -1380,33 +1380,33 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1680"/>
         <source>gpg wrote no ciphertext for %1.</source>
-        <translation type="unfinished">gpg nie zapisał zaszyfrowanych danych dla %1.</translation>
+        <translation>gpg nie zapisał zaszyfrowanych danych dla %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1697"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Nie można utworzyć pliku tymczasowego obok %1: %2</translation>
+        <translation>Nie można utworzyć pliku tymczasowego obok %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1706"/>
         <source>Cannot read what gpg wrote for %1.</source>
-        <translation type="unfinished">Nie można odczytać tego, co gpg zapisał dla %1.</translation>
+        <translation>Nie można odczytać tego, co gpg zapisał dla %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1713"/>
         <location filename="../src/imitatepass.cpp" line="1718"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Nie można zapisać %1: %2</translation>
+        <translation>Nie można zapisać %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1731"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Nie udało się zastąpić %1.</translation>
+        <translation>Nie udało się zastąpić %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1741"/>
         <source>%1 was replaced by a link while it was being written.</source>
-        <translation type="unfinished">%1 został zastąpiony dowiązaniem podczas zapisywania.</translation>
+        <translation>%1 został zastąpiony dowiązaniem podczas zapisywania.</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
@@ -2733,7 +2733,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="129"/>
         <source>Could not sign %1 with %2.</source>
-        <translation type="unfinished">Nie udało się podpisać %1 kluczem %2.</translation>
+        <translation>Nie udało się podpisać %1 kluczem %2.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -3232,32 +3232,32 @@ Wpisy oznaczone jako [NIEPRAWIDŁOWY] i&#xa0;[WYGASŁY] nie mogą być użyte do
     <message>
         <location filename="../src/util.cpp" line="692"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Nie można utworzyć pliku tymczasowego obok %1: %2</translation>
+        <translation>Nie można utworzyć pliku tymczasowego obok %1: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="709"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Nie można zapisać %1: %2</translation>
+        <translation>Nie można zapisać %1: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="718"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Nie udało się zastąpić %1.</translation>
+        <translation>Nie udało się zastąpić %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="722"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 już istnieje.</translation>
+        <translation>%1 już istnieje.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="724"/>
         <source>Failed to write %1.</source>
-        <translation type="unfinished">Nie udało się zapisać %1.</translation>
+        <translation>Nie udało się zapisać %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="734"/>
         <source>%1 was replaced by a link while it was written.</source>
-        <translation type="unfinished">%1 został zastąpiony dowiązaniem podczas zapisywania.</translation>
+        <translation>%1 został zastąpiony dowiązaniem podczas zapisywania.</translation>
     </message>
 </context>
 </TS>
