@@ -120,6 +120,14 @@ protected:
    */
   void changeEvent(QEvent *event) override;
   /**
+   * @brief Notice an application palette change, the theme switch that
+   *        makes a style-imposed bar palette suspect; see
+   *        dropStaleToolsAreaPalettes().
+   * @param event The event.
+   * @return true if the event was consumed.
+   */
+  auto event(QEvent *event) -> bool override;
+  /**
    * @brief First-show hook used to focus the search input once the window
    *        is actually mapped (avoids races with timers fired before show).
    * @param event The show event.
@@ -217,10 +225,10 @@ public slots:
   void onOperationError();
 
   /**
-   * @brief Drop a style-imposed toolbar palette that belongs to the other
-   * theme (Breeze header palette after a light/dark switch).
+   * @brief Drop a style-imposed menu bar or toolbar palette that belongs to
+   * the other theme (Breeze header palette after a light/dark switch).
    */
-  void dropStaleToolBarPalette();
+  void dropStaleToolsAreaPalettes();
 
   /**
    * @brief Handle results from a completed grep search.
@@ -296,6 +304,11 @@ private:
   GrepSearchController m_grep;
   PasswordDisplayPanel *m_displayPanel = nullptr;
   bool m_firstShowCompleted = false;
+  /// Whether the application palette changed in this window's lifetime. A
+  /// header palette a style stamps on the bars is only suspect after that:
+  /// at startup the style's colours are fresh, however far from the window
+  /// colour a scheme puts its header.
+  bool m_themeSwitched = false;
   /// Entry the display panel is currently rendering. The tree's currentIndex
   /// can move without a repaint (arrow keys and right-click do not emit
   /// QTreeView::clicked), so onOtp() must not assume the visible code belongs

@@ -124,8 +124,12 @@ private Q_SLOTS:
   void showTextAsQRCodeReportsMissingQrencode();
   void textBrowserFollowsRuntimePaletteChange();
   void fieldFrameBorderFollowsRuntimePaletteChange();
-  void toolBarDropsStaleStylePaletteAfterThemeSwitch();
-  void toolBarKeepsHeaderTintInSameTheme();
+  void toolsAreaBarDropsStaleStylePaletteAfterThemeSwitch_data();
+  void toolsAreaBarDropsStaleStylePaletteAfterThemeSwitch();
+  void toolsAreaBarKeepsHeaderTintInSameTheme_data();
+  void toolsAreaBarKeepsHeaderTintInSameTheme();
+  void toolsAreaBarKeepsAnyHeaderBeforeAThemeSwitch_data();
+  void toolsAreaBarKeepsAnyHeaderBeforeAThemeSwitch();
   void firstRunWizardCancelledStopsStartup();
   void firstRunWizardSetsUpTheStore();
   void windowFlagsAreOnlyRebuiltWhenAlwaysOnTopChanges();
@@ -143,6 +147,8 @@ private Q_SLOTS:
 private:
   auto runFirstRunFlow(const std::function<bool(FirstRunWizard *)> &onWizard,
                        bool *initSucceeded) -> int;
+  static void toolsAreaBars();
+  auto toolsAreaBar(const QString &name) -> QWidget *;
 };
 
 void tst_mainwindow::initTestCase() {
@@ -1053,17 +1059,46 @@ void tst_mainwindow::fieldFrameBorderFollowsRuntimePaletteChange() {
 }
 
 /**
- * @brief A toolbar palette left over from the previous theme is dropped.
- *
- * KDE's Breeze style stamps a "header" palette on top toolbars and, after a
- * runtime light/dark switch, re-applies it from a cached kdeglobals — i.e.
- * with the old theme's colours. Simulate that: mark the toolbar the way
- * Breeze does, give it a dark palette while the application is light, and
- * check that MainWindow resets it.
+ * @brief The menu bar and the toolbar, the two bars Breeze paints as its
+ * "tools area", each as a test row.
  */
-void tst_mainwindow::toolBarDropsStaleStylePaletteAfterThemeSwitch() {
-  auto *bar = m_window->findChild<QToolBar *>(QStringLiteral("toolBar"));
-  QVERIFY2(bar != nullptr, "MainWindow must have the toolBar");
+void tst_mainwindow::toolsAreaBars() {
+  QTest::addColumn<QString>("bar");
+  QTest::newRow("toolBar") << QStringLiteral("toolBar");
+  QTest::newRow("menuBar") << QStringLiteral("menuBar");
+}
+
+auto tst_mainwindow::toolsAreaBar(const QString &name) -> QWidget * {
+  if (name == QLatin1String("menuBar")) {
+    return m_window->menuBar();
+  }
+  return m_window->findChild<QToolBar *>(name);
+}
+
+/**
+ * @brief A bar palette left over from the previous theme is dropped.
+ *
+ * KDE's Breeze style stamps a "header" palette on the menu bar and top
+ * toolbars and, after a runtime light/dark switch, re-applies it from a
+ * cached kdeglobals — i.e. with the old theme's colours (#1669 for the
+ * toolbar, #1868 for the menu bar). Simulate that: switch the application
+ * palette and let that settle, then mark the bar the way Breeze does, give
+ * it a dark palette while the application is light, and check that
+ * MainWindow resets it on the bar's own PaletteChange. The menu bar is
+ * hidden by default and must be reset all the same, so that showing it
+ * later shows the right theme.
+ */
+void tst_mainwindow::toolsAreaBarDropsStaleStylePaletteAfterThemeSwitch_data() {
+  toolsAreaBars();
+}
+
+void tst_mainwindow::toolsAreaBarDropsStaleStylePaletteAfterThemeSwitch() {
+  QFETCH(QString, bar);
+  QWidget *widget = toolsAreaBar(bar);
+  QVERIFY2(widget != nullptr, "MainWindow must have the bar");
+#ifndef Q_OS_MACOS
+  QCOMPARE(widget->isHidden(), bar == QLatin1String("menuBar"));
+#endif
   const QPalette original = QApplication::palette();
   auto restore =
       qScopeGuard([&original] { QApplication::setPalette(original); });
@@ -1071,28 +1106,41 @@ void tst_mainwindow::toolBarDropsStaleStylePaletteAfterThemeSwitch() {
   QPalette light = original;
   light.setColor(QPalette::Window, QColor(0xef, 0xf0, 0xf1));
   QApplication::setPalette(light);
+  // Let the switch reach the window and its bars before the stale stamp:
+  // what follows must be caught by the bar's own PaletteChange, not by the
+  // toolbar's from the switch itself.
+  QTest::qWait(50);
 
   QPalette staleDark = light;
   staleDark.setColor(QPalette::Window, QColor(0x29, 0x2c, 0x30));
-  bar->setProperty("breeze_has_toolsarea_palette", true);
-  bar->setPalette(staleDark);
-  QVERIFY(bar->testAttribute(Qt::WA_SetPalette));
+  widget->setProperty("breeze_has_toolsarea_palette", true);
+  widget->setPalette(staleDark);
+  QVERIFY2(widget->testAttribute(Qt::WA_SetPalette),
+           "the stale stamp must have taken before the reset is judged");
 
-  QTRY_VERIFY2(!bar->testAttribute(Qt::WA_SetPalette),
-               "stale dark toolbar palette must be dropped on a light app");
-  QCOMPARE(bar->palette().color(QPalette::Window),
+  QTRY_VERIFY2(!widget->testAttribute(Qt::WA_SetPalette),
+               "stale dark bar palette must be dropped on a light app");
+  QCOMPARE(widget->palette().color(QPalette::Window),
            light.color(QPalette::Window));
-  QVERIFY2(bar->autoFillBackground(),
-           "toolbar must paint its own background over the style's stale "
+  QVERIFY2(widget->autoFillBackground(),
+           "bar must paint its own background over the style's stale "
            "tools-area fill");
+  QVERIFY2(widget->backgroundRole() == QPalette::Window,
+           "that background is the window colour, not the bar's default "
+           "Button role");
 }
 
 /**
  * @brief A header tint in the same theme as the application is left alone.
  */
-void tst_mainwindow::toolBarKeepsHeaderTintInSameTheme() {
-  auto *bar = m_window->findChild<QToolBar *>(QStringLiteral("toolBar"));
-  QVERIFY2(bar != nullptr, "MainWindow must have the toolBar");
+void tst_mainwindow::toolsAreaBarKeepsHeaderTintInSameTheme_data() {
+  toolsAreaBars();
+}
+
+void tst_mainwindow::toolsAreaBarKeepsHeaderTintInSameTheme() {
+  QFETCH(QString, bar);
+  QWidget *widget = toolsAreaBar(bar);
+  QVERIFY2(widget != nullptr, "MainWindow must have the bar");
   const QPalette original = QApplication::palette();
   auto restore =
       qScopeGuard([&original] { QApplication::setPalette(original); });
@@ -1100,15 +1148,46 @@ void tst_mainwindow::toolBarKeepsHeaderTintInSameTheme() {
   QPalette light = original;
   light.setColor(QPalette::Window, QColor(0xef, 0xf0, 0xf1));
   QApplication::setPalette(light);
+  QTest::qWait(50);
 
   QPalette headerTint = light;
   headerTint.setColor(QPalette::Window, QColor(0xe3, 0xe5, 0xe7));
-  bar->setPalette(headerTint);
+  widget->setPalette(headerTint);
 
   QTest::qWait(50); // let the deferred check run
-  QVERIFY2(bar->testAttribute(Qt::WA_SetPalette),
+  QVERIFY2(widget->testAttribute(Qt::WA_SetPalette),
            "a same-theme header tint must be kept");
-  QCOMPARE(bar->palette().color(QPalette::Window), QColor(0xe3, 0xe5, 0xe7));
+  QCOMPARE(widget->palette().color(QPalette::Window), QColor(0xe3, 0xe5, 0xe7));
+}
+
+/**
+ * @brief Before any application palette change, a header palette is the
+ *        theme's own however far it sits from the window colour: a scheme
+ *        with a dark header on a light body is stamped at startup by the
+ *        same Breeze code, and QtPass must not undo the scheme.
+ */
+void tst_mainwindow::toolsAreaBarKeepsAnyHeaderBeforeAThemeSwitch_data() {
+  toolsAreaBars();
+}
+
+void tst_mainwindow::toolsAreaBarKeepsAnyHeaderBeforeAThemeSwitch() {
+  QFETCH(QString, bar);
+  QWidget *widget = toolsAreaBar(bar);
+  QVERIFY2(widget != nullptr, "MainWindow must have the bar");
+  QVERIFY2(!widget->testAttribute(Qt::WA_SetPalette),
+           "a fresh window has no bar palette of its own");
+
+  QPalette darkHeader = QApplication::palette();
+  darkHeader.setColor(QPalette::Window, QColor(0x31, 0x36, 0x3b));
+  widget->setProperty("breeze_has_toolsarea_palette", true);
+  widget->setPalette(darkHeader);
+
+  QTest::qWait(50); // let the deferred check run
+  QVERIFY2(widget->testAttribute(Qt::WA_SetPalette),
+           "no theme switch happened, so the header is the scheme's");
+  QCOMPARE(widget->palette().color(QPalette::Window), QColor(0x31, 0x36, 0x3b));
+  QVERIFY2(!widget->autoFillBackground(),
+           "a kept header is painted by the style, not by the bar itself");
 }
 
 /**

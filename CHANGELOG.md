@@ -436,6 +436,16 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   signature and the first commit are now written directly into the new
   directory, without touching the active store
   ([#1774](https://github.com/IJHack/QtPass/issues/1774))
+- The menu bar (new in 2.0) kept the previous theme after a KDE light/dark
+  switch: Breeze paints it and the toolbar from one "header" palette and
+  stamps the stale colours back on both, and the 1.8.0 reset
+  ([#1669](https://github.com/IJHack/QtPass/pull/1669)) covered the toolbar,
+  the only bar there was then. It covers the menu bar now, hidden or shown,
+  paints the reset bars in the window colour rather than the lighter button
+  colour, judges the stamp by the active colour group whichever window has
+  focus, and leaves a header alone until the theme has actually changed, so
+  a scheme with a dark header on a light window keeps it
+  ([#1868](https://github.com/IJHack/QtPass/issues/1868))
 
 ### Removed
 

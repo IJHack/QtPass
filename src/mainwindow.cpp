@@ -38,6 +38,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QMenu>
+#include <QMenuBar>
 #include <QMessageBox>
 #include <QProgressDialog>
 #include <QPushButton>
@@ -146,7 +147,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   // Install the search-box key filter once, not on every setUiElementsEnabled
   // call.
   ui->lineEdit->installEventFilter(this);
+  // Both live in Breeze's "tools area" and get its header palette; see the
+  // PaletteChange branch in eventFilter().
   ui->toolBar->installEventFilter(this);
+  menuBar()->installEventFilter(this);
 
   // Safety net: if a backend operation disables the UI but never signals
   // completion, re-enable after a timeout so the window can't get stuck.
@@ -300,6 +304,19 @@ void MainWindow::focusInput() {
   // one-shot if focusInput returned early (mid-rebuild widget state)
   // and we'd never retry.
   m_firstShowCompleted = true;
+}
+
+/**
+ * @brief MainWindow::event notes an application palette change: from then
+ * on a bar palette the style stamps may be the previous theme's.
+ * @param event
+ * @return whether the event was consumed
+ */
+auto MainWindow::event(QEvent *event) -> bool {
+  if (event->type() == QEvent::ApplicationPaletteChange) {
+    m_themeSwitched = true;
+  }
+  return QMainWindow::event(event);
 }
 
 /**
@@ -1509,16 +1526,19 @@ void MainWindow::closeEvent(QCloseEvent *event) {
  * @return
  */
 auto MainWindow::eventFilter(QObject *obj, QEvent *event) -> bool {
-  if (obj == ui->toolBar && event->type() == QEvent::PaletteChange) {
-    // KDE's Breeze style gives top toolbars a "header" palette of its own.
-    // After a runtime light/dark switch it recomputes that palette from a
-    // cached kdeglobals and stamps the previous theme's colours back on, so
-    // the toolbar stays dark on a light window (or vice versa) with matching
-    // invisible icons. A legitimate header tint is close to the window
-    // colour; a stale theme is not. When the two disagree, drop the imposed
-    // palette so the toolbar follows the application palette again. Deferred
-    // so we never re-enter the style while it is still applying its palette.
-    QTimer::singleShot(0, this, &MainWindow::dropStaleToolBarPalette);
+  if ((obj == ui->toolBar || obj == menuBar()) &&
+      event->type() == QEvent::PaletteChange) {
+    // KDE's Breeze style gives the menu bar and top toolbars a "header"
+    // palette of its own. After a runtime light/dark switch it recomputes
+    // that palette from a cached kdeglobals and stamps the previous theme's
+    // colours back on, so both bars stay dark on a light window (or vice
+    // versa), the toolbar's icons, which follow the new palette, invisible
+    // against it. A header the theme meant is close to the window colour;
+    // the other theme is not. When the two disagree after a switch, drop
+    // the imposed palette so the bar follows the application palette again.
+    // Deferred so we never re-enter the style while it is still applying its
+    // palette.
+    QTimer::singleShot(0, this, &MainWindow::dropStaleToolsAreaPalettes);
   }
   if (obj == ui->lineEdit && event->type() == QEvent::KeyPress) {
     auto *key = dynamic_cast<QKeyEvent *>(event);
@@ -1530,27 +1550,47 @@ auto MainWindow::eventFilter(QObject *obj, QEvent *event) -> bool {
 }
 
 /**
- * @brief Reset the toolbar palette when a style left it in the wrong theme.
+ * @brief Reset the menu bar and toolbar palettes when a style left one of
+ * them in the wrong theme.
  *
- * Compares the lightness of the toolbar's Window colour with the application
- * palette; a difference above kStaleToolBarLightness means the toolbar shows
- * the other theme. See the PaletteChange branch in eventFilter().
+ * Only once the application palette has changed in this window's lifetime:
+ * before that the style's colours are as fresh as the window's, and a
+ * scheme may put its header far from the window colour on purpose. After a
+ * switch, compares the lightness of each bar's active Window colour with
+ * the application palette's; a difference above kStaleToolsAreaLightness
+ * means the bar shows the other theme. See the PaletteChange branch in
+ * eventFilter().
  */
-void MainWindow::dropStaleToolBarPalette() {
-  if (!ui->toolBar->testAttribute(Qt::WA_SetPalette)) {
+void MainWindow::dropStaleToolsAreaPalettes() {
+  if (!m_themeSwitched) {
     return;
   }
-  constexpr int kStaleToolBarLightness = 64;
-  const int barLightness =
-      ui->toolBar->palette().color(QPalette::Window).lightness();
-  const int appLightness =
-      QApplication::palette().color(QPalette::Window).lightness();
-  if (qAbs(barLightness - appLightness) > kStaleToolBarLightness) {
-    ui->toolBar->setPalette(QPalette());
+  constexpr int kStaleToolsAreaLightness = 64;
+  // The active group on both sides: a bar's palette() reads the inactive
+  // group while another window has focus (the settings app, during a theme
+  // switch), and Breeze gives the header set different inactive colours.
+  const int appLightness = QApplication::palette()
+                               .color(QPalette::Active, QPalette::Window)
+                               .lightness();
+  for (QWidget *bar : {static_cast<QWidget *>(ui->toolBar),
+                       static_cast<QWidget *>(menuBar())}) {
+    if (!bar->testAttribute(Qt::WA_SetPalette)) {
+      continue;
+    }
+    const int barLightness =
+        bar->palette().color(QPalette::Active, QPalette::Window).lightness();
+    if (qAbs(barLightness - appLightness) <= kStaleToolsAreaLightness) {
+      continue;
+    }
+    bar->setPalette(QPalette());
     // The style also paints the tools-area background on the main window
-    // from the same stale palette, and the toolbar is transparent by default;
-    // paint our own background so the reset is actually visible.
-    ui->toolBar->setAutoFillBackground(true);
+    // from the same stale palette, and both bars are transparent by default;
+    // paint our own background so the reset is actually visible. Their
+    // background role is Button, which is not the window colour in either
+    // theme; paint Window, which is also what a header palette the style
+    // stamps back later, rightly this time, puts in that role.
+    bar->setBackgroundRole(QPalette::Window);
+    bar->setAutoFillBackground(true);
   }
 }
 
