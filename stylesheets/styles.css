@@ -470,11 +470,27 @@ header ul a:active {
 .hero-text {
   min-width: 0;
 }
+.hero-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.9rem;
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: var(--ink-strong);
+}
+.hero-wordmark small {
+  font-size: 0.55em;
+  font-weight: 400;
+  color: var(--muted);
+  margin-inline-start: 0.1em;
+  letter-spacing: 0;
+}
 .hero .mark {
-  width: 4rem;
-  height: 4rem;
+  width: 2.75rem;
+  height: 2.75rem;
   display: block;
-  margin-block-end: 0.9rem;
 }
 .hero h2 {
   max-width: 20ch;
