@@ -630,7 +630,11 @@ auto Util::openRegularFile(const QString &path, QFile &file) -> bool {
     ::close(fd);
     return false;
   }
-  if (!file.open(fd, QIODevice::ReadOnly, QFileDevice::AutoCloseHandle)) {
+  // The descriptor, not the name, is what QFile opens here: the object
+  // fstat() judged is the object read. CodeQL's check-then-use pattern
+  // matcher sees an open after a check and cannot tell.
+  if (!file.open(fd, QIODevice::ReadOnly, // codeql[cpp/toctou-race-condition]
+                 QFileDevice::AutoCloseHandle)) {
     ::close(fd);
     return false;
   }
