@@ -1006,219 +1006,283 @@ e-mail</translation>
     </message>
 </context>
 <context>
+    <name>GpgIdGeneration</name>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="162"/>
+        <source>The list carries more than one generation line.</source>
+        <translation type="unfinished">L&apos;elenco contiene più di una riga di generazione.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="163"/>
+        <source>The generation line is malformed: %1</source>
+        <translation type="unfinished">La riga di generazione è malformata: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="174"/>
+        <source>The list carries more than one folder line.</source>
+        <translation type="unfinished">L&apos;elenco contiene più di una riga di cartella.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="175"/>
+        <source>The folder line is malformed: %1</source>
+        <translation type="unfinished">La riga di cartella è malformata: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="184"/>
+        <source>The header line is malformed: %1</source>
+        <translation type="unfinished">La riga di intestazione è malformata: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="189"/>
+        <source>The list carries a generation line but no folder line.</source>
+        <translation type="unfinished">L&apos;elenco contiene una riga di generazione ma nessuna riga di cartella.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="261"/>
+        <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
+        <translation type="unfinished">L&apos;elenco firmato dei destinatari %1 è stato scritto per la cartella &quot;%2&quot; dell&apos;archivio, non per &quot;%3&quot;, e non viene usato. Potrebbe essere stato copiato qui da qualcun altro; se invece la cartella è stata spostata o rinominata, chi possiede la chiave di firma apre Utenti su di essa e salva i destinatari, il che lega l&apos;elenco alla sua posizione attuale.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="283"/>
+        <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
+        <translation type="unfinished">Chi possiede la chiave di firma supera il blocco aprendo Utenti e salvando i destinatari, operazione che scrive la generazione %1: i destinatari lì preselezionati sono quelli di questo elenco, quindi rimuovi prima chiunque non debba più avere accesso. Rimuovendo %2 si dimentica ciò che questo dispositivo aveva accettato in precedenza.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="291"/>
+        <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0. %3</source>
+        <translation type="unfinished">L&apos;elenco firmato dei destinatari %1 non contiene alcuna riga di generazione, mentre qui era già stata accettata la generazione %2. pass non scrive alcuna riga di generazione (nemmeno tramite il backend pass di QtPass), e non lo faceva neppure QtPass prima della 2.0. %3</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="299"/>
+        <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
+        <translation type="unfinished">L&apos;elenco firmato dei destinatari %1 è alla generazione %2, più vecchia della generazione %3, l&apos;ultima che QtPass ha accettato qui. Potrebbe essere stato ripristinato da qualcun altro. %4</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="330"/>
+        <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
+        <translation type="unfinished">L&apos;elenco dei destinatari %1 ha raggiunto la generazione %2, la più alta possibile; l&apos;elenco non può essere scritto.</translation>
+    </message>
+</context>
+<context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="185"/>
-        <location filename="../src/imitatepass.cpp" line="369"/>
-        <location filename="../src/imitatepass.cpp" line="678"/>
+        <location filename="../src/imitatepass.cpp" line="406"/>
+        <location filename="../src/imitatepass.cpp" line="581"/>
         <source>Signature for %1 is invalid.</source>
         <translation>La firma di %1 non è valida.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="191"/>
-        <location filename="../src/imitatepass.cpp" line="761"/>
+        <location filename="../src/imitatepass.cpp" line="192"/>
+        <location filename="../src/imitatepass.cpp" line="813"/>
         <source>Can not edit</source>
         <translation>Impossibile modificare</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="192"/>
-        <location filename="../src/imitatepass.cpp" line="762"/>
+        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="814"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Impossibile leggere la chiave di cifratura da utilizzare, il file .gpg-id è mancante o non valido.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="362"/>
+        <location filename="../src/imitatepass.cpp" line="399"/>
         <source>GPG signing failed!</source>
         <translation>La firma GPG è fallita!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="363"/>
+        <location filename="../src/imitatepass.cpp" line="400"/>
         <source>Failed to sign %1.</source>
         <translation>Impossibile firmare %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="477"/>
+        <location filename="../src/imitatepass.cpp" line="514"/>
         <source>No signing key!</source>
         <translation>Nessuna chiave per firmare!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="478"/>
+        <location filename="../src/imitatepass.cpp" line="515"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Nessuna delle chiavi segrete per firmare è disponibile.
 Non ti sarà possibile cambiare la lista utenti!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="328"/>
         <location filename="../src/imitatepass.cpp" line="340"/>
-        <location filename="../src/imitatepass.cpp" line="502"/>
+        <location filename="../src/imitatepass.cpp" line="358"/>
+        <location filename="../src/imitatepass.cpp" line="365"/>
+        <location filename="../src/imitatepass.cpp" line="377"/>
+        <location filename="../src/imitatepass.cpp" line="539"/>
         <source>Cannot update</source>
         <translation>Impossibile aggiornare</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="142"/>
+        <location filename="../src/imitatepass.cpp" line="143"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">Git pull fallito: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="184"/>
-        <location filename="../src/imitatepass.cpp" line="368"/>
-        <location filename="../src/imitatepass.cpp" line="677"/>
+        <location filename="../src/imitatepass.cpp" line="186"/>
+        <location filename="../src/imitatepass.cpp" line="405"/>
+        <location filename="../src/imitatepass.cpp" line="730"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Controlla la firma del file .gpg-id!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="264"/>
+        <location filename="../src/imitatepass.cpp" line="265"/>
         <source>Delete failed</source>
         <translation type="unfinished">Eliminazione fallita</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="265"/>
+        <location filename="../src/imitatepass.cpp" line="266"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Impossibile rimuovere il collegamento %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="329"/>
+        <location filename="../src/imitatepass.cpp" line="341"/>
+        <source>%1 is not inside the password store.</source>
+        <translation type="unfinished">%1 non si trova all&apos;interno dell&apos;archivio password.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="366"/>
         <source>Failed to open .gpg-id for writing.</source>
         <translation>Impossibile aprire .gpg-id in scrittura.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="341"/>
+        <location filename="../src/imitatepass.cpp" line="378"/>
         <source>Failed to write %1: %2</source>
         <translation type="unfinished">Impossibile scrivere %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="346"/>
+        <location filename="../src/imitatepass.cpp" line="383"/>
         <source>Check selected users!</source>
         <translation>Controlla gli utenti selezionati.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="347"/>
+        <location filename="../src/imitatepass.cpp" line="384"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Nessuna delle chiavi selezionate ha una chiave privata disponibile.
 Non sarai in grado di decifrare nessuna delle nuove password create.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="503"/>
+        <location filename="../src/imitatepass.cpp" line="540"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Impossibile rimuovere la vecchia firma %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="602"/>
-        <location filename="../src/imitatepass.cpp" line="618"/>
-        <location filename="../src/imitatepass.cpp" line="628"/>
-        <location filename="../src/imitatepass.cpp" line="643"/>
+        <location filename="../src/imitatepass.cpp" line="654"/>
+        <location filename="../src/imitatepass.cpp" line="670"/>
+        <location filename="../src/imitatepass.cpp" line="680"/>
+        <location filename="../src/imitatepass.cpp" line="695"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Residuo di una ricifratura precedente</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="603"/>
-        <location filename="../src/imitatepass.cpp" line="619"/>
+        <location filename="../src/imitatepass.cpp" line="655"/>
+        <location filename="../src/imitatepass.cpp" line="671"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 non è un file regolare e non è stato ripristinato. Controllalo e rimuovilo, poi ricifra di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="629"/>
+        <location filename="../src/imitatepass.cpp" line="681"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 esiste accanto a %2. Entrambi sono copie cifrate della voce; controlla quale vuoi tenere ed elimina l&apos;altra, poi ricifra di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="638"/>
+        <location filename="../src/imitatepass.cpp" line="690"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">%1 è stato ripristinato dal backup lasciato da una ricifratura interrotta.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="644"/>
+        <location filename="../src/imitatepass.cpp" line="696"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 manca e non è stato possibile rinominare il suo backup %2. Rinominalo a mano, poi ricifra di nuovo.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="828"/>
-        <location filename="../src/imitatepass.cpp" line="833"/>
-        <location filename="../src/imitatepass.cpp" line="1169"/>
+        <location filename="../src/imitatepass.cpp" line="880"/>
+        <location filename="../src/imitatepass.cpp" line="885"/>
+        <location filename="../src/imitatepass.cpp" line="1221"/>
         <source>Re-encryption failed</source>
         <translation>Ricifratura fallita</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="829"/>
+        <location filename="../src/imitatepass.cpp" line="881"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>Impossibile sostituire %1. L&apos;originale è stato restaurato.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="834"/>
+        <location filename="../src/imitatepass.cpp" line="886"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
         <translation type="unfinished">Impossibile sostituire %1 e non è stato possibile ripristinare l&apos;originale. È ancora presente come %2; rinominalo a mano.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="845"/>
+        <location filename="../src/imitatepass.cpp" line="897"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
         <translation type="unfinished">Impossibile rimuovere il backup %1 dopo la ricifratura; può essere eliminato senza problemi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="885"/>
+        <location filename="../src/imitatepass.cpp" line="937"/>
         <source>Creating backup commit</source>
         <translation>Creazione di commit di backup</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="902"/>
-        <location filename="../src/imitatepass.cpp" line="911"/>
+        <location filename="../src/imitatepass.cpp" line="954"/>
+        <location filename="../src/imitatepass.cpp" line="963"/>
         <source>Backup commit failed</source>
         <translation>Commit di backup fallito</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="903"/>
+        <location filename="../src/imitatepass.cpp" line="955"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Impossibile esaminare lo stato Git. La ricifratura è stata annullata.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="912"/>
+        <location filename="../src/imitatepass.cpp" line="964"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>La crittografia è stata annullata perché un backup git non poteva essere creato.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="958"/>
+        <location filename="../src/imitatepass.cpp" line="1010"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Una ricifratura è già in corso</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="966"/>
+        <location filename="../src/imitatepass.cpp" line="1018"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Non è una cartella dell&apos;archivio</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="967"/>
+        <location filename="../src/imitatepass.cpp" line="1019"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 è, o si trova dietro, un collegamento simbolico o una junction. Ciò a cui punta non fa parte dell&apos;archivio password e non è stato ricifrato.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="976"/>
+        <location filename="../src/imitatepass.cpp" line="1028"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Esegui nuovamente la cifratura dalla cartella %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1059"/>
-        <location filename="../src/imitatepass.cpp" line="1196"/>
+        <location filename="../src/imitatepass.cpp" line="1111"/>
+        <location filename="../src/imitatepass.cpp" line="1248"/>
         <source>Updating password-store</source>
         <translation>Aggiornamento di password-store</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1070"/>
+        <location filename="../src/imitatepass.cpp" line="1122"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull fallito</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1071"/>
+        <location filename="../src/imitatepass.cpp" line="1123"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Il pull ha lasciato l&apos;archivio con file non uniti. Risolvi il conflitto prima di ricifrare.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1076"/>
+        <location filename="../src/imitatepass.cpp" line="1128"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull fallito, l&apos;archivio viene ricifrato così com&apos;è</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1103"/>
+        <location filename="../src/imitatepass.cpp" line="1155"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n voce saltata: un collegamento simbolico, una junction o un file speciale non fa parte dell&apos;archivio.</numerusform>
@@ -1226,17 +1290,17 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1129"/>
+        <location filename="../src/imitatepass.cpp" line="1181"/>
         <source>GPG ID verification failed</source>
         <translation>Verifica dell&apos;ID GPG fallito</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1130"/>
+        <location filename="../src/imitatepass.cpp" line="1182"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Impossibile verificare il file .gpg-id per la directory.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1167"/>
+        <location filename="../src/imitatepass.cpp" line="1219"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... e %n altro</numerusform>
@@ -1244,7 +1308,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1170"/>
+        <location filename="../src/imitatepass.cpp" line="1222"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n file non è stato ricifrato:</numerusform>
@@ -1252,12 +1316,12 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1176"/>
+        <location filename="../src/imitatepass.cpp" line="1228"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Ricifratura annullata: %1 file su %2 controllati, %3 ricifrati, %4 falliti</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1477"/>
+        <location filename="../src/imitatepass.cpp" line="1529"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Eseguibile Git non configurato, git ignorato</translation>
     </message>
@@ -1266,17 +1330,17 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
         <translation type="vanished">Impossibile ricifratura %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1185"/>
+        <location filename="../src/imitatepass.cpp" line="1237"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Ricifratura completata: %1 riuscita, %2 fallita</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1190"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Ricifratura completata: %1 file ricifrati</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1199"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Push non eseguito: %n file non è stato ricifrato</numerusform>
@@ -1284,18 +1348,18 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1394"/>
-        <location filename="../src/imitatepass.cpp" line="1408"/>
-        <location filename="../src/imitatepass.cpp" line="1415"/>
-        <location filename="../src/imitatepass.cpp" line="1425"/>
+        <location filename="../src/imitatepass.cpp" line="1446"/>
+        <location filename="../src/imitatepass.cpp" line="1460"/>
+        <location filename="../src/imitatepass.cpp" line="1467"/>
+        <location filename="../src/imitatepass.cpp" line="1477"/>
         <source>Copy failed</source>
         <translation type="unfinished">Copia non riuscita</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1395"/>
-        <location filename="../src/imitatepass.cpp" line="1409"/>
-        <location filename="../src/imitatepass.cpp" line="1416"/>
-        <location filename="../src/imitatepass.cpp" line="1426"/>
+        <location filename="../src/imitatepass.cpp" line="1447"/>
+        <location filename="../src/imitatepass.cpp" line="1461"/>
+        <location filename="../src/imitatepass.cpp" line="1468"/>
+        <location filename="../src/imitatepass.cpp" line="1478"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Impossibile copiare %1 in %2.</translation>
     </message>
@@ -2704,12 +2768,12 @@ Continuare?</translation>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="35"/>
+        <location filename="../src/profileinit.cpp" line="36"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">Impossibile creare %1.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="57"/>
+        <location filename="../src/profileinit.cpp" line="59"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>%1 contiene già %n file cifrato; non è stato ricifrato. Passa al profilo e apri Utenti per farlo.</numerusform>
@@ -2717,24 +2781,24 @@ Continuare?</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="75"/>
+        <location filename="../src/profileinit.cpp" line="77"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">Nessun destinatario selezionato; %1 non è stato scritto.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="87"/>
-        <location filename="../src/profileinit.cpp" line="92"/>
+        <location filename="../src/profileinit.cpp" line="103"/>
+        <location filename="../src/profileinit.cpp" line="108"/>
         <source>Could not write %1: %2</source>
         <translation type="unfinished">Impossibile scrivere %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="104"/>
+        <location filename="../src/profileinit.cpp" line="120"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">Impossibile firmare %1 con %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="124"/>
-        <location filename="../src/profileinit.cpp" line="153"/>
+        <location filename="../src/profileinit.cpp" line="140"/>
+        <location filename="../src/profileinit.cpp" line="169"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">git %1 fallito in %2: %3</translation>
     </message>
