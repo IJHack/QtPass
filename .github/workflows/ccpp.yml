@@ -164,5 +164,5 @@ jobs:
         # alone (QPlainTestLogger::outputMessage checks shouldLogToStderr());
         # this makes it write to the standard streams, where the log can see it.
         env:
-          QT_FORCE_STDERR_LOGGING: 1
+          QT_FORCE_STDERR_LOGGING: ${{ runner.os == 'Windows' && '1' || '' }}
         run: ${{ runner.os == 'Windows' && 'nmake' || 'make' }} check TESTARGS="--platform offscreen"
