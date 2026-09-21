@@ -148,11 +148,15 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 <tr class="memdesc:a98fa003a6d00d1936da437f3d16d3568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give the file at <code class="param">from</code> the name <code class="param">to</code>, atomically and without following anything: the operating system's rename (<span class="tt">rename(2)</span>, <span class="tt">MoveFileEx</span>), never QFile::rename(), whose fallback when the plain rename fails is to copy by opening <code class="param">to</code> for writing, through whatever link sits under that name by then. With <code class="param">replace</code>, whatever entry is at <code class="param">to</code> (a file, a link) is replaced as an entry; without it, the call fails when anything is there (<span class="tt">link(2)</span> and unlink on POSIX, where a no-replace rename is not portable).  <br /></td></tr>
 <tr class="memitem:a4cb272a3c3c392bfb4c9fd2c57e6bb15" id="r_a4cb272a3c3c392bfb4c9fd2c57e6bb15"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15">openRegularFile</a> (const QString &amp;path, QFile &amp;file) -&gt; bool</td></tr>
 <tr class="memdesc:a4cb272a3c3c392bfb4c9fd2c57e6bb15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open <code class="param">path</code> for reading as the regular file it is, not as what a link under that name points to: the object opened is the object judged. A check of the name before an open by name leaves a window in which a co-writer of the store makes the name a link; opening without following (O_NOFOLLOW; on Windows the reparse point itself) and judging the open handle closes it. A directory, a link, a FIFO or a device is refused.  <br /></td></tr>
+<tr class="memitem:ab4611dd64c8704e7a6392f0201af6e39" id="r_ab4611dd64c8704e7a6392f0201af6e39"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab4611dd64c8704e7a6392f0201af6e39">writeFileReplacing</a> (const QString &amp;path, const QByteArray &amp;bytes, bool replace, QString *error=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:ab4611dd64c8704e7a6392f0201af6e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <code class="param">bytes</code> as the file <code class="param">path</code>, owner-only, through a temporary created next to it (an opaque name, exclusive) and written by its open handle, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>: the name is never opened for writing, so a link a co-writer plants under it between the caller's check and the write is replaced as an entry rather than written through (QSaveFile resolves such a link at open).  <br /></td></tr>
+<tr class="memitem:ab648b0017acac1869d91ebc924591a24" id="r_ab648b0017acac1869d91ebc924591a24"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab648b0017acac1869d91ebc924591a24">syncToDisk</a> (QFileDevice &amp;file) -&gt; bool</td></tr>
+<tr class="memdesc:ab648b0017acac1869d91ebc924591a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush <code class="param">file's</code> bytes to the device (<span class="tt">fsync</span>, <span class="tt">FlushFileBuffers</span>) before it is renamed into place, so that a crash right after the rename does not leave the name pointing at an empty file. QSaveFile did this on commit; the staged writes here do it themselves.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Some static utilities to be used elsewhere. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00020">20</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00021">21</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ac8926b725ca51d6e68f3f383cfae478f" name="ac8926b725ca51d6e68f3f383cfae478f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8926b725ca51d6e68f3f383cfae478f">&#9670;&#160;</a></span>configIsValid()</h2>
@@ -841,6 +845,91 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">to</code> is now that file. </dd></dl>
+
+</div>
+</div>
+<a id="ab648b0017acac1869d91ebc924591a24" name="ab648b0017acac1869d91ebc924591a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab648b0017acac1869d91ebc924591a24">&#9670;&#160;</a></span>syncToDisk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::syncToDisk </td>
+          <td>(</td>
+          <td class="paramtype">QFileDevice &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flush <code class="param">file's</code> bytes to the device (<span class="tt">fsync</span>, <span class="tt">FlushFileBuffers</span>) before it is renamed into place, so that a crash right after the rename does not leave the name pointing at an empty file. QSaveFile did this on commit; the staged writes here do it themselves. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>An open file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the data is on the device. </dd></dl>
+
+</div>
+</div>
+<a id="ab4611dd64c8704e7a6392f0201af6e39" name="ab4611dd64c8704e7a6392f0201af6e39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4611dd64c8704e7a6392f0201af6e39">&#9670;&#160;</a></span>writeFileReplacing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::writeFileReplacing </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>bytes</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>replace</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write <code class="param">bytes</code> as the file <code class="param">path</code>, owner-only, through a temporary created next to it (an opaque name, exclusive) and written by its open handle, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>: the name is never opened for writing, so a link a co-writer plants under it between the caller's check and the write is replaced as an entry rather than written through (QSaveFile resolves such a link at open). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The file to write. </td></tr>
+    <tr><td class="paramname">bytes</td><td>Its contents. </td></tr>
+    <tr><td class="paramname">replace</td><td>Whether an existing entry under the name may go. </td></tr>
+    <tr><td class="paramname">error</td><td>Receives why not, if not null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">path</code> now holds <code class="param">bytes</code>. </dd></dl>
 
 </div>
 </div>

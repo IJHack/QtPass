@@ -52,8 +52,8 @@ var searchData=
   ['showstatusmessage_49',['showStatusMessage',['../class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf',1,'MainWindow']]],
   ['showtextasqrcode_50',['showTextAsQRCode',['../class_qt_pass.html#aef5aaf0605c7681967995ede486590ef',1,'QtPass']]],
   ['showthis_51',['showThis',['../class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691',1,'StoreModel']]],
-  ['sign_52',['sign',['../class_gpg_id_signer.html#a2c7940de574498a041e45edca1615e5f',1,'GpgIdSigner']]],
-  ['signgpgidfile_53',['signGpgIdFile',['../class_imitate_pass.html#a3d233ed3e8c314d36f2dc56c24c8deef',1,'ImitatePass']]],
+  ['sign_52',['sign',['../class_gpg_id_signer.html#a2b57de99acd94df386ea1a0e52efbbe7',1,'GpgIdSigner']]],
+  ['signgpgidfile_53',['signGpgIdFile',['../class_imitate_pass.html#a9055e77fb0300ace61fde6386b50705f',1,'ImitatePass']]],
   ['signingkey_54',['signingKey',['../struct_profile.html#aca298d5aa8281c8ee91f97744dcdcc48',1,'Profile']]],
   ['simpletransaction_55',['simpleTransaction',['../classsimple_transaction.html',1,'simpleTransaction'],['../classsimple_transaction.html#ac798d38ad0b66f05cd58b5c9e9845491',1,'simpleTransaction::simpleTransaction()']]],
   ['singleapplication_56',['SingleApplication',['../class_single_application.html',1,'SingleApplication'],['../class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5',1,'SingleApplication::SingleApplication()']]],
@@ -77,5 +77,6 @@ var searchData=
   ['storetree_74',['StoreTree',['../class_store_tree.html',1,'StoreTree'],['../class_store_tree.html#a9be3c4a12104973c27e721e08564f6eb',1,'StoreTree::StoreTree()']]],
   ['storewizardpage_75',['StoreWizardPage',['../class_store_wizard_page.html',1,'StoreWizardPage'],['../class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14',1,'StoreWizardPage::StoreWizardPage()']]],
   ['supporteddragactions_76',['supportedDragActions',['../class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648',1,'StoreModel']]],
-  ['supporteddropactions_77',['supportedDropActions',['../class_store_model.html#af6982f1562988c413ae9e95e87a713a1',1,'StoreModel']]]
+  ['supporteddropactions_77',['supportedDropActions',['../class_store_model.html#af6982f1562988c413ae9e95e87a713a1',1,'StoreModel']]],
+  ['synctodisk_78',['syncToDisk',['../class_util.html#ab648b0017acac1869d91ebc924591a24',1,'Util']]]
 ];

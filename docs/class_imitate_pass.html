@@ -247,10 +247,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:aff483e62ab4ceede87aa3007c8f55588"><td class="mdescLeft">&#160;</td><td class="mdescRight">The signer for this store's <span class="tt">.gpg-id</span>, bound to the configured gpg and signing keys and to execBlocking(), so a verification on the re-encryption worker can be interrupted like every other gpg run there.  <br /></td></tr>
 <tr class="memitem:a70e0a1c01484ea4d62aa659bd444e89e" id="r_a70e0a1c01484ea4d62aa659bd444e89e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a70e0a1c01484ea4d62aa659bd444e89e">loadVerifiedRecipients</a> (const QString &amp;gpgIdFile, QStringList *recipients, QString *why=nullptr) -&gt; bool</td></tr>
 <tr class="memdesc:a70e0a1c01484ea4d62aa659bd444e89e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a <span class="tt">.gpg-id</span>, verify its detached signature and parse the recipients from the bytes that were verified.  <br /></td></tr>
-<tr class="memitem:abe23c13e1f89b5966c44d3a9f4bdedab" id="r_abe23c13e1f89b5966c44d3a9f4bdedab"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abe23c13e1f89b5966c44d3a9f4bdedab">writeGpgIdFile</a> (const QString &amp;gpgIdFile, const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;users) -&gt; bool</td></tr>
-<tr class="memdesc:abe23c13e1f89b5966c44d3a9f4bdedab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the enabled recipients to a .gpg-id, atomically: a write that fails halfway (full disk, dead network share) leaves the previous file in place instead of a truncated list that would then be signed and encrypted to.  <br /></td></tr>
-<tr class="memitem:a3d233ed3e8c314d36f2dc56c24c8deef" id="r_a3d233ed3e8c314d36f2dc56c24c8deef"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3d233ed3e8c314d36f2dc56c24c8deef">signGpgIdFile</a> (const QString &amp;gpgIdFile) -&gt; bool</td></tr>
-<tr class="memdesc:a3d233ed3e8c314d36f2dc56c24c8deef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sign a <span class="tt">.gpg-id</span> with the configured key and verify the result; failures are reported through <a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Emit critical error.">critical()</a>.  <br /></td></tr>
+<tr class="memitem:a4819b3c68c49968658849aa8535e1f40" id="r_a4819b3c68c49968658849aa8535e1f40"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4819b3c68c49968658849aa8535e1f40">writeGpgIdFile</a> (const QString &amp;gpgIdFile, const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;users, QByteArray *written=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:a4819b3c68c49968658849aa8535e1f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the enabled recipients to a .gpg-id, atomically: a write that fails halfway (full disk, dead network share) leaves the previous file in place instead of a truncated list that would then be signed and encrypted to.  <br /></td></tr>
+<tr class="memitem:a9055e77fb0300ace61fde6386b50705f" id="r_a9055e77fb0300ace61fde6386b50705f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9055e77fb0300ace61fde6386b50705f">signGpgIdFile</a> (const QString &amp;gpgIdFile, const QByteArray &amp;contents) -&gt; bool</td></tr>
+<tr class="memdesc:a9055e77fb0300ace61fde6386b50705f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sign a <span class="tt">.gpg-id</span> with the configured key and verify the result; failures are reported through <a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Emit critical error.">critical()</a>.  <br /></td></tr>
 <tr class="memitem:aae90cebd2128422bd41e32fc292a49a0" id="r_aae90cebd2128422bd41e32fc292a49a0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aae90cebd2128422bd41e32fc292a49a0">gitAddGpgId</a> (const QString &amp;gpgIdFile, const QString &amp;gpgIdSigFile, QString *out, QString *err) -&gt; int</td></tr>
 <tr class="memdesc:aae90cebd2128422bd41e32fc292a49a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stage a <span class="tt">.gpg-id</span> and, when given, its <span class="tt">.sig</span>, and commit both in one commit, so no commit in the history has a recipient list without the signature that covers it. Nothing is committed when neither file changed.  <br /></td></tr>
 <tr class="memitem:a568cee878638fa0cbc4c862060ea35b3" id="r_a568cee878638fa0cbc4c862060ea35b3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a568cee878638fa0cbc4c862060ea35b3">gitTracks</a> (const QString &amp;file) -&gt; bool</td></tr>
@@ -1441,8 +1441,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a3d233ed3e8c314d36f2dc56c24c8deef" name="a3d233ed3e8c314d36f2dc56c24c8deef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d233ed3e8c314d36f2dc56c24c8deef">&#9670;&#160;</a></span>signGpgIdFile()</h2>
+<a id="a9055e77fb0300ace61fde6386b50705f" name="a9055e77fb0300ace61fde6386b50705f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9055e77fb0300ace61fde6386b50705f">&#9670;&#160;</a></span>signGpgIdFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1453,8 +1453,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">auto ImitatePass::signGpgIdFile </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>contents</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1468,6 +1472,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gpgIdFile</td><td>Path to .gpg-id file. </td></tr>
+    <tr><td class="paramname">contents</td><td>The bytes just written as that file: the signature is made over these, not over whatever is under the name by then. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1520,8 +1525,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="abe23c13e1f89b5966c44d3a9f4bdedab" name="abe23c13e1f89b5966c44d3a9f4bdedab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe23c13e1f89b5966c44d3a9f4bdedab">&#9670;&#160;</a></span>writeGpgIdFile()</h2>
+<a id="a4819b3c68c49968658849aa8535e1f40" name="a4819b3c68c49968658849aa8535e1f40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4819b3c68c49968658849aa8535e1f40">&#9670;&#160;</a></span>writeGpgIdFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1537,7 +1542,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>users</em></span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>users</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray *</td>          <td class="paramname"><span class="paramname"><em>written</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -1552,6 +1562,7 @@ Additional Inherited Members</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">gpgIdFile</td><td>Path to .gpg-id file. </td></tr>
     <tr><td class="paramname">users</td><td>List of recipients. </td></tr>
+    <tr><td class="paramname">written</td><td>Receives the exact bytes written, if not null: what the signature is then made over. </td></tr>
   </table>
   </dd>
 </dl>

@@ -123,9 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a772cffc3e742e90ae31d253e012494e8" id="r_a772cffc3e742e90ae31d253e012494e8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a772cffc3e742e90ae31d253e012494e8">keys</a> () const -&gt; const QStringList &amp;</td></tr>
 <tr class="memdesc:a772cffc3e742e90ae31d253e012494e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The keys this signer was given.  <br /></td></tr>
 <tr class="memitem:aefa1594ea06e773745d73b9752d2dda7" id="r_aefa1594ea06e773745d73b9752d2dda7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aefa1594ea06e773745d73b9752d2dda7">haveSecretKey</a> () const -&gt; bool</td></tr>
-<tr class="memdesc:aefa1594ea06e773745d73b9752d2dda7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether gpg has the secret key that <a class="el" href="#a2c7940de574498a041e45edca1615e5f" title="Write &lt;file&gt;.sig, a detached signature by the first key.">sign()</a> will use, i.e. the first configured key.  <br /></td></tr>
-<tr class="memitem:a2c7940de574498a041e45edca1615e5f" id="r_a2c7940de574498a041e45edca1615e5f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2c7940de574498a041e45edca1615e5f">sign</a> (const QString &amp;gpgIdFile, QString *error=nullptr) const -&gt; bool</td></tr>
-<tr class="memdesc:a2c7940de574498a041e45edca1615e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <span class="tt">&lt;file&gt;.sig</span>, a detached signature by the first key.  <br /></td></tr>
+<tr class="memdesc:aefa1594ea06e773745d73b9752d2dda7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether gpg has the secret key that <a class="el" href="#a2b57de99acd94df386ea1a0e52efbbe7" title="Write &lt;file&gt;.sig, a detached signature by the first key over contents, the bytes the caller just wrot...">sign()</a> will use, i.e. the first configured key.  <br /></td></tr>
+<tr class="memitem:a2b57de99acd94df386ea1a0e52efbbe7" id="r_a2b57de99acd94df386ea1a0e52efbbe7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2b57de99acd94df386ea1a0e52efbbe7">sign</a> (const QString &amp;gpgIdFile, const QByteArray &amp;contents, QString *error=nullptr) const -&gt; bool</td></tr>
+<tr class="memdesc:a2b57de99acd94df386ea1a0e52efbbe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <span class="tt">&lt;file&gt;.sig</span>, a detached signature by the first key over <code class="param">contents</code>, the bytes the caller just wrote as <code class="param">gpgIdFile</code>.  <br /></td></tr>
 <tr class="memitem:adf8bf20ff4e46bdb5b8b8b7ff8c2d858" id="r_adf8bf20ff4e46bdb5b8b8b7ff8c2d858"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adf8bf20ff4e46bdb5b8b8b7ff8c2d858">verify</a> (const QByteArray &amp;contents, const QString &amp;signatureFile) const -&gt; bool</td></tr>
 <tr class="memdesc:adf8bf20ff4e46bdb5b8b8b7ff8c2d858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary-key fingerprint is one of the configured keys.  <br /></td></tr>
 <tr class="memitem:aa22ae26377898dfe7fb0c780d451719f" id="r_aa22ae26377898dfe7fb0c780d451719f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa22ae26377898dfe7fb0c780d451719f">verifyFile</a> (const QString &amp;gpgIdFile, QByteArray *contents) const -&gt; bool</td></tr>
@@ -228,7 +228,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether any signing key is configured at all. </p>
-<dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#a2c7940de574498a041e45edca1615e5f" title="Write &lt;file&gt;.sig, a detached signature by the first key.">sign()</a> will do something. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#a2b57de99acd94df386ea1a0e52efbbe7" title="Write &lt;file&gt;.sig, a detached signature by the first key over contents, the bytes the caller just wrot...">sign()</a> will do something. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00059">59</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
 
@@ -249,7 +249,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Whether gpg has the secret key that <a class="el" href="#a2c7940de574498a041e45edca1615e5f" title="Write &lt;file&gt;.sig, a detached signature by the first key.">sign()</a> will use, i.e. the first configured key. </p>
+<p>Whether gpg has the secret key that <a class="el" href="#a2b57de99acd94df386ea1a0e52efbbe7" title="Write &lt;file&gt;.sig, a detached signature by the first key over contents, the bytes the caller just wrot...">sign()</a> will use, i.e. the first configured key. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when signing can work; false when no key is configured. </dd></dl>
 
 </div>
@@ -318,8 +318,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2c7940de574498a041e45edca1615e5f" name="a2c7940de574498a041e45edca1615e5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c7940de574498a041e45edca1615e5f">&#9670;&#160;</a></span>sign()</h2>
+<a id="a2b57de99acd94df386ea1a0e52efbbe7" name="a2b57de99acd94df386ea1a0e52efbbe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b57de99acd94df386ea1a0e52efbbe7">&#9670;&#160;</a></span>sign()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -332,31 +332,38 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>contents</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) const -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Write <span class="tt">&lt;file&gt;.sig</span>, a detached signature by the first key. </p>
+<p>Write <span class="tt">&lt;file&gt;.sig</span>, a detached signature by the first key over <code class="param">contents</code>, the bytes the caller just wrote as <code class="param">gpgIdFile</code>. </p>
+<p>gpg signs what it is fed on stdin, not what is under the file's name by the time it reads it (a co-writer of the store could have swapped the list between the write and the signing, and the user's key would have vouched for theirs), and writes the signature into a directory of <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own; the signature then goes next to the list through <a class="el" href="class_util.html#ab4611dd64c8704e7a6392f0201af6e39" title="Write bytes as the file path, owner-only, through a temporary created next to it (an opaque name,...">Util::writeFileReplacing()</a>, never by opening the <span class="tt">.sig</span> name.</p>
 <p>Only the first key is used: repeated <span class="tt">--default-key</span> options override each other and only the last would count. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span> to sign. </td></tr>
-    <tr><td class="paramname">error</td><td>Receives gpg's stderr when it fails. </td></tr>
+    <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span> the signature is for; <span class="tt">&lt;gpgIdFile&gt;.sig</span> is written. </td></tr>
+    <tr><td class="paramname">contents</td><td>The exact bytes of that file, as written. UTF-8 text, as a recipient list is; anything else is refused, as <a class="el" href="#adf8bf20ff4e46bdb5b8b8b7ff8c2d858" title="Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary-k...">verify()</a> refuses it. </td></tr>
+    <tr><td class="paramname">error</td><td>Receives gpg's stderr, or the reason, when it fails. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true when gpg exited with 0. Does nothing and returns true when no key is configured. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the signature is in place. Does nothing and returns true when no key is configured. </dd></dl>
 <div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary">
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_signer_a2c7940de574498a041e45edca1615e5f_cgraph.svg" width="147" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_signer_a2b57de99acd94df386ea1a0e52efbbe7_cgraph.svg" width="147" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_signer_a2c7940de574498a041e45edca1615e5f_icgraph.svg" width="147" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_signer_a2b57de99acd94df386ea1a0e52efbbe7_icgraph.svg" width="147" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
