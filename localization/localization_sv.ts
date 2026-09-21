@@ -1147,7 +1147,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="404"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
-        <translation type="unfinished">Den signerade mottagarlistan %1 är inte att lita på: %2</translation>
+        <translation>Den signerade mottagarlistan %1 går inte att lita på: %2</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="414"/>
@@ -1157,22 +1157,22 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="437"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
-        <translation type="unfinished">Generation %1 är den högsta som finns, så ingen nyare lista kan skrivas här: att ta bort %2 gör att den här enheten glömmer vad den tidigare har accepterat, varefter en innehavare av signeringsnyckeln kommer vidare genom att öppna Användare och %3.</translation>
+        <translation>Generation %1 är den högsta som finns, så ingen nyare lista kan skrivas här: om %2 tas bort glöms det bort vad den här enheten tidigare accepterade, varpå innehavaren av signeringsnyckeln kan ta sig in genom att öppna Användare och %3.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="443"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
-        <translation type="unfinished">En innehavare av signeringsnyckeln kommer vidare genom att öppna Användare och %1, vilket skriver generation %2. Att ta bort %3 gör att den här enheten glömmer vad den tidigare har accepterat.</translation>
+        <translation>Den som innehar signeringsnyckeln kommer vidare genom att öppna Användare och %1, vilket skriver generation %2. Genom att ta bort %3 raderas informationen om vad denna enhet tidigare har accepterat.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="457"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
-        <translation type="unfinished">Den signerade mottagarlistan %1 har ingen generationsrad, medan generation %2 tidigare har accepterats här. pass skriver ingen generationsrad (inte heller via QtPass pass-backend), och det gjorde inte QtPass före 2.0 heller; utan en sådan kan listan också ha skrivits för en annan mapp i lösenordsutrymmet och kopierats hit. %3</translation>
+        <translation>Den signerade mottagarlistan %1 har ingen generationsrad, medan generation %2 tidigare har accepterats här. pass skriver ingen generationsrad (inte heller via QtPass pass-backend), och det gjorde inte QtPass före 2.0 heller; utan en sådan kan listan också ha skrivits för en annan mapp i lösenordsutrymmet och kopierats hit. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>selecting the recipients afresh and saving</source>
-        <translation type="unfinished">välja mottagarna på nytt och spara</translation>
+        <translation>välja mottagarna på nytt och spara</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="564"/>
@@ -1195,7 +1195,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="475"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
-        <translation type="unfinished">spara mottagarna: de förvalda mottagarna där är den här listans, så ta först bort alla som inte längre ska ha åtkomst</translation>
+        <translation>spara mottagarna: de förvalda mottagarna där är den här listans, så ta först bort alla som inte längre ska ha åtkomst först</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="499"/>
@@ -2741,12 +2741,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="967"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Mottagarlistan %1 kan inte verifieras mot signeringsnyckeln, så inget är förvalt: att spara skulle signera vad som än står i den. Välj mottagarna själv; OK skriver och signerar en ny lista.</translation>
+        <translation>Mottagarlistan %1 kan inte verifieras mot signeringsnyckeln, så inget är förvalt; en sparning skulle signera det innehåll som finns i listan. Välj mottagare själv; OK skriver och signerar en ny lista.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="995"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
-        <translation type="unfinished">%1 Inget är förvalt: att spara skulle signera vad som än står i den. Välj mottagarna själv.</translation>
+        <translation>%1 Inget är förvalt: att spara skulle signera vad som än står i den. Välj mottagarna själv.</translation>
     </message>
 </context>
 <context>
