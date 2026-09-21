@@ -21,6 +21,7 @@ jobs:
       localization: ${{ steps.filter.outputs.localization }}
       icons: ${{ steps.filter.outputs.icons }}
       docs: ${{ steps.filter.outputs.docs }}
+      workflow: ${{ steps.filter.outputs.workflow }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -48,6 +49,10 @@ jobs:
               - "icons/**"
             docs:
               - "docs/**"
+            # A change to this workflow must run it: #1867 went two rounds
+            # with every build job skipped.
+            workflow:
+              - ".github/workflows/ccpp.yml"
 
   build:
     name: Build and test on ${{ matrix.os }} (Qt ${{ matrix.qt }})
@@ -81,6 +86,7 @@ jobs:
              [[ "${NEEDS_CHANGES_OUTPUTS_LOCALIZATION}" == "true" ]] || \
              [[ "${NEEDS_CHANGES_OUTPUTS_ICONS}" == "true" ]] || \
              [[ "${NEEDS_CHANGES_OUTPUTS_DOCS}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_WORKFLOW}" == "true" ]] || \
              [[ "${{ github.event_name }}" == "merge_group" ]]; then
             echo "run_build=true" >> "$GITHUB_OUTPUT"
           else
@@ -93,6 +99,7 @@ jobs:
           NEEDS_CHANGES_OUTPUTS_LOCALIZATION: ${{ needs.changes.outputs.localization }}
           NEEDS_CHANGES_OUTPUTS_ICONS: ${{ needs.changes.outputs.icons }}
           NEEDS_CHANGES_OUTPUTS_DOCS: ${{ needs.changes.outputs.docs }}
+          NEEDS_CHANGES_OUTPUTS_WORKFLOW: ${{ needs.changes.outputs.workflow }}
 
       - name: No changes - skipping
         if: steps.need_build.outputs.run_build != 'true'
@@ -152,4 +159,10 @@ jobs:
 
       - name: make check
         if: steps.need_build.outputs.run_build == 'true'
+        # Without a console, Qt on Windows sends QtTest's report to the
+        # debugger (OutputDebugString) and the job log shows nmake's exit code
+        # alone (QPlainTestLogger::outputMessage checks shouldLogToStderr());
+        # this makes it write to the standard streams, where the log can see it.
+        env:
+          QT_FORCE_STDERR_LOGGING: ${{ runner.os == 'Windows' && '1' || '' }}
         run: ${{ runner.os == 'Windows' && 'nmake' || 'make' }} check TESTARGS="--platform offscreen"
