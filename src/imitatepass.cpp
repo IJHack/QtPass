@@ -378,6 +378,22 @@ auto ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
         tr("Failed to write %1: %2").arg(gpgIdFile, gpgId.errorString()));
     return false;
   }
+  if (signer.enabled()) {
+    // The bytes on disk are the ones this device recognises from now on;
+    // another list of the same generation is a conflict. The list is
+    // written and goes on to be signed either way (an unsigned list would
+    // be refused everywhere); when the record could not take the bytes,
+    // because another writer reserved the next number in between or the
+    // record was busy, the user hears so: the list on disk will read as
+    // older than the record, and saving once more is the way through.
+    QString why;
+    if (!GpgIdGeneration::recordWritten(gpgIdFile, contents, &why)) {
+      qCWarning(lcQtPass) << "Could not record the written .gpg-id:" << why;
+      emit critical(
+          tr("Recipient list written, but not recorded"),
+          tr("%1 Save the recipients once more to get through.").arg(why));
+    }
+  }
   if (!secret_selected) {
     emit critical(
         tr("Check selected users!"),

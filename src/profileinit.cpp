@@ -5,6 +5,7 @@
 #include "executor.h"
 #include "gpgidgeneration.h"
 #include "gpgidsigner.h"
+#include "qtpasslogging.h"
 #include "userinfo.h"
 #include "util.h"
 #include <QDir>
@@ -107,6 +108,14 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
   if (file.write(contents) != contents.size() || !file.commit()) {
     *note = tr("Could not write %1: %2").arg(gpgIdFile, file.errorString());
     return false;
+  }
+  if (signed_) {
+    // Same as ImitatePass::writeGpgIdFile: the bytes written are the ones
+    // recognised; not fatal, the first read digests them otherwise.
+    QString why;
+    if (!GpgIdGeneration::recordWritten(gpgIdFile, contents, &why)) {
+      qCWarning(lcQtPass) << "Could not record the written .gpg-id:" << why;
+    }
   }
   return true;
 }

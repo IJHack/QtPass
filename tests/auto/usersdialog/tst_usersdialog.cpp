@@ -73,6 +73,7 @@ private slots:
   void withSigningAListForAnotherFolderPreselectsNothing();
   void withSigningAHeaderlessListBelowTheRecordPreselectsNothing();
   void withSigningAMalformedHeaderPreselectsNothing();
+  void withSigningAConflictingListPreselectsNothing();
   void withSigningAnUnreadableRecordPreselectsNothing();
   void folderOutsideTheStoreDoesNotInheritItsRecipients();
   void acceptRunsInitByDefault();
@@ -449,6 +450,44 @@ void tst_usersdialog::
   QVERIFY2(
       banner->text().contains(QStringLiteral("no generation line")) &&
           banner->text().contains(QStringLiteral("generation 2")) &&
+          banner->text().contains(QStringLiteral("Nothing is preselected")),
+      qPrintable(banner->text()));
+}
+
+/**
+ * @brief A signed list of the generation this device accepted last, with
+ *        other bytes (two devices saved at once, or a swap): not the list
+ *        this device knows, so nothing is preselected and the banner says
+ *        why.
+ */
+void tst_usersdialog::withSigningAConflictingListPreselectsNothing() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString gpgIdFile =
+      QDir(store.path()).filePath(QStringLiteral(".gpg-id"));
+  // This device accepted generation 2 with Alice alone.
+  QCOMPARE(
+      GpgIdGeneration::accept(gpgIdFile,
+                              GpgIdGeneration::withHeader(
+                                  2, QStringLiteral("."), "31850CF72D9CDDE9\n"),
+                              store.path()),
+      GpgIdGeneration::Verdict::Accepted);
+  const AppSettings s = signedPair(
+      gpgIdFile,
+      GpgIdGeneration::withHeader(2, QStringLiteral("."),
+                                  "31850CF72D9CDDE9\n693A0AF3FA364E76\n"),
+      store.path());
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QVERIFY2(checkedNames(list).isEmpty(),
+           qPrintable("preselected: " + checkedNames(list).join(", ")));
+  auto *banner = dialog.findChild<QLabel *>(QStringLiteral("recipientWarning"));
+  QVERIFY(banner != nullptr);
+  QVERIFY2(
+      banner->text().contains(QStringLiteral("same generation")) &&
           banner->text().contains(QStringLiteral("Nothing is preselected")),
       qPrintable(banner->text()));
 }

@@ -13,6 +13,7 @@
 #endif
 
 #include "../../../src/appsettings.h"
+#include "../../../src/gpgidgeneration.h"
 #include "../../../src/profileinit.h"
 #include "../../../src/userinfo.h"
 #include "../testsettings.h"
@@ -177,12 +178,24 @@ void tst_profileinit::initialiseWithASigningKeyWritesTheGenerationHeader() {
   s.gpgExecutable = QStringLiteral("/nonexistent/gpg");
   QString note;
   ProfileInit::initialise(dir.path(), twoUsers(), s, false, &note);
-  QFile gpgId(QDir(dir.path()).filePath(QStringLiteral(".gpg-id")));
-  QVERIFY(gpgId.open(QIODevice::ReadOnly | QIODevice::Text));
-  QCOMPARE(QString::fromUtf8(gpgId.readAll()),
+  const QString gpgIdFile =
+      QDir(dir.path()).filePath(QStringLiteral(".gpg-id"));
+  QFile gpgId(gpgIdFile);
+  QVERIFY(gpgId.open(QIODevice::ReadOnly));
+  const QByteArray written = gpgId.readAll();
+  QCOMPARE(QString::fromUtf8(written),
            QStringLiteral("# QtPass-GpgId-Generation: 1\n"
                           "# QtPass-GpgId-Folder: .\n"
                           "AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111\n"));
+  // The bytes written are the ones this device knows for generation 1:
+  // another list of that generation is a conflict, not the same list.
+  QCOMPARE(GpgIdGeneration::accept(gpgIdFile, written, dir.path()),
+           GpgIdGeneration::Verdict::Accepted);
+  QCOMPARE(GpgIdGeneration::accept(
+               gpgIdFile,
+               GpgIdGeneration::withHeader(1, QStringLiteral("."), "BBBB\n"),
+               dir.path()),
+           GpgIdGeneration::Verdict::Conflict);
 }
 
 void tst_profileinit::initialiseRefusesWithoutRecipients() {

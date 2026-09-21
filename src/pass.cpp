@@ -984,6 +984,7 @@ auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
     result.warning = why;
     break;
   case GpgIdGeneration::Verdict::Unbound:
+  case GpgIdGeneration::Verdict::Conflict:
   case GpgIdGeneration::Verdict::WrongFolder:
   case GpgIdGeneration::Verdict::Malformed:
   case GpgIdGeneration::Verdict::RecordUnavailable:
