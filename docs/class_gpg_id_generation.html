@@ -121,9 +121,10 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9a382ab522931673c11e398ead1b7b1678">Accepted</a>
 , <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9a446c9e952debe114c86bbd9e5eea7d61">Rollback</a>
 , <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9aedac80248b7bf68ccfaa9c78bfb81c32">Unbound</a>
-, <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9">WrongFolder</a>
+, <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9af1d4ac54357cc0932f385d56814ba7e4">Conflict</a>
 , <br />
-&#160;&#160;<a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9a0dc7301026e66d38061d7eaba481c9a5">Malformed</a>
+&#160;&#160;<a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9">WrongFolder</a>
+, <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9a0dc7301026e66d38061d7eaba481c9a5">Malformed</a>
 , <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9a390ae4f038021219bbd1af349d76b737">RecordUnavailable</a>
 <br />
  }</td></tr>
@@ -142,9 +143,13 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a495c019fdefb8cb6c7349d4ff2f52cd5" id="r_a495c019fdefb8cb6c7349d4ff2f52cd5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a495c019fdefb8cb6c7349d4ff2f52cd5">remembered</a> (const QString &amp;gpgIdFile, QString *error=nullptr) -&gt; std::optional&lt; qint64 &gt;</td></tr>
 <tr class="memdesc:a495c019fdefb8cb6c7349d4ff2f52cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The highest generation this device has accepted or written for the <span class="tt">.gpg-id</span> at <code class="param">gpgIdFile</code>. Unreadable is not "never seen": a signed list must then be refused, not compared against 0.  <br /></td></tr>
 <tr class="memitem:a490cff66a5b86f14e762192bbfddd93d" id="r_a490cff66a5b86f14e762192bbfddd93d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a490cff66a5b86f14e762192bbfddd93d">accept</a> (const QString &amp;gpgIdFile, const QByteArray &amp;contents, const QString &amp;storeRoot, QString *error=nullptr) -&gt; <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">Verdict</a></td></tr>
-<tr class="memdesc:a490cff66a5b86f14e762192bbfddd93d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decide about a verified list: its folder against where it sits, its generation against the remembered one, and remember it when it passes. One transaction under the process-wide lock: read, compare, write through.  <br /></td></tr>
+<tr class="memdesc:a490cff66a5b86f14e762192bbfddd93d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decide about a verified list: its folder against where it sits, its generation against the remembered one, its bytes against the remembered digest when the generations are equal, and remember it when it passes. One transaction under the lock: read, compare, write through.  <br /></td></tr>
 <tr class="memitem:aca79157e6460c0bb20028e1d8b46b3fb" id="r_aca79157e6460c0bb20028e1d8b46b3fb"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aca79157e6460c0bb20028e1d8b46b3fb">reserveNext</a> (const QString &amp;gpgIdFile, std::optional&lt; qint64 &gt; verifiedOnDisk, QString *error=nullptr) -&gt; std::optional&lt; qint64 &gt;</td></tr>
 <tr class="memdesc:aca79157e6460c0bb20028e1d8b46b3fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserve the generation to write next for <code class="param">gpgIdFile:</code> one above both what this device remembers and <code class="param">verifiedOnDisk</code>, recorded as remembered before it is returned. One transaction under the lock, so two writers in this process cannot get the same number.  <br /></td></tr>
+<tr class="memitem:a07ea80b67c1211c0f0eba73c8a1869f4" id="r_a07ea80b67c1211c0f0eba73c8a1869f4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a07ea80b67c1211c0f0eba73c8a1869f4">recordWritten</a> (const QString &amp;gpgIdFile, const QByteArray &amp;contents, QString *error=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:a07ea80b67c1211c0f0eba73c8a1869f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record the bytes just written for <code class="param">gpgIdFile</code>, so that this device recognises its own list afterwards and refuses another list of the same generation. Called after the file is on disk; the generation in <code class="param">contents</code> must be the one <a class="el" href="#aca79157e6460c0bb20028e1d8b46b3fb" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver...">reserveNext()</a> gave.  <br /></td></tr>
+<tr class="memitem:a593383b668ee43317c32dfac0170fb08" id="r_a593383b668ee43317c32dfac0170fb08"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a593383b668ee43317c32dfac0170fb08">digest</a> (const QByteArray &amp;contents) -&gt; QString</td></tr>
+<tr class="memdesc:a593383b668ee43317c32dfac0170fb08"><td class="mdescLeft">&#160;</td><td class="mdescRight">The digest of a list as the record keeps it: SHA-256 of the exact bytes, hexadecimal, so that two authentic lists of one generation can be told apart.  <br /></td></tr>
 <tr class="memitem:a8c27985a5dc102614c0c7b39ea7d81b5" id="r_a8c27985a5dc102614c0c7b39ea7d81b5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8c27985a5dc102614c0c7b39ea7d81b5">key</a> (const QString &amp;gpgIdFile) -&gt; QString</td></tr>
 <tr class="memdesc:a8c27985a5dc102614c0c7b39ea7d81b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The settings key for a <span class="tt">.gpg-id</span>: a hash of its canonical path, so path spelling (case, separators, links on the way) and QSettings' treatment of <span class="tt">/</span> do not matter.  <br /></td></tr>
 <tr class="memitem:a53205d18f3175ed5e3e87c8bd1ca6918" id="r_a53205d18f3175ed5e3e87c8bd1ca6918"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a53205d18f3175ed5e3e87c8bd1ca6918">recordFile</a> () -&gt; QString</td></tr>
@@ -160,9 +165,9 @@ Static Public Attributes</h2></td></tr>
 <div class="textblock"><p>Rollback detection for signed <span class="tt">.gpg-id</span> files. </p>
 <p>A signature proves that a recipient list is authentic and unmodified; it does not prove that it is the current one, nor that it was written for the folder it sits in. Whoever can write to a shared store can put back an older, genuinely signed list that still names a member since removed, or copy such a pair into a folder that never had a list of its own, and every later encryption there would include them again.</p>
 <p>So a <span class="tt">.gpg-id</span> <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> writes for a store with a signing key starts with two comment lines, <span class="tt"># QtPass-GpgId-Generation: N</span> and <span class="tt"># QtPass-GpgId-Folder: &lt;store-relative folder&gt;</span>, which <span class="tt">pass</span> (1.7.4 and later), <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> (1.8 and later) and <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own recipient parser ignore and the signature covers. <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> remembers, per <span class="tt">.gpg-id</span> file, the highest generation it has accepted or written, and refuses a signed list whose generation is lower or whose folder is not the one it sits in. Stores without a signing key get plain lists, as before: nothing checks their freshness, and older clients (pass up to 1.7.3, Android Password Store) take a comment for a recipient.</p>
-<p>What this is and is not: rollback detection on a device that has seen the newer list. A device seeing a store for the first time, or one that was offline, has nothing to compare against. The generation is monotonic per observer, not a distributed sequence number: two devices can both produce generation 19 from 18, and Git is what sorts that out. A list without the lines (written by <span class="tt">pass</span>, or by <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> before 2.0) is generation 0 and is refused once anything higher was accepted; a holder of the signing key saving the recipients from <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> writes the next generation. Without a readable and writable record nothing is accepted or written: unknown state is not "never seen". </p>
+<p>What this is and is not: rollback detection on a device that has seen the newer list. A device seeing a store for the first time, or one that was offline, has nothing to compare against. The generation is monotonic per observer, not a distributed sequence number: two devices can both produce generation 19 from 18, and Git is what sorts that out; a device that accepted one of the two then meets the other as the same generation with different bytes, which is a conflict, not a rollback, and is refused until a holder of the signing key saves the recipients once more. For that the record keeps, next to the generation, a digest of the exact bytes it accepted or wrote. A list without the lines (written by <span class="tt">pass</span>, or by <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> before 2.0) is generation 0 and is refused once anything higher was accepted; a holder of the signing key saving the recipients from <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> writes the next generation. Without a readable and writable record nothing is accepted or written: unknown state is not "never seen". </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00042">42</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00046">46</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
 <a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">&#9670;&#160;</a></span>Verdict</h2>
@@ -192,6 +197,8 @@ Static Public Attributes</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9aedac80248b7bf68ccfaa9c78bfb81c32" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9aedac80248b7bf68ccfaa9c78bfb81c32"></a>Unbound&#160;</td><td class="fielddoc"><p>Older than a generation this device accepted and without a folder line: authentic, but written for who knows which folder (<span class="tt">pass</span>, or <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> before 2.0, wrote it), so not this folder's to recover. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9af1d4ac54357cc0932f385d56814ba7e4" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9af1d4ac54357cc0932f385d56814ba7e4"></a>Conflict&#160;</td><td class="fielddoc"><p>The generation this device accepted last, but not the bytes: two devices saved at once (Git shows that as a conflict), or an authentic list of that generation was swapped in. </p>
+</td></tr>
 <tr><td class="fieldname"><a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9"></a>WrongFolder&#160;</td><td class="fielddoc"><p>Written for another folder of the store. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9a0dc7301026e66d38061d7eaba481c9a5" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9a0dc7301026e66d38061d7eaba481c9a5"></a>Malformed&#160;</td><td class="fielddoc"><p>A header line malformed or duplicated. </p>
@@ -200,7 +207,7 @@ Static Public Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00120">120</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00124">124</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
 
 </div>
 </div>
@@ -242,7 +249,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Decide about a verified list: its folder against where it sits, its generation against the remembered one, and remember it when it passes. One transaction under the process-wide lock: read, compare, write through. </p>
+<p>Decide about a verified list: its folder against where it sits, its generation against the remembered one, its bytes against the remembered digest when the generations are equal, and remember it when it passes. One transaction under the lock: read, compare, write through. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span> the bytes came from. </td></tr>
@@ -253,6 +260,40 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Accepted when the list may be used; otherwise why not. Without established freshness state nothing is accepted. </dd></dl>
+
+</div>
+</div>
+<a id="a593383b668ee43317c32dfac0170fb08" name="a593383b668ee43317c32dfac0170fb08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a593383b668ee43317c32dfac0170fb08">&#9670;&#160;</a></span>digest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto GpgIdGeneration::digest </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>contents</em></span></td><td>)</td>
+          <td> -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The digest of a list as the record keeps it: SHA-256 of the exact bytes, hexadecimal, so that two authentic lists of one generation can be told apart. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">contents</td><td>The bytes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>64 hexadecimal characters. </dd></dl>
 
 </div>
 </div>
@@ -435,6 +476,51 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a07ea80b67c1211c0f0eba73c8a1869f4" name="a07ea80b67c1211c0f0eba73c8a1869f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ea80b67c1211c0f0eba73c8a1869f4">&#9670;&#160;</a></span>recordWritten()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto GpgIdGeneration::recordWritten </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>contents</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Record the bytes just written for <code class="param">gpgIdFile</code>, so that this device recognises its own list afterwards and refuses another list of the same generation. Called after the file is on disk; the generation in <code class="param">contents</code> must be the one <a class="el" href="#aca79157e6460c0bb20028e1d8b46b3fb" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver...">reserveNext()</a> gave. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span> just written. </td></tr>
+    <tr><td class="paramname">contents</td><td>The exact bytes written. </td></tr>
+    <tr><td class="paramname">error</td><td>Receives why the record could not be written, if not null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the digest was recorded. A list written but not digested is still recognised by its generation; only a second list of that generation would pass until it is read once. </dd></dl>
+
+</div>
+</div>
 <a id="a495c019fdefb8cb6c7349d4ff2f52cd5" name="a495c019fdefb8cb6c7349d4ff2f52cd5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a495c019fdefb8cb6c7349d4ff2f52cd5">&#9670;&#160;</a></span>remembered()</h2>
 
@@ -586,7 +672,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The folder line: this prefix and the store-relative folder the list was written for, <span class="tt">.</span> for the store root, <span class="tt">/</span>-separated. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00049">49</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00053">53</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
 
 </div>
 </div>
@@ -611,7 +697,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The generation line. The grammar is strict: this prefix, one ASCII decimal number of at most 18 digits, nothing else on the line. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00046">46</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00050">50</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
 
 </div>
 </div>
@@ -636,7 +722,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The largest generation the grammar admits (18 nines). <a class="el" href="#aca79157e6460c0bb20028e1d8b46b3fb" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver...">reserveNext()</a> never goes above it: a header <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> writes must be one it reads back. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00052">52</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00056">56</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
 
 </div>
 </div>
