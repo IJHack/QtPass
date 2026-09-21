@@ -592,27 +592,47 @@ header ul a:active {
   color: var(--muted);
 }
 .native.platforms {
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 .native .platform {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 1.1rem 1rem;
+  margin: 0;
+  padding: 0.8rem;
   background: var(--panel);
   border: 1px solid var(--rule);
   border-radius: 8px;
-  text-align: center;
 }
-.native .platform img {
+.capture {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--code-bg);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+.capture img.shot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+.capture img.shot.broken {
+  display: none;
+}
+.capture img.fallback {
   width: auto;
   height: 3.5rem;
+  opacity: 0.85;
 }
-.native .platform span {
+.native .platform figcaption {
+  margin-block-start: 0.6rem;
   font-size: 0.9em;
   color: var(--muted);
-  line-height: 1.4;
+  text-align: center;
 }
 .native .platform strong {
   display: block;

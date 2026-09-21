@@ -43,6 +43,26 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+  // Platform capture slots: the app screenshots for Windows, macOS and
+  // FreeBSD are not captured yet, so an absent image falls back to the
+  // platform badge instead of rendering a broken icon. Add the captures
+  // (windows-app(-dark).png, macos-app(-dark).png, freebsd-app(-dark).png)
+  // and the fallback disappears on its own.
+  document.querySelectorAll(".capture").forEach(function (capture) {
+    var shot = capture.querySelector("img.shot");
+    if (!shot) {
+      return;
+    }
+    var broken = function () {
+      shot.classList.add("broken");
+    };
+    if (shot.complete && shot.naturalWidth === 0) {
+      broken();
+    } else {
+      shot.addEventListener("error", broken);
+    }
+  });
+
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js");
   }

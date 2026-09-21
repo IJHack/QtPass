@@ -656,39 +656,93 @@
           </figure>
         </div>
         <div class="native platforms">
-          <div class="platform">
-            <img
-              src="images/win11.png"
-              loading="lazy"
-              decoding="async"
-              width="200"
-              height="249"
-              alt=""
-            />
-            <span><strong>Windows 11</strong> &mdash; native Windows look and feel.</span>
-          </div>
-          <div class="platform">
-            <img
-              src="images/macos.png"
-              loading="lazy"
-              decoding="async"
-              width="256"
-              height="256"
-              alt=""
-            />
-            <span><strong>macOS</strong> &mdash; native menus, controls and typography.</span>
-          </div>
-          <div class="platform">
-            <img
-              src="images/freebsd.png"
-              loading="lazy"
-              decoding="async"
-              width="175"
-              height="175"
-              alt=""
-            />
-            <span><strong>FreeBSD</strong> &mdash; native FreeBSD with <code>pkg install qtpass</code>.</span>
-          </div>
+          <figure class="platform">
+            <div class="capture">
+              <picture>
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcset="images/windows-app-dark.png"
+                />
+                <source srcset="images/windows-app.png" type="image/png" />
+                <img
+                  class="shot"
+                  src="images/windows-app.png"
+                  alt="QtPass on Windows 11, following the Windows look and feel"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <img
+                class="fallback"
+                src="images/win11.png"
+                width="200"
+                height="249"
+                alt="Windows 11"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption><strong>Windows 11</strong> &mdash; native light and dark.</figcaption>
+          </figure>
+          <figure class="platform">
+            <div class="capture">
+              <picture>
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcset="images/macos-app-dark.png"
+                />
+                <source srcset="images/macos-app.png" type="image/png" />
+                <img
+                  class="shot"
+                  src="images/macos-app.png"
+                  alt="QtPass on macOS, following the macOS look and feel"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <img
+                class="fallback"
+                src="images/macos.png"
+                width="256"
+                height="256"
+                alt="macOS"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption><strong>macOS</strong> &mdash; native light and dark.</figcaption>
+          </figure>
+          <figure class="platform">
+            <div class="capture">
+              <picture>
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcset="images/freebsd-app-dark.png"
+                />
+                <source srcset="images/freebsd-app.png" type="image/png" />
+                <img
+                  class="shot"
+                  src="images/freebsd-app.png"
+                  alt="QtPass on FreeBSD, following the desktop look and feel"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <img
+                class="fallback"
+                src="images/freebsd.png"
+                width="175"
+                height="175"
+                alt="FreeBSD"
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption><strong>FreeBSD</strong> &mdash; native light and dark.</figcaption>
+          </figure>
         </div>
 
         <h2>
