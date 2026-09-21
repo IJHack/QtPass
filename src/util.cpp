@@ -23,9 +23,13 @@
 #include <QStandardPaths>
 #include <QUrl>
 #ifdef Q_OS_WIN
+#include <fcntl.h>
+#include <io.h>
 #include <windows.h>
 #else
 #include <cstdio>
+#include <fcntl.h>
+#include <sys/stat.h>
 #include <sys/time.h>
 #include <unistd.h>
 #endif
@@ -574,6 +578,62 @@ auto Util::replaceFile(const QString &from, const QString &to, bool replace)
     return false;
   }
   ::unlink(source.constData());
+  return true;
+#endif
+}
+
+auto Util::openRegularFile(const QString &path, QFile &file) -> bool {
+#ifdef Q_OS_WIN
+  // FILE_FLAG_OPEN_REPARSE_POINT opens a symbolic link or junction itself
+  // rather than its target, so the handle's attributes say what the name
+  // was at the moment of the open.
+  const std::wstring native =
+      QDir::toNativeSeparators(QFileInfo(path).absoluteFilePath())
+          .toStdWString();
+  HANDLE handle = CreateFileW(
+      native.c_str(), GENERIC_READ,
+      FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE, nullptr,
+      OPEN_EXISTING, FILE_FLAG_OPEN_REPARSE_POINT, nullptr);
+  if (handle == INVALID_HANDLE_VALUE) {
+    return false;
+  }
+  BY_HANDLE_FILE_INFORMATION info{};
+  if (!GetFileInformationByHandle(handle, &info) ||
+      (info.dwFileAttributes &
+       (FILE_ATTRIBUTE_REPARSE_POINT | FILE_ATTRIBUTE_DIRECTORY |
+        FILE_ATTRIBUTE_DEVICE)) != 0 ||
+      GetFileType(handle) != FILE_TYPE_DISK) {
+    CloseHandle(handle);
+    return false;
+  }
+  const int fd = _open_osfhandle(reinterpret_cast<intptr_t>(handle),
+                                 _O_RDONLY | _O_BINARY);
+  if (fd < 0) {
+    CloseHandle(handle);
+    return false;
+  }
+  if (!file.open(fd, QIODevice::ReadOnly, QFileDevice::AutoCloseHandle)) {
+    _close(fd);
+    return false;
+  }
+  return true;
+#else
+  // O_NOFOLLOW fails with ELOOP on a symbolic link; O_NONBLOCK keeps a FIFO
+  // from blocking the open until fstat() can refuse it.
+  const int fd = ::open(QFile::encodeName(path).constData(),
+                        O_RDONLY | O_NOFOLLOW | O_NONBLOCK | O_CLOEXEC);
+  if (fd < 0) {
+    return false;
+  }
+  struct stat st{};
+  if (::fstat(fd, &st) != 0 || !S_ISREG(st.st_mode)) {
+    ::close(fd);
+    return false;
+  }
+  if (!file.open(fd, QIODevice::ReadOnly, QFileDevice::AutoCloseHandle)) {
+    ::close(fd);
+    return false;
+  }
   return true;
 #endif
 }

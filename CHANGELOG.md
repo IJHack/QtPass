@@ -142,6 +142,16 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   are written with mode 0600, as `pass` writes them. The `pass` backend
   keeps `pass insert`'s behaviour, as SECURITY.md says
   ([#1842](https://github.com/IJHack/QtPass/issues/1842))
+- Copying an entry read the source by name after checking that the name
+  was not a link, so a co-writer of the store who made it one in between
+  had the bytes of any file this user can read copied into the store, and
+  committed, before re-encryption could notice. The source is opened as the
+  regular file it is at that moment (`O_NOFOLLOW`; on Windows the reparse
+  point itself), a link or a special file under the name is refused, and
+  the copy goes into place through a staged file and the operating
+  system's rename, as an added entry does; an unforced copy replaces
+  nothing that appeared under the name since the check
+  ([#1842](https://github.com/IJHack/QtPass/issues/1842))
 - On Windows the link check behind that compared paths with case, so an
   entry named in the other case than the store root ("c:/store/..." for a
   root "C:/Store") skipped the walk up to the root and a link on the way

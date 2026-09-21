@@ -336,6 +336,7 @@ private Q_SLOTS:
   void insertDoesNotWriteThroughALinkPlantedAfterTheCheck();
   void insertDoesNotReplaceAnEntryThatAppearedWhileAdding();
   void insertRemovesTheTemporaryWhenGpgFails();
+  void copyWritesTheBytesThroughAStagedFileAndKeepsAnUnforcedTarget();
   void anOlderSignedGpgIdIsRefusedUntilSavedAgain();
   void aDifferentListOfTheSameGenerationIsAConflict();
   void aSignedGpgIdCopiedIntoAnotherFolderIsRefused();
@@ -1186,6 +1187,75 @@ void tst_imitatepass::insertRemovesTheTemporaryWhenGpgFails() {
           .size(),
       0);
 #endif
+}
+
+/**
+ * @brief Copy reads the source pinned as a regular file and writes the
+ *        copy through a staged sibling and a rename: the destination holds
+ *        the source's bytes and mode, no temporary is left, an existing
+ *        destination survives an unforced copy and is replaced by a forced
+ *        one.
+ */
+void tst_imitatepass::
+    copyWritesTheBytesThroughAStagedFileAndKeepsAnUnforcedTarget() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir root(storeDir.path());
+  const QString logPath = root.filePath(QStringLiteral("gpg-argv.log"));
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  const QString src = root.filePath(QStringLiteral("entry0.gpg"));
+  const QString dst = root.filePath(QStringLiteral("copy.gpg"));
+  pass.Copy(src, dst, false);
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  endSpy.clear();
+  QVERIFY2(criticalSpy.isEmpty(),
+           qPrintable(criticalSpy.isEmpty()
+                          ? QString()
+                          : criticalSpy.first().at(1).toString()));
+  QFile copied(dst);
+  QVERIFY(copied.open(QIODevice::ReadOnly));
+  {
+    const QByteArray bytes = copied.readAll();
+    QVERIFY2(bytes == QByteArray("not really encrypted") ||
+                 bytes == QByteArray("ciphertext\n"),
+             bytes.constData());
+  }
+  QCOMPARE(
+      root.entryList({QStringLiteral(".*.tmp")}, QDir::Files | QDir::Hidden)
+          .size(),
+      0);
+  // Unforced onto an existing entry: refused, the entry as it was.
+  {
+    QFile f(dst);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write("other");
+  }
+  pass.Copy(src, dst, false);
+  QTest::qWait(300);
+  QCOMPARE(criticalSpy.count(), 1);
+  QFile kept(dst);
+  QVERIFY(kept.open(QIODevice::ReadOnly));
+  QCOMPARE(kept.readAll(), QByteArray("other"));
+  kept.close();
+  pass.Copy(src, dst, true);
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCOMPARE(criticalSpy.count(), 1);
+  QFile replaced(dst);
+  QVERIFY(replaced.open(QIODevice::ReadOnly));
+  // The re-encryption pass rewrites entries whose recipients differ; the
+  // fake gpg turns every one into "ciphertext", so the copy read from the
+  // source is one of the two.
+  const QByteArray bytes = replaced.readAll();
+  QVERIFY2(bytes == QByteArray("not really encrypted") ||
+               bytes == QByteArray("ciphertext\n"),
+           bytes.constData());
+  QVERIFY(!QFileInfo(dst).isSymLink());
 }
 
 /**

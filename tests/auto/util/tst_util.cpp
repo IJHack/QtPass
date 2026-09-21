@@ -321,6 +321,7 @@ private Q_SLOTS:
   void isLinkedFolderSeesThroughATrailingSeparator();
   void isUnderLinkChecksEveryFolderOnTheWay();
   void replaceFileRenamesOverALinkAndNeverThroughIt();
+  void openRegularFileDoesNotFollowLinksOrOpenSpecialFiles();
   void removeTreeDoesNotFollowSymlinks();
   void removeTreeDoesNotFollowJunctions();
 
@@ -3962,6 +3963,80 @@ void tst_util::replaceFileRenamesOverALinkAndNeverThroughIt() {
   QCOMPARE(read(dangling), QByteArray("cipher2"));
   QVERIFY(!QFileInfo::exists(
       QDir(outside.path()).filePath(QStringLiteral("nope"))));
+#endif
+}
+
+/**
+ * @brief The object opened is the object judged: a regular file opens and
+ *        reads, a symbolic link (or junction) under the name is refused
+ *        although a plain QFile would read what it points to, a directory
+ *        and a FIFO are refused, and a missing file fails cleanly.
+ */
+void tst_util::openRegularFileDoesNotFollowLinksOrOpenSpecialFiles() {
+  QTemporaryDir dir;
+  QTemporaryDir outside;
+  QVERIFY(dir.isValid() && outside.isValid());
+  const QDir root(dir.path());
+  const QString regular = root.filePath(QStringLiteral("entry.gpg"));
+  {
+    QFile f(regular);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("cipher");
+  }
+  const QString secret =
+      QDir(outside.path()).filePath(QStringLiteral("secret"));
+  {
+    QFile f(secret);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("plain");
+  }
+  QFile opened;
+  QVERIFY(Util::openRegularFile(regular, opened));
+  QCOMPARE(opened.readAll(), QByteArrayLiteral("cipher"));
+  opened.close();
+  QFile missing;
+  QVERIFY(
+      !Util::openRegularFile(root.filePath(QStringLiteral("none")), missing));
+  QVERIFY(!missing.isOpen());
+  QFile directory;
+  QVERIFY(!Util::openRegularFile(dir.path(), directory));
+
+  const QString link = root.filePath(QStringLiteral("link.gpg"));
+#ifdef Q_OS_WIN
+  QProcess cmd;
+  cmd.start(QStringLiteral("cmd.exe"),
+            {QStringLiteral("/c"), QStringLiteral("mklink"),
+             QDir::toNativeSeparators(link), QDir::toNativeSeparators(secret)});
+  if (!cmd.waitForFinished(10000) || cmd.exitCode() != 0) {
+    // A file symlink needs a privilege a runner may lack; a junction to a
+    // directory needs none and is refused the same way.
+    QVERIFY(QDir(outside.path()).mkpath(QStringLiteral("d")));
+    QProcess junction;
+    junction.start(QStringLiteral("cmd.exe"),
+                   {QStringLiteral("/c"), QStringLiteral("mklink"),
+                    QStringLiteral("/J"), QDir::toNativeSeparators(link),
+                    QDir::toNativeSeparators(
+                        QDir(outside.path()).filePath(QStringLiteral("d")))});
+    QVERIFY(junction.waitForFinished(10000) && junction.exitCode() == 0);
+  }
+#else
+  QVERIFY(QFile::link(secret, link));
+  QFile through(link);
+  QVERIFY2(through.open(QIODevice::ReadOnly) &&
+               through.readAll() == QByteArrayLiteral("plain"),
+           "a plain QFile reads through the link; that is the point");
+  through.close();
+#endif
+  QFile linked;
+  QVERIFY2(!Util::openRegularFile(link, linked),
+           "a link under the name is not the file");
+  QVERIFY(!linked.isOpen());
+#ifndef Q_OS_WIN
+  const QString fifo = root.filePath(QStringLiteral("fifo.gpg"));
+  QVERIFY(::mkfifo(QFile::encodeName(fifo).constData(), 0600) == 0);
+  QFile pipe;
+  QVERIFY2(!Util::openRegularFile(fifo, pipe),
+           "a FIFO is refused without blocking on it");
 #endif
 }
 
