@@ -13,7 +13,7 @@ struct PasswordConfiguration {
   /**
    * @brief Character set options for password generation.
    */
-  enum characterSet {
+  enum CharacterSet {
     ALLCHARS = 0,
     ALPHABETICAL,
     ALPHANUMERIC,
@@ -23,7 +23,7 @@ struct PasswordConfiguration {
   /**
    * @brief Currently active character set selection.
    */
-  characterSet selected{ALLCHARS};
+  CharacterSet selected{ALLCHARS};
   /**
    * @brief Length of the password.
    */

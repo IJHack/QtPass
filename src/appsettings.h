@@ -49,7 +49,7 @@ struct AppSettings {
   QString sshAuthSockOverride; ///< Manual SSH_AUTH_SOCK override path.
 
   // --- Clipboard / autoclear ---
-  Enums::clipBoardType clipBoardType{
+  Enums::ClipBoardType clipBoardType{
       Enums::CLIPBOARD_NEVER};   ///< Clipboard copy behaviour.
   bool useSelection{false};      ///< Use the X11 primary selection.
   bool useAutoclear{false};      ///< Clear the clipboard after a delay.

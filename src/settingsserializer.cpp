@@ -34,7 +34,7 @@ auto SettingsSerializer::loadPasswordConfiguration(QSettings &qs)
     config.selected = PasswordConfiguration::ALLCHARS;
   } else {
     config.selected =
-        static_cast<PasswordConfiguration::characterSet>(selected);
+        static_cast<PasswordConfiguration::CharacterSet>(selected);
   }
 
   config.Characters[PasswordConfiguration::CUSTOM] =
@@ -69,7 +69,7 @@ auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
       qs.value(SettingsConstants::sshAuthSockOverride).toString();
 
   // Clipboard / autoclear
-  s.clipBoardType = static_cast<Enums::clipBoardType>(
+  s.clipBoardType = static_cast<Enums::ClipBoardType>(
       qs.value(SettingsConstants::clipBoardType,
                static_cast<int>(Enums::CLIPBOARD_NEVER))
           .toInt());

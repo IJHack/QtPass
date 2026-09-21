@@ -29,11 +29,11 @@ private slots:
 
 private:
   static void saveClipboardSettings(bool autoclear, int seconds,
-                                    Enums::clipBoardType type);
+                                    Enums::ClipBoardType type);
 };
 
 void tst_clipboardmanager::saveClipboardSettings(bool autoclear, int seconds,
-                                                 Enums::clipBoardType type) {
+                                                 Enums::ClipBoardType type) {
   AppSettings s = QtPassSettings::load();
   s.useSelection = false;
   s.useAutoclear = autoclear;

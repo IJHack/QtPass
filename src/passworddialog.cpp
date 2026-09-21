@@ -134,7 +134,7 @@ void PasswordDialog::on_createPasswordButton_clicked() {
 
   QString newPass = m_pass->generatePassword(
       static_cast<unsigned int>(ui->spinBox_pwdLength->value()),
-      m_passConfig.Characters[static_cast<PasswordConfiguration::characterSet>(
+      m_passConfig.Characters[static_cast<PasswordConfiguration::CharacterSet>(
           currentIndex)]);
   if (!newPass.isEmpty()) {
     ui->lineEditPassword->setText(newPass);

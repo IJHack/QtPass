@@ -682,14 +682,14 @@ void tst_util::passwordConfigurationCharacters() {
 }
 
 void tst_util::simpleTransactionBasic() {
-  simpleTransaction transaction;
+  SimpleTransaction transaction;
   transaction.transactionAdd(Enums::PASS_INSERT);
   Enums::PROCESS result = transaction.transactionIsOver(Enums::PASS_INSERT);
   QCOMPARE(result, Enums::PASS_INSERT);
 }
 
 void tst_util::simpleTransactionNested() {
-  simpleTransaction transaction;
+  SimpleTransaction transaction;
   transaction.transactionAdd(Enums::PASS_INSERT);
   transaction.transactionAdd(Enums::GIT_PUSH);
   Enums::PROCESS passInsertResult =

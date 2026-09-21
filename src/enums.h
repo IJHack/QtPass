@@ -12,10 +12,10 @@
 namespace Enums {
 
 /**
- * @enum clipBoardType
+ * @enum ClipBoardType
  * @brief Defines when to copy passwords to clipboard.
  */
-enum clipBoardType {
+enum ClipBoardType {
   CLIPBOARD_NEVER = 0,    /**< Never automatically copy to clipboard */
   CLIPBOARD_ALWAYS = 1,   /**< Always copy to clipboard after showing */
   CLIPBOARD_ON_DEMAND = 2 /**< Copy only when user explicitly requests */

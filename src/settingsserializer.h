@@ -30,7 +30,7 @@ public:
    * @brief Read only the password generation settings from a QSettings store.
    *
    * The stored charset selection is validated against
-   * PasswordConfiguration::characterSet; an out-of-range value (hand-edited or
+   * PasswordConfiguration::CharacterSet; an out-of-range value (hand-edited or
    * corrupted ini) falls back to ALLCHARS so consumers can index
    * PasswordConfiguration::Characters with it safely.
    *

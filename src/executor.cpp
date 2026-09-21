@@ -158,7 +158,7 @@ void Executor::executeNext() {
   if (running || m_execQueue.isEmpty()) {
     return;
   }
-  const execQueueItem &i = m_execQueue.head();
+  const ExecQueueItem &i = m_execQueue.head();
 
   // An empty executable can never produce a finished() signal. Silently
   // dropping it used to wedge the queue: the command stayed at the head until
@@ -480,7 +480,7 @@ auto Executor::cancelNext() -> int {
  */
 void Executor::onProcessFinished(int exitCode,
                                  QProcess::ExitStatus exitStatus) {
-  execQueueItem i = m_execQueue.dequeue();
+  ExecQueueItem i = m_execQueue.dequeue();
   running = false;
   auto [output, err] = collectOutput(i, exitCode);
   if (exitStatus == QProcess::NormalExit) {
@@ -502,7 +502,7 @@ void Executor::onProcessFinished(int exitCode,
   executeNext();
 }
 
-auto Executor::collectOutput(const execQueueItem &item, int exitCode)
+auto Executor::collectOutput(const ExecQueueItem &item, int exitCode)
     -> std::pair<QString, QString> {
   QString output;
   QString err;

@@ -245,10 +245,10 @@ void tst_settings::boolRoundTrip() {
 
 void tst_settings::setAndGetClipBoardType() {
   AppSettings toSave = QtPassSettings::load();
-  toSave.clipBoardType = static_cast<Enums::clipBoardType>(1);
+  toSave.clipBoardType = static_cast<Enums::ClipBoardType>(1);
   QtPassSettings::save(toSave);
   QCOMPARE(QtPassSettings::load().clipBoardType,
-           static_cast<Enums::clipBoardType>(1));
+           static_cast<Enums::ClipBoardType>(1));
 }
 
 void tst_settings::setAndGetPasswordLength() {
@@ -414,7 +414,7 @@ void tst_settings::setAndGetDialogGeometry() {
 
 void tst_settings::setAndGetPasswordCharsSelection() {
   AppSettings toSave = QtPassSettings::load();
-  const PasswordConfiguration::characterSet savedSelected =
+  const PasswordConfiguration::CharacterSet savedSelected =
       toSave.passwordConfiguration.selected;
   toSave.passwordConfiguration.selected = PasswordConfiguration::ALPHABETICAL;
   QtPassSettings::save(toSave);

@@ -7,20 +7,20 @@
 #include <queue>
 
 /**
- * @class simpleTransaction
+ * @class SimpleTransaction
  * @brief Tracks a sequence of processes that should be treated as one atomic
  * operation.
  */
-class simpleTransaction {
+class SimpleTransaction {
   int transactionDepth{0};
   Enums::PROCESS lastInTransaction{Enums::INVALID};
   std::queue<std::pair<Enums::PROCESS, Enums::PROCESS>> transactionQueue;
 
 public:
   /**
-   * @brief Construct a simpleTransaction in its initial idle state.
+   * @brief Construct a SimpleTransaction in its initial idle state.
    */
-  simpleTransaction() {}
+  SimpleTransaction() {}
   /**
    * @brief transactionStart this function is used to mark start of the sequence
    *                         of processes that shall be treated as one
