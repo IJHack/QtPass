@@ -1198,6 +1198,9 @@ void tst_imitatepass::insertRemovesTheTemporaryWhenGpgFails() {
  */
 void tst_imitatepass::
     copyWritesTheBytesThroughAStagedFileAndKeepsAnUnforcedTarget() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
   QTemporaryDir storeDir;
   QVERIFY(storeDir.isValid());
   QVERIFY(populateStore(storeDir.path(), 1));
@@ -1256,6 +1259,7 @@ void tst_imitatepass::
                bytes == QByteArray("ciphertext\n"),
            bytes.constData());
   QVERIFY(!QFileInfo(dst).isSymLink());
+#endif
 }
 
 /**
