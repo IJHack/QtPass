@@ -564,6 +564,59 @@ header ul a:active {
   background: var(--accent-strong);
 }
 
+/* cross-platform band: light/dark pairs and platform cards */
+.native {
+  display: grid;
+  gap: 0.6rem;
+}
+.native.darkmode {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+.native figure {
+  margin: 0;
+  padding: 0.8rem;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+.native figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+.native figcaption {
+  margin-block-start: 0.6rem;
+  font-size: 0.9em;
+  color: var(--muted);
+}
+.native.platforms {
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+.native .platform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.1rem 1rem;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  text-align: center;
+}
+.native .platform img {
+  width: auto;
+  height: 3.5rem;
+}
+.native .platform span {
+  font-size: 0.9em;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.native .platform strong {
+  display: block;
+}
 /* platform badges, app icons, watermark */
 .compatible {
   width: auto;
