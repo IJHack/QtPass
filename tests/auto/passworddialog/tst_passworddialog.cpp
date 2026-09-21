@@ -624,7 +624,7 @@ void openContextMenu(QWidget *owner) {
 
 /**
  * @brief A left double-click on the label opens the editor, a right one is
- *        left to QLabel; a second startEdit() re-uses the editor instead of
+ *        left to QLabel; a second startEdit() reuses the editor instead of
  *        opening another.
  */
 void tst_passworddialog::fieldLabelDoubleClickStartsTheEdit() {

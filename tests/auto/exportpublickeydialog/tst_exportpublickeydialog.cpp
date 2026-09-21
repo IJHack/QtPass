@@ -194,7 +194,7 @@ auto tst_exportpublickeydialog::driveSaveDialog(ExportPublicKeyDialog *dialog,
         } else {
           fileDialog->selectFile(targetPath);
         }
-        // QFileDialog re-declares accept() protected; the QDialog view of it
+        // QFileDialog redeclares accept() protected; the QDialog view of it
         // is public and still dispatches virtually to the QFileDialog logic.
         // Run it from a posted event rather than inside this timer slot: a
         // nested exec() started from a timer activation (QFileDialog's own

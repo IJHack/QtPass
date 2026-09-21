@@ -415,7 +415,7 @@ auto tst_importkeydialog::driveModals(const std::function<void()> &trigger,
         }
         fileDialog->selectFile(filePath);
         run.selectedFiles = fileDialog->selectedFiles();
-        // QFileDialog re-declares accept() protected; the QDialog view of it
+        // QFileDialog redeclares accept() protected; the QDialog view of it
         // is public and still dispatches virtually to the QFileDialog logic.
         static_cast<QDialog *>(fileDialog)->accept();
       }
@@ -490,7 +490,8 @@ void tst_importkeydialog::importButtonIgnoresEmptyInput() {
   const ModalRun run = driveModals([&]() {
     QVERIFY2(QMetaObject::invokeMethod(&dialog, "on_importButton_clicked",
                                        Qt::DirectConnection),
-             "on_importButton_clicked slot must be invokable");
+             "on_importButton_clicked slot must be callable through the "
+             "meta-object");
   });
 
   QCOMPARE(run.messageBoxes, 0);
