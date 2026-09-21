@@ -24,14 +24,14 @@ private Q_SLOTS:
 };
 
 void tst_simpletransaction::transactionAddAndComplete() {
-  simpleTransaction st;
+  SimpleTransaction st;
   st.transactionAdd(Enums::PASS_SHOW);
   Enums::PROCESS result = st.transactionIsOver(Enums::PASS_SHOW);
   QCOMPARE(result, Enums::PASS_SHOW);
 }
 
 void tst_simpletransaction::transactionAdd() {
-  simpleTransaction st;
+  SimpleTransaction st;
   st.transactionAdd(Enums::PASS_SHOW);
   st.transactionAdd(Enums::PASS_REMOVE);
   Enums::PROCESS first = st.transactionIsOver(Enums::PASS_SHOW);
@@ -41,14 +41,14 @@ void tst_simpletransaction::transactionAdd() {
 }
 
 void tst_simpletransaction::transactionIsOver() {
-  simpleTransaction st;
+  SimpleTransaction st;
   st.transactionAdd(Enums::PASS_INSERT);
   Enums::PROCESS result = st.transactionIsOver(Enums::PASS_INSERT);
   QCOMPARE(result, Enums::PASS_INSERT);
 }
 
 void tst_simpletransaction::nestedTransaction() {
-  simpleTransaction st;
+  SimpleTransaction st;
   st.transactionAdd(Enums::PASS_SHOW);
   st.transactionAdd(Enums::GIT_PULL);
   Enums::PROCESS passShowResult = st.transactionIsOver(Enums::PASS_SHOW);
@@ -58,7 +58,7 @@ void tst_simpletransaction::nestedTransaction() {
 }
 
 void tst_simpletransaction::transactionStartEndExplicit() {
-  simpleTransaction st;
+  SimpleTransaction st;
   st.transactionAdd(Enums::PASS_INSERT);
   st.transactionStart();
   st.transactionAdd(Enums::PASS_SHOW);
@@ -73,7 +73,7 @@ void tst_simpletransaction::transactionStartEndExplicit() {
 }
 
 void tst_simpletransaction::transactionQueueOrder() {
-  simpleTransaction st;
+  SimpleTransaction st;
   st.transactionAdd(Enums::PASS_INSERT);
   st.transactionAdd(Enums::PASS_REMOVE);
   st.transactionAdd(Enums::PASS_SHOW);
@@ -88,7 +88,7 @@ void tst_simpletransaction::transactionQueueOrder() {
 }
 
 void tst_simpletransaction::transactionIsOverWrongIdReturnsInvalid() {
-  simpleTransaction st;
+  SimpleTransaction st;
   st.transactionAdd(Enums::PASS_SHOW);
   QVERIFY2(
       st.transactionIsOver(Enums::PASS_INSERT) == Enums::INVALID,
@@ -97,13 +97,13 @@ void tst_simpletransaction::transactionIsOverWrongIdReturnsInvalid() {
 }
 
 void tst_simpletransaction::transactionIsOverEmptyQueueReturnsInvalid() {
-  simpleTransaction st;
+  SimpleTransaction st;
   QVERIFY2(st.transactionIsOver(Enums::PASS_SHOW) == Enums::INVALID,
            "transactionIsOver(PASS_SHOW) must return INVALID on empty queue");
 }
 
 void tst_simpletransaction::transactionEndWithoutStartIsNoop() {
-  simpleTransaction st;
+  SimpleTransaction st;
   st.transactionEnd(Enums::PASS_SHOW);
   QVERIFY2(
       st.transactionIsOver(Enums::PASS_SHOW) == Enums::INVALID,
@@ -112,7 +112,7 @@ void tst_simpletransaction::transactionEndWithoutStartIsNoop() {
 }
 
 void tst_simpletransaction::transactionStartEndWithoutAddIsNoop() {
-  simpleTransaction st;
+  SimpleTransaction st;
   st.transactionStart();
   st.transactionEnd(Enums::PASS_SHOW);
   QVERIFY2(
@@ -123,7 +123,7 @@ void tst_simpletransaction::transactionStartEndWithoutAddIsNoop() {
 }
 
 void tst_simpletransaction::transactionEndResultDiffersFromAdd() {
-  simpleTransaction st;
+  SimpleTransaction st;
   st.transactionStart();
   st.transactionAdd(Enums::PASS_SHOW);
   st.transactionEnd(Enums::PASS_INSERT);
@@ -135,7 +135,7 @@ void tst_simpletransaction::transactionEndResultDiffersFromAdd() {
 }
 
 void tst_simpletransaction::deeplyNestedTransactionUsesLastAdd() {
-  simpleTransaction st;
+  SimpleTransaction st;
   st.transactionStart();
   st.transactionAdd(Enums::GIT_ADD);
   st.transactionStart();

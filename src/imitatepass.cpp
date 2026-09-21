@@ -219,7 +219,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
     return;
   }
   const QString output = scratch->filePath(QStringLiteral("entry.gpg"));
-  transactionHelper trans(&m_transaction, PASS_INSERT);
+  TransactionHelper trans(&m_transaction, PASS_INSERT);
   // --no-encrypt-to keeps an `encrypt-to` line in the user's gpg.conf from
   // adding a recipient that is not listed in the (possibly signed) .gpg-id;
   // --compress-algo=none mirrors pass(1). Both belong on every encrypt call.
@@ -279,7 +279,7 @@ void ImitatePass::Remove(QString file, bool isDir) {
   if (refuseLinkedPath(file, false)) {
     return;
   }
-  transactionHelper trans(&m_transaction, PASS_REMOVE);
+  TransactionHelper trans(&m_transaction, PASS_REMOVE);
   QString path = QDir(m_settings.passStore).relativeFilePath(file);
   path.replace(Util::endsWithGpg(), "");
   if (Util::isLinkedFolder(file)) {
@@ -1405,7 +1405,7 @@ void ImitatePass::Move(const QString src, const QString dest,
   if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
     return;
   }
-  transactionHelper trans(&m_transaction, PASS_MOVE);
+  TransactionHelper trans(&m_transaction, PASS_MOVE);
   QString destFile = resolveMoveDestination(src, dest, force);
   if (destFile.isEmpty()) {
     return;
@@ -1511,7 +1511,7 @@ void ImitatePass::Copy(const QString src, const QString dest,
   if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
     return;
   }
-  transactionHelper trans(&m_transaction, PASS_COPY);
+  TransactionHelper trans(&m_transaction, PASS_COPY);
   // Like `pass cp`, dest may be an existing folder (a drag-and-drop copy hands
   // over the folder, not the new file name). Resolve the real target the same
   // way Move does: into the folder, .gpg appended, no clobbering without force.

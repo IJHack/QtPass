@@ -13,32 +13,23 @@
 #include <QRegularExpression>
 #include <QtGlobal>
 
-auto operator<<(
-    QDataStream &out,
-    const dragAndDropInfoPasswordStore &dragAndDropInfoPasswordStore)
-    -> QDataStream & {
-  out << static_cast<quint8>(dragAndDropInfoPasswordStore.kind)
-      << dragAndDropInfoPasswordStore.path;
+auto operator<<(QDataStream &out, const StoreDragItem &item) -> QDataStream & {
+  out << static_cast<quint8>(item.kind) << item.path;
   return out;
 }
 
-auto operator>>(QDataStream &in,
-                dragAndDropInfoPasswordStore &dragAndDropInfoPasswordStore)
-    -> QDataStream & {
+auto operator>>(QDataStream &in, StoreDragItem &item) -> QDataStream & {
   quint8 k;
-  in >> k >> dragAndDropInfoPasswordStore.path;
+  in >> k >> item.path;
   switch (k) {
-  case static_cast<quint8>(dragAndDropInfoPasswordStore::ItemKind::Directory):
-    dragAndDropInfoPasswordStore.kind =
-        dragAndDropInfoPasswordStore::ItemKind::Directory;
+  case static_cast<quint8>(StoreDragItem::ItemKind::Directory):
+    item.kind = StoreDragItem::ItemKind::Directory;
     break;
-  case static_cast<quint8>(dragAndDropInfoPasswordStore::ItemKind::File):
-    dragAndDropInfoPasswordStore.kind =
-        dragAndDropInfoPasswordStore::ItemKind::File;
+  case static_cast<quint8>(StoreDragItem::ItemKind::File):
+    item.kind = StoreDragItem::ItemKind::File;
     break;
   default:
-    dragAndDropInfoPasswordStore.kind =
-        dragAndDropInfoPasswordStore::ItemKind::Unknown;
+    item.kind = StoreDragItem::ItemKind::Unknown;
     break;
   }
   return in;
@@ -209,7 +200,7 @@ auto StoreModel::mimeTypes() const -> QStringList {
  * @return
  */
 auto StoreModel::mimeData(const QModelIndexList &indexes) const -> QMimeData * {
-  dragAndDropInfoPasswordStore info;
+  StoreDragItem info;
 
   if (indexes.isEmpty())
     return nullptr;
@@ -221,9 +212,9 @@ auto StoreModel::mimeData(const QModelIndexList &indexes) const -> QMimeData * {
     const QFileInfo fileInfo = fs->fileInfo(useIndex);
 
     if (fileInfo.isDir()) {
-      info.kind = dragAndDropInfoPasswordStore::ItemKind::Directory;
+      info.kind = StoreDragItem::ItemKind::Directory;
     } else if (fileInfo.isFile()) {
-      info.kind = dragAndDropInfoPasswordStore::ItemKind::File;
+      info.kind = StoreDragItem::ItemKind::File;
     }
     info.path = fileInfo.absoluteFilePath();
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
@@ -253,7 +244,7 @@ auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
   if (!parsed) {
     return false;
   }
-  const dragAndDropInfoPasswordStore &info = *parsed;
+  const StoreDragItem &info = *parsed;
 
   QModelIndex useIndex =
       this->index(parent.row(), parent.column(), parent.parent());
@@ -262,7 +253,7 @@ auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
     return false;
   }
 
-  using IK = dragAndDropInfoPasswordStore::ItemKind;
+  using IK = StoreDragItem::ItemKind;
   // you can drop a folder on a folder
   if (fs->fileInfo(mapToSource(useIndex)).isDir() &&
       info.kind == IK::Directory) {
@@ -313,7 +304,7 @@ auto StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
 }
 
 auto StoreModel::parseDropData(const QMimeData *data)
-    -> std::optional<dragAndDropInfoPasswordStore> {
+    -> std::optional<StoreDragItem> {
   if (data == nullptr || !data->hasFormat(kStoreDragMimeType)) {
     return std::nullopt;
   }
@@ -322,7 +313,7 @@ auto StoreModel::parseDropData(const QMimeData *data)
     return std::nullopt;
   }
   QDataStream stream(&encodedData, QIODevice::ReadOnly);
-  dragAndDropInfoPasswordStore info;
+  StoreDragItem info;
   stream >> info;
   if (stream.status() != QDataStream::Ok) {
     return std::nullopt;
@@ -330,7 +321,7 @@ auto StoreModel::parseDropData(const QMimeData *data)
   return info;
 }
 
-auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
+auto StoreModel::executeDropAction(const StoreDragItem &info,
                                    Qt::DropAction action,
                                    const QModelIndex &parent) -> bool {
   QModelIndex destIndex =
@@ -355,7 +346,7 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
   }
 
   switch (info.kind) {
-  case dragAndDropInfoPasswordStore::ItemKind::Directory: {
+  case StoreDragItem::ItemKind::Directory: {
     // Dropping a folder onto a folder: move/copy it *into* the target.
     if (!destFileinfo.isDir()) {
       return false;
@@ -364,7 +355,7 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
         QDir::cleanPath(QDir(cleanedDest).filePath(srcFileInfo.fileName()));
     return performDrop(cleanedSrc, destDir, action, false);
   }
-  case dragAndDropInfoPasswordStore::ItemKind::File:
+  case StoreDragItem::ItemKind::File:
     // File onto a folder drops into it (no clash); file onto an existing
     // file asks before overwriting.
     if (destFileinfo.isDir()) {

@@ -25,10 +25,10 @@ class Executor : public QObject {
   Q_OBJECT
 
   /**
-   * @struct execQueueItem
+   * @struct ExecQueueItem
    * @brief Execution queue item for non-interactive ordered execution.
    */
-  struct execQueueItem {
+  struct ExecQueueItem {
     /**
      * @brief id    identifier of process given by the caller
      */
@@ -62,7 +62,7 @@ class Executor : public QObject {
     QString workingDir;
   };
 
-  QQueue<execQueueItem> m_execQueue;
+  QQueue<ExecQueueItem> m_execQueue;
   QProcess m_process;
   bool running{false};
   void executeNext();
@@ -77,7 +77,7 @@ class Executor : public QObject {
    * item's readStdout/readStderr flags; stderr is always read on a non-zero
    * exit so the caller can report it.
    */
-  auto collectOutput(const execQueueItem &item, int exitCode)
+  auto collectOutput(const ExecQueueItem &item, int exitCode)
       -> std::pair<QString, QString>;
   /**
    * @brief Shared blocking run: start @p process, optionally feed @p input on

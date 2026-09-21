@@ -199,11 +199,11 @@ public:
                   bool readStderr = true);
 
   /**
-   * @class transactionHelper
+   * @class TransactionHelper
    * @brief RAII helper for wrapping operations in transactions.
    */
-  class transactionHelper {
-    simpleTransaction *m_transaction;
+  class TransactionHelper {
+    SimpleTransaction *m_transaction;
     PROCESS m_result;
 
   public:
@@ -212,14 +212,14 @@ public:
      * @param trans Transaction object.
      * @param result Result code on commit.
      */
-    transactionHelper(simpleTransaction *trans, PROCESS result)
+    TransactionHelper(SimpleTransaction *trans, PROCESS result)
         : m_transaction(trans), m_result(result) {
       m_transaction->transactionStart();
     }
     /**
      * @brief End transaction on destruction.
      */
-    ~transactionHelper() { m_transaction->transactionEnd(m_result); }
+    ~TransactionHelper() { m_transaction->transactionEnd(m_result); }
   };
 
 protected:
@@ -372,8 +372,8 @@ public:
 
 private:
   /// Groups the git/gpg processes of one operation (Insert, Remove, Move,
-  /// Copy) into a single completion; see finished() and transactionHelper.
-  simpleTransaction m_transaction;
+  /// Copy) into a single completion; see finished() and TransactionHelper.
+  SimpleTransaction m_transaction;
   /// Background search over the decrypted store; relays to finishedGrep.
   NativeGrep m_grep;
   QString m_transactionOutput;

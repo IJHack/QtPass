@@ -184,7 +184,7 @@ auto ConfigDialog::readSettings() -> AppSettings {
   settings.passStore = Util::normalizeFolderPath(ui->storePath->text());
   settings.usePass = ui->radioButtonPass->isChecked();
   settings.clipBoardType =
-      static_cast<Enums::clipBoardType>(ui->comboBoxClipboard->currentIndex());
+      static_cast<Enums::ClipBoardType>(ui->comboBoxClipboard->currentIndex());
   settings.useSelection = ui->checkBoxSelection->isChecked();
   settings.useAutoclear = ui->checkBoxAutoclear->isChecked();
   settings.autoclearSeconds = ui->spinBoxAutoclearSeconds->value();
@@ -1033,7 +1033,7 @@ void ConfigDialog::setPasswordConfiguration(
 auto ConfigDialog::getPasswordConfiguration() -> PasswordConfiguration {
   PasswordConfiguration config;
   config.length = ui->spinBoxPasswordLength->value();
-  config.selected = static_cast<PasswordConfiguration::characterSet>(
+  config.selected = static_cast<PasswordConfiguration::CharacterSet>(
       ui->passwordCharTemplateSelector->currentIndex());
   // The line edit only holds the user's custom charset while CUSTOM is
   // selected; for a builtin selection it shows that builtin's characters.

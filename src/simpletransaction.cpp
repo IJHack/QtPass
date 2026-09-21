@@ -12,7 +12,7 @@ using Enums::PROCESS;
  * @brief Marks the start of a sequence of processes that shall be treated as
  * one operation.
  */
-void simpleTransaction::transactionStart() {
+void SimpleTransaction::transactionStart() {
   qCDebug(lcQtPass) << "START" << transactionDepth;
   transactionDepth++;
 }
@@ -23,7 +23,7 @@ void simpleTransaction::transactionStart() {
  *        Otherwise it marks the process as the only step in the transaction.
  * @param id Process that shall be treated as part of the transaction
  */
-void simpleTransaction::transactionAdd(PROCESS id) {
+void SimpleTransaction::transactionAdd(PROCESS id) {
   qCDebug(lcQtPass) << "ADD" << transactionDepth << id;
   if (transactionDepth > 0) {
     lastInTransaction = id;
@@ -36,7 +36,7 @@ void simpleTransaction::transactionAdd(PROCESS id) {
  * @brief Marks the end of the current transaction.
  * @param pid Value that will be used as the result of the transaction
  */
-void simpleTransaction::transactionEnd(PROCESS pid) {
+void SimpleTransaction::transactionEnd(PROCESS pid) {
   qCDebug(lcQtPass) << "END" << transactionDepth;
   if (transactionDepth > 0) {
     transactionDepth--;
@@ -54,7 +54,7 @@ void simpleTransaction::transactionEnd(PROCESS pid) {
  * @return Result of transaction as set by transactionAdd or transactionEnd,
  *         or PROCESS::INVALID if the transaction is not yet over
  */
-auto simpleTransaction::transactionIsOver(PROCESS id) -> PROCESS {
+auto SimpleTransaction::transactionIsOver(PROCESS id) -> PROCESS {
   qCDebug(lcQtPass) << "OVER" << transactionDepth << id;
   if (!transactionQueue.empty() && id == transactionQueue.front().first) {
     PROCESS ret = transactionQueue.front().second;

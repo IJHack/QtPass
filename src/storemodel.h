@@ -22,10 +22,11 @@ class Pass;
 class QFileSystemModel;
 
 /**
- * @struct dragAndDropInfoPasswordStore
- * @brief Holds information for drag and drop operations in the password store.
+ * @struct StoreDragItem
+ * @brief What a drag from the store tree carries: the kind of the dragged
+ * item and its path.
  */
-struct dragAndDropInfoPasswordStore {
+struct StoreDragItem {
   /**
    * @brief Type of the dragged item.
    */
@@ -42,16 +43,15 @@ struct dragAndDropInfoPasswordStore {
 class QDataStream;
 
 /**
- * @brief Serialize a dragAndDropInfoPasswordStore for the QtPass MIME type.
+ * @brief Serialize a StoreDragItem for the QtPass MIME type.
  * @param out Stream to write to.
  * @param info Drag/drop info to serialize.
  * @return The same stream, for chaining.
  */
-auto operator<<(QDataStream &out, const dragAndDropInfoPasswordStore &info)
-    -> QDataStream &;
+auto operator<<(QDataStream &out, const StoreDragItem &info) -> QDataStream &;
 
 /**
- * @brief Deserialize a dragAndDropInfoPasswordStore from the QtPass MIME type.
+ * @brief Deserialize a StoreDragItem from the QtPass MIME type.
  *
  * Unrecognised kind bytes resolve to ItemKind::Unknown rather than being
  * rejected, so a future protocol bump remains decode-safe.
@@ -60,15 +60,14 @@ auto operator<<(QDataStream &out, const dragAndDropInfoPasswordStore &info)
  * @param info Drag/drop info to populate.
  * @return The same stream, for chaining.
  */
-auto operator>>(QDataStream &in, dragAndDropInfoPasswordStore &info)
-    -> QDataStream &;
+auto operator>>(QDataStream &in, StoreDragItem &info) -> QDataStream &;
 
 /**
  * @brief The one MIME type the store tree drags: a serialised
- * dragAndDropInfoPasswordStore.
+ * StoreDragItem.
  */
 inline constexpr QLatin1StringView
-    kStoreDragMimeType("application/vnd.qtpass.dragAndDropInfoPasswordStore");
+    kStoreDragMimeType("application/vnd.qtpass.store-item");
 
 class StoreModel : public QSortFilterProxyModel {
   Q_OBJECT
@@ -84,10 +83,9 @@ private:
    * of ours, or the payload does not deserialise cleanly.
    */
   static auto parseDropData(const QMimeData *data)
-      -> std::optional<dragAndDropInfoPasswordStore>;
-  auto executeDropAction(const dragAndDropInfoPasswordStore &info,
-                         Qt::DropAction action, const QModelIndex &parent)
-      -> bool;
+      -> std::optional<StoreDragItem>;
+  auto executeDropAction(const StoreDragItem &info, Qt::DropAction action,
+                         const QModelIndex &parent) -> bool;
   /**
    * @brief Perform the actual Move/Copy for a validated drop.
    * @param cleanedSrc Canonical source path (inside the store).
