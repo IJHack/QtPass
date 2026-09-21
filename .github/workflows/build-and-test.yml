@@ -4,6 +4,7 @@ name: Build and test
 on:
   push:
     branches: ["main", "1.8"]
+    tags: ["v*"]
   pull_request:
     branches: ["main", "1.8"]
   merge_group:
@@ -174,3 +175,94 @@ jobs:
         env:
           QT_FORCE_STDERR_LOGGING: ${{ runner.os == 'Windows' && '1' || '' }}
         run: ${{ runner.os == 'Windows' && 'nmake' || 'make' }} check TESTARGS="--platform offscreen"
+
+  # The BSDs build in a VM (vmactions), from the system's Qt 6 packages
+  # rather than a pinned Qt, so their jobs say "(Qt 6)". Same gate as the
+  # matrix: a change that does not touch the build skips them (the jobs then
+  # show as skipped; they are not required checks). Tags get a run too, so a
+  # release has the BSD result to point at.
+  freebsd:
+    name: Build and test on FreeBSD 14 (Qt 6)
+    needs: changes
+    if: >-
+      needs.changes.outputs.src == 'true' ||
+      needs.changes.outputs.tests == 'true' ||
+      needs.changes.outputs.qt == 'true' ||
+      needs.changes.outputs.localization == 'true' ||
+      needs.changes.outputs.icons == 'true' ||
+      needs.changes.outputs.workflow == 'true' ||
+      github.event_name == 'merge_group' ||
+      startsWith(github.ref, 'refs/tags/')
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Build and run the test suites in a FreeBSD VM
+        uses: vmactions/freebsd-vm@8b0f1a8fc0ea0def307835c258940ca358fe6480 # v1.5.6
+        with:
+          release: "14"
+          usesh: true
+          mem: 6144
+          cpu: 3
+          sync: rsync
+          copyback: false
+          prepare: |
+            pkg install -y qt6-base qt6-tools qt6-svg gnupg git
+          run: |
+            set -e
+            freebsd-version
+            qmake6 -v
+            # the rsynced tree is owned by another uid inside the VM
+            git config --global --add safe.directory "$(pwd)"
+            qmake6 qtpass.pro
+            make -j3
+            # The suites need a display; the offscreen QPA is enough.
+            export QT_QPA_PLATFORM=offscreen
+            make check
+
+  openbsd:
+    name: Build and test on OpenBSD 7.9 (Qt 6)
+    needs: changes
+    if: >-
+      needs.changes.outputs.src == 'true' ||
+      needs.changes.outputs.tests == 'true' ||
+      needs.changes.outputs.qt == 'true' ||
+      needs.changes.outputs.localization == 'true' ||
+      needs.changes.outputs.icons == 'true' ||
+      needs.changes.outputs.workflow == 'true' ||
+      github.event_name == 'merge_group' ||
+      startsWith(github.ref, 'refs/tags/')
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Build and run the test suites in an OpenBSD VM
+        uses: vmactions/openbsd-vm@86cdc08415d9d0865267e686561e276c52d62530 # v1.4.7
+        with:
+          release: "7.9"
+          usesh: true
+          mem: 6144
+          cpu: 3
+          sync: rsync
+          copyback: false
+          prepare: |
+            pkg_add -I qt6-qtbase qt6-qttools qt6-qtsvg gnupg git gmake
+          run: |
+            set -e
+            sysctl -n kern.version | head -1
+            qmake-qt6 -v
+            # the rsynced tree is owned by another uid inside the VM
+            git config --global --add safe.directory "$(pwd)"
+            qmake-qt6 qtpass.pro
+            gmake -j3
+            # The suites need a display; the offscreen QPA is enough.
+            export QT_QPA_PLATFORM=offscreen
+            gmake check

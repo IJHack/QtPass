@@ -291,10 +291,14 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   `linter.yml`, `docs.yml` and `publiccode-yml-validation.yml` were the
   old names), every "Detect changes (…)" job names the workflow it gates
   the same way, and the build jobs are named after the platform like the
-  BSD ones ("Build and test on Ubuntu (Qt 6.8)", not "on ubuntu-latest")
+  BSD ones ("Build and test on Ubuntu (Qt 6.8)", not "on ubuntu-latest");
+  `freebsd.yml` and `openbsd.yml` are gone, their jobs are in
+  `build-and-test.yml`
 - CI builds and runs the test suites on OpenBSD 7.9 (Qt 6, `qmake-qt6`,
   `gmake`) in a VM on every pull request, next to the FreeBSD job, so the
-  `security/qtpass` port has a build to point at before a release
+  `security/qtpass` port has a build to point at before a release; both BSD
+  jobs live in the "Build and test" workflow with the Ubuntu, Windows and
+  macOS ones, behind the same change detection
 - CI workflow and job names follow one scheme: the workflow says what it is
   for (Build and test, Lint, Documentation, Release installers, CodeQL,
   Flatpak, FreeBSD, REUSE, publiccode.yml) and every job says what it does
