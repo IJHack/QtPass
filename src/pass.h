@@ -252,6 +252,7 @@ public:
       /// malformed header, or no freshness record to judge by.
       Rejected,
     };
+    /// How the list on disk stood up.
     State state = State::Unsigned;
     /// The recipients to preselect; empty when Rejected.
     QStringList recipients;
