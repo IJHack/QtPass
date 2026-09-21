@@ -72,13 +72,19 @@ public:
       -> std::optional<Header>;
 
   /**
-   * @brief The two header lines for @p generation and @p folder, newlines
-   * included.
+   * @brief The two header lines for a list.
+   * @param generation The generation to declare.
+   * @param folder The store-relative folder the list is written for.
+   * @return Both lines, newlines included.
    */
   static auto header(qint64 generation, const QString &folder) -> QByteArray;
 
   /**
-   * @brief @p recipients (one per line, no header) with the header in front.
+   * @brief A complete list: the header in front of the recipients.
+   * @param generation The generation to declare.
+   * @param folder The store-relative folder the list is written for.
+   * @param recipients The recipient lines, one per line, no header.
+   * @return The bytes to write.
    */
   static auto withHeader(qint64 generation, const QString &folder,
                          const QByteArray &recipients) -> QByteArray;
@@ -96,11 +102,12 @@ public:
 
   /**
    * @brief The highest generation this device has accepted or written for
-   * the `.gpg-id` at @p gpgIdFile: 0 when it has never seen one, nothing
-   * when the record cannot be read. Unreadable is not "never seen": a
-   * signed list must then be refused, not compared against 0.
+   * the `.gpg-id` at @p gpgIdFile. Unreadable is not "never seen": a signed
+   * list must then be refused, not compared against 0.
    * @param gpgIdFile The `.gpg-id`.
    * @param error Receives why the record could not be read, if not null.
+   * @return 0 when this device has never seen the list, the generation
+   *         otherwise; nothing when the record cannot be read.
    */
   static auto remembered(const QString &gpgIdFile, QString *error = nullptr)
       -> std::optional<qint64>;
@@ -151,15 +158,20 @@ public:
                           QString *error = nullptr) -> std::optional<qint64>;
 
   /**
-   * @brief The settings key for @p gpgIdFile: a hash of its canonical path,
+   * @brief The settings key for a `.gpg-id`: a hash of its canonical path,
    * so path spelling (case, separators, links on the way) and QSettings'
    * treatment of `/` do not matter.
+   * @param gpgIdFile The `.gpg-id`, existing or about to be written.
+   * @return 64 hexadecimal characters.
    */
   static auto key(const QString &gpgIdFile) -> QString;
 
-  /// The file the accepted generations are recorded in, so a refusal can
-  /// name it: removing it forgets what was accepted, which is the manual way
-  /// out for a device that cannot save the list itself.
+  /**
+   * @brief The file the accepted generations are recorded in, so a refusal
+   * can name it: removing it forgets what was accepted, which is the manual
+   * way out for a device that cannot save the list itself.
+   * @return The record's path.
+   */
   static auto recordFile() -> QString;
 };
 
