@@ -8,6 +8,7 @@ on:
   pull_request:
     branches: ["main", "1.8"]
   merge_group:
+  workflow_dispatch:
 
 permissions: {}
 
@@ -96,7 +97,9 @@ jobs:
              [[ "${NEEDS_CHANGES_OUTPUTS_ICONS}" == "true" ]] || \
              [[ "${NEEDS_CHANGES_OUTPUTS_DOCS}" == "true" ]] || \
              [[ "${NEEDS_CHANGES_OUTPUTS_WORKFLOW}" == "true" ]] || \
-             [[ "${{ github.event_name }}" == "merge_group" ]]; then
+             [[ "${{ github.event_name }}" == "merge_group" ]] || \
+             [[ "${{ github.event_name }}" == "workflow_dispatch" ]] || \
+             [[ "${{ github.ref }}" == refs/tags/* ]]; then
             echo "run_build=true" >> "$GITHUB_OUTPUT"
           else
             echo "run_build=false" >> "$GITHUB_OUTPUT"
@@ -190,8 +193,10 @@ jobs:
       needs.changes.outputs.qt == 'true' ||
       needs.changes.outputs.localization == 'true' ||
       needs.changes.outputs.icons == 'true' ||
+      needs.changes.outputs.docs == 'true' ||
       needs.changes.outputs.workflow == 'true' ||
       github.event_name == 'merge_group' ||
+      github.event_name == 'workflow_dispatch' ||
       startsWith(github.ref, 'refs/tags/')
     permissions:
       contents: read
@@ -233,8 +238,10 @@ jobs:
       needs.changes.outputs.qt == 'true' ||
       needs.changes.outputs.localization == 'true' ||
       needs.changes.outputs.icons == 'true' ||
+      needs.changes.outputs.docs == 'true' ||
       needs.changes.outputs.workflow == 'true' ||
       github.event_name == 'merge_group' ||
+      github.event_name == 'workflow_dispatch' ||
       startsWith(github.ref, 'refs/tags/')
     permissions:
       contents: read

@@ -297,10 +297,11 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   the runner image; `freebsd.yml` and `openbsd.yml` are gone, their jobs
   are in `build-and-test.yml`. The required checks are the new names
 - CI builds and runs the test suites on OpenBSD 7.9 (Qt 6, `qmake-qt6`,
-  `gmake`) in a VM on every pull request, next to the FreeBSD job, so the
-  `security/qtpass` port has a build to point at before a release; both BSD
-  jobs live in the "Build and test" workflow with the Ubuntu, Windows and
-  macOS ones, behind the same change detection
+  `gmake`) in a VM, next to the FreeBSD job, so the `security/qtpass` port
+  has a build to point at before a release; both BSD jobs live in the
+  "Build and test" workflow with the Ubuntu, Windows and macOS ones, behind
+  the same change detection (a pull request that touches nothing that
+  builds skips them), and can be started by hand
 - CI workflow and job names follow one scheme: the workflow says what it is
   for (Build and test, Lint, Documentation, Release installers, CodeQL,
   Flatpak, FreeBSD, REUSE, publiccode.yml) and every job says what it does

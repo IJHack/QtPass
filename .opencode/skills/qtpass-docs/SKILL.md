@@ -131,7 +131,7 @@ doxygen Doxyfile
 ls docs/index.html
 ```
 
-CI pins **Doxygen 1.17.0** and treats warnings as errors; a local Doxygen of a
+CI pins **Doxygen 1.18.0** and treats warnings as errors; a local Doxygen of a
 different version may report differently. The `documentation.yml` install step fetches
 the pinned binary from the GitHub release mirror first, then doxygen.nl, with
 retries (doxygen.nl outages previously caused spurious `docs` failures).
