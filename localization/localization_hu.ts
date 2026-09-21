@@ -23,13 +23,11 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
-        <location filename="../src/ui_configdialog.h" line="1182"/>
         <source>Configuration</source>
         <translation>Konfiguráció</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1131"/>
-        <location filename="../src/ui_configdialog.h" line="1294"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
@@ -39,27 +37,22 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
-        <location filename="../src/ui_configdialog.h" line="1265"/>
         <source>Native</source>
         <translation>Natív</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="346"/>
         <location filename="../src/configdialog.ui" line="421"/>
-        <location filename="../src/ui_configdialog.h" line="1219"/>
-        <location filename="../src/ui_configdialog.h" line="1224"/>
         <source>Seconds</source>
         <translation>Másodperc</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="389"/>
-        <location filename="../src/ui_configdialog.h" line="1222"/>
         <source>Hide password</source>
         <translation>Jelszó elrejtése</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="382"/>
-        <location filename="../src/ui_configdialog.h" line="1221"/>
         <source>Hide content</source>
         <translation>Oldal elrejtése</translation>
     </message>
@@ -69,55 +62,46 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="304"/>
-        <location filename="../src/ui_configdialog.h" line="1216"/>
         <source>Clipboard behaviour:</source>
         <translation>Vágólap viselkedése:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="322"/>
-        <location filename="../src/ui_configdialog.h" line="1217"/>
         <source>Use primary selection</source>
         <translation>Elsődleges kijelölés használata</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
-        <location filename="../src/ui_configdialog.h" line="1218"/>
         <source>Autoclear after:</source>
         <translation>Automatikus törlés:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="374"/>
-        <location filename="../src/ui_configdialog.h" line="1220"/>
         <source>Content panel behaviour:</source>
         <translation>A tartalompanel viselkedése:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="398"/>
-        <location filename="../src/ui_configdialog.h" line="1223"/>
         <source>Autoclear panel after:</source>
         <translation>Automatikus törlés panel után:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
-        <location filename="../src/ui_configdialog.h" line="1225"/>
         <source>Use a monospace font</source>
         <translation>Használjon monospace betűtípust</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="457"/>
-        <location filename="../src/ui_configdialog.h" line="1226"/>
         <source>Display the files content as-is</source>
         <translation>A fájlok tartalmának megjelenítése jelenlegi állapotában</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="464"/>
-        <location filename="../src/ui_configdialog.h" line="1227"/>
         <source>No line wrapping</source>
         <translation>Nincs sortörés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="471"/>
-        <location filename="../src/ui_configdialog.h" line="1228"/>
         <source>Show process output</source>
         <translation>Folyamat kimenetének megjelenítése</translation>
     </message>
@@ -131,19 +115,16 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
-        <location filename="../src/ui_configdialog.h" line="1231"/>
         <source>Characters</source>
         <translation>Karakterek</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="630"/>
-        <location filename="../src/ui_configdialog.h" line="1232"/>
         <source>Use characters:</source>
         <translation>Karakterek használata:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="651"/>
-        <location filename="../src/ui_configdialog.h" line="1239"/>
         <source>Select character set for password generation</source>
         <translation>Válassza ki a karakterkészletet a jelszó generálásához</translation>
     </message>
@@ -153,201 +134,165 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
-        <location filename="../src/ui_configdialog.h" line="1234"/>
         <source>Alphabetical</source>
         <translation>Betűrendes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="665"/>
-        <location filename="../src/ui_configdialog.h" line="1235"/>
         <source>Alphanumerical</source>
         <translation>Alfanumerikus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="670"/>
-        <location filename="../src/ui_configdialog.h" line="1236"/>
         <source>Custom</source>
         <translation>Egyedi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="708"/>
-        <location filename="../src/ui_configdialog.h" line="1241"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZÁÉÍÓÖŐÚÜŰabcdefghijklmnopqrstuvwxyzáéíóöőúüű0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="742"/>
-        <location filename="../src/ui_configdialog.h" line="1244"/>
         <source>Include special symbols</source>
         <translation>Speciális szimbólumok beillesztése</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
-        <location filename="../src/ui_configdialog.h" line="1211"/>
         <source>Enable one-time password (OTP) support</source>
         <translation type="unfinished">Egyszer használatos jelszavak (OTP) támogatásának engedélyezése</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
-        <location filename="../src/ui_configdialog.h" line="1187"/>
         <source>General</source>
         <translation type="unfinished">Általános</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
-        <location filename="../src/ui_configdialog.h" line="1189"/>
         <source>Clipboard</source>
         <translation type="unfinished">Vágólap</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
-        <location filename="../src/ui_configdialog.h" line="1191"/>
         <source>Passwords</source>
         <translation type="unfinished">Jelszavak</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
-        <location filename="../src/ui_configdialog.h" line="1205"/>
         <source>Show menu bar</source>
         <translation type="unfinished">Menüsor megjelenítése</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
-        <location filename="../src/ui_configdialog.h" line="1207"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
         <translation type="unfinished">A Ctrl+M a főablakból is megjeleníti vagy elrejti</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
-        <location filename="../src/ui_configdialog.h" line="1212"/>
         <source>Enable content search (pass grep)</source>
         <translation>Tartalomkeresés engedélyezése (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="237"/>
-        <location filename="../src/ui_configdialog.h" line="1214"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Engedélyezze a keresést a jelszófájlok tartalmában. Minden fájl visszafejtését igényli, és nagy tárolók esetén lassú lehet.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="551"/>
-        <location filename="../src/ui_configdialog.h" line="1229"/>
         <source>Password generation:</source>
         <translation>Jelszó generáló:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="562"/>
-        <location filename="../src/ui_configdialog.h" line="1230"/>
         <source>Password length:</source>
         <translation>Jelszó hosszúság:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="655"/>
-        <location filename="../src/ui_configdialog.h" line="1233"/>
         <source>All characters</source>
         <translation>Összes karakter</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
-        <location filename="../src/ui_configdialog.h" line="1268"/>
-        <location filename="../src/ui_configdialog.h" line="1271"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">Válassza ki a gpg végrehajtható fájlját</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1060"/>
         <location filename="../src/configdialog.ui" line="1063"/>
-        <location filename="../src/ui_configdialog.h" line="1275"/>
-        <location filename="../src/ui_configdialog.h" line="1278"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">Válassza ki a git végrehajtható fájlját</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1079"/>
-        <location filename="../src/ui_configdialog.h" line="1281"/>
         <source>Generate</source>
         <translation>Generálás</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1082"/>
-        <location filename="../src/ui_configdialog.h" line="1283"/>
         <source>Generate GPG key pair</source>
         <translation>GPG kulcspár generálása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1115"/>
         <location filename="../src/configdialog.ui" line="1118"/>
-        <location filename="../src/ui_configdialog.h" line="1288"/>
-        <location filename="../src/ui_configdialog.h" line="1291"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">Válassza ki a pwgen végrehajtható fájlját</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1155"/>
         <location filename="../src/configdialog.ui" line="1158"/>
-        <location filename="../src/ui_configdialog.h" line="1297"/>
-        <location filename="../src/ui_configdialog.h" line="1300"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">Válassza ki a pass végrehajtható fájlját</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1212"/>
-        <location filename="../src/ui_configdialog.h" line="1305"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>SSH_AUTH_SOCK felülírása:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1215"/>
-        <location filename="../src/ui_configdialog.h" line="1307"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>Opcionális elérési út az SSH_AUTH_SOCK felülírásához. Hagyja üresen az automatikus felderítéshez gpgconf segítségével (hiba #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1225"/>
-        <location filename="../src/ui_configdialog.h" line="1309"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(automatikus felderítés gpgconf segítségével)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1299"/>
-        <location filename="../src/ui_configdialog.h" line="1311"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">A QtPass által ismert jelszótárolók; válasszon ki egyet a szerkesztéséhez</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1314"/>
-        <location filename="../src/ui_configdialog.h" line="1314"/>
         <source>Add a profile</source>
         <translation type="unfinished">Profil hozzáadása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1332"/>
-        <location filename="../src/ui_configdialog.h" line="1318"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">A kijelölt profil elfelejtése; maga a tároló a lemezen marad</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1378"/>
-        <location filename="../src/ui_configdialog.h" line="1321"/>
         <source>Profile</source>
         <translation type="unfinished">Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1394"/>
-        <location filename="../src/ui_configdialog.h" line="1324"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Profil neve, amely azonosítja ezt a konfigurációs profilt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
-        <location filename="../src/ui_configdialog.h" line="1328"/>
         <source>Path to the password store directory</source>
         <translation>Elérési út a jelszótár könyvtárához</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1435"/>
-        <location filename="../src/ui_configdialog.h" line="1337"/>
         <source>Signing key</source>
         <translation>Aláírókulcs</translation>
     </message>
@@ -357,25 +302,21 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
-        <location filename="../src/ui_configdialog.h" line="1339"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Opcionális: GPG kulcs a .gpg-id fájlok aláírásához az integritás ellenőrzéséhez. Hagyja üresen, kivéve, ha meg kell védenie a felhasználói listát a manipulációtól.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1448"/>
-        <location filename="../src/ui_configdialog.h" line="1341"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">A kulcs teljes, 40 karakteres ujjlenyomata, ahogy a pass megköveteli</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1455"/>
-        <location filename="../src/ui_configdialog.h" line="1343"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
         <translation type="unfinished">A profil Git-beállításai; amíg a profil aktív, ezek lépnek a Beállítások lapon megadottak helyébe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1501"/>
-        <location filename="../src/ui_configdialog.h" line="1348"/>
         <source>Current path</source>
         <translation>Jelenlegi útvonal</translation>
     </message>
@@ -385,7 +326,6 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="732"/>
-        <location filename="../src/ui_configdialog.h" line="1243"/>
         <source>Exclude capital letters</source>
         <translation>Nagybetűk kizárása</translation>
     </message>
@@ -395,19 +335,16 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="749"/>
-        <location filename="../src/ui_configdialog.h" line="1245"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Könnyen megjegyezhető, de kevésbé biztonságos jelszavak létrehozása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="756"/>
-        <location filename="../src/ui_configdialog.h" line="1246"/>
         <source>Exclude numbers</source>
         <translation>Számok kizárása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="872"/>
-        <location filename="../src/ui_configdialog.h" line="1257"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
@@ -417,29 +354,23 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="894"/>
-        <location filename="../src/ui_configdialog.h" line="1259"/>
         <source>Automatically add .gpg-id files</source>
         <translation>.gpg-id fájlok automatikus hozzáadása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="901"/>
         <location filename="../src/configdialog.ui" line="1465"/>
-        <location filename="../src/ui_configdialog.h" line="1260"/>
-        <location filename="../src/ui_configdialog.h" line="1346"/>
         <source>Automatically push</source>
         <translation>Automatikusan leküldés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="908"/>
         <location filename="../src/configdialog.ui" line="1472"/>
-        <location filename="../src/ui_configdialog.h" line="1261"/>
-        <location filename="../src/ui_configdialog.h" line="1347"/>
         <source>Automatically pull</source>
         <translation>Automatikus lekérés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="201"/>
-        <location filename="../src/ui_configdialog.h" line="1209"/>
         <source>Extensions:</source>
         <translation>Kiterjesztések:</translation>
     </message>
@@ -453,43 +384,36 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="134"/>
-        <location filename="../src/ui_configdialog.h" line="1200"/>
         <source>System:</source>
         <translation>Rendszer:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="145"/>
-        <location filename="../src/ui_configdialog.h" line="1201"/>
         <source>Use TrayIcon</source>
         <translation>Használja a Rendszertálca ikont</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="152"/>
-        <location filename="../src/ui_configdialog.h" line="1202"/>
         <source>Start minimized</source>
         <translation>Kezdés minimalizálva</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
-        <location filename="../src/ui_configdialog.h" line="1203"/>
         <source>Hide on close</source>
         <translation>Elrejtés bezárásakor</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
-        <location filename="../src/ui_configdialog.h" line="1204"/>
         <source>Always on top</source>
         <translation>Mindig felül</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="80"/>
-        <location filename="../src/ui_configdialog.h" line="1195"/>
         <source>Programs</source>
         <translation>Programok</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="988"/>
-        <location filename="../src/ui_configdialog.h" line="1262"/>
         <source>Select password storage program:</source>
         <translation>Jelszótároló program kiválasztása:</translation>
     </message>
@@ -499,7 +423,6 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
-        <location filename="../src/ui_configdialog.h" line="1264"/>
         <source>&amp;Use pass</source>
         <translation>&amp;pass használata</translation>
     </message>
@@ -517,49 +440,41 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
-        <location filename="../src/ui_configdialog.h" line="1295"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1170"/>
-        <location filename="../src/ui_configdialog.h" line="1303"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1201"/>
-        <location filename="../src/ui_configdialog.h" line="1304"/>
         <source>Autodetect</source>
         <translation>Automatikus felismerés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="85"/>
-        <location filename="../src/ui_configdialog.h" line="1197"/>
         <source>Profiles</source>
         <translation>Profilok</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1384"/>
-        <location filename="../src/ui_configdialog.h" line="1322"/>
         <source>Name</source>
         <translation>Név</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1401"/>
-        <location filename="../src/ui_configdialog.h" line="1326"/>
         <source>Path</source>
         <translation>Elérési út</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1317"/>
-        <location filename="../src/ui_configdialog.h" line="1316"/>
         <source>Add</source>
         <translation>Hozzáadása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1335"/>
-        <location filename="../src/ui_configdialog.h" line="1320"/>
         <source>Delete</source>
         <translation>Töröl</translation>
     </message>
@@ -569,7 +484,6 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="768"/>
-        <location filename="../src/ui_configdialog.h" line="1247"/>
         <source>Template</source>
         <translation>Sablon</translation>
     </message>
@@ -579,19 +493,16 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="783"/>
-        <location filename="../src/ui_configdialog.h" line="1249"/>
         <source>Use template</source>
         <translation>Sablonhasználat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="790"/>
-        <location filename="../src/ui_configdialog.h" line="1251"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Minden sor megjelenítése ami egy szóval kezdődik, amit egy kettőspont követ jelszómezőben, nem csak a felsoroltakban</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="793"/>
-        <location filename="../src/ui_configdialog.h" line="1253"/>
         <source>Show all fields templated</source>
         <translation>Az összes mező megjelenítése</translation>
     </message>
@@ -605,7 +516,6 @@ e-mail</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
-        <location filename="../src/ui_configdialog.h" line="1356"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; verzió </translation>
     </message>
@@ -803,21 +713,17 @@ Az érték még akkor is el lesz mentve, ahogy be lett írva.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
-        <location filename="../src/ui_configdialog.h" line="1242"/>
         <source>Use PWGen</source>
         <translation>Használja a PWGen-t</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="883"/>
         <location filename="../src/configdialog.ui" line="1458"/>
-        <location filename="../src/ui_configdialog.h" line="1258"/>
-        <location filename="../src/ui_configdialog.h" line="1345"/>
         <source>Use Git</source>
         <translation>Használj Gitet</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="209"/>
-        <location filename="../src/ui_configdialog.h" line="1210"/>
         <source>Use QRencode</source>
         <translation>QRencode használata</translation>
     </message>
@@ -827,15 +733,12 @@ Az érték még akkor is el lesz mentve, ahogy be lett írva.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="997"/>
-        <location filename="../src/ui_configdialog.h" line="1263"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Natí&amp;v Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
         <location filename="../src/configdialog.ui" line="1034"/>
-        <location filename="../src/ui_configdialog.h" line="1193"/>
-        <location filename="../src/ui_configdialog.h" line="1266"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
@@ -846,24 +749,16 @@ Az érték még akkor is el lesz mentve, ahogy be lett írva.</translation>
         <location filename="../src/configdialog.ui" line="1161"/>
         <location filename="../src/configdialog.ui" line="1426"/>
         <location filename="../src/configdialog.ui" line="1517"/>
-        <location filename="../src/ui_configdialog.h" line="1273"/>
-        <location filename="../src/ui_configdialog.h" line="1280"/>
-        <location filename="../src/ui_configdialog.h" line="1293"/>
-        <location filename="../src/ui_configdialog.h" line="1302"/>
-        <location filename="../src/ui_configdialog.h" line="1336"/>
-        <location filename="../src/ui_configdialog.h" line="1355"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1089"/>
-        <location filename="../src/ui_configdialog.h" line="1285"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1105"/>
-        <location filename="../src/ui_configdialog.h" line="1286"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
@@ -872,22 +767,16 @@ Az érték még akkor is el lesz mentve, ahogy be lett írva.</translation>
         <location filename="../src/configdialog.ui" line="1423"/>
         <location filename="../src/configdialog.ui" line="1511"/>
         <location filename="../src/configdialog.ui" line="1514"/>
-        <location filename="../src/ui_configdialog.h" line="1331"/>
-        <location filename="../src/ui_configdialog.h" line="1334"/>
-        <location filename="../src/ui_configdialog.h" line="1350"/>
-        <location filename="../src/ui_configdialog.h" line="1353"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">Válassza ki a jelszótároló mappáját</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="774"/>
-        <location filename="../src/ui_configdialog.h" line="1248"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>A sablonok további mezőket adnak hozzá a jelszógenerálási párbeszédpanelen és a jelszó nézetben.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="805"/>
-        <location filename="../src/ui_configdialog.h" line="1254"/>
         <source>login
 URL
 e-mail</source>
@@ -985,25 +874,21 @@ e-mail</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="99"/>
         <source>Export public key</source>
         <translation>Nyilvános kulcs exportálása</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="100"/>
         <source>Public key</source>
         <translation>Nyilvános kulcs</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="101"/>
         <source>Copy to clipboard</source>
         <translation type="unfinished">Másolás a vágólapra</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="102"/>
         <source>Save to file...</source>
         <translation>Mentés fájlba…</translation>
     </message>
@@ -1238,308 +1123,375 @@ e-mail</translation>
     </message>
 </context>
 <context>
+    <name>GpgIdSigner</name>
+    <message>
+        <location filename="../src/gpgidsigner.cpp" line="75"/>
+        <source>the recipient list is not valid UTF-8</source>
+        <translation type="unfinished">a címzettlista nem érvényes UTF-8</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidsigner.cpp" line="99"/>
+        <source>gpg wrote no signature</source>
+        <translation type="unfinished">a gpg nem írt ki aláírást</translation>
+    </message>
+</context>
+<context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1128"/>
-        <location filename="../src/imitatepass.cpp" line="1265"/>
+        <location filename="../src/imitatepass.cpp" line="1157"/>
+        <location filename="../src/imitatepass.cpp" line="1294"/>
         <source>Updating password-store</source>
         <translation>Jelszó-tároló frissítése</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="192"/>
-        <location filename="../src/imitatepass.cpp" line="830"/>
+        <location filename="../src/imitatepass.cpp" line="202"/>
+        <location filename="../src/imitatepass.cpp" line="859"/>
         <source>Can not edit</source>
         <translation>Nem lehet szerkeszteni</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="422"/>
-        <location filename="../src/imitatepass.cpp" line="597"/>
+        <location filename="../src/imitatepass.cpp" line="449"/>
+        <location filename="../src/imitatepass.cpp" line="626"/>
         <source>Signature for %1 is invalid.</source>
         <translation>A(z) %1 aláírása érvénytelen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="193"/>
-        <location filename="../src/imitatepass.cpp" line="831"/>
+        <location filename="../src/imitatepass.cpp" line="203"/>
+        <location filename="../src/imitatepass.cpp" line="860"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Nem sikerült beolvasni a használandó titkosítási kulcsot, a .gpg-id fájl hiányzik vagy érvénytelen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="415"/>
+        <location filename="../src/imitatepass.cpp" line="440"/>
         <source>GPG signing failed!</source>
         <translation>GPG aláírás sikertelen!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="416"/>
+        <location filename="../src/imitatepass.cpp" line="442"/>
         <source>Failed to sign %1.</source>
         <translation>%1 aláírása sikertelen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="530"/>
+        <location filename="../src/imitatepass.cpp" line="558"/>
         <source>No signing key!</source>
         <translation>Nincs aláíró kulcs!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="531"/>
+        <location filename="../src/imitatepass.cpp" line="559"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Egyik titkos aláírókulcs sem érhető el.
 A felhasználói listát nem fogja tudni módosítani!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="340"/>
-        <location filename="../src/imitatepass.cpp" line="358"/>
-        <location filename="../src/imitatepass.cpp" line="365"/>
-        <location filename="../src/imitatepass.cpp" line="377"/>
-        <location filename="../src/imitatepass.cpp" line="555"/>
+        <location filename="../src/imitatepass.cpp" line="366"/>
+        <location filename="../src/imitatepass.cpp" line="384"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
+        <location filename="../src/imitatepass.cpp" line="584"/>
         <source>Cannot update</source>
         <translation>Nem frissíthető</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="143"/>
+        <location filename="../src/imitatepass.cpp" line="142"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">A Git pull sikertelen: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="186"/>
-        <location filename="../src/imitatepass.cpp" line="421"/>
-        <location filename="../src/imitatepass.cpp" line="747"/>
+        <location filename="../src/imitatepass.cpp" line="190"/>
+        <source>Cannot add</source>
+        <translation type="unfinished">Nem adható hozzá</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="190"/>
+        <location filename="../src/imitatepass.cpp" line="1732"/>
+        <source>%1 already exists.</source>
+        <translation type="unfinished">A(z) %1 már létezik.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="197"/>
+        <location filename="../src/imitatepass.cpp" line="448"/>
+        <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Ellenőrizd a .gpg-id fájl aláírását!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="265"/>
+        <location filename="../src/imitatepass.cpp" line="216"/>
+        <source>Cannot write</source>
+        <translation type="unfinished">Nem írható</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="217"/>
+        <source>Cannot create a temporary directory: %1</source>
+        <translation type="unfinished">Nem hozható létre ideiglenes könyvtár: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="289"/>
         <source>Delete failed</source>
         <translation type="unfinished">A törlés sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="266"/>
+        <location filename="../src/imitatepass.cpp" line="290"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Nem sikerült eltávolítani a(z) %1 linket.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="341"/>
+        <location filename="../src/imitatepass.cpp" line="367"/>
         <source>%1 is not inside the password store.</source>
         <translation type="unfinished">A(z) %1 nincs a jelszótárolón belül.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="366"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Nem sikerült megnyitni .gpg-id íráshoz.</translation>
+        <translation type="vanished">Nem sikerült megnyitni .gpg-id íráshoz.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="378"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished">Nem sikerült írni a(z) %1 fájlt: %2</translation>
+        <translation type="obsolete">Nem sikerült írni a(z) %1 fájlt: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="393"/>
+        <location filename="../src/imitatepass.cpp" line="413"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">A címzettlista kiírva, de a nyilvántartásban nem rögzítve</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="394"/>
+        <location filename="../src/imitatepass.cpp" line="414"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Hogy túllépjen ezen, mentse még egyszer a címzetteket.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="399"/>
+        <location filename="../src/imitatepass.cpp" line="419"/>
         <source>Check selected users!</source>
         <translation>Kiválasztott felhasználók ellenőrzése!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="400"/>
+        <location filename="../src/imitatepass.cpp" line="420"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>A kiválasztott kulcsok egyikében sincs titkos kulcs.
 Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="556"/>
+        <location filename="../src/imitatepass.cpp" line="443"/>
+        <source>Failed to sign %1: %2</source>
+        <translation type="unfinished">A(z) %1 aláírása sikertelen: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="585"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Nem sikerült eltávolítani a régi %1 aláírást.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="671"/>
-        <location filename="../src/imitatepass.cpp" line="687"/>
-        <location filename="../src/imitatepass.cpp" line="697"/>
-        <location filename="../src/imitatepass.cpp" line="712"/>
+        <location filename="../src/imitatepass.cpp" line="700"/>
+        <location filename="../src/imitatepass.cpp" line="716"/>
+        <location filename="../src/imitatepass.cpp" line="726"/>
+        <location filename="../src/imitatepass.cpp" line="741"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Egy korábbi újratitkosításból maradt vissza</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="672"/>
-        <location filename="../src/imitatepass.cpp" line="688"/>
+        <location filename="../src/imitatepass.cpp" line="701"/>
+        <location filename="../src/imitatepass.cpp" line="717"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">A(z) %1 nem szabályos fájl, ezért nem lett visszaállítva. Nézze meg és távolítsa el, majd futtassa újra az újratitkosítást.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="698"/>
+        <location filename="../src/imitatepass.cpp" line="727"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">A(z) %1 a(z) %2 mellett létezik. Mindkettő a bejegyzés titkosított másolata; ellenőrizze, melyikre van szüksége, törölje a másikat, majd futtassa újra az újratitkosítást.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="707"/>
+        <location filename="../src/imitatepass.cpp" line="736"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">A(z) %1 visszaállítva a megszakadt újratitkosítás által hagyott biztonsági mentésből.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="713"/>
+        <location filename="../src/imitatepass.cpp" line="742"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">A(z) %1 hiányzik, és a(z) %2 biztonsági mentését nem sikerült visszanevezni. Nevezze át kézzel, majd futtassa újra az újratitkosítást.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="897"/>
-        <location filename="../src/imitatepass.cpp" line="902"/>
-        <location filename="../src/imitatepass.cpp" line="1238"/>
+        <location filename="../src/imitatepass.cpp" line="926"/>
+        <location filename="../src/imitatepass.cpp" line="931"/>
+        <location filename="../src/imitatepass.cpp" line="1267"/>
         <source>Re-encryption failed</source>
         <translation>Az újratitkosítás sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="898"/>
+        <location filename="../src/imitatepass.cpp" line="927"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>Nem sikerült lecserélni a(z) %1 fájlt. Az eredeti visszaállításra került.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="903"/>
+        <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
         <translation type="unfinished">Nem sikerült lecserélni a(z) %1 fájlt, és az eredetit sem sikerült visszaállítani. Továbbra is megtalálható %2 néven; nevezze át kézzel.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="914"/>
+        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
         <translation type="unfinished">Az újratitkosítás után nem sikerült eltávolítani a(z) %1 biztonsági mentést; biztonságosan törölhető.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="954"/>
+        <location filename="../src/imitatepass.cpp" line="983"/>
         <source>Creating backup commit</source>
         <translation>Biztonsági mentés véglegesítése</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="971"/>
-        <location filename="../src/imitatepass.cpp" line="980"/>
+        <location filename="../src/imitatepass.cpp" line="1000"/>
+        <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>Backup commit failed</source>
         <translation>A biztonsági mentés véglegesítése sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="972"/>
+        <location filename="../src/imitatepass.cpp" line="1001"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Nem sikerült ellenőrizni a git állapotát. Az újratitkosítás megszakítva.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="981"/>
+        <location filename="../src/imitatepass.cpp" line="1010"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Az újratitkosítás megszakadt, mert nem sikerült git biztonsági mentést létrehozni.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1027"/>
+        <location filename="../src/imitatepass.cpp" line="1056"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Már fut egy újratitkosítás</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1035"/>
+        <location filename="../src/imitatepass.cpp" line="1064"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Nem a tárolóhoz tartozó mappa</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1036"/>
+        <location filename="../src/imitatepass.cpp" line="1065"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">A(z) %1 szimbolikus link vagy junction, illetve ilyen mögött található. Amire az mutat, nem része a jelszótárolónak, ezért nem lett újratitkosítva.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1045"/>
+        <location filename="../src/imitatepass.cpp" line="1074"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Új titkosítás a (z) %1 mappából</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1139"/>
+        <location filename="../src/imitatepass.cpp" line="1168"/>
         <source>Git pull failed</source>
         <translation type="unfinished">A Git pull sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1140"/>
+        <location filename="../src/imitatepass.cpp" line="1169"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">A pull után egyesítetlen fájlok maradtak a tárolóban. Oldja fel az ütközést az újratitkosítás előtt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1145"/>
+        <location filename="../src/imitatepass.cpp" line="1174"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">A Git pull sikertelen, a tároló a jelenlegi állapotában lesz újratitkosítva</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1172"/>
+        <location filename="../src/imitatepass.cpp" line="1201"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n bejegyzés kihagyva: a szimbolikus link, junction vagy speciális fájl nem része a tárolónak.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1198"/>
+        <location filename="../src/imitatepass.cpp" line="1227"/>
         <source>GPG ID verification failed</source>
         <translation>GPG-azonosító ellenőrzése sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1199"/>
+        <location filename="../src/imitatepass.cpp" line="1228"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Nem sikerült ellenőrizni a könyvtár .gpg-id fájlját.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1236"/>
+        <location filename="../src/imitatepass.cpp" line="1265"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... és további %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1239"/>
+        <location filename="../src/imitatepass.cpp" line="1268"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n fájlt nem sikerült újratitkosítani:</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1245"/>
+        <location filename="../src/imitatepass.cpp" line="1274"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Újratitkosítás megszakítva: %2 fájlból %1 ellenőrizve, %3 újratitkosítva, %4 sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1546"/>
+        <location filename="../src/imitatepass.cpp" line="1604"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">A Git végrehajtható fájlja nincs beállítva, a git kihagyva</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1680"/>
+        <source>gpg wrote no ciphertext for %1.</source>
+        <translation type="unfinished">A gpg nem írt ki titkosított szöveget a(z) %1 fájlhoz.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1697"/>
+        <source>Cannot create a temporary file next to %1: %2</source>
+        <translation type="unfinished">Nem hozható létre ideiglenes fájl a(z) %1 mellett: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1706"/>
+        <source>Cannot read what gpg wrote for %1.</source>
+        <translation type="unfinished">Nem olvasható be, amit a gpg a(z) %1 fájlhoz kiírt.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1713"/>
+        <location filename="../src/imitatepass.cpp" line="1718"/>
+        <source>Cannot write %1: %2</source>
+        <translation type="unfinished">A(z) %1 nem írható: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1731"/>
+        <source>Failed to replace %1.</source>
+        <translation type="unfinished">Nem sikerült lecserélni a(z) %1 fájlt.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1741"/>
+        <source>%1 was replaced by a link while it was being written.</source>
+        <translation type="unfinished">A(z) %1 fájlt írás közben egy linkre cserélték.</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
         <translation type="vanished">Nem sikerült újra titkosítani %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1254"/>
+        <location filename="../src/imitatepass.cpp" line="1283"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Újratitkosítás befejezve: %1 sikeres, %2 sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1259"/>
+        <location filename="../src/imitatepass.cpp" line="1288"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Újratitkosítás befejezve: %1 fájl újratitkosítva</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1268"/>
+        <location filename="../src/imitatepass.cpp" line="1297"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Nincs push: %n fájl újratitkosítása sikertelen</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1463"/>
-        <location filename="../src/imitatepass.cpp" line="1477"/>
-        <location filename="../src/imitatepass.cpp" line="1484"/>
-        <location filename="../src/imitatepass.cpp" line="1494"/>
+        <location filename="../src/imitatepass.cpp" line="1520"/>
+        <location filename="../src/imitatepass.cpp" line="1534"/>
+        <location filename="../src/imitatepass.cpp" line="1541"/>
+        <location filename="../src/imitatepass.cpp" line="1552"/>
         <source>Copy failed</source>
         <translation type="unfinished">A másolás sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1464"/>
-        <location filename="../src/imitatepass.cpp" line="1478"/>
-        <location filename="../src/imitatepass.cpp" line="1485"/>
-        <location filename="../src/imitatepass.cpp" line="1495"/>
+        <location filename="../src/imitatepass.cpp" line="1521"/>
+        <location filename="../src/imitatepass.cpp" line="1535"/>
+        <location filename="../src/imitatepass.cpp" line="1542"/>
+        <location filename="../src/imitatepass.cpp" line="1553"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">%1 másolása ide: %2 sikertelen.</translation>
     </message>
@@ -1552,7 +1504,6 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
-        <location filename="../src/ui_importkeydialog.h" line="121"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
         <translation>Importáljon egy GPG nyilvános kulcsot fájlból, vagy illessze be alább. A kulcsnak ASCII-armored formátumban kell lennie.</translation>
     </message>
@@ -1562,7 +1513,6 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
-        <location filename="../src/ui_importkeydialog.h" line="123"/>
         <source>From clipboard</source>
         <translation type="unfinished">Vágólapról</translation>
     </message>
@@ -1573,25 +1523,21 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="41"/>
-        <location filename="../src/ui_importkeydialog.h" line="120"/>
         <source>Import GPG key</source>
         <translation>GPG-kulcs importálása</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
-        <location filename="../src/ui_importkeydialog.h" line="122"/>
         <source>From file...</source>
         <translation>Fájlból…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
-        <location filename="../src/ui_importkeydialog.h" line="124"/>
         <source>Paste an ASCII-armored GPG key here...</source>
         <translation>Illesszen be ide egy ASCII-armored GPG-kulcsot…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
-        <location filename="../src/ui_importkeydialog.h" line="125"/>
         <source>Import</source>
         <translation>Importálás</translation>
     </message>
@@ -1694,67 +1640,56 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <name>KeygenDialog</name>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
-        <location filename="../src/ui_keygendialog.h" line="236"/>
         <source>Generate GnuPG keypair</source>
         <translation>GnuPG kulcspár generálása</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
-        <location filename="../src/ui_keygendialog.h" line="237"/>
         <source>Generate a new key pair</source>
         <translation>Új kulcspár létrehozása</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
-        <location filename="../src/ui_keygendialog.h" line="238"/>
         <source>Email</source>
         <translation>E-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
-        <location filename="../src/ui_keygendialog.h" line="239"/>
         <source>Name</source>
         <translation>Név</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
-        <location filename="../src/ui_keygendialog.h" line="240"/>
         <source>Passphrase</source>
         <translation>Jelszó</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
-        <location filename="../src/ui_keygendialog.h" line="242"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
         <translation type="unfinished">Aki megszerzi a titkos kulcs fájlját, onnantól minden jelszót elolvashat, anélkül hogy bármit is kérnének tőle.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
-        <location filename="../src/ui_keygendialog.h" line="244"/>
         <source>No passphrase: store the private key unprotected</source>
         <translation type="unfinished">Nincs jelszó: a titkos kulcs tárolása védelem nélkül</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
-        <location filename="../src/ui_keygendialog.h" line="245"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A jelszó hosszára nincs korlátozás, és gondosan kell megválasztani. Biztonsági szempontból a privát kulcs feloldására szolgáló jelszó a GnuPG (és más nyilvános kulcsú titkosító rendszerek) egyik leggyengébb pontja, mivel ez az egyetlen védelem, amivel rendelkezel, ha egy másik személy megszerzi a privát kulcsodat. &lt;br/&gt;Ideális esetben a jelszó nem tartalmazhat szótári szavakat, és keverednie kell benne az ábécé karaktereinek kis- és nagybetűivel, valamint nem ábécés karakterekkel is.&lt;br/&gt;Egy jó jelszó elengedhetetlen a GnuPG biztonságos használatához.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="220"/>
-        <location filename="../src/ui_keygendialog.h" line="246"/>
         <source>Repeat pass</source>
         <translation>Ismételt menet</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="237"/>
-        <location filename="../src/ui_keygendialog.h" line="247"/>
         <source>Expert</source>
         <translation>Profi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="256"/>
-        <location filename="../src/ui_keygendialog.h" line="248"/>
         <source>Template contents will be set based on GPG version.</source>
         <translation>A sablon tartalma a GPG verzió alapján lesz beállítva.</translation>
     </message>
@@ -1792,7 +1727,6 @@ Lejárat-dátum: 0
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="269"/>
-        <location filename="../src/ui_keygendialog.h" line="249"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Szakértői lehetőségekért tekintse meg a &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG kézikönyvet&lt;/a&gt;</translation>
     </message>
@@ -1836,7 +1770,6 @@ Lejárat-dátum: 0
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <location filename="../src/ui_mainwindow.h" line="373"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
@@ -1844,61 +1777,51 @@ Lejárat-dátum: 0
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="824"/>
         <location filename="../src/mainwindow.cpp" line="1044"/>
-        <location filename="../src/ui_mainwindow.h" line="448"/>
         <source>Search password</source>
         <translation>Jelszó keresése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
-        <location filename="../src/ui_mainwindow.h" line="476"/>
         <source>&amp;File</source>
         <translation type="unfinished">&amp;Fájl</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
-        <location filename="../src/ui_mainwindow.h" line="477"/>
         <source>&amp;Store</source>
         <translation type="unfinished">&amp;Tároló</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
-        <location filename="../src/ui_mainwindow.h" line="478"/>
         <source>S&amp;ettings</source>
         <translation type="unfinished">&amp;Beállítások</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="373"/>
-        <location filename="../src/ui_mainwindow.h" line="479"/>
         <source>&amp;Help</source>
         <translation type="unfinished">&amp;Súgó</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="472"/>
-        <location filename="../src/ui_mainwindow.h" line="402"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="477"/>
-        <location filename="../src/ui_mainwindow.h" line="404"/>
         <source>Update</source>
         <translation>Frissítés</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="480"/>
-        <location filename="../src/ui_mainwindow.h" line="406"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="513"/>
-        <location filename="../src/ui_mainwindow.h" line="421"/>
         <source>Configuration</source>
         <translation>Konfiguráció</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="510"/>
-        <location filename="../src/ui_mainwindow.h" line="419"/>
         <source>Config</source>
         <translation>Konfig</translation>
     </message>
@@ -1952,7 +1875,6 @@ Lejárat-dátum: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
-        <location filename="../src/ui_mainwindow.h" line="446"/>
         <source>Select profile</source>
         <translation>Válassza ki a profilt</translation>
     </message>
@@ -1962,145 +1884,121 @@ Lejárat-dátum: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
-        <location filename="../src/ui_mainwindow.h" line="450"/>
         <source>Search inside password content (pass grep)</source>
         <translation>Keresés a jelszó tartalmában (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
-        <location filename="../src/ui_mainwindow.h" line="452"/>
         <source>⌕</source>
         <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
-        <location filename="../src/ui_mainwindow.h" line="454"/>
         <source>Content search toggle</source>
         <translation>Tartalomkeresés kapcsoló</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
-        <location filename="../src/ui_mainwindow.h" line="457"/>
         <source>Toggle content search mode to search inside password files</source>
         <translation>Tartalomkeresési mód be- és kikapcsolása jelszófájlokban való kereséshez</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
-        <location filename="../src/ui_mainwindow.h" line="460"/>
         <source>Case-insensitive search</source>
         <translation>Kis- és nagybetűre nem érzékeny keresés</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
-        <location filename="../src/ui_mainwindow.h" line="462"/>
         <source>Aa</source>
         <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
-        <location filename="../src/ui_mainwindow.h" line="464"/>
         <source>Case-insensitive toggle</source>
         <translation>Kis- és nagybetűre nem érzékeny váltás</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
-        <location filename="../src/ui_mainwindow.h" line="467"/>
         <source>Toggle case-insensitive content search</source>
         <translation>Kis- és nagybetűket nem megkülönböztető tartalomkeresés be- és kikapcsolása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
-        <location filename="../src/ui_mainwindow.h" line="470"/>
         <source>Results</source>
         <translation>Eredmények</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
-        <location filename="../src/ui_mainwindow.h" line="471"/>
         <source>Welcome to QtPass</source>
         <translation>Üdvözöljük a QtPass-ban</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="499"/>
-        <location filename="../src/ui_mainwindow.h" line="412"/>
         <source>Show &amp;menu bar</source>
         <translation type="unfinished">&amp;Menüsor megjelenítése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="502"/>
-        <location filename="../src/ui_mainwindow.h" line="414"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
         <translation type="unfinished">A menüsor elrejtése vagy megjelenítése; a Ctrl+M visszahozza</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
-        <location filename="../src/ui_mainwindow.h" line="417"/>
         <source>Ctrl+M</source>
         <translation type="unfinished">Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
-        <location filename="../src/ui_mainwindow.h" line="424"/>
         <source>Ctrl+,</source>
         <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="524"/>
-        <location filename="../src/ui_mainwindow.h" line="426"/>
         <source>&amp;Close window</source>
         <translation type="unfinished">&amp;Ablak bezárása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
-        <location filename="../src/ui_mainwindow.h" line="428"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
         <translation type="unfinished">Bezárja az ablakot; az „Elrejtés bezárásakor” beállítással a QtPass a tálcán marad</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
-        <location filename="../src/ui_mainwindow.h" line="431"/>
         <source>Ctrl+W</source>
         <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="535"/>
-        <location filename="../src/ui_mainwindow.h" line="433"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">&amp;Kilépés</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
-        <location filename="../src/ui_mainwindow.h" line="435"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
-        <location filename="../src/ui_mainwindow.h" line="437"/>
         <source>&amp;FAQ</source>
         <translation type="unfinished">&amp;GYIK</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="549"/>
-        <location filename="../src/ui_mainwindow.h" line="439"/>
         <source>Open the frequently asked questions on qtpass.org</source>
         <translation type="unfinished">A gyakran ismételt kérdések megnyitása a qtpass.org oldalon</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="552"/>
-        <location filename="../src/ui_mainwindow.h" line="442"/>
         <source>F1</source>
         <translation type="unfinished">F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="557"/>
-        <location filename="../src/ui_mainwindow.h" line="444"/>
         <source>&amp;About QtPass</source>
         <translation type="unfinished">A QtPass &amp;névjegye</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="565"/>
-        <location filename="../src/ui_mainwindow.h" line="445"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished">A &amp;Qt névjegye</translation>
     </message>
@@ -2116,14 +2014,11 @@ Lejárat-dátum: 0
         <location filename="../src/mainwindow.ui" line="423"/>
         <location filename="../src/mainwindow.ui" line="426"/>
         <location filename="../src/mainwindow.cpp" line="1647"/>
-        <location filename="../src/ui_mainwindow.h" line="374"/>
-        <location filename="../src/ui_mainwindow.h" line="376"/>
         <source>Add password</source>
         <translation>Jelszóhozzáadás</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="429"/>
-        <location filename="../src/ui_mainwindow.h" line="379"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
@@ -2131,8 +2026,6 @@ Lejárat-dátum: 0
         <location filename="../src/mainwindow.ui" line="434"/>
         <location filename="../src/mainwindow.ui" line="437"/>
         <location filename="../src/mainwindow.cpp" line="1646"/>
-        <location filename="../src/ui_mainwindow.h" line="381"/>
-        <location filename="../src/ui_mainwindow.h" line="383"/>
         <source>Add folder</source>
         <translation>Mappa hozzáadása</translation>
     </message>
@@ -2140,8 +2033,6 @@ Lejárat-dátum: 0
         <location filename="../src/mainwindow.ui" line="442"/>
         <location filename="../src/mainwindow.ui" line="445"/>
         <location filename="../src/mainwindow.cpp" line="1654"/>
-        <location filename="../src/ui_mainwindow.h" line="385"/>
-        <location filename="../src/ui_mainwindow.h" line="387"/>
         <source>Edit</source>
         <translation>Szerkesztése</translation>
     </message>
@@ -2149,32 +2040,26 @@ Lejárat-dátum: 0
         <location filename="../src/mainwindow.ui" line="450"/>
         <location filename="../src/mainwindow.ui" line="453"/>
         <location filename="../src/mainwindow.cpp" line="1668"/>
-        <location filename="../src/ui_mainwindow.h" line="389"/>
-        <location filename="../src/ui_mainwindow.h" line="391"/>
         <source>Delete</source>
         <translation>Töröl</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="458"/>
-        <location filename="../src/ui_mainwindow.h" line="393"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="461"/>
-        <location filename="../src/ui_mainwindow.h" line="395"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>OTP generálása és másolás a vágólapra</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="464"/>
-        <location filename="../src/ui_mainwindow.h" line="398"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="469"/>
-        <location filename="../src/ui_mainwindow.h" line="400"/>
         <source>Push</source>
         <translation>Feltöltés</translation>
     </message>
@@ -2189,13 +2074,11 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/mainwindow.ui" line="485"/>
         <location filename="../src/mainwindow.cpp" line="1648"/>
-        <location filename="../src/ui_mainwindow.h" line="408"/>
         <source>Users</source>
         <translation>Felhasználók</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="488"/>
-        <location filename="../src/ui_mainwindow.h" line="410"/>
         <source>Manage who can read password in folder</source>
         <translation>Jelszó olvasásának engedélyezése a mappában</translation>
     </message>
@@ -2592,7 +2475,6 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="319"/>
-        <location filename="../src/ui_mainwindow.h" line="472"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -2614,82 +2496,82 @@ Folytatja?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="193"/>
+        <location filename="../src/pass.cpp" line="192"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished">A beállított GPG home könyvtár (%1) nem létezik, az alapértelmezett kulcstartó lesz használva</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="201"/>
+        <location filename="../src/pass.cpp" line="200"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished">A beállított GPG home könyvtár (%1) nem létezik, a környezeti GNUPGHOME (%2) lesz használva</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="221"/>
+        <location filename="../src/pass.cpp" line="220"/>
         <source>Invalid password length</source>
         <translation>Érvénytelen jelszóhossz</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="222"/>
+        <location filename="../src/pass.cpp" line="221"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>Nem lehet nulla hosszúságú jelszót generálni.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="260"/>
+        <location filename="../src/pass.cpp" line="259"/>
         <source>No characters chosen</source>
         <translation>Nincsenek kiválasztott karakterek</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="261"/>
+        <location filename="../src/pass.cpp" line="260"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Nem sikerült jelszót generálni, nincsenek karakterek beállítva a konfigurációban!</translation>
     </message>
     <message>
+        <location filename="../src/pass.cpp" line="450"/>
         <location filename="../src/pass.cpp" line="451"/>
-        <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">Nincs beállítva GPG végrehajtható fájl</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="557"/>
-        <location filename="../src/pass.cpp" line="576"/>
+        <location filename="../src/pass.cpp" line="556"/>
+        <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>A titkosítás sikertelen: a GPG-kulcs lejárt. Kérjük, újítsa meg vagy cserélje ki.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="562"/>
-        <location filename="../src/pass.cpp" line="581"/>
+        <location filename="../src/pass.cpp" line="561"/>
+        <location filename="../src/pass.cpp" line="580"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>A titkosítás sikertelen: a GPG-kulcsot visszavonták.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="566"/>
-        <location filename="../src/pass.cpp" line="586"/>
+        <location filename="../src/pass.cpp" line="565"/>
+        <location filename="../src/pass.cpp" line="585"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>A titkosítás sikertelen: a címzett GPG-kulcsa nem található vagy érvénytelen. Ellenőrizze, hogy a .gpg-id fájlban szereplő kulcsazonosító helyes-e, és importálva van-e.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="570"/>
-        <location filename="../src/pass.cpp" line="590"/>
+        <location filename="../src/pass.cpp" line="569"/>
+        <location filename="../src/pass.cpp" line="589"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>A titkosítás sikertelen. Ellenőrizze, hogy a GPG-kulcsa érvényes-e.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="878"/>
+        <location filename="../src/pass.cpp" line="877"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">A(z) %1 szimbolikus link vagy junction, illetve ilyen mögött található. Amire az mutat, nem része a jelszótárolónak, és érintetlen marad.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="886"/>
+        <location filename="../src/pass.cpp" line="885"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Nem része a tárolónak</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="967"/>
+        <location filename="../src/pass.cpp" line="966"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">A(z) %1 címzettlista nem ellenőrizhető az aláírókulccsal, ezért semmi sincs előre kijelölve: a mentés bármit aláírna, ami a listában van. Válassza ki a címzetteket saját maga; az OK új listát ír ki és ír alá.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="995"/>
+        <location filename="../src/pass.cpp" line="994"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Semmi sincs előre kijelölve: a mentés bármit aláírna, ami a listában van. Válassza ki a címzetteket saját maga.</translation>
     </message>
@@ -2700,62 +2582,51 @@ Folytatja?</translation>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
         <location filename="../src/passworddialog.cpp" line="271"/>
-        <location filename="../src/ui_passworddialog.h" line="247"/>
-        <location filename="../src/ui_passworddialog.h" line="258"/>
         <source>Password</source>
         <translation>Jelszó</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
-        <location filename="../src/ui_passworddialog.h" line="248"/>
         <source>Folder</source>
         <translation type="unfinished">Mappa</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
-        <location filename="../src/ui_passworddialog.h" line="250"/>
         <source>The folder of the password store the new entry goes into</source>
         <translation type="unfinished">A jelszótároló mappája, amelybe az új bejegyzés kerül</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
-        <location filename="../src/ui_passworddialog.h" line="252"/>
         <source>Name</source>
         <translation type="unfinished">Név</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
-        <location filename="../src/ui_passworddialog.h" line="254"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
         <translation type="unfinished">A bejegyzés neve, ahogy a fában megjelenik; a / jel almappába teszi</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
-        <location filename="../src/ui_passworddialog.h" line="256"/>
         <source>e.g. github.com or work/vpn</source>
         <translation type="unfinished">pl. github.com vagy munka/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
-        <location filename="../src/ui_passworddialog.h" line="259"/>
         <source>Generate</source>
         <translation>Generálás</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
-        <location filename="../src/ui_passworddialog.h" line="260"/>
         <source>Show password</source>
         <translation>Jelszó megjelenítése</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <location filename="../src/ui_passworddialog.h" line="261"/>
         <source>Character set:</source>
         <translation>Karakterkészlet:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <location filename="../src/ui_passworddialog.h" line="262"/>
         <source>All characters</source>
         <translation>Összes karakter</translation>
     </message>
@@ -2769,37 +2640,31 @@ Folytatja?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
-        <location filename="../src/ui_passworddialog.h" line="263"/>
         <source>Alphabetical</source>
         <translation>Betűrendes</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="179"/>
-        <location filename="../src/ui_passworddialog.h" line="264"/>
         <source>Alphanumerical</source>
         <translation>Alfanumerikus</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="184"/>
-        <location filename="../src/ui_passworddialog.h" line="265"/>
         <source>Custom</source>
         <translation>Egyedi</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="198"/>
-        <location filename="../src/ui_passworddialog.h" line="267"/>
         <source>Length:</source>
         <translation>Hossz:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="219"/>
-        <location filename="../src/ui_passworddialog.h" line="268"/>
         <source>Template:</source>
         <translation type="unfinished">Sablon:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
-        <location filename="../src/ui_passworddialog.h" line="270"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
         <translation type="unfinished">Mezősablon a tároló .templates fájljából. A Ctrl+T a következőre vált.</translation>
     </message>
@@ -2889,7 +2754,7 @@ Folytatja?</translation>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="37"/>
+        <location filename="../src/profileinit.cpp" line="36"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">A(z) %1 nem hozható létre.</translation>
     </message>
@@ -2906,19 +2771,22 @@ Folytatja?</translation>
         <translation type="unfinished">Nincs címzett kiválasztva; a(z) %1 nem lett kiírva.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="104"/>
-        <location filename="../src/profileinit.cpp" line="109"/>
-        <source>Could not write %1: %2</source>
-        <translation type="unfinished">A(z) %1 nem írható: %2</translation>
+        <location filename="../src/profileinit.cpp" line="129"/>
+        <source>Could not sign %1 with %2.</source>
+        <translation type="unfinished">A(z) %1 aláírása a(z) %2 kulccsal sikertelen.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="129"/>
+        <source>Could not write %1: %2</source>
+        <translation type="obsolete">A(z) %1 nem írható: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="131"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">A(z) %1 aláírása a(z) %2 kulccsal sikertelen: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="149"/>
-        <location filename="../src/profileinit.cpp" line="178"/>
+        <location filename="../src/profileinit.cpp" line="151"/>
+        <location filename="../src/profileinit.cpp" line="180"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">A git %1 parancs sikertelen a(z) %2 mappában: %3</translation>
     </message>
@@ -3175,12 +3043,12 @@ Folytatja?</translation>
         <translation type="vanished">kényszerített felülírás?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="376"/>
+        <location filename="../src/storemodel.cpp" line="367"/>
         <source>Force overwrite?</source>
         <translation>Kényszerített felülírás?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="377"/>
+        <location filename="../src/storemodel.cpp" line="368"/>
         <source>overwrite %1 with %2?</source>
         <translation>felülírja a(z) %1 részt %2-vel?</translation>
     </message>
@@ -3298,7 +3166,6 @@ parancsokat, majd kapcsolja be a Gitet a Beállításokban.</translation>
     <name>UsersDialog</name>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
-        <location filename="../src/ui_usersdialog.h" line="111"/>
         <source>Read access users</source>
         <translation>Olvasási hozzáférésű felhasználók</translation>
     </message>
@@ -3316,7 +3183,6 @@ A piros bejegyzések érvénytelenek, nem fog tudni titkosítani velük.</transl
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
-        <location filename="../src/ui_usersdialog.h" line="112"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: On OK every password in this folder and its subfolders is re-encrypted to the selected users; this can take a while.
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
@@ -3330,25 +3196,21 @@ Az [ÉRVÉNYTELEN] és [LEJÁRT] bejegyzésekhez nem lehet titkosítani; a [RÉS
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
-        <location filename="../src/ui_usersdialog.h" line="117"/>
         <source>Search for users</source>
         <translation>Felhasználók keresése</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
-        <location filename="../src/ui_usersdialog.h" line="118"/>
         <source>Show unusable keys</source>
         <translation>Nem használható kulcsok megjelenítése</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
-        <location filename="../src/ui_usersdialog.h" line="119"/>
         <source>Import key...</source>
         <translation>Kulcs importálása…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
-        <location filename="../src/ui_usersdialog.h" line="121"/>
         <source>Import a GPG key from file or clipboard</source>
         <translation>GPG-kulcs importálása fájlból vagy vágólapról</translation>
     </message>
@@ -3391,6 +3253,39 @@ Az [ÉRVÉNYTELEN] és [LEJÁRT] bejegyzésekhez nem lehet titkosítani; a [RÉS
         <location filename="../src/usersdialog.cpp" line="369"/>
         <source>[PARTIAL] </source>
         <translation>[RÉSZLEGES] </translation>
+    </message>
+</context>
+<context>
+    <name>Util</name>
+    <message>
+        <location filename="../src/util.cpp" line="692"/>
+        <source>Cannot create a temporary file next to %1: %2</source>
+        <translation type="unfinished">Nem hozható létre ideiglenes fájl a(z) %1 mellett: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="709"/>
+        <source>Cannot write %1: %2</source>
+        <translation type="unfinished">A(z) %1 nem írható: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="718"/>
+        <source>Failed to replace %1.</source>
+        <translation type="unfinished">Nem sikerült lecserélni a(z) %1 fájlt.</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="722"/>
+        <source>%1 already exists.</source>
+        <translation type="unfinished">A(z) %1 már létezik.</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="724"/>
+        <source>Failed to write %1.</source>
+        <translation type="unfinished">Nem sikerült írni a(z) %1 fájlt.</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="734"/>
+        <source>%1 was replaced by a link while it was written.</source>
+        <translation type="unfinished">A(z) %1 fájlt írás közben egy linkre cserélték.</translation>
     </message>
 </context>
 </TS>

@@ -23,7 +23,6 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
-        <location filename="../src/ui_configdialog.h" line="1182"/>
         <source>Configuration</source>
         <translation>Yapılandırma</translation>
     </message>
@@ -33,75 +32,62 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="304"/>
-        <location filename="../src/ui_configdialog.h" line="1216"/>
         <source>Clipboard behaviour:</source>
         <translation>Pano davranışı:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="322"/>
-        <location filename="../src/ui_configdialog.h" line="1217"/>
         <source>Use primary selection</source>
         <translation>Birincil seçimi kullan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="329"/>
-        <location filename="../src/ui_configdialog.h" line="1218"/>
         <source>Autoclear after:</source>
         <translation>Sonrasında otomatik temizle:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="346"/>
         <location filename="../src/configdialog.ui" line="421"/>
-        <location filename="../src/ui_configdialog.h" line="1219"/>
-        <location filename="../src/ui_configdialog.h" line="1224"/>
         <source>Seconds</source>
         <translation>Saniye</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="374"/>
-        <location filename="../src/ui_configdialog.h" line="1220"/>
         <source>Content panel behaviour:</source>
         <translation>İçerik paneli davranışı:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="382"/>
-        <location filename="../src/ui_configdialog.h" line="1221"/>
         <source>Hide content</source>
         <translation>İçeriği gizle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="389"/>
-        <location filename="../src/ui_configdialog.h" line="1222"/>
         <source>Hide password</source>
         <translation>Parolayı gizle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="398"/>
-        <location filename="../src/ui_configdialog.h" line="1223"/>
         <source>Autoclear panel after:</source>
         <translation>Sonrasında paneli otomatik temizle:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
-        <location filename="../src/ui_configdialog.h" line="1225"/>
         <source>Use a monospace font</source>
         <translation>Eş aralıklı yazı tipi kullan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="457"/>
-        <location filename="../src/ui_configdialog.h" line="1226"/>
         <source>Display the files content as-is</source>
         <translation>Dosya içeriğini olduğu gibi göster</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="464"/>
-        <location filename="../src/ui_configdialog.h" line="1227"/>
         <source>No line wrapping</source>
         <translation>Satırlar kaydırılmasın</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="471"/>
-        <location filename="../src/ui_configdialog.h" line="1228"/>
         <source>Show process output</source>
         <translation>İşlem çıktısını göster</translation>
     </message>
@@ -115,19 +101,16 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
-        <location filename="../src/ui_configdialog.h" line="1231"/>
         <source>Characters</source>
         <translation>Karakterler</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="630"/>
-        <location filename="../src/ui_configdialog.h" line="1232"/>
         <source>Use characters:</source>
         <translation>Karakterleri kullan:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="651"/>
-        <location filename="../src/ui_configdialog.h" line="1239"/>
         <source>Select character set for password generation</source>
         <translation>Parola oluşturmak için karakter setini seçin</translation>
     </message>
@@ -137,37 +120,31 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="660"/>
-        <location filename="../src/ui_configdialog.h" line="1234"/>
         <source>Alphabetical</source>
         <translation>Alfabetik</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="665"/>
-        <location filename="../src/ui_configdialog.h" line="1235"/>
         <source>Alphanumerical</source>
         <translation>Alfanumerik</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="670"/>
-        <location filename="../src/ui_configdialog.h" line="1236"/>
         <source>Custom</source>
         <translation>Özel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="708"/>
-        <location filename="../src/ui_configdialog.h" line="1241"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZÇĞİÖŞÜabcdefghijklmnopqrstuvwxyzçğıöşü0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
-        <location filename="../src/ui_configdialog.h" line="1242"/>
         <source>Use PWGen</source>
         <translation>PWGen&apos;i kullan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="732"/>
-        <location filename="../src/ui_configdialog.h" line="1243"/>
         <source>Exclude capital letters</source>
         <translation>Büyük harfleri hariç tut</translation>
     </message>
@@ -177,67 +154,54 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="742"/>
-        <location filename="../src/ui_configdialog.h" line="1244"/>
         <source>Include special symbols</source>
         <translation>Özel sembolleri dahil et</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="749"/>
-        <location filename="../src/ui_configdialog.h" line="1245"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Ezberlemesi kolay ancak daha az güvenli parolalar oluştur</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="756"/>
-        <location filename="../src/ui_configdialog.h" line="1246"/>
         <source>Exclude numbers</source>
         <translation>Sayıları hariç tut</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="872"/>
-        <location filename="../src/ui_configdialog.h" line="1257"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="883"/>
         <location filename="../src/configdialog.ui" line="1458"/>
-        <location filename="../src/ui_configdialog.h" line="1258"/>
-        <location filename="../src/ui_configdialog.h" line="1345"/>
         <source>Use Git</source>
         <translation>Git&apos;i kullan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="894"/>
-        <location filename="../src/ui_configdialog.h" line="1259"/>
         <source>Automatically add .gpg-id files</source>
         <translation>.gpg-id dosyalarını otomatik olarak ekle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="901"/>
         <location filename="../src/configdialog.ui" line="1465"/>
-        <location filename="../src/ui_configdialog.h" line="1260"/>
-        <location filename="../src/ui_configdialog.h" line="1346"/>
         <source>Automatically push</source>
         <translation>Otomatik olarak gönder</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="908"/>
         <location filename="../src/configdialog.ui" line="1472"/>
-        <location filename="../src/ui_configdialog.h" line="1261"/>
-        <location filename="../src/ui_configdialog.h" line="1347"/>
         <source>Automatically pull</source>
         <translation>Otomatik olarak al</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="201"/>
-        <location filename="../src/ui_configdialog.h" line="1209"/>
         <source>Extensions:</source>
         <translation>Eklentiler:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="209"/>
-        <location filename="../src/ui_configdialog.h" line="1210"/>
         <source>Use QRencode</source>
         <translation>QRencode kullan</translation>
     </message>
@@ -247,143 +211,118 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
-        <location filename="../src/ui_configdialog.h" line="1211"/>
         <source>Enable one-time password (OTP) support</source>
         <translation>Tek kullanımlık parola (OTP) desteğini etkinleştir</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="234"/>
-        <location filename="../src/ui_configdialog.h" line="1212"/>
         <source>Enable content search (pass grep)</source>
         <translation>İçerik aramayı etkinleştir (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="237"/>
-        <location filename="../src/ui_configdialog.h" line="1214"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Parola dosyası içeriklerinde aramaya izin ver. Her dosyanın şifresinin çözülmesini gerektirir ve büyük depolarda yavaş olabilir.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="134"/>
-        <location filename="../src/ui_configdialog.h" line="1200"/>
         <source>System:</source>
         <translation>Sistem:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="145"/>
-        <location filename="../src/ui_configdialog.h" line="1201"/>
         <source>Use TrayIcon</source>
         <translation>Sistem Tepsisi Simgesini Kullan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="152"/>
-        <location filename="../src/ui_configdialog.h" line="1202"/>
         <source>Start minimized</source>
         <translation>Simge durumunda başla</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
-        <location filename="../src/ui_configdialog.h" line="1203"/>
         <source>Hide on close</source>
         <translation>Kapatıldığında gizle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
-        <location filename="../src/ui_configdialog.h" line="1204"/>
         <source>Always on top</source>
         <translation>Her zaman üstte</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="80"/>
-        <location filename="../src/ui_configdialog.h" line="1195"/>
         <source>Programs</source>
         <translation>Programlar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="988"/>
-        <location filename="../src/ui_configdialog.h" line="1262"/>
         <source>Select password storage program:</source>
         <translation>Parola saklama programını seçin:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="997"/>
-        <location filename="../src/ui_configdialog.h" line="1263"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>&amp;Yerel Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
-        <location filename="../src/ui_configdialog.h" line="1264"/>
         <source>&amp;Use pass</source>
         <translation>pass&apos;i &amp;kullan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
-        <location filename="../src/ui_configdialog.h" line="1265"/>
         <source>Native</source>
         <translation>Yerel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
         <location filename="../src/configdialog.ui" line="1034"/>
-        <location filename="../src/ui_configdialog.h" line="1193"/>
-        <location filename="../src/ui_configdialog.h" line="1266"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
-        <location filename="../src/ui_configdialog.h" line="1187"/>
         <source>General</source>
         <translation type="unfinished">Genel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
-        <location filename="../src/ui_configdialog.h" line="1189"/>
         <source>Clipboard</source>
         <translation type="unfinished">Pano</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
-        <location filename="../src/ui_configdialog.h" line="1191"/>
         <source>Passwords</source>
         <translation type="unfinished">Parolalar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="173"/>
-        <location filename="../src/ui_configdialog.h" line="1205"/>
         <source>Show menu bar</source>
         <translation type="unfinished">Menü çubuğunu göster</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="176"/>
-        <location filename="../src/ui_configdialog.h" line="1207"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
         <translation type="unfinished">Ctrl+M de ana pencerede gösterir veya gizler</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="551"/>
-        <location filename="../src/ui_configdialog.h" line="1229"/>
         <source>Password generation:</source>
         <translation>Parola Oluşturma:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="562"/>
-        <location filename="../src/ui_configdialog.h" line="1230"/>
         <source>Password length:</source>
         <translation>Parola Uzunluğu:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="655"/>
-        <location filename="../src/ui_configdialog.h" line="1233"/>
         <source>All characters</source>
         <translation>Tüm Karakterler</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1047"/>
         <location filename="../src/configdialog.ui" line="1050"/>
-        <location filename="../src/ui_configdialog.h" line="1268"/>
-        <location filename="../src/ui_configdialog.h" line="1271"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">gpg çalıştırılabilir dosyasını seçin</translation>
     </message>
@@ -394,156 +333,124 @@
         <location filename="../src/configdialog.ui" line="1161"/>
         <location filename="../src/configdialog.ui" line="1426"/>
         <location filename="../src/configdialog.ui" line="1517"/>
-        <location filename="../src/ui_configdialog.h" line="1273"/>
-        <location filename="../src/ui_configdialog.h" line="1280"/>
-        <location filename="../src/ui_configdialog.h" line="1293"/>
-        <location filename="../src/ui_configdialog.h" line="1302"/>
-        <location filename="../src/ui_configdialog.h" line="1336"/>
-        <location filename="../src/ui_configdialog.h" line="1355"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1060"/>
         <location filename="../src/configdialog.ui" line="1063"/>
-        <location filename="../src/ui_configdialog.h" line="1275"/>
-        <location filename="../src/ui_configdialog.h" line="1278"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">git çalıştırılabilir dosyasını seçin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1079"/>
-        <location filename="../src/ui_configdialog.h" line="1281"/>
         <source>Generate</source>
         <translation>Oluştur</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1082"/>
-        <location filename="../src/ui_configdialog.h" line="1283"/>
         <source>Generate GPG key pair</source>
         <translation>GPG anahtar çifti oluştur</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1089"/>
-        <location filename="../src/ui_configdialog.h" line="1285"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1105"/>
-        <location filename="../src/ui_configdialog.h" line="1286"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1115"/>
         <location filename="../src/configdialog.ui" line="1118"/>
-        <location filename="../src/ui_configdialog.h" line="1288"/>
-        <location filename="../src/ui_configdialog.h" line="1291"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">pwgen çalıştırılabilir dosyasını seçin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1131"/>
-        <location filename="../src/ui_configdialog.h" line="1294"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
-        <location filename="../src/ui_configdialog.h" line="1295"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1155"/>
         <location filename="../src/configdialog.ui" line="1158"/>
-        <location filename="../src/ui_configdialog.h" line="1297"/>
-        <location filename="../src/ui_configdialog.h" line="1300"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">pass çalıştırılabilir dosyasını seçin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1170"/>
-        <location filename="../src/ui_configdialog.h" line="1303"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1201"/>
-        <location filename="../src/ui_configdialog.h" line="1304"/>
         <source>Autodetect</source>
         <translation>Otomatik algıla</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1212"/>
-        <location filename="../src/ui_configdialog.h" line="1305"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>SSH_AUTH_SOCK geçersiz kılma:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1215"/>
-        <location filename="../src/ui_configdialog.h" line="1307"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>SSH_AUTH_SOCK&apos;u geçersiz kılmak için isteğe bağlı yol. gpgconf ile otomatik yoklama için boş bırakın (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1225"/>
-        <location filename="../src/ui_configdialog.h" line="1309"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(gpgconf ile otomatik yoklama)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="85"/>
-        <location filename="../src/ui_configdialog.h" line="1197"/>
         <source>Profiles</source>
         <translation>Profiller</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1299"/>
-        <location filename="../src/ui_configdialog.h" line="1311"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">Bu QtPass&apos;in tanıdığı parola depoları; düzenlemek için birini seçin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1314"/>
-        <location filename="../src/ui_configdialog.h" line="1314"/>
         <source>Add a profile</source>
         <translation type="unfinished">Profil ekle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1332"/>
-        <location filename="../src/ui_configdialog.h" line="1318"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">Seçili profili unut; deponun kendisi diskte kalır</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1378"/>
-        <location filename="../src/ui_configdialog.h" line="1321"/>
         <source>Profile</source>
         <translation type="unfinished">Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1384"/>
-        <location filename="../src/ui_configdialog.h" line="1322"/>
         <source>Name</source>
         <translation>Ad</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1394"/>
-        <location filename="../src/ui_configdialog.h" line="1324"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Bu yapılandırma profilini tanımlamak için kullanılan profil adı</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1401"/>
-        <location filename="../src/ui_configdialog.h" line="1326"/>
         <source>Path</source>
         <translation>Yol</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
-        <location filename="../src/ui_configdialog.h" line="1328"/>
         <source>Path to the password store directory</source>
         <translation>Parola deposu dizininin yolu</translation>
     </message>
@@ -553,25 +460,21 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1445"/>
-        <location filename="../src/ui_configdialog.h" line="1339"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Seçmeli: GPG, bütünlük doğrulaması için .gpg-id dosyalarını imzalamak üzere anahtar. Kullanıcı listesini kurcalamaya karşı korumanız gerekmedikçe boş bırakın.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1317"/>
-        <location filename="../src/ui_configdialog.h" line="1316"/>
         <source>Add</source>
         <translation>Ekle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1335"/>
-        <location filename="../src/ui_configdialog.h" line="1320"/>
         <source>Delete</source>
         <translation>Sil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1501"/>
-        <location filename="../src/ui_configdialog.h" line="1348"/>
         <source>Current path</source>
         <translation>Mevcut yol</translation>
     </message>
@@ -580,58 +483,46 @@
         <location filename="../src/configdialog.ui" line="1423"/>
         <location filename="../src/configdialog.ui" line="1511"/>
         <location filename="../src/configdialog.ui" line="1514"/>
-        <location filename="../src/ui_configdialog.h" line="1331"/>
-        <location filename="../src/ui_configdialog.h" line="1334"/>
-        <location filename="../src/ui_configdialog.h" line="1350"/>
-        <location filename="../src/ui_configdialog.h" line="1353"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">Parola deposu klasörünü seçin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1448"/>
-        <location filename="../src/ui_configdialog.h" line="1341"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">pass&apos;in gerektirdiği gibi, 40 karakterlik tam anahtar parmak izi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1455"/>
-        <location filename="../src/ui_configdialog.h" line="1343"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
         <translation type="unfinished">Bu profilin Git ayarları; profil etkinken Ayarlar sekmesindekilerin yerine geçer</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="768"/>
-        <location filename="../src/ui_configdialog.h" line="1247"/>
         <source>Template</source>
         <translation>Şablon</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="774"/>
-        <location filename="../src/ui_configdialog.h" line="1248"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Şablonlar, parola oluşturma iletişim kutusuna ve parola görünümüne ek alanlar ekler.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="783"/>
-        <location filename="../src/ui_configdialog.h" line="1249"/>
         <source>Use template</source>
         <translation>Şablon kullan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="790"/>
-        <location filename="../src/ui_configdialog.h" line="1251"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Parola alanlarında sadece listelenenleri değil, bir sözcüğü takiben iki nokta üst üste ile başlayan tüm satırları göster</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="793"/>
-        <location filename="../src/ui_configdialog.h" line="1253"/>
         <source>Show all fields templated</source>
         <translation>Şablondaki tüm alanları göster</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="805"/>
-        <location filename="../src/ui_configdialog.h" line="1254"/>
         <source>login
 URL
 e-mail</source>
@@ -641,13 +532,11 @@ e-posta</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1435"/>
-        <location filename="../src/ui_configdialog.h" line="1337"/>
         <source>Signing key</source>
         <translation>İmzalama Anahtarı</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
-        <location filename="../src/ui_configdialog.h" line="1356"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; sürümü </translation>
     </message>
@@ -933,25 +822,21 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="99"/>
         <source>Export public key</source>
         <translation>Genel Anahtarı Dışa Aktar</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="100"/>
         <source>Public key</source>
         <translation>Genel anahtar</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="101"/>
         <source>Copy to clipboard</source>
         <translation type="unfinished">Panoya kopyala</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="102"/>
         <source>Save to file...</source>
         <translation>Dosyaya Kaydet...</translation>
     </message>
@@ -1186,308 +1071,375 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     </message>
 </context>
 <context>
+    <name>GpgIdSigner</name>
+    <message>
+        <location filename="../src/gpgidsigner.cpp" line="75"/>
+        <source>the recipient list is not valid UTF-8</source>
+        <translation type="unfinished">alıcı listesi geçerli UTF-8 değil</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidsigner.cpp" line="99"/>
+        <source>gpg wrote no signature</source>
+        <translation type="unfinished">gpg hiç imza yazmadı</translation>
+    </message>
+</context>
+<context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="422"/>
-        <location filename="../src/imitatepass.cpp" line="597"/>
+        <location filename="../src/imitatepass.cpp" line="449"/>
+        <location filename="../src/imitatepass.cpp" line="626"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 için imza geçersiz.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="192"/>
-        <location filename="../src/imitatepass.cpp" line="830"/>
+        <location filename="../src/imitatepass.cpp" line="202"/>
+        <location filename="../src/imitatepass.cpp" line="859"/>
         <source>Can not edit</source>
         <translation>Düzenlenemiyor</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="193"/>
-        <location filename="../src/imitatepass.cpp" line="831"/>
+        <location filename="../src/imitatepass.cpp" line="190"/>
+        <source>Cannot add</source>
+        <translation type="unfinished">Eklenemiyor</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="190"/>
+        <location filename="../src/imitatepass.cpp" line="1732"/>
+        <source>%1 already exists.</source>
+        <translation type="unfinished">%1 zaten var.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="203"/>
+        <location filename="../src/imitatepass.cpp" line="860"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Kullanılacak şifreleme anahtarı okunamadı, .gpg-id dosyası eksik veya geçersiz.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="415"/>
+        <location filename="../src/imitatepass.cpp" line="216"/>
+        <source>Cannot write</source>
+        <translation type="unfinished">Yazılamıyor</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="217"/>
+        <source>Cannot create a temporary directory: %1</source>
+        <translation type="unfinished">Geçici dizin oluşturulamıyor: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="440"/>
         <source>GPG signing failed!</source>
         <translation>GPG imzası başarısız oldu!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="416"/>
+        <location filename="../src/imitatepass.cpp" line="442"/>
         <source>Failed to sign %1.</source>
         <translation>%1&apos;i imzalamayı başaramadı.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="530"/>
+        <location filename="../src/imitatepass.cpp" line="558"/>
         <source>No signing key!</source>
         <translation>İmzalama anahtarı yok!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="531"/>
+        <location filename="../src/imitatepass.cpp" line="559"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Gizli imzalama anahtarlarının hiçbiri kullanılabilir değil.
 Kullanıcı listesini değiştiremeyeceksiniz!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="340"/>
-        <location filename="../src/imitatepass.cpp" line="358"/>
-        <location filename="../src/imitatepass.cpp" line="365"/>
-        <location filename="../src/imitatepass.cpp" line="377"/>
-        <location filename="../src/imitatepass.cpp" line="555"/>
+        <location filename="../src/imitatepass.cpp" line="366"/>
+        <location filename="../src/imitatepass.cpp" line="384"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
+        <location filename="../src/imitatepass.cpp" line="584"/>
         <source>Cannot update</source>
         <translation>Güncellenemiyor</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="143"/>
+        <location filename="../src/imitatepass.cpp" line="142"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">Git pull başarısız oldu: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="186"/>
-        <location filename="../src/imitatepass.cpp" line="421"/>
-        <location filename="../src/imitatepass.cpp" line="747"/>
+        <location filename="../src/imitatepass.cpp" line="197"/>
+        <location filename="../src/imitatepass.cpp" line="448"/>
+        <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Check .gpg-id file signature!</source>
         <translation>.gpg-id dosyasının imzasını gözden geçirin!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="265"/>
+        <location filename="../src/imitatepass.cpp" line="289"/>
         <source>Delete failed</source>
         <translation type="unfinished">Silme başarısız oldu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="266"/>
+        <location filename="../src/imitatepass.cpp" line="290"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">%1 bağlantısı kaldırılamadı.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="341"/>
+        <location filename="../src/imitatepass.cpp" line="367"/>
         <source>%1 is not inside the password store.</source>
         <translation type="unfinished">%1 parola deposunun içinde değil.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="366"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Yazmak için .gpg-id açılamadı.</translation>
+        <translation type="vanished">Yazmak için .gpg-id açılamadı.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="378"/>
         <source>Failed to write %1: %2</source>
-        <translation type="unfinished">%1 yazılamadı: %2</translation>
+        <translation type="obsolete">%1 yazılamadı: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="393"/>
+        <location filename="../src/imitatepass.cpp" line="413"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">Alıcı listesi yazıldı ancak kayda geçirilmedi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="394"/>
+        <location filename="../src/imitatepass.cpp" line="414"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Bu durumu aşmak için alıcıları bir kez daha kaydedin.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="399"/>
+        <location filename="../src/imitatepass.cpp" line="419"/>
         <source>Check selected users!</source>
         <translation>Seçilen kullanıcıları denetle!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="400"/>
+        <location filename="../src/imitatepass.cpp" line="420"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Seçili anahtarların hiçbirinin gizli bir anahtarı yok.
 Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="556"/>
+        <location filename="../src/imitatepass.cpp" line="443"/>
+        <source>Failed to sign %1: %2</source>
+        <translation type="unfinished">%1 imzalanamadı: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="585"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Eski imza %1 kaldırılamadı.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="671"/>
-        <location filename="../src/imitatepass.cpp" line="687"/>
-        <location filename="../src/imitatepass.cpp" line="697"/>
-        <location filename="../src/imitatepass.cpp" line="712"/>
+        <location filename="../src/imitatepass.cpp" line="700"/>
+        <location filename="../src/imitatepass.cpp" line="716"/>
+        <location filename="../src/imitatepass.cpp" line="726"/>
+        <location filename="../src/imitatepass.cpp" line="741"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Önceki bir yeniden şifrelemeden kalan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="672"/>
-        <location filename="../src/imitatepass.cpp" line="688"/>
+        <location filename="../src/imitatepass.cpp" line="701"/>
+        <location filename="../src/imitatepass.cpp" line="717"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 normal bir dosya değil ve geri yüklenmedi. Dosyayı inceleyip kaldırın, ardından yeniden şifreleyin.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="698"/>
+        <location filename="../src/imitatepass.cpp" line="727"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1, %2 ile yan yana bulunuyor. Her ikisi de girdinin şifrelenmiş kopyaları; hangisini istediğinizi kontrol edip diğerini silin, ardından yeniden şifreleyin.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="707"/>
+        <location filename="../src/imitatepass.cpp" line="736"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">%1, yarıda kesilen bir yeniden şifrelemenin geride bıraktığı yedekten geri yüklendi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="713"/>
+        <location filename="../src/imitatepass.cpp" line="742"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 eksik ve yedeği %2 eski adına geri döndürülemedi. Elle yeniden adlandırın, ardından yeniden şifreleyin.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="897"/>
-        <location filename="../src/imitatepass.cpp" line="902"/>
-        <location filename="../src/imitatepass.cpp" line="1238"/>
+        <location filename="../src/imitatepass.cpp" line="926"/>
+        <location filename="../src/imitatepass.cpp" line="931"/>
+        <location filename="../src/imitatepass.cpp" line="1267"/>
         <source>Re-encryption failed</source>
         <translation>Şifreleme başarısız oldu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="898"/>
+        <location filename="../src/imitatepass.cpp" line="927"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation>Yerine %1 konulamadı. Orijinal geri yüklendi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="903"/>
+        <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
         <translation type="unfinished">%1 değiştirilemedi ve orijinali geri konulamadı. Hâlâ %2 olarak duruyor; elle yeniden adlandırın.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="914"/>
+        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
         <translation type="unfinished">Yeniden şifrelemeden sonra %1 yedeği kaldırılamadı; güvenle silinebilir.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="954"/>
+        <location filename="../src/imitatepass.cpp" line="983"/>
         <source>Creating backup commit</source>
         <translation>Yedek commit oluşturuluyor</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="971"/>
-        <location filename="../src/imitatepass.cpp" line="980"/>
+        <location filename="../src/imitatepass.cpp" line="1000"/>
+        <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>Backup commit failed</source>
         <translation>Yedek commit başarısız oldu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="972"/>
+        <location filename="../src/imitatepass.cpp" line="1001"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Git durumu kontrol edilemedi. Yeniden şifreleme iptal edildi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="981"/>
+        <location filename="../src/imitatepass.cpp" line="1010"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Yeniden şifreleme iptal edildi çünkü bir git yedek oluşturulamadı.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1027"/>
+        <location filename="../src/imitatepass.cpp" line="1056"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Zaten bir yeniden şifreleme işlemi sürüyor</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1035"/>
+        <location filename="../src/imitatepass.cpp" line="1064"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Depoya ait bir klasör değil</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1036"/>
+        <location filename="../src/imitatepass.cpp" line="1065"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 bir sembolik bağlantı ya da birleşim noktasıdır veya böyle bir bağlantının arkasında bulunuyor. Bağlantının işaret ettiği hedef parola deposunun parçası değildir ve yeniden şifrelenmedi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1045"/>
+        <location filename="../src/imitatepass.cpp" line="1074"/>
         <source>Re-encrypting from folder %1</source>
         <translation>%1 klasöründen yeniden şifreleniyor</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1128"/>
-        <location filename="../src/imitatepass.cpp" line="1265"/>
+        <location filename="../src/imitatepass.cpp" line="1157"/>
+        <location filename="../src/imitatepass.cpp" line="1294"/>
         <source>Updating password-store</source>
         <translation>Parola deposu güncelleniyor</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1139"/>
+        <location filename="../src/imitatepass.cpp" line="1168"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull başarısız oldu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1140"/>
+        <location filename="../src/imitatepass.cpp" line="1169"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Pull işlemi depoda birleştirilmemiş dosyalar bıraktı. Yeniden şifrelemeden önce çakışmayı çözün.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1145"/>
+        <location filename="../src/imitatepass.cpp" line="1174"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull başarısız oldu, depo olduğu gibi yeniden şifreleniyor</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1172"/>
+        <location filename="../src/imitatepass.cpp" line="1201"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n girdi atlandı: sembolik bağlantı, birleşim noktası veya özel dosya deponun parçası değildir.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1198"/>
+        <location filename="../src/imitatepass.cpp" line="1227"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID doğrulama başarısız oldu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1199"/>
+        <location filename="../src/imitatepass.cpp" line="1228"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Dizin için .gpg-id doğrulanamadı.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1236"/>
+        <location filename="../src/imitatepass.cpp" line="1265"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... ve %n tane daha</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1239"/>
+        <location filename="../src/imitatepass.cpp" line="1268"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n dosya yeniden şifrelenemedi:</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1245"/>
+        <location filename="../src/imitatepass.cpp" line="1274"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Yeniden şifreleme iptal edildi: %2 dosyadan %1 tanesi denetlendi, %3 yeniden şifrelendi, %4 başarısız oldu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1546"/>
+        <location filename="../src/imitatepass.cpp" line="1604"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Git çalıştırılabilir dosyası yapılandırılmamış, git atlanıyor</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1680"/>
+        <source>gpg wrote no ciphertext for %1.</source>
+        <translation type="unfinished">gpg, %1 için hiç şifreli metin yazmadı.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1697"/>
+        <source>Cannot create a temporary file next to %1: %2</source>
+        <translation type="unfinished">%1&apos;in yanında geçici dosya oluşturulamıyor: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1706"/>
+        <source>Cannot read what gpg wrote for %1.</source>
+        <translation type="unfinished">gpg&apos;nin %1 için yazdığı okunamıyor.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1713"/>
+        <location filename="../src/imitatepass.cpp" line="1718"/>
+        <source>Cannot write %1: %2</source>
+        <translation type="unfinished">%1 yazılamıyor: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1731"/>
+        <source>Failed to replace %1.</source>
+        <translation type="unfinished">%1 yenisiyle değiştirilemedi.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1741"/>
+        <source>%1 was replaced by a link while it was being written.</source>
+        <translation type="unfinished">%1 yazılırken yerine bir bağlantı konuldu.</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
         <translation type="vanished">%1 yeniden şifrelenemedi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1254"/>
+        <location filename="../src/imitatepass.cpp" line="1283"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Şifreleme tamamlandı: %1 başarılı oldu, %2 başarısız oldu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1259"/>
+        <location filename="../src/imitatepass.cpp" line="1288"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Şifreleme tamamlandı: %1 dosyaları yeniden şifrelendi</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1268"/>
+        <location filename="../src/imitatepass.cpp" line="1297"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Git push yapılmıyor: %n dosya yeniden şifrelenemedi</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1463"/>
-        <location filename="../src/imitatepass.cpp" line="1477"/>
-        <location filename="../src/imitatepass.cpp" line="1484"/>
-        <location filename="../src/imitatepass.cpp" line="1494"/>
+        <location filename="../src/imitatepass.cpp" line="1520"/>
+        <location filename="../src/imitatepass.cpp" line="1534"/>
+        <location filename="../src/imitatepass.cpp" line="1541"/>
+        <location filename="../src/imitatepass.cpp" line="1552"/>
         <source>Copy failed</source>
         <translation>Kopyalama başarısız oldu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1464"/>
-        <location filename="../src/imitatepass.cpp" line="1478"/>
-        <location filename="../src/imitatepass.cpp" line="1485"/>
-        <location filename="../src/imitatepass.cpp" line="1495"/>
+        <location filename="../src/imitatepass.cpp" line="1521"/>
+        <location filename="../src/imitatepass.cpp" line="1535"/>
+        <location filename="../src/imitatepass.cpp" line="1542"/>
+        <location filename="../src/imitatepass.cpp" line="1553"/>
         <source>Could not copy %1 to %2.</source>
         <translation>%1, %2&apos;ye kopyalanamadı.</translation>
     </message>
@@ -1500,7 +1452,6 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
-        <location filename="../src/ui_importkeydialog.h" line="121"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
         <translation>GPG genel anahtarını dosyadan içe aktarın veya aşağıya yapıştırın. Anahtar ASCII-armored formatında olmalıdır.</translation>
     </message>
@@ -1510,7 +1461,6 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
-        <location filename="../src/ui_importkeydialog.h" line="123"/>
         <source>From clipboard</source>
         <translation type="unfinished">Panodan</translation>
     </message>
@@ -1521,25 +1471,21 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="41"/>
-        <location filename="../src/ui_importkeydialog.h" line="120"/>
         <source>Import GPG key</source>
         <translation>GPG Anahtarını İçe Aktar</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
-        <location filename="../src/ui_importkeydialog.h" line="122"/>
         <source>From file...</source>
         <translation>Dosyadan...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
-        <location filename="../src/ui_importkeydialog.h" line="124"/>
         <source>Paste an ASCII-armored GPG key here...</source>
         <translation>ASCII-armored bir GPG anahtarını buraya yapıştırın...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
-        <location filename="../src/ui_importkeydialog.h" line="125"/>
         <source>Import</source>
         <translation>İçe Aktar</translation>
     </message>
@@ -1642,67 +1588,56 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <name>KeygenDialog</name>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
-        <location filename="../src/ui_keygendialog.h" line="236"/>
         <source>Generate GnuPG keypair</source>
         <translation>GnuPG anahtar çifti oluştur</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
-        <location filename="../src/ui_keygendialog.h" line="237"/>
         <source>Generate a new key pair</source>
         <translation>Yeni bir anahtar çifti oluştur</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
-        <location filename="../src/ui_keygendialog.h" line="238"/>
         <source>Email</source>
         <translation>E-posta</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
-        <location filename="../src/ui_keygendialog.h" line="239"/>
         <source>Name</source>
         <translation>Ad</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
-        <location filename="../src/ui_keygendialog.h" line="240"/>
         <source>Passphrase</source>
         <translation>Parola</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
-        <location filename="../src/ui_keygendialog.h" line="242"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
         <translation type="unfinished">Özel anahtar dosyasını ele geçiren herkes, hiçbir şey sorulmadan tüm parolaları okuyabilir.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
-        <location filename="../src/ui_keygendialog.h" line="244"/>
         <source>No passphrase: store the private key unprotected</source>
         <translation type="unfinished">Parola yok: özel anahtarı korumasız sakla</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
-        <location filename="../src/ui_keygendialog.h" line="245"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Parolanın uzunluğu için bir sınır yoktur ve dikkatle seçilmelidir. Güvenlik açısından, özel anahtarın kilidini açma parolası GnuPG&apos;deki (ve diğer ortak anahtar şifreleme sistemlerindeki) en zayıf noktalardan biridir, çünkü başka bir kişinin özel anahtarınızı ele geçirmesi durumunda sahip olduğunuz tek koruma budur. &lt;br/&gt;İdeal olarak parola, bir sözlükte bulunacak kelimeleri kullanmamalı ve alfabetik olmayan karakterlere ilaveten alfabetik karakterleri büyük/küçük harf karışık olarak kullanmalıdır.&lt;br/&gt;GnuPG&apos;nin güvenli kullanımı için iyi bir parola çok önemlidir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="220"/>
-        <location filename="../src/ui_keygendialog.h" line="246"/>
         <source>Repeat pass</source>
         <translation>Parolayı tekrarla</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="237"/>
-        <location filename="../src/ui_keygendialog.h" line="247"/>
         <source>Expert</source>
         <translation>Uzman</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="256"/>
-        <location filename="../src/ui_keygendialog.h" line="248"/>
         <source>Template contents will be set based on GPG version.</source>
         <translation>Şablon içeriği GPG versiyonuna göre belirlenecektir.</translation>
     </message>
@@ -1772,7 +1707,6 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="269"/>
-        <location filename="../src/ui_keygendialog.h" line="249"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Uzman seçenekleri için &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG kılavuzu&lt;/a&gt;na göz atın</translation>
     </message>
@@ -1816,13 +1750,11 @@ Expire-Date: 0
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <location filename="../src/ui_mainwindow.h" line="373"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
-        <location filename="../src/ui_mainwindow.h" line="446"/>
         <source>Select profile</source>
         <translation>Profil seç</translation>
     </message>
@@ -1834,73 +1766,61 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="824"/>
         <location filename="../src/mainwindow.cpp" line="1044"/>
-        <location filename="../src/ui_mainwindow.h" line="448"/>
         <source>Search password</source>
         <translation>Parola Ara</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
-        <location filename="../src/ui_mainwindow.h" line="450"/>
         <source>Search inside password content (pass grep)</source>
         <translation>Parola içeriğinde ara (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
-        <location filename="../src/ui_mainwindow.h" line="452"/>
         <source>⌕</source>
         <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
-        <location filename="../src/ui_mainwindow.h" line="454"/>
         <source>Content search toggle</source>
         <translation>İçerik arama geçişi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
-        <location filename="../src/ui_mainwindow.h" line="457"/>
         <source>Toggle content search mode to search inside password files</source>
         <translation>Parola dosyalarının içinde aramak için içerik arama modunu değiştir</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
-        <location filename="../src/ui_mainwindow.h" line="460"/>
         <source>Case-insensitive search</source>
         <translation>Büyük/küçük harf duyarsız arama</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
-        <location filename="../src/ui_mainwindow.h" line="462"/>
         <source>Aa</source>
         <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
-        <location filename="../src/ui_mainwindow.h" line="464"/>
         <source>Case-insensitive toggle</source>
         <translation>Büyük/küçük harf duyarsız geçiş</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
-        <location filename="../src/ui_mainwindow.h" line="467"/>
         <source>Toggle case-insensitive content search</source>
         <translation>Büyük/küçük harf duyarsız içerik aramayı değiştir</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
-        <location filename="../src/ui_mainwindow.h" line="470"/>
         <source>Results</source>
         <translation>Sonuçlar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
-        <location filename="../src/ui_mainwindow.h" line="471"/>
         <source>Welcome to QtPass</source>
         <translation>QtPass&apos;e Hoş Geldiniz</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="319"/>
-        <location filename="../src/ui_mainwindow.h" line="472"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -1912,109 +1832,91 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
-        <location filename="../src/ui_mainwindow.h" line="476"/>
         <source>&amp;File</source>
         <translation type="unfinished">&amp;Dosya</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
-        <location filename="../src/ui_mainwindow.h" line="477"/>
         <source>&amp;Store</source>
         <translation type="unfinished">De&amp;po</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
-        <location filename="../src/ui_mainwindow.h" line="478"/>
         <source>S&amp;ettings</source>
         <translation type="unfinished">&amp;Ayarlar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="373"/>
-        <location filename="../src/ui_mainwindow.h" line="479"/>
         <source>&amp;Help</source>
         <translation type="unfinished">&amp;Yardım</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="499"/>
-        <location filename="../src/ui_mainwindow.h" line="412"/>
         <source>Show &amp;menu bar</source>
         <translation type="unfinished">&amp;Menü çubuğunu göster</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="502"/>
-        <location filename="../src/ui_mainwindow.h" line="414"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
         <translation type="unfinished">Menü çubuğunu gizle veya göster; Ctrl+M geri getirir</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="505"/>
-        <location filename="../src/ui_mainwindow.h" line="417"/>
         <source>Ctrl+M</source>
         <translation type="unfinished">Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="516"/>
-        <location filename="../src/ui_mainwindow.h" line="424"/>
         <source>Ctrl+,</source>
         <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="524"/>
-        <location filename="../src/ui_mainwindow.h" line="426"/>
         <source>&amp;Close window</source>
         <translation type="unfinished">&amp;Pencereyi kapat</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="527"/>
-        <location filename="../src/ui_mainwindow.h" line="428"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
         <translation type="unfinished">Pencereyi kapatır; &quot;Kapatıldığında gizle&quot; seçiliyken QtPass sistem tepsisinde kalır</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="530"/>
-        <location filename="../src/ui_mainwindow.h" line="431"/>
         <source>Ctrl+W</source>
         <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="535"/>
-        <location filename="../src/ui_mainwindow.h" line="433"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">&amp;Çık</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="538"/>
-        <location filename="../src/ui_mainwindow.h" line="435"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="546"/>
-        <location filename="../src/ui_mainwindow.h" line="437"/>
         <source>&amp;FAQ</source>
         <translation type="unfinished">&amp;SSS</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="549"/>
-        <location filename="../src/ui_mainwindow.h" line="439"/>
         <source>Open the frequently asked questions on qtpass.org</source>
         <translation type="unfinished">qtpass.org üzerindeki sıkça sorulan soruları aç</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="552"/>
-        <location filename="../src/ui_mainwindow.h" line="442"/>
         <source>F1</source>
         <translation type="unfinished">F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="557"/>
-        <location filename="../src/ui_mainwindow.h" line="444"/>
         <source>&amp;About QtPass</source>
         <translation type="unfinished">QtPass &amp;Hakkında</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="565"/>
-        <location filename="../src/ui_mainwindow.h" line="445"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished">&amp;Qt Hakkında</translation>
     </message>
@@ -2030,14 +1932,11 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="423"/>
         <location filename="../src/mainwindow.ui" line="426"/>
         <location filename="../src/mainwindow.cpp" line="1647"/>
-        <location filename="../src/ui_mainwindow.h" line="374"/>
-        <location filename="../src/ui_mainwindow.h" line="376"/>
         <source>Add password</source>
         <translation>Parola ekle</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="429"/>
-        <location filename="../src/ui_mainwindow.h" line="379"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
@@ -2045,8 +1944,6 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="434"/>
         <location filename="../src/mainwindow.ui" line="437"/>
         <location filename="../src/mainwindow.cpp" line="1646"/>
-        <location filename="../src/ui_mainwindow.h" line="381"/>
-        <location filename="../src/ui_mainwindow.h" line="383"/>
         <source>Add folder</source>
         <translation>Klasör ekle</translation>
     </message>
@@ -2054,8 +1951,6 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="442"/>
         <location filename="../src/mainwindow.ui" line="445"/>
         <location filename="../src/mainwindow.cpp" line="1654"/>
-        <location filename="../src/ui_mainwindow.h" line="385"/>
-        <location filename="../src/ui_mainwindow.h" line="387"/>
         <source>Edit</source>
         <translation>Düzenle</translation>
     </message>
@@ -2063,44 +1958,36 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="450"/>
         <location filename="../src/mainwindow.ui" line="453"/>
         <location filename="../src/mainwindow.cpp" line="1668"/>
-        <location filename="../src/ui_mainwindow.h" line="389"/>
-        <location filename="../src/ui_mainwindow.h" line="391"/>
         <source>Delete</source>
         <translation>Sil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="458"/>
-        <location filename="../src/ui_mainwindow.h" line="393"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="461"/>
-        <location filename="../src/ui_mainwindow.h" line="395"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>OTP oluştur ve panoya kopyala</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="464"/>
-        <location filename="../src/ui_mainwindow.h" line="398"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="469"/>
-        <location filename="../src/ui_mainwindow.h" line="400"/>
         <source>Push</source>
         <translation>Gönder</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="472"/>
-        <location filename="../src/ui_mainwindow.h" line="402"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="480"/>
-        <location filename="../src/ui_mainwindow.h" line="406"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
@@ -2110,7 +1997,6 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="477"/>
-        <location filename="../src/ui_mainwindow.h" line="404"/>
         <source>Update</source>
         <translation>Güncelle</translation>
     </message>
@@ -2121,25 +2007,21 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="485"/>
         <location filename="../src/mainwindow.cpp" line="1648"/>
-        <location filename="../src/ui_mainwindow.h" line="408"/>
         <source>Users</source>
         <translation>Kullanıcılar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="488"/>
-        <location filename="../src/ui_mainwindow.h" line="410"/>
         <source>Manage who can read password in folder</source>
         <translation>Klasörde kimlerin parola okuyabileceğini yönet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="510"/>
-        <location filename="../src/ui_mainwindow.h" line="419"/>
         <source>Config</source>
         <translation>Yapılandırma</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="513"/>
-        <location filename="../src/ui_mainwindow.h" line="421"/>
         <source>Configuration</source>
         <translation>Yapılandırma</translation>
     </message>
@@ -2574,82 +2456,82 @@ Devam edilsin mi?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="193"/>
+        <location filename="../src/pass.cpp" line="192"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished">Yapılandırılan GPG ana dizini %1 mevcut değil, varsayılan anahtarlık kullanılıyor</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="201"/>
+        <location filename="../src/pass.cpp" line="200"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished">Yapılandırılan GPG ana dizini %1 mevcut değil, ortamdaki GNUPGHOME %2 kullanılıyor</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="221"/>
+        <location filename="../src/pass.cpp" line="220"/>
         <source>Invalid password length</source>
         <translation>Geçersiz parola uzunluğu</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="222"/>
+        <location filename="../src/pass.cpp" line="221"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>Sıfır uzunlukta parola oluşturulamıyor.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="260"/>
+        <location filename="../src/pass.cpp" line="259"/>
         <source>No characters chosen</source>
         <translation>Hiçbir karakter seçilmedi</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="261"/>
+        <location filename="../src/pass.cpp" line="260"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Parola oluşturulamıyor, yapılandırmadaki küme içinden seçim yapabileceğiniz karakter yok!</translation>
     </message>
     <message>
+        <location filename="../src/pass.cpp" line="450"/>
         <location filename="../src/pass.cpp" line="451"/>
-        <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
         <translation>GPG programı yapılandırılmadı</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="557"/>
-        <location filename="../src/pass.cpp" line="576"/>
+        <location filename="../src/pass.cpp" line="556"/>
+        <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Şifreleme başarısız oldu: GPG anahtarının süresi dolmuş. Lütfen anahtarı yenileyin veya değiştirin.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="562"/>
-        <location filename="../src/pass.cpp" line="581"/>
+        <location filename="../src/pass.cpp" line="561"/>
+        <location filename="../src/pass.cpp" line="580"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Şifreleme başarısız oldu: GPG anahtarı iptal edilmiş.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="566"/>
-        <location filename="../src/pass.cpp" line="586"/>
+        <location filename="../src/pass.cpp" line="565"/>
+        <location filename="../src/pass.cpp" line="585"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Şifreleme başarısız oldu: Alıcının GPG anahtarı bulunamadı veya geçersiz. .gpg-id içindeki anahtar kimliğinin doğru olduğundan ve içe aktarıldığından emin olun.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="570"/>
-        <location filename="../src/pass.cpp" line="590"/>
+        <location filename="../src/pass.cpp" line="569"/>
+        <location filename="../src/pass.cpp" line="589"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Şifreleme başarısız oldu. GPG anahtarınızın geçerli olduğunu kontrol edin.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="878"/>
+        <location filename="../src/pass.cpp" line="877"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 bir sembolik bağlantı ya da birleşim noktasıdır veya böyle bir bağlantının arkasında bulunuyor. Bağlantının işaret ettiği hedef parola deposunun parçası değildir ve olduğu gibi bırakılır.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="886"/>
+        <location filename="../src/pass.cpp" line="885"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Deponun parçası değil</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="967"/>
+        <location filename="../src/pass.cpp" line="966"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Alıcı listesi %1 imzalama anahtarıyla doğrulanamıyor; bu nedenle hiçbir şey önceden seçilmedi: kaydedilirse listede ne varsa o imzalanır. Alıcıları kendiniz seçin; OK yeni bir liste yazıp imzalar.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="995"/>
+        <location filename="../src/pass.cpp" line="994"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Hiçbir şey önceden seçilmedi: kaydedilirse listede ne varsa o imzalanır. Alıcıları kendiniz seçin.</translation>
     </message>
@@ -2660,62 +2542,51 @@ Devam edilsin mi?</translation>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
         <location filename="../src/passworddialog.cpp" line="271"/>
-        <location filename="../src/ui_passworddialog.h" line="247"/>
-        <location filename="../src/ui_passworddialog.h" line="258"/>
         <source>Password</source>
         <translation>Parola</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
-        <location filename="../src/ui_passworddialog.h" line="248"/>
         <source>Folder</source>
         <translation type="unfinished">Klasör</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
-        <location filename="../src/ui_passworddialog.h" line="250"/>
         <source>The folder of the password store the new entry goes into</source>
         <translation type="unfinished">Yeni girdinin ekleneceği parola deposu klasörü</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
-        <location filename="../src/ui_passworddialog.h" line="252"/>
         <source>Name</source>
         <translation type="unfinished">Ad</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
-        <location filename="../src/ui_passworddialog.h" line="254"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
         <translation type="unfinished">Girdinin ağaçta görünen adı; bir / işareti onu bir alt klasöre koyar</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
-        <location filename="../src/ui_passworddialog.h" line="256"/>
         <source>e.g. github.com or work/vpn</source>
         <translation type="unfinished">örn. github.com veya is/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
-        <location filename="../src/ui_passworddialog.h" line="259"/>
         <source>Generate</source>
         <translation>Oluştur</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
-        <location filename="../src/ui_passworddialog.h" line="260"/>
         <source>Show password</source>
         <translation>Parolayı göster</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
-        <location filename="../src/ui_passworddialog.h" line="261"/>
         <source>Character set:</source>
         <translation>Karakter Kümesi:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
-        <location filename="../src/ui_passworddialog.h" line="262"/>
         <source>All characters</source>
         <translation>Tüm Karakterler</translation>
     </message>
@@ -2729,37 +2600,31 @@ Devam edilsin mi?</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
-        <location filename="../src/ui_passworddialog.h" line="263"/>
         <source>Alphabetical</source>
         <translation>Alfabetik</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="179"/>
-        <location filename="../src/ui_passworddialog.h" line="264"/>
         <source>Alphanumerical</source>
         <translation>Alfanumerik</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="184"/>
-        <location filename="../src/ui_passworddialog.h" line="265"/>
         <source>Custom</source>
         <translation>Özel</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="198"/>
-        <location filename="../src/ui_passworddialog.h" line="267"/>
         <source>Length:</source>
         <translation>Uzunluk:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="219"/>
-        <location filename="../src/ui_passworddialog.h" line="268"/>
         <source>Template:</source>
         <translation type="unfinished">Şablon:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
-        <location filename="../src/ui_passworddialog.h" line="270"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
         <translation type="unfinished">Deponun .templates dosyasındaki alan şablonu. Ctrl+T bir sonrakine geçer.</translation>
     </message>
@@ -2849,7 +2714,7 @@ Devam edilsin mi?</translation>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="37"/>
+        <location filename="../src/profileinit.cpp" line="36"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">%1 oluşturulamadı.</translation>
     </message>
@@ -2866,19 +2731,22 @@ Devam edilsin mi?</translation>
         <translation type="unfinished">Alıcı seçilmedi; %1 yazılmadı.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="104"/>
-        <location filename="../src/profileinit.cpp" line="109"/>
-        <source>Could not write %1: %2</source>
-        <translation type="unfinished">%1 yazılamadı: %2</translation>
+        <location filename="../src/profileinit.cpp" line="129"/>
+        <source>Could not sign %1 with %2.</source>
+        <translation type="unfinished">%1, %2 ile imzalanamadı.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="129"/>
+        <source>Could not write %1: %2</source>
+        <translation type="obsolete">%1 yazılamadı: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="131"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">%1, %2 ile imzalanamadı: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="149"/>
-        <location filename="../src/profileinit.cpp" line="178"/>
+        <location filename="../src/profileinit.cpp" line="151"/>
+        <location filename="../src/profileinit.cpp" line="180"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">git %1 komutu %2 dizininde başarısız oldu: %3</translation>
     </message>
@@ -3135,12 +3003,12 @@ Devam edilsin mi?</translation>
         <translation type="vanished">üzerine yazmaya zorlansın mı?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="376"/>
+        <location filename="../src/storemodel.cpp" line="367"/>
         <source>Force overwrite?</source>
         <translation>Üzerine zorla yaz?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="377"/>
+        <location filename="../src/storemodel.cpp" line="368"/>
         <source>overwrite %1 with %2?</source>
         <translation>%1 üzerine %2 yazılsın mı?</translation>
     </message>
@@ -3258,7 +3126,6 @@ komutlarını çalıştırın ve ardından Ayarlar&apos;dan Git&apos;i açın.</
     <name>UsersDialog</name>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
-        <location filename="../src/ui_usersdialog.h" line="111"/>
         <source>Read access users</source>
         <translation>Okuma erişimi olan kullanıcılar</translation>
     </message>
@@ -3286,7 +3153,6 @@ Kırmızı girdiler geçerli değildir; bunlara şifreleme yapamazsınız.</tran
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
-        <location filename="../src/ui_usersdialog.h" line="112"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: On OK every password in this folder and its subfolders is re-encrypted to the selected users; this can take a while.
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
@@ -3300,25 +3166,21 @@ Normal girdilerin güvenilir bir şifreleme anahtarı vardır; başkalarının �
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
-        <location filename="../src/ui_usersdialog.h" line="117"/>
         <source>Search for users</source>
         <translation>Kullanıcı ara</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
-        <location filename="../src/ui_usersdialog.h" line="118"/>
         <source>Show unusable keys</source>
         <translation>Kullanılamayan anahtarları göster</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
-        <location filename="../src/ui_usersdialog.h" line="119"/>
         <source>Import key...</source>
         <translation>Anahtar içe aktar…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
-        <location filename="../src/ui_usersdialog.h" line="121"/>
         <source>Import a GPG key from file or clipboard</source>
         <translation>Dosyadan veya panodan bir GPG anahtarı içe aktar</translation>
     </message>
@@ -3361,6 +3223,39 @@ Normal girdilerin güvenilir bir şifreleme anahtarı vardır; başkalarının �
         <location filename="../src/usersdialog.cpp" line="369"/>
         <source>[PARTIAL] </source>
         <translation>[KISMİ] </translation>
+    </message>
+</context>
+<context>
+    <name>Util</name>
+    <message>
+        <location filename="../src/util.cpp" line="692"/>
+        <source>Cannot create a temporary file next to %1: %2</source>
+        <translation type="unfinished">%1&apos;in yanında geçici dosya oluşturulamıyor: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="709"/>
+        <source>Cannot write %1: %2</source>
+        <translation type="unfinished">%1 yazılamıyor: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="718"/>
+        <source>Failed to replace %1.</source>
+        <translation type="unfinished">%1 yenisiyle değiştirilemedi.</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="722"/>
+        <source>%1 already exists.</source>
+        <translation type="unfinished">%1 zaten var.</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="724"/>
+        <source>Failed to write %1.</source>
+        <translation type="unfinished">%1 yazılamadı.</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="734"/>
+        <source>%1 was replaced by a link while it was written.</source>
+        <translation type="unfinished">%1 yazılırken yerine bir bağlantı konuldu.</translation>
     </message>
 </context>
 </TS>
