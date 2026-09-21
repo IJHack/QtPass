@@ -1427,36 +1427,56 @@ void ImitatePass::Move(const QString src, const QString dest,
 /**
  * @brief Copies a regular file onto dst, replacing dst atomically.
  *
- * The bytes are written to a temporary sibling that QSaveFile renames over
- * dst only once all of them are in, so a failure part-way (disk full,
- * permissions, a vanished source) leaves an existing dst untouched instead of
- * removed first and never rewritten. The source's permissions are carried
- * over, as QFile::copy would.
+ * The object read is the object judged: the source is opened without
+ * following (Util::openRegularFile), so a name that became a link between
+ * the caller's check and this open is refused rather than read through (a
+ * co-writer of the store would otherwise have the bytes of any file this
+ * user can read copied into the store and committed). The bytes go into a
+ * temporary next to dst, written by its open handle, which the operating
+ * system's rename then puts under dst's name (Util::replaceFile): whatever
+ * entry is there by then is replaced as an entry, a planted link included,
+ * never written through (QSaveFile resolves a link at open). A failure
+ * part-way leaves an existing dst untouched. The source's permissions are
+ * carried over, as QFile::copy would.
+ * @param src The entry to copy.
+ * @param dst Where the copy goes.
+ * @param replace Whether an entry already under dst's name may go.
  * @return true on success; on failure nothing at dst has changed.
  */
-static auto copyFileReplacing(const QString &src, const QString &dst) -> bool {
-  QFile in(src);
-  if (!QFileInfo(in).isFile() || !in.open(QIODevice::ReadOnly))
+static auto copyFileReplacing(const QString &src, const QString &dst,
+                              bool replace) -> bool {
+  QFile in;
+  if (!Util::openRegularFile(src, in))
     return false;
-  QSaveFile out(dst);
-  if (!out.open(QIODevice::WriteOnly))
+  QTemporaryFile out(QFileInfo(dst).path() +
+                     QStringLiteral("/.qtpass-XXXXXX.tmp"));
+  out.setAutoRemove(false);
+  if (!out.open())
     return false;
+  const QString staged = out.fileName();
   out.setPermissions(in.permissions());
   char buf[64 * 1024];
   for (;;) {
     const qint64 n = in.read(buf, sizeof buf);
-    if (n < 0) {
-      out.cancelWriting();
+    if (n < 0 || (n > 0 && out.write(buf, n) != n)) {
+      out.close();
+      QFile::remove(staged);
       return false;
     }
     if (n == 0)
       break;
-    if (out.write(buf, n) != n) {
-      out.cancelWriting();
-      return false;
-    }
   }
-  return out.commit();
+  if (!out.flush()) {
+    out.close();
+    QFile::remove(staged);
+    return false;
+  }
+  out.close();
+  if (!Util::replaceFile(staged, dst, replace)) {
+    QFile::remove(staged);
+    return false;
+  }
+  return true;
 }
 
 /**
@@ -1514,8 +1534,9 @@ void ImitatePass::Copy(const QString src, const QString dest,
   // when using git, stage the new path afterwards. The copy is synchronous and
   // replaces the destination atomically (see copyFileReplacing), so it exists
   // before the re-encryption below runs and an entry being overwritten with
-  // force survives a copy that fails half-way.
-  if (!copyFileReplacing(src, destFile)) {
+  // force survives a copy that fails half-way. Without force nothing under
+  // the name is replaced, also nothing that appeared since the check above.
+  if (!copyFileReplacing(src, destFile, force)) {
     emit critical(tr("Copy failed"),
                   tr("Could not copy %1 to %2.").arg(src, destFile));
     return;

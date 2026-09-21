@@ -9,6 +9,8 @@
 #include <QString>
 #include <QStringList>
 
+class QFile;
+
 constexpr int MS_PER_SECOND = 1000;
 
 /*!
@@ -236,6 +238,19 @@ public:
    */
   static auto replaceFile(const QString &from, const QString &to, bool replace)
       -> bool;
+
+  /**
+   * @brief Open @p path for reading as the regular file it is, not as what a
+   * link under that name points to: the object opened is the object judged.
+   * A check of the name before an open by name leaves a window in which a
+   * co-writer of the store makes the name a link; opening without following
+   * (O_NOFOLLOW; on Windows the reparse point itself) and judging the open
+   * handle closes it. A directory, a link, a FIFO or a device is refused.
+   * @param path The file, as the caller names it.
+   * @param file Receives the open file on success; untouched otherwise.
+   * @return Whether @p file is open on a regular file.
+   */
+  static auto openRegularFile(const QString &path, QFile &file) -> bool;
 
 private:
   static void initialiseEnvironment();
