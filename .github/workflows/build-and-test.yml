@@ -13,7 +13,7 @@ permissions: {}
 
 jobs:
   changes:
-    name: Detect changes (Build and test)
+    name: Detect changes
     runs-on: ubuntu-latest
     outputs:
       src: ${{ steps.filter.outputs.src }}
@@ -56,7 +56,7 @@ jobs:
               - ".github/workflows/build-and-test.yml"
 
   build:
-    name: Build and test on ${{ matrix.name }} (Qt ${{ matrix.qt }})
+    name: ${{ matrix.name }} (Qt ${{ matrix.qt }})
     needs: changes
     permissions:
       contents: read
@@ -182,7 +182,7 @@ jobs:
   # show as skipped; they are not required checks). Tags get a run too, so a
   # release has the BSD result to point at.
   freebsd:
-    name: Build and test on FreeBSD 14 (Qt 6)
+    name: FreeBSD 14 (Qt 6)
     needs: changes
     if: >-
       needs.changes.outputs.src == 'true' ||
@@ -225,7 +225,7 @@ jobs:
             make check
 
   openbsd:
-    name: Build and test on OpenBSD 7.9 (Qt 6)
+    name: OpenBSD 7.9 (Qt 6)
     needs: changes
     if: >-
       needs.changes.outputs.src == 'true' ||

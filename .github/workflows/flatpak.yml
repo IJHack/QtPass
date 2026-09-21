@@ -28,7 +28,7 @@ permissions:
 
 jobs:
   flatpak:
-    name: Build Flatpak (org.qtpass.QtPass)
+    name: org.qtpass.QtPass
     runs-on: ubuntu-latest
     container:
       # By digest, as the actions are by commit: this container runs

@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   changes:
-    name: Detect changes (Documentation)
+    name: Detect changes
     runs-on: ubuntu-latest
     outputs:
       src: ${{ steps.filter.outputs.src }}
@@ -43,7 +43,7 @@ jobs:
               - "docs/**"
 
   docs:
-    name: Build documentation and code coverage
+    name: Build, with code coverage
     needs: changes
     runs-on: ubuntu-latest
     # Read only: this job builds and runs the repository's own code. The
@@ -221,7 +221,7 @@ jobs:
           if-no-files-found: error
 
   deploy:
-    name: Deploy documentation to GitHub Pages
+    name: Deploy to GitHub Pages
     needs: docs
     if: needs.docs.outputs.run_docs == 'true' && github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
