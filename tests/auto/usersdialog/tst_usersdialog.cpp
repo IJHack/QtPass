@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QDir>
 #include <QFile>
@@ -7,7 +8,10 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QListWidget>
+#include <QMessageBox>
+#include <QPlainTextEdit>
 #include <QPushButton>
+#include <QRegularExpression>
 #include <QStandardPaths>
 #include <QTemporaryDir>
 #include <QTextStream>
@@ -18,6 +22,7 @@
 
 #include "../../../src/appsettings.h"
 #include "../../../src/gpgidgeneration.h"
+#include "../../../src/importkeydialog.h"
 #include "../../../src/pass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/usersdialog.h"
@@ -81,8 +86,18 @@ private slots:
   void acceptWithoutInitOnlyCollectsTheSelection();
   void togglingAFilteredRowEnablesTheRightKey();
   void selectionSurvivesFilteringAndEscapeClearsTheFilter();
+  void emptyKeyringRejectsTheDialogWithACriticalBox();
+  void unknownRecipientIsListedAsNotFoundAndTicked();
+  void unusableKeysAreHiddenUntilAskedForAndThenBadged();
+  void rowWithAnOutOfRangeIndexChangesNoSelection();
+  void ownKeysAreBoldAndInLinkColour();
+  void importingAKeyRefreshesTheListAndSelectsIt();
+  void cancellingTheImportLeavesTheListAlone();
 
 private:
+  /// A stand-in gpg at m_dir/@p name: "#!/bin/sh" followed by @p body.
+  /// Empty when it could not be written.
+  auto writeGpg(const QString &name, const QString &body) -> QString;
   /// A gpg like the one from initTestCase() that also answers --verify: with
   /// VALIDSIG by kSigner when the bytes on stdin equal the file at
   /// @p signedBytes, and with failure otherwise. A signature bound to bytes,
@@ -687,6 +702,22 @@ auto enabledIds(const QList<UserInfo> &users) -> QStringList {
   ids.sort();
   return ids;
 }
+
+/// The one row whose text contains @p needle; the list is sorted, so rows
+/// are found by name rather than by position.
+auto itemWithText(QListWidget *list, const QString &needle)
+    -> QListWidgetItem * {
+  QListWidgetItem *found = nullptr;
+  for (int i = 0; i < list->count(); ++i) {
+    if (list->item(i)->text().contains(needle)) {
+      if (found != nullptr) {
+        return nullptr;
+      }
+      found = list->item(i);
+    }
+  }
+  return found;
+}
 } // namespace
 
 /**
@@ -746,6 +777,443 @@ void tst_usersdialog::selectionSurvivesFilteringAndEscapeClearsTheFilter() {
   QCOMPARE(
       enabledIds(pass.initCalls.first().second),
       QStringList{QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")});
+}
+
+auto tst_usersdialog::writeGpg(const QString &name, const QString &body)
+    -> QString {
+  const QString gpg = QDir(m_dir.path()).filePath(name);
+  QFile script(gpg);
+  if (!script.open(QIODevice::WriteOnly | QIODevice::Text |
+                   QIODevice::Truncate))
+    return {};
+  QTextStream out(&script);
+  out << "#!/bin/sh\n" << body;
+  out.flush();
+  script.close();
+  if (!script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner))
+    return {};
+  return gpg;
+}
+
+/**
+ * @brief With no key in the keyring there is nothing to pick from: the
+ *        dialog reports it in a critical box and rejects itself instead of
+ *        opening on an empty list whose OK would write an empty .gpg-id.
+ */
+void tst_usersdialog::emptyKeyringRejectsTheDialogWithACriticalBox() {
+  AppSettings s = m_settings;
+  s.gpgExecutable =
+      writeGpg(QStringLiteral("gpg-empty"), QStringLiteral("exit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  RecordingPass pass(s);
+
+  int boxes = 0;
+  QString title;
+  QString text;
+  QTimer poker;
+  poker.setInterval(20);
+  QObject::connect(&poker, &QTimer::timeout, [&]() {
+    auto *box = qobject_cast<QMessageBox *>(QApplication::activeModalWidget());
+    if (box == nullptr || box->property("tst_driven").toBool()) {
+      return;
+    }
+    box->setProperty("tst_driven", true);
+    ++boxes;
+    title = box->windowTitle();
+    text = box->text();
+    box->accept();
+  });
+  poker.start();
+  UsersDialog dialog(&pass, s, s.passStore);
+  poker.stop();
+
+  QCOMPARE(boxes, 1);
+#ifndef Q_OS_MACOS
+  // QMessageBox shows no window title on macOS and Qt leaves it empty there.
+  QCOMPARE(title, QStringLiteral("Keylist missing"));
+#endif
+  QVERIFY2(text.contains(QStringLiteral("Could not fetch list")),
+           qPrintable(text));
+  QCOMPARE(dialog.result(), static_cast<int>(QDialog::Rejected));
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QCOMPARE(list->count(), 0);
+  QVERIFY2(!dialog.hasSelection(), "an empty keyring selects nothing");
+  dialog.accept();
+  QVERIFY2(pass.initCalls.isEmpty(), "OK must not run Init on an empty list");
+}
+
+/**
+ * @brief A recipient in .gpg-id that gpg does not know must not silently
+ *        drop out of the list (saving would then re-encrypt the store
+ *        without them): it is listed as a ticked placeholder that says the
+ *        key is missing. Being unusable it hides behind "Show unusable
+ *        keys" and carries the [INVALID] badge once shown.
+ */
+void tst_usersdialog::unknownRecipientIsListedAsNotFoundAndTicked() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9\nDEADBEEFDEADBEEF\n");
+  gpgId.close();
+  AppSettings s = m_settings;
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  auto *unusable = dialog.findChild<QCheckBox *>(QStringLiteral("checkBox"));
+  QVERIFY(list != nullptr && unusable != nullptr);
+  QVERIFY(!unusable->isChecked());
+
+  // Hidden while unusable keys are hidden, but part of the selection.
+  QCOMPARE(list->count(), 2);
+  QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Alice")});
+  QCOMPARE(
+      enabledIds(dialog.selectedUsers()),
+      (QStringList{QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9"),
+                   QStringLiteral("DEADBEEFDEADBEEF")}));
+
+  unusable->click();
+  QVERIFY(unusable->isChecked());
+  QCOMPARE(list->count(), 3);
+  QListWidgetItem *placeholder =
+      itemWithText(list, QStringLiteral("DEADBEEFDEADBEEF"));
+  QVERIFY2(placeholder != nullptr, "the unknown recipient must be listed");
+  QVERIFY2(placeholder->text().startsWith(QStringLiteral("[INVALID] ")),
+           qPrintable(placeholder->text()));
+  QVERIFY2(
+      placeholder->text().contains(QStringLiteral("Key not found in keyring")),
+      qPrintable(placeholder->text()));
+  QVERIFY2(placeholder->text().contains(QStringLiteral("DEADBEEFDEADBEEF")),
+           qPrintable(placeholder->text()));
+  QCOMPARE(placeholder->checkState(), Qt::Checked);
+  QCOMPARE(placeholder->background().color(), QColor(Qt::darkRed));
+
+  // Unticking it is how the user drops the lost key from the store.
+  placeholder->setCheckState(Qt::Unchecked);
+  QCOMPARE(
+      enabledIds(dialog.selectedUsers()),
+      QStringList{QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")});
+}
+
+namespace {
+/// Three keys as gpg --with-colons prints them: fully valid but past its
+/// expiry (f, 2023), marginally valid (m) and revoked (r). The fingerprints
+/// are the key ids padded to 40 hex digits so the parser adopts them.
+const char kMixedListing[] =
+    "pub:f:4096:1:AAAAAAAAAAAAAAA1:1600000000:1700000000::f:::escarESCA::::::"
+    "23::0:\n"
+    "fpr:::::::::000000000000000000000000AAAAAAAAAAAAAAA1:\n"
+    "uid:f::::1600000000::X::Expired <expired@example.org>::::::::::0:\n"
+    "pub:m:4096:1:BBBBBBBBBBBBBBB2:1600000000:::m:::escarESCA::::::23::0:\n"
+    "fpr:::::::::000000000000000000000000BBBBBBBBBBBBBBB2:\n"
+    "uid:m::::1600000000::X::Marginal <marginal@example.org>::::::::::0:\n"
+    "pub:r:4096:1:CCCCCCCCCCCCCCC3:1600000000:::r:::escarESCA::::::23::0:\n"
+    "fpr:::::::::000000000000000000000000CCCCCCCCCCCCCCC3:\n"
+    "uid:r::::1600000000::X::Revoked <revoked@example.org>::::::::::0:\n";
+} // namespace
+
+/**
+ * @brief gpg refuses to encrypt to expired and revoked keys, so the dialog
+ *        hides them until "Show unusable keys" is ticked and then marks
+ *        them [EXPIRED] / [INVALID] in white on dark red, with the expiry
+ *        date in the row; a marginally valid key is always listed but
+ *        badged [PARTIAL] on dark yellow.
+ */
+void tst_usersdialog::unusableKeysAreHiddenUntilAskedForAndThenBadged() {
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-mixed"),
+      QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
+                     "cat <<'LISTING'\n") +
+          QString::fromLatin1(kMixedListing) +
+          QStringLiteral("LISTING\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  auto *unusable = dialog.findChild<QCheckBox *>(QStringLiteral("checkBox"));
+  QVERIFY(list != nullptr && unusable != nullptr);
+
+  QCOMPARE(list->count(), 1);
+  QVERIFY2(
+      list->item(0)->text().startsWith(QStringLiteral("[PARTIAL] Marginal")),
+      qPrintable(list->item(0)->text()));
+  QCOMPARE(list->item(0)->background().color(), QColor(Qt::darkYellow));
+  QCOMPARE(list->item(0)->foreground().color(), QColor(Qt::white));
+
+  unusable->click();
+  QCOMPARE(list->count(), 3);
+  QListWidgetItem *expired = itemWithText(list, QStringLiteral("Expired"));
+  QVERIFY(expired != nullptr);
+  QVERIFY2(expired->text().startsWith(QStringLiteral("[EXPIRED] Expired")),
+           qPrintable(expired->text()));
+  QVERIFY2(expired->text().contains(QStringLiteral("expires")),
+           qPrintable(expired->text()));
+  QVERIFY2(expired->text().contains(QStringLiteral("created")),
+           qPrintable(expired->text()));
+  QCOMPARE(expired->background().color(), QColor(Qt::darkRed));
+  QCOMPARE(expired->foreground().color(), QColor(Qt::white));
+  QListWidgetItem *revoked = itemWithText(list, QStringLiteral("Revoked"));
+  QVERIFY(revoked != nullptr);
+  QVERIFY2(revoked->text().startsWith(QStringLiteral("[INVALID] Revoked")),
+           qPrintable(revoked->text()));
+  QVERIFY2(!revoked->text().contains(QStringLiteral("expires")),
+           "a key without expiry shows none");
+  QCOMPARE(revoked->background().color(), QColor(Qt::darkRed));
+
+  // Unticking hides them again, and the filter still applies on top.
+  unusable->click();
+  QCOMPARE(list->count(), 1);
+  auto *filter = dialog.findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  QVERIFY(filter != nullptr);
+  filter->setText(QStringLiteral("expired"));
+  QCOMPARE(list->count(), 0);
+  unusable->click();
+  QCOMPARE(list->count(), 1);
+  QVERIFY2(list->item(0)->text().contains(QStringLiteral("Expired")),
+           qPrintable(list->item(0)->text()));
+}
+
+/**
+ * @brief Rows carry their m_userList index in Qt::UserRole. A row whose
+ *        index points outside the list (a stale row from a rebuild) must
+ *        not write through to some other key or crash: it is logged and
+ *        ignored, and the selection stays what it was.
+ */
+void tst_usersdialog::rowWithAnOutOfRangeIndexChangesNoSelection() {
+  RecordingPass pass(m_settings);
+  UsersDialog dialog(&pass, m_settings, m_settings.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  auto *box = dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+  QVERIFY(list != nullptr && box != nullptr);
+  QCOMPARE(list->count(), 2);
+
+  // Built detached so that only the tick below reaches itemChange(); the
+  // list takes ownership on addItem(). Exactly one warning is expected.
+  auto *stale = new QListWidgetItem(QStringLiteral("Stale"));
+  stale->setData(Qt::UserRole, QVariant::fromValue(42));
+  stale->setCheckState(Qt::Unchecked);
+  list->addItem(stale);
+  QCOMPARE(list->count(), 3);
+  QTest::ignoreMessage(
+      QtWarningMsg, QRegularExpression(QStringLiteral(
+                        "user index out of range: 42 valid range is \\[0, 1")));
+  stale->setCheckState(Qt::Checked);
+  QVERIFY2(!dialog.hasSelection(), "a stale row must not tick any key");
+  QVERIFY2(!box->button(QDialogButtonBox::Ok)->isEnabled(),
+           "OK stays disabled: nothing real is selected");
+  QVERIFY2(enabledIds(dialog.selectedUsers()).isEmpty(),
+           qPrintable(enabledIds(dialog.selectedUsers()).join(", ")));
+
+  // A real row still works next to it.
+  list->item(0)->setCheckState(Qt::Checked);
+  QVERIFY(dialog.hasSelection());
+  QVERIFY(box->button(QDialogButtonBox::Ok)->isEnabled());
+}
+
+/**
+ * @brief Keys whose secret half is in the keyring (the ones this user can
+ *        decrypt with) are marked: bold, and in the palette's link colour when
+ *        no status badge already claims the foreground. A key without a secret
+ *        half is left in the plain font and colour.
+ */
+void tst_usersdialog::ownKeysAreBoldAndInLinkColour() {
+  AppSettings s = m_settings;
+  // --list-secret-keys answers with Alice alone; --list-keys with both.
+  s.gpgExecutable =
+      writeGpg(QStringLiteral("gpg-secret"),
+               QStringLiteral("all() { cat <<'LISTING'\n") +
+                   QString::fromLatin1(kColonListing) +
+                   QStringLiteral("LISTING\n}\n"
+                                  "case \"$*\" in\n"
+                                  "  *--list-secret-keys*) all | head -3 ;;\n"
+                                  "  *) all ;;\n"
+                                  "esac\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+  QCOMPARE(list->count(), 2);
+
+  QListWidgetItem *alice = itemWithText(list, QStringLiteral("Alice"));
+  QListWidgetItem *bob = itemWithText(list, QStringLiteral("Bob"));
+  QVERIFY(alice != nullptr && bob != nullptr);
+  QVERIFY2(alice->font().bold(), "an own key is shown bold");
+  QCOMPARE(alice->foreground().color(),
+           QApplication::palette().color(QPalette::Link));
+  QVERIFY2(!alice->text().startsWith(QLatin1Char('[')),
+           qPrintable(alice->text() + " must carry no badge"));
+  QVERIFY2(!bob->font().bold(), "a key without its secret half is not bold");
+  QVERIFY2(bob->foreground().color() !=
+               QApplication::palette().color(QPalette::Link),
+           "a key without its secret half keeps the plain colour");
+  QCOMPARE(bob->foreground().style(), Qt::NoBrush);
+
+  // The marker is presentation only: it ticks nothing.
+  QVERIFY2(checkedNames(list).isEmpty(),
+           qPrintable(checkedNames(list).join(", ")));
+  const QList<UserInfo> users = dialog.selectedUsers();
+  int secret = 0;
+  for (const UserInfo &u : users) {
+    if (u.have_secret) {
+      ++secret;
+      QCOMPARE(u.key_id,
+               QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9"));
+    }
+  }
+  QCOMPARE(secret, 1);
+}
+
+namespace {
+/// The stand-in gpg for the import tests: Alice alone until --import has
+/// been run, Alice and Bob afterwards; --import reports Bob's fingerprint.
+const char kImportingGpg[] =
+    "case \"$*\" in\n"
+    "  *--import*) cat > /dev/null; touch \"$0.imported\"; "
+    "printf '[GNUPG:] IMPORT_OK 1 "
+    "4EF2550F79F4E9E68B09F71D693A0AF3FA364E76\\n'; "
+    "exit 0 ;;\n"
+    "  *--list-secret-keys*) exit 0 ;;\n"
+    "esac\n"
+    "all() { cat <<'LISTING'\n";
+const char kImportingGpgTail[] =
+    "LISTING\n}\n"
+    "if [ -f \"$0.imported\" ]; then all; else all | head -3; fi\n"
+    "exit 0\n";
+
+/**
+ * @brief Drives the ImportKeyDialog that importKeyButton opens: pastes
+ *        @p armored and clicks Import (or cancels when @p armored is empty),
+ *        then accepts the message box the import shows.
+ * @return How many import dialogs were seen; -1 without an Import button.
+ */
+auto driveImport(UsersDialog *dialog, const QString &armored) -> int {
+  auto *button =
+      dialog->findChild<QPushButton *>(QStringLiteral("importKeyButton"));
+  if (button == nullptr) {
+    return -1;
+  }
+  int dialogs = 0;
+  QTimer poker;
+  poker.setInterval(20);
+  QObject::connect(&poker, &QTimer::timeout, [&]() {
+    QWidget *modal = QApplication::activeModalWidget();
+    if (modal == nullptr || modal->property("tst_driven").toBool()) {
+      return;
+    }
+    if (auto *import = qobject_cast<ImportKeyDialog *>(modal)) {
+      modal->setProperty("tst_driven", true);
+      ++dialogs;
+      if (armored.isEmpty()) {
+        import->reject();
+        return;
+      }
+      auto *input =
+          import->findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
+      auto *go =
+          import->findChild<QPushButton *>(QStringLiteral("importButton"));
+      if (input == nullptr || go == nullptr) {
+        import->reject();
+        return;
+      }
+      input->setPlainText(armored);
+      // Not from inside this timeout: a nested exec() in here would keep
+      // this timer from firing again, and the import's message box would
+      // never be accepted.
+      QTimer::singleShot(0, go, &QPushButton::click);
+      return;
+    }
+    if (auto *box = qobject_cast<QMessageBox *>(modal)) {
+      modal->setProperty("tst_driven", true);
+      box->accept();
+    }
+  });
+  poker.start();
+  // click() runs the slot, and thus the nested modal loops, synchronously.
+  button->click();
+  poker.stop();
+  return dialogs;
+}
+} // namespace
+
+/**
+ * @brief After a key is imported through the Import button the list is
+ *        reloaded from gpg, the filter is cleared so the new key is
+ *        visible, and the new key becomes the current row (matched on its
+ *        stored key id, whether gpg reported a long id or a fingerprint).
+ */
+void tst_usersdialog::importingAKeyRefreshesTheListAndSelectsIt() {
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeGpg(QStringLiteral("gpg-importing"),
+                             QString::fromLatin1(kImportingGpg) +
+                                 QString::fromLatin1(kColonListing) +
+                                 QString::fromLatin1(kImportingGpgTail));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  QFile::remove(s.gpgExecutable + QStringLiteral(".imported"));
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  auto *filter = dialog.findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  QVERIFY(list != nullptr && filter != nullptr);
+  QCOMPARE(list->count(), 1);
+  QVERIFY(list->item(0)->text().startsWith(QStringLiteral("Alice")));
+  // The reload after an import rebuilds m_userList from gpg, so ticks made
+  // before importing do not survive it. Alice is left unticked here so the
+  // test pins the #1167 behaviour (refresh, cleared filter, current row) and
+  // not that loss.
+  filter->setText(QStringLiteral("nobody"));
+  QCOMPARE(list->count(), 0);
+
+  QCOMPARE(driveImport(&dialog, QStringLiteral(
+                                    "-----BEGIN PGP PUBLIC KEY BLOCK-----\n"
+                                    "bob\n-----END PGP PUBLIC KEY BLOCK-----")),
+           1);
+
+  QVERIFY2(filter->text().isEmpty(), qPrintable(filter->text()));
+  QCOMPARE(list->count(), 2);
+  QVERIFY2(list->currentItem() != nullptr, "the imported key must be current");
+  QVERIFY2(list->currentItem()->text().startsWith(QStringLiteral("Bob")),
+           qPrintable(list->currentItem()->text()));
+  QVERIFY2(list->currentItem()->checkState() == Qt::Unchecked,
+           "importing does not tick the key; the user decides");
+  QVERIFY2(enabledIds(dialog.selectedUsers()).isEmpty(),
+           qPrintable(enabledIds(dialog.selectedUsers()).join(", ")));
+  QCOMPARE(dialog.selectedUsers().size(), 2);
+  QVERIFY2(QFile::exists(s.gpgExecutable + QStringLiteral(".imported")),
+           "gpg --import must have run");
+}
+
+/**
+ * @brief Cancelling the import dialog leaves the list, the filter and the
+ *        selection exactly as they were: no reload, no cleared filter.
+ */
+void tst_usersdialog::cancellingTheImportLeavesTheListAlone() {
+  RecordingPass pass(m_settings);
+  UsersDialog dialog(&pass, m_settings, m_settings.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  auto *filter = dialog.findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  QVERIFY(list != nullptr && filter != nullptr);
+  filter->setText(QStringLiteral("bob"));
+  QCOMPARE(list->count(), 1);
+  list->item(0)->setCheckState(Qt::Checked);
+  QListWidgetItem *const bob = list->item(0);
+  const QListWidgetItem *const currentBefore = list->currentItem();
+
+  QCOMPARE(driveImport(&dialog, QString()), 1);
+
+  QCOMPARE(filter->text(), QStringLiteral("bob"));
+  QCOMPARE(list->count(), 1);
+  QVERIFY2(list->item(0) == bob, "the list must not have been rebuilt");
+  QCOMPARE(list->item(0)->checkState(), Qt::Checked);
+  QVERIFY2(list->currentItem() == currentBefore,
+           "nothing was imported, so the current row is untouched");
+  QCOMPARE(
+      enabledIds(dialog.selectedUsers()),
+      QStringList{QStringLiteral("4EF2550F79F4E9E68B09F71D693A0AF3FA364E76")});
 }
 
 QTEST_MAIN(tst_usersdialog)

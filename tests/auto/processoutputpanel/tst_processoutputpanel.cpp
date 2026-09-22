@@ -27,6 +27,9 @@ private slots:
   void scrollingUpStopsAutoScrollUntilBackAtBottom();
   void draggingTheSliderDoesNotReArmAutoScroll();
   void processNamesAndSensitivity();
+  void everyShownProcessHasItsCommandLabel_data();
+  void everyShownProcessHasItsCommandLabel();
+  void processNameServesAsTheAppendPrefix();
 
 private:
   static auto edit(ProcessOutputPanel &panel) -> QTextEdit * {
@@ -165,6 +168,67 @@ void tst_processoutputpanel::processNamesAndSensitivity() {
                              Enums::GPG_GENKEYS, Enums::INVALID}) {
     QVERIFY(!ProcessOutputPanel::isSensitiveProcess(pid));
   }
+}
+
+/**
+ * @brief Pin the exact label of every process the panel can show. The
+ *        labels are what the user reads next to each output line, so a
+ *        renamed or swapped case (e.g. "git mv" vs "git move") must fail
+ *        here rather than go unnoticed.
+ */
+void tst_processoutputpanel::everyShownProcessHasItsCommandLabel_data() {
+  // One row per enum value below, plus PROCESS_COUNT and INVALID themselves.
+  static_assert(Enums::PROCESS_COUNT == 16,
+                "new Enums::PROCESS value: add its label row to this table");
+  QTest::addColumn<Enums::PROCESS>("pid");
+  QTest::addColumn<QString>("label");
+  QTest::newRow("git init") << Enums::GIT_INIT << QStringLiteral("git init");
+  QTest::newRow("git add") << Enums::GIT_ADD << QStringLiteral("git add");
+  QTest::newRow("git commit")
+      << Enums::GIT_COMMIT << QStringLiteral("git commit");
+  QTest::newRow("git rm") << Enums::GIT_RM << QStringLiteral("git rm");
+  QTest::newRow("git pull") << Enums::GIT_PULL << QStringLiteral("git pull");
+  QTest::newRow("git push") << Enums::GIT_PUSH << QStringLiteral("git push");
+  QTest::newRow("git mv") << Enums::GIT_MOVE << QStringLiteral("git mv");
+  QTest::newRow("git cp") << Enums::GIT_COPY << QStringLiteral("git cp");
+  QTest::newRow("pass insert")
+      << Enums::PASS_INSERT << QStringLiteral("pass insert");
+  QTest::newRow("pass rm") << Enums::PASS_REMOVE << QStringLiteral("pass rm");
+  QTest::newRow("pass init") << Enums::PASS_INIT << QStringLiteral("pass init");
+  QTest::newRow("pass mv") << Enums::PASS_MOVE << QStringLiteral("pass mv");
+  QTest::newRow("pass cp") << Enums::PASS_COPY << QStringLiteral("pass cp");
+  QTest::newRow("pass grep") << Enums::PASS_GREP << QStringLiteral("pass grep");
+  QTest::newRow("gpg --gen-key")
+      << Enums::GPG_GENKEYS << QStringLiteral("gpg --gen-key");
+  QTest::newRow("pass show (never shown)") << Enums::PASS_SHOW << QString();
+  QTest::newRow("PROCESS_COUNT (sentinel)")
+      << Enums::PROCESS_COUNT << QString();
+  QTest::newRow("INVALID") << Enums::INVALID << QString();
+}
+
+void tst_processoutputpanel::everyShownProcessHasItsCommandLabel() {
+  QFETCH(Enums::PROCESS, pid);
+  QFETCH(QString, label);
+  QCOMPARE(ProcessOutputPanel::processName(pid), label);
+}
+
+/**
+ * @brief The label processName() returns is meant to be fed straight into
+ *        append() as the line prefix; check the round trip for the cases
+ *        with a distinct spelling ("git mv", "git cp", "pass rm") so the
+ *        rendered line reads "N: git mv: ...".
+ */
+void tst_processoutputpanel::processNameServesAsTheAppendPrefix() {
+  ProcessOutputPanel panel;
+  panel.append(QStringLiteral("renamed"), false,
+               ProcessOutputPanel::processName(Enums::GIT_MOVE));
+  panel.append(QStringLiteral("copied"), false,
+               ProcessOutputPanel::processName(Enums::GIT_COPY));
+  panel.append(QStringLiteral("removed"), true,
+               ProcessOutputPanel::processName(Enums::PASS_REMOVE));
+  QCOMPARE(edit(panel)->toPlainText(),
+           QStringLiteral(
+               "1: git mv: renamed\n2: git cp: copied\n3: pass rm: removed"));
 }
 
 QTEST_MAIN(tst_processoutputpanel)
