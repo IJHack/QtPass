@@ -241,11 +241,23 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   store could pre-create), the new ciphertext is decrypted and compared
   there, and the entry is replaced through the same staged file and single
   rename as an added entry, so the two-rename swap through
-  `<file>.reencrypt.bak` is gone. When the entry cannot be replaced it is
-  left as it was and the message says why. Before a run, leftovers of an
-  interrupted one are dealt with — a stale temporary is removed, a 1.8.x
-  backup whose original is missing is restored, one next to a present
-  original is reported and left for the user to decide [#1842](https://github.com/IJHack/QtPass/issues/1842)
+  `<file>.reencrypt.bak` is gone. When an entry cannot be replaced it is
+  left as it was, and the run's one summary lists it with the reason (a
+  folder that cannot be written fails every entry in it the same way, not
+  one dialog each). Before a run, leftovers of an interrupted one are dealt
+  with — a stale temporary older than an hour is removed (a younger one may
+  be another QtPass's write in flight on a shared store), a 1.8.x backup
+  whose original is missing is restored, one next to a present original is
+  reported and left for the user to decide [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- Every staged write checks, after its rename, that the object under the
+  name is the very file it wrote (opened without following, compared by
+  device and inode): a file swapped under the temporary's name in the window
+  before the rename — a hard link to something of the user's, a regular file
+  to every check by name — is reported instead of taken for the entry, and
+  left where it is for the user to look at. Without replacing, the new name
+  is made with `linkat(2)` rather than `link(2)`, which on macOS and
+  the BSDs follows a symlink planted under the temporary's name and would
+  have made the entry a second name for its target [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - The debug log redacts the values of `--passphrase` and friends and
   `otpauth://` URIs should they ever appear in a command line; a `.gpg-id`
   that is not valid UTF-8 is refused rather than verified as something else,
