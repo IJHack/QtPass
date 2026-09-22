@@ -82,6 +82,17 @@
 #include "../../../src/util.h"
 #include "../testsettings.h"
 
+// QMessageBox::setWindowTitle() is a no-op on macOS ("Message boxes on the
+// mac do not have a title", qmessagebox.cpp), so the titles the driver
+// records are empty there. The count of boxes still holds; each test also
+// asserts on the box's text.
+#ifdef Q_OS_MACOS
+#define COMPARE_BOX_TITLES(actual, expected)                                   \
+  QCOMPARE((actual).size(), (expected).size())
+#else
+#define COMPARE_BOX_TITLES(actual, expected) QCOMPARE(actual, expected)
+#endif
+
 namespace {
 
 /**
@@ -2948,9 +2959,27 @@ void tst_mainwindow::aboutBoxNamesTheProgramAndLicence() {
   auto *about = m_window->findChild<QAction *>(QStringLiteral("actionAbout"));
   QVERIFY(about != nullptr);
   about->trigger();
+#ifdef Q_OS_MACOS
+  // QMessageBox::about() show()s its box on macOS instead of exec()ing it, so
+  // it is never the active modal widget the driver watches for.
+  QPointer<QMessageBox> box;
+  QTRY_VERIFY([&box]() {
+    for (QWidget *top : QApplication::topLevelWidgets()) {
+      auto *candidate = qobject_cast<QMessageBox *>(top);
+      if (candidate != nullptr && candidate->isVisible()) {
+        box = candidate;
+        return true;
+      }
+    }
+    return false;
+  }());
+  const QString text = box->text();
+  box->close();
+#else
   QCOMPARE(driver.seen, 1);
   QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("About QtPass")});
   const QString text = driver.boxTexts.value(0);
+#endif
   QVERIFY2(text.contains(QStringLiteral("QtPass ")), qPrintable(text));
   QVERIFY2(text.contains(QStringLiteral("qtpass.org")), qPrintable(text));
   QVERIFY2(text.contains(QStringLiteral("GNU GPL")), qPrintable(text));
@@ -3292,8 +3321,8 @@ void tst_mainwindow::contextMenuOnAFolderOffersSharing() {
                                     QStringLiteral("What is this?")}));
   QCOMPARE(shareEnabled, (QList<bool>{true, true, true, true}));
   QCOMPARE(driver.seen, 2);
-  QCOMPARE(driver.boxTitles,
-           QStringList{QStringLiteral("Sharing passwords with GPG")});
+  COMPARE_BOX_TITLES(driver.boxTitles,
+                     QStringList{QStringLiteral("Sharing passwords with GPG")});
   QVERIFY2(driver.boxTexts.value(0).contains(
                QStringLiteral("Export your public key")),
            qPrintable(driver.boxTexts.value(0)));
@@ -3387,7 +3416,7 @@ void tst_mainwindow::shareMenuExportsThePublicKey() {
                              QStringLiteral("export-folder"),
                              QStringLiteral("Export my public key..."),
                              answerBox(QMessageBox::Ok), &titles, &texts));
-  QCOMPARE(titles, QStringList{QStringLiteral("Export public key")});
+  COMPARE_BOX_TITLES(titles, QStringList{QStringLiteral("Export public key")});
   QVERIFY2(texts.value(0).contains(QStringLiteral("No signing key")),
            qPrintable(texts.value(0)));
 
@@ -3431,7 +3460,7 @@ void tst_mainwindow::shareMenuExportsThePublicKey() {
                              QStringLiteral("export-folder"),
                              QStringLiteral("Export my public key..."),
                              answerBox(QMessageBox::Ok), &titles, &texts));
-  QCOMPARE(titles, QStringList{QStringLiteral("Export public key")});
+  COMPARE_BOX_TITLES(titles, QStringList{QStringLiteral("Export public key")});
   QVERIFY2(texts.value(0).contains(
                QStringLiteral("Could not export public key for NOKEY")),
            qPrintable(texts.value(0)));
@@ -3464,7 +3493,8 @@ void tst_mainwindow::shareMenuReencryptAsksFirst() {
   QVERIFY(triggerShareAction(m_window.data(), m_storeDir.path(), folder,
                              QStringLiteral("Re-encrypt all passwords"),
                              answerBox(QMessageBox::No), &titles, &texts));
-  QCOMPARE(titles, QStringList{QStringLiteral("Re-encrypt passwords")});
+  COMPARE_BOX_TITLES(titles,
+                     QStringList{QStringLiteral("Re-encrypt passwords")});
   QVERIFY2(texts.value(0).contains(folder), qPrintable(texts.value(0)));
   QVERIFY2(m_window->findChild<QProgressDialog *>() == nullptr,
            "No starts nothing");
@@ -3492,7 +3522,7 @@ void tst_mainwindow::shareMenuReencryptAsksFirst() {
                              QStringLiteral("Re-encrypt all passwords"),
                              answerBox(QMessageBox::Ok), &titles, &texts,
                              [doomedPath] { QDir().rmdir(doomedPath); }));
-  QCOMPARE(titles, QStringList{QStringLiteral("Error")});
+  COMPARE_BOX_TITLES(titles, QStringList{QStringLiteral("Error")});
   QVERIFY2(texts.value(0).contains(QStringLiteral("Directory does not exist")),
            qPrintable(texts.value(0)));
   QVERIFY2(texts.value(0).contains(doomed), qPrintable(texts.value(0)));
@@ -3511,7 +3541,8 @@ void tst_mainwindow::shareMenuReencryptAsksFirst() {
         answerBox(QMessageBox::Yes)(w);
       },
       &titles, &texts));
-  QCOMPARE(titles, QStringList{QStringLiteral("Re-encrypt passwords")});
+  COMPARE_BOX_TITLES(titles,
+                     QStringList{QStringLiteral("Re-encrypt passwords")});
   QTRY_VERIFY_WITH_TIMEOUT(treeView()->isEnabled(), 10000);
   QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
   QVERIFY(m_window->findChild<QProgressDialog *>() == nullptr);
@@ -3536,7 +3567,8 @@ void tst_mainwindow::shareMenuReencryptAsksFirst() {
       },
       &titles, &texts));
   QVERIFY(!usersSeen);
-  QCOMPARE(titles, QStringList{QStringLiteral("Not a folder of the store")});
+  COMPARE_BOX_TITLES(titles,
+                     QStringList{QStringLiteral("Not a folder of the store")});
   QVERIFY2(texts.value(0).contains(QStringLiteral("share-link")),
            qPrintable(texts.value(0)));
 #endif
@@ -3596,7 +3628,8 @@ void tst_mainwindow::addFolderRefusesEscapesAndDuplicates() {
     QVERIFY(QMetaObject::invokeMethod(m_window.data(), "addFolder",
                                       Qt::DirectConnection));
     QCOMPARE(driver.seen, 2);
-    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Invalid name")});
+    COMPARE_BOX_TITLES(driver.boxTitles,
+                       QStringList{QStringLiteral("Invalid name")});
     QVERIFY2(driver.boxTexts.value(0).contains(
                  QStringLiteral("outside the password store")),
              qPrintable(driver.boxTexts.value(0)));
@@ -3609,7 +3642,7 @@ void tst_mainwindow::addFolderRefusesEscapesAndDuplicates() {
     QVERIFY(QMetaObject::invokeMethod(m_window.data(), "addFolder",
                                       Qt::DirectConnection));
     QCOMPARE(driver.seen, 2);
-    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Error")});
+    COMPARE_BOX_TITLES(driver.boxTitles, QStringList{QStringLiteral("Error")});
     QVERIFY2(driver.boxTexts.value(0).contains(
                  QStringLiteral("Failed to create folder")),
              qPrintable(driver.boxTexts.value(0)));
@@ -3642,7 +3675,7 @@ void tst_mainwindow::addFolderRefusesEscapesAndDuplicates() {
     QVERIFY(QMetaObject::invokeMethod(m_window.data(), "addFolder",
                                       Qt::DirectConnection));
     QCOMPARE(driver.seen, 2);
-    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Error")});
+    COMPARE_BOX_TITLES(driver.boxTitles, QStringList{QStringLiteral("Error")});
     QVERIFY2(driver.boxTexts.value(0).contains(
                  QStringLiteral("Failed to create .gpg-id file")),
              qPrintable(driver.boxTexts.value(0)));
@@ -3679,7 +3712,8 @@ void tst_mainwindow::renameFolderMovesIt() {
     ModalDriver driver(typeIntoInputDialog(QStringLiteral("../ren-escape")));
     QVERIFY(QMetaObject::invokeMethod(m_window.data(), "renameFolder",
                                       Qt::DirectConnection));
-    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Invalid name")});
+    COMPARE_BOX_TITLES(driver.boxTitles,
+                       QStringList{QStringLiteral("Invalid name")});
   }
   QVERIFY(QFileInfo(store.filePath(QStringLiteral("ren-src"))).isDir());
   QVERIFY(!QFileInfo::exists(
@@ -3724,7 +3758,8 @@ void tst_mainwindow::renamePasswordMovesIt() {
     QVERIFY(QMetaObject::invokeMethod(m_window.data(), "renamePassword",
                                       Qt::DirectConnection));
     QCOMPARE(offered, QStringLiteral("ren-file"));
-    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Invalid name")});
+    COMPARE_BOX_TITLES(driver.boxTitles,
+                       QStringList{QStringLiteral("Invalid name")});
   }
   QVERIFY(QFileInfo::exists(store.filePath(QStringLiteral("ren-file.gpg"))));
 
@@ -3780,7 +3815,8 @@ void tst_mainwindow::deletePasswordAsksFirst() {
     ModalDriver driver(answerBox(QMessageBox::No));
     QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
                                       Qt::DirectConnection));
-    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Delete password?")});
+    COMPARE_BOX_TITLES(driver.boxTitles,
+                       QStringList{QStringLiteral("Delete password?")});
     QVERIFY2(driver.boxTexts.value(0).contains(QStringLiteral("doomed-file")),
              qPrintable(driver.boxTexts.value(0)));
   }
@@ -3816,7 +3852,8 @@ void tst_mainwindow::deleteFolderWarnsAboutStrayFiles() {
     ModalDriver driver(answerBox(QMessageBox::No));
     QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
                                       Qt::DirectConnection));
-    QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Delete folder?")});
+    COMPARE_BOX_TITLES(driver.boxTitles,
+                       QStringList{QStringLiteral("Delete folder?")});
     const QString text = driver.boxTexts.value(0);
     QVERIFY2(text.contains(QStringLiteral("whole content")), qPrintable(text));
     QVERIFY2(text.contains(QStringLiteral("unexpected files")),
@@ -3872,8 +3909,8 @@ void tst_mainwindow::deleteLinkedFolderRemovesOnlyTheLink() {
     ModalDriver driver(answerBox(QMessageBox::Yes));
     QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
                                       Qt::DirectConnection));
-    QCOMPARE(driver.boxTitles,
-             QStringList{QStringLiteral("Not a folder of the store")});
+    COMPARE_BOX_TITLES(driver.boxTitles, QStringList{QStringLiteral(
+                                             "Not a folder of the store")});
     QVERIFY2(driver.boxTexts.value(0).contains(QStringLiteral("symbolic link")),
              qPrintable(driver.boxTexts.value(0)));
   }
@@ -3884,7 +3921,8 @@ void tst_mainwindow::deleteLinkedFolderRemovesOnlyTheLink() {
   ModalDriver driver(answerBox(QMessageBox::Yes));
   QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onDelete",
                                     Qt::DirectConnection));
-  QCOMPARE(driver.boxTitles, QStringList{QStringLiteral("Delete link?")});
+  COMPARE_BOX_TITLES(driver.boxTitles,
+                     QStringList{QStringLiteral("Delete link?")});
   QVERIFY2(driver.boxTexts.value(0).contains(QStringLiteral("left alone")),
            qPrintable(driver.boxTexts.value(0)));
   QTRY_VERIFY(!QFileInfo(link).isSymLink() && !QFileInfo::exists(link));
@@ -3938,8 +3976,8 @@ void tst_mainwindow::usersDialogOpensForTheStoreButNotForALink() {
   QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onUsers",
                                     Qt::DirectConnection));
   QVERIFY2(!usersSeen, "no dialog for a folder behind a link");
-  QCOMPARE(driver.boxTitles,
-           QStringList{QStringLiteral("Not a folder of the store")});
+  COMPARE_BOX_TITLES(driver.boxTitles,
+                     QStringList{QStringLiteral("Not a folder of the store")});
   QVERIFY2(driver.boxTexts.value(0).contains(QStringLiteral("users-link")),
            qPrintable(driver.boxTexts.value(0)));
 #endif

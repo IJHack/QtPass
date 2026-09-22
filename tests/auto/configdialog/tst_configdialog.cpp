@@ -36,7 +36,11 @@
 // leaves windowTitle() empty there, so a title is compared everywhere else
 // and the box's text carries the assertion on macOS.
 #ifdef Q_OS_MACOS
-#define COMPARE_BOX_TITLE(actual, expected) QVERIFY(true)
+#define COMPARE_BOX_TITLE(actual, expected)                                    \
+  do {                                                                         \
+    Q_UNUSED(actual)                                                           \
+    Q_UNUSED(expected)                                                         \
+  } while (false)
 #else
 #define COMPARE_BOX_TITLE(actual, expected) QCOMPARE(actual, expected)
 #endif
@@ -1502,9 +1506,11 @@ void tst_configdialog::deleteWithoutASelectionWarns() {
   QCOMPARE(child<QListWidget>(dialog, "profileList")->count(), 0);
 
   QString title;
-  ModalDriver driver([&title](QWidget *modal) {
+  QString text;
+  ModalDriver driver([&title, &text](QWidget *modal) {
     if (auto *box = qobject_cast<QMessageBox *>(modal)) {
       title = box->windowTitle();
+      text = box->text();
     }
     QMetaObject::invokeMethod(modal, "reject");
   });
@@ -1512,6 +1518,8 @@ void tst_configdialog::deleteWithoutASelectionWarns() {
 
   QCOMPARE(driver.seen(), 1);
   COMPARE_BOX_TITLE(title, QStringLiteral("No profile selected"));
+  QVERIFY2(text.contains(QStringLiteral("No profile selected to delete")),
+           qPrintable(text));
   QVERIFY2(dialog.getProfiles().isEmpty(), "nothing to delete, nothing gone");
 }
 
@@ -1591,6 +1599,9 @@ void tst_configdialog::sshAuthSockOverrideWarnsForARegularFile() {
  * @brief A path we cannot read is reported as such before the socket check.
  */
 void tst_configdialog::sshAuthSockOverrideWarnsWhenUnreadable() {
+#ifdef Q_OS_WIN
+  QSKIP("a file cannot be made unreadable for its owner on Windows");
+#else
   SettingsRestorer restorer;
   QTemporaryDir dir;
   QVERIFY(dir.isValid());
@@ -1617,6 +1628,7 @@ void tst_configdialog::sshAuthSockOverrideWarnsWhenUnreadable() {
       title, QStringLiteral("Potentially invalid SSH_AUTH_SOCK override"));
   QVERIFY2(text.contains(QStringLiteral("not readable")), qPrintable(text));
   QCOMPARE(QtPassSettings::load().sshAuthSockOverride, file);
+#endif
 }
 
 /**
