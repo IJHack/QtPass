@@ -114,12 +114,12 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
  */
 PasswordDialog::~PasswordDialog() {
   // QDialog's destructor hides the window after this body ran, and hiding
-  // takes the focus from a line edit, which emits editingFinished() into a
-  // slot of the PasswordDialog part that is already gone. Cut those
-  // connections while everything is still whole.
-  for (QLineEdit *line : m_templateLines + m_otherLines) {
-    disconnect(line, nullptr, this, nullptr);
-  }
+  // takes the focus from whatever has it, which emits editingFinished():
+  // into normalizeOtpField() from a field, or through FieldLabel's rename
+  // editor into renameField(), each a slot of the PasswordDialog part that
+  // is already gone by then. Hiding here, while the object is whole, is
+  // what those slots run on; QDialog's own hide is then a no-op.
+  hide();
 }
 
 /**
@@ -309,6 +309,9 @@ void PasswordDialog::setPassword(const QString &password) {
   NamedValues namedValues = fileContent.getNamedValues();
   for (QLineEdit *line : std::as_const(m_templateLines)) {
     line->setText(namedValues.takeValue(line->objectName()));
+    // The value is the entry's again, whatever the user typed before this
+    // reload: not a value normalizeOtpField() may rewrite.
+    line->setProperty(kOtpEditedProperty, QVariant());
     previous = line;
   }
   // show remaining values (if there are)
@@ -380,7 +383,8 @@ void PasswordDialog::removeField(QLineEdit *line) {
   // running. Out of the form now, deleted once the stack has unwound.
   const QFormLayout::TakeRowResult row = ui->formLayout->takeRow(line);
   // hide() takes the focus from a focused line, and that emits
-  // editingFinished(): not into normalizeOtpField() for a field that is gone.
+  // editingFinished(): not into normalizeOtpField() for a field that is
+  // being removed.
   disconnect(line, nullptr, this, nullptr);
   if (m_otpLine == line) {
     m_otpLine = nullptr;
@@ -449,8 +453,8 @@ void PasswordDialog::hookOtpField() {
 
   QLineEdit *otp = otpLineEdit();
   // The field that was the OTP one may not be any more (renamed away, or
-  // another one now comes first); its editingFinished() must not run the
-  // normalisation of the field that is.
+  // another one now comes first): it stops being validated and normalised
+  // here, so its hooks go with the role.
   if (!m_otpLine.isNull() && m_otpLine != otp) {
     disconnect(m_otpLine, nullptr, this, nullptr);
   }
@@ -482,7 +486,12 @@ void PasswordDialog::markOtpFieldEdited() {
  * @brief PasswordDialog::validateOtpField flag an unusable OTP value.
  */
 void PasswordDialog::validateOtpField() {
-  QLineEdit *otp = otpLineEdit();
+  // The line hookOtpField() wired up, not whatever otpLineEdit() resolves to
+  // now: the signals that bring us here are that line's, and so is the mark
+  // normalizeOtpField() reads. Which field is the OTP one is settled when
+  // the fields change (a reload, a rename, a removal), not by what the user
+  // types into them.
+  QLineEdit *otp = m_otpLine;
   if (otp == nullptr) {
     return;
   }
@@ -520,7 +529,7 @@ void PasswordDialog::validateOtpField() {
  * A bare secret left alone still works: Totp::parse() accepts one.
  */
 void PasswordDialog::normalizeOtpField() {
-  QLineEdit *otp = otpLineEdit();
+  QLineEdit *otp = m_otpLine;
   if (otp == nullptr) {
     return;
   }
