@@ -4,6 +4,7 @@
 #include "executor.h"
 #include "gpgidgeneration.h"
 #include "util.h"
+#include <QDateTime>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
@@ -660,7 +661,8 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
 }
 
 auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
-  // What a crashed run can have left in the store, and what each means.
+  // What a crashed run can have left in the store, and what each means
+  // (a temporary modified within the hour is left alone: see below).
   // Today's writers stage every file as .qtpass-XXXXXX.tmp next to its
   // destination and rename it into place in one step; QtPass 1.8.x wrote
   // X.gpg.reencrypt.tmp and replaced the entry through X.gpg.reencrypt.bak
@@ -710,8 +712,18 @@ auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
                       .arg(path));
     clean = false;
   }
+  // A temporary younger than this is taken for a write in progress: another
+  // QtPass on a shared store stages its files under the same names, and
+  // removing one from under it would fail that write for nothing. A crash
+  // leaves its temporary behind for good; the next run after an hour picks
+  // it up.
+  const QDateTime inFlightSince = QDateTime::currentDateTime().addSecs(-3600);
   for (const QString &path : leftovers) {
     if (path.endsWith(QStringLiteral(".tmp"))) {
+      if (QFileInfo(path).lastModified() > inFlightSince) {
+        qCDebug(lcQtPass) << "Leaving a recent temporary alone:" << path;
+        continue;
+      }
       if (!QFile::remove(path)) {
         qCWarning(lcQtPass) << "Could not remove stale temporary" << path;
       }
@@ -844,7 +856,8 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
  * verified, and replaced; otherwise false.
  */
 auto ImitatePass::reencryptSingleFile(const QString &fileName,
-                                      const QStringList &recipients) -> bool {
+                                      const QStringList &recipients,
+                                      QString *why) -> bool {
   qCDebug(lcQtPass) << "reencrypt" << fileName << "for" << recipients.size()
                     << "recipients";
   QString local_lastDecrypt;
@@ -921,10 +934,10 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
                       << fileName;
     return false;
   }
-  QString why;
-  if (!placeEncryptedFile(tempPath, fileName, true, &why)) {
+  if (!placeEncryptedFile(tempPath, fileName, true, why)) {
     // The entry is untouched: the new ciphertext never got under its name.
-    emit critical(tr("Re-encryption failed"), why);
+    // Reported once, in the run's summary, with the others: a folder that
+    // cannot be written fails every entry in it the same way.
     return false;
   }
 
@@ -1004,7 +1017,9 @@ struct ImitatePass::ReencryptResult {
   int total = 0;          ///< `.gpg` files found under the directory.
   int checked = 0;        ///< Files whose recipients were inspected.
   int reencrypted = 0;    ///< Files rewritten for the current recipients.
-  QStringList failed;     ///< Files that could not be re-encrypted.
+  QStringList failed;     ///< One line per file that could not be
+                          ///< re-encrypted: its path, or the reason (which
+                          ///< names the path) when there is one to give.
   bool cancelled = false; ///< Stopped early by cancelReencryptPath(); the
                           ///< interrupted file, if any, is not in `failed`.
   bool aborted = false;   ///< Stopped early on an error already reported.
@@ -1215,14 +1230,16 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
     }
     QStringList actualKeys = getKeysFromFile(fileName);
     if (actualKeys != gpgId) {
-      if (reencryptSingleFile(fileName, gpgId)) {
+      QString why;
+      if (reencryptSingleFile(fileName, gpgId, &why)) {
         result.reencrypted++;
       } else if (m_reencryptCancel.load()) {
         // Interrupted by the cancel: the file is untouched, not failed.
         result.cancelled = true;
         break;
       } else {
-        result.failed << fileName;
+        // The reason names the entry itself when there is one to give.
+        result.failed << (why.isEmpty() ? fileName : why);
       }
     }
     result.checked++;

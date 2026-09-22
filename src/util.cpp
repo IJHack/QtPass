@@ -26,8 +26,6 @@
 #include <QTemporaryFile>
 #include <QUrl>
 
-#include <functional>
-
 #ifdef Q_OS_WIN
 #include <fcntl.h>
 #include <io.h>
@@ -584,8 +582,12 @@ auto Util::replaceFile(const QString &from, const QString &to, bool replace)
       return false;
     }
   } else {
-    // link() makes no second name where one exists and follows nothing.
-    if (::link(source.constData(), target.constData()) != 0) {
+    // linkat() makes no second name where one exists, and without
+    // AT_SYMLINK_FOLLOW it follows nothing: link() would, on macOS and the
+    // BSDs, make the new name a hard link to whatever a symlink planted
+    // under the source's name points at.
+    if (::linkat(AT_FDCWD, source.constData(), AT_FDCWD, target.constData(),
+                 0) != 0) {
       return false;
     }
     ::unlink(source.constData());
@@ -681,28 +683,50 @@ auto Util::syncToDisk(QFileDevice &file) -> bool {
 
 namespace {
 
-/// Fills the staged temporary for stageAndReplace(); returns why it could
-/// not (translated, for the user), or an empty string.
-using Filler = std::function<QString(QFileDevice &)>;
-
 /**
- * @brief The staged write behind Util::writeFileReplacing() and
- * Util::copyFileReplacing(): a temporary created next to @p path (an opaque
- * name, exclusive, owner-only), filled by @p fill through its open handle,
- * synced, then replaceFile()d under the name. The name is never opened for
- * writing, so a link a co-writer plants under it between the caller's check
- * and the write is replaced as an entry rather than written through.
- * @param path The file to write.
- * @param replace Whether an existing entry under the name may go.
- * @param fill Writes the contents into the open temporary; returns why it
- * could not (translated), or an empty string.
- * @param error Receives why not, if not null.
- * @return Whether @p path now holds what @p fill wrote.
+ * @brief What tells one file object from another on its filesystem: device
+ * and inode on POSIX, volume serial and file index on Windows.
  */
-auto stageAndReplace(const QString &path, bool replace, const Filler &fill,
-                     QString *error) -> bool {
+struct FileIdentity {
+  quint64 volume = 0;
+  quint64 index = 0;
+  bool known = false;
+};
+
+auto operator==(const FileIdentity &a, const FileIdentity &b) -> bool {
+  return a.known && b.known && a.volume == b.volume && a.index == b.index;
+}
+
+/// The identity of the object @p file is open on, or an unknown one.
+auto identityOf(const QFileDevice &file) -> FileIdentity {
+#ifdef Q_OS_WIN
+  const HANDLE handle = reinterpret_cast<HANDLE>(_get_osfhandle(file.handle()));
+  BY_HANDLE_FILE_INFORMATION info;
+  if (handle == INVALID_HANDLE_VALUE ||
+      GetFileInformationByHandle(handle, &info) == 0) {
+    return {};
+  }
+  return {info.dwVolumeSerialNumber,
+          (static_cast<quint64>(info.nFileIndexHigh) << 32) |
+              info.nFileIndexLow,
+          true};
+#else
+  struct stat st{};
+  if (::fstat(file.handle(), &st) != 0) {
+    return {};
+  }
+  return {static_cast<quint64>(st.st_dev), static_cast<quint64>(st.st_ino),
+          true};
+#endif
+}
+
+} // namespace
+
+auto Util::stageFileReplacing(const QString &path, bool replace,
+                              const Filler &fill, QString *error) -> bool {
   QString stagedPath;
   QString why;
+  FileIdentity written;
   {
     // The QTemporaryFile goes out of scope before the rename: it keeps its
     // handle open for as long as it lives, also after close(), and Windows
@@ -723,10 +747,11 @@ auto stageAndReplace(const QString &path, bool replace, const Filler &fill,
     // platforms where it may not.
     staged.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
     why = fill(staged);
-    if (why.isEmpty() && !Util::syncToDisk(staged)) {
+    if (why.isEmpty() && !syncToDisk(staged)) {
       why = QCoreApplication::translate("Util", "Cannot write %1: %2")
                 .arg(path, staged.errorString());
     }
+    written = identityOf(staged);
   }
   if (!why.isEmpty()) {
     QFile::remove(stagedPath);
@@ -734,7 +759,7 @@ auto stageAndReplace(const QString &path, bool replace, const Filler &fill,
       *error = why;
     return false;
   }
-  if (!Util::replaceFile(stagedPath, path, replace)) {
+  if (!replaceFile(stagedPath, path, replace)) {
     QFile::remove(stagedPath);
     if (error) {
       const QFileInfo taken(path);
@@ -751,23 +776,32 @@ auto stageAndReplace(const QString &path, bool replace, const Filler &fill,
     }
     return false;
   }
-  if (QFileInfo(path).isSymLink()) {
-    // The temporary's name was swapped for a link before the rename; the
-    // bytes went into an unnamed inode, nothing through the link.
+  // The object under the name must be the file that was filled: not a link
+  // (the temporary's name swapped for one before the rename: the bytes went
+  // into an unnamed inode, nothing through the link), and not another file
+  // put under the temporary's name in that window (a hard link to something
+  // of the user's would sit under the entry's name, a regular file to every
+  // check by name). Opened without following, compared by identity.
+  QFile placed;
+  if (!openRegularFile(path, placed) || !(identityOf(placed) == written)) {
+    if (!replace) {
+      // The name is this write's own (nothing was there, or the link would
+      // have failed): not left pointing at someone else's file.
+      QFile::remove(path);
+    }
     if (error)
-      *error = QCoreApplication::translate(
-                   "Util", "%1 was replaced by a link while it was written.")
-                   .arg(path);
+      *error =
+          QCoreApplication::translate(
+              "Util", "%1 was swapped for another file while it was written.")
+              .arg(path);
     return false;
   }
   return true;
 }
 
-} // namespace
-
 auto Util::writeFileReplacing(const QString &path, const QByteArray &bytes,
                               bool replace, QString *error) -> bool {
-  return stageAndReplace(
+  return stageFileReplacing(
       path, replace,
       [&path, &bytes](QFileDevice &staged) -> QString {
         if (staged.write(bytes) != bytes.size()) {
@@ -787,7 +821,7 @@ auto Util::copyFileReplacing(const QString &src, const QString &dst,
       *error = QCoreApplication::translate("Util", "Cannot read %1.").arg(src);
     return false;
   }
-  return stageAndReplace(
+  return stageFileReplacing(
       dst, replace,
       [&src, &dst, &in](QFileDevice &staged) -> QString {
         char buf[64 * 1024];

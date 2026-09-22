@@ -24,6 +24,7 @@
 #include <unistd.h>
 
 #include <cstring>
+#include <functional>
 #endif
 
 #include "../../../src/clipboardmanager.h"
@@ -337,6 +338,7 @@ private Q_SLOTS:
   void openRegularFileDoesNotFollowLinksOrOpenSpecialFiles();
   void writeFileReplacingStagesAndNeverWritesThroughALink();
   void copyFileReplacingCopiesRegularFilesOnlyAndOwnerOnly();
+  void stageFileReplacingRefusesAFileSwappedUnderItsTemporary();
   void removeTreeDoesNotFollowSymlinks();
   void removeTreeDoesNotFollowJunctions();
   // Pass environment set-up
@@ -4010,6 +4012,18 @@ void tst_util::replaceFileRenamesOverALinkAndNeverThroughIt() {
   QCOMPARE(read(dangling), QByteArray("cipher2"));
   QVERIFY(!QFileInfo::exists(
       QDir(outside.path()).filePath(QStringLiteral("nope"))));
+
+  // A link under the SOURCE name, without replace: the new name is a link
+  // too (a hard link to the symlink), never a name for what it points at.
+  // link(2) follows a symlink source on macOS and the BSDs; linkat(2) with
+  // no flags does not.
+  const QString planted = root.filePath(QStringLiteral("h"));
+  QVERIFY(QFile::link(victim, planted));
+  const QString made = root.filePath(QStringLiteral("i"));
+  QVERIFY(Util::replaceFile(planted, made, false));
+  QVERIFY2(QFileInfo(made).isSymLink(),
+           "the new name must not be a hard link to the link's target");
+  QCOMPARE(read(victim), QByteArray("precious"));
 #endif
 }
 
@@ -4276,6 +4290,95 @@ void tst_util::copyFileReplacingCopiesRegularFilesOnlyAndOwnerOnly() {
                           QDir::Files | QDir::Hidden)
                .size(),
            0);
+}
+
+/**
+ * @brief stageFileReplacing puts under the name the very file it filled: a
+ *        co-writer who swaps the temporary's name for a hard link to another
+ *        file (regular, so every check by name passes) or for a symlink, in
+ *        the window before the rename, gets neither under the entry's name.
+ *        Without replace the name the write made is removed again; with it
+ *        the swapped-in object is reported and left. The other file is never
+ *        written through.
+ */
+void tst_util::stageFileReplacingRefusesAFileSwappedUnderItsTemporary() {
+#ifdef Q_OS_WIN
+  QSKIP("uses hard links and symlinks");
+#else
+  QTemporaryDir dir;
+  QTemporaryDir outside;
+  QVERIFY(dir.isValid() && outside.isValid());
+  const QDir root(dir.path());
+  const QString victim = QDir(outside.path()).filePath(QStringLiteral("key"));
+  QVERIFY(Util::writeFileReplacing(victim, "private key", false));
+  const auto read = [](const QString &path) {
+    QFile f(path);
+    return f.open(QIODevice::ReadOnly) ? f.readAll() : QByteArray("<none>");
+  };
+  // The filler plays the co-writer: the temporary it is handed is renamed
+  // away and something else put under its name.
+  const auto swapFor = [&](const std::function<bool(const QString &)> &plant) {
+    return [&, plant](QFileDevice &staged) -> QString {
+      if (staged.write("ciphertext") != 10)
+        return QStringLiteral("write failed");
+      const QString name = staged.fileName();
+      if (!QFile::rename(name, name + QStringLiteral(".moved")) || !plant(name))
+        return QStringLiteral("swap failed");
+      return {};
+    };
+  };
+  const auto hardLink = [&](const QString &name) {
+    return ::link(QFile::encodeName(victim).constData(),
+                  QFile::encodeName(name).constData()) == 0;
+  };
+  const auto symLink = [&](const QString &name) {
+    return QFile::link(victim, name);
+  };
+
+  // Hard link, new name: refused, the name is gone again.
+  const QString fresh = root.filePath(QStringLiteral("new.gpg"));
+  QString error;
+  QVERIFY(!Util::stageFileReplacing(fresh, false, swapFor(hardLink), &error));
+  QVERIFY2(error.contains(QStringLiteral("swapped")), qPrintable(error));
+  QVERIFY2(!QFileInfo::exists(fresh) && !QFileInfo(fresh).isSymLink(),
+           "a name this write made must not be left as a second name for "
+           "another file");
+  QCOMPARE(read(victim), QByteArray("private key"));
+
+  // Hard link, replacing an entry: refused; the entry under the name is now
+  // the other file (the rename did that), reported, and left for the user.
+  const QString entry = root.filePath(QStringLiteral("entry.gpg"));
+  QVERIFY(Util::writeFileReplacing(entry, "old ciphertext", false));
+  QVERIFY(!Util::stageFileReplacing(entry, true, swapFor(hardLink), &error));
+  QVERIFY2(error.contains(QStringLiteral("swapped")), qPrintable(error));
+  QCOMPARE(read(victim), QByteArray("private key"));
+
+  // Symlink, replacing: the link lands under the name as an entry and is
+  // reported; nothing went through it.
+  QVERIFY(Util::writeFileReplacing(entry, "old ciphertext", true));
+  QVERIFY(!Util::stageFileReplacing(entry, true, swapFor(symLink), &error));
+  QVERIFY2(error.contains(QStringLiteral("swapped")), qPrintable(error));
+  QCOMPARE(read(victim), QByteArray("private key"));
+  // Symlink, new name: refused and removed again.
+  QVERIFY(!Util::stageFileReplacing(fresh, false, swapFor(symLink), &error));
+  QVERIFY(!QFileInfo::exists(fresh) && !QFileInfo(fresh).isSymLink());
+  QCOMPARE(read(victim), QByteArray("private key"));
+
+  // The moved-away temporaries are the test's own mess.
+  for (const QString &leftover : root.entryList({QStringLiteral(".qtpass-*")},
+                                                QDir::Files | QDir::Hidden))
+    QFile::remove(root.filePath(leftover));
+  // And an honest fill still lands.
+  QVERIFY2(Util::stageFileReplacing(
+               fresh, false,
+               [](QFileDevice &staged) -> QString {
+                 return staged.write("fine") == 4 ? QString()
+                                                  : QStringLiteral("no");
+               },
+               &error),
+           qPrintable(error));
+  QCOMPARE(read(fresh), QByteArray("fine"));
+#endif
 }
 
 /**
