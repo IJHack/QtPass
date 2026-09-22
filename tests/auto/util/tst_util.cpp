@@ -4198,6 +4198,11 @@ void tst_util::copyFileReplacingCopiesRegularFilesOnlyAndOwnerOnly() {
 #endif
   QVERIFY(!Util::copyFileReplacing(src, dst, false, &error));
   QVERIFY2(error.contains(QStringLiteral("already exists")), qPrintable(error));
+  {
+    QFile f(dst);
+    QVERIFY(f.open(QIODevice::ReadOnly));
+    QCOMPARE(f.readAll(), bytes);
+  }
   const QString other = root.filePath(QStringLiteral("c.gpg"));
   QVERIFY(Util::writeFileReplacing(other, "other", false));
   QVERIFY2(Util::copyFileReplacing(other, dst, true, &error),
