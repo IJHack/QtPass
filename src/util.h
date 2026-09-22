@@ -9,6 +9,8 @@
 #include <QString>
 #include <QStringList>
 
+#include <functional>
+
 class QFile;
 class QFileDevice;
 
@@ -230,8 +232,10 @@ public:
    * rename fails is to copy by opening @p to for writing, through whatever
    * link sits under that name by then. With @p replace, whatever entry is
    * at @p to (a file, a link) is replaced as an entry; without it, the
-   * call fails when anything is there (`link(2)` and unlink on POSIX, where
-   * a no-replace rename is not portable).
+   * call fails when anything is there (`linkat(2)` without
+   * `AT_SYMLINK_FOLLOW` and unlink on POSIX, where a no-replace rename is
+   * not portable; plain `link(2)` follows a symlink at @p from on macOS and
+   * the BSDs).
    * @param from An existing regular file, on the same filesystem as @p to.
    * @param to The name to give it.
    * @param replace Whether an existing entry at @p to may go.
@@ -254,12 +258,38 @@ public:
   static auto openRegularFile(const QString &path, QFile &file) -> bool;
 
   /**
-   * @brief Write @p bytes as the file @p path, owner-only, through a
-   * temporary created next to it (an opaque name, exclusive) and written by
-   * its open handle, then replaceFile(): the name is never opened for
-   * writing, so a link a co-writer plants under it between the caller's
-   * check and the write is replaced as an entry rather than written
-   * through (QSaveFile resolves such a link at open).
+   * @brief Fills the temporary of stageFileReplacing() through its open
+   * handle; returns why it could not (translated, for the user), or an
+   * empty string.
+   */
+  using Filler = std::function<QString(QFileDevice &)>;
+
+  /**
+   * @brief The staged write every file QtPass puts into a store goes
+   * through: a temporary created next to @p path (an opaque name,
+   * exclusive, owner-only), filled by @p fill through its open handle,
+   * synced, then replaceFile()d under the name, and the object under the
+   * name afterwards checked to be the very file that was filled (opened
+   * without following, compared by device and inode). The name is never
+   * opened for writing, so a link a co-writer plants under it between the
+   * caller's check and the write is replaced as an entry rather than
+   * written through (QSaveFile resolves such a link at open); a file swapped
+   * under the temporary's name before the rename (a hard link to something
+   * of the user's, say) is caught by the comparison and reported, and what
+   * is under the name is left (removing it by name could take another
+   * writer's file that landed there since).
+   * @param path The file to write.
+   * @param replace Whether an existing entry under the name may go.
+   * @param fill Writes the contents.
+   * @param error Receives why not, if not null.
+   * @return Whether @p path now holds what @p fill wrote.
+   */
+  static auto stageFileReplacing(const QString &path, bool replace,
+                                 const Filler &fill, QString *error = nullptr)
+      -> bool;
+
+  /**
+   * @brief Write @p bytes as the file @p path through stageFileReplacing().
    * @param path The file to write.
    * @param bytes Its contents.
    * @param replace Whether an existing entry under the name may go.
@@ -271,11 +301,10 @@ public:
       -> bool;
 
   /**
-   * @brief Copy the regular file @p src to the name @p dst the way
-   * writeFileReplacing() writes bytes there: @p src is read through a handle
-   * opened without following (openRegularFile()), the copy is staged next to
-   * @p dst, synced, then replaceFile()d into place. The copy is owner-only
-   * whatever @p src's mode, as pass's `cp` under its umask 077 makes it.
+   * @brief Copy the regular file @p src to the name @p dst through
+   * stageFileReplacing(): @p src is read through a handle opened without
+   * following (openRegularFile()). The copy is owner-only whatever @p src's
+   * mode, as pass's `cp` under its umask 077 makes it.
    * @param src The file to copy; a link, a directory or a special file under
    * that name is refused.
    * @param dst The name to give the copy.

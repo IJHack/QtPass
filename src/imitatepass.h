@@ -134,10 +134,13 @@ protected:
    * @brief Re-encrypt single file with new recipients.
    * @param fileName File to re-encrypt.
    * @param recipients New recipient key IDs.
+   * @param why Receives, for a failure the user can act on (the new
+   * ciphertext could not be put under the entry's name), the reason for the
+   * run's summary; left empty for a gpg failure, which is logged.
    * @return true on success, false on failure.
    */
   auto reencryptSingleFile(const QString &fileName,
-                           const QStringList &recipients) -> bool;
+                           const QStringList &recipients, QString *why) -> bool;
   /**
    * @brief Resolve destination for move operation.
    * @param src Source path.
