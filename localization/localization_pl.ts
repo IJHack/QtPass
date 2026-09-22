@@ -3247,7 +3247,7 @@ Wpisy oznaczone jako [NIEPRAWIDŁOWY] i&#xa0;[WYGASŁY] nie mogą być użyte do
     <message>
         <location filename="../src/util.cpp" line="794"/>
         <source>%1 was swapped for another file while it was written.</source>
-        <translation type="unfinished">%1 został podmieniony na inny plik podczas zapisywania.</translation>
+        <translation>%1 został podmieniony na inny plik podczas zapisywania.</translation>
     </message>
     <message>
         <source>%1 was replaced by a link while it was written.</source>
