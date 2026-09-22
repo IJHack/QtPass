@@ -31,6 +31,7 @@
 #include <QDir>
 #include <QElapsedTimer>
 #include <QFile>
+#include <QMap>
 #include <QRegularExpression>
 #include <QSignalSpy>
 #include <QTemporaryDir>
@@ -39,6 +40,7 @@
 #include <algorithm>
 #ifndef Q_OS_WIN
 #include <sys/stat.h>
+#include <unistd.h>
 #endif
 
 #include "../../../src/gpgidgeneration.h"
@@ -237,6 +239,100 @@ class tst_imitatepass : public QObject {
     return script;
   }
 
+  /// A fake gpg like writeSigningGpg() whose behaviour for one or more of the
+  /// modes decrypt, encrypt, verify, sign and seckeys is replaced by the
+  /// shell in @p overrides (the rest keep the cooperating default). The
+  /// shell sees $outfile (the --output argument) and $last (the last
+  /// argument: the file being decrypted, say). Returns the script path, or
+  /// an empty string on failure.
+  static QString writeCustomGpg(const QString &dir, const QString &logPath,
+                                const QMap<QString, QString> &overrides) {
+    const QString script = QDir(dir).filePath(QStringLiteral("custom-gpg.sh"));
+    QFile f(script);
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return {};
+    QMap<QString, QString> body{
+        {QStringLiteral("decrypt"), QStringLiteral("printf 'plaintext\\n'")},
+        {QStringLiteral("encrypt"),
+         QStringLiteral(
+             "cat >/dev/null; printf 'ciphertext\\n' > \"$outfile\"")},
+        {QStringLiteral("sign"),
+         QStringLiteral("cat >/dev/null; printf 'sig' > \"$outfile\"")},
+        {QStringLiteral("seckeys"),
+         QStringLiteral("printf '[GNUPG:] KEY_CONSIDERED %1 0\\n'")
+             .arg(kSigner)},
+        {QStringLiteral("verify"),
+         QStringLiteral("cat >/dev/null; printf '[GNUPG:] VALIDSIG %1 "
+                        "2026-09-19 1758200000 0 4 0 1 10 00 %1\\n'")
+             .arg(kSigner)}};
+    for (auto it = overrides.cbegin(); it != overrides.cend(); ++it)
+      body[it.key()] = it.value();
+    QTextStream out(&f);
+    out << "#!/bin/sh\n"
+        << "printf '%s\\n' \"$*\" >> '" << logPath << "'\n"
+        << "mode=''; outfile=''; prev=''; last=''\n"
+        << "for a in \"$@\"; do\n"
+        << "  case \"$a\" in -d) mode=decrypt;; -eq) mode=encrypt;; "
+           "--verify) mode=verify;; --detach-sign) mode=sign;; "
+           "--list-secret-keys) mode=seckeys;; esac\n"
+        << "  [ \"$prev\" = '--output' ] && outfile=\"$a\"\n"
+        << "  prev=\"$a\"; last=\"$a\"\n"
+        << "done\n"
+        << "case \"$mode\" in\n";
+    for (auto it = body.cbegin(); it != body.cend(); ++it)
+      out << "  " << it.key() << ") " << it.value() << ";;\n";
+    out << "esac\n"
+        << "exit 0\n";
+    out.flush();
+    f.close();
+    if (!QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                           QFile::ExeOwner))
+      return {};
+    return script;
+  }
+
+  /// A fake git that logs argv, runs the shell `case` arms in @p arms against
+  /// "$*" (each arm may print or `exit`) and otherwise exits 0. Returns the
+  /// script path, or an empty string on failure.
+  static QString writeScriptedGit(const QString &dir, const QString &logPath,
+                                  const QString &arms) {
+    const QString script =
+        QDir(dir).filePath(QStringLiteral("scripted-git.sh"));
+    QFile f(script);
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return {};
+    QTextStream out(&f);
+    out << "#!/bin/sh\n"
+        << "printf '%s\\n' \"$*\" >> '" << logPath << "'\n"
+        << "case \"$*\" in\n"
+        << arms << "\n"
+        << "esac\n"
+        << "exit 0\n";
+    out.flush();
+    f.close();
+    if (!QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                           QFile::ExeOwner))
+      return {};
+    return script;
+  }
+
+  /// An enabled recipient with the given key, with or without a secret key.
+  static UserInfo user(const QString &keyId, bool haveSecret = true) {
+    UserInfo u;
+    u.key_id = keyId;
+    u.enabled = true;
+    u.have_secret = haveSecret;
+    return u;
+  }
+
+  /// Read a whole file; empty when it cannot be opened.
+  static QByteArray contentsOf(const QString &path) {
+    QFile f(path);
+    if (!f.open(QIODevice::ReadOnly))
+      return {};
+    return f.readAll();
+  }
+
   /// Every logged gpg call, one QStringList of arguments per call.
   static QList<QStringList> loggedCalls(const QString &logPath) {
     QList<QStringList> calls;
@@ -318,6 +414,89 @@ class tst_imitatepass : public QObject {
     return finished;
   }
 
+  /**
+   * @brief Run reencryptPath() on a one-entry store with the fake gpg at
+   * @p fakeGpg and check the failure contract: the entry is reported as failed
+   * in the aggregated dialog, the summary counts one failure, and no temporary
+   * or backup is left. The recorded signals and gpg calls are handed back.
+   */
+  static void expectSingleFailureLeavesEntryIntact(const QString &storeDir,
+                                                   const QString &fakeGpg,
+                                                   QStringList *criticals,
+                                                   QStringList *statusMessages,
+                                                   QList<QStringList> *gpgCalls,
+                                                   const QString &logPath) {
+    ImitatePass pass;
+    pass.init(settingsFor(storeDir, fakeGpg));
+    QObject ctx;
+    Recorder rec;
+    record(pass, ctx, rec);
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    pass.reencryptPath(storeDir);
+    QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+    QCoreApplication::processEvents();
+    *criticals = rec.criticals;
+    *statusMessages = rec.statusMessages;
+    *gpgCalls = loggedCalls(logPath);
+    const QStringList leftovers = QDir(storeDir).entryList(
+        {QStringLiteral("*.tmp"), QStringLiteral("*.bak")},
+        QDir::Files | QDir::System | QDir::Hidden);
+    QVERIFY2(leftovers.isEmpty(), qPrintable(leftovers.join(' ')));
+    QVERIFY2(std::any_of(criticals->cbegin(), criticals->cend(),
+                         [](const QString &m) {
+                           return m.contains("could not be re-encrypted") &&
+                                  m.contains("entry0.gpg");
+                         }),
+             qPrintable(criticals->join(" | ")));
+    QVERIFY2(!statusMessages->isEmpty() &&
+                 statusMessages->last().contains(QStringLiteral("1 failed")),
+             qPrintable(statusMessages->join(" | ")));
+  }
+
+  /// Re-encrypt @p storeDir with the recording fake gpg and the fake git at
+  /// @p fakeGit, autoPush on (and autoPull as given), and hand back what was
+  /// recorded: the signals, every git call and the number of encrypt calls.
+  /// With @p expectPush the push that closes a clean run is waited for too,
+  /// so it is among the git calls; without it a push that must not happen
+  /// gets a grace period to show up. Returns false when the run (or the
+  /// expected push) did not finish in time.
+  static bool runReencryptWithGit(const QString &storeDir,
+                                  const QString &fakeGit, Recorder &rec,
+                                  QList<QStringList> *gitCalls, int *encrypts,
+                                  bool autoPull = false,
+                                  bool expectPush = false) {
+    const QString gpgLog = QDir(storeDir).filePath("gpg-argv.log");
+    const QString gitLog = QDir(storeDir).filePath("git-argv.log");
+    const QString fakeGpg = writeRecordingGpg(storeDir, gpgLog);
+    if (fakeGpg.isEmpty())
+      return false;
+    ImitatePass pass;
+    AppSettings s = settingsFor(storeDir, fakeGpg);
+    s.useGit = true;
+    s.gitExecutable = fakeGit;
+    s.autoPush = true;
+    s.autoPull = autoPull;
+    pass.init(s);
+    QObject ctx;
+    record(pass, ctx, rec);
+    QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+    QSignalSpy pushSpy(&pass, &Pass::finishedGitPush);
+    pass.reencryptPath(storeDir);
+    bool finished = endSpy.count() > 0 || endSpy.wait(15000);
+    if (expectPush) {
+      // GitPush() is queued on the executor just before the run ends and
+      // reaches the fake git a little later.
+      finished = finished && (pushSpy.count() > 0 || pushSpy.wait(5000));
+    } else {
+      // A push that must not happen gets the time it would need to show up.
+      QTest::qWait(300);
+    }
+    QCoreApplication::processEvents();
+    *gitCalls = loggedCalls(gitLog);
+    *encrypts = encryptCalls(loggedCalls(gpgLog)).size();
+    return finished;
+  }
+
 private Q_SLOTS:
   void initTestCase();
   void reencryptPathEmitsStartSynchronouslyAndEndLater();
@@ -357,6 +536,42 @@ private Q_SLOTS:
   void operationsRefuseLinkedEntriesAndFoldersButRemoveUnlinks();
   void linkedGpgIdIsNotARecipientList();
   void removeLinkedFolderWithGitUnlinksAndForgets();
+  void gitInitAndPullRunThroughTheExecutor();
+  void gitPullBlockingReportsAFailedPull();
+  void insertRefusesWhenTheStoreHasNoRecipientList();
+  void insertReportsAnUnusableTemporaryLocation();
+  void removeEntryWithGitAsksGitToRemoveAndCommit();
+  void removeReportsALinkItCannotUnlink();
+  void initRefusesAFolderOutsideTheStoreWhenSigning();
+  void initReportsAFailedSignature();
+  void initRefusesASignatureThatDoesNotVerify();
+  void initRefusesWhenTheSigningKeyHasNoSecret();
+  void initReportsAnOldSignatureItCannotRemove();
+  void initCommitsTheRemovalOfATrackedOldSignature();
+  void initWithGitButWithoutAddGpgIdStillFinishes();
+  void recoveryRemovesALinkUnderATemporaryName();
+  void reencryptStopsWhenTheFolderHasNoRecipients();
+  void reencryptRemovesItsTemporaryWhenEncryptionFails();
+  void reencryptDiscardsACiphertextThatDoesNotDecrypt();
+  void reencryptDiscardsACiphertextWhoseContentDiffers();
+  void reencryptFailsWhenTheOriginalVanishesBeforeTheSwap();
+  void reencryptRestoresTheOriginalWhenTheSwapFails();
+  void reencryptFailsWhenNoTemporaryCanBeMadeNextToTheEntry();
+  void reencryptCountsAFailedGitAddAsAFailure();
+  void reencryptCountsAFailedGitCommitAsAFailure();
+  void reencryptAbortsWhenGitStatusFails();
+  void reencryptAbortsWhenTheBackupCommitFails();
+  void reencryptCancelledBeforeTheWorkerStartsEndsAtOnce();
+  void reencryptPullsFirstWhenAutoPullIsOn();
+  void reencryptGoesOnWhenThePullFailsCleanly();
+  void reencryptAbortsWhenThePullLeavesConflicts();
+  void failureDialogListsAtMostFifteenFiles();
+  void moveFolderResolvesItsDestination();
+  void moveWithForceReplacesTheDestinationWithoutGit();
+  void moveWithGitUsesGitMvAndCommits();
+  void copyFailsWhenTheDestinationFolderDoesNotExist();
+  void insertFailsWhenGpgWritesNoCiphertext();
+  void insertFailsWhenTheEntryFolderVanishes();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -2311,6 +2526,1486 @@ void tst_imitatepass::linkedGpgIdIsNotARecipientList() {
   QVERIFY(pass.loadVerifiedRecipients(root.filePath(QStringLiteral(".gpg-id")),
                                       &recipients));
   QVERIFY(recipients.isEmpty());
+#endif
+}
+
+/**
+ * @brief GitInit() and GitPull() are thin executor wrappers: `git init
+ *        <store>` and `git pull` run and complete through the ordinary
+ *        finishedGitInit / finishedGitPull path.
+ */
+void tst_imitatepass::gitInitAndPullRunThroughTheExecutor() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a recording fake git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit = writeRecordingGit(storeDir.path(), gitLog);
+  QVERIFY(!fakeGit.isEmpty());
+  AppSettings s = settingsFor(storeDir.path(), unstartableGpg());
+  s.useGit = true;
+  s.gitExecutable = fakeGit;
+  ImitatePass pass;
+  pass.init(s);
+  QSignalSpy initSpy(&pass, &Pass::finishedGitInit);
+  QSignalSpy pullSpy(&pass, &Pass::finishedGitPull);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+
+  pass.GitInit();
+  QVERIFY2(initSpy.count() > 0 || initSpy.wait(5000),
+           "git init must complete through finishedGitInit");
+  pass.GitPull();
+  QVERIFY2(pullSpy.count() > 0 || pullSpy.wait(5000),
+           "git pull must complete through finishedGitPull");
+  QCOMPARE(errorSpy.count(), 0);
+  const QList<QStringList> calls = loggedCalls(gitLog);
+  QCOMPARE(calls.size(), 2);
+  QCOMPARE(calls.at(0).first(), QStringLiteral("init"));
+  QCOMPARE(QDir::cleanPath(calls.at(0).last()),
+           QDir::cleanPath(storeDir.path()));
+  QCOMPARE(calls.at(1), QStringList{QStringLiteral("pull")});
+#endif
+}
+
+/**
+ * @brief GitPull_b() blocks, runs git in the store (-C) and only speaks up
+ *        when the pull fails, quoting git's stderr in the status bar.
+ */
+void tst_imitatepass::gitPullBlockingReportsAFailedPull() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString okGit = writeRecordingGit(storeDir.path(), gitLog);
+  const QString failingGit = writeScriptedGit(
+      storeDir.path(), gitLog,
+      QStringLiteral("  *' pull') printf 'fatal: no remote\\n' >&2; exit 1;;"));
+  QVERIFY(!okGit.isEmpty() && !failingGit.isEmpty());
+  AppSettings s = settingsFor(storeDir.path(), unstartableGpg());
+  s.useGit = true;
+  s.gitExecutable = okGit;
+  ImitatePass pass;
+  pass.init(s);
+  QSignalSpy statusSpy(&pass, &Pass::statusMsg);
+
+  pass.GitPull_b();
+  QVERIFY2(statusSpy.isEmpty(), "a pull that worked has nothing to say");
+  QList<QStringList> calls = loggedCalls(gitLog);
+  QCOMPARE(calls.size(), 1);
+  QCOMPARE(calls.first().at(0), QStringLiteral("-C"));
+  QCOMPARE(QDir::cleanPath(calls.first().at(1)),
+           QDir::cleanPath(storeDir.path()));
+  QCOMPARE(calls.first().last(), QStringLiteral("pull"));
+
+  s.gitExecutable = failingGit;
+  pass.init(s);
+  pass.GitPull_b();
+  QCOMPARE(statusSpy.count(), 1);
+  const QString msg = statusSpy.first().at(0).toString();
+  QVERIFY2(msg.contains(QStringLiteral("Git pull failed")) &&
+               msg.contains(QStringLiteral("fatal: no remote")),
+           qPrintable(msg));
+
+  // With git enabled but no executable configured nothing runs at all.
+  s.gitExecutable.clear();
+  pass.init(s);
+  statusSpy.clear();
+  pass.GitPull_b();
+  QCOMPARE(loggedCalls(gitLog).size(), 2);
+  QCOMPARE(statusSpy.count(), 1);
+  QVERIFY2(statusSpy.first().at(0).toString().contains("not configured"),
+           qPrintable(statusSpy.first().at(0).toString()));
+#endif
+}
+
+/**
+ * @brief A store with no .gpg-id (signing off) has nobody to encrypt to:
+ *        Insert() says so and never starts gpg.
+ */
+void tst_imitatepass::insertRefusesWhenTheStoreHasNoRecipientList() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a recording fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+
+  pass.Insert(QStringLiteral("entry"), QStringLiteral("secret\n"), false);
+  QTest::qWait(200);
+  QCOMPARE(insertSpy.count(), 0);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Can not edit"));
+  QVERIFY2(criticalSpy.first().at(1).toString().contains(
+               QStringLiteral("Could not read encryption key")),
+           qPrintable(criticalSpy.first().at(1).toString()));
+  QVERIFY2(loggedCalls(logPath).isEmpty(), "gpg must not have been run");
+  QVERIFY2(!QFile::exists(QDir(storeDir.path()).filePath("entry.gpg")),
+           "no entry may appear when the add was refused");
+#endif
+}
+
+/**
+ * @brief gpg writes into a private temporary directory; when none can be
+ *        made (TMPDIR unusable) the add is refused up front with the reason,
+ *        rather than gpg being pointed into the store.
+ */
+void tst_imitatepass::insertReportsAnUnusableTemporaryLocation() {
+#ifdef Q_OS_WIN
+  QSKIP("redirects TMPDIR and uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+
+  const QByteArray oldTmp = qgetenv("TMPDIR");
+  const bool hadTmp = qEnvironmentVariableIsSet("TMPDIR");
+  qputenv("TMPDIR", QByteArrayLiteral("/nonexistent/qtpass-test-tmp"));
+  pass.Insert(QStringLiteral("entry"), QStringLiteral("secret\n"), false);
+  if (hadTmp)
+    qputenv("TMPDIR", oldTmp);
+  else
+    qunsetenv("TMPDIR");
+  QTest::qWait(200);
+
+  QCOMPARE(insertSpy.count(), 0);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Cannot write"));
+  QVERIFY2(criticalSpy.first().at(1).toString().contains(
+               QStringLiteral("temporary directory")),
+           qPrintable(criticalSpy.first().at(1).toString()));
+  QVERIFY2(loggedCalls(logPath).isEmpty(), "gpg must not have been run");
+  QVERIFY2(!QFile::exists(QDir(storeDir.path()).filePath("entry.gpg")),
+           "no entry may appear when the add was refused");
+#endif
+}
+
+/**
+ * @brief With git on, deleting an entry is `git rm -f -- <file>` followed by
+ *        a commit naming the entry, and the interface hears finishedRemove.
+ */
+void tst_imitatepass::removeEntryWithGitAsksGitToRemoveAndCommit() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a recording fake git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit = writeRecordingGit(storeDir.path(), gitLog);
+  QVERIFY(!fakeGit.isEmpty());
+  AppSettings s = settingsFor(storeDir.path(), unstartableGpg());
+  s.useGit = true;
+  s.gitExecutable = fakeGit;
+  ImitatePass pass;
+  pass.init(s);
+  QSignalSpy removeSpy(&pass, &Pass::finishedRemove);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+
+  pass.Remove(QStringLiteral("entry0"), false);
+  QVERIFY2(removeSpy.count() > 0 || removeSpy.wait(5000),
+           "finishedRemove must follow the commit");
+  QCOMPARE(errorSpy.count(), 0);
+  const QList<QStringList> calls = loggedCalls(gitLog);
+  QCOMPARE(calls.size(), 2);
+  const QString entry = QDir(storeDir.path()).filePath("entry0.gpg");
+  QCOMPARE(calls.at(0).mid(0, 3),
+           (QStringList{QStringLiteral("rm"), QStringLiteral("-f"),
+                        QStringLiteral("--")}));
+  QCOMPARE(QDir::cleanPath(calls.at(0).last()), QDir::cleanPath(entry));
+  QVERIFY2(calls.at(1).first() == QStringLiteral("commit") &&
+               calls.at(1).contains(QStringLiteral("Remove")) &&
+               calls.at(1).contains(QStringLiteral("entry0")) &&
+               QDir::cleanPath(calls.at(1).last()) == QDir::cleanPath(entry),
+           qPrintable(calls.at(1).join(' ')));
+#endif
+}
+
+/**
+ * @brief A link the store cannot unlink (its folder is read-only) is
+ *        reported as a failed delete; nothing is asked of git and the
+ *        link's target is untouched.
+ */
+void tst_imitatepass::removeReportsALinkItCannotUnlink() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a symlink and directory permissions");
+#else
+  if (geteuid() == 0)
+    QSKIP("root ignores directory permissions");
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("sub")));
+  const QString sub = root.filePath(QStringLiteral("sub"));
+  QVERIFY(QFile::link(outsideDir.path(),
+                      root.filePath(QStringLiteral("sub/shared"))));
+  const QString gitLog = root.filePath("git-argv.log");
+  const QString fakeGit = writeRecordingGit(storeDir.path(), gitLog);
+  QVERIFY(!fakeGit.isEmpty());
+  AppSettings s = settingsFor(storeDir.path(), unstartableGpg());
+  s.useGit = true;
+  s.gitExecutable = fakeGit;
+  ImitatePass pass;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+
+  QVERIFY(QFile::setPermissions(sub, QFile::ReadOwner | QFile::ExeOwner));
+  pass.Remove(QStringLiteral("sub/shared"), true);
+  const bool stillLinked =
+      QFileInfo(root.filePath(QStringLiteral("sub/shared"))).isSymLink();
+  QVERIFY(QFile::setPermissions(sub, QFile::ReadOwner | QFile::WriteOwner |
+                                         QFile::ExeOwner));
+  QTest::qWait(200);
+  QVERIFY2(stillLinked, "the link must still be there when unlinking failed");
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Delete failed"));
+  QVERIFY2(criticalSpy.first().at(1).toString().contains(
+               QStringLiteral("Could not remove the link")),
+           qPrintable(criticalSpy.first().at(1).toString()));
+  QVERIFY2(!QFile::exists(gitLog),
+           "git must not be asked about a failed unlink");
+  QVERIFY(QFileInfo(outsideDir.path()).isDir());
+#endif
+}
+
+/**
+ * @brief With a signing key the recipient list carries a folder line, and a
+ *        folder that is not inside the store has no such line to give: Init
+ *        refuses and writes nothing there.
+ */
+void tst_imitatepass::initRefusesAFolderOutsideTheStoreWhenSigning() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeSigningGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.passSigningKey = kSigner;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy startSpy(&pass, &ImitatePass::startReencryptPath);
+
+  pass.Init(outsideDir.path() + QLatin1Char('/'), {user(kSigner)});
+  QTest::qWait(200);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Cannot update"));
+  QVERIFY2(criticalSpy.first().at(1).toString().contains(
+               QStringLiteral("not inside the password store")),
+           qPrintable(criticalSpy.first().at(1).toString()));
+  QVERIFY2(!QFile::exists(QDir(outsideDir.path()).filePath(".gpg-id")),
+           "no recipient list may be written outside the store");
+  QVERIFY2(!QFile::exists(QDir(outsideDir.path()).filePath(".gpg-id.sig")),
+           "no signature may be written outside the store");
+  QCOMPARE(startSpy.count(), 0);
+#endif
+}
+
+/**
+ * @brief When gpg cannot make the signature, Init stops there: the failure
+ *        is reported with gpg's own words, no signature file appears and no
+ *        re-encryption to the new list starts.
+ */
+void tst_imitatepass::initReportsAFailedSignature() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir root(storeDir.path());
+  const QString logPath = root.filePath("gpg-argv.log");
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("sign"),
+        QStringLiteral("cat >/dev/null; printf 'gpg: signing failed: No "
+                       "secret key\\n' >&2; exit 2")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.passSigningKey = kSigner;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy startSpy(&pass, &ImitatePass::startReencryptPath);
+
+  pass.Init(root.path() + QLatin1Char('/'), {user(kSigner)});
+  QTest::qWait(300);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("GPG signing failed!"));
+  const QString why = criticalSpy.first().at(1).toString();
+  QVERIFY2(why.contains(QStringLiteral("Failed to sign")) &&
+               why.contains(QStringLiteral("No secret key")),
+           qPrintable(why));
+  QVERIFY2(!QFile::exists(root.filePath(".gpg-id.sig")),
+           "a failed signing leaves no signature file");
+  QCOMPARE(startSpy.count(), 0);
+  QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
+           "nothing may be encrypted to an unsigned list");
+
+  // Without a word from gpg the message still names the file.
+  const QString silentGpg =
+      writeCustomGpg(storeDir.path(), logPath,
+                     {{QStringLiteral("sign"), QStringLiteral("exit 2")}});
+  s.gpgExecutable = silentGpg;
+  pass.init(s);
+  criticalSpy.clear();
+  pass.Init(root.path() + QLatin1Char('/'), {user(kSigner)});
+  QTest::qWait(300);
+  QCOMPARE(criticalSpy.count(), 1);
+  QVERIFY2(
+      criticalSpy.first().at(1).toString().endsWith(
+          QStringLiteral("Failed to sign %1.").arg(root.filePath(".gpg-id"))),
+      qPrintable(criticalSpy.first().at(1).toString()));
+#endif
+}
+
+/**
+ * @brief A signature gpg made but does not verify afterwards (no VALIDSIG
+ *        by a configured key) is not trusted: Init reports the invalid
+ *        signature and no re-encryption starts.
+ */
+void tst_imitatepass::initRefusesASignatureThatDoesNotVerify() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir root(storeDir.path());
+  const QString logPath = root.filePath("gpg-argv.log");
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("verify"), QStringLiteral("cat >/dev/null")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.passSigningKey = kSigner;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy startSpy(&pass, &ImitatePass::startReencryptPath);
+
+  pass.Init(root.path() + QLatin1Char('/'), {user(kSigner)});
+  QTest::qWait(300);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Check .gpg-id file signature!"));
+  QVERIFY2(criticalSpy.first().at(1).toString().contains(
+               QStringLiteral("Signature for")) &&
+               criticalSpy.first().at(1).toString().contains(
+                   QStringLiteral("is invalid")),
+           qPrintable(criticalSpy.first().at(1).toString()));
+  QVERIFY2(QFile::exists(root.filePath(".gpg-id.sig")),
+           "the signature gpg wrote is on disk, it just does not verify");
+  QCOMPARE(startSpy.count(), 0);
+  QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
+           "nothing may be encrypted to a list whose signature is bad");
+#endif
+}
+
+/**
+ * @brief Without the secret half of the signing key the list could be
+ *        written but never signed, and then refused everywhere: Init stops
+ *        before writing anything.
+ */
+void tst_imitatepass::initRefusesWhenTheSigningKeyHasNoSecret() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QDir root(storeDir.path());
+  const QString logPath = root.filePath("gpg-argv.log");
+  const QString fakeGpg =
+      writeCustomGpg(storeDir.path(), logPath,
+                     {{QStringLiteral("seckeys"), QStringLiteral("exit 0")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.passSigningKey = kSigner;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy startSpy(&pass, &ImitatePass::startReencryptPath);
+
+  pass.Init(root.path() + QLatin1Char('/'), {user(kSigner)});
+  QTest::qWait(200);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("No signing key!"));
+  QVERIFY2(!QFile::exists(root.filePath(".gpg-id")),
+           "no list may be written that cannot be signed");
+  QCOMPARE(startSpy.count(), 0);
+  const QList<QStringList> calls = loggedCalls(logPath);
+  QCOMPARE(calls.size(), 1);
+  QVERIFY2(calls.first().contains(QStringLiteral("--list-secret-keys")),
+           qPrintable("the one gpg call is the secret-key check: " +
+                      calls.first().join(' ')));
+#endif
+}
+
+/**
+ * @brief Signing switched off and the old signature cannot be removed (a
+ *        directory sits under its name): Init reports it instead of leaving
+ *        the new list under a stale signature pass would reject.
+ */
+void tst_imitatepass::initReportsAnOldSignatureItCannotRemove() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral(".gpg-id.sig")));
+  const QString logPath = root.filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy startSpy(&pass, &ImitatePass::startReencryptPath);
+
+  pass.Init(root.path() + QLatin1Char('/'),
+            {user(QStringLiteral("0123456789ABCDEF"))});
+  QTest::qWait(200);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Cannot update"));
+  QVERIFY2(criticalSpy.first().at(1).toString().contains(
+               QStringLiteral("Failed to remove the old signature")),
+           qPrintable(criticalSpy.first().at(1).toString()));
+  QVERIFY2(QFileInfo(root.filePath(".gpg-id.sig")).isDir(),
+           "what sits under the signature's name is left alone");
+  QCOMPARE(startSpy.count(), 0);
+#endif
+}
+
+/**
+ * @brief Signing switched off in a git store: the old, tracked signature is
+ *        removed and its removal goes into the same commit as the new list,
+ *        so no revision holds the list under a signature that is not its own.
+ */
+void tst_imitatepass::initCommitsTheRemovalOfATrackedOldSignature() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir root(storeDir.path());
+  const QString sig = root.filePath(".gpg-id.sig");
+  {
+    QFile f(sig);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("old signature");
+  }
+  const QString gpgLog = root.filePath("gpg-argv.log");
+  const QString gitLog = root.filePath("git-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), gpgLog);
+  // ls-files says "tracked", diff --cached says "something staged".
+  const QString fakeGit = writeGitFailingOn(storeDir.path(), gitLog, QString());
+  QVERIFY(!fakeGpg.isEmpty() && !fakeGit.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.useGit = true;
+  s.addGPGId = true;
+  s.gitExecutable = fakeGit;
+  pass.init(s);
+  QSignalSpy initSpy(&pass, &Pass::finishedInit);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+
+  pass.Init(root.path() + QLatin1Char('/'),
+            {user(QStringLiteral("0123456789ABCDEF"))});
+  QVERIFY2(endSpy.count() > 0 || endSpy.wait(15000),
+           "the re-encryption Init starts must finish");
+  QVERIFY2(initSpy.count() > 0 || initSpy.wait(5000),
+           "finishedInit must follow the .gpg-id commit");
+  QCOMPARE(criticalSpy.count(), 0);
+  QVERIFY2(!QFile::exists(sig), "the old signature must be gone");
+  const QList<QStringList> git = loggedCalls(gitLog);
+  QList<QStringList> commits;
+  for (const QStringList &c : git)
+    if (c.contains(QStringLiteral("commit")))
+      commits << c;
+  QVERIFY2(!commits.isEmpty(), "the new list must have been committed");
+  const QStringList &first = commits.first();
+  const QStringList paths =
+      first.mid(first.lastIndexOf(QStringLiteral("--")) + 1);
+  QVERIFY2(paths.size() == 2 && paths.first().endsWith(".gpg-id") &&
+               paths.last().endsWith(".gpg-id.sig"),
+           qPrintable("the removed signature goes into the .gpg-id commit: " +
+                      first.join(' ')));
+#endif
+}
+
+/**
+ * @brief Git on but "add .gpg-id" off: the list is written and the folder
+ *        re-encrypted, git is never asked about the .gpg-id, and the
+ *        interface still gets its finishedInit.
+ */
+void tst_imitatepass::initWithGitButWithoutAddGpgIdStillFinishes() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir root(storeDir.path());
+  const QString gpgLog = root.filePath("gpg-argv.log");
+  const QString gitLog = root.filePath("git-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), gpgLog);
+  const QString fakeGit = writeRecordingGit(storeDir.path(), gitLog);
+  QVERIFY(!fakeGpg.isEmpty() && !fakeGit.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.useGit = true;
+  s.addGPGId = false;
+  s.gitExecutable = fakeGit;
+  pass.init(s);
+  QSignalSpy initSpy(&pass, &Pass::finishedInit);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+
+  pass.Init(root.path() + QLatin1Char('/'),
+            {user(QStringLiteral("FEDCBA9876543210"))});
+  QVERIFY2(endSpy.count() > 0 || endSpy.wait(15000),
+           "the re-encryption Init starts must finish");
+  QVERIFY2(initSpy.count() > 0 || initSpy.wait(5000),
+           "finishedInit must be emitted with git on and add .gpg-id off");
+  QCOMPARE(criticalSpy.count(), 0);
+  QCOMPARE(contentsOf(root.filePath(".gpg-id")),
+           QByteArrayLiteral("FEDCBA9876543210\n"));
+  QCOMPARE(encryptCalls(loggedCalls(gpgLog)).size(), 1);
+  for (const QStringList &c : loggedCalls(gitLog))
+    QVERIFY2(!c.join(' ').contains(QStringLiteral(".gpg-id")),
+             qPrintable("git must not see the .gpg-id: " + c.join(' ')));
+#endif
+}
+
+/**
+ * @brief A symlink under a stale temporary's name is a leftover QtPass never
+ *        made; the link is removed (never what it points to) and the run
+ *        goes on.
+ */
+void tst_imitatepass::recoveryRemovesALinkUnderATemporaryName() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a symlink and a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString outside = QDir(outsideDir.path()).filePath("victim");
+  {
+    QFile f(outside);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("precious");
+  }
+  const QString stale = QDir(storeDir.path()).filePath("entry0.gpg.aB3xYz.tmp");
+  QVERIFY(QFile::link(outside, stale));
+  Recorder rec;
+  int encrypts = 0;
+  bool aborted = true;
+  QVERIFY2(runReencrypt(storeDir.path(), rec, &encrypts, &aborted),
+           "re-encryption must finish");
+  QVERIFY2(!aborted, qPrintable(rec.criticals.join("; ")));
+  QVERIFY2(!QFileInfo(stale).isSymLink() && !QFileInfo::exists(stale),
+           "the link under the temporary's name must be gone");
+  QCOMPARE(contentsOf(outside), QByteArrayLiteral("precious"));
+  QCOMPARE(encrypts, 1);
+#endif
+}
+
+/**
+ * @brief A folder whose (unsigned) .gpg-id is missing has nobody to encrypt
+ *        to: the run stops with a verification failure before any file is
+ *        touched.
+ */
+void tst_imitatepass::reencryptStopsWhenTheFolderHasNoRecipients() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  QVERIFY(QFile::remove(QDir(storeDir.path()).filePath(".gpg-id")));
+  Recorder rec;
+  int encrypts = 0;
+  bool aborted = false;
+  QVERIFY2(runReencrypt(storeDir.path(), rec, &encrypts, &aborted),
+           "re-encryption must finish");
+  QVERIFY2(aborted, "a folder without recipients must abort the run");
+  QCOMPARE(rec.criticals.size(), 1);
+  QVERIFY2(rec.criticals.first().contains(
+               QStringLiteral("Could not verify .gpg-id")),
+           qPrintable(rec.criticals.first()));
+  QCOMPARE(encrypts, 0);
+  QVERIFY2(
+      std::none_of(rec.statusMessages.cbegin(), rec.statusMessages.cend(),
+                   [](const QString &m) { return m.contains("completed"); }),
+      "an aborted run is not summarised as completed");
+  QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
+           QByteArrayLiteral("not really encrypted"));
+#endif
+}
+
+/**
+ * @brief gpg fails to encrypt: the temporary it was to write is removed, the
+ *        entry keeps its bytes and is counted as failed.
+ */
+void tst_imitatepass::reencryptRemovesItsTemporaryWhenEncryptionFails() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("encrypt"), QStringLiteral("cat >/dev/null; exit 2")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  QStringList criticals;
+  QStringList status;
+  QList<QStringList> calls;
+  expectSingleFailureLeavesEntryIntact(storeDir.path(), fakeGpg, &criticals,
+                                       &status, &calls, logPath);
+  if (QTest::currentTestFailed())
+    return;
+  QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
+           QByteArrayLiteral("not really encrypted"));
+  // Decrypt, encrypt; no verification of a ciphertext that was never written.
+  QCOMPARE(encryptCalls(calls).size(), 1);
+  int decrypts = 0;
+  for (const QStringList &c : calls)
+    if (c.first() == QStringLiteral("-d"))
+      ++decrypts;
+  QCOMPARE(decrypts, 1);
+#endif
+}
+
+/**
+ * @brief The new ciphertext must decrypt before it replaces the entry: one
+ *        that does not is discarded and the entry stays as it was.
+ */
+void tst_imitatepass::reencryptDiscardsACiphertextThatDoesNotDecrypt() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("decrypt"),
+        QStringLiteral("case \"$last\" in *.tmp) exit 2;; *) printf "
+                       "'plaintext\\n';; esac")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  QStringList criticals;
+  QStringList status;
+  QList<QStringList> calls;
+  expectSingleFailureLeavesEntryIntact(storeDir.path(), fakeGpg, &criticals,
+                                       &status, &calls, logPath);
+  if (QTest::currentTestFailed())
+    return;
+  QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
+           QByteArrayLiteral("not really encrypted"));
+  QVERIFY2(std::any_of(calls.cbegin(), calls.cend(),
+                       [](const QStringList &c) {
+                         return c.first() == QStringLiteral("-d") &&
+                                c.last().endsWith(QStringLiteral(".tmp"));
+                       }),
+           "the new ciphertext must have been test-decrypted");
+#endif
+}
+
+/**
+ * @brief A ciphertext that decrypts to something other than the plaintext
+ *        that went in is discarded as well (defence in depth against a gpg
+ *        that encrypted the wrong bytes).
+ */
+void tst_imitatepass::reencryptDiscardsACiphertextWhoseContentDiffers() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("decrypt"),
+        QStringLiteral("case \"$last\" in *.tmp) printf 'tampered\\n';; *) "
+                       "printf 'plaintext\\n';; esac")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  QStringList criticals;
+  QStringList status;
+  QList<QStringList> calls;
+  expectSingleFailureLeavesEntryIntact(storeDir.path(), fakeGpg, &criticals,
+                                       &status, &calls, logPath);
+  if (QTest::currentTestFailed())
+    return;
+  QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
+           QByteArrayLiteral("not really encrypted"));
+  QVERIFY2(std::any_of(calls.cbegin(), calls.cend(),
+                       [](const QStringList &c) {
+                         return c.first() == QStringLiteral("-d") &&
+                                c.last().endsWith(QStringLiteral(".tmp"));
+                       }),
+           "the new ciphertext must have been test-decrypted and compared");
+#endif
+}
+
+/**
+ * @brief The entry disappears while gpg encrypts (another client deleted
+ *        it): it cannot be moved aside, so the new ciphertext is dropped and
+ *        the file counted as failed; nothing is invented under its name.
+ */
+void tst_imitatepass::reencryptFailsWhenTheOriginalVanishesBeforeTheSwap() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  // $outfile is <entry>.XXXXXX.tmp; strip the temporary suffix for the entry.
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("encrypt"),
+        QStringLiteral("cat >/dev/null; rm -f \"${outfile%.*.tmp}\"; printf "
+                       "'ciphertext\\n' > \"$outfile\"")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  QStringList criticals;
+  QStringList status;
+  QList<QStringList> calls;
+  expectSingleFailureLeavesEntryIntact(storeDir.path(), fakeGpg, &criticals,
+                                       &status, &calls, logPath);
+  if (QTest::currentTestFailed())
+    return;
+  const QString entry = QDir(storeDir.path()).filePath("entry0.gpg");
+  QVERIFY2(!QFileInfo::exists(entry),
+           "a deleted entry must not come back as the new ciphertext");
+#endif
+}
+
+/**
+ * @brief The original was moved aside but the new ciphertext cannot take
+ *        its place (it vanished in between): the original is put back and
+ *        the user is told that it was. Also pins the newline the decrypted
+ *        text gets when gpg prints none.
+ */
+void tst_imitatepass::reencryptRestoresTheOriginalWhenTheSwapFails() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  // The test-decrypt of the temporary answers correctly, then the temporary
+  // is gone before the rename; the entry's own decrypt has no trailing
+  // newline.
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("decrypt"),
+        QStringLiteral("case \"$last\" in *.tmp) printf 'plaintext\\n'; rm -f "
+                       "\"$last\";; *) printf 'plaintext';; esac")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  QStringList criticals;
+  QStringList status;
+  QList<QStringList> calls;
+  expectSingleFailureLeavesEntryIntact(storeDir.path(), fakeGpg, &criticals,
+                                       &status, &calls, logPath);
+  if (QTest::currentTestFailed())
+    return;
+  QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
+           QByteArrayLiteral("not really encrypted"));
+  QVERIFY2(std::any_of(criticals.cbegin(), criticals.cend(),
+                       [](const QString &m) {
+                         return m.contains("Original has been restored");
+                       }),
+           qPrintable(criticals.join(" | ")));
+#endif
+}
+
+/**
+ * @brief The new ciphertext is staged next to the entry; when nothing can be
+ *        created there (the folder is read-only) the file is counted as
+ *        failed and left exactly as it was, with no temporary anywhere.
+ */
+void tst_imitatepass::reencryptFailsWhenNoTemporaryCanBeMadeNextToTheEntry() {
+#ifdef Q_OS_WIN
+  QSKIP("uses directory permissions and a shell script as a fake gpg");
+#else
+  if (geteuid() == 0)
+    QSKIP("root ignores directory permissions");
+  QTemporaryDir storeDir;
+  QTemporaryDir toolDir;
+  QVERIFY(storeDir.isValid() && toolDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  // The fake gpg and its log live outside the store, which is about to
+  // become read-only.
+  const QString logPath = QDir(toolDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeCustomGpg(toolDir.path(), logPath, {});
+  QVERIFY(!fakeGpg.isEmpty());
+  QVERIFY(QFile::setPermissions(storeDir.path(),
+                                QFile::ReadOwner | QFile::ExeOwner));
+  QStringList criticals;
+  QStringList status;
+  QList<QStringList> calls;
+  expectSingleFailureLeavesEntryIntact(storeDir.path(), fakeGpg, &criticals,
+                                       &status, &calls, logPath);
+  QVERIFY(QFile::setPermissions(
+      storeDir.path(), QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner));
+  if (QTest::currentTestFailed())
+    return;
+  QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
+           QByteArrayLiteral("not really encrypted"));
+  QVERIFY2(encryptCalls(calls).isEmpty(),
+           "gpg must not be asked to encrypt into a file that does not exist");
+#endif
+}
+
+/**
+ * @brief The entry is re-encrypted on disk but `git add` fails: the
+ *        repository is behind, so the file counts as failed and the run is
+ *        not pushed.
+ */
+void tst_imitatepass::reencryptCountsAFailedGitAddAsAFailure() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit =
+      writeGitFailingOn(storeDir.path(), gitLog, QStringLiteral("add"));
+  QVERIFY(!fakeGit.isEmpty());
+  Recorder rec;
+  QList<QStringList> git;
+  int encrypts = 0;
+  QVERIFY(runReencryptWithGit(storeDir.path(), fakeGit, rec, &git, &encrypts));
+  QCOMPARE(encrypts, 1);
+  QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
+           QByteArrayLiteral("ciphertext\n"));
+  QVERIFY2(std::any_of(rec.criticals.cbegin(), rec.criticals.cend(),
+                       [](const QString &m) {
+                         return m.contains("could not be re-encrypted") &&
+                                m.contains("entry0.gpg");
+                       }),
+           qPrintable(rec.criticals.join(" | ")));
+  QVERIFY2(
+      std::any_of(rec.statusMessages.cbegin(), rec.statusMessages.cend(),
+                  [](const QString &m) { return m.contains("Not pushing"); }),
+      qPrintable(rec.statusMessages.join(" | ")));
+  QVERIFY2(!hasPush(git),
+           "a store the repository does not match is not pushed");
+  QVERIFY2(std::none_of(git.cbegin(), git.cend(),
+                        [](const QStringList &c) {
+                          return c.contains(QStringLiteral("commit"));
+                        }),
+           "nothing is committed after a failed add");
+#endif
+}
+
+/**
+ * @brief Like a failed add, a failed per-file commit counts the file as
+ *        failed and keeps the run from being pushed.
+ */
+void tst_imitatepass::reencryptCountsAFailedGitCommitAsAFailure() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit =
+      writeGitFailingOn(storeDir.path(), gitLog, QStringLiteral("commit"));
+  QVERIFY(!fakeGit.isEmpty());
+  Recorder rec;
+  QList<QStringList> git;
+  int encrypts = 0;
+  QVERIFY(runReencryptWithGit(storeDir.path(), fakeGit, rec, &git, &encrypts));
+  QCOMPARE(encrypts, 1);
+  QVERIFY2(std::any_of(rec.criticals.cbegin(), rec.criticals.cend(),
+                       [](const QString &m) {
+                         return m.contains("could not be re-encrypted") &&
+                                m.contains("entry0.gpg");
+                       }),
+           qPrintable(rec.criticals.join(" | ")));
+  QVERIFY2(std::any_of(git.cbegin(), git.cend(),
+                       [](const QStringList &c) {
+                         return c.contains(QStringLiteral("add")) &&
+                                c.last().endsWith("entry0.gpg");
+                       }),
+           "the file was added before the commit failed");
+  QVERIFY2(std::any_of(git.cbegin(), git.cend(),
+                       [](const QStringList &c) {
+                         return c.contains(QStringLiteral("commit")) &&
+                                c.contains(QStringLiteral("Re-encrypt"));
+                       }),
+           "the per-file commit was attempted");
+  QVERIFY2(!hasPush(git), "a run with a failed file is not pushed");
+#endif
+}
+
+/**
+ * @brief The backup commit needs `git status`; when that fails the run is
+ *        aborted with a dialog before any file is touched.
+ */
+void tst_imitatepass::reencryptAbortsWhenGitStatusFails() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit =
+      writeGitFailingOn(storeDir.path(), gitLog, QStringLiteral("status"));
+  QVERIFY(!fakeGit.isEmpty());
+  Recorder rec;
+  QList<QStringList> git;
+  int encrypts = 0;
+  QVERIFY(runReencryptWithGit(storeDir.path(), fakeGit, rec, &git, &encrypts));
+  QCOMPARE(encrypts, 0);
+  QCOMPARE(rec.criticals.size(), 1);
+  QVERIFY2(rec.criticals.first().contains(
+               QStringLiteral("Could not inspect git status")),
+           qPrintable(rec.criticals.first()));
+  QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
+           QByteArrayLiteral("not really encrypted"));
+  QVERIFY2(
+      std::none_of(rec.statusMessages.cbegin(), rec.statusMessages.cend(),
+                   [](const QString &m) { return m.contains("completed"); }),
+      qPrintable(rec.statusMessages.join(" | ")));
+  QVERIFY2(!hasPush(git), "an aborted run is not pushed");
+#endif
+}
+
+/**
+ * @brief A dirty tree is committed (tracked files only, `add -u`) before
+ *        re-encryption; when that commit fails there is no safe state to fall
+ *        back to, so the run is aborted with a dialog.
+ */
+void tst_imitatepass::reencryptAbortsWhenTheBackupCommitFails() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit = writeScriptedGit(
+      storeDir.path(), gitLog,
+      QStringLiteral("  *' status '*) printf ' M entry0.gpg\\n';;\n"
+                     "  *' commit '*) exit 1;;"));
+  QVERIFY(!fakeGit.isEmpty());
+  Recorder rec;
+  QList<QStringList> git;
+  int encrypts = 0;
+  QVERIFY(runReencryptWithGit(storeDir.path(), fakeGit, rec, &git, &encrypts));
+  QCOMPARE(encrypts, 0);
+  QCOMPARE(rec.criticals.size(), 1);
+  QVERIFY2(rec.criticals.first().contains(
+               QStringLiteral("git backup could not be created")),
+           qPrintable(rec.criticals.first()));
+  QVERIFY2(std::any_of(git.cbegin(), git.cend(),
+                       [](const QStringList &c) {
+                         return c.contains(QStringLiteral("add")) &&
+                                c.contains(QStringLiteral("-u"));
+                       }),
+           "only tracked changes are staged for the backup");
+  QVERIFY2(std::any_of(git.cbegin(), git.cend(),
+                       [](const QStringList &c) {
+                         return c.contains(QStringLiteral("commit")) &&
+                                c.contains(QStringLiteral("Backup"));
+                       }),
+           "the backup commit was attempted");
+  QVERIFY2(!hasPush(git), "an aborted run is not pushed");
+#endif
+}
+
+/**
+ * @brief A cancel that lands while the run is still waiting for the executor
+ *        queue to drain (a Show is running) ends the run without ever
+ *        starting the worker: no file is looked at and the summary says so.
+ */
+void tst_imitatepass::reencryptCancelledBeforeTheWorkerStartsEndsAtOnce() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a slow fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 2));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  // Every call takes a second: long enough for the cancel to land while the
+  // Show below still occupies the executor.
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("decrypt"), QStringLiteral("sleep 1; printf 'pw\\n'")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QObject ctx;
+  Recorder rec;
+  record(pass, ctx, rec);
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  QSignalSpy startSpy(&pass, &ImitatePass::startReencryptPath);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+
+  pass.Show(QStringLiteral("entry0"));
+  pass.reencryptPath(storeDir.path());
+  QCOMPARE(startSpy.count(), 1);
+  pass.cancelReencryptPath();
+  QVERIFY2(endSpy.count() > 0 || endSpy.wait(5000),
+           "the cancelled run must end without waiting for the worker");
+  QCoreApplication::processEvents();
+  QVERIFY2(rec.progress.isEmpty(), "no file may have been looked at");
+  QVERIFY2(rec.criticals.isEmpty(), qPrintable(rec.criticals.join(" | ")));
+  QVERIFY2(!rec.statusMessages.isEmpty() &&
+               rec.statusMessages.last().contains(
+                   QStringLiteral("cancelled: 0 of 0")),
+           qPrintable(rec.statusMessages.join(" | ")));
+  QVERIFY2(showSpy.count() > 0 || showSpy.wait(5000),
+           "the Show that held the executor must still complete");
+  QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
+           "nothing may be re-encrypted after the cancel");
+#endif
+}
+
+/**
+ * @brief With autoPull on the run pulls first, telling the user so, and a
+ *        pull that works changes nothing else about the run.
+ */
+void tst_imitatepass::reencryptPullsFirstWhenAutoPullIsOn() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit = writeRecordingGit(storeDir.path(), gitLog);
+  QVERIFY(!fakeGit.isEmpty());
+  Recorder rec;
+  QList<QStringList> git;
+  int encrypts = 0;
+  QVERIFY2(runReencryptWithGit(storeDir.path(), fakeGit, rec, &git, &encrypts,
+                               true, true),
+           "the run and its push must finish");
+  QVERIFY2(rec.criticals.isEmpty(), qPrintable(rec.criticals.join(" | ")));
+  QCOMPARE(encrypts, 1);
+  QVERIFY2(!git.isEmpty(), "git must have been asked to pull");
+  QVERIFY2(git.first().first() == QStringLiteral("-C") &&
+               git.first().last() == QStringLiteral("pull"),
+           qPrintable("the pull comes first, in the store: " +
+                      git.first().join(' ')));
+  // Pull first, then the backup commit: the "Updating" notice precedes it.
+  const int updating = rec.statusMessages.indexOf(
+      QRegularExpression(QStringLiteral("^Updating password-store")));
+  const int backup = rec.statusMessages.indexOf(
+      QRegularExpression(QStringLiteral("^Creating backup commit")));
+  QVERIFY2(updating >= 0 && backup > updating,
+           qPrintable(rec.statusMessages.join(" | ")));
+  QVERIFY2(hasPush(git), "a clean run with autoPush on is pushed");
+#endif
+}
+
+/**
+ * @brief A pull that fails without leaving a merge behind (no remote, say)
+ *        leaves the store as it was: the user is told and the run goes on.
+ */
+void tst_imitatepass::reencryptGoesOnWhenThePullFailsCleanly() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit = writeScriptedGit(
+      storeDir.path(), gitLog, QStringLiteral("  *' pull') exit 1;;"));
+  QVERIFY(!fakeGit.isEmpty());
+  Recorder rec;
+  QList<QStringList> git;
+  int encrypts = 0;
+  QVERIFY2(runReencryptWithGit(storeDir.path(), fakeGit, rec, &git, &encrypts,
+                               true, true),
+           "the run and its push must finish");
+  QVERIFY2(rec.criticals.isEmpty(), qPrintable(rec.criticals.join(" | ")));
+  QCOMPARE(encrypts, 1);
+  QVERIFY2(std::any_of(rec.statusMessages.cbegin(), rec.statusMessages.cend(),
+                       [](const QString &m) {
+                         return m.contains("Git pull failed") &&
+                                m.contains("as it is");
+                       }),
+           qPrintable(rec.statusMessages.join(" | ")));
+  QVERIFY2(std::any_of(git.cbegin(), git.cend(),
+                       [](const QStringList &c) {
+                         return c.contains(QStringLiteral("ls-files")) &&
+                                c.contains(QStringLiteral("--unmerged"));
+                       }),
+           "the run must check for an unfinished merge");
+  QVERIFY2(std::any_of(rec.statusMessages.cbegin(), rec.statusMessages.cend(),
+                       [](const QString &m) {
+                         return m.contains("completed") &&
+                                m.contains("1 files re-encrypted");
+                       }),
+           qPrintable(rec.statusMessages.join(" | ")));
+  QVERIFY2(hasPush(git), "a failed pull alone does not stop the push");
+#endif
+}
+
+/**
+ * @brief A pull that stopped in a merge leaves conflict markers and an
+ *        unmerged index; re-encrypting on top of that would commit the mess,
+ *        so the run is aborted with a dialog and nothing is encrypted.
+ */
+void tst_imitatepass::reencryptAbortsWhenThePullLeavesConflicts() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  const QString fakeGit = writeScriptedGit(
+      storeDir.path(), gitLog,
+      QStringLiteral("  *' pull') exit 1;;\n"
+                     "  *' ls-files --unmerged') printf '100644 0123abcd 1\\t"
+                     "entry0.gpg\\n';;"));
+  QVERIFY(!fakeGit.isEmpty());
+  Recorder rec;
+  QList<QStringList> git;
+  int encrypts = 0;
+  QVERIFY(runReencryptWithGit(storeDir.path(), fakeGit, rec, &git, &encrypts,
+                              true));
+  QCOMPARE(encrypts, 0);
+  QCOMPARE(rec.criticals.size(), 1);
+  QVERIFY2(rec.criticals.first().contains(QStringLiteral("unmerged")),
+           qPrintable(rec.criticals.first()));
+  QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
+           QByteArrayLiteral("not really encrypted"));
+  QVERIFY2(!hasPush(git), "an aborted run is not pushed");
+  QVERIFY2(std::none_of(git.cbegin(), git.cend(),
+                        [](const QStringList &c) {
+                          return c.contains(QStringLiteral("status"));
+                        }),
+           "no backup commit is attempted on an unmerged tree");
+#endif
+}
+
+/**
+ * @brief The failure dialog lists at most fifteen files and says how many
+ *        more there are, so a store of thousands does not produce a dialog
+ *        taller than the screen.
+ */
+void tst_imitatepass::failureDialogListsAtMostFifteenFiles() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const int fileCount = 17;
+  QVERIFY(populateStore(storeDir.path(), fileCount));
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), unstartableGpg()));
+  QObject ctx;
+  Recorder rec;
+  record(pass, ctx, rec);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+
+  pass.reencryptPath(storeDir.path());
+  QVERIFY2(endSpy.count() > 0 || endSpy.wait(30000),
+           "re-encryption must finish");
+  QCoreApplication::processEvents();
+  QCOMPARE(rec.criticals.size(), 1);
+  const QString dialog = rec.criticals.first();
+  QVERIFY2(dialog.startsWith(QStringLiteral("17 file")) &&
+               dialog.contains(QStringLiteral("could not be re-encrypted")),
+           qPrintable(dialog));
+  int listed = 0;
+  for (int i = 0; i < fileCount; ++i)
+    if (dialog.contains(QStringLiteral("entry%1.gpg").arg(i)))
+      ++listed;
+  QCOMPARE(listed, 15);
+  QVERIFY2(dialog.contains(QStringLiteral("and 2 more")), qPrintable(dialog));
+  QVERIFY2(!rec.statusMessages.isEmpty() &&
+               rec.statusMessages.last().contains(QStringLiteral("17 failed")),
+           qPrintable(rec.statusMessages.last()));
+}
+
+/**
+ * @brief Moving a folder without git: into an existing folder it keeps its
+ *        name, onto a file it is refused, and to a new name it is renamed.
+ */
+void tst_imitatepass::moveFolderResolvesItsDestination() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir root(storeDir.path());
+  for (const QString &folder :
+       {QStringLiteral("a"), QStringLiteral("b"), QStringLiteral("c"),
+        QStringLiteral("target")}) {
+    QVERIFY(root.mkpath(folder));
+  }
+  for (const QString &folder :
+       {QStringLiteral("a"), QStringLiteral("b"), QStringLiteral("c")}) {
+    QFile f(root.filePath(folder + QStringLiteral("/x.gpg")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write(folder.toUtf8());
+  }
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), unstartableGpg()));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+
+  // Into an existing folder.
+  pass.Move(root.filePath(QStringLiteral("a")),
+            root.filePath(QStringLiteral("target")), false);
+  QVERIFY2(!QFileInfo::exists(root.filePath(QStringLiteral("a"))),
+           "the folder must have moved into the destination folder");
+  QCOMPARE(contentsOf(root.filePath(QStringLiteral("target/a/x.gpg"))),
+           QByteArrayLiteral("a"));
+  // Onto a file: refused, nothing moves.
+  pass.Move(root.filePath(QStringLiteral("b")),
+            root.filePath(QStringLiteral("entry0.gpg")), false);
+  QCOMPARE(contentsOf(root.filePath(QStringLiteral("b/x.gpg"))),
+           QByteArrayLiteral("b"));
+  QCOMPARE(contentsOf(root.filePath(QStringLiteral("entry0.gpg"))),
+           QByteArrayLiteral("not really encrypted"));
+  // To a new name.
+  pass.Move(root.filePath(QStringLiteral("c")),
+            root.filePath(QStringLiteral("renamed")), false);
+  QVERIFY2(!QFileInfo::exists(root.filePath(QStringLiteral("c"))),
+           "the folder must have been renamed");
+  QCOMPARE(contentsOf(root.filePath(QStringLiteral("renamed/x.gpg"))),
+           QByteArrayLiteral("c"));
+  QCOMPARE(criticalSpy.count(), 0);
+}
+
+/**
+ * @brief Without git a forced move over an existing entry replaces it on
+ *        the filesystem: the destination holds the source's bytes and the
+ *        source is gone; unforced, the clash is refused and both stay.
+ */
+void tst_imitatepass::moveWithForceReplacesTheDestinationWithoutGit() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 2));
+  const QDir root(storeDir.path());
+  const QString src = root.filePath(QStringLiteral("entry0.gpg"));
+  const QString dst = root.filePath(QStringLiteral("entry1.gpg"));
+  {
+    QFile f(src);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write("moved bytes");
+  }
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), unstartableGpg()));
+
+  pass.Move(src, dst, false);
+  QCOMPARE(contentsOf(src), QByteArrayLiteral("moved bytes"));
+  QCOMPARE(contentsOf(dst), QByteArrayLiteral("not really encrypted"));
+  pass.Move(src, dst, true);
+  QVERIFY2(!QFileInfo::exists(src), "the source must be gone after the move");
+  QCOMPARE(contentsOf(dst), QByteArrayLiteral("moved bytes"));
+}
+
+/**
+ * @brief With git on, Move is `git mv` (with -f when forced) and one commit
+ *        naming both entries relative to the store; the interface hears
+ *        finishedMove once the commit is done.
+ */
+void tst_imitatepass::moveWithGitUsesGitMvAndCommits() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a recording fake git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir root(storeDir.path());
+  const QString gitLog = root.filePath("git-argv.log");
+  const QString fakeGit = writeRecordingGit(storeDir.path(), gitLog);
+  QVERIFY(!fakeGit.isEmpty());
+  AppSettings s = settingsFor(storeDir.path(), unstartableGpg());
+  s.useGit = true;
+  s.gitExecutable = fakeGit;
+  ImitatePass pass;
+  pass.init(s);
+  QSignalSpy moveSpy(&pass, &Pass::finishedMove);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  const QString src = root.filePath(QStringLiteral("entry0.gpg"));
+  const QString dst = root.filePath(QStringLiteral("renamed.gpg"));
+
+  pass.Move(src, dst, false);
+  QVERIFY2(moveSpy.count() > 0 || moveSpy.wait(5000),
+           "finishedMove must follow the commit");
+  QCOMPARE(errorSpy.count(), 0);
+  QList<QStringList> calls = loggedCalls(gitLog);
+  QCOMPARE(calls.size(), 2);
+  QCOMPARE(calls.at(0).mid(0, 2),
+           (QStringList{QStringLiteral("mv"), QStringLiteral("--")}));
+  QCOMPARE(QDir::cleanPath(calls.at(0).at(2)), QDir::cleanPath(src));
+  QCOMPARE(QDir::cleanPath(calls.at(0).at(3)), QDir::cleanPath(dst));
+  QVERIFY2(calls.at(1).first() == QStringLiteral("commit") &&
+               calls.at(1).join(' ').contains(
+                   QStringLiteral("Moved for entry0 to renamed using QtPass.")),
+           qPrintable(calls.at(1).join(' ')));
+
+  // Forced: git gets -f.
+  QFile::remove(gitLog);
+  moveSpy.clear();
+  pass.Move(src, dst, true);
+  QVERIFY2(moveSpy.count() > 0 || moveSpy.wait(5000),
+           "finishedMove must follow the forced move's commit");
+  calls = loggedCalls(gitLog);
+  QCOMPARE(calls.size(), 2);
+  QCOMPARE(calls.at(0).mid(0, 3),
+           (QStringList{QStringLiteral("mv"), QStringLiteral("-f"),
+                        QStringLiteral("--")}));
+  QCOMPARE(errorSpy.count(), 0);
+#endif
+}
+
+/**
+ * @brief Copying into a folder that does not exist cannot stage the bytes
+ *        next to the destination: the copy fails with a dialog, nothing is
+ *        created and no re-encryption starts.
+ */
+void tst_imitatepass::copyFailsWhenTheDestinationFolderDoesNotExist() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QDir root(storeDir.path());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), unstartableGpg()));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy startSpy(&pass, &ImitatePass::startReencryptPath);
+  const QString dst = root.filePath(QStringLiteral("nowhere/new.gpg"));
+
+  pass.Copy(root.filePath(QStringLiteral("entry0.gpg")), dst, false);
+  QTest::qWait(200);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(), QStringLiteral("Copy failed"));
+  QVERIFY2(criticalSpy.first().at(1).toString().contains(dst),
+           qPrintable(criticalSpy.first().at(1).toString()));
+  QVERIFY2(!QFileInfo::exists(dst),
+           "nothing may be created at the destination");
+  QVERIFY2(!QFileInfo::exists(root.filePath(QStringLiteral("nowhere"))),
+           "the missing folder must not be created");
+  QCOMPARE(startSpy.count(), 0);
+  QCOMPARE(
+      root.entryList({QStringLiteral(".*.tmp")}, QDir::Files | QDir::Hidden)
+          .size(),
+      0);
+}
+
+/**
+ * @brief gpg exits 0 without writing a ciphertext: that is not an entry. The
+ *        add fails through the failed-operation path with a message that
+ *        says so, and nothing appears under the entry's name.
+ */
+void tst_imitatepass::insertFailsWhenGpgWritesNoCiphertext() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  const QString logPath = root.filePath("gpg-argv.log");
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("encrypt"), QStringLiteral("cat >/dev/null")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+
+  pass.Insert(QStringLiteral("new"), QStringLiteral("s\n"), false);
+  QVERIFY2(errorSpy.count() > 0 || errorSpy.wait(15000),
+           "the add must fail through processErrorExit");
+  QCOMPARE(insertSpy.count(), 0);
+  QVERIFY2(errorSpy.first().at(1).toString().contains(
+               QStringLiteral("wrote no ciphertext")),
+           qPrintable(errorSpy.first().at(1).toString()));
+  QVERIFY2(!QFileInfo::exists(root.filePath(QStringLiteral("new.gpg"))),
+           "an empty ciphertext must not become an entry");
+  QCOMPARE(
+      root.entryList({QStringLiteral(".*.tmp")}, QDir::Files | QDir::Hidden)
+          .size(),
+      0);
+  QCOMPARE(encryptCalls(loggedCalls(logPath)).size(), 1);
+#endif
+}
+
+/**
+ * @brief The entry's folder disappears while gpg runs (deleted by another
+ *        client): the ciphertext cannot be staged next to the entry, the add
+ *        fails with the reason, and the folder is not recreated.
+ */
+void tst_imitatepass::insertFailsWhenTheEntryFolderVanishes() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("sub")));
+  const QString logPath = root.filePath("gpg-argv.log");
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("encrypt"),
+        QStringLiteral("cat >/dev/null; rm -rf '%1'; printf 'ciphertext\\n' > "
+                       "\"$outfile\"")
+            .arg(root.filePath(QStringLiteral("sub")))}});
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+
+  pass.Insert(QStringLiteral("sub/new"), QStringLiteral("s\n"), false);
+  QVERIFY2(errorSpy.count() > 0 || errorSpy.wait(15000),
+           "the add must fail through processErrorExit");
+  QCOMPARE(insertSpy.count(), 0);
+  QVERIFY2(errorSpy.first().at(1).toString().contains(
+               QStringLiteral("Cannot create a temporary file next to")),
+           qPrintable(errorSpy.first().at(1).toString()));
+  QVERIFY2(!QFileInfo::exists(root.filePath(QStringLiteral("sub"))),
+           "the vanished folder must not be recreated");
+  QCOMPARE(encryptCalls(loggedCalls(logPath)).size(), 1);
 #endif
 }
 

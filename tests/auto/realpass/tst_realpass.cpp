@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QDir>
 #include <QFile>
+#include <QLoggingCategory>
 #include <QScopeGuard>
 #include <QSignalSpy>
 #include <QTemporaryDir>
@@ -36,6 +37,9 @@ private slots:
   void moveAndCopyUseStoreRelativeNamesWithoutGpg();
   void moveBetweenExistingFilesNeedsForce();
   void linkedEntriesAndFoldersAreRefusedBeforePassRuns();
+  void gitPullBlockingReturnsAfterPassRanWhateverItsExitCode();
+  void linkedFolderThatCannotBeUnlinkedReportsDeleteFailed();
+  void linkedFolderKnownToGitIsForgottenByGitAlone();
 
 private:
   struct Call {
@@ -464,6 +468,221 @@ void tst_realpass::linkedEntriesAndFoldersAreRefusedBeforePassRuns() {
            (QStringList{QStringLiteral("rm"), QStringLiteral("-f"),
                         QStringLiteral("Bank")}));
   QCOMPARE(criticalSpy.count(), 11);
+}
+
+/**
+ * @brief GitPull_b blocks: when it returns, the stand-in has already run
+ *        `git pull` (the log exists without waiting), and a non-zero exit
+ *        is explained in the debug log only, never turned into a signal or
+ *        a second attempt.
+ */
+void tst_realpass::gitPullBlockingReturnsAfterPassRanWhateverItsExitCode() {
+  QScopedPointer<RealPass> pass(makePass());
+  QSignalSpy criticalSpy(pass.data(), &Pass::critical);
+  QSignalSpy errorSpy(pass.data(), &Pass::processErrorExit);
+  pass->GitPull_b();
+  QVERIFY2(QFile::exists(m_log),
+           "GitPull_b must not return before the stand-in pass finished");
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("git"), QStringLiteral("pull")}));
+
+  // A pass that fails: counts its run, then the same stand-in, then exit 3.
+  QFile::remove(m_log);
+  const QString attempts =
+      QDir(m_dir.path()).filePath(QStringLiteral("attempts.log"));
+  const QString failing =
+      QDir(m_dir.path()).filePath(QStringLiteral("pass-fail"));
+  {
+    QFile f(failing);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\n");
+    f.write(QStringLiteral("printf 'run\\n' >> '%1'\n'%2' \"$@\"\nexit 3\n")
+                .arg(attempts, m_settings.passExecutable)
+                .toUtf8());
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  const auto cleanup = qScopeGuard([&] {
+    QLoggingCategory::setFilterRules(QStringLiteral("qtpass.debug=false"));
+    QFile::remove(failing);
+    QFile::remove(attempts);
+  });
+  AppSettings failingPass = m_settings;
+  failingPass.passExecutable = failing;
+  pass->init(failingPass);
+  // The exit code goes to the debug log; enable the category so the message
+  // is emitted and checked (the guard restores the default, info and up).
+  QLoggingCategory::setFilterRules(QStringLiteral("qtpass.debug=true"));
+  QTest::ignoreMessage(QtDebugMsg, "Git pull failed with code: 3");
+  pass->GitPull_b();
+  QLoggingCategory::setFilterRules(QStringLiteral("qtpass.debug=false"));
+  QVERIFY2(QFile::exists(m_log), "the failing pass must still have run");
+  QCOMPARE(waitForCall().args,
+           (QStringList{QStringLiteral("git"), QStringLiteral("pull")}));
+  QFile runs(attempts);
+  QVERIFY2(runs.open(QIODevice::ReadOnly | QIODevice::Text),
+           "the failing pass must have counted its run");
+  QCOMPARE(QString::fromUtf8(runs.readAll()), QStringLiteral("run\n"));
+  QTest::qWait(100);
+  QCOMPARE(criticalSpy.count(), 0);
+  QCOMPARE(errorSpy.count(), 0);
+  pass->init(m_settings);
+}
+
+/**
+ * @brief A linked folder is unlinked here rather than handed to pass rm; when
+ *        that unlink fails (the parent is read-only) the failure is reported
+ *        as a delete error naming the link, nothing finishes as removed and
+ *        pass is never asked anything.
+ */
+void tst_realpass::linkedFolderThatCannotBeUnlinkedReportsDeleteFailed() {
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString locked = m_store + QStringLiteral("locked");
+  QVERIFY(QDir().mkpath(locked));
+  const QString shared = locked + QStringLiteral("/shared");
+  QVERIFY(QFile::link(outsideDir.path(), shared));
+  const QFile::Permissions writable = QFile::permissions(locked);
+  QVERIFY(QFile::setPermissions(locked, QFile::ReadOwner | QFile::ExeOwner));
+  const auto cleanup = qScopeGuard([&] {
+    QFile::setPermissions(locked, writable);
+    QFile::remove(shared);
+    QDir(m_store).rmdir(QStringLiteral("locked"));
+  });
+  // Unlinking needs write access to the parent, as creating does: where a
+  // probe can still be created (root, a file system without permission bits)
+  // the failure under test cannot happen.
+  {
+    QFile probe(locked + QStringLiteral("/probe"));
+    if (probe.open(QIODevice::WriteOnly)) {
+      probe.close();
+      QFile::remove(probe.fileName());
+      QSKIP("the read-only directory is still writable here");
+    }
+  }
+  AppSettings withGit = m_settings;
+  withGit.useGit = true;
+  QScopedPointer<RealPass> pass(makePass());
+  pass->init(withGit);
+  QSignalSpy criticalSpy(pass.data(), &Pass::critical);
+  QSignalSpy errorSpy(pass.data(), &Pass::processErrorExit);
+  QSignalSpy removedSpy(pass.data(), &Pass::finishedRemove);
+  pass->Remove(QStringLiteral("locked/shared"), true);
+  QTest::qWait(300);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Delete failed"));
+  QVERIFY2(
+      criticalSpy.first().at(1).toString().contains(QDir::cleanPath(shared)),
+      qPrintable("message does not name the link: " +
+                 criticalSpy.first().at(1).toString()));
+  QCOMPARE(errorSpy.count(), 1);
+  QCOMPARE(errorSpy.first().at(0).toInt(), 1);
+  QCOMPARE(errorSpy.first().at(1).toString(),
+           criticalSpy.first().at(1).toString());
+  QCOMPARE(removedSpy.count(), 0);
+  QVERIFY2(QFileInfo(shared).isSymLink(), "the link must still be there");
+  QVERIFY2(!QFile::exists(m_log), "pass must not have been asked anything");
+}
+
+/**
+ * @brief When git knew the linked folder, unlinking it locally is followed
+ *        by `git rm --cached` and one `git commit` for it through pass, each
+ *        run with the store's PASSWORD_STORE_DIR, and that commit is the
+ *        PASS_REMOVE that finishes (finishedRemove carries its output, not
+ *        the empty local one); the link's target is untouched.
+ */
+void tst_realpass::linkedFolderKnownToGitIsForgottenByGitAlone() {
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString marker =
+      QDir(outsideDir.path()).filePath(QStringLiteral("keep.gpg"));
+  {
+    QFile f(marker);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const QString shared = m_store + QStringLiteral("shared");
+  QVERIFY(QFile::link(outsideDir.path(), shared));
+  // A stand-in that appends every invocation (its PASSWORD_STORE_DIR first,
+  // then argv), answers ls-files with the path so git "tracks" it, and says
+  // so on stdout when it commits.
+  const QString calls =
+      QDir(m_dir.path()).filePath(QStringLiteral("calls.log"));
+  const QString gitPass =
+      QDir(m_dir.path()).filePath(QStringLiteral("pass-git"));
+  {
+    QFile f(gitPass);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\n");
+    f.write(QStringLiteral("{ printf 'CALL\\nSTORE=%s\\n' "
+                           "\"$PASSWORD_STORE_DIR\"; for a in \"$@\"; do "
+                           "printf '%s\\n' \"$a\"; done; } >> '%1'\n")
+                .arg(calls)
+                .toUtf8());
+    f.write("cat > /dev/null\n");
+    f.write("if [ \"$2\" = ls-files ]; then printf 'shared\\n'; fi\n");
+    f.write("if [ \"$2\" = commit ]; then printf 'committed\\n'; fi\n");
+    f.write("exit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  const auto cleanup = qScopeGuard([&] {
+    QFile::remove(shared);
+    QFile::remove(gitPass);
+    QFile::remove(calls);
+  });
+  AppSettings withGit = m_settings;
+  withGit.useGit = true;
+  withGit.passExecutable = gitPass;
+  QScopedPointer<RealPass> pass(makePass());
+  pass->init(withGit);
+  pass->updateEnv();
+  QSignalSpy criticalSpy(pass.data(), &Pass::critical);
+  QSignalSpy removedSpy(pass.data(), &Pass::finishedRemove);
+  pass->Remove(QStringLiteral("shared/"), true);
+  QVERIFY2(removedSpy.count() == 1 || removedSpy.wait(5000),
+           "the git commit must finish as the one PASS_REMOVE");
+  QCOMPARE(removedSpy.count(), 1);
+  QVERIFY2(removedSpy.first().at(0).toString().trimmed() ==
+               QStringLiteral("committed"),
+           qPrintable("finishedRemove did not come from the commit: " +
+                      removedSpy.first().at(0).toString()));
+  QCOMPARE(criticalSpy.count(), 0);
+  QVERIFY2(!QFileInfo(shared).isSymLink() && !QFile::exists(shared),
+           "the link must be gone");
+  QVERIFY2(QFile::exists(marker), "the link's target must be untouched");
+  QFile f(calls);
+  QVERIFY2(f.open(QIODevice::ReadOnly | QIODevice::Text),
+           "the stand-in must have logged its invocations");
+  const QStringList invocations =
+      QString::fromUtf8(f.readAll())
+          .split(QStringLiteral("CALL\n"), Qt::SkipEmptyParts);
+  QCOMPARE(invocations.size(), 3);
+  QList<QStringList> argv;
+  for (const QString &record : invocations) {
+    const QStringList lines =
+        record.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+    const QString store = lines.value(0);
+    QVERIFY2(store.startsWith(QStringLiteral("STORE=")),
+             qPrintable("record without the store first: " + record));
+    QCOMPARE(QDir(store.mid(6)).canonicalPath(), QDir(m_store).canonicalPath());
+    argv << lines.mid(1);
+  }
+  QCOMPARE(argv.at(0),
+           (QStringList{QStringLiteral("git"), QStringLiteral("ls-files"),
+                        QStringLiteral("--"), QStringLiteral("shared")}));
+  QCOMPARE(argv.at(1),
+           (QStringList{QStringLiteral("git"), QStringLiteral("rm"),
+                        QStringLiteral("-q"), QStringLiteral("--cached"),
+                        QStringLiteral("--"), QStringLiteral("shared")}));
+  QCOMPARE(argv.at(2),
+           (QStringList{QStringLiteral("git"), QStringLiteral("commit"),
+                        QStringLiteral("-q"), QStringLiteral("-m"),
+                        QStringLiteral("Remove for shared using QtPass."),
+                        QStringLiteral("--"), QStringLiteral("shared")}));
 }
 
 QTEST_MAIN(tst_realpass)

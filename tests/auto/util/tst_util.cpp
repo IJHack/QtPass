@@ -108,6 +108,17 @@ private:
       Pass::finished(id, exitCode, out, err);
     }
     bool callCreateBackupCommit() { return createBackupCommit(); }
+    void callExecuteWrapper(PROCESS id, const QString &app,
+                            const QStringList &args) {
+      executeWrapper(id, app, args);
+    }
+    bool callRefuseLinkedPath(const QString &path, bool includeSelf = true) {
+      return refuseLinkedPath(path, includeSelf);
+    }
+    QString callGenerateRandomPassword(const QString &charset,
+                                       unsigned int length) {
+      return generateRandomPassword(charset, length);
+    }
   };
 
   template <typename T, void (*Setter)(const T &)> struct SettingGuard {
@@ -140,6 +151,8 @@ private:
 private Q_SLOTS:
   void initTestCase();
   void cleanupTestCase();
+  // Must stay the first test: Util snapshots the environment once per process.
+  void findPasswordStoreHonoursPasswordStoreDir();
   void normalizeFolderPath();
   void normalizeFolderPathEdgeCases();
   void fileContent();
@@ -325,8 +338,40 @@ private Q_SLOTS:
   void writeFileReplacingStagesAndNeverWritesThroughALink();
   void removeTreeDoesNotFollowSymlinks();
   void removeTreeDoesNotFollowJunctions();
+  // Pass environment set-up
+  void wslenvMergesIntoAnInheritedEntry();
+  void gpgHomeMissingFallsBackToInheritedGnupghome();
+  // Pass::generatePassword
+  void generatePasswordPwgenPassesTheConfiguredFlags();
+  void generatePasswordPwgenNegatedFlags();
+  void generatePasswordPwgenFailureYieldsEmpty();
+  void generatePasswordNoCharactersAtAllIsCritical();
+  void generateRandomPasswordEmptyInputsYieldEmpty();
+  // gpg / gpgconf discovery
+  void getDefaultKeyTemplateFallsBackToRsa();
+  void resolveGpgconfCommandWslRunsGpgconfNextToGpg();
+  void resolveGpgconfCommandRelativePathFallsBack();
+  void resolveGpgconfCommandFindsGpgconfNextToGpg();
+  void generateGpgKeysKillsAgentAndFeedsTheBatch();
+  void generateGpgKeysWarnsWhenGpgconfFails();
+  void listKeysReturnsNothingWhenGpgFails();
+  // Pass::finished error routing
+  void gpgErrorMessageGenericEncryptionFailed();
+  void passFinishedInsertErrorIsFriendlyWithHumanLines();
+  void passFinishedInsertErrorOnlyStatusLinesIsFriendlyOnly();
+  void passFinishedGenkeysErrorEmitsFailed();
+  void executeWrapperWithoutInputRunsTheCommand();
+  void refuseLinkedPathRefusesAndReleasesTheUi();
+  void recipientsForEditingSignedStoreWithoutListIsVerified();
+  // Util paths and files
+  void findBinaryInPathRelativePathIsNotTheCwd();
+  void configIsValidWslLauncherThatCannotRunIsInvalid();
+  void writeFileReplacingCannotReplaceADirectory();
+  void removeTreeReportsWhatItCannotRemove();
 
 private:
+  // Write an executable POSIX shell script; returns its path.
+  static QString writeScript(const QString &path, const QByteArray &body);
   // Run git in `dir`; returns false on launch failure or non-zero exit. Stdout
   // is stored in `out` when given.
   static bool runGit(const QString &gitExe, const QString &dir,
@@ -4206,6 +4251,799 @@ void tst_util::removeTreeDoesNotFollowJunctions() {
   QVERIFY(!QFileInfo::exists(root.filePath(QStringLiteral("folder"))));
   QVERIFY2(QFile::exists(outside.filePath(QStringLiteral("secret.gpg"))),
            "the junction's target must be untouched");
+#endif
+}
+
+QString tst_util::writeScript(const QString &path, const QByteArray &body) {
+  QFile f(path);
+  if (!f.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+    return {};
+  }
+  f.write("#!/bin/sh\n");
+  f.write(body);
+  f.close();
+  if (!QFile::setPermissions(path, QFile::ReadOwner | QFile::WriteOwner |
+                                       QFile::ExeOwner)) {
+    return {};
+  }
+  return path;
+}
+
+/**
+ * @brief PASSWORD_STORE_DIR in the environment names the store, tilde
+ *        included, ahead of the platform default. Util snapshots the
+ *        environment on first use, so this runs before any other test
+ *        touches Util; the variable is unset again afterwards.
+ */
+void tst_util::findPasswordStoreHonoursPasswordStoreDir() {
+  const bool had = qEnvironmentVariableIsSet("PASSWORD_STORE_DIR");
+  const QByteArray previous = qgetenv("PASSWORD_STORE_DIR");
+  const auto restore = qScopeGuard([had, previous] {
+    if (had) {
+      qputenv("PASSWORD_STORE_DIR", previous);
+    } else {
+      qunsetenv("PASSWORD_STORE_DIR");
+    }
+  });
+  qputenv("PASSWORD_STORE_DIR", "~/qtpass-store-from-env");
+  const QString result = Util::findPasswordStore();
+  QCOMPARE(result,
+           Util::normalizeFolderPath(QDir::cleanPath(
+               QDir::homePath() + QStringLiteral("/qtpass-store-from-env"))));
+  QVERIFY2(!result.contains(u'~'), qPrintable(result));
+  QVERIFY2(!result.contains(QStringLiteral(".password-store")),
+           qPrintable(result));
+}
+
+/**
+ * @brief A WSLENV that is already set (the user forwards their own
+ *        variables) keeps its entries and gains QtPass's, each exactly once,
+ *        instead of being replaced or getting a duplicate appended.
+ */
+void tst_util::wslenvMergesIntoAnInheritedEntry() {
+  const bool had = qEnvironmentVariableIsSet("WSLENV");
+  const QByteArray previous = qgetenv("WSLENV");
+  const auto restore = qScopeGuard([had, previous] {
+    if (had) {
+      qputenv("WSLENV", previous);
+    } else {
+      qunsetenv("WSLENV");
+    }
+  });
+  qputenv("WSLENV", "MY_VAR/u:PASSWORD_STORE_DIR/p");
+  TestPass pass;
+  AppSettings s;
+  pass.init(s);
+  const QStringList parts =
+      pass.environment().value(QStringLiteral("WSLENV")).split(u':');
+  QCOMPARE(parts.first(), QStringLiteral("MY_VAR/u"));
+  QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_DIR/p")), 1);
+  QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w")), 1);
+  QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")), 1);
+  QCOMPARE(parts.size(), 4);
+}
+
+/**
+ * @brief A gpgHome that is gone while GNUPGHOME is set in the environment
+ *        hands gpg the inherited GNUPGHOME and says which one in the status
+ *        message (#1711 with an inherited home).
+ */
+void tst_util::gpgHomeMissingFallsBackToInheritedGnupghome() {
+  QTemporaryDir inherited;
+  QVERIFY2(inherited.isValid(), "temporary GPG home should be creatable");
+  QString gone;
+  {
+    QTemporaryDir dir;
+    QVERIFY2(dir.isValid(), "temporary GPG home should be creatable");
+    gone = dir.path();
+  }
+  QVERIFY2(!QDir(gone).exists(), "temporary directory should be gone");
+  const bool had = qEnvironmentVariableIsSet("GNUPGHOME");
+  const QByteArray previous = qgetenv("GNUPGHOME");
+  const auto restore = qScopeGuard([had, previous] {
+    if (had) {
+      qputenv("GNUPGHOME", previous);
+    } else {
+      qunsetenv("GNUPGHOME");
+    }
+  });
+  qputenv("GNUPGHOME", QFile::encodeName(inherited.path()));
+
+  TestPass pass;
+  QSignalSpy status(&pass, &Pass::statusMsg);
+  AppSettings s;
+  s.gpgHome = gone;
+  QTest::ignoreMessage(QtWarningMsg,
+                       QRegularExpression("does not exist; using GNUPGHOME"));
+  pass.init(s);
+  QCOMPARE(pass.environment().value(QStringLiteral("GNUPGHOME")),
+           inherited.path());
+  QCOMPARE(status.count(), 1);
+  const QString message = status.at(0).at(0).toString();
+  QVERIFY2(message.contains(gone), qPrintable(message));
+  QVERIFY2(message.contains(inherited.path()), qPrintable(message));
+  QVERIFY2(!message.contains(QStringLiteral("default keyring")),
+           qPrintable(message));
+}
+
+/**
+ * @brief With pwgen enabled the configured flags reach pwgen in the order it
+ *        needs (--secure first, then the letter and digit switches, then the
+ *        length) and its output is the password, minus the trailing newline.
+ */
+void tst_util::generatePasswordPwgenPassesTheConfiguredFlags() {
+#ifdef Q_OS_WIN
+  QSKIP("fake pwgen is a POSIX shell script");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString pwgen = writeScript(tmp.filePath(QStringLiteral("pwgen")),
+                                    "printf '%s,' \"$@\"\nprintf '\\n'\n");
+  QVERIFY(!pwgen.isEmpty());
+  TestPass pass;
+  QSignalSpy critical(&pass, &Pass::critical);
+  AppSettings s;
+  s.usePwgen = true;
+  s.pwgenExecutable = pwgen;
+  pass.init(s);
+  const QString result = pass.generatePassword(12, QStringLiteral("abc"));
+  QCOMPARE(result, QStringLiteral("-1,--secure,--capitalize,--numerals,12,"));
+  QVERIFY2(!result.contains(u'\n'), "newlines are stripped from pwgen output");
+  QCOMPARE(critical.count(), 0);
+#endif
+}
+
+/**
+ * @brief Memorable passwords drop --secure, the avoid switches negate the
+ *        letter and digit flags, and useSymbols adds --symbols before the
+ *        length.
+ */
+void tst_util::generatePasswordPwgenNegatedFlags() {
+#ifdef Q_OS_WIN
+  QSKIP("fake pwgen is a POSIX shell script");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString pwgen = writeScript(tmp.filePath(QStringLiteral("pwgen")),
+                                    "printf '%s,' \"$@\"\nprintf '\\n'\n");
+  QVERIFY(!pwgen.isEmpty());
+  TestPass pass;
+  AppSettings s;
+  s.usePwgen = true;
+  s.pwgenExecutable = pwgen;
+  s.lessRandom = true;
+  s.avoidCapitals = true;
+  s.avoidNumbers = true;
+  s.useSymbols = true;
+  pass.init(s);
+  QCOMPARE(pass.generatePassword(8, QString()),
+           QStringLiteral("-1,--no-capitalize,--no-numerals,--symbols,8,"));
+#endif
+}
+
+/**
+ * @brief A pwgen that exits non-zero yields an empty password and nothing
+ *        else: no critical dialog, no stray output used as a password.
+ */
+void tst_util::generatePasswordPwgenFailureYieldsEmpty() {
+#ifdef Q_OS_WIN
+  QSKIP("fake pwgen is a POSIX shell script");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString pwgen = writeScript(tmp.filePath(QStringLiteral("pwgen")),
+                                    "echo notapassword\nexit 3\n");
+  QVERIFY(!pwgen.isEmpty());
+  TestPass pass;
+  QSignalSpy critical(&pass, &Pass::critical);
+  AppSettings s;
+  s.usePwgen = true;
+  s.pwgenExecutable = pwgen;
+  pass.init(s);
+  QVERIFY2(pass.generatePassword(16, QString()).isEmpty(),
+           "a failing pwgen must not hand out its output as a password");
+  QCOMPARE(critical.count(), 0);
+#endif
+}
+
+/**
+ * @brief When neither the requested charset nor the ALLCHARS fallback has a
+ *        single character, no password is made up and the user is told.
+ */
+void tst_util::generatePasswordNoCharactersAtAllIsCritical() {
+  TestPass pass;
+  QSignalSpy critical(&pass, &Pass::critical);
+  AppSettings s;
+  s.usePwgen = false;
+  s.passwordConfiguration.Characters[PasswordConfiguration::ALLCHARS].clear();
+  pass.init(s);
+  QVERIFY2(pass.generatePassword(8, QString()).isEmpty(),
+           "no password can be made from an empty character set");
+  QCOMPARE(critical.count(), 1);
+  QCOMPARE(critical.at(0).at(0).toString(),
+           QStringLiteral("No characters chosen"));
+  QVERIFY2(critical.at(0).at(1).toString().contains(
+               QStringLiteral("no characters to choose from")),
+           qPrintable(critical.at(0).at(1).toString()));
+}
+
+/**
+ * @brief The raw generator refuses an empty charset and a zero length rather
+ *        than indexing into nothing.
+ */
+void tst_util::generateRandomPasswordEmptyInputsYieldEmpty() {
+  TestPass pass;
+  QVERIFY2(pass.callGenerateRandomPassword(QString(), 8).isEmpty(),
+           "an empty charset yields no password");
+  QVERIFY2(pass.callGenerateRandomPassword(QStringLiteral("abc"), 0).isEmpty(),
+           "a zero length yields no password");
+  QCOMPARE(pass.callGenerateRandomPassword(QStringLiteral("z"), 4),
+           QStringLiteral("zzzz"));
+}
+
+/**
+ * @brief A gpg that cannot be asked for its version, or one older than 2.1,
+ *        gets the RSA batch template rather than the Ed25519 one.
+ */
+void tst_util::getDefaultKeyTemplateFallsBackToRsa() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString missing = tmp.filePath(QStringLiteral("no-such-gpg"));
+  QVERIFY2(!Pass::gpgSupportsEd25519(missing),
+           "a gpg that cannot run does not support Ed25519");
+  const QString rsa = Pass::getDefaultKeyTemplate(missing);
+  QVERIFY2(rsa.contains(QStringLiteral("Key-Type: RSA")), qPrintable(rsa));
+  QVERIFY2(!rsa.contains(QStringLiteral("Ed25519")), qPrintable(rsa));
+#ifndef Q_OS_WIN
+  const QString old = writeScript(tmp.filePath(QStringLiteral("gpg")),
+                                  "echo 'gpg (GnuPG) 1.4.23'\n");
+  QVERIFY(!old.isEmpty());
+  QVERIFY2(!Pass::gpgSupportsEd25519(old), "GnuPG 1.4 predates Ed25519");
+  const QString oldTemplate = Pass::getDefaultKeyTemplate(old);
+  QVERIFY2(oldTemplate.contains(QStringLiteral("Key-Type: RSA")),
+           qPrintable(oldTemplate));
+  const QString modern = writeScript(tmp.filePath(QStringLiteral("gpg2")),
+                                     "echo 'gpg (GnuPG) 2.4.5'\n");
+  QVERIFY(!modern.isEmpty());
+  QVERIFY2(Pass::gpgSupportsEd25519(modern), "GnuPG 2.4 supports Ed25519");
+  const QString modernTemplate = Pass::getDefaultKeyTemplate(modern);
+  QVERIFY2(modernTemplate.contains(QStringLiteral("Key-Curve: Ed25519")),
+           qPrintable(modernTemplate));
+#endif
+}
+
+/**
+ * @brief For a WSL-routed gpg, gpgconf is the one next to that gpg, run in
+ *        the same distribution through --exec; a WSL command that is not gpg
+ *        or does not parse falls back to the Windows gpgconf.
+ */
+void tst_util::resolveGpgconfCommandWslRunsGpgconfNextToGpg() {
+  auto r = Pass::resolveGpgconfCommand(QStringLiteral("wsl /usr/bin/gpg"));
+  QVERIFY2(r.program.endsWith(QStringLiteral("wsl"), Qt::CaseInsensitive),
+           qPrintable(r.program));
+  QCOMPARE(r.arguments, QStringList({QStringLiteral("--exec"),
+                                     QStringLiteral("/usr/bin/gpgconf")}));
+
+  r = Pass::resolveGpgconfCommand(QStringLiteral("wsl.exe -d Debian gpg"));
+  QCOMPARE(r.arguments,
+           QStringList({QStringLiteral("-d"), QStringLiteral("Debian"),
+                        QStringLiteral("--exec"), QStringLiteral("gpgconf")}));
+
+  r = Pass::resolveGpgconfCommand(QStringLiteral("wsl bash"));
+  QCOMPARE(r.program, QStringLiteral("gpgconf"));
+  QCOMPARE(r.arguments, QStringList());
+
+  r = Pass::resolveGpgconfCommand(QStringLiteral("wsl sh -c gpg"));
+  QCOMPARE(r.program, QStringLiteral("gpgconf"));
+  QCOMPARE(r.arguments, QStringList());
+}
+
+/**
+ * @brief A relative gpg path with a directory part is not searched for a
+ *        sibling gpgconf: the fallback is the gpgconf on PATH.
+ */
+void tst_util::resolveGpgconfCommandRelativePathFallsBack() {
+  const auto r = Pass::resolveGpgconfCommand(QStringLiteral("tools/gnupg/gpg"));
+  QCOMPARE(r.program, QStringLiteral("gpgconf"));
+  QCOMPARE(r.arguments, QStringList());
+}
+
+/**
+ * @brief An absolute gpg path yields the executable gpgconf in the same
+ *        directory, with no arguments; a gpgconf there that is not
+ *        executable does not count.
+ */
+void tst_util::resolveGpgconfCommandFindsGpgconfNextToGpg() {
+#ifdef Q_OS_WIN
+  QSKIP("the executable bit is a POSIX notion");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString gpg = tmp.filePath(QStringLiteral("gpg"));
+  const QString gpgconf = tmp.filePath(QStringLiteral("gpgconf"));
+  {
+    QFile plain(gpgconf);
+    QVERIFY(plain.open(QIODevice::WriteOnly));
+    plain.write("not a program");
+  }
+  QVERIFY(QFile::setPermissions(gpgconf, QFile::ReadOwner | QFile::WriteOwner));
+  auto r = Pass::resolveGpgconfCommand(gpg);
+  QCOMPARE(r.program, QStringLiteral("gpgconf"));
+
+  QVERIFY(!writeScript(gpgconf, "exit 0\n").isEmpty());
+  r = Pass::resolveGpgconfCommand(gpg);
+  QCOMPARE(r.program, gpgconf);
+  QCOMPARE(r.arguments, QStringList());
+#endif
+}
+
+/**
+ * @brief GenerateGPGKeys first asks the gpgconf next to the configured gpg to
+ *        kill the agent, then runs gpg --gen-key --no-tty --batch with the
+ *        batch on stdin, and reports its output.
+ */
+void tst_util::generateGpgKeysKillsAgentAndFeedsTheBatch() {
+#ifdef Q_OS_WIN
+  QSKIP("fake gpg and gpgconf are POSIX shell scripts");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QByteArray dir = QFile::encodeName(tmp.path());
+  const QString gpgconf =
+      writeScript(tmp.filePath(QStringLiteral("gpgconf")),
+                  "echo \"$@\" > '" + dir + "/gpgconf.args'\nexit 0\n");
+  QVERIFY(!gpgconf.isEmpty());
+  const QString gpg =
+      writeScript(tmp.filePath(QStringLiteral("gpg")),
+                  "cat > '" + dir + "/batch.txt'\necho \"$@\" > '" + dir +
+                      "/gpg.args'\necho generated\n");
+  QVERIFY(!gpg.isEmpty());
+  // Fail here rather than let a fallback to the gpgconf on PATH kill the
+  // developer's own gpg-agent (a noexec temp mount would do that).
+  QCOMPARE(Pass::resolveGpgconfCommand(gpg).program, gpgconf);
+
+  TestPass pass;
+  AppSettings s;
+  s.gpgExecutable = gpg;
+  s.passStore = tmp.path();
+  pass.init(s);
+  QSignalSpy done(&pass, &Pass::finishedGenerateGPGKeys);
+  QSignalSpy failed(&pass, &Pass::generateGPGKeysFailed);
+  const QString batch = QStringLiteral("%echo test\nKey-Type: RSA\n%commit\n");
+  pass.GenerateGPGKeys(batch);
+  QVERIFY2(done.wait(TEST_SIGNAL_TIMEOUT_MS),
+           "key generation must report completion");
+  QCOMPARE(failed.count(), 0);
+  QVERIFY2(done.at(0).at(0).toString().contains(QStringLiteral("generated")),
+           qPrintable(done.at(0).at(0).toString()));
+
+  const auto slurp = [&tmp](const QString &name) {
+    QFile f(tmp.filePath(name));
+    return f.open(QIODevice::ReadOnly) ? QString::fromUtf8(f.readAll())
+                                       : QStringLiteral("<unreadable>");
+  };
+  QCOMPARE(slurp(QStringLiteral("gpgconf.args")).trimmed(),
+           QStringLiteral("--kill gpg-agent"));
+  QCOMPARE(slurp(QStringLiteral("gpg.args")).trimmed(),
+           QStringLiteral("--gen-key --no-tty --batch"));
+  QCOMPARE(slurp(QStringLiteral("batch.txt")), batch);
+#endif
+}
+
+/**
+ * @brief A gpgconf that cannot kill the agent is logged and key generation
+ *        goes ahead regardless: a stale agent is a nuisance, not a blocker.
+ */
+void tst_util::generateGpgKeysWarnsWhenGpgconfFails() {
+#ifdef Q_OS_WIN
+  QSKIP("fake gpg and gpgconf are POSIX shell scripts");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString gpgconf =
+      writeScript(tmp.filePath(QStringLiteral("gpgconf")), "exit 1\n");
+  QVERIFY(!gpgconf.isEmpty());
+  const QString gpg = writeScript(tmp.filePath(QStringLiteral("gpg")),
+                                  "cat > /dev/null\necho generated\n");
+  QVERIFY(!gpg.isEmpty());
+  // Fail here rather than let a fallback to the gpgconf on PATH kill the
+  // developer's own gpg-agent (a noexec temp mount would do that).
+  QCOMPARE(Pass::resolveGpgconfCommand(gpg).program, gpgconf);
+
+  TestPass pass;
+  AppSettings s;
+  s.gpgExecutable = gpg;
+  s.passStore = tmp.path();
+  pass.init(s);
+  QSignalSpy done(&pass, &Pass::finishedGenerateGPGKeys);
+  QSignalSpy failed(&pass, &Pass::generateGPGKeysFailed);
+  QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+  // An ignoreMessage that never arrives fails the test: this is the
+  // assertion that the failed kill was logged.
+  QTest::ignoreMessage(QtWarningMsg,
+                       QRegularExpression("Failed to kill gpg-agent"));
+  pass.GenerateGPGKeys(QStringLiteral("%commit\n"));
+  QVERIFY2(done.wait(TEST_SIGNAL_TIMEOUT_MS),
+           "key generation must still run when gpgconf fails");
+  QCOMPARE(failed.count(), 0);
+  QCOMPARE(errSpy.count(), 0);
+  QCOMPARE(done.at(0).at(0).toString().trimmed(), QStringLiteral("generated"));
+#endif
+}
+
+/**
+ * @brief listKeys() returns no users at all when gpg fails, rather than
+ *        parsing whatever a failing gpg printed.
+ */
+void tst_util::listKeysReturnsNothingWhenGpgFails() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  TestPass pass;
+  AppSettings s;
+  s.gpgExecutable = tmp.filePath(QStringLiteral("no-such-gpg"));
+  pass.init(s);
+  QVERIFY2(
+      pass.listKeys(QStringList{QStringLiteral("alice@example.com")}, false)
+          .isEmpty(),
+      "a gpg that cannot be started lists no keys");
+#ifndef Q_OS_WIN
+  // The same listing with a clean exit parses to one key: the empty result
+  // below is the exit code's doing, not the parser's.
+  const QByteArray listing =
+      "echo 'pub:u:2048:1:0123456789ABCDEF:1::::::scESC:'\n"
+      "echo 'uid:u::::1::0::Alice <alice@example.com>:'\n";
+  const QString goodGpg =
+      writeScript(tmp.filePath(QStringLiteral("gpg-ok")), listing + "exit 0\n");
+  QVERIFY(!goodGpg.isEmpty());
+  s.gpgExecutable = goodGpg;
+  pass.init(s);
+  const QList<UserInfo> parsed =
+      pass.listKeys(QStringList{QStringLiteral("alice")}, true);
+  QCOMPARE(parsed.size(), 1);
+  QCOMPARE(parsed.first().key_id, QStringLiteral("0123456789ABCDEF"));
+
+  const QString gpg =
+      writeScript(tmp.filePath(QStringLiteral("gpg")), listing + "exit 2\n");
+  QVERIFY(!gpg.isEmpty());
+  s.gpgExecutable = gpg;
+  pass.init(s);
+  QVERIFY2(pass.listKeys(QStringList{QStringLiteral("alice")}, true).isEmpty(),
+           "a non-zero gpg exit discards its output");
+#endif
+}
+
+/**
+ * @brief An "encryption failed" without a more specific reason gets the
+ *        generic friendly message, not the missing-recipient one.
+ */
+void tst_util::gpgErrorMessageGenericEncryptionFailed() {
+  const QString msg = gpgErrorMessage(
+      QStringLiteral("gpg: [stdin]: encryption failed: Bad session key"));
+  QVERIFY2(msg.contains(QStringLiteral("Check that your GPG key is valid")),
+           qPrintable(msg));
+  QVERIFY2(!msg.contains(QStringLiteral("recipient")), qPrintable(msg));
+}
+
+/**
+ * @brief A failed insert with a recognised gpg error reports the friendly
+ *        message first and gpg's human-readable lines after it, with the
+ *        [GNUPG:] status lines and carriage returns taken out.
+ */
+void tst_util::passFinishedInsertErrorIsFriendlyWithHumanLines() {
+  TestPass pass;
+  QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+  QSignalSpy okSpy(&pass, &Pass::finishedInsert);
+  const QString err = QStringLiteral("[GNUPG:] KEYEXPIRED 1700000000\r\n"
+                                     "gpg: key DEADBEEF: key has expired\r\n"
+                                     "[GNUPG:] FAILURE encrypt 1\n");
+  pass.callPassFinished(static_cast<int>(Enums::PASS_INSERT), 2, QString(),
+                        err);
+  QCOMPARE(okSpy.count(), 0);
+  QCOMPARE(errSpy.count(), 1);
+  QCOMPARE(errSpy.at(0).at(0).toInt(), 2);
+  const QString message = errSpy.at(0).at(1).toString();
+  const QString friendly = gpgErrorMessage(err);
+  QVERIFY2(!friendly.isEmpty(), "KEYEXPIRED must map to a friendly message");
+  QCOMPARE(message, friendly + QStringLiteral("\n\n") +
+                        QStringLiteral("gpg: key DEADBEEF: key has expired"));
+  QVERIFY2(!message.contains(QStringLiteral("[GNUPG:]")), qPrintable(message));
+  QVERIFY2(!message.contains(u'\r'), qPrintable(message));
+}
+
+/**
+ * @brief When gpg printed nothing but status lines, the friendly message
+ *        stands alone instead of being followed by an empty block.
+ */
+void tst_util::passFinishedInsertErrorOnlyStatusLinesIsFriendlyOnly() {
+  TestPass pass;
+  QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+  const QString err =
+      QStringLiteral("[GNUPG:] KEYREVOKED\n[GNUPG:] FAILURE encrypt 1\n");
+  pass.callPassFinished(static_cast<int>(Enums::PASS_INSERT), 2, QString(),
+                        err);
+  QCOMPARE(errSpy.count(), 1);
+  QCOMPARE(errSpy.at(0).at(1).toString(), gpgErrorMessage(err));
+}
+
+/**
+ * @brief A failed key generation reaches the keygen dialog through
+ *        generateGPGKeysFailed and the interface through processErrorExit,
+ *        both with gpg's stderr; the success signal stays silent.
+ */
+void tst_util::passFinishedGenkeysErrorEmitsFailed() {
+  TestPass pass;
+  QSignalSpy failed(&pass, &Pass::generateGPGKeysFailed);
+  QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+  QSignalSpy done(&pass, &Pass::finishedGenerateGPGKeys);
+  const QString err = QStringLiteral("gpg: agent_genkey failed: Timeout");
+  pass.callPassFinished(static_cast<int>(Enums::GPG_GENKEYS), 2, QString(),
+                        err);
+  QCOMPARE(failed.count(), 1);
+  QCOMPARE(failed.at(0).at(0).toString(), err);
+  QCOMPARE(errSpy.count(), 1);
+  QCOMPARE(errSpy.at(0).at(0).toInt(), 2);
+  QCOMPARE(errSpy.at(0).at(1).toString(), err);
+  QCOMPARE(done.count(), 0);
+}
+
+/**
+ * @brief The input-less executeWrapper runs the command in the store with
+ *        the given arguments and its completion arrives as the process's
+ *        finished signal with the captured output.
+ */
+void tst_util::executeWrapperWithoutInputRunsTheCommand() {
+#ifdef Q_OS_WIN
+  QSKIP("fake command is a POSIX shell script");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString tool = writeScript(tmp.filePath(QStringLiteral("tool")),
+                                   "echo \"args:$*\"\npwd\n");
+  QVERIFY(!tool.isEmpty());
+  TestPass pass;
+  AppSettings s;
+  s.passStore = tmp.path();
+  pass.init(s);
+  QSignalSpy done(&pass, &Pass::finishedInit);
+  QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+  pass.callExecuteWrapper(Enums::PASS_INIT, tool,
+                          {QStringLiteral("one"), QStringLiteral("two")});
+  QVERIFY2(done.wait(TEST_SIGNAL_TIMEOUT_MS), "the command must finish");
+  QCOMPARE(errSpy.count(), 0);
+  const QStringList lines = done.at(0).at(0).toString().split(u'\n');
+  QCOMPARE(lines.value(0), QStringLiteral("args:one two"));
+  QCOMPARE(QFileInfo(lines.value(1)).canonicalFilePath(),
+           QFileInfo(tmp.path()).canonicalFilePath());
+#endif
+}
+
+/**
+ * @brief An entry behind a symlink in the store is refused: the interface is
+ *        armed and released in one go (startingExecuteWrapper, critical,
+ *        processErrorExit) and told why; a plain entry passes silently.
+ */
+void tst_util::refuseLinkedPathRefusesAndReleasesTheUi() {
+#ifdef Q_OS_WIN
+  QSKIP("creating a symlink needs a privilege a CI runner may lack");
+#else
+  QTemporaryDir store;
+  QTemporaryDir outside;
+  QVERIFY(store.isValid() && outside.isValid());
+  QVERIFY(QFile::link(outside.path(),
+                      QDir(store.path()).filePath(QStringLiteral("linked"))));
+  TestPass pass;
+  AppSettings s;
+  s.passStore = store.path();
+  pass.init(s);
+  QSignalSpy starting(&pass, &Pass::startingExecuteWrapper);
+  QSignalSpy critical(&pass, &Pass::critical);
+  QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+
+  QVERIFY2(!pass.callRefuseLinkedPath(QStringLiteral("plain/entry.gpg")),
+           "an entry not behind a link is not refused");
+  QCOMPARE(starting.count(), 0);
+  QCOMPARE(critical.count(), 0);
+
+  QVERIFY2(pass.callRefuseLinkedPath(QStringLiteral("linked/entry.gpg")),
+           "an entry behind a link is refused");
+  QCOMPARE(starting.count(), 1);
+  QCOMPARE(critical.count(), 1);
+  QCOMPARE(critical.at(0).at(0).toString(),
+           QStringLiteral("Not part of the store"));
+  const QString why = critical.at(0).at(1).toString();
+  QVERIFY2(why.contains(QStringLiteral("linked/entry.gpg")), qPrintable(why));
+  QVERIFY2(why.contains(QStringLiteral("symbolic link")), qPrintable(why));
+  QCOMPARE(errSpy.count(), 1);
+  QCOMPARE(errSpy.at(0).at(0).toInt(), 1);
+  QCOMPARE(errSpy.at(0).at(1).toString(), why);
+#endif
+}
+
+/**
+ * @brief With a signing key configured, a folder that has no .gpg-id yet (a
+ *        new store) is Verified with nothing to preselect: there is nothing
+ *        to check and no gpg is run; without a signing key it is Unsigned.
+ */
+void tst_util::recipientsForEditingSignedStoreWithoutListIsVerified() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  TestPass pass;
+  AppSettings s;
+  s.passStore = store.path();
+  s.gpgExecutable = QDir(store.path()).filePath(QStringLiteral("no-gpg"));
+  s.passSigningKey = QStringLiteral("0123456789ABCDEF0123456789ABCDEF01234567");
+  pass.init(s);
+  auto r = pass.recipientsForEditing(QString(), store.path());
+  QVERIFY2(r.state == Pass::RecipientsForEditing::State::Verified,
+           "a signed store without a list yet is Verified");
+  QVERIFY2(r.recipients.isEmpty(), qPrintable(r.recipients.join(u',')));
+  QVERIFY2(r.warning.isEmpty(), qPrintable(r.warning));
+
+  s.passSigningKey.clear();
+  pass.init(s);
+  r = pass.recipientsForEditing(QString(), store.path());
+  QVERIFY2(r.state == Pass::RecipientsForEditing::State::Unsigned,
+           "without a signing key the store is Unsigned");
+}
+
+/**
+ * @brief A relative name with a directory part is resolved against the PATH
+ *        directories only: a matching file under the current directory is
+ *        not found.
+ */
+void tst_util::findBinaryInPathRelativePathIsNotTheCwd() {
+  // A relative PATH entry ("." or "bin") is resolved against the cwd and
+  // would make the file below reachable through PATH after all.
+  const QStringList pathDirs = qEnvironmentVariable("PATH").split(
+      QDir::listSeparator(), Qt::SkipEmptyParts);
+  for (const QString &dir : pathDirs) {
+    if (!QDir::isAbsolutePath(dir)) {
+      QSKIP("PATH has a relative entry, which is searched relative to the cwd");
+    }
+  }
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString sub = QStringLiteral("qtpass-sub-") +
+                      QUuid::createUuid().toString(QUuid::WithoutBraces);
+  QVERIFY(QDir(tmp.path()).mkpath(sub));
+  const QString relative = sub + QStringLiteral("/tool");
+  {
+    QFile f(QDir(tmp.path()).filePath(relative));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("#!/bin/sh\nexit 0\n");
+  }
+  QVERIFY(QFile::setPermissions(QDir(tmp.path()).filePath(relative),
+                                QFile::ReadOwner | QFile::WriteOwner |
+                                    QFile::ExeOwner));
+  const QString previousCwd = QDir::currentPath();
+  const auto restore =
+      qScopeGuard([previousCwd] { QDir::setCurrent(previousCwd); });
+  QVERIFY(QDir::setCurrent(tmp.path()));
+  QVERIFY2(QFileInfo(relative).exists(), "the file is right under the cwd");
+  QVERIFY2(Util::findBinaryInPath(relative).isEmpty(),
+           "a relative path is looked up in PATH, never in the cwd");
+}
+
+/**
+ * @brief A WSL-routed executable whose launcher cannot be started does not
+ *        validate the configuration, however the store looks; a plain
+ *        executable that exists does.
+ */
+void tst_util::configIsValidWslLauncherThatCannotRunIsInvalid() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  QFile gpgId(QDir(tmp.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly));
+  gpgId.write("alice@example.com\n");
+  gpgId.close();
+  AppSettings s;
+  s.passStore = tmp.path();
+  s.usePass = false;
+  s.gpgExecutable =
+      QStringLiteral("\"%1\" gpg")
+          .arg(QDir(tmp.path()).filePath(QStringLiteral("wsl.exe")));
+  QVERIFY2(!Util::configIsValid(s),
+           "a WSL launcher that does not run validates nothing");
+  s.gpgExecutable = QCoreApplication::applicationFilePath();
+  QVERIFY2(Util::configIsValid(s), "an existing executable validates");
+}
+
+/**
+ * @brief Replacing a name that is a directory fails closed with the replace
+ *        message, leaves the directory alone and no staged temporary behind;
+ *        a name the file system cannot take fails with the write message.
+ */
+void tst_util::writeFileReplacingCannotReplaceADirectory() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QDir root(tmp.path());
+  const QString dir = root.filePath(QStringLiteral("folder"));
+  QVERIFY(root.mkpath(QStringLiteral("folder")));
+  QString error;
+  QVERIFY2(!Util::writeFileReplacing(dir, "x", true, &error),
+           "a directory cannot be replaced by a file");
+  QVERIFY2(error.contains(QStringLiteral("Failed to replace")),
+           qPrintable(error));
+  QVERIFY2(error.contains(dir), qPrintable(error));
+  QVERIFY2(QFileInfo(dir).isDir(), "the directory is left alone");
+  QCOMPARE(root.entryList({QStringLiteral(".qtpass-*.tmp")},
+                          QDir::Files | QDir::Hidden)
+               .size(),
+           0);
+
+  // A name the file system refuses (longer than NAME_MAX): the staged
+  // temporary next to it is fine, the final link is not, and nothing under
+  // that name exists to report as taken.
+  const QString tooLong = root.filePath(QString(300, u'n'));
+  error.clear();
+  QVERIFY2(!Util::writeFileReplacing(tooLong, "x", false, &error),
+           "a name longer than NAME_MAX cannot be written");
+  QVERIFY2(error.contains(QStringLiteral("Failed to write")),
+           qPrintable(error));
+  QVERIFY2(!QFileInfo::exists(tooLong), "nothing is left under that name");
+  QCOMPARE(root.entryList({QStringLiteral(".qtpass-*.tmp")},
+                          QDir::Files | QDir::Hidden)
+               .size(),
+           0);
+}
+
+/**
+ * @brief removeTree reports false, and says which entries stayed, when a
+ *        file and a link inside cannot be unlinked; it removes the tree once
+ *        the folder is writable again.
+ */
+void tst_util::removeTreeReportsWhatItCannotRemove() {
+#ifdef Q_OS_WIN
+  QSKIP("a read-only folder does not block unlinking on Windows");
+#else
+  if (::geteuid() == 0) {
+    QSKIP("root unlinks from a read-only folder");
+  }
+  QTemporaryDir storeDir;
+  QTemporaryDir outsideDir;
+  QVERIFY(storeDir.isValid() && outsideDir.isValid());
+  const QDir root(storeDir.path());
+  const QString folder = root.filePath(QStringLiteral("folder"));
+  QVERIFY(root.mkpath(QStringLiteral("folder")));
+  const QString entry = QDir(folder).filePath(QStringLiteral("a.gpg"));
+  {
+    QFile f(entry);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  // Read-only, so the retry that grants write access runs and still fails.
+  QVERIFY(QFile::setPermissions(entry, QFile::ReadOwner));
+  QVERIFY(QFile::link(outsideDir.path(),
+                      QDir(folder).filePath(QStringLiteral("link"))));
+  const QFile::Permissions writable = QFile::permissions(folder);
+  const auto restore = qScopeGuard(
+      [folder, writable] { QFile::setPermissions(folder, writable); });
+  QVERIFY(QFile::setPermissions(folder, QFile::ReadOwner | QFile::ExeOwner));
+  {
+    // A file system that does not enforce the mode (some container and
+    // network mounts) would let removeTree succeed; nothing to test then.
+    QFile probe(QDir(folder).filePath(QStringLiteral("probe")));
+    if (probe.open(QIODevice::WriteOnly)) {
+      probe.close();
+      QSKIP("this file system does not enforce a read-only folder");
+    }
+  }
+
+  QTest::ignoreMessage(QtWarningMsg,
+                       QRegularExpression("Could not remove .*a\\.gpg"));
+  QTest::ignoreMessage(QtWarningMsg,
+                       QRegularExpression("Could not remove link .*link"));
+  QVERIFY2(!Util::removeTree(folder), "a tree that stays is not removed");
+  QVERIFY2(QFileInfo::exists(entry), "the unremovable file stays");
+  QVERIFY2(QFile::permissions(entry).testFlag(QFile::WriteOwner),
+           "the retry gave the read-only file write access before failing");
+  QVERIFY2(QFileInfo(QDir(folder).filePath(QStringLiteral("link"))).isSymLink(),
+           "the unremovable link stays");
+
+  QVERIFY(QFile::setPermissions(folder, writable));
+  QVERIFY2(Util::removeTree(folder), "a writable folder is removed");
+  QVERIFY2(!QFileInfo::exists(folder), "nothing of the tree is left");
+  QVERIFY2(QDir(outsideDir.path()).exists(), "the link's target stays");
 #endif
 }
 
