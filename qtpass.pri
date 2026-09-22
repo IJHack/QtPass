@@ -27,6 +27,10 @@ nosingleapp {
 }
 
 DEFINES += "VERSION=\"\\\"$$VERSION\\\"\""
+# 64-bit off_t and ino_t on 32-bit builds: with a 32-bit struct stat, fstat()
+# fails with EOVERFLOW for an inode number that does not fit, and the staged
+# write cannot then tell the file it wrote from another one.
+unix:DEFINES += _FILE_OFFSET_BITS=64
 # Enforce range-for over Qt's foreach/Q_FOREACH across src, main and tests.
 DEFINES += QT_NO_FOREACH
 

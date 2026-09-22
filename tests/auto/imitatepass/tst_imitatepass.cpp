@@ -558,6 +558,8 @@ private Q_SLOTS:
   void reencryptLeavesTheOriginalWhenTheCiphertextVanishes();
   void reencryptFailsWhenNoTemporaryCanBeMadeNextToTheEntry();
   void reencryptLeavesTheEntryWhenTheSwapFails();
+  void reencryptReportsSystematicFailuresInOneDialog();
+  void reencryptNamesTheEntryWhenTheReasonNamesTheScratchFile();
   void reencryptCountsAFailedGitAddAsAFailure();
   void reencryptCountsAFailedGitCommitAsAFailure();
   void reencryptAbortsWhenGitStatusFails();
@@ -775,7 +777,9 @@ void tst_imitatepass::reencryptPathCancelInterruptsActiveProcess() {
   // The store is untouched: no temp or backup file was left behind.
   const QStringList leftovers =
       QDir(storeDir.path())
-          .entryList({QStringLiteral("*.reencrypt.*")}, QDir::Files);
+          .entryList({QStringLiteral("*.reencrypt.*"),
+                      QStringLiteral(".qtpass-*.tmp")},
+                     QDir::Files | QDir::Hidden);
   QVERIFY2(leftovers.isEmpty(), qPrintable(leftovers.join(' ')));
 #endif
 }
@@ -2019,8 +2023,9 @@ void tst_imitatepass::reencryptWritesThroughItsOwnTemporaryFileOnly() {
   // recovery pass removed it as a stale leftover: the link, not its target.
   const QStringList leftovers =
       QDir(storeDir.path())
-          .entryList({QStringLiteral("*.tmp"), QStringLiteral("*.bak")},
-                     QDir::Files | QDir::System);
+          .entryList({QStringLiteral("*.tmp"), QStringLiteral("*.bak"),
+                      QStringLiteral(".qtpass-*.tmp")},
+                     QDir::Files | QDir::System | QDir::Hidden);
   QCOMPARE(leftovers, QStringList());
 #endif
 }
@@ -2080,8 +2085,9 @@ void tst_imitatepass::reencryptStopsWhenBackupAndOriginalBothExist() {
 }
 
 /**
- * @brief A temporary gpg was writing when the process died is never a
- *        source of truth; it is removed before the run.
+ * @brief A temporary a run was writing when the process died is never a
+ *        source of truth; it is removed before the run, unless it is recent
+ *        enough to be another writer's, still in flight.
  */
 void tst_imitatepass::reencryptRemovesStaleTemporaries() {
 #ifdef Q_OS_WIN
@@ -2091,15 +2097,26 @@ void tst_imitatepass::reencryptRemovesStaleTemporaries() {
   QVERIFY(storeDir.isValid());
   QVERIFY(populateStore(storeDir.path(), 1));
   // One of each name a crashed run can have left: a 2.0 development
-  // build's, 1.8.x's, and today's staged write (hidden).
+  // build's, 1.8.x's, and today's staged write (hidden), all from hours
+  // ago; and one staged write of this minute, another QtPass's in flight.
   const QDir store(storeDir.path());
   const QStringList stale{store.filePath("entry0.gpg.aB3xYz.tmp"),
                           store.filePath("entry0.gpg.reencrypt.tmp"),
                           store.filePath(".qtpass-aB3xYz.tmp")};
+  const QDateTime hoursAgo = QDateTime::currentDateTime().addSecs(-3 * 3600);
   for (const QString &path : stale) {
     QFile f(path);
     QVERIFY(f.open(QIODevice::WriteOnly));
     f.write("half a ciphertext");
+    // Flushed first: the buffered write would land after the timestamp.
+    QVERIFY(f.flush());
+    QVERIFY(f.setFileTime(hoursAgo, QFileDevice::FileModificationTime));
+  }
+  const QString inFlight = store.filePath(".qtpass-Zz9Qq1.tmp");
+  {
+    QFile f(inFlight);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("being written");
   }
   Recorder rec;
   int encrypts = 0;
@@ -2110,6 +2127,9 @@ void tst_imitatepass::reencryptRemovesStaleTemporaries() {
   for (const QString &path : stale) {
     QVERIFY2(!QFile::exists(path), qPrintable(path));
   }
+  QVERIFY2(QFile::exists(inFlight),
+           "a temporary of this hour may be another writer's, in flight");
+  QVERIFY(QFile::remove(inFlight));
   QCOMPARE(encrypts, 1);
   QCOMPARE(store.entryList({QStringLiteral("*.tmp"), QStringLiteral("*.bak"),
                             QStringLiteral(".qtpass-*.tmp")},
@@ -3373,6 +3393,109 @@ void tst_imitatepass::reencryptLeavesTheOriginalWhenTheCiphertextVanishes() {
                                 m.contains("entry0.gpg");
                        }),
            qPrintable(criticals.join(" | ")));
+#endif
+}
+
+/**
+ * @brief The reason a ciphertext could not be placed is about the scratch
+ *        file gpg wrote, which the user has never seen: the summary line
+ *        names the entry anyway.
+ */
+void tst_imitatepass::reencryptNamesTheEntryWhenTheReasonNamesTheScratchFile() {
+#ifdef Q_OS_WIN
+  QSKIP("uses file permissions and a shell script as a fake gpg");
+#else
+  if (geteuid() == 0)
+    QSKIP("root ignores file permissions");
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  // gpg writes its ciphertext and leaves it unreadable: the verify-decrypt
+  // (this fake answers from nothing) still succeeds, the copy into the
+  // store cannot read it.
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("encrypt"), QStringLiteral("cat >/dev/null; printf "
+                                                  "'ciphertext\\n' > "
+                                                  "\"$outfile\"; chmod 000 "
+                                                  "\"$outfile\"")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  QStringList criticals;
+  QStringList status;
+  QList<QStringList> calls;
+  expectSingleFailureLeavesEntryIntact(storeDir.path(), fakeGpg, &criticals,
+                                       &status, &calls, logPath);
+  if (QTest::currentTestFailed())
+    return;
+  QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
+           QByteArrayLiteral("not really encrypted"));
+  QVERIFY2(std::any_of(criticals.cbegin(), criticals.cend(),
+                       [](const QString &m) {
+                         return m.contains("entry0.gpg could not be "
+                                           "re-encrypted:") &&
+                                m.contains("Cannot read");
+                       }),
+           qPrintable(criticals.join(" | ")));
+#endif
+}
+
+/**
+ * @brief A folder that cannot be written fails every entry in it the same
+ *        way: one dialog lists them all with the reason, not one dialog per
+ *        entry before the summary.
+ */
+void tst_imitatepass::reencryptReportsSystematicFailuresInOneDialog() {
+#ifdef Q_OS_WIN
+  QSKIP("uses directory permissions and a shell script as a fake gpg");
+#else
+  if (geteuid() == 0)
+    QSKIP("root ignores directory permissions");
+  QTemporaryDir storeDir;
+  QTemporaryDir toolDir;
+  QVERIFY(storeDir.isValid() && toolDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 3));
+  const QString logPath = QDir(toolDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeCustomGpg(toolDir.path(), logPath, {});
+  QVERIFY(!fakeGpg.isEmpty());
+  QVERIFY(QFile::setPermissions(storeDir.path(),
+                                QFile::ReadOwner | QFile::ExeOwner));
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QObject ctx;
+  Recorder rec;
+  record(pass, ctx, rec);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(storeDir.path());
+  const bool finished = endSpy.count() > 0 || endSpy.wait(15000);
+  QCoreApplication::processEvents();
+  // Before any failure return: a store the test cannot write is a store
+  // QTemporaryDir cannot clean up either.
+  QVERIFY(QFile::setPermissions(
+      storeDir.path(), QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner));
+  QVERIFY(finished);
+  QCOMPARE(rec.criticals.size(), 1);
+  const QString summary = rec.criticals.first();
+  QVERIFY2(summary.contains(QStringLiteral("could not be re-encrypted")),
+           qPrintable(summary));
+  for (int i = 0; i < 3; ++i) {
+    QVERIFY2(summary.contains(QStringLiteral("entry%1.gpg").arg(i)),
+             qPrintable(summary));
+  }
+  // Every listed line names its entry, whatever the reason was about. The
+  // first line is the heading ("N file(s) could not be re-encrypted:"), the
+  // rest are the files.
+  const QStringList listed = summary.split(u'\n', Qt::SkipEmptyParts);
+  QCOMPARE(listed.size(), 4);
+  QVERIFY2(listed.first().endsWith(u':'), qPrintable(listed.first()));
+  for (const QString &line : listed.mid(1)) {
+    QVERIFY2(line.contains(QStringLiteral("entry")), qPrintable(line));
+  }
+  QVERIFY2(summary.contains(QStringLiteral("temporary file next to")),
+           qPrintable(summary));
+  QVERIFY2(!rec.statusMessages.isEmpty() &&
+               rec.statusMessages.last().contains(QStringLiteral("3 failed")),
+           qPrintable(rec.statusMessages.join(" | ")));
 #endif
 }
 
