@@ -135,6 +135,9 @@ private Q_SLOTS:
   void removingTheFocusedOtpFieldRewritesNoOtherField();
   void removingAFieldWhileRenamingItClosesTheEditor();
   void destroyingAShownDialogWithATypedOtpFieldIsSafe();
+  void destroyingAShownDialogWithAnOpenRenameEditorIsSafe();
+  void reloadingTheEntryForgetsWhatTheUserTyped();
+  void theHookedFieldStaysTheOtpFieldWhileTheUserTypes();
 };
 
 namespace {
@@ -1184,21 +1187,38 @@ void tst_passworddialog::
   auto *otp = d.findChild<QLineEdit *>(QStringLiteral("otp"));
   QVERIFY(totp != nullptr && otp != nullptr);
 
+  d.activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(&d));
+  // The rows were added to the form after the dialog was shown; setFocus()
+  // on a widget that is not visible yet does nothing.
+  QTRY_VERIFY(totp->isVisible() && otp->isVisible());
   FieldLabel *label = fieldLabel(d, QStringLiteral("totp"));
   QVERIFY(label != nullptr);
   label->startEdit();
   auto *editor = d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
   QVERIFY(editor != nullptr);
-  editor->setText(QStringLiteral("seed"));
-  QTest::keyClick(editor, Qt::Key_Return);
+  QTRY_VERIFY(editor->hasFocus());
+  // Typed, not setText(): a programmatic change leaves the editor
+  // unedited, and an unedited line edit emits no editingFinished when it
+  // loses the focus. Leaving it commits the name; Return would too, but it
+  // also reaches the dialog's default button and accepts the whole dialog,
+  // and the rest of this test needs a dialog the user is still working in.
+  QTest::keyClicks(editor, QStringLiteral("seed"));
+  otp->setFocus();
   QCOMPARE(totp->objectName(), QStringLiteral("seed"));
+  QVERIFY(d.isVisible());
 
-  // Type in the renamed field, leave it, then leave the OTP one.
+  // Type in the renamed field, then leave it: its editingFinished is the
+  // stale hook, and it must not reach the field that is the OTP one now.
+  QSignalSpy leftTheRenamedField(totp, &QLineEdit::editingFinished);
   totp->setFocus();
+  QTRY_VERIFY(totp->hasFocus());
   QTest::keyClicks(totp, QStringLiteral("x"));
   otp->setFocus();
+  QTRY_COMPARE(leftTheRenamedField.count(), 1);
   QCOMPARE(otp->text(), QStringLiteral("12345678"));
-  QTest::keyClick(otp, Qt::Key_Return);
+  // And leaving the OTP field itself keeps its loaded value.
+  totp->setFocus();
   QCOMPARE(otp->text(), QStringLiteral("12345678"));
   okButton(d)->click();
   QVERIFY2(pass.insertedContent.contains(QStringLiteral("otp: 12345678\n")),
@@ -1295,6 +1315,106 @@ void tst_passworddialog::destroyingAShownDialogWithATypedOtpFieldIsSafe() {
   QTRY_VERIFY(otp->hasFocus());
   delete d;
   QVERIFY(pass.insertedContent.isEmpty());
+}
+
+/**
+ * @brief A shown dialog whose field name is being edited can be destroyed:
+ *        hiding it takes the focus from the editor, whose editingFinished()
+ *        commits the rename into a slot of the dialog — which must still be
+ *        whole when that runs.
+ */
+void tst_passworddialog::destroyingAShownDialogWithAnOpenRenameEditorIsSafe() {
+  FakePass pass;
+  auto *d = new PasswordDialog(&pass, allFieldsSettings(),
+                               QStringLiteral("entry.gpg"), false);
+  d->show();
+  QVERIFY(QTest::qWaitForWindowExposed(d));
+  d->activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(d));
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\nurl: example.com\n"));
+  FieldLabel *label = fieldLabel(*d, QStringLiteral("login"));
+  QVERIFY(label != nullptr);
+  label->startEdit();
+  auto *editor = d->findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY(editor != nullptr);
+  QTest::keyClicks(editor, QStringLiteral("x"));
+  QTRY_VERIFY(editor->hasFocus());
+  delete d;
+  QVERIFY(pass.insertedContent.isEmpty());
+}
+
+/**
+ * @brief The entry is shown again (a second decrypt for the same file lands
+ *        while the dialog is open): the fields hold the entry's values once
+ *        more, so what the user typed before is forgotten and a loaded value
+ *        that looks like base32 is not rewritten on save.
+ */
+void tst_passworddialog::reloadingTheEntryForgetsWhatTheUserTyped() {
+  FakePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("OTP");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  d.activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(&d));
+  pass.deliverShow(QStringLiteral("secret\nOTP: 12345678\n"));
+  auto *otp = d.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  QVERIFY(otp != nullptr);
+  otp->setFocus();
+  QTRY_VERIFY(otp->hasFocus());
+  QTest::keyClicks(otp, QStringLiteral("A"));
+
+  pass.deliverShow(QStringLiteral("secret\nOTP: 12345678\n"));
+  QCOMPARE(otp->text(), QStringLiteral("12345678"));
+  okButton(d)->click();
+  QVERIFY2(pass.insertedContent.contains(QStringLiteral("OTP: 12345678\n")),
+           qPrintable(pass.insertedContent));
+}
+
+/**
+ * @brief Which field is the OTP one is settled when the fields change, not
+ *        by what the user types: an entry keeping its secret under `totp`
+ *        leaves the template's empty `OTP` widget an ordinary field, and
+ *        typing a secret into it neither flags it nor rewrites it, while
+ *        `totp` stays the field that is validated and canonicalised.
+ */
+void tst_passworddialog::theHookedFieldStaysTheOtpFieldWhileTheUserTypes() {
+  FakePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("OTP");
+  s.templateAllFields = true;
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  d.activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(&d));
+  pass.deliverShow(QStringLiteral("secret\ntotp: JBSWY3DPEHPK3PXP\n"));
+  auto *tmpl = d.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  auto *totp = d.findChild<QLineEdit *>(QStringLiteral("totp"));
+  QVERIFY(tmpl != nullptr && totp != nullptr);
+  QTRY_VERIFY(tmpl->isVisible() && totp->isVisible());
+  QVERIFY2(tmpl->text().isEmpty(), qPrintable(tmpl->text()));
+
+  // Something that is not a secret, typed into the field that is not the
+  // OTP one: left alone, not flagged.
+  tmpl->setFocus();
+  QTRY_VERIFY(tmpl->hasFocus());
+  QTest::keyClicks(tmpl, QStringLiteral("not a secret"));
+  totp->setFocus();
+  QCOMPARE(tmpl->text(), QStringLiteral("not a secret"));
+  QVERIFY2(tmpl->actions().isEmpty(), "an ordinary field is not flagged");
+  QVERIFY(tmpl->toolTip().isEmpty());
+
+  // The hooked field is still the one that gets canonicalised.
+  QTRY_VERIFY(totp->hasFocus());
+  totp->clear();
+  QTest::keyClicks(totp, QStringLiteral("JBSWY3DPEHPK3PXP"));
+  tmpl->setFocus();
+  QVERIFY2(totp->text().startsWith(QStringLiteral("otpauth://totp/entry.gpg?")),
+           qPrintable(totp->text()));
 }
 
 QTEST_MAIN(tst_passworddialog)

@@ -428,10 +428,14 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   entry with an OTP field. The mark now lives on the field the user typed in,
   so renaming a field away from the OTP role and typing in it leaves the
   field that is the OTP one, and its loaded value, alone; removing the field
-  that has the focus rewrites no other field; and closing a dialog whose
-  OTP field was typed in no longer reaches a slot of the dialog being
-  destroyed. Removing a field while its name is being edited takes the
-  editor with it ([#1903](https://github.com/IJHack/QtPass/pull/1903))
+  that has the focus rewrites no other field; showing the entry again
+  forgets what was typed before it; and destroying a shown dialog no longer
+  reaches a slot of the dialog being destroyed, whether an OTP field or a
+  field name was being edited. Which field is the OTP one is settled when
+  the fields change, not by what is typed into them. Removing a field while
+  its name is being edited takes the editor with it
+  ([#1903](https://github.com/IJHack/QtPass/pull/1903),
+  [#1905](https://github.com/IJHack/QtPass/pull/1905))
 - A gpg, Git or pass executable configured as a bare name ("gpg") ran two
   different binaries: the background commands looked for it next to the
   QtPass executable only (and failed unless bundled), the blocking ones
