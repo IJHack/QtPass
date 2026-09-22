@@ -3482,16 +3482,14 @@ void tst_imitatepass::reencryptReportsSystematicFailuresInOneDialog() {
     QVERIFY2(summary.contains(QStringLiteral("entry%1.gpg").arg(i)),
              qPrintable(summary));
   }
-  // Every listed line names its entry, whatever the reason was about.
+  // Every listed line names its entry, whatever the reason was about. The
+  // first line is the heading ("N file(s) could not be re-encrypted:"), the
+  // rest are the files.
   const QStringList listed = summary.split(u'\n', Qt::SkipEmptyParts);
-  for (const QString &line : listed) {
-    if (line.contains(QStringLiteral("could not be re-encrypted:")) &&
-        !line.endsWith(QStringLiteral(":"))) {
-      continue; // the heading
-    }
-    QVERIFY2(!line.contains(QStringLiteral(".tmp")) ||
-                 line.contains(QStringLiteral("entry")),
-             qPrintable(line));
+  QCOMPARE(listed.size(), 4);
+  QVERIFY2(listed.first().endsWith(u':'), qPrintable(listed.first()));
+  for (const QString &line : listed.mid(1)) {
+    QVERIFY2(line.contains(QStringLiteral("entry")), qPrintable(line));
   }
   QVERIFY2(summary.contains(QStringLiteral("temporary file next to")),
            qPrintable(summary));
