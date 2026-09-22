@@ -200,10 +200,14 @@ private:
    */
   void validateOtpField();
   /**
-   * @brief Remember that the user typed in the OTP field, so a bare secret
-   * they entered is canonicalised (a loaded one is kept as it was). A member
-   * function: Qt::UniqueConnection, which hookOtpField() needs because it
-   * runs more than once for the same field, is refused for a lambda.
+   * @brief Remember, on the line edit that sent textEdited(), that the user
+   * typed in it: only such a field has a bare secret canonicalised, a loaded
+   * value is kept as it was. The mark lives on the widget, not on the dialog,
+   * so typing into a field that used to be the OTP one (renamed away) says
+   * nothing about the field that is the OTP one now. A member function:
+   * Qt::UniqueConnection, which hookOtpField() needs because it runs more
+   * than once for the same field, is refused for a lambda (a debug build
+   * asserts, a release build makes no connection).
    */
   void markOtpFieldEdited();
   /**
@@ -268,9 +272,11 @@ private:
   /// setPassword() deletes the m_otherLines widgets before calling
   /// hookOtpField(), so a raw pointer would already dangle there.
   QPointer<QAction> m_otpWarning;
-  /// True once the user has typed in the OTP field. Only then may a value that
-  /// is not already an otpauth URI be rewritten, so untouched data survives.
-  bool m_otpFieldEdited{false};
+  /// The line edit hookOtpField() last wired up, so its signals can be
+  /// disconnected when another field becomes the OTP one (a rename, a
+  /// removal): a stale editingFinished from the old field must not rewrite
+  /// the new one.
+  QPointer<QLineEdit> m_otpLine;
 
   void applyTemplate(const QString &templateName);
   void setupTemplateBox();

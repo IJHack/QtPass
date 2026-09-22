@@ -27,6 +27,12 @@ public:
    * @param parent owning widget
    */
   explicit FieldLabel(const QString &name, QWidget *parent = nullptr);
+  /**
+   * @brief Takes an open editor with it: the editor is a sibling, not a
+   * child, so it would otherwise stay behind when the field is removed
+   * while its name is being edited.
+   */
+  ~FieldLabel() override;
 
 public slots:
   /**

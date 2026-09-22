@@ -131,6 +131,10 @@ private Q_SLOTS:
   void otpUntouchedValueIsWrittenBackVerbatim();
   void otpPopulatedFieldWinsOverTheEmptyTemplateOne();
   void renamingTheOtpFieldAwayDropsItsValidation();
+  void typingInARenamedAwayOtpFieldLeavesTheCurrentOneAlone();
+  void removingTheFocusedOtpFieldRewritesNoOtherField();
+  void removingAFieldWhileRenamingItClosesTheEditor();
+  void destroyingAShownDialogWithATypedOtpFieldIsSafe();
 };
 
 namespace {
@@ -1045,13 +1049,22 @@ void tst_passworddialog::otpUriIsNormalisedOnLeavingTheField() {
            qPrintable("the URI must be made explicit: " + otp->text()));
 
   // A bare secret the user typed becomes a URI too; only a loaded one is
-  // kept as it was (otpUntouchedValueIsWrittenBackVerbatim).
-  otp->clear();
-  QTest::keyClicks(otp, QStringLiteral("JBSWY3DPEHPK3PXP"));
-  QTest::keyClick(otp, Qt::Key_Return);
-  QVERIFY2(otp->text().startsWith(QStringLiteral("otpauth://totp/github.com?")),
-           qPrintable("a typed bare secret must become a URI: " + otp->text()));
-  QVERIFY(otp->text().contains(QStringLiteral("secret=JBSWY3DPEHPK3PXP")));
+  // kept as it was (otpUntouchedValueIsWrittenBackVerbatim). A fresh dialog,
+  // so the keystrokes here are what marks the field as typed in.
+  {
+    FakePass bare;
+    PasswordDialog e(&bare, s, QStringLiteral("github.com"), true);
+    e.show();
+    QVERIFY(QTest::qWaitForWindowExposed(&e));
+    auto *field = e.findChild<QLineEdit *>(QStringLiteral("OTP"));
+    QVERIFY(field != nullptr);
+    QTest::keyClicks(field, QStringLiteral("JBSWY3DPEHPK3PXP"));
+    QTest::keyClick(field, Qt::Key_Return);
+    QVERIFY2(
+        field->text().startsWith(QStringLiteral("otpauth://totp/github.com?")),
+        qPrintable("a typed bare secret must become a URI: " + field->text()));
+    QVERIFY(field->text().contains(QStringLiteral("secret=JBSWY3DPEHPK3PXP")));
+  }
 
   // The typed value is invalid: the field is left as typed for the user to fix.
   otp->clear();
@@ -1150,6 +1163,138 @@ void tst_passworddialog::renamingTheOtpFieldAwayDropsItsValidation() {
   QVERIFY2(d.getPassword().contains(
                QStringLiteral("backup: otpauth://also broken\n")),
            qPrintable(d.getPassword()));
+}
+
+/**
+ * @brief The "typed in" mark belongs to the field, not to the dialog: typing
+ *        into a field that used to be the OTP one (renamed away) says nothing
+ *        about the field that is the OTP one now, whose loaded value (a backup
+ *        code that happens to look like base32) is written back as it was.
+ */
+void tst_passworddialog::
+    typingInARenamedAwayOtpFieldLeavesTheCurrentOneAlone() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(
+      QStringLiteral("secret\ntotp: JBSWY3DPEHPK3PXP\notp: 12345678\n"));
+  auto *totp = d.findChild<QLineEdit *>(QStringLiteral("totp"));
+  auto *otp = d.findChild<QLineEdit *>(QStringLiteral("otp"));
+  QVERIFY(totp != nullptr && otp != nullptr);
+
+  FieldLabel *label = fieldLabel(d, QStringLiteral("totp"));
+  QVERIFY(label != nullptr);
+  label->startEdit();
+  auto *editor = d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY(editor != nullptr);
+  editor->setText(QStringLiteral("seed"));
+  QTest::keyClick(editor, Qt::Key_Return);
+  QCOMPARE(totp->objectName(), QStringLiteral("seed"));
+
+  // Type in the renamed field, leave it, then leave the OTP one.
+  totp->setFocus();
+  QTest::keyClicks(totp, QStringLiteral("x"));
+  otp->setFocus();
+  QCOMPARE(otp->text(), QStringLiteral("12345678"));
+  QTest::keyClick(otp, Qt::Key_Return);
+  QCOMPARE(otp->text(), QStringLiteral("12345678"));
+  okButton(d)->click();
+  QVERIFY2(pass.insertedContent.contains(QStringLiteral("otp: 12345678\n")),
+           qPrintable(pass.insertedContent));
+  QVERIFY(pass.insertedContent.contains(
+      QStringLiteral("seed: JBSWY3DPEHPK3PXPx\n")));
+}
+
+/**
+ * @brief Removing the OTP field the user typed in, while it has the focus,
+ *        must not rewrite the field that becomes the OTP one: hiding the
+ *        removed line emits editingFinished(), which used to run the
+ *        normalisation on whatever otpLineEdit() found next.
+ */
+void tst_passworddialog::removingTheFocusedOtpFieldRewritesNoOtherField() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(
+      QStringLiteral("secret\ntotp: JBSWY3DPEHPK3PXP\notp: 12345678\n"));
+  QPointer<QLineEdit> totp = d.findChild<QLineEdit *>(QStringLiteral("totp"));
+  auto *otp = d.findChild<QLineEdit *>(QStringLiteral("otp"));
+  QVERIFY(totp != nullptr && otp != nullptr);
+  d.activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(&d));
+  totp->setFocus();
+  QTest::keyClicks(totp, QStringLiteral("A"));
+  QTRY_VERIFY(totp->hasFocus());
+  auto *remove =
+      totp->findChild<QAction *>(QStringLiteral("removeFieldAction"));
+  QVERIFY(remove != nullptr);
+  remove->trigger();
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY(totp.isNull());
+  QCOMPARE(otp->text(), QStringLiteral("12345678"));
+  okButton(d)->click();
+  QVERIFY2(pass.insertedContent.contains(QStringLiteral("otp: 12345678\n")),
+           qPrintable(pass.insertedContent));
+  QVERIFY(!pass.insertedContent.contains(QStringLiteral("totp")));
+}
+
+/**
+ * @brief Removing a field while its name is being edited takes the editor
+ *        with it: the editor is a sibling of the label, not a child, and
+ *        stayed behind as a focused widget holding the old name.
+ */
+void tst_passworddialog::removingAFieldWhileRenamingItClosesTheEditor() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\nurl: example.com\n"));
+  FieldLabel *label = fieldLabel(d, QStringLiteral("login"));
+  QVERIFY(label != nullptr);
+  label->startEdit();
+  QPointer<QLineEdit> editor =
+      d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY(editor != nullptr);
+  editor->setText(QStringLiteral("changed"));
+  auto *line = d.findChild<QLineEdit *>(QStringLiteral("login"));
+  QVERIFY(line != nullptr);
+  line->findChild<QAction *>(QStringLiteral("removeFieldAction"))->trigger();
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY2(editor.isNull(), "the editor must go with its label");
+  QVERIFY(d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor")) ==
+          nullptr);
+  QVERIFY(!d.getPassword().contains(QStringLiteral("login")));
+}
+
+/**
+ * @brief A shown dialog whose focused OTP field was typed in can be destroyed:
+ *        QDialog's destructor hides the window, the focus leaves the field,
+ *        editingFinished() fires, and the slot it reached belonged to the
+ *        PasswordDialog part that was already gone (a debug build asserted).
+ */
+void tst_passworddialog::destroyingAShownDialogWithATypedOtpFieldIsSafe() {
+  FakePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate = QStringLiteral("OTP");
+  auto *d = new PasswordDialog(&pass, s, QStringLiteral("entry.gpg"), false);
+  d->show();
+  QVERIFY(QTest::qWaitForWindowExposed(d));
+  pass.deliverShow(QStringLiteral("secret\nOTP: JBSWY3DPEHPK3PXP\n"));
+  auto *otp = d->findChild<QLineEdit *>(QStringLiteral("OTP"));
+  QVERIFY(otp != nullptr);
+  d->activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(d));
+  otp->setFocus();
+  QTest::keyClicks(otp, QStringLiteral("A"));
+  QTRY_VERIFY(otp->hasFocus());
+  delete d;
+  QVERIFY(pass.insertedContent.isEmpty());
 }
 
 QTEST_MAIN(tst_passworddialog)

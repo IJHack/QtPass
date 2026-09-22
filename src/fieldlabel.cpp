@@ -28,6 +28,8 @@ void FieldLabel::contextMenuEvent(QContextMenuEvent *event) {
   menu.exec(event->globalPos());
 }
 
+FieldLabel::~FieldLabel() { delete m_editor.data(); }
+
 void FieldLabel::startEdit() {
   if (m_editor != nullptr) {
     m_editor->setFocus();
