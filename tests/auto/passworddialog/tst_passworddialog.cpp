@@ -1334,11 +1334,14 @@ void tst_passworddialog::destroyingAShownDialogWithAnOpenRenameEditorIsSafe() {
   pass.deliverShow(QStringLiteral("secret\nlogin: bob\nurl: example.com\n"));
   FieldLabel *label = fieldLabel(*d, QStringLiteral("login"));
   QVERIFY(label != nullptr);
+  // The row was added to the form after the dialog was shown; startEdit()
+  // on a label that is not visible yet focuses nothing.
+  QTRY_VERIFY(label->isVisible());
   label->startEdit();
   auto *editor = d->findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
   QVERIFY(editor != nullptr);
-  QTest::keyClicks(editor, QStringLiteral("x"));
   QTRY_VERIFY(editor->hasFocus());
+  QTest::keyClicks(editor, QStringLiteral("x"));
   delete d;
   QVERIFY(pass.insertedContent.isEmpty());
 }
