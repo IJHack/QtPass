@@ -29,7 +29,7 @@ npx prettier --write "**/*.md" "**/*.yml"
 npx prettier --check "**/*.md" "**/*.yml"
 
 # Local CI check (may fail on new branches due to git issues)
-act push -W .github/workflows/linter.yml -j build
+act push -W .github/workflows/lint.yml -j build
 ```
 
 **C++ formatting:**

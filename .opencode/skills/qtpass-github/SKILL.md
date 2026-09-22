@@ -464,11 +464,11 @@ Before merging a PR:
 - [ ] Branch is up to date with main
 - [ ] No unresolved conversations
 - [ ] Tests pass locally (`make check`)
-- [ ] Linter passes (`act push -W .github/workflows/linter.yml`)
+- [ ] Linter passes (`act push -W .github/workflows/lint.yml`)
 
 ```bash
 # Run local CI checks before pushing
-act push -W .github/workflows/linter.yml -j build
+act push -W .github/workflows/lint.yml -j build
 
 # Update with latest main before merging
 git checkout <branch>

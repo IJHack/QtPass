@@ -14,7 +14,7 @@ permissions: {}
 
 jobs:
   changes:
-    name: Detect changes (CodeQL)
+    name: Detect changes
     runs-on: ubuntu-latest
     outputs:
       src: ${{ steps.filter.outputs.src }}
@@ -38,7 +38,7 @@ jobs:
               - "tests/**"
 
   analyze:
-    name: Analyze with CodeQL (${{ matrix.language }})
+    name: Analyze (${{ matrix.language }})
     needs: changes
     runs-on: ubuntu-latest
     permissions:

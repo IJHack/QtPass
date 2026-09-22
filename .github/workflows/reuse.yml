@@ -18,7 +18,7 @@ permissions: {}
 
 jobs:
   reuse:
-    name: Check REUSE compliance
+    name: Check compliance
     runs-on: ubuntu-latest
     permissions:
       contents: read

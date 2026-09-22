@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   changes:
-    name: Detect changes (release)
+    name: Detect changes
     runs-on: ubuntu-latest
     outputs:
       src: ${{ steps.filter.outputs.src }}
@@ -55,7 +55,7 @@ jobs:
               - ".github/workflows/release-installers.yml"
 
   build-windows:
-    name: Build Windows installer
+    name: Windows installer
     needs: changes
     runs-on: windows-latest
     steps:
@@ -156,7 +156,7 @@ jobs:
           path: Output/qtpass-*.exe
 
   build-macos:
-    name: Build macOS dmg
+    name: macOS dmg
     needs: changes
     runs-on: macos-latest
     steps:
@@ -253,7 +253,7 @@ jobs:
           path: QtPass-*.dmg
 
   build-appimage:
-    name: Build Linux AppImage
+    name: Linux AppImage
     needs: changes
     runs-on: ubuntu-latest
     steps:
@@ -407,7 +407,7 @@ jobs:
   # signs the assets (scripts/sign-release-assets.sh) and publishes. Nothing
   # here is downloaded and re-uploaded by hand any more.
   publish:
-    name: Publish release assets
+    name: Publish assets
     if: startsWith(github.ref, 'refs/tags/v')
     needs:
       - build-windows

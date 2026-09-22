@@ -131,8 +131,8 @@ doxygen Doxyfile
 ls docs/index.html
 ```
 
-CI pins **Doxygen 1.17.0** and treats warnings as errors; a local Doxygen of a
-different version may report differently. The `docs.yml` install step fetches
+CI pins **Doxygen 1.18.0** and treats warnings as errors; a local Doxygen of a
+different version may report differently. The `documentation.yml` install step fetches
 the pinned binary from the GitHub release mirror first, then doxygen.nl, with
 retries (doxygen.nl outages previously caused spurious `docs` failures).
 
@@ -199,7 +199,7 @@ When adding new public APIs, every public symbol in a header needs a Doxygen doc
  */
 ```
 
-The CI enforces **zero Doxygen warnings** via `docs.yml`. `WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile` causes the step to fail on any undocumented public symbol.
+The CI enforces **zero Doxygen warnings** via `documentation.yml`. `WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile` causes the step to fail on any undocumented public symbol.
 
 #### Enforced Doxyfile settings
 

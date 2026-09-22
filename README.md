@@ -4,7 +4,7 @@
 [![Packaging status](https://repology.org/badge/tiny-repos/qtpass.svg)](https://repology.org/metapackage/qtpass)
 [![latest packaged version(s)](https://repology.org/badge/latest-versions/qtpass.svg)](https://repology.org/metapackage/qtpass)
 
-[![Build and test](https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml/badge.svg?branch=main)](https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml?query=branch%3Amain)
+[![Build and test](https://github.com/IJHack/QtPass/actions/workflows/build-and-test.yml/badge.svg?branch=main)](https://github.com/IJHack/QtPass/actions/workflows/build-and-test.yml?query=branch%3Amain)
 [![CodeFactor](https://www.codefactor.io/repository/github/ijhack/qtpass/badge)](https://www.codefactor.io/repository/github/ijhack/qtpass)
 
 [![Coverage Status](https://coveralls.io/repos/github/IJHack/QtPass/badge.svg)](https://coveralls.io/github/IJHack/QtPass)
