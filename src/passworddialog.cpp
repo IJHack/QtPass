@@ -18,6 +18,7 @@
 #include <QDialogButtonBox>
 #include <QDir>
 #include <QFileInfo>
+#include <QFormLayout>
 #include <QHash>
 #include <QIcon>
 #include <QLabel>
@@ -359,7 +360,21 @@ void PasswordDialog::renameField(QLineEdit *line, FieldLabel *label,
 
 void PasswordDialog::removeField(QLineEdit *line) {
   m_otherLines.removeAll(line);
-  ui->formLayout->removeRow(line);
+  // takeRow(), not removeRow(): the latter deletes the label and the line
+  // here, while the label's contextMenuEvent() (with a QMenu on its stack,
+  // parented to the label) or the line's action's triggered() is still
+  // running. Out of the form now, deleted once the stack has unwound.
+  const QFormLayout::TakeRowResult row = ui->formLayout->takeRow(line);
+  for (QLayoutItem *item : {row.labelItem, row.fieldItem}) {
+    if (item == nullptr) {
+      continue;
+    }
+    if (QWidget *widget = item->widget()) {
+      widget->hide();
+      widget->deleteLater();
+    }
+    delete item;
+  }
   hookOtpField();
 }
 
@@ -422,15 +437,16 @@ void PasswordDialog::hookOtpField() {
           Qt::UniqueConnection);
   // textEdited, not textChanged: it fires only for user input, so programmatic
   // population does not count as the user having touched the field.
-  connect(
-      otp, &QLineEdit::textEdited, this, [this]() { m_otpFieldEdited = true; },
-      Qt::UniqueConnection);
+  connect(otp, &QLineEdit::textEdited, this,
+          &PasswordDialog::markOtpFieldEdited, Qt::UniqueConnection);
   // Canonicalise as soon as the user leaves the field, so the value they end
   // up saving is the value they were shown.
   connect(otp, &QLineEdit::editingFinished, this,
           &PasswordDialog::normalizeOtpField, Qt::UniqueConnection);
   validateOtpField();
 }
+
+void PasswordDialog::markOtpFieldEdited() { m_otpFieldEdited = true; }
 
 /**
  * @brief PasswordDialog::validateOtpField flag an unusable OTP value.

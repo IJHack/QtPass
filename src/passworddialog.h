@@ -200,6 +200,13 @@ private:
    */
   void validateOtpField();
   /**
+   * @brief Remember that the user typed in the OTP field, so a bare secret
+   * they entered is canonicalised (a loaded one is kept as it was). A member
+   * function: Qt::UniqueConnection, which hookOtpField() needs because it
+   * runs more than once for the same field, is refused for a lambda.
+   */
+  void markOtpFieldEdited();
+  /**
    * @brief Rewrite the OTP field as a canonical otpauth URI.
    *
    * A value that cannot be parsed is left exactly as the user typed it, so
@@ -231,7 +238,10 @@ private:
    */
   void renameField(QLineEdit *line, FieldLabel *label, const QString &to);
   /**
-   * @brief Drop a `key: value` field and its row from the form.
+   * @brief Drop a `key: value` field and its row from the form. The widgets
+   * are deleted once control is back in the event loop: the request comes
+   * from the line's own trailing action or its label's context menu, both
+   * still on the stack.
    */
   void removeField(QLineEdit *line);
   bool m_templating{};
