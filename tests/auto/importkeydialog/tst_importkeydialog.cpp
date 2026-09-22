@@ -723,7 +723,9 @@ void tst_importkeydialog::fileButtonLoadsArmoredFileIntoInput() {
  */
 void tst_importkeydialog::fileButtonRejectsNonArmoredFile() {
   const QByteArray binary = QByteArrayLiteral("\x99\x01\x0d\x04\x00\xff<b>");
-  const QString path = writeFile(QStringLiteral("key<b>.gpg"), binary);
+  // An ampersand: HTML-special, yet legal in a file name everywhere (a
+  // "<" or ">" is not on Windows).
+  const QString path = writeFile(QStringLiteral("key&b.gpg"), binary);
   QVERIFY2(!path.isEmpty(), "could not write key file");
   ImportKeyDialog dialog(QString{});
   auto *edit =
@@ -740,7 +742,7 @@ void tst_importkeydialog::fileButtonRejectsNonArmoredFile() {
   QCOMPARE(run.messageBoxes, 1);
   QVERIFY2(run.messageText.contains(path.toHtmlEscaped()),
            qPrintable(run.messageText));
-  QVERIFY2(!run.messageText.contains(QStringLiteral("key<b>.gpg")),
+  QVERIFY2(!run.messageText.contains(QStringLiteral("key&b.gpg")),
            "raw path must not reach the rich-text body");
   QVERIFY2(run.messageText.contains(QStringLiteral("--armor --export")),
            qPrintable(run.messageText));
