@@ -275,8 +275,9 @@ public:
    * caller's check and the write is replaced as an entry rather than
    * written through (QSaveFile resolves such a link at open); a file swapped
    * under the temporary's name before the rename (a hard link to something
-   * of the user's, say) is caught by the comparison and, when the write
-   * made the name, removed again.
+   * of the user's, say) is caught by the comparison and reported, and what
+   * is under the name is left (removing it by name could take another
+   * writer's file that landed there since).
    * @param path The file to write.
    * @param replace Whether an existing entry under the name may go.
    * @param fill Writes the contents.

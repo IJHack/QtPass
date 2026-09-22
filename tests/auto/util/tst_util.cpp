@@ -4296,10 +4296,10 @@ void tst_util::copyFileReplacingCopiesRegularFilesOnlyAndOwnerOnly() {
  * @brief stageFileReplacing puts under the name the very file it filled: a
  *        co-writer who swaps the temporary's name for a hard link to another
  *        file (regular, so every check by name passes) or for a symlink, in
- *        the window before the rename, gets neither under the entry's name.
- *        Without replace the name the write made is removed again; with it
- *        the swapped-in object is reported and left. The other file is never
- *        written through.
+ *        the window before the rename, gets neither taken for the entry:
+ *        the write is reported as failed and what sits under the name is
+ *        left for the user (removing it by name could take another writer's
+ *        file). The other file is never written through.
  */
 void tst_util::stageFileReplacingRefusesAFileSwappedUnderItsTemporary() {
 #ifdef Q_OS_WIN
@@ -4335,15 +4335,15 @@ void tst_util::stageFileReplacingRefusesAFileSwappedUnderItsTemporary() {
     return QFile::link(victim, name);
   };
 
-  // Hard link, new name: refused, the name is gone again.
+  // Hard link, new name: refused; the other file's second name is left for
+  // the user, untouched.
   const QString fresh = root.filePath(QStringLiteral("new.gpg"));
   QString error;
   QVERIFY(!Util::stageFileReplacing(fresh, false, swapFor(hardLink), &error));
   QVERIFY2(error.contains(QStringLiteral("swapped")), qPrintable(error));
-  QVERIFY2(!QFileInfo::exists(fresh) && !QFileInfo(fresh).isSymLink(),
-           "a name this write made must not be left as a second name for "
-           "another file");
   QCOMPARE(read(victim), QByteArray("private key"));
+  QCOMPARE(read(fresh), QByteArray("private key"));
+  QVERIFY(QFile::remove(fresh));
 
   // Hard link, replacing an entry: refused; the entry under the name is now
   // the other file (the rename did that), reported, and left for the user.
@@ -4359,10 +4359,11 @@ void tst_util::stageFileReplacingRefusesAFileSwappedUnderItsTemporary() {
   QVERIFY(!Util::stageFileReplacing(entry, true, swapFor(symLink), &error));
   QVERIFY2(error.contains(QStringLiteral("swapped")), qPrintable(error));
   QCOMPARE(read(victim), QByteArray("private key"));
-  // Symlink, new name: refused and removed again.
+  // Symlink, new name: refused, the link left as a link.
   QVERIFY(!Util::stageFileReplacing(fresh, false, swapFor(symLink), &error));
-  QVERIFY(!QFileInfo::exists(fresh) && !QFileInfo(fresh).isSymLink());
+  QVERIFY(QFileInfo(fresh).isSymLink());
   QCOMPARE(read(victim), QByteArray("private key"));
+  QVERIFY(QFile::remove(fresh));
 
   // The moved-away temporaries are the test's own mess.
   for (const QString &leftover : root.entryList({QStringLiteral(".qtpass-*")},

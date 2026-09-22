@@ -781,14 +781,11 @@ auto Util::stageFileReplacing(const QString &path, bool replace,
   // into an unnamed inode, nothing through the link), and not another file
   // put under the temporary's name in that window (a hard link to something
   // of the user's would sit under the entry's name, a regular file to every
-  // check by name). Opened without following, compared by identity.
+  // check by name). Opened without following, compared by identity. What is
+  // under the name then is reported and left: removing it by name could
+  // take another writer's file that landed there since the check.
   QFile placed;
   if (!openRegularFile(path, placed) || !(identityOf(placed) == written)) {
-    if (!replace) {
-      // The name is this write's own (nothing was there, or the link would
-      // have failed): not left pointing at someone else's file.
-      QFile::remove(path);
-    }
     if (error)
       *error =
           QCoreApplication::translate(

@@ -253,9 +253,9 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   name is the very file it wrote (opened without following, compared by
   device and inode): a file swapped under the temporary's name in the window
   before the rename — a hard link to something of the user's, a regular file
-  to every check by name — is reported instead of taken for the entry, and a
-  name the write itself made is removed again. Without replacing, the new
-  name is made with `linkat(2)` rather than `link(2)`, which on macOS and
+  to every check by name — is reported instead of taken for the entry, and
+  left where it is for the user to look at. Without replacing, the new name
+  is made with `linkat(2)` rather than `link(2)`, which on macOS and
   the BSDs follows a symlink planted under the temporary's name and would
   have made the entry a second name for its target [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - The debug log redacts the values of `--passphrase` and friends and
