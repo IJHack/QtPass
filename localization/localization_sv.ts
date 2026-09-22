@@ -981,23 +981,23 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="90"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
-        <translation type="unfinished">Generationsregistret för mottagarlistorna, %1, går inte att komma åt.</translation>
+        <translation>Genereringsposten för mottagarlistorna, %1, kan inte nås.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="99"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
-        <translation type="unfinished">Generationsregistret för mottagarlistorna, %1, är inte läsbart. Signerade mottagarlistor accepteras inte förrän det har reparerats eller tagits bort (vilket gör att det som tidigare har accepterats glöms bort).</translation>
+        <translation>Generationsregistret för mottagarlistorna,%1, är inte läsbar. Signerade mottagarlistor accepteras inte förrän de repareras eller tas bort (vilket glömmer bort vad som accepterades tidigare).</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="163"/>
         <location filename="../src/gpgidgeneration.cpp" line="176"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
-        <translation type="unfinished">Generationsregistret för mottagarlistorna, %1, går inte att skriva.</translation>
+        <translation>Generationsregistret för mottagarlistorna, %1, går inte att skriva till.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="204"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
-        <translation type="unfinished">Generationsregistret för mottagarlistorna, %1, kunde inte låsas: ett annat QtPass kan använda det, eller så går det inte att skriva i dess mapp.</translation>
+        <translation>Generationsregistret för mottagarlistorna, %1, kunde inte låsas: ett annat QtPass kan använda det, eller så går det inte att skriva i dess mapp.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="308"/>
@@ -1062,7 +1062,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="564"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
-        <translation type="unfinished">Generationsregistret för mottagarlistorna, %1, har gått vidare till generation %2 medan generation %3 skrevs.</translation>
+        <translation>Generationsregistret för mottagarlistorna, %1, har gått vidare till generation %2 medan generation %3 skrevs.</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
@@ -1085,12 +1085,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
-        <translation type="unfinished">Den signerade mottagarlistan %1 är generation %2, samma generation som en annan lista som den här enheten tidigare har accepterat. Antingen sparade två enheter mottagare samtidigt (Git har i så fall visat konflikten), eller så har en äkta lista av den generationen bytts in. %3</translation>
+        <translation>Den signerade mottagarlistan %1 är generation %2, samma generation som en annan lista som den här enheten tidigare har accepterat. Antingen sparade två enheter mottagare samtidigt (Git har i så fall visat konflikten), eller så har en äkta lista av den generationen bytts in. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="506"/>
         <source>checking the recipients and saving</source>
-        <translation type="unfinished">kontrollera mottagarna och spara</translation>
+        <translation>kontrollera mottagarna och spara</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="532"/>
@@ -1103,12 +1103,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="75"/>
         <source>the recipient list is not valid UTF-8</source>
-        <translation type="unfinished">mottagarlistan är inte giltig UTF-8</translation>
+        <translation>mottagarlistan är inte giltig UTF-8</translation>
     </message>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="99"/>
         <source>gpg wrote no signature</source>
-        <translation type="unfinished">gpg skrev ingen signatur</translation>
+        <translation>gpg skrev ingen signatur</translation>
     </message>
 </context>
 <context>
@@ -1128,12 +1128,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <source>Cannot add</source>
-        <translation type="unfinished">Kan inte lägga till</translation>
+        <translation>Kan inte lägga till</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="190"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 finns redan.</translation>
+        <translation>%1 existerar redan.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="203"/>
@@ -1144,12 +1144,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="216"/>
         <source>Cannot write</source>
-        <translation type="unfinished">Kan inte skriva</translation>
+        <translation>Kan inte skriva</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="217"/>
         <source>Cannot create a temporary directory: %1</source>
-        <translation type="unfinished">Kan inte skapa en tillfällig katalog: %1</translation>
+        <translation>Kan inte skapa en tillfällig katalog: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="440"/>
@@ -1219,12 +1219,12 @@ Du kommer inte att kunna ändra användarlista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="413"/>
         <source>Recipient list written, but not recorded</source>
-        <translation type="unfinished">Mottagarlistan skrevs, men registrerades inte</translation>
+        <translation>Mottagarlistan skrevs, men registrerades inte</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="414"/>
         <source>%1 Save the recipients once more to get through.</source>
-        <translation type="unfinished">%1 Spara mottagarna en gång till för att komma vidare.</translation>
+        <translation>%1 Spara mottagarna en gång till för att komma vidare.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="419"/>
@@ -1241,7 +1241,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="443"/>
         <source>Failed to sign %1: %2</source>
-        <translation type="unfinished">Misslyckades med att signera %1: %2</translation>
+        <translation>Misslyckades med att signera %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="585"/>
@@ -1398,7 +1398,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1619"/>
         <source>gpg wrote no ciphertext for %1.</source>
-        <translation type="unfinished">gpg skrev ingen chiffertext för %1.</translation>
+        <translation>gpg skrev ingen chiffertext för %1.</translation>
     </message>
     <message>
         <source>Cannot create a temporary file next to %1: %2</source>
@@ -2817,7 +2817,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="129"/>
         <source>Could not sign %1 with %2.</source>
-        <translation type="unfinished">Kunde inte signera %1 med %2.</translation>
+        <translation>Kunde inte signera %1 med %2.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -3338,29 +3338,29 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
     <message>
         <location filename="../src/util.cpp" line="739"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Kan inte skapa en tillfällig fil bredvid %1: %2</translation>
+        <translation>Kan inte skapa en tillfällig fil bredvid %1: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="751"/>
         <location filename="../src/util.cpp" line="808"/>
         <location filename="../src/util.cpp" line="838"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Kan inte skriva %1: %2</translation>
+        <translation>Kan inte skriva %1: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="767"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Misslyckades med att ersätta %1.</translation>
+        <translation>Misslyckades med att ersätta %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="771"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 finns redan.</translation>
+        <translation>%1 existerar redan.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="773"/>
         <source>Failed to write %1.</source>
-        <translation type="unfinished">Misslyckades med att skriva %1.</translation>
+        <translation>Misslyckades med att skriva %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="794"/>
@@ -3369,17 +3369,17 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
     </message>
     <message>
         <source>%1 was replaced by a link while it was written.</source>
-        <translation type="obsolete">%1 ersattes av en länk medan den skrevs.</translation>
+        <translation>%1 ersattes av en länk medan den skrevs.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="821"/>
         <source>Cannot read %1.</source>
-        <translation type="unfinished">Kan inte läsa %1.</translation>
+        <translation>Kan inte läsa %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="831"/>
         <source>Cannot read %1: %2</source>
-        <translation type="unfinished">Kan inte läsa %1: %2</translation>
+        <translation>Kan inte läsa %1: %2</translation>
     </message>
 </context>
 </TS>

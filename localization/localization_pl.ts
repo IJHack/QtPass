@@ -3256,12 +3256,12 @@ Wpisy oznaczone jako [NIEPRAWIDŁOWY] i&#xa0;[WYGASŁY] nie mogą być użyte do
     <message>
         <location filename="../src/util.cpp" line="821"/>
         <source>Cannot read %1.</source>
-        <translation type="unfinished">Nie można odczytać %1.</translation>
+        <translation>Nie można odczytać %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="831"/>
         <source>Cannot read %1: %2</source>
-        <translation type="unfinished">Nie można odczytać %1: %2</translation>
+        <translation>Nie można odczytać %1: %2</translation>
     </message>
 </context>
 </TS>
