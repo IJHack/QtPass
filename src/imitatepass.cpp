@@ -660,14 +660,19 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
 }
 
 auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
-  // What an earlier run can have left, and what each means:
-  //   X.gpg.XXXXXX.tmp   a ciphertext gpg was writing or that was never
-  //                      verified; it is never a source of truth: delete.
+  // What a crashed run can have left in the store, and what each means.
+  // Today's writers stage every file as .qtpass-XXXXXX.tmp next to its
+  // destination and rename it into place in one step; QtPass 1.8.x wrote
+  // X.gpg.reencrypt.tmp and replaced the entry through X.gpg.reencrypt.bak
+  // in two renames, and builds between 1.8.x and 2.0 wrote X.gpg.XXXXXX.tmp.
+  //   .qtpass-XXXXXX.tmp, X.gpg.reencrypt.tmp, X.gpg.XXXXXX.tmp
+  //                      a file that was being written or never verified;
+  //                      it is never a source of truth: delete.
   //   X.gpg.reencrypt.bak with no X.gpg
-  //                      a crash between the two renames; the backup is the
-  //                      only copy of the entry: put it back.
+  //                      a 1.8.x crash between its two renames; the backup
+  //                      is the only copy of the entry: put it back.
   //   X.gpg.reencrypt.bak next to an X.gpg
-  //                      the run finished but the backup could not be
+  //                      that run finished but the backup could not be
   //                      removed, or X.gpg was recreated since; both are
   //                      valid ciphertexts and it is not for QtPass to pick
   //                      one: report and leave both.
@@ -678,11 +683,14 @@ auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
   // decrypt and re-encrypt whatever it points to, inside the store or not.
   // Linked directories are handed back too; they are not leftovers and are
   // left to reencryptFiles() to mention.
-  const QStringList leftoverNames{QStringLiteral("*.gpg.??????.tmp"),
+  const QStringList leftoverNames{QStringLiteral(".qtpass-??????.tmp"),
+                                  QStringLiteral("*.gpg.reencrypt.tmp"),
+                                  QStringLiteral("*.gpg.??????.tmp"),
                                   QStringLiteral("*.gpg.reencrypt.bak")};
   QStringList skipped;
-  const QStringList leftovers =
-      Util::regularFilesUnder(QDir::cleanPath(dir), leftoverNames, &skipped);
+  // Hidden files included: the staged name starts with a dot.
+  const QStringList leftovers = Util::regularFilesUnder(
+      QDir::cleanPath(dir), leftoverNames, &skipped, true);
   for (const QString &path : skipped) {
     if (!QDir::match(leftoverNames, QFileInfo(path).fileName())) {
       continue;

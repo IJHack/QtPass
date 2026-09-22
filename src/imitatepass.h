@@ -454,10 +454,12 @@ private:
   auto reencryptFiles(const QString &dir) -> ReencryptResult;
   /**
    * @brief Deal with what a crashed or failed earlier run left under @p dir
-   * before touching anything: stale temporaries are removed, a backup whose
-   * original is missing is put back, a backup next to a present original is
-   * reported and left alone (both are valid ciphertexts, the choice is the
-   * user's).
+   * before touching anything: stale temporaries (today's staged
+   * `.qtpass-XXXXXX.tmp`, 1.8.x's `<entry>.reencrypt.tmp`, the
+   * `<entry>.XXXXXX.tmp` of builds in between) are removed, a 1.8.x
+   * `<entry>.reencrypt.bak` whose original is missing is put back, one next
+   * to a present original is reported and left alone (both are valid
+   * ciphertexts, the choice is the user's).
    * @param dir Directory to scan, recursively.
    * @return false when something was reported that needs a human first.
    */

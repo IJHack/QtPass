@@ -692,6 +692,12 @@ using Filler = std::function<QString(QFileDevice &)>;
  * synced, then replaceFile()d under the name. The name is never opened for
  * writing, so a link a co-writer plants under it between the caller's check
  * and the write is replaced as an entry rather than written through.
+ * @param path The file to write.
+ * @param replace Whether an existing entry under the name may go.
+ * @param fill Writes the contents into the open temporary; returns why it
+ * could not (translated), or an empty string.
+ * @param error Receives why not, if not null.
+ * @return Whether @p path now holds what @p fill wrote.
  */
 auto stageAndReplace(const QString &path, bool replace, const Filler &fill,
                      QString *error) -> bool {
