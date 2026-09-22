@@ -559,6 +559,7 @@ private Q_SLOTS:
   void reencryptFailsWhenNoTemporaryCanBeMadeNextToTheEntry();
   void reencryptLeavesTheEntryWhenTheSwapFails();
   void reencryptReportsSystematicFailuresInOneDialog();
+  void reencryptNamesTheEntryWhenTheReasonNamesTheScratchFile();
   void reencryptCountsAFailedGitAddAsAFailure();
   void reencryptCountsAFailedGitCommitAsAFailure();
   void reencryptAbortsWhenGitStatusFails();
@@ -3396,6 +3397,50 @@ void tst_imitatepass::reencryptLeavesTheOriginalWhenTheCiphertextVanishes() {
 }
 
 /**
+ * @brief The reason a ciphertext could not be placed is about the scratch
+ *        file gpg wrote, which the user has never seen: the summary line
+ *        names the entry anyway.
+ */
+void tst_imitatepass::reencryptNamesTheEntryWhenTheReasonNamesTheScratchFile() {
+#ifdef Q_OS_WIN
+  QSKIP("uses file permissions and a shell script as a fake gpg");
+#else
+  if (geteuid() == 0)
+    QSKIP("root ignores file permissions");
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  // gpg writes its ciphertext and leaves it unreadable: the verify-decrypt
+  // (this fake answers from nothing) still succeeds, the copy into the
+  // store cannot read it.
+  const QString fakeGpg = writeCustomGpg(
+      storeDir.path(), logPath,
+      {{QStringLiteral("encrypt"), QStringLiteral("cat >/dev/null; printf "
+                                                  "'ciphertext\\n' > "
+                                                  "\"$outfile\"; chmod 000 "
+                                                  "\"$outfile\"")}});
+  QVERIFY(!fakeGpg.isEmpty());
+  QStringList criticals;
+  QStringList status;
+  QList<QStringList> calls;
+  expectSingleFailureLeavesEntryIntact(storeDir.path(), fakeGpg, &criticals,
+                                       &status, &calls, logPath);
+  if (QTest::currentTestFailed())
+    return;
+  QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
+           QByteArrayLiteral("not really encrypted"));
+  QVERIFY2(std::any_of(criticals.cbegin(), criticals.cend(),
+                       [](const QString &m) {
+                         return m.contains("entry0.gpg could not be "
+                                           "re-encrypted:") &&
+                                m.contains("Cannot read");
+                       }),
+           qPrintable(criticals.join(" | ")));
+#endif
+}
+
+/**
  * @brief A folder that cannot be written fails every entry in it the same
  *        way: one dialog lists them all with the reason, not one dialog per
  *        entry before the summary.
@@ -3422,10 +3467,13 @@ void tst_imitatepass::reencryptReportsSystematicFailuresInOneDialog() {
   record(pass, ctx, rec);
   QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
   pass.reencryptPath(storeDir.path());
-  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  const bool finished = endSpy.count() > 0 || endSpy.wait(15000);
   QCoreApplication::processEvents();
+  // Before any failure return: a store the test cannot write is a store
+  // QTemporaryDir cannot clean up either.
   QVERIFY(QFile::setPermissions(
       storeDir.path(), QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner));
+  QVERIFY(finished);
   QCOMPARE(rec.criticals.size(), 1);
   const QString summary = rec.criticals.first();
   QVERIFY2(summary.contains(QStringLiteral("could not be re-encrypted")),
@@ -3433,6 +3481,15 @@ void tst_imitatepass::reencryptReportsSystematicFailuresInOneDialog() {
   for (int i = 0; i < 3; ++i) {
     QVERIFY2(summary.contains(QStringLiteral("entry%1.gpg").arg(i)),
              qPrintable(summary));
+  }
+  // Every listed line names its entry, whatever the reason was about. The
+  // first line is the heading ("N file(s) could not be re-encrypted:"), the
+  // rest are the files.
+  const QStringList listed = summary.split(u'\n', Qt::SkipEmptyParts);
+  QCOMPARE(listed.size(), 4);
+  QVERIFY2(listed.first().endsWith(u':'), qPrintable(listed.first()));
+  for (const QString &line : listed.mid(1)) {
+    QVERIFY2(line.contains(QStringLiteral("entry")), qPrintable(line));
   }
   QVERIFY2(summary.contains(QStringLiteral("temporary file next to")),
            qPrintable(summary));

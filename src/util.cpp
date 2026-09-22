@@ -706,6 +706,17 @@ auto identityOf(const QFileDevice &file) -> FileIdentity {
       GetFileInformationByHandle(handle, &info) == 0) {
     return {};
   }
+  // On FAT and exFAT the file ID is the byte offset of the directory entry,
+  // which a rename moves whenever the new name needs a different number of
+  // entries: the same file would look like another one afterwards. Those
+  // filesystems have no hard links either (the swap this identifies needs
+  // one), so there the file is taken as it is found.
+  DWORD flags = 0;
+  if (GetVolumeInformationByHandleW(handle, nullptr, 0, nullptr, nullptr,
+                                    &flags, nullptr, 0) == 0 ||
+      (flags & FILE_SUPPORTS_HARD_LINKS) == 0) {
+    return {};
+  }
   return {info.dwVolumeSerialNumber,
           (static_cast<quint64>(info.nFileIndexHigh) << 32) |
               info.nFileIndexLow,
@@ -785,13 +796,30 @@ auto Util::stageFileReplacing(const QString &path, bool replace,
   // under the name then is reported and left: removing it by name could
   // take another writer's file that landed there since the check.
   QFile placed;
-  if (!openRegularFile(path, placed) || !(identityOf(placed) == written)) {
+  if (!openRegularFile(path, placed)) {
     if (error)
       *error =
           QCoreApplication::translate(
               "Util", "%1 was swapped for another file while it was written.")
               .arg(path);
     return false;
+  }
+  const FileIdentity there = identityOf(placed);
+  // Only a comparison of two identities the system gave us can prove a swap.
+  // Where one is unknown (a filesystem whose file IDs a rename moves, an
+  // fstat that failed) the write stands: a false alarm would report every
+  // write on such a store as tampering.
+  if (written.known && there.known && !(there == written)) {
+    if (error)
+      *error =
+          QCoreApplication::translate(
+              "Util", "%1 was swapped for another file while it was written.")
+              .arg(path);
+    return false;
+  }
+  if (!written.known || !there.known) {
+    qCWarning(lcQtPass) << "Cannot tell whether" << path
+                        << "is the file that was written here";
   }
   return true;
 }
