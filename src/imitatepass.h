@@ -392,12 +392,13 @@ private:
 
   /**
    * @brief Bring the ciphertext gpg wrote to @p output into the store as
-   * @p file: through a temporary created next to the entry and written by
-   * its open handle, then the operating system's rename, which replaces the
-   * entry under that name (or, without @p overwrite, fails when one has
-   * appeared) and follows nothing. Called from finished(), so it reports
-   * nothing itself: the reason comes back for the caller to route through
-   * the failed-operation path once the queued git steps are cancelled.
+   * @p file (Util::copyFileReplacing): through a temporary created next to
+   * the entry and written by its open handle, then the operating system's
+   * rename, which replaces the entry under that name (or, without
+   * @p overwrite, fails when one has appeared) and follows nothing. Reports
+   * nothing itself: Insert()'s finished() routes the reason through the
+   * failed-operation path once the queued git steps are cancelled, and
+   * reencryptSingleFile() shows it.
    * @param output The file gpg wrote, in a directory of QtPass's own.
    * @param file The entry's path.
    * @param overwrite Whether an entry already there may be replaced.
@@ -453,10 +454,12 @@ private:
   auto reencryptFiles(const QString &dir) -> ReencryptResult;
   /**
    * @brief Deal with what a crashed or failed earlier run left under @p dir
-   * before touching anything: stale temporaries are removed, a backup whose
-   * original is missing is put back, a backup next to a present original is
-   * reported and left alone (both are valid ciphertexts, the choice is the
-   * user's).
+   * before touching anything: stale temporaries (today's staged
+   * `.qtpass-XXXXXX.tmp`, 1.8.x's `<entry>.reencrypt.tmp`, the
+   * `<entry>.XXXXXX.tmp` of builds in between) are removed, a 1.8.x
+   * `<entry>.reencrypt.bak` whose original is missing is put back, one next
+   * to a present original is reported and left alone (both are valid
+   * ciphertexts, the choice is the user's).
    * @param dir Directory to scan, recursively.
    * @return false when something was reported that needs a human first.
    */

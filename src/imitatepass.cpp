@@ -10,7 +10,6 @@
 #include <QPointer>
 #include <QProcess>
 #include <QRegularExpression>
-#include <QTemporaryFile>
 #include <QThread>
 #include <QTimer>
 #include <utility>
@@ -661,14 +660,19 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
 }
 
 auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
-  // What an earlier run can have left, and what each means:
-  //   X.gpg.XXXXXX.tmp   a ciphertext gpg was writing or that was never
-  //                      verified; it is never a source of truth: delete.
+  // What a crashed run can have left in the store, and what each means.
+  // Today's writers stage every file as .qtpass-XXXXXX.tmp next to its
+  // destination and rename it into place in one step; QtPass 1.8.x wrote
+  // X.gpg.reencrypt.tmp and replaced the entry through X.gpg.reencrypt.bak
+  // in two renames, and builds between 1.8.x and 2.0 wrote X.gpg.XXXXXX.tmp.
+  //   .qtpass-XXXXXX.tmp, X.gpg.reencrypt.tmp, X.gpg.XXXXXX.tmp
+  //                      a file that was being written or never verified;
+  //                      it is never a source of truth: delete.
   //   X.gpg.reencrypt.bak with no X.gpg
-  //                      a crash between the two renames; the backup is the
-  //                      only copy of the entry: put it back.
+  //                      a 1.8.x crash between its two renames; the backup
+  //                      is the only copy of the entry: put it back.
   //   X.gpg.reencrypt.bak next to an X.gpg
-  //                      the run finished but the backup could not be
+  //                      that run finished but the backup could not be
   //                      removed, or X.gpg was recreated since; both are
   //                      valid ciphertexts and it is not for QtPass to pick
   //                      one: report and leave both.
@@ -679,11 +683,14 @@ auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
   // decrypt and re-encrypt whatever it points to, inside the store or not.
   // Linked directories are handed back too; they are not leftovers and are
   // left to reencryptFiles() to mention.
-  const QStringList leftoverNames{QStringLiteral("*.gpg.??????.tmp"),
+  const QStringList leftoverNames{QStringLiteral(".qtpass-??????.tmp"),
+                                  QStringLiteral("*.gpg.reencrypt.tmp"),
+                                  QStringLiteral("*.gpg.??????.tmp"),
                                   QStringLiteral("*.gpg.reencrypt.bak")};
   QStringList skipped;
-  const QStringList leftovers =
-      Util::regularFilesUnder(QDir::cleanPath(dir), leftoverNames, &skipped);
+  // Hidden files included: the staged name starts with a dot.
+  const QStringList leftovers = Util::regularFilesUnder(
+      QDir::cleanPath(dir), leftoverNames, &skipped, true);
   for (const QString &path : skipped) {
     if (!QDir::match(leftoverNames, QFileInfo(path).fileName())) {
       continue;
@@ -862,19 +869,18 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     return false;
   }
 
-  // gpg writes the new ciphertext to a file we create first, exclusively and
-  // with an unguessable name, in the same directory so the rename below
-  // stays on one filesystem. A fixed name like <file>.reencrypt.tmp could
-  // be pre-created (or symlinked elsewhere) by anyone with write access to
-  // the store, and gpg --yes would have written through it.
-  QTemporaryFile temp(fileName + ".XXXXXX.tmp");
-  temp.setAutoRemove(false);
-  if (!temp.open()) {
-    qCDebug(lcQtPass) << "Cannot create a temporary file next to:" << fileName;
+  // gpg writes the new ciphertext outside the store, into a directory of
+  // QtPass's own (0700, an unguessable name): nothing a co-writer of the
+  // store can pre-create or swap for a link before gpg opens it by name.
+  // placeEncryptedFile() then brings the bytes into the store the way
+  // Insert() does, replacing the entry in one rename.
+  QTemporaryDir scratch;
+  if (!scratch.isValid()) {
+    qCDebug(lcQtPass) << "Cannot create a scratch directory for re-encrypting"
+                      << fileName;
     return false;
   }
-  const QString tempPath = temp.fileName();
-  temp.close();
+  const QString tempPath = scratch.filePath(QStringLiteral("reencrypted.tmp"));
   // Same encrypt-only flags as Insert(): gpg.conf must not add recipients.
   args = QStringList{
       "--yes",           "--batch",  "-eq",         "--compress-algo=none",
@@ -888,7 +894,6 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
 
   if (result != 0) {
     qCDebug(lcQtPass) << "Encrypt error on re-encrypt for:" << fileName;
-    QFile::remove(tempPath);
     return false;
   }
 
@@ -899,51 +904,28 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   result = execBlocking(m_settings.gpgExecutable, args, &verifyOutput);
   if (result != 0 || verifyOutput.isEmpty()) {
     qCDebug(lcQtPass) << "Verification failed for:" << tempPath;
-    QFile::remove(tempPath);
     return false;
   }
   // Verify content matches original decrypted content (defense in depth)
   if (verifyOutput.trimmed() != local_lastDecrypt.trimmed()) {
     qCDebug(lcQtPass) << "Verification content mismatch for:" << tempPath;
-    QFile::remove(tempPath);
     return false;
   }
 
-  // Replace the original through a backup so a failed second rename can be
-  // rolled back; the two renames are not one atomic step, but the original
-  // exists (under one name or the other) at every point, and the new
-  // ciphertext was decrypted and compared before any of this.
-  const QString backupPath = fileName + ".reencrypt.bak";
-  if (!QFile::rename(fileName, backupPath)) {
-    qCDebug(lcQtPass) << "Failed to backup original file:" << fileName;
-    QFile::remove(tempPath);
+  // Another client may have removed the entry while gpg ran; the rename
+  // would bring it back under its old name. Best effort: the check and the
+  // replace are two steps, as pass's own write is.
+  const QFileInfo still(fileName);
+  if (!still.exists() && !still.isSymLink()) {
+    qCDebug(lcQtPass) << "Entry vanished before it could be replaced:"
+                      << fileName;
     return false;
   }
-  if (!QFile::rename(tempPath, fileName)) {
-    qCDebug(lcQtPass) << "Failed to rename temp file to:" << fileName;
-    QFile::remove(tempPath);
-    if (QFile::rename(backupPath, fileName)) {
-      emit critical(tr("Re-encryption failed"),
-                    tr("Failed to replace %1. Original has been restored.")
-                        .arg(fileName));
-    } else {
-      // The only copy of the entry is now the backup; say exactly where.
-      emit critical(tr("Re-encryption failed"),
-                    tr("Failed to replace %1, and the original could not be "
-                       "put back. It is still there as %2; rename it by hand.")
-                        .arg(fileName, backupPath));
-    }
+  QString why;
+  if (!placeEncryptedFile(tempPath, fileName, true, &why)) {
+    // The entry is untouched: the new ciphertext never got under its name.
+    emit critical(tr("Re-encryption failed"), why);
     return false;
-  }
-  if (!QFile::remove(backupPath)) {
-    // The entry is fine; the leftover would be picked up by the next run's
-    // recovery pass (and would look alarming until then), so say so.
-    qCWarning(lcQtPass) << "Re-encrypted" << fileName
-                        << "but could not remove its backup" << backupPath;
-    emit statusMsg(tr("Could not remove the backup %1 after re-encrypting; "
-                      "it is safe to delete.")
-                       .arg(backupPath),
-                   5000);
   }
 
   if (gitConfigured()) {
@@ -1429,69 +1411,6 @@ void ImitatePass::Move(const QString src, const QString dest,
 }
 
 /**
- * @brief Copies a regular file onto dst, replacing dst atomically.
- *
- * The object read is the object judged: the source is opened without
- * following (Util::openRegularFile), so a name that became a link between
- * the caller's check and this open is refused rather than read through (a
- * co-writer of the store would otherwise have the bytes of any file this
- * user can read copied into the store and committed). The bytes go into a
- * temporary next to dst, written by its open handle, which the operating
- * system's rename then puts under dst's name (Util::replaceFile): whatever
- * entry is there by then is replaced as an entry, a planted link included,
- * never written through (QSaveFile resolves a link at open). A failure
- * part-way leaves an existing dst untouched. The source's permissions are
- * carried over, as QFile::copy would.
- * @param src The entry to copy.
- * @param dst Where the copy goes.
- * @param replace Whether an entry already under dst's name may go.
- * @return true on success; on failure nothing at dst has changed.
- */
-static auto copyFileReplacing(const QString &src, const QString &dst,
-                              bool replace) -> bool {
-  QFile in;
-  if (!Util::openRegularFile(src, in))
-    return false;
-  // Scoped: the QTemporaryFile keeps its handle for as long as it lives,
-  // and Windows does not rename an open file.
-  QString staged;
-  bool written = false;
-  {
-    QTemporaryFile out(QFileInfo(dst).path() +
-                       QStringLiteral("/.qtpass-XXXXXX.tmp"));
-    out.setAutoRemove(false);
-    if (!out.open())
-      return false;
-    staged = out.fileName();
-    out.setPermissions(in.permissions());
-    char buf[64 * 1024];
-    written = true;
-    for (;;) {
-      const qint64 n = in.read(buf, sizeof buf);
-      if (n < 0 || (n > 0 && out.write(buf, n) != n)) {
-        written = false;
-        break;
-      }
-      if (n == 0)
-        break;
-    }
-    if (written && !Util::syncToDisk(out))
-      written = false;
-  }
-  if (!written) {
-    QFile::remove(staged);
-    return false;
-  }
-  if (!Util::replaceFile(staged, dst, replace)) {
-    QFile::remove(staged);
-    return false;
-  }
-  // The staged name swapped for a link before the rename: the bytes went
-  // into an unnamed inode and the entry is the link. Not a copy.
-  return !QFileInfo(dst).isSymLink();
-}
-
-/**
  * @brief Copies a file or directory from source to destination, optionally
  * forcing overwrite.
  * @example
@@ -1543,14 +1462,18 @@ void ImitatePass::Copy(const QString src, const QString dest,
     return;
   }
   // git has no "cp" subcommand, so copy on the filesystem in both modes and,
-  // when using git, stage the new path afterwards. The copy is synchronous and
-  // replaces the destination atomically (see copyFileReplacing), so it exists
-  // before the re-encryption below runs and an entry being overwritten with
-  // force survives a copy that fails half-way. Without force nothing under
-  // the name is replaced, also nothing that appeared since the check above.
-  if (!copyFileReplacing(src, destFile, force)) {
+  // when using git, stage the new path afterwards. The copy is synchronous
+  // and replaces the destination atomically (Util::copyFileReplacing: the
+  // source read as the regular file it is, the bytes staged next to the
+  // destination, the rename following nothing), so it exists before the
+  // re-encryption below runs and an entry being overwritten with force
+  // survives a copy that fails half-way. Without force nothing under the
+  // name is replaced, also nothing that appeared since the check above.
+  QString why;
+  if (!Util::copyFileReplacing(src, destFile, force, &why)) {
     emit critical(tr("Copy failed"),
-                  tr("Could not copy %1 to %2.").arg(src, destFile));
+                  tr("Could not copy %1 to %2.").arg(src, destFile) + "\n" +
+                      why);
     return;
   }
   // QFileInfo caches; the comparison above may have looked at a path that did
@@ -1674,74 +1597,16 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
 
 auto ImitatePass::placeEncryptedFile(const QString &output, const QString &file,
                                      bool overwrite, QString *error) -> bool {
-  QFile source(output);
-  if (!source.open(QIODevice::ReadOnly) || source.size() <= 0) {
+  if (QFileInfo(output).size() <= 0) {
     // gpg reported success and wrote nothing: not an entry.
     *error = tr("gpg wrote no ciphertext for %1.").arg(file);
     return false;
   }
-  // The store-side file: created exclusively next to the entry, written
-  // through this handle, never opened by name again. pass writes entries
-  // with umask 077, and so does QTemporaryFile. An opaque name: one built
-  // from the entry's would exceed the name length limit for a long entry.
-  // The QTemporaryFile goes out of scope before the rename: it keeps its
-  // handle open for as long as it lives, and Windows does not rename an
-  // open file.
-  QString stagedPath;
-  QString why;
-  {
-    QTemporaryFile staged(QFileInfo(file).path() +
-                          QStringLiteral("/.qtpass-XXXXXX.tmp"));
-    staged.setAutoRemove(false);
-    if (!staged.open()) {
-      *error = tr("Cannot create a temporary file next to %1: %2")
-                   .arg(file, staged.errorString());
-      return false;
-    }
-    stagedPath = staged.fileName();
-    char buf[64 * 1024];
-    for (;;) {
-      const qint64 n = source.read(buf, sizeof buf);
-      if (n < 0) {
-        why = tr("Cannot read what gpg wrote for %1.").arg(file);
-        break;
-      }
-      if (n == 0) {
-        break;
-      }
-      if (staged.write(buf, n) != n) {
-        why = tr("Cannot write %1: %2").arg(file, staged.errorString());
-        break;
-      }
-    }
-    if (why.isEmpty() && !Util::syncToDisk(staged)) {
-      why = tr("Cannot write %1: %2").arg(file, staged.errorString());
-    }
-  }
-  if (!why.isEmpty()) {
-    QFile::remove(stagedPath);
-    *error = why;
-    return false;
-  }
-  // rename(2) / MoveFileEx: the entry under the name is replaced as an
-  // entry, a link planted since the check included; without overwrite,
+  // Staged next to the entry, written by the temporary's own handle, then
+  // the operating system's rename: the entry under the name is replaced as
+  // an entry, a link planted since the check included; without overwrite,
   // anything that appeared under the name since the check fails the add.
-  if (!Util::replaceFile(stagedPath, file, overwrite)) {
-    QFile::remove(stagedPath);
-    *error = overwrite ? tr("Failed to replace %1.").arg(file)
-                       : tr("%1 already exists.").arg(file);
-    return false;
-  }
-  // The temporary's own name could have been swapped for a link in the
-  // window between its creation and the rename; the bytes then went into
-  // an unnamed inode and the entry is the link. Nothing was written through
-  // it, but it is not the entry either.
-  if (QFileInfo(file).isSymLink()) {
-    *error =
-        tr("%1 was replaced by a link while it was being written.").arg(file);
-    return false;
-  }
-  return true;
+  return Util::copyFileReplacing(output, file, overwrite, error);
 }
 
 /**

@@ -1142,98 +1142,97 @@ e-posti aadress</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="449"/>
-        <location filename="../src/imitatepass.cpp" line="626"/>
+        <location filename="../src/imitatepass.cpp" line="448"/>
+        <location filename="../src/imitatepass.cpp" line="625"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 allkiri on vigane.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="202"/>
-        <location filename="../src/imitatepass.cpp" line="859"/>
+        <location filename="../src/imitatepass.cpp" line="201"/>
+        <location filename="../src/imitatepass.cpp" line="858"/>
         <source>Can not edit</source>
         <translation>Ei ole muudetav</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="190"/>
+        <location filename="../src/imitatepass.cpp" line="189"/>
         <source>Cannot add</source>
         <translation type="unfinished">Lisamine ei õnnestunud</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="190"/>
-        <location filename="../src/imitatepass.cpp" line="1732"/>
+        <location filename="../src/imitatepass.cpp" line="189"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 on juba olemas.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="203"/>
-        <location filename="../src/imitatepass.cpp" line="860"/>
+        <location filename="../src/imitatepass.cpp" line="202"/>
+        <location filename="../src/imitatepass.cpp" line="859"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Kasutatava krüptovõtme lugemine ei õnnestunud, „.gpg-id“ fail on kas puudu või vigane.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="216"/>
+        <location filename="../src/imitatepass.cpp" line="215"/>
         <source>Cannot write</source>
         <translation type="unfinished">Kirjutamine ei õnnestunud</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="217"/>
+        <location filename="../src/imitatepass.cpp" line="216"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">Ajutist kataloogi ei õnnestu luua: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="440"/>
+        <location filename="../src/imitatepass.cpp" line="439"/>
         <source>GPG signing failed!</source>
         <translation>GPG-allkirjastamine ei õnnestunud!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="442"/>
+        <location filename="../src/imitatepass.cpp" line="441"/>
         <source>Failed to sign %1.</source>
         <translation>Allkirjastamine ei õnnestunud: %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="558"/>
+        <location filename="../src/imitatepass.cpp" line="557"/>
         <source>No signing key!</source>
         <translation>Allkirjavõtit pole!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="559"/>
+        <location filename="../src/imitatepass.cpp" line="558"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Ühtegi allkirjastamiseks mõeldud võtit pole saadaval.
 Sa ei saa kasutajate loendit muuta!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="366"/>
-        <location filename="../src/imitatepass.cpp" line="384"/>
-        <location filename="../src/imitatepass.cpp" line="395"/>
-        <location filename="../src/imitatepass.cpp" line="584"/>
+        <location filename="../src/imitatepass.cpp" line="365"/>
+        <location filename="../src/imitatepass.cpp" line="383"/>
+        <location filename="../src/imitatepass.cpp" line="394"/>
+        <location filename="../src/imitatepass.cpp" line="583"/>
         <source>Cannot update</source>
         <translation>Uuendamine ei õnnestunud</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="142"/>
+        <location filename="../src/imitatepass.cpp" line="141"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">Git pull ei õnnestunud: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="197"/>
-        <location filename="../src/imitatepass.cpp" line="448"/>
-        <location filename="../src/imitatepass.cpp" line="776"/>
+        <location filename="../src/imitatepass.cpp" line="196"/>
+        <location filename="../src/imitatepass.cpp" line="447"/>
+        <location filename="../src/imitatepass.cpp" line="775"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Kontrolli .gpg-id faili allkirja!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="289"/>
+        <location filename="../src/imitatepass.cpp" line="288"/>
         <source>Delete failed</source>
         <translation type="unfinished">Kustutamine ei õnnestunud</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="290"/>
+        <location filename="../src/imitatepass.cpp" line="289"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Linki %1 ei õnnestunud eemaldada.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="367"/>
+        <location filename="../src/imitatepass.cpp" line="366"/>
         <source>%1 is not inside the password store.</source>
         <translation type="unfinished">%1 ei asu salasõnahoidlas.</translation>
     </message>
@@ -1246,152 +1245,148 @@ Sa ei saa kasutajate loendit muuta!</translation>
         <translation type="obsolete">Faili %1 kirjutamine ei õnnestunud: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="413"/>
+        <location filename="../src/imitatepass.cpp" line="412"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">Saajate loend on kirjutatud, kuid registrisse kandmata</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="414"/>
+        <location filename="../src/imitatepass.cpp" line="413"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Edasi pääsemiseks salvesta saajad veel kord.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="419"/>
+        <location filename="../src/imitatepass.cpp" line="418"/>
         <source>Check selected users!</source>
         <translation>Kontrolli valitud kasutajaid!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="420"/>
+        <location filename="../src/imitatepass.cpp" line="419"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Ühelgi valitud võtmel pole privaatvõtit.
 Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="443"/>
+        <location filename="../src/imitatepass.cpp" line="442"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">Faili %1 allkirjastamine ei õnnestunud: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="585"/>
+        <location filename="../src/imitatepass.cpp" line="584"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Vana allkirja %1 eemaldamine ei õnnestunud.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="700"/>
-        <location filename="../src/imitatepass.cpp" line="716"/>
-        <location filename="../src/imitatepass.cpp" line="726"/>
-        <location filename="../src/imitatepass.cpp" line="741"/>
+        <location filename="../src/imitatepass.cpp" line="699"/>
+        <location filename="../src/imitatepass.cpp" line="715"/>
+        <location filename="../src/imitatepass.cpp" line="725"/>
+        <location filename="../src/imitatepass.cpp" line="740"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Varasemast uuesti krüptimisest järele jäänud fail</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="701"/>
-        <location filename="../src/imitatepass.cpp" line="717"/>
+        <location filename="../src/imitatepass.cpp" line="700"/>
+        <location filename="../src/imitatepass.cpp" line="716"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 pole tavaline fail ja seda ei taastatud. Vaata see üle, eemalda see ja krüpti seejärel uuesti.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="727"/>
+        <location filename="../src/imitatepass.cpp" line="726"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 asub %2 kõrval. Mõlemad on kirje krüptitud koopiad; kontrolli, millist neist soovid alles jätta, kustuta teine ja krüpti seejärel uuesti.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="736"/>
+        <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">%1 taastati varukoopiast, mille katkenud uuesti krüptimine maha jättis.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="742"/>
+        <location filename="../src/imitatepass.cpp" line="741"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 on puudu ja selle varukoopiat %2 ei õnnestunud tagasi ümber nimetada. Nimeta see käsitsi ümber ja krüpti seejärel uuesti.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="926"/>
-        <location filename="../src/imitatepass.cpp" line="931"/>
-        <location filename="../src/imitatepass.cpp" line="1267"/>
+        <location filename="../src/imitatepass.cpp" line="919"/>
+        <location filename="../src/imitatepass.cpp" line="1241"/>
         <source>Re-encryption failed</source>
         <translation>Uuesti krüptimine ei õnnestunud</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="927"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Asendamine ei õnnestunud: %1. Algne sisu on taastatud.</translation>
+        <translation type="vanished">Asendamine ei õnnestunud: %1. Algne sisu on taastatud.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished">Faili %1 asendamine ei õnnestunud ja algset faili ei õnnestunud tagasi panna. See on endiselt olemas nimega %2; nimeta see käsitsi ümber.</translation>
+        <translation type="obsolete">Faili %1 asendamine ei õnnestunud ja algset faili ei õnnestunud tagasi panna. See on endiselt olemas nimega %2; nimeta see käsitsi ümber.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished">Varukoopiat %1 ei õnnestunud pärast uuesti krüptimist eemaldada; selle võib ohutult kustutada.</translation>
+        <translation type="obsolete">Varukoopiat %1 ei õnnestunud pärast uuesti krüptimist eemaldada; selle võib ohutult kustutada.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="983"/>
+        <location filename="../src/imitatepass.cpp" line="957"/>
         <source>Creating backup commit</source>
         <translation>Koostan varukoopia sissekannet giti jaoks</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1000"/>
-        <location filename="../src/imitatepass.cpp" line="1009"/>
+        <location filename="../src/imitatepass.cpp" line="974"/>
+        <location filename="../src/imitatepass.cpp" line="983"/>
         <source>Backup commit failed</source>
         <translation>Varukoopia sissekanne gitti ei õnnestunud</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1001"/>
+        <location filename="../src/imitatepass.cpp" line="975"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Giti olekut pole võimalik tuvastada. Uuesti krüptimine on katkestatud.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1010"/>
+        <location filename="../src/imitatepass.cpp" line="984"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Kuna giti varukoopia koostamine ei õnnestunud, siis uuesti krüptimine on katkestatud.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1056"/>
+        <location filename="../src/imitatepass.cpp" line="1030"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Uuesti krüptimine juba käib</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1064"/>
+        <location filename="../src/imitatepass.cpp" line="1038"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">See pole hoidla kaust</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1065"/>
+        <location filename="../src/imitatepass.cpp" line="1039"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 on sümboolne link või ühenduspunkt või asub sellise taga. Selle sihtkoht ei kuulu salasõnahoidlasse ja seda ei krüptitud uuesti.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1074"/>
+        <location filename="../src/imitatepass.cpp" line="1048"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Taaskrüptime kaustast %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1157"/>
-        <location filename="../src/imitatepass.cpp" line="1294"/>
+        <location filename="../src/imitatepass.cpp" line="1131"/>
+        <location filename="../src/imitatepass.cpp" line="1268"/>
         <source>Updating password-store</source>
         <translation>Uuendame salasõnahoidlat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1168"/>
+        <location filename="../src/imitatepass.cpp" line="1142"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull ei õnnestunud</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1169"/>
+        <location filename="../src/imitatepass.cpp" line="1143"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Pärast git pull&apos;i jäid hoidlasse ühendamata failid. Lahenda konflikt enne uuesti krüptimist.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1174"/>
+        <location filename="../src/imitatepass.cpp" line="1148"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull ei õnnestunud, krüptime hoidla uuesti praegusel kujul</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1201"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n kirje jäeti vahele: sümboolne link, ühenduspunkt või erifail ei kuulu hoidlasse.</numerusform>
@@ -1399,17 +1394,17 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1227"/>
+        <location filename="../src/imitatepass.cpp" line="1201"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID verifitseerimine ei õnnestunud</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1228"/>
+        <location filename="../src/imitatepass.cpp" line="1202"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Kausta jaoks ei õnnestunud .gpg-id faili verifitseerida.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1265"/>
+        <location filename="../src/imitatepass.cpp" line="1239"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... ja veel %n</numerusform>
@@ -1417,7 +1412,7 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1268"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n faili ei õnnestunud uuesti krüptida:</numerusform>
@@ -1425,62 +1420,56 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1274"/>
+        <location filename="../src/imitatepass.cpp" line="1248"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Uuesti krüptimine katkestati: %2 failist kontrolliti %1, uuesti krüptiti %3, ebaõnnestus %4</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1604"/>
+        <location filename="../src/imitatepass.cpp" line="1519"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Git käsufaili pole seadistatud, git jäetakse vahele</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1680"/>
+        <location filename="../src/imitatepass.cpp" line="1594"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg ei kirjutanud faili %1 jaoks krüptitud sisu.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1697"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Faili %1 kõrvale ei õnnestu ajutist faili luua: %2</translation>
+        <translation type="obsolete">Faili %1 kõrvale ei õnnestu ajutist faili luua: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1706"/>
         <source>Cannot read what gpg wrote for %1.</source>
-        <translation type="unfinished">Seda, mille gpg faili %1 jaoks kirjutas, ei õnnestu lugeda.</translation>
+        <translation type="obsolete">Seda, mille gpg faili %1 jaoks kirjutas, ei õnnestu lugeda.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1713"/>
-        <location filename="../src/imitatepass.cpp" line="1718"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Faili %1 ei õnnestu kirjutada: %2</translation>
+        <translation type="obsolete">Faili %1 ei õnnestu kirjutada: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1731"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Faili %1 asendamine ei õnnestunud.</translation>
+        <translation type="obsolete">Faili %1 asendamine ei õnnestunud.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1741"/>
         <source>%1 was replaced by a link while it was being written.</source>
-        <translation type="unfinished">%1 asendati kirjutamise ajal lingiga.</translation>
+        <translation type="obsolete">%1 asendati kirjutamise ajal lingiga.</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
         <translation type="vanished">Uuesti krüptimine ei õnnestunud: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1283"/>
+        <location filename="../src/imitatepass.cpp" line="1257"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Uuesti krüptimine on lõppenud: %1 õnnestus, %2 mitte</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1288"/>
+        <location filename="../src/imitatepass.cpp" line="1262"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Uuesti krüptimine on lõppenud: %1 faili on uuesti krüptitud</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1297"/>
+        <location filename="../src/imitatepass.cpp" line="1271"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Git push jäetakse ära: %n faili ei õnnestunud uuesti krüptida</numerusform>
@@ -1488,18 +1477,18 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1520"/>
-        <location filename="../src/imitatepass.cpp" line="1534"/>
-        <location filename="../src/imitatepass.cpp" line="1541"/>
-        <location filename="../src/imitatepass.cpp" line="1552"/>
+        <location filename="../src/imitatepass.cpp" line="1431"/>
+        <location filename="../src/imitatepass.cpp" line="1445"/>
+        <location filename="../src/imitatepass.cpp" line="1452"/>
+        <location filename="../src/imitatepass.cpp" line="1466"/>
         <source>Copy failed</source>
         <translation>Kopeerimine ei õnnestunud</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1521"/>
-        <location filename="../src/imitatepass.cpp" line="1535"/>
-        <location filename="../src/imitatepass.cpp" line="1542"/>
-        <location filename="../src/imitatepass.cpp" line="1553"/>
+        <location filename="../src/imitatepass.cpp" line="1432"/>
+        <location filename="../src/imitatepass.cpp" line="1446"/>
+        <location filename="../src/imitatepass.cpp" line="1453"/>
+        <location filename="../src/imitatepass.cpp" line="1467"/>
         <source>Could not copy %1 to %2.</source>
         <translation>Kopeerimine ei õnnestunud: „%1“ → „%2“.</translation>
     </message>
@@ -3450,34 +3439,46 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="692"/>
+        <location filename="../src/util.cpp" line="709"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">Faili %1 kõrvale ei õnnestu ajutist faili luua: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="709"/>
+        <location filename="../src/util.cpp" line="721"/>
+        <location filename="../src/util.cpp" line="768"/>
+        <location filename="../src/util.cpp" line="798"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">Faili %1 ei õnnestu kirjutada: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="718"/>
+        <location filename="../src/util.cpp" line="736"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">Faili %1 asendamine ei õnnestunud.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="722"/>
+        <location filename="../src/util.cpp" line="740"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 on juba olemas.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="724"/>
+        <location filename="../src/util.cpp" line="742"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">Faili %1 kirjutamine ei õnnestunud.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="734"/>
+        <location filename="../src/util.cpp" line="752"/>
         <source>%1 was replaced by a link while it was written.</source>
         <translation type="unfinished">%1 asendati kirjutamise ajal lingiga.</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="781"/>
+        <source>Cannot read %1.</source>
+        <translation type="unfinished">Faili %1 ei õnnestu lugeda.</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="791"/>
+        <source>Cannot read %1: %2</source>
+        <translation type="unfinished">Faili %1 ei õnnestu lugeda: %2</translation>
     </message>
 </context>
 </TS>

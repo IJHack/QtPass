@@ -271,6 +271,22 @@ public:
       -> bool;
 
   /**
+   * @brief Copy the regular file @p src to the name @p dst the way
+   * writeFileReplacing() writes bytes there: @p src is read through a handle
+   * opened without following (openRegularFile()), the copy is staged next to
+   * @p dst, synced, then replaceFile()d into place. The copy is owner-only
+   * whatever @p src's mode, as pass's `cp` under its umask 077 makes it.
+   * @param src The file to copy; a link, a directory or a special file under
+   * that name is refused.
+   * @param dst The name to give the copy.
+   * @param replace Whether an existing entry under @p dst may go.
+   * @param error Receives why not, if not null.
+   * @return Whether @p dst now holds a copy of @p src.
+   */
+  static auto copyFileReplacing(const QString &src, const QString &dst,
+                                bool replace, QString *error = nullptr) -> bool;
+
+  /**
    * @brief Flush @p file's bytes to the device (`fsync`, `FlushFileBuffers`)
    * before it is renamed into place, so that a crash right after the rename
    * does not leave the name pointing at an empty file. QSaveFile did this

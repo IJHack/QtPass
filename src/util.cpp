@@ -25,6 +25,9 @@
 #include <QStandardPaths>
 #include <QTemporaryFile>
 #include <QUrl>
+
+#include <functional>
+
 #ifdef Q_OS_WIN
 #include <fcntl.h>
 #include <io.h>
@@ -676,8 +679,28 @@ auto Util::syncToDisk(QFileDevice &file) -> bool {
 #endif
 }
 
-auto Util::writeFileReplacing(const QString &path, const QByteArray &bytes,
-                              bool replace, QString *error) -> bool {
+namespace {
+
+/// Fills the staged temporary for stageAndReplace(); returns why it could
+/// not (translated, for the user), or an empty string.
+using Filler = std::function<QString(QFileDevice &)>;
+
+/**
+ * @brief The staged write behind Util::writeFileReplacing() and
+ * Util::copyFileReplacing(): a temporary created next to @p path (an opaque
+ * name, exclusive, owner-only), filled by @p fill through its open handle,
+ * synced, then replaceFile()d under the name. The name is never opened for
+ * writing, so a link a co-writer plants under it between the caller's check
+ * and the write is replaced as an entry rather than written through.
+ * @param path The file to write.
+ * @param replace Whether an existing entry under the name may go.
+ * @param fill Writes the contents into the open temporary; returns why it
+ * could not (translated), or an empty string.
+ * @param error Receives why not, if not null.
+ * @return Whether @p path now holds what @p fill wrote.
+ */
+auto stageAndReplace(const QString &path, bool replace, const Filler &fill,
+                     QString *error) -> bool {
   QString stagedPath;
   QString why;
   {
@@ -699,18 +722,19 @@ auto Util::writeFileReplacing(const QString &path, const QByteArray &bytes,
     // entry is an entry. QTemporaryFile creates 0600 already; say so for
     // platforms where it may not.
     staged.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
-    if (staged.write(bytes) != bytes.size() || !syncToDisk(staged)) {
-      why = staged.errorString();
+    why = fill(staged);
+    if (why.isEmpty() && !Util::syncToDisk(staged)) {
+      why = QCoreApplication::translate("Util", "Cannot write %1: %2")
+                .arg(path, staged.errorString());
     }
   }
   if (!why.isEmpty()) {
     QFile::remove(stagedPath);
     if (error)
-      *error = QCoreApplication::translate("Util", "Cannot write %1: %2")
-                   .arg(path, why);
+      *error = why;
     return false;
   }
-  if (!replaceFile(stagedPath, path, replace)) {
+  if (!Util::replaceFile(stagedPath, path, replace)) {
     QFile::remove(stagedPath);
     if (error) {
       const QFileInfo taken(path);
@@ -737,6 +761,52 @@ auto Util::writeFileReplacing(const QString &path, const QByteArray &bytes,
     return false;
   }
   return true;
+}
+
+} // namespace
+
+auto Util::writeFileReplacing(const QString &path, const QByteArray &bytes,
+                              bool replace, QString *error) -> bool {
+  return stageAndReplace(
+      path, replace,
+      [&path, &bytes](QFileDevice &staged) -> QString {
+        if (staged.write(bytes) != bytes.size()) {
+          return QCoreApplication::translate("Util", "Cannot write %1: %2")
+              .arg(path, staged.errorString());
+        }
+        return {};
+      },
+      error);
+}
+
+auto Util::copyFileReplacing(const QString &src, const QString &dst,
+                             bool replace, QString *error) -> bool {
+  QFile in;
+  if (!openRegularFile(src, in)) {
+    if (error)
+      *error = QCoreApplication::translate("Util", "Cannot read %1.").arg(src);
+    return false;
+  }
+  return stageAndReplace(
+      dst, replace,
+      [&src, &dst, &in](QFileDevice &staged) -> QString {
+        char buf[64 * 1024];
+        for (;;) {
+          const qint64 n = in.read(buf, sizeof buf);
+          if (n < 0) {
+            return QCoreApplication::translate("Util", "Cannot read %1: %2")
+                .arg(src, in.errorString());
+          }
+          if (n == 0) {
+            return {};
+          }
+          if (staged.write(buf, n) != n) {
+            return QCoreApplication::translate("Util", "Cannot write %1: %2")
+                .arg(dst, staged.errorString());
+          }
+        }
+      },
+      error);
 }
 
 auto Util::removeTree(const QString &dir) -> bool {

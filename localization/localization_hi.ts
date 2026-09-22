@@ -1082,76 +1082,75 @@ The value will still be saved as entered.</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="142"/>
+        <location filename="../src/imitatepass.cpp" line="141"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">Git पुल विफल: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="197"/>
-        <location filename="../src/imitatepass.cpp" line="448"/>
-        <location filename="../src/imitatepass.cpp" line="776"/>
+        <location filename="../src/imitatepass.cpp" line="196"/>
+        <location filename="../src/imitatepass.cpp" line="447"/>
+        <location filename="../src/imitatepass.cpp" line="775"/>
         <source>Check .gpg-id file signature!</source>
         <translation>.gpg-id फ़ाइल हस्ताक्षर जांचें!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="449"/>
-        <location filename="../src/imitatepass.cpp" line="626"/>
+        <location filename="../src/imitatepass.cpp" line="448"/>
+        <location filename="../src/imitatepass.cpp" line="625"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 के लिए हस्ताक्षर अमान्य है।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="202"/>
-        <location filename="../src/imitatepass.cpp" line="859"/>
+        <location filename="../src/imitatepass.cpp" line="201"/>
+        <location filename="../src/imitatepass.cpp" line="858"/>
         <source>Can not edit</source>
         <translation>संपादित नहीं किया जा सकता</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="190"/>
+        <location filename="../src/imitatepass.cpp" line="189"/>
         <source>Cannot add</source>
         <translation type="unfinished">जोड़ा नहीं जा सकता</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="190"/>
-        <location filename="../src/imitatepass.cpp" line="1732"/>
+        <location filename="../src/imitatepass.cpp" line="189"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 पहले से मौजूद है।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="203"/>
-        <location filename="../src/imitatepass.cpp" line="860"/>
+        <location filename="../src/imitatepass.cpp" line="202"/>
+        <location filename="../src/imitatepass.cpp" line="859"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>उपयोग करने के लिए एन्क्रिप्शन कुंजी नहीं पढ़ी जा सकी, .gpg-id फ़ाइल गुम है या अमान्य है।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="216"/>
+        <location filename="../src/imitatepass.cpp" line="215"/>
         <source>Cannot write</source>
         <translation type="unfinished">लिखा नहीं जा सकता</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="217"/>
+        <location filename="../src/imitatepass.cpp" line="216"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">अस्थायी डायरेक्टरी नहीं बनाई जा सकती: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="289"/>
+        <location filename="../src/imitatepass.cpp" line="288"/>
         <source>Delete failed</source>
         <translation type="unfinished">हटाना विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="290"/>
+        <location filename="../src/imitatepass.cpp" line="289"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">लिंक %1 हटाया नहीं जा सका।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="366"/>
-        <location filename="../src/imitatepass.cpp" line="384"/>
-        <location filename="../src/imitatepass.cpp" line="395"/>
-        <location filename="../src/imitatepass.cpp" line="584"/>
+        <location filename="../src/imitatepass.cpp" line="365"/>
+        <location filename="../src/imitatepass.cpp" line="383"/>
+        <location filename="../src/imitatepass.cpp" line="394"/>
+        <location filename="../src/imitatepass.cpp" line="583"/>
         <source>Cannot update</source>
         <translation>अपडेट नहीं किया जा सकता</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="367"/>
+        <location filename="../src/imitatepass.cpp" line="366"/>
         <source>%1 is not inside the password store.</source>
         <translation type="unfinished">%1 पासवर्ड स्टोर के अंदर नहीं है।</translation>
     </message>
@@ -1164,174 +1163,170 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">%1 लिखने में विफल: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="413"/>
+        <location filename="../src/imitatepass.cpp" line="412"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">प्राप्तकर्ता सूची लिखी गई, लेकिन रिकॉर्ड नहीं की गई</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="414"/>
+        <location filename="../src/imitatepass.cpp" line="413"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 आगे बढ़ने के लिए प्राप्तकर्ताओं को एक बार फिर सहेजें।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="419"/>
+        <location filename="../src/imitatepass.cpp" line="418"/>
         <source>Check selected users!</source>
         <translation>चयनित उपयोगकर्ताओं की जांच करें!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="420"/>
+        <location filename="../src/imitatepass.cpp" line="419"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>चयनित कुंजियों में से किसी के पास गुप्त कुंजी उपलब्ध नहीं है।
 आप किसी भी नए जोड़े गए पासवर्ड को डिक्रिप्ट नहीं कर पाएंगे!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="440"/>
+        <location filename="../src/imitatepass.cpp" line="439"/>
         <source>GPG signing failed!</source>
         <translation>जीपीजी हस्ताक्षर विफल!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="442"/>
+        <location filename="../src/imitatepass.cpp" line="441"/>
         <source>Failed to sign %1.</source>
         <translation>%1 पर हस्ताक्षर करने में विफल।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="443"/>
+        <location filename="../src/imitatepass.cpp" line="442"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">%1 पर हस्ताक्षर करने में विफल: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="558"/>
+        <location filename="../src/imitatepass.cpp" line="557"/>
         <source>No signing key!</source>
         <translation>कोई हस्ताक्षर कुंजी नहीं!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="559"/>
+        <location filename="../src/imitatepass.cpp" line="558"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>गुप्त हस्ताक्षर कुंजियों में से कोई भी उपलब्ध नहीं है।
 आप उपयोगकर्ता सूची को बदल नहीं पाएंगे!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="585"/>
+        <location filename="../src/imitatepass.cpp" line="584"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">पुराना हस्ताक्षर %1 हटाने में विफल।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="700"/>
-        <location filename="../src/imitatepass.cpp" line="716"/>
-        <location filename="../src/imitatepass.cpp" line="726"/>
-        <location filename="../src/imitatepass.cpp" line="741"/>
+        <location filename="../src/imitatepass.cpp" line="699"/>
+        <location filename="../src/imitatepass.cpp" line="715"/>
+        <location filename="../src/imitatepass.cpp" line="725"/>
+        <location filename="../src/imitatepass.cpp" line="740"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">पहले के पुन: एन्क्रिप्शन से बचा हुआ</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="701"/>
-        <location filename="../src/imitatepass.cpp" line="717"/>
+        <location filename="../src/imitatepass.cpp" line="700"/>
+        <location filename="../src/imitatepass.cpp" line="716"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 एक सामान्य फ़ाइल नहीं है और इसे पुनर्स्थापित नहीं किया गया। इसे देखें और हटा दें, फिर दोबारा पुन: एन्क्रिप्ट करें।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="727"/>
+        <location filename="../src/imitatepass.cpp" line="726"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%2 के साथ %1 भी मौजूद है। दोनों इस प्रविष्टि की एन्क्रिप्ट की गई प्रतियां हैं; जांचें कि आपको कौन सी चाहिए और दूसरी हटा दें, फिर दोबारा पुन: एन्क्रिप्ट करें।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="736"/>
+        <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">%1 को उस बैकअप से पुनर्स्थापित किया गया जो एक बाधित पुन: एन्क्रिप्शन ने छोड़ा था।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="742"/>
+        <location filename="../src/imitatepass.cpp" line="741"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 गुम है और उसके बैकअप %2 का नाम वापस नहीं बदला जा सका। उसका नाम हाथ से बदलें, फिर दोबारा पुन: एन्क्रिप्ट करें।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="926"/>
-        <location filename="../src/imitatepass.cpp" line="931"/>
-        <location filename="../src/imitatepass.cpp" line="1267"/>
+        <location filename="../src/imitatepass.cpp" line="919"/>
+        <location filename="../src/imitatepass.cpp" line="1241"/>
         <source>Re-encryption failed</source>
         <translation>पुन: एन्क्रिप्शन विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="927"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>%1 को बदलने में विफल। मूल पुनर्स्थापित कर दिया गया है।</translation>
+        <translation type="vanished">%1 को बदलने में विफल। मूल पुनर्स्थापित कर दिया गया है।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished">%1 को बदलने में विफल, और मूल को वापस नहीं रखा जा सका। वह अभी भी %2 के रूप में मौजूद है; उसका नाम हाथ से बदलें।</translation>
+        <translation type="obsolete">%1 को बदलने में विफल, और मूल को वापस नहीं रखा जा सका। वह अभी भी %2 के रूप में मौजूद है; उसका नाम हाथ से बदलें।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished">पुन: एन्क्रिप्ट करने के बाद बैकअप %1 हटाया नहीं जा सका; इसे हटाना सुरक्षित है।</translation>
+        <translation type="obsolete">पुन: एन्क्रिप्ट करने के बाद बैकअप %1 हटाया नहीं जा सका; इसे हटाना सुरक्षित है।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="983"/>
+        <location filename="../src/imitatepass.cpp" line="957"/>
         <source>Creating backup commit</source>
         <translation>बैकअप कमिट बनाया जा रहा है</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1000"/>
-        <location filename="../src/imitatepass.cpp" line="1009"/>
+        <location filename="../src/imitatepass.cpp" line="974"/>
+        <location filename="../src/imitatepass.cpp" line="983"/>
         <source>Backup commit failed</source>
         <translation>बैकअप कमिट विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1001"/>
+        <location filename="../src/imitatepass.cpp" line="975"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>गिट स्थिति का निरीक्षण नहीं किया जा सका। पुन: एन्क्रिप्शन को निरस्त कर दिया गया।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1010"/>
+        <location filename="../src/imitatepass.cpp" line="984"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>पुन: एन्क्रिप्शन को निरस्त कर दिया गया क्योंकि गिट बैकअप नहीं बनाया जा सका।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1056"/>
+        <location filename="../src/imitatepass.cpp" line="1030"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">एक पुन: एन्क्रिप्शन पहले से चल रहा है</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1064"/>
+        <location filename="../src/imitatepass.cpp" line="1038"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">स्टोर का फ़ोल्डर नहीं है</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1065"/>
+        <location filename="../src/imitatepass.cpp" line="1039"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 एक सिंबॉलिक लिंक या जंक्शन है, या उसके पीछे स्थित है। वह जिस ओर इंगित करता है, वह पासवर्ड स्टोर का हिस्सा नहीं है और उसे पुन: एन्क्रिप्ट नहीं किया गया।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1074"/>
+        <location filename="../src/imitatepass.cpp" line="1048"/>
         <source>Re-encrypting from folder %1</source>
         <translation>फ़ोल्डर %1 से पुन: एन्क्रिप्ट किया जा रहा है</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1157"/>
-        <location filename="../src/imitatepass.cpp" line="1294"/>
+        <location filename="../src/imitatepass.cpp" line="1131"/>
+        <location filename="../src/imitatepass.cpp" line="1268"/>
         <source>Updating password-store</source>
         <translation>पासवर्ड-स्टोर अपडेट किया जा रहा है</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1168"/>
+        <location filename="../src/imitatepass.cpp" line="1142"/>
         <source>Git pull failed</source>
         <translation type="unfinished">गिट पुल विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1169"/>
+        <location filename="../src/imitatepass.cpp" line="1143"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">पुल के बाद स्टोर में अविलयित (unmerged) फ़ाइलें रह गई हैं। पुन: एन्क्रिप्ट करने से पहले विरोध का समाधान करें।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1174"/>
+        <location filename="../src/imitatepass.cpp" line="1148"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git पुल विफल, स्टोर को जैसा है वैसा ही पुन: एन्क्रिप्ट किया जा रहा है</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1201"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n प्रविष्टि छोड़ी गई: सिमलिंक, जंक्शन या विशेष फ़ाइल स्टोर का हिस्सा नहीं है।</numerusform>
@@ -1339,17 +1334,17 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1227"/>
+        <location filename="../src/imitatepass.cpp" line="1201"/>
         <source>GPG ID verification failed</source>
         <translation>जीपीजी आईडी सत्यापन विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1228"/>
+        <location filename="../src/imitatepass.cpp" line="1202"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>डायरेक्टरी के लिए .gpg-id सत्यापित नहीं किया जा सका।</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1265"/>
+        <location filename="../src/imitatepass.cpp" line="1239"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... और %n अन्य</numerusform>
@@ -1357,7 +1352,7 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1268"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n फ़ाइल पुन: एन्क्रिप्ट नहीं की जा सकी:</numerusform>
@@ -1365,62 +1360,56 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1274"/>
+        <location filename="../src/imitatepass.cpp" line="1248"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">पुन: एन्क्रिप्शन रद्द किया गया: %2 में से %1 फ़ाइलें जांची गईं, %3 पुन: एन्क्रिप्ट की गईं, %4 विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1604"/>
+        <location filename="../src/imitatepass.cpp" line="1519"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Git निष्पादन योग्य फ़ाइल कॉन्फ़िगर नहीं है, git छोड़ा जा रहा है</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1680"/>
+        <location filename="../src/imitatepass.cpp" line="1594"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg ने %1 के लिए कोई एन्क्रिप्टेड डेटा नहीं लिखा।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1697"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">%1 के बगल में अस्थायी फ़ाइल नहीं बनाई जा सकती: %2</translation>
+        <translation type="obsolete">%1 के बगल में अस्थायी फ़ाइल नहीं बनाई जा सकती: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1706"/>
         <source>Cannot read what gpg wrote for %1.</source>
-        <translation type="unfinished">%1 के लिए gpg ने जो लिखा, वह पढ़ा नहीं जा सकता।</translation>
+        <translation type="obsolete">%1 के लिए gpg ने जो लिखा, वह पढ़ा नहीं जा सकता।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1713"/>
-        <location filename="../src/imitatepass.cpp" line="1718"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">%1 लिखा नहीं जा सकता: %2</translation>
+        <translation type="obsolete">%1 लिखा नहीं जा सकता: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1731"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">%1 को बदलने में विफल।</translation>
+        <translation type="obsolete">%1 को बदलने में विफल।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1741"/>
         <source>%1 was replaced by a link while it was being written.</source>
-        <translation type="unfinished">लिखे जाने के दौरान %1 को एक लिंक से बदल दिया गया।</translation>
+        <translation type="obsolete">लिखे जाने के दौरान %1 को एक लिंक से बदल दिया गया।</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
         <translation type="vanished">%1 को पुन: एन्क्रिप्ट करने में विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1283"/>
+        <location filename="../src/imitatepass.cpp" line="1257"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>पुन: एन्क्रिप्शन पूर्ण: %1 सफल, %2 विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1288"/>
+        <location filename="../src/imitatepass.cpp" line="1262"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>पुन: एन्क्रिप्शन पूर्ण: %1 फ़ाइलें पुन: एन्क्रिप्ट की गईं</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1297"/>
+        <location filename="../src/imitatepass.cpp" line="1271"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>पुश नहीं किया जा रहा: %n फ़ाइल पुन: एन्क्रिप्ट करने में विफल</numerusform>
@@ -1428,18 +1417,18 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1520"/>
-        <location filename="../src/imitatepass.cpp" line="1534"/>
-        <location filename="../src/imitatepass.cpp" line="1541"/>
-        <location filename="../src/imitatepass.cpp" line="1552"/>
+        <location filename="../src/imitatepass.cpp" line="1431"/>
+        <location filename="../src/imitatepass.cpp" line="1445"/>
+        <location filename="../src/imitatepass.cpp" line="1452"/>
+        <location filename="../src/imitatepass.cpp" line="1466"/>
         <source>Copy failed</source>
         <translation type="unfinished">कॉपी विफल</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1521"/>
-        <location filename="../src/imitatepass.cpp" line="1535"/>
-        <location filename="../src/imitatepass.cpp" line="1542"/>
-        <location filename="../src/imitatepass.cpp" line="1553"/>
+        <location filename="../src/imitatepass.cpp" line="1432"/>
+        <location filename="../src/imitatepass.cpp" line="1446"/>
+        <location filename="../src/imitatepass.cpp" line="1453"/>
+        <location filename="../src/imitatepass.cpp" line="1467"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">%1 को %2 में कॉपी नहीं किया जा सका।</translation>
     </message>
@@ -3132,34 +3121,46 @@ Plain entries have a trusted encryption key, select these to allow other people 
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="692"/>
+        <location filename="../src/util.cpp" line="709"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">%1 के बगल में अस्थायी फ़ाइल नहीं बनाई जा सकती: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="709"/>
+        <location filename="../src/util.cpp" line="721"/>
+        <location filename="../src/util.cpp" line="768"/>
+        <location filename="../src/util.cpp" line="798"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">%1 लिखा नहीं जा सकता: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="718"/>
+        <location filename="../src/util.cpp" line="736"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">%1 को बदलने में विफल।</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="722"/>
+        <location filename="../src/util.cpp" line="740"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 पहले से मौजूद है।</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="724"/>
+        <location filename="../src/util.cpp" line="742"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">%1 लिखने में विफल।</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="734"/>
+        <location filename="../src/util.cpp" line="752"/>
         <source>%1 was replaced by a link while it was written.</source>
         <translation type="unfinished">लिखे जाने के दौरान %1 को एक लिंक से बदल दिया गया।</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="781"/>
+        <source>Cannot read %1.</source>
+        <translation type="unfinished">%1 पढ़ा नहीं जा सकता।</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="791"/>
+        <source>Cannot read %1: %2</source>
+        <translation type="unfinished">%1 पढ़ा नहीं जा सकता: %2</translation>
     </message>
 </context>
 </TS>

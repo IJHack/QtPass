@@ -150,8 +150,9 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   point itself), a link or a special file under the name is refused, and
   the copy goes into place through a staged file and the operating
   system's rename, as an added entry does; an unforced copy replaces
-  nothing that appeared under the name since the check
-  ([#1842](https://github.com/IJHack/QtPass/issues/1842))
+  nothing that appeared under the name since the check. The copy is
+  owner-only whatever the source's mode, as `pass cp` under its umask
+  makes it ([#1842](https://github.com/IJHack/QtPass/issues/1842))
 - The recipient list and its signature were the last writes of entries,
   lists and signatures that opened a store path by name after the link
   check: `.gpg-id` through `QSaveFile` (which resolves a link at open, from
@@ -234,17 +235,17 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   and recipient changes, and deleting one removes the link only. The
   configured store root itself may still be a link: that is the user's
   setup, not something found inside the store [#1842](https://github.com/IJHack/QtPass/issues/1842)
-- Re-encryption checks its own bookkeeping: when the new ciphertext cannot
-  be put in place and the original cannot be put back either, the message
-  says where the original still is; a backup that cannot be removed after
-  success is mentioned instead of ignored; and before a run, leftovers of an
-  interrupted one are dealt with — a stale temporary is removed, a backup
-  whose original is missing is restored, a backup next to a present original
-  is reported and left for the user to decide [#1842](https://github.com/IJHack/QtPass/issues/1842)
-- Re-encryption writes the new ciphertext to a temporary file it created
-  itself, exclusively and with an unguessable name, instead of a fixed
-  `<file>.reencrypt.tmp` that anyone able to write to the store could
-  pre-create [#1842](https://github.com/IJHack/QtPass/issues/1842)
+- Re-encryption no longer has `gpg` write into the store: it encrypts into
+  a directory of QtPass's own outside the store (1.8.x used a fixed
+  `<file>.reencrypt.tmp` next to the entry that anyone able to write to the
+  store could pre-create), the new ciphertext is decrypted and compared
+  there, and the entry is replaced through the same staged file and single
+  rename as an added entry, so the two-rename swap through
+  `<file>.reencrypt.bak` is gone. When the entry cannot be replaced it is
+  left as it was and the message says why. Before a run, leftovers of an
+  interrupted one are dealt with — a stale temporary is removed, a 1.8.x
+  backup whose original is missing is restored, one next to a present
+  original is reported and left for the user to decide [#1842](https://github.com/IJHack/QtPass/issues/1842)
 - The debug log redacts the values of `--passphrase` and friends and
   `otpauth://` URIs should they ever appear in a command line; a `.gpg-id`
   that is not valid UTF-8 is refused rather than verified as something else,

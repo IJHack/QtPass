@@ -1086,98 +1086,97 @@ e-mail</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="449"/>
-        <location filename="../src/imitatepass.cpp" line="626"/>
+        <location filename="../src/imitatepass.cpp" line="448"/>
+        <location filename="../src/imitatepass.cpp" line="625"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Η υπογραφή για %1 είναι άκυρη.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="202"/>
-        <location filename="../src/imitatepass.cpp" line="859"/>
+        <location filename="../src/imitatepass.cpp" line="201"/>
+        <location filename="../src/imitatepass.cpp" line="858"/>
         <source>Can not edit</source>
         <translation>Δεν είναι δυνατή η επεξεργασία</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="190"/>
+        <location filename="../src/imitatepass.cpp" line="189"/>
         <source>Cannot add</source>
         <translation type="unfinished">Δεν είναι δυνατή η προσθήκη</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="190"/>
-        <location filename="../src/imitatepass.cpp" line="1732"/>
+        <location filename="../src/imitatepass.cpp" line="189"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">Το %1 υπάρχει ήδη.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="203"/>
-        <location filename="../src/imitatepass.cpp" line="860"/>
+        <location filename="../src/imitatepass.cpp" line="202"/>
+        <location filename="../src/imitatepass.cpp" line="859"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Δεν ήταν δυνατή η ανάγνωση του κλειδιού κρυπτογράφησης για τη χρήση του αρχείου .gpg-id που λείπει ή είναι άκυρο.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="216"/>
+        <location filename="../src/imitatepass.cpp" line="215"/>
         <source>Cannot write</source>
         <translation type="unfinished">Δεν είναι δυνατή η εγγραφή</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="217"/>
+        <location filename="../src/imitatepass.cpp" line="216"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">Αδυναμία δημιουργίας προσωρινού καταλόγου: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="440"/>
+        <location filename="../src/imitatepass.cpp" line="439"/>
         <source>GPG signing failed!</source>
         <translation>Η υπογραφή GPG απέτυχε!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="442"/>
+        <location filename="../src/imitatepass.cpp" line="441"/>
         <source>Failed to sign %1.</source>
         <translation>Απέτυχε να υπογράψει το %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="558"/>
+        <location filename="../src/imitatepass.cpp" line="557"/>
         <source>No signing key!</source>
         <translation>Κανένα κλειδί υπογραφής!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="559"/>
+        <location filename="../src/imitatepass.cpp" line="558"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Κανένα από τα μυστικά κλειδιά υπογραφής δεν είναι διαθέσιμο.
 Δεν θα μπορείτε να αλλάξετε τη λίστα χρήστη!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="366"/>
-        <location filename="../src/imitatepass.cpp" line="384"/>
-        <location filename="../src/imitatepass.cpp" line="395"/>
-        <location filename="../src/imitatepass.cpp" line="584"/>
+        <location filename="../src/imitatepass.cpp" line="365"/>
+        <location filename="../src/imitatepass.cpp" line="383"/>
+        <location filename="../src/imitatepass.cpp" line="394"/>
+        <location filename="../src/imitatepass.cpp" line="583"/>
         <source>Cannot update</source>
         <translation>Δεν είναι δυνατή η ενημέρωση</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="142"/>
+        <location filename="../src/imitatepass.cpp" line="141"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">Το Git pull απέτυχε: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="197"/>
-        <location filename="../src/imitatepass.cpp" line="448"/>
-        <location filename="../src/imitatepass.cpp" line="776"/>
+        <location filename="../src/imitatepass.cpp" line="196"/>
+        <location filename="../src/imitatepass.cpp" line="447"/>
+        <location filename="../src/imitatepass.cpp" line="775"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Ελέγξτε την υπογραφή αρχείου .gpg-id!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="289"/>
+        <location filename="../src/imitatepass.cpp" line="288"/>
         <source>Delete failed</source>
         <translation type="unfinished">Η διαγραφή απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="290"/>
+        <location filename="../src/imitatepass.cpp" line="289"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Δεν ήταν δυνατή η αφαίρεση του συνδέσμου %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="367"/>
+        <location filename="../src/imitatepass.cpp" line="366"/>
         <source>%1 is not inside the password store.</source>
         <translation type="unfinished">Το %1 δεν βρίσκεται μέσα στον χώρο αποθήκευσης κωδικών πρόσβασης.</translation>
     </message>
@@ -1190,152 +1189,148 @@ You will not be able to change the user list!</source>
         <translation type="obsolete">Αποτυχία εγγραφής του %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="413"/>
+        <location filename="../src/imitatepass.cpp" line="412"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">Η λίστα παραληπτών γράφτηκε, αλλά δεν καταγράφηκε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="414"/>
+        <location filename="../src/imitatepass.cpp" line="413"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Αποθηκεύστε τους παραλήπτες άλλη μία φορά για να το ξεπεράσετε.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="419"/>
+        <location filename="../src/imitatepass.cpp" line="418"/>
         <source>Check selected users!</source>
         <translation>Ελέγξτε τους επιλεγμένους χρήστες!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="420"/>
+        <location filename="../src/imitatepass.cpp" line="419"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Κανένα από τα επιλεγμένα κλειδιά δεν έχει διαθέσιμο μυστικό κλειδί.
 Δεν θα είναι σε θέση να αποκρυπτογραφήσει τυχόν πρόσφατα προστεθεί κωδικοί πρόσβασης!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="443"/>
+        <location filename="../src/imitatepass.cpp" line="442"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">Αποτυχία υπογραφής του %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="585"/>
+        <location filename="../src/imitatepass.cpp" line="584"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Αποτυχία αφαίρεσης της παλιάς υπογραφής %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="700"/>
-        <location filename="../src/imitatepass.cpp" line="716"/>
-        <location filename="../src/imitatepass.cpp" line="726"/>
-        <location filename="../src/imitatepass.cpp" line="741"/>
+        <location filename="../src/imitatepass.cpp" line="699"/>
+        <location filename="../src/imitatepass.cpp" line="715"/>
+        <location filename="../src/imitatepass.cpp" line="725"/>
+        <location filename="../src/imitatepass.cpp" line="740"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Υπόλειμμα από προηγούμενη επανακρυπτογράφηση</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="701"/>
-        <location filename="../src/imitatepass.cpp" line="717"/>
+        <location filename="../src/imitatepass.cpp" line="700"/>
+        <location filename="../src/imitatepass.cpp" line="716"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">Το %1 δεν είναι κανονικό αρχείο και δεν αποκαταστάθηκε. Ελέγξτε το και αφαιρέστε το, και έπειτα επανακρυπτογραφήστε ξανά.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="727"/>
+        <location filename="../src/imitatepass.cpp" line="726"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">Το %1 υπάρχει δίπλα στο %2. Και τα δύο είναι κρυπτογραφημένα αντίγραφα της καταχώρισης· ελέγξτε ποιο θέλετε και διαγράψτε το άλλο, και έπειτα επανακρυπτογραφήστε ξανά.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="736"/>
+        <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">Το %1 αποκαταστάθηκε από το αντίγραφο ασφαλείας που άφησε πίσω μια διακοπείσα επανακρυπτογράφηση.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="742"/>
+        <location filename="../src/imitatepass.cpp" line="741"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">Το %1 λείπει και το αντίγραφο ασφαλείας του %2 δεν ήταν δυνατό να μετονομαστεί πίσω. Μετονομάστε το χειροκίνητα και έπειτα επανακρυπτογραφήστε ξανά.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="926"/>
-        <location filename="../src/imitatepass.cpp" line="931"/>
-        <location filename="../src/imitatepass.cpp" line="1267"/>
+        <location filename="../src/imitatepass.cpp" line="919"/>
+        <location filename="../src/imitatepass.cpp" line="1241"/>
         <source>Re-encryption failed</source>
         <translation>Η κρυπτογράφηση απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="927"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Αποτυχία αντικατάστασης του %1. Το πρωτότυπο έχει αποκατασταθεί.</translation>
+        <translation type="vanished">Αποτυχία αντικατάστασης του %1. Το πρωτότυπο έχει αποκατασταθεί.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Failed to replace %1, and the original could not be put back. It is still there as %2; rename it by hand.</source>
-        <translation type="unfinished">Αποτυχία αντικατάστασης του %1, και το πρωτότυπο δεν ήταν δυνατό να επανέλθει. Βρίσκεται ακόμα εκεί ως %2· μετονομάστε το χειροκίνητα.</translation>
+        <translation type="obsolete">Αποτυχία αντικατάστασης του %1, και το πρωτότυπο δεν ήταν δυνατό να επανέλθει. Βρίσκεται ακόμα εκεί ως %2· μετονομάστε το χειροκίνητα.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Could not remove the backup %1 after re-encrypting; it is safe to delete.</source>
-        <translation type="unfinished">Δεν ήταν δυνατή η αφαίρεση του αντιγράφου ασφαλείας %1 μετά την επανακρυπτογράφηση· μπορείτε να το διαγράψετε με ασφάλεια.</translation>
+        <translation type="obsolete">Δεν ήταν δυνατή η αφαίρεση του αντιγράφου ασφαλείας %1 μετά την επανακρυπτογράφηση· μπορείτε να το διαγράψετε με ασφάλεια.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="983"/>
+        <location filename="../src/imitatepass.cpp" line="957"/>
         <source>Creating backup commit</source>
         <translation>Δημιουργία αντιγράφων ασφαλείας</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1000"/>
-        <location filename="../src/imitatepass.cpp" line="1009"/>
+        <location filename="../src/imitatepass.cpp" line="974"/>
+        <location filename="../src/imitatepass.cpp" line="983"/>
         <source>Backup commit failed</source>
         <translation>Backup δε δεσμευμένο</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1001"/>
+        <location filename="../src/imitatepass.cpp" line="975"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Δεν θα μπορούσε να επιθεωρήσει την κατάσταση git. Η κρυπτογράφηση απορρίφθηκε.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1010"/>
+        <location filename="../src/imitatepass.cpp" line="984"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Η κρυπτογράφηση απορρίφθηκε επειδή δεν μπορούσε να δημιουργηθεί ένα αντίγραφο ασφαλείας.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1056"/>
+        <location filename="../src/imitatepass.cpp" line="1030"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Μια επανακρυπτογράφηση εκτελείται ήδη</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1064"/>
+        <location filename="../src/imitatepass.cpp" line="1038"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Δεν είναι φάκελος του χώρου αποθήκευσης</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1065"/>
+        <location filename="../src/imitatepass.cpp" line="1039"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">Το %1 είναι συμβολικός σύνδεσμος ή junction, ή βρίσκεται πίσω από έναν τέτοιο σύνδεσμο. Ο προορισμός του δεν αποτελεί μέρος του χώρου αποθήκευσης κωδικών πρόσβασης και δεν επανακρυπτογραφήθηκε.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1074"/>
+        <location filename="../src/imitatepass.cpp" line="1048"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Επανακρυπτογράφηση από το φάκελο %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1157"/>
-        <location filename="../src/imitatepass.cpp" line="1294"/>
+        <location filename="../src/imitatepass.cpp" line="1131"/>
+        <location filename="../src/imitatepass.cpp" line="1268"/>
         <source>Updating password-store</source>
         <translation>Ενημέρωση καταστήματος κωδικών πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1168"/>
+        <location filename="../src/imitatepass.cpp" line="1142"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Το Git pull απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1169"/>
+        <location filename="../src/imitatepass.cpp" line="1143"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Το pull άφησε τον χώρο αποθήκευσης με μη συγχωνευμένα αρχεία. Επιλύστε τη σύγκρουση πριν την επανακρυπτογράφηση.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1174"/>
+        <location filename="../src/imitatepass.cpp" line="1148"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Το Git pull απέτυχε, επανακρυπτογράφηση του χώρου αποθήκευσης ως έχει</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1201"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n καταχώριση παραλείφθηκε: οι συμβολικοί σύνδεσμοι, τα junction και τα ειδικά αρχεία δεν αποτελούν μέρος του χώρου αποθήκευσης.</numerusform>
@@ -1343,17 +1338,17 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1227"/>
+        <location filename="../src/imitatepass.cpp" line="1201"/>
         <source>GPG ID verification failed</source>
         <translation>Η επαλήθευση ταυτότητας GPG απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1228"/>
+        <location filename="../src/imitatepass.cpp" line="1202"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Δεν θα μπορούσε να επαληθεύσει το .gpg-id για τον κατάλογο.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1265"/>
+        <location filename="../src/imitatepass.cpp" line="1239"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... και %n ακόμη</numerusform>
@@ -1361,7 +1356,7 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1268"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n αρχείο δεν ήταν δυνατό να επανακρυπτογραφηθεί:</numerusform>
@@ -1369,62 +1364,56 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1274"/>
+        <location filename="../src/imitatepass.cpp" line="1248"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Η επανακρυπτογράφηση ακυρώθηκε: ελέγχθηκαν %1 από %2 αρχεία, %3 επανακρυπτογραφήθηκαν, %4 απέτυχαν</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1604"/>
+        <location filename="../src/imitatepass.cpp" line="1519"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Δεν έχει ρυθμιστεί εκτελέσιμο Git, παράλειψη του git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1680"/>
+        <location filename="../src/imitatepass.cpp" line="1594"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">Το gpg δεν έγραψε κρυπτοκείμενο για το %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1697"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Αδυναμία δημιουργίας προσωρινού αρχείου δίπλα στο %1: %2</translation>
+        <translation type="obsolete">Αδυναμία δημιουργίας προσωρινού αρχείου δίπλα στο %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1706"/>
         <source>Cannot read what gpg wrote for %1.</source>
-        <translation type="unfinished">Αδυναμία ανάγνωσης όσων έγραψε το gpg για το %1.</translation>
+        <translation type="obsolete">Αδυναμία ανάγνωσης όσων έγραψε το gpg για το %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1713"/>
-        <location filename="../src/imitatepass.cpp" line="1718"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Αδυναμία εγγραφής του %1: %2</translation>
+        <translation type="obsolete">Αδυναμία εγγραφής του %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1731"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Αποτυχία αντικατάστασης του %1.</translation>
+        <translation type="obsolete">Αποτυχία αντικατάστασης του %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1741"/>
         <source>%1 was replaced by a link while it was being written.</source>
-        <translation type="unfinished">Το %1 αντικαταστάθηκε από σύνδεσμο ενώ γραφόταν.</translation>
+        <translation type="obsolete">Το %1 αντικαταστάθηκε από σύνδεσμο ενώ γραφόταν.</translation>
     </message>
     <message>
         <source>Failed to re-encrypt %1</source>
         <translation type="vanished">Αποτυχία επανακρυπτογράφησης του %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1283"/>
+        <location filename="../src/imitatepass.cpp" line="1257"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Η κρυπτογράφηση ολοκληρώθηκε: %1 πέτυχε, %2 απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1288"/>
+        <location filename="../src/imitatepass.cpp" line="1262"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Re-encryption ολοκληρώθηκε: %1 αρχεία επανα κρυπτογράφησης</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1297"/>
+        <location filename="../src/imitatepass.cpp" line="1271"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Δεν γίνεται push: %n αρχείο απέτυχε να επανακρυπτογραφηθεί</numerusform>
@@ -1432,18 +1421,18 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1520"/>
-        <location filename="../src/imitatepass.cpp" line="1534"/>
-        <location filename="../src/imitatepass.cpp" line="1541"/>
-        <location filename="../src/imitatepass.cpp" line="1552"/>
+        <location filename="../src/imitatepass.cpp" line="1431"/>
+        <location filename="../src/imitatepass.cpp" line="1445"/>
+        <location filename="../src/imitatepass.cpp" line="1452"/>
+        <location filename="../src/imitatepass.cpp" line="1466"/>
         <source>Copy failed</source>
         <translation type="unfinished">Η αντιγραφή απέτυχε</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1521"/>
-        <location filename="../src/imitatepass.cpp" line="1535"/>
-        <location filename="../src/imitatepass.cpp" line="1542"/>
-        <location filename="../src/imitatepass.cpp" line="1553"/>
+        <location filename="../src/imitatepass.cpp" line="1432"/>
+        <location filename="../src/imitatepass.cpp" line="1446"/>
+        <location filename="../src/imitatepass.cpp" line="1453"/>
+        <location filename="../src/imitatepass.cpp" line="1467"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Αδυναμία αντιγραφής του %1 στο %2.</translation>
     </message>
@@ -3187,34 +3176,46 @@ Plain entries have a trusted encryption key, select these to allow other people 
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="692"/>
+        <location filename="../src/util.cpp" line="709"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">Αδυναμία δημιουργίας προσωρινού αρχείου δίπλα στο %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="709"/>
+        <location filename="../src/util.cpp" line="721"/>
+        <location filename="../src/util.cpp" line="768"/>
+        <location filename="../src/util.cpp" line="798"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">Αδυναμία εγγραφής του %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="718"/>
+        <location filename="../src/util.cpp" line="736"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">Αποτυχία αντικατάστασης του %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="722"/>
+        <location filename="../src/util.cpp" line="740"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">Το %1 υπάρχει ήδη.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="724"/>
+        <location filename="../src/util.cpp" line="742"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">Αποτυχία εγγραφής του %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="734"/>
+        <location filename="../src/util.cpp" line="752"/>
         <source>%1 was replaced by a link while it was written.</source>
         <translation type="unfinished">Το %1 αντικαταστάθηκε από σύνδεσμο ενώ γραφόταν.</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="781"/>
+        <source>Cannot read %1.</source>
+        <translation type="unfinished">Αδυναμία ανάγνωσης του %1.</translation>
+    </message>
+    <message>
+        <location filename="../src/util.cpp" line="791"/>
+        <source>Cannot read %1: %2</source>
+        <translation type="unfinished">Αδυναμία ανάγνωσης του %1: %2</translation>
     </message>
 </context>
 </TS>
