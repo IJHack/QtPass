@@ -150,6 +150,8 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 <tr class="memdesc:a4cb272a3c3c392bfb4c9fd2c57e6bb15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open <code class="param">path</code> for reading as the regular file it is, not as what a link under that name points to: the object opened is the object judged. A check of the name before an open by name leaves a window in which a co-writer of the store makes the name a link; opening without following (O_NOFOLLOW; on Windows the reparse point itself) and judging the open handle closes it. A directory, a link, a FIFO or a device is refused.  <br /></td></tr>
 <tr class="memitem:ab4611dd64c8704e7a6392f0201af6e39" id="r_ab4611dd64c8704e7a6392f0201af6e39"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab4611dd64c8704e7a6392f0201af6e39">writeFileReplacing</a> (const QString &amp;path, const QByteArray &amp;bytes, bool replace, QString *error=nullptr) -&gt; bool</td></tr>
 <tr class="memdesc:ab4611dd64c8704e7a6392f0201af6e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <code class="param">bytes</code> as the file <code class="param">path</code>, owner-only, through a temporary created next to it (an opaque name, exclusive) and written by its open handle, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>: the name is never opened for writing, so a link a co-writer plants under it between the caller's check and the write is replaced as an entry rather than written through (QSaveFile resolves such a link at open).  <br /></td></tr>
+<tr class="memitem:a5c725b669b370ff5da26d0d31e40f7f2" id="r_a5c725b669b370ff5da26d0d31e40f7f2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5c725b669b370ff5da26d0d31e40f7f2">copyFileReplacing</a> (const QString &amp;src, const QString &amp;dst, bool replace, QString *error=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:a5c725b669b370ff5da26d0d31e40f7f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the regular file <code class="param">src</code> to the name <code class="param">dst</code> the way <a class="el" href="#ab4611dd64c8704e7a6392f0201af6e39" title="Write bytes as the file path, owner-only, through a temporary created next to it (an opaque name,...">writeFileReplacing()</a> writes bytes there: <code class="param">src</code> is read through a handle opened without following (<a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>), the copy is staged next to <code class="param">dst</code>, synced, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>d into place. The copy is owner-only whatever <code class="param">src's</code> mode, as pass's <span class="tt">cp</span> under its umask 077 makes it.  <br /></td></tr>
 <tr class="memitem:ab648b0017acac1869d91ebc924591a24" id="r_ab648b0017acac1869d91ebc924591a24"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab648b0017acac1869d91ebc924591a24">syncToDisk</a> (QFileDevice &amp;file) -&gt; bool</td></tr>
 <tr class="memdesc:ab648b0017acac1869d91ebc924591a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush <code class="param">file's</code> bytes to the device (<span class="tt">fsync</span>, <span class="tt">FlushFileBuffers</span>) before it is renamed into place, so that a crash right after the rename does not leave the name pointing at an empty file. QSaveFile did this on commit; the staged writes here do it themselves.  <br /></td></tr>
 </table>
@@ -189,6 +191,57 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool <span class="tt">true</span> if the password store's <span class="tt">.gpg-id</span> exists AND the configured executable (pass or gpg, depending on settings) exists or is a WSL wrapper; <span class="tt">false</span> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a5c725b669b370ff5da26d0d31e40f7f2" name="a5c725b669b370ff5da26d0d31e40f7f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c725b669b370ff5da26d0d31e40f7f2">&#9670;&#160;</a></span>copyFileReplacing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::copyFileReplacing </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>replace</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy the regular file <code class="param">src</code> to the name <code class="param">dst</code> the way <a class="el" href="#ab4611dd64c8704e7a6392f0201af6e39" title="Write bytes as the file path, owner-only, through a temporary created next to it (an opaque name,...">writeFileReplacing()</a> writes bytes there: <code class="param">src</code> is read through a handle opened without following (<a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>), the copy is staged next to <code class="param">dst</code>, synced, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>d into place. The copy is owner-only whatever <code class="param">src's</code> mode, as pass's <span class="tt">cp</span> under its umask 077 makes it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>The file to copy; a link, a directory or a special file under that name is refused. </td></tr>
+    <tr><td class="paramname">dst</td><td>The name to give the copy. </td></tr>
+    <tr><td class="paramname">replace</td><td>Whether an existing entry under <code class="param">dst</code> may go. </td></tr>
+    <tr><td class="paramname">error</td><td>Receives why not, if not null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">dst</code> now holds a copy of <code class="param">src</code>. </dd></dl>
 
 </div>
 </div>
