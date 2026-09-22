@@ -30,6 +30,12 @@
 
 #include "qtpasslogging.h"
 
+namespace {
+/// Dynamic property markOtpFieldEdited() sets on the line edit the user typed
+/// in; normalizeOtpField() reads it from the field that is the OTP one.
+const char kOtpEditedProperty[] = "qtpassOtpEdited";
+} // namespace
+
 /**
  * @brief PasswordDialog::PasswordDialog basic constructor.
  * @param passConfig configuration constant
@@ -106,7 +112,15 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
 /**
  * @brief PasswordDialog::~PasswordDialog basic destructor.
  */
-PasswordDialog::~PasswordDialog() = default;
+PasswordDialog::~PasswordDialog() {
+  // QDialog's destructor hides the window after this body ran, and hiding
+  // takes the focus from a line edit, which emits editingFinished() into a
+  // slot of the PasswordDialog part that is already gone. Cut those
+  // connections while everything is still whole.
+  for (QLineEdit *line : m_templateLines + m_otherLines) {
+    disconnect(line, nullptr, this, nullptr);
+  }
+}
 
 /**
  * @brief PasswordDialog::setPasswordVisible hide or show passwords.
@@ -365,6 +379,12 @@ void PasswordDialog::removeField(QLineEdit *line) {
   // parented to the label) or the line's action's triggered() is still
   // running. Out of the form now, deleted once the stack has unwound.
   const QFormLayout::TakeRowResult row = ui->formLayout->takeRow(line);
+  // hide() takes the focus from a focused line, and that emits
+  // editingFinished(): not into normalizeOtpField() for a field that is gone.
+  disconnect(line, nullptr, this, nullptr);
+  if (m_otpLine == line) {
+    m_otpLine = nullptr;
+  }
   for (QLayoutItem *item : {row.labelItem, row.fieldItem}) {
     if (item == nullptr) {
       continue;
@@ -426,9 +446,15 @@ void PasswordDialog::hookOtpField() {
     delete m_otpWarning;
   }
   m_otpWarning = nullptr;
-  m_otpFieldEdited = false;
 
   QLineEdit *otp = otpLineEdit();
+  // The field that was the OTP one may not be any more (renamed away, or
+  // another one now comes first); its editingFinished() must not run the
+  // normalisation of the field that is.
+  if (!m_otpLine.isNull() && m_otpLine != otp) {
+    disconnect(m_otpLine, nullptr, this, nullptr);
+  }
+  m_otpLine = otp;
   if (otp == nullptr) {
     return;
   }
@@ -446,7 +472,11 @@ void PasswordDialog::hookOtpField() {
   validateOtpField();
 }
 
-void PasswordDialog::markOtpFieldEdited() { m_otpFieldEdited = true; }
+void PasswordDialog::markOtpFieldEdited() {
+  if (QObject *line = sender()) {
+    line->setProperty(kOtpEditedProperty, true);
+  }
+}
 
 /**
  * @brief PasswordDialog::validateOtpField flag an unusable OTP value.
@@ -481,7 +511,7 @@ void PasswordDialog::validateOtpField() {
  * @brief PasswordDialog::normalizeOtpField rewrite the OTP field as a URI.
  *
  * Only rewrites a value that is unambiguously TOTP configuration: an
- * `otpauth://` URI, or something the user typed into the field this session.
+ * `otpauth://` URI, or something the user typed into this very field.
  *
  * Anything else is left byte-for-byte. Base32::sanitizeInput() maps 1 to L and
  * 8 to B, so a static backup code like `12345678` looks like valid base32 and
@@ -498,7 +528,8 @@ void PasswordDialog::normalizeOtpField() {
   if (text.isEmpty()) {
     return;
   }
-  if (!m_otpFieldEdited && !FileContent::isOtpUriValue(text)) {
+  if (!otp->property(kOtpEditedProperty).toBool() &&
+      !FileContent::isOtpUriValue(text)) {
     return;
   }
   // fileName(), not completeBaseName(): the latter truncates at the last dot,
