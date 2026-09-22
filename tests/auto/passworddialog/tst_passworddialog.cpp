@@ -659,13 +659,9 @@ void tst_passworddialog::fieldLabelDoubleClickStartsTheEdit() {
 
 /**
  * @brief The context menu offers Rename field and Remove field; choosing
- *        Rename opens the editor on that field.
- *
- * Remove is only checked for being offered. Choosing it is a crash in src
- * today: removeRequested() makes PasswordDialog::removeField() delete the
- * label synchronously, and QObject's destructor then `delete`s the stack
- * QMenu still inside exec() (free(): invalid size). Drive that path once
- * FieldLabel defers the signal or heap-allocates the menu.
+ *        Rename opens the editor on that field, choosing Remove drops the
+ *        row, with the label (the menu's parent, still inside exec()) and
+ *        the line deleted only once control is back in the event loop.
  */
 void tst_passworddialog::fieldLabelContextMenuRenamesAndRemoves() {
   FakePass pass;
@@ -700,6 +696,26 @@ void tst_passworddialog::fieldLabelContextMenuRenamesAndRemoves() {
   QVERIFY(d.getPassword().contains(QStringLiteral("user: bob\n")));
   QVERIFY2(!d.getPassword().contains(QStringLiteral("login")),
            "the field must be written under the new name only");
+
+  // Remove field, from the menu: the row goes, nothing is written back, and
+  // the widgets outlive the menu's exec() that asked for their removal.
+  QPointer<FieldLabel> gone(label);
+  QPointer<QLineEdit> line = d.findChild<QLineEdit *>(QStringLiteral("user"));
+  QVERIFY(line != nullptr);
+  whenContextMenuOpens(label, [](QMenu *menu) {
+    menu->setActiveAction(menu->actions().at(1));
+    QTest::keyClick(menu, Qt::Key_Return);
+  });
+  openContextMenu(label);
+  QVERIFY2(!gone.isNull() && !line.isNull(),
+           "the row's widgets must not be deleted from inside the menu");
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY2(gone.isNull() && line.isNull(),
+           "the row's widgets must be deleted once the stack has unwound");
+  const QString written = d.getPassword();
+  QVERIFY2(!written.contains(QStringLiteral("user")),
+           qPrintable("a removed field must not be written back:\n" + written));
+  QVERIFY(written.contains(QStringLiteral("url: example.com\n")));
 }
 
 /**
@@ -1004,12 +1020,8 @@ void tst_passworddialog::otpWarningSurvivesAReloadOnlyOnce() {
 /**
  * @brief An otpauth:// URI entered in the field is canonicalised (label from
  *        the entry name, explicit digits and period) as soon as the field is
- *        left, so what is saved is what was shown; a broken URI is left as
- *        typed for the user to fix.
- *
- * Only the URI route is driven here: the "user typed a bare secret" route
- * relies on a textEdited lambda that src connects with Qt::UniqueConnection,
- * which Qt refuses for functors, so m_otpFieldEdited never becomes true.
+ *        left, so what is saved is what was shown; so is a bare base32 secret
+ *        the user typed; a broken URI is left as typed for the user to fix.
  */
 void tst_passworddialog::otpUriIsNormalisedOnLeavingTheField() {
   FakePass pass;
@@ -1031,6 +1043,15 @@ void tst_passworddialog::otpUriIsNormalisedOnLeavingTheField() {
   QVERIFY(otp->text().contains(QStringLiteral("secret=JBSWY3DPEHPK3PXP")));
   QVERIFY2(otp->text().contains(QStringLiteral("digits=6")),
            qPrintable("the URI must be made explicit: " + otp->text()));
+
+  // A bare secret the user typed becomes a URI too; only a loaded one is
+  // kept as it was (otpUntouchedValueIsWrittenBackVerbatim).
+  otp->clear();
+  QTest::keyClicks(otp, QStringLiteral("JBSWY3DPEHPK3PXP"));
+  QTest::keyClick(otp, Qt::Key_Return);
+  QVERIFY2(otp->text().startsWith(QStringLiteral("otpauth://totp/github.com?")),
+           qPrintable("a typed bare secret must become a URI: " + otp->text()));
+  QVERIFY(otp->text().contains(QStringLiteral("secret=JBSWY3DPEHPK3PXP")));
 
   // The typed value is invalid: the field is left as typed for the user to fix.
   otp->clear();
