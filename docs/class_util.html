@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_util-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Util Class Reference</div></div>
@@ -107,6 +108,11 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <p><code>#include &lt;<a class="el" href="util_8h_source.html">util.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:acaa1adf59bd6ad4b1bae548134ea7f76" id="r_acaa1adf59bd6ad4b1bae548134ea7f76"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#acaa1adf59bd6ad4b1bae548134ea7f76">Filler</a> = std::function&lt;QString(QFileDevice &amp;)&gt;</td></tr>
+<tr class="memdesc:acaa1adf59bd6ad4b1bae548134ea7f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the temporary of <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a> through its open handle; returns why it could not (translated, for the user), or an empty string.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa93547aecfd166a3e0eac955370cc05c" id="r_aa93547aecfd166a3e0eac955370cc05c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa93547aecfd166a3e0eac955370cc05c">findBinaryInPath</a> (const QString &amp;binary) -&gt; QString</td></tr>
@@ -145,21 +151,42 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 <tr class="memitem:ad23339038f3f09d99359f1a25d659a6f" id="r_ad23339038f3f09d99359f1a25d659a6f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad23339038f3f09d99359f1a25d659a6f">removeTree</a> (const QString &amp;dir) -&gt; bool</td></tr>
 <tr class="memdesc:ad23339038f3f09d99359f1a25d659a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove <code class="param">dir</code> and everything in it, the way <span class="tt">rm -rf</span> does: a symbolic link or NTFS junction, <code class="param">dir</code> itself or anything inside, is removed as an entry and what it points to is never entered. A trailing separator on <code class="param">dir</code> does not change that.  <br /></td></tr>
 <tr class="memitem:a98fa003a6d00d1936da437f3d16d3568" id="r_a98fa003a6d00d1936da437f3d16d3568"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a98fa003a6d00d1936da437f3d16d3568">replaceFile</a> (const QString &amp;from, const QString &amp;to, bool replace) -&gt; bool</td></tr>
-<tr class="memdesc:a98fa003a6d00d1936da437f3d16d3568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give the file at <code class="param">from</code> the name <code class="param">to</code>, atomically and without following anything: the operating system's rename (<span class="tt">rename(2)</span>, <span class="tt">MoveFileEx</span>), never QFile::rename(), whose fallback when the plain rename fails is to copy by opening <code class="param">to</code> for writing, through whatever link sits under that name by then. With <code class="param">replace</code>, whatever entry is at <code class="param">to</code> (a file, a link) is replaced as an entry; without it, the call fails when anything is there (<span class="tt">link(2)</span> and unlink on POSIX, where a no-replace rename is not portable).  <br /></td></tr>
+<tr class="memdesc:a98fa003a6d00d1936da437f3d16d3568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give the file at <code class="param">from</code> the name <code class="param">to</code>, atomically and without following anything: the operating system's rename (<span class="tt">rename(2)</span>, <span class="tt">MoveFileEx</span>), never QFile::rename(), whose fallback when the plain rename fails is to copy by opening <code class="param">to</code> for writing, through whatever link sits under that name by then. With <code class="param">replace</code>, whatever entry is at <code class="param">to</code> (a file, a link) is replaced as an entry; without it, the call fails when anything is there (<span class="tt">linkat(2)</span> without <span class="tt">AT_SYMLINK_FOLLOW</span> and unlink on POSIX, where a no-replace rename is not portable; plain <span class="tt">link(2)</span> follows a symlink at <code class="param">from</code> on macOS and the BSDs).  <br /></td></tr>
 <tr class="memitem:a4cb272a3c3c392bfb4c9fd2c57e6bb15" id="r_a4cb272a3c3c392bfb4c9fd2c57e6bb15"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15">openRegularFile</a> (const QString &amp;path, QFile &amp;file) -&gt; bool</td></tr>
 <tr class="memdesc:a4cb272a3c3c392bfb4c9fd2c57e6bb15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open <code class="param">path</code> for reading as the regular file it is, not as what a link under that name points to: the object opened is the object judged. A check of the name before an open by name leaves a window in which a co-writer of the store makes the name a link; opening without following (O_NOFOLLOW; on Windows the reparse point itself) and judging the open handle closes it. A directory, a link, a FIFO or a device is refused.  <br /></td></tr>
+<tr class="memitem:aaad861f6fd0b64f8791ef5066d351bd8" id="r_aaad861f6fd0b64f8791ef5066d351bd8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8">stageFileReplacing</a> (const QString &amp;path, bool replace, const <a class="el" href="#acaa1adf59bd6ad4b1bae548134ea7f76">Filler</a> &amp;fill, QString *error=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:aaad861f6fd0b64f8791ef5066d351bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The staged write every file <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> puts into a store goes through: a temporary created next to <code class="param">path</code> (an opaque name, exclusive, owner-only), filled by <code class="param">fill</code> through its open handle, synced, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>d under the name, and the object under the name afterwards checked to be the very file that was filled (opened without following, compared by device and inode). The name is never opened for writing, so a link a co-writer plants under it between the caller's check and the write is replaced as an entry rather than written through (QSaveFile resolves such a link at open); a file swapped under the temporary's name before the rename (a hard link to something of the user's, say) is caught by the comparison and reported, and what is under the name is left (removing it by name could take another writer's file that landed there since).  <br /></td></tr>
 <tr class="memitem:ab4611dd64c8704e7a6392f0201af6e39" id="r_ab4611dd64c8704e7a6392f0201af6e39"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab4611dd64c8704e7a6392f0201af6e39">writeFileReplacing</a> (const QString &amp;path, const QByteArray &amp;bytes, bool replace, QString *error=nullptr) -&gt; bool</td></tr>
-<tr class="memdesc:ab4611dd64c8704e7a6392f0201af6e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <code class="param">bytes</code> as the file <code class="param">path</code>, owner-only, through a temporary created next to it (an opaque name, exclusive) and written by its open handle, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>: the name is never opened for writing, so a link a co-writer plants under it between the caller's check and the write is replaced as an entry rather than written through (QSaveFile resolves such a link at open).  <br /></td></tr>
+<tr class="memdesc:ab4611dd64c8704e7a6392f0201af6e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <code class="param">bytes</code> as the file <code class="param">path</code> through <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a>.  <br /></td></tr>
 <tr class="memitem:a5c725b669b370ff5da26d0d31e40f7f2" id="r_a5c725b669b370ff5da26d0d31e40f7f2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5c725b669b370ff5da26d0d31e40f7f2">copyFileReplacing</a> (const QString &amp;src, const QString &amp;dst, bool replace, QString *error=nullptr) -&gt; bool</td></tr>
-<tr class="memdesc:a5c725b669b370ff5da26d0d31e40f7f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the regular file <code class="param">src</code> to the name <code class="param">dst</code> the way <a class="el" href="#ab4611dd64c8704e7a6392f0201af6e39" title="Write bytes as the file path, owner-only, through a temporary created next to it (an opaque name,...">writeFileReplacing()</a> writes bytes there: <code class="param">src</code> is read through a handle opened without following (<a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>), the copy is staged next to <code class="param">dst</code>, synced, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>d into place. The copy is owner-only whatever <code class="param">src's</code> mode, as pass's <span class="tt">cp</span> under its umask 077 makes it.  <br /></td></tr>
+<tr class="memdesc:a5c725b669b370ff5da26d0d31e40f7f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the regular file <code class="param">src</code> to the name <code class="param">dst</code> through <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a>: <code class="param">src</code> is read through a handle opened without following (<a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>). The copy is owner-only whatever <code class="param">src's</code> mode, as pass's <span class="tt">cp</span> under its umask 077 makes it.  <br /></td></tr>
 <tr class="memitem:ab648b0017acac1869d91ebc924591a24" id="r_ab648b0017acac1869d91ebc924591a24"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab648b0017acac1869d91ebc924591a24">syncToDisk</a> (QFileDevice &amp;file) -&gt; bool</td></tr>
 <tr class="memdesc:ab648b0017acac1869d91ebc924591a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush <code class="param">file's</code> bytes to the device (<span class="tt">fsync</span>, <span class="tt">FlushFileBuffers</span>) before it is renamed into place, so that a crash right after the rename does not leave the name pointing at an empty file. QSaveFile did this on commit; the staged writes here do it themselves.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Some static utilities to be used elsewhere. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00021">21</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00023">23</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
+<a id="acaa1adf59bd6ad4b1bae548134ea7f76" name="acaa1adf59bd6ad4b1bae548134ea7f76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa1adf59bd6ad4b1bae548134ea7f76">&#9670;&#160;</a></span>Filler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#acaa1adf59bd6ad4b1bae548134ea7f76">Util::Filler</a> = std::function&lt;QString(QFileDevice &amp;)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fills the temporary of <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a> through its open handle; returns why it could not (translated, for the user), or an empty string. </p>
+
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00265">265</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ac8926b725ca51d6e68f3f383cfae478f" name="ac8926b725ca51d6e68f3f383cfae478f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8926b725ca51d6e68f3f383cfae478f">&#9670;&#160;</a></span>configIsValid()</h2>
 
@@ -231,7 +258,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 </table>
 </div><div class="memdoc">
 
-<p>Copy the regular file <code class="param">src</code> to the name <code class="param">dst</code> the way <a class="el" href="#ab4611dd64c8704e7a6392f0201af6e39" title="Write bytes as the file path, owner-only, through a temporary created next to it (an opaque name,...">writeFileReplacing()</a> writes bytes there: <code class="param">src</code> is read through a handle opened without following (<a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>), the copy is staged next to <code class="param">dst</code>, synced, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>d into place. The copy is owner-only whatever <code class="param">src's</code> mode, as pass's <span class="tt">cp</span> under its umask 077 makes it. </p>
+<p>Copy the regular file <code class="param">src</code> to the name <code class="param">dst</code> through <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a>: <code class="param">src</code> is read through a handle opened without following (<a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>). The copy is owner-only whatever <code class="param">src's</code> mode, as pass's <span class="tt">cp</span> under its umask 077 makes it. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">src</td><td>The file to copy; a link, a directory or a special file under that name is refused. </td></tr>
@@ -888,7 +915,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </table>
 </div><div class="memdoc">
 
-<p>Give the file at <code class="param">from</code> the name <code class="param">to</code>, atomically and without following anything: the operating system's rename (<span class="tt">rename(2)</span>, <span class="tt">MoveFileEx</span>), never QFile::rename(), whose fallback when the plain rename fails is to copy by opening <code class="param">to</code> for writing, through whatever link sits under that name by then. With <code class="param">replace</code>, whatever entry is at <code class="param">to</code> (a file, a link) is replaced as an entry; without it, the call fails when anything is there (<span class="tt">link(2)</span> and unlink on POSIX, where a no-replace rename is not portable). </p>
+<p>Give the file at <code class="param">from</code> the name <code class="param">to</code>, atomically and without following anything: the operating system's rename (<span class="tt">rename(2)</span>, <span class="tt">MoveFileEx</span>), never QFile::rename(), whose fallback when the plain rename fails is to copy by opening <code class="param">to</code> for writing, through whatever link sits under that name by then. With <code class="param">replace</code>, whatever entry is at <code class="param">to</code> (a file, a link) is replaced as an entry; without it, the call fails when anything is there (<span class="tt">linkat(2)</span> without <span class="tt">AT_SYMLINK_FOLLOW</span> and unlink on POSIX, where a no-replace rename is not portable; plain <span class="tt">link(2)</span> follows a symlink at <code class="param">from</code> on macOS and the BSDs). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">from</td><td>An existing regular file, on the same filesystem as <code class="param">to</code>. </td></tr>
@@ -898,6 +925,57 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">to</code> is now that file. </dd></dl>
+
+</div>
+</div>
+<a id="aaad861f6fd0b64f8791ef5066d351bd8" name="aaad861f6fd0b64f8791ef5066d351bd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaad861f6fd0b64f8791ef5066d351bd8">&#9670;&#160;</a></span>stageFileReplacing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::stageFileReplacing </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>replace</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="#acaa1adf59bd6ad4b1bae548134ea7f76">Filler</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>fill</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The staged write every file <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> puts into a store goes through: a temporary created next to <code class="param">path</code> (an opaque name, exclusive, owner-only), filled by <code class="param">fill</code> through its open handle, synced, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>d under the name, and the object under the name afterwards checked to be the very file that was filled (opened without following, compared by device and inode). The name is never opened for writing, so a link a co-writer plants under it between the caller's check and the write is replaced as an entry rather than written through (QSaveFile resolves such a link at open); a file swapped under the temporary's name before the rename (a hard link to something of the user's, say) is caught by the comparison and reported, and what is under the name is left (removing it by name could take another writer's file that landed there since). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The file to write. </td></tr>
+    <tr><td class="paramname">replace</td><td>Whether an existing entry under the name may go. </td></tr>
+    <tr><td class="paramname">fill</td><td>Writes the contents. </td></tr>
+    <tr><td class="paramname">error</td><td>Receives why not, if not null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">path</code> now holds what <code class="param">fill</code> wrote. </dd></dl>
 
 </div>
 </div>
@@ -972,7 +1050,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </table>
 </div><div class="memdoc">
 
-<p>Write <code class="param">bytes</code> as the file <code class="param">path</code>, owner-only, through a temporary created next to it (an opaque name, exclusive) and written by its open handle, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>: the name is never opened for writing, so a link a co-writer plants under it between the caller's check and the write is replaced as an entry rather than written through (QSaveFile resolves such a link at open). </p>
+<p>Write <code class="param">bytes</code> as the file <code class="param">path</code> through <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>The file to write. </td></tr>
