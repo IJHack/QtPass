@@ -829,7 +829,10 @@ void tst_usersdialog::emptyKeyringRejectsTheDialogWithACriticalBox() {
   poker.stop();
 
   QCOMPARE(boxes, 1);
+#ifndef Q_OS_MACOS
+  // QMessageBox shows no window title on macOS and Qt leaves it empty there.
   QCOMPARE(title, QStringLiteral("Keylist missing"));
+#endif
   QVERIFY2(text.contains(QStringLiteral("Could not fetch list")),
            qPrintable(text));
   QCOMPARE(dialog.result(), static_cast<int>(QDialog::Rejected));
