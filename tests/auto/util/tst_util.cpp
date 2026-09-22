@@ -4014,15 +4014,21 @@ void tst_util::replaceFileRenamesOverALinkAndNeverThroughIt() {
       QDir(outside.path()).filePath(QStringLiteral("nope"))));
 
   // A link under the SOURCE name, without replace: the new name is a link
-  // too (a hard link to the symlink), never a name for what it points at.
-  // link(2) follows a symlink source on macOS and the BSDs; linkat(2) with
-  // no flags does not.
+  // too (a hard link to the symlink) where the filesystem allows one, and
+  // nothing at all where it does not (HFS+ refuses ENOTSUP, Linux with
+  // protected_hardlinks refuses a symlink the caller does not own). Never a
+  // name for what the link points at: link(2) would make one on macOS and
+  // the BSDs, linkat(2) with no flags does not.
   const QString planted = root.filePath(QStringLiteral("h"));
   QVERIFY(QFile::link(victim, planted));
   const QString made = root.filePath(QStringLiteral("i"));
-  QVERIFY(Util::replaceFile(planted, made, false));
-  QVERIFY2(QFileInfo(made).isSymLink(),
-           "the new name must not be a hard link to the link's target");
+  if (Util::replaceFile(planted, made, false)) {
+    QVERIFY2(QFileInfo(made).isSymLink(),
+             "the new name must not be a hard link to the link's target");
+  } else {
+    QVERIFY2(!QFileInfo::exists(made) && !QFileInfo(made).isSymLink(),
+             "a refused link must leave no name behind");
+  }
   QCOMPARE(read(victim), QByteArray("precious"));
 #endif
 }

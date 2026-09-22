@@ -401,7 +401,7 @@ private:
    * @p overwrite, fails when one has appeared) and follows nothing. Reports
    * nothing itself: Insert()'s finished() routes the reason through the
    * failed-operation path once the queued git steps are cancelled, and
-   * reencryptSingleFile() shows it.
+   * re-encryption lists it in the run's summary.
    * @param output The file gpg wrote, in a directory of QtPass's own.
    * @param file The entry's path.
    * @param overwrite Whether an entry already there may be replaced.
@@ -459,10 +459,11 @@ private:
    * @brief Deal with what a crashed or failed earlier run left under @p dir
    * before touching anything: stale temporaries (today's staged
    * `.qtpass-XXXXXX.tmp`, 1.8.x's `<entry>.reencrypt.tmp`, the
-   * `<entry>.XXXXXX.tmp` of builds in between) are removed, a 1.8.x
-   * `<entry>.reencrypt.bak` whose original is missing is put back, one next
-   * to a present original is reported and left alone (both are valid
-   * ciphertexts, the choice is the user's).
+   * `<entry>.XXXXXX.tmp` of builds in between) are removed unless they were
+   * modified within the hour, where they may be another QtPass's write in
+   * flight on a shared store; a 1.8.x `<entry>.reencrypt.bak` whose original
+   * is missing is put back, one next to a present original is reported and
+   * left alone (both are valid ciphertexts, the choice is the user's).
    * @param dir Directory to scan, recursively.
    * @return false when something was reported that needs a human first.
    */

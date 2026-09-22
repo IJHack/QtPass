@@ -845,13 +845,17 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
 /**
  * @brief Re-encrypts a single encrypted file for a new set of recipients.
  * @example
- * bool result = ImitatePass::reencryptSingleFile(fileName, recipients);
+ * QString why;
+ * bool result = ImitatePass::reencryptSingleFile(fileName, recipients, &why);
  * std::cout << result << std::endl; // Expected output: true on success, false
  * on failure
  *
  * @param const QString &fileName - Path to the encrypted file to re-encrypt.
  * @param const QStringList &recipients - List of recipient keys to encrypt the
  * file to.
+ * @param QString *why - Receives the reason the new ciphertext could not be
+ * put under the entry's name, for the run's summary; left empty for a gpg
+ * failure, which is logged.
  * @return bool - True if the file was successfully decrypted, re-encrypted,
  * verified, and replaced; otherwise false.
  */
@@ -935,9 +939,15 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     return false;
   }
   if (!placeEncryptedFile(tempPath, fileName, true, why)) {
-    // The entry is untouched: the new ciphertext never got under its name.
     // Reported once, in the run's summary, with the others: a folder that
-    // cannot be written fails every entry in it the same way.
+    // cannot be written fails every entry in it the same way. The entry
+    // keeps its old ciphertext, unless what failed was the check after the
+    // rename, where the swapped-in object is under the name and said so.
+    if (why != nullptr && !why->contains(fileName)) {
+      // Every reason but the copy's names the entry; that one names the
+      // file gpg wrote, in a scratch directory the user never sees.
+      *why = tr("%1 could not be re-encrypted: %2").arg(fileName, *why);
+    }
     return false;
   }
 

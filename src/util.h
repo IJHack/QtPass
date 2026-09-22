@@ -277,7 +277,9 @@ public:
    * under the temporary's name before the rename (a hard link to something
    * of the user's, say) is caught by the comparison and reported, and what
    * is under the name is left (removing it by name could take another
-   * writer's file that landed there since).
+   * writer's file that landed there since). Where the system cannot give
+   * both identities the write stands: on FAT and exFAT a rename moves the
+   * file ID, and those filesystems have no hard links to swap in either.
    * @param path The file to write.
    * @param replace Whether an existing entry under the name may go.
    * @param fill Writes the contents.
