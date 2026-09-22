@@ -392,12 +392,13 @@ private:
 
   /**
    * @brief Bring the ciphertext gpg wrote to @p output into the store as
-   * @p file: through a temporary created next to the entry and written by
-   * its open handle, then the operating system's rename, which replaces the
-   * entry under that name (or, without @p overwrite, fails when one has
-   * appeared) and follows nothing. Called from finished(), so it reports
-   * nothing itself: the reason comes back for the caller to route through
-   * the failed-operation path once the queued git steps are cancelled.
+   * @p file (Util::copyFileReplacing): through a temporary created next to
+   * the entry and written by its open handle, then the operating system's
+   * rename, which replaces the entry under that name (or, without
+   * @p overwrite, fails when one has appeared) and follows nothing. Reports
+   * nothing itself: Insert()'s finished() routes the reason through the
+   * failed-operation path once the queued git steps are cancelled, and
+   * reencryptSingleFile() shows it.
    * @param output The file gpg wrote, in a directory of QtPass's own.
    * @param file The entry's path.
    * @param overwrite Whether an entry already there may be replaced.

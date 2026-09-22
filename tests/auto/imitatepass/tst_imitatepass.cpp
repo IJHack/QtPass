@@ -555,7 +555,7 @@ private Q_SLOTS:
   void reencryptDiscardsACiphertextThatDoesNotDecrypt();
   void reencryptDiscardsACiphertextWhoseContentDiffers();
   void reencryptFailsWhenTheOriginalVanishesBeforeTheSwap();
-  void reencryptRestoresTheOriginalWhenTheSwapFails();
+  void reencryptLeavesTheOriginalWhenTheCiphertextVanishes();
   void reencryptFailsWhenNoTemporaryCanBeMadeNextToTheEntry();
   void reencryptCountsAFailedGitAddAsAFailure();
   void reencryptCountsAFailedGitCommitAsAFailure();
@@ -1959,9 +1959,10 @@ void tst_imitatepass::initRemovesTheOldSignatureWhenSigningIsOff() {
 }
 
 /**
- * @brief The new ciphertext goes to a file QtPass created itself. A file (or
- *        symlink) planted at the old predictable <file>.reencrypt.tmp is
- *        never written through, and the temporary is gone afterwards.
+ * @brief The new ciphertext goes to a file in a directory QtPass created
+ *        itself, outside the store. A file (or symlink) planted at the old
+ *        predictable <file>.reencrypt.tmp is never written through, and the
+ *        scratch file is gone afterwards.
  */
 void tst_imitatepass::reencryptWritesThroughItsOwnTemporaryFileOnly() {
 #ifdef Q_OS_WIN
@@ -2002,10 +2003,9 @@ void tst_imitatepass::reencryptWritesThroughItsOwnTemporaryFileOnly() {
   QCOMPARE(enc.size(), 1);
   const QString output =
       enc.first().value(enc.first().indexOf(QStringLiteral("--output")) + 1);
-  QVERIFY2(output != entry + ".reencrypt.tmp" &&
-               output.startsWith(entry + ".") && output.endsWith(".tmp"),
-           qPrintable("gpg must write to QtPass's own temporary: " + output));
-  QVERIFY2(!QFile::exists(output), "the temporary must not be left behind");
+  QVERIFY2(!output.startsWith(storeDir.path()),
+           qPrintable("gpg must write outside the store: " + output));
+  QVERIFY2(!QFile::exists(output), "the scratch file must not be left behind");
   QFile result(entry);
   QVERIFY(result.open(QIODevice::ReadOnly));
   QCOMPARE(result.readAll(), QByteArrayLiteral("ciphertext\n"));
@@ -3286,8 +3286,8 @@ void tst_imitatepass::reencryptDiscardsACiphertextWhoseContentDiffers() {
 
 /**
  * @brief The entry disappears while gpg encrypts (another client deleted
- *        it): it cannot be moved aside, so the new ciphertext is dropped and
- *        the file counted as failed; nothing is invented under its name.
+ *        it): the new ciphertext is dropped and the file counted as failed;
+ *        nothing is invented under its name.
  */
 void tst_imitatepass::reencryptFailsWhenTheOriginalVanishesBeforeTheSwap() {
 #ifdef Q_OS_WIN
@@ -3297,12 +3297,13 @@ void tst_imitatepass::reencryptFailsWhenTheOriginalVanishesBeforeTheSwap() {
   QVERIFY(storeDir.isValid());
   QVERIFY(populateStore(storeDir.path(), 1));
   const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
-  // $outfile is <entry>.XXXXXX.tmp; strip the temporary suffix for the entry.
+  const QString entry = QDir(storeDir.path()).filePath("entry0.gpg");
   const QString fakeGpg = writeCustomGpg(
       storeDir.path(), logPath,
       {{QStringLiteral("encrypt"),
-        QStringLiteral("cat >/dev/null; rm -f \"${outfile%.*.tmp}\"; printf "
-                       "'ciphertext\\n' > \"$outfile\"")}});
+        QStringLiteral("cat >/dev/null; rm -f '%1'; printf 'ciphertext\\n' > "
+                       "\"$outfile\"")
+            .arg(entry)}});
   QVERIFY(!fakeGpg.isEmpty());
   QStringList criticals;
   QStringList status;
@@ -3311,19 +3312,17 @@ void tst_imitatepass::reencryptFailsWhenTheOriginalVanishesBeforeTheSwap() {
                                        &status, &calls, logPath);
   if (QTest::currentTestFailed())
     return;
-  const QString entry = QDir(storeDir.path()).filePath("entry0.gpg");
   QVERIFY2(!QFileInfo::exists(entry),
            "a deleted entry must not come back as the new ciphertext");
 #endif
 }
 
 /**
- * @brief The original was moved aside but the new ciphertext cannot take
- *        its place (it vanished in between): the original is put back and
- *        the user is told that it was. Also pins the newline the decrypted
- *        text gets when gpg prints none.
+ * @brief The new ciphertext is gone by the time it should take the entry's
+ *        place: the entry is untouched and the user is told. Also pins the
+ *        newline the decrypted text gets when gpg prints none.
  */
-void tst_imitatepass::reencryptRestoresTheOriginalWhenTheSwapFails() {
+void tst_imitatepass::reencryptLeavesTheOriginalWhenTheCiphertextVanishes() {
 #ifdef Q_OS_WIN
   QSKIP("uses a shell script as a fake gpg");
 #else
@@ -3331,8 +3330,8 @@ void tst_imitatepass::reencryptRestoresTheOriginalWhenTheSwapFails() {
   QVERIFY(storeDir.isValid());
   QVERIFY(populateStore(storeDir.path(), 1));
   const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
-  // The test-decrypt of the temporary answers correctly, then the temporary
-  // is gone before the rename; the entry's own decrypt has no trailing
+  // The test-decrypt of the scratch file answers correctly, then the file
+  // is gone before it is placed; the entry's own decrypt has no trailing
   // newline.
   const QString fakeGpg = writeCustomGpg(
       storeDir.path(), logPath,
@@ -3351,7 +3350,8 @@ void tst_imitatepass::reencryptRestoresTheOriginalWhenTheSwapFails() {
            QByteArrayLiteral("not really encrypted"));
   QVERIFY2(std::any_of(criticals.cbegin(), criticals.cend(),
                        [](const QString &m) {
-                         return m.contains("Original has been restored");
+                         return m.contains("gpg wrote no ciphertext") &&
+                                m.contains("entry0.gpg");
                        }),
            qPrintable(criticals.join(" | ")));
 #endif
@@ -3360,7 +3360,8 @@ void tst_imitatepass::reencryptRestoresTheOriginalWhenTheSwapFails() {
 /**
  * @brief The new ciphertext is staged next to the entry; when nothing can be
  *        created there (the folder is read-only) the file is counted as
- *        failed and left exactly as it was, with no temporary anywhere.
+ *        failed and left exactly as it was, the user told why, and no
+ *        temporary is left anywhere.
  */
 void tst_imitatepass::reencryptFailsWhenNoTemporaryCanBeMadeNextToTheEntry() {
 #ifdef Q_OS_WIN
@@ -3390,8 +3391,15 @@ void tst_imitatepass::reencryptFailsWhenNoTemporaryCanBeMadeNextToTheEntry() {
     return;
   QCOMPARE(contentsOf(QDir(storeDir.path()).filePath("entry0.gpg")),
            QByteArrayLiteral("not really encrypted"));
-  QVERIFY2(encryptCalls(calls).isEmpty(),
-           "gpg must not be asked to encrypt into a file that does not exist");
+  // The scratch file is outside the store, so gpg did encrypt; only the
+  // placing failed.
+  QCOMPARE(encryptCalls(calls).size(), 1);
+  QVERIFY2(std::any_of(criticals.cbegin(), criticals.cend(),
+                       [](const QString &m) {
+                         return m.contains("temporary file next to") &&
+                                m.contains("entry0.gpg");
+                       }),
+           qPrintable(criticals.join(" | ")));
 #endif
 }
 

@@ -336,6 +336,7 @@ private Q_SLOTS:
   void replaceFileRenamesOverALinkAndNeverThroughIt();
   void openRegularFileDoesNotFollowLinksOrOpenSpecialFiles();
   void writeFileReplacingStagesAndNeverWritesThroughALink();
+  void copyFileReplacingCopiesRegularFilesOnlyAndOwnerOnly();
   void removeTreeDoesNotFollowSymlinks();
   void removeTreeDoesNotFollowJunctions();
   // Pass environment set-up
@@ -4156,6 +4157,79 @@ void tst_util::writeFileReplacingStagesAndNeverWritesThroughALink() {
   QVERIFY(QFileInfo(junction).isJunction());
   QVERIFY(QDir(target).entryList(QDir::Files | QDir::Hidden).isEmpty());
   QVERIFY(QDir().rmdir(junction));
+#endif
+}
+
+/**
+ * @brief copyFileReplacing copies the bytes of a regular file under the name
+ *        owner-only whatever the source's mode, refuses to replace without
+ *        replace and says so, replaces with it, leaves no temporary, and
+ *        reads nothing through a link, a directory or a missing name.
+ */
+void tst_util::copyFileReplacingCopiesRegularFilesOnlyAndOwnerOnly() {
+  QTemporaryDir dir;
+  QTemporaryDir outside;
+  QVERIFY(dir.isValid() && outside.isValid());
+  const QDir root(dir.path());
+  const QString src = root.filePath(QStringLiteral("a.gpg"));
+  const QByteArray bytes(200 * 1024, 'x'); // more than one read buffer
+  QVERIFY(Util::writeFileReplacing(src, bytes, false));
+  QVERIFY(QFile::setPermissions(src, QFile::ReadOwner | QFile::WriteOwner |
+                                         QFile::ReadGroup | QFile::ReadOther));
+  const QString dst = root.filePath(QStringLiteral("b.gpg"));
+  QString error;
+  QVERIFY2(Util::copyFileReplacing(src, dst, false, &error), qPrintable(error));
+  {
+    QFile f(dst);
+    QVERIFY(f.open(QIODevice::ReadOnly));
+    QCOMPARE(f.readAll(), bytes);
+  }
+#ifndef Q_OS_WIN
+  QCOMPARE(QFileInfo(dst).permissions() &
+               (QFile::ReadGroup | QFile::WriteGroup | QFile::ReadOther |
+                QFile::WriteOther),
+           QFile::Permissions());
+#endif
+  QVERIFY(!Util::copyFileReplacing(src, dst, false, &error));
+  QVERIFY2(error.contains(QStringLiteral("already exists")), qPrintable(error));
+  const QString other = root.filePath(QStringLiteral("c.gpg"));
+  QVERIFY(Util::writeFileReplacing(other, "other", false));
+  QVERIFY2(Util::copyFileReplacing(other, dst, true, &error),
+           qPrintable(error));
+  {
+    QFile f(dst);
+    QVERIFY(f.open(QIODevice::ReadOnly));
+    QCOMPARE(f.readAll(), QByteArrayLiteral("other"));
+  }
+  QCOMPARE(root.entryList({QStringLiteral(".qtpass-*.tmp")},
+                          QDir::Files | QDir::Hidden)
+               .size(),
+           0);
+
+  // Nothing to read: a missing name, a directory.
+  QVERIFY(!Util::copyFileReplacing(root.filePath(QStringLiteral("none")),
+                                   root.filePath(QStringLiteral("d.gpg")),
+                                   false, &error));
+  QVERIFY2(error.contains(QStringLiteral("Cannot read")), qPrintable(error));
+  QVERIFY(!Util::copyFileReplacing(
+      outside.path(), root.filePath(QStringLiteral("d.gpg")), false, &error));
+  QVERIFY(!QFileInfo::exists(root.filePath(QStringLiteral("d.gpg"))));
+#ifndef Q_OS_WIN
+  // A link as the source is not read through: the store would otherwise
+  // gain a copy of whatever the link points at.
+  const QString secret = QDir(outside.path()).filePath(QStringLiteral("s"));
+  QVERIFY(Util::writeFileReplacing(secret, "hunter2", false));
+  const QString link = root.filePath(QStringLiteral("l.gpg"));
+  QVERIFY(QFile::link(secret, link));
+  QVERIFY(!Util::copyFileReplacing(link, root.filePath(QStringLiteral("e.gpg")),
+                                   false, &error));
+  QVERIFY(!QFileInfo::exists(root.filePath(QStringLiteral("e.gpg"))));
+  // A link as the destination is replaced as an entry, its target untouched.
+  QVERIFY(Util::copyFileReplacing(src, link, true, &error));
+  QVERIFY(!QFileInfo(link).isSymLink());
+  QFile s(secret);
+  QVERIFY(s.open(QIODevice::ReadOnly));
+  QCOMPARE(s.readAll(), QByteArrayLiteral("hunter2"));
 #endif
 }
 
