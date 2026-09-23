@@ -19,3 +19,6 @@ tests
 
 # gzip twins written by scripts/precompress.sh before deploy
 *.gz
+
+# Doxygen XML output (GENERATE_XML is off; kept out of the branch)
+xml
