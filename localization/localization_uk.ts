@@ -3455,7 +3455,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/util.cpp" line="794"/>
         <source>%1 was swapped for another file while it was written.</source>
-        <translation type="unfinished">%1 було замінено іншим файлом під час запису.</translation>
+        <translation>%1 було замінено іншим файлом під час запису.</translation>
     </message>
     <message>
         <source>%1 was replaced by a link while it was written.</source>
@@ -3464,12 +3464,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/util.cpp" line="821"/>
         <source>Cannot read %1.</source>
-        <translation type="unfinished">Не вдалося прочитати %1.</translation>
+        <translation>Не вдалося прочитати %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="831"/>
         <source>Cannot read %1: %2</source>
-        <translation type="unfinished">Не вдалося прочитати %1: %2</translation>
+        <translation>Не вдалося прочитати %1: %2</translation>
     </message>
 </context>
 </TS>

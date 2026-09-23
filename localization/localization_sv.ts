@@ -3365,7 +3365,7 @@ Röd färg betyder att nyckeln är ogiltig. Du kan inte använda någon av dessa
     <message>
         <location filename="../src/util.cpp" line="794"/>
         <source>%1 was swapped for another file while it was written.</source>
-        <translation type="unfinished">%1 byttes ut mot en annan fil medan den skrevs.</translation>
+        <translation>%1 byttes ut mot en annan fil medan den skrevs.</translation>
     </message>
     <message>
         <source>%1 was replaced by a link while it was written.</source>

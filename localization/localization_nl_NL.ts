@@ -3489,7 +3489,7 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
     <message>
         <location filename="../src/util.cpp" line="794"/>
         <source>%1 was swapped for another file while it was written.</source>
-        <translation type="unfinished">%1 is door een ander bestand vervangen terwijl het werd geschreven.</translation>
+        <translation>%1 is door een ander bestand vervangen terwijl het werd geschreven.</translation>
     </message>
     <message>
         <source>%1 was replaced by a link while it was written.</source>
@@ -3498,12 +3498,12 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
     <message>
         <location filename="../src/util.cpp" line="821"/>
         <source>Cannot read %1.</source>
-        <translation type="unfinished">Kan %1 niet lezen.</translation>
+        <translation>Kan %1 niet lezen.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="831"/>
         <source>Cannot read %1: %2</source>
-        <translation type="unfinished">Kan %1 niet lezen: %2</translation>
+        <translation>Kan %1 niet lezen: %2</translation>
     </message>
 </context>
 </TS>
