@@ -321,19 +321,32 @@
       </aside>
       <section id="main">
         <div class="hero">
-          <p class="hero-lockup">
+          <p class="hero-brand">
             <img
               class="mark"
               src="images/logo.svg?v=1.8.1-6"
               alt=""
-              width="56"
-              height="56"
+              width="44"
+              height="44"
               decoding="async"
-            />QtPass <small>1.8.1</small>
+            />
+            <span class="wordmark">QtPass</span>
+            <a
+              class="version"
+              title="QtPass changelog"
+              href="/changelog"
+              >1.8.1</a
+            >
           </p>
           <h2 id="overview">
             Password management without the password cloud.
           </h2>
+          <p class="hero-sub">
+            A free and open-source GUI for
+            <a href="https://www.passwordstore.org/">pass</a>: your passwords
+            stay GnuPG-encrypted files on machines you control &mdash; synced
+            with Git, never in the cloud.
+          </p>
           <p class="hero-cta">
             <a
               class="btn"
@@ -343,72 +356,52 @@
             >
             <a class="btn ghost" href="/getting-started">Get Started</a>
           </p>
-          <figure class="hero-shot">
-            <picture>
-              <source
-                media="(prefers-color-scheme: dark)"
-                srcset="images/qtpass-dark@2x.webp"
-                type="image/webp"
-              />
-              <source
-                media="(prefers-color-scheme: dark)"
-                srcset="images/qtpass-dark.png, images/qtpass-dark@2x.png 2x"
-              />
-              <source srcset="images/qtpass@2x.webp" type="image/webp" />
-              <img
-                src="images/qtpass.png?v=1.8.1-6"
-                srcset="images/qtpass.png?v=1.8.1-6, images/qtpass@2x.png 2x"
-                width="1110"
-                height="918"
+          <p
+            class="hero-platform"
+            aria-label="Runs on Linux, Windows, macOS and FreeBSD"
+          >
+            <a title="Install on Linux" href="/downloads#linux-bsd"
+              ><img
+                class="compatible"
+                src="images/linux.png"
+                loading="lazy"
                 decoding="async"
-                alt="QtPass main window with a password store, one entry open"
-              />
-            </picture>
-          </figure>
+                width="103"
+                height="120"
+                alt="Linux Compatible"
+            /></a>
+            <a title="Install on Windows" href="/downloads#Windows"
+              ><img
+                class="compatible"
+                src="images/win11.png"
+                loading="lazy"
+                decoding="async"
+                width="200"
+                height="249"
+                alt="Windows 11 Compatible"
+            /></a>
+            <a title="Install on macOS" href="/macos"
+              ><img
+                class="compatible"
+                src="images/macos.png"
+                loading="lazy"
+                decoding="async"
+                width="256"
+                height="256"
+                alt="macOS Compatible"
+            /></a>
+            <a title="Install on FreeBSD" href="/downloads#FreeBSD"
+              ><img
+                class="compatible"
+                src="images/freebsd.png"
+                loading="lazy"
+                decoding="async"
+                width="175"
+                height="175"
+                alt="FreeBSD Compatible"
+            /></a>
+          </p>
         </div>
-
-        <p>
-          <a title="Install on Linux" href="/downloads#linux-bsd"
-            ><img
-              class="compatible"
-              src="images/linux.png"
-              loading="lazy"
-              decoding="async"
-              width="103"
-              height="120"
-              alt="Linux Compatible"
-          /></a>
-          <a title="Install on Windows" href="/downloads#Windows"
-            ><img
-              class="compatible"
-              src="images/win11.png"
-              loading="lazy"
-              decoding="async"
-              width="200"
-              height="249"
-              alt="Windows 11 Compatible"
-          /></a>
-          <a title="Install on macOS" href="/macos"
-            ><img
-              class="compatible"
-              src="images/macos.png"
-              loading="lazy"
-              decoding="async"
-              width="256"
-              height="256"
-              alt="macOS Compatible"
-          /></a>
-          <a title="Install on FreeBSD" href="/downloads#FreeBSD"
-            ><img
-              class="compatible"
-              src="images/freebsd.png"
-              loading="lazy"
-              decoding="async"
-              width="175"
-              height="175"
-              alt="FreeBSD Compatible"
-          /></a>
-        </p>
 
         <h2>
           <a

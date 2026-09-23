@@ -453,67 +453,76 @@ header ul a:active {
   display: none;
 }
 
-/* home hero: the QtPass lockup is the headline, with a tagline,
-   download action and the app window below it, fitting first screen. */
+/* home hero: brand row, headline, one-liner and the download action.
+   The app window itself is interactive in the sidebar, so the hero stays
+   a text pitch instead of repeating the screenshot. */
 .hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding-block: clamp(1.25rem, 3.5vh, 2.25rem) clamp(0.75rem, 1.5vh, 1.25rem);
-  margin-block-end: 1.5rem;
+  padding-block-start: clamp(0.25rem, 1vh, 1rem);
+  margin-block-end: 1.75rem;
 }
-.hero-lockup {
+.hero-brand {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.75em;
-  margin: 0 0 0.4em;
-  font-size: clamp(2.75rem, 8.5vw, 4.75rem);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 1;
+  gap: 0.65em;
+  margin: 0 0 1em;
   color: var(--ink-strong);
 }
-.hero-lockup small {
-  align-self: flex-start;
-  margin-inline-start: 0.5em;
-  font-size: 0.17em;
-  font-weight: 600;
-  color: var(--muted);
-  letter-spacing: 0;
-  padding-block-start: 0.4em;
-}
-.hero .mark {
-  width: 0.62em;
-  height: 0.62em;
+.hero-brand .mark {
+  width: 2.2rem;
+  height: 2.2rem;
   display: block;
   flex: none;
 }
+.hero-brand .wordmark {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.hero-brand .version {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.22em 0.75em;
+  text-decoration: none;
+  line-height: 1.3;
+}
+.hero-brand .version:hover,
+.hero-brand .version:focus-visible {
+  color: var(--accent-strong);
+  border-color: var(--accent);
+}
 .hero h2 {
-  max-width: 24ch;
-  margin: 0 auto 0.9em;
-  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.5rem);
-  font-weight: 600;
-  line-height: 1.4;
+  margin: 0 0 0.45em;
+  font-size: clamp(2rem, 1.15rem + 2.2vw, 3.1rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+.hero-sub {
+  margin: 0 0 1.35em;
+  max-width: 44ch;
+  font-size: clamp(1.05rem, 1rem + 0.2vw, 1.18rem);
+  color: var(--muted);
 }
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 0.75rem;
+  margin: 0 0 1.6rem;
+}
+.hero-platform {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1.1rem;
   margin: 0;
 }
-.hero-shot {
-  margin: clamp(1.5rem, 3.5vh, 2.5rem) 0 0;
-  width: min(100%, 27rem);
-}
-.hero-shot img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
+.hero-platform .compatible {
+  height: clamp(2.5rem, 4.5vw, 3.4rem);
+  margin-inline-end: 0;
 }
 .btn {
   display: inline-block;
@@ -827,9 +836,6 @@ header ul a:active {
     max-width: none;
     border-block: 1px solid var(--rule);
     padding-block: 1.5rem;
-  }
-  .hero-lockup {
-    font-size: clamp(3rem, 13vw, 4.5rem);
   }
   .screenshots {
     max-width: 32rem;
