@@ -267,7 +267,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   replacing, the new name
   is made with `linkat(2)` rather than `link(2)`, which on macOS and
   the BSDs follows a symlink planted under the temporary's name and would
-  have made the entry a second name for its target [#1842](https://github.com/IJHack/QtPass/issues/1842)
+  have made the entry a second name for its target [#1842](https://github.com/IJHack/QtPass/issues/1842).
+  Where the filesystem has no hard links (FAT and exFAT, some FUSE mounts)
+  an exclusive rename takes over (`renameat2` on Linux, `renamex_np` on
+  macOS), and where there is none either, the name is checked and then
+  renamed; before, a new entry could not be added to such a store
 - The debug log redacts the values of `--passphrase` and friends and
   `otpauth://` URIs should they ever appear in a command line; a `.gpg-id`
   that is not valid UTF-8 is refused rather than verified as something else,
