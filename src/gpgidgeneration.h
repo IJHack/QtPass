@@ -234,6 +234,49 @@ public:
    * @return The record's path.
    */
   static auto recordFile() -> QString;
+
+private:
+  /**
+   * @brief Whether @p header's folder line, if it has one, names the folder
+   * the list sits in: a pair copied elsewhere is that folder's first list,
+   * a rollback in disguise.
+   * @param gpgIdFile The `.gpg-id` the bytes came from.
+   * @param header What its header says.
+   * @param storeRoot The configured store.
+   * @param error Receives why not, if not null.
+   * @return Whether the list belongs where it is.
+   */
+  static auto boundToItsFolder(const QString &gpgIdFile, const Header &header,
+                               const QString &storeRoot, QString *error)
+      -> bool;
+
+  /**
+   * @brief How a holder of the signing key gets through a refusal, in words:
+   * saving the recipients writes the next generation, unless the record is
+   * already at the ceiling of the grammar, where it has to be removed first.
+   * @param last The generation this device accepted before.
+   * @param recordPath The record file, which the text names.
+   * @param saving What the user does in the Users dialog, in this refusal's
+   *        terms ("checking the recipients and saving").
+   * @return The sentence to append to a refusal.
+   */
+  static auto wayThrough(qint64 last, const QString &recordPath,
+                         const QString &saving) -> QString;
+
+  /**
+   * @brief The refusal for a list older than the one accepted here: a
+   * rollback, or an unbound list that could be any folder's history.
+   * @param gpgIdFile The `.gpg-id` the bytes came from.
+   * @param header What its header says.
+   * @param last The generation this device accepted before.
+   * @param recordPath The record file, which the text names.
+   * @param error Receives the reason, if not null.
+   * @return Rollback for a list that says which folder it is for, Unbound
+   *         for one that does not.
+   */
+  static auto staleList(const QString &gpgIdFile, const Header &header,
+                        qint64 last, const QString &recordPath, QString *error)
+      -> Verdict;
 };
 
 #endif // SRC_GPGIDGENERATION_H_

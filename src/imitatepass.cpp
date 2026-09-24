@@ -859,30 +859,98 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
  * @return bool - True if the file was successfully decrypted, re-encrypted,
  * verified, and replaced; otherwise false.
  */
+auto ImitatePass::decryptEntry(const QString &fileName, QString *plaintext)
+    -> bool {
+  const QStringList args = {
+      "-d",      "--quiet",     "--yes", "--no-encrypt-to",
+      "--batch", "--use-agent", "--",    pgpg(fileName)};
+  if (execBlocking(m_settings.gpgExecutable, args, plaintext) != 0 ||
+      plaintext->isEmpty()) {
+    qCDebug(lcQtPass) << "Decrypt error on re-encrypt for:" << fileName;
+    return false;
+  }
+  if (!plaintext->endsWith(u'\n')) {
+    plaintext->append(u'\n');
+  }
+  return true;
+}
+
+auto ImitatePass::encryptFor(const QString &output,
+                             const QStringList &recipients,
+                             const QString &plaintext) -> bool {
+  // Same encrypt-only flags as Insert(): gpg.conf must not add recipients.
+  QStringList args{
+      "--yes",           "--batch",  "-eq",       "--compress-algo=none",
+      "--no-encrypt-to", "--output", pgpg(output)};
+  for (const QString &recipient : recipients) {
+    args << "-r" << recipient;
+  }
+  args << "-";
+  if (execBlocking(m_settings.gpgExecutable, args, plaintext) != 0) {
+    qCDebug(lcQtPass) << "Encrypt error on re-encrypt, output:" << output;
+    return false;
+  }
+  return true;
+}
+
+auto ImitatePass::ciphertextHolds(const QString &ciphertext,
+                                  const QString &plaintext) -> bool {
+  QString decrypted;
+  const QStringList args{"-d",          "--quiet", "--batch",
+                         "--use-agent", "--",      pgpg(ciphertext)};
+  if (execBlocking(m_settings.gpgExecutable, args, &decrypted) != 0 ||
+      decrypted.isEmpty()) {
+    qCDebug(lcQtPass) << "Verification failed for:" << ciphertext;
+    return false;
+  }
+  // Defence in depth: gpg said it encrypted, and this is what comes back.
+  if (decrypted.trimmed() != plaintext.trimmed()) {
+    qCDebug(lcQtPass) << "Verification content mismatch for:" << ciphertext;
+    return false;
+  }
+  return true;
+}
+
+auto ImitatePass::commitReencrypted(const QString &fileName) -> bool {
+  if (!gitConfigured()) {
+    return true;
+  }
+  // -C the store so git runs there rather than in QtPass's launch directory
+  // (executeBlocking sets no working directory).
+  const QString store = pgit(m_settings.passStore);
+  if (execBlocking(m_settings.gitExecutable,
+                   {"-C", store, "add", "--", pgit(fileName)}) != 0) {
+    // The file on disk is re-encrypted correctly; only the repository is
+    // now behind. Report it so the caller counts this file as failed and
+    // the run is not pushed.
+    qCDebug(lcQtPass) << "git add failed after re-encrypting:" << fileName;
+    return false;
+  }
+  QString path = QDir(m_settings.passStore).relativeFilePath(fileName);
+  path.replace(Util::endsWithGpg(), "");
+  if (execBlocking(m_settings.gitExecutable,
+                   {"-C", store, "commit", "-m",
+                    "Re-encrypt for " + path + " using QtPass.", "--",
+                    pgit(fileName)}) != 0) {
+    qCDebug(lcQtPass) << "git commit failed after re-encrypting:" << fileName;
+    return false;
+  }
+  return true;
+}
+
 auto ImitatePass::reencryptSingleFile(const QString &fileName,
                                       const QStringList &recipients,
                                       QString *why) -> bool {
   qCDebug(lcQtPass) << "reencrypt" << fileName << "for" << recipients.size()
                     << "recipients";
-  QString local_lastDecrypt;
-  QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
-                      "--batch", "--use-agent", "--",    pgpg(fileName)};
-  int result = execBlocking(m_settings.gpgExecutable, args, &local_lastDecrypt);
-
-  if (result != 0 || local_lastDecrypt.isEmpty()) {
-    qCDebug(lcQtPass) << "Decrypt error on re-encrypt for:" << fileName;
-    return false;
-  }
-
-  if (local_lastDecrypt.right(1) != "\n") {
-    local_lastDecrypt += "\n";
-  }
-
-  // Use passed recipients instead of re-reading from file
   if (recipients.isEmpty()) {
     emit critical(tr("Can not edit"),
                   tr("Could not read encryption key to use, .gpg-id "
                      "file missing or invalid."));
+    return false;
+  }
+  QString plaintext;
+  if (!decryptEntry(fileName, &plaintext)) {
     return false;
   }
 
@@ -898,34 +966,8 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     return false;
   }
   const QString tempPath = scratch.filePath(QStringLiteral("reencrypted.tmp"));
-  // Same encrypt-only flags as Insert(): gpg.conf must not add recipients.
-  args = QStringList{
-      "--yes",           "--batch",  "-eq",         "--compress-algo=none",
-      "--no-encrypt-to", "--output", pgpg(tempPath)};
-  for (const auto &i : recipients) {
-    args.append("-r");
-    args.append(i);
-  }
-  args.append("-");
-  result = execBlocking(m_settings.gpgExecutable, args, local_lastDecrypt);
-
-  if (result != 0) {
-    qCDebug(lcQtPass) << "Encrypt error on re-encrypt for:" << fileName;
-    return false;
-  }
-
-  // Verify encryption worked by attempting to decrypt the temp file
-  QString verifyOutput;
-  args = QStringList{"-d",          "--quiet", "--batch",
-                     "--use-agent", "--",      pgpg(tempPath)};
-  result = execBlocking(m_settings.gpgExecutable, args, &verifyOutput);
-  if (result != 0 || verifyOutput.isEmpty()) {
-    qCDebug(lcQtPass) << "Verification failed for:" << tempPath;
-    return false;
-  }
-  // Verify content matches original decrypted content (defense in depth)
-  if (verifyOutput.trimmed() != local_lastDecrypt.trimmed()) {
-    qCDebug(lcQtPass) << "Verification content mismatch for:" << tempPath;
+  if (!encryptFor(tempPath, recipients, plaintext) ||
+      !ciphertextHolds(tempPath, plaintext)) {
     return false;
   }
 
@@ -950,31 +992,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     }
     return false;
   }
-
-  if (gitConfigured()) {
-    // -C the store so git runs there rather than in QtPass's launch directory
-    // (executeBlocking sets no working directory).
-    const QString store = pgit(m_settings.passStore);
-    if (execBlocking(m_settings.gitExecutable,
-                     {"-C", store, "add", "--", pgit(fileName)}) != 0) {
-      qCDebug(lcQtPass) << "git add failed after re-encrypting:" << fileName;
-      // The file on disk is re-encrypted correctly; only the repository is
-      // now behind. Report it so the caller counts this file as failed and
-      // the run is not pushed.
-      return false;
-    }
-    QString path = QDir(m_settings.passStore).relativeFilePath(fileName);
-    path.replace(Util::endsWithGpg(), "");
-    if (execBlocking(m_settings.gitExecutable,
-                     {"-C", store, "commit", "-m",
-                      "Re-encrypt for " + path + " using QtPass.", "--",
-                      pgit(fileName)}) != 0) {
-      qCDebug(lcQtPass) << "git commit failed after re-encrypting:" << fileName;
-      return false;
-    }
-  }
-
-  return true;
+  return commitReencrypted(fileName);
 }
 
 /**
@@ -1158,47 +1176,33 @@ void ImitatePass::startReencryptWorker(const QString &dir) {
  * interrupted, so its file is neither counted as checked nor reported as
  * failed.
  */
-auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
-  ReencryptResult result;
-  if (m_settings.autoPull && gitConfigured()) {
-    emit statusMsg(tr("Updating password-store"), 2000);
-    if (execBlocking(m_settings.gitExecutable,
-                     {"-C", pgit(m_settings.passStore), "pull"}) != 0) {
-      // A pull that could not reach the remote leaves the store as it was;
-      // one that stopped in a merge leaves conflict markers and an unmerged
-      // index, and re-encrypting on top of that would commit the mess.
-      QString unmerged;
-      execBlocking(m_settings.gitExecutable,
-                   {"-C", pgit(m_settings.passStore), "ls-files", "--unmerged"},
-                   &unmerged);
-      if (!unmerged.trimmed().isEmpty()) {
-        emit critical(tr("Git pull failed"),
-                      tr("The pull left the store with unmerged files. Resolve "
-                         "the conflict before re-encrypting."));
-        result.aborted = true;
-        return result;
-      }
-      emit statusMsg(tr("Git pull failed, re-encrypting the store as it is"),
-                     5000);
-    }
+auto ImitatePass::pullBeforeReencrypt() -> bool {
+  if (!m_settings.autoPull || !gitConfigured()) {
+    return true;
   }
-
-  // Leftovers of an interrupted run first: a restored entry then goes into
-  // the backup commit like everything else, and a stale temporary does not.
-  if (!recoverReencryptLeftovers(dir)) {
-    result.aborted = true;
-    return result;
+  emit statusMsg(tr("Updating password-store"), 2000);
+  if (execBlocking(m_settings.gitExecutable,
+                   {"-C", pgit(m_settings.passStore), "pull"}) == 0) {
+    return true;
   }
-
-  // Create backup before re-encryption - abort if it fails
-  if (!createBackupCommit()) {
-    if (m_reencryptCancel.load())
-      result.cancelled = true;
-    else
-      result.aborted = true;
-    return result;
+  // A pull that could not reach the remote leaves the store as it was; one
+  // that stopped in a merge leaves conflict markers and an unmerged index,
+  // and re-encrypting on top of that would commit the mess.
+  QString unmerged;
+  execBlocking(m_settings.gitExecutable,
+               {"-C", pgit(m_settings.passStore), "ls-files", "--unmerged"},
+               &unmerged);
+  if (!unmerged.trimmed().isEmpty()) {
+    emit critical(tr("Git pull failed"),
+                  tr("The pull left the store with unmerged files. Resolve "
+                     "the conflict before re-encrypting."));
+    return false;
   }
+  emit statusMsg(tr("Git pull failed, re-encrypting the store as it is"), 5000);
+  return true;
+}
 
+auto ImitatePass::entriesToReencrypt(const QString &dir) -> QStringList {
   // Regular files only: a symlink or junction is not a password entry, and
   // following one would decrypt and rewrite something outside the store.
   QStringList skipped;
@@ -1210,6 +1214,55 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
                       "", static_cast<int>(skipped.size())),
                    5000);
   }
+  return files;
+}
+
+auto ImitatePass::recipientsForDir(const QString &fileName,
+                                   QHash<QString, QStringList> &verified,
+                                   QStringList &gpgId, ReencryptResult &result)
+    -> bool {
+  if (!verifyGpgIdForDir(fileName, verified, gpgId)) {
+    if (m_reencryptCancel.load()) {
+      result.cancelled = true;
+    } else {
+      result.aborted = true;
+    }
+    return false;
+  }
+  if (gpgId.isEmpty() && !verified.isEmpty()) {
+    emit critical(tr("GPG ID verification failed"),
+                  tr("Could not verify .gpg-id for directory."));
+    result.aborted = true;
+    return false;
+  }
+  return true;
+}
+
+auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
+  ReencryptResult result;
+  if (!pullBeforeReencrypt()) {
+    result.aborted = true;
+    return result;
+  }
+
+  // Leftovers of an interrupted run first: a restored entry then goes into
+  // the backup commit like everything else, and a stale temporary does not.
+  if (!recoverReencryptLeftovers(dir)) {
+    result.aborted = true;
+    return result;
+  }
+
+  // Create backup before re-encryption - abort if it fails
+  if (!createBackupCommit()) {
+    if (m_reencryptCancel.load()) {
+      result.cancelled = true;
+    } else {
+      result.aborted = true;
+    }
+    return result;
+  }
+
+  const QStringList files = entriesToReencrypt(dir);
   result.total = files.size();
   emit reencryptProgress(0, result.total);
 
@@ -1223,23 +1276,12 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
     }
     const QString fileDir = QFileInfo(fileName).path();
     if (fileDir != currentDir) {
-      if (!verifyGpgIdForDir(fileName, gpgIdFilesVerified, gpgId)) {
-        if (m_reencryptCancel.load())
-          result.cancelled = true;
-        else
-          result.aborted = true;
-        return result;
-      }
-      if (gpgId.isEmpty() && !gpgIdFilesVerified.isEmpty()) {
-        emit critical(tr("GPG ID verification failed"),
-                      tr("Could not verify .gpg-id for directory."));
-        result.aborted = true;
+      if (!recipientsForDir(fileName, gpgIdFilesVerified, gpgId, result)) {
         return result;
       }
       currentDir = fileDir;
     }
-    QStringList actualKeys = getKeysFromFile(fileName);
-    if (actualKeys != gpgId) {
+    if (getKeysFromFile(fileName) != gpgId) {
       QString why;
       if (reencryptSingleFile(fileName, gpgId, &why)) {
         result.reencrypted++;

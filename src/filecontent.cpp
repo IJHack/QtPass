@@ -37,6 +37,68 @@ static auto isLineHidden(const QString &line) -> bool {
  * @param allFields Whether to include all name:value pairs
  * @return Parsed FileContent object
  */
+namespace {
+
+/**
+ * @brief Where an OTP configuration was found, in the order getOtpUri()
+ * prefers: a named field first, then a bare `otpauth://` line, then an
+ * `OTP:` line the template did not promote to a field.
+ */
+struct OtpCandidates {
+  QString field;
+  QString bareLine;
+  QString remainingField;
+
+  /// The first of the three that was found.
+  auto pick() const -> QString {
+    if (!field.isEmpty()) {
+      return field;
+    }
+    return bareLine.isEmpty() ? remainingField : bareLine;
+  }
+};
+
+/**
+ * @brief Take @p line as a `name: value` field when the template asks for
+ * it, or "Template all fields" is on and the value is not a URL.
+ * @param line One line of the entry.
+ * @param templateFields The template's field names.
+ * @param allFields Whether every `name: value` line becomes a field.
+ * @param namedValues Receives the field, if it is one.
+ * @param otp Receives the line's OTP configuration, if it carries one.
+ * @return Whether the line became a field, so the caller stops with it.
+ */
+auto takeNamedValue(const QString &line, const QStringList &templateFields,
+                    bool allFields, NamedValues &namedValues,
+                    OtpCandidates &otp) -> bool {
+  const qsizetype colon = line.indexOf(u':');
+  if (colon < 0) {
+    return false;
+  }
+  const QString name = line.left(colon);
+  const QString value = line.right(line.length() - colon - 1);
+  // A value starting with // means the colon is probably from a URL.
+  if (!templateFields.contains(name) &&
+      !(allFields && !value.startsWith(QStringLiteral("//")))) {
+    // An `OTP:` line that was not promoted to a named value, because the
+    // template does not list it and allFields is off.
+    if (otp.remainingField.isEmpty() && FileContent::isOtpFieldName(name)) {
+      otp.remainingField = value.trimmed();
+    }
+    return false;
+  }
+  namedValues.append({name.trimmed(), value.trimmed()});
+  // Keyed on the value as well as the name: a field called anything at all
+  // whose value is an otpauth URI is still a shared secret.
+  if (otp.field.isEmpty() && (FileContent::isOtpFieldName(name) ||
+                              FileContent::isOtpUriValue(value))) {
+    otp.field = value.trimmed();
+  }
+  return true;
+}
+
+} // namespace
+
 auto FileContent::parse(const QString &fileContent,
                         const QStringList &templateFields, bool allFields)
     -> FileContent {
@@ -48,58 +110,25 @@ auto FileContent::parse(const QString &fileContent,
   QStringList remainingData;
   QStringList remainingDataDisplay;
   NamedValues namedValues;
-  // The OTP configuration can arrive from several places; remember the first
-  // hit for each so getOtpUri() can apply a fixed precedence afterwards.
-  QString otpFromField;
-  QString otpFromBareLine;
-  QString otpFromRemainingField;
+  OtpCandidates otp;
   // The password line itself, for an entry written by `pass otp insert` whose
   // only line is the URI. It is taken off the list above, so the loop below
   // never sees it.
   if (isOtpUri(password)) {
-    otpFromBareLine = password.trimmed();
+    otp.bareLine = password.trimmed();
   }
   for (const QString &line : std::as_const(lines)) {
-    if (line.contains(":")) {
-      qsizetype colon = line.indexOf(':');
-      QString name = line.left(colon);
-      QString value = line.right(line.length() - colon - 1);
-      if ((allFields &&
-           !value.startsWith(
-               "//")) // if value startswith  // colon is probably from a url
-          || templateFields.contains(name)) {
-        namedValues.append({name.trimmed(), value.trimmed()});
-        // Keyed on the value as well as the name: a field called anything at
-        // all whose value is an otpauth URI is still a shared secret.
-        if (otpFromField.isEmpty() &&
-            (FileContent::isOtpFieldName(name) || isOtpUri(value))) {
-          otpFromField = value.trimmed();
-        }
-        continue;
-      }
-      // An `OTP:` line that was not promoted to a named value, because the
-      // template does not list it and allFields is off.
-      if (otpFromRemainingField.isEmpty() &&
-          FileContent::isOtpFieldName(name)) {
-        otpFromRemainingField = value.trimmed();
-      }
+    if (takeNamedValue(line, templateFields, allFields, namedValues, otp)) {
+      continue;
     }
-
     remainingData.append(line);
-    if (isOtpUri(line) && otpFromBareLine.isEmpty()) {
+    if (isOtpUri(line) && otp.bareLine.isEmpty()) {
       // A bare otpauth:// line, the convention the pass-otp extension uses.
-      otpFromBareLine = line.trimmed();
+      otp.bareLine = line.trimmed();
     }
     if (!isLineHidden(line)) {
       remainingDataDisplay.append(line);
     }
-  }
-  QString otpUri = otpFromField;
-  if (otpUri.isEmpty()) {
-    otpUri = otpFromBareLine;
-  }
-  if (otpUri.isEmpty()) {
-    otpUri = otpFromRemainingField;
   }
   // Note that the OTP value stays in namedValues and remainingData: the edit
   // dialog reads the field from there, and PasswordDialog::getPassword() drops
@@ -107,7 +136,7 @@ auto FileContent::parse(const QString &fileContent,
   // on the next save. Suppression happens in the render paths instead, via
   // getRemainingDataForDisplay() and PasswordDisplayPanel.
   return {password, namedValues, remainingData.join("\n"),
-          remainingDataDisplay.join("\n"), otpUri};
+          remainingDataDisplay.join("\n"), otp.pick()};
 }
 
 /**
