@@ -417,6 +417,10 @@ private Q_SLOTS:
   void restoreWindowCentresWhenNothingSaved();
   void menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes();
   void menuBarCanBeHiddenAndComesBackWithCtrlM();
+  void altTapShowsTheHiddenMenuBarUntilTappedAgain();
+  void altPeekEndsOnEscapeAndAfterAShortcut();
+  void altMnemonicOpensAMenuWhileTheBarIsHidden();
+  void altLeavesAMenuBarShownByChoiceAlone();
   void processOutputIsToggledFromTheSettingsMenu();
   void gitButtonsOnlyExistWhenGitIsInUse();
   void searchMatchesWordsLiterallyAndInOrder();
@@ -531,6 +535,7 @@ void tst_mainwindow::init() {
   {
     AppSettings s = QtPassSettings::load();
     s.showProcessOutput = true;
+    s.showMenuBar = false;
     QtPassSettings::save(s);
   }
   // Re-apply gpg path: initExecutables() inside the constructor overwrites
@@ -1637,6 +1642,123 @@ void tst_mainwindow::menuBarCanBeHiddenAndComesBackWithCtrlM() {
   QVERIFY2(m_window->menuBar()->isVisibleTo(m_window.get()),
            "Ctrl+M brings the bar back");
   QVERIFY(QtPassSettings::load().showMenuBar);
+#endif
+}
+
+namespace {
+/** @brief A fresh, active main window with the menu bar hidden by choice. */
+auto bareActiveWindow(QScopedPointer<MainWindow> &window) -> bool {
+  AppSettings s = QtPassSettings::load();
+  s.showMenuBar = false;
+  QtPassSettings::save(s);
+  window.reset(new MainWindow);
+  window->show();
+  if (!QTest::qWaitForWindowExposed(window.data())) {
+    return false;
+  }
+  window->activateWindow();
+  return QTest::qWaitForWindowActive(window.data()) &&
+         !window->menuBar()->isVisible();
+}
+} // namespace
+
+/**
+ * @brief A lone Alt tap shows the hidden menu bar, a second one hides it, and
+ *        the stored choice stays "hidden" throughout.
+ */
+void tst_mainwindow::altTapShowsTheHiddenMenuBarUntilTappedAgain() {
+#ifdef Q_OS_MACOS
+  QSKIP("the menu bar is the system's on macOS");
+#else
+  QVERIFY(bareActiveWindow(m_window));
+  QMenuBar *bar = m_window->menuBar();
+
+  QTest::keyPress(m_window.get(), Qt::Key_Alt);
+  QVERIFY2(bar->isVisible(), "Alt shows the bar at once, for mnemonics");
+  QTest::keyRelease(m_window.get(), Qt::Key_Alt);
+  QTest::qWait(50);
+  QVERIFY2(bar->isVisible(), "and a lone tap leaves it up");
+  QVERIFY(!QtPassSettings::load().showMenuBar);
+
+  QTest::keyClick(m_window.get(), Qt::Key_Alt);
+  QTRY_VERIFY2(!bar->isVisible(), "the second tap hides it again");
+  QVERIFY(!QtPassSettings::load().showMenuBar);
+#endif
+}
+
+/**
+ * @brief Escape ends a peek, and so does an Alt shortcut that was not a menu,
+ *        such as Alt+Left in the tree.
+ */
+void tst_mainwindow::altPeekEndsOnEscapeAndAfterAShortcut() {
+#ifdef Q_OS_MACOS
+  QSKIP("the menu bar is the system's on macOS");
+#else
+  QVERIFY(bareActiveWindow(m_window));
+  QMenuBar *bar = m_window->menuBar();
+
+  QTest::keyClick(m_window.get(), Qt::Key_Alt);
+  QVERIFY(bar->isVisible());
+  QTest::keyClick(m_window.get(), Qt::Key_Escape);
+  QTRY_VERIFY2(!bar->isVisible(), "Escape hides the peeking bar");
+
+  QTest::keyPress(m_window.get(), Qt::Key_Alt);
+  QVERIFY(bar->isVisible());
+  QTest::keyClick(m_window.get(), Qt::Key_Left, Qt::AltModifier);
+  QTest::keyRelease(m_window.get(), Qt::Key_Alt);
+  QTRY_VERIFY2(!bar->isVisible(),
+               "an Alt shortcut that opened no menu does not leave it up");
+#endif
+}
+
+/**
+ * @brief Alt+F opens the File menu although the bar was hidden, and the bar
+ *        goes again once the menu closes.
+ */
+void tst_mainwindow::altMnemonicOpensAMenuWhileTheBarIsHidden() {
+#ifdef Q_OS_MACOS
+  QSKIP("the menu bar is the system's on macOS");
+#else
+  QVERIFY(bareActiveWindow(m_window));
+  QMenuBar *bar = m_window->menuBar();
+  auto *fileMenu = m_window->findChild<QMenu *>(QStringLiteral("menuFile"));
+  QVERIFY(fileMenu != nullptr);
+
+  QTest::keyPress(m_window.get(), Qt::Key_Alt);
+  QTest::keyClick(m_window.get(), Qt::Key_F, Qt::AltModifier);
+  QTRY_VERIFY2(fileMenu->isVisible(), "Alt+F opens File");
+  QTest::keyRelease(fileMenu, Qt::Key_Alt);
+  QVERIFY2(bar->isVisible(), "the bar stays while its menu is open");
+
+  fileMenu->close();
+  QTRY_VERIFY2(!bar->isVisible(), "and goes when the menu closes");
+  QVERIFY(!QtPassSettings::load().showMenuBar);
+#endif
+}
+
+/**
+ * @brief With the bar shown by choice Alt taps change nothing: they must not
+ *        hide what the user asked for.
+ */
+void tst_mainwindow::altLeavesAMenuBarShownByChoiceAlone() {
+#ifdef Q_OS_MACOS
+  QSKIP("the menu bar is the system's on macOS");
+#else
+  QVERIFY(bareActiveWindow(m_window));
+  auto *toggle =
+      m_window->findChild<QAction *>(QStringLiteral("actionShowMenuBar"));
+  QVERIFY(toggle != nullptr);
+
+  // Checking "Show menu bar" during a peek keeps the bar for good.
+  QTest::keyClick(m_window.get(), Qt::Key_Alt);
+  toggle->trigger();
+  QVERIFY(QtPassSettings::load().showMenuBar);
+
+  QTest::keyClick(m_window.get(), Qt::Key_Alt);
+  QTest::keyClick(m_window.get(), Qt::Key_Alt);
+  QTest::keyClick(m_window.get(), Qt::Key_Escape);
+  QTest::qWait(50);
+  QVERIFY2(m_window->menuBar()->isVisible(), "Alt and Escape leave it alone");
 #endif
 }
 

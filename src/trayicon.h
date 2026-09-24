@@ -35,6 +35,13 @@ public:
    */
   auto getIsAllocated() -> bool;
 
+  /**
+   * @brief Put one of the window's toggles in the tray menu, above Quit.
+   * @param action The window's own action, so its checked state is the same
+   *        in both places. Ignored when there is no tray.
+   */
+  void addToggle(QAction *action);
+
 signals:
 
 public slots:
@@ -59,6 +66,7 @@ private:
   QAction *maximizeAction{nullptr};
   QAction *restoreAction{nullptr};
   QAction *quitAction{nullptr};
+  QAction *quitSeparator{nullptr};
 
   QSystemTrayIcon *sysTrayIcon{nullptr};
   QMenu *trayIconMenu{nullptr};
