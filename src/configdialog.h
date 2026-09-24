@@ -50,18 +50,6 @@ public:
   void useSelection(bool useSelection);
 
   /**
-   * @brief Enable or disable autoclear of the clipboard.
-   * @param useAutoclear true to enable autoclear.
-   */
-  void useAutoclear(bool useAutoclear);
-
-  /**
-   * @brief Enable or disable autoclear of the panel.
-   * @param useAutoclearPanel true to enable panel autoclear.
-   */
-  void useAutoclearPanel(bool useAutoclearPanel);
-
-  /**
    * @brief Return all configured profiles.
    * @return Hash of profile name to key-value settings map.
    */
@@ -121,12 +109,6 @@ public:
    */
   auto getPasswordConfiguration() -> PasswordConfiguration;
 
-  /**
-   * @brief Enable or disable password file templating.
-   * @param useTemplate true to enable the template.
-   */
-  void useTemplate(bool useTemplate);
-
 protected:
 private slots:
   void on_accepted();
@@ -142,15 +124,12 @@ private slots:
   void on_comboBoxClipboard_activated(int);
   void on_passwordCharTemplateSelector_activated(int);
   void on_checkBoxSelection_clicked();
-  void on_checkBoxAutoclear_clicked();
-  void on_checkBoxAutoclearPanel_clicked();
   void on_addButton_clicked();
   void on_deleteButton_clicked();
   void on_profilePathBrowse_clicked();
   void on_checkBoxUseTrayIcon_clicked();
   void on_checkBoxUseGit_clicked();
   void on_checkBoxUsePwgen_clicked();
-  void on_checkBoxUseTemplate_clicked();
   void onProfileSelected(int row);
   void onProfileNameEdited(const QString &name);
   void onProfilePathEdited(const QString &path);

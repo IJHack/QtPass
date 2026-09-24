@@ -76,6 +76,7 @@
 #include "../../../src/pass.h"
 #include "../../../src/passworddialog.h"
 #include "../../../src/passworddisplaypanel.h"
+#include "../../../src/processoutputpanel.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/trayicon.h"
 #include "../../../src/usersdialog.h"
@@ -416,6 +417,7 @@ private Q_SLOTS:
   void restoreWindowCentresWhenNothingSaved();
   void menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes();
   void menuBarCanBeHiddenAndComesBackWithCtrlM();
+  void processOutputIsToggledFromTheSettingsMenu();
   void gitButtonsOnlyExistWhenGitIsInUse();
   void searchMatchesWordsLiterallyAndInOrder();
   void quitIsAnActionNotAStrayShortcut();
@@ -1577,6 +1579,28 @@ auto menuActionNames(QMenuBar *bar, const QString &menuName) -> QStringList {
 } // namespace
 
 /**
+ * @brief Settings > Show process output shows and hides the console dock,
+ *        remembers the choice, and follows a change made elsewhere.
+ */
+void tst_mainwindow::processOutputIsToggledFromTheSettingsMenu() {
+  auto *toggle =
+      m_window->findChild<QAction *>(QStringLiteral("actionShowProcessOutput"));
+  QVERIFY(toggle != nullptr);
+  QVERIFY(toggle->isCheckable());
+  auto *dock = m_window->findChild<ProcessOutputPanel *>();
+  QVERIFY(dock != nullptr);
+  const bool initial = toggle->isChecked();
+  QCOMPARE(dock->isVisibleTo(m_window.get()), initial);
+
+  toggle->trigger();
+  QCOMPARE(dock->isVisibleTo(m_window.get()), !initial);
+  QCOMPARE(QtPassSettings::load().showProcessOutput, !initial);
+  toggle->trigger();
+  QCOMPARE(dock->isVisibleTo(m_window.get()), initial);
+  QCOMPARE(QtPassSettings::load().showProcessOutput, initial);
+}
+
+/**
  * @brief Settings > Show menu bar (Ctrl+M) hides the bar for those who liked
  *        the bare window, remembers the choice, and still answers Ctrl+M
  *        while the bar - and with it the menu the action sits in - is gone.
@@ -1721,7 +1745,8 @@ void tst_mainwindow::menuBarCarriesEveryToolbarActionAndTheMenuOnlyOnes() {
                QStringLiteral("actionPush"), QStringLiteral("actionOtp")}));
   QCOMPARE(menuActionNames(bar, QStringLiteral("menuSettings")),
            (QStringList{QStringLiteral("actionConfig"),
-                        QStringLiteral("actionShowMenuBar")}));
+                        QStringLiteral("actionShowMenuBar"),
+                        QStringLiteral("actionShowProcessOutput")}));
   QCOMPARE(
       menuActionNames(bar, QStringLiteral("menuHelp")),
       (QStringList{QStringLiteral("actionFaq"), QStringLiteral("actionAbout"),

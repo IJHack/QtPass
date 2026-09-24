@@ -165,6 +165,19 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   // After addDockWidget so our preference wins over any cached state
   // QMainWindow applies; restoreWindow() already processed the saved layout.
   m_processOutput->setVisible(QtPassSettings::isShowProcessOutput());
+  // From the setting, not isVisible(): the window is not shown yet, so no
+  // child of it reports visible.
+  ui->actionShowProcessOutput->setChecked(
+      QtPassSettings::isShowProcessOutput());
+  connect(ui->actionShowProcessOutput, &QAction::toggled, this,
+          [this](bool show) {
+            m_processOutput->setVisible(show);
+            AppSettings s = QtPassSettings::load();
+            if (s.showProcessOutput != show) {
+              s.showProcessOutput = show;
+              QtPassSettings::save(s);
+            }
+          });
 
   connect(QtPassSettings::getPass(), &Pass::finishedAnyWithPid, this,
           [this](const QString &out, const QString &err, Enums::PROCESS pid) {
@@ -1705,5 +1718,8 @@ void MainWindow::onProcessOutput(const QString &output, bool isError,
 }
 
 void MainWindow::updateProcessOutputVisibility() {
+  // The action's toggled handler shows or hides the dock.
+  ui->actionShowProcessOutput->setChecked(
+      QtPassSettings::isShowProcessOutput());
   m_processOutput->setVisible(QtPassSettings::isShowProcessOutput());
 }
