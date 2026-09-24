@@ -117,19 +117,27 @@ auto normalisedKeyId(const QString &id) -> QString {
       .toUpper();
 }
 
-/// Whether @p recipient, as a .gpg-id lists it, names @p key: its email or
-/// UID, or its key ID in any length gpg accepts. The key carries its
-/// fingerprint, the list may carry a long or short ID (a suffix of it) or
-/// the fingerprint; eight characters is the shortest ID gpg resolves.
+/// Whether @p recipient, as a .gpg-id lists it, names @p key the way gpg's
+/// -r resolves it: a key ID in any length gpg accepts (the key carries its
+/// fingerprint, the list may carry a long or short ID, a suffix of it, or
+/// the fingerprint; eight characters is the shortest), or else a name,
+/// matched case-insensitively as a substring of the UID after gpg's
+/// "=", "<...>", "@" and "*" markers.
 auto answersTo(const UserInfo &key, const QString &recipient) -> bool {
-  if (!key.name.isEmpty() &&
-      (recipient == key.name || recipient == key.name.section('@', 0, 0))) {
-    return true;
+  static const QRegularExpression hexId(
+      QStringLiteral("^(0x)?[0-9A-Fa-f]{8,}$"));
+  if (hexId.match(recipient.trimmed()).hasMatch()) {
+    const QString id = normalisedKeyId(recipient);
+    const QString keyId = normalisedKeyId(key.key_id);
+    return keyId.endsWith(id) || (keyId.size() >= 8 && id.endsWith(keyId));
   }
-  const QString id = normalisedKeyId(recipient);
-  const QString keyId = normalisedKeyId(key.key_id);
-  return (id.size() >= 8 && keyId.endsWith(id)) ||
-         (keyId.size() >= 8 && id.endsWith(keyId));
+  QString term = recipient.trimmed();
+  if (term.startsWith(u'=') || term.startsWith(u'@') || term.startsWith(u'*')) {
+    term.remove(0, 1);
+  } else if (term.startsWith(u'<') && term.endsWith(u'>')) {
+    term = term.mid(1, term.size() - 2);
+  }
+  return !term.isEmpty() && key.name.contains(term, Qt::CaseInsensitive);
 }
 
 } // namespace

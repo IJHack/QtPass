@@ -829,13 +829,16 @@ void tst_usersdialog::emptyKeyringRejectsTheDialogWithACriticalBox() {
 
 /**
  * @brief A .gpg-id may name a key by its long or short ID (0x-prefixed or
- *        not) rather than its fingerprint; gpg resolves it, and the dialog
- *        must not also list it as "Key not found in keyring".
+ *        not), its email or part of its UID rather than its fingerprint; gpg
+ *        resolves it, and the dialog must not also list it as "Key not found
+ *        in keyring".
  */
 void tst_usersdialog::recipientByShortOrLongIdIsNotListedAsNotFound() {
   // One recipient per list: the stand-in gpg answers by substring.
-  for (const QByteArray &line : {QByteArrayLiteral("31850CF72D9CDDE9"),
-                                 QByteArrayLiteral("0x2d9cdde9")}) {
+  for (const QByteArray &line :
+       {QByteArrayLiteral("31850CF72D9CDDE9"), QByteArrayLiteral("0x2d9cdde9"),
+        QByteArrayLiteral("alice@example.org"),
+        QByteArrayLiteral("<alice@example.org>"), QByteArrayLiteral("Alice")}) {
     QTemporaryDir store;
     QVERIFY(store.isValid());
     QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
