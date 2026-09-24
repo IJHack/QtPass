@@ -188,7 +188,7 @@
         <location filename="../src/configdialog.ui" line="339"/>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Never</source>
-        <translation type="unfinished">Ніколи</translation>
+        <translation>Ніколи</translation>
     </message>
     <message>
         <source>Password generation:</source>
@@ -202,7 +202,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="626"/>
         <source>characters</source>
-        <translation type="unfinished">Символів</translation>
+        <translation>Символів</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
@@ -212,22 +212,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="810"/>
         <source>Fields:</source>
-        <translation type="unfinished">Поля:</translation>
+        <translation>Поля:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="824"/>
         <source>Off</source>
-        <translation type="unfinished">Вимкнено</translation>
+        <translation>Вимкнено</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="829"/>
         <source>Template fields</source>
-        <translation type="unfinished">Поля шаблону</translation>
+        <translation>Поля шаблону</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="834"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
-        <translation type="unfinished">Поля шаблону та кожен рядок «key: value»</translation>
+        <translation>Поля шаблону та кожен рядок «key: value»</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
@@ -494,17 +494,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">Система</translation>
+        <translation>Система</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Використовувати в області повідомлень</translation>
+        <translation>Використовувати в області повідомлень</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">Розширення</translation>
+        <translation>Розширення</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
@@ -515,7 +515,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
-        <translation type="unfinished">Секунди</translation>
+        <translation>Секунди</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
@@ -536,12 +536,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
         <source>Password generation</source>
-        <translation type="unfinished">Генерація пароля</translation>
+        <translation>Генерація пароля</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Необов&apos;язковий шлях для перевизначення SSH_AUTH_SOCK. Залиште порожнім для автоматичного зондування через gpgconf.</translation>
+        <translation>Необов&apos;язковий шлях для перевизначення SSH_AUTH_SOCK. Залиште порожнім для автоматичного зондування через gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
@@ -1391,7 +1391,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>%1 could not be re-encrypted: %2</source>
-        <translation type="unfinished">Не вдалося повторно зашифрувати %1: %2</translation>
+        <translation>Не вдалося повторно зашифрувати %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1101"/>
@@ -2075,12 +2075,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Show &amp;process output</source>
-        <translation type="unfinished">Показати &amp;вивід процесів</translation>
+        <translation>Показати &amp;вивід процесів</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="500"/>
         <source>Show or hide the output of git, gpg and pass</source>
-        <translation type="unfinished">Показати або приховати вивід git, gpg і pass</translation>
+        <translation>Показати або приховати вивід git, gpg і pass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
@@ -2105,7 +2105,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
         <source>Settings</source>
-        <translation type="unfinished">Налаштування</translation>
+        <translation>Налаштування</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
@@ -2334,7 +2334,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Ви впевнені, що хочете видалити %1?</translation>
+        <translation>Ви впевнені, що хочете видалити %1?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1050"/>
@@ -2512,12 +2512,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
-        <translation type="unfinished">Ви впевнені, що хочете видалити %1 разом з усім вмістом?</translation>
+        <translation>Ви впевнені, що хочете видалити %1 разом з усім вмістом?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
-        <translation type="unfinished">Увага: у вказаній папці є неочікувані файли, перевірте їх, перш ніж продовжити.</translation>
+        <translation>Увага: у вказаній папці є неочікувані файли, перевірте їх, перш ніж продовжити.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1059"/>
