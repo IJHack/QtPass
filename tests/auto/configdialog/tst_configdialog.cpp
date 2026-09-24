@@ -30,6 +30,7 @@
 #include "../../../src/configdialog.h"
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/qtpasssettings.h"
+#include "../testpass.h"
 #include "../testsettings.h"
 
 // QMessageBox shows no window title on macOS (Apple's guidelines) and Qt
@@ -46,18 +47,6 @@
 #endif
 
 namespace {
-/// A two-key `gpg --with-colons` listing for the stand-in gpg, so a
-/// recipients dialog opened for a new profile has something to offer.
-const char kColonListing[] =
-    "pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA::::::23::0:\n"
-    "fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:\n"
-    "uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Alice "
-    "<alice@example.org>::::::::::0:\n"
-    "pub:f:4096:1:693A0AF3FA364E76:1775005968:::f:::escarESCA::::::23::0:\n"
-    "fpr:::::::::4EF2550F79F4E9E68B09F71D693A0AF3FA364E76:\n"
-    "uid:f::::1775005968::8AA011711F27F6E08DF71653718C299A13B323A0::Bob "
-    "<bob@example.org>::::::::::0:\n";
-
 /**
  * @brief Write an executable /bin/sh script that stands in for an external
  * program. The script restores a sane PATH for its own tools, since the

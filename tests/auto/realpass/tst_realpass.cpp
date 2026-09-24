@@ -12,6 +12,7 @@
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/realpass.h"
 #include "../../../src/userinfo.h"
+#include "../testpass.h"
 #include "../testsettings.h"
 
 /**
@@ -102,19 +103,6 @@ auto tst_realpass::makePass() -> RealPass * {
 }
 
 // QTRY_* macros return from a void function; this variant returns a value.
-#define QTRY_VERIFY_WITH_TIMEOUT_RETURN(expr, timeout, ret)                    \
-  do {                                                                         \
-    QElapsedTimer timer;                                                       \
-    timer.start();                                                             \
-    while (!(expr) && timer.elapsed() < (timeout)) {                           \
-      QTest::qWait(20);                                                        \
-    }                                                                          \
-    if (!(expr)) {                                                             \
-      QTest::qFail("stand-in pass was not invoked", __FILE__, __LINE__);       \
-      return ret;                                                              \
-    }                                                                          \
-  } while (false)
-
 auto tst_realpass::waitForCall() -> Call {
   Call call;
   QTRY_VERIFY_WITH_TIMEOUT_RETURN(QFile::exists(m_log), 5000, call);

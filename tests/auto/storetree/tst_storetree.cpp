@@ -9,6 +9,7 @@
 #include <QtTest>
 
 #include "../../../src/storetree.h"
+#include "../testpass.h"
 
 /**
  * @brief StoreTree without a MainWindow: re-rooting, filtering and the two
@@ -52,19 +53,6 @@ auto tst_storetree::makeEntry(const QString &relative) -> QString {
   }
   return path;
 }
-
-// QTRY_* macros return void; this variant returns a value from a helper.
-#define QTRY_VERIFY_WITH_TIMEOUT_RETURN(expr, timeout, ret)                    \
-  do {                                                                         \
-    QElapsedTimer timer;                                                       \
-    timer.start();                                                             \
-    while (!(expr) && timer.elapsed() < (timeout)) {                           \
-      QTest::qWait(20);                                                        \
-    }                                                                          \
-    if (!(expr)) {                                                             \
-      return ret;                                                              \
-    }                                                                          \
-  } while (false)
 
 auto tst_storetree::waitFor(StoreTree &tree, const QString &absolute)
     -> QModelIndex {
