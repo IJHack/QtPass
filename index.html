@@ -361,7 +361,7 @@
               class="hero-platform"
               aria-label="Runs on Linux, Windows, macOS and FreeBSD"
             >
-              <a title="Install on Linux" href="/downloads#linux-bsd"
+              <a title="Install on Linux" href="/downloads#linux"
                 ><img
                   class="compatible"
                   src="images/linux.png"
@@ -794,8 +794,22 @@
         <h4>Gentoo</h4>
         <pre><code>emerge -atv qtpass</code></pre>
 
+        <h3>
+          <a
+            id="bsd"
+            class="anchor"
+            href="#bsd"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >BSD
+        </h3>
+
         <h4>FreeBSD</h4>
         <pre><code>pkg install qtpass</code></pre>
+
+        <h4>OpenBSD</h4>
+        <pre><code>pkg_add qtpass</code></pre>
 
         <h4><a href="/downloads">More installation options</a></h4>
 
@@ -810,7 +824,7 @@
           >Build from source
         </h3>
         <ul>
-          <li>QtPass requires Qt 5.15 or later (Qt 6 recommended)</li>
+          <li>QtPass requires Qt 6.8 or later</li>
           <li>GnuPG 2.2+</li>
           <li>Optional: Git and pass</li>
         </ul>
@@ -823,11 +837,6 @@
 
         <pre><code>brew install qt
 qmake6 &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
-
-        <p>
-          <strong>Note:</strong> QtPass uses Qt6 by default. For Qt5, use
-          <code>qmake</code> instead of <code>qmake6</code>.
-        </p>
 
         <p>
           <a href="/faq">FAQ</a>, <a href="/screenshots">screenshots</a> and a

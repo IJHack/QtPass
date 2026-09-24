@@ -270,7 +270,7 @@
             "name": "Can not find either qmake or qmake6",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "QtPass uses Qt6 by default. Use: qmake6 - for Qt6 (recommended, default) qmake - for Qt5 If you get an error like \"QApplication\" not found or Qt installation issues, make sure you're using the correct qmake version for your Qt installation. On some systems, you may need to specify the full path, e.g., /usr/lib/qt6/bin/qmake6."
+              "text": "QtPass needs Qt 6.8 or newer and builds with qmake6. If you get an error like \"QApplication\" not found or Qt installation issues, make sure you're using the correct qmake version for your Qt installation. On some systems, you may need to specify the full path, e.g., /usr/lib/qt6/bin/qmake6."
             }
           },
           {
@@ -1036,11 +1036,9 @@ exec /Applications/QtPass.app/Contents/MacOS/qtpass &quot;$@&quot;
             ><span class="octicon octicon-link"></span></a
           >Can not find either qmake or qmake6
         </h3>
-        <p>QtPass uses Qt6 by default. Use:</p>
-        <ul>
-          <li><code>qmake6</code> - for Qt6 (recommended, default)</li>
-          <li><code>qmake</code> - for Qt5</li>
-        </ul>
+        <p>
+          QtPass needs Qt 6.8 or newer and builds with <code>qmake6</code>.
+        </p>
         <p>
           If you get an error like &quot;QApplication&quot; not found or Qt
           installation issues, make sure you&#39;re using the correct qmake
