@@ -15,6 +15,8 @@
 
 #include "base32.h"
 
+#include <optional>
+
 namespace {
 
 constexpr quint64 MASK_40BIT = quint64(0xF8) << 32;
@@ -55,6 +57,54 @@ auto countPadding(const QByteArray &encodedData) -> int {
   return nPads;
 }
 
+/**
+ * @brief What the padding says about the last quantum.
+ *
+ * A base32 encoder pads to a multiple of 8 with 0, 1, 3, 4 or 6 '='; any
+ * other count cannot come from one. KeePassXC fell through to "no special
+ * bytes" for 2, 5 and 7 and returned wrong-length data.
+ */
+struct Tail {
+  int bytes = 0;  ///< Bytes the final quantum carries; 0 for a full one.
+  int offset = 0; ///< Bits of the final quantum that are padding.
+};
+
+/// The tail shape for @p nPads trailing '=', or nothing for a count no
+/// encoder produces.
+auto tailShape(int nPads) -> std::optional<Tail> {
+  switch (nPads) {
+  case 0:
+    return Tail{};
+  case 1:
+    return Tail{4, 3};
+  case 3:
+    return Tail{3, 1};
+  case 4:
+    return Tail{2, 4};
+  case 6:
+    return Tail{1, 2};
+  default:
+    return std::nullopt;
+  }
+}
+
+/// The alphabet position of @p ch (upper or lower case, digits 2-7), or
+/// nothing when it is not a base32 symbol.
+auto symbolValue(quint8 ch) -> std::optional<quint8> {
+  if ((ASCII_A <= ch && ch <= ASCII_Z) || (ASCII_a <= ch && ch <= ASCII_z)) {
+    ch -= ASCII_A;
+    if (ch >= ALPH_POS_2) {
+      // Fold lower case onto the same alphabet positions as upper case.
+      ch -= ASCII_a - ASCII_A;
+    }
+    return ch;
+  }
+  if (ASCII_2 <= ch && ch <= ASCII_7) {
+    return static_cast<quint8>(ch - ASCII_2 + ALPH_POS_2);
+  }
+  return std::nullopt;
+}
+
 } // namespace
 
 /**
@@ -63,49 +113,19 @@ auto countPadding(const QByteArray &encodedData) -> int {
  * @return Decoded bytes, or an empty QByteArray on any error.
  */
 auto Base32::decode(const QByteArray &encodedData) -> QByteArray {
-  if (encodedData.isEmpty()) {
-    return {};
-  }
-
   // Strict: a well-formed base32 string is always padded to a multiple of 8.
-  if (encodedData.size() % 8 != 0) {
+  if (encodedData.isEmpty() || encodedData.size() % 8 != 0) {
     return {};
   }
-
   const int nPads = countPadding(encodedData);
-
-  int specialOffset = 0;
-  int nSpecialBytes = 0;
-
-  switch (nPads) { // in {0, 1, 3, 4, 6}
-  case 1:
-    nSpecialBytes = 4;
-    specialOffset = 3;
-    break;
-  case 3:
-    nSpecialBytes = 3;
-    specialOffset = 1;
-    break;
-  case 4:
-    nSpecialBytes = 2;
-    specialOffset = 4;
-    break;
-  case 6:
-    nSpecialBytes = 1;
-    specialOffset = 2;
-    break;
-  case 0:
-    break;
-  default:
-    // 2, 5 and 6+ trailing '=' cannot be produced by a base32 encoder.
-    // KeePassXC fell through to "no special bytes" here and returned
-    // wrong-length data; reject instead.
+  const std::optional<Tail> tail = tailShape(nPads);
+  if (!tail) {
     return {};
   }
 
   const qsizetype nQuanta = encodedData.size() / 8;
   const qsizetype nBytes =
-      nSpecialBytes > 0 ? (nQuanta - 1) * 5 + nSpecialBytes : nQuanta * 5;
+      tail->bytes > 0 ? (nQuanta - 1) * 5 + tail->bytes : nQuanta * 5;
 
   QByteArray data(nBytes, Qt::Uninitialized);
   // Written through a raw pointer to avoid QByteArray's detach check on every
@@ -123,35 +143,25 @@ auto Base32::decode(const QByteArray &encodedData) -> QByteArray {
     int nQuantumBytes = 5;
 
     for (int n = 0; n < 8; ++n) {
-      auto ch = static_cast<quint8>(encodedData.at(i++));
-      if ((ASCII_A <= ch && ch <= ASCII_Z) ||
-          (ASCII_a <= ch && ch <= ASCII_z)) {
-        ch -= ASCII_A;
-        if (ch >= ALPH_POS_2) {
-          // Fold lower case onto the same alphabet positions as upper case.
-          ch -= ASCII_a - ASCII_A;
-        }
-      } else if (ASCII_2 <= ch && ch <= ASCII_7) {
-        ch -= ASCII_2;
-        ch += ALPH_POS_2;
-      } else if (ASCII_EQ == ch) {
+      const auto ch = static_cast<quint8>(encodedData.at(i++));
+      if (ASCII_EQ == ch) {
         if (i - 1 < firstPad) {
           // '=' before the trailing run is not padding, it is malformed input.
           return {};
         }
         if (i == encodedData.size()) {
           // Finished with the short final quantum.
-          quantum >>= specialOffset;
-          nQuantumBytes = nSpecialBytes;
+          quantum >>= tail->offset;
+          nQuantumBytes = tail->bytes;
         }
         continue;
-      } else {
-        // Illegal character.
+      }
+      const std::optional<quint8> value = symbolValue(ch);
+      if (!value) {
         return {};
       }
-
       quantum <<= 5;
-      quantum |= ch;
+      quantum |= *value;
     }
 
     const int offset = (nQuantumBytes - 1) * 8;

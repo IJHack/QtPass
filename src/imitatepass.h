@@ -142,6 +142,39 @@ protected:
   auto reencryptSingleFile(const QString &fileName,
                            const QStringList &recipients, QString *why) -> bool;
   /**
+   * @brief Decrypt @p fileName for re-encryption.
+   * @param fileName The entry to read.
+   * @param plaintext Receives what gpg printed, with a trailing newline.
+   * @return Whether gpg decrypted it to something.
+   */
+  auto decryptEntry(const QString &fileName, QString *plaintext) -> bool;
+  /**
+   * @brief Encrypt @p plaintext to @p recipients, into @p output.
+   * @param output Where gpg writes the ciphertext; outside the store.
+   * @param recipients The keys to encrypt to; gpg.conf adds none.
+   * @param plaintext What to encrypt, fed on stdin.
+   * @return Whether gpg wrote the ciphertext.
+   */
+  auto encryptFor(const QString &output, const QStringList &recipients,
+                  const QString &plaintext) -> bool;
+  /**
+   * @brief Decrypt @p ciphertext again and compare it with @p plaintext, so
+   * nothing replaces an entry until it is known to hold what it held.
+   * @param ciphertext The file gpg just wrote.
+   * @param plaintext What it must decrypt to.
+   * @return Whether it does.
+   */
+  auto ciphertextHolds(const QString &ciphertext, const QString &plaintext)
+      -> bool;
+  /**
+   * @brief Stage and commit a re-encrypted entry, when the store is a Git
+   * repository QtPass manages.
+   * @param fileName The entry that was replaced.
+   * @return Whether the repository is up to date with the file; false makes
+   * the run count the file as failed, so a partial store is not pushed.
+   */
+  auto commitReencrypted(const QString &fileName) -> bool;
+  /**
    * @brief Resolve destination for move operation.
    * @param src Source path.
    * @param dest Destination path.
@@ -455,6 +488,31 @@ private:
    * @return Counts and the list of files that could not be re-encrypted.
    */
   auto reencryptFiles(const QString &dir) -> ReencryptResult;
+  /**
+   * @brief Pull before a run, when the store is a Git repository and
+   * automatic pulling is on.
+   * @return Whether re-encrypting may go ahead: false only when the pull
+   * left unmerged files, which must be resolved first.
+   */
+  auto pullBeforeReencrypt() -> bool;
+  /**
+   * @brief The entries under @p dir a run considers, telling the user about
+   * anything skipped for not being a regular file.
+   * @param dir Directory to walk, recursively.
+   * @return The `.gpg` files, links and special files left out.
+   */
+  auto entriesToReencrypt(const QString &dir) -> QStringList;
+  /**
+   * @brief The verified recipients for the folder @p fileName sits in.
+   * @param fileName An entry in the folder.
+   * @param verified Cache of the `.gpg-id` files already checked.
+   * @param gpgId Receives the recipients to encrypt that folder to.
+   * @param result Marked cancelled or aborted when the answer is no.
+   * @return Whether the run may go on with this folder.
+   */
+  auto recipientsForDir(const QString &fileName,
+                        QHash<QString, QStringList> &verified,
+                        QStringList &gpgId, ReencryptResult &result) -> bool;
   /**
    * @brief Deal with what a crashed or failed earlier run left under @p dir
    * before touching anything: stale temporaries (today's staged

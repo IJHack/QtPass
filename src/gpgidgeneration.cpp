@@ -281,6 +281,24 @@ auto relativeFolder(const QString &path, const QString &root)
 }
 } // namespace
 
+namespace {
+
+/// The digits of a generation line, or nothing when the line does not hold
+/// one ASCII decimal number of at most kMaxDigits digits and nothing else.
+auto generationDigits(const QByteArray &digits) -> std::optional<qint64> {
+  if (digits.isEmpty() || digits.size() > kMaxDigits) {
+    return std::nullopt;
+  }
+  for (const char c : digits) {
+    if (c < '0' || c > '9') {
+      return std::nullopt;
+    }
+  }
+  return digits.toLongLong();
+}
+
+} // namespace
+
 auto GpgIdGeneration::parse(const QByteArray &contents, QString *error)
     -> std::optional<Header> {
   std::optional<qint64> generation;
@@ -296,38 +314,36 @@ auto GpgIdGeneration::parse(const QByteArray &contents, QString *error)
     if (!line.startsWith(kOurComment)) {
       continue;
     }
+    QString complaint;
     if (line.startsWith(kGenerationPrefix)) {
-      const QByteArray digits = line.mid(kGenerationPrefix.size());
-      bool ok = digits.size() >= 1 && digits.size() <= kMaxDigits;
-      for (const char c : digits) {
-        ok = ok && c >= '0' && c <= '9';
+      const std::optional<qint64> value =
+          generationDigits(line.mid(kGenerationPrefix.size()));
+      if (generation) {
+        complaint = tr("The list carries more than one generation line.");
+      } else if (!value) {
+        complaint = tr("The generation line is malformed: %1")
+                        .arg(QString::fromUtf8(line));
+      } else {
+        generation = value;
+        continue;
       }
-      if (!ok || generation) {
-        if (error)
-          *error = generation
-                       ? tr("The list carries more than one generation line.")
-                       : tr("The generation line is malformed: %1")
-                             .arg(QString::fromUtf8(line));
-        return std::nullopt;
-      }
-      generation = digits.toLongLong();
-      continue;
-    }
-    if (line.startsWith(kFolderPrefix)) {
+    } else if (line.startsWith(kFolderPrefix)) {
       const QByteArray value = line.mid(kFolderPrefix.size());
-      if (value.isEmpty() || folder) {
-        if (error)
-          *error = folder ? tr("The list carries more than one folder line.")
-                          : tr("The folder line is malformed: %1")
-                                .arg(QString::fromUtf8(line));
-        return std::nullopt;
+      if (folder) {
+        complaint = tr("The list carries more than one folder line.");
+      } else if (value.isEmpty()) {
+        complaint =
+            tr("The folder line is malformed: %1").arg(QString::fromUtf8(line));
+      } else {
+        folder = QString::fromUtf8(value);
+        continue;
       }
-      folder = QString::fromUtf8(value);
-      continue;
+    } else {
+      complaint =
+          tr("The header line is malformed: %1").arg(QString::fromUtf8(line));
     }
     if (error)
-      *error =
-          tr("The header line is malformed: %1").arg(QString::fromUtf8(line));
+      *error = complaint;
     return std::nullopt;
   }
   if (generation && !folder) {
@@ -393,6 +409,86 @@ auto GpgIdGeneration::remembered(const QString &gpgIdFile, QString *error)
   return t.generation(key(gpgIdFile));
 }
 
+auto GpgIdGeneration::boundToItsFolder(const QString &gpgIdFile,
+                                       const Header &header,
+                                       const QString &storeRoot, QString *error)
+    -> bool {
+  if (!header.folder) {
+    return true;
+  }
+  const std::optional<QString> here = folderOf(gpgIdFile, storeRoot);
+  if (here && *here == *header.folder) {
+    return true;
+  }
+  if (error)
+    *error =
+        tr("The signed recipient list %1 was written for the folder "
+           "\"%2\" of the store, not for \"%3\", and is not used. It "
+           "may have been copied here by someone else; if the folder "
+           "was moved or renamed instead, a holder of the signing key "
+           "opens Users on it and saves the recipients, which binds "
+           "the list to where it is now.")
+            .arg(gpgIdFile, *header.folder, here.value_or(QStringLiteral("?")));
+  return false;
+}
+
+auto GpgIdGeneration::wayThrough(qint64 last, const QString &recordPath,
+                                 const QString &saving) -> QString {
+  // At the ceiling of the grammar no newer list can be written
+  // (reserveNext() refuses), so the record has to go first.
+  if (last >= kMaxGeneration) {
+    return tr("Generation %1 is the highest there is, so no newer list "
+              "can be written here: removing %2 forgets what this device "
+              "accepted before, after which a holder of the signing key "
+              "gets through by opening Users and %3.")
+        .arg(last)
+        .arg(recordPath, saving);
+  }
+  return tr("A holder of the signing key gets through by opening Users "
+            "and %1, which writes generation %2. Removing %3 forgets what "
+            "this device accepted before.")
+      .arg(saving)
+      .arg(last + 1)
+      .arg(recordPath);
+}
+
+auto GpgIdGeneration::staleList(const QString &gpgIdFile, const Header &header,
+                                qint64 last, const QString &recordPath,
+                                QString *error) -> Verdict {
+  if (!header.folder) {
+    // Below what was accepted here and with no folder line to say it was
+    // written here at all: an authentic headerless pair from any folder's
+    // history would pass as this folder's rollback otherwise.
+    if (error)
+      *error =
+          tr("The signed recipient list %1 carries no generation line, "
+             "while generation %2 was accepted here before. pass writes no "
+             "generation line (also through QtPass's pass backend), nor did "
+             "QtPass before 2.0; without one the list may also have been "
+             "written for another folder of the store and copied here. %3")
+              .arg(gpgIdFile)
+              .arg(last)
+              .arg(
+                  wayThrough(last, recordPath,
+                             tr("selecting the recipients afresh and saving")));
+    return Verdict::Unbound;
+  }
+  if (error)
+    *error =
+        tr("The signed recipient list %1 is generation %2, older than "
+           "generation %3, the last one QtPass accepted here. It may have "
+           "been put back by someone else. %4")
+            .arg(gpgIdFile)
+            .arg(header.generation)
+            .arg(last)
+            .arg(wayThrough(last, recordPath,
+                            tr("saving the recipients: the preselected "
+                               "recipients there are this list's, so remove "
+                               "anyone who should no longer have access "
+                               "first")));
+  return Verdict::Rollback;
+}
+
 auto GpgIdGeneration::accept(const QString &gpgIdFile,
                              const QByteArray &contents,
                              const QString &storeRoot, QString *error)
@@ -407,20 +503,8 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
   }
   // A pair is only valid where it was written for: copied into another
   // folder it is a rollback in disguise (that folder's first list).
-  if (header->folder) {
-    const std::optional<QString> here = folderOf(gpgIdFile, storeRoot);
-    if (!here || *here != *header->folder) {
-      if (error)
-        *error = tr("The signed recipient list %1 was written for the folder "
-                    "\"%2\" of the store, not for \"%3\", and is not used. It "
-                    "may have been copied here by someone else; if the folder "
-                    "was moved or renamed instead, a holder of the signing key "
-                    "opens Users on it and saves the recipients, which binds "
-                    "the list to where it is now.")
-                     .arg(gpgIdFile, *header->folder,
-                          here.value_or(QStringLiteral("?")));
-      return Verdict::WrongFolder;
-    }
+  if (!boundToItsFolder(gpgIdFile, *header, storeRoot, error)) {
+    return Verdict::WrongFolder;
   }
   Transaction t;
   if (!t.ok(error)) {
@@ -429,55 +513,9 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
   const QString k = key(gpgIdFile);
   const qint64 last = t.generation(k);
   const qint64 generation = header->generation;
-  // How a holder of the signing key gets through. At the ceiling of the
-  // grammar no newer list can be written (reserveNext() refuses), so the
-  // record has to go first.
-  const auto wayOut = [&](const QString &saving) {
-    if (last >= kMaxGeneration)
-      return tr("Generation %1 is the highest there is, so no newer list "
-                "can be written here: removing %2 forgets what this device "
-                "accepted before, after which a holder of the signing key "
-                "gets through by opening Users and %3.")
-          .arg(last)
-          .arg(t.path, saving);
-    return tr("A holder of the signing key gets through by opening Users "
-              "and %1, which writes generation %2. Removing %3 forgets what "
-              "this device accepted before.")
-        .arg(saving)
-        .arg(last + 1)
-        .arg(t.path);
-  };
   if (generation < last) {
-    if (!header->folder) {
-      // Below what was accepted here and with no folder line to say it was
-      // written here at all: an authentic headerless pair from any folder's
-      // history would pass as this folder's rollback otherwise.
-      if (error)
-        *error =
-            tr("The signed recipient list %1 carries no generation line, "
-               "while generation %2 was accepted here before. pass writes no "
-               "generation line (also through QtPass's pass backend), nor did "
-               "QtPass before 2.0; without one the list may also have been "
-               "written for another folder of the store and copied here. %3")
-                .arg(gpgIdFile)
-                .arg(last)
-                .arg(wayOut(tr("selecting the recipients afresh and saving")));
-      return Verdict::Unbound;
-    }
-    if (error)
-      *error =
-          tr("The signed recipient list %1 is generation %2, older than "
-             "generation %3, the last one QtPass accepted here. It may have "
-             "been put back by someone else. %4")
-              .arg(gpgIdFile)
-              .arg(generation)
-              .arg(last)
-              .arg(wayOut(tr("saving the recipients: the preselected "
-                             "recipients there are this list's, so remove "
-                             "anyone who should no longer have access first")));
-    return Verdict::Rollback;
+    return staleList(gpgIdFile, *header, last, t.path, error);
   }
-  const QString bytes = digest(contents);
   if (generation == 0) {
     // Nothing accepted here yet and a list without a generation line: pass
     // writes those (also through QtPass's pass backend), for every change,
@@ -487,6 +525,7 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
     // writes.
     return Verdict::Accepted;
   }
+  const QString bytes = digest(contents);
   if (generation == last) {
     // The same generation is the same list only if the bytes are: two
     // devices both making 19 from 18 is Git's conflict, and the device that
@@ -503,13 +542,13 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
                     "list of that generation was swapped in. %3")
                      .arg(gpgIdFile)
                      .arg(generation)
-                     .arg(wayOut(tr("checking the recipients and saving")));
+                     .arg(wayThrough(last, t.path,
+                                     tr("checking the recipients and saving")));
       return Verdict::Conflict;
     }
-    if (!known && !t.remember(k, generation, bytes, error)) {
-      return Verdict::RecordUnavailable;
+    if (known) {
+      return Verdict::Accepted;
     }
-    return Verdict::Accepted;
   }
   if (!t.remember(k, generation, bytes, error)) {
     return Verdict::RecordUnavailable;
