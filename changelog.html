@@ -153,7 +153,7 @@
         "requirements": "pass or git and gpg2",
         "license": "https://www.gnu.org/licenses/gpl-3.0.html",
         "screenshot": "https://qtpass.org/images/qtpass.png?v=1.8.1-8",
-        "softwareVersion": "1.8.1",
+        "softwareVersion": "1.8.2",
         "applicationCategory": "SecurityApplication",
         "applicationSubCategory": "Password manager",
         "description": "QtPass is a free, open-source desktop password manager for pass, the standard Unix password manager: passwords are GnuPG-encrypted files you control, synced with Git, on Linux, Windows and macOS.",
@@ -347,6 +347,53 @@
       </aside>
       <section id="main">
         <h1>QtPass changelog</h1>
+        <h2>
+          <a
+            id="v1.8.2"
+            class="anchor"
+            href="#v1.8.2"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span class="octicon octicon-link"></span></a
+          >v1.8.2
+        </h2>
+
+        <p>
+          Bug-fix release on the 1.8 line. Qt 5.15 and Qt 6 are both still
+          supported.
+        </p>
+
+        <h3>Bug Fixes</h3>
+        <ul>
+          <li>
+            "Automatically push" and "Automatically pull" are saved again; since
+            1.8.0 they did nothing. Switching profiles also applies that
+            profile's Git settings
+          </li>
+          <li>
+            The edit dialog only turns <code>key: value</code> lines into fields
+            when the settings ask for it (the template's fields, or every line
+            with "Template all fields"), so those lines can be edited as text
+            again
+          </li>
+        </ul>
+
+        <h3>Changed</h3>
+        <ul>
+          <li>
+            The AppStream metainfo installs as
+            <code>org.qtpass.QtPass.metainfo.xml</code> instead of
+            <code>qtpass.appdata.xml</code>; packagers who install it themselves
+            need the new name
+          </li>
+        </ul>
+
+        <p>
+          <a href="https://github.com/IJHack/QtPass/compare/v1.8.1...v1.8.2"
+            >Full Changelog</a
+          >
+        </p>
+
         <h2>
           <a
             id="v1.8.1"
