@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased] — 1.8.2
+## [1.8.2](https://github.com/IJHack/QtPass/tree/v1.8.2) (2026-09-24)
 
 ### Changed
 
