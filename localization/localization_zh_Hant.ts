@@ -712,7 +712,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="666"/>
         <source>No profile selected</source>
-        <translation>未選擇任何個人資料</translation>
+        <translation>未選擇任何設定檔</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="667"/>
@@ -1945,7 +1945,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation>選擇簡介</translation>
+        <translation>選擇設定檔</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
