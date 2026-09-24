@@ -2,7 +2,9 @@
 
 ## [Unreleased] — 2.0
 
-First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPass/issues/1682), umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
+The verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPass/issues/1682)
+and its successor [#1812](https://github.com/IJHack/QtPass/issues/1812),
+umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Upgrade Notes
 
@@ -13,8 +15,13 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   meant hiding to the tray; that is Ctrl+W (File ▸ Close window) now. The
   window close button and Alt+F4 behave as before.
 - **The menu bar is off by default** so the window looks as it did; Ctrl+M
-  or Configuration ▸ General ▸ Show menu bar turns it on and the choice is
-  remembered. On macOS the bar is the system's and always there.
+  turns it on, Settings ▸ Show menu bar (or Ctrl+M again) turns it off, and
+  the choice is remembered. On macOS the bar is the system's and always there.
+- **Settings moved, stored values did not.** Clipboard and panel autoclear
+  are one number each (0 is "Never"), the two template checkboxes are one
+  choice, and "Show menu bar" / "Show process output" are toggles in the
+  Settings menu instead of the settings dialog. Existing configuration files
+  are read and written with the same keys.
 - **Generating a GPG key asks for a passphrase.** Leaving the fields empty
   used to produce an unprotected private key silently; now OK waits until a
   passphrase is typed twice or "No passphrase" is ticked on purpose.
@@ -379,8 +386,8 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   as toolbar icons and there was no About at all; on macOS the standard
   application menu (Preferences, About, Quit) now appears because Qt builds
   it from the menu roles. The bar is off by default so the window stays as
-  bare as it was: Ctrl+M or Configuration ▸ General ▸ Show menu bar turns it
-  on (not on macOS, where the bar is the system's) and the choice is
+  bare as it was: Ctrl+M turns it on and Settings ▸ Show menu bar turns it
+  off again (not on macOS, where the bar is the system's), and the choice is
   remembered
 - Double-clicking a field in the password panel opens the entry for editing,
   as double-clicking it in the tree does
@@ -559,6 +566,28 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
   focus, and leaves a header alone until the theme has actually changed, so
   a scheme with a dark header on a light window keeps it
   ([#1868](https://github.com/IJHack/QtPass/issues/1868))
+
+### Code Quality
+
+- No function in `src/` above cyclomatic complexity 14 (lizard; CodeFactor
+  reports none either): the long ones were split where they did several
+  jobs, and the process list is one table instead of four switches
+  [#1916](https://github.com/IJHack/QtPass/pull/1916), [#1917](https://github.com/IJHack/QtPass/pull/1917), [#1922](https://github.com/IJHack/QtPass/pull/1922), [#1923](https://github.com/IJHack/QtPass/pull/1923), [#1924](https://github.com/IJHack/QtPass/pull/1924)
+- Comments say why, once: restated code, history notes and doc blocks in
+  `.cpp` files Doxygen never read are gone, about 2,000 lines in `src/`
+  [#1920](https://github.com/IJHack/QtPass/pull/1920)
+- One staged write (`Util::stageFileReplacing`) for entries, copies,
+  `.gpg-id` files and re-encryption
+  [#1904](https://github.com/IJHack/QtPass/pull/1904), [#1906](https://github.com/IJHack/QtPass/pull/1906), [#1908](https://github.com/IJHack/QtPass/pull/1908)
+
+### Tests
+
+- 36 test suites (24 in 1.8.0); line coverage from 78.8% to 92.7% with
+  tests for the main window, settings dialog, first-run wizard, tray, backends,
+  profile init, single instance and every dialog
+  [#1900](https://github.com/IJHack/QtPass/pull/1900), [#1901](https://github.com/IJHack/QtPass/pull/1901), [#1902](https://github.com/IJHack/QtPass/pull/1902)
+- Shared test helpers: one no-op `Pass`, one retry macro, one canned gpg
+  listing [#1919](https://github.com/IJHack/QtPass/pull/1919)
 
 ### Removed
 
@@ -747,9 +776,9 @@ line ([#1709](https://github.com/IJHack/QtPass/issues/1709)). Qt 5.15 and Qt 6 a
 - Introduced `AppSettings` + `SettingsSerializer` with a `QtPassSettings::load()`/`save()` facade, injected through the `Pass`/dialog layers; 70 dead getter/setter wrappers removed [#1511](https://github.com/IJHack/QtPass/issues/1511)
 - P1 audit sweep: executor crash, StoreModel guard, `getKeysFromFile`, profile sort order, `reencryptPath` init [#1570](https://github.com/IJHack/QtPass/pull/1570), [#1571](https://github.com/IJHack/QtPass/pull/1571), [#1572](https://github.com/IJHack/QtPass/pull/1572)
 
-### Tests
+### Tests <!-- markdownlint-disable-line MD024 -->
 
-- Test suites grew from 11 to 25: widget tests for MainWindow, ConfigDialog,
+- Test suites grew from 11 to 24: widget tests for MainWindow, ConfigDialog,
   KeygenDialog, TrayIcon, UsersDialog, PasswordDisplayPanel, Import/Export key
   dialogs; unit suites for `Base32`, `TOTP`, `PassBackendFactory`, `UserInfo`,
   `ProfileInit`; GPG end-to-end coverage for multi-recipient encryption,

@@ -75,6 +75,12 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="2.0.0" date="2026-09-24" type="development">
+      <url>https://github.com/IJHack/QtPass/blob/main/CHANGELOG.md</url>
+      <description>
+        <p>Qt 6 only. Signed recipient lists that refuse a rollback, links inside the store refused at every operation, staged writes into the store, a passphrase required for new keys, a menu bar, a first-run wizard, a profile editor, field names editable in place, and a Linux AppImage.</p>
+      </description>
+    </release>
     <release version="1.8.1" date="2026-09-15">
       <url>https://github.com/IJHack/QtPass/releases/tag/v1.8.1</url>
       <description>
