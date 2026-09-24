@@ -14,9 +14,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 - **Ctrl+Q quits.** It used to close the window, which with "hide on close"
   meant hiding to the tray; that is Ctrl+W (File ▸ Close window) now. The
   window close button and Alt+F4 behave as before.
-- **The menu bar is off by default** so the window looks as it did; Ctrl+M
-  turns it on, Settings ▸ Show menu bar (or Ctrl+M again) turns it off, and
-  the choice is remembered. On macOS the bar is the system's and always there.
+- **The menu bar is off by default** so the window looks as it did. Alt
+  shows it for as long as it is used, so Alt+F and the other mnemonics work;
+  Ctrl+M, Settings ▸ Show menu bar or the tray menu keep it on, and the
+  choice is remembered. On macOS the bar is the system's and always there.
 - **Settings moved, stored values did not.** Clipboard and panel autoclear
   are one number each (0 is "Never"), the two template checkboxes are one
   choice, and "Show menu bar" / "Show process output" are toggles in the
@@ -386,9 +387,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   as toolbar icons and there was no About at all; on macOS the standard
   application menu (Preferences, About, Quit) now appears because Qt builds
   it from the menu roles. The bar is off by default so the window stays as
-  bare as it was: Ctrl+M turns it on and Settings ▸ Show menu bar turns it
-  off again (not on macOS, where the bar is the system's), and the choice is
-  remembered
+  bare as it was: Alt shows it while it is used (a lone tap leaves it up
+  until Alt is tapped again or Escape), and Ctrl+M, Settings ▸ Show menu bar
+  or the tray menu turn it on for good (not on macOS, where the bar is the
+  system's); the choice is remembered
 - Double-clicking a field in the password panel opens the entry for editing,
   as double-clicking it in the tree does
 - Push and Pull are gone from the toolbar and the Store menu while Git is
