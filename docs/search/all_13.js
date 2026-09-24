@@ -4,8 +4,8 @@ var searchData=
   ['unknown_1',['Unknown',['../struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4a88183b946cc5f0e8c96b2e66e1c74a7e',1,'StoreDragItem']]],
   ['unsigned_2',['Unsigned',['../struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073aa1a914735b205424ba6c40b85528d78a',1,'Pass::RecipientsForEditing']]],
   ['updateenv_3',['updateEnv',['../class_pass.html#ac679a086b289cdb9245906948ba0458a',1,'Pass']]],
-  ['useautoclear_4',['useAutoclear',['../struct_app_settings.html#ab7ed344d235b3e5777a94c13d50e0b66',1,'AppSettings::useAutoclear'],['../class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91',1,'ConfigDialog::useAutoclear()']]],
-  ['useautoclearpanel_5',['useAutoclearPanel',['../struct_app_settings.html#a457fe600e8bd16cdb5b985754deab231',1,'AppSettings::useAutoclearPanel'],['../class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0',1,'ConfigDialog::useAutoclearPanel()']]],
+  ['useautoclear_4',['useAutoclear',['../struct_app_settings.html#ab7ed344d235b3e5777a94c13d50e0b66',1,'AppSettings']]],
+  ['useautoclearpanel_5',['useAutoclearPanel',['../struct_app_settings.html#a457fe600e8bd16cdb5b985754deab231',1,'AppSettings']]],
   ['usegit_6',['useGit',['../struct_app_settings.html#a95d05280efb398eb31e2440b1fcd1444',1,'AppSettings::useGit'],['../struct_profile.html#a3943541e66642e37b2ef228c6e3bc4f3',1,'Profile::useGit'],['../class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f',1,'ConfigDialog::useGit()']]],
   ['usegrepsearch_7',['useGrepSearch',['../struct_app_settings.html#a0cd6f1f365fafe779fbb047bc10453d7',1,'AppSettings::useGrepSearch'],['../class_config_dialog.html#a859c596a86c2ee90176c93d8c52f12a7',1,'ConfigDialog::useGrepSearch()']]],
   ['usemonospace_8',['useMonospace',['../struct_app_settings.html#abca264324f7360383c5e262223a4f97e',1,'AppSettings']]],
@@ -17,7 +17,7 @@ var searchData=
   ['usersdialog_14',['UsersDialog',['../class_users_dialog.html',1,'UsersDialog'],['../class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22',1,'UsersDialog::UsersDialog()']]],
   ['useselection_15',['useSelection',['../struct_app_settings.html#a93f7cb2526fc655789315eca6f5590a4',1,'AppSettings::useSelection'],['../class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6',1,'ConfigDialog::useSelection()']]],
   ['usesymbols_16',['useSymbols',['../struct_app_settings.html#a1dcb264e80bf03810dc659faf83498b8',1,'AppSettings']]],
-  ['usetemplate_17',['useTemplate',['../struct_app_settings.html#adcdcefd0f896681f9ec31ca33cb5232b',1,'AppSettings::useTemplate'],['../class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a',1,'ConfigDialog::useTemplate()']]],
+  ['usetemplate_17',['useTemplate',['../struct_app_settings.html#adcdcefd0f896681f9ec31ca33cb5232b',1,'AppSettings']]],
   ['usetrayicon_18',['useTrayIcon',['../struct_app_settings.html#a7489ac000e265da73e55da7e94f313cc',1,'AppSettings::useTrayIcon'],['../class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567',1,'ConfigDialog::useTrayIcon()']]],
   ['util_19',['Util',['../class_util.html',1,'']]]
 ];
