@@ -1903,7 +1903,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="510"/>
         <source>Config</source>
-        <translation>Config</translation>
+        <translation type="unfinished">Configurare</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>

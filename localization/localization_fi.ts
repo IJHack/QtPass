@@ -1799,7 +1799,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="469"/>
         <source>Push</source>
-        <translation>Push</translation>
+        <translation type="unfinished">Vie</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;

@@ -293,7 +293,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="768"/>
         <source>Template</source>
-        <translation>Template</translation>
+        <translation type="unfinished">Modèle</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>

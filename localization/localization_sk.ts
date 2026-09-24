@@ -1661,7 +1661,7 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation>Email</translation>
+        <translation type="unfinished">E-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>

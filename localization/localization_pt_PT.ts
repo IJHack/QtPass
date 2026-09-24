@@ -2653,7 +2653,7 @@ Continua?</translation>
         <location filename="../src/passworddialog.ui" line="120"/>
         <location filename="../src/passworddialog.cpp" line="286"/>
         <source>Password</source>
-        <translation>Password</translation>
+        <translation type="unfinished">Palavra-passe</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>

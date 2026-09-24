@@ -1661,7 +1661,7 @@ U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation>Email</translation>
+        <translation type="unfinished">E-mailadres</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>

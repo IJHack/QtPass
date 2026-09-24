@@ -1637,7 +1637,7 @@ Você não será capaz de descriptografar qualquer senha recém-adicionada!</tra
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation>Email</translation>
+        <translation type="unfinished">E-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
@@ -2660,7 +2660,7 @@ Continua?</translation>
         <location filename="../src/passworddialog.ui" line="120"/>
         <location filename="../src/passworddialog.cpp" line="286"/>
         <source>Password</source>
-        <translation>Password</translation>
+        <translation type="unfinished">Senha</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>

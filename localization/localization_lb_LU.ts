@@ -1952,7 +1952,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="477"/>
         <source>Update</source>
-        <translation>Update</translation>
+        <translation type="unfinished">Aktualiséieren</translation>
     </message>
     <message>
         <source>git pull</source>
@@ -1972,7 +1972,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="510"/>
         <source>Config</source>
-        <translation>Config</translation>
+        <translation type="unfinished">Configuratioun</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="513"/>
