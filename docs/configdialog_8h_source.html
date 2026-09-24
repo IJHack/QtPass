@@ -227,12 +227,17 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keywordtype">void</span> showProblems(<span class="keywordtype">int</span> row, <span class="keyword">const</span> ProfileProblems &amp;problems);</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  <span class="keywordtype">void</span> initializeNewProfiles(<span class="keyword">const</span> Profiles &amp;existingProfiles);</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span></div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  QString m_customPasswordChars;</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>};</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  <span class="keyword">auto</span> ensureProfileFolder(<span class="keyword">const</span> QString &amp;path) -&gt; bool;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  <span class="keywordtype">void</span> initialiseProfileStore(<span class="keyword">const</span> QString &amp;name, <span class="keyword">const</span> Profile &amp;profile,</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                              <span class="keyword">const</span> QString &amp;path);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <span class="keywordtype">void</span> warnAboutSshAuthSockOverride();</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <span class="keywordtype">void</span> followActiveProfile(<span class="keyword">const</span> Profiles &amp;profiles);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  QString m_customPasswordChars;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>};</div>
 </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">#endif </span><span class="comment">// SRC_CONFIGDIALOG_H_</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="preprocessor">#endif </span><span class="comment">// SRC_CONFIGDIALOG_H_</span></div>
 <div class="ttc" id="aclass_config_dialog_html_a003ec5de7c29ced34f045f0843d2e95b"><div class="ttname"><a href="class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b">ConfigDialog::setPasswordConfiguration</a></div><div class="ttdeci">void setPasswordConfiguration(const PasswordConfiguration &amp;config)</div><div class="ttdoc">Apply a password configuration to the dialog controls.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_a2a395844557989cf343503e80b075ba0"><div class="ttname"><a href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">ConfigDialog::useOtp</a></div><div class="ttdeci">void useOtp(bool useOtp)</div><div class="ttdoc">Enable or disable OTP support.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_a3d42b658f6b8436e9f6ca17059703c0a"><div class="ttname"><a href="class_config_dialog.html#a3d42b658f6b8436e9f6ca17059703c0a">ConfigDialog::setPwgenPath</a></div><div class="ttdeci">void setPwgenPath(const QString &amp;path)</div><div class="ttdoc">Set the path to the pwgen executable.</div></div>

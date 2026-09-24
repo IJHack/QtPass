@@ -253,6 +253,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a9055e77fb0300ace61fde6386b50705f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sign a <span class="tt">.gpg-id</span> with the configured key and verify the result; failures are reported through <a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Emit critical error.">critical()</a>.  <br /></td></tr>
 <tr class="memitem:abe06761236eb789f13dd4e8814ce7f15" id="r_abe06761236eb789f13dd4e8814ce7f15"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abe06761236eb789f13dd4e8814ce7f15">refuseLinkedGpgIdFolder</a> (const QString &amp;path) -&gt; bool</td></tr>
 <tr class="memdesc:abe06761236eb789f13dd4e8814ce7f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse a folder, or a <span class="tt">.gpg-id</span>/<span class="tt">.gpg-id.sig</span> in it, that is a link: writing there would reach outside the store.  <br /></td></tr>
+<tr class="memitem:a2cd108bdff679ad6d03daf0c7dfd1aa3" id="r_a2cd108bdff679ad6d03daf0c7dfd1aa3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2cd108bdff679ad6d03daf0c7dfd1aa3">recipientsForEntry</a> (const QString &amp;file, QStringList *recipients) -&gt; bool</td></tr>
+<tr class="memdesc:a2cd108bdff679ad6d03daf0c7dfd1aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The recipients to encrypt <code class="param">file</code> to: its folder's <span class="tt">.gpg-id</span>, verified when a signing key is set.  <br /></td></tr>
+<tr class="memitem:a3d49034415dcced209f0294b631c1ddc" id="r_a3d49034415dcced209f0294b631c1ddc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3d49034415dcced209f0294b631c1ddc">copyDestination</a> (const QString &amp;src, const QString &amp;dest, bool force) -&gt; QString</td></tr>
+<tr class="memdesc:a3d49034415dcced209f0294b631c1ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file a copy of <code class="param">src</code> to <code class="param">dest</code> writes: like <span class="tt">pass cp</span>, into an existing folder with <span class="tt">.gpg</span> appended. Refused (the user told) when it is a link, the source itself, or taken and <code class="param">force</code> is off.  <br /></td></tr>
 <tr class="memitem:aa327d0b0f45abfb88d10da0c5fdebd41" id="r_aa327d0b0f45abfb88d10da0c5fdebd41"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa327d0b0f45abfb88d10da0c5fdebd41">addGenerationHeader</a> (const QString &amp;gpgIdFile, const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, QByteArray *contents) -&gt; bool</td></tr>
 <tr class="memdesc:aa327d0b0f45abfb88d10da0c5fdebd41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put the generation header on a list that is about to be signed: reserve a generation above what this device accepted and what the verified list on disk says, and bind the list to its folder, so no older or relocated signed list comes back.  <br /></td></tr>
 <tr class="memitem:a86a50ad28d84a9c08a43b1de2621bb55" id="r_a86a50ad28d84a9c08a43b1de2621bb55"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a86a50ad28d84a9c08a43b1de2621bb55">settleSignature</a> (const QString &amp;gpgIdFile, const QByteArray &amp;written, const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, bool useGit, QString *sigToCommit) -&gt; bool</td></tr>
@@ -561,6 +565,51 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Pass</a>.</p>
+
+</div>
+</div>
+<a id="a3d49034415dcced209f0294b631c1ddc" name="a3d49034415dcced209f0294b631c1ddc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d49034415dcced209f0294b631c1ddc">&#9670;&#160;</a></span>copyDestination()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::copyDestination </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>force</em></span>&#160;) -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The file a copy of <code class="param">src</code> to <code class="param">dest</code> writes: like <span class="tt">pass cp</span>, into an existing folder with <span class="tt">.gpg</span> appended. Refused (the user told) when it is a link, the source itself, or taken and <code class="param">force</code> is off. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>The entry to copy. </td></tr>
+    <tr><td class="paramname">dest</td><td>Where to, a file or a folder. </td></tr>
+    <tr><td class="paramname">force</td><td>Whether an existing entry may be replaced. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The file, or an empty string when refused. </dd></dl>
 
 </div>
 </div>
@@ -1432,6 +1481,45 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>.</p>
+
+</div>
+</div>
+<a id="a2cd108bdff679ad6d03daf0c7dfd1aa3" name="a2cd108bdff679ad6d03daf0c7dfd1aa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cd108bdff679ad6d03daf0c7dfd1aa3">&#9670;&#160;</a></span>recipientsForEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::recipientsForEntry </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QStringList *</td>          <td class="paramname"><span class="paramname"><em>recipients</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The recipients to encrypt <code class="param">file</code> to: its folder's <span class="tt">.gpg-id</span>, verified when a signing key is set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The entry, absolute. </td></tr>
+    <tr><td class="paramname">recipients</td><td>Receives the key IDs. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false when there are none to use (the user was told why). </dd></dl>
 
 </div>
 </div>
