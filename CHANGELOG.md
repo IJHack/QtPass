@@ -432,9 +432,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   still capitalised Every Word were separate strings for translators, who get
   the existing translations carried over
 - The configuration dialog is a sidebar of pages instead of four tabs with a
-  long scrolling first one: General (window and tray, extensions), Clipboard
-  (clipboard and content panel), Passwords (generation and template), Git,
-  Programs and Profiles. Every setting keeps its place in the settings file
+  long scrolling first one: General (window and tray, extensions),
+  Clipboard, Display (the content panel), Passwords (generation and
+  template), Git, Programs and Profiles. Every setting keeps its place in the settings file
 - The API docs no longer load Mermaid from a CDN (`MERMAID_RENDER_MODE = CLI`,
   nothing used it and the site's Content Security Policy blocked it), the docs
   job builds with Doxygen 1.18.0 and replaces `docs/` on `gh-pages` instead of

@@ -998,7 +998,7 @@ void tst_configdialog::pagesFollowTheSidebar() {
   auto *list = child<QListWidget>(dialog, "pageList");
   auto *pages = child<QStackedWidget>(dialog, "pages");
   QCOMPARE(list->count(), pages->count());
-  QCOMPARE(list->count(), 6);
+  QCOMPARE(list->count(), 7);
   list->setCurrentRow(0);
   QCOMPARE(pages->currentIndex(), 0);
   list->setCurrentRow(3);
@@ -1007,7 +1007,7 @@ void tst_configdialog::pagesFollowTheSidebar() {
       {QStringLiteral("groupBoxSystem"), QStringLiteral("pageGeneral")},
       {QStringLiteral("groupBoxExtensions"), QStringLiteral("pageGeneral")},
       {QStringLiteral("groupBoxClipboard"), QStringLiteral("pageClipboard")},
-      {QStringLiteral("groupBoxContentPanel"), QStringLiteral("pageClipboard")},
+      {QStringLiteral("groupBoxContentPanel"), QStringLiteral("pageDisplay")},
       {QStringLiteral("groupBoxPasswordGeneration"),
        QStringLiteral("pagePasswords")},
       {QStringLiteral("groupBoxTemplate"), QStringLiteral("pagePasswords")},
