@@ -408,6 +408,8 @@ private Q_SLOTS:
   void toolsAreaBarDropsStaleStylePaletteAfterThemeSwitch();
   void toolsAreaBarKeepsHeaderTintInSameTheme_data();
   void toolsAreaBarKeepsHeaderTintInSameTheme();
+  void toolsAreaBarDropsAStampThatPrecedesTheSwitch_data();
+  void toolsAreaBarDropsAStampThatPrecedesTheSwitch();
   void toolsAreaBarKeepsAnyHeaderBeforeAThemeSwitch_data();
   void toolsAreaBarKeepsAnyHeaderBeforeAThemeSwitch();
   void firstRunWizardCancelledStopsStartup();
@@ -1489,6 +1491,50 @@ void tst_mainwindow::toolsAreaBarKeepsHeaderTintInSameTheme() {
   QVERIFY2(widget->testAttribute(Qt::WA_SetPalette),
            "a same-theme header tint must be kept");
   QCOMPARE(widget->palette().color(QPalette::Window), QColor(0xe3, 0xe5, 0xe7));
+}
+
+/**
+ * @brief The other order: the old theme's header is stamped on the bars
+ *        and checked before the window hears of the switch, and the switch
+ *        brings the bars no PaletteChange of its own. Plasma 6 delivers it
+ *        this way; the switch itself must look at the bars again, or they
+ *        keep the old theme.
+ */
+void tst_mainwindow::toolsAreaBarDropsAStampThatPrecedesTheSwitch_data() {
+  toolsAreaBars();
+}
+
+void tst_mainwindow::toolsAreaBarDropsAStampThatPrecedesTheSwitch() {
+  QFETCH(QString, bar);
+  const QPalette original = QApplication::palette();
+  auto restore =
+      qScopeGuard([&original] { QApplication::setPalette(original); });
+
+  // A window that already has the dark palette, as under Plasma by the
+  // time the switch reaches it: the switch changes nothing for it, so no
+  // PaletteChange reaches its bars afterwards.
+  QPalette dark = original;
+  dark.setColor(QPalette::Window, QColor(0x20, 0x23, 0x26));
+  QApplication::setPalette(dark);
+  QTest::qWait(50);
+  m_window.reset(new MainWindow);
+  QWidget *widget = toolsAreaBar(bar);
+  QVERIFY2(widget != nullptr, "MainWindow must have the bar");
+
+  QPalette lightHeader = dark;
+  lightHeader.setColor(QPalette::Window, QColor(0xde, 0xe0, 0xe2));
+  widget->setProperty("breeze_has_toolsarea_palette", true);
+  widget->setPalette(lightHeader);
+  QTest::qWait(50); // the bar's own check: no switch seen yet, kept
+  QVERIFY(widget->testAttribute(Qt::WA_SetPalette));
+
+  QEvent switched(QEvent::ApplicationPaletteChange);
+  QCoreApplication::sendEvent(m_window.data(), &switched);
+
+  QTRY_VERIFY2(!widget->testAttribute(Qt::WA_SetPalette),
+               "the light header stamped before the switch to dark must go");
+  QCOMPARE(widget->palette().color(QPalette::Window),
+           dark.color(QPalette::Window));
 }
 
 /**

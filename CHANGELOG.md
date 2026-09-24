@@ -571,7 +571,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   colour, judges the stamp by the active colour group whichever window has
   focus, and leaves a header alone until the theme has actually changed, so
   a scheme with a dark header on a light window keeps it
-  ([#1868](https://github.com/IJHack/QtPass/issues/1868))
+  ([#1868](https://github.com/IJHack/QtPass/issues/1868)). It also works when
+  Plasma re-stamps the old header before the window hears of the switch,
+  which left both bars and their icons in the old theme, window shown or
+  hidden in the tray
 
 ### Code Quality
 

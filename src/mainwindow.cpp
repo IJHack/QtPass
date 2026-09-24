@@ -297,6 +297,9 @@ void MainWindow::focusInput() {
 auto MainWindow::event(QEvent *event) -> bool {
   if (event->type() == QEvent::ApplicationPaletteChange) {
     m_themeSwitched = true;
+    // Breeze may re-stamp the bars before this arrives (Plasma 6 does):
+    // their PaletteChange then found no switch yet, so check them now too.
+    QTimer::singleShot(0, this, &MainWindow::dropStaleToolsAreaPalettes);
   }
   return QMainWindow::event(event);
 }
