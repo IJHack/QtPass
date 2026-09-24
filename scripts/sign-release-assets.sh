@@ -32,16 +32,11 @@ trap 'rm -rf "$workdir"' EXIT
 
 cd "$workdir"
 
+# Only uploaded assets are signed. The release workflow uploads the source
+# archives as QtPass-<version>.tar.gz/.zip; GitHub's "Source code" links are
+# generated on the fly, differ from those bytes and may change, so they are
+# never signed (and a draft has none).
 gh release download "$tag" --repo "$repo" --pattern '*'
-# The source archives are normally uploaded as release assets as well (same
-# bytes as GitHub's auto-generated ones). Only fetch GitHub's archive when the
-# asset is missing: a draft release has no auto-generated archives, and gh
-# fails on it even with --skip-existing.
-for ext in tar.gz zip; do
-	if [ ! -e "QtPass-${tag#v}.${ext}" ]; then
-		gh release download "$tag" --repo "$repo" --archive "$ext"
-	fi
-done
 
 new_asc=()
 
