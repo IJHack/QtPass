@@ -69,8 +69,10 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/org.qtpas
 
 %changelog
 * Wed Sep 16 2026 Anne Jan Brouwer <qtpass@annejan.com> 2.0.0
-- Qt 6 only; the spec builds with qmake-qt6 and installs the desktop file,
-  metainfo, icons and man page that main/main.pro now provides
+- Update to 2.0.0; see CHANGELOG.md for the upgrade notes
+- Qt 6.8 or newer only; the spec builds with qmake-qt6 and installs the
+  desktop file, metainfo, icons and man page that main/main.pro now provides
+- AppStream metainfo is org.qtpass.QtPass.metainfo.xml (was qtpass.appdata.xml)
 
 * Sun Sep 13 2026 Anne Jan Brouwer <qtpass@annejan.com> 1.8.0
 - Updated QtPass
