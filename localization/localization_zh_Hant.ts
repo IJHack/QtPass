@@ -489,7 +489,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="90"/>
         <source>Profiles</source>
-        <translation>設定檔</translation>
+        <translation>簡介</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
@@ -1945,7 +1945,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation>選擇設定檔</translation>
+        <translation>選擇簡介</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
