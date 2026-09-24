@@ -712,7 +712,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="666"/>
         <source>No profile selected</source>
-        <translation>未選擇任何設定檔</translation>
+        <translation>未選擇任何個人資料</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="667"/>
