@@ -2046,8 +2046,8 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass és un GUI per a &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, el gestor de contrasenyes estàndard de Unix.&lt;/p&gt;
-&lt;p&gt;Si us plau, informeu de qualsevol &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemes&lt;/a&gt; podríeu tenir amb aquest programari.&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;QtPass és una interfície gràfica per a &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, el gestor de contrasenyes estàndard de Unix.&lt;/p&gt;
+&lt;p&gt;Si us plau, informeu de qualsevol &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; que pugueu tenir amb aquest programari.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentació&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Codi font&lt;/a&gt;&lt;/p&gt;</translation>
     </message>

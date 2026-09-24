@@ -2078,10 +2078,10 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt; Qtpass என்பது &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; பாச் &lt;/a&gt;, நிலையான யூனிக்ச் கடவுச்சொல் நிர்வாகிக்கான ஒரு குய் ஆகும். &lt;/p&gt;
- &lt;p&gt; தயவுசெய்து எந்த &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; சிக்கல்கள் &lt;/a&gt; இந்த மென்பொருளைக் கொண்டிருக்கலாம். &lt;/p&gt;
- &lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; ஆவணங்கள் &lt;/a&gt; &lt;/p&gt;
- &lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; சோர்ச் கோட் &lt;/a&gt; &lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;QtPass என்பது நிலையான யூனிக்ச் கடவுச்சொல் நிர்வாகியான &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;-க்கான வரைகலை இடைமுகம் ஆகும்.&lt;/p&gt;
+&lt;p&gt;இந்த மென்பொருளைப் பயன்படுத்தும்போது ஏற்படும் &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;சிக்கல்களைப்&lt;/a&gt; புகாரளிக்கவும்.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;ஆவணங்கள்&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;மூலக் குறியீடு&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>

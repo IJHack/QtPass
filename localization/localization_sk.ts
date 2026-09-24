@@ -2082,8 +2082,8 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass je uživateľské rozhranie pre &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, štandardný správca unixových hesiel.&lt;/p&gt;
-&lt;p&gt;Nahláste prosím všetky &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problémy&lt;/a&gt;, ktoré by ste mohli mať s týmto softwarom.&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;QtPass je používateľské rozhranie pre &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, štandardný správca hesiel v Unixe.&lt;/p&gt;
+&lt;p&gt;Nahláste prosím všetky &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problémy&lt;/a&gt;, ktoré by ste mohli mať s týmto softvérom.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentácia&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Zdrojový kód&lt;/a&gt;&lt;/p&gt;</translation>
     </message>

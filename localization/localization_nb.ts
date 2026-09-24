@@ -2066,7 +2066,7 @@ Utløpsdato: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass er et grafisk grensesnitt for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, den forvalgte Unix-passordsbehandleren.&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;QtPass er et grafisk grensesnitt for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, den vanlige passordbehandleren for Unix.&lt;/p&gt;
 &lt;p&gt;Rapporter eventuelle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemer&lt;/a&gt; du måtte ha med denne programvaren.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentasjon&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Kildekode&lt;/a&gt;&lt;/p&gt;</translation>

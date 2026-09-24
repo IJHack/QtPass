@@ -2082,8 +2082,8 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass je grafičko korisničko sučelje za&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardni Unix-ov upravljač lozinkama.&lt;/p&gt;
-&lt;p&gt;Prijavi &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;probleme&lt;/a&gt; s ovim softverom.&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;QtPass je grafičko korisničko sučelje za &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardni Unix upravitelj lozinkama.&lt;/p&gt;
+&lt;p&gt;Prijavite sve &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;probleme&lt;/a&gt; s ovim softverom.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Izvorni kod&lt;/a&gt;&lt;/p&gt;</translation>
     </message>

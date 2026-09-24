@@ -1858,8 +1858,8 @@ You will not be able to decrypt any newly added passwords!</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass هي واجهة مستخدم رسومية لـ &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;يمر&lt;/a&gt;مدير كلمات المرور القياسي في أنظمة يونكس.&lt;/p&gt;
-&lt;p&gt;يرجى الإبلاغ عن أي شيء&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;مشاكل&lt;/a&gt; قد تواجه بعض المشاكل مع هذا البرنامج.&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;QtPass واجهة رسومية لـ &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;، مدير كلمات المرور القياسي في يونكس.&lt;/p&gt;
+&lt;p&gt;يرجى الإبلاغ عن أي &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;مشاكل&lt;/a&gt; تواجهها مع هذا البرنامج.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;الوثائق&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;شفرة المصدر&lt;/a&gt;&lt;/p&gt;</translation>
     </message>

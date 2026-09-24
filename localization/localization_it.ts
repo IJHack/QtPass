@@ -2029,10 +2029,10 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt; QtPass è un&apos;interfaccia grafica per &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass &lt;/a&gt;, il gestore standard di password UNIX. &lt;/p&gt;
-&lt;p&gt; Segnala eventuali &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; problemi &lt;/a&gt; che potresti avere con questo software. &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Documentazione &lt;/a&gt; &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Codice sorgente &lt;/a&gt; &lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;QtPass è un&apos;interfaccia grafica per &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, il gestore di password standard di Unix.&lt;/p&gt;
+&lt;p&gt;Segnala eventuali &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemi&lt;/a&gt; che potresti avere con questo software.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentazione&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Codice sorgente&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>

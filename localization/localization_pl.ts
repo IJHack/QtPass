@@ -1915,7 +1915,7 @@ Expire-Date: 0
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;QtPass to graficzny interfejs użytkownika dla &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardowego menedżera haseł w systemach uniksowych.&lt;/p&gt;
-&lt;p&gt;Prosze zgłaszać jakiekolwiek &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemy&lt;/a&gt; z programem.&lt;/p&gt;
+&lt;p&gt;Proszę zgłaszać wszelkie &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemy&lt;/a&gt; z programem.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacja&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Kod źródłowy&lt;/a&gt;&lt;/p&gt;</translation>
     </message>

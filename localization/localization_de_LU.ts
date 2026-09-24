@@ -2192,7 +2192,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass ist eine GUI für &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, den Standard Unix Passwortmanager.&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;QtPass ist eine grafische Oberfläche für &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, den Standard-Unix-Passwortmanager.&lt;/p&gt;
 &lt;p&gt;Bitte melden Sie alle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;Probleme&lt;/a&gt;, die Sie mit dieser Software haben könnten.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Quellcode&lt;/a&gt;&lt;/p&gt;</translation>

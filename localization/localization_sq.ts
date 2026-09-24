@@ -1885,10 +1885,10 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt; QtPass është një GUI për &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass&lt;/a&gt;, menaxheri standard me fjalëkalim Unix. &lt;/p&gt;
-&lt;p&gt; Ju lutemi raportoni çdo &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; çështje &lt;/a&gt; që mund të keni me këtë softuer. &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dokumentacioni &lt;/a&gt; &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Burimi i kodit &lt;/a&gt; &lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;QtPass është një ndërfaqe grafike për &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, menaxherin standard të fjalëkalimeve në Unix.&lt;/p&gt;
+&lt;p&gt;Ju lutemi raportoni çdo &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problem&lt;/a&gt; që mund të keni me këtë softuer.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacioni&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Kodi burimor&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>

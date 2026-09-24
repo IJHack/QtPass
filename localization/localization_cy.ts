@@ -1943,10 +1943,10 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt; Mae QtPass yn GUI ar gyfer &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pasio &lt;/a&gt;, y rheolwr cyfrinair safonol Unix. &lt;/p&gt;
-&lt;p&gt; Rhowch wybod am unrhyw faterion &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; &lt;/a&gt; a allai fod gennych gyda&apos;r feddalwedd hon. &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dogfennaeth &lt;/a&gt; &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Cod Ffynhonnell &lt;/a&gt; &lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;Mae QtPass yn rhyngwyneb graffigol ar gyfer &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, y rheolwr cyfrineiriau safonol ar Unix.&lt;/p&gt;
+&lt;p&gt;Rhowch wybod am unrhyw &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;broblemau&lt;/a&gt; sydd gennych gyda&apos;r feddalwedd hon.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dogfennaeth&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Cod ffynhonnell&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>

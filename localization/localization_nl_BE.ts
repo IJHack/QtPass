@@ -2076,8 +2076,8 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass is een GUI voor &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de standaard Unix password manager.&lt;/p&gt;
-&lt;p&gt;Meldt alstublieft alle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; die u ondervind tijdens gebruik van deze software.&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;QtPass is een GUI voor &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de standaard Unix-wachtwoordbeheerder.&lt;/p&gt;
+&lt;p&gt;Meld alstublieft alle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemen&lt;/a&gt; die u ondervindt bij het gebruik van deze software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentatie&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Broncode&lt;/a&gt;&lt;/p&gt;</translation>
     </message>

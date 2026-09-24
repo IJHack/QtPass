@@ -2042,9 +2042,9 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass는 표준 유닉스 암호 관리자인 &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; 를 위한 GUI입니다.&lt;/p&gt;
-&lt;p&gt;이 소프트웨어와 관련된 &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;문제&lt;/a&gt; 를 보고해 주세요.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt; 문서&lt;/a&gt;&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;QtPass는 표준 유닉스 암호 관리자인 &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;를 위한 GUI입니다.&lt;/p&gt;
+&lt;p&gt;이 소프트웨어를 사용하면서 겪은 &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;문제&lt;/a&gt;를 보고해 주세요.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;문서&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;소스 코드&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>

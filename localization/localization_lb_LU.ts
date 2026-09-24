@@ -1885,10 +1885,10 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt; QtPass ass eng GUI fir &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; Pass &lt;/a&gt;, de Standard Unix Passwuertmanager. &lt;/p&gt;
-&lt;p&gt; Mellt w.e.g. all &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; Problemer &lt;/a&gt; Dir hutt mat dëser Software. &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dokumentatioun &lt;/a&gt; &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Quelltext &lt;/a&gt; &lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;QtPass ass eng grafesch Uewerfläch fir &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de Standard-Unix-Passwuertmanager.&lt;/p&gt;
+&lt;p&gt;Mellt w.e.g. all &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;Problemer&lt;/a&gt;, déi Dir mat dëser Software hutt.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentatioun&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Quelltext&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>

@@ -2010,10 +2010,10 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass 是個圖像介面&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;，標準的unix系統密碼管理程式。&lt;/p&gt;
-&lt;p&gt;請回報任何 &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;問題&lt;/a&gt; 當你在使用這個軟體時。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;說明書&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;S程式碼&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;QtPass 是 &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;（標準的 Unix 密碼管理程式）的圖形介面。&lt;/p&gt;
+&lt;p&gt;使用本軟體時若遇到任何&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;問題&lt;/a&gt;，請回報。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;說明文件&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;原始碼&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>

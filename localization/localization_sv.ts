@@ -2125,10 +2125,10 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass är ett GUI för &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass&lt;/a&gt;, standardhanteraren för Unix-lösenord.&lt;/p&gt;
-&lt;p&gt;Rapportera alla &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; problem&lt;/a&gt; du kan ha med den här programvaran.&lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dokumentation&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Källkod&lt;/a&gt; &lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;QtPass är ett grafiskt gränssnitt för &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardlösenordshanteraren för Unix.&lt;/p&gt;
+&lt;p&gt;Rapportera alla &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problem&lt;/a&gt; du stöter på med den här programvaran.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Källkod&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
