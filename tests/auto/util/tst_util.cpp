@@ -48,6 +48,47 @@
 using GrepResults = QList<QPair<QString, QStringList>>;
 Q_DECLARE_METATYPE(GrepResults)
 
+#if defined(Q_OS_LINUX) && defined(__GLIBC__) &&                               \
+    (__GLIBC__ > 2 || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 28))
+#include <cerrno>
+#include <cstdio>
+#include <fcntl.h>
+#include <sys/syscall.h>
+#define QTPASS_FAKE_FILESYSTEM
+/**
+ * @brief Test doubles for linkat(2) and renameat2(2).
+ *
+ * libqtpass.a is linked statically into this binary, so these definitions
+ * bind before glibc's (as in tst_trayicon). They pass through to the kernel
+ * unless a test pretends the filesystem is FAT-like: no hard links (EPERM,
+ * what vfat answers) and, one step further, no exclusive rename (EINVAL, what
+ * a FUSE filesystem without rename2 answers). Only QtPass's own flag-less
+ * linkat() is refused: QTemporaryFile names its O_TMPFILE file through
+ * linkat() with AT_EMPTY_PATH or AT_SYMLINK_FOLLOW, which a real FAT mount
+ * never reaches because it has no O_TMPFILE either.
+ */
+static bool fakeNoHardLinks = false;
+static bool fakeNoExclusiveRename = false;
+extern "C" int linkat(int olddirfd, const char *oldpath, int newdirfd,
+                      const char *newpath, int flags) noexcept {
+  if (fakeNoHardLinks && flags == 0) {
+    errno = EPERM;
+    return -1;
+  }
+  return static_cast<int>(
+      syscall(SYS_linkat, olddirfd, oldpath, newdirfd, newpath, flags));
+}
+extern "C" int renameat2(int olddirfd, const char *oldpath, int newdirfd,
+                         const char *newpath, unsigned int flags) noexcept {
+  if (fakeNoExclusiveRename) {
+    errno = EINVAL;
+    return -1;
+  }
+  return static_cast<int>(
+      syscall(SYS_renameat2, olddirfd, oldpath, newdirfd, newpath, flags));
+}
+#endif
+
 static constexpr int TEST_SIGNAL_TIMEOUT_MS = 3000;
 static constexpr int DISTRIBUTION_MIN_PERCENT = 80;
 static constexpr int DISTRIBUTION_MAX_PERCENT = 120;
@@ -335,6 +376,8 @@ private Q_SLOTS:
   void isLinkedFolderSeesThroughATrailingSeparator();
   void isUnderLinkChecksEveryFolderOnTheWay();
   void replaceFileRenamesOverALinkAndNeverThroughIt();
+  void replaceFileWithoutHardLinksStillRefusesATakenName();
+  void newEntryIsWrittenOnAFilesystemWithoutHardLinks();
   void openRegularFileDoesNotFollowLinksOrOpenSpecialFiles();
   void writeFileReplacingStagesAndNeverWritesThroughALink();
   void copyFileReplacingCopiesRegularFilesOnlyAndOwnerOnly();
@@ -4296,6 +4339,95 @@ void tst_util::copyFileReplacingCopiesRegularFilesOnlyAndOwnerOnly() {
                           QDir::Files | QDir::Hidden)
                .size(),
            0);
+}
+
+/**
+ * @brief On a filesystem without hard links (FAT/exFAT, some FUSE mounts) a
+ *        file still gets a free name and never a taken one: first through an
+ *        exclusive rename, and where that is missing too, by checking the
+ *        name before renaming.
+ */
+void tst_util::replaceFileWithoutHardLinksStillRefusesATakenName() {
+#ifndef QTPASS_FAKE_FILESYSTEM
+  QSKIP("needs glibc's linkat/renameat2 to fake a filesystem without them");
+#else
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QDir root(dir.path());
+  const auto write = [](const QString &path, const QByteArray &bytes) {
+    QFile f(path);
+    return f.open(QIODevice::WriteOnly) && f.write(bytes) == bytes.size();
+  };
+  const auto read = [](const QString &path) {
+    QFile f(path);
+    return f.open(QIODevice::ReadOnly) ? f.readAll() : QByteArray();
+  };
+  const auto guard = qScopeGuard([] {
+    fakeNoHardLinks = false;
+    fakeNoExclusiveRename = false;
+  });
+
+  for (const bool exclusiveRename : {true, false}) {
+    fakeNoHardLinks = true;
+    fakeNoExclusiveRename = !exclusiveRename;
+    const QString tag = exclusiveRename ? QStringLiteral("renameat2")
+                                        : QStringLiteral("check-then-rename");
+    const QString source = root.filePath(tag + QStringLiteral(".tmp"));
+    const QString taken = root.filePath(tag + QStringLiteral(".taken"));
+    const QString target = root.filePath(tag);
+    QVERIFY(write(source, "new") && write(taken, "other"));
+
+    QVERIFY2(Util::replaceFile(taken, target, false), qPrintable(tag));
+    QCOMPARE(read(target), QByteArray("other"));
+    QVERIFY2(!QFileInfo::exists(taken), "the source name is gone");
+
+    QVERIFY2(!Util::replaceFile(source, target, false),
+             qPrintable(tag + QStringLiteral(": a taken name is refused")));
+    QCOMPARE(read(target), QByteArray("other"));
+    QVERIFY2(QFileInfo::exists(source), "and the source stays");
+  }
+#endif
+}
+
+/**
+ * @brief A new entry on a store without hard links is written, and a second
+ *        one under the same name is refused as existing; the 2.0 staged
+ *        write only used to know linkat(), which such a filesystem refuses.
+ */
+void tst_util::newEntryIsWrittenOnAFilesystemWithoutHardLinks() {
+#ifndef QTPASS_FAKE_FILESYSTEM
+  QSKIP("needs glibc's linkat/renameat2 to fake a filesystem without them");
+#else
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const auto guard = qScopeGuard([] {
+    fakeNoHardLinks = false;
+    fakeNoExclusiveRename = false;
+  });
+  fakeNoHardLinks = true;
+
+  for (const bool exclusiveRename : {true, false}) {
+    fakeNoExclusiveRename = !exclusiveRename;
+    const QString entry =
+        QDir(dir.path())
+            .filePath(exclusiveRename ? QStringLiteral("a.gpg")
+                                      : QStringLiteral("b.gpg"));
+    QString error;
+    QVERIFY2(Util::writeFileReplacing(entry, "first", false, &error),
+             qPrintable(error));
+    QVERIFY2(!Util::writeFileReplacing(entry, "second", false, &error),
+             "the name is taken now");
+    QVERIFY2(error.contains(QStringLiteral("already exists")),
+             qPrintable(error));
+    QFile f(entry);
+    QVERIFY(f.open(QIODevice::ReadOnly));
+    QCOMPARE(f.readAll(), QByteArray("first"));
+  }
+  const QStringList left =
+      QDir(dir.path()).entryList(QDir::Files | QDir::Hidden);
+  QCOMPARE(left,
+           QStringList({QStringLiteral("a.gpg"), QStringLiteral("b.gpg")}));
+#endif
 }
 
 /**

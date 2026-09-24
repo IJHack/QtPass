@@ -421,6 +421,81 @@ auto Util::isUnderLink(const QString &path, const QString &storeRoot,
   return false;
 }
 
+#ifndef Q_OS_WIN
+namespace {
+
+/// The filesystem cannot make hard links at all (FAT/exFAT refuse with
+/// EPERM, some FUSE filesystems with ENOTSUP or ENOSYS).
+auto hasNoHardLinks(int error) -> bool {
+  return error == EPERM || error == ENOTSUP || error == EOPNOTSUPP ||
+         error == ENOSYS;
+}
+
+/// rename() that fails with EEXIST instead of replacing, where the platform
+/// has one; nothing when neither the platform nor the filesystem does.
+auto renameExclusive(const QByteArray &source, const QByteArray &target)
+    -> std::optional<bool> {
+#if defined(__GLIBC__) &&                                                      \
+    (__GLIBC__ > 2 || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 28))
+  if (::renameat2(AT_FDCWD, source.constData(), AT_FDCWD, target.constData(),
+                  RENAME_NOREPLACE) == 0) {
+    return true;
+  }
+  if (errno == EINVAL || errno == ENOSYS || hasNoHardLinks(errno)) {
+    return std::nullopt;
+  }
+  return false;
+#elif defined(Q_OS_MACOS)
+  if (::renamex_np(source.constData(), target.constData(), RENAME_EXCL) == 0) {
+    return true;
+  }
+  if (errno == EINVAL || errno == ENOTSUP) {
+    return std::nullopt;
+  }
+  return false;
+#else
+  Q_UNUSED(source);
+  Q_UNUSED(target);
+  return std::nullopt;
+#endif
+}
+
+/**
+ * @brief Gives @p source the name @p target unless something already has it.
+ *
+ * A hard link is the one way every POSIX system can do that in one step:
+ * linkat() fails with EEXIST rather than replacing. Where the filesystem has
+ * no hard links, an exclusive rename does it; where that is missing too, the
+ * name is checked and then renamed, which leaves a short window for another
+ * writer to create it in between.
+ */
+auto placeWithoutReplacing(const QByteArray &source, const QByteArray &target)
+    -> bool {
+  // linkat() without AT_SYMLINK_FOLLOW follows nothing; link() would, on
+  // macOS and the BSDs, hard-link whatever a symlink planted under the
+  // source's name points at.
+  if (::linkat(AT_FDCWD, source.constData(), AT_FDCWD, target.constData(), 0) ==
+      0) {
+    ::unlink(source.constData());
+    return true;
+  }
+  if (!hasNoHardLinks(errno)) {
+    return false;
+  }
+  if (const std::optional<bool> renamed = renameExclusive(source, target)) {
+    return *renamed;
+  }
+  struct stat st{};
+  if (::lstat(target.constData(), &st) == 0 || errno != ENOENT) {
+    errno = EEXIST;
+    return false;
+  }
+  return ::rename(source.constData(), target.constData()) == 0;
+}
+
+} // namespace
+#endif
+
 auto Util::replaceFile(const QString &from, const QString &to, bool replace)
     -> bool {
 #ifdef Q_OS_WIN
@@ -441,14 +516,9 @@ auto Util::replaceFile(const QString &from, const QString &to, bool replace)
       return false;
     }
   } else {
-    // linkat() without AT_SYMLINK_FOLLOW follows nothing; link() would, on
-    // macOS and the BSDs, hard-link whatever a symlink planted under the
-    // source's name points at.
-    if (::linkat(AT_FDCWD, source.constData(), AT_FDCWD, target.constData(),
-                 0) != 0) {
+    if (!placeWithoutReplacing(source, target)) {
       return false;
     }
-    ::unlink(source.constData());
   }
   // Sync the directory entry so a crash does not lose the new name. Best
   // effort: the bytes are already synced, and some network filesystems
