@@ -46,6 +46,7 @@ const PRECACHE_URLS = [
   "/images/apple-icon-152x152.png",
   "/images/apple-icon.png",
   "/images/freebsd.png",
+  "/images/openbsd.png",
   "/images/ms-icon-310x310.png",
   "/images/android-icon-48x48.png",
   "/images/apple-icon-180x180.png",
