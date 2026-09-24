@@ -36,18 +36,12 @@ namespace {
 const char kOtpEditedProperty[] = "qtpassOtpEdited";
 } // namespace
 
-/**
- * @brief PasswordDialog::PasswordDialog basic constructor.
- * @param passConfig configuration constant
- * @param parent
- */
 PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
                                QWidget *parent)
     : QDialog(parent), ui(new Ui::PasswordDialog),
       m_passConfig(std::move(passConfig)), m_pass(QtPassSettings::getPass()) {
-  // m_pass is captured once from the singleton here. This constructor is
-  // only reached from tests; production always uses the two-arg overload
-  // that receives an explicit Pass* with a stable, caller-controlled lifetime.
+  // Only reached from tests; production uses the overload taking an
+  // explicit Pass* with a caller-controlled lifetime.
   m_templating = false;
   m_isNew = false;
 
@@ -61,12 +55,6 @@ PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
   connect(m_pass, &Pass::finishedShow, this, &PasswordDialog::setPass);
 }
 
-/**
- * @brief PasswordDialog::PasswordDialog complete constructor.
- * @param file
- * @param isNew
- * @param parent pointer
- */
 PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
                                const bool &isNew, QWidget *parent)
     : QDialog(parent), ui(new Ui::PasswordDialog), m_pass(pass),
@@ -97,11 +85,9 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
   connect(this, &PasswordDialog::rejected, this, &PasswordDialog::on_rejected);
 
   if (!isNew) {
-    // Show() is asynchronous: it forks gpg/pass and finishedShow only lands
-    // once the event loop runs again, so right after construction the fields
-    // are still empty. Clicking Ok in that window used to report Accepted
-    // while writing nothing, and the late setPass() then overwrote whatever
-    // was typed. Lock the editor and Ok until the decrypt arrives.
+    // Show() is asynchronous: until finishedShow lands the fields are empty,
+    // so an early Ok would write nothing and the late setPass() would clobber
+    // what was typed. Lock the editor and Ok until the decrypt arrives.
     ui->statusLabel->setText(tr("Decrypting…"));
     setEditorEnabled(false);
     ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
@@ -109,23 +95,13 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
   }
 }
 
-/**
- * @brief PasswordDialog::~PasswordDialog basic destructor.
- */
 PasswordDialog::~PasswordDialog() {
-  // QDialog's destructor hides the window after this body ran, and hiding
-  // takes the focus from whatever has it, which emits editingFinished():
-  // into normalizeOtpField() from a field, or through FieldLabel's rename
-  // editor into renameField(), each a slot of the PasswordDialog part that
-  // is already gone by then. Hiding here, while the object is whole, is
-  // what those slots run on; QDialog's own hide is then a no-op.
+  // QDialog's destructor hides the window after this body, and losing focus
+  // emits editingFinished() into normalizeOtpField() or renameField(), slots
+  // of a PasswordDialog already gone. Hide here, while the object is whole.
   hide();
 }
 
-/**
- * @brief PasswordDialog::setPasswordVisible hide or show passwords.
- * @param show
- */
 void PasswordDialog::setPasswordVisible(bool show) {
   if (show) {
     ui->lineEditPassword->setEchoMode(QLineEdit::Normal);
@@ -134,10 +110,6 @@ void PasswordDialog::setPasswordVisible(bool show) {
   }
 }
 
-/**
- * @brief PasswordDialog::on_createPasswordButton_clicked generate a random
- * password.
- */
 void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
   const int currentIndex = ui->passwordTemplateSwitch->currentIndex();
@@ -157,14 +129,10 @@ void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(true);
 }
 
-/**
- * @brief PasswordDialog::on_accepted handle Ok click for QDialog
- */
 void PasswordDialog::on_accepted() {
-  // For an existing entry, refuse to save until its decrypted content has
-  // loaded (Show is asynchronous). getPassword() always returns at least a
-  // newline, so the previous isEmpty() check never fired and clicking OK early
-  // overwrote the entry with the empty dialog fields.
+  // Show is asynchronous: refuse to save an existing entry before its
+  // content loads. getPassword() always returns at least a newline, so an
+  // isEmpty() check cannot stand in for this.
   if (!m_isNew && !m_contentLoaded) {
     return;
   }
@@ -180,15 +148,8 @@ void PasswordDialog::on_accepted() {
   m_pass->Insert(m_file, newValue, !m_isNew);
 }
 
-/**
- * @brief PasswordDialog::on_rejected handle Cancel click for QDialog
- */
 void PasswordDialog::on_rejected() { setPassword(QString()); }
 
-/**
- * @brief PasswordDialog::setNewEntryLocation show the folder picker and the
- * name field for a new entry.
- */
 void PasswordDialog::setNewEntryLocation(const QString &storeRoot,
                                          const QStringList &folders,
                                          const QString &currentFolder) {
@@ -218,9 +179,6 @@ void PasswordDialog::setNewEntryLocation(const QString &storeRoot,
   ui->nameEdit->setFocus();
 }
 
-/**
- * @brief Resolve folder + typed name into an entry path, or say why not.
- */
 auto PasswordDialog::resolveNewEntry(QString *problem) const -> QString {
   QString name = QDir::fromNativeSeparators(ui->nameEdit->text().trimmed());
   // The suffix belongs to the file, not the entry: Insert() appends it, so a
@@ -257,9 +215,7 @@ auto PasswordDialog::resolveNewEntry(QString *problem) const -> QString {
   return rel;
 }
 
-/**
- * @brief Re-check the name after every keystroke and gate OK on it.
- */
+// Re-checked on every keystroke; gates OK.
 void PasswordDialog::validateNewEntry() {
   QString problem;
   const QString rel = resolveNewEntry(&problem);
@@ -288,24 +244,16 @@ void PasswordDialog::accept() {
   QDialog::accept();
 }
 
-/**
- * @brief PasswordDialog::setPassword populate the (templated) fields.
- * @param password
- */
 void PasswordDialog::setPassword(const QString &password) {
-  // Which lines become fields is the user's choice, not ours: the template's
-  // fields when templating is on, every `key: value` line only with "Template
-  // all fields". Forcing allFields (#1138, for #132) turned every such line
-  // in every store into a label-locked widget, also with templates off, and
-  // took away plain-text editing of those lines (#1766). The same rule is
-  // applied in MainWindow when rendering the entry.
+  // Which lines become fields is the user's choice: forcing allFields
+  // (#1138, for #132) made every `key: value` line a label-locked widget,
+  // even with templates off (#1766). MainWindow renders by the same rule.
   FileContent fileContent =
       FileContent::parse(password, m_templating ? m_fields : QStringList(),
                          m_templating && m_allFields);
   ui->lineEditPassword->setText(fileContent.getPassword());
 
   QWidget *previous = ui->checkBoxShow;
-  // first set templated values
   NamedValues namedValues = fileContent.getNamedValues();
   for (QLineEdit *line : std::as_const(m_templateLines)) {
     line->setText(namedValues.takeValue(line->objectName()));
@@ -314,7 +262,6 @@ void PasswordDialog::setPassword(const QString &password) {
     line->setProperty(kOtpEditedProperty, QVariant());
     previous = line;
   }
-  // show remaining values (if there are)
   // Remove previously created dynamic widgets to prevent duplicates and leaks
   for (QLineEdit *line : std::as_const(m_otherLines)) {
     ui->formLayout->removeRow(line);
@@ -349,9 +296,8 @@ void PasswordDialog::setPassword(const QString &password) {
             [this, line] { removeField(line); });
   }
 
-  // setPlainText (not insertPlainText) so re-populating replaces the body
-  // instead of appending a second copy, which would be saved back as
-  // duplicated content.
+  // setPlainText, not insertPlainText: re-populating must replace the body,
+  // not save back a duplicated copy.
   ui->plainTextEdit->setPlainText(fileContent.getRemainingData());
 
   // m_otherLines was just rebuilt, so the OTP field may be a new widget.
@@ -377,10 +323,9 @@ void PasswordDialog::renameField(QLineEdit *line, FieldLabel *label,
 
 void PasswordDialog::removeField(QLineEdit *line) {
   m_otherLines.removeAll(line);
-  // takeRow(), not removeRow(): the latter deletes the label and the line
-  // here, while the label's contextMenuEvent() (with a QMenu on its stack,
-  // parented to the label) or the line's action's triggered() is still
-  // running. Out of the form now, deleted once the stack has unwound.
+  // takeRow(), not removeRow(): removeRow() deletes the widgets while the
+  // label's contextMenuEvent() or the action's triggered() is still on the
+  // stack. They are deleted once the stack has unwound.
   const QFormLayout::TakeRowResult row = ui->formLayout->takeRow(line);
   // hide() takes the focus from a focused line, and that emits
   // editingFinished(): not into normalizeOtpField() for a field that is
@@ -402,10 +347,6 @@ void PasswordDialog::removeField(QLineEdit *line) {
   hookOtpField();
 }
 
-/**
- * @brief PasswordDialog::otpLineEdit find the OTP configuration field.
- * @return the matching QLineEdit, or nullptr when there is none
- */
 auto PasswordDialog::otpLineEdit() const -> QLineEdit * {
   QList<QLineEdit *> allLines(m_templateLines);
   allLines.append(m_otherLines);
@@ -414,11 +355,9 @@ auto PasswordDialog::otpLineEdit() const -> QLineEdit * {
     if (!FileContent::isOtpFieldName(line->objectName())) {
       continue;
     }
-    // Prefer a populated field. The default template creates an empty `OTP`
-    // widget, and setPassword() fills template widgets by exact name, so an
-    // entry storing `TOTP:` leaves that one empty and puts the real secret in
-    // m_otherLines. Returning the empty template widget meant the actual value
-    // was never validated or normalised.
+    // Prefer a populated field: the default template's empty `OTP` widget
+    // would otherwise shadow a `TOTP:` value in m_otherLines, leaving the
+    // real secret unvalidated and unnormalised.
     if (!line->text().trimmed().isEmpty()) {
       return line;
     }
@@ -429,20 +368,10 @@ auto PasswordDialog::otpLineEdit() const -> QLineEdit * {
   return firstMatch;
 }
 
-/**
- * @brief PasswordDialog::hookOtpField attach validation to the OTP field.
- *
- * setTemplate() and setPassword() both recreate the field widgets, so this is
- * called from each of them rather than once from the constructor.
- */
 void PasswordDialog::hookOtpField() {
-  // Drop the previous warning indicator. Only m_otherLines widgets are deleted
-  // by removeRow(); a template widget survives, so simply forgetting the action
-  // left it installed forever and the next validate added a second icon.
-  //
-  // m_otpWarning is a QPointer, so it is already null when the QLineEdit that
-  // owned the action was one of the m_otherLines widgets setPassword() just
-  // deleted — dereferencing a raw pointer here was a use-after-free.
+  // Only m_otherLines widgets are deleted by removeRow(); a template widget
+  // keeps its action, and the next validate would add a second icon.
+  // m_otpWarning is a QPointer: null when setPassword() deleted its owner.
   if (!m_otpWarning.isNull()) {
     if (auto *owner = qobject_cast<QWidget *>(m_otpWarning->parent())) {
       owner->removeAction(m_otpWarning);
@@ -482,15 +411,9 @@ void PasswordDialog::markOtpFieldEdited() {
   }
 }
 
-/**
- * @brief PasswordDialog::validateOtpField flag an unusable OTP value.
- */
 void PasswordDialog::validateOtpField() {
-  // The line hookOtpField() wired up, not whatever otpLineEdit() resolves to
-  // now: the signals that bring us here are that line's, and so is the mark
-  // normalizeOtpField() reads. Which field is the OTP one is settled when
-  // the fields change (a reload, a rename, a removal), not by what the user
-  // types into them.
+  // m_otpLine, not otpLineEdit(): the signals that bring us here and the
+  // edit mark are that line's. The OTP role is settled when fields change.
   QLineEdit *otp = m_otpLine;
   if (otp == nullptr) {
     return;
@@ -516,18 +439,10 @@ void PasswordDialog::validateOtpField() {
   }
 }
 
-/**
- * @brief PasswordDialog::normalizeOtpField rewrite the OTP field as a URI.
- *
- * Only rewrites a value that is unambiguously TOTP configuration: an
- * `otpauth://` URI, or something the user typed into this very field.
- *
- * Anything else is left byte-for-byte. Base32::sanitizeInput() maps 1 to L and
- * 8 to B, so a static backup code like `12345678` looks like valid base32 and
- * used to be silently rewritten as an otpauth URI and re-encrypted — on any OK,
- * even when the user only edited the password field and never touched this one.
- * A bare secret left alone still works: Totp::parse() accepts one.
- */
+// Only an otpauth:// URI or a value typed into this field is rewritten.
+// Base32::sanitizeInput() maps 1 to L and 8 to B, so a backup code like
+// `12345678` passes as base32 and was silently rewritten on any OK. A bare
+// secret left alone still works: Totp::parse() accepts one.
 void PasswordDialog::normalizeOtpField() {
   QLineEdit *otp = m_otpLine;
   if (otp == nullptr) {
@@ -550,11 +465,6 @@ void PasswordDialog::normalizeOtpField() {
   }
 }
 
-/**
- * @brief PasswordDialog::getPassword  join the (templated) fields to a QString
- * for writing back.
- * @return collapsed password.
- */
 auto PasswordDialog::getPassword() -> QString {
   QString passFile = ui->lineEditPassword->text() + "\n";
   QList<QLineEdit *> allLines(m_templateLines);
@@ -570,10 +480,6 @@ auto PasswordDialog::getPassword() -> QString {
   return passFile;
 }
 
-/**
- * @brief PasswordDialog::setTemplate set the template and create the fields.
- * @param rawFields
- */
 void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
   m_fields = rawFields.split('\n');
   m_templating = useTemplate;
@@ -609,48 +515,25 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
   hookOtpField();
 }
 
-/**
- * @brief PasswordDialog::templateAll split every `key: value` line into a
- *        field, not only the template's.
- * @param templateAll
- */
 void PasswordDialog::templateAll(bool templateAll) {
   m_allFields = templateAll;
 }
 
-/**
- * @brief PasswordDialog::setLength
- * PasswordDialog::setLength password length.
- * @param length
- */
 void PasswordDialog::setLength(int length) {
   ui->spinBox_pwdLength->setValue(length);
 }
 
-/**
- * @brief PasswordDialog::setPasswordCharTemplate
- * PasswordDialog::setPasswordCharTemplate chose the template style.
- * @param templateIndex
- */
 void PasswordDialog::setPasswordCharTemplate(int templateIndex) {
   ui->passwordTemplateSwitch->setCurrentIndex(templateIndex);
 }
 
-/**
- * @brief PasswordDialog::usePwgen
- * PasswordDialog::usePwgen don't use own password generator.
- * @param usePwgen
- */
 void PasswordDialog::usePwgen(bool usePwgen) {
   m_usePwgen = usePwgen;
   ui->passwordTemplateSwitch->setDisabled(usePwgen);
   ui->label_characterset->setDisabled(usePwgen);
 }
 
-/**
- * @brief Hide the template row until setAvailableTemplates() fills it and
- *        make a pick in the box apply that template.
- */
+// The template row stays hidden until setAvailableTemplates() fills it.
 void PasswordDialog::setupTemplateBox() {
   ui->label_template->hide();
   ui->templateBox->hide();
@@ -664,14 +547,6 @@ void PasswordDialog::setupTemplateBox() {
           });
 }
 
-/**
- * @brief Set available templates from .templates file and apply default.
- *
- * Shows the template row with the names, selects @p defaultTemplate (or the
- * first name) and enables Ctrl+T to cycle through them.
- * @param templates Hash of template name to field list.
- * @param defaultTemplate Name of default template to select.
- */
 void PasswordDialog::setAvailableTemplates(
     const QHash<QString, QStringList> &templates,
     const QString &defaultTemplate) {
@@ -699,10 +574,6 @@ void PasswordDialog::setAvailableTemplates(
   applyTemplate(selected);
 }
 
-/**
- * @brief Apply a template by name.
- * @param templateName Name of template to apply.
- */
 void PasswordDialog::applyTemplate(const QString &templateName) {
   auto it = m_availableTemplates.constFind(templateName);
   if (it != m_availableTemplates.constEnd()) {
@@ -714,9 +585,6 @@ void PasswordDialog::applyTemplate(const QString &templateName) {
   }
 }
 
-/**
- * @brief Cycle to next template (Ctrl+T).
- */
 void PasswordDialog::cycleTemplate() {
   if (m_availableTemplates.isEmpty()) {
     return;
@@ -734,10 +602,6 @@ void PasswordDialog::cycleTemplate() {
   applyTemplate(names.at(nextIdx));
 }
 
-/**
- * @brief Sets the password from pass show output.
- * @param output Output from pass show command
- */
 void PasswordDialog::setPass(const QString &output, const QString &file) {
   // finishedShow names its file: a decrypt of any other entry (a tree click
   // that was still queued when the dialog opened) is not ours.
@@ -746,18 +610,12 @@ void PasswordDialog::setPass(const QString &output, const QString &file) {
   }
   setPassword(output);
   m_contentLoaded = true;
-  // The decrypt landed: unlock the editor and Ok, and drop the "Decrypting…"
-  // note so it cannot be mistaken for a warning.
+  // Drop the "Decrypting…" note so it cannot be mistaken for a warning.
   ui->statusLabel->clear();
   setEditorEnabled(true);
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
 }
 
-/**
- * @brief PasswordDialog::onShowError surface a decrypt failure in the dialog.
- * @param exitCode Ignored exit code of the failed process.
- * @param err Error output to present to the user.
- */
 void PasswordDialog::onShowError(int /* exitCode */, const QString &err) {
   // React only while the dialog is still waiting for its own decrypt.
   // processErrorExit carries no request identity, but for an existing entry
@@ -765,18 +623,11 @@ void PasswordDialog::onShowError(int /* exitCode */, const QString &err) {
   if (m_isNew || m_contentLoaded) {
     return;
   }
-  // Keep the dialog open so the user can read why it is inert; Ok stays
-  // locked and the only way out is Cancel. The old behaviour closed the
-  // window silently, which looked like "nothing happened".
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
   setEditorEnabled(false);
   ui->statusLabel->setText(err);
 }
 
-/**
- * @brief PasswordDialog::setEditorEnabled lock or restore every editable field.
- * @param enabled true to restore the editor, false to grey it out.
- */
 void PasswordDialog::setEditorEnabled(bool enabled) {
   ui->lineEditPassword->setEnabled(enabled);
   ui->createPasswordButton->setEnabled(enabled);

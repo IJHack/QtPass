@@ -1,16 +1,6 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-/**
- * @class Util
- * @brief Static utility functions implementation.
- *
- * Implementation of utility functions for path handling, binary discovery,
- * and configuration validation.
- *
- * @see util.h
- */
-
 #include "util.h"
 #include "appsettings.h"
 #include "executor.h"
@@ -44,16 +34,7 @@
 QProcessEnvironment Util::_env;
 bool Util::_envInitialised = false;
 
-/**
- * @brief Initializes the process environment and augments PATH with
- * platform-specific GPG locations.
- * @example
- * Util::initialiseEnvironment();
- *
- * @note On macOS, appends common MacGPG2 and /usr/local/bin paths if available.
- * @note On Windows, appends common WinGPG and GnuPG installation paths if
- * available.
- */
+// macOS and Windows: append the usual GPG install directories to PATH.
 void Util::initialiseEnvironment() {
   if (!_envInitialised) {
     _env = QProcessEnvironment::systemEnvironment();
@@ -81,13 +62,6 @@ void Util::initialiseEnvironment() {
   }
 }
 
-/**
- * @brief Resolves the path to the password store directory.
- * @details Initializes the environment, checks for the {@code
- * PASSWORD_STORE_DIR} variable, and falls back to a platform-specific default
- * location under the user's home directory.
- * @return QString - Normalized path to the password store folder.
- */
 auto Util::findPasswordStore() -> QString {
   QString path;
   initialiseEnvironment();
@@ -103,13 +77,6 @@ auto Util::findPasswordStore() -> QString {
   return Util::normalizeFolderPath(QDir::cleanPath(path));
 }
 
-/**
- * @brief Expand a leading current-user tilde in a path.
- *
- * Environment variables set in non-shell contexts (systemd units, .desktop
- * entries, quoted shell assignments) skip shell tilde expansion and keep a
- * literal "~". "~username" forms are intentionally not resolved.
- */
 auto Util::expandTilde(const QString &path) -> QString {
   if (path == QLatin1String("~")) {
     return QDir::homePath();
@@ -128,23 +95,6 @@ auto Util::normalizeFolderPath(const QString &path) -> QString {
   return normalizedPath;
 }
 
-/**
- * @brief Finds the absolute path of a binary by searching the PATH environment
- * variable.
- *
- * Splits the (platform-augmented) PATH into directories and delegates to the
- * two-argument overload. On Windows, if no local match is found, it may fall
- * back to a WSL invocation when the binary name is valid and WSL appears to
- * support it.
- *
- * @example
- * QString result = Util::findBinaryInPath("git");
- * // Expected output sample: "/usr/bin/git" or "wsl git"
- *
- * @param QString binary - The name of the binary to locate.
- * @return QString - The absolute path to the binary, or an empty string if not
- * found.
- */
 auto Util::findBinaryInPath(const QString &binary) -> QString {
   if (binary.isEmpty()) {
     return {};
@@ -205,24 +155,9 @@ auto Util::findBinaryInPath(const QString &binary) -> QString {
   return ret;
 }
 
-/**
- * @brief Finds an executable in an explicit list of directories.
- *
- * Thin wrapper around QStandardPaths::findExecutable(): only regular files
- * that are executable match (a directory named like the binary is skipped),
- * and on Windows the PATHEXT extensions are tried. Empty entries are dropped
- * rather than being resolved against the current working directory, and an
- * empty list finds nothing instead of silently falling back to the process
- * PATH. Only bare names are accepted: QStandardPaths::findExecutable() would
- * return an absolute @p binary without consulting @p searchPaths at all, and
- * a relative one containing ".." could escape them, so both find nothing.
- *
- * @param binary The name of the binary to locate; must not contain a
- * directory separator.
- * @param searchPaths Directories to search, in order.
- * @return QString - The absolute path to the binary, or an empty string if not
- * found.
- */
+// Bare names only: QStandardPaths::findExecutable() returns an absolute binary
+// without consulting searchPaths, and a relative one with ".." could escape
+// them.
 auto Util::findBinaryInPath(const QString &binary,
                             const QStringList &searchPaths) -> QString {
   if (binary.isEmpty() || QDir::fromNativeSeparators(binary).contains(u'/')) {
@@ -242,18 +177,6 @@ auto Util::findBinaryInPath(const QString &binary,
   return QStandardPaths::findExecutable(binary, dirs);
 }
 
-/**
- * @brief Checks whether the current QtPass configuration is valid.
- * @example
- * AppSettings s = QtPassSettings::load();
- * bool result = Util::configIsValid(s);
- * std::cout << std::boolalpha << result << std::endl; // Expected output: true
- * or false
- *
- * @param s Application settings snapshot to validate.
- * @return bool - True if the configuration file exists and the required
- * executable is available; otherwise false.
- */
 auto Util::configIsValid(const AppSettings &s) -> bool {
   const QString configFilePath = QDir(s.passStore).filePath(".gpg-id");
   if (!QFile(configFilePath).exists()) {
@@ -280,48 +203,20 @@ auto Util::configIsValid(const AppSettings &s) -> bool {
   return QFile(executable).exists();
 }
 
-/**
- * @brief Returns a regex matching strings that end with the .gpg extension.
- *
- * @return QRegularExpression reference
- */
 auto Util::endsWithGpg() -> const QRegularExpression & {
   static const QRegularExpression expr{R"(\.gpg$)"};
   return expr;
 }
 
-/**
- * @brief Returns a regex matching common remote/network protocol schemes.
- *
- * Matches http://, https://, ftp://, ftps://, ssh://, sftp://, webdav://,
- * webdavs://
- *
- * The URL text ends at the first whitespace character (space, tab, CR, LF),
- * quote or bracket, so a URL on its own line in multi-line text (pass file
- * bodies, gpg stderr) is captured without the line break that follows it.
- *
- * Note: Local file URLs (file:///) are intentionally excluded by design, as
- * they represent local paths rather than network protocols. If this behavior
- * needs to change, update both this function and the corresponding test.
- *
- * @return QRegularExpression reference
- */
+// Stops at whitespace, quotes and brackets so a URL on its own line keeps no
+// line break. file:/// is excluded on purpose (local, not network); the test
+// relies on that.
 auto Util::protocolRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{
       R"(((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^"\s<>\)\]\[]+))"};
   return regex;
 }
 
-/**
- * @brief Validate a value as a launchable http(s) URL.
- *
- * Security gate for the "open in browser" action. See util.h for the full
- * contract. Deliberately stricter than protocolRegex(): only http/https,
- * valid host, no embedded credentials, no control characters.
- *
- * @param value Candidate URL string.
- * @return true if launchable in a browser, false otherwise.
- */
 auto Util::isLaunchableWebUrl(const QString &value) -> bool {
   const QString trimmed = value.trimmed();
   if (trimmed.isEmpty()) {
@@ -353,18 +248,6 @@ auto Util::isLaunchableWebUrl(const QString &value) -> bool {
   return true;
 }
 
-/**
- * @brief Escape text as HTML and link only launchable http(s) URLs.
- *
- * See util.h for the contract. Detection uses protocolRegex() so that the
- * URL text is delimited the same way everywhere; the decision whether a
- * match becomes an anchor is isLaunchableWebUrl(), the same predicate that
- * gates the "open in browser" button.
- *
- * @param text Plain text, not yet HTML-escaped.
- * @param linked Set to true when at least one anchor was emitted.
- * @return HTML string safe to hand to QTextBrowser::setHtml().
- */
 auto Util::linkifyUrls(const QString &text, bool *linked) -> QString {
   if (linked != nullptr) {
     *linked = false;
@@ -394,38 +277,14 @@ auto Util::linkifyUrls(const QString &text, bool *linked) -> QString {
   return html;
 }
 
-/**
- * @brief Returns a regex matching newline characters (CR or LF).
- *
- * Useful for detecting or sanitising line breaks in text content.
- *
- * @return QRegularExpression reference
- */
 auto Util::newLinesRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{"[\r\n]"};
   return regex;
 }
 
-/**
- * @brief Validate whether a string is an accepted GPG key identifier.
- *
- * Mirrors what `pass` itself accepts in `.gpg-id`: every non-empty token is
- * handed to gpg as a `-r` argument, and gpg resolves it — key ID or
- * fingerprint of any version (v4 hex, v6 hex, with or without `0x`),
- * `<email>`, `=Exact User ID`, a plain name substring, or a `@`/`/`/`#`/`&`
- * routing prefix. No content heuristics are applied here: they can only
- * reject recipients gpg would have accepted, and a rejected line is not just
- * skipped but erased the next time `.gpg-id` is rewritten.
- *
- * The one thing rejected is a token starting with `-`: the recipient list is
- * also passed positionally to `gpg --list-keys`, where such a token would be
- * parsed as an option instead of a key selector.
- *
- * Empty input is invalid.
- *
- * @param keyId Input key identifier string to validate.
- * @return true unless the input is empty or starts with `-`.
- */
+// No content heuristics: a line rejected here is erased the next time .gpg-id
+// is rewritten. A leading `-` is refused because the recipients also go
+// positionally to `gpg --list-keys`, where it would parse as an option.
 auto Util::isValidKeyId(const QString &keyId) -> bool {
   return !keyId.isEmpty() && !keyId.startsWith('-');
 }
@@ -529,10 +388,8 @@ auto Util::isLinkedFolder(const QString &path) -> bool {
 
 auto Util::isUnderLink(const QString &path, const QString &storeRoot,
                        bool includeSelf) -> bool {
-  // Names compare the way the platform's file system compares them:
-  // "C:/Store" and "c:/store" are one directory on Windows, and a path
-  // spelled the other way must not skip the walk (Pass::getGpgIdPath does
-  // the same).
+  // "C:/Store" and "c:/store" are one directory on Windows; a path spelled
+  // the other way must not skip the walk (as in Pass::getGpgIdPath).
 #ifdef Q_OS_WIN
   constexpr auto cs = Qt::CaseInsensitive;
 #else
@@ -582,20 +439,18 @@ auto Util::replaceFile(const QString &from, const QString &to, bool replace)
       return false;
     }
   } else {
-    // linkat() makes no second name where one exists, and without
-    // AT_SYMLINK_FOLLOW it follows nothing: link() would, on macOS and the
-    // BSDs, make the new name a hard link to whatever a symlink planted
-    // under the source's name points at.
+    // linkat() without AT_SYMLINK_FOLLOW follows nothing; link() would, on
+    // macOS and the BSDs, hard-link whatever a symlink planted under the
+    // source's name points at.
     if (::linkat(AT_FDCWD, source.constData(), AT_FDCWD, target.constData(),
                  0) != 0) {
       return false;
     }
     ::unlink(source.constData());
   }
-  // The directory entry too, so a crash right after does not lose the new
-  // name. Best effort: the rename has happened and the file's own bytes
-  // were synced before it, so a directory that cannot be synced (some
-  // network filesystems) is no reason to report the write as failed.
+  // Sync the directory entry so a crash does not lose the new name. Best
+  // effort: the bytes are already synced, and some network filesystems
+  // cannot sync a directory.
   const int dir = ::open(QFile::encodeName(QFileInfo(to).path()).constData(),
                          O_RDONLY | O_DIRECTORY | O_CLOEXEC);
   if (dir >= 0) {
@@ -706,11 +561,9 @@ auto identityOf(const QFileDevice &file) -> FileIdentity {
       GetFileInformationByHandle(handle, &info) == 0) {
     return {};
   }
-  // On FAT and exFAT the file ID is the byte offset of the directory entry,
-  // which a rename moves whenever the new name needs a different number of
-  // entries: the same file would look like another one afterwards. Those
-  // filesystems have no hard links either (the swap this identifies needs
-  // one), so there the file is taken as it is found.
+  // On FAT/exFAT the file ID is the directory entry's offset, which a rename
+  // can move. They have no hard links either (the swap this catches needs
+  // one), so the identity is left unknown there.
   DWORD flags = 0;
   if (GetVolumeInformationByHandleW(handle, nullptr, 0, nullptr, nullptr,
                                     &flags, nullptr, 0) == 0 ||
@@ -787,14 +640,11 @@ auto Util::stageFileReplacing(const QString &path, bool replace,
     }
     return false;
   }
-  // The object under the name must be the file that was filled: not a link
-  // (the temporary's name swapped for one before the rename: the bytes went
-  // into an unnamed inode, nothing through the link), and not another file
-  // put under the temporary's name in that window (a hard link to something
-  // of the user's would sit under the entry's name, a regular file to every
-  // check by name). Opened without following, compared by identity. What is
-  // under the name then is reported and left: removing it by name could
-  // take another writer's file that landed there since the check.
+  // What is under the name must be the file that was filled: not a link, and
+  // not another file (e.g. a hard link to the user's) swapped in under the
+  // temporary's name. Opened without following, compared by identity. A
+  // mismatch is reported and left: removing by name could take another
+  // writer's file.
   QFile placed;
   if (!openRegularFile(path, placed)) {
     if (error)
@@ -805,10 +655,8 @@ auto Util::stageFileReplacing(const QString &path, bool replace,
     return false;
   }
   const FileIdentity there = identityOf(placed);
-  // Only a comparison of two identities the system gave us can prove a swap.
-  // Where one is unknown (a filesystem whose file IDs a rename moves, an
-  // fstat that failed) the write stands: a false alarm would report every
-  // write on such a store as tampering.
+  // Only two known identities can prove a swap; otherwise the write stands,
+  // or every write on such a store would be reported as tampering.
   if (written.known && there.known && !(there == written)) {
     if (error)
       *error =

@@ -1,13 +1,6 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-/**
- * @class PasswordDisplayPanel
- * @brief Password-field rendering implementation.
- *
- * @see passworddisplaypanel.h
- */
-
 #include "passworddisplaypanel.h"
 #include "appsettings.h"
 #include "otpcodewidget.h"
@@ -71,9 +64,8 @@ void PasswordDisplayPanel::displayFields(const QString &password,
   // occupies row 0: an entry written by `pass otp insert` has no password row,
   // and starting at 1 regardless left an empty grid row above the OTP row.
   int position = 0;
-  // Defence in depth: MainWindow passes FileContent::getPasswordForDisplay(),
-  // which is already empty for an entry whose password line is an otpauth URI
-  // (what `pass otp insert` writes). Refuse to render one even if it gets here.
+  // Defence in depth: getPasswordForDisplay() already blanks a password line
+  // that is an otpauth URI (`pass otp insert`); refuse one here too.
   if (!password.isEmpty() && !FileContent::isOtpUriValue(password)) {
     // The password is hidden in addField when needed.
     addField(position, QObject::tr("Password"), password, s);
@@ -86,10 +78,9 @@ void PasswordDisplayPanel::displayFields(const QString &password,
     // browser, so suppressing only OTP/TOTP names leaked `2fa:` and friends.
     if (FileContent::isOtpFieldName(nv.name) ||
         FileContent::isOtpUriValue(nv.value)) {
-      // Never render an OTP field verbatim: its value is the shared secret,
-      // and addField() would both display it and hand it to a copy button.
-      // The skip is unconditional, so the secret stays hidden even when OTP
-      // support is switched off and otpConfig is empty.
+      // Never render an OTP field verbatim: addField() would display the
+      // shared secret and hand it to a copy button. Unconditional, so it stays
+      // hidden when OTP support is off and otpConfig is empty.
       if (!otpRendered && !otpConfig.isEmpty()) {
         addOtpField(position, otpConfig, s);
         ++position;
@@ -120,7 +111,6 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
       "QPushButton { border-style: none; background: transparent; padding: 0; "
       "margin: 0; icon-size: 16px; color: inherit; }";
 
-  // Combine the Copy button and the line edit in one widget
   auto *frame = createFieldFrame();
   QHBoxLayout *frameLayout = qobject_cast<QHBoxLayout *>(frame->layout());
   if (s.clipBoardType != Enums::CLIPBOARD_NEVER) {
@@ -141,27 +131,18 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     frameLayout->addWidget(qrbutton);
   }
 
-  // Show an explicit "open in browser" button when the value is a safe
-  // http(s) URL. The inline clickable link still works for URLs embedded in
-  // prose; this button is the discoverable affordance for url fields.
-  // Never on the password field: its value is a secret and must not be
-  // surfaced in a tooltip or handed to the browser.
+  // An explicit "open in browser" button for a safe http(s) URL, never on
+  // the password field: its secret must not reach a tooltip or the browser.
   if (trimmedField != QObject::tr("Password") &&
       Util::isLaunchableWebUrl(trimmedValue)) {
     auto *urlButton = new QPushButton(m_widgetParent);
     urlButton->setIcon(QIcon::fromTheme(QStringLiteral("applications-internet"),
                                         QIcon(":/icons/open-url.svg")));
-    // Escape only for tooltip rendering (rich-text safe display). The launched
-    // URL must remain the original validated value; HTML escaping would change
-    // it. The <qt> wrapper forces the rich-text path: QToolTip auto-detects
-    // the format, and without a tag it would show the escaped entities
-    // literally (`?a=1&amp;b=2`). Plain text is not an option either, because
-    // a URL may legitimately contain `&lt;`, which auto-detection treats as
-    // HTML. Rich text also turns on word wrap in QToolTip, and QLabel's
-    // wrapped-size heuristic would then fold the URL into a cramped multi-line
-    // box, breaking it at `/` and `?`; white-space:nowrap on the block keeps
-    // the tooltip on one line. (<nobr> is not enough: Qt only turns its spaces
-    // into non-breaking ones.)
+    // Escape for the tooltip only; the launched URL stays the validated value.
+    // <qt> forces rich text: auto-detection would show `&amp;` literally, and
+    // plain text misreads a URL containing `&lt;`. Rich text wraps, breaking
+    // the URL at `/` and `?`; white-space:nowrap keeps it on one line (<nobr>
+    // is not enough: Qt only makes its spaces non-breaking).
     urlButton->setToolTip(
         QStringLiteral("<qt style=\"white-space:nowrap\">%1</qt>")
             .arg(QObject::tr("Open %1 in browser")
@@ -169,9 +150,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     urlButton->setStyleSheet(buttonStyle);
     urlButton->setCursor(Qt::PointingHandCursor);
     connect(urlButton, &QPushButton::clicked, this, [trimmedValue]() {
-      // Re-validate before launching (defence in depth: the value is
-      // immutable here, but never hand an unvalidated string to the OS
-      // URL handler).
+      // Re-validate: never hand an unvalidated string to the OS URL handler.
       if (Util::isLaunchableWebUrl(trimmedValue)) {
         QDesktopServices::openUrl(QUrl(trimmedValue));
       }
@@ -179,7 +158,6 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     frame->layout()->addWidget(urlButton);
   }
 
-  // set the echo mode to password, if the field is "password"
   const QString lineStyle =
       s.useMonospace
           ? "QLineEdit, QTextBrowser { border-style: none; background: "
@@ -213,18 +191,14 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
         QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
     contentTextBrowser->setObjectName(trimmedField);
     {
-      // One rule for every inline anchor: only launchable http(s) URLs
-      // become clickable (Util::isLaunchableWebUrl, the same predicate as the
-      // open-in-browser button); ssh://, ftp:// or user:pass@ URLs stay plain
-      // text, because setOpenExternalLinks() would hand them straight to the
-      // OS URL handler on click.
+      // Only launchable http(s) URLs become anchors (the button's predicate):
+      // setOpenExternalLinks() would hand ssh://, ftp:// or user:pass@ URLs
+      // straight to the OS URL handler on click.
       bool linked = false;
       const QString linkedText = Util::linkifyUrls(trimmedValue, &linked);
       if (!linked) {
-        // Nothing to link, so show the value as-is. Escaping it and calling
-        // setText() only rendered as rich text when the value happened to
-        // contain a '<'; otherwise "&", '"' and ">" came out as HTML entities
-        // and a password such as `a&b` read `a&amp;b` on screen.
+        // Plain text: escaping plus setText() showed `a&b` as `a&amp;b`
+        // unless the value happened to contain a '<'.
         contentTextBrowser->setPlainText(trimmedValue);
       } else {
         // Always HTML here: the text is escaped and carries anchor tags, so
@@ -262,20 +236,8 @@ auto PasswordDisplayPanel::eventFilter(QObject *watched, QEvent *event)
   return QObject::eventFilter(watched, event);
 }
 
-/**
- * @brief Build the bordered container every field row's value side lives in.
- *
- * Shared by addField() and addOtpField() so the two cannot drift apart on
- * spacing or border colour.
- * @return An empty QFrame carrying a QHBoxLayout.
- */
-/**
- * @brief Apply the field-frame border, coloured from the current palette.
- *
- * The colour is baked into the stylesheet string (a `palette(mid)` reference
- * would be resolved once at polish time and never again), so this has to be
- * re-run from refreshPalette() when the theme changes.
- */
+// The colour is baked into the stylesheet (a `palette(mid)` reference
+// resolves once at polish time), so refreshPalette() re-runs this.
 void PasswordDisplayPanel::applyFrameStyle(QFrame *frame) const {
   const QString borderColor =
       m_widgetParent->palette().color(QPalette::Mid).name();
@@ -292,6 +254,8 @@ void PasswordDisplayPanel::refreshPalette() {
   }
 }
 
+// Shared by addField() and addOtpField() so they cannot drift apart on
+// spacing or border colour.
 auto PasswordDisplayPanel::createFieldFrame() -> QFrame * {
   auto *frame = new QFrame();
   auto *frameLayout = new QHBoxLayout();
@@ -302,23 +266,10 @@ auto PasswordDisplayPanel::createFieldFrame() -> QFrame * {
   return frame;
 }
 
-/**
- * @brief Render the live one-time password row.
- *
- * Exactly two grid items are added (label plus frame), like every other row,
- * so one grid row still corresponds to one step of displayFields()' position
- * counter. The code, its copy button and the countdown all live inside the
- * frame.
- *
- * AppSettings::hidePassword deliberately does not apply: it is keyed on the
- * password field and exists to protect a long-lived secret, whereas hiding a
- * code that expires in seconds behind a reveal button next to a visible
- * countdown would only get in the way. No QR button is offered either, since a
- * QR code of the configuration would put the shared secret on screen.
- * @param position Grid row to render into.
- * @param otpConfig Raw OTP configuration, as stored in the entry.
- * @param s AppSettings snapshot supplying display settings.
- */
+// One label plus one frame, like every row, so grid rows match
+// displayFields()' position counter. hidePassword does not apply (the code
+// expires in seconds, next to a visible countdown), and there is no QR
+// button: a QR of the configuration would show the shared secret.
 void PasswordDisplayPanel::addOtpField(int position, const QString &otpConfig,
                                        const AppSettings &s) {
   const std::optional<Totp::Settings> settings = Totp::parse(otpConfig);

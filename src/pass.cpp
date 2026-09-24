@@ -33,26 +33,10 @@ using Enums::PASS_REMOVE;
 using Enums::PASS_SHOW;
 
 namespace {
-/**
- * @brief Returns a non-empty charset value, using a fallback when needed.
- * @param input Preferred charset value.
- * @param fallback Charset to use when @p input is empty.
- * @return @p input if it is not empty; otherwise @p fallback.
- */
 auto fallbackCharset(const QString &input, const QString &fallback) -> QString {
   return input.isEmpty() ? fallback : input;
 }
 
-/**
- * @brief Resolve the effective password character set from configuration.
- *
- * Uses the selected charset index from @p passConfig when it is within range;
- * otherwise falls back to the ALLCHARS entry. If the resolved charset string
- * is empty, falls back again to the ALLCHARS value.
- *
- * @param passConfig Password generation configuration.
- * @return Non-empty charset string to use for password generation.
- */
 auto effectiveCharset(const PasswordConfiguration &passConfig) -> QString {
   int sel = passConfig.selected;
   if (sel < 0 || sel >= PasswordConfiguration::CHARSETS_COUNT)
@@ -63,9 +47,6 @@ auto effectiveCharset(const PasswordConfiguration &passConfig) -> QString {
 }
 } // namespace
 
-/**
- * @brief Pass::Pass wrapper for using either pass or the pass imitation
- */
 Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
   connect(&exec, &Executor::finished, this, &Pass::finished);
   connect(&exec, &Executor::error, this, &Pass::finished);
@@ -89,14 +70,6 @@ Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
   }
 }
 
-/**
- * @brief Executes a wrapper command.
- * @param id Process ID
- * @param app Application to execute
- * @param args Arguments
- * @param readStdout Whether to read stdout
- * @param readStderr Whether to read stderr
- */
 void Pass::executeWrapper(PROCESS id, const QString &app,
                           const QStringList &args, bool readStdout,
                           bool readStderr) {
@@ -142,10 +115,6 @@ auto Pass::loggableArgs(const QStringList &args) -> QStringList {
 
 void Pass::beforeExecute(PROCESS /*id*/) {}
 
-/**
- * @brief Initializes the pass wrapper with a settings snapshot.
- * @param settings Application settings to use for this backend lifetime.
- */
 void Pass::init(const AppSettings &settings) {
   m_settings = settings;
 #ifdef __APPLE__
@@ -165,12 +134,9 @@ void Pass::init(const AppSettings &settings) {
   }
 #endif
 
-  // GNUPGHOME: the configured gpgHome wins over the inherited environment,
-  // but only when it exists. A gpgHome that is gone (the 1.7.0 test suite
-  // left its temporary keyring path in the live QtPass.conf, #1711) would
-  // make every gpg call fail with "No secret key"; fall back to whatever the
-  // environment says and tell the user. Clearing the setting at runtime
-  // restores the inherited value as well instead of keeping the old path.
+  // The configured gpgHome wins over GNUPGHOME only when it exists: a stale
+  // one (#1711) fails every gpg call with "No secret key". Clearing the
+  // setting restores the inherited value rather than keeping the old path.
   const QString inheritedHome = QProcessEnvironment::systemEnvironment().value(
       QStringLiteral("GNUPGHOME"));
   const auto useInheritedHome = [this, &inheritedHome]() {
@@ -209,13 +175,6 @@ void Pass::init(const AppSettings &settings) {
   }
 }
 
-/**
- * @brief Pass::Generate use either pwgen or internal password
- * generator
- * @param length of the desired password
- * @param charset to use for generation
- * @return the password
- */
 auto Pass::generatePassword(unsigned int length, const QString &charset)
     -> QString {
   if (length == 0) {
@@ -237,7 +196,6 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
       args.append("--symbols");
     }
     args.append(QString::number(length));
-    // executeBlocking returns 0 on success, non-zero on failure
     if (Executor::executeBlocking(m_settings.pwgenExecutable, args, &passwd) ==
         0) {
       static const QRegularExpression literalNewLines{"[\\n\\r]"};
@@ -245,12 +203,10 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
     } else {
       passwd.clear();
       qCDebug(lcQtPass) << "pwgen fail";
-      // Error is already handled by clearing passwd; no need for critical
-      // signal here
     }
   } else {
-    // Validate charset - if CUSTOM is selected but chars are empty,
-    // fall back to ALLCHARS to prevent weak passwords (issue #780)
+    // An empty CUSTOM charset falls back to ALLCHARS, not a weak password
+    // (#780).
     const QString cs = fallbackCharset(
         charset, m_settings.passwordConfiguration
                      .Characters[PasswordConfiguration::ALLCHARS]);
@@ -266,11 +222,6 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
   return passwd;
 }
 
-/**
- * @brief Pass::gpgSupportsEd25519 check if GPG supports ed25519 (ECC)
- * GPG 2.1+ supports ed25519 which is much faster for key generation
- * @return true if ed25519 is supported
- */
 bool Pass::gpgSupportsEd25519(const QString &gpgExecutable) {
   const QString exe =
       gpgExecutable.isEmpty() ? QStringLiteral("gpg") : gpgExecutable;
@@ -288,11 +239,7 @@ bool Pass::gpgSupportsEd25519(const QString &gpgExecutable) {
   return major > 2 || (major == 2 && minor >= 1);
 }
 
-/**
- * @brief Pass::getDefaultKeyTemplate return default key generation template
- * Uses ed25519 if supported, otherwise falls back to RSA
- * @return GPG batch template string
- */
+// ed25519 (GnuPG 2.1+) generates much faster than RSA.
 QString Pass::getDefaultKeyTemplate(const QString &gpgExecutable) {
   if (gpgSupportsEd25519(gpgExecutable)) {
     return QStringLiteral("%echo Generating a default key\n"
@@ -321,16 +268,6 @@ QString Pass::getDefaultKeyTemplate(const QString &gpgExecutable) {
 }
 
 namespace {
-/**
- * @brief Resolve a candidate gpgconf path from the trailing WSL path segment.
- *
- * Takes the directory portion of @p lastPart (separated by '/' or '\\') and
- * appends "gpgconf"; if no separator is present, returns the bare executable
- * name "gpgconf".
- *
- * @param lastPart Path fragment that may contain a directory and executable.
- * @return Full path ending in "gpgconf", or "gpgconf" as a fallback.
- */
 auto resolveWslGpgconfPath(const QString &lastPart) -> QString {
   qsizetype lastSep = lastPart.lastIndexOf('/');
   if (lastSep < 0) {
@@ -342,19 +279,6 @@ auto resolveWslGpgconfPath(const QString &lastPart) -> QString {
   return QStringLiteral("gpgconf");
 }
 
-/**
- * @brief Finds the path to the gpgconf executable in the same directory as the
- * given GPG path.
- * @example
- * QString result = findGpgconfInGpgDir(gpgPath);
- * std::cout << result.toStdString() << std::endl; // Expected output: path to
- * gpgconf or empty string
- *
- * @param gpgPath - Absolute path to a GPG executable or related file used to
- * locate gpgconf.
- * @return QString - The full path to gpgconf if found and executable; otherwise
- * an empty QString.
- */
 QString findGpgconfInGpgDir(const QString &gpgPath) {
   QFileInfo gpgInfo(gpgPath);
   if (!gpgInfo.isAbsolute()) {
@@ -379,30 +303,15 @@ QString findGpgconfInGpgDir(const QString &gpgPath) {
 
 } // namespace
 
-/**
- * @brief Resolves the appropriate gpgconf command from a given GPG executable
- * path or command string.
- * @example
- * ResolvedGpgconfCommand result = Pass::resolveGpgconfCommand("wsl.exe
- * /usr/bin/gpg"); std::cout << result.first.toStdString() << std::endl; //
- * Expected output sample
- *
- * @param const QString &gpgPath - Path or command string pointing to the GPG
- * executable.
- * @return ResolvedGpgconfCommand - A pair containing the resolved gpgconf
- * command and its arguments.
- */
 auto Pass::resolveGpgconfCommand(const QString &gpgPath)
     -> ResolvedGpgconfCommand {
   if (gpgPath.trimmed().isEmpty()) {
     return {"gpgconf", {}};
   }
 
-  // A WSL command: gpgconf next to the gpg the user configured, run in the
-  // same distribution and, like everything else, through --exec rather than
-  // the distribution's shell. A WSL form that does not parse (`wsl sh -c
-  // ...`, a bare `wsl`) falls back to whatever gpgconf is on the Windows
-  // PATH, as it always did.
+  // WSL: gpgconf next to the configured gpg, same distribution, via --exec
+  // not the shell. An unparsed form (`wsl sh -c ...`, bare `wsl`) falls back
+  // to gpgconf on the Windows PATH.
   if (const auto wsl = Executor::parseWslCommand(gpgPath)) {
     if (!QFileInfo(wsl->command).fileName().startsWith("gpg")) {
       return {"gpgconf", {}};
@@ -434,18 +343,12 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
   return {"gpgconf", {}};
 }
 
-/**
- * @brief Pass::GenerateGPGKeys internal gpg keypair generator . .
- * @param batch GnuPG style configuration string
- */
 void Pass::GenerateGPGKeys(QString batch) {
   const QString gpgPath = m_settings.gpgExecutable;
   if (gpgPath.isEmpty()) {
-    // No gpg configured: executeWrapper would hand an empty executable to the
-    // Executor, which silently drops it (see Executor::execute), leaving the
-    // keygen dialog spinning with no feedback. Surface the misconfiguration
-    // instead. Deferred via a queued call so we do not re-enter
-    // KeygenDialog::done(), which drives key generation synchronously.
+    // The Executor silently drops an empty executable, leaving the keygen
+    // dialog spinning. Queued so we do not re-enter KeygenDialog::done(),
+    // which drives key generation synchronously.
     QMetaObject::invokeMethod(
         this,
         [this]() {
@@ -456,8 +359,8 @@ void Pass::GenerateGPGKeys(QString batch) {
     return;
   }
 
-  // Kill any stale GPG agents that might be holding locks on the key database.
-  // This helps avoid "database locked" timeouts during key generation.
+  // A stale gpg-agent holding the key database lock causes "database locked"
+  // timeouts during key generation.
   ResolvedGpgconfCommand resolvedGpgconf = resolveGpgconfCommand(gpgPath);
   QStringList killArgs = resolvedGpgconf.arguments;
   killArgs << "--kill";
@@ -471,12 +374,6 @@ void Pass::GenerateGPGKeys(QString batch) {
                  std::move(batch), true, true);
 }
 
-/**
- * @brief Pass::listKeys list users
- * @param keystrings
- * @param secret list private keys
- * @return QList<UserInfo> users
- */
 auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
   QStringList args = {"--no-tty", "--with-colons", "--with-fingerprint"};
   args.append(secret ? "--list-secret-keys" : "--list-keys");
@@ -493,35 +390,12 @@ auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
   return parseGpgColonOutput(p_out, secret);
 }
 
-/**
- * @brief Pass::listKeys list users
- * @param keystring
- * @param secret list private keys
- * @return QList<UserInfo> users
- */
 auto Pass::listKeys(const QString &keystring, bool secret) -> QList<UserInfo> {
   return listKeys(QStringList(keystring), secret);
 }
 
-/**
- * @brief Maps GPG stderr (which may include --status-fd 2 tokens) to a
- * user-friendly encryption error string.
- *
- * Checked in order: machine-readable [GNUPG:] status tokens first (locale-
- * independent), then case-insensitive substring fallbacks for GPG builds that
- * don't emit status tokens.
- *
- * @param err Raw stderr from GPG
- * @return Translated human-readable error, or empty string if not recognised
- */
 namespace {
 
-/**
- * @brief Checks if @p str contains any of the @p patterns (case-sensitive).
- * @param str String to search in.
- * @param patterns Patterns to search for.
- * @return true if any pattern is found, false otherwise.
- */
 auto containsAny(const QString &str, const QStringList &patterns) -> bool {
   for (const QString &p : patterns) {
     if (str.contains(p)) {
@@ -531,13 +405,7 @@ auto containsAny(const QString &str, const QStringList &patterns) -> bool {
   return false;
 }
 
-/**
- * @brief Checks if str contains any of the patterns (case-insensitive).
- * @param str String to search in (will be lowercased once).
- * @param patterns List of patterns to search for (must be lowercase; caller
- * should convert patterns to lowercase before calling).
- * @return true if any pattern is found.
- */
+// @p patterns must already be lowercase; only @p str is lowered.
 auto containsAnyCaseInsensitive(const QString &str, const QStringList &patterns)
     -> bool {
   const QString lower = str.toLower();
@@ -595,16 +463,8 @@ auto gpgErrorMessage(const QString &err) -> QString {
 }
 
 namespace {
-/**
- * @brief Determine whether a line from `pass grep` output is an entry header.
- *
- * Detects the ANSI blue escape (\x1B[94m) emitted by `pass grep`; as a
- * plain-text fallback, treats a non-indented line ending in ':' as a header.
- *
- * @param rawLine Original unmodified output line (with any ANSI codes).
- * @param trimmedLine The line after surrounding whitespace has been stripped.
- * @return true if the line is an entry header; otherwise false.
- */
+// `pass grep` starts entry headers with ANSI blue (\x1B[94m); without colour,
+// a non-indented line ending in ':' is taken as one.
 auto isGrepHeaderLine(const QString &rawLine, const QString &trimmedLine)
     -> bool {
   return rawLine.startsWith(QStringLiteral("\x1B[94m")) ||
@@ -613,13 +473,8 @@ auto isGrepHeaderLine(const QString &rawLine, const QString &trimmedLine)
 }
 } // namespace
 
-/**
- * @brief Parses 'pass grep' raw output into (entry, matches) pairs.
- *
- * pass grep emits ANSI blue color (\x1B[94m) at the start of each entry
- * header line. This is checked before stripping ANSI so headers are detected
- * reliably regardless of locale.
- */
+// Headers are detected on the raw line, before ANSI is stripped, so the
+// colour marks them regardless of locale.
 auto parseGrepOutput(const QString &rawOut)
     -> QList<QPair<QString, QStringList>> {
   static const QRegularExpression ansi(
@@ -648,16 +503,6 @@ auto parseGrepOutput(const QString &rawOut)
   return results;
 }
 
-/**
- * @brief Pass::processFinished reemits specific signal based on what process
- * has finished
- * @param id    id of Pass process that was scheduled and finished
- * @param exitCode  return code of a process
- * @param out   output generated by process(if capturing was requested, empty
- *              otherwise)
- * @param err   error output generated by process(if capturing was requested,
- *              or error occurred)
- */
 void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
   auto pid = static_cast<PROCESS>(id);
@@ -726,21 +571,10 @@ auto Pass::formatInsertError(const QString &friendly, const QString &err)
   return humanErr.isEmpty() ? friendly : friendly + "\n\n" + humanErr;
 }
 
-/**
- * @brief Emit the appropriate finished signal for a completed subprocess.
- *
- * Emits a specific Qt signal corresponding to the given process identifier; for
- * grep results the stdout is parsed into a list of matches before emitting.
- *
- * @param pid The process identifier indicating which finished signal to emit.
- * @param out Standard output produced by the process.
- * @param err Standard error produced by the process.
- */
 void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
                                      const QString &err) {
-  // Output that cannot contain a secret goes to the generic listeners, the
-  // process output panel among them. Which kinds those are is one table,
-  // shared with the panel (Enums::processInfo).
+  // Only output that cannot contain a secret reaches the generic listeners
+  // (the output panel among them); Enums::processInfo is the one table.
   if (pid >= 0 && pid < Enums::PROCESS_COUNT &&
       !Enums::processInfo(pid).secret) {
     emit finishedAnyWithPid(out, err, pid);
@@ -769,13 +603,6 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
   }
 }
 
-/**
- * @brief Set or remove a single environment variable.
- *
- * @param name Variable name, without a trailing '=' (e.g.
- * "PASSWORD_STORE_DIR").
- * @param value New value; an empty string removes the variable entirely.
- */
 void Pass::setEnvVar(const QString &name, const QString &value) {
   if (value.isEmpty())
     env.remove(name);
@@ -783,14 +610,6 @@ void Pass::setEnvVar(const QString &name, const QString &value) {
     env.insert(name, value);
 }
 
-/**
- * @brief Update the process environment used for executing external commands.
- *
- * Updates environment entries for PASSWORD_STORE_SIGNING_KEY,
- * PASSWORD_STORE_DIR, PASSWORD_STORE_GENERATED_LENGTH, and
- * PASSWORD_STORE_CHARACTER_SET based on current settings, then applies the
- * environment to the internal executor.
- */
 void Pass::updateEnv() {
   setEnvVar(QStringLiteral("PASSWORD_STORE_SIGNING_KEY"),
             m_settings.passSigningKey);
@@ -806,11 +625,6 @@ void Pass::updateEnv() {
   exec.setEnvironment(env);
 }
 
-/**
- * @brief Pass::getGpgIdPath return gpgid file path for some file (folder).
- * @param for_file which file (folder) would you like the gpgid file path for.
- * @return path to the gpgid file.
- */
 namespace {
 /// Whether @p path is @p dir or lies under it, compared the way the
 /// platform's file system compares names: "C:/Store" and "c:/store" are the
@@ -837,10 +651,8 @@ auto Pass::refuseLinkedPath(const QString &path, bool includeSelf) -> bool {
       tr("%1 is, or lies behind, a symbolic link or junction. What that "
          "points to is not part of the password store and is left alone.")
           .arg(QDir::toNativeSeparators(QDir::cleanPath(full)));
-  // The interface clears the previous entry's panel and text when an
-  // operation starts, arms itself (disabled widgets, a pending OTP or copy
-  // request, an edit dialog at "Decrypting…") and is released by finished
-  // or processErrorExit. A refusal starts nothing, so it says both itself.
+  // The interface arms itself when an operation starts and is released by
+  // finished or processErrorExit; a refusal starts nothing, so emits both.
   emit startingExecuteWrapper();
   emit critical(tr("Not part of the store"), why);
   emit processErrorExit(1, why);
@@ -864,10 +676,8 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
   const QString fullPath = insideStore || QDir::isAbsolutePath(cleanFile)
                                ? cleanFile
                                : storePrefix + cleanFile;
-  // A folder's own list is wanted when the caller names a folder: with the
-  // trailing separator the tree appends (cleanPath() took it off above), or
-  // as an existing directory. Anything else is an entry, whose list is its
-  // folder's.
+  // A folder (trailing separator, which cleanPath() dropped, or an existing
+  // directory) wants its own list; an entry wants its folder's.
   const bool isFolder =
       normalizedFile.endsWith(QLatin1Char('/')) || QFileInfo(fullPath).isDir();
   QDir gpgIdDir(isFolder ? fullPath : QFileInfo(fullPath).absolutePath());
@@ -895,11 +705,6 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
                : QDir(normalizedStore).filePath(".gpg-id");
 }
 
-/**
- * @brief Pass::getRecipientList return list of gpg-id's to encrypt for
- * @param for_file which file (folder) would you like recipients for
- * @return recipients gpg-id contents
- */
 auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
     -> RecipientsForEditing {
   RecipientsForEditing result;
@@ -994,33 +799,22 @@ auto Pass::parseRecipients(const QByteArray &contents,
   return recipients;
 }
 
-/**
- * @brief Pass::seedGpgIdFile write the inherited recipients into a new
- * folder's .gpg-id
- * @param newDir absolute path of the freshly created folder
- * @param passStore root directory of the password store
- * @return true when newDir/.gpg-id was written
- */
 auto Pass::seedGpgIdFile(const QString &newDir, const QString &passStore)
     -> bool {
   const QString gpgIdFile = QDir(newDir).absoluteFilePath(".gpg-id");
   if (QFileInfo::exists(gpgIdFile)) {
     return false;
   }
-  // Resolve from the file we are about to create: getGpgIdPath walks up from
-  // its directory, so this yields the parent's .gpg-id whether or not newDir
-  // carries a trailing separator.
+  // Resolving from the file to be created finds the parent's .gpg-id whether
+  // or not newDir has a trailing separator.
   const QStringList recipients = getRecipientList(gpgIdFile, passStore);
   if (recipients.isEmpty()) {
     return false;
   }
-  // Only reached without a signing key (MainWindow seeds only then), so no
-  // generation header: nothing checks freshness, and a plain list stays
-  // readable for clients that take a comment for a recipient. Written
-  // owner-only through a staged sibling, never by opening the name, and
-  // replacing nothing: a link a co-writer plants under the name between
-  // the exists() above and this (a dangling one passes exists()) fails the
-  // seed rather than getting the list written through it.
+  // Only reached without a signing key, so no generation header: a plain
+  // list stays readable for clients that take a comment for a recipient.
+  // Staged and replacing nothing: a link planted after the exists() above
+  // (a dangling one passes it) fails the seed instead of being written through.
   return Util::writeFileReplacing(
       gpgIdFile,
       (recipients.join(QLatin1Char('\n')) + QLatin1Char('\n')).toUtf8(), false);
@@ -1029,25 +823,14 @@ auto Pass::seedGpgIdFile(const QString &newDir, const QString &passStore)
 /* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
  */
 
-/**
- * @brief Generates a random number bounded by the given value.
- * @param bound Upper bound (exclusive)
- * @return Random number in range [0, bound)
- */
 auto Pass::boundedRandom(quint32 bound) -> quint32 {
   if (bound < 2) {
     return 0;
   }
 
   quint32 randval;
-  // Rejection-sampling threshold to avoid modulo bias.
-  // This follows the well-known "arc4random_uniform"-style approach:
-  // reject values in the low range [0, min), where
-  //   min = 2^32 % bound
-  // so that the remaining range size is an exact multiple of `bound`.
-  //
-  // In quint32 arithmetic, (1 + ~bound) wraps to (2^32 - bound), therefore
-  //   (1 + ~bound) % bound == 2^32 % bound.
+  // arc4random_uniform-style rejection against modulo bias: drop values
+  // below 2^32 % bound, which (1 + ~bound) % bound computes in quint32.
   const quint32 rejectionThreshold = (1 + ~bound) % bound;
 
   do {
@@ -1057,12 +840,6 @@ auto Pass::boundedRandom(quint32 bound) -> quint32 {
   return randval % bound;
 }
 
-/**
- * @brief Generates a random password from the given charset.
- * @param charset Characters to use in the password
- * @param length Desired password length
- * @return Generated password string
- */
 auto Pass::generateRandomPassword(const QString &charset, unsigned int length)
     -> QString {
   if (charset.isEmpty() || length == 0U) {

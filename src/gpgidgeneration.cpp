@@ -26,19 +26,16 @@ namespace {
 constexpr int kMaxDigits = 18;
 const QByteArray kOurComment = QByteArrayLiteral("# QtPass-GpgId-");
 
-// GpgIdGeneration is not a QObject; its messages are looked up under its
-// name. In the class's own methods a plain tr() is enough for lupdate, which
-// takes the context from the enclosing class; in the free functions and
-// structs here lupdate finds no context and drops the string, so those spell
-// the context out with QCoreApplication::translate().
+// Not a QObject: messages live under the class name. lupdate gets that context
+// from the class's own methods, but drops strings in the free functions and
+// structs here, so those spell it out with QCoreApplication::translate().
 auto tr(const char *text) -> QString {
   return QCoreApplication::translate("GpgIdGeneration", text);
 }
 
-/// One lock for every read-compare-write on the generation record within
-/// this process (the re-encryption worker reads while the interface may
-/// write); between processes the lock file next to the record does the same
-/// (see Transaction).
+/// Serialises read-compare-write on the record in this process (the
+/// re-encryption worker reads while the UI may write); see Transaction for
+/// the cross-process lock file.
 QMutex &recordLock() {
   static QMutex mutex;
   return mutex;
@@ -47,10 +44,8 @@ QMutex &recordLock() {
 /// How long a transaction waits for another process to let go of the record.
 constexpr int kRecordLockTimeoutMs = 3000;
 
-/// What the record keeps per list: the highest generation accepted or
-/// written, and the SHA-256 of the exact bytes of that generation once they
-/// are known (empty after a reservation, until the writer records them or a
-/// reader accepts them).
+/// Per list: the highest generation accepted or written, and the SHA-256 of
+/// its exact bytes once known (empty after a reservation).
 struct Entry {
   qint64 generation = 0;
   QString digest;
@@ -60,12 +55,10 @@ using Entries = QMap<QString, Entry>;
 const QString kRecordName = QStringLiteral("QtPass-gpgid-generations.json");
 constexpr int kRecordFormat = 1;
 
-/// Security state of its own, apart from the user's configuration, in a
-/// file QtPass reads and writes itself: no settings cache between the read
-/// and the write, no registry (on Windows a QSettings "file" is a registry
-/// path). It lives where QSettings would put an ini file of this
-/// organisation, so the platform's convention applies, and so does the
-/// redirection the tests give that path.
+/// A file QtPass reads and writes itself, not QSettings: no cache between
+/// read and write, no registry (on Windows a QSettings "file" is a registry
+/// path). Placed where QSettings would put an ini file, so the platform
+/// convention and the tests' redirection of that path both apply.
 auto recordPath() -> QString {
   const QSettings probe(QSettings::IniFormat, QSettings::UserScope,
                         QCoreApplication::organizationName().isEmpty()
@@ -183,11 +176,9 @@ auto saveRecord(const QString &path, const Entries &entries, QString *error)
   return true;
 }
 
-/// A transaction on the record: the process mutex, then the lock file next
-/// to the record against a second QtPass (a build without the
-/// single-instance guard, a Flatpak next to a native one), then the record
-/// read fresh from disk. `ok()` says whether all of that succeeded; when
-/// not, nothing is read or written and the verdict is RecordUnavailable.
+/// Process mutex, then a lock file against a second QtPass (no single-instance
+/// guard, a Flatpak next to a native one), then a fresh read. When `ok()` is
+/// false nothing is read or written: RecordUnavailable.
 struct Transaction {
   QMutexLocker<QMutex> mutex{&recordLock()};
   QString path{recordPath()};
@@ -434,8 +425,6 @@ auto GpgIdGeneration::boundToItsFolder(const QString &gpgIdFile,
 
 auto GpgIdGeneration::wayThrough(qint64 last, const QString &recordPath,
                                  const QString &saving) -> QString {
-  // At the ceiling of the grammar no newer list can be written
-  // (reserveNext() refuses), so the record has to go first.
   if (last >= kMaxGeneration) {
     return tr("Generation %1 is the highest there is, so no newer list "
               "can be written here: removing %2 forgets what this device "
@@ -517,21 +506,16 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
     return staleList(gpgIdFile, *header, last, t.path, error);
   }
   if (generation == 0) {
-    // Nothing accepted here yet and a list without a generation line: pass
-    // writes those (also through QtPass's pass backend), for every change,
-    // so the bytes differing from last time is the normal course of a
-    // store kept with pass, not a conflict. There is no freshness to keep
-    // at generation 0 (SECURITY.md); it begins with the first list QtPass
-    // writes.
+    // pass writes headerless lists on every change, so differing bytes here
+    // are normal, not a conflict. Generation 0 has no freshness to keep
+    // (SECURITY.md).
     return Verdict::Accepted;
   }
   const QString bytes = digest(contents);
   if (generation == last) {
-    // The same generation is the same list only if the bytes are: two
-    // devices both making 19 from 18 is Git's conflict, and the device that
-    // accepted one of them does not take the other for it; nor a swap. A
-    // record without a digest (a reservation whose write was not recorded)
-    // takes these bytes as the ones.
+    // Same generation, different bytes: two devices both made 19 from 18
+    // (Git's conflict), or a swap. A record without a digest (an unrecorded
+    // reservation) takes these bytes as the ones.
     const std::optional<QString> known = t.digest(k);
     if (known && *known != bytes) {
       if (error)

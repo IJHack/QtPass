@@ -25,13 +25,6 @@
 #include <utility>
 
 #include "qtpasslogging.h"
-/**
- * @brief UsersDialog::UsersDialog basic constructor
- * @param pass Active Pass backend.
- * @param s Application settings snapshot.
- * @param dir Password directory
- * @param parent
- */
 UsersDialog::UsersDialog(Pass *pass, const AppSettings &s, QString dir,
                          QWidget *parent)
     : QDialog(parent), ui(new Ui::UsersDialog), m_pass(pass),
@@ -64,9 +57,6 @@ void UsersDialog::connectSignals() {
   ui->lineEdit->setClearButtonEnabled(true);
 }
 
-/**
- * @brief Restore dialog geometry from settings.
- */
 void UsersDialog::restoreDialogState() {
   WindowStateStore::attach(*this, QStringLiteral("usersDialog"));
 }
@@ -146,10 +136,8 @@ void UsersDialog::loadRecipients() {
   if (count > selectedUsers.size()) {
     const QStringList &allRecipients = recipients;
 
-    // Use bulk lookup to resolve all recipients at once (single gpg call)
-    // This preserves the original email/UID resolution behavior
+    // One gpg call resolves all recipients, keeping email/UID resolution.
     QList<UserInfo> resolvedKeys = m_pass->listKeys(allRecipients);
-    // Track resolved recipients by their resolved key_id
     QSet<QString> resolvedKeyIds;
     for (const UserInfo &key : resolvedKeys) {
       resolvedKeyIds.insert(key.key_id);
@@ -160,8 +148,7 @@ void UsersDialog::loadRecipients() {
     QSet<QString> resolvedRecipients;
     for (const UserInfo &key : resolvedKeys) {
       resolvedRecipients.insert(key.key_id);
-      // Also add the name (email/UID) of resolved keys as valid resolved tokens
-      // since GPG matched them to this key
+      // GPG matched the email/UID to this key, so it counts as resolved.
       if (!key.name.isEmpty()) {
         resolvedRecipients.insert(
             key.name.section('@', 0, 0));    // email local part
@@ -183,14 +170,8 @@ void UsersDialog::loadRecipients() {
   }
 }
 
-/**
- * @brief UsersDialog::~UsersDialog basic destructor.
- */
 UsersDialog::~UsersDialog() = default;
 
-/**
- * @brief UsersDialog::accept
- */
 void UsersDialog::accept() {
   if (!hasSelection()) {
     // Nothing to encrypt to: an empty .gpg-id would make every insert fail
@@ -215,11 +196,6 @@ void UsersDialog::updateOkButton() {
   }
 }
 
-/**
- * @brief UsersDialog::keyPressEvent clear the lineEdit when escape is pressed.
- * No action for Enter currently.
- * @param event
- */
 void UsersDialog::keyPressEvent(QKeyEvent *event) {
   switch (event->key()) {
   case Qt::Key_Escape:
@@ -230,10 +206,6 @@ void UsersDialog::keyPressEvent(QKeyEvent *event) {
   }
 }
 
-/**
- * @brief UsersDialog::itemChange update the item information.
- * @param item
- */
 void UsersDialog::itemChange(QListWidgetItem *item) {
   if (!item) {
     return;
@@ -255,11 +227,6 @@ void UsersDialog::itemChange(QListWidgetItem *item) {
   updateOkButton();
 }
 
-/**
- * @brief UsersDialog::populateList update the view based on filter options
- * (such as searching).
- * @param filter
- */
 void UsersDialog::populateList(const QString &filter) {
   // Invalidate cached datetime so expiry checks use fresh current time
   m_cachedDateTimeValid = false;
@@ -292,13 +259,6 @@ void UsersDialog::populateList(const QString &filter) {
   updateOkButton();
 }
 
-/**
- * @brief Checks if a user passes the filter criteria.
- * @param user User to check
- * @param filter Filter string
- * @param nameFilter Compiled name filter regex
- * @return true if user passes filter
- */
 bool UsersDialog::passesFilter(const UserInfo &user, const QString &filter,
                                const QRegularExpression &nameFilter) const {
   if (!filter.isEmpty() && !nameFilter.match(user.name).hasMatch()) {
@@ -311,11 +271,6 @@ bool UsersDialog::passesFilter(const UserInfo &user, const QString &filter,
   return !(expired && !ui->checkBox->isChecked());
 }
 
-/**
- * @brief Checks if a user's key has expired.
- * @param user User to check
- * @return true if user's key is expired
- */
 auto UsersDialog::isUserExpired(const UserInfo &user) const -> bool {
   if (!m_cachedDateTimeValid) {
     m_cachedCurrentDateTime = QDateTime::currentDateTime();
@@ -324,11 +279,6 @@ auto UsersDialog::isUserExpired(const UserInfo &user) const -> bool {
   return user.expiry.isValid() && m_cachedCurrentDateTime > user.expiry;
 }
 
-/**
- * @brief Builds display text for a user.
- * @param user User to format
- * @return Formatted user text
- */
 QString UsersDialog::buildUserText(const UserInfo &user) const {
   QString text = user.name + "\n" + user.key_id;
   if (user.created.isValid()) {
@@ -342,11 +292,6 @@ QString UsersDialog::buildUserText(const UserInfo &user) const {
   return text;
 }
 
-/**
- * @brief Applies visual styling to a user list item based on key status.
- * @param item List widget item to style
- * @param user User whose status determines styling
- */
 void UsersDialog::applyUserStyling(QListWidgetItem *item,
                                    const UserInfo &user) const {
   const QString originalText = item->text();
@@ -381,17 +326,10 @@ void UsersDialog::applyUserStyling(QListWidgetItem *item,
   }
 }
 
-/**
- * @brief UsersDialog::on_lineEdit_textChanged typing in the searchbox.
- * @param filter
- */
 void UsersDialog::on_lineEdit_textChanged(const QString &filter) {
   populateList(filter);
 }
 
-/**
- * @brief UsersDialog::on_checkBox_clicked filtering.
- */
 void UsersDialog::on_checkBox_clicked() { populateList(ui->lineEdit->text()); }
 
 void UsersDialog::on_importKeyButton_clicked() {
@@ -400,10 +338,8 @@ void UsersDialog::on_importKeyButton_clicked() {
     return;
   }
 
-  // dialog.exec() == Accepted is only reachable after a successful import
-  // (see ImportKeyDialog::importFromString), so importedKeyId() is non-empty
-  // by construction. Guard anyway: an empty value would make the
-  // bidirectional endsWith() below match the first listed key.
+  // Non-empty after Accepted, but an empty id would make the endsWith()
+  // below match the first listed key.
   const QString importedKey = dialog.importedKeyId();
   if (importedKey.isEmpty()) {
     return;
@@ -421,10 +357,8 @@ void UsersDialog::on_importKeyButton_clicked() {
   }
   populateList(QString());
 
-  // Match against the user's stored key_id, not the visible item text.
-  // gpg can return a 16-char long key id (IMPORTED status line) or a
-  // 40-char fingerprint (IMPORT_OK status line); compare both directions
-  // so a long-id match works against a fingerprint hit and vice versa.
+  // Match the stored key_id, not the item text. gpg reports a 16-char long
+  // id (IMPORTED) or a 40-char fingerprint (IMPORT_OK): compare both ways.
   for (int i = 0; i < ui->listWidget->count(); ++i) {
     QListWidgetItem *item = ui->listWidget->item(i);
     if (item == nullptr) {
@@ -439,8 +373,7 @@ void UsersDialog::on_importKeyButton_clicked() {
     if (keyId.isEmpty()) {
       continue;
     }
-    // Only perform endsWith checks when the suffix being matched is at least
-    // 16 chars to avoid false positives with short IDs.
+    // Suffixes shorter than 16 chars would give false positives.
     if ((keyId.length() >= 16 &&
          importedKey.endsWith(keyId, Qt::CaseInsensitive)) ||
         (importedKey.length() >= 16 &&

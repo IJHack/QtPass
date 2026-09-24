@@ -35,22 +35,11 @@ auto operator>>(QDataStream &in, StoreDragItem &item) -> QDataStream & {
   return in;
 }
 
-/**
- * @brief StoreModel::StoreModel
- * SubClass of QSortFilterProxyModel via
- * http://www.qtcentre.org/threads/46471-QTreeView-Filter
- */
+// Filter approach via http://www.qtcentre.org/threads/46471-QTreeView-Filter
 StoreModel::StoreModel() { fs = nullptr; }
 
 void StoreModel::setPass(Pass *pass) { m_pass = pass; }
 
-/**
- * @brief StoreModel::filterAcceptsRow should row be shown, wrapper for
- * StoreModel::showThis method.
- * @param sourceRow
- * @param sourceParent
- * @return
- */
 auto StoreModel::filterAcceptsRow(int sourceRow,
                                   const QModelIndex &sourceParent) const
     -> bool {
@@ -58,18 +47,11 @@ auto StoreModel::filterAcceptsRow(int sourceRow,
   return showThis(index);
 }
 
-/**
- * @brief StoreModel::showThis should a row be shown, based on our search
- * criteria.
- * @param index
- * @return
- */
 auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   bool retVal = false;
   if (fs == nullptr) {
     return retVal;
   }
-  // Gives you the info for number of children with a parent
   if (sourceModel()->rowCount(index) > 0) {
     for (int nChild = 0; nChild < sourceModel()->rowCount(index); ++nChild) {
       QModelIndex childIndex = sourceModel()->index(nChild, 0, index);
@@ -94,11 +76,6 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   return retVal;
 }
 
-/**
- * @brief StoreModel::setModelAndStore update the source model and store.
- * @param sourceModel
- * @param passStore
- */
 void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
                                   const QString &passStore) {
   setSourceModel(sourceModel);
@@ -115,28 +92,16 @@ auto StoreModel::rootIndexFor(const QString &path) -> QModelIndex {
 
 void StoreModel::setStore(const QString &passStore) {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
-  // beginFilterChange() is available since Qt 6.9, but the Direction-scoped
-  // endFilterChange(QSortFilterProxyModel::Direction) overload is only
-  // available since Qt 6.10, which is the preferred API for scoped and more
-  // efficient filter updates.
+  // The Direction-scoped endFilterChange() overload needs Qt 6.10.
   beginFilterChange();
   store = passStore;
   endFilterChange(QSortFilterProxyModel::Direction::Rows);
 #else
-  // Direction-scoped filter changes are unavailable before Qt 6.10, so older
-  // Qt versions must manually invalidate filters. We update the store and
-  // manually invalidate the filter as a compatibility path.
   store = passStore;
   invalidateFilter();
 #endif
 }
 
-/**
- * @brief StoreModel::data don't show the .gpg at the end of a file.
- * @param index
- * @param role
- * @return
- */
 auto StoreModel::data(const QModelIndex &index, int role) const -> QVariant {
   if (!index.isValid()) {
     return {};
@@ -154,27 +119,14 @@ auto StoreModel::data(const QModelIndex &index, int role) const -> QVariant {
   return initial_value;
 }
 
-/**
- * @brief StoreModel::supportedDropActions enable drop.
- * @return
- */
 auto StoreModel::supportedDropActions() const -> Qt::DropActions {
   return Qt::CopyAction | Qt::MoveAction;
 }
 
-/**
- * @brief StoreModel::supportedDragActions enable drag.
- * @return
- */
 auto StoreModel::supportedDragActions() const -> Qt::DropActions {
   return Qt::CopyAction | Qt::MoveAction;
 }
 
-/**
- * @brief StoreModel::flags
- * @param index
- * @return
- */
 auto StoreModel::flags(const QModelIndex &index) const -> Qt::ItemFlags {
   Qt::ItemFlags defaultFlags = QSortFilterProxyModel::flags(index);
 
@@ -184,21 +136,12 @@ auto StoreModel::flags(const QModelIndex &index) const -> Qt::ItemFlags {
   return Qt::ItemIsDropEnabled | defaultFlags;
 }
 
-/**
- * @brief StoreModel::mimeTypes
- * @return
- */
 auto StoreModel::mimeTypes() const -> QStringList {
   QStringList types;
   types << kStoreDragMimeType;
   return types;
 }
 
-/**
- * @brief StoreModel::mimeData
- * @param indexes
- * @return
- */
 auto StoreModel::mimeData(const QModelIndexList &indexes) const -> QMimeData * {
   StoreDragItem info;
 
@@ -226,15 +169,6 @@ auto StoreModel::mimeData(const QModelIndexList &indexes) const -> QMimeData * {
   return mimeData;
 }
 
-/**
- * @brief StoreModel::canDropMimeData
- * @param data
- * @param action
- * @param row
- * @param column
- * @param parent
- * @return
- */
 auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
                                  int row, int column,
                                  const QModelIndex &parent) const -> bool {
@@ -271,15 +205,6 @@ auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
   return false;
 }
 
-/**
- * @brief StoreModel::dropMimeData
- * @param data
- * @param action
- * @param row
- * @param column
- * @param parent
- * @return
- */
 auto StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
                               int row, int column, const QModelIndex &parent)
     -> bool {
@@ -332,11 +257,8 @@ auto StoreModel::executeDropAction(const StoreDragItem &info,
   QString cleanedSrc = QDir::cleanPath(srcFileInfo.absoluteFilePath());
   QString cleanedDest = QDir::cleanPath(destFileinfo.absoluteFilePath());
 
-  // Both endpoints must resolve inside the password store after symlink
-  // resolution. Drop data is encoded by the dragged item but could be
-  // crafted; canonical-path checks stop drops that would move/copy outside
-  // the store or follow a symlink out (e.g. a symlink within the store
-  // pointing at /etc).
+  // Drop data could be crafted: both endpoints must resolve inside the store
+  // after symlink resolution (e.g. no in-store symlink pointing at /etc).
   if (!PathValidator::isPathInStore(store, cleanedSrc) ||
       !PathValidator::isPathInStore(store, cleanedDest)) {
     qCWarning(lcQtPass)
@@ -388,12 +310,6 @@ auto StoreModel::performDrop(const QString &cleanedSrc,
   return true;
 }
 
-/**
- * @brief StoreModel::lessThan
- * @param source_left
- * @param source_right
- * @return
- */
 auto StoreModel::lessThan(const QModelIndex &source_left,
                           const QModelIndex &source_right) const -> bool {
 /* matches logic in QFileSystemModelSorter::compareNodes() */

@@ -1,16 +1,6 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-/**
- * @class QtPassSettings
- * @brief Singleton settings manager implementation.
- *
- * Implementation of QtPassSettings singleton. Handles persistence using
- * QSettings with support for portable mode (qtpass.ini next to executable).
- *
- * @see qtpasssettings.h
- */
-
 #include "qtpasssettings.h"
 #include "pass.h"
 #include "passbackendfactory.h"
@@ -31,16 +21,8 @@
 bool QtPassSettings::initialized = false;
 
 QtPassSettings *QtPassSettings::m_instance = nullptr;
-/**
- * @brief Returns the singleton instance of QtPassSettings, creating it on first
- * access.
- * @example
- * QtPassSettings *settings = QtPassSettings::getInstance();
- * std::cout << settings << std::endl; // Expected output sample: a valid
- * QtPassSettings pointer
- *
- * @return QtPassSettings* - Pointer to the shared QtPassSettings instance.
- */
+// Portable mode: a qtpass.ini next to the executable wins over the platform
+// settings store.
 auto QtPassSettings::getInstance() -> QtPassSettings * {
   if (!QtPassSettings::initialized) {
     QString portable_ini = QCoreApplication::applicationDirPath() +
@@ -69,33 +51,14 @@ auto QtPassSettings::load() -> AppSettings {
 
 void QtPassSettings::save(const AppSettings &settings) {
   SettingsSerializer::save(*getInstance(), settings);
-  // A settings save may have changed the "use pass" mode; drop the cached
-  // backend so the correct one is rebuilt on next use (matches the previous
-  // setUsePass() side effect).
+  // The "use pass" mode may have changed; rebuild the backend on next use.
   PassBackendFactory::invalidate();
 }
 
-/**
- * @brief Retrieves the current password configuration from application
- * settings.
- * @example
- * PasswordConfiguration result = QtPassSettings::getPasswordConfiguration();
- * std::cout << result.length << std::endl; // Expected output sample
- *
- * @return PasswordConfiguration - The password configuration populated from
- * stored settings, including length, selected character set, and custom
- * characters.
- */
 auto QtPassSettings::getPasswordConfiguration() -> PasswordConfiguration {
   return SettingsSerializer::loadPasswordConfiguration(*getInstance());
 }
 
-/**
- * @brief Retrieves the stored profiles by name.
- * @details Reads profile data from the settings group, including legacy profile
- *          formats from versions <= v1.3.2.
- * @return Profiles - each profile name mapped to its Profile.
- */
 auto QtPassSettings::getProfiles() -> Profiles {
   getInstance()->beginGroup(SettingsConstants::profile);
   Profiles profiles;
@@ -129,11 +92,9 @@ auto QtPassSettings::getProfiles() -> Profiles {
 }
 
 void QtPassSettings::setProfiles(const Profiles &profiles) {
-  // The "profile" key is overloaded: it stores both the active-profile name
-  // (a scalar, read by getProfile()) and the per-profile group
-  // (profile/<name>/...). remove() clears the whole subtree including the
-  // scalar, which would silently switch the active password store on every
-  // save, so preserve and restore the active-profile name around the rewrite.
+  // "profile" is both the active-profile scalar (getProfile()) and the
+  // profile/<name>/ group; remove() wipes both, which would switch the active
+  // store on every save, so preserve the active name across the rewrite.
   const QString activeProfile =
       getInstance()->value(SettingsConstants::profile).toString();
   getInstance()->remove(SettingsConstants::profile);
@@ -212,25 +173,12 @@ auto QtPassSettings::getAutoclearSeconds(const int &defaultValue) -> int {
       ->value(SettingsConstants::autoclearSeconds, defaultValue)
       .toInt();
 }
-/**
- * @brief Retrieves the password store path, normalizes it, and ensures the
- * directory exists.
- * @example
- * QString passStore =
- * QtPassSettings::getPassStore("/home/user/.password-store"); qDebug() <<
- * passStore; // Expected output: "/home/user/.password-store/"
- *
- * @param defaultValue - Fallback path used when no password store is
- * configured.
- * @return QString - The normalized absolute password store path, guaranteed to
- * end with a path separator.
- */
+// Creates the directory if missing; the result always ends in a separator.
 auto QtPassSettings::getPassStore(const QString &defaultValue) -> QString {
   QString returnValue = getInstance()
                             ->value(SettingsConstants::passStore, defaultValue)
                             .toString();
 
-  // Normalize the path string
   returnValue = QDir(returnValue).absolutePath();
 
   // ensure directory exists if never used pass or misconfigured.
@@ -241,7 +189,6 @@ auto QtPassSettings::getPassStore(const QString &defaultValue) -> QString {
     }
   }
 
-  // ensure path ends in /
   if (!returnValue.endsWith("/") && !returnValue.endsWith(QDir::separator())) {
     returnValue += QDir::separator();
   }
@@ -251,14 +198,6 @@ auto QtPassSettings::getPassStore(const QString &defaultValue) -> QString {
 void QtPassSettings::setPassStore(const QString &passStore) {
   getInstance()->setValue(SettingsConstants::passStore, passStore);
 }
-/**
- * @brief Initializes executable paths for Pass, Git, GPG, and Pwgen by locating
- * them in the system PATH.
- * @example
- * QtPassSettings::initExecutables();
- *
- * @return void - This method does not return a value.
- */
 void QtPassSettings::initExecutables() {
   AppSettings s = QtPassSettings::load();
   if (s.passExecutable.isEmpty())
@@ -285,16 +224,7 @@ auto QtPassSettings::getProfile(const QString &defaultValue) -> QString {
       ->value(SettingsConstants::profile, defaultValue)
       .toString();
 }
-/**
- * @brief Determines whether Git should be used for the current QtPass settings.
- * @example
- * bool result = QtPassSettings::isUseGit(true);
- * std::cout << result << std::endl; // Expected output: true or false
- *
- * @param const bool &defaultValue - The fallback value used when no explicit
- * setting is stored.
- * @return bool - True if Git usage is enabled, otherwise false.
- */
+// With a true default and nothing stored, a store with a .git dir means Git.
 auto QtPassSettings::isUseGit(const bool &defaultValue) -> bool {
   bool storedValue =
       getInstance()->value(SettingsConstants::useGit, defaultValue).toBool();
