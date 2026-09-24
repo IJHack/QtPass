@@ -1133,7 +1133,7 @@ URL
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="202"/>
-        <location filename="../src/imitatepass.cpp" line="879"/>
+        <location filename="../src/imitatepass.cpp" line="883"/>
         <source>Can not edit</source>
         <translation>Није могуће мењати</translation>
     </message>
@@ -1149,7 +1149,7 @@ URL
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="203"/>
-        <location filename="../src/imitatepass.cpp" line="880"/>
+        <location filename="../src/imitatepass.cpp" line="884"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Није могуће прочитати кључ за шифровање, .gpg-id датотека не постоји или није исправна.</translation>
     </message>
@@ -1290,7 +1290,12 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="unfinished">%1 недостаје, а његову резервну копију %2 није могуће преименовати назад. Преименујте је ручно, а затим поново покрените шифровање.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1266"/>
+        <location filename="../src/imitatepass.cpp" line="949"/>
+        <source>%1 could not be re-encrypted: %2</source>
+        <translation type="unfinished">%1 није могуће поново шифровати: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1276"/>
         <source>Re-encryption failed</source>
         <translation>Поновно шифровање није успело</translation>
     </message>
@@ -1307,69 +1312,69 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="obsolete">Није могуће уклонити резервну копију %1 након поновног шифровања; безбедно је избрисати је.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="978"/>
+        <location filename="../src/imitatepass.cpp" line="988"/>
         <source>Creating backup commit</source>
         <translation>Стварање резервног комита</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="995"/>
-        <location filename="../src/imitatepass.cpp" line="1004"/>
+        <location filename="../src/imitatepass.cpp" line="1005"/>
+        <location filename="../src/imitatepass.cpp" line="1014"/>
         <source>Backup commit failed</source>
         <translation>Резервна копија није успела</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="996"/>
+        <location filename="../src/imitatepass.cpp" line="1006"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Није могуће проверити статус git-а. Поновно шифровање је прекинуто.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1005"/>
+        <location filename="../src/imitatepass.cpp" line="1015"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Поновно шифровање је прекинуто јер није било могуће креирати резервну копију git-а.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1053"/>
+        <location filename="../src/imitatepass.cpp" line="1063"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Поновно шифровање је већ у току</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1061"/>
+        <location filename="../src/imitatepass.cpp" line="1071"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Није фасцикла складишта</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1062"/>
+        <location filename="../src/imitatepass.cpp" line="1072"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 је симболичка веза или тачка спајања, или се налази иза такве везе. Оно на шта та веза показује није део складишта лозинки и није поново шифровано.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1071"/>
+        <location filename="../src/imitatepass.cpp" line="1081"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Поново се шифрује из фасцикле %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1154"/>
-        <location filename="../src/imitatepass.cpp" line="1293"/>
+        <location filename="../src/imitatepass.cpp" line="1164"/>
+        <location filename="../src/imitatepass.cpp" line="1303"/>
         <source>Updating password-store</source>
         <translation>Надограђује се складиште лозинки</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1165"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull није успео</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1166"/>
+        <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Након pull-а у складишту су остале неспојене датотеке. Решите сукоб пре поновног шифровања.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1171"/>
+        <location filename="../src/imitatepass.cpp" line="1181"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull није успео, складиште се поново шифрује у тренутном стању</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1198"/>
+        <location filename="../src/imitatepass.cpp" line="1208"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>Прескочен је %n унос: симболичка веза, тачка спајања или специјална датотека није део складишта.</numerusform>
@@ -1378,17 +1383,17 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1224"/>
+        <location filename="../src/imitatepass.cpp" line="1234"/>
         <source>GPG ID verification failed</source>
         <translation>Верификација ГПГ ИД-а није успела</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1225"/>
+        <location filename="../src/imitatepass.cpp" line="1235"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Немогуће је верификовати .gpg-id за директорију.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1264"/>
+        <location filename="../src/imitatepass.cpp" line="1274"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... и још %n</numerusform>
@@ -1397,7 +1402,7 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1267"/>
+        <location filename="../src/imitatepass.cpp" line="1277"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>Није било могуће поново шифровати %n датотеку:</numerusform>
@@ -1406,17 +1411,17 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1273"/>
+        <location filename="../src/imitatepass.cpp" line="1283"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Поновно шифровање је отказано: проверено %1 од %2 датотека, поново шифровано %3, неуспешно %4</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1544"/>
+        <location filename="../src/imitatepass.cpp" line="1554"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Извршна датотека git-а није подешена, git се прескаче</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1619"/>
+        <location filename="../src/imitatepass.cpp" line="1629"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg није записао шифрат за %1.</translation>
     </message>
@@ -1445,17 +1450,17 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="vanished">Поновно шифровање %1 није успело</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1282"/>
+        <location filename="../src/imitatepass.cpp" line="1292"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Поновно шифровање је завршено: %1 је успело, %2 није успело</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1287"/>
+        <location filename="../src/imitatepass.cpp" line="1297"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Поновно шифровање је завршено: поново шифровано %1 датотека</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1296"/>
+        <location filename="../src/imitatepass.cpp" line="1306"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Git push се прескаче: поновно шифровање није успело за %n датотеку</numerusform>
@@ -1464,18 +1469,18 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1456"/>
-        <location filename="../src/imitatepass.cpp" line="1470"/>
-        <location filename="../src/imitatepass.cpp" line="1477"/>
-        <location filename="../src/imitatepass.cpp" line="1491"/>
+        <location filename="../src/imitatepass.cpp" line="1466"/>
+        <location filename="../src/imitatepass.cpp" line="1480"/>
+        <location filename="../src/imitatepass.cpp" line="1487"/>
+        <location filename="../src/imitatepass.cpp" line="1501"/>
         <source>Copy failed</source>
         <translation>Копирање није успело</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1457"/>
-        <location filename="../src/imitatepass.cpp" line="1471"/>
-        <location filename="../src/imitatepass.cpp" line="1478"/>
-        <location filename="../src/imitatepass.cpp" line="1492"/>
+        <location filename="../src/imitatepass.cpp" line="1467"/>
+        <location filename="../src/imitatepass.cpp" line="1481"/>
+        <location filename="../src/imitatepass.cpp" line="1488"/>
+        <location filename="../src/imitatepass.cpp" line="1502"/>
         <source>Could not copy %1 to %2.</source>
         <translation>Није могуће копирати %1 у %2.</translation>
     </message>
@@ -1764,14 +1769,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="442"/>
         <location filename="../src/mainwindow.ui" line="445"/>
-        <location filename="../src/mainwindow.cpp" line="1654"/>
+        <location filename="../src/mainwindow.cpp" line="1684"/>
         <source>Edit</source>
         <translation>Уређивање</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="450"/>
         <location filename="../src/mainwindow.ui" line="453"/>
-        <location filename="../src/mainwindow.cpp" line="1668"/>
+        <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Delete</source>
         <translation>Избриши</translation>
     </message>
@@ -1859,7 +1864,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="485"/>
-        <location filename="../src/mainwindow.cpp" line="1648"/>
+        <location filename="../src/mainwindow.cpp" line="1678"/>
         <source>Users</source>
         <translation>Корисници</translation>
     </message>
@@ -1891,8 +1896,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="824"/>
-        <location filename="../src/mainwindow.cpp" line="1044"/>
+        <location filename="../src/mainwindow.cpp" line="825"/>
+        <location filename="../src/mainwindow.cpp" line="1045"/>
         <source>Search password</source>
         <translation>Тражи лозинку</translation>
     </message>
@@ -2053,7 +2058,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="436"/>
+        <location filename="../src/mainwindow.cpp" line="437"/>
         <source>Welcome to QtPass %1</source>
         <translation>Добродошли у КтПас %1</translation>
     </message>
@@ -2092,8 +2097,8 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="607"/>
-        <location filename="../src/mainwindow.cpp" line="620"/>
+        <location filename="../src/mainwindow.cpp" line="608"/>
+        <location filename="../src/mainwindow.cpp" line="621"/>
         <source>Updating password-store</source>
         <translation>Надограђује се складиште лозинки</translation>
     </message>
@@ -2110,8 +2115,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="731"/>
-        <location filename="../src/mainwindow.cpp" line="1086"/>
+        <location filename="../src/mainwindow.cpp" line="732"/>
+        <location filename="../src/mainwindow.cpp" line="1087"/>
         <source>Content hidden</source>
         <translation>Садржај скривен</translation>
     </message>
@@ -2160,12 +2165,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="939"/>
+        <location filename="../src/mainwindow.cpp" line="940"/>
         <source>Looking for: %1</source>
         <translation>Тражим: %1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1096"/>
+        <location filename="../src/mainwindow.cpp" line="1097"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Пронађено %n подударање</numerusform>
@@ -2184,31 +2189,29 @@ p, li { white-space: pre-wrap; }
 (Умештан ће се у %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1254"/>
         <source> and the whole content?</source>
-        <translation> и цело садржаје?</translation>
+        <translation type="vanished"> и цело садржаје?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1287"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> и цело садржаје? &lt;br&gt;&lt;strong&gt;Упозорење: постоје неочекивани фајлови у датотеци коју сте дали, проверите их пре наставка.&lt;/strong&gt;</translation>
+        <translation type="vanished"> и цело садржаје? &lt;br&gt;&lt;strong&gt;Упозорење: постоје неочекивани фајлови у датотеци коју сте дали, проверите их пре наставка.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1295"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Да ли сте сигурни да желите да избришете %1%2?</translation>
+        <translation type="vanished">Да ли сте сигурни да желите да избришете %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1294"/>
+        <location filename="../src/mainwindow.cpp" line="1239"/>
         <source>Delete password?</source>
         <translation>Желите да избришете лозинку?</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="1240"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="vanished">Are you sure you want to delete %1?</translation>
+        <translation>Are you sure you want to delete %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1294"/>
+        <location filename="../src/mainwindow.cpp" line="1263"/>
         <source>Delete folder?</source>
         <translation>Желите да избришете директоријум?</translation>
     </message>
@@ -2233,26 +2236,26 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1470"/>
+        <location filename="../src/mainwindow.cpp" line="1473"/>
         <source>Profile changed to %1</source>
         <translation>Профил је промењен на %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1645"/>
+        <location filename="../src/mainwindow.cpp" line="1675"/>
         <source>Open folder with file manager</source>
         <translation>Отвори директорију са фајл менаџером</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="434"/>
         <location filename="../src/mainwindow.ui" line="437"/>
-        <location filename="../src/mainwindow.cpp" line="1646"/>
+        <location filename="../src/mainwindow.cpp" line="1676"/>
         <source>Add folder</source>
         <translation>Додај директорију</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="423"/>
         <location filename="../src/mainwindow.ui" line="426"/>
-        <location filename="../src/mainwindow.cpp" line="1647"/>
+        <location filename="../src/mainwindow.cpp" line="1677"/>
         <source>Add password</source>
         <translation>Додај парол</translation>
     </message>
@@ -2267,7 +2270,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="160"/>
+        <location filename="../src/mainwindow.cpp" line="161"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation>Истекло је време операције; интерфејс се поново омогућава.</translation>
     </message>
@@ -2276,65 +2279,65 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Излаз процеса</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="768"/>
+        <location filename="../src/mainwindow.cpp" line="769"/>
         <source>Could not decrypt this password entry</source>
         <translation>Није могуће дешифровати овај унос лозинке</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="781"/>
-        <location filename="../src/mainwindow.cpp" line="799"/>
-        <location filename="../src/mainwindow.cpp" line="1357"/>
+        <location filename="../src/mainwindow.cpp" line="782"/>
+        <location filename="../src/mainwindow.cpp" line="800"/>
+        <location filename="../src/mainwindow.cpp" line="1360"/>
         <source>OTP code copied to clipboard</source>
         <translation>ОТП код је копиран на одељак за пресецање</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="801"/>
-        <location filename="../src/mainwindow.cpp" line="1340"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="1343"/>
         <source>No OTP code found in this password entry</source>
         <translation>Није пронађен ОТП код у овом паролном приступу</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="828"/>
+        <location filename="../src/mainwindow.cpp" line="829"/>
         <source>Password and content hidden</source>
         <translation>Лозинка и садржај скривени</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="916"/>
+        <location filename="../src/mainwindow.cpp" line="917"/>
         <source>About QtPass</source>
         <translation type="unfinished">О QtPass-у</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="917"/>
+        <location filename="../src/mainwindow.cpp" line="918"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Вишеплатформски графички кориснички интерфејс за &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандардни менаџер лозинки за Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Изворни код и пријава проблема&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Ауторска права &amp;copy; 2014&amp;ndash;%2 IJhack. Лиценцирано под лиценцом &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL верзије 3&lt;/a&gt; или новијом.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="993"/>
+        <location filename="../src/mainwindow.cpp" line="994"/>
         <source>Searching…</source>
         <translation>Претраживање…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <location filename="../src/mainwindow.cpp" line="1023"/>
         <source>Search content (regex)</source>
         <translation>Претражи садржај (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1027"/>
+        <location filename="../src/mainwindow.cpp" line="1028"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation>Претрага садржаја користи основне регуларне изразе POSIX (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1029"/>
+        <location filename="../src/mainwindow.cpp" line="1030"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation>Претрага садржаја користи регуларне изразе компатибилне са Perl-ом (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1072"/>
+        <location filename="../src/mainwindow.cpp" line="1073"/>
         <source>No matches found.</source>
         <translation>Нема подударања.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1097"/>
+        <location filename="../src/mainwindow.cpp" line="1098"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>у %n уносу.</numerusform>
@@ -2343,141 +2346,151 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1174"/>
+        <location filename="../src/mainwindow.cpp" line="1175"/>
         <source>Invalid name</source>
         <translation>Неважеће име</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="1176"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation>То име би показивало изван складишта лозинки. Изаберите друго име.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1265"/>
+        <location filename="../src/mainwindow.cpp" line="1272"/>
         <source>Delete link?</source>
         <translation type="unfinished">Желите да избришете везу?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1266"/>
+        <location filename="../src/mainwindow.cpp" line="1273"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 је симболичка веза или тачка спајања. Желите да уклоните везу? Оно на шта показује остаје нетакнуто.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1335"/>
+        <location filename="../src/mainwindow.cpp" line="1338"/>
         <source>No password selected for OTP generation</source>
         <translation>Неодабран парол за генерацију ОТП кода</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1660"/>
-        <location filename="../src/mainwindow.cpp" line="1792"/>
+        <location filename="../src/mainwindow.cpp" line="1690"/>
+        <location filename="../src/mainwindow.cpp" line="1790"/>
         <source>Rename folder</source>
         <translation>Преименуј директоријум</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
+        <location filename="../src/mainwindow.cpp" line="1693"/>
         <source>Rename password</source>
         <translation>Преименуј лозинку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1630"/>
         <source>Share</source>
         <translation>Дели</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1684"/>
+        <location filename="../src/mainwindow.cpp" line="1246"/>
+        <source>Are you sure you want to delete %1 and the whole content?</source>
+        <translation type="unfinished">Да ли сте сигурни да желите да избришете %1 и сав његов садржај?</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1259"/>
+        <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
+        <translation type="unfinished">Пажња: у наведеном директоријуму постоје неочекиване датотеке; проверите их пре него што наставите.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1640"/>
         <source>Re-encrypt all passwords</source>
         <translation>Поново шифруј све лозинке</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1689"/>
+        <location filename="../src/mainwindow.cpp" line="1645"/>
         <source>Export my public key...</source>
         <translation>Извези мој јавни кључ…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1649"/>
         <source>Add recipient...</source>
         <translation>Додај примаоца…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1700"/>
+        <location filename="../src/mainwindow.cpp" line="1654"/>
         <source>What is this?</source>
         <translation>Шта је ово?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1743"/>
+        <location filename="../src/mainwindow.cpp" line="1741"/>
         <source>New folder</source>
         <translation type="unfinished">Нова фасцикла</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1744"/>
+        <location filename="../src/mainwindow.cpp" line="1742"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Нова директорија: 
 (Умештан ће се у %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1792"/>
+        <location filename="../src/mainwindow.cpp" line="1790"/>
         <source>Rename folder to: </source>
         <translation>Преименујте папку као: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1832"/>
+        <location filename="../src/mainwindow.cpp" line="1830"/>
         <source>Rename file to: </source>
         <translation>Преименујте фајл као: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1881"/>
+        <location filename="../src/mainwindow.cpp" line="1879"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Овај унос садржи тајну ОТП-а, а не лозинку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1948"/>
+        <location filename="../src/mainwindow.cpp" line="1946"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Лозинке се поново шифрују...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1949"/>
+        <location filename="../src/mainwindow.cpp" line="1947"/>
         <source>Cancel</source>
         <translation type="unfinished">Откажи</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1957"/>
+        <location filename="../src/mainwindow.cpp" line="1955"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Отказивање поновног шифровања</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1973"/>
+        <location filename="../src/mainwindow.cpp" line="1971"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Поновно шифровање лозинки: %1 од %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2006"/>
-        <location filename="../src/mainwindow.cpp" line="2025"/>
+        <location filename="../src/mainwindow.cpp" line="2004"/>
+        <location filename="../src/mainwindow.cpp" line="2023"/>
         <source>Export public key</source>
         <translation>Извези јавни кључ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2007"/>
+        <location filename="../src/mainwindow.cpp" line="2005"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Извезите свој јавни кључ&lt;/h3&gt;&lt;p&gt;Није конфигурисан никакав кључ за потписивање. Поставите га у Подешавањима QtPass &amp;gt; GPG кључеви, или покрените ово у терминалу:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Затим пошаљите датотеку члановима вашег тима.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2066"/>
+        <location filename="../src/mainwindow.cpp" line="2064"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Није фасцикла складишта</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2067"/>
+        <location filename="../src/mainwindow.cpp" line="2065"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 је симболичка веза или тачка спајања, или се налази иза такве везе. Оно на шта та веза показује није део складишта лозинки и остаје нетакнуто.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2078"/>
+        <location filename="../src/mainwindow.cpp" line="2076"/>
         <source>Sharing passwords with GPG</source>
         <translation>Дељење лозинки помоћу GPG-а</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2079"/>
+        <location filename="../src/mainwindow.cpp" line="2077"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Дељење лозинки помоћу GPG-а&lt;/h3&gt;&lt;p&gt;За дељење лозинки са другим корисницима:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Извезите свој јавни кључ&lt;/b&gt; и пошаљите га члановима тима&lt;/li&gt;&lt;li&gt;&lt;b&gt;Увезите јавне кључеве чланова тима&lt;/b&gt; у ваш GPG привезак кључева&lt;/li&gt;&lt;li&gt;&lt;b&gt;Поново шифрујте лозинке&lt;/b&gt; како би их сви примаоци могли дешифровати&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Лозинке могу дешифровати само особе са одговарајућим тајним кључем.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Савет:&lt;/b&gt; Користите исти GPG кључ за све дељене фасцикле.&lt;/p&gt;&lt;p&gt;Погледајте ЧПП за више детаља.&lt;/p&gt;</translation>
     </message>
@@ -2490,7 +2503,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;h3&gt;Извезите свој јавни кључ&lt;/h3&gt;&lt;p&gt;Није конфигурисан никакав кључ за потписивање. Поставите га у Подешавањима QtPass &amp;gt; GPG кључеви, или покрените ово у терминалу:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Затим пошаљите датотеку члановима вашег тима.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2026"/>
+        <location filename="../src/mainwindow.cpp" line="2024"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2499,7 +2512,7 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2028"/>
+        <location filename="../src/mainwindow.cpp" line="2026"/>
         <source>No output from gpg.</source>
         <translation>Нема излаза из gpg-а.</translation>
     </message>
@@ -2516,24 +2529,24 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Повторно енкриптирање</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
-        <location filename="../src/mainwindow.cpp" line="1777"/>
-        <location filename="../src/mainwindow.cpp" line="1904"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
+        <location filename="../src/mainwindow.cpp" line="1902"/>
         <source>Error</source>
         <translation>Грешка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>Failed to create folder: %1</source>
         <translation>Неуспело креирање папке: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1778"/>
+        <location filename="../src/mainwindow.cpp" line="1776"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Неуспело креирање фајла .gpg-id у: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1832"/>
+        <location filename="../src/mainwindow.cpp" line="1830"/>
         <source>Rename file</source>
         <translation>Преименовати фајл</translation>
     </message>
@@ -2546,18 +2559,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Преименујте фајл као: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1905"/>
+        <location filename="../src/mainwindow.cpp" line="1903"/>
         <source>Directory does not exist: %1</source>
         <translation>Директорија не постоји: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1913"/>
-        <location filename="../src/mainwindow.cpp" line="1950"/>
+        <location filename="../src/mainwindow.cpp" line="1911"/>
+        <location filename="../src/mainwindow.cpp" line="1948"/>
         <source>Re-encrypt passwords</source>
         <translation>Поново шифруј лозинке</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1914"/>
+        <location filename="../src/mainwindow.cpp" line="1912"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2681,7 +2694,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="272"/>
+        <location filename="../src/passworddialog.cpp" line="286"/>
         <source>Password</source>
         <translation>Лозинка</translation>
     </message>
@@ -2769,62 +2782,62 @@ Continue?</source>
         <translation type="unfinished">Шаблон поља из датотеке .templates у складишту. Ctrl+T пребацује на следећи.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="78"/>
+        <location filename="../src/passworddialog.cpp" line="84"/>
         <source>New password</source>
         <translation type="unfinished">Нова лозинка</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="99"/>
+        <location filename="../src/passworddialog.cpp" line="105"/>
         <source>Decrypting…</source>
         <translation type="unfinished">Дешифровање…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="218"/>
+        <location filename="../src/passworddialog.cpp" line="232"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">Дајте уносу назив.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="222"/>
+        <location filename="../src/passworddialog.cpp" line="236"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">Назив се не може завршавати знаком /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="231"/>
+        <location filename="../src/passworddialog.cpp" line="245"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">Тај назив би водио изван складишта лозинки.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="235"/>
+        <location filename="../src/passworddialog.cpp" line="249"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Унос са називом %1 већ постоји.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="239"/>
+        <location filename="../src/passworddialog.cpp" line="253"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 је фасцикла.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="268"/>
+        <location filename="../src/passworddialog.cpp" line="282"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Није могуће направити фасциклу %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="330"/>
+        <location filename="../src/passworddialog.cpp" line="347"/>
         <source>Remove field</source>
         <translation type="unfinished">Уклони поље</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="350"/>
+        <location filename="../src/passworddialog.cpp" line="367"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Поље са називом %1 већ постоји.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="435"/>
+        <location filename="../src/passworddialog.cpp" line="465"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation>otpauth:// URI или base32 тајна</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="469"/>
+        <location filename="../src/passworddialog.cpp" line="508"/>
         <source>Invalid OTP secret</source>
         <translation>Неважећа тајна ОТП-а</translation>
     </message>
@@ -3384,34 +3397,35 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="739"/>
+        <location filename="../src/util.cpp" line="750"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">Није могуће креирати привремену датотеку поред %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="751"/>
-        <location filename="../src/util.cpp" line="808"/>
-        <location filename="../src/util.cpp" line="838"/>
+        <location filename="../src/util.cpp" line="762"/>
+        <location filename="../src/util.cpp" line="833"/>
+        <location filename="../src/util.cpp" line="863"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">Није могуће записати %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="767"/>
+        <location filename="../src/util.cpp" line="778"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">Није могуће заменити %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="771"/>
+        <location filename="../src/util.cpp" line="782"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 већ постоји.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="773"/>
+        <location filename="../src/util.cpp" line="784"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">Неуспело записивање %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="794"/>
+        <location filename="../src/util.cpp" line="802"/>
+        <location filename="../src/util.cpp" line="815"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">Датотека %1 је замењена другом датотеком док је записивана.</translation>
     </message>
@@ -3420,12 +3434,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="obsolete">Датотека %1 је замењена везом док је записивана.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="821"/>
+        <location filename="../src/util.cpp" line="846"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">Није могуће прочитати %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="831"/>
+        <location filename="../src/util.cpp" line="856"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">Није могуће прочитати %1: %2</translation>
     </message>
