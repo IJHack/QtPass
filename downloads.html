@@ -329,12 +329,8 @@
             >
           </p>
           <img
-            src="https://github.com/IJHack/QtPass/workflows/QMake/badge.svg"
+            src="https://github.com/IJHack/QtPass/actions/workflows/build-and-test.yml/badge.svg"
             alt="GitHub Build Status"
-          />
-          <img
-            src="https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/master?svg=true"
-            alt="AppVeyor Build Status"
           />
           <p class="fine">
             <small
@@ -379,7 +375,7 @@
         Latest
         <a
           title="Arch Linux QtPass package"
-          href="https://www.archlinux.org/packages/community/x86_64/qtpass/"
+          href="https://archlinux.org/packages/extra/x86_64/qtpass/"
           >stable</a
         >
         <a href="https://repology.org/metapackage/qtpass"
@@ -400,8 +396,7 @@
             alt="AUR package"
         /></a>
         <pre><code>pacman -S qtpass</code></pre>
-        <pre><code>packer qtpass</code></pre>
-        <pre><code>yaourt -S qtpass</code></pre>
+        <pre><code>yay -S qtpass-git</code></pre>
 
         <h4 id="rpm">OpenSUSE, Fedora &amp; CentOS</h4>
         Via
@@ -413,7 +408,7 @@
         and
         <a
           title="Fedora QtPass package"
-          href="https://admin.fedoraproject.org/pkgdb/package/rpms/qtpass/"
+          href="https://packages.fedoraproject.org/pkgs/qtpass/qtpass/"
           >Fedora</a
         >
         package db up to
@@ -430,7 +425,7 @@
         In amongst others
         <a
           title="Debian QtPass in stable"
-          href="https://packages.debian.org/stretch/qtpass"
+          href="https://packages.debian.org/stable/utils/qtpass"
           >stable</a
         >
         <a href="https://repology.org/metapackage/qtpass"
@@ -476,10 +471,10 @@
         <pre><code>emerge -atv qtpass</code></pre>
 
         <h4 id="Void">Void</h4>
-        Has a nie xbps
+        Has a nice xbps
         <a
           title="Void Linux QtPass package"
-          href="https://www.voidlinux.eu/packages/"
+          href="https://voidlinux.org/packages/?arch=x86_64&amp;q=qtpass"
           >package</a
         >
         <a href="https://repology.org/metapackage/qtpass"
@@ -490,7 +485,7 @@
         <pre><code>xbps-install -Su qtpass</code></pre>
 
         <h4 id="NixOS">NixOS</h4>
-        One of the first to addopt QtPass
+        One of the first to adopt QtPass
         <a
           title="NixOS QtPass packages"
           href="https://nixos.org/nixos/packages.html"
@@ -503,11 +498,11 @@
         /></a>
         <pre><code>nix-env -iA nixos.pkgs.qtpass</code></pre>
 
-        <h4 id="Soleus">Soleus Project</h4>
+        <h4 id="Solus">Solus</h4>
         Has a stable
         <a
-          title="Soleus QtPass package"
-          href="https://git.solus-project.com/packages/qtpass/"
+          title="Solus QtPass package"
+          href="https://github.com/getsolus/packages/tree/main/packages/q/qtpass"
           >package</a
         >
         for QtPass
@@ -659,7 +654,7 @@
           >Dependencies
         </h3>
         <ul>
-          <li>QtPass requires Qt5.</li>
+          <li>QtPass requires Qt 6.8 or newer.</li>
           <li>The Linguist package is required to compile the translations.</li>
           <li>For use of the fallback icons the SVG library is required.</li>
         </ul>
@@ -672,11 +667,6 @@
 
         <pre><code>brew install qt
 qmake6 &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
-
-        <p>
-          <strong>Note:</strong> QtPass uses Qt6 by default. For Qt5, use
-          <code>qmake</code> instead of <code>qmake6</code>.
-        </p>
 
         <h3>
           <a
