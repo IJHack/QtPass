@@ -24,7 +24,7 @@ hand-edit its files.
       npx htmlhint "*.html"
 
 * The homepage stamps its assets with a version query string (for example
-  `stylesheets/styles.css?v=1.8.1-6`). Bump it when a release changes the
+  `stylesheets/styles.css?v=1.8.1-7`). Bump it when a release changes the
   page.
 
 ## Deploy

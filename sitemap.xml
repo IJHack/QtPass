@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://qtpass.org/</loc>
-    <lastmod>2026-09-19T17:46:40+02:00</lastmod>
+    <lastmod>2026-09-24T11:36:02+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://qtpass.org/downloads</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-23T21:52:54+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -104,13 +104,13 @@
   </url>
   <url>
     <loc>https://qtpass.org/screenshots</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-21T22:45:49+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://qtpass.org/security</loc>
-    <lastmod>2026-09-19T19:57:31+02:00</lastmod>
+    <lastmod>2026-09-19T20:12:31+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
