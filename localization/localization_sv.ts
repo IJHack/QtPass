@@ -139,7 +139,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished">Visning</translation>
+        <translation>Visa</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="90"/>
@@ -149,64 +149,64 @@
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">System</translation>
+        <translation>System</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Använd systemfältikonen</translation>
+        <translation>Visa systemfältikon</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">Tillägg</translation>
+        <translation>Tillägg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished">Visa QR-koder (qrencode)</translation>
+        <translation>Visa QR-koder (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekunder</translation>
+        <translation>sekunder</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished">Innehållspanel</translation>
+        <translation>Innehållspanel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished">Kräver ett urklippsläge på sidan Urklipp, så att ett dolt lösenord ändå kan kopieras</translation>
+        <translation>Behöver ett urklippsläge på Urklippssidan, så ett dolt lösenord kan fortfarande kopieras</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished">Visa filinnehållet som det är</translation>
+        <translation>Visa filinnehållet precis som det är</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
         <source>Password generation</source>
-        <translation type="unfinished">Lösenordgenerering</translation>
+        <translation>Lösenordgenerering</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="626"/>
         <source>characters</source>
-        <translation type="unfinished">Tecken</translation>
+        <translation>tecken</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished">Sök efter gpg, git, pwgen och pass i PATH</translation>
+        <translation>Leta upp gpg, git, pwgen och pass i PATH</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Valfri sökväg för att åsidosätta SSH_AUTH_SOCK. Lämna tomt för automatisk sökning via gpgconf.</translation>
+        <translation>Valfri sökväg för att åsidosätta SSH_AUTH_SOCK. Lämna tomt för automatisk sökning via gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
@@ -429,7 +429,7 @@
         <location filename="../src/configdialog.ui" line="339"/>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Never</source>
-        <translation type="unfinished">Aldrig</translation>
+        <translation>Aldrig</translation>
     </message>
     <message>
         <source>Password generation:</source>
@@ -448,22 +448,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="810"/>
         <source>Fields:</source>
-        <translation type="unfinished">Fält:</translation>
+        <translation>Fält:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="824"/>
         <source>Off</source>
-        <translation type="unfinished">Av</translation>
+        <translation>Av</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="829"/>
         <source>Template fields</source>
-        <translation type="unfinished">Mallfält</translation>
+        <translation>Mallfält</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="834"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
-        <translation type="unfinished">Mallfält och varje rad med ”key: value”</translation>
+        <translation>Mallfält och varje rad av typen ”nyckel: värde”</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -610,12 +610,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished">Git-inställningar för denna profil; de ersätter inställningarna på sidan Git medan profilen är aktiv</translation>
+        <translation>Git-inställningar för denna profil; de ersätter inställningarna på Git-sidan så länge profilen är aktiv</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished">Aktivt lösenordsutrymme</translation>
+        <translation>Aktiv lagringsplats</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1570"/>
@@ -1363,7 +1363,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>%1 could not be re-encrypted: %2</source>
-        <translation type="unfinished">%1 kunde inte återkrypteras: %2</translation>
+        <translation>%1 kunde inte återkrypteras: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1101"/>
@@ -2125,8 +2125,8 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass är ett grafiskt gränssnitt för &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardlösenordshanteraren för Unix.&lt;/p&gt;
-&lt;p&gt;Rapportera alla &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problem&lt;/a&gt; du stöter på med den här programvaran.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass är ett GUI för &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardlösenordshanteraren för Unix..&lt;/p&gt;
+&lt;p&gt;Vänligen rapportera alla &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problem&lt;/a&gt; som du kan tänkas ha med den här programvaran.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Källkod&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
@@ -2153,12 +2153,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Show &amp;process output</source>
-        <translation type="unfinished">Visa &amp;processutdata</translation>
+        <translation>Visa &amp;processutdata</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="500"/>
         <source>Show or hide the output of git, gpg and pass</source>
-        <translation type="unfinished">Visa eller dölj utdata från git, gpg och pass</translation>
+        <translation>Visa eller dölj utdata från git, gpg och pass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
@@ -2178,17 +2178,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished">&amp;Konfigurera QtPass…</translation>
+        <translation>&amp;Konfigurera QtPass…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
         <source>Settings</source>
-        <translation type="unfinished">Inställningar</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished">Ändra inställningarna för QtPass</translation>
+        <translation>Ändra QtPass inställningar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>
@@ -2418,12 +2418,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
-        <translation type="unfinished">Vill du verkligen ta bort %1 och hela dess innehåll?</translation>
+        <translation>Är du säker på att du vill ta bort %1 och allt dess innehåll?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
-        <translation type="unfinished">Observera: det finns oväntade filer i den angivna mappen. Kontrollera dem innan du fortsätter.</translation>
+        <translation>Observera: det finns oväntade filer i den angivna mappen. Kontrollera dem innan du fortsätter.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1059"/>
