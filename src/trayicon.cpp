@@ -8,11 +8,6 @@
 
 #include "qtpasslogging.h"
 
-/**
- * @brief TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on
- * it (currently) only Quits.
- * @param parent
- */
 TrayIcon::TrayIcon(QMainWindow *parent) : QObject(parent) {
   parentwin = parent;
 
@@ -35,14 +30,8 @@ TrayIcon::TrayIcon(QMainWindow *parent) : QObject(parent) {
   }
 }
 
-/**
- * @brief TrayIcon::getIsAllocated return if TrayIcon is allocated
- */
 auto TrayIcon::getIsAllocated() -> bool { return isAllocated; }
 
-/**
- * @brief TrayIcon::createActions setup the signals.
- */
 void TrayIcon::createActions() {
   showAction = new QAction(tr("&Show"), this);
   connect(showAction, &QAction::triggered, parentwin, &QWidget::show);
@@ -63,9 +52,6 @@ void TrayIcon::createActions() {
           &QApplication::quit);
 }
 
-/**
- * @brief TrayIcon::createTrayIcon set up menu.
- */
 void TrayIcon::createTrayIcon() {
   // QMenu needs a widget parent; the main window owns the menu, this object
   // owns the tray icon.
@@ -82,9 +68,6 @@ void TrayIcon::createTrayIcon() {
   sysTrayIcon->setContextMenu(trayIconMenu);
 }
 
-/**
- * @brief TrayIcon::showHideParent toggle app visibility.
- */
 void TrayIcon::showHideParent() {
   if (parentwin->isVisible()) {
     parentwin->hide();
@@ -93,10 +76,6 @@ void TrayIcon::showHideParent() {
   }
 }
 
-/**
- * @brief TrayIcon::iconActivated you clicked on the trayicon.
- * @param reason
- */
 void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason) {
   switch (reason) {
   case QSystemTrayIcon::Trigger:

@@ -29,10 +29,6 @@
 
 #include "qtpasslogging.h"
 
-/**
- * @brief ConfigDialog::ConfigDialog this sets up the configuration screen.
- * @param parent
- */
 ConfigDialog::ConfigDialog(QWidget *parent)
     : QDialog(parent), ui(new Ui::ConfigDialog) {
   ui->setupUi(this);
@@ -60,9 +56,8 @@ ConfigDialog::ConfigDialog(QWidget *parent)
   }
 
 #if defined(Q_OS_WIN)
-  // checkBoxUseOtp is deliberately not hidden here any more: one-time
-  // passwords are generated in-process, so the feature no longer depends on
-  // the Unix-only pass-otp extension.
+  // checkBoxUseOtp stays visible: OTP is generated in-process, not by the
+  // Unix-only pass-otp extension.
   ui->checkBoxUseQrencode->hide();
 #endif
 
@@ -162,10 +157,8 @@ void ConfigDialog::applySettings(const AppSettings &settings) {
   useOtp(settings.useOtp);
   useGrepSearch(settings.useGrepSearch);
   useQrencode(settings.useQrencode);
-  // Restore the persisted pwgen path and password-generation settings before
-  // toggling usePwgen (which is gated on a non-empty pwgen path). Without this
-  // the Password-tab widgets keep their .ui defaults and readSettings() writes
-  // those defaults back over the user's saved configuration on every OK.
+  // Before usePwgen (gated on the pwgen path); otherwise readSettings() writes
+  // the .ui defaults over the saved configuration on every OK.
   setPwgenPath(settings.pwgenExecutable);
   setPasswordConfiguration(settings.passwordConfiguration);
   usePwgen(settings.usePwgen);
@@ -196,10 +189,8 @@ auto ConfigDialog::readSettings() -> AppSettings {
   settings.displayAsIs = ui->checkBoxDisplayAsIs->isChecked();
   settings.noLineWrapping = ui->checkBoxNoLineWrapping->isChecked();
   settings.addGPGId = ui->checkBoxAddGPGId->isChecked();
-  // Only overwrite these environment-gated preferences when their control is
-  // enabled. When disabled (e.g. no system tray available) keep the persisted
-  // value loaded above rather than clobbering it to false, so the preference
-  // survives until the user can change it on a capable environment.
+  // A disabled control (e.g. no system tray) keeps the persisted value
+  // instead of clobbering it to false.
   if (ui->checkBoxUseTrayIcon->isEnabled()) {
     settings.useTrayIcon = ui->checkBoxUseTrayIcon->isChecked();
   }
@@ -238,16 +229,8 @@ auto ConfigDialog::readSettings() -> AppSettings {
   return settings;
 }
 
-/**
- * @brief ConfigDialog::~ConfigDialog config destructor.
- */
 ConfigDialog::~ConfigDialog() = default;
 
-/**
- * @brief ConfigDialog::setGitPath set the git executable path.
- * Make sure the checkBoxUseGit is updated.
- * @param path
- */
 void ConfigDialog::setGitPath(const QString &path) {
   ui->gitPath->setText(path);
   ui->checkBoxUseGit->setEnabled(!path.isEmpty());
@@ -256,24 +239,12 @@ void ConfigDialog::setGitPath(const QString &path) {
   }
 }
 
-/**
- * @brief ConfigDialog::usePass set whether or not we want to use pass.
- * Update radio buttons accordingly.
- * @param usePass
- */
 void ConfigDialog::usePass(bool usePass) {
   ui->radioButtonNative->setChecked(!usePass);
   ui->radioButtonPass->setChecked(usePass);
   setGroupBoxState();
 }
 
-/**
- * @brief Mark the profiles that cannot be saved and gate OK on all of them
- * being fine: every profile needs a name and a path, and no two profiles may
- * share a name (the settings key them by it, so a duplicate would silently
- * overwrite the other). The offending rows are painted in the list and the
- * form field of the current one carries the reason as its tooltip.
- */
 auto ConfigDialog::isFingerprintList(const QString &setting) -> bool {
   // 40 hex characters for OpenPGP v4 keys, 64 for v5/v6 (gpg 2.5+).
   static const QRegularExpression fingerprint(
@@ -284,6 +255,8 @@ auto ConfigDialog::isFingerprintList(const QString &setting) -> bool {
   });
 }
 
+// Profile names must be unique: the settings key profiles by name, so a
+// duplicate would silently overwrite the other.
 void ConfigDialog::validate() {
   bool status = true;
   QHash<QString, int> names;
@@ -331,17 +304,6 @@ void ConfigDialog::validate() {
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(status);
 }
 
-/**
- * @brief Saves the configuration dialog settings to persistent application
- * settings.
- * @example
- * ConfigDialog dialog;
- * dialog.on_accepted();
- * // Expected output: All UI-selected configuration values are stored via
- * QtPassSettings.
- *
- * @return void - This method does not return a value.
- */
 void ConfigDialog::on_accepted() {
   const QString sshAuthSockOverride = ui->sshAuthSockOverride->text().trimmed();
   if (!sshAuthSockOverride.isEmpty()) {
@@ -400,19 +362,9 @@ void ConfigDialog::on_accepted() {
     QtPassSettings::save(s);
   }
 
-  // Initialize new profiles that need pass/git initialization
   initializeNewProfiles(existingProfiles);
 }
 
-/**
- * @brief Automatically detects required external binaries in the system PATH
- * and updates the dialog fields.
- * @example
- * ConfigDialog configDialog;
- * configDialog.on_autodetectButton_clicked();
- *
- * @return void - This function does not return a value.
- */
 void ConfigDialog::on_autodetectButton_clicked() {
   QString pass = Util::findBinaryInPath("pass");
   if (!pass.isEmpty()) {
@@ -436,27 +388,15 @@ void ConfigDialog::on_autodetectButton_clicked() {
   }
 }
 
-/**
- * @brief ConfigDialog::on_radioButtonNative_clicked wrapper for
- * ConfigDialog::setGroupBoxState()
- */
 void ConfigDialog::on_radioButtonNative_clicked() { setGroupBoxState(); }
 
-/**
- * @brief ConfigDialog::on_radioButtonPass_clicked wrapper for
- * ConfigDialog::setGroupBoxState()
- */
 void ConfigDialog::on_radioButtonPass_clicked() { setGroupBoxState(); }
 
-/**
- * @brief ConfigDialog::setGroupBoxState update checkboxes.
- */
 void ConfigDialog::setGroupBoxState() {
   bool state = ui->radioButtonPass->isChecked();
   ui->groupBoxNative->setEnabled(!state);
   ui->groupBoxPass->setEnabled(state);
   if (state) {
-    // pass mode: disable all password generation controls
     ui->spinBoxPasswordLength->setEnabled(false);
     ui->checkBoxUsePwgen->setEnabled(false);
     ui->checkBoxAvoidCapitals->setEnabled(false);
@@ -474,10 +414,6 @@ void ConfigDialog::setGroupBoxState() {
   }
 }
 
-/**
- * @brief ConfigDialog::selectExecutable pop-up to choose an executable.
- * @return
- */
 auto ConfigDialog::selectExecutable() -> QString {
   QFileDialog dialog(this);
   dialog.setFileMode(QFileDialog::ExistingFile);
@@ -489,10 +425,6 @@ auto ConfigDialog::selectExecutable() -> QString {
   return {};
 }
 
-/**
- * @brief ConfigDialog::selectFolder pop-up to choose a folder.
- * @return
- */
 auto ConfigDialog::selectFolder() -> QString {
   QFileDialog dialog(this);
   dialog.setFileMode(QFileDialog::Directory);
@@ -505,10 +437,6 @@ auto ConfigDialog::selectFolder() -> QString {
   return {};
 }
 
-/**
- * @brief ConfigDialog::on_toolButtonGit_clicked get git application.
- * Enable checkboxes if found.
- */
 void ConfigDialog::on_toolButtonGit_clicked() {
   QString git = selectExecutable();
   bool state = !git.isEmpty();
@@ -521,9 +449,6 @@ void ConfigDialog::on_toolButtonGit_clicked() {
   ui->checkBoxUseGit->setEnabled(state);
 }
 
-/**
- * @brief ConfigDialog::on_toolButtonGpg_clicked get gpg application.
- */
 void ConfigDialog::on_toolButtonGpg_clicked() {
   QString gpg = selectExecutable();
   if (!gpg.isEmpty()) {
@@ -531,17 +456,11 @@ void ConfigDialog::on_toolButtonGpg_clicked() {
   }
 }
 
-/**
- * @brief ConfigDialog::on_pushButtonGenerateKey_clicked open keygen dialog.
- */
 void ConfigDialog::on_pushButtonGenerateKey_clicked() {
   KeygenDialog d(ui->gpgPath->text(), QtPassSettings::getPass(), this);
   d.exec();
 }
 
-/**
- * @brief ConfigDialog::on_toolButtonPass_clicked get pass application.
- */
 void ConfigDialog::on_toolButtonPass_clicked() {
   QString pass = selectExecutable();
   if (!pass.isEmpty()) {
@@ -549,10 +468,6 @@ void ConfigDialog::on_toolButtonPass_clicked() {
   }
 }
 
-/**
- * @brief ConfigDialog::on_toolButtonStore_clicked get .password-store
- * location.
- */
 void ConfigDialog::on_toolButtonStore_clicked() {
   QString store = selectFolder();
   if (!store.isEmpty()) {
@@ -560,10 +475,7 @@ void ConfigDialog::on_toolButtonStore_clicked() {
   }
 }
 
-/**
- * @brief ConfigDialog::on_comboBoxClipboard_activated show and hide options.
- * @param index of selectbox (0 = no clipboard).
- */
+// index 0 is "No clipboard".
 void ConfigDialog::on_comboBoxClipboard_activated(int index) {
   bool state = index > 0;
 
@@ -580,68 +492,35 @@ void ConfigDialog::on_comboBoxClipboard_activated(int index) {
   }
 }
 
-/**
- * @brief ConfigDialog::on_checkBoxAutoclearPanel_clicked enable and disable
- * options based on autoclear use.
- */
 void ConfigDialog::on_checkBoxAutoclearPanel_clicked() {
   bool state = ui->checkBoxAutoclearPanel->isChecked();
   ui->spinBoxAutoclearPanelSeconds->setEnabled(state);
   ui->labelPanelSeconds->setEnabled(state);
 }
 
-/**
- * @brief ConfigDialog::useSelection set the clipboard type use from
- * MainWindow.
- * @param useSelection
- */
 void ConfigDialog::useSelection(bool useSelection) {
   ui->checkBoxSelection->setChecked(useSelection);
   on_checkBoxSelection_clicked();
 }
 
-/**
- * @brief ConfigDialog::useAutoclear set the clipboard autoclear use from
- * MainWindow.
- * @param useAutoclear
- */
 void ConfigDialog::useAutoclear(bool useAutoclear) {
   ui->checkBoxAutoclear->setChecked(useAutoclear);
   on_checkBoxAutoclear_clicked();
 }
 
-/**
- * @brief ConfigDialog::useAutoclearPanel set the panel autoclear use from
- * MainWindow.
- * @param useAutoclearPanel
- */
 void ConfigDialog::useAutoclearPanel(bool useAutoclearPanel) {
   ui->checkBoxAutoclearPanel->setChecked(useAutoclearPanel);
   on_checkBoxAutoclearPanel_clicked();
 }
 
-/**
- * @brief ConfigDialog::on_checkBoxSelection_clicked checkbox clicked, update
- * state via ConfigDialog::on_comboBoxClipboard_activated
- */
 void ConfigDialog::on_checkBoxSelection_clicked() {
   on_comboBoxClipboard_activated(ui->comboBoxClipboard->currentIndex());
 }
 
-/**
- * @brief ConfigDialog::on_checkBoxAutoclear_clicked checkbox clicked, update
- * state via ConfigDialog::on_comboBoxClipboard_activated
- */
 void ConfigDialog::on_checkBoxAutoclear_clicked() {
   on_comboBoxClipboard_activated(ui->comboBoxClipboard->currentIndex());
 }
 
-/**
- * @brief ConfigDialog::setProfiles set the profiles and chosen profile from
- * MainWindow.
- * @param profiles
- * @param currentProfile
- */
 void ConfigDialog::setProfiles(Profiles profiles,
                                const QString &currentProfile) {
   // remove weird "" key value pairs
@@ -664,10 +543,6 @@ void ConfigDialog::setProfiles(Profiles profiles,
   validate();
 }
 
-/**
- * @brief The entry the form is showing.
- * @return The entry, or nullptr when nothing is selected.
- */
 auto ConfigDialog::currentEntry() -> ProfileEntry * {
   if (m_currentEntry < 0 || m_currentEntry >= m_entries.size()) {
     return nullptr;
@@ -675,14 +550,8 @@ auto ConfigDialog::currentEntry() -> ProfileEntry * {
   return &m_entries[m_currentEntry];
 }
 
-/**
- * @brief Show one profile in the form, or clear and disable the form.
- *
- * The Git boxes show the profile's own flags when it has them and the
- * global ones from the Settings tab otherwise; only a click on a box turns
- * the value into the profile's own.
- * @param row Index into m_entries, or -1 for none.
- */
+// The Git boxes show the profile's own flags, else the global ones; only a
+// click on a box makes the value the profile's own.
 void ConfigDialog::loadProfileForm(int row) {
   m_currentEntry = (row >= 0 && row < m_entries.size()) ? row : -1;
   const ProfileEntry *entry = currentEntry();
@@ -708,10 +577,6 @@ void ConfigDialog::loadProfileForm(int row) {
   validate();
 }
 
-/**
- * @brief ConfigDialog::getProfiles return profile list.
- * @return The profiles as edited, keyed by name.
- */
 auto ConfigDialog::getProfiles() -> Profiles {
   Profiles profiles;
   for (const ProfileEntry &entry : std::as_const(m_entries)) {
@@ -720,15 +585,9 @@ auto ConfigDialog::getProfiles() -> Profiles {
   return profiles;
 }
 
-/**
- * @brief Initialize new profiles that need pass/git initialization.
- * @param existingProfiles The profiles that existed before the dialog was
- * opened.
- */
 void ConfigDialog::initializeNewProfiles(const Profiles &existingProfiles) {
   const Profiles newProfiles = getProfiles();
 
-  // Collect keys and sort for deterministic iteration
   // QMap iterates in name order.
   for (auto it = newProfiles.cbegin(); it != newProfiles.cend(); ++it) {
     const QString &name = it.key();
@@ -742,9 +601,7 @@ void ConfigDialog::initializeNewProfiles(const Profiles &existingProfiles) {
       continue;
     }
 
-    // This is a new profile - create directory if needed and initialize
-    // Note: needsInit returns false for non-existent directories, so we
-    // must create the directory first.
+    // needsInit returns false for a missing directory, so create it first.
     QString cleanPath = QDir::cleanPath(path);
     QDir dir(cleanPath);
     if (!dir.exists()) {
@@ -768,13 +625,10 @@ void ConfigDialog::initializeNewProfiles(const Profiles &existingProfiles) {
       continue;
     }
 
-    // The dialog only collects the recipients here (it lists keys through
-    // the active backend, which is fine); the folder is initialised without
-    // that backend, whose settings snapshot, PASSWORD_STORE_DIR and process
-    // queue all belong to the active store (#1774). It gets the profile as
-    // its store: Pass::getGpgIdPath() falls back to <store>/.gpg-id for a
-    // folder outside the store, which would pre-tick the active store's
-    // recipients for the new profile.
+    // Only the recipients come through the active backend; initialising
+    // without it keeps its settings, PASSWORD_STORE_DIR and queue on the
+    // active store (#1774). passStore is the profile, or getGpgIdPath() would
+    // pre-tick the active store's recipients.
     const AppSettings settings = QtPassSettings::load();
     AppSettings profileSettings = settings;
     profileSettings.passStore = Util::normalizeFolderPath(cleanPath);
@@ -789,7 +643,6 @@ void ConfigDialog::initializeNewProfiles(const Profiles &existingProfiles) {
       continue;
     }
 
-    // Use per-profile useGit setting, falling back to global if not set
     const bool useGit = profile.useGit.value_or(settings.useGit);
 
     QString note;
@@ -804,10 +657,6 @@ void ConfigDialog::initializeNewProfiles(const Profiles &existingProfiles) {
   }
 }
 
-/**
- * @brief ConfigDialog::on_addButton_clicked add a profile and start editing
- * its name.
- */
 void ConfigDialog::on_addButton_clicked() {
   ProfileEntry entry;
   entry.name = tr("New profile");
@@ -820,9 +669,6 @@ void ConfigDialog::on_addButton_clicked() {
   validate();
 }
 
-/**
- * @brief Pick the store folder for the profile in the form.
- */
 void ConfigDialog::on_profilePathBrowse_clicked() {
   const QString dir = selectFolder();
   if (!dir.isEmpty()) {
@@ -831,9 +677,6 @@ void ConfigDialog::on_profilePathBrowse_clicked() {
   }
 }
 
-/**
- * @brief ConfigDialog::on_deleteButton_clicked forget the selected profile.
- */
 void ConfigDialog::on_deleteButton_clicked() {
   const int row = ui->profileList->currentRow();
   if (row < 0 || row >= m_entries.size()) {
@@ -847,28 +690,12 @@ void ConfigDialog::on_deleteButton_clicked() {
   validate();
 }
 
-/**
- * @brief ConfigDialog::criticalMessage wrapper for showing critical messages
- * in a popup.
- * @param title
- * @param text
- */
 void ConfigDialog::criticalMessage(const QString &title, const QString &text) {
   QMessageBox::critical(this, title, text, QMessageBox::Ok, QMessageBox::Ok);
 }
 
-/**
- * @brief Checks whether the qrencode executable is available on the system.
- *
- * A configured path that points at an executable file is accepted as-is.
- * Otherwise qrencode is looked up on Util's PATH (which carries the macOS and
- * Windows additions) without spawning a subprocess; a hit is stored so the
- * QR display can use it, a miss leaves the stored path untouched.
- *
- * @param configuredPath The qrencode path currently stored in the settings.
- * @return bool - True if qrencode is available; otherwise false. On Windows,
- * always returns false.
- */
+// Looks on Util's PATH (with the macOS and Windows additions) without a
+// subprocess; a hit is stored for the QR display, a miss leaves the setting.
 auto ConfigDialog::isQrencodeAvailable(const QString &configuredPath) -> bool {
 #ifdef Q_OS_WIN
   Q_UNUSED(configuredPath);
@@ -889,11 +716,6 @@ auto ConfigDialog::isQrencodeAvailable(const QString &configuredPath) -> bool {
 #endif
 }
 
-/**
- * @brief ConfigDialog::useTrayIcon set preference for using trayicon.
- * Enable or disable related checkboxes accordingly.
- * @param useSystray
- */
 void ConfigDialog::useTrayIcon(bool useSystray) {
   if (QSystemTrayIcon::isSystemTrayAvailable()) {
     ui->checkBoxUseTrayIcon->setChecked(useSystray);
@@ -907,29 +729,17 @@ void ConfigDialog::useTrayIcon(bool useSystray) {
   }
 }
 
-/**
- * @brief ConfigDialog::on_checkBoxUseTrayIcon_clicked enable and disable
- * related checkboxes.
- */
 void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
   bool state = ui->checkBoxUseTrayIcon->isChecked();
   ui->checkBoxHideOnClose->setEnabled(state);
   ui->checkBoxStartMinimized->setEnabled(state);
 }
 
-/**
- * @brief ConfigDialog::useGit set preference for using git.
- * @param useGit
- */
 void ConfigDialog::useGit(bool useGit) {
   ui->checkBoxUseGit->setChecked(useGit);
   on_checkBoxUseGit_clicked();
 }
 
-/**
- * @brief ConfigDialog::useOtp set preference for using otp plugin.
- * @param useOtp
- */
 void ConfigDialog::useOtp(bool useOtp) {
   ui->checkBoxUseOtp->setChecked(useOtp);
 }
@@ -938,28 +748,16 @@ void ConfigDialog::useGrepSearch(bool useGrepSearch) {
   ui->checkBoxUseGrepSearch->setChecked(useGrepSearch);
 }
 
-/**
- * @brief ConfigDialog::useQrencode set preference for using qrencode plugin.
- * @param useQrencode
- */
 void ConfigDialog::useQrencode(bool useQrencode) {
   ui->checkBoxUseQrencode->setChecked(useQrencode);
 }
 
-/**
- * @brief ConfigDialog::on_checkBoxUseGit_clicked enable or disable related
- * checkboxes.
- */
 void ConfigDialog::on_checkBoxUseGit_clicked() {
   ui->checkBoxAddGPGId->setEnabled(ui->checkBoxUseGit->isChecked());
   ui->checkBoxAutoPull->setEnabled(ui->checkBoxUseGit->isChecked());
   ui->checkBoxAutoPush->setEnabled(ui->checkBoxUseGit->isChecked());
 }
 
-/**
- * @brief ConfigDialog::on_toolButtonPwgen_clicked enable or disable related
- * options in the interface.
- */
 void ConfigDialog::on_toolButtonPwgen_clicked() {
   QString pwgen = selectExecutable();
   if (!pwgen.isEmpty()) {
@@ -971,11 +769,6 @@ void ConfigDialog::on_toolButtonPwgen_clicked() {
   }
 }
 
-/**
- * @brief ConfigDialog::setPwgenPath set pwgen executable path.
- * Enable or disable related options in the interface.
- * @param pwgen
- */
 void ConfigDialog::setPwgenPath(const QString &pwgen) {
   ui->pwgenPath->setText(pwgen);
   if (pwgen.isEmpty()) {
@@ -985,10 +778,6 @@ void ConfigDialog::setPwgenPath(const QString &pwgen) {
   on_checkBoxUsePwgen_clicked();
 }
 
-/**
- * @brief ConfigDialog::on_checkBoxUsePwgen_clicked enable or disable related
- * options in the interface.
- */
 void ConfigDialog::on_checkBoxUsePwgen_clicked() {
   if (ui->radioButtonPass->isChecked())
     return;
@@ -1002,13 +791,6 @@ void ConfigDialog::on_checkBoxUsePwgen_clicked() {
   ui->passwordCharTemplateSelector->setEnabled(!usePwgen);
 }
 
-/**
- * @brief ConfigDialog::usePwgen set preference for using pwgen (can be
- * overruled by empty pwgenPath).
- * enable or disable related options in the interface via
- * ConfigDialog::on_checkBoxUsePwgen_clicked
- * @param usePwgen
- */
 void ConfigDialog::usePwgen(bool usePwgen) {
   if (ui->pwgenPath->text().isEmpty()) {
     usePwgen = false;
@@ -1035,10 +817,8 @@ auto ConfigDialog::getPasswordConfiguration() -> PasswordConfiguration {
   config.length = ui->spinBoxPasswordLength->value();
   config.selected = static_cast<PasswordConfiguration::CharacterSet>(
       ui->passwordCharTemplateSelector->currentIndex());
-  // The line edit only holds the user's custom charset while CUSTOM is
-  // selected; for a builtin selection it shows that builtin's characters.
-  // Reading it unconditionally would overwrite the saved custom charset with a
-  // builtin string, so fall back to the retained custom value in that case.
+  // For a builtin selection the line edit shows the builtin's characters;
+  // reading it would overwrite the saved custom charset.
   if (config.selected == PasswordConfiguration::CUSTOM) {
     config.Characters[PasswordConfiguration::CUSTOM] =
         ui->lineEditPasswordChars->text();
@@ -1048,12 +828,6 @@ auto ConfigDialog::getPasswordConfiguration() -> PasswordConfiguration {
   return config;
 }
 
-/**
- * @brief ConfigDialog::on_passwordCharTemplateSelector_activated sets the
- * passwordChar Template
- * combo box to the desired entry
- * @param entry of
- */
 void ConfigDialog::on_passwordCharTemplateSelector_activated(int index) {
   ui->lineEditPasswordChars->setText(
       QtPassSettings::getPasswordConfiguration().Characters[index]);
@@ -1064,10 +838,6 @@ void ConfigDialog::on_passwordCharTemplateSelector_activated(int index) {
   }
 }
 
-/**
- * @brief ConfigDialog::on_checkBoxUseTemplate_clicked enable or disable the
- * template field and options.
- */
 void ConfigDialog::on_checkBoxUseTemplate_clicked() {
   ui->plainTextEditTemplate->setEnabled(ui->checkBoxUseTemplate->isChecked());
   ui->checkBoxTemplateAllFields->setEnabled(
@@ -1108,9 +878,7 @@ void ConfigDialog::onProfileSigningKeyEdited(const QString &key) {
   validate();
 }
 
-/**
- * @brief A Git box was clicked: the profile now has its own flags.
- */
+// A Git box was clicked: the profile now has its own flags.
 void ConfigDialog::onProfileGitToggled() {
   ProfileEntry *entry = currentEntry();
   if (m_loadingForm || entry == nullptr) {
@@ -1123,9 +891,6 @@ void ConfigDialog::onProfileGitToggled() {
   ui->profileAutoPull->setEnabled(ui->profileUseGit->isChecked());
 }
 
-/**
- * @brief Update the status line with a preview of the profile in the form.
- */
 void ConfigDialog::updateProfileStatus() {
   const ProfileEntry *entry = currentEntry();
   if (entry == nullptr) {
@@ -1148,10 +913,6 @@ void ConfigDialog::updateProfileStatus() {
   ui->statusLabel->setText(statusMessage);
 }
 
-/**
- * @brief ConfigDialog::useTemplate set preference for using templates.
- * @param useTemplate
- */
 void ConfigDialog::useTemplate(bool useTemplate) {
   ui->checkBoxUseTemplate->setChecked(useTemplate);
   on_checkBoxUseTemplate_clicked();

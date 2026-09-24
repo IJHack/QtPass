@@ -78,11 +78,9 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
     *note = tr("No recipient selected; %1 was not written.").arg(gpgIdFile);
     return false;
   }
-  // Same primitive as ImitatePass::writeGpgIdFile: the list is written to a
-  // temporary in the same directory and renamed into place whole, so an
-  // interrupted write leaves no half .gpg-id for the signing step (or a
-  // later run without signing) to take for the recipient list. Owner-only
-  // before commit: the list leaks which keys the store is encrypted to.
+  // As ImitatePass::writeGpgIdFile: renamed into place whole, so an
+  // interrupted write leaves no half .gpg-id to sign or use. Owner-only: the
+  // list leaks which keys the store is encrypted to.
   QByteArray contents =
       (ids.join(QLatin1Char('\n')) + QLatin1Char('\n')).toUtf8();
   if (signed_) {
@@ -182,11 +180,9 @@ auto ProfileInit::initGit(const QString &dir, const AppSettings &s,
     }
     return true;
   };
-  // Only what belongs to a store is staged: an existing folder may hold
-  // exports, editor swap files or other plaintext that must not enter the
-  // history (the same rule the re-encryption backup commit follows).
-  // Regular files only: a link or junction is not part of the store and
-  // must not have what it points to staged.
+  // Stage only store files (as the re-encryption backup commit does): an
+  // existing folder may hold plaintext exports or swap files. Regular files
+  // only: a link or junction must not have its target staged.
   QStringList files;
   const QDir base(dir);
   // Hidden directories (.git among them) are not walked, hidden files are:
