@@ -34,10 +34,14 @@ cd "$workdir"
 
 gh release download "$tag" --repo "$repo" --pattern '*'
 # The source archives are normally uploaded as release assets as well (same
-# bytes as GitHub's auto-generated ones), so skip them if the pattern download
-# already fetched them instead of failing on the name clash.
-gh release download "$tag" --repo "$repo" --archive tar.gz --skip-existing
-gh release download "$tag" --repo "$repo" --archive zip --skip-existing
+# bytes as GitHub's auto-generated ones). Only fetch GitHub's archive when the
+# asset is missing: a draft release has no auto-generated archives, and gh
+# fails on it even with --skip-existing.
+for ext in tar.gz zip; do
+	if [ ! -e "QtPass-${tag#v}.${ext}" ]; then
+		gh release download "$tag" --repo "$repo" --archive "$ext"
+	fi
+done
 
 new_asc=()
 
