@@ -71,6 +71,12 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.8.2" date="2026-09-24">
+      <url>https://github.com/IJHack/QtPass/releases/tag/v1.8.2</url>
+      <description>
+        <p>Bug-fix release: the automatic Git push and pull settings are saved again, the edit dialog only turns key: value lines into fields when the settings ask for it, and the AppStream metainfo installs under the component ID.</p>
+      </description>
+    </release>
     <release version="1.8.1" date="2026-09-15">
       <url>https://github.com/IJHack/QtPass/releases/tag/v1.8.1</url>
       <description>
