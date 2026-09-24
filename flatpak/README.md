@@ -29,8 +29,9 @@ flatpak run --command=flatpak-builder-lint org.flatpak.Builder appstream org.qtp
 ## How GnuPG works inside the sandbox
 
 The sandbox has no access to `~/.gnupg`. The runtime-provided `gpg` (only the
-`gpg2` wrapper is ours) therefore keeps its own keyring in `~/.var/app/org.qtpass.QtPass/.gnupg`, but it connects to the
-**host** `gpg-agent` through the read-only exposed socket directory
+`gpg2` wrapper is ours) therefore keeps its own keyring in
+`~/.var/app/org.qtpass.QtPass/.gnupg`, but it connects to the **host**
+`gpg-agent` through the read-only exposed socket directory
 (`--filesystem=xdg-run/gnupg:ro`). Private keys, pinentry dialogs and
 smartcards stay on the host; only the public keys have to be known inside the
 sandbox. Import them once:
@@ -43,31 +44,47 @@ gpg --export --armor you@example.org | \
 or paste them via **Users → Import key → From clipboard** in QtPass. The
 host agent must be running (it is, on any desktop where `gpg` already works).
 
+## The password store
+
+The default store is private to the Flatpak:
+`~/.var/app/org.qtpass.QtPass/.password-store` (`--persist=.password-store`).
+To use an existing store, for example `~/.password-store` shared with `pass`
+on the host, pick it with the folder button in Settings (Profiles page); the
+portal gives access to that folder only. Alternatively, grant the folder to
+QtPass alone with Flatseal or:
+
+```sh
+flatpak override --user --filesystem=~/.password-store org.qtpass.QtPass
+```
+
 ## Permissions, and what is deliberately left out
 
-Granted: Wayland/X11, network (for `git` over https), `~/.password-store`,
-the gpg-agent socket directory (read-only), a persistent private `~/.gnupg`,
-and the tray (`org.kde.StatusNotifierWatcher`). Nothing here needs a
-Flathub linter exception.
+Granted: Wayland/X11, network (for `git` over https), the gpg-agent socket
+directory (read-only), a persistent private `~/.password-store` and
+`~/.gnupg`, and the tray (`org.kde.StatusNotifierWatcher`). Nothing here needs
+a Flathub linter exception.
 
-Not granted on purpose: `~/.gnupg` itself, `~/.ssh` and the ssh-agent socket.
-A store in another location can be chosen through the file dialog (the portal
-grants access to the chosen folder); for `git` over SSH add
-`--socket=ssh-auth` (and `--filesystem=~/.ssh:ro` for `known_hosts`) with
-Flatseal or `flatpak override --user`.
+Not granted on purpose: any host directory, `~/.gnupg` itself, `~/.ssh` and
+the ssh-agent socket. For `git` over SSH, grant them with Flatseal or:
+
+```sh
+flatpak override --user --socket=ssh-auth --filesystem=~/.ssh:ro org.qtpass.QtPass
+```
+
+(`~/.ssh` read-only is for `known_hosts`.) Without the application ID,
+`flatpak override` changes the defaults of every installed Flatpak.
 
 ## Updating
 
 Bump the `tag`/`commit` of the `qtpass` module to the new release. The
 `x-checker-data` blocks let Flathub's external-data-checker propose updates of
-the bundled tools automatically. The `file` overlays in the `qtpass` module
-(metainfo, square icon, `main.cpp`, `qtpasssettings.cpp`, and for the 1.8.1
-first-run fix `mainwindow.h`, `mainwindow.cpp`, `qtpass.cpp`) exist only because
-v1.8.0 predates those changes — drop them when building from a later tag.
-Since 1.8.2 the metainfo is installed under its component ID
-(`org.qtpass.QtPass.metainfo.xml`): drop `rename-appdata-file` when the
-module moves to the 1.8.2 tag (`ci-manifest.sh` strips it for the tree build
-meanwhile).
+the bundled tools automatically. The module builds the tag as-is: since
+v1.8.1 the tree ships `flatpak/gpg2`, and `make -C main install` puts the
+desktop file, metainfo and icons where `rename-desktop-file` /
+`rename-appdata-file` / `rename-icon` expect them, so no working-tree files
+are overlaid any more. Since 1.8.2 the metainfo is installed under its
+component ID (`org.qtpass.QtPass.metainfo.xml`), so the manifest no longer
+needs `rename-appdata-file`.
 
 ## CI
 
