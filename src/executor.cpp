@@ -297,17 +297,18 @@ auto Executor::runBlocking(QProcess &process, const QString &app,
   }
   // Always close stdin so a child blocking on EOF doesn't hang.
   process.closeWriteChannel();
-  if (!waitOrCancel(process, cancel) ||
-      process.exitStatus() != QProcess::NormalExit) {
+  if (!waitOrCancel(process, cancel)) {
     return -1;
   }
+  // Read before judging the exit: a process that crashed may have said why,
+  // as the queued path (onProcessFinished) keeps it too.
   if (process_out != nullptr) {
     *process_out = decodeAssumingUtf8(process.readAllStandardOutput());
   }
   if (process_err != nullptr) {
     *process_err = decodeAssumingUtf8(process.readAllStandardError());
   }
-  return process.exitCode();
+  return process.exitStatus() == QProcess::NormalExit ? process.exitCode() : -1;
 }
 
 auto Executor::executeBlocking(const QString &app, const QStringList &args,
