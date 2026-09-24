@@ -15,8 +15,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   meant hiding to the tray; that is Ctrl+W (File ▸ Close window) now. The
   window close button and Alt+F4 behave as before.
 - **The menu bar is off by default** so the window looks as it did; Ctrl+M
-  turns it on, Settings ▸ Show menu bar (or Ctrl+M again) off, and the
-  choice is remembered. On macOS the bar is the system's and always there.
+  turns it on, Settings ▸ Show menu bar (or Ctrl+M again) turns it off, and
+  the choice is remembered. On macOS the bar is the system's and always there.
 - **Settings moved, stored values did not.** Clipboard and panel autoclear
   are one number each (0 is "Never"), the two template checkboxes are one
   choice, and "Show menu bar" / "Show process output" are toggles in the
@@ -386,8 +386,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   as toolbar icons and there was no About at all; on macOS the standard
   application menu (Preferences, About, Quit) now appears because Qt builds
   it from the menu roles. The bar is off by default so the window stays as
-  bare as it was: Ctrl+M turns it on and Settings ▸ Show menu bar off again
-  (not on macOS, where the bar is the system's), and the choice is
+  bare as it was: Ctrl+M turns it on and Settings ▸ Show menu bar turns it
+  off again (not on macOS, where the bar is the system's), and the choice is
   remembered
 - Double-clicking a field in the password panel opens the entry for editing,
   as double-clicking it in the tree does
@@ -778,7 +778,7 @@ line ([#1709](https://github.com/IJHack/QtPass/issues/1709)). Qt 5.15 and Qt 6 a
 
 ### Tests <!-- markdownlint-disable-line MD024 -->
 
-- Test suites grew from 11 to 25: widget tests for MainWindow, ConfigDialog,
+- Test suites grew from 11 to 24: widget tests for MainWindow, ConfigDialog,
   KeygenDialog, TrayIcon, UsersDialog, PasswordDisplayPanel, Import/Export key
   dialogs; unit suites for `Base32`, `TOTP`, `PassBackendFactory`, `UserInfo`,
   `ProfileInit`; GPG end-to-end coverage for multi-recipient encryption,
