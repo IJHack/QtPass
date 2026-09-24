@@ -2187,7 +2187,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1240"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Are you sure you want to delete %1?</translation>
+        <translation type="unfinished">%1 මකා දැමීමට ඔබට විශ්වාසද?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1263"/>
