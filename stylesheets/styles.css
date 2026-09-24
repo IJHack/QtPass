@@ -460,11 +460,18 @@ header ul a:active {
   padding-block-start: clamp(0.25rem, 1vh, 1rem);
   margin-block-end: 1.75rem;
 }
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
 .hero-brand {
   display: flex;
   align-items: center;
   gap: 0.65em;
-  margin: 0 0 1em;
+  margin: 0;
   color: var(--ink-strong);
 }
 .hero-brand .mark {
@@ -519,6 +526,7 @@ header ul a:active {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.4rem 1.1rem;
+  margin: 0;
 }
 .hero-platform .compatible {
   height: clamp(2.5rem, 4.5vw, 3.4rem);
