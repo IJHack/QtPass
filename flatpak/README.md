@@ -82,10 +82,9 @@ the bundled tools automatically. The module builds the tag as-is: since
 v1.8.1 the tree ships `flatpak/gpg2`, and `make -C main install` puts the
 desktop file, metainfo and icons where `rename-desktop-file` /
 `rename-appdata-file` / `rename-icon` expect them, so no working-tree files
-are overlaid any more. Since 2.0 the metainfo is installed under its
-component ID (`org.qtpass.QtPass.metainfo.xml`) already: drop
-`rename-appdata-file` when the module moves to a 2.0 tag (`ci-manifest.sh`
-strips it for the tree build meanwhile).
+are overlaid any more. Since 1.8.2 the metainfo is installed under its
+component ID (`org.qtpass.QtPass.metainfo.xml`), so the manifest no longer
+needs `rename-appdata-file`.
 
 ## CI
 

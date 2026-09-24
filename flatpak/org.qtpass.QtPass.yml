@@ -7,7 +7,6 @@ sdk: org.kde.Sdk
 command: qtpass
 rename-desktop-file: qtpass.desktop
 rename-icon: qtpass-icon
-rename-appdata-file: qtpass.appdata.xml
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -116,8 +115,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/IJHack/QtPass.git
-        tag: v1.8.1
-        commit: 1a389718013586bf21e3b6d603d437f57a055c88
+        tag: v1.8.2
+        commit: 71122182ddaef33d83c60868a7baff4a85442f1a
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
