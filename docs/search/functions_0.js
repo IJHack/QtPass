@@ -3,9 +3,10 @@ var searchData=
   ['accept_0',['accept',['../class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180',1,'FirstRunWizard::accept()'],['../class_gpg_id_generation.html#a490cff66a5b86f14e762192bbfddd93d',1,'GpgIdGeneration::accept()'],['../class_password_dialog.html#a4f6e842cc9039c5501b95693321ae736',1,'PasswordDialog::accept()'],['../class_users_dialog.html#aa1630582c14afcef9ad80398752762a4',1,'UsersDialog::accept()']]],
   ['addgenerationheader_1',['addGenerationHeader',['../class_imitate_pass.html#aa327d0b0f45abfb88d10da0c5fdebd41',1,'ImitatePass']]],
   ['addpadding_2',['addPadding',['../class_base32.html#a0333781f29fc93e20b3792c243a666db',1,'Base32']]],
-  ['append_3',['append',['../class_process_output_panel.html#ae513643a2ccb1d663e79a2b480e0a1ac',1,'ProcessOutputPanel']]],
-  ['applypassphrase_4',['applyPassphrase',['../class_keygen_dialog.html#a8f57d71d0288d8088b23b8124088a62a',1,'KeygenDialog']]],
-  ['argv_5',['argv',['../struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b',1,'Executor::WslCommand']]],
-  ['attach_6',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
-  ['autoscroll_7',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]]
+  ['addtoggle_3',['addToggle',['../class_tray_icon.html#a510aaa56c5fef9b4b5ccf0c8c7cd6e3f',1,'TrayIcon']]],
+  ['append_4',['append',['../class_process_output_panel.html#ae513643a2ccb1d663e79a2b480e0a1ac',1,'ProcessOutputPanel']]],
+  ['applypassphrase_5',['applyPassphrase',['../class_keygen_dialog.html#a8f57d71d0288d8088b23b8124088a62a',1,'KeygenDialog']]],
+  ['argv_6',['argv',['../struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b',1,'Executor::WslCommand']]],
+  ['attach_7',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
+  ['autoscroll_8',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]]
 ];

@@ -8,10 +8,11 @@ var searchData=
   ['max_5fdigits_5',['MAX_DIGITS',['../class_totp.html#ae890b9f9d1440b99756ba7c74bd03ae0',1,'Totp']]],
   ['max_5fstep_6',['MAX_STEP',['../class_totp.html#a1ff6b1d22ea9f2cf5da5fedd1e116505',1,'Totp']]],
   ['maxlines_7',['MaxLines',['../class_process_output_panel.html#a13d9b8f917417fc7e49b2b3fa785d0a7',1,'ProcessOutputPanel']]],
-  ['messageavailable_8',['messageAvailable',['../class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b',1,'MainWindow::messageAvailable()'],['../class_single_application.html#ab893aad585d0cc3ee82659709a6a069b',1,'SingleApplication::messageAvailable()']]],
-  ['mimedata_9',['mimeData',['../class_store_model.html#a8a6c01f4d7883133d69730ceb1e97a09',1,'StoreModel']]],
-  ['mimetypes_10',['mimeTypes',['../class_store_model.html#a40620d3b37bb04b06b999308bf2ee137',1,'StoreModel']]],
-  ['min_5fdigits_11',['MIN_DIGITS',['../class_totp.html#a28370b47bc9f3c92a981a6fcdb543368',1,'Totp']]],
-  ['mousedoubleclickevent_12',['mouseDoubleClickEvent',['../class_field_label.html#ab888cb34aab13458b37ac20c5c491b70',1,'FieldLabel']]],
-  ['move_13',['Move',['../class_imitate_pass.html#ae647ee1e408862bb6d66ee4d6324f0b1',1,'ImitatePass::Move()'],['../class_pass.html#a386cbd930f4feac9275170912d45b3a3',1,'Pass::Move()'],['../class_real_pass.html#acbbb510bd58cdceae53d34985453fc83',1,'RealPass::Move()']]]
+  ['menubarpeek_8',['MenuBarPeek',['../class_menu_bar_peek.html',1,'MenuBarPeek'],['../class_menu_bar_peek.html#a417cdc2f5cdbe788effec7a8785238fd',1,'MenuBarPeek::MenuBarPeek()']]],
+  ['messageavailable_9',['messageAvailable',['../class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b',1,'MainWindow::messageAvailable()'],['../class_single_application.html#ab893aad585d0cc3ee82659709a6a069b',1,'SingleApplication::messageAvailable()']]],
+  ['mimedata_10',['mimeData',['../class_store_model.html#a8a6c01f4d7883133d69730ceb1e97a09',1,'StoreModel']]],
+  ['mimetypes_11',['mimeTypes',['../class_store_model.html#a40620d3b37bb04b06b999308bf2ee137',1,'StoreModel']]],
+  ['min_5fdigits_12',['MIN_DIGITS',['../class_totp.html#a28370b47bc9f3c92a981a6fcdb543368',1,'Totp']]],
+  ['mousedoubleclickevent_13',['mouseDoubleClickEvent',['../class_field_label.html#ab888cb34aab13458b37ac20c5c491b70',1,'FieldLabel']]],
+  ['move_14',['Move',['../class_imitate_pass.html#ae647ee1e408862bb6d66ee4d6324f0b1',1,'ImitatePass::Move()'],['../class_pass.html#a386cbd930f4feac9275170912d45b3a3',1,'Pass::Move()'],['../class_real_pass.html#acbbb510bd58cdceae53d34985453fc83',1,'RealPass::Move()']]]
 ];

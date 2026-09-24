@@ -134,6 +134,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a587e1467cf97c27f4269f1c47c1e4ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_tray_icon.html" title="Handles the system tray icon and menu.">TrayIcon</a> associated with the given main window.  <br /></td></tr>
 <tr class="memitem:ac43b5d2538c69cfcf6399eb29b9ddb47" id="r_ac43b5d2538c69cfcf6399eb29b9ddb47"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac43b5d2538c69cfcf6399eb29b9ddb47">getIsAllocated</a> () -&gt; bool</td></tr>
 <tr class="memdesc:ac43b5d2538c69cfcf6399eb29b9ddb47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether tray resources have been allocated and initialized.  <br /></td></tr>
+<tr class="memitem:a510aaa56c5fef9b4b5ccf0c8c7cd6e3f" id="r_a510aaa56c5fef9b4b5ccf0c8c7cd6e3f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a510aaa56c5fef9b4b5ccf0c8c7cd6e3f">addToggle</a> (QAction *action)</td></tr>
+<tr class="memdesc:a510aaa56c5fef9b4b5ccf0c8c7cd6e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put one of the window's toggles in the tray menu, above Quit.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles the system tray icon and menu. </p>
@@ -175,6 +177,31 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a510aaa56c5fef9b4b5ccf0c8c7cd6e3f" name="a510aaa56c5fef9b4b5ccf0c8c7cd6e3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a510aaa56c5fef9b4b5ccf0c8c7cd6e3f">&#9670;&#160;</a></span>addToggle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TrayIcon::addToggle </td>
+          <td>(</td>
+          <td class="paramtype">QAction *</td>          <td class="paramname"><span class="paramname"><em>action</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Put one of the window's toggles in the tray menu, above Quit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">action</td><td>The window's own action, so its checked state is the same in both places. Ignored when there is no tray. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ac43b5d2538c69cfcf6399eb29b9ddb47" name="ac43b5d2538c69cfcf6399eb29b9ddb47"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac43b5d2538c69cfcf6399eb29b9ddb47">&#9670;&#160;</a></span>getIsAllocated()</h2>
 
