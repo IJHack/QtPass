@@ -154,10 +154,14 @@ void UsersDialog::selectRecipients(const QStringList &recipients) {
     }
   }
   for (const QString &recipient : recipients) {
+    // The match is a fast path, not gpg's resolution: a secondary UID or a
+    // subkey ID resolves in gpg without showing in what it lists. Only what
+    // gpg itself cannot find is reported missing.
     const bool found = std::any_of(resolved.cbegin(), resolved.cend(),
                                    [&recipient](const UserInfo &key) {
                                      return answersTo(key, recipient);
-                                   });
+                                   }) ||
+                       !m_pass->listKeys(recipient).isEmpty();
     if (!found) {
       UserInfo missing;
       missing.enabled = true;

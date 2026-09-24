@@ -178,6 +178,8 @@ void tst_usersdialog::initTestCase() {
   script.write("case \"$*\" in\n");
   script.write("*31850CF72D9CDDE9*) all | head -3 ;;\n");
   script.write("*693A0AF3FA364E76*) all | tail -3 ;;\n");
+  // A key the keyring does not have: gpg lists nothing for it.
+  script.write("*DEADBEEFDEADBEEF*) ;;\n");
   script.write("*) all ;;\nesac\nexit 0\n");
   script.close();
   QVERIFY(script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
@@ -838,7 +840,10 @@ void tst_usersdialog::recipientByShortOrLongIdIsNotListedAsNotFound() {
   for (const QByteArray &line :
        {QByteArrayLiteral("31850CF72D9CDDE9"), QByteArrayLiteral("0x2d9cdde9"),
         QByteArrayLiteral("alice@example.org"),
-        QByteArrayLiteral("<alice@example.org>"), QByteArrayLiteral("Alice")}) {
+        QByteArrayLiteral("<alice@example.org>"), QByteArrayLiteral("Alice"),
+        // A secondary UID: not in what the listing parser keeps, but gpg
+        // resolves it (the stand-in lists every key for it).
+        QByteArrayLiteral("alice-work@example.org")}) {
     QTemporaryDir store;
     QVERIFY(store.isValid());
     QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
