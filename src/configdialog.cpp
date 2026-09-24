@@ -263,49 +263,54 @@ auto ConfigDialog::isFingerprintList(const QString &setting) -> bool {
 
 // Profile names must be unique: the settings key profiles by name, so a
 // duplicate would silently overwrite the other.
+auto ConfigDialog::problemsOf(const ProfileEntry &entry,
+                              const QHash<QString, int> &names) const
+    -> ProfileProblems {
+  ProfileProblems problems;
+  if (entry.name.isEmpty()) {
+    problems.name = tr("This field is required");
+  } else if (names.value(entry.name) > 1) {
+    problems.name = tr("Another profile already has this name");
+  }
+  if (entry.profile.path.isEmpty()) {
+    problems.path = tr("This field is required");
+  }
+  // pass compares PASSWORD_STORE_SIGNING_KEY against the fingerprints in
+  // gpg's VALIDSIG line, so anything shorter than a fingerprint would sign
+  // and then never verify. Refuse it here instead of failing at first use.
+  if (!isFingerprintList(entry.profile.signingKey)) {
+    problems.key = tr("Full key fingerprints only (40 or 64 hexadecimal "
+                      "characters), separated by spaces");
+  }
+  return problems;
+}
+
+void ConfigDialog::showProblems(int row, const ProfileProblems &problems) {
+  if (QListWidgetItem *item = ui->profileList->item(row)) {
+    item->setBackground(problems.none() ? QBrush() : QBrush(Qt::red));
+    item->setToolTip(problems.first());
+  }
+  if (row != m_currentEntry) {
+    return;
+  }
+  const auto tipOr = [](const QString &problem, const QString &tip) {
+    return problem.isEmpty() ? tip : problem;
+  };
+  ui->profileName->setToolTip(tipOr(problems.name, m_nameTip));
+  ui->profilePath->setToolTip(tipOr(problems.path, m_pathTip));
+  ui->profileSigningKey->setToolTip(tipOr(problems.key, m_keyTip));
+}
+
 void ConfigDialog::validate() {
-  bool status = true;
   QHash<QString, int> names;
   for (const ProfileEntry &entry : std::as_const(m_entries)) {
     names[entry.name]++;
   }
+  bool status = true;
   for (int row = 0; row < m_entries.size(); ++row) {
-    const ProfileEntry &entry = m_entries.at(row);
-    QString nameProblem;
-    if (entry.name.isEmpty()) {
-      nameProblem = tr("This field is required");
-    } else if (names.value(entry.name) > 1) {
-      nameProblem = tr("Another profile already has this name");
-    }
-    const QString pathProblem =
-        entry.profile.path.isEmpty() ? tr("This field is required") : QString();
-    // pass compares PASSWORD_STORE_SIGNING_KEY against the fingerprints in
-    // gpg's VALIDSIG line, so anything shorter than a fingerprint would sign
-    // and then never verify. Refuse it here instead of failing at first use.
-    const QString keyProblem =
-        isFingerprintList(entry.profile.signingKey)
-            ? QString()
-            : tr("Full key fingerprints only (40 or 64 hexadecimal "
-                 "characters), separated by spaces");
-    QListWidgetItem *item = ui->profileList->item(row);
-    if (item != nullptr) {
-      const bool bad = !nameProblem.isEmpty() || !pathProblem.isEmpty() ||
-                       !keyProblem.isEmpty();
-      item->setBackground(bad ? QBrush(Qt::red) : QBrush());
-      item->setToolTip(!nameProblem.isEmpty()   ? nameProblem
-                       : !pathProblem.isEmpty() ? pathProblem
-                                                : keyProblem);
-    }
-    if (row == m_currentEntry) {
-      ui->profileName->setToolTip(nameProblem.isEmpty() ? m_nameTip
-                                                        : nameProblem);
-      ui->profilePath->setToolTip(pathProblem.isEmpty() ? m_pathTip
-                                                        : pathProblem);
-      ui->profileSigningKey->setToolTip(keyProblem.isEmpty() ? m_keyTip
-                                                             : keyProblem);
-    }
-    status = status && nameProblem.isEmpty() && pathProblem.isEmpty() &&
-             keyProblem.isEmpty();
+    const ProfileProblems problems = problemsOf(m_entries.at(row), names);
+    showProblems(row, problems);
+    status = status && problems.none();
   }
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(status);
 }

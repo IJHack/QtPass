@@ -115,6 +115,63 @@ auto FirstRunWizard::isStore(const QString &path) -> bool {
          QFile::exists(QDir(path).filePath(QStringLiteral(".gpg-id")));
 }
 
+auto FirstRunWizard::initialiseStore(const QString &store) -> bool {
+  QList<UserInfo> recipients;
+  for (const UserInfo &key : std::as_const(m_keys)) {
+    if (key.enabled) {
+      recipients.append(key);
+    }
+  }
+  const bool created = !QDir(store).exists();
+  if (created && !QDir().mkpath(store)) {
+    QMessageBox::warning(
+        this, tr("Error"),
+        tr("Failed to create password-store at: %1").arg(store));
+    return false;
+  }
+#ifdef Q_OS_WIN
+  // Only a folder made here is hidden, like ~/.password-store on Unix; a
+  // folder the user picked keeps its attributes.
+  if (created) {
+    SetFileAttributes(store.toStdWString().c_str(), FILE_ATTRIBUTE_HIDDEN);
+  }
+#endif
+  QString note;
+  if (!ProfileInit::initialise(store, recipients, m_settings, m_settings.useGit,
+                               &note)) {
+    // ProfileInit writes .gpg-id before it signs and commits; take it back so
+    // a second Finish runs the whole initialisation again instead of finding
+    // a store that looks finished.
+    QFile::remove(QDir(store).filePath(QStringLiteral(".gpg-id")));
+    QFile::remove(QDir(store).filePath(QStringLiteral(".gpg-id.sig")));
+    QMessageBox::warning(this, tr("Password store not initialised"), note);
+    return false;
+  }
+  if (!note.isEmpty()) {
+    // ProfileInit's own note talks of switching profiles; on the first run
+    // the folder simply becomes the store.
+    QMessageBox::information(
+        this, tr("Password store"),
+        tr("%1 already contains encrypted files; they were not "
+           "re-encrypted to the ticked keys. Open Users after the start "
+           "to do that.")
+            .arg(QDir::toNativeSeparators(store)));
+  }
+  return true;
+}
+
+auto FirstRunWizard::initialiseGit(const QString &store) -> bool {
+  QString note;
+  if (ProfileInit::initGit(store, m_settings, &note)) {
+    return true;
+  }
+  // Take the repository back too, so a second Finish retries the whole thing
+  // instead of skipping a .git that never got its first commit.
+  QDir(QDir(store).filePath(QStringLiteral(".git"))).removeRecursively();
+  QMessageBox::warning(this, tr("Password store not initialised"), note);
+  return false;
+}
+
 void FirstRunWizard::accept() {
   // The Finish button validates the page before calling this; a programmatic
   // accept() gets the same treatment so the last page's choices are in.
@@ -122,56 +179,13 @@ void FirstRunWizard::accept() {
     return;
   }
   const QString store = QDir::cleanPath(m_settings.passStore);
-  QString note;
-  if (!isStore(store)) {
-    QList<UserInfo> recipients;
-    for (const UserInfo &key : std::as_const(m_keys)) {
-      if (key.enabled) {
-        recipients.append(key);
-      }
-    }
-    const bool created = !QDir(store).exists();
-    if (created && !QDir().mkpath(store)) {
-      QMessageBox::warning(
-          this, tr("Error"),
-          tr("Failed to create password-store at: %1").arg(store));
-      return;
-    }
-#ifdef Q_OS_WIN
-    // Only a folder made here is hidden, like ~/.password-store on Unix; a
-    // folder the user picked keeps its attributes.
-    if (created) {
-      SetFileAttributes(store.toStdWString().c_str(), FILE_ATTRIBUTE_HIDDEN);
-    }
-#endif
-    if (!ProfileInit::initialise(store, recipients, m_settings,
-                                 m_settings.useGit, &note)) {
-      // ProfileInit writes .gpg-id before it signs and commits; take it back
-      // so a second Finish runs the whole initialisation again instead of
-      // finding a store that looks finished.
-      QFile::remove(QDir(store).filePath(QStringLiteral(".gpg-id")));
-      QFile::remove(QDir(store).filePath(QStringLiteral(".gpg-id.sig")));
-      QMessageBox::warning(this, tr("Password store not initialised"), note);
-      return;
-    }
-    if (!note.isEmpty()) {
-      // ProfileInit's own note talks of switching profiles; on the first run
-      // the folder simply becomes the store.
-      QMessageBox::information(
-          this, tr("Password store"),
-          tr("%1 already contains encrypted files; they were not "
-             "re-encrypted to the ticked keys. Open Users after the start "
-             "to do that.")
-              .arg(QDir::toNativeSeparators(store)));
-    }
-  } else if (m_settings.useGit && !QDir(store).exists(QStringLiteral(".git"))) {
-    if (!ProfileInit::initGit(store, m_settings, &note)) {
-      // Take the repository back too, so a second Finish retries the whole
-      // thing instead of skipping a .git that never got its first commit.
-      QDir(QDir(store).filePath(QStringLiteral(".git"))).removeRecursively();
-      QMessageBox::warning(this, tr("Password store not initialised"), note);
-      return;
-    }
+  const bool needsGit =
+      m_settings.useGit && !QDir(store).exists(QStringLiteral(".git"));
+  const bool ready = !isStore(store) ? initialiseStore(store)
+                     : needsGit      ? initialiseGit(store)
+                                     : true;
+  if (!ready) {
+    return;
   }
   m_settings.passStore = Util::normalizeFolderPath(store);
   QtPassSettings::save(m_settings);

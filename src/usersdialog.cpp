@@ -89,84 +89,66 @@ void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
   }
 }
 
+void UsersDialog::showRecipientWarning(const QString &text) {
+  auto *banner = new QLabel(text, this);
+  banner->setObjectName(QStringLiteral("recipientWarning"));
+  banner->setWordWrap(true);
+  banner->setTextFormat(Qt::PlainText);
+  // Palette, not a stylesheet colour, so it reads on dark themes too; red as
+  // ProcessOutputPanel paints error lines.
+  QFont bold = banner->font();
+  bold.setBold(true);
+  banner->setFont(bold);
+  QPalette palette = banner->palette();
+  palette.setColor(QPalette::WindowText, QColor(Qt::red));
+  banner->setPalette(palette);
+  banner->setContentsMargins(4, 4, 4, 4);
+  ui->verticalLayout->insertWidget(1, banner);
+}
+
+void UsersDialog::selectRecipients(const QStringList &recipients) {
+  // One gpg call resolves every recipient, by key ID or by email/UID.
+  const QList<UserInfo> resolved = m_pass->listKeys(recipients);
+  QSet<QString> known;
+  for (const UserInfo &key : resolved) {
+    known.insert(key.key_id);
+    if (!key.name.isEmpty()) {
+      known.insert(key.name.section('@', 0, 0)); // email local part
+      known.insert(key.name);                    // full email/UID
+    }
+  }
+  for (UserInfo &user : m_userList) {
+    if (std::any_of(resolved.cbegin(), resolved.cend(),
+                    [&user](const UserInfo &key) {
+                      return key.key_id == user.key_id;
+                    })) {
+      user.enabled = true;
+    }
+  }
+  for (const QString &recipient : recipients) {
+    if (!known.contains(recipient)) {
+      UserInfo missing;
+      missing.enabled = true;
+      missing.key_id = recipient;
+      missing.name = " ?? " + tr("Key not found in keyring");
+      m_userList.append(missing);
+    }
+  }
+}
+
 void UsersDialog::loadRecipients() {
   // Through the backend: with a signing key only a verified list may be
   // preselected, since OK signs whatever is selected.
   const Pass::RecipientsForEditing loaded =
       m_pass->recipientsForEditing(m_dir, m_passStore);
-  const QStringList recipients =
-      loaded.state == Pass::RecipientsForEditing::State::Rejected
-          ? QStringList()
-          : loaded.recipients;
   if (!loaded.warning.isEmpty()) {
-    auto *banner = new QLabel(loaded.warning, this);
-    banner->setObjectName(QStringLiteral("recipientWarning"));
-    banner->setWordWrap(true);
-    banner->setTextFormat(Qt::PlainText);
-    // Palette, not a stylesheet colour, so it reads on dark themes too; red
-    // as ProcessOutputPanel paints error lines.
-    QFont bold = banner->font();
-    bold.setBold(true);
-    banner->setFont(bold);
-    QPalette palette = banner->palette();
-    palette.setColor(QPalette::WindowText, QColor(Qt::red));
-    banner->setPalette(palette);
-    banner->setContentsMargins(4, 4, 4, 4);
-    ui->verticalLayout->insertWidget(1, banner);
+    showRecipientWarning(loaded.warning);
   }
-  if (recipients.isEmpty()) {
-    // A folder without .gpg-id (new store, new profile) has no recipients
-    // yet. Without this, listKeys() with no filter returned the whole
-    // keyring and every key in it came up preselected.
-    return;
-  }
-  const int count = static_cast<int>(recipients.size());
-
-  QList<UserInfo> selectedUsers = m_pass->listKeys(recipients);
-  QSet<QString> selectedKeyIds;
-  for (const UserInfo &sel : selectedUsers) {
-    selectedKeyIds.insert(sel.key_id);
-  }
-  for (auto &user : m_userList) {
-    if (selectedKeyIds.contains(user.key_id)) {
-      user.enabled = true;
-    }
-  }
-
-  if (count > selectedUsers.size()) {
-    const QStringList &allRecipients = recipients;
-
-    // One gpg call resolves all recipients, keeping email/UID resolution.
-    QList<UserInfo> resolvedKeys = m_pass->listKeys(allRecipients);
-    QSet<QString> resolvedKeyIds;
-    for (const UserInfo &key : resolvedKeys) {
-      resolvedKeyIds.insert(key.key_id);
-    }
-
-    // Accept a recipient as resolved if GPG returned a key for it
-    // (either its exact key_id, or GPG resolved email/UID/fingerprint to it)
-    QSet<QString> resolvedRecipients;
-    for (const UserInfo &key : resolvedKeys) {
-      resolvedRecipients.insert(key.key_id);
-      // GPG matched the email/UID to this key, so it counts as resolved.
-      if (!key.name.isEmpty()) {
-        resolvedRecipients.insert(
-            key.name.section('@', 0, 0));    // email local part
-        resolvedRecipients.insert(key.name); // full email/UID
-      }
-    }
-
-    for (const QString &recipient : allRecipients) {
-      if (!resolvedKeyIds.contains(recipient) &&
-          !resolvedRecipients.contains(recipient) &&
-          !selectedKeyIds.contains(recipient)) {
-        UserInfo i;
-        i.enabled = true;
-        i.key_id = recipient;
-        i.name = " ?? " + tr("Key not found in keyring");
-        m_userList.append(i);
-      }
-    }
+  // A folder without .gpg-id (new store, new profile) has no recipients yet;
+  // listKeys() with no filter would return the whole keyring, preselected.
+  if (loaded.state != Pass::RecipientsForEditing::State::Rejected &&
+      !loaded.recipients.isEmpty()) {
+    selectRecipients(loaded.recipients);
   }
 }
 

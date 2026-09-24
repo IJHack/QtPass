@@ -264,6 +264,37 @@ auto ImitatePass::gpgIdSigner() -> GpgIdSigner {
           }};
 }
 
+auto ImitatePass::addGenerationHeader(const QString &gpgIdFile,
+                                      const GpgIdSigner &signer,
+                                      QByteArray *contents) -> bool {
+  const std::optional<QString> folder =
+      GpgIdGeneration::folderOf(gpgIdFile, m_settings.passStore);
+  if (!folder) {
+    emit critical(tr("Cannot update"),
+                  tr("%1 is not inside the password store.").arg(gpgIdFile));
+    return false;
+  }
+  // The list on disk counts only if it is this folder's own, verified list:
+  // a signature vouches for the bytes, the folder line for the place.
+  std::optional<qint64> verifiedOnDisk;
+  QByteArray current;
+  if (signer.verifyFile(gpgIdFile, &current)) {
+    const auto header = GpgIdGeneration::parse(current);
+    if (header && (!header->folder || *header->folder == *folder)) {
+      verifiedOnDisk = header->generation;
+    }
+  }
+  QString why;
+  const std::optional<qint64> generation =
+      GpgIdGeneration::reserveNext(gpgIdFile, verifiedOnDisk, &why);
+  if (!generation) {
+    emit critical(tr("Cannot update"), why);
+    return false;
+  }
+  *contents = GpgIdGeneration::withHeader(*generation, *folder, *contents);
+  return true;
+}
+
 auto ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
                                  const QList<UserInfo> &users,
                                  QByteArray *written) -> bool {
@@ -275,38 +306,10 @@ auto ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
       secret_selected |= user.have_secret;
     }
   }
-  // With a signing key: reserve a generation above what this device accepted
-  // and what the verified list on disk says, record it before writing, and
-  // bind the list to its folder, so no older or relocated signed list comes
-  // back. An unrecordable list is not written (it would let the old one back
-  // in). Without a signing key the plain list stays (GpgIdGeneration).
+  // Without a signing key the plain list stays (GpgIdGeneration).
   const GpgIdSigner signer = gpgIdSigner();
-  if (signer.enabled()) {
-    const std::optional<QString> folder =
-        GpgIdGeneration::folderOf(gpgIdFile, m_settings.passStore);
-    if (!folder) {
-      emit critical(tr("Cannot update"),
-                    tr("%1 is not inside the password store.").arg(gpgIdFile));
-      return false;
-    }
-    // The list on disk counts only if it is this folder's own, verified
-    // list: a signature vouches for the bytes, the folder line for the place.
-    std::optional<qint64> verifiedOnDisk;
-    QByteArray current;
-    if (signer.verifyFile(gpgIdFile, &current)) {
-      const auto header = GpgIdGeneration::parse(current);
-      if (header && (!header->folder || *header->folder == *folder)) {
-        verifiedOnDisk = header->generation;
-      }
-    }
-    QString why;
-    const std::optional<qint64> generation =
-        GpgIdGeneration::reserveNext(gpgIdFile, verifiedOnDisk, &why);
-    if (!generation) {
-      emit critical(tr("Cannot update"), why);
-      return false;
-    }
-    contents = GpgIdGeneration::withHeader(*generation, *folder, contents);
+  if (signer.enabled() && !addGenerationHeader(gpgIdFile, signer, &contents)) {
+    return false;
   }
   // Whole or not at all, owner-only (it names the store's keys); a link
   // planted since Init's check is replaced, not written through.
@@ -414,22 +417,53 @@ auto ImitatePass::gitTracks(const QString &file) -> bool {
                                     pgit(file)}) == 0;
 }
 
+auto ImitatePass::refuseLinkedGpgIdFolder(const QString &path) -> bool {
+  // A link planted later is replaced, not written through: the writes stage
+  // and rename.
+  const QString folder = QDir::cleanPath(path);
+  return refuseLinkedPath(path) ||
+         refuseLinkedPath(folder + QStringLiteral("/.gpg-id")) ||
+         refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig"));
+}
+
+auto ImitatePass::settleSignature(const QString &gpgIdFile,
+                                  const QByteArray &written,
+                                  const GpgIdSigner &signer, bool useGit,
+                                  QString *sigToCommit) -> bool {
+  const QString gpgIdSigFile = gpgIdFile + ".sig";
+  if (signer.enabled()) {
+    if (!signGpgIdFile(gpgIdFile, written)) {
+      return false;
+    }
+    *sigToCommit = gpgIdSigFile;
+    return true;
+  }
+  if (!QFile::exists(gpgIdSigFile)) {
+    return true;
+  }
+  // Signing was switched off; the removal goes into the same commit.
+  const bool tracked = useGit && gitTracks(gpgIdSigFile);
+  if (!QFile::remove(gpgIdSigFile)) {
+    emit critical(
+        tr("Cannot update"),
+        tr("Failed to remove the old signature %1.").arg(gpgIdSigFile));
+    return false;
+  }
+  if (tracked) {
+    *sigToCommit = gpgIdSigFile;
+  }
+  return true;
+}
+
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   // The .gpg-id is written as path + ".gpg-id": without the trailing
   // separator (the context menu hands over a cleaned path) that would be a
   // file beside the folder, not the folder's own list.
   path = Util::normalizeFolderPath(path);
-  // A linked folder or a link under .gpg-id/.gpg-id.sig is refused here; the
-  // writes below stage and rename, so one planted later is replaced, not
-  // written through.
-  const QString folder = QDir::cleanPath(path);
-  if (refuseLinkedPath(path) ||
-      refuseLinkedPath(folder + QStringLiteral("/.gpg-id")) ||
-      refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig"))) {
+  if (refuseLinkedGpgIdFolder(path)) {
     return;
   }
   const GpgIdSigner signer = gpgIdSigner();
-  const QString gpgIdSigFile = path + ".gpg-id.sig";
   if (signer.enabled() && !signer.haveSecretKey()) {
     emit critical(tr("No signing key!"),
                   tr("None of the secret signing keys is available.\n"
@@ -440,52 +474,29 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   const bool useGit = gitReady();
   const QString gpgIdFile = path + ".gpg-id";
   QByteArray written;
-  if (!writeGpgIdFile(gpgIdFile, users, &written)) {
+  QString sigToCommit;
+  if (!writeGpgIdFile(gpgIdFile, users, &written) ||
+      !settleSignature(gpgIdFile, written, signer, useGit, &sigToCommit)) {
     return;
   }
 
-  QString sigToCommit;
-  if (signer.enabled()) {
-    if (!signGpgIdFile(gpgIdFile, written)) {
-      return;
-    }
-    sigToCommit = gpgIdSigFile;
-  } else if (QFile::exists(gpgIdSigFile)) {
-    // Signing was switched off: a signature of the previous list must not
-    // stay behind, where pass and other clients would reject the new list
-    // under it. Its removal goes into the same commit.
-    const bool tracked = useGit && gitTracks(gpgIdSigFile);
-    if (!QFile::remove(gpgIdSigFile)) {
-      emit critical(
-          tr("Cannot update"),
-          tr("Failed to remove the old signature %1.").arg(gpgIdSigFile));
-      return;
-    }
-    if (tracked) {
-      sigToCommit = gpgIdSigFile;
-    }
-  }
-
+  QString gitOut;
+  QString gitErr;
   if (useGit && m_settings.addGPGId) {
     // Commit the .gpg-id (and .sig) before re-encrypting to it: the backup
     // commit only takes tracked files (#1685) and addFolder does not stage
     // it, so entries were pushed without their recipients file (#1682). No
     // commit, no re-encryption.
-    QString gitOut;
-    QString gitErr;
     const int gitExit = gitAddGpgId(gpgIdFile, sigToCommit, &gitOut, &gitErr);
     if (gitExit != 0) {
       Pass::finished(PASS_INIT, gitExit, gitOut, gitErr);
       return;
     }
-    reencryptPath(path);
-    // finishedInit once the .gpg-id landed in git, as the async path did.
-    Pass::finished(PASS_INIT, 0, gitOut, gitErr);
-    return;
   }
   reencryptPath(path);
+  // finishedInit once the .gpg-id landed in git, as the async path did.
   if (useGit) {
-    Pass::finished(PASS_INIT, 0, QString(), QString());
+    Pass::finished(PASS_INIT, 0, gitOut, gitErr);
   }
 }
 

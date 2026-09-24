@@ -87,6 +87,40 @@ protected:
   auto signGpgIdFile(const QString &gpgIdFile, const QByteArray &contents)
       -> bool;
   /**
+   * @brief Refuse a folder, or a `.gpg-id`/`.gpg-id.sig` in it, that is a
+   * link: writing there would reach outside the store.
+   * @param path The folder, with its trailing separator.
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseLinkedGpgIdFolder(const QString &path) -> bool;
+  /**
+   * @brief Put the generation header on a list that is about to be signed:
+   * reserve a generation above what this device accepted and what the
+   * verified list on disk says, and bind the list to its folder, so no older
+   * or relocated signed list comes back.
+   * @param gpgIdFile The `.gpg-id` being written.
+   * @param signer Its signer, which verifies the list on disk.
+   * @param contents The key IDs, one per line; receives the header too.
+   * @return false when no generation could be reserved (the user was told);
+   * an unrecordable list must not be written, it would let the old one back.
+   */
+  auto addGenerationHeader(const QString &gpgIdFile, const GpgIdSigner &signer,
+                           QByteArray *contents) -> bool;
+  /**
+   * @brief Bring the signature in line with the list just written: a new one
+   * when signing is on, the old one removed when it is off (pass and other
+   * clients would reject the new list under it).
+   * @param gpgIdFile The `.gpg-id` that was written.
+   * @param written Its bytes, which are what gets signed.
+   * @param signer Whether and with which keys to sign.
+   * @param useGit Whether the store is a Git repository QtPass manages.
+   * @param sigToCommit Receives the signature file to commit, if any.
+   * @return false when signing or removing failed (the user was told).
+   */
+  auto settleSignature(const QString &gpgIdFile, const QByteArray &written,
+                       const GpgIdSigner &signer, bool useGit,
+                       QString *sigToCommit) -> bool;
+  /**
    * @brief Stage a `.gpg-id` and, when given, its `.sig`, and commit both in
    * one commit, so no commit in the history has a recipient list without
    * the signature that covers it. Nothing is committed when neither file
