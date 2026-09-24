@@ -185,40 +185,54 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <a class="code hl_struct" href="struct_profile.html">Profile</a> profile;</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    QString originalName;</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  };</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  QString m_nameTip, m_pathTip, m_keyTip;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  QList&lt;ProfileEntry&gt; m_entries;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keywordtype">int</span> m_currentEntry = -1;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="keywordtype">bool</span> m_loadingForm = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <span class="keywordtype">void</span> loadProfileForm(<span class="keywordtype">int</span> row);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="keyword">auto</span> currentEntry() -&gt; ProfileEntry *;</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordtype">void</span> updateProfileStatus();</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  QScopedPointer&lt;Ui::ConfigDialog&gt; ui;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keywordtype">void</span> setGitPath(<span class="keyword">const</span> QString &amp;);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="keywordtype">void</span> setProfiles(Profiles, <span class="keyword">const</span> QString &amp;);</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="keywordtype">void</span> usePass(<span class="keywordtype">bool</span> usePass);</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="keywordtype">void</span> applySettings(<span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;settings);</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="keyword">auto</span> readSettings() -&gt; <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a>;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="keywordtype">void</span> setGroupBoxState();</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="keyword">auto</span> selectExecutable() -&gt; QString;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  <span class="keyword">auto</span> selectFolder() -&gt; QString;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="comment">// QMessageBox::critical with hack to avoid crashes with</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <span class="comment">// Qt 5.4.1 when QApplication::exec was not yet called</span></div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <span class="keywordtype">void</span> criticalMessage(<span class="keyword">const</span> QString &amp;title, <span class="keyword">const</span> QString &amp;text);</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <span class="keyword">auto</span> isQrencodeAvailable(<span class="keyword">const</span> QString &amp;configuredPath) -&gt; bool;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="keywordtype">void</span> validate();</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keywordtype">void</span> initializeNewProfiles(<span class="keyword">const</span> Profiles &amp;existingProfiles);</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  QString m_customPasswordChars;</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>};</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keyword">struct </span>ProfileProblems {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    QString name;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    QString path;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    QString key;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    [[nodiscard]] <span class="keyword">auto</span> none() const -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <span class="keywordflow">return</span> name.isEmpty() &amp;&amp; path.isEmpty() &amp;&amp; key.isEmpty();</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    [[nodiscard]] <span class="keyword">auto</span> first() const -&gt; QString {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      <span class="keywordflow">return</span> !name.isEmpty() ? name : !path.isEmpty() ? path : key;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  };</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  QString m_nameTip, m_pathTip, m_keyTip;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  QList&lt;ProfileEntry&gt; m_entries;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <span class="keywordtype">int</span> m_currentEntry = -1;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <span class="keywordtype">bool</span> m_loadingForm = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <span class="keywordtype">void</span> loadProfileForm(<span class="keywordtype">int</span> row);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <span class="keyword">auto</span> currentEntry() -&gt; ProfileEntry *;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  <span class="keywordtype">void</span> updateProfileStatus();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  QScopedPointer&lt;Ui::ConfigDialog&gt; ui;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="keywordtype">void</span> setGitPath(<span class="keyword">const</span> QString &amp;);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  <span class="keywordtype">void</span> setProfiles(Profiles, <span class="keyword">const</span> QString &amp;);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  <span class="keywordtype">void</span> usePass(<span class="keywordtype">bool</span> usePass);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="keywordtype">void</span> applySettings(<span class="keyword">const</span> AppSettings &amp;settings);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="keyword">auto</span> readSettings() -&gt; AppSettings;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="keywordtype">void</span> setGroupBoxState();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="keyword">auto</span> selectExecutable() -&gt; QString;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="keyword">auto</span> selectFolder() -&gt; QString;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <span class="comment">// QMessageBox::critical with hack to avoid crashes with</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="comment">// Qt 5.4.1 when QApplication::exec was not yet called</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="keywordtype">void</span> criticalMessage(<span class="keyword">const</span> QString &amp;title, <span class="keyword">const</span> QString &amp;text);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  <span class="keyword">auto</span> isQrencodeAvailable(<span class="keyword">const</span> QString &amp;configuredPath) -&gt; bool;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  <span class="keywordtype">void</span> validate();</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  <span class="keyword">auto</span> problemsOf(<span class="keyword">const</span> ProfileEntry &amp;entry,</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                  <span class="keyword">const</span> QHash&lt;QString, int&gt; &amp;names) <span class="keyword">const</span> -&gt; ProfileProblems;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keywordtype">void</span> showProblems(<span class="keywordtype">int</span> row, <span class="keyword">const</span> ProfileProblems &amp;problems);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  <span class="keywordtype">void</span> initializeNewProfiles(<span class="keyword">const</span> Profiles &amp;existingProfiles);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  QString m_customPasswordChars;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>};</div>
 </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="preprocessor">#endif </span><span class="comment">// SRC_CONFIGDIALOG_H_</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">#endif </span><span class="comment">// SRC_CONFIGDIALOG_H_</span></div>
 <div class="ttc" id="aclass_config_dialog_html_a003ec5de7c29ced34f045f0843d2e95b"><div class="ttname"><a href="class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b">ConfigDialog::setPasswordConfiguration</a></div><div class="ttdeci">void setPasswordConfiguration(const PasswordConfiguration &amp;config)</div><div class="ttdoc">Apply a password configuration to the dialog controls.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_a2a395844557989cf343503e80b075ba0"><div class="ttname"><a href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">ConfigDialog::useOtp</a></div><div class="ttdeci">void useOtp(bool useOtp)</div><div class="ttdoc">Enable or disable OTP support.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_a3d42b658f6b8436e9f6ca17059703c0a"><div class="ttname"><a href="class_config_dialog.html#a3d42b658f6b8436e9f6ca17059703c0a">ConfigDialog::setPwgenPath</a></div><div class="ttdeci">void setPwgenPath(const QString &amp;path)</div><div class="ttdoc">Set the path to the pwgen executable.</div></div>
@@ -232,7 +246,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="ttc" id="aclass_config_dialog_html_abb1e0d5136bd38db9c52bdca8cf22a01"><div class="ttname"><a href="class_config_dialog.html#abb1e0d5136bd38db9c52bdca8cf22a01">ConfigDialog::getProfiles</a></div><div class="ttdeci">auto getProfiles() -&gt; Profiles</div><div class="ttdoc">Return all configured profiles.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_ac3ebb263a2b69e39c81217a6d8630995"><div class="ttname"><a href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">ConfigDialog::usePwgen</a></div><div class="ttdeci">void usePwgen(bool usePwgen)</div><div class="ttdoc">Enable or disable pwgen-based password generation.</div></div>
 <div class="ttc" id="aclass_config_dialog_html_af93386c7b55bd8ae35fda6f096d46eb6"><div class="ttname"><a href="class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6">ConfigDialog::useSelection</a></div><div class="ttdeci">void useSelection(bool useSelection)</div><div class="ttdoc">Enable or disable clipboard selection mode.</div></div>
-<div class="ttc" id="astruct_app_settings_html"><div class="ttname"><a href="struct_app_settings.html">AppSettings</a></div><div class="ttdoc">Plain value-object holding all flat QtPass configuration.</div><div class="ttdef"><b>Definition</b> <a href="appsettings_8h_source.html#l00030">appsettings.h:30</a></div></div>
 <div class="ttc" id="astruct_password_configuration_html"><div class="ttname"><a href="struct_password_configuration.html">PasswordConfiguration</a></div><div class="ttdoc">Holds the password configuration settings.</div><div class="ttdef"><b>Definition</b> <a href="passwordconfiguration_8h_source.html#l00012">passwordconfiguration.h:12</a></div></div>
 <div class="ttc" id="astruct_profile_html"><div class="ttname"><a href="struct_profile.html">Profile</a></div><div class="ttdoc">One named password store: where it is, how its .gpg-id is signed and, optionally, its own Git switche...</div><div class="ttdef"><b>Definition</b> <a href="profile_8h_source.html#l00020">profile.h:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

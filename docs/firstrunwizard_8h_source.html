@@ -138,98 +138,101 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180">   68</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180">accept</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keyword">friend</span> <span class="keyword">class </span>ProgramsWizardPage;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keyword">friend</span> <span class="keyword">class </span>KeyWizardPage;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">friend</span> <span class="keyword">class </span>StoreWizardPage;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keyword">friend</span> <span class="keyword">class </span>DoneWizardPage;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> m_settings;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  QList&lt;UserInfo&gt; m_keys;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">auto</span> initialiseStore(<span class="keyword">const</span> QString &amp;store) -&gt; bool;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keyword">auto</span> initialiseGit(<span class="keyword">const</span> QString &amp;store) -&gt; bool;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keyword">friend</span> <span class="keyword">class </span>ProgramsWizardPage;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keyword">friend</span> <span class="keyword">class </span>KeyWizardPage;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keyword">friend</span> <span class="keyword">class </span>StoreWizardPage;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keyword">friend</span> <span class="keyword">class </span>DoneWizardPage;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> m_settings;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  QList&lt;UserInfo&gt; m_keys;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>};</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
-<div class="foldopen" id="foldopen00087" data-start="{" data-end="};">
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_programs_wizard_page.html">   87</a></span><span class="keyword">class </span><a class="code hl_function" href="class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b">ProgramsWizardPage</a> : <span class="keyword">public</span> QWizardPage {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  Q_OBJECT</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b">   95</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b">ProgramsWizardPage</a>(<a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *wizard);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_programs_wizard_page.html#a5c226f7f248f361f28d7e560b8322449">   99</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_programs_wizard_page.html#a5c226f7f248f361f28d7e560b8322449">initializePage</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_programs_wizard_page.html#a7fdbfd82d68ccfde28c61fbdf143d5dc">  104</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_programs_wizard_page.html#a7fdbfd82d68ccfde28c61fbdf143d5dc">isComplete</a>() const -&gt; <span class="keywordtype">bool</span> override;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_programs_wizard_page.html#abe18364fc2ec95981ec28fea3690d071">  109</a></span>  auto <a class="code hl_function" href="class_programs_wizard_page.html#abe18364fc2ec95981ec28fea3690d071">validatePage</a>() -&gt; <span class="keywordtype">bool</span> override;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>private:</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *m_wizard;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  QLineEdit *m_gpg;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  QLineEdit *m_git;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  QLineEdit *m_pass;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  QCheckBox *m_usePass;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  QLabel *m_gpgStatus;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordtype">void</span> updateStatus();</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>};</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="};">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="class_programs_wizard_page.html">  103</a></span><span class="keyword">class </span><a class="code hl_function" href="class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b">ProgramsWizardPage</a> : <span class="keyword">public</span> QWizardPage {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  Q_OBJECT</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b">  111</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b">ProgramsWizardPage</a>(<a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *wizard);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_programs_wizard_page.html#a5c226f7f248f361f28d7e560b8322449">  115</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_programs_wizard_page.html#a5c226f7f248f361f28d7e560b8322449">initializePage</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_programs_wizard_page.html#a7fdbfd82d68ccfde28c61fbdf143d5dc">  120</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_programs_wizard_page.html#a7fdbfd82d68ccfde28c61fbdf143d5dc">isComplete</a>() const -&gt; <span class="keywordtype">bool</span> override;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="class_programs_wizard_page.html#abe18364fc2ec95981ec28fea3690d071">  125</a></span>  auto <a class="code hl_function" href="class_programs_wizard_page.html#abe18364fc2ec95981ec28fea3690d071">validatePage</a>() -&gt; <span class="keywordtype">bool</span> override;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>private:</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *m_wizard;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  QLineEdit *m_gpg;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  QLineEdit *m_git;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  QLineEdit *m_pass;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  QCheckBox *m_usePass;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  QLabel *m_gpgStatus;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keywordtype">void</span> updateStatus();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>};</div>
 </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span></div>
-<div class="foldopen" id="foldopen00128" data-start="{" data-end="};">
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_key_wizard_page.html">  128</a></span>class <a class="code hl_function" href="class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a">KeyWizardPage</a> : public QWizardPage {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  Q_OBJECT</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a">  136</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a">KeyWizardPage</a>(<a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *wizard);</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd">  140</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd">initializePage</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="class_key_wizard_page.html#a58d7541dfdc938da50ae6adca6ca2a2f">  147</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_key_wizard_page.html#a58d7541dfdc938da50ae6adca6ca2a2f">isComplete</a>() const -&gt; <span class="keywordtype">bool</span> override;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="class_key_wizard_page.html#ae56080c44a25f205f189e6cc0cfc7e89">  152</a></span>  auto <a class="code hl_function" href="class_key_wizard_page.html#ae56080c44a25f205f189e6cc0cfc7e89">validatePage</a>() -&gt; <span class="keywordtype">bool</span> override;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>private:</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *m_wizard;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  QListWidget *m_list;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  QPushButton *m_generate;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  QLabel *m_status;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keywordtype">void</span> reload();</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="keywordtype">void</span> generate();</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>};</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span></div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="};">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="class_key_wizard_page.html">  144</a></span>class <a class="code hl_function" href="class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a">KeyWizardPage</a> : public QWizardPage {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  Q_OBJECT</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a">  152</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a">KeyWizardPage</a>(<a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *wizard);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd">  156</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd">initializePage</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="class_key_wizard_page.html#a58d7541dfdc938da50ae6adca6ca2a2f">  163</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_key_wizard_page.html#a58d7541dfdc938da50ae6adca6ca2a2f">isComplete</a>() const -&gt; <span class="keywordtype">bool</span> override;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="class_key_wizard_page.html#ae56080c44a25f205f189e6cc0cfc7e89">  168</a></span>  auto <a class="code hl_function" href="class_key_wizard_page.html#ae56080c44a25f205f189e6cc0cfc7e89">validatePage</a>() -&gt; <span class="keywordtype">bool</span> override;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>private:</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *m_wizard;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  QListWidget *m_list;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  QPushButton *m_generate;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  QLabel *m_status;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  <span class="keywordtype">void</span> reload();</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <span class="keywordtype">void</span> generate();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>};</div>
 </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span></div>
-<div class="foldopen" id="foldopen00172" data-start="{" data-end="};">
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="class_store_wizard_page.html">  172</a></span>class <a class="code hl_function" href="class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14">StoreWizardPage</a> : public QWizardPage {</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  Q_OBJECT</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14">  180</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14">StoreWizardPage</a>(<a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *wizard);</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="class_store_wizard_page.html#a550b05a051e81404ff1c71bb5a9229f8">  184</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_store_wizard_page.html#a550b05a051e81404ff1c71bb5a9229f8">initializePage</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="class_store_wizard_page.html#aa588d7e82031fbeda97582e6f0840319">  190</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_store_wizard_page.html#aa588d7e82031fbeda97582e6f0840319">isComplete</a>() const -&gt; <span class="keywordtype">bool</span> override;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="class_store_wizard_page.html#a3beb73b4e5575bcaa12dae36d6c24c01">  195</a></span>  auto <a class="code hl_function" href="class_store_wizard_page.html#a3beb73b4e5575bcaa12dae36d6c24c01">validatePage</a>() -&gt; <span class="keywordtype">bool</span> override;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>private:</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *m_wizard;</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  QLineEdit *m_path;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  QCheckBox *m_useGit;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  QLabel *m_status;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  auto recipients() const -&gt; <span class="keywordtype">int</span>;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="keywordtype">void</span> updateStatus();</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>};</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span></div>
+<div class="foldopen" id="foldopen00188" data-start="{" data-end="};">
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="class_store_wizard_page.html">  188</a></span>class <a class="code hl_function" href="class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14">StoreWizardPage</a> : public QWizardPage {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  Q_OBJECT</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14">  196</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14">StoreWizardPage</a>(<a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *wizard);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="class_store_wizard_page.html#a550b05a051e81404ff1c71bb5a9229f8">  200</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_store_wizard_page.html#a550b05a051e81404ff1c71bb5a9229f8">initializePage</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="class_store_wizard_page.html#aa588d7e82031fbeda97582e6f0840319">  206</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_store_wizard_page.html#aa588d7e82031fbeda97582e6f0840319">isComplete</a>() const -&gt; <span class="keywordtype">bool</span> override;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="class_store_wizard_page.html#a3beb73b4e5575bcaa12dae36d6c24c01">  211</a></span>  auto <a class="code hl_function" href="class_store_wizard_page.html#a3beb73b4e5575bcaa12dae36d6c24c01">validatePage</a>() -&gt; <span class="keywordtype">bool</span> override;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>private:</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  <a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *m_wizard;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  QLineEdit *m_path;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  QCheckBox *m_useGit;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  QLabel *m_status;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  auto recipients() const -&gt; <span class="keywordtype">int</span>;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="keywordtype">void</span> updateStatus();</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>};</div>
 </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span></div>
-<div class="foldopen" id="foldopen00211" data-start="{" data-end="};">
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="class_done_wizard_page.html">  211</a></span>class <a class="code hl_function" href="class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183">DoneWizardPage</a> : public QWizardPage {</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  Q_OBJECT</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183">  219</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183">DoneWizardPage</a>(<a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *wizard);</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="class_done_wizard_page.html#a468b42b8e6e9c642816ed624e799f0ae">  223</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_done_wizard_page.html#a468b42b8e6e9c642816ed624e799f0ae">initializePage</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="class_done_wizard_page.html#af6e4ba145af0504b311a9f2eb0504e76">  228</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_done_wizard_page.html#af6e4ba145af0504b311a9f2eb0504e76">validatePage</a>() -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span></div>
+<div class="foldopen" id="foldopen00227" data-start="{" data-end="};">
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="class_done_wizard_page.html">  227</a></span>class <a class="code hl_function" href="class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183">DoneWizardPage</a> : public QWizardPage {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  Q_OBJECT</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  <a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *m_wizard;</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  QLabel *m_summary;</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  QCheckBox *m_hidePassword;</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  QCheckBox *m_trayIcon;</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>};</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183">  235</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183">DoneWizardPage</a>(<a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *wizard);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="class_done_wizard_page.html#a468b42b8e6e9c642816ed624e799f0ae">  239</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_done_wizard_page.html#a468b42b8e6e9c642816ed624e799f0ae">initializePage</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="class_done_wizard_page.html#af6e4ba145af0504b311a9f2eb0504e76">  244</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_done_wizard_page.html#af6e4ba145af0504b311a9f2eb0504e76">validatePage</a>() -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  <a class="code hl_class" href="class_first_run_wizard.html">FirstRunWizard</a> *m_wizard;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  QLabel *m_summary;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  QCheckBox *m_hidePassword;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  QCheckBox *m_trayIcon;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>};</div>
 </div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">#endif </span><span class="comment">// SRC_FIRSTRUNWIZARD_H_</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="preprocessor">#endif </span><span class="comment">// SRC_FIRSTRUNWIZARD_H_</span></div>
 <div class="ttc" id="aclass_done_wizard_page_html_a468b42b8e6e9c642816ed624e799f0ae"><div class="ttname"><a href="class_done_wizard_page.html#a468b42b8e6e9c642816ed624e799f0ae">DoneWizardPage::initializePage</a></div><div class="ttdeci">void initializePage() override</div><div class="ttdoc">Fill the summary from the settings.</div></div>
 <div class="ttc" id="aclass_done_wizard_page_html_aa479270c512e40c01f1f527cc8420183"><div class="ttname"><a href="class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183">DoneWizardPage::DoneWizardPage</a></div><div class="ttdeci">DoneWizardPage(FirstRunWizard *wizard)</div><div class="ttdoc">Build the page.</div></div>
 <div class="ttc" id="aclass_done_wizard_page_html_af6e4ba145af0504b311a9f2eb0504e76"><div class="ttname"><a href="class_done_wizard_page.html#af6e4ba145af0504b311a9f2eb0504e76">DoneWizardPage::validatePage</a></div><div class="ttdeci">auto validatePage() -&gt; bool override</div><div class="ttdoc">Store the preferences.</div></div>

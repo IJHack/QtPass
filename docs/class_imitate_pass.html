@@ -251,6 +251,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a4819b3c68c49968658849aa8535e1f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the enabled recipients to a .gpg-id, atomically: a write that fails halfway (full disk, dead network share) leaves the previous file in place instead of a truncated list that would then be signed and encrypted to.  <br /></td></tr>
 <tr class="memitem:a9055e77fb0300ace61fde6386b50705f" id="r_a9055e77fb0300ace61fde6386b50705f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9055e77fb0300ace61fde6386b50705f">signGpgIdFile</a> (const QString &amp;gpgIdFile, const QByteArray &amp;contents) -&gt; bool</td></tr>
 <tr class="memdesc:a9055e77fb0300ace61fde6386b50705f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sign a <span class="tt">.gpg-id</span> with the configured key and verify the result; failures are reported through <a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Emit critical error.">critical()</a>.  <br /></td></tr>
+<tr class="memitem:abe06761236eb789f13dd4e8814ce7f15" id="r_abe06761236eb789f13dd4e8814ce7f15"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abe06761236eb789f13dd4e8814ce7f15">refuseLinkedGpgIdFolder</a> (const QString &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:abe06761236eb789f13dd4e8814ce7f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse a folder, or a <span class="tt">.gpg-id</span>/<span class="tt">.gpg-id.sig</span> in it, that is a link: writing there would reach outside the store.  <br /></td></tr>
+<tr class="memitem:aa327d0b0f45abfb88d10da0c5fdebd41" id="r_aa327d0b0f45abfb88d10da0c5fdebd41"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa327d0b0f45abfb88d10da0c5fdebd41">addGenerationHeader</a> (const QString &amp;gpgIdFile, const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, QByteArray *contents) -&gt; bool</td></tr>
+<tr class="memdesc:aa327d0b0f45abfb88d10da0c5fdebd41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put the generation header on a list that is about to be signed: reserve a generation above what this device accepted and what the verified list on disk says, and bind the list to its folder, so no older or relocated signed list comes back.  <br /></td></tr>
+<tr class="memitem:a86a50ad28d84a9c08a43b1de2621bb55" id="r_a86a50ad28d84a9c08a43b1de2621bb55"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a86a50ad28d84a9c08a43b1de2621bb55">settleSignature</a> (const QString &amp;gpgIdFile, const QByteArray &amp;written, const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, bool useGit, QString *sigToCommit) -&gt; bool</td></tr>
+<tr class="memdesc:a86a50ad28d84a9c08a43b1de2621bb55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bring the signature in line with the list just written: a new one when signing is on, the old one removed when it is off (pass and other clients would reject the new list under it).  <br /></td></tr>
 <tr class="memitem:aae90cebd2128422bd41e32fc292a49a0" id="r_aae90cebd2128422bd41e32fc292a49a0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aae90cebd2128422bd41e32fc292a49a0">gitAddGpgId</a> (const QString &amp;gpgIdFile, const QString &amp;gpgIdSigFile, QString *out, QString *err) -&gt; int</td></tr>
 <tr class="memdesc:aae90cebd2128422bd41e32fc292a49a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stage a <span class="tt">.gpg-id</span> and, when given, its <span class="tt">.sig</span>, and commit both in one commit, so no commit in the history has a recipient list without the signature that covers it. Nothing is committed when neither file changed.  <br /></td></tr>
 <tr class="memitem:a568cee878638fa0cbc4c862060ea35b3" id="r_a568cee878638fa0cbc4c862060ea35b3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a568cee878638fa0cbc4c862060ea35b3">gitTracks</a> (const QString &amp;file) -&gt; bool</td></tr>
@@ -339,6 +345,51 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00033">33</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aa327d0b0f45abfb88d10da0c5fdebd41" name="aa327d0b0f45abfb88d10da0c5fdebd41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa327d0b0f45abfb88d10da0c5fdebd41">&#9670;&#160;</a></span>addGenerationHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::addGenerationHeader </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>signer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray *</td>          <td class="paramname"><span class="paramname"><em>contents</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Put the generation header on a list that is about to be signed: reserve a generation above what this device accepted and what the verified list on disk says, and bind the list to its folder, so no older or relocated signed list comes back. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span> being written. </td></tr>
+    <tr><td class="paramname">signer</td><td>Its signer, which verifies the list on disk. </td></tr>
+    <tr><td class="paramname">contents</td><td>The key IDs, one per line; receives the header too. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false when no generation could be reserved (the user was told); an unrecordable list must not be written, it would let the old one back. </dd></dl>
+
+</div>
+</div>
 <a id="afea4899feebac58489e710f4f8eba501" name="afea4899feebac58489e710f4f8eba501"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afea4899feebac58489e710f4f8eba501">&#9670;&#160;</a></span>beforeExecute()</h2>
 
@@ -1492,6 +1543,40 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="abe06761236eb789f13dd4e8814ce7f15" name="abe06761236eb789f13dd4e8814ce7f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe06761236eb789f13dd4e8814ce7f15">&#9670;&#160;</a></span>refuseLinkedGpgIdFolder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::refuseLinkedGpgIdFolder </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refuse a folder, or a <span class="tt">.gpg-id</span>/<span class="tt">.gpg-id.sig</span> in it, that is a link: writing there would reach outside the store. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The folder, with its trailing separator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
+
+</div>
+</div>
 <a id="a181e512eff4b82f5078af432c369d4ee" name="a181e512eff4b82f5078af432c369d4ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a181e512eff4b82f5078af432c369d4ee">&#9670;&#160;</a></span>Remove()</h2>
 
@@ -1574,6 +1659,63 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Resolved destination path. </dd></dl>
+
+</div>
+</div>
+<a id="a86a50ad28d84a9c08a43b1de2621bb55" name="a86a50ad28d84a9c08a43b1de2621bb55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86a50ad28d84a9c08a43b1de2621bb55">&#9670;&#160;</a></span>settleSignature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::settleSignature </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>written</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>signer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>useGit</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>sigToCommit</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bring the signature in line with the list just written: a new one when signing is on, the old one removed when it is off (pass and other clients would reject the new list under it). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span> that was written. </td></tr>
+    <tr><td class="paramname">written</td><td>Its bytes, which are what gets signed. </td></tr>
+    <tr><td class="paramname">signer</td><td>Whether and with which keys to sign. </td></tr>
+    <tr><td class="paramname">useGit</td><td>Whether the store is a Git repository <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> manages. </td></tr>
+    <tr><td class="paramname">sigToCommit</td><td>Receives the signature file to commit, if any. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false when signing or removing failed (the user was told). </dd></dl>
 
 </div>
 </div>
