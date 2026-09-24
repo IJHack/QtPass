@@ -69,9 +69,6 @@ auto recordPath() -> QString {
          kRecordName;
 }
 
-/// The record as on disk: nothing where there is no file yet, the entries
-/// otherwise; nothing with @p error set when the file cannot be read or is
-/// not a record ("unknown", never "never seen").
 /// One list's entry in the record, or nothing when it is malformed. The
 /// generation travels as a string: JSON numbers are doubles, and the grammar
 /// admits 18 digits.
@@ -121,6 +118,9 @@ auto parseRecord(const QByteArray &bytes) -> std::optional<Entries> {
   return entries;
 }
 
+/// The record as on disk: nothing where there is no file yet, the entries
+/// otherwise; nothing with @p error set when the file cannot be read or is
+/// not a record ("unknown", never "never seen").
 auto loadRecord(const QString &path, QString *error) -> std::optional<Entries> {
   if (!QFileInfo::exists(path)) {
     return Entries{};

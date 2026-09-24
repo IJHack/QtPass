@@ -106,17 +106,37 @@ void UsersDialog::showRecipientWarning(const QString &text) {
   ui->verticalLayout->insertWidget(1, banner);
 }
 
+namespace {
+
+/// A key ID as written anywhere: without a 0x prefix, upper case.
+auto normalisedKeyId(const QString &id) -> QString {
+  const QString trimmed = id.trimmed();
+  return (trimmed.startsWith(QLatin1String("0x"), Qt::CaseInsensitive)
+              ? trimmed.mid(2)
+              : trimmed)
+      .toUpper();
+}
+
+/// Whether @p recipient, as a .gpg-id lists it, names @p key: its email or
+/// UID, or its key ID in any length gpg accepts. The key carries its
+/// fingerprint, the list may carry a long or short ID (a suffix of it) or
+/// the fingerprint; eight characters is the shortest ID gpg resolves.
+auto answersTo(const UserInfo &key, const QString &recipient) -> bool {
+  if (!key.name.isEmpty() &&
+      (recipient == key.name || recipient == key.name.section('@', 0, 0))) {
+    return true;
+  }
+  const QString id = normalisedKeyId(recipient);
+  const QString keyId = normalisedKeyId(key.key_id);
+  return (id.size() >= 8 && keyId.endsWith(id)) ||
+         (keyId.size() >= 8 && id.endsWith(keyId));
+}
+
+} // namespace
+
 void UsersDialog::selectRecipients(const QStringList &recipients) {
   // One gpg call resolves every recipient, by key ID or by email/UID.
   const QList<UserInfo> resolved = m_pass->listKeys(recipients);
-  QSet<QString> known;
-  for (const UserInfo &key : resolved) {
-    known.insert(key.key_id);
-    if (!key.name.isEmpty()) {
-      known.insert(key.name.section('@', 0, 0)); // email local part
-      known.insert(key.name);                    // full email/UID
-    }
-  }
   for (UserInfo &user : m_userList) {
     if (std::any_of(resolved.cbegin(), resolved.cend(),
                     [&user](const UserInfo &key) {
@@ -126,7 +146,11 @@ void UsersDialog::selectRecipients(const QStringList &recipients) {
     }
   }
   for (const QString &recipient : recipients) {
-    if (!known.contains(recipient)) {
+    const bool found = std::any_of(resolved.cbegin(), resolved.cend(),
+                                   [&recipient](const UserInfo &key) {
+                                     return answersTo(key, recipient);
+                                   });
+    if (!found) {
       UserInfo missing;
       missing.enabled = true;
       missing.key_id = recipient;
