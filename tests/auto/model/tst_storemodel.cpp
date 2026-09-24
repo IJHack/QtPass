@@ -10,6 +10,7 @@
 
 #include "../../../src/pass.h"
 #include "../../../src/storemodel.h"
+#include "../testpass.h"
 
 class tst_storemodel : public QObject {
   Q_OBJECT
@@ -319,7 +320,7 @@ auto makeMimeData(StoreDragItem::ItemKind kind, const QString &path)
  * returns false at its null check, which is how the file-onto-folder Copy
  * regression (#1748) slipped through.
  */
-class RecordingPass : public Pass {
+class RecordingPass : public NullPass {
 public:
   struct Op {
     QString what;
@@ -327,16 +328,6 @@ public:
     QString dest;
     bool force;
   };
-  RecordingPass() { init(AppSettings()); }
-  void GitInit() override {}
-  void GitPull() override {}
-  void GitPull_b() override {}
-  void GitPush() override {}
-  void Show(QString) override {}
-  void Insert(QString, QString, bool) override {}
-  void Remove(QString, bool) override {}
-  void Init(QString, const QList<UserInfo> &) override {}
-  void Grep(QString, bool) override {}
   void Move(const QString src, const QString dest, const bool force) override {
     ops.append({QStringLiteral("move"), src, dest, force});
   }

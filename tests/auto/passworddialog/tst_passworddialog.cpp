@@ -38,6 +38,7 @@
 #include "../../../src/pass.h"
 #include "../../../src/passworddialog.h"
 #include "../../../src/qtpasssettings.h"
+#include "../testpass.h"
 #include "../testsettings.h"
 
 namespace {
@@ -49,14 +50,10 @@ namespace {
  * only emitted when the test calls deliverShow()/deliverError() – making the
  * asynchronous decrypt deterministic to test.
  */
-class FakePass : public Pass {
+class FakePass : public NullPass {
 public:
   FakePass() { init(QtPassSettings::load()); }
 
-  void GitInit() override {}
-  void GitPull() override {}
-  void GitPull_b() override {}
-  void GitPush() override {}
   void Show(QString file) override { shown = file; }
   void Insert(QString file, QString content, bool overwrite) override {
     inserted = file;
@@ -66,11 +63,6 @@ public:
   QString inserted;
   QString insertedContent;
   bool insertedOverwrite = false;
-  void Remove(QString, bool) override {}
-  void Move(const QString, const QString, const bool) override {}
-  void Copy(const QString, const QString, const bool) override {}
-  void Init(QString, const QList<UserInfo> &) override {}
-  void Grep(QString, bool) override {}
 
   /// Answer the last Show() with @p out, or another entry's decrypt when
   /// @p file is given.

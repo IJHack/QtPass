@@ -26,6 +26,7 @@
 #include "../../../src/pass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/usersdialog.h"
+#include "../testpass.h"
 #include "../testsettings.h"
 
 namespace {
@@ -34,36 +35,17 @@ namespace {
  * list comes from a stand-in gpg script that prints a fixed --with-colons
  * listing; that keeps the test off the real keyring.
  */
-class RecordingPass : public Pass {
+class RecordingPass : public NullPass {
 public:
   explicit RecordingPass(const AppSettings &s) { init(s); }
 
-  void GitInit() override {}
-  void GitPull() override {}
-  void GitPull_b() override {}
-  void GitPush() override {}
-  void Show(QString) override {}
-  void Insert(QString, QString, bool) override {}
-  void Remove(QString, bool) override {}
-  void Move(const QString, const QString, const bool) override {}
-  void Copy(const QString, const QString, const bool) override {}
   void Init(QString path, const QList<UserInfo> &users) override {
     initCalls << qMakePair(path, users);
   }
-  void Grep(QString, bool) override {}
 
   QList<QPair<QString, QList<UserInfo>>> initCalls;
 };
 
-const char kColonListing[] =
-    "pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA::::::23::0:\n"
-    "fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:\n"
-    "uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Alice "
-    "<alice@example.org>::::::::::0:\n"
-    "pub:f:4096:1:693A0AF3FA364E76:1775005968:::f:::escarESCA::::::23::0:\n"
-    "fpr:::::::::4EF2550F79F4E9E68B09F71D693A0AF3FA364E76:\n"
-    "uid:f::::1775005968::8AA011711F27F6E08DF71653718C299A13B323A0::Bob "
-    "<bob@example.org>::::::::::0:\n";
 } // namespace
 
 class tst_usersdialog : public QObject {

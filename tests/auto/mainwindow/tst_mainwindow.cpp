@@ -80,6 +80,7 @@
 #include "../../../src/trayicon.h"
 #include "../../../src/usersdialog.h"
 #include "../../../src/util.h"
+#include "../testpass.h"
 #include "../testsettings.h"
 
 // QMessageBox::setWindowTitle() is a no-op on macOS ("Message boxes on the
@@ -821,19 +822,6 @@ void tst_mainwindow::deselectDoesNotCrash() {
   m_window->deselect();
   // No assertion needed — reaching this line means no crash / assert fired.
 }
-
-// QTRY_* macros return void; this variant returns a value from a helper.
-#define QTRY_VERIFY_WITH_TIMEOUT_RETURN(expr, timeout, ret)                    \
-  do {                                                                         \
-    QElapsedTimer timer;                                                       \
-    timer.start();                                                             \
-    while (!(expr) && timer.elapsed() < (timeout)) {                           \
-      QTest::qWait(20);                                                        \
-    }                                                                          \
-    if (!(expr)) {                                                             \
-      return ret;                                                              \
-    }                                                                          \
-  } while (false)
 
 namespace {
 /**

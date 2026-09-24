@@ -16,6 +16,7 @@
 #include "../../../src/pass.h"
 #include "../../../src/qprogressindicator.h"
 #include "../../../src/qtpasssettings.h"
+#include "../testpass.h"
 #include "../testsettings.h"
 
 /**
@@ -567,21 +568,7 @@ namespace {
  * finishedGenerateGPGKeys() directly; failure by letting that queued error
  * arrive.
  */
-class FakePass : public Pass {
-public:
-  FakePass() { init(AppSettings()); }
-  void GitInit() override {}
-  void GitPull() override {}
-  void GitPull_b() override {}
-  void GitPush() override {}
-  void Show(QString) override {}
-  void Insert(QString, QString, bool) override {}
-  void Remove(QString, bool) override {}
-  void Move(const QString, const QString, const bool) override {}
-  void Copy(const QString, const QString, const bool) override {}
-  void Init(QString, const QList<UserInfo> &) override {}
-  void Grep(QString, bool) override {}
-};
+using FakePass = NullPass;
 
 /// Name, e-mail and a passphrase choice (waived): what done(Accepted) needs
 /// to get as far as the backend.
