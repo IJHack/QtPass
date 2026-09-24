@@ -244,6 +244,47 @@ static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
 
 // Returns an error code rather than throwing, matching QtPass's error
 // handling elsewhere.
+namespace {
+
+/**
+ * @brief Wait for @p process to finish, stopping it when @p cancel is set.
+ *
+ * Polls the flag; every QProcess call, terminate()/kill() included, stays on
+ * this thread, so another thread can never act on an exited process (or a
+ * pid the OS has since reused). A console gpg ignores terminate() on
+ * Windows (WM_CLOSE), hence the kill after a grace period.
+ * @return false when it was cancelled.
+ */
+auto waitOrCancel(QProcess &process, const std::atomic_bool *cancel) -> bool {
+  if (cancel == nullptr) {
+    // waitForFinished(-1) can fail (a poll error) with the child still
+    // running; that is not completion. Stop it rather than report it done.
+    if (!process.waitForFinished(-1) &&
+        process.state() != QProcess::NotRunning) {
+      process.kill();
+      process.waitForFinished(kBlockingKillGraceMs);
+      return false;
+    }
+    return true;
+  }
+  while (!process.waitForFinished(kBlockingCancelPollMs)) {
+    if (process.state() == QProcess::NotRunning) {
+      return true;
+    }
+    if (cancel->load()) {
+      process.terminate();
+      if (!process.waitForFinished(kBlockingKillGraceMs)) {
+        process.kill();
+        process.waitForFinished(-1);
+      }
+      return false;
+    }
+  }
+  return true;
+}
+
+} // namespace
+
 auto Executor::runBlocking(QProcess &process, const QString &app,
                            const QStringList &args, const QString &input,
                            QString *process_out, QString *process_err,
@@ -263,35 +304,18 @@ auto Executor::runBlocking(QProcess &process, const QString &app,
   }
   // Always close stdin so a child blocking on EOF doesn't hang.
   process.closeWriteChannel();
-  if (cancel == nullptr) {
-    process.waitForFinished(-1);
-  } else {
-    // Poll the flag; every QProcess call, terminate()/kill() included, stays
-    // on this thread, so another thread can never act on an exited process
-    // (or a pid the OS has since reused).
-    while (!process.waitForFinished(kBlockingCancelPollMs)) {
-      if (process.state() == QProcess::NotRunning)
-        break;
-      if (cancel->load()) {
-        process.terminate();
-        if (!process.waitForFinished(kBlockingKillGraceMs)) {
-          process.kill();
-          process.waitForFinished(-1);
-        }
-        return -1;
-      }
-    }
-  }
-  if (process.exitStatus() != QProcess::NormalExit) {
+  if (!waitOrCancel(process, cancel)) {
     return -1;
   }
+  // Read before judging the exit: a process that crashed may have said why,
+  // as the queued path (onProcessFinished) keeps it too.
   if (process_out != nullptr) {
     *process_out = decodeAssumingUtf8(process.readAllStandardOutput());
   }
   if (process_err != nullptr) {
     *process_err = decodeAssumingUtf8(process.readAllStandardError());
   }
-  return process.exitCode();
+  return process.exitStatus() == QProcess::NormalExit ? process.exitCode() : -1;
 }
 
 auto Executor::executeBlocking(const QString &app, const QStringList &args,

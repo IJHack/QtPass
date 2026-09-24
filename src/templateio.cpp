@@ -9,6 +9,7 @@
  */
 
 #include "templateio.h"
+
 #include <QDebug>
 #include <QDir>
 #include <QFile>
@@ -16,6 +17,32 @@
 #include <QStringConverter>
 #include <QTextStream>
 #include <algorithm>
+#include <optional>
+
+namespace {
+
+/// The name of a `[section]` header line; nothing for any other line, and
+/// an empty name for `[]`.
+auto sectionHeader(const QString &line) -> std::optional<QString> {
+  if (!line.startsWith('[') || !line.endsWith(']')) {
+    return std::nullopt;
+  }
+  return line.mid(1, line.length() - 2).trimmed();
+}
+
+/// The first line of @p dir's .default_template, when it names a template.
+auto defaultTemplateIn(const QDir &dir) -> QString {
+  QFile file(dir.filePath(".default_template"));
+  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    return {};
+  }
+  QTextStream in(&file);
+  in.setEncoding(QStringConverter::Utf8);
+  const QString name = in.readLine().trimmed();
+  return name.startsWith('#') ? QString() : name;
+}
+
+} // namespace
 
 auto TemplateIO::readTemplates(const QString &storePath)
     -> QHash<QString, QStringList> {
@@ -26,33 +53,30 @@ auto TemplateIO::readTemplates(const QString &storePath)
   }
   QTextStream in(&file);
   in.setEncoding(QStringConverter::Utf8);
-  QString currentSection;
-  QStringList currentFields;
-  bool skipInvalidSection = false;
+  // No section before the first header, nor for an empty `[]`: fields there
+  // belong to nothing and are dropped.
+  std::optional<QString> section;
+  QStringList fields;
+  const auto flush = [&] {
+    if (section) {
+      result.insert(*section, fields);
+    }
+    fields.clear();
+  };
   while (!in.atEnd()) {
-    QString line = in.readLine().trimmed();
-    if (line.startsWith('[') && line.endsWith(']')) {
-      if (!currentSection.isEmpty() && !skipInvalidSection) {
-        result.insert(currentSection, currentFields);
-      }
-      currentSection = line.mid(1, line.length() - 2).trimmed();
-      if (currentSection.isEmpty()) {
+    const QString line = in.readLine().trimmed();
+    if (const std::optional<QString> header = sectionHeader(line)) {
+      flush();
+      section = header->isEmpty() ? std::nullopt : header;
+      if (!section) {
         qWarning()
             << "Empty template section in .templates file, ignoring fields";
-        skipInvalidSection = true;
-        currentFields.clear();
-      } else {
-        skipInvalidSection = false;
-        currentFields.clear();
       }
-    } else if (!line.isEmpty() && !line.startsWith('#') &&
-               !skipInvalidSection) {
-      currentFields.append(line);
+    } else if (section && !line.isEmpty() && !line.startsWith('#')) {
+      fields.append(line);
     }
   }
-  if (!currentSection.isEmpty() && !skipInvalidSection) {
-    result.insert(currentSection, currentFields);
-  }
+  flush();
   return result;
 }
 
@@ -87,37 +111,21 @@ auto TemplateIO::writeTemplates(const QString &storePath,
 
 auto TemplateIO::getFolderTemplate(const QString &folderPath,
                                    const QString &storePath) -> QString {
-  QDir storeDir(storePath);
-  QString cleanStoreAbs = QDir::cleanPath(storeDir.absolutePath());
+  const QString store = QDir::cleanPath(QDir(storePath).absolutePath());
+  // Only the store root and its descendants are probed for
+  // .default_template; a path outside the store opens nothing.
+  const auto inStore = [&store](const QString &path) {
+    return path == store ||
+           (path.startsWith(store) && path.length() > store.length() &&
+            path.at(store.length()) == QChar('/'));
+  };
   QDir dir(folderPath);
-  while (true) {
-    QString currentPath = QDir::cleanPath(dir.absolutePath());
-    const bool atStoreRoot = currentPath == cleanStoreAbs;
-    const bool insideStore =
-        currentPath.startsWith(cleanStoreAbs) &&
-        currentPath.length() > cleanStoreAbs.length() &&
-        currentPath.at(cleanStoreAbs.length()) == QChar('/');
-    // Reject paths outside the store before opening any file; only the store
-    // root and its descendants are probed for .default_template.
-    if (!atStoreRoot && !insideStore) {
-      break;
+  while (inStore(QDir::cleanPath(dir.absolutePath()))) {
+    const QString name = defaultTemplateIn(dir);
+    if (!name.isEmpty()) {
+      return name;
     }
-    if (dir.exists(".default_template")) {
-      QFile file(dir.filePath(".default_template"));
-      if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QTextStream in(&file);
-        in.setEncoding(QStringConverter::Utf8);
-        QString templateName = in.readLine().trimmed();
-        file.close();
-        if (!templateName.isEmpty() && !templateName.startsWith('#')) {
-          return templateName;
-        }
-      }
-    }
-    if (atStoreRoot) {
-      break;
-    }
-    if (!dir.cdUp()) {
+    if (QDir::cleanPath(dir.absolutePath()) == store || !dir.cdUp()) {
       break;
     }
   }

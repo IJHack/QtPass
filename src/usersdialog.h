@@ -101,6 +101,13 @@ private slots:
    * @brief Import a GPG key and refresh the list.
    */
   void on_importKeyButton_clicked();
+  /**
+   * @brief Make the key gpg just imported the current row. gpg reports a
+   * 16-character long ID (IMPORTED) or a 40-character fingerprint
+   * (IMPORT_OK), so the two are compared both ways, by suffix.
+   * @param importedKey What gpg reported.
+   */
+  void selectImportedKey(const QString &importedKey);
 
 private:
   QScopedPointer<Ui::UsersDialog> ui;

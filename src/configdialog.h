@@ -230,6 +230,32 @@ private:
   void showProblems(int row, const ProfileProblems &problems);
 
   void initializeNewProfiles(const Profiles &existingProfiles);
+  /**
+   * @brief Offer to create a new profile's store folder when it is missing.
+   * @param path The folder, cleaned.
+   * @return Whether the folder exists now.
+   */
+  auto ensureProfileFolder(const QString &path) -> bool;
+  /**
+   * @brief Ask for a new profile's recipients and initialise its store with
+   * them, keeping the active backend's settings and queue on the active
+   * store (#1774).
+   * @param name The profile's name, for titles and messages.
+   * @param profile The profile.
+   * @param path Its store folder, cleaned.
+   */
+  void initialiseProfileStore(const QString &name, const Profile &profile,
+                              const QString &path);
+  /// Warn, without refusing, when the SSH_AUTH_SOCK override does not look
+  /// like a socket; the value is saved as entered either way.
+  void warnAboutSshAuthSockOverride();
+  /**
+   * @brief Point the active profile at its new name after a rename (or at
+   * none after a deletion), and let its own Git flags replace the global
+   * ones, as switching to it does.
+   * @param profiles The profiles as saved.
+   */
+  void followActiveProfile(const Profiles &profiles);
 
   /// User-defined custom charset, retained while a builtin set is selected so
   /// it is not lost when the line edit shows the builtin's characters instead.

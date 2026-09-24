@@ -130,6 +130,45 @@ void ImitatePass::Show(QString file) {
   executeGpg(PASS_SHOW, args);
 }
 
+namespace {
+
+/**
+ * @brief The arguments of every gpg encrypt call: @p leading, then encrypt
+ * to exactly @p recipients from stdin into @p output. --no-encrypt-to keeps
+ * an `encrypt-to` line in the user's gpg.conf from adding a recipient the
+ * (possibly signed) .gpg-id does not list; --compress-algo=none mirrors
+ * pass(1).
+ */
+auto encryptArgs(QStringList leading, const QString &output,
+                 const QStringList &recipients) -> QStringList {
+  leading << "-eq" << "--compress-algo=none" << "--no-encrypt-to" << "--output"
+          << output;
+  for (const QString &recipient : recipients) {
+    leading << "-r" << recipient;
+  }
+  leading << "-";
+  return leading;
+}
+
+} // namespace
+
+auto ImitatePass::recipientsForEntry(const QString &file,
+                                     QStringList *recipients) -> bool {
+  QString why;
+  if (!loadVerifiedRecipients(Pass::getGpgIdPath(file, m_settings.passStore),
+                              recipients, &why)) {
+    emit critical(tr("Check .gpg-id file signature!"), why);
+    return false;
+  }
+  if (recipients->isEmpty()) {
+    emit critical(tr("Can not edit"),
+                  tr("Could not read encryption key to use, .gpg-id "
+                     "file missing or invalid."));
+    return false;
+  }
+  return true;
+}
+
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   // The dialog names a new entry relative to the store; gpg used to resolve
   // that in its working directory. Everything below works on the one path.
@@ -147,17 +186,8 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
     emit critical(tr("Cannot add"), tr("%1 already exists.").arg(file));
     return;
   }
-  QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);
   QStringList recipients;
-  QString why;
-  if (!loadVerifiedRecipients(gpgIdPath, &recipients, &why)) {
-    emit critical(tr("Check .gpg-id file signature!"), why);
-    return;
-  }
-  if (recipients.isEmpty()) {
-    emit critical(tr("Can not edit"),
-                  tr("Could not read encryption key to use, .gpg-id "
-                     "file missing or invalid."));
+  if (!recipientsForEntry(file, &recipients)) {
     return;
   }
   // gpg never opens a store path for output: a co-writer could make it a link
@@ -172,34 +202,20 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   }
   const QString output = scratch->filePath(QStringLiteral("entry.gpg"));
   TransactionHelper trans(&m_transaction, PASS_INSERT);
-  // --no-encrypt-to keeps an `encrypt-to` line in the user's gpg.conf from
-  // adding a recipient that is not listed in the (possibly signed) .gpg-id;
-  // --compress-algo=none mirrors pass(1). Both belong on every encrypt call.
-  QStringList args = {"--batch",
-                      "--status-fd",
-                      "2",
-                      "-eq",
-                      "--compress-algo=none",
-                      "--no-encrypt-to",
-                      "--output",
-                      pgpg(output)};
-  for (auto &r : recipients) {
-    args.append("-r");
-    args.append(r);
-  }
-  args.append("-");
+  const QStringList args =
+      encryptArgs({"--batch", "--status-fd", "2"}, pgpg(output), recipients);
   m_pendingInserts.enqueue({std::move(scratch), output, file, overwrite});
   executeGpg(PASS_INSERT, args, newValue);
-  if (gitReady()) {
-    if (!overwrite) {
-      executeGit(GIT_ADD, {"add", "--", pgit(file)});
-    }
-    QString path = QDir(m_settings.passStore).relativeFilePath(file);
-    path.replace(Util::endsWithGpg(), "");
-    QString msg =
-        QString(overwrite ? "Edit" : "Add") + " for " + path + " using QtPass.";
-    gitCommit(file, msg);
+  if (!gitReady()) {
+    return;
   }
+  if (!overwrite) {
+    executeGit(GIT_ADD, {"add", "--", pgit(file)});
+  }
+  QString path = QDir(m_settings.passStore).relativeFilePath(file);
+  path.replace(Util::endsWithGpg(), "");
+  gitCommit(file, QString(overwrite ? "Edit" : "Add") + " for " + path +
+                      " using QtPass.");
 }
 
 void ImitatePass::gitCommit(const QString &file, const QString &msg) {
@@ -542,12 +558,63 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
   return true;
 }
 
+void ImitatePass::reportUnrestorable(const QString &path) {
+  emit critical(tr("Leftover from an earlier re-encryption"),
+                tr("%1 is not a regular file and was not restored. Look "
+                   "at it and remove it, then re-encrypt again.")
+                    .arg(path));
+}
+
+void ImitatePass::dropStaleTemporary(const QString &path) {
+  // A crash's temporary is picked up by a run an hour later.
+  if (QFileInfo(path).lastModified() >
+      QDateTime::currentDateTime().addSecs(-3600)) {
+    qCDebug(lcQtPass) << "Leaving a recent temporary alone:" << path;
+    return;
+  }
+  if (!QFile::remove(path)) {
+    qCWarning(lcQtPass) << "Could not remove stale temporary" << path;
+  }
+}
+
+auto ImitatePass::restoreBackup(const QString &path) -> bool {
+  // Belt and braces: the walker only lists regular files.
+  const QFileInfo backup(path);
+  if (backup.isSymLink() || !backup.isFile()) {
+    reportUnrestorable(path);
+    return false;
+  }
+  const QString original =
+      path.chopped(QStringLiteral(".reencrypt.bak").size());
+  if (QFileInfo::exists(original)) {
+    emit critical(tr("Leftover from an earlier re-encryption"),
+                  tr("%1 exists next to %2. Both are encrypted copies of the "
+                     "entry; check which one you want and delete the other, "
+                     "then re-encrypt again.")
+                      .arg(path, original));
+    return false;
+  }
+  if (!QFile::rename(path, original)) {
+    emit critical(tr("Leftover from an earlier re-encryption"),
+                  tr("%1 is missing and its backup %2 could not be renamed "
+                     "back. Rename it by hand, then re-encrypt again.")
+                      .arg(original, path));
+    return false;
+  }
+  qCWarning(lcQtPass) << "Restored" << original << "from" << path;
+  emit statusMsg(tr("Restored %1 from the backup an interrupted "
+                    "re-encryption left behind.")
+                     .arg(original),
+                 5000);
+  return true;
+}
+
 auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
   // .qtpass-XXXXXX.tmp is today's staging name; 1.8.x replaced entries via
   // X.gpg.reencrypt.tmp and .bak in two renames, builds up to 2.0 wrote
   // X.gpg.XXXXXX.tmp. A .tmp is never a source of truth; a .bak is the only
   // copy when X.gpg is missing, and one of two valid ones when it is not.
-  bool clean = true;
+  //
   // Regular files only: renaming a link under a leftover name into an entry's
   // place would re-encrypt whatever it points to. Links come back in
   // `skipped`; linked directories are left to reencryptFiles() to mention.
@@ -555,76 +622,35 @@ auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
                                   QStringLiteral("*.gpg.reencrypt.tmp"),
                                   QStringLiteral("*.gpg.??????.tmp"),
                                   QStringLiteral("*.gpg.reencrypt.bak")};
+  const auto isTemporary = [](const QString &path) {
+    return path.endsWith(QStringLiteral(".tmp"));
+  };
   QStringList skipped;
   // Hidden files included: the staged name starts with a dot.
   const QStringList leftovers = Util::regularFilesUnder(
       QDir::cleanPath(dir), leftoverNames, &skipped, true);
+  bool clean = true;
   for (const QString &path : skipped) {
     if (!QDir::match(leftoverNames, QFileInfo(path).fileName())) {
       continue;
     }
-    if (path.endsWith(QStringLiteral(".tmp"))) {
-      // Removing a link removes the link, never what it points to; a
-      // junction or a directory symlink on Windows is a directory entry and
-      // goes with rmdir.
+    // Removing a link removes the link, never what it points to; a junction
+    // or a directory symlink on Windows is a directory entry and goes with
+    // rmdir.
+    if (isTemporary(path)) {
       if (!QFile::remove(path) && !QDir().rmdir(path)) {
         qCWarning(lcQtPass) << "Could not remove stale temporary" << path;
       }
       continue;
     }
-    emit critical(tr("Leftover from an earlier re-encryption"),
-                  tr("%1 is not a regular file and was not restored. Look "
-                     "at it and remove it, then re-encrypt again.")
-                      .arg(path));
+    reportUnrestorable(path);
     clean = false;
   }
-  // Younger may be another QtPass's write in flight on a shared store (same
-  // names); a crash's temporary is picked up by a run an hour later.
-  const QDateTime inFlightSince = QDateTime::currentDateTime().addSecs(-3600);
   for (const QString &path : leftovers) {
-    if (path.endsWith(QStringLiteral(".tmp"))) {
-      if (QFileInfo(path).lastModified() > inFlightSince) {
-        qCDebug(lcQtPass) << "Leaving a recent temporary alone:" << path;
-        continue;
-      }
-      if (!QFile::remove(path)) {
-        qCWarning(lcQtPass) << "Could not remove stale temporary" << path;
-      }
-      continue;
-    }
-    // Belt and braces: the walker only lists regular files.
-    const QFileInfo backup(path);
-    if (backup.isSymLink() || !backup.isFile()) {
-      emit critical(tr("Leftover from an earlier re-encryption"),
-                    tr("%1 is not a regular file and was not restored. Look "
-                       "at it and remove it, then re-encrypt again.")
-                        .arg(path));
-      clean = false;
-      continue;
-    }
-    const QString original =
-        path.chopped(QStringLiteral(".reencrypt.bak").size());
-    if (QFileInfo::exists(original)) {
-      emit critical(tr("Leftover from an earlier re-encryption"),
-                    tr("%1 exists next to %2. Both are encrypted copies of the "
-                       "entry; check which one you want and delete the other, "
-                       "then re-encrypt again.")
-                        .arg(path, original));
-      clean = false;
-      continue;
-    }
-    if (QFile::rename(path, original)) {
-      qCWarning(lcQtPass) << "Restored" << original << "from" << path;
-      emit statusMsg(tr("Restored %1 from the backup an interrupted "
-                        "re-encryption left behind.")
-                         .arg(original),
-                     5000);
+    if (isTemporary(path)) {
+      dropStaleTemporary(path);
     } else {
-      emit critical(tr("Leftover from an earlier re-encryption"),
-                    tr("%1 is missing and its backup %2 could not be renamed "
-                       "back. Rename it by hand, then re-encrypt again.")
-                        .arg(original, path));
-      clean = false;
+      clean = restoreBackup(path) && clean;
     }
   }
   return clean;
@@ -703,14 +729,8 @@ auto ImitatePass::decryptEntry(const QString &fileName, QString *plaintext)
 auto ImitatePass::encryptFor(const QString &output,
                              const QStringList &recipients,
                              const QString &plaintext) -> bool {
-  // Same encrypt-only flags as Insert(): gpg.conf must not add recipients.
-  QStringList args{
-      "--yes",           "--batch",  "-eq",       "--compress-algo=none",
-      "--no-encrypt-to", "--output", pgpg(output)};
-  for (const QString &recipient : recipients) {
-    args << "-r" << recipient;
-  }
-  args << "-";
+  const QStringList args =
+      encryptArgs({"--yes", "--batch"}, pgpg(output), recipients);
   if (execBlocking(m_settings.gpgExecutable, args, plaintext) != 0) {
     qCDebug(lcQtPass) << "Encrypt error on re-encrypt, output:" << output;
     return false;
@@ -1206,6 +1226,35 @@ void ImitatePass::Move(const QString src, const QString dest,
   }
 }
 
+auto ImitatePass::copyDestination(const QString &src, const QString &dest,
+                                  bool force) -> QString {
+  const auto refuse = [this, &src](const QString &to) {
+    emit critical(tr("Copy failed"),
+                  tr("Could not copy %1 to %2.").arg(src, to));
+    return QString();
+  };
+  // Like `pass cp`, dest may be an existing folder (a drag-and-drop copy hands
+  // over the folder, not the new file name). Resolve the real target the same
+  // way Move does: into the folder, .gpg appended, no clobbering without force.
+  const QString destFile = resolveMoveDestination(src, dest, force);
+  if (destFile.isEmpty()) {
+    return refuse(dest);
+  }
+  // A link planted under that name (dangling ones pass exists()) is not an
+  // entry to write.
+  if (refuseLinkedPath(destFile)) {
+    return {};
+  }
+  const QFileInfo destFileInfo(destFile);
+  // A folder destination that is the source's own folder resolves to the
+  // source itself; with force that would replace the only copy with itself.
+  // And resolveMoveDestination only sees a clash when dest names the file.
+  if (QFileInfo(src) == destFileInfo || (!force && destFileInfo.exists())) {
+    return refuse(destFile);
+  }
+  return destFile;
+}
+
 void ImitatePass::Copy(const QString src, const QString dest,
                        const bool force) {
   // QFile::copy reads through a link: the target's bytes would become an
@@ -1214,34 +1263,8 @@ void ImitatePass::Copy(const QString src, const QString dest,
     return;
   }
   TransactionHelper trans(&m_transaction, PASS_COPY);
-  // Like `pass cp`, dest may be an existing folder (a drag-and-drop copy hands
-  // over the folder, not the new file name). Resolve the real target the same
-  // way Move does: into the folder, .gpg appended, no clobbering without force.
-  QString destFile = resolveMoveDestination(src, dest, force);
+  const QString destFile = copyDestination(src, dest, force);
   if (destFile.isEmpty()) {
-    emit critical(tr("Copy failed"),
-                  tr("Could not copy %1 to %2.").arg(src, dest));
-    return;
-  }
-  // dest may have been a folder; the file that ends up written is destFile,
-  // and a link planted under that name (dangling ones pass exists()) is not
-  // an entry to write.
-  if (refuseLinkedPath(destFile)) {
-    return;
-  }
-  QFileInfo destFileInfo(destFile);
-  // A folder destination that is the source's own folder resolves to the
-  // source itself; with force that would replace the only copy with itself.
-  if (QFileInfo(src) == destFileInfo) {
-    emit critical(tr("Copy failed"),
-                  tr("Could not copy %1 to %2.").arg(src, destFile));
-    return;
-  }
-  // resolveMoveDestination only sees a clash when dest names the file; for a
-  // folder destination the resolved <folder>/<entry>.gpg may exist as well.
-  if (!force && destFileInfo.exists()) {
-    emit critical(tr("Copy failed"),
-                  tr("Could not copy %1 to %2.").arg(src, destFile));
     return;
   }
   // git has no "cp": copy on disk in both modes, then stage. Synchronous and
@@ -1255,19 +1278,16 @@ void ImitatePass::Copy(const QString src, const QString dest,
                       why);
     return;
   }
-  // QFileInfo caches; the comparison above may have looked at a path that did
-  // not exist yet, so re-read it before deciding what to re-encrypt.
-  destFileInfo.refresh();
   if (gitReady()) {
     executeGit(GIT_COPY, {"add", "--", pgit(destFile)});
-    QString message = QString("Copied from %1 to %2 using QtPass.");
-    message = message.arg(src, destFile);
-    gitCommit("", message);
+    gitCommit("",
+              QString("Copied from %1 to %2 using QtPass.").arg(src, destFile));
   }
-  if (destFileInfo.isDir()) {
-    reencryptPath(destFileInfo.absoluteFilePath());
-  } else if (destFileInfo.isFile()) {
-    reencryptPath(destFileInfo.dir().path());
+  const QFileInfo written(destFile);
+  if (written.isDir()) {
+    reencryptPath(written.absoluteFilePath());
+  } else if (written.isFile()) {
+    reencryptPath(written.dir().path());
   }
 }
 

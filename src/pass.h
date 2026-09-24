@@ -6,6 +6,7 @@
 #include "appsettings.h"
 #include "enums.h"
 #include "executor.h"
+#include "gpgidgeneration.h"
 #include "userinfo.h"
 
 #include <QProcess>

@@ -315,64 +315,62 @@ void ConfigDialog::validate() {
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(status);
 }
 
-void ConfigDialog::on_accepted() {
-  const QString sshAuthSockOverride = ui->sshAuthSockOverride->text().trimmed();
-  if (!sshAuthSockOverride.isEmpty()) {
-    QString reason;
-    switch (SshAuthSock::overrideStatus(sshAuthSockOverride)) {
-    case SshAuthSock::OverrideStatus::Valid:
-      break;
-    case SshAuthSock::OverrideStatus::DoesNotExist:
-      reason = tr("The path does not exist.");
-      break;
-    case SshAuthSock::OverrideStatus::NotReadable:
-      reason = tr("The path is not readable.");
-      break;
-    case SshAuthSock::OverrideStatus::NotUnixDomainSocket:
-      reason = tr("The path is not a Unix domain socket.");
-      break;
-    }
-    if (!reason.isEmpty()) {
-      QMessageBox::warning(
-          this, tr("Potentially invalid SSH_AUTH_SOCK override"),
-          tr("The SSH_AUTH_SOCK override value may be invalid.\n\n%1\n\n"
-             "The value will still be saved as entered.")
-              .arg(reason));
+void ConfigDialog::warnAboutSshAuthSockOverride() {
+  const QString override = ui->sshAuthSockOverride->text().trimmed();
+  if (override.isEmpty()) {
+    return;
+  }
+  QString reason;
+  switch (SshAuthSock::overrideStatus(override)) {
+  case SshAuthSock::OverrideStatus::Valid:
+    return;
+  case SshAuthSock::OverrideStatus::DoesNotExist:
+    reason = tr("The path does not exist.");
+    break;
+  case SshAuthSock::OverrideStatus::NotReadable:
+    reason = tr("The path is not readable.");
+    break;
+  case SshAuthSock::OverrideStatus::NotUnixDomainSocket:
+    reason = tr("The path is not a Unix domain socket.");
+    break;
+  }
+  QMessageBox::warning(
+      this, tr("Potentially invalid SSH_AUTH_SOCK override"),
+      tr("The SSH_AUTH_SOCK override value may be invalid.\n\n%1\n\n"
+         "The value will still be saved as entered.")
+          .arg(reason));
+}
+
+void ConfigDialog::followActiveProfile(const Profiles &profiles) {
+  // As MainWindow::on_profileBox_currentTextChanged does when switching.
+  AppSettings s = QtPassSettings::load();
+  const QString wasActive = s.activeProfile;
+  QString nowActive;
+  for (const ProfileEntry &entry : std::as_const(m_entries)) {
+    if (!wasActive.isEmpty() && entry.originalName == wasActive) {
+      nowActive = entry.name;
     }
   }
+  s.activeProfile = nowActive;
+  const auto active = profiles.constFind(nowActive);
+  if (active != profiles.constEnd()) {
+    s.useGit = active->useGit.value_or(s.useGit);
+    s.autoPush = active->autoPush.value_or(s.autoPush);
+    s.autoPull = active->autoPull.value_or(s.autoPull);
+  }
+  QtPassSettings::save(s);
+}
 
+void ConfigDialog::on_accepted() {
+  warnAboutSshAuthSockOverride();
   const Profiles existingProfiles = QtPassSettings::getProfiles();
-
   // Persist via the facade, which also invalidates the cached Pass backend so
   // a changed "use pass" mode takes effect.
   QtPassSettings::save(readSettings());
-
   // Profiles are not part of AppSettings yet, so persist them separately.
   const Profiles profiles = getProfiles();
   QtPassSettings::setProfiles(profiles);
-
-  // The active profile follows a rename and is forgotten with a deletion;
-  // its own Git flags replace the global ones, as they do when switching to
-  // it (MainWindow::on_profileBox_currentTextChanged).
-  {
-    AppSettings s = QtPassSettings::load();
-    const QString wasActive = s.activeProfile;
-    QString nowActive;
-    for (const ProfileEntry &entry : std::as_const(m_entries)) {
-      if (!wasActive.isEmpty() && entry.originalName == wasActive) {
-        nowActive = entry.name;
-      }
-    }
-    s.activeProfile = nowActive;
-    const auto active = profiles.constFind(nowActive);
-    if (active != profiles.constEnd()) {
-      s.useGit = active->useGit.value_or(s.useGit);
-      s.autoPush = active->autoPush.value_or(s.autoPush);
-      s.autoPull = active->autoPull.value_or(s.autoPull);
-    }
-    QtPassSettings::save(s);
-  }
-
+  followActiveProfile(profiles);
   initializeNewProfiles(existingProfiles);
 }
 
@@ -571,74 +569,68 @@ auto ConfigDialog::getProfiles() -> Profiles {
   return profiles;
 }
 
+auto ConfigDialog::ensureProfileFolder(const QString &path) -> bool {
+  if (QDir(path).exists()) {
+    return true;
+  }
+  if (QMessageBox::question(
+          this, tr("Create profile directory?"),
+          tr("Would you like to create a password store at %1?").arg(path),
+          QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
+    return false;
+  }
+  if (!QDir().mkpath(path)) {
+    QMessageBox::warning(
+        this, tr("Error"),
+        tr("Could not create profile directory: %1").arg(path));
+    return false;
+  }
+  return true;
+}
+
+void ConfigDialog::initialiseProfileStore(const QString &name,
+                                          const Profile &profile,
+                                          const QString &path) {
+  // Only the recipients come through the active backend. passStore is the
+  // profile, or getGpgIdPath() would pre-tick the active store's recipients;
+  // signing keys are per profile, exactly as the profile switch applies them
+  // (MainWindow::on_profileBox_currentTextChanged).
+  const AppSettings settings = QtPassSettings::load();
+  AppSettings profileSettings = settings;
+  profileSettings.passStore = Util::normalizeFolderPath(path);
+  profileSettings.passSigningKey = profile.signingKey;
+  UsersDialog usersDialog(QtPassSettings::getPass(), profileSettings,
+                          profileSettings.passStore, this);
+  usersDialog.setInitOnAccept(false);
+  usersDialog.setWindowTitle(tr("Select recipients for %1").arg(name));
+  if (usersDialog.exec() != QDialog::Accepted) {
+    return;
+  }
+  QString note;
+  const bool ok = ProfileInit::initialise(
+      path, usersDialog.selectedUsers(), profileSettings,
+      profile.useGit.value_or(settings.useGit), &note);
+  if (!ok) {
+    QMessageBox::warning(this, tr("Could not initialise profile %1").arg(name),
+                         note);
+  } else if (!note.isEmpty()) {
+    QMessageBox::information(this, tr("Profile %1").arg(name), note);
+  }
+}
+
 void ConfigDialog::initializeNewProfiles(const Profiles &existingProfiles) {
   const Profiles newProfiles = getProfiles();
-
   // QMap iterates in name order.
   for (auto it = newProfiles.cbegin(); it != newProfiles.cend(); ++it) {
-    const QString &name = it.key();
-    const Profile &profile = it.value();
-    const QString &path = profile.path;
-
-    // Skip a store that was already a profile when the dialog opened, under
-    // this or another name: a rename is not a new store.
-    if (std::any_of(existingProfiles.cbegin(), existingProfiles.cend(),
-                    [&path](const Profile &old) { return old.path == path; })) {
-      continue;
-    }
-
-    // needsInit returns false for a missing directory, so create it first.
-    QString cleanPath = QDir::cleanPath(path);
-    QDir dir(cleanPath);
-    if (!dir.exists()) {
-      if (QMessageBox::question(
-              this, tr("Create profile directory?"),
-              tr("Would you like to create a password store at %1?")
-                  .arg(cleanPath),
-              QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
-        continue;
-      }
-      if (!QDir().mkpath(cleanPath)) {
-        QMessageBox::warning(
-            this, tr("Error"),
-            tr("Could not create profile directory: %1").arg(cleanPath));
-        continue;
-      }
-    }
-
-    // Now check if initialization is needed (directory exists with no .gpg-id)
-    if (!ProfileInit::needsInit(cleanPath)) {
-      continue;
-    }
-
-    // Only the recipients come through the active backend; initialising
-    // without it keeps its settings, PASSWORD_STORE_DIR and queue on the
-    // active store (#1774). passStore is the profile, or getGpgIdPath() would
-    // pre-tick the active store's recipients.
-    const AppSettings settings = QtPassSettings::load();
-    AppSettings profileSettings = settings;
-    profileSettings.passStore = Util::normalizeFolderPath(cleanPath);
-    // Signing keys are per profile, exactly as the profile switch applies
-    // them (MainWindow::on_profileBox_currentTextChanged).
-    profileSettings.passSigningKey = profile.signingKey;
-    UsersDialog usersDialog(QtPassSettings::getPass(), profileSettings,
-                            profileSettings.passStore, this);
-    usersDialog.setInitOnAccept(false);
-    usersDialog.setWindowTitle(tr("Select recipients for %1").arg(name));
-    if (usersDialog.exec() != QDialog::Accepted) {
-      continue;
-    }
-
-    const bool useGit = profile.useGit.value_or(settings.useGit);
-
-    QString note;
-    const bool ok = ProfileInit::initialise(
-        cleanPath, usersDialog.selectedUsers(), profileSettings, useGit, &note);
-    if (!ok) {
-      QMessageBox::warning(
-          this, tr("Could not initialise profile %1").arg(name), note);
-    } else if (!note.isEmpty()) {
-      QMessageBox::information(this, tr("Profile %1").arg(name), note);
+    const QString path = QDir::cleanPath(it.value().path);
+    // A store that was already a profile when the dialog opened, under this
+    // or another name: a rename is not a new store.
+    const bool known = std::any_of(
+        existingProfiles.cbegin(), existingProfiles.cend(),
+        [&it](const Profile &old) { return old.path == it.value().path; });
+    // needsInit is false for a missing folder, so it is created first.
+    if (!known && ensureProfileFolder(path) && ProfileInit::needsInit(path)) {
+      initialiseProfileStore(it.key(), it.value(), path);
     }
   }
 }

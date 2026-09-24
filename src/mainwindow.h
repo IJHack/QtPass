@@ -379,6 +379,19 @@ private:
 
   void initToolBarButtons();
   void initStatusBar();
+  /// Connect QtPass's and both backends' signals (the active backend can
+  /// change through the configuration dialog without a restart).
+  void connectBackends();
+  /// Font, wrapping and link handling of the text browser, per the settings.
+  void initTextBrowser();
+  /// The grid of decrypted fields and what its buttons ask for.
+  void initDisplayPanel();
+  /// The panel-clear and search timers, and the watchdog that re-enables
+  /// the UI when an operation never signals its end.
+  void initTimers();
+  /// The Process Output dock, its Settings-menu toggle, and the feed of
+  /// non-secret process output into it.
+  void initProcessOutput();
   void connectPassSignals(Pass *pass);
 
   void selectFirstFile();

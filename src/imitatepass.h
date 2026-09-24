@@ -94,6 +94,25 @@ protected:
    */
   auto refuseLinkedGpgIdFolder(const QString &path) -> bool;
   /**
+   * @brief The recipients to encrypt @p file to: its folder's `.gpg-id`,
+   * verified when a signing key is set.
+   * @param file The entry, absolute.
+   * @param recipients Receives the key IDs.
+   * @return false when there are none to use (the user was told why).
+   */
+  auto recipientsForEntry(const QString &file, QStringList *recipients) -> bool;
+  /**
+   * @brief The file a copy of @p src to @p dest writes: like `pass cp`, into
+   * an existing folder with `.gpg` appended. Refused (the user told) when it
+   * is a link, the source itself, or taken and @p force is off.
+   * @param src The entry to copy.
+   * @param dest Where to, a file or a folder.
+   * @param force Whether an existing entry may be replaced.
+   * @return The file, or an empty string when refused.
+   */
+  auto copyDestination(const QString &src, const QString &dest, bool force)
+      -> QString;
+  /**
    * @brief Put the generation header on a list that is about to be signed:
    * reserve a generation above what this device accepted and what the
    * verified list on disk says, and bind the list to its folder, so no older
@@ -560,6 +579,26 @@ private:
    * @return false when something was reported that needs a human first.
    */
   auto recoverReencryptLeftovers(const QString &dir) -> bool;
+  /**
+   * @brief Remove a stale temporary a crashed run left, unless it was
+   * modified within the hour: on a shared store it may be another QtPass's
+   * write in flight under the same name.
+   * @param path The temporary, a regular file.
+   */
+  void dropStaleTemporary(const QString &path);
+  /**
+   * @brief Put a 1.8.x backup back in its entry's place when the entry is
+   * missing; report it when both exist (both are valid ciphertexts, the
+   * choice is the user's) or when the rename fails.
+   * @param path The `<entry>.reencrypt.bak` file.
+   * @return Whether nothing needs a human first.
+   */
+  auto restoreBackup(const QString &path) -> bool;
+  /**
+   * @brief Tell the user a leftover is not a regular file and was left.
+   * @param path The leftover.
+   */
+  void reportUnrestorable(const QString &path);
   /**
    * @brief Report the outcome of a run and emit endReencryptPath().
    * @param result Outcome produced by reencryptFiles().

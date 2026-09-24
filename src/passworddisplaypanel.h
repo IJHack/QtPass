@@ -14,6 +14,7 @@ class QGridLayout;
 class QBoxLayout;
 class QFrame;
 class QLabel;
+class QLayout;
 class QWidget;
 
 /**
@@ -125,6 +126,25 @@ private:
   void addOtpField(int position, const QString &otpConfig,
                    const AppSettings &s);
   auto createFieldFrame() -> QFrame *;
+  /**
+   * @brief Add the copy, QR and open-in-browser buttons a field gets, per
+   * the settings.
+   * @param layout The field's frame layout.
+   * @param field The field's name, trimmed.
+   * @param value Its value, trimmed.
+   * @param s Clipboard and qrencode settings.
+   */
+  void addActionButtons(QLayout *layout, const QString &field,
+                        const QString &value, const AppSettings &s);
+  /**
+   * @brief Add the password, hidden, with a button that shows it.
+   * @param layout The field's frame layout.
+   * @param field The field's name, trimmed.
+   * @param value The password.
+   * @param lineStyle The style for the value widget.
+   */
+  void addHiddenPassword(QLayout *layout, const QString &field,
+                         const QString &value, const QString &lineStyle);
   void applyFrameStyle(QFrame *frame) const;
 
   QGridLayout *m_grid;

@@ -46,6 +46,15 @@ class RealPass : public Pass {
    */
   void passMoveOrCopy(PROCESS id, const QString &subcommand, const QString &src,
                       const QString &dest, bool force);
+  /**
+   * @brief @p path as `pass` names it: relative to the store, without the
+   * `.gpg` pass appends itself.
+   * @param path The file or folder, absolute or relative to the working
+   *        directory.
+   * @param stripGpg Whether to drop a trailing `.gpg`.
+   * @return The store-relative name.
+   */
+  auto passName(const QString &path, bool stripGpg) const -> QString;
 
 public:
   /**

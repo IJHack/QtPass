@@ -63,6 +63,67 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   m_qtPass = new QtPass(this);
   restoreWindow();
+  connectBackends();
+
+  new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this, this,
+                &MainWindow::copyPasswordFromTreeview);
+
+  m_tree = new StoreTree(ui->treeView, this);
+  m_tree->setStore(QtPassSettings::getPassStore(Util::findPasswordStore()));
+  m_tree->setPass(QtPassSettings::getPass());
+  connect(ui->treeView, &QWidget::customContextMenuRequested, this,
+          &MainWindow::showContextMenu);
+  connect(ui->treeView, &DeselectableTreeView::emptyClicked, this,
+          &MainWindow::deselect);
+
+  initTextBrowser();
+
+  updateProfileBox();
+
+  initDisplayPanel();
+
+  QtPassSettings::getPass()->updateEnv();
+
+  // Install the search-box key filter once, not on every setUiElementsEnabled
+  // call.
+  ui->lineEdit->installEventFilter(this);
+  // Both live in Breeze's "tools area" and get its header palette; see the
+  // PaletteChange branch in eventFilter().
+  ui->toolBar->installEventFilter(this);
+  menuBar()->installEventFilter(this);
+
+  initTimers();
+
+  initToolBarButtons();
+  initStatusBar();
+  initProcessOutput();
+
+  ui->lineEdit->setClearButtonEnabled(true);
+  updateGrepButtonVisibility();
+
+  setUiElementsEnabled(true);
+
+  ui->lineEdit->setText(searchText);
+
+  // No QApplication::quit() here: before exec() it is a documented no-op.
+  // main() checks initSucceeded() and exits before show() instead.
+  m_qtPass->init();
+  // OK is not gated on Util::configIsValid(): an accepted configuration can
+  // still lack a .gpg-id, so ask again; only a cancel ends the loop.
+  while (!Util::configIsValid(QtPassSettings::load())) {
+    if (!config()) {
+      return;
+    }
+  }
+  m_freshStart = false;
+  m_initSucceeded = true;
+
+  // Initial focus is set in showEvent(): a 10 ms QTimer here could fire
+  // before the window was realised (queued ActivationChange, nested exec() in
+  // init()) and selectAll() segfaulted inside Qt (#1187, #1188).
+}
+
+void MainWindow::connectBackends() {
   connect(m_qtPass, &QtPass::outputReady, this,
           [this](const QString &html) { flashText(html, false, true); });
   connect(m_qtPass, &QtPass::operationFinished, this,
@@ -85,18 +146,9 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
           &MainWindow::reencryptProgress);
   connect(ipass, &ImitatePass::endReencryptPath, this,
           &MainWindow::endReencryptPath);
+}
 
-  new QShortcut(QKeySequence(QKeySequence::StandardKey::Copy), this, this,
-                &MainWindow::copyPasswordFromTreeview);
-
-  m_tree = new StoreTree(ui->treeView, this);
-  m_tree->setStore(QtPassSettings::getPassStore(Util::findPasswordStore()));
-  m_tree->setPass(QtPassSettings::getPass());
-  connect(ui->treeView, &QWidget::customContextMenuRequested, this,
-          &MainWindow::showContextMenu);
-  connect(ui->treeView, &DeselectableTreeView::emptyClicked, this,
-          &MainWindow::deselect);
-
+void MainWindow::initTextBrowser() {
   {
     const AppSettings s = QtPassSettings::load();
     if (s.useMonospace) {
@@ -113,9 +165,9 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   ui->textBrowser->setContextMenuPolicy(Qt::CustomContextMenu);
   connect(ui->textBrowser, &QWidget::customContextMenuRequested, this,
           &MainWindow::showBrowserContextMenu);
+}
 
-  updateProfileBox();
-
+void MainWindow::initDisplayPanel() {
   m_displayPanel = new PasswordDisplayPanel(
       ui->gridLayout, ui->verticalLayoutPassword, this, this);
   connect(m_displayPanel, &PasswordDisplayPanel::copyRequested,
@@ -128,8 +180,9 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
       onEdit();
     }
   });
+}
 
-  QtPassSettings::getPass()->updateEnv();
+void MainWindow::initTimers() {
   clearPanelTimer.setSingleShot(true);
   connect(&clearPanelTimer, &QTimer::timeout, this, [this]() { clearPanel(); });
 
@@ -137,14 +190,6 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   searchTimer.setSingleShot(true);
 
   connect(&searchTimer, &QTimer::timeout, this, &MainWindow::onTimeoutSearch);
-
-  // Install the search-box key filter once, not on every setUiElementsEnabled
-  // call.
-  ui->lineEdit->installEventFilter(this);
-  // Both live in Breeze's "tools area" and get its header palette; see the
-  // PaletteChange branch in eventFilter().
-  ui->toolBar->installEventFilter(this);
-  menuBar()->installEventFilter(this);
 
   // Safety net: if a backend operation disables the UI but never signals
   // completion, re-enable after a timeout so the window can't get stuck.
@@ -157,9 +202,9 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
     cancelOtpRequest();
     setUiElementsEnabled(true);
   });
+}
 
-  initToolBarButtons();
-  initStatusBar();
+void MainWindow::initProcessOutput() {
   m_processOutput = new ProcessOutputPanel(this);
   addDockWidget(Qt::BottomDockWidgetArea, m_processOutput);
   // After addDockWidget so our preference wins over any cached state
@@ -196,30 +241,6 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
               onProcessOutput(err, true, pid);
             }
           });
-
-  ui->lineEdit->setClearButtonEnabled(true);
-  updateGrepButtonVisibility();
-
-  setUiElementsEnabled(true);
-
-  ui->lineEdit->setText(searchText);
-
-  // No QApplication::quit() here: before exec() it is a documented no-op.
-  // main() checks initSucceeded() and exits before show() instead.
-  m_qtPass->init();
-  // OK is not gated on Util::configIsValid(): an accepted configuration can
-  // still lack a .gpg-id, so ask again; only a cancel ends the loop.
-  while (!Util::configIsValid(QtPassSettings::load())) {
-    if (!config()) {
-      return;
-    }
-  }
-  m_freshStart = false;
-  m_initSucceeded = true;
-
-  // Initial focus is set in showEvent(): a 10 ms QTimer here could fire
-  // before the window was realised (queued ActivationChange, nested exec() in
-  // init()) and selectAll() segfaulted inside Qt (#1187, #1188).
 }
 
 MainWindow::~MainWindow() {

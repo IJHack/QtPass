@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "pass.h"
+
 #include "gpgidgeneration.h"
 #include "gpgidsigner.h"
 #include "gpgkeystate.h"
@@ -16,6 +17,7 @@
 #include <QRandomGenerator>
 #include <QRegularExpression>
 #include <QTextStream>
+#include <optional>
 #include <utility>
 
 #include "qtpasslogging.h"
@@ -639,6 +641,27 @@ auto isAtOrUnder(const QString &path, const QString &dir,
 #endif
   return path.compare(dir, cs) == 0 || path.startsWith(dirPrefix, cs);
 }
+
+/// Walk up from @p dir to the first folder inside the store that has its own
+/// .gpg-id; nothing when none does. A link under the name is not the
+/// folder's .gpg-id: whoever planted it chose the recipients elsewhere, so
+/// the parent's list applies instead.
+auto nearestGpgId(QDir dir, const QString &storeDir, const QString &storePrefix)
+    -> std::optional<QString> {
+  while (dir.exists() && isAtOrUnder(QDir::cleanPath(dir.absolutePath()),
+                                     storeDir, storePrefix)) {
+    const QFileInfo candidate(dir.absoluteFilePath(".gpg-id"));
+    if (candidate.exists() && !candidate.isSymLink() &&
+        !candidate.isJunction()) {
+      return candidate.absoluteFilePath();
+    }
+    if (!dir.cdUp()) {
+      break;
+    }
+  }
+  return std::nullopt;
+}
+
 } // namespace
 
 auto Pass::refuseLinkedPath(const QString &path, bool includeSelf) -> bool {
@@ -681,30 +704,50 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
   // directory) wants its own list; an entry wants its folder's.
   const bool isFolder =
       normalizedFile.endsWith(QLatin1Char('/')) || QFileInfo(fullPath).isDir();
-  QDir gpgIdDir(isFolder ? fullPath : QFileInfo(fullPath).absolutePath());
-  // QDir::cleanPath() always normalises to forward slashes, so use '/'
-  // here rather than QDir::separator() (which returns '\\' on Windows).
-  bool found = false;
-  while (gpgIdDir.exists()) {
-    QString currentPath = QDir::cleanPath(gpgIdDir.absolutePath());
-    if (!isAtOrUnder(currentPath, storeDir, storePrefix)) {
-      break;
-    }
-    // A link under the name is not the folder's .gpg-id: whoever planted it
-    // chose the recipients elsewhere. The parent's list applies instead.
-    const QFileInfo candidate(gpgIdDir.absoluteFilePath(".gpg-id"));
-    if (candidate.exists() && !candidate.isSymLink() &&
-        !candidate.isJunction()) {
-      found = true;
-      break;
-    }
-    if (!gpgIdDir.cdUp()) {
-      break;
-    }
-  }
-  return found ? gpgIdDir.absoluteFilePath(".gpg-id")
-               : QDir(normalizedStore).filePath(".gpg-id");
+  const QDir start(isFolder ? fullPath : QFileInfo(fullPath).absolutePath());
+  return nearestGpgId(start, storeDir, storePrefix)
+      .value_or(QDir(normalizedStore).filePath(".gpg-id"));
 }
+
+namespace {
+
+/// What the Users dialog may preselect for a verified list, given what the
+/// generation record says about it.
+auto judgedRecipients(GpgIdGeneration::Verdict verdict,
+                      const QByteArray &contents, const QString &gpgIdPath,
+                      const QString &why) -> Pass::RecipientsForEditing {
+  using RecipientsForEditing = Pass::RecipientsForEditing;
+  RecipientsForEditing result;
+  switch (verdict) {
+  case GpgIdGeneration::Verdict::Accepted:
+    result.state = RecipientsForEditing::State::Verified;
+    result.recipients = Pass::parseRecipients(contents, gpgIdPath);
+    break;
+  case GpgIdGeneration::Verdict::Rollback:
+    // Authentic and this folder's, only older: the recovery goes through
+    // this dialog, so it is preselected, with the reason in view.
+    result.state = RecipientsForEditing::State::VerifiedRollback;
+    result.recipients = Pass::parseRecipients(contents, gpgIdPath);
+    result.warning = why;
+    break;
+  case GpgIdGeneration::Verdict::Unbound:
+  case GpgIdGeneration::Verdict::Conflict:
+  case GpgIdGeneration::Verdict::WrongFolder:
+  case GpgIdGeneration::Verdict::Malformed:
+  case GpgIdGeneration::Verdict::RecordUnavailable:
+    // Signed, but not shown to be this folder's list, not a list to trust,
+    // or nothing to judge it by: preselecting it would sign it in.
+    result.state = RecipientsForEditing::State::Rejected;
+    result.warning =
+        Pass::tr("%1 Nothing is preselected: saving would sign whatever is "
+                 "in it. Select the recipients yourself.")
+            .arg(why);
+    break;
+  }
+  return result;
+}
+
+} // namespace
 
 auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
     -> RecipientsForEditing {
@@ -736,33 +779,9 @@ auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
     return result;
   }
   QString why;
-  switch (GpgIdGeneration::accept(gpgIdPath, contents, passStore, &why)) {
-  case GpgIdGeneration::Verdict::Accepted:
-    result.state = RecipientsForEditing::State::Verified;
-    result.recipients = parseRecipients(contents, gpgIdPath);
-    break;
-  case GpgIdGeneration::Verdict::Rollback:
-    // Authentic and this folder's, only older: the recovery goes through
-    // this dialog, so it is preselected, with the reason in view.
-    result.state = RecipientsForEditing::State::VerifiedRollback;
-    result.recipients = parseRecipients(contents, gpgIdPath);
-    result.warning = why;
-    break;
-  case GpgIdGeneration::Verdict::Unbound:
-  case GpgIdGeneration::Verdict::Conflict:
-  case GpgIdGeneration::Verdict::WrongFolder:
-  case GpgIdGeneration::Verdict::Malformed:
-  case GpgIdGeneration::Verdict::RecordUnavailable:
-    // Signed, but not shown to be this folder's list, not a list to trust,
-    // or nothing to judge it by: preselecting it would sign it in.
-    result.state = RecipientsForEditing::State::Rejected;
-    result.warning =
-        tr("%1 Nothing is preselected: saving would sign whatever is in it. "
-           "Select the recipients yourself.")
-            .arg(why);
-    break;
-  }
-  return result;
+  const GpgIdGeneration::Verdict verdict =
+      GpgIdGeneration::accept(gpgIdPath, contents, passStore, &why);
+  return judgedRecipients(verdict, contents, gpgIdPath, why);
 }
 
 auto Pass::getRecipientList(const QString &for_file, const QString &passStore)

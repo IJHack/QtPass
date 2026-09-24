@@ -58,6 +58,30 @@ auto isSshAgentReachable(const QString &candidate) -> bool {
   // also treated as unreachable (e.g. ssh-add not on PATH).
   return exitCode == 0 || exitCode == 1;
 }
+/// Ask @p program for a socket and adopt it when an agent answers there;
+/// @p source names it in the log. Whether a socket was adopted.
+auto adoptSocketFrom(const QString &program, const QStringList &args,
+                     const char *source) -> bool {
+  QString out;
+  QString err;
+  if (Executor::executeBlocking(program, args, &out, &err) != 0) {
+    return false;
+  }
+  const QString socket = out.trimmed();
+  if (socket.isEmpty()) {
+    return false;
+  }
+  if (!isSshAgentReachable(socket)) {
+    qCDebug(lcQtPass) << "SshAuthSock::initialise():" << source << "reported"
+                      << socket << "but ssh-add -l rejected it; not adopting";
+    return false;
+  }
+  qputenv("SSH_AUTH_SOCK", socket.toUtf8());
+  qCDebug(lcQtPass) << "SshAuthSock::initialise(): set from" << source << ":"
+                    << socket;
+  return true;
+}
+
 } // namespace
 
 auto SshAuthSock::overrideStatus(const QString &path) -> OverrideStatus {
@@ -114,43 +138,17 @@ void SshAuthSock::initialise(const QString &override) {
   }
 
   // Auto-probe via gpgconf (canonical for gpg-agent's SSH support).
-  QString out;
-  QString err;
-  if (Executor::executeBlocking(
+  if (adoptSocketFrom(
           QStringLiteral("gpgconf"),
           {QStringLiteral("--list-dirs"), QStringLiteral("agent-ssh-socket")},
-          &out, &err) == 0) {
-    const QString socket = out.trimmed();
-    if (!socket.isEmpty() && isSshAgentReachable(socket)) {
-      qputenv("SSH_AUTH_SOCK", socket.toUtf8());
-      qCDebug(lcQtPass) << "SshAuthSock::initialise(): set from gpgconf:"
-                        << socket;
-      return;
-    }
-    if (!socket.isEmpty()) {
-      qCDebug(lcQtPass) << "SshAuthSock::initialise(): gpgconf reported"
-                        << socket << "but ssh-add -l rejected it; not adopting";
-    }
+          "gpgconf")) {
+    return;
   }
-
 #ifdef Q_OS_MACOS
   // On macOS, GUI-launched apps may have SSH_AUTH_SOCK in launchd's
   // per-session environment but not in the inherited process env.
-  out.clear();
-  err.clear();
-  if (Executor::executeBlocking(
-          QStringLiteral("launchctl"),
-          {QStringLiteral("getenv"), QStringLiteral("SSH_AUTH_SOCK")}, &out,
-          &err) == 0) {
-    const QString socket = out.trimmed();
-    if (!socket.isEmpty() && isSshAgentReachable(socket)) {
-      qputenv("SSH_AUTH_SOCK", socket.toUtf8());
-      qCDebug(lcQtPass) << "SshAuthSock::initialise(): set from launchctl:"
-                        << socket;
-    } else if (!socket.isEmpty()) {
-      qCDebug(lcQtPass) << "SshAuthSock::initialise(): launchctl reported"
-                        << socket << "but ssh-add -l rejected it; not adopting";
-    }
-  }
+  adoptSocketFrom(QStringLiteral("launchctl"),
+                  {QStringLiteral("getenv"), QStringLiteral("SSH_AUTH_SOCK")},
+                  "launchctl");
 #endif
 }

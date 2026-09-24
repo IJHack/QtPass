@@ -355,6 +355,27 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter) {
 
 void UsersDialog::on_checkBox_clicked() { populateList(ui->lineEdit->text()); }
 
+void UsersDialog::selectImportedKey(const QString &importedKey) {
+  // Suffixes shorter than 16 characters would give false positives.
+  const auto sameKey = [&importedKey](const QString &keyId) {
+    return (keyId.length() >= 16 &&
+            importedKey.endsWith(keyId, Qt::CaseInsensitive)) ||
+           (importedKey.length() >= 16 &&
+            keyId.endsWith(importedKey, Qt::CaseInsensitive));
+  };
+  // The stored key_id, not the item text.
+  for (int i = 0; i < ui->listWidget->count(); ++i) {
+    QListWidgetItem *item = ui->listWidget->item(i);
+    bool ok = false;
+    const int idx = item != nullptr ? item->data(Qt::UserRole).toInt(&ok) : -1;
+    if (ok && idx >= 0 && idx < m_userList.size() &&
+        !m_userList[idx].key_id.isEmpty() && sameKey(m_userList[idx].key_id)) {
+      ui->listWidget->setCurrentItem(item);
+      return;
+    }
+  }
+}
+
 void UsersDialog::on_importKeyButton_clicked() {
   ImportKeyDialog dialog(m_gpgExe, this);
   if (dialog.exec() != QDialog::Accepted) {
@@ -380,29 +401,5 @@ void UsersDialog::on_importKeyButton_clicked() {
   }
   populateList(QString());
 
-  // Match the stored key_id, not the item text. gpg reports a 16-char long
-  // id (IMPORTED) or a 40-char fingerprint (IMPORT_OK): compare both ways.
-  for (int i = 0; i < ui->listWidget->count(); ++i) {
-    QListWidgetItem *item = ui->listWidget->item(i);
-    if (item == nullptr) {
-      continue;
-    }
-    bool ok = false;
-    const int idx = item->data(Qt::UserRole).toInt(&ok);
-    if (!ok || idx < 0 || idx >= m_userList.size()) {
-      continue;
-    }
-    const QString &keyId = m_userList[idx].key_id;
-    if (keyId.isEmpty()) {
-      continue;
-    }
-    // Suffixes shorter than 16 chars would give false positives.
-    if ((keyId.length() >= 16 &&
-         importedKey.endsWith(keyId, Qt::CaseInsensitive)) ||
-        (importedKey.length() >= 16 &&
-         keyId.endsWith(importedKey, Qt::CaseInsensitive))) {
-      ui->listWidget->setCurrentItem(item);
-      break;
-    }
-  }
+  selectImportedKey(importedKey);
 }

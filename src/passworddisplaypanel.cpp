@@ -17,6 +17,7 @@
 #include <QHBoxLayout>
 #include <QIcon>
 #include <QLabel>
+#include <QLayout>
 #include <QLineEdit>
 #include <QMouseEvent>
 #include <QPalette>
@@ -98,120 +99,139 @@ void PasswordDisplayPanel::displayFields(const QString &password,
   m_container->setSpacing(m_grid->count() == 0 ? 0 : 6);
 }
 
+namespace {
+
+// Scope every rule to the widget type so the transparent background does not
+// cascade into the field's standard context menu (a child QMenu), which would
+// otherwise render transparent too.
+const char kButtonStyle[] =
+    "QPushButton { border-style: none; background: transparent; padding: 0; "
+    "margin: 0; icon-size: 16px; color: inherit; }";
+
+// 26px matches the action-button visual height for consistent alignment.
+constexpr int kFieldHeight = 26;
+
+/// A read-only, one-line browser showing @p value. Only launchable http(s)
+/// URLs become anchors (the open-in-browser button's predicate):
+/// setOpenExternalLinks() would hand ssh://, ftp:// or user:pass@ URLs
+/// straight to the OS URL handler on click.
+auto valueBrowser(const QString &field, const QString &value,
+                  const QString &lineStyle) -> QTextBrowser * {
+  auto *browser = new QTextBrowser();
+  browser->setOpenExternalLinks(true);
+  browser->setOpenLinks(true);
+  browser->setMaximumHeight(kFieldHeight);
+  browser->setMinimumHeight(kFieldHeight);
+  browser->setSizePolicy(
+      QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
+  browser->setObjectName(field);
+  bool linked = false;
+  const QString linkedText = Util::linkifyUrls(value, &linked);
+  if (linked) {
+    // Always HTML here: the text is escaped and carries anchor tags, so do
+    // not leave the interpretation to setText()'s auto-detection.
+    browser->setHtml(linkedText);
+  } else {
+    // Plain text: escaping plus setText() showed `a&b` as `a&amp;b` unless
+    // the value happened to contain a '<'.
+    browser->setPlainText(value);
+  }
+  browser->setReadOnly(true);
+  browser->setStyleSheet(lineStyle);
+  browser->setContentsMargins(0, 0, 0, 0);
+  return browser;
+}
+
+/// An "open in browser" button for @p url, already validated.
+auto urlButton(const QString &url, QWidget *parent) -> QPushButton * {
+  auto *button = new QPushButton(parent);
+  button->setIcon(QIcon::fromTheme(QStringLiteral("applications-internet"),
+                                   QIcon(":/icons/open-url.svg")));
+  // Escape for the tooltip only; the launched URL stays the validated value.
+  // <qt> forces rich text: auto-detection would show `&amp;` literally, and
+  // plain text misreads a URL containing `&lt;`. Rich text wraps, breaking
+  // the URL at `/` and `?`; white-space:nowrap keeps it on one line (<nobr>
+  // is not enough: Qt only makes its spaces non-breaking).
+  button->setToolTip(
+      QStringLiteral("<qt style=\"white-space:nowrap\">%1</qt>")
+          .arg(QObject::tr("Open %1 in browser").arg(url.toHtmlEscaped())));
+  button->setStyleSheet(QString::fromLatin1(kButtonStyle));
+  button->setCursor(Qt::PointingHandCursor);
+  QObject::connect(button, &QPushButton::clicked, button, [url]() {
+    // Re-validate: never hand an unvalidated string to the OS URL handler.
+    if (Util::isLaunchableWebUrl(url)) {
+      QDesktopServices::openUrl(QUrl(url));
+    }
+  });
+  return button;
+}
+
+} // namespace
+
+void PasswordDisplayPanel::addActionButtons(QLayout *layout,
+                                            const QString &field,
+                                            const QString &value,
+                                            const AppSettings &s) {
+  const QString buttonStyle = QString::fromLatin1(kButtonStyle);
+  if (s.clipBoardType != Enums::CLIPBOARD_NEVER) {
+    auto *copy = new QPushButtonWithClipboard(value, m_widgetParent);
+    connect(copy, &QPushButtonWithClipboard::clicked, this,
+            &PasswordDisplayPanel::copyRequested);
+    copy->setStyleSheet(buttonStyle);
+    layout->addWidget(copy);
+  }
+  if (s.useQrencode) {
+    auto *qr = new QPushButtonAsQRCode(value, m_widgetParent);
+    connect(qr, &QPushButtonAsQRCode::clicked, this,
+            &PasswordDisplayPanel::qrRequested);
+    qr->setStyleSheet(buttonStyle);
+    layout->addWidget(qr);
+  }
+  // Never on the password field: its secret must not reach a tooltip or the
+  // browser.
+  if (field != QObject::tr("Password") && Util::isLaunchableWebUrl(value)) {
+    layout->addWidget(urlButton(value, m_widgetParent));
+  }
+}
+
+void PasswordDisplayPanel::addHiddenPassword(QLayout *layout,
+                                             const QString &field,
+                                             const QString &value,
+                                             const QString &lineStyle) {
+  auto *passwordLineEdit = new QLineEdit();
+  passwordLineEdit->setObjectName(field);
+  passwordLineEdit->setText(value);
+  passwordLineEdit->setReadOnly(true);
+  passwordLineEdit->setStyleSheet(lineStyle);
+  passwordLineEdit->setContentsMargins(0, 0, 0, 0);
+  passwordLineEdit->setEchoMode(QLineEdit::Password);
+  auto *showButton =
+      new QPushButtonShowPassword(passwordLineEdit, m_widgetParent);
+  showButton->setStyleSheet(QString::fromLatin1(kButtonStyle));
+  showButton->setContentsMargins(0, 0, 0, 0);
+  layout->addWidget(showButton);
+  layout->addWidget(passwordLineEdit);
+}
+
 void PasswordDisplayPanel::addField(int position, const QString &field,
                                     const QString &value,
                                     const AppSettings &s) {
-  QString trimmedField = field.trimmed();
-  QString trimmedValue = value.trimmed();
-
-  // Scope every rule to the widget type so the transparent background does not
-  // cascade into the field's standard context menu (a child QMenu), which would
-  // otherwise render transparent too.
-  const QString buttonStyle =
-      "QPushButton { border-style: none; background: transparent; padding: 0; "
-      "margin: 0; icon-size: 16px; color: inherit; }";
-
-  auto *frame = createFieldFrame();
-  QHBoxLayout *frameLayout = qobject_cast<QHBoxLayout *>(frame->layout());
-  if (s.clipBoardType != Enums::CLIPBOARD_NEVER) {
-    auto *fieldLabel =
-        new QPushButtonWithClipboard(trimmedValue, m_widgetParent);
-    connect(fieldLabel, &QPushButtonWithClipboard::clicked, this,
-            &PasswordDisplayPanel::copyRequested);
-
-    fieldLabel->setStyleSheet(buttonStyle);
-    frameLayout->addWidget(fieldLabel);
-  }
-
-  if (s.useQrencode) {
-    auto *qrbutton = new QPushButtonAsQRCode(trimmedValue, m_widgetParent);
-    connect(qrbutton, &QPushButtonAsQRCode::clicked, this,
-            &PasswordDisplayPanel::qrRequested);
-    qrbutton->setStyleSheet(buttonStyle);
-    frameLayout->addWidget(qrbutton);
-  }
-
-  // An explicit "open in browser" button for a safe http(s) URL, never on
-  // the password field: its secret must not reach a tooltip or the browser.
-  if (trimmedField != QObject::tr("Password") &&
-      Util::isLaunchableWebUrl(trimmedValue)) {
-    auto *urlButton = new QPushButton(m_widgetParent);
-    urlButton->setIcon(QIcon::fromTheme(QStringLiteral("applications-internet"),
-                                        QIcon(":/icons/open-url.svg")));
-    // Escape for the tooltip only; the launched URL stays the validated value.
-    // <qt> forces rich text: auto-detection would show `&amp;` literally, and
-    // plain text misreads a URL containing `&lt;`. Rich text wraps, breaking
-    // the URL at `/` and `?`; white-space:nowrap keeps it on one line (<nobr>
-    // is not enough: Qt only makes its spaces non-breaking).
-    urlButton->setToolTip(
-        QStringLiteral("<qt style=\"white-space:nowrap\">%1</qt>")
-            .arg(QObject::tr("Open %1 in browser")
-                     .arg(trimmedValue.toHtmlEscaped())));
-    urlButton->setStyleSheet(buttonStyle);
-    urlButton->setCursor(Qt::PointingHandCursor);
-    connect(urlButton, &QPushButton::clicked, this, [trimmedValue]() {
-      // Re-validate: never hand an unvalidated string to the OS URL handler.
-      if (Util::isLaunchableWebUrl(trimmedValue)) {
-        QDesktopServices::openUrl(QUrl(trimmedValue));
-      }
-    });
-    frame->layout()->addWidget(urlButton);
-  }
-
+  const QString trimmedField = field.trimmed();
+  const QString trimmedValue = value.trimmed();
+  QFrame *frame = createFieldFrame();
+  addActionButtons(frame->layout(), trimmedField, trimmedValue, s);
   const QString lineStyle =
       s.useMonospace
           ? "QLineEdit, QTextBrowser { border-style: none; background: "
             "transparent; font-family: monospace; }"
           : "QLineEdit, QTextBrowser { border-style: none; background: "
             "transparent; }";
-
-  // 26px matches the action-button visual height for consistent alignment.
-  constexpr int fieldHeight = 26;
   if (s.hidePassword && trimmedField == QObject::tr("Password")) {
-    auto *passwordLineEdit = new QLineEdit();
-    passwordLineEdit->setObjectName(trimmedField);
-    passwordLineEdit->setText(trimmedValue);
-    passwordLineEdit->setReadOnly(true);
-    passwordLineEdit->setStyleSheet(lineStyle);
-    passwordLineEdit->setContentsMargins(0, 0, 0, 0);
-    passwordLineEdit->setEchoMode(QLineEdit::Password);
-    auto *showButton =
-        new QPushButtonShowPassword(passwordLineEdit, m_widgetParent);
-    showButton->setStyleSheet(buttonStyle);
-    showButton->setContentsMargins(0, 0, 0, 0);
-    frame->layout()->addWidget(showButton);
-    frame->layout()->addWidget(passwordLineEdit);
+    addHiddenPassword(frame->layout(), trimmedField, trimmedValue, lineStyle);
   } else {
-    auto *contentTextBrowser = new QTextBrowser();
-    contentTextBrowser->setOpenExternalLinks(true);
-    contentTextBrowser->setOpenLinks(true);
-    contentTextBrowser->setMaximumHeight(fieldHeight);
-    contentTextBrowser->setMinimumHeight(fieldHeight);
-    contentTextBrowser->setSizePolicy(
-        QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
-    contentTextBrowser->setObjectName(trimmedField);
-    {
-      // Only launchable http(s) URLs become anchors (the button's predicate):
-      // setOpenExternalLinks() would hand ssh://, ftp:// or user:pass@ URLs
-      // straight to the OS URL handler on click.
-      bool linked = false;
-      const QString linkedText = Util::linkifyUrls(trimmedValue, &linked);
-      if (!linked) {
-        // Plain text: escaping plus setText() showed `a&b` as `a&amp;b`
-        // unless the value happened to contain a '<'.
-        contentTextBrowser->setPlainText(trimmedValue);
-      } else {
-        // Always HTML here: the text is escaped and carries anchor tags, so
-        // do not leave the interpretation to setText()'s auto-detection.
-        contentTextBrowser->setHtml(linkedText);
-      }
-    }
-    contentTextBrowser->setReadOnly(true);
-    contentTextBrowser->setStyleSheet(lineStyle);
-    contentTextBrowser->setContentsMargins(0, 0, 0, 0);
-    frame->layout()->addWidget(contentTextBrowser);
+    frame->layout()->addWidget(
+        valueBrowser(trimmedField, trimmedValue, lineStyle));
   }
-
   addRow(position, new QLabel(trimmedField), frame);
 }
 
