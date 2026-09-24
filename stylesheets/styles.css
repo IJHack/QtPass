@@ -493,6 +493,7 @@ header ul a:active {
 .hero-brand .version:focus-visible {
   color: var(--accent-strong);
   border-color: var(--accent);
+  margin: 0;
 }
 .hero h2 {
   margin: 0 0 0.45em;
@@ -518,7 +519,6 @@ header ul a:active {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.4rem 1.1rem;
-  margin: 0;
 }
 .hero-platform .compatible {
   height: clamp(2.5rem, 4.5vw, 3.4rem);
