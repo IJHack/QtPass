@@ -69,13 +69,61 @@ auto recordPath() -> QString {
          kRecordName;
 }
 
+/// One list's entry in the record, or nothing when it is malformed. The
+/// generation travels as a string: JSON numbers are doubles, and the grammar
+/// admits 18 digits.
+auto recordEntry(const QJsonValue &value) -> std::optional<Entry> {
+  if (!value.isObject()) {
+    return std::nullopt;
+  }
+  const QJsonObject item = value.toObject();
+  const QString generation = item.value(QLatin1String("generation")).toString();
+  if (generation.isEmpty() || generation.size() > kMaxDigits) {
+    return std::nullopt;
+  }
+  for (const QChar c : generation) {
+    if (c < QLatin1Char('0') || c > QLatin1Char('9')) {
+      return std::nullopt;
+    }
+  }
+  Entry entry;
+  entry.generation = generation.toLongLong();
+  entry.digest = item.value(QLatin1String("sha256")).toString();
+  return entry;
+}
+
+/// The record's entries from its bytes, or nothing when any part of it is
+/// not what QtPass writes.
+auto parseRecord(const QByteArray &bytes) -> std::optional<Entries> {
+  QJsonParseError parse{};
+  const QJsonDocument doc = QJsonDocument::fromJson(bytes, &parse);
+  if (parse.error != QJsonParseError::NoError || !doc.isObject()) {
+    return std::nullopt;
+  }
+  const QJsonObject root = doc.object();
+  const QJsonValue lists = root.value(QLatin1String("lists"));
+  if (root.value(QLatin1String("format")).toInt() != kRecordFormat ||
+      !lists.isObject()) {
+    return std::nullopt;
+  }
+  Entries entries;
+  const QJsonObject byKey = lists.toObject();
+  for (auto it = byKey.constBegin(); it != byKey.constEnd(); ++it) {
+    const std::optional<Entry> entry = recordEntry(it.value());
+    if (!entry) {
+      return std::nullopt;
+    }
+    entries.insert(it.key(), *entry);
+  }
+  return entries;
+}
+
 /// The record as on disk: nothing where there is no file yet, the entries
 /// otherwise; nothing with @p error set when the file cannot be read or is
 /// not a record ("unknown", never "never seen").
 auto loadRecord(const QString &path, QString *error) -> std::optional<Entries> {
-  Entries entries;
   if (!QFileInfo::exists(path)) {
-    return entries;
+    return Entries{};
   }
   QFile file(path);
   if (!file.open(QIODevice::ReadOnly)) {
@@ -87,48 +135,15 @@ auto loadRecord(const QString &path, QString *error) -> std::optional<Entries> {
                    .arg(path);
     return std::nullopt;
   }
-  const auto unreadable = [&] {
-    if (error)
-      *error = QCoreApplication::translate(
-                   "GpgIdGeneration",
-                   "The generation record of the recipient lists, %1, is not "
-                   "readable. Signed recipient lists are not accepted until "
-                   "it is repaired or removed (which forgets what was accepted "
-                   "before).")
-                   .arg(path);
-    return std::nullopt;
-  };
-  QJsonParseError parse{};
-  const QJsonDocument doc = QJsonDocument::fromJson(file.readAll(), &parse);
-  if (parse.error != QJsonParseError::NoError || !doc.isObject()) {
-    return unreadable();
-  }
-  const QJsonObject root = doc.object();
-  if (root.value(QLatin1String("format")).toInt() != kRecordFormat ||
-      !root.value(QLatin1String("lists")).isObject()) {
-    return unreadable();
-  }
-  const QJsonObject lists = root.value(QLatin1String("lists")).toObject();
-  for (auto it = lists.constBegin(); it != lists.constEnd(); ++it) {
-    if (!it.value().isObject()) {
-      return unreadable();
-    }
-    const QJsonObject item = it.value().toObject();
-    // The generation travels as a string: JSON numbers are doubles, and the
-    // grammar admits 18 digits.
-    const QString generation =
-        item.value(QLatin1String("generation")).toString();
-    bool ok = !generation.isEmpty() && generation.size() <= kMaxDigits;
-    for (const QChar c : generation) {
-      ok = ok && c >= QLatin1Char('0') && c <= QLatin1Char('9');
-    }
-    if (!ok) {
-      return unreadable();
-    }
-    Entry entry;
-    entry.generation = generation.toLongLong();
-    entry.digest = item.value(QLatin1String("sha256")).toString();
-    entries.insert(it.key(), entry);
+  std::optional<Entries> entries = parseRecord(file.readAll());
+  if (!entries && error) {
+    *error = QCoreApplication::translate(
+                 "GpgIdGeneration",
+                 "The generation record of the recipient lists, %1, is not "
+                 "readable. Signed recipient lists are not accepted until "
+                 "it is repaired or removed (which forgets what was accepted "
+                 "before).")
+                 .arg(path);
   }
   return entries;
 }

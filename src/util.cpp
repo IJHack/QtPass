@@ -16,6 +16,8 @@
 #include <QTemporaryFile>
 #include <QUrl>
 
+#include <optional>
+
 #ifdef Q_OS_WIN
 #include <fcntl.h>
 #include <io.h>
@@ -584,90 +586,115 @@ auto identityOf(const QFileDevice &file) -> FileIdentity {
 #endif
 }
 
+/// Put @p text in @p error when there is one; false, for `return fail(...)`.
+auto fail(QString *error, const QString &text) -> bool {
+  if (error != nullptr) {
+    *error = text;
+  }
+  return false;
+}
+
+/// A filled, synced temporary next to its destination.
+struct Staged {
+  QString path;
+  FileIdentity identity;
+};
+
+/**
+ * @brief Create the temporary next to @p path (opaque name, exclusive,
+ * owner-only), fill it through its handle and sync it. The QTemporaryFile
+ * goes out of scope before the caller renames: it keeps its handle open for
+ * as long as it lives, and Windows does not rename an open file.
+ */
+auto stageNextTo(const QString &path, const Util::Filler &fill, QString *why)
+    -> std::optional<Staged> {
+  Staged staged;
+  {
+    QTemporaryFile file(QFileInfo(path).path() +
+                        QStringLiteral("/.qtpass-XXXXXX.tmp"));
+    file.setAutoRemove(false);
+    if (!file.open()) {
+      *why = QCoreApplication::translate(
+                 "Util", "Cannot create a temporary file next to %1: %2")
+                 .arg(path, file.errorString());
+      return std::nullopt;
+    }
+    staged.path = file.fileName();
+    // Owner-only: a .gpg-id names the keys a store is encrypted to, an
+    // entry is an entry. QTemporaryFile creates 0600 already; say so for
+    // platforms where it may not.
+    file.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
+    *why = fill(file);
+    if (why->isEmpty() && !Util::syncToDisk(file)) {
+      *why = QCoreApplication::translate("Util", "Cannot write %1: %2")
+                 .arg(path, file.errorString());
+    }
+    staged.identity = identityOf(file);
+  }
+  if (!why->isEmpty()) {
+    QFile::remove(staged.path);
+    return std::nullopt;
+  }
+  return staged;
+}
+
+/// Why replaceFile() could not put the temporary under @p path.
+auto placementError(const QString &path, bool replace) -> QString {
+  if (replace) {
+    return QCoreApplication::translate("Util", "Failed to replace %1.")
+        .arg(path);
+  }
+  const QFileInfo taken(path);
+  return taken.exists() || taken.isSymLink()
+             ? QCoreApplication::translate("Util", "%1 already exists.")
+                   .arg(path)
+             : QCoreApplication::translate("Util", "Failed to write %1.")
+                   .arg(path);
+}
+
+/**
+ * @brief Whether what is under @p path is the file that was filled: not a
+ * link, and not another file (a hard link to something of the user's, say)
+ * swapped in under the temporary's name. Opened without following, compared
+ * by identity; only two known identities can prove a swap, otherwise every
+ * write on such a store would be reported as tampering.
+ */
+auto isTheFileWritten(const QString &path, const FileIdentity &written)
+    -> bool {
+  QFile placed;
+  if (!Util::openRegularFile(path, placed)) {
+    return false;
+  }
+  const FileIdentity there = identityOf(placed);
+  if (!written.known || !there.known) {
+    qCWarning(lcQtPass) << "Cannot tell whether" << path
+                        << "is the file that was written here";
+    return true;
+  }
+  return there == written;
+}
+
 } // namespace
 
 auto Util::stageFileReplacing(const QString &path, bool replace,
                               const Filler &fill, QString *error) -> bool {
-  QString stagedPath;
   QString why;
-  FileIdentity written;
-  {
-    // The QTemporaryFile goes out of scope before the rename: it keeps its
-    // handle open for as long as it lives, also after close(), and Windows
-    // does not rename an open file.
-    QTemporaryFile staged(QFileInfo(path).path() +
-                          QStringLiteral("/.qtpass-XXXXXX.tmp"));
-    staged.setAutoRemove(false);
-    if (!staged.open()) {
-      if (error)
-        *error = QCoreApplication::translate(
-                     "Util", "Cannot create a temporary file next to %1: %2")
-                     .arg(path, staged.errorString());
-      return false;
-    }
-    stagedPath = staged.fileName();
-    // Owner-only: a .gpg-id names the keys a store is encrypted to, an
-    // entry is an entry. QTemporaryFile creates 0600 already; say so for
-    // platforms where it may not.
-    staged.setPermissions(QFile::ReadOwner | QFile::WriteOwner);
-    why = fill(staged);
-    if (why.isEmpty() && !syncToDisk(staged)) {
-      why = QCoreApplication::translate("Util", "Cannot write %1: %2")
-                .arg(path, staged.errorString());
-    }
-    written = identityOf(staged);
+  const std::optional<Staged> staged = stageNextTo(path, fill, &why);
+  if (!staged) {
+    return fail(error, why);
   }
-  if (!why.isEmpty()) {
-    QFile::remove(stagedPath);
-    if (error)
-      *error = why;
-    return false;
+  if (!replaceFile(staged->path, path, replace)) {
+    QFile::remove(staged->path);
+    return fail(error, placementError(path, replace));
   }
-  if (!replaceFile(stagedPath, path, replace)) {
-    QFile::remove(stagedPath);
-    if (error) {
-      const QFileInfo taken(path);
-      if (replace) {
-        *error = QCoreApplication::translate("Util", "Failed to replace %1.")
-                     .arg(path);
-      } else if (taken.exists() || taken.isSymLink()) {
-        *error =
-            QCoreApplication::translate("Util", "%1 already exists.").arg(path);
-      } else {
-        *error = QCoreApplication::translate("Util", "Failed to write %1.")
-                     .arg(path);
-      }
-    }
-    return false;
-  }
-  // What is under the name must be the file that was filled: not a link, and
-  // not another file (e.g. a hard link to the user's) swapped in under the
-  // temporary's name. Opened without following, compared by identity. A
-  // mismatch is reported and left: removing by name could take another
+  // A mismatch is reported and left: removing by name could take another
   // writer's file.
-  QFile placed;
-  if (!openRegularFile(path, placed)) {
-    if (error)
-      *error =
-          QCoreApplication::translate(
-              "Util", "%1 was swapped for another file while it was written.")
-              .arg(path);
-    return false;
-  }
-  const FileIdentity there = identityOf(placed);
-  // Only two known identities can prove a swap; otherwise the write stands,
-  // or every write on such a store would be reported as tampering.
-  if (written.known && there.known && !(there == written)) {
-    if (error)
-      *error =
-          QCoreApplication::translate(
-              "Util", "%1 was swapped for another file while it was written.")
-              .arg(path);
-    return false;
-  }
-  if (!written.known || !there.known) {
-    qCWarning(lcQtPass) << "Cannot tell whether" << path
-                        << "is the file that was written here";
+  if (!isTheFileWritten(path, staged->identity)) {
+    return fail(
+        error,
+        QCoreApplication::translate(
+            "Util", "%1 was swapped for another file while it was written.")
+            .arg(path));
   }
   return true;
 }
@@ -716,6 +743,36 @@ auto Util::copyFileReplacing(const QString &src, const QString &dst,
       error);
 }
 
+namespace {
+
+/// Remove one directory entry that is not a real directory: a link goes as
+/// the entry itself, never its target (a junction or a directory symlink on
+/// Windows is a directory entry and goes with rmdir); a read-only file gets
+/// write access and one more try, as QDir::removeRecursively() does.
+auto removeEntry(const QFileInfo &entry) -> bool {
+  const QString path = entry.filePath();
+  if (isLink(entry)) {
+    if (QFile::remove(path) || QDir().rmdir(path)) {
+      return true;
+    }
+    qCWarning(lcQtPass) << "Could not remove link" << path;
+    return false;
+  }
+  if (QFile::remove(path)) {
+    return true;
+  }
+  const QFile::Permissions perms = QFile::permissions(path);
+  if (!perms.testFlag(QFile::WriteUser) &&
+      QFile::setPermissions(path, perms | QFile::WriteUser) &&
+      QFile::remove(path)) {
+    return true;
+  }
+  qCWarning(lcQtPass) << "Could not remove" << path;
+  return false;
+}
+
+} // namespace
+
 auto Util::removeTree(const QString &dir) -> bool {
   // A trailing separator makes lstat follow a link ("link/" is the target
   // directory); the link itself is what this is about.
@@ -734,27 +791,10 @@ auto Util::removeTree(const QString &dir) -> bool {
                                    QDir::System | QDir::NoDotAndDotDot,
                                QDir::Name);
   for (const QFileInfo &entry : entries) {
-    const QString entryPath = entry.filePath();
-    if (isLink(entry)) {
-      // The entry itself, never the target. A junction or a directory
-      // symlink on Windows is a directory entry and goes with rmdir.
-      if (!QFile::remove(entryPath) && !QDir().rmdir(entryPath)) {
-        qCWarning(lcQtPass) << "Could not remove link" << entryPath;
-        ok = false;
-      }
-    } else if (entry.isDir()) {
-      ok = removeTree(entryPath) && ok;
-    } else if (!QFile::remove(entryPath)) {
-      // A read-only file blocks deletion on Windows; give it write access
-      // and try once more, as QDir::removeRecursively() does.
-      const QFile::Permissions perms = QFile::permissions(entryPath);
-      if (perms.testFlag(QFile::WriteUser) ||
-          !QFile::setPermissions(entryPath, perms | QFile::WriteUser) ||
-          !QFile::remove(entryPath)) {
-        qCWarning(lcQtPass) << "Could not remove" << entryPath;
-        ok = false;
-      }
-    }
+    const bool removed = entry.isDir() && !isLink(entry)
+                             ? removeTree(entry.filePath())
+                             : removeEntry(entry);
+    ok = removed && ok;
   }
   return ok && QDir().rmdir(path);
 }

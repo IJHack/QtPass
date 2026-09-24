@@ -70,6 +70,7 @@ private slots:
   void selectionSurvivesFilteringAndEscapeClearsTheFilter();
   void emptyKeyringRejectsTheDialogWithACriticalBox();
   void unknownRecipientIsListedAsNotFoundAndTicked();
+  void recipientByShortOrLongIdIsNotListedAsNotFound();
   void unusableKeysAreHiddenUntilAskedForAndThenBadged();
   void rowWithAnOutOfRangeIndexChangesNoSelection();
   void ownKeysAreBoldAndInLinkColour();
@@ -177,6 +178,8 @@ void tst_usersdialog::initTestCase() {
   script.write("case \"$*\" in\n");
   script.write("*31850CF72D9CDDE9*) all | head -3 ;;\n");
   script.write("*693A0AF3FA364E76*) all | tail -3 ;;\n");
+  // A key the keyring does not have: gpg lists nothing for it.
+  script.write("*DEADBEEFDEADBEEF*) ;;\n");
   script.write("*) all ;;\nesac\nexit 0\n");
   script.close();
   QVERIFY(script.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
@@ -824,6 +827,46 @@ void tst_usersdialog::emptyKeyringRejectsTheDialogWithACriticalBox() {
   QVERIFY2(!dialog.hasSelection(), "an empty keyring selects nothing");
   dialog.accept();
   QVERIFY2(pass.initCalls.isEmpty(), "OK must not run Init on an empty list");
+}
+
+/**
+ * @brief A .gpg-id may name a key by its long or short ID (0x-prefixed or
+ *        not), its email or part of its UID rather than its fingerprint; gpg
+ *        resolves it, and the dialog must not also list it as "Key not found
+ *        in keyring".
+ */
+void tst_usersdialog::recipientByShortOrLongIdIsNotListedAsNotFound() {
+  // One recipient per list: the stand-in gpg answers by substring.
+  for (const QByteArray &line :
+       {QByteArrayLiteral("31850CF72D9CDDE9"), QByteArrayLiteral("0x2d9cdde9"),
+        QByteArrayLiteral("alice@example.org"),
+        QByteArrayLiteral("<alice@example.org>"), QByteArrayLiteral("Alice"),
+        // A secondary UID: not in what the listing parser keeps, but gpg
+        // resolves it (the stand-in lists every key for it).
+        QByteArrayLiteral("alice-work@example.org")}) {
+    QTemporaryDir store;
+    QVERIFY(store.isValid());
+    QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    gpgId.write(line + '\n');
+    gpgId.close();
+    AppSettings s = m_settings;
+    s.passStore = store.path() + QLatin1Char('/');
+    RecordingPass pass(s);
+    UsersDialog dialog(&pass, s, s.passStore);
+    auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+    auto *unusable = dialog.findChild<QCheckBox *>(QStringLiteral("checkBox"));
+    QVERIFY(list != nullptr && unusable != nullptr);
+    unusable->click();
+    for (int i = 0; i < list->count(); ++i) {
+      QVERIFY2(
+          !list->item(i)->text().contains(
+              QStringLiteral("Key not found in keyring")),
+          qPrintable(QString::fromLatin1(line) + ": " + list->item(i)->text()));
+    }
+    QVERIFY2(checkedNames(list).contains(QStringLiteral("Alice")),
+             qPrintable(QString::fromLatin1(line)));
+  }
 }
 
 /**

@@ -149,6 +149,20 @@ private:
     /// here), so a rename of the active profile can follow it.
     QString originalName;
   };
+  /// What is wrong with one profile's fields; empty strings where nothing is.
+  struct ProfileProblems {
+    QString name;
+    QString path;
+    QString key;
+    /// Whether all three fields are fine.
+    [[nodiscard]] auto none() const -> bool {
+      return name.isEmpty() && path.isEmpty() && key.isEmpty();
+    }
+    /// The first complaint, for a tooltip on the profile's row.
+    [[nodiscard]] auto first() const -> QString {
+      return !name.isEmpty() ? name : !path.isEmpty() ? path : key;
+    }
+  };
   /// Designer tooltips of the form fields, put back when validate() has no
   /// complaint about them.
   QString m_nameTip, m_pathTip, m_keyTip;
@@ -199,6 +213,21 @@ private:
 
   auto isQrencodeAvailable(const QString &configuredPath) -> bool;
   void validate();
+  /**
+   * @brief What is wrong with @p entry's name, store path and signing keys.
+   * @param entry The profile to check.
+   * @param names How many profiles carry each name, for duplicates.
+   * @return The complaints, empty where a field is fine.
+   */
+  auto problemsOf(const ProfileEntry &entry,
+                  const QHash<QString, int> &names) const -> ProfileProblems;
+  /**
+   * @brief Mark row @p row of the profile list, and the form fields when it
+   * is the row being edited, with @p problems.
+   * @param row Row in the profile list.
+   * @param problems What problemsOf() found for it.
+   */
+  void showProblems(int row, const ProfileProblems &problems);
 
   void initializeNewProfiles(const Profiles &existingProfiles);
 

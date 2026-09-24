@@ -142,6 +142,18 @@ private:
    * @brief Load recipients and handle missing keys.
    */
   void loadRecipients();
+  /**
+   * @brief Show @p text above the key list in bold red, for a recipient list
+   * that could not be verified.
+   * @param text The warning, plain text.
+   */
+  void showRecipientWarning(const QString &text);
+  /**
+   * @brief Tick the keys the folder is encrypted to, and list recipients no
+   * key in the keyring answers to, so saving does not drop them silently.
+   * @param recipients The folder's recipients, as listed in its `.gpg-id`.
+   */
+  void selectRecipients(const QStringList &recipients);
 
   /**
    * @brief Populate user list.

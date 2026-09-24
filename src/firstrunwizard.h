@@ -68,6 +68,22 @@ public:
   void accept() override;
 
 private:
+  /**
+   * @brief Make @p store a password store for the ticked keys: create the
+   * folder when it is missing, write and sign its `.gpg-id`, and set up Git
+   * when chosen. On failure what was written is taken back, so a second
+   * Finish runs the whole initialisation again.
+   * @param store The folder, cleaned.
+   * @return Whether the store is ready (the user was told otherwise).
+   */
+  auto initialiseStore(const QString &store) -> bool;
+  /**
+   * @brief Give an existing store the Git repository it was chosen to have.
+   * @param store The folder, cleaned.
+   * @return Whether the repository is ready (the user was told otherwise).
+   */
+  auto initialiseGit(const QString &store) -> bool;
+
   friend class ProgramsWizardPage;
   friend class KeyWizardPage;
   friend class StoreWizardPage;
