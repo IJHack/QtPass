@@ -143,6 +143,16 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
   passMoveOrCopy(PASS_COPY, QStringLiteral("cp"), src, dest, force);
 }
 
+auto RealPass::passName(const QString &path, bool stripGpg) const -> QString {
+  QString name =
+      QDir(QDir::cleanPath(m_settings.passStore))
+          .relativeFilePath(QDir::cleanPath(QDir(path).absolutePath()));
+  if (stripGpg) {
+    name.replace(Util::endsWithGpg(), "");
+  }
+  return name;
+}
+
 void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
                               const QString &src, const QString &dest,
                               const bool force) {
@@ -163,22 +173,14 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
     return;
   }
 
-  QString normalizedStore = QDir::cleanPath(m_settings.passStore);
-  QString normalizedSrc = QDir::cleanPath(QDir(src).absolutePath());
-  QString normalizedDest = QDir::cleanPath(QDir(dest).absolutePath());
-
-  QString passSrc = QDir(normalizedStore).relativeFilePath(normalizedSrc);
-  QString passDest = QDir(normalizedStore).relativeFilePath(normalizedDest);
-
-  // remove the .gpg because pass will not work
-  if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
-    passSrc.replace(Util::endsWithGpg(), "");
-  }
-  // The destination usually does not exist yet; pass appends .gpg itself,
-  // so a name that already ends in .gpg would come out as "name.gpg.gpg".
-  if (!destFileInfo.isDir() && destFileInfo.suffix() == "gpg") {
-    passDest.replace(Util::endsWithGpg(), "");
-  }
+  // pass appends .gpg itself, so an entry named with it would come out as
+  // "name.gpg.gpg"; the destination usually does not exist yet.
+  const QString passSrc =
+      passName(src, srcFileInfo.isFile() &&
+                        srcFileInfo.suffix() == QLatin1String("gpg"));
+  const QString passDest =
+      passName(dest, !destFileInfo.isDir() &&
+                         destFileInfo.suffix() == QLatin1String("gpg"));
 
   QStringList args;
   args << subcommand;
