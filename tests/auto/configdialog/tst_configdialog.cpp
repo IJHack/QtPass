@@ -891,6 +891,7 @@ void tst_configdialog::browseButtonsAreNamed() {
  *        the layout used to size them for "0" and cut it to "ver".
  */
 void tst_configdialog::autoclearBoxesAreWideEnoughForNever() {
+  SettingsRestorer restorer;
   AppSettings seed = QtPassSettings::load();
   seed.useAutoclear = false;
   seed.useAutoclearPanel = false;
