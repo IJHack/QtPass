@@ -153,15 +153,20 @@ void UsersDialog::selectRecipients(const QStringList &recipients) {
       user.enabled = true;
     }
   }
+  // The match is a fast path, not gpg's resolution: a secondary UID or a
+  // subkey ID resolves in gpg without showing in what it lists. Only what gpg
+  // itself cannot find is reported missing. Each such check is a blocking gpg
+  // call on the dialog's way up, so a store with many keys missing from the
+  // keyring gets a few, and the rest are reported missing unchecked.
+  constexpr int kMaxLookups = 10;
+  int lookups = 0;
   for (const QString &recipient : recipients) {
-    // The match is a fast path, not gpg's resolution: a secondary UID or a
-    // subkey ID resolves in gpg without showing in what it lists. Only what
-    // gpg itself cannot find is reported missing.
-    const bool found = std::any_of(resolved.cbegin(), resolved.cend(),
-                                   [&recipient](const UserInfo &key) {
-                                     return answersTo(key, recipient);
-                                   }) ||
-                       !m_pass->listKeys(recipient).isEmpty();
+    const bool found =
+        std::any_of(resolved.cbegin(), resolved.cend(),
+                    [&recipient](const UserInfo &key) {
+                      return answersTo(key, recipient);
+                    }) ||
+        (lookups++ < kMaxLookups && !m_pass->listKeys(recipient).isEmpty());
     if (!found) {
       UserInfo missing;
       missing.enabled = true;
