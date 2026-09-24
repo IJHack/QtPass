@@ -107,190 +107,194 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_MAINWINDOW_H_</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_MAINWINDOW_H_</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;enums.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;grepsearchcontroller.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;storetree.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QDialog&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QPointer&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QProcess&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#ifdef __APPLE__</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// https://doc.qt.io/qt-6/qkeysequence.html#qt_set_sequence_auto_mnemonic</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> qt_set_sequence_auto_mnemonic(<span class="keywordtype">bool</span> b);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span>Ui {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">class </span>MainWindow;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class </span>Pass;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>} <span class="comment">// namespace Ui</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">class </span><a class="code hl_class" href="class_pass.html">Pass</a>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">class </span><a class="code hl_class" href="class_process_output_panel.html">ProcessOutputPanel</a>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span>QProgressDialog;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">class </span>QTreeWidgetItem;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">class </span><a class="code hl_class" href="class_qt_pass.html">QtPass</a>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">class </span><a class="code hl_class" href="class_password_display_panel.html">PasswordDisplayPanel</a>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">class </span><a class="code hl_class" href="class_tray_icon.html">TrayIcon</a>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_main_window.html">   45</a></span><span class="keyword">class </span><a class="code hl_function" href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">MainWindow</a> : <span class="keyword">public</span> QMainWindow {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  Q_OBJECT</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">   54</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">MainWindow</a>(<span class="keyword">const</span> QString &amp;searchText = QString(),</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                      QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <a class="code hl_function" href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">~MainWindow</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5">   61</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5">restoreWindow</a>();</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_main_window.html#acc003e9dd04952c5069f87839d708073">   72</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#acc003e9dd04952c5069f87839d708073">config</a>() -&gt; bool;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">   78</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a>(<span class="keywordtype">bool</span> state);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89">   86</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89">flashText</a>(<span class="keyword">const</span> QString &amp;text, <span class="keyword">const</span> <span class="keywordtype">bool</span> isError,</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                 <span class="keyword">const</span> <span class="keywordtype">bool</span> isHtml = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_main_window.html#acc66dda09963fdddea9716163293ddda">   93</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#acc66dda09963fdddea9716163293ddda">getCurrentTreeViewIndex</a>() -&gt; QModelIndex;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_main_window.html#ac4f5f3a524aa6bf13c16b348c48074b6">  104</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#ac4f5f3a524aa6bf13c16b348c48074b6">initSucceeded</a>() const -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> m_initSucceeded; }</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">  111</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">closeEvent</a>(QCloseEvent *<a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88">  116</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88">keyPressEvent</a>(QKeyEvent *<a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad">  121</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad">changeEvent</a>(QEvent *<a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">  129</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>(QEvent *<a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>) -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="class_main_window.html#a3febb9ef08a8e0f7fc00848ea540a899">  135</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a3febb9ef08a8e0f7fc00848ea540a899">showEvent</a>(QShowEvent *<a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="class_main_window.html#aa07eb275a856e189c141fde5b69a7166">  142</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#aa07eb275a856e189c141fde5b69a7166">eventFilter</a>(QObject *obj, QEvent *<a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>) -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e">  148</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e">deselect</a>();</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b">  154</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b">messageAvailable</a>(<span class="keyword">const</span> QString &amp;message);</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="class_main_window.html#ad84f015fe7d94961af6fcfc26532e33c">  163</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ad84f015fe7d94961af6fcfc26532e33c">onProcessOutput</a>(<span class="keyword">const</span> QString &amp;output, <span class="keywordtype">bool</span> isError,</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                       <a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid = <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a>);</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span></div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="class_main_window.html#a8719b3a133e95915dd72b244db1e49bf">  171</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a8719b3a133e95915dd72b244db1e49bf">critical</a>(<span class="keyword">const</span> QString &amp;title, <span class="keyword">const</span> QString &amp;msg);</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="class_main_window.html#a3550b28be1344cf5c012af794dce8c64">  176</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a3550b28be1344cf5c012af794dce8c64">executeWrapperStarted</a>();</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf">  183</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf">showStatusMessage</a>(<span class="keyword">const</span> QString &amp;msg, <span class="keywordtype">int</span> timeout = 2000);</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="class_main_window.html#ad8dfb7651169c5fe73440315926d6abc">  189</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ad8dfb7651169c5fe73440315926d6abc">passShowHandler</a>(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;file = QString());</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="class_main_window.html#ab7a805923a61f2441932d8d358fb040e">  197</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ab7a805923a61f2441932d8d358fb040e">otpFromFileToClipboard</a>(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;file);</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="class_main_window.html#a7d0d5451438004ab31c4d9d48a869378">  206</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a7d0d5451438004ab31c4d9d48a869378">passwordFromFileToClipboard</a>(<span class="keyword">const</span> QString &amp;text, <span class="keyword">const</span> QString &amp;file);</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="class_main_window.html#a083c74efb3eabf7f2ccd7fa691bf8841">  215</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a083c74efb3eabf7f2ccd7fa691bf8841">cancelOtpRequest</a>();</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="class_main_window.html#a770b38c0ee4e6ffcd234857b039061ee">  225</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a770b38c0ee4e6ffcd234857b039061ee">onOperationError</a>();</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168">  231</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168">dropStaleToolsAreaPalettes</a>();</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="class_main_window.html#a270b5f2701f275c3de734f4150a3d897">  237</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a270b5f2701f275c3de734f4150a3d897">onGrepFinished</a>(<span class="keyword">const</span> QList&lt;QPair&lt;QString, QStringList&gt;&gt; &amp;results);</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span></div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="class_main_window.html#a6961588ebf3c0640200e0cfa920af3be">  242</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a6961588ebf3c0640200e0cfa920af3be">onPush</a>();</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span></div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="class_main_window.html#adc7d4b2b210efab401f0b14641f80464">  248</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#adc7d4b2b210efab401f0b14641f80464">on_treeView_clicked</a>(<span class="keyword">const</span> QModelIndex &amp;index);</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span></div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">  257</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">startReencryptPath</a>();</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span></div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="class_main_window.html#a558032c0521e95ce50f49be77300ff4e">  264</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a558032c0521e95ce50f49be77300ff4e">reencryptProgress</a>(<span class="keywordtype">int</span> current, <span class="keywordtype">int</span> total);</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span></div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba">  269</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba">endReencryptPath</a>();</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  <span class="keywordtype">void</span> on_grepButton_toggled(<span class="keywordtype">bool</span> checked);</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="keywordtype">void</span> on_grepResultsList_itemClicked(QTreeWidgetItem *item, <span class="keywordtype">int</span> column);</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  <span class="keywordtype">void</span> addPassword();</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  <span class="keywordtype">void</span> addFolder();</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  <span class="keywordtype">void</span> onEdit();</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="keywordtype">void</span> onDelete();</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  <span class="keywordtype">void</span> onOtp();</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="keywordtype">void</span> onUpdate(<span class="keywordtype">bool</span> block = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  <span class="keywordtype">void</span> onUsers();</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keywordtype">void</span> onConfig();</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keywordtype">void</span> showAbout();</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="keywordtype">void</span> on_treeView_doubleClicked(<span class="keyword">const</span> QModelIndex &amp;index);</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  <span class="keywordtype">void</span> clearPanel(<span class="keywordtype">bool</span> notify = <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  <span class="keywordtype">void</span> on_lineEdit_textChanged(<span class="keyword">const</span> QString &amp;arg1);</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="keywordtype">void</span> on_lineEdit_returnPressed();</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  <span class="keywordtype">void</span> on_profileBox_currentTextChanged(<span class="keyword">const</span> QString &amp;);</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  <span class="keywordtype">void</span> showContextMenu(<span class="keyword">const</span> QPoint &amp;pos);</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  <span class="keywordtype">void</span> showBrowserContextMenu(<span class="keyword">const</span> QPoint &amp;pos);</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  <span class="keywordtype">void</span> openFolder();</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  <span class="keywordtype">void</span> renameFolder();</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  <span class="keywordtype">void</span> editPassword(<span class="keyword">const</span> QString &amp;);</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  <span class="keywordtype">void</span> renamePassword();</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>  <span class="keywordtype">void</span> focusInput();</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>  <span class="keywordtype">void</span> copyPasswordFromTreeview();</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>  <span class="keywordtype">void</span> onTimeoutSearch();</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  <a class="code hl_class" href="class_qt_pass.html">QtPass</a> *m_qtPass;</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>  QScopedPointer&lt;Ui::MainWindow&gt; ui;</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>  <a class="code hl_class" href="class_grep_search_controller.html">GrepSearchController</a> m_grep;</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  <a class="code hl_class" href="class_password_display_panel.html">PasswordDisplayPanel</a> *m_displayPanel = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  <span class="keywordtype">bool</span> m_firstShowCompleted = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  <span class="keywordtype">bool</span> m_themeSwitched = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>  QString m_shownFile;</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>  QString m_otpRequestFile;</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>  QString m_copyRequestFile;</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>  <span class="comment">// The process output console is a QDockWidget at the bottom dock area,</span></div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  <span class="comment">// created programmatically. It isn&#39;t part of the .ui because uic places</span></div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  <span class="comment">// its QMainWindow children in centralWidget / statusBar / menuBar /</span></div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="comment">// toolBars / dock-widget slots only — a sibling widget at the</span></div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  <span class="comment">// QMainWindow level isn&#39;t laid out and ends up obscuring the</span></div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>  <span class="comment">// centralWidget. See #1192 for the symptom.</span></div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <a class="code hl_class" href="class_process_output_panel.html">ProcessOutputPanel</a> *m_processOutput = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>  <a class="code hl_class" href="class_store_tree.html">StoreTree</a> *m_tree = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  QTimer clearPanelTimer, searchTimer;</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  <span class="comment">// Re-enables the UI if a backend operation disables it but never reports</span></div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  <span class="comment">// completion (see setUiElementsEnabled).</span></div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  QTimer m_uiWatchdog;</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> UiWatchdogMs = 30000;</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  QPointer&lt;QProgressDialog&gt; m_reencryptProgress;</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  <span class="keywordtype">bool</span> m_reencryptRunning = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  <a class="code hl_class" href="class_tray_icon.html">TrayIcon</a> *m_tray{};</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  <span class="keywordtype">bool</span> m_initSucceeded = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  <span class="keywordtype">bool</span> m_freshStart = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  <span class="keywordtype">void</span> initToolBarButtons();</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  <span class="keywordtype">void</span> initStatusBar();</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>  <span class="keywordtype">void</span> connectPassSignals(<a class="code hl_class" href="class_pass.html">Pass</a> *pass);</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span> </div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  <span class="keywordtype">void</span> selectFirstFile();</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  <span class="keyword">auto</span> firstFile(QModelIndex parentIndex) -&gt; QModelIndex;</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  <span class="keyword">auto</span> getFile(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">bool</span>) -&gt; QString;</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  <span class="keywordtype">void</span> setPassword(<span class="keyword">const</span> QString &amp;, <span class="keywordtype">bool</span> isNew = <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  <span class="keyword">auto</span> confirmPathInStore(<span class="keyword">const</span> QString &amp;candidate) -&gt; bool;</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span> </div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>  <span class="keywordtype">void</span> updateProfileBox();</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>  <span class="keywordtype">void</span> initTrayIcon();</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>  <span class="keywordtype">void</span> destroyTrayIcon();</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>  <span class="keywordtype">void</span> reencryptPath(<span class="keyword">const</span> QString &amp;dir);</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>  <span class="keywordtype">void</span> exportPublicKey();</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>  <span class="keywordtype">void</span> addRecipient(<span class="keyword">const</span> QString &amp;dir);</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>  <span class="keyword">auto</span> refuseLinkedFolder(<span class="keyword">const</span> QString &amp;dir) -&gt; bool;</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  <span class="keywordtype">void</span> showShareHelp();</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  <span class="keywordtype">void</span> applyTextBrowserSettings();</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  <span class="keywordtype">void</span> applyWindowFlagsSettings();</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>  <span class="keywordtype">void</span> saveWindowState();</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span></div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>  <span class="keywordtype">void</span> updateGitButtonVisibility(<span class="keywordtype">bool</span> uiEnabled = <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  <span class="keywordtype">void</span> updateOtpButtonVisibility(<span class="keywordtype">bool</span> uiEnabled = <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>  <span class="keywordtype">void</span> updateGrepButtonVisibility();</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>  <span class="keywordtype">void</span> enableGitButtons(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;);</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span> </div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>  <span class="keywordtype">void</span> updateProcessOutputVisibility();</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>};</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;appsettings.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;enums.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;grepsearchcontroller.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;storetree.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QDialog&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QPointer&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QProcess&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#ifdef __APPLE__</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// https://doc.qt.io/qt-6/qkeysequence.html#qt_set_sequence_auto_mnemonic</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> qt_set_sequence_auto_mnemonic(<span class="keywordtype">bool</span> b);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span>Ui {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class </span>MainWindow;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">class </span>Pass;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>} <span class="comment">// namespace Ui</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">class </span><a class="code hl_class" href="class_pass.html">Pass</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">class </span><a class="code hl_class" href="class_process_output_panel.html">ProcessOutputPanel</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">class </span>QProgressDialog;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">class </span>QTreeWidgetItem;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">class </span><a class="code hl_class" href="class_qt_pass.html">QtPass</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">class </span><a class="code hl_class" href="class_password_display_panel.html">PasswordDisplayPanel</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">class </span><a class="code hl_class" href="class_tray_icon.html">TrayIcon</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_main_window.html">   46</a></span><span class="keyword">class </span><a class="code hl_function" href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">MainWindow</a> : <span class="keyword">public</span> QMainWindow {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  Q_OBJECT</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">   55</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">MainWindow</a>(<span class="keyword">const</span> QString &amp;searchText = QString(),</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                      QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_function" href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">~MainWindow</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5">   62</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5">restoreWindow</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_main_window.html#acc003e9dd04952c5069f87839d708073">   73</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#acc003e9dd04952c5069f87839d708073">config</a>() -&gt; bool;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">   79</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a>(<span class="keywordtype">bool</span> state);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89">   87</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89">flashText</a>(<span class="keyword">const</span> QString &amp;text, <span class="keyword">const</span> <span class="keywordtype">bool</span> isError,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                 <span class="keyword">const</span> <span class="keywordtype">bool</span> isHtml = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_main_window.html#acc66dda09963fdddea9716163293ddda">   94</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#acc66dda09963fdddea9716163293ddda">getCurrentTreeViewIndex</a>() -&gt; QModelIndex;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="class_main_window.html#ac4f5f3a524aa6bf13c16b348c48074b6">  105</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#ac4f5f3a524aa6bf13c16b348c48074b6">initSucceeded</a>() const -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> m_initSucceeded; }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">  112</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">closeEvent</a>(QCloseEvent *<a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88">  117</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88">keyPressEvent</a>(QKeyEvent *<a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad">  122</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad">changeEvent</a>(QEvent *<a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">  130</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>(QEvent *<a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>) -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="class_main_window.html#a3febb9ef08a8e0f7fc00848ea540a899">  136</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#a3febb9ef08a8e0f7fc00848ea540a899">showEvent</a>(QShowEvent *<a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="class_main_window.html#aa07eb275a856e189c141fde5b69a7166">  143</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#aa07eb275a856e189c141fde5b69a7166">eventFilter</a>(QObject *obj, QEvent *<a class="code hl_function" href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">event</a>) -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e">  149</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e">deselect</a>();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b">  155</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b">messageAvailable</a>(<span class="keyword">const</span> QString &amp;message);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="class_main_window.html#ad84f015fe7d94961af6fcfc26532e33c">  164</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ad84f015fe7d94961af6fcfc26532e33c">onProcessOutput</a>(<span class="keyword">const</span> QString &amp;output, <span class="keywordtype">bool</span> isError,</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                       <a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid = <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a>);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="class_main_window.html#a8719b3a133e95915dd72b244db1e49bf">  172</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a8719b3a133e95915dd72b244db1e49bf">critical</a>(<span class="keyword">const</span> QString &amp;title, <span class="keyword">const</span> QString &amp;msg);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="class_main_window.html#a3550b28be1344cf5c012af794dce8c64">  177</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a3550b28be1344cf5c012af794dce8c64">executeWrapperStarted</a>();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf">  184</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf">showStatusMessage</a>(<span class="keyword">const</span> QString &amp;msg, <span class="keywordtype">int</span> timeout = 2000);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="class_main_window.html#ad8dfb7651169c5fe73440315926d6abc">  190</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ad8dfb7651169c5fe73440315926d6abc">passShowHandler</a>(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;file = QString());</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="class_main_window.html#ab7a805923a61f2441932d8d358fb040e">  198</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#ab7a805923a61f2441932d8d358fb040e">otpFromFileToClipboard</a>(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;file);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="class_main_window.html#a7d0d5451438004ab31c4d9d48a869378">  207</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a7d0d5451438004ab31c4d9d48a869378">passwordFromFileToClipboard</a>(<span class="keyword">const</span> QString &amp;text, <span class="keyword">const</span> QString &amp;file);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="class_main_window.html#a083c74efb3eabf7f2ccd7fa691bf8841">  216</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a083c74efb3eabf7f2ccd7fa691bf8841">cancelOtpRequest</a>();</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="class_main_window.html#a770b38c0ee4e6ffcd234857b039061ee">  226</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a770b38c0ee4e6ffcd234857b039061ee">onOperationError</a>();</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168">  232</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168">dropStaleToolsAreaPalettes</a>();</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="class_main_window.html#a270b5f2701f275c3de734f4150a3d897">  238</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a270b5f2701f275c3de734f4150a3d897">onGrepFinished</a>(<span class="keyword">const</span> QList&lt;QPair&lt;QString, QStringList&gt;&gt; &amp;results);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="class_main_window.html#a6961588ebf3c0640200e0cfa920af3be">  243</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a6961588ebf3c0640200e0cfa920af3be">onPush</a>();</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="class_main_window.html#adc7d4b2b210efab401f0b14641f80464">  249</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#adc7d4b2b210efab401f0b14641f80464">on_treeView_clicked</a>(<span class="keyword">const</span> QModelIndex &amp;index);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">  258</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">startReencryptPath</a>();</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="class_main_window.html#a558032c0521e95ce50f49be77300ff4e">  265</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a558032c0521e95ce50f49be77300ff4e">reencryptProgress</a>(<span class="keywordtype">int</span> current, <span class="keywordtype">int</span> total);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno"><a class="line" href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba">  270</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba">endReencryptPath</a>();</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="keywordtype">void</span> on_grepButton_toggled(<span class="keywordtype">bool</span> checked);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  <span class="keywordtype">void</span> on_grepResultsList_itemClicked(QTreeWidgetItem *item, <span class="keywordtype">int</span> column);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  <span class="keywordtype">void</span> addPassword();</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  <span class="keywordtype">void</span> addFolder();</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="keywordtype">void</span> onEdit();</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  <span class="keywordtype">void</span> onDelete();</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="keywordtype">void</span> onOtp();</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  <span class="keywordtype">void</span> onUpdate(<span class="keywordtype">bool</span> block = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keywordtype">void</span> onUsers();</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  <span class="keywordtype">void</span> onConfig();</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="keywordtype">void</span> showAbout();</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  <span class="keywordtype">void</span> on_treeView_doubleClicked(<span class="keyword">const</span> QModelIndex &amp;index);</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  <span class="keywordtype">void</span> clearPanel(<span class="keywordtype">bool</span> notify = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="keywordtype">void</span> on_lineEdit_textChanged(<span class="keyword">const</span> QString &amp;arg1);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  <span class="keywordtype">void</span> on_lineEdit_returnPressed();</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  <span class="keywordtype">void</span> on_profileBox_currentTextChanged(<span class="keyword">const</span> QString &amp;);</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  <span class="keywordtype">void</span> showContextMenu(<span class="keyword">const</span> QPoint &amp;pos);</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  <span class="keywordtype">void</span> addShareMenu(QMenu &amp;contextMenu, <span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;s);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>  <span class="keyword">auto</span> confirmDeletion(<span class="keyword">const</span> QString &amp;file, <span class="keywordtype">bool</span> isDir) -&gt; bool;</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>  <span class="keyword">auto</span> confirmLinkRemoval(<span class="keyword">const</span> QString &amp;file) -&gt; bool;</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>  <span class="keywordtype">void</span> showBrowserContextMenu(<span class="keyword">const</span> QPoint &amp;pos);</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  <span class="keywordtype">void</span> openFolder();</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>  <span class="keywordtype">void</span> renameFolder();</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>  <span class="keywordtype">void</span> editPassword(<span class="keyword">const</span> QString &amp;);</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>  <span class="keywordtype">void</span> renamePassword();</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>  <span class="keywordtype">void</span> focusInput();</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  <span class="keywordtype">void</span> copyPasswordFromTreeview();</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>  <span class="keywordtype">void</span> onTimeoutSearch();</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  <a class="code hl_class" href="class_qt_pass.html">QtPass</a> *m_qtPass;</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  QScopedPointer&lt;Ui::MainWindow&gt; ui;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <a class="code hl_class" href="class_grep_search_controller.html">GrepSearchController</a> m_grep;</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  <a class="code hl_class" href="class_password_display_panel.html">PasswordDisplayPanel</a> *m_displayPanel = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>  <span class="keywordtype">bool</span> m_firstShowCompleted = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  <span class="keywordtype">bool</span> m_themeSwitched = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  QString m_shownFile;</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  QString m_otpRequestFile;</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>  QString m_copyRequestFile;</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  <span class="comment">// The process output console is a QDockWidget at the bottom dock area,</span></div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>  <span class="comment">// created programmatically. It isn&#39;t part of the .ui because uic places</span></div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  <span class="comment">// its QMainWindow children in centralWidget / statusBar / menuBar /</span></div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>  <span class="comment">// toolBars / dock-widget slots only — a sibling widget at the</span></div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  <span class="comment">// QMainWindow level isn&#39;t laid out and ends up obscuring the</span></div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  <span class="comment">// centralWidget. See #1192 for the symptom.</span></div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  <a class="code hl_class" href="class_process_output_panel.html">ProcessOutputPanel</a> *m_processOutput = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  <a class="code hl_class" href="class_store_tree.html">StoreTree</a> *m_tree = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>  QTimer clearPanelTimer, searchTimer;</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>  <span class="comment">// Re-enables the UI if a backend operation disables it but never reports</span></div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  <span class="comment">// completion (see setUiElementsEnabled).</span></div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  QTimer m_uiWatchdog;</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> UiWatchdogMs = 30000;</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>  QPointer&lt;QProgressDialog&gt; m_reencryptProgress;</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>  <span class="keywordtype">bool</span> m_reencryptRunning = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>  <a class="code hl_class" href="class_tray_icon.html">TrayIcon</a> *m_tray{};</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  <span class="keywordtype">bool</span> m_initSucceeded = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>  <span class="keywordtype">bool</span> m_freshStart = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>  <span class="keywordtype">void</span> initToolBarButtons();</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>  <span class="keywordtype">void</span> initStatusBar();</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>  <span class="keywordtype">void</span> connectPassSignals(<a class="code hl_class" href="class_pass.html">Pass</a> *pass);</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>  <span class="keywordtype">void</span> selectFirstFile();</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>  <span class="keyword">auto</span> firstFile(QModelIndex parentIndex) -&gt; QModelIndex;</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>  <span class="keyword">auto</span> getFile(<span class="keyword">const</span> QModelIndex &amp;, <span class="keywordtype">bool</span>) -&gt; QString;</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>  <span class="keywordtype">void</span> setPassword(<span class="keyword">const</span> QString &amp;, <span class="keywordtype">bool</span> isNew = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>  <span class="keyword">auto</span> confirmPathInStore(<span class="keyword">const</span> QString &amp;candidate) -&gt; bool;</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span> </div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  <span class="keywordtype">void</span> updateProfileBox();</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>  <span class="keywordtype">void</span> initTrayIcon();</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>  <span class="keywordtype">void</span> destroyTrayIcon();</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>  <span class="keywordtype">void</span> reencryptPath(<span class="keyword">const</span> QString &amp;dir);</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>  <span class="keywordtype">void</span> exportPublicKey();</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>  <span class="keywordtype">void</span> addRecipient(<span class="keyword">const</span> QString &amp;dir);</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>  <span class="keyword">auto</span> refuseLinkedFolder(<span class="keyword">const</span> QString &amp;dir) -&gt; bool;</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>  <span class="keywordtype">void</span> showShareHelp();</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span> </div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>  <span class="keywordtype">void</span> applyTextBrowserSettings();</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>  <span class="keywordtype">void</span> applyWindowFlagsSettings();</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>  <span class="keywordtype">void</span> saveWindowState();</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span></div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>  <span class="keywordtype">void</span> updateGitButtonVisibility(<span class="keywordtype">bool</span> uiEnabled = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>  <span class="keywordtype">void</span> updateOtpButtonVisibility(<span class="keywordtype">bool</span> uiEnabled = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>  <span class="keywordtype">void</span> updateGrepButtonVisibility();</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>  <span class="keywordtype">void</span> enableGitButtons(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;);</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  <span class="keywordtype">void</span> updateProcessOutputVisibility();</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>};</div>
 </div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span> </div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span><span class="preprocessor">#endif </span><span class="comment">// SRC_MAINWINDOW_H_</span></div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span><span class="preprocessor">#endif </span><span class="comment">// SRC_MAINWINDOW_H_</span></div>
 <div class="ttc" id="aclass_grep_search_controller_html"><div class="ttname"><a href="class_grep_search_controller.html">GrepSearchController</a></div><div class="ttdoc">State machine for MainWindow&#39;s content-search (grep) mode.</div><div class="ttdef"><b>Definition</b> <a href="grepsearchcontroller_8h_source.html#l00018">grepsearchcontroller.h:18</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a02c5373d61038b8d1dfe4dea1bf0a168"><div class="ttname"><a href="class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168">MainWindow::dropStaleToolsAreaPalettes</a></div><div class="ttdeci">void dropStaleToolsAreaPalettes()</div><div class="ttdoc">Drop a style-imposed menu bar or toolbar palette that belongs to the other theme (Breeze header palet...</div></div>
 <div class="ttc" id="aclass_main_window_html_a02ec9927bda826675653c0af916c8f33"><div class="ttname"><a href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">MainWindow::startReencryptPath</a></div><div class="ttdeci">void startReencryptPath()</div><div class="ttdoc">Begin a re-encryption pass on the current path.</div></div>
@@ -316,7 +320,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="ttc" id="aclass_main_window_html_ab7a805923a61f2441932d8d358fb040e"><div class="ttname"><a href="class_main_window.html#ab7a805923a61f2441932d8d358fb040e">MainWindow::otpFromFileToClipboard</a></div><div class="ttdeci">void otpFromFileToClipboard(const QString &amp;output, const QString &amp;file)</div><div class="ttdoc">Generate a one-time password from decrypted content and copy it. Ignores decrypts of anything but the...</div></div>
 <div class="ttc" id="aclass_main_window_html_ac240119ea67a770e5d997a5aa0fe47a3"><div class="ttname"><a href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">MainWindow::setUiElementsEnabled</a></div><div class="ttdeci">void setUiElementsEnabled(bool state)</div><div class="ttdoc">Enable or disable the main UI elements.</div></div>
 <div class="ttc" id="aclass_main_window_html_ac307f0d609d781011c2c35ad57ae070c"><div class="ttname"><a href="class_main_window.html#ac307f0d609d781011c2c35ad57ae070c">MainWindow::event</a></div><div class="ttdeci">auto event(QEvent *event) -&gt; bool override</div><div class="ttdoc">Notice an application palette change, the theme switch that makes a style-imposed bar palette suspect...</div></div>
-<div class="ttc" id="aclass_main_window_html_ac4f5f3a524aa6bf13c16b348c48074b6"><div class="ttname"><a href="class_main_window.html#ac4f5f3a524aa6bf13c16b348c48074b6">MainWindow::initSucceeded</a></div><div class="ttdeci">auto initSucceeded() const -&gt; bool</div><div class="ttdoc">Return whether startup configuration succeeded.</div><div class="ttdef"><b>Definition</b> <a href="#l00104">mainwindow.h:104</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ac4f5f3a524aa6bf13c16b348c48074b6"><div class="ttname"><a href="class_main_window.html#ac4f5f3a524aa6bf13c16b348c48074b6">MainWindow::initSucceeded</a></div><div class="ttdeci">auto initSucceeded() const -&gt; bool</div><div class="ttdoc">Return whether startup configuration succeeded.</div><div class="ttdef"><b>Definition</b> <a href="#l00105">mainwindow.h:105</a></div></div>
 <div class="ttc" id="aclass_main_window_html_acc003e9dd04952c5069f87839d708073"><div class="ttname"><a href="class_main_window.html#acc003e9dd04952c5069f87839d708073">MainWindow::config</a></div><div class="ttdeci">auto config() -&gt; bool</div><div class="ttdoc">Open the configuration dialog.</div></div>
 <div class="ttc" id="aclass_main_window_html_acc66dda09963fdddea9716163293ddda"><div class="ttname"><a href="class_main_window.html#acc66dda09963fdddea9716163293ddda">MainWindow::getCurrentTreeViewIndex</a></div><div class="ttdeci">auto getCurrentTreeViewIndex() -&gt; QModelIndex</div><div class="ttdoc">Return the currently selected index in the tree view.</div></div>
 <div class="ttc" id="aclass_main_window_html_ad4cf3e2c819cac398728a82f1cf05f3e"><div class="ttname"><a href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e">MainWindow::deselect</a></div><div class="ttdeci">void deselect()</div><div class="ttdoc">Clear the current tree view selection.</div></div>
@@ -331,6 +335,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="ttc" id="aclass_tray_icon_html"><div class="ttname"><a href="class_tray_icon.html">TrayIcon</a></div><div class="ttdoc">Handles the system tray icon and menu.</div><div class="ttdef"><b>Definition</b> <a href="trayicon_8h_source.html#l00022">trayicon.h:22</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></div><div class="ttdeci">PROCESS</div><div class="ttdoc">Identifies different subprocess operations used in QtPass.</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00037">enums.h:37</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a></div><div class="ttdeci">@ INVALID</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00055">enums.h:55</a></div></div>
+<div class="ttc" id="astruct_app_settings_html"><div class="ttname"><a href="struct_app_settings.html">AppSettings</a></div><div class="ttdoc">Plain value-object holding all flat QtPass configuration.</div><div class="ttdef"><b>Definition</b> <a href="appsettings_8h_source.html#l00030">appsettings.h:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
