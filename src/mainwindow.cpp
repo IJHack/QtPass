@@ -1233,31 +1233,36 @@ void MainWindow::addPassword() { setPassword(QString()); }
  * sure.
  */
 auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
-  QString dirMessage = tr(" and the whole content?");
-  if (isDir) {
-    // A link, junction or special file inside is as unexpected as a stray
-    // plain file: the walker leaves them out of content and reports them.
-    QStringList skipped;
-    const QString folder =
-        m_tree->fileSystem().rootPath() + QDir::separator() + file;
-    const QStringList content =
-        Util::regularFilesUnder(folder, {QStringLiteral("*")}, &skipped);
-    const bool unexpected =
-        !skipped.isEmpty() ||
-        std::any_of(content.cbegin(), content.cend(), [](const QString &path) {
-          return QFileInfo(path).suffix() != QLatin1String("gpg");
-        });
-    if (unexpected) {
-      dirMessage = tr(" and the whole content? <br><strong>Attention: "
-                      "there are unexpected files in the given folder, "
-                      "check them before continue.</strong>");
-    }
+  const QString path = QDir::separator() + file;
+  if (!isDir) {
+    return QMessageBox::question(
+               this, tr("Delete password?"),
+               tr("Are you sure you want to delete %1?").arg(path),
+               QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes;
   }
-  return QMessageBox::question(
-             this, isDir ? tr("Delete folder?") : tr("Delete password?"),
-             tr("Are you sure you want to delete %1%2?")
-                 .arg(QDir::separator() + file, isDir ? dirMessage : "?"),
-             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes;
+  // Whole sentences, not a question stitched from pieces: a verb-final
+  // language cannot put the rest of the question after the path.
+  QString question =
+      tr("Are you sure you want to delete %1 and the whole content?").arg(path);
+  // A link, junction or special file inside is as unexpected as a stray
+  // plain file: the walker leaves them out of content and reports them.
+  QStringList skipped;
+  const QStringList content = Util::regularFilesUnder(
+      m_tree->fileSystem().rootPath() + path, {QStringLiteral("*")}, &skipped);
+  const bool unexpected =
+      !skipped.isEmpty() ||
+      std::any_of(content.cbegin(), content.cend(), [](const QString &entry) {
+        return QFileInfo(entry).suffix() != QLatin1String("gpg");
+      });
+  if (unexpected) {
+    question += QStringLiteral("<br><strong>") +
+                tr("Attention: there are unexpected files in the given "
+                   "folder, check them before continuing.") +
+                QStringLiteral("</strong>");
+  }
+  return QMessageBox::question(this, tr("Delete folder?"), question,
+                               QMessageBox::Yes | QMessageBox::No) ==
+         QMessageBox::Yes;
 }
 
 auto MainWindow::confirmLinkRemoval(const QString &file) -> bool {
