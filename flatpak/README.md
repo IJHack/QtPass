@@ -50,8 +50,12 @@ The default store is private to the Flatpak:
 `~/.var/app/org.qtpass.QtPass/.password-store` (`--persist=.password-store`).
 To use an existing store, for example `~/.password-store` shared with `pass`
 on the host, pick it with the folder button in Settings (Profiles page); the
-portal gives access to that folder only. Alternatively, grant the folder with
-Flatseal or `flatpak override --user --filesystem=~/.password-store`.
+portal gives access to that folder only. Alternatively, grant the folder to
+QtPass alone with Flatseal or:
+
+```sh
+flatpak override --user --filesystem=~/.password-store org.qtpass.QtPass
+```
 
 ## Permissions, and what is deliberately left out
 
@@ -61,9 +65,14 @@ directory (read-only), a persistent private `~/.password-store` and
 a Flathub linter exception.
 
 Not granted on purpose: any host directory, `~/.gnupg` itself, `~/.ssh` and
-the ssh-agent socket. For `git` over SSH add `--socket=ssh-auth` (and
-`--filesystem=~/.ssh:ro` for `known_hosts`) with Flatseal or
-`flatpak override --user`.
+the ssh-agent socket. For `git` over SSH, grant them with Flatseal or:
+
+```sh
+flatpak override --user --socket=ssh-auth --filesystem=~/.ssh:ro org.qtpass.QtPass
+```
+
+(`~/.ssh` read-only is for `known_hosts`.) Without the application ID,
+`flatpak override` changes the defaults of every installed Flatpak.
 
 ## Updating
 
