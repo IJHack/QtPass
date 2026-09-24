@@ -96,7 +96,9 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Enums Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -104,6 +106,11 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <p>Enumerators for <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> configuration and runtime operations.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:ProcessInfo" id="r_ProcessInfo"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_enums_1_1_process_info.html">ProcessInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">What <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> knows about one kind of subprocess: what to call it and whether its output may carry a secret.  <a href="struct_enums_1_1_process_info.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a9c199ed74f3f57c2947f79c6ddce0cd4" id="r_a9c199ed74f3f57c2947f79c6ddce0cd4"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a9c199ed74f3f57c2947f79c6ddce0cd4">ClipBoardType</a> { <a class="el" href="#a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef">CLIPBOARD_NEVER</a> = 0
@@ -137,6 +144,13 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="memdesc:ac8b64f00258db4fec59578fddbe8ea69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies different subprocess operations used in <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>.  <a href="#ac8b64f00258db4fec59578fddbe8ea69">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ad33195b2ca21f0ffd9b33b76bf09a03e" id="r_ad33195b2ca21f0ffd9b33b76bf09a03e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad33195b2ca21f0ffd9b33b76bf09a03e">processInfo</a> (<a class="el" href="#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> pid) -&gt; const <a class="el" href="struct_enums_1_1_process_info.html">ProcessInfo</a> &amp;</td></tr>
+<tr class="memdesc:ad33195b2ca21f0ffd9b33b76bf09a03e"><td class="mdescLeft">&#160;</td><td class="mdescRight">What is known about <code class="param">pid</code>.  <br /></td></tr>
+<tr class="memitem:a10371ee44aefcd45e202978699eb03ca" id="r_a10371ee44aefcd45e202978699eb03ca"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a10371ee44aefcd45e202978699eb03ca">processLabel</a> (<a class="el" href="#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> pid) -&gt; QString</td></tr>
+<tr class="memdesc:a10371ee44aefcd45e202978699eb03ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">The command label for <code class="param">pid</code>, as the output panel shows it.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Enumerators for <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> configuration and runtime operations. </p>
@@ -180,7 +194,7 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Identifies different subprocess operations used in <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>. </p>
-<p>Adding a value: decide whether its stdout may contain a secret (a decrypted entry, a search hit in one). If it may not, add it to the allow list in Pass::emitProcessFinishedSignal(), which forwards output to the process output panel; anything not listed there stays silent. Then extend tst_realpass::genericOutputSignalIsAnAllowList() either way. </p>
+<p>Adding a value: give it a row in the table in processinfo.cpp, which says what the command is called and whether its stdout may contain a secret (a decrypted entry, a search hit in one). Secret-bearing output reaches neither the process output panel nor the generic finished signal. The build fails until the row is there, and tst_realpass::genericOutputSignalIsAnAllowList() and tst_processoutputpanel::everyShownProcessHasItsCommandLabel() pin the decision. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48" name="ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48"></a>GIT_INIT&#160;</td><td class="fielddoc"><p>Initialize Git repository </p>
 </td></tr>
@@ -220,7 +234,84 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="enums_8h_source.html#l00034">34</a> of file <a class="el" href="enums_8h_source.html">enums.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="enums_8h_source.html#l00037">37</a> of file <a class="el" href="enums_8h_source.html">enums.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="ad33195b2ca21f0ffd9b33b76bf09a03e" name="ad33195b2ca21f0ffd9b33b76bf09a03e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33195b2ca21f0ffd9b33b76bf09a03e">&#9670;&#160;</a></span>processInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Enums::processInfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span></td><td>)</td>
+          <td> -&gt;  const <a class="el" href="struct_enums_1_1_process_info.html">ProcessInfo</a> &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>What is known about <code class="param">pid</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pid</td><td>Process identifier; PROCESS_COUNT and INVALID answer too. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The entry for <code class="param">pid:</code> an empty label and no secret for a value that is not a real process. </dd></dl>
+<div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary">
+</div>
+<div id="dynsection-0-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="namespace_enums_ad33195b2ca21f0ffd9b33b76bf09a03e_cgraph.svg" width="160" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary">
+</div>
+<div id="dynsection-1-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="namespace_enums_ad33195b2ca21f0ffd9b33b76bf09a03e_icgraph.svg" width="160" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a10371ee44aefcd45e202978699eb03ca" name="a10371ee44aefcd45e202978699eb03ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10371ee44aefcd45e202978699eb03ca">&#9670;&#160;</a></span>processLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Enums::processLabel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span></td><td>)</td>
+          <td> -&gt;  QString</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The command label for <code class="param">pid</code>, as the output panel shows it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pid</td><td>Process identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>e.g. "git push"; empty for a process that is never shown. </dd></dl>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="namespace_enums_a10371ee44aefcd45e202978699eb03ca_cgraph.svg" width="170" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="namespace_enums_a10371ee44aefcd45e202978699eb03ca_icgraph.svg" width="170" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>

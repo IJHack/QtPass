@@ -1,0 +1,5 @@
+<map id="GpgIdGeneration::recordFile" name="GpgIdGeneration::recordFile">
+<area shape="rect" id="Node000001" title="The file the accepted generations are recorded in, so a refusal can name it: removing it forgets what..." alt="" coords="5,5,209,31"/>
+<area shape="rect" id="Node000002" href="$class_gpg_id_generation.html#ae91580bee956fc0138e35db7eabbd2a6" title="The two header lines for a list." alt="" coords="257,5,443,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,15,243,15,243,21,209,21"/>
+</map>

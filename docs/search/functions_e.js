@@ -11,10 +11,12 @@ var searchData=
   ['passworddisplaypanel_8',['PasswordDisplayPanel',['../class_password_display_panel.html#a9629fe79e18a80f29101b80e3077250d',1,'PasswordDisplayPanel']]],
   ['passwordfromfiletoclipboard_9',['passwordFromFileToClipboard',['../class_main_window.html#a7d0d5451438004ab31c4d9d48a869378',1,'MainWindow']]],
   ['processerrorexit_10',['processErrorExit',['../class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f',1,'Pass']]],
-  ['processname_11',['processName',['../class_process_output_panel.html#af8ec4c669ae299698055cf9d36d50881',1,'ProcessOutputPanel']]],
-  ['processoutputpanel_12',['ProcessOutputPanel',['../class_process_output_panel.html#a5eced61630b5293e8fda4c3b92c1fe71',1,'ProcessOutputPanel']]],
-  ['programswizardpage_13',['ProgramsWizardPage',['../class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b',1,'ProgramsWizardPage']]],
-  ['protocolregex_14',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]],
-  ['proxy_15',['proxy',['../class_store_tree.html#ae66c7d3a2c5f172035cdeb1808ce7593',1,'StoreTree']]],
-  ['pushrequested_16',['pushRequested',['../class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a',1,'QtPass']]]
+  ['processinfo_11',['processInfo',['../namespace_enums.html#ad33195b2ca21f0ffd9b33b76bf09a03e',1,'Enums']]],
+  ['processlabel_12',['processLabel',['../namespace_enums.html#a10371ee44aefcd45e202978699eb03ca',1,'Enums']]],
+  ['processname_13',['processName',['../class_process_output_panel.html#af8ec4c669ae299698055cf9d36d50881',1,'ProcessOutputPanel']]],
+  ['processoutputpanel_14',['ProcessOutputPanel',['../class_process_output_panel.html#a5eced61630b5293e8fda4c3b92c1fe71',1,'ProcessOutputPanel']]],
+  ['programswizardpage_15',['ProgramsWizardPage',['../class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b',1,'ProgramsWizardPage']]],
+  ['protocolregex_16',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]],
+  ['proxy_17',['proxy',['../class_store_tree.html#ae66c7d3a2c5f172035cdeb1808ce7593',1,'StoreTree']]],
+  ['pushrequested_18',['pushRequested',['../class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a',1,'QtPass']]]
 ];

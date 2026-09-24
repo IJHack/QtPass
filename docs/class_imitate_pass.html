@@ -263,6 +263,14 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:aef532636a761beee3ecdd5dcedbfc834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read recipients from file.  <br /></td></tr>
 <tr class="memitem:a331fdf170bbd5de247d1e5ee7f6bb65c" id="r_a331fdf170bbd5de247d1e5ee7f6bb65c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a331fdf170bbd5de247d1e5ee7f6bb65c">reencryptSingleFile</a> (const QString &amp;fileName, const QStringList &amp;recipients, QString *why) -&gt; bool</td></tr>
 <tr class="memdesc:a331fdf170bbd5de247d1e5ee7f6bb65c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-encrypt single file with new recipients.  <br /></td></tr>
+<tr class="memitem:aee1afe18c4bbce2d16e4fe90c6d160c9" id="r_aee1afe18c4bbce2d16e4fe90c6d160c9"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aee1afe18c4bbce2d16e4fe90c6d160c9">decryptEntry</a> (const QString &amp;fileName, QString *plaintext) -&gt; bool</td></tr>
+<tr class="memdesc:aee1afe18c4bbce2d16e4fe90c6d160c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypt <code class="param">fileName</code> for re-encryption.  <br /></td></tr>
+<tr class="memitem:a085631a1431ac8d965028540fca2efea" id="r_a085631a1431ac8d965028540fca2efea"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a085631a1431ac8d965028540fca2efea">encryptFor</a> (const QString &amp;output, const QStringList &amp;recipients, const QString &amp;plaintext) -&gt; bool</td></tr>
+<tr class="memdesc:a085631a1431ac8d965028540fca2efea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt <code class="param">plaintext</code> to <code class="param">recipients</code>, into <code class="param">output</code>.  <br /></td></tr>
+<tr class="memitem:a305a2851e3a8c3c815cc561b48a450ab" id="r_a305a2851e3a8c3c815cc561b48a450ab"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a305a2851e3a8c3c815cc561b48a450ab">ciphertextHolds</a> (const QString &amp;ciphertext, const QString &amp;plaintext) -&gt; bool</td></tr>
+<tr class="memdesc:a305a2851e3a8c3c815cc561b48a450ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypt <code class="param">ciphertext</code> again and compare it with <code class="param">plaintext</code>, so nothing replaces an entry until it is known to hold what it held.  <br /></td></tr>
+<tr class="memitem:a0057a214bb3597b3da7b56acdaaacb3a" id="r_a0057a214bb3597b3da7b56acdaaacb3a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0057a214bb3597b3da7b56acdaaacb3a">commitReencrypted</a> (const QString &amp;fileName) -&gt; bool</td></tr>
+<tr class="memdesc:a0057a214bb3597b3da7b56acdaaacb3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stage and commit a re-encrypted entry, when the store is a Git repository <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> manages.  <br /></td></tr>
 <tr class="memitem:adfd24194a7787a48b6eddbe8d31fc563" id="r_adfd24194a7787a48b6eddbe8d31fc563"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#adfd24194a7787a48b6eddbe8d31fc563">resolveMoveDestination</a> (const QString &amp;src, const QString &amp;dest, bool force) -&gt; QString</td></tr>
 <tr class="memdesc:adfd24194a7787a48b6eddbe8d31fc563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve destination for move operation.  <br /></td></tr>
 <tr class="memitem:aa0b75b53b2a2d62b0fbffbb5d2d7efe4" id="r_aa0b75b53b2a2d62b0fbffbb5d2d7efe4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">finished</a> (int id, int exitCode, const QString &amp;out, const QString &amp;err) override</td></tr>
@@ -386,6 +394,79 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a305a2851e3a8c3c815cc561b48a450ab" name="a305a2851e3a8c3c815cc561b48a450ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a305a2851e3a8c3c815cc561b48a450ab">&#9670;&#160;</a></span>ciphertextHolds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::ciphertextHolds </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>ciphertext</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>plaintext</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decrypt <code class="param">ciphertext</code> again and compare it with <code class="param">plaintext</code>, so nothing replaces an entry until it is known to hold what it held. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ciphertext</td><td>The file gpg just wrote. </td></tr>
+    <tr><td class="paramname">plaintext</td><td>What it must decrypt to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether it does. </dd></dl>
+
+</div>
+</div>
+<a id="a0057a214bb3597b3da7b56acdaaacb3a" name="a0057a214bb3597b3da7b56acdaaacb3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0057a214bb3597b3da7b56acdaaacb3a">&#9670;&#160;</a></span>commitReencrypted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::commitReencrypted </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stage and commit a re-encrypted entry, when the store is a Git repository <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> manages. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>The entry that was replaced. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the repository is up to date with the file; false makes the run count the file as failed, so a partial store is not pushed. </dd></dl>
+
+</div>
+</div>
 <a id="a7748aba981f125a9d663cb9b40358d4a" name="a7748aba981f125a9d663cb9b40358d4a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7748aba981f125a9d663cb9b40358d4a">&#9670;&#160;</a></span>Copy()</h2>
 
@@ -457,6 +538,90 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Create git backup commit before re-encryption. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if backup created or not needed, false if backup failed. </dd></dl>
+
+</div>
+</div>
+<a id="aee1afe18c4bbce2d16e4fe90c6d160c9" name="aee1afe18c4bbce2d16e4fe90c6d160c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee1afe18c4bbce2d16e4fe90c6d160c9">&#9670;&#160;</a></span>decryptEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::decryptEntry </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>plaintext</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decrypt <code class="param">fileName</code> for re-encryption. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>The entry to read. </td></tr>
+    <tr><td class="paramname">plaintext</td><td>Receives what gpg printed, with a trailing newline. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether gpg decrypted it to something. </dd></dl>
+
+</div>
+</div>
+<a id="a085631a1431ac8d965028540fca2efea" name="a085631a1431ac8d965028540fca2efea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a085631a1431ac8d965028540fca2efea">&#9670;&#160;</a></span>encryptFor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::encryptFor </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>recipients</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>plaintext</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Encrypt <code class="param">plaintext</code> to <code class="param">recipients</code>, into <code class="param">output</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Where gpg writes the ciphertext; outside the store. </td></tr>
+    <tr><td class="paramname">recipients</td><td>The keys to encrypt to; gpg.conf adds none. </td></tr>
+    <tr><td class="paramname">plaintext</td><td>What to encrypt, fed on stdin. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether gpg wrote the ciphertext. </dd></dl>
 
 </div>
 </div>
