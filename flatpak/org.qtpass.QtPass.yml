@@ -32,10 +32,11 @@ finish-args:
   - --device=dri
   # git pull/push to remotes (https; add ssh-auth via Flatseal if you need ssh)
   - --share=network
-  # the pass default store location; pick another one through the file dialog
-  - --filesystem=~/.password-store:create
   # host gpg-agent socket (connect works through a read-only bind mount)
   - --filesystem=xdg-run/gnupg:ro
+  # a private store at the default path; a host store is picked through the
+  # file dialog (the portal grants that folder only), as Flathub asked
+  - --persist=.password-store
   # persistent keyring for the sandboxed gpg, at its default homedir
   - --persist=.gnupg
   # tray icon
