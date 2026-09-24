@@ -49,6 +49,7 @@
 #include <QTreeWidget>
 #include <QUrl>
 #include <algorithm>
+#include <array>
 #include <utility>
 
 /**
@@ -1231,8 +1232,52 @@ void MainWindow::addPassword() { setPassword(QString()); }
  * @brief MainWindow::onDelete remove password, if you are
  * sure.
  */
+auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
+  const QString path = QDir::separator() + file;
+  if (!isDir) {
+    return QMessageBox::question(
+               this, tr("Delete password?"),
+               tr("Are you sure you want to delete %1?").arg(path),
+               QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes;
+  }
+  // Whole sentences, not a question stitched from pieces: a verb-final
+  // language cannot put the rest of the question after the path.
+  QString question =
+      tr("Are you sure you want to delete %1 and the whole content?").arg(path);
+  // A link, junction or special file inside is as unexpected as a stray
+  // plain file: the walker leaves them out of content and reports them.
+  QStringList skipped;
+  const QStringList content = Util::regularFilesUnder(
+      m_tree->fileSystem().rootPath() + path, {QStringLiteral("*")}, &skipped);
+  const bool unexpected =
+      !skipped.isEmpty() ||
+      std::any_of(content.cbegin(), content.cend(), [](const QString &entry) {
+        return QFileInfo(entry).suffix() != QLatin1String("gpg");
+      });
+  if (unexpected) {
+    question += QStringLiteral("<br><strong>") +
+                tr("Attention: there are unexpected files in the given "
+                   "folder, check them before continuing.") +
+                QStringLiteral("</strong>");
+  }
+  return QMessageBox::question(this, tr("Delete folder?"), question,
+                               QMessageBox::Yes | QMessageBox::No) ==
+         QMessageBox::Yes;
+}
+
+auto MainWindow::confirmLinkRemoval(const QString &file) -> bool {
+  // Only the link goes (ImitatePass::Remove unlinks it); nothing behind it
+  // is looked at or mentioned.
+  return QMessageBox::question(
+             this, tr("Delete link?"),
+             tr("%1 is a symbolic link or junction. Remove the link? What it "
+                "points to is left alone.")
+                 .arg(QDir::separator() + file),
+             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes;
+}
+
 void MainWindow::onDelete() {
-  QModelIndex currentIndex = ui->treeView->currentIndex();
+  const QModelIndex currentIndex = ui->treeView->currentIndex();
   if (!currentIndex.isValid()) {
     // This fixes https://github.com/IJHack/QtPass/issues/556
     // Otherwise the entire password directory would be deleted if
@@ -1240,64 +1285,22 @@ void MainWindow::onDelete() {
     return;
   }
 
-  QFileInfo fileOrFolder = m_tree->fileInfo(ui->treeView->currentIndex());
-  QString file = "";
-  bool isDir = false;
-
-  if (fileOrFolder.isFile()) {
-    file = getFile(ui->treeView->currentIndex(), true);
-  } else {
-    file = m_tree->currentDir(true);
-    isDir = true;
-  }
-
-  QString dirMessage = tr(" and the whole content?");
+  const bool isDir = !m_tree->fileInfo(currentIndex).isFile();
+  const QString file =
+      isDir ? m_tree->currentDir(true) : getFile(currentIndex, true);
   const QString folder =
       m_tree->fileSystem().rootPath() + QDir::separator() + file;
-  if (!(isDir && Util::isLinkedFolder(folder)) && refuseLinkedFolder(folder)) {
+  const bool linkedFolder = isDir && Util::isLinkedFolder(folder);
+
+  if (!linkedFolder && refuseLinkedFolder(folder)) {
     // Behind a link: deleting would reach outside the store.
     return;
   }
-  if (isDir && Util::isLinkedFolder(folder)) {
-    // Only the link goes (ImitatePass::Remove unlinks it); nothing behind it
-    // is looked at or mentioned.
-    if (QMessageBox::question(
-            this, tr("Delete link?"),
-            tr("%1 is a symbolic link or junction. Remove the link? What it "
-               "points to is left alone.")
-                .arg(QDir::separator() + file),
-            QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
-      return;
-    }
-    QtPassSettings::getPass()->Remove(file, isDir);
+  const bool confirmed =
+      linkedFolder ? confirmLinkRemoval(file) : confirmDeletion(file, isDir);
+  if (!confirmed) {
     return;
   }
-  if (isDir) {
-    // A link, junction or special file inside is as unexpected as a stray
-    // plain file: the walker leaves them out of content and reports them.
-    QStringList skipped;
-    const QStringList content =
-        Util::regularFilesUnder(folder, {QStringLiteral("*")}, &skipped);
-    const bool unexpected =
-        !skipped.isEmpty() ||
-        std::any_of(content.cbegin(), content.cend(), [](const QString &path) {
-          return QFileInfo(path).suffix() != QLatin1String("gpg");
-        });
-    if (unexpected) {
-      dirMessage = tr(" and the whole content? <br><strong>Attention: "
-                      "there are unexpected files in the given folder, "
-                      "check them before continue.</strong>");
-    }
-  }
-
-  if (QMessageBox::question(
-          this, isDir ? tr("Delete folder?") : tr("Delete password?"),
-          tr("Are you sure you want to delete %1%2?")
-              .arg(QDir::separator() + file, isDir ? dirMessage : "?"),
-          QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
-    return;
-  }
-
   QtPassSettings::getPass()->Remove(file, isDir);
 }
 
@@ -1622,83 +1625,78 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
  * menu
  * @param pos
  */
+void MainWindow::addShareMenu(QMenu &contextMenu, const AppSettings &s) {
+  const QString dirPath = QDir::cleanPath(m_tree->currentDir(false));
+  auto *shareMenu = new QMenu(tr("Share"), &contextMenu);
+  contextMenu.addMenu(shareMenu);
+
+  const QString gpgIdPath = Pass::getGpgIdPath(dirPath, s.passStore);
+  const bool gpgIdExists = !gpgIdPath.isEmpty() && QFile(gpgIdPath).exists();
+  const QString exePath = s.usePass ? s.passExecutable : s.gpgExecutable;
+  const bool gpgAvailable =
+      !exePath.isEmpty() &&
+      (Executor::parseWslCommand(exePath) || QFile(exePath).exists());
+
+  QAction *reencrypt = shareMenu->addAction(tr("Re-encrypt all passwords"));
+  reencrypt->setEnabled(gpgIdExists && gpgAvailable);
+  connect(reencrypt, &QAction::triggered, this,
+          [this, dirPath]() { reencryptPath(dirPath); });
+
+  QAction *exportKey = shareMenu->addAction(tr("Export my public key..."));
+  exportKey->setEnabled(gpgAvailable);
+  connect(exportKey, &QAction::triggered, this, &MainWindow::exportPublicKey);
+
+  QAction *addRecipientAction = shareMenu->addAction(tr("Add recipient..."));
+  addRecipientAction->setEnabled(gpgIdExists && gpgAvailable);
+  connect(addRecipientAction, &QAction::triggered, this,
+          [this, dirPath]() { addRecipient(dirPath); });
+
+  QAction *shareHelp = shareMenu->addAction(tr("What is this?"));
+  connect(shareHelp, &QAction::triggered, this, &MainWindow::showShareHelp);
+}
+
 void MainWindow::showContextMenu(const QPoint &pos) {
   const AppSettings s = QtPassSettings::load();
-  QModelIndex index = ui->treeView->indexAt(pos);
-  bool selected = true;
-  if (!index.isValid()) {
+  const QModelIndex index = ui->treeView->indexAt(pos);
+  const bool selected = index.isValid();
+  if (!selected) {
     ui->treeView->clearSelection();
     ui->actionDelete->setEnabled(false);
     ui->actionEdit->setEnabled(false);
-    selected = false;
   }
-
   ui->treeView->setCurrentIndex(index);
-
-  QPoint globalPos = ui->treeView->viewport()->mapToGlobal(pos);
-
-  QFileInfo fileOrFolder = m_tree->fileInfo(ui->treeView->currentIndex());
+  const QPoint globalPos = ui->treeView->viewport()->mapToGlobal(pos);
+  const QFileInfo fileOrFolder = m_tree->fileInfo(ui->treeView->currentIndex());
+  const bool isDir = fileOrFolder.isDir();
 
   QMenu contextMenu;
-  if (!selected || fileOrFolder.isDir()) {
-    QAction *openFolder =
-        contextMenu.addAction(tr("Open folder with file manager"));
-    QAction *addFolder = contextMenu.addAction(tr("Add folder"));
-    QAction *addPassword = contextMenu.addAction(tr("Add password"));
-    QAction *users = contextMenu.addAction(tr("Users"));
-    connect(openFolder, &QAction::triggered, this, &MainWindow::openFolder);
-    connect(addFolder, &QAction::triggered, this, &MainWindow::addFolder);
-    connect(addPassword, &QAction::triggered, this, &MainWindow::addPassword);
-    connect(users, &QAction::triggered, this, &MainWindow::onUsers);
+  if (!selected || isDir) {
+    const std::array<std::pair<QString, void (MainWindow::*)()>, 4> onFolder{{
+        {tr("Open folder with file manager"), &MainWindow::openFolder},
+        {tr("Add folder"), &MainWindow::addFolder},
+        {tr("Add password"), &MainWindow::addPassword},
+        {tr("Users"), &MainWindow::onUsers},
+    }};
+    for (const auto &[text, slot] : onFolder) {
+      connect(contextMenu.addAction(text), &QAction::triggered, this, slot);
+    }
   } else if (fileOrFolder.isFile()) {
-    QAction *edit = contextMenu.addAction(tr("Edit"));
-    connect(edit, &QAction::triggered, this, &MainWindow::onEdit);
+    connect(contextMenu.addAction(tr("Edit")), &QAction::triggered, this,
+            &MainWindow::onEdit);
   }
   if (selected) {
     contextMenu.addSeparator();
-    if (fileOrFolder.isDir()) {
-      QAction *renameFolder = contextMenu.addAction(tr("Rename folder"));
-      connect(renameFolder, &QAction::triggered, this,
-              &MainWindow::renameFolder);
+    if (isDir) {
+      connect(contextMenu.addAction(tr("Rename folder")), &QAction::triggered,
+              this, &MainWindow::renameFolder);
     } else if (fileOrFolder.isFile()) {
-      QAction *renamePassword = contextMenu.addAction(tr("Rename password"));
-      connect(renamePassword, &QAction::triggered, this,
-              &MainWindow::renamePassword);
+      connect(contextMenu.addAction(tr("Rename password")), &QAction::triggered,
+              this, &MainWindow::renamePassword);
     }
-    QAction *deleteItem = contextMenu.addAction(tr("Delete"));
-    connect(deleteItem, &QAction::triggered, this, &MainWindow::onDelete);
-    if (fileOrFolder.isDir()) {
-      QString dirPath = QDir::cleanPath(m_tree->currentDir(false));
-
-      auto *shareMenu = new QMenu(tr("Share"), &contextMenu);
-      contextMenu.addMenu(shareMenu);
-
-      QString gpgIdPath = Pass::getGpgIdPath(dirPath, s.passStore);
-      bool gpgIdExists = !gpgIdPath.isEmpty() && QFile(gpgIdPath).exists();
-
-      const QString exePath = s.usePass ? s.passExecutable : s.gpgExecutable;
-      bool gpgAvailable =
-          !exePath.isEmpty() &&
-          (Executor::parseWslCommand(exePath) || QFile(exePath).exists());
-
-      QAction *reencrypt = shareMenu->addAction(tr("Re-encrypt all passwords"));
-      reencrypt->setEnabled(gpgIdExists && gpgAvailable);
-      connect(reencrypt, &QAction::triggered, this,
-              [this, dirPath]() { reencryptPath(dirPath); });
-
-      QAction *exportKey = shareMenu->addAction(tr("Export my public key..."));
-      exportKey->setEnabled(gpgAvailable);
-      connect(exportKey, &QAction::triggered, this,
-              &MainWindow::exportPublicKey);
-
-      QAction *addRecipientAction =
-          shareMenu->addAction(tr("Add recipient..."));
-      addRecipientAction->setEnabled(gpgIdExists && gpgAvailable);
-      connect(addRecipientAction, &QAction::triggered, this,
-              [this, dirPath]() { addRecipient(dirPath); });
-
-      QAction *shareHelp = shareMenu->addAction(tr("What is this?"));
-      connect(shareHelp, &QAction::triggered, this, &MainWindow::showShareHelp);
+    connect(contextMenu.addAction(tr("Delete")), &QAction::triggered, this,
+            &MainWindow::onDelete);
+    if (isDir) {
+      addShareMenu(contextMenu, s);
     }
   }
   contextMenu.exec(globalPos);

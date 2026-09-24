@@ -3,6 +3,7 @@
 #ifndef SRC_MAINWINDOW_H_
 #define SRC_MAINWINDOW_H_
 
+#include "appsettings.h"
 #include "enums.h"
 #include "grepsearchcontroller.h"
 #include "storetree.h"
@@ -289,6 +290,29 @@ private slots:
   void on_lineEdit_returnPressed();
   void on_profileBox_currentTextChanged(const QString &);
   void showContextMenu(const QPoint &pos);
+  /**
+   * @brief Add the Share submenu for the folder under the cursor: the
+   * entries are enabled only where a recipient list and a usable gpg or
+   * pass make them work.
+   * @param contextMenu The menu being built, which owns the submenu.
+   * @param s The settings the executables and the store come from.
+   */
+  void addShareMenu(QMenu &contextMenu, const AppSettings &s);
+  /**
+   * @brief Ask before deleting an entry or a folder, naming what goes and
+   * warning when the folder holds anything but entries.
+   * @param file Store-relative path being deleted.
+   * @param isDir Whether it is a folder.
+   * @return Whether the user said yes.
+   */
+  auto confirmDeletion(const QString &file, bool isDir) -> bool;
+  /**
+   * @brief Ask before removing a folder that is a link, which takes the link
+   * and leaves what it points to.
+   * @param file Store-relative path of the link.
+   * @return Whether the user said yes.
+   */
+  auto confirmLinkRemoval(const QString &file) -> bool;
   void showBrowserContextMenu(const QPoint &pos);
   void openFolder();
   void renameFolder();
