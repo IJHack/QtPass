@@ -194,7 +194,9 @@ jobs:
           # its Xcode 26.x clang rejects the ARM __yield intrinsic used by
           # Qt 6.8.x's qyieldcpu.h. 6.11 reordered that header to prefer
           # __builtin_arm_yield, so it compiles cleanly.
-          version: "6.11"
+          # Pinned to a patch whose .sha256 files download.qt.io serves; see
+          # the note in build-and-test.yml.
+          version: "6.11.2"
           cache: true
 
       - name: Install dmg helper
