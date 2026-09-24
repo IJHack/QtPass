@@ -257,7 +257,14 @@ namespace {
  */
 auto waitOrCancel(QProcess &process, const std::atomic_bool *cancel) -> bool {
   if (cancel == nullptr) {
-    process.waitForFinished(-1);
+    // waitForFinished(-1) can fail (a poll error) with the child still
+    // running; that is not completion. Stop it rather than report it done.
+    if (!process.waitForFinished(-1) &&
+        process.state() != QProcess::NotRunning) {
+      process.kill();
+      process.waitForFinished(kBlockingKillGraceMs);
+      return false;
+    }
     return true;
   }
   while (!process.waitForFinished(kBlockingCancelPollMs)) {
