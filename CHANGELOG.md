@@ -435,6 +435,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   long scrolling first one: General (window and tray, extensions),
   Clipboard, Display (the content panel), Passwords (generation and
   template), Git, Programs and Profiles. Every setting keeps its place in the settings file
+- The settings pages read top to bottom: one column per group, with the
+  options that depend on another (tray, pwgen, Git) indented under it; group
+  titles lose their colons; Autodetect sits next to the program choice; the
+  toolbar says "Settings" like the menu (the menu item is "Configure
+  QtPass…"); "Hide content" and "Hide password" say why they are off without
+  a clipboard mode; wording fixes ("Show tray icon", "Show QR codes
+  (qrencode)", "Source code", lower-case program names)
 - The API docs no longer load Mermaid from a CDN (`MERMAID_RENDER_MODE = CLI`,
   nothing used it and the site's Content Security Policy blocked it), the docs
   job builds with Doxygen 1.18.0 and replaces `docs/` on `gh-pages` instead of
@@ -442,6 +449,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- The autoclear boxes in Settings showed "ver" instead of "Never": the
+  layout sized them for "0", because Qt does not tell the layout when the
+  special value text changes
 - A bare base32 secret typed into the OTP field was never turned into an
   `otpauth://` URI on leaving the field (only a URI was canonicalised): the
   handler that marks the field as typed in was connected as a lambda with

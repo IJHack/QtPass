@@ -158,6 +158,7 @@ private Q_SLOTS:
   void useSelectionTogglesCheckbox();
   void autoclearIsOneSpinBoxWhereZeroIsNever();
   void autoclearPanelIsOneSpinBoxWhereZeroIsNever();
+  void autoclearBoxesAreWideEnoughForNever();
   void useGitTogglesCheckbox();
   void useOtpTogglesCheckbox();
   void useGrepSearchTogglesCheckbox();
@@ -886,6 +887,37 @@ void tst_configdialog::browseButtonsAreNamed() {
 }
 
 /**
+ * @brief Both autoclear spin boxes open on "Never" and must show all of it;
+ *        the layout used to size them for "0" and cut it to "ver".
+ */
+void tst_configdialog::autoclearBoxesAreWideEnoughForNever() {
+  AppSettings seed = QtPassSettings::load();
+  seed.useAutoclear = false;
+  seed.useAutoclearPanel = false;
+  QtPassSettings::save(seed);
+  ConfigDialog dialog(nullptr);
+  dialog.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&dialog));
+  auto *pages = child<QStackedWidget>(dialog, "pages");
+  for (const char *name :
+       {"spinBoxAutoclearSeconds", "spinBoxAutoclearPanelSeconds"}) {
+    auto *box = autoclearBox(dialog, name);
+    QVERIFY(box != nullptr);
+    QCOMPARE(box->text(), QStringLiteral("Never"));
+    for (int i = 0; i < pages->count(); ++i) {
+      if (pages->widget(i)->isAncestorOf(box)) {
+        pages->setCurrentIndex(i);
+      }
+    }
+    QTRY_VERIFY2(box->width() >= box->sizeHint().width(),
+                 qPrintable(QStringLiteral("%1 is %2 wide, needs %3")
+                                .arg(QLatin1String(name))
+                                .arg(box->width())
+                                .arg(box->sizeHint().width())));
+  }
+}
+
+/**
  * @brief The dialog used to open at its layout minimum (659x728) with no
  *        scroll area, so a long translation pushed OK off a 1280x720 screen.
  *        Every tab now scrolls; the dialog itself has to be small enough for
@@ -908,21 +940,18 @@ void tst_configdialog::dialogCanShrinkBelowItsOldMinimum() {
 
 /**
  * @brief The six bold labels that only pretended to be section headers are
- *        real QGroupBoxes now, with the strings unchanged so translations
- *        carry over.
+ *        real QGroupBoxes now, titled like the other group boxes: no colon.
  */
 void tst_configdialog::sectionHeadersAreGroupBoxes() {
   ConfigDialog dialog(nullptr);
   const QList<QPair<QString, QString>> groups = {
-      {QStringLiteral("groupBoxClipboard"),
-       QStringLiteral("Clipboard behaviour:")},
-      {QStringLiteral("groupBoxContentPanel"),
-       QStringLiteral("Content panel behaviour:")},
+      {QStringLiteral("groupBoxClipboard"), QStringLiteral("Clipboard")},
+      {QStringLiteral("groupBoxContentPanel"), QStringLiteral("Content panel")},
       {QStringLiteral("groupBoxPasswordGeneration"),
-       QStringLiteral("Password generation:")},
-      {QStringLiteral("groupBoxGit"), QStringLiteral("Git:")},
-      {QStringLiteral("groupBoxExtensions"), QStringLiteral("Extensions:")},
-      {QStringLiteral("groupBoxSystem"), QStringLiteral("System:")},
+       QStringLiteral("Password generation")},
+      {QStringLiteral("groupBoxGit"), QStringLiteral("Git")},
+      {QStringLiteral("groupBoxExtensions"), QStringLiteral("Extensions")},
+      {QStringLiteral("groupBoxSystem"), QStringLiteral("System")},
   };
   for (const auto &[name, title] : groups) {
     auto *box = dialog.findChild<QGroupBox *>(name);

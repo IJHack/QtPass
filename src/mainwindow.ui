@@ -316,10 +316,10 @@
            <number>0</number>
           </property>
           <property name="html">
-	  <string>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
+	  <string>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</string>
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</string>
           </property>
           <property name="acceptRichText">
            <bool>true</bool>
@@ -519,10 +519,13 @@
   </action>
   <action name="actionConfig">
    <property name="text">
-    <string>Config</string>
+    <string>&amp;Configure QtPass…</string>
+   </property>
+   <property name="iconText">
+    <string>Settings</string>
    </property>
    <property name="toolTip">
-    <string>Configuration</string>
+    <string>Change the QtPass settings</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+,</string>
