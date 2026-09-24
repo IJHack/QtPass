@@ -2,115 +2,115 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://qtpass.org/</loc>
-    <lastmod>2026-09-24T11:36:02+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://qtpass.org/advanced</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T22:33:20+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.1.1</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.1.2</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.1.3</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.1.4</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.1.5</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.1.6</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.beta</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://qtpass.org/changelog.old</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://qtpass.org/contributing</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://qtpass.org/downloads</loc>
-    <lastmod>2026-09-23T21:52:54+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://qtpass.org/faq</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://qtpass.org/getting-started</loc>
-    <lastmod>2026-09-19T17:38:01+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://qtpass.org/macos</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://qtpass.org/privacy</loc>
-    <lastmod>2026-09-19T17:07:55+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://qtpass.org/screenshots</loc>
-    <lastmod>2026-09-21T22:45:49+02:00</lastmod>
+    <lastmod>2026-09-24T22:33:20+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://qtpass.org/security</loc>
-    <lastmod>2026-09-19T20:12:31+02:00</lastmod>
+    <lastmod>2026-09-24T23:13:55+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
