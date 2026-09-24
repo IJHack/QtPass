@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "processoutputpanel.h"
+#include "processinfo.h"
 #include <QHBoxLayout>
 #include <QScrollBar>
 #include <QTextCursor>
@@ -108,71 +109,9 @@ void ProcessOutputPanel::clear() {
 }
 
 auto ProcessOutputPanel::processName(Enums::PROCESS pid) -> QString {
-  switch (pid) {
-  case Enums::GIT_INIT:
-    return QStringLiteral("git init"); // no-tr
-  case Enums::GIT_ADD:
-    return QStringLiteral("git add"); // no-tr
-  case Enums::GIT_COMMIT:
-    return QStringLiteral("git commit"); // no-tr
-  case Enums::GIT_RM:
-    return QStringLiteral("git rm"); // no-tr
-  case Enums::GIT_PULL:
-    return QStringLiteral("git pull"); // no-tr
-  case Enums::GIT_PUSH:
-    return QStringLiteral("git push"); // no-tr
-  case Enums::GIT_MOVE:
-    return QStringLiteral("git mv"); // no-tr
-  case Enums::GIT_COPY:
-    // ImitatePass::Copy literally invokes `git cp` (a git-extras
-    // subcommand), so the label matches what's run. Stock-git users
-    // without git-extras will see the underlying "'cp' is not a git
-    // command" failure surfaced in the process output panel.
-    return QStringLiteral("git cp"); // no-tr
-  case Enums::PASS_INSERT:
-    return QStringLiteral("pass insert"); // no-tr
-  case Enums::PASS_REMOVE:
-    return QStringLiteral("pass rm"); // no-tr
-  case Enums::PASS_INIT:
-    return QStringLiteral("pass init"); // no-tr
-  case Enums::PASS_MOVE:
-    return QStringLiteral("pass mv"); // no-tr
-  case Enums::PASS_COPY:
-    return QStringLiteral("pass cp"); // no-tr
-  case Enums::PASS_GREP:
-    return QStringLiteral("pass grep"); // no-tr
-  case Enums::GPG_GENKEYS:
-    return QStringLiteral("gpg --gen-key"); // no-tr
-  case Enums::PASS_SHOW:
-  case Enums::PROCESS_COUNT:
-  case Enums::INVALID:
-    break;
-  }
-  return {};
+  return Enums::processLabel(pid);
 }
 
 auto ProcessOutputPanel::isSensitiveProcess(Enums::PROCESS pid) -> bool {
-  switch (pid) {
-  case Enums::PASS_SHOW:
-  case Enums::PASS_GREP:
-  case Enums::PASS_INSERT:
-    return true;
-  case Enums::GIT_INIT:
-  case Enums::GIT_ADD:
-  case Enums::GIT_COMMIT:
-  case Enums::GIT_RM:
-  case Enums::GIT_PULL:
-  case Enums::GIT_PUSH:
-  case Enums::GIT_MOVE:
-  case Enums::GIT_COPY:
-  case Enums::PASS_REMOVE:
-  case Enums::PASS_INIT:
-  case Enums::PASS_MOVE:
-  case Enums::PASS_COPY:
-  case Enums::GPG_GENKEYS:
-  case Enums::PROCESS_COUNT:
-  case Enums::INVALID:
-    break;
-  }
-  return false;
+  return Enums::processInfo(pid).secret;
 }

@@ -75,6 +75,7 @@ CONFIG += lrelease embed_translations
 QM_FILES_RESOURCE_PREFIX=/localization
 
 SOURCES   += mainwindow.cpp \
+             processinfo.cpp \
              windowstatestore.cpp \
              configdialog.cpp \
              storemodel.cpp \
@@ -148,6 +149,7 @@ HEADERS   += mainwindow.h \
              qtpasssettings.h \
              appsettings.h \
              enums.h \
+             processinfo.h \
              settingsconstants.h \
              settingsserializer.h \
              passbackendfactory.h \

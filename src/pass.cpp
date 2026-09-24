@@ -4,12 +4,14 @@
 #include "gpgidgeneration.h"
 #include "gpgidsigner.h"
 #include "gpgkeystate.h"
+#include "processinfo.h"
 #include "util.h"
 #include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QHash>
 #include <QProcess>
 #include <QRandomGenerator>
 #include <QRegularExpression>
@@ -736,76 +738,34 @@ auto Pass::formatInsertError(const QString &friendly, const QString &err)
  */
 void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
                                      const QString &err) {
-  /**
-   * @brief Only output that cannot contain a secret reaches the generic
-   * listeners (the process output panel among them).
-   *
-   * An allow list, on purpose: the previous deny list of PASS_SHOW, PASS_GREP
-   * and PASS_INSERT meant that any process kind added later was broadcast
-   * until someone remembered to exclude it. Now a new kind is silent until
-   * someone decides its output is harmless and adds it here.
-   */
-  switch (pid) {
-  case GIT_INIT:
-  case Enums::GIT_ADD:
-  case Enums::GIT_COMMIT:
-  case Enums::GIT_RM:
-  case GIT_PULL:
-  case GIT_PUSH:
-  case Enums::GIT_MOVE:
-  case Enums::GIT_COPY:
-  case PASS_REMOVE:
-  case PASS_INIT:
-  case PASS_MOVE:
-  case PASS_COPY:
-  case GPG_GENKEYS:
+  // Output that cannot contain a secret goes to the generic listeners, the
+  // process output panel among them. Which kinds those are is one table,
+  // shared with the panel (Enums::processInfo).
+  if (pid >= 0 && pid < Enums::PROCESS_COUNT &&
+      !Enums::processInfo(pid).secret) {
     emit finishedAnyWithPid(out, err, pid);
-    break;
-  case PASS_SHOW:
-  case PASS_GREP:
-  case PASS_INSERT:
-  case Enums::PROCESS_COUNT:
-  case Enums::INVALID:
-    break;
   }
 
-  switch (pid) {
-  case GIT_INIT:
-    emit finishedGitInit(out, err);
-    break;
-  case GIT_PULL:
-    emit finishedGitPull(out, err);
-    break;
-  case GIT_PUSH:
-    emit finishedGitPush(out, err);
-    break;
-  case PASS_SHOW:
-    // Handled in finished(), which knows the file.
-    break;
-  case PASS_INSERT:
-    emit finishedInsert(out, err);
-    break;
-  case PASS_REMOVE:
-    emit finishedRemove(out, err);
-    break;
-  case PASS_INIT:
-    emit finishedInit(out, err);
-    break;
-  case PASS_MOVE:
-    emit finishedMove(out, err);
-    break;
-  case PASS_COPY:
-    emit finishedCopy(out, err);
-    break;
-  case GPG_GENKEYS:
-    emit finishedGenerateGPGKeys(out, err);
-    break;
-  case PASS_GREP:
+  // The kind-specific signal. PASS_SHOW is emitted by finished(), which
+  // knows the file; PASS_GREP carries parsed results, not raw output.
+  using Signal = void (Pass::*)(const QString &, const QString &);
+  static const QHash<int, Signal> kSignals{
+      {GIT_INIT, &Pass::finishedGitInit},
+      {GIT_PULL, &Pass::finishedGitPull},
+      {GIT_PUSH, &Pass::finishedGitPush},
+      {PASS_INSERT, &Pass::finishedInsert},
+      {PASS_REMOVE, &Pass::finishedRemove},
+      {PASS_INIT, &Pass::finishedInit},
+      {PASS_MOVE, &Pass::finishedMove},
+      {PASS_COPY, &Pass::finishedCopy},
+      {GPG_GENKEYS, &Pass::finishedGenerateGPGKeys},
+  };
+  if (pid == PASS_GREP) {
     emit finishedGrep(parseGrepOutput(out));
-    break;
-  default:
-    qCDebug(lcQtPass) << "Unhandled process type" << pid;
-    break;
+    return;
+  }
+  if (const Signal signal = kSignals.value(pid, nullptr)) {
+    (this->*signal)(out, err);
   }
 }
 
