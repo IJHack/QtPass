@@ -35,6 +35,11 @@ ConfigDialog::ConfigDialog(QWidget *parent)
 
   WindowStateStore::attach(*this, QStringLiteral("configDialog"));
 
+  // setSpecialValueText() in retranslateUi() drops the size hint without
+  // telling the layout, which then sizes the box for "0" and shows "ver".
+  ui->spinBoxAutoclearSeconds->updateGeometry();
+  ui->spinBoxAutoclearPanelSeconds->updateGeometry();
+
   // "Seconds" says nothing next to "Never" (the spin box's 0).
   connect(ui->spinBoxAutoclearSeconds, &QSpinBox::valueChanged, this,
           [this](int value) { ui->labelSeconds->setVisible(value > 0); });
