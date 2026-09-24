@@ -129,7 +129,14 @@ jobs:
         if: steps.need_build.outputs.run_build == 'true'
         uses: jurplel/install-qt-action@48d3ad6db93f3627c8ee7a0454bc6f3744f7e730 # v4.3.1
         with:
-          version: ${{ matrix.qt }}
+          # 6.11 resolves to the newest patch, and download.qt.io serves a
+          # new one's .sha256 files hours after the packages themselves:
+          # 6.11.3 (published 2026-09-24) fails every uncached run with
+          # "Failed to download checksum", as 6.11.2 did in August. Pinned to
+          # the newest patch whose checksums are served; the job name stays
+          # "Qt 6.11", which branch protection requires. Drop the pin once
+          # the checksums for the newer patch are up.
+          version: ${{ matrix.qt == '6.11' && '6.11.2' || matrix.qt }}
           # Restore the unpacked Qt from the Actions cache instead of pulling
           # ~600 MB from the Qt mirrors on every run. aqtinstall fetches the
           # .sha256 files from download.qt.io only (no mirror carries them, for
