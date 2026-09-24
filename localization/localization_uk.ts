@@ -159,7 +159,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished">Відображення</translation>
+        <translation>Відображення</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
@@ -188,7 +188,7 @@
         <location filename="../src/configdialog.ui" line="339"/>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Never</source>
-        <translation type="unfinished">Ніколи</translation>
+        <translation>Ніколи</translation>
     </message>
     <message>
         <source>Password generation:</source>
@@ -202,7 +202,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="626"/>
         <source>characters</source>
-        <translation type="unfinished">Символів</translation>
+        <translation>Символів</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
@@ -212,27 +212,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="810"/>
         <source>Fields:</source>
-        <translation type="unfinished">Поля:</translation>
+        <translation>Поля:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="824"/>
         <source>Off</source>
-        <translation type="unfinished">Вимкнено</translation>
+        <translation>Вимкнено</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="829"/>
         <source>Template fields</source>
-        <translation type="unfinished">Поля шаблону</translation>
+        <translation>Поля шаблону</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="834"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
-        <translation type="unfinished">Поля шаблону та кожен рядок «key: value»</translation>
+        <translation>Поля шаблону та кожен рядок «key: value»</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished">Шукати gpg, git, pwgen і pass у PATH</translation>
+        <translation>Шукати gpg, git, pwgen і pass у PATH</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -276,12 +276,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished">Налаштування Git для цього профілю; поки він активний, вони замінюють налаштування на сторінці Git</translation>
+        <translation>Налаштування Git для цього профілю; поки він активний, вони замінюють налаштування на сторінці Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished">Активне сховище</translation>
+        <translation>Активне сховище</translation>
     </message>
     <message>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
@@ -494,54 +494,54 @@
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">Система</translation>
+        <translation>Система</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Використовувати в області повідомлень</translation>
+        <translation>Використовувати в області повідомлень</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">Розширення</translation>
+        <translation>Розширення</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished">Показувати QR-коди (qrencode)</translation>
+        <translation>Показувати QR-коди (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
-        <translation type="unfinished">Секунди</translation>
+        <translation>Секунди</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished">Панель вмісту</translation>
+        <translation>Панель вмісту</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished">Потрібен режим буфера обміну на сторінці «Буфер обміну», щоб прихований пароль усе одно можна було скопіювати</translation>
+        <translation>Потрібен режим буфера обміну на сторінці «Буфер обміну», щоб прихований пароль усе одно можна було скопіювати</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished">Показувати вміст файлу як є</translation>
+        <translation>Показувати вміст файлу як є</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
         <source>Password generation</source>
-        <translation type="unfinished">Генерація пароля</translation>
+        <translation>Генерація пароля</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Необов&apos;язковий шлях для перевизначення SSH_AUTH_SOCK. Залиште порожнім для автоматичного зондування через gpgconf.</translation>
+        <translation>Необов&apos;язковий шлях для перевизначення SSH_AUTH_SOCK. Залиште порожнім для автоматичного зондування через gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
@@ -1391,7 +1391,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>%1 could not be re-encrypted: %2</source>
-        <translation type="unfinished">Не вдалося повторно зашифрувати %1: %2</translation>
+        <translation>Не вдалося повторно зашифрувати %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1101"/>
@@ -2050,7 +2050,7 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass — це графічний інтерфейс для &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандартного менеджера паролів Unix.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass — це графічний інтерфейс для &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандартного менеджера паролів Unix.&lt;/p&gt;
 &lt;p&gt;Будь ласка, повідомте про будь-які &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;проблеми&lt;/a&gt;, які можуть у вас виникнути з цим програмним забезпеченням.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Документація&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Вихідний код&lt;/a&gt;&lt;/p&gt;</translation>
@@ -2078,12 +2078,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Show &amp;process output</source>
-        <translation type="unfinished">Показати &amp;вивід процесів</translation>
+        <translation>Показати &amp;вивід процесів</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="500"/>
         <source>Show or hide the output of git, gpg and pass</source>
-        <translation type="unfinished">Показати або приховати вивід git, gpg і pass</translation>
+        <translation>Показати або приховати вивід git, gpg і pass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
@@ -2103,17 +2103,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished">&amp;Налаштувати QtPass…</translation>
+        <translation>&amp;Налаштувати QtPass…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
         <source>Settings</source>
-        <translation type="unfinished">Налаштування</translation>
+        <translation>Налаштування</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished">Змінити налаштування QtPass</translation>
+        <translation>Змінити налаштування QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>
@@ -2337,7 +2337,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Ви впевнені, що хочете видалити %1?</translation>
+        <translation>Ви впевнені, що хочете видалити %1?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1050"/>
@@ -2515,12 +2515,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
-        <translation type="unfinished">Ви впевнені, що хочете видалити %1 разом з усім вмістом?</translation>
+        <translation>Ви впевнені, що хочете видалити %1 разом з усім вмістом?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
-        <translation type="unfinished">Увага: у вказаній папці є неочікувані файли, перевірте їх, перш ніж продовжити.</translation>
+        <translation>Увага: у вказаній папці є неочікувані файли, перевірте їх, перш ніж продовжити.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1059"/>
