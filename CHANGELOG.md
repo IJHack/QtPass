@@ -301,6 +301,13 @@ First batch of the verified 2.0 backlog ([#1682](https://github.com/IJHack/QtPas
 
 ### Changed
 
+- The settings dialog has fewer controls for the same choices. Clipboard and
+  panel autoclear are one number each, where 0 reads "Never", instead of a
+  checkbox next to a number. "Use template" and "Show all fields templated"
+  are one choice: off, the template's fields, or the template's fields and
+  every `key: value` line (all fields only ever applied with templating on).
+  "Show menu bar" and "Show process output" moved out of the dialog to the
+  Settings menu, where both are toggles; the stored settings are unchanged
 - Workflow files are named after their workflows (`build-and-test.yml`,
   `lint.yml`, `documentation.yml`, `publiccode.yml`; `ccpp.yml`,
   `linter.yml`, `docs.yml` and `publiccode-yml-validation.yml` were the

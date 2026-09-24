@@ -367,6 +367,7 @@
     <addaction name="actionConfig"/>
     <addaction name="separator"/>
     <addaction name="actionShowMenuBar"/>
+    <addaction name="actionShowProcessOutput"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -486,6 +487,17 @@
    </property>
    <property name="toolTip">
     <string>Manage who can read password in folder</string>
+   </property>
+  </action>
+  <action name="actionShowProcessOutput">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show &amp;process output</string>
+   </property>
+   <property name="toolTip">
+    <string>Show or hide the output of git, gpg and pass</string>
    </property>
   </action>
   <action name="actionShowMenuBar">

@@ -156,13 +156,14 @@ private Q_SLOTS:
   void initTestCase();
   void constructionDoesNotCrash();
   void useSelectionTogglesCheckbox();
-  void useAutoclearTogglesCheckbox();
-  void useAutoclearPanelTogglesCheckbox();
+  void autoclearIsOneSpinBoxWhereZeroIsNever();
+  void autoclearPanelIsOneSpinBoxWhereZeroIsNever();
   void useGitTogglesCheckbox();
   void useOtpTogglesCheckbox();
   void useGrepSearchTogglesCheckbox();
   void usePwgenTogglesCheckbox();
-  void useTemplateTogglesCheckbox();
+  void templatingIsOneChoiceOfThree();
+  void viewTogglesAreNotInTheDialog();
   void useTrayIconTogglesCheckbox();
   void useQrencodeTogglesCheckbox();
   void setPwgenPathSetsLineEdit();
@@ -279,37 +280,69 @@ void tst_configdialog::useSelectionTogglesCheckbox() {
            "useSelection(false) should uncheck checkBoxSelection");
 }
 
-/**
- * @brief useAutoclear toggles the clipboard auto-clear checkbox.
- */
-void tst_configdialog::useAutoclearTogglesCheckbox() {
-  ConfigDialog dialog(nullptr);
-  auto *cb = dialog.findChild<QCheckBox *>(QStringLiteral("checkBoxAutoclear"));
-  QVERIFY2(cb != nullptr, "checkBoxAutoclear widget must exist");
+namespace {
+/// Seed the persisted settings, open the dialog, and hand back its spin box.
+auto autoclearBox(ConfigDialog &dialog, const char *name) -> QSpinBox * {
+  return dialog.findChild<QSpinBox *>(QString::fromLatin1(name));
+}
 
-  dialog.useAutoclear(true);
-  QVERIFY2(cb->isChecked(),
-           "useAutoclear(true) should check checkBoxAutoclear");
-  dialog.useAutoclear(false);
-  QVERIFY2(!cb->isChecked(),
-           "useAutoclear(false) should uncheck checkBoxAutoclear");
+/// Open a dialog on @p seed, set @p box to @p value, accept, reload.
+auto roundTripAutoclear(const AppSettings &seed, const char *box, int value)
+    -> AppSettings {
+  QtPassSettings::save(seed);
+  ConfigDialog dialog(nullptr);
+  autoclearBox(dialog, box)->setValue(value);
+  dialog.accept();
+  return QtPassSettings::load();
+}
+} // namespace
+
+/**
+ * @brief Clipboard autoclear is one control: the spin box shows "Never" at
+ *        0, loads an off setting as 0 whatever delay was stored, and saves
+ *        0 as off and anything else as on with that delay.
+ */
+void tst_configdialog::autoclearIsOneSpinBoxWhereZeroIsNever() {
+  SettingsRestorer restorer;
+  AppSettings seed = QtPassSettings::load();
+  seed.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
+  seed.useAutoclear = false;
+  seed.autoclearSeconds = 30;
+  QtPassSettings::save(seed);
+  {
+    ConfigDialog dialog(nullptr);
+    QSpinBox *box = autoclearBox(dialog, "spinBoxAutoclearSeconds");
+    QVERIFY(box != nullptr);
+    QCOMPARE(box->value(), 0);
+    QCOMPARE(box->text(), QStringLiteral("Never"));
+    QVERIFY(dialog.findChild<QCheckBox *>(
+                QStringLiteral("checkBoxAutoclear")) == nullptr);
+  }
+  AppSettings on = roundTripAutoclear(seed, "spinBoxAutoclearSeconds", 12);
+  QVERIFY(on.useAutoclear);
+  QCOMPARE(on.autoclearSeconds, 12);
+  AppSettings off = roundTripAutoclear(on, "spinBoxAutoclearSeconds", 0);
+  QVERIFY(!off.useAutoclear);
 }
 
 /**
- * @brief useAutoclearPanel toggles the panel auto-clear checkbox.
+ * @brief The content panel's autoclear folds the same way.
  */
-void tst_configdialog::useAutoclearPanelTogglesCheckbox() {
-  ConfigDialog dialog(nullptr);
-  auto *cb =
-      dialog.findChild<QCheckBox *>(QStringLiteral("checkBoxAutoclearPanel"));
-  QVERIFY2(cb != nullptr, "checkBoxAutoclearPanel widget must exist");
-
-  dialog.useAutoclearPanel(true);
-  QVERIFY2(cb->isChecked(),
-           "useAutoclearPanel(true) should check checkBoxAutoclearPanel");
-  dialog.useAutoclearPanel(false);
-  QVERIFY2(!cb->isChecked(),
-           "useAutoclearPanel(false) should uncheck checkBoxAutoclearPanel");
+void tst_configdialog::autoclearPanelIsOneSpinBoxWhereZeroIsNever() {
+  SettingsRestorer restorer;
+  AppSettings seed = QtPassSettings::load();
+  seed.useAutoclearPanel = true;
+  seed.autoclearPanelSeconds = 20;
+  QtPassSettings::save(seed);
+  {
+    ConfigDialog dialog(nullptr);
+    QCOMPARE(autoclearBox(dialog, "spinBoxAutoclearPanelSeconds")->value(), 20);
+  }
+  AppSettings off = roundTripAutoclear(seed, "spinBoxAutoclearPanelSeconds", 0);
+  QVERIFY(!off.useAutoclearPanel);
+  AppSettings on = roundTripAutoclear(off, "spinBoxAutoclearPanelSeconds", 7);
+  QVERIFY(on.useAutoclearPanel);
+  QCOMPARE(on.autoclearPanelSeconds, 7);
 }
 
 /**
@@ -392,20 +425,68 @@ void tst_configdialog::usePwgenTogglesCheckbox() {
 }
 
 /**
- * @brief useTemplate toggles the password-template checkbox.
+ * @brief "Use template" and "Show all fields templated" are one choice of
+ *        three (all fields only applies while templating is on, #1766). Each
+ *        stored pair loads as its choice, each choice saves as its pair, and
+ *        the template text is kept whichever is chosen.
  */
-void tst_configdialog::useTemplateTogglesCheckbox() {
-  ConfigDialog dialog(nullptr);
-  auto *cb =
-      dialog.findChild<QCheckBox *>(QStringLiteral("checkBoxUseTemplate"));
-  QVERIFY2(cb != nullptr, "checkBoxUseTemplate widget must exist");
+void tst_configdialog::templatingIsOneChoiceOfThree() {
+  SettingsRestorer restorer;
+  struct Case {
+    bool useTemplate;
+    bool allFields;
+    int index;
+  };
+  for (const Case c :
+       {Case{false, false, 0}, Case{true, false, 1}, Case{true, true, 2}}) {
+    AppSettings seed = QtPassSettings::load();
+    seed.useTemplate = c.useTemplate;
+    seed.templateAllFields = c.allFields;
+    seed.passTemplate = QStringLiteral("login\nurl");
+    QtPassSettings::save(seed);
+    ConfigDialog dialog(nullptr);
+    auto *fields =
+        dialog.findChild<QComboBox *>(QStringLiteral("comboBoxFields"));
+    QCOMPARE(fields->currentIndex(), c.index);
+    QCOMPARE(dialog
+                 .findChild<QPlainTextEdit *>(
+                     QStringLiteral("plainTextEditTemplate"))
+                 ->isEnabled(),
+             c.useTemplate);
+  }
+  for (const Case c :
+       {Case{false, false, 0}, Case{true, false, 1}, Case{true, true, 2}}) {
+    ConfigDialog dialog(nullptr);
+    dialog.findChild<QComboBox *>(QStringLiteral("comboBoxFields"))
+        ->setCurrentIndex(c.index);
+    dialog.accept();
+    const AppSettings s = QtPassSettings::load();
+    QCOMPARE(s.useTemplate, c.useTemplate);
+    QCOMPARE(s.templateAllFields, c.allFields);
+    QCOMPARE(s.passTemplate, QStringLiteral("login\nurl"));
+  }
+}
 
-  dialog.useTemplate(true);
-  QVERIFY2(cb->isChecked(),
-           "useTemplate(true) should check checkBoxUseTemplate");
-  dialog.useTemplate(false);
-  QVERIFY2(!cb->isChecked(),
-           "useTemplate(false) should uncheck checkBoxUseTemplate");
+/**
+ * @brief The menu bar and the process output are toggled from the main
+ *        window's Settings menu; the dialog neither shows them nor touches
+ *        them when it saves.
+ */
+void tst_configdialog::viewTogglesAreNotInTheDialog() {
+  SettingsRestorer restorer;
+  AppSettings seed = QtPassSettings::load();
+  seed.showMenuBar = true;
+  seed.showProcessOutput = true;
+  QtPassSettings::save(seed);
+  ConfigDialog dialog(nullptr);
+  QVERIFY(dialog.findChild<QCheckBox *>(
+              QStringLiteral("checkBoxShowMenuBar")) == nullptr);
+  QVERIFY(dialog.findChild<QCheckBox *>(
+              QStringLiteral("checkBoxShowProcessOutput")) == nullptr);
+  dialog.accept();
+  const AppSettings s = QtPassSettings::load();
+  QVERIFY(s.showMenuBar);
+  QVERIFY(s.showProcessOutput);
 }
 
 void tst_configdialog::useTrayIconTogglesCheckbox() {
@@ -991,18 +1072,14 @@ void tst_configdialog::acceptRoundTripsEveryOwnedSetting() {
   child<QPlainTextEdit>(dialog, "plainTextEditTemplate")
       ->setPlainText(QStringLiteral("login\nurl"));
   for (const char *box :
-       {"checkBoxAutoclear", "checkBoxAutoclearPanel", "checkBoxHidePassword",
-        "checkBoxHideContent", "checkBoxUseMonospace", "checkBoxDisplayAsIs",
-        "checkBoxNoLineWrapping", "checkBoxAddGPGId", "checkBoxUseGit",
-        "checkBoxUseOtp", "checkBoxUseGrepSearch", "checkBoxUsePwgen",
-        "checkBoxAvoidCapitals", "checkBoxAvoidNumbers", "checkBoxLessRandom",
-        "checkBoxUseSymbols", "checkBoxUseTemplate",
-        "checkBoxTemplateAllFields", "checkBoxShowProcessOutput"}) {
+       {"checkBoxHidePassword", "checkBoxHideContent", "checkBoxUseMonospace",
+        "checkBoxDisplayAsIs", "checkBoxNoLineWrapping", "checkBoxAddGPGId",
+        "checkBoxUseGit", "checkBoxUseOtp", "checkBoxUseGrepSearch",
+        "checkBoxUsePwgen", "checkBoxAvoidCapitals", "checkBoxAvoidNumbers",
+        "checkBoxLessRandom", "checkBoxUseSymbols"}) {
     child<QCheckBox>(dialog, box)->setChecked(true);
   }
-#ifndef Q_OS_MACOS
-  child<QCheckBox>(dialog, "checkBoxShowMenuBar")->setChecked(true);
-#endif
+  child<QComboBox>(dialog, "comboBoxFields")->setCurrentIndex(2);
   dialog.accept();
 
   const AppSettings s = QtPassSettings::load();
@@ -1020,13 +1097,9 @@ void tst_configdialog::acceptRoundTripsEveryOwnedSetting() {
        {s.useAutoclear, s.useAutoclearPanel, s.hidePassword, s.hideContent,
         s.useMonospace, s.displayAsIs, s.noLineWrapping, s.addGPGId, s.useGit,
         s.useOtp, s.useGrepSearch, s.usePwgen, s.avoidCapitals, s.avoidNumbers,
-        s.lessRandom, s.useSymbols, s.useTemplate, s.templateAllFields,
-        s.showProcessOutput}) {
+        s.lessRandom, s.useSymbols, s.useTemplate, s.templateAllFields}) {
     QVERIFY(value);
   }
-#ifndef Q_OS_MACOS
-  QVERIFY2(s.showMenuBar, "the General page owns the menu bar setting");
-#endif
   QCOMPARE(s.version, QStringLiteral(VERSION));
   QCOMPARE(QtPassSettings::getGeometry(), QByteArrayLiteral("keep-me"));
 }

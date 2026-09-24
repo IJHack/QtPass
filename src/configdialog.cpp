@@ -35,6 +35,15 @@ ConfigDialog::ConfigDialog(QWidget *parent)
 
   WindowStateStore::attach(*this, QStringLiteral("configDialog"));
 
+  // "Seconds" says nothing next to "Never" (the spin box's 0).
+  connect(ui->spinBoxAutoclearSeconds, &QSpinBox::valueChanged, this,
+          [this](int value) { ui->labelSeconds->setVisible(value > 0); });
+  connect(ui->spinBoxAutoclearPanelSeconds, &QSpinBox::valueChanged, this,
+          [this](int value) { ui->labelPanelSeconds->setVisible(value > 0); });
+  connect(
+      ui->comboBoxFields, &QComboBox::currentIndexChanged, this,
+      [this](int index) { ui->plainTextEditTemplate->setEnabled(index > 0); });
+
   const AppSettings s = QtPassSettings::load();
   applySettings(s);
 
@@ -120,8 +129,14 @@ void ConfigDialog::applySettings(const AppSettings &settings) {
   ui->storePath->setText(settings.passStore);
   ui->sshAuthSockOverride->setText(settings.sshAuthSockOverride);
 
-  ui->spinBoxAutoclearSeconds->setValue(settings.autoclearSeconds);
-  ui->spinBoxAutoclearPanelSeconds->setValue(settings.autoclearPanelSeconds);
+  // One control each: 0 is "Never", so off and a delay are one setting.
+  ui->spinBoxAutoclearSeconds->setValue(
+      settings.useAutoclear ? settings.autoclearSeconds : 0);
+  ui->labelSeconds->setVisible(ui->spinBoxAutoclearSeconds->value() > 0);
+  ui->spinBoxAutoclearPanelSeconds->setValue(
+      settings.useAutoclearPanel ? settings.autoclearPanelSeconds : 0);
+  ui->labelPanelSeconds->setVisible(ui->spinBoxAutoclearPanelSeconds->value() >
+                                    0);
   ui->checkBoxHidePassword->setChecked(settings.hidePassword);
   ui->checkBoxHideContent->setChecked(settings.hideContent);
   ui->checkBoxUseMonospace->setChecked(settings.useMonospace);
@@ -136,22 +151,18 @@ void ConfigDialog::applySettings(const AppSettings &settings) {
   ui->checkBoxLessRandom->setChecked(settings.lessRandom);
   ui->checkBoxUseSymbols->setChecked(settings.useSymbols);
   ui->plainTextEditTemplate->setPlainText(settings.passTemplate);
-  ui->checkBoxTemplateAllFields->setChecked(settings.templateAllFields);
-  ui->checkBoxShowProcessOutput->setChecked(settings.showProcessOutput);
+  // All fields only applies while templating is on (#1766), so the two
+  // switches are one choice of three.
+  ui->comboBoxFields->setCurrentIndex(
+      !settings.useTemplate ? 0 : (settings.templateAllFields ? 2 : 1));
+  ui->plainTextEditTemplate->setEnabled(settings.useTemplate);
   ui->checkBoxAutoPull->setChecked(settings.autoPull);
   ui->checkBoxAutoPush->setChecked(settings.autoPush);
   ui->checkBoxAlwaysOnTop->setChecked(settings.alwaysOnTop);
-  ui->checkBoxShowMenuBar->setChecked(settings.showMenuBar);
-#ifdef Q_OS_MACOS
-  // The menu bar is the system's up there; nothing to hide.
-  ui->checkBoxShowMenuBar->setVisible(false);
-#endif
 
   // Dependent helpers: set after the plain values above so the enable/disable
   // logic they trigger sees the final widget states.
   usePass(settings.usePass);
-  useAutoclear(settings.useAutoclear);
-  useAutoclearPanel(settings.useAutoclearPanel);
   useTrayIcon(settings.useTrayIcon);
   useGit(settings.useGit);
   useOtp(settings.useOtp);
@@ -162,7 +173,6 @@ void ConfigDialog::applySettings(const AppSettings &settings) {
   setPwgenPath(settings.pwgenExecutable);
   setPasswordConfiguration(settings.passwordConfiguration);
   usePwgen(settings.usePwgen);
-  useTemplate(settings.useTemplate);
 }
 
 auto ConfigDialog::readSettings() -> AppSettings {
@@ -179,10 +189,10 @@ auto ConfigDialog::readSettings() -> AppSettings {
   settings.clipBoardType =
       static_cast<Enums::ClipBoardType>(ui->comboBoxClipboard->currentIndex());
   settings.useSelection = ui->checkBoxSelection->isChecked();
-  settings.useAutoclear = ui->checkBoxAutoclear->isChecked();
   settings.autoclearSeconds = ui->spinBoxAutoclearSeconds->value();
-  settings.useAutoclearPanel = ui->checkBoxAutoclearPanel->isChecked();
+  settings.useAutoclear = settings.autoclearSeconds > 0;
   settings.autoclearPanelSeconds = ui->spinBoxAutoclearPanelSeconds->value();
+  settings.useAutoclearPanel = settings.autoclearPanelSeconds > 0;
   settings.hidePassword = ui->checkBoxHidePassword->isChecked();
   settings.hideContent = ui->checkBoxHideContent->isChecked();
   settings.useMonospace = ui->checkBoxUseMonospace->isChecked();
@@ -216,14 +226,10 @@ auto ConfigDialog::readSettings() -> AppSettings {
   settings.lessRandom = ui->checkBoxLessRandom->isChecked();
   settings.useSymbols = ui->checkBoxUseSymbols->isChecked();
   settings.passwordConfiguration = getPasswordConfiguration();
-  settings.useTemplate = ui->checkBoxUseTemplate->isChecked();
+  settings.useTemplate = ui->comboBoxFields->currentIndex() > 0;
   settings.passTemplate = ui->plainTextEditTemplate->toPlainText();
-  settings.templateAllFields = ui->checkBoxTemplateAllFields->isChecked();
-  settings.showProcessOutput = ui->checkBoxShowProcessOutput->isChecked();
+  settings.templateAllFields = ui->comboBoxFields->currentIndex() == 2;
   settings.alwaysOnTop = ui->checkBoxAlwaysOnTop->isChecked();
-#ifndef Q_OS_MACOS
-  settings.showMenuBar = ui->checkBoxShowMenuBar->isChecked();
-#endif
   settings.version = VERSION;
 
   return settings;
@@ -480,22 +486,11 @@ void ConfigDialog::on_comboBoxClipboard_activated(int index) {
   bool state = index > 0;
 
   ui->checkBoxSelection->setEnabled(state);
-  ui->checkBoxAutoclear->setEnabled(state);
   ui->checkBoxHidePassword->setEnabled(state);
   ui->checkBoxHideContent->setEnabled(state);
-  if (state) {
-    ui->spinBoxAutoclearSeconds->setEnabled(ui->checkBoxAutoclear->isChecked());
-    ui->labelSeconds->setEnabled(ui->checkBoxAutoclear->isChecked());
-  } else {
-    ui->spinBoxAutoclearSeconds->setEnabled(false);
-    ui->labelSeconds->setEnabled(false);
-  }
-}
-
-void ConfigDialog::on_checkBoxAutoclearPanel_clicked() {
-  bool state = ui->checkBoxAutoclearPanel->isChecked();
-  ui->spinBoxAutoclearPanelSeconds->setEnabled(state);
-  ui->labelPanelSeconds->setEnabled(state);
+  ui->labelAutoclear->setEnabled(state);
+  ui->spinBoxAutoclearSeconds->setEnabled(state);
+  ui->labelSeconds->setEnabled(state);
 }
 
 void ConfigDialog::useSelection(bool useSelection) {
@@ -503,21 +498,7 @@ void ConfigDialog::useSelection(bool useSelection) {
   on_checkBoxSelection_clicked();
 }
 
-void ConfigDialog::useAutoclear(bool useAutoclear) {
-  ui->checkBoxAutoclear->setChecked(useAutoclear);
-  on_checkBoxAutoclear_clicked();
-}
-
-void ConfigDialog::useAutoclearPanel(bool useAutoclearPanel) {
-  ui->checkBoxAutoclearPanel->setChecked(useAutoclearPanel);
-  on_checkBoxAutoclearPanel_clicked();
-}
-
 void ConfigDialog::on_checkBoxSelection_clicked() {
-  on_comboBoxClipboard_activated(ui->comboBoxClipboard->currentIndex());
-}
-
-void ConfigDialog::on_checkBoxAutoclear_clicked() {
   on_comboBoxClipboard_activated(ui->comboBoxClipboard->currentIndex());
 }
 
@@ -838,12 +819,6 @@ void ConfigDialog::on_passwordCharTemplateSelector_activated(int index) {
   }
 }
 
-void ConfigDialog::on_checkBoxUseTemplate_clicked() {
-  ui->plainTextEditTemplate->setEnabled(ui->checkBoxUseTemplate->isChecked());
-  ui->checkBoxTemplateAllFields->setEnabled(
-      ui->checkBoxUseTemplate->isChecked());
-}
-
 void ConfigDialog::onProfileSelected(int row) { loadProfileForm(row); }
 
 void ConfigDialog::onProfileNameEdited(const QString &name) {
@@ -911,9 +886,4 @@ void ConfigDialog::updateProfileStatus() {
   }
 
   ui->statusLabel->setText(statusMessage);
-}
-
-void ConfigDialog::useTemplate(bool useTemplate) {
-  ui->checkBoxUseTemplate->setChecked(useTemplate);
-  on_checkBoxUseTemplate_clicked();
 }
