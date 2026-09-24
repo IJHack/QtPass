@@ -421,7 +421,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rodymas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
@@ -441,7 +441,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rodyti QR kodus (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -452,18 +452,18 @@
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Turinio skydelis</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Reikia iškarpinės režimo puslapyje „Iškarpinė“, kad paslėptą slaptažodį vis tiek būtų galima nukopijuoti</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rodyti failo turinį kaip yra</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
@@ -478,27 +478,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Naudoti pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ieškoti gpg, git, pwgen ir pass kelyje PATH</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
         <source>git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
         <source>gpg</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1158"/>
         <source>pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
@@ -625,12 +625,12 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Šio profilio Git nustatymai; kol jis aktyvus, jie pakeičia nustatymus puslapyje „Git“</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktyvi saugykla</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1570"/>
@@ -1863,7 +1863,10 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;QtPass yra grafinė sąsaja, skirta &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standartinei Unix slaptažodžių tvarkyklei.&lt;/p&gt;
+&lt;p&gt;Praneškite apie bet kokias &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemas&lt;/a&gt;, kurias galite turėti su šia programine įranga.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Pirminis kodas&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
@@ -1992,7 +1995,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Konfigūruoti QtPass…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
@@ -2002,7 +2005,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Keisti QtPass nustatymus</translation>
     </message>
     <message>
         <source>Config</source>

@@ -150,7 +150,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">显示</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
@@ -223,7 +223,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在 PATH 中查找 gpg、git、pwgen 和 pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -267,12 +267,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">此配置文件的 Git 设置；启用该配置文件时，将替代“Git”页面上的设置</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">当前密码库</translation>
     </message>
     <message>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
@@ -492,7 +492,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">显示二维码 (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -503,18 +503,18 @@
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">内容面板</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">需要在“剪贴板”页面上设置剪贴板模式，以便仍能复制隐藏的密码</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">按原样显示文件内容</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
@@ -2235,7 +2235,10 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt; QtPass是 &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass &lt;/a&gt;（标准的Unix密码管理器）的GUI。&lt;/p&gt;
+&lt;p&gt;请报告此软件可能包含的所有&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;问题&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt;文档&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;源代码&lt;/a&gt; &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
@@ -2265,7 +2268,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">配置 QtPass(&amp;C)…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
@@ -2275,7 +2278,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">更改 QtPass 设置</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>

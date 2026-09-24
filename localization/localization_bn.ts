@@ -421,7 +421,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রদর্শন</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
@@ -441,7 +441,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QR কোড দেখান (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -452,18 +452,18 @@
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কনটেন্ট প্যানেল</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ক্লিপবোর্ড পৃষ্ঠায় একটি ক্লিপবোর্ড মোড প্রয়োজন, যাতে লুকানো পাসওয়ার্ডও কপি করা যায়</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইলের কনটেন্ট যেমন আছে তেমন দেখান</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
@@ -478,27 +478,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pwgen ব্যবহার</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">PATH-এ gpg, git, pwgen এবং pass খুঁজুন</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
         <source>git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
         <source>gpg</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1158"/>
         <source>pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
@@ -625,12 +625,12 @@ URL
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই প্রফাইলের জন্য গিট সেটিংস; এটি সক্রিয় থাকাকালীন এগুলো গিট পৃষ্ঠার সেটিংসের পরিবর্তে ব্যবহৃত হয়</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সক্রিয় স্টোর</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1570"/>
@@ -1859,7 +1859,10 @@ You will not be able to change the user list!</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;QtPass হলো &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;-এর একটি গ্রাফিক্যাল ইউজার ইন্টারফেস (GUI), যা স্ট্যান্ডার্ড ইউনিক্স পাসওয়ার্ড ম্যানেজার।&lt;/p&gt;
+&lt;p&gt;এই সফটওয়্যারটি নিয়ে আপনার কোনো &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;সমস্যা&lt;/a&gt; হলে অনুগ্রহ করে জানান।&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;ডকুমেন্টেশন&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;সোর্সকোড&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
@@ -1988,7 +1991,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(&amp;C) QtPass কনফিগার করুন…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
@@ -1998,7 +2001,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QtPass সেটিংস পরিবর্তন করুন</translation>
     </message>
     <message>
         <source>Config</source>

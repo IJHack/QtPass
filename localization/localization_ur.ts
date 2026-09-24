@@ -421,7 +421,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ڈسپلے</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
@@ -441,7 +441,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QR کوڈز دکھائیں (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -452,18 +452,18 @@
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مواد کا پینل</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">کلپ بورڈ صفحے پر کلپ بورڈ موڈ درکار ہے، تاکہ چھپا ہوا پاس ورڈ پھر بھی کاپی کیا جا سکے</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فائل کا مواد جوں کا توں دکھائیں</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
@@ -478,27 +478,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pwgen استعمال کریں</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">PATH میں gpg، git، pwgen اور pass تلاش کریں</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
         <source>git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
         <source>gpg</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1158"/>
         <source>pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
@@ -625,12 +625,12 @@ URL
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">اس پروفائل کی Git سیٹنگز؛ جب یہ فعال ہو تو یہ Git صفحے والی سیٹنگز کی جگہ لیتی ہیں</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فعال اسٹور</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1570"/>
@@ -1859,7 +1859,10 @@ You will not be able to change the user list!</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;QtPass معیاری یونکس پاس ورڈ منیجر &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; کے لیے ایک GUI ہے۔&lt;/p&gt;
+&lt;p&gt;براہ کرم اس سافٹ ویئر کے ساتھ کوئی بھی &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;مسائل&lt;/a&gt; رپورٹ کریں۔&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;دستاویزات&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;سورس کوڈ&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
@@ -1988,7 +1991,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QtPass کنفیگر کریں (&amp;C)…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
@@ -1998,7 +2001,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QtPass کی سیٹنگز تبدیل کریں</translation>
     </message>
     <message>
         <source>Config</source>

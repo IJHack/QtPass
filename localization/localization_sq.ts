@@ -396,7 +396,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shfaqja</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
@@ -416,7 +416,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shfaq kodet QR (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -427,18 +427,18 @@
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Paneli i përmbajtjes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kërkon një mënyrë klipboardi në faqen Klipboardi, që një fjalëkalim i fshehur të mund të kopjohet përsëri</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Shfaq përmbajtjen e skedarit ashtu siç është</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
@@ -453,27 +453,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Përdorni pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kërko gpg, git, pwgen dhe pass në PATH</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
         <source>git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
         <source>gpg</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1158"/>
         <source>pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
@@ -523,12 +523,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cilësimet e Git për këtë profil; kur është aktiv, zëvendësojnë ato në faqen Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Depoja aktive</translation>
     </message>
     <message>
         <source>Signing Key</source>
@@ -1885,7 +1885,10 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt; QtPass është një GUI për &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass&lt;/a&gt;, menaxheri standard me fjalëkalim Unix. &lt;/p&gt;
+&lt;p&gt; Ju lutemi raportoni çdo &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; çështje &lt;/a&gt; që mund të keni me këtë softuer. &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dokumentacioni &lt;/a&gt; &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Burimi i kodit &lt;/a&gt; &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
@@ -1935,7 +1938,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Konfiguro QtPass…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
@@ -1945,7 +1948,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ndrysho cilësimet e QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>
