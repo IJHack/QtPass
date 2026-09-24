@@ -304,6 +304,44 @@ auto generationDigits(const QByteArray &digits) -> std::optional<qint64> {
   return digits.toLongLong();
 }
 
+/// Takes one line of ours into @p generation or @p folder. Returns why it
+/// cannot be taken (a second line of the kind, a malformed one, an unknown
+/// kind), or an empty string when it was.
+auto takeHeaderLine(const QByteArray &line, std::optional<qint64> &generation,
+                    std::optional<QString> &folder) -> QString {
+  if (line.startsWith(GpgIdGeneration::kGenerationPrefix)) {
+    if (generation) {
+      return QCoreApplication::translate(
+          "GpgIdGeneration", "The list carries more than one generation line.");
+    }
+    generation =
+        generationDigits(line.mid(GpgIdGeneration::kGenerationPrefix.size()));
+    if (generation) {
+      return {};
+    }
+    return QCoreApplication::translate("GpgIdGeneration",
+                                       "The generation line is malformed: %1")
+        .arg(QString::fromUtf8(line));
+  }
+  if (line.startsWith(GpgIdGeneration::kFolderPrefix)) {
+    if (folder) {
+      return QCoreApplication::translate(
+          "GpgIdGeneration", "The list carries more than one folder line.");
+    }
+    const QByteArray value = line.mid(GpgIdGeneration::kFolderPrefix.size());
+    if (!value.isEmpty()) {
+      folder = QString::fromUtf8(value);
+      return {};
+    }
+    return QCoreApplication::translate("GpgIdGeneration",
+                                       "The folder line is malformed: %1")
+        .arg(QString::fromUtf8(line));
+  }
+  return QCoreApplication::translate("GpgIdGeneration",
+                                     "The header line is malformed: %1")
+      .arg(QString::fromUtf8(line));
+}
+
 } // namespace
 
 auto GpgIdGeneration::parse(const QByteArray &contents, QString *error)
@@ -321,33 +359,9 @@ auto GpgIdGeneration::parse(const QByteArray &contents, QString *error)
     if (!line.startsWith(kOurComment)) {
       continue;
     }
-    QString complaint;
-    if (line.startsWith(kGenerationPrefix)) {
-      const std::optional<qint64> value =
-          generationDigits(line.mid(kGenerationPrefix.size()));
-      if (generation) {
-        complaint = tr("The list carries more than one generation line.");
-      } else if (!value) {
-        complaint = tr("The generation line is malformed: %1")
-                        .arg(QString::fromUtf8(line));
-      } else {
-        generation = value;
-        continue;
-      }
-    } else if (line.startsWith(kFolderPrefix)) {
-      const QByteArray value = line.mid(kFolderPrefix.size());
-      if (folder) {
-        complaint = tr("The list carries more than one folder line.");
-      } else if (value.isEmpty()) {
-        complaint =
-            tr("The folder line is malformed: %1").arg(QString::fromUtf8(line));
-      } else {
-        folder = QString::fromUtf8(value);
-        continue;
-      }
-    } else {
-      complaint =
-          tr("The header line is malformed: %1").arg(QString::fromUtf8(line));
+    const QString complaint = takeHeaderLine(line, generation, folder);
+    if (complaint.isEmpty()) {
+      continue;
     }
     if (error)
       *error = complaint;
