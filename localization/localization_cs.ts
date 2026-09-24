@@ -164,7 +164,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished">Zobrazení</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
@@ -184,7 +184,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished">Zobrazit QR kódy (qrencode)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
@@ -580,18 +580,18 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished">Panel obsahu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished">Vyžaduje režim schránky na stránce Schránka, aby bylo možné skryté heslo přesto zkopírovat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished">Zobrazit obsah souboru tak, jak je</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
@@ -606,7 +606,7 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished">Vyhledat gpg, git, pwgen a pass v PATH</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -650,12 +650,12 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished">Nastavení Git pro tento profil; když je aktivní, nahrazuje nastavení na stránce Git</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished">Aktivní úložiště</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1039"/>
@@ -2205,10 +2205,7 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass je uživatelské rozhraní pro &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardní správce unixových hesel.&lt;/p&gt;
-&lt;p&gt;Nahlaste prosím všechny &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problémy&lt;/a&gt;, které byste mohli mít s tímto softwarem.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentace&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Zdrojový kód&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
@@ -2238,7 +2235,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished">&amp;Konfigurovat QtPass…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
@@ -2248,7 +2245,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished">Změnit nastavení QtPass</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>
