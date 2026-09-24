@@ -346,9 +346,10 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
 void Pass::GenerateGPGKeys(QString batch) {
   const QString gpgPath = m_settings.gpgExecutable;
   if (gpgPath.isEmpty()) {
-    // The Executor silently drops an empty executable, leaving the keygen
-    // dialog spinning. Queued so we do not re-enter KeygenDialog::done(),
-    // which drives key generation synchronously.
+    // The executor would fail an empty executable with a generic process
+    // error; the keygen dialog waits for generateGPGKeysFailed and a reason
+    // it can show. Queued so we do not re-enter KeygenDialog::done(), which
+    // drives key generation synchronously.
     QMetaObject::invokeMethod(
         this,
         [this]() {

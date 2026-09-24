@@ -9,9 +9,10 @@ static auto isOtpUri(const QString &value) -> bool {
   return FileContent::isOtpUriValue(value);
 }
 
-// Anything carrying a TOTP shared secret must never reach the display: a bare
-// `otpauth://` line, an `OTP:`/`TOTP:` field, or any field whose value is an
-// otpauth URI.
+// The parsed display leaves out anything carrying a TOTP shared secret: a
+// bare `otpauth://` line, an `OTP:`/`TOTP:` field, or any field whose value
+// is an otpauth URI. "Display the file's content as-is" bypasses this filter
+// and shows the entry raw.
 static auto isLineHidden(const QString &line) -> bool {
   if (isOtpUri(line)) {
     return true;

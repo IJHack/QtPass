@@ -169,7 +169,8 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   connect(QtPassSettings::getPass(), &Pass::finishedAnyWithPid, this,
           [this](const QString &out, const QString &err, Enums::PROCESS pid) {
             // Never route potentially-secret output through the panel:
-            // PASS_SHOW goes to the text browser (cleared on a timer),
+            // PASS_SHOW goes to the text browser (cleared on a timer when
+            // "Autoclear panel" is set),
             // PASS_GREP returns password-file lines (#252), and PASS_INSERT
             // is excluded defensively in case a future path uses --echo.
             if (ProcessOutputPanel::isSensitiveProcess(pid)) {

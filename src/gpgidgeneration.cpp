@@ -178,7 +178,8 @@ auto saveRecord(const QString &path, const Entries &entries, QString *error)
 
 /// Process mutex, then a lock file against a second QtPass (no single-instance
 /// guard, a Flatpak next to a native one), then a fresh read. When `ok()` is
-/// false nothing is read or written: RecordUnavailable.
+/// false (no lock, or a record that does not parse) the caller neither uses
+/// nor writes the record: RecordUnavailable.
 struct Transaction {
   QMutexLocker<QMutex> mutex{&recordLock()};
   QString path{recordPath()};
