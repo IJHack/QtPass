@@ -113,6 +113,8 @@ private Q_SLOTS:
   void trayMenuShowHideDriveParent();
   void trayMenuWindowStateActionsDriveParent();
   void trayMenuQuitStopsEventLoop();
+  void addToggleSitsAboveQuitAndSharesItsState();
+  void addToggleWithoutTrayIsIgnored();
   void trayActivatedSignalTogglesParent();
 };
 
@@ -443,6 +445,50 @@ void tst_trayicon::trayActivatedSignalTogglesParent() {
 
   emit icon->activated(QSystemTrayIcon::DoubleClick);
   QTRY_VERIFY2(parent.isVisible(), "DoubleClick via the icon must show");
+}
+
+/**
+ * @brief A window toggle added to the tray menu sits between the window
+ *        entries and Quit, and is the window's own action: checking it in the
+ *        tray is checking it everywhere.
+ */
+void tst_trayicon::addToggleSitsAboveQuitAndSharesItsState() {
+  REQUIRE_FAKE_TRAY();
+  QMainWindow parent;
+  TrayIcon tray(&parent);
+  QMenu *menu = parent.findChildren<QMenu *>().value(0);
+  QVERIFY(menu != nullptr);
+  QAction toggle(QStringLiteral("Show &menu bar"), &parent);
+  toggle.setCheckable(true);
+
+  tray.addToggle(&toggle);
+
+  const QList<QAction *> actions = menu->actions();
+  const qsizetype at = actions.indexOf(&toggle);
+  QVERIFY2(at > 0, "the toggle is in the tray menu");
+  QVERIFY2(actions.at(at - 1)->isSeparator() &&
+               actions.value(at + 1)->isSeparator(),
+           "set apart from the window entries and from Quit");
+  QCOMPARE(actions.value(at + 2), actionNamed(menu, QStringLiteral("&Quit")));
+  QCOMPARE(actions.value(at - 2),
+           actionNamed(menu, QStringLiteral("&Restore")));
+
+  actions.at(at)->trigger();
+  QVERIFY2(toggle.isChecked(), "the tray entry is the window's action");
+}
+
+/**
+ * @brief Without a tray there is no menu to add to, and nothing breaks.
+ */
+void tst_trayicon::addToggleWithoutTrayIsIgnored() {
+  if (QSystemTrayIcon::isSystemTrayAvailable()) {
+    QSKIP("this platform has a tray");
+  }
+  QMainWindow parent;
+  TrayIcon tray(&parent);
+  QAction toggle(&parent);
+  tray.addToggle(&toggle);
+  QVERIFY(parent.findChildren<QMenu *>().isEmpty());
 }
 
 QTEST_MAIN(tst_trayicon)

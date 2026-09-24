@@ -61,11 +61,19 @@ void TrayIcon::createTrayIcon() {
   trayIconMenu->addAction(minimizeAction);
   trayIconMenu->addAction(maximizeAction);
   trayIconMenu->addAction(restoreAction);
-  trayIconMenu->addSeparator();
+  quitSeparator = trayIconMenu->addSeparator();
   trayIconMenu->addAction(quitAction);
 
   sysTrayIcon = new QSystemTrayIcon(this);
   sysTrayIcon->setContextMenu(trayIconMenu);
+}
+
+void TrayIcon::addToggle(QAction *action) {
+  if (trayIconMenu == nullptr) {
+    return;
+  }
+  trayIconMenu->insertSeparator(quitSeparator);
+  trayIconMenu->insertAction(quitSeparator, action);
 }
 
 void TrayIcon::showHideParent() {

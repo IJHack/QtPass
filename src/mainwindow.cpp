@@ -10,6 +10,7 @@
 #include "exportpublickeydialog.h"
 #include "filecontent.h"
 #include "firstrunwizard.h"
+#include "menubarpeek.h"
 #include "passworddialog.h"
 #include "passworddisplaypanel.h"
 #include "pathvalidator.h"
@@ -362,6 +363,7 @@ void MainWindow::initToolBarButtons() {
     s.showMenuBar = show;
     QtPassSettings::save(s);
   });
+  new MenuBarPeek(this, ui->actionShowMenuBar);
 #endif
   connect(ui->actionFaq, &QAction::triggered, this, [] {
     QDesktopServices::openUrl(QUrl(QStringLiteral("https://qtpass.org/faq")));
@@ -1214,7 +1216,11 @@ void MainWindow::initTrayIcon() {
   m_tray = new TrayIcon(this);
   if (!m_tray->getIsAllocated()) {
     destroyTrayIcon();
+    return;
   }
+#ifndef Q_OS_MACOS
+  m_tray->addToggle(ui->actionShowMenuBar);
+#endif
 }
 
 void MainWindow::destroyTrayIcon() {
