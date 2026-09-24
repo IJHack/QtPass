@@ -8,7 +8,7 @@ on:
       - "1.8"
     paths:
       - "flatpak/**"
-      - "qtpass.appdata.xml"
+      - "org.qtpass.QtPass.metainfo.xml"
       - "qtpass.desktop"
       - "artwork/**"
       # the files the Flathub manifest overlays onto the tagged source

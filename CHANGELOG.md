@@ -2,6 +2,14 @@
 
 ## [Unreleased] — 1.8.2
 
+### Changed
+
+- The AppStream metainfo installs as `org.qtpass.QtPass.metainfo.xml`, the
+  filename the spec derives from the component ID, instead of
+  `qtpass.appdata.xml` (ported from [#1804](https://github.com/IJHack/QtPass/pull/1804)). Packagers who install the
+  file themselves need the new name; the Flatpak manifest drops
+  `rename-appdata-file` with this tag
+
 ### Bugfixes
 
 - "Automatically push" and "Automatically pull" in the settings did nothing

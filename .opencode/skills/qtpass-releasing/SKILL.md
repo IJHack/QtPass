@@ -26,7 +26,7 @@ Update version in all build files:
 - `changelog.1.4.html` (gh-pages)
 - `old.html` (gh-pages)
 
-**NOTE:** `qtpass.appdata.xml` and `appdmg.json` don't have version fields to update.
+**NOTE:** `org.qtpass.QtPass.metainfo.xml` and `appdmg.json` don't have version fields to update.
 
 ```bash
 # Find version strings (replace X.Y with actual version)
@@ -148,7 +148,7 @@ announcing the release:
 
 - Where: PR to the Flathub app repository.
 - How: bump the `qtpass` module tag/commit in `flatpak/org.qtpass.QtPass.yml`,
-  add a `<release>` to `qtpass.appdata.xml`, run `flatpak-builder-lint`.
+  add a `<release>` to `org.qtpass.QtPass.metainfo.xml`, run `flatpak-builder-lint`.
 - Flathub's [generative-AI policy](https://docs.flathub.org/docs/for-app-authors/requirements#generative-ai-policy):
   AI-generated code, packaging or metadata must be disclosed (which parts,
   how much) and is accepted at reviewer discretion; AI tools must not open
