@@ -366,13 +366,13 @@
 
         <h3>
           <a
-            id="linux-bsd"
+            id="linux"
             class="anchor"
-            href="#linux-bsd"
+            href="#linux"
             aria-hidden="true"
             tabindex="-1"
             ><span aria-hidden="true" class="octicon octicon-link"></span></a
-          >Linux / BSD
+          ><span id="linux-bsd"></span>Linux
         </h3>
 
         <h4 id="Arch">Arch</h4>
@@ -532,6 +532,17 @@
         /></a>
         <pre><code>cd qtpass &amp;&amp; chmod +x qtpass.SlackBuild &amp;&amp; ./qtpass.SlackBuild</code></pre>
 
+        <h3>
+          <a
+            id="bsd"
+            class="anchor"
+            href="#bsd"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >BSD
+        </h3>
+
         <h4 id="FreeBSD">FreeBSD</h4>
         Available as package and in the FreeBSD
         <a
@@ -547,6 +558,22 @@
         /></a>
         <pre><code>pkg install qtpass</code></pre>
         <pre><code>cd /usr/ports/sysutils/qtpass/ &amp;&amp; make install clean</code></pre>
+
+        <h4 id="OpenBSD">OpenBSD</h4>
+        Available as package and in the OpenBSD
+        <a
+          title="QtPass OpenBSD port"
+          href="https://openports.pl/path/security/qtpass"
+          >ports</a
+        >
+        tree
+        <a href="https://repology.org/metapackage/qtpass"
+          ><img
+            src="https://repology.org/badge/version-only-for-repo/openbsd/qtpass.svg"
+            alt="OpenBSD port"
+        /></a>
+        <pre><code>pkg_add qtpass</code></pre>
+        <pre><code>cd /usr/ports/security/qtpass/ &amp;&amp; make install</code></pre>
 
         <h3 id="Windows">
           <a
@@ -719,7 +746,7 @@ qmake6 &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
 
         <p>
           <br />
-          <a title="Install on Linux or FreeBSD" href="/downloads#linux-bsd"
+          <a title="Install on Linux" href="/downloads#linux"
             ><img
               class="compatible"
               src="images/linux.png"
