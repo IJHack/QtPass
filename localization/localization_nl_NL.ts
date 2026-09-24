@@ -188,7 +188,7 @@
         <location filename="../src/configdialog.ui" line="339"/>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Never</source>
-        <translation type="unfinished">Nooit</translation>
+        <translation>Nooit</translation>
     </message>
     <message>
         <source>Password generation:</source>
@@ -202,7 +202,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="626"/>
         <source>characters</source>
-        <translation type="unfinished">tekens</translation>
+        <translation>tekens</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
@@ -212,22 +212,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="810"/>
         <source>Fields:</source>
-        <translation type="unfinished">Velden:</translation>
+        <translation>Velden:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="824"/>
         <source>Off</source>
-        <translation type="unfinished">Uit</translation>
+        <translation>Uit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="829"/>
         <source>Template fields</source>
-        <translation type="unfinished">Sjabloonvelden</translation>
+        <translation>Sjabloonvelden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="834"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
-        <translation type="unfinished">Sjabloonvelden en elke &quot;key: value&quot;-regel</translation>
+        <translation>Sjabloonvelden en elke &quot;key: value&quot;-regel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
@@ -494,17 +494,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">Systeem</translation>
+        <translation>Systeem</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Systeemvakpictogram tonen</translation>
+        <translation>Systeemvakpictogram tonen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">Uitbreidingen</translation>
+        <translation>Uitbreidingen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
@@ -515,7 +515,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
-        <translation type="unfinished">seconden</translation>
+        <translation>seconden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
@@ -536,12 +536,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
         <source>Password generation</source>
-        <translation type="unfinished">Wachtwoordgenerator</translation>
+        <translation>Wachtwoordgenerator</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Optioneel pad om SSH_AUTH_SOCK te overschrijven. Laat leeg om automatisch te detecteren via gpgconf.</translation>
+        <translation>Optioneel pad om SSH_AUTH_SOCK te overschrijven. Laat leeg om automatisch te detecteren via gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
@@ -1395,7 +1395,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>%1 could not be re-encrypted: %2</source>
-        <translation type="unfinished">%1 kon niet opnieuw worden versleuteld: %2</translation>
+        <translation>%1 kon niet opnieuw worden versleuteld: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1101"/>
@@ -2104,12 +2104,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Show &amp;process output</source>
-        <translation type="unfinished">&amp;Procesuitvoer tonen</translation>
+        <translation>&amp;Procesuitvoer tonen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="500"/>
         <source>Show or hide the output of git, gpg and pass</source>
-        <translation type="unfinished">De uitvoer van git, gpg en pass tonen of verbergen</translation>
+        <translation>De uitvoer van git, gpg en pass tonen of verbergen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
@@ -2134,7 +2134,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
         <source>Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
@@ -2551,12 +2551,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
-        <translation type="unfinished">Weet je zeker dat je %1 en alle inhoud wil verwijderen?</translation>
+        <translation>Weet je zeker dat je %1 en alle inhoud wil verwijderen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
-        <translation type="unfinished">Let op: er zijn onverwachte bestanden in de opgegeven map, controleer deze voordat je verdergaat.</translation>
+        <translation>Let op: er zijn onverwachte bestanden in de opgegeven map, controleer deze voordat je verdergaat.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1059"/>
