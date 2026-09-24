@@ -31,23 +31,23 @@
         <translation type="vanished">Налаштування</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="304"/>
+        <location filename="../src/configdialog.ui" line="294"/>
         <source>Clipboard behaviour:</source>
         <translation>Поведінка буфера обміну:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="322"/>
+        <location filename="../src/configdialog.ui" line="312"/>
         <source>Use primary selection</source>
         <translation>Використовувати первинний вибір</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="329"/>
+        <location filename="../src/configdialog.ui" line="319"/>
         <source>Autoclear after:</source>
         <translation>Автоматичне очищення після:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="346"/>
-        <location filename="../src/configdialog.ui" line="421"/>
+        <location filename="../src/configdialog.ui" line="342"/>
+        <location filename="../src/configdialog.ui" line="423"/>
         <source>Seconds</source>
         <translation>Секунди</translation>
     </message>
@@ -56,44 +56,43 @@
         <translation type="vanished">Поведінка пароля:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="374"/>
+        <location filename="../src/configdialog.ui" line="370"/>
         <source>Content panel behaviour:</source>
         <translation>Поведінка панелі контенту:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="382"/>
+        <location filename="../src/configdialog.ui" line="378"/>
         <source>Hide content</source>
         <translation>Приховувати вміст</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="389"/>
+        <location filename="../src/configdialog.ui" line="385"/>
         <source>Hide password</source>
         <translation>Сховати пароль</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="398"/>
+        <location filename="../src/configdialog.ui" line="394"/>
         <source>Autoclear panel after:</source>
         <translation>Автоматичне очищення панелі після:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="450"/>
+        <location filename="../src/configdialog.ui" line="452"/>
         <source>Use a monospace font</source>
         <translation>Використовувати моноширинний шрифт</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="457"/>
+        <location filename="../src/configdialog.ui" line="459"/>
         <source>Display the files content as-is</source>
         <translation>Відображати вміст файлів як є</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="464"/>
+        <location filename="../src/configdialog.ui" line="466"/>
         <source>No line wrapping</source>
         <translation>Без переносу рядків</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="471"/>
         <source>Show process output</source>
-        <translation>Показати вивід процесу</translation>
+        <translation type="vanished">Показати вивід процесу</translation>
     </message>
     <message>
         <source>Password Generation:</source>
@@ -104,17 +103,17 @@
         <translation type="vanished">Довжина пароля:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="599"/>
+        <location filename="../src/configdialog.ui" line="594"/>
         <source>Characters</source>
         <translation>Символів</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="630"/>
+        <location filename="../src/configdialog.ui" line="625"/>
         <source>Use characters:</source>
         <translation>Використовувати символи:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="651"/>
+        <location filename="../src/configdialog.ui" line="646"/>
         <source>Select character set for password generation</source>
         <translation>Виберіть набір символів для генерації пароля</translation>
     </message>
@@ -123,32 +122,32 @@
         <translation type="vanished">Усі символи</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="660"/>
+        <location filename="../src/configdialog.ui" line="655"/>
         <source>Alphabetical</source>
         <translation>Алфавітні</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="665"/>
+        <location filename="../src/configdialog.ui" line="660"/>
         <source>Alphanumerical</source>
         <translation>Буквено-цифрові</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="670"/>
+        <location filename="../src/configdialog.ui" line="665"/>
         <source>Custom</source>
         <translation>Власні</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="708"/>
+        <location filename="../src/configdialog.ui" line="703"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯabcdefghijklmnopqrstuvwxyzабвгґдеєжзиіїйклмнопрстуфхцчшщьюя0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="742"/>
+        <location filename="../src/configdialog.ui" line="737"/>
         <source>Include special symbols</source>
         <translation>Включати спеціальні символи</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="223"/>
+        <location filename="../src/configdialog.ui" line="213"/>
         <source>Enable one-time password (OTP) support</source>
         <translation>Увімкнути підтримку одноразових паролів (OTP)</translation>
     </message>
@@ -168,121 +167,145 @@
         <translation>Паролі</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="173"/>
         <source>Show menu bar</source>
-        <translation>Показувати рядок меню</translation>
+        <translation type="vanished">Показувати рядок меню</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="176"/>
         <source>Ctrl+M shows or hides it from the main window as well</source>
-        <translation>Ctrl+M також показує або приховує його з головного вікна</translation>
+        <translation type="vanished">Ctrl+M також показує або приховує його з головного вікна</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="234"/>
+        <location filename="../src/configdialog.ui" line="224"/>
         <source>Enable content search (pass grep)</source>
         <translation>Увімкнути пошук вмісту (pass grep)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="237"/>
+        <location filename="../src/configdialog.ui" line="227"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Дозволити пошук у вмісті файлів паролів. Потрібно розшифрувати кожен файл, і це може бути повільно у великих сховищах.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="551"/>
+        <location filename="../src/configdialog.ui" line="329"/>
+        <location filename="../src/configdialog.ui" line="404"/>
+        <source>Never</source>
+        <translation type="unfinished">Ніколи</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="546"/>
         <source>Password generation:</source>
         <translation>Генерація пароля:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="562"/>
+        <location filename="../src/configdialog.ui" line="557"/>
         <source>Password length:</source>
         <translation>Довжина пароля:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="655"/>
+        <location filename="../src/configdialog.ui" line="650"/>
         <source>All characters</source>
         <translation>Усі символи</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1047"/>
-        <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/configdialog.ui" line="778"/>
+        <source>Fields:</source>
+        <translation type="unfinished">Поля:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="792"/>
+        <source>Off</source>
+        <translation type="unfinished">Вимкнено</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="797"/>
+        <source>Template fields</source>
+        <translation type="unfinished">Поля шаблону</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="802"/>
+        <source>Template fields and every &quot;key: value&quot; line</source>
+        <translation type="unfinished">Поля шаблону та кожен рядок «key: value»</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1057"/>
+        <location filename="../src/configdialog.ui" line="1060"/>
         <source>Choose the gpg executable</source>
         <translation>Виберіть виконуваний файл gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1060"/>
-        <location filename="../src/configdialog.ui" line="1063"/>
+        <location filename="../src/configdialog.ui" line="1070"/>
+        <location filename="../src/configdialog.ui" line="1073"/>
         <source>Choose the git executable</source>
         <translation>Виберіть виконуваний файл git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1079"/>
+        <location filename="../src/configdialog.ui" line="1089"/>
         <source>Generate</source>
         <translation>Згенерувати</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1082"/>
+        <location filename="../src/configdialog.ui" line="1092"/>
         <source>Generate GPG key pair</source>
         <translation>Згенерувати пару ключів GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1115"/>
-        <location filename="../src/configdialog.ui" line="1118"/>
+        <location filename="../src/configdialog.ui" line="1125"/>
+        <location filename="../src/configdialog.ui" line="1128"/>
         <source>Choose the pwgen executable</source>
         <translation>Виберіть виконуваний файл pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1155"/>
-        <location filename="../src/configdialog.ui" line="1158"/>
+        <location filename="../src/configdialog.ui" line="1165"/>
+        <location filename="../src/configdialog.ui" line="1168"/>
         <source>Choose the pass executable</source>
         <translation>Виберіть виконуваний файл pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1212"/>
+        <location filename="../src/configdialog.ui" line="1222"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>Перевизначення SSH_AUTH_SOCK:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1215"/>
+        <location filename="../src/configdialog.ui" line="1225"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation>Необов&apos;язковий шлях для перевизначення SSH_AUTH_SOCK. Залиште порожнім для автоматичного зондування через gpgconf (issue #543).</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1225"/>
+        <location filename="../src/configdialog.ui" line="1235"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(автоматичне зондування через gpgconf)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1299"/>
+        <location filename="../src/configdialog.ui" line="1309"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation>Сховища паролів, відомі цьому QtPass; виберіть одне, щоб його змінити</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1314"/>
+        <location filename="../src/configdialog.ui" line="1324"/>
         <source>Add a profile</source>
         <translation>Додати профіль</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1332"/>
+        <location filename="../src/configdialog.ui" line="1342"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation>Забути вибраний профіль; саме сховище залишається на диску</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1378"/>
+        <location filename="../src/configdialog.ui" line="1388"/>
         <source>Profile</source>
         <translation>Профіль</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1394"/>
+        <location filename="../src/configdialog.ui" line="1404"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Ім&apos;я профілю, яке використовується для ідентифікації цього профілю конфігурації</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1413"/>
+        <location filename="../src/configdialog.ui" line="1423"/>
         <source>Path to the password store directory</source>
         <translation>Шлях до каталогу сховища паролів</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1435"/>
+        <location filename="../src/configdialog.ui" line="1445"/>
         <source>Signing key</source>
         <translation>Ключ підписання</translation>
     </message>
@@ -291,22 +314,22 @@
         <translation type="vanished">Ключ підписання</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1445"/>
+        <location filename="../src/configdialog.ui" line="1455"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Додатково: ключ GPG для підписання файлів .gpg-id для перевірки цілісності. Залиште це поле порожнім, якщо вам не потрібно захищати список користувачів від несанкціонованого доступу.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1448"/>
+        <location filename="../src/configdialog.ui" line="1458"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation>Повний 40-символьний відбиток ключа, як того вимагає pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1455"/>
+        <location filename="../src/configdialog.ui" line="1465"/>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
         <translation>Налаштування Git для цього профілю; поки він активний, вони замінюють налаштування з вкладки «Налаштування»</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1501"/>
+        <location filename="../src/configdialog.ui" line="1511"/>
         <source>Current path</source>
         <translation>Поточний шлях</translation>
     </message>
@@ -315,7 +338,7 @@
         <translation type="vanished">Використовувати pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="732"/>
+        <location filename="../src/configdialog.ui" line="727"/>
         <source>Exclude capital letters</source>
         <translation>Виключити великі літери</translation>
     </message>
@@ -324,17 +347,17 @@
         <translation type="vanished">Include special symbols </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="749"/>
+        <location filename="../src/configdialog.ui" line="744"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Генерувати прості для запам&apos;ятовування, але менш надійні паролі</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="756"/>
+        <location filename="../src/configdialog.ui" line="751"/>
         <source>Exclude numbers</source>
         <translation>Виключити цифри</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="872"/>
+        <location filename="../src/configdialog.ui" line="882"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
@@ -343,24 +366,24 @@
         <translation type="vanished">Використовувати git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="894"/>
+        <location filename="../src/configdialog.ui" line="904"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Автоматично додавати файли .gpg-id</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="901"/>
-        <location filename="../src/configdialog.ui" line="1465"/>
+        <location filename="../src/configdialog.ui" line="911"/>
+        <location filename="../src/configdialog.ui" line="1475"/>
         <source>Automatically push</source>
         <translation>Автоматично надсилати</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="908"/>
-        <location filename="../src/configdialog.ui" line="1472"/>
+        <location filename="../src/configdialog.ui" line="918"/>
+        <location filename="../src/configdialog.ui" line="1482"/>
         <source>Automatically pull</source>
         <translation>Автоматично отримувати</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="201"/>
+        <location filename="../src/configdialog.ui" line="191"/>
         <source>Extensions:</source>
         <translation>Розширення:</translation>
     </message>
@@ -399,7 +422,7 @@
         <translation>Програми</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="988"/>
+        <location filename="../src/configdialog.ui" line="998"/>
         <source>Select password storage program:</source>
         <translation>Виберіть програму зберігання паролів:</translation>
     </message>
@@ -408,12 +431,12 @@
         <translation type="vanished">Вбудований git/gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1004"/>
+        <location filename="../src/configdialog.ui" line="1014"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Використовувати pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1028"/>
+        <location filename="../src/configdialog.ui" line="1038"/>
         <source>Native</source>
         <translation>Вбудований</translation>
     </message>
@@ -434,12 +457,12 @@
         <translation type="vanished">pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1131"/>
+        <location filename="../src/configdialog.ui" line="1141"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1142"/>
+        <location filename="../src/configdialog.ui" line="1152"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
@@ -453,22 +476,22 @@
         <translation>Профілі</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1384"/>
+        <location filename="../src/configdialog.ui" line="1394"/>
         <source>Name</source>
         <translation>Назва</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1401"/>
+        <location filename="../src/configdialog.ui" line="1411"/>
         <source>Path</source>
         <translation>Шлях</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1317"/>
+        <location filename="../src/configdialog.ui" line="1327"/>
         <source>Add</source>
         <translation>Додати</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1335"/>
+        <location filename="../src/configdialog.ui" line="1345"/>
         <source>Delete</source>
         <translation>Видалити</translation>
     </message>
@@ -477,7 +500,7 @@
         <translation type="vanished">Current password-store</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="768"/>
+        <location filename="../src/configdialog.ui" line="763"/>
         <source>Template</source>
         <translation>Шаблон</translation>
     </message>
@@ -486,19 +509,17 @@
         <translation type="vanished">Templates add extra fields in the password generation dialogue and in the password view.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="783"/>
         <source>Use template</source>
-        <translation>Використовувати шаблон</translation>
+        <translation type="vanished">Використовувати шаблон</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="790"/>
+        <location filename="../src/configdialog.ui" line="788"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Показувати всі рядки, що починаються зі слова, після якого йде двокрапка, як поля в полях пароля, а не лише перелічені</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="793"/>
         <source>Show all fields templated</source>
-        <translation>Показати всі шаблони полів</translation>
+        <translation type="vanished">Показати всі шаблони полів</translation>
     </message>
     <message>
         <source>login
@@ -509,7 +530,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1541"/>
+        <location filename="../src/configdialog.ui" line="1551"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>версія &lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; </translation>
     </message>
@@ -518,58 +539,58 @@ email</translation>
         <translation type="vanished">Не використовувати буфера обміну</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="94"/>
+        <location filename="../src/configdialog.cpp" line="103"/>
         <source>No clipboard</source>
         <translation>Не використовувати буфер обміну</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="95"/>
+        <location filename="../src/configdialog.cpp" line="104"/>
         <source>Always copy to clipboard</source>
         <translation>Завжди копіювати в буфер обміну</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="96"/>
+        <location filename="../src/configdialog.cpp" line="105"/>
         <source>On-demand copy to clipboard</source>
         <translation>Копіювати на вимогу в буфер обміну</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="297"/>
-        <location filename="../src/configdialog.cpp" line="302"/>
+        <location filename="../src/configdialog.cpp" line="303"/>
+        <location filename="../src/configdialog.cpp" line="308"/>
         <source>This field is required</source>
         <translation>Це поле обов&apos;язкове</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="299"/>
+        <location filename="../src/configdialog.cpp" line="305"/>
         <source>Another profile already has this name</source>
         <translation>Інший профіль уже має таку назву</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="309"/>
+        <location filename="../src/configdialog.cpp" line="315"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation>Лише повні відбитки ключів (40 або 64 шістнадцяткових символи), розділені пробілами</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="353"/>
+        <location filename="../src/configdialog.cpp" line="359"/>
         <source>The path does not exist.</source>
         <translation>Шлях не існує.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="356"/>
+        <location filename="../src/configdialog.cpp" line="362"/>
         <source>The path is not readable.</source>
         <translation>Шлях не читається.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="359"/>
+        <location filename="../src/configdialog.cpp" line="365"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Шлях не є доменним сокетом Unix.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="364"/>
+        <location filename="../src/configdialog.cpp" line="370"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Можливо недійсне перевизначення SSH_AUTH_SOCK</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="365"/>
+        <location filename="../src/configdialog.cpp" line="371"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -582,37 +603,37 @@ The value will still be saved as entered.</source>
 Значення все одно буде збережено таким, як введено.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="752"/>
+        <location filename="../src/configdialog.cpp" line="715"/>
         <source>Create profile directory?</source>
         <translation>Створити каталог профілю?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="753"/>
+        <location filename="../src/configdialog.cpp" line="716"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Бажаєте створити сховище паролів у %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="761"/>
+        <location filename="../src/configdialog.cpp" line="724"/>
         <source>Could not create profile directory: %1</source>
         <translation>Не вдалося створити каталог профілю: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="787"/>
+        <location filename="../src/configdialog.cpp" line="750"/>
         <source>Select recipients for %1</source>
         <translation>Виберіть одержувачів для %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="800"/>
+        <location filename="../src/configdialog.cpp" line="763"/>
         <source>Could not initialise profile %1</source>
         <translation>Не вдалося ініціалізувати профіль %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="802"/>
+        <location filename="../src/configdialog.cpp" line="765"/>
         <source>Profile %1</source>
         <translation>Профіль %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="813"/>
+        <location filename="../src/configdialog.cpp" line="776"/>
         <source>New profile</source>
         <translation>Новий профіль</translation>
     </message>
@@ -621,12 +642,12 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Новий профіль</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="840"/>
+        <location filename="../src/configdialog.cpp" line="803"/>
         <source>No profile selected</source>
         <translation>Профіль не вибрано</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="841"/>
+        <location filename="../src/configdialog.cpp" line="804"/>
         <source>No profile selected to delete</source>
         <translation>Не вибрано жодного профілю для видалення</translation>
     </message>
@@ -647,12 +668,12 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Хочете створити сховище паролів в %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="760"/>
+        <location filename="../src/configdialog.cpp" line="723"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="58"/>
+        <location filename="../src/configdialog.cpp" line="67"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation>Недоступно у Wayland; натомість скористайтеся правилом вікна «поверх інших» у своєму композиторі</translation>
     </message>
@@ -669,32 +690,32 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Тека %1, схоже, не є сховищем паролів або ще не ініціалізована.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1140"/>
+        <location filename="../src/configdialog.cpp" line="1093"/>
         <source>New profile: %1 at %2</source>
         <translation>Новий профіль: %1 у %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1142"/>
+        <location filename="../src/configdialog.cpp" line="1095"/>
         <source>Profile: %1 at %2</source>
         <translation>Профіль: %1 у %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1145"/>
+        <location filename="../src/configdialog.cpp" line="1098"/>
         <source>Fill in all required fields</source>
         <translation>Заповніть усі обов&apos;язкові поля</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1170"/>
+        <location filename="../src/configdialog.ui" line="1180"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1201"/>
+        <location filename="../src/configdialog.ui" line="1211"/>
         <source>Autodetect</source>
         <translation>Автовизначення</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="47"/>
+        <location filename="../src/configdialog.cpp" line="56"/>
         <source>System tray is not available</source>
         <translation>Системний лоток недоступний</translation>
     </message>
@@ -703,7 +724,7 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Потрібно встановити розширення OTP Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="71"/>
+        <location filename="../src/configdialog.cpp" line="80"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode повинен бути встановлений</translation>
     </message>
@@ -716,18 +737,18 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Будь ласка, встановіть GnuPG у вашій системі. &lt;br&gt; Встановіть &lt;strong&gt;Ubuntu&lt;/strong&gt; із магазину Microsoft &lt;br&gt; або &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;завантажте&lt;/a&gt; його з GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="725"/>
+        <location filename="../src/configdialog.ui" line="720"/>
         <source>Use PWGen</source>
         <translation>Використовувати PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="883"/>
-        <location filename="../src/configdialog.ui" line="1458"/>
+        <location filename="../src/configdialog.ui" line="893"/>
+        <location filename="../src/configdialog.ui" line="1468"/>
         <source>Use Git</source>
         <translation>Використовувати Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="209"/>
+        <location filename="../src/configdialog.ui" line="199"/>
         <source>Use QRencode</source>
         <translation>Використовувати QRencode</translation>
     </message>
@@ -736,51 +757,51 @@ The value will still be saved as entered.</source>
         <translation type="vanished">Використовувати розширення pass-otp</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="997"/>
+        <location filename="../src/configdialog.ui" line="1007"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>&amp;Вбудований Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
-        <location filename="../src/configdialog.ui" line="1034"/>
+        <location filename="../src/configdialog.ui" line="1044"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1053"/>
-        <location filename="../src/configdialog.ui" line="1066"/>
-        <location filename="../src/configdialog.ui" line="1121"/>
-        <location filename="../src/configdialog.ui" line="1161"/>
-        <location filename="../src/configdialog.ui" line="1426"/>
-        <location filename="../src/configdialog.ui" line="1517"/>
+        <location filename="../src/configdialog.ui" line="1063"/>
+        <location filename="../src/configdialog.ui" line="1076"/>
+        <location filename="../src/configdialog.ui" line="1131"/>
+        <location filename="../src/configdialog.ui" line="1171"/>
+        <location filename="../src/configdialog.ui" line="1436"/>
+        <location filename="../src/configdialog.ui" line="1527"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1089"/>
+        <location filename="../src/configdialog.ui" line="1099"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1105"/>
+        <location filename="../src/configdialog.ui" line="1115"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1420"/>
-        <location filename="../src/configdialog.ui" line="1423"/>
-        <location filename="../src/configdialog.ui" line="1511"/>
-        <location filename="../src/configdialog.ui" line="1514"/>
+        <location filename="../src/configdialog.ui" line="1430"/>
+        <location filename="../src/configdialog.ui" line="1433"/>
+        <location filename="../src/configdialog.ui" line="1521"/>
+        <location filename="../src/configdialog.ui" line="1524"/>
         <source>Choose the password store folder</source>
         <translation>Виберіть папку сховища паролів</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="774"/>
+        <location filename="../src/configdialog.ui" line="769"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Шаблони додають додаткові поля в діалоговому вікні створення пароля та у вікні перегляду паролів.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="805"/>
+        <location filename="../src/configdialog.ui" line="815"/>
         <source>login
 URL
 e-mail</source>
@@ -1028,67 +1049,67 @@ URL
         <translation>Реєстр поколінь списків одержувачів, %1, не вдалося заблокувати: можливо, його використовує інший екземпляр QtPass або його папка недоступна для запису.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="308"/>
+        <location filename="../src/gpgidgeneration.cpp" line="322"/>
         <source>The list carries more than one generation line.</source>
         <translation>Список містить більше ніж один рядок покоління.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="309"/>
+        <location filename="../src/gpgidgeneration.cpp" line="324"/>
         <source>The generation line is malformed: %1</source>
         <translation>Рядок покоління має неправильний формат: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="320"/>
+        <location filename="../src/gpgidgeneration.cpp" line="333"/>
         <source>The list carries more than one folder line.</source>
         <translation>Список містить більше ніж один рядок папки.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="321"/>
+        <location filename="../src/gpgidgeneration.cpp" line="336"/>
         <source>The folder line is malformed: %1</source>
         <translation>Рядок папки має неправильний формат: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="330"/>
+        <location filename="../src/gpgidgeneration.cpp" line="343"/>
         <source>The header line is malformed: %1</source>
         <translation>Рядок заголовка має неправильний формат: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="335"/>
+        <location filename="../src/gpgidgeneration.cpp" line="351"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation>Список містить рядок покоління, але не містить рядка папки.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="404"/>
+        <location filename="../src/gpgidgeneration.cpp" line="500"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation>Підписаному списку одержувачів %1 не можна довіряти: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="414"/>
+        <location filename="../src/gpgidgeneration.cpp" line="425"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation>Підписаний список одержувачів %1 було записано для папки «%2» сховища, а не для «%3», тому він не використовується. Можливо, його скопіював сюди хтось інший; якщо ж папку було переміщено або перейменовано, власник ключа підписання відкриває для неї «Користувачі» та зберігає одержувачів, що прив&apos;язує список до його поточного розташування.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="437"/>
+        <location filename="../src/gpgidgeneration.cpp" line="440"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation>Покоління %1 — найвище з можливих, тому новіший список тут записати неможливо: після видалення %2 цей пристрій забуде, що він приймав раніше, і тоді власник ключа підписання зможе зняти це блокування, відкривши «Користувачі» та %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="443"/>
+        <location filename="../src/gpgidgeneration.cpp" line="447"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation>Власник ключа підписання може зняти це блокування, відкривши «Користувачі» та %1. Під час збереження буде записано покоління %2. Якщо видалити %3, цей пристрій забуде, що він приймав раніше.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="457"/>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation>Підписаний список одержувачів %1 не містить рядка покоління, хоча раніше тут було прийнято покоління %2. pass не записує рядок покоління (у тому числі через бекенд pass у QtPass), як і QtPass до версії 2.0; без нього список також могло бути записано для іншої папки сховища та скопійовано сюди. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="473"/>
         <source>selecting the recipients afresh and saving</source>
         <translation>заново вибравши одержувачів і зберігши їх</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="564"/>
+        <location filename="../src/gpgidgeneration.cpp" line="603"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation>Реєстр поколінь списків одержувачів, %1, перейшов до покоління %2, поки записувалося покоління %3.</translation>
     </message>
@@ -1101,27 +1122,27 @@ URL
         <translation type="vanished">Підписаний список одержувачів %1 не містить рядка покоління, хоча раніше тут було прийнято покоління %2. pass не записує рядок покоління (у тому числі через бекенд pass у QtPass), як і QtPass до версії 2.0. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="469"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation>Підписаний список одержувачів %1 має покоління %2, старіше за покоління %3 — останнє, яке QtPass прийняв тут. Можливо, хтось інший повернув його назад. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="475"/>
+        <location filename="../src/gpgidgeneration.cpp" line="485"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation>зберігши одержувачів: попередньо вибрані там одержувачі взяті з цього списку, тому спочатку видаліть усіх, хто більше не повинен мати доступу</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="499"/>
+        <location filename="../src/gpgidgeneration.cpp" line="538"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation>Підписаний список одержувачів %1 має покоління %2 — те саме, що й інший список, який цей пристрій приймав раніше. Або два пристрої зберегли одержувачів одночасно (Git мав показати конфлікт), або замість нього було підставлено автентичний список того покоління. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="506"/>
+        <location filename="../src/gpgidgeneration.cpp" line="546"/>
         <source>checking the recipients and saving</source>
         <translation>перевіривши одержувачів і зберігши їх</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
+        <location filename="../src/gpgidgeneration.cpp" line="571"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation>Список одержувачів %1 досяг покоління %2 — найвищого з можливих; список неможливо записати.</translation>
     </message>
@@ -1149,7 +1170,7 @@ URL
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="202"/>
-        <location filename="../src/imitatepass.cpp" line="883"/>
+        <location filename="../src/imitatepass.cpp" line="947"/>
         <source>Can not edit</source>
         <translation>Не можна редагувати</translation>
     </message>
@@ -1165,7 +1186,7 @@ URL
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="203"/>
-        <location filename="../src/imitatepass.cpp" line="884"/>
+        <location filename="../src/imitatepass.cpp" line="948"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Не вдалося прочитати ключ шифрування для використання, файл .gpg-id відсутній або недійсний.</translation>
     </message>
@@ -1306,12 +1327,12 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>%1 відсутній, а його резервну копію %2 не вдалося перейменувати назад. Перейменуйте її вручну, а потім повторіть повторне шифрування.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="949"/>
+        <location filename="../src/imitatepass.cpp" line="991"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">Не вдалося повторно зашифрувати %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1276"/>
+        <location filename="../src/imitatepass.cpp" line="1318"/>
         <source>Re-encryption failed</source>
         <translation>Повторне шифрування не вдалося</translation>
     </message>
@@ -1328,69 +1349,69 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="vanished">Не вдалося видалити резервну копію %1 після повторного шифрування; її можна безпечно видалити.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="988"/>
+        <location filename="../src/imitatepass.cpp" line="1006"/>
         <source>Creating backup commit</source>
         <translation>Створення резервного коміту</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1005"/>
-        <location filename="../src/imitatepass.cpp" line="1014"/>
+        <location filename="../src/imitatepass.cpp" line="1023"/>
+        <location filename="../src/imitatepass.cpp" line="1032"/>
         <source>Backup commit failed</source>
         <translation>Не вдалося зробити резервну копію</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1006"/>
+        <location filename="../src/imitatepass.cpp" line="1024"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Не вдалося перевірити стан git. Повторне шифрування перервано.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1015"/>
+        <location filename="../src/imitatepass.cpp" line="1033"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Повторне шифрування було перервано, оскільки не вдалося створити резервну копію git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1063"/>
+        <location filename="../src/imitatepass.cpp" line="1081"/>
         <source>A re-encryption is already running</source>
         <translation>Повторне шифрування вже виконується</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1071"/>
+        <location filename="../src/imitatepass.cpp" line="1089"/>
         <source>Not a folder of the store</source>
         <translation>Це не папка сховища</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1072"/>
+        <location filename="../src/imitatepass.cpp" line="1090"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation>%1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і не було повторно зашифроване.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1081"/>
+        <location filename="../src/imitatepass.cpp" line="1099"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Повторне шифрування з теки %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1164"/>
-        <location filename="../src/imitatepass.cpp" line="1303"/>
+        <location filename="../src/imitatepass.cpp" line="1183"/>
+        <location filename="../src/imitatepass.cpp" line="1345"/>
         <source>Updating password-store</source>
         <translation>Оновлення сховища паролів</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1175"/>
+        <location filename="../src/imitatepass.cpp" line="1196"/>
         <source>Git pull failed</source>
         <translation>Не вдалося виконати Git pull</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1176"/>
+        <location filename="../src/imitatepass.cpp" line="1197"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation>Після pull у сховищі залишилися незлиті файли. Розв&apos;яжіть конфлікт перед повторним шифруванням.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1181"/>
+        <location filename="../src/imitatepass.cpp" line="1201"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation>Не вдалося виконати Git pull, сховище повторно шифрується в поточному стані</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1208"/>
+        <location filename="../src/imitatepass.cpp" line="1212"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation>
             <numerusform>Пропущено %n запис: символічне посилання, точка з&apos;єднання чи спеціальний файл не є частиною сховища.</numerusform>
@@ -1399,17 +1420,17 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1234"/>
+        <location filename="../src/imitatepass.cpp" line="1233"/>
         <source>GPG ID verification failed</source>
         <translation>Не вдалося перевірити ідентифікатор GPG</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1235"/>
+        <location filename="../src/imitatepass.cpp" line="1234"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Не вдалося перевірити .gpg-id для каталогу.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1274"/>
+        <location filename="../src/imitatepass.cpp" line="1316"/>
         <source>... and %n more</source>
         <translation>
             <numerusform>... і ще %n файл</numerusform>
@@ -1418,7 +1439,7 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1277"/>
+        <location filename="../src/imitatepass.cpp" line="1319"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation>
             <numerusform>Не вдалося повторно зашифрувати %n файл:</numerusform>
@@ -1427,17 +1448,17 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1283"/>
+        <location filename="../src/imitatepass.cpp" line="1325"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation>Повторне шифрування скасовано: перевірено %1 з %2 файлів, %3 повторно зашифровано, %4 не вдалося</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1554"/>
+        <location filename="../src/imitatepass.cpp" line="1596"/>
         <source>Git executable not configured, skipping git</source>
         <translation>Виконуваний файл Git не налаштовано, git пропускається</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1629"/>
+        <location filename="../src/imitatepass.cpp" line="1671"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation>gpg не записав шифротекст для %1.</translation>
     </message>
@@ -1466,17 +1487,17 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="vanished">Не вдалося повторно зашифрувати %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1292"/>
+        <location filename="../src/imitatepass.cpp" line="1334"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Повторне шифрування завершено: %1 успішно, %2 не вдалося</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1297"/>
+        <location filename="../src/imitatepass.cpp" line="1339"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Повторне шифрування завершено: %1 файлів повторно зашифровано</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1306"/>
+        <location filename="../src/imitatepass.cpp" line="1348"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation>
             <numerusform>Git push не виконується: не вдалося повторно зашифрувати %n файл</numerusform>
@@ -1485,18 +1506,18 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1466"/>
-        <location filename="../src/imitatepass.cpp" line="1480"/>
-        <location filename="../src/imitatepass.cpp" line="1487"/>
-        <location filename="../src/imitatepass.cpp" line="1501"/>
+        <location filename="../src/imitatepass.cpp" line="1508"/>
+        <location filename="../src/imitatepass.cpp" line="1522"/>
+        <location filename="../src/imitatepass.cpp" line="1529"/>
+        <location filename="../src/imitatepass.cpp" line="1543"/>
         <source>Copy failed</source>
         <translation>Помилка копіювання</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1467"/>
-        <location filename="../src/imitatepass.cpp" line="1481"/>
-        <location filename="../src/imitatepass.cpp" line="1488"/>
-        <location filename="../src/imitatepass.cpp" line="1502"/>
+        <location filename="../src/imitatepass.cpp" line="1509"/>
+        <location filename="../src/imitatepass.cpp" line="1523"/>
+        <location filename="../src/imitatepass.cpp" line="1530"/>
+        <location filename="../src/imitatepass.cpp" line="1544"/>
         <source>Could not copy %1 to %2.</source>
         <translation>Не вдалося скопіювати %1 до %2.</translation>
     </message>
@@ -1783,16 +1804,16 @@ Expire-Date: 0
         <translation type="vanished">Add</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="442"/>
-        <location filename="../src/mainwindow.ui" line="445"/>
-        <location filename="../src/mainwindow.cpp" line="1684"/>
+        <location filename="../src/mainwindow.ui" line="443"/>
+        <location filename="../src/mainwindow.ui" line="446"/>
+        <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Edit</source>
         <translation>Редагувати</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="450"/>
-        <location filename="../src/mainwindow.ui" line="453"/>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.ui" line="451"/>
+        <location filename="../src/mainwindow.ui" line="454"/>
+        <location filename="../src/mainwindow.cpp" line="1709"/>
         <source>Delete</source>
         <translation>Видалити</translation>
     </message>
@@ -1801,7 +1822,7 @@ Expire-Date: 0
         <translation type="vanished">git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="469"/>
+        <location filename="../src/mainwindow.ui" line="470"/>
         <source>Push</source>
         <translation>Надіслати</translation>
     </message>
@@ -1824,32 +1845,32 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="429"/>
+        <location filename="../src/mainwindow.ui" line="430"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="458"/>
+        <location filename="../src/mainwindow.ui" line="459"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="461"/>
+        <location filename="../src/mainwindow.ui" line="462"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Створення OTP і копіювання в буфер обміну</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="464"/>
+        <location filename="../src/mainwindow.ui" line="465"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="472"/>
+        <location filename="../src/mainwindow.ui" line="473"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="480"/>
+        <location filename="../src/mainwindow.ui" line="481"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
@@ -1858,7 +1879,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="477"/>
+        <location filename="../src/mainwindow.ui" line="478"/>
         <source>Update</source>
         <translation>Оновити</translation>
     </message>
@@ -1874,13 +1895,13 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-family: Lato;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="488"/>
+        <location filename="../src/mainwindow.ui" line="489"/>
         <source>Manage who can read password in folder</source>
         <translation>Керуйте тим, хто може читати пароль у папці</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="485"/>
-        <location filename="../src/mainwindow.cpp" line="1678"/>
+        <location filename="../src/mainwindow.ui" line="486"/>
+        <location filename="../src/mainwindow.cpp" line="1691"/>
         <source>Users</source>
         <translation>Користувачі</translation>
     </message>
@@ -1896,12 +1917,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-family: Lato;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="513"/>
+        <location filename="../src/mainwindow.ui" line="525"/>
         <source>Configuration</source>
         <translation>Конфігурація</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="510"/>
+        <location filename="../src/mainwindow.ui" line="522"/>
         <source>Config</source>
         <translation>Конфігурація</translation>
     </message>
@@ -1912,8 +1933,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="825"/>
-        <location filename="../src/mainwindow.cpp" line="1045"/>
+        <location filename="../src/mainwindow.cpp" line="838"/>
+        <location filename="../src/mainwindow.cpp" line="1058"/>
         <source>Search password</source>
         <translation>Пошук паролю</translation>
     </message>
@@ -1983,77 +2004,87 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Налаштування</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="373"/>
+        <location filename="../src/mainwindow.ui" line="374"/>
         <source>&amp;Help</source>
         <translation>&amp;Довідка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="499"/>
+        <location filename="../src/mainwindow.ui" line="497"/>
+        <source>Show &amp;process output</source>
+        <translation type="unfinished">Показати &amp;вивід процесів</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="500"/>
+        <source>Show or hide the output of git, gpg and pass</source>
+        <translation type="unfinished">Показати або приховати вивід git, gpg і pass</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="511"/>
         <source>Show &amp;menu bar</source>
         <translation>Показати рядок &amp;меню</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="502"/>
+        <location filename="../src/mainwindow.ui" line="514"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
         <translation>Приховати або показати рядок меню; Ctrl+M повертає його</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="505"/>
+        <location filename="../src/mainwindow.ui" line="517"/>
         <source>Ctrl+M</source>
         <translation>Ctrl+M</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="516"/>
+        <location filename="../src/mainwindow.ui" line="528"/>
         <source>Ctrl+,</source>
         <translation>Ctrl+,</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="524"/>
+        <location filename="../src/mainwindow.ui" line="536"/>
         <source>&amp;Close window</source>
         <translation>&amp;Закрити вікно</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="527"/>
+        <location filename="../src/mainwindow.ui" line="539"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
         <translation>Закрити вікно; з увімкненим параметром «Приховувати при закритті» QtPass залишається в системному лотку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="530"/>
+        <location filename="../src/mainwindow.ui" line="542"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="535"/>
+        <location filename="../src/mainwindow.ui" line="547"/>
         <source>&amp;Quit</source>
         <translation>&amp;Вийти</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="538"/>
+        <location filename="../src/mainwindow.ui" line="550"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="546"/>
+        <location filename="../src/mainwindow.ui" line="558"/>
         <source>&amp;FAQ</source>
         <translation>&amp;Часті запитання</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="549"/>
+        <location filename="../src/mainwindow.ui" line="561"/>
         <source>Open the frequently asked questions on qtpass.org</source>
         <translation>Відкрити часті запитання на qtpass.org</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="552"/>
+        <location filename="../src/mainwindow.ui" line="564"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="557"/>
+        <location filename="../src/mainwindow.ui" line="569"/>
         <source>&amp;About QtPass</source>
         <translation>&amp;Про QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="565"/>
+        <location filename="../src/mainwindow.ui" line="577"/>
         <source>About &amp;Qt</source>
         <translation>Про &amp;Qt</translation>
     </message>
@@ -2074,7 +2105,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="437"/>
+        <location filename="../src/mainwindow.cpp" line="450"/>
         <source>Welcome to QtPass %1</source>
         <translation>Ласкаво просимо до QtPass %1</translation>
     </message>
@@ -2113,8 +2144,8 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="608"/>
         <location filename="../src/mainwindow.cpp" line="621"/>
+        <location filename="../src/mainwindow.cpp" line="634"/>
         <source>Updating password-store</source>
         <translation>Оновлення сховища паролів</translation>
     </message>
@@ -2131,8 +2162,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="732"/>
-        <location filename="../src/mainwindow.cpp" line="1087"/>
+        <location filename="../src/mainwindow.cpp" line="745"/>
+        <location filename="../src/mainwindow.cpp" line="1100"/>
         <source>Content hidden</source>
         <translation>Вміст приховано</translation>
     </message>
@@ -2181,12 +2212,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="940"/>
+        <location filename="../src/mainwindow.cpp" line="953"/>
         <source>Looking for: %1</source>
         <translation>Шукаю: %1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1097"/>
+        <location filename="../src/mainwindow.cpp" line="1110"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Знайдено %n збіг</numerusform>
@@ -2217,17 +2248,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Ви впевнені, що хочете видалити %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1239"/>
+        <location filename="../src/mainwindow.cpp" line="1252"/>
         <source>Delete password?</source>
         <translation>Видалити пароль?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1240"/>
+        <location filename="../src/mainwindow.cpp" line="1253"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">Ви впевнені, що хочете видалити %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1263"/>
+        <location filename="../src/mainwindow.cpp" line="1276"/>
         <source>Delete folder?</source>
         <translation>Видалити папку?</translation>
     </message>
@@ -2252,26 +2283,26 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1473"/>
+        <location filename="../src/mainwindow.cpp" line="1486"/>
         <source>Profile changed to %1</source>
         <translation>Профіль змінено на %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1675"/>
+        <location filename="../src/mainwindow.cpp" line="1688"/>
         <source>Open folder with file manager</source>
         <translation>Відкрити папку за допомогою файлового менеджера</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="434"/>
-        <location filename="../src/mainwindow.ui" line="437"/>
-        <location filename="../src/mainwindow.cpp" line="1676"/>
+        <location filename="../src/mainwindow.ui" line="435"/>
+        <location filename="../src/mainwindow.ui" line="438"/>
+        <location filename="../src/mainwindow.cpp" line="1689"/>
         <source>Add folder</source>
         <translation>Додати папку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="423"/>
-        <location filename="../src/mainwindow.ui" line="426"/>
-        <location filename="../src/mainwindow.cpp" line="1677"/>
+        <location filename="../src/mainwindow.ui" line="424"/>
+        <location filename="../src/mainwindow.ui" line="427"/>
+        <location filename="../src/mainwindow.cpp" line="1690"/>
         <source>Add password</source>
         <translation>Додати пароль</translation>
     </message>
@@ -2286,30 +2317,30 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="782"/>
-        <location filename="../src/mainwindow.cpp" line="800"/>
-        <location filename="../src/mainwindow.cpp" line="1360"/>
+        <location filename="../src/mainwindow.cpp" line="795"/>
+        <location filename="../src/mainwindow.cpp" line="813"/>
+        <location filename="../src/mainwindow.cpp" line="1373"/>
         <source>OTP code copied to clipboard</source>
         <translation>Код OTP скопійовано в буфер обміну</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="802"/>
-        <location filename="../src/mainwindow.cpp" line="1343"/>
+        <location filename="../src/mainwindow.cpp" line="815"/>
+        <location filename="../src/mainwindow.cpp" line="1356"/>
         <source>No OTP code found in this password entry</source>
         <translation>У цьому паролі не знайдено коду OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="994"/>
+        <location filename="../src/mainwindow.cpp" line="1007"/>
         <source>Searching…</source>
         <translation>Пошук…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1023"/>
+        <location filename="../src/mainwindow.cpp" line="1036"/>
         <source>Search content (regex)</source>
         <translation>Пошук контенту (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1073"/>
+        <location filename="../src/mainwindow.cpp" line="1086"/>
         <source>No matches found.</source>
         <translation>Збігів не знайдено.</translation>
     </message>
@@ -2322,7 +2353,7 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="1098"/>
+        <location filename="../src/mainwindow.cpp" line="1111"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>у %n записі.</numerusform>
@@ -2331,18 +2362,18 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1338"/>
+        <location filename="../src/mainwindow.cpp" line="1351"/>
         <source>No password selected for OTP generation</source>
         <translation>Пароль для генерації OTP не вибрано</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1690"/>
-        <location filename="../src/mainwindow.cpp" line="1790"/>
+        <location filename="../src/mainwindow.cpp" line="1703"/>
+        <location filename="../src/mainwindow.cpp" line="1803"/>
         <source>Rename folder</source>
         <translation>Перейменувати папку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1693"/>
+        <location filename="../src/mainwindow.cpp" line="1706"/>
         <source>Rename password</source>
         <translation>Перейменувати пароль</translation>
     </message>
@@ -2360,162 +2391,162 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Вихід процесу</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="769"/>
+        <location filename="../src/mainwindow.cpp" line="782"/>
         <source>Could not decrypt this password entry</source>
         <translation>Не вдалося розшифрувати цей запис пароля</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="829"/>
+        <location filename="../src/mainwindow.cpp" line="842"/>
         <source>Password and content hidden</source>
         <translation>Пароль та вміст приховано</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="917"/>
+        <location filename="../src/mainwindow.cpp" line="930"/>
         <source>About QtPass</source>
         <translation>Про QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="918"/>
+        <location filename="../src/mainwindow.cpp" line="931"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Багатоплатформний графічний інтерфейс для &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандартного менеджера паролів Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Вихідний код і звіти про помилки&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Авторське право &amp;copy; 2014&amp;ndash;%2 IJhack. Ліцензовано на умовах &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL версії 3&lt;/a&gt; або новішої.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1028"/>
+        <location filename="../src/mainwindow.cpp" line="1041"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
         <translation>Пошук за вмістом використовує базові регулярні вирази POSIX (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1030"/>
+        <location filename="../src/mainwindow.cpp" line="1043"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation>Пошук за вмістом використовує Perl-сумісні регулярні вирази (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="1188"/>
         <source>Invalid name</source>
         <translation>Недійсна назва</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1176"/>
+        <location filename="../src/mainwindow.cpp" line="1189"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation>Це ім&apos;я буде розпізнано поза межами сховища паролів. Виберіть інше ім&apos;я.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1246"/>
+        <location filename="../src/mainwindow.cpp" line="1259"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">Ви впевнені, що хочете видалити %1 разом з усім вмістом?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1259"/>
+        <location filename="../src/mainwindow.cpp" line="1272"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">Увага: у вказаній папці є неочікувані файли, перевірте їх, перш ніж продовжити.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1272"/>
+        <location filename="../src/mainwindow.cpp" line="1285"/>
         <source>Delete link?</source>
         <translation>Видалити посилання?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1273"/>
+        <location filename="../src/mainwindow.cpp" line="1286"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation>%1 є символічним посиланням або точкою з&apos;єднання. Видалити посилання? Те, на що воно вказує, залишиться без змін.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1630"/>
+        <location filename="../src/mainwindow.cpp" line="1643"/>
         <source>Share</source>
         <translation>Поширити</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1640"/>
+        <location filename="../src/mainwindow.cpp" line="1653"/>
         <source>Re-encrypt all passwords</source>
         <translation>Перешифрувати всі паролі</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1645"/>
+        <location filename="../src/mainwindow.cpp" line="1658"/>
         <source>Export my public key...</source>
         <translation>Експортувати мій відкритий ключ...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1649"/>
+        <location filename="../src/mainwindow.cpp" line="1662"/>
         <source>Add recipient...</source>
         <translation>Додати одержувача...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1654"/>
+        <location filename="../src/mainwindow.cpp" line="1667"/>
         <source>What is this?</source>
         <translation>Що це?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1741"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>New folder</source>
         <translation>Нова папка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1742"/>
+        <location filename="../src/mainwindow.cpp" line="1755"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Нова папка: 
 (Буде розміщено в %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
-        <location filename="../src/mainwindow.cpp" line="1775"/>
-        <location filename="../src/mainwindow.cpp" line="1902"/>
+        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1788"/>
+        <location filename="../src/mainwindow.cpp" line="1915"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1754"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Failed to create folder: %1</source>
         <translation>Не вдалося створити папку: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1776"/>
+        <location filename="../src/mainwindow.cpp" line="1789"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Не вдалося створити файл .gpg-id у: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1790"/>
+        <location filename="../src/mainwindow.cpp" line="1803"/>
         <source>Rename folder to: </source>
         <translation>Перейменувати папку на: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1830"/>
+        <location filename="../src/mainwindow.cpp" line="1843"/>
         <source>Rename file</source>
         <translation>Перейменувати файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1830"/>
+        <location filename="../src/mainwindow.cpp" line="1843"/>
         <source>Rename file to: </source>
         <translation>Перейменувати файл на: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2004"/>
-        <location filename="../src/mainwindow.cpp" line="2023"/>
+        <location filename="../src/mainwindow.cpp" line="2017"/>
+        <location filename="../src/mainwindow.cpp" line="2036"/>
         <source>Export public key</source>
         <translation>Експортувати відкритий ключ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2005"/>
+        <location filename="../src/mainwindow.cpp" line="2018"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Експорт вашого відкритого ключа&lt;/h3&gt;&lt;p&gt;Ключ підпису не налаштовано. Встановіть його в налаштуваннях QtPass &gt; Ключі GPG або виконайте це в терміналі:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Потім надішліть файл своїм товаришам по команді.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2064"/>
+        <location filename="../src/mainwindow.cpp" line="2077"/>
         <source>Not a folder of the store</source>
         <translation>Це не папка сховища</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2065"/>
+        <location filename="../src/mainwindow.cpp" line="2078"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і залишається без змін.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2076"/>
+        <location filename="../src/mainwindow.cpp" line="2089"/>
         <source>Sharing passwords with GPG</source>
         <translation>Спільне використання паролів з GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2077"/>
+        <location filename="../src/mainwindow.cpp" line="2090"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Спільний доступ до паролів за допомогою GPG&lt;/h3&gt;&lt;p&gt;Щоб поділитися паролями з іншими користувачами:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Експортуйте свій відкритий ключ&lt;/b&gt; та надішліть його товаришам по команді&lt;/li&gt;&lt;li&gt;&lt;b&gt;Імпортуйте відкриті ключі товаришів по команді&lt;/b&gt; у свою смужку ключів GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Повторно зашифруйте паролі&lt;/b&gt;, щоб усі одержувачі могли їх розшифрувати&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Розшифрувати паролі можуть лише ті, хто має відповідний секретний ключ.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Порада:&lt;/b&gt; Використовуйте той самий ключ GPG для всіх спільних папок.&lt;/p&gt;&lt;p&gt;Див. розділ FAQ для отримання додаткової інформації.&lt;/p&gt;</translation>
     </message>
@@ -2528,7 +2559,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Перейменувати файл на: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1879"/>
+        <location filename="../src/mainwindow.cpp" line="1892"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Цей запис містить секрет OTP, а не пароль</translation>
     </message>
@@ -2537,18 +2568,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Відкрити %1 у браузері</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1903"/>
+        <location filename="../src/mainwindow.cpp" line="1916"/>
         <source>Directory does not exist: %1</source>
         <translation>Каталог не існує: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1911"/>
-        <location filename="../src/mainwindow.cpp" line="1948"/>
+        <location filename="../src/mainwindow.cpp" line="1924"/>
+        <location filename="../src/mainwindow.cpp" line="1961"/>
         <source>Re-encrypt passwords</source>
         <translation>Перешифрувати паролі</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1912"/>
+        <location filename="../src/mainwindow.cpp" line="1925"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2565,22 +2596,22 @@ Continue?</source>
 Продовжити?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1946"/>
+        <location filename="../src/mainwindow.cpp" line="1959"/>
         <source>Re-encrypting passwords...</source>
         <translation>Повторне шифрування паролів...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1947"/>
+        <location filename="../src/mainwindow.cpp" line="1960"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1955"/>
+        <location filename="../src/mainwindow.cpp" line="1968"/>
         <source>Cancelling re-encryption</source>
         <translation>Скасування повторного шифрування</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1971"/>
+        <location filename="../src/mainwindow.cpp" line="1984"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation>Повторне шифрування паролів: %1 з %2</translation>
     </message>
@@ -2593,7 +2624,7 @@ Continue?</source>
         <translation type="vanished">&lt;h3&gt;Експорт вашого відкритого ключа&lt;/h3&gt;&lt;p&gt;Ключ підпису не налаштовано. Встановіть його в налаштуваннях QtPass &gt; Ключі GPG або виконайте це в терміналі:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Потім надішліть файл своїм товаришам по команді.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2024"/>
+        <location filename="../src/mainwindow.cpp" line="2037"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2602,7 +2633,7 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2026"/>
+        <location filename="../src/mainwindow.cpp" line="2039"/>
         <source>No output from gpg.</source>
         <translation>Немає виводу з gpg.</translation>
     </message>
@@ -2641,82 +2672,82 @@ Continue?</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="192"/>
+        <location filename="../src/pass.cpp" line="194"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation>Налаштований домашній каталог GPG %1 не існує, використовується брелок за замовчуванням</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="200"/>
+        <location filename="../src/pass.cpp" line="202"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation>Налаштований домашній каталог GPG %1 не існує, використовується GNUPGHOME %2 із середовища</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="220"/>
+        <location filename="../src/pass.cpp" line="222"/>
         <source>Invalid password length</source>
         <translation>Недійсна довжина пароля</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="221"/>
+        <location filename="../src/pass.cpp" line="223"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>Неможливо згенерувати пароль нульової довжини.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="259"/>
+        <location filename="../src/pass.cpp" line="261"/>
         <source>No characters chosen</source>
         <translation>Не вибрано жодного символа</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="260"/>
+        <location filename="../src/pass.cpp" line="262"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Не вдається згенерувати пароль, у конфігурації немає символів для вибору!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="450"/>
-        <location filename="../src/pass.cpp" line="451"/>
+        <location filename="../src/pass.cpp" line="452"/>
+        <location filename="../src/pass.cpp" line="453"/>
         <source>No GPG executable configured</source>
         <translation>Не налаштовано виконуваний файл GPG</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="556"/>
-        <location filename="../src/pass.cpp" line="575"/>
+        <location filename="../src/pass.cpp" line="558"/>
+        <location filename="../src/pass.cpp" line="577"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Помилка шифрування: термін дії ключа GPG минув. Будь ласка, поновіть або замініть його.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="561"/>
-        <location filename="../src/pass.cpp" line="580"/>
+        <location filename="../src/pass.cpp" line="563"/>
+        <location filename="../src/pass.cpp" line="582"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Не вдалося шифрувати: ключ GPG відкликано.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="565"/>
-        <location filename="../src/pass.cpp" line="585"/>
+        <location filename="../src/pass.cpp" line="567"/>
+        <location filename="../src/pass.cpp" line="587"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Не вдалося шифрувати: ключ GPG одержувача не знайдено або він недійсний. Перевірте, чи ідентифікатор ключа в .gpg-id правильний та імпортований.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="569"/>
-        <location filename="../src/pass.cpp" line="589"/>
+        <location filename="../src/pass.cpp" line="571"/>
+        <location filename="../src/pass.cpp" line="591"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Не вдалося шифрувати. Перевірте, чи ваш GPG-ключ дійсний.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="877"/>
+        <location filename="../src/pass.cpp" line="837"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і залишається без змін.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="885"/>
+        <location filename="../src/pass.cpp" line="845"/>
         <source>Not part of the store</source>
         <translation>Не є частиною сховища</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="966"/>
+        <location filename="../src/pass.cpp" line="926"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation>Список одержувачів %1 не проходить перевірку за ключем підписання, тому нічого попередньо не вибрано: збереження підписало б усе, що в ньому є. Виберіть одержувачів самостійно; кнопка OK запише й підпише новий список.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="994"/>
+        <location filename="../src/pass.cpp" line="954"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation>%1 Нічого попередньо не вибрано: збереження підписало б усе, що в ньому є. Виберіть одержувачів самостійно.</translation>
     </message>
@@ -2881,17 +2912,17 @@ Continue?</source>
         <translation type="vanished">Вихід процесу</translation>
     </message>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="12"/>
+        <location filename="../src/processoutputpanel.cpp" line="13"/>
         <source>Process output</source>
         <translation>Вихід процесу</translation>
     </message>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="25"/>
+        <location filename="../src/processoutputpanel.cpp" line="26"/>
         <source>Clear</source>
         <translation>Очистити</translation>
     </message>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="26"/>
+        <location filename="../src/processoutputpanel.cpp" line="27"/>
         <source>Clear output</source>
         <translation>Очистити результати</translation>
     </message>
