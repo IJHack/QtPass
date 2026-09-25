@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="48"/>
         <source>Copied to clipboard</source>
-        <translation>kopieras till urklipp</translation>
+        <translation>Kopierat till urklipp</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="71"/>
@@ -1071,7 +1071,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="140"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
-        <translation>Generationsregistret för mottagarlistorna,%1, är inte läsbar. Signerade mottagarlistor accepteras inte förrän de repareras eller tas bort (vilket glömmer bort vad som accepterades tidigare).</translation>
+        <translation>Generationsregistret för mottagarlistorna, %1, är inte läsbart. Signerade mottagarlistor godtas inte förrän det har reparerats eller tagits bort, vilket gör att informationen om vad som tidigare godtagits går förlorad.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="171"/>
@@ -2295,13 +2295,13 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="670"/>
         <location filename="../src/mainwindow.cpp" line="1127"/>
         <source>OTP code copied to clipboard</source>
-        <translation>engångslösenord-kod kopierad till urklipp</translation>
+        <translation>OTP-kod kopierad till urklipp</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="672"/>
         <location filename="../src/mainwindow.cpp" line="1115"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Ingen engångslösenord-kod hittades i den här lösenordsposten</translation>
+        <translation>Ingen OTP-kod hittades i den här lösenordsposten</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="824"/>
@@ -3329,7 +3329,7 @@ och slå sedan på Git under Inställningar.</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="47"/>
         <source>&amp;Restore</source>
-        <translation>&amp;Återställa</translation>
+        <translation>Å&amp;terställ</translation>
     </message>
 </context>
 <context>
