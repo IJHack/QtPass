@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="48"/>
         <source>Copied to clipboard</source>
-        <translation>kopieras till Urklipp</translation>
+        <translation>kopieras till urklipp</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="71"/>
