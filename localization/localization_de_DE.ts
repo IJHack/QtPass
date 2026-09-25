@@ -24,7 +24,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>Einstellungen</translation>
+        <translation>Konfiguration</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
@@ -1974,27 +1974,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished">QtPass &amp;konfigurieren…</translation>
+        <translation>QtPass &amp;konfigurieren …</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished">QtPass-Einstellungen ändern</translation>
+        <translation>QtPass-Einstellungen ändern</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished">Ctrl+,</translation>
+        <translation>Strg+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="539"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished">&amp;Fenster schließen</translation>
+        <translation>Fenster s&amp;chließen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="542"/>
@@ -2004,7 +2004,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="545"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Strg+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="550"/>
@@ -2014,7 +2014,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="553"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Strg+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="561"/>
@@ -2029,17 +2029,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="567"/>
         <source>F1</source>
-        <translation type="unfinished">F1</translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="572"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished">&amp;Über QtPass</translation>
+        <translation>&amp;Über QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="580"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished">Über &amp;Qt</translation>
+        <translation>Über &amp;Qt</translation>
     </message>
     <message>
         <source>Clear output</source>
