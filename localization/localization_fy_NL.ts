@@ -148,23 +148,23 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">Algemien</translation>
+        <translation>Algemien</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <location filename="../src/configdialog.ui" line="293"/>
         <source>Clipboard</source>
-        <translation type="unfinished">Klamboerd</translation>
+        <translation>Klamboerd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished">Werjefte</translation>
+        <translation>Werjefte</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
         <source>Passwords</source>
-        <translation type="unfinished">Wachtwurden</translation>
+        <translation>Wachtwurden</translation>
     </message>
     <message>
         <source>Show menu bar</source>
@@ -188,7 +188,7 @@
         <location filename="../src/configdialog.ui" line="339"/>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Never</source>
-        <translation type="unfinished">Nea</translation>
+        <translation>Nea</translation>
     </message>
     <message>
         <source>Password generation:</source>
@@ -202,7 +202,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="626"/>
         <source>characters</source>
-        <translation type="unfinished">Karakters</translation>
+        <translation>Karakters</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
@@ -212,39 +212,39 @@
     <message>
         <location filename="../src/configdialog.ui" line="810"/>
         <source>Fields:</source>
-        <translation type="unfinished">Fjilden:</translation>
+        <translation>Fjilden:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="824"/>
         <source>Off</source>
-        <translation type="unfinished">Út</translation>
+        <translation>Út</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="829"/>
         <source>Template fields</source>
-        <translation type="unfinished">Sjabloanfjilden</translation>
+        <translation>Sjabloanfjilden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="834"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
-        <translation type="unfinished">Sjabloanfjilden en elke rigel &quot;kaai: wearde&quot;</translation>
+        <translation>Sjabloanfjilden en elke rigel &quot;kaai: wearde&quot;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished">gpg, git, pwgen en pass opsykje yn it PATH</translation>
+        <translation>gpg, git, pwgen en pass opsykje yn it PATH</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
         <location filename="../src/configdialog.ui" line="1103"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished">Kies it gpg-programma</translation>
+        <translation>Kies it gpg-programma</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1113"/>
         <location filename="../src/configdialog.ui" line="1116"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished">Kies it git-programma</translation>
+        <translation>Kies it git-programma</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1132"/>
@@ -260,13 +260,13 @@
         <location filename="../src/configdialog.ui" line="1168"/>
         <location filename="../src/configdialog.ui" line="1171"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished">Kies it pwgen-programma</translation>
+        <translation>Kies it pwgen-programma</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1208"/>
         <location filename="../src/configdialog.ui" line="1211"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished">Kies it pass-programma</translation>
+        <translation>Kies it pass-programma</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1241"/>
@@ -276,12 +276,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished">Git-ynstellings foar dit profyl; se ferfange dy op de side Git salang&apos;t it aktyf is</translation>
+        <translation>Git-ynstellings foar dit profyl; se ferfange dy op de side Git salang&apos;t it aktyf is</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished">Aktive opslach</translation>
+        <translation>Aktive opslach</translation>
     </message>
     <message>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
@@ -295,22 +295,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="1328"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished">De wachtwurdopslaggen dy&apos;t dizze QtPass ken; kies ien om dy te bewurkjen</translation>
+        <translation>De wachtwurdopslaggen dy&apos;t dizze QtPass ken; kies ien om dy te bewurkjen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1343"/>
         <source>Add a profile</source>
-        <translation type="unfinished">In profyl tafoegje</translation>
+        <translation>In profyl tafoegje</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1361"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation type="unfinished">It selektearre profyl ferjitte; de opslach sels bliuwt op &apos;e skiif</translation>
+        <translation>It selektearre profyl ferjitte; de opslach sels bliuwt op &apos;e skiif</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1407"/>
         <source>Profile</source>
-        <translation type="unfinished">Profyl</translation>
+        <translation>Profyl</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1423"/>
@@ -339,7 +339,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1477"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished">Folsleine kaaifingerprint fan 40 tekens, sa&apos;t pass it fereasket</translation>
+        <translation>Folsleine kaaifingerprint fan 40 tekens, sa&apos;t pass it fereasket</translation>
     </message>
     <message>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
@@ -352,7 +352,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation>Use pwgen</translation>
+        <translation>Brûk pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="759"/>
@@ -494,54 +494,54 @@
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">Systeem</translation>
+        <translation>Systeem</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Brûk it ikoan fan it systeemfak</translation>
+        <translation>Brûk it ikoan fan it systeemfak</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">Útwreidings</translation>
+        <translation>Útwreidings</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished">QR-koades sjen litte (qrencode)</translation>
+        <translation>QR-koades sjen litte (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekonden</translation>
+        <translation>Sekonden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished">Ynhâldspaniel</translation>
+        <translation>Ynhâldspaniel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished">Hat in klamboerdmodus nedich op de side Klamboerd, sadat in ferburgen wachtwurd dochs kopiearre wurde kin</translation>
+        <translation>Hat in klamboerdmodus nedich op de side Klamboerd, sadat in ferburgen wachtwurd dochs kopiearre wurde kin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished">De ynhâld fan it bestân sjen litte sa&apos;t er is</translation>
+        <translation>De ynhâld fan it bestân sjen litte sa&apos;t er is</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
         <source>Password generation</source>
-        <translation type="unfinished">Wachtwurdgenerator</translation>
+        <translation>Wachtwurdgenerator</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Opsjoneel paad om SSH_AUTH_SOCK te oerskriuwen. Lit leech foar autodeteksje fia gpgconf.</translation>
+        <translation>Opsjoneel paad om SSH_AUTH_SOCK te oerskriuwen. Lit leech foar autodeteksje fia gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
@@ -609,7 +609,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
         <source>No clipboard</source>
-        <translation type="unfinished">Gjin klamboerd</translation>
+        <translation>Gjin klamboerd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="104"/>
@@ -630,12 +630,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Another profile already has this name</source>
-        <translation type="unfinished">In oar profyl hat dizze namme al</translation>
+        <translation>In oar profyl hat dizze namme al</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="287"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished">Allinnich folsleine kaaifingerprints (40 of 64 heksadesimale tekens), skieden troch spaasjes</translation>
+        <translation>Allinnich folsleine kaaifingerprints (40 of 64 heksadesimale tekens), skieden troch spaasjes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="333"/>
@@ -693,12 +693,12 @@ De wearde wurdt altyd opslein as ynfierd.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="619"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished">Koe profyl %1 net ynisjalisearje</translation>
+        <translation>Koe profyl %1 net ynisjalisearje</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="622"/>
         <source>Profile %1</source>
-        <translation type="unfinished">Profyl %1</translation>
+        <translation>Profyl %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="645"/>
@@ -743,7 +743,7 @@ De wearde wurdt altyd opslein as ynfierd.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished">Net beskikber op Wayland; brûk ynstee de finsterregel &quot;boppe hâlde&quot; fan jo compositor</translation>
+        <translation>Net beskikber op Wayland; brûk ynstee de finsterregel &quot;boppe hâlde&quot; fan jo compositor</translation>
     </message>
     <message>
         <source>Failed to create password-store at: %1</source>
@@ -857,7 +857,7 @@ De wearde wurdt altyd opslein as ynfierd.</translation>
         <location filename="../src/configdialog.ui" line="1540"/>
         <location filename="../src/configdialog.ui" line="1543"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Kies de map fan &apos;e wachtwurdopslach</translation>
+        <translation>Kies de map fan &apos;e wachtwurdopslach</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="801"/>
@@ -879,62 +879,62 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="466"/>
         <source>Hide passwords until asked</source>
-        <translation type="unfinished">Wachtwurden ferbergje oant derom frege wurdt</translation>
+        <translation>Wachtwurden ferbergje oant derom frege wurdt</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="467"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished">In ikoan yn it systeemfak sjen litte</translation>
+        <translation>In ikoan yn it systeemfak sjen litte</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="468"/>
         <source>Ready</source>
-        <translation type="unfinished">Klear</translation>
+        <translation>Klear</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="469"/>
         <source>Everything else can be changed later in Settings.</source>
-        <translation type="unfinished">Al it oare kin letter feroare wurde by Ynstellings.</translation>
+        <translation>Al it oare kin letter feroare wurde by Ynstellings.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="476"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation type="unfinished">De wachtwurdrigel as stippen sjen litte; Wachtwurd sjen litte makket it sichtber</translation>
+        <translation>De wachtwurdrigel as stippen sjen litte; Wachtwurd sjen litte makket it sichtber</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="487"/>
         <source>Store: %1</source>
-        <translation type="unfinished">Opslach: %1</translation>
+        <translation>Opslach: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="489"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation type="unfinished">It is al in wachtwurdopslach en wurdt brûkt sa&apos;t it is.</translation>
+        <translation>It is al in wachtwurdopslach en wurdt brûkt sa&apos;t it is.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="491"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
-        <translation type="unfinished">It wurdt ynrjochte foar de oanfinke kaaien en ûnder Git set.</translation>
+        <translation>It wurdt ynrjochte foar de oanfinke kaaien en ûnder Git set.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="493"/>
         <source>It will be set up for the ticked keys.</source>
-        <translation type="unfinished">It wurdt ynrjochte foar de oanfinke kaaien.</translation>
+        <translation>It wurdt ynrjochte foar de oanfinke kaaien.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="495"/>
         <source>GnuPG: %1</source>
-        <translation type="unfinished">GnuPG: %1</translation>
+        <translation>GnuPG: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="496"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished">Bewurkings rinne fia pass.</translation>
+        <translation>Bewurkings rinne fia pass.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="497"/>
         <source>Operations run through gpg and git directly.</source>
-        <translation type="unfinished">Bewurkings rinne streekrjocht fia gpg en git.</translation>
+        <translation>Bewurkings rinne streekrjocht fia gpg en git.</translation>
     </message>
 </context>
 <context>
@@ -942,7 +942,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="158"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished">Gjin programma konfigurearre foar dit kommando</translation>
+        <translation>Gjin programma konfigurearre foar dit kommando</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="187"/>
@@ -952,7 +952,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="381"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished">%1 is crasht of waard ôfsketten</translation>
+        <translation>%1 is crasht of waard ôfsketten</translation>
     </message>
 </context>
 <context>
@@ -974,7 +974,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Kopiearje nei klamboerd</translation>
+        <translation>Kopiearje nei klamboerd</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -1031,17 +1031,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">Dûbelklik om dit fjild om te neamen</translation>
+        <translation>Dûbelklik om dit fjild om te neamen</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">Fjild omneame…</translation>
+        <translation>Fjild omneame…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">Fjild fuortsmite</translation>
+        <translation>Fjild fuortsmite</translation>
     </message>
 </context>
 <context>
@@ -1049,44 +1049,44 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="44"/>
         <source>Browse</source>
-        <translation type="unfinished">Blêdzje</translation>
+        <translation>Blêdzje</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="67"/>
         <location filename="../src/firstrunwizard.cpp" line="73"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished">Wolkom by QtPass</translation>
+        <translation>Wolkom by QtPass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="76"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished">QtPass is in grafyske foarkant foar &lt;i&gt;pass&lt;/i&gt;, de standert Unix wachtwurdbehearder: elk wachtwurd is in bestân dat mei GnuPG fersifere is, bewarre yn in map dy&apos;t jo ûnder Git sette kinne.&lt;br&gt;&lt;br&gt;De folgjende siden sykje GnuPG op, soargje derfoar dat jo in kaai hawwe om nei te fersiferjen en kieze de map dêr&apos;t jo wachtwurden yn steane. Der wurdt neat skreaun oant jo op Foltôgje drukke.</translation>
+        <translation>QtPass is in grafyske foarkant foar &lt;i&gt;pass&lt;/i&gt;, de standert Unix wachtwurdbehearder: elk wachtwurd is in bestân dat mei GnuPG fersifere is, bewarre yn in map dy&apos;t jo ûnder Git sette kinne.&lt;br&gt;&lt;br&gt;De folgjende siden sykje GnuPG op, soargje derfoar dat jo in kaai hawwe om nei te fersiferjen en kieze de map dêr&apos;t jo wachtwurden yn steane. Der wurdt neat skreaun oant jo op Foltôgje drukke.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="128"/>
         <source>Error</source>
-        <translation type="unfinished">Fersin</translation>
+        <translation>Fersin</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="129"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">Koe wachtwurdopslach net oanmeitsje op: %1</translation>
+        <translation>Koe wachtwurdopslach net oanmeitsje op: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="147"/>
         <location filename="../src/firstrunwizard.cpp" line="171"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Wachtwurdopslach net ynisjalisearre</translation>
+        <translation>Wachtwurdopslach net ynisjalisearre</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="154"/>
         <source>Password store</source>
-        <translation type="unfinished">Wachtwurdopslach</translation>
+        <translation>Wachtwurdopslach</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="155"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished">%1 befettet al fersifere bestannen; dy binne net opnij fersifere nei de oanfinke kaaien. Iepenje Brûkers nei it starten om dat te dwaan.</translation>
+        <translation>%1 befettet al fersifere bestannen; dy binne net opnij fersifere nei de oanfinke kaaien. Iepenje Brûkers nei it starten om dat te dwaan.</translation>
     </message>
 </context>
 <context>
@@ -1094,88 +1094,88 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="131"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
-        <translation type="unfinished">It generaasjeregister fan de ûntfangerslisten, %1, is net tagonklik.</translation>
+        <translation>It generaasjeregister fan de ûntfangerslisten, %1, is net tagonklik.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="140"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
-        <translation type="unfinished">It generaasjeregister fan de ûntfangerslisten, %1, is net te lêzen. Undertekene ûntfangerslisten wurde net akseptearre oant it reparearre of fuortsmiten is (wêrby&apos;t ferjitten wurdt wat earder akseptearre is).</translation>
+        <translation>It generaasjeregister fan de ûntfangerslisten, %1, is net te lêzen. Undertekene ûntfangerslisten wurde net akseptearre oant it reparearre of fuortsmiten is (wêrby&apos;t ferjitten wurdt wat earder akseptearre is).</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="171"/>
         <location filename="../src/gpgidgeneration.cpp" line="184"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
-        <translation type="unfinished">It generaasjeregister fan de ûntfangerslisten, %1, kin net skreaun wurde.</translation>
+        <translation>It generaasjeregister fan de ûntfangerslisten, %1, kin net skreaun wurde.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="211"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
-        <translation type="unfinished">It generaasjeregister fan de ûntfangerslisten, %1, koe net beskoattele wurde: mooglik brûkt in oare QtPass it, of de map dêrfan kin net skreaun wurde.</translation>
+        <translation>It generaasjeregister fan de ûntfangerslisten, %1, koe net beskoattele wurde: mooglik brûkt in oare QtPass it, of de map dêrfan kin net skreaun wurde.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="314"/>
         <source>The list carries more than one generation line.</source>
-        <translation type="unfinished">De list befettet mear as ien generaasjerigel.</translation>
+        <translation>De list befettet mear as ien generaasjerigel.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="322"/>
         <source>The generation line is malformed: %1</source>
-        <translation type="unfinished">De generaasjerigel is ferkeard opmakke: %1</translation>
+        <translation>De generaasjerigel is ferkeard opmakke: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="328"/>
         <source>The list carries more than one folder line.</source>
-        <translation type="unfinished">De list befettet mear as ien maprigel.</translation>
+        <translation>De list befettet mear as ien maprigel.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="336"/>
         <source>The folder line is malformed: %1</source>
-        <translation type="unfinished">De maprigel is ferkeard opmakke: %1</translation>
+        <translation>De maprigel is ferkeard opmakke: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="340"/>
         <source>The header line is malformed: %1</source>
-        <translation type="unfinished">De koprigel is ferkeard opmakke: %1</translation>
+        <translation>De koprigel is ferkeard opmakke: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="372"/>
         <source>The list carries a generation line but no folder line.</source>
-        <translation type="unfinished">De list befettet in generaasjerigel, mar gjin maprigel.</translation>
+        <translation>De list befettet in generaasjerigel, mar gjin maprigel.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="519"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
-        <translation type="unfinished">De ûndertekene ûntfangerslist %1 is net te fertrouwen: %2</translation>
+        <translation>De ûndertekene ûntfangerslist %1 is net te fertrouwen: %2</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="446"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
-        <translation type="unfinished">De ûndertekene ûntfangerslist %1 is skreaun foar de map &quot;%2&quot; fan de opslach, net foar &quot;%3&quot;, en wurdt net brûkt. Mooglik hat immen oars dy hjirhinne kopiearre; as de map lykwols ferpleatst of omneamd is, dan iepenet in hâlder fan de ûndertekeningskaai dêr Brûkers op en bewarret de ûntfangers, wat de list bynt oan it plak dêr&apos;t dy no stiet.</translation>
+        <translation>De ûndertekene ûntfangerslist %1 is skreaun foar de map &quot;%2&quot; fan de opslach, net foar &quot;%3&quot;, en wurdt net brûkt. Mooglik hat immen oars dy hjirhinne kopiearre; as de map lykwols ferpleatst of omneamd is, dan iepenet in hâlder fan de ûndertekeningskaai dêr Brûkers op en bewarret de ûntfangers, wat de list bynt oan it plak dêr&apos;t dy no stiet.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
-        <translation type="unfinished">Generaasje %1 is de heechste dy&apos;t der is, dus hjir kin gjin nijere list mear skreaun wurde: it fuortsmiten fan %2 ferjit wat dit apparaat earder akseptearre hat, wêrnei&apos;t in hâlder fan de ûndertekeningskaai fierder komt troch Brûkers te iepenjen en %3.</translation>
+        <translation>Generaasje %1 is de heechste dy&apos;t der is, dus hjir kin gjin nijere list mear skreaun wurde: it fuortsmiten fan %2 ferjit wat dit apparaat earder akseptearre hat, wêrnei&apos;t in hâlder fan de ûndertekeningskaai fierder komt troch Brûkers te iepenjen en %3.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="466"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
-        <translation type="unfinished">In hâlder fan de ûndertekeningskaai komt fierder troch Brûkers te iepenjen en %1, wat generaasje %2 skriuwt. It fuortsmiten fan %3 ferjit wat dit apparaat earder akseptearre hat.</translation>
+        <translation>In hâlder fan de ûndertekeningskaai komt fierder troch Brûkers te iepenjen en %1, wat generaasje %2 skriuwt. It fuortsmiten fan %3 ferjit wat dit apparaat earder akseptearre hat.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="483"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
-        <translation type="unfinished">De ûndertekene ûntfangerslist %1 befettet gjin generaasjerigel, wylst generaasje %2 hjir earder akseptearre is. pass skriuwt gjin generaasjerigel (ek net fia de pass-backend fan QtPass), en QtPass foar 2.0 die dat ek net; sûnder sa&apos;n rigel kin de list ek foar in oare map fan de opslach skreaun en hjirhinne kopiearre wêze. %3</translation>
+        <translation>De ûndertekene ûntfangerslist %1 befettet gjin generaasjerigel, wylst generaasje %2 hjir earder akseptearre is. pass skriuwt gjin generaasjerigel (ek net fia de pass-backend fan QtPass), en QtPass foar 2.0 die dat ek net; sûnder sa&apos;n rigel kin de list ek foar in oare map fan de opslach skreaun en hjirhinne kopiearre wêze. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="492"/>
         <source>selecting the recipients afresh and saving</source>
-        <translation type="unfinished">de ûntfangers opnij te selektearjen en te bewarjen</translation>
+        <translation>de ûntfangers opnij te selektearjen en te bewarjen</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="617"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
-        <translation type="unfinished">It generaasjeregister fan de ûntfangerslisten, %1, is trochgien nei generaasje %2 wylst generaasje %3 skreaun waard.</translation>
+        <translation>It generaasjeregister fan de ûntfangerslisten, %1, is trochgien nei generaasje %2 wylst generaasje %3 skreaun waard.</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
@@ -1188,27 +1188,27 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="497"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
-        <translation type="unfinished">De ûndertekene ûntfangerslist %1 is generaasje %2, âlder as generaasje %3, de lêste dy&apos;t QtPass hjir akseptearre hat. Mooglik hat immen oars dy werompleatst. %4</translation>
+        <translation>De ûndertekene ûntfangerslist %1 is generaasje %2, âlder as generaasje %3, de lêste dy&apos;t QtPass hjir akseptearre hat. Mooglik hat immen oars dy werompleatst. %4</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="504"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
-        <translation type="unfinished">de ûntfangers te bewarjen: de foarselektearre ûntfangers dêr binne dy fan dizze list, smyt dêrom earst elkenien fuort dy&apos;t gjin tagong mear hawwe moat</translation>
+        <translation>de ûntfangers te bewarjen: de foarselektearre ûntfangers dêr binne dy fan dizze list, smyt dêrom earst elkenien fuort dy&apos;t gjin tagong mear hawwe moat</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="552"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
-        <translation type="unfinished">De ûndertekene ûntfangerslist %1 is generaasje %2, deselde generaasje as in oare list dy&apos;t dit apparaat earder akseptearre hat. Of twa apparaten hawwe tagelyk ûntfangers bewarre (Git sil it konflikt sjen litten hawwe), of in autentike list fan dy generaasje is dêrfoar yn it plak set. %3</translation>
+        <translation>De ûndertekene ûntfangerslist %1 is generaasje %2, deselde generaasje as in oare list dy&apos;t dit apparaat earder akseptearre hat. Of twa apparaten hawwe tagelyk ûntfangers bewarre (Git sil it konflikt sjen litten hawwe), of in autentike list fan dy generaasje is dêrfoar yn it plak set. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="560"/>
         <source>checking the recipients and saving</source>
-        <translation type="unfinished">de ûntfangers te kontrolearjen en te bewarjen</translation>
+        <translation>de ûntfangers te kontrolearjen en te bewarjen</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="585"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
-        <translation type="unfinished">De ûntfangerslist %1 hat generaasje %2 berikt, de heechste dy&apos;t der is; de list kin net skreaun wurde.</translation>
+        <translation>De ûntfangerslist %1 hat generaasje %2 berikt, de heechste dy&apos;t der is; de list kin net skreaun wurde.</translation>
     </message>
 </context>
 <context>
@@ -1216,12 +1216,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="75"/>
         <source>the recipient list is not valid UTF-8</source>
-        <translation type="unfinished">de ûntfangerslist is gjin jildige UTF-8</translation>
+        <translation>de ûntfangerslist is gjin jildige UTF-8</translation>
     </message>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="99"/>
         <source>gpg wrote no signature</source>
-        <translation type="unfinished">gpg hat gjin hantekening skreaun</translation>
+        <translation>gpg hat gjin hantekening skreaun</translation>
     </message>
 </context>
 <context>
@@ -1241,12 +1241,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="186"/>
         <source>Cannot add</source>
-        <translation type="unfinished">Kin net tafoegje</translation>
+        <translation>Kin net tafoegje</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="186"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 bestiet al.</translation>
+        <translation>%1 bestiet al.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="165"/>
@@ -1257,12 +1257,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="198"/>
         <source>Cannot write</source>
-        <translation type="unfinished">Kin net skriuwe</translation>
+        <translation>Kin net skriuwe</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="199"/>
         <source>Cannot create a temporary directory: %1</source>
-        <translation type="unfinished">Kin gjin tydlike map oanmeitsje: %1</translation>
+        <translation>Kin gjin tydlike map oanmeitsje: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="367"/>
@@ -1297,7 +1297,7 @@ Jo kinne de brûkerslist net feroarje!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="112"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished">Git pull mislearre: %1</translation>
+        <translation>Git pull mislearre: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="160"/>
@@ -1309,17 +1309,17 @@ Jo kinne de brûkerslist net feroarje!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="247"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Wiskjen mislearre</translation>
+        <translation>Wiskjen mislearre</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="248"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Koe de keppeling %1 net fuortsmite.</translation>
+        <translation>Koe de keppeling %1 net fuortsmite.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="290"/>
         <source>%1 is not inside the password store.</source>
-        <translation type="unfinished">%1 stiet net yn de wachtwurdopslach.</translation>
+        <translation>%1 stiet net yn de wachtwurdopslach.</translation>
     </message>
     <message>
         <source>Failed to open .gpg-id for writing.</source>
@@ -1332,12 +1332,12 @@ Jo kinne de brûkerslist net feroarje!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="348"/>
         <source>Recipient list written, but not recorded</source>
-        <translation type="unfinished">Untfangerslist skreaun, mar net registrearre</translation>
+        <translation>Untfangerslist skreaun, mar net registrearre</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="349"/>
         <source>%1 Save the recipients once more to get through.</source>
-        <translation type="unfinished">%1 Bewarje de ûntfangers noch ien kear om fierder te kommen.</translation>
+        <translation>%1 Bewarje de ûntfangers noch ien kear om fierder te kommen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="354"/>
@@ -1354,44 +1354,44 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="370"/>
         <source>Failed to sign %1: %2</source>
-        <translation type="unfinished">Koe %1 net ûndertekenje: %2</translation>
+        <translation>Koe %1 net ûndertekenje: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="465"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished">Koe de âlde hantekening %1 net fuortsmite.</translation>
+        <translation>Koe de âlde hantekening %1 net fuortsmite.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="562"/>
         <location filename="../src/imitatepass.cpp" line="590"/>
         <location filename="../src/imitatepass.cpp" line="598"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished">Oerbliuwsel fan in eardere opnij-fersifering</translation>
+        <translation>Oerbliuwsel fan in eardere opnij-fersifering</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="563"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
-        <translation type="unfinished">%1 is gjin gewoan bestân en is net weromset. Besjoch it en smyt it fuort, en fersiferje dan opnij.</translation>
+        <translation>%1 is gjin gewoan bestân en is net weromset. Besjoch it en smyt it fuort, en fersiferje dan opnij.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="591"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished">%1 stiet njonken %2. Beide binne fersifere kopyen fan de ynfier; kontrolearje hokker jo hâlde wolle en wiskje de oare, en fersiferje dan opnij.</translation>
+        <translation>%1 stiet njonken %2. Beide binne fersifere kopyen fan de ynfier; kontrolearje hokker jo hâlde wolle en wiskje de oare, en fersiferje dan opnij.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="605"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished">%1 weromset út de reservekopy dy&apos;t in ûnderbrutsen opnij-fersifering efterlitten hat.</translation>
+        <translation>%1 weromset út de reservekopy dy&apos;t in ûnderbrutsen opnij-fersifering efterlitten hat.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished">%1 ûntbrekt en de reservekopy %2 koe net weromneamd wurde. Neam it mei de hân om, en fersiferje dan opnij.</translation>
+        <translation>%1 ûntbrekt en de reservekopy %2 koe net weromneamd wurde. Neam it mei de hân om, en fersiferje dan opnij.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>%1 could not be re-encrypted: %2</source>
-        <translation type="unfinished">%1 koe net opnij fersifere wurde: %2</translation>
+        <translation>%1 koe net opnij fersifere wurde: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1101"/>
@@ -1434,17 +1434,17 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="897"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished">Der is al in opnij fersifering dwaande</translation>
+        <translation>Der is al in opnij fersifering dwaande</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="904"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">Gjin map fan de opslach</translation>
+        <translation>Gjin map fan de opslach</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="905"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
-        <translation type="unfinished">%1 is, of leit efter, in symbolyske keppeling of junction. Wêr&apos;t dy nei ferwiist, heart net by de wachtwurdopslach en is net opnij fersifere.</translation>
+        <translation>%1 is, of leit efter, in symbolyske keppeling of junction. Wêr&apos;t dy nei ferwiist, heart net by de wachtwurdopslach en is net opnij fersifere.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="914"/>
@@ -1460,22 +1460,22 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="983"/>
         <source>Git pull failed</source>
-        <translation type="unfinished">Git pull mislearre</translation>
+        <translation>Git pull mislearre</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="984"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished">De pull hat de opslach mei net-gearfoege bestannen efterlitten. Los it konflikt op foardat jo opnij fersiferje.</translation>
+        <translation>De pull hat de opslach mei net-gearfoege bestannen efterlitten. Los it konflikt op foardat jo opnij fersiferje.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="988"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished">Git pull mislearre, de opslach wurdt opnij fersifere sa&apos;t dy is</translation>
+        <translation>Git pull mislearre, de opslach wurdt opnij fersifere sa&apos;t dy is</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="999"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n ynfier oerslein: in symbolyske keppeling, junction of spesjaal bestân heart net by de opslach.</numerusform>
             <numerusform>%n ynfieren oerslein: in symbolyske keppeling, junction of spesjaal bestân heart net by de opslach.</numerusform>
         </translation>
@@ -1493,7 +1493,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1099"/>
         <source>... and %n more</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>... en noch %n mear</numerusform>
             <numerusform>... en noch %n mear</numerusform>
         </translation>
@@ -1501,7 +1501,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1102"/>
         <source>%n file(s) could not be re-encrypted:</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n bestân koe net opnij fersifere wurde:</numerusform>
             <numerusform>%n bestannen koene net opnij fersifere wurde:</numerusform>
         </translation>
@@ -1509,17 +1509,17 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1108"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished">Opnij fersifering annulearre: %1 fan %2 bestannen kontrolearre, %3 opnij fersifere, %4 mislearre</translation>
+        <translation>Opnij fersifering annulearre: %1 fan %2 bestannen kontrolearre, %3 opnij fersifere, %4 mislearre</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1310"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished">Git-programma net konfigurearre, git wurdt oerslein</translation>
+        <translation>Git-programma net konfigurearre, git wurdt oerslein</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1367"/>
         <source>gpg wrote no ciphertext for %1.</source>
-        <translation type="unfinished">gpg hat gjin fersifere tekst foar %1 skreaun.</translation>
+        <translation>gpg hat gjin fersifere tekst foar %1 skreaun.</translation>
     </message>
     <message>
         <source>Cannot create a temporary file next to %1: %2</source>
@@ -1558,7 +1558,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1131"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Der wurdt net pusht: %n bestân koe net opnij fersifere wurde</numerusform>
             <numerusform>Der wurdt net pusht: %n bestannen koene net opnij fersifere wurde</numerusform>
         </translation>
@@ -1594,7 +1594,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished">Ut klamboerd</translation>
+        <translation>Ut klamboerd</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1642,7 +1642,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">%1 liket net op in ASCII-armored GPG-kaai. Konvertearje him earst mei &lt;code&gt;gpg --armor --export&lt;/code&gt;, of plak it ASCII-armored blok fia &lt;b&gt;Ut klamboerd&lt;/b&gt;.</translation>
+        <translation>%1 liket net op in ASCII-armored GPG-kaai. Konvertearje him earst mei &lt;code&gt;gpg --armor --export&lt;/code&gt;, of plak it ASCII-armored blok fia &lt;b&gt;Ut klamboerd&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -1676,7 +1676,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished">Iepenbiere kaai %1 ymportearre. Kontrolearje de fingerprint mei de eigner foardat jo dernei fersiferje: it ymportearjen fan in kaai seit neat oer wa&apos;t him hat.</translation>
+        <translation>Iepenbiere kaai %1 ymportearre. Kontrolearje de fingerprint mei de eigner foardat jo dernei fersiferje: it ymportearjen fan in kaai seit neat oer wa&apos;t him hat.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>
@@ -1688,32 +1688,32 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="288"/>
         <source>Generate a new key pair…</source>
-        <translation type="unfinished">In nij kaaipear generearje…</translation>
+        <translation>In nij kaaipear generearje…</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="290"/>
         <source>Your key</source>
-        <translation type="unfinished">Jo kaai</translation>
+        <translation>Jo kaai</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="291"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation type="unfinished">Wachtwurden wurde fersifere nei GnuPG-kaaien. Fink de kaaien oan dy&apos;t in nije opslach iepenje kinne moatte; jo hawwe op syn minst ien nedich dêr&apos;t de geheime helte fan op dizze masine stiet.</translation>
+        <translation>Wachtwurden wurde fersifere nei GnuPG-kaaien. Fink de kaaien oan dy&apos;t in nije opslach iepenje kinne moatte; jo hawwe op syn minst ien nedich dêr&apos;t de geheime helte fan op dizze masine stiet.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="319"/>
         <source>expired</source>
-        <translation type="unfinished">ferrûn</translation>
+        <translation>ferrûn</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="321"/>
         <source>not usable</source>
-        <translation type="unfinished">net brûkber</translation>
+        <translation>net brûkber</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="334"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
-        <translation type="unfinished">GnuPG hat noch gjin geheime kaai. Generearje hjir ien, of ymportearje earst jo besteande kaai mei gpg.</translation>
+        <translation>GnuPG hat noch gjin geheime kaai. Generearje hjir ien, of ymportearje earst jo besteande kaai mei gpg.</translation>
     </message>
 </context>
 <context>
@@ -1746,12 +1746,12 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
-        <translation type="unfinished">Elkenien dy&apos;t it bestân mei de priveekaai yn hannen krijt, kin dan alle wachtwurden lêze sûnder dat der wat frege wurdt.</translation>
+        <translation>Elkenien dy&apos;t it bestân mei de priveekaai yn hannen krijt, kin dan alle wachtwurden lêze sûnder dat der wat frege wurdt.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
         <source>No passphrase: store the private key unprotected</source>
-        <translation type="unfinished">Gjin wachtwurdfrase: de priveekaai ûnbeskerme bewarje</translation>
+        <translation>Gjin wachtwurdfrase: de priveekaai ûnbeskerme bewarje</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -1870,12 +1870,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="210"/>
         <source>No password store backend available</source>
-        <translation type="unfinished">Gjin backend foar wachtwurdopslach beskikber</translation>
+        <translation>Gjin backend foar wachtwurdopslach beskikber</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="244"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished">Kaaigeneraasje mislearre: %1</translation>
+        <translation>Kaaigeneraasje mislearre: %1</translation>
     </message>
 </context>
 <context>
@@ -2078,7 +2078,7 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass is in GUI foar &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de standert Unix wachtwurdbehearder.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass is in GUI foar &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de standert Unix wachtwurdbehearder.&lt;/p&gt;
 &lt;p&gt;Meld asjebleaft alle &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemen&lt;/a&gt; dy&apos;t jo miskien hawwe mei dizze software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumintaasje&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Boarnekoade&lt;/a&gt;&lt;/p&gt;</translation>
@@ -2086,117 +2086,117 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Bestân</translation>
+        <translation>&amp;Bestân</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished">&amp;Opslach</translation>
+        <translation>&amp;Opslach</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished">&amp;Ynstellings</translation>
+        <translation>&amp;Ynstellings</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="374"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">&amp;Help</translation>
+        <translation>&amp;Help</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Show &amp;process output</source>
-        <translation type="unfinished">&amp;Prosesútfier sjen litte</translation>
+        <translation>&amp;Prosesútfier sjen litte</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="500"/>
         <source>Show or hide the output of git, gpg and pass</source>
-        <translation type="unfinished">De útfier fan git, gpg en pass sjen litte of ferbergje</translation>
+        <translation>De útfier fan git, gpg en pass sjen litte of ferbergje</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
         <source>Show &amp;menu bar</source>
-        <translation type="unfinished">&amp;Menubalke sjen litte</translation>
+        <translation>&amp;Menubalke sjen litte</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="514"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
-        <translation type="unfinished">De menubalke ferbergje of sjen litte; Ctrl+M bringt him werom</translation>
+        <translation>De menubalke ferbergje of sjen litte; Ctrl+M bringt him werom</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="517"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished">Ctrl+M</translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished">QtPass &amp;konfigurearje…</translation>
+        <translation>QtPass &amp;konfigurearje…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
         <source>Settings</source>
-        <translation type="unfinished">Ynstellings</translation>
+        <translation>Ynstellings</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished">De ynstellings fan QtPass wizigje</translation>
+        <translation>De ynstellings fan QtPass wizigje</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished">Ctrl+,</translation>
+        <translation>Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="539"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished">Finster &amp;slute</translation>
+        <translation>Finster &amp;slute</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="542"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">Slút it finster; mei &quot;Ferbergje by ticht&quot; bliuwt QtPass yn it systeemfak</translation>
+        <translation>Slút it finster; mei &quot;Ferbergje by ticht&quot; bliuwt QtPass yn it systeemfak</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="545"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="550"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Ofslute</translation>
+        <translation>&amp;Ofslute</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="553"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="561"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished">&amp;FAQ</translation>
+        <translation>&amp;FAQ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="564"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished">Iepenje de faak stelde fragen op qtpass.org</translation>
+        <translation>Iepenje de faak stelde fragen op qtpass.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="567"/>
         <source>F1</source>
-        <translation type="unfinished">F1</translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="572"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished">&amp;Oer QtPass</translation>
+        <translation>&amp;Oer QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="580"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished">Oer &amp;Qt</translation>
+        <translation>Oer &amp;Qt</translation>
     </message>
     <message>
         <source>Clear output</source>
@@ -2364,7 +2364,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Binne jo wis dat jo %1 wiskje wolle?</translation>
+        <translation>Binne jo wis dat jo %1 wiskje wolle?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1050"/>
@@ -2530,22 +2530,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
-        <translation type="unfinished">Binne jo wis dat jo %1 en de hiele ynhâld wiskje wolle?</translation>
+        <translation>Binne jo wis dat jo %1 en de hiele ynhâld wiskje wolle?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
-        <translation type="unfinished">Oandacht: der binne ûnferwachte bestannen yn &apos;e opjûne map, kontrolearje se foardat jo trochgean.</translation>
+        <translation>Oandacht: der binne ûnferwachte bestannen yn &apos;e opjûne map, kontrolearje se foardat jo trochgean.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1059"/>
         <source>Delete link?</source>
-        <translation type="unfinished">Keppeling wiskje?</translation>
+        <translation>Keppeling wiskje?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
-        <translation type="unfinished">%1 is in symbolyske keppeling of junction. De keppeling fuortsmite? Wêr&apos;t dy nei ferwiist, wurdt net oanrekke.</translation>
+        <translation>%1 is in symbolyske keppeling of junction. De keppeling fuortsmite? Wêr&apos;t dy nei ferwiist, wurdt net oanrekke.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1322"/>
@@ -2575,7 +2575,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1420"/>
         <source>New folder</source>
-        <translation type="unfinished">Nije map</translation>
+        <translation>Nije map</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1421"/>
@@ -2630,12 +2630,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">Gjin map fan de opslach</translation>
+        <translation>Gjin map fan de opslach</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1674"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 is, of leit efter, in symbolyske keppeling of junction. Wêr&apos;t dy nei ferwiist, heart net by de wachtwurdopslach en wurdt net oanrekke.</translation>
+        <translation>%1 is, of leit efter, in symbolyske keppeling of junction. Wêr&apos;t dy nei ferwiist, heart net by de wachtwurdopslach en wurdt net oanrekke.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1682"/>
@@ -2654,12 +2654,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="761"/>
         <source>About QtPass</source>
-        <translation type="unfinished">Oer QtPass</translation>
+        <translation>Oer QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="762"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;In multyplatfoarm-GUI foar &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de standert Unix wachtwurdbehearder.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Boarnekoade en kwestjes&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Lisinsjearre ûnder de &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL ferzje 3&lt;/a&gt; of letter.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;In multyplatfoarm-GUI foar &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de standert Unix wachtwurdbehearder.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Boarnekoade en kwestjes&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Lisinsjearre ûnder de &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL ferzje 3&lt;/a&gt; of letter.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Rename File To: </source>
@@ -2701,22 +2701,22 @@ Trochgean?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1584"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished">Wachtwurden opnij fersiferje...</translation>
+        <translation>Wachtwurden opnij fersiferje...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1585"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annulearje</translation>
+        <translation>Annulearje</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1593"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished">Opnij fersifering wurdt annulearre</translation>
+        <translation>Opnij fersifering wurdt annulearre</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1604"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished">Wachtwurden opnij fersiferje: %1 fan %2</translation>
+        <translation>Wachtwurden opnij fersiferje: %1 fan %2</translation>
     </message>
     <message>
         <source>Export Public Key</source>
@@ -2772,12 +2772,12 @@ Trochgean?</translation>
     <message>
         <location filename="../src/pass.cpp" line="162"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished">Konfigurearre GPG-thúsmap %1 bestiet net, de standert kaairing wurdt brûkt</translation>
+        <translation>Konfigurearre GPG-thúsmap %1 bestiet net, de standert kaairing wurdt brûkt</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="170"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished">Konfigurearre GPG-thúsmap %1 bestiet net, GNUPGHOME %2 út de omjouwing wurdt brûkt</translation>
+        <translation>Konfigurearre GPG-thúsmap %1 bestiet net, GNUPGHOME %2 út de omjouwing wurdt brûkt</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="183"/>
@@ -2832,22 +2832,22 @@ Trochgean?</translation>
     <message>
         <location filename="../src/pass.cpp" line="675"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 is, of leit efter, in symbolyske keppeling of junction. Wêr&apos;t dy nei ferwiist, heart net by de wachtwurdopslach en wurdt net oanrekke.</translation>
+        <translation>%1 is, of leit efter, in symbolyske keppeling of junction. Wêr&apos;t dy nei ferwiist, heart net by de wachtwurdopslach en wurdt net oanrekke.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="681"/>
         <source>Not part of the store</source>
-        <translation type="unfinished">Heart net by de opslach</translation>
+        <translation>Heart net by de opslach</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="775"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">De ûntfangerslist %1 kin net mei de ûndertekeningskaai ferifiearre wurde, dêrom is der neat foarselektearre: bewarjen soe ûndertekenje wat der ek yn stiet. Selektearje de ûntfangers sels; OK skriuwt en ûndertekenet in nije list.</translation>
+        <translation>De ûntfangerslist %1 kin net mei de ûndertekeningskaai ferifiearre wurde, dêrom is der neat foarselektearre: bewarjen soe ûndertekenje wat der ek yn stiet. Selektearje de ûntfangers sels; OK skriuwt en ûndertekenet in nije list.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="742"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
-        <translation type="unfinished">%1 Der is neat foarselektearre: bewarjen soe ûndertekenje wat der ek yn stiet. Selektearje de ûntfangers sels.</translation>
+        <translation>%1 Der is neat foarselektearre: bewarjen soe ûndertekenje wat der ek yn stiet. Selektearje de ûntfangers sels.</translation>
     </message>
 </context>
 <context>
@@ -2862,27 +2862,27 @@ Trochgean?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
         <source>Folder</source>
-        <translation type="unfinished">Map</translation>
+        <translation>Map</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation type="unfinished">De map fan de wachtwurdopslach dêr&apos;t de nije ynfier yn komt</translation>
+        <translation>De map fan de wachtwurdopslach dêr&apos;t de nije ynfier yn komt</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">Namme</translation>
+        <translation>Namme</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
-        <translation type="unfinished">De namme fan de ynfier, sa&apos;t dy yn de beam ferskynt; in / set him yn in submap</translation>
+        <translation>De namme fan de ynfier, sa&apos;t dy yn de beam ferskynt; in / set him yn in submap</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>e.g. github.com or work/vpn</source>
-        <translation type="unfinished">bgl. github.com of wurk/vpn</translation>
+        <translation>bgl. github.com of wurk/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
@@ -2935,62 +2935,62 @@ Trochgean?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="219"/>
         <source>Template:</source>
-        <translation type="unfinished">Sjabloan:</translation>
+        <translation>Sjabloan:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished">Fjildsjabloan út it .templates-bestân fan &apos;e opslach. Ctrl+T skeakelet nei de folgjende.</translation>
+        <translation>Fjildsjabloan út it .templates-bestân fan &apos;e opslach. Ctrl+T skeakelet nei de folgjende.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="72"/>
         <source>New password</source>
-        <translation type="unfinished">Nij wachtwurd</translation>
+        <translation>Nij wachtwurd</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="91"/>
         <source>Decrypting…</source>
-        <translation type="unfinished">Untsiferjen…</translation>
+        <translation>Untsiferjen…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="190"/>
         <source>Give the entry a name.</source>
-        <translation type="unfinished">Jou de ynfier in namme.</translation>
+        <translation>Jou de ynfier in namme.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="194"/>
         <source>A name cannot end in /.</source>
-        <translation type="unfinished">In namme kin net einigje op /.</translation>
+        <translation>In namme kin net einigje op /.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="203"/>
         <source>That name would resolve outside the password store.</source>
-        <translation type="unfinished">Dy namme soe bûten de wachtwurdopslach útkomme.</translation>
+        <translation>Dy namme soe bûten de wachtwurdopslach útkomme.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="207"/>
         <source>An entry called %1 already exists.</source>
-        <translation type="unfinished">Der bestiet al in ynfier mei de namme %1.</translation>
+        <translation>Der bestiet al in ynfier mei de namme %1.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="211"/>
         <source>%1 is a folder.</source>
-        <translation type="unfinished">%1 is in map.</translation>
+        <translation>%1 is in map.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="238"/>
         <source>Could not create the folder %1.</source>
-        <translation type="unfinished">Koe de map %1 net oanmeitsje.</translation>
+        <translation>Koe de map %1 net oanmeitsje.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="294"/>
         <source>Remove field</source>
-        <translation type="unfinished">Fjild fuortsmite</translation>
+        <translation>Fjild fuortsmite</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="313"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">Der bestiet al in fjild mei de namme %1.</translation>
+        <translation>Der bestiet al in fjild mei de namme %1.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="394"/>
@@ -3017,12 +3017,12 @@ Trochgean?</translation>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="26"/>
         <source>Clear</source>
-        <translation type="unfinished">Wiskje</translation>
+        <translation>Wiskje</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="27"/>
         <source>Clear output</source>
-        <translation type="unfinished">Útfier wiskje</translation>
+        <translation>Útfier wiskje</translation>
     </message>
 </context>
 <context>
@@ -3030,12 +3030,12 @@ Trochgean?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="36"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished">Koe %1 net oanmeitsje.</translation>
+        <translation>Koe %1 net oanmeitsje.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="60"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 befettet al %n fersifere bestân; dat is net opnij fersifere. Skeakelje oer nei it profyl en iepenje Brûkers om dat te dwaan.</numerusform>
             <numerusform>%1 befettet al %n fersifere bestannen; dy binne net opnij fersifere. Skeakelje oer nei it profyl en iepenje Brûkers om dat te dwaan.</numerusform>
         </translation>
@@ -3043,12 +3043,12 @@ Trochgean?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="78"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished">Gjin ûntfanger selektearre; %1 is net skreaun.</translation>
+        <translation>Gjin ûntfanger selektearre; %1 is net skreaun.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="127"/>
         <source>Could not sign %1 with %2.</source>
-        <translation type="unfinished">Koe %1 net ûndertekenje mei %2.</translation>
+        <translation>Koe %1 net ûndertekenje mei %2.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -3057,13 +3057,13 @@ Trochgean?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="129"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished">Koe %1 net ûndertekenje mei %2: %3</translation>
+        <translation>Koe %1 net ûndertekenje mei %2: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="149"/>
         <location filename="../src/profileinit.cpp" line="178"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished">git %1 mislearre yn %2: %3</translation>
+        <translation>git %1 mislearre yn %2: %3</translation>
     </message>
 </context>
 <context>
@@ -3071,57 +3071,57 @@ Trochgean?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished">Brûk it kommandorigelark pass</translation>
+        <translation>Brûk it kommandorigelark pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="204"/>
         <source>Programs</source>
-        <translation type="unfinished">Programma&apos;s</translation>
+        <translation>Programma&apos;s</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="205"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished">GnuPG docht it fersiferjen. pass en Git binne opsjoneel; QtPass kin har wurk sels dwaan.</translation>
+        <translation>GnuPG docht it fersiferjen. pass en Git binne opsjoneel; QtPass kin har wurk sels dwaan.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="209"/>
         <source>Select executable</source>
-        <translation type="unfinished">Selektearje útfierber bestân</translation>
+        <translation>Selektearje útfierber bestân</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="210"/>
         <source>All files (*)</source>
-        <translation type="unfinished">Alle bestannen (*)</translation>
+        <translation>Alle bestannen (*)</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="212"/>
         <source>GnuPG</source>
-        <translation type="unfinished">GnuPG</translation>
+        <translation>GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="215"/>
         <source>Git</source>
-        <translation type="unfinished">Git</translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="216"/>
         <source>pass</source>
-        <translation type="unfinished">pass</translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="217"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished">It pass-skript foar elke bewurking útfiere yn stee fan gpg en git streekrjocht oan te roppen</translation>
+        <translation>It pass-skript foar elke bewurking útfiere yn stee fan gpg en git streekrjocht oan te roppen</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="257"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
-        <translation type="unfinished">GnuPG is net fûn. Ynstallearje it (gpg of gpg2) en fier hjir de lokaasje yn.</translation>
+        <translation>GnuPG is net fûn. Ynstallearje it (gpg of gpg2) en fier hjir de lokaasje yn.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="260"/>
         <source>%1 is not an executable file.</source>
-        <translation type="unfinished">%1 is gjin útfierber bestân.</translation>
+        <translation>%1 is gjin útfierber bestân.</translation>
     </message>
 </context>
 <context>
@@ -3166,7 +3166,7 @@ Trochgean?</translation>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished">Sjen litte as QR-koade</translation>
+        <translation>Sjen litte as QR-koade</translation>
     </message>
 </context>
 <context>
@@ -3177,13 +3177,13 @@ Trochgean?</translation>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
         <source>Show password</source>
-        <translation type="unfinished">Wachtwurd sjen litte</translation>
+        <translation>Wachtwurd sjen litte</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
         <source>Hide password</source>
-        <translation type="unfinished">Wachtwurd ferbergje</translation>
+        <translation>Wachtwurd ferbergje</translation>
     </message>
 </context>
 <context>
@@ -3192,7 +3192,7 @@ Trochgean?</translation>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Kopiearje nei klamboerd</translation>
+        <translation>Kopiearje nei klamboerd</translation>
     </message>
 </context>
 <context>
@@ -3298,17 +3298,17 @@ Trochgean?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="76"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Koe de keppeling %1 net fuortsmite.</translation>
+        <translation>Koe de keppeling %1 net fuortsmite.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="77"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Wiskjen mislearre</translation>
+        <translation>Wiskjen mislearre</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="199"/>
         <source>Search needs the GPG executable to be configured.</source>
-        <translation type="unfinished">Foar it sykjen moat it GPG-programma konfigurearre wêze.</translation>
+        <translation>Foar it sykjen moat it GPG-programma konfigurearre wêze.</translation>
     </message>
 </context>
 <context>
@@ -3333,27 +3333,27 @@ Trochgean?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="364"/>
         <source>Keep the store under Git</source>
-        <translation type="unfinished">De opslach ûnder Git hâlde</translation>
+        <translation>De opslach ûnder Git hâlde</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="366"/>
         <source>Password store</source>
-        <translation type="unfinished">Wachtwurdopslach</translation>
+        <translation>Wachtwurdopslach</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="367"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation type="unfinished">De map dêr&apos;t jo wachtwurden yn steane. In besteande opslach wurdt brûkt sa&apos;t dy is; in lege of ûntbrekkende map wurdt ynrjochte foar de kaaien dy&apos;t jo oanfinke hawwe.</translation>
+        <translation>De map dêr&apos;t jo wachtwurden yn steane. In besteande opslach wurdt brûkt sa&apos;t dy is; in lege of ûntbrekkende map wurdt ynrjochte foar de kaaien dy&apos;t jo oanfinke hawwe.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="371"/>
         <source>Folder</source>
-        <translation type="unfinished">Map</translation>
+        <translation>Map</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="373"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Kies de map fan &apos;e wachtwurdopslach</translation>
+        <translation>Kies de map fan &apos;e wachtwurdopslach</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="398"/>
@@ -3361,7 +3361,7 @@ Trochgean?</translation>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished">Git hat noch gjin namme en e-postadres om mei te committen. Fier
+        <translation>Git hat noch gjin namme en e-postadres om mei te committen. Fier
 git config --global user.name &quot;Jo Namme&quot;
 git config --global user.email jo@example.org
 út en set Git dêrnei oan by Ynstellings.</translation>
@@ -3369,17 +3369,17 @@ git config --global user.email jo@example.org
     <message>
         <location filename="../src/firstrunwizard.cpp" line="402"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished">Elke feroaring wurdt in commit; in map dy&apos;t noch gjin repository is, krijt ien</translation>
+        <translation>Elke feroaring wurdt in commit; in map dy&apos;t noch gjin repository is, krijt ien</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="426"/>
         <source>Enter a folder.</source>
-        <translation type="unfinished">Fier in map yn.</translation>
+        <translation>Fier in map yn.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="430"/>
         <source>An existing password store with %n entries.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>In besteande wachtwurdopslach mei %n ynfier.</numerusform>
             <numerusform>In besteande wachtwurdopslach mei %n ynfieren.</numerusform>
         </translation>
@@ -3387,22 +3387,22 @@ git config --global user.email jo@example.org
     <message>
         <location filename="../src/firstrunwizard.cpp" line="433"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation type="unfinished">In lege map; dy wurdt ynrjochte as wachtwurdopslach.</translation>
+        <translation>In lege map; dy wurdt ynrjochte as wachtwurdopslach.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="434"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation type="unfinished">Dizze map is noch gjin wachtwurdopslach; der wurdt in .gpg-id foar de oanfinke kaaien yn skreaun.</translation>
+        <translation>Dizze map is noch gjin wachtwurdopslach; der wurdt in .gpg-id foar de oanfinke kaaien yn skreaun.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="437"/>
         <source>The folder does not exist yet; it will be created.</source>
-        <translation type="unfinished">De map bestiet noch net; dy wurdt oanmakke.</translation>
+        <translation>De map bestiet noch net; dy wurdt oanmakke.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="441"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
-        <translation type="unfinished">Gean werom en fink op syn minst ien kaai oan om nei te fersiferjen.</translation>
+        <translation>Gean werom en fink op syn minst ien kaai oan om nei te fersiferjen.</translation>
     </message>
 </context>
 <context>
@@ -3464,7 +3464,7 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished">Selektearje hokker brûkers de wachtwurden dy&apos;t yn dizze map opslein binne, ûntsiferje kinne moatte.
+        <translation>Selektearje hokker brûkers de wachtwurden dy&apos;t yn dizze map opslein binne, ûntsiferje kinne moatte.
 Opmerking: By OK wurdt elk wachtwurd yn dizze map en har submappen opnij fersifere foar de selektearre brûkers; dat kin even duorje.
 Fette yngongen hawwe in geheime kaai beskikber, selektearje ien fan dizze om sels ûntsiferje te kinnen.
 Gewoane yngongen hawwe in fertroude fersiferingskaai, selektearje dizze om oare minsken ûntsiferje te litten.
@@ -3568,34 +3568,34 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/util.cpp" line="687"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Kin gjin tydlik bestân njonken %1 oanmeitsje: %2</translation>
+        <translation>Kin gjin tydlik bestân njonken %1 oanmeitsje: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="699"/>
         <location filename="../src/util.cpp" line="778"/>
         <location filename="../src/util.cpp" line="808"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Kin %1 net skriuwe: %2</translation>
+        <translation>Kin %1 net skriuwe: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="714"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Koe %1 net ferfange.</translation>
+        <translation>Koe %1 net ferfange.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="719"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 bestiet al.</translation>
+        <translation>%1 bestiet al.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="721"/>
         <source>Failed to write %1.</source>
-        <translation type="unfinished">Koe %1 net skriuwe.</translation>
+        <translation>Koe %1 net skriuwe.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="765"/>
         <source>%1 was swapped for another file while it was written.</source>
-        <translation type="unfinished">%1 is troch in oar bestân ferfongen wylst it skreaun waard.</translation>
+        <translation>%1 is troch in oar bestân ferfongen wylst it skreaun waard.</translation>
     </message>
     <message>
         <source>%1 was replaced by a link while it was written.</source>
@@ -3604,12 +3604,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/util.cpp" line="791"/>
         <source>Cannot read %1.</source>
-        <translation type="unfinished">Kin %1 net lêze.</translation>
+        <translation>Kin %1 net lêze.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="801"/>
         <source>Cannot read %1: %2</source>
-        <translation type="unfinished">Kin %1 net lêze: %2</translation>
+        <translation>Kin %1 net lêze: %2</translation>
     </message>
 </context>
 </TS>

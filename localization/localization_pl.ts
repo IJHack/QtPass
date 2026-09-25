@@ -278,22 +278,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="810"/>
         <source>Fields:</source>
-        <translation type="unfinished">Pola:</translation>
+        <translation>Pola:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="824"/>
         <source>Off</source>
-        <translation type="unfinished">Wyłączone</translation>
+        <translation>Wyłączone</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="829"/>
         <source>Template fields</source>
-        <translation type="unfinished">Pola szablonu</translation>
+        <translation>Pola szablonu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="834"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
-        <translation type="unfinished">Pola szablonu i każdy wiersz &quot;klucz: wartość&quot;</translation>
+        <translation>Pola szablonu i każdy wiersz &quot;klucz: wartość&quot;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
@@ -386,95 +386,95 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished">Wygląd</translation>
+        <translation>Wygląd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">System</translation>
+        <translation>System</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Użyj ikony w zasobniku systemowym</translation>
+        <translation>Użyj ikony w zasobniku systemowym</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">Rozszerzenia</translation>
+        <translation>Rozszerzenia</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished">Pokazuj kody QR (qrencode)</translation>
+        <translation>Pokazuj kody QR (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Never</source>
-        <translation type="unfinished">Nigdy</translation>
+        <translation>Nigdy</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekundy</translation>
+        <translation>sekundy</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished">Panel zawartości</translation>
+        <translation>Panel zawartości</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished">Wymaga trybu schowka na stronie Schowek, aby ukryte hasło nadal można było skopiować</translation>
+        <translation>Wymaga trybu schowka na stronie Schowek, aby ukryte hasło nadal można było skopiować</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished">Pokazuj zawartość pliku bez zmian</translation>
+        <translation>Pokazuj zawartość pliku bez zmian</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
         <source>Password generation</source>
-        <translation type="unfinished">Generowanie hasła</translation>
+        <translation>Generowanie hasła</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="626"/>
         <source>characters</source>
-        <translation type="unfinished">Znaki</translation>
+        <translation>znaki</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation type="unfinished">Użyj pwgen</translation>
+        <translation>Użyj pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished">Wyszukaj gpg, git, pwgen i pass w PATH</translation>
+        <translation>Wyszukaj gpg, git, pwgen i pass w PATH</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
         <source>git</source>
-        <translation type="unfinished">git</translation>
+        <translation>git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
         <source>gpg</source>
-        <translation type="unfinished">gpg</translation>
+        <translation>gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1158"/>
         <source>pwgen</source>
-        <translation type="unfinished">pwgen</translation>
+        <translation>pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Opcjonalna ścieżka do zastąpienia SSH_AUTH_SOCK. Pozostaw puste, aby automatycznie sondować przez gpgconf.</translation>
+        <translation>Opcjonalna ścieżka do zastąpienia SSH_AUTH_SOCK. Pozostaw puste, aby automatycznie sondować przez gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1328"/>
@@ -519,12 +519,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished">Ustawienia Git dla tego profilu; gdy jest aktywny, zastępują one ustawienia ze strony Git</translation>
+        <translation>Ustawienia Git dla tego profilu; gdy jest aktywny, zastępują one ustawienia ze strony Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished">Aktywny magazyn</translation>
+        <translation>Aktywny magazyn</translation>
     </message>
     <message>
         <source>Signing Key</source>
@@ -1347,7 +1347,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="833"/>
         <source>%1 could not be re-encrypted: %2</source>
-        <translation type="unfinished">Nie udało się ponownie zaszyfrować %1: %2</translation>
+        <translation>Nie udało się ponownie zaszyfrować %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1101"/>
@@ -1914,7 +1914,7 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass to graficzny interfejs użytkownika dla &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardowego menedżera haseł w systemach uniksowych.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass to graficzny interfejs użytkownika dla &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardowego menedżera haseł w systemach uniksowych.&lt;/p&gt;
 &lt;p&gt;Proszę zgłaszać wszelkie &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemy&lt;/a&gt; z programem.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacja&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Kod źródłowy&lt;/a&gt;&lt;/p&gt;</translation>
@@ -1922,12 +1922,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Show &amp;process output</source>
-        <translation type="unfinished">Pokaż dane wyjściowe &amp;procesu</translation>
+        <translation>Pokaż dane wyjściowe &amp;procesu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="500"/>
         <source>Show or hide the output of git, gpg and pass</source>
-        <translation type="unfinished">Pokaż lub ukryj dane wyjściowe git, gpg i pass</translation>
+        <translation>Pokaż lub ukryj dane wyjściowe git, gpg i pass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
@@ -1947,17 +1947,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished">&amp;Konfiguruj QtPass…</translation>
+        <translation>&amp;Konfiguruj QtPass…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
         <source>Settings</source>
-        <translation type="unfinished">Opcje</translation>
+        <translation>Ustawienia</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished">Zmień ustawienia QtPass</translation>
+        <translation>Zmień ustawienia QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>
@@ -2349,17 +2349,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Czy na pewno chcesz usunąć %1?</translation>
+        <translation>Czy na pewno chcesz usunąć %1?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
-        <translation type="unfinished">Czy na pewno chcesz usunąć %1 wraz z całą zawartością?</translation>
+        <translation>Czy na pewno chcesz usunąć %1 wraz z całą zawartością?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
-        <translation type="unfinished">Uwaga: w wybranym folderze znajdują się nieoczekiwane pliki. Sprawdź je przed kontynuowaniem.</translation>
+        <translation>Uwaga: w wybranym folderze znajdują się nieoczekiwane pliki. Sprawdź je przed kontynuowaniem.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1332"/>
