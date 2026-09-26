@@ -71,8 +71,25 @@ git archive --prefix=qtpass-x.y.z/ -o qtpass-x.y.z.tar.gz HEAD
 
 ```bash
 brew install create-dmg   # once; the same tool release-installers.yml uses
-./scripts/release-mac.sh  # -> QtPass-x.y.z.dmg
+./scripts/release-mac.sh  # -> QtPass-x.y.z.dmg (unsigned)
 ```
+
+To sign and notarize, set two variables. You need a paid Apple Developer
+Program membership, a **Developer ID Application** certificate in the login
+keychain (a Personal Team's Apple Development certificate is not accepted), and
+notarization credentials saved once:
+
+```bash
+xcrun notarytool store-credentials qtpass-notary --apple-id you@example.com --team-id TEAMID
+MAC_SIGN_IDENTITY="Developer ID Application: Name (TEAMID)" \
+  MAC_NOTARY_PROFILE=qtpass-notary ./scripts/release-mac.sh
+```
+
+The script checks both before building, signs the bundle with the hardened
+runtime (`macdeployqt -sign-for-notarization`), signs the dmg, submits it with
+`notarytool --wait`, staples the ticket and confirms with `spctl`. If you set
+only `MAC_SIGN_IDENTITY`, it signs without notarizing. If notarization is
+rejected, the script prints the `notarytool log` command that shows why.
 
 #### Windows
 

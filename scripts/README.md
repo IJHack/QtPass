@@ -11,12 +11,12 @@ This directory contains helper scripts for development and releases.
 
 ## Release
 
-| Script                   | Description                        |
-| ------------------------ | ---------------------------------- |
-| `build-appimage.sh`      | Build a relocatable Linux AppImage |
-| `release-linux.sh`       | Build and install on Linux         |
-| `release-mac.sh`         | Build and package for macOS        |
-| `sign-release-assets.sh` | Sign release artifacts with GPG    |
+| Script                   | Description                                      |
+| ------------------------ | ------------------------------------------------ |
+| `build-appimage.sh`      | Build a relocatable Linux AppImage               |
+| `release-linux.sh`       | Build and install on Linux                       |
+| `release-mac.sh`         | Build, package and optionally notarize for macOS |
+| `sign-release-assets.sh` | Sign release artifacts with GPG                  |
 
 ## Usage
 

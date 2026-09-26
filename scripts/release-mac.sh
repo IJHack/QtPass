@@ -26,6 +26,41 @@ require_readable_file() {
 	fi
 }
 
+# Signing and notarization are opt-in, so an unsigned local build keeps working:
+#   MAC_SIGN_IDENTITY   a "Developer ID Application: …" identity (name or SHA-1)
+#                       from `security find-identity -v -p codesigning`
+#   MAC_NOTARY_PROFILE  a profile saved with `xcrun notarytool store-credentials`;
+#                       needs MAC_SIGN_IDENTITY, since Apple only notarizes signed code
+# Both are checked here, before the build, so a typo doesn't cost a full build.
+MAC_SIGN_IDENTITY="${MAC_SIGN_IDENTITY:-}"
+MAC_NOTARY_PROFILE="${MAC_NOTARY_PROFILE:-}"
+if [[ -n "$MAC_NOTARY_PROFILE" && -z "$MAC_SIGN_IDENTITY" ]]; then
+	echo "Error: MAC_NOTARY_PROFILE is set but MAC_SIGN_IDENTITY is not; notarization needs a signed build." >&2
+	exit 1
+fi
+if [[ -n "$MAC_SIGN_IDENTITY" ]]; then
+	echo "Checking signing identity..."
+	IDENTITY_LINE=$(security find-identity -v -p codesigning | grep -F -- "$MAC_SIGN_IDENTITY" | head -n 1 || true)
+	if [[ -z "$IDENTITY_LINE" ]]; then
+		echo "Error: no valid code-signing identity matches \"$MAC_SIGN_IDENTITY\"." >&2
+		echo "       List them with: security find-identity -v -p codesigning" >&2
+		exit 1
+	fi
+	if [[ -n "$MAC_NOTARY_PROFILE" && "$IDENTITY_LINE" != *"Developer ID Application:"* ]]; then
+		echo "Error: notarization needs a \"Developer ID Application\" identity, got:" >&2
+		echo "       $IDENTITY_LINE" >&2
+		exit 1
+	fi
+fi
+if [[ -n "$MAC_NOTARY_PROFILE" ]]; then
+	echo "Checking notarization credentials..."
+	if ! xcrun notarytool history --keychain-profile "$MAC_NOTARY_PROFILE" >/dev/null; then
+		echo "Error: notarytool cannot use keychain profile \"$MAC_NOTARY_PROFILE\"." >&2
+		echo "       Create it with: xcrun notarytool store-credentials $MAC_NOTARY_PROFILE" >&2
+		exit 1
+	fi
+fi
+
 echo "Extracting version..."
 require_readable_file "qtpass.pri"
 VERSION=$(awk -F= '/^[[:space:]]*VERSION[[:space:]]*=/ { gsub(/[[:space:]]/, "", $2); print $2; exit }' qtpass.pri)
@@ -98,10 +133,24 @@ if ! command -v macdeployqt &>/dev/null; then
 	echo "Error: macdeployqt is not installed or not in PATH." >&2
 	exit 1
 fi
-macdeployqt main/QtPass.app || {
+MACDEPLOYQT_ARGS=()
+if [[ -n "$MAC_SIGN_IDENTITY" ]]; then
+	# Signs every bundled framework and plugin with the hardened runtime and a
+	# secure timestamp, which notarization requires.
+	MACDEPLOYQT_ARGS+=("-sign-for-notarization=$MAC_SIGN_IDENTITY")
+fi
+# The ${…+…} form keeps macOS's bash 3.2 from treating an empty array as unset.
+macdeployqt main/QtPass.app ${MACDEPLOYQT_ARGS[@]+"${MACDEPLOYQT_ARGS[@]}"} || {
 	echo "Error: macdeployqt failed." >&2
 	exit 1
 }
+if [[ -n "$MAC_SIGN_IDENTITY" ]]; then
+	echo "Verifying app signature..."
+	codesign --verify --deep --strict --verbose=2 main/QtPass.app || {
+		echo "Error: main/QtPass.app is not validly signed." >&2
+		exit 1
+	}
+fi
 
 echo "Creating DMG..."
 # Same tool and layout as the release-installers workflow, so a local build
@@ -116,4 +165,45 @@ create-dmg "$DMG_NAME" main/QtPass.app || {
 	echo "Error: create-dmg failed." >&2
 	exit 1
 }
-echo "Created $DMG_NAME"
+
+if [[ -n "$MAC_SIGN_IDENTITY" ]]; then
+	echo "Signing $DMG_NAME..."
+	codesign --sign "$MAC_SIGN_IDENTITY" --timestamp "$DMG_NAME" || {
+		echo "Error: signing $DMG_NAME failed." >&2
+		exit 1
+	}
+fi
+
+if [[ -n "$MAC_NOTARY_PROFILE" ]]; then
+	echo "Submitting $DMG_NAME for notarization (usually a few minutes)..."
+	# `submit --wait` can exit 0 for a rejected submission, so read the status.
+	NOTARY_JSON=$(xcrun notarytool submit "$DMG_NAME" --keychain-profile "$MAC_NOTARY_PROFILE" \
+		--wait --output-format json) || {
+		echo "Error: notarytool submit failed." >&2
+		exit 1
+	}
+	NOTARY_STATUS=$(plutil -extract status raw -o - - <<<"$NOTARY_JSON" || true)
+	if [[ "$NOTARY_STATUS" != "Accepted" ]]; then
+		NOTARY_ID=$(plutil -extract id raw -o - - <<<"$NOTARY_JSON" || true)
+		echo "Error: notarization status is \"${NOTARY_STATUS:-unknown}\"." >&2
+		echo "       See why with: xcrun notarytool log ${NOTARY_ID:-<id>} --keychain-profile $MAC_NOTARY_PROFILE" >&2
+		exit 1
+	fi
+	echo "Stapling the notarization ticket..."
+	xcrun stapler staple "$DMG_NAME" || {
+		echo "Error: stapling $DMG_NAME failed." >&2
+		exit 1
+	}
+	spctl --assess --type open --context context:primary-signature --verbose=2 "$DMG_NAME" || {
+		echo "Error: Gatekeeper rejects $DMG_NAME." >&2
+		exit 1
+	}
+fi
+
+if [[ -n "$MAC_NOTARY_PROFILE" ]]; then
+	echo "Created $DMG_NAME (signed and notarized)"
+elif [[ -n "$MAC_SIGN_IDENTITY" ]]; then
+	echo "Created $DMG_NAME (signed, not notarized)"
+else
+	echo "Created $DMG_NAME (unsigned)"
+fi
