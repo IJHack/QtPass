@@ -140,7 +140,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1477"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished">Pegada dixital completa da chave, de 40 caracteres, tal como require pass</translation>
+        <translation>Impresión dixital da chave con 40 caracteres, como require pass</translation>
     </message>
     <message>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
@@ -254,18 +254,18 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">Xeral</translation>
+        <translation>Xeral</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <location filename="../src/configdialog.ui" line="293"/>
         <source>Clipboard</source>
-        <translation type="unfinished">Portapapeis</translation>
+        <translation>Portapapeis</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
         <source>Passwords</source>
-        <translation type="unfinished">Contrasinais</translation>
+        <translation>Contrasinais</translation>
     </message>
     <message>
         <source>Show menu bar</source>
@@ -292,22 +292,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="810"/>
         <source>Fields:</source>
-        <translation type="unfinished">Campos:</translation>
+        <translation>Campos:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="824"/>
         <source>Off</source>
-        <translation type="unfinished">Desactivado</translation>
+        <translation>Desactivado</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="829"/>
         <source>Template fields</source>
-        <translation type="unfinished">Campos do modelo</translation>
+        <translation>Campos do modelo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="834"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
-        <translation type="unfinished">Campos do modelo e cada liña &quot;chave: valor&quot;</translation>
+        <translation>Campos do modelo e cada liña &quot;chave: valor&quot;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
@@ -390,7 +390,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished">Visualización</translation>
+        <translation>Visualización</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
@@ -400,7 +400,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Usar icona na bandexa</translation>
+        <translation>Usar icona na bandexa</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -422,7 +422,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
-        <translation type="unfinished">Segundos</translation>
+        <translation>segundos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
