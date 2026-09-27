@@ -82,7 +82,7 @@ jobs:
 
       - name: Install Qt
         if: steps.need_docs.outputs.run_docs == 'true'
-        uses: jurplel/install-qt-action@48d3ad6db93f3627c8ee7a0454bc6f3744f7e730 # v4.3.1
+        uses: jurplel/install-qt-action@a9c63c7c123f3069cff414e7e482d95dfa9d8125 # v4.4.1
 
       - name: Install Doxygen
         if: steps.need_docs.outputs.run_docs == 'true'
