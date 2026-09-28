@@ -61,12 +61,22 @@ void FieldLabel::startEdit() {
 }
 
 auto FieldLabel::eventFilter(QObject *watched, QEvent *event) -> bool {
-  if (watched == m_editor && event->type() == QEvent::KeyPress &&
-      static_cast<QKeyEvent *>(event)->key() == Qt::Key_Escape) {
+  if (watched != m_editor || event->type() != QEvent::KeyPress) {
+    return QLabel::eventFilter(watched, event);
+  }
+  switch (static_cast<QKeyEvent *>(event)->key()) {
+  case Qt::Key_Escape:
     finishEdit(false);
     return true;
+  case Qt::Key_Return:
+  case Qt::Key_Enter:
+    // Enter confirms the name only; left alone it would also reach the
+    // dialog's default button and save and close the whole entry.
+    finishEdit(true);
+    return true;
+  default:
+    return QLabel::eventFilter(watched, event);
   }
-  return QLabel::eventFilter(watched, event);
 }
 
 void FieldLabel::finishEdit(bool commit) {

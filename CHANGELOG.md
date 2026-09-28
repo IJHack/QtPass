@@ -449,6 +449,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- Saving an entry no longer loses what was typed when it fails. The password
+  dialog closed as soon as OK was pressed and gpg ran afterwards, so a missing
+  or expired recipient key, an unusable `.gpg-id` or a refused path lost the
+  entry. The dialog now stays open until the entry is written, locked and
+  showing "Saving…"; on failure the fields come back with the reason. Enter
+  in a field-name editor also no longer saves and closes the whole dialog
+  ([#1944](https://github.com/IJHack/QtPass/issues/1944))
 - The autoclear boxes in Settings showed "ver" instead of "Never": the
   layout sized them for "0", because Qt does not tell the layout when the
   special value text changes

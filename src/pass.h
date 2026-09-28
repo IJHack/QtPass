@@ -530,6 +530,14 @@ signals:
    */
   void generateGPGKeysFailed(const QString &err);
   /**
+   * @brief Emitted when an Insert() fails after it started a process,
+   *        alongside the generic processErrorExit(); lets the password
+   *        dialog keep what was typed and say why, without reacting to any
+   *        other command failing meanwhile.
+   * @param err What gpg, pass or the placement of the entry reported.
+   */
+  void insertFailed(const QString &err);
+  /**
    * @brief Emitted when grep finishes with matching results.
    * @param results List of (entry path, matching lines) pairs.
    */
