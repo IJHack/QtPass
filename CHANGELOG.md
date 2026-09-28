@@ -22,7 +22,7 @@
   file themselves need the new name; the Flatpak manifest drops
   `rename-appdata-file` with this tag
 
-### Bugfixes
+### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
 - "Automatically push" and "Automatically pull" in the settings did nothing
   since 1.8.0: [#1140](https://github.com/IJHack/QtPass/pull/1140) started
