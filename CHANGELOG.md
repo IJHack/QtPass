@@ -1,5 +1,17 @@
 # Changelog
 
+## [Unreleased] — 1.8.3
+
+### Bugfixes
+
+- Saving an entry no longer loses what was typed when it fails. The password
+  dialog closed as soon as OK was pressed and gpg ran afterwards, so a missing
+  or expired recipient key or an unusable `.gpg-id` lost the entry. The dialog
+  now stays open until the entry is written, locked and showing "Saving…"; on
+  failure the fields come back with the reason
+  ([#1944](https://github.com/IJHack/QtPass/issues/1944), ported from
+  [#1951](https://github.com/IJHack/QtPass/pull/1951))
+
 ## [1.8.2](https://github.com/IJHack/QtPass/tree/v1.8.2) (2026-09-24)
 
 ### Changed

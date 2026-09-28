@@ -71,7 +71,9 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
 
   connect(m_pass, &Pass::finishedShow, this, &PasswordDialog::setPass);
   connect(m_pass, &Pass::processErrorExit, this, &PasswordDialog::onShowError);
-  connect(this, &PasswordDialog::accepted, this, &PasswordDialog::on_accepted);
+  connect(m_pass, &Pass::finishedInsert, this,
+          &PasswordDialog::onInsertFinished);
+  connect(m_pass, &Pass::insertFailed, this, &PasswordDialog::onInsertFailed);
   connect(this, &PasswordDialog::rejected, this, &PasswordDialog::on_rejected);
 
   if (!isNew) {
@@ -127,10 +129,24 @@ void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(true);
 }
 
+void PasswordDialog::accept() {
+  if (m_saving) {
+    return;
+  }
+  save();
+}
+
+void PasswordDialog::reject() {
+  if (m_saving) {
+    return;
+  }
+  QDialog::reject();
+}
+
 /**
- * @brief PasswordDialog::on_accepted handle Ok click for QDialog
+ * @brief PasswordDialog::save insert the entry and wait for the result.
  */
-void PasswordDialog::on_accepted() {
+void PasswordDialog::save() {
   // For an existing entry, refuse to save until its decrypted content has
   // loaded (Show is asynchronous). getPassword() always returns at least a
   // newline, so the previous isEmpty() check never fired and clicking OK early
@@ -147,7 +163,60 @@ void PasswordDialog::on_accepted() {
     newValue += "\n";
   }
 
+  setSaving(true);
+  // A refusal (an unusable or unsigned .gpg-id) comes through critical()
+  // before Insert() returns, with nothing started that could still report.
+  QString refusal;
+  const QMetaObject::Connection refused =
+      connect(m_pass, &Pass::critical, this,
+              [&refusal](const QString &, const QString &message) {
+                refusal = message;
+              });
   m_pass->Insert(m_file, newValue, !m_isNew);
+  disconnect(refused);
+  if (m_saving && !refusal.isEmpty()) {
+    setSaving(false);
+    showNotSaved(refusal);
+  }
+}
+
+void PasswordDialog::setSaving(bool saving) {
+  m_saving = saving;
+  setEditorEnabled(!saving);
+  ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(!saving);
+  if (QPushButton *cancel = ui->buttonBox->button(QDialogButtonBox::Cancel)) {
+    cancel->setEnabled(!saving);
+  }
+  ui->statusLabel->setText(saving ? tr("Saving…") : QString());
+}
+
+void PasswordDialog::onInsertFinished() {
+  // Only one insert can be in flight while this modal dialog waits: an
+  // earlier dialog closed only once its own had reported.
+  if (!m_saving) {
+    return;
+  }
+  setSaving(false);
+  QDialog::accept();
+}
+
+void PasswordDialog::onInsertFailed(const QString &err, bool written) {
+  if (!m_saving) {
+    return;
+  }
+  setSaving(false);
+  // The entry is in the store and a later step (git add or commit) failed,
+  // which the main window reports. Kept open, a new entry could only be
+  // tried again under a name it now has.
+  if (m_isNew && written) {
+    QDialog::accept();
+    return;
+  }
+  showNotSaved(err);
+}
+
+void PasswordDialog::showNotSaved(const QString &err) {
+  ui->statusLabel->setText(tr("Not saved: %1").arg(err.trimmed()));
 }
 
 /**
@@ -457,6 +526,10 @@ void PasswordDialog::setAvailableTemplates(
  * @param templateName Name of template to apply.
  */
 void PasswordDialog::applyTemplate(const QString &templateName) {
+  // Another template would rebuild the field rows under a pending insert.
+  if (m_saving) {
+    return;
+  }
   auto it = m_availableTemplates.constFind(templateName);
   if (it != m_availableTemplates.constEnd()) {
     m_currentTemplateName = templateName;

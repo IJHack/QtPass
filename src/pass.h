@@ -275,6 +275,14 @@ public:
 
 protected:
   /**
+   * @brief Whether the insert that just failed had put its entry in the
+   * store before a later step failed. The backend that writes the entry
+   * knows; this default says no.
+   * @return true when the failed insert's entry was written.
+   */
+  [[nodiscard]] virtual auto insertWritten() const -> bool { return false; }
+
+  /**
    * @brief Execute external wrapper command.
    * @param id Process identifier.
    * @param app Executable path.
@@ -380,6 +388,17 @@ signals:
    * @param err Error message or stderr output.
    */
   void processErrorExit(int exitCode, const QString &err);
+
+  /**
+   * @brief Emitted when an Insert() fails after it started a process,
+   *        alongside the generic processErrorExit(); lets the password
+   *        dialog keep what was typed and say why, without reacting to any
+   *        other command failing meanwhile.
+   * @param err What gpg or pass reported.
+   * @param written true when this insert did put the entry in the store and
+   *        only a later step (git add or commit) failed.
+   */
+  void insertFailed(const QString &err, bool written);
 
   /**
    * @brief Emitted when any operation finishes.
