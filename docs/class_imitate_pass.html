@@ -172,6 +172,8 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 <tr class="memdesc:a296dba6b2dc144cdd95af8da86d2170a inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when GPG key generation finishes.  <br /></td></tr>
 <tr class="memitem:ae2ce1c54d65a0d00db42a0ffc139c393 inherit signals_class_pass" id="r_ae2ce1c54d65a0d00db42a0ffc139c393"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ae2ce1c54d65a0d00db42a0ffc139c393">generateGPGKeysFailed</a> (const QString &amp;err)</td></tr>
 <tr class="memdesc:ae2ce1c54d65a0d00db42a0ffc139c393 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when GPG key generation fails, alongside the generic <a class="el" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit.">processErrorExit()</a>; lets the keygen dialog react to its own failure only, not to any other command failing meanwhile.  <br /></td></tr>
+<tr class="memitem:a4f8a565d9693da516f7b10e3d7652ae8 inherit signals_class_pass" id="r_a4f8a565d9693da516f7b10e3d7652ae8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a4f8a565d9693da516f7b10e3d7652ae8">insertFailed</a> (const QString &amp;err, bool written)</td></tr>
+<tr class="memdesc:a4f8a565d9693da516f7b10e3d7652ae8 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when an <a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> fails after it started a process, alongside the generic <a class="el" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit.">processErrorExit()</a>; lets the password dialog keep what was typed and say why, without reacting to any other command failing meanwhile.  <br /></td></tr>
 <tr class="memitem:a74344f203b81f87b4d42a6281a176db4 inherit signals_class_pass" id="r_a74344f203b81f87b4d42a6281a176db4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">finishedGrep</a> (const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</td></tr>
 <tr class="memdesc:a74344f203b81f87b4d42a6281a176db4 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when grep finishes with matching results.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -285,6 +287,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:adfd24194a7787a48b6eddbe8d31fc563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve destination for move operation.  <br /></td></tr>
 <tr class="memitem:aa0b75b53b2a2d62b0fbffbb5d2d7efe4" id="r_aa0b75b53b2a2d62b0fbffbb5d2d7efe4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">finished</a> (int id, int exitCode, const QString &amp;out, const QString &amp;err) override</td></tr>
 <tr class="memdesc:aa0b75b53b2a2d62b0fbffbb5d2d7efe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle process completion.  <br /></td></tr>
+<tr class="memitem:a80b717f6932e5645b2628fba4654a7da" id="r_a80b717f6932e5645b2628fba4654a7da"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a80b717f6932e5645b2628fba4654a7da">insertWritten</a> () const -&gt; bool override</td></tr>
+<tr class="memdesc:a80b717f6932e5645b2628fba4654a7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the failed insert had placed its entry (see placeEncryptedFile()) before a later git step failed.  <br /></td></tr>
 <tr class="memitem:afea4899feebac58489e710f4f8eba501" id="r_afea4899feebac58489e710f4f8eba501"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afea4899feebac58489e710f4f8eba501">beforeExecute</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id) override</td></tr>
 <tr class="memdesc:afea4899feebac58489e710f4f8eba501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a transaction for every execution.  <br /></td></tr>
 <tr class="inherit_header pro_methods_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
@@ -1390,6 +1394,38 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c">Pass</a>.</p>
+
+</div>
+</div>
+<a id="a80b717f6932e5645b2628fba4654a7da" name="a80b717f6932e5645b2628fba4654a7da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80b717f6932e5645b2628fba4654a7da">&#9670;&#160;</a></span>insertWritten()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::insertWritten </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the failed insert had placed its entry (see placeEncryptedFile()) before a later git step failed. </p>
+<dl class="section return"><dt>Returns</dt><dd>true when the entry is in the store. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_pass.html#afda7320a4a3a5bcba47a862701c9b84e">Pass</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00330">330</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>

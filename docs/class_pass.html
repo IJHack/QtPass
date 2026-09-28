@@ -166,6 +166,8 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 <tr class="memdesc:a296dba6b2dc144cdd95af8da86d2170a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when GPG key generation finishes.  <br /></td></tr>
 <tr class="memitem:ae2ce1c54d65a0d00db42a0ffc139c393" id="r_ae2ce1c54d65a0d00db42a0ffc139c393"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae2ce1c54d65a0d00db42a0ffc139c393">generateGPGKeysFailed</a> (const QString &amp;err)</td></tr>
 <tr class="memdesc:ae2ce1c54d65a0d00db42a0ffc139c393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when GPG key generation fails, alongside the generic <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit.">processErrorExit()</a>; lets the keygen dialog react to its own failure only, not to any other command failing meanwhile.  <br /></td></tr>
+<tr class="memitem:a4f8a565d9693da516f7b10e3d7652ae8" id="r_a4f8a565d9693da516f7b10e3d7652ae8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4f8a565d9693da516f7b10e3d7652ae8">insertFailed</a> (const QString &amp;err, bool written)</td></tr>
+<tr class="memdesc:a4f8a565d9693da516f7b10e3d7652ae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when an <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> fails after it started a process, alongside the generic <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit.">processErrorExit()</a>; lets the password dialog keep what was typed and say why, without reacting to any other command failing meanwhile.  <br /></td></tr>
 <tr class="memitem:a74344f203b81f87b4d42a6281a176db4" id="r_a74344f203b81f87b4d42a6281a176db4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a74344f203b81f87b4d42a6281a176db4">finishedGrep</a> (const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</td></tr>
 <tr class="memdesc:a74344f203b81f87b4d42a6281a176db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when grep finishes with matching results.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -243,6 +245,8 @@ Protected Slots</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:afda7320a4a3a5bcba47a862701c9b84e" id="r_afda7320a4a3a5bcba47a862701c9b84e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afda7320a4a3a5bcba47a862701c9b84e">insertWritten</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:afda7320a4a3a5bcba47a862701c9b84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the insert that just failed had put its entry in the store before a later step failed. The backend that writes the entry knows; this default says no.  <br /></td></tr>
 <tr class="memitem:a36a6f3e2815272e10ff895edc487d388" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
 <tr class="memdesc:a36a6f3e2815272e10ff895edc487d388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remember what a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> asked for, so its completion can say so.  <br /></td></tr>
 <tr class="memitem:a9e4a43d75fb8f1dd3419a9d6c7e07b29" id="r_a9e4a43d75fb8f1dd3419a9d6c7e07b29"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9e4a43d75fb8f1dd3419a9d6c7e07b29">refuseLinkedPath</a> (const QString &amp;path, bool includeSelf=true) -&gt; bool</td></tr>
@@ -1641,6 +1645,76 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a4f8a565d9693da516f7b10e3d7652ae8" name="a4f8a565d9693da516f7b10e3d7652ae8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f8a565d9693da516f7b10e3d7652ae8">&#9670;&#160;</a></span>insertFailed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pass::insertFailed </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>err</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>written</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Emitted when an <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> fails after it started a process, alongside the generic <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit.">processErrorExit()</a>; lets the password dialog keep what was typed and say why, without reacting to any other command failing meanwhile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">err</td><td>What gpg, pass or the placement of the entry reported. </td></tr>
+    <tr><td class="paramname">written</td><td>true when this insert did put the entry in the store and only a later step (git add or commit) failed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afda7320a4a3a5bcba47a862701c9b84e" name="afda7320a4a3a5bcba47a862701c9b84e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afda7320a4a3a5bcba47a862701c9b84e">&#9670;&#160;</a></span>insertWritten()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto Pass::insertWritten </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the insert that just failed had put its entry in the store before a later step failed. The backend that writes the entry knows; this default says no. </p>
+<dl class="section return"><dt>Returns</dt><dd>true when the failed insert's entry was written. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_imitate_pass.html#a80b717f6932e5645b2628fba4654a7da">ImitatePass</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00331">331</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
 <a id="a170c0e1d359eb3f2d7b5f75f60082bd6" name="a170c0e1d359eb3f2d7b5f75f60082bd6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a170c0e1d359eb3f2d7b5f75f60082bd6">&#9670;&#160;</a></span>listKeys() <span class="overload">[1/2]</span></h2>
 
@@ -1891,7 +1965,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00333">333</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00341">341</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
