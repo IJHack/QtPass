@@ -64,6 +64,12 @@ public:
   void accept() override;
 
   /**
+   * @brief Cancel, Esc and the window's close button: refused while an
+   * insert is in flight, so a failure can still hand back what was typed.
+   */
+  void reject() override;
+
+  /**
    * @brief Let a new entry be named inside the dialog: a folder picker over
    * the store's folders and a name field, instead of a separate prompt.
    *
@@ -175,8 +181,10 @@ private slots:
    * @brief The insert started by accept() failed: unlock the fields, which
    * still hold what was typed, and show why.
    * @param err The reason reported by the backend.
+   * @param written true when the entry was written and only a later step
+   *        (git) failed; a new entry then closes the dialog.
    */
-  void onInsertFailed(const QString &err);
+  void onInsertFailed(const QString &err, bool written);
 
   /**
    * @brief Handle a process error while waiting for an entry's decrypt.

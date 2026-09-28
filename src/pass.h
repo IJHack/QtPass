@@ -323,6 +323,14 @@ public:
 
 protected:
   /**
+   * @brief Whether the insert that just failed had put its entry in the
+   * store before a later step failed. The backend that writes the entry
+   * knows; this default says no.
+   * @return true when the failed insert's entry was written.
+   */
+  [[nodiscard]] virtual auto insertWritten() const -> bool { return false; }
+
+  /**
    * @brief Remember what a Show() asked for, so its completion can say so.
    *
    * Backends call this first thing in Show(); Pass::finished() pops the
@@ -535,8 +543,10 @@ signals:
    *        dialog keep what was typed and say why, without reacting to any
    *        other command failing meanwhile.
    * @param err What gpg, pass or the placement of the entry reported.
+   * @param written true when this insert did put the entry in the store and
+   *        only a later step (git add or commit) failed.
    */
-  void insertFailed(const QString &err);
+  void insertFailed(const QString &err, bool written);
   /**
    * @brief Emitted when grep finishes with matching results.
    * @param results List of (entry path, matching lines) pairs.

@@ -54,12 +54,22 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   if (refuseLinkedPath(file + ".gpg")) {
     return;
   }
+  m_insertTarget =
+      QDir::cleanPath(QDir::isAbsolutePath(file)
+                          ? file + ".gpg"
+                          : QDir(m_settings.passStore).filePath(file) + ".gpg");
+  m_insertTargetExisted = QFileInfo::exists(m_insertTarget);
   QStringList args = {"insert", "-m"};
   if (overwrite) {
     args.append("-f");
   }
   args.append(file);
   executePass(PASS_INSERT, args, newValue);
+}
+
+auto RealPass::insertWritten() const -> bool {
+  return !m_insertTarget.isEmpty() && !m_insertTargetExisted &&
+         QFileInfo::exists(m_insertTarget);
 }
 
 void RealPass::Remove(QString file, bool isDir) {

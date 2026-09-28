@@ -172,7 +172,12 @@ void PasswordDialog::setSaving(bool saving) {
   m_saving = saving;
   setEditorEnabled(!saving);
   ui->nameRow->setEnabled(!saving);
+  // Another template would rebuild the field rows under a pending insert.
+  ui->templateBox->setEnabled(!saving);
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(!saving);
+  if (QPushButton *cancel = ui->buttonBox->button(QDialogButtonBox::Cancel)) {
+    cancel->setEnabled(!saving);
+  }
   ui->statusLabel->setText(saving ? tr("Saving…") : QString());
 }
 
@@ -186,20 +191,26 @@ void PasswordDialog::onInsertFinished() {
   QDialog::accept();
 }
 
-void PasswordDialog::onInsertFailed(const QString &err) {
+void PasswordDialog::onInsertFailed(const QString &err, bool written) {
   if (!m_saving) {
     return;
   }
   setSaving(false);
-  // A new entry that is there now was written; a later step (git add or
-  // commit) failed, which the main window reports.
-  if (m_isNew && !m_storeRoot.isEmpty() &&
-      QFileInfo::exists(QDir(m_storeRoot).filePath(m_file) +
-                        QStringLiteral(".gpg"))) {
+  // The entry is in the store and a later step (git add or commit) failed,
+  // which the main window reports. Kept open, a new entry could only be
+  // tried again under a name it now has.
+  if (m_isNew && written) {
     QDialog::accept();
     return;
   }
   showNotSaved(err);
+}
+
+void PasswordDialog::reject() {
+  if (m_saving) {
+    return;
+  }
+  QDialog::reject();
 }
 
 void PasswordDialog::showNotSaved(const QString &err) {
@@ -639,6 +650,9 @@ void PasswordDialog::setAvailableTemplates(
 }
 
 void PasswordDialog::applyTemplate(const QString &templateName) {
+  if (m_saving) {
+    return;
+  }
   auto it = m_availableTemplates.constFind(templateName);
   if (it != m_availableTemplates.constEnd()) {
     m_currentTemplateName = templateName;

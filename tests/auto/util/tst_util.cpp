@@ -5113,6 +5113,8 @@ void tst_util::passFinishedInsertErrorIsFriendlyWithHumanLines() {
   QVERIFY2(!message.contains(u'\r'), qPrintable(message));
   QCOMPARE(failedSpy.count(), 1);
   QCOMPARE(failedSpy.at(0).at(0).toString(), message);
+  QVERIFY2(!failedSpy.at(0).at(1).toBool(),
+           "the base Pass never claims the entry was written");
 }
 
 /**

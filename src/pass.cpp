@@ -542,7 +542,7 @@ void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &out,
     const QString friendly = gpgErrorMessage(err);
     const QString why =
         friendly.isEmpty() ? err : formatInsertError(friendly, err);
-    emit insertFailed(why);
+    emit insertFailed(why, insertWritten());
     emit processErrorExit(exitCode, why);
     return;
   }

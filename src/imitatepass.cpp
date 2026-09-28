@@ -170,6 +170,7 @@ auto ImitatePass::recipientsForEntry(const QString &file,
 }
 
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
+  m_insertPlaced = false;
   // The dialog names a new entry relative to the store; gpg used to resolve
   // that in its working directory. Everything below works on the one path.
   file =
@@ -1333,9 +1334,12 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
     // failure it fails like a gpg error: git steps cancelled below.
     // No dialog here: it would spin the event loop and run git steps first.
     const PendingInsert pending = m_pendingInserts.dequeue();
-    if (exitCode == 0 && !placeEncryptedFile(pending.output, pending.file,
-                                             pending.overwrite, &error)) {
-      exitCode = 1;
+    if (exitCode == 0) {
+      m_insertPlaced = placeEncryptedFile(pending.output, pending.file,
+                                          pending.overwrite, &error);
+      if (!m_insertPlaced) {
+        exitCode = 1;
+      }
     }
   }
   PROCESS pid = m_transaction.transactionIsOver(static_cast<PROCESS>(id));
