@@ -59,7 +59,36 @@ public:
     inserted = file;
     insertedContent = content;
     insertedOverwrite = overwrite;
+    // The backends refuse before starting anything through critical(),
+    // and report a started insert asynchronously.
+    if (!refuseWith.isEmpty()) {
+      emit critical(QStringLiteral("Cannot add"), refuseWith);
+      return;
+    }
+    if (holdResult) {
+      return;
+    }
+    if (!failWith.isEmpty()) {
+      QTimer::singleShot(0, this, [this, why = failWith] {
+        if (beforeFailing) {
+          beforeFailing();
+        }
+        emit insertFailed(why, failWritten);
+      });
+      return;
+    }
+    emit finishedInsert(QString(), QString());
   }
+  /// Refuse the next Insert() synchronously with this reason.
+  QString refuseWith;
+  /// Fail the next Insert() asynchronously with this reason.
+  QString failWith;
+  /// Run just before the asynchronous failure.
+  std::function<void()> beforeFailing;
+  /// Whether that failure says the entry was written (a git step failed).
+  bool failWritten = false;
+  /// Report nothing yet, as while gpg is still running.
+  bool holdResult = false;
   QString inserted;
   QString insertedContent;
   bool insertedOverwrite = false;
@@ -112,6 +141,13 @@ private Q_SLOTS:
   void generateButtonIgnoresAnUnknownCharset();
   void okBeforeTheContentLoadedWritesNothing();
   void okWritesTheEntryBackWithATrailingNewline();
+  void failedInsertKeepsWhatWasTyped();
+  void refusedInsertKeepsWhatWasTyped();
+  void savingLocksTheDialogUntilTheResult();
+  void newEntryWrittenBeforeAFailedGitStepCloses();
+  void anotherWritersEntryIsNotThisOne();
+  void savingIgnoresCancelUntilTheResult();
+  void savingLocksTheTemplate();
   void cancelClearsTheFields();
   void newEntryNameCannotEndInASlash();
   void acceptRefusesAnInvalidNameAndAnUncreatableFolder();
@@ -178,9 +214,13 @@ void tst_passworddialog::fieldLabelRenamesTheField() {
   QVERIFY2(editor != nullptr, "startEdit() must open an editor");
   QCOMPARE(editor->text(), QStringLiteral("login"));
   editor->setText(QStringLiteral(" user:name "));
+  QSignalSpy accepted(&d, &QDialog::accepted);
   QTest::keyClick(editor, Qt::Key_Return);
 
   QCOMPARE(label->text(), QStringLiteral("username"));
+  QVERIFY2(accepted.isEmpty() && d.isVisible(),
+           "Enter confirms the new name, not the whole dialog");
+  QVERIFY(pass.inserted.isEmpty());
   const QString written = d.getPassword();
   QVERIFY2(
       written.contains(QStringLiteral("username: bob\n")),
@@ -813,7 +853,7 @@ void tst_passworddialog::okBeforeTheContentLoadedWritesNothing() {
                    false);
   QSignalSpy accepted(&d, &QDialog::accepted);
   d.accept();
-  QCOMPARE(accepted.size(), 1);
+  QVERIFY2(accepted.isEmpty(), "nothing was saved, so the dialog stays");
   QVERIFY2(pass.inserted.isEmpty(),
            "nothing may be inserted before the content has loaded");
 }
@@ -835,6 +875,203 @@ void tst_passworddialog::okWritesTheEntryBackWithATrailingNewline() {
   QCOMPARE(pass.inserted, QStringLiteral("entry.gpg"));
   QVERIFY2(pass.insertedOverwrite, "an existing entry is overwritten");
   QCOMPARE(pass.insertedContent, QStringLiteral("secret\nnote\n"));
+}
+
+namespace {
+/// A new-entry dialog in @p store with "s3cret" typed under the name "mail".
+void typeNewEntry(PasswordDialog &d, const QString &store) {
+  d.setNewEntryLocation(store, {QString()}, QString());
+  d.findChild<QLineEdit *>(QStringLiteral("nameEdit"))
+      ->setText(QStringLiteral("mail"));
+  d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"))
+      ->setText(QStringLiteral("s3cret"));
+}
+} // namespace
+
+/**
+ * @brief #1944: when encrypting fails (a missing recipient key, say) the
+ *        dialog stays open with what was typed and says why; OK then tries
+ *        again. It used to close before gpg ran, and the entry was lost.
+ */
+void tst_passworddialog::failedInsertKeepsWhatWasTyped() {
+  QTemporaryDir store;
+  FakePass pass;
+  pass.failWith = QStringLiteral("gpg: alice@example.org: No public key");
+  PasswordDialog d(&pass, QtPassSettings::load(), QString(), true);
+  typeNewEntry(d, store.path());
+  QSignalSpy accepted(&d, &QDialog::accepted);
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+  auto *password = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+
+  okButton(d)->click();
+  QTRY_VERIFY2(status->text().contains(QStringLiteral("No public key")),
+               qPrintable("the reason must be shown: " + status->text()));
+  QVERIFY2(accepted.isEmpty(), "a failed save must not close the dialog");
+  QCOMPARE(password->text(), QStringLiteral("s3cret"));
+  QVERIFY2(password->isEnabled() && okButton(d)->isEnabled(),
+           "the fields and OK come back for another try");
+
+  pass.failWith.clear();
+  okButton(d)->click();
+  QCOMPARE(accepted.size(), 1);
+  QCOMPARE(pass.inserted, QStringLiteral("mail"));
+}
+
+/**
+ * @brief A refusal before anything starts (the name was taken meanwhile, an
+ *        unusable .gpg-id) keeps the dialog open the same way.
+ */
+void tst_passworddialog::refusedInsertKeepsWhatWasTyped() {
+  QTemporaryDir store;
+  FakePass pass;
+  pass.refuseWith = QStringLiteral("Could not read encryption key to use");
+  PasswordDialog d(&pass, QtPassSettings::load(), QString(), true);
+  typeNewEntry(d, store.path());
+  QSignalSpy accepted(&d, &QDialog::accepted);
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+
+  okButton(d)->click();
+  QVERIFY2(accepted.isEmpty(), "a refused save must not close the dialog");
+  QVERIFY2(status->text().contains(QStringLiteral("encryption key")),
+           qPrintable("the reason must be shown: " + status->text()));
+  QCOMPARE(d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"))->text(),
+           QStringLiteral("s3cret"));
+  QVERIFY(okButton(d)->isEnabled());
+}
+
+/**
+ * @brief While the insert runs the dialog is locked and says so; a second OK
+ *        (Enter) starts nothing.
+ */
+void tst_passworddialog::savingLocksTheDialogUntilTheResult() {
+  QTemporaryDir store;
+  FakePass pass;
+  pass.holdResult = true;
+  PasswordDialog d(&pass, QtPassSettings::load(), QString(), true);
+  typeNewEntry(d, store.path());
+  QSignalSpy accepted(&d, &QDialog::accepted);
+
+  okButton(d)->click();
+  QVERIFY(accepted.isEmpty());
+  QVERIFY(!okButton(d)->isEnabled());
+  QVERIFY(!d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"))
+               ->isEnabled());
+  QVERIFY(
+      !d.findChild<QLabel *>(QStringLiteral("statusLabel"))->text().isEmpty());
+  pass.inserted.clear();
+  d.accept();
+  QVERIFY2(pass.inserted.isEmpty(), "no second insert while one runs");
+
+  emit pass.finishedInsert(QString(), QString());
+  QCOMPARE(accepted.size(), 1);
+}
+
+/**
+ * @brief When the entry was written and only a later step failed (git add
+ *        or commit), the dialog closes: the entry is saved, and the main
+ *        window reports the git error.
+ */
+void tst_passworddialog::newEntryWrittenBeforeAFailedGitStepCloses() {
+  QTemporaryDir store;
+  FakePass pass;
+  pass.failWith = QStringLiteral("fatal: unable to write new index file");
+  pass.failWritten = true;
+  PasswordDialog d(&pass, QtPassSettings::load(), QString(), true);
+  typeNewEntry(d, store.path());
+  QSignalSpy accepted(&d, &QDialog::accepted);
+
+  okButton(d)->click();
+  QTRY_COMPARE(accepted.size(), 1);
+}
+
+/**
+ * @brief Only the backend's word counts as written: another writer's entry
+ *        that appeared under the same name while this insert failed is not
+ *        this entry, and the dialog keeps what was typed.
+ */
+void tst_passworddialog::anotherWritersEntryIsNotThisOne() {
+  QTemporaryDir store;
+  FakePass pass;
+  pass.failWith = QStringLiteral("mail.gpg already exists.");
+  const QString theirs =
+      QDir(store.path()).filePath(QStringLiteral("mail.gpg"));
+  pass.beforeFailing = [theirs] {
+    QFile f(theirs);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+  };
+  PasswordDialog d(&pass, QtPassSettings::load(), QString(), true);
+  typeNewEntry(d, store.path());
+  QSignalSpy accepted(&d, &QDialog::accepted);
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+
+  okButton(d)->click();
+  QTRY_VERIFY(status->text().contains(QStringLiteral("already exists")));
+  QVERIFY2(accepted.isEmpty(), "the entry that is there is not ours");
+  QCOMPARE(d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"))->text(),
+           QStringLiteral("s3cret"));
+}
+
+/**
+ * @brief Cancel, Esc and closing the window wait for a pending insert: a
+ *        failure after that would have nothing to hand back.
+ */
+void tst_passworddialog::savingIgnoresCancelUntilTheResult() {
+  QTemporaryDir store;
+  FakePass pass;
+  pass.holdResult = true;
+  PasswordDialog d(&pass, QtPassSettings::load(), QString(), true);
+  typeNewEntry(d, store.path());
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  QSignalSpy rejected(&d, &QDialog::rejected);
+  auto *box = d.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+
+  okButton(d)->click();
+  QVERIFY2(!box->button(QDialogButtonBox::Cancel)->isEnabled(),
+           "Cancel is off while saving");
+  QTest::keyClick(&d, Qt::Key_Escape);
+  d.reject();
+  d.close();
+  QVERIFY(rejected.isEmpty());
+  QVERIFY(d.isVisible());
+
+  emit pass.insertFailed(QStringLiteral("gpg: no public key"), false);
+  QVERIFY(box->button(QDialogButtonBox::Cancel)->isEnabled());
+  d.reject();
+  QCOMPARE(rejected.size(), 1);
+}
+
+/**
+ * @brief Switching template while an insert is pending would rebuild the
+ *        field rows under it: the template box is off and a switch is
+ *        ignored until the result.
+ */
+void tst_passworddialog::savingLocksTheTemplate() {
+  QTemporaryDir store;
+  FakePass pass;
+  pass.holdResult = true;
+  PasswordDialog d(&pass, QtPassSettings::load(), QString(), true);
+  typeNewEntry(d, store.path());
+  QHash<QString, QStringList> templates;
+  templates.insert(QStringLiteral("login"), {QStringLiteral("login")});
+  templates.insert(QStringLiteral("card"), {QStringLiteral("number")});
+  d.setAvailableTemplates(templates, QStringLiteral("login"));
+  auto *login = d.findChild<QLineEdit *>(QStringLiteral("login"));
+  QVERIFY(login != nullptr);
+  login->setText(QStringLiteral("bob"));
+  auto *box = d.findChild<QComboBox *>(QStringLiteral("templateBox"));
+  QVERIFY(box != nullptr);
+
+  okButton(d)->click();
+  QVERIFY(!box->isEnabled());
+  box->setCurrentText(QStringLiteral("card"));
+  QVERIFY2(d.findChild<QLineEdit *>(QStringLiteral("login")) != nullptr,
+           "the typed field must survive a template switch while saving");
+
+  emit pass.insertFailed(QStringLiteral("gpg: no public key"), false);
+  QCOMPARE(d.findChild<QLineEdit *>(QStringLiteral("login"))->text(),
+           QStringLiteral("bob"));
+  QVERIFY(box->isEnabled());
 }
 
 /**

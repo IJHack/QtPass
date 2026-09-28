@@ -515,6 +515,7 @@ private Q_SLOTS:
   void insertDoesNotWriteThroughALinkPlantedAfterTheCheck();
   void insertDoesNotReplaceAnEntryThatAppearedWhileAdding();
   void insertRemovesTheTemporaryWhenGpgFails();
+  void insertReportsTheEntryWrittenWhenGitFails();
   void copyWritesTheBytesThroughAStagedFileAndKeepsAnUnforcedTarget();
   void anOlderSignedGpgIdIsRefusedUntilSavedAgain();
   void aDifferentListOfTheSameGenerationIsAConflict();
@@ -1336,11 +1337,15 @@ void tst_imitatepass::insertDoesNotReplaceAnEntryThatAppearedWhileAdding() {
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
   QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
   QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy failedSpy(&pass, &Pass::insertFailed);
   pass.Insert(QStringLiteral("new"), QStringLiteral("s\n"), false);
   QVERIFY(errorSpy.count() > 0 || errorSpy.wait(15000));
   QCOMPARE(insertSpy.count(), 0);
   QVERIFY2(errorSpy.first().at(1).toString().contains("already exists"),
            qPrintable(errorSpy.first().at(1).toString()));
+  QCOMPARE(failedSpy.count(), 1);
+  QVERIFY2(!failedSpy.first().at(1).toBool(),
+           "the entry there is another writer's, not this insert's (#1944)");
   QFile kept(entry);
   QVERIFY(kept.open(QIODevice::ReadOnly));
   QCOMPARE(kept.readAll(), QByteArray("theirs"));
@@ -1358,6 +1363,47 @@ void tst_imitatepass::insertDoesNotReplaceAnEntryThatAppearedWhileAdding() {
           .entryList({QStringLiteral(".*.tmp")}, QDir::Files | QDir::Hidden)
           .size(),
       0);
+#endif
+}
+
+/**
+ * @brief The entry is placed and then git fails: insertFailed says the entry
+ *        was written, so the password dialog does not offer to add it again
+ *        under a name it now has (#1944).
+ */
+void tst_imitatepass::insertReportsTheEntryWrittenWhenGitFails() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  QVERIFY(QDir(storeDir.path()).mkpath(QStringLiteral(".git")));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  const QString failingGit = QDir(storeDir.path()).filePath("failing-git.sh");
+  {
+    QFile f(failingGit);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\necho 'fatal: unable to write index' >&2\nexit 128\n");
+    f.close();
+    QVERIFY(QFile::setPermissions(
+        failingGit, QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner));
+  }
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.useGit = true;
+  s.gitExecutable = failingGit;
+  pass.init(s);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy failedSpy(&pass, &Pass::insertFailed);
+  pass.Insert(QStringLiteral("new"), QStringLiteral("s\n"), false);
+  QVERIFY(failedSpy.count() > 0 || failedSpy.wait(15000));
+  QCOMPARE(insertSpy.count(), 0);
+  QVERIFY2(failedSpy.first().at(1).toBool(),
+           "the entry was placed before git failed");
+  QVERIFY(QFileInfo::exists(QDir(storeDir.path()).filePath("new.gpg")));
 #endif
 }
 
@@ -1389,10 +1435,13 @@ void tst_imitatepass::insertRemovesTheTemporaryWhenGpgFails() {
   pass.init(settingsFor(storeDir.path(), script));
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
   QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  QSignalSpy failedSpy(&pass, &Pass::insertFailed);
   pass.Insert(QDir(storeDir.path()).filePath("entry0"), QStringLiteral("s\n"),
               true);
   QVERIFY(errorSpy.count() > 0 || errorSpy.wait(15000));
   QCOMPARE(insertSpy.count(), 0);
+  QCOMPARE(failedSpy.count(), 1);
+  QVERIFY2(!failedSpy.first().at(1).toBool(), "gpg failed: nothing written");
   QFile kept(QDir(storeDir.path()).filePath("entry0.gpg"));
   QVERIFY(kept.open(QIODevice::ReadOnly));
   QCOMPARE(kept.readAll(), QByteArray("not really encrypted"));

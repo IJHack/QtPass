@@ -52,10 +52,22 @@ public:
 
   /**
    * @brief OK: for a new entry, resolve and check the name first and stay
-   * open when it is not usable; then close as accepted (on_accepted() does
-   * the insert).
+   * open when it is not usable; then insert the entry and close as accepted
+   * only once the insert has succeeded.
+   *
+   * The insert is asynchronous. Until it reports back the dialog stays open
+   * with its fields locked; when it fails (a missing recipient key, an
+   * unusable `.gpg-id`, a refused path) the fields come back with what was
+   * typed and the reason is shown, instead of the entry being lost with the
+   * closed dialog.
    */
   void accept() override;
+
+  /**
+   * @brief Cancel, Esc and the window's close button: refused while an
+   * insert is in flight, so a failure can still hand back what was typed.
+   */
+  void reject() override;
 
   /**
    * @brief Let a new entry be named inside the dialog: a folder picker over
@@ -159,8 +171,20 @@ private slots:
    */
   void setPasswordVisible(bool show);
   void on_createPasswordButton_clicked();
-  void on_accepted();
   void on_rejected();
+
+  /**
+   * @brief The insert started by accept() succeeded: close as accepted.
+   */
+  void onInsertFinished();
+  /**
+   * @brief The insert started by accept() failed: unlock the fields, which
+   * still hold what was typed, and show why.
+   * @param err The reason reported by the backend.
+   * @param written true when the entry was written and only a later step
+   *        (git) failed; a new entry then closes the dialog.
+   */
+  void onInsertFailed(const QString &err, bool written);
 
   /**
    * @brief Handle a process error while waiting for an entry's decrypt.
@@ -188,6 +212,21 @@ private:
    * @param enabled true to restore the editor, false to lock it.
    */
   void setEditorEnabled(bool enabled);
+  /**
+   * @brief Start inserting what the dialog holds and wait for the result.
+   */
+  void save();
+  /**
+   * @brief Lock or unlock the dialog while an insert is in flight.
+   * @param saving true while waiting for the backend.
+   */
+  void setSaving(bool saving);
+  /**
+   * @brief Say why the entry was not saved and let the user try again; the
+   * fields keep what was typed.
+   * @param err The reason reported by the backend.
+   */
+  void showNotSaved(const QString &err);
   /**
    * @brief Connect validation and normalisation to the OTP field, if present.
    *
@@ -252,9 +291,11 @@ private:
   bool m_allFields{};
   bool m_isNew{};
   /// True once the existing entry's decrypted content has been loaded, so
-  /// on_accepted() can refuse to overwrite it with empty fields before the
+  /// save() can refuse to overwrite it with empty fields before the
   /// asynchronous Show completes.
   bool m_contentLoaded{};
+  /// True from accept() starting an insert until the backend reports back.
+  bool m_saving{};
   /// Last pwgen mode passed to usePwgen(), so the policy can be re-applied
   /// after setEditorEnabled() re-enables the character-set widgets.
   bool m_usePwgen{};

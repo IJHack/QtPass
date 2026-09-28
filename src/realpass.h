@@ -56,6 +56,18 @@ class RealPass : public Pass {
    */
   auto passName(const QString &path, bool stripGpg) const -> QString;
 
+  /**
+   * @brief Whether the failed `pass insert` wrote its entry before its git
+   * step failed. pass does not say, so: the entry did not exist when the
+   * insert started and does now.
+   * @return true when a new entry appeared.
+   */
+  [[nodiscard]] auto insertWritten() const -> bool override;
+
+  /// The entry the last Insert() writes, and whether it existed beforehand.
+  QString m_insertTarget;
+  bool m_insertTargetExisted = false;
+
 public:
   /**
    * @brief Construct a RealPass instance.

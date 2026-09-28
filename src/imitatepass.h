@@ -323,6 +323,15 @@ protected:
                 const QString &err) override;
 
   /**
+   * @brief Whether the failed insert had placed its entry (see
+   * placeEncryptedFile()) before a later git step failed.
+   * @return true when the entry is in the store.
+   */
+  [[nodiscard]] auto insertWritten() const -> bool override {
+    return m_insertPlaced;
+  }
+
+  /**
    * @brief Open a transaction for every execution.
    *
    * In native (imitate) mode each wrapped command is a git/gpg transaction;
@@ -478,6 +487,9 @@ private:
     bool overwrite = false;
   };
   QQueue<PendingInsert> m_pendingInserts;
+  /// The last Insert()'s entry was placed in the store; its git steps may
+  /// still fail.
+  bool m_insertPlaced = false;
 
   /**
    * @brief Bring the ciphertext gpg wrote to @p output into the store as

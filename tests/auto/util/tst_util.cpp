@@ -405,6 +405,7 @@ private Q_SLOTS:
   void gpgErrorMessageGenericEncryptionFailed();
   void passFinishedInsertErrorIsFriendlyWithHumanLines();
   void passFinishedInsertErrorOnlyStatusLinesIsFriendlyOnly();
+  void passFinishedInsertErrorEmitsInsertFailed();
   void passFinishedGenkeysErrorEmitsFailed();
   void executeWrapperWithoutInputRunsTheCommand();
   void refuseLinkedPathRefusesAndReleasesTheUi();
@@ -5093,6 +5094,7 @@ void tst_util::gpgErrorMessageGenericEncryptionFailed() {
 void tst_util::passFinishedInsertErrorIsFriendlyWithHumanLines() {
   TestPass pass;
   QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+  QSignalSpy failedSpy(&pass, &Pass::insertFailed);
   QSignalSpy okSpy(&pass, &Pass::finishedInsert);
   const QString err = QStringLiteral("[GNUPG:] KEYEXPIRED 1700000000\r\n"
                                      "gpg: key DEADBEEF: key has expired\r\n"
@@ -5109,6 +5111,31 @@ void tst_util::passFinishedInsertErrorIsFriendlyWithHumanLines() {
                         QStringLiteral("gpg: key DEADBEEF: key has expired"));
   QVERIFY2(!message.contains(QStringLiteral("[GNUPG:]")), qPrintable(message));
   QVERIFY2(!message.contains(u'\r'), qPrintable(message));
+  QCOMPARE(failedSpy.count(), 1);
+  QCOMPARE(failedSpy.at(0).at(0).toString(), message);
+  QVERIFY2(!failedSpy.at(0).at(1).toBool(),
+           "the base Pass never claims the entry was written");
+}
+
+/**
+ * @brief Any failed insert, with or without a recognised gpg error, reaches
+ *        the password dialog through insertFailed (#1944); other commands
+ *        failing do not.
+ */
+void tst_util::passFinishedInsertErrorEmitsInsertFailed() {
+  TestPass pass;
+  QSignalSpy failedSpy(&pass, &Pass::insertFailed);
+  QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+  pass.callPassFinished(static_cast<int>(Enums::PASS_INSERT), 1, QString(),
+                        QStringLiteral("fatal: unable to write index\n"));
+  QCOMPARE(failedSpy.count(), 1);
+  QCOMPARE(failedSpy.at(0).at(0).toString(),
+           QStringLiteral("fatal: unable to write index\n"));
+  QCOMPARE(errSpy.count(), 1);
+
+  pass.callPassFinished(static_cast<int>(Enums::GIT_PUSH), 1, QString(),
+                        QStringLiteral("rejected\n"));
+  QCOMPARE(failedSpy.count(), 1);
 }
 
 /**
