@@ -101,6 +101,7 @@ private:
       Pass::finished(id, exitCode, out, err);
     }
     bool callCreateBackupCommit() { return createBackupCommit(); }
+    bool written() const { return insertWritten(); }
   };
 
   template <typename T, void (*Setter)(const T &)> struct SettingGuard {
@@ -249,6 +250,8 @@ private Q_SLOTS:
   void parseGrepOutputPlainTextHeaders();
   // Pass::finished PASS_GREP exit-code handling
   void passFinishedGrepNoMatchEmitsEmpty();
+  void passFinishedInsertErrorEmitsInsertFailed();
+  void imitatePassInsertIsWrittenOnceGpgSucceeded();
   void passFinishedGrepErrorEmitsProcessError();
   void passFinishedGrepSuccessEmitsResults();
   // ImitatePass::Grep / helpers
@@ -342,6 +345,42 @@ void tst_util::initTestCase() { isolateTestSettings(); }
 
 void tst_util::cleanupTestCase() {
   // No test case cleanup required; function intentionally left empty.
+}
+
+/**
+ * @brief Any failed insert reaches the password dialog through insertFailed
+ *        (#1944), with the message processErrorExit carries; other commands
+ *        failing do not.
+ */
+void tst_util::passFinishedInsertErrorEmitsInsertFailed() {
+  TestPass pass;
+  QSignalSpy failedSpy(&pass, &Pass::insertFailed);
+  QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+  pass.callPassFinished(static_cast<int>(Enums::PASS_INSERT), 1, QString(),
+                        QStringLiteral("fatal: unable to write index\n"));
+  QCOMPARE(failedSpy.count(), 1);
+  QCOMPARE(errSpy.count(), 1);
+  QCOMPARE(failedSpy.at(0).at(0).toString(), errSpy.at(0).at(1).toString());
+  QVERIFY2(!failedSpy.at(0).at(1).toBool(), "no insert wrote anything");
+
+  pass.callPassFinished(static_cast<int>(Enums::GIT_PUSH), 1, QString(),
+                        QStringLiteral("rejected\n"));
+  QCOMPARE(failedSpy.count(), 1);
+}
+
+/**
+ * @brief ImitatePass's gpg writes the entry itself: once that step succeeded
+ *        a failing git step no longer means nothing was saved.
+ */
+void tst_util::imitatePassInsertIsWrittenOnceGpgSucceeded() {
+  TestPass pass;
+  QVERIFY(!pass.written());
+  pass.callFinished(static_cast<int>(Enums::PASS_INSERT), 2, QString(),
+                    QStringLiteral("gpg: encryption failed\n"));
+  QVERIFY2(!pass.written(), "a failed gpg wrote nothing");
+  pass.callFinished(static_cast<int>(Enums::PASS_INSERT), 0, QString(),
+                    QString());
+  QVERIFY(pass.written());
 }
 
 /**

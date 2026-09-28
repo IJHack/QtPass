@@ -726,10 +726,11 @@ void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &out,
 
   if (pid == PASS_INSERT) {
     const QString friendly = gpgErrorMessage(err);
-    if (!friendly.isEmpty()) {
-      emit processErrorExit(exitCode, formatInsertError(friendly, err));
-      return;
-    }
+    const QString why =
+        friendly.isEmpty() ? err : formatInsertError(friendly, err);
+    emit insertFailed(why, insertWritten());
+    emit processErrorExit(exitCode, why);
+    return;
   }
 
   emit processErrorExit(exitCode, err);

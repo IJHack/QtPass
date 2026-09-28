@@ -146,6 +146,7 @@ void ImitatePass::OtpGenerate(QString file) {
  * @param overwrite whether to overwrite existing file
  */
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
+  m_insertWritten = false;
   file = file + ".gpg";
   QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);
   if (!verifyGpgIdFile(gpgIdPath)) {
@@ -1158,6 +1159,10 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
 #ifdef QT_DEBUG
   dbg() << "Imitate Pass";
 #endif
+  if (id == PASS_INSERT && exitCode == 0) {
+    // gpg writes the entry itself (--output); git add and commit follow.
+    m_insertWritten = true;
+  }
   PROCESS pid = transactionIsOver(static_cast<PROCESS>(id));
   m_transactionOutput.append(out);
 

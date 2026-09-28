@@ -201,6 +201,17 @@ protected:
                 const QString &err) override;
 
   /**
+   * @brief Whether the failed insert's gpg step had written the entry
+   * before a later git step failed.
+   * @return true when the entry is in the store.
+   */
+  [[nodiscard]] auto insertWritten() const -> bool override {
+    return m_insertWritten;
+  }
+  /// The last Insert()'s gpg wrote its entry; its git steps may still fail.
+  bool m_insertWritten = false;
+
+  /**
    * @brief Open a transaction for every execution.
    *
    * In native (imitate) mode each wrapped command is a git/gpg transaction;

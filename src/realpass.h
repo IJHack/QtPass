@@ -42,6 +42,18 @@ class RealPass : public Pass {
   void passMoveOrCopy(PROCESS id, const QString &subcommand, const QString &src,
                       const QString &dest, bool force);
 
+  /**
+   * @brief Whether the failed `pass insert` wrote its entry before its git
+   * step failed. pass does not say, so: the entry did not exist when the
+   * insert started and does now.
+   * @return true when a new entry appeared.
+   */
+  [[nodiscard]] auto insertWritten() const -> bool override;
+
+  /// The entry the last Insert() writes, and whether it existed beforehand.
+  QString m_insertTarget;
+  bool m_insertTargetExisted = false;
+
 public:
   /**
    * @brief Construct a RealPass instance.
