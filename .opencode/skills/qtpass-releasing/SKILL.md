@@ -76,7 +76,8 @@ brew install create-dmg   # once; the same tool release-installers.yml uses
 
 To sign and notarize, set two variables. You need a paid Apple Developer
 Program membership, a **Developer ID Application** certificate in the login
-keychain (a Personal Team's Apple Development certificate is not accepted), and
+keychain (the script refuses any other certificate type, such as an Apple
+Development one, even when it only signs), and
 notarization credentials saved once:
 
 ```bash

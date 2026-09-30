@@ -51,8 +51,10 @@ if [[ -n "$MAC_SIGN_IDENTITY" ]]; then
 		echo "       List them with: security find-identity -v -p codesigning" >&2
 		exit 1
 	fi
-	if [[ -n "$MAC_NOTARY_PROFILE" && "$IDENTITY_LINE" != *"Developer ID Application:"* ]]; then
-		echo "Error: notarization needs a \"Developer ID Application\" identity, got:" >&2
+	# Only Developer ID can sign an app for distribution outside the App Store;
+	# an Apple Development signature would give a release dmg nobody can open.
+	if [[ "$IDENTITY_LINE" != *"Developer ID Application:"* ]]; then
+		echo "Error: a release needs a \"Developer ID Application\" identity, got:" >&2
 		echo "       $IDENTITY_LINE" >&2
 		exit 1
 	fi
