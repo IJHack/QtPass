@@ -5,10 +5,15 @@ set -euo pipefail
 DOXYFILE_PATH="Doxyfile"
 DOXYFILE_BACKUP=""
 TMPFILE=""
+DMG_MOUNT=""
 
 cleanup() {
 	local exit_code=$?
 	rm -f "${TMPFILE:-}"
+	if [[ -n "${DMG_MOUNT:-}" ]]; then
+		hdiutil detach -quiet "$DMG_MOUNT" || hdiutil detach -quiet -force "$DMG_MOUNT" || true
+		rmdir "$DMG_MOUNT" 2>/dev/null || true
+	fi
 	if [[ $exit_code -ne 0 && -n "${DOXYFILE_BACKUP:-}" && -f "$DOXYFILE_BACKUP" ]]; then
 		mv -f "$DOXYFILE_BACKUP" "$DOXYFILE_PATH"
 	else
@@ -196,6 +201,18 @@ if [[ -n "$MAC_NOTARY_PROFILE" ]]; then
 	}
 	spctl --assess --type open --context context:primary-signature --verbose=2 "$DMG_NAME" || {
 		echo "Error: Gatekeeper rejects $DMG_NAME." >&2
+		exit 1
+	}
+	# An accepted dmg says nothing about the app users copy out of it: a bundle
+	# without CFBundlePackageType APPL, for one, passes above and fails here.
+	echo "Checking the app inside $DMG_NAME..."
+	DMG_MOUNT=$(mktemp -d)
+	hdiutil attach -readonly -nobrowse -quiet -mountpoint "$DMG_MOUNT" "$DMG_NAME" || {
+		echo "Error: could not mount $DMG_NAME." >&2
+		exit 1
+	}
+	spctl --assess --type execute --verbose=2 "$DMG_MOUNT/QtPass.app" || {
+		echo "Error: Gatekeeper rejects QtPass.app inside $DMG_NAME." >&2
 		exit 1
 	}
 fi

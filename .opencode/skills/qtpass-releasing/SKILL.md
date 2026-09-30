@@ -87,7 +87,7 @@ MAC_SIGN_IDENTITY="Developer ID Application: Name (TEAMID)" \
 
 The script checks both before building, signs the bundle with the hardened
 runtime (`macdeployqt -sign-for-notarization`), signs the dmg, submits it with
-`notarytool --wait`, staples the ticket and confirms with `spctl`. If you set
+`notarytool --wait`, staples the ticket and runs `spctl` on both the dmg and the app inside it. If you set
 only `MAC_SIGN_IDENTITY`, it signs without notarizing. If notarization is
 rejected, the script prints the `notarytool log` command that shows why.
 
