@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DEST="annejan.com:www/qtpass/"
+# The site's own host, by name: DNS for qtpass.org (TransIP) says where the
+# live site is, so a server move needs no change here.
+DEST="qtpass.org:www/qtpass/"
 DRY_RUN=1
 DO_DELETE=0
 
 usage() {
   cat <<'EOF'
 Usage:
-  ./deploy.sh [--live] [--delete]
+  ./sync.sh [--live] [--delete]
 
 Options:
   --live     Do the actual deploy
@@ -44,6 +46,11 @@ done
 ARGS=(
   -avh
   --itemize-changes
+  # Compare contents: a fresh checkout's mtimes are older than the server's,
+  # so the default size+mtime check would skip changed files.
+  --checksum
+  # .git is a file, not a directory, in a git worktree.
+  --exclude=.git
   --exclude=.git/
   --exclude=.github/
   --include='*.gz'
