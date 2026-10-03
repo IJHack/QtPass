@@ -63,6 +63,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Five quick clicks on the logo unlock it (javascripts/unlock.js, loaded
+  // only then).
+  var clicks = 0;
+  var resetClicks;
+  document.querySelectorAll("img.mark").forEach(function (mark) {
+    mark.addEventListener("click", function () {
+      clicks += 1;
+      clearTimeout(resetClicks);
+      resetClicks = setTimeout(function () {
+        clicks = 0;
+      }, 1500);
+      if (clicks < 5) {
+        return;
+      }
+      clicks = 0;
+      if (window.qtpassUnlock) {
+        window.qtpassUnlock();
+        return;
+      }
+      var script = document.createElement("script");
+      script.src = "/javascripts/unlock.js?v=1.8.2-3";
+      script.onload = function () {
+        window.qtpassUnlock();
+      };
+      document.head.appendChild(script);
+    });
+  });
+
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js");
   }
