@@ -434,12 +434,12 @@ header ul a:active {
 }
 /* The settings dialog opens over the main window, as it does in the app.
    Both captures share one pixel scale, so sizing the dialog to its width
-   ratio, 839/1110, keeps them in proportion. */
+   ratio, 822/1111, keeps them in proportion. */
 #config {
   position: absolute;
   top: 0;
-  left: 12.2%;
-  width: 75.6%;
+  left: 13%;
+  width: 74%;
   z-index: 1;
 }
 .screenshots picture,

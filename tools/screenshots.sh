@@ -3,7 +3,7 @@
 # Configuration dialog, in Breeze light and Breeze dark, as real KDE windows.
 #
 #     git archive v1.8.2 | tar -x -C /tmp/qtpass-src
-#     (cd /tmp/qtpass-src && qmake -qt=qt5 && make -j)
+#     (cd /tmp/qtpass-src && qmake6 && make -j)
 #     tools/screenshots.sh /tmp/qtpass-src/main/qtpass
 #
 # Runs headless: Xvfb, KWin for the Breeze title bars, and a throwaway home
@@ -12,7 +12,8 @@
 # written to images/ as 1x and @2x PNG plus @2x WebP. Bump the ?v= asset
 # version (sw.js, the pages, tools/build-page.py) after replacing them.
 #
-# Needs (Ubuntu 24.04): qtbase5-dev qttools5-dev-tools libqt5svg5-dev breeze
+# Needs Plasma 6, e.g. Ubuntu 25.10 (a debootstrap chroot will do):
+# qt6-base-dev qmake6 qt6-tools-dev-tools qt6-l10n-tools qt6-svg-dev breeze
 # breeze-icon-theme kwin-x11 plasma-integration xvfb x11-utils
 # x11-xserver-utils xdotool dbus-x11 imagemagick webp pngquant pass
 # pwgen qrencode fonts-noto-core
@@ -25,13 +26,13 @@ SC=2                # capture scale
 DPY=:77
 # Short on purpose: gpg-agent's socket path must stay under ~100 characters.
 WORK=$(mktemp -d /tmp/qtpass-shots.XXXX)
-trap 'rm -rf "$WORK"' EXIT
+trap '[ -n "${KEEP:-}" ] || rm -rf "$WORK"' EXIT
 
 export HOME=$WORK/home GNUPGHOME=$WORK/home/.gnupg
 export PASSWORD_STORE_DIR=$HOME/.password-store
 export XDG_RUNTIME_DIR=$HOME/run
 export DISPLAY=$DPY LANG=en_US.UTF-8
-export XDG_CURRENT_DESKTOP=KDE KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true
+export XDG_CURRENT_DESKTOP=KDE KDE_SESSION_VERSION=6 KDE_FULL_SESSION=true
 export QT_QPA_PLATFORMTHEME=kde QT_STYLE_OVERRIDE=Breeze
 mkdir -p -m700 "$GNUPGHOME" "$XDG_RUNTIME_DIR"
 
@@ -200,7 +201,7 @@ for shot in qtpass config; do
       -compose Over -composite "$WORK/win.png"
     convert "$WORK/win.png" \( +clone -background black -shadow 45x$((18 * SC))+0+$((12 * SC)) \) +swap \
       -background none -layers merge +repage \
-      -gravity center -extent $((W + 130 * SC))x$((H + 130 * SC)) "$SITE/images/$name@2x.png"
+      -gravity center -extent $(((W + 130 * SC + 1) / 2 * 2))x$(((H + 130 * SC + 1) / 2 * 2)) "$SITE/images/$name@2x.png"
     convert "$SITE/images/$name@2x.png" -filter Lanczos -resize 50% "$SITE/images/$name.png"
     for f in "$SITE/images/$name@2x.png" "$SITE/images/$name.png"; do
       pngquant --force --skip-if-larger --quality 85-98 --speed 1 --output "$f" "$f" || true
