@@ -133,40 +133,31 @@
       property="og:description"
       content="Release notes for the QtPass 0.x beta releases, before 1.0: how the desktop GUI for pass took shape release by release."
     />
-    <meta property="og:type" content="product" />
+    <meta property="og:type" content="article" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "QtPass",
-        "url": "https://qtpass.org/",
-        "author": {
-          "@type": "Organization",
-          "name": "IJHack",
-          "url": "https://github.com/IJHack"
-        },
-        "downloadUrl": "https://github.com/IJHack/QtPass/releases",
-        "operatingSystem": "Linux, FreeBSD, macOS, Windows",
-        "requirements": "pass or git and gpg2",
-        "license": "https://www.gnu.org/licenses/gpl-3.0.html",
-        "screenshot": "https://qtpass.org/images/qtpass.png?v=1.8.2-1",
-        "softwareVersion": "1.8.2",
-        "applicationCategory": "SecurityApplication",
-        "applicationSubCategory": "Password manager",
-        "description": "QtPass is a free, open-source desktop password manager for pass, the standard Unix password manager: passwords are GnuPG-encrypted files you control, synced with Git, on Linux, Windows and macOS.",
-        "image": "https://qtpass.org/images/logo.png",
-        "isAccessibleForFree": true,
-        "releaseNotes": "https://qtpass.org/changelog",
-        "softwareHelp": {
-          "@type": "CreativeWork",
-          "url": "https://qtpass.org/faq"
-        },
-        "sameAs": "https://github.com/IJHack/QtPass",
-        "offers": {
-          "@type": "Offer",
-          "price": "0.00",
-          "priceCurrency": "EUR"
-        }
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "QtPass",
+            "item": "https://qtpass.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Changelog",
+            "item": "https://qtpass.org/changelog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "QtPass Beta",
+            "item": "https://qtpass.org/changelog.beta"
+          }
+        ]
       }
     </script>
   </head>

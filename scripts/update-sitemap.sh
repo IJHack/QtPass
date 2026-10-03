@@ -3,8 +3,8 @@
 #
 # - URLs are the canonical extension-less form (/downloads, not /downloads.html)
 # - lastmod comes from the last git commit that touched the file
-# - Doxygen output under docs/ is represented by a single /docs/ entry;
-#   listing its 600+ generated pages only buried the pages that matter
+# - Doxygen output under docs/ is left out: robots.txt disallows it, and
+#   submitting a blocked URL is reported as an error in Search Console
 #
 # Usage: ./scripts/update-sitemap.sh   (writes sitemap.xml in place)
 set -euo pipefail
@@ -58,8 +58,6 @@ for f in ./*.html; do
   esac
   entry "$BASE/$name" "$f" "$name"
 done
-
-entry "$BASE/docs/" docs/index.html docs
 
 echo '</urlset>'
 } > "$OUTPUT"
