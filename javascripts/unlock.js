@@ -49,11 +49,14 @@
     g.arc(0, 1320, 630, Math.PI, 0, true);
     g.lineTo(630, 900); // the short leg: just into the heart, so lifted, it's out
     g.restore();
-    [[360, "gray"], [280, "#9c9c9c"], [200, "#b0b0b0"], [120, "silver"]].forEach(function (ring) {
-      g.lineWidth = ring[0];
-      g.strokeStyle = ring[1];
+    // The logo's shading across the bar: gray at the edges, silver in the middle. As
+    // nested strokes, outside in, it looks the same from every side.
+    for (var w = 360; w > 0; w -= 12) {
+      var v = Math.round(128 + 64 * Math.min(1, Math.max(0, (0.45 - w / 720) / 0.35)));
+      g.lineWidth = w;
+      g.strokeStyle = "rgb(" + v + "," + v + "," + v + ")";
       g.stroke();
-    });
+    }
     g.restore();
     g.drawImage(heart, px, py, S, S);
   }
