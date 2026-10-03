@@ -173,6 +173,12 @@ HEAD = """<!doctype html>
             >
           </p>
           <p>
+            Maintainer:
+            <a title="Anne Jan Brouwer" href="https://annejan.com/" rel="author"
+              >Anne Jan Brouwer</a
+            >
+          </p>
+          <p>
             <small
               >Based on a theme by
               <a href="https://github.com/orderedlist">orderedlist</a></small
