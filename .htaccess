@@ -4,8 +4,11 @@ AddType font/woff2 .woff2
 
 RewriteEngine On
 RewriteBase /
-RewriteCond %{HTTP_HOST} !^qtpass.org$ [NC]
-RewriteRule ^(.*)$ https://qtpass.org/$1 [L,R=301]
+# Use the path from the request line: with MultiViews both $1 and REQUEST_URI
+# are already the negotiated file (/faq -> faq.html), costing an extra hop.
+RewriteCond %{HTTP_HOST} !^qtpass\.org$ [NC]
+RewriteCond %{THE_REQUEST} ^\S+\s+([^?\s]*)
+RewriteRule ^ https://qtpass.org%1 [L,R=301,NE]
 
 ErrorDocument 404 /404.html
 
