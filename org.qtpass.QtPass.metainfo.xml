@@ -62,12 +62,12 @@
     <screenshot type="default">
       <caption>QtPass main window</caption>
       <caption xml:lang="nl_NL">QtPass hoofdscherm</caption>
-      <image width="768" height="596">https://qtpass.org/images/qtpass.png</image>
+      <image width="1111" height="961">https://qtpass.org/images/qtpass.png</image>
     </screenshot>
     <screenshot>
       <caption>QtPass Configuration window</caption>
       <caption xml:lang="nl_NL">QtPass Configuratie scherm</caption>
-      <image width="900" height="637">https://qtpass.org/images/config.png</image>
+      <image width="822" height="921">https://qtpass.org/images/config.png</image>
     </screenshot>
   </screenshots>
   <releases>
