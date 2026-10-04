@@ -83,12 +83,53 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/unlock.js?v=1.8.2-4";
+      script.src = "/javascripts/unlock.js?v=1.8.2-5";
       script.onload = function () {
         window.qtpassUnlock();
       };
       document.head.appendChild(script);
     });
+  });
+
+  // The 404 page: the padlock shakes its head, as at a wrong password; click
+  // it and it does so again.
+  if (document.getElementById("404")) {
+    document.querySelectorAll("img.mark").forEach(function (mark) {
+      var nope = function () {
+        mark.classList.remove("nope");
+        void mark.offsetWidth;
+        mark.classList.add("nope");
+      };
+      nope();
+      mark.addEventListener("click", nope);
+    });
+  }
+
+  // Type hunter2 anywhere and all we see is stars (bash.org #244321).
+  var typed = "";
+  document.addEventListener("keydown", function (event) {
+    if (event.key.length !== 1 || event.ctrlKey || event.metaKey || event.altKey) {
+      return;
+    }
+    if (event.target.closest && event.target.closest("input, textarea")) {
+      return;
+    }
+    typed = (typed + event.key.toLowerCase()).slice(-7);
+    if (typed !== "hunter2" || document.querySelector(".hunter2")) {
+      return;
+    }
+    var toast = document.createElement("p");
+    toast.className = "hunter2";
+    toast.setAttribute("role", "status");
+    var stars = document.createElement("strong");
+    stars.textContent = "*******";
+    var note = document.createElement("span");
+    note.textContent = "hunter2? All we see is stars.";
+    toast.append(stars, note);
+    document.body.appendChild(toast);
+    setTimeout(function () {
+      toast.remove();
+    }, 3500);
   });
 
   if ("serviceWorker" in navigator) {

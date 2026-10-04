@@ -886,6 +886,57 @@ header ul a:active {
       color 120ms ease,
       text-decoration-color 120ms ease;
   }
+  /* The 404 page: the padlock shakes its head, like a login that won't take
+     the password (main.js). */
+  .nope {
+    animation: nope 0.45s ease-in-out 2;
+  }
+  @keyframes nope {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    15%,
+    45% {
+      transform: translateX(-6px);
+    }
+    30%,
+    60% {
+      transform: translateX(6px);
+    }
+    75% {
+      transform: translateX(-3px);
+    }
+    90% {
+      transform: translateX(3px);
+    }
+  }
+}
+
+/* Type hunter2 anywhere (main.js): all we see is stars. */
+.hunter2 {
+  position: fixed;
+  left: 50%;
+  bottom: 12vh;
+  z-index: 1000;
+  transform: translateX(-50%);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  background: var(--ink-strong);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(15, 25, 40, 0.35);
+  pointer-events: none;
+}
+.hunter2 strong {
+  display: block;
+  color: #fff;
+  font: 700 2.4rem/1.1 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  letter-spacing: 0.15em;
+}
+.hunter2 span {
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 @media print {
   body {
