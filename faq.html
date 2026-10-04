@@ -7,7 +7,7 @@
       name="description"
       content="Frequently asked questions about QtPass: GnuPG and pinentry problems, Git on Windows, one-time passwords, where settings live, and how to help."
     />
-    <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.2-5" />
+    <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.2-6" />
     <link rel="canonical" href="https://qtpass.org/faq" />
     <meta
       name="viewport"
@@ -28,23 +28,23 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=1.8.2-5" />
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=1.8.2-6" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/images/favicon-32x32.png?v=1.8.2-5"
+      href="/images/favicon-32x32.png?v=1.8.2-6"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/images/favicon-16x16.png?v=1.8.2-5"
+      href="/images/favicon-16x16.png?v=1.8.2-6"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/images/apple-icon-180x180.png?v=1.8.2-5"
+      href="/images/apple-icon-180x180.png?v=1.8.2-6"
     />
     <link rel="manifest" href="/manifest.json" />
     <link rel="me" href="https://mastodon.social/@annejan" />
@@ -66,7 +66,7 @@
     <meta property="og:url" content="https://qtpass.org/faq" />
     <meta
       property="og:image"
-      content="https://qtpass.org/images/og.png?v=1.8.2-5"
+      content="https://qtpass.org/images/og.png?v=1.8.2-6"
     />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="640" />
@@ -370,7 +370,7 @@
           </p>
         </footer>
       </aside>
-      <section id="main">
+      <main id="main">
         <nav class="toc" aria-label="Questions">
           <p><a href="#issues">Issues</a></p>
           <ul>
@@ -548,7 +548,7 @@
           <li>Disable GNOME keyring</li>
           <li>Create a <code>~/.gnupg/gpg-agent.conf</code> containing:</li>
         </ul>
-        <pre><code class="language-bash">enable-ssh-support
+        <pre tabindex="0"><code class="language-bash">enable-ssh-support
 write-env-file
 use-standard-socket
 default-cache-ttl 600
@@ -610,7 +610,7 @@ max-cache-ttl 7200
             key may exist in one but not the other.
           </li>
         </ul>
-        <pre><code class="language-bash">gpg --export [ID] &gt; public.key
+        <pre tabindex="0"><code class="language-bash">gpg --export [ID] &gt; public.key
 gpg --export-secret-key [ID] &gt; private.key
 gpg2 --import public.key
 gpg2 --import private.key
@@ -643,7 +643,7 @@ rm public.key private.key
               Set <code>SSH_ASKPASS</code> environment variable to the full path
               of <code>git-gui--askpass</code>, for example:
             </p>
-            <pre><code class="language-text">C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe
+            <pre tabindex="0"><code class="language-text">C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe
 </code></pre>
           </li>
           <li>
@@ -657,11 +657,11 @@ rm public.key private.key
           </li>
         </ol>
         <p>Example using PowerShell:</p>
-        <pre><code class="language-powershell">$env:SSH_ASKPASS = &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
+        <pre tabindex="0"><code class="language-powershell">$env:SSH_ASKPASS = &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
 $env:GIT_ASKPASS = &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
 </code></pre>
         <p>Or to make it permanent:</p>
-        <pre><code class="language-powershell">setx SSH_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
+        <pre tabindex="0"><code class="language-powershell">setx SSH_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
 setx GIT_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
 </code></pre>
         <p>
@@ -889,7 +889,7 @@ setx GIT_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--as
           Install QtPass via Homebrew (which sets up PATH correctly) or create a
           wrapper script that sets PATH before launching QtPass, for example:
         </p>
-        <pre><code class="language-bash">#!/usr/bin/env bash
+        <pre tabindex="0"><code class="language-bash">#!/usr/bin/env bash
 # Adjust PATH as needed for your Homebrew / QtPass installation
 export PATH=&quot;/usr/local/bin:/opt/homebrew/bin:$PATH&quot;
 exec /Applications/QtPass.app/Contents/MacOS/qtpass &quot;$@&quot;
@@ -1030,7 +1030,7 @@ exec /Applications/QtPass.app/Contents/MacOS/qtpass &quot;$@&quot;
             trick:
           </li>
         </ul>
-        <pre><code class="language-sh">export DESKTOP_SESSION=gnome
+        <pre tabindex="0"><code class="language-sh">export DESKTOP_SESSION=gnome
 </code></pre>
         <h3>
           <a
@@ -1138,10 +1138,10 @@ exec /Applications/QtPass.app/Contents/MacOS/qtpass &quot;$@&quot;
               <code>LANG</code> are <strong>not</strong> honored by Qt on macOS
               — Qt reads CoreFoundation locale instead. Override per-app with:
             </p>
-            <pre><code class="language-sh">defaults write com.IJHack.QtPass AppleLanguages &#39;(fr)&#39;
+            <pre tabindex="0"><code class="language-sh">defaults write com.IJHack.QtPass AppleLanguages &#39;(fr)&#39;
 </code></pre>
             <p>Or pass the override as a launch argument:</p>
-            <pre><code class="language-sh">open -a QtPass --args -AppleLanguages &#39;(fr)&#39;
+            <pre tabindex="0"><code class="language-sh">open -a QtPass --args -AppleLanguages &#39;(fr)&#39;
 </code></pre>
             <p>
               Use
@@ -1201,8 +1201,8 @@ exec /Applications/QtPass.app/Contents/MacOS/qtpass &quot;$@&quot;
             </ul>
           </li>
         </ul>
-      </section>
+      </main>
     </div>
-    <script src="javascripts/main.js?v=1.8.2-5" defer></script>
+    <script src="javascripts/main.js?v=1.8.2-6" defer></script>
   </body>
 </html>

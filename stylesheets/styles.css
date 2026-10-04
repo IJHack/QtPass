@@ -134,7 +134,7 @@ h2 {
   font-weight: 700;
   margin-block-start: 2.2em;
 }
-section > h2:first-child {
+main > h2:first-child {
   margin-block-start: 0;
 }
 h3,
@@ -160,7 +160,7 @@ dd,
 blockquote {
   text-wrap: pretty;
 }
-section {
+main {
   max-width: 66ch;
 }
 a {
@@ -169,7 +169,7 @@ a {
   text-decoration: none;
   text-underline-offset: 0.15em;
 }
-section a:not(:has(img)) {
+main a:not(:has(img)) {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
@@ -327,7 +327,7 @@ a img {
     position: static;
   }
 }
-section {
+main {
   grid-area: main;
   min-width: 0;
 }
@@ -840,7 +840,7 @@ header ul a:active {
     grid-template-areas: "side" "main";
     row-gap: 1.5rem;
   }
-  section {
+  main {
     max-width: none;
     border-block: 1px solid var(--rule);
     padding-block: 1.5rem;
@@ -875,7 +875,7 @@ header ul a:active {
   .sidebar {
     view-transition-name: sidebar;
   }
-  section {
+  main {
     view-transition-name: content;
   }
   header ul a,
