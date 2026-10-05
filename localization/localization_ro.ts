@@ -1227,70 +1227,70 @@ e-mail</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="376"/>
-        <location filename="../src/imitatepass.cpp" line="524"/>
+        <location filename="../src/imitatepass.cpp" line="377"/>
+        <location filename="../src/imitatepass.cpp" line="525"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Semnătura pentru %1 este invalidă.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="164"/>
-        <location filename="../src/imitatepass.cpp" line="792"/>
+        <location filename="../src/imitatepass.cpp" line="793"/>
         <source>Can not edit</source>
         <translation>nu pot edita</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="186"/>
+        <location filename="../src/imitatepass.cpp" line="187"/>
         <source>Cannot add</source>
         <translation type="unfinished">Nu se poate adăuga</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="186"/>
+        <location filename="../src/imitatepass.cpp" line="187"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 există deja.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="165"/>
-        <location filename="../src/imitatepass.cpp" line="793"/>
+        <location filename="../src/imitatepass.cpp" line="794"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>nu pot citi cheia de criptare de utilizat, fișierul .gpg-id lipsește sau nu este valid.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="198"/>
+        <location filename="../src/imitatepass.cpp" line="199"/>
         <source>Cannot write</source>
         <translation type="unfinished">Nu se poate scrie</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="199"/>
+        <location filename="../src/imitatepass.cpp" line="200"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">Nu se poate crea un director temporar: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="367"/>
+        <location filename="../src/imitatepass.cpp" line="368"/>
         <source>GPG signing failed!</source>
         <translation>Semnarea GPG a eșuat!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="369"/>
+        <location filename="../src/imitatepass.cpp" line="370"/>
         <source>Failed to sign %1.</source>
         <translation>Nu s-a putut semna %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="484"/>
+        <location filename="../src/imitatepass.cpp" line="485"/>
         <source>No signing key!</source>
         <translation>Fără cheie de semnătură!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="485"/>
+        <location filename="../src/imitatepass.cpp" line="486"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Niciuna dintre cheile secrete de semnare nu este disponibilă.
 Nu veți putea modifica lista de utilizatori!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="289"/>
-        <location filename="../src/imitatepass.cpp" line="307"/>
-        <location filename="../src/imitatepass.cpp" line="334"/>
-        <location filename="../src/imitatepass.cpp" line="464"/>
+        <location filename="../src/imitatepass.cpp" line="290"/>
+        <location filename="../src/imitatepass.cpp" line="308"/>
+        <location filename="../src/imitatepass.cpp" line="335"/>
+        <location filename="../src/imitatepass.cpp" line="465"/>
         <source>Cannot update</source>
         <translation>nu pot actualiza</translation>
     </message>
@@ -1301,23 +1301,23 @@ Nu veți putea modifica lista de utilizatori!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="160"/>
-        <location filename="../src/imitatepass.cpp" line="375"/>
-        <location filename="../src/imitatepass.cpp" line="675"/>
+        <location filename="../src/imitatepass.cpp" line="376"/>
+        <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Verificați semnătura fișierului .gpg-id!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="247"/>
+        <location filename="../src/imitatepass.cpp" line="248"/>
         <source>Delete failed</source>
         <translation type="unfinished">Ștergerea a eșuat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="248"/>
+        <location filename="../src/imitatepass.cpp" line="249"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Nu s-a putut șterge legătura %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="290"/>
+        <location filename="../src/imitatepass.cpp" line="291"/>
         <source>%1 is not inside the password store.</source>
         <translation type="unfinished">%1 nu se află în depozitul de parole.</translation>
     </message>
@@ -1330,71 +1330,71 @@ Nu veți putea modifica lista de utilizatori!</translation>
         <translation type="obsolete">Nu s-a putut scrie %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="348"/>
+        <location filename="../src/imitatepass.cpp" line="349"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">Lista de destinatari scrisă, dar neînregistrată</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="349"/>
+        <location filename="../src/imitatepass.cpp" line="350"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Salvați destinatarii încă o dată pentru a depăși situația.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="354"/>
+        <location filename="../src/imitatepass.cpp" line="355"/>
         <source>Check selected users!</source>
         <translation>Verificați utilizatorii selectați!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="355"/>
+        <location filename="../src/imitatepass.cpp" line="356"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Niciuna dintre cheile selectate nu are o cheie secretă disponibilă.
 Nu veți putea decripta nicio parolă nou adăugată!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="370"/>
+        <location filename="../src/imitatepass.cpp" line="371"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">Nu s-a putut semna %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="465"/>
+        <location filename="../src/imitatepass.cpp" line="466"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Nu s-a putut șterge semnătura veche %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="562"/>
-        <location filename="../src/imitatepass.cpp" line="590"/>
-        <location filename="../src/imitatepass.cpp" line="598"/>
+        <location filename="../src/imitatepass.cpp" line="563"/>
+        <location filename="../src/imitatepass.cpp" line="591"/>
+        <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Rămășiță a unei recriptări anterioare</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="563"/>
+        <location filename="../src/imitatepass.cpp" line="564"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 nu este un fișier obișnuit și nu a fost restaurat. Verificați-l și ștergeți-l, apoi recriptați din nou.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="591"/>
+        <location filename="../src/imitatepass.cpp" line="592"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 există alături de %2. Ambele sunt copii criptate ale intrării; verificați care dintre ele o doriți și ștergeți-o pe cealaltă, apoi recriptați din nou.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="605"/>
+        <location filename="../src/imitatepass.cpp" line="606"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">%1 a fost restaurat din copia de rezervă lăsată de o recriptare întreruptă.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="599"/>
+        <location filename="../src/imitatepass.cpp" line="600"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 lipsește, iar copia sa de rezervă %2 nu a putut fi redenumită la loc. Redenumiți-o manual, apoi recriptați din nou.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="833"/>
+        <location filename="../src/imitatepass.cpp" line="834"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">%1 nu a putut fi recriptat: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1101"/>
+        <location filename="../src/imitatepass.cpp" line="1113"/>
         <source>Re-encryption failed</source>
         <translation>Recriptarea a eșuat</translation>
     </message>
@@ -1411,69 +1411,75 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
         <translation type="obsolete">Copia de rezervă %1 nu a putut fi ștearsă după recriptare; poate fi ștearsă fără riscuri.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="844"/>
+        <location filename="../src/imitatepass.cpp" line="845"/>
         <source>Creating backup commit</source>
         <translation>Creând copia de rezervă commit</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="858"/>
-        <location filename="../src/imitatepass.cpp" line="867"/>
+        <location filename="../src/imitatepass.cpp" line="859"/>
+        <location filename="../src/imitatepass.cpp" line="868"/>
         <source>Backup commit failed</source>
         <translation>Commiterea copie de siguranță eșuată</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="859"/>
+        <location filename="../src/imitatepass.cpp" line="860"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Nu s-a putut verifica starea git. Recriptarea a fost anulată.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="868"/>
+        <location filename="../src/imitatepass.cpp" line="869"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Recriptarea a fost anulată deoarece nu s-a putut crea o copie de rezervă git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="897"/>
+        <location filename="../src/imitatepass.cpp" line="898"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">O recriptare este deja în curs</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="904"/>
+        <location filename="../src/imitatepass.cpp" line="905"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Nu este un dosar al depozitului</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="905"/>
+        <location filename="../src/imitatepass.cpp" line="906"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 este sau se află în spatele unei legături simbolice sau joncțiuni. Ceea ce indică aceasta nu face parte din depozitul de parole și nu a fost recriptat.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="914"/>
+        <location filename="../src/imitatepass.cpp" line="915"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-criptare din folderul %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="970"/>
-        <location filename="../src/imitatepass.cpp" line="1128"/>
+        <location filename="../src/imitatepass.cpp" line="976"/>
+        <location filename="../src/imitatepass.cpp" line="1140"/>
         <source>Updating password-store</source>
         <translation>actualizeazăm depozitul de parole</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="983"/>
+        <location filename="../src/imitatepass.cpp" line="989"/>
+        <location filename="../src/imitatepass.cpp" line="995"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull a eșuat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="984"/>
+        <location filename="../src/imitatepass.cpp" line="990"/>
+        <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
+        <translation type="unfinished">Nu s-a putut verifica dacă depozitul are fișiere neîmbinate după pull. Verificați-l cu git înainte de a recripta.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="996"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">În urma operației pull, depozitul a rămas cu fișiere neîmbinate. Rezolvați conflictul înainte de a recripta.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="988"/>
+        <location filename="../src/imitatepass.cpp" line="1000"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull a eșuat, se recriptează depozitul așa cum este</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="999"/>
+        <location filename="../src/imitatepass.cpp" line="1011"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n intrare omisă: o legătură simbolică, o joncțiune sau un fișier special nu face parte din depozit.</numerusform>
@@ -1482,17 +1488,17 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1020"/>
+        <location filename="../src/imitatepass.cpp" line="1032"/>
         <source>GPG ID verification failed</source>
         <translation>Verificarea ID-ului GPG a eșuat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1021"/>
+        <location filename="../src/imitatepass.cpp" line="1033"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Nu s-a putut verifica fișierul .gpg-id pentru director.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1099"/>
+        <location filename="../src/imitatepass.cpp" line="1111"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... și încă unul</numerusform>
@@ -1501,7 +1507,7 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1102"/>
+        <location filename="../src/imitatepass.cpp" line="1114"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n fișier nu a putut fi recriptat:</numerusform>
@@ -1510,17 +1516,17 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1108"/>
+        <location filename="../src/imitatepass.cpp" line="1120"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Recriptare anulată: %1 din %2 fișiere verificate, %3 recriptate, %4 eșuate</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1310"/>
+        <location filename="../src/imitatepass.cpp" line="1322"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Executabilul Git nu este configurat, se omite git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1367"/>
+        <location filename="../src/imitatepass.cpp" line="1382"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg nu a scris niciun text cifrat pentru %1.</translation>
     </message>
@@ -1549,17 +1555,17 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
         <translation type="vanished">Nu s-a putut recripta %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1117"/>
+        <location filename="../src/imitatepass.cpp" line="1129"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Recriptarea a fost finalizată: %1 a reușit, %2 a eșuat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1122"/>
+        <location filename="../src/imitatepass.cpp" line="1134"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Recriptarea a fost finalizată: %1 fișiere recriptate</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1131"/>
+        <location filename="../src/imitatepass.cpp" line="1143"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Nu se face push: %n fișier nu a putut fi recriptat</numerusform>
@@ -1568,14 +1574,14 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1232"/>
-        <location filename="../src/imitatepass.cpp" line="1276"/>
+        <location filename="../src/imitatepass.cpp" line="1244"/>
+        <location filename="../src/imitatepass.cpp" line="1288"/>
         <source>Copy failed</source>
         <translation type="unfinished">Copierea a eșuat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1233"/>
-        <location filename="../src/imitatepass.cpp" line="1277"/>
+        <location filename="../src/imitatepass.cpp" line="1245"/>
+        <location filename="../src/imitatepass.cpp" line="1289"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Nu s-a putut copia %1 în %2.</translation>
     </message>
@@ -2786,33 +2792,38 @@ Continuați?</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="438"/>
-        <location filename="../src/pass.cpp" line="458"/>
+        <location filename="../src/pass.cpp" line="467"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Criptarea a eșuat: cheia GPG a destinatarului nu a fost găsită sau este invalidă. Verificați că ID-ul cheii din .gpg-id este corect și importat.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="442"/>
-        <location filename="../src/pass.cpp" line="462"/>
+        <location filename="../src/pass.cpp" line="471"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Criptarea a eșuat. Verificați că cheia dvs. GPG este validă.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="675"/>
+        <location filename="../src/pass.cpp" line="461"/>
+        <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
+        <translation type="unfinished">Criptarea a eșuat: cheia GPG a unui destinatar nu poate fi folosită. Poate a expirat sau a fost revocată, nu are subcheie de criptare sau nu este de încredere; mesajul gpg de mai jos spune care.</translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="685"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 este sau se află în spatele unei legături simbolice sau joncțiuni. Ceea ce indică aceasta nu face parte din depozitul de parole și rămâne neatins.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="681"/>
+        <location filename="../src/pass.cpp" line="691"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Nu face parte din depozit</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="775"/>
+        <location filename="../src/pass.cpp" line="785"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Lista de destinatari %1 nu trece verificarea cu cheia de semnare, așa că nimic nu este preselectat: salvarea ar semna orice se află în ea. Selectați dumneavoastră destinatarii; OK scrie și semnează o listă nouă.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="742"/>
+        <location filename="../src/pass.cpp" line="752"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Nimic nu este preselectat: salvarea ar semna orice se află în ea. Selectați dumneavoastră destinatarii.</translation>
     </message>
@@ -2822,7 +2833,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="242"/>
+        <location filename="../src/passworddialog.cpp" line="328"/>
         <source>Password</source>
         <translation>parolă</translation>
     </message>
@@ -2910,62 +2921,82 @@ Continuați?</translation>
         <translation type="unfinished">Șablon de câmpuri din fișierul .templates al depozitului. Ctrl+T trece la următorul.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="72"/>
+        <location filename="../src/passworddialog.cpp" line="76"/>
         <source>New password</source>
         <translation type="unfinished">Parolă nouă</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="91"/>
+        <location filename="../src/passworddialog.cpp" line="97"/>
         <source>Decrypting…</source>
         <translation type="unfinished">Se decriptează…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="190"/>
+        <location filename="../src/passworddialog.cpp" line="182"/>
+        <source>Saving…</source>
+        <translation type="unfinished">Se salvează…</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="213"/>
+        <source>Still saving</source>
+        <translation type="unfinished">Încă se salvează</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="214"/>
+        <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
+        <translation type="unfinished">Intrarea încă se salvează. Închideți totuși dialogul? Dacă salvarea eșuează apoi, ce ați tastat se va pierde.</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="231"/>
+        <source>Not saved: %1</source>
+        <translation type="unfinished">Nesalvat: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">Dați intrării un nume.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="194"/>
+        <location filename="../src/passworddialog.cpp" line="277"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">Un nume nu se poate termina cu /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="203"/>
+        <location filename="../src/passworddialog.cpp" line="286"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">Acest nume ar duce în afara depozitului de parole.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="207"/>
+        <location filename="../src/passworddialog.cpp" line="290"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Există deja o intrare numită %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="211"/>
+        <location filename="../src/passworddialog.cpp" line="294"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 este un dosar.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="238"/>
+        <location filename="../src/passworddialog.cpp" line="324"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Dosarul %1 nu a putut fi creat.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="294"/>
+        <location filename="../src/passworddialog.cpp" line="380"/>
         <source>Remove field</source>
         <translation type="unfinished">Eliminați câmpul</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="313"/>
+        <location filename="../src/passworddialog.cpp" line="399"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Există deja un câmp numit %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="394"/>
+        <location filename="../src/passworddialog.cpp" line="480"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">URI otpauth:// sau secret base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="431"/>
+        <location filename="../src/passworddialog.cpp" line="517"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Secret OTP nevalid</translation>
     </message>
@@ -3264,17 +3295,27 @@ Continuați?</translation>
 <context>
     <name>RealPass</name>
     <message>
-        <location filename="../src/realpass.cpp" line="76"/>
+        <location filename="../src/realpass.cpp" line="93"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Nu s-a putut șterge legătura %1.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="77"/>
+        <location filename="../src/realpass.cpp" line="94"/>
         <source>Delete failed</source>
         <translation type="unfinished">Ștergerea a eșuat</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="199"/>
+        <location filename="../src/realpass.cpp" line="125"/>
+        <source>The link %1 was removed, but git could not record it: %2</source>
+        <translation type="unfinished">Legătura %1 a fost eliminată, dar git nu a putut înregistra acest lucru: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="127"/>
+        <source>Delete incomplete</source>
+        <translation type="unfinished">Ștergere incompletă</translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="229"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">Căutarea necesită configurarea executabilului GPG.</translation>
     </message>
@@ -3507,27 +3548,27 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation>Cheia nu a fost găsită în breloc</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="308"/>
+        <location filename="../src/usersdialog.cpp" line="312"/>
         <source>created</source>
         <translation>creat</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="312"/>
+        <location filename="../src/usersdialog.cpp" line="316"/>
         <source>expires</source>
         <translation>expiră</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="327"/>
+        <location filename="../src/usersdialog.cpp" line="339"/>
         <source>[INVALID] </source>
         <translation>[INVALID] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="333"/>
+        <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[EXPIRED] </source>
         <translation>[EXPIRAT] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="337"/>
+        <location filename="../src/usersdialog.cpp" line="343"/>
         <source>[PARTIAL] </source>
         <translation>[PARŢIAL] </translation>
     </message>
