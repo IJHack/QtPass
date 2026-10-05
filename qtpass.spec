@@ -7,7 +7,7 @@
 # This should probably be part of a release process.
 
 Name: qtpass
-Version: 1.8.2
+Version: 1.8.3
 Release: 1%{?dist}
 Summary: QtPass is a multi-platform GUI for pass, the standard unix password manager.
 License: GPLv3
@@ -61,6 +61,9 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %changelog
+* Mon Oct 05 2026 Anne Jan Brouwer <qtpass@annejan.com> 1.8.3
+- Updated QtPass
+
 * Thu Sep 24 2026 Anne Jan Brouwer <qtpass@annejan.com> 1.8.2
 - Updated QtPass
 
