@@ -41,6 +41,7 @@ private slots:
   void gitPullBlockingReturnsAfterPassRanWhateverItsExitCode();
   void linkedFolderThatCannotBeUnlinkedReportsDeleteFailed();
   void linkedFolderKnownToGitIsForgottenByGitAlone();
+  void linkedFolderGitFailureIsReported();
 
 private:
   struct Call {
@@ -572,6 +573,60 @@ void tst_realpass::linkedFolderThatCannotBeUnlinkedReportsDeleteFailed() {
   QCOMPARE(removedSpy.count(), 0);
   QVERIFY2(QFileInfo(shared).isSymLink(), "the link must still be there");
   QVERIFY2(!QFile::exists(m_log), "pass must not have been asked anything");
+}
+
+/**
+ * @brief The link is removed first; when git then cannot forget it (here
+ *        `git rm --cached` fails) the removal is not reported as clean: the
+ *        user is told git still tracks it, and no commit of nothing runs.
+ */
+void tst_realpass::linkedFolderGitFailureIsReported() {
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString shared = m_store + QStringLiteral("shared");
+  QVERIFY(QFile::link(outsideDir.path(), shared));
+  const QString calls =
+      QDir(m_dir.path()).filePath(QStringLiteral("calls-fail.log"));
+  const QString gitPass =
+      QDir(m_dir.path()).filePath(QStringLiteral("pass-git-fail"));
+  {
+    QFile f(gitPass);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\n");
+    f.write(
+        QStringLiteral("printf '%s\\n' \"$*\" >> '%1'\n").arg(calls).toUtf8());
+    f.write("cat > /dev/null\n");
+    f.write("if [ \"$2\" = ls-files ]; then printf 'shared\\n'; exit 0; fi\n");
+    f.write("if [ \"$2\" = rm ]; then echo 'fatal: index.lock exists' >&2; "
+            "exit 128; fi\n");
+    f.write("exit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  const auto cleanup = qScopeGuard([&] {
+    QFile::remove(shared);
+    QFile::remove(gitPass);
+    QFile::remove(calls);
+  });
+  AppSettings withGit = m_settings;
+  withGit.useGit = true;
+  withGit.passExecutable = gitPass;
+  QScopedPointer<RealPass> pass(makePass());
+  pass->init(withGit);
+  pass->updateEnv();
+  QSignalSpy criticalSpy(pass.data(), &Pass::critical);
+  QSignalSpy removedSpy(pass.data(), &Pass::finishedRemove);
+  pass->Remove(QStringLiteral("shared/"), true);
+  QVERIFY(removedSpy.count() == 1 || removedSpy.wait(5000));
+  QCOMPARE(criticalSpy.count(), 1);
+  QVERIFY2(criticalSpy.first().at(1).toString().contains(
+               QStringLiteral("index.lock")),
+           qPrintable(criticalSpy.first().at(1).toString()));
+  QVERIFY2(!QFileInfo(shared).isSymLink(), "the link is gone either way");
+  QFile log(calls);
+  QVERIFY(log.open(QIODevice::ReadOnly));
+  QVERIFY2(!log.readAll().contains("commit"), "nothing may be committed");
 }
 
 /**

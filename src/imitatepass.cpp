@@ -964,6 +964,11 @@ void ImitatePass::startReencryptWorker(const QString &dir) {
   thread->start();
 }
 
+/**
+ * @brief Pull before re-encryption when automatic pulling is configured.
+ * @return true if no pull is needed, the pull succeeds, or a failed pull leaves
+ * no unmerged files; false if unmerged files remain or their check fails.
+ */
 auto ImitatePass::pullBeforeReencrypt() -> bool {
   if (!m_settings.autoPull || !gitConfigured()) {
     return true;
@@ -977,9 +982,15 @@ auto ImitatePass::pullBeforeReencrypt() -> bool {
   // that stopped in a merge leaves conflict markers and an unmerged index,
   // and re-encrypting on top of that would commit the mess.
   QString unmerged;
-  execBlocking(m_settings.gitExecutable,
-               {"-C", pgit(m_settings.passStore), "ls-files", "--unmerged"},
-               &unmerged);
+  if (execBlocking(m_settings.gitExecutable,
+                   {"-C", pgit(m_settings.passStore), "ls-files", "--unmerged"},
+                   &unmerged) != 0) {
+    // Unknown is not clean: the pull may have stopped in a merge.
+    emit critical(tr("Git pull failed"),
+                  tr("Could not check the store for unmerged files after the "
+                     "pull. Check it with git before re-encrypting."));
+    return false;
+  }
   if (!unmerged.trimmed().isEmpty()) {
     emit critical(tr("Git pull failed"),
                   tr("The pull left the store with unmerged files. Resolve "

@@ -72,6 +72,13 @@ auto RealPass::insertWritten() const -> bool {
          QFileInfo::exists(m_insertTarget);
 }
 
+/**
+ * @brief Remove an entry with pass, unlinking linked folders locally without
+ * deleting their targets. Commit a linked folder's removal only when Git is
+ * enabled and the tracking lookup and index removal commands report success.
+ * @param file Store-relative entry path, without .gpg for a password file.
+ * @param isDir true to remove a directory; false to remove a password file.
+ */
 void RealPass::Remove(QString file, bool isDir) {
   // Nothing behind a link is the store's to delete.
   if (refuseLinkedPath(isDir ? file : file + ".gpg", false)) {
@@ -96,16 +103,29 @@ void RealPass::Remove(QString file, bool isDir) {
       // With the store's environment (PASSWORD_STORE_DIR), as executePass.
       QString known;
       QString err;
-      Executor::executeBlocking(exec.environment(), m_settings.passExecutable,
-                                {"git", "ls-files", "--", rel}, &known, &err);
-      if (!known.trimmed().isEmpty()) {
-        Executor::executeBlocking(exec.environment(), m_settings.passExecutable,
-                                  {"git", "rm", "-q", "--cached", "--", rel},
-                                  &known, &err);
-        executePass(PASS_REMOVE,
-                    {"git", "commit", "-q", "-m",
-                     "Remove for " + rel + " using QtPass.", "--", rel});
-        return;
+      // The link is gone from disk either way. A failed lookup or rm leaves
+      // git tracking it: say so rather than report a clean removal.
+      bool recorded = Executor::executeBlocking(
+                          exec.environment(), m_settings.passExecutable,
+                          {"git", "ls-files", "--", rel}, &known, &err) == 0;
+      if (recorded && !known.trimmed().isEmpty()) {
+        recorded =
+            Executor::executeBlocking(
+                exec.environment(), m_settings.passExecutable,
+                {"git", "rm", "-q", "--cached", "--", rel}, &known, &err) == 0;
+        if (recorded) {
+          executePass(PASS_REMOVE,
+                      {"git", "commit", "-q", "-m",
+                       "Remove for " + rel + " using QtPass.", "--", rel});
+          return;
+        }
+      }
+      if (!recorded) {
+        const QString why =
+            tr("The link %1 was removed, but git could not record it: %2")
+                .arg(rel, err.trimmed());
+        emit critical(tr("Delete incomplete"), why);
+        emit processErrorExit(1, why);
       }
     }
     // Nothing ran for pass to finish: the removal is done here, and the

@@ -18,6 +18,11 @@ equals(QT_MAJOR_VERSION, 6):lessThan(QT_MINOR_VERSION, 8): error("QtPass 2.x req
 QT += widgets
 
 clang|gcc:QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
+# GCC 16 reports Qt's own headers (qchar.h, qbitarray.h, met through
+# libstdc++'s range_access.h) under -Wsfinae-incomplete: dozens of warnings
+# per file, none in QtPass. Older GCC and clang do not know the flag.
+gcc:!clang:greaterThan(QMAKE_GCC_MAJOR_VERSION, 15): \
+    QMAKE_CXXFLAGS_WARN_ON += -Wno-sfinae-incomplete
 
 nosingleapp {
     DEFINES += SINGLE_APP=0
