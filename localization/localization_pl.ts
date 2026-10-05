@@ -1422,7 +1422,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="990"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Po pull nie udało się sprawdzić, czy magazyn zawiera niescalone pliki. Sprawdź go za pomocą git przed ponownym zaszyfrowaniem.</translation>
+        <translation>Nie udało się sprawdzić magazynu pod kątem niescalonych plików po operacji pull. Sprawdź to za pomocą Git przed ponownym szyfrowaniem.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="996"/>
@@ -2655,7 +2655,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/pass.cpp" line="461"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">Szyfrowanie nie powiodło się: nie można użyć klucza GPG odbiorcy. Mógł wygasnąć lub zostać unieważniony, nie mieć podklucza szyfrującego albo nie być zaufany; poniższy komunikat gpg wskazuje, który przypadek zachodzi.</translation>
+        <translation>Szyfrowanie nie powiodło się: nie można użyć klucza GPG odbiorcy. Może on być przeterminowany lub unieważniony, nie mieć podklucza szyfrującego albo nie być uznawany zaufanym; poniższy komunikat programu gpg wskazuje przyczynę.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="685"/>
@@ -2783,22 +2783,22 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="182"/>
         <source>Saving…</source>
-        <translation type="unfinished">Zapisywanie…</translation>
+        <translation>Zapisywanie…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="213"/>
         <source>Still saving</source>
-        <translation type="unfinished">Wciąż zapisywanie</translation>
+        <translation>Wciąż zapisywanie</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="214"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation type="unfinished">Wpis jest nadal zapisywany. Mimo to zamknąć okno? Jeśli zapisywanie później się nie powiedzie, to, co wpisano, zostanie utracone.</translation>
+        <translation>Trwa jeszcze zapisywanie wpisu. Czy mimo to zamknąć okno? Jeśli zapisywanie zakończy się niepowodzeniem, wpisany tekst zostanie utracony.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="231"/>
         <source>Not saved: %1</source>
-        <translation type="unfinished">Nie zapisano: %1</translation>
+        <translation>Nie zapisano: %1</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>
@@ -3157,12 +3157,12 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="125"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
-        <translation type="unfinished">Dowiązanie %1 zostało usunięte, ale git nie mógł tego zarejestrować: %2</translation>
+        <translation>Dowiązanie %1 zostało usunięte, ale git nie mógł tego zarejestrować: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="127"/>
         <source>Delete incomplete</source>
-        <translation type="unfinished">Usuwanie niekompletne</translation>
+        <translation>Usuwanie niekompletne</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="229"/>
