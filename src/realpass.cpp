@@ -96,20 +96,29 @@ void RealPass::Remove(QString file, bool isDir) {
       // With the store's environment (PASSWORD_STORE_DIR), as executePass.
       QString known;
       QString err;
-      // A failed lookup or rm leaves git as it was: the link is gone from
-      // disk either way, and there is nothing to commit.
-      const bool listed =
-          Executor::executeBlocking(
-              exec.environment(), m_settings.passExecutable,
-              {"git", "ls-files", "--", rel}, &known, &err) == 0;
-      if (listed && !known.trimmed().isEmpty() &&
-          Executor::executeBlocking(
-              exec.environment(), m_settings.passExecutable,
-              {"git", "rm", "-q", "--cached", "--", rel}, &known, &err) == 0) {
-        executePass(PASS_REMOVE,
-                    {"git", "commit", "-q", "-m",
-                     "Remove for " + rel + " using QtPass.", "--", rel});
-        return;
+      // The link is gone from disk either way. A failed lookup or rm leaves
+      // git tracking it: say so rather than report a clean removal.
+      bool recorded = Executor::executeBlocking(
+                          exec.environment(), m_settings.passExecutable,
+                          {"git", "ls-files", "--", rel}, &known, &err) == 0;
+      if (recorded && !known.trimmed().isEmpty()) {
+        recorded =
+            Executor::executeBlocking(
+                exec.environment(), m_settings.passExecutable,
+                {"git", "rm", "-q", "--cached", "--", rel}, &known, &err) == 0;
+        if (recorded) {
+          executePass(PASS_REMOVE,
+                      {"git", "commit", "-q", "-m",
+                       "Remove for " + rel + " using QtPass.", "--", rel});
+          return;
+        }
+      }
+      if (!recorded) {
+        const QString why =
+            tr("The link %1 was removed, but git could not record it: %2")
+                .arg(rel, err.trimmed());
+        emit critical(tr("Delete incomplete"), why);
+        emit processErrorExit(1, why);
       }
     }
     // Nothing ran for pass to finish: the removal is done here, and the
