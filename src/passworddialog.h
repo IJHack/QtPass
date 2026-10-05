@@ -64,8 +64,10 @@ public:
   void accept() override;
 
   /**
-   * @brief Cancel, Esc and the window's close button: refused while an
-   * insert is in flight, so a failure can still hand back what was typed.
+   * @brief Cancel, Esc and the window's close button. While an insert is in
+   * flight they ask first: closing then means a failure can no longer hand
+   * back what was typed, but a save that never reports must not leave
+   * quitting as the only way out.
    */
   void reject() override;
 
