@@ -2453,6 +2453,19 @@ void tst_util::gpgErrorMessageUnusableKeyFallback() {
            qPrintable("Expected expired/revoked in: " + msg));
   QVERIFY2(!msg.contains("not found", Qt::CaseInsensitive),
            qPrintable("An unusable key is not a missing one: " + msg));
+
+  // The same words follow an untrusted key; the message must not claim it
+  // expired or tell the user to replace a key that only needs trust.
+  const QString untrusted =
+      "gpg: 1234ABCD: There is no assurance this key belongs to the named "
+      "user\n"
+      "gpg: [stdin]: encryption failed: Unusable public key";
+  const QString trustMsg = gpgErrorMessage(untrusted);
+  QVERIFY2(trustMsg.contains("trusted", Qt::CaseInsensitive),
+           qPrintable("Expected the trust case to be named: " + trustMsg));
+  QVERIFY2(
+      !trustMsg.contains("Renew", Qt::CaseInsensitive),
+      qPrintable("No renew/replace advice for a trust problem: " + trustMsg));
 }
 
 void tst_util::gpgErrorMessageEncryptionFailedFallback() {
