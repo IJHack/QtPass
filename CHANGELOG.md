@@ -449,6 +449,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- An entry encrypted to a recipient whose key has expired (or was revoked, or
+  has no encryption subkey) failed with "recipient GPG key not found or
+  invalid … check that it is imported" when QtPass works through `pass`,
+  whose gpg reports only "Unusable public key". It now says the key cannot
+  be used and to renew, replace or remove it
 - Saving an entry no longer loses what was typed when it fails. The password
   dialog closed as soon as OK was pressed and gpg ran afterwards, so a missing
   or expired recipient key, an unusable `.gpg-id` or a refused path lost the

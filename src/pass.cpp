@@ -452,8 +452,15 @@ auto gpgErrorMessage(const QString &err) -> QString {
                                        QLatin1String("revoked")}))
     return QCoreApplication::translate(
         "Pass", "Encryption failed: GPG key has been revoked.");
+  // pass passes no --status-fd, so this is all gpg says about a key that is
+  // present but cannot encrypt: expired, revoked or without an encryption
+  // subkey. "Not found ... imported" would send the user the wrong way.
+  if (containsAnyCaseInsensitive(err, {QLatin1String("unusable public key")}))
+    return QCoreApplication::translate(
+        "Pass", "Encryption failed: a recipient's GPG key cannot be used: it "
+                "has expired, has been revoked or has no encryption subkey. "
+                "Renew or replace it, or remove it from .gpg-id.");
   if (containsAnyCaseInsensitive(err, {QLatin1String("no public key"),
-                                       QLatin1String("unusable public key"),
                                        QLatin1String("no secret key")}))
     return QCoreApplication::translate(
         "Pass", "Encryption failed: recipient GPG key not found or invalid. "

@@ -298,6 +298,7 @@ private Q_SLOTS:
   void gpgErrorMessageKeyExpiredFallback();
   void gpgErrorMessageRevokedFallback();
   void gpgErrorMessageNoPubkeyFallback();
+  void gpgErrorMessageUnusableKeyFallback();
   void gpgErrorMessageEncryptionFailedFallback();
   void gpgErrorMessageUnknownReturnsEmpty();
   void gpgErrorMessageStatusTokenTakesPriorityOverFallback();
@@ -2432,6 +2433,26 @@ void tst_util::gpgErrorMessageNoPubkeyFallback() {
   QVERIFY2(msg.contains("not found", Qt::CaseInsensitive) ||
                msg.contains("invalid", Qt::CaseInsensitive),
            qPrintable("Expected 'not found' or 'invalid' in: " + msg));
+}
+
+/**
+ * @brief "Unusable public key" (what gpg says through pass, with no status
+ *        tokens) names a key that is there but cannot encrypt: expired,
+ *        revoked or without an encryption subkey. It must not be reported as
+ *        missing, which sent the user to import a key they already have.
+ */
+void tst_util::gpgErrorMessageUnusableKeyFallback() {
+  const QString err =
+      "gpg: 9D94A136B940F90116298B5EDC0BAE19A658F08C: skipped: Unusable "
+      "public key\n"
+      "gpg: [stdin]: encryption failed: Unusable public key\n"
+      "Password encryption aborted.";
+  const QString msg = gpgErrorMessage(err);
+  QVERIFY2(msg.contains("expired", Qt::CaseInsensitive) &&
+               msg.contains("revoked", Qt::CaseInsensitive),
+           qPrintable("Expected expired/revoked in: " + msg));
+  QVERIFY2(!msg.contains("not found", Qt::CaseInsensitive),
+           qPrintable("An unusable key is not a missing one: " + msg));
 }
 
 void tst_util::gpgErrorMessageEncryptionFailedFallback() {
