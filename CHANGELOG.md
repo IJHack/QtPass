@@ -449,6 +449,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- The Users dialog hid a folder's own recipients when their keys were
+  expired, revoked or missing from the keyring, unless "Show unusable keys"
+  was ticked. They stayed in `.gpg-id` unseen, could not be unticked, and
+  made every save in the folder fail. Ticked keys are now always listed with
+  their badge; the checkbox only reveals unusable keys to add. A key gpg
+  marks expired is badged `[EXPIRED]` rather than `[INVALID]`
 - Saving an entry no longer loses what was typed when it fails. The password
   dialog closed as soon as OK was pressed and gpg ran afterwards, so a missing
   or expired recipient key, an unusable `.gpg-id` or a refused path lost the
