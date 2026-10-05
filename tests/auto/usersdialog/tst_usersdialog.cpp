@@ -72,6 +72,7 @@ private slots:
   void unknownRecipientIsListedAsNotFoundAndTicked();
   void recipientByShortOrLongIdIsNotListedAsNotFound();
   void unusableKeysAreHiddenUntilAskedForAndThenBadged();
+  void unusableRecipientsAreShownAndCanBeRemoved();
   void rowWithAnOutOfRangeIndexChangesNoSelection();
   void ownKeysAreBoldAndInLinkColour();
   void importingAKeyRefreshesTheListAndSelectsIt();
@@ -873,8 +874,8 @@ void tst_usersdialog::recipientByShortOrLongIdIsNotListedAsNotFound() {
  * @brief A recipient in .gpg-id that gpg does not know must not silently
  *        drop out of the list (saving would then re-encrypt the store
  *        without them): it is listed as a ticked placeholder that says the
- *        key is missing. Being unusable it hides behind "Show unusable
- *        keys" and carries the [INVALID] badge once shown.
+ *        key is missing, badged [INVALID]. It is shown without "Show
+ *        unusable keys": hidden, it could neither be seen nor unticked.
  */
 void tst_usersdialog::unknownRecipientIsListedAsNotFoundAndTicked() {
   QTemporaryDir store;
@@ -892,17 +893,12 @@ void tst_usersdialog::unknownRecipientIsListedAsNotFoundAndTicked() {
   QVERIFY(list != nullptr && unusable != nullptr);
   QVERIFY(!unusable->isChecked());
 
-  // Hidden while unusable keys are hidden, but part of the selection.
-  QCOMPARE(list->count(), 2);
-  QCOMPARE(checkedNames(list), QStringList{QStringLiteral("Alice")});
+  // Listed and ticked although unusable keys are hidden: it is a recipient.
+  QCOMPARE(list->count(), 3);
   QCOMPARE(
       enabledIds(dialog.selectedUsers()),
       (QStringList{QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9"),
                    QStringLiteral("DEADBEEFDEADBEEF")}));
-
-  unusable->click();
-  QVERIFY(unusable->isChecked());
-  QCOMPARE(list->count(), 3);
   QListWidgetItem *placeholder =
       itemWithText(list, QStringLiteral("DEADBEEFDEADBEEF"));
   QVERIFY2(placeholder != nullptr, "the unknown recipient must be listed");
@@ -1000,6 +996,81 @@ void tst_usersdialog::unusableKeysAreHiddenUntilAskedForAndThenBadged() {
   QCOMPARE(list->count(), 1);
   QVERIFY2(list->item(0)->text().contains(QStringLiteral("Expired")),
            qPrintable(list->item(0)->text()));
+}
+
+/**
+ * @brief The keys a folder is encrypted to are shown whatever their state,
+ *        with "Show unusable keys" unticked: an expired, revoked or missing
+ *        recipient used to stay in .gpg-id unseen, could not be unticked,
+ *        and made every save in the folder fail. A key gpg itself marks
+ *        expired (validity e) is badged [EXPIRED], not [INVALID].
+ */
+void tst_usersdialog::unusableRecipientsAreShownAndCanBeRemoved() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  {
+    QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly));
+    gpgId.write("AAAAAAAAAAAAAAA1\nCCCCCCCCCCCCCCC3\nEEEEEEEEEEEEEEE5\n"
+                "BBBBBBBBBBBBBBB2\nDDDDDDDDDDDDDDD4\n");
+  }
+  // The one-call listing answers for every recipient; a lookup of the
+  // missing key alone finds nothing.
+  const QString gpgExpired = QStringLiteral(
+      "pub:e:4096:1:EEEEEEEEEEEEEEE5:1400000000:1500000000::e:::escarESCA::::"
+      "::23::0:\n"
+      "fpr:::::::::000000000000000000000000EEEEEEEEEEEEEEE5:\n"
+      "uid:e::::1400000000::X::Old Gmail <old@example.org>::::::::::0:\n");
+  AppSettings s = m_settings;
+  s.gpgExecutable =
+      writeGpg(QStringLiteral("gpg-recipients"),
+               QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;;\n"
+                              "  *AAAAAAAAAAAAAAA1*) ;;\n"
+                              "  *DDDDDDDDDDDDDDD4*) exit 2 ;;\n"
+                              "esac\n"
+                              "cat <<'LISTING'\n") +
+                   QString::fromLatin1(kMixedListing) + gpgExpired +
+                   QStringLiteral("LISTING\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  auto *unusable = dialog.findChild<QCheckBox *>(QStringLiteral("checkBox"));
+  QVERIFY(list != nullptr && unusable != nullptr);
+  QVERIFY(!unusable->isChecked());
+
+  QListWidgetItem *expired = itemWithText(list, QStringLiteral("Expired"));
+  QListWidgetItem *revoked = itemWithText(list, QStringLiteral("Revoked"));
+  QListWidgetItem *gmail = itemWithText(list, QStringLiteral("Old Gmail"));
+  QListWidgetItem *missing =
+      itemWithText(list, QStringLiteral("DDDDDDDDDDDDDDD4"));
+  QVERIFY2(expired && revoked && gmail && missing,
+           "every recipient must be listed without Show unusable keys");
+  for (QListWidgetItem *item : {expired, revoked, gmail, missing}) {
+    QCOMPARE(item->checkState(), Qt::Checked);
+  }
+  QVERIFY2(gmail->text().startsWith(QStringLiteral("[EXPIRED] ")),
+           qPrintable(gmail->text()));
+  QVERIFY2(expired->text().startsWith(QStringLiteral("[EXPIRED] ")),
+           qPrintable(expired->text()));
+  QVERIFY2(revoked->text().startsWith(QStringLiteral("[INVALID] ")),
+           qPrintable(revoked->text()));
+
+  for (QListWidgetItem *item : {expired, revoked, gmail, missing}) {
+    item->setCheckState(Qt::Unchecked);
+  }
+  QCOMPARE(
+      enabledIds(dialog.selectedUsers()),
+      QStringList{QStringLiteral("000000000000000000000000BBBBBBBBBBBBBBB2")});
+  // Unticked, they are candidates again, and those only show on request.
+  auto *filter = dialog.findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  QVERIFY(filter != nullptr);
+  filter->setText(QStringLiteral("e"));
+  filter->clear();
+  QVERIFY(itemWithText(list, QStringLiteral("Old Gmail")) == nullptr);
+  unusable->click();
+  QVERIFY(itemWithText(list, QStringLiteral("Old Gmail")) != nullptr);
 }
 
 /**

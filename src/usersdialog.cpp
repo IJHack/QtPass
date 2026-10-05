@@ -287,11 +287,13 @@ bool UsersDialog::passesFilter(const UserInfo &user, const QString &filter,
   if (!filter.isEmpty() && !nameFilter.match(user.name).hasMatch()) {
     return false;
   }
-  if (!user.isValid() && !ui->checkBox->isChecked()) {
-    return false;
+  // A ticked key is one the folder is encrypted to: it is shown whatever
+  // its state, or an expired or missing recipient stays in .gpg-id unseen and
+  // cannot be unticked. "Show unusable keys" is about keys to add.
+  if (user.enabled || ui->checkBox->isChecked()) {
+    return true;
   }
-  const bool expired = isUserExpired(user);
-  return !(expired && !ui->checkBox->isChecked());
+  return user.isValid() && !isUserExpired(user);
 }
 
 auto UsersDialog::isUserExpired(const UserInfo &user) const -> bool {
@@ -299,7 +301,9 @@ auto UsersDialog::isUserExpired(const UserInfo &user) const -> bool {
     m_cachedCurrentDateTime = QDateTime::currentDateTime();
     m_cachedDateTimeValid = true;
   }
-  return user.expiry.isValid() && m_cachedCurrentDateTime > user.expiry;
+  // gpg marks a key it already judged expired with validity 'e'.
+  return user.validity == 'e' ||
+         (user.expiry.isValid() && m_cachedCurrentDateTime > user.expiry);
 }
 
 QString UsersDialog::buildUserText(const UserInfo &user) const {
@@ -321,16 +325,18 @@ void UsersDialog::applyUserStyling(QListWidgetItem *item,
   // Status badge first: an own key can be expired too, and then the marker
   // matters more than the "you can decrypt with this" colour.
   bool badged = true;
-  if (!user.isValid()) {
-    item->setBackground(Qt::darkRed);
-    item->setForeground(Qt::white);
-    item->setText(tr("[INVALID] ") + originalText);
-  } else if (isUserExpired(user)) {
-    // Same treatment as invalid: a lone dark-red foreground is unreadable on
-    // dark themes, and gpg refuses to encrypt to expired keys anyway.
+  // Expired before invalid: gpg gives an expired key validity 'e', which is
+  // not a valid one, and "expired" says what to do about it.
+  if (isUserExpired(user)) {
+    // A lone dark-red foreground is unreadable on dark themes, and gpg
+    // refuses to encrypt to expired keys anyway.
     item->setBackground(Qt::darkRed);
     item->setForeground(Qt::white);
     item->setText(tr("[EXPIRED] ") + originalText);
+  } else if (!user.isValid()) {
+    item->setBackground(Qt::darkRed);
+    item->setForeground(Qt::white);
+    item->setText(tr("[INVALID] ") + originalText);
   } else if (!user.fullyValid()) {
     item->setBackground(Qt::darkYellow);
     item->setForeground(Qt::white);
