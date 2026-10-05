@@ -421,7 +421,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">שימוש ב-pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
