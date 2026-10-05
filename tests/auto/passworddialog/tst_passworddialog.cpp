@@ -23,6 +23,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QMenu>
+#include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QPointer>
 #include <QPushButton>
@@ -146,7 +147,7 @@ private Q_SLOTS:
   void savingLocksTheDialogUntilTheResult();
   void newEntryWrittenBeforeAFailedGitStepCloses();
   void anotherWritersEntryIsNotThisOne();
-  void savingIgnoresCancelUntilTheResult();
+  void savingCancelAsksBeforeClosing();
   void savingLocksTheTemplate();
   void cancelClearsTheFields();
   void newEntryNameCannotEndInASlash();
@@ -1011,11 +1012,29 @@ void tst_passworddialog::anotherWritersEntryIsNotThisOne() {
            QStringLiteral("s3cret"));
 }
 
+namespace {
+/// Answer the next modal question box with @p button once it is up.
+void answerNextQuestion(QMessageBox::StandardButton button, int tries = 50) {
+  QTimer::singleShot(10, [button, tries] {
+    auto *box = qobject_cast<QMessageBox *>(QApplication::activeModalWidget());
+    if (box == nullptr) {
+      if (tries > 0) {
+        answerNextQuestion(button, tries - 1);
+      }
+      return;
+    }
+    box->button(button)->click();
+  });
+}
+} // namespace
+
 /**
- * @brief Cancel, Esc and closing the window wait for a pending insert: a
- *        failure after that would have nothing to hand back.
+ * @brief A save that never reports (an unanswered PIN prompt, a queue held
+ *        up by a hanging pull) must not trap the user: Cancel stays on while
+ *        saving, and Cancel, Esc or closing ask first. No keeps waiting; Yes
+ *        closes, and a result arriving later no longer touches the dialog.
  */
-void tst_passworddialog::savingIgnoresCancelUntilTheResult() {
+void tst_passworddialog::savingCancelAsksBeforeClosing() {
   QTemporaryDir store;
   FakePass pass;
   pass.holdResult = true;
@@ -1024,21 +1043,28 @@ void tst_passworddialog::savingIgnoresCancelUntilTheResult() {
   d.show();
   QVERIFY(QTest::qWaitForWindowExposed(&d));
   QSignalSpy rejected(&d, &QDialog::rejected);
+  QSignalSpy accepted(&d, &QDialog::accepted);
   auto *box = d.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
 
   okButton(d)->click();
-  QVERIFY2(!box->button(QDialogButtonBox::Cancel)->isEnabled(),
-           "Cancel is off while saving");
-  QTest::keyClick(&d, Qt::Key_Escape);
-  d.reject();
-  d.close();
-  QVERIFY(rejected.isEmpty());
-  QVERIFY(d.isVisible());
+  QVERIFY2(box->button(QDialogButtonBox::Cancel)->isEnabled(),
+           "Cancel is the way out of a save that never reports");
 
-  emit pass.insertFailed(QStringLiteral("gpg: no public key"), false);
-  QVERIFY(box->button(QDialogButtonBox::Cancel)->isEnabled());
+  answerNextQuestion(QMessageBox::No);
   d.reject();
+  QVERIFY2(rejected.isEmpty() && d.isVisible(), "No keeps waiting");
+  QVERIFY(!status->text().isEmpty());
+  answerNextQuestion(QMessageBox::No);
+  QTest::keyClick(&d, Qt::Key_Escape);
+  QVERIFY2(rejected.isEmpty() && d.isVisible(), "Esc asks the same");
+
+  answerNextQuestion(QMessageBox::Yes);
+  box->button(QDialogButtonBox::Cancel)->click();
   QCOMPARE(rejected.size(), 1);
+  emit pass.finishedInsert(QString(), QString());
+  emit pass.insertFailed(QStringLiteral("late"), false);
+  QVERIFY2(accepted.isEmpty(), "a late result does not reopen or accept");
 }
 
 /**

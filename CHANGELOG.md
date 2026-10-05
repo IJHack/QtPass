@@ -465,7 +465,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   dialog closed as soon as OK was pressed and gpg ran afterwards, so a missing
   or expired recipient key, an unusable `.gpg-id` or a refused path lost the
   entry. The dialog now stays open until the entry is written, locked and
-  showing "Saving…"; on failure the fields come back with the reason. Enter
+  showing "Saving…"; on failure the fields come back with the reason.
+  Cancel, Esc and closing the window still work while it waits, after asking,
+  so a save that never reports (an unanswered PIN prompt) cannot trap you. Enter
   in a field-name editor also no longer saves and closes the whole dialog
   ([#1944](https://github.com/IJHack/QtPass/issues/1944))
 - The autoclear boxes in Settings showed "ver" instead of "Never": the

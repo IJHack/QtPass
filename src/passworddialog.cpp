@@ -23,6 +23,7 @@
 #include <QIcon>
 #include <QLabel>
 #include <QLineEdit>
+#include <QMessageBox>
 #include <QPushButton>
 #include <QShortcut>
 #include <QSignalBlocker>
@@ -174,10 +175,10 @@ void PasswordDialog::setSaving(bool saving) {
   ui->nameRow->setEnabled(!saving);
   // Another template would rebuild the field rows under a pending insert.
   ui->templateBox->setEnabled(!saving);
+  // Cancel stays: a save that never reports (an unanswered PIN prompt, a
+  // queue held up by a hanging pull) must not leave quitting as the only
+  // way out. reject() asks first.
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(!saving);
-  if (QPushButton *cancel = ui->buttonBox->button(QDialogButtonBox::Cancel)) {
-    cancel->setEnabled(!saving);
-  }
   ui->statusLabel->setText(saving ? tr("Saving…") : QString());
 }
 
@@ -208,7 +209,17 @@ void PasswordDialog::onInsertFailed(const QString &err, bool written) {
 
 void PasswordDialog::reject() {
   if (m_saving) {
-    return;
+    const QMessageBox::StandardButton answer = QMessageBox::question(
+        this, tr("Still saving"),
+        tr("The entry is still being saved. Close the dialog anyway? If "
+           "saving then fails, what you typed is lost."),
+        QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+    // The insert may have reported while the question was up.
+    if (answer != QMessageBox::Yes || !m_saving) {
+      return;
+    }
+    // Whatever the insert reports later, the main window shows it.
+    m_saving = false;
   }
   QDialog::reject();
 }
