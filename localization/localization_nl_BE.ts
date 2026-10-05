@@ -1470,7 +1470,7 @@ U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="990"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Kon na de pull niet controleren of de opslag niet-samengevoegde bestanden bevat. Controleer hem met git voordat je opnieuw versleutelt.</translation>
+        <translation>Kon na de pull niet controleren of de opslag niet-samengevoegde bestanden bevat. Controleer hem met git voordat je opnieuw versleutelt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="996"/>
@@ -2853,7 +2853,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="461"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">Versleutelen mislukt: de GPG-sleutel van een ontvanger is niet bruikbaar. Die kan verlopen of ingetrokken zijn, geen versleutelingssubsleutel hebben of niet vertrouwd zijn; het bericht van gpg hieronder zegt welke.</translation>
+        <translation>Versleutelen mislukt: de GPG-sleutel van een ontvanger is niet bruikbaar. Die kan verlopen of ingetrokken zijn, geen versleutelingssubsleutel hebben of niet vertrouwd zijn; het bericht van gpg hieronder zegt welke.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="685"/>
@@ -2981,22 +2981,22 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="182"/>
         <source>Saving…</source>
-        <translation type="unfinished">Opslaan…</translation>
+        <translation>Opslaan…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="213"/>
         <source>Still saving</source>
-        <translation type="unfinished">Nog aan het opslaan</translation>
+        <translation>Nog aan het opslaan</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="214"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation type="unfinished">Het item wordt nog opgeslagen. Het venster toch sluiten? Als het opslaan daarna mislukt, gaat wat je hebt getypt verloren.</translation>
+        <translation>Het item wordt nog opgeslagen. Het venster toch sluiten? Als het opslaan daarna mislukt, gaat wat je hebt getypt verloren.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="231"/>
         <source>Not saved: %1</source>
-        <translation type="unfinished">Niet opgeslagen: %1</translation>
+        <translation>Niet opgeslagen: %1</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>
@@ -3354,12 +3354,12 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="125"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
-        <translation type="unfinished">De koppeling %1 is verwijderd, maar git kon dat niet vastleggen: %2</translation>
+        <translation>De koppeling %1 is verwijderd, maar git kon dat niet vastleggen: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="127"/>
         <source>Delete incomplete</source>
-        <translation type="unfinished">Verwijderen onvolledig</translation>
+        <translation>Verwijderen onvolledig</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="229"/>

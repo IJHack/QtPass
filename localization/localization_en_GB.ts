@@ -1466,7 +1466,7 @@ You will not be able to decrypt any newly added passwords!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="990"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</translation>
+        <translation>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="996"/>
@@ -2842,7 +2842,7 @@ Continue?</translation>
     <message>
         <location filename="../src/pass.cpp" line="461"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</translation>
+        <translation>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="685"/>
@@ -2970,22 +2970,22 @@ Continue?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="182"/>
         <source>Saving…</source>
-        <translation type="unfinished">Saving…</translation>
+        <translation>Saving…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="213"/>
         <source>Still saving</source>
-        <translation type="unfinished">Still saving</translation>
+        <translation>Still saving</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="214"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation type="unfinished">The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</translation>
+        <translation>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="231"/>
         <source>Not saved: %1</source>
-        <translation type="unfinished">Not saved: %1</translation>
+        <translation>Not saved: %1</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>
@@ -3343,12 +3343,12 @@ Continue?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="125"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
-        <translation type="unfinished">The link %1 was removed, but git could not record it: %2</translation>
+        <translation>The link %1 was removed, but git could not record it: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="127"/>
         <source>Delete incomplete</source>
-        <translation type="unfinished">Delete incomplete</translation>
+        <translation>Delete incomplete</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="229"/>
