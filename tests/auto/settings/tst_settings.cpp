@@ -457,7 +457,8 @@ void tst_settings::setAndGetMultipleProfiles() {
   QCOMPARE(readProfiles["profile1"].path, QString("/path/to/store1"));
   QCOMPARE(readProfiles["profile2"].path, QString("/path/to/store2"));
   // Git flags stay unset (follow the global setting) unless written (#112)
-  for (const QString &profileName : {"profile1", "profile2"}) {
+  for (const QString &profileName :
+       QStringList{QStringLiteral("profile1"), QStringLiteral("profile2")}) {
     QVERIFY2(!readProfiles[profileName].useGit.has_value(),
              "useGit must be unset for a fresh profile");
     QVERIFY(!readProfiles[profileName].autoPush.has_value());

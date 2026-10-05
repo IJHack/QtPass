@@ -96,12 +96,16 @@ void RealPass::Remove(QString file, bool isDir) {
       // With the store's environment (PASSWORD_STORE_DIR), as executePass.
       QString known;
       QString err;
-      Executor::executeBlocking(exec.environment(), m_settings.passExecutable,
-                                {"git", "ls-files", "--", rel}, &known, &err);
-      if (!known.trimmed().isEmpty()) {
-        Executor::executeBlocking(exec.environment(), m_settings.passExecutable,
-                                  {"git", "rm", "-q", "--cached", "--", rel},
-                                  &known, &err);
+      // A failed lookup or rm leaves git as it was: the link is gone from
+      // disk either way, and there is nothing to commit.
+      const bool listed =
+          Executor::executeBlocking(
+              exec.environment(), m_settings.passExecutable,
+              {"git", "ls-files", "--", rel}, &known, &err) == 0;
+      if (listed && !known.trimmed().isEmpty() &&
+          Executor::executeBlocking(
+              exec.environment(), m_settings.passExecutable,
+              {"git", "rm", "-q", "--cached", "--", rel}, &known, &err) == 0) {
         executePass(PASS_REMOVE,
                     {"git", "commit", "-q", "-m",
                      "Remove for " + rel + " using QtPass.", "--", rel});

@@ -1683,7 +1683,7 @@ void tst_mainwindow::menuBarCanBeHiddenAndComesBackWithCtrlM() {
   m_window->show();
   QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
   m_window->activateWindow();
-  QTest::qWaitForWindowActive(m_window.data());
+  QVERIFY(QTest::qWaitForWindowActive(m_window.data()));
   QTest::keyClick(m_window.get(), Qt::Key_M, Qt::ControlModifier);
   QVERIFY2(m_window->menuBar()->isVisibleTo(m_window.get()),
            "Ctrl+M brings the bar back");
