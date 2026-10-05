@@ -72,6 +72,13 @@ auto RealPass::insertWritten() const -> bool {
          QFileInfo::exists(m_insertTarget);
 }
 
+/**
+ * @brief Remove an entry with pass, unlinking linked folders locally without
+ * deleting their targets. Commit a linked folder's removal only when Git is
+ * enabled and the tracking lookup and index removal commands report success.
+ * @param file Store-relative entry path, without .gpg for a password file.
+ * @param isDir true to remove a directory; false to remove a password file.
+ */
 void RealPass::Remove(QString file, bool isDir) {
   // Nothing behind a link is the store's to delete.
   if (refuseLinkedPath(isDir ? file : file + ".gpg", false)) {

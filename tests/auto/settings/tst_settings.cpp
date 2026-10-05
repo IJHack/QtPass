@@ -441,6 +441,10 @@ void tst_settings::setAndGetPasswordChars() {
   QtPassSettings::save(toSave);
 }
 
+/**
+ * @brief Verify that multiple profiles retain their paths after saving and
+ * loading, and that unset Git options continue to inherit the global settings.
+ */
 void tst_settings::setAndGetMultipleProfiles() {
   Profiles profiles;
   Profile profile1;
