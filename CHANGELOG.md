@@ -8,7 +8,9 @@
   dialog closed as soon as OK was pressed and gpg ran afterwards, so a missing
   or expired recipient key or an unusable `.gpg-id` lost the entry. The dialog
   now stays open until the entry is written, locked and showing "Saving…"; on
-  failure the fields come back with the reason
+  failure the fields come back with the reason. Cancel, Esc and closing the window
+  still work while it waits, after asking, so a save that never reports (an
+  unanswered PIN prompt) cannot trap you
   ([#1944](https://github.com/IJHack/QtPass/issues/1944), ported from
   [#1951](https://github.com/IJHack/QtPass/pull/1951))
 
