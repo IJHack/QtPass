@@ -352,7 +352,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation>Use pwgen</translation>
+        <translation type="unfinished">pwgen 사용</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="759"/>

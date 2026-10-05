@@ -352,7 +352,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation>Use pwgen</translation>
+        <translation type="unfinished">pwgen භාවිතා කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="759"/>
@@ -2023,7 +2023,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">&lt;p&gt;QtPass යනු සම්මත Unix මුරපද කළමනාකරු වන &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; සඳහා GUI එකකි.&lt;/p&gt;
 &lt;p&gt;මෙම මෘදුකාංගය සමඟ ඔබට ඇති විය හැකි ඕනෑම &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;ගැටලුවක්&lt;/a&gt; වාර්තා කරන්න.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;ලේඛනකරණය&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</translation>
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;මූලාශ්‍ර කේතය&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
