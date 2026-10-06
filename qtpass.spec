@@ -61,7 +61,7 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %changelog
-* Mon Oct 05 2026 Anne Jan Brouwer <qtpass@annejan.com> 1.8.3
+* Tue Oct 06 2026 Anne Jan Brouwer <qtpass@annejan.com> 1.8.3
 - Updated QtPass
 
 * Thu Sep 24 2026 Anne Jan Brouwer <qtpass@annejan.com> 1.8.2
