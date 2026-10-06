@@ -158,7 +158,7 @@
         "requirements": "pass or git and gpg2",
         "license": "https://www.gnu.org/licenses/gpl-3.0.html",
         "screenshot": "https://qtpass.org/images/qtpass.png?v=1.8.2-6",
-        "softwareVersion": "1.8.2",
+        "softwareVersion": "1.8.3",
         "applicationCategory": "SecurityApplication",
         "applicationSubCategory": "Password manager",
         "description": "QtPass is a free, open-source desktop password manager for pass, the standard Unix password manager: passwords are GnuPG-encrypted files you control, synced with Git, on Linux, Windows, macOS and BSD.",
@@ -354,6 +354,39 @@
       </aside>
       <main id="main">
         <h1>QtPass changelog</h1>
+        <h2>
+          <a
+            id="v1.8.3"
+            class="anchor"
+            href="#v1.8.3"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span class="octicon octicon-link"></span></a
+          >v1.8.3
+        </h2>
+
+        <p>
+          Bug-fix release on the 1.8 line. Qt 5.15 and Qt 6 are both still
+          supported.
+        </p>
+
+        <h3>Bug Fixes</h3>
+        <ul>
+          <li>
+            Saving an entry no longer loses what was typed when it fails. The
+            password dialog stays open until the entry is written; when
+            encryption fails (a missing or expired recipient key, an unusable
+            <code>.gpg-id</code>) the fields come back with the reason. Cancel
+            still works while it waits, after asking
+          </li>
+        </ul>
+
+        <p>
+          <a href="https://github.com/IJHack/QtPass/compare/v1.8.2...v1.8.3"
+            >Full Changelog</a
+          >
+        </p>
+
         <h2>
           <a
             id="v1.8.2"
