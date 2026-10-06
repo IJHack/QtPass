@@ -1433,7 +1433,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="990"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Kunde inte kontrollera om lagret har osammanfogade filer efter pull. Kontrollera det med git innan du krypterar om.</translation>
+        <translation>Kunde inte kontrollera om lagret har osammanfogade filer efter pull. Kontrollera det med git innan du krypterar om.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="996"/>
@@ -2732,7 +2732,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="461"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">Krypteringen misslyckades: en mottagares GPG-nyckel kan inte användas. Den kan ha gått ut eller återkallats, sakna en krypteringsundernyckel eller inte vara betrodd; meddelandet från gpg nedan säger vilket.</translation>
+        <translation>Krypteringen misslyckades: en mottagares GPG-nyckel kan inte användas. Den kan ha gått ut eller återkallats, saknar krypteringsundernyckel eller inte är betrodd; gpg:s meddelande nedan anger vilket.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="685"/>
@@ -2860,22 +2860,22 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="182"/>
         <source>Saving…</source>
-        <translation type="unfinished">Sparar…</translation>
+        <translation>Sparar…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="213"/>
         <source>Still saving</source>
-        <translation type="unfinished">Sparar fortfarande</translation>
+        <translation>Sparar fortfarande</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="214"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation type="unfinished">Posten sparas fortfarande. Stäng dialogen ändå? Om sparandet sedan misslyckas går det du skrivit förlorat.</translation>
+        <translation>Posten sparas fortfarande. Stäng dialogen ändå? Om sparandet sedan misslyckas går det du skrivit förlorat.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="231"/>
         <source>Not saved: %1</source>
-        <translation type="unfinished">Inte sparad: %1</translation>
+        <translation>Inte sparad: %1</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>
@@ -3233,12 +3233,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="125"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
-        <translation type="unfinished">Länken %1 togs bort, men git kunde inte registrera det: %2</translation>
+        <translation>Länken %1 togs bort, men git kunde inte registrera det: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="127"/>
         <source>Delete incomplete</source>
-        <translation type="unfinished">Borttagning ofullständig</translation>
+        <translation>Borttagning ofullständig</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="229"/>
