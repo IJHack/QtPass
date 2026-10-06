@@ -71,7 +71,7 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="1.8.3" date="2026-10-05">
+    <release version="1.8.3" date="2026-10-06">
       <url>https://github.com/IJHack/QtPass/releases/tag/v1.8.3</url>
       <description>
         <p>Bug-fix release: a failed save no longer loses what was typed. The password dialog stays open until the entry is written and shows why when encryption fails, and a save that never finishes can still be cancelled.</p>

@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.8.3](https://github.com/IJHack/QtPass/tree/v1.8.3) (2026-10-05)
+## [1.8.3](https://github.com/IJHack/QtPass/tree/v1.8.3) (2026-10-06)
 
 ### Bugfixes
 
