@@ -115,8 +115,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/IJHack/QtPass.git
-        tag: v1.8.2
-        commit: 71122182ddaef33d83c60868a7baff4a85442f1a
+        tag: v1.8.3
+        commit: dadb11b7638603421acedea6f0e0cf034e0a93df
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
