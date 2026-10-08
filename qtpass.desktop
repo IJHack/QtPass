@@ -37,3 +37,4 @@ Icon=qtpass-icon
 Terminal=false
 Categories=Security;Utility;
 Keywords=Password;Manager;Qt;
+StartupWMClass=org.ijhack.qtpass
