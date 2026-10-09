@@ -395,7 +395,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">Sistema</translation>
+        <translation>Sistema</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
@@ -405,18 +405,18 @@
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">Extensións</translation>
+        <translation>Complementos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished">Mostrar códigos QR (qrencode)</translation>
+        <translation>Mostrar códigos QR (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Never</source>
-        <translation type="unfinished">Nunca</translation>
+        <translation>Nunca</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -427,68 +427,68 @@
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished">Panel de contido</translation>
+        <translation>Panel de contido</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished">Precisa dun modo de portapapeis na páxina Portapapeis para que un contrasinal oculto se poida copiar igualmente</translation>
+        <translation>Precisa dun modo de portapapeis na páxina Portapapeis para que un contrasinal oculto se poida copiar igualmente</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished">Mostrar o contido do ficheiro tal como é</translation>
+        <translation>Mostrar o contido do ficheiro tal como é</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
         <source>Password generation</source>
-        <translation type="unfinished">Xerar Contrasinal</translation>
+        <translation>Xerar contrasinais</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="626"/>
         <source>characters</source>
-        <translation type="unfinished">Caracteres</translation>
+        <translation>caracteres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation type="unfinished">Usar pwgen</translation>
+        <translation>Usar pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished">Buscar gpg, git, pwgen e pass no PATH</translation>
+        <translation>Buscar gpg, git, pwgen e pass no PATH</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
         <source>git</source>
-        <translation type="unfinished">git</translation>
+        <translation>git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
         <source>gpg</source>
-        <translation type="unfinished">gpg</translation>
+        <translation>gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1158"/>
         <source>pwgen</source>
-        <translation type="unfinished">pwgen</translation>
+        <translation>pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Ruta opcional para sobrescribir SSH_AUTH_SOCK. Deixa baleiro para detección automática mediante gpgconf.</translation>
+        <translation>Ruta opcional para sobrescribir SSH_AUTH_SOCK. Deixa baleiro para detección automática mediante gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1328"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished">Os almacéns de contrasinais que coñece este QtPass; escolle un para editalo</translation>
+        <translation>Os almacéns de contrasinais que coñece este QtPass; escolle un para editalo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1343"/>
         <source>Add a profile</source>
-        <translation type="unfinished">Engadir un perfil</translation>
+        <translation>Engadir un perfil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1361"/>
