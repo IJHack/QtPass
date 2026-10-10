@@ -13,7 +13,7 @@
 # version (sw.js, the pages, tools/build-page.py) after replacing them.
 #
 # Needs Plasma 6, e.g. Ubuntu 25.10 (a debootstrap chroot will do):
-# qt6-base-dev qmake6 qt6-tools-dev-tools qt6-l10n-tools qt6-svg-dev breeze
+# qt6-base-dev qmake6 qt6-tools-dev-tools qt6-l10n-tools qt6-svg-dev qt6-svg-plugins breeze
 # breeze-icon-theme kwin-x11 plasma-integration xvfb x11-utils
 # x11-xserver-utils xdotool dbus-x11 imagemagick webp pngquant pass
 # pwgen qrencode fonts-noto-core
