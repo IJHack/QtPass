@@ -10,15 +10,11 @@ on:
     tags:
       - "v*"
   merge_group:
-  # A manual run builds the installers for the chosen ref and, once SignPath
-  # is configured, signs the Windows one; this is how a signing setup change
-  # is tried out with the test certificate before a release.
+  # A manual run builds the installers for the chosen ref. Run on main it
+  # also signs the Windows one, which is how a signing setup change is tried
+  # out before a release; on any other branch the build is unsigned. (No
+  # inputs: Checkov CKV_GHA_7 wants the build defined by the ref alone.)
   workflow_dispatch:
-    inputs:
-      sign:
-        description: Sign the Windows build (main and v* tags only)
-        type: boolean
-        default: true
 
 permissions:
   contents: read
@@ -68,11 +64,10 @@ jobs:
     needs: changes
     runs-on: windows-latest
     # The SignPath token is a secret of the signpath environment, whose
-    # deployment rules admit v* tags and main only: a manual run on any other
-    # branch, or a pull request, never sees it. Pull requests, and manual runs
-    # with "sign" unticked, do not enter the environment at all, so those
-    # build an unsigned installer from any branch.
-    environment: ${{ (startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.sign)) && 'signpath' || '' }}
+    # deployment rules admit v* tags and main only. Pull requests and manual
+    # runs on other branches do not enter the environment at all, so they
+    # build an unsigned installer instead of being blocked.
+    environment: ${{ (startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')) && 'signpath' || '' }}
     steps:
       - name: Check if build needed
         id: need_build
@@ -98,7 +93,7 @@ jobs:
         run: echo "No relevant changes - skipping Windows build"
 
       # Code signing through the SignPath Foundation: tag pushes and manual
-      # runs only, and only once the SIGNPATH_API_TOKEN secret exists (in the
+      # runs on main only, and only once the SIGNPATH_API_TOKEN secret exists (in the
       # signpath environment). Pull requests never sign. The organization id is the repository variable
       # SIGNPATH_ORGANIZATION_ID; SIGNPATH_SIGNING_POLICY_SLUG can override
       # the policy, release-signing (SignPath's test certificate until the
@@ -109,7 +104,7 @@ jobs:
         shell: bash
         run: |
           if [[ "${HAS_TOKEN}" == "true" && -n "${ORGANIZATION_ID}" ]] && \
-             [[ "${GITHUB_REF}" =~ ^refs/tags/v || "${GITHUB_EVENT_NAME}/${SIGN}" == "workflow_dispatch/true" ]]; then
+             [[ "${GITHUB_REF}" =~ ^refs/tags/v || "${GITHUB_EVENT_NAME}:${GITHUB_REF}" == "workflow_dispatch:refs/heads/main" ]]; then
             echo "enabled=true" >> "$GITHUB_OUTPUT"
             echo "Signing with SignPath policy '${POLICY}'"
           else
@@ -119,7 +114,6 @@ jobs:
         env:
           HAS_TOKEN: ${{ secrets.SIGNPATH_API_TOKEN != '' }}
           ORGANIZATION_ID: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
-          SIGN: ${{ inputs.sign }}
           POLICY: ${{ vars.SIGNPATH_SIGNING_POLICY_SLUG || 'release-signing' }}
 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
