@@ -1,0 +1,6 @@
+hunter2
+login: alice
+url: https://example.org/login
+otpauth://totp/Example:alice?secret=JBSWY3DPEHPK3PXP&issuer=Example
+notes go here
+more: lines: with colons

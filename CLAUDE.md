@@ -41,6 +41,8 @@ make check
 ./tests/auto/util/tst_util -v2
 ```
 
+Fuzz targets (libFuzzer, clang) for the untrusted-input parsers live in `tests/fuzz/`; `tests/fuzz/build.sh OUTDIR` builds them against an instrumented `src/` library, then run e.g. `OUTDIR/fuzz_totp -max_total_time=60 tests/fuzz/corpus/fuzz_totp`. The Fuzz workflow runs them on changes and weekly.
+
 ## Linting
 
 ```bash

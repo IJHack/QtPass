@@ -1,0 +1,1 @@
+otpauth://totp/Steam:me?secret=JBSWY3DPEHPK3PXP&encoder=steam

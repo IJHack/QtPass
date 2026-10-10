@@ -113,10 +113,11 @@ jobs:
       # accepts KEY=value lines — no comments, no blank lines, alphabetical
       # order (dotenv-linter rule). Rationale for the non-obvious vars:
       #
-      # FILTER_REGEX_EXCLUDE=^localization/ — skips translation files from
-      #   all linters (codespell isn't language-aware and flags valid
-      #   Afrikaans/etc. words as English typos). The .codespellrc `skip`
-      #   directive can't do this because super-linter passes files
+      # FILTER_REGEX_EXCLUDE=^(localization|tests/fuzz/corpus)/ — skips
+      #   translation files from all linters (codespell isn't language-aware
+      #   and flags valid Afrikaans/etc. words as English typos), and the
+      #   fuzzer seed inputs, which are raw bytes on purpose. The .codespellrc
+      #   `skip` directive can't do this because super-linter passes files
       #   individually to codespell, bypassing its file-discovery layer.
       # STRIP_DEFAULT_WORKSPACE_FOR_REGEX=true — make FILTER_REGEX_*
       #   regexes match against workspace-relative paths instead of

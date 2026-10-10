@@ -628,6 +628,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Tests
 
+- libFuzzer targets for the parsers a shared store feeds: entry text
+  (`FileContent`), `otpauth://` URIs and base32 (`Totp`), `.gpg-id` headers
+  and recipient lines, and `gpg --with-colons` output. They check
+  round trips where the API promises one, run under ASan and UBSan, and a
+  Fuzz workflow runs them on changes and weekly (`tests/fuzz/`)
 - 36 test suites (24 in 1.8.0); line coverage from 78.8% to 92.7% with
   tests for the main window, settings dialog, first-run wizard, tray, backends,
   profile init, single instance and every dialog

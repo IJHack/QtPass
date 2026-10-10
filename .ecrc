@@ -1,5 +1,6 @@
 {
   "Exclude": [
-    "^localization/.*\\.ts$"
+    "^localization/.*\\.ts$",
+    "^tests/fuzz/corpus/"
   ]
 }

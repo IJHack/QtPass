@@ -1,0 +1,101 @@
+---
+name: Fuzz
+
+# libFuzzer targets for the parsers that read what a shared store (or a key
+# imported from it) can put in front of QtPass; see tests/fuzz/. Short runs
+# on changes, longer weekly runs, the corpus kept between runs in the cache.
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "src/**"
+      - "tests/fuzz/**"
+      - ".github/workflows/fuzz.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "src/**"
+      - "tests/fuzz/**"
+      - ".github/workflows/fuzz.yml"
+  schedule:
+    - cron: "17 3 * * 0"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  fuzz:
+    name: libFuzzer (ASan + UBSan)
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@a9c63c7c123f3069cff414e7e482d95dfa9d8125 # v4.4.1
+        with:
+          # The floor QtPass supports, as in the other workflows.
+          version: "6.8"
+          cache: true
+
+      - name: Install the libFuzzer runtime
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang-18 libclang-rt-18-dev
+
+      - name: Build the fuzz targets
+        env:
+          CXX: clang++-18
+        run: tests/fuzz/build.sh "$RUNNER_TEMP/fuzz"
+
+      # The corpus grows run by run: restore the newest one, save under a
+      # new key afterwards.
+      - name: Restore the corpus
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: fuzz-corpus
+          key: fuzz-corpus-${{ github.run_id }}
+          restore-keys: fuzz-corpus-
+
+      - name: Fuzz
+        env:
+          # Seconds per target: a quick look on changes, longer every week.
+          SECONDS_PER_TARGET: ${{ github.event_name == 'schedule' && '600' || '120' }}
+        run: |
+          set -euo pipefail
+          mkdir -p crashes
+          status=0
+          for target in "$RUNNER_TEMP"/fuzz/fuzz_*; do
+            name="$(basename "$target")"
+            mkdir -p "fuzz-corpus/$name" "crashes/$name"
+            echo "::group::$name"
+            # New inputs go into the first directory; the seeds in the
+            # repository are read but never written.
+            if ! "$target" -max_total_time="$SECONDS_PER_TARGET" \
+                -timeout=10 -rss_limit_mb=2048 \
+                -artifact_prefix="crashes/$name/" \
+                "fuzz-corpus/$name" "tests/fuzz/corpus/$name"; then
+              echo "::error::$name found a crash; the input is in the fuzz-crashes artifact"
+              status=1
+            fi
+            echo "::endgroup::"
+          done
+          exit "$status"
+
+      - name: Save the corpus
+        if: always()
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: fuzz-corpus
+          key: fuzz-corpus-${{ github.run_id }}
+
+      - name: Upload crashing inputs
+        if: failure()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: fuzz-crashes
+          path: crashes/
+          retention-days: 30
