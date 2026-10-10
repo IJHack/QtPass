@@ -47,6 +47,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### New Features
 
+- Windows code signing through the [SignPath Foundation](https://signpath.org/):
+  the release workflow has `qtpass.exe` and then the installer signed, each
+  after manual approval in SignPath. The bundled Qt libraries stay as Qt
+  ships them. `qtpass.exe` and the installer now carry product name and
+  version information ([#1643](https://github.com/IJHack/QtPass/issues/1643))
 - Field names in the password dialog can be edited in place: double-click a
   `key: value` field's label (or use Rename in its context menu) to change
   the key; the × at the end of the value, or the context menu, removes the
