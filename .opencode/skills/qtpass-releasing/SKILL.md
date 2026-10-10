@@ -20,7 +20,9 @@ Update version in all build files:
   names and fails if it cannot, so nothing else needs a fallback.
 - `qtpass.spec` - `Version:` (and reset `Release:` to 1, add a `%changelog`
   entry)
-- `qtpass.iss` - `#define MyAppVersion`
+- `qtpass.iss` - `#define MyAppVersion` and `#define MyAppNumericVersion`
+  (the numeric one has no `-rcN` suffix; it goes into the Windows version
+  resource that code signing checks)
 - `Doxyfile` - `PROJECT_NUMBER`
 - `org.qtpass.QtPass.metainfo.xml` - a new `<release version="X.Y.Z" date="...">` entry
 - `publiccode.yml` - `softwareVersion` and `releaseDate`

@@ -10,6 +10,10 @@ on:
     tags:
       - "v*"
   merge_group:
+  # A manual run builds the installers for the chosen ref and, once SignPath
+  # is configured, signs the Windows one; this is how a signing setup change
+  # is tried out with the test certificate before a release.
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -67,6 +71,7 @@ jobs:
              [[ "${NEEDS_CHANGES_OUTPUTS_TESTS}" == "true" ]] || \
              [[ "${NEEDS_CHANGES_OUTPUTS_QT}" == "true" ]] || \
              [[ "${{ github.event_name }}" == "merge_group" ]] || \
+             [[ "${{ github.event_name }}" == "workflow_dispatch" ]] || \
              [[ "${GITHUB_REF}" =~ ^refs/tags/v ]]; then
             echo "run_build=true" >> "$GITHUB_OUTPUT"
           else
@@ -80,6 +85,30 @@ jobs:
       - name: No changes - skipping
         if: steps.need_build.outputs.run_build != 'true'
         run: echo "No relevant changes - skipping Windows build"
+
+      # Code signing through the SignPath Foundation: tag pushes and manual
+      # runs only, and only once the SIGNPATH_API_TOKEN secret exists. Pull
+      # requests never sign. The organization id is the repository variable
+      # SIGNPATH_ORGANIZATION_ID; SIGNPATH_SIGNING_POLICY_SLUG can override
+      # the policy, release-signing (SignPath's test certificate until the
+      # production one is imported; every request waits for an approver).
+      - name: Decide on code signing
+        if: steps.need_build.outputs.run_build == 'true'
+        id: signing
+        shell: bash
+        run: |
+          if [[ "${HAS_TOKEN}" == "true" && -n "${ORGANIZATION_ID}" ]] && \
+             [[ "${GITHUB_REF}" =~ ^refs/tags/v || "${GITHUB_EVENT_NAME}" == "workflow_dispatch" ]]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "Signing with SignPath policy '${POLICY}'"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "Not signing (pull request, or SignPath not configured)"
+          fi
+        env:
+          HAS_TOKEN: ${{ secrets.SIGNPATH_API_TOKEN != '' }}
+          ORGANIZATION_ID: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+          POLICY: ${{ vars.SIGNPATH_SIGNING_POLICY_SLUG || 'release-signing' }}
 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         if: steps.need_build.outputs.run_build == 'true'
@@ -118,9 +147,17 @@ jobs:
             }
           }
 
-          Write-Output "version=$version" >> $env:GITHUB_OUTPUT
+          # Windows version resources take four numbers only, so a
+          # pre-release tag like 2.0.0-rc2 is 2.0.0 there.
+          if ($version -notmatch '^([0-9]+\.[0-9]+\.[0-9]+)') {
+            throw "Version '$version' does not start with major.minor.patch"
+          }
+          $numeric = $matches[1]
 
-      - name: Build Windows installer
+          Write-Output "version=$version" >> $env:GITHUB_OUTPUT
+          Write-Output "numeric=$numeric" >> $env:GITHUB_OUTPUT
+
+      - name: Build and stage qtpass.exe
         if: steps.need_build.outputs.run_build == 'true'
         shell: pwsh
         run: |
@@ -144,9 +181,88 @@ jobs:
 
           windeployqt --release --dir dist\qtpass dist\qtpass\qtpass.exe
 
-          iscc "/DMyAppVersion=$env:STEPS_VERSION_OUTPUTS_VERSION" qtpass.iss
+          # SignPath refuses a binary without the product name and version
+          # it expects; show what the version resource carries.
+          (Get-Item dist\qtpass\qtpass.exe).VersionInfo |
+            Format-List ProductName, ProductVersion, FileDescription, FileVersion, CompanyName, LegalCopyright
+
+      # Only qtpass.exe is ours to sign. The Qt libraries windeployqt copies
+      # in stay as Qt ships them (SignPath Foundation terms: no upstream
+      # binaries under the project certificate).
+      - name: Upload unsigned qtpass.exe for signing
+        if: steps.signing.outputs.enabled == 'true'
+        id: upload-unsigned-exe
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: unsigned-qtpass-exe-${{ steps.version.outputs.version }}
+          path: dist/qtpass/qtpass.exe
+          retention-days: 1
+
+      - name: Sign qtpass.exe
+        if: steps.signing.outputs.enabled == 'true'
+        uses: signpath/github-action-submit-signing-request@f6d04783b4569d051e0c80105fe66e82819d0092 # v3.0
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+          project-slug: ${{ vars.SIGNPATH_PROJECT_SLUG || 'QtPass' }}
+          signing-policy-slug: ${{ vars.SIGNPATH_SIGNING_POLICY_SLUG || 'release-signing' }}
+          github-artifact-id: ${{ steps.upload-unsigned-exe.outputs.artifact-id }}
+          # release-signing waits for an approver in SignPath.
+          wait-for-completion-timeout-in-seconds: 7200
+          output-artifact-directory: signed/exe
+
+      - name: Use the signed qtpass.exe
+        if: steps.signing.outputs.enabled == 'true'
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          Copy-Item signed\exe\qtpass.exe dist\qtpass\qtpass.exe -Force
+          $sig = Get-AuthenticodeSignature dist\qtpass\qtpass.exe
+          if (-not $sig.SignerCertificate) { throw "qtpass.exe came back unsigned" }
+          Write-Output "qtpass.exe: $($sig.Status), $($sig.SignerCertificate.Subject)"
+
+      - name: Build Windows installer
+        if: steps.need_build.outputs.run_build == 'true'
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          iscc "/DMyAppVersion=$env:VERSION" "/DMyAppNumericVersion=$env:NUMERIC" qtpass.iss
         env:
-          STEPS_VERSION_OUTPUTS_VERSION: ${{ steps.version.outputs.version }}
+          VERSION: ${{ steps.version.outputs.version }}
+          NUMERIC: ${{ steps.version.outputs.numeric }}
+
+      - name: Upload unsigned installer for signing
+        if: steps.signing.outputs.enabled == 'true'
+        id: upload-unsigned-installer
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: unsigned-qtpass-windows-installer-${{ steps.version.outputs.version }}
+          path: Output/qtpass-*.exe
+          retention-days: 1
+
+      - name: Sign the installer
+        if: steps.signing.outputs.enabled == 'true'
+        uses: signpath/github-action-submit-signing-request@f6d04783b4569d051e0c80105fe66e82819d0092 # v3.0
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+          project-slug: ${{ vars.SIGNPATH_PROJECT_SLUG || 'QtPass' }}
+          signing-policy-slug: ${{ vars.SIGNPATH_SIGNING_POLICY_SLUG || 'release-signing' }}
+          github-artifact-id: ${{ steps.upload-unsigned-installer.outputs.artifact-id }}
+          wait-for-completion-timeout-in-seconds: 7200
+          output-artifact-directory: signed/installer
+
+      - name: Use the signed installer
+        if: steps.signing.outputs.enabled == 'true'
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $installer = Get-ChildItem signed\installer\qtpass-*.exe | Select-Object -First 1
+          if (-not $installer) { throw "SignPath returned no installer" }
+          $sig = Get-AuthenticodeSignature $installer.FullName
+          if (-not $sig.SignerCertificate) { throw "$($installer.Name) came back unsigned" }
+          Write-Output "$($installer.Name): $($sig.Status), $($sig.SignerCertificate.Subject)"
+          Copy-Item $installer.FullName Output\ -Force
 
       - name: Upload installer artifact
         if: steps.need_build.outputs.run_build == 'true'
@@ -427,6 +543,9 @@ jobs:
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           path: dist
+          # Not the unsigned-* inputs of the signing steps: the unsigned
+          # installer has the same file name as the signed one.
+          pattern: qtpass-*
           merge-multiple: true
 
       - name: Source archives
