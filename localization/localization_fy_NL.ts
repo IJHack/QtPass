@@ -1466,7 +1466,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="990"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Koe nei de pull net neigean oft de opslach net-gearfoege triemmen hat. Kontrolearje it mei git foar it opnij fersiferjen.</translation>
+        <translation>Koe nei de pull net neigean oft de opslach net-gearfoege triemmen hat. Kontrolearje it mei git foar it opnij fersiferjen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="996"/>
@@ -2838,7 +2838,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/pass.cpp" line="461"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">Fersiferjen mislearre: de GPG-kaai fan in ûntfanger is net te brûken. Dy kin ferrûn of ynlutsen wêze, gjin fersiferings-subkaai hawwe of net fertroud wêze; it berjocht fan gpg hjirûnder seit hokker.</translation>
+        <translation>Fersiferjen mislearre: de GPG-kaai fan in ûntfanger is net te brûken. Dy kin ferrûn of ynlutsen wêze, gjin fersiferings-subkaai hawwe of net fertroud wêze; it berjocht fan gpg hjirûnder seit hokker.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="685"/>
@@ -2966,22 +2966,22 @@ Trochgean?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="182"/>
         <source>Saving…</source>
-        <translation type="unfinished">Bewarje…</translation>
+        <translation>Bewarje…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="213"/>
         <source>Still saving</source>
-        <translation type="unfinished">Noch oan it bewarjen</translation>
+        <translation>Noch oan it bewarjen</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="214"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation type="unfinished">De ynfier wurdt noch bewarre. It dialooch dochs slute? As it bewarjen dêrnei mislearret, giet wat jo typt hawwe ferlern.</translation>
+        <translation>De ynfier wurdt noch bewarre. It dialooch dochs slute? As it bewarjen dêrnei mislearret, giet wat jo typt hawwe ferlern.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="231"/>
         <source>Not saved: %1</source>
-        <translation type="unfinished">Net bewarre: %1</translation>
+        <translation>Net bewarre: %1</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>
@@ -3339,12 +3339,12 @@ Trochgean?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="125"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
-        <translation type="unfinished">De keppeling %1 is fuorthelle, mar git koe it net fêstlizze: %2</translation>
+        <translation>De keppeling %1 is fuorthelle, mar git koe it net fêstlizze: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="127"/>
         <source>Delete incomplete</source>
-        <translation type="unfinished">Wiskjen net foltôge</translation>
+        <translation>Wiskjen net foltôge</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="229"/>
