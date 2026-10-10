@@ -48,7 +48,7 @@
         <location filename="../src/configdialog.ui" line="339"/>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Never</source>
-        <translation type="unfinished">Ni</translation>
+        <translation>Ni</translation>
     </message>
     <message>
         <source>Seconds</source>
@@ -150,7 +150,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1477"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished">De komplette Schlëssel-Fangerofdrock mat 40 Zeechen, wéi pass e verlaangt</translation>
+        <translation>De komplette Schlëssel-Fangerofdrock mat 40 Zeechen, wéi pass e verlaangt</translation>
     </message>
     <message>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
@@ -207,7 +207,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="212"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Ënnerstëtzung fir Eemolpasswierder (OTP) aktivéieren</translation>
+        <translation>Ënnerstëtzung fir Eemolpasswierder (OTP) aktivéieren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
@@ -235,7 +235,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="169"/>
         <source>Hide on close</source>
-        <translation type="unfinished">Beim Zoumaache verstoppen</translation>
+        <translation>Beim Zoumaache verstoppen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="178"/>
@@ -250,18 +250,18 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">Allgemeng</translation>
+        <translation>Allgemeng</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <location filename="../src/configdialog.ui" line="293"/>
         <source>Clipboard</source>
-        <translation type="unfinished">Clipboard</translation>
+        <translation>Clipboard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
         <source>Passwords</source>
-        <translation type="unfinished">Passwierder</translation>
+        <translation>Passwierder</translation>
     </message>
     <message>
         <source>Show menu bar</source>
@@ -288,22 +288,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="810"/>
         <source>Fields:</source>
-        <translation type="unfinished">Felder:</translation>
+        <translation>Felder:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="824"/>
         <source>Off</source>
-        <translation type="unfinished">Aus</translation>
+        <translation>Aus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="829"/>
         <source>Template fields</source>
-        <translation type="unfinished">Schablounfelder</translation>
+        <translation>Schablounfelder</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="834"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
-        <translation type="unfinished">Schablounfelder an all &quot;key: value&quot;-Linn</translation>
+        <translation>Schablounfelder an all &quot;key: value&quot;-Linn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
@@ -324,13 +324,13 @@
         <location filename="../src/configdialog.ui" line="1100"/>
         <location filename="../src/configdialog.ui" line="1103"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished">Wielt d&apos;ausféierbar gpg-Datei</translation>
+        <translation>Wielt d&apos;ausféierbar gpg-Datei</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1113"/>
         <location filename="../src/configdialog.ui" line="1116"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished">Wielt d&apos;ausféierbar git-Datei</translation>
+        <translation>Wielt d&apos;ausféierbar git-Datei</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1132"/>
@@ -346,7 +346,7 @@
         <location filename="../src/configdialog.ui" line="1168"/>
         <location filename="../src/configdialog.ui" line="1171"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished">Wielt d&apos;ausféierbar pwgen-Datei</translation>
+        <translation>Wielt d&apos;ausféierbar pwgen-Datei</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1184"/>
@@ -362,7 +362,7 @@
         <location filename="../src/configdialog.ui" line="1208"/>
         <location filename="../src/configdialog.ui" line="1211"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished">Wielt d&apos;ausféierbar pass-Datei</translation>
+        <translation>Wielt d&apos;ausféierbar pass-Datei</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1223"/>
@@ -396,109 +396,109 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished">Affichage</translation>
+        <translation>Affichage</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">System</translation>
+        <translation>System</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Benotzt System Schacht Ikon</translation>
+        <translation>Benotzt System Schacht Ikon</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">Erweiterungen</translation>
+        <translation>Erweiterungen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished">QR-Coden weisen (qrencode)</translation>
+        <translation>QR-Coden weisen (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekonnen</translation>
+        <translation>Sekonnen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished">Inhaltsberäich</translation>
+        <translation>Inhaltsberäich</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished">Brauch e Clipboard-Modus op der Säit Clipboard, sou datt e verstoppt Passwuert nach ëmmer kopéiert ka ginn</translation>
+        <translation>Brauch e Clipboard-Modus op der Säit Clipboard, sou datt e verstoppt Passwuert nach ëmmer kopéiert ka ginn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished">Den Inhalt vum Fichier esou weisen, wéi e steet</translation>
+        <translation>Den Inhalt vum Fichier esou weisen, wéi e steet</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
         <source>Password generation</source>
-        <translation type="unfinished">Passwuert Generatioun</translation>
+        <translation>Passwuert Generatioun</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="626"/>
         <source>characters</source>
-        <translation type="unfinished">Zeechen</translation>
+        <translation>Zeechen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation type="unfinished">Benotzt pwgen</translation>
+        <translation>Benotzt pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished">gpg, git, pwgen a pass am PATH sichen</translation>
+        <translation>gpg, git, pwgen a pass am PATH sichen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
         <source>git</source>
-        <translation type="unfinished">git</translation>
+        <translation>git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
         <source>gpg</source>
-        <translation type="unfinished">gpg</translation>
+        <translation>gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1158"/>
         <source>pwgen</source>
-        <translation type="unfinished">pwgen</translation>
+        <translation>pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Optionale Pfad fir SSH_AUTH_SOCK ze iwwerschreiwen. Eidel loossen fir automatesch Detektioun via gpgconf.</translation>
+        <translation>Optionale Pfad fir SSH_AUTH_SOCK ze iwwerschreiwen. Eidel loossen fir automatesch Detektioun via gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1328"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished">D&apos;Passwuertspäicher, déi dëse QtPass kennt; wielt een aus, fir en z&apos;änneren</translation>
+        <translation>D&apos;Passwuertspäicher, déi dëse QtPass kennt; wielt een aus, fir en z&apos;änneren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1343"/>
         <source>Add a profile</source>
-        <translation type="unfinished">E Profil bäifügen</translation>
+        <translation>E Profil bäifügen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1361"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation type="unfinished">Den ausgewielte Profil vergiessen; de Späicher selwer bleift op der Festplack</translation>
+        <translation>Den ausgewielte Profil vergiessen; de Späicher selwer bleift op der Festplack</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1407"/>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
@@ -523,12 +523,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished">Git-Astellunge fir dëse Profil; si ersetzen déi op der Säit Git, soulaang en aktiv ass</translation>
+        <translation>Git-Astellunge fir dëse Profil; si ersetzen déi op der Säit Git, soulaang en aktiv ass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished">Aktive Späicher</translation>
+        <translation>Aktive Späicher</translation>
     </message>
     <message>
         <source>Signing Key</source>
@@ -555,7 +555,7 @@
         <location filename="../src/configdialog.ui" line="1540"/>
         <location filename="../src/configdialog.ui" line="1543"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Wielt den Dossier vum Passwuertspäicher</translation>
+        <translation>Wielt den Dossier vum Passwuertspäicher</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="795"/>
@@ -601,7 +601,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
         <source>No clipboard</source>
-        <translation type="unfinished">Kee Clipboard</translation>
+        <translation>Kee Clipboard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="104"/>
@@ -622,12 +622,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Another profile already has this name</source>
-        <translation type="unfinished">En anere Profil huet schonn dësen Numm</translation>
+        <translation>En anere Profil huet schonn dësen Numm</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="287"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished">Nëmme komplett Schlëssel-Fangerofdréck (40 oder 64 hexadezimal Zeechen), duerch Leerzeechen getrennt</translation>
+        <translation>Nëmme komplett Schlëssel-Fangerofdréck (40 oder 64 hexadezimal Zeechen), duerch Leerzeechen getrennt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="333"/>
@@ -685,12 +685,12 @@ De Wäert gëtt nach ëmmer gespäichert wéi agiweent.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="619"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished">Konnt de Profil %1 net initialiséieren</translation>
+        <translation>Konnt de Profil %1 net initialiséieren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="622"/>
         <source>Profile %1</source>
-        <translation type="unfinished">Profil %1</translation>
+        <translation>Profil %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="645"/>
@@ -743,7 +743,7 @@ De Wäert gëtt nach ëmmer gespäichert wéi agiweent.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished">Op Wayland net verfügbar; benotzt amplaz d&apos;Fënsterreegel &quot;Uewen halen&quot; vun Ärem Compositor</translation>
+        <translation>Op Wayland net verfügbar; benotzt amplaz d&apos;Fënsterreegel &quot;Uewen halen&quot; vun Ärem Compositor</translation>
     </message>
     <message>
         <source>Failed to create password-store at: %1</source>
@@ -839,62 +839,62 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="466"/>
         <source>Hide passwords until asked</source>
-        <translation type="unfinished">Passwierder verstoppen, bis se ugefrot ginn</translation>
+        <translation>Passwierder verstoppen, bis se ugefrot ginn</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="467"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished">Eng Ikon am System-Schacht weisen</translation>
+        <translation>Eng Ikon am System-Schacht weisen</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="468"/>
         <source>Ready</source>
-        <translation type="unfinished">Fäerdeg</translation>
+        <translation>Fäerdeg</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="469"/>
         <source>Everything else can be changed later in Settings.</source>
-        <translation type="unfinished">Alles anescht kann spéider an den Astellunge geännert ginn.</translation>
+        <translation>Alles anescht kann spéider an den Astellunge geännert ginn.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="476"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation type="unfinished">D&apos;Passwuertzeil als Punkte weisen; &quot;Passwuert weisen&quot; mécht se siichtbar</translation>
+        <translation>D&apos;Passwuertzeil als Punkte weisen; &quot;Passwuert weisen&quot; mécht se siichtbar</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="487"/>
         <source>Store: %1</source>
-        <translation type="unfinished">Späicher: %1</translation>
+        <translation>Späicher: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="489"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation type="unfinished">Et ass schonn e Passwuertspäicher a gëtt esou benotzt, wéi en ass.</translation>
+        <translation>Et ass schonn e Passwuertspäicher a gëtt esou benotzt, wéi en ass.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="491"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
-        <translation type="unfinished">E gëtt fir déi ugekräizte Schlësselen ageriicht an ënner Git gesat.</translation>
+        <translation>E gëtt fir déi ugekräizte Schlësselen ageriicht an ënner Git gesat.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="493"/>
         <source>It will be set up for the ticked keys.</source>
-        <translation type="unfinished">E gëtt fir déi ugekräizte Schlësselen ageriicht.</translation>
+        <translation>E gëtt fir déi ugekräizte Schlësselen ageriicht.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="495"/>
         <source>GnuPG: %1</source>
-        <translation type="unfinished">GnuPG: %1</translation>
+        <translation>GnuPG: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="496"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished">D&apos;Operatioune lafen iwwer pass.</translation>
+        <translation>D&apos;Operatioune lafen iwwer pass.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="497"/>
         <source>Operations run through gpg and git directly.</source>
-        <translation type="unfinished">D&apos;Operatioune lafen direkt iwwer gpg a git.</translation>
+        <translation>D&apos;Operatioune lafen direkt iwwer gpg a git.</translation>
     </message>
 </context>
 <context>
@@ -902,17 +902,17 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="158"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished">Keng ausféierbar Datei fir dëse Befehl konfiguréiert</translation>
+        <translation>Keng ausféierbar Datei fir dëse Befehl konfiguréiert</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="187"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">Konnt %1 net starten</translation>
+        <translation>Konnt %1 net starten</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="381"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished">%1 ass ofgestierzt oder gouf ofgeschoss</translation>
+        <translation>%1 ass ofgestierzt oder gouf ofgeschoss</translation>
     </message>
 </context>
 <context>
@@ -934,7 +934,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">An d&apos;Zwëscheaflag kopéieren</translation>
+        <translation>An d&apos;Zwëscheaflag kopéieren</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -991,17 +991,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">Duebelklickt, fir dëst Feld ëmzebenennen</translation>
+        <translation>Duebelklickt, fir dëst Feld ëmzebenennen</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">Feld ëmbenennen…</translation>
+        <translation>Feld ëmbenennen…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">Feld ewechhuelen</translation>
+        <translation>Feld ewechhuelen</translation>
     </message>
 </context>
 <context>
@@ -1009,44 +1009,44 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="44"/>
         <source>Browse</source>
-        <translation type="unfinished">Duerchsichen</translation>
+        <translation>Duerchsichen</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="67"/>
         <location filename="../src/firstrunwizard.cpp" line="73"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished">Wëllkomm op QtPass</translation>
+        <translation>Wëllkomm op QtPass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="76"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished">QtPass ass eng grafesch Uewerfläch fir &lt;i&gt;pass&lt;/i&gt;, de Standard-Passwuertmanager vun Unix: all Passwuert ass eng Datei, déi mat GnuPG verschlësselt ass, an engem Dossier, deen Dir ënner Git setze kënnt.&lt;br&gt;&lt;br&gt;Déi nächst Säite fannen GnuPG, suergen dofir, datt Dir e Schlëssel hutt, op deen Dir verschlëssele kënnt, a wielen den Dossier, an deem Är Passwierder leien. Näischt gëtt geschriwwen, bis Dir op Fäerdeg klickt.</translation>
+        <translation>QtPass ass eng grafesch Uewerfläch fir &lt;i&gt;pass&lt;/i&gt;, de Standard-Passwuertmanager vun Unix: all Passwuert ass eng Datei, déi mat GnuPG verschlësselt ass, an engem Dossier, deen Dir ënner Git setze kënnt.&lt;br&gt;&lt;br&gt;Déi nächst Säite fannen GnuPG, suergen dofir, datt Dir e Schlëssel hutt, op deen Dir verschlëssele kënnt, a wielen den Dossier, an deem Är Passwierder leien. Näischt gëtt geschriwwen, bis Dir op Fäerdeg klickt.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="128"/>
         <source>Error</source>
-        <translation type="unfinished">Feeler</translation>
+        <translation>Feeler</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="129"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">Konnt de Passwuertspeicher net op %1 erstellen</translation>
+        <translation>Konnt de Passwuertspeicher net op %1 erstellen</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="147"/>
         <location filename="../src/firstrunwizard.cpp" line="171"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Passwuertgeschäft net initialiséiert</translation>
+        <translation>Passwuertgeschäft net initialiséiert</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="154"/>
         <source>Password store</source>
-        <translation type="unfinished">Passwuertspäicher</translation>
+        <translation>Passwuertspäicher</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="155"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished">%1 enthält schonn verschlësselt Dateien; si goufen net op déi ugekräizte Schlësselen nei verschlësselt. Maacht nom Start &quot;Benotzer&quot; op, fir dat ze maachen.</translation>
+        <translation>%1 enthält schonn verschlësselt Dateien; si goufen net op déi ugekräizte Schlësselen nei verschlësselt. Maacht nom Start &quot;Benotzer&quot; op, fir dat ze maachen.</translation>
     </message>
 </context>
 <context>
@@ -1054,88 +1054,88 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="131"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
-        <translation type="unfinished">De Generatiounsregister vun den Empfängerlëschten, %1, ass net zougänglech.</translation>
+        <translation>De Generatiounsregister vun den Empfängerlëschten, %1, ass net zougänglech.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="140"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
-        <translation type="unfinished">De Generatiounsregister vun den Empfängerlëschten, %1, ass net liesbar. Ënnerschriwwen Empfängerlëschte ginn net akzeptéiert, bis e reparéiert oder geläscht ass (wouduerch vergiess gëtt, wat virdrun akzeptéiert gouf).</translation>
+        <translation>De Generatiounsregister vun den Empfängerlëschten, %1, ass net liesbar. Ënnerschriwwen Empfängerlëschte ginn net akzeptéiert, bis e reparéiert oder geläscht ass (wouduerch vergiess gëtt, wat virdrun akzeptéiert gouf).</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="171"/>
         <location filename="../src/gpgidgeneration.cpp" line="184"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
-        <translation type="unfinished">De Generatiounsregister vun den Empfängerlëschten, %1, kann net geschriwwe ginn.</translation>
+        <translation>De Generatiounsregister vun den Empfängerlëschten, %1, kann net geschriwwe ginn.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="211"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
-        <translation type="unfinished">De Generatiounsregister vun den Empfängerlëschten, %1, konnt net gespaart ginn: vläicht benotzt en anere QtPass e grad, oder säin Dossier kann net geschriwwe ginn.</translation>
+        <translation>De Generatiounsregister vun den Empfängerlëschten, %1, konnt net gespaart ginn: vläicht benotzt en anere QtPass e grad, oder säin Dossier kann net geschriwwe ginn.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="314"/>
         <source>The list carries more than one generation line.</source>
-        <translation type="unfinished">D&apos;Lëscht enthält méi wéi eng Generatiounszeil.</translation>
+        <translation>D&apos;Lëscht enthält méi wéi eng Generatiounszeil.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="322"/>
         <source>The generation line is malformed: %1</source>
-        <translation type="unfinished">D&apos;Generatiounszeil ass falsch formatéiert: %1</translation>
+        <translation>D&apos;Generatiounszeil ass falsch formatéiert: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="328"/>
         <source>The list carries more than one folder line.</source>
-        <translation type="unfinished">D&apos;Lëscht enthält méi wéi eng Dossierzeil.</translation>
+        <translation>D&apos;Lëscht enthält méi wéi eng Dossierzeil.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="336"/>
         <source>The folder line is malformed: %1</source>
-        <translation type="unfinished">D&apos;Dossierzeil ass falsch formatéiert: %1</translation>
+        <translation>D&apos;Dossierzeil ass falsch formatéiert: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="340"/>
         <source>The header line is malformed: %1</source>
-        <translation type="unfinished">D&apos;Kappzeil ass falsch formatéiert: %1</translation>
+        <translation>D&apos;Kappzeil ass falsch formatéiert: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="372"/>
         <source>The list carries a generation line but no folder line.</source>
-        <translation type="unfinished">D&apos;Lëscht enthält eng Generatiounszeil, awer keng Dossierzeil.</translation>
+        <translation>D&apos;Lëscht enthält eng Generatiounszeil, awer keng Dossierzeil.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="519"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
-        <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 ass net vertrauenswierdeg: %2</translation>
+        <translation>Déi ënnerschriwwen Empfängerlëscht %1 ass net vertrauenswierdeg: %2</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="446"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
-        <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 gouf fir den Dossier &quot;%2&quot; vum Späicher geschriwwen, net fir &quot;%3&quot;, a gëtt net benotzt. Si kéint vun engem aneren heihinner kopéiert gi sinn; wann den Dossier amplaz verréckelt oder ëmbenannt gouf, mécht een, deen den Ënnerschrëftsschlëssel huet, &quot;Benotzer&quot; op deem Dossier op a späichert d&apos;Empfänger, wat d&apos;Lëscht un déi Plaz bënnt, wou se elo ass.</translation>
+        <translation>Déi ënnerschriwwen Empfängerlëscht %1 gouf fir den Dossier &quot;%2&quot; vum Späicher geschriwwen, net fir &quot;%3&quot;, a gëtt net benotzt. Si kéint vun engem aneren heihinner kopéiert gi sinn; wann den Dossier amplaz verréckelt oder ëmbenannt gouf, mécht een, deen den Ënnerschrëftsschlëssel huet, &quot;Benotzer&quot; op deem Dossier op a späichert d&apos;Empfänger, wat d&apos;Lëscht un déi Plaz bënnt, wou se elo ass.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
-        <translation type="unfinished">Generatioun %1 ass déi héchst, déi et gëtt, dofir kann hei keng nei Lëscht méi geschriwwe ginn: gëtt %2 geläscht, vergësst dësen Apparat, wat e virdrun akzeptéiert huet; duerno kënnt een, deen den Ënnerschrëftsschlëssel huet, weider, andeems en &quot;Benotzer&quot; opmécht an %3.</translation>
+        <translation>Generatioun %1 ass déi héchst, déi et gëtt, dofir kann hei keng nei Lëscht méi geschriwwe ginn: gëtt %2 geläscht, vergësst dësen Apparat, wat e virdrun akzeptéiert huet; duerno kënnt een, deen den Ënnerschrëftsschlëssel huet, weider, andeems en &quot;Benotzer&quot; opmécht an %3.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="466"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
-        <translation type="unfinished">Een, deen den Ënnerschrëftsschlëssel huet, kënnt hei weider, andeems en &quot;Benotzer&quot; opmécht an %1; beim Späichere gëtt Generatioun %2 geschriwwen. Gëtt %3 geläscht, vergësst dësen Apparat, wat e virdrun akzeptéiert huet.</translation>
+        <translation>Een, deen den Ënnerschrëftsschlëssel huet, kënnt hei weider, andeems en &quot;Benotzer&quot; opmécht an %1; beim Späichere gëtt Generatioun %2 geschriwwen. Gëtt %3 geläscht, vergësst dësen Apparat, wat e virdrun akzeptéiert huet.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="483"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
-        <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 enthält keng Generatiounszeil, obwuel hei virdrun Generatioun %2 akzeptéiert gouf. pass schreift keng Generatiounszeil (och net iwwer de pass-Backend vu QtPass), a QtPass virun 2.0 huet dat och net gemaach; ouni esou eng Zeil kéint d&apos;Lëscht och fir en aneren Dossier vum Späicher geschriwwen an heihinner kopéiert gi sinn. %3</translation>
+        <translation>Déi ënnerschriwwen Empfängerlëscht %1 enthält keng Generatiounszeil, obwuel hei virdrun Generatioun %2 akzeptéiert gouf. pass schreift keng Generatiounszeil (och net iwwer de pass-Backend vu QtPass), a QtPass virun 2.0 huet dat och net gemaach; ouni esou eng Zeil kéint d&apos;Lëscht och fir en aneren Dossier vum Späicher geschriwwen an heihinner kopéiert gi sinn. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="492"/>
         <source>selecting the recipients afresh and saving</source>
-        <translation type="unfinished">d&apos;Empfänger vun Neiem auswielt a späichert</translation>
+        <translation>d&apos;Empfänger vun Neiem auswielt a späichert</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="617"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
-        <translation type="unfinished">De Generatiounsregister vun den Empfängerlëschten, %1, ass op Generatioun %2 weidergaangen, wärend Generatioun %3 geschriwwe gouf.</translation>
+        <translation>De Generatiounsregister vun den Empfängerlëschten, %1, ass op Generatioun %2 weidergaangen, wärend Generatioun %3 geschriwwe gouf.</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
@@ -1148,27 +1148,27 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="497"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
-        <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 ass Generatioun %2, méi al wéi Generatioun %3, déi lescht, déi QtPass hei akzeptéiert huet. Si kéint vun engem aneren zréckgesat gi sinn. %4</translation>
+        <translation>Déi ënnerschriwwen Empfängerlëscht %1 ass Generatioun %2, méi al wéi Generatioun %3, déi lescht, déi QtPass hei akzeptéiert huet. Si kéint vun engem aneren zréckgesat gi sinn. %4</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="504"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
-        <translation type="unfinished">d&apos;Empfänger späichert: d&apos;Empfänger, déi do virausgewielt sinn, sinn déi vun dëser Lëscht, dofir huelt fir d&apos;éischt jiddereen ewech, dee keen Zougang méi soll hunn</translation>
+        <translation>d&apos;Empfänger späichert: d&apos;Empfänger, déi do virausgewielt sinn, sinn déi vun dëser Lëscht, dofir huelt fir d&apos;éischt jiddereen ewech, dee keen Zougang méi soll hunn</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="552"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
-        <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 ass Generatioun %2, déi selwecht Generatioun wéi eng aner Lëscht, déi dësen Apparat virdrun akzeptéiert huet. Entweder hunn zwee Apparater gläichzäiteg Empfänger gespäichert (Git wäert de Konflikt gewisen hunn), oder eng authentesch Lëscht vun där Generatioun gouf ënnergeschubst. %3</translation>
+        <translation>Déi ënnerschriwwen Empfängerlëscht %1 ass Generatioun %2, déi selwecht Generatioun wéi eng aner Lëscht, déi dësen Apparat virdrun akzeptéiert huet. Entweder hunn zwee Apparater gläichzäiteg Empfänger gespäichert (Git wäert de Konflikt gewisen hunn), oder eng authentesch Lëscht vun där Generatioun gouf ënnergeschubst. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="560"/>
         <source>checking the recipients and saving</source>
-        <translation type="unfinished">d&apos;Empfänger kontrolléiert a späichert</translation>
+        <translation>d&apos;Empfänger kontrolléiert a späichert</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="585"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
-        <translation type="unfinished">D&apos;Empfängerlëscht %1 huet Generatioun %2 erreecht, déi héchst, déi et gëtt; d&apos;Lëscht kann net geschriwwe ginn.</translation>
+        <translation>D&apos;Empfängerlëscht %1 huet Generatioun %2 erreecht, déi héchst, déi et gëtt; d&apos;Lëscht kann net geschriwwe ginn.</translation>
     </message>
 </context>
 <context>
@@ -1176,12 +1176,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="75"/>
         <source>the recipient list is not valid UTF-8</source>
-        <translation type="unfinished">d&apos;Empfängerlëscht ass kee gëltegt UTF-8</translation>
+        <translation>d&apos;Empfängerlëscht ass kee gëltegt UTF-8</translation>
     </message>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="99"/>
         <source>gpg wrote no signature</source>
-        <translation type="unfinished">gpg huet keng Ënnerschrëft geschriwwen</translation>
+        <translation>gpg huet keng Ënnerschrëft geschriwwen</translation>
     </message>
 </context>
 <context>
@@ -1201,12 +1201,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="187"/>
         <source>Cannot add</source>
-        <translation type="unfinished">Kann net bäifügen</translation>
+        <translation>Kann net bäifügen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="187"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 existéiert schonn.</translation>
+        <translation>%1 existéiert schonn.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="165"/>
@@ -1217,12 +1217,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="199"/>
         <source>Cannot write</source>
-        <translation type="unfinished">Kann net schreiwen</translation>
+        <translation>Kann net schreiwen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="200"/>
         <source>Cannot create a temporary directory: %1</source>
-        <translation type="unfinished">Kann keen temporären Dossier erstellen: %1</translation>
+        <translation>Kann keen temporären Dossier erstellen: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="368"/>
@@ -1257,7 +1257,7 @@ Dir kënnt d&apos;Benotzerlëscht net änneren!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="112"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished">Git pull feelgeschloen: %1</translation>
+        <translation>Git pull feelgeschloen: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="160"/>
@@ -1269,17 +1269,17 @@ Dir kënnt d&apos;Benotzerlëscht net änneren!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="248"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Läschen feelgeschloen</translation>
+        <translation>Läschen feelgeschloen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="249"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Konnt de Link %1 net ewechhuelen.</translation>
+        <translation>Konnt de Link %1 net ewechhuelen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>%1 is not inside the password store.</source>
-        <translation type="unfinished">%1 läit net am Passwuertspäicher.</translation>
+        <translation>%1 läit net am Passwuertspäicher.</translation>
     </message>
     <message>
         <source>Failed to open .gpg-id for writing.</source>
@@ -1292,12 +1292,12 @@ Dir kënnt d&apos;Benotzerlëscht net änneren!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="349"/>
         <source>Recipient list written, but not recorded</source>
-        <translation type="unfinished">Empfängerlëscht geschriwwen, awer net registréiert</translation>
+        <translation>Empfängerlëscht geschriwwen, awer net registréiert</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="350"/>
         <source>%1 Save the recipients once more to get through.</source>
-        <translation type="unfinished">%1 Späichert d&apos;Empfänger nach eng Kéier, fir weiderzekommen.</translation>
+        <translation>%1 Späichert d&apos;Empfänger nach eng Kéier, fir weiderzekommen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
@@ -1314,44 +1314,44 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="371"/>
         <source>Failed to sign %1: %2</source>
-        <translation type="unfinished">Konnt %1 net ënnerschreiwen: %2</translation>
+        <translation>Konnt %1 net ënnerschreiwen: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="466"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished">Konnt déi al Ënnerschrëft %1 net läschen.</translation>
+        <translation>Konnt déi al Ënnerschrëft %1 net läschen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="563"/>
         <location filename="../src/imitatepass.cpp" line="591"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished">Iwwerrescht vun enger fréierer Nei-Verschlësselung</translation>
+        <translation>Iwwerrescht vun enger fréierer Nei-Verschlësselung</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="564"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
-        <translation type="unfinished">%1 ass keng normal Datei a gouf net restauréiert. Kuckt se Iech un a läscht se, da verschlësselt nach eng Kéier nei.</translation>
+        <translation>%1 ass keng normal Datei a gouf net restauréiert. Kuckt se Iech un a läscht se, da verschlësselt nach eng Kéier nei.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="592"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished">%1 existéiert niewent %2. Béid sinn verschlësselt Kopien vun der Entrée; kontrolléiert, wéi eng Dir wëllt, a läscht déi aner, da verschlësselt nach eng Kéier nei.</translation>
+        <translation>%1 existéiert niewent %2. Béid sinn verschlësselt Kopien vun der Entrée; kontrolléiert, wéi eng Dir wëllt, a läscht déi aner, da verschlësselt nach eng Kéier nei.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="606"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished">%1 gouf aus dem Backup restauréiert, deen eng ënnerbrach Nei-Verschlësselung hannerlooss huet.</translation>
+        <translation>%1 gouf aus dem Backup restauréiert, deen eng ënnerbrach Nei-Verschlësselung hannerlooss huet.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="600"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished">%1 feelt a säi Backup %2 konnt net zréck ëmbenannt ginn. Benennt en mat der Hand ëm, da verschlësselt nach eng Kéier nei.</translation>
+        <translation>%1 feelt a säi Backup %2 konnt net zréck ëmbenannt ginn. Benennt en mat der Hand ëm, da verschlësselt nach eng Kéier nei.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="834"/>
         <source>%1 could not be re-encrypted: %2</source>
-        <translation type="unfinished">%1 konnt net nei verschlësselt ginn: %2</translation>
+        <translation>%1 konnt net nei verschlësselt ginn: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1113"/>
@@ -1394,17 +1394,17 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="898"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished">Eng Nei-Verschlësselung leeft schonn</translation>
+        <translation>Eng Nei-Verschlësselung leeft schonn</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="905"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">Keen Dossier vum Späicher</translation>
+        <translation>Keen Dossier vum Späicher</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="906"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
-        <translation type="unfinished">%1 ass e symbolesche Link oder eng Junction, oder läit hannert engem. Dat, wourop dee weist, gehéiert net zum Passwuertspäicher a gouf net nei verschlësselt.</translation>
+        <translation>%1 ass e symbolesche Link oder eng Junction, oder läit hannert engem. Dat, wourop dee weist, gehéiert net zum Passwuertspäicher a gouf net nei verschlësselt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="915"/>
@@ -1421,27 +1421,27 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
         <location filename="../src/imitatepass.cpp" line="989"/>
         <location filename="../src/imitatepass.cpp" line="995"/>
         <source>Git pull failed</source>
-        <translation type="unfinished">Git pull feelgeschloen</translation>
+        <translation>Git pull feelgeschloen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="990"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Nom Pull konnt net kontrolléiert ginn, ob am Späicher net zesummegefouert Fichieren sinn. Kontrolléiert en mat git, ier Dir nei verschlësselt.</translation>
+        <translation>Nom Pull konnt net kontrolléiert ginn, ob am Späicher net zesummegefouert Fichieren sinn. Kontrolléiert en mat git, ier Dir nei verschlësselt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="996"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished">No dem Pull sinn net fusionéiert Dateien am Späicher bliwwen. Léist de Konflikt, ier Dir nei verschlësselt.</translation>
+        <translation>No dem Pull sinn net fusionéiert Dateien am Späicher bliwwen. Léist de Konflikt, ier Dir nei verschlësselt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1000"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished">Git pull feelgeschloen, de Späicher gëtt sou nei verschlësselt, wéi en ass</translation>
+        <translation>Git pull feelgeschloen, de Späicher gëtt sou nei verschlësselt, wéi en ass</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1011"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n Androung iwwersprongen: e Symlink, eng Junction oder eng speziell Datei gehéiert net zum Späicher.</numerusform>
             <numerusform>%n Androungen iwwersprongen: e Symlink, eng Junction oder eng speziell Datei gehéiert net zum Späicher.</numerusform>
         </translation>
@@ -1459,7 +1459,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1111"/>
         <source>... and %n more</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>... an eng weider</numerusform>
             <numerusform>... an %n weider</numerusform>
         </translation>
@@ -1467,7 +1467,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1114"/>
         <source>%n file(s) could not be re-encrypted:</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n Datei konnt net nei verschlësselt ginn:</numerusform>
             <numerusform>%n Dateie konnten net nei verschlësselt ginn:</numerusform>
         </translation>
@@ -1475,17 +1475,17 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1120"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished">Nei-Verschlësselung ofgebrach: %1 vun %2 Dateie kontrolléiert, %3 nei verschlësselt, %4 feelgeschloen</translation>
+        <translation>Nei-Verschlësselung ofgebrach: %1 vun %2 Dateie kontrolléiert, %3 nei verschlësselt, %4 feelgeschloen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1322"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished">Ausféierbar Git-Datei net konfiguréiert, git gëtt iwwersprongen</translation>
+        <translation>Ausféierbar Git-Datei net konfiguréiert, git gëtt iwwersprongen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1382"/>
         <source>gpg wrote no ciphertext for %1.</source>
-        <translation type="unfinished">gpg huet fir %1 kee verschlësselten Text geschriwwen.</translation>
+        <translation>gpg huet fir %1 kee verschlësselten Text geschriwwen.</translation>
     </message>
     <message>
         <source>Cannot create a temporary file next to %1: %2</source>
@@ -1524,7 +1524,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1143"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Et gëtt net gepusht: %n Datei konnt net nei verschlësselt ginn</numerusform>
             <numerusform>Et gëtt net gepusht: %n Dateie konnten net nei verschlësselt ginn</numerusform>
         </translation>
@@ -1533,13 +1533,13 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
         <location filename="../src/imitatepass.cpp" line="1244"/>
         <location filename="../src/imitatepass.cpp" line="1288"/>
         <source>Copy failed</source>
-        <translation type="unfinished">Kopéieren feelgeschloen</translation>
+        <translation>Kopéieren feelgeschloen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1245"/>
         <location filename="../src/imitatepass.cpp" line="1289"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">Konnt %1 net op %2 kopéieren.</translation>
+        <translation>Konnt %1 net op %2 kopéieren.</translation>
     </message>
 </context>
 <context>
@@ -1560,7 +1560,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished">Aus Zwëscheaflag</translation>
+        <translation>Aus Zwëscheaflag</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1608,7 +1608,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">%1 gesäit net wéi en ASCII-armored GPG-Schlëssel aus. Konvertéiert en éischt mat &lt;code&gt;gpg --armor --export&lt;/code&gt;, oder fëgt den ASCII-armored Block iwwer &lt;b&gt;Aus Zwëscheaflag&lt;/b&gt; an.</translation>
+        <translation>%1 gesäit net wéi en ASCII-armored GPG-Schlëssel aus. Konvertéiert en éischt mat &lt;code&gt;gpg --armor --export&lt;/code&gt;, oder fëgt den ASCII-armored Block iwwer &lt;b&gt;Aus Zwëscheaflag&lt;/b&gt; an.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -1642,7 +1642,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished">Ëffentleche Schlëssel %1 importéiert. Kontrolléiert säi Fangerofdrock bei sengem Besëtzer, ier Dir dorop verschlësselt: e Schlëssel z&apos;importéieren seet näischt doriwwer, wien en huet.</translation>
+        <translation>Ëffentleche Schlëssel %1 importéiert. Kontrolléiert säi Fangerofdrock bei sengem Besëtzer, ier Dir dorop verschlësselt: e Schlëssel z&apos;importéieren seet näischt doriwwer, wien en huet.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>
@@ -1654,32 +1654,32 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="288"/>
         <source>Generate a new key pair…</source>
-        <translation type="unfinished">En neit Schlësselpaar generéieren…</translation>
+        <translation>En neit Schlësselpaar generéieren…</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="290"/>
         <source>Your key</source>
-        <translation type="unfinished">Äre Schlëssel</translation>
+        <translation>Äre Schlëssel</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="291"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation type="unfinished">Passwierder ginn op GnuPG-Schlësselen verschlësselt. Kräizt d&apos;Schlësselen un, déi en neie Späicher opmaache kënne sollen; Dir braucht op d&apos;mannst een, deem säi geheimen Deel op dëser Maschinn ass.</translation>
+        <translation>Passwierder ginn op GnuPG-Schlësselen verschlësselt. Kräizt d&apos;Schlësselen un, déi en neie Späicher opmaache kënne sollen; Dir braucht op d&apos;mannst een, deem säi geheimen Deel op dëser Maschinn ass.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="319"/>
         <source>expired</source>
-        <translation type="unfinished">ofgelaf</translation>
+        <translation>ofgelaf</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="321"/>
         <source>not usable</source>
-        <translation type="unfinished">net benotzbar</translation>
+        <translation>net benotzbar</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="334"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
-        <translation type="unfinished">GnuPG huet nach kee geheime Schlëssel. Generéiert hei een, oder importéiert fir d&apos;éischt Äre bestoende Schlëssel mat gpg.</translation>
+        <translation>GnuPG huet nach kee geheime Schlëssel. Generéiert hei een, oder importéiert fir d&apos;éischt Äre bestoende Schlëssel mat gpg.</translation>
     </message>
 </context>
 <context>
@@ -1712,12 +1712,12 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
-        <translation type="unfinished">Jiddereen, deen d&apos;Datei mam private Schlëssel an d&apos;Hänn kritt, kann dann all Passwierder liesen, ouni datt e no iergendeppes gefrot gëtt.</translation>
+        <translation>Jiddereen, deen d&apos;Datei mam private Schlëssel an d&apos;Hänn kritt, kann dann all Passwierder liesen, ouni datt e no iergendeppes gefrot gëtt.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
         <source>No passphrase: store the private key unprotected</source>
-        <translation type="unfinished">Kee Passwuert: de private Schlëssel ongeschützt späicheren</translation>
+        <translation>Kee Passwuert: de private Schlëssel ongeschützt späicheren</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -1804,12 +1804,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="210"/>
         <source>No password store backend available</source>
-        <translation type="unfinished">Kee Backend fir de Passwuertspäicher verfügbar</translation>
+        <translation>Kee Backend fir de Passwuertspäicher verfügbar</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="244"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished">Schlësselgeneratioun feelgeschloen: %1</translation>
+        <translation>Schlësselgeneratioun feelgeschloen: %1</translation>
     </message>
 </context>
 <context>
@@ -1891,7 +1891,7 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass ass eng grafesch Uewerfläch fir &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de Standard-Unix-Passwuertmanager.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass ass eng grafesch Uewerfläch fir &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de Standard-Unix-Passwuertmanager.&lt;/p&gt;
 &lt;p&gt;Mellt w.e.g. all &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;Problemer&lt;/a&gt;, déi Dir mat dëser Software hutt.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentatioun&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Quelltext&lt;/a&gt;&lt;/p&gt;</translation>
@@ -1899,117 +1899,117 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Datei</translation>
+        <translation>&amp;Datei</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished">&amp;Späicher</translation>
+        <translation>&amp;Späicher</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished">&amp;Astellungen</translation>
+        <translation>&amp;Astellungen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="374"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">&amp;Hëllef</translation>
+        <translation>&amp;Hëllef</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Show &amp;process output</source>
-        <translation type="unfinished">&amp;Prozessausgab weisen</translation>
+        <translation>&amp;Prozessausgab weisen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="500"/>
         <source>Show or hide the output of git, gpg and pass</source>
-        <translation type="unfinished">D&apos;Ausgab vu git, gpg a pass weisen oder verstoppen</translation>
+        <translation>D&apos;Ausgab vu git, gpg a pass weisen oder verstoppen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
         <source>Show &amp;menu bar</source>
-        <translation type="unfinished">&amp;Menüleescht weisen</translation>
+        <translation>&amp;Menüleescht weisen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="514"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
-        <translation type="unfinished">D&apos;Menüleescht verstoppen oder weisen; Ctrl+M bréngt se zréck</translation>
+        <translation>D&apos;Menüleescht verstoppen oder weisen; Ctrl+M bréngt se zréck</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="517"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished">Ctrl+M</translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished">QtPass &amp;konfiguréieren…</translation>
+        <translation>QtPass &amp;konfiguréieren…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
         <source>Settings</source>
-        <translation type="unfinished">Astellungen</translation>
+        <translation>Astellungen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished">D&apos;Astellunge vu QtPass änneren</translation>
+        <translation>D&apos;Astellunge vu QtPass änneren</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished">Ctrl+,</translation>
+        <translation>Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="539"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished">Fënster &amp;zoumaachen</translation>
+        <translation>Fënster &amp;zoumaachen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="542"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">Mécht d&apos;Fënster zou; mat &quot;Beim Zoumaache verstoppen&quot; bleift QtPass am System-Tray</translation>
+        <translation>Mécht d&apos;Fënster zou; mat &quot;Beim Zoumaache verstoppen&quot; bleift QtPass am System-Tray</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="545"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="550"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Stoppen</translation>
+        <translation>&amp;Stoppen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="553"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="561"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished">&amp;FAQ</translation>
+        <translation>&amp;FAQ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="564"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished">Mécht déi heefeg gestallte Froen op qtpass.org op</translation>
+        <translation>Mécht déi heefeg gestallte Froen op qtpass.org op</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="567"/>
         <source>F1</source>
-        <translation type="unfinished">F1</translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="572"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished">&amp;Iwwer QtPass</translation>
+        <translation>&amp;Iwwer QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="580"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished">Iwwer &amp;Qt</translation>
+        <translation>Iwwer &amp;Qt</translation>
     </message>
     <message>
         <source>Clear output</source>
@@ -2089,7 +2089,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="478"/>
         <source>Update</source>
-        <translation type="unfinished">Aktualiséieren</translation>
+        <translation>Aktualiséieren</translation>
     </message>
     <message>
         <source>git pull</source>
@@ -2190,12 +2190,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="200"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Zäitiwwerschreidung; d&apos;Interface gëtt nees aktivéiert.</translation>
+        <translation>Zäitiwwerschreidung; d&apos;Interface gëtt nees aktivéiert.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="641"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Konnt dës Passwuert-Eingabe net entschlësselen</translation>
+        <translation>Konnt dës Passwuert-Eingabe net entschlësselen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="696"/>
@@ -2205,22 +2205,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="761"/>
         <source>About QtPass</source>
-        <translation type="unfinished">Iwwer QtPass</translation>
+        <translation>Iwwer QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="762"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Eng Multiplattform-GUI fir &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de Standard-Passwuertmanager fir Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Quellcode a Feelermeldungen&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Lizenzéiert ënner der &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL Versioun 3&lt;/a&gt; oder méi nei.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Eng Multiplattform-GUI fir &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de Standard-Passwuertmanager fir Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Quellcode a Feelermeldungen&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Lizenzéiert ënner der &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL Versioun 3&lt;/a&gt; oder méi nei.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="855"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">D&apos;Inhaltssich benotzt POSIX-Basis-Regulärausdréck (pass grep).</translation>
+        <translation>D&apos;Inhaltssich benotzt POSIX-Basis-Regulärausdréck (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="857"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">D&apos;Inhaltssich benotzt Perl-kompatibel Regulärausdréck (PCRE).</translation>
+        <translation>D&apos;Inhaltssich benotzt Perl-kompatibel Regulärausdréck (PCRE).</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="921"/>
@@ -2241,12 +2241,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="977"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Ongëltegen Numm</translation>
+        <translation>Ongëltegen Numm</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="978"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Dësen Numm géif ausserhalb vum Passwuertspäicher weisen. Wielt w.e.g. en aneren Numm.</translation>
+        <translation>Dësen Numm géif ausserhalb vum Passwuertspäicher weisen. Wielt w.e.g. en aneren Numm.</translation>
     </message>
     <message>
         <source>New file</source>
@@ -2265,12 +2265,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1059"/>
         <source>Delete link?</source>
-        <translation type="unfinished">Link läschen?</translation>
+        <translation>Link läschen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
-        <translation type="unfinished">%1 ass e symbolesche Link oder eng Junction. De Link läschen? Dat, wourop e weist, bleift onberéiert.</translation>
+        <translation>%1 ass e symbolesche Link oder eng Junction. De Link läschen? Dat, wourop e weist, bleift onberéiert.</translation>
     </message>
     <message>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
@@ -2324,17 +2324,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Sidd Dir sécher, dass Dir %1 wëllt läschen?</translation>
+        <translation>Sidd Dir sécher, dass Dir %1 wëllt läschen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
-        <translation type="unfinished">Sidd Dir sécher, dass Dir %1 an de ganzen Inhalt wëllt läschen?</translation>
+        <translation>Sidd Dir sécher, dass Dir %1 an de ganzen Inhalt wëllt läschen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
-        <translation type="unfinished">Opgepasst: et ginn onerwaart Dateien am gegebene Dossier, kontrolléiert se ier Dir weider gitt.</translation>
+        <translation>Opgepasst: et ginn onerwaart Dateien am gegebene Dossier, kontrolléiert se ier Dir weider gitt.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1332"/>
@@ -2359,7 +2359,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1420"/>
         <source>New folder</source>
-        <translation type="unfinished">Neien Dossier</translation>
+        <translation>Neien Dossier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1421"/>
@@ -2381,27 +2381,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1532"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Dës Eingabe enthält en OTP-Geheimnis, kee Passwuert</translation>
+        <translation>Dës Eingabe enthält en OTP-Geheimnis, kee Passwuert</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1584"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished">Passwierder ginn nei verschlësselt...</translation>
+        <translation>Passwierder ginn nei verschlësselt...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1585"/>
         <source>Cancel</source>
-        <translation type="unfinished">Ofbriechen</translation>
+        <translation>Ofbriechen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1593"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished">Nei-Verschlësselung gëtt ofgebrach</translation>
+        <translation>Nei-Verschlësselung gëtt ofgebrach</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1604"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished">Passwierder ginn nei verschlësselt: %1 vun %2</translation>
+        <translation>Passwierder ginn nei verschlësselt: %1 vun %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1625"/>
@@ -2417,12 +2417,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">Keen Dossier vum Späicher</translation>
+        <translation>Keen Dossier vum Späicher</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1674"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 ass e symbolesche Link oder eng Junction, oder läit hannert engem. Dat, wourop dee weist, gehéiert net zum Passwuertspäicher a bleift onberéiert.</translation>
+        <translation>%1 ass e symbolesche Link oder eng Junction, oder läit hannert engem. Dat, wourop dee weist, gehéiert net zum Passwuertspäicher a bleift onberéiert.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1682"/>
@@ -2548,7 +2548,7 @@ Weider?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Sekonnen bis den OTP-Code wiesselt</translation>
+        <translation>Sekonnen bis den OTP-Code wiesselt</translation>
     </message>
 </context>
 <context>
@@ -2556,12 +2556,12 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="162"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished">De konfiguréierte GPG-Home %1 existéiert net, de Standard-Keyring gëtt benotzt</translation>
+        <translation>De konfiguréierte GPG-Home %1 existéiert net, de Standard-Keyring gëtt benotzt</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="170"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished">De konfiguréierte GPG-Home %1 existéiert net, GNUPGHOME %2 aus dem Ëmfeld gëtt benotzt</translation>
+        <translation>De konfiguréierte GPG-Home %1 existéiert net, GNUPGHOME %2 aus dem Ëmfeld gëtt benotzt</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="183"/>
@@ -2587,7 +2587,7 @@ Weider?</translation>
         <location filename="../src/pass.cpp" line="358"/>
         <location filename="../src/pass.cpp" line="359"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">Keng ausféierbar GPG-Datei konfiguréiert</translation>
+        <translation>Keng ausféierbar GPG-Datei konfiguréiert</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="429"/>
@@ -2616,27 +2616,27 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="461"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">Verschlësselung feelgeschloen: Den GPG-Schlëssel vun engem Empfänger kann net benotzt ginn. E kéint ofgelaf oder zréckgezunn sinn, kee Verschlësselungs-Ënnerschlëssel hunn oder net vertrauenswierdeg sinn; d&apos;gpg-Meldung hei drënner seet, wat de Fall ass.</translation>
+        <translation>Verschlësselung feelgeschloen: Den GPG-Schlëssel vun engem Empfänger kann net benotzt ginn. E kéint ofgelaf oder zréckgezunn sinn, kee Verschlësselungs-Ënnerschlëssel hunn oder net vertrauenswierdeg sinn; d&apos;gpg-Meldung hei drënner seet, wat de Fall ass.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="685"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 ass e symbolesche Link oder eng Junction, oder läit hannert engem. Dat, wourop dee weist, gehéiert net zum Passwuertspäicher a bleift onberéiert.</translation>
+        <translation>%1 ass e symbolesche Link oder eng Junction, oder läit hannert engem. Dat, wourop dee weist, gehéiert net zum Passwuertspäicher a bleift onberéiert.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="691"/>
         <source>Not part of the store</source>
-        <translation type="unfinished">Gehéiert net zum Späicher</translation>
+        <translation>Gehéiert net zum Späicher</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="785"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">D&apos;Empfängerlëscht %1 kann net mam Ënnerschrëftsschlëssel verifizéiert ginn, dofir ass näischt virausgewielt: beim Späichere géif alles ënnerschriwwe ginn, wat dran steet. Wielt d&apos;Empfänger selwer aus; OK schreift an ënnerschreift eng nei Lëscht.</translation>
+        <translation>D&apos;Empfängerlëscht %1 kann net mam Ënnerschrëftsschlëssel verifizéiert ginn, dofir ass näischt virausgewielt: beim Späichere géif alles ënnerschriwwe ginn, wat dran steet. Wielt d&apos;Empfänger selwer aus; OK schreift an ënnerschreift eng nei Lëscht.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="752"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
-        <translation type="unfinished">%1 Et ass näischt virausgewielt: beim Späichere géif alles ënnerschriwwe ginn, wat dran steet. Wielt d&apos;Empfänger selwer aus.</translation>
+        <translation>%1 Et ass näischt virausgewielt: beim Späichere géif alles ënnerschriwwe ginn, wat dran steet. Wielt d&apos;Empfänger selwer aus.</translation>
     </message>
 </context>
 <context>
@@ -2651,27 +2651,27 @@ Weider?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
         <source>Folder</source>
-        <translation type="unfinished">Dossier</translation>
+        <translation>Dossier</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation type="unfinished">Den Dossier vum Passwuertspäicher, an deen déi nei Androung kënnt</translation>
+        <translation>Den Dossier vum Passwuertspäicher, an deen déi nei Androung kënnt</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">Numm</translation>
+        <translation>Numm</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
-        <translation type="unfinished">Den Numm vun der Androung, wéi en am Bam steet; e / setzt se an en Ënnerdossier</translation>
+        <translation>Den Numm vun der Androung, wéi en am Bam steet; e / setzt se an en Ënnerdossier</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>e.g. github.com or work/vpn</source>
-        <translation type="unfinished">z. B. github.com oder aarbecht/vpn</translation>
+        <translation>z. B. github.com oder aarbecht/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
@@ -2724,92 +2724,92 @@ Weider?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="219"/>
         <source>Template:</source>
-        <translation type="unfinished">Schabloun:</translation>
+        <translation>Schabloun:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished">Feldschabloun aus der .templates-Datei vum Späicher. Ctrl+T wiesselt op déi nächst.</translation>
+        <translation>Feldschabloun aus der .templates-Datei vum Späicher. Ctrl+T wiesselt op déi nächst.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="76"/>
         <source>New password</source>
-        <translation type="unfinished">Neit Passwuert</translation>
+        <translation>Neit Passwuert</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>
         <source>Decrypting…</source>
-        <translation type="unfinished">Gëtt entschlësselt…</translation>
+        <translation>Gëtt entschlësselt…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="182"/>
         <source>Saving…</source>
-        <translation type="unfinished">Gëtt gespäichert…</translation>
+        <translation>Gëtt gespäichert…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="213"/>
         <source>Still saving</source>
-        <translation type="unfinished">Gëtt nach gespäichert</translation>
+        <translation>Gëtt nach gespäichert</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="214"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation type="unfinished">D&apos;Entrée gëtt nach gespäichert. Den Dialog trotzdeem zoumaachen? Wann d&apos;Späicheren duerno feelschléit, ass dat Aginn verluer.</translation>
+        <translation>D&apos;Entrée gëtt nach gespäichert. Den Dialog trotzdeem zoumaachen? Wann d&apos;Späicheren duerno feelschléit, ass dat Aginn verluer.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="231"/>
         <source>Not saved: %1</source>
-        <translation type="unfinished">Net gespäichert: %1</translation>
+        <translation>Net gespäichert: %1</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Give the entry a name.</source>
-        <translation type="unfinished">Gitt der Androung en Numm.</translation>
+        <translation>Gitt der Androung en Numm.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>A name cannot end in /.</source>
-        <translation type="unfinished">En Numm kann net op / ophalen.</translation>
+        <translation>En Numm kann net op / ophalen.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="286"/>
         <source>That name would resolve outside the password store.</source>
-        <translation type="unfinished">Dësen Numm géif ausserhalb vum Passwuertspäicher landen.</translation>
+        <translation>Dësen Numm géif ausserhalb vum Passwuertspäicher landen.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="290"/>
         <source>An entry called %1 already exists.</source>
-        <translation type="unfinished">Eng Androung mam Numm %1 gëtt et schonn.</translation>
+        <translation>Eng Androung mam Numm %1 gëtt et schonn.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="294"/>
         <source>%1 is a folder.</source>
-        <translation type="unfinished">%1 ass en Dossier.</translation>
+        <translation>%1 ass en Dossier.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="324"/>
         <source>Could not create the folder %1.</source>
-        <translation type="unfinished">Den Dossier %1 konnt net erstallt ginn.</translation>
+        <translation>Den Dossier %1 konnt net erstallt ginn.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="380"/>
         <source>Remove field</source>
-        <translation type="unfinished">Feld ewechhuelen</translation>
+        <translation>Feld ewechhuelen</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="399"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">E Feld mam Numm %1 gëtt et schonn.</translation>
+        <translation>E Feld mam Numm %1 gëtt et schonn.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="480"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">otpauth://-URI oder Base32-Geheimnis</translation>
+        <translation>otpauth://-URI oder Base32-Geheimnis</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="517"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Ongëltegt OTP-Geheimnis</translation>
+        <translation>Ongëltegt OTP-Geheimnis</translation>
     </message>
 </context>
 <context>
@@ -2826,12 +2826,12 @@ Weider?</translation>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="26"/>
         <source>Clear</source>
-        <translation type="unfinished">Läschen</translation>
+        <translation>Läschen</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="27"/>
         <source>Clear output</source>
-        <translation type="unfinished">Ausgab läschen</translation>
+        <translation>Ausgab läschen</translation>
     </message>
 </context>
 <context>
@@ -2839,12 +2839,12 @@ Weider?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="36"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished">Konnt %1 net erstellen.</translation>
+        <translation>Konnt %1 net erstellen.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="60"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 enthält schonn %n verschlësselt Datei; si gouf net nei verschlësselt. Wiesselt op de Profil a maacht Benotzer op, fir dat ze maachen.</numerusform>
             <numerusform>%1 enthält schonn %n verschlësselt Dateien; si goufen net nei verschlësselt. Wiesselt op de Profil a maacht Benotzer op, fir dat ze maachen.</numerusform>
         </translation>
@@ -2852,12 +2852,12 @@ Weider?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="78"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished">Keen Empfänger ausgewielt; %1 gouf net geschriwwen.</translation>
+        <translation>Keen Empfänger ausgewielt; %1 gouf net geschriwwen.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="127"/>
         <source>Could not sign %1 with %2.</source>
-        <translation type="unfinished">Konnt %1 net mat %2 ënnerschreiwen.</translation>
+        <translation>Konnt %1 net mat %2 ënnerschreiwen.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -2866,13 +2866,13 @@ Weider?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="129"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished">Konnt %1 net mat %2 ënnerschreiwen: %3</translation>
+        <translation>Konnt %1 net mat %2 ënnerschreiwen: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="149"/>
         <location filename="../src/profileinit.cpp" line="178"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished">git %1 an %2 feelgeschloen: %3</translation>
+        <translation>git %1 an %2 feelgeschloen: %3</translation>
     </message>
 </context>
 <context>
@@ -2880,57 +2880,57 @@ Weider?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished">D&apos;Kommandozeilen-Tool pass benotzen</translation>
+        <translation>D&apos;Kommandozeilen-Tool pass benotzen</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="204"/>
         <source>Programs</source>
-        <translation type="unfinished">Programmer</translation>
+        <translation>Programmer</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="205"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished">GnuPG mécht d&apos;Verschlësselen. pass a Git sinn optional; QtPass kann hir Aarbecht selwer maachen.</translation>
+        <translation>GnuPG mécht d&apos;Verschlësselen. pass a Git sinn optional; QtPass kann hir Aarbecht selwer maachen.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="209"/>
         <source>Select executable</source>
-        <translation type="unfinished">Ausféierbar Datei auswielen</translation>
+        <translation>Ausféierbar Datei auswielen</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="210"/>
         <source>All files (*)</source>
-        <translation type="unfinished">All Dateien (*)</translation>
+        <translation>All Dateien (*)</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="212"/>
         <source>GnuPG</source>
-        <translation type="unfinished">GnuPG</translation>
+        <translation>GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="215"/>
         <source>Git</source>
-        <translation type="unfinished">Git</translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="216"/>
         <source>pass</source>
-        <translation type="unfinished">pass</translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="217"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished">De pass-Skript fir all Operatioun ausféieren, amplaz gpg a git direkt opzeruffen</translation>
+        <translation>De pass-Skript fir all Operatioun ausféieren, amplaz gpg a git direkt opzeruffen</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="257"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
-        <translation type="unfinished">GnuPG gouf net fonnt. Installéiert et (gpg oder gpg2) a gitt hei säi Standuert un.</translation>
+        <translation>GnuPG gouf net fonnt. Installéiert et (gpg oder gpg2) a gitt hei säi Standuert un.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="260"/>
         <source>%1 is not an executable file.</source>
-        <translation type="unfinished">%1 ass keng ausféierbar Datei.</translation>
+        <translation>%1 ass keng ausféierbar Datei.</translation>
     </message>
 </context>
 <context>
@@ -2946,12 +2946,12 @@ Weider?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <location filename="../src/passworddisplaypanel.cpp" line="229"/>
         <source>Password</source>
-        <translation type="unfinished">Passwuert</translation>
+        <translation>Passwuert</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="157"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">%1 am Browser opmaachen</translation>
+        <translation>%1 am Browser opmaachen</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="302"/>
@@ -2966,7 +2966,7 @@ Weider?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="303"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Kee OTP-Code an dësem Passwuert-Eingabe fonnt</translation>
+        <translation>Kee OTP-Code an dësem Passwuert-Eingabe fonnt</translation>
     </message>
 </context>
 <context>
@@ -2975,7 +2975,7 @@ Weider?</translation>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished">Als QR-Code weisen</translation>
+        <translation>Als QR-Code weisen</translation>
     </message>
 </context>
 <context>
@@ -2986,13 +2986,13 @@ Weider?</translation>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
         <source>Show password</source>
-        <translation type="unfinished">Show Passwuert</translation>
+        <translation>Show Passwuert</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
         <source>Hide password</source>
-        <translation type="unfinished">Passwuert verstoppen</translation>
+        <translation>Passwuert verstoppen</translation>
     </message>
 </context>
 <context>
@@ -3001,7 +3001,7 @@ Weider?</translation>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">An d&apos;Zwëscheaflag kopéieren</translation>
+        <translation>An d&apos;Zwëscheaflag kopéieren</translation>
     </message>
 </context>
 <context>
@@ -3084,22 +3084,22 @@ Weider?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="225"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Konnt qrencode net starten: %1</translation>
+        <translation>Konnt qrencode net starten: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="233"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode ass net zäitlech fäerdeg ginn</translation>
+        <translation>qrencode ass net zäitlech fäerdeg ginn</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="245"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode ass ofgestierzt</translation>
+        <translation>qrencode ass ofgestierzt</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="246"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode ass mam Code %1 eriwwer</translation>
+        <translation>qrencode ass mam Code %1 eriwwer</translation>
     </message>
 </context>
 <context>
@@ -3107,27 +3107,27 @@ Weider?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="93"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Konnt de Link %1 net ewechhuelen.</translation>
+        <translation>Konnt de Link %1 net ewechhuelen.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="94"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Läschen feelgeschloen</translation>
+        <translation>Läschen feelgeschloen</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="125"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
-        <translation type="unfinished">De Link %1 gouf ewechgeholl, mä git konnt dat net festhalen: %2</translation>
+        <translation>De Link %1 gouf ewechgeholl, mä git konnt dat net festhalen: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="127"/>
         <source>Delete incomplete</source>
-        <translation type="unfinished">Läsche net komplett</translation>
+        <translation>Läsche net komplett</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="229"/>
         <source>Search needs the GPG executable to be configured.</source>
-        <translation type="unfinished">Fir d&apos;Sich muss d&apos;ausféierbar GPG-Datei konfiguréiert sinn.</translation>
+        <translation>Fir d&apos;Sich muss d&apos;ausféierbar GPG-Datei konfiguréiert sinn.</translation>
     </message>
 </context>
 <context>
@@ -3152,27 +3152,27 @@ Weider?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="364"/>
         <source>Keep the store under Git</source>
-        <translation type="unfinished">De Späicher ënner Git halen</translation>
+        <translation>De Späicher ënner Git halen</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="366"/>
         <source>Password store</source>
-        <translation type="unfinished">Passwuertspäicher</translation>
+        <translation>Passwuertspäicher</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="367"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation type="unfinished">Den Dossier, an deem Är Passwierder leien. E bestoende Späicher gëtt esou benotzt, wéi en ass; en eidelen oder feelenden Dossier gëtt fir d&apos;Schlësselen ageriicht, déi Dir ugekräizt hutt.</translation>
+        <translation>Den Dossier, an deem Är Passwierder leien. E bestoende Späicher gëtt esou benotzt, wéi en ass; en eidelen oder feelenden Dossier gëtt fir d&apos;Schlësselen ageriicht, déi Dir ugekräizt hutt.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="371"/>
         <source>Folder</source>
-        <translation type="unfinished">Dossier</translation>
+        <translation>Dossier</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="373"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Wielt den Dossier vum Passwuertspäicher</translation>
+        <translation>Wielt den Dossier vum Passwuertspäicher</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="398"/>
@@ -3180,7 +3180,7 @@ Weider?</translation>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished">Git huet nach keen Numm a keng E-Mail fir ze committen. Féiert
+        <translation>Git huet nach keen Numm a keng E-Mail fir ze committen. Féiert
 git config --global user.name &quot;Ären Numm&quot;
 git config --global user.email dir@example.org
 aus a schalt Git duerno an den Astellungen un.</translation>
@@ -3188,17 +3188,17 @@ aus a schalt Git duerno an den Astellungen un.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="402"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished">All Ännerung gëtt e Commit; en Dossier, deen nach kee Repository ass, kritt een</translation>
+        <translation>All Ännerung gëtt e Commit; en Dossier, deen nach kee Repository ass, kritt een</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="426"/>
         <source>Enter a folder.</source>
-        <translation type="unfinished">Gitt en Dossier un.</translation>
+        <translation>Gitt en Dossier un.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="430"/>
         <source>An existing password store with %n entries.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>E bestoende Passwuertspäicher mat %n Androung.</numerusform>
             <numerusform>E bestoende Passwuertspäicher mat %n Androungen.</numerusform>
         </translation>
@@ -3206,22 +3206,22 @@ aus a schalt Git duerno an den Astellungen un.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="433"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation type="unfinished">En eidelen Dossier; e gëtt als Passwuertspäicher ageriicht.</translation>
+        <translation>En eidelen Dossier; e gëtt als Passwuertspäicher ageriicht.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="434"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation type="unfinished">Dësen Dossier ass nach kee Passwuertspäicher; eng .gpg-id fir déi ugekräizte Schlëssele gëtt dra geschriwwen.</translation>
+        <translation>Dësen Dossier ass nach kee Passwuertspäicher; eng .gpg-id fir déi ugekräizte Schlëssele gëtt dra geschriwwen.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="437"/>
         <source>The folder does not exist yet; it will be created.</source>
-        <translation type="unfinished">Den Dossier existéiert nach net; e gëtt erstallt.</translation>
+        <translation>Den Dossier existéiert nach net; e gëtt erstallt.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="441"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
-        <translation type="unfinished">Gitt zréck a kräizt op d&apos;mannst ee Schlëssel un, op deen e verschlësselt gëtt.</translation>
+        <translation>Gitt zréck a kräizt op d&apos;mannst ee Schlëssel un, op deen e verschlësselt gëtt.</translation>
     </message>
 </context>
 <context>
@@ -3283,7 +3283,7 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished">Wielt aus, wéi eng Benotzer Passwierder, déi an dësem Dossier gespäichert sinn, entschlësselen däerfen.
+        <translation>Wielt aus, wéi eng Benotzer Passwierder, déi an dësem Dossier gespäichert sinn, entschlësselen däerfen.
 Bemierkung: Beim OK gëtt all Passwuert an dësem Dossier a sengen Ënnerdossiere fir déi ausgewielte Benotzer nei verschlësselt; dat kann e Moment daueren.
 Fett Entréen hunn e geheime Schlëssel verfügbar, wielt ee vun dësen, fir selwer entschlësselen ze kënnen.
 Normal Entréen hunn e vertrauenswierdege Verschlësselungsschlëssel, wielt dës, fir datt aner Leit entschlësselen kënnen.
@@ -3379,34 +3379,34 @@ Red Entréen sinn net valabel, Dir kënnt dës net verschlësselen.</translation
     <message>
         <location filename="../src/util.cpp" line="687"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Kann keng temporär Datei niewent %1 erstellen: %2</translation>
+        <translation>Kann keng temporär Datei niewent %1 erstellen: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="699"/>
         <location filename="../src/util.cpp" line="778"/>
         <location filename="../src/util.cpp" line="808"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Kann %1 net schreiwen: %2</translation>
+        <translation>Kann %1 net schreiwen: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="714"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Konnt %1 net ersetzen.</translation>
+        <translation>Konnt %1 net ersetzen.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="719"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 existéiert schonn.</translation>
+        <translation>%1 existéiert schonn.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="721"/>
         <source>Failed to write %1.</source>
-        <translation type="unfinished">Konnt %1 net schreiwen.</translation>
+        <translation>Konnt %1 net schreiwen.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="765"/>
         <source>%1 was swapped for another file while it was written.</source>
-        <translation type="unfinished">%1 gouf duerch eng aner Datei ersat, wärend se geschriwwe gouf.</translation>
+        <translation>%1 gouf duerch eng aner Datei ersat, wärend se geschriwwe gouf.</translation>
     </message>
     <message>
         <source>%1 was replaced by a link while it was written.</source>
@@ -3415,12 +3415,12 @@ Red Entréen sinn net valabel, Dir kënnt dës net verschlësselen.</translation
     <message>
         <location filename="../src/util.cpp" line="791"/>
         <source>Cannot read %1.</source>
-        <translation type="unfinished">Kann %1 net liesen.</translation>
+        <translation>Kann %1 net liesen.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="801"/>
         <source>Cannot read %1: %2</source>
-        <translation type="unfinished">Kann %1 net liesen: %2</translation>
+        <translation>Kann %1 net liesen: %2</translation>
     </message>
 </context>
 </TS>
