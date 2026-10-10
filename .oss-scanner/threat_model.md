@@ -6,21 +6,21 @@
 ## What QtPass does and where untrusted input enters
 
 QtPass is a Qt desktop GUI for [pass](https://www.passwordstore.org/): a
-password store is a directory of gpg-encrypted files, usually a git repository
+password store is a directory of GnuPG-encrypted files, usually a Git repository
 shared between people. QtPass either runs `pass` (RealPass) or drives `gpg` and
 `git` itself (ImitatePass). Secrets are decrypted on demand and shown,
 copied to the clipboard or edited.
 
 The user and their account are trusted. Untrusted input comes from:
 
-- **The contents of a shared store** pulled from git: other writers control
+- **The contents of a shared store** pulled with Git: other writers control
   file and folder names, symlinks and junctions inside the store, `.gpg-id`
   recipient lists (and `.gpg-id.sig`), `.templates`, and the decrypted text of
   entries (fields, URLs, `otpauth://` URIs).
-- **Output of gpg, git and pass**, which QtPass parses (key listings, status
+- **Output of `gpg`, `git` and `pass`**, which QtPass parses (key listings, status
   lines, error text) and partly displays.
-- **The local single-instance socket** (another local process can send
-  commands).
+- **The local single-instance socket** (another process running as the user
+  can send commands).
 - **Settings files** only to the extent that a shared or synced config could be
   written by someone else; normally they are the user's own.
 
@@ -28,7 +28,7 @@ The user and their account are trusted. Untrusted input comes from:
 
 - Building command lines for `gpg`, `git`, `pass` and WSL (`src/imitatepass.cpp`,
   `src/realpass.cpp`, `src/pass.cpp`, `src/executor.cpp`): argument injection,
-  option injection through file names, shell use.
+  option injection through filenames, shell use.
 - The store boundary and writes into the store (`src/pathvalidator.cpp`,
   `src/util.cpp` staged writes, `src/storemodel.cpp`): following a link out of the
   store, writing or deleting outside it, TOCTOU swaps.
@@ -42,7 +42,7 @@ The user and their account are trusted. Untrusted input comes from:
   temporary files.
 
 Less important: layout and theming code, translations (`localization/`), the
-website and documentation, CI configuration and release scripts.
+site and documentation, CI configuration and release scripts.
 
 ## How to exercise it
 
@@ -74,6 +74,6 @@ input they are at most medium.
 
 ## Anything to leave alone
 
-- Attacks that need the user's own account, a compromised gpg/git/pass binary,
+- Attacks that need the user's own account, a compromised `gpg`, `git` or `pass` binary,
   or a malicious gpg-agent.
 - The 1.8 maintenance branch only receives backports; scan `main`.

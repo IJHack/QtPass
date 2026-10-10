@@ -8,6 +8,9 @@
 FROM debian:trixie
 ENV DEBIAN_FRONTEND=noninteractive \
     QT_QPA_PLATFORM=offscreen
+# A build image takes Debian's current packages; pinning versions would only
+# make the build fail when trixie moves on.
+# hadolint ignore=DL3008
 RUN apt-get update && apt-get install -y --no-install-recommends \
       ca-certificates build-essential pkg-config git python3 \
       qmake6 qt6-base-dev qt6-base-dev-tools qt6-svg-dev qt6-tools-dev \
@@ -30,5 +33,8 @@ RUN qmake6 -r CONFIG+=debug \
 # ignores the permission and path failures some tests set up. -k runs every
 # suite; a failing test is reported but does not abort the image.
 RUN useradd --create-home --uid 1000 qtpass && chown -R qtpass:qtpass /src
-USER qtpass
+USER 1000:1000
 RUN make -k check || echo "WARNING: make check reported failures"
+
+# A build image for analysis, not a service: there is nothing to check.
+HEALTHCHECK NONE
