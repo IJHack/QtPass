@@ -4,19 +4,17 @@ name: Fuzz
 # libFuzzer targets for the parsers that read what a shared store (or a key
 # imported from it) can put in front of QtPass; see tests/fuzz/. Short runs
 # on changes, longer weekly runs, the corpus kept between runs in the cache.
+#
+# "libFuzzer (ASan + UBSan)" is a required check on main, so the workflow
+# runs for every pull request and merge group: a required check that never
+# reports would block the merge. The job only fuzzes when src/ or the
+# fuzzing setup changed, and passes without fuzzing otherwise.
 on:
   push:
     branches: ["main"]
-    paths:
-      - "src/**"
-      - "tests/fuzz/**"
-      - ".github/workflows/fuzz.yml"
   pull_request:
     branches: ["main"]
-    paths:
-      - "src/**"
-      - "tests/fuzz/**"
-      - ".github/workflows/fuzz.yml"
+  merge_group:
   schedule:
     - cron: "17 3 * * 0"
   workflow_dispatch:
@@ -24,17 +22,56 @@ on:
 permissions: {}
 
 jobs:
-  fuzz:
-    name: libFuzzer (ASan + UBSan)
-    runs-on: ubuntu-24.04
+  changes:
+    name: Detect changes
+    runs-on: ubuntu-latest
     permissions:
       contents: read
+      pull-requests: read
+    outputs:
+      fuzz: ${{ steps.filter.outputs.fuzz }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4.0.3
+        id: filter
+        with:
+          base: main
+          filters: |
+            fuzz:
+              - "src/**"
+              - "tests/fuzz/**"
+              - ".github/workflows/fuzz.yml"
+
+  fuzz:
+    name: libFuzzer (ASan + UBSan)
+    needs: changes
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - name: Check if fuzzing needed
+        id: need_fuzz
+        shell: bash
+        run: |
+          if [[ "${CHANGED}" == "true" ]] || \
+             [[ "${GITHUB_EVENT_NAME}" =~ ^(merge_group|schedule|workflow_dispatch)$ ]]; then
+            echo "run_fuzz=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_fuzz=false" >> "$GITHUB_OUTPUT"
+            echo "No changes to src/ or the fuzzing setup - skipping"
+          fi
+        env:
+          CHANGED: ${{ needs.changes.outputs.fuzz }}
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        if: steps.need_fuzz.outputs.run_fuzz == 'true'
+        with:
+          persist-credentials: false
 
       - name: Install Qt
+        if: steps.need_fuzz.outputs.run_fuzz == 'true'
         uses: jurplel/install-qt-action@a9c63c7c123f3069cff414e7e482d95dfa9d8125 # v4.4.1
         with:
           # The floor QtPass supports, as in the other workflows.
@@ -42,11 +79,13 @@ jobs:
           cache: true
 
       - name: Install the libFuzzer runtime
+        if: steps.need_fuzz.outputs.run_fuzz == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y clang-18 libclang-rt-18-dev
 
       - name: Build the fuzz targets
+        if: steps.need_fuzz.outputs.run_fuzz == 'true'
         env:
           CXX: clang++-18
         run: tests/fuzz/build.sh "$RUNNER_TEMP/fuzz"
@@ -54,6 +93,7 @@ jobs:
       # The corpus grows run by run: restore the newest one, save under a
       # new key afterwards.
       - name: Restore the corpus
+        if: steps.need_fuzz.outputs.run_fuzz == 'true'
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: fuzz-corpus
@@ -61,6 +101,7 @@ jobs:
           restore-keys: fuzz-corpus-
 
       - name: Fuzz
+        if: steps.need_fuzz.outputs.run_fuzz == 'true'
         env:
           # Seconds per target: a quick look on changes, longer every week.
           SECONDS_PER_TARGET: ${{ github.event_name == 'schedule' && '600' || '120' }}
@@ -86,7 +127,7 @@ jobs:
           exit "$status"
 
       - name: Save the corpus
-        if: always()
+        if: always() && steps.need_fuzz.outputs.run_fuzz == 'true'
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: fuzz-corpus
