@@ -103,6 +103,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://qtpass.org/code-signing</loc>
+    <lastmod>2026-10-10T18:00:00+02:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://qtpass.org/screenshots</loc>
     <lastmod>2026-09-30T20:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>

@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>QtPass code signing policy</title>
+    <meta
+      name="description"
+      content="How the QtPass Windows release is code-signed: what is signed, who approves it, and how to check a signature."
+    />
+    <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.2-6" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+    />
+    <link rel="canonical" href="https://qtpass.org/code-signing" />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="preload"
+      href="fonts/lato-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/lato-latin-700-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./images/apple-icon-57x57.png?v=1.8.2-6"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./images/apple-icon-60x60.png?v=1.8.2-6"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./images/apple-icon-72x72.png?v=1.8.2-6"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./images/apple-icon-76x76.png?v=1.8.2-6"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./images/apple-icon-114x114.png?v=1.8.2-6"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./images/apple-icon-120x120.png?v=1.8.2-6"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./images/apple-icon-144x144.png?v=1.8.2-6"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./images/apple-icon-152x152.png?v=1.8.2-6"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-icon-180x180.png?v=1.8.2-6"
+    />
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=1.8.2-6" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/android-icon-192x192.png?v=1.8.2-6"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png?v=1.8.2-6"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./images/favicon-96x96.png?v=1.8.2-6"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png?v=1.8.2-6"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="me" href="https://mastodon.social/@annejan" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./images/ms-icon-144x144.png?v=1.8.2-6"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#fafbfc"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#14181d"
+    />
+    <meta property="og:title" content="QtPass privacy policy" />
+    <meta property="og:site_name" content="QtPass" />
+    <meta property="og:url" content="https://qtpass.org/privacy" />
+    <meta
+      property="og:image"
+      content="https://qtpass.org/images/og.png?v=1.8.2-6"
+    />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta
+      property="og:image:alt"
+      content="The QtPass padlocked heart next to the name and the address qtpass.org"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      property="og:description"
+      content="How the QtPass Windows release is code-signed: what is signed, who approves it, and how to check a signature."
+    />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "QtPass",
+            "item": "https://qtpass.org/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Privacy policy",
+            "item": "https://qtpass.org/privacy"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="background"></div>
+    <div class="wrapper">
+      <aside class="sidebar">
+        <header>
+          <p class="brand">
+            <img
+              class="mark"
+              src="images/logo.svg?v=1.8.2-6"
+              alt="QtPass logo"
+              width="32"
+              height="32"
+            />QtPass <small>1.8.2</small>
+          </p>
+          <p>
+            <a
+              title="QtPass GUI for pass, the standard UNIX password manager"
+              href="https://qtpass.org/"
+              >QtPass</a
+            >
+            is a multi-platform GUI for
+            <a
+              title="pass, the standard unix password manager"
+              href="https://www.passwordstore.org/"
+              >pass</a
+            >, the standard unix password manager.
+          </p>
+
+          <p class="view">
+            <a href="https://github.com/IJHack/QtPass"
+              >View the Project on GitHub <small>IJHack/QtPass</small></a
+            >
+          </p>
+
+          <ul>
+            <li>
+              <a
+                title="QtPass releases"
+                href="https://github.com/IJHack/QtPass/releases"
+                >Download <strong>Releases</strong></a
+              >
+            </li>
+            <li>
+              <a title="QtPass Windows" href="/downloads#Windows"
+                >Installer .exe <strong>Windows</strong></a
+              >
+            </li>
+            <li>
+              <a title="QtPass macOS" href="/downloads#macOS"
+                >Get a .dmg <strong>macOS</strong></a
+              >
+            </li>
+          </ul>
+
+          <div class="screenshots">
+            <figure
+              id="qtpass"
+              class="window"
+              data-title="QtPass"
+              title="Click to see the settings"
+            >
+              <picture>
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcset="images/qtpass-dark@2x.webp?v=1.8.2-6"
+                  type="image/webp"
+                />
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcset="images/qtpass-dark.png?v=1.8.2-6, images/qtpass-dark@2x.png?v=1.8.2-6 2x"
+                />
+                <source srcset="images/qtpass@2x.webp?v=1.8.2-6" type="image/webp" />
+                <img
+                  src="images/qtpass.png?v=1.8.2-6"
+                  srcset="images/qtpass.png?v=1.8.2-6, images/qtpass@2x.png?v=1.8.2-6 2x"
+                  width="1111"
+                  height="961"
+                  alt="QtPass main window with a password store, one entry open"
+                />
+              </picture>
+            </figure>
+            <figure
+              id="config"
+              class="window hidden"
+              data-title="Configuration"
+              title="Click to close the settings"
+            >
+              <picture>
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcset="images/config-dark@2x.webp?v=1.8.2-6"
+                  type="image/webp"
+                />
+                <source
+                  media="(prefers-color-scheme: dark)"
+                  srcset="images/config-dark.png?v=1.8.2-6, images/config-dark@2x.png?v=1.8.2-6 2x"
+                />
+                <source srcset="images/config@2x.webp?v=1.8.2-6" type="image/webp" />
+                <img
+                  src="images/config.png?v=1.8.2-6"
+                  srcset="images/config.png?v=1.8.2-6, images/config@2x.png?v=1.8.2-6 2x"
+                  loading="lazy"
+                  decoding="async"
+                  width="822"
+                  height="921"
+                  alt="QtPass settings dialog"
+                />
+              </picture>
+            </figure>
+          </div>
+        </header>
+        <footer>
+          <p>
+            This project is maintained by
+            <a title="IJhack on GitHub" href="https://github.com/IJHack"
+              >IJHack</a
+            >
+          </p>
+          <p>
+            Maintainer:
+            <a title="Anne Jan Brouwer" href="https://annejan.com/" rel="author"
+              >Anne Jan Brouwer</a
+            >
+          </p>
+          <p>
+            Doxygen autogenerated
+            <a title="Latest documentation" href="/docs/">documentation</a>
+          </p>
+          <a href="https://repology.org/metapackage/qtpass">
+            <img
+              src="https://repology.org/badge/latest-versions/qtpass.svg"
+              alt="latest packaged version(s)"
+            />
+          </a>
+          <p>
+            <small
+              >Based on a theme by
+              <a href="https://github.com/orderedlist">orderedlist</a></small
+            >
+          </p>
+          <img
+            src="https://github.com/IJHack/QtPass/actions/workflows/build-and-test.yml/badge.svg"
+            alt="GitHub Build Status"
+          />
+          <p class="fine">
+            <small
+              ><a title="QtPass Sitemap" href="/sitemap">Sitemap</a> ·
+              <a title="QtPass privacy policy" href="/privacy">Privacy</a> ·
+              <a title="QtPass code signing policy" href="/code-signing"
+                >Code signing policy</a
+              > ·
+              <a title="Latest documentation" href="/docs/">API docs</a></small
+            >
+          </p>
+        </footer>
+      </aside>
+      <main id="main">
+        <h1>
+          <a
+            id="code-signing-policy"
+            class="anchor"
+            href="#code-signing-policy"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span class="octicon octicon-link"></span></a
+          >Code signing policy
+        </h1>
+        <p>
+          Free code signing provided by
+          <a href="https://about.signpath.io/">SignPath.io</a>, certificate by
+          <a href="https://signpath.org/">SignPath Foundation</a>.
+        </p>
+
+        <h3>
+          <a
+            id="what-is-signed"
+            class="anchor"
+            href="#what-is-signed"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >What is signed
+        </h3>
+        <p>
+          The Windows release: <code>qtpass.exe</code> and the
+          <code>qtpass-x.y.z.exe</code> installer. Both are built by GitHub
+          Actions from a tagged commit in
+          <a href="https://github.com/IJHack/QtPass">IJHack/QtPass</a>, using the
+          <a
+            href="https://github.com/IJHack/QtPass/blob/main/.github/workflows/release-installers.yml"
+            >Release installers</a
+          >
+          workflow, and handed to SignPath by that workflow. Nothing built on a
+          developer's machine is signed.
+        </p>
+        <p>
+          The Qt libraries in the installer are Qt's own binaries and are not
+          signed with the QtPass certificate. The macOS and Linux downloads are
+          not covered by this certificate; every release asset carries a
+          detached GPG signature instead (see
+          <a href="/security">Security</a>).
+        </p>
+
+        <h3>
+          <a
+            id="team"
+            class="anchor"
+            href="#team"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >Team roles
+        </h3>
+        <ul>
+          <li>
+            <strong>Committers and reviewers:</strong> the
+            <a href="https://github.com/IJHack">IJHack</a> members with write
+            access to the QtPass repository. Every change reaches
+            <code>main</code> through a reviewed pull request with signed
+            commits; contributions from outside the team are reviewed by a
+            committer before they are merged.
+          </li>
+          <li>
+            <strong>Approvers:</strong>
+            <a href="https://github.com/annejan">Anne Jan Brouwer</a>. Every
+            signing request waits for manual approval in SignPath before
+            anything is signed.
+          </li>
+        </ul>
+        <p>
+          The IJHack organization on GitHub requires two-factor authentication
+          for every member, and SignPath accounts use multi-factor
+          authentication as well.
+        </p>
+
+        <h3>
+          <a
+            id="privacy"
+            class="anchor"
+            href="#privacy"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >Privacy
+        </h3>
+        <p>
+          This program will not transfer any information to other networked
+          systems unless specifically requested by the user or the person
+          installing or operating it. QtPass has no network code of its own; git
+          talks to the remote you configure. Read the full
+          <a href="/privacy">privacy policy</a>.
+        </p>
+
+        <h3>
+          <a
+            id="verify"
+            class="anchor"
+            href="#verify"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >Checking a signature
+        </h3>
+        <p>
+          In Explorer, right-click the installer, choose
+          <strong>Properties &rarr; Digital Signatures</strong>, and check that
+          the signer is SignPath Foundation. In PowerShell:
+        </p>
+        <pre
+          tabindex="0"
+        ><code>Get-AuthenticodeSignature .\qtpass-x.y.z.exe | Format-List</code></pre>
+        <p>
+          Report anything signed with this certificate that did not come from
+          the QtPass releases page to
+          <a href="mailto:help@qtpass.org">help@qtpass.org</a>.
+        </p>
+      </main>
+    </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "IJHack",
+        "url": "https://qtpass.org",
+        "logo": "https://qtpass.org/images/logo.png",
+        "sameAs": [
+          "https://github.com/IJHack",
+          "https://github.com/IJHack/QtPass"
+        ]
+      }
+    </script>
+    <script src="javascripts/main.js?v=1.8.2-6" defer></script>
+  </body>
+</html>
