@@ -75,7 +75,14 @@ isEmpty(QMAKE_LUPDATE) {
 }
 
 win32 {
-    RC_FILE = ../windows.rc
+    # qmake writes the resource script itself: the icon plus a VERSIONINFO
+    # block built from VERSION and these. Code signing (SignPath) checks the
+    # product name and version of the signed qtpass.exe, so both must be set.
+    RC_ICONS = $$PWD/artwork/icon.ico
+    QMAKE_TARGET_PRODUCT = QtPass
+    QMAKE_TARGET_DESCRIPTION = QtPass
+    QMAKE_TARGET_COMPANY = IJhack
+    QMAKE_TARGET_COPYRIGHT = "Copyright (C) 2014-2026 IJhack"
     static {
         QMAKE_LFLAGS += -static-libgcc -static-libstdc++
     }

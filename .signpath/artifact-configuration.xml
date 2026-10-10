@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
+SPDX-License-Identifier: GPL-3.0-or-later
+
+SignPath artifact configuration for the Windows release. SignPath keeps its
+own copy (project QtPass, default artifact configuration); this file is the
+reviewed source of it, so change both together.
+
+The Release installers workflow hands SignPath two bare files in turn
+(upload-artifact archive: false): qtpass.exe, then the Inno Setup installer
+built around the already signed qtpass.exe. The Qt libraries next to
+qtpass.exe are never submitted; they are Qt's binaries, not ours to sign.
+-->
+<artifact-configuration xmlns="http://signpath.io/artifact-configuration/v1">
+  <pe-file product-name="QtPass">
+    <authenticode-sign />
+  </pe-file>
+</artifact-configuration>

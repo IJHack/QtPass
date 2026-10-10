@@ -2,6 +2,9 @@
 #ifndef MyAppVersion
   #define MyAppVersion "2.0.0"
 #endif
+#ifndef MyAppNumericVersion
+  #define MyAppNumericVersion "2.0.0"
+#endif
 #define MyAppPublisher "IJHack"
 #define MyAppURL "https://qtpass.org/"
 #define MyAppExeName "qtpass.exe"
@@ -11,6 +14,13 @@
 AppId={{C64A2871-0C42-4A90-9071-D84DC30563BF}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
+VersionInfoVersion={#MyAppNumericVersion}
+VersionInfoProductName={#MyAppName}
+VersionInfoProductVersion={#MyAppNumericVersion}
+VersionInfoProductTextVersion={#MyAppVersion}
+VersionInfoCompany={#MyAppPublisher}
+VersionInfoDescription={#MyAppName} Setup
+VersionInfoCopyright=Copyright (C) 2014-2026 IJhack
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
