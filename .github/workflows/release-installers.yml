@@ -201,13 +201,16 @@ jobs:
       # Only qtpass.exe is ours to sign. The Qt libraries windeployqt copies
       # in stay as Qt ships them (SignPath Foundation terms: no upstream
       # binaries under the project certificate).
+      # SignPath gets each file bare (archive: false, skip-decompress: true),
+      # so its artifact configuration has a <pe-file> root. Such an artifact
+      # is named after its file; the publish job's pattern leaves these out.
       - name: Upload unsigned qtpass.exe for signing
         if: steps.signing.outputs.enabled == 'true'
         id: upload-unsigned-exe
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: unsigned-qtpass-exe-${{ steps.version.outputs.version }}
           path: dist/qtpass/qtpass.exe
+          archive: false
           retention-days: 1
 
       - name: Sign qtpass.exe
@@ -222,6 +225,7 @@ jobs:
           # release-signing waits for an approver in SignPath.
           wait-for-completion-timeout-in-seconds: 7200
           output-artifact-directory: signed/exe
+          skip-decompress: true
 
       - name: Use the signed qtpass.exe
         if: steps.signing.outputs.enabled == 'true'
@@ -268,8 +272,8 @@ jobs:
         id: upload-unsigned-installer
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: unsigned-qtpass-windows-installer-${{ steps.version.outputs.version }}
-          path: Output/qtpass-*.exe
+          path: Output/qtpass-${{ steps.version.outputs.version }}.exe
+          archive: false
           retention-days: 1
 
       - name: Sign the installer
@@ -283,6 +287,7 @@ jobs:
           github-artifact-id: ${{ steps.upload-unsigned-installer.outputs.artifact-id }}
           wait-for-completion-timeout-in-seconds: 7200
           output-artifact-directory: signed/installer
+          skip-decompress: true
 
       - name: Use the signed installer
         if: steps.signing.outputs.enabled == 'true'
@@ -591,9 +596,10 @@ jobs:
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           path: dist
-          # Not the unsigned-* inputs of the signing steps: the unsigned
-          # installer has the same file name as the signed one.
-          pattern: qtpass-*
+          # Only the three build artifacts, not the bare unsigned inputs of
+          # the signing steps: the unsigned installer artifact is called
+          # qtpass-x.y.z.exe and holds a file named like the signed one.
+          pattern: qtpass-{windows-installer,macos-dmg,appimage}-*
           merge-multiple: true
 
       - name: Source archives
