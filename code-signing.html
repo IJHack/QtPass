@@ -359,10 +359,50 @@
         </p>
         <p>
           The Qt libraries in the installer are Qt's own binaries and are not
-          signed with the QtPass certificate. The macOS and Linux downloads are
-          not covered by this certificate; every release asset carries a
-          detached GPG signature instead (see
-          <a href="/security">Security</a>).
+          signed with the QtPass certificate.
+        </p>
+
+        <h3>
+          <a
+            id="per-platform"
+            class="anchor"
+            href="#per-platform"
+            aria-hidden="true"
+            tabindex="-1"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >Status per platform
+        </h3>
+        <ul>
+          <li>
+            <strong>Windows:</strong> signing through SignPath is set up and
+            tested. The SignPath Foundation is reviewing the setup before it
+            issues the production certificate; until then the installer is
+            unsigned and SmartScreen asks for
+            <em>More info &rarr; Run anyway</em> on first start. Progress:
+            <a href="https://github.com/IJHack/QtPass/issues/1643">#1643</a>.
+          </li>
+          <li>
+            <strong>macOS:</strong> the <code>.dmg</code> is not signed or
+            notarized. That needs an Apple Developer ID, a paid Apple Developer
+            Program membership the project does not have, so Gatekeeper blocks
+            the first launch and the Homebrew cask is disabled since
+            1&nbsp;September 2026. The <a href="/macos">macOS page</a> explains
+            how to open it anyway and how you can help get it signed
+            (<a href="https://github.com/IJHack/QtPass/issues/1542">#1542</a>).
+          </li>
+          <li>
+            <strong>Linux:</strong> distribution packages are signed by the
+            distributions that build them. The AppImage is not signed by a
+            certificate authority; like every release asset it has a detached
+            GPG signature.
+          </li>
+        </ul>
+        <p>
+          Every file on the
+          <a href="https://github.com/IJHack/QtPass/releases">releases page</a>,
+          on every platform, comes with a detached GPG signature
+          (<code>.asc</code>) by the maintainer; see
+          <a href="/security">Security</a> for the key and how to check it.
         </p>
 
         <h3>
