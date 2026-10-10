@@ -1,0 +1,52 @@
+---
+name: Scorecard
+
+# OpenSSF Scorecard (https://scorecard.dev/viewer/?uri=github.com/IJHack/QtPass)
+# on our own schedule instead of the weekly public crawl: the results are
+# published for the README badge and land in code scanning as SARIF.
+# scorecard-action refuses to publish from a workflow with anything else in
+# it (other actions, env, defaults), so keep this one minimal.
+on:
+  branch_protection_rule:
+  push:
+    branches: ["main"]
+  schedule:
+    - cron: "41 4 * * 1"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  analysis:
+    name: Scorecard analysis
+    runs-on: ubuntu-latest
+    permissions:
+      # Upload the results to code scanning.
+      security-events: write
+      # Publish the results (OIDC token for the Scorecard API).
+      id-token: write
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Run analysis
+        uses: ossf/scorecard-action@2d1146689b8cda280b9bc96326124645441f03bc # v2.4.4
+        with:
+          results_file: results.sarif
+          results_format: sarif
+          publish_results: true
+
+      - name: Upload the results as an artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: scorecard-results
+          path: results.sarif
+          retention-days: 5
+
+      - name: Upload the results to code scanning
+        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
+        with:
+          sarif_file: results.sarif
