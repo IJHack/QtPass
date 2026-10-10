@@ -1,0 +1,1 @@
+key=JBSWY3DPEHPK3PXP&step=30&size=6&otpHashMode=Sha1
