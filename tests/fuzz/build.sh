@@ -33,11 +33,12 @@ mkdir -p "$build"
 (
 	cd "$build"
 	# Only the library: the fuzzers link the objects they need from it.
+	# A debug build, so Q_ASSERT checks run while fuzzing.
 	# -fsanitize=fuzzer-no-link adds coverage instrumentation without main().
 	"$QMAKE" "$root/src/src.pro" -spec linux-clang \
 		QMAKE_CC="${CC:-${CXX/clang++/clang}}" QMAKE_CXX="$CXX" QMAKE_LINK="$CXX" \
 		QMAKE_CXXFLAGS+="$CXXFLAGS -fsanitize=fuzzer-no-link" \
-		QMAKE_LFLAGS+="$CXXFLAGS" CONFIG+=release
+		QMAKE_LFLAGS+="$CXXFLAGS" CONFIG+=debug
 	make -j"$(nproc)"
 )
 lib="$(find "$build" -name libqtpass.a -print -quit)"

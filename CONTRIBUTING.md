@@ -6,14 +6,21 @@ Thank you for wanting to contribute to making QtPass awesome.
 
 ## Pull Request Process
 
-1. **Sign your commits** - All commits must be signed with GPG using `git commit -S -m "description"`.
-2. Ensure install or build dependencies and artifacts are not committed.
-3. When adding big new features or changes to the build tool, update the [README.md](README.md) to reflect those.
-4. Make sure you update all the CI configs if needed. These run on every Pull Request.
-5. Increase the version numbers in relevant files when applicable.
+1. **Sign your commits** - All commits must be signed with GPG and signed off under the
+   [Developer Certificate of Origin](https://developercertificate.org):
+   `git commit -s -S -m "description"` (`-S` signs, `-s` adds the `Signed-off-by:` line).
+   Translation updates from [Weblate](https://hosted.weblate.org/projects/qtpass/) arrive as
+   Weblate's own commits without a sign-off; a committer reviews them before merging.
+2. **Add tests** - New features and bugfixes come with tests in `tests/auto/`, and `make check`
+   must pass. Format the C++ files you changed with `clang-format --style=file -i <file>...`;
+   CI runs the linters on Pull Requests that change code, build files, scripts or documentation.
+3. Ensure install or build dependencies and artifacts are not committed.
+4. When adding big new features or changes to the build tool, update the [README.md](README.md) to reflect those.
+5. Make sure you update all the CI configs if needed. These run on every Pull Request.
+6. Increase the version numbers in relevant files when applicable.
    The versioning scheme we use is [PrideVer](https://pridever.org/).
-6. You may merge the Pull Request once you have the sign-off of one other developer, or if you
-   do not have permission to do that, you may request a reviewer to merge it for you.
+7. Committers merge their own Pull Requests once CI and the automated review pass. A Pull Request
+   from outside the team is reviewed by a committer, who merges it.
 
 ## AI assistance
 
