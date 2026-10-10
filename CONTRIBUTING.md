@@ -9,8 +9,11 @@ Thank you for wanting to contribute to making QtPass awesome.
 1. **Sign your commits** - All commits must be signed with GPG and signed off under the
    [Developer Certificate of Origin](https://developercertificate.org):
    `git commit -s -S -m "description"` (`-S` signs, `-s` adds the `Signed-off-by:` line).
-2. **Add tests** - New features and bug fixes come with tests in `tests/auto/`, and `make check`
-   must pass. Format C++ with `clang-format --style=file`; CI runs the linters on every Pull Request.
+   Translation updates from [Weblate](https://hosted.weblate.org/projects/qtpass/) arrive as
+   Weblate's own commits without a sign-off; a committer reviews them before merging.
+2. **Add tests** - New features and bugfixes come with tests in `tests/auto/`, and `make check`
+   must pass. Format the C++ files you changed with `clang-format --style=file -i <file>...`;
+   CI runs the linters on every Pull Request.
 3. Ensure install or build dependencies and artifacts are not committed.
 4. When adding big new features or changes to the build tool, update the [README.md](README.md) to reflect those.
 5. Make sure you update all the CI configs if needed. These run on every Pull Request.
