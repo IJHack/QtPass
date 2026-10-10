@@ -47,6 +47,9 @@ jobs:
   fuzz:
     name: libFuzzer (ASan + UBSan)
     needs: changes
+    # Run even when Detect changes failed, and fail then: a skipped job
+    # would count as a passed required check.
+    if: always()
     runs-on: ubuntu-24.04
     permissions:
       contents: read
@@ -55,6 +58,10 @@ jobs:
         id: need_fuzz
         shell: bash
         run: |
+          if [[ "${CHANGES_RESULT}" != "success" ]]; then
+            echo "::error::Detect changes did not succeed (${CHANGES_RESULT}); cannot tell whether to fuzz"
+            exit 1
+          fi
           if [[ "${CHANGED}" == "true" ]] || \
              [[ "${GITHUB_EVENT_NAME}" =~ ^(merge_group|schedule|workflow_dispatch)$ ]]; then
             echo "run_fuzz=true" >> "$GITHUB_OUTPUT"
@@ -63,6 +70,7 @@ jobs:
             echo "No changes to src/ or the fuzzing setup - skipping"
           fi
         env:
+          CHANGES_RESULT: ${{ needs.changes.result }}
           CHANGED: ${{ needs.changes.outputs.fuzz }}
 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
