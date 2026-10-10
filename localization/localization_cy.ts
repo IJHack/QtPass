@@ -48,7 +48,7 @@
         <location filename="../src/configdialog.ui" line="339"/>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Never</source>
-        <translation type="unfinished">Byth</translation>
+        <translation>Byth</translation>
     </message>
     <message>
         <source>Seconds</source>
@@ -203,7 +203,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="212"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Galluogi cymorth cyfrineiriau untro (OTP)</translation>
+        <translation>Galluogi cymorth cyfrineiriau untro (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
@@ -272,18 +272,18 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">Cyffredinol</translation>
+        <translation>Cyffredinol</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <location filename="../src/configdialog.ui" line="293"/>
         <source>Clipboard</source>
-        <translation type="unfinished">Clipfwrdd</translation>
+        <translation>Clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
         <source>Passwords</source>
-        <translation type="unfinished">Cyfrineiriau</translation>
+        <translation>Cyfrineiriau</translation>
     </message>
     <message>
         <source>Show menu bar</source>
@@ -310,28 +310,28 @@
     <message>
         <location filename="../src/configdialog.ui" line="810"/>
         <source>Fields:</source>
-        <translation type="unfinished">Meysydd:</translation>
+        <translation>Meysydd:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="824"/>
         <source>Off</source>
-        <translation type="unfinished">I ffwrdd</translation>
+        <translation>I ffwrdd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="829"/>
         <source>Template fields</source>
-        <translation type="unfinished">Meysydd templed</translation>
+        <translation>Meysydd templed</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="834"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
-        <translation type="unfinished">Meysydd templed a phob llinell &quot;allwedd: gwerth&quot;</translation>
+        <translation>Meysydd templed a phob llinell &quot;allwedd: gwerth&quot;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
         <location filename="../src/configdialog.ui" line="1103"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished">Dewis y ffeil weithredadwy gpg</translation>
+        <translation>Dewis y ffeil weithredadwy gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1106"/>
@@ -347,7 +347,7 @@
         <location filename="../src/configdialog.ui" line="1113"/>
         <location filename="../src/configdialog.ui" line="1116"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished">Dewis y ffeil weithredadwy git</translation>
+        <translation>Dewis y ffeil weithredadwy git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1132"/>
@@ -371,7 +371,7 @@
         <location filename="../src/configdialog.ui" line="1168"/>
         <location filename="../src/configdialog.ui" line="1171"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished">Dewis y ffeil weithredadwy pwgen</translation>
+        <translation>Dewis y ffeil weithredadwy pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1184"/>
@@ -387,7 +387,7 @@
         <location filename="../src/configdialog.ui" line="1208"/>
         <location filename="../src/configdialog.ui" line="1211"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished">Dewis y ffeil weithredadwy pass</translation>
+        <translation>Dewis y ffeil weithredadwy pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1223"/>
@@ -421,109 +421,109 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished">Dangosiad</translation>
+        <translation>Dangosiad</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">System</translation>
+        <translation>System</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Defnyddiwch eicon Hambwrdd System</translation>
+        <translation>Defnyddiwch eicon Hambwrdd System</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">Estyniadau</translation>
+        <translation>Estyniadau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished">Dangos codau QR (qrencode)</translation>
+        <translation>Dangos codau QR (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
-        <translation type="unfinished">Eiliadau</translation>
+        <translation>Eiliadau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished">Panel cynnwys</translation>
+        <translation>Panel cynnwys</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished">Mae angen modd clipfwrdd ar y dudalen Clipfwrdd, fel bod modd copïo cyfrinair cudd o hyd</translation>
+        <translation>Mae angen modd clipfwrdd ar y dudalen Clipfwrdd, fel bod modd copïo cyfrinair cudd o hyd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished">Dangos cynnwys y ffeil fel y mae</translation>
+        <translation>Dangos cynnwys y ffeil fel y mae</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
         <source>Password generation</source>
-        <translation type="unfinished">Cynhyrchu Cyfrinair</translation>
+        <translation>Cynhyrchu Cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="626"/>
         <source>characters</source>
-        <translation type="unfinished">Cymeriadau</translation>
+        <translation>Cymeriadau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation type="unfinished">Defnyddio pwgen</translation>
+        <translation>Defnyddio pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished">Chwilio am gpg, git, pwgen a pass yn y PATH</translation>
+        <translation>Chwilio am gpg, git, pwgen a pass yn y PATH</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
         <source>git</source>
-        <translation type="unfinished">git</translation>
+        <translation>git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
         <source>gpg</source>
-        <translation type="unfinished">gpg</translation>
+        <translation>gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1158"/>
         <source>pwgen</source>
-        <translation type="unfinished">pwgen</translation>
+        <translation>pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Llwybr dewisol i ddiystyru SSH_AUTH_SOCK. Gadewch yn wag i awtoganfod drwy gpgconf.</translation>
+        <translation>Llwybr dewisol i ddiystyru SSH_AUTH_SOCK. Gadewch yn wag i awtoganfod drwy gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1328"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished">Y storfeydd cyfrineiriau y mae&apos;r QtPass hwn yn eu hadnabod; dewiswch un i&apos;w golygu</translation>
+        <translation>Y storfeydd cyfrineiriau y mae&apos;r QtPass hwn yn eu hadnabod; dewiswch un i&apos;w golygu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1343"/>
         <source>Add a profile</source>
-        <translation type="unfinished">Ychwanegu proffil</translation>
+        <translation>Ychwanegu proffil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1361"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation type="unfinished">Anghofio&apos;r proffil a ddewiswyd; mae&apos;r storfa ei hun yn aros ar y ddisg</translation>
+        <translation>Anghofio&apos;r proffil a ddewiswyd; mae&apos;r storfa ei hun yn aros ar y ddisg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1407"/>
         <source>Profile</source>
-        <translation type="unfinished">Proffil</translation>
+        <translation>Proffil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
@@ -574,12 +574,12 @@
         <location filename="../src/configdialog.ui" line="1540"/>
         <location filename="../src/configdialog.ui" line="1543"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Dewis plygell y storfa gyfrineiriau</translation>
+        <translation>Dewis plygell y storfa gyfrineiriau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1477"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished">Ôl bys llawn yr allwedd (40 nod), fel y mae pass yn ei fynnu</translation>
+        <translation>Ôl bys llawn yr allwedd (40 nod), fel y mae pass yn ei fynnu</translation>
     </message>
     <message>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
@@ -625,12 +625,12 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished">Gosodiadau Git ar gyfer y proffil hwn; maen nhw&apos;n disodli&apos;r rhai ar y dudalen Git tra ei fod yn weithredol</translation>
+        <translation>Gosodiadau Git ar gyfer y proffil hwn; maen nhw&apos;n disodli&apos;r rhai ar y dudalen Git tra ei fod yn weithredol</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished">Storfa weithredol</translation>
+        <translation>Storfa weithredol</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1570"/>
@@ -658,7 +658,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
         <source>No clipboard</source>
-        <translation type="unfinished">Dim clipfwrdd</translation>
+        <translation>Dim clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="104"/>
@@ -679,12 +679,12 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Another profile already has this name</source>
-        <translation type="unfinished">Mae gan broffil arall yr enw hwn eisoes</translation>
+        <translation>Mae gan broffil arall yr enw hwn eisoes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="287"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished">Olion bysedd llawn yr allweddi yn unig (40 neu 64 nod hecsadegol), wedi&apos;u gwahanu â bylchau</translation>
+        <translation>Olion bysedd llawn yr allweddi yn unig (40 neu 64 nod hecsadegol), wedi&apos;u gwahanu â bylchau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="333"/>
@@ -742,12 +742,12 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="619"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished">Methwyd ymgychwyn proffil %1</translation>
+        <translation>Methwyd ymgychwyn proffil %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="622"/>
         <source>Profile %1</source>
-        <translation type="unfinished">Proffil %1</translation>
+        <translation>Proffil %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="645"/>
@@ -800,7 +800,7 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished">Nid yw ar gael ar Wayland; defnyddiwch reol ffenestr &quot;cadw ar ben&quot; eich cyfansoddwr yn lle hynny</translation>
+        <translation>Nid yw ar gael ar Wayland; defnyddiwch reol ffenestr &quot;cadw ar ben&quot; eich cyfansoddwr yn lle hynny</translation>
     </message>
     <message>
         <source>Failed to create password-store at: %1</source>
@@ -835,62 +835,62 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="466"/>
         <source>Hide passwords until asked</source>
-        <translation type="unfinished">Cuddio cyfrineiriau nes y gofynnir amdanynt</translation>
+        <translation>Cuddio cyfrineiriau nes y gofynnir amdanynt</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="467"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished">Dangos eicon yn hambwrdd y system</translation>
+        <translation>Dangos eicon yn hambwrdd y system</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="468"/>
         <source>Ready</source>
-        <translation type="unfinished">Yn barod</translation>
+        <translation>Yn barod</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="469"/>
         <source>Everything else can be changed later in Settings.</source>
-        <translation type="unfinished">Gellir newid popeth arall yn ddiweddarach yn Gosodiadau.</translation>
+        <translation>Gellir newid popeth arall yn ddiweddarach yn Gosodiadau.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="476"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation type="unfinished">Dangos llinell y cyfrinair fel dotiau; mae Dangos cyfrinair yn ei datgelu</translation>
+        <translation>Dangos llinell y cyfrinair fel dotiau; mae Dangos cyfrinair yn ei datgelu</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="487"/>
         <source>Store: %1</source>
-        <translation type="unfinished">Storfa: %1</translation>
+        <translation>Storfa: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="489"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation type="unfinished">Mae eisoes yn storfa gyfrineiriau ac fe&apos;i defnyddir fel y mae.</translation>
+        <translation>Mae eisoes yn storfa gyfrineiriau ac fe&apos;i defnyddir fel y mae.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="491"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
-        <translation type="unfinished">Caiff ei sefydlu ar gyfer yr allweddi a diciwyd a&apos;i rhoi o dan Git.</translation>
+        <translation>Caiff ei sefydlu ar gyfer yr allweddi a diciwyd a&apos;i rhoi o dan Git.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="493"/>
         <source>It will be set up for the ticked keys.</source>
-        <translation type="unfinished">Caiff ei sefydlu ar gyfer yr allweddi a diciwyd.</translation>
+        <translation>Caiff ei sefydlu ar gyfer yr allweddi a diciwyd.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="495"/>
         <source>GnuPG: %1</source>
-        <translation type="unfinished">GnuPG: %1</translation>
+        <translation>GnuPG: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="496"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished">Mae gweithrediadau&apos;n rhedeg trwy pass.</translation>
+        <translation>Mae gweithrediadau&apos;n rhedeg trwy pass.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="497"/>
         <source>Operations run through gpg and git directly.</source>
-        <translation type="unfinished">Mae gweithrediadau&apos;n rhedeg trwy gpg a git yn uniongyrchol.</translation>
+        <translation>Mae gweithrediadau&apos;n rhedeg trwy gpg a git yn uniongyrchol.</translation>
     </message>
 </context>
 <context>
@@ -898,17 +898,17 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/executor.cpp" line="158"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished">Nid oes ffeil weithredadwy wedi&apos;i ffurfweddu ar gyfer y gorchymyn hwn</translation>
+        <translation>Nid oes ffeil weithredadwy wedi&apos;i ffurfweddu ar gyfer y gorchymyn hwn</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="187"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">Methwyd cychwyn %1</translation>
+        <translation>Methwyd cychwyn %1</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="381"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished">Chwalodd %1 neu fe&apos;i lladdwyd</translation>
+        <translation>Chwalodd %1 neu fe&apos;i lladdwyd</translation>
     </message>
 </context>
 <context>
@@ -930,7 +930,7 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Copïo i&apos;r clipfwrdd</translation>
+        <translation>Copïo i&apos;r clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -987,17 +987,17 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">Cliciwch ddwywaith i ailenwi&apos;r maes hwn</translation>
+        <translation>Cliciwch ddwywaith i ailenwi&apos;r maes hwn</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">Ailenwi maes…</translation>
+        <translation>Ailenwi maes…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">Tynnu maes</translation>
+        <translation>Tynnu maes</translation>
     </message>
 </context>
 <context>
@@ -1005,44 +1005,44 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="44"/>
         <source>Browse</source>
-        <translation type="unfinished">Pori</translation>
+        <translation>Pori</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="67"/>
         <location filename="../src/firstrunwizard.cpp" line="73"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished">Croeso i QtPass</translation>
+        <translation>Croeso i QtPass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="76"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished">Rhaglen flaen graffigol ar gyfer &lt;i&gt;pass&lt;/i&gt;, rheolwr cyfrineiriau safonol Unix, yw QtPass: mae pob cyfrinair yn ffeil wedi&apos;i hamgryptio â GnuPG, a gedwir mewn plygell y gallwch ei rhoi o dan Git.&lt;br&gt;&lt;br&gt;Mae&apos;r tudalennau nesaf yn dod o hyd i GnuPG, yn sicrhau bod gennych allwedd i amgryptio iddi ac yn dewis y blygell y mae eich cyfrineiriau&apos;n byw ynddi. Ni chaiff dim ei ysgrifennu nes i chi wasgu Gorffen.</translation>
+        <translation>Rhaglen flaen graffigol ar gyfer &lt;i&gt;pass&lt;/i&gt;, rheolwr cyfrineiriau safonol Unix, yw QtPass: mae pob cyfrinair yn ffeil wedi&apos;i hamgryptio â GnuPG, a gedwir mewn plygell y gallwch ei rhoi o dan Git.&lt;br&gt;&lt;br&gt;Mae&apos;r tudalennau nesaf yn dod o hyd i GnuPG, yn sicrhau bod gennych allwedd i amgryptio iddi ac yn dewis y blygell y mae eich cyfrineiriau&apos;n byw ynddi. Ni chaiff dim ei ysgrifennu nes i chi wasgu Gorffen.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="128"/>
         <source>Error</source>
-        <translation type="unfinished">Gwall</translation>
+        <translation>Gwall</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="129"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">Methwyd creu storfa-gyfrinair yn: %1</translation>
+        <translation>Methwyd creu storfa-gyfrinair yn: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="147"/>
         <location filename="../src/firstrunwizard.cpp" line="171"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Storfa cyfrinair heb ei ymgychwyn</translation>
+        <translation>Storfa cyfrinair heb ei ymgychwyn</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="154"/>
         <source>Password store</source>
-        <translation type="unfinished">Storfa gyfrineiriau</translation>
+        <translation>Storfa gyfrineiriau</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="155"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished">Mae %1 eisoes yn cynnwys ffeiliau wedi&apos;u hamgryptio; ni chawsant eu hail-amgryptio i&apos;r allweddi a diciwyd. Agorwch Defnyddwyr ar ôl cychwyn i wneud hynny.</translation>
+        <translation>Mae %1 eisoes yn cynnwys ffeiliau wedi&apos;u hamgryptio; ni chawsant eu hail-amgryptio i&apos;r allweddi a diciwyd. Agorwch Defnyddwyr ar ôl cychwyn i wneud hynny.</translation>
     </message>
 </context>
 <context>
@@ -1050,88 +1050,88 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="131"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
-        <translation type="unfinished">Ni ellir cyrchu cofnod cenhedlaeth y rhestrau derbynwyr, %1.</translation>
+        <translation>Ni ellir cyrchu cofnod cenhedlaeth y rhestrau derbynwyr, %1.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="140"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
-        <translation type="unfinished">Nid yw cofnod cenhedlaeth y rhestrau derbynwyr, %1, yn ddarllenadwy. Ni dderbynnir rhestrau derbynwyr wedi&apos;u llofnodi nes iddo gael ei atgyweirio neu ei ddileu (sy&apos;n anghofio&apos;r hyn a dderbyniwyd o&apos;r blaen).</translation>
+        <translation>Nid yw cofnod cenhedlaeth y rhestrau derbynwyr, %1, yn ddarllenadwy. Ni dderbynnir rhestrau derbynwyr wedi&apos;u llofnodi nes iddo gael ei atgyweirio neu ei ddileu (sy&apos;n anghofio&apos;r hyn a dderbyniwyd o&apos;r blaen).</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="171"/>
         <location filename="../src/gpgidgeneration.cpp" line="184"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
-        <translation type="unfinished">Ni ellir ysgrifennu cofnod cenhedlaeth y rhestrau derbynwyr, %1.</translation>
+        <translation>Ni ellir ysgrifennu cofnod cenhedlaeth y rhestrau derbynwyr, %1.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="211"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
-        <translation type="unfinished">Methwyd cloi cofnod cenhedlaeth y rhestrau derbynwyr, %1: efallai fod QtPass arall yn ei ddefnyddio, neu ni ellir ysgrifennu i&apos;w blygell.</translation>
+        <translation>Methwyd cloi cofnod cenhedlaeth y rhestrau derbynwyr, %1: efallai fod QtPass arall yn ei ddefnyddio, neu ni ellir ysgrifennu i&apos;w blygell.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="314"/>
         <source>The list carries more than one generation line.</source>
-        <translation type="unfinished">Mae&apos;r rhestr yn cynnwys mwy nag un llinell genhedlaeth.</translation>
+        <translation>Mae&apos;r rhestr yn cynnwys mwy nag un llinell genhedlaeth.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="322"/>
         <source>The generation line is malformed: %1</source>
-        <translation type="unfinished">Mae&apos;r llinell genhedlaeth wedi&apos;i chamffurfio: %1</translation>
+        <translation>Mae&apos;r llinell genhedlaeth wedi&apos;i chamffurfio: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="328"/>
         <source>The list carries more than one folder line.</source>
-        <translation type="unfinished">Mae&apos;r rhestr yn cynnwys mwy nag un llinell blygell.</translation>
+        <translation>Mae&apos;r rhestr yn cynnwys mwy nag un llinell blygell.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="336"/>
         <source>The folder line is malformed: %1</source>
-        <translation type="unfinished">Mae&apos;r llinell blygell wedi&apos;i chamffurfio: %1</translation>
+        <translation>Mae&apos;r llinell blygell wedi&apos;i chamffurfio: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="340"/>
         <source>The header line is malformed: %1</source>
-        <translation type="unfinished">Mae&apos;r llinell bennawd wedi&apos;i chamffurfio: %1</translation>
+        <translation>Mae&apos;r llinell bennawd wedi&apos;i chamffurfio: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="372"/>
         <source>The list carries a generation line but no folder line.</source>
-        <translation type="unfinished">Mae&apos;r rhestr yn cynnwys llinell genhedlaeth ond dim llinell blygell.</translation>
+        <translation>Mae&apos;r rhestr yn cynnwys llinell genhedlaeth ond dim llinell blygell.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="519"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
-        <translation type="unfinished">Nid yw&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn un i ymddiried ynddi: %2</translation>
+        <translation>Nid yw&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn un i ymddiried ynddi: %2</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="446"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
-        <translation type="unfinished">Ysgrifennwyd y rhestr derbynwyr wedi&apos;i llofnodi %1 ar gyfer y blygell &quot;%2&quot; yn y storfa, nid ar gyfer &quot;%3&quot;, ac ni chaiff ei defnyddio. Efallai iddi gael ei chopïo yma gan rywun arall; os cafodd y blygell ei symud neu ei hailenwi yn hytrach, mae deiliad yr allwedd lofnodi yn agor Defnyddwyr arni ac yn cadw&apos;r derbynwyr, sy&apos;n rhwymo&apos;r rhestr i&apos;r lle y mae hi bellach.</translation>
+        <translation>Ysgrifennwyd y rhestr derbynwyr wedi&apos;i llofnodi %1 ar gyfer y blygell &quot;%2&quot; yn y storfa, nid ar gyfer &quot;%3&quot;, ac ni chaiff ei defnyddio. Efallai iddi gael ei chopïo yma gan rywun arall; os cafodd y blygell ei symud neu ei hailenwi yn hytrach, mae deiliad yr allwedd lofnodi yn agor Defnyddwyr arni ac yn cadw&apos;r derbynwyr, sy&apos;n rhwymo&apos;r rhestr i&apos;r lle y mae hi bellach.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
-        <translation type="unfinished">Cenhedlaeth %1 yw&apos;r uchaf sy&apos;n bod, felly ni ellir ysgrifennu rhestr newyddach yma: mae dileu %2 yn anghofio&apos;r hyn a dderbyniodd y ddyfais hon o&apos;r blaen, ac ar ôl hynny gall deiliad yr allwedd lofnodi fynd heibio i hyn drwy agor Defnyddwyr ac yna %3.</translation>
+        <translation>Cenhedlaeth %1 yw&apos;r uchaf sy&apos;n bod, felly ni ellir ysgrifennu rhestr newyddach yma: mae dileu %2 yn anghofio&apos;r hyn a dderbyniodd y ddyfais hon o&apos;r blaen, ac ar ôl hynny gall deiliad yr allwedd lofnodi fynd heibio i hyn drwy agor Defnyddwyr ac yna %3.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="466"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
-        <translation type="unfinished">Gall deiliad yr allwedd lofnodi fynd heibio i hyn drwy agor Defnyddwyr ac yna %1, sy&apos;n ysgrifennu cenhedlaeth %2. Mae dileu %3 yn anghofio&apos;r hyn a dderbyniodd y ddyfais hon o&apos;r blaen.</translation>
+        <translation>Gall deiliad yr allwedd lofnodi fynd heibio i hyn drwy agor Defnyddwyr ac yna %1, sy&apos;n ysgrifennu cenhedlaeth %2. Mae dileu %3 yn anghofio&apos;r hyn a dderbyniodd y ddyfais hon o&apos;r blaen.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="483"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
-        <translation type="unfinished">Nid yw&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn cynnwys llinell genhedlaeth, er i genhedlaeth %2 gael ei derbyn yma o&apos;r blaen. Nid yw pass yn ysgrifennu llinell genhedlaeth (gan gynnwys pan fydd QtPass yn defnyddio pass), ac nid oedd QtPass yn gwneud hynny cyn 2.0 chwaith; heb un, gallai&apos;r rhestr hefyd fod wedi&apos;i hysgrifennu ar gyfer plygell arall yn y storfa a&apos;i chopïo yma. %3</translation>
+        <translation>Nid yw&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn cynnwys llinell genhedlaeth, er i genhedlaeth %2 gael ei derbyn yma o&apos;r blaen. Nid yw pass yn ysgrifennu llinell genhedlaeth (gan gynnwys pan fydd QtPass yn defnyddio pass), ac nid oedd QtPass yn gwneud hynny cyn 2.0 chwaith; heb un, gallai&apos;r rhestr hefyd fod wedi&apos;i hysgrifennu ar gyfer plygell arall yn y storfa a&apos;i chopïo yma. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="492"/>
         <source>selecting the recipients afresh and saving</source>
-        <translation type="unfinished">dewis y derbynwyr o&apos;r newydd a chadw</translation>
+        <translation>dewis y derbynwyr o&apos;r newydd a chadw</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="617"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
-        <translation type="unfinished">Mae cofnod cenhedlaeth y rhestrau derbynwyr, %1, wedi symud ymlaen i genhedlaeth %2 tra oedd cenhedlaeth %3 yn cael ei hysgrifennu.</translation>
+        <translation>Mae cofnod cenhedlaeth y rhestrau derbynwyr, %1, wedi symud ymlaen i genhedlaeth %2 tra oedd cenhedlaeth %3 yn cael ei hysgrifennu.</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
@@ -1144,27 +1144,27 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="497"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
-        <translation type="unfinished">Mae&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn genhedlaeth %2, sy&apos;n hŷn na chenhedlaeth %3, yr un olaf a dderbyniodd QtPass yma. Efallai iddi gael ei rhoi yn ôl gan rywun arall. %4</translation>
+        <translation>Mae&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn genhedlaeth %2, sy&apos;n hŷn na chenhedlaeth %3, yr un olaf a dderbyniodd QtPass yma. Efallai iddi gael ei rhoi yn ôl gan rywun arall. %4</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="504"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
-        <translation type="unfinished">cadw&apos;r derbynwyr: derbynwyr y rhestr hon yw&apos;r rhai a ragddewiswyd yno, felly tynnwch yn gyntaf unrhyw un na ddylai gael mynediad mwyach</translation>
+        <translation>cadw&apos;r derbynwyr: derbynwyr y rhestr hon yw&apos;r rhai a ragddewiswyd yno, felly tynnwch yn gyntaf unrhyw un na ddylai gael mynediad mwyach</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="552"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
-        <translation type="unfinished">Mae&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn genhedlaeth %2, yr un genhedlaeth â rhestr wahanol a dderbyniodd y ddyfais hon o&apos;r blaen. Naill ai bod dwy ddyfais wedi cadw derbynwyr ar yr un pryd (bydd Git wedi dangos y gwrthdaro), neu fod rhestr ddilys o&apos;r genhedlaeth honno wedi&apos;i rhoi yn ei lle. %3</translation>
+        <translation>Mae&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn genhedlaeth %2, yr un genhedlaeth â rhestr wahanol a dderbyniodd y ddyfais hon o&apos;r blaen. Naill ai bod dwy ddyfais wedi cadw derbynwyr ar yr un pryd (bydd Git wedi dangos y gwrthdaro), neu fod rhestr ddilys o&apos;r genhedlaeth honno wedi&apos;i rhoi yn ei lle. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="560"/>
         <source>checking the recipients and saving</source>
-        <translation type="unfinished">gwirio&apos;r derbynwyr a chadw</translation>
+        <translation>gwirio&apos;r derbynwyr a chadw</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="585"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
-        <translation type="unfinished">Mae&apos;r rhestr derbynwyr %1 wedi cyrraedd cenhedlaeth %2, yr uchaf sy&apos;n bod; ni ellir ysgrifennu&apos;r rhestr.</translation>
+        <translation>Mae&apos;r rhestr derbynwyr %1 wedi cyrraedd cenhedlaeth %2, yr uchaf sy&apos;n bod; ni ellir ysgrifennu&apos;r rhestr.</translation>
     </message>
 </context>
 <context>
@@ -1172,12 +1172,12 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="75"/>
         <source>the recipient list is not valid UTF-8</source>
-        <translation type="unfinished">nid yw&apos;r rhestr derbynwyr yn UTF-8 dilys</translation>
+        <translation>nid yw&apos;r rhestr derbynwyr yn UTF-8 dilys</translation>
     </message>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="99"/>
         <source>gpg wrote no signature</source>
-        <translation type="unfinished">ni ysgrifennodd gpg unrhyw lofnod</translation>
+        <translation>ni ysgrifennodd gpg unrhyw lofnod</translation>
     </message>
 </context>
 <context>
@@ -1197,12 +1197,12 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="187"/>
         <source>Cannot add</source>
-        <translation type="unfinished">Methu ychwanegu</translation>
+        <translation>Methu ychwanegu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="187"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">Mae %1 yn bodoli eisoes.</translation>
+        <translation>Mae %1 yn bodoli eisoes.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="165"/>
@@ -1213,12 +1213,12 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="199"/>
         <source>Cannot write</source>
-        <translation type="unfinished">Methu ysgrifennu</translation>
+        <translation>Methu ysgrifennu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="200"/>
         <source>Cannot create a temporary directory: %1</source>
-        <translation type="unfinished">Ni ellir creu cyfeiriadur dros dro: %1</translation>
+        <translation>Ni ellir creu cyfeiriadur dros dro: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="368"/>
@@ -1253,7 +1253,7 @@ Ni fyddwch yn gallu newid y rhestr defnyddwyr!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="112"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished">Methodd Git tynnu: %1</translation>
+        <translation>Methodd Git tynnu: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="160"/>
@@ -1265,17 +1265,17 @@ Ni fyddwch yn gallu newid y rhestr defnyddwyr!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="248"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Methodd y dileu</translation>
+        <translation>Methodd y dileu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="249"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Methwyd dileu&apos;r ddolen %1.</translation>
+        <translation>Methwyd dileu&apos;r ddolen %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>%1 is not inside the password store.</source>
-        <translation type="unfinished">Nid yw %1 y tu mewn i&apos;r storfa gyfrineiriau.</translation>
+        <translation>Nid yw %1 y tu mewn i&apos;r storfa gyfrineiriau.</translation>
     </message>
     <message>
         <source>Failed to open .gpg-id for writing.</source>
@@ -1288,12 +1288,12 @@ Ni fyddwch yn gallu newid y rhestr defnyddwyr!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="349"/>
         <source>Recipient list written, but not recorded</source>
-        <translation type="unfinished">Ysgrifennwyd y rhestr derbynwyr, ond heb ei chofnodi</translation>
+        <translation>Ysgrifennwyd y rhestr derbynwyr, ond heb ei chofnodi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="350"/>
         <source>%1 Save the recipients once more to get through.</source>
-        <translation type="unfinished">%1 Cadwch y derbynwyr unwaith eto i fynd heibio i hyn.</translation>
+        <translation>%1 Cadwch y derbynwyr unwaith eto i fynd heibio i hyn.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="355"/>
@@ -1310,44 +1310,44 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/imitatepass.cpp" line="371"/>
         <source>Failed to sign %1: %2</source>
-        <translation type="unfinished">Methwyd llofnodi %1: %2</translation>
+        <translation>Methwyd llofnodi %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="466"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished">Methwyd dileu&apos;r hen lofnod %1.</translation>
+        <translation>Methwyd dileu&apos;r hen lofnod %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="563"/>
         <location filename="../src/imitatepass.cpp" line="591"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished">Gweddill o ail-amgryptio cynharach</translation>
+        <translation>Gweddill o ail-amgryptio cynharach</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="564"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
-        <translation type="unfinished">Nid yw %1 yn ffeil gyffredin ac ni chafodd ei hadfer. Edrychwch arni a&apos;i dileu, yna ail-amgryptiwch eto.</translation>
+        <translation>Nid yw %1 yn ffeil gyffredin ac ni chafodd ei hadfer. Edrychwch arni a&apos;i dileu, yna ail-amgryptiwch eto.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="592"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished">Mae %1 yn bodoli wrth ymyl %2. Mae&apos;r ddau yn gopïau wedi&apos;u hamgryptio o&apos;r cofnod; gwiriwch pa un sydd ei angen arnoch a dilëwch y llall, yna ail-amgryptiwch eto.</translation>
+        <translation>Mae %1 yn bodoli wrth ymyl %2. Mae&apos;r ddau yn gopïau wedi&apos;u hamgryptio o&apos;r cofnod; gwiriwch pa un sydd ei angen arnoch a dilëwch y llall, yna ail-amgryptiwch eto.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="606"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished">Adferwyd %1 o&apos;r copi wrth gefn a adawyd ar ôl gan ail-amgryptio a dorrwyd ar ei draws.</translation>
+        <translation>Adferwyd %1 o&apos;r copi wrth gefn a adawyd ar ôl gan ail-amgryptio a dorrwyd ar ei draws.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="600"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished">Mae %1 ar goll ac ni ellid ailenwi ei gopi wrth gefn %2 yn ôl. Ailenwch ef â llaw, yna ail-amgryptiwch eto.</translation>
+        <translation>Mae %1 ar goll ac ni ellid ailenwi ei gopi wrth gefn %2 yn ôl. Ailenwch ef â llaw, yna ail-amgryptiwch eto.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="834"/>
         <source>%1 could not be re-encrypted: %2</source>
-        <translation type="unfinished">Methwyd ail-amgryptio %1: %2</translation>
+        <translation>Methwyd ail-amgryptio %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1113"/>
@@ -1390,17 +1390,17 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/imitatepass.cpp" line="898"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished">Mae ail-amgryptio eisoes ar y gweill</translation>
+        <translation>Mae ail-amgryptio eisoes ar y gweill</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="905"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">Nid yw&apos;n blygell o&apos;r storfa</translation>
+        <translation>Nid yw&apos;n blygell o&apos;r storfa</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="906"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
-        <translation type="unfinished">Mae %1 yn ddolen symbolaidd neu gyffordd, neu&apos;n gorwedd y tu ôl i un. Nid yw&apos;r hyn y mae honno&apos;n pwyntio ato yn rhan o&apos;r storfa gyfrineiriau ac ni chafodd ei ail-amgryptio.</translation>
+        <translation>Mae %1 yn ddolen symbolaidd neu gyffordd, neu&apos;n gorwedd y tu ôl i un. Nid yw&apos;r hyn y mae honno&apos;n pwyntio ato yn rhan o&apos;r storfa gyfrineiriau ac ni chafodd ei ail-amgryptio.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="915"/>
@@ -1417,27 +1417,27 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         <location filename="../src/imitatepass.cpp" line="989"/>
         <location filename="../src/imitatepass.cpp" line="995"/>
         <source>Git pull failed</source>
-        <translation type="unfinished">Methodd Git tynnu</translation>
+        <translation>Methodd Git tynnu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="990"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Methu gwirio a oes ffeiliau heb eu cyfuno yn y storfa ar ôl y pull. Gwiriwch hi gyda git cyn ail-amgryptio.</translation>
+        <translation>Methu gwirio a oes ffeiliau heb eu cyfuno yn y storfa ar ôl y pull. Gwiriwch hi gyda git cyn ail-amgryptio.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="996"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished">Gadawodd y tynnu ffeiliau heb eu cyfuno yn y storfa. Datryswch y gwrthdaro cyn ail-amgryptio.</translation>
+        <translation>Gadawodd y tynnu ffeiliau heb eu cyfuno yn y storfa. Datryswch y gwrthdaro cyn ail-amgryptio.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1000"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished">Methodd Git tynnu, yn ail-amgryptio&apos;r storfa fel y mae</translation>
+        <translation>Methodd Git tynnu, yn ail-amgryptio&apos;r storfa fel y mae</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1011"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Hepgorwyd %n cofnod: nid yw dolen symbolaidd, cyffordd na ffeil arbennig yn rhan o&apos;r storfa.</numerusform>
             <numerusform>Hepgorwyd %n cofnod: nid yw dolen symbolaidd, cyffordd na ffeil arbennig yn rhan o&apos;r storfa.</numerusform>
             <numerusform>Hepgorwyd %n gofnod: nid yw dolen symbolaidd, cyffordd na ffeil arbennig yn rhan o&apos;r storfa.</numerusform>
@@ -1458,7 +1458,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1111"/>
         <source>... and %n more</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>... a %n arall</numerusform>
             <numerusform>... ac %n arall</numerusform>
             <numerusform>... a %n arall</numerusform>
@@ -1469,7 +1469,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1114"/>
         <source>%n file(s) could not be re-encrypted:</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Methwyd ail-amgryptio %n ffeil:</numerusform>
             <numerusform>Methwyd ail-amgryptio %n ffeil:</numerusform>
             <numerusform>Methwyd ail-amgryptio %n ffeil:</numerusform>
@@ -1480,17 +1480,17 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/imitatepass.cpp" line="1120"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished">Ail-amgryptio wedi&apos;i ddiddymu: gwiriwyd %1 o %2 ffeil, ail-amgryptiwyd %3, methodd %4</translation>
+        <translation>Ail-amgryptio wedi&apos;i ddiddymu: gwiriwyd %1 o %2 ffeil, ail-amgryptiwyd %3, methodd %4</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1322"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished">Ffeil weithredadwy Git heb ei ffurfweddu, yn hepgor git</translation>
+        <translation>Ffeil weithredadwy Git heb ei ffurfweddu, yn hepgor git</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1382"/>
         <source>gpg wrote no ciphertext for %1.</source>
-        <translation type="unfinished">Ni ysgrifennodd gpg unrhyw destun wedi&apos;i amgryptio ar gyfer %1.</translation>
+        <translation>Ni ysgrifennodd gpg unrhyw destun wedi&apos;i amgryptio ar gyfer %1.</translation>
     </message>
     <message>
         <source>Cannot create a temporary file next to %1: %2</source>
@@ -1529,7 +1529,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1143"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Ddim yn gwthio: methwyd ail-amgryptio %n ffeil</numerusform>
             <numerusform>Ddim yn gwthio: methwyd ail-amgryptio %n ffeil</numerusform>
             <numerusform>Ddim yn gwthio: methwyd ail-amgryptio %n ffeil</numerusform>
@@ -1541,13 +1541,13 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         <location filename="../src/imitatepass.cpp" line="1244"/>
         <location filename="../src/imitatepass.cpp" line="1288"/>
         <source>Copy failed</source>
-        <translation type="unfinished">Methodd y copïo</translation>
+        <translation>Methodd y copïo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1245"/>
         <location filename="../src/imitatepass.cpp" line="1289"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">Methwyd copïo %1 i %2.</translation>
+        <translation>Methwyd copïo %1 i %2.</translation>
     </message>
 </context>
 <context>
@@ -1568,7 +1568,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished">O&apos;r clipfwrdd</translation>
+        <translation>O&apos;r clipfwrdd</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1616,7 +1616,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">Nid yw %1 yn edrych fel allwedd GPG ASCII-armored. Trosiwch hi&apos;n gyntaf gyda &lt;code&gt;gpg --armor --export&lt;/code&gt;, neu gludwch y bloc ASCII-armored drwy &lt;b&gt;O&apos;r clipfwrdd&lt;/b&gt;.</translation>
+        <translation>Nid yw %1 yn edrych fel allwedd GPG ASCII-armored. Trosiwch hi&apos;n gyntaf gyda &lt;code&gt;gpg --armor --export&lt;/code&gt;, neu gludwch y bloc ASCII-armored drwy &lt;b&gt;O&apos;r clipfwrdd&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -1650,7 +1650,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished">Mewnforiwyd yr allwedd gyhoeddus %1. Gwiriwch ei hôl bys gyda&apos;i pherchennog cyn amgryptio iddi: nid yw mewnforio allwedd yn dweud dim am bwy sy&apos;n ei dal.</translation>
+        <translation>Mewnforiwyd yr allwedd gyhoeddus %1. Gwiriwch ei hôl bys gyda&apos;i pherchennog cyn amgryptio iddi: nid yw mewnforio allwedd yn dweud dim am bwy sy&apos;n ei dal.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>
@@ -1662,32 +1662,32 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/firstrunwizard.cpp" line="288"/>
         <source>Generate a new key pair…</source>
-        <translation type="unfinished">Cynhyrchu pâr allweddi newydd…</translation>
+        <translation>Cynhyrchu pâr allweddi newydd…</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="290"/>
         <source>Your key</source>
-        <translation type="unfinished">Eich allwedd</translation>
+        <translation>Eich allwedd</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="291"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation type="unfinished">Caiff cyfrineiriau eu hamgryptio i allweddi GnuPG. Ticiwch yr allweddi a ddylai allu agor storfa newydd; mae angen o leiaf un arnoch sydd â&apos;i hanner cyfrinachol ar y peiriant hwn.</translation>
+        <translation>Caiff cyfrineiriau eu hamgryptio i allweddi GnuPG. Ticiwch yr allweddi a ddylai allu agor storfa newydd; mae angen o leiaf un arnoch sydd â&apos;i hanner cyfrinachol ar y peiriant hwn.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="319"/>
         <source>expired</source>
-        <translation type="unfinished">wedi dod i ben</translation>
+        <translation>wedi dod i ben</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="321"/>
         <source>not usable</source>
-        <translation type="unfinished">ddim yn ddefnyddiadwy</translation>
+        <translation>ddim yn ddefnyddiadwy</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="334"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
-        <translation type="unfinished">Nid oes gan GnuPG allwedd gyfrinachol eto. Cynhyrchwch un yma, neu mewnforiwch eich allwedd bresennol â gpg yn gyntaf.</translation>
+        <translation>Nid oes gan GnuPG allwedd gyfrinachol eto. Cynhyrchwch un yma, neu mewnforiwch eich allwedd bresennol â gpg yn gyntaf.</translation>
     </message>
 </context>
 <context>
@@ -1720,12 +1720,12 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
-        <translation type="unfinished">Gall unrhyw un sy&apos;n cael gafael ar ffeil yr allwedd breifat ddarllen pob cyfrinair wedyn heb i neb ofyn dim iddo.</translation>
+        <translation>Gall unrhyw un sy&apos;n cael gafael ar ffeil yr allwedd breifat ddarllen pob cyfrinair wedyn heb i neb ofyn dim iddo.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
         <source>No passphrase: store the private key unprotected</source>
-        <translation type="unfinished">Dim ymadrodd cyfrin: cadw&apos;r allwedd breifat heb ei diogelu</translation>
+        <translation>Dim ymadrodd cyfrin: cadw&apos;r allwedd breifat heb ei diogelu</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -1844,12 +1844,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="210"/>
         <source>No password store backend available</source>
-        <translation type="unfinished">Nid oes rhaglen storio cyfrineiriau ar gael</translation>
+        <translation>Nid oes rhaglen storio cyfrineiriau ar gael</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="244"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished">Methodd cynhyrchu&apos;r allwedd: %1</translation>
+        <translation>Methodd cynhyrchu&apos;r allwedd: %1</translation>
     </message>
 </context>
 <context>
@@ -1949,7 +1949,7 @@ Expire-Date: 0
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;Mae QtPass yn rhyngwyneb graffigol ar gyfer &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, y rheolwr cyfrineiriau safonol ar Unix.&lt;/p&gt;
+        <translation>&lt;p&gt;Mae QtPass yn rhyngwyneb graffigol ar gyfer &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, y rheolwr cyfrineiriau safonol ar Unix.&lt;/p&gt;
 &lt;p&gt;Rhowch wybod am unrhyw &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;broblemau&lt;/a&gt; sydd gennych gyda&apos;r feddalwedd hon.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dogfennaeth&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Cod ffynhonnell&lt;/a&gt;&lt;/p&gt;</translation>
@@ -1957,22 +1957,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Ffeil</translation>
+        <translation>&amp;Ffeil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished">&amp;Storfa</translation>
+        <translation>&amp;Storfa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished">&amp;Gosodiadau</translation>
+        <translation>&amp;Gosodiadau</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="374"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">&amp;Cymorth</translation>
+        <translation>&amp;Cymorth</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="424"/>
@@ -2056,42 +2056,42 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Show &amp;process output</source>
-        <translation type="unfinished">Dangos &amp;allbwn y broses</translation>
+        <translation>Dangos &amp;allbwn y broses</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="500"/>
         <source>Show or hide the output of git, gpg and pass</source>
-        <translation type="unfinished">Dangos neu guddio allbwn git, gpg a pass</translation>
+        <translation>Dangos neu guddio allbwn git, gpg a pass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
         <source>Show &amp;menu bar</source>
-        <translation type="unfinished">&amp;Dangos y bar dewislen</translation>
+        <translation>&amp;Dangos y bar dewislen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="514"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
-        <translation type="unfinished">Cuddio neu ddangos y bar dewislen; mae Ctrl+M yn dod ag ef yn ôl</translation>
+        <translation>Cuddio neu ddangos y bar dewislen; mae Ctrl+M yn dod ag ef yn ôl</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="517"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished">Ctrl+M</translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished">&amp;Ffurfweddu QtPass…</translation>
+        <translation>&amp;Ffurfweddu QtPass…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
         <source>Settings</source>
-        <translation type="unfinished">Gosodiadau</translation>
+        <translation>Gosodiadau</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished">Newid gosodiadau QtPass</translation>
+        <translation>Newid gosodiadau QtPass</translation>
     </message>
     <message>
         <source>Config</source>
@@ -2104,57 +2104,57 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished">Ctrl+,</translation>
+        <translation>Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="539"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished">&amp;Cau&apos;r ffenestr</translation>
+        <translation>&amp;Cau&apos;r ffenestr</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="542"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">Cau&apos;r ffenestr; gyda &quot;Cuddio ar gau&quot; mae QtPass yn aros yn yr hambwrdd</translation>
+        <translation>Cau&apos;r ffenestr; gyda &quot;Cuddio ar gau&quot; mae QtPass yn aros yn yr hambwrdd</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="545"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="550"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Gadael</translation>
+        <translation>&amp;Gadael</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="553"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="561"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished">&amp;Cwestiynau Cyffredin</translation>
+        <translation>&amp;Cwestiynau Cyffredin</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="564"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished">Agor y cwestiynau cyffredin ar qtpass.org</translation>
+        <translation>Agor y cwestiynau cyffredin ar qtpass.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="567"/>
         <source>F1</source>
-        <translation type="unfinished">F1</translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="572"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished">&amp;Ynghylch QtPass</translation>
+        <translation>&amp;Ynghylch QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="580"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished">Ynghylch &amp;Qt</translation>
+        <translation>Ynghylch &amp;Qt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="396"/>
@@ -2235,12 +2235,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="200"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Mae&apos;r weithred wedi cymryd gormod o amser; yn ailalluogi&apos;r rhyngwyneb.</translation>
+        <translation>Mae&apos;r weithred wedi cymryd gormod o amser; yn ailalluogi&apos;r rhyngwyneb.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="641"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Methwyd dadgryptio&apos;r cofnod cyfrinair hwn</translation>
+        <translation>Methwyd dadgryptio&apos;r cofnod cyfrinair hwn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="696"/>
@@ -2250,22 +2250,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="761"/>
         <source>About QtPass</source>
-        <translation type="unfinished">Ynghylch QtPass</translation>
+        <translation>Ynghylch QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="762"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;GUI aml-lwyfan ar gyfer &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, rheolwr cyfrineiriau safonol Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Cod ffynhonnell a materion&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Hawlfraint &amp;copy; 2014&amp;ndash;%2 IJhack. Trwyddedig o dan &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL fersiwn 3&lt;/a&gt; neu ddiweddarach.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;GUI aml-lwyfan ar gyfer &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, rheolwr cyfrineiriau safonol Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Cod ffynhonnell a materion&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Hawlfraint &amp;copy; 2014&amp;ndash;%2 IJhack. Trwyddedig o dan &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL fersiwn 3&lt;/a&gt; neu ddiweddarach.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="855"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Mae chwilio cynnwys yn defnyddio mynegiadau rheolaidd sylfaenol POSIX (pass grep).</translation>
+        <translation>Mae chwilio cynnwys yn defnyddio mynegiadau rheolaidd sylfaenol POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="857"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Mae chwilio cynnwys yn defnyddio mynegiadau rheolaidd cydnaws â Perl (PCRE).</translation>
+        <translation>Mae chwilio cynnwys yn defnyddio mynegiadau rheolaidd cydnaws â Perl (PCRE).</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="921"/>
@@ -2292,12 +2292,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="977"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Enw annilys</translation>
+        <translation>Enw annilys</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="978"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Byddai&apos;r enw hwnnw yn datrys y tu allan i&apos;r storfa cyfrineiriau. Dewiswch enw gwahanol.</translation>
+        <translation>Byddai&apos;r enw hwnnw yn datrys y tu allan i&apos;r storfa cyfrineiriau. Dewiswch enw gwahanol.</translation>
     </message>
     <message>
         <source>New file</source>
@@ -2316,12 +2316,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1059"/>
         <source>Delete link?</source>
-        <translation type="unfinished">Dileu dolen?</translation>
+        <translation>Dileu dolen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
-        <translation type="unfinished">Mae %1 yn ddolen symbolaidd neu gyffordd. Dileu&apos;r ddolen? Ni chyffyrddir â&apos;r hyn y mae&apos;n pwyntio ato.</translation>
+        <translation>Mae %1 yn ddolen symbolaidd neu gyffordd. Dileu&apos;r ddolen? Ni chyffyrddir â&apos;r hyn y mae&apos;n pwyntio ato.</translation>
     </message>
     <message>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
@@ -2375,17 +2375,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Ydych chi&apos;n siŵr eich bod am ddileu %1?</translation>
+        <translation>Ydych chi&apos;n siŵr eich bod am ddileu %1?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
-        <translation type="unfinished">Ydych chi&apos;n siŵr eich bod am ddileu %1 a&apos;r holl gynnwys?</translation>
+        <translation>Ydych chi&apos;n siŵr eich bod am ddileu %1 a&apos;r holl gynnwys?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
-        <translation type="unfinished">Sylw: mae ffeiliau annisgwyl yn y plygell a roddwyd, gwiriwch nhw cyn parhau.</translation>
+        <translation>Sylw: mae ffeiliau annisgwyl yn y plygell a roddwyd, gwiriwch nhw cyn parhau.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1332"/>
@@ -2410,7 +2410,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1420"/>
         <source>New folder</source>
-        <translation type="unfinished">Plygell newydd</translation>
+        <translation>Plygell newydd</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1421"/>
@@ -2432,27 +2432,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1532"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Mae&apos;r cofnod hwn yn cynnwys cyfrinach OTP, nid cyfrinair</translation>
+        <translation>Mae&apos;r cofnod hwn yn cynnwys cyfrinach OTP, nid cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1584"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished">Yn ail-amgryptio cyfrineiriau...</translation>
+        <translation>Yn ail-amgryptio cyfrineiriau...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1585"/>
         <source>Cancel</source>
-        <translation type="unfinished">Diddymu</translation>
+        <translation>Diddymu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1593"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished">Yn diddymu&apos;r ail-amgryptio</translation>
+        <translation>Yn diddymu&apos;r ail-amgryptio</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1604"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished">Yn ail-amgryptio cyfrineiriau: %1 o %2</translation>
+        <translation>Yn ail-amgryptio cyfrineiriau: %1 o %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1625"/>
@@ -2468,12 +2468,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">Nid yw&apos;n blygell o&apos;r storfa</translation>
+        <translation>Nid yw&apos;n blygell o&apos;r storfa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1674"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">Mae %1 yn ddolen symbolaidd neu gyffordd, neu&apos;n gorwedd y tu ôl i un. Nid yw&apos;r hyn y mae honno&apos;n pwyntio ato yn rhan o&apos;r storfa gyfrineiriau ac ni chyffyrddir ag ef.</translation>
+        <translation>Mae %1 yn ddolen symbolaidd neu gyffordd, neu&apos;n gorwedd y tu ôl i un. Nid yw&apos;r hyn y mae honno&apos;n pwyntio ato yn rhan o&apos;r storfa gyfrineiriau ac ni chyffyrddir ag ef.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1682"/>
@@ -2589,7 +2589,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Eiliadau nes bod y cod OTP yn newid</translation>
+        <translation>Eiliadau nes bod y cod OTP yn newid</translation>
     </message>
 </context>
 <context>
@@ -2597,12 +2597,12 @@ Parhau?</translation>
     <message>
         <location filename="../src/pass.cpp" line="162"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished">Nid yw cyfeiriadur cartref GPG %1 a ffurfweddwyd yn bodoli, yn defnyddio&apos;r cylch allweddi rhagosodedig</translation>
+        <translation>Nid yw cyfeiriadur cartref GPG %1 a ffurfweddwyd yn bodoli, yn defnyddio&apos;r cylch allweddi rhagosodedig</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="170"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished">Nid yw cyfeiriadur cartref GPG %1 a ffurfweddwyd yn bodoli, yn defnyddio GNUPGHOME %2 o&apos;r amgylchedd</translation>
+        <translation>Nid yw cyfeiriadur cartref GPG %1 a ffurfweddwyd yn bodoli, yn defnyddio GNUPGHOME %2 o&apos;r amgylchedd</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="183"/>
@@ -2628,7 +2628,7 @@ Parhau?</translation>
         <location filename="../src/pass.cpp" line="358"/>
         <location filename="../src/pass.cpp" line="359"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">Nid oes ffeil weithredadwy GPG wedi&apos;i ffurfweddu</translation>
+        <translation>Nid oes ffeil weithredadwy GPG wedi&apos;i ffurfweddu</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="429"/>
@@ -2657,27 +2657,27 @@ Parhau?</translation>
     <message>
         <location filename="../src/pass.cpp" line="461"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">Methodd yr amgryptio: ni ellir defnyddio allwedd GPG derbynnydd. Efallai ei bod wedi dod i ben neu wedi&apos;i dirymu, heb is-allwedd amgryptio, neu heb ymddiriedaeth; mae neges gpg isod yn dweud pa un.</translation>
+        <translation>Methodd yr amgryptio: ni ellir defnyddio allwedd GPG derbynnydd. Efallai ei bod wedi dod i ben neu wedi&apos;i dirymu, heb is-allwedd amgryptio, neu heb ymddiriedaeth; mae neges gpg isod yn dweud pa un.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="685"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">Mae %1 yn ddolen symbolaidd neu gyffordd, neu&apos;n gorwedd y tu ôl i un. Nid yw&apos;r hyn y mae honno&apos;n pwyntio ato yn rhan o&apos;r storfa gyfrineiriau ac ni chyffyrddir ag ef.</translation>
+        <translation>Mae %1 yn ddolen symbolaidd neu gyffordd, neu&apos;n gorwedd y tu ôl i un. Nid yw&apos;r hyn y mae honno&apos;n pwyntio ato yn rhan o&apos;r storfa gyfrineiriau ac ni chyffyrddir ag ef.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="691"/>
         <source>Not part of the store</source>
-        <translation type="unfinished">Ddim yn rhan o&apos;r storfa</translation>
+        <translation>Ddim yn rhan o&apos;r storfa</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="785"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Ni ellir dilysu&apos;r rhestr derbynwyr %1 yn erbyn yr allwedd lofnodi, felly nid oes dim wedi&apos;i ragddewis: byddai cadw yn llofnodi beth bynnag sydd ynddi. Dewiswch y derbynwyr eich hun; mae OK yn ysgrifennu ac yn llofnodi rhestr newydd.</translation>
+        <translation>Ni ellir dilysu&apos;r rhestr derbynwyr %1 yn erbyn yr allwedd lofnodi, felly nid oes dim wedi&apos;i ragddewis: byddai cadw yn llofnodi beth bynnag sydd ynddi. Dewiswch y derbynwyr eich hun; mae OK yn ysgrifennu ac yn llofnodi rhestr newydd.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="752"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
-        <translation type="unfinished">%1 Nid oes dim wedi&apos;i ragddewis: byddai cadw yn llofnodi beth bynnag sydd ynddi. Dewiswch y derbynwyr eich hun.</translation>
+        <translation>%1 Nid oes dim wedi&apos;i ragddewis: byddai cadw yn llofnodi beth bynnag sydd ynddi. Dewiswch y derbynwyr eich hun.</translation>
     </message>
 </context>
 <context>
@@ -2692,27 +2692,27 @@ Parhau?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
         <source>Folder</source>
-        <translation type="unfinished">Plygell</translation>
+        <translation>Plygell</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation type="unfinished">Plygell y storfa gyfrineiriau y mae&apos;r cofnod newydd yn mynd iddi</translation>
+        <translation>Plygell y storfa gyfrineiriau y mae&apos;r cofnod newydd yn mynd iddi</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">Enw</translation>
+        <translation>Enw</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
-        <translation type="unfinished">Enw&apos;r cofnod, fel y mae&apos;n ymddangos yn y goeden; mae / yn ei roi mewn is-blygell</translation>
+        <translation>Enw&apos;r cofnod, fel y mae&apos;n ymddangos yn y goeden; mae / yn ei roi mewn is-blygell</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>e.g. github.com or work/vpn</source>
-        <translation type="unfinished">e.e. github.com neu gwaith/vpn</translation>
+        <translation>e.e. github.com neu gwaith/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
@@ -2765,92 +2765,92 @@ Parhau?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="219"/>
         <source>Template:</source>
-        <translation type="unfinished">Templed:</translation>
+        <translation>Templed:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished">Templed meysydd o ffeil .templates y storfa. Mae Ctrl+T yn newid i&apos;r un nesaf.</translation>
+        <translation>Templed meysydd o ffeil .templates y storfa. Mae Ctrl+T yn newid i&apos;r un nesaf.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="76"/>
         <source>New password</source>
-        <translation type="unfinished">Cyfrinair newydd</translation>
+        <translation>Cyfrinair newydd</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>
         <source>Decrypting…</source>
-        <translation type="unfinished">Yn dadgryptio…</translation>
+        <translation>Yn dadgryptio…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="182"/>
         <source>Saving…</source>
-        <translation type="unfinished">Wrthi&apos;n cadw…</translation>
+        <translation>Wrthi&apos;n cadw…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="213"/>
         <source>Still saving</source>
-        <translation type="unfinished">Yn dal i gadw</translation>
+        <translation>Yn dal i gadw</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="214"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation type="unfinished">Mae&apos;r cofnod yn dal i gael ei gadw. Cau&apos;r ddeialog beth bynnag? Os bydd y cadw&apos;n methu wedyn, bydd yr hyn a deipiwyd gennych yn cael ei golli.</translation>
+        <translation>Mae&apos;r cofnod yn dal i gael ei gadw. Cau&apos;r ddeialog beth bynnag? Os bydd y cadw&apos;n methu wedyn, bydd yr hyn a deipiwyd gennych yn cael ei golli.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="231"/>
         <source>Not saved: %1</source>
-        <translation type="unfinished">Heb ei gadw: %1</translation>
+        <translation>Heb ei gadw: %1</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Give the entry a name.</source>
-        <translation type="unfinished">Rhowch enw i&apos;r cofnod.</translation>
+        <translation>Rhowch enw i&apos;r cofnod.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>A name cannot end in /.</source>
-        <translation type="unfinished">Ni all enw orffen â /.</translation>
+        <translation>Ni all enw orffen â /.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="286"/>
         <source>That name would resolve outside the password store.</source>
-        <translation type="unfinished">Byddai&apos;r enw hwnnw&apos;n datrys y tu allan i&apos;r storfa gyfrineiriau.</translation>
+        <translation>Byddai&apos;r enw hwnnw&apos;n datrys y tu allan i&apos;r storfa gyfrineiriau.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="290"/>
         <source>An entry called %1 already exists.</source>
-        <translation type="unfinished">Mae cofnod o&apos;r enw %1 yn bodoli eisoes.</translation>
+        <translation>Mae cofnod o&apos;r enw %1 yn bodoli eisoes.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="294"/>
         <source>%1 is a folder.</source>
-        <translation type="unfinished">Mae %1 yn blygell.</translation>
+        <translation>Mae %1 yn blygell.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="324"/>
         <source>Could not create the folder %1.</source>
-        <translation type="unfinished">Methwyd creu&apos;r blygell %1.</translation>
+        <translation>Methwyd creu&apos;r blygell %1.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="380"/>
         <source>Remove field</source>
-        <translation type="unfinished">Tynnu maes</translation>
+        <translation>Tynnu maes</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="399"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">Mae maes o&apos;r enw %1 yn bodoli eisoes.</translation>
+        <translation>Mae maes o&apos;r enw %1 yn bodoli eisoes.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="480"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">URI otpauth:// neu gyfrinach base32</translation>
+        <translation>URI otpauth:// neu gyfrinach base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="517"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Cyfrinach OTP annilys</translation>
+        <translation>Cyfrinach OTP annilys</translation>
     </message>
 </context>
 <context>
@@ -2867,12 +2867,12 @@ Parhau?</translation>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="26"/>
         <source>Clear</source>
-        <translation type="unfinished">Clirio</translation>
+        <translation>Clirio</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="27"/>
         <source>Clear output</source>
-        <translation type="unfinished">Clirio&apos;r allbwn</translation>
+        <translation>Clirio&apos;r allbwn</translation>
     </message>
 </context>
 <context>
@@ -2880,12 +2880,12 @@ Parhau?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="36"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished">Methwyd creu %1.</translation>
+        <translation>Methwyd creu %1.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="60"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Mae %1 eisoes yn cynnwys %n ffeil wedi&apos;u hamgryptio; ni chawsant eu hail-amgryptio. Newidiwch i&apos;r proffil ac agorwch Defnyddwyr i wneud hynny.</numerusform>
             <numerusform>Mae %1 eisoes yn cynnwys %n ffeil wedi&apos;i hamgryptio; ni chafodd ei hail-amgryptio. Newidiwch i&apos;r proffil ac agorwch Defnyddwyr i wneud hynny.</numerusform>
             <numerusform>Mae %1 eisoes yn cynnwys %n ffeil wedi&apos;u hamgryptio; ni chawsant eu hail-amgryptio. Newidiwch i&apos;r proffil ac agorwch Defnyddwyr i wneud hynny.</numerusform>
@@ -2896,12 +2896,12 @@ Parhau?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="78"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished">Dim derbynnydd wedi&apos;i ddewis; ni ysgrifennwyd %1.</translation>
+        <translation>Dim derbynnydd wedi&apos;i ddewis; ni ysgrifennwyd %1.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="127"/>
         <source>Could not sign %1 with %2.</source>
-        <translation type="unfinished">Methwyd llofnodi %1 gyda %2.</translation>
+        <translation>Methwyd llofnodi %1 gyda %2.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -2910,13 +2910,13 @@ Parhau?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="129"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished">Methwyd llofnodi %1 gyda %2: %3</translation>
+        <translation>Methwyd llofnodi %1 gyda %2: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="149"/>
         <location filename="../src/profileinit.cpp" line="178"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished">Methodd git %1 yn %2: %3</translation>
+        <translation>Methodd git %1 yn %2: %3</translation>
     </message>
 </context>
 <context>
@@ -2924,57 +2924,57 @@ Parhau?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished">Defnyddio&apos;r offeryn llinell orchymyn pass</translation>
+        <translation>Defnyddio&apos;r offeryn llinell orchymyn pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="204"/>
         <source>Programs</source>
-        <translation type="unfinished">Rhaglenni</translation>
+        <translation>Rhaglenni</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="205"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished">GnuPG sy&apos;n gwneud yr amgryptio. Mae pass a Git yn ddewisol; gall QtPass wneud eu gwaith ei hun.</translation>
+        <translation>GnuPG sy&apos;n gwneud yr amgryptio. Mae pass a Git yn ddewisol; gall QtPass wneud eu gwaith ei hun.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="209"/>
         <source>Select executable</source>
-        <translation type="unfinished">Dewis ffeil weithredadwy</translation>
+        <translation>Dewis ffeil weithredadwy</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="210"/>
         <source>All files (*)</source>
-        <translation type="unfinished">Pob ffeil (*)</translation>
+        <translation>Pob ffeil (*)</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="212"/>
         <source>GnuPG</source>
-        <translation type="unfinished">GnuPG</translation>
+        <translation>GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="215"/>
         <source>Git</source>
-        <translation type="unfinished">Git</translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="216"/>
         <source>pass</source>
-        <translation type="unfinished">pass</translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="217"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished">Rhedeg y sgript pass ar gyfer pob gweithrediad yn lle galw gpg a git yn uniongyrchol</translation>
+        <translation>Rhedeg y sgript pass ar gyfer pob gweithrediad yn lle galw gpg a git yn uniongyrchol</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="257"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
-        <translation type="unfinished">Ni chanfuwyd GnuPG. Gosodwch ef (gpg neu gpg2) a rhowch ei leoliad yma.</translation>
+        <translation>Ni chanfuwyd GnuPG. Gosodwch ef (gpg neu gpg2) a rhowch ei leoliad yma.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="260"/>
         <source>%1 is not an executable file.</source>
-        <translation type="unfinished">Nid yw %1 yn ffeil weithredadwy.</translation>
+        <translation>Nid yw %1 yn ffeil weithredadwy.</translation>
     </message>
 </context>
 <context>
@@ -2990,12 +2990,12 @@ Parhau?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <location filename="../src/passworddisplaypanel.cpp" line="229"/>
         <source>Password</source>
-        <translation type="unfinished">Cyfrinair</translation>
+        <translation>Cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="157"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Agor %1 mewn porwr</translation>
+        <translation>Agor %1 mewn porwr</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="302"/>
@@ -3010,7 +3010,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="303"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Ni chanfuwyd cod OTP yn y cofnod cyfrinair hwn</translation>
+        <translation>Ni chanfuwyd cod OTP yn y cofnod cyfrinair hwn</translation>
     </message>
 </context>
 <context>
@@ -3019,7 +3019,7 @@ Parhau?</translation>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished">Dangos fel cod QR</translation>
+        <translation>Dangos fel cod QR</translation>
     </message>
 </context>
 <context>
@@ -3030,13 +3030,13 @@ Parhau?</translation>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
         <source>Show password</source>
-        <translation type="unfinished">Dangos cyfrinair</translation>
+        <translation>Dangos cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
         <source>Hide password</source>
-        <translation type="unfinished">Cuddio&apos;r cyfrinair</translation>
+        <translation>Cuddio&apos;r cyfrinair</translation>
     </message>
 </context>
 <context>
@@ -3045,7 +3045,7 @@ Parhau?</translation>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Copïo i&apos;r clipfwrdd</translation>
+        <translation>Copïo i&apos;r clipfwrdd</translation>
     </message>
 </context>
 <context>
@@ -3128,22 +3128,22 @@ Parhau?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="225"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Methwyd cychwyn qrencode: %1</translation>
+        <translation>Methwyd cychwyn qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="233"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">Ni orffennodd qrencode mewn pryd</translation>
+        <translation>Ni orffennodd qrencode mewn pryd</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="245"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">Chwalodd qrencode</translation>
+        <translation>Chwalodd qrencode</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="246"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">Gorffennodd qrencode gyda&apos;r cod %1</translation>
+        <translation>Gorffennodd qrencode gyda&apos;r cod %1</translation>
     </message>
 </context>
 <context>
@@ -3151,27 +3151,27 @@ Parhau?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="93"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Methwyd dileu&apos;r ddolen %1.</translation>
+        <translation>Methwyd dileu&apos;r ddolen %1.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="94"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Methodd y dileu</translation>
+        <translation>Methodd y dileu</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="125"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
-        <translation type="unfinished">Tynnwyd y ddolen %1, ond ni allai git ei chofnodi: %2</translation>
+        <translation>Tynnwyd y ddolen %1, ond ni allai git ei chofnodi: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="127"/>
         <source>Delete incomplete</source>
-        <translation type="unfinished">Dileu&apos;n anghyflawn</translation>
+        <translation>Dileu&apos;n anghyflawn</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="229"/>
         <source>Search needs the GPG executable to be configured.</source>
-        <translation type="unfinished">Mae angen ffurfweddu&apos;r ffeil weithredadwy GPG er mwyn chwilio.</translation>
+        <translation>Mae angen ffurfweddu&apos;r ffeil weithredadwy GPG er mwyn chwilio.</translation>
     </message>
 </context>
 <context>
@@ -3196,27 +3196,27 @@ Parhau?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="364"/>
         <source>Keep the store under Git</source>
-        <translation type="unfinished">Cadw&apos;r storfa o dan Git</translation>
+        <translation>Cadw&apos;r storfa o dan Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="366"/>
         <source>Password store</source>
-        <translation type="unfinished">Storfa gyfrineiriau</translation>
+        <translation>Storfa gyfrineiriau</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="367"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation type="unfinished">Y blygell y mae eich cyfrineiriau&apos;n byw ynddi. Defnyddir storfa bresennol fel y mae; caiff plygell wag neu goll ei sefydlu ar gyfer yr allweddi a diciwyd gennych.</translation>
+        <translation>Y blygell y mae eich cyfrineiriau&apos;n byw ynddi. Defnyddir storfa bresennol fel y mae; caiff plygell wag neu goll ei sefydlu ar gyfer yr allweddi a diciwyd gennych.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="371"/>
         <source>Folder</source>
-        <translation type="unfinished">Plygell</translation>
+        <translation>Plygell</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="373"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Dewis plygell y storfa gyfrineiriau</translation>
+        <translation>Dewis plygell y storfa gyfrineiriau</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="398"/>
@@ -3224,7 +3224,7 @@ Parhau?</translation>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished">Nid oes gan Git enw a chyfeiriad e-bost i ymrwymo â nhw eto. Rhedwch
+        <translation>Nid oes gan Git enw a chyfeiriad e-bost i ymrwymo â nhw eto. Rhedwch
 git config --global user.name &quot;Eich Enw&quot;
 git config --global user.email chi@example.org
 a throwch Git ymlaen yn Gosodiadau wedyn.</translation>
@@ -3232,17 +3232,17 @@ a throwch Git ymlaen yn Gosodiadau wedyn.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="402"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished">Mae pob newid yn dod yn ymrwymiad; caiff plygell nad yw&apos;n gadwrfa eto un</translation>
+        <translation>Mae pob newid yn dod yn ymrwymiad; caiff plygell nad yw&apos;n gadwrfa eto un</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="426"/>
         <source>Enter a folder.</source>
-        <translation type="unfinished">Rhowch blygell.</translation>
+        <translation>Rhowch blygell.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="430"/>
         <source>An existing password store with %n entries.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Storfa gyfrineiriau sy&apos;n bodoli eisoes, gyda %n cofnod.</numerusform>
             <numerusform>Storfa gyfrineiriau sy&apos;n bodoli eisoes, gydag %n cofnod.</numerusform>
             <numerusform>Storfa gyfrineiriau sy&apos;n bodoli eisoes, gyda %n gofnod.</numerusform>
@@ -3253,22 +3253,22 @@ a throwch Git ymlaen yn Gosodiadau wedyn.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="433"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation type="unfinished">Plygell wag; caiff ei sefydlu fel storfa gyfrineiriau.</translation>
+        <translation>Plygell wag; caiff ei sefydlu fel storfa gyfrineiriau.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="434"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation type="unfinished">Nid yw&apos;r blygell hon yn storfa gyfrineiriau eto; caiff .gpg-id ar gyfer yr allweddi a diciwyd ei ysgrifennu iddi.</translation>
+        <translation>Nid yw&apos;r blygell hon yn storfa gyfrineiriau eto; caiff .gpg-id ar gyfer yr allweddi a diciwyd ei ysgrifennu iddi.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="437"/>
         <source>The folder does not exist yet; it will be created.</source>
-        <translation type="unfinished">Nid yw&apos;r blygell yn bodoli eto; caiff ei chreu.</translation>
+        <translation>Nid yw&apos;r blygell yn bodoli eto; caiff ei chreu.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="441"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
-        <translation type="unfinished">Ewch yn ôl a thiciwch o leiaf un allwedd i&apos;w hamgryptio iddi.</translation>
+        <translation>Ewch yn ôl a thiciwch o leiaf un allwedd i&apos;w hamgryptio iddi.</translation>
     </message>
 </context>
 <context>
@@ -3340,7 +3340,7 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished">Dewiswch pa ddefnyddwyr ddylai allu dadgryptio cyfrineiriau sydd wedi&apos;u storio yn y blygell hon.
+        <translation>Dewiswch pa ddefnyddwyr ddylai allu dadgryptio cyfrineiriau sydd wedi&apos;u storio yn y blygell hon.
 Nodyn: Ar OK caiff pob cyfrinair yn y blygell hon a&apos;i his-blygellau ei ail-amgryptio i&apos;r defnyddwyr a ddewiswyd; gall hyn gymryd amser.
 Mae gan gofnodion trwm allwedd gyfrinachol ar gael, dewiswch un o&apos;r rhain i allu dadgryptio eich hun.
 Mae gan gofnodion plaen allwedd amgryptio ddibynadwy, dewiswch y rhain i ganiatáu i bobl eraill ddadgryptio.
@@ -3412,34 +3412,34 @@ Ni ellir amgryptio i gofnodion [ANNILYS] a [WEDI DOD I BEN]; mae gan gofnodion [
     <message>
         <location filename="../src/util.cpp" line="687"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Ni ellir creu ffeil dros dro wrth ymyl %1: %2</translation>
+        <translation>Ni ellir creu ffeil dros dro wrth ymyl %1: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="699"/>
         <location filename="../src/util.cpp" line="778"/>
         <location filename="../src/util.cpp" line="808"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Ni ellir ysgrifennu %1: %2</translation>
+        <translation>Ni ellir ysgrifennu %1: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="714"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Methwyd disodli %1.</translation>
+        <translation>Methwyd disodli %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="719"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">Mae %1 yn bodoli eisoes.</translation>
+        <translation>Mae %1 yn bodoli eisoes.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="721"/>
         <source>Failed to write %1.</source>
-        <translation type="unfinished">Methwyd ysgrifennu %1.</translation>
+        <translation>Methwyd ysgrifennu %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="765"/>
         <source>%1 was swapped for another file while it was written.</source>
-        <translation type="unfinished">Cyfnewidiwyd %1 am ffeil arall tra oedd yn cael ei hysgrifennu.</translation>
+        <translation>Cyfnewidiwyd %1 am ffeil arall tra oedd yn cael ei hysgrifennu.</translation>
     </message>
     <message>
         <source>%1 was replaced by a link while it was written.</source>
@@ -3448,12 +3448,12 @@ Ni ellir amgryptio i gofnodion [ANNILYS] a [WEDI DOD I BEN]; mae gan gofnodion [
     <message>
         <location filename="../src/util.cpp" line="791"/>
         <source>Cannot read %1.</source>
-        <translation type="unfinished">Ni ellir darllen %1.</translation>
+        <translation>Ni ellir darllen %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="801"/>
         <source>Cannot read %1: %2</source>
-        <translation type="unfinished">Ni ellir darllen %1: %2</translation>
+        <translation>Ni ellir darllen %1: %2</translation>
     </message>
 </context>
 </TS>
