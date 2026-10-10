@@ -13,7 +13,7 @@ Thank you for wanting to contribute to making QtPass awesome.
    Weblate's own commits without a sign-off; a committer reviews them before merging.
 2. **Add tests** - New features and bugfixes come with tests in `tests/auto/`, and `make check`
    must pass. Format the C++ files you changed with `clang-format --style=file -i <file>...`;
-   CI runs the linters on every Pull Request.
+   CI runs the linters on Pull Requests that change code, build files, scripts or documentation.
 3. Ensure install or build dependencies and artifacts are not committed.
 4. When adding big new features or changes to the build tool, update the [README.md](README.md) to reflect those.
 5. Make sure you update all the CI configs if needed. These run on every Pull Request.
