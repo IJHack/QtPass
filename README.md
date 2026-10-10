@@ -22,7 +22,7 @@ manage your passwords.
 
 _Available in over 60 languages_
 
-**Website: [qtpass.org](https://qtpass.org/)** —
+**Project site: [qtpass.org](https://qtpass.org/)** —
 [downloads](https://qtpass.org/downloads),
 [getting started](https://qtpass.org/getting-started),
 [FAQ](https://qtpass.org/faq) and [screenshots](https://qtpass.org/screenshots).
