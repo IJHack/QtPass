@@ -22,6 +22,11 @@ manage your passwords.
 
 _Available in over 60 languages_
 
+**Website: [qtpass.org](https://qtpass.org/)** —
+[downloads](https://qtpass.org/downloads),
+[getting started](https://qtpass.org/getting-started),
+[FAQ](https://qtpass.org/faq) and [screenshots](https://qtpass.org/screenshots).
+
 ## Features
 
 - Using `pass` or `git` and `gpg2` directly
@@ -40,9 +45,16 @@ _Available in over 60 languages_
 - Process output panel with command labels, color-coded errors, and auto-scroll
 - Easy onboarding for new users
 
+How each of these works, from profiles and templates to OTP and Git sync, is
+described on [qtpass.org/advanced](https://qtpass.org/advanced).
+
 Logo based on [Heart-padlock by AnonMoos](https://commons.wikimedia.org/wiki/File:Heart-padlock.svg).
 
 ## Installation
+
+Every way to install QtPass, with the current version per platform, is on
+[qtpass.org/downloads](https://qtpass.org/downloads); first-time setup of GnuPG
+and `pass` is on [qtpass.org/getting-started](https://qtpass.org/getting-started).
 
 ### From package
 
@@ -78,8 +90,9 @@ notarized — see [the macOS page on qtpass.org](https://qtpass.org/macos) and
 
 Windows
 `choco install qtpass` or `winget install IJHack.QtPass`
-(the installer is not code-signed, so SmartScreen asks for
-_More info → Run anyway_ on first start)
+(the installer is not code-signed yet, so SmartScreen asks for
+_More info → Run anyway_ on first start; signing is being set up, see the
+[code signing policy](https://qtpass.org/code-signing))
 
 Linux (AppImage)
 Download `QtPass-<version>-x86_64.AppImage` from the
@@ -177,6 +190,9 @@ Be sure to first run: `make distclean && qmake6 CONFIG+=coverage qtpass.pro`
 
 ## Security considerations
 
+The threat model and how to report a vulnerability are on
+[qtpass.org/security](https://qtpass.org/security) and in [SECURITY.md](SECURITY.md).
+
 Using this program will not magically keep your passwords secure against
 compromised computers even if you use it in combination with a smartcard.
 
@@ -219,7 +235,16 @@ attack I can think of at least two options:
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
 [CHANGELOG](CHANGELOG.md)
 
-[Official QtPass site](https://qtpass.org/)
+On [qtpass.org](https://qtpass.org/):
+[getting started](https://qtpass.org/getting-started),
+[features in depth](https://qtpass.org/advanced),
+[FAQ](https://qtpass.org/faq),
+[screenshots](https://qtpass.org/screenshots),
+[security](https://qtpass.org/security),
+[privacy](https://qtpass.org/privacy),
+[code signing policy](https://qtpass.org/code-signing) and
+[changelog](https://qtpass.org/changelog).
+
 [Source code](https://github.com/IJHack/QtPass)
 [Issue queue](https://github.com/IJHack/QtPass/issues)
 
