@@ -62,6 +62,11 @@ jobs:
     name: Windows installer
     needs: changes
     runs-on: windows-latest
+    # The SignPath token is a secret of the signpath environment, whose
+    # deployment rules admit v* tags and main only: a manual run on any other
+    # branch, or a pull request, never sees it. Pull requests do not enter the
+    # environment at all.
+    environment: ${{ (startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch') && 'signpath' || '' }}
     steps:
       - name: Check if build needed
         id: need_build
@@ -87,8 +92,8 @@ jobs:
         run: echo "No relevant changes - skipping Windows build"
 
       # Code signing through the SignPath Foundation: tag pushes and manual
-      # runs only, and only once the SIGNPATH_API_TOKEN secret exists. Pull
-      # requests never sign. The organization id is the repository variable
+      # runs only, and only once the SIGNPATH_API_TOKEN secret exists (in the
+      # signpath environment). Pull requests never sign. The organization id is the repository variable
       # SIGNPATH_ORGANIZATION_ID; SIGNPATH_SIGNING_POLICY_SLUG can override
       # the policy, release-signing (SignPath's test certificate until the
       # production one is imported; every request waits for an approver).
@@ -216,10 +221,19 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
-          Copy-Item signed\exe\qtpass.exe dist\qtpass\qtpass.exe -Force
-          $sig = Get-AuthenticodeSignature dist\qtpass\qtpass.exe
-          if (-not $sig.SignerCertificate) { throw "qtpass.exe came back unsigned" }
+          $sig = Get-AuthenticodeSignature signed\exe\qtpass.exe
           Write-Output "qtpass.exe: $($sig.Status), $($sig.SignerCertificate.Subject)"
+          # Valid only, unless the repository variable says SignPath still
+          # signs with its test certificate, whose root Windows does not
+          # trust. A hash mismatch or a missing signature is never accepted.
+          $accepted = @("Valid")
+          if ($env:TEST_CERTIFICATE -eq "true") { $accepted += "UnknownError", "NotTrusted" }
+          if (-not $sig.SignerCertificate -or $accepted -notcontains "$($sig.Status)") {
+            throw "qtpass.exe came back without an acceptable signature"
+          }
+          Copy-Item signed\exe\qtpass.exe dist\qtpass\qtpass.exe -Force
+        env:
+          TEST_CERTIFICATE: ${{ vars.SIGNPATH_TEST_CERTIFICATE }}
 
       - name: Build Windows installer
         if: steps.need_build.outputs.run_build == 'true'
@@ -260,9 +274,15 @@ jobs:
           $installer = Get-ChildItem signed\installer\qtpass-*.exe | Select-Object -First 1
           if (-not $installer) { throw "SignPath returned no installer" }
           $sig = Get-AuthenticodeSignature $installer.FullName
-          if (-not $sig.SignerCertificate) { throw "$($installer.Name) came back unsigned" }
           Write-Output "$($installer.Name): $($sig.Status), $($sig.SignerCertificate.Subject)"
+          $accepted = @("Valid")
+          if ($env:TEST_CERTIFICATE -eq "true") { $accepted += "UnknownError", "NotTrusted" }
+          if (-not $sig.SignerCertificate -or $accepted -notcontains "$($sig.Status)") {
+            throw "$($installer.Name) came back without an acceptable signature"
+          }
           Copy-Item $installer.FullName Output\ -Force
+        env:
+          TEST_CERTIFICATE: ${{ vars.SIGNPATH_TEST_CERTIFICATE }}
 
       - name: Upload installer artifact
         if: steps.need_build.outputs.run_build == 'true'
