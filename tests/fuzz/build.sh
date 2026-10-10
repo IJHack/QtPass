@@ -31,14 +31,14 @@ CXXFLAGS="${CXXFLAGS//-stdlib=libc++/}"
 build="$out/.build"
 mkdir -p "$build"
 (
-  cd "$build"
-  # Only the library: the fuzzers link the objects they need from it.
-  # -fsanitize=fuzzer-no-link adds coverage instrumentation without main().
-  "$QMAKE" "$root/src/src.pro" -spec linux-clang \
-    QMAKE_CC="${CC:-${CXX/clang++/clang}}" QMAKE_CXX="$CXX" QMAKE_LINK="$CXX" \
-    QMAKE_CXXFLAGS+="$CXXFLAGS -fsanitize=fuzzer-no-link" \
-    QMAKE_LFLAGS+="$CXXFLAGS" CONFIG+=release
-  make -j"$(nproc)"
+	cd "$build"
+	# Only the library: the fuzzers link the objects they need from it.
+	# -fsanitize=fuzzer-no-link adds coverage instrumentation without main().
+	"$QMAKE" "$root/src/src.pro" -spec linux-clang \
+		QMAKE_CC="${CC:-${CXX/clang++/clang}}" QMAKE_CXX="$CXX" QMAKE_LINK="$CXX" \
+		QMAKE_CXXFLAGS+="$CXXFLAGS -fsanitize=fuzzer-no-link" \
+		QMAKE_LFLAGS+="$CXXFLAGS" CONFIG+=release
+	make -j"$(nproc)"
 )
 lib="$(find "$build" -name libqtpass.a -print -quit)"
 
@@ -46,16 +46,16 @@ qt_headers="$("$QMAKE" -query QT_INSTALL_HEADERS)"
 qt_libs="$("$QMAKE" -query QT_INSTALL_LIBS)"
 
 for src in "$here"/fuzz_*.cpp; do
-  name="$(basename "$src" .cpp)"
-  # --as-needed: a target that only pulls QtCore code from the library
-  # needs only QtCore at run time.
-  # CXXFLAGS and LIB_FUZZING_ENGINE are lists of flags, split on purpose.
-  # shellcheck disable=SC2086
-  "$CXX" $CXXFLAGS -std=c++17 -fPIC \
-    -I"$root/src" -I"$build" \
-    -I"$qt_headers" -I"$qt_headers/QtCore" \
-    "$src" "$lib" $LIB_FUZZING_ENGINE \
-    -Wl,--as-needed -L"$qt_libs" -lQt6Core -Wl,-rpath,"$qt_libs" \
-    -o "$out/$name"
+	name="$(basename "$src" .cpp)"
+	# --as-needed: a target that only pulls QtCore code from the library
+	# needs only QtCore at run time.
+	# CXXFLAGS and LIB_FUZZING_ENGINE are lists of flags, split on purpose.
+	# shellcheck disable=SC2086
+	"$CXX" $CXXFLAGS -std=c++17 -fPIC \
+		-I"$root/src" -I"$build" \
+		-I"$qt_headers" -I"$qt_headers/QtCore" \
+		"$src" "$lib" $LIB_FUZZING_ENGINE \
+		-Wl,--as-needed -L"$qt_libs" -lQt6Core -Wl,-rpath,"$qt_libs" \
+		-o "$out/$name"
 done
 ls -1 "$out"/fuzz_*
