@@ -71,8 +71,7 @@ QtPass is a GUI for [pass](https://www.passwordstore.org/), the standard Unix pa
 
 QtPass depends on:
 
-- **Qt6** (primary; use `qmake6`) - GUI framework
-- **Qt5** (5.15+, legacy; use `qmake`) - GUI framework
+- **Qt 6.8+** (use `qmake6`) - GUI framework; the 1.8.x releases also build with Qt 5.15
 - **GPG** (gpg2) - encryption
 - **pass** (optional) - password store CLI
 - **Git** (optional) - version control
