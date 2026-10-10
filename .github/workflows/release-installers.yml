@@ -14,6 +14,11 @@ on:
   # is configured, signs the Windows one; this is how a signing setup change
   # is tried out with the test certificate before a release.
   workflow_dispatch:
+    inputs:
+      sign:
+        description: Sign the Windows build (main and v* tags only)
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -64,9 +69,10 @@ jobs:
     runs-on: windows-latest
     # The SignPath token is a secret of the signpath environment, whose
     # deployment rules admit v* tags and main only: a manual run on any other
-    # branch, or a pull request, never sees it. Pull requests do not enter the
-    # environment at all.
-    environment: ${{ (startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch') && 'signpath' || '' }}
+    # branch, or a pull request, never sees it. Pull requests, and manual runs
+    # with "sign" unticked, do not enter the environment at all, so those
+    # build an unsigned installer from any branch.
+    environment: ${{ (startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.sign)) && 'signpath' || '' }}
     steps:
       - name: Check if build needed
         id: need_build
@@ -103,7 +109,7 @@ jobs:
         shell: bash
         run: |
           if [[ "${HAS_TOKEN}" == "true" && -n "${ORGANIZATION_ID}" ]] && \
-             [[ "${GITHUB_REF}" =~ ^refs/tags/v || "${GITHUB_EVENT_NAME}" == "workflow_dispatch" ]]; then
+             [[ "${GITHUB_REF}" =~ ^refs/tags/v || "${GITHUB_EVENT_NAME}/${SIGN}" == "workflow_dispatch/true" ]]; then
             echo "enabled=true" >> "$GITHUB_OUTPUT"
             echo "Signing with SignPath policy '${POLICY}'"
           else
@@ -113,6 +119,7 @@ jobs:
         env:
           HAS_TOKEN: ${{ secrets.SIGNPATH_API_TOKEN != '' }}
           ORGANIZATION_ID: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+          SIGN: ${{ inputs.sign }}
           POLICY: ${{ vars.SIGNPATH_SIGNING_POLICY_SLUG || 'release-signing' }}
 
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -223,12 +230,23 @@ jobs:
           $ErrorActionPreference = "Stop"
           $sig = Get-AuthenticodeSignature signed\exe\qtpass.exe
           Write-Output "qtpass.exe: $($sig.Status), $($sig.SignerCertificate.Subject)"
-          # Valid only, unless the repository variable says SignPath still
-          # signs with its test certificate, whose root Windows does not
-          # trust. A hash mismatch or a missing signature is never accepted.
-          $accepted = @("Valid")
-          if ($env:TEST_CERTIFICATE -eq "true") { $accepted += "UnknownError", "NotTrusted" }
-          if (-not $sig.SignerCertificate -or $accepted -notcontains "$($sig.Status)") {
+          # Valid only. While SignPath signs with its self-signed test
+          # certificate (repository variable SIGNPATH_TEST_CERTIFICATE),
+          # Windows reports UnknownError for it; that is accepted only when
+          # the untrusted root is the chain's one problem. A bad digest is
+          # HashMismatch and never accepted.
+          function Test-Signature($sig) {
+            if (-not $sig.SignerCertificate) { return $false }
+            if ($sig.Status -eq "Valid") { return $true }
+            if ($env:TEST_CERTIFICATE -ne "true" -or $sig.Status -ne "UnknownError") { return $false }
+            $chain = [System.Security.Cryptography.X509Certificates.X509Chain]::new()
+            $chain.ChainPolicy.RevocationMode = "NoCheck"
+            $null = $chain.Build($sig.SignerCertificate)
+            $problems = @($chain.ChainStatus | ForEach-Object { "$($_.Status)" } | Where-Object { $_ -ne "UntrustedRoot" })
+            Write-Host "certificate chain: $(($chain.ChainStatus | ForEach-Object { $_.Status }) -join ", ")"
+            return ($problems.Count -eq 0)
+          }
+          if (-not (Test-Signature $sig)) {
             throw "qtpass.exe came back without an acceptable signature"
           }
           Copy-Item signed\exe\qtpass.exe dist\qtpass\qtpass.exe -Force
@@ -275,9 +293,19 @@ jobs:
           if (-not $installer) { throw "SignPath returned no installer" }
           $sig = Get-AuthenticodeSignature $installer.FullName
           Write-Output "$($installer.Name): $($sig.Status), $($sig.SignerCertificate.Subject)"
-          $accepted = @("Valid")
-          if ($env:TEST_CERTIFICATE -eq "true") { $accepted += "UnknownError", "NotTrusted" }
-          if (-not $sig.SignerCertificate -or $accepted -notcontains "$($sig.Status)") {
+          # Same rule as for qtpass.exe above.
+          function Test-Signature($sig) {
+            if (-not $sig.SignerCertificate) { return $false }
+            if ($sig.Status -eq "Valid") { return $true }
+            if ($env:TEST_CERTIFICATE -ne "true" -or $sig.Status -ne "UnknownError") { return $false }
+            $chain = [System.Security.Cryptography.X509Certificates.X509Chain]::new()
+            $chain.ChainPolicy.RevocationMode = "NoCheck"
+            $null = $chain.Build($sig.SignerCertificate)
+            $problems = @($chain.ChainStatus | ForEach-Object { "$($_.Status)" } | Where-Object { $_ -ne "UntrustedRoot" })
+            Write-Host "certificate chain: $(($chain.ChainStatus | ForEach-Object { $_.Status }) -join ", ")"
+            return ($problems.Count -eq 0)
+          }
+          if (-not (Test-Signature $sig)) {
             throw "$($installer.Name) came back without an acceptable signature"
           }
           Copy-Item $installer.FullName Output\ -Force
