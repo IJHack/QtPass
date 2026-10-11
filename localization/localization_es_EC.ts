@@ -1433,7 +1433,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="990"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">No se pudo comprobar si el almacén tiene archivos sin fusionar tras el pull. Compruébalo con git antes de volver a cifrar.</translation>
+        <translation>No se pudo comprobar si el almacén tiene archivos sin fusionar tras el pull. Compruébalo con git antes de volver a cifrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="996"/>
@@ -2761,7 +2761,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/pass.cpp" line="461"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">Error al cifrar: no se puede usar la clave GPG de un destinatario. Puede haber caducado o estar revocada, no tener subclave de cifrado o no ser de confianza; el mensaje de gpg de abajo indica cuál.</translation>
+        <translation>Error al cifrar: no se puede usar la clave GPG de un destinatario. Puede haber caducado o estar revocada, no tener subclave de cifrado o no ser de confianza; el mensaje de gpg de abajo indica cuál.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="685"/>
@@ -2889,22 +2889,22 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/passworddialog.cpp" line="182"/>
         <source>Saving…</source>
-        <translation type="unfinished">Guardando…</translation>
+        <translation>Guardando…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="213"/>
         <source>Still saving</source>
-        <translation type="unfinished">Aún se está guardando</translation>
+        <translation>Aún se está guardando</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="214"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation type="unfinished">La entrada aún se está guardando. ¿Cerrar el diálogo de todos modos? Si después falla el guardado, se perderá lo que escribiste.</translation>
+        <translation>La entrada aún se está guardando. ¿Cerrar el diálogo de todos modos? Si después falla el guardado, se perderá lo que escribiste.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="231"/>
         <source>Not saved: %1</source>
-        <translation type="unfinished">No guardado: %1</translation>
+        <translation>No guardado: %1</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>
@@ -3262,12 +3262,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/realpass.cpp" line="125"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
-        <translation type="unfinished">Se eliminó el enlace %1, pero git no pudo registrarlo: %2</translation>
+        <translation>Se eliminó el enlace %1, pero git no pudo registrarlo: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="127"/>
         <source>Delete incomplete</source>
-        <translation type="unfinished">Eliminación incompleta</translation>
+        <translation>Eliminación incompleta</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="229"/>
