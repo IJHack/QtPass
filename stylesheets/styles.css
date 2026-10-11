@@ -955,6 +955,62 @@ header ul a:active {
   color: var(--muted);
 }
 
+/* Home: one line per platform to install from, and the apps around pass. */
+.installs {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.45rem 1.25rem;
+  margin: 0 0 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+.installs dt {
+  font-weight: 700;
+  color: var(--ink-strong);
+  scroll-margin-top: 1rem;
+}
+.installs dd {
+  margin: 0;
+  min-width: 0;
+}
+.installs code {
+  white-space: nowrap;
+}
+.installs code.long {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.ecosystem {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+  margin-block-end: 1.5rem;
+}
+.ecosystem section {
+  padding: 0.9rem 1.1rem;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+.ecosystem h3 {
+  margin-block: 0 0.5rem;
+  font-size: 1rem;
+}
+.ecosystem ul {
+  margin: 0;
+  padding-inline-start: 1.1rem;
+}
+.ecosystem li + li {
+  margin-block-start: 0.45rem;
+}
+.ecosystem .note {
+  margin-block: 0.6rem 0;
+  font-size: 0.88em;
+  color: var(--muted);
+}
+
 /* ---- one column ------------------------------------------------------- */
 @media (max-width: 60rem) {
   /* One column: the sidebar is the whole first screen, so it must scroll
@@ -964,8 +1020,26 @@ header ul a:active {
   }
   .wrapper {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "side" "main";
+    grid-template-areas: "side" "main" "foot";
     row-gap: 1.5rem;
+  }
+  /* The sidebar's header stays on top, its footer (maintainer, badges,
+     fine print) goes under the content instead of in front of it. */
+  .sidebar {
+    display: contents;
+  }
+  .sidebar > header {
+    grid-area: side;
+  }
+  .sidebar > footer {
+    grid-area: foot;
+    margin-block-start: 0;
+  }
+  /* Home on a phone: the hero has the download button and the page its
+     own screenshots, so the sidebar keeps only name, line and links. */
+  .home .sidebar header ul,
+  .home .sidebar .screenshots {
+    display: none;
   }
   main {
     max-width: none;
@@ -983,6 +1057,13 @@ header ul a:active {
 @media (max-width: 30rem) {
   header ul a strong {
     font-size: 0.8rem;
+  }
+  .installs {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.15rem;
+  }
+  .installs dd + dt {
+    margin-block-start: 0.55rem;
   }
   .compatible {
     height: 3.5rem;

@@ -36,8 +36,10 @@
     var py = PAD_TOP * S;
     var k = S / VIEW;
     g.save();
-    // Logo units, y up, as in the logo's own transform.
-    g.setTransform(k, 0, 0, -k, px + 1615 * k, py - lift + 2186 * k);
+    // Logo units, y up, as in the logo's own transform; on top of the
+    // caller's device-pixel scale (setTransform would drop it, and the
+    // shackle would land off the heart on any high-DPI screen).
+    g.transform(k, 0, 0, -k, px + 1615 * k, py - lift + 2186 * k);
     g.save();
     // Turned round its long left leg: only the centre line is foreshortened.
     g.translate(-630, 0);
