@@ -52,48 +52,47 @@ jobs:
         language: ["cpp"]
 
     steps:
-      - name: Check if analysis needed
-        id: need_analysis
+      # The code_scanning rule on main needs CodeQL results for every pull
+      # request, so every run analyzes. A pull request that changes neither
+      # src/ nor tests/ gets the fast scan without a build (build-mode
+      # none); code changes, pushes to main, merge groups and the weekly
+      # run build QtPass for the full analysis.
+      - name: Choose the build mode
+        id: mode
         shell: bash
         run: |
-          if [[ "${NEEDS_CHANGES_OUTPUTS_SRC}" == "true" ]] || \
-             [[ "${NEEDS_CHANGES_OUTPUTS_TESTS}" == "true" ]] || \
-             [[ "${{ github.event_name }}" == "merge_group" ]] || \
-             [[ "${{ github.event_name }}" == "schedule" ]]; then
-            echo "run_analysis=true" >> "$GITHUB_OUTPUT"
+          if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]] && \
+             [[ "${NEEDS_CHANGES_OUTPUTS_SRC}" != "true" ]] && \
+             [[ "${NEEDS_CHANGES_OUTPUTS_TESTS}" != "true" ]]; then
+            echo "build_mode=none" >> "$GITHUB_OUTPUT"
+            echo "No code changes - analyzing without a build"
           else
-            echo "run_analysis=false" >> "$GITHUB_OUTPUT"
+            echo "build_mode=autobuild" >> "$GITHUB_OUTPUT"
           fi
         env:
           NEEDS_CHANGES_OUTPUTS_SRC: ${{ needs.changes.outputs.src }}
           NEEDS_CHANGES_OUTPUTS_TESTS: ${{ needs.changes.outputs.tests }}
 
-      - name: No changes - skipping
-        if: steps.need_analysis.outputs.run_analysis != 'true'
-        run: echo "No relevant changes - skipping CodeQL analysis"
-
       - name: Checkout repository
-        if: steps.need_analysis.outputs.run_analysis == 'true'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
       - name: Initialize CodeQL
-        if: steps.need_analysis.outputs.run_analysis == 'true'
         uses: github/codeql-action/init@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
         with:
           languages: ${{ matrix.language }}
+          build-mode: ${{ steps.mode.outputs.build_mode }}
 
       - name: Install Qt
-        if: steps.need_analysis.outputs.run_analysis == 'true'
+        if: steps.mode.outputs.build_mode == 'autobuild'
         uses: jurplel/install-qt-action@a9c63c7c123f3069cff414e7e482d95dfa9d8125 # v4.4.1
 
       - name: Autobuild
-        if: steps.need_analysis.outputs.run_analysis == 'true'
+        if: steps.mode.outputs.build_mode == 'autobuild'
         uses: github/codeql-action/autobuild@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
 
       - name: Perform CodeQL Analysis
-        if: steps.need_analysis.outputs.run_analysis == 'true'
         uses: github/codeql-action/analyze@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
         with:
           category: "/language:${{matrix.language}}"
