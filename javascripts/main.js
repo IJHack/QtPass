@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/unlock.js?v=1.8.3-2";
+      script.src = "/javascripts/unlock.js?v=1.8.3-3";
       script.onload = function () {
         window.qtpassUnlock();
       };
@@ -168,8 +168,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         event.preventDefault();
         var href = link.getAttribute("href");
-        if (dark.matches && /-app\.png$/.test(href)) {
-          href = href.replace(/-app\.png$/, "-app-dark.png");
+        if (dark.matches && /-app\.png(\?|$)/.test(href)) {
+          href = href.replace(/-app\.png(\?|$)/, "-app-dark.png$1");
         }
         var thumb = link.querySelector("img");
         big.alt = thumb ? thumb.alt : "";
