@@ -681,16 +681,35 @@ jobs:
       # below picks it up with no special-casing, and so a verifier can grab
       # it next to the assets it covers rather than through the Attestations
       # API. The .intoto.jsonl extension matches what SLSA-provenance
-      # consumers (including Scorecard's asset scan) look for.
+      # consumers (including Scorecard's asset scan) look for — it is JSON
+      # Lines, one provenance statement per line, which is what lets this
+      # step fold a prior run's bundle in rather than discard it: a re-run
+      # on an already-published release only attests the files it adds
+      # (see "Determine which release assets are new in this run" above),
+      # so a bundle already published under this name covers earlier assets
+      # this run's bundle says nothing about. The final upload step below
+      # always replaces the published bundle with the one staged here, so
+      # it must already contain every line that was ever published for this
+      # tag; gh release download fails harmlessly when no such asset exists
+      # yet (first publish of this tag).
       - name: Stage the provenance bundle as a release asset
         shell: bash
         if: steps.attest.outputs.bundle-path != ''
         env:
+          GH_TOKEN: ${{ github.token }}
           BUNDLE_PATH: ${{ steps.attest.outputs.bundle-path }}
         run: |
           set -euo pipefail
           version="${GITHUB_REF_NAME#v}"
-          cp "$BUNDLE_PATH" "dist/QtPass-${version}.intoto.jsonl"
+          dest="dist/QtPass-${version}.intoto.jsonl"
+          if gh release download "$GITHUB_REF_NAME" \
+              --pattern "$(basename "$dest")" --output "$dest.previous" 2>/dev/null; then
+            echo "folding in the previously published provenance bundle"
+            cat "$dest.previous" "$BUNDLE_PATH" > "$dest"
+            rm -f "$dest.previous"
+          else
+            cp "$BUNDLE_PATH" "$dest"
+          fi
 
       - name: Create the draft release if needed and upload the assets
         shell: bash
@@ -723,8 +742,15 @@ jobs:
             gh release upload "$GITHUB_REF_NAME" dist/* --clobber
           else
             for file in dist/*; do
-              if grep -qxF "$(basename "$file")" <<<"$existing"; then
-                echo "keeping published asset $(basename "$file")"
+              name="$(basename "$file")"
+              if [[ "$name" == *.intoto.jsonl ]]; then
+                # Cumulative, not a fixed asset: the staging step above
+                # already folded in whatever was published before, so the
+                # file here is always a superset and safe to replace outright.
+                echo "updating provenance bundle $name"
+                gh release upload "$GITHUB_REF_NAME" "$file" --clobber
+              elif grep -qxF "$name" <<<"$existing"; then
+                echo "keeping published asset $name"
               else
                 gh release upload "$GITHUB_REF_NAME" "$file"
               fi
