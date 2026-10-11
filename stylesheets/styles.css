@@ -671,14 +671,6 @@ header ul a:active {
   object-fit: contain;
   border-radius: 6px;
 }
-.capture img.shot.broken {
-  display: none;
-}
-.capture img.fallback {
-  width: auto;
-  height: 3.5rem;
-  opacity: 0.85;
-}
 .native .platform figcaption {
   margin-block-start: 0.6rem;
   font-size: 0.9em;
