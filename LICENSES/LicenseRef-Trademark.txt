@@ -1,0 +1,12 @@
+Platform logos and badges
+
+These images are logos, icons or badges of the operating systems QtPass runs
+on. They belong to their respective owners, are used only to name the
+platform a download or screenshot is for, and are not licensed under the
+licences of this website or of QtPass. Using them here does not imply
+endorsement by their owners.
+
+- FreeBSD and the FreeBSD logo are trademarks of The FreeBSD Foundation.
+- Microsoft, Windows and the Windows logo are trademarks of the Microsoft
+  group of companies; the Windows setup icon is Microsoft's.
+- Apple and macOS are trademarks of Apple Inc.

@@ -36,3 +36,29 @@ path = ["images/qtpass*", "images/config*", "images/windows-app*", "images/macos
 precedence = "override"
 SPDX-FileCopyrightText = "IJHack"
 SPDX-License-Identifier = "CC0-1.0"
+
+# Platform logos: Tux under Larry Ewing's own terms, the rest are the
+# platforms' trademarks, used to name the platform (see the LicenseRef texts).
+[[annotations]]
+path = "images/linux.png"
+precedence = "override"
+SPDX-FileCopyrightText = "Larry Ewing <lewing@isc.tamu.edu> (Tux, drawn with The GIMP)"
+SPDX-License-Identifier = "LicenseRef-Tux"
+
+[[annotations]]
+path = "images/freebsd.png"
+precedence = "override"
+SPDX-FileCopyrightText = "The FreeBSD Foundation"
+SPDX-License-Identifier = "LicenseRef-Trademark"
+
+[[annotations]]
+path = ["images/windows.png", "images/win11.png"]
+precedence = "override"
+SPDX-FileCopyrightText = "Microsoft Corporation"
+SPDX-License-Identifier = "LicenseRef-Trademark"
+
+[[annotations]]
+path = "images/macos.png"
+precedence = "override"
+SPDX-FileCopyrightText = "IJHack (badge; macOS is a trademark of Apple Inc.)"
+SPDX-License-Identifier = "LicenseRef-Trademark"

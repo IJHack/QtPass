@@ -1,0 +1,5 @@
+Tux, the Linux penguin, by Larry Ewing <lewing@isc.tamu.edu>, drawn with
+The GIMP.
+
+Permission to use and/or modify this image is granted provided you
+acknowledge me lewing@isc.tamu.edu and The GIMP if someone asks.
