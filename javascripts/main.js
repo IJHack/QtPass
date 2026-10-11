@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/unlock.js?v=1.8.3-7";
+      script.src = "/javascripts/unlock.js?v=1.8.3-8";
       script.onload = function () {
         window.qtpassUnlock();
       };

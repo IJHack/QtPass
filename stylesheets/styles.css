@@ -922,15 +922,16 @@ header ul a:active {
   transform: translateX(-50%);
   padding: 1rem 1.5rem;
   border-radius: 10px;
+  /* Inverted page colours, so it reads in light and dark mode alike. */
   background: var(--ink-strong);
-  color: #fff;
+  color: var(--bg);
   text-align: center;
   box-shadow: 0 8px 30px rgba(15, 25, 40, 0.35);
   pointer-events: none;
 }
 .hunter2 strong {
   display: block;
-  color: #fff;
+  color: var(--bg);
   font:
     700 2.4rem/1.1 ui-monospace,
     "SFMono-Regular",
