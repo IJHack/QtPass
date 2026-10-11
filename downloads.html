@@ -441,7 +441,7 @@
         <pre tabindex="0"><code>yum install qtpass</code></pre>
         <pre tabindex="0"><code>dnf install qtpass</code></pre>
 
-        <h4 id="deb">Debian, Ubuntu and derivates like Kali &amp; Raspbian</h4>
+        <h4 id="deb">Debian, Ubuntu and derivatives like Kali &amp; Raspbian</h4>
         In amongst others
         <a
           title="Debian QtPass in stable"
@@ -516,7 +516,7 @@
             src="https://repology.org/badge/version-only-for-repo/nix_stable_25_11/qtpass.svg"
             alt="nixpkgs stable package"
         /></a>
-        <pre tabindex="0"><code>nix-env -iA nixos.pkgs.qtpass</code></pre>
+        <pre tabindex="0"><code>nix-env -iA nixos.qtpass</code></pre>
 
         <h4 id="Solus">Solus</h4>
         Has a stable
@@ -628,6 +628,8 @@
             alt="Chocolatey package"
         /></a>
         <pre tabindex="0"><code>choco install qtpass</code></pre>
+        Or via <a href="https://github.com/microsoft/winget-pkgs">winget</a>
+        <pre tabindex="0"><code>winget install IJHack.QtPass</code></pre>
 
         <h3 id="macOS">
           <a
@@ -676,7 +678,7 @@
           >Dependencies
         </h3>
         <ul>
-          <li>QtPass requires Qt 6.8 or newer.</li>
+          <li>QtPass 1.8 builds with Qt 5.15 or newer (Qt 6 recommended); 2.0 will need Qt 6.8 or newer.</li>
           <li>The Linguist package is required to compile the translations.</li>
           <li>For use of the fallback icons the SVG library is required.</li>
         </ul>
@@ -688,7 +690,7 @@
         <p>On macOS:</p>
 
         <pre tabindex="0"><code>brew install qt
-qmake6 &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
+qmake &amp;&amp; make &amp;&amp; macdeployqt main/QtPass.app</code></pre>
 
         <h3>
           <a
@@ -706,12 +708,12 @@ qmake6 &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
             <a
               title="Changes in master"
               href="https://github.com/IJHack/QtPass/blob/main/CHANGELOG.md"
-              >Current Change Log</a
+              >Change log of the coming 2.0 (in development)</a
             >
           </li>
           <li>
             <a title="Changes in 1.7" href="/changelog"
-              >Changelog of 1.7 releases</a
+              >Changelog of 1.7 and 1.8 releases</a
             >
           </li>
           <li>
@@ -786,7 +788,7 @@ qmake6 &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
               decoding="async"
               width="256"
               height="256"
-              alt="OS X Compatible"
+              alt="macOS Compatible"
           /></a>
           <a title="Install on FreeBSD" href="/downloads#FreeBSD"
             ><img

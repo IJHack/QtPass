@@ -379,7 +379,7 @@
             </p>
             <p
               class="hero-platform"
-              aria-label="Runs on Linux, Windows, macOS and FreeBSD"
+              aria-label="Runs on Linux, Windows, macOS, FreeBSD and OpenBSD"
             >
               <a title="Install on Linux" href="/downloads#linux"
                 ><img
@@ -632,8 +632,8 @@
         </ul>
 
         <p>
-          It runs on Linux, macOS, Windows, and FreeBSD with a native look and
-          feel on each platform. Your password store
+          It runs on Linux, macOS, Windows, FreeBSD and OpenBSD with a native
+          look and feel on each platform. Your password store
           <a href="/advanced#git">syncs via Git</a>, so you always have a backup
           and can access your passwords across all your devices. Already using
           <code>pass</code>? QtPass works on your existing store:
@@ -854,7 +854,7 @@
           >Build from source
         </h3>
         <ul>
-          <li>QtPass requires Qt 6.8 or later</li>
+          <li>QtPass 1.8 builds with Qt 5.15 or later (Qt 6 recommended); 2.0 will need Qt 6.8 or later</li>
           <li>GnuPG 2.2+</li>
           <li>Optional: Git and pass</li>
         </ul>
@@ -866,7 +866,7 @@
         <p>Build on macOS:</p>
 
         <pre tabindex="0"><code>brew install qt
-qmake6 &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
+qmake &amp;&amp; make &amp;&amp; macdeployqt main/QtPass.app</code></pre>
 
         <p>
           <a href="/faq">FAQ</a>, <a href="/screenshots">screenshots</a> and a
