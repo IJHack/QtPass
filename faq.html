@@ -182,7 +182,7 @@
             "name": "How do I import someone else's GPG key?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Open the Users dialog (the Users button in the toolbar) and click Import key. You can: Pick an ASCII-armored .asc file from disk, or Paste the armored key block from your clipboard. Once imported, QtPass refreshes the user list and selects the new key so you can tick it as a recipient. Binary keyrings aren't accepted in this dialog — convert them first with gpg --armor --export <KEYID>."
+              "text": "Open the Users dialog (the Users button in the toolbar) and click Import key. You can: Pick an ASCII-armored .asc file from disk, or Paste the armored key block from your clipboard. Once imported, QtPass refreshes the user list and selects the new key so you can tick it as a recipient. Binary keyrings aren't accepted in this dialog; convert them first with gpg --armor --export <KEYID>."
             }
           },
           {
@@ -190,7 +190,7 @@
             "name": "What does the Share submenu do?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Right-click on a folder in the password tree to access the Share submenu. It bundles the recipient-management actions in one place: Re-encrypt all passwords — runs pass init on the folder so its contents match the current .gpg-id recipients. Export my public key… — saves your public key as an ASCII-armored file you can hand to a teammate. Add recipient… — opens the user dialog scoped to this folder so you can toggle who can decrypt its passwords. What is this? — short explainer dialog linking the three flows. The submenu only appears on folders, not individual password files."
+              "text": "Right-click on a folder in the password tree to access the Share submenu. It bundles the recipient-management actions in one place: Re-encrypt all passwords: runs pass init on the folder so its contents match the current .gpg-id recipients. Export my public key…: saves your public key as an ASCII-armored file you can hand to a teammate. Add recipient…: opens the user dialog scoped to this folder so you can toggle who can decrypt its passwords. What is this?: a short explainer dialog linking the three flows. The submenu only appears on folders, not individual password files."
             }
           },
           {
@@ -198,7 +198,7 @@
             "name": "How do I set up a one-time password (OTP/TOTP)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "QtPass generates TOTP codes itself (RFC 6238) — you no longer need the pass-otp extension, and it works on every platform. Make sure Enable one-time password (OTP) support is checked on the Settings tab of the configuration dialog (it is on by default). Store the account's otpauth:// URI in the entry. Put it in the OTP template field, or on its own line in the body (the form pass otp insert writes). A bare base32 secret works too. Select the entry: QtPass shows a live code with a countdown and a copy button, refreshing automatically. SHA-1/SHA-256/SHA-512 and Steam Guard codes are all supported. The shared secret itself is never shown on screen or copied — only the current code is."
+              "text": "QtPass generates TOTP codes itself (RFC 6238), so you no longer need the pass-otp extension, and it works on every platform. Make sure Enable one-time password (OTP) support is checked on the Settings tab of the configuration dialog (it is on by default). Store the account's otpauth:// URI in the entry. Put it in the OTP template field, or on its own line in the body (the form pass otp insert writes). A bare base32 secret works too. Select the entry: QtPass shows a live code with a countdown and a copy button, refreshing automatically. SHA-1/SHA-256/SHA-512 and Steam Guard codes are all supported. The shared secret itself is never shown on screen or copied; only the current code is."
             }
           },
           {
@@ -206,7 +206,7 @@
             "name": "QtPass shows an OTP code and I don't want it to",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "OTP support is enabled by default. To hide the live codes, uncheck Enable one-time password (OTP) support on the Settings tab of the configuration dialog. The choice is remembered. Your entries are unchanged — the otpauth:// secret stays in the file and QtPass simply stops rendering a code for it."
+              "text": "OTP support is enabled by default. To hide the live codes, uncheck Enable one-time password (OTP) support on the Settings tab of the configuration dialog. The choice is remembered. Your entries are unchanged: the otpauth:// secret stays in the file and QtPass simply stops rendering a code for it."
             }
           },
           {
@@ -302,7 +302,7 @@
             "name": "How do I set the language manually?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "QtPass uses the system language (via QLocale::system()). Changing it depends on your platform: Linux / BSD: LANGUAGE=fr qtpass will run QtPass in French. LC_ALL and LANG work too; see the GNU gettext docs for the precedence order. macOS: environment variables like LANG are not honored by Qt on macOS — Qt reads CoreFoundation locale instead. Override per-app with: defaults write com.IJHack.QtPass AppleLanguages '(fr)' Or pass the override as a launch argument: open -a QtPass --args -AppleLanguages '(fr)' Use defaults delete com.IJHack.QtPass AppleLanguages to revert. Windows: there is no environment-variable override — Qt reads the Windows display language via GetUserDefaultLocaleName(). Change the system display language in Settings → Time & Language → Language, or add the desired language and move it to the top of your preferred-language list."
+              "text": "QtPass uses the system language (via QLocale::system()). Changing it depends on your platform: Linux / BSD: LANGUAGE=fr qtpass will run QtPass in French. LC_ALL and LANG work too; see the GNU gettext docs for the precedence order. macOS: environment variables like LANG are not honored by Qt on macOS; Qt reads the CoreFoundation locale instead. Override per-app with: defaults write com.IJHack.QtPass AppleLanguages '(fr)' Or pass the override as a launch argument: open -a QtPass --args -AppleLanguages '(fr)' Use defaults delete com.IJHack.QtPass AppleLanguages to revert. Windows: there is no environment-variable override; Qt reads the Windows display language via GetUserDefaultLocaleName(). Change the system display language in Settings → Time & Language → Language, or add the desired language and move it to the top of your preferred-language list."
             }
           },
           {
@@ -796,7 +796,7 @@ setx GIT_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--as
         <p>
           Once imported, QtPass refreshes the user list and selects the new key
           so you can tick it as a recipient. Binary keyrings aren&#39;t accepted
-          in this dialog — convert them first with
+          in this dialog; convert them first with
           <code>gpg --armor --export &lt;KEYID&gt;</code>.
         </p>
         <h3>
@@ -816,20 +816,20 @@ setx GIT_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--as
         </p>
         <ul>
           <li>
-            <strong>Re-encrypt all passwords</strong> — runs
+            <strong>Re-encrypt all passwords</strong>: runs
             <code>pass init</code> on the folder so its contents match the
             current <code>.gpg-id</code> recipients.
           </li>
           <li>
-            <strong>Export my public key…</strong> — saves your public key as an
+            <strong>Export my public key…</strong>: saves your public key as an
             ASCII-armored file you can hand to a teammate.
           </li>
           <li>
-            <strong>Add recipient…</strong> — opens the user dialog scoped to
+            <strong>Add recipient…</strong>: opens the user dialog scoped to
             this folder so you can toggle who can decrypt its passwords.
           </li>
           <li>
-            <strong>What is this?</strong> — short explainer dialog linking the
+            <strong>What is this?</strong>: a short explainer dialog linking the
             three flows.
           </li>
         </ul>
@@ -847,7 +847,7 @@ setx GIT_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--as
           >How do I set up a one-time password (OTP/TOTP)?
         </h3>
         <p>
-          QtPass generates TOTP codes itself (RFC 6238) — you no longer need the
+          QtPass generates TOTP codes itself (RFC 6238), so you no longer need the
           <code>pass-otp</code> extension, and it works on every platform.
         </p>
         <ol>
@@ -869,7 +869,7 @@ setx GIT_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--as
           </li>
         </ol>
         <p>
-          The shared secret itself is never shown on screen or copied — only the
+          The shared secret itself is never shown on screen or copied; only the
           current code is.
         </p>
         <h3>
@@ -886,7 +886,7 @@ setx GIT_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--as
           OTP support is enabled by default. To hide the live codes, uncheck
           <strong>Enable one-time password (OTP) support</strong> on the
           <strong>Settings</strong> tab of the configuration dialog. The choice
-          is remembered. Your entries are unchanged — the
+          is remembered. Your entries are unchanged: the
           <code>otpauth://</code> secret stays in the file and QtPass simply
           stops rendering a code for it.
         </p>
@@ -1149,8 +1149,7 @@ exec /Applications/QtPass.app/Contents/MacOS/qtpass &quot;$@&quot;
           <li>
             <p>
               <strong>macOS:</strong> environment variables like
-              <code>LANG</code> are <strong>not</strong> honored by Qt on macOS
-              — Qt reads CoreFoundation locale instead. Override per-app with:
+              <code>LANG</code> are <strong>not</strong> honored by Qt on macOS; Qt reads the CoreFoundation locale instead. Override per-app with:
             </p>
             <pre
               tabindex="0"
@@ -1170,7 +1169,7 @@ exec /Applications/QtPass.app/Contents/MacOS/qtpass &quot;$@&quot;
           <li>
             <p>
               <strong>Windows:</strong> there is no environment-variable
-              override — Qt reads the Windows display language via
+              override; Qt reads the Windows display language via
               <code>GetUserDefaultLocaleName()</code>. Change the
               <strong>system display language</strong> in
               <em>Settings → Time &amp; Language → Language</em>, or add the

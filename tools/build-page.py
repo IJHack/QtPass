@@ -211,6 +211,10 @@ HEAD = """<!doctype html>
               <a title="QtPass code signing policy" href="/code-signing"
                 >Code signing policy</a
               > ·
+              <a title="QtPass license and copyright" href="/license"
+                >License</a
+              >
+              ·
               <a title="Latest documentation" href="/docs/">API docs</a></small
             >
           </p>
