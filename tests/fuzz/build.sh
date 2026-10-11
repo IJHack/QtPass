@@ -3,7 +3,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
 # Builds the libFuzzer targets in tests/fuzz/ against an instrumented copy
-# of the static library in src/.
+# of the static library in src/, with the shared libraries they need at run
+# time in OUTDIR/lib, so OUTDIR can be run elsewhere (OSS-Fuzz).
 #
 #   tests/fuzz/build.sh OUTDIR
 #
@@ -56,7 +57,23 @@ for src in "$here"/fuzz_*.cpp; do
 		-I"$root/src" -I"$build" \
 		-I"$qt_headers" -I"$qt_headers/QtCore" \
 		"$src" "$lib" $LIB_FUZZING_ENGINE \
-		-Wl,--as-needed -L"$qt_libs" -lQt6Core -Wl,-rpath,"$qt_libs" \
+		-Wl,--as-needed -L"$qt_libs" -lQt6Core \
+		-Wl,-rpath,"\$ORIGIN/lib" -Wl,-rpath,"$qt_libs" \
 		-o "$out/$name"
 done
-ls -1 "$out"/fuzz_*
+
+# The fuzzers must also run where only OUTDIR exists: OSS-Fuzz runs them in
+# a separate image without Qt. Copy QtCore and the libraries it pulls in
+# that a base system lacks (Qt's ICU, glib, pcre, zstd) into OUTDIR/lib,
+# which the $ORIGIN/lib rpath above searches first.
+mkdir -p "$out/lib"
+for src in "$here"/fuzz_*.cpp; do
+	ldd "$out/$(basename "$src" .cpp)" | awk '/=> \//{print $3}'
+done | sort -u | while read -r dep; do
+	case "$(basename "$dep")" in
+	libc.so.* | libm.so.* | libpthread.so.* | libdl.so.* | librt.so.* | \
+		libresolv.so.* | libgcc_s.so.* | libstdc++.so.* | ld-linux*) ;;
+	*) cp -L "$dep" "$out/lib/" ;;
+	esac
+done
+ls -1 "$out/lib"
