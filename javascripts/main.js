@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/unlock.js?v=1.8.3-1";
+      script.src = "/javascripts/unlock.js?v=1.8.3-2";
       script.onload = function () {
         window.qtpassUnlock();
       };
@@ -108,7 +108,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Type hunter2 anywhere and all we see is stars (bash.org #244321).
   var typed = "";
   document.addEventListener("keydown", function (event) {
-    if (event.key.length !== 1 || event.ctrlKey || event.metaKey || event.altKey) {
+    if (
+      event.key.length !== 1 ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.altKey
+    ) {
       return;
     }
     if (event.target.closest && event.target.closest("input, textarea")) {
@@ -131,6 +136,50 @@ document.addEventListener("DOMContentLoaded", function () {
       toast.remove();
     }, 3500);
   });
+
+  // Screenshots open full size in a lightbox instead of a bare image
+  // page. The link still points at the full-size PNG, so it works without
+  // script too. Platform tiles show the dark capture to dark-mode readers;
+  // the lightbox follows suit.
+  var fullSizeLinks = document.querySelectorAll('a[title="Full size"], a.full');
+  if (fullSizeLinks.length && typeof HTMLDialogElement === "function") {
+    var box = document.createElement("dialog");
+    box.className = "lightbox";
+    var big = document.createElement("img");
+    big.decoding = "async";
+    var closeButton = document.createElement("button");
+    closeButton.type = "button";
+    closeButton.className = "lightbox-close";
+    closeButton.setAttribute("aria-label", "Close");
+    closeButton.textContent = "\u00d7";
+    box.append(closeButton, big);
+    document.body.appendChild(box);
+    box.addEventListener("click", function () {
+      box.close();
+    });
+    box.addEventListener("close", function () {
+      big.removeAttribute("src");
+    });
+    var dark = window.matchMedia("(prefers-color-scheme: dark)");
+    fullSizeLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.button) {
+          return; // a new tab or window was asked for
+        }
+        event.preventDefault();
+        var href = link.getAttribute("href");
+        if (dark.matches && /-app\.png$/.test(href)) {
+          href = href.replace(/-app\.png$/, "-app-dark.png");
+        }
+        var thumb = link.querySelector("img");
+        big.alt = thumb ? thumb.alt : "";
+        box.setAttribute("aria-label", big.alt || "Screenshot");
+        big.src = href;
+        box.showModal();
+        closeButton.focus();
+      });
+    });
+  }
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js");

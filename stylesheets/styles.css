@@ -931,7 +931,12 @@ header ul a:active {
 .hunter2 strong {
   display: block;
   color: #fff;
-  font: 700 2.4rem/1.1 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font:
+    700 2.4rem/1.1 ui-monospace,
+    "SFMono-Regular",
+    Menlo,
+    Consolas,
+    monospace;
   letter-spacing: 0.15em;
 }
 .hunter2 span {
@@ -956,5 +961,60 @@ header ul a:active {
   a {
     color: #222;
     text-decoration: underline;
+  }
+}
+
+/* full-size screenshots (javascripts/main.js) */
+a[title="Full size"],
+a.full {
+  cursor: zoom-in;
+}
+dialog.lightbox {
+  max-width: 96vw;
+  max-height: 96vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+  cursor: zoom-out;
+}
+dialog.lightbox::backdrop {
+  background: rgb(0 0 0 / 0.82);
+}
+dialog.lightbox img {
+  display: block;
+  max-width: 96vw;
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+dialog.lightbox .lightbox-close {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.15);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+dialog.lightbox .lightbox-close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  dialog.lightbox[open] {
+    animation: lightbox-in 0.15s ease-out;
+  }
+  @keyframes lightbox-in {
+    from {
+      opacity: 0;
+      transform: scale(0.98);
+    }
   }
 }
