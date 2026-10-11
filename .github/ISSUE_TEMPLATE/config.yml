@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Ask a question
+    url: https://github.com/IJHack/QtPass/discussions
+    about: Not a bug or feature request? Ask here first.
+  - name: Email the maintainers
+    url: mailto:help@qtpass.org
+    about: For general questions, or anything you would rather not post publicly.

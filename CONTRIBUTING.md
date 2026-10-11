@@ -8,6 +8,26 @@ Everyone taking part in QtPass, in issues, pull requests, Weblate or anywhere
 else, is expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md). Report
 problems to <help@qtpass.org>.
 
+## Getting Started
+
+- **Build it:** see [README.md's "From Source" section](README.md#from-source)
+  for dependencies and the one-line `qmake6 && make` build. [Windows.md](Windows.md)
+  covers Windows specifically.
+- **Find your way around:** [CLAUDE.md's Architecture section](CLAUDE.md#architecture)
+  has an overview of the two backends (`RealPass`/`ImitatePass`), the core
+  classes and how they connect. It is written for AI agents working on this
+  repository, but it is just as useful as a map for a human reading the code
+  for the first time.
+- **Find something to work on:** issues labelled
+  [`good first issue`](https://github.com/IJHack/QtPass/labels/good%20first%20issue)
+  or [`help wanted`](https://github.com/IJHack/QtPass/labels/help%20wanted) are
+  a good place to start. Not sure where to begin, or have a question before
+  opening an issue? Ask in
+  [Discussions](https://github.com/IJHack/QtPass/discussions) or email
+  <help@qtpass.org>.
+- **Run the tests:** `make check` builds and runs the Qt Test suite in
+  `tests/auto/`; see step 2 below for what a pull request is expected to add.
+
 ## Pull Request Process
 
 1. **Sign your commits** - All commits must be signed with GPG and signed off under the
@@ -79,6 +99,8 @@ Set this before cloning the repository.
 ## Getting Help
 
 - Open an [issue](https://github.com/IJHack/QtPass/issues) for bugs or feature requests
+- Ask in [Discussions](https://github.com/IJHack/QtPass/discussions) for questions that
+  are not a bug or feature request
 - Email [help@qtpass.org](mailto:help@qtpass.org) for general questions
 
 ## License
