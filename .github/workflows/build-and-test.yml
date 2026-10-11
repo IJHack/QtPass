@@ -212,7 +212,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Build and run the test suites in a FreeBSD VM
-        uses: vmactions/freebsd-vm@4469451fe39bee80be4066836c5170362e9349f3 # v1.5.7
+        uses: vmactions/freebsd-vm@c46abacb49f09938ca4e1702d15d836285d694cc # v1.5.9
         with:
           release: "14"
           usesh: true
