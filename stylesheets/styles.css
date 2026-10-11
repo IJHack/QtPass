@@ -1005,6 +1005,10 @@ header ul a:active {
 .ecosystem li + li {
   margin-block-start: 0.45rem;
 }
+.aside {
+  font-size: 0.92em;
+  color: var(--muted);
+}
 .ecosystem .note {
   margin-block: 0.6rem 0;
   font-size: 0.88em;
@@ -1038,7 +1042,7 @@ header ul a:active {
   /* Home on a phone: the hero has the download button and the page its
      own screenshots, so the sidebar keeps only name, line and links. */
   .home .sidebar header ul,
-  .home .sidebar .screenshots {
+  .sidebar .screenshots {
     display: none;
   }
   main {
