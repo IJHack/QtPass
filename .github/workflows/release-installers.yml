@@ -580,6 +580,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      # Build provenance attestation (#1988): records which workflow run,
+      # commit and inputs produced each asset, so a download can be checked
+      # with `gh attestation verify` / `slsa-verifier`.
+      attestations: write
+      id-token: write
     steps:
       # This job holds a write token, so its actions are pinned to commits.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -609,6 +614,110 @@ jobs:
           git archive --prefix="qtpass-${version}/" \
             -o "dist/QtPass-${version}.zip" HEAD
           ls -l dist
+
+      # Hoisted out of the final step below so the next step can query the
+      # release's existing assets — gh release view 404s until the release
+      # exists. Idempotent and harmless to repeat; the final step's own
+      # create-if-needed check is left exactly as it was.
+      - name: Create the draft release if needed
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          version="${GITHUB_REF_NAME#v}"
+          if ! gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release create "$GITHUB_REF_NAME" --draft --verify-tag \
+              --title "QtPass ${version}" \
+              --notes "Draft created by the Release installers workflow. Replace this with the CHANGELOG section for ${version}."
+          fi
+
+      # On a draft, the final step below clobber-uploads every file in
+      # dist/* — all of it becomes live, so attesting all of dist/* is
+      # correct. On an already-published release it uploads only the
+      # files that are not already a same-named asset, leaving the live
+      # bytes of the rest untouched (see "keeping published asset" below);
+      # a re-run that rebuilt those files cannot assume this run's bytes
+      # are what stays live, so attesting dist/* unconditionally there
+      # would produce provenance for bytes that are not actually published.
+      # This step computes exactly the subset that this run will cause to
+      # become live, for the provenance step below to cover.
+      - name: Determine which release assets are new in this run
+        id: assets
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          existing="$(gh release view "$GITHUB_REF_NAME" --json assets --jq '.assets[].name')"
+          is_draft="$(gh release view "$GITHUB_REF_NAME" --json isDraft --jq .isDraft)"
+          {
+            echo "new-files<<ASSET_EOF"
+            for file in dist/*; do
+              if [[ "$is_draft" == "true" ]] || ! grep -qxF "$(basename "$file")" <<<"$existing"; then
+                printf '%s\n' "$file"
+              fi
+            done
+            echo "ASSET_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      # SLSA build provenance (#1988): attests, with a GitHub-issued OIDC
+      # identity, that this workflow run and commit produced these exact
+      # bytes. One attestation covers every subject (a single
+      # `bundle-path`), which is why this step runs once over the files
+      # determined above rather than per asset. Skipped when there is
+      # nothing new to attest (a re-run that added no new asset). GPG
+      # signing (scripts/sign-release-assets.sh) proves authenticity of the
+      # maintainer's choice to publish; this proves which CI run built the
+      # bytes being signed — the two are complementary, not redundant.
+      - name: Generate build provenance attestation
+        id: attest
+        if: steps.assets.outputs.new-files != ''
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: ${{ steps.assets.outputs.new-files }}
+
+      # Staged into dist/ under a release-asset name so the upload step
+      # below picks it up with no special-casing, and so a verifier can grab
+      # it next to the assets it covers rather than through the Attestations
+      # API. The .intoto.jsonl extension matches what SLSA-provenance
+      # consumers (including Scorecard's asset scan) look for — it is JSON
+      # Lines, one provenance statement per line, which is what lets this
+      # step fold a prior run's bundle in rather than discard it: a re-run
+      # on an already-published release only attests the files it adds
+      # (see "Determine which release assets are new in this run" above),
+      # so a bundle already published under this name covers earlier assets
+      # this run's bundle says nothing about. The final upload step below
+      # always replaces the published bundle with the one staged here, so it
+      # must already contain every line that was ever published for this
+      # tag. The asset's existence and its download are checked separately:
+      # a transient download failure on a bundle that is known to exist must
+      # fail the job rather than be mistaken for "nothing published yet" and
+      # silently drop that bundle's coverage.
+      - name: Stage the provenance bundle as a release asset
+        shell: bash
+        if: steps.attest.outputs.bundle-path != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BUNDLE_PATH: ${{ steps.attest.outputs.bundle-path }}
+        run: |
+          set -euo pipefail
+          version="${GITHUB_REF_NAME#v}"
+          dest="dist/QtPass-${version}.intoto.jsonl"
+          asset_name="$(basename "$dest")"
+          existing="$(gh release view "$GITHUB_REF_NAME" --json assets --jq '.assets[].name')"
+          if grep -qxF "$asset_name" <<<"$existing"; then
+            if ! gh release download "$GITHUB_REF_NAME" \
+                --pattern "$asset_name" --output "$dest.previous"; then
+              echo "Error: $asset_name is already published but could not be downloaded; refusing to replace it with a bundle missing its coverage" >&2
+              exit 1
+            fi
+            echo "folding in the previously published provenance bundle"
+            cat "$dest.previous" "$BUNDLE_PATH" > "$dest"
+            rm -f "$dest.previous"
+          else
+            cp "$BUNDLE_PATH" "$dest"
+          fi
 
       - name: Create the draft release if needed and upload the assets
         shell: bash
@@ -641,8 +750,24 @@ jobs:
             gh release upload "$GITHUB_REF_NAME" dist/* --clobber
           else
             for file in dist/*; do
-              if grep -qxF "$(basename "$file")" <<<"$existing"; then
-                echo "keeping published asset $(basename "$file")"
+              name="$(basename "$file")"
+              if [[ "$name" == *.intoto.jsonl ]]; then
+                # Cumulative, not a fixed asset: the staging step above
+                # already folded in whatever was published before, so the
+                # file here is always a superset and safe to replace outright.
+                # Its bytes are changing, same as a draft's replaced files
+                # above, so any existing signature over the old bytes is
+                # stale; drop it so the signing script produces a fresh one
+                # instead of skipping a file whose .asc already exists.
+                asc="${name}.asc"
+                if grep -qxF "$asc" <<<"$existing"; then
+                  echo "removing stale signature $asc"
+                  gh release delete-asset "$GITHUB_REF_NAME" "$asc" --yes
+                fi
+                echo "updating provenance bundle $name"
+                gh release upload "$GITHUB_REF_NAME" "$file" --clobber
+              elif grep -qxF "$name" <<<"$existing"; then
+                echo "keeping published asset $name"
               else
                 gh release upload "$GITHUB_REF_NAME" "$file"
               fi

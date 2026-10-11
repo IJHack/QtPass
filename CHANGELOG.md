@@ -66,6 +66,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   sandbox permissions to grant. Needs glibc 2.39 or newer (Ubuntu 24.04,
   Debian 13, Fedora 40) [#1803](https://github.com/IJHack/QtPass/pull/1803).
   It runs natively on Wayland as well as X11
+- Build provenance for release assets: the Windows installer, macOS dmg,
+  AppImage and source archives are now accompanied by a signed SLSA
+  provenance attestation (`QtPass-x.y.z.intoto.jsonl`) recording the exact
+  workflow run and commit that produced them, checkable with
+  `gh attestation verify <file> --repo IJHack/QtPass`. Complements, rather
+  than replaces, the maintainer's detached GPG signature on each asset
+  ([#1988](https://github.com/IJHack/QtPass/issues/1988))
 
 ### Security
 
