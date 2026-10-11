@@ -836,20 +836,28 @@
           </figure>
           <figure class="platform">
             <div class="capture">
+              <a class="full" href="images/freebsd-app.png?v=1.8.3-4" title="Full size">
               <picture>
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/freebsd-app-dark.png"
+                  type="image/webp"
+                  srcset="images/freebsd-app-dark-480.webp?v=1.8.3-4 480w, images/freebsd-app-dark-720.webp?v=1.8.3-4 720w, images/freebsd-app-dark-960.webp?v=1.8.3-4 960w"
+                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
                 />
-                <source srcset="images/freebsd-app.png" type="image/png" />
+                <source
+                  type="image/webp"
+                  srcset="images/freebsd-app-480.webp?v=1.8.3-4 480w, images/freebsd-app-720.webp?v=1.8.3-4 720w, images/freebsd-app-960.webp?v=1.8.3-4 960w"
+                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
+                />
                 <img
                   class="shot"
                   src="images/freebsd-app.png"
-                  alt="QtPass on FreeBSD, following the desktop look and feel"
+                  alt="QtPass on FreeBSD with the Xfce desktop"
                   loading="lazy"
                   decoding="async"
                 />
               </picture>
+              </a>
               <img
                 class="fallback"
                 src="images/freebsd.png"
