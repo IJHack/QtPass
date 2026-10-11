@@ -1043,3 +1043,70 @@ dialog.lightbox .lightbox-button:focus-visible {
     }
   }
 }
+
+/* The Konami code (main.js): the background padlock wakes up. */
+.background.awake {
+  animation: padlock-wakes 4.2s ease-in-out;
+  transform-origin: calc(100% - 11rem) 17rem;
+}
+@keyframes padlock-wakes {
+  0% {
+    opacity: var(--watermark);
+  }
+  15% {
+    opacity: 0.75;
+    transform: perspective(60rem) scale(1.04);
+  }
+  45% {
+    opacity: 0.75;
+    transform: perspective(60rem) rotateY(360deg) scale(1.04);
+  }
+  52% {
+    transform: perspective(60rem) rotateY(360deg) scale(1.12);
+  }
+  58% {
+    transform: perspective(60rem) rotateY(360deg) scale(1.04);
+  }
+  64% {
+    transform: perspective(60rem) rotateY(360deg) scale(1.1);
+  }
+  72% {
+    opacity: 0.75;
+    transform: perspective(60rem) rotateY(360deg) scale(1.04);
+  }
+  100% {
+    opacity: var(--watermark);
+    transform: perspective(60rem) rotateY(360deg);
+  }
+}
+.konami-drop {
+  position: fixed;
+  top: 12rem;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  animation: padlock-rain 2.6s ease-in forwards;
+}
+@keyframes padlock-rain {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0);
+  }
+  12% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--drift), 100vh) rotate(var(--spin));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .background.awake {
+    animation: padlock-glows 1.6s ease-in-out;
+  }
+  @keyframes padlock-glows {
+    50% {
+      opacity: 0.6;
+    }
+  }
+}

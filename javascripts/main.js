@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/unlock.js?v=1.8.3-6";
+      script.src = "/javascripts/unlock.js?v=1.8.3-7";
       script.onload = function () {
         window.qtpassUnlock();
       };
@@ -104,6 +104,73 @@ document.addEventListener("DOMContentLoaded", function () {
       mark.addEventListener("click", nope);
     });
   }
+
+  // The Konami code wakes the padlock in the background: it comes forward,
+  // flips like a coin, beats twice, and small padlocks rain from it. With
+  // reduced motion it only glows for a moment.
+  var konami = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "b",
+    "a",
+  ];
+  var konamiAt = 0;
+  var backdrop = document.querySelector(".background");
+  document.addEventListener("keydown", function (event) {
+    if (
+      !backdrop ||
+      event.target.closest("input, textarea, [contenteditable]")
+    ) {
+      return;
+    }
+    var key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+    konamiAt =
+      key === konami[konamiAt] ? konamiAt + 1 : key === konami[0] ? 1 : 0;
+    if (konamiAt < konami.length) {
+      return;
+    }
+    konamiAt = 0;
+    if (backdrop.classList.contains("awake")) {
+      return;
+    }
+    backdrop.classList.add("awake");
+    setTimeout(function () {
+      backdrop.classList.remove("awake");
+    }, 4200);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+    var box = backdrop.getBoundingClientRect();
+    var fromX = window.innerWidth - 12 * 16 - box.left;
+    for (var i = 0; i < 28; i += 1) {
+      var drop = document.createElement("img");
+      drop.src = "/images/logo.svg";
+      drop.alt = "";
+      drop.className = "konami-drop";
+      drop.style.left = Math.round(fromX - 40 + Math.random() * 380) + "px";
+      drop.style.setProperty(
+        "--drift",
+        Math.round(Math.random() * 240 - 120) + "px",
+      );
+      drop.style.setProperty(
+        "--spin",
+        Math.round(Math.random() * 720 - 360) + "deg",
+      );
+      drop.style.animationDelay = (0.9 + Math.random() * 1.4).toFixed(2) + "s";
+      drop.style.width = drop.style.height =
+        14 + Math.round(Math.random() * 22) + "px";
+      drop.addEventListener("animationend", function () {
+        this.remove();
+      });
+      document.body.appendChild(drop);
+    }
+  });
 
   // Type hunter2 anywhere and all we see is stars (bash.org #244321).
   var typed = "";
