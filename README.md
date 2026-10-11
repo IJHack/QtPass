@@ -22,7 +22,7 @@ manage your passwords.
 
 _Available in over 60 languages_
 
-**Project site: [qtpass.org](https://qtpass.org/)** —
+**Project site: [qtpass.org](https://qtpass.org/)**, with
 [downloads](https://qtpass.org/downloads),
 [getting started](https://qtpass.org/getting-started),
 [FAQ](https://qtpass.org/faq) and [screenshots](https://qtpass.org/screenshots).
@@ -85,7 +85,7 @@ Download the `.dmg` from the [releases page](https://github.com/IJHack/QtPass/re
 and clear the quarantine flag:
 `xattr -d com.apple.quarantine /Applications/QtPass.app`
 (the Homebrew cask was disabled in September 2026 because the app is not
-notarized — see [the macOS page on qtpass.org](https://qtpass.org/macos) and
+notarized; see [the macOS page on qtpass.org](https://qtpass.org/macos) and
 [#1542](https://github.com/IJHack/QtPass/issues/1542))
 
 Windows
@@ -99,7 +99,7 @@ Download `QtPass-<version>-x86_64.AppImage` from the
 [releases page](https://github.com/IJHack/QtPass/releases), then:
 `chmod +x QtPass-*.AppImage && ./QtPass-*.AppImage`
 It bundles Qt only, and uses the `pass`, `gpg2`, `git` and `gpg-agent` already
-installed on your system — so your existing `~/.password-store`, pinentry and
+installed on your system, so your existing `~/.password-store`, pinentry and
 smartcard all keep working, with no sandbox permissions to grant. Requires
 glibc 2.39 or newer (Ubuntu 24.04+, Debian 13+, Fedora 40+) and `libfuse2`
 (or run it with `--appimage-extract-and-run` on systems without it).
@@ -244,7 +244,7 @@ On [qtpass.org](https://qtpass.org/):
 [Issue queue](https://github.com/IJHack/QtPass/issues)
 
 > **AI assistance**<br>
-> Parts of QtPass are developed with AI coding assistants — mainly [Claude Code](https://claude.com/claude-code), earlier also [OpenCode](https://opencode.ai/) — and AI reviewers (CodeRabbit, GitHub Copilot) comment on pull requests.
+> Parts of QtPass are developed with AI coding assistants (mainly [Claude Code](https://claude.com/claude-code), earlier also [OpenCode](https://opencode.ai/)), and AI reviewers (CodeRabbit, GitHub Copilot) comment on pull requests.
 > Commits made with an assistant carry a `Co-Authored-By:` trailer naming the model (or the pull request says so), so the history shows which changes were AI-assisted.
 > Every change is reviewed, built and tested by a human maintainer before it is merged, and the maintainers take responsibility for it.
 > Some translations are machine-drafted; they stay marked _unfinished_ in the `.ts` files until a native speaker confirms them on [Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/).
