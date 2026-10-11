@@ -220,20 +220,15 @@ attack I can think of at least two options:
 - Starting without a correctly set password-store folder
   gives weird results in the tree view
 
-## Planned features
+## Roadmap
 
-- Plugins based on field name, plugins follow same format as password files
-- Colour coding folders (possibly disabling folders you can't decrypt)
-- Optional table view of decrypted folder contents
-- Opening of (basic auth) URLs in default browser?
-  Possibly with helper plugin for filling out forms?
-- Some other form of remote storage that allows for
-  accountability / auditing (web API to retrieve the .gpg files?)
+What comes next, from the 2.0 release to CMake and signed releases, is in
+[ROADMAP.md](ROADMAP.md).
 
 ## Further reading
 
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
-[CHANGELOG](CHANGELOG.md)
+[CHANGELOG](CHANGELOG.md) and [ROADMAP](ROADMAP.md)
 
 On [qtpass.org](https://qtpass.org/):
 [getting started](https://qtpass.org/getting-started),
