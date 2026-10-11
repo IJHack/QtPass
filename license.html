@@ -140,6 +140,8 @@
           <a href="https://api.reuse.software/info/github.com/IJHack/QtPass">
             <img
               src="https://api.reuse.software/badge/github.com/IJHack/QtPass"
+              width="110"
+              height="20"
               alt="REUSE status"
             />
           </a>
@@ -166,7 +168,7 @@
           </p>
         </footer>
       </aside>
-      <section id="main">
+      <main id="main">
         <nav class="toc" aria-label="Sections">
           <ul>
             <li><a href="#the-short-version">The short version</a></li>
@@ -191,12 +193,11 @@
           <a href="https://www.gnu.org/licenses/gpl-3.0.html"
             >GNU General Public License, version 3 or later</a
           >
-          (GPL-3.0-or-later). Copyright belongs to IJHack and the individual
-          contributors listed in the project's commit history. You can read it,
-          change it, redistribute it, and sell it, as long as whatever you
-          redistribute stays under the same license and keeps the source
-          available. That is the entire deal, and nobody has ever needed more
-          than that one paragraph to understand it.
+          (GPL-3.0-or-later). Copyright belongs to IJHack and the contributors;
+          the source files and the commit history name the individual authors.
+          You can read it, change it, redistribute it, and sell it, as long as
+          whatever you redistribute stays under the same license and keeps the
+          source available.
         </p>
         <h2>
           <a
@@ -225,18 +226,33 @@
             just say where it came from.
           </li>
           <li>
-            <strong>Images</strong> —
+            <strong>The logo</strong> — based on
+            <a href="https://commons.wikimedia.org/wiki/File:Heart-padlock.svg"
+              >Heart-padlock by AnonMoos</a
+            >,
             <a href="https://creativecommons.org/publicdomain/zero/1.0/"
               >CC0 1.0</a
             >
-            (public domain), credited to AnonMoos.
+            (public domain).
+          </li>
+          <li>
+            <strong>Screenshots</strong> — pictures of QtPass itself,
+            <a href="https://creativecommons.org/publicdomain/zero/1.0/"
+              >CC0 1.0</a
+            >: use them in an article, a store listing or a wiki without
+            asking.
+          </li>
+          <li>
+            <strong>Platform logos</strong> — Tux, the Windows and Apple logos
+            and the BSD logos belong to their owners. They are shown only to say
+            that QtPass runs on those systems.
           </li>
           <li>
             <strong>The typeface</strong> — this page is set in
             <a href="https://fonts.google.com/specimen/Lato">Lato</a>, designed
             by Łukasz Dziedzic and released under the
             <a href="https://openfontlicense.org/">SIL Open Font License 1.1</a
-            >. One person's weekend hobby, now rendering on your screen.
+            >.
           </li>
           <li>
             <strong>One specific exception</strong> — the
@@ -246,8 +262,7 @@
             >, credited to art.gnux.info via
             <a href="https://commons.wikimedia.org/wiki/File:Puffy.png"
               >Wikimedia Commons</a
-            >. Every license has that one line that doesn't match the rest of
-            the table, and this is ours.
+            >.
           </li>
         </ul>
         <h2>
@@ -265,9 +280,11 @@
           the repository — the application's <code>main</code> and this
           website's <code>gh-pages</code> — carry a machine-readable
           <a href="https://reuse.software/">REUSE</a> / SPDX manifest, and a CI
-          job runs on every push that fails loudly if a file's license can't be
-          determined. The badge in the footer of this page is live; click it and
-          you get the actual, current answer, not our word for it.
+          job runs on every push that fails if a file's license cannot be
+          determined (for the website, the generated API documentation
+          excepted). The REUSE badge in the footer shows the live result for
+          the application's repository: click it rather than take our word for
+          it.
         </p>
         <h2>
           <a
@@ -305,8 +322,8 @@
           it says about your data is actually true, not just asserted — this
           site's <a href="/security">security page</a> goes into surprising
           depth on that. Licensing gets the same treatment, just for lower
-          stakes: the badge above isn't decoration, it's a daily check that
-          every file in this repository is still exactly as licensed as it
+          stakes: the REUSE badge in the footer is not decoration, it is a check
+          that every file in the application's repository is licensed as it
           claims to be. So in a small way, the page you are reading right now is
           held to the same standard as the vault it's advertising.
         </p>
@@ -316,7 +333,7 @@
           Take it, adapt it for your own project's licensing page, tell people
           where you got it. That's the whole point of the license.
         </p>
-      </section>
+      </main>
     </div>
     <script src="javascripts/main.js?v=1.8.3-1" defer></script>
   </body>
