@@ -1047,31 +1047,34 @@ dialog.lightbox .lightbox-button:focus-visible {
 
 /* The Konami code (main.js): the background padlock wakes up. */
 .background.awake {
-  animation: padlock-wakes 4.2s ease-in-out;
+  animation: padlock-wakes 6.5s ease-in-out;
   transform-origin: calc(100% - 11rem) 17rem;
 }
 @keyframes padlock-wakes {
   0% {
     opacity: var(--watermark);
   }
-  15% {
+  10% {
     opacity: 0.75;
     transform: perspective(60rem) scale(1.04);
   }
-  45% {
+  29% {
     opacity: 0.75;
     transform: perspective(60rem) rotateY(360deg) scale(1.04);
   }
-  52% {
+  34% {
     transform: perspective(60rem) rotateY(360deg) scale(1.12);
   }
-  58% {
+  38% {
     transform: perspective(60rem) rotateY(360deg) scale(1.04);
   }
-  64% {
+  42% {
     transform: perspective(60rem) rotateY(360deg) scale(1.1);
   }
-  72% {
+  47% {
+    transform: perspective(60rem) rotateY(360deg) scale(1.04);
+  }
+  85% {
     opacity: 0.75;
     transform: perspective(60rem) rotateY(360deg) scale(1.04);
   }

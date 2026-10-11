@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/unlock.js?v=1.8.3-9";
+      script.src = "/javascripts/unlock.js?v=1.8.3-10";
       script.onload = function () {
         window.qtpassUnlock();
       };
@@ -142,12 +142,13 @@ document.addEventListener("DOMContentLoaded", function () {
     backdrop.classList.add("awake");
     setTimeout(function () {
       backdrop.classList.remove("awake");
-    }, 4200);
+    }, 6500);
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }
-    // On the second heartbeat the keyhole flashes and padlocks burst out
-    // of it: a fountain with gravity, each its own size, spin and depth.
+    // On the second heartbeat the keyhole flashes and padlocks pour out of
+    // it for a few seconds: a fountain with gravity, each its own size,
+    // spin and depth.
     setTimeout(burst, 2550);
   });
 
@@ -169,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(flash);
 
     var drops = [];
-    for (var i = 0; i < 42; i += 1) {
+    for (var i = 0; i < 110; i += 1) {
       var depth = 0.35 + Math.random() * 0.65; // 1 is close, small is far
       var drop = document.createElement("img");
       drop.src = "/images/logo.svg";
@@ -191,7 +192,8 @@ document.addEventListener("DOMContentLoaded", function () {
         vy: Math.sin(angle) * speed,
         spin: (Math.random() * 2 - 1) * 540,
         turn: 0,
-        delay: Math.random() * 0.25,
+        // a stream from the keyhole: heaviest at first, tapering off
+        delay: Math.pow(Math.random(), 1.8) * 2.6,
         depth: depth,
       });
     }
@@ -239,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "px) rotate(" +
           d.turn.toFixed(1) +
           "deg)";
-        if (d.y - d.half > window.innerHeight || age > 4) {
+        if (d.y - d.half > window.innerHeight || age > 5) {
           d.el.remove();
           d.el = null;
           return;
