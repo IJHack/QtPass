@@ -4,6 +4,10 @@ Make sure you have read the [FAQ](FAQ.md)
 
 Thank you for wanting to contribute to making QtPass awesome.
 
+Everyone taking part in QtPass, in issues, pull requests, Weblate or anywhere
+else, is expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md). Report
+problems to <help@qtpass.org>.
+
 ## Pull Request Process
 
 1. **Sign your commits** - All commits must be signed with GPG and signed off under the
