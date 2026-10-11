@@ -9,6 +9,7 @@
     />
     <link rel="stylesheet" href="stylesheets/styles.css?v=1.8.3-11" />
     <link rel="canonical" href="https://qtpass.org/" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=yes"
@@ -117,7 +118,7 @@
     />
     <meta
       property="og:title"
-      content="QtPass - A modern GUI for pass, the standard UNIX password manager"
+      content="QtPass: a GUI for pass, the standard UNIX password manager"
     />
     <meta property="og:site_name" content="QtPass" />
     <meta property="og:url" content="https://qtpass.org/" />
@@ -132,6 +133,18 @@
       content="The QtPass padlocked heart next to the name and the address qtpass.org"
     />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="QtPass: a GUI for pass, the standard UNIX password manager"
+    />
+    <meta
+      name="twitter:description"
+      content="QtPass is a free, open-source GUI for pass, the Unix password manager: GnuPG-encrypted passwords synced with Git on Linux, Windows, macOS and BSD."
+    />
+    <meta
+      name="twitter:image"
+      content="https://qtpass.org/images/og.png?v=1.8.3-11"
+    />
     <meta
       property="og:description"
       content="QtPass is a free, open-source GUI for pass, the Unix password manager: GnuPG-encrypted passwords synced with Git on Linux, Windows, macOS and BSD."
@@ -191,7 +204,8 @@
               alt="QtPass logo"
               width="32"
               height="32"
-            />QtPass <small>1.8.3</small>
+            />QtPass <small>1.8.3</small><br />
+            <small>a GUI for pass, the standard Unix password manager</small>
           </h1>
           <p>
             A graphical front end for pass, the standard Unix password manager:
@@ -241,7 +255,12 @@
               <picture>
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/qtpass-dark-480.webp?v=1.8.3-11 480w, images/qtpass-dark-720.webp?v=1.8.3-11 720w, images/qtpass-dark-960.webp?v=1.8.3-11 960w, images/qtpass-dark@2x.webp?v=1.8.3-11 2222w"
+                  srcset="
+                    images/qtpass-dark-480.webp?v=1.8.3-11  480w,
+                    images/qtpass-dark-720.webp?v=1.8.3-11  720w,
+                    images/qtpass-dark-960.webp?v=1.8.3-11  960w,
+                    images/qtpass-dark@2x.webp?v=1.8.3-11  2222w
+                  "
                   sizes="(max-width: 60rem) 92vw, 19rem"
                   type="image/webp"
                 />
@@ -253,7 +272,12 @@
                   "
                 />
                 <source
-                  srcset="images/qtpass-480.webp?v=1.8.3-11 480w, images/qtpass-720.webp?v=1.8.3-11 720w, images/qtpass-960.webp?v=1.8.3-11 960w, images/qtpass@2x.webp?v=1.8.3-11 2222w"
+                  srcset="
+                    images/qtpass-480.webp?v=1.8.3-11  480w,
+                    images/qtpass-720.webp?v=1.8.3-11  720w,
+                    images/qtpass-960.webp?v=1.8.3-11  960w,
+                    images/qtpass@2x.webp?v=1.8.3-11  2222w
+                  "
                   sizes="(max-width: 60rem) 92vw, 19rem"
                   type="image/webp"
                 />
@@ -278,7 +302,12 @@
               <picture>
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/config-dark-480.webp?v=1.8.3-11 480w, images/config-dark-720.webp?v=1.8.3-11 720w, images/config-dark-960.webp?v=1.8.3-11 960w, images/config-dark@2x.webp?v=1.8.3-11 2222w"
+                  srcset="
+                    images/config-dark-480.webp?v=1.8.3-11  480w,
+                    images/config-dark-720.webp?v=1.8.3-11  720w,
+                    images/config-dark-960.webp?v=1.8.3-11  960w,
+                    images/config-dark@2x.webp?v=1.8.3-11  2222w
+                  "
                   sizes="(max-width: 60rem) 92vw, 30rem"
                   type="image/webp"
                 />
@@ -290,13 +319,17 @@
                   "
                 />
                 <source
-                  srcset="images/config-480.webp?v=1.8.3-11 480w, images/config-720.webp?v=1.8.3-11 720w, images/config-960.webp?v=1.8.3-11 960w, images/config@2x.webp?v=1.8.3-11 2222w"
+                  srcset="
+                    images/config-480.webp?v=1.8.3-11  480w,
+                    images/config-720.webp?v=1.8.3-11  720w,
+                    images/config-960.webp?v=1.8.3-11  960w,
+                    images/config@2x.webp?v=1.8.3-11  2222w
+                  "
                   sizes="(max-width: 60rem) 92vw, 30rem"
                   type="image/webp"
                 />
                 <img
                   src="images/config.png?v=1.8.3-11"
-                  loading="lazy"
                   srcset="
                     images/config.png?v=1.8.3-11,
                     images/config@2x.png?v=1.8.3-11 2x
@@ -379,8 +412,8 @@
           <p class="hero-sub">
             A free and open-source GUI for
             <a href="https://www.passwordstore.org/">pass</a>: your passwords
-            stay GnuPG-encrypted files on machines you control, synced
-            with Git, never in the cloud.
+            stay GnuPG-encrypted files on machines you control, synced with Git,
+            never in the cloud.
           </p>
           <p class="hero-cta">
             <a
@@ -537,8 +570,21 @@
         <p>
           QtPass works with <a href="https://www.passwordstore.org/">pass</a>,
           the standard UNIX password manager. Your passwords are encrypted with
-          GPG using open standards: no vendor lock-in, fully portable and
-          under your control.
+          GPG using open standards: no vendor lock-in, fully portable and under
+          your control.
+        </p>
+
+        <p>
+          Under the hood, each password is a single file: its name is the entry,
+          its contents are GPG-encrypted. pass keeps those files in an ordinary
+          folder, optionally versioned with Git like any other project, so a
+          server you sync through only ever sees encrypted files: just files, a
+          key you hold, and a history you can inspect. QtPass is the graphical
+          front end for that model: it calls
+          <code>pass</code> directly when it is installed, or talks to
+          <code>gpg2</code> and <code>git</code> itself when it is not, so the
+          files on disk stay exactly as <code>pass</code> itself would leave
+          them.
         </p>
 
         <ul class="philosophy" aria-label="What sets QtPass apart">
@@ -704,16 +750,25 @@
         <p>
           QtPass is a native desktop application, not a browser around a cloud
           service. It uses the widgets, menus and colours of the platform it
-          runs on, and follows its light or dark preference. The same
-          store, everywhere you run it.
+          runs on, and follows its light or dark preference. The same store,
+          everywhere you run it.
         </p>
         <div class="native darkmode">
           <figure>
-            <a href="images/qtpass@2x.png?v=1.8.3-11" data-dark="images/qtpass-dark@2x.png?v=1.8.3-11" title="Full size">
+            <a
+              href="images/qtpass@2x.png?v=1.8.3-11"
+              data-dark="images/qtpass-dark@2x.png?v=1.8.3-11"
+              title="Full size"
+            >
               <picture>
                 <source
                   type="image/webp"
-                  srcset="images/qtpass-480.webp?v=1.8.3-11 480w, images/qtpass-720.webp?v=1.8.3-11 720w, images/qtpass-960.webp?v=1.8.3-11 960w, images/qtpass@2x.webp?v=1.8.3-11 2222w"
+                  srcset="
+                    images/qtpass-480.webp?v=1.8.3-11  480w,
+                    images/qtpass-720.webp?v=1.8.3-11  720w,
+                    images/qtpass-960.webp?v=1.8.3-11  960w,
+                    images/qtpass@2x.webp?v=1.8.3-11  2222w
+                  "
                   sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
                 />
                 <img
@@ -727,16 +782,24 @@
               </picture>
             </a>
             <figcaption>
-              <strong>Linux, light</strong>: following your desktop
-              theme.
+              <strong>Linux, light</strong>: following your desktop theme.
             </figcaption>
           </figure>
           <figure>
-            <a href="images/qtpass-dark@2x.png?v=1.8.3-11" data-light="images/qtpass@2x.png?v=1.8.3-11" title="Full size">
+            <a
+              href="images/qtpass-dark@2x.png?v=1.8.3-11"
+              data-light="images/qtpass@2x.png?v=1.8.3-11"
+              title="Full size"
+            >
               <picture>
                 <source
                   type="image/webp"
-                  srcset="images/qtpass-dark-480.webp?v=1.8.3-11 480w, images/qtpass-dark-720.webp?v=1.8.3-11 720w, images/qtpass-dark-960.webp?v=1.8.3-11 960w, images/qtpass-dark@2x.webp?v=1.8.3-11 2222w"
+                  srcset="
+                    images/qtpass-dark-480.webp?v=1.8.3-11  480w,
+                    images/qtpass-dark-720.webp?v=1.8.3-11  720w,
+                    images/qtpass-dark-960.webp?v=1.8.3-11  960w,
+                    images/qtpass-dark@2x.webp?v=1.8.3-11  2222w
+                  "
                   sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
                 />
                 <img
@@ -750,35 +813,47 @@
               </picture>
             </a>
             <figcaption>
-              <strong>Linux, dark</strong>: the same store, a different
-              theme.
+              <strong>Linux, dark</strong>: the same store, a different theme.
             </figcaption>
           </figure>
         </div>
         <div class="native platforms">
           <figure class="platform">
             <div class="capture">
-              <a class="full" href="images/windows-app.png?v=1.8.3-4" data-dark="images/windows-app-dark.png?v=1.8.3-4" title="Full size">
-              <picture>
-                <source
-                  media="(prefers-color-scheme: dark)"
-                  type="image/webp"
-                  srcset="images/windows-app-dark-480.webp?v=1.8.3-4 480w, images/windows-app-dark-720.webp?v=1.8.3-4 720w, images/windows-app-dark-960.webp?v=1.8.3-4 960w"
-                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
-                />
-                <source
-                  type="image/webp"
-                  srcset="images/windows-app-480.webp?v=1.8.3-4 480w, images/windows-app-720.webp?v=1.8.3-4 720w, images/windows-app-960.webp?v=1.8.3-4 960w"
-                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
-                />
-                <img
-                  class="shot"
-                  src="images/windows-app.png?v=1.8.3-4"
-                  alt="QtPass on Windows 11, following the Windows look and feel"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
+              <a
+                class="full"
+                href="images/windows-app.png?v=1.8.3-4"
+                data-dark="images/windows-app-dark.png?v=1.8.3-4"
+                title="Full size"
+              >
+                <picture>
+                  <source
+                    media="(prefers-color-scheme: dark)"
+                    type="image/webp"
+                    srcset="
+                      images/windows-app-dark-480.webp?v=1.8.3-4 480w,
+                      images/windows-app-dark-720.webp?v=1.8.3-4 720w,
+                      images/windows-app-dark-960.webp?v=1.8.3-4 960w
+                    "
+                    sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
+                  />
+                  <source
+                    type="image/webp"
+                    srcset="
+                      images/windows-app-480.webp?v=1.8.3-4 480w,
+                      images/windows-app-720.webp?v=1.8.3-4 720w,
+                      images/windows-app-960.webp?v=1.8.3-4 960w
+                    "
+                    sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
+                  />
+                  <img
+                    class="shot"
+                    src="images/windows-app.png?v=1.8.3-4"
+                    alt="QtPass on Windows 11, following the Windows look and feel"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </a>
               <img
                 class="fallback"
@@ -797,27 +872,40 @@
           </figure>
           <figure class="platform">
             <div class="capture">
-              <a class="full" href="images/macos-app.png?v=1.8.3-11" data-dark="images/macos-app-dark.png?v=1.8.3-11" title="Full size">
-              <picture>
-                <source
-                  media="(prefers-color-scheme: dark)"
-                  type="image/webp"
-                  srcset="images/macos-app-dark-480.webp?v=1.8.3-11 480w, images/macos-app-dark-720.webp?v=1.8.3-11 720w, images/macos-app-dark-960.webp?v=1.8.3-11 960w"
-                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
-                />
-                <source
-                  type="image/webp"
-                  srcset="images/macos-app-480.webp?v=1.8.3-11 480w, images/macos-app-720.webp?v=1.8.3-11 720w, images/macos-app-960.webp?v=1.8.3-11 960w"
-                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
-                />
-                <img
-                  class="shot"
-                  src="images/macos-app.png?v=1.8.3-11"
-                  alt="QtPass on macOS, following the macOS look and feel"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
+              <a
+                class="full"
+                href="images/macos-app.png?v=1.8.3-11"
+                data-dark="images/macos-app-dark.png?v=1.8.3-11"
+                title="Full size"
+              >
+                <picture>
+                  <source
+                    media="(prefers-color-scheme: dark)"
+                    type="image/webp"
+                    srcset="
+                      images/macos-app-dark-480.webp?v=1.8.3-11 480w,
+                      images/macos-app-dark-720.webp?v=1.8.3-11 720w,
+                      images/macos-app-dark-960.webp?v=1.8.3-11 960w
+                    "
+                    sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
+                  />
+                  <source
+                    type="image/webp"
+                    srcset="
+                      images/macos-app-480.webp?v=1.8.3-11 480w,
+                      images/macos-app-720.webp?v=1.8.3-11 720w,
+                      images/macos-app-960.webp?v=1.8.3-11 960w
+                    "
+                    sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
+                  />
+                  <img
+                    class="shot"
+                    src="images/macos-app.png?v=1.8.3-11"
+                    alt="QtPass on macOS, following the macOS look and feel"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </a>
               <img
                 class="fallback"
@@ -836,27 +924,40 @@
           </figure>
           <figure class="platform">
             <div class="capture">
-              <a class="full" href="images/freebsd-app.png?v=1.8.3-4" data-dark="images/freebsd-app-dark.png?v=1.8.3-4" title="Full size">
-              <picture>
-                <source
-                  media="(prefers-color-scheme: dark)"
-                  type="image/webp"
-                  srcset="images/freebsd-app-dark-480.webp?v=1.8.3-4 480w, images/freebsd-app-dark-720.webp?v=1.8.3-4 720w, images/freebsd-app-dark-960.webp?v=1.8.3-4 960w"
-                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
-                />
-                <source
-                  type="image/webp"
-                  srcset="images/freebsd-app-480.webp?v=1.8.3-4 480w, images/freebsd-app-720.webp?v=1.8.3-4 720w, images/freebsd-app-960.webp?v=1.8.3-4 960w"
-                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
-                />
-                <img
-                  class="shot"
-                  src="images/freebsd-app.png"
-                  alt="QtPass on FreeBSD with the Xfce desktop"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
+              <a
+                class="full"
+                href="images/freebsd-app.png?v=1.8.3-4"
+                data-dark="images/freebsd-app-dark.png?v=1.8.3-4"
+                title="Full size"
+              >
+                <picture>
+                  <source
+                    media="(prefers-color-scheme: dark)"
+                    type="image/webp"
+                    srcset="
+                      images/freebsd-app-dark-480.webp?v=1.8.3-4 480w,
+                      images/freebsd-app-dark-720.webp?v=1.8.3-4 720w,
+                      images/freebsd-app-dark-960.webp?v=1.8.3-4 960w
+                    "
+                    sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
+                  />
+                  <source
+                    type="image/webp"
+                    srcset="
+                      images/freebsd-app-480.webp?v=1.8.3-4 480w,
+                      images/freebsd-app-720.webp?v=1.8.3-4 720w,
+                      images/freebsd-app-960.webp?v=1.8.3-4 960w
+                    "
+                    sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
+                  />
+                  <img
+                    class="shot"
+                    src="images/freebsd-app.png"
+                    alt="QtPass on FreeBSD with the Xfce desktop"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </a>
               <img
                 class="fallback"

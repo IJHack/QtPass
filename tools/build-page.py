@@ -96,6 +96,7 @@ HEAD = """<!doctype html>
     <meta name="description" content="{description}" />
     <link rel="stylesheet" href="stylesheets/styles.css{v}" />
     <link rel="canonical" href="https://qtpass.org/{slug}" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=yes"
@@ -220,10 +221,10 @@ HEAD = """<!doctype html>
           </p>
         </footer>
       </aside>
-      <section id="main">
+      <main id="main">
 """
 
-TAIL = """      </section>
+TAIL = """      </main>
     </div>
     <script src="javascripts/main.js{v}" defer></script>
   </body>
