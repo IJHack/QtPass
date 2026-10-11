@@ -149,13 +149,14 @@
               <a title="QtPass privacy policy" href="/privacy">Privacy</a> ·
               <a title="QtPass code signing policy" href="/code-signing"
                 >Code signing policy</a
-              > ·
+              >
+              ·
               <a title="Latest documentation" href="/docs/">API docs</a></small
             >
           </p>
         </footer>
       </aside>
-      <main id="main">
+      <section id="main">
         <nav class="toc" aria-label="Sections">
           <ul>
             <li><a href="#pull-request-process">Pull Request Process</a></li>
@@ -172,6 +173,12 @@
         </nav>
         <p>Make sure you have read the <a href="/faq">FAQ</a></p>
         <p>Thank you for wanting to contribute to making QtPass awesome.</p>
+        <p>
+          Everyone taking part in QtPass, in issues, pull requests, Weblate or
+          anywhere else, is expected to follow the
+          <a href="/code-of-conduct">Code of Conduct</a>. Report problems to
+          <a href="mailto:help@qtpass.org">help@qtpass.org</a>.
+        </p>
         <h2>
           <a
             id="pull-request-process"
@@ -185,7 +192,25 @@
         <ol>
           <li>
             <strong>Sign your commits</strong> - All commits must be signed with
-            GPG using <code>git commit -S -m &quot;description&quot;</code>.
+            GPG and signed off under the
+            <a href="https://developercertificate.org"
+              >Developer Certificate of Origin</a
+            >: <code>git commit -s -S -m &quot;description&quot;</code> (<code
+              >-S</code
+            >
+            signs, <code>-s</code> adds the <code>Signed-off-by:</code> line).
+            Translation updates from
+            <a href="https://hosted.weblate.org/projects/qtpass/">Weblate</a>
+            arrive as Weblate&#39;s own commits without a sign-off; a committer
+            reviews them before merging.
+          </li>
+          <li>
+            <strong>Add tests</strong> - New features and bugfixes come with
+            tests in <code>tests/auto/</code>, and <code>make check</code> must
+            pass. Format the C++ files you changed with
+            <code>clang-format --style=file -i &lt;file&gt;...</code>; CI runs
+            the linters on Pull Requests that change code, build files, scripts
+            or documentation.
           </li>
           <li>
             Ensure install or build dependencies and artifacts are not
@@ -209,9 +234,9 @@
             <a href="https://pridever.org/">PrideVer</a>.
           </li>
           <li>
-            You may merge the Pull Request once you have the sign-off of one
-            other developer, or if you do not have permission to do that, you
-            may request a reviewer to merge it for you.
+            Committers merge their own Pull Requests once CI and the automated
+            review pass. A Pull Request from outside the team is reviewed by a
+            committer, who merges it.
           </li>
         </ol>
         <h2>
@@ -345,7 +370,7 @@
           <li>Enable &quot;Developer Mode&quot;</li>
         </ul>
         <p><strong>Option 2:</strong> Configure Git to use symlinks</p>
-        <pre tabindex="0"><code class="language-bash">git config core.symlinks true
+        <pre><code class="language-bash">git config core.symlinks true
 </code></pre>
         <p>Set this before cloning the repository.</p>
         <p>
@@ -403,7 +428,7 @@
             >https://www.gnu.org/licenses/gpl-3.0.html</a
           >
         </p>
-      </main>
+      </section>
     </div>
     <script src="javascripts/main.js?v=1.8.3-1" defer></script>
   </body>

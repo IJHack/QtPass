@@ -25,6 +25,7 @@ ASSET_VERSION = "?v=1.8.3-1"
 SITE_PAGES = {
     "FAQ.md": "/faq",
     "CONTRIBUTING.md": "/contributing",
+    "CODE_OF_CONDUCT.md": "/code-of-conduct",
 }
 
 PAGES = {
@@ -62,6 +63,25 @@ PAGES = {
             "send it."
         ),
         "crumb": "Contributing",
+        "toc_label": "Sections",
+        "toc_depth": 2,
+        "faq_schema": False,
+    },
+    "code-of-conduct": {
+        "source": "CODE_OF_CONDUCT.md",
+        "slug": "code-of-conduct",
+        "title": "QtPass Code of Conduct",
+        "heading": "Code of Conduct",
+        "description": (
+            "The QtPass Code of Conduct (Contributor Covenant 2.1): the "
+            "behavior expected in issues, pull requests and translations, "
+            "and how the maintainers handle reports."
+        ),
+        "blurb": (
+            "What we expect from everyone taking part in QtPass, and how to "
+            "report a problem."
+        ),
+        "crumb": "Code of Conduct",
         "toc_label": "Sections",
         "toc_depth": 2,
         "faq_schema": False,
@@ -188,6 +208,9 @@ HEAD = """<!doctype html>
             <small
               ><a title="QtPass Sitemap" href="/sitemap">Sitemap</a> ·
               <a title="QtPass privacy policy" href="/privacy">Privacy</a> ·
+              <a title="QtPass code signing policy" href="/code-signing"
+                >Code signing policy</a
+              > ·
               <a title="Latest documentation" href="/docs/">API docs</a></small
             >
           </p>

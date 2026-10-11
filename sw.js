@@ -1,4 +1,4 @@
-const CACHE_NAME = "qtpass::v1.8.3-1::static";
+const CACHE_NAME = "qtpass::v1.8.3-2::static";
 
 // Cache-bust: the pages append this to asset URLs whose names do not
 // change between releases (styles.css, logo.svg, the favicons), so the
@@ -20,6 +20,7 @@ const PRECACHE_URLS = [
   "/changelog.beta",
   "/changelog.old",
   "/code-signing",
+  "/code-of-conduct",
   "/contributing",
   "/downloads",
   "/faq",
