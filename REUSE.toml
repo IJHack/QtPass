@@ -32,7 +32,7 @@ SPDX-License-Identifier = "CC-BY-1.0"
 
 # Screenshots and captures are renderings of QtPass's own UI.
 [[annotations]]
-path = ["images/qtpass*", "images/config*", "images/windows-app*", "images/macos-app*", "images/2.0/**", "video/**"]
+path = ["images/qtpass*", "images/config*", "images/windows-app*", "images/macos-app*", "images/freebsd-app*", "images/gnome-app*", "images/2.0/**", "video/**"]
 precedence = "override"
 SPDX-FileCopyrightText = "IJHack"
 SPDX-License-Identifier = "CC0-1.0"
