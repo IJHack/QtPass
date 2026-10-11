@@ -241,7 +241,8 @@
               <picture>
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/qtpass-dark@2x.webp?v=1.8.3-1"
+                  srcset="images/qtpass-dark-480.webp?v=1.8.3-1 480w, images/qtpass-dark-720.webp?v=1.8.3-1 720w, images/qtpass-dark-960.webp?v=1.8.3-1 960w, images/qtpass-dark@2x.webp?v=1.8.3-1 2222w"
+                  sizes="(max-width: 60rem) 92vw, 19rem"
                   type="image/webp"
                 />
                 <source
@@ -252,7 +253,8 @@
                   "
                 />
                 <source
-                  srcset="images/qtpass@2x.webp?v=1.8.3-1"
+                  srcset="images/qtpass-480.webp?v=1.8.3-1 480w, images/qtpass-720.webp?v=1.8.3-1 720w, images/qtpass-960.webp?v=1.8.3-1 960w, images/qtpass@2x.webp?v=1.8.3-1 2222w"
+                  sizes="(max-width: 60rem) 92vw, 19rem"
                   type="image/webp"
                 />
                 <img
@@ -276,7 +278,8 @@
               <picture>
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/config-dark@2x.webp?v=1.8.3-1"
+                  srcset="images/config-dark-480.webp?v=1.8.3-1 480w, images/config-dark-720.webp?v=1.8.3-1 720w, images/config-dark-960.webp?v=1.8.3-1 960w, images/config-dark@2x.webp?v=1.8.3-1 2222w"
+                  sizes="(max-width: 60rem) 92vw, 30rem"
                   type="image/webp"
                 />
                 <source
@@ -287,11 +290,13 @@
                   "
                 />
                 <source
-                  srcset="images/config@2x.webp?v=1.8.3-1"
+                  srcset="images/config-480.webp?v=1.8.3-1 480w, images/config-720.webp?v=1.8.3-1 720w, images/config-960.webp?v=1.8.3-1 960w, images/config@2x.webp?v=1.8.3-1 2222w"
+                  sizes="(max-width: 60rem) 92vw, 30rem"
                   type="image/webp"
                 />
                 <img
                   src="images/config.png?v=1.8.3-1"
+                  loading="lazy"
                   srcset="
                     images/config.png?v=1.8.3-1,
                     images/config@2x.png?v=1.8.3-1 2x
@@ -324,18 +329,24 @@
           >
             <img
               src="https://github.com/IJHack/QtPass/actions/workflows/build-and-test.yml/badge.svg?branch=main"
+              width="154"
+              height="20"
               alt="Build Status"
             />
           </a>
           <a href="https://api.reuse.software/info/github.com/IJHack/QtPass">
             <img
               src="https://api.reuse.software/badge/github.com/IJHack/QtPass"
+              width="110"
+              height="20"
               alt="REUSE status"
             />
           </a>
           <a href="https://www.bestpractices.dev/projects/15371">
             <img
               src="https://www.bestpractices.dev/projects/15371/badge"
+              width="184"
+              height="20"
               alt="OpenSSF Best Practices"
             />
           </a>
@@ -415,8 +426,8 @@
                   src="images/win11.png"
                   loading="lazy"
                   decoding="async"
-                  width="200"
-                  height="249"
+                  width="180"
+                  height="224"
                   alt="Windows 11 Compatible"
               /></a>
               <a title="Install on macOS" href="/macos"
@@ -425,8 +436,8 @@
                   src="images/macos.png"
                   loading="lazy"
                   decoding="async"
-                  width="256"
-                  height="256"
+                  width="128"
+                  height="128"
                   alt="macOS Compatible"
               /></a>
               <a title="Install on FreeBSD" href="/downloads#FreeBSD"
@@ -435,8 +446,8 @@
                   src="images/freebsd.png"
                   loading="lazy"
                   decoding="async"
-                  width="175"
-                  height="175"
+                  width="128"
+                  height="128"
                   alt="FreeBSD Compatible"
               /></a>
               <a title="Install on OpenBSD" href="/downloads#OpenBSD"
@@ -445,8 +456,8 @@
                   src="images/openbsd.png"
                   loading="lazy"
                   decoding="async"
-                  width="247"
-                  height="224"
+                  width="141"
+                  height="128"
                   alt="OpenBSD Compatible"
               /></a>
             </p>
@@ -698,36 +709,46 @@
         </p>
         <div class="native darkmode">
           <figure>
-            <img
-              src="images/qtpass.png?v=1.8.3-1"
-              srcset="
-                images/qtpass.png?v=1.8.3-1,
-                images/qtpass@2x.png?v=1.8.3-1 2x
-              "
-              width="1111"
-              height="961"
-              alt="QtPass on Linux in the light theme"
-              loading="lazy"
-              decoding="async"
-            />
+            <a href="images/qtpass@2x.png?v=1.8.3-1" title="Full size">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="images/qtpass-480.webp?v=1.8.3-1 480w, images/qtpass-720.webp?v=1.8.3-1 720w, images/qtpass-960.webp?v=1.8.3-1 960w, images/qtpass@2x.webp?v=1.8.3-1 2222w"
+                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
+                />
+                <img
+                  src="images/qtpass.png?v=1.8.3-1"
+                  width="1111"
+                  height="961"
+                  alt="QtPass on Linux in the light theme"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </a>
             <figcaption>
               <strong>Linux, light</strong> &mdash; following your desktop
               theme.
             </figcaption>
           </figure>
           <figure>
-            <img
-              src="images/qtpass-dark.png?v=1.8.3-1"
-              srcset="
-                images/qtpass-dark.png?v=1.8.3-1,
-                images/qtpass-dark@2x.png?v=1.8.3-1 2x
-              "
-              width="1111"
-              height="961"
-              alt="QtPass on Linux in the dark theme"
-              loading="lazy"
-              decoding="async"
-            />
+            <a href="images/qtpass-dark@2x.png?v=1.8.3-1" title="Full size">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="images/qtpass-dark-480.webp?v=1.8.3-1 480w, images/qtpass-dark-720.webp?v=1.8.3-1 720w, images/qtpass-dark-960.webp?v=1.8.3-1 960w, images/qtpass-dark@2x.webp?v=1.8.3-1 2222w"
+                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
+                />
+                <img
+                  src="images/qtpass-dark.png?v=1.8.3-1"
+                  width="1111"
+                  height="961"
+                  alt="QtPass on Linux in the dark theme"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </a>
             <figcaption>
               <strong>Linux, dark</strong> &mdash; the same store, a different
               theme.
@@ -737,12 +758,19 @@
         <div class="native platforms">
           <figure class="platform">
             <div class="capture">
+              <a class="full" href="images/windows-app.png" title="Full size">
               <picture>
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/windows-app-dark.png"
+                  type="image/webp"
+                  srcset="images/windows-app-dark-480.webp 480w, images/windows-app-dark-720.webp 720w, images/windows-app-dark-960.webp 960w"
+                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
                 />
-                <source srcset="images/windows-app.png" type="image/png" />
+                <source
+                  type="image/webp"
+                  srcset="images/windows-app-480.webp 480w, images/windows-app-720.webp 720w, images/windows-app-960.webp 960w"
+                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
+                />
                 <img
                   class="shot"
                   src="images/windows-app.png"
@@ -751,11 +779,12 @@
                   decoding="async"
                 />
               </picture>
+              </a>
               <img
                 class="fallback"
                 src="images/win11.png"
-                width="200"
-                height="249"
+                width="180"
+                height="224"
                 alt="Windows 11"
                 aria-hidden="true"
                 loading="lazy"
@@ -768,12 +797,19 @@
           </figure>
           <figure class="platform">
             <div class="capture">
+              <a class="full" href="images/macos-app.png" title="Full size">
               <picture>
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/macos-app-dark.png"
+                  type="image/webp"
+                  srcset="images/macos-app-dark-480.webp 480w, images/macos-app-dark-720.webp 720w, images/macos-app-dark-960.webp 960w"
+                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
                 />
-                <source srcset="images/macos-app.png" type="image/png" />
+                <source
+                  type="image/webp"
+                  srcset="images/macos-app-480.webp 480w, images/macos-app-720.webp 720w, images/macos-app-960.webp 960w"
+                  sizes="(max-width: 30rem) 92vw, (max-width: 60rem) 46vw, 17rem"
+                />
                 <img
                   class="shot"
                   src="images/macos-app.png"
@@ -782,11 +818,12 @@
                   decoding="async"
                 />
               </picture>
+              </a>
               <img
                 class="fallback"
                 src="images/macos.png"
-                width="256"
-                height="256"
+                width="128"
+                height="128"
                 alt="macOS"
                 aria-hidden="true"
                 loading="lazy"
@@ -816,8 +853,8 @@
               <img
                 class="fallback"
                 src="images/freebsd.png"
-                width="175"
-                height="175"
+                width="128"
+                height="128"
                 alt="FreeBSD"
                 aria-hidden="true"
                 loading="lazy"

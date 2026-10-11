@@ -226,7 +226,8 @@
               <picture>
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/qtpass-dark@2x.webp?v=1.8.3-1"
+                  srcset="images/qtpass-dark-480.webp?v=1.8.3-1 480w, images/qtpass-dark-720.webp?v=1.8.3-1 720w, images/qtpass-dark-960.webp?v=1.8.3-1 960w, images/qtpass-dark@2x.webp?v=1.8.3-1 2222w"
+                  sizes="(max-width: 60rem) 92vw, 19rem"
                   type="image/webp"
                 />
                 <source
@@ -237,7 +238,8 @@
                   "
                 />
                 <source
-                  srcset="images/qtpass@2x.webp?v=1.8.3-1"
+                  srcset="images/qtpass-480.webp?v=1.8.3-1 480w, images/qtpass-720.webp?v=1.8.3-1 720w, images/qtpass-960.webp?v=1.8.3-1 960w, images/qtpass@2x.webp?v=1.8.3-1 2222w"
+                  sizes="(max-width: 60rem) 92vw, 19rem"
                   type="image/webp"
                 />
                 <img
@@ -261,7 +263,8 @@
               <picture>
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/config-dark@2x.webp?v=1.8.3-1"
+                  srcset="images/config-dark-480.webp?v=1.8.3-1 480w, images/config-dark-720.webp?v=1.8.3-1 720w, images/config-dark-960.webp?v=1.8.3-1 960w, images/config-dark@2x.webp?v=1.8.3-1 2222w"
+                  sizes="(max-width: 60rem) 92vw, 30rem"
                   type="image/webp"
                 />
                 <source
@@ -272,11 +275,13 @@
                   "
                 />
                 <source
-                  srcset="images/config@2x.webp?v=1.8.3-1"
+                  srcset="images/config-480.webp?v=1.8.3-1 480w, images/config-720.webp?v=1.8.3-1 720w, images/config-960.webp?v=1.8.3-1 960w, images/config@2x.webp?v=1.8.3-1 2222w"
+                  sizes="(max-width: 60rem) 92vw, 30rem"
                   type="image/webp"
                 />
                 <img
                   src="images/config.png?v=1.8.3-1"
+                  loading="lazy"
                   srcset="
                     images/config.png?v=1.8.3-1,
                     images/config@2x.png?v=1.8.3-1 2x
@@ -322,11 +327,15 @@
           </p>
           <img
             src="https://github.com/IJHack/QtPass/actions/workflows/build-and-test.yml/badge.svg"
+            width="154"
+            height="20"
             alt="GitHub Build Status"
           />
           <a href="https://www.bestpractices.dev/projects/15371">
             <img
               src="https://www.bestpractices.dev/projects/15371/badge"
+              width="184"
+              height="20"
               alt="OpenSSF Best Practices"
             />
           </a>
@@ -734,8 +743,8 @@
               src="images/win11.png"
               loading="lazy"
               decoding="async"
-              width="200"
-              height="249"
+              width="180"
+              height="224"
               alt="Windows 11 Compatible"
           /></a>
           <a title="Install on macOS" href="/downloads#macOS"
@@ -744,8 +753,8 @@
               src="images/macos.png"
               loading="lazy"
               decoding="async"
-              width="256"
-              height="256"
+              width="128"
+              height="128"
               alt="OS X Compatible"
           /></a>
           <a title="Install on FreeBSD" href="/downloads#FreeBSD"
@@ -754,8 +763,8 @@
               src="images/freebsd.png"
               loading="lazy"
               decoding="async"
-              width="175"
-              height="175"
+              width="128"
+              height="128"
               alt="FreeBSD Compatible"
           /></a>
           <a title="Install on OpenBSD" href="/downloads#OpenBSD"
@@ -764,8 +773,8 @@
               src="images/openbsd.png"
               loading="lazy"
               decoding="async"
-              width="247"
-              height="224"
+              width="141"
+              height="128"
               alt="OpenBSD Compatible"
           /></a>
         </p>
