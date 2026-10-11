@@ -17,3 +17,15 @@ updates:
       prefix: "ci"
 
     open-pull-requests-limit: 5
+
+  # The OSS Scanner build image (.oss-scanner/Dockerfile) is pinned by
+  # digest; this keeps the digest current.
+  - package-ecosystem: "docker"
+    directory: "/.oss-scanner"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: "ci"
+    open-pull-requests-limit: 2
