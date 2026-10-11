@@ -227,8 +227,8 @@ What comes next, from the 2.0 release to CMake and signed releases, is in
 
 ## Further reading
 
-[FAQ](FAQ.md), [CONTRIBUTING](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) documentation.
-[CHANGELOG](CHANGELOG.md) and [ROADMAP](ROADMAP.md)
+[FAQ](FAQ.md), [Contributing](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) documentation.
+[Changelog](CHANGELOG.md) and [Roadmap](ROADMAP.md)
 
 On [qtpass.org](https://qtpass.org/):
 [getting started](https://qtpass.org/getting-started),
