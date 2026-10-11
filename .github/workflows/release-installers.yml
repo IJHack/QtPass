@@ -688,10 +688,12 @@ jobs:
       # (see "Determine which release assets are new in this run" above),
       # so a bundle already published under this name covers earlier assets
       # this run's bundle says nothing about. The final upload step below
-      # always replaces the published bundle with the one staged here, so
-      # it must already contain every line that was ever published for this
-      # tag; gh release download fails harmlessly when no such asset exists
-      # yet (first publish of this tag).
+      # always replaces the published bundle with the one staged here, so it
+      # must already contain every line that was ever published for this
+      # tag. The asset's existence and its download are checked separately:
+      # a transient download failure on a bundle that is known to exist must
+      # fail the job rather than be mistaken for "nothing published yet" and
+      # silently drop that bundle's coverage.
       - name: Stage the provenance bundle as a release asset
         shell: bash
         if: steps.attest.outputs.bundle-path != ''
@@ -702,8 +704,14 @@ jobs:
           set -euo pipefail
           version="${GITHUB_REF_NAME#v}"
           dest="dist/QtPass-${version}.intoto.jsonl"
-          if gh release download "$GITHUB_REF_NAME" \
-              --pattern "$(basename "$dest")" --output "$dest.previous" 2>/dev/null; then
+          asset_name="$(basename "$dest")"
+          existing="$(gh release view "$GITHUB_REF_NAME" --json assets --jq '.assets[].name')"
+          if grep -qxF "$asset_name" <<<"$existing"; then
+            if ! gh release download "$GITHUB_REF_NAME" \
+                --pattern "$asset_name" --output "$dest.previous"; then
+              echo "Error: $asset_name is already published but could not be downloaded; refusing to replace it with a bundle missing its coverage" >&2
+              exit 1
+            fi
             echo "folding in the previously published provenance bundle"
             cat "$dest.previous" "$BUNDLE_PATH" > "$dest"
             rm -f "$dest.previous"
@@ -747,6 +755,15 @@ jobs:
                 # Cumulative, not a fixed asset: the staging step above
                 # already folded in whatever was published before, so the
                 # file here is always a superset and safe to replace outright.
+                # Its bytes are changing, same as a draft's replaced files
+                # above, so any existing signature over the old bytes is
+                # stale; drop it so the signing script produces a fresh one
+                # instead of skipping a file whose .asc already exists.
+                asc="${name}.asc"
+                if grep -qxF "$asc" <<<"$existing"; then
+                  echo "removing stale signature $asc"
+                  gh release delete-asset "$GITHUB_REF_NAME" "$asc" --yes
+                fi
                 echo "updating provenance bundle $name"
                 gh release upload "$GITHUB_REF_NAME" "$file" --clobber
               elif grep -qxF "$name" <<<"$existing"; then
