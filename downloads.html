@@ -268,12 +268,21 @@
                 />
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/qtpass-dark.png?v=1.8.3-1, images/qtpass-dark@2x.png?v=1.8.3-1 2x"
+                  srcset="
+                    images/qtpass-dark.png?v=1.8.3-1,
+                    images/qtpass-dark@2x.png?v=1.8.3-1 2x
+                  "
                 />
-                <source srcset="images/qtpass@2x.webp?v=1.8.3-1" type="image/webp" />
+                <source
+                  srcset="images/qtpass@2x.webp?v=1.8.3-1"
+                  type="image/webp"
+                />
                 <img
                   src="images/qtpass.png?v=1.8.3-1"
-                  srcset="images/qtpass.png?v=1.8.3-1, images/qtpass@2x.png?v=1.8.3-1 2x"
+                  srcset="
+                    images/qtpass.png?v=1.8.3-1,
+                    images/qtpass@2x.png?v=1.8.3-1 2x
+                  "
                   width="1111"
                   height="961"
                   alt="QtPass main window with a password store, one entry open"
@@ -294,12 +303,21 @@
                 />
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/config-dark.png?v=1.8.3-1, images/config-dark@2x.png?v=1.8.3-1 2x"
+                  srcset="
+                    images/config-dark.png?v=1.8.3-1,
+                    images/config-dark@2x.png?v=1.8.3-1 2x
+                  "
                 />
-                <source srcset="images/config@2x.webp?v=1.8.3-1" type="image/webp" />
+                <source
+                  srcset="images/config@2x.webp?v=1.8.3-1"
+                  type="image/webp"
+                />
                 <img
                   src="images/config.png?v=1.8.3-1"
-                  srcset="images/config.png?v=1.8.3-1, images/config@2x.png?v=1.8.3-1 2x"
+                  srcset="
+                    images/config.png?v=1.8.3-1,
+                    images/config@2x.png?v=1.8.3-1 2x
+                  "
                   loading="lazy"
                   decoding="async"
                   width="822"
@@ -355,7 +373,12 @@
               <a title="QtPass privacy policy" href="/privacy">Privacy</a> ·
               <a title="QtPass code signing policy" href="/code-signing"
                 >Code signing policy</a
-              > ·
+              >
+              ·
+              <a title="QtPass license and copyright" href="/license"
+                >License</a
+              >
+              ·
               <a title="Latest documentation" href="/docs/">API docs</a></small
             >
           </p>
@@ -441,7 +464,9 @@
         <pre tabindex="0"><code>yum install qtpass</code></pre>
         <pre tabindex="0"><code>dnf install qtpass</code></pre>
 
-        <h4 id="deb">Debian, Ubuntu and derivatives like Kali &amp; Raspbian</h4>
+        <h4 id="deb">
+          Debian, Ubuntu and derivatives like Kali &amp; Raspbian
+        </h4>
         In amongst others
         <a
           title="Debian QtPass in stable"
@@ -545,7 +570,9 @@
             src="https://repology.org/badge/version-only-for-repo/slackbuilds/qtpass.svg"
             alt="SlackBuilds package"
         /></a>
-        <pre tabindex="0"><code>cd qtpass &amp;&amp; chmod +x qtpass.SlackBuild &amp;&amp; ./qtpass.SlackBuild</code></pre>
+        <pre
+          tabindex="0"
+        ><code>cd qtpass &amp;&amp; chmod +x qtpass.SlackBuild &amp;&amp; ./qtpass.SlackBuild</code></pre>
 
         <h3>
           <a
@@ -572,7 +599,9 @@
             alt="FreeBSD port"
         /></a>
         <pre tabindex="0"><code>pkg install qtpass</code></pre>
-        <pre tabindex="0"><code>cd /usr/ports/sysutils/qtpass/ &amp;&amp; make install clean</code></pre>
+        <pre
+          tabindex="0"
+        ><code>cd /usr/ports/sysutils/qtpass/ &amp;&amp; make install clean</code></pre>
 
         <h4 id="OpenBSD">OpenBSD</h4>
         Available as package and in the OpenBSD
@@ -588,7 +617,9 @@
             alt="OpenBSD port"
         /></a>
         <pre tabindex="0"><code>pkg_add qtpass</code></pre>
-        <pre tabindex="0"><code>cd /usr/ports/security/qtpass/ &amp;&amp; make install</code></pre>
+        <pre
+          tabindex="0"
+        ><code>cd /usr/ports/security/qtpass/ &amp;&amp; make install</code></pre>
 
         <h3 id="Windows">
           <a
@@ -658,7 +689,9 @@
           because the app is not notarized. The <code>.dmg</code> still works,
           but macOS will refuse the first launch. Remove the quarantine flag:
         </p>
-        <pre tabindex="0"><code>xattr -d com.apple.quarantine /Applications/QtPass.app</code></pre>
+        <pre
+          tabindex="0"
+        ><code>xattr -d com.apple.quarantine /Applications/QtPass.app</code></pre>
         <p>
           Read <a href="/macos">why this happened and how you can help</a>
           get QtPass signed again.
@@ -678,14 +711,19 @@
           >Dependencies
         </h3>
         <ul>
-          <li>QtPass 1.8 builds with Qt 5.15 or newer (Qt 6 recommended); 2.0 will need Qt 6.8 or newer.</li>
+          <li>
+            QtPass 1.8 builds with Qt 5.15 or newer (Qt 6 recommended); 2.0 will
+            need Qt 6.8 or newer.
+          </li>
           <li>The Linguist package is required to compile the translations.</li>
           <li>For use of the fallback icons the SVG library is required.</li>
         </ul>
 
         <p>On most *nix systems all you need is:</p>
 
-        <pre tabindex="0"><code>qmake6 &amp;&amp; make &amp;&amp; make install</code></pre>
+        <pre
+          tabindex="0"
+        ><code>qmake6 &amp;&amp; make &amp;&amp; make install</code></pre>
 
         <p>On macOS:</p>
 

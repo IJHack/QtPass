@@ -246,12 +246,21 @@
                 />
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/qtpass-dark.png?v=1.8.3-1, images/qtpass-dark@2x.png?v=1.8.3-1 2x"
+                  srcset="
+                    images/qtpass-dark.png?v=1.8.3-1,
+                    images/qtpass-dark@2x.png?v=1.8.3-1 2x
+                  "
                 />
-                <source srcset="images/qtpass@2x.webp?v=1.8.3-1" type="image/webp" />
+                <source
+                  srcset="images/qtpass@2x.webp?v=1.8.3-1"
+                  type="image/webp"
+                />
                 <img
                   src="images/qtpass.png?v=1.8.3-1"
-                  srcset="images/qtpass.png?v=1.8.3-1, images/qtpass@2x.png?v=1.8.3-1 2x"
+                  srcset="
+                    images/qtpass.png?v=1.8.3-1,
+                    images/qtpass@2x.png?v=1.8.3-1 2x
+                  "
                   width="1111"
                   height="961"
                   alt="QtPass main window with a password store, one entry open"
@@ -272,12 +281,21 @@
                 />
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/config-dark.png?v=1.8.3-1, images/config-dark@2x.png?v=1.8.3-1 2x"
+                  srcset="
+                    images/config-dark.png?v=1.8.3-1,
+                    images/config-dark@2x.png?v=1.8.3-1 2x
+                  "
                 />
-                <source srcset="images/config@2x.webp?v=1.8.3-1" type="image/webp" />
+                <source
+                  srcset="images/config@2x.webp?v=1.8.3-1"
+                  type="image/webp"
+                />
                 <img
                   src="images/config.png?v=1.8.3-1"
-                  srcset="images/config.png?v=1.8.3-1, images/config@2x.png?v=1.8.3-1 2x"
+                  srcset="
+                    images/config.png?v=1.8.3-1,
+                    images/config@2x.png?v=1.8.3-1 2x
+                  "
                   loading="lazy"
                   decoding="async"
                   width="822"
@@ -333,7 +351,12 @@
               <a title="QtPass privacy policy" href="/privacy">Privacy</a> ·
               <a title="QtPass code signing policy" href="/code-signing"
                 >Code signing policy</a
-              > ·
+              >
+              ·
+              <a title="QtPass license and copyright" href="/license"
+                >License</a
+              >
+              ·
               <a title="Latest documentation" href="/docs/">API docs</a></small
             >
           </p>
@@ -341,9 +364,7 @@
       </aside>
       <main id="main">
         <div class="hero">
-          <h2 id="overview">
-            Password management without the password cloud.
-          </h2>
+          <h2 id="overview">Password management without the password cloud.</h2>
           <p class="hero-sub">
             A free and open-source GUI for
             <a href="https://www.passwordstore.org/">pass</a>: your passwords
@@ -370,10 +391,7 @@
                 decoding="async"
               />
               <span class="wordmark">QtPass</span>
-              <a
-                class="version"
-                title="QtPass changelog"
-                href="/changelog"
+              <a class="version" title="QtPass changelog" href="/changelog"
                 >1.8.3</a
               >
             </p>
@@ -480,7 +498,9 @@
             ><span aria-hidden="true" class="octicon octicon-link"></span></a
           >macOS
         </h3>
-        <pre tabindex="0"><code>xattr -d com.apple.quarantine /Applications/QtPass.app</code></pre>
+        <pre
+          tabindex="0"
+        ><code>xattr -d com.apple.quarantine /Applications/QtPass.app</code></pre>
         <p>
           After installing the <code>.dmg</code> from the
           <a href="https://github.com/IJHack/QtPass/releases">releases page</a>.
@@ -506,8 +526,8 @@
         <p>
           QtPass works with <a href="https://www.passwordstore.org/">pass</a>,
           the standard UNIX password manager. Your passwords are encrypted with
-          GPG using open standards &mdash; no vendor lock-in, fully portable
-          and under your control.
+          GPG using open standards &mdash; no vendor lock-in, fully portable and
+          under your control.
         </p>
 
         <ul class="philosophy" aria-label="What sets QtPass apart">
@@ -680,26 +700,38 @@
           <figure>
             <img
               src="images/qtpass.png?v=1.8.3-1"
-              srcset="images/qtpass.png?v=1.8.3-1, images/qtpass@2x.png?v=1.8.3-1 2x"
+              srcset="
+                images/qtpass.png?v=1.8.3-1,
+                images/qtpass@2x.png?v=1.8.3-1 2x
+              "
               width="1111"
               height="961"
               alt="QtPass on Linux in the light theme"
               loading="lazy"
               decoding="async"
             />
-            <figcaption><strong>Linux, light</strong> &mdash; following your desktop theme.</figcaption>
+            <figcaption>
+              <strong>Linux, light</strong> &mdash; following your desktop
+              theme.
+            </figcaption>
           </figure>
           <figure>
             <img
               src="images/qtpass-dark.png?v=1.8.3-1"
-              srcset="images/qtpass-dark.png?v=1.8.3-1, images/qtpass-dark@2x.png?v=1.8.3-1 2x"
+              srcset="
+                images/qtpass-dark.png?v=1.8.3-1,
+                images/qtpass-dark@2x.png?v=1.8.3-1 2x
+              "
               width="1111"
               height="961"
               alt="QtPass on Linux in the dark theme"
               loading="lazy"
               decoding="async"
             />
-            <figcaption><strong>Linux, dark</strong> &mdash; the same store, a different theme.</figcaption>
+            <figcaption>
+              <strong>Linux, dark</strong> &mdash; the same store, a different
+              theme.
+            </figcaption>
           </figure>
         </div>
         <div class="native platforms">
@@ -730,7 +762,9 @@
                 decoding="async"
               />
             </div>
-            <figcaption><strong>Windows 11</strong> &mdash; native light and dark.</figcaption>
+            <figcaption>
+              <strong>Windows 11</strong> &mdash; native light and dark.
+            </figcaption>
           </figure>
           <figure class="platform">
             <div class="capture">
@@ -759,7 +793,9 @@
                 decoding="async"
               />
             </div>
-            <figcaption><strong>macOS</strong> &mdash; native light and dark.</figcaption>
+            <figcaption>
+              <strong>macOS</strong> &mdash; native light and dark.
+            </figcaption>
           </figure>
           <figure class="platform">
             <div class="capture">
@@ -788,7 +824,9 @@
                 decoding="async"
               />
             </div>
-            <figcaption><strong>FreeBSD</strong> &mdash; native light and dark.</figcaption>
+            <figcaption>
+              <strong>FreeBSD</strong> &mdash; native light and dark.
+            </figcaption>
           </figure>
         </div>
 
@@ -854,14 +892,19 @@
           >Build from source
         </h3>
         <ul>
-          <li>QtPass 1.8 builds with Qt 5.15 or later (Qt 6 recommended); 2.0 will need Qt 6.8 or later</li>
+          <li>
+            QtPass 1.8 builds with Qt 5.15 or later (Qt 6 recommended); 2.0 will
+            need Qt 6.8 or later
+          </li>
           <li>GnuPG 2.2+</li>
           <li>Optional: Git and pass</li>
         </ul>
 
         <p>Build on Linux/BSD:</p>
 
-        <pre tabindex="0"><code>qmake6 &amp;&amp; make &amp;&amp; make install</code></pre>
+        <pre
+          tabindex="0"
+        ><code>qmake6 &amp;&amp; make &amp;&amp; make install</code></pre>
 
         <p>Build on macOS:</p>
 

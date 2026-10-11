@@ -367,7 +367,12 @@
               <a title="QtPass privacy policy" href="/privacy">Privacy</a> ·
               <a title="QtPass code signing policy" href="/code-signing"
                 >Code signing policy</a
-              > ·
+              >
+              ·
+              <a title="QtPass license and copyright" href="/license"
+                >License</a
+              >
+              ·
               <a title="Latest documentation" href="/docs/">API docs</a></small
             >
           </p>
@@ -613,7 +618,9 @@ max-cache-ttl 7200
             key may exist in one but not the other.
           </li>
         </ul>
-        <pre tabindex="0"><code class="language-bash">gpg --export [ID] &gt; public.key
+        <pre
+          tabindex="0"
+        ><code class="language-bash">gpg --export [ID] &gt; public.key
 gpg --export-secret-key [ID] &gt; private.key
 gpg2 --import public.key
 gpg2 --import private.key
@@ -646,7 +653,9 @@ rm public.key private.key
               Set <code>SSH_ASKPASS</code> environment variable to the full path
               of <code>git-gui--askpass</code>, for example:
             </p>
-            <pre tabindex="0"><code class="language-text">C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe
+            <pre
+              tabindex="0"
+            ><code class="language-text">C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe
 </code></pre>
           </li>
           <li>
@@ -660,11 +669,15 @@ rm public.key private.key
           </li>
         </ol>
         <p>Example using PowerShell:</p>
-        <pre tabindex="0"><code class="language-powershell">$env:SSH_ASKPASS = &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
+        <pre
+          tabindex="0"
+        ><code class="language-powershell">$env:SSH_ASKPASS = &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
 $env:GIT_ASKPASS = &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
 </code></pre>
         <p>Or to make it permanent:</p>
-        <pre tabindex="0"><code class="language-powershell">setx SSH_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
+        <pre
+          tabindex="0"
+        ><code class="language-powershell">setx SSH_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
 setx GIT_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;
 </code></pre>
         <p>
@@ -1045,9 +1058,7 @@ exec /Applications/QtPass.app/Contents/MacOS/qtpass &quot;$@&quot;
             ><span class="octicon octicon-link"></span></a
           >Can not find either qmake or qmake6
         </h3>
-        <p>
-          QtPass needs Qt 6.8 or newer and builds with <code>qmake6</code>.
-        </p>
+        <p>QtPass needs Qt 6.8 or newer and builds with <code>qmake6</code>.</p>
         <p>
           If you get an error like &quot;QApplication&quot; not found or Qt
           installation issues, make sure you&#39;re using the correct qmake
@@ -1141,10 +1152,14 @@ exec /Applications/QtPass.app/Contents/MacOS/qtpass &quot;$@&quot;
               <code>LANG</code> are <strong>not</strong> honored by Qt on macOS
               — Qt reads CoreFoundation locale instead. Override per-app with:
             </p>
-            <pre tabindex="0"><code class="language-sh">defaults write com.IJHack.QtPass AppleLanguages &#39;(fr)&#39;
+            <pre
+              tabindex="0"
+            ><code class="language-sh">defaults write com.IJHack.QtPass AppleLanguages &#39;(fr)&#39;
 </code></pre>
             <p>Or pass the override as a launch argument:</p>
-            <pre tabindex="0"><code class="language-sh">open -a QtPass --args -AppleLanguages &#39;(fr)&#39;
+            <pre
+              tabindex="0"
+            ><code class="language-sh">open -a QtPass --args -AppleLanguages &#39;(fr)&#39;
 </code></pre>
             <p>
               Use

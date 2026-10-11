@@ -225,12 +225,21 @@
                 />
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/qtpass-dark.png?v=1.8.3-1, images/qtpass-dark@2x.png?v=1.8.3-1 2x"
+                  srcset="
+                    images/qtpass-dark.png?v=1.8.3-1,
+                    images/qtpass-dark@2x.png?v=1.8.3-1 2x
+                  "
                 />
-                <source srcset="images/qtpass@2x.webp?v=1.8.3-1" type="image/webp" />
+                <source
+                  srcset="images/qtpass@2x.webp?v=1.8.3-1"
+                  type="image/webp"
+                />
                 <img
                   src="images/qtpass.png?v=1.8.3-1"
-                  srcset="images/qtpass.png?v=1.8.3-1, images/qtpass@2x.png?v=1.8.3-1 2x"
+                  srcset="
+                    images/qtpass.png?v=1.8.3-1,
+                    images/qtpass@2x.png?v=1.8.3-1 2x
+                  "
                   width="1111"
                   height="961"
                   alt="QtPass main window with a password store, one entry open"
@@ -251,12 +260,21 @@
                 />
                 <source
                   media="(prefers-color-scheme: dark)"
-                  srcset="images/config-dark.png?v=1.8.3-1, images/config-dark@2x.png?v=1.8.3-1 2x"
+                  srcset="
+                    images/config-dark.png?v=1.8.3-1,
+                    images/config-dark@2x.png?v=1.8.3-1 2x
+                  "
                 />
-                <source srcset="images/config@2x.webp?v=1.8.3-1" type="image/webp" />
+                <source
+                  srcset="images/config@2x.webp?v=1.8.3-1"
+                  type="image/webp"
+                />
                 <img
                   src="images/config.png?v=1.8.3-1"
-                  srcset="images/config.png?v=1.8.3-1, images/config@2x.png?v=1.8.3-1 2x"
+                  srcset="
+                    images/config.png?v=1.8.3-1,
+                    images/config@2x.png?v=1.8.3-1 2x
+                  "
                   loading="lazy"
                   decoding="async"
                   width="822"
@@ -312,7 +330,12 @@
               <a title="QtPass privacy policy" href="/privacy">Privacy</a> ·
               <a title="QtPass code signing policy" href="/code-signing"
                 >Code signing policy</a
-              > ·
+              >
+              ·
+              <a title="QtPass license and copyright" href="/license"
+                >License</a
+              >
+              ·
               <a title="Latest documentation" href="/docs/">API docs</a></small
             >
           </p>
@@ -349,7 +372,8 @@
           The Windows release: <code>qtpass.exe</code> and the
           <code>qtpass-x.y.z.exe</code> installer. Both are built by GitHub
           Actions from a tagged commit in
-          <a href="https://github.com/IJHack/QtPass">IJHack/QtPass</a>, using the
+          <a href="https://github.com/IJHack/QtPass">IJHack/QtPass</a>, using
+          the
           <a
             href="https://github.com/IJHack/QtPass/blob/main/.github/workflows/release-installers.yml"
             >Release installers</a
@@ -387,8 +411,10 @@
             Program membership the project does not have, so Gatekeeper blocks
             the first launch and the Homebrew cask is disabled since
             1&nbsp;September 2026. The <a href="/macos">macOS page</a> explains
-            how to open it anyway and how you can help get it signed
-            (<a href="https://github.com/IJHack/QtPass/issues/1542">#1542</a>).
+            how to open it anyway and how you can help get it signed (<a
+              href="https://github.com/IJHack/QtPass/issues/1542"
+              >#1542</a
+            >).
           </li>
           <li>
             <strong>Linux:</strong> distribution packages are signed by the
@@ -422,8 +448,8 @@
             access to the QtPass repository. Every change reaches
             <code>main</code> through a pull request with signed commits that
             has passed CI and automated review; committers merge their own
-            changes, and contributions from outside the team are reviewed by
-            a committer before they are merged.
+            changes, and contributions from outside the team are reviewed by a
+            committer before they are merged.
           </li>
           <li>
             <strong>Approvers:</strong>
