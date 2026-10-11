@@ -18,6 +18,7 @@ jobs:
     outputs:
       src: ${{ steps.filter.outputs.src }}
       tests: ${{ steps.filter.outputs.tests }}
+      workflow: ${{ steps.filter.outputs.workflow }}
     steps:
       - uses: actions/checkout@v7.0.1
         with:
@@ -35,6 +36,8 @@ jobs:
               - "**.c"
             tests:
               - "tests/**"
+            workflow:
+              - ".github/workflows/codeql.yml"
 
   analyze:
     needs: changes
@@ -57,6 +60,7 @@ jobs:
         run: |
           if [[ "${NEEDS_CHANGES_OUTPUTS_SRC}" == "true" ]] || \
              [[ "${NEEDS_CHANGES_OUTPUTS_TESTS}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_WORKFLOW}" == "true" ]] || \
              [[ "${{ github.event_name }}" == "merge_group" ]] || \
              [[ "${{ github.event_name }}" == "schedule" ]]; then
             echo "run_analysis=true" >> "$GITHUB_OUTPUT"
@@ -66,6 +70,7 @@ jobs:
         env:
           NEEDS_CHANGES_OUTPUTS_SRC: ${{ needs.changes.outputs.src }}
           NEEDS_CHANGES_OUTPUTS_TESTS: ${{ needs.changes.outputs.tests }}
+          NEEDS_CHANGES_OUTPUTS_WORKFLOW: ${{ needs.changes.outputs.workflow }}
 
       - name: No changes - skipping
         if: steps.need_analysis.outputs.run_analysis != 'true'
