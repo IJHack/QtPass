@@ -989,10 +989,8 @@ dialog.lightbox img {
   height: auto;
   object-fit: contain;
 }
-dialog.lightbox .lightbox-close {
+dialog.lightbox .lightbox-button {
   position: fixed;
-  top: 0.75rem;
-  right: 0.75rem;
   width: 2.5rem;
   height: 2.5rem;
   border: 0;
@@ -1003,7 +1001,34 @@ dialog.lightbox .lightbox-close {
   line-height: 1;
   cursor: pointer;
 }
-dialog.lightbox .lightbox-close:focus-visible {
+dialog.lightbox .lightbox-button:hover {
+  background: rgb(255 255 255 / 0.28);
+}
+dialog.lightbox .lightbox-button[hidden] {
+  display: none;
+}
+dialog.lightbox .lightbox-close {
+  top: 0.75rem;
+  right: 0.75rem;
+}
+dialog.lightbox .lightbox-theme {
+  top: 0.75rem;
+  right: 3.75rem;
+  font-size: 1.3rem;
+}
+dialog.lightbox .lightbox-prev,
+dialog.lightbox .lightbox-next {
+  top: 50%;
+  translate: 0 -50%;
+  font-size: 2rem;
+}
+dialog.lightbox .lightbox-prev {
+  left: 0.75rem;
+}
+dialog.lightbox .lightbox-next {
+  right: 0.75rem;
+}
+dialog.lightbox .lightbox-button:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 2px;
 }

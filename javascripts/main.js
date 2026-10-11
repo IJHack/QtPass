@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/unlock.js?v=1.8.3-5";
+      script.src = "/javascripts/unlock.js?v=1.8.3-6";
       script.onload = function () {
         window.qtpassUnlock();
       };
@@ -138,45 +138,119 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Screenshots open full size in a lightbox instead of a bare image
-  // page. The link still points at the full-size PNG, so it works without
-  // script too. Platform tiles show the dark capture to dark-mode readers;
-  // the lightbox follows suit.
-  var fullSizeLinks = document.querySelectorAll('a[title="Full size"], a.full');
+  // page; the links still point at the PNG, so they work without script.
+  // Arrows (and the arrow keys) go through the page's screenshots; where a
+  // capture exists in light and dark (data-dark / data-light on the link),
+  // the moon/sun button (and "t") switches, starting from the reader's own
+  // colour scheme.
+  var fullSizeLinks = Array.prototype.slice.call(
+    document.querySelectorAll('a[title="Full size"], a.full'),
+  );
   if (fullSizeLinks.length && typeof HTMLDialogElement === "function") {
+    var dark = window.matchMedia("(prefers-color-scheme: dark)");
     var box = document.createElement("dialog");
     box.className = "lightbox";
     var big = document.createElement("img");
     big.decoding = "async";
-    var closeButton = document.createElement("button");
-    closeButton.type = "button";
-    closeButton.className = "lightbox-close";
-    closeButton.setAttribute("aria-label", "Close");
-    closeButton.textContent = "\u00d7";
-    box.append(closeButton, big);
+    var button = function (cls, label, text) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "lightbox-button " + cls;
+      b.setAttribute("aria-label", label);
+      b.title = label;
+      b.textContent = text;
+      return b;
+    };
+    var closeButton = button("lightbox-close", "Close", "×");
+    var prevButton = button("lightbox-prev", "Previous screenshot", "‹");
+    var nextButton = button("lightbox-next", "Next screenshot", "›");
+    var themeButton = button("lightbox-theme", "Switch light and dark", "◐");
+    box.append(closeButton, prevButton, nextButton, themeButton, big);
     document.body.appendChild(box);
+
+    var current = 0;
+    var showDark = false;
+    var variants = function (link) {
+      var href = link.getAttribute("href");
+      return {
+        light: link.dataset.light || href,
+        dark: link.dataset.dark || (link.dataset.light ? href : null),
+      };
+    };
+    var show = function () {
+      var link = fullSizeLinks[current];
+      var v = variants(link);
+      var hasBoth = Boolean(v.dark && v.light !== v.dark);
+      themeButton.hidden = !hasBoth;
+      // Show where the button goes: a moon to dark, a sun to light.
+      themeButton.textContent = showDark ? "\u2600" : "\u263e";
+      themeButton.setAttribute(
+        "aria-label",
+        showDark ? "Show the light version" : "Show the dark version",
+      );
+      themeButton.title = themeButton.getAttribute("aria-label");
+      var src = hasBoth && showDark ? v.dark : v.light;
+      if (!hasBoth) {
+        src = link.getAttribute("href");
+      }
+      var thumb = link.querySelector("img");
+      big.alt = thumb ? thumb.alt : "";
+      box.setAttribute("aria-label", big.alt || "Screenshot");
+      big.src = src;
+      var many = fullSizeLinks.length > 1;
+      prevButton.hidden = !many;
+      nextButton.hidden = !many;
+    };
+    var step = function (delta) {
+      current = (current + delta + fullSizeLinks.length) % fullSizeLinks.length;
+      show();
+    };
+    var toggleTheme = function () {
+      if (!themeButton.hidden) {
+        showDark = !showDark;
+        show();
+      }
+    };
+    prevButton.addEventListener("click", function (event) {
+      event.stopPropagation();
+      step(-1);
+    });
+    nextButton.addEventListener("click", function (event) {
+      event.stopPropagation();
+      step(1);
+    });
+    themeButton.addEventListener("click", function (event) {
+      event.stopPropagation();
+      toggleTheme();
+    });
     box.addEventListener("click", function () {
       box.close();
+    });
+    box.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") {
+        step(-1);
+      } else if (event.key === "ArrowRight") {
+        step(1);
+      } else if (event.key === "t" || event.key === "T") {
+        toggleTheme();
+      } else {
+        return;
+      }
+      event.preventDefault();
     });
     box.addEventListener("close", function () {
       big.removeAttribute("src");
     });
-    var dark = window.matchMedia("(prefers-color-scheme: dark)");
-    fullSizeLinks.forEach(function (link) {
+    fullSizeLinks.forEach(function (link, index) {
       link.addEventListener("click", function (event) {
         if (event.ctrlKey || event.metaKey || event.shiftKey || event.button) {
           return; // a new tab or window was asked for
         }
         event.preventDefault();
-        var href = link.getAttribute("href");
-        if (dark.matches && link.dataset.dark) {
-          href = link.dataset.dark;
-        } else if (dark.matches && /-app\.png(\?|$)/.test(href)) {
-          href = href.replace(/-app\.png(\?|$)/, "-app-dark.png$1");
-        }
-        var thumb = link.querySelector("img");
-        big.alt = thumb ? thumb.alt : "";
-        box.setAttribute("aria-label", big.alt || "Screenshot");
-        big.src = href;
+        current = index;
+        // A link to the dark capture itself starts in dark.
+        showDark = Boolean(link.dataset.light) || dark.matches;
+        show();
         box.showModal();
         closeButton.focus();
       });
