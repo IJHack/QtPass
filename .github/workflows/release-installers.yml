@@ -615,19 +615,67 @@ jobs:
             -o "dist/QtPass-${version}.zip" HEAD
           ls -l dist
 
+      # Hoisted out of the final step below so the next step can query the
+      # release's existing assets — gh release view 404s until the release
+      # exists. Idempotent and harmless to repeat; the final step's own
+      # create-if-needed check is left exactly as it was.
+      - name: Create the draft release if needed
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          version="${GITHUB_REF_NAME#v}"
+          if ! gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release create "$GITHUB_REF_NAME" --draft --verify-tag \
+              --title "QtPass ${version}" \
+              --notes "Draft created by the Release installers workflow. Replace this with the CHANGELOG section for ${version}."
+          fi
+
+      # On a draft, the final step below clobber-uploads every file in
+      # dist/* — all of it becomes live, so attesting all of dist/* is
+      # correct. On an already-published release it uploads only the
+      # files that are not already a same-named asset, leaving the live
+      # bytes of the rest untouched (see "keeping published asset" below);
+      # a re-run that rebuilt those files cannot assume this run's bytes
+      # are what stays live, so attesting dist/* unconditionally there
+      # would produce provenance for bytes that are not actually published.
+      # This step computes exactly the subset that this run will cause to
+      # become live, for the provenance step below to cover.
+      - name: Determine which release assets are new in this run
+        id: assets
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          existing="$(gh release view "$GITHUB_REF_NAME" --json assets --jq '.assets[].name')"
+          is_draft="$(gh release view "$GITHUB_REF_NAME" --json isDraft --jq .isDraft)"
+          {
+            echo "new-files<<ASSET_EOF"
+            for file in dist/*; do
+              if [[ "$is_draft" == "true" ]] || ! grep -qxF "$(basename "$file")" <<<"$existing"; then
+                printf '%s\n' "$file"
+              fi
+            done
+            echo "ASSET_EOF"
+          } >> "$GITHUB_OUTPUT"
+
       # SLSA build provenance (#1988): attests, with a GitHub-issued OIDC
       # identity, that this workflow run and commit produced these exact
-      # bytes. One attestation covers every file matched by subject-path (a
-      # single `bundle-path`), which is why this step runs once over dist/*
-      # rather than per asset. GPG signing (scripts/sign-release-assets.sh)
-      # proves authenticity of the maintainer's choice to publish; this
-      # proves which CI run built the bytes being signed — the two are
-      # complementary, not redundant.
+      # bytes. One attestation covers every subject (a single
+      # `bundle-path`), which is why this step runs once over the files
+      # determined above rather than per asset. Skipped when there is
+      # nothing new to attest (a re-run that added no new asset). GPG
+      # signing (scripts/sign-release-assets.sh) proves authenticity of the
+      # maintainer's choice to publish; this proves which CI run built the
+      # bytes being signed — the two are complementary, not redundant.
       - name: Generate build provenance attestation
         id: attest
+        if: steps.assets.outputs.new-files != ''
         uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
         with:
-          subject-path: dist/*
+          subject-path: ${{ steps.assets.outputs.new-files }}
 
       # Staged into dist/ under a release-asset name so the upload step
       # below picks it up with no special-casing, and so a verifier can grab
@@ -636,6 +684,7 @@ jobs:
       # consumers (including Scorecard's asset scan) look for.
       - name: Stage the provenance bundle as a release asset
         shell: bash
+        if: steps.attest.outputs.bundle-path != ''
         env:
           BUNDLE_PATH: ${{ steps.attest.outputs.bundle-path }}
         run: |
