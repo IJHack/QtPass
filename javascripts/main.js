@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/unlock.js?v=1.8.3-10";
+      script.src = "/javascripts/unlock.js?v=1.8.3-11";
       script.onload = function () {
         window.qtpassUnlock();
       };
@@ -287,6 +287,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 3500);
   });
 
+  // The screenshots page can show its pictures in either scheme: the dark
+  // <source>s get media "all" (dark) or "not all" (light), and their own
+  // media query back for the reader's scheme.
+  var schemeSwitch = document.querySelector(".shot-scheme");
+  if (schemeSwitch) {
+    var schemeScope = schemeSwitch.closest(".release") || document;
+    var darkSources = Array.prototype.slice.call(
+      schemeScope.querySelectorAll(
+        'source[media*="prefers-color-scheme: dark"]',
+      ),
+    );
+    darkSources.forEach(function (source) {
+      source.dataset.media = source.media;
+    });
+    schemeSwitch.addEventListener("click", function (event) {
+      var picked = event.target.closest("button[data-scheme]");
+      if (!picked) {
+        return;
+      }
+      var scheme = picked.dataset.scheme;
+      schemeScope.dataset.scheme = scheme;
+      darkSources.forEach(function (source) {
+        source.media =
+          scheme === "dark"
+            ? "all"
+            : scheme === "light"
+              ? "not all"
+              : source.dataset.media;
+      });
+      schemeSwitch.querySelectorAll("button").forEach(function (b) {
+        b.setAttribute("aria-pressed", String(b === picked));
+      });
+    });
+  }
+
   // Screenshots open full size in a lightbox instead of a bare image
   // page; the links still point at the PNG, so they work without script.
   // Arrows (and the arrow keys) go through the page's screenshots; where a
@@ -398,8 +433,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         event.preventDefault();
         current = index;
-        // A link to the dark capture itself starts in dark.
-        showDark = Boolean(link.dataset.light) || dark.matches;
+        // A link to the dark capture itself starts in dark, a picked
+        // scheme on the screenshots page wins over the reader's own.
+        var picked = link.closest("[data-scheme]");
+        showDark =
+          Boolean(link.dataset.light) ||
+          (picked && picked.dataset.scheme
+            ? picked.dataset.scheme === "dark"
+            : dark.matches);
         show();
         box.showModal();
         closeButton.focus();

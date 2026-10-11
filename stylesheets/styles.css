@@ -793,6 +793,141 @@ header ul a:active {
   margin: 0;
 }
 
+/* Screenshots page: the scheme switch and the desktop comparison. The two
+   Linux desktops get the wide first row, the other three share the next. */
+.shot-scheme {
+  display: inline-flex;
+  margin-block: 0 1.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--panel);
+  padding: 3px;
+  gap: 2px;
+}
+.shot-scheme button {
+  font: inherit;
+  font-size: 0.85em;
+  padding: 0.3em 0.95em;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.shot-scheme button:hover {
+  color: var(--ink-strong);
+  background: var(--panel-hover);
+}
+.shot-scheme button[aria-pressed="true"] {
+  background: var(--bg);
+  color: var(--accent-strong);
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.12);
+}
+.shot-scheme button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.shootout {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1.25rem 1rem;
+  margin-block-end: 2.5rem;
+}
+.gallery .shootout figure {
+  grid-column: span 2;
+  margin: 0;
+}
+.gallery .shootout figure.linux {
+  grid-column: span 3;
+}
+.shootout .desk {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  padding: 0.4rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    var(--tint),
+    var(--panel) 75%
+  );
+}
+.shootout .desk a {
+  display: contents;
+}
+/* The captures carry their own frame, corners and shadow. */
+.gallery .shootout .desk img {
+  position: absolute;
+  inset: 0.4rem;
+  width: calc(100% - 0.8rem);
+  height: calc(100% - 0.8rem);
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+}
+.shootout .pending .desk {
+  border-style: dashed;
+  background: var(--panel);
+  align-content: center;
+  gap: 0.6rem;
+  color: var(--muted);
+  font-size: 0.9em;
+}
+.gallery .shootout .pending .desk img {
+  position: static;
+  width: auto;
+  height: 3.5rem;
+  opacity: 0.6;
+}
+/* Main window and configuration side by side at the same height: the
+   columns follow the two captures' aspect ratios (1111x961, 822x921). */
+.closeup {
+  display: grid;
+  grid-template-columns: 1.156fr 0.893fr;
+  gap: 1rem;
+  align-items: start;
+}
+.gallery .closeup figure {
+  margin: 0;
+}
+@media (max-width: 40rem) {
+  .closeup {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.shootout figcaption strong {
+  display: block;
+  color: var(--ink-strong);
+}
+@media (max-width: 60rem) {
+  .shootout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .gallery .shootout figure,
+  .gallery .shootout figure.linux {
+    grid-column: auto;
+  }
+  .gallery .shootout figure:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 0.5rem);
+  }
+}
+@media (max-width: 30rem) {
+  .shootout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .gallery .shootout figure:last-child {
+    width: auto;
+    justify-self: stretch;
+  }
+}
+
 /* Screenshots page: current release vs. the 2.0 preview are separated now,
    the development section reads as a preview, not as documentation. */
 .release {
