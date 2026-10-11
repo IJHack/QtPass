@@ -116,22 +116,22 @@ Open the **Users** dialog (the _Users_ button in the toolbar) and click **Import
 - Pick an ASCII-armored `.asc` file from disk, or
 - Paste the armored key block from your clipboard.
 
-Once imported, QtPass refreshes the user list and selects the new key so you can tick it as a recipient. Binary keyrings aren't accepted in this dialog — convert them first with `gpg --armor --export <KEYID>`.
+Once imported, QtPass refreshes the user list and selects the new key so you can tick it as a recipient. Binary keyrings aren't accepted in this dialog; convert them first with `gpg --armor --export <KEYID>`.
 
 ### What does the Share submenu do?
 
 Right-click on a **folder** in the password tree to access the **Share** submenu. It bundles the recipient-management actions in one place:
 
-- **Re-encrypt all passwords** — runs `pass init` on the folder so its contents match the current `.gpg-id` recipients.
-- **Export my public key…** — saves your public key as an ASCII-armored file you can hand to a teammate.
-- **Add recipient…** — opens the user dialog scoped to this folder so you can toggle who can decrypt its passwords.
-- **What is this?** — short explainer dialog linking the three flows.
+- **Re-encrypt all passwords**: runs `pass init` on the folder so its contents match the current `.gpg-id` recipients.
+- **Export my public key…**: saves your public key as an ASCII-armored file you can hand to a teammate.
+- **Add recipient…**: opens the user dialog scoped to this folder so you can toggle who can decrypt its passwords.
+- **What is this?**: a short explainer dialog linking the three flows.
 
 The submenu only appears on folders, not individual password files.
 
 ### How do I set up a one-time password (OTP/TOTP)?
 
-QtPass generates TOTP codes itself (RFC 6238) — you no longer need the
+QtPass generates TOTP codes itself (RFC 6238), so you no longer need the
 `pass-otp` extension, and it works on every platform.
 
 1. Make sure **Enable one-time password (OTP) support** is checked on the
@@ -143,14 +143,14 @@ QtPass generates TOTP codes itself (RFC 6238) — you no longer need the
    button, refreshing automatically. SHA-1/SHA-256/SHA-512 and Steam Guard
    codes are all supported.
 
-The shared secret itself is never shown on screen or copied — only the current
+The shared secret itself is never shown on screen or copied; only the current
 code is.
 
 ### QtPass shows an OTP code and I don't want it to
 
 OTP support is enabled by default. To hide the live codes, uncheck **Enable
 one-time password (OTP) support** on the **Settings** tab of the configuration
-dialog. The choice is remembered. Your entries are unchanged — the `otpauth://`
+dialog. The choice is remembered. Your entries are unchanged: the `otpauth://`
 secret stays in the file and QtPass simply stops rendering a code for it.
 
 ### OTP QR codes don't work on macOS
@@ -239,7 +239,7 @@ If you encounter Qt installation issues, you'll have to install the current vers
 QtPass uses the system language (via `QLocale::system()`). Changing it depends on your platform:
 
 - **Linux / BSD:** `LANGUAGE=fr qtpass` will run QtPass in French. `LC_ALL` and `LANG` work too; see the GNU gettext docs for the precedence order.
-- **macOS:** environment variables like `LANG` are **not** honored by Qt on macOS — Qt reads CoreFoundation locale instead. Override per-app with:
+- **macOS:** environment variables like `LANG` are **not** honored by Qt on macOS; Qt reads the CoreFoundation locale instead. Override per-app with:
 
   ```sh
   defaults write com.IJHack.QtPass AppleLanguages '(fr)'
@@ -253,7 +253,7 @@ QtPass uses the system language (via `QLocale::system()`). Changing it depends o
 
   Use `defaults delete com.IJHack.QtPass AppleLanguages` to revert.
 
-- **Windows:** there is no environment-variable override — Qt reads the Windows display language via `GetUserDefaultLocaleName()`. Change the **system display language** in _Settings → Time & Language → Language_, or add the desired language and move it to the top of your preferred-language list.
+- **Windows:** there is no environment-variable override; Qt reads the Windows display language via `GetUserDefaultLocaleName()`. Change the **system display language** in _Settings → Time & Language → Language_, or add the desired language and move it to the top of your preferred-language list.
 
 ## How can I help improve QtPass?
 
