@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/unlock.js?v=1.8.3-8";
+      script.src = "/javascripts/unlock.js?v=1.8.3-9";
       script.onload = function () {
         window.qtpassUnlock();
       };
@@ -146,31 +146,112 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }
-    var box = backdrop.getBoundingClientRect();
-    var fromX = window.innerWidth - 12 * 16 - box.left;
-    for (var i = 0; i < 28; i += 1) {
+    // On the second heartbeat the keyhole flashes and padlocks burst out
+    // of it: a fountain with gravity, each its own size, spin and depth.
+    setTimeout(burst, 2550);
+  });
+
+  function burst() {
+    // The watermark sits at right -12rem, top -6rem, 46rem square; the
+    // keyhole is at about (50%, 68%) of the logo.
+    var rem =
+      parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    var size = 46 * rem;
+    var originX = window.innerWidth + 12 * rem - size / 2;
+    var originY = -6 * rem + size * 0.68;
+    var flash = document.createElement("div");
+    flash.className = "konami-flash";
+    flash.style.left = originX + "px";
+    flash.style.top = originY + "px";
+    flash.addEventListener("animationend", function () {
+      flash.remove();
+    });
+    document.body.appendChild(flash);
+
+    var drops = [];
+    for (var i = 0; i < 42; i += 1) {
+      var depth = 0.35 + Math.random() * 0.65; // 1 is close, small is far
       var drop = document.createElement("img");
       drop.src = "/images/logo.svg";
       drop.alt = "";
       drop.className = "konami-drop";
-      drop.style.left = Math.round(fromX - 40 + Math.random() * 380) + "px";
-      drop.style.setProperty(
-        "--drift",
-        Math.round(Math.random() * 240 - 120) + "px",
-      );
-      drop.style.setProperty(
-        "--spin",
-        Math.round(Math.random() * 720 - 360) + "deg",
-      );
-      drop.style.animationDelay = (0.9 + Math.random() * 1.4).toFixed(2) + "s";
-      drop.style.width = drop.style.height =
-        14 + Math.round(Math.random() * 22) + "px";
-      drop.addEventListener("animationend", function () {
-        this.remove();
-      });
+      var px = Math.round(10 + depth * 34);
+      drop.style.width = drop.style.height = px + "px";
+      drop.style.filter =
+        depth < 0.6 ? "blur(" + ((0.6 - depth) * 4).toFixed(1) + "px)" : "";
       document.body.appendChild(drop);
+      var angle = (-90 + (Math.random() * 150 - 95)) * (Math.PI / 180); // mostly up and to the left
+      var speed = (420 + Math.random() * 520) * depth;
+      drops.push({
+        el: drop,
+        half: px / 2,
+        x: originX,
+        y: originY,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        spin: (Math.random() * 2 - 1) * 540,
+        turn: 0,
+        delay: Math.random() * 0.25,
+        depth: depth,
+      });
     }
-  });
+    var start = null;
+    var last = null;
+    var gravity = 1500;
+    function frame(now) {
+      if (start === null) {
+        start = last = now;
+      }
+      var dt = Math.min(0.05, (now - last) / 1000);
+      last = now;
+      var t = (now - start) / 1000;
+      var alive = 0;
+      drops.forEach(function (d) {
+        if (!d.el) {
+          return;
+        }
+        if (t < d.delay) {
+          d.el.style.opacity = "0";
+          alive += 1;
+          return;
+        }
+        d.vy += gravity * d.depth * dt;
+        d.vx *= 1 - 0.6 * dt;
+        d.x += d.vx * dt;
+        d.y += d.vy * dt;
+        d.turn += d.spin * dt;
+        var age = t - d.delay;
+        var fadeIn = Math.min(1, age / 0.12);
+        var fadeOut = Math.max(
+          0,
+          Math.min(1, (window.innerHeight - d.y) / (window.innerHeight * 0.35)),
+        );
+        d.el.style.opacity = (
+          fadeIn *
+          fadeOut *
+          (0.55 + 0.45 * d.depth)
+        ).toFixed(3);
+        d.el.style.transform =
+          "translate(" +
+          (d.x - d.half) +
+          "px," +
+          (d.y - d.half) +
+          "px) rotate(" +
+          d.turn.toFixed(1) +
+          "deg)";
+        if (d.y - d.half > window.innerHeight || age > 4) {
+          d.el.remove();
+          d.el = null;
+          return;
+        }
+        alive += 1;
+      });
+      if (alive) {
+        requestAnimationFrame(frame);
+      }
+    }
+    requestAnimationFrame(frame);
+  }
 
   // Type hunter2 anywhere and all we see is stars (bash.org #244321).
   var typed = "";

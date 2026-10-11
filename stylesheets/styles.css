@@ -1082,23 +1082,41 @@ dialog.lightbox .lightbox-button:focus-visible {
 }
 .konami-drop {
   position: fixed;
-  top: 12rem;
+  top: 0;
+  left: 0;
   z-index: 0;
   pointer-events: none;
   opacity: 0;
-  animation: padlock-rain 2.6s ease-in forwards;
+  will-change: transform, opacity;
 }
-@keyframes padlock-rain {
+/* The keyhole lights up as the padlocks burst out of it. */
+.konami-flash {
+  position: fixed;
+  z-index: 0;
+  width: 2rem;
+  height: 2rem;
+  margin: -1rem 0 0 -1rem;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgb(255 255 255 / 0.95) 0%,
+    rgb(140 190 255 / 0.55) 35%,
+    rgb(140 190 255 / 0) 70%
+  );
+  animation: keyhole-flash 0.9s ease-out forwards;
+}
+@keyframes keyhole-flash {
   0% {
     opacity: 0;
-    transform: translate(0, 0) rotate(0);
+    transform: scale(0.2);
   }
-  12% {
-    opacity: 0.85;
+  20% {
+    opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate(var(--drift), 100vh) rotate(var(--spin));
+    transform: scale(18);
   }
 }
 @media (prefers-reduced-motion: reduce) {
