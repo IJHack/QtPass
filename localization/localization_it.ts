@@ -1227,7 +1227,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">la nuova firma non risulta verificata come appartenente a una delle chiavi di firma</translation>
     </message>
 </context>
 <context>
@@ -1263,22 +1263,22 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Impossibile controllare l&apos;elenco dei destinatari</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Non è possibile stabilire se %2 sia stato rimosso, quindi non è stato cifrato nulla.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elenco dei destinatari mancante</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">L&apos;elenco firmato dei destinatari %1 manca o non è un file regolare. QtPass non ripiega sull&apos;elenco di una cartella superiore: quell&apos;elenco non è stato firmato per questa cartella. Se con quel nome c&apos;è un collegamento, rimuovilo. Poi apri Utenti per quella cartella e salva i suoi destinatari: così viene scritto e firmato un nuovo elenco.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1303,12 +1303,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Destinatari non modificati</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Una ricifratura è ancora in corso. Attendi che sia terminata, poi salva di nuovo i destinatari.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1400,7 +1400,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git è terminato con codice %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1562,7 +1562,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Destinatari non sottoposti a commit</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1571,7 +1571,11 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">I destinatari di %1 sono stati modificati e le sue voci sono state ricifrate per loro, ma il commit Git non è riuscito:
+
+%2
+
+La modifica non è ancora stata sottoposta a commit né a push. Risolvi il problema di Git, poi esegui il commit delle modifiche, oppure salva di nuovo i destinatari.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1580,7 +1584,11 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">I destinatari di %1 sono stati modificati, ma il commit Git non è riuscito:
+
+%2
+
+La ricifratura non è stata completata, quindi alcune o tutte le voci sono ancora cifrate per i destinatari precedenti, che possono ancora leggerle. Non è stato eseguito alcun commit né push. Risolvi il problema di Git, poi salva di nuovo i destinatari.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2921,17 +2929,17 @@ Continuare?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Il registro delle generazioni degli elenchi dei destinatari non può essere letto.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">L&apos;elenco dei destinatari %1 manca o non è un file regolare, quindi nulla è preselezionato: l&apos;elenco di una cartella superiore non è stato firmato per questa. Seleziona tu i destinatari di questa cartella; OK scrive e firma un nuovo elenco.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Nulla è preselezionato: non è possibile stabilire se %2 sia stato rimosso.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
