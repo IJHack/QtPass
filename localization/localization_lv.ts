@@ -1182,7 +1182,7 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">jaunais paraksts neiztur pārbaudi kā kādas parakstīšanas atslēgas paraksts</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1230,22 +1230,22 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Nevar pārbaudīt saņēmēju sarakstu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Nevar noteikt, vai %2 tika noņemts, tāpēc nekas netika šifrēts.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Trūkst saņēmēju saraksta</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Parakstītā saņēmēju saraksta %1 nav vai tas nav parasts fails. QtPass tā vietā neizmanto vecākmapes sarakstu: tas saraksts netika parakstīts šai mapei. Ja ar šo nosaukumu ir saite, noņemiet to. Pēc tam atveriet sadaļu Lietotāji šai mapei un saglabājiet tās saņēmējus, kas ieraksta un paraksta jaunu sarakstu.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1328,12 +1328,12 @@ Jūs nevarēsiet atšifrēt nevienu no jaunpievienotajām parolēm!</translation
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Saņēmēji nav mainīti</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Pāršifrēšana vēl notiek. Pagaidiet, līdz tā beidzas, pēc tam saglabājiet saņēmējus vēlreiz.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1355,7 +1355,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git beidza darbu ar kodu %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1520,7 +1520,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Saņēmēju izmaiņas nav iesūtītas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1529,11 +1529,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">Mapes %1 saņēmēji tika mainīti un tās ieraksti tika pāršifrēti jaunajiem saņēmējiem, bet Git iesūtījums neizdevās:
-
-%2
-
-Izmaiņas vēl nav iesūtītas vai nosūtītas. Novērsiet Git problēmu, pēc tam iesūtiet izmaiņas vai saglabājiet saņēmējus vēlreiz.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1542,11 +1538,7 @@ Izmaiņas vēl nav iesūtītas vai nosūtītas. Novērsiet Git problēmu, pēc t
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">Mapes %1 saņēmēji tika mainīti, bet Git iesūtījums neizdevās:
-
-%2
-
-Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir šifrēti iepriekšējiem saņēmējiem, kuri tos joprojām var izlasīt. Nekas netika iesūtīts vai nosūtīts. Novērsiet Git problēmu, pēc tam saglabājiet saņēmējus vēlreiz.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2654,17 +2646,17 @@ Turpināt?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">Saņēmēju sarakstu paaudžu reģistru nevar nolasīt.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Saņēmēju saraksta %1 nav vai tas nav parasts fails, tāpēc nekas nav iepriekš atzīmēts: vecākmapes saraksts netika parakstīts šai mapei. Izvēlieties šīs mapes saņēmējus paši; OK ieraksta un paraksta jaunu sarakstu.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Nekas nav iepriekš atzīmēts: nevar noteikt, vai %2 tika noņemts.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
