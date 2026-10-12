@@ -23,8 +23,40 @@ Executor::Executor(QObject *parent) : QObject(parent) {
   connect(&m_process, &QProcess::started, this, &Executor::starting);
 }
 
+void Executor::detachFromTerminal(QProcess &process) {
+#if defined(Q_OS_UNIX) && QT_VERSION >= QT_VERSION_CHECK(6, 7, 0)
+  // A child inherits QtPass's controlling terminal when QtPass was started
+  // from one. git (HTTPS credentials) and ssh (key passphrase, host key) then
+  // prompt on that /dev/tty, and as the queue runs one command at a time,
+  // every decrypt and save waits behind a prompt nobody sees: QtPass looks
+  // frozen. In a session of its own the child has no terminal, so git and
+  // ssh use SSH_ASKPASS/GIT_ASKPASS when set and otherwise fail with an
+  // error QtPass shows. GIT_TERMINAL_PROMPT=0 is not set on top: without a
+  // tty git has nothing to prompt on, and some credential helpers read it as
+  // "no interaction at all" and would skip their own dialogs.
+  //
+  // gpg is unaffected: pinentry is started by gpg-agent, which finds the
+  // terminal through GPG_TTY (set by the user's shell) or the tty on gpg's
+  // stdin, here always a pipe. pass is a shell script running that gpg and
+  // git, so the same holds for it.
+  //
+  // Signal dispositions are left alone (no ResetSignalHandlers): exec()
+  // already resets caught signals, and QtPass sets no SIG_IGN of its own, so
+  // that flag would only undo what QtPass's own parent chose (nohup, say).
+  // Terminal signals (Ctrl+C, the SIGHUP of a closed terminal) now reach
+  // QtPass but not the child; the children are short-lived and, with no
+  // terminal, cannot sit waiting for input.
+  QProcess::UnixProcessParameters params = process.unixProcessParameters();
+  params.flags |= QProcess::UnixProcessFlag::CreateNewSession;
+  process.setUnixProcessParameters(params);
+#else
+  Q_UNUSED(process);
+#endif
+}
+
 void Executor::startProcess(QProcess &process, const QString &app,
                             const QStringList &args) {
+  detachFromTerminal(process);
   if (const auto wsl = parseWslCommand(app)) {
     process.start(wsl->launcher, wsl->argv(args));
   } else {
