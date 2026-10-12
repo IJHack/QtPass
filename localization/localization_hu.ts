@@ -1222,7 +1222,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">az új aláírás egyik aláírókulccsal sem ellenőrizhető</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1306,22 +1306,22 @@ A felhasználói listát nem fogja tudni módosítani!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">A címzettlista nem ellenőrizhető</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Nem állapítható meg, hogy a(z) %2 el lett-e távolítva, ezért semmi sem lett titkosítva.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Hiányzik a címzettlista</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">A(z) %1 aláírt címzettlista hiányzik, vagy nem szabályos fájl. A QtPass ilyenkor nem használja helyette egy szülőmappa listáját: az a lista nem ehhez a mappához lett aláírva. Ha ezen a néven egy link található, távolítsa el. Ezután nyissa meg a Felhasználók ablakot az adott mappához, és mentse a címzettjeit, ami új listát ír ki és ír alá.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1391,17 +1391,17 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">A címzettek nem változtak</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Még fut egy újratitkosítás. Várja meg, amíg befejeződik, majd mentse újra a címzetteket.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">A Git %1 kóddal lépett ki.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1554,7 +1554,7 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">A címzettek nincsenek véglegesítve</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1563,11 +1563,7 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">A(z) %1 címzettjei megváltoztak, és bejegyzései újra lettek titkosítva számukra, de a Git-véglegesítés sikertelen:
-
-%2
-
-A változás még nincs véglegesítve és feltöltve. Javítsa ki a Git-problémát, majd véglegesítse a változásokat, vagy mentse újra a címzetteket.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1576,11 +1572,7 @@ A változás még nincs véglegesítve és feltöltve. Javítsa ki a Git-problé
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">A(z) %1 címzettjei megváltoztak, de a Git-véglegesítés sikertelen:
-
-%2
-
-Az újratitkosítás nem fejeződött be, így egyes vagy az összes bejegyzés még mindig a korábbi címzettek számára van titkosítva, akik továbbra is el tudják olvasni őket. Semmi sem lett véglegesítve vagy feltöltve. Javítsa ki a Git-problémát, majd mentse újra a címzetteket.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2768,17 +2760,17 @@ Folytatja?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">A címzettlisták generációs nyilvántartása nem olvasható.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">A(z) %1 címzettlista hiányzik, vagy nem szabályos fájl, ezért semmi sincs előre kijelölve: egy szülőmappa listája nem ehhez a mappához lett aláírva. Válassza ki saját maga a mappa címzettjeit; az OK új listát ír ki és ír alá.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Semmi sincs előre kijelölve: nem állapítható meg, hogy a(z) %2 el lett-e távolítva.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
