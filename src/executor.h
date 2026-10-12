@@ -247,6 +247,20 @@ public:
   static auto resolveExecutable(const QString &app) -> QString;
 
   /**
+   * @brief Make @p process start its child without a controlling terminal.
+   *
+   * On Unix the child starts in a new session (setsid), so it has no
+   * /dev/tty. git and ssh then use an askpass helper when there is one and
+   * fail at once otherwise, instead of prompting in the terminal QtPass was
+   * started from while the queue waits behind them. Other Unix process
+   * flags set on @p process are kept. Does nothing on Windows. Every child
+   * QtPass starts goes through this; startProcess() calls it for the queued
+   * and the blocking path.
+   * @param process Process to configure; call it before start().
+   */
+  static void detachFromTerminal(QProcess &process);
+
+  /**
    * @brief A configured executable that runs a Linux program through WSL.
    *
    * The one definition of "a WSL command" in QtPass; see parseWslCommand().

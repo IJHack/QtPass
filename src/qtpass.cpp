@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2018 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "qtpass.h"
+#include "executor.h"
 #include "imitatepass.h"
 #include "qtpasssettings.h"
 #include "settingsconstants.h"
@@ -217,6 +218,7 @@ void QtPass::showTextAsQRCode(const QString &text) {
                             ? QStringLiteral("/usr/bin/qrencode")
                             : s.qrencodeExecutable;
   QProcess qrencode;
+  Executor::detachFromTerminal(qrencode);
   qrencode.start(qrExe, QStringList() << "-o-"
                                       << "-tPNG");
   // A missing or non-executable binary never "finishes": exitStatus() stays
