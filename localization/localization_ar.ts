@@ -1182,7 +1182,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لا يجتاز التوقيع الجديد التحقق بوصفه صادرًا عن أحد مفاتيح التوقيع</translation>
     </message>
 </context>
 <context>
@@ -1218,22 +1218,22 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تعذّر التحقق من قائمة المستلمين</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 لا يمكن معرفة ما إذا كان %2 قد أُزيل، ولذلك لم يُشفَّر شيء.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">قائمة المستلمين مفقودة</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">قائمة المستلمين الموقَّعة %1 مفقودة أو ليست ملفًا عاديًا. لا يرجع QtPass بدلًا منها إلى قائمة المجلد الأصل: تلك القائمة لم تُوقَّع لهذا المجلد. إذا كان هناك رابط بهذا الاسم، فأزله. ثم افتح «المستخدمون» لذلك المجلد واحفظ مستلميه، مما يكتب قائمة جديدة ويوقّعها.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1258,12 +1258,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتغير المستلمون</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لا تزال عملية إعادة تشفير قيد التنفيذ. انتظر حتى تنتهي، ثم احفظ المستلمين مرة أخرى.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1355,7 +1355,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">انتهى Git بالرمز %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1529,7 +1529,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لم يتم إيداع المستلمين</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1538,7 +1538,11 @@ You will not be able to decrypt any newly added passwords!</source>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تم تغيير مستلمي %1 وأُعيد تشفير مدخلاته لهم، لكن إيداع Git فشل:
+
+%2
+
+لم يُودَع التغيير ولم يُدفَع بعد. أصلح مشكلة Git، ثم أودِع التغييرات، أو احفظ المستلمين مرة أخرى.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1547,7 +1551,11 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تم تغيير مستلمي %1، لكن إيداع Git فشل:
+
+%2
+
+لم تكتمل إعادة التشفير، ولذلك لا تزال بعض المدخلات أو كلها مشفّرة للمستلمين السابقين، الذين لا يزال بإمكانهم قراءتها. لم يُودَع أو يُدفَع شيء. أصلح مشكلة Git، ثم احفظ المستلمين مرة أخرى.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2683,17 +2691,17 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لا يمكن قراءة سجل أجيال قوائم المستلمين.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">قائمة المستلمين %1 مفقودة أو ليست ملفًا عاديًا، ولذلك لم يُحدَّد شيء مسبقًا: قائمة المجلد الأصل لم تُوقَّع لهذا المجلد. حدد مستلمي هذا المجلد بنفسك؛ يكتب OK قائمة جديدة ويوقّعها.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 لم يُحدَّد شيء مسبقًا: لا يمكن معرفة ما إذا كان %2 قد أُزيل.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
