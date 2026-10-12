@@ -30,7 +30,7 @@ CODE_SPAN_RE = re.compile(r"`[^`\n]*`")
 LINK_RE = re.compile(r"(?<!!)\[[^\]]*\]\(\s*(<[^>]*>|[^)\s]+)(?:\s+[^)]*)?\)")
 PATH_MENTION_RE = re.compile(
     r"(?<![`\w/.-])((?:references|scripts)/[A-Za-z0-9_./-]+\."
-    r"(?:md|py|sh|txt|json|yml|yaml))"
+    r"(?:md|py|sh|bash|txt|json|yml|yaml))"
 )
 URL_RE = re.compile(r"^[a-z][a-z0-9+.-]*:", re.IGNORECASE)
 SHEBANG_SHELLS = ("bash", "sh", "dash", "zsh")
@@ -108,7 +108,9 @@ def check_markdown_links(
         target = raw_target.split("#", 1)[0]
         if not target or URL_RE.match(target):
             continue
-        target_path = skill_md.parent / target
+        # A leading slash is the repository root, as on GitHub.
+        base = root if target.startswith("/") else skill_md.parent
+        target_path = base / target.lstrip("/")
         if not inside(target_path, root):
             result.error(f"{rel}: relative link escapes repository: {raw_target}")
         elif not target_path.exists():
@@ -133,12 +135,20 @@ def check_referenced_paths(
             result.error(f"{rel}: referenced path missing: {target}")
 
 
-def metadata_version(data: dict) -> str:
+def string_field(value: object, field: str, rel: str, result: CheckResult) -> str:
+    """value when it is a string; "" (and an error if set at all) otherwise."""
+    if value is None or isinstance(value, str):
+        return value or ""
+    result.error(f"{rel}: {field} must be a string, not {type(value).__name__}")
+    return ""
+
+
+def metadata_version(data: dict, rel: str, result: CheckResult) -> str:
     """metadata.version from the frontmatter, or an empty string."""
     metadata = data.get("metadata")
     if not isinstance(metadata, dict):
         return ""
-    return str(metadata.get("version") or "")
+    return string_field(metadata.get("version"), "metadata.version", rel, result)
 
 
 def check_skill(root: Path, skill_md: Path, result: CheckResult) -> None:
@@ -148,9 +158,9 @@ def check_skill(root: Path, skill_md: Path, result: CheckResult) -> None:
     lines = text.splitlines()
     data = parse_frontmatter(text, rel, result)
 
-    name = str(data.get("name") or "")
-    description = str(data.get("description") or "")
-    version = metadata_version(data)
+    name = string_field(data.get("name"), "name", rel, result)
+    description = string_field(data.get("description"), "description", rel, result)
+    version = metadata_version(data, rel, result)
     summary = (name or "<missing name>", rel, len(lines), version or "<missing>")
     result.skills.append(summary)
 
@@ -205,12 +215,12 @@ def check_shell_syntax(rel: str, script: Path, result: CheckResult) -> None:
 def check_scripts(root: Path, skill_root: Path, result: CheckResult) -> None:
     """Scripts anywhere under a skill's scripts/ are executable and compile."""
     for script in sorted(skill_root.glob("*/scripts/**/*")):
-        if not script.is_file() or script.suffix not in {".py", ".sh"}:
+        if not script.is_file() or script.suffix not in {".py", ".sh", ".bash"}:
             continue
         rel = repo_relative(root, script)
         if not script.stat().st_mode & stat.S_IXUSR:
             result.error(f"{rel}: executable script is missing owner execute bit")
-        if script.suffix == ".sh":
+        if script.suffix in {".sh", ".bash"}:
             check_shell_syntax(rel, script, result)
             continue
         try:
