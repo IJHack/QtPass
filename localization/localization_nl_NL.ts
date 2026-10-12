@@ -1230,7 +1230,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">de nieuwe ondertekening is niet te verifiëren als die van een van de ondertekeningssleutels</translation>
+        <translation>de nieuwe ondertekening is niet te verifiëren als die van een van de ondertekeningssleutels</translation>
     </message>
 </context>
 <context>
@@ -1266,22 +1266,22 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Kan de ontvangerslijst niet controleren</translation>
+        <translation>Kan de ontvangerslijst niet controleren</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Of %2 verwijderd is, valt niet vast te stellen, dus er is niets versleuteld.</translation>
+        <translation>%1 Of %2 verwijderd is, valt niet vast te stellen, dus er is niets versleuteld.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Ontvangerslijst ontbreekt</translation>
+        <translation>Ontvangerslijst ontbreekt</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">De ondertekende ontvangerslijst %1 ontbreekt of is geen gewoon bestand. QtPass valt hiervoor niet terug op de lijst van een bovenliggende map: die lijst is niet voor deze map ondertekend. Staat er een koppeling onder die naam, verwijder die dan. Open daarna Gebruikers voor die map en sla de ontvangers op; daarmee wordt een nieuwe lijst geschreven en ondertekend.</translation>
+        <translation>De ondertekende ontvangerslijst %1 ontbreekt of is geen gewoon bestand. QtPass valt hiervoor niet terug op de lijst van een bovenliggende map: die lijst is niet voor deze map ondertekend. Staat er een koppeling onder die naam, verwijder die dan. Open daarna Gebruikers voor die map en sla de ontvangers op; daarmee wordt een nieuwe lijst geschreven en ondertekend.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1306,12 +1306,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Ontvangers niet gewijzigd</translation>
+        <translation>Ontvangers niet gewijzigd</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Er is nog een herversleuteling bezig. Wacht tot die klaar is en sla de ontvangers daarna opnieuw op.</translation>
+        <translation>Er is nog een herversleuteling bezig. Wacht tot die klaar is en sla de ontvangers daarna opnieuw op.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1403,7 +1403,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git is gestopt met code %1.</translation>
+        <translation>Git is gestopt met code %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1565,7 +1565,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Ontvangers niet gecommit</translation>
+        <translation>Ontvangers niet gecommit</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1574,7 +1574,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">De ontvangers van %1 zijn gewijzigd en de items zijn voor hen herversleuteld, maar de Git-commit is mislukt:
+        <translation>De ontvangers van %1 zijn gewijzigd en de items zijn voor hen herversleuteld, maar de Git-commit is mislukt:
 
 %2
 
@@ -1587,7 +1587,7 @@ De wijziging is nog niet gecommit of gepusht. Los het Git-probleem op en commit 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">De ontvangers van %1 zijn gewijzigd, maar de Git-commit is mislukt:
+        <translation>De ontvangers van %1 zijn gewijzigd, maar de Git-commit is mislukt:
 
 %2
 
@@ -2944,17 +2944,17 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">Het generatieregister van de ontvangerslijsten kan niet worden gelezen.</translation>
+        <translation>Het generatieregister van de ontvangerslijsten kan niet worden gelezen.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">De ontvangerslijst %1 ontbreekt of is geen gewoon bestand, dus er is niets voorgeselecteerd: de lijst van een bovenliggende map is niet voor deze map ondertekend. Selecteer zelf de ontvangers van deze map; OK schrijft en ondertekent een nieuwe lijst.</translation>
+        <translation>De ontvangerslijst %1 ontbreekt of is geen gewoon bestand, dus er is niets voorgeselecteerd: de lijst van een bovenliggende map is niet voor deze map ondertekend. Selecteer zelf de ontvangers van deze map; OK schrijft en ondertekent een nieuwe lijst.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Er is niets voorgeselecteerd: of %2 verwijderd is, valt niet vast te stellen.</translation>
+        <translation>%1 Er is niets voorgeselecteerd: of %2 verwijderd is, valt niet vast te stellen.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
