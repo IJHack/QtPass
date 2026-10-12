@@ -16,6 +16,7 @@
 #include <QStringList>
 #include <cassert>
 #include <map>
+#include <optional>
 
 /**
  * @struct ResolvedGpgconfCommand
@@ -229,6 +230,32 @@ public:
    */
   static auto getGpgIdPath(const QString &for_file, const QString &passStore)
       -> QString;
+  /**
+   * @brief The folder list getGpgIdPath() passed over on its way up to the
+   * one it returns, if it passed one over that a signed store must not.
+   *
+   * getGpgIdPath() skips a `.gpg-id` that is missing, a link or a junction
+   * and falls back to a parent folder's list, as `pass` does. In a signed
+   * store that lets anyone who can write to it, without the signing key,
+   * move a folder's entries to the parent's (also validly signed)
+   * recipients by removing or linking the folder's own list. This names the
+   * first such list between the start and the folder of the list found
+   * (that folder and the store root excluded): one that is under the name
+   * but not a regular file, or one that is gone although this device has
+   * accepted a list at that path before (GpgIdGeneration::remembered()).
+   * When the generation record cannot be read, whether a list was accepted
+   * at a path cannot be told: the first folder without its own list is
+   * named then too (fail closed), and @p recordError says why.
+   * @param forFile Entry or folder, as for getGpgIdPath().
+   * @param passStore Root directory of the password store.
+   * @param recordError Receives the record's error when it could not be
+   *        read, if not null; left untouched otherwise.
+   * @return The skipped `.gpg-id` path, or nothing when the list found is
+   *         the one that applies.
+   */
+  static auto skippedGpgId(const QString &forFile, const QString &passStore,
+                           QString *recordError = nullptr)
+      -> std::optional<QString>;
   /**
    * @brief Get list of recipients for a password file.
    * @param for_file Path to password file.

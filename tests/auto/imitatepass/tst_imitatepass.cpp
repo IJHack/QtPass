@@ -536,6 +536,10 @@ private Q_SLOTS:
   void reencryptRefusesAFolderBehindALink();
   void operationsRefuseLinkedEntriesAndFoldersButRemoveUnlinks();
   void linkedGpgIdIsNotARecipientList();
+  void skippedGpgIdNamesOnlyAListThatWasPassedOver();
+  void skippedGpgIdFailsClosedWhenTheRecordIsUnreadable();
+  void aRemovedOrLinkedFolderListIsRefusedWhenSigning();
+  void aRemovedFolderListFallsBackToTheParentWithoutSigning();
   void removeLinkedFolderWithGitUnlinksAndForgets();
   void gitInitAndPullRunThroughTheExecutor();
   void gitPullBlockingReportsAFailedPull();
@@ -2614,6 +2618,283 @@ void tst_imitatepass::linkedGpgIdIsNotARecipientList() {
 }
 
 /**
+ * @brief Pass::skippedGpgId() names the folder list getGpgIdPath() passed
+ *        over: one under the name that is not a regular file, or one gone
+ *        although this device accepted a list there. A folder that never
+ *        had a list, one whose own list is found, and the store root are
+ *        not named.
+ */
+void tst_imitatepass::skippedGpgIdNamesOnlyAListThatWasPassedOver() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  const QString store = root.path() + QLatin1Char('/');
+  QVERIFY(root.mkpath(QStringLiteral("secret/sub")));
+  const QString entry = root.filePath(QStringLiteral("secret/sub/x.gpg"));
+  const QString secretList = root.filePath(QStringLiteral("secret/.gpg-id"));
+
+  // No list below the root's, none ever accepted there: nothing passed over.
+  QCOMPARE(Pass::skippedGpgId(entry, store), std::optional<QString>());
+  QCOMPARE(Pass::skippedGpgId(root.filePath(QStringLiteral("secret/")), store),
+           std::optional<QString>());
+
+  // The folder's own list is the one found: nothing passed over, also for
+  // an entry in a folder below it.
+  {
+    QFile f(secretList);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write(GpgIdGeneration::withHeader(1, QStringLiteral("secret"),
+                                        QByteArrayLiteral("OWNER\n")));
+  }
+  QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(entry, store)),
+           QDir::cleanPath(secretList));
+  QCOMPARE(Pass::skippedGpgId(entry, store), std::optional<QString>());
+  QCOMPARE(
+      Pass::skippedGpgId(root.filePath(QStringLiteral("secret/y.gpg")), store),
+      std::optional<QString>());
+
+  // Accepted once, then removed: the root's list is what getGpgIdPath()
+  // falls back to, and the folder's is named.
+  QFile list(secretList);
+  QVERIFY(list.open(QIODevice::ReadOnly));
+  QCOMPARE(GpgIdGeneration::accept(secretList, list.readAll(), store),
+           GpgIdGeneration::Verdict::Accepted);
+  list.close();
+  QVERIFY(QFile::remove(secretList));
+  QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(entry, store)),
+           QDir::cleanPath(root.filePath(QStringLiteral(".gpg-id"))));
+  const std::optional<QString> removed = Pass::skippedGpgId(entry, store);
+  QVERIFY(removed.has_value());
+  QCOMPARE(QDir::cleanPath(*removed), QDir::cleanPath(secretList));
+
+  // The root's own list is never named: there is no parent to fall back to.
+  QCOMPARE(Pass::skippedGpgId(root.filePath(QStringLiteral("y.gpg")), store),
+           std::optional<QString>());
+  QCOMPARE(Pass::skippedGpgId(store, store), std::optional<QString>());
+
+#ifndef Q_OS_WIN
+  // A link under the name of a list never accepted here, in a folder that
+  // never had one: named all the same, dangling or not.
+  QVERIFY(root.mkpath(QStringLiteral("team")));
+  const QString teamList = root.filePath(QStringLiteral("team/.gpg-id"));
+  QVERIFY(QFile::link(root.filePath(QStringLiteral(".gpg-id")), teamList));
+  const QString teamEntry = root.filePath(QStringLiteral("team/x.gpg"));
+  QCOMPARE(QDir::cleanPath(Pass::getGpgIdPath(teamEntry, store)),
+           QDir::cleanPath(root.filePath(QStringLiteral(".gpg-id"))));
+  const std::optional<QString> linked = Pass::skippedGpgId(teamEntry, store);
+  QVERIFY(linked.has_value());
+  QCOMPARE(QDir::cleanPath(*linked), QDir::cleanPath(teamList));
+  QVERIFY(QFile::remove(teamList));
+  QVERIFY(QFile::link(root.filePath(QStringLiteral("nowhere")), teamList));
+  QVERIFY(Pass::skippedGpgId(teamEntry, store).has_value());
+#endif
+}
+
+/**
+ * @brief An unreadable generation record is not "never seen": the first
+ *        folder without its own list is named, with the record's reason,
+ *        instead of falling back to the parent's list unchecked.
+ */
+void tst_imitatepass::skippedGpgIdFailsClosedWhenTheRecordIsUnreadable() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  const QString store = root.path() + QLatin1Char('/');
+  QVERIFY(root.mkpath(QStringLiteral("secret")));
+  const QString entry = root.filePath(QStringLiteral("secret/x.gpg"));
+
+  const QString recordPath = GpgIdGeneration::recordFile();
+  QVERIFY(QDir().mkpath(QFileInfo(recordPath).absolutePath()));
+  QFile original(recordPath);
+  const bool hadRecord = original.exists();
+  QByteArray saved;
+  if (hadRecord) {
+    QVERIFY(original.open(QIODevice::ReadOnly));
+    saved = original.readAll();
+    original.close();
+  }
+  {
+    QFile garbage(recordPath);
+    QVERIFY(garbage.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    garbage.write("not a record");
+  }
+
+  QString why;
+  const std::optional<QString> skipped = Pass::skippedGpgId(entry, store, &why);
+
+  // Put the record back before checking, so a failure leaves no garbage.
+  if (hadRecord) {
+    QFile restore(recordPath);
+    QVERIFY(restore.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    restore.write(saved);
+  } else {
+    QVERIFY(QFile::remove(recordPath));
+  }
+
+  QVERIFY(skipped.has_value());
+  QCOMPARE(QDir::cleanPath(*skipped),
+           QDir::cleanPath(root.filePath(QStringLiteral("secret/.gpg-id"))));
+  QVERIFY2(!why.isEmpty(), "the record's reason is handed back");
+
+  // Readable again: the folder that never had a list is not named.
+  why.clear();
+  QCOMPARE(Pass::skippedGpgId(entry, store, &why), std::optional<QString>());
+  QVERIFY(why.isEmpty());
+}
+
+/**
+ * @brief In a signed store, someone without the signing key removes a
+ *        folder's own list, or links it to the root's, so its entries would
+ *        fall back to the parent's (validly signed) recipients. Nothing is
+ *        encrypted, on insert nor on re-encryption, until the folder's list
+ *        is saved again.
+ */
+void tst_imitatepass::aRemovedOrLinkedFolderListIsRefusedWhenSigning() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("secret")));
+  const QString logPath = root.filePath("gpg-argv.log");
+  const QString fakeGpg = writeSigningGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.passSigningKey = kSigner;
+  pass.init(s);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  const UserInfo owner = user(kSigner);
+  const UserInfo team =
+      user(QStringLiteral("89ABCDEF0123456789ABCDEF0123456789ABCDEF"), false);
+  const QString store = root.path() + QLatin1Char('/');
+  const QString secret = root.filePath(QStringLiteral("secret")) + '/';
+  const QString secretList = secret + QStringLiteral(".gpg-id");
+
+  // The whole team at the root, only the owner in secret/.
+  pass.Init(store, {owner, team});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  endSpy.clear();
+  pass.Init(secret, {owner});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  endSpy.clear();
+  QCOMPARE(criticalSpy.count(), 0);
+
+  // An entry in secret/ goes to the owner alone.
+  QFile::remove(logPath);
+  pass.Insert(secret + QStringLiteral("entry"), QStringLiteral("secret\n"),
+              false);
+  QVERIFY(insertSpy.count() > 0 || insertSpy.wait(15000));
+  insertSpy.clear();
+  QCOMPARE(recipientsOf(encryptCalls(loggedCalls(logPath)).first()),
+           QStringList{kSigner});
+
+  const auto expectRefused = [&](const char *what) {
+    QFile::remove(logPath);
+    criticalSpy.clear();
+    pass.Insert(secret + QStringLiteral("other"), QStringLiteral("secret\n"),
+                false);
+    QTest::qWait(300);
+    QVERIFY2(insertSpy.isEmpty(), what);
+    QCOMPARE(criticalSpy.count(), 1);
+    QCOMPARE(criticalSpy.first().at(0).toString(),
+             QStringLiteral("Recipient list missing"));
+    const QString why = criticalSpy.first().at(1).toString();
+    QVERIFY2(why.contains(QDir::toNativeSeparators(secretList)) &&
+                 why.contains(QStringLiteral("parent folder")) &&
+                 why.contains(QStringLiteral("Users")),
+             qPrintable(why));
+    // Re-encryption takes the same way and stops before encrypting.
+    criticalSpy.clear();
+    pass.reencryptPath(secret);
+    QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+    endSpy.clear();
+    QCoreApplication::processEvents();
+    QVERIFY2(!criticalSpy.isEmpty() &&
+                 criticalSpy.first().at(0).toString() ==
+                     QStringLiteral("Recipient list missing"),
+             what);
+    QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(), what);
+  };
+
+  // Removed, signature and all: the team's list is not the folder's.
+  QVERIFY(QFile::remove(secretList));
+  QVERIFY(QFile::remove(secretList + QStringLiteral(".sig")));
+  expectRefused("a removed folder list must not fall back to the parent's");
+
+  // Linked to the root's list (and its signature): no better.
+  QVERIFY(QFile::link(root.filePath(QStringLiteral(".gpg-id")), secretList));
+  QVERIFY(QFile::link(root.filePath(QStringLiteral(".gpg-id.sig")),
+                      secretList + QStringLiteral(".sig")));
+  expectRefused("a linked folder list must not stand in for its own");
+
+  // The way through: remove the links, save the folder's recipients again.
+  QVERIFY(QFile::remove(secretList));
+  QVERIFY(QFile::remove(secretList + QStringLiteral(".sig")));
+  criticalSpy.clear();
+  pass.Init(secret, {owner});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCOMPARE(criticalSpy.count(), 0);
+  QFile::remove(logPath);
+  pass.Insert(secret + QStringLiteral("other"), QStringLiteral("secret\n"),
+              false);
+  QVERIFY(insertSpy.count() > 0 || insertSpy.wait(15000));
+  QCOMPARE(criticalSpy.count(), 0);
+  QCOMPARE(recipientsOf(encryptCalls(loggedCalls(logPath)).first()),
+           QStringList{kSigner});
+#endif
+}
+
+/**
+ * @brief Without a signing key the lookup is pass's: a folder whose list
+ *        was removed takes its parent's, even where a list was accepted
+ *        before.
+ */
+void tst_imitatepass::aRemovedFolderListFallsBackToTheParentWithoutSigning() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  QVERIFY(root.mkpath(QStringLiteral("secret")));
+  const QString store = root.path() + QLatin1Char('/');
+  const QString secretList = root.filePath(QStringLiteral("secret/.gpg-id"));
+  const QByteArray list = GpgIdGeneration::withHeader(
+      1, QStringLiteral("secret"), QByteArrayLiteral("OWNER\n"));
+  {
+    QFile f(secretList);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write(list);
+  }
+  QCOMPARE(GpgIdGeneration::accept(secretList, list, store),
+           GpgIdGeneration::Verdict::Accepted);
+  QVERIFY(QFile::remove(secretList));
+
+  const QString logPath = root.filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  pass.Insert(root.filePath(QStringLiteral("secret/entry")),
+              QStringLiteral("secret\n"), false);
+  QVERIFY(insertSpy.count() > 0 || insertSpy.wait(15000));
+  QCOMPARE(criticalSpy.count(), 0);
+  QCOMPARE(recipientsOf(encryptCalls(loggedCalls(logPath)).first()),
+           QStringList{QStringLiteral("0123456789ABCDEF")});
+#endif
+}
+
+/**
  * @brief GitInit() and GitPull() are thin executor wrappers: `git init
  *        <store>` and `git pull` run and complete through the ordinary
  *        finishedGitInit / finishedGitPull path.
@@ -2972,8 +3253,8 @@ void tst_imitatepass::initReportsAFailedSignature() {
 
 /**
  * @brief A signature gpg made but does not verify afterwards (no VALIDSIG
- *        by a configured key) is not trusted: Init reports the invalid
- *        signature and no re-encryption starts.
+ *        by a configured key) is not trusted: the signer does not place it,
+ *        Init reports the failed signing and no re-encryption starts.
  */
 void tst_imitatepass::initRefusesASignatureThatDoesNotVerify() {
 #ifdef Q_OS_WIN
@@ -2999,14 +3280,12 @@ void tst_imitatepass::initRefusesASignatureThatDoesNotVerify() {
   QTest::qWait(300);
   QCOMPARE(criticalSpy.count(), 1);
   QCOMPARE(criticalSpy.first().at(0).toString(),
-           QStringLiteral("Check .gpg-id file signature!"));
+           QStringLiteral("GPG signing failed!"));
   QVERIFY2(criticalSpy.first().at(1).toString().contains(
-               QStringLiteral("Signature for")) &&
-               criticalSpy.first().at(1).toString().contains(
-                   QStringLiteral("is invalid")),
+               QStringLiteral("does not verify")),
            qPrintable(criticalSpy.first().at(1).toString()));
-  QVERIFY2(QFile::exists(root.filePath(".gpg-id.sig")),
-           "the signature gpg wrote is on disk, it just does not verify");
+  QVERIFY2(!QFile::exists(root.filePath(".gpg-id.sig")),
+           "a signature that does not verify is not placed");
   QCOMPARE(startSpy.count(), 0);
   QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
            "nothing may be encrypted to a list whose signature is bad");

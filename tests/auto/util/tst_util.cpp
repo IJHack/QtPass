@@ -411,6 +411,7 @@ private Q_SLOTS:
   void executeWrapperWithoutInputRunsTheCommand();
   void refuseLinkedPathRefusesAndReleasesTheUi();
   void recipientsForEditingSignedStoreWithoutListIsVerified();
+  void recipientsForEditingRefusesAFolderWhoseListIsALink();
   // Util paths and files
   void findBinaryInPathRelativePathIsNotTheCwd();
   void configIsValidWslLauncherThatCannotRunIsInvalid();
@@ -5306,6 +5307,38 @@ void tst_util::recipientsForEditingSignedStoreWithoutListIsVerified() {
   r = pass.recipientsForEditing(QString(), store.path());
   QVERIFY2(r.state == Pass::RecipientsForEditing::State::Unsigned,
            "without a signing key the store is Unsigned");
+}
+
+/**
+ * @brief With a signing key, a folder whose own .gpg-id is a link is
+ *        Rejected with nothing preselected and the link named: the parent's
+ *        list the walk would find was not signed for that folder.
+ */
+void tst_util::recipientsForEditingRefusesAFolderWhoseListIsALink() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QDir root(store.path());
+  QVERIFY(root.mkpath(QStringLiteral("secret")));
+  QFile rootList(root.filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(rootList.open(QIODevice::WriteOnly));
+  rootList.write("ABCDEF0123456789ABCDEF0123456789ABCDEF01\n");
+  rootList.close();
+  const QString link = root.filePath(QStringLiteral("secret/.gpg-id"));
+  if (!QFile::link(rootList.fileName(), link)) {
+    QSKIP("Cannot create a symbolic link here");
+  }
+  TestPass pass;
+  AppSettings s;
+  s.passStore = store.path();
+  s.gpgExecutable = root.filePath(QStringLiteral("no-gpg"));
+  s.passSigningKey = QStringLiteral("0123456789ABCDEF0123456789ABCDEF01234567");
+  pass.init(s);
+  const auto r = pass.recipientsForEditing(
+      root.filePath(QStringLiteral("secret")) + QLatin1Char('/'), store.path());
+  QVERIFY2(r.state == Pass::RecipientsForEditing::State::Rejected,
+           "a folder whose list is a link is Rejected");
+  QVERIFY2(r.recipients.isEmpty(), qPrintable(r.recipients.join(u',')));
+  QVERIFY2(r.warning.contains(link), qPrintable(r.warning));
 }
 
 /**

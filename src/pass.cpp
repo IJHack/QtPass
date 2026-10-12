@@ -639,30 +639,71 @@ void Pass::updateEnv() {
 }
 
 namespace {
-/// Whether @p path is @p dir or lies under it, compared the way the
-/// platform's file system compares names: "C:/Store" and "c:/store" are the
-/// same directory on Windows.
+/// File names compare the way the platform's file system compares them:
+/// "C:/Store" and "c:/store" are the same directory on Windows.
+#ifdef Q_OS_WIN
+constexpr auto kPathCase = Qt::CaseInsensitive;
+#else
+constexpr auto kPathCase = Qt::CaseSensitive;
+#endif
+
+/// Whether @p path is @p dir or lies under it.
 auto isAtOrUnder(const QString &path, const QString &dir,
                  const QString &dirPrefix) -> bool {
-#ifdef Q_OS_WIN
-  constexpr auto cs = Qt::CaseInsensitive;
-#else
-  constexpr auto cs = Qt::CaseSensitive;
-#endif
-  return path.compare(dir, cs) == 0 || path.startsWith(dirPrefix, cs);
+  return path.compare(dir, kPathCase) == 0 ||
+         path.startsWith(dirPrefix, kPathCase);
 }
 
-/// Walk up from @p dir to the first folder inside the store that has its own
-/// .gpg-id; nothing when none does. A link under the name is not the
-/// folder's .gpg-id: whoever planted it chose the recipients elsewhere, so
-/// the parent's list applies instead.
-auto nearestGpgId(QDir dir, const QString &storeDir, const QString &storePrefix)
-    -> std::optional<QString> {
+/// Where the lookup of a .gpg-id starts and the store that bounds it.
+struct GpgIdLookup {
+  QDir start;
+  QString storeDir;
+  QString storePrefix;
+};
+
+/// The folder whose list @p for_file wants: its own for a folder, its
+/// folder's for an entry.
+auto gpgIdLookup(const QString &for_file, const QString &passStore)
+    -> GpgIdLookup {
+  const QString normalizedFile = QDir::fromNativeSeparators(for_file);
+  // Inside the store means at a path boundary: "/store-other/x" is not
+  // under "/store", however the prefix compares.
+  const QString storeDir =
+      QDir::cleanPath(QDir::fromNativeSeparators(passStore));
+  const QString storePrefix = storeDir.endsWith(QLatin1Char('/'))
+                                  ? storeDir
+                                  : storeDir + QLatin1Char('/');
+  const QString cleanFile = QDir::cleanPath(normalizedFile);
+  const bool insideStore = isAtOrUnder(cleanFile, storeDir, storePrefix);
+  // A relative name is one inside the store; an absolute path outside it
+  // stays what it is and the walk stops at once.
+  const QString fullPath = insideStore || QDir::isAbsolutePath(cleanFile)
+                               ? cleanFile
+                               : storePrefix + cleanFile;
+  // A folder (trailing separator, which cleanPath() dropped, or an existing
+  // directory) wants its own list; an entry wants its folder's.
+  const bool isFolder =
+      normalizedFile.endsWith(QLatin1Char('/')) || QFileInfo(fullPath).isDir();
+  return {QDir(isFolder ? fullPath : QFileInfo(fullPath).absolutePath()),
+          storeDir, storePrefix};
+}
+
+/// Whether @p candidate can be its folder's .gpg-id. A link under the name
+/// is not: whoever planted it chose the recipients elsewhere.
+auto isOwnGpgId(const QFileInfo &candidate) -> bool {
+  return candidate.exists() && !candidate.isSymLink() &&
+         !candidate.isJunction();
+}
+
+/// Walk up from the lookup's start to the first folder inside the store
+/// that has its own .gpg-id; nothing when none does. A link under the name
+/// is skipped, so the parent's list applies instead.
+auto nearestGpgId(const GpgIdLookup &lookup) -> std::optional<QString> {
+  QDir dir = lookup.start;
   while (dir.exists() && isAtOrUnder(QDir::cleanPath(dir.absolutePath()),
-                                     storeDir, storePrefix)) {
+                                     lookup.storeDir, lookup.storePrefix)) {
     const QFileInfo candidate(dir.absoluteFilePath(".gpg-id"));
-    if (candidate.exists() && !candidate.isSymLink() &&
-        !candidate.isJunction()) {
+    if (isOwnGpgId(candidate)) {
       return candidate.absoluteFilePath();
     }
     if (!dir.cdUp()) {
@@ -695,28 +736,54 @@ auto Pass::refuseLinkedPath(const QString &path, bool includeSelf) -> bool {
 
 auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
     -> QString {
-  QString normalizedStore = QDir::fromNativeSeparators(passStore);
-  QString normalizedFile = QDir::fromNativeSeparators(for_file);
-  // Inside the store means at a path boundary: "/store-other/x" is not
-  // under "/store", however the prefix compares.
-  const QString storeDir = QDir::cleanPath(normalizedStore);
-  const QString storePrefix = storeDir.endsWith(QLatin1Char('/'))
-                                  ? storeDir
-                                  : storeDir + QLatin1Char('/');
-  const QString cleanFile = QDir::cleanPath(normalizedFile);
-  const bool insideStore = isAtOrUnder(cleanFile, storeDir, storePrefix);
-  // A relative name is one inside the store; an absolute path outside it
-  // stays what it is and the walk below stops at once.
-  const QString fullPath = insideStore || QDir::isAbsolutePath(cleanFile)
-                               ? cleanFile
-                               : storePrefix + cleanFile;
-  // A folder (trailing separator, which cleanPath() dropped, or an existing
-  // directory) wants its own list; an entry wants its folder's.
-  const bool isFolder =
-      normalizedFile.endsWith(QLatin1Char('/')) || QFileInfo(fullPath).isDir();
-  const QDir start(isFolder ? fullPath : QFileInfo(fullPath).absolutePath());
-  return nearestGpgId(start, storeDir, storePrefix)
-      .value_or(QDir(normalizedStore).filePath(".gpg-id"));
+  return nearestGpgId(gpgIdLookup(for_file, passStore))
+      .value_or(
+          QDir(QDir::fromNativeSeparators(passStore)).filePath(".gpg-id"));
+}
+
+auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
+                        QString *recordError) -> std::optional<QString> {
+  const GpgIdLookup lookup = gpgIdLookup(forFile, passStore);
+  QDir dir = lookup.start;
+  // The same walk as nearestGpgId(), stopping at the list it finds, and
+  // short of the store root: the root's own list has no parent to fall
+  // back to, and the signature check refuses it when it is missing.
+  while (dir.exists() && QDir::cleanPath(dir.absolutePath())
+                             .startsWith(lookup.storePrefix, kPathCase)) {
+    const QFileInfo candidate(dir.absoluteFilePath(".gpg-id"));
+    if (isOwnGpgId(candidate)) {
+      return std::nullopt;
+    }
+    // A link under the name (dangling or not), or nothing under it where
+    // this device accepted a list before: both are the folder's list gone,
+    // not a folder that never had one.
+    if (candidate.isSymLink() || candidate.isJunction()) {
+      return candidate.absoluteFilePath();
+    }
+    // An unreadable record is not "never seen": whether a list was accepted
+    // here cannot be told, so this folder is refused too (fail closed), with
+    // the record's own reason for the caller to show.
+    QString why;
+    const std::optional<qint64> seen =
+        GpgIdGeneration::remembered(candidate.absoluteFilePath(), &why);
+    if (!seen) {
+      if (recordError != nullptr) {
+        *recordError =
+            why.isEmpty()
+                ? tr("The generation record of the recipient lists cannot "
+                     "be read.")
+                : why;
+      }
+      return candidate.absoluteFilePath();
+    }
+    if (*seen > 0) {
+      return candidate.absoluteFilePath();
+    }
+    if (!dir.cdUp()) {
+      break;
+    }
+  }
+  return std::nullopt;
 }
 
 namespace {
@@ -770,6 +837,26 @@ auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
   if (!signer.enabled()) {
     result.state = RecipientsForEditing::State::Unsigned;
     result.recipients = getRecipientList(folder, passStore);
+    return result;
+  }
+  QString recordError;
+  if (const std::optional<QString> skipped =
+          skippedGpgId(folder, passStore, &recordError)) {
+    // The folder's own list was removed or replaced by a link (or the record
+    // that would tell cannot be read): the list the walk found further up
+    // was not signed for this folder, so preselecting it would sign it in
+    // here with one click.
+    result.state = RecipientsForEditing::State::Rejected;
+    result.warning =
+        recordError.isEmpty()
+            ? tr("The recipient list %1 is missing or is not a regular file, "
+                 "so nothing is preselected: the list of a parent folder was "
+                 "not signed for this one. Select this folder's recipients "
+                 "yourself; OK writes and signs a fresh list.")
+                  .arg(*skipped)
+            : tr("%1 Nothing is preselected: whether %2 was removed cannot "
+                 "be told.")
+                  .arg(recordError, *skipped);
     return result;
   }
   if (!QFileInfo::exists(gpgIdPath)) {
