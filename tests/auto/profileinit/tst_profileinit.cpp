@@ -38,6 +38,7 @@ private Q_SLOTS:
   void initialiseFailsWhenTheDirectoryCannotBeCreated();
   void initialiseRefusesWhenNoGenerationCanBeReserved();
   void initialiseSignsAndCommitsTheSignature();
+  void initialiseRefusesASignatureByAnotherKey();
   void initialiseReportsAFailingGit();
   void initGitStagesOnlyWhatBelongsToTheStore();
   void initGitCommitsAnEmptyStore();
@@ -52,6 +53,10 @@ private:
   static auto gitSettings() -> AppSettings;
   static void useTestGitIdentity();
   static auto writeScript(const QString &path, const QByteArray &body) -> bool;
+  static auto signingGpg(const QString &signedLog, const QString &signer)
+      -> QByteArray;
+  static const inline QString kSigningKey =
+      QStringLiteral("AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111");
   static auto writeFile(const QString &path, const QByteArray &body) -> bool;
   static auto gitOutput(const AppSettings &s, const QString &dir,
                         const QStringList &args) -> QString;
@@ -65,6 +70,31 @@ auto tst_profileinit::twoUsers() -> QList<UserInfo> {
   bob.key_id = QStringLiteral("BBBB2222BBBB2222BBBB2222BBBB2222BBBB2222");
   bob.enabled = false;
   return {alice, bob};
+}
+
+/// A stand-in gpg that signs by writing FAKESIG to --output (keeping what it
+/// was given in @p signedLog) and answers --verify with a VALIDSIG by
+/// @p signer.
+auto tst_profileinit::signingGpg(const QString &signedLog,
+                                 const QString &signer) -> QByteArray {
+  return QStringLiteral(
+             "out=''\nprev=''\nmode=sign\n"
+             "for a in \"$@\"; do\n"
+             "  if [ \"$prev\" = --output ]; then out=\"$a\"; fi\n"
+             "  if [ \"$a\" = --verify ]; then mode=verify; fi\n"
+             "  prev=\"$a\"\n"
+             "done\n"
+             "if [ \"$mode\" = verify ]; then\n"
+             "  cat >/dev/null\n"
+             "  printf '[GNUPG:] VALIDSIG %2 2026-10-12 1760000000 0 4 0 1 10 "
+             "00 %2\\n'\n"
+             "  exit 0\n"
+             "fi\n"
+             "cat > '%1'\n"
+             "printf 'FAKESIG' > \"$out\"\n"
+             "exit 0\n")
+      .arg(signedLog, signer)
+      .toUtf8();
 }
 
 auto tst_profileinit::gitSettings() -> AppSettings {
@@ -394,21 +424,11 @@ void tst_profileinit::initialiseSignsAndCommitsTheSignature() {
   const QString signedLog =
       QDir(base.path()).filePath(QStringLiteral("signed.txt"));
   const QString fakeGpg = QDir(base.path()).filePath(QStringLiteral("gpg"));
-  // Remember what gpg was asked to sign, then "sign" it.
-  QVERIFY(writeScript(
-      fakeGpg,
-      QStringLiteral("out=''\nprev=''\n"
-                     "for a in \"$@\"; do\n"
-                     "  if [ \"$prev\" = --output ]; then out=\"$a\"; fi\n"
-                     "  prev=\"$a\"\n"
-                     "done\n"
-                     "cat > '%1'\n"
-                     "printf 'FAKESIG' > \"$out\"\n"
-                     "exit 0\n")
-          .arg(signedLog)
-          .toUtf8()));
+  // Remember what gpg was asked to sign, then "sign" it; the check of the
+  // new signature that follows finds it made by the signing key.
+  QVERIFY(writeScript(fakeGpg, signingGpg(signedLog, kSigningKey)));
   s.gpgExecutable = fakeGpg;
-  s.passSigningKey = QStringLiteral("AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111");
+  s.passSigningKey = kSigningKey;
 
   const QString dir = QDir(base.path()).filePath(QStringLiteral("store"));
   QString note;
@@ -435,6 +455,38 @@ void tst_profileinit::initialiseSignsAndCommitsTheSignature() {
                       QStringLiteral("HEAD")})
                .trimmed(),
            QStringLiteral("1"));
+#endif
+}
+
+/**
+ * @brief gpg that signs with another secret key than the configured one
+ *        (as `--default-key` did when that key was missing) makes a
+ *        signature nobody can use: initialise() fails, says why, and writes
+ *        no .gpg-id.sig.
+ */
+void tst_profileinit::initialiseRefusesASignatureByAnotherKey() {
+#ifdef Q_OS_WIN
+  QSKIP("shell-script stand-in for gpg");
+#else
+  QTemporaryDir base;
+  QVERIFY(base.isValid());
+  const QString fakeGpg = QDir(base.path()).filePath(QStringLiteral("gpg"));
+  QVERIFY(writeScript(
+      fakeGpg,
+      signingGpg(QDir(base.path()).filePath(QStringLiteral("signed.txt")),
+                 QStringLiteral("CCCC3333CCCC3333CCCC3333CCCC3333CCCC3333"))));
+  AppSettings s;
+  s.gpgExecutable = fakeGpg;
+  s.passSigningKey = kSigningKey;
+
+  const QString dir = QDir(base.path()).filePath(QStringLiteral("store"));
+  QString note;
+  QVERIFY(!ProfileInit::initialise(dir, twoUsers(), s, false, &note));
+  QVERIFY2(note.contains(kSigningKey) &&
+               note.contains(QStringLiteral("does not verify")),
+           qPrintable(note));
+  QVERIFY2(!QFile::exists(QDir(dir).filePath(QStringLiteral(".gpg-id.sig"))),
+           "a signature by another key is not written");
 #endif
 }
 

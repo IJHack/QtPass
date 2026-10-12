@@ -152,8 +152,33 @@ auto encryptArgs(QStringList leading, const QString &output,
 
 } // namespace
 
+auto ImitatePass::refuseSkippedGpgId(const QString &file) -> bool {
+  // Without a signing key the parent's list applies, as it does for pass.
+  if (!gpgIdSigner().enabled()) {
+    return false;
+  }
+  const std::optional<QString> skipped =
+      Pass::skippedGpgId(file, m_settings.passStore);
+  if (!skipped) {
+    return false;
+  }
+  emit critical(
+      tr("Recipient list missing"),
+      tr("The signed recipient list %1 is missing or is not a regular file. "
+         "QtPass does not fall back to a parent folder's list for it: that "
+         "list was not signed for this folder. If a link is under that name, "
+         "remove it. Then open Users for that folder and save its "
+         "recipients, which writes and signs a fresh list.")
+          .arg(QDir::toNativeSeparators(*skipped)));
+  return true;
+}
+
 auto ImitatePass::recipientsForEntry(const QString &file,
                                      QStringList *recipients) -> bool {
+  recipients->clear();
+  if (refuseSkippedGpgId(file)) {
+    return false;
+  }
   QString why;
   if (!loadVerifiedRecipients(Pass::getGpgIdPath(file, m_settings.passStore),
                               recipients, &why)) {
@@ -660,6 +685,11 @@ auto ImitatePass::recoverReencryptLeftovers(const QString &dir) -> bool {
 auto ImitatePass::verifyGpgIdForDir(const QString &file,
                                     QHash<QString, QStringList> &verified,
                                     QStringList &gpgId) -> bool {
+  // Before the cache: two folders can resolve to the same list, and only
+  // one of them may have had its own.
+  if (refuseSkippedGpgId(file)) {
+    return false;
+  }
   const QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);
   // Keyed by .gpg-id, so every file under it gets exactly the list its
   // signature covered.

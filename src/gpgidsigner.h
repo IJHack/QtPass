@@ -36,9 +36,9 @@ public:
    * @param signingKeys Full fingerprints from the settings (40 hex characters
    *        for v4 keys, 64 for v5/v6), as pass's PASSWORD_STORE_SIGNING_KEY
    *        requires: gpg reports fingerprints in its KEY_CONSIDERED and
-   *        VALIDSIG status lines, so a short key ID would sign (via
-   *        --default-key) but never pass haveSecretKey() or verify(). The
-   *        first one signs, any of them verifies.
+   *        VALIDSIG status lines, so a short key ID would never pass
+   *        haveSecretKey() or verify(). The first one signs, any of them
+   *        verifies.
    * @param exec Process runner; Executor::executeBlocking() when empty.
    */
   GpgIdSigner(QString gpgExecutable, QStringList signingKeys,
@@ -82,16 +82,19 @@ public:
    * QtPass's own; the signature then goes next to the list through
    * Util::writeFileReplacing(), never by opening the `.sig` name.
    *
-   * Only the first key is used: repeated `--default-key` options override
-   * each other and only the last would count.
+   * Only the first key signs, as `--local-user`: gpg then fails when that
+   * secret key is missing, where `--default-key` would quietly sign with
+   * another one. The new signature is verified against @p contents the way
+   * verify() does before it is placed; one that is not by a configured key
+   * is not written.
    * @param gpgIdFile The `.gpg-id` the signature is for; `<gpgIdFile>.sig`
    *        is written.
    * @param contents The exact bytes of that file, as written. UTF-8 text,
    *        as a recipient list is; anything else is refused, as verify()
    *        refuses it.
    * @param error Receives gpg's stderr, or the reason, when it fails.
-   * @return true when the signature is in place. Does nothing and returns
-   *         true when no key is configured.
+   * @return true when the signature is in place and verified. Does nothing
+   *         and returns true when no key is configured.
    */
   auto sign(const QString &gpgIdFile, const QByteArray &contents,
             QString *error = nullptr) const -> bool;

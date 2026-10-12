@@ -83,8 +83,11 @@ auto GpgIdSigner::sign(const QString &gpgIdFile, const QByteArray &contents,
     return false;
   }
   const QString output = scratch.filePath(QStringLiteral("sig"));
+  // --local-user, not --default-key: without that secret key gpg would
+  // print "all values passed to '--default-key' ignored", sign with
+  // whatever secret key it has and exit 0.
   const int rc = run(
-      {QStringLiteral("--default-key"), m_keys.first(), QStringLiteral("--yes"),
+      {QStringLiteral("--local-user"), m_keys.first(), QStringLiteral("--yes"),
        QStringLiteral("--detach-sign"), QStringLiteral("--output"),
        Executor::translatePathForWsl(output, m_gpg), QStringLiteral("-")},
       nullptr, error, text);
@@ -99,8 +102,20 @@ auto GpgIdSigner::sign(const QString &gpgIdFile, const QByteArray &contents,
           QCoreApplication::translate("GpgIdSigner", "gpg wrote no signature");
     return false;
   }
-  return Util::writeFileReplacing(gpgIdFile + QStringLiteral(".sig"),
-                                  signature.readAll(), true, error);
+  const QByteArray bytes = signature.readAll();
+  signature.close();
+  // Checked before it is placed: a signature by any key but the configured
+  // ones (an older gpg, a wrapper, a smartcard picking its own) is not
+  // written, and the one there, if any, stays.
+  if (!verify(contents, output)) {
+    if (error)
+      *error = QCoreApplication::translate(
+          "GpgIdSigner",
+          "the new signature does not verify as one of the signing keys");
+    return false;
+  }
+  return Util::writeFileReplacing(gpgIdFile + QStringLiteral(".sig"), bytes,
+                                  true, error);
 }
 
 auto GpgIdSigner::validSigFingerprints(const QString &statusOutput)
