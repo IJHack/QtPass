@@ -122,9 +122,11 @@ def check_placeholders(src, forms):
     if (N_RE.search(src) is not None) != any(N_RE.search(t) for t in forms):
         return forms[0]
     want = sorted(PH_RE.findall(src))
-    return first(
-        forms, lambda t: sorted(PH_RE.findall(t)) != want or SPACED_RE.search(t)
-    )
+
+    def bad(t):
+        return sorted(PH_RE.findall(t)) != want or SPACED_RE.search(t)
+
+    return first(forms, bad)
 
 
 def check_mnemonic(src, forms):
@@ -158,13 +160,12 @@ def check_mixed_script(src, forms, script):
         return None
     glued = re.compile(f"(?<=[{script}])[A-Za-z]+|[A-Za-z]+(?=[{script}])")
     src_lower = src.lower()
-    return first(
-        forms,
-        lambda t: any(
-            m.group().lower() not in src_lower
-            for m in glued.finditer(re.sub(r"%(?:\d+|n)", " ", t))
-        ),
-    )
+
+    def foreign_latin(t):
+        runs = glued.finditer(re.sub(r"%(?:\d+|n)", " ", t))
+        return any(m.group().lower() not in src_lower for m in runs)
+
+    return first(forms, foreign_latin)
 
 
 def check(src, forms, script):
@@ -196,13 +197,8 @@ def optional_findings(src, forms, args):
     """The --verbatim (SAME) and --leak (LEAK) findings for one message."""
     found = []
     verbatim = all(f.strip() == src.strip() for f in forms)
-    if (
-        args.verbatim
-        and len(src) > 2
-        and "href" not in src
-        and src not in VERBATIM_OK
-        and verbatim
-    ):
+    wanted = args.verbatim and len(src) > 2 and "href" not in src
+    if wanted and src not in VERBATIM_OK and verbatim:
         found.append(("SAME", forms[0]))
     if args.leak and any(w in " ".join(forms).lower() for w in args.leak):
         found.append(("LEAK", forms[0]))
@@ -240,9 +236,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("files", nargs="*")
     p.add_argument("--summary", action="store_true", help="per-file counts only")
-    p.add_argument(
-        "--verbatim", action="store_true", help="report translation == source"
-    )
+    p.add_argument("--verbatim", action="store_true", help="translation == source")
     p.add_argument(
         "--skip",
         type=lambda s: s.split(","),
@@ -264,17 +258,13 @@ def main():
             continue
         locale, counts = audit(path, args)
         if args.summary and counts:
-            print(
-                f"{locale:8s} "
-                + " ".join(f"{k}={v}" for k, v in sorted(counts.items()))
-            )
+            line = " ".join(f"{k}={v}" for k, v in sorted(counts.items()))
+            print(f"{locale:8s} {line}")
         total += counts
-    print(
-        "total: " + (" ".join(f"{k}={v}" for k, v in sorted(total.items())) or "clean")
-    )
-    sys.exit(
-        1 if any(total[k] for k in ("PH", "MN", "HTML", "MIX", "ALPHA", "XML")) else 0
-    )
+    line = " ".join(f"{k}={v}" for k, v in sorted(total.items()))
+    print("total: " + (line or "clean"))
+    failed = any(total[k] for k in ("PH", "MN", "HTML", "MIX", "ALPHA", "XML"))
+    sys.exit(1 if failed else 0)
 
 
 if __name__ == "__main__":
