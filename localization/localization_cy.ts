@@ -1182,7 +1182,7 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">nid yw&apos;r llofnod newydd yn dilysu fel un o&apos;r allweddi llofnodi</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1218,22 +1218,22 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Ni ellir gwirio&apos;r rhestr derbynwyr</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Ni ellir dweud a dynnwyd %2, felly ni amgryptiwyd dim.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Mae&apos;r rhestr derbynwyr ar goll</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Mae&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 ar goll neu nid yw&apos;n ffeil gyffredin. Nid yw QtPass yn troi at restr plygell rhiant yn ei lle: ni lofnodwyd y rhestr honno ar gyfer y blygell hon. Os oes dolen o dan yr enw hwnnw, tynnwch hi. Yna agorwch Defnyddwyr ar gyfer y blygell honno a chadwch ei derbynwyr; mae hynny&apos;n ysgrifennu ac yn llofnodi rhestr newydd.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1258,12 +1258,12 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Ni newidiwyd y derbynwyr</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Mae ail-amgryptio yn dal ar y gweill. Arhoswch nes iddo orffen, yna cadwch y derbynwyr eto.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1355,7 +1355,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Gorffennodd Git gyda&apos;r cod %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1526,7 +1526,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Ni ymrwymwyd y derbynwyr</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1535,11 +1535,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">Newidiwyd derbynwyr %1 ac ail-amgryptiwyd ei chofnodion iddynt, ond methodd ymrwymiad Git:
-
-%2
-
-Nid yw&apos;r newid wedi&apos;i ymrwymo na&apos;i wthio eto. Trwsiwch y broblem Git, yna ymrwymwch y newidiadau, neu cadwch y derbynwyr eto.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1548,11 +1544,7 @@ Nid yw&apos;r newid wedi&apos;i ymrwymo na&apos;i wthio eto. Trwsiwch y broblem 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">Newidiwyd derbynwyr %1, ond methodd ymrwymiad Git:
-
-%2
-
-Ni chwblhawyd yr ail-amgryptio, felly mae rhai cofnodion, neu bob un, yn dal wedi&apos;u hamgryptio i&apos;r derbynwyr blaenorol, sy&apos;n dal i allu eu darllen. Ni ymrwymwyd na gwthiwyd dim. Trwsiwch y broblem Git, yna cadwch y derbynwyr eto.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2744,17 +2736,17 @@ Parhau?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">Ni ellir darllen cofnod cenhedlaeth y rhestrau derbynwyr.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Mae&apos;r rhestr derbynwyr %1 ar goll neu nid yw&apos;n ffeil gyffredin, felly nid oes dim wedi&apos;i ragddewis: ni lofnodwyd rhestr plygell rhiant ar gyfer hon. Dewiswch dderbynwyr y blygell hon eich hun; mae OK yn ysgrifennu ac yn llofnodi rhestr newydd.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Nid oes dim wedi&apos;i ragddewis: ni ellir dweud a dynnwyd %2.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
