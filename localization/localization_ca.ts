@@ -940,17 +940,17 @@ e-mail</translation>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="158"/>
+        <location filename="../src/executor.cpp" line="190"/>
         <source>No executable configured for this command</source>
         <translation type="unfinished">No hi ha cap executable configurat per a aquesta ordre</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="187"/>
+        <location filename="../src/executor.cpp" line="219"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">No s&apos;ha pogut iniciar %1</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="381"/>
+        <location filename="../src/executor.cpp" line="413"/>
         <source>%1 crashed or was killed</source>
         <translation type="unfinished">%1 ha fallat o ha estat matat</translation>
     </message>
@@ -1092,88 +1092,88 @@ e-mail</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="131"/>
+        <location filename="../src/gpgidgeneration.cpp" line="132"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">El registre de generacions de les llistes de destinataris, %1, no és accessible.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="140"/>
+        <location filename="../src/gpgidgeneration.cpp" line="141"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">El registre de generacions de les llistes de destinataris, %1, no és llegible. Les llistes de destinataris signades no s&apos;accepten fins que no es repari o se suprimeixi (cosa que oblida el que s&apos;havia acceptat abans).</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="171"/>
-        <location filename="../src/gpgidgeneration.cpp" line="184"/>
+        <location filename="../src/gpgidgeneration.cpp" line="172"/>
+        <location filename="../src/gpgidgeneration.cpp" line="185"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">El registre de generacions de les llistes de destinataris, %1, no es pot escriure.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="211"/>
+        <location filename="../src/gpgidgeneration.cpp" line="212"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">El registre de generacions de les llistes de destinataris, %1, no s&apos;ha pogut bloquejar: pot ser que un altre QtPass l&apos;estigui utilitzant, o que no es pugui escriure a la seva carpeta.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="314"/>
+        <location filename="../src/gpgidgeneration.cpp" line="315"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">La llista conté més d&apos;una línia de generació.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="322"/>
+        <location filename="../src/gpgidgeneration.cpp" line="323"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">La línia de generació té un format incorrecte: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="328"/>
+        <location filename="../src/gpgidgeneration.cpp" line="329"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">La llista conté més d&apos;una línia de carpeta.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="336"/>
+        <location filename="../src/gpgidgeneration.cpp" line="345"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">La línia de carpeta té un format incorrecte: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="340"/>
+        <location filename="../src/gpgidgeneration.cpp" line="349"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">La línia de capçalera té un format incorrecte: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="372"/>
+        <location filename="../src/gpgidgeneration.cpp" line="381"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">La llista conté una línia de generació però cap línia de carpeta.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="519"/>
+        <location filename="../src/gpgidgeneration.cpp" line="528"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">La llista de destinataris signada %1 no és de fiar: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="446"/>
+        <location filename="../src/gpgidgeneration.cpp" line="455"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">La llista de destinataris signada %1 es va escriure per a la carpeta «%2» del magatzem, no per a «%3», i no s&apos;utilitza. Pot ser que algú altre l&apos;hagi copiat aquí; si, en canvi, la carpeta s&apos;ha mogut o se n&apos;ha canviat el nom, qui tingui la clau de signatura hi obre Usuaris i desa els destinataris, cosa que vincula la llista al lloc on és ara.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="459"/>
+        <location filename="../src/gpgidgeneration.cpp" line="468"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">La generació %1 és la més alta que existeix, així que aquí no es pot escriure cap llista més nova: si se suprimeix %2, aquest dispositiu oblida el que havia acceptat abans, i després qui tingui la clau de signatura ho pot resoldre obrint Usuaris i %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="466"/>
+        <location filename="../src/gpgidgeneration.cpp" line="475"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Qui tingui la clau de signatura ho pot resoldre obrint Usuaris i %1, cosa que escriu la generació %2. Si se suprimeix %3, aquest dispositiu oblida el que havia acceptat abans.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="483"/>
+        <location filename="../src/gpgidgeneration.cpp" line="492"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">La llista de destinataris signada %1 no conté cap línia de generació, mentre que aquí ja s&apos;havia acceptat la generació %2. pass no escriu cap línia de generació (tampoc a través del rerefons pass de QtPass), ni ho feia QtPass abans de la 2.0; sense aquesta línia, la llista també pot haver estat escrita per a una altra carpeta del magatzem i copiada aquí. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="492"/>
+        <location filename="../src/gpgidgeneration.cpp" line="501"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">seleccionant de nou els destinataris i desant</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="617"/>
+        <location filename="../src/gpgidgeneration.cpp" line="626"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">El registre de generacions de les llistes de destinataris, %1, ha passat a la generació %2 mentre s&apos;escrivia la generació %3.</translation>
     </message>
@@ -1186,27 +1186,27 @@ e-mail</translation>
         <translation type="obsolete">La llista de destinataris signada %1 no conté cap línia de generació, mentre que aquí ja s&apos;havia acceptat la generació %2. pass no escriu cap línia de generació (tampoc a través del rerefons pass de QtPass), ni ho feia QtPass abans de la 2.0. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="497"/>
+        <location filename="../src/gpgidgeneration.cpp" line="506"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">La llista de destinataris signada %1 és de la generació %2, anterior a la generació %3, la darrera que QtPass ha acceptat aquí. Pot ser que algú altre l&apos;hagi tornat a posar. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="504"/>
+        <location filename="../src/gpgidgeneration.cpp" line="513"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">desant els destinataris: els destinataris preseleccionats allà són els d&apos;aquesta llista, així que primer traieu-ne qui ja no hi hagi de tenir accés</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="552"/>
+        <location filename="../src/gpgidgeneration.cpp" line="561"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">La llista de destinataris signada %1 és de la generació %2, la mateixa generació que una altra llista que aquest dispositiu havia acceptat abans. O bé dos dispositius han desat els destinataris al mateix temps (Git haurà mostrat el conflicte), o bé s&apos;hi ha posat, en lloc de la que hi havia, una llista autèntica d&apos;aquella generació. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="560"/>
+        <location filename="../src/gpgidgeneration.cpp" line="569"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">comprovant els destinataris i desant</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="585"/>
+        <location filename="../src/gpgidgeneration.cpp" line="594"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">La llista de destinataris %1 ha arribat a la generació %2, la més alta que existeix; no es pot escriure la llista.</translation>
     </message>
@@ -1219,78 +1219,113 @@ e-mail</translation>
         <translation type="unfinished">la llista de destinataris no és UTF-8 vàlid</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="99"/>
+        <location filename="../src/gpgidsigner.cpp" line="102"/>
         <source>gpg wrote no signature</source>
         <translation type="unfinished">gpg no ha escrit cap signatura</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidsigner.cpp" line="112"/>
+        <source>the new signature does not verify as one of the signing keys</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
-        <location filename="../src/imitatepass.cpp" line="525"/>
+        <location filename="../src/imitatepass.cpp" line="410"/>
+        <location filename="../src/imitatepass.cpp" line="575"/>
         <source>Signature for %1 is invalid.</source>
         <translation>La signatura per a %1 no és vàlida.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="164"/>
-        <location filename="../src/imitatepass.cpp" line="793"/>
+        <location filename="../src/imitatepass.cpp" line="197"/>
+        <location filename="../src/imitatepass.cpp" line="848"/>
         <source>Can not edit</source>
         <translation>No es pot editar</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="187"/>
+        <location filename="../src/imitatepass.cpp" line="220"/>
         <source>Cannot add</source>
         <translation type="unfinished">No es pot afegir</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="187"/>
+        <location filename="../src/imitatepass.cpp" line="220"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 ja existeix.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="165"/>
-        <location filename="../src/imitatepass.cpp" line="794"/>
+        <location filename="../src/imitatepass.cpp" line="198"/>
+        <location filename="../src/imitatepass.cpp" line="849"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>No s&apos;ha pogut llegir el fitxer que s&apos;ha d&apos;utilitzar per al xifratge, falta el fitxer .gpg-id o bé no és vàlid.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="199"/>
+        <location filename="../src/imitatepass.cpp" line="167"/>
+        <source>Cannot check the recipient list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="168"/>
+        <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="174"/>
+        <source>Recipient list missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="175"/>
+        <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="232"/>
         <source>Cannot write</source>
         <translation type="unfinished">No es pot escriure</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="200"/>
+        <location filename="../src/imitatepass.cpp" line="233"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">No es pot crear un directori temporal: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="368"/>
+        <location filename="../src/imitatepass.cpp" line="401"/>
         <source>GPG signing failed!</source>
         <translation>La signatura del GPG ha fallat!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="370"/>
+        <location filename="../src/imitatepass.cpp" line="403"/>
         <source>Failed to sign %1.</source>
         <translation>No s&apos;ha pogut signar %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="485"/>
+        <location filename="../src/imitatepass.cpp" line="520"/>
+        <source>Recipients not changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="521"/>
+        <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="527"/>
         <source>No signing key!</source>
         <translation>Sense clau de signatura!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="486"/>
+        <location filename="../src/imitatepass.cpp" line="528"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Cap de les claus secretes de signatura està disponible.
 No podràs canviar la llista d&apos;usuaris!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="290"/>
-        <location filename="../src/imitatepass.cpp" line="308"/>
-        <location filename="../src/imitatepass.cpp" line="335"/>
-        <location filename="../src/imitatepass.cpp" line="465"/>
+        <location filename="../src/imitatepass.cpp" line="323"/>
+        <location filename="../src/imitatepass.cpp" line="341"/>
+        <location filename="../src/imitatepass.cpp" line="368"/>
+        <location filename="../src/imitatepass.cpp" line="498"/>
         <source>Cannot update</source>
         <translation>No es pot actualitzar</translation>
     </message>
@@ -1300,24 +1335,24 @@ No podràs canviar la llista d&apos;usuaris!</translation>
         <translation type="unfinished">Ha fallat el Git pull: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="160"/>
-        <location filename="../src/imitatepass.cpp" line="376"/>
-        <location filename="../src/imitatepass.cpp" line="676"/>
+        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="409"/>
+        <location filename="../src/imitatepass.cpp" line="731"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Comproveu la signatura del fitxer .gpg-id!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="248"/>
+        <location filename="../src/imitatepass.cpp" line="281"/>
         <source>Delete failed</source>
         <translation type="unfinished">La supressió ha fallat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="249"/>
+        <location filename="../src/imitatepass.cpp" line="282"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">No s&apos;ha pogut suprimir l&apos;enllaç %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="291"/>
+        <location filename="../src/imitatepass.cpp" line="324"/>
         <source>%1 is not inside the password store.</source>
         <translation type="unfinished">%1 no és dins del magatzem de contrasenyes.</translation>
     </message>
@@ -1330,71 +1365,76 @@ No podràs canviar la llista d&apos;usuaris!</translation>
         <translation type="obsolete">No s&apos;ha pogut escriure %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="349"/>
+        <location filename="../src/imitatepass.cpp" line="382"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">S&apos;ha escrit la llista de destinataris, però no s&apos;ha registrat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="350"/>
+        <location filename="../src/imitatepass.cpp" line="383"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Deseu els destinataris una altra vegada per resoldre-ho.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="355"/>
+        <location filename="../src/imitatepass.cpp" line="388"/>
         <source>Check selected users!</source>
         <translation>Comproveu els usuaris seleccionats!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="356"/>
+        <location filename="../src/imitatepass.cpp" line="389"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Cap de les tecles seleccionades té una clau secreta disponible.
 Probablement no podreu desxifrar les contrasenyes afegides recentment!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="371"/>
+        <location filename="../src/imitatepass.cpp" line="404"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">No s&apos;ha pogut signar %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="466"/>
+        <location filename="../src/imitatepass.cpp" line="499"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">No s&apos;ha pogut suprimir la signatura antiga %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="563"/>
-        <location filename="../src/imitatepass.cpp" line="591"/>
-        <location filename="../src/imitatepass.cpp" line="599"/>
+        <location filename="../src/imitatepass.cpp" line="559"/>
+        <source>Git exited with code %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="613"/>
+        <location filename="../src/imitatepass.cpp" line="641"/>
+        <location filename="../src/imitatepass.cpp" line="649"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Resta d&apos;un rexifratge anterior</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="564"/>
+        <location filename="../src/imitatepass.cpp" line="614"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 no és un fitxer normal i no s&apos;ha restaurat. Reviseu-lo i suprimiu-lo, i després torneu a xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="592"/>
+        <location filename="../src/imitatepass.cpp" line="642"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 existeix al costat de %2. Totes dues són còpies xifrades de l&apos;entrada; comproveu quina voleu i suprimiu l&apos;altra, i després torneu a xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="606"/>
+        <location filename="../src/imitatepass.cpp" line="656"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">S&apos;ha restaurat %1 a partir de la còpia de seguretat que va deixar un rexifratge interromput.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="600"/>
+        <location filename="../src/imitatepass.cpp" line="650"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">Falta %1 i no s&apos;ha pogut tornar a canviar el nom de la seva còpia de seguretat %2. Canvieu-li el nom a mà i després torneu a xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="834"/>
+        <location filename="../src/imitatepass.cpp" line="889"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">No s&apos;ha pogut tornar a xifrar %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1113"/>
+        <location filename="../src/imitatepass.cpp" line="1168"/>
         <source>Re-encryption failed</source>
         <translation>El rexifratge ha fallat</translation>
     </message>
@@ -1411,75 +1451,75 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         <translation type="obsolete">No s&apos;ha pogut suprimir la còpia de seguretat %1 després del rexifratge; es pot suprimir sense perill.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="845"/>
+        <location filename="../src/imitatepass.cpp" line="900"/>
         <source>Creating backup commit</source>
         <translation>Creació de commit de còpia de seguretat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="859"/>
-        <location filename="../src/imitatepass.cpp" line="868"/>
+        <location filename="../src/imitatepass.cpp" line="914"/>
+        <location filename="../src/imitatepass.cpp" line="923"/>
         <source>Backup commit failed</source>
         <translation>Ha fallat el commit de la còpia de seguretat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="860"/>
+        <location filename="../src/imitatepass.cpp" line="915"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>No s&apos;ha pogut inspeccionar l&apos;estat de git. S&apos;ha avortat el rexifratge.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="869"/>
+        <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>El rexifratge s&apos;ha avortat perquè no s&apos;ha pogut crear una còpia de seguretat de git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="898"/>
+        <location filename="../src/imitatepass.cpp" line="953"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Ja hi ha un rexifratge en curs</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="905"/>
+        <location filename="../src/imitatepass.cpp" line="960"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">No és una carpeta del magatzem</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="906"/>
+        <location filename="../src/imitatepass.cpp" line="961"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 és un enllaç simbòlic o un punt d&apos;unió, o es troba darrere d&apos;un. Allò a què apunta no forma part del magatzem de contrasenyes i no s&apos;ha tornat a xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="915"/>
+        <location filename="../src/imitatepass.cpp" line="970"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-xifratge des de la carpeta %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="976"/>
-        <location filename="../src/imitatepass.cpp" line="1140"/>
+        <location filename="../src/imitatepass.cpp" line="1031"/>
+        <location filename="../src/imitatepass.cpp" line="1195"/>
         <source>Updating password-store</source>
         <translation>Actualització del magatzem de contrasenyes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="989"/>
-        <location filename="../src/imitatepass.cpp" line="995"/>
+        <location filename="../src/imitatepass.cpp" line="1044"/>
+        <location filename="../src/imitatepass.cpp" line="1050"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Ha fallat el Git pull</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="990"/>
+        <location filename="../src/imitatepass.cpp" line="1045"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">No s&apos;ha pogut comprovar si el magatzem té fitxers sense fusionar després del pull. Comproveu-ho amb git abans de tornar a xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="996"/>
+        <location filename="../src/imitatepass.cpp" line="1051"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">El pull ha deixat el magatzem amb fitxers sense fusionar. Resoleu el conflicte abans de tornar a xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1000"/>
+        <location filename="../src/imitatepass.cpp" line="1055"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Ha fallat el Git pull; es torna a xifrar el magatzem tal com està</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1011"/>
+        <location filename="../src/imitatepass.cpp" line="1066"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>S&apos;ha omès %n entrada: un enllaç simbòlic, un punt d&apos;unió o un fitxer especial no forma part del magatzem.</numerusform>
@@ -1487,17 +1527,17 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1032"/>
+        <location filename="../src/imitatepass.cpp" line="1087"/>
         <source>GPG ID verification failed</source>
         <translation>La verificació de l&apos;ID de GPG ha fallat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1033"/>
+        <location filename="../src/imitatepass.cpp" line="1088"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>No s&apos;ha pogut verificar l&apos;identificador de fitxer .gpg-id per al directori.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1111"/>
+        <location filename="../src/imitatepass.cpp" line="1166"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... i %n més</numerusform>
@@ -1505,7 +1545,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1114"/>
+        <location filename="../src/imitatepass.cpp" line="1169"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>No s&apos;ha pogut tornar a xifrar %n fitxer:</numerusform>
@@ -1513,17 +1553,41 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1120"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Rexifratge cancel·lat: %1 de %2 fitxers comprovats, %3 tornats a xifrar, %4 han fallat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1322"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <source>Recipients not committed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1243"/>
+        <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
+
+%2
+
+The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1252"/>
+        <source>The recipients of %1 were changed, but the Git commit failed:
+
+%2
+
+Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1429"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">L&apos;executable de Git no està configurat; s&apos;omet git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1382"/>
+        <location filename="../src/imitatepass.cpp" line="1489"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg no ha escrit cap text xifrat per a %1.</translation>
     </message>
@@ -1552,17 +1616,17 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         <translation type="vanished">No s&apos;ha pogut tornar a xifrar %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1129"/>
+        <location filename="../src/imitatepass.cpp" line="1184"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Re-criptació completada: %1 correctes, %2 han fallat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1134"/>
+        <location filename="../src/imitatepass.cpp" line="1189"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Re-criptació completada: %1 fitxers re-encriptats</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1143"/>
+        <location filename="../src/imitatepass.cpp" line="1198"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>No es fa push: %n fitxer no s&apos;ha pogut tornar a xifrar</numerusform>
@@ -1570,14 +1634,14 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1244"/>
-        <location filename="../src/imitatepass.cpp" line="1288"/>
+        <location filename="../src/imitatepass.cpp" line="1351"/>
+        <location filename="../src/imitatepass.cpp" line="1395"/>
         <source>Copy failed</source>
         <translation type="unfinished">La còpia ha fallat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1245"/>
-        <location filename="../src/imitatepass.cpp" line="1289"/>
+        <location filename="../src/imitatepass.cpp" line="1352"/>
+        <location filename="../src/imitatepass.cpp" line="1396"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">No s&apos;ha pogut copiar %1 a %2.</translation>
     </message>
@@ -2813,22 +2877,37 @@ Voleu continuar?</translation>
         <translation type="unfinished">Ha fallat el xifratge: no es pot fer servir la clau GPG d&apos;un destinatari. Pot haver caducat o estar revocada, no tenir cap subclau de xifratge, o no ser de confiança; el missatge de gpg de sota indica quin és el cas.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="685"/>
+        <location filename="../src/pass.cpp" line="726"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 és un enllaç simbòlic o un punt d&apos;unió, o es troba darrere d&apos;un. Allò a què apunta no forma part del magatzem de contrasenyes i es deixa intacte.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="691"/>
+        <location filename="../src/pass.cpp" line="732"/>
         <source>Not part of the store</source>
         <translation type="unfinished">No forma part del magatzem</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="785"/>
+        <location filename="../src/pass.cpp" line="773"/>
+        <source>The generation record of the recipient lists cannot be read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="852"/>
+        <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="857"/>
+        <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="872"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">La llista de destinataris %1 no es pot verificar amb la clau de signatura, així que no hi ha res preseleccionat: desar signaria tot el que hi hagi. Seleccioneu vós mateix els destinataris; OK escriu i signa una llista nova.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="752"/>
+        <location filename="../src/pass.cpp" line="819"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 No hi ha res preseleccionat: desar signaria tot el que hi hagi. Seleccioneu vós mateix els destinataris.</translation>
     </message>
@@ -3259,7 +3338,7 @@ Voleu continuar?</translation>
         <translation type="vanished">La generació del parell de claus GPG ha fallat</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="181"/>
+        <location filename="../src/qtpass.cpp" line="182"/>
         <source>GPG key pair generated successfully</source>
         <translation>Parell de claus GPG generat correctament</translation>
     </message>
@@ -3276,22 +3355,22 @@ Voleu continuar?</translation>
         <translation type="vanished">S&apos;ha copiat al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="225"/>
+        <location filename="../src/qtpass.cpp" line="227"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">No s&apos;ha pogut iniciar qrencode: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="233"/>
+        <location filename="../src/qtpass.cpp" line="235"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">qrencode no ha acabat a temps</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="245"/>
+        <location filename="../src/qtpass.cpp" line="247"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">qrencode ha fallat</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="246"/>
+        <location filename="../src/qtpass.cpp" line="248"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">qrencode ha acabat amb el codi %1</translation>
     </message>

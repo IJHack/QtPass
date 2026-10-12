@@ -944,17 +944,17 @@ e-mail</translation>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="158"/>
+        <location filename="../src/executor.cpp" line="190"/>
         <source>No executable configured for this command</source>
         <translation>此命令没有配置可执行文件</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="187"/>
+        <location filename="../src/executor.cpp" line="219"/>
         <source>Failed to start %1</source>
         <translation>无法启动 %1</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="381"/>
+        <location filename="../src/executor.cpp" line="413"/>
         <source>%1 crashed or was killed</source>
         <translation>%1 崩溃了或被终止</translation>
     </message>
@@ -1096,88 +1096,88 @@ e-mail</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="131"/>
+        <location filename="../src/gpgidgeneration.cpp" line="132"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">无法访问接收者列表的世代记录 %1。</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="140"/>
+        <location filename="../src/gpgidgeneration.cpp" line="141"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">接收者列表的世代记录 %1 无法读取。在修复或删除它（删除会忘记之前接受过的内容）之前，已签名的接收者列表都不会被接受。</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="171"/>
-        <location filename="../src/gpgidgeneration.cpp" line="184"/>
+        <location filename="../src/gpgidgeneration.cpp" line="172"/>
+        <location filename="../src/gpgidgeneration.cpp" line="185"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">无法写入接收者列表的世代记录 %1。</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="211"/>
+        <location filename="../src/gpgidgeneration.cpp" line="212"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">无法锁定接收者列表的世代记录 %1：可能有另一个 QtPass 正在使用它，或者其所在文件夹无法写入。</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="314"/>
+        <location filename="../src/gpgidgeneration.cpp" line="315"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">列表包含多个世代行。</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="322"/>
+        <location filename="../src/gpgidgeneration.cpp" line="323"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">世代行格式错误：%1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="328"/>
+        <location filename="../src/gpgidgeneration.cpp" line="329"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">列表包含多个文件夹行。</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="336"/>
+        <location filename="../src/gpgidgeneration.cpp" line="345"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">文件夹行格式错误：%1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="340"/>
+        <location filename="../src/gpgidgeneration.cpp" line="349"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">标头行格式错误：%1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="372"/>
+        <location filename="../src/gpgidgeneration.cpp" line="381"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">列表包含世代行，但没有文件夹行。</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="519"/>
+        <location filename="../src/gpgidgeneration.cpp" line="528"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">已签名的接收者列表 %1 不可信任：%2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="446"/>
+        <location filename="../src/gpgidgeneration.cpp" line="455"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">已签名的接收者列表 %1 是为密码库中的文件夹“%2”写入的，而不是“%3”，因此不予使用。它可能是被他人复制到此处的；如果是文件夹被移动或重命名了，请由签名密钥的持有者在该文件夹上打开“用户”并保存接收者，这样列表就会绑定到它现在所在的位置。</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="459"/>
+        <location filename="../src/gpgidgeneration.cpp" line="468"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">第 %1 代已是最高的一代，因此这里无法再写入更新的列表：删除 %2 会让本设备忘记之前接受过的内容，之后签名密钥的持有者即可通过打开“用户”并%3来解决此问题。</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="466"/>
+        <location filename="../src/gpgidgeneration.cpp" line="475"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">签名密钥的持有者可以通过打开“用户”并%1来解决此问题，这会写入第 %2 代。删除 %3 会让本设备忘记之前接受过的内容。</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="483"/>
+        <location filename="../src/gpgidgeneration.cpp" line="492"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">已签名的接收者列表 %1 没有世代行，而此处之前已接受过第 %2 代。pass 不会写入世代行（通过 QtPass 的 pass 后端时也一样），2.0 之前的 QtPass 也不会；没有世代行，该列表也可能是为密码库中的另一个文件夹写入后被复制到此处的。%3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="492"/>
+        <location filename="../src/gpgidgeneration.cpp" line="501"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">重新选择接收者后保存</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="617"/>
+        <location filename="../src/gpgidgeneration.cpp" line="626"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">接收者列表的世代记录 %1 在写入第 %3 代期间已推进到第 %2 代。</translation>
     </message>
@@ -1190,27 +1190,27 @@ e-mail</translation>
         <translation type="obsolete">已签名的接收者列表 %1 没有世代行，而此处之前已接受过第 %2 代。pass 不会写入世代行（通过 QtPass 的 pass 后端时也一样），2.0 之前的 QtPass 也不会。%3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="497"/>
+        <location filename="../src/gpgidgeneration.cpp" line="506"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">已签名的接收者列表 %1 是第 %2 代，早于 QtPass 在此处最后接受的第 %3 代。它可能是被他人放回来的。%4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="504"/>
+        <location filename="../src/gpgidgeneration.cpp" line="513"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">保存接收者（那里预选的接收者就是此列表中的接收者，因此请先移除不应再有访问权限的人）</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="552"/>
+        <location filename="../src/gpgidgeneration.cpp" line="561"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">已签名的接收者列表 %1 是第 %2 代，与本设备之前接受过的另一个列表属于同一代。要么是两台设备同时保存了接收者（Git 应该已经显示了冲突），要么是该代的一份真实列表被换了进来。%3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="560"/>
+        <location filename="../src/gpgidgeneration.cpp" line="569"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">检查接收者后保存</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="585"/>
+        <location filename="../src/gpgidgeneration.cpp" line="594"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">接收者列表 %1 已达到第 %2 代，这是最高的一代；无法写入该列表。</translation>
     </message>
@@ -1223,78 +1223,113 @@ e-mail</translation>
         <translation type="unfinished">接收者列表不是有效的 UTF-8</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="99"/>
+        <location filename="../src/gpgidsigner.cpp" line="102"/>
         <source>gpg wrote no signature</source>
         <translation type="unfinished">gpg 未写出签名</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidsigner.cpp" line="112"/>
+        <source>the new signature does not verify as one of the signing keys</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
-        <location filename="../src/imitatepass.cpp" line="525"/>
+        <location filename="../src/imitatepass.cpp" line="410"/>
+        <location filename="../src/imitatepass.cpp" line="575"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 签名无效。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="164"/>
-        <location filename="../src/imitatepass.cpp" line="793"/>
+        <location filename="../src/imitatepass.cpp" line="197"/>
+        <location filename="../src/imitatepass.cpp" line="848"/>
         <source>Can not edit</source>
         <translation>无法编辑</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="187"/>
+        <location filename="../src/imitatepass.cpp" line="220"/>
         <source>Cannot add</source>
         <translation type="unfinished">无法添加</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="187"/>
+        <location filename="../src/imitatepass.cpp" line="220"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 已存在。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="165"/>
-        <location filename="../src/imitatepass.cpp" line="794"/>
+        <location filename="../src/imitatepass.cpp" line="198"/>
+        <location filename="../src/imitatepass.cpp" line="849"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>无法读取加密密钥，.gpg-id 文件丢失或无效.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="199"/>
+        <location filename="../src/imitatepass.cpp" line="167"/>
+        <source>Cannot check the recipient list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="168"/>
+        <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="174"/>
+        <source>Recipient list missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="175"/>
+        <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="232"/>
         <source>Cannot write</source>
         <translation type="unfinished">无法写入</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="200"/>
+        <location filename="../src/imitatepass.cpp" line="233"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">无法创建临时目录：%1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="368"/>
+        <location filename="../src/imitatepass.cpp" line="401"/>
         <source>GPG signing failed!</source>
         <translation>GPG 签名失败！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="370"/>
+        <location filename="../src/imitatepass.cpp" line="403"/>
         <source>Failed to sign %1.</source>
         <translation>签署 %1 失败。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="485"/>
+        <location filename="../src/imitatepass.cpp" line="520"/>
+        <source>Recipients not changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="521"/>
+        <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="527"/>
         <source>No signing key!</source>
         <translation>无签名密钥！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="486"/>
+        <location filename="../src/imitatepass.cpp" line="528"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>没有一个私密签名密钥可用。
 你将无法更改用户列表！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="290"/>
-        <location filename="../src/imitatepass.cpp" line="308"/>
-        <location filename="../src/imitatepass.cpp" line="335"/>
-        <location filename="../src/imitatepass.cpp" line="465"/>
+        <location filename="../src/imitatepass.cpp" line="323"/>
+        <location filename="../src/imitatepass.cpp" line="341"/>
+        <location filename="../src/imitatepass.cpp" line="368"/>
+        <location filename="../src/imitatepass.cpp" line="498"/>
         <source>Cannot update</source>
         <translation>无法更新</translation>
     </message>
@@ -1304,24 +1339,24 @@ You will not be able to change the user list!</source>
         <translation>Git 拉取失败：%1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="160"/>
-        <location filename="../src/imitatepass.cpp" line="376"/>
-        <location filename="../src/imitatepass.cpp" line="676"/>
+        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="409"/>
+        <location filename="../src/imitatepass.cpp" line="731"/>
         <source>Check .gpg-id file signature!</source>
         <translation>检查 .gpg-id 文件签名！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="248"/>
+        <location filename="../src/imitatepass.cpp" line="281"/>
         <source>Delete failed</source>
         <translation type="unfinished">删除失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="249"/>
+        <location filename="../src/imitatepass.cpp" line="282"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">无法删除链接 %1。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="291"/>
+        <location filename="../src/imitatepass.cpp" line="324"/>
         <source>%1 is not inside the password store.</source>
         <translation type="unfinished">%1 不在密码库内。</translation>
     </message>
@@ -1334,71 +1369,76 @@ You will not be able to change the user list!</source>
         <translation type="obsolete">写入 %1 失败：%2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="349"/>
+        <location filename="../src/imitatepass.cpp" line="382"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">接收者列表已写入，但未记录</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="350"/>
+        <location filename="../src/imitatepass.cpp" line="383"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1请再保存一次接收者即可解决此问题。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="355"/>
+        <location filename="../src/imitatepass.cpp" line="388"/>
         <source>Check selected users!</source>
         <translation>请核对所选用户！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="356"/>
+        <location filename="../src/imitatepass.cpp" line="389"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>警告：所选密钥都没有私钥可用。
 任何新添加的密码将无法解密！</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="371"/>
+        <location filename="../src/imitatepass.cpp" line="404"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">签署 %1 失败：%2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="466"/>
+        <location filename="../src/imitatepass.cpp" line="499"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">删除旧签名 %1 失败。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="563"/>
-        <location filename="../src/imitatepass.cpp" line="591"/>
-        <location filename="../src/imitatepass.cpp" line="599"/>
+        <location filename="../src/imitatepass.cpp" line="559"/>
+        <source>Git exited with code %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="613"/>
+        <location filename="../src/imitatepass.cpp" line="641"/>
+        <location filename="../src/imitatepass.cpp" line="649"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">先前重新加密遗留的文件</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="564"/>
+        <location filename="../src/imitatepass.cpp" line="614"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 不是常规文件，未予恢复。请查看并删除它，然后再次重新加密。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="592"/>
+        <location filename="../src/imitatepass.cpp" line="642"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 与 %2 并存。两者都是该条目的加密副本；请确认要保留哪一个并删除另一个，然后再次重新加密。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="606"/>
+        <location filename="../src/imitatepass.cpp" line="656"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">已从上次中断的重新加密遗留的备份恢复 %1。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="600"/>
+        <location filename="../src/imitatepass.cpp" line="650"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 丢失，且其备份 %2 无法重命名回原名。请手动重命名，然后再次重新加密。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="834"/>
+        <location filename="../src/imitatepass.cpp" line="889"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">无法重新加密 %1：%2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1113"/>
+        <location filename="../src/imitatepass.cpp" line="1168"/>
         <source>Re-encryption failed</source>
         <translation>重新加密失败</translation>
     </message>
@@ -1415,116 +1455,140 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="obsolete">重新加密后无法删除备份 %1；可以放心删除它。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="845"/>
+        <location filename="../src/imitatepass.cpp" line="900"/>
         <source>Creating backup commit</source>
         <translation>正在创建备份提交</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="859"/>
-        <location filename="../src/imitatepass.cpp" line="868"/>
+        <location filename="../src/imitatepass.cpp" line="914"/>
+        <location filename="../src/imitatepass.cpp" line="923"/>
         <source>Backup commit failed</source>
         <translation>备份提交失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="860"/>
+        <location filename="../src/imitatepass.cpp" line="915"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>无法检视 git 状态。重新加密被终止。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="869"/>
+        <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>重新加密被终止，因无法创建 git 备份。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="898"/>
+        <location filename="../src/imitatepass.cpp" line="953"/>
         <source>A re-encryption is already running</source>
         <translation>已经在运行重新加密</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="905"/>
+        <location filename="../src/imitatepass.cpp" line="960"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">不是密码库中的文件夹</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="906"/>
+        <location filename="../src/imitatepass.cpp" line="961"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 是符号链接或目录联接，或者位于其后。它所指向的内容不属于密码库，未被重新加密。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="915"/>
+        <location filename="../src/imitatepass.cpp" line="970"/>
         <source>Re-encrypting from folder %1</source>
         <translation>重新从文件夹 %1 加密</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="976"/>
-        <location filename="../src/imitatepass.cpp" line="1140"/>
+        <location filename="../src/imitatepass.cpp" line="1031"/>
+        <location filename="../src/imitatepass.cpp" line="1195"/>
         <source>Updating password-store</source>
         <translation>正在更新密码库</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="989"/>
-        <location filename="../src/imitatepass.cpp" line="995"/>
+        <location filename="../src/imitatepass.cpp" line="1044"/>
+        <location filename="../src/imitatepass.cpp" line="1050"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git 拉取失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="990"/>
+        <location filename="../src/imitatepass.cpp" line="1045"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">pull 之后无法检查存储中是否有未合并的文件。请在重新加密之前用 git 检查。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="996"/>
+        <location filename="../src/imitatepass.cpp" line="1051"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">拉取后密码库中存在未合并的文件。请先解决冲突，再重新加密。</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1000"/>
+        <location filename="../src/imitatepass.cpp" line="1055"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation>Git 拉取失败，按原样重新加密存储</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1011"/>
+        <location filename="../src/imitatepass.cpp" line="1066"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>已跳过 %n 个条目：符号链接、目录联接或特殊文件不属于密码库。</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1032"/>
+        <location filename="../src/imitatepass.cpp" line="1087"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID 验证失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1033"/>
+        <location filename="../src/imitatepass.cpp" line="1088"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>无法验证目录的 .gpg-id。</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1111"/>
+        <location filename="../src/imitatepass.cpp" line="1166"/>
         <source>... and %n more</source>
         <translation>
             <numerusform>... 及另外 %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1114"/>
+        <location filename="../src/imitatepass.cpp" line="1169"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation>
             <numerusform>无法重新加密 %n 个文件：</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1120"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation>取消了重新加密：勾选了 %2 个文件中的 %1 个，重新加密了 %3 个， %4 个失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1322"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <source>Recipients not committed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1243"/>
+        <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
+
+%2
+
+The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1252"/>
+        <source>The recipients of %1 were changed, but the Git commit failed:
+
+%2
+
+Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1429"/>
         <source>Git executable not configured, skipping git</source>
         <translation>未配置 Git 可执行文件，跳过 git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1382"/>
+        <location filename="../src/imitatepass.cpp" line="1489"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg 未为 %1 写出密文。</translation>
     </message>
@@ -1553,31 +1617,31 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="vanished">重新加密 %1 失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1129"/>
+        <location filename="../src/imitatepass.cpp" line="1184"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>重新加密已完成: %1 个成功，%2 个失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1134"/>
+        <location filename="../src/imitatepass.cpp" line="1189"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>重新加密已完成: 重新加密了 %1 个文件</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1143"/>
+        <location filename="../src/imitatepass.cpp" line="1198"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation>
             <numerusform>未推送：%n 个文件重新加密失败</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1244"/>
-        <location filename="../src/imitatepass.cpp" line="1288"/>
+        <location filename="../src/imitatepass.cpp" line="1351"/>
+        <location filename="../src/imitatepass.cpp" line="1395"/>
         <source>Copy failed</source>
         <translation>复制失败</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1245"/>
-        <location filename="../src/imitatepass.cpp" line="1289"/>
+        <location filename="../src/imitatepass.cpp" line="1352"/>
+        <location filename="../src/imitatepass.cpp" line="1396"/>
         <source>Could not copy %1 to %2.</source>
         <translation>无法复制 %1 到 %2。</translation>
     </message>
@@ -2802,22 +2866,37 @@ Continue?</source>
         <translation type="unfinished">加密失败：无法使用某个收件人的 GPG 密钥。它可能已过期或被吊销、没有加密子密钥，或未被信任；下方的 gpg 消息会说明是哪一种。</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="685"/>
+        <location filename="../src/pass.cpp" line="726"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 是符号链接或目录联接，或者位于其后。它所指向的内容不属于密码库，不会被改动。</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="691"/>
+        <location filename="../src/pass.cpp" line="732"/>
         <source>Not part of the store</source>
         <translation type="unfinished">不属于密码库</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="785"/>
+        <location filename="../src/pass.cpp" line="773"/>
+        <source>The generation record of the recipient lists cannot be read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="852"/>
+        <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="857"/>
+        <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="872"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">接收者列表 %1 无法通过签名密钥的验证，因此未预选任何接收者：保存会原样签署其中的所有内容。请自行选择接收者；按 OK 将写入并签署一份新列表。</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="752"/>
+        <location filename="../src/pass.cpp" line="819"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1未预选任何接收者：保存会原样签署其中的所有内容。请自行选择接收者。</translation>
     </message>
@@ -3247,7 +3326,7 @@ Continue?</source>
         <translation type="vanished">GPG 密钥对生成失败</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="181"/>
+        <location filename="../src/qtpass.cpp" line="182"/>
         <source>GPG key pair generated successfully</source>
         <translation>成功生成了 GPG 密钥对</translation>
     </message>
@@ -3264,22 +3343,22 @@ Continue?</source>
         <translation type="vanished">复制到剪贴板</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="225"/>
+        <location filename="../src/qtpass.cpp" line="227"/>
         <source>Could not start qrencode: %1</source>
         <translation>无法启动 qrencode：%1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="233"/>
+        <location filename="../src/qtpass.cpp" line="235"/>
         <source>qrencode did not finish in time</source>
         <translation>qrencode 未及时完成</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="245"/>
+        <location filename="../src/qtpass.cpp" line="247"/>
         <source>qrencode crashed</source>
         <translation>qrencode 已崩溃</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="246"/>
+        <location filename="../src/qtpass.cpp" line="248"/>
         <source>qrencode exited with code %1</source>
         <translation>qrencode 退出，代码为 %1</translation>
     </message>

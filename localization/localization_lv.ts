@@ -896,17 +896,17 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="158"/>
+        <location filename="../src/executor.cpp" line="190"/>
         <source>No executable configured for this command</source>
         <translation type="unfinished">Šai komandai nav konfigurēts izpildāmais fails</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="187"/>
+        <location filename="../src/executor.cpp" line="219"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">Neizdevās palaist %1</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="381"/>
+        <location filename="../src/executor.cpp" line="413"/>
         <source>%1 crashed or was killed</source>
         <translation type="unfinished">%1 avarēja vai tika piespiedu kārtā pārtraukts</translation>
     </message>
@@ -1048,88 +1048,88 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="131"/>
+        <location filename="../src/gpgidgeneration.cpp" line="132"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">Saņēmēju sarakstu paaudžu reģistram %1 nevar piekļūt.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="140"/>
+        <location filename="../src/gpgidgeneration.cpp" line="141"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">Saņēmēju sarakstu paaudžu reģistrs %1 nav nolasāms. Parakstītie saņēmēju saraksti netiek pieņemti, kamēr tas nav salabots vai dzēsts (dzēšot tiek aizmirsts, kas iepriekš tika pieņemts).</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="171"/>
-        <location filename="../src/gpgidgeneration.cpp" line="184"/>
+        <location filename="../src/gpgidgeneration.cpp" line="172"/>
+        <location filename="../src/gpgidgeneration.cpp" line="185"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">Saņēmēju sarakstu paaudžu reģistru %1 nevar ierakstīt.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="211"/>
+        <location filename="../src/gpgidgeneration.cpp" line="212"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">Saņēmēju sarakstu paaudžu reģistru %1 nevarēja bloķēt: iespējams, to lieto cits QtPass, vai arī tā mapē nevar rakstīt.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="314"/>
+        <location filename="../src/gpgidgeneration.cpp" line="315"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">Sarakstā ir vairāk nekā viena paaudzes rinda.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="322"/>
+        <location filename="../src/gpgidgeneration.cpp" line="323"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">Paaudzes rinda ir nepareizi noformēta: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="328"/>
+        <location filename="../src/gpgidgeneration.cpp" line="329"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">Sarakstā ir vairāk nekā viena mapes rinda.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="336"/>
+        <location filename="../src/gpgidgeneration.cpp" line="345"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">Mapes rinda ir nepareizi noformēta: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="340"/>
+        <location filename="../src/gpgidgeneration.cpp" line="349"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">Galvenes rinda ir nepareizi noformēta: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="372"/>
+        <location filename="../src/gpgidgeneration.cpp" line="381"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">Sarakstā ir paaudzes rinda, bet nav mapes rindas.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="519"/>
+        <location filename="../src/gpgidgeneration.cpp" line="528"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">Parakstītais saņēmēju saraksts %1 nav uzticams: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="446"/>
+        <location filename="../src/gpgidgeneration.cpp" line="455"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">Parakstītais saņēmēju saraksts %1 tika rakstīts glabātuves mapei &quot;%2&quot;, ne mapei &quot;%3&quot;, un netiek lietots. Iespējams, kāds cits to šeit nokopēja; ja mape tā vietā tika pārvietota vai pārdēvēta, parakstīšanas atslēgas turētājs tajā atver sadaļu Lietotāji un saglabā saņēmējus, kas piesaista sarakstu vietai, kur tas tagad atrodas.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="459"/>
+        <location filename="../src/gpgidgeneration.cpp" line="468"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">Paaudze %1 ir augstākā iespējamā, tāpēc jaunāku sarakstu šeit ierakstīt nevar: dzēšot %2, tiek aizmirsts, ko šī ierīce iepriekš pieņēmusi, un pēc tam parakstīšanas atslēgas turētājs to var atrisināt, atverot sadaļu Lietotāji un %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="466"/>
+        <location filename="../src/gpgidgeneration.cpp" line="475"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Parakstīšanas atslēgas turētājs to var atrisināt, atverot sadaļu Lietotāji un %1, kas ieraksta paaudzi %2. Dzēšot %3, tiek aizmirsts, ko šī ierīce iepriekš pieņēmusi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="483"/>
+        <location filename="../src/gpgidgeneration.cpp" line="492"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">Parakstītajā saņēmēju sarakstā %1 nav paaudzes rindas, lai gan šeit iepriekš tika pieņemta paaudze %2. pass paaudzes rindu neraksta (arī caur QtPass pass aizmugursistēmu), un QtPass pirms versijas 2.0 to arī nerakstīja; bez tās saraksts varēja būt rakstīts arī citai glabātuves mapei un nokopēts šurp. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="492"/>
+        <location filename="../src/gpgidgeneration.cpp" line="501"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">no jauna izvēloties saņēmējus un saglabājot</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="617"/>
+        <location filename="../src/gpgidgeneration.cpp" line="626"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">Saņēmēju sarakstu paaudžu reģistrs %1 ir pārgājis uz paaudzi %2, kamēr tika rakstīta paaudze %3.</translation>
     </message>
@@ -1142,27 +1142,27 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <translation type="obsolete">Parakstītajā saņēmēju sarakstā %1 nav paaudzes rindas, lai gan šeit iepriekš tika pieņemta paaudze %2. pass paaudzes rindu neraksta (arī caur QtPass pass aizmugursistēmu), un QtPass pirms versijas 2.0 to arī nerakstīja. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="497"/>
+        <location filename="../src/gpgidgeneration.cpp" line="506"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">Parakstītais saņēmēju saraksts %1 ir paaudze %2, vecāka nekā paaudze %3 — pēdējā, ko QtPass šeit pieņēma. Iespējams, kāds cits to ir atlicis atpakaļ. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="504"/>
+        <location filename="../src/gpgidgeneration.cpp" line="513"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">saglabājot saņēmējus: tur iepriekš atzīmētie saņēmēji ir no šī saraksta, tāpēc vispirms noņemiet visus, kam vairs nevajadzētu būt piekļuvei</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="552"/>
+        <location filename="../src/gpgidgeneration.cpp" line="561"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">Parakstītais saņēmēju saraksts %1 ir paaudze %2 — tā pati paaudze, kas citam sarakstam, ko šī ierīce iepriekš pieņēma. Vai nu divas ierīces saglabāja saņēmējus vienlaikus (Git būs parādījis konfliktu), vai arī tā vietā tika ielikts autentisks šīs paaudzes saraksts. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="560"/>
+        <location filename="../src/gpgidgeneration.cpp" line="569"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">pārbaudot saņēmējus un saglabājot</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="585"/>
+        <location filename="../src/gpgidgeneration.cpp" line="594"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">Saņēmēju saraksts %1 ir sasniedzis paaudzi %2, augstāko iespējamo; sarakstu nevar ierakstīt.</translation>
     </message>
@@ -1175,9 +1175,14 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <translation type="unfinished">saņēmēju saraksts nav derīgā UTF-8 kodējumā</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="99"/>
+        <location filename="../src/gpgidsigner.cpp" line="102"/>
         <source>gpg wrote no signature</source>
         <translation type="unfinished">gpg neizvadīja parakstu</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidsigner.cpp" line="112"/>
+        <source>the new signature does not verify as one of the signing keys</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1188,70 +1193,90 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <translation type="unfinished">Git saņemšana neizdevās: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="160"/>
-        <location filename="../src/imitatepass.cpp" line="376"/>
-        <location filename="../src/imitatepass.cpp" line="676"/>
+        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="409"/>
+        <location filename="../src/imitatepass.cpp" line="731"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Pārbaudīt .gpg-id faila parakstu!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
-        <location filename="../src/imitatepass.cpp" line="525"/>
+        <location filename="../src/imitatepass.cpp" line="410"/>
+        <location filename="../src/imitatepass.cpp" line="575"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Paraksts par %1 ir nederīgs.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="164"/>
-        <location filename="../src/imitatepass.cpp" line="793"/>
+        <location filename="../src/imitatepass.cpp" line="197"/>
+        <location filename="../src/imitatepass.cpp" line="848"/>
         <source>Can not edit</source>
         <translation>Nevar rediģēt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="187"/>
+        <location filename="../src/imitatepass.cpp" line="220"/>
         <source>Cannot add</source>
         <translation type="unfinished">Nevar pievienot</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="187"/>
+        <location filename="../src/imitatepass.cpp" line="220"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 jau eksistē.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="165"/>
-        <location filename="../src/imitatepass.cpp" line="794"/>
+        <location filename="../src/imitatepass.cpp" line="198"/>
+        <location filename="../src/imitatepass.cpp" line="849"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Nevarēja nolasīt šifrēšanas atslēgu izmantošanai, .gpg-id fails trūkst vai ir nederīgs.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="199"/>
+        <location filename="../src/imitatepass.cpp" line="167"/>
+        <source>Cannot check the recipient list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="168"/>
+        <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="174"/>
+        <source>Recipient list missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="175"/>
+        <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="232"/>
         <source>Cannot write</source>
         <translation type="unfinished">Nevar ierakstīt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="200"/>
+        <location filename="../src/imitatepass.cpp" line="233"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">Nevar izveidot pagaidu katalogu: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="248"/>
+        <location filename="../src/imitatepass.cpp" line="281"/>
         <source>Delete failed</source>
         <translation type="unfinished">Dzēšana neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="249"/>
+        <location filename="../src/imitatepass.cpp" line="282"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Nevarēja noņemt saiti %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="290"/>
-        <location filename="../src/imitatepass.cpp" line="308"/>
-        <location filename="../src/imitatepass.cpp" line="335"/>
-        <location filename="../src/imitatepass.cpp" line="465"/>
+        <location filename="../src/imitatepass.cpp" line="323"/>
+        <location filename="../src/imitatepass.cpp" line="341"/>
+        <location filename="../src/imitatepass.cpp" line="368"/>
+        <location filename="../src/imitatepass.cpp" line="498"/>
         <source>Cannot update</source>
         <translation>Nevar atjaunināt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="291"/>
+        <location filename="../src/imitatepass.cpp" line="324"/>
         <source>%1 is not inside the password store.</source>
         <translation type="unfinished">%1 neatrodas paroļu glabātuvē.</translation>
     </message>
@@ -1264,93 +1289,108 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <translation type="obsolete">Neizdevās ierakstīt %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="349"/>
+        <location filename="../src/imitatepass.cpp" line="382"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">Saņēmēju saraksts ierakstīts, bet nav reģistrēts</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="350"/>
+        <location filename="../src/imitatepass.cpp" line="383"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Vēlreiz saglabājiet saņēmējus, lai to atrisinātu.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="355"/>
+        <location filename="../src/imitatepass.cpp" line="388"/>
         <source>Check selected users!</source>
         <translation>Pārbaudiet izvēlētus lietotājus!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="356"/>
+        <location filename="../src/imitatepass.cpp" line="389"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Nevienai no izvēlētajām atslēgām nav pieejama slepenā atslēga.
 Jūs nevarēsiet atšifrēt nevienu no jaunpievienotajām parolēm!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="368"/>
+        <location filename="../src/imitatepass.cpp" line="401"/>
         <source>GPG signing failed!</source>
         <translation>GPG parakstīšana neizdevās!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="370"/>
+        <location filename="../src/imitatepass.cpp" line="403"/>
         <source>Failed to sign %1.</source>
         <translation>Neizdevās parakstīt %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="371"/>
+        <location filename="../src/imitatepass.cpp" line="404"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">Neizdevās parakstīt %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="485"/>
+        <location filename="../src/imitatepass.cpp" line="520"/>
+        <source>Recipients not changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="521"/>
+        <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="527"/>
         <source>No signing key!</source>
         <translation>Nav parakstīšanas atslēgas!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="486"/>
+        <location filename="../src/imitatepass.cpp" line="528"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Neviena no slepenajām parakstīšanas atslēgām nav pieejama.
 Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="466"/>
+        <location filename="../src/imitatepass.cpp" line="499"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Neizdevās noņemt veco parakstu %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="563"/>
-        <location filename="../src/imitatepass.cpp" line="591"/>
-        <location filename="../src/imitatepass.cpp" line="599"/>
+        <location filename="../src/imitatepass.cpp" line="559"/>
+        <source>Git exited with code %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="613"/>
+        <location filename="../src/imitatepass.cpp" line="641"/>
+        <location filename="../src/imitatepass.cpp" line="649"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Atlikums no agrākas pāršifrēšanas</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="564"/>
+        <location filename="../src/imitatepass.cpp" line="614"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 nav parasts fails un netika atjaunots. Apskatiet to un noņemiet, pēc tam pāršifrējiet vēlreiz.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="592"/>
+        <location filename="../src/imitatepass.cpp" line="642"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 atrodas līdzās %2. Abi ir ieraksta šifrētas kopijas; pārbaudiet, kuru vēlaties paturēt, izdzēsiet otru un pēc tam pāršifrējiet vēlreiz.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="606"/>
+        <location filename="../src/imitatepass.cpp" line="656"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">%1 atjaunots no dublējuma, ko atstāja pārtraukta pāršifrēšana.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="600"/>
+        <location filename="../src/imitatepass.cpp" line="650"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 trūkst, un tā dublējumu %2 neizdevās pārdēvēt atpakaļ. Pārdēvējiet to manuāli un pēc tam pāršifrējiet vēlreiz.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="834"/>
+        <location filename="../src/imitatepass.cpp" line="889"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">%1 neizdevās pāršifrēt: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1113"/>
+        <location filename="../src/imitatepass.cpp" line="1168"/>
         <source>Re-encryption failed</source>
         <translation>Atkārtota šifrēšana neizdevās</translation>
     </message>
@@ -1367,75 +1407,75 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <translation type="obsolete">Pēc pāršifrēšanas neizdevās noņemt dublējumu %1; to var droši dzēst.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="845"/>
+        <location filename="../src/imitatepass.cpp" line="900"/>
         <source>Creating backup commit</source>
         <translation>Izveidojam dublējuma komitu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="859"/>
-        <location filename="../src/imitatepass.cpp" line="868"/>
+        <location filename="../src/imitatepass.cpp" line="914"/>
+        <location filename="../src/imitatepass.cpp" line="923"/>
         <source>Backup commit failed</source>
         <translation>Dublējuma komita izveide neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="860"/>
+        <location filename="../src/imitatepass.cpp" line="915"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Nevarēja pārbaudīt Git stāvokli. Pārešifrēšana tika atcelta.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="869"/>
+        <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Atjauninājums tika atcelts, jo neizdevās izveidot Git rezervēto kopiju.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="898"/>
+        <location filename="../src/imitatepass.cpp" line="953"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Pāršifrēšana jau notiek</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="905"/>
+        <location filename="../src/imitatepass.cpp" line="960"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Nav glabātuves mape</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="906"/>
+        <location filename="../src/imitatepass.cpp" line="961"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 ir simboliska saite vai savienojuma punkts, vai arī atrodas aiz tādas saites. Tas, uz ko tā norāda, nav paroļu glabātuves daļa un netika pāršifrēts.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="915"/>
+        <location filename="../src/imitatepass.cpp" line="970"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Pāršifrēšana no paroles kataloga %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="976"/>
-        <location filename="../src/imitatepass.cpp" line="1140"/>
+        <location filename="../src/imitatepass.cpp" line="1031"/>
+        <location filename="../src/imitatepass.cpp" line="1195"/>
         <source>Updating password-store</source>
         <translation>Paroļu glabātuves atjaunināšana</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="989"/>
-        <location filename="../src/imitatepass.cpp" line="995"/>
+        <location filename="../src/imitatepass.cpp" line="1044"/>
+        <location filename="../src/imitatepass.cpp" line="1050"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git saņemšana neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="990"/>
+        <location filename="../src/imitatepass.cpp" line="1045"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">Pēc pull neizdevās pārbaudīt, vai krātuvē ir nesapludināti faili. Pirms atkārtotas šifrēšanas pārbaudiet to ar git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="996"/>
+        <location filename="../src/imitatepass.cpp" line="1051"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Pēc saņemšanas glabātuvē palika nesapludināti faili. Pirms pāršifrēšanas atrisiniet konfliktu.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1000"/>
+        <location filename="../src/imitatepass.cpp" line="1055"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git saņemšana neizdevās, glabātuve tiek pāršifrēta tāda, kāda tā ir</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1011"/>
+        <location filename="../src/imitatepass.cpp" line="1066"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>Izlaists %n ieraksts: simboliska saite, savienojuma punkts vai speciāls fails nav glabātuves daļa.</numerusform>
@@ -1444,17 +1484,17 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1032"/>
+        <location filename="../src/imitatepass.cpp" line="1087"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID pārbaude neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1033"/>
+        <location filename="../src/imitatepass.cpp" line="1088"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Nevarēja pārbaudīt .gpg-id failu katalogā.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1111"/>
+        <location filename="../src/imitatepass.cpp" line="1166"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... un vēl %n fails</numerusform>
@@ -1463,7 +1503,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1114"/>
+        <location filename="../src/imitatepass.cpp" line="1169"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>Neizdevās pāršifrēt %n failu:</numerusform>
@@ -1472,17 +1512,41 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1120"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Pāršifrēšana atcelta: pārbaudīti %1 no %2 failiem, %3 pāršifrēti, %4 neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1322"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <source>Recipients not committed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1243"/>
+        <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
+
+%2
+
+The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1252"/>
+        <source>The recipients of %1 were changed, but the Git commit failed:
+
+%2
+
+Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1429"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Git izpildāmais fails nav konfigurēts, git tiek izlaists</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1382"/>
+        <location filename="../src/imitatepass.cpp" line="1489"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg neizvadīja šifrētu tekstu failam %1.</translation>
     </message>
@@ -1511,17 +1575,17 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <translation type="vanished">Neizdevās atkārtoti šifrēt %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1129"/>
+        <location filename="../src/imitatepass.cpp" line="1184"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Atšifrēšana pabeigta: %1 veiksmīgi, %2 neveiksmīgi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1134"/>
+        <location filename="../src/imitatepass.cpp" line="1189"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Atšifrēšana pabeigta: %1 faili atšifrēti</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1143"/>
+        <location filename="../src/imitatepass.cpp" line="1198"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Nosūtīšana netiek veikta: neizdevās pāršifrēt %n failu</numerusform>
@@ -1530,14 +1594,14 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1244"/>
-        <location filename="../src/imitatepass.cpp" line="1288"/>
+        <location filename="../src/imitatepass.cpp" line="1351"/>
+        <location filename="../src/imitatepass.cpp" line="1395"/>
         <source>Copy failed</source>
         <translation type="unfinished">Kopēšana neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1245"/>
-        <location filename="../src/imitatepass.cpp" line="1289"/>
+        <location filename="../src/imitatepass.cpp" line="1352"/>
+        <location filename="../src/imitatepass.cpp" line="1396"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Neizdevās nokopēt %1 uz %2.</translation>
     </message>
@@ -2570,22 +2634,37 @@ Turpināt?</translation>
         <translation type="unfinished">Šifrēšana neizdevās: saņēmēja GPG atslēgu nevar izmantot. Tā varētu būt beigusies vai atsaukta, tai varētu nebūt šifrēšanas apakšatslēgas, vai tā nav uzticama; zemāk redzamais gpg ziņojums norāda, kas noticis.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="685"/>
+        <location filename="../src/pass.cpp" line="726"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ir simboliska saite vai savienojuma punkts, vai arī atrodas aiz tādas saites. Tas, uz ko tā norāda, nav paroļu glabātuves daļa un tiks atstāts neskarts.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="691"/>
+        <location filename="../src/pass.cpp" line="732"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Nav glabātuves daļa</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="785"/>
+        <location filename="../src/pass.cpp" line="773"/>
+        <source>The generation record of the recipient lists cannot be read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="852"/>
+        <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="857"/>
+        <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="872"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Saņēmēju saraksts %1 neiztur pārbaudi ar parakstīšanas atslēgu, tāpēc nekas nav iepriekš atzīmēts: saglabājot tiktu parakstīts viss, kas tajā ir. Izvēlieties saņēmējus paši; OK ieraksta un paraksta jaunu sarakstu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="752"/>
+        <location filename="../src/pass.cpp" line="819"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Nekas nav iepriekš atzīmēts: saglabājot tiktu parakstīts viss, kas tajā ir. Izvēlieties saņēmējus paši.</translation>
     </message>
@@ -3017,7 +3096,7 @@ Turpināt?</translation>
         <translation type="vanished">GPG atslēgu pāra ģenerēšana neizdevās</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="181"/>
+        <location filename="../src/qtpass.cpp" line="182"/>
         <source>GPG key pair generated successfully</source>
         <translation>GPG atslēgu pāris veiksmīgi ģenerēts</translation>
     </message>
@@ -3034,22 +3113,22 @@ Turpināt?</translation>
         <translation type="vanished">Kopēts starpliktuvē</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="225"/>
+        <location filename="../src/qtpass.cpp" line="227"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">Neizdevās palaist qrencode: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="233"/>
+        <location filename="../src/qtpass.cpp" line="235"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">qrencode nepabeidza darbu laikā</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="245"/>
+        <location filename="../src/qtpass.cpp" line="247"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">qrencode avarēja</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="246"/>
+        <location filename="../src/qtpass.cpp" line="248"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">qrencode beidza darbu ar kodu %1</translation>
     </message>

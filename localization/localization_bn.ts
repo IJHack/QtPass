@@ -896,17 +896,17 @@ The value will still be saved as entered.</source>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="158"/>
+        <location filename="../src/executor.cpp" line="190"/>
         <source>No executable configured for this command</source>
         <translation type="unfinished">এই কমান্ডের জন্য কোনো এক্সিকিউটেবল কনফিগার করা নেই</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="187"/>
+        <location filename="../src/executor.cpp" line="219"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">%1 চালু করা যায়নি</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="381"/>
+        <location filename="../src/executor.cpp" line="413"/>
         <source>%1 crashed or was killed</source>
         <translation type="unfinished">%1 ক্র্যাশ করেছে বা বন্ধ করে দেওয়া হয়েছে</translation>
     </message>
@@ -1048,88 +1048,88 @@ The value will still be saved as entered.</source>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="131"/>
+        <location filename="../src/gpgidgeneration.cpp" line="132"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">প্রাপক তালিকাগুলোর জেনারেশন রেকর্ড %1 অ্যাক্সেস করা যাচ্ছে না।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="140"/>
+        <location filename="../src/gpgidgeneration.cpp" line="141"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">প্রাপক তালিকাগুলোর জেনারেশন রেকর্ড %1 পাঠযোগ্য নয়। এটি মেরামত করা বা মুছে ফেলা না হওয়া পর্যন্ত স্বাক্ষরিত প্রাপক তালিকা গ্রহণ করা হবে না (মুছে ফেললে আগে যা গ্রহণ করা হয়েছিল তা ভুলে যাবে)।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="171"/>
-        <location filename="../src/gpgidgeneration.cpp" line="184"/>
+        <location filename="../src/gpgidgeneration.cpp" line="172"/>
+        <location filename="../src/gpgidgeneration.cpp" line="185"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">প্রাপক তালিকাগুলোর জেনারেশন রেকর্ড %1 লেখা যাচ্ছে না।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="211"/>
+        <location filename="../src/gpgidgeneration.cpp" line="212"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">প্রাপক তালিকাগুলোর জেনারেশন রেকর্ড %1 লক করা যায়নি: সম্ভবত অন্য একটি QtPass এটি ব্যবহার করছে, অথবা এর ফোল্ডারে লেখা যাচ্ছে না।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="314"/>
+        <location filename="../src/gpgidgeneration.cpp" line="315"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">তালিকায় একাধিক জেনারেশন লাইন রয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="322"/>
+        <location filename="../src/gpgidgeneration.cpp" line="323"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">জেনারেশন লাইনটি ত্রুটিপূর্ণ: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="328"/>
+        <location filename="../src/gpgidgeneration.cpp" line="329"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">তালিকায় একাধিক ফোল্ডার লাইন রয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="336"/>
+        <location filename="../src/gpgidgeneration.cpp" line="345"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">ফোল্ডার লাইনটি ত্রুটিপূর্ণ: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="340"/>
+        <location filename="../src/gpgidgeneration.cpp" line="349"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">হেডার লাইনটি ত্রুটিপূর্ণ: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="372"/>
+        <location filename="../src/gpgidgeneration.cpp" line="381"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">তালিকায় জেনারেশন লাইন রয়েছে, কিন্তু কোনো ফোল্ডার লাইন নেই।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="519"/>
+        <location filename="../src/gpgidgeneration.cpp" line="528"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 বিশ্বাস করার মতো নয়: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="446"/>
+        <location filename="../src/gpgidgeneration.cpp" line="455"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 স্টোরের &quot;%2&quot; ফোল্ডারের জন্য লেখা হয়েছিল, &quot;%3&quot;-এর জন্য নয়, তাই এটি ব্যবহার করা হচ্ছে না। অন্য কেউ এটি এখানে কপি করে থাকতে পারে; আর যদি ফোল্ডারটি সরানো হয়ে থাকে বা এর নাম পরিবর্তন করা হয়ে থাকে, তবে যাঁর কাছে স্বাক্ষর কী আছে তিনি এই ফোল্ডারে ব্যবহারকারীরা খুলে প্রাপকদের সংরক্ষণ করবেন, এতে তালিকাটি তার বর্তমান অবস্থানের সাথে বাঁধা পড়বে।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="459"/>
+        <location filename="../src/gpgidgeneration.cpp" line="468"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">জেনারেশন %1-ই সর্বোচ্চ সম্ভব, তাই এখানে এর চেয়ে নতুন কোনো তালিকা লেখা যাবে না। %2 মুছে ফেললে এই ডিভাইস আগে যা গ্রহণ করেছিল তা ভুলে যাবে; এরপর যাঁর কাছে স্বাক্ষর কী আছে, তাঁর এগিয়ে যাওয়ার পথ হল ব্যবহারকারীরা খুলে %3।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="466"/>
+        <location filename="../src/gpgidgeneration.cpp" line="475"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">যাঁর কাছে স্বাক্ষর কী আছে, তাঁর এগিয়ে যাওয়ার পথ হল ব্যবহারকারীরা খুলে %1। এতে জেনারেশন %2 লেখা হবে। %3 মুছে ফেললে এই ডিভাইস আগে যা গ্রহণ করেছিল তা ভুলে যাবে।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="483"/>
+        <location filename="../src/gpgidgeneration.cpp" line="492"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1-এ কোনো জেনারেশন লাইন নেই, অথচ এখানে আগে জেনারেশন %2 গ্রহণ করা হয়েছিল। pass কোনো জেনারেশন লাইন লেখে না (QtPass-এর pass ব্যাকএন্ডের মাধ্যমেও নয়), আর 2.0-এর আগে QtPass-ও লিখত না; জেনারেশন লাইন না থাকায় তালিকাটি স্টোরের অন্য কোনো ফোল্ডারের জন্য লেখা হয়ে এখানে কপি করা হয়ে থাকতেও পারে। %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="492"/>
+        <location filename="../src/gpgidgeneration.cpp" line="501"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">প্রাপকদের নতুন করে নির্বাচন করে সংরক্ষণ করা</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="617"/>
+        <location filename="../src/gpgidgeneration.cpp" line="626"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">জেনারেশন %3 লেখা চলাকালেই প্রাপক তালিকাগুলোর জেনারেশন রেকর্ড %1 জেনারেশন %2-এ এগিয়ে গেছে।</translation>
     </message>
@@ -1142,27 +1142,27 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">স্বাক্ষরিত প্রাপক তালিকা %1-এ কোনো জেনারেশন লাইন নেই, অথচ এখানে আগে জেনারেশন %2 গ্রহণ করা হয়েছিল। pass কোনো জেনারেশন লাইন লেখে না (QtPass-এর pass ব্যাকএন্ডের মাধ্যমেও নয়), আর 2.0-এর আগে QtPass-ও লিখত না। %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="497"/>
+        <location filename="../src/gpgidgeneration.cpp" line="506"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 জেনারেশন %2-এর, যা QtPass এখানে শেষবার গ্রহণ করা জেনারেশন %3-এর চেয়ে পুরোনো। অন্য কেউ এটি আবার ফিরিয়ে রেখে থাকতে পারে। %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="504"/>
+        <location filename="../src/gpgidgeneration.cpp" line="513"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">প্রাপকদের সংরক্ষণ করা: সেখানে আগে থেকে নির্বাচিত প্রাপকরা এই তালিকারই, তাই যাদের আর অ্যাক্সেস থাকা উচিত নয় তাদের প্রথমে সরিয়ে দিন</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="552"/>
+        <location filename="../src/gpgidgeneration.cpp" line="561"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 জেনারেশন %2-এর, অথচ এই ডিভাইস আগে একই জেনারেশনের একটি ভিন্ন তালিকা গ্রহণ করেছিল। হয় দুটি ডিভাইস একই সময়ে প্রাপক সংরক্ষণ করেছে (Git তখন দ্বন্দ্বটি দেখিয়ে থাকবে), নয়তো ওই জেনারেশনের একটি আসল তালিকা এখানে বদলে বসানো হয়েছে। %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="560"/>
+        <location filename="../src/gpgidgeneration.cpp" line="569"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">প্রাপকদের যাচাই করে সংরক্ষণ করা</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="585"/>
+        <location filename="../src/gpgidgeneration.cpp" line="594"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">প্রাপক তালিকা %1 জেনারেশন %2-এ পৌঁছেছে, যা সর্বোচ্চ সম্ভব; তালিকাটি লেখা যাবে না।</translation>
     </message>
@@ -1175,9 +1175,14 @@ The value will still be saved as entered.</source>
         <translation type="unfinished">প্রাপক তালিকাটি বৈধ UTF-8 নয়</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="99"/>
+        <location filename="../src/gpgidsigner.cpp" line="102"/>
         <source>gpg wrote no signature</source>
         <translation type="unfinished">gpg কোনো স্বাক্ষর লেখেনি</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidsigner.cpp" line="112"/>
+        <source>the new signature does not verify as one of the signing keys</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1188,70 +1193,90 @@ The value will still be saved as entered.</source>
         <translation type="unfinished">Git পুল ব্যর্থ হয়েছে: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="160"/>
-        <location filename="../src/imitatepass.cpp" line="376"/>
-        <location filename="../src/imitatepass.cpp" line="676"/>
+        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="409"/>
+        <location filename="../src/imitatepass.cpp" line="731"/>
         <source>Check .gpg-id file signature!</source>
         <translation>এ .gpg-id ফাইলের স্বাক্ষর যাচাই করুন!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
-        <location filename="../src/imitatepass.cpp" line="525"/>
+        <location filename="../src/imitatepass.cpp" line="410"/>
+        <location filename="../src/imitatepass.cpp" line="575"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 এর সিগনচার অক্ষম।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="164"/>
-        <location filename="../src/imitatepass.cpp" line="793"/>
+        <location filename="../src/imitatepass.cpp" line="197"/>
+        <location filename="../src/imitatepass.cpp" line="848"/>
         <source>Can not edit</source>
         <translation>সম্পাদনা করা যায় না</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="187"/>
+        <location filename="../src/imitatepass.cpp" line="220"/>
         <source>Cannot add</source>
         <translation type="unfinished">যুক্ত করা যাচ্ছে না</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="187"/>
+        <location filename="../src/imitatepass.cpp" line="220"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 ইতিমধ্যে বিদ্যমান।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="165"/>
-        <location filename="../src/imitatepass.cpp" line="794"/>
+        <location filename="../src/imitatepass.cpp" line="198"/>
+        <location filename="../src/imitatepass.cpp" line="849"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>এনক্রিপশন কী পড়া যায়নি, .gpg-id ফাইল অনুপস্থিত বা অবৈধ।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="199"/>
+        <location filename="../src/imitatepass.cpp" line="167"/>
+        <source>Cannot check the recipient list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="168"/>
+        <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="174"/>
+        <source>Recipient list missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="175"/>
+        <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="232"/>
         <source>Cannot write</source>
         <translation type="unfinished">লেখা যাচ্ছে না</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="200"/>
+        <location filename="../src/imitatepass.cpp" line="233"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">অস্থায়ী ডিরেক্টরি তৈরি করা যাচ্ছে না: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="248"/>
+        <location filename="../src/imitatepass.cpp" line="281"/>
         <source>Delete failed</source>
         <translation type="unfinished">মুছে ফেলা ব্যর্থ হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="249"/>
+        <location filename="../src/imitatepass.cpp" line="282"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">লিংক %1 সরানো যায়নি।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="290"/>
-        <location filename="../src/imitatepass.cpp" line="308"/>
-        <location filename="../src/imitatepass.cpp" line="335"/>
-        <location filename="../src/imitatepass.cpp" line="465"/>
+        <location filename="../src/imitatepass.cpp" line="323"/>
+        <location filename="../src/imitatepass.cpp" line="341"/>
+        <location filename="../src/imitatepass.cpp" line="368"/>
+        <location filename="../src/imitatepass.cpp" line="498"/>
         <source>Cannot update</source>
         <translation>আপডেট করা যাচ্ছে না</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="291"/>
+        <location filename="../src/imitatepass.cpp" line="324"/>
         <source>%1 is not inside the password store.</source>
         <translation type="unfinished">%1 পাসওয়ার্ড স্টোরের ভিতরে নেই।</translation>
     </message>
@@ -1264,93 +1289,108 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">%1 লিখতে ব্যর্থ: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="349"/>
+        <location filename="../src/imitatepass.cpp" line="382"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">প্রাপক তালিকা লেখা হয়েছে, কিন্তু রেকর্ড করা হয়নি</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="350"/>
+        <location filename="../src/imitatepass.cpp" line="383"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 এগিয়ে যেতে প্রাপকদের আরও একবার সংরক্ষণ করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="355"/>
+        <location filename="../src/imitatepass.cpp" line="388"/>
         <source>Check selected users!</source>
         <translation>মনোনিত ব্যবহারকারীদের যাচাই করুন!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="356"/>
+        <location filename="../src/imitatepass.cpp" line="389"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>নির্বাচিত কোনো কী-এর গোপন কী উপলব্ধ নেই।
 আপনি নতুন যুক্ত করা পাসওয়ার্ডগুলি ডিক্রিপ্ট করতে পারবেন না!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="368"/>
+        <location filename="../src/imitatepass.cpp" line="401"/>
         <source>GPG signing failed!</source>
         <translation>GPG সাইনিং ত্রুটি!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="370"/>
+        <location filename="../src/imitatepass.cpp" line="403"/>
         <source>Failed to sign %1.</source>
         <translation>%1 এর সাইনিং অসম্পূর্ণ।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="371"/>
+        <location filename="../src/imitatepass.cpp" line="404"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">%1 সাইন করতে ব্যর্থ: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="485"/>
+        <location filename="../src/imitatepass.cpp" line="520"/>
+        <source>Recipients not changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="521"/>
+        <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="527"/>
         <source>No signing key!</source>
         <translation>কোনও সাইনিং কি নেই!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="486"/>
+        <location filename="../src/imitatepass.cpp" line="528"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>কোনো গোপন সাক্ষর কী উপলব্ধ নেই।
 আপনি ব্যবহারকারী তালিকা পরিবর্তন করতে পারবেন না!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="466"/>
+        <location filename="../src/imitatepass.cpp" line="499"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">পুরনো স্বাক্ষর %1 সরাতে ব্যর্থ।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="563"/>
-        <location filename="../src/imitatepass.cpp" line="591"/>
-        <location filename="../src/imitatepass.cpp" line="599"/>
+        <location filename="../src/imitatepass.cpp" line="559"/>
+        <source>Git exited with code %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="613"/>
+        <location filename="../src/imitatepass.cpp" line="641"/>
+        <location filename="../src/imitatepass.cpp" line="649"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">আগের একটি পুনরায় এনক্রিপশনের অবশিষ্টাংশ</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="564"/>
+        <location filename="../src/imitatepass.cpp" line="614"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 একটি সাধারণ ফাইল নয় এবং পুনরুদ্ধার করা হয়নি। এটি দেখে সরিয়ে ফেলুন, তারপর আবার পুনরায় এনক্রিপ্ট করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="592"/>
+        <location filename="../src/imitatepass.cpp" line="642"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%2-এর পাশে %1 রয়েছে। দুটিই এন্ট্রির এনক্রিপ্ট করা কপি; কোনটি রাখতে চান তা যাচাই করে অন্যটি মুছে ফেলুন, তারপর আবার পুনরায় এনক্রিপ্ট করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="606"/>
+        <location filename="../src/imitatepass.cpp" line="656"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">একটি বাধাপ্রাপ্ত পুনরায় এনক্রিপশন যে ব্যাকআপ রেখে গিয়েছিল, তা থেকে %1 পুনরুদ্ধার করা হয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="600"/>
+        <location filename="../src/imitatepass.cpp" line="650"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 অনুপস্থিত এবং এর ব্যাকআপ %2-এর নাম ফিরিয়ে পরিবর্তন করা যায়নি। নিজ হাতে এর নাম পরিবর্তন করুন, তারপর আবার পুনরায় এনক্রিপ্ট করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="834"/>
+        <location filename="../src/imitatepass.cpp" line="889"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">%1 পুনরায় এনক্রিপ্ট করা যায়নি: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1113"/>
+        <location filename="../src/imitatepass.cpp" line="1168"/>
         <source>Re-encryption failed</source>
         <translation>পুনরায় এনক্রিপশন ব্যর্থ হয়েছে</translation>
     </message>
@@ -1367,75 +1407,75 @@ You will not be able to change the user list!</source>
         <translation type="obsolete">পুনরায় এনক্রিপ্ট করার পর ব্যাকআপ %1 সরানো যায়নি; এটি নিরাপদে মুছে ফেলা যায়।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="845"/>
+        <location filename="../src/imitatepass.cpp" line="900"/>
         <source>Creating backup commit</source>
         <translation>ব্যাকআপ কমিট তৈরি করা হচ্ছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="859"/>
-        <location filename="../src/imitatepass.cpp" line="868"/>
+        <location filename="../src/imitatepass.cpp" line="914"/>
+        <location filename="../src/imitatepass.cpp" line="923"/>
         <source>Backup commit failed</source>
         <translation>ব্যাকআপ কমিট ব্যর্থ হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="860"/>
+        <location filename="../src/imitatepass.cpp" line="915"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>গিট স্ট্যাটাস পরীক্ষা করা যায়নি। পুনরায় এনক্রিপশন বাতিল করা হয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="869"/>
+        <location filename="../src/imitatepass.cpp" line="924"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>পুনরায় এনক্রিপশন বাতিল করা হয়েছে কারণ একটি গিট ব্যাকআপ তৈরি করা যায়নি।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="898"/>
+        <location filename="../src/imitatepass.cpp" line="953"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">একটি পুনরায় এনক্রিপশন ইতিমধ্যেই চলছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="905"/>
+        <location filename="../src/imitatepass.cpp" line="960"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">স্টোরের কোনো ফোল্ডার নয়</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="906"/>
+        <location filename="../src/imitatepass.cpp" line="961"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 নিজেই একটি সিম্বলিক লিংক বা জাংশন, অথবা এমন একটির পেছনে রয়েছে। সেটি যেখানে নির্দেশ করে তা পাসওয়ার্ড স্টোরের অংশ নয় এবং পুনরায় এনক্রিপ্ট করা হয়নি।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="915"/>
+        <location filename="../src/imitatepass.cpp" line="970"/>
         <source>Re-encrypting from folder %1</source>
         <translation>ফোল্ডার %1 থেকে আবার এনক্রিপশন করা</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="976"/>
-        <location filename="../src/imitatepass.cpp" line="1140"/>
+        <location filename="../src/imitatepass.cpp" line="1031"/>
+        <location filename="../src/imitatepass.cpp" line="1195"/>
         <source>Updating password-store</source>
         <translation>পাসওয়ার্ড-স্টোর অপডেট করা</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="989"/>
-        <location filename="../src/imitatepass.cpp" line="995"/>
+        <location filename="../src/imitatepass.cpp" line="1044"/>
+        <location filename="../src/imitatepass.cpp" line="1050"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git পুল ব্যর্থ হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="990"/>
+        <location filename="../src/imitatepass.cpp" line="1045"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">pull-এর পরে স্টোরে অমার্জ করা ফাইল আছে কিনা পরীক্ষা করা যায়নি। পুনরায় এনক্রিপ্ট করার আগে git দিয়ে এটি পরীক্ষা করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="996"/>
+        <location filename="../src/imitatepass.cpp" line="1051"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">পুলের পর স্টোরে অমিলিত (unmerged) ফাইল রয়ে গেছে। পুনরায় এনক্রিপ্ট করার আগে দ্বন্দ্বটি সমাধান করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1000"/>
+        <location filename="../src/imitatepass.cpp" line="1055"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git পুল ব্যর্থ হয়েছে, স্টোরটি যেমন আছে তেমনই পুনরায় এনক্রিপ্ট করা হচ্ছে</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1011"/>
+        <location filename="../src/imitatepass.cpp" line="1066"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%nটি এন্ট্রি এড়িয়ে যাওয়া হয়েছে: সিমলিংক, জাংশন বা বিশেষ ফাইল স্টোরের অংশ নয়।</numerusform>
@@ -1443,17 +1483,17 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1032"/>
+        <location filename="../src/imitatepass.cpp" line="1087"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID পরীক্ষা অসফল</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1033"/>
+        <location filename="../src/imitatepass.cpp" line="1088"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>ডিরেক্টরির জন্য .gpg-id যাচাই করা যায়নি।</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1111"/>
+        <location filename="../src/imitatepass.cpp" line="1166"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... এবং আরও %nটি</numerusform>
@@ -1461,7 +1501,7 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1114"/>
+        <location filename="../src/imitatepass.cpp" line="1169"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%nটি ফাইল পুনরায় এনক্রিপ্ট করা যায়নি:</numerusform>
@@ -1469,17 +1509,41 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1120"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">পুনরায় এনক্রিপশন বাতিল করা হয়েছে: %2টির মধ্যে %1টি ফাইল পরীক্ষা করা হয়েছে, %3টি পুনরায় এনক্রিপ্ট করা হয়েছে, %4টি ব্যর্থ</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1322"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <source>Recipients not committed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1243"/>
+        <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
+
+%2
+
+The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1252"/>
+        <source>The recipients of %1 were changed, but the Git commit failed:
+
+%2
+
+Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1429"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Git এক্সিকিউটেবল কনফিগার করা নেই, git এড়িয়ে যাওয়া হচ্ছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1382"/>
+        <location filename="../src/imitatepass.cpp" line="1489"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg %1-এর জন্য কোনো সাইফারটেক্সট লেখেনি।</translation>
     </message>
@@ -1508,17 +1572,17 @@ You will not be able to change the user list!</source>
         <translation type="vanished">%1 আবার এনক্রিপ্ট করতে অসফল</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1129"/>
+        <location filename="../src/imitatepass.cpp" line="1184"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>আবার এনক্রিপ্ট করা সমাপ্ত হয়েছে: %1 সফল, %2 অসফল</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1134"/>
+        <location filename="../src/imitatepass.cpp" line="1189"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>পুনরায় অ্যানক্রিপশন সম্পন্ন: %1 ফাইল পুনরায় অ্যানক্রিপ্ট করা হয়েছে</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1143"/>
+        <location filename="../src/imitatepass.cpp" line="1198"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>পুশ করা হচ্ছে না: %nটি ফাইল পুনরায় এনক্রিপ্ট করা যায়নি</numerusform>
@@ -1526,14 +1590,14 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1244"/>
-        <location filename="../src/imitatepass.cpp" line="1288"/>
+        <location filename="../src/imitatepass.cpp" line="1351"/>
+        <location filename="../src/imitatepass.cpp" line="1395"/>
         <source>Copy failed</source>
         <translation type="unfinished">কপি ব্যর্থ হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1245"/>
-        <location filename="../src/imitatepass.cpp" line="1289"/>
+        <location filename="../src/imitatepass.cpp" line="1352"/>
+        <location filename="../src/imitatepass.cpp" line="1396"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">%1 কে %2 এ কপি করা যায়নি।</translation>
     </message>
@@ -2568,22 +2632,37 @@ Continue?</source>
         <translation type="unfinished">এনক্রিপশন ব্যর্থ: একজন প্রাপকের GPG কী ব্যবহার করা যাচ্ছে না। এটির মেয়াদ শেষ হয়ে থাকতে পারে বা বাতিল করা হয়ে থাকতে পারে, এতে কোনো এনক্রিপশন সাবকী নেই, অথবা এটি বিশ্বস্ত নয়; নিচের gpg বার্তাটি বলে দেবে কোনটি।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="685"/>
+        <location filename="../src/pass.cpp" line="726"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 নিজেই একটি সিম্বলিক লিংক বা জাংশন, অথবা এমন একটির পেছনে রয়েছে। সেটি যেখানে নির্দেশ করে তা পাসওয়ার্ড স্টোরের অংশ নয় এবং অপরিবর্তিত থাকবে।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="691"/>
+        <location filename="../src/pass.cpp" line="732"/>
         <source>Not part of the store</source>
         <translation type="unfinished">স্টোরের অংশ নয়</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="785"/>
+        <location filename="../src/pass.cpp" line="773"/>
+        <source>The generation record of the recipient lists cannot be read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="852"/>
+        <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="857"/>
+        <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="872"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">প্রাপক তালিকা %1 স্বাক্ষর কী দিয়ে যাচাই করা যায় না, তাই আগে থেকে কিছুই নির্বাচিত নেই: সংরক্ষণ করলে এতে যা আছে তা-ই স্বাক্ষরিত হয়ে যেত। প্রাপকদের নিজেই নির্বাচন করুন; OK চাপলে একটি নতুন তালিকা লেখা ও স্বাক্ষর করা হবে।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="752"/>
+        <location filename="../src/pass.cpp" line="819"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 আগে থেকে কিছুই নির্বাচিত নেই: সংরক্ষণ করলে এতে যা আছে তা-ই স্বাক্ষরিত হয়ে যেত। প্রাপকদের নিজেই নির্বাচন করুন।</translation>
     </message>
@@ -3014,7 +3093,7 @@ Continue?</source>
         <translation type="vanished">জিপিজি কী জোড়া তৈরি ব্যর্থ হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="181"/>
+        <location filename="../src/qtpass.cpp" line="182"/>
         <source>GPG key pair generated successfully</source>
         <translation>জিপিজি কী জোড়া সফলভাবে তৈরি হয়েছে</translation>
     </message>
@@ -3031,22 +3110,22 @@ Continue?</source>
         <translation type="vanished">ক্লিপবোর্ডে কপি করা হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="225"/>
+        <location filename="../src/qtpass.cpp" line="227"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">qrencode চালু করা যায়নি: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="233"/>
+        <location filename="../src/qtpass.cpp" line="235"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">qrencode সময়মতো শেষ হয়নি</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="245"/>
+        <location filename="../src/qtpass.cpp" line="247"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">qrencode ক্র্যাশ করেছে</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="246"/>
+        <location filename="../src/qtpass.cpp" line="248"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">qrencode কোড %1 দিয়ে বন্ধ হয়েছে</translation>
     </message>
