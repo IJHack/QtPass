@@ -1,0 +1,36 @@
+---
+name: Skill sanity
+
+on:
+  pull_request:
+    branches: ["main", "1.8"]
+    paths:
+      - ".opencode/skills/**"
+      - "localization/**"
+      - "scripts/check-skill-sanity.py"
+      - ".github/workflows/skill-sanity.yml"
+  push:
+    branches: ["main", "1.8"]
+    paths:
+      - ".opencode/skills/**"
+      - "localization/**"
+      - "scripts/check-skill-sanity.py"
+      - ".github/workflows/skill-sanity.yml"
+  merge_group:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  skill-sanity:
+    name: Skill sanity
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check skill structure
+        run: scripts/check-skill-sanity.py
