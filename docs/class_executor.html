@@ -170,6 +170,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa17378022bf90b96beb2a2ac0750751d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously with a custom environment.  <br /></td></tr>
 <tr class="memitem:a9fbf09f8da63419fa052c9d8ebf08408" id="r_a9fbf09f8da63419fa052c9d8ebf08408"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9fbf09f8da63419fa052c9d8ebf08408">resolveExecutable</a> (const QString &amp;app) -&gt; QString</td></tr>
 <tr class="memdesc:a9fbf09f8da63419fa052c9d8ebf08408"><td class="mdescLeft">&#160;</td><td class="mdescRight">The one rule for turning a configured executable into what runs.  <br /></td></tr>
+<tr class="memitem:a37986d339c981097b639c76fab602f92" id="r_a37986d339c981097b639c76fab602f92"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a37986d339c981097b639c76fab602f92">detachFromTerminal</a> (QProcess &amp;process)</td></tr>
+<tr class="memdesc:a37986d339c981097b639c76fab602f92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make <code class="param">process</code> start its child without a controlling terminal.  <br /></td></tr>
 <tr class="memitem:a78f8f16776f308c83b48b00a941c944e" id="r_a78f8f16776f308c83b48b00a941c944e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a78f8f16776f308c83b48b00a941c944e">parseWslCommand</a> (const QString &amp;app) -&gt; std::optional&lt; <a class="el" href="struct_executor_1_1_wsl_command.html">WslCommand</a> &gt;</td></tr>
 <tr class="memdesc:a78f8f16776f308c83b48b00a941c944e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a configured executable as a WSL command.  <br /></td></tr>
 <tr class="memitem:a694edbdebf865b549812969f49bc0c3d" id="r_a694edbdebf865b549812969f49bc0c3d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a694edbdebf865b549812969f49bc0c3d">wslExecArgs</a> (const QString &amp;command, const QStringList &amp;args) -&gt; QStringList</td></tr>
@@ -246,6 +248,39 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_aee160ee2ec954bdb58a3a38555536090_icgraph.svg" width="170" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="a37986d339c981097b639c76fab602f92" name="a37986d339c981097b639c76fab602f92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37986d339c981097b639c76fab602f92">&#9670;&#160;</a></span>detachFromTerminal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Executor::detachFromTerminal </td>
+          <td>(</td>
+          <td class="paramtype">QProcess &amp;</td>          <td class="paramname"><span class="paramname"><em>process</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make <code class="param">process</code> start its child without a controlling terminal. </p>
+<p>On Unix the child starts in a new session (setsid), so it has no /dev/tty. git and ssh then use an askpass helper when there is one and fail at once otherwise, instead of prompting in the terminal <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> was started from while the queue waits behind them. Other Unix process flags set on <code class="param">process</code> are kept. Does nothing on Windows. Every child <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> starts goes through this; startProcess() calls it for the queued and the blocking path. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">process</td><td>Process to configure; call it before start(). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -845,7 +880,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Whether no command is running and nothing is queued. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when the executor has nothing in flight. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00351">351</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00365">365</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
