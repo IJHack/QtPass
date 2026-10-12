@@ -1226,7 +1226,7 @@ sähköposti</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">uutta allekirjoitusta ei voi varmentaa minkään allekirjoitusavaimen tekemäksi</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1262,22 +1262,22 @@ sähköposti</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Vastaanottajaluetteloa ei voi tarkistaa</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Ei voida päätellä, onko %2 poistettu, joten mitään ei salattu.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Vastaanottajaluettelo puuttuu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Allekirjoitettu vastaanottajaluettelo %1 puuttuu tai ei ole tavallinen tiedosto. QtPass ei käytä sen sijaan yläkansion luetteloa: sitä luetteloa ei ole allekirjoitettu tälle kansiolle. Jos tällä nimellä on linkki, poista se. Avaa sitten Käyttäjät-ikkuna kyseiselle kansiolle ja tallenna sen vastaanottajat, mikä kirjoittaa ja allekirjoittaa uuden luettelon.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1302,12 +1302,12 @@ sähköposti</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Vastaanottajia ei muutettu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Uudelleensalaus on yhä käynnissä. Odota, kunnes se on valmis, ja tallenna sitten vastaanottajat uudelleen.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1399,7 +1399,7 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git päättyi koodilla %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1561,7 +1561,7 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Vastaanottajien muutosta ei viety Gitiin</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1570,11 +1570,7 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">Kohteen %1 vastaanottajat muutettiin ja sen merkinnät salattiin uudelleen heille, mutta Git-commit epäonnistui:
-
-%2
-
-Muutosta ei ole vielä viety Gitiin eikä lähetetty etävarastoon. Korjaa Git-ongelma ja tee sitten muutoksista commit tai tallenna vastaanottajat uudelleen.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1583,11 +1579,7 @@ Muutosta ei ole vielä viety Gitiin eikä lähetetty etävarastoon. Korjaa Git-o
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">Kohteen %1 vastaanottajat muutettiin, mutta Git-commit epäonnistui:
-
-%2
-
-Uudelleensalaus ei valmistunut, joten osa merkinnöistä tai kaikki merkinnät on yhä salattu aiemmille vastaanottajille, jotka voivat edelleen lukea ne. Mitään ei viety Gitiin eikä lähetetty etävarastoon. Korjaa Git-ongelma ja tallenna sitten vastaanottajat uudelleen.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2886,17 +2878,17 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">Vastaanottajaluetteloiden sukupolvikirjanpitoa ei voi lukea.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Vastaanottajaluettelo %1 puuttuu tai ei ole tavallinen tiedosto, joten mitään ei ole esivalittu: yläkansion luetteloa ei ole allekirjoitettu tälle kansiolle. Valitse tämän kansion vastaanottajat itse; OK kirjoittaa ja allekirjoittaa uuden luettelon.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Mitään ei ole esivalittu: ei voida päätellä, onko %2 poistettu.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
