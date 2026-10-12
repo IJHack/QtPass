@@ -33,15 +33,16 @@ Run from the repository root. With no file arguments it audits every
 `localization/localization_*.ts`. Vanished and empty entries are skipped;
 `type="unfinished"` entries with text are audited.
 
-| Code    | Fires when                                                                                                                   | Exit status |
-| ------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `PH`    | `%1`, `%2` ... differ from the source in any plural form, `%n` is missing from every form, or a `% 1` / `% n` space appears  | 1           |
-| `MN`    | source has a mnemonic (`&Show`) and the translation has none                                                                 | 1           |
-| `HTML`  | per-tag open or close counts differ from the source (the missing or extra tags are printed)                                  | 1           |
-| `MIX`   | Latin letters glued to a word in the locale's own script, unless that Latin run also appears in the source (`gpg`, `QtPass`) | 1           |
-| `ALPHA` | the password generator alphabet lost a source character or gained a separator (appending local letters is fine)              | 1           |
-| `SAME`  | with `--verbatim`: translation identical to the source (MT fallback or a never-translated string)                            | 0           |
-| `LEAK`  | with `--leak`: translation contains one of the given words from another language                                             | 0           |
+| Code    | Fires when                                                                                                                    | Exit status |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `PH`    | `%1`, `%2` ... differ from the source in any plural form, `%n` is missing from every form, or a `% 1` / `% n` space appears   | 1           |
+| `MN`    | source has a mnemonic (`&Show`) and the translation has none                                                                  | 1           |
+| `HTML`  | per-tag open or close counts differ from the source (the missing or extra tags are printed)                                   | 1           |
+| `MIX`   | Latin letters glued to a word in the locale's own script, unless that Latin run also appears in the source (`gpg`, `QtPass`)  | 1           |
+| `ALPHA` | the password generator alphabet lost a source character or gained a separator (appending local letters is fine)               | 1           |
+| `XML`   | the file declares XML entities: refused unparsed (a real `.ts` has only `<!DOCTYPE TS>`); parsed with defusedxml if installed | 1           |
+| `SAME`  | with `--verbatim`: translation identical to the source (MT fallback or a never-translated string)                             | 0           |
+| `LEAK`  | with `--leak`: translation contains one of the given words from another language                                              | 0           |
 
 `MIX` runs only for locales with a non-Latin script in the script's `SCRIPT`
 table. Add a range there when a new non-Latin locale lands.
@@ -86,6 +87,7 @@ reviewer refinements to long or HTML-bearing strings.
    | `MN`                             | Add the `&` per the mnemonic rules in [qtpass-localization](../qtpass-localization/SKILL.md) |
    | `MIX`                            | Revert to empty unless one obvious fix applies (an English word left in, a glued fragment)   |
    | `ALPHA`                          | Restore the source string verbatim                                                           |
+   | `XML`                            | Do not merge it: entity declarations in a contributed `.ts` are an attack or a broken tool   |
    | `LEAK`, `SAME`                   | Read the string: keep product names and accepted loanwords, revert real leaks to empty       |
 
    When editing `.ts` files directly, keep the `<source>` line out of the edit:

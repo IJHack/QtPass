@@ -27,7 +27,13 @@ import glob
 import os
 import re
 import sys
-import xml.etree.ElementTree as ET
+# .ts files arrive from contributors (Weblate, PRs), so parse them as
+# untrusted XML: defusedxml when installed; otherwise the standard library,
+# which audit() only reaches after refusing entity declarations.
+try:
+    from defusedxml import ElementTree as ET
+except ImportError:
+    import xml.etree.ElementTree as ET  # nosec B405
 from collections import Counter
 
 # Native script per locale (full locale name first, then language code).
@@ -66,50 +72,87 @@ TAG_RE = re.compile(r"<(/?)([A-Za-z][A-Za-z0-9]*)")
 
 
 def tags(text):
+    """Count the HTML tags in text as (closing slash, name) pairs."""
     return Counter((m.group(1), m.group(2).lower()) for m in TAG_RE.finditer(text))
+
+
+def first(forms, bad):
+    """The first plural form for which bad(form) holds, or None."""
+    return next((t for t in forms if bad(t)), None)
+
+
+def check_placeholders(src, forms):
+    """%1, %2 ... must match in every form; %n must appear in at least one
+    form when the source has it (a singular form may spell the number out)."""
+    if (N_RE.search(src) is not None) != any(N_RE.search(t) for t in forms):
+        return forms[0]
+    want = sorted(PH_RE.findall(src))
+    return first(forms, lambda t: sorted(PH_RE.findall(t)) != want or SPACED_RE.search(t))
+
+
+def check_mnemonic(src, forms):
+    """A source with an & shortcut needs one in every form."""
+    if not MNEMONIC_RE.search(src):
+        return None
+    return first(forms, lambda t: not MNEMONIC_RE.search(t))
+
+
+def check_alphabet(src, forms):
+    """The generator alphabet may gain letters, never lose any or add separators."""
+    if src != ALPHABET:
+        return None
+    return first(forms, lambda t: not set(src) <= set(t) or re.search(r"[\s,;-]", t))
+
+
+def check_html(src, forms):
+    """The same tags, as many times, as in the source; reports the difference."""
+    src_tags = tags(src)
+    t = first(forms, lambda t: tags(t) != src_tags)
+    if t is None:
+        return None
+    diff = (src_tags - tags(t)) + (tags(t) - src_tags)
+    return " ".join(f"<{c}{n}>" for c, n in diff)
+
+
+def check_mixed_script(src, forms, script):
+    """Latin glued to native script is normal for tokens kept from the source
+    (gpg, git, QtPass + a particle), so only Latin runs the source lacks."""
+    if not script:
+        return None
+    glued = re.compile(f"(?<=[{script}])[A-Za-z]+|[A-Za-z]+(?=[{script}])")
+    src_lower = src.lower()
+    return first(
+        forms,
+        lambda t: any(
+            m.group().lower() not in src_lower
+            for m in glued.finditer(re.sub(r"%(?:\d+|n)", " ", t))
+        ),
+    )
 
 
 def check(src, forms, script):
     """Yield (code, detail) for each structural problem."""
-    # %1, %2 ... must match in every form; %n must appear in at least one
-    # form when the source has it (a singular form may spell the number out).
-    plural = N_RE.search(src) is not None
-    if plural != any(N_RE.search(t) for t in forms):
-        yield "PH", forms[0]
-    else:
-        for t in forms:
-            if sorted(PH_RE.findall(src)) != sorted(PH_RE.findall(t)) or SPACED_RE.search(t):
-                yield "PH", t
-                break
-    for t in forms:
-        if MNEMONIC_RE.search(src) and not MNEMONIC_RE.search(t):
-            yield "MN", t
-            break
-    if src == ALPHABET:
-        for t in forms:
-            if not set(src) <= set(t) or re.search(r"[\s,;-]", t):
-                yield "ALPHA", t
-                break
-    src_tags = tags(src)
-    for t in forms:
-        if tags(t) != src_tags:
-            diff = (src_tags - tags(t)) + (tags(t) - src_tags)
-            yield "HTML", " ".join(f"<{c}{n}>" for c, n in diff)
-            break
-    if script:
-        # Latin glued to native script is normal for tokens kept from the
-        # source (gpg, git, QtPass + a particle), so only flag Latin runs
-        # that the source does not contain.
-        glued = re.compile(f"(?<=[{script}])[A-Za-z]+|[A-Za-z]+(?=[{script}])")
-        for t in forms:
-            t_clean = re.sub(r"%(?:\d+|n)", " ", t)
-            if any(m.group().lower() not in src.lower() for m in glued.finditer(t_clean)):
-                yield "MIX", t
-                break
+    for code, found in (
+        ("PH", check_placeholders(src, forms)),
+        ("MN", check_mnemonic(src, forms)),
+        ("ALPHA", check_alphabet(src, forms)),
+        ("HTML", check_html(src, forms)),
+        ("MIX", check_mixed_script(src, forms, script)),
+    ):
+        if found is not None:
+            yield code, found
 
 
 def audit(path, args):
-    root = ET.parse(path).getroot()
+    """Audit one .ts file, print its findings, return their count."""
+    with open(path, "rb") as f:
+        data = f.read()
+    # A real .ts file has only <!DOCTYPE TS>; entity declarations are how
+    # expansion bombs work, so refuse them whichever parser is in use.
+    if b"<!ENTITY" in data:
+        print(f"{path}: XML: declares entities, refused unparsed")
+        return os.path.basename(path)[13:-3], Counter({"XML": 1})
+    root = ET.fromstring(data)  # nosec B314
     locale = root.get("language") or os.path.basename(path)[13:-3]
     script = SCRIPT.get(locale) or SCRIPT.get(locale.split("_")[0])
     counts = Counter()
@@ -141,6 +184,7 @@ def audit(path, args):
 
 
 def main():
+    """Parse the arguments, audit every file, exit 1 on any finding."""
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("files", nargs="*")
     p.add_argument("--summary", action="store_true", help="per-file counts only")
@@ -162,7 +206,7 @@ def main():
             print(f"{locale:8s} " + " ".join(f"{k}={v}" for k, v in sorted(counts.items())))
         total += counts
     print("total: " + (" ".join(f"{k}={v}" for k, v in sorted(total.items())) or "clean"))
-    sys.exit(1 if any(total[k] for k in ("PH", "MN", "HTML", "MIX", "ALPHA")) else 0)
+    sys.exit(1 if any(total[k] for k in ("PH", "MN", "HTML", "MIX", "ALPHA", "XML")) else 0)
 
 
 if __name__ == "__main__":
