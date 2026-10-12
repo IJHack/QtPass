@@ -1,6 +1,6 @@
 ---
 name: qtpass-linting
-description: QtPass CI/CD workflow - run GitHub Actions locally with act, linters, formatters
+description: Use when running QtPass CI locally, reproducing GitHub Actions failures, linting, formatting, or fixing code-style issues.
 license: GPL-3.0-or-later
 metadata:
   audience: developers

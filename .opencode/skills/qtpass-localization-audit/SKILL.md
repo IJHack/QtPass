@@ -1,6 +1,6 @@
 ---
 name: qtpass-localization-audit
-description: QtPass localization audit - structural checks on .ts files (placeholders, HTML balance, mnemonics, mixed-script artifacts)
+description: Use when auditing QtPass translation .ts files for placeholder, HTML, mnemonic, mixed-script, wrong-string, or cross-locale defects.
 license: GPL-3.0-or-later
 metadata:
   audience: developers

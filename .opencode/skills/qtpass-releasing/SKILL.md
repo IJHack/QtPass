@@ -1,6 +1,6 @@
 ---
 name: qtpass-releasing
-description: Release workflow for QtPass - versioning, builds, publishing
+description: Use when cutting a QtPass release, bumping versions, updating changelogs, tagging, building artifacts, or publishing packages.
 license: GPL-3.0-or-later
 metadata:
   audience: developers

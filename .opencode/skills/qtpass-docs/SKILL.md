@@ -1,6 +1,6 @@
 ---
 name: qtpass-docs
-description: Documentation guide for QtPass - README, FAQ, localization
+description: Use when updating QtPass documentation, README, FAQ, CHANGELOG, Doxygen docs, or markdown formatting.
 license: GPL-3.0-or-later
 metadata:
   audience: developers

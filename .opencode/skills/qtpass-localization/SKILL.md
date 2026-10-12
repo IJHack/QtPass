@@ -1,6 +1,6 @@
 ---
 name: qtpass-localization
-description: QtPass localization workflow - translation files, updating, adding languages
+description: Use when updating QtPass translations, adding languages, running lupdate, editing .ts files, or handling Weblate localization work.
 license: GPL-3.0-or-later
 metadata:
   audience: developers
