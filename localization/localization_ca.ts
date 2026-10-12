@@ -1226,7 +1226,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">la signatura nova no es verifica com a feta per cap de les claus de signatura</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1262,22 +1262,22 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">No es pot comprovar la llista de destinataris</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 No es pot saber si %2 s&apos;ha suprimit, així que no s&apos;ha xifrat res.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Falta la llista de destinataris</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">La llista de destinataris signada %1 falta o no és un fitxer normal. QtPass no recorre en el seu lloc a la llista d&apos;una carpeta pare: aquella llista no es va signar per a aquesta carpeta. Si hi ha un enllaç amb aquest nom, suprimiu-lo. Després obriu Usuaris per a aquesta carpeta i deseu-ne els destinataris, cosa que escriu i signa una llista nova.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1302,12 +1302,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">No s&apos;han canviat els destinataris</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Encara hi ha un rexifratge en curs. Espereu que acabi i després torneu a desar els destinataris.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1399,7 +1399,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git ha acabat amb el codi %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1561,7 +1561,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">No s&apos;ha fet commit dels destinataris</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1570,11 +1570,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">S&apos;han canviat els destinataris de %1 i se n&apos;han tornat a xifrar les entrades per a ells, però el commit de Git ha fallat:
-
-%2
-
-Encara no s&apos;ha fet commit ni push del canvi. Resoleu el problema de Git i després feu commit dels canvis, o torneu a desar els destinataris.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1583,11 +1579,7 @@ Encara no s&apos;ha fet commit ni push del canvi. Resoleu el problema de Git i d
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">S&apos;han canviat els destinataris de %1, però el commit de Git ha fallat:
-
-%2
-
-El rexifratge no s&apos;ha completat, així que algunes entrades, o totes, encara estan xifrades per als destinataris anteriors, que encara les poden llegir. No s&apos;ha fet commit ni push de res. Resoleu el problema de Git i després torneu a desar els destinataris.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2897,17 +2889,17 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">No es pot llegir el registre de generacions de les llistes de destinataris.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">La llista de destinataris %1 falta o no és un fitxer normal, així que no hi ha res preseleccionat: la llista d&apos;una carpeta pare no es va signar per a aquesta. Seleccioneu vós mateix els destinataris d&apos;aquesta carpeta; OK escriu i signa una llista nova.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 No hi ha res preseleccionat: no es pot saber si %2 s&apos;ha suprimit.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
