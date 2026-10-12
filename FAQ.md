@@ -217,7 +217,7 @@ for and do not vouch for them (checked October 2026).
   `.gpg-id` makes that folder unreadable on the phone.
 - **iPhone:** [Pass for iOS](https://mssun.github.io/passforios/) saves an
   edited entry encrypted to one key only, so keep shared stores read-only
-  there. A YubiKey works with RSA keys only.
+  there. A YubiKey works with RSA keys only, and the app tries only the first recipient of an entry, so an entry encrypted to several keys may not open with it.
 - **Command line:** [gopass](https://github.com/gopasspw/gopass) is
   pass-compatible and runs `gpg` directly; it does not check signed `.gpg-id`
   files.
