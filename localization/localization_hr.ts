@@ -1226,7 +1226,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">novi potpis ne prolazi provjeru kao potpis nijednog od ključeva za potpisivanje</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1262,22 +1262,22 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Nije moguće provjeriti popis primatelja</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Nije moguće utvrditi je li %2 uklonjen, pa ništa nije šifrirano.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Nedostaje popis primatelja</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Potpisani popis primatelja %1 nedostaje ili nije obična datoteka. QtPass umjesto njega ne koristi popis nadređene mape: taj popis nije potpisan za ovu mapu. Ako pod tim imenom postoji poveznica, ukloni je. Zatim otvori Korisnici za tu mapu i spremi njezine primatelje, čime se zapisuje i potpisuje novi popis.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1302,12 +1302,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Primatelji nisu promijenjeni</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Ponovno šifriranje još je u tijeku. Pričekaj da završi, a zatim ponovno spremi primatelje.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1399,7 +1399,7 @@ Nećeš moći dešifrirati novododane lozinke!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git je završio s kodom %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1564,7 +1564,7 @@ Nećeš moći dešifrirati novododane lozinke!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Primatelji nisu commitani</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1573,11 +1573,7 @@ Nećeš moći dešifrirati novododane lozinke!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">Primatelji mape %1 su promijenjeni i njezini unosi ponovno su šifrirani za njih, ali Git commit nije uspio:
-
-%2
-
-Promjena još nije commitana ni pushana. Riješi problem s Gitom, a zatim commitaj promjene ili ponovno spremi primatelje.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1586,11 +1582,7 @@ Promjena još nije commitana ni pushana. Riješi problem s Gitom, a zatim commit
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">Primatelji mape %1 su promijenjeni, ali Git commit nije uspio:
-
-%2
-
-Ponovno šifriranje nije dovršeno, pa su neki ili svi unosi još uvijek šifrirani za prethodne primatelje, koji ih i dalje mogu čitati. Ništa nije commitano ni pushano. Riješi problem s Gitom, a zatim ponovno spremi primatelje.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2924,17 +2916,17 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">Evidenciju generacija popisa primatelja nije moguće pročitati.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Popis primatelja %1 nedostaje ili nije obična datoteka, pa ništa nije unaprijed odabrano: popis nadređene mape nije potpisan za ovu. Primatelje ove mape odaberi sam/sama; OK zapisuje i potpisuje novi popis.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Ništa nije unaprijed odabrano: nije moguće utvrditi je li %2 uklonjen.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>

@@ -1182,7 +1182,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">కొత్త సంతకం సంతకం కీలలో ఒకదానిదిగా ధృవీకరించబడలేదు</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1230,22 +1230,22 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">గ్రహీతల జాబితాను తనిఖీ చేయలేము</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 %2 తొలగించబడిందో లేదో చెప్పలేము, అందువల్ల ఏదీ ఎన్క్రిప్ట్ చేయబడలేదు.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">గ్రహీతల జాబితా లేదు</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 లేదు లేదా అది సాధారణ ఫైల్ కాదు. దాని బదులుగా QtPass పేరెంట్ ఫోల్డర్ జాబితాను ఉపయోగించదు: ఆ జాబితా ఈ ఫోల్డర్ కోసం సంతకం చేయబడలేదు. ఆ పేరుతో లింక్ ఉంటే, దాన్ని తొలగించండి. ఆపై ఆ ఫోల్డర్ కోసం వినియోగదారులు డైలాగ్‌ను తెరిచి దాని గ్రహీతలను సేవ్ చేయండి; ఇది కొత్త జాబితాను వ్రాసి సంతకం చేస్తుంది.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1328,12 +1328,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">గ్రహీతలు మార్చబడలేదు</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">రీ-ఎన్క్రిప్షన్ ఇంకా నడుస్తోంది. అది పూర్తయ్యే వరకు వేచి ఉండి, ఆపై గ్రహీతలను మళ్లీ సేవ్ చేయండి.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1355,7 +1355,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git కోడ్ %1 తో ముగిసింది.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1517,7 +1517,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">గ్రహీతలు కమిట్ చేయబడలేదు</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1526,11 +1526,7 @@ You will not be able to change the user list!</source>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">%1 యొక్క గ్రహీతలు మార్చబడ్డారు మరియు దాని ఎంట్రీలు వారి కోసం రీ-ఎన్క్రిప్ట్ చేయబడ్డాయి, కానీ Git కమిట్ విఫలమైంది:
-
-%2
-
-మార్పు ఇంకా కమిట్ లేదా పుష్ చేయబడలేదు. Git సమస్యను సరిచేసి, ఆపై మార్పులను కమిట్ చేయండి, లేదా గ్రహీతలను మళ్లీ సేవ్ చేయండి.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1539,11 +1535,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">%1 యొక్క గ్రహీతలు మార్చబడ్డారు, కానీ Git కమిట్ విఫలమైంది:
-
-%2
-
-రీ-ఎన్క్రిప్షన్ పూర్తి కాలేదు, అందువల్ల కొన్ని లేదా అన్ని ఎంట్రీలు ఇంకా మునుపటి గ్రహీతల కోసమే ఎన్క్రిప్ట్ చేయబడి ఉన్నాయి, వారు ఇప్పటికీ వాటిని చదవగలరు. ఏదీ కమిట్ లేదా పుష్ చేయబడలేదు. Git సమస్యను సరిచేసి, ఆపై గ్రహీతలను మళ్లీ సేవ్ చేయండి.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2660,17 +2652,17 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">గ్రహీతల జాబితాల జనరేషన్ రికార్డ్‌ను చదవలేము.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">గ్రహీతల జాబితా %1 లేదు లేదా అది సాధారణ ఫైల్ కాదు, అందువల్ల ఏదీ ముందుగా ఎంచుకోబడలేదు: పేరెంట్ ఫోల్డర్ జాబితా ఈ ఫోల్డర్ కోసం సంతకం చేయబడలేదు. ఈ ఫోల్డర్ గ్రహీతలను మీరే ఎంచుకోండి; OK కొత్త జాబితాను వ్రాసి సంతకం చేస్తుంది.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 ఏదీ ముందుగా ఎంచుకోబడలేదు: %2 తొలగించబడిందో లేదో చెప్పలేము.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>

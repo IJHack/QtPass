@@ -1182,7 +1182,7 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">chữ ký mới không xác minh được là của một trong các khóa ký</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1230,22 +1230,22 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Không thể kiểm tra danh sách người nhận</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Không thể xác định %2 có bị xóa hay không, nên không có gì được mã hóa.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Thiếu danh sách người nhận</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Danh sách người nhận đã ký %1 bị thiếu hoặc không phải là tệp thông thường. QtPass không dùng danh sách của thư mục cha thay cho nó: danh sách đó không được ký cho thư mục này. Nếu có một liên kết mang tên đó, hãy xóa nó. Sau đó mở Người dùng cho thư mục đó và lưu người nhận của nó; việc này sẽ ghi và ký một danh sách mới.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1328,12 +1328,12 @@ Bạn sẽ không thể giải mã bất kỳ mật khẩu mới được thêm 
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Người nhận chưa được thay đổi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Một quá trình mã hóa lại vẫn đang chạy. Hãy đợi đến khi nó hoàn tất, rồi lưu lại người nhận.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1355,7 +1355,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git đã thoát với mã %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1514,7 +1514,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Người nhận chưa được commit</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1523,11 +1523,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">Người nhận của %1 đã được thay đổi và các mục trong đó đã được mã hóa lại cho họ, nhưng commit Git thất bại:
-
-%2
-
-Thay đổi chưa được commit hay push. Hãy khắc phục sự cố Git, rồi commit các thay đổi, hoặc lưu lại người nhận.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1536,11 +1532,7 @@ Thay đổi chưa được commit hay push. Hãy khắc phục sự cố Git, r�
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">Người nhận của %1 đã được thay đổi, nhưng commit Git thất bại:
-
-%2
-
-Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các mục vẫn được mã hóa cho những người nhận trước đó, và họ vẫn có thể đọc chúng. Chưa có gì được commit hay push. Hãy khắc phục sự cố Git, rồi lưu lại người nhận.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2654,17 +2646,17 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">Không thể đọc bản ghi thế hệ của các danh sách người nhận.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Danh sách người nhận %1 bị thiếu hoặc không phải là tệp thông thường, nên không có gì được chọn sẵn: danh sách của thư mục cha không được ký cho thư mục này. Hãy tự chọn người nhận cho thư mục này; nhấn OK sẽ ghi và ký một danh sách mới.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Không có gì được chọn sẵn: không thể xác định %2 có bị xóa hay không.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>

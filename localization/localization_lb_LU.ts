@@ -1186,7 +1186,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">déi nei Ënnerschrëft kann net als Ënnerschrëft vun engem vun den Ënnerschrëftsschlësselen verifizéiert ginn</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1222,22 +1222,22 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">D&apos;Empfängerlëscht kann net iwwerpréift ginn</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Et léisst sech net soen, ob %2 ewechgeholl gouf, dofir gouf näischt verschlësselt.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Empfängerlëscht feelt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 feelt oder ass keng normal Datei. QtPass gräift dofir net op d&apos;Lëscht vun engem iwwergeuerdneten Dossier zeréck: déi Lëscht gouf net fir dësen Dossier ënnerschriwwen. Wann ënner deem Numm e Link läit, läscht en. Maacht dann &quot;Benotzer&quot; fir deen Dossier op a späichert seng Empfänger; dat schreift an ënnerschreift eng nei Lëscht.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1262,12 +1262,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Empfänger net geännert</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Eng Nei-Verschlësselung leeft nach. Waart, bis se fäerdeg ass, a späichert dann d&apos;Empfänger nach eng Kéier.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1359,7 +1359,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git ass mam Code %1 eriwwer.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1521,7 +1521,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Empfänger net committ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1530,11 +1530,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">D&apos;Empfänger vun %1 goufen geännert an hir Androungen goufe fir si nei verschlësselt, mä de Git-Commit ass feelgeschloen:
-
-%2
-
-D&apos;Ännerung ass nach net committ oder gepusht. Behieft de Git-Problem, committ dann d&apos;Ännerungen oder späichert d&apos;Empfänger nach eng Kéier.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1543,11 +1539,7 @@ D&apos;Ännerung ass nach net committ oder gepusht. Behieft de Git-Problem, comm
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">D&apos;Empfänger vun %1 goufen geännert, mä de Git-Commit ass feelgeschloen:
-
-%2
-
-D&apos;Nei-Verschlësselung ass net fäerdeg ginn, dofir sinn e puer oder all Androungen nach ëmmer fir déi vireg Empfänger verschlësselt, déi se also nach liese kënnen. Et gouf näischt committ oder gepusht. Behieft de Git-Problem a späichert dann d&apos;Empfänger nach eng Kéier.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2703,17 +2695,17 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">De Generatiounsregister vun den Empfängerlëschten kann net gelies ginn.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">D&apos;Empfängerlëscht %1 feelt oder ass keng normal Datei, dofir ass näischt virausgewielt: d&apos;Lëscht vun engem iwwergeuerdneten Dossier gouf net fir dësen ënnerschriwwen. Wielt d&apos;Empfänger vun dësem Dossier selwer aus; OK schreift an ënnerschreift eng nei Lëscht.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Et ass näischt virausgewielt: et léisst sech net soen, ob %2 ewechgeholl gouf.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
