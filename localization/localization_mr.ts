@@ -1182,7 +1182,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">नवी स्वाक्षरी कोणत्याही स्वाक्षरी कीची असल्याचे सत्यापित होत नाही</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1230,22 +1230,22 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">प्राप्तकर्ता सूची तपासता येत नाही</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 %2 काढून टाकले गेले की नाही हे सांगता येत नाही, त्यामुळे काहीही एन्क्रिप्ट केले गेले नाही.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">प्राप्तकर्ता सूची गहाळ आहे</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 गहाळ आहे किंवा ती नियमित फाइल नाही. QtPass तिच्याऐवजी वरच्या फोल्डरची सूची वापरत नाही: ती सूची या फोल्डरसाठी स्वाक्षरीकृत केलेली नव्हती. त्या नावाने एखादा दुवा असल्यास, तो काढून टाका. नंतर त्या फोल्डरसाठी &quot;वापरकर्ते&quot; उघडा आणि त्याचे प्राप्तकर्ते जतन करा, ज्यामुळे नवी सूची लिहिली जाते आणि तिच्यावर स्वाक्षरी केली जाते.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1328,12 +1328,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">प्राप्तकर्ते बदलले नाहीत</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">पुन्हा-एन्क्रिप्शन अजूनही सुरू आहे. ते पूर्ण होईपर्यंत थांबा, नंतर प्राप्तकर्ते पुन्हा जतन करा.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1355,7 +1355,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git कोड %1 सह बंद झाले.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1517,7 +1517,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">प्राप्तकर्ते कमिट झाले नाहीत</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1526,11 +1526,7 @@ You will not be able to change the user list!</source>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">%1 चे प्राप्तकर्ते बदलले गेले आणि त्याच्या एंट्री नव्या प्राप्तकर्त्यांसाठी पुन्हा-एन्क्रिप्ट केल्या गेल्या, पण Git कमिट अयशस्वी झाले:
-
-%2
-
-हा बदल अद्याप कमिट किंवा पुश केलेला नाही. Git ची समस्या दुरुस्त करा, नंतर बदल कमिट करा किंवा प्राप्तकर्ते पुन्हा जतन करा.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1539,11 +1535,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">%1 चे प्राप्तकर्ते बदलले गेले, पण Git कमिट अयशस्वी झाले:
-
-%2
-
-पुन्हा-एन्क्रिप्शन पूर्ण झाले नाही, त्यामुळे काही किंवा सर्व एंट्री अजूनही आधीच्या प्राप्तकर्त्यांसाठी एन्क्रिप्ट केलेल्या आहेत, जे त्या अजूनही वाचू शकतात. काहीही कमिट किंवा पुश केले गेले नाही. Git ची समस्या दुरुस्त करा, नंतर प्राप्तकर्ते पुन्हा जतन करा.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2660,17 +2652,17 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">प्राप्तकर्ता सूच्यांची पिढी नोंद वाचता येत नाही.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">प्राप्तकर्ता सूची %1 गहाळ आहे किंवा ती नियमित फाइल नाही, त्यामुळे काहीही आधीच निवडलेले नाही: वरच्या फोल्डरची सूची या फोल्डरसाठी स्वाक्षरीकृत केलेली नव्हती. या फोल्डरचे प्राप्तकर्ते स्वतः निवडा; OK नवी सूची लिहून तिच्यावर स्वाक्षरी करते.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 काहीही आधीच निवडलेले नाही: %2 काढून टाकले गेले की नाही हे सांगता येत नाही.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
