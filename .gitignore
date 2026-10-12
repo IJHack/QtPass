@@ -56,3 +56,6 @@ opencode.json
 flatpak/org.qtpass.QtPass.ci.yml
 build-appimage/
 dist/
+
+# tessl CLI cache (skill discovery memory)
+.tessl/
