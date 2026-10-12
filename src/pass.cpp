@@ -741,8 +741,8 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
           QDir(QDir::fromNativeSeparators(passStore)).filePath(".gpg-id"));
 }
 
-auto Pass::skippedGpgId(const QString &forFile, const QString &passStore)
-    -> std::optional<QString> {
+auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,
+                        QString *recordError) -> std::optional<QString> {
   const GpgIdLookup lookup = gpgIdLookup(forFile, passStore);
   QDir dir = lookup.start;
   // The same walk as nearestGpgId(), stopping at the list it finds, and
@@ -757,9 +757,26 @@ auto Pass::skippedGpgId(const QString &forFile, const QString &passStore)
     // A link under the name (dangling or not), or nothing under it where
     // this device accepted a list before: both are the folder's list gone,
     // not a folder that never had one.
-    if (candidate.isSymLink() || candidate.isJunction() ||
-        GpgIdGeneration::remembered(candidate.absoluteFilePath()).value_or(0) >
-            0) {
+    if (candidate.isSymLink() || candidate.isJunction()) {
+      return candidate.absoluteFilePath();
+    }
+    // An unreadable record is not "never seen": whether a list was accepted
+    // here cannot be told, so this folder is refused too (fail closed), with
+    // the record's own reason for the caller to show.
+    QString why;
+    const std::optional<qint64> seen =
+        GpgIdGeneration::remembered(candidate.absoluteFilePath(), &why);
+    if (!seen) {
+      if (recordError != nullptr) {
+        *recordError =
+            why.isEmpty()
+                ? tr("The generation record of the recipient lists cannot "
+                     "be read.")
+                : why;
+      }
+      return candidate.absoluteFilePath();
+    }
+    if (*seen > 0) {
       return candidate.absoluteFilePath();
     }
     if (!dir.cdUp()) {
@@ -822,17 +839,24 @@ auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
     result.recipients = getRecipientList(folder, passStore);
     return result;
   }
-  if (const std::optional<QString> skipped = skippedGpgId(folder, passStore)) {
-    // The folder's own list was removed or replaced by a link: the list the
-    // walk found further up was not signed for this folder, so preselecting
-    // it would sign it in here with one click.
+  QString recordError;
+  if (const std::optional<QString> skipped =
+          skippedGpgId(folder, passStore, &recordError)) {
+    // The folder's own list was removed or replaced by a link (or the record
+    // that would tell cannot be read): the list the walk found further up
+    // was not signed for this folder, so preselecting it would sign it in
+    // here with one click.
     result.state = RecipientsForEditing::State::Rejected;
     result.warning =
-        tr("The recipient list %1 is missing or is not a regular file, so "
-           "nothing is preselected: the list of a parent folder was not "
-           "signed for this one. Select this folder's recipients yourself; "
-           "OK writes and signs a fresh list.")
-            .arg(*skipped);
+        recordError.isEmpty()
+            ? tr("The recipient list %1 is missing or is not a regular file, "
+                 "so nothing is preselected: the list of a parent folder was "
+                 "not signed for this one. Select this folder's recipients "
+                 "yourself; OK writes and signs a fresh list.")
+                  .arg(*skipped)
+            : tr("%1 Nothing is preselected: whether %2 was removed cannot "
+                 "be told.")
+                  .arg(recordError, *skipped);
     return result;
   }
   if (!QFileInfo::exists(gpgIdPath)) {

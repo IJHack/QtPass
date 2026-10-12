@@ -537,6 +537,7 @@ private Q_SLOTS:
   void operationsRefuseLinkedEntriesAndFoldersButRemoveUnlinks();
   void linkedGpgIdIsNotARecipientList();
   void skippedGpgIdNamesOnlyAListThatWasPassedOver();
+  void skippedGpgIdFailsClosedWhenTheRecordIsUnreadable();
   void aRemovedOrLinkedFolderListIsRefusedWhenSigning();
   void aRemovedFolderListFallsBackToTheParentWithoutSigning();
   void removeLinkedFolderWithGitUnlinksAndForgets();
@@ -2688,6 +2689,59 @@ void tst_imitatepass::skippedGpgIdNamesOnlyAListThatWasPassedOver() {
   QVERIFY(QFile::link(root.filePath(QStringLiteral("nowhere")), teamList));
   QVERIFY(Pass::skippedGpgId(teamEntry, store).has_value());
 #endif
+}
+
+/**
+ * @brief An unreadable generation record is not "never seen": the first
+ *        folder without its own list is named, with the record's reason,
+ *        instead of falling back to the parent's list unchecked.
+ */
+void tst_imitatepass::skippedGpgIdFailsClosedWhenTheRecordIsUnreadable() {
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir root(storeDir.path());
+  const QString store = root.path() + QLatin1Char('/');
+  QVERIFY(root.mkpath(QStringLiteral("secret")));
+  const QString entry = root.filePath(QStringLiteral("secret/x.gpg"));
+
+  const QString recordPath = GpgIdGeneration::recordFile();
+  QVERIFY(QDir().mkpath(QFileInfo(recordPath).absolutePath()));
+  QFile original(recordPath);
+  const bool hadRecord = original.exists();
+  QByteArray saved;
+  if (hadRecord) {
+    QVERIFY(original.open(QIODevice::ReadOnly));
+    saved = original.readAll();
+    original.close();
+  }
+  {
+    QFile garbage(recordPath);
+    QVERIFY(garbage.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    garbage.write("not a record");
+  }
+
+  QString why;
+  const std::optional<QString> skipped = Pass::skippedGpgId(entry, store, &why);
+
+  // Put the record back before checking, so a failure leaves no garbage.
+  if (hadRecord) {
+    QFile restore(recordPath);
+    QVERIFY(restore.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    restore.write(saved);
+  } else {
+    QVERIFY(QFile::remove(recordPath));
+  }
+
+  QVERIFY(skipped.has_value());
+  QCOMPARE(QDir::cleanPath(*skipped),
+           QDir::cleanPath(root.filePath(QStringLiteral("secret/.gpg-id"))));
+  QVERIFY2(!why.isEmpty(), "the record's reason is handed back");
+
+  // Readable again: the folder that never had a list is not named.
+  why.clear();
+  QCOMPARE(Pass::skippedGpgId(entry, store, &why), std::optional<QString>());
+  QVERIFY(why.isEmpty());
 }
 
 /**

@@ -157,10 +157,18 @@ auto ImitatePass::refuseSkippedGpgId(const QString &file) -> bool {
   if (!gpgIdSigner().enabled()) {
     return false;
   }
+  QString recordError;
   const std::optional<QString> skipped =
-      Pass::skippedGpgId(file, m_settings.passStore);
+      Pass::skippedGpgId(file, m_settings.passStore, &recordError);
   if (!skipped) {
     return false;
+  }
+  if (!recordError.isEmpty()) {
+    emit critical(tr("Cannot check the recipient list"),
+                  tr("%1 Whether %2 was removed cannot be told, so nothing "
+                     "was encrypted.")
+                      .arg(recordError, QDir::toNativeSeparators(*skipped)));
+    return true;
   }
   emit critical(
       tr("Recipient list missing"),
