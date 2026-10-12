@@ -11,6 +11,11 @@
 #include <QThread>
 #include <QtTest>
 #include <atomic>
+#include <optional>
+#include <utility>
+#ifndef Q_OS_WIN
+#include <unistd.h>
+#endif
 
 #include "../../../src/executor.h"
 #include "../../../src/pass.h"
@@ -59,6 +64,9 @@ private Q_SLOTS:
   void wslPrefixAsyncUsesExec();
   void everyWslSpellingReachesTheSameArgv();
   void translatePathForWslUsesTheConfiguredDistribution();
+  void childStartsInNewSessionBlocking();
+  void childStartsInNewSessionBlockingOwnProcess();
+  void childStartsInNewSessionAsync();
 #endif
   void parseWslCommandAcceptsEveryWslSpelling();
   void parseWslCommandRejectsShellCommandLines();
@@ -1105,6 +1113,86 @@ void tst_executor::nonExecutableFileNextToTheApplicationDoesNotMaskPath() {
     ~Cleanup() { QFile::remove(path); }
   } cleanup{path};
   QCOMPARE(Executor::resolveExecutable(name), name);
+}
+
+namespace {
+/// Has the shell print its own pid and session id: field 6 of
+/// /proc/$$/stat where there is one, `ps -o sid=` elsewhere.
+const QString kPrintPidAndSid = QStringLiteral(
+    "if [ -r /proc/$$/stat ]; then sid=$(cut -d' ' -f6 /proc/$$/stat); "
+    "else sid=$(ps -o sid= -p $$ 2>/dev/null); fi; echo $$ $sid");
+
+/// The "pid sid" a child printed; nullopt where the session id is unreadable.
+auto parsePidAndSid(const QString &output)
+    -> std::optional<std::pair<qint64, qint64>> {
+  const QStringList fields = output.simplified().split(QLatin1Char(' '));
+  if (fields.size() != 2)
+    return std::nullopt;
+  bool pidOk = false;
+  bool sidOk = false;
+  const qint64 pid = fields.at(0).toLongLong(&pidOk);
+  const qint64 sid = fields.at(1).toLongLong(&sidOk);
+  if (!pidOk || !sidOk)
+    return std::nullopt;
+  return std::make_pair(pid, sid);
+}
+
+/**
+ * @brief Whether the child that printed @p output led a session of its own,
+ * not the test's, so it had no controlling terminal to prompt on.
+ */
+auto ranInOwnSession(const QString &output) -> bool {
+  const auto ids = parsePidAndSid(output);
+  return ids && ids->second == ids->first &&
+         ids->second != static_cast<qint64>(::getsid(0));
+}
+} // namespace
+
+// A child must not inherit QtPass's controlling terminal: git and ssh would
+// prompt there, unseen, and stall the queue behind them.
+void tst_executor::childStartsInNewSessionBlocking() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QString output;
+  QCOMPARE(Executor::executeBlocking(sh, {"-c", kPrintPidAndSid}, &output), 0);
+  if (!parsePidAndSid(output))
+    QSKIP("no way to read a process's session id here");
+  QVERIFY2(ranInOwnSession(output), qPrintable(output));
+}
+
+void tst_executor::childStartsInNewSessionBlockingOwnProcess() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QProcess process;
+  QString output;
+  QCOMPARE(Executor::executeBlocking(process, sh, {"-c", kPrintPidAndSid},
+                                     QString(), &output),
+           0);
+  if (!parsePidAndSid(output))
+    QSKIP("no way to read a process's session id here");
+  QVERIFY2(ranInOwnSession(output), qPrintable(output));
+}
+
+void tst_executor::childStartsInNewSessionAsync() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy spy(&exec, &Executor::finished);
+  QVERIFY(spy.isValid());
+  // Twice: the queue reuses one QProcess, and the second run must not lose
+  // the setting.
+  exec.execute(1, sh, {"-c", kPrintPidAndSid}, true, false);
+  exec.execute(2, sh, {"-c", kPrintPidAndSid}, true, false);
+  QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 2, 5000);
+  for (const QList<QVariant> &run : std::as_const(spy)) {
+    const QString output = run.at(2).toString();
+    if (!parsePidAndSid(output))
+      QSKIP("no way to read a process's session id here");
+    QVERIFY2(ranInOwnSession(output), qPrintable(output));
+  }
 }
 
 #endif
