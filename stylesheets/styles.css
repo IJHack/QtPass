@@ -984,7 +984,7 @@ header ul a:active {
 }
 .ecosystem {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
   margin-block-end: 1.5rem;
 }
