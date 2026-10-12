@@ -1226,7 +1226,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">nový podpis sa neoveril ako podpis jedného z podpisových kľúčov</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1262,22 +1262,22 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Zoznam príjemcov nemožno skontrolovať</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Nedá sa zistiť, či bol %2 odstránený, preto sa nič nezašifrovalo.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Chýba zoznam príjemcov</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Podpísaný zoznam príjemcov %1 chýba alebo nie je bežný súbor. QtPass namiesto neho nepoužije zoznam nadradeného adresára: ten zoznam nebol podpísaný pre tento adresár. Ak je pod týmto názvom odkaz, odstráňte ho. Potom pre tento adresár otvorte Uživatelia a uložte jeho príjemcov, čím sa zapíše a podpíše nový zoznam.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1302,12 +1302,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Príjemcovia neboli zmenení</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Prešifrovanie stále prebieha. Počkajte, kým sa dokončí, a potom príjemcov uložte znova.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1399,7 +1399,7 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git skončil s kódom %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1564,7 +1564,7 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Príjemcovia neboli zapísaní do commitu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1573,11 +1573,7 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">Príjemcovia pre %1 boli zmenení a položky boli pre nich prešifrované, ale Git commit zlyhal:
-
-%2
-
-Zmena ešte nebola zapísaná do commitu ani odoslaná cez push. Opravte problém s Git a potom zmeny zapíšte do commitu alebo príjemcov uložte znova.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1586,11 +1582,7 @@ Zmena ešte nebola zapísaná do commitu ani odoslaná cez push. Opravte problé
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">Príjemcovia pre %1 boli zmenení, ale Git commit zlyhal:
-
-%2
-
-Prešifrovanie sa nedokončilo, preto sú niektoré alebo všetky položky stále zašifrované pre predchádzajúcich príjemcov, ktorí ich stále môžu čítať. Nič nebolo zapísané do commitu ani odoslané cez push. Opravte problém s Git a potom príjemcov uložte znova.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2924,17 +2916,17 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">Záznam generácií zoznamov príjemcov nemožno prečítať.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Zoznam príjemcov %1 chýba alebo nie je bežný súbor, preto nie je predvolene vybraný nikto: zoznam nadradeného adresára nebol podpísaný pre tento. Vyberte príjemcov tohto adresára sami; OK zapíše a podpíše nový zoznam.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Predvolene nie je vybraný nikto: nedá sa zistiť, či bol %2 odstránený.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
