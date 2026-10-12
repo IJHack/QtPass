@@ -126,7 +126,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1477"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished">بصمة المفتاح الكاملة المكوّنة من 40 حرفًا، كما يتطلب pass</translation>
+        <translation>بصمة المفتاح الكاملة المكوّنة من 40 حرفًا، كما يتطلب pass</translation>
     </message>
     <message>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
@@ -240,18 +240,18 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">عام</translation>
+        <translation>عام</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <location filename="../src/configdialog.ui" line="293"/>
         <source>Clipboard</source>
-        <translation type="unfinished">الحافظة</translation>
+        <translation>الحافظة</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
         <source>Passwords</source>
-        <translation type="unfinished">كلمات المرور</translation>
+        <translation>كلمات المرور</translation>
     </message>
     <message>
         <source>Show menu bar</source>
@@ -278,22 +278,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="810"/>
         <source>Fields:</source>
-        <translation type="unfinished">الحقول:</translation>
+        <translation>الحقول:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="824"/>
         <source>Off</source>
-        <translation type="unfinished">إيقاف</translation>
+        <translation>إيقاف</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="829"/>
         <source>Template fields</source>
-        <translation type="unfinished">حقول القالب</translation>
+        <translation>حقول القالب</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="834"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
-        <translation type="unfinished">حقول القالب وكل سطر &quot;مفتاح: قيمة&quot;</translation>
+        <translation>حقول القالب وكل سطر &quot;مفتاح: قيمة&quot;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
@@ -314,13 +314,13 @@
         <location filename="../src/configdialog.ui" line="1100"/>
         <location filename="../src/configdialog.ui" line="1103"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished">اختر الملف التنفيذي لـ gpg</translation>
+        <translation>اختر الملف التنفيذي لـ gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1113"/>
         <location filename="../src/configdialog.ui" line="1116"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished">اختر الملف التنفيذي لـ git</translation>
+        <translation>اختر الملف التنفيذي لـ git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1132"/>
@@ -336,7 +336,7 @@
         <location filename="../src/configdialog.ui" line="1168"/>
         <location filename="../src/configdialog.ui" line="1171"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished">اختر الملف التنفيذي لـ pwgen</translation>
+        <translation>اختر الملف التنفيذي لـ pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1184"/>
@@ -352,7 +352,7 @@
         <location filename="../src/configdialog.ui" line="1208"/>
         <location filename="../src/configdialog.ui" line="1211"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished">اختر الملف التنفيذي لـ pass</translation>
+        <translation>اختر الملف التنفيذي لـ pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1223"/>
@@ -386,115 +386,115 @@
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished">العرض</translation>
+        <translation>العرض</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">النظام</translation>
+        <translation>النظام</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">استخدم أيقونة الدرج</translation>
+        <translation>استخدم أيقونة الدرج</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">التمديدات</translation>
+        <translation>التمديدات</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished">إظهار رموز QR (qrencode)</translation>
+        <translation>إظهار رموز QR (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Never</source>
-        <translation type="unfinished">أبدًا</translation>
+        <translation>أبدًا</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
-        <translation type="unfinished">ثواني</translation>
+        <translation>ثواني</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished">لوحة المحتوى</translation>
+        <translation>لوحة المحتوى</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished">يتطلب وضعًا للحافظة في صفحة «الحافظة»، حتى يظل بالإمكان نسخ كلمة المرور المخفية</translation>
+        <translation>يتطلب وضعًا للحافظة في صفحة «الحافظة»، حتى يظل بالإمكان نسخ كلمة المرور المخفية</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished">إظهار محتوى الملف كما هو</translation>
+        <translation>إظهار محتوى الملف كما هو</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
         <source>Password generation</source>
-        <translation type="unfinished">إنشاء كلمه المرور</translation>
+        <translation>إنشاء كلمه المرور</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="626"/>
         <source>characters</source>
-        <translation type="unfinished">الاحرف</translation>
+        <translation>الاحرف</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="747"/>
         <source>Use pwgen</source>
-        <translation type="unfinished">استخدم pwgen</translation>
+        <translation>استخدم pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished">البحث عن gpg وgit وpwgen وpass في PATH</translation>
+        <translation>البحث عن gpg وgit وpwgen وpass في PATH</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
         <source>git</source>
-        <translation type="unfinished">git</translation>
+        <translation>git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1142"/>
         <source>gpg</source>
-        <translation type="unfinished">gpg</translation>
+        <translation>gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1158"/>
         <source>pwgen</source>
-        <translation type="unfinished">pwgen</translation>
+        <translation>pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">مسار اختياري لتجاوز SSH_AUTH_SOCK. اتركه فارغًا للاكتشاف التلقائي عبر gpgconf.</translation>
+        <translation>مسار اختياري لتجاوز SSH_AUTH_SOCK. اتركه فارغًا للاكتشاف التلقائي عبر gpgconf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1328"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished">مخازن كلمات المرور التي يعرفها QtPass هذا؛ اختر أحدها لتحريره</translation>
+        <translation>مخازن كلمات المرور التي يعرفها QtPass هذا؛ اختر أحدها لتحريره</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1343"/>
         <source>Add a profile</source>
-        <translation type="unfinished">إضافة ملف شخصي</translation>
+        <translation>إضافة ملف شخصي</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1361"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation type="unfinished">نسيان الملف الشخصي المحدد؛ يبقى المخزن نفسه على القرص</translation>
+        <translation>نسيان الملف الشخصي المحدد؛ يبقى المخزن نفسه على القرص</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1407"/>
         <source>Profile</source>
-        <translation type="unfinished">الملف الشخصي</translation>
+        <translation>الملف الشخصي</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
@@ -519,12 +519,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished">إعدادات Git لهذا الملف الشخصي؛ تحل محل الإعدادات الموجودة في صفحة Git أثناء تنشيطه</translation>
+        <translation>إعدادات Git لهذا الملف الشخصي؛ تحل محل الإعدادات الموجودة في صفحة Git أثناء تنشيطه</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished">المخزن النشط</translation>
+        <translation>المخزن النشط</translation>
     </message>
     <message>
         <source>Signing Key</source>
@@ -551,7 +551,7 @@
         <location filename="../src/configdialog.ui" line="1540"/>
         <location filename="../src/configdialog.ui" line="1543"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">اختر مجلد مخزن كلمات المرور</translation>
+        <translation>اختر مجلد مخزن كلمات المرور</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="795"/>
@@ -597,7 +597,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
         <source>No clipboard</source>
-        <translation type="unfinished">لا حافظة</translation>
+        <translation>لا حافظة</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="104"/>
@@ -618,12 +618,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Another profile already has this name</source>
-        <translation type="unfinished">يوجد ملف شخصي آخر يحمل هذا الاسم بالفعل</translation>
+        <translation>يوجد ملف شخصي آخر يحمل هذا الاسم بالفعل</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="287"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished">بصمات المفاتيح الكاملة فقط (40 أو 64 حرفًا سداسيًا عشريًا)، مفصولة بمسافات</translation>
+        <translation>بصمات المفاتيح الكاملة فقط (40 أو 64 حرفًا سداسيًا عشريًا)، مفصولة بمسافات</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="333"/>
@@ -681,12 +681,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="619"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished">تعذر تهيئة الملف الشخصي %1</translation>
+        <translation>تعذر تهيئة الملف الشخصي %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="622"/>
         <source>Profile %1</source>
-        <translation type="unfinished">الملف الشخصي %1</translation>
+        <translation>الملف الشخصي %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="645"/>
@@ -739,7 +739,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished">غير متاح على Wayland؛ استخدم بدلاً من ذلك قاعدة النوافذ «الإبقاء في الأعلى» في مركّب النوافذ لديك</translation>
+        <translation>غير متاح على Wayland؛ استخدم بدلاً من ذلك قاعدة النوافذ «الإبقاء في الأعلى» في مركّب النوافذ لديك</translation>
     </message>
     <message>
         <source>Failed to create password-store at: %1</source>
@@ -835,62 +835,62 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="466"/>
         <source>Hide passwords until asked</source>
-        <translation type="unfinished">إخفاء كلمات المرور حتى يُطلب إظهارها</translation>
+        <translation>إخفاء كلمات المرور حتى يُطلب إظهارها</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="467"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished">إظهار أيقونة في صينية النظام</translation>
+        <translation>إظهار أيقونة في صينية النظام</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="468"/>
         <source>Ready</source>
-        <translation type="unfinished">جاهز</translation>
+        <translation>جاهز</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="469"/>
         <source>Everything else can be changed later in Settings.</source>
-        <translation type="unfinished">يمكن تغيير كل شيء آخر لاحقًا في الإعدادات.</translation>
+        <translation>يمكن تغيير كل شيء آخر لاحقًا في الإعدادات.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="476"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation type="unfinished">عرض سطر كلمة المرور كنقاط؛ ويكشفه خيار «إظهار كلمة المرور»</translation>
+        <translation>عرض سطر كلمة المرور كنقاط؛ ويكشفه خيار «إظهار كلمة المرور»</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="487"/>
         <source>Store: %1</source>
-        <translation type="unfinished">المخزن: %1</translation>
+        <translation>المخزن: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="489"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation type="unfinished">هو مخزن كلمات مرور بالفعل وسيُستخدم كما هو.</translation>
+        <translation>هو مخزن كلمات مرور بالفعل وسيُستخدم كما هو.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="491"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
-        <translation type="unfinished">سيُهيَّأ للمفاتيح المحددة ويوضع تحت إدارة Git.</translation>
+        <translation>سيُهيَّأ للمفاتيح المحددة ويوضع تحت إدارة Git.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="493"/>
         <source>It will be set up for the ticked keys.</source>
-        <translation type="unfinished">سيُهيَّأ للمفاتيح المحددة.</translation>
+        <translation>سيُهيَّأ للمفاتيح المحددة.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="495"/>
         <source>GnuPG: %1</source>
-        <translation type="unfinished">GnuPG: %1</translation>
+        <translation>GnuPG: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="496"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished">تُنفَّذ العمليات عبر pass.</translation>
+        <translation>تُنفَّذ العمليات عبر pass.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="497"/>
         <source>Operations run through gpg and git directly.</source>
-        <translation type="unfinished">تُنفَّذ العمليات عبر gpg وgit مباشرة.</translation>
+        <translation>تُنفَّذ العمليات عبر gpg وgit مباشرة.</translation>
     </message>
 </context>
 <context>
@@ -898,7 +898,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="190"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished">لم يتم ضبط ملف تنفيذي لهذا الأمر</translation>
+        <translation>لم يتم ضبط ملف تنفيذي لهذا الأمر</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="219"/>
@@ -908,7 +908,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="413"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished">تعطل %1 أو تم إنهاؤه قسرًا</translation>
+        <translation>تعطل %1 أو تم إنهاؤه قسرًا</translation>
     </message>
 </context>
 <context>
@@ -930,7 +930,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">نسخ إلى الحافظة</translation>
+        <translation>نسخ إلى الحافظة</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -987,17 +987,17 @@ e-mail</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">انقر نقرًا مزدوجًا لإعادة تسمية هذا الحقل</translation>
+        <translation>انقر نقرًا مزدوجًا لإعادة تسمية هذا الحقل</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">إعادة تسمية الحقل…</translation>
+        <translation>إعادة تسمية الحقل…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">إزالة الحقل</translation>
+        <translation>إزالة الحقل</translation>
     </message>
 </context>
 <context>
@@ -1005,44 +1005,44 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="44"/>
         <source>Browse</source>
-        <translation type="unfinished">استعراض</translation>
+        <translation>استعراض</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="67"/>
         <location filename="../src/firstrunwizard.cpp" line="73"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished">مرحبا بكم في QtPass</translation>
+        <translation>مرحبا بكم في QtPass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="76"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished">QtPass واجهة رسومية لـ &lt;i&gt;pass&lt;/i&gt;، مدير كلمات المرور القياسي في Unix: كل كلمة مرور هي ملف مشفّر بواسطة GnuPG، محفوظ في مجلد يمكنك وضعه تحت إدارة Git.&lt;br&gt;&lt;br&gt;الصفحات التالية تعثر على GnuPG، وتتأكد من أن لديك مفتاحًا للتشفير إليه، وتختار المجلد الذي تُحفظ فيه كلمات مرورك. لن يُكتب شيء حتى تضغط على «إنهاء».</translation>
+        <translation>QtPass واجهة رسومية لـ &lt;i&gt;pass&lt;/i&gt;، مدير كلمات المرور القياسي في Unix: كل كلمة مرور هي ملف مشفّر بواسطة GnuPG، محفوظ في مجلد يمكنك وضعه تحت إدارة Git.&lt;br&gt;&lt;br&gt;الصفحات التالية تعثر على GnuPG، وتتأكد من أن لديك مفتاحًا للتشفير إليه، وتختار المجلد الذي تُحفظ فيه كلمات مرورك. لن يُكتب شيء حتى تضغط على «إنهاء».</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="128"/>
         <source>Error</source>
-        <translation type="unfinished">خطأ</translation>
+        <translation>خطأ</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="129"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">عدم إنشاء مخزن لكلمات السر: %1</translation>
+        <translation>عدم إنشاء مخزن لكلمات السر: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="147"/>
         <location filename="../src/firstrunwizard.cpp" line="171"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">مخزن كلمة السر غير مبدئي</translation>
+        <translation>مخزن كلمة السر غير مبدئي</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="154"/>
         <source>Password store</source>
-        <translation type="unfinished">مخزن كلمات المرور</translation>
+        <translation>مخزن كلمات المرور</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="155"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished">%1 يحتوي بالفعل على ملفات مشفّرة؛ لم تُعَد تشفيرها إلى المفاتيح المحددة. افتح «المستخدمون» بعد بدء التشغيل للقيام بذلك.</translation>
+        <translation>%1 يحتوي بالفعل على ملفات مشفّرة؛ لم تُعَد تشفيرها إلى المفاتيح المحددة. افتح «المستخدمون» بعد بدء التشغيل للقيام بذلك.</translation>
     </message>
 </context>
 <context>
@@ -1050,88 +1050,88 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="132"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
-        <translation type="unfinished">لا يمكن الوصول إلى سجل أجيال قوائم المستلمين، %1.</translation>
+        <translation>لا يمكن الوصول إلى سجل أجيال قوائم المستلمين، %1.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="141"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
-        <translation type="unfinished">سجل أجيال قوائم المستلمين، %1، غير قابل للقراءة. لا تُقبل قوائم المستلمين الموقَّعة حتى يُصلَح أو يُزال (وإزالته تمحو ما قُبِل من قبل).</translation>
+        <translation>سجل أجيال قوائم المستلمين، %1، غير قابل للقراءة. لا تُقبل قوائم المستلمين الموقَّعة حتى يُصلَح أو يُزال (وإزالته تمحو ما قُبِل من قبل).</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="172"/>
         <location filename="../src/gpgidgeneration.cpp" line="185"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
-        <translation type="unfinished">لا يمكن كتابة سجل أجيال قوائم المستلمين، %1.</translation>
+        <translation>لا يمكن كتابة سجل أجيال قوائم المستلمين، %1.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="212"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
-        <translation type="unfinished">تعذر قفل سجل أجيال قوائم المستلمين، %1: ربما تستخدمه نسخة أخرى من QtPass، أو لا يمكن الكتابة في مجلده.</translation>
+        <translation>تعذر قفل سجل أجيال قوائم المستلمين، %1: ربما تستخدمه نسخة أخرى من QtPass، أو لا يمكن الكتابة في مجلده.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="315"/>
         <source>The list carries more than one generation line.</source>
-        <translation type="unfinished">تحتوي القائمة على أكثر من سطر جيل واحد.</translation>
+        <translation>تحتوي القائمة على أكثر من سطر جيل واحد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="323"/>
         <source>The generation line is malformed: %1</source>
-        <translation type="unfinished">صيغة سطر الجيل غير صحيحة: %1</translation>
+        <translation>صيغة سطر الجيل غير صحيحة: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="329"/>
         <source>The list carries more than one folder line.</source>
-        <translation type="unfinished">تحتوي القائمة على أكثر من سطر مجلد واحد.</translation>
+        <translation>تحتوي القائمة على أكثر من سطر مجلد واحد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="345"/>
         <source>The folder line is malformed: %1</source>
-        <translation type="unfinished">صيغة سطر المجلد غير صحيحة: %1</translation>
+        <translation>صيغة سطر المجلد غير صحيحة: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="349"/>
         <source>The header line is malformed: %1</source>
-        <translation type="unfinished">صيغة سطر الترويسة غير صحيحة: %1</translation>
+        <translation>صيغة سطر الترويسة غير صحيحة: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="381"/>
         <source>The list carries a generation line but no folder line.</source>
-        <translation type="unfinished">تحتوي القائمة على سطر جيل لكن دون سطر مجلد.</translation>
+        <translation>تحتوي القائمة على سطر جيل لكن دون سطر مجلد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="528"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
-        <translation type="unfinished">قائمة المستلمين الموقَّعة %1 ليست قائمة يُوثَق بها: %2</translation>
+        <translation>قائمة المستلمين الموقَّعة %1 ليست قائمة يُوثَق بها: %2</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="455"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
-        <translation type="unfinished">قائمة المستلمين الموقَّعة %1 كُتبت للمجلد «%2» من المخزن، لا للمجلد «%3»، ولذلك لا تُستخدم. ربما نسخها أحدٌ آخر إلى هنا؛ أما إذا كان المجلد قد نُقل أو أُعيدت تسميته، فيفتح حامل مفتاح التوقيع «المستخدمون» عليه ويحفظ المستلمين، مما يربط القائمة بموقعها الحالي.</translation>
+        <translation>قائمة المستلمين الموقَّعة %1 كُتبت للمجلد «%2» من المخزن، لا للمجلد «%3»، ولذلك لا تُستخدم. ربما نسخها أحدٌ آخر إلى هنا؛ أما إذا كان المجلد قد نُقل أو أُعيدت تسميته، فيفتح حامل مفتاح التوقيع «المستخدمون» عليه ويحفظ المستلمين، مما يربط القائمة بموقعها الحالي.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="468"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
-        <translation type="unfinished">الجيل %1 هو أعلى جيل ممكن، فلا يمكن كتابة قائمة أحدث هنا: إزالة %2 تمحو ما قَبِله هذا الجهاز من قبل، وبعدها يتجاوز حامل مفتاح التوقيع ذلك بفتح «المستخدمون» و%3.</translation>
+        <translation>الجيل %1 هو أعلى جيل ممكن، فلا يمكن كتابة قائمة أحدث هنا: إزالة %2 تمحو ما قَبِله هذا الجهاز من قبل، وبعدها يتجاوز حامل مفتاح التوقيع ذلك بفتح «المستخدمون» و%3.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="475"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
-        <translation type="unfinished">يتجاوز حامل مفتاح التوقيع ذلك بفتح «المستخدمون» و%1، مما يكتب الجيل %2. أما إزالة %3 فتمحو ما قَبِله هذا الجهاز من قبل.</translation>
+        <translation>يتجاوز حامل مفتاح التوقيع ذلك بفتح «المستخدمون» و%1، مما يكتب الجيل %2. أما إزالة %3 فتمحو ما قَبِله هذا الجهاز من قبل.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="492"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
-        <translation type="unfinished">قائمة المستلمين الموقَّعة %1 لا تحتوي على سطر جيل، في حين أن الجيل %2 قد قُبِل هنا من قبل. لا يكتب pass سطر جيل (ولا عبر واجهة pass الخلفية في QtPass)، ولم يكن QtPass يكتبه قبل الإصدار 2.0؛ ومن دونه قد تكون القائمة كُتبت لمجلد آخر من المخزن ونُسخت إلى هنا. %3</translation>
+        <translation>قائمة المستلمين الموقَّعة %1 لا تحتوي على سطر جيل، في حين أن الجيل %2 قد قُبِل هنا من قبل. لا يكتب pass سطر جيل (ولا عبر واجهة pass الخلفية في QtPass)، ولم يكن QtPass يكتبه قبل الإصدار 2.0؛ ومن دونه قد تكون القائمة كُتبت لمجلد آخر من المخزن ونُسخت إلى هنا. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="501"/>
         <source>selecting the recipients afresh and saving</source>
-        <translation type="unfinished">تحديد المستلمين من جديد والحفظ</translation>
+        <translation>تحديد المستلمين من جديد والحفظ</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="626"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
-        <translation type="unfinished">انتقل سجل أجيال قوائم المستلمين، %1، إلى الجيل %2 في أثناء كتابة الجيل %3.</translation>
+        <translation>انتقل سجل أجيال قوائم المستلمين، %1، إلى الجيل %2 في أثناء كتابة الجيل %3.</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
@@ -1144,27 +1144,27 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="506"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
-        <translation type="unfinished">قائمة المستلمين الموقَّعة %1 من الجيل %2، وهو أقدم من الجيل %3، آخر جيل قَبِله QtPass هنا. ربما أعاد أحدٌ آخر وضعها هنا. %4</translation>
+        <translation>قائمة المستلمين الموقَّعة %1 من الجيل %2، وهو أقدم من الجيل %3، آخر جيل قَبِله QtPass هنا. ربما أعاد أحدٌ آخر وضعها هنا. %4</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="513"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
-        <translation type="unfinished">حفظ المستلمين: المستلمون المحددون مسبقًا هناك هم مستلمو هذه القائمة، فأزل أولًا كل من لم يعد ينبغي أن يملك حق الوصول</translation>
+        <translation>حفظ المستلمين: المستلمون المحددون مسبقًا هناك هم مستلمو هذه القائمة، فأزل أولًا كل من لم يعد ينبغي أن يملك حق الوصول</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="561"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
-        <translation type="unfinished">قائمة المستلمين الموقَّعة %1 من الجيل %2، وهو الجيل نفسه الذي تحمله قائمة مختلفة قَبِلها هذا الجهاز من قبل. فإما أن جهازين حفظا المستلمين في الوقت نفسه (ولا بد أن Git قد أظهر التعارض)، أو أن قائمة أصلية من ذلك الجيل قد وُضعت في مكانها. %3</translation>
+        <translation>قائمة المستلمين الموقَّعة %1 من الجيل %2، وهو الجيل نفسه الذي تحمله قائمة مختلفة قَبِلها هذا الجهاز من قبل. فإما أن جهازين حفظا المستلمين في الوقت نفسه (ولا بد أن Git قد أظهر التعارض)، أو أن قائمة أصلية من ذلك الجيل قد وُضعت في مكانها. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="569"/>
         <source>checking the recipients and saving</source>
-        <translation type="unfinished">مراجعة المستلمين والحفظ</translation>
+        <translation>مراجعة المستلمين والحفظ</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="594"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
-        <translation type="unfinished">بلغت قائمة المستلمين %1 الجيل %2، وهو أعلى جيل ممكن؛ لا يمكن كتابة القائمة.</translation>
+        <translation>بلغت قائمة المستلمين %1 الجيل %2، وهو أعلى جيل ممكن؛ لا يمكن كتابة القائمة.</translation>
     </message>
 </context>
 <context>
@@ -1172,12 +1172,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="75"/>
         <source>the recipient list is not valid UTF-8</source>
-        <translation type="unfinished">قائمة المستلمين ليست بترميز UTF-8 صالح</translation>
+        <translation>قائمة المستلمين ليست بترميز UTF-8 صالح</translation>
     </message>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="102"/>
         <source>gpg wrote no signature</source>
-        <translation type="unfinished">لم يكتب gpg أي توقيع</translation>
+        <translation>لم يكتب gpg أي توقيع</translation>
     </message>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
@@ -1202,12 +1202,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="220"/>
         <source>Cannot add</source>
-        <translation type="unfinished">لا يمكن الإضافة</translation>
+        <translation>لا يمكن الإضافة</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="220"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 موجود بالفعل.</translation>
+        <translation>%1 موجود بالفعل.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="198"/>
@@ -1238,12 +1238,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
         <source>Cannot write</source>
-        <translation type="unfinished">لا يمكن الكتابة</translation>
+        <translation>لا يمكن الكتابة</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="233"/>
         <source>Cannot create a temporary directory: %1</source>
-        <translation type="unfinished">لا يمكن إنشاء دليل مؤقت: %1</translation>
+        <translation>لا يمكن إنشاء دليل مؤقت: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="401"/>
@@ -1288,7 +1288,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="112"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished">فشل Git pull: %1</translation>
+        <translation>فشل Git pull: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="193"/>
@@ -1300,17 +1300,17 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="281"/>
         <source>Delete failed</source>
-        <translation type="unfinished">فشل الحذف</translation>
+        <translation>فشل الحذف</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="282"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">تعذر إزالة الرابط %1.</translation>
+        <translation>تعذر إزالة الرابط %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="324"/>
         <source>%1 is not inside the password store.</source>
-        <translation type="unfinished">%1 ليس داخل مخزن كلمات المرور.</translation>
+        <translation>%1 ليس داخل مخزن كلمات المرور.</translation>
     </message>
     <message>
         <source>Failed to open .gpg-id for writing.</source>
@@ -1323,12 +1323,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>Recipient list written, but not recorded</source>
-        <translation type="unfinished">كُتبت قائمة المستلمين، لكنها لم تُسجَّل</translation>
+        <translation>كُتبت قائمة المستلمين، لكنها لم تُسجَّل</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>%1 Save the recipients once more to get through.</source>
-        <translation type="unfinished">%1 احفظ المستلمين مرة أخرى لتجاوز ذلك.</translation>
+        <translation>%1 احفظ المستلمين مرة أخرى لتجاوز ذلك.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="388"/>
@@ -1345,12 +1345,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="404"/>
         <source>Failed to sign %1: %2</source>
-        <translation type="unfinished">فشل توقيع %1: %2</translation>
+        <translation>فشل توقيع %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="499"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished">فشلت إزالة التوقيع القديم %1.</translation>
+        <translation>فشلت إزالة التوقيع القديم %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
@@ -1362,32 +1362,32 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="641"/>
         <location filename="../src/imitatepass.cpp" line="649"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished">بقايا من إعادة تشفير سابقة</translation>
+        <translation>بقايا من إعادة تشفير سابقة</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="614"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
-        <translation type="unfinished">%1 ليس ملفًا عاديًا ولم تتم استعادته. افحصه وأزله، ثم أعد التشفير مرة أخرى.</translation>
+        <translation>%1 ليس ملفًا عاديًا ولم تتم استعادته. افحصه وأزله، ثم أعد التشفير مرة أخرى.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="642"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished">%1 موجود بجوار %2. كلاهما نسختان مشفّرتان من المدخل؛ تحقق من النسخة التي تريدها واحذف الأخرى، ثم أعد التشفير مرة أخرى.</translation>
+        <translation>%1 موجود بجوار %2. كلاهما نسختان مشفّرتان من المدخل؛ تحقق من النسخة التي تريدها واحذف الأخرى، ثم أعد التشفير مرة أخرى.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="656"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished">تمت استعادة %1 من النسخة الاحتياطية التي خلّفتها إعادة تشفير مُنقطعة.</translation>
+        <translation>تمت استعادة %1 من النسخة الاحتياطية التي خلّفتها إعادة تشفير مُنقطعة.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="650"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished">%1 مفقود وتعذّر إعادة تسمية نسخته الاحتياطية %2 إلى اسمه الأصلي. أعد تسميته يدويًا، ثم أعد التشفير مرة أخرى.</translation>
+        <translation>%1 مفقود وتعذّر إعادة تسمية نسخته الاحتياطية %2 إلى اسمه الأصلي. أعد تسميته يدويًا، ثم أعد التشفير مرة أخرى.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="889"/>
         <source>%1 could not be re-encrypted: %2</source>
-        <translation type="unfinished">تعذر إعادة تشفير %1: %2</translation>
+        <translation>تعذر إعادة تشفير %1: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1168"/>
@@ -1430,17 +1430,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="953"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished">هناك عملية إعادة تشفير قيد التنفيذ بالفعل</translation>
+        <translation>هناك عملية إعادة تشفير قيد التنفيذ بالفعل</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="960"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">ليس مجلدًا من المخزن</translation>
+        <translation>ليس مجلدًا من المخزن</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="961"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
-        <translation type="unfinished">%1 رابط رمزي أو نقطة وصل، أو يقع خلف أحدهما. ما يشير إليه ذلك ليس جزءًا من مخزن كلمات المرور ولم يُعَد تشفيره.</translation>
+        <translation>%1 رابط رمزي أو نقطة وصل، أو يقع خلف أحدهما. ما يشير إليه ذلك ليس جزءًا من مخزن كلمات المرور ولم يُعَد تشفيره.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="970"/>
@@ -1457,27 +1457,27 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="1044"/>
         <location filename="../src/imitatepass.cpp" line="1050"/>
         <source>Git pull failed</source>
-        <translation type="unfinished">فشل Git pull</translation>
+        <translation>فشل Git pull</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1045"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">تعذّر التحقق من وجود ملفات غير مدمجة في المخزن بعد السحب. تحقّق منه باستخدام git قبل إعادة التشفير.</translation>
+        <translation>تعذّر التحقق من وجود ملفات غير مدمجة في المخزن بعد السحب. تحقّق منه باستخدام git قبل إعادة التشفير.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1051"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished">ترك السحب المخزن وفيه ملفات غير مدمجة. حلّ التعارض قبل إعادة التشفير.</translation>
+        <translation>ترك السحب المخزن وفيه ملفات غير مدمجة. حلّ التعارض قبل إعادة التشفير.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1055"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished">فشل Git pull، تتم إعادة تشفير المخزن كما هو</translation>
+        <translation>فشل Git pull، تتم إعادة تشفير المخزن كما هو</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1066"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>تم تخطي %n مدخل: الرابط الرمزي أو نقطة الوصل أو الملف الخاص ليس جزءًا من المخزن.</numerusform>
             <numerusform>تم تخطي مدخل واحد: الرابط الرمزي أو نقطة الوصل أو الملف الخاص ليس جزءًا من المخزن.</numerusform>
             <numerusform>تم تخطي %n مدخلين: الرابط الرمزي أو نقطة الوصل أو الملف الخاص ليس جزءًا من المخزن.</numerusform>
@@ -1499,7 +1499,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1166"/>
         <source>... and %n more</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>... و%n أخرى</numerusform>
             <numerusform>... وواحد آخر</numerusform>
             <numerusform>... و%n آخران</numerusform>
@@ -1511,7 +1511,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1169"/>
         <source>%n file(s) could not be re-encrypted:</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>تعذر إعادة تشفير %n ملف:</numerusform>
             <numerusform>تعذر إعادة تشفير ملف واحد:</numerusform>
             <numerusform>تعذر إعادة تشفير %n ملفين:</numerusform>
@@ -1523,7 +1523,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished">أُلغيت إعادة التشفير: تم فحص %1 من أصل %2 من الملفات، وأُعيد تشفير %3، وفشل %4</translation>
+        <translation>أُلغيت إعادة التشفير: تم فحص %1 من أصل %2 من الملفات، وأُعيد تشفير %3، وفشل %4</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1242"/>
@@ -1560,12 +1560,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished">لم يتم ضبط الملف التنفيذي لـ Git، سيتم تخطي git</translation>
+        <translation>لم يتم ضبط الملف التنفيذي لـ Git، سيتم تخطي git</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1489"/>
         <source>gpg wrote no ciphertext for %1.</source>
-        <translation type="unfinished">لم يكتب gpg أي نص مشفّر لـ %1.</translation>
+        <translation>لم يكتب gpg أي نص مشفّر لـ %1.</translation>
     </message>
     <message>
         <source>Cannot create a temporary file next to %1: %2</source>
@@ -1604,7 +1604,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1198"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>لن يتم تنفيذ git push: فشلت إعادة تشفير %n ملف</numerusform>
             <numerusform>لن يتم تنفيذ git push: فشلت إعادة تشفير ملف واحد</numerusform>
             <numerusform>لن يتم تنفيذ git push: فشلت إعادة تشفير %n ملفين</numerusform>
@@ -1644,7 +1644,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished">من الحافظة</translation>
+        <translation>من الحافظة</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1692,7 +1692,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">لا يبدو %1 مفتاح GPG بتنسيق ASCII-armored. حوّله أولًا باستخدام &lt;code&gt;gpg --armor --export&lt;/code&gt;، أو ألصق الكتلة المدرّعة عبر &lt;b&gt;من الحافظة&lt;/b&gt;.</translation>
+        <translation>لا يبدو %1 مفتاح GPG بتنسيق ASCII-armored. حوّله أولًا باستخدام &lt;code&gt;gpg --armor --export&lt;/code&gt;، أو ألصق الكتلة المدرّعة عبر &lt;b&gt;من الحافظة&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -1726,7 +1726,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished">تم استيراد المفتاح العمومي %1. تحقق من بصمته مع مالكه قبل التشفير إليه: استيراد مفتاح لا يقول شيئًا عمّن يحمله.</translation>
+        <translation>تم استيراد المفتاح العمومي %1. تحقق من بصمته مع مالكه قبل التشفير إليه: استيراد مفتاح لا يقول شيئًا عمّن يحمله.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>
@@ -1738,32 +1738,32 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/firstrunwizard.cpp" line="288"/>
         <source>Generate a new key pair…</source>
-        <translation type="unfinished">توليد زوج مفاتيح جديد…</translation>
+        <translation>توليد زوج مفاتيح جديد…</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="290"/>
         <source>Your key</source>
-        <translation type="unfinished">مفتاحك</translation>
+        <translation>مفتاحك</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="291"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation type="unfinished">تُشفَّر كلمات المرور إلى مفاتيح GnuPG. حدد المفاتيح التي ينبغي أن تتمكن من فتح مخزن جديد؛ تحتاج إلى مفتاح واحد على الأقل يوجد جزؤه السري على هذا الجهاز.</translation>
+        <translation>تُشفَّر كلمات المرور إلى مفاتيح GnuPG. حدد المفاتيح التي ينبغي أن تتمكن من فتح مخزن جديد؛ تحتاج إلى مفتاح واحد على الأقل يوجد جزؤه السري على هذا الجهاز.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="319"/>
         <source>expired</source>
-        <translation type="unfinished">منتهي الصلاحية</translation>
+        <translation>منتهي الصلاحية</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="321"/>
         <source>not usable</source>
-        <translation type="unfinished">غير قابل للاستخدام</translation>
+        <translation>غير قابل للاستخدام</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="334"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
-        <translation type="unfinished">لا يملك GnuPG أي مفتاح سري بعد. ولّد مفتاحًا هنا، أو استورد مفتاحك الحالي باستخدام gpg أولًا.</translation>
+        <translation>لا يملك GnuPG أي مفتاح سري بعد. ولّد مفتاحًا هنا، أو استورد مفتاحك الحالي باستخدام gpg أولًا.</translation>
     </message>
 </context>
 <context>
@@ -1796,12 +1796,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
-        <translation type="unfinished">يمكن عندئذٍ لأي شخص يحصل على ملف المفتاح الخاص قراءة كل كلمة مرور دون أن يُطلب منه أي شيء.</translation>
+        <translation>يمكن عندئذٍ لأي شخص يحصل على ملف المفتاح الخاص قراءة كل كلمة مرور دون أن يُطلب منه أي شيء.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
         <source>No passphrase: store the private key unprotected</source>
-        <translation type="unfinished">بدون عبارة مرور: تخزين المفتاح الخاص دون حماية</translation>
+        <translation>بدون عبارة مرور: تخزين المفتاح الخاص دون حماية</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -1856,12 +1856,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="210"/>
         <source>No password store backend available</source>
-        <translation type="unfinished">لا توجد واجهة خلفية متاحة لمخزن كلمات المرور</translation>
+        <translation>لا توجد واجهة خلفية متاحة لمخزن كلمات المرور</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="244"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished">فشل إنشاء المفتاح: %1</translation>
+        <translation>فشل إنشاء المفتاح: %1</translation>
     </message>
 </context>
 <context>
@@ -1936,7 +1936,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass واجهة رسومية لـ &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;، مدير كلمات المرور القياسي في يونكس.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass واجهة رسومية لـ &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;، مدير كلمات المرور القياسي في يونكس.&lt;/p&gt;
 &lt;p&gt;يرجى الإبلاغ عن أي &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;مشاكل&lt;/a&gt; تواجهها مع هذا البرنامج.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;الوثائق&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;شفرة المصدر&lt;/a&gt;&lt;/p&gt;</translation>
@@ -1944,97 +1944,97 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Show &amp;process output</source>
-        <translation type="unfinished">إظهار م&amp;خرجات العملية</translation>
+        <translation>إظهار م&amp;خرجات العملية</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="500"/>
         <source>Show or hide the output of git, gpg and pass</source>
-        <translation type="unfinished">إظهار أو إخفاء مخرجات git وgpg وpass</translation>
+        <translation>إظهار أو إخفاء مخرجات git وgpg وpass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
         <source>Show &amp;menu bar</source>
-        <translation type="unfinished">إظهار شريط ال&amp;قوائم</translation>
+        <translation>إظهار شريط ال&amp;قوائم</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="514"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
-        <translation type="unfinished">إخفاء شريط القوائم أو إظهاره؛ يعيده Ctrl+M</translation>
+        <translation>إخفاء شريط القوائم أو إظهاره؛ يعيده Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="517"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished">Ctrl+M</translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished">&amp;تهيئة QtPass…</translation>
+        <translation>&amp;تهيئة QtPass…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
         <source>Settings</source>
-        <translation type="unfinished">الإعدادات</translation>
+        <translation>الإعدادات</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished">تغيير إعدادات QtPass</translation>
+        <translation>تغيير إعدادات QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished">Ctrl+,</translation>
+        <translation>Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="539"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished">&amp;إغلاق النافذة</translation>
+        <translation>&amp;إغلاق النافذة</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="542"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">إغلاق النافذة؛ مع تفعيل «إخفاء عند الإغلاق» يبقى QtPass في صينية النظام</translation>
+        <translation>إغلاق النافذة؛ مع تفعيل «إخفاء عند الإغلاق» يبقى QtPass في صينية النظام</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="545"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="550"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;يترك</translation>
+        <translation>&amp;يترك</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="553"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="561"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished">&amp;الأسئلة الشائعة</translation>
+        <translation>&amp;الأسئلة الشائعة</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="564"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished">افتح الأسئلة الشائعة على qtpass.org</translation>
+        <translation>افتح الأسئلة الشائعة على qtpass.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="567"/>
         <source>F1</source>
-        <translation type="unfinished">F1</translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="572"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished">&amp;حول QtPass</translation>
+        <translation>&amp;حول QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="580"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished">حول &amp;Qt</translation>
+        <translation>حول &amp;Qt</translation>
     </message>
     <message>
         <source>Clear output</source>
@@ -2122,22 +2122,22 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;ملف</translation>
+        <translation>&amp;ملف</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished">م&amp;خزن</translation>
+        <translation>م&amp;خزن</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished">&amp;إعدادات</translation>
+        <translation>&amp;إعدادات</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="374"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">م&amp;ساعدة</translation>
+        <translation>م&amp;ساعدة</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="486"/>
@@ -2253,12 +2253,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="761"/>
         <source>About QtPass</source>
-        <translation type="unfinished">حول QtPass</translation>
+        <translation>حول QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="762"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;واجهة رسومية متعددة المنصات لـ &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;، مدير كلمات المرور المعياري في Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;المصدر والمشكلات&lt;/a&gt;&lt;/p&gt;&lt;p&gt;حقوق النشر &amp;copy; 2014&amp;ndash;%2 IJhack. مرخّص بموجب &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;رخصة GNU GPL الإصدار 3&lt;/a&gt; أو أي إصدار أحدث.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;واجهة رسومية متعددة المنصات لـ &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;، مدير كلمات المرور المعياري في Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;المصدر والمشكلات&lt;/a&gt;&lt;/p&gt;&lt;p&gt;حقوق النشر &amp;copy; 2014&amp;ndash;%2 IJhack. مرخّص بموجب &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;رخصة GNU GPL الإصدار 3&lt;/a&gt; أو أي إصدار أحدث.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="855"/>
@@ -2321,12 +2321,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1059"/>
         <source>Delete link?</source>
-        <translation type="unfinished">حذف الرابط؟</translation>
+        <translation>حذف الرابط؟</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
-        <translation type="unfinished">%1 رابط رمزي أو نقطة وصل. هل تريد إزالة الرابط؟ أما ما يشير إليه فسيُترك كما هو.</translation>
+        <translation>%1 رابط رمزي أو نقطة وصل. هل تريد إزالة الرابط؟ أما ما يشير إليه فسيُترك كما هو.</translation>
     </message>
     <message>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
@@ -2380,17 +2380,17 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">هل أنت متأكد من أنك تريد حذف %1؟</translation>
+        <translation>هل أنت متأكد من أنك تريد حذف %1؟</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
-        <translation type="unfinished">هل أنت متأكد من أنك تريد حذف %1 وكل محتواه؟</translation>
+        <translation>هل أنت متأكد من أنك تريد حذف %1 وكل محتواه؟</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
-        <translation type="unfinished">تنبيه: توجد ملفات غير متوقعة في المجلد المحدد، تحقق منها قبل المتابعة.</translation>
+        <translation>تنبيه: توجد ملفات غير متوقعة في المجلد المحدد، تحقق منها قبل المتابعة.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1332"/>
@@ -2432,22 +2432,22 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1584"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished">تتم إعادة تشفير كلمات المرور...</translation>
+        <translation>تتم إعادة تشفير كلمات المرور...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1585"/>
         <source>Cancel</source>
-        <translation type="unfinished">إلغاء</translation>
+        <translation>إلغاء</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1593"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished">يتم إلغاء إعادة التشفير</translation>
+        <translation>يتم إلغاء إعادة التشفير</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1604"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished">إعادة تشفير كلمات المرور: %1 من %2</translation>
+        <translation>إعادة تشفير كلمات المرور: %1 من %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1625"/>
@@ -2463,12 +2463,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">ليس مجلدًا من المخزن</translation>
+        <translation>ليس مجلدًا من المخزن</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1674"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 رابط رمزي أو نقطة وصل، أو يقع خلف أحدهما. ما يشير إليه ذلك ليس جزءًا من مخزن كلمات المرور ويُترك كما هو.</translation>
+        <translation>%1 رابط رمزي أو نقطة وصل، أو يقع خلف أحدهما. ما يشير إليه ذلك ليس جزءًا من مخزن كلمات المرور ويُترك كما هو.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1682"/>
@@ -2553,7 +2553,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1420"/>
         <source>New folder</source>
-        <translation type="unfinished">مجلد جديد</translation>
+        <translation>مجلد جديد</translation>
     </message>
     <message>
         <source>Rename File To: </source>
@@ -2616,12 +2616,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="162"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished">مجلد GPG الرئيسي المضبوط %1 غير موجود، سيتم استخدام حلقة المفاتيح الافتراضية</translation>
+        <translation>مجلد GPG الرئيسي المضبوط %1 غير موجود، سيتم استخدام حلقة المفاتيح الافتراضية</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="170"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished">مجلد GPG الرئيسي المضبوط %1 غير موجود، سيتم استخدام GNUPGHOME %2 من متغيرات البيئة</translation>
+        <translation>مجلد GPG الرئيسي المضبوط %1 غير موجود، سيتم استخدام GNUPGHOME %2 من متغيرات البيئة</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="183"/>
@@ -2676,17 +2676,17 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="461"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">فشل التشفير: لا يمكن استخدام مفتاح GPG لأحد المستلمين. ربما انتهت صلاحيته أو أُلغي، أو لا يملك مفتاحًا فرعيًا للتشفير، أو غير موثوق؛ رسالة gpg أدناه توضّح السبب.</translation>
+        <translation>فشل التشفير: لا يمكن استخدام مفتاح GPG لأحد المستلمين. ربما انتهت صلاحيته أو أُلغي، أو لا يملك مفتاحًا فرعيًا للتشفير، أو غير موثوق؛ رسالة gpg أدناه توضّح السبب.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="726"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 رابط رمزي أو نقطة وصل، أو يقع خلف أحدهما. ما يشير إليه ذلك ليس جزءًا من مخزن كلمات المرور ويُترك كما هو.</translation>
+        <translation>%1 رابط رمزي أو نقطة وصل، أو يقع خلف أحدهما. ما يشير إليه ذلك ليس جزءًا من مخزن كلمات المرور ويُترك كما هو.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="732"/>
         <source>Not part of the store</source>
-        <translation type="unfinished">ليس جزءًا من المخزن</translation>
+        <translation>ليس جزءًا من المخزن</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
@@ -2706,12 +2706,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">قائمة المستلمين %1 لا تجتاز التحقق بمفتاح التوقيع، ولذلك لم يُحدَّد شيء مسبقًا: الحفظ سيوقّع كل ما فيها. حدد المستلمين بنفسك؛ يكتب OK قائمة جديدة ويوقّعها.</translation>
+        <translation>قائمة المستلمين %1 لا تجتاز التحقق بمفتاح التوقيع، ولذلك لم يُحدَّد شيء مسبقًا: الحفظ سيوقّع كل ما فيها. حدد المستلمين بنفسك؛ يكتب OK قائمة جديدة ويوقّعها.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="819"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
-        <translation type="unfinished">%1 لم يُحدَّد شيء مسبقًا: الحفظ سيوقّع كل ما فيها. حدد المستلمين بنفسك.</translation>
+        <translation>%1 لم يُحدَّد شيء مسبقًا: الحفظ سيوقّع كل ما فيها. حدد المستلمين بنفسك.</translation>
     </message>
 </context>
 <context>
@@ -2726,27 +2726,27 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
         <source>Folder</source>
-        <translation type="unfinished">المجلد</translation>
+        <translation>المجلد</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation type="unfinished">مجلد مخزن كلمات المرور الذي سيوضع فيه المدخل الجديد</translation>
+        <translation>مجلد مخزن كلمات المرور الذي سيوضع فيه المدخل الجديد</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">الاسم</translation>
+        <translation>الاسم</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
-        <translation type="unfinished">اسم المدخل كما يظهر في الشجرة؛ الرمز / يضعه في مجلد فرعي</translation>
+        <translation>اسم المدخل كما يظهر في الشجرة؛ الرمز / يضعه في مجلد فرعي</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>e.g. github.com or work/vpn</source>
-        <translation type="unfinished">مثلًا github.com أو work/vpn</translation>
+        <translation>مثلًا github.com أو work/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
@@ -2799,82 +2799,82 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="219"/>
         <source>Template:</source>
-        <translation type="unfinished">القالب:</translation>
+        <translation>القالب:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished">قالب الحقول من ملف .templates في المخزن. يبدّل Ctrl+T إلى القالب التالي.</translation>
+        <translation>قالب الحقول من ملف .templates في المخزن. يبدّل Ctrl+T إلى القالب التالي.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="76"/>
         <source>New password</source>
-        <translation type="unfinished">كلمة مرور جديدة</translation>
+        <translation>كلمة مرور جديدة</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>
         <source>Decrypting…</source>
-        <translation type="unfinished">يتم فك التشفير…</translation>
+        <translation>يتم فك التشفير…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="182"/>
         <source>Saving…</source>
-        <translation type="unfinished">جارٍ الحفظ…</translation>
+        <translation>جارٍ الحفظ…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="213"/>
         <source>Still saving</source>
-        <translation type="unfinished">ما زال الحفظ جاريًا</translation>
+        <translation>ما زال الحفظ جاريًا</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="214"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation type="unfinished">ما زال المُدخَل قيد الحفظ. هل تريد إغلاق مربع الحوار على أي حال؟ إذا فشل الحفظ بعد ذلك، فسيضيع ما كتبته.</translation>
+        <translation>ما زال المُدخَل قيد الحفظ. هل تريد إغلاق مربع الحوار على أي حال؟ إذا فشل الحفظ بعد ذلك، فسيضيع ما كتبته.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="231"/>
         <source>Not saved: %1</source>
-        <translation type="unfinished">لم يُحفظ: %1</translation>
+        <translation>لم يُحفظ: %1</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Give the entry a name.</source>
-        <translation type="unfinished">أعطِ المدخل اسمًا.</translation>
+        <translation>أعطِ المدخل اسمًا.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>A name cannot end in /.</source>
-        <translation type="unfinished">لا يمكن أن ينتهي الاسم بـ /.</translation>
+        <translation>لا يمكن أن ينتهي الاسم بـ /.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="286"/>
         <source>That name would resolve outside the password store.</source>
-        <translation type="unfinished">سيشير هذا الاسم إلى موقع خارج مخزن كلمات المرور.</translation>
+        <translation>سيشير هذا الاسم إلى موقع خارج مخزن كلمات المرور.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="290"/>
         <source>An entry called %1 already exists.</source>
-        <translation type="unfinished">يوجد بالفعل مدخل باسم %1.</translation>
+        <translation>يوجد بالفعل مدخل باسم %1.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="294"/>
         <source>%1 is a folder.</source>
-        <translation type="unfinished">%1 مجلد.</translation>
+        <translation>%1 مجلد.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="324"/>
         <source>Could not create the folder %1.</source>
-        <translation type="unfinished">تعذر إنشاء المجلد %1.</translation>
+        <translation>تعذر إنشاء المجلد %1.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="380"/>
         <source>Remove field</source>
-        <translation type="unfinished">إزالة الحقل</translation>
+        <translation>إزالة الحقل</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="399"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">يوجد حقل باسم %1 بالفعل.</translation>
+        <translation>يوجد حقل باسم %1 بالفعل.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="480"/>
@@ -2901,12 +2901,12 @@ Continue?</source>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="26"/>
         <source>Clear</source>
-        <translation type="unfinished">مسح</translation>
+        <translation>مسح</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="27"/>
         <source>Clear output</source>
-        <translation type="unfinished">مسح المخرجات</translation>
+        <translation>مسح المخرجات</translation>
     </message>
 </context>
 <context>
@@ -2914,12 +2914,12 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="36"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished">تعذر إنشاء %1.</translation>
+        <translation>تعذر إنشاء %1.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="60"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 يحتوي بالفعل على %n ملف مشفر؛ لم تتم إعادة تشفيرها. انتقل إلى الملف الشخصي وافتح «المستخدمون» للقيام بذلك.</numerusform>
             <numerusform>%1 يحتوي بالفعل على ملف مشفر واحد؛ لم تتم إعادة تشفيره. انتقل إلى الملف الشخصي وافتح «المستخدمون» للقيام بذلك.</numerusform>
             <numerusform>%1 يحتوي بالفعل على %n ملفين مشفرين؛ لم تتم إعادة تشفيرهما. انتقل إلى الملف الشخصي وافتح «المستخدمون» للقيام بذلك.</numerusform>
@@ -2931,12 +2931,12 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="78"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished">لم يتم تحديد أي مستلم؛ لم تتم كتابة %1.</translation>
+        <translation>لم يتم تحديد أي مستلم؛ لم تتم كتابة %1.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="127"/>
         <source>Could not sign %1 with %2.</source>
-        <translation type="unfinished">تعذر توقيع %1 باستخدام %2.</translation>
+        <translation>تعذر توقيع %1 باستخدام %2.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -2945,13 +2945,13 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="129"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished">تعذر توقيع %1 باستخدام %2: %3</translation>
+        <translation>تعذر توقيع %1 باستخدام %2: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="149"/>
         <location filename="../src/profileinit.cpp" line="178"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished">فشل git %1 في %2: %3</translation>
+        <translation>فشل git %1 في %2: %3</translation>
     </message>
 </context>
 <context>
@@ -2959,57 +2959,57 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished">استخدام أداة سطر الأوامر pass</translation>
+        <translation>استخدام أداة سطر الأوامر pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="204"/>
         <source>Programs</source>
-        <translation type="unfinished">البرامج</translation>
+        <translation>البرامج</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="205"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished">يتولى GnuPG عملية التشفير. أما pass وGit فاختياريان؛ يمكن لـ QtPass القيام بعملهما بنفسه.</translation>
+        <translation>يتولى GnuPG عملية التشفير. أما pass وGit فاختياريان؛ يمكن لـ QtPass القيام بعملهما بنفسه.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="209"/>
         <source>Select executable</source>
-        <translation type="unfinished">اختيار الملف التنفيذي</translation>
+        <translation>اختيار الملف التنفيذي</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="210"/>
         <source>All files (*)</source>
-        <translation type="unfinished">كل الملفات (*)</translation>
+        <translation>كل الملفات (*)</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="212"/>
         <source>GnuPG</source>
-        <translation type="unfinished">GnuPG</translation>
+        <translation>GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="215"/>
         <source>Git</source>
-        <translation type="unfinished">Git</translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="216"/>
         <source>pass</source>
-        <translation type="unfinished">المرور</translation>
+        <translation>المرور</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="217"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished">تشغيل سكربت pass لكل عملية بدلًا من استدعاء gpg وgit مباشرة</translation>
+        <translation>تشغيل سكربت pass لكل عملية بدلًا من استدعاء gpg وgit مباشرة</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="257"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
-        <translation type="unfinished">لم يُعثر على GnuPG. ثبّته (gpg أو gpg2) وأدخل موقعه هنا.</translation>
+        <translation>لم يُعثر على GnuPG. ثبّته (gpg أو gpg2) وأدخل موقعه هنا.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="260"/>
         <source>%1 is not an executable file.</source>
-        <translation type="unfinished">%1 ليس ملفًا تنفيذيًا.</translation>
+        <translation>%1 ليس ملفًا تنفيذيًا.</translation>
     </message>
 </context>
 <context>
@@ -3055,7 +3055,7 @@ Continue?</source>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished">عرض كرمز QR</translation>
+        <translation>عرض كرمز QR</translation>
     </message>
 </context>
 <context>
@@ -3066,13 +3066,13 @@ Continue?</source>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
         <source>Show password</source>
-        <translation type="unfinished">كلمة المرور</translation>
+        <translation>كلمة المرور</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
         <source>Hide password</source>
-        <translation type="unfinished">اخفاء كلمة المرور</translation>
+        <translation>اخفاء كلمة المرور</translation>
     </message>
 </context>
 <context>
@@ -3081,7 +3081,7 @@ Continue?</source>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">نسخ إلى الحافظة</translation>
+        <translation>نسخ إلى الحافظة</translation>
     </message>
 </context>
 <context>
@@ -3187,27 +3187,27 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="93"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">تعذر إزالة الرابط %1.</translation>
+        <translation>تعذر إزالة الرابط %1.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="94"/>
         <source>Delete failed</source>
-        <translation type="unfinished">فشل الحذف</translation>
+        <translation>فشل الحذف</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="125"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
-        <translation type="unfinished">أُزيل الرابط %1، لكن git لم يتمكن من تسجيل ذلك: %2</translation>
+        <translation>أُزيل الرابط %1، لكن git لم يتمكن من تسجيل ذلك: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="127"/>
         <source>Delete incomplete</source>
-        <translation type="unfinished">الحذف غير مكتمل</translation>
+        <translation>الحذف غير مكتمل</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="229"/>
         <source>Search needs the GPG executable to be configured.</source>
-        <translation type="unfinished">يتطلب البحث ضبط الملف التنفيذي لـ GPG.</translation>
+        <translation>يتطلب البحث ضبط الملف التنفيذي لـ GPG.</translation>
     </message>
 </context>
 <context>
@@ -3232,27 +3232,27 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="364"/>
         <source>Keep the store under Git</source>
-        <translation type="unfinished">إبقاء المخزن تحت إدارة Git</translation>
+        <translation>إبقاء المخزن تحت إدارة Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="366"/>
         <source>Password store</source>
-        <translation type="unfinished">مخزن كلمات المرور</translation>
+        <translation>مخزن كلمات المرور</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="367"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation type="unfinished">المجلد الذي تُحفظ فيه كلمات مرورك. يُستخدم المخزن الموجود كما هو؛ أما المجلد الفارغ أو غير الموجود فيُهيَّأ للمفاتيح التي حددتها.</translation>
+        <translation>المجلد الذي تُحفظ فيه كلمات مرورك. يُستخدم المخزن الموجود كما هو؛ أما المجلد الفارغ أو غير الموجود فيُهيَّأ للمفاتيح التي حددتها.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="371"/>
         <source>Folder</source>
-        <translation type="unfinished">المجلد</translation>
+        <translation>المجلد</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="373"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">اختر مجلد مخزن كلمات المرور</translation>
+        <translation>اختر مجلد مخزن كلمات المرور</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="398"/>
@@ -3260,7 +3260,7 @@ Continue?</source>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished">ليس لدى Git اسم وبريد إلكتروني للإيداع بهما بعد. نفّذ
+        <translation>ليس لدى Git اسم وبريد إلكتروني للإيداع بهما بعد. نفّذ
 git config --global user.name &quot;اسمك&quot;
 git config --global user.email you@example.org
 ثم فعّل Git في الإعدادات بعد ذلك.</translation>
@@ -3268,17 +3268,17 @@ git config --global user.email you@example.org
     <message>
         <location filename="../src/firstrunwizard.cpp" line="402"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished">يصبح كل تغيير إيداعًا؛ والمجلد الذي ليس مستودعًا بعد يُنشأ له مستودع</translation>
+        <translation>يصبح كل تغيير إيداعًا؛ والمجلد الذي ليس مستودعًا بعد يُنشأ له مستودع</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="426"/>
         <source>Enter a folder.</source>
-        <translation type="unfinished">أدخل مجلدًا.</translation>
+        <translation>أدخل مجلدًا.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="430"/>
         <source>An existing password store with %n entries.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>مخزن كلمات مرور موجود لا يحتوي على أي مدخلات.</numerusform>
             <numerusform>مخزن كلمات مرور موجود يحتوي على مدخل واحد.</numerusform>
             <numerusform>مخزن كلمات مرور موجود يحتوي على مدخلين.</numerusform>
@@ -3290,22 +3290,22 @@ git config --global user.email you@example.org
     <message>
         <location filename="../src/firstrunwizard.cpp" line="433"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation type="unfinished">مجلد فارغ؛ سيُهيَّأ كمخزن كلمات مرور.</translation>
+        <translation>مجلد فارغ؛ سيُهيَّأ كمخزن كلمات مرور.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="434"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation type="unfinished">هذا المجلد ليس مخزن كلمات مرور بعد؛ سيُكتب فيه ملف .gpg-id للمفاتيح المحددة.</translation>
+        <translation>هذا المجلد ليس مخزن كلمات مرور بعد؛ سيُكتب فيه ملف .gpg-id للمفاتيح المحددة.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="437"/>
         <source>The folder does not exist yet; it will be created.</source>
-        <translation type="unfinished">المجلد غير موجود بعد؛ سيتم إنشاؤه.</translation>
+        <translation>المجلد غير موجود بعد؛ سيتم إنشاؤه.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="441"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
-        <translation type="unfinished">ارجع وحدد مفتاحًا واحدًا على الأقل للتشفير إليه.</translation>
+        <translation>ارجع وحدد مفتاحًا واحدًا على الأقل للتشفير إليه.</translation>
     </message>
 </context>
 <context>
@@ -3367,7 +3367,7 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished">حدد المستخدمين الذين يجب أن يتمكنوا من فك تشفير كلمات المرور المخزنة في هذا المجلد.
+        <translation>حدد المستخدمين الذين يجب أن يتمكنوا من فك تشفير كلمات المرور المخزنة في هذا المجلد.
 ملاحظة: عند الضغط على OK تتم إعادة تشفير كل كلمة مرور في هذا المجلد ومجلداته الفرعية للمستخدمين المحددين؛ قد يستغرق ذلك بعض الوقت.
 المدخلات بالخط العريض لديها مفتاح سري متاح، حدد واحدًا منها لتتمكن من فك التشفير بنفسك.
 المدخلات العادية لديها مفتاح تشفير موثوق، حددها للسماح لأشخاص آخرين بفك التشفير.
@@ -3439,34 +3439,34 @@ Plain entries have a trusted encryption key, select these to allow other people 
     <message>
         <location filename="../src/util.cpp" line="687"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">لا يمكن إنشاء ملف مؤقت بجوار %1: %2</translation>
+        <translation>لا يمكن إنشاء ملف مؤقت بجوار %1: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="699"/>
         <location filename="../src/util.cpp" line="778"/>
         <location filename="../src/util.cpp" line="808"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">لا يمكن كتابة %1: %2</translation>
+        <translation>لا يمكن كتابة %1: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="714"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">فشل استبدال %1.</translation>
+        <translation>فشل استبدال %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="719"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 موجود بالفعل.</translation>
+        <translation>%1 موجود بالفعل.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="721"/>
         <source>Failed to write %1.</source>
-        <translation type="unfinished">فشلت كتابة %1.</translation>
+        <translation>فشلت كتابة %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="765"/>
         <source>%1 was swapped for another file while it was written.</source>
-        <translation type="unfinished">استُبدل %1 بملف آخر في أثناء كتابته.</translation>
+        <translation>استُبدل %1 بملف آخر في أثناء كتابته.</translation>
     </message>
     <message>
         <source>%1 was replaced by a link while it was written.</source>
@@ -3475,12 +3475,12 @@ Plain entries have a trusted encryption key, select these to allow other people 
     <message>
         <location filename="../src/util.cpp" line="791"/>
         <source>Cannot read %1.</source>
-        <translation type="unfinished">لا يمكن قراءة %1.</translation>
+        <translation>لا يمكن قراءة %1.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="801"/>
         <source>Cannot read %1: %2</source>
-        <translation type="unfinished">لا يمكن قراءة %1: %2</translation>
+        <translation>لا يمكن قراءة %1: %2</translation>
     </message>
 </context>
 </TS>
