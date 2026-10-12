@@ -2034,7 +2034,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.ui" line="486"/>
         <location filename="../src/mainwindow.cpp" line="1370"/>
         <source>Users</source>
-        <translation type="unfinished">ਵਰਤੋਂਕਾਰ</translation>
+        <translation>ਵਿਸ਼ਵਾਸੀ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
@@ -2883,8 +2883,8 @@ Continue?</source>
         <location filename="../src/profileinit.cpp" line="60"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
-            <numerusform>%1 ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ %n ਏਨਕ੍ਰਿਪਟ ਕੀਤੀ ਫਾਈਲ ਹੈ; ਇਸਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਗਿਆ। ਇਹ ਕਰਨ ਲਈ ਪ੍ਰੋਫਾਈਲ &apos;ਤੇ ਜਾਓ ਅਤੇ ਵਰਤੋਂਕਾਰ ਖੋਲ੍ਹੋ।</numerusform>
-            <numerusform>%1 ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ %n ਏਨਕ੍ਰਿਪਟ ਕੀਤੀਆਂ ਫਾਈਲਾਂ ਹਨ; ਉਹਨਾਂ ਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਗਿਆ। ਇਹ ਕਰਨ ਲਈ ਪ੍ਰੋਫਾਈਲ &apos;ਤੇ ਜਾਓ ਅਤੇ ਵਰਤੋਂਕਾਰ ਖੋਲ੍ਹੋ।</numerusform>
+            <numerusform>%1 ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ %n ਏਨਕ੍ਰਿਪਟ ਕੀਤੀ ਫਾਈਲ ਹੈ; ਇਸਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਗਿਆ। ਇਹ ਕਰਨ ਲਈ ਪ੍ਰੋਫਾਈਲ &apos;ਤੇ ਜਾਓ ਅਤੇ ਵਿਸ਼ਵਾਸੀ ਖੋਲ੍ਹੋ।</numerusform>
+            <numerusform>%1 ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ %n ਏਨਕ੍ਰਿਪਟ ਕੀਤੀਆਂ ਫਾਈਲਾਂ ਹਨ; ਉਹਨਾਂ ਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਗਿਆ। ਇਹ ਕਰਨ ਲਈ ਪ੍ਰੋਫਾਈਲ &apos;ਤੇ ਜਾਓ ਅਤੇ ਵਿਸ਼ਵਾਸੀ ਖੋਲ੍ਹੋ।</numerusform>
         </translation>
     </message>
     <message>
