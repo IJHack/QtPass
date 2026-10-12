@@ -1186,7 +1186,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">nënshkrimi i ri nuk verifikohet si nënshkrim i njërit prej çelësave të nënshkrimit</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1222,22 +1222,22 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Lista e marrësve nuk mund të kontrollohet</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Nuk mund të përcaktohet nëse %2 u hoq, prandaj asgjë nuk u enkriptua.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Lista e marrësve mungon</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Lista e nënshkruar e marrësve %1 mungon ose nuk është skedar i zakonshëm. QtPass nuk përdor në vend të saj listën e një dosjeje mëmë: ajo listë nuk është nënshkruar për këtë dosje. Nëse nën këtë emër ndodhet një lidhje, hiqeni. Pastaj hapni Përdoruesit për atë dosje dhe ruani marrësit e saj, gjë që shkruan dhe nënshkruan një listë të re.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1262,12 +1262,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Marrësit nuk u ndryshuan</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Një ri-enkriptim është ende në punë. Prisni derisa të përfundojë, pastaj ruani sërish marrësit.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1359,7 +1359,7 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git doli me kodin %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1521,7 +1521,7 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Marrësit nuk u bënë commit</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1530,11 +1530,7 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">Marrësit e %1 u ndryshuan dhe zërat u ri-enkriptuan për ta, por commit-i i Git dështoi:
-
-%2
-
-Ndryshimi ende nuk është bërë commit dhe as push. Ndreqni problemin me Git, pastaj bëni commit ndryshimet ose ruani sërish marrësit.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1543,11 +1539,7 @@ Ndryshimi ende nuk është bërë commit dhe as push. Ndreqni problemin me Git, 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">Marrësit e %1 u ndryshuan, por commit-i i Git dështoi:
-
-%2
-
-Ri-enkriptimi nuk përfundoi, prandaj disa ose të gjithë zërat janë ende të enkriptuar për marrësit e mëparshëm, të cilët ende mund t&apos;i lexojnë. Asgjë nuk u bë commit apo push. Ndreqni problemin me Git, pastaj ruani sërish marrësit.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2703,17 +2695,17 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">Regjistri i gjeneratave të listave të marrësve nuk mund të lexohet.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Lista e marrësve %1 mungon ose nuk është skedar i zakonshëm, prandaj asgjë nuk është e parazgjedhur: lista e një dosjeje mëmë nuk është nënshkruar për këtë. Zgjidhni vetë marrësit e kësaj dosjeje; OK shkruan dhe nënshkruan një listë të re.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Asgjë nuk është e parazgjedhur: nuk mund të përcaktohet nëse %2 u hoq.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
