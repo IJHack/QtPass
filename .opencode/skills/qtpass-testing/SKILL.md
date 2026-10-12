@@ -1,6 +1,6 @@
 ---
 name: qtpass-testing
-description: Comprehensive guide for QtPass unit testing with Qt Test
+description: Use when writing, running, debugging, or extending QtPass Qt Test suites, coverage runs, sanitizer checks, or test fixtures.
 license: GPL-3.0-or-later
 metadata:
   audience: developers

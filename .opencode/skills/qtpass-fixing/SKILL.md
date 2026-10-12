@@ -1,6 +1,6 @@
 ---
 name: qtpass-fixing
-description: Bug fixing workflow for QtPass - find, fix, test, PR
+description: Use when fixing QtPass bugs, regressions, crashes, static-analysis findings, or reviewer-reported defects.
 license: GPL-3.0-or-later
 metadata:
   audience: developers

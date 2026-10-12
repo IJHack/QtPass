@@ -1,6 +1,6 @@
 ---
 name: qtpass-github
-description: QtPass GitHub interaction - PRs, issues, branches, merging
+description: Use when managing QtPass GitHub issues, pull requests, branches, reviews, CI status, or merges.
 license: GPL-3.0-or-later
 metadata:
   audience: developers
