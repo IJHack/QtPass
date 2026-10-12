@@ -7,14 +7,14 @@ on:
     paths:
       - ".opencode/skills/**"
       - "localization/**"
-      - "scripts/check-skill-sanity.py"
+      - "scripts/check_skill_sanity.py"
       - ".github/workflows/skill-sanity.yml"
   push:
     branches: ["main", "1.8"]
     paths:
       - ".opencode/skills/**"
       - "localization/**"
-      - "scripts/check-skill-sanity.py"
+      - "scripts/check_skill_sanity.py"
       - ".github/workflows/skill-sanity.yml"
   merge_group:
   workflow_dispatch:
@@ -33,4 +33,4 @@ jobs:
         with:
           persist-credentials: false
       - name: Check skill structure
-        run: scripts/check-skill-sanity.py
+        run: scripts/check_skill_sanity.py
