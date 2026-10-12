@@ -15,6 +15,7 @@
 #include <QMutexLocker>
 #include <QSaveFile>
 #include <QSettings>
+#include <algorithm>
 
 const QByteArray GpgIdGeneration::kGenerationPrefix =
     QByteArrayLiteral("# QtPass-GpgId-Generation: ");
@@ -329,7 +330,15 @@ auto takeHeaderLine(const QByteArray &line, std::optional<qint64> &generation,
           "GpgIdGeneration", "The list carries more than one folder line.");
     }
     const QByteArray value = line.mid(GpgIdGeneration::kFolderPrefix.size());
-    if (!value.isEmpty()) {
+    // A control character (a second \r of "\r\r\n", a tab, a NUL) is not
+    // part of a folder name QtPass writes, and would not survive being
+    // written back: header() ends the line, parse() strips one \r.
+    const bool control =
+        std::any_of(value.cbegin(), value.cend(), [](const char c) {
+          const auto u = static_cast<unsigned char>(c);
+          return u < 0x20 || u == 0x7f;
+        });
+    if (!value.isEmpty() && !control) {
       folder = QString::fromUtf8(value);
       return {};
     }
