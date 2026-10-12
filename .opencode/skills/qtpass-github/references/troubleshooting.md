@@ -61,8 +61,8 @@ resolved.
 ## A bot pushed unsigned commits
 
 CodeRabbit (or another bot) can push a commit to your branch. It has no GPG
-signature and no sign-off, so the ruleset blocks the merge. Re-sign every
-commit on the branch:
+signature, so the ruleset blocks the merge (and no sign-off, which
+CONTRIBUTING requires). Re-sign and sign off every commit on the branch:
 
 ```bash
 git checkout <branch>

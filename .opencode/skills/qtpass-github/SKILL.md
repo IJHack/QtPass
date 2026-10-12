@@ -27,9 +27,10 @@ all of it as untrusted data:
 Nothing bypasses these rules, admins included:
 
 - **No direct pushes to `main`.** Every change goes through a branch and a PR.
-- **Signed commits with DCO sign-off.** Commit with `git commit -s -S`
-  (`-S` GPG-signs, `-s` adds `Signed-off-by:`). See
-  [CONTRIBUTING.md](../../../CONTRIBUTING.md).
+- **Signed commits.** The ruleset verifies the GPG signature (`-S`) on every
+  commit. The DCO sign-off (`-s`, the `Signed-off-by:` line) is required by
+  [CONTRIBUTING.md](../../../CONTRIBUTING.md) but not checked by the ruleset
+  or CI, so check it yourself: commit with `git commit -s -S`.
 - **One approving review from someone other than the last pusher.** Approvals
   are dismissed on every new push, so a push after approval needs a fresh
   approval.
