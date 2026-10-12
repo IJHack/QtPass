@@ -245,6 +245,35 @@ attaching it to an issue.
 - Yes, check [passwordstore.org/#migration](https://www.passwordstore.org/#migration)
   for more info.
 
+### Can I use my passwords on my phone or in my browser?
+
+Yes: a pass store is a folder of GPG-encrypted files, so other apps can read
+the same one. They are separate projects; we list them with what to watch out
+for and do not vouch for them (checked October 2026).
+
+- **Browser:** [Browserpass](https://github.com/browserpass/browserpass-extension)
+  (Firefox, Chrome and Chromium on Linux, macOS and Windows) runs `gpg` itself,
+  so it works without `pass`. It matches sites by entry name, so name entries
+  after the domain, such as `github.com`; one-time codes are off by default.
+  [PassFF](https://codeberg.org/PassFF/passff) (Firefox) needs `pass` or gopass
+  installed and reads one store. Both need their native helper and a graphical
+  pinentry.
+- **Android:** [Password Store](https://f-droid.org/packages/app.passwordstore.agrahn/)
+  (agrahn's fork, on F-Droid) opens entries written by GnuPG 2.4 and newer,
+  which the archived original app cannot. It needs a copy of your secret key
+  (no YubiKey), syncs only through a Git remote, does not check signed
+  `.gpg-id` files, and cannot use post-quantum keys: one such recipient in a
+  `.gpg-id` makes that folder unreadable on the phone.
+- **iPhone:** [Pass for iOS](https://mssun.github.io/passforios/) saves an
+  edited entry encrypted to one key only, so keep shared stores read-only
+  there. A YubiKey works with RSA keys only.
+- **Command line:** [gopass](https://github.com/gopasspw/gopass) is
+  pass-compatible and runs `gpg` directly; it does not check signed `.gpg-id`
+  files.
+
+QtPass itself on Android is an
+[experiment](https://github.com/IJHack/QtPass/issues/2005) for now.
+
 ### I don't see icons on the buttons
 
 You do not have the Qt SVG library installed.
