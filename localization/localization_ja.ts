@@ -1226,7 +1226,7 @@ URL
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">新しい署名は、どの署名キーによるものとしても検証できません</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1262,22 +1262,22 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">受信者リストを確認できません</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 %2 が削除されたかどうかを判断できないため、何も暗号化されませんでした。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">受信者リストがありません</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">署名済み受信者リスト %1 が見つからないか、通常のファイルではありません。QtPass はこのリストの代わりに親フォルダーのリストを使用しません。そのリストはこのフォルダー用に署名されたものではないからです。その名前でリンクが置かれている場合は、削除してください。その後、そのフォルダーで「ユーザー」を開いて受信者を保存すると、新しいリストが書き込まれて署名されます。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1302,12 +1302,12 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">受信者は変更されていません</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">再暗号化がまだ実行中です。完了するまで待ってから、もう一度受信者を保存してください。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1399,7 +1399,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git が終了コード %1 で終了しました。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1558,7 +1558,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">受信者の変更はコミットされていません</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1567,11 +1567,7 @@ You will not be able to decrypt any newly added passwords!</source>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">%1 の受信者は変更され、そのエントリは新しい受信者用に再暗号化されましたが、Git のコミットに失敗しました:
-
-%2
-
-この変更はまだコミットもプッシュもされていません。Git の問題を修正してから変更をコミットするか、もう一度受信者を保存してください。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1580,11 +1576,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">%1 の受信者は変更されましたが、Git のコミットに失敗しました:
-
-%2
-
-再暗号化が完了しなかったため、一部またはすべてのエントリはまだ以前の受信者用に暗号化されたままで、その受信者は引き続きそれらを読むことができます。何もコミットもプッシュもされていません。Git の問題を修正してから、もう一度受信者を保存してください。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2879,17 +2871,17 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">受信者リストの世代記録を読み取れません。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">受信者リスト %1 が見つからないか、通常のファイルではないため、何も事前選択されていません。親フォルダーのリストはこのフォルダー用に署名されたものではないからです。このフォルダーの受信者を自分で選択してください。OK を押すと、新しいリストが書き込まれて署名されます。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 何も事前選択されていません。%2 が削除されたかどうかを判断できないからです。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
