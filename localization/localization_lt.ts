@@ -1182,7 +1182,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">naujo parašo nepavyksta patikrinti kaip padaryto vienu iš pasirašymo raktų</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1230,22 +1230,22 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Nepavyksta patikrinti gavėjų sąrašo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Neįmanoma nustatyti, ar %2 buvo pašalintas, todėl niekas nebuvo užšifruota.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Trūksta gavėjų sąrašo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Pasirašyto gavėjų sąrašo %1 nėra arba jis nėra įprastas failas. QtPass vietoj jo nenaudoja aukštesnio lygio aplanko sąrašo: tas sąrašas nebuvo pasirašytas šiam aplankui. Jei tuo pavadinimu yra nuoroda, pašalinkite ją. Tada tam aplankui atverkite „Vartotojai“ ir išsaugokite jo gavėjus; taip įrašomas ir pasirašomas naujas sąrašas.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1328,12 +1328,12 @@ Negalėsite iššifruoti jokių naujai pridėtų slaptažodžių!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Gavėjai nepakeisti</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Pakartotinis šifravimas dar vykdomas. Palaukite, kol jis baigsis, tada vėl išsaugokite gavėjus.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1355,7 +1355,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git baigė darbą kodu %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1520,7 +1520,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Gavėjų pakeitimas neužfiksuotas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1529,11 +1529,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">%1 gavėjai buvo pakeisti ir jo įrašai iš naujo užšifruoti jiems, bet Git įrašo (commit) sukurti nepavyko:
-
-%2
-
-Pakeitimas dar neužfiksuotas ir neišsiųstas. Išspręskite Git problemą, tada užfiksuokite pakeitimus arba vėl išsaugokite gavėjus.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1542,11 +1538,7 @@ Pakeitimas dar neužfiksuotas ir neišsiųstas. Išspręskite Git problemą, tad
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">%1 gavėjai buvo pakeisti, bet Git įrašo (commit) sukurti nepavyko:
-
-%2
-
-Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar užšifruoti ankstesniems gavėjams, kurie vis dar gali juos perskaityti. Niekas nebuvo užfiksuota ar išsiųsta. Išspręskite Git problemą, tada vėl išsaugokite gavėjus.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2654,17 +2646,17 @@ Tęsti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">Nepavyksta perskaityti gavėjų sąrašų kartų registro.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Gavėjų sąrašo %1 nėra arba jis nėra įprastas failas, todėl nieko iš anksto nepažymėta: aukštesnio lygio aplanko sąrašas nebuvo pasirašytas šiam aplankui. Pasirinkite šio aplanko gavėjus patys; „OK“ įrašo ir pasirašo naują sąrašą.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Nieko iš anksto nepažymėta: neįmanoma nustatyti, ar %2 buvo pašalintas.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
