@@ -1528,7 +1528,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation>Mottagare har inte förbundit sig</translation>
+        <translation type="unfinished">Mottagare har inte checkats in</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>

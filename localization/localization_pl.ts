@@ -1520,7 +1520,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation>Odbiorcy niezaangażowani</translation>
+        <translation type="unfinished">Odbiorcy niezatwierdzeni</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
