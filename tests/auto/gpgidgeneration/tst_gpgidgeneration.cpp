@@ -88,12 +88,23 @@ void tst_gpgidgeneration::parseIsStrict() {
       "# QtPass-GpgId-Generation: 7\n",
       "# QtPass-GpgId-Folder: \n# QtPass-GpgId-Generation: 7\n",
       "# QtPass-GpgId-Something: 7\n",
+      // A folder that would not survive being written back (found by
+      // fuzz_gpgid): "\r\r\n" leaves a \r in it, a tab or DEL is no name.
+      "# QtPass-GpgId-Generation: 7\n# QtPass-GpgId-Folder: 7w]\r\r\n",
+      "# QtPass-GpgId-Generation: 7\n# QtPass-GpgId-Folder: a\tb\n",
+      "# QtPass-GpgId-Generation: 7\n# QtPass-GpgId-Folder: a\x7f\n",
   };
   for (const char *b : bad) {
     err.clear();
     QVERIFY2(!GpgIdGeneration::parse(b, &err).has_value(), b);
     QVERIFY2(!err.isEmpty(), b);
   }
+  const QByteArray nul("# QtPass-GpgId-Generation: 7\n# QtPass-GpgId-Folder: "
+                       "a\0b\n",
+                       56);
+  err.clear();
+  QVERIFY(!GpgIdGeneration::parse(nul, &err).has_value());
+  QVERIFY(!err.isEmpty());
   // A folder line alone (no generation) is odd but not a lie about
   // freshness; it parses as generation 0 with a folder.
   const auto folderOnly = GpgIdGeneration::parse("# QtPass-GpgId-Folder: x\n");
