@@ -1182,7 +1182,7 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">tanda tangan baru tidak terverifikasi sebagai milik salah satu kunci penandatangan</translation>
     </message>
 </context>
 <context>
@@ -1230,22 +1230,22 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tidak dapat memeriksa daftar penerima</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Tidak dapat dipastikan apakah %2 telah dihapus, jadi tidak ada yang dienkripsi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Daftar penerima tidak ada</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Daftar penerima bertanda tangan %1 tidak ada atau bukan berkas biasa. QtPass tidak beralih ke daftar milik folder induk sebagai gantinya: daftar itu tidak ditandatangani untuk folder ini. Jika ada tautan dengan nama tersebut, hapus tautan itu. Lalu buka Pengguna untuk folder tersebut dan simpan penerimanya, yang akan menulis dan menandatangani daftar baru.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1328,12 +1328,12 @@ Anda tidak akan dapat mendekripsi kata sandi yang baru ditambahkan!</translation
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Penerima tidak diubah</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Enkripsi ulang masih berjalan. Tunggu hingga selesai, lalu simpan penerima lagi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1355,7 +1355,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git berhenti dengan kode %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1514,7 +1514,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Penerima tidak di-commit</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1523,7 +1523,11 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Penerima %1 telah diubah dan entrinya telah dienkripsi ulang untuk mereka, tetapi commit Git gagal:
+
+%2
+
+Perubahan tersebut belum di-commit atau di-push. Perbaiki masalah Git, lalu commit perubahannya, atau simpan penerima lagi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1532,7 +1536,11 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Penerima %1 telah diubah, tetapi commit Git gagal:
+
+%2
+
+Enkripsi ulang tidak selesai, sehingga sebagian atau semua entri masih dienkripsi untuk penerima sebelumnya, yang masih dapat membacanya. Tidak ada yang di-commit atau di-push. Perbaiki masalah Git, lalu simpan penerima lagi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2634,17 +2642,17 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Catatan generasi daftar penerima tidak dapat dibaca.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Daftar penerima %1 tidak ada atau bukan berkas biasa, sehingga tidak ada yang terpilih sebelumnya: daftar milik folder induk tidak ditandatangani untuk folder ini. Pilih sendiri penerima folder ini; OK akan menulis dan menandatangani daftar yang baru.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Tidak ada yang terpilih sebelumnya: tidak dapat dipastikan apakah %2 telah dihapus.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>

@@ -1226,7 +1226,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">новият подпис не се потвърждава като подпис от някой от ключовете за подписване</translation>
     </message>
 </context>
 <context>
@@ -1262,22 +1262,22 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Списъкът с получатели не може да бъде проверен</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Не може да се установи дали %2 е бил премахнат, затова нищо не беше криптирано.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Списъкът с получатели липсва</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Подписаният списък с получатели %1 липсва или не е обикновен файл. QtPass не използва вместо него списъка на родителска папка: този списък не е подписан за тази папка. Ако под това име има връзка, премахнете я. След това отворете „Потребители“ за тази папка и запазете получателите ѝ, което записва и подписва нов списък.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1302,12 +1302,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Получателите не са променени</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Все още се изпълнява повторно криптиране. Изчакайте да приключи, след което запазете получателите отново.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1399,7 +1399,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git приключи с код %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1561,7 +1561,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Получателите не са записани в къмит</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1570,7 +1570,11 @@ You will not be able to decrypt any newly added passwords!</source>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Получателите на %1 бяха променени и записите в папката бяха криптирани повторно за тях, но къмитът в Git не беше успешен:
+
+%2
+
+Промяната все още не е записана в къмит, нито изпратена с push. Отстранете проблема с Git, след което направете къмит на промените или запазете получателите отново.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1579,7 +1583,11 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Получателите на %1 бяха променени, но къмитът в Git не беше успешен:
+
+%2
+
+Повторното криптиране не завърши, така че някои или всички записи все още са криптирани за предишните получатели, които все още могат да ги четат. Нищо не е записано в къмит или изпратено с push. Отстранете проблема с Git, след което запазете получателите отново.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2850,17 +2858,17 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Регистърът на поколенията на списъците с получатели не може да бъде прочетен.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Списъкът с получатели %1 липсва или не е обикновен файл, така че нищо не е предварително избрано: списъкът на родителската папка не е подписан за тази. Изберете сами получателите на тази папка; OK записва и подписва нов списък.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Нищо не е предварително избрано: не може да се установи дали %2 е бил премахнат.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>

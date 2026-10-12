@@ -1186,7 +1186,7 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">yeni imza, imzalama anahtarlarından birine ait olarak doğrulanamıyor</translation>
     </message>
 </context>
 <context>
@@ -1222,22 +1222,22 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alıcı listesi denetlenemiyor</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 %2 dosyasının kaldırılıp kaldırılmadığı anlaşılamıyor, bu nedenle hiçbir şey şifrelenmedi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alıcı listesi eksik</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">İmzalı alıcı listesi %1 eksik ya da normal bir dosya değil. QtPass bunun yerine üst klasörün listesini kullanmaz: o liste bu klasör için imzalanmadı. Bu adda bir bağlantı varsa kaldırın. Ardından o klasör için Kullanıcılar&apos;ı açın ve alıcılarını kaydedin; bu, yeni bir liste yazıp imzalar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1262,12 +1262,12 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alıcılar değiştirilmedi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bir yeniden şifreleme hâlâ sürüyor. Bitmesini bekleyin, ardından alıcıları yeniden kaydedin.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1359,7 +1359,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git %1 koduyla sonlandı.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1518,7 +1518,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alıcılar commit edilmedi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1527,7 +1527,11 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 klasörünün alıcıları değiştirildi ve girdileri onlar için yeniden şifrelendi, ancak Git commit başarısız oldu:
+
+%2
+
+Değişiklik henüz commit edilmedi ve gönderilmedi. Git sorununu giderin, ardından değişiklikleri commit edin ya da alıcıları yeniden kaydedin.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1536,7 +1540,11 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 klasörünün alıcıları değiştirildi, ancak Git commit başarısız oldu:
+
+%2
+
+Yeniden şifreleme tamamlanmadı, bu nedenle girdilerin bir kısmı ya da tümü hâlâ önceki alıcılar için şifreli ve bu alıcılar onları hâlâ okuyabilir. Hiçbir şey commit edilmedi veya gönderilmedi. Git sorununu giderin, ardından alıcıları yeniden kaydedin.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2736,17 +2744,17 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alıcı listelerinin nesil kaydı okunamıyor.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alıcı listesi %1 eksik ya da normal bir dosya değil, bu nedenle hiçbir şey önceden seçilmedi: üst klasörün listesi bu klasör için imzalanmadı. Bu klasörün alıcılarını kendiniz seçin; OK yeni bir liste yazıp imzalar.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Hiçbir şey önceden seçilmedi: %2 dosyasının kaldırılıp kaldırılmadığı anlaşılamıyor.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>

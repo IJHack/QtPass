@@ -1186,7 +1186,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">η νέα υπογραφή δεν επαληθεύεται ως υπογραφή κάποιου από τα κλειδιά υπογραφής</translation>
     </message>
 </context>
 <context>
@@ -1222,22 +1222,22 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν είναι δυνατός ο έλεγχος της λίστας παραληπτών</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Δεν είναι δυνατό να διαπιστωθεί αν το %2 αφαιρέθηκε, οπότε δεν κρυπτογραφήθηκε τίποτα.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η λίστα παραληπτών λείπει</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 λείπει ή δεν είναι κανονικό αρχείο. Το QtPass δεν καταφεύγει για αυτήν στη λίστα ενός γονικού φακέλου: εκείνη η λίστα δεν υπογράφηκε για αυτόν τον φάκελο. Αν υπάρχει σύνδεσμος με αυτό το όνομα, αφαιρέστε τον. Έπειτα ανοίξτε τους «Χρήστες» για εκείνον τον φάκελο και αποθηκεύστε τους παραλήπτες του, κάτι που γράφει και υπογράφει μια νέα λίστα.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1262,12 +1262,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι παραλήπτες δεν άλλαξαν</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μια επανακρυπτογράφηση εκτελείται ακόμα. Περιμένετε να ολοκληρωθεί και έπειτα αποθηκεύστε ξανά τους παραλήπτες.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1359,7 +1359,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το Git τερματίστηκε με κωδικό %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1521,7 +1521,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι παραλήπτες δεν υποβλήθηκαν στο Git</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1530,7 +1530,11 @@ You will not be able to decrypt any newly added passwords!</source>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι παραλήπτες του %1 άλλαξαν και οι καταχωρίσεις του επανακρυπτογραφήθηκαν για αυτούς, αλλά η υποβολή στο Git απέτυχε:
+
+%2
+
+Η αλλαγή δεν έχει ακόμα υποβληθεί ούτε προωθηθεί. Διορθώστε το πρόβλημα του Git και έπειτα υποβάλετε τις αλλαγές ή αποθηκεύστε ξανά τους παραλήπτες.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1539,7 +1543,11 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι παραλήπτες του %1 άλλαξαν, αλλά η υποβολή στο Git απέτυχε:
+
+%2
+
+Η επανακρυπτογράφηση δεν ολοκληρώθηκε, οπότε ορισμένες ή όλες οι καταχωρίσεις είναι ακόμα κρυπτογραφημένες για τους προηγούμενους παραλήπτες, οι οποίοι μπορούν ακόμα να τις διαβάσουν. Τίποτα δεν υποβλήθηκε ούτε προωθήθηκε. Διορθώστε το πρόβλημα του Git και έπειτα αποθηκεύστε ξανά τους παραλήπτες.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2703,17 +2711,17 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το μητρώο γενιών των λιστών παραληπτών δεν μπορεί να διαβαστεί.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η λίστα παραληπτών %1 λείπει ή δεν είναι κανονικό αρχείο, οπότε δεν προεπιλέγεται τίποτα: η λίστα ενός γονικού φακέλου δεν υπογράφηκε για αυτόν. Επιλέξτε οι ίδιοι τους παραλήπτες αυτού του φακέλου· το OK γράφει και υπογράφει μια νέα λίστα.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Δεν προεπιλέγεται τίποτα: δεν είναι δυνατό να διαπιστωθεί αν το %2 αφαιρέθηκε.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
