@@ -1,375 +1,198 @@
 ---
 name: qtpass-releasing
-description: Use when cutting a QtPass release, bumping versions, updating changelogs, tagging, building artifacts, or publishing packages.
+description: Cuts QtPass releases from main or the 1.8 branch, bumps version files, writes the CHANGELOG and metainfo entries, tags signed vX.Y.Z or rc tags, drives the draft release with installers, GPG-signs and publishes it. Use when preparing a release, rc, version bump, changelog, tag, installers, publishing or downstream packages.
 license: GPL-3.0-or-later
 metadata:
   audience: developers
   workflow: release
+  version: "1.1"
 ---
 
 # Release Workflow for QtPass
 
-## Release Checklist
+Two release lines exist side by side:
 
-### 1. Version Bump
+- `main`: 2.x, including prereleases tagged `vX.Y.Z-rcN`.
+- `1.8`: the maintenance branch for 1.8.x (Qt 5.15 and Qt 6). Its workflow
+  builds installers but has **no publish job**, see step 6b.
 
-Update version in all build files:
+Both branches are protected: every change, the version bump included, goes in
+through a pull request. Commits are signed with a DCO sign-off
+(`git commit -s -S`).
 
-- `qtpass.pri` - `VERSION = X.Y.Z` (note: .pri not .pro, unquoted number).
-  This is the single source: the release workflow reads it for the installer
-  names and fails if it cannot, so nothing else needs a fallback.
-- `qtpass.spec` - `Version:` (and reset `Release:` to 1, add a `%changelog`
-  entry)
-- `qtpass.iss` - `#define MyAppVersion` and `#define MyAppNumericVersion`
-  (the numeric one has no `-rcN` suffix; it goes into the Windows version
-  resource that code signing checks)
-- `Doxyfile` - `PROJECT_NUMBER`
-- `org.qtpass.QtPass.metainfo.xml` - a new `<release version="X.Y.Z" date="...">` entry
-- `publiccode.yml` - `softwareVersion` and `releaseDate`
-- `SECURITY.md` - the supported-versions table
-- `downloads.html` (gh-pages) - multiple references
-- `index.html` (gh-pages)
-- `getting-started.html` (gh-pages)
-- `changelog.html` (gh-pages)
-- `changelog.1.4.html` (gh-pages)
-- `old.html` (gh-pages)
+## 1. Release branch and version bump
 
 ```bash
-# Find version strings (replace X.Y with actual version)
-grep -rn "X\.Y" qtpass.pri qtpass.spec qtpass.iss Doxyfile
+git checkout -b release/X.Y.Z origin/main   # or origin/1.8
 ```
 
-### 2. Changelog
+| File                             | What to change                                                                                       |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `qtpass.pri`                     | `VERSION = X.Y.Z` (unquoted; the single source the release workflow reads)                           |
+| `qtpass.spec`                    | `Version:`, reset `Release:` to `1%{?dist}`, add a `%changelog` entry                                |
+| `qtpass.iss`                     | `MyAppVersion`, and on main `MyAppNumericVersion` (no `-rcN`: it feeds the Windows version resource) |
+| `Doxyfile`                       | `PROJECT_NUMBER`                                                                                     |
+| `org.qtpass.QtPass.metainfo.xml` | new `<release version="X.Y.Z" date="YYYY-MM-DD">` at the top of `<releases>`                         |
+| `publiccode.yml` (main)          | `softwareVersion` and `releaseDate` of the latest stable release                                     |
+| `SECURITY.md` (main)             | supported-versions table, on a new minor or major only                                               |
 
-Update `CHANGELOG.md`:
-
-- Add release date
-- List all merged PRs and fixed issues
-- Group by: Added, Changed, Fixed, Removed
-
-### 3. Tests
+**Verify:** no old version is left behind.
 
 ```bash
-# Run full test suite
-make check
+git grep -n "OLD\.VERSION" -- qtpass.pri qtpass.spec qtpass.iss Doxyfile publiccode.yml
 ```
 
-### 4. Build Artifacts
+## 2. Changelog
 
-#### Linux
+Turn the `## [Unreleased]` section of `CHANGELOG.md` into
+`## [X.Y.Z](https://github.com/IJHack/QtPass/tree/vX.Y.Z) (YYYY-MM-DD)`,
+grouped the way the file already is (Upgrade Notes, Features, Bugfixes, ...),
+with the merged PRs and fixed issues. The metainfo `<release>` gets a one
+paragraph summary of the same.
+
+**Verify:** `npx prettier --check CHANGELOG.md` passes, and the metainfo date
+matches the CHANGELOG date. The `qtpass-docs` skill has the CHANGELOG lint
+rules.
+
+## 3. Tests
 
 ```bash
-# Create source tarball
-./scripts/release-linux.sh
-
-# Or manually:
-git archive --prefix=qtpass-x.y.z/ -o qtpass-x.y.z.tar.gz HEAD
-
-# AppImage (CI builds it too; needs Qt 6.8+ and network for linuxdeploy)
-./scripts/build-appimage.sh   # -> dist/QtPass-x.y.z-x86_64.AppImage
+qmake6 && make -j4 && make check
 ```
 
-#### macOS
+**Verify:** every test binary passes. Do not tag on a red run.
+
+## 4. Pull request and merge
 
 ```bash
-brew install create-dmg   # once; the same tool release-installers.yml uses
-./scripts/release-mac.sh  # -> QtPass-x.y.z.dmg (unsigned)
+git commit -s -S -m "Release X.Y.Z"
+git push -u origin release/X.Y.Z
+gh pr create --base main --title "Release X.Y.Z"   # --base 1.8 for 1.8.x
 ```
 
-To sign and notarize, set two variables. You need a paid Apple Developer
-Program membership, a **Developer ID Application** certificate in the login
-keychain (the script refuses any other certificate type, such as an Apple
-Development one, even when it only signs), and
-notarization credentials saved once:
+**Verify:** `gh pr checks` is all green (including the `Release installers`
+builds, which run on pull requests too), then squash-merge. If the release
+date slips, land a follow-up "Release X.Y.Z: dated YYYY-MM-DD" PR before
+tagging.
+
+## 5. Tag
+
+Tag the merge commit on the release branch, not the PR branch:
 
 ```bash
-xcrun notarytool store-credentials qtpass-notary --apple-id you@example.com --team-id TEAMID
-MAC_SIGN_IDENTITY="Developer ID Application: Name (TEAMID)" \
-  MAC_NOTARY_PROFILE=qtpass-notary ./scripts/release-mac.sh
-```
-
-The script checks both before building, signs the bundle with the hardened
-runtime (`macdeployqt -sign-for-notarization`), signs the dmg, submits it with
-`notarytool --wait`, staples the ticket and runs `spctl` on both the dmg and the app inside it. If you set
-only `MAC_SIGN_IDENTITY`, it signs without notarizing. If notarization is
-rejected, the script prints the `notarytool log` command that shows why.
-
-#### Windows
-
-```bash
-# Via GitHub Actions or locally with Inno Setup
-qtpass.iss
-```
-
-### 5. Git Tags
-
-```bash
+git fetch origin && git checkout origin/main   # or origin/1.8
 git tag -s vX.Y.Z -m "QtPass vX.Y.Z"
+git tag -v vX.Y.Z                              # verify: good signature
 git push origin vX.Y.Z
 ```
 
-### 6. GitHub Release
+## 6a. GitHub release from main
 
-Pushing the tag runs `release-installers.yml`. Its `publish` job builds the
-Windows installer, the macOS dmg and the Linux AppImage, adds
-`QtPass-x.y.z.tar.gz` / `.zip` source archives, creates the release **as a
-draft** if none exists yet and attaches all five. Re-running the workflow replaces the assets of a _draft_;
-on a published release it only adds missing ones, so signed assets are never
-swapped under their `.asc`. Then:
+The tag push runs `.github/workflows/release-installers.yml`:
+
+- `build-windows`: qtpass.exe and then the Inno Setup installer are signed
+  through the SignPath Foundation (tag pushes and manual runs on `main` only).
+  The `release-signing` policy waits for an approver in SignPath (two hour
+  timeout); approve it there or the job fails. SignPath refuses a run that was
+  re-run more than three times.
+- `build-macos`: the dmg (unsigned, not notarized).
+- `build-appimage`: the AppImage, smoke-tested on X11 and Wayland.
+- `publish`: adds `git archive` source archives, creates the release **as a
+  draft** if none exists, attaches everything plus a SLSA provenance bundle.
 
 ```bash
-gh run watch                                   # or wait for the Release installers run
-gh release edit vX.Y.Z --notes-file <(sed -n '/^## \[X.Y.Z\]/,/^## \[/p' CHANGELOG.md | sed '$d')
-./scripts/sign-release-assets.sh vX.Y.Z        # .asc for every asset (maintainer's key)
-gh release edit vX.Y.Z --draft=false
+gh run watch                                   # the Release installers run
+gh release view vX.Y.Z --json isDraft,assets --jq '.isDraft, .assets[].name'
 ```
 
-If a release for the tag already exists (created by hand), the job only
-uploads into it. Nothing needs downloading from the Actions artifacts page
-any more.
+**Verify:** a draft with the six assets from the table below. Re-running the
+workflow replaces a draft's assets (and drops their stale `.asc`); on a
+published release it only adds missing assets, so signed files never change
+under their signature.
 
-### 7. GitHub Pages (site)
+Then write the notes, sign, publish:
 
-Update version in HTML files on `gh-pages` branch:
+```bash
+gh release edit vX.Y.Z --notes-file <(sed -n '/^## \[X.Y.Z\]/,/^## \[/p' CHANGELOG.md | sed '$d')
+./scripts/sign-release-assets.sh --dryrun vX.Y.Z   # signs locally, uploads nothing
+./scripts/sign-release-assets.sh vX.Y.Z            # .asc per asset, maintainer key
+gh release edit vX.Y.Z --draft=false               # rc: add --prerelease --latest=false
+```
+
+**Verify:** every asset has a matching `.asc` and the release shows as
+Latest (or prerelease for an rc).
+
+## 6b. GitHub release from the 1.8 branch
+
+The 1.8 workflow (`Release Build`) builds the Windows installer (unsigned) and
+the macOS dmg, with no AppImage and no publish job. Assemble the draft by hand:
+
+```bash
+gh run download <run-id> -D dist               # the tag's Release Build run
+git archive --prefix=qtpass-X.Y.Z/ -o dist/QtPass-X.Y.Z.tar.gz vX.Y.Z
+git archive --prefix=qtpass-X.Y.Z/ -o dist/QtPass-X.Y.Z.zip vX.Y.Z
+gh release create vX.Y.Z --draft --verify-tag --title "QtPass X.Y.Z" \
+  --notes-file <(sed -n '/^## \[X.Y.Z\]/,/^## \[/p' CHANGELOG.md | sed '$d') \
+  dist/*/qtpass-X.Y.Z.exe dist/*/QtPass-X.Y.Z.dmg dist/QtPass-X.Y.Z.*
+```
+
+**Verify:** four assets (exe, dmg, tar.gz, ZIP). Then sign and publish as in
+6a, with `--latest` when 1.8.x is the newest stable release.
+
+## Release assets
+
+| Asset                   | Name                           | Built by            |
+| ----------------------- | ------------------------------ | ------------------- |
+| Windows installer       | `qtpass-X.Y.Z.exe`             | `build-windows`     |
+| macOS disk image        | `QtPass-X.Y.Z.dmg`             | `build-macos`       |
+| Linux AppImage (main)   | `QtPass-X.Y.Z-x86_64.AppImage` | `build-appimage`    |
+| Source archives         | `QtPass-X.Y.Z.tar.gz`, `.zip`  | `publish` / by hand |
+| Build provenance (main) | `QtPass-X.Y.Z.intoto.jsonl`    | `publish`           |
+
+Only uploaded assets are signed. GitHub's automatic "Source code" archives are
+generated on the fly and differ from the `git archive` assets; never claim
+they are identical. Debian's `uscan` and MacPorts use the signed
+`QtPass-X.Y.Z.tar.gz`, so signing is not optional.
+
+## 7. Site (gh-pages)
+
+qtpass.org is the `gh-pages` branch. Pages carry the version (headings,
+download links, structured data) and a cache stamp such as
+`styles.css?v=1.8.3-14`:
 
 ```bash
 git checkout gh-pages
-
-# Update downloads.html (download links)
-# Update index.html (main page)
-# Update getting-started.html
-# Update changelog.html (add new release notes + version)
-# Update changelog.1.4.html, old.html (version only)
-
-git add -A
-git commit -m "Release vX.Y.Z"
-git push origin gh-pages
+git grep -n "OLD\.VERSION" -- "*.html"
+# update downloads, index, changelog, getting-started; bump the ?v= stamp
+npx htmlhint "*.html"                          # verify: the site lint passes
 ```
 
-**Common version search:**
+Commit and push to `gh-pages`. GitHub Pages publishes on push; the secondary
+host is synced with `scripts/precompress.sh` and then `./sync.sh` (dry run by
+default, `--live` to deploy).
 
-```bash
-grep -rn "1\.5" *.html
-```
+## 8. Downstream packages (release day)
 
-### 8. Downstream packages (same day as the release)
+QtPass maintains several downstream packages itself, and a release not
+submitted on release day tends to stay unsubmitted. Submit each update, or
+open a tracking issue, before announcing.
 
-QtPass is upstream _and_ maintainer of several downstream packages. Nobody
-else bumps them, so a release that is not submitted downstream on release
-day tends to stay unsubmitted (the FreeBSD port sat on 1.4.0 from 2023 to
-2026). Submit each update, or open a tracking issue for it, before
-announcing the release:
+- Read [references/downstream-packaging.md](references/downstream-packaging.md)
+  when bumping FreeBSD, OpenBSD, MacPorts, winget, Flathub, Debian, Chocolatey
+  or Homebrew (the Homebrew cask is disabled until the app is notarized).
 
-#### FreeBSD `sysutils/qtpass` (and OpenBSD `security/qtpass`)
+## Local builds
 
-- Where: [Bugzilla](https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages),
-  component "Individual Port(s)", summary `sysutils/qtpass: Update to X.Y.Z`.
-- How: bump `DISTVERSION`, run `make makesum`, attach the diff with the
-  `maintainer-approval+` flag (we are the maintainer, so no approval wait).
-  Since 1.8.1 the port lists the desktop file, metainfo and hicolor icons
-  that `make install` produces; 2.0 adds `share/man/man1/qtpass.1.gz`.
-- Test before filing, in the port test bed:
-  [annejan/qtpass-freebsd-port-test](https://github.com/annejan/qtpass-freebsd-port-test).
-  Commit the diff as `patches/qtpass-X.Y.Z.patch` and push, or dispatch
-  _sysutils/qtpass port test_ by hand with the patch path and a ports branch
-  (`main`, `2026Q3`, ...); leave `run_suite` at its default of `true`, the
-  `make check` step below only runs with it. It applies the patch to a fresh
-  ports tree in a FreeBSD VM and runs what a committer runs: `portlint -AC`, `make checksum`
-  (and `makesum` must reproduce `distinfo`), `stage`, `check-plist`,
-  `stage-qa`, `package` + `pkg add`, `ldd`, and QtPass's own `make check`
-  offscreen — on 14.5 amd64, 15.1 amd64 and 14.5 aarch64. A second job runs
-  `poudriere testport` in clean jails (14.5, 15.1, native i386), which is the
-  one that catches a missing `*_DEPENDS`: the first job pre-installs the
-  dependencies with `pkg` and would not notice. Wait for green on all of it,
-  then attach the patch to Bugzilla; the repository's readme tracks which
-  patch became which commit.
-- OpenBSD is not ours (maintainer Stefan Hagen, `security/qtpass`), but the
-  same test bed has a third job for it: a diff against ports `-current` in
-  `patches/openbsd/` is run through `portcheck`, `makesum`, `build`, `fake`,
-  `update-plist`, `port-lib-depends-check`, `package` and `install` on an
-  OpenBSD VM. Send a tested diff to `ports@openbsd.org` with the maintainer
-  in Cc; do not expect to commit it.
+CI produces every release asset. Build locally only to debug a packaging
+problem or to sign and notarize a dmg by hand.
 
-#### MacPorts `aqua/QtPass`
+- Read [references/local-builds.md](references/local-builds.md) when building
+  the AppImage, the macOS dmg (with Developer ID signing and notarization) or
+  the Windows installer on your own machine.
 
-- Where: PR to [macports/macports-ports](https://github.com/macports/macports-ports),
-  title `QtPass: update to X.Y.Z`.
-- How: `github.setup … X.Y.Z v`, `revision 0`, new `checksums`
-  (`rmd160`, `sha256`, `size` of the GitHub release tarball).
+## Script conventions
 
-#### winget `IJHack.QtPass`
-
-- Where: PR to [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs).
-- How: new `manifests/i/IJHack/QtPass/X.Y.Z/` (version, installer, locale);
-  the installer is `x64` (the port is 64-bit only), `InstallerSha256` of
-  `qtpass-X.Y.Z.exe`, `ProductCode` from `qtpass.iss`.
-- Run `winget validate --manifest manifests/i/IJHack/QtPass/X.Y.Z` first.
-
-#### Flathub `org.qtpass.QtPass`
-
-- Where: PR to the Flathub app repository.
-- How: bump the `qtpass` module tag/commit in `flatpak/org.qtpass.QtPass.yml`,
-  add a `<release>` to `org.qtpass.QtPass.metainfo.xml`, run
-  `flatpak-builder-lint`.
-- Flathub's [generative-AI policy](https://docs.flathub.org/docs/for-app-authors/requirements#generative-ai-policy):
-  AI-generated code, packaging or metadata must be disclosed (which parts,
-  how much) and is accepted at reviewer discretion; AI tools must not open
-  or automate the submission PR, or write its commit messages, description,
-  review comments or replies, and no AI-agent reviews may be requested.
-  Open and write the PR by hand.
-
-#### Debian `qtpass` (and everything downstream of it)
-
-- Not ours: maintained by Philip Rinn <rinni@debian.org>,
-  [salsa.debian.org/debian/qtpass](https://salsa.debian.org/debian/qtpass).
-- **Debian is where to coordinate**, because everything else follows it:
-  - Ubuntu auto-syncs from Debian unstable only while its merge window is
-    open (until DebianImportFreeze). After that a new version needs an
-    explicit sync request (`requestsync`) or a manual upload by an Ubuntu
-    developer, and after FeatureFreeze a Feature Freeze Exception as well.
-    Ubuntu also carries its own delta when it wants to — `1.4.0-3ubuntu1`
-    added a `Provides: pinentry` line — so an upload there is possible, just
-    more work and to be repeated every cycle.
-  - Linux Mint's main editions are rebuilt from Ubuntu, so they inherit
-    whatever Ubuntu shipped. **LMDE** is built from Debian stable instead and
-    follows Debian directly.
-  - Net effect: one upload to Debian unstable eventually reaches all of them;
-    an Ubuntu-only fix reaches neither Debian nor LMDE.
-- `debian/watch` scrapes our GitHub releases for `QtPass-<version>.tar.gz`
-  plus the detached `.asc`, so a signed release is enough for `uscan` to see
-  it. Signing the release assets is therefore not optional.
-- If a release sits unpackaged for a while, file a wishlist bug against the
-  package (`reportbug qtpass`, or mail `submit@bugs.debian.org`). Skeleton:
-
-  ```text
-  Package: qtpass
-  Version: <version currently in unstable>
-  Severity: wishlist
-
-  <upstream release X.Y.Z, its date, and the releases skipped since>
-  <the security-relevant fixes, one bullet each, with what they mean for a
-   Debian user — this is also the argument for stable-updates or backports>
-  <changelog and release URLs>
-  <packaging notes: new build dependencies, files the build now installs
-   itself, which of their patches became obsolete>
-  ```
-
-  Keep it factual, leave the stable-update judgement to the maintainer, and
-  offer upstream help. See #1682 for the packaging notes behind the 1.8.1
-  report.
-
-- Keep the Debian delta small: patches they carry are patches to refresh on
-  every upload. `02-make-reproducible.patch` went upstream in #1757;
-  `01-disable-tests.patch` and `03-fix-gpg-detection.patch` are obsolete as of
-  1.8.x (tests run with `--platform offscreen`, and the gpg probe falls back
-  from `gpg2` to `gpg`).
-
-#### Chocolatey `qtpass`
-
-- Not ours (community maintained); nothing to do unless the maintainer asks.
-
-Watch lists: [portscout](https://portscout.freebsd.org/brouwer@annejan.com.html)
-and [FreshPorts](https://www.freshports.org/sysutils/qtpass/) for FreeBSD.
-Maintainer rules from the
-[Porter's Handbook](https://docs.freebsd.org/en/books/porters-handbook/makefiles/#makefile-maintainer):
-a Bugzilla ticket on our port unanswered for two weeks (excluding major
-public holidays) is a maintainer timeout and the change goes in without
-approval; no response for three months, or three consecutive timeouts, and
-all our ports are reassigned to the pool (`ports@FreeBSD.org`).
-
-## Version Numbering
-
-Follow semantic versioning: MAJOR.MINOR.PATCH
-
-- MAJOR: Breaking changes
-- MINOR: New features, backward compatible
-- PATCH: Bugfixes, backward compatible
-
-## Build Locations
-
-| Platform | Output                         |
-| -------- | ------------------------------ |
-| Linux    | `QtPass-x.y.z-x86_64.AppImage` |
-| Source   | `QtPass-x.y.z.tar.gz` / `.zip` |
-| macOS    | `QtPass-x.y.z.dmg`             |
-| Windows  | `QtPass-Setup-x.y.z.exe`       |
-
-## CI/CD
-
-Release workflow via GitHub Actions: `.github/workflows/release-installers.yml`
-
-## Linting
-
-See `qtpass-linting` skill for full CI workflow. Pattern:
-
-```bash
-# Run linter locally BEFORE pushing
-act push -W .github/workflows/lint.yml -j build
-```
-
-## Protected Main Branch
-
-`main` is protected - cannot push directly. Must create PR from a release branch:
-
-```bash
-# Create release branch
-git checkout -b release/vX.Y.Z
-
-# Make changes, commit
-git add -A
-git commit -m "Release vX.Y.Z"
-
-# Update with latest main before pushing
-git fetch upstream
-git rebase upstream/main
-
-# Push branch (force-with-lease since we rebased)
-git push origin release/vX.Y.Z --force-with-lease
-
-# Create PR
-gh pr create --base main --head release/vX.Y.Z --title "Release vX.Y.Z"
-```
-
-## Script Best Practices
-
-### Dry Run Option
-
-For scripts that modify remote state (uploading releases, signing files), add a `--dryrun` flag to enable testing without making changes:
-
-```bash
-# Parse arguments at the start
-dryrun=false
-while [ $# -gt 0 ]; do
-    case "$1" in
-        --dryrun)
-            dryrun=true
-            shift
-            ;;
-        *)
-            break
-            ;;
-    esac
-done
-
-# Use in conditional
-if [ "$dryrun" = true ]; then
-    echo "[dryrun] Would upload files: ${files[*]}"
-else
-    gh release upload ...
-fi
-```
-
-### Glob Handling
-
-When iterating over files matched by a glob pattern, use array assignment to handle the case where no files match:
-
-```bash
-# Without nullglob, loops over literal "*" when no files exist
-for file in *; do
-    [ -f "$file" ] || continue
-
-# With array assignment, iterates over empty array when no files
-files=(*)
-for file in "${files[@]}"; do
-    [ -f "$file" ] || continue
-```
+Release scripts that change remote state take `--dryrun` and say what they
+would do (as `scripts/sign-release-assets.sh` does). Iterate over globs with
+`files=(*)` plus `[ -f "$file" ] || continue`, so an empty match is skipped.
+Lint and CI details are in the `qtpass-linting` skill.

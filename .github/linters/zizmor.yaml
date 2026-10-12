@@ -1,10 +1,10 @@
 ---
-# zizmor configuration — see https://docs.zizmor.sh/configuration/
+# zizmor configuration, see https://docs.zizmor.sh/configuration/
 #
-# We pin every `uses:` to a specific version tag (v8.6.0, v6.0.2, ...) and
-# rely on dependabot for upgrades. zizmor's default policy for unpinned-uses
-# requires SHA pinning; we relax it to ref-pin so version-tag pins are
-# accepted as sufficient.
+# Every `uses:` is pinned to a commit SHA with its version tag as a comment,
+# and dependabot upgrades them. The policy below only sets the floor: a
+# version-tag pin (ref-pin) would still pass, so a workflow that has not been
+# converted yet does not fail the lint.
 rules:
   unpinned-uses:
     config:

@@ -112,8 +112,9 @@ When CodeRabbit/AI flags a PR issue: verify it, fix if real, push, comment with 
 CI enforces zero Doxygen warnings (`WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile`). Every public symbol in a header must have a `/** @brief ... */` doc block with `@param`/`@return` where applicable.
 
 ```bash
-# Check locally — any output means CI will fail
-doxygen Doxyfile
+# Check locally: progress goes to stdout, warnings to stderr, and any
+# warning fails CI (WARN_AS_ERROR = FAIL_ON_WARNINGS)
+doxygen Doxyfile >/dev/null
 ```
 
 Common pitfalls: unnamed parameters in declarations, orphaned doc blocks not immediately above their declaration, missing `@return` on non-void functions.
@@ -126,7 +127,7 @@ Translation files are `.ts` files in `localization/`. Translations are normally 
 - Batch corrections suggested by native-speaker reviewers on a PR.
 - Filling empty entries with best-effort translations marked `type="unfinished"` for Weblate to refine.
 
-After changing **source** strings (English in code), run `qmake6` to refresh translation source references; that step is purely mechanical and affects every locale file.
+After changing **source** strings (English in code), run `qmake6 && make lupdate` at the repository root to refresh translation source references (a plain `qmake6` no longer touches `localization/`); that step is purely mechanical and affects every locale file.
 
 ## Skills
 

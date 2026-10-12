@@ -1,260 +1,138 @@
 ---
 name: qtpass-localization-audit
-description: Use when auditing QtPass translation .ts files for placeholder, HTML, mnemonic, mixed-script, wrong-string, or cross-locale defects.
+description: Audits QtPass localization/*.ts files for broken %1/%n placeholders, unbalanced HTML tags, lost & mnemonics, mixed-script and cross-language artifacts, then fixes and re-audits until clean. Use when reviewing translations or a Weblate PR, checking a machine-translated batch, or chasing a placeholder mismatch or broken HTML in a .ts file.
 license: GPL-3.0-or-later
 metadata:
   audience: developers
   workflow: localization
+  version: "1.1"
 ---
 
 # QtPass Localization Audit
 
-Structural audits for `.ts` translation files. Use this **before** merging large translation contributions (machine-translated batches from Qwen, GPT, Gemini, etc.) and **after** reviewer-supplied refinements that could disturb non-obvious bits like placeholder format or HTML structure.
+Structural checks for Qt Linguist `.ts` files. They catch translations that read
+plausibly but break the UI: a `% 1` that Qt never substitutes, a dropped `</b>`
+that turns a whole dialog bold, a menu entry that lost its `&` shortcut.
 
-The audit catches issues that produce broken UI but read as plausible translations:
+For the general translation workflow (`make lupdate`, editing `.ts` files,
+adding a language, mnemonic conventions, PR mechanics) use the sibling skill
+[qtpass-localization](../qtpass-localization/SKILL.md). This skill only audits
+and cleans up.
 
-- Missing or malformed Qt placeholders (`%1`, `%2`).
-- HTML tag imbalance — translation drops or adds `<br>`/`<strong>`/`<a>`/`<p>` etc.
-- Missing keyboard mnemonics where source has `&Letter`.
-- Mixed-script artifacts (Latin letters glued onto a non-Latin word mid-character).
-- Wrong-string mappings (translation block doesn't match its source — copypaste error).
-- Cross-language leaks (Slovenian text in a Sinhala file, etc.).
+Bundled files (one level deep):
 
-## Quick audit (single file)
+- [scripts/audit_ts.py](scripts/audit_ts.py): the checker. Run it, do not
+  rewrite it inline.
+- [references/mt-artifacts.md](references/mt-artifacts.md): read when a string
+  passes the script but looks wrong, or when deciding whether a machine
+  translation is salvageable.
 
-The Quick audit covers **placeholders, mnemonics, HTML tag balance, and mixed-script artifacts** only.
+## What the script checks
 
-It does **not** detect wrong-string mappings (translation block paired with the wrong source) or cross-language leaks. For those, run the scripts in [Targeted patterns](#targeted-patterns) — `Find wrong-string mappings` and `Find Slovenian leaks (or any cross-locale leak)` — or the full standard cleanup workflow below.
+Run from the repository root. With no file arguments it audits every
+`localization/localization_*.ts`. Vanished and empty entries are skipped;
+`type="unfinished"` entries with text are audited.
 
-```bash
-python3 <<'EOF'
-import re, os
-LOC = 'localization/localization_lv_LV.ts'   # change as needed
+| Code    | Fires when                                                                                                                    | Exit status |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `PH`    | `%1`, `%2` ... differ from the source in any plural form, `%n` is missing from every form, or a `% 1` / `% n` space appears   | 1           |
+| `MN`    | source has a mnemonic (`&Show`) and the translation has none                                                                  | 1           |
+| `HTML`  | per-tag open or close counts differ from the source (the missing or extra tags are printed)                                   | 1           |
+| `MIX`   | Latin letters glued to a word in the locale's own script, unless that Latin run also appears in the source (`gpg`, `QtPass`)  | 1           |
+| `ALPHA` | the password generator alphabet lost a source character or gained a separator (appending local letters is fine)               | 1           |
+| `XML`   | the file declares XML entities: refused unparsed (a real `.ts` has only `<!DOCTYPE TS>`); parsed with defusedxml if installed | 1           |
+| `SAME`  | with `--verbatim`: translation identical to the source (MT fallback or a never-translated string)                             | 0           |
+| `LEAK`  | with `--leak`: translation contains one of the given words from another language                                              | 0           |
 
-with open(LOC) as f:
-    content = f.read()
+`MIX` runs only for locales with a non-Latin script in the script's `SCRIPT`
+table. Add a range there when a new non-Latin locale lands.
 
-mnemonic_sources = {
-    '&amp;Use pass', 'Nati&amp;ve Git/GPG',
-    '&amp;Show', '&amp;Hide', '&amp;Restore', '&amp;Quit',
-    'Mi&amp;nimize', 'Ma&amp;ximize',
-}
-
-# Locale-to-script map for mixed-script detection. Add ranges as needed.
-LOCALE_TO_SCRIPT_RANGES = {
-    'si': '඀-෿',           # Sinhala
-    'ta': '஀-௿',           # Tamil
-    'hi': 'ऀ-ॿ',           # Devanagari
-    'ru': 'Ѐ-ӿ', 'uk': 'Ѐ-ӿ', 'bg': 'Ѐ-ӿ', 'sr': 'Ѐ-ӿ',
-    'el': 'Ͱ-Ͽ',           # Greek
-    'zh': '一-鿿', 'ja': '぀-ゟ゠-ヿ一-鿿', 'ko': '가-힯',
-    'ar': '؀-ۿ', 'he': '֐-׿',
-}
-lang = os.path.basename(LOC).replace('localization_', '').replace('.ts', '').split('_')[0]
-script_range = LOCALE_TO_SCRIPT_RANGES.get(lang)  # None for Latin-script locales
-
-ph = mn = html = mixed = wrong = 0
-for m in re.finditer(
-    r'<message[^>]*>.*?<source>(.*?)</source>.*?<translation([^>]*)>(.*?)</translation>',
-    content, re.DOTALL
-):
-    src, attrs, trans = m.group(1), m.group(2), m.group(3)
-    if 'vanished' in attrs or not trans.strip():
-        continue
-
-    # 1. Placeholder integrity. %1, %2, ... must match exactly.
-    # %n is the Qt plural placeholder: if source uses it, the translation
-    # must use it too (once per <numerusform>), but the count is allowed
-    # to differ across plural forms.
-    s_ph = sorted(re.findall(r'%\d+', src))
-    t_ph = sorted(re.findall(r'%\d+', trans))
-    s_has_n = bool(re.search(r'%n\b', src))
-    t_has_n = bool(re.search(r'%n\b', trans))
-    if s_ph != t_ph or s_has_n != t_has_n or re.search(r'%\s+(?:\d|n)', trans):
-        ph += 1
-        print(f'  [PH]   {src[:60]}\n         -> {trans[:80]}')
-
-    # 2. Missing mnemonics on known mnemonic-bearing sources
-    if src in mnemonic_sources and not re.search(r'&amp;[^\s&;]', trans):
-        mn += 1
-        print(f'  [MN]   {src} -> {trans[:60]}')
-
-    # 3. HTML tag balance (per-tag count must match source)
-    for tag in ['html','body','p','br','strong','a','h3','pre','code','b','ol','li']:
-        s_o = len(re.findall(rf'&lt;{tag}[ /&gt;]', src))
-        s_c = len(re.findall(rf'&lt;/{tag}&gt;', src))
-        t_o = len(re.findall(rf'&lt;{tag}[ /&gt;]', trans))
-        t_c = len(re.findall(rf'&lt;/{tag}&gt;', trans))
-        if s_o != t_o or s_c != t_c:
-            html += 1
-            print(f'  [HTML] {src[:40]} | <{tag}> s={s_o}/{s_c} t={t_o}/{t_c}')
-            break
-
-    # 4. Mixed-script (Latin letter glued to a non-Latin word, or vice versa).
-    # Skipped automatically for Latin-script locales (script_range is None).
-    if script_range:
-        mixed_re = re.compile(f'[{script_range}]+[a-z]+|[a-z]+[{script_range}]+')
-        if mixed_re.search(trans):
-            mixed += 1
-            print(f'  [MIX]  {src[:40]} | {trans[:60]}')
-
-print(f'\nplaceholder={ph} mnemonic={mn} html={html} mixed-script={mixed}')
-EOF
-```
-
-## All-files sweep
-
-For a quick across-the-board check (no per-issue printing, just counts):
+## Quick audit
 
 ```bash
-python3 <<'EOF'
-import re, os, glob
-mnemonic_sources = {
-    '&amp;Use pass','Nati&amp;ve Git/GPG','&amp;Show','&amp;Hide',
-    '&amp;Restore','&amp;Quit','Mi&amp;nimize','Ma&amp;ximize',
-}
-total_ph = total_mn = total_html = 0
-for f in sorted(glob.glob('localization/localization_*.ts')):
-    loc = os.path.basename(f).replace('localization_','').replace('.ts','')
-    content = open(f).read()
-    ph = mn = html = 0
-    for m in re.finditer(r'<message[^>]*>.*?<source>(.*?)</source>.*?<translation([^>]*)>(.*?)</translation>', content, re.DOTALL):
-        src,a,t = m.group(1), m.group(2), m.group(3)
-        if 'vanished' in a or not t.strip(): continue
-        s_ph = sorted(re.findall(r'%\d+', src))
-        t_ph = sorted(re.findall(r'%\d+', t))
-        s_n = bool(re.search(r'%n\b', src)); t_n = bool(re.search(r'%n\b', t))
-        if s_ph != t_ph or s_n != t_n or re.search(r'%\s+(?:\d|n)', t): ph += 1
-        if src in mnemonic_sources and not re.search(r'&amp;[^\s&;]', t): mn += 1
-        for tag in ['html','body','p','br','strong','a','h3','pre','code','b','ol','li']:
-            s_o = len(re.findall(rf'&lt;{tag}[ /&gt;]', src))
-            s_c = len(re.findall(rf'&lt;/{tag}&gt;', src))
-            t_o = len(re.findall(rf'&lt;{tag}[ /&gt;]', t))
-            t_c = len(re.findall(rf'&lt;/{tag}&gt;', t))
-            if s_o != t_o or s_c != t_c:
-                html += 1; break
-    if ph or mn or html:
-        print(f'{loc:8s}  ph={ph:3d}  mn={mn:3d}  html={html:3d}')
-    total_ph += ph; total_mn += mn; total_html += html
-print(f'---\ntotal: ph={total_ph} mn={total_mn} html={total_html}')
-EOF
+A=.opencode/skills/qtpass-localization-audit/scripts/audit_ts.py
+
+python3 "$A" localization/localization_<lang>.ts   # one file, every finding
+python3 "$A" --summary                             # all files, counts only
+python3 "$A" --verbatim localization/localization_<lang>.ts
+python3 "$A" --leak mogoče,prepričani,odložišče,počiščeno --skip sl,hr,sr_RS,sr_Cyrl
 ```
 
-## Common machine-translation artifact patterns
+For `--leak`, pick words that only the unintended language uses, and `--skip`
+that language plus its close relatives (Slovenian shares many words with
+Croatian and Serbian). Output is `locale: [CODE] 'source'` followed by
+`-> 'translation'`; the last line is `total: clean` or the counts.
 
-The audit finds _structural_ breakage; _semantic_ problems need eye review. Patterns we've repeatedly caught from machine-translated contributions:
+To audit only the files a branch or PR touches:
 
-- **Wrong-meaning calques**: `Atgriezt paroli` (= "Return password") for "Repeat password" in lv_LV; `Iekrētāja lekts` (≈ "Mr. [Non-word] sheet") for "Clipboard cleared".
-- **Placeholder corruption**: `% 1` (with space) instead of `%1` — Qt won't substitute and renders the literal.
-- **Cross-language loanwords**: Croatian `sadržju` (= "content") in a Slovenian file; Latvian `Parole` for "password" appearing in Lithuanian.
-- **Made-up verb forms**: `Pārencēšana` (made-up Latvian for "re-encryption" — should be `Pāršifrēšana`); `būtošana` (made-up from `būt` = "to be") for "status".
-- **Wrong word-association**: `පොලීසිය` (Sinhala for "police") for "search"; `මුදල්`/`මූල්‍ය` ("money"/"financial") for unrelated concepts; `හාර්ය` ("wife") for "key".
-- **Repetition glitches**: `kopkopu` ("duplicate-duplicate") in lv_LV for "backup"; same fragment repeated 3× in a single string for sl_SI.
-- **Wrong sigil for mnemonic**: `%顯示` instead of `&amp;顯示` for `&Show`.
-- **JSON delimiter leak**: translation ends with stray `},{` characters (machine-translation tooling fragment).
-- **Stray Latin words mid-script**: `&lt;b&gt;Clipboard&lt;/b&gt;` left untranslated inside an otherwise-Sinhala paragraph.
-- **Alphabet character set translated**: the password generator's `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789` source must NOT be translated. Some MT pipelines insert hyphens (`A-Z-...`) or substitute regional letters (`abcdeļš` for the middle of the alphabet) — both break password generation.
+```bash
+git diff --name-only origin/main...HEAD -- 'localization/*.ts' | xargs -r python3 "$A"
+```
 
-## Standard cleanup workflow for MT contributions
+## Audit, fix, re-audit loop
 
-When a friend-or-bot contributes a batch of machine translations:
+Run this on every machine-translated batch, every Weblate PR, and after
+reviewer refinements to long or HTML-bearing strings.
 
-1. **Commit the contribution as-is** (one commit, attribute properly):
+1. **Audit**: `python3 "$A" <files>`. Also run once with `--verbatim` and read
+   [references/mt-artifacts.md](references/mt-artifacts.md) for a large MT
+   batch; the script cannot judge meaning.
+2. **Fix** each finding:
+
+   | Finding                          | Action                                                                                       |
+   | -------------------------------- | -------------------------------------------------------------------------------------------- |
+   | `PH` with an obvious fix         | Correct the placeholder (`% 1` to `%1`, restore a dropped `%2`)                              |
+   | `PH` where the meaning is unsure | Revert to `<translation type="unfinished"></translation>` for a native reviewer              |
+   | `HTML` on a long paragraph       | Revert to empty unfinished; re-tagging prose you cannot read invents errors                  |
+   | `MN`                             | Add the `&` per the mnemonic rules in [qtpass-localization](../qtpass-localization/SKILL.md) |
+   | `MIX`                            | Revert to empty unless one obvious fix applies (an English word left in, a glued fragment)   |
+   | `ALPHA`                          | Restore the source string verbatim                                                           |
+   | `XML`                            | Do not merge it: entity declarations in a contributed `.ts` are an attack or a broken tool   |
+   | `LEAK`, `SAME`                   | Read the string: keep product names and accepted loanwords, revert real leaks to empty       |
+
+   When editing `.ts` files directly, keep the `<source>` line out of the edit:
+   trailing whitespace in it is significant and editors strip it.
+
+3. **Re-audit**: run the same command again. Repeat steps 2 and 3 until it
+   prints `total: clean` (exit status 0). Do not stop on "mostly clean".
+4. **Compile check**:
 
    ```bash
-   git checkout -b LangFromContributor upstream/main
-   git checkout -- localization/localization_<lang>.ts  # in case of unrelated working-tree noise
-   git add localization/localization_<lang>.ts
-   git commit -S -m "i18n(<lang>): translations from <Contributor>"
+   f=localization/localization_<lang>.ts
+   xmllint --noout "$f"                          # must print nothing
+   lrelease6 "$f" -qm "$(mktemp --suffix=.qm)"   # Generated N translation(s) ...
    ```
 
-2. **Run the audit** (single-file form above).
-3. **For each finding, decide**:
-   - Placeholder mismatch → either fix the placeholder or revert to empty `<translation type="unfinished"></translation>` for native review.
-   - HTML imbalance on a long paragraph → revert to empty.
-   - Mixed-script artifact → revert to empty unless one obvious fix applies.
-   - Alphabet character-set mistranslation → restore source verbatim.
-   - Missing mnemonic → add per Qt mnemonic conventions (see `qtpass-localization` skill).
-4. **Commit the cleanup** as a second commit on the same branch (this keeps the contribution diff reviewable).
-5. **Re-run the audit** to confirm 0 placeholder / 0 HTML / 0 mnemonic / 0 mixed-script.
-6. **`lrelease6` smoke test**:
+   `lrelease6` catches malformed XML but not placeholder
+   or HTML problems, so it complements the audit rather than replacing it.
+   Writing the `.qm` to a temporary file keeps `localization/` clean.
 
-   ```bash
-   lrelease6 localization/localization_<lang>.ts | tail -3
-   rm -f localization/localization_<lang>.qm
-   ```
+## Cleaning up a machine-translated contribution
 
-7. **Push and PR**, attributing the contributor in the commit body / PR description.
+Keep the contribution and the cleanup as separate commits so reviewers can see
+what changed:
 
-## Targeted patterns
-
-The patterns below cover checks the [Quick audit](#quick-audit-single-file) intentionally skips — wrong-string mappings, cross-language leaks, and verbatim-untranslated source fallback. Run them when reviewing a translation contribution or before merging a Weblate sync.
-
-### Find verbatim-untranslated entries (translation == source)
-
-Useful for scanning whether a file has actual coverage or is mostly source-fallback. Filter for proper-noun / technical-token false positives:
-
-```python
-import re, glob
-ignore = {
-    'QtPass','GPG','Git','OTP','PWGen','pass','Pass','Email','%1','%2','…','⌕',
-    'Aa','LTR','Ctrl+G','Ctrl+N','PGP','GnuPG','YubiKey','Push','Git push','Git pull',
-    'gpg','git','Git:','qrencode','pwgen',
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
-    'login\nURL\ne-mail',
-    'QProcess::FailedToStart','QProcess::Crashed','QProcess::Timedout',
-    'QProcess::ReadError','QProcess::WriteError','QProcess::UnknownError',
-}
-for f in sorted(glob.glob('localization/localization_*.ts')):
-    content = open(f).read()
-    for m in re.finditer(r'<message[^>]*>.*?<source>(.*?)</source>.*?<translation([^>]*)>(.*?)</translation>', content, re.DOTALL):
-        src,a,t = m.group(1), m.group(2), m.group(3)
-        if 'vanished' in a or not t.strip(): continue
-        if src.strip() == t.strip() and src not in ignore and 'href' not in src and len(src) > 2:
-            print(f'{f}: {src[:60]!r}')
+```bash
+git switch -c l10n/<lang>-from-<contributor> origin/main
+cp /path/to/contributed/localization_<lang>.ts localization/
+git add localization/localization_<lang>.ts
+git commit -s -S --author="Contributor Name <email>" \
+  -m "l10n: <lang> translations from <Contributor>"
+# audit, fix, re-audit loop above, then:
+git add localization/localization_<lang>.ts
+git commit -s -S -m "l10n: <lang>: fix placeholders, HTML and MT artifacts"
 ```
 
-### Find Slovenian leaks (or any cross-locale leak)
-
-Replace the keyword set with distinguishing words from the _unintended_ language:
-
-```python
-# Detect Slovenian leaks in non-sl_SI files
-slovenian = ['mogoče','prepričani','želite','izbrisati','odložišče','počiščeno',
-             'ključa','obesku','zagon','uspel','nepričakovano']
-import re, glob
-for f in sorted(glob.glob('localization/localization_*.ts')):
-    if 'sl_SI' in f: continue
-    content = open(f).read()
-    for m in re.finditer(r'<message[^>]*>.*?<source>(.*?)</source>.*?<translation([^>]*)>(.*?)</translation>', content, re.DOTALL):
-        src,a,t = m.group(1), m.group(2), m.group(3)
-        if 'vanished' in a or not t.strip(): continue
-        for w in slovenian:
-            if w in t.lower():
-                print(f'{f}: {src[:50]} -> {t[:60]}')
-                break
-```
-
-### Find wrong-string mappings (copypaste errors)
-
-Look for translations whose `%`-placeholder set doesn't match the source's. Already covered by the main placeholder check, but a separate scan focused on mismatched length / radically different translation can also help:
-
-```python
-import re, glob
-for f in sorted(glob.glob('localization/localization_*.ts')):
-    content = open(f).read()
-    for m in re.finditer(r'<message[^>]*>.*?<source>(.*?)</source>.*?<translation([^>]*)>(.*?)</translation>', content, re.DOTALL):
-        src,a,t = m.group(1), m.group(2), m.group(3)
-        if 'vanished' in a or not t.strip(): continue
-        # Suspicious: translation 3× longer than source, or vice versa
-        if len(src) > 10 and (len(t) > 3 * len(src) or len(t) * 3 < len(src)):
-            print(f'{f}: len-ratio {len(src)}->{len(t)}: {src[:50]!r}')
-```
+Push and open the PR as described in
+[qtpass-localization](../qtpass-localization/SKILL.md), crediting the
+contributor in the PR description.
 
 ## When to skip the audit
 
-- Pure terminology rename PRs (e.g., `krātuve→glabātuve`) on a single locale: structure is preserved by definition.
-- Single-string typo fixes from a known reviewer.
-- Removing `type="unfinished"` (finalising) on previously-validated translations.
+- A pure terminology rename on one locale (for example `krātuve` to
+  `glabātuve`): structure is unchanged by definition.
+- A single-string typo fix from a known reviewer.
+- Dropping `type="unfinished"` on translations that already passed an audit.
 
-For everything else — especially MT-source contributions — running the audit takes ~5 seconds and reliably catches issues that would otherwise need a second PR.
+Everything else, especially machine-translated input, gets the loop: a full
+sweep takes seconds and saves a follow-up PR.

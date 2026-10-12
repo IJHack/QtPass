@@ -1,194 +1,103 @@
 ---
 name: qtpass-testing
-description: Use when writing, running, debugging, or extending QtPass Qt Test suites, coverage runs, sanitizer checks, or test fixtures.
+description: Writes, runs and debugs QtPass Qt Test suites under tests/auto, adds new tst_ suites, isolates settings, and checks coverage and ASan leaks. Use when asked to write tests, add a test, run tests or make check, fix a failing test, find which suite covers a class, measure coverage, hunt leaks with sanitizers, or set up test fixtures.
 license: GPL-3.0-or-later
 metadata:
   audience: developers
   workflow: testing
+  version: "1.1"
 ---
 
-# QtPass Testing Guide
+# QtPass Testing
 
-## Project Overview
+QtPass tests use Qt Test. Each suite is a separate binary in
+`tests/auto/<suite>/`, linked against the static library built from `src/`.
+The suite list is `SUBDIRS` in `tests/auto/auto.pro`.
 
-QtPass is a Qt6/C++ password manager GUI for `pass`. Tests use Qt Test framework.
+For the full suite inventory (which suite covers which class, platform
+exclusions, shared helpers), read
+[references/suites.md](references/suites.md). For longer patterns (getters
+with defaults, path comparison, settings isolation details, reading ASan
+output), read [references/patterns.md](references/patterns.md).
 
-## Quick Start
+## Commands
 
 ```bash
-# Build and run all tests
-make check
+make check                                   # build and run every suite
+QT_QPA_PLATFORM=offscreen make check         # headless, as CI runs it
+./tests/auto/util/tst_util                   # one suite
+./tests/auto/util/tst_util normalizeFolderPath   # one test function
+./tests/auto/util/tst_util -v2               # verbose: every QVERIFY/QCOMPARE
+./tests/auto/util/tst_util -vs               # also log every emitted signal
+./tests/auto/util/tst_util -functions        # list the test functions
+```
 
-# Build with coverage
+Coverage:
+
+```bash
 qmake6 -r CONFIG+=coverage
 make -j4
-
-# Generate coverage report
+make check
 make lcov
 ```
 
-## Leaks and use-after-free: AddressSanitizer
+## Workflow
 
-Do not reach for valgrind: it is 20-50x slower, trips over Qt 6 on a current
-glibc/CPU, and needs a suppression file. GCC and clang ship ASan and LSan, and
-qmake has a config for them. Use a separate build directory or a fresh
-worktree — sanitizer objects do not mix with a normal build.
+1. Find the suite that owns the class (see
+   [references/suites.md](references/suites.md)). Add to an existing suite
+   before creating a new one.
+2. Write the test (template below). Run that one suite and see it fail first
+   when you are testing a bugfix.
+3. Run `make check`. If any suite fails, read the failing function's output
+   with `-v2`, fix the code or the test, and re-run until every suite passes.
+   Do not commit with a failing suite.
+4. If the change touches object ownership (parents, `QScopedPointer`, `delete`,
+   dialogs, `setWindowFlags`), also run the ASan build below and fix every
+   report before committing.
+5. Run `clang-format --style=file -i` on the files you changed. Lint and CI
+   details are in the `qtpass-linting` skill.
 
-```bash
-qmake6 "CONFIG+=debug sanitizer sanitize_address"
-make -j8
-ASAN_OPTIONS=detect_leaks=1 QT_QPA_PLATFORM=offscreen make check
-```
-
-A leak looks like this, with the allocation site named:
-
-```text
-Direct leak of 88 byte(s) in 1 object(s) allocated from:
-    #0 ... in operator new(unsigned long)
-    #1 ... in ImportKeyDialog::ImportKeyDialog(QString const&, QWidget*) src/importkeydialog.cpp:28
-SUMMARY: AddressSanitizer: 440 byte(s) leaked in 5 allocation(s).
-```
-
-That was the `ImportKeyDialog` Ui struct (fixed in #1762). The whole suite is
-clean under ASan + LSan as of 2026-09-16 — 27 suites, no reports, **no
-suppressions needed** — so any report from this recipe is a real regression,
-not Qt noise. Run it before merging anything that changes object ownership
-(parents, `QScopedPointer`, `delete`, dialogs, `setWindowFlags`).
-
-## Existing Test Suites
-
-> The suites below are representative, not exhaustive — `tests/auto/auto.pro`
-> `SUBDIRS` is the source of truth. Newer suites include `settings`,
-> `configdialog`, `mainwindow`, `importkeydialog`, `exportpublickeydialog`,
-> `keygendialog`, `trayicon`, `userinfo`, `profileinit`, `grepsearchcontroller`
-> and `passworddisplaypanel`.
-
-### tests/auto/gpgkeystate/tst_gpgkeystate.cpp
-
-Tests for `src/gpgkeystate.cpp`:
-
-- `parseMultiKeyPublic()` - Multiple public keys parsing
-- `parseSecretKeys()` - Secret key detection (have_secret flag)
-- `parseSingleKey()` - Single key with and without fingerprint
-- `parseKeyRollover()` - Multiple keys in sequence
-- `classifyRecordTypes()` - GPG record type classification (pub, sec, uid, fpr, etc.)
-
-### Test Fixtures
-
-There is no shared fixtures directory. Suites that need gpg output generate a
-throwaway keyring (`tests/auto/integration`) or write a recording fake gpg
-(`tests/auto/imitatepass`). Keep test data next to the suite that uses it.
-
-### tests/auto/util/tst_util.cpp
-
-Tests for `src/util.cpp`:
-
-- `normalizeFolderPath()` - Path normalization
-- `fileContent()` / `fileContentEdgeCases()` - FileContent parsing
-- `regexPatterns()` / `regexPatternEdgeCases()` - URL detection regular expression
-- `totpHiddenFromDisplay()` - OTP field hiding
-- `userInfoValidity()` - User key validation
-- `passwordConfigurationCharacters()` - Password character sets
-- `simpleTransaction*()` - SimpleTransaction tests
-
-### tests/auto/filecontent/tst_filecontent.cpp
-
-Tests for `src/filecontent.h`:
-
-- `parsePlainPassword()` - Single-line password
-- `parsePasswordWithNamedFields()` - Password with key:value
-- `parseWithTemplateFields()` - Template field parsing
-- `parseWithAllFields()` - All fields mode
-- `getRemainingData()` - Non-template fields
-- `getRemainingDataForDisplay()` - Hides otpauth://
-- `namedValuesTakeValue()` / `namedValuesTakeValueNotFound()`
-
-### tests/auto/passwordconfig/tst_passwordconfig.cpp
-
-Tests for `src/passwordconfiguration.h`:
-
-- `passwordConfigurationDefaults()` - Default values
-- `passwordConfigurationSetters()` - Setter methods
-- `passwordConfigurationCharacterSets()` - Character set config
-
-### tests/auto/executor/tst_executor.cpp
-
-Tests for `src/executor.h`:
-
-- `executeBlockingEcho()` - Basic execution
-- `executeBlockingWithArgs()` - Arguments handling
-- `executeBlockingExitCode()` - Exit code checking (Unix only)
-- `executeBlockingStderr()` - Error output capture (Unix only)
-
-### tests/auto/model/tst_storemodel.cpp
-
-Tests for `src/storemodel.h`:
-
-- `dataRemovesGpgExtension()` - Display name filtering
-- `flagsWithValidIndex()` / `flagsWithInvalidIndex()` - Item flags
-- `mimeTypes()` - Drag/drop MIME types
-- `lessThan()` - Sorting comparison
-- `supportedDropActions()` / `supportedDragActions()`
-- `filterAcceptsRowHidden()` / `filterAcceptsRowVisible()`
-
-### tests/auto/settings/tst_settings.cpp
-
-Tests for `src/qtpasssettings.h`:
-
-- Uses set+get pattern for each setting
-- Tests isUseGit(), setUseGit(), etc.
-
-### tests/auto/ui/tst_ui.cpp
-
-UI tests:
-
-- `contentRemainsSame()` - Password content integrity
-- `emptyPassword()` - Empty password handling
-- `multilineRemainingData()` - Multiline field handling
-
-## Test File Template
+## Test file template
 
 ```cpp
-// SPDX-FileCopyrightText: YYYY Your Name
+// SPDX-FileCopyrightText: 2026 Your Name
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QtTest>
 
 #include "../../../src/mymodule.h"
+#include "../testsettings.h"
 
 class tst_mymodule : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
   void initTestCase();
-  void testBasicFunction();
-  void testEdgeCase();
-  void cleanupTestCase();
+  void processReturnsExpected();
+  void processEmptyInput();
 };
 
-void tst_mymodule::initTestCase() {}
-
-void tst_mymodule::testBasicFunction() {
-    // Use set+get pattern or direct input/output
-    QString result = MyModule::process("input");
-    QVERIFY2(result == "expected", "Should return expected output");
+void tst_mymodule::initTestCase() {
+  // First statement, before anything touches QtPassSettings.
+  isolateTestSettings();
 }
 
-void tst_mymodule::testEdgeCase() {
-    // Test empty, null, boundary conditions
-    QVERIFY(MyModule::process("").isEmpty());
+void tst_mymodule::processReturnsExpected() {
+  QCOMPARE(MyModule::process("input"), QStringLiteral("expected"));
 }
 
-void tst_mymodule::cleanupTestCase() {}
+void tst_mymodule::processEmptyInput() {
+  QVERIFY(MyModule::process("").isEmpty());
+}
 
 QTEST_MAIN(tst_mymodule)
 #include "tst_mymodule.moc"
 ```
 
-## .pro File Template
+Drop `isolateTestSettings()` only if the code under test never reads
+settings. Suites that need a `Pass` object without a backend derive from
+`NullPass` in `../testpass.h`.
 
-Two lines. Everything a suite needs — linking `libqtpass.a`, the include path,
-the Windows resource and linker cap, the `tst_` target prefix — lives in
-`tests/auto/auto.pri`:
+## .pro file template
 
 ```pro
 !include(../auto.pri) { error("Couldn't find the auto.pri file!") }
@@ -196,321 +105,68 @@ the Windows resource and linker cap, the `tst_` target prefix — lives in
 SOURCES += tst_mymodule.cpp
 ```
 
-Do not list library headers in `HEADERS`: the static library already contains
-their moc output, and listing them here mocs them a second time into the test
-binary. Do not compile library sources into a suite either; link the library.
-A suite that needs something extra (the locale suite embeds the translations)
-adds only that.
-
-## Adding a New Test Suite
-
-1. Create directory: `tests/auto/<name>/`
-2. Add `<name>.pro` (the two lines above)
-3. Add `tst_<name>.cpp`
-4. Add to `tests/auto/auto.pro`: `SUBDIRS += <name>`
-5. Rebuild: `qmake6 -r && make -j4`
-6. Run: `make check`
-
-No per-suite `qtpass.plist` or `artwork/` link: `qtpass.pri` anchors the macOS
-bundle icon and plist to the repository root with `$$PWD`.
-
-## Best Practices
-
-### Test Naming
-
-- Test file: `tst_<classname>.cpp`
-- Test class: `tst_<classname>`
-- Test methods: `testMethodName()` or `methodDoesWhat()`
-
-### Test Organization
-
-- `initTestCase()` - Setup (runs once before all tests)
-- `init()` - Setup before each test
-- Test methods in logical order
-- `cleanupTestCase()` - Teardown (runs once after all tests)
-
-### Assertions
-
-```cpp
-// Basic
-QVERIFY(condition);
-QVERIFY2(condition, "failure message");
-
-// Equality
-QCOMPARE(actual, expected);
-QCOMPARE2(actual, expected, "message");
-
-// String matching
-QVERIFY2(output.contains("needle"), "should contain needle");
-QCOMPARE(QString("hello").toUpper(), QString("HELLO"));
-```
-
-### Never use `||` in assertions
-
-Bad (tautology or ambiguous):
-
-```cpp
-QVERIFY(result == expected || result == INVALID);  // unclear intent
-QVERIFY(result != INVALID || result == INVALID);  // ALWAYS TRUE - tautology!
-```
-
-Good - just call the method to verify it doesn't crash:
-
-```cpp
-simpleTransaction trans;
-trans.transactionAdd(Enums::PASS_INSERT);
-trans.transactionIsOver(Enums::PASS_INSERT);  // verify it runs without crash
-```
-
-Or use deterministic setup with `QCOMPARE`:
-
-```cpp
-simpleTransaction st;
-st.transactionAdd(Enums::PASS_INSERT);
-Enums::PROCESS result = st.transactionIsOver(Enums::PASS_INSERT);
-QCOMPARE(result, Enums::PASS_INSERT);  // deterministic
-```
-
-### QtTest Macros
-
-- `QFAIL("message")` - Fail with message
-- `QSKIP("message")` - Skip test
-- `QCOMPARE(a, b)` - Assert equality
-- `QVERIFY(a)` - Assert true
-- `QVERIFY2(a, msg)` - Assert with message
-
-### Windows Compatibility
-
-```cpp
-void tst_executor::unixOnlyTest() {
-#ifndef Q_OS_WIN
-    // Test code here
-#endif
-}
-```
-
-### Path Comparison on Windows
-
-Windows uses backslashes (`\`) while Unix uses forward slashes (`/`). When comparing paths, use `QDir::cleanPath()` to normalize:
-
-```cpp
-void tst_util::testPathComparison() {
-    QString path = Pass::getGpgIdPath(passStore);
-    QString expected = passStore + "/.gpg-id";
-    // Use cleanPath to normalize for cross-platform compatibility
-    QVERIFY2(QDir::cleanPath(path) == QDir::cleanPath(expected),
-             qPrintable(QString("Expected %1, got %2")
-                        .arg(QDir::cleanPath(expected), QDir::cleanPath(path))));
-}
-```
-
-### Test Settings Pollution
-
-Tests that modify QtPass settings can pollute the user's live config. This is especially problematic on Windows where settings use the registry.
-
-**Solution: Backup and restore settings in tests**
-
-```cpp
-// In tst_settings::initTestCase()
-void tst_settings::initTestCase() {
-    // Check for portable mode (qtpass.ini in app directory)
-    QString portable_ini = QCoreApplication::applicationDirPath() +
-                         QDir::separator() + "qtpass.ini";
-    bool isPortableMode = QFile::exists(portable_ini);
-
-    if (isPortableMode) {
-        // Backup settings file
-        QtPassSettings::getInstance()->sync();
-        QString settingsFile = QtPassSettings::getInstance()->fileName();
-        m_settingsBackupPath = settingsFile + ".bak";
-        QFile::remove(m_settingsBackupPath);
-        QFile::copy(settingsFile, m_settingsBackupPath);
-    } else {
-        // Warn on non-portable mode (registry on Windows)
-        qWarning() << "Non-portable mode detected. Tests may modify registry settings.";
-    }
-}
-
-// In tst_settings::cleanupTestCase()
-void tst_settings::cleanupTestCase() {
-    // Restore original settings after all tests
-    if (isPortableMode && !m_settingsBackupPath.isEmpty()) {
-        QString settingsFile = QtPassSettings::getInstance()->fileName();
-        QFile::remove(settingsFile);
-        QFile::copy(m_settingsBackupPath, settingsFile);
-        QFile::remove(m_settingsBackupPath);
-    }
-}
-```
-
-**Key points:**
-
-- Only backup in portable mode (file-based settings)
-- On registry mode (Windows non-portable), warn but cannot back up
-- Always restore after tests to prevent pollution
-
-### Gitleaks-Safe Test Values
-
-- DON'T: "ABC123DEF456", "sk-xxx", real API keys
-- DO: "testkey123", "/usr/bin/pass", "example.com"
-
-### Qt Version Floor
-
-The floor is Qt 6.8 — the oldest version CI builds (see the `qtpass-fixing`
-skill for why). Qt 5 support ended with 1.8, so there is no Qt 5 compatibility
-to maintain in tests; do not add `QT_VERSION_CHECK` branches for it. APIs
-newer than 6.8 (e.g. `QBasicTimer::id()`, 6.8; check the docs' "since") still
-need a guard or an alternative.
-
-When checking variant types, prefer `canConvert<T>()` over `metaType().id()`;
-it reads as the intent rather than as a type-id comparison:
-
-```cpp
-QVERIFY(displayData.canConvert<QString>());
-```
-
-### Temporary Files/Directories
-
-```cpp
-void tst_mymodule::testWithTempFile() {
-    QTemporaryDir tempDir;
-    QString filePath = tempDir.path() + "/test.txt";
-    QFile file(filePath);
-    QVERIFY(file.open(QIODevice::WriteOnly));
-    file.write("test data");
-    file.close();
-    // Test reads/modifies file
-}
-```
-
-### Testing Getters with Default Parameters
-
-When testing settings that have getters with default parameters, pass a _different_ default value to verify persistence:
-
-```cpp
-// Bad - returns default if persistence fails
-setter(testValue);
-QCOMPARE(getter(testValue), testValue);
-
-// Good - uses different default, must return stored value
-setter(testValue);
-QCOMPARE(getter(!testValue), testValue);        // bool: use negation
-QCOMPARE(getter(-1), testValue);                 // int: use sentinel
-QCOMPARE(getter(QString()), testValue);          // string: use empty
-```
-
-### Compound Types Don't Always Fit Data-Driven
-
-Data-driven tests work well for simple bool/int/string settings. Compound types like `PasswordConfiguration` often don't fit:
-
-- Different tests test different fields (length vs selected vs characters)
-- Nested data (QMap, structs) complicates the table
-- Keep tests explicit and readable over forcing a pattern
-
-### Qt Test Macro Reminder
-
-Always use the proper Qt Test macros:
-
-```cpp
-// Good
-QCOMPARE(actual, expected);
-QVERIFY(condition);
-QVERIFY2(condition, "failure message");
-
-// Bad - won't compile or is confusing
-COMPARE(actual, expected);      // missing Q
-QQCOMPARE(actual, expected);     // extra Q
-```
-
-## Testable Source Files
-
-### src/util.h/cpp
-
-- `normalizeFolderPath()` - Path normalization
-- `protocolRegex()` - URL detection
-- `endsWithGpg()` - Extension matching
-- `newLinesRegex()` - Newline detection
-
-### src/filecontent.h/cpp
-
-- `FileContent::parse()` - Parse password file
-- `getPassword()` - Get main password
-- `getNamedValues()` - Get key:value fields
-- `getRemainingData()` - Non-template fields
-- `getRemainingDataForDisplay()` - Display-safe (hides OTP)
-- `NamedValues::takeValue()` - Extract and remove value
-
-### src/passwordconfiguration.h
-
-- `PasswordConfiguration` class
-- Character set definitions
-- Length configuration
-
-### src/executor.h/cpp
-
-- `Executor::executeBlocking()` - Run command synchronously
-- Returns exit code, captures output/stderr
-
-### src/storemodel.h/cpp
-
-- `StoreModel` extends QFileSystemModel
-- `setModelAndStore()` - Initialize with model and path
-- `data()` - Returns display name (removes .gpg)
-- `flags()` - Item flags
-- `lessThan()` - Sorting
-
-### src/qtpasssettings.h
-
-- 26+ settings: isUseGit(), setUseGit(), isUseMonospace(), etc.
-
-## CI Integration
-
-Tests run via `make check` in CI. Coverage reported with `make lcov`.
-
-## Linting
-
-See `qtpass-linting` skill for full CI workflow. Pattern:
+`tests/auto/auto.pri` handles linking `libqtpass.a`, the include path, the
+Windows resource and linker cap, and the `tst_` target prefix. Do not list
+library headers in `HEADERS` (their moc output is already in the library, and
+listing them mocs them twice) and do not compile library sources into the
+suite. Add only what the suite needs beyond that (the `locale` suite embeds
+the translations, for example).
+
+## Adding a new suite
+
+1. Create `tests/auto/<name>/` with `<name>.pro` and `tst_<name>.cpp`.
+2. Add `<name>` to `SUBDIRS` in `tests/auto/auto.pro`. If it cannot run on
+   Windows, add it under `!win32:` as `integration` is.
+3. Rebuild with `qmake6 -r && make -j4`, then run `make check` and fix
+   failures until it passes.
+
+No per-suite `qtpass.plist` or `artwork/` link is needed: `qtpass.pri` anchors
+the macOS bundle icon and plist to the repository root.
+
+## Conventions
+
+- Naming: file `tst_<name>.cpp`, class `tst_<name>`, functions that say what
+  they check (`parseColonInValue`, `getGpgIdPathSubfolder`).
+- Assertions: `QCOMPARE(actual, expected)` for values (it prints both),
+  `QVERIFY2(cond, msg)` when the condition needs an explanation, `QVERIFY`
+  otherwise. `QSKIP` for a case that cannot run on this platform.
+- No `||` in an assertion: set up the state so there is one correct answer.
+- Settings round trips: pass a getter a default that differs from the stored
+  value (`getter(!value)`, `getter(-1)`, `getter(QString())`), or a broken
+  setter still passes.
+- Platform-specific cases: guard with `#ifndef Q_OS_WIN` (or `#ifdef`) inside
+  the test function, or `QSKIP`.
+- Paths: compare through `QDir::cleanPath()` on both sides.
+- Temporary files: `QTemporaryDir`, checked with `isValid()`; never write into
+  the source tree or `$HOME`.
+- Test data: no shared fixtures directory; keep data next to the suite.
+- Secret-looking values trip gitleaks: use `testkey123`, `example.com`,
+  `/usr/bin/pass`, not strings shaped like real API keys.
+- Variant types: prefer `canConvert<QString>()` over comparing
+  `metaType().id()`.
+- Qt floor is 6.8 (what CI builds). Do not add Qt 5 branches; guard APIs newer
+  than 6.8.
+
+Worked examples of these are in
+[references/patterns.md](references/patterns.md).
+
+## Leaks and use-after-free: AddressSanitizer
+
+Use ASan and LSan, not valgrind (valgrind is far slower, trips over Qt 6 on a
+current glibc, and needs suppressions). Build in a separate directory or a
+fresh worktree, since sanitizer objects do not mix with a normal build:
 
 ```bash
-# Run linter locally BEFORE pushing
-act push -W .github/workflows/lint.yml -j build
+qmake6 "CONFIG+=debug sanitizer sanitize_address"
+make -j8
+ASAN_OPTIONS=detect_leaks=1 QT_QPA_PLATFORM=offscreen make check
 ```
 
-### Web/Config Files (prettier)
+The suite ran clean with no suppressions as of 2026-09-16, so any report is a
+regression to fix, then re-run until clean. How to read a report is in
+[references/patterns.md](references/patterns.md#reading-addresssanitizer-output).
 
-Formats: .md, .yml, .html, .css, .js, .json, etc.
+## Fuzz targets
 
-```bash
-npx prettier --write <file>
-npx prettier --write .github/workflows/*.yml
-npx prettier --write ".opencode/skills/*/SKILL.md"
-```
-
-### C++ (clang-format)
-
-```bash
-# Check formatting
-clang-format --style=file --dry-run src/main.cpp
-
-# Apply formatting
-clang-format --style=file -i src/main.cpp
-```
-
-### Project Lint
-
-```bash
-make check  # Runs tests and builds
-```
-
-## Debugging Failed Tests
-
-```bash
-# Run single test
-./tests/auto/util/tst_util testName
-
-# Verbose output
-./tests/auto/util/tst_util -v2
-
-# Detailed timing
-./tests/auto/util/tst_util -vs
-```
+The untrusted-input parsers also have libFuzzer targets in `tests/fuzz/`; see
+the repository `CLAUDE.md` for the build and run commands.

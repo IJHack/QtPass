@@ -12,4 +12,5 @@ skip = ./localization/*,./.git/*
 # fo — RFC 4648 base32 test vector (the f/fo/foo/foobar sequence)
 # unparseable — valid variant; used in a TOTP negative-test row label
 # intoto — in-toto, the SLSA provenance attestation format (*.intoto.jsonl)
-ignore-words-list = fpr,ue,tru,doubleclick,pre-selected,fo,unparseable,intoto
+# te — Telugu locale code (localization audit script table)
+ignore-words-list = fpr,ue,tru,doubleclick,pre-selected,fo,unparseable,intoto,te
