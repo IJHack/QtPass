@@ -58,5 +58,5 @@ View the result with `xdg-open docs/index.html` (Linux) or
 - An orphaned `/** */` block that is not directly above its declaration.
 - Missing `@return` on a non-void function.
 - Signals with unnamed or undocumented parameters.
-- A typo in a command (`@retrun`, `@parma`): Doxygen reports it as unknown.
+- A misspelled command (a typo in `@return` or `@param`): Doxygen reports it as unknown.
 - Public struct fields and operators without a doc comment.

@@ -47,7 +47,7 @@ const QString normalized = QDir::cleanPath(gpgIdPath);
 
 Check that an optional binary is available before using it, and report a
 translated error instead of failing silently. OTP no longer needs the
-`pass-otp` extension: TOTP is built in (`src/totp.h`), so do not add a
+`pass-otp` extension: TOTP is built-in (`src/totp.h`), so do not add a
 `pass-otp` check.
 
 ### Dropping env vars by prefix

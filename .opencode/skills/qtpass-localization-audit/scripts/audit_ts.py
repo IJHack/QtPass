@@ -27,6 +27,7 @@ import glob
 import os
 import re
 import sys
+
 # .ts files arrive from contributors (Weblate, PRs), so parse them as
 # untrusted XML: defusedxml when installed; otherwise the standard library,
 # which audit() only reaches after refusing entity declarations.
@@ -34,29 +35,63 @@ try:
     from defusedxml import ElementTree as ET
 except ImportError:
     import xml.etree.ElementTree as ET  # nosec B405
+
 from collections import Counter
 
 # Native script per locale (full locale name first, then language code).
 # Latin-script locales are absent, so MIX is skipped for them.
 SCRIPT = {
-    "ar": "؀-ۿ", "fa": "؀-ۿ", "ur": "؀-ۿ",
+    "ar": "؀-ۿ",
+    "fa": "؀-ۿ",
+    "ur": "؀-ۿ",
     "he": "֐-׿",
-    "bg": "Ѐ-ӿ", "ru": "Ѐ-ӿ", "uk": "Ѐ-ӿ",
+    "bg": "Ѐ-ӿ",
+    "ru": "Ѐ-ӿ",
+    "uk": "Ѐ-ӿ",
     "sr_Cyrl": "Ѐ-ӿ",
     "el": "Ͱ-Ͽ",
-    "hi": "ऀ-ॿ", "mr": "ऀ-ॿ",
-    "bn": "ঀ-৿", "pa": "਀-੿", "ta": "஀-௿",
-    "te": "ఀ-౿", "si": "඀-෿", "th": "฀-๿",
+    "hi": "ऀ-ॿ",
+    "mr": "ऀ-ॿ",
+    "bn": "ঀ-৿",
+    "pa": "਀-੿",
+    "ta": "஀-௿",
+    "te": "ఀ-౿",
+    "si": "඀-෿",
+    "th": "฀-๿",
     "ko": "가-힯",
-    "ja": "぀-ヿ一-鿿", "zh": "一-鿿",
+    "ja": "぀-ヿ一-鿿",
+    "zh": "一-鿿",
 }
 
 # Source strings that are deliberately identical in most locales.
 VERBATIM_OK = {
-    "QtPass", "GPG", "Git", "OTP", "PWGen", "pass", "Pass", "Email", "%1",
-    "%2", "…", "⌕", "Aa", "LTR", "Ctrl+G", "Ctrl+N", "PGP", "GnuPG",
-    "YubiKey", "Push", "Git push", "Git pull", "gpg", "git", "Git:",
-    "qrencode", "pwgen",
+    "QtPass",
+    "GPG",
+    "Git",
+    "OTP",
+    "PWGen",
+    "pass",
+    "Pass",
+    "Email",
+    "%1",
+    "%2",
+    "…",
+    "⌕",
+    "Aa",
+    "LTR",
+    "Ctrl+G",
+    "Ctrl+N",
+    "PGP",
+    "GnuPG",
+    "YubiKey",
+    "Push",
+    "Git push",
+    "Git pull",
+    "gpg",
+    "git",
+    "Git:",
+    "qrencode",
+    "pwgen",
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
     "login\nURL\ne-mail",
 }
@@ -87,7 +122,9 @@ def check_placeholders(src, forms):
     if (N_RE.search(src) is not None) != any(N_RE.search(t) for t in forms):
         return forms[0]
     want = sorted(PH_RE.findall(src))
-    return first(forms, lambda t: sorted(PH_RE.findall(t)) != want or SPACED_RE.search(t))
+    return first(
+        forms, lambda t: sorted(PH_RE.findall(t)) != want or SPACED_RE.search(t)
+    )
 
 
 def check_mnemonic(src, forms):
@@ -143,8 +180,37 @@ def check(src, forms, script):
             yield code, found
 
 
+def translated_forms(msg):
+    """The non-empty translated forms of a <message>, or [] to skip it."""
+    tr = msg.find("translation")
+    if tr is None or tr.get("type") in ("vanished", "obsolete"):
+        return []
+    if msg.get("numerus") == "yes":
+        forms = [f.text or "" for f in tr.findall("numerusform")]
+    else:
+        forms = [tr.text or ""]
+    return [f for f in forms if f.strip()]
+
+
+def optional_findings(src, forms, args):
+    """The --verbatim (SAME) and --leak (LEAK) findings for one message."""
+    found = []
+    verbatim = all(f.strip() == src.strip() for f in forms)
+    if (
+        args.verbatim
+        and len(src) > 2
+        and "href" not in src
+        and src not in VERBATIM_OK
+        and verbatim
+    ):
+        found.append(("SAME", forms[0]))
+    if args.leak and any(w in " ".join(forms).lower() for w in args.leak):
+        found.append(("LEAK", forms[0]))
+    return found
+
+
 def audit(path, args):
-    """Audit one .ts file, print its findings, return their count."""
+    """Audit one .ts file, print its findings, return (locale, counts)."""
     with open(path, "rb") as f:
         data = f.read()
     # A real .ts file has only <!DOCTYPE TS>; entity declarations are how
@@ -158,24 +224,10 @@ def audit(path, args):
     counts = Counter()
     for msg in root.iter("message"):
         src = msg.findtext("source") or ""
-        tr = msg.find("translation")
-        if tr is None or tr.get("type") in ("vanished", "obsolete"):
-            continue
-        if msg.get("numerus") == "yes":
-            forms = [f.text or "" for f in tr.findall("numerusform")]
-        else:
-            forms = [tr.text or ""]
-        forms = [f for f in forms if f.strip()]
+        forms = translated_forms(msg)
         if not forms:
             continue
-        found = list(check(src, forms, script))
-        if args.verbatim and len(src) > 2 and "href" not in src:
-            if src not in VERBATIM_OK and all(f.strip() == src.strip() for f in forms):
-                found.append(("SAME", forms[0]))
-        if args.leak:
-            low = " ".join(forms).lower()
-            if any(w in low for w in args.leak):
-                found.append(("LEAK", forms[0]))
+        found = list(check(src, forms, script)) + optional_findings(src, forms, args)
         for code, detail in found:
             counts[code] += 1
             if not args.summary:
@@ -188,11 +240,20 @@ def main():
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument("files", nargs="*")
     p.add_argument("--summary", action="store_true", help="per-file counts only")
-    p.add_argument("--verbatim", action="store_true", help="report translation == source")
-    p.add_argument("--skip", type=lambda s: s.split(","), default=[],
-                   help="comma-separated locales to leave out, e.g. sl for --leak")
-    p.add_argument("--leak", type=lambda s: [w.lower() for w in s.split(",") if w],
-                   help="comma-separated words from an unintended language")
+    p.add_argument(
+        "--verbatim", action="store_true", help="report translation == source"
+    )
+    p.add_argument(
+        "--skip",
+        type=lambda s: s.split(","),
+        default=[],
+        help="comma-separated locales to leave out, e.g. sl for --leak",
+    )
+    p.add_argument(
+        "--leak",
+        type=lambda s: [w.lower() for w in s.split(",") if w],
+        help="comma-separated words from an unintended language",
+    )
     args = p.parse_args()
     files = args.files or sorted(glob.glob("localization/localization_*.ts"))
     if not files:
@@ -203,10 +264,17 @@ def main():
             continue
         locale, counts = audit(path, args)
         if args.summary and counts:
-            print(f"{locale:8s} " + " ".join(f"{k}={v}" for k, v in sorted(counts.items())))
+            print(
+                f"{locale:8s} "
+                + " ".join(f"{k}={v}" for k, v in sorted(counts.items()))
+            )
         total += counts
-    print("total: " + (" ".join(f"{k}={v}" for k, v in sorted(total.items())) or "clean"))
-    sys.exit(1 if any(total[k] for k in ("PH", "MN", "HTML", "MIX", "ALPHA", "XML")) else 0)
+    print(
+        "total: " + (" ".join(f"{k}={v}" for k, v in sorted(total.items())) or "clean")
+    )
+    sys.exit(
+        1 if any(total[k] for k in ("PH", "MN", "HTML", "MIX", "ALPHA", "XML")) else 0
+    )
 
 
 if __name__ == "__main__":

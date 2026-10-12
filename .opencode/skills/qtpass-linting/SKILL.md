@@ -62,7 +62,17 @@ docker run --rm -v "$PWD:/work" -w /work --entrypoint zizmor "$IMG" \
 
 Native binaries are faster for iteration (distro clang-format/yamllint/codespell, `cargo install zizmor`), but versions may differ from CI. clang-format in particular: v9.0.0 ships clang-format 22.
 
-**CI does not read most repository-root dotfiles.** Super-linter looks for configs only in `.github/linters/` and otherwise uses its own templates. So in CI: clang-format runs with `BasedOnStyle: LLVM` (not the root `.clang-format`), textlint enforces only `terminology`, markdownlint uses MD013 at 400 columns with MD004/MD029/MD033/MD036 off. codespell still reads the root `.codespellrc` (it loads it from the working directory). Details: [references/super-linter.md](references/super-linter.md).
+**CI does not read most repository-root dotfiles.** Super-linter looks for
+configs only in `.github/linters/` and otherwise uses its own templates. So in
+CI:
+
+- clang-format runs with `BasedOnStyle: LLVM` (not the root `.clang-format`)
+- textlint enforces only `terminology`
+- markdownlint uses MD013 at 400 columns, with MD004/MD029/MD033/MD036 off
+- codespell still reads the root `.codespellrc` (it loads it from the working
+  directory)
+
+Details: [references/super-linter.md](references/super-linter.md).
 
 **Do not trust `act` for `lint.yml`.** Its mock event JSON lacks fields super-linter needs, and it fails on fresh branches (`fatal: ambiguous argument 'HEAD~0'`). Use the Docker run above instead. `act` remains fine for simple workflows such as `reuse.yml`; `build-and-test.yml` usually fails at the Qt install step under `act`, which is expected.
 

@@ -47,7 +47,7 @@ make lcov
    [references/suites.md](references/suites.md)). Add to an existing suite
    before creating a new one.
 2. Write the test (template below). Run that one suite and see it fail first
-   when you are testing a bug fix.
+   when you are testing a bugfix.
 3. Run `make check`. If any suite fails, read the failing function's output
    with `-v2`, fix the code or the test, and re-run until every suite passes.
    Do not commit with a failing suite.

@@ -12,7 +12,7 @@ metadata:
 
 Two release lines exist side by side:
 
-- `main`: 2.x, including pre-releases tagged `vX.Y.Z-rcN`.
+- `main`: 2.x, including prereleases tagged `vX.Y.Z-rcN`.
 - `1.8`: the maintenance branch for 1.8.x (Qt 5.15 and Qt 6). Its workflow
   builds installers but has **no publish job**, see step 6b.
 
@@ -120,7 +120,7 @@ gh release edit vX.Y.Z --draft=false               # rc: add --prerelease --late
 ```
 
 **Verify:** every asset has a matching `.asc` and the release shows as
-Latest (or Pre-release for an rc).
+Latest (or prerelease for an rc).
 
 ## 6b. GitHub release from the 1.8 branch
 
@@ -136,7 +136,7 @@ gh release create vX.Y.Z --draft --verify-tag --title "QtPass X.Y.Z" \
   dist/*/qtpass-X.Y.Z.exe dist/*/QtPass-X.Y.Z.dmg dist/QtPass-X.Y.Z.*
 ```
 
-**Verify:** four assets (exe, dmg, tar.gz, zip). Then sign and publish as in
+**Verify:** four assets (exe, dmg, tar.gz, ZIP). Then sign and publish as in
 6a, with `--latest` when 1.8.x is the newest stable release.
 
 ## Release assets
@@ -154,7 +154,7 @@ generated on the fly and differ from the `git archive` assets; never claim
 they are identical. Debian's `uscan` and MacPorts use the signed
 `QtPass-X.Y.Z.tar.gz`, so signing is not optional.
 
-## 7. Website (gh-pages)
+## 7. Site (gh-pages)
 
 qtpass.org is the `gh-pages` branch. Pages carry the version (headings,
 download links, structured data) and a cache stamp such as

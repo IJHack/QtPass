@@ -36,9 +36,9 @@ Translations of the application are a separate workflow: use the
   `[#123](https://github.com/IJHack/QtPass/issues/123)`; a bare `issues/123`
   path resolves against the file's folder and breaks.
 - Link between repository files relatively (`FAQ.md#heading-id`); the
-  website build rewrites those links (see below).
+  site build rewrites those links (see below).
 
-## Website relation
+## Site relation
 
 qtpass.org lives on the `gh-pages` branch. Three of its pages are rendered from
 this repository by `tools/build-page.py` on that branch:
@@ -50,7 +50,7 @@ this repository by `tools/build-page.py` on that branch:
 | `CODE_OF_CONDUCT.md` | <https://qtpass.org/code-of-conduct> |
 
 No workflow reruns it: a change to these files reaches the site only when the
-page is rebuilt on `gh-pages`. Headings keep GitHub-style ids, so renaming a
+page is rebuilt on `gh-pages`. Headings keep GitHub-style IDs, so renaming a
 heading breaks `faq#...` deep links on the site as well as on GitHub. The
 Doxygen HTML is different: CI publishes it to <https://qtpass.org/docs/> on
 every push to `main`.
@@ -87,7 +87,7 @@ Your GPG key may not be trusted or has expired. Run `gpg --edit-key <KEYID>` and
   the `qtpass-releasing` skill.
 - When changing install or build instructions, run the commands first and
   check the dependency list against `qtpass.pri` and CI.
-- Screenshots live on the website (`gh-pages`), not in this repository.
+- Screenshots live on the site (`gh-pages`), not in this repository.
 
 ## Writing a CHANGELOG entry
 
