@@ -12,6 +12,7 @@
 
 #include <atomic>
 #include <memory>
+#include <optional>
 
 class QRegularExpression;
 class QThread;
@@ -397,6 +398,12 @@ public:
   void Remove(QString file, bool isDir) override;
   /**
    * @brief Initialize store.
+   *
+   * Writes (and signs) the folder's `.gpg-id`, commits it when Git is used
+   * and re-encrypts the folder to it. When that commit fails the entries are
+   * still re-encrypted, without any Git step, and a critical() afterwards
+   * says the change is not committed and whether the re-encryption
+   * completed.
    * @param path Root path of the password store.
    * @param users List of recipient GPG keys.
    */
@@ -624,6 +631,45 @@ private:
    * @param result Outcome produced by reencryptFiles().
    */
   void finishReencrypt(const ReencryptResult &result);
+
+  /**
+   * @brief A `.gpg-id` Init() wrote but could not commit.
+   */
+  struct UncommittedGpgId {
+    QString folder;   ///< The folder whose recipients changed.
+    QString gitError; ///< What Git said when the commit failed.
+  };
+  /// Set by reencryptWithoutGit() for the run it starts and cleared by
+  /// finishReencrypt(): that run does no Git at all (no pull, backup
+  /// commit, per-entry commit or push) and ends with
+  /// reportUncommittedGpgId(). Written only on the owning thread while no
+  /// worker runs; the worker only reads it, through reencryptUsesGit().
+  std::optional<UncommittedGpgId> m_uncommittedGpgId;
+  /**
+   * @brief gitConfigured(), unless the current run is one
+   * reencryptWithoutGit() started.
+   * @return Whether the re-encryption run may call Git.
+   */
+  auto reencryptUsesGit() const -> bool;
+  /**
+   * @brief Re-encrypt @p dir to the `.gpg-id` Init() wrote although its
+   * commit failed, without any Git step (they would fail the same way), and
+   * tell the user afterwards that the change is not committed.
+   * @param dir The folder whose recipients changed.
+   * @param gitError What Git said when the commit failed.
+   */
+  void reencryptWithoutGit(const QString &dir, const QString &gitError);
+  /**
+   * @brief Tell the user that the recipients of @p dir changed on disk but
+   * the change is not committed, and whether the entries were re-encrypted.
+   * @param dir The folder whose recipients changed.
+   * @param gitError What Git said when the commit failed.
+   * @param reencrypted Whether every entry was re-encrypted to the new
+   *        recipients; false means some or all are still encrypted to the
+   *        previous ones.
+   */
+  void reportUncommittedGpgId(const QString &dir, const QString &gitError,
+                              bool reencrypted);
 
   /**
    * @brief Translate @p path for the given @p exe when WSL-routed: wraps in

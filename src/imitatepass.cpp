@@ -513,6 +513,15 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   if (refuseLinkedGpgIdFolder(path)) {
     return;
   }
+  // A running re-encryption cannot take a second folder: the new list would
+  // be written and its entries left encrypted to the old recipients, which
+  // for a removed person means they can still read them. Nothing is written.
+  if (m_reencryptActive) {
+    emit critical(tr("Recipients not changed"),
+                  tr("A re-encryption is still running. Wait until it has "
+                     "finished, then save the recipients again."));
+    return;
+  }
   const GpgIdSigner signer = gpgIdSigner();
   if (signer.enabled() && !signer.haveSecretKey()) {
     emit critical(tr("No signing key!"),
@@ -535,11 +544,19 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   if (useGit && m_settings.addGPGId) {
     // Commit the .gpg-id (and .sig) before re-encrypting to it: the backup
     // commit only takes tracked files (#1685) and addFolder does not stage
-    // it, so entries were pushed without their recipients file (#1682). No
-    // commit, no re-encryption.
+    // it, so entries were pushed without their recipients file (#1682).
     const int gitExit = gitAddGpgId(gpgIdFile, sigToCommit, &gitOut, &gitErr);
     if (gitExit != 0) {
       Pass::finished(PASS_INIT, gitExit, gitOut, gitErr);
+      // The new list is on disk either way. Stopping here left every entry
+      // readable by whoever was just removed from it, so re-encrypt without
+      // Git and say the change is not committed. Putting the old list back
+      // is no way out: with signing the generation record has moved on and
+      // would refuse it as a rollback.
+      const QString why = gitErr.trimmed();
+      reencryptWithoutGit(
+          path,
+          why.isEmpty() ? tr("Git exited with code %1.").arg(gitExit) : why);
       return;
     }
   }
@@ -796,7 +813,7 @@ auto ImitatePass::ciphertextHolds(const QString &ciphertext,
 }
 
 auto ImitatePass::commitReencrypted(const QString &fileName) -> bool {
-  if (!gitConfigured()) {
+  if (!reencryptUsesGit()) {
     return true;
   }
   // -C the store so git runs there rather than in QtPass's launch directory
@@ -877,7 +894,7 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
 }
 
 auto ImitatePass::createBackupCommit() -> bool {
-  if (!gitConfigured()) {
+  if (!reencryptUsesGit()) {
     return true;
   }
   emit statusMsg(tr("Creating backup commit"), 2000);
@@ -1008,7 +1025,7 @@ void ImitatePass::startReencryptWorker(const QString &dir) {
  * no unmerged files; false if unmerged files remain or their check fails.
  */
 auto ImitatePass::pullBeforeReencrypt() -> bool {
-  if (!m_settings.autoPull || !gitConfigured()) {
+  if (!m_settings.autoPull || !reencryptUsesGit()) {
     return true;
   }
   emit statusMsg(tr("Updating password-store"), 2000);
@@ -1173,7 +1190,7 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
                          .arg(result.reencrypted),
                      3000);
     }
-    if (m_settings.autoPush && gitConfigured()) {
+    if (m_settings.autoPush && reencryptUsesGit()) {
       if (result.failed.isEmpty()) {
         emit statusMsg(tr("Updating password-store"), 2000);
         GitPush();
@@ -1184,8 +1201,60 @@ void ImitatePass::finishReencrypt(const ReencryptResult &result) {
       }
     }
   }
+  if (m_uncommittedGpgId) {
+    const UncommittedGpgId uncommitted = *m_uncommittedGpgId;
+    m_uncommittedGpgId.reset();
+    reportUncommittedGpgId(uncommitted.folder, uncommitted.gitError,
+                           !result.cancelled && !result.aborted &&
+                               result.failed.isEmpty());
+  }
   m_reencryptActive = false;
   emit endReencryptPath();
+}
+
+auto ImitatePass::reencryptUsesGit() const -> bool {
+  return gitConfigured() && !m_uncommittedGpgId;
+}
+
+void ImitatePass::reencryptWithoutGit(const QString &dir,
+                                      const QString &gitError) {
+  if (m_reencryptActive) {
+    // The run in flight was started with its own Git mode; this folder is
+    // not part of it.
+    reportUncommittedGpgId(dir, gitError, false);
+    return;
+  }
+  m_uncommittedGpgId = UncommittedGpgId{dir, gitError};
+  reencryptPath(dir);
+  if (m_uncommittedGpgId && !m_reencryptActive) {
+    // Refused before it started; reencryptPath() said why.
+    m_uncommittedGpgId.reset();
+    reportUncommittedGpgId(dir, gitError, false);
+  }
+}
+
+void ImitatePass::reportUncommittedGpgId(const QString &dir,
+                                         const QString &gitError,
+                                         bool reencrypted) {
+  const QString folder = QDir::toNativeSeparators(QDir::cleanPath(dir));
+  if (reencrypted) {
+    emit critical(
+        tr("Recipients not committed"),
+        tr("The recipients of %1 were changed and its entries were "
+           "re-encrypted to them, but the Git commit failed:\n\n%2\n\n"
+           "The change is not committed or pushed yet. Fix the Git problem, "
+           "then commit the changes, or save the recipients again.")
+            .arg(folder, gitError));
+    return;
+  }
+  emit critical(
+      tr("Recipients not committed"),
+      tr("The recipients of %1 were changed, but the Git commit "
+         "failed:\n\n%2\n\nRe-encryption did not complete, so some or all "
+         "entries are still encrypted to the previous recipients, who can "
+         "still read them. Nothing was committed or pushed. Fix the Git "
+         "problem, then save the recipients again.")
+          .arg(folder, gitError));
 }
 
 auto ImitatePass::resolveMoveDestination(const QString &src,
