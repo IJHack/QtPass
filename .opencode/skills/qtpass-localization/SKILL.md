@@ -1,356 +1,158 @@
 ---
 name: qtpass-localization
-description: Use when updating QtPass translations, adding languages, running lupdate, editing .ts files, or handling Weblate localization work.
+description: Refreshes QtPass translation sources with make lupdate, edits and verifies localization/*.ts files, bootstraps new languages in src/src.pro, and handles reviewer fixes alongside Weblate. Use when working on translations, i18n, a locale or .ts file, Weblate, adding a language, lupdate, lrelease, or unfinished strings.
 license: GPL-3.0-or-later
 metadata:
   audience: developers
   workflow: localization
+  version: "1.1"
 ---
 
 # QtPass Localization
 
-## Translation Files
+Translations are Qt Linguist `.ts` files in `localization/localization_<lang>.ts`
+(64 locales at the time of writing; re-derive with
+`ls localization/localization_*.ts | wc -l`). They are managed on
+[Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/). The build turns
+them into `.qm` files (`CONFIG += lrelease embed_translations` in `src/src.pro`)
+and embeds them under `:/localization`; `.qm` files are never committed.
 
-Location: `localization/localization_<lang>.ts`
+Reference files (one level deep, read only when needed):
 
-Qt uses Qt Linguist (`.ts` files) for translations.
+- [references/adding-a-language.md](references/adding-a-language.md): read when
+  adding a new locale (code choice, skeleton, `src/src.pro` registration).
+- [references/mnemonics.md](references/mnemonics.md): read when a string has an
+  `&` accelerator or a reviewer flags a missing or clashing shortcut.
+- [references/status-and-runtime.md](references/status-and-runtime.md): read
+  when you need per-locale completion stats or want to see a translation in the
+  running app.
+- Structural checks (placeholders, HTML balance, mnemonics, mixed-script MT
+  artifacts) live in the sibling skill
+  [qtpass-localization-audit](../qtpass-localization-audit/SKILL.md). Use it
+  rather than writing new audit scripts.
 
-### Existing Languages
+## Workflow 1: refresh sources after `tr()` changes
 
-Always re-derive the current list at the moment of work, since new locales land regularly:
-
-```bash
-ls localization/localization_*.ts | sed 's|.*localization_||;s|\.ts$||'
-```
-
-Per-locale completion stats (finished / unfinished-with-text / empty):
-
-```bash
-python3 -c "
-import re, glob, os
-for f in sorted(glob.glob('localization/localization_*.ts')):
-    loc = os.path.basename(f).replace('localization_','').replace('.ts','')
-    content = open(f).read()
-    fin=ut=ue=0
-    for m in re.finditer(r'<translation([^>]*)>(.*?)</translation>', content, re.DOTALL):
-        a,b = m.group(1), m.group(2)
-        if 'vanished' in a: continue
-        if 'unfinished' in a:
-            if b.strip(): ut += 1
-            else: ue += 1
-        else: fin += 1
-    print(f'{loc:8s}  {fin:3d}/{fin+ut+ue}  ut={ut:3d}  empty={ue}')
-"
-```
-
-`unfinished-with-text` means a translation exists but is flagged for native-speaker review (Weblate convention).
-
-## Updating Translations
-
-### After Code Changes
-
-When source files change (strings added, moved, or refactored), run the
-`lupdate` target to update translations. It is explicit: a plain `qmake6` run
-no longer touches `localization/`.
+`lupdate` is an explicit target in `qtpass.pro`. A plain `qmake6` run no longer
+touches `localization/`.
 
 ```bash
-# IMPORTANT: Run distclean first to avoid stale generated files (ui_*.h) in translations
-make distclean
-qmake6
-make lupdate
+make distclean   # only if you built in-source: stale ui_*.h in src/ get scanned
+qmake6           # at the repository root, Qt 6.8 or newer
+make lupdate     # lupdate over src/ and main/, rewrites every localization/*.ts
 ```
 
-This updates all `.ts` files with:
+Never run `lupdate` on `src/src.pro` alone: that misses the strings in `main/`.
 
-- Source file line numbers
-- File references (if files renamed)
-- **Source text** (if changed in source files - important!)
-- Translation status (set to "unfinished" when source changed)
+What `make lupdate` changes: source text, `<location>` line numbers and file
+names, and the status of changed messages (set to `type="unfinished"`; removed
+ones become `type="vanished"`). Existing `<translation>` text is kept.
 
-### What Stays the Same
+Then run the verify loop below on a few locales and commit `localization/` as
+its own change (for example `chore: update localization source references`).
 
-- Translated text (in `<translation>` tags)
-- Completed translations remain as-is until re-translated
+## Workflow 2: edit a `.ts` file directly
 
-### Creating a PR for Updates
+Weblate is the normal path. Direct edits are appropriate for:
+
+- Reviewer-flagged bugs: placeholder mismatches (`% 1` vs `%1`), broken HTML,
+  made-up words from machine translation, mixed-script artifacts.
+- Batch corrections from native-speaker reviewers on a PR.
+- Filling empty entries in an **existing** locale with best-effort text marked
+  `type="unfinished"`, so Weblate reviewers can refine it.
+- Normalising terminology across strings (for example one word for
+  "clipboard" instead of three variants).
+
+Rules while editing:
+
+- Keep `%1`, `%2`, `%n` and `\n` exactly as in the source.
+- Keep HTML tags balanced and identical in structure to the source.
+- Keep tokens such as `.gpg-id`, `pass`, `GPG`, `Git` untranslated.
+- Mark new text `type="unfinished"` unless a native speaker confirmed it.
+- Use Qt Linguist (`linguist localization/localization_<lang>.ts`) or a text
+  editor; with a script, edit only the `<translation>` element, never the
+  `<source>` line (tools strip its trailing whitespace and the message then no
+  longer matches).
+
+### Handling reviewer findings
+
+Findings tend to arrive in batches (CodeRabbit, GitHub code quality, native
+speakers):
+
+1. Confirm each finding against the current `.ts`; reviewer diffs may target an
+   older state.
+2. Fix only what is wrong. Reject suggestions that break placeholders,
+   mnemonics or established terminology, and say why.
+3. Search the file for sibling occurrences of the same mistake and fix them too;
+   list flagged versus proactive fixes in the commit message.
+4. Run the verify loop.
+
+## Workflow 3: add a language
+
+Short form (details and a worked example in
+[references/adding-a-language.md](references/adding-a-language.md)):
+
+1. Prefer a language-only code (`fa`, `de`) unless the text is region-specific.
+2. Create a 4-line XML skeleton (do not copy `localization_en_US.ts`).
+3. Append `../localization/localization_<lang>.ts` to `TRANSLATIONS +=` in
+   `src/src.pro`.
+4. `qmake6 && make lupdate`, confirm the file was populated.
+5. Commit with all entries `type="unfinished"`; Weblate translators fill them.
+
+## Verify loop
+
+Run after any `.ts` change, before pushing:
 
 ```bash
-# Create branch
-git checkout -b chore/update-localization
-
-# Add and commit
-git add localization/
-git commit -m "chore: update localization source references"
-
-# Push and create PR
-git push -u origin chore/update-localization
-gh pr create --title "chore: update localization source references" --body "## Summary
-
-- Updated translation files with current source texts and line numbers
-- Translations marked unfinished where source text changed
-"
+f=localization/localization_<lang>.ts
+xmllint --noout "$f"                          # well-formed XML
+lrelease6 "$f" -qm "$(mktemp --suffix=.qm)"   # compiles, prints counts
 ```
 
-## Adding New Strings
-
-When you add new user-facing strings in C++:
-
-```cpp
-// Use tr() for translatable strings
-ui->label->setText(tr("New text here"));
-```
-
-### Qt Linguist Workflow
-
-1. Open `localization/localization_en_US.ts` in Qt Linguist
-2. Find untranslated strings
-3. Fill in translations
-4. Save (automatically updates the .ts file)
-
-### Key Conventions
-
-- Use `tr()` for all user-facing strings
-- Don't translate placeholders like `%1`, `%2`, `%3`
-- Preserve `\n` for line breaks
-- Keep technical terms consistent (e.g., "GPG", "clipboard")
-- Use context comments to help translators understand usage
-
-### String Formatting
-
-```cpp
-// Good
-tr("Delete %1?").arg(filename)
-tr("Found %n password(s)", count)
-
-// Avoid
-tr("Delete " + filename + "?")  // Can't be translated properly
-```
-
-## Adding New Language
-
-Don't copy `localization_en_US.ts` — that imports stale English-as-translation strings that have to be cleared one by one. Bootstrap an empty skeleton and let `lupdate` (driven by `qmake6`) populate it with the current source strings as `type="unfinished"`.
-
-### Locale code: language-only vs language+country
-
-Prefer the **language-only** code (e.g. `fa`, `ar`, `de`) when the translation is the standard form understood across regions (Modern Standard Arabic, Standard German, Standard Persian).
-
-Qt's locale fallback maps `fa_IR`, `ar_MA`, `de_AT` etc. to the language-only file automatically — one `fa.ts` covers Iran, Afghanistan (Dari), and every other Persian-speaking user.
-
-Use the `xx_YY` form only when the translation is genuinely region-specific (Brazilian vs European Portuguese, Simplified vs Traditional Chinese, regional Spanish variants).
-
-### Bootstrap workflow
-
-1. Create a 4-line skeleton (`lupdate` refuses to populate a 0-byte file):
-
-   ```bash
-   cat > localization/localization_<lang>.ts <<'EOF'
-   <?xml version="1.0" encoding="utf-8"?>
-   <!DOCTYPE TS>
-   <TS version="2.1" language="<lang>">
-   </TS>
-   EOF
-   ```
-
-2. Register it in `src/src.pro` (alphabetically) under `TRANSLATIONS +=`. Note: `qtpass.pro` is the parent project file; the actual list lives in `src/src.pro`.
-
-3. Run `make distclean && qmake6 && make lupdate` — the `lupdate` target populates the file with all source strings as `type="unfinished"`. Confirm via:
-
-   ```bash
-   make lupdate 2>&1 | grep "localization_<lang>.ts"
-   # -> Updating 'localization/localization_<lang>.ts'...
-   ```
-
-4. The skeleton ships as-is once the file is populated by `lupdate`: all entries `type="unfinished"`, ready for Weblate translators to fill. A bootstrap PR does **not** need pre-filled best-effort translations — empty `<translation type="unfinished">` is the deliverable.
-
-   The "fill empty entries with best-effort, mark `type="unfinished"`" guidance applies only when **patching an existing locale** flagged by reviewers — not to fresh-skeleton bootstrap PRs.
-
-5. Optionally hand-edit a few high-value strings (window title, About box) via Qt Linguist before pushing, then let Weblate handle the rest.
-
-### Worked example
-
-Adding Persian (`fa`) for Iranian/Afghan/Tajik users involved exactly: 4-line skeleton, one `TRANSLATIONS +=` line in `src/src.pro`, one `make distclean && qmake6`. No copy step. Result: 304 entries marked `type="unfinished"` (302 empty + 2 numerusform plural skeletons), ready for Weblate.
-
-## Building Translations
-
-### Generate .qm Files
-
-```bash
-# For development (or part of build process)
-lrelease localization/*.ts
-
-# Or via qmake
-make translations
-```
-
-### .qm Files
-
-- Binary format, loaded at runtime
-- Generated from .ts files
-- Typically not committed (generated during build)
-
-## Localization Testing
-
-### Switch Language
-
-QtPass uses system locale. To test:
-
-```bash
-# Linux
-LANG=nl_NL ./qtpass
-
-# Or set in QtPass settings
-```
-
-### Debug Translation Issues
-
-```cpp
-// Enable verbose translation debugging
-QTranslator translator;
-if (translator.load(QLocale(), "qtpass", "_", ":/languages")) {
-    qDebug() << "Loaded translation for:" << QLocale().name();
-}
-```
-
-## Common Issues
-
-### Strings Not Showing Translated
-
-1. String not wrapped in `tr()` - fix in source
-2. Translation file not loaded - check .pro TRANSLATIONS
-3. .qm file not generated - run lrelease
-4. Wrong locale - check system language settings
-
-### Translation File Conflicts
-
-When merging PRs with translation updates:
-
-```bash
-# Fetch and rebase
-git fetch origin
-git pull origin main --rebase
-
-# Resolve conflicts in .ts files (usually just XML merge)
-# Test with qmake6
-```
-
-## Linting
-
-```bash
-# Format with prettier if needed
-npx prettier --write localization/*.ts
-```
-
-## Common Pitfalls
-
-### Forgetting distclean Before qmake
-
-Always run `make distclean` before `qmake6` when updating translations:
-
-```bash
-# Wrong - may include stale generated files in translations
-qmake6
-
-# Correct - starts fresh
-make distclean
-qmake6
-```
-
-### New Strings Not Showing in Qt Linguist
-
-If you added new `tr()` strings but they don't appear:
-
-1. Run `make lupdate` to update the `.ts` files
-2. Close and reopen Qt Linguist
-3. Check the file was actually saved after previous edit
-
-### Translation Files Showing as "Finished"
-
-When source strings change, translations are marked "unfinished" but may still appear correct. Always check:
-
-- The source text in Qt Linguist matches your code
-- Any placeholder formatting (`%1`, `%2`) matches
-
-### Merging Translation Conflicts
-
-When merging translation PRs that conflict:
-
-```bash
-# Use theirs strategy for .ts files (they're XML, prefer incoming)
-git checkout --theirs localization/localization_*.ts
-git add localization/
-git commit -m "Resolve merge conflict - use theirs for translations"
-```
-
-### Weblate vs Local Editing
-
-Translations are normally managed via [Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/). However, **direct `.ts` edits are appropriate** for:
-
-- Fixing reviewer-flagged bugs (placeholder mismatches, broken HTML, made-up words, mixed-script artifacts).
-- Filling empty entries with best-effort translations marked `type="unfinished"` so Weblate native reviewers can refine them.
-- Batch corrections suggested in PR review by native speakers.
-- Standardising terminology across multiple strings (e.g., normalising `klipboard`/`klipbordas`/`Tabela e kopjimit` onto a single term).
-
-When in doubt, fix and mark `type="unfinished"` so Weblate review can iterate. Only run `qmake6` to update **source** strings (English) when code changes — that step is mechanical and affects every locale file.
-
-### Qt Mnemonic Conventions
-
-Qt UI strings use `&` (rendered as `&amp;` in `.ts` XML) before a letter to mark a keyboard accelerator (e.g., `&Quit` underlines Q so Alt+Q triggers it). Conventions per script family:
-
-- **Latin scripts** (de, fr, es, en, etc.): in-word `&Letter` — `&File`, `&Edit`, `&Quit`. Pick a non-conflicting letter; within a single menu, mnemonics must be unique.
-- **CJK scripts** (zh, ja, ko): parens-at-start `(&L) text` — `(&F) 文件`, `(&Q) 退出`. Don't rely on native characters as mnemonics.
-- **RTL scripts** (ar, he): either parens-at-start `(&L) text` (preferred for portability) or native-letter `&letter`.
-- **Cyrillic / Greek / Tamil / Sinhala**: not strictly defined; in-word native letters (`&Покажи`) work if the user's keyboard supports them, otherwise use `(&L) text` parens form.
-
-Preserve the source mnemonic letter in the translation when feasible, so the same shortcut works across locales. When this is not possible, choose a non-conflicting letter from the translated string.
-
-Audit for missing mnemonics:
-
-```bash
-python3 -c "
-import re, glob
-mnemonic_sources = {'&amp;Use pass','Nati&amp;ve Git/GPG','&amp;Show','&amp;Hide','&amp;Restore','&amp;Quit','Mi&amp;nimize','Ma&amp;ximize'}
-for f in sorted(glob.glob('localization/localization_*.ts')):
-    content = open(f).read()
-    for m in re.finditer(r'<message[^>]*>.*?<source>(.*?)</source>.*?<translation([^>]*)>(.*?)</translation>', content, re.DOTALL):
-        src,a,t = m.group(1), m.group(2), m.group(3)
-        if 'vanished' in a or src not in mnemonic_sources or not t.strip(): continue
-        if not re.search(r'&amp;[^\s&;]', t):
-            print(f'{f}: {src} -> {t}')
-"
-```
-
-## Reviewer-Iteration Workflow
-
-Translation review tends to come in batches of ~5 findings at a time (CodeRabbit, GitHub AI quality findings, native-speaker comments on PRs). Standard handling:
-
-1. **Verify each finding against current code** before fixing. Reviewer-supplied diffs may be against an older state — confirm the broken text actually exists in the latest `.ts`.
-2. **Fix only what's needed.** If a reviewer-suggested change is itself wrong (e.g., breaks Qt mnemonic conventions, reverses earlier-established terminology), reject with explanation.
-3. **Apply same-pattern fixes if found in passing.** When fixing one occurrence of a typo, search the file for sibling occurrences of the same MT-pattern. Document in commit message which were flagged vs which were proactive.
-4. **Run the audit script** (see `qtpass-localization-audit` skill) before pushing — placeholder format and HTML balance are non-obvious bugs that the reviewer's prose description may not catch.
-5. **Mark new translations `type="unfinished"`** unless a native speaker has confirmed them. Weblate finalises them on review.
-
-## Fixing Translation Issues in PRs
-
-When static analysis flags translation issues (e.g., filename preservation):
-
-```bash
-# Fetch the PR branch
-git fetch origin refs/pull/<PR>/head:pr/<PR>-fix
-git checkout pr/<PR>-fix
-
-# Fix the translation
-# Edit the .ts file to preserve exact filename/token
-
-# Commit with signing and push
-git add localization/localization_<lang>.ts
-git commit -S -m "fix: preserve .gpg-id filename in <lang> translation"
-git push -u origin pr/<PR>-fix
-```
-
-### Squash Merge Pattern
-
-Translation PRs often use squash merge:
-
-```bash
-gh pr merge <PR_NUMBER> --squash --auto --delete-branch
-```
+1. `xmllint` must print nothing. `lrelease6` (or `lrelease-qt6` / `lrelease`)
+   must print `Generated N translation(s) (F finished and U unfinished)` with no
+   errors. Writing the `.qm` to a temporary file keeps the tree clean.
+2. Run the Quick audit from
+   [qtpass-localization-audit](../qtpass-localization-audit/SKILL.md) on the
+   same file. `lrelease` does not catch placeholder or HTML problems.
+3. If anything is reported, fix the `.ts` and go back to step 1. Stop only when
+   all checks are clean.
+4. For source-reference refreshes or a new locale, also build and run
+   `tests/auto/locale/tst_locale`: its project globs every
+   `localization_*.ts`, so a broken file fails the test build.
+
+## Pull requests
+
+- Branch, then commit with `git commit -s -S` (DCO sign-off plus GPG
+  signature). See the `qtpass-github` skill for the full PR flow.
+- To fix a translation on someone else's PR: `gh pr checkout <PR>`, `git pull`
+  first (bots may have pushed), edit, verify, push to the same branch.
+- Translation PRs are usually squash-merged:
+  `gh pr merge <PR> --squash --auto --delete-branch`.
+- `.ts` merge conflicts are mostly `<location>` line numbers. Resolve by taking
+  one side's file for the conflicting locale, rerun `make lupdate` if your
+  branch changed `tr()` strings, then run the verify loop. During a rebase,
+  `--theirs` is your own commit, not `main`.
+
+## Source-code side
+
+- Wrap every user-facing string in `tr()`.
+- Use `tr("Delete %1?").arg(name)`, never string concatenation inside `tr()`.
+- Use the plural form for counts: `tr("Found %n password(s)", nullptr, count)`.
+- Keep technical terms consistent (`GPG`, `Git`, `clipboard`) so translators
+  can reuse them.
+
+## Common pitfalls
+
+- **New strings missing from Linguist:** you did not run `make lupdate`, or
+  Linguist still has the old file open.
+- **Junk `ui_*.h` locations in `.ts` files:** an in-source build left generated
+  headers in `src/`. Run `make distclean`, then `qmake6 && make lupdate`, and
+  stage only the `localization/` changes you intended.
+- **String not translated at runtime:** not wrapped in `tr()`, locale not listed
+  in `src/src.pro` (so not embedded), or the entry is still empty. See
+  [references/status-and-runtime.md](references/status-and-runtime.md).
+- **Translation looks right but is `unfinished`:** the English source changed.
+  Check the new source text and placeholders before clearing the flag.
+- **Do not run prettier on `.ts` files:** prettier would treat them as
+  TypeScript.

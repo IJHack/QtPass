@@ -123,7 +123,7 @@ jobs:
       #   regexes match against workspace-relative paths instead of
       #   /github/workspace/-prefixed absolute paths.
       #
-      # zizmor config lives at .github/linters/zizmor.yaml — super-linter v8
+      # zizmor config lives at .github/linters/zizmor.yaml: super-linter
       # discovers per-language config files under LINTER_RULES_PATH which
       # defaults to .github/linters. Files at the repo root or in zizmor's
       # own .github/zizmor.yml convention are NOT picked up.

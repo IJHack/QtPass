@@ -1,464 +1,150 @@
 ---
 name: qtpass-linting
-description: Use when running QtPass CI locally, reproducing GitHub Actions failures, linting, formatting, or fixing code-style issues.
+description: Reproduces QtPass CI lint failures locally and fixes them with clang-format, Prettier, textlint, shfmt, zizmor, Doxygen or the pinned super-linter image. Use when lint failed, super-linter or CI is red, clang-format or Prettier complains, markdownlint or textlint flags a file, Doxygen warns, or before pushing a PR to check formatting.
 license: GPL-3.0-or-later
 metadata:
   audience: developers
   workflow: linting
+  version: "1.1"
 ---
 
-# QtPass Linting and CI Workflow
+# QtPass Linting and CI
 
-## Super-linter v8 specifics (CI pin: v8.6.0)
+## CI checks at a glance
 
-The lint workflow uses `super-linter/super-linter@v8.6.0` which resolves to image **`ghcr.io/super-linter/super-linter:v8.6.0`**. Critical quirks learned the hard way:
+| Workflow (`.github/workflows/`) | Job / check name              | What fails it                                                                             |
+| ------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------- |
+| `lint.yml`                      | `Super-linter` (required)     | clang-format, Prettier, markdownlint, textlint, gitleaks, codespell, zizmor, EditorConfig |
+| `build-and-test.yml`            | `Ubuntu (Qt 6.8)` etc. (req.) | compile errors, `make check`                                                              |
+| `documentation.yml`             | `Build, with code coverage`   | any Doxygen warning (`WARN_AS_ERROR = FAIL_ON_WARNINGS`)                                  |
+| `reuse.yml`                     | `Check compliance` (required) | missing SPDX/REUSE licensing                                                              |
 
-### Config file locations
+Required checks on `main`: `Super-linter`, `Ubuntu (Qt 6.8)`, `Windows (Qt 6.8)`, `macOS (Qt 6.11)`, `Check compliance`.
 
-`LINTER_RULES_PATH` defaults to **`.github/linters/`** — every per-linter config file that super-linter explicitly passes via `--config <path>` lives there, not at the repository root.
+Super-linter is skipped when no relevant path changed (the `changes` job), but when it runs it lints the whole tree (`VALIDATE_ALL_CODEBASE=true`), minus `localization/` and `tests/fuzz/corpus/`.
 
-| Linter | Config file                   |
-| ------ | ----------------------------- |
-| zizmor | `.github/linters/zizmor.yaml` |
+## The fix loop
 
-Other linters auto-discover their own dotfiles like `.codespellrc`, `.clang-format`, `.commitlintrc.js`, `.jshintrc`, `.jshintignore`, `.yaml-lint.yml`, `.codecov.yml` from the repository root via the linter's own conventions — those don't go under `.github/linters/`.
+Repeat until every check is clean, then push:
 
-### `super-linter.env` rules
+1. **Run** the narrowest local check for what failed (table below), or read the CI log:
+   `gh run view --log-failed` on the failing run.
+2. **Fix**: apply the formatter (`-i`, `--write`, `--fix`) or edit by hand.
+3. **Re-run** the same check. Not clean yet: back to step 2.
+4. **Widen**: run the pre-PR checklist below, so one fix did not break another linter.
 
-- **Pure `KEY=value` only** — no comments, no empty lines, **alphabetical** (dotenv-linter `UnorderedKey` rule). The workflow does `cat .github/super-linter.env >> $GITHUB_ENV` and `$GITHUB_ENV` rejects everything else.
-- Document the rationale for non-obvious vars **in the workflow YAML** (above the `cat` step), not in the env file.
-- **`GITHUB_*` env vars set via `$GITHUB_ENV` don't propagate** to docker-based actions like super-linter. So you cannot override e.g. `GITHUB_ACTIONS_ZIZMOR_CONFIG_FILE` this way — put the config at the default-discovered location instead.
+| Failure in CI log          | Local check                                                              |
+| -------------------------- | ------------------------------------------------------------------------ |
+| `CLANG_FORMAT`             | `clang-format --style=file --dry-run --Werror <file>`                    |
+| `PRETTIER` (Markdown/YAML) | `npx prettier --check <file>`                                            |
+| `MARKDOWN` (markdownlint)  | `npx markdownlint-cli --disable MD013 MD004 MD029 MD033 MD036 -- <file>` |
+| `NATURAL_LANGUAGE`         | textlint, see below                                                      |
+| `SHELL_SHFMT`              | `shfmt -d scripts/*.sh`                                                  |
+| `GITHUB_ACTIONS_ZIZMOR`    | `zizmor --config .github/linters/zizmor.yaml .github/workflows/`         |
+| Documentation job          | `doxygen Doxyfile 2>&1 >/dev/null \| grep -iE "warn\|error"`             |
+| Anything else, or unsure   | run that linter inside the CI image (next section)                       |
 
-### Reproducing CI locally
+## Reproduce super-linter locally
 
-`act` is **unreliable** for super-linter — the floating `:v7`/`:v8` tags drift, and act's mock GitHub event JSON lacks fields that v8 super-linter needs (`forced` for push events). The reliable reproduction is the exact CI image via Docker:
+CI pins `super-linter/super-linter` by SHA to **v9.0.0**, image `ghcr.io/super-linter/super-linter:v9.0.0`. Check the `# vX.Y.Z` comment in `lint.yml` after Dependabot bumps.
+
+Run any bundled linter with the exact CI version through `--entrypoint`:
 
 ```bash
-# Run a specific linter (e.g. zizmor) the way CI does
-docker run --rm -v "$PWD:/work" -w /work \
-  --entrypoint zizmor ghcr.io/super-linter/super-linter:v8.6.0 \
+IMG=ghcr.io/super-linter/super-linter:v9.0.0
+
+docker run --rm -v "$PWD:/work" -w /work --entrypoint clang-format "$IMG" \
+  --style=file --dry-run --Werror src/mainwindow.cpp
+
+docker run --rm -v "$PWD:/work" -w /work --entrypoint zizmor "$IMG" \
   --config .github/linters/zizmor.yaml .github/workflows/
-
-# Or clang-format check
-docker run --rm -v "$PWD:/work" -w /work \
-  --entrypoint clang-format ghcr.io/super-linter/super-linter:v8.6.0 \
-  --style=file --dry-run --Werror path/to/file.cpp
 ```
 
-Or install native binaries: `cargo install zizmor`, distro packages for clang-format/yamllint/codespell.
+Native binaries are faster for iteration (distro clang-format/yamllint/codespell, `cargo install zizmor`), but versions may differ from CI. clang-format in particular: v9.0.0 ships clang-format 22.
 
-### Tooling-version highlights
+**CI does not read most repository-root dotfiles.** Super-linter looks for configs only in `.github/linters/` and otherwise uses its own templates. So in CI: clang-format runs with `BasedOnStyle: LLVM` (not the root `.clang-format`), textlint enforces only `terminology`, markdownlint uses MD013 at 400 columns with MD004/MD029/MD033/MD036 off. codespell still reads the root `.codespellrc` (it loads it from the working directory). Details: [references/super-linter.md](references/super-linter.md).
 
-- **clang-format 20** — modern; matches recent distros. (Was 17.0.6 in v7.1.0 — a notable mismatch source pre-v8 bump.)
-- **zizmor 1.23.1** — default policy is `hash-pin`; we override to `ref-pin` in the config (version tags + dependabot cooldown).
-- **commitlint 20** — picks up `.commitlintrc.js` from the repository root.
-- **JSHint** — only runs via Hound (not super-linter v8). Default ES5; we set `esversion: 11` in `.jshintrc`.
+**Do not trust `act` for `lint.yml`.** Its mock event JSON lacks fields super-linter needs, and it fails on fresh branches (`fatal: ambiguous argument 'HEAD~0'`). Use the Docker run above instead. `act` remains fine for simple workflows such as `reuse.yml`; `build-and-test.yml` usually fails at the Qt install step under `act`, which is expected.
 
-## The Act Pattern (caveat: super-linter is tricky)
+Config rules (env file format, where linter configs live, the `GITHUB_*` trap) and the bundled tool versions: read [references/super-linter.md](references/super-linter.md) when changing `lint.yml`, `.github/super-linter.env` or `.github/linters/`.
 
-`act` works well for most workflows but the super-linter image has version drift and event-mock issues — see "Reproducing CI locally" above for the reliable alternative.
+## Formatters and checkers
 
-**Always run local CI before pushing PRs.** Use `act` for most workflows; for super-linter workflows, prefer the Docker-based alternative described above (version drift and event-mock issues make `act` unreliable there).
-
-### Why Use act?
-
-- Catch linter failures **before** pushing
-- Validate changes without waiting for CI
-- Faster iteration loop
-
-### The Workflow
+### clang-format (C++)
 
 ```bash
-# 1. Make your changes
-git add .
-
-# 2. Run linter locally (this is the pattern)
-act push -W .github/workflows/lint.yml -j build
-
-# 3. Fix any issues
-# 4. Push only when act passes
+clang-format --style=file -i src/*.cpp src/*.h      # apply
+clang-format --style=file --dry-run --Werror src/foo.cpp   # check
 ```
 
-### Quick Reference
+Always format C/C++ before committing. The root `.clang-format` is an expanded LLVM style, so it agrees with CI's `BasedOnStyle: LLVM`; if local and CI ever disagree, check with `--style=LLVM` inside the CI image.
 
-| Task                      | Command                                            |
-| ------------------------- | -------------------------------------------------- |
-| Run linter                | `act push -W .github/workflows/lint.yml`           |
-| Run linter (specific job) | `act push -W .github/workflows/lint.yml -j build`  |
-| Run build & tests         | `act push -W .github/workflows/build-and-test.yml` |
-| Run docs                  | `act push -W .github/workflows/documentation.yml`  |
-| Run reuse check           | `act push -W .github/workflows/reuse.yml`          |
-
-## Available Workflows
-
-### Linter Workflow (.github/workflows/lint.yml)
-
-Runs super-linter with many linters:
-
-- **GITLEAKS** - Secret detection
-- **CHECKOV** - Infrastructure scanning
-- **CLANG_FORMAT** - C++ formatting
-- **ACTIONLINT** - GitHub Actions YAML
-- **PRETTIER** - Web/config file formatting
-- **Markdown** - Markdown linting
-- **NATURAL_LANGUAGE** - Natural language checks
-- **YAML** - YAML linting
+### Prettier (Markdown, YAML, JSON)
 
 ```bash
-# Run linter locally
-act push -W .github/workflows/lint.yml -j build
+npx prettier --write "**/*.md" "**/*.yml"
+npx prettier --check "**/*.md" "**/*.yml"
 ```
 
-### Build & Test Workflow (.github/workflows/build-and-test.yml)
+The repository has no Prettier config, so defaults apply. Prettier reflows a code span that wraps across two lines; keep inline code on one line.
 
-QtPass build with Qt5/Qt6 matrix, runs unit tests, generates coverage:
+### textlint (NATURAL_LANGUAGE)
+
+CI enforces `textlint-rule-terminology` (canonical spelling: `Git`, `GitHub`, `macOS`, `ID`, `filename`). The root `.textlintrc` adds `common-misspellings` for local runs. From the repository root:
 
 ```bash
-# Run build workflow
-act push -W .github/workflows/build-and-test.yml
+npx -p textlint -p textlint-rule-terminology -p textlint-rule-common-misspellings \
+  textlint README.md
+# add --fix to rewrite in place
 ```
 
-Tests against:
+Super-linter checks every Markdown file, so lint the whole tree before pushing: `*.md scripts/*.md .github/**/*.md .opencode/skills/**/*.md`.
 
-- Ubuntu + Qt 6.8 and 6.11
-- macOS + Qt 6.11
-- Windows + Qt 6.8
+### markdownlint
 
-Note: Qt installation may fail in act due to environment limitations. Real CI handles this.
+Emphasis style must be consistent per file (MD049): if the file uses `_x_`, do not add `*x*`. Headings must not end in punctuation such as `:` (MD026). Plain `markdownlint-cli` defaults to 80 columns; CI allows 400, hence `--disable MD013` locally.
 
-### Documentation Workflow (.github/workflows/documentation.yml)
+### Doxygen
+
+CI pins Doxygen 1.18.0 and fails on any warning, which appears as `error:`. Every public symbol in a header needs `/** @brief ... */` with `@param`/`@return`. Common causes and the full settings: read [references/doxygen.md](references/doxygen.md) when the Documentation job is red.
+
+Other tools (gitleaks, shfmt, clangd, IDE setup): read [references/other-linters.md](references/other-linters.md) when one of those fails or you set up an editor.
+
+## Pre-PR checklist
 
 ```bash
-# Run docs workflow
-act push -W .github/workflows/documentation.yml
+# 1. Format changed C/C++ files
+git diff --name-only origin/main -- '*.cpp' '*.h' | xargs -r clang-format --style=file -i
+
+# 2. Format and verify Markdown/YAML
+npx prettier --write "**/*.md" "**/*.yml"
+npx prettier --check "**/*.md" "**/*.yml"
+
+# 3. Terminology on changed Markdown
+git diff --name-only origin/main -- '*.md' | xargs -r npx -p textlint \
+  -p textlint-rule-terminology -p textlint-rule-common-misspellings textlint
+
+# 4. Doxygen, if headers changed (any output means CI fails)
+doxygen Doxyfile 2>&1 >/dev/null | grep -iE "warn|error"
+
+# 5. Rebase on latest main, then push
+git pull --rebase origin main
+git push --force-with-lease
 ```
 
-### Reuse Compliance (.github/workflows/reuse.yml)
-
-Check license headers and REUSE compliance:
-
-```bash
-# Run reuse check
-act push -W .github/workflows/reuse.yml
-```
-
-## Doxygen Documentation Linting
-
-The CI enforces zero Doxygen warnings via `documentation.yml`. `WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile` causes the step to fail on any undocumented public symbol.
-
-CI pins **Doxygen 1.18.0** (local Doxygen may be older and miss/add warnings). The `documentation.yml` install step downloads that pinned binary from the GitHub release mirror first, falling back to doxygen.nl, with retries.
-doxygen.nl has intermittent outages that previously caused spurious Documentation failures: a red Documentation check is often a download blip, not your change; re-run before debugging.
-
-### Run Doxygen Locally
-
-```bash
-doxygen Doxyfile
-# No warnings = CI will pass (progress output is normal with QUIET = NO)
-```
-
-### Enforced Doxyfile Settings
-
-| Setting            | Value              | Purpose                                           |
-| ------------------ | ------------------ | ------------------------------------------------- |
-| `FILE_PATTERNS`    | `*.cpp *.h *.md`   | Includes cpp, header, and Markdown files          |
-| `EXTRACT_ALL`      | `NO`               | Required for `WARN_NO_PARAMDOC` to work           |
-| `WARN_NO_PARAMDOC` | `YES`              | Requires `@param`/`@return` on all public symbols |
-| `WARN_AS_ERROR`    | `FAIL_ON_WARNINGS` | Fails CI on any warning                           |
-| `QUIET`            | `NO`               | Progress output shown (not an error)              |
-
-### Doxygen Comment Style
-
-Use `/** */` blocks with `@brief`, `@param`, `@return`:
-
-```cpp
-/**
- * @brief Brief one-line description.
- * @param name Description of parameter.
- * @return Description of return value.
- */
-```
-
-### Common Warning Causes
-
-- **Unnamed parameters in declarations**: `void foo(int)` — name all parameters: `void foo(int count)`
-- **Orphaned doc blocks**: A `/** ... */` not immediately preceding its declaration is misattributed. Move the block directly above the declaration.
-- **Missing `@return`**: Enforced with current settings (`WARN_NO_PARAMDOC = YES`) — include `@return` for non-void functions
-- **Signals with unnamed params**: Qt signals also need named parameters and `@param` docs
-- **`@xyz` typos**: Doxygen treats unknown `@word` as commands — use `@brief Like` not `@like`
-
-### Coverage Report (optional)
-
-Create a temporary Doxyfile override to enable XML for coverxygen (base Doxyfile may not have XML enabled):
-
-```bash
-# Generate XML docs (required for coverxygen)
-cp Doxyfile Doxyfile.xml
-echo "GENERATE_XML = YES" >> Doxyfile.xml
-echo "XML_OUTPUT = xml" >> Doxyfile.xml
-doxygen Doxyfile.xml
-
-# Install and run coverxygen
-pip install coverxygen
-python -m coverxygen --xml-dir xml/ --src-dir . --output coverage.info
-```
-
-## Common Linters
-
-### Gitleaks (Secret Detection)
-
-Detects API keys, tokens, passwords in code.
-
-```bash
-# Scan for secrets
-gitleaks detect
-```
-
-**Common Fixes:**
-
-- Don't use test values that look like API keys (e.g., "ABC123DEF456", "sk-xxx")
-- Use generic test strings: "testkey123", "/usr/bin/pass", "example.com"
-
-### Clang Format (C++)
-
-```bash
-# Check formatting
-clang-format --style=file --dry-run src/main.cpp
-
-# Apply formatting
-clang-format --style=file -i src/main.cpp
-```
-
-### Shfmt (Shell Scripts)
-
-Formats shell scripts in `scripts/` folder. Uses LLVM style (matches clang-format).
-
-**Installation:**
-
-```bash
-# macOS
-brew install shfmt
-
-# Go
-go install mvdan.cc/sh/v3/cmd/shfmt@latest
-```
-
-```bash
-# Check formatting
-shfmt -d scripts/*.sh
-
-# Apply formatting
-shfmt -w scripts/*.sh
-```
-
-### Clangd (LSP Analysis)
-
-Clangd provides deep static analysis via LSP. Requires `compile_commands.json`:
-
-```bash
-# Generate compile_commands.json (required for Qt headers)
-./scripts/generate-compile-commands.sh
-
-# Check a specific file for issues
-clangd --check=src/gpgkeystate.cpp
-```
-
-Common diagnostics:
-
-- `[performance-unnecessary-copy-initialization]` - Use `const T&` instead of `const T`
-- `[readability-static-definition]` - Consider making static definitions inline
-
-**Using "(fix available)" in editors:**
-
-| Editor             | Command                          |
-| ------------------ | -------------------------------- |
-| Visual Studio Code | Click 💡 or `Ctrl+.`             |
-| JetBrains          | `Alt+Enter`                      |
-| Neovim             | `:lua vim.lsp.buf.code_action()` |
-
-### Prettier (Web/Config)
-
-```bash
-# Format markdown, YAML, JSON, etc.
-npx prettier --write README.md
-npx prettier --write .github/workflows/*.yml
-npx prettier --write FAQ.md
-npx prettier --write ".opencode/skills/*/SKILL.md"
-```
-
-### textlint (Natural Language)
-
-Super-linter's NATURAL_LANGUAGE check runs textlint with `textlint-rule-terminology`
-(canonical capitalisation: `Git`, `Ubuntu`, `SFTP`, `NixOS`, `Bash`, …). The
-repository has no textlint config, so plain `npx textlint` errors with "No
-rules found" — load the rule explicitly via `-p`:
-
-```bash
-# Lint a specific file
-npx -p textlint -p textlint-rule-terminology textlint --rule terminology AGENTS.md
-
-# Lint every Markdown file in the repo (catches latent errors super-linter misses)
-npx -p textlint -p textlint-rule-terminology textlint --rule terminology \
-  *.md scripts/*.md .github/**/*.md .opencode/skills/*/SKILL.md
-
-# Auto-fix
-npx -p textlint -p textlint-rule-terminology textlint --rule terminology --fix \
-  *.md scripts/*.md .github/**/*.md .opencode/skills/*/SKILL.md
-```
-
-**Important:** Super-linter only lints the files **changed in the PR**, so
-terminology errors in untouched Markdown files sit latent and only blow up when
-someone next edits that file. When fixing one terminology error, sweep the
-whole tree with the second command above and clean up any other hits in the
-same PR.
-
-## Prettier Patterns
-
-Prettier auto-fixes many linting issues. Run before `act`:
-
-```bash
-# Format all common file types
-npx prettier --write "**/*.md" "**/*.yml" "**/*.json" "**/*.html" "**/*.css"
-```
-
-### Markdown Natural Language Issues
-
-If NATURAL_LANGUAGE fails:
-
-- Use single-word forms instead of two-word combinations
-- Use full terms instead of abbreviations
-- Use proper spacing and punctuation
-
-```bash
-# Run prettier first
-npx prettier --write README.md
-
-# Then check again
-act push -W .github/workflows/lint.yml -j build
-```
+Any step not clean: go back to the fix loop. Never push directly to `main`.
 
 ## Troubleshooting
 
-### Qt Installation Fails in act
+- **Documentation job red with a download error**: the Doxygen download (GitHub mirror, then doxygen.nl) had a blip. Re-run the job before debugging.
+- **Super-linter red on a file you did not touch**: the whole tree is linted, so a super-linter bump (new tool versions) or a red `main` shows up in every PR. Check the latest `main` run first; fix it in its own PR when `main` is red too.
+- **Super-linter fails with HTTP 403 on statuses**: `MULTI_STATUS: false` must stay set in `lint.yml` (the job has a read-only token).
+- **codespell flags a valid project word**: add it to `ignore-words-list` in `.codespellrc` with a comment.
+- **Gitleaks flags test data**: use obviously fake values (`testkey123`, `example.com`), not strings shaped like real keys.
 
-The `install-qt-action` may fail in local act due to missing downloads. This is expected - real CI works fine.
+## Related skills
 
-### Linter Fails Due to Missing Files
-
-Some checks need files generated during CI. Run full build first:
-
-```bash
-qmake6 -r CONFIG+=coverage
-make -j4
-```
-
-### Gitleaks False Positives
-
-If gitleaks flags test data:
-
-1. Use generic test values (not like "ABC123DEF456")
-2. Add to `.gitleaksignore` if truly non-sensitive
-
-### act Unknown Flag Error
-
-Make sure act is installed and up to date:
-
-```bash
-# Check version
-act --version
-
-# Update if needed
-brew upgrade act  # or your package manager
-```
-
-## CI Environment Variables
-
-Some linters need secrets or tokens. In local act, these may not be available:
-
-```bash
-# Pass fake token for codecov
-act push -W .github/workflows/build-and-test.yml --secret-map "CODECOV_TOKEN=fake"
-```
-
-## GitHub Actions Files
-
-| File                                   | Purpose                    |
-| -------------------------------------- | -------------------------- |
-| `.github/workflows/lint.yml`           | Super-linter (many checks) |
-| `.github/workflows/build-and-test.yml` | Build & test with Qt       |
-| `.github/workflows/documentation.yml`  | Doxygen docs generation    |
-| `.github/workflows/reuse.yml`          | REUSE compliance           |
-| `.github/super-linter.env`             | Linter configuration       |
-
-## Run Before PR Checklist
-
-**THIS IS THE PATTERN - always run before pushing:**
-
-```bash
-# 1. Format files with prettier (always do this)
-npx prettier --write "**/*.md" "**/*.yml"
-
-# 2. Verify formatting passes (REQUIRED - catches linting issues)
-npx prettier --check "**/*.md"
-
-# 3. Run act linter (recommended before opening PR)
-act push -W .github/workflows/lint.yml -j build
-
-# 4. Update with latest main (if branch is behind)
-git fetch upstream
-git pull upstream main --rebase
-
-# 5. Then push
-git push
-```
-
-**Note:** Prettier catches most issues. act is recommended but may fail on new branches (see below).
-
-### Note on act
-
-**`act` may fail on new branches with error:** `fatal: ambiguous argument 'HEAD~0'`
-
-This is a known issue with the tool, not your code. When this happens:
-
-- Skip the act step
-- The `prettier --check` step is sufficient for most cases
-- Trust that formatting is correct
-- The real GitHub CI will pass
-
-**Recommended alternative - use prettier --check directly:**
-
-```bash
-# This catches most linting issues without needing act
-npx prettier --check "**/*.md"
-npx prettier --check "**/*.yml"
-```
-
-### Before Merging
-
-**Before merging a PR, always update it with latest main:**
-
-```bash
-git checkout <branch-name>
-git pull upstream main --rebase
-git push -f
-```
-
-This prevents "branch is out-of-date with base branch" errors when merging.
-
-## IDE/LSP Setup
-
-For proper code completion and analysis in editors like Visual Studio Code with clangd, generate `compile_commands.json`:
-
-```bash
-# Generate compile_commands.json using bear
-./scripts/generate-compile-commands.sh
-```
-
-This provides Qt include paths so the LSP can resolve types like `QString`, `QProcess`, etc.
-
-**Note:** `compile_commands.json` is in `.gitignore` - regenerate after cleaning or re-configuring.
-
-## Related Skills
-
-- **qtpass-testing** - For testing patterns and `make check`
-- **qtpass-fixing** - For bugfix workflow with tests
-- **qtpass-releasing** - For release process
+- **qtpass-testing**: `make check` and test patterns
+- **qtpass-fixing**: bugfix workflow with tests
+- **qtpass-github**: PRs, CI status, merging
+- **qtpass-docs**: Doxygen and Markdown content
