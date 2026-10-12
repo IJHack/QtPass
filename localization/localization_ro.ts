@@ -1226,7 +1226,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">noua semnătură nu este verificată ca aparținând uneia dintre cheile de semnare</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1262,22 +1262,22 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Lista de destinatari nu poate fi verificată</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Nu se poate stabili dacă %2 a fost șters, așa că nu s-a criptat nimic.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Lista de destinatari lipsește</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Lista semnată de destinatari %1 lipsește sau nu este un fișier obișnuit. QtPass nu folosește în locul ei lista unui dosar părinte: acea listă nu a fost semnată pentru acest dosar. Dacă sub acest nume se află o legătură, ștergeți-o. Apoi deschideți Utilizatori pentru acel dosar și salvați destinatarii săi, ceea ce scrie și semnează o listă nouă.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1302,12 +1302,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Destinatarii nu au fost modificați</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">O recriptare este încă în curs. Așteptați până când se termină, apoi salvați din nou destinatarii.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1399,7 +1399,7 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git s-a încheiat cu codul %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1564,7 +1564,7 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Destinatarii nu au fost incluși într-un commit</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1573,11 +1573,7 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">Destinatarii pentru %1 au fost modificați și intrările au fost recriptate pentru ei, dar commit-ul Git a eșuat:
-
-%2
-
-Modificarea nu a fost încă inclusă într-un commit și nici trimisă prin push. Remediați problema Git, apoi faceți commit modificărilor sau salvați din nou destinatarii.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1586,11 +1582,7 @@ Modificarea nu a fost încă inclusă într-un commit și nici trimisă prin pus
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">Destinatarii pentru %1 au fost modificați, dar commit-ul Git a eșuat:
-
-%2
-
-Recriptarea nu s-a încheiat, așa că unele sau toate intrările sunt încă criptate pentru destinatarii anteriori, care le pot citi în continuare. Nimic nu a fost inclus într-un commit sau trimis prin push. Remediați problema Git, apoi salvați din nou destinatarii.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2892,17 +2884,17 @@ Continuați?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">Registrul de generații al listelor de destinatari nu poate fi citit.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Lista de destinatari %1 lipsește sau nu este un fișier obișnuit, așa că nimic nu este preselectat: lista unui dosar părinte nu a fost semnată pentru acesta. Selectați dumneavoastră destinatarii acestui dosar; OK scrie și semnează o listă nouă.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Nimic nu este preselectat: nu se poate stabili dacă %2 a fost șters.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
