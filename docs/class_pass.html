@@ -224,6 +224,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4425df7bb17f93be39e1142c2fd4c6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve the gpgconf command to kill agents.  <br /></td></tr>
 <tr class="memitem:a7b85488c618db05c5ed43788765ccc6b" id="r_a7b85488c618db05c5ed43788765ccc6b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7b85488c618db05c5ed43788765ccc6b">getGpgIdPath</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QString</td></tr>
 <tr class="memdesc:a7b85488c618db05c5ed43788765ccc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get .gpg-id file path for a password file.  <br /></td></tr>
+<tr class="memitem:a717df61e5c322ebe742c564de47d74d7" id="r_a717df61e5c322ebe742c564de47d74d7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a717df61e5c322ebe742c564de47d74d7">skippedGpgId</a> (const QString &amp;forFile, const QString &amp;passStore, QString *recordError=nullptr) -&gt; std::optional&lt; QString &gt;</td></tr>
+<tr class="memdesc:a717df61e5c322ebe742c564de47d74d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The folder list <a class="el" href="#a7b85488c618db05c5ed43788765ccc6b" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> passed over on its way up to the one it returns, if it passed one over that a signed store must not.  <br /></td></tr>
 <tr class="memitem:aecbf5f13da209c44955bad681a63a388" id="r_aecbf5f13da209c44955bad681a63a388"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aecbf5f13da209c44955bad681a63a388">getRecipientList</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QStringList</td></tr>
 <tr class="memdesc:aecbf5f13da209c44955bad681a63a388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of recipients for a password file.  <br /></td></tr>
 <tr class="memitem:a1f0cee3a2fb00cb379fb814edf056c4c" id="r_a1f0cee3a2fb00cb379fb814edf056c4c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1f0cee3a2fb00cb379fb814edf056c4c">parseRecipients</a> (const QByteArray &amp;contents, const QString &amp;sourceName) -&gt; QStringList</td></tr>
@@ -281,7 +283,7 @@ Protected Attributes</h2></td></tr>
 </ul>
 <p>Subclasses must implement Git and password operations. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00053">53</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00054">54</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a2e71b5174b4ef25a1e91d8c56177b772" name="a2e71b5174b4ef25a1e91d8c56177b772"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e71b5174b4ef25a1e91d8c56177b772">&#9670;&#160;</a></span>PROCESS</h2>
@@ -305,7 +307,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Alias for <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69" title="Identifies different subprocess operations used in QtPass.">Enums::PROCESS</a> used throughout this class. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00075">75</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00076">76</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -1711,7 +1713,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#a80b717f6932e5645b2628fba4654a7da">ImitatePass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00331">331</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00358">358</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -1965,7 +1967,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00341">341</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00368">368</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2225,6 +2227,51 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a717df61e5c322ebe742c564de47d74d7" name="a717df61e5c322ebe742c564de47d74d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a717df61e5c322ebe742c564de47d74d7">&#9670;&#160;</a></span>skippedGpgId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::skippedGpgId </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>forFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>passStore</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>recordError</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  std::optional&lt; QString &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The folder list <a class="el" href="#a7b85488c618db05c5ed43788765ccc6b" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> passed over on its way up to the one it returns, if it passed one over that a signed store must not. </p>
+<p><a class="el" href="#a7b85488c618db05c5ed43788765ccc6b" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> skips a <span class="tt">.gpg-id</span> that is missing, a link or a junction and falls back to a parent folder's list, as <span class="tt">pass</span> does. In a signed store that lets anyone who can write to it, without the signing key, move a folder's entries to the parent's (also validly signed) recipients by removing or linking the folder's own list. This names the first such list between the start and the folder of the list found (that folder and the store root excluded): one that is under the name but not a regular file, or one that is gone although this device has accepted a list at that path before (<a class="el" href="class_gpg_id_generation.html#a495c019fdefb8cb6c7349d4ff2f52cd5" title="The highest generation this device has accepted or written for the .gpg-id at gpgIdFile....">GpgIdGeneration::remembered()</a>). When the generation record cannot be read, whether a list was accepted at a path cannot be told: the first folder without its own list is named then too (fail closed), and <code class="param">recordError</code> says why. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">forFile</td><td>Entry or folder, as for <a class="el" href="#a7b85488c618db05c5ed43788765ccc6b" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a>. </td></tr>
+    <tr><td class="paramname">passStore</td><td>Root directory of the password store. </td></tr>
+    <tr><td class="paramname">recordError</td><td>Receives the record's error when it could not be read, if not null; left untouched otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The skipped <span class="tt">.gpg-id</span> path, or nothing when the list found is the one that applies. </dd></dl>
+
+</div>
+</div>
 <a id="a3a8bd6ab55ed8b2338955f01573bc2fb" name="a3a8bd6ab55ed8b2338955f01573bc2fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a8bd6ab55ed8b2338955f01573bc2fb">&#9670;&#160;</a></span>statusMsg</h2>
 
@@ -2286,7 +2333,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Internal command executor for queuing and running subprocesses. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00070">70</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00071">71</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2313,7 +2360,7 @@ Protected Attributes</h2></td></tr>
 <p>Application settings snapshot injected at <a class="el" href="#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init()</a> time. </p>
 <p>Populated by init(AppSettings) and valid for the lifetime of this backend instance. Subclasses read it in place of calling <a class="el" href="class_qt_pass_settings.html" title="Singleton that stores QtPass settings, handles persistence and defaults.">QtPassSettings</a> directly. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00066">66</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00067">67</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>

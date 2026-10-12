@@ -255,6 +255,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a9055e77fb0300ace61fde6386b50705f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sign a <span class="tt">.gpg-id</span> with the configured key and verify the result; failures are reported through <a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Emit critical error.">critical()</a>.  <br /></td></tr>
 <tr class="memitem:abe06761236eb789f13dd4e8814ce7f15" id="r_abe06761236eb789f13dd4e8814ce7f15"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abe06761236eb789f13dd4e8814ce7f15">refuseLinkedGpgIdFolder</a> (const QString &amp;path) -&gt; bool</td></tr>
 <tr class="memdesc:abe06761236eb789f13dd4e8814ce7f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse a folder, or a <span class="tt">.gpg-id</span>/<span class="tt">.gpg-id.sig</span> in it, that is a link: writing there would reach outside the store.  <br /></td></tr>
+<tr class="memitem:aec8ce2f5fd8281d1d33e76e0411d62c3" id="r_aec8ce2f5fd8281d1d33e76e0411d62c3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aec8ce2f5fd8281d1d33e76e0411d62c3">refuseSkippedGpgId</a> (const QString &amp;file) -&gt; bool</td></tr>
+<tr class="memdesc:aec8ce2f5fd8281d1d33e76e0411d62c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">With a signing key set, refuse to encrypt <code class="param">file</code> when the lookup passed over its folder's own list (<a class="el" href="class_pass.html#a717df61e5c322ebe742c564de47d74d7" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...">Pass::skippedGpgId()</a>): the parent's list is not what was signed for it.  <br /></td></tr>
 <tr class="memitem:a2cd108bdff679ad6d03daf0c7dfd1aa3" id="r_a2cd108bdff679ad6d03daf0c7dfd1aa3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2cd108bdff679ad6d03daf0c7dfd1aa3">recipientsForEntry</a> (const QString &amp;file, QStringList *recipients) -&gt; bool</td></tr>
 <tr class="memdesc:a2cd108bdff679ad6d03daf0c7dfd1aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The recipients to encrypt <code class="param">file</code> to: its folder's <span class="tt">.gpg-id</span>, verified when a signing key is set.  <br /></td></tr>
 <tr class="memitem:a3d49034415dcced209f0294b631c1ddc" id="r_a3d49034415dcced209f0294b631c1ddc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3d49034415dcced209f0294b631c1ddc">copyDestination</a> (const QString &amp;src, const QString &amp;dest, bool force) -&gt; QString</td></tr>
@@ -323,6 +325,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a4425df7bb17f93be39e1142c2fd4c6a6 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve the gpgconf command to kill agents.  <br /></td></tr>
 <tr class="memitem:a7b85488c618db05c5ed43788765ccc6b inherit pub_static_methods_class_pass" id="r_a7b85488c618db05c5ed43788765ccc6b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a7b85488c618db05c5ed43788765ccc6b">getGpgIdPath</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QString</td></tr>
 <tr class="memdesc:a7b85488c618db05c5ed43788765ccc6b inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get .gpg-id file path for a password file.  <br /></td></tr>
+<tr class="memitem:a717df61e5c322ebe742c564de47d74d7 inherit pub_static_methods_class_pass" id="r_a717df61e5c322ebe742c564de47d74d7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a717df61e5c322ebe742c564de47d74d7">skippedGpgId</a> (const QString &amp;forFile, const QString &amp;passStore, QString *recordError=nullptr) -&gt; std::optional&lt; QString &gt;</td></tr>
+<tr class="memdesc:a717df61e5c322ebe742c564de47d74d7 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The folder list <a class="el" href="class_pass.html#a7b85488c618db05c5ed43788765ccc6b" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> passed over on its way up to the one it returns, if it passed one over that a signed store must not.  <br /></td></tr>
 <tr class="memitem:aecbf5f13da209c44955bad681a63a388 inherit pub_static_methods_class_pass" id="r_aecbf5f13da209c44955bad681a63a388"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#aecbf5f13da209c44955bad681a63a388">getRecipientList</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QStringList</td></tr>
 <tr class="memdesc:aecbf5f13da209c44955bad681a63a388 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of recipients for a password file.  <br /></td></tr>
 <tr class="memitem:a1f0cee3a2fb00cb379fb814edf056c4c inherit pub_static_methods_class_pass" id="r_a1f0cee3a2fb00cb379fb814edf056c4c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a1f0cee3a2fb00cb379fb814edf056c4c">parseRecipients</a> (const QByteArray &amp;contents, const QString &amp;sourceName) -&gt; QStringList</td></tr>
@@ -1425,7 +1429,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#afda7320a4a3a5bcba47a862701c9b84e">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00330">330</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00338">338</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>
@@ -1694,6 +1698,40 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>The folder, with its trailing separator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
+
+</div>
+</div>
+<a id="aec8ce2f5fd8281d1d33e76e0411d62c3" name="aec8ce2f5fd8281d1d33e76e0411d62c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec8ce2f5fd8281d1d33e76e0411d62c3">&#9670;&#160;</a></span>refuseSkippedGpgId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::refuseSkippedGpgId </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>With a signing key set, refuse to encrypt <code class="param">file</code> when the lookup passed over its folder's own list (<a class="el" href="class_pass.html#a717df61e5c322ebe742c564de47d74d7" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...">Pass::skippedGpgId()</a>): the parent's list is not what was signed for it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The entry or folder about to be encrypted to. </td></tr>
   </table>
   </dd>
 </dl>
