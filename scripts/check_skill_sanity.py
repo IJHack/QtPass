@@ -106,7 +106,8 @@ def check_markdown_links(
     for match in LINK_RE.finditer(strip_code(text)):
         raw_target = match.group(1).strip("<>")
         target = raw_target.split("#", 1)[0]
-        if not target or URL_RE.match(target):
+        # Skip empty targets, URLs and protocol-relative //host links.
+        if not target or URL_RE.match(target) or target.startswith("//"):
             continue
         # A leading slash is the repository root, as on GitHub.
         base = root if target.startswith("/") else skill_md.parent
