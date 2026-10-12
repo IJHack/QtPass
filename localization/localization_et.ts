@@ -1226,7 +1226,7 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">uut allkirja ei saa verifitseerida ühegi allkirjastamise võtme allkirjana</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1262,22 +1262,22 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Saajate loendit ei saa kontrollida</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Ei saa kindlaks teha, kas %2 eemaldati, seega midagi ei krüptitud.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Saajate loend puudub</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Allkirjastatud saajate loend %1 puudub või pole tavaline fail. QtPass ei kasuta selle asemel ülemkausta loendit: see loend pole selle kausta jaoks allkirjastatud. Kui selle nime all on link, eemalda see. Seejärel ava selle kausta jaoks „Kasutajad“ ja salvesta kausta saajad. Salvestamine kirjutab ja allkirjastab uue loendi.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1302,12 +1302,12 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Saajaid ei muudetud</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Uuesti krüptimine alles käib. Oota, kuni see lõpeb, ja salvesta siis saajad uuesti.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1399,7 +1399,7 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git lõpetas tegevuse olekukoodiga %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1561,7 +1561,7 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Saajate muudatus jäi Giti sissekandeta</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1570,11 +1570,7 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">Kausta %1 saajaid muudeti ja selle kirjed krüptiti nende jaoks uuesti, kuid Giti sissekanne ei õnnestunud:
-
-%2
-
-Muudatust pole veel sisse kantud ega üles lükatud. Paranda Giti probleem ning tee seejärel muudatuste sissekanne või salvesta saajad uuesti.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
@@ -1583,11 +1579,7 @@ Muudatust pole veel sisse kantud ega üles lükatud. Paranda Giti probleem ning 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">Kausta %1 saajaid muudeti, kuid Giti sissekanne ei õnnestunud:
-
-%2
-
-Uuesti krüptimine jäi lõpetamata, seega on osa kirjeid või kõik kirjed endiselt krüptitud eelmistele saajatele, kes saavad neid ikka lugeda. Midagi ei kantud sisse ega lükatud üles. Paranda Giti probleem ja salvesta seejärel saajad uuesti.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
@@ -2922,17 +2914,17 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">Saajate loendite põlvkonnaregistrit ei saa lugeda.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Saajate loend %1 puudub või pole tavaline fail, seega pole midagi eelvalitud: ülemkausta loend pole selle kausta jaoks allkirjastatud. Vali selle kausta saajad ise; OK kirjutab ja allkirjastab uue loendi.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Midagi pole eelvalitud: ei saa kindlaks teha, kas %2 eemaldati.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
