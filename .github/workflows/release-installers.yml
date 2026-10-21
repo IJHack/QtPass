@@ -201,7 +201,7 @@ jobs:
       - name: Upload unsigned qtpass.exe for signing
         if: steps.signing.outputs.enabled == 'true'
         id: upload-unsigned-exe
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           path: dist/qtpass/qtpass.exe
           archive: false
@@ -264,7 +264,7 @@ jobs:
       - name: Upload unsigned installer for signing
         if: steps.signing.outputs.enabled == 'true'
         id: upload-unsigned-installer
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           path: Output/qtpass-${{ steps.version.outputs.version }}.exe
           archive: false
@@ -313,7 +313,7 @@ jobs:
 
       - name: Upload installer artifact
         if: steps.need_build.outputs.run_build == 'true'
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: qtpass-windows-installer-${{ steps.version.outputs.version }}
           path: Output/qtpass-*.exe
@@ -411,7 +411,7 @@ jobs:
 
       - name: Upload dmg artifact
         if: steps.need_build.outputs.run_build == 'true'
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: qtpass-macos-dmg-${{ steps.version.outputs.version }}
           path: QtPass-*.dmg
@@ -560,7 +560,7 @@ jobs:
 
       - name: Upload AppImage artifact
         if: steps.need_build.outputs.run_build == 'true'
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: qtpass-appimage-${{ steps.version.outputs.version }}
           path: dist/QtPass-*.AppImage
