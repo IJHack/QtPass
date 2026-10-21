@@ -18,6 +18,15 @@ updates:
 
     open-pull-requests-limit: 5
 
+    # Every github/codeql-action step in a workflow must run the same
+    # version: analyze refuses a configuration file written by a different
+    # init. Group them so one PR bumps init, autobuild, analyze and
+    # upload-sarif together.
+    groups:
+      codeql-action:
+        patterns:
+          - "github/codeql-action"
+
   # The OSS Scanner build image (.oss-scanner/Dockerfile) is pinned by
   # digest; this keeps the digest current.
   - package-ecosystem: "docker"
