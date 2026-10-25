@@ -21,11 +21,13 @@ updates:
     # Every github/codeql-action step in a workflow must run the same
     # version: analyze refuses a configuration file written by a different
     # init. Group them so one PR bumps init, autobuild, analyze and
-    # upload-sarif together.
+    # upload-sarif together. Dependabot names each step by its path
+    # (github/codeql-action/init and so on), so the pattern needs the
+    # wildcard.
     groups:
       codeql-action:
         patterns:
-          - "github/codeql-action"
+          - "github/codeql-action*"
 
   # The OSS Scanner build image (.oss-scanner/Dockerfile) is pinned by
   # digest; this keeps the digest current.
