@@ -225,6 +225,7 @@ private Q_SLOTS:
   void updateEnvSetsExpectedVars();
   void updateEnvEmptyCustomCharsetFallsBackToAllChars();
   void updateEnvWslenvContainsRequiredVars();
+  void gpgOptsCarryTheOutputLimitAfterTheUsersOwn();
   void gpgErrorMessageKeyExpiredStatusToken();
   void gpgErrorMessageKeyRevokedStatusToken();
   void gpgErrorMessageNoPubkeyStatusToken();
@@ -290,6 +291,7 @@ private Q_SLOTS:
   void writeTemplatesEmptyHash();
   void writeTemplatesSortedKeys();
   void getFolderTemplateInCurrent();
+  void templateFilesMustBeRegularAndSmall();
   void getFolderTemplateInParent();
   void getFolderTemplateNoneFound();
   void getFolderTemplateCommentIgnored();
@@ -2151,10 +2153,22 @@ void tst_util::updateEnvWslenvContainsRequiredVars() {
   const QString wslenv = env.value(QStringLiteral("WSLENV"));
   QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_DIR/p")),
            "WSLENV should include PASSWORD_STORE_DIR/p");
-  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w")),
-           "WSLENV should include PASSWORD_STORE_GENERATED_LENGTH/w");
-  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")),
-           "WSLENV should include PASSWORD_STORE_CHARACTER_SET/w");
+  // /u: forwarded from Windows into WSL, where pass runs. /w is the other
+  // direction and would leave pass without the value.
+  for (const char *var :
+       {"PASSWORD_STORE_SIGNING_KEY", "PASSWORD_STORE_GENERATED_LENGTH",
+        "PASSWORD_STORE_CHARACTER_SET", "PASSWORD_STORE_GPG_OPTS"}) {
+    const QString entry = QString::fromLatin1(var) + QStringLiteral("/u");
+    QVERIFY2(wslenv.split(QLatin1Char(':')).contains(entry),
+             qPrintable(QStringLiteral("WSLENV should include ") + entry));
+  }
+  // Only QtPass's own entries: a user's inherited MY_VAR/w is valid.
+  for (const QString &entry : wslenv.split(QLatin1Char(':'))) {
+    QVERIFY2(!(entry.startsWith(QLatin1String("PASSWORD_STORE_")) &&
+               entry.endsWith(QLatin1String("/w"))),
+             qPrintable(entry +
+                        QStringLiteral(" would be forwarded out of WSL only")));
+  }
 }
 
 // --- gpgErrorMessage tests ---
@@ -2989,6 +3003,69 @@ void tst_util::writeTemplatesSortedKeys() {
            "[zebra] section must be present in written file");
   QVERIFY2(content.indexOf("[alpha]") < content.indexOf("[zebra]"),
            "sections must be written in alphabetical order");
+}
+
+/**
+ * @brief Template files come from whoever shares the store: a link (to a
+ * device that never ends, say) or a file far beyond a template's size is
+ * not read at all, rather than read into memory on the GUI thread; a UTF-8
+ * byte order mark is not part of the name.
+ */
+void tst_util::templateFilesMustBeRegularAndSmall() {
+#ifdef Q_OS_WIN
+  QSKIP("uses symbolic links to /dev/zero");
+#else
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QDir storeDir(store.path());
+  QVERIFY(storeDir.mkdir("sub"));
+  const QString subPath = storeDir.filePath("sub");
+  const QString defaultTemplate = QDir(subPath).filePath(".default_template");
+  QVERIFY(QFile::link(QStringLiteral("/dev/zero"), defaultTemplate));
+  QVERIFY(QFile::link(QStringLiteral("/dev/zero"),
+                      storeDir.filePath(".templates")));
+  QVERIFY(TemplateIO::getFolderTemplate(subPath, store.path()).isEmpty());
+  QVERIFY(TemplateIO::readTemplates(store.path()).isEmpty());
+
+  QVERIFY(QFile::remove(defaultTemplate));
+  QFile big(defaultTemplate);
+  QVERIFY(big.open(QIODevice::WriteOnly));
+  big.write(QByteArray(200 * 1024, 'a'));
+  big.close();
+  QVERIFY(TemplateIO::getFolderTemplate(subPath, store.path()).isEmpty());
+
+  QVERIFY(QFile::remove(defaultTemplate));
+  QFile bom(defaultTemplate);
+  QVERIFY(bom.open(QIODevice::WriteOnly));
+  bom.write("\xEF\xBB\xBFwithbom\n");
+  bom.close();
+  QCOMPARE(TemplateIO::getFolderTemplate(subPath, store.path()),
+           QStringLiteral("withbom"));
+#endif
+}
+
+/**
+ * @brief The pass backend gets the decryption output limit through
+ * PASSWORD_STORE_GPG_OPTS, after the user's own options (split as pass's
+ * shell splits them), once.
+ */
+void tst_util::gpgOptsCarryTheOutputLimitAfterTheUsersOwn() {
+  const bool had = qEnvironmentVariableIsSet("PASSWORD_STORE_GPG_OPTS");
+  const QByteArray previous = qgetenv("PASSWORD_STORE_GPG_OPTS");
+  qputenv("PASSWORD_STORE_GPG_OPTS", "--trust-model\talways\n");
+  TestPass pass;
+  AppSettings s = QtPassSettings::load();
+  pass.init(s);
+  pass.updateEnv();
+  const QString got =
+      pass.environment().value(QStringLiteral("PASSWORD_STORE_GPG_OPTS"));
+  if (had) {
+    qputenv("PASSWORD_STORE_GPG_OPTS", previous);
+  } else {
+    qunsetenv("PASSWORD_STORE_GPG_OPTS");
+  }
+  QCOMPARE(got, QStringLiteral("--trust-model always ") +
+                    Pass::maxOutputArgs().join(QLatin1Char(' ')));
 }
 
 void tst_util::getFolderTemplateInCurrent() {

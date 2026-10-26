@@ -18,20 +18,54 @@
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <QStringConverter>
 #endif
+#include <QFileInfo>
+#include <optional>
+
+namespace {
+
+/// The template files are a few lines each; anything larger is not one.
+constexpr qint64 kMaxTemplateFileBytes = 64 * 1024;
+
+/**
+ * Reads a template file of the store. Store contents are written by whoever
+ * shares the store, so it has to be a regular file (not a link, a device or
+ * a FIFO, which may never end) of a template file's size; at most that much
+ * is read, so a file that grows meanwhile is cut off there.
+ * @return The contents, or nothing when the file is absent, not a regular
+ *         file or too large.
+ */
+auto readTemplateFile(const QString &path) -> std::optional<QString> {
+  const QFileInfo info(path);
+  if (info.isSymLink() || !info.isFile()) {
+    return std::nullopt;
+  }
+  QFile file(path);
+  if (!file.open(QIODevice::ReadOnly)) {
+    return std::nullopt;
+  }
+  const QByteArray bytes = file.read(kMaxTemplateFileBytes + 1);
+  if (bytes.size() > kMaxTemplateFileBytes) {
+    qWarning() << "Ignoring" << path << "; a template file is at most"
+               << kMaxTemplateFileBytes << "bytes";
+    return std::nullopt;
+  }
+  // A UTF-8 byte order mark (older Notepad writes one) is not text.
+  const QByteArray bom("\xEF\xBB\xBF");
+  return QString::fromUtf8(bytes.startsWith(bom) ? bytes.mid(bom.size())
+                                                 : bytes);
+}
+
+} // namespace
 
 auto TemplateIO::readTemplates(const QString &storePath)
     -> QHash<QString, QStringList> {
   QHash<QString, QStringList> result;
-  QFile file(QDir(storePath).filePath(".templates"));
-  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+  std::optional<QString> contents =
+      readTemplateFile(QDir(storePath).filePath(".templates"));
+  if (!contents) {
     return result;
   }
-  QTextStream in(&file);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-  in.setEncoding(QStringConverter::Utf8);
-#else
-  in.setCodec("UTF-8");
-#endif
+  QTextStream in(&*contents, QIODevice::ReadOnly);
   QString currentSection;
   QStringList currentFields;
   bool skipInvalidSection = false;
@@ -113,16 +147,11 @@ auto TemplateIO::getFolderTemplate(const QString &folderPath,
       break;
     }
     if (dir.exists(".default_template")) {
-      QFile file(dir.filePath(".default_template"));
-      if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QTextStream in(&file);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-        in.setEncoding(QStringConverter::Utf8);
-#else
-        in.setCodec("UTF-8");
-#endif
-        QString templateName = in.readLine().trimmed();
-        file.close();
+      const std::optional<QString> contents =
+          readTemplateFile(dir.filePath(".default_template"));
+      if (contents) {
+        const QString templateName =
+            contents->section(QLatin1Char('\n'), 0, 0).trimmed();
         if (!templateName.isEmpty() && !templateName.startsWith('#')) {
           return templateName;
         }

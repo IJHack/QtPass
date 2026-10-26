@@ -1,15 +1,46 @@
 # Changelog
 
-## [1.8.4](https://github.com/IJHack/QtPass/tree/v1.8.4) (2026-10-26)
+## [Unreleased] — 1.8.5
+
+### Upgrade Notes
+
+- **WSL with a signing key: pass inside WSL now checks the signature.**
+  QtPass never handed the signing key to `pass` running in WSL, so `pass`
+  there did not check `.gpg-id.sig`. It does now: with a signing key set,
+  the store needs a signed `.gpg-id`, and WSL's own GnuPG needs that key
+  imported, or `pass` refuses to save and re-encrypt. The password length
+  and character set did not reach WSL either; they do now.
 
 ### Security
+
+- Decrypting an entry cannot fill QtPass's memory any more: gpg stops at
+  64 MiB of plaintext (`--max-output`, also for the `pass` backend through
+  `PASSWORD_STORE_GPG_OPTS`). An OpenPGP message is compressed, so a small
+  entry in a shared store could expand to gigabytes when shown, searched or
+  re-encrypted (ported from
+  [#2051](https://github.com/IJHack/QtPass/pull/2051))
+- `.templates` and `.default_template` are read only as the regular files
+  they claim to be, and only up to 64 KiB: a link to a device that never
+  ends (`/dev/zero`) made QtPass read forever on the GUI thread (ported from
+  [#2051](https://github.com/IJHack/QtPass/pull/2051))
+- An `otpauth://` line is never split into a field, also not when the
+  template lists `otpauth`: without its scheme the value no longer counted
+  as a shared secret and was shown, seed and all (ported from
+  [#2051](https://github.com/IJHack/QtPass/pull/2051))
+- With the `pass` backend in WSL, the signing key reaches `pass`, so it
+  checks `.gpg-id.sig` there as well; see the upgrade notes (ported from
+  [#2051](https://github.com/IJHack/QtPass/pull/2051))
+
+## [1.8.4](https://github.com/IJHack/QtPass/tree/v1.8.4) (2026-10-26)
+
+### Security <!-- markdownlint-disable-line MD024 -->
 
 - A copied password carries the KDE password hint on FreeBSD and OpenBSD
   too, as it did on Linux, so Klipper, CopyQ and cliphist keep it out of
   their history (ported from [#2038](https://github.com/IJHack/QtPass/pull/2038),
   [#2039](https://github.com/IJHack/QtPass/pull/2039))
 
-### Bugfixes
+### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
 - Started from a terminal, QtPass no longer freezes when Git wants HTTPS
   credentials or SSH a passphrase or host key. They prompted on that
