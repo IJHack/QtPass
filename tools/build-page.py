@@ -18,8 +18,8 @@ import subprocess
 import sys
 
 REPO_BLOB = "https://github.com/IJHack/QtPass/blob/main/"
-VERSION = "1.8.3"
-ASSET_VERSION = "?v=1.8.3-15"
+VERSION = "1.8.4"
+ASSET_VERSION = "?v=1.8.4-1"
 
 # Repository files that are pages on the site.
 SITE_PAGES = {
