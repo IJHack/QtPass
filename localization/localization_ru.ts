@@ -1516,7 +1516,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Недопустимое имя</translation>
+        <translation>Недопустимое имя</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
@@ -1799,7 +1799,7 @@ Continue?</source>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">Пароль</translation>
+        <translation>Пароль</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
@@ -1810,12 +1810,12 @@ Continue?</source>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">Код OTP</translation>
+        <translation>Код OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">В этом пароле не найден код OTP</translation>
+        <translation>В этом пароле не найден код OTP</translation>
     </message>
 </context>
 <context>
