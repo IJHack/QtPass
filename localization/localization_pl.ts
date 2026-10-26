@@ -188,7 +188,7 @@
         <location filename="../src/configdialog.ui" line="953"/>
         <location filename="../src/configdialog.ui" line="1501"/>
         <source>Automatically pull</source>
-        <translation>Automatyczne wypychanie</translation>
+        <translation>Automatyczne pobieranie</translation>
     </message>
     <message>
         <source>Extensions:</source>
@@ -1288,7 +1288,7 @@ Nie będzie można zmienić listy użytkowników!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="112"/>
         <source>Git pull failed: %1</source>
-        <translation>Nie udało się wypychanie Git: %1</translation>
+        <translation>Pobieranie Git nie powiodło się: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="193"/>
@@ -1457,7 +1457,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
         <location filename="../src/imitatepass.cpp" line="1044"/>
         <location filename="../src/imitatepass.cpp" line="1050"/>
         <source>Git pull failed</source>
-        <translation>Wypychanie Git nie powiódło się</translation>
+        <translation>Pobieranie Git nie powiodło się</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1045"/>
@@ -1467,12 +1467,12 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1051"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation>Po operacji wypychania w magazynie pozostały niescalone pliki. Rozwiąż konflikt przed ponownym szyfrowaniem.</translation>
+        <translation>Po operacji pobierania w magazynie pozostały niescalone pliki. Rozwiąż konflikt przed ponownym szyfrowaniem.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1055"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation>Operacja wypychania Git: zakończyła się niepowodzeniem; magazyn jest ponownie szyfrowany w bieżącym stanie</translation>
+        <translation>Operacja pobierania Git zakończyła się niepowodzeniem; magazyn jest ponownie szyfrowany w bieżącym stanie</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1066"/>
@@ -2161,7 +2161,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="481"/>
         <source>Git pull</source>
-        <translation>Wypychanie Git</translation>
+        <translation>Pobieranie Git</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="478"/>
