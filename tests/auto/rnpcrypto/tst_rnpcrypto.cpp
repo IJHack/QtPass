@@ -28,6 +28,7 @@ private Q_SLOTS:
   void shortKeyIdAndSpacedFingerprint();
   void ambiguousPartialUserIdIsAnError();
   void expiredKeyIsSkippedInAPartialMatch();
+  void exactUserIdOnTwoKeysIsAnError();
   void wrongKeyCannotDecrypt();
 
 private:
@@ -76,19 +77,23 @@ auto tst_rnpcrypto::gpg(const QStringList &args, const QByteArray &input)
 auto tst_rnpcrypto::generateKey(const QString &uid, const QString &passphrase)
     -> QString {
   const Result gen =
-      gpg({QStringLiteral("--pinentry-mode"), QStringLiteral("loopback"),
-           QStringLiteral("--passphrase"), passphrase,
-           QStringLiteral("--quick-gen-key"), uid, QStringLiteral("default"),
-           QStringLiteral("default"), QStringLiteral("never")});
+      // --yes: a second key for a user ID that already has one (a rotation)
+      // is otherwise refused in batch mode.
+      gpg({QStringLiteral("--yes"), QStringLiteral("--status-fd"),
+           QStringLiteral("1"), QStringLiteral("--pinentry-mode"),
+           QStringLiteral("loopback"), QStringLiteral("--passphrase"),
+           passphrase, QStringLiteral("--quick-gen-key"), uid,
+           QStringLiteral("default"), QStringLiteral("default"),
+           QStringLiteral("never")});
   if (gen.exitCode != 0) {
     qWarning() << gen.err;
     return {};
   }
-  const Result list = gpg(
-      {QStringLiteral("--with-colons"), QStringLiteral("--list-keys"), uid});
-  for (const QByteArray &line : list.out.split('\n')) {
-    if (line.startsWith("fpr:")) {
-      return QString::fromLatin1(line.split(':').value(9));
+  // "[GNUPG:] KEY_CREATED B <fingerprint>" names the key just made, also
+  // when another key already has the same user ID.
+  for (const QByteArray &line : gen.out.split('\n')) {
+    if (line.startsWith("[GNUPG:] KEY_CREATED ")) {
+      return QString::fromLatin1(line.split(' ').value(3)).trimmed();
     }
   }
   return {};
@@ -345,10 +350,15 @@ void tst_rnpcrypto::expiredKeyIsSkippedInAPartialMatch() {
   if (gen.exitCode != 0) {
     QSKIP("this gpg cannot make an expired key (--faked-system-time)");
   }
+  // The expired key must really be in the keyring, or this would pass on
+  // Alice's key alone.
+  const QByteArray expired = exportKey(QStringLiteral("Old Alice"), {}, false);
+  QVERIFY(!expired.isEmpty());
   RnpCrypto rnp;
-  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, true) +
-                          exportKey(QStringLiteral("Old Alice"), {}, false))
-               .isEmpty());
+  const QStringList imported =
+      rnp.importKeys(exportKey(m_alice, {}, true) + expired);
+  QCOMPARE(imported.size(), 2);
+  QVERIFY(imported.at(0) != imported.at(1));
   QString error;
   const QByteArray cipher =
       rnp.encrypt("x", {QStringLiteral("alice@example.org")}, &error);
@@ -356,6 +366,25 @@ void tst_rnpcrypto::expiredKeyIsSkippedInAPartialMatch() {
   bool ok = false;
   QCOMPARE(rnp.decrypt(cipher, &error, &ok), QByteArray("x"));
   QVERIFY2(ok, qPrintable(error));
+}
+
+// A key rotation can leave two keys with the very same user ID; naming it
+// in full must not pick one of them either.
+void tst_rnpcrypto::exactUserIdOnTwoKeysIsAnError() {
+  const QString uid = QStringLiteral("Alice <alice@example.org>");
+  const QString second = generateKey(uid, {});
+  QVERIFY(!second.isEmpty());
+  RnpCrypto rnp;
+  QCOMPARE(rnp.importKeys(exportKey(m_alice, {}, false) +
+                          exportKey(second, {}, false))
+               .size(),
+           2);
+  QString error;
+  QVERIFY(rnp.encrypt("x", {uid}, &error).isEmpty());
+  QVERIFY2(error.contains(QLatin1String("more than one key")),
+           qPrintable(error));
+  // The fingerprint still names exactly one.
+  QVERIFY2(!rnp.encrypt("x", {m_alice}, &error).isEmpty(), qPrintable(error));
 }
 
 void tst_rnpcrypto::wrongKeyCannotDecrypt() {

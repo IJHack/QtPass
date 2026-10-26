@@ -95,6 +95,25 @@ auto primaryFingerprint(rnp_key_handle_t key) -> QString {
   return result;
 }
 
+/// Whether any user ID of @p key satisfies @p hit.
+template <typename Hit>
+auto anyUserIdMatches(rnp_key_handle_t key, Hit hit) -> bool {
+  size_t uids = 0;
+  rnp_key_get_uid_count(key, &uids);
+  for (size_t i = 0; i < uids; ++i) {
+    char *uid = nullptr;
+    if (rnp_key_get_uid_at(key, i, &uid) != RNP_SUCCESS) {
+      continue;
+    }
+    const bool matched = hit(QString::fromUtf8(uid));
+    rnp_buffer_destroy(uid);
+    if (matched) {
+      return true;
+    }
+  }
+  return false;
+}
+
 /**
  * Fingerprints of the valid primary keys for which @p match holds, given
  * each key in the keyring (primaries and subkeys) in turn.
@@ -184,30 +203,21 @@ auto locateKey(rnp_ffi_t ffi, const QString &recipient, QString *why) -> Key {
       return hit;
     });
   } else {
-    rnp_key_handle_t exact = nullptr;
-    rnp_locate_key(ffi, "userid", id.toUtf8().constData(), &exact);
-    if (exact != nullptr) {
-      return Key(exact);
-    }
-    // rnp_locate_key matches a whole user ID only; gpg -r also takes part of
-    // one, and a .gpg-id often lists just the e-mail address.
+    // The whole user ID first, then part of one (gpg -r takes both; a
+    // .gpg-id often lists just the e-mail address). Both through
+    // matchingPrimaries, so an expired key is skipped and two keys with the
+    // same user ID (after a key rotation, say) are an error, not a pick.
     primaries = matchingPrimaries(ffi, [&id](rnp_key_handle_t key) {
-      size_t uids = 0;
-      rnp_key_get_uid_count(key, &uids);
-      for (size_t i = 0; i < uids; ++i) {
-        char *uid = nullptr;
-        if (rnp_key_get_uid_at(key, i, &uid) != RNP_SUCCESS) {
-          continue;
-        }
-        const bool hit =
-            QString::fromUtf8(uid).contains(id, Qt::CaseInsensitive);
-        rnp_buffer_destroy(uid);
-        if (hit) {
-          return true;
-        }
-      }
-      return false;
+      return anyUserIdMatches(key,
+                              [&id](const QString &uid) { return uid == id; });
     });
+    if (primaries.isEmpty()) {
+      primaries = matchingPrimaries(ffi, [&id](rnp_key_handle_t key) {
+        return anyUserIdMatches(key, [&id](const QString &uid) {
+          return uid.contains(id, Qt::CaseInsensitive);
+        });
+      });
+    }
   }
   if (primaries.size() > 1) {
     *why = QStringLiteral("%1 matches more than one key").arg(recipient);
