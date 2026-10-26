@@ -22,6 +22,13 @@ struct rnp_ffi_st;
  *
  * Output is binary OpenPGP, as pass and QtPass write .gpg files. Every call
  * reports failure through its return value and a human-readable error.
+ *
+ * Security trade-off (SECURITY.md, "In-process OpenPGP"): with gpg, QtPass
+ * never holds a secret key; gpg-agent does, or a smartcard. Here the secret
+ * key is imported into this process and, while a message is decrypted, the
+ * unlocked key and the passphrase are in its memory. Imported keys keep their
+ * own passphrase protection; no smartcard support. A mode built on this must
+ * be chosen deliberately, never used as a silent fallback for a missing gpg.
  */
 class RnpCrypto {
 public:
