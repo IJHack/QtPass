@@ -1011,11 +1011,6 @@ void tst_imitatepass::insertEncryptArgvCarriesNoEncryptTo() {
 }
 
 /**
- * @brief The per-file re-encryption in the worker is the second place QtPass
- * encrypts; it must carry the same flags. The decrypt (-d) calls around it
- * are left as they were.
- */
-/**
  * @brief Every gpg decryption ImitatePass runs carries --max-output: a small
  * compressed entry in a shared store cannot decompress into all of
  * QtPass's memory, whether shown or re-encrypted (decrypt, then the check
@@ -1059,6 +1054,11 @@ void tst_imitatepass::everyDecryptionCapsItsOutput() {
 #endif
 }
 
+/**
+ * @brief The per-file re-encryption in the worker is the second place QtPass
+ * encrypts; it must carry the same flags. (The decrypt (-d) calls around it
+ * carry --max-output; everyDecryptionCapsItsOutput checks those.)
+ */
 void tst_imitatepass::reencryptEncryptArgvCarriesNoEncryptTo() {
 #ifdef Q_OS_WIN
   QSKIP("uses a shell script as a recording fake gpg");

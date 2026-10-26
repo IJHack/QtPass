@@ -2370,7 +2370,8 @@ void tst_util::gpgOptsCarryTheOutputLimitAfterTheUsersOwn() {
       qunsetenv("PASSWORD_STORE_GPG_OPTS");
     }
   });
-  qputenv("PASSWORD_STORE_GPG_OPTS", "--trust-model always");
+  // pass's shell splits on tabs and newlines too.
+  qputenv("PASSWORD_STORE_GPG_OPTS", "--trust-model\talways\n");
   TestPass pass;
   AppSettings s = QtPassSettings::load();
   pass.init(s);
@@ -3458,6 +3459,15 @@ void tst_util::templateFilesMustBeRegularAndSmall() {
   QVERIFY(QFile::link(real.fileName(),
                       QDir(subPath).filePath(".default_template")));
   QVERIFY(TemplateIO::getFolderTemplate(subPath, store.path()).isEmpty());
+
+  // A UTF-8 byte order mark (older Notepad) is not part of the name.
+  QVERIFY(QFile::remove(QDir(subPath).filePath(".default_template")));
+  QFile bom(QDir(subPath).filePath(".default_template"));
+  QVERIFY(bom.open(QIODevice::WriteOnly));
+  bom.write("\xEF\xBB\xBFwithbom\n");
+  bom.close();
+  QCOMPARE(TemplateIO::getFolderTemplate(subPath, store.path()),
+           QStringLiteral("withbom"));
 
   // One huge line: not a template name.
   QVERIFY(QFile::remove(QDir(subPath).filePath(".default_template")));

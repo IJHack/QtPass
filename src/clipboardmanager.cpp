@@ -59,10 +59,22 @@ void ClipboardManager::trackCopied(const QString &text) {
   // password copied earlier on the clipboard past its autoclear (#1607).
   constexpr qsizetype kMaxOtherCopies = 16;
   if (text != m_clippedText && !m_otherCopies.contains(text)) {
-    if (m_otherCopies.size() >= kMaxOtherCopies) {
-      m_otherCopies.removeFirst();
+    // A mouse selection reports itself on every change while it grows or
+    // shrinks (the X11 primary selection); only where it ends counts, or a
+    // passing "a" would stay tracked and autoclear could take someone
+    // else's "a" later.
+    // An earlier copy still on the clipboard proper (Ctrl+C) stays tracked.
+    const QString &last =
+        m_otherCopies.isEmpty() ? QString() : m_otherCopies.last();
+    if (!last.isEmpty() && (text.contains(last) || last.contains(text)) &&
+        QApplication::clipboard()->text(QClipboard::Clipboard) != last) {
+      m_otherCopies.last() = text;
+    } else {
+      if (m_otherCopies.size() >= kMaxOtherCopies) {
+        m_otherCopies.removeFirst();
+      }
+      m_otherCopies.append(text);
     }
-    m_otherCopies.append(text);
   }
   if (QtPassSettings::load().useAutoclear) {
     m_clearTimer.start();

@@ -29,6 +29,7 @@ private slots:
   void copyIfAlwaysDoesNotDisturbTracking();
   void trackedCopyIsClearedWithoutDroppingTheCopiedPassword();
   void secretTextBrowserMarksAndReportsWhatIsCopied();
+  void aGrowingSelectionIsTrackedOnce();
 
 private:
   static void saveClipboardSettings(bool autoclear, int seconds,
@@ -171,6 +172,30 @@ void tst_clipboardmanager::secretTextBrowserMarksAndReportsWhatIsCopied() {
     }
   }
   delete expected;
+}
+
+/**
+ * @brief A mouse selection reports itself on every change (the X11 primary
+ * selection); only where it ends stays tracked, so a passing one-letter
+ * selection cannot have autoclear take an unrelated "a" later. A copy still
+ * on the clipboard proper stays tracked beside it.
+ */
+void tst_clipboardmanager::aGrowingSelectionIsTrackedOnce() {
+  saveClipboardSettings(true, 1, Enums::CLIPBOARD_ON_DEMAND);
+  ClipboardManager manager;
+  for (const QString &step :
+       {QStringLiteral("a"), QStringLiteral("ab"), QStringLiteral("abc")}) {
+    manager.trackCopied(step);
+  }
+  QApplication::clipboard()->setText(QStringLiteral("a"));
+  QSignalSpy status(&manager, &ClipboardManager::statusMessage);
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 1, 3000);
+  QCOMPARE(QApplication::clipboard()->text(), QStringLiteral("a"));
+
+  QApplication::clipboard()->setText(QStringLiteral("pin: 1234"));
+  manager.trackCopied(QStringLiteral("pin: 1234"));
+  manager.trackCopied(QStringLiteral("1234"));
+  QTRY_VERIFY_WITH_TIMEOUT(QApplication::clipboard()->text().isEmpty(), 3000);
 }
 
 QTEST_MAIN(tst_clipboardmanager)

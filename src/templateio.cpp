@@ -45,7 +45,11 @@ auto readTemplateFile(const QString &path) -> std::optional<QString> {
                << kMaxTemplateFileBytes << "bytes";
     return std::nullopt;
   }
-  return QString::fromUtf8(bytes);
+  // QTextStream skipped a UTF-8 byte order mark (older Notepad writes one);
+  // fromUtf8() keeps it as U+FEFF, which trimmed() leaves in place.
+  const QByteArray bom("\xEF\xBB\xBF");
+  return QString::fromUtf8(bytes.startsWith(bom) ? bytes.mid(bom.size())
+                                                 : bytes);
 }
 
 /// The name of a `[section]` header line; nothing for any other line, and

@@ -643,10 +643,12 @@ void Pass::updateEnv() {
             effectiveCharset(passConfig));
 
   // pass hands PASSWORD_STORE_GPG_OPTS to every gpg it runs: the user's own
-  // options, then the output limit ImitatePass passes directly.
+  // options (split as pass's shell splits them: spaces, tabs, newlines),
+  // then the output limit ImitatePass passes directly.
   QStringList gpgOpts = QProcessEnvironment::systemEnvironment()
                             .value(QStringLiteral("PASSWORD_STORE_GPG_OPTS"))
-                            .split(QLatin1Char(' '), Qt::SkipEmptyParts);
+                            .split(QRegularExpression(QStringLiteral("\\s+")),
+                                   Qt::SkipEmptyParts);
   gpgOpts << maxOutputArgs();
   setEnvVar(QStringLiteral("PASSWORD_STORE_GPG_OPTS"),
             gpgOpts.join(QLatin1Char(' ')));
