@@ -1160,7 +1160,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="433"/>
         <source>Git pull</source>
-        <translation>Wypychanie Git</translation>
+        <translation>Pobieranie Git</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="430"/>
