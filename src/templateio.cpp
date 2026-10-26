@@ -9,6 +9,7 @@
  */
 
 #include "templateio.h"
+#include "util.h"
 
 #include <QDebug>
 #include <QDir>
@@ -21,6 +22,36 @@
 
 namespace {
 
+/// The template files are a few lines each; anything larger is not one.
+constexpr qint64 kMaxTemplateFileBytes = 64 * 1024;
+
+/**
+ * Reads a template file of the store. Store contents are written by whoever
+ * shares the store, so it has to be the regular file it claims to be (not a
+ * link to a device or a FIFO, which would never end) and of a template
+ * file's size, as read from the open handle: a file that grows after the
+ * open is cut off at the limit there, not read on.
+ * @return The contents, or nothing when the file is absent, not a regular
+ *         file or too large.
+ */
+auto readTemplateFile(const QString &path) -> std::optional<QString> {
+  QFile file;
+  if (!Util::openRegularFile(path, file)) {
+    return std::nullopt;
+  }
+  const QByteArray bytes = file.read(kMaxTemplateFileBytes + 1);
+  if (bytes.size() > kMaxTemplateFileBytes) {
+    qWarning() << "Ignoring" << path << "; a template file is at most"
+               << kMaxTemplateFileBytes << "bytes";
+    return std::nullopt;
+  }
+  // QTextStream skipped a UTF-8 byte order mark (older Notepad writes one);
+  // fromUtf8() keeps it as U+FEFF, which trimmed() leaves in place.
+  const QByteArray bom("\xEF\xBB\xBF");
+  return QString::fromUtf8(bytes.startsWith(bom) ? bytes.mid(bom.size())
+                                                 : bytes);
+}
+
 /// The name of a `[section]` header line; nothing for any other line, and
 /// an empty name for `[]`.
 auto sectionHeader(const QString &line) -> std::optional<QString> {
@@ -32,13 +63,12 @@ auto sectionHeader(const QString &line) -> std::optional<QString> {
 
 /// The first line of @p dir's .default_template, when it names a template.
 auto defaultTemplateIn(const QDir &dir) -> QString {
-  QFile file(dir.filePath(".default_template"));
-  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+  const std::optional<QString> contents =
+      readTemplateFile(dir.filePath(".default_template"));
+  if (!contents) {
     return {};
   }
-  QTextStream in(&file);
-  in.setEncoding(QStringConverter::Utf8);
-  const QString name = in.readLine().trimmed();
+  const QString name = contents->section(QLatin1Char('\n'), 0, 0).trimmed();
   return name.startsWith('#') ? QString() : name;
 }
 
@@ -47,12 +77,12 @@ auto defaultTemplateIn(const QDir &dir) -> QString {
 auto TemplateIO::readTemplates(const QString &storePath)
     -> QHash<QString, QStringList> {
   QHash<QString, QStringList> result;
-  QFile file(QDir(storePath).filePath(".templates"));
-  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+  std::optional<QString> contents =
+      readTemplateFile(QDir(storePath).filePath(".templates"));
+  if (!contents) {
     return result;
   }
-  QTextStream in(&file);
-  in.setEncoding(QStringConverter::Utf8);
+  QTextStream in(&*contents, QIODevice::ReadOnly);
   // No section before the first header, nor for an empty `[]`: fields there
   // belong to nothing and are dropped.
   std::optional<QString> section;

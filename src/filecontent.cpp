@@ -96,7 +96,11 @@ auto FileContent::parse(const QString &fileContent,
     otp.bareLine = password.trimmed();
   }
   for (const QString &line : std::as_const(lines)) {
-    if (takeNamedValue(line, templateFields, allFields, namedValues, otp)) {
+    // A bare otpauth:// line is never a field, also not when the template
+    // lists "otpauth": split at its colon, the value would lose the scheme
+    // that marks it as a shared secret and be shown seed and all.
+    if (!isOtpUri(line) &&
+        takeNamedValue(line, templateFields, allFields, namedValues, otp)) {
       continue;
     }
     remainingData.append(line);

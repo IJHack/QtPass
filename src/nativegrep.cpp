@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "nativegrep.h"
 #include "executor.h"
+#include "pass.h"
 #include "util.h"
 #include <QDir>
 #include <QElapsedTimer>
@@ -43,11 +44,12 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
   // the one that owns the process.
   QProcess gpg;
   gpg.setProcessEnvironment(env);
-  const int rc =
-      Executor::executeBlocking(gpg, gpgExe,
-                                {"-d", "--quiet", "--yes", "--no-encrypt-to",
-                                 "--batch", "--use-agent", translatedPath},
-                                QString(), &plaintext, nullptr, cancel);
+  const int rc = Executor::executeBlocking(
+      gpg, gpgExe,
+      QStringList{"-d", "--quiet", "--yes", "--no-encrypt-to", "--batch",
+                  "--use-agent"} +
+          Pass::maxOutputArgs() + QStringList{translatedPath},
+      QString(), &plaintext, nullptr, cancel);
   if (rc != 0 || plaintext.isEmpty())
     return {};
   QStringList matches;

@@ -589,6 +589,7 @@ private Q_SLOTS:
   void destructorInterruptsActiveReencryptProcess();
   void insertEncryptArgvCarriesNoEncryptTo();
   void reencryptEncryptArgvCarriesNoEncryptTo();
+  void everyDecryptionCapsItsOutput();
   void reencryptPathPushesWhenAllFilesSucceed();
   void reencryptPathDoesNotPushAfterFailures();
   void insertRunsNoGitWhenGitIsDisabled();
@@ -1010,9 +1011,53 @@ void tst_imitatepass::insertEncryptArgvCarriesNoEncryptTo() {
 }
 
 /**
+ * @brief Every gpg decryption ImitatePass runs carries --max-output: a small
+ * compressed entry in a shared store cannot decompress into all of
+ * QtPass's memory, whether shown or re-encrypted (decrypt, then the check
+ * that the new ciphertext holds the same plaintext).
+ */
+void tst_imitatepass::everyDecryptionCapsItsOutput() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a recording fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY2(!fakeGpg.isEmpty(), "failed to write the recording fake gpg");
+
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy showSpy(&pass, &ImitatePass::finishedShow);
+  pass.Show(QStringLiteral("/entry0"));
+  QVERIFY(showSpy.wait(30000));
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(storeDir.path());
+  QVERIFY(endSpy.wait(30000));
+  QCoreApplication::processEvents();
+
+  const QString limit = QString::number(Pass::kMaxPlaintextBytes);
+  int decryptions = 0;
+  for (const QStringList &argv : loggedCalls(logPath)) {
+    if (!argv.contains(QStringLiteral("-d"))) {
+      continue;
+    }
+    ++decryptions;
+    const int at = argv.indexOf(QStringLiteral("--max-output"));
+    QVERIFY2(at >= 0 && argv.value(at + 1) == limit,
+             qPrintable(QStringLiteral("decryption without --max-output %1: %2")
+                            .arg(limit, argv.join(' '))));
+  }
+  // Show, the re-encryption's decrypt, and its check of the new file.
+  QVERIFY2(decryptions >= 3, qPrintable(QString::number(decryptions)));
+#endif
+}
+
+/**
  * @brief The per-file re-encryption in the worker is the second place QtPass
- * encrypts; it must carry the same flags. The decrypt (-d) calls around it
- * are left as they were.
+ * encrypts; it must carry the same flags. (The decrypt (-d) calls around it
+ * carry --max-output; everyDecryptionCapsItsOutput checks those.)
  */
 void tst_imitatepass::reencryptEncryptArgvCarriesNoEncryptTo() {
 #ifdef Q_OS_WIN

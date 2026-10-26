@@ -51,26 +51,74 @@ void ClipboardManager::copyText(const QString &text) {
   }
 }
 
+void ClipboardManager::trackCopied(const QString &text) {
+  if (text.isEmpty()) {
+    return;
+  }
+  // Kept beside m_clippedText, not instead of it: replacing it would leave a
+  // password copied earlier on the clipboard past its autoclear (#1607).
+  constexpr qsizetype kMaxOtherCopies = 16;
+  if (text != m_clippedText && !m_otherCopies.contains(text)) {
+    // A mouse selection reports itself on every change while it grows or
+    // shrinks (the X11 primary selection); only where it ends counts, or a
+    // passing "a" would stay tracked and autoclear could take someone
+    // else's "a" later.
+    // An earlier copy still on the clipboard proper (Ctrl+C) stays tracked.
+    const QString &last =
+        m_otherCopies.isEmpty() ? QString() : m_otherCopies.last();
+    if (!last.isEmpty() && (text.contains(last) || last.contains(text)) &&
+        QApplication::clipboard()->text(QClipboard::Clipboard) != last) {
+      m_otherCopies.last() = text;
+    } else {
+      if (m_otherCopies.size() >= kMaxOtherCopies) {
+        // Make room, but never by forgetting a text that is still on the
+        // clipboard or in the selection: it would then outlive autoclear.
+        // At most two are, so the oldest of the rest can always go.
+        const QString onClipboard =
+            QApplication::clipboard()->text(QClipboard::Clipboard);
+        const QString inSelection =
+            QApplication::clipboard()->text(QClipboard::Selection);
+        for (qsizetype i = 0; i < m_otherCopies.size(); ++i) {
+          if (m_otherCopies.at(i) != onClipboard &&
+              m_otherCopies.at(i) != inSelection) {
+            m_otherCopies.removeAt(i);
+            break;
+          }
+        }
+      }
+      m_otherCopies.append(text);
+    }
+  }
+  if (QtPassSettings::load().useAutoclear) {
+    m_clearTimer.start();
+  }
+}
+
 void ClipboardManager::clear() {
-  if (m_clippedText.isEmpty()) {
+  if (m_clippedText.isEmpty() && m_otherCopies.isEmpty()) {
     // Nothing of ours is out there. The old code compared the empty tracker
     // with an empty selection, "cleared" that and said so on every deselect.
     return;
   }
+  const auto ours = [this](const QString &text) {
+    return !text.isEmpty() &&
+           (text == m_clippedText || m_otherCopies.contains(text));
+  };
   QClipboard *clipboard = QApplication::clipboard();
   bool cleared = false;
-  if (m_clippedText == clipboard->text(QClipboard::Selection)) {
+  if (ours(clipboard->text(QClipboard::Selection))) {
     clipboard->clear(QClipboard::Selection);
     clipboard->setText(QString(""), QClipboard::Selection);
     cleared = true;
   }
-  if (m_clippedText == clipboard->text(QClipboard::Clipboard)) {
+  if (ours(clipboard->text(QClipboard::Clipboard))) {
     clipboard->clear(QClipboard::Clipboard);
     cleared = true;
   }
   emit statusMessage(cleared ? tr("Clipboard cleared")
                              : tr("Clipboard not cleared"));
   m_clippedText.clear();
+  m_otherCopies.clear();
 }
 
 /**

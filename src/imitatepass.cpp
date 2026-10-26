@@ -125,8 +125,9 @@ void ImitatePass::Show(QString file) {
   }
   queueShow(file);
   file = m_settings.passStore + file + ".gpg";
-  QStringList args = {"-d",      "--quiet",     "--yes", "--no-encrypt-to",
-                      "--batch", "--use-agent", "--",    pgpg(file)};
+  QStringList args = {"-d",      "--quiet",    "--yes", "--no-encrypt-to",
+                      "--batch", "--use-agent"};
+  args << maxOutputArgs() << QStringLiteral("--") << pgpg(file);
   executeGpg(PASS_SHOW, args);
 }
 
@@ -768,9 +769,10 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
 
 auto ImitatePass::decryptEntry(const QString &fileName, QString *plaintext)
     -> bool {
-  const QStringList args = {
-      "-d",      "--quiet",     "--yes", "--no-encrypt-to",
-      "--batch", "--use-agent", "--",    pgpg(fileName)};
+  const QStringList args =
+      QStringList{"-d",      "--quiet",    "--yes", "--no-encrypt-to",
+                  "--batch", "--use-agent"} +
+      maxOutputArgs() + QStringList{QStringLiteral("--"), pgpg(fileName)};
   if (execBlocking(m_settings.gpgExecutable, args, plaintext) != 0 ||
       plaintext->isEmpty()) {
     qCDebug(lcQtPass) << "Decrypt error on re-encrypt for:" << fileName;
@@ -797,8 +799,9 @@ auto ImitatePass::encryptFor(const QString &output,
 auto ImitatePass::ciphertextHolds(const QString &ciphertext,
                                   const QString &plaintext) -> bool {
   QString decrypted;
-  const QStringList args{"-d",          "--quiet", "--batch",
-                         "--use-agent", "--",      pgpg(ciphertext)};
+  const QStringList args =
+      QStringList{"-d", "--quiet", "--batch", "--use-agent"} + maxOutputArgs() +
+      QStringList{QStringLiteral("--"), pgpg(ciphertext)};
   if (execBlocking(m_settings.gpgExecutable, args, &decrypted) != 0 ||
       decrypted.isEmpty()) {
     qCDebug(lcQtPass) << "Verification failed for:" << ciphertext;

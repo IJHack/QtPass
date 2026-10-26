@@ -214,6 +214,21 @@ public:
    */
   void updateEnv();
 
+  /**
+   * @brief Most bytes of plaintext a gpg decryption may produce.
+   *
+   * An OpenPGP message is compressed, so a small entry in a shared store can
+   * decompress to gigabytes; gpg stops at this many (--max-output) instead of
+   * filling QtPass's memory. Far above any real entry.
+   */
+  static constexpr qint64 kMaxPlaintextBytes = 64LL * 1024 * 1024;
+
+  /**
+   * @brief The gpg options that enforce kMaxPlaintextBytes.
+   * @return "--max-output" and the limit, for a gpg decryption's arguments.
+   */
+  static auto maxOutputArgs() -> QStringList;
+
   // Static helpers
   /**
    * @brief Resolve the gpgconf command to kill agents.
