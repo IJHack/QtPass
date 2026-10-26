@@ -148,23 +148,23 @@
     <message>
         <location filename="../src/configdialog.ui" line="60"/>
         <source>General</source>
-        <translation type="unfinished">Üldine</translation>
+        <translation>Üldine</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="65"/>
         <location filename="../src/configdialog.ui" line="293"/>
         <source>Clipboard</source>
-        <translation type="unfinished">Lõikelaud</translation>
+        <translation>Lõikelaud</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
         <source>Display</source>
-        <translation type="unfinished">Kuvamine</translation>
+        <translation>Kuvamine</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="75"/>
         <source>Passwords</source>
-        <translation type="unfinished">Salasõnad</translation>
+        <translation>Salasõnad</translation>
     </message>
     <message>
         <source>Show menu bar</source>
@@ -188,7 +188,7 @@
         <location filename="../src/configdialog.ui" line="339"/>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Never</source>
-        <translation type="unfinished">Mitte kunagi</translation>
+        <translation>Mitte kunagi</translation>
     </message>
     <message>
         <source>Password generation:</source>
@@ -202,7 +202,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="626"/>
         <source>characters</source>
-        <translation type="unfinished">Tähemärke</translation>
+        <translation>Tähemärke</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
@@ -212,39 +212,39 @@
     <message>
         <location filename="../src/configdialog.ui" line="810"/>
         <source>Fields:</source>
-        <translation type="unfinished">Väljad:</translation>
+        <translation>Väljad:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="824"/>
         <source>Off</source>
-        <translation type="unfinished">Väljas</translation>
+        <translation>Väljas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="829"/>
         <source>Template fields</source>
-        <translation type="unfinished">Malli väljad</translation>
+        <translation>Malli väljad</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="834"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
-        <translation type="unfinished">Malli väljad ja iga „võti: väärtus“ rida</translation>
+        <translation>Malli väljad ja iga „võti: väärtus“ rida</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1036"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
-        <translation type="unfinished">Otsi gpg, git, pwgen ja pass PATH-ist</translation>
+        <translation>Otsi gpg, git, pwgen ja pass PATH-ist</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
         <location filename="../src/configdialog.ui" line="1103"/>
         <source>Choose the gpg executable</source>
-        <translation type="unfinished">Vali gpg käsufail</translation>
+        <translation>Vali gpg käsufail</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1113"/>
         <location filename="../src/configdialog.ui" line="1116"/>
         <source>Choose the git executable</source>
-        <translation type="unfinished">Vali git käsufail</translation>
+        <translation>Vali git käsufail</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1132"/>
@@ -260,13 +260,13 @@
         <location filename="../src/configdialog.ui" line="1168"/>
         <location filename="../src/configdialog.ui" line="1171"/>
         <source>Choose the pwgen executable</source>
-        <translation type="unfinished">Vali pwgen käsufail</translation>
+        <translation>Vali pwgen käsufail</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1208"/>
         <location filename="../src/configdialog.ui" line="1211"/>
         <source>Choose the pass executable</source>
-        <translation type="unfinished">Vali pass käsufail</translation>
+        <translation>Vali pass käsufail</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1241"/>
@@ -276,12 +276,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1484"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished">Selle profiili Giti seadistused; kuni profiil on kasutusel, kehtivad need Giti lehel olevate asemel</translation>
+        <translation>Selle profiili Giti seadistused; kuni profiil on kasutusel, kehtivad need Giti lehel olevate asemel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1530"/>
         <source>Active store</source>
-        <translation type="unfinished">Aktiivne hoidla</translation>
+        <translation>Aktiivne hoidla</translation>
     </message>
     <message>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
@@ -295,22 +295,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="1328"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation type="unfinished">Salasõnahoidlad, mida see QtPass tunneb; muutmiseks vali üks neist</translation>
+        <translation>Salasõnahoidlad, mida see QtPass tunneb; muutmiseks vali üks neist</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1343"/>
         <source>Add a profile</source>
-        <translation type="unfinished">Lisa profiil</translation>
+        <translation>Lisa profiil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1361"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation type="unfinished">Unusta valitud profiil; hoidla ise jääb kettale alles</translation>
+        <translation>Unusta valitud profiil; hoidla ise jääb kettale alles</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1407"/>
         <source>Profile</source>
-        <translation type="unfinished">Profiil</translation>
+        <translation>Profiil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1423"/>
@@ -339,7 +339,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1477"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished">Võtme täielik 40-märgiline sõrmejälg, nagu pass nõuab</translation>
+        <translation>Võtme täielik 40-märgiline sõrmejälg, nagu pass nõuab</translation>
     </message>
     <message>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
@@ -494,54 +494,54 @@
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">Süsteem</translation>
+        <translation>Süsteem</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Kasuta süsteemisalve ikooni</translation>
+        <translation>Kasuta süsteemisalve ikooni</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">Lisamoodulid</translation>
+        <translation>Lisamoodulid</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Show QR codes (qrencode)</source>
-        <translation type="unfinished">Näita QR-koode (qrencode)</translation>
+        <translation>Näita QR-koode (qrencode)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
-        <translation type="unfinished">sekundit</translation>
+        <translation>sekundit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="429"/>
         <source>Content panel</source>
-        <translation type="unfinished">Sisuriba</translation>
+        <translation>Sisuriba</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
-        <translation type="unfinished">Nõuab lõikelaua režiimi lehel Lõikelaud, et peidetud salasõna saaks siiski kopeerida</translation>
+        <translation>Nõuab lõikelaua režiimi lehel Lõikelaud, et peidetud salasõna saaks siiski kopeerida</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="506"/>
         <source>Show the file content as-is</source>
-        <translation type="unfinished">Näita faili sisu sellisena, nagu see on</translation>
+        <translation>Näita faili sisu sellisena, nagu see on</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="578"/>
         <source>Password generation</source>
-        <translation type="unfinished">Salasõna loomine</translation>
+        <translation>Salasõna loomine</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1244"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
-        <translation type="unfinished">Valikuline asukoht SSH_AUTH_SOCK alistamiseks. Automaatseks tuvastamiseks gpgconf kaudu jäta tühjaks.</translation>
+        <translation>Valikuline asukoht SSH_AUTH_SOCK alistamiseks. Automaatseks tuvastamiseks gpgconf kaudu jäta tühjaks.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1413"/>
@@ -609,7 +609,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="103"/>
         <source>No clipboard</source>
-        <translation type="unfinished">Lõikelauda ei kasutata</translation>
+        <translation>Lõikelauda ei kasutata</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="104"/>
@@ -630,12 +630,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Another profile already has this name</source>
-        <translation type="unfinished">Sellise nimega profiil on juba olemas</translation>
+        <translation>Sellise nimega profiil on juba olemas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="287"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
-        <translation type="unfinished">Ainult võtmete täielikud sõrmejäljed (40 või 64 kuueteistkümnendmärki), eraldatud tühikutega</translation>
+        <translation>Ainult võtmete täielikud sõrmejäljed (40 või 64 kuueteistkümnendmärki), eraldatud tühikutega</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="333"/>
@@ -693,12 +693,12 @@ Väärtus salvestatakse ikkagi sisestatud kujul.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="619"/>
         <source>Could not initialise profile %1</source>
-        <translation type="unfinished">Profiili %1 ei õnnestunud ette valmistada</translation>
+        <translation>Profiili %1 ei õnnestunud ette valmistada</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="622"/>
         <source>Profile %1</source>
-        <translation type="unfinished">Profiil %1</translation>
+        <translation>Profiil %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="645"/>
@@ -743,7 +743,7 @@ Väärtus salvestatakse ikkagi sisestatud kujul.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
-        <translation type="unfinished">Wayland puhul pole saadaval; kasuta selle asemel oma komposiitori aknareeglit „hoia kõige peal“</translation>
+        <translation>Wayland puhul pole saadaval; kasuta selle asemel oma komposiitori aknareeglit „hoia kõige peal“</translation>
     </message>
     <message>
         <source>Failed to create password-store at: %1</source>
@@ -857,7 +857,7 @@ Väärtus salvestatakse ikkagi sisestatud kujul.</translation>
         <location filename="../src/configdialog.ui" line="1540"/>
         <location filename="../src/configdialog.ui" line="1543"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Vali salasõnahoidla kaust</translation>
+        <translation>Vali salasõnahoidla kaust</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="801"/>
@@ -879,62 +879,62 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="466"/>
         <source>Hide passwords until asked</source>
-        <translation type="unfinished">Peida salasõnad, kuni neid näha soovitakse</translation>
+        <translation>Peida salasõnad, kuni neid näha soovitakse</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="467"/>
         <source>Show an icon in the system tray</source>
-        <translation type="unfinished">Näita ikooni süsteemisalves</translation>
+        <translation>Näita ikooni süsteemisalves</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="468"/>
         <source>Ready</source>
-        <translation type="unfinished">Valmis</translation>
+        <translation>Valmis</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="469"/>
         <source>Everything else can be changed later in Settings.</source>
-        <translation type="unfinished">Kõike muud saab hiljem seadistustes muuta.</translation>
+        <translation>Kõike muud saab hiljem seadistustes muuta.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="476"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation type="unfinished">Näita salasõna rida punktidena; „Näita salasõna“ toob selle nähtavale</translation>
+        <translation>Näita salasõna rida punktidena; „Näita salasõna“ toob selle nähtavale</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="487"/>
         <source>Store: %1</source>
-        <translation type="unfinished">Hoidla: %1</translation>
+        <translation>Hoidla: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="489"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation type="unfinished">See on juba salasõnahoidla ja seda kasutatakse sellisena, nagu see on.</translation>
+        <translation>See on juba salasõnahoidla ja seda kasutatakse sellisena, nagu see on.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="491"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
-        <translation type="unfinished">See seadistatakse märgitud võtmete jaoks ja võetakse Giti versioonihaldusse.</translation>
+        <translation>See seadistatakse märgitud võtmete jaoks ja võetakse Giti versioonihaldusse.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="493"/>
         <source>It will be set up for the ticked keys.</source>
-        <translation type="unfinished">See seadistatakse märgitud võtmete jaoks.</translation>
+        <translation>See seadistatakse märgitud võtmete jaoks.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="495"/>
         <source>GnuPG: %1</source>
-        <translation type="unfinished">GnuPG: %1</translation>
+        <translation>GnuPG: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="496"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished">Toimingud käivad tarviku pass kaudu.</translation>
+        <translation>Toimingud käivad tarviku pass kaudu.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="497"/>
         <source>Operations run through gpg and git directly.</source>
-        <translation type="unfinished">Toimingud käivad otse gpg ja giti kaudu.</translation>
+        <translation>Toimingud käivad otse gpg ja giti kaudu.</translation>
     </message>
 </context>
 <context>
@@ -942,7 +942,7 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/executor.cpp" line="190"/>
         <source>No executable configured for this command</source>
-        <translation type="unfinished">Selle käsu jaoks pole käsufaili seadistatud</translation>
+        <translation>Selle käsu jaoks pole käsufaili seadistatud</translation>
     </message>
     <message>
         <location filename="../src/executor.cpp" line="219"/>
@@ -952,7 +952,7 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/executor.cpp" line="413"/>
         <source>%1 crashed or was killed</source>
-        <translation type="unfinished">%1 jooksis kokku või lõpetati sunniviisiliselt</translation>
+        <translation>%1 jooksis kokku või lõpetati sunniviisiliselt</translation>
     </message>
 </context>
 <context>
@@ -974,7 +974,7 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Kopeeri lõikelauale</translation>
+        <translation>Kopeeri lõikelauale</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -1031,17 +1031,17 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/fieldlabel.cpp" line="13"/>
         <source>Double-click to rename this field</source>
-        <translation type="unfinished">Välja nime muutmiseks tee topeltklõps</translation>
+        <translation>Välja nime muutmiseks tee topeltklõps</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="26"/>
         <source>Rename field…</source>
-        <translation type="unfinished">Muuda välja nime…</translation>
+        <translation>Muuda välja nime…</translation>
     </message>
     <message>
         <location filename="../src/fieldlabel.cpp" line="27"/>
         <source>Remove field</source>
-        <translation type="unfinished">Eemalda väli</translation>
+        <translation>Eemalda väli</translation>
     </message>
 </context>
 <context>
@@ -1049,44 +1049,44 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="44"/>
         <source>Browse</source>
-        <translation type="unfinished">Sirvi</translation>
+        <translation>Sirvi</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="67"/>
         <location filename="../src/firstrunwizard.cpp" line="73"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished">Tere tulemast QtPassi kasutajaks</translation>
+        <translation>Tere tulemast QtPassi kasutajaks</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="76"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
-        <translation type="unfinished">QtPass on graafiline kasutajaliides tarvikule &lt;i&gt;pass&lt;/i&gt;, Unixi standardsele salasõnahaldurile: iga salasõna on GnuPG-ga krüptitud fail, mida hoitakse kaustas, mille saad võtta Giti versioonihaldusse.&lt;br&gt;&lt;br&gt;Järgmistel lehtedel leitakse GnuPG, kontrollitakse, et sul on võti, millele krüptida, ja valitakse kaust, kus su salasõnad asuvad. Midagi ei kirjutata enne, kui vajutad „Lõpeta“.</translation>
+        <translation>QtPass on graafiline kasutajaliides tarvikule &lt;i&gt;pass&lt;/i&gt;, Unixi standardsele salasõnahaldurile: iga salasõna on GnuPG-ga krüptitud fail, mida hoitakse kaustas, mille saad võtta Giti versioonihaldusse.&lt;br&gt;&lt;br&gt;Järgmistel lehtedel leitakse GnuPG, kontrollitakse, et sul on võti, millele krüptida, ja valitakse kaust, kus su salasõnad asuvad. Midagi ei kirjutata enne, kui vajutad „Lõpeta“.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="128"/>
         <source>Error</source>
-        <translation type="unfinished">Viga</translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="129"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">salasõnahoidla loomine ei õnnestunud asukohas: %1</translation>
+        <translation>salasõnahoidla loomine ei õnnestunud asukohas: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="147"/>
         <location filename="../src/firstrunwizard.cpp" line="171"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Salasõnahoidla on ettevalmistamata</translation>
+        <translation>Salasõnahoidla on ettevalmistamata</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="154"/>
         <source>Password store</source>
-        <translation type="unfinished">Salasõnahoidla</translation>
+        <translation>Salasõnahoidla</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="155"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished">%1 sisaldab juba krüptitud faile; neid ei krüptitud märgitud võtmetele uuesti. Selleks ava pärast käivitumist „Kasutajad“.</translation>
+        <translation>%1 sisaldab juba krüptitud faile; neid ei krüptitud märgitud võtmetele uuesti. Selleks ava pärast käivitumist „Kasutajad“.</translation>
     </message>
 </context>
 <context>
@@ -1094,88 +1094,88 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="132"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
-        <translation type="unfinished">Saajate loendite põlvkonnaregistrile %1 ei pääse ligi.</translation>
+        <translation>Saajate loendite põlvkonnaregistrile %1 ei pääse ligi.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="141"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
-        <translation type="unfinished">Saajate loendite põlvkonnaregister %1 ei ole loetav. Allkirjastatud saajate loendeid ei kiideta heaks enne, kui see on parandatud või eemaldatud (eemaldamisel unustatakse, mis on varem heaks kiidetud).</translation>
+        <translation>Saajate loendite põlvkonnaregister %1 ei ole loetav. Allkirjastatud saajate loendeid ei kiideta heaks enne, kui see on parandatud või eemaldatud (eemaldamisel unustatakse, mis on varem heaks kiidetud).</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="172"/>
         <location filename="../src/gpgidgeneration.cpp" line="185"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
-        <translation type="unfinished">Saajate loendite põlvkonnaregistrit %1 ei saa kirjutada.</translation>
+        <translation>Saajate loendite põlvkonnaregistrit %1 ei saa kirjutada.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="212"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
-        <translation type="unfinished">Saajate loendite põlvkonnaregistrit %1 ei õnnestunud lukustada: võib-olla kasutab seda mõni teine QtPass või ei ole selle kaust kirjutatav.</translation>
+        <translation>Saajate loendite põlvkonnaregistrit %1 ei õnnestunud lukustada: võib-olla kasutab seda mõni teine QtPass või ei ole selle kaust kirjutatav.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="315"/>
         <source>The list carries more than one generation line.</source>
-        <translation type="unfinished">Loendis on rohkem kui üks põlvkonnarida.</translation>
+        <translation>Loendis on rohkem kui üks põlvkonnarida.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="323"/>
         <source>The generation line is malformed: %1</source>
-        <translation type="unfinished">Põlvkonnarida on vigane: %1</translation>
+        <translation>Põlvkonnarida on vigane: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="329"/>
         <source>The list carries more than one folder line.</source>
-        <translation type="unfinished">Loendis on rohkem kui üks kaustarida.</translation>
+        <translation>Loendis on rohkem kui üks kaustarida.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="345"/>
         <source>The folder line is malformed: %1</source>
-        <translation type="unfinished">Kaustarida on vigane: %1</translation>
+        <translation>Kaustarida on vigane: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="349"/>
         <source>The header line is malformed: %1</source>
-        <translation type="unfinished">Päiserida on vigane: %1</translation>
+        <translation>Päiserida on vigane: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="381"/>
         <source>The list carries a generation line but no folder line.</source>
-        <translation type="unfinished">Loendis on põlvkonnarida, kuid kaustarida puudub.</translation>
+        <translation>Loendis on põlvkonnarida, kuid kaustarida puudub.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="528"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
-        <translation type="unfinished">Allkirjastatud saajate loend %1 ei ole usaldusväärne: %2</translation>
+        <translation>Allkirjastatud saajate loend %1 ei ole usaldusväärne: %2</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="455"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
-        <translation type="unfinished">Allkirjastatud saajate loend %1 on kirjutatud hoidla kausta „%2“ jaoks, mitte kausta „%3“ jaoks, ja seda ei kasutata. Võib-olla kopeeris keegi teine selle siia; kui kaust aga teisaldati või nimetati ümber, siis avab allkirjastamise võtme omanik selle kausta jaoks „Kasutajad“ ja salvestab saajad, mis seob loendi tema praeguse asukohaga.</translation>
+        <translation>Allkirjastatud saajate loend %1 on kirjutatud hoidla kausta „%2“ jaoks, mitte kausta „%3“ jaoks, ja seda ei kasutata. Võib-olla kopeeris keegi teine selle siia; kui kaust aga teisaldati või nimetati ümber, siis avab allkirjastamise võtme omanik selle kausta jaoks „Kasutajad“ ja salvestab saajad, mis seob loendi tema praeguse asukohaga.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="468"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
-        <translation type="unfinished">Põlvkond %1 on suurim võimalik, seega ei saa siia uuemat loendit kirjutada: faili %2 eemaldamisel unustab see seade, mille ta on varem heaks kiitnud, ja seejärel pääseb allkirjastamise võtme omanik edasi, kui avab „Kasutajad“ ja %3.</translation>
+        <translation>Põlvkond %1 on suurim võimalik, seega ei saa siia uuemat loendit kirjutada: faili %2 eemaldamisel unustab see seade, mille ta on varem heaks kiitnud, ja seejärel pääseb allkirjastamise võtme omanik edasi, kui avab „Kasutajad“ ja %3.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="475"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
-        <translation type="unfinished">Allkirjastamise võtme omanik pääseb edasi, kui avab „Kasutajad“ ja %1. Salvestamine kirjutab põlvkonna %2. Faili %3 eemaldamisel unustab see seade, mille ta on varem heaks kiitnud.</translation>
+        <translation>Allkirjastamise võtme omanik pääseb edasi, kui avab „Kasutajad“ ja %1. Salvestamine kirjutab põlvkonna %2. Faili %3 eemaldamisel unustab see seade, mille ta on varem heaks kiitnud.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="492"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
-        <translation type="unfinished">Allkirjastatud saajate loendis %1 pole põlvkonnarida, kuigi siin on varem heaks kiidetud põlvkond %2. pass ei kirjuta põlvkonnarida (ka QtPassi pass-taustaprogrammi kaudu mitte) ja QtPass ei kirjutanud seda enne versiooni 2.0; ilma selleta võib loend olla kirjutatud ka hoidla mõne teise kausta jaoks ja siia kopeeritud. %3</translation>
+        <translation>Allkirjastatud saajate loendis %1 pole põlvkonnarida, kuigi siin on varem heaks kiidetud põlvkond %2. pass ei kirjuta põlvkonnarida (ka QtPassi pass-taustaprogrammi kaudu mitte) ja QtPass ei kirjutanud seda enne versiooni 2.0; ilma selleta võib loend olla kirjutatud ka hoidla mõne teise kausta jaoks ja siia kopeeritud. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="501"/>
         <source>selecting the recipients afresh and saving</source>
-        <translation type="unfinished">valib saajad uuesti ning salvestab</translation>
+        <translation>valib saajad uuesti ning salvestab</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="626"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
-        <translation type="unfinished">Saajate loendite põlvkonnaregister %1 liikus põlvkonna %3 kirjutamise ajal edasi põlvkonnale %2.</translation>
+        <translation>Saajate loendite põlvkonnaregister %1 liikus põlvkonna %3 kirjutamise ajal edasi põlvkonnale %2.</translation>
     </message>
     <message>
         <source>A holder of the signing key gets through by opening Users and saving the recipients, which writes generation %1: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first. Removing %2 forgets what this device accepted before.</source>
@@ -1188,27 +1188,27 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="506"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
-        <translation type="unfinished">Allkirjastatud saajate loend %1 on põlvkond %2, mis on vanem kui põlvkond %3, viimane, mille QtPass siin heaks kiitis. Võib-olla pani keegi teine selle tagasi. %4</translation>
+        <translation>Allkirjastatud saajate loend %1 on põlvkond %2, mis on vanem kui põlvkond %3, viimane, mille QtPass siin heaks kiitis. Võib-olla pani keegi teine selle tagasi. %4</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="513"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
-        <translation type="unfinished">salvestab saajad: seal eelvalitud saajad on selle loendi omad, seega eemalda kõigepealt kõik, kellel ei tohiks enam juurdepääsu olla</translation>
+        <translation>salvestab saajad: seal eelvalitud saajad on selle loendi omad, seega eemalda kõigepealt kõik, kellel ei tohiks enam juurdepääsu olla</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="561"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
-        <translation type="unfinished">Allkirjastatud saajate loend %1 on põlvkond %2, sama põlvkond, mis on ühel teisel loendil, mille see seade varem heaks kiitis. Kas salvestasid kaks seadet saajad ühel ja samal ajal (Git on sel juhul konflikti näidanud) või vahetati loend mõne teise sama põlvkonna ehtsa loendi vastu. %3</translation>
+        <translation>Allkirjastatud saajate loend %1 on põlvkond %2, sama põlvkond, mis on ühel teisel loendil, mille see seade varem heaks kiitis. Kas salvestasid kaks seadet saajad ühel ja samal ajal (Git on sel juhul konflikti näidanud) või vahetati loend mõne teise sama põlvkonna ehtsa loendi vastu. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="569"/>
         <source>checking the recipients and saving</source>
-        <translation type="unfinished">kontrollib saajad üle ning salvestab</translation>
+        <translation>kontrollib saajad üle ning salvestab</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="594"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
-        <translation type="unfinished">Saajate loend %1 on jõudnud põlvkonda %2, mis on suurim võimalik; loendit ei saa kirjutada.</translation>
+        <translation>Saajate loend %1 on jõudnud põlvkonda %2, mis on suurim võimalik; loendit ei saa kirjutada.</translation>
     </message>
 </context>
 <context>
@@ -1216,17 +1216,17 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="75"/>
         <source>the recipient list is not valid UTF-8</source>
-        <translation type="unfinished">saajate loend ei ole korrektses UTF-8 kodeeringus</translation>
+        <translation>saajate loend ei ole korrektses UTF-8 kodeeringus</translation>
     </message>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="102"/>
         <source>gpg wrote no signature</source>
-        <translation type="unfinished">gpg ei kirjutanud allkirja</translation>
+        <translation>gpg ei kirjutanud allkirja</translation>
     </message>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">uut allkirja ei saa verifitseerida ühegi allkirjastamise võtme allkirjana</translation>
+        <translation>uut allkirja ei saa verifitseerida ühegi allkirjastamise võtme allkirjana</translation>
     </message>
 </context>
 <context>
@@ -1246,12 +1246,12 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="220"/>
         <source>Cannot add</source>
-        <translation type="unfinished">Lisamine ei õnnestunud</translation>
+        <translation>Lisamine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="220"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 on juba olemas.</translation>
+        <translation>%1 on juba olemas.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="198"/>
@@ -1262,32 +1262,32 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Saajate loendit ei saa kontrollida</translation>
+        <translation>Saajate loendit ei saa kontrollida</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Ei saa kindlaks teha, kas %2 eemaldati, seega midagi ei krüptitud.</translation>
+        <translation>%1 Ei saa kindlaks teha, kas %2 eemaldati, seega midagi ei krüptitud.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Saajate loend puudub</translation>
+        <translation>Saajate loend puudub</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Allkirjastatud saajate loend %1 puudub või pole tavaline fail. QtPass ei kasuta selle asemel ülemkausta loendit: see loend pole selle kausta jaoks allkirjastatud. Kui selle nime all on link, eemalda see. Seejärel ava selle kausta jaoks „Kasutajad“ ja salvesta kausta saajad. Salvestamine kirjutab ja allkirjastab uue loendi.</translation>
+        <translation>Allkirjastatud saajate loend %1 puudub või pole tavaline fail. QtPass ei kasuta selle asemel ülemkausta loendit: see loend pole selle kausta jaoks allkirjastatud. Kui selle nime all on link, eemalda see. Seejärel ava selle kausta jaoks „Kasutajad“ ja salvesta kausta saajad. Salvestamine kirjutab ja allkirjastab uue loendi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
         <source>Cannot write</source>
-        <translation type="unfinished">Kirjutamine ei õnnestunud</translation>
+        <translation>Kirjutamine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="233"/>
         <source>Cannot create a temporary directory: %1</source>
-        <translation type="unfinished">Ajutist kataloogi ei õnnestu luua: %1</translation>
+        <translation>Ajutist kataloogi ei õnnestu luua: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="401"/>
@@ -1302,12 +1302,12 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Saajaid ei muudetud</translation>
+        <translation>Saajaid ei muudetud</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Uuesti krüptimine alles käib. Oota, kuni see lõpeb, ja salvesta siis saajad uuesti.</translation>
+        <translation>Uuesti krüptimine alles käib. Oota, kuni see lõpeb, ja salvesta siis saajad uuesti.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1332,7 +1332,7 @@ Sa ei saa kasutajate loendit muuta!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="112"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished">Git pull ei õnnestunud: %1</translation>
+        <translation>Git pull ei õnnestunud: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="193"/>
@@ -1344,17 +1344,17 @@ Sa ei saa kasutajate loendit muuta!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="281"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Kustutamine ei õnnestunud</translation>
+        <translation>Kustutamine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="282"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Linki %1 ei õnnestunud eemaldada.</translation>
+        <translation>Linki %1 ei õnnestunud eemaldada.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="324"/>
         <source>%1 is not inside the password store.</source>
-        <translation type="unfinished">%1 ei asu salasõnahoidlas.</translation>
+        <translation>%1 ei asu salasõnahoidlas.</translation>
     </message>
     <message>
         <source>Failed to open .gpg-id for writing.</source>
@@ -1367,12 +1367,12 @@ Sa ei saa kasutajate loendit muuta!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>Recipient list written, but not recorded</source>
-        <translation type="unfinished">Saajate loend on kirjutatud, kuid registrisse kandmata</translation>
+        <translation>Saajate loend on kirjutatud, kuid registrisse kandmata</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>%1 Save the recipients once more to get through.</source>
-        <translation type="unfinished">%1 Edasi pääsemiseks salvesta saajad veel kord.</translation>
+        <translation>%1 Edasi pääsemiseks salvesta saajad veel kord.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="388"/>
@@ -1389,49 +1389,49 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="404"/>
         <source>Failed to sign %1: %2</source>
-        <translation type="unfinished">Faili %1 allkirjastamine ei õnnestunud: %2</translation>
+        <translation>Faili %1 allkirjastamine ei õnnestunud: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="499"/>
         <source>Failed to remove the old signature %1.</source>
-        <translation type="unfinished">Vana allkirja %1 eemaldamine ei õnnestunud.</translation>
+        <translation>Vana allkirja %1 eemaldamine ei õnnestunud.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git lõpetas tegevuse olekukoodiga %1.</translation>
+        <translation>Git lõpetas tegevuse olekukoodiga %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
         <location filename="../src/imitatepass.cpp" line="641"/>
         <location filename="../src/imitatepass.cpp" line="649"/>
         <source>Leftover from an earlier re-encryption</source>
-        <translation type="unfinished">Varasemast uuesti krüptimisest järele jäänud fail</translation>
+        <translation>Varasemast uuesti krüptimisest järele jäänud fail</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="614"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
-        <translation type="unfinished">%1 pole tavaline fail ja seda ei taastatud. Vaata see üle, eemalda see ja krüpti seejärel uuesti.</translation>
+        <translation>%1 pole tavaline fail ja seda ei taastatud. Vaata see üle, eemalda see ja krüpti seejärel uuesti.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="642"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
-        <translation type="unfinished">%1 asub %2 kõrval. Mõlemad on kirje krüptitud koopiad; kontrolli, millist neist soovid alles jätta, kustuta teine ja krüpti seejärel uuesti.</translation>
+        <translation>%1 asub %2 kõrval. Mõlemad on kirje krüptitud koopiad; kontrolli, millist neist soovid alles jätta, kustuta teine ja krüpti seejärel uuesti.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="656"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
-        <translation type="unfinished">%1 taastati varukoopiast, mille katkenud uuesti krüptimine maha jättis.</translation>
+        <translation>%1 taastati varukoopiast, mille katkenud uuesti krüptimine maha jättis.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="650"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
-        <translation type="unfinished">%1 on puudu ja selle varukoopiat %2 ei õnnestunud tagasi ümber nimetada. Nimeta see käsitsi ümber ja krüpti seejärel uuesti.</translation>
+        <translation>%1 on puudu ja selle varukoopiat %2 ei õnnestunud tagasi ümber nimetada. Nimeta see käsitsi ümber ja krüpti seejärel uuesti.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="889"/>
         <source>%1 could not be re-encrypted: %2</source>
-        <translation type="unfinished">%1 uuesti krüptimine ei õnnestunud: %2</translation>
+        <translation>%1 uuesti krüptimine ei õnnestunud: %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1168"/>
@@ -1474,17 +1474,17 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="953"/>
         <source>A re-encryption is already running</source>
-        <translation type="unfinished">Uuesti krüptimine juba käib</translation>
+        <translation>Uuesti krüptimine juba käib</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="960"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">See pole hoidla kaust</translation>
+        <translation>See pole hoidla kaust</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="961"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
-        <translation type="unfinished">%1 on sümboolne link või ühenduspunkt või asub sellise taga. Selle sihtkoht ei kuulu salasõnahoidlasse ja seda ei krüptitud uuesti.</translation>
+        <translation>%1 on sümboolne link või ühenduspunkt või asub sellise taga. Selle sihtkoht ei kuulu salasõnahoidlasse ja seda ei krüptitud uuesti.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="970"/>
@@ -1501,27 +1501,27 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
         <location filename="../src/imitatepass.cpp" line="1044"/>
         <location filename="../src/imitatepass.cpp" line="1050"/>
         <source>Git pull failed</source>
-        <translation type="unfinished">Git pull ei õnnestunud</translation>
+        <translation>Git pull ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1045"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Pärast pulli ei õnnestunud kontrollida, kas hoidlas on ühendamata faile. Kontrolli seda gitiga enne uuesti krüptimist.</translation>
+        <translation>Pärast pulli ei õnnestunud kontrollida, kas hoidlas on ühendamata faile. Kontrolli seda gitiga enne uuesti krüptimist.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1051"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished">Pärast git pull&apos;i jäid hoidlasse ühendamata failid. Lahenda konflikt enne uuesti krüptimist.</translation>
+        <translation>Pärast git pull&apos;i jäid hoidlasse ühendamata failid. Lahenda konflikt enne uuesti krüptimist.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1055"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished">Git pull ei õnnestunud, krüptime hoidla uuesti praegusel kujul</translation>
+        <translation>Git pull ei õnnestunud, krüptime hoidla uuesti praegusel kujul</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1066"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n kirje jäeti vahele: sümboolne link, ühenduspunkt või erifail ei kuulu hoidlasse.</numerusform>
             <numerusform>%n kirjet jäeti vahele: sümboolne link, ühenduspunkt või erifail ei kuulu hoidlasse.</numerusform>
         </translation>
@@ -1539,7 +1539,7 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1166"/>
         <source>... and %n more</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>... ja veel %n</numerusform>
             <numerusform>... ja veel %n</numerusform>
         </translation>
@@ -1547,7 +1547,7 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1169"/>
         <source>%n file(s) could not be re-encrypted:</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n faili ei õnnestunud uuesti krüptida:</numerusform>
             <numerusform>%n faili ei õnnestunud uuesti krüptida:</numerusform>
         </translation>
@@ -1555,13 +1555,13 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
-        <translation type="unfinished">Uuesti krüptimine katkestati: %2 failist kontrolliti %1, uuesti krüptiti %3, ebaõnnestus %4</translation>
+        <translation>Uuesti krüptimine katkestati: %2 failist kontrolliti %1, uuesti krüptiti %3, ebaõnnestus %4</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Saajate muudatus jäi Giti sissekandeta</translation>
+        <translation>Saajate muudatus jäi Giti sissekandeta</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1570,7 +1570,7 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">Kausta %1 saajaid muudeti ja selle kirjed krüptiti nende jaoks uuesti, kuid Giti sissekanne ei õnnestunud:
+        <translation>Kausta %1 saajaid muudeti ja selle kirjed krüptiti nende jaoks uuesti, kuid Giti sissekanne ei õnnestunud:
 
 %2
 
@@ -1583,7 +1583,7 @@ Muudatust pole veel sisse kantud ega üles lükatud. Paranda Giti probleem ning 
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">Kausta %1 saajaid muudeti, kuid Giti sissekanne ei õnnestunud:
+        <translation>Kausta %1 saajaid muudeti, kuid Giti sissekanne ei õnnestunud:
 
 %2
 
@@ -1592,12 +1592,12 @@ Uuesti krüptimine jäi lõpetamata, seega on osa kirjeid või kõik kirjed endi
     <message>
         <location filename="../src/imitatepass.cpp" line="1429"/>
         <source>Git executable not configured, skipping git</source>
-        <translation type="unfinished">Git käsufaili pole seadistatud, git jäetakse vahele</translation>
+        <translation>Git käsufaili pole seadistatud, git jäetakse vahele</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1489"/>
         <source>gpg wrote no ciphertext for %1.</source>
-        <translation type="unfinished">gpg ei kirjutanud faili %1 jaoks krüptitud sisu.</translation>
+        <translation>gpg ei kirjutanud faili %1 jaoks krüptitud sisu.</translation>
     </message>
     <message>
         <source>Cannot create a temporary file next to %1: %2</source>
@@ -1636,7 +1636,7 @@ Uuesti krüptimine jäi lõpetamata, seega on osa kirjeid või kõik kirjed endi
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1198"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Git push jäetakse ära: %n faili ei õnnestunud uuesti krüptida</numerusform>
             <numerusform>Git push jäetakse ära: %n faili ei õnnestunud uuesti krüptida</numerusform>
         </translation>
@@ -1672,7 +1672,7 @@ Uuesti krüptimine jäi lõpetamata, seega on osa kirjeid või kõik kirjed endi
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From clipboard</source>
-        <translation type="unfinished">Lõikelaualt</translation>
+        <translation>Lõikelaualt</translation>
     </message>
     <message>
         <source>From Clipboard</source>
@@ -1720,7 +1720,7 @@ Uuesti krüptimine jäi lõpetamata, seega on osa kirjeid või kõik kirjed endi
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">%1 ei tundu olevat ASCII-armored GPG võti. Teisenda see esmalt käsuga &lt;code&gt;gpg --armor --export&lt;/code&gt; või kleebi armored plokk nupu &lt;b&gt;Lõikelaualt&lt;/b&gt; kaudu.</translation>
+        <translation>%1 ei tundu olevat ASCII-armored GPG võti. Teisenda see esmalt käsuga &lt;code&gt;gpg --armor --export&lt;/code&gt; või kleebi armored plokk nupu &lt;b&gt;Lõikelaualt&lt;/b&gt; kaudu.</translation>
     </message>
     <message>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
@@ -1754,7 +1754,7 @@ Uuesti krüptimine jäi lõpetamata, seega on osa kirjeid või kõik kirjed endi
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
-        <translation type="unfinished">Avalik võti %1 on imporditud. Enne sellele krüptimist kontrolli võtme sõrmejälge koos selle omanikuga: võtme importimine ei ütle midagi selle kohta, kelle käes võti on.</translation>
+        <translation>Avalik võti %1 on imporditud. Enne sellele krüptimist kontrolli võtme sõrmejälge koos selle omanikuga: võtme importimine ei ütle midagi selle kohta, kelle käes võti on.</translation>
     </message>
     <message>
         <source>Successfully imported key: %1</source>
@@ -1766,32 +1766,32 @@ Uuesti krüptimine jäi lõpetamata, seega on osa kirjeid või kõik kirjed endi
     <message>
         <location filename="../src/firstrunwizard.cpp" line="288"/>
         <source>Generate a new key pair…</source>
-        <translation type="unfinished">Loo uus võtmepaar…</translation>
+        <translation>Loo uus võtmepaar…</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="290"/>
         <source>Your key</source>
-        <translation type="unfinished">Sinu võti</translation>
+        <translation>Sinu võti</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="291"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation type="unfinished">Salasõnad krüptitakse GnuPG võtmetele. Märgi võtmed, mis peaksid saama uut hoidlat avada; vähemalt ühe võtme salajane pool peab olema selles arvutis.</translation>
+        <translation>Salasõnad krüptitakse GnuPG võtmetele. Märgi võtmed, mis peaksid saama uut hoidlat avada; vähemalt ühe võtme salajane pool peab olema selles arvutis.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="319"/>
         <source>expired</source>
-        <translation type="unfinished">aegunud</translation>
+        <translation>aegunud</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="321"/>
         <source>not usable</source>
-        <translation type="unfinished">pole kasutatav</translation>
+        <translation>pole kasutatav</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="334"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
-        <translation type="unfinished">GnuPG-l pole veel salajast võtit. Loo see siin või impordi oma olemasolev võti esmalt gpg abil.</translation>
+        <translation>GnuPG-l pole veel salajast võtit. Loo see siin või impordi oma olemasolev võti esmalt gpg abil.</translation>
     </message>
 </context>
 <context>
@@ -1824,12 +1824,12 @@ Uuesti krüptimine jäi lõpetamata, seega on osa kirjeid või kõik kirjed endi
     <message>
         <location filename="../src/keygendialog.ui" line="194"/>
         <source>Anyone who gets hold of the private key file can then read every password without being asked for anything.</source>
-        <translation type="unfinished">Igaüks, kes saab privaatvõtme faili enda kätte, saab siis lugeda kõiki salasõnu, ilma et temalt midagi küsitaks.</translation>
+        <translation>Igaüks, kes saab privaatvõtme faili enda kätte, saab siis lugeda kõiki salasõnu, ilma et temalt midagi küsitaks.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="197"/>
         <source>No passphrase: store the private key unprotected</source>
-        <translation type="unfinished">Salafraasita: salvesta privaatvõti kaitsmata</translation>
+        <translation>Salafraasita: salvesta privaatvõti kaitsmata</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -1948,12 +1948,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="210"/>
         <source>No password store backend available</source>
-        <translation type="unfinished">Salasõnahoidla taustaprogramm pole saadaval</translation>
+        <translation>Salasõnahoidla taustaprogramm pole saadaval</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="244"/>
         <source>Key generation failed: %1</source>
-        <translation type="unfinished">Võtme loomine ei õnnestunud: %1</translation>
+        <translation>Võtme loomine ei õnnestunud: %1</translation>
     </message>
 </context>
 <context>
@@ -2156,7 +2156,7 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass on standardse Unixi salasõnahalduri &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;i graafiline kasutajaliides.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass on standardse Unixi salasõnahalduri &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;i graafiline kasutajaliides.&lt;/p&gt;
 &lt;p&gt;Kui selles tarkvaras leiad vigu, siis &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;palun anna neist meile teada&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Juhendid&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Lähtekood&lt;/a&gt;&lt;/p&gt;</translation>
@@ -2164,117 +2164,117 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="341"/>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Fail</translation>
+        <translation>&amp;Fail</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>&amp;Store</source>
-        <translation type="unfinished">&amp;Hoidla</translation>
+        <translation>&amp;Hoidla</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="365"/>
         <source>S&amp;ettings</source>
-        <translation type="unfinished">S&amp;eadistused</translation>
+        <translation>S&amp;eadistused</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="374"/>
         <source>&amp;Help</source>
-        <translation type="unfinished">&amp;Abi</translation>
+        <translation>&amp;Abi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="497"/>
         <source>Show &amp;process output</source>
-        <translation type="unfinished">Näita &amp;protsessi väljundit</translation>
+        <translation>Näita &amp;protsessi väljundit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="500"/>
         <source>Show or hide the output of git, gpg and pass</source>
-        <translation type="unfinished">Näita või peida git, gpg ja pass väljundit</translation>
+        <translation>Näita või peida git, gpg ja pass väljundit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="511"/>
         <source>Show &amp;menu bar</source>
-        <translation type="unfinished">Näita &amp;menüüriba</translation>
+        <translation>Näita &amp;menüüriba</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="514"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
-        <translation type="unfinished">Peida või näita menüüriba; Ctrl+M toob selle tagasi</translation>
+        <translation>Peida või näita menüüriba; Ctrl+M toob selle tagasi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="517"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished">Ctrl+M</translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="522"/>
         <source>&amp;Configure QtPass…</source>
-        <translation type="unfinished">&amp;Seadista QtPassi…</translation>
+        <translation>&amp;Seadista QtPassi…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="525"/>
         <source>Settings</source>
-        <translation type="unfinished">Seadistused</translation>
+        <translation>Seadistused</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Change the QtPass settings</source>
-        <translation type="unfinished">Muuda QtPassi seadistusi</translation>
+        <translation>Muuda QtPassi seadistusi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>
         <source>Ctrl+,</source>
-        <translation type="unfinished">Ctrl+,</translation>
+        <translation>Ctrl+,</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="539"/>
         <source>&amp;Close window</source>
-        <translation type="unfinished">&amp;Sulge aken</translation>
+        <translation>&amp;Sulge aken</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="542"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
-        <translation type="unfinished">Sulgeb akna; kui „Sulgemisel peida“ on sisse lülitatud, jääb QtPass süsteemisalve</translation>
+        <translation>Sulgeb akna; kui „Sulgemisel peida“ on sisse lülitatud, jääb QtPass süsteemisalve</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="545"/>
         <source>Ctrl+W</source>
-        <translation type="unfinished">Ctrl+W</translation>
+        <translation>Ctrl+W</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="550"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Välju</translation>
+        <translation>&amp;Välju</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="553"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="561"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished">&amp;KKK</translation>
+        <translation>&amp;KKK</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="564"/>
         <source>Open the frequently asked questions on qtpass.org</source>
-        <translation type="unfinished">Ava korduma kippuvad küsimused veebilehel qtpass.org</translation>
+        <translation>Ava korduma kippuvad küsimused veebilehel qtpass.org</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="567"/>
         <source>F1</source>
-        <translation type="unfinished">F1</translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="572"/>
         <source>&amp;About QtPass</source>
-        <translation type="unfinished">&amp;Teave QtPassi kohta</translation>
+        <translation>&amp;Teave QtPassi kohta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="580"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished">Teave &amp;Qt kohta</translation>
+        <translation>Teave &amp;Qt kohta</translation>
     </message>
     <message>
         <source>Clear output</source>
@@ -2442,7 +2442,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Kas sa oled kindel, et soovid %1 kustutada?</translation>
+        <translation>Kas sa oled kindel, et soovid %1 kustutada?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1050"/>
@@ -2538,12 +2538,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="761"/>
         <source>About QtPass</source>
-        <translation type="unfinished">Teave QtPassi kohta</translation>
+        <translation>Teave QtPassi kohta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="762"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Mitmeplatvormiline graafiline kasutajaliides standardsele Unixi salasõnahaldurile &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Lähtekood ja veateated&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Autoriõigus &amp;copy; 2014&amp;ndash;%2 IJhack. Litsentsitud &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL versiooni 3&lt;/a&gt; või uuema alusel.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Mitmeplatvormiline graafiline kasutajaliides standardsele Unixi salasõnahaldurile &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Lähtekood ja veateated&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Autoriõigus &amp;copy; 2014&amp;ndash;%2 IJhack. Litsentsitud &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL versiooni 3&lt;/a&gt; või uuema alusel.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="824"/>
@@ -2573,7 +2573,7 @@ p, li { white-space: pre-wrap; }
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="922"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n kirjes.</numerusform>
             <numerusform>%n kirjes.</numerusform>
         </translation>
@@ -2591,22 +2591,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
-        <translation type="unfinished">Kas sa oled kindel, et soovid %1 koos kogu sisuga kustutada?</translation>
+        <translation>Kas sa oled kindel, et soovid %1 koos kogu sisuga kustutada?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
-        <translation type="unfinished">NB! Antud kaustas on ootamatuid faile, kontrolli neid enne jätkamist.</translation>
+        <translation>NB! Antud kaustas on ootamatuid faile, kontrolli neid enne jätkamist.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1059"/>
         <source>Delete link?</source>
-        <translation type="unfinished">Kas kustutame lingi?</translation>
+        <translation>Kas kustutame lingi?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
-        <translation type="unfinished">%1 on sümboolne link või ühenduspunkt. Kas eemaldame lingi? Selle sihtkoht jäetakse puutumata.</translation>
+        <translation>%1 on sümboolne link või ühenduspunkt. Kas eemaldame lingi? Selle sihtkoht jäetakse puutumata.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1110"/>
@@ -2669,22 +2669,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1584"/>
         <source>Re-encrypting passwords...</source>
-        <translation type="unfinished">Krüptime salasõnu uuesti...</translation>
+        <translation>Krüptime salasõnu uuesti...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1585"/>
         <source>Cancel</source>
-        <translation type="unfinished">Loobu</translation>
+        <translation>Loobu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1593"/>
         <source>Cancelling re-encryption</source>
-        <translation type="unfinished">Katkestame uuesti krüptimise</translation>
+        <translation>Katkestame uuesti krüptimise</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1604"/>
         <source>Re-encrypting passwords: %1 of %2</source>
-        <translation type="unfinished">Krüptime salasõnu uuesti: %1 / %2</translation>
+        <translation>Krüptime salasõnu uuesti: %1 / %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1625"/>
@@ -2700,12 +2700,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Not a folder of the store</source>
-        <translation type="unfinished">See pole hoidla kaust</translation>
+        <translation>See pole hoidla kaust</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1674"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 on sümboolne link või ühenduspunkt või asub sellise taga. Selle sihtkoht ei kuulu salasõnahoidlasse ja jäetakse puutumata.</translation>
+        <translation>%1 on sümboolne link või ühenduspunkt või asub sellise taga. Selle sihtkoht ei kuulu salasõnahoidlasse ja jäetakse puutumata.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1682"/>
@@ -2784,7 +2784,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1420"/>
         <source>New folder</source>
-        <translation type="unfinished">Uus kaust</translation>
+        <translation>Uus kaust</translation>
     </message>
     <message>
         <source>Rename File To: </source>
@@ -2847,12 +2847,12 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/pass.cpp" line="162"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
-        <translation type="unfinished">Seadistatud GPG kodukataloogi %1 pole olemas, kasutame vaikimisi võtmehoidlat</translation>
+        <translation>Seadistatud GPG kodukataloogi %1 pole olemas, kasutame vaikimisi võtmehoidlat</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="170"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
-        <translation type="unfinished">Seadistatud GPG kodukataloogi %1 pole olemas, kasutame keskkonnamuutuja GNUPGHOME väärtust %2</translation>
+        <translation>Seadistatud GPG kodukataloogi %1 pole olemas, kasutame keskkonnamuutuja GNUPGHOME väärtust %2</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="183"/>
@@ -2907,42 +2907,42 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/pass.cpp" line="461"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
-        <translation type="unfinished">Krüptimine ebaõnnestus: saaja GPG-võtit ei saa kasutada. See võib olla aegunud või tühistatud, ilma krüptimise alamvõtmeta või mitte usaldatud; allolev gpg teade ütleb, milline.</translation>
+        <translation>Krüptimine ebaõnnestus: saaja GPG-võtit ei saa kasutada. See võib olla aegunud või tühistatud, ilma krüptimise alamvõtmeta või mitte usaldatud; allolev gpg teade ütleb, milline.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="726"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 on sümboolne link või ühenduspunkt või asub sellise taga. Selle sihtkoht ei kuulu salasõnahoidlasse ja jäetakse puutumata.</translation>
+        <translation>%1 on sümboolne link või ühenduspunkt või asub sellise taga. Selle sihtkoht ei kuulu salasõnahoidlasse ja jäetakse puutumata.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="732"/>
         <source>Not part of the store</source>
-        <translation type="unfinished">Ei kuulu hoidlasse</translation>
+        <translation>Ei kuulu hoidlasse</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">Saajate loendite põlvkonnaregistrit ei saa lugeda.</translation>
+        <translation>Saajate loendite põlvkonnaregistrit ei saa lugeda.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Saajate loend %1 puudub või pole tavaline fail, seega pole midagi eelvalitud: ülemkausta loend pole selle kausta jaoks allkirjastatud. Vali selle kausta saajad ise; OK kirjutab ja allkirjastab uue loendi.</translation>
+        <translation>Saajate loend %1 puudub või pole tavaline fail, seega pole midagi eelvalitud: ülemkausta loend pole selle kausta jaoks allkirjastatud. Vali selle kausta saajad ise; OK kirjutab ja allkirjastab uue loendi.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Midagi pole eelvalitud: ei saa kindlaks teha, kas %2 eemaldati.</translation>
+        <translation>%1 Midagi pole eelvalitud: ei saa kindlaks teha, kas %2 eemaldati.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">Saajate loendit %1 ei saa allkirjastamise võtmega verifitseerida, seega pole midagi eelvalitud: salvestamine allkirjastaks kõik, mis selles on. Vali saajad ise; OK kirjutab ja allkirjastab uue loendi.</translation>
+        <translation>Saajate loendit %1 ei saa allkirjastamise võtmega verifitseerida, seega pole midagi eelvalitud: salvestamine allkirjastaks kõik, mis selles on. Vali saajad ise; OK kirjutab ja allkirjastab uue loendi.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="819"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
-        <translation type="unfinished">%1 Midagi pole eelvalitud: salvestamine allkirjastaks kõik, mis selles on. Vali saajad ise.</translation>
+        <translation>%1 Midagi pole eelvalitud: salvestamine allkirjastaks kõik, mis selles on. Vali saajad ise.</translation>
     </message>
 </context>
 <context>
@@ -2957,27 +2957,27 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="72"/>
         <source>Folder</source>
-        <translation type="unfinished">Kaust</translation>
+        <translation>Kaust</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation type="unfinished">Salasõnahoidla kaust, kuhu uus kirje läheb</translation>
+        <translation>Salasõnahoidla kaust, kuhu uus kirje läheb</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">Nimi</translation>
+        <translation>Nimi</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
         <source>The entry&apos;s name, as it appears in the tree; a / puts it in a subfolder</source>
-        <translation type="unfinished">Kirje nimi, nagu see puus kuvatakse; / paneb selle alamkausta</translation>
+        <translation>Kirje nimi, nagu see puus kuvatakse; / paneb selle alamkausta</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="102"/>
         <source>e.g. github.com or work/vpn</source>
-        <translation type="unfinished">nt github.com või töö/vpn</translation>
+        <translation>nt github.com või töö/vpn</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
@@ -3030,82 +3030,82 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="219"/>
         <source>Template:</source>
-        <translation type="unfinished">Mall:</translation>
+        <translation>Mall:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished">Väljade mall hoidla .templates failist. Ctrl+T lülitab järgmisele.</translation>
+        <translation>Väljade mall hoidla .templates failist. Ctrl+T lülitab järgmisele.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="76"/>
         <source>New password</source>
-        <translation type="unfinished">Uus salasõna</translation>
+        <translation>Uus salasõna</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>
         <source>Decrypting…</source>
-        <translation type="unfinished">Dekrüptime…</translation>
+        <translation>Dekrüptime…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="182"/>
         <source>Saving…</source>
-        <translation type="unfinished">Salvestamine…</translation>
+        <translation>Salvestamine…</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="213"/>
         <source>Still saving</source>
-        <translation type="unfinished">Salvestamine kestab</translation>
+        <translation>Salvestamine kestab</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="214"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation type="unfinished">Kirjet alles salvestatakse. Kas sulgeda dialoog ikkagi? Kui salvestamine siis ebaõnnestub, läheb sisestatu kaotsi.</translation>
+        <translation>Kirjet alles salvestatakse. Kas sulgeda dialoog ikkagi? Kui salvestamine siis ebaõnnestub, läheb sisestatu kaotsi.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="231"/>
         <source>Not saved: %1</source>
-        <translation type="unfinished">Ei salvestatud: %1</translation>
+        <translation>Ei salvestatud: %1</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Give the entry a name.</source>
-        <translation type="unfinished">Anna kirjele nimi.</translation>
+        <translation>Anna kirjele nimi.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>A name cannot end in /.</source>
-        <translation type="unfinished">Nimi ei tohi lõppeda märgiga /.</translation>
+        <translation>Nimi ei tohi lõppeda märgiga /.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="286"/>
         <source>That name would resolve outside the password store.</source>
-        <translation type="unfinished">See nimi viitaks salasõnahoidlast väljapoole.</translation>
+        <translation>See nimi viitaks salasõnahoidlast väljapoole.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="290"/>
         <source>An entry called %1 already exists.</source>
-        <translation type="unfinished">Kirje nimega %1 on juba olemas.</translation>
+        <translation>Kirje nimega %1 on juba olemas.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="294"/>
         <source>%1 is a folder.</source>
-        <translation type="unfinished">%1 on kaust.</translation>
+        <translation>%1 on kaust.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="324"/>
         <source>Could not create the folder %1.</source>
-        <translation type="unfinished">Kausta %1 ei õnnestunud luua.</translation>
+        <translation>Kausta %1 ei õnnestunud luua.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="380"/>
         <source>Remove field</source>
-        <translation type="unfinished">Eemalda väli</translation>
+        <translation>Eemalda väli</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="399"/>
         <source>A field called %1 already exists.</source>
-        <translation type="unfinished">Väli nimega %1 on juba olemas.</translation>
+        <translation>Väli nimega %1 on juba olemas.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="480"/>
@@ -3132,12 +3132,12 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="26"/>
         <source>Clear</source>
-        <translation type="unfinished">Tühjenda</translation>
+        <translation>Tühjenda</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="27"/>
         <source>Clear output</source>
-        <translation type="unfinished">Tühjenda väljund</translation>
+        <translation>Tühjenda väljund</translation>
     </message>
 </context>
 <context>
@@ -3145,12 +3145,12 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="36"/>
         <source>Could not create %1.</source>
-        <translation type="unfinished">%1 loomine ei õnnestunud.</translation>
+        <translation>%1 loomine ei õnnestunud.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/profileinit.cpp" line="60"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 sisaldab juba %n krüptitud faili; seda ei krüptitud uuesti. Selleks vali see profiil ja ava „Kasutajad“.</numerusform>
             <numerusform>%1 sisaldab juba %n krüptitud faili; neid ei krüptitud uuesti. Selleks vali see profiil ja ava „Kasutajad“.</numerusform>
         </translation>
@@ -3158,12 +3158,12 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="78"/>
         <source>No recipient selected; %1 was not written.</source>
-        <translation type="unfinished">Saajat pole valitud; %1 jäi kirjutamata.</translation>
+        <translation>Saajat pole valitud; %1 jäi kirjutamata.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="127"/>
         <source>Could not sign %1 with %2.</source>
-        <translation type="unfinished">Faili %1 ei õnnestunud võtmega %2 allkirjastada.</translation>
+        <translation>Faili %1 ei õnnestunud võtmega %2 allkirjastada.</translation>
     </message>
     <message>
         <source>Could not write %1: %2</source>
@@ -3172,13 +3172,13 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="129"/>
         <source>Could not sign %1 with %2: %3</source>
-        <translation type="unfinished">Faili %1 ei õnnestunud võtmega %2 allkirjastada: %3</translation>
+        <translation>Faili %1 ei õnnestunud võtmega %2 allkirjastada: %3</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="149"/>
         <location filename="../src/profileinit.cpp" line="178"/>
         <source>git %1 failed in %2: %3</source>
-        <translation type="unfinished">git %1 ei õnnestunud kaustas %2: %3</translation>
+        <translation>git %1 ei õnnestunud kaustas %2: %3</translation>
     </message>
 </context>
 <context>
@@ -3186,57 +3186,57 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="202"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished">Kasuta käsurea tarvikut pass</translation>
+        <translation>Kasuta käsurea tarvikut pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="204"/>
         <source>Programs</source>
-        <translation type="unfinished">Programmid</translation>
+        <translation>Programmid</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="205"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
-        <translation type="unfinished">Krüptimisega tegeleb GnuPG. pass ja Git pole kohustuslikud; QtPass saab nende töö ise ära teha.</translation>
+        <translation>Krüptimisega tegeleb GnuPG. pass ja Git pole kohustuslikud; QtPass saab nende töö ise ära teha.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="209"/>
         <source>Select executable</source>
-        <translation type="unfinished">Vali käsufail</translation>
+        <translation>Vali käsufail</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="210"/>
         <source>All files (*)</source>
-        <translation type="unfinished">Kõik failid (*)</translation>
+        <translation>Kõik failid (*)</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="212"/>
         <source>GnuPG</source>
-        <translation type="unfinished">GnuPG</translation>
+        <translation>GnuPG</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="215"/>
         <source>Git</source>
-        <translation type="unfinished">Git</translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="216"/>
         <source>pass</source>
-        <translation type="unfinished">pass</translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="217"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished">Käivita iga toimingu jaoks pass skript, selle asemel et gpg ja git otse välja kutsuda</translation>
+        <translation>Käivita iga toimingu jaoks pass skript, selle asemel et gpg ja git otse välja kutsuda</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="257"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
-        <translation type="unfinished">GnuPG-d ei leitud. Paigalda see (gpg või gpg2) ja sisesta siia selle asukoht.</translation>
+        <translation>GnuPG-d ei leitud. Paigalda see (gpg või gpg2) ja sisesta siia selle asukoht.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="260"/>
         <source>%1 is not an executable file.</source>
-        <translation type="unfinished">%1 ei ole käivitatav fail.</translation>
+        <translation>%1 ei ole käivitatav fail.</translation>
     </message>
 </context>
 <context>
@@ -3281,7 +3281,7 @@ Kas jätkame?</translation>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
         <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
         <source>Show as QR code</source>
-        <translation type="unfinished">Näita QR-koodina</translation>
+        <translation>Näita QR-koodina</translation>
     </message>
 </context>
 <context>
@@ -3292,13 +3292,13 @@ Kas jätkame?</translation>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
         <source>Show password</source>
-        <translation type="unfinished">Näita salasõna</translation>
+        <translation>Näita salasõna</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
         <source>Hide password</source>
-        <translation type="unfinished">Peida salasõna</translation>
+        <translation>Peida salasõna</translation>
     </message>
 </context>
 <context>
@@ -3307,7 +3307,7 @@ Kas jätkame?</translation>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
         <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Kopeeri lõikelauale</translation>
+        <translation>Kopeeri lõikelauale</translation>
     </message>
 </context>
 <context>
@@ -3413,27 +3413,27 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="93"/>
         <source>Could not remove the link %1.</source>
-        <translation type="unfinished">Linki %1 ei õnnestunud eemaldada.</translation>
+        <translation>Linki %1 ei õnnestunud eemaldada.</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="94"/>
         <source>Delete failed</source>
-        <translation type="unfinished">Kustutamine ei õnnestunud</translation>
+        <translation>Kustutamine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="125"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
-        <translation type="unfinished">Link %1 eemaldati, kuid git ei saanud seda salvestada: %2</translation>
+        <translation>Link %1 eemaldati, kuid git ei saanud seda salvestada: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="127"/>
         <source>Delete incomplete</source>
-        <translation type="unfinished">Kustutamine poolik</translation>
+        <translation>Kustutamine poolik</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="229"/>
         <source>Search needs the GPG executable to be configured.</source>
-        <translation type="unfinished">Otsinguks peab GPG käsufail olema seadistatud.</translation>
+        <translation>Otsinguks peab GPG käsufail olema seadistatud.</translation>
     </message>
 </context>
 <context>
@@ -3458,27 +3458,27 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="364"/>
         <source>Keep the store under Git</source>
-        <translation type="unfinished">Hoia hoidlat Giti versioonihalduses</translation>
+        <translation>Hoia hoidlat Giti versioonihalduses</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="366"/>
         <source>Password store</source>
-        <translation type="unfinished">Salasõnahoidla</translation>
+        <translation>Salasõnahoidla</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="367"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation type="unfinished">Kaust, kus su salasõnad asuvad. Olemasolevat hoidlat kasutatakse sellisena, nagu see on; tühi või puuduv kaust seadistatakse sinu märgitud võtmete jaoks.</translation>
+        <translation>Kaust, kus su salasõnad asuvad. Olemasolevat hoidlat kasutatakse sellisena, nagu see on; tühi või puuduv kaust seadistatakse sinu märgitud võtmete jaoks.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="371"/>
         <source>Folder</source>
-        <translation type="unfinished">Kaust</translation>
+        <translation>Kaust</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="373"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Vali salasõnahoidla kaust</translation>
+        <translation>Vali salasõnahoidla kaust</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="398"/>
@@ -3486,7 +3486,7 @@ Kas jätkame?</translation>
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
 and turn Git on in Settings afterwards.</source>
-        <translation type="unfinished">Gitil pole veel nime ega e-posti aadressi, millega muudatusi salvestada. Käivita
+        <translation>Gitil pole veel nime ega e-posti aadressi, millega muudatusi salvestada. Käivita
 git config --global user.name &quot;Sinu Nimi&quot;
 git config --global user.email sina@example.org
 ja lülita Git seejärel seadistustes sisse.</translation>
@@ -3494,17 +3494,17 @@ ja lülita Git seejärel seadistustes sisse.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="402"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished">Igast muudatusest saab commit; kaustast, mis pole veel repositoorium, tehakse see</translation>
+        <translation>Igast muudatusest saab commit; kaustast, mis pole veel repositoorium, tehakse see</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="426"/>
         <source>Enter a folder.</source>
-        <translation type="unfinished">Sisesta kaust.</translation>
+        <translation>Sisesta kaust.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="430"/>
         <source>An existing password store with %n entries.</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Olemasolev salasõnahoidla %n kirjega.</numerusform>
             <numerusform>Olemasolev salasõnahoidla %n kirjega.</numerusform>
         </translation>
@@ -3512,22 +3512,22 @@ ja lülita Git seejärel seadistustes sisse.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="433"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation type="unfinished">Tühi kaust; see seadistatakse salasõnahoidlaks.</translation>
+        <translation>Tühi kaust; see seadistatakse salasõnahoidlaks.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="434"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation type="unfinished">See kaust pole veel salasõnahoidla; sinna kirjutatakse märgitud võtmete jaoks .gpg-id fail.</translation>
+        <translation>See kaust pole veel salasõnahoidla; sinna kirjutatakse märgitud võtmete jaoks .gpg-id fail.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="437"/>
         <source>The folder does not exist yet; it will be created.</source>
-        <translation type="unfinished">Kausta pole veel olemas; see luuakse.</translation>
+        <translation>Kausta pole veel olemas; see luuakse.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="441"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
-        <translation type="unfinished">Mine tagasi ja märgi vähemalt üks võti, millele krüptida.</translation>
+        <translation>Mine tagasi ja märgi vähemalt üks võti, millele krüptida.</translation>
     </message>
 </context>
 <context>
@@ -3589,7 +3589,7 @@ Note: On OK every password in this folder and its subfolders is re-encrypted to 
 Bold entries have a secret key available, select one of these to be able to decrypt yourself.
 Plain entries have a trusted encryption key, select these to allow other people to decrypt.
 [INVALID] and [EXPIRED] entries cannot be encrypted to; [PARTIAL] entries have a key that is not fully trusted.</source>
-        <translation type="unfinished">Vali, millistel kasutajatel peaks olema õigus selles kaustas salvestatud salasõnu dekrüptida.
+        <translation>Vali, millistel kasutajatel peaks olema õigus selles kaustas salvestatud salasõnu dekrüptida.
 Märkus: OK vajutamisel krüptitakse kõik selle kausta ja tema alamkaustade salasõnad valitud kasutajatele uuesti; see võib võtta aega.
 Rasvases kirjas kirjetel on olemas salajane võti; vali neist üks, et saaksid ise dekrüptida.
 Tavalises kirjas kirjetel on usaldusväärne krüptimisvõti; vali need, et lubada teistel dekrüptida.
@@ -3693,34 +3693,34 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/util.cpp" line="687"/>
         <source>Cannot create a temporary file next to %1: %2</source>
-        <translation type="unfinished">Faili %1 kõrvale ei õnnestu ajutist faili luua: %2</translation>
+        <translation>Faili %1 kõrvale ei õnnestu ajutist faili luua: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="699"/>
         <location filename="../src/util.cpp" line="778"/>
         <location filename="../src/util.cpp" line="808"/>
         <source>Cannot write %1: %2</source>
-        <translation type="unfinished">Faili %1 ei õnnestu kirjutada: %2</translation>
+        <translation>Faili %1 ei õnnestu kirjutada: %2</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="714"/>
         <source>Failed to replace %1.</source>
-        <translation type="unfinished">Faili %1 asendamine ei õnnestunud.</translation>
+        <translation>Faili %1 asendamine ei õnnestunud.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="719"/>
         <source>%1 already exists.</source>
-        <translation type="unfinished">%1 on juba olemas.</translation>
+        <translation>%1 on juba olemas.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="721"/>
         <source>Failed to write %1.</source>
-        <translation type="unfinished">Faili %1 kirjutamine ei õnnestunud.</translation>
+        <translation>Faili %1 kirjutamine ei õnnestunud.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="765"/>
         <source>%1 was swapped for another file while it was written.</source>
-        <translation type="unfinished">%1 asendati kirjutamise ajal teise failiga.</translation>
+        <translation>%1 asendati kirjutamise ajal teise failiga.</translation>
     </message>
     <message>
         <source>%1 was replaced by a link while it was written.</source>
@@ -3729,12 +3729,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/util.cpp" line="791"/>
         <source>Cannot read %1.</source>
-        <translation type="unfinished">Faili %1 ei õnnestu lugeda.</translation>
+        <translation>Faili %1 ei õnnestu lugeda.</translation>
     </message>
     <message>
         <location filename="../src/util.cpp" line="801"/>
         <source>Cannot read %1: %2</source>
-        <translation type="unfinished">Faili %1 ei õnnestu lugeda: %2</translation>
+        <translation>Faili %1 ei õnnestu lugeda: %2</translation>
     </message>
 </context>
 </TS>

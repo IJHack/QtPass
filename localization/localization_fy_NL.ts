@@ -1226,7 +1226,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidsigner.cpp" line="112"/>
         <source>the new signature does not verify as one of the signing keys</source>
-        <translation type="unfinished">de nije hantekening kin net ferifiearre wurde as fan ien fan de ûndertekeningskaaien</translation>
+        <translation>de nije hantekening kin net ferifiearre wurde as fan ien fan de ûndertekeningskaaien</translation>
     </message>
 </context>
 <context>
@@ -1262,22 +1262,22 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="167"/>
         <source>Cannot check the recipient list</source>
-        <translation type="unfinished">Kin de ûntfangerslist net kontrolearje</translation>
+        <translation>Kin de ûntfangerslist net kontrolearje</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="168"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
-        <translation type="unfinished">%1 Oft %2 fuorthelle is, kin net fêststeld wurde, dêrom is der neat fersifere.</translation>
+        <translation>%1 Oft %2 fuorthelle is, kin net fêststeld wurde, dêrom is der neat fersifere.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Recipient list missing</source>
-        <translation type="unfinished">Untfangerslist ûntbrekt</translation>
+        <translation>Untfangerslist ûntbrekt</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">De ûndertekene ûntfangerslist %1 ûntbrekt of is gjin gewoan bestân. QtPass falt dêrfoar net werom op de list fan in boppelizzende map: dy list is net foar dizze map ûndertekene. As der in keppeling ûnder dy namme stiet, smyt dy dan fuort. Iepenje dêrnei Brûkers foar dy map en bewarje de ûntfangers, wat in nije list skriuwt en ûndertekenet.</translation>
+        <translation>De ûndertekene ûntfangerslist %1 ûntbrekt of is gjin gewoan bestân. QtPass falt dêrfoar net werom op de list fan in boppelizzende map: dy list is net foar dizze map ûndertekene. As der in keppeling ûnder dy namme stiet, smyt dy dan fuort. Iepenje dêrnei Brûkers foar dy map en bewarje de ûntfangers, wat in nije list skriuwt en ûndertekenet.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="232"/>
@@ -1302,12 +1302,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="520"/>
         <source>Recipients not changed</source>
-        <translation type="unfinished">Untfangers net feroare</translation>
+        <translation>Untfangers net feroare</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="521"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
-        <translation type="unfinished">Der is noch in opnij fersifering dwaande. Wachtsje oant dy klear is, en bewarje de ûntfangers dan nochris.</translation>
+        <translation>Der is noch in opnij fersifering dwaande. Wachtsje oant dy klear is, en bewarje de ûntfangers dan nochris.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="527"/>
@@ -1399,7 +1399,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="559"/>
         <source>Git exited with code %1.</source>
-        <translation type="unfinished">Git is stoppe mei koade %1.</translation>
+        <translation>Git is stoppe mei koade %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1561,7 +1561,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
         <location filename="../src/imitatepass.cpp" line="1242"/>
         <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Recipients not committed</source>
-        <translation type="unfinished">Untfangers net commit</translation>
+        <translation>Untfangers net commit</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1243"/>
@@ -1570,7 +1570,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
 %2
 
 The change is not committed or pushed yet. Fix the Git problem, then commit the changes, or save the recipients again.</source>
-        <translation type="unfinished">De ûntfangers fan %1 binne feroare en de yngongen binne opnij foar harren fersifere, mar de Git-commit is mislearre:
+        <translation>De ûntfangers fan %1 binne feroare en de yngongen binne opnij foar harren fersifere, mar de Git-commit is mislearre:
 
 %2
 
@@ -1583,7 +1583,7 @@ De feroaring is noch net commit of pusht. Los it Git-probleem op en commit dan d
 %2
 
 Re-encryption did not complete, so some or all entries are still encrypted to the previous recipients, who can still read them. Nothing was committed or pushed. Fix the Git problem, then save the recipients again.</source>
-        <translation type="unfinished">De ûntfangers fan %1 binne feroare, mar de Git-commit is mislearre:
+        <translation>De ûntfangers fan %1 binne feroare, mar de Git-commit is mislearre:
 
 %2
 
@@ -2925,17 +2925,17 @@ Trochgean?</translation>
     <message>
         <location filename="../src/pass.cpp" line="773"/>
         <source>The generation record of the recipient lists cannot be read.</source>
-        <translation type="unfinished">It generaasjeregister fan de ûntfangerslisten kin net lêzen wurde.</translation>
+        <translation>It generaasjeregister fan de ûntfangerslisten kin net lêzen wurde.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="852"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
-        <translation type="unfinished">De ûntfangerslist %1 ûntbrekt of is gjin gewoan bestân, dêrom is der neat foarselektearre: de list fan in boppelizzende map is net foar dizze ûndertekene. Selektearje de ûntfangers fan dizze map sels; OK skriuwt en ûndertekenet in nije list.</translation>
+        <translation>De ûntfangerslist %1 ûntbrekt of is gjin gewoan bestân, dêrom is der neat foarselektearre: de list fan in boppelizzende map is net foar dizze ûndertekene. Selektearje de ûntfangers fan dizze map sels; OK skriuwt en ûndertekenet in nije list.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="857"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
-        <translation type="unfinished">%1 Der is neat foarselektearre: oft %2 fuorthelle is, kin net fêststeld wurde.</translation>
+        <translation>%1 Der is neat foarselektearre: oft %2 fuorthelle is, kin net fêststeld wurde.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="872"/>
