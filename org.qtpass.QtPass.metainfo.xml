@@ -71,6 +71,12 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.8.4" date="2026-10-26">
+      <url>https://github.com/IJHack/QtPass/releases/tag/v1.8.4</url>
+      <description>
+        <p>Bug-fix release: started from a terminal, QtPass no longer freezes when git or ssh wants a password, a copied password stays out of clipboard history on FreeBSD and OpenBSD as it already did on Linux, and GNOME shows the QtPass icon for its window.</p>
+      </description>
+    </release>
     <release version="1.8.3" date="2026-10-06">
       <url>https://github.com/IJHack/QtPass/releases/tag/v1.8.3</url>
       <description>

@@ -1,6 +1,6 @@
 #define MyAppName "QtPass"
 #ifndef MyAppVersion
-  #define MyAppVersion "1.8.3"
+  #define MyAppVersion "1.8.4"
 #endif
 #define MyAppPublisher "IJHack"
 #define MyAppURL "https://qtpass.org/"

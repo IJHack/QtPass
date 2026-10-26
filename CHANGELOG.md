@@ -1,8 +1,32 @@
 # Changelog
 
-## [1.8.3](https://github.com/IJHack/QtPass/tree/v1.8.3) (2026-10-06)
+## [1.8.4](https://github.com/IJHack/QtPass/tree/v1.8.4) (2026-10-26)
+
+### Security
+
+- A copied password carries the KDE password hint on FreeBSD and OpenBSD
+  too, as it did on Linux, so Klipper, CopyQ and cliphist keep it out of
+  their history (ported from [#2038](https://github.com/IJHack/QtPass/pull/2038),
+  [#2039](https://github.com/IJHack/QtPass/pull/2039))
 
 ### Bugfixes
+
+- Started from a terminal, QtPass no longer freezes when git wants HTTPS
+  credentials or ssh a passphrase or host key. They prompted on that
+  terminal, unseen, and every decrypt and save waited behind them; child
+  processes now start without a controlling terminal, so git and ssh use
+  `SSH_ASKPASS`/`GIT_ASKPASS` when set and otherwise fail with an error
+  QtPass shows. Needs Qt 6.7 or newer; older builds behave as before (ported
+  from [#2016](https://github.com/IJHack/QtPass/pull/2016),
+  [#2040](https://github.com/IJHack/QtPass/pull/2040))
+- GNOME shows the QtPass icon for its window: the desktop file names the
+  window class (`StartupWMClass`) (ported from
+  [#1975](https://github.com/IJHack/QtPass/pull/1975), by
+  [@carlos22](https://github.com/carlos22))
+
+## [1.8.3](https://github.com/IJHack/QtPass/tree/v1.8.3) (2026-10-06)
+
+### Bugfixes <!-- markdownlint-disable-line MD024 -->
 
 - Saving an entry no longer loses what was typed when it fails. The password
   dialog closed as soon as OK was pressed and gpg ran afterwards, so a missing
@@ -44,7 +68,7 @@
 The security and data-loss fixes from the 2.0 branch, backported to the 1.8
 line ([#1709](https://github.com/IJHack/QtPass/issues/1709)). Qt 5.15 and Qt 6 are both still supported.
 
-### Security
+### Security <!-- markdownlint-disable-line MD024 -->
 
 - Windows/WSL: commands run through `wsl --exec` instead of the distribution's
   login shell, so entry paths, `.gpg-id` recipients and commit messages are no
