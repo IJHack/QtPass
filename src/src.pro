@@ -183,6 +183,11 @@ FORMS     += mainwindow.ui \
              exportpublickeydialog.ui \
              importkeydialog.ui
 
+rnp {
+    SOURCES += rnpcrypto.cpp
+    HEADERS += rnpcrypto.h
+}
+
 !nosingleapp {
     SOURCES += singleapplication.cpp
     HEADERS += singleapplication.h

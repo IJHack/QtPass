@@ -4,4 +4,5 @@ SUBDIRS += util ui model settings passwordconfig filecontent simpletransaction g
 # parser, resolver and gpgconf cases are what Windows is there to run.
 SUBDIRS += executor
 !nosingleapp: SUBDIRS += singleapplication
+rnp: SUBDIRS += rnpcrypto
 !win32: SUBDIRS += integration
