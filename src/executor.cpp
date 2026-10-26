@@ -30,12 +30,45 @@ Executor::Executor(QObject *parent) : QObject(parent) {
 }
 
 /**
+ * @brief Executor::detachFromTerminal makes @p process start its child
+ * without a controlling terminal.
+ * @param process Process to configure; call it before start().
+ */
+void Executor::detachFromTerminal(QProcess &process) {
+#if defined(Q_OS_UNIX) && QT_VERSION >= QT_VERSION_CHECK(6, 7, 0)
+  // A child inherits QtPass's controlling terminal when QtPass was started
+  // from one. git (HTTPS credentials) and ssh (key passphrase, host key) then
+  // prompt on that /dev/tty, and as the queue runs one command at a time,
+  // every decrypt and save waits behind a prompt nobody sees: QtPass looks
+  // frozen. In a session of its own the child has no terminal, so git and
+  // ssh use SSH_ASKPASS/GIT_ASKPASS when set and otherwise fail with an
+  // error QtPass shows. GIT_TERMINAL_PROMPT=0 is not set on top: without a
+  // tty git has nothing to prompt on, and some credential helpers read it as
+  // "no interaction at all" and would skip their own dialogs.
+  //
+  // gpg is unaffected: pinentry is started by gpg-agent, which finds the
+  // terminal through GPG_TTY (set by the user's shell) or the tty on gpg's
+  // stdin, here always a pipe. pass is a shell script running that gpg and
+  // git, so the same holds for it.
+  //
+  // Qt before 6.7 has no such flag; builds against it keep the old
+  // behaviour.
+  QProcess::UnixProcessParameters params = process.unixProcessParameters();
+  params.flags |= QProcess::UnixProcessFlag::CreateNewSession;
+  process.setUnixProcessParameters(params);
+#else
+  Q_UNUSED(process);
+#endif
+}
+
+/**
  * @brief Executor::startProcess starts the internal process, handling WSL
  * prefixes.
  * @param app Executable path (may start with "wsl ").
  * @param args Arguments to pass to the executable.
  */
 void Executor::startProcess(const QString &app, const QStringList &args) {
+  detachFromTerminal(m_process);
   if (app.startsWith("wsl ")) {
     m_process.start("wsl", wslExecArgs(app.mid(4), args));
   } else {
@@ -52,6 +85,7 @@ void Executor::startProcess(const QString &app, const QStringList &args) {
  */
 void Executor::startProcessBlocking(QProcess &internal, const QString &app,
                                     const QStringList &args) {
+  detachFromTerminal(internal);
   if (app.startsWith("wsl ")) {
     internal.start("wsl", wslExecArgs(app.mid(4), args));
   } else {
