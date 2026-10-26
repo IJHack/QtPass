@@ -4,8 +4,15 @@ TEMPLATE   = app
 QT        += core gui
 
 CONFIG += c++17
-LIBS = -L"$$OUT_PWD/../src/$(OBJECTS_DIR)" -lqtpass $$LIBS
-clang|gcc:PRE_TARGETDEPS += "$$OUT_PWD/../src/$(OBJECTS_DIR)/libqtpass.a"
+# Android's qmake appends the ABI to every target name, the static library
+# in src/ included (libqtpass_arm64-v8a.a).
+android {
+    QTPASS_LIB = qtpass_$$QT_ARCH
+} else {
+    QTPASS_LIB = qtpass
+}
+LIBS = -L"$$OUT_PWD/../src/$(OBJECTS_DIR)" -l$$QTPASS_LIB $$LIBS
+clang|gcc:PRE_TARGETDEPS += "$$OUT_PWD/../src/$(OBJECTS_DIR)/lib$${QTPASS_LIB}.a"
 
 INCLUDEPATH += ../src
 
