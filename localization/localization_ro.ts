@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Activează suportul pentru parole de unică folosință (OTP)</translation>
+        <translation>Activează suportul pentru parole de unică folosință (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -646,7 +646,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">Nu s-a putut porni %1</translation>
+        <translation>Nu s-a putut porni %1</translation>
     </message>
 </context>
 <context>
@@ -847,12 +847,12 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">Copierea a eșuat</translation>
+        <translation>Copierea a eșuat</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">Nu s-a putut copia %1 în %2.</translation>
+        <translation>Nu s-a putut copia %1 în %2.</translation>
     </message>
 </context>
 <context>
@@ -1476,7 +1476,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Operația a expirat; se reactivează interfața.</translation>
+        <translation>Operația a expirat; se reactivează interfața.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="372"/>
@@ -1486,7 +1486,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Nu s-a putut decripta această intrare de parolă</translation>
+        <translation>Nu s-a putut decripta această intrare de parolă</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="740"/>
@@ -1514,12 +1514,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Căutarea în conținut folosește expresii regulate POSIX de bază (pass grep).</translation>
+        <translation>Căutarea în conținut folosește expresii regulate POSIX de bază (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Căutarea în conținut folosește expresii regulate compatibile cu Perl (PCRE).</translation>
+        <translation>Căutarea în conținut folosește expresii regulate compatibile cu Perl (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1007"/>
@@ -1538,12 +1538,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">nume nevalid</translation>
+        <translation>nume nevalid</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Acest nume ar indica în afara depozitului de parole. Alegeți alt nume.</translation>
+        <translation>Acest nume ar indica în afara depozitului de parole. Alegeți alt nume.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1267"/>
@@ -1588,7 +1588,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Această intrare conține un secret OTP, nu o parolă</translation>
+        <translation>Această intrare conține un secret OTP, nu o parolă</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1880"/>
@@ -1706,7 +1706,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Secunde până la schimbarea codului OTP</translation>
+        <translation>Secunde până la schimbarea codului OTP</translation>
     </message>
 </context>
 <context>
@@ -1734,7 +1734,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">Nu este configurat niciun executabil GPG</translation>
+        <translation>Nu este configurat niciun executabil GPG</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1812,12 +1812,12 @@ Continuați?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">URI otpauth:// sau secret base32</translation>
+        <translation>URI otpauth:// sau secret base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Secret OTP nevalid</translation>
+        <translation>Secret OTP nevalid</translation>
     </message>
 </context>
 <context>
@@ -1833,23 +1833,23 @@ Continuați?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">Parolă</translation>
+        <translation>Parolă</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Deschide %1 în browser</translation>
+        <translation>Deschide %1 în browser</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">cod OTP</translation>
+        <translation>cod OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Nu s-a găsit niciun cod OTP în această introducere de parolă</translation>
+        <translation>Nu s-a găsit niciun cod OTP în această introducere de parolă</translation>
     </message>
 </context>
 <context>
@@ -1948,22 +1948,22 @@ Continuați?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Nu s-a putut porni qrencode: %1</translation>
+        <translation>Nu s-a putut porni qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode nu s-a terminat la timp</translation>
+        <translation>qrencode nu s-a terminat la timp</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode s-a blocat</translation>
+        <translation>qrencode s-a blocat</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode s-a încheiat cu codul %1</translation>
+        <translation>qrencode s-a încheiat cu codul %1</translation>
     </message>
 </context>
 <context>
