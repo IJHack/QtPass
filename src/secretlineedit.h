@@ -5,6 +5,7 @@
 
 #include <QClipboard>
 #include <QLineEdit>
+#include <functional>
 
 class QMenu;
 
@@ -18,11 +19,12 @@ class QMenu;
  * paths: Ctrl+C, the context menu's Copy, and the X11 primary selection after
  * a mouse selection or a key. Unlike QTextEdit it has no
  * createMimeDataFromSelection() to hook. Here Ctrl+C and Copy put
- * buildClipboardMimeData() on the clipboard instead, so plain text never gets
- * there; the primary selection, which QLineEdit fills itself, is replaced by
- * the same data before the event returns. Each copy emits copied() so the
- * text is cleared with the rest when the autoclear timer runs. Dragging is
- * off, as QLineEdit has it by default.
+ * buildClipboardMimeData() on the clipboard instead, and the key and mouse
+ * handlers keep QLineEdit from filling the primary selection at all (it runs
+ * them in Password echo mode) and fill it with the marked data instead, so
+ * plain text never gets there, not even for a moment. Each copy emits copied()
+ * so the text is cleared with the rest when the autoclear timer runs. Dragging
+ * is off, as QLineEdit has it by default.
  */
 class SecretLineEdit : public QLineEdit {
   Q_OBJECT
@@ -49,14 +51,16 @@ signals:
 
 protected:
   /**
-   * @brief Ctrl+C copies with the hints; after any other key, the primary
-   * selection QLineEdit may have filled is replaced.
+   * @brief Ctrl+C copies with the hints; any other key is handled without
+   * QLineEdit's plain-text copy to the primary selection, which then gets
+   * the marked selection.
    * @param event The key event.
    */
   void keyPressEvent(QKeyEvent *event) override;
 
   /**
-   * @brief Replaces the primary selection QLineEdit fills on release.
+   * @brief Fills the primary selection with the marked selection on a
+   * left-button release, instead of QLineEdit's plain-text copy.
    * @param event The mouse event.
    */
   void mouseReleaseEvent(QMouseEvent *event) override;
@@ -69,7 +73,8 @@ protected:
 
 private:
   void copySelection(QClipboard::Mode mode);
-  void reclaimPrimarySelection();
+  void withoutPlainSelectionCopy(const std::function<void()> &handler);
+  void publishSelection();
 };
 
 #endif // SRC_SECRETLINEEDIT_H_

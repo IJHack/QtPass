@@ -30,14 +30,19 @@ void SecretLineEdit::keyPressEvent(QKeyEvent *event) {
     event->accept();
     return;
   }
-  QLineEdit::keyPressEvent(event);
-  reclaimPrimarySelection();
+  withoutPlainSelectionCopy([this, event] { QLineEdit::keyPressEvent(event); });
+  // Where QLineEdit would have copied: after a key it handled, not after a
+  // lone modifier or another key it ignores.
+  if (event->isAccepted()) {
+    publishSelection();
+  }
 }
 
 void SecretLineEdit::mouseReleaseEvent(QMouseEvent *event) {
-  QLineEdit::mouseReleaseEvent(event);
+  withoutPlainSelectionCopy(
+      [this, event] { QLineEdit::mouseReleaseEvent(event); });
   if (event->button() == Qt::LeftButton) {
-    reclaimPrimarySelection();
+    publishSelection();
   }
 }
 
@@ -57,12 +62,25 @@ void SecretLineEdit::copySelection(QClipboard::Mode mode) {
   emit copied(text);
 }
 
-void SecretLineEdit::reclaimPrimarySelection() {
-  QClipboard *clipboard = QApplication::clipboard();
-  // Only what QLineEdit just put there: its own plain-text copy of the
-  // selection, which this replaces with the marked one.
-  if (clipboard->supportsSelection() && hasSelectedText() &&
-      clipboard->text(QClipboard::Selection) == selectedText()) {
+void SecretLineEdit::withoutPlainSelectionCopy(
+    const std::function<void()> &handler) {
+  // QLineEdit fills the primary selection with plain text itself, at the end
+  // of every key it handles and on a left-button release, but only in Normal
+  // echo mode (QWidgetLineControl::copy()). Replacing that afterwards still
+  // leaves a moment in which a clipboard manager could take the unmarked
+  // text, so the base handler runs in Password mode instead: same length,
+  // so cursor and selection stay where they are, and no copy.
+  if (echoMode() != QLineEdit::Normal) {
+    handler();
+    return;
+  }
+  setEchoMode(QLineEdit::Password);
+  handler();
+  setEchoMode(QLineEdit::Normal);
+}
+
+void SecretLineEdit::publishSelection() {
+  if (QApplication::clipboard()->supportsSelection()) {
     copySelection(QClipboard::Selection);
   }
 }

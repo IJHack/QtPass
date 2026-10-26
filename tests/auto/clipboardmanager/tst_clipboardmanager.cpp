@@ -38,6 +38,7 @@ private slots:
   void secretLineEditCopiesOnlyWhenShownAndMarksIt();
   void secretLineEditContextMenuCopyIsMarked();
   void secretLineEditMarksThePrimarySelection();
+  void secretLineEditNeverPublishesAPlainSelection();
 
 private:
   static void saveClipboardSettings(bool autoclear, int seconds,
@@ -325,6 +326,54 @@ void tst_clipboardmanager::secretLineEditMarksThePrimarySelection() {
   QVERIFY(mime != nullptr);
   QCOMPARE(mime->text(), QStringLiteral("hunter2"));
   QVERIFY(hasSecretHints(mime));
+}
+
+/**
+ * @brief The primary selection never holds the shown password unmarked, not
+ * even for a moment: QLineEdit's own plain-text copy, which a clipboard
+ * manager watching the selection could take before it was replaced, is not
+ * made at all. Every change of the selection is checked as it happens, for a
+ * keyboard selection, a mouse selection, and a key (Backspace, a no-op in a
+ * read-only field) that QLineEdit would answer with another copy.
+ */
+void tst_clipboardmanager::secretLineEditNeverPublishesAPlainSelection() {
+  QClipboard *clipboard = QApplication::clipboard();
+  if (!clipboard->supportsSelection()) {
+    QSKIP("this platform has no primary selection");
+  }
+  SecretLineEdit edit;
+  edit.setText(QStringLiteral("hunter2 secret"));
+  edit.setReadOnly(true);
+  edit.setEchoMode(QLineEdit::Normal);
+  edit.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&edit));
+
+  int changes = 0;
+  QStringList unmarked;
+  connect(clipboard, &QClipboard::selectionChanged, &edit, [&] {
+    const QMimeData *mime = clipboard->mimeData(QClipboard::Selection);
+    if (mime != nullptr && mime->hasText() && !mime->text().isEmpty()) {
+      ++changes;
+      if (!hasSecretHints(mime)) {
+        unmarked << mime->text();
+      }
+    }
+  });
+
+  edit.setCursorPosition(0);
+  QTest::keyClick(&edit, Qt::Key_End, Qt::ShiftModifier);
+  QTest::keyClick(&edit, Qt::Key_Backspace);
+  edit.deselect();
+  const int y = edit.height() / 2;
+  QTest::mousePress(&edit, Qt::LeftButton, {}, QPoint(2, y));
+  QTest::mouseMove(&edit, QPoint(edit.width() - 2, y));
+  QTest::mouseRelease(&edit, Qt::LeftButton, {}, QPoint(edit.width() - 2, y));
+  QApplication::processEvents();
+
+  QVERIFY2(changes > 0, "the selection should have been filled");
+  QVERIFY2(unmarked.isEmpty(),
+           qPrintable(QStringLiteral("unmarked in the selection: ") +
+                      unmarked.join(QStringLiteral(" | "))));
 }
 
 QTEST_MAIN(tst_clipboardmanager)
