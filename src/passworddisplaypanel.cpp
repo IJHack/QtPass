@@ -7,6 +7,7 @@
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
 #include "qpushbuttonwithclipboard.h"
+#include "secretlineedit.h"
 #include "secrettextbrowser.h"
 #include "totp.h"
 #include "util.h"
@@ -199,7 +200,11 @@ void PasswordDisplayPanel::addHiddenPassword(QLayout *layout,
                                              const QString &field,
                                              const QString &value,
                                              const QString &lineStyle) {
-  auto *passwordLineEdit = new QLineEdit();
+  // Shown with the eye button, the password can be selected and copied;
+  // SecretLineEdit marks that copy and reports it, as the value browsers do.
+  auto *passwordLineEdit = new SecretLineEdit();
+  connect(passwordLineEdit, &SecretLineEdit::copied, this,
+          &PasswordDisplayPanel::textCopied);
   passwordLineEdit->setObjectName(field);
   passwordLineEdit->setText(value);
   passwordLineEdit->setReadOnly(true);
