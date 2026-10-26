@@ -500,7 +500,9 @@ void QtPass::clearClipboard() {
 auto buildClipboardMimeData(const QString &text) -> QMimeData * {
   auto *mimeData = new QMimeData();
   mimeData->setText(text);
-#ifdef Q_OS_LINUX
+// The KDE hint (what wl-copy --sensitive sets) keeps the secret out of
+// Klipper, CopyQ and cliphist history, on the BSDs as well as on Linux.
+#if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
   mimeData->setData("x-kde-passwordManagerHint", QByteArray("secret"));
 #endif
 #ifdef Q_OS_MAC

@@ -170,7 +170,7 @@ private Q_SLOTS:
   void qProgressIndicatorStartStop();
   void namedValueBasic();
   void namedValueMultiple();
-  void buildClipboardMimeDataLinux();
+  void buildClipboardMimeDataUnix();
   void buildClipboardMimeDataWindows();
   void buildClipboardMimeDataMac();
   void utilRegexEnsuresGpg();
@@ -1678,17 +1678,17 @@ void tst_util::findBinaryInPathTempExecutableInTempDir() {
 #endif
 }
 
-void tst_util::buildClipboardMimeDataLinux() {
-#ifdef Q_OS_LINUX
+void tst_util::buildClipboardMimeDataUnix() {
+#if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
   QMimeData *mime = buildClipboardMimeData(QStringLiteral("testpassword"));
   QVERIFY(mime != nullptr);
   QVERIFY2(mime->hasText(), "Mime data should contain text");
   QVERIFY2(mime->text() == "testpassword", "Text should match");
   QVERIFY2(mime->data("x-kde-passwordManagerHint") == QByteArray("secret"),
-           "Linux should set password hint");
+           "Linux and the BSDs should set the KDE password hint");
   delete mime;
 #else
-  QSKIP("Linux-only test");
+  QSKIP("Test for Unix systems other than macOS");
 #endif
 }
 
