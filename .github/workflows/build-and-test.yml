@@ -78,6 +78,10 @@ jobs:
           - name: Ubuntu
             os: ubuntu-latest
             qt: "6.11"
+            # Also builds and tests the in-process OpenPGP spike (#2005)
+            # against Ubuntu's librnp and GnuPG.
+            qmake_config: CONFIG+=rnp
+            extra_packages: librnp-dev
           - name: Windows
             os: windows-latest
             qt: "6.8"
@@ -148,9 +152,12 @@ jobs:
         # pass-extension-otp is only needed by tst_integration's coverage of the
         # legacy Pass::OtpGenerate passthrough. QtPass itself generates TOTP
         # in-process, so this can go whenever that test does.
+        env:
+          EXTRA_PACKAGES: ${{ matrix.extra_packages }}
         run: |
           sudo apt-get update
-          sudo apt-get install -y pinentry-tty pass pass-extension-otp
+          # shellcheck disable=SC2086 # a space-separated package list
+          sudo apt-get install -y pinentry-tty pass pass-extension-otp $EXTRA_PACKAGES
 
       - name: Configure Git for tests
         if: steps.need_build.outputs.run_build == 'true'
@@ -168,7 +175,13 @@ jobs:
 
       - name: qmake
         if: steps.need_build.outputs.run_build == 'true'
-        run: qmake
+        env:
+          QMAKE_CONFIG: ${{ matrix.qmake_config }}
+        # On Windows (PowerShell) $QMAKE_CONFIG is an unset variable, so qmake
+        # runs without arguments there, as before.
+        run: |
+          # shellcheck disable=SC2086 # empty or one CONFIG+= argument
+          qmake $QMAKE_CONFIG
 
       - name: make
         if: steps.need_build.outputs.run_build == 'true'
