@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Ota kertakäyttösalasanojen (OTP) tuki käyttöön</translation>
+        <translation>Ota kertakäyttösalasanojen (OTP) tuki käyttöön</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -646,7 +646,7 @@ sähköposti</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">%1:n käynnistys epäonnistui</translation>
+        <translation>%1:n käynnistys epäonnistui</translation>
     </message>
 </context>
 <context>
@@ -847,12 +847,12 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">Kopiointi epäonnistui</translation>
+        <translation>Kopiointi epäonnistui</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">Kohteen %1 kopiointi kohteeseen %2 epäonnistui.</translation>
+        <translation>Kohteen %1 kopiointi kohteeseen %2 epäonnistui.</translation>
     </message>
 </context>
 <context>
@@ -1475,7 +1475,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Toiminto aikakatkaistiin; käyttöliittymä otetaan uudelleen käyttöön.</translation>
+        <translation>Toiminto aikakatkaistiin; käyttöliittymä otetaan uudelleen käyttöön.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="372"/>
@@ -1485,7 +1485,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Tämän salasanan salauksen purku epäonnistui</translation>
+        <translation>Tämän salasanan salauksen purku epäonnistui</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="740"/>
@@ -1513,12 +1513,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Sisältöhaku käyttää POSIX-perussäännöllisiä lausekkeita (pass grep).</translation>
+        <translation>Sisältöhaku käyttää POSIX-perussäännöllisiä lausekkeita (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Sisältöhaku käyttää Perl-yhteensopivia säännöllisiä lausekkeita (PCRE).</translation>
+        <translation>Sisältöhaku käyttää Perl-yhteensopivia säännöllisiä lausekkeita (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1007"/>
@@ -1536,12 +1536,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Virheellinen nimi</translation>
+        <translation>Virheellinen nimi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Tuo nimi viittaisi salasanavaraston ulkopuolelle. Valitse eri nimi.</translation>
+        <translation>Tuo nimi viittaisi salasanavaraston ulkopuolelle. Valitse eri nimi.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1267"/>
@@ -1586,7 +1586,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Tämä kohde sisältää OTP-salaisuuden, ei salasanaa</translation>
+        <translation>Tämä kohde sisältää OTP-salaisuuden, ei salasanaa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1880"/>
@@ -1704,7 +1704,7 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Sekunteja OTP-koodin vaihtumiseen</translation>
+        <translation>Sekunteja OTP-koodin vaihtumiseen</translation>
     </message>
 </context>
 <context>
@@ -1732,7 +1732,7 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">GPG-ohjelmaa ei ole määritetty</translation>
+        <translation>GPG-ohjelmaa ei ole määritetty</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1810,12 +1810,12 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">otpauth://-URI tai base32-salaisuus</translation>
+        <translation>otpauth://-URI tai base32-salaisuus</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Virheellinen OTP-salaisuus</translation>
+        <translation>Virheellinen OTP-salaisuus</translation>
     </message>
 </context>
 <context>
@@ -1831,23 +1831,23 @@ Jatketaanko?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">Salasana</translation>
+        <translation>Salasana</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Avaa %1 selaimessa</translation>
+        <translation>Avaa %1 selaimessa</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP koodi</translation>
+        <translation>OTP koodi</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Tässä salasanassa ei löytynyt OTP-koodia</translation>
+        <translation>Tässä salasanassa ei löytynyt OTP-koodia</translation>
     </message>
 </context>
 <context>
@@ -1946,22 +1946,22 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">qrencoden käynnistys epäonnistui: %1</translation>
+        <translation>qrencoden käynnistys epäonnistui: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode ei valmistunut ajoissa</translation>
+        <translation>qrencode ei valmistunut ajoissa</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode kaatui</translation>
+        <translation>qrencode kaatui</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode päättyi koodilla %1</translation>
+        <translation>qrencode päättyi koodilla %1</translation>
     </message>
 </context>
 <context>
