@@ -30,6 +30,7 @@ var searchData=
   ['resolvemovedestination_27',['resolveMoveDestination',['../class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563',1,'ImitatePass']]],
   ['restore_28',['restore',['../namespace_window_state_store.html#a33978c57279f86bfb1a416ad199858e8',1,'WindowStateStore']]],
   ['restorewindow_29',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
-  ['rootindex_30',['rootIndex',['../class_store_tree.html#a1e44af30d459550e26502c6733705e9d',1,'StoreTree']]],
-  ['rootindexfor_31',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
+  ['rnpcrypto_30',['RnpCrypto',['../class_rnp_crypto.html#a48d67c8b98abcd1583159eedbdba76a0',1,'RnpCrypto']]],
+  ['rootindex_31',['rootIndex',['../class_store_tree.html#a1e44af30d459550e26502c6733705e9d',1,'StoreTree']]],
+  ['rootindexfor_32',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
 ];

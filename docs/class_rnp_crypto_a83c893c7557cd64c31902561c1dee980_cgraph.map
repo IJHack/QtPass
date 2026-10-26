@@ -1,0 +1,5 @@
+<map id="RnpCrypto::~RnpCrypto" name="RnpCrypto::~RnpCrypto">
+<area shape="rect" id="Node000001" title="Frees the keyring and everything RNP holds for it." alt="" coords="5,5,183,31"/>
+<area shape="rect" id="Node000002" href="$class_rnp_crypto.html#a48d67c8b98abcd1583159eedbdba76a0" title="Creates an empty keyring." alt="" coords="231,5,397,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,15,217,15,217,21,183,21"/>
+</map>

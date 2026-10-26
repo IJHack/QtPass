@@ -36,7 +36,8 @@ var searchData=
   ['restore_33',['restore',['../namespace_window_state_store.html#a33978c57279f86bfb1a416ad199858e8',1,'WindowStateStore']]],
   ['restorecursor_34',['restoreCursor',['../struct_grep_search_controller_1_1_finish_outcome.html#ac239184fd57227541a8be6147f6616b8',1,'GrepSearchController::FinishOutcome']]],
   ['restorewindow_35',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
-  ['rollback_36',['Rollback',['../class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a446c9e952debe114c86bbd9e5eea7d61',1,'GpgIdGeneration']]],
-  ['rootindex_37',['rootIndex',['../class_store_tree.html#a1e44af30d459550e26502c6733705e9d',1,'StoreTree']]],
-  ['rootindexfor_38',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
+  ['rnpcrypto_36',['RnpCrypto',['../class_rnp_crypto.html',1,'RnpCrypto'],['../class_rnp_crypto.html#a48d67c8b98abcd1583159eedbdba76a0',1,'RnpCrypto::RnpCrypto()']]],
+  ['rollback_37',['Rollback',['../class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a446c9e952debe114c86bbd9e5eea7d61',1,'GpgIdGeneration']]],
+  ['rootindex_38',['rootIndex',['../class_store_tree.html#a1e44af30d459550e26502c6733705e9d',1,'StoreTree']]],
+  ['rootindexfor_39',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
 ];

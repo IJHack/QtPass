@@ -10,5 +10,6 @@ var searchData=
   ['kfolderprefix_7',['kFolderPrefix',['../class_gpg_id_generation.html#abcdc85e16f816169a5bd5b665bb99000',1,'GpgIdGeneration']]],
   ['kgenerationprefix_8',['kGenerationPrefix',['../class_gpg_id_generation.html#aec962bd7ca805bf9164a35f07ca68c88',1,'GpgIdGeneration']]],
   ['kind_9',['kind',['../struct_store_drag_item.html#aa143fe18023b8dba5836cc930cfb3904',1,'StoreDragItem']]],
-  ['kmaxgeneration_10',['kMaxGeneration',['../class_gpg_id_generation.html#ad1838a8d88e4b98e3f573bf89556a164',1,'GpgIdGeneration']]]
+  ['kmaxgeneration_10',['kMaxGeneration',['../class_gpg_id_generation.html#ad1838a8d88e4b98e3f573bf89556a164',1,'GpgIdGeneration']]],
+  ['kmaxplaintextbytes_11',['kMaxPlaintextBytes',['../class_rnp_crypto.html#adcd96547f63a74078b29ba5f2c078e35',1,'RnpCrypto']]]
 ];
