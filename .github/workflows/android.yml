@@ -3,9 +3,9 @@ name: Android
 
 # Keeps QtPass building for Android (#2005): src and main for arm64-v8a with
 # the Qt Android kit, packaged into a debug APK by androiddeployqt against
-# API 36 (Qt 6.11 pulls in androidx.core 1.17, which needs compileSdk 36). A build
-# check only; the APK is the desktop UI and has no OpenPGP backend that works
-# on Android yet. Runs when the build setup or the code changes.
+# API 36 (Qt 6.11 pulls in androidx.core 1.17, which needs compileSdk 36).
+# A build check only; the APK is the desktop UI and has no OpenPGP backend
+# that works on Android yet. Runs when the build setup or the code changes.
 on:
   push:
     branches: ["main"]
