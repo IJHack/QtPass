@@ -290,6 +290,7 @@ private Q_SLOTS:
   void updateEnvSetsExpectedVars();
   void updateEnvEmptyCustomCharsetFallsBackToAllChars();
   void updateEnvWslenvContainsRequiredVars();
+  void gpgOptsCarryTheOutputLimitAfterTheUsersOwn();
   void gpgErrorMessageKeyExpiredStatusToken();
   void gpgErrorMessageKeyRevokedStatusToken();
   void gpgErrorMessageNoPubkeyStatusToken();
@@ -360,6 +361,7 @@ private Q_SLOTS:
   void getFolderTemplateInParent();
   void getFolderTemplateNoneFound();
   void getFolderTemplateCommentIgnored();
+  void templateFilesMustBeRegularAndSmall();
   // normalizeFolderPath — new contract (always forward slash)
   void normalizeFolder();
   // ImitatePass::createBackupCommit must not sweep up untracked files (#1682)
@@ -2336,10 +2338,43 @@ void tst_util::updateEnvWslenvContainsRequiredVars() {
   const QString wslenv = env.value(QStringLiteral("WSLENV"));
   QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_DIR/p")),
            "WSLENV should include PASSWORD_STORE_DIR/p");
-  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w")),
-           "WSLENV should include PASSWORD_STORE_GENERATED_LENGTH/w");
-  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")),
-           "WSLENV should include PASSWORD_STORE_CHARACTER_SET/w");
+  // /u: forwarded from Windows into WSL, where pass runs. /w is the other
+  // direction and would leave pass without the value.
+  for (const char *var :
+       {"PASSWORD_STORE_SIGNING_KEY", "PASSWORD_STORE_GENERATED_LENGTH",
+        "PASSWORD_STORE_CHARACTER_SET", "PASSWORD_STORE_GPG_OPTS"}) {
+    const QString entry = QString::fromLatin1(var) + QStringLiteral("/u");
+    QVERIFY2(wslenv.split(u':').contains(entry),
+             qPrintable(QStringLiteral("WSLENV should include ") + entry));
+  }
+  QVERIFY2(!wslenv.contains(QStringLiteral("/w")),
+           "nothing QtPass sets for pass may be forwarded out of WSL only");
+}
+
+/**
+ * @brief The pass backend gets the decryption output limit through
+ * PASSWORD_STORE_GPG_OPTS, after the user's own options, once.
+ */
+void tst_util::gpgOptsCarryTheOutputLimitAfterTheUsersOwn() {
+  const bool had = qEnvironmentVariableIsSet("PASSWORD_STORE_GPG_OPTS");
+  const QByteArray previous = qgetenv("PASSWORD_STORE_GPG_OPTS");
+  const auto restore = qScopeGuard([had, previous] {
+    if (had) {
+      qputenv("PASSWORD_STORE_GPG_OPTS", previous);
+    } else {
+      qunsetenv("PASSWORD_STORE_GPG_OPTS");
+    }
+  });
+  qputenv("PASSWORD_STORE_GPG_OPTS", "--trust-model always");
+  TestPass pass;
+  AppSettings s = QtPassSettings::load();
+  pass.init(s);
+  pass.updateEnv();
+  pass.updateEnv();
+  const QString expected = QStringLiteral("--trust-model always ") +
+                           Pass::maxOutputArgs().join(QLatin1Char(' '));
+  QCOMPARE(pass.environment().value(QStringLiteral("PASSWORD_STORE_GPG_OPTS")),
+           expected);
 }
 
 // --- gpgErrorMessage tests ---
@@ -3385,6 +3420,48 @@ void tst_util::getFolderTemplateCommentIgnored() {
   QString result = TemplateIO::getFolderTemplate(subPath, store.path());
   QVERIFY2(result.isEmpty(),
            ".default_template with only a comment must return empty string");
+}
+
+/**
+ * @brief Template files come from whoever shares the store: a link (to a
+ * device that never ends, say) or a file far beyond a template's size is
+ * not read at all, rather than read into memory on the GUI thread.
+ */
+void tst_util::templateFilesMustBeRegularAndSmall() {
+#ifdef Q_OS_WIN
+  QSKIP("uses symbolic links to /dev/zero");
+#else
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QDir storeDir(store.path());
+  QVERIFY(storeDir.mkdir("sub"));
+  const QString subPath = storeDir.filePath("sub");
+  QVERIFY(QFile::link(QStringLiteral("/dev/zero"),
+                      QDir(subPath).filePath(".default_template")));
+  QVERIFY(QFile::link(QStringLiteral("/dev/zero"),
+                      storeDir.filePath(".templates")));
+  QVERIFY(TemplateIO::getFolderTemplate(subPath, store.path()).isEmpty());
+  QVERIFY(TemplateIO::readTemplates(store.path()).isEmpty());
+
+  // A link to a proper template file is not read either: a link inside the
+  // store is not part of it.
+  QVERIFY(QFile::remove(QDir(subPath).filePath(".default_template")));
+  QFile real(storeDir.filePath("elsewhere"));
+  QVERIFY(real.open(QIODevice::WriteOnly));
+  real.write("linked\n");
+  real.close();
+  QVERIFY(QFile::link(real.fileName(),
+                      QDir(subPath).filePath(".default_template")));
+  QVERIFY(TemplateIO::getFolderTemplate(subPath, store.path()).isEmpty());
+
+  // One huge line: not a template name.
+  QVERIFY(QFile::remove(QDir(subPath).filePath(".default_template")));
+  QFile big(QDir(subPath).filePath(".default_template"));
+  QVERIFY(big.open(QIODevice::WriteOnly));
+  big.write(QByteArray(200 * 1024, 'a'));
+  big.close();
+  QVERIFY(TemplateIO::getFolderTemplate(subPath, store.path()).isEmpty());
+#endif
 }
 
 /**
@@ -4715,9 +4792,11 @@ void tst_util::wslenvMergesIntoAnInheritedEntry() {
       pass.environment().value(QStringLiteral("WSLENV")).split(u':');
   QCOMPARE(parts.first(), QStringLiteral("MY_VAR/u"));
   QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_DIR/p")), 1);
-  QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w")), 1);
-  QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")), 1);
-  QCOMPARE(parts.size(), 4);
+  QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_SIGNING_KEY/u")), 1);
+  QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/u")), 1);
+  QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_CHARACTER_SET/u")), 1);
+  QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_GPG_OPTS/u")), 1);
+  QCOMPARE(parts.size(), 6);
 }
 
 /**

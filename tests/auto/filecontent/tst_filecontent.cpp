@@ -21,6 +21,7 @@ private Q_SLOTS:
   void parseMultipleNamedFields();
   void parseMatchingTemplateFields();
   void parseOtpauthHiddenLine();
+  void parseOtpauthNotAFieldEvenWhenTheTemplateNamesIt();
   void parseColonInValue();
   void parseTemplateFieldsCaseSensitive();
   void parseMultiplePasswordLines();
@@ -168,6 +169,27 @@ void tst_filecontent::parseMultipleNamedFields() {
            "Second user field should be parsed as user: u2");
   QVERIFY2(nv[2].name == "user" && nv[2].value == "u3",
            "Third user field should be parsed as user: u3");
+}
+
+/**
+ * @brief A template listing "otpauth" must not split an otpauth:// line into
+ * a field: without its scheme the value no longer reads as a shared secret
+ * and was shown, seed and all.
+ */
+void tst_filecontent::parseOtpauthNotAFieldEvenWhenTheTemplateNamesIt() {
+  const QString uri =
+      QStringLiteral("otpauth://totp/Example:me?secret=JBSWY3DPEHPK3PXP");
+  const FileContent fc = FileContent::parse(
+      QStringLiteral("hunter2\n") + uri + QStringLiteral("\nlogin: me"),
+      {QStringLiteral("otpauth"), QStringLiteral("login")}, false);
+  for (const NamedValue &nv : fc.getNamedValues()) {
+    QVERIFY2(!nv.value.contains(QLatin1String("secret=")),
+             qPrintable(nv.name + QStringLiteral(" carries the seed")));
+  }
+  QVERIFY(!fc.getRemainingDataForDisplay().contains(QLatin1String("secret=")));
+  QCOMPARE(fc.getOtpUri(), uri);
+  // Still there to edit and save back.
+  QVERIFY(fc.getRemainingData().contains(uri));
 }
 
 void tst_filecontent::parseOtpauthHiddenLine() {

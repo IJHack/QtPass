@@ -7,6 +7,7 @@
 
 #include "../../../src/clipboardmanager.h"
 #include "../../../src/qtpasssettings.h"
+#include "../../../src/secrettextbrowser.h"
 #include "../testsettings.h"
 
 /**
@@ -26,6 +27,8 @@ private slots:
   void clearWithNothingTrackedIsSilent();
   void copyIfAlwaysOnlyCopiesInAlwaysMode();
   void copyIfAlwaysDoesNotDisturbTracking();
+  void trackedCopyIsClearedWithoutDroppingTheCopiedPassword();
+  void secretTextBrowserMarksAndReportsWhatIsCopied();
 
 private:
   static void saveClipboardSettings(bool autoclear, int seconds,
@@ -121,6 +124,53 @@ void tst_clipboardmanager::copyIfAlwaysDoesNotDisturbTracking() {
   QCOMPARE(manager.trackedText(), QStringLiteral("hunter2"));
   manager.clear();
   QVERIFY(QApplication::clipboard()->text().isEmpty());
+}
+
+/**
+ * @brief Text copied out of a secret view is tracked beside the password a
+ * copy button put there, not instead of it: both are cleared (#1607 again
+ * otherwise, the password staying past its autoclear).
+ */
+void tst_clipboardmanager::
+    trackedCopyIsClearedWithoutDroppingTheCopiedPassword() {
+  saveClipboardSettings(true, 1, Enums::CLIPBOARD_ON_DEMAND);
+  ClipboardManager manager;
+  manager.copyText(QStringLiteral("hunter2"));
+  manager.trackCopied(QStringLiteral("pin: 1234"));
+  QCOMPARE(manager.trackedText(), QStringLiteral("hunter2"));
+  QTRY_VERIFY_WITH_TIMEOUT(QApplication::clipboard()->text().isEmpty(), 3000);
+
+  manager.copyText(QStringLiteral("hunter2"));
+  QApplication::clipboard()->setText(QStringLiteral("pin: 1234"));
+  manager.trackCopied(QStringLiteral("pin: 1234"));
+  QTRY_VERIFY_WITH_TIMEOUT(QApplication::clipboard()->text().isEmpty(), 3000);
+  QVERIFY(manager.trackedText().isEmpty());
+}
+
+/**
+ * @brief What is copied out of a SecretTextBrowser carries the same secret
+ * hints as ClipboardManager's own copies, as plain text, and is reported for
+ * autoclear.
+ */
+void tst_clipboardmanager::secretTextBrowserMarksAndReportsWhatIsCopied() {
+  SecretTextBrowser browser;
+  browser.setPlainText(QStringLiteral("pin: 1234"));
+  browser.selectAll();
+  QSignalSpy copied(&browser, &SecretTextBrowser::copied);
+  browser.copy();
+  QCOMPARE(copied.count(), 1);
+  QCOMPARE(copied.first().at(0).toString(), QStringLiteral("pin: 1234"));
+  const QMimeData *mime = QApplication::clipboard()->mimeData();
+  QVERIFY(mime != nullptr);
+  QCOMPARE(mime->text(), QStringLiteral("pin: 1234"));
+  QVERIFY2(!mime->hasHtml(), "a secret goes out as plain text only");
+  QMimeData *expected = buildClipboardMimeData(QStringLiteral("x"));
+  for (const QString &format : expected->formats()) {
+    if (format != QLatin1String("text/plain")) {
+      QVERIFY2(mime->hasFormat(format), qPrintable(format));
+    }
+  }
+  delete expected;
 }
 
 QTEST_MAIN(tst_clipboardmanager)

@@ -6,6 +6,7 @@
 #include <QMimeData>
 #include <QObject>
 #include <QString>
+#include <QStringList>
 #include <QTimer>
 
 /**
@@ -79,6 +80,18 @@ public slots:
   void copyText(const QString &text);
 
   /**
+   * @brief Track text that got onto the clipboard some other way.
+   *
+   * For a copy QtPass did not make through copyText(): text selected and
+   * copied from a widget showing a secret (Ctrl+C, the context menu, a drag,
+   * or the X11 primary selection that a mouse selection fills). The text is
+   * cleared with the rest when the autoclear timer runs; what copyText()
+   * tracks stays tracked too.
+   * @param text The copied text; nothing happens when it is empty.
+   */
+  void trackCopied(const QString &text);
+
+  /**
    * @brief Remove the tracked text from the clipboard if it is still there.
    *        Silent no-op when nothing is tracked.
    */
@@ -94,6 +107,7 @@ signals:
 private:
   QTimer m_clearTimer;
   QString m_clippedText;
+  QStringList m_otherCopies; ///< trackCopied() texts, cleared with the rest
 };
 
 #endif // SRC_CLIPBOARDMANAGER_H_

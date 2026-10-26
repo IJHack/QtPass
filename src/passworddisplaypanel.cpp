@@ -7,6 +7,7 @@
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
 #include "qpushbuttonwithclipboard.h"
+#include "secrettextbrowser.h"
 #include "totp.h"
 #include "util.h"
 
@@ -116,8 +117,8 @@ constexpr int kFieldHeight = 26;
 /// setOpenExternalLinks() would hand ssh://, ftp:// or user:pass@ URLs
 /// straight to the OS URL handler on click.
 auto valueBrowser(const QString &field, const QString &value,
-                  const QString &lineStyle) -> QTextBrowser * {
-  auto *browser = new QTextBrowser();
+                  const QString &lineStyle) -> SecretTextBrowser * {
+  auto *browser = new SecretTextBrowser();
   browser->setOpenExternalLinks(true);
   browser->setOpenLinks(true);
   browser->setMaximumHeight(kFieldHeight);
@@ -229,8 +230,11 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   if (s.hidePassword && trimmedField == QObject::tr("Password")) {
     addHiddenPassword(frame->layout(), trimmedField, trimmedValue, lineStyle);
   } else {
-    frame->layout()->addWidget(
-        valueBrowser(trimmedField, trimmedValue, lineStyle));
+    SecretTextBrowser *browser =
+        valueBrowser(trimmedField, trimmedValue, lineStyle);
+    connect(browser, &SecretTextBrowser::copied, this,
+            &PasswordDisplayPanel::textCopied);
+    frame->layout()->addWidget(browser);
   }
   addRow(position, new QLabel(trimmedField), frame);
 }

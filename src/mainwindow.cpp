@@ -173,6 +173,10 @@ void MainWindow::initDisplayPanel() {
       ui->gridLayout, ui->verticalLayoutPassword, this, this);
   connect(m_displayPanel, &PasswordDisplayPanel::copyRequested,
           &m_qtPass->clipboard(), &ClipboardManager::copyText);
+  connect(m_displayPanel, &PasswordDisplayPanel::textCopied,
+          &m_qtPass->clipboard(), &ClipboardManager::trackCopied);
+  connect(ui->textBrowser, &SecretTextBrowser::copied, &m_qtPass->clipboard(),
+          &ClipboardManager::trackCopied);
   connect(m_displayPanel, &PasswordDisplayPanel::qrRequested, m_qtPass,
           &QtPass::showTextAsQRCode);
   // Double-click on what is shown edits it, as in the tree.

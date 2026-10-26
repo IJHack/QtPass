@@ -8,6 +8,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Upgrade Notes
 
+- **WSL with a signing key: pass inside WSL now checks the signature.**
+  QtPass never handed the signing key to `pass` running in WSL, so `pass`
+  there did not check `.gpg-id.sig`. It does now: with a signing key set,
+  the store needs a signed `.gpg-id`, and WSL's own GnuPG needs that key
+  imported, or `pass` refuses to save and re-encrypt. The password length
+  and character set did not reach WSL either; they do now.
 - **Qt 6.8 or newer.** Qt 5 support ended with 1.8; `qmake` refuses older Qt
   with a clear message. Packagers building 1.8.x against Qt 5 need the
   `1.8` branch for that.
@@ -326,6 +332,23 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 - A copied password carries the KDE password hint on FreeBSD and OpenBSD
   too, as it did on Linux, so Klipper, CopyQ and cliphist keep it out of
   their history [#2038](https://github.com/IJHack/QtPass/pull/2038)
+- Decrypting an entry cannot fill QtPass's memory any more: gpg stops at
+  64 MiB of plaintext (`--max-output`, also for the `pass` backend through
+  `PASSWORD_STORE_GPG_OPTS`). An OpenPGP message is compressed, so a small
+  entry in a shared store could expand to gigabytes when shown, searched or
+  re-encrypted
+- `.templates` and `.default_template` are read only as the regular files
+  they claim to be, and only up to 64 KiB: a link to a device that never
+  ends (`/dev/zero`) made QtPass read forever on the GUI thread
+- An `otpauth://` line is never split into a field, also not when the
+  template lists `otpauth`: without its scheme the value no longer counted
+  as a shared secret and was shown, seed and all
+- Text selected and copied from a shown entry (Ctrl+C, the context menu, a
+  drag, or the X11 selection) carries the same "secret" hints as a copy
+  button's, so clipboard history leaves it out, and is cleared with the rest
+  when autoclear runs
+- With the `pass` backend in WSL, the signing key reaches `pass`, so it
+  checks `.gpg-id.sig` there as well; see the upgrade notes
 
 ### Changed
 

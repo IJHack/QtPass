@@ -9,6 +9,7 @@
  */
 
 #include "templateio.h"
+#include "util.h"
 
 #include <QDebug>
 #include <QDir>
@@ -21,6 +22,28 @@
 
 namespace {
 
+/// The template files are a few lines each; anything larger is not one.
+constexpr qint64 kMaxTemplateFileBytes = 64 * 1024;
+
+/**
+ * Opens a template file of the store for reading. Store contents are written
+ * by whoever shares the store, so it has to be the regular file it claims to
+ * be (not a link to a device or a FIFO, which would never end) and of a
+ * template file's size.
+ */
+auto openTemplateFile(const QString &path, QFile &file) -> bool {
+  if (!Util::openRegularFile(path, file)) {
+    return false;
+  }
+  if (file.size() > kMaxTemplateFileBytes) {
+    qWarning() << "Ignoring" << path << "of" << file.size()
+               << "bytes; a template file is at most" << kMaxTemplateFileBytes;
+    file.close();
+    return false;
+  }
+  return true;
+}
+
 /// The name of a `[section]` header line; nothing for any other line, and
 /// an empty name for `[]`.
 auto sectionHeader(const QString &line) -> std::optional<QString> {
@@ -32,8 +55,8 @@ auto sectionHeader(const QString &line) -> std::optional<QString> {
 
 /// The first line of @p dir's .default_template, when it names a template.
 auto defaultTemplateIn(const QDir &dir) -> QString {
-  QFile file(dir.filePath(".default_template"));
-  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+  QFile file;
+  if (!openTemplateFile(dir.filePath(".default_template"), file)) {
     return {};
   }
   QTextStream in(&file);
@@ -47,8 +70,8 @@ auto defaultTemplateIn(const QDir &dir) -> QString {
 auto TemplateIO::readTemplates(const QString &storePath)
     -> QHash<QString, QStringList> {
   QHash<QString, QStringList> result;
-  QFile file(QDir(storePath).filePath(".templates"));
-  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+  QFile file;
+  if (!openTemplateFile(QDir(storePath).filePath(".templates"), file)) {
     return result;
   }
   QTextStream in(&file);
