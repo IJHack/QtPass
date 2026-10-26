@@ -13,7 +13,7 @@ tracking issue, before announcing.
   `make install` produces; 2.0 adds `share/man/man1/qtpass.1.gz`. The port
   uses `USE_GITHUB`, so its checksum is of GitHub's codeload archive, not of
   our release asset.
-- Test first in [annejan/qtpass-freebsd-port-test](https://github.com/annejan/qtpass-freebsd-port-test):
+- Test first in [annejan/qtpass-bsd-port-test](https://github.com/annejan/qtpass-bsd-port-test):
   commit the diff as `patches/qtpass-X.Y.Z.patch` and push, or dispatch
   _sysutils/qtpass port test_ with the patch path and a ports branch (`main`,
   `2026Q3`, ...). Leave `run_suite` at `true` so QtPass's `make check` runs.
@@ -35,11 +35,19 @@ tracking issue, before announcing.
 
 ## OpenBSD `security/qtpass` (not ours)
 
-Maintained by Stefan Hagen. The FreeBSD test bed has a third job: a diff
+Maintained by Stefan Hagen. The BSD port test bed has a third job: a diff
 against ports `-current` in `patches/openbsd/` runs through `portcheck`,
 `makesum`, `build`, `fake`, `update-plist`, `port-lib-depends-check`,
 `package` and `install` in an OpenBSD VM. Send the tested diff to
 `ports@openbsd.org` with the maintainer in Cc; do not expect to commit it.
+
+- Send the diff as an attachment, in the form OpenBSD uses: `Index:` headers
+  and `diff -u -p` per file, paths relative to the port directory (applied
+  with `patch -p0`). Pasted into a mail body it gets its tabs and the leading
+  space of empty context lines stripped ("malformed patch", 1.8.4).
+- `x11/qt6/qtsvg` is a RUN_DEPENDS although nothing links it: QtPass draws its
+  SVG fallback icons through the `iconengines/libqsvgicon.so` plugin that
+  package ships. Reviewers may question it; its PLIST lists the plugin.
 
 ## MacPorts `aqua/QtPass` (ours)
 
