@@ -28,6 +28,14 @@ gcc:!clang:greaterThan(QMAKE_GCC_MAJOR_VERSION, 15): \
 # which QSharedMemory uses), and an Android app runs as one instance anyway.
 android: CONFIG *= nosingleapp
 
+# In-process OpenPGP through RNP (librnp), for a backend that needs no gpg
+# binary (#2005). Off by default: qmake6 CONFIG+=rnp.
+rnp {
+    CONFIG    += link_pkgconfig
+    PKGCONFIG += librnp
+    DEFINES   += QTPASS_HAVE_RNP
+}
+
 nosingleapp {
     DEFINES += SINGLE_APP=0
 } else {

@@ -70,6 +70,17 @@ QtPass is a GUI for [pass](https://www.passwordstore.org/), the standard Unix pa
 - The configured store root itself may be a link (`~/.password-store` pointing at a synced folder is a normal setup): that is your configuration, not something found inside the store.
 - **Nothing is logged that is fed to `gpg` or `pass` on standard input** (passwords, passphrases). With `QT_LOGGING_RULES=qtpass.debug=true` the commands and their arguments are logged; values of options such as `--passphrase` are redacted should they ever appear.
 
+### In-process OpenPGP (experimental, not in releases)
+
+A build option (`qmake6 CONFIG+=rnp`, see [#2005](https://github.com/IJHack/QtPass/issues/2005)) adds OpenPGP through the [RNP](https://github.com/rnpgp/rnp) library, for a future mode that needs no `gpg`, `git` or `pass` program (Windows without Gpg4win, Android). Nothing uses it yet, and GnuPG stays the default and the recommended way. The trade-off, for when that mode exists:
+
+- **With GnuPG, QtPass never holds your secret key.** `gpg-agent` keeps it in a process of its own, pinentry asks for the passphrase, and a smartcard or YubiKey can hold the key so that it never reaches the computer at all.
+- **Without GnuPG, QtPass holds it.** The secret key is exported from GnuPG and imported into a keyring of QtPass's own. While an entry is decrypted, the unlocked key is in QtPass's memory, and so is the passphrase you type into QtPass's dialog instead of pinentry.
+- **That keyring is in memory only today.** Once the mode keeps it on disk, the key is to stay protected by its own passphrase there, as GnuPG stores it.
+- **No smartcards or YubiKeys** in that mode: RNP cannot decrypt on a card. (Sequoia can, through the openpgp-card crates; a later option, not this one.)
+- **What it refuses, as GnuPG does:** a message without integrity protection (CFB without MDC, the kind EFAIL abuses), and plaintext beyond 64 MiB, so a small compressed entry cannot fill memory.
+- Choosing that mode will therefore be a deliberate step, explained where it is offered (the first-run wizard and the settings), never a silent fallback when `gpg` is missing.
+
 ## Dependencies
 
 QtPass depends on:
@@ -78,5 +89,6 @@ QtPass depends on:
 - **GPG** (gpg2) - encryption
 - **pass** (optional) - password store CLI
 - **Git** (optional) - version control
+- **RNP** (optional, `CONFIG+=rnp` builds only) - in-process OpenPGP, see above
 
 Ensure your system dependencies are kept up to date for security patches.
