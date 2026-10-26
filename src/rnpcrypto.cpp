@@ -14,10 +14,13 @@
 namespace {
 
 /// Message for an RNP failure, in the form "what: why".
-auto rnpError(const char *what, rnp_result_t result) -> QString {
+auto rnpError(const QString &what, rnp_result_t result) -> QString {
   return QStringLiteral("%1: %2").arg(
-      QString::fromLatin1(what),
-      QString::fromUtf8(rnp_result_to_string(result)));
+      what, QString::fromUtf8(rnp_result_to_string(result)));
+}
+
+auto rnpError(const char *what, rnp_result_t result) -> QString {
+  return rnpError(QString::fromUtf8(what), result);
 }
 
 void setError(QString *error, const QString &message) {
@@ -72,65 +75,152 @@ auto outputBytes(rnp_output_t output) -> QByteArray {
   return {reinterpret_cast<const char *>(buf), static_cast<qsizetype>(len)};
 }
 
+/// Whether @p key may be used: not expired, not revoked.
+auto isValidKey(rnp_key_handle_t key) -> bool {
+  bool valid = false;
+  return rnp_key_is_valid(key, &valid) == RNP_SUCCESS && valid;
+}
+
+/// The primary key's fingerprint for @p key, itself if it is primary.
+auto primaryFingerprint(rnp_key_handle_t key) -> QString {
+  bool primary = false;
+  rnp_key_is_primary(key, &primary);
+  char *fpr = nullptr;
+  if ((primary ? rnp_key_get_fprint(key, &fpr)
+               : rnp_key_get_primary_fprint(key, &fpr)) != RNP_SUCCESS) {
+    return {};
+  }
+  QString result = QString::fromLatin1(fpr);
+  rnp_buffer_destroy(fpr);
+  return result;
+}
+
 /**
- * The key a .gpg-id line names: a fingerprint (40 hex digits), a long key ID
- * (16), with or without 0x, or else a user ID such as an e-mail address.
+ * Fingerprints of the valid primary keys for which @p match holds, given
+ * each key in the keyring (primaries and subkeys) in turn.
  */
-auto locateKey(rnp_ffi_t ffi, const QString &recipient) -> Key {
-  QString id = recipient.trimmed();
-  if (id.startsWith(QLatin1String("0x"), Qt::CaseInsensitive)) {
-    id = id.mid(2);
-  }
-  static const QRegularExpression hex(QStringLiteral("^[0-9A-Fa-f]+$"));
-  const char *type = "userid";
-  if (hex.match(id).hasMatch()) {
-    if (id.size() == 40) {
-      type = "fingerprint";
-    } else if (id.size() == 16) {
-      type = "keyid";
-    }
-  }
-  if (std::strcmp(type, "userid") != 0) {
-    id = id.toUpper();
-  }
-  rnp_key_handle_t key = nullptr;
-  if (rnp_locate_key(ffi, type, id.toUtf8().constData(), &key) != RNP_SUCCESS) {
-    return nullptr;
-  }
-  if (key != nullptr || std::strcmp(type, "userid") != 0) {
-    return Key(key);
-  }
-  // rnp_locate_key matches a whole user ID only; gpg -r also takes part of
-  // one, and a .gpg-id often lists just the e-mail address.
+template <typename Match>
+auto matchingPrimaries(rnp_ffi_t ffi, Match match) -> QStringList {
+  QStringList primaries;
   rnp_identifier_iterator_t it = nullptr;
   if (rnp_identifier_iterator_create(ffi, &it, "fingerprint") != RNP_SUCCESS) {
-    return nullptr;
+    return primaries;
   }
-  Key found;
   const char *fpr = nullptr;
-  while (!found && rnp_identifier_iterator_next(it, &fpr) == RNP_SUCCESS &&
+  while (rnp_identifier_iterator_next(it, &fpr) == RNP_SUCCESS &&
          fpr != nullptr) {
-    rnp_key_handle_t candidate = nullptr;
-    if (rnp_locate_key(ffi, "fingerprint", fpr, &candidate) != RNP_SUCCESS ||
-        candidate == nullptr) {
+    rnp_key_handle_t handle = nullptr;
+    if (rnp_locate_key(ffi, "fingerprint", fpr, &handle) != RNP_SUCCESS ||
+        handle == nullptr) {
       continue;
     }
-    Key handle(candidate);
-    size_t uids = 0;
-    rnp_key_get_uid_count(candidate, &uids);
-    for (size_t i = 0; i < uids && !found; ++i) {
-      char *uid = nullptr;
-      if (rnp_key_get_uid_at(candidate, i, &uid) != RNP_SUCCESS) {
-        continue;
-      }
-      if (QString::fromUtf8(uid).contains(id, Qt::CaseInsensitive)) {
-        found = std::move(handle);
-      }
-      rnp_buffer_destroy(uid);
+    const Key key(handle);
+    if (!match(handle)) {
+      continue;
+    }
+    const QString primary = primaryFingerprint(handle);
+    rnp_key_handle_t primaryHandle = nullptr;
+    if (primary.isEmpty() || primaries.contains(primary) ||
+        rnp_locate_key(ffi, "fingerprint", primary.toLatin1().constData(),
+                       &primaryHandle) != RNP_SUCCESS ||
+        primaryHandle == nullptr) {
+      continue;
+    }
+    const Key primaryKey(primaryHandle);
+    if (isValidKey(primaryHandle)) {
+      primaries << primary;
     }
   }
   rnp_identifier_iterator_destroy(it);
-  return found;
+  return primaries;
+}
+
+/**
+ * The key a .gpg-id line names, as gpg -r reads it: a fingerprint (40 hex
+ * digits, spaces allowed), a long (16) or short (8) key ID, with or without
+ * 0x, or else a user ID or part of one, such as an e-mail address. A short
+ * key ID or a partial user ID must name exactly one valid key. Sets @p why
+ * when there is no such key.
+ */
+auto locateKey(rnp_ffi_t ffi, const QString &recipient, QString *why) -> Key {
+  QString id = recipient.trimmed();
+  if (id.startsWith(QLatin1String("0x"), Qt::CaseInsensitive)) {
+    id = id.mid(2).trimmed();
+  }
+  if (id.isEmpty()) {
+    *why = QStringLiteral("Empty recipient");
+    return nullptr;
+  }
+  static const QRegularExpression hex(QStringLiteral("^[0-9A-Fa-f]+$"));
+  QString compact = id;
+  compact.remove(QLatin1Char(' '));
+  const bool isHex = hex.match(compact).hasMatch();
+  const char *type = nullptr;
+  if (isHex && compact.size() == 40) {
+    type = "fingerprint";
+  } else if (isHex && compact.size() == 16) {
+    type = "keyid";
+  }
+  if (type != nullptr) {
+    rnp_key_handle_t key = nullptr;
+    rnp_locate_key(ffi, type, compact.toUpper().toLatin1().constData(), &key);
+    if (key == nullptr) {
+      *why = QStringLiteral("No public key for %1").arg(recipient);
+    }
+    return Key(key);
+  }
+
+  QStringList primaries;
+  if (isHex && compact.size() == 8) {
+    // A short key ID: the last eight digits of a key's (or subkey's) ID.
+    const QString shortId = compact.toUpper();
+    primaries = matchingPrimaries(ffi, [&shortId](rnp_key_handle_t key) {
+      char *keyId = nullptr;
+      if (rnp_key_get_keyid(key, &keyId) != RNP_SUCCESS) {
+        return false;
+      }
+      const bool hit = QString::fromLatin1(keyId).endsWith(shortId);
+      rnp_buffer_destroy(keyId);
+      return hit;
+    });
+  } else {
+    rnp_key_handle_t exact = nullptr;
+    rnp_locate_key(ffi, "userid", id.toUtf8().constData(), &exact);
+    if (exact != nullptr) {
+      return Key(exact);
+    }
+    // rnp_locate_key matches a whole user ID only; gpg -r also takes part of
+    // one, and a .gpg-id often lists just the e-mail address.
+    primaries = matchingPrimaries(ffi, [&id](rnp_key_handle_t key) {
+      size_t uids = 0;
+      rnp_key_get_uid_count(key, &uids);
+      for (size_t i = 0; i < uids; ++i) {
+        char *uid = nullptr;
+        if (rnp_key_get_uid_at(key, i, &uid) != RNP_SUCCESS) {
+          continue;
+        }
+        const bool hit =
+            QString::fromUtf8(uid).contains(id, Qt::CaseInsensitive);
+        rnp_buffer_destroy(uid);
+        if (hit) {
+          return true;
+        }
+      }
+      return false;
+    });
+  }
+  if (primaries.size() > 1) {
+    *why = QStringLiteral("%1 matches more than one key").arg(recipient);
+    return nullptr;
+  }
+  if (primaries.isEmpty()) {
+    *why = QStringLiteral("No public key for %1").arg(recipient);
+    return nullptr;
+  }
+  rnp_key_handle_t key = nullptr;
+  rnp_locate_key(ffi, "fingerprint", primaries.first().toLatin1().constData(),
+                 &key);
+  return Key(key);
 }
 
 // The signature is RNP's rnp_password_cb.
@@ -251,18 +341,17 @@ auto RnpCrypto::encrypt(const QByteArray &plaintext,
   const std::unique_ptr<rnp_op_encrypt_st, rnp_result_t (*)(rnp_op_encrypt_t)>
       guard(op, rnp_op_encrypt_destroy);
   for (const QString &recipient : recipients) {
-    const Key key = locateKey(m_ffi, recipient);
+    QString why;
+    const Key key = locateKey(m_ffi, recipient, &why);
     if (!key) {
-      setError(error, QStringLiteral("No public key for %1").arg(recipient));
+      setError(error, why);
       return {};
     }
     result = rnp_op_encrypt_add_recipient(op, key.get());
     if (result != RNP_SUCCESS) {
-      setError(error, rnpError(QStringLiteral("Cannot encrypt to %1")
-                                   .arg(recipient)
-                                   .toUtf8()
-                                   .constData(),
-                               result));
+      setError(error,
+               rnpError(QStringLiteral("Cannot encrypt to %1").arg(recipient),
+                        result));
       return {};
     }
   }

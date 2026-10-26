@@ -24,6 +24,10 @@ private Q_SLOTS:
   void recipientsAsFingerprintKeyIdOrEmail();
   void passphraseProtectedKey();
   void unknownRecipientIsAnError();
+  void emptyRecipientIsAnError();
+  void shortKeyIdAndSpacedFingerprint();
+  void ambiguousPartialUserIdIsAnError();
+  void expiredKeyIsSkippedInAPartialMatch();
   void wrongKeyCannotDecrypt();
 
 private:
@@ -208,6 +212,16 @@ void tst_rnpcrypto::gpgDecryptsWhatRnpEncryptedForEveryRecipient() {
   const Result dec = gpg({QStringLiteral("-d")}, cipher);
   QCOMPARE(dec.exitCode, 0);
   QCOMPARE(dec.out, entry);
+
+  // And each recipient on their own: a keyring holding only that one
+  // secret key decrypts it, so both packets really are for both keys.
+  for (const QString &recipient : {m_alice, m_bob}) {
+    RnpCrypto own;
+    QVERIFY(!own.importKeys(exportKey(recipient, {}, true)).isEmpty());
+    bool ok = false;
+    QCOMPARE(own.decrypt(cipher, &error, &ok), entry);
+    QVERIFY2(ok, qPrintable(recipient + QStringLiteral(": ") + error));
+  }
 }
 
 void tst_rnpcrypto::recipientsAsFingerprintKeyIdOrEmail() {
@@ -268,6 +282,80 @@ void tst_rnpcrypto::unknownRecipientIsAnError() {
           .isEmpty());
   QVERIFY2(error.contains(QLatin1String("nobody@example.org")),
            qPrintable(error));
+  // The name comes through unmangled, also outside ASCII.
+  const QString zoe = QStringLiteral("Zoë <zoe@example.org>");
+  QVERIFY(rnp.encrypt("x", {zoe}, &error).isEmpty());
+  QVERIFY2(error.contains(zoe), qPrintable(error));
+}
+
+// An empty .gpg-id line must not become "the first key in the keyring".
+void tst_rnpcrypto::emptyRecipientIsAnError() {
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, false)).isEmpty());
+  for (const QString &recipient :
+       {QString(), QStringLiteral("   "), QStringLiteral("0x")}) {
+    QString error;
+    QVERIFY2(rnp.encrypt("x", {recipient}, &error).isEmpty(),
+             qPrintable(QStringLiteral("encrypted to '%1'").arg(recipient)));
+    QVERIFY(!error.isEmpty());
+  }
+}
+
+void tst_rnpcrypto::shortKeyIdAndSpacedFingerprint() {
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, true)).isEmpty());
+  QString spaced;
+  for (int i = 0; i < m_alice.size(); i += 4) {
+    spaced += m_alice.mid(i, 4) + QLatin1Char(' ');
+  }
+  for (const QString &recipient :
+       {m_alice.right(8), QStringLiteral("0x") + m_alice.right(8).toLower(),
+        spaced.trimmed()}) {
+    QString error;
+    const QByteArray cipher = rnp.encrypt("x", {recipient}, &error);
+    QVERIFY2(!cipher.isEmpty(),
+             qPrintable(recipient + QStringLiteral(": ") + error));
+    bool ok = false;
+    QCOMPARE(rnp.decrypt(cipher, &error, &ok), QByteArray("x"));
+  }
+}
+
+// Part of a user ID that fits two people must not pick one of them.
+void tst_rnpcrypto::ambiguousPartialUserIdIsAnError() {
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, false) +
+                          exportKey(m_bob, {}, false))
+               .isEmpty());
+  QString error;
+  QVERIFY(rnp.encrypt("x", {QStringLiteral("example.org")}, &error).isEmpty());
+  QVERIFY2(error.contains(QLatin1String("more than one key")),
+           qPrintable(error));
+}
+
+// gpg -r skips an expired key; so does a partial user ID here.
+void tst_rnpcrypto::expiredKeyIsSkippedInAPartialMatch() {
+  const Result gen = gpg(
+      {QStringLiteral("--faked-system-time"),
+       QStringLiteral("20200101T000000!"), QStringLiteral("--pinentry-mode"),
+       QStringLiteral("loopback"), QStringLiteral("--passphrase"), QString(),
+       QStringLiteral("--quick-gen-key"),
+       QStringLiteral("Old Alice <alice@example.org>"),
+       QStringLiteral("default"), QStringLiteral("default"),
+       QStringLiteral("1d")});
+  if (gen.exitCode != 0) {
+    QSKIP("this gpg cannot make an expired key (--faked-system-time)");
+  }
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, true) +
+                          exportKey(QStringLiteral("Old Alice"), {}, false))
+               .isEmpty());
+  QString error;
+  const QByteArray cipher =
+      rnp.encrypt("x", {QStringLiteral("alice@example.org")}, &error);
+  QVERIFY2(!cipher.isEmpty(), qPrintable(error));
+  bool ok = false;
+  QCOMPARE(rnp.decrypt(cipher, &error, &ok), QByteArray("x"));
+  QVERIFY2(ok, qPrintable(error));
 }
 
 void tst_rnpcrypto::wrongKeyCannotDecrypt() {
