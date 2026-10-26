@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-slots">Protected Slots</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
@@ -220,6 +221,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a407558ed7e2d88f953de7b179a1d143a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if GPG supports Ed25519 encryption.  <br /></td></tr>
 <tr class="memitem:a0240e98aae2cee6ab3d035ff17c47920" id="r_a0240e98aae2cee6ab3d035ff17c47920"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="#a0240e98aae2cee6ab3d035ff17c47920">getDefaultKeyTemplate</a> (const QString &amp;gpgExecutable={})</td></tr>
 <tr class="memdesc:a0240e98aae2cee6ab3d035ff17c47920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get default key template for new GPG keys.  <br /></td></tr>
+<tr class="memitem:a37740695a420cdcd972994c576f9f049" id="r_a37740695a420cdcd972994c576f9f049"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a37740695a420cdcd972994c576f9f049">maxOutputArgs</a> () -&gt; QStringList</td></tr>
+<tr class="memdesc:a37740695a420cdcd972994c576f9f049"><td class="mdescLeft">&#160;</td><td class="mdescRight">The gpg options that enforce kMaxPlaintextBytes.  <br /></td></tr>
 <tr class="memitem:a4425df7bb17f93be39e1142c2fd4c6a6" id="r_a4425df7bb17f93be39e1142c2fd4c6a6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4425df7bb17f93be39e1142c2fd4c6a6">resolveGpgconfCommand</a> (const QString &amp;gpgPath) -&gt; <a class="el" href="struct_resolved_gpgconf_command.html">ResolvedGpgconfCommand</a></td></tr>
 <tr class="memdesc:a4425df7bb17f93be39e1142c2fd4c6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve the gpgconf command to kill agents.  <br /></td></tr>
 <tr class="memitem:a7b85488c618db05c5ed43788765ccc6b" id="r_a7b85488c618db05c5ed43788765ccc6b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7b85488c618db05c5ed43788765ccc6b">getGpgIdPath</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QString</td></tr>
@@ -234,6 +237,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:af657ee8dde5189ac7aba6585db8f2c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The arguments as they may appear in the debug log: the value of <span class="tt">--passphrase</span> and friends, and otpauth URIs, are replaced.  <br /></td></tr>
 <tr class="memitem:a1ed10aadc40a4f13667f235d3a2d67b7" id="r_a1ed10aadc40a4f13667f235d3a2d67b7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1ed10aadc40a4f13667f235d3a2d67b7">seedGpgIdFile</a> (const QString &amp;newDir, const QString &amp;passStore) -&gt; bool</td></tr>
 <tr class="memdesc:a1ed10aadc40a4f13667f235d3a2d67b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seed a new folder's .gpg-id from the recipients it inherits.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ae6e6a7bafd0f0753db6bae3205c22c72" id="r_ae6e6a7bafd0f0753db6bae3205c22c72"><td class="memItemLeft">static constexpr qint64&#160;</td><td class="memItemRight"><a class="el" href="#ae6e6a7bafd0f0753db6bae3205c22c72">kMaxPlaintextBytes</a> = 64LL * 1024 * 1024</td></tr>
+<tr class="memdesc:ae6e6a7bafd0f0753db6bae3205c22c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most bytes of plaintext a gpg decryption may produce.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-types" class="groupheader"><a id="pro-types" name="pro-types"></a>
 Protected Types</h2></td></tr>
@@ -1713,7 +1721,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#a80b717f6932e5645b2628fba4654a7da">ImitatePass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00358">358</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00373">373</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -1810,6 +1818,34 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The same list with secret-shaped values redacted. </dd></dl>
+
+</div>
+</div>
+<a id="a37740695a420cdcd972994c576f9f049" name="a37740695a420cdcd972994c576f9f049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37740695a420cdcd972994c576f9f049">&#9670;&#160;</a></span>maxOutputArgs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::maxOutputArgs </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  QStringList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The gpg options that enforce kMaxPlaintextBytes. </p>
+<dl class="section return"><dt>Returns</dt><dd>"--max-output" and the limit, for a gpg decryption's arguments. </dd></dl>
 
 </div>
 </div>
@@ -1967,7 +2003,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00368">368</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00383">383</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2334,6 +2370,33 @@ Protected Attributes</h2></td></tr>
 <p>Internal command executor for queuing and running subprocesses. </p>
 
 <p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00071">71</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
+<a id="ae6e6a7bafd0f0753db6bae3205c22c72" name="ae6e6a7bafd0f0753db6bae3205c22c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6e6a7bafd0f0753db6bae3205c22c72">&#9670;&#160;</a></span>kMaxPlaintextBytes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint64 Pass::kMaxPlaintextBytes = 64LL * 1024 * 1024</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Most bytes of plaintext a gpg decryption may produce. </p>
+<p>An OpenPGP message is compressed, so a small entry in a shared store can decompress to gigabytes; gpg stops at this many (&ndash;max-output) instead of filling <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s memory. Far above any real entry. </p>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00224">224</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>

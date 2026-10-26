@@ -125,6 +125,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Public Slots</h2></td></tr>
 <tr class="memitem:a7c807bebb29c44b69965ebee13becb99" id="r_a7c807bebb29c44b69965ebee13becb99"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7c807bebb29c44b69965ebee13becb99">copyText</a> (const QString &amp;text)</td></tr>
 <tr class="memdesc:a7c807bebb29c44b69965ebee13becb99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy text into the system clipboard (or the X11 primary selection when configured) and arm the autoclear timer when enabled.  <br /></td></tr>
+<tr class="memitem:a17f2c6bd33ca83f2044ef232b8edf65a" id="r_a17f2c6bd33ca83f2044ef232b8edf65a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a17f2c6bd33ca83f2044ef232b8edf65a">trackCopied</a> (const QString &amp;text)</td></tr>
+<tr class="memdesc:a17f2c6bd33ca83f2044ef232b8edf65a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Track text that got onto the clipboard some other way.  <br /></td></tr>
 <tr class="memitem:ab9f20e4394ee1075b4e269cd454e4fc1" id="r_ab9f20e4394ee1075b4e269cd454e4fc1"><td class="memItemLeft"><a id="ab9f20e4394ee1075b4e269cd454e4fc1" name="ab9f20e4394ee1075b4e269cd454e4fc1"></a>
 void&#160;</td><td class="memItemRight"><b>clear</b> ()</td></tr>
 <tr class="memdesc:ab9f20e4394ee1075b4e269cd454e4fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the tracked text from the clipboard if it is still there. Silent no-op when nothing is tracked. <br /></td></tr>
@@ -150,7 +152,7 @@ void&#160;</td><td class="memItemRight"><b>setAutoclearTimer</b> ()</td></tr>
 <div class="textblock"><p>Puts secrets on the system clipboard and takes them off again. </p>
 <p>Remembers what it copied so the autoclear timer (and the quit handler) only remove that text, never something the user copied in the meantime. Settings (selection vs. clipboard, autoclear on/off, delay) are read from <a class="el" href="class_qt_pass_settings.html" title="Singleton that stores QtPass settings, handles persistence and defaults.">QtPassSettings</a>; call <a class="el" href="#a6614eba6805293ea0ff96118c0567872" title="Re-read the autoclear delay from the settings.">setAutoclearTimer()</a> after they change. Status text for the main window's status bar is emitted, not shown, so this class has no UI dependency and is unit-testable. </p>
 
-<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00039">39</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00040">40</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="addcbfc9a4b057f9adeef3a986fb5fbeb" name="addcbfc9a4b057f9adeef3a986fb5fbeb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#addcbfc9a4b057f9adeef3a986fb5fbeb">&#9670;&#160;</a></span>ClipboardManager()</h2>
@@ -282,6 +284,39 @@ void&#160;</td><td class="memItemRight"><b>setAutoclearTimer</b> ()</td></tr>
 
 </div>
 </div>
+<a id="a17f2c6bd33ca83f2044ef232b8edf65a" name="a17f2c6bd33ca83f2044ef232b8edf65a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17f2c6bd33ca83f2044ef232b8edf65a">&#9670;&#160;</a></span>trackCopied</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClipboardManager::trackCopied </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Track text that got onto the clipboard some other way. </p>
+<p>For a copy <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> did not make through <a class="el" href="#a7c807bebb29c44b69965ebee13becb99" title="Copy text into the system clipboard (or the X11 primary selection when configured) and arm the autocl...">copyText()</a>: text selected and copied from a widget showing a secret (Ctrl+C, the context menu, a drag, or the X11 primary selection that a mouse selection fills). The text is cleared with the rest when the autoclear timer runs; what <a class="el" href="#a7c807bebb29c44b69965ebee13becb99" title="Copy text into the system clipboard (or the X11 primary selection when configured) and arm the autocl...">copyText()</a> tracks stays tracked too. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>The copied text; nothing happens when it is empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a17d1e93dc5cddccbd6f486f3d772b5cc" name="a17d1e93dc5cddccbd6f486f3d772b5cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17d1e93dc5cddccbd6f486f3d772b5cc">&#9670;&#160;</a></span>trackedText()</h2>
 
@@ -308,7 +343,7 @@ void&#160;</td><td class="memItemRight"><b>setAutoclearTimer</b> ()</td></tr>
 <p>The text this manager last put on the clipboard and still tracks. </p>
 <dl class="section return"><dt>Returns</dt><dd>Tracked text, empty once cleared. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00071">71</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00072">72</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
 
 </div>
 </div>

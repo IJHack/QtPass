@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,60,31"/>
-<area shape="rect" id="Node000001" href="$class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa..." alt="" coords="108,5,220,31"/>
-<area shape="poly" id="edge10_Node000000_Node000001" title=" " alt="" coords="74,15,108,15,108,21,74,21"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,89,31"/>
+<area shape="rect" id="Node000001" href="$class_secret_line_edit.html" title="A QLineEdit for a password that can be shown: whatever is copied out of it is marked as a secret and ..." alt="" coords="137,5,252,31"/>
+<area shape="poly" id="edge10_Node000000_Node000001" title=" " alt="" coords="103,15,137,15,137,21,103,21"/>
 </map>
