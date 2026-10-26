@@ -7,6 +7,14 @@
 
 #include "../../../src/rnpcrypto.h"
 
+#include <type_traits>
+
+// RNP keeps a pointer to the passphrase callback's context inside the
+// object, so it must not move.
+static_assert(!std::is_copy_constructible_v<RnpCrypto>);
+static_assert(!std::is_move_constructible_v<RnpCrypto>);
+static_assert(!std::is_move_assignable_v<RnpCrypto>);
+
 /**
  * RnpCrypto against the real GnuPG on the system: what gpg encrypts, RNP must
  * decrypt (GnuPG 2.4 and later write OCB packets for its own default keys),
@@ -29,6 +37,10 @@ private Q_SLOTS:
   void ambiguousPartialUserIdIsAnError();
   void expiredKeyIsSkippedInAPartialMatch();
   void exactUserIdOnTwoKeysIsAnError();
+  void keyWithNoUsableEncryptionSubkeyIsNoCandidate();
+  void recipientFormsAsGpgReadsThem();
+  void refusesAMessageWithoutIntegrityProtection();
+  void plaintextLimitStopsADecompressionBomb();
   void wrongKeyCannotDecrypt();
 
 private:
@@ -385,6 +397,124 @@ void tst_rnpcrypto::exactUserIdOnTwoKeysIsAnError() {
            qPrintable(error));
   // The fingerprint still names exactly one.
   QVERIFY2(!rnp.encrypt("x", {m_alice}, &error).isEmpty(), qPrintable(error));
+}
+
+// gpg -r skips a key whose encryption subkeys have all expired, even though
+// its primary is valid; with a partial user ID that decides between two.
+void tst_rnpcrypto::keyWithNoUsableEncryptionSubkeyIsNoCandidate() {
+  // A valid primary whose only encryption subkey is revoked.
+  const QString stale =
+      generateKey(QStringLiteral("Rot Old <rot@example.net>"), {});
+  QVERIFY(!stale.isEmpty());
+  const Result revoke =
+      gpg({QStringLiteral("--pinentry-mode"), QStringLiteral("loopback"),
+           QStringLiteral("--passphrase"), QString(),
+           QStringLiteral("--command-fd"), QStringLiteral("0"),
+           QStringLiteral("--edit-key"), stale},
+          QByteArray("key 1\nrevkey\ny\n0\n\ny\nsave\n"));
+  const Result listed = gpg(
+      {QStringLiteral("--with-colons"), QStringLiteral("--list-keys"), stale});
+  if (revoke.exitCode != 0 || !listed.out.contains("\nsub:r:")) {
+    QSKIP("could not revoke the subkey with this gpg");
+  }
+  const QString fresh =
+      generateKey(QStringLiteral("Rot New <rot@example.net>"), {});
+  QVERIFY(!fresh.isEmpty());
+
+  RnpCrypto rnp;
+  QCOMPARE(
+      rnp.importKeys(exportKey(stale, {}, false) + exportKey(fresh, {}, true))
+          .size(),
+      2);
+  QString error;
+  const QByteArray cipher =
+      rnp.encrypt("x", {QStringLiteral("rot@example.net")}, &error);
+  QVERIFY2(!cipher.isEmpty(), qPrintable(error));
+  bool ok = false;
+  QCOMPARE(rnp.decrypt(cipher, &error, &ok), QByteArray("x"));
+  QVERIFY2(ok, qPrintable(error));
+}
+
+void tst_rnpcrypto::recipientFormsAsGpgReadsThem() {
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, true)).isEmpty());
+  QString error;
+  // Blanks inside a fingerprint may be tabs too.
+  QString tabbed;
+  for (int i = 0; i < m_alice.size(); i += 4) {
+    tabbed += m_alice.mid(i, 4) + QLatin1Char('\t');
+  }
+  QVERIFY2(!rnp.encrypt("x", {tabbed}, &error).isEmpty(), qPrintable(error));
+  // 0x makes a key ID only when hex digits follow; gpg looks "0xAlice" up as
+  // a user ID, and Alice's does not contain it.
+  QVERIFY(rnp.encrypt("x", {QStringLiteral("0xAlice")}, &error).isEmpty());
+  QVERIFY2(error.contains(QLatin1String("0xAlice")), qPrintable(error));
+  // 64 hex digits name a v5/v6 fingerprint, not a user ID.
+  const QString v6 = QString(64, QLatin1Char('A'));
+  QVERIFY(rnp.encrypt("x", {v6}, &error).isEmpty());
+  QCOMPARE(error, QStringLiteral("No public key for ") + v6);
+}
+
+// CFB without MDC (the kind EFAIL abuses) is refused, as GnuPG has done
+// since 2.2.8; the same message with MDC decrypts.
+void tst_rnpcrypto::refusesAMessageWithoutIntegrityProtection() {
+  const QStringList symmetric{QStringLiteral("--pinentry-mode"),
+                              QStringLiteral("loopback"),
+                              QStringLiteral("--passphrase"),
+                              QStringLiteral("pw"), QStringLiteral("-c")};
+  // --rfc2440 writes the old Symmetrically Encrypted Data packet (tag 9),
+  // without MDC; GnuPG 2.5 ignores --disable-mdc and writes tag 18 anyway.
+  const Result bare =
+      gpg(QStringList{QStringLiteral("--rfc2440"),
+                      QStringLiteral("--cipher-algo"), QStringLiteral("AES")} +
+              symmetric,
+          QByteArray("no mdc\n"));
+  const Result withMdc = gpg(symmetric, QByteArray("with mdc\n"));
+  QCOMPARE(withMdc.exitCode, 0);
+  if (bare.exitCode != 0 ||
+      !gpg({QStringLiteral("--list-packets"), QStringLiteral("--pinentry-mode"),
+            QStringLiteral("loopback"), QStringLiteral("--passphrase"),
+            QStringLiteral("pw")},
+           bare.out)
+           .out.contains(" tag=9 ")) {
+    QSKIP("this gpg cannot write a message without MDC");
+  }
+  RnpCrypto rnp;
+  rnp.setPassphraseProvider(
+      [](const QString &) { return QStringLiteral("pw"); });
+  QString error;
+  bool ok = true;
+  QVERIFY(rnp.decrypt(bare.out, &error, &ok).isEmpty());
+  QVERIFY(!ok);
+  QVERIFY2(error.contains(QLatin1String("integrity")), qPrintable(error));
+
+  QCOMPARE(rnp.decrypt(withMdc.out, &error, &ok), QByteArray("with mdc\n"));
+  QVERIFY2(ok, qPrintable(error));
+}
+
+// A small compressed message must not expand into all of memory.
+void tst_rnpcrypto::plaintextLimitStopsADecompressionBomb() {
+  const QByteArray zeros(4 * 1024 * 1024, '\0');
+  const Result enc =
+      gpg({QStringLiteral("--trust-model"), QStringLiteral("always"),
+           QStringLiteral("-z"), QStringLiteral("9"), QStringLiteral("-e"),
+           QStringLiteral("-r"), m_alice},
+          zeros);
+  QCOMPARE(enc.exitCode, 0);
+  QVERIFY2(enc.out.size() < 64 * 1024, "the message should be small");
+
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, true)).isEmpty());
+  QString error;
+  bool ok = false;
+  QCOMPARE(rnp.decrypt(enc.out, &error, &ok).size(), zeros.size());
+  QVERIFY2(ok, qPrintable(error));
+
+  rnp.setMaxPlaintextBytes(1024 * 1024);
+  ok = true;
+  QVERIFY(rnp.decrypt(enc.out, &error, &ok).isEmpty());
+  QVERIFY(!ok);
+  QVERIFY(!error.isEmpty());
 }
 
 void tst_rnpcrypto::wrongKeyCannotDecrypt() {

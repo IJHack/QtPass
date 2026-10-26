@@ -41,6 +41,15 @@ public:
   using PassphraseProvider = std::function<QString(const QString &keyId)>;
 
   /**
+   * @brief Most bytes of plaintext decrypt() produces by default.
+   *
+   * An OpenPGP message is compressed, so a small entry in a shared store can
+   * decompress to gigabytes; decrypt() fails at this many instead of filling
+   * memory. The same limit QtPass gives gpg (--max-output).
+   */
+  static constexpr qint64 kMaxPlaintextBytes = 64LL * 1024 * 1024;
+
+  /**
    * @brief Creates an empty keyring.
    */
   RnpCrypto();
@@ -48,8 +57,12 @@ public:
    * @brief Frees the keyring and everything RNP holds for it.
    */
   ~RnpCrypto();
+  // RNP holds a pointer to m_passphrase (the passphrase callback's context),
+  // so the object must stay where it is: neither copied nor moved.
   RnpCrypto(const RnpCrypto &) = delete;
   auto operator=(const RnpCrypto &) -> RnpCrypto & = delete;
+  RnpCrypto(RnpCrypto &&) = delete;
+  auto operator=(RnpCrypto &&) -> RnpCrypto & = delete;
 
   /**
    * @brief Whether the RNP context could be created at all.
@@ -73,11 +86,22 @@ public:
   void setPassphraseProvider(PassphraseProvider provider);
 
   /**
+   * @brief Sets the most bytes of plaintext decrypt() may produce.
+   * @param bytes The limit; kMaxPlaintextBytes until set.
+   */
+  void setMaxPlaintextBytes(qint64 bytes);
+
+  /**
    * @brief Encrypts @p plaintext to every recipient, as one message.
    * @param plaintext The entry's content.
-   * @param recipients Key IDs or fingerprints, as a .gpg-id lists them.
+   * @param recipients As a .gpg-id lists them, in the forms gpg -r takes: a
+   * fingerprint (40 or 64 hex digits, blanks allowed), a long or short (8
+   * hex digits) key ID with or without 0x, a whole user ID, or part of one
+   * such as the e-mail address. Each must name exactly one key that can
+   * encrypt (not expired or revoked, with a usable encryption key); an
+   * empty recipient is an error.
    * @param error Set to the reason when encryption fails, naming the first
-   * recipient that has no usable encryption key.
+   * recipient that has no usable key or names more than one.
    * @return The binary OpenPGP message, empty on failure.
    */
   auto encrypt(const QByteArray &plaintext, const QStringList &recipients,
@@ -85,6 +109,11 @@ public:
 
   /**
    * @brief Decrypts an OpenPGP message with any secret key in the keyring.
+   *
+   * Only an integrity-protected message is accepted (SEIPD with MDC, or
+   * AEAD such as the OCB packets GnuPG 2.4 writes): one without (CFB with
+   * no MDC, the EFAIL kind) is refused, as GnuPG has since 2.2.8. A
+   * plaintext over the limit (setMaxPlaintextBytes()) fails too.
    * @param ciphertext Binary or armored OpenPGP message.
    * @param error Set to the reason when decryption fails.
    * @param ok Set to whether decryption succeeded, since an entry can be
@@ -97,6 +126,7 @@ public:
 private:
   rnp_ffi_st *m_ffi = nullptr;
   PassphraseProvider m_passphrase;
+  qint64 m_maxPlaintext = kMaxPlaintextBytes;
 };
 
 #endif // SRC_RNPCRYPTO_H_
