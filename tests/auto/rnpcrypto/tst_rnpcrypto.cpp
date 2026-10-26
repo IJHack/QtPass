@@ -285,5 +285,5 @@ void tst_rnpcrypto::wrongKeyCannotDecrypt() {
   QVERIFY(!error.isEmpty());
 }
 
-QTEST_GUILESS_MAIN(tst_rnpcrypto)
+QTEST_MAIN(tst_rnpcrypto)
 #include "tst_rnpcrypto.moc"
