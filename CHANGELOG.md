@@ -30,6 +30,13 @@
 - With the `pass` backend in WSL, the signing key reaches `pass`, so it
   checks `.gpg-id.sig` there as well; see the upgrade notes (ported from
   [#2051](https://github.com/IJHack/QtPass/pull/2051))
+- Text selected and copied from a shown entry (Ctrl+C, the context menu, a
+  drag, or the X11/Wayland selection) carries the same "secret" hints as a
+  copy button's, so clipboard history leaves it out, and is cleared with the
+  rest when autoclear runs. That includes a hidden password shown with the
+  eye button, whose selection never goes out as plain text, not even for a
+  moment (ported from [#2051](https://github.com/IJHack/QtPass/pull/2051)
+  and [#2053](https://github.com/IJHack/QtPass/pull/2053))
 
 ## [1.8.4](https://github.com/IJHack/QtPass/tree/v1.8.4) (2026-10-26)
 

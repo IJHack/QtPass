@@ -102,6 +102,14 @@ signals:
    * @param text Value to copy to the clipboard.
    */
   void copyRequested(const QString &text);
+
+  /**
+   * @brief Text was selected and copied out of a field's value (Ctrl+C, the
+   * context menu, a drag, or the X11 primary selection); it is already on
+   * the clipboard and only needs tracking for autoclear.
+   * @param text The copied text.
+   */
+  void textCopied(const QString &text);
   /**
    * @brief Emitted when a field's QR button is clicked.
    * @param text Value to render as a QR code.

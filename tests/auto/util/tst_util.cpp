@@ -30,12 +30,16 @@
 #include "../../../src/qprogressindicator.h"
 #include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
+#include "../../../src/secretlineedit.h"
+#include "../../../src/secrettextbrowser.h"
 #include "../../../src/simpletransaction.h"
 #include "../../../src/sshauthsock.h"
 #include "../../../src/templateio.h"
 #include "../../../src/userinfo.h"
 #include "../../../src/util.h"
 #include "../testsettings.h"
+#include <QMenu>
+#include <memory>
 
 using GrepResults = QList<QPair<QString, QStringList>>;
 Q_DECLARE_METATYPE(GrepResults)
@@ -171,6 +175,13 @@ private Q_SLOTS:
   void namedValueBasic();
   void namedValueMultiple();
   void buildClipboardMimeDataUnix();
+  void secretTextBrowserMarksAndReportsWhatIsCopied();
+  void secretLineEditCopiesOnlyWhenShownAndMarksIt();
+  void secretLineEditContextMenuCopyIsMarked();
+  void secretLineEditMarksThePrimarySelection();
+  void secretLineEditNeverPublishesAPlainSelection();
+  void copiedTextsKeepsWhereASelectionEnds();
+  void copiedTextsKeepsACopyStillOnTheClipboard();
   void buildClipboardMimeDataWindows();
   void buildClipboardMimeDataMac();
   void utilRegexEnsuresGpg();
@@ -3388,6 +3399,226 @@ void tst_util::initStagesUntrackedGpgId() {
   QVERIFY(written.open(QIODevice::ReadOnly | QIODevice::Text));
   QCOMPARE(QString::fromUtf8(written.readAll()),
            QStringLiteral("testkey123\n"));
+}
+
+namespace {
+/// Whether @p mime carries every hint buildClipboardMimeData() adds.
+auto hasSecretHints(const QMimeData *mime) -> bool {
+  const std::unique_ptr<QMimeData> expected(
+      buildClipboardMimeData(QStringLiteral("x")));
+  for (const QString &format : expected->formats()) {
+    if (format != QLatin1String("text/plain") && !mime->hasFormat(format)) {
+      return false;
+    }
+  }
+  return true;
+}
+} // namespace
+
+/**
+ * @brief What is copied out of a SecretTextBrowser carries the same secret
+ * hints as ClipboardManager's own copies, as plain text, and is reported for
+ * autoclear.
+ */
+void tst_util::secretTextBrowserMarksAndReportsWhatIsCopied() {
+  SecretTextBrowser browser;
+  browser.setPlainText(QStringLiteral("pin: 1234"));
+  browser.selectAll();
+  QSignalSpy copied(&browser, &SecretTextBrowser::copied);
+  browser.copy();
+  QCOMPARE(copied.count(), 1);
+  QCOMPARE(copied.first().at(0).toString(), QStringLiteral("pin: 1234"));
+  const QMimeData *mime = QApplication::clipboard()->mimeData();
+  QVERIFY(mime != nullptr);
+  QCOMPARE(mime->text(), QStringLiteral("pin: 1234"));
+  QVERIFY2(!mime->hasHtml(), "a secret goes out as plain text only");
+  QMimeData *expected = buildClipboardMimeData(QStringLiteral("x"));
+  for (const QString &format : expected->formats()) {
+    if (format != QLatin1String("text/plain")) {
+      QVERIFY2(mime->hasFormat(format), qPrintable(format));
+    }
+  }
+  delete expected;
+}
+
+/**
+ * @brief A hidden password copies nothing; shown with the eye button, Ctrl+C
+ * puts it on the clipboard as plain text with the secret hints and reports
+ * it for autoclear.
+ */
+void tst_util::secretLineEditCopiesOnlyWhenShownAndMarksIt() {
+  SecretLineEdit edit;
+  edit.setText(QStringLiteral("hunter2"));
+  edit.setReadOnly(true);
+  edit.setEchoMode(QLineEdit::Password);
+  QSignalSpy copied(&edit, &SecretLineEdit::copied);
+  QApplication::clipboard()->setText(QStringLiteral("before"));
+
+  edit.selectAll();
+  QTest::keySequence(&edit, QKeySequence::Copy);
+  QCOMPARE(copied.count(), 0);
+  QCOMPARE(QApplication::clipboard()->text(), QStringLiteral("before"));
+
+  edit.setEchoMode(QLineEdit::Normal);
+  edit.selectAll();
+  QSignalSpy changed(QApplication::clipboard(), &QClipboard::dataChanged);
+  QTest::keySequence(&edit, QKeySequence::Copy);
+  // Once: never a plain copy first that the marked one then replaces.
+  QCOMPARE(changed.count(), 1);
+  QCOMPARE(copied.count(), 1);
+  QCOMPARE(copied.first().at(0).toString(), QStringLiteral("hunter2"));
+  const QMimeData *mime = QApplication::clipboard()->mimeData();
+  QVERIFY(mime != nullptr);
+  QCOMPARE(mime->text(), QStringLiteral("hunter2"));
+  QVERIFY2(!mime->hasHtml(), "a secret goes out as plain text only");
+  QVERIFY(hasSecretHints(mime));
+}
+
+/**
+ * @brief The context menu's Copy goes through the secret copy only. Were
+ * QLineEdit::copy() still connected as well, the password would reach the
+ * clipboard twice, the first time as plain text without the hints, which a
+ * clipboard manager may well record before the second copy replaces it.
+ */
+void tst_util::secretLineEditContextMenuCopyIsMarked() {
+  SecretLineEdit edit;
+  edit.setText(QStringLiteral("hunter2"));
+  edit.setReadOnly(true);
+  edit.setEchoMode(QLineEdit::Normal);
+  edit.selectAll();
+  QSignalSpy copied(&edit, &SecretLineEdit::copied);
+  QApplication::clipboard()->setText(QStringLiteral("before"));
+
+  const std::unique_ptr<QMenu> menu(edit.createSecretContextMenu());
+  QAction *copy = nullptr;
+  for (QAction *action : menu->actions()) {
+    if (action->objectName() == QLatin1String("edit-copy")) {
+      copy = action;
+    }
+  }
+  QVERIFY2(copy != nullptr, "the standard menu has an edit-copy action");
+  QSignalSpy changed(QApplication::clipboard(), &QClipboard::dataChanged);
+  copy->trigger();
+  QCOMPARE(changed.count(), 1);
+  QCOMPARE(copied.count(), 1);
+  const QMimeData *mime = QApplication::clipboard()->mimeData();
+  QVERIFY(mime != nullptr);
+  QCOMPARE(mime->text(), QStringLiteral("hunter2"));
+  QVERIFY(hasSecretHints(mime));
+}
+
+/**
+ * @brief Where there is a primary selection (X11, Wayland), a selection made
+ * in the shown password ends up there with the hints, not as QLineEdit's own
+ * plain copy.
+ */
+void tst_util::secretLineEditMarksThePrimarySelection() {
+  if (!QApplication::clipboard()->supportsSelection()) {
+    QSKIP("this platform has no primary selection");
+  }
+  SecretLineEdit edit;
+  edit.setText(QStringLiteral("hunter2"));
+  edit.setReadOnly(true);
+  edit.setEchoMode(QLineEdit::Normal);
+  QSignalSpy copied(&edit, &SecretLineEdit::copied);
+  edit.setCursorPosition(0);
+  QTest::keyClick(&edit, Qt::Key_End, Qt::ShiftModifier);
+  QCOMPARE(edit.selectedText(), QStringLiteral("hunter2"));
+  QVERIFY(copied.count() >= 1);
+  const QMimeData *mime =
+      QApplication::clipboard()->mimeData(QClipboard::Selection);
+  QVERIFY(mime != nullptr);
+  QCOMPARE(mime->text(), QStringLiteral("hunter2"));
+  QVERIFY(hasSecretHints(mime));
+}
+
+/**
+ * @brief The primary selection never holds the shown password unmarked, not
+ * even for a moment: QLineEdit's own plain-text copy, which a clipboard
+ * manager watching the selection could take before it was replaced, is not
+ * made at all. Every change of the selection is checked as it happens, for a
+ * keyboard selection, a mouse selection, and a key (Backspace, a no-op in a
+ * read-only field) that QLineEdit would answer with another copy.
+ */
+void tst_util::secretLineEditNeverPublishesAPlainSelection() {
+  QClipboard *clipboard = QApplication::clipboard();
+  if (!clipboard->supportsSelection()) {
+    QSKIP("this platform has no primary selection");
+  }
+  SecretLineEdit edit;
+  edit.setText(QStringLiteral("hunter2 secret"));
+  edit.setReadOnly(true);
+  edit.setEchoMode(QLineEdit::Normal);
+  edit.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&edit));
+
+  int changes = 0;
+  QStringList unmarked;
+  connect(clipboard, &QClipboard::selectionChanged, &edit, [&] {
+    const QMimeData *mime = clipboard->mimeData(QClipboard::Selection);
+    if (mime != nullptr && mime->hasText() && !mime->text().isEmpty()) {
+      ++changes;
+      if (!hasSecretHints(mime)) {
+        unmarked << mime->text();
+      }
+    }
+  });
+
+  edit.setCursorPosition(0);
+  QTest::keyClick(&edit, Qt::Key_End, Qt::ShiftModifier);
+  QTest::keyClick(&edit, Qt::Key_Backspace);
+  edit.deselect();
+  const int y = edit.height() / 2;
+  QTest::mousePress(&edit, Qt::LeftButton, {}, QPoint(2, y));
+  QTest::mouseMove(&edit, QPoint(edit.width() - 2, y));
+  QTest::mouseRelease(&edit, Qt::LeftButton, {}, QPoint(edit.width() - 2, y));
+  QApplication::processEvents();
+
+  QVERIFY2(changes > 0, "the selection should have been filled");
+  QVERIFY2(unmarked.isEmpty(),
+           qPrintable(QStringLiteral("unmarked in the selection: ") +
+                      unmarked.join(QStringLiteral(" | "))));
+}
+
+/**
+ * @brief A mouse selection reports itself on every change; only where it
+ * ends is tracked, so a passing "a" cannot have autoclear take an unrelated
+ * "a" later. A copy still on the clipboard proper stays tracked beside it.
+ */
+void tst_util::copiedTextsKeepsWhereASelectionEnds() {
+  CopiedTexts texts;
+  for (const QString &step :
+       {QStringLiteral("a"), QStringLiteral("ab"), QStringLiteral("abc")}) {
+    texts.add(step, QString(), step);
+  }
+  QCOMPARE(texts.size(), qsizetype{1});
+  QVERIFY(texts.contains(QStringLiteral("abc")));
+  QVERIFY(!texts.contains(QStringLiteral("a")));
+
+  CopiedTexts copied;
+  copied.add(QStringLiteral("pin: 1234"), QStringLiteral("pin: 1234"),
+             QString());
+  copied.add(QStringLiteral("1234"), QStringLiteral("pin: 1234"),
+             QStringLiteral("1234"));
+  QVERIFY(copied.contains(QStringLiteral("pin: 1234")));
+  QVERIFY(copied.contains(QStringLiteral("1234")));
+}
+
+/**
+ * @brief Making room never drops a text still on the clipboard: a secret
+ * copied with Ctrl+C stays tracked however many selections follow.
+ */
+void tst_util::copiedTextsKeepsACopyStillOnTheClipboard() {
+  CopiedTexts texts;
+  const QString pin = QStringLiteral("pin: 1234");
+  texts.add(pin, pin, QString());
+  for (int i = 0; i < 40; ++i) {
+    const QString selection = QStringLiteral("selection %1 xyz").arg(i * 7919);
+    texts.add(selection, pin, selection);
+  }
+  QVERIFY(texts.contains(pin));
+  QVERIFY(texts.size() <= 16);
+  QVERIFY(!texts.contains(QString()));
 }
 
 QTEST_MAIN(tst_util)

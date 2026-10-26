@@ -14,6 +14,8 @@
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
 #include "qpushbuttonwithclipboard.h"
+#include "secretlineedit.h"
+#include "secrettextbrowser.h"
 #include "totp.h"
 #include "util.h"
 
@@ -197,7 +199,11 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   // 26px matches the action-button visual height for consistent alignment.
   constexpr int fieldHeight = 26;
   if (s.hidePassword && trimmedField == QObject::tr("Password")) {
-    auto *passwordLineEdit = new QLineEdit();
+    // Shown with the eye button, the password can be selected and copied;
+    // SecretLineEdit marks that copy and reports it, as the value browsers do.
+    auto *passwordLineEdit = new SecretLineEdit();
+    connect(passwordLineEdit, &SecretLineEdit::copied, this,
+            &PasswordDisplayPanel::textCopied);
     passwordLineEdit->setObjectName(trimmedField);
     passwordLineEdit->setText(trimmedValue);
     passwordLineEdit->setReadOnly(true);
@@ -211,7 +217,9 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     frame->layout()->addWidget(showButton);
     frame->layout()->addWidget(passwordLineEdit);
   } else {
-    auto *contentTextBrowser = new QTextBrowser();
+    auto *contentTextBrowser = new SecretTextBrowser();
+    connect(contentTextBrowser, &SecretTextBrowser::copied, this,
+            &PasswordDisplayPanel::textCopied);
     contentTextBrowser->setOpenExternalLinks(true);
     contentTextBrowser->setOpenLinks(true);
     contentTextBrowser->setMaximumHeight(fieldHeight);

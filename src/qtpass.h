@@ -8,6 +8,7 @@
 #include <QObject>
 #include <QPixmap>
 #include <QProcess>
+#include <QStringList>
 #include <QTimer>
 
 class MainWindow;
@@ -29,6 +30,48 @@ auto buildClipboardMimeData(const QString &text) -> QMimeData *;
 static inline auto dwordBytes(quint32 value) -> QByteArray {
   return {reinterpret_cast<const char *>(&value), sizeof(value)};
 }
+
+/**
+ * @class CopiedTexts
+ * @brief Texts copied out of a view of a secret, so autoclear clears them too.
+ *
+ * Text selected and copied from a shown entry (Ctrl+C, the context menu, a
+ * drag, or the X11/Wayland primary selection) gets onto the clipboard
+ * without QtPass's own copy, which tracks only the one text it copied.
+ * These are kept beside it. A mouse selection reports itself on every change
+ * while it grows; only where it ends is kept. Room is made by dropping the
+ * oldest text that is no longer on the clipboard or in the selection, so a
+ * copy still there always stays tracked.
+ */
+class CopiedTexts {
+public:
+  /**
+   * @brief Track @p text, copied out of a secret view.
+   * @param text The copied text; nothing happens when it is empty.
+   * @param onClipboard What the clipboard holds now.
+   * @param inSelection What the primary selection holds now.
+   */
+  void add(const QString &text, const QString &onClipboard,
+           const QString &inSelection);
+  /**
+   * @brief Whether @p text is one of the tracked texts.
+   * @param text Text found on the clipboard or in the selection.
+   * @return True for a non-empty tracked text.
+   */
+  [[nodiscard]] auto contains(const QString &text) const -> bool;
+  /**
+   * @brief Forget every tracked text, after autoclear ran.
+   */
+  void clear() { m_texts.clear(); }
+  /**
+   * @brief How many texts are tracked.
+   * @return The count, at most 16.
+   */
+  [[nodiscard]] auto size() const -> qsizetype { return m_texts.size(); }
+
+private:
+  QStringList m_texts;
+};
 
 /**
  * @class QtPass
@@ -91,6 +134,7 @@ private:
 
   QTimer clearClipboardTimer;
   QString clippedText;
+  CopiedTexts copiedTexts;
   bool freshStart{true};
 
   void setMainWindow();
@@ -110,6 +154,13 @@ public slots:
    * @param text Text to copy.
    */
   void copyTextToClipboard(const QString &text);
+
+  /**
+   * @brief Track text that got onto the clipboard by a copy out of a view
+   * of a secret, so autoclear clears it with the rest.
+   * @param text The copied text.
+   */
+  void trackCopied(const QString &text);
 
   /**
    * @brief Request display of text as a QR code in the UI.

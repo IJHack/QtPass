@@ -108,6 +108,8 @@ SOURCES   += mainwindow.cpp \
              simpletransaction.cpp \
              filecontent.cpp \
              qtpass.cpp \
+             secretlineedit.cpp \
+             secrettextbrowser.cpp \
              profileinit.cpp
 
 HEADERS   += mainwindow.h \
@@ -150,6 +152,8 @@ HEADERS   += mainwindow.h \
              passwordconfiguration.h \
              userinfo.h \
              qtpass.h \
+             secretlineedit.h \
+             secrettextbrowser.h \
              qtcompat.h \
              profileinit.h
 

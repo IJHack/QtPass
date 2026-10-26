@@ -131,6 +131,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
       ui->gridLayout, ui->verticalLayoutPassword, this, this);
   connect(m_displayPanel, &PasswordDisplayPanel::copyRequested, m_qtPass,
           &QtPass::copyTextToClipboard);
+  connect(m_displayPanel, &PasswordDisplayPanel::textCopied, m_qtPass,
+          &QtPass::trackCopied);
+  connect(ui->textBrowser, &SecretTextBrowser::copied, m_qtPass,
+          &QtPass::trackCopied);
   connect(m_displayPanel, &PasswordDisplayPanel::qrRequested, m_qtPass,
           &QtPass::showTextAsQRCode);
 
