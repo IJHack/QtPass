@@ -87,7 +87,9 @@ public:
 
   /**
    * @brief Sets the most bytes of plaintext decrypt() may produce.
-   * @param bytes The limit; kMaxPlaintextBytes until set.
+   * @param bytes The limit; kMaxPlaintextBytes until set. A value that is
+   * not positive is ignored and the limit stays as it was: there is no
+   * "unlimited".
    */
   void setMaxPlaintextBytes(qint64 bytes);
 

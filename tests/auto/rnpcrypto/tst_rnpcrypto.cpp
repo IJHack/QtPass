@@ -515,6 +515,14 @@ void tst_rnpcrypto::plaintextLimitStopsADecompressionBomb() {
   QVERIFY(rnp.decrypt(enc.out, &error, &ok).isEmpty());
   QVERIFY(!ok);
   QVERIFY(!error.isEmpty());
+
+  // 0 (RNP's "no limit") and a negative value cannot switch the guard off.
+  for (const qint64 bytes : {qint64{0}, qint64{-1}}) {
+    rnp.setMaxPlaintextBytes(bytes);
+    ok = true;
+    QVERIFY(rnp.decrypt(enc.out, &error, &ok).isEmpty());
+    QVERIFY(!ok);
+  }
 }
 
 void tst_rnpcrypto::wrongKeyCannotDecrypt() {

@@ -335,7 +335,13 @@ RnpCrypto::~RnpCrypto() {
 
 auto RnpCrypto::isValid() const -> bool { return m_ffi != nullptr; }
 
-void RnpCrypto::setMaxPlaintextBytes(qint64 bytes) { m_maxPlaintext = bytes; }
+void RnpCrypto::setMaxPlaintextBytes(qint64 bytes) {
+  // RNP reads 0 as "no limit", and a negative value would wrap to a huge
+  // size_t: either would switch the guard off without a word.
+  if (bytes > 0) {
+    m_maxPlaintext = bytes;
+  }
+}
 
 void RnpCrypto::setPassphraseProvider(PassphraseProvider provider) {
   m_passphrase = std::move(provider);
