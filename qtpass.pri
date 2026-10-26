@@ -24,6 +24,10 @@ clang|gcc:QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
 gcc:!clang:greaterThan(QMAKE_GCC_MAJOR_VERSION, 15): \
     QMAKE_CXXFLAGS_WARN_ON += -Wno-sfinae-incomplete
 
+# Android forbids System V shared memory (seccomp kills the app on shmget,
+# which QSharedMemory uses), and an Android app runs as one instance anyway.
+android: CONFIG *= nosingleapp
+
 nosingleapp {
     DEFINES += SINGLE_APP=0
 } else {

@@ -1,0 +1,88 @@
+---
+name: Android
+
+# Keeps QtPass building for Android (#2005): src and main for arm64-v8a with
+# the Qt Android kit, packaged into a debug APK by androiddeployqt against
+# API 36 (Qt 6.11 pulls in androidx.core 1.17, which needs compileSdk 36).
+# A build check only; the APK is the desktop UI and has no OpenPGP backend
+# that works on Android yet. Runs when the build setup or the code changes.
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "**.pro"
+      - "**.pri"
+      - "src/**"
+      - "main/**"
+      - "resources.qrc"
+      - ".github/workflows/android.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "**.pro"
+      - "**.pri"
+      - "src/**"
+      - "main/**"
+      - "resources.qrc"
+      - ".github/workflows/android.yml"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  apk:
+    name: Android arm64-v8a (Qt 6.11)
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    env:
+      ABI: arm64-v8a
+      NDK_VERSION: "27.2.12479018"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Android NDK and platform
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install \
+            "ndk;$NDK_VERSION" "platforms;android-36" "build-tools;36.0.0" > /dev/null
+          {
+            echo "ANDROID_NDK_ROOT=$ANDROID_HOME/ndk/$NDK_VERSION"
+            echo "ANDROID_SDK_ROOT=$ANDROID_HOME"
+            echo "JAVA_HOME=$JAVA_HOME_17_X64"
+          } >> "$GITHUB_ENV"
+      # Qt 6.7 and later list their Android packages under host all_os; the
+      # action installs the matching desktop Qt (androiddeployqt) with it.
+      - uses: jurplel/install-qt-action@a9c63c7c123f3069cff414e7e482d95dfa9d8125 # v4.4.1
+        with:
+          version: "6.11"
+          host: all_os
+          target: android
+          arch: android_arm64_v8a
+          cache: true
+      - name: Build
+        run: |
+          mkdir build
+          cd build
+          "$QT_ROOT_DIR/bin/qmake" ../qtpass.pro CONFIG+=release ANDROID_ABIS="$ABI"
+          make -j"$(nproc)" sub-src sub-main
+      - name: Package the APK
+        run: |
+          cd build
+          mkdir -p "android-build/libs/$ABI"
+          cp "main/libqtpass_$ABI.so" "android-build/libs/$ABI/"
+          androiddeployqt=$(find "$QT_ROOT_DIR/.." -path '*/bin/androiddeployqt' | head -1)
+          "$androiddeployqt" \
+            --input main/android-qtpass-deployment-settings.json \
+            --output android-build --android-platform android-36 \
+            --jdk "$JAVA_HOME" --gradle
+          find android-build -name '*.apk' -exec ls -l {} +
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: qtpass-android-arm64-v8a
+          path: build/android-build/build/outputs/apk/**/*.apk
+          if-no-files-found: error
