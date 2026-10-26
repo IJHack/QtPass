@@ -271,17 +271,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">עקיפת SSH_AUTH_SOCK:</translation>
+        <translation>עקיפת SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">נתיב אופציונלי לעקיפת SSH_AUTH_SOCK. השאר ריק לגילוי אוטומטי דרך gpgconf (בעיה #543).</translation>
+        <translation>נתיב אופציונלי לעקיפת SSH_AUTH_SOCK. השאר ריק לגילוי אוטומטי דרך gpgconf (בעיה #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(גילוי אוטומטי דרך gpgconf)</translation>
+        <translation>(גילוי אוטומטי דרך gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -291,7 +291,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="970"/>
         <source>Name</source>
-        <translation type="unfinished">שם</translation>
+        <translation>שם</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
         <source>Path</source>
-        <translation type="unfinished">נתיב</translation>
+        <translation>נתיב</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="986"/>
         <source>Signing Key</source>
-        <translation type="unfinished">מפתח חתימה</translation>
+        <translation>מפתח חתימה</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="989"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="55"/>
         <source>System tray is not available</source>
-        <translation type="unfinished">מגש המערכת אינו זמין</translation>
+        <translation>מגש המערכת אינו זמין</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="70"/>
@@ -416,7 +416,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished">ליצור ספריית פרופיל?</translation>
+        <translation>ליצור ספריית פרופיל?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="791"/>
@@ -487,7 +487,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="1060"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">יצירת מאגר הסיסמאות נכשלה ב: %1</translation>
+        <translation>יצירת מאגר הסיסמאות נכשלה ב: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1091"/>
@@ -881,7 +881,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
         <source>Name</source>
-        <translation type="unfinished">שם</translation>
+        <translation>שם</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
