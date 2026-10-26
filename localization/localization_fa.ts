@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">فعال‌سازی پشتیبانی از رمز عبور یک‌بارمصرف (OTP)</translation>
+        <translation>فعال‌سازی پشتیبانی از رمز عبور یک‌بارمصرف (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -586,7 +586,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">راه‌اندازی %1 ناموفق بود</translation>
+        <translation>راه‌اندازی %1 ناموفق بود</translation>
     </message>
 </context>
 <context>
@@ -787,12 +787,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">کپی ناموفق بود</translation>
+        <translation>کپی ناموفق بود</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">کپی %1 به %2 ممکن نبود.</translation>
+        <translation>کپی %1 به %2 ممکن نبود.</translation>
     </message>
 </context>
 <context>
@@ -1216,12 +1216,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">نام نامعتبر</translation>
+        <translation>نام نامعتبر</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">این نام خارج از مخزن رمز عبور حل می‌شود. لطفاً نام دیگری انتخاب کنید.</translation>
+        <translation>این نام خارج از مخزن رمز عبور حل می‌شود. لطفاً نام دیگری انتخاب کنید.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1160"/>
@@ -1244,22 +1244,22 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">مهلت عملیات به پایان رسید؛ رابط کاربری مجدداً فعال می‌شود.</translation>
+        <translation>مهلت عملیات به پایان رسید؛ رابط کاربری مجدداً فعال می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">رمزگشایی این ورودی رمز عبور ممکن نبود</translation>
+        <translation>رمزگشایی این ورودی رمز عبور ممکن نبود</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">جستجوی محتوا از عبارات منظم پایه POSIX استفاده می‌کند (pass grep).</translation>
+        <translation>جستجوی محتوا از عبارات منظم پایه POSIX استفاده می‌کند (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">جستجوی محتوا از عبارات منظم سازگار با Perl استفاده می‌کند (PCRE).</translation>
+        <translation>جستجوی محتوا از عبارات منظم سازگار با Perl استفاده می‌کند (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1161"/>
@@ -1386,7 +1386,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">این ورودی حاوی راز OTP است، نه رمز عبور</translation>
+        <translation>این ورودی حاوی راز OTP است، نه رمز عبور</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1829"/>
@@ -1456,7 +1456,7 @@ Continue?</source>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">ثانیه‌های باقی‌مانده تا تغییر کد OTP</translation>
+        <translation>ثانیه‌های باقی‌مانده تا تغییر کد OTP</translation>
     </message>
 </context>
 <context>
@@ -1484,7 +1484,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">هیچ فایل اجرایی GPG پیکربندی نشده است</translation>
+        <translation>هیچ فایل اجرایی GPG پیکربندی نشده است</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1562,12 +1562,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">نشانی otpauth:// یا راز base32</translation>
+        <translation>نشانی otpauth:// یا راز base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">راز OTP نامعتبر</translation>
+        <translation>راز OTP نامعتبر</translation>
     </message>
 </context>
 <context>
@@ -1583,23 +1583,23 @@ Continue?</source>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">رمز عبور</translation>
+        <translation>رمز عبور</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">باز کردن %1 در مرورگر</translation>
+        <translation>باز کردن %1 در مرورگر</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">کد OTP</translation>
+        <translation>کد OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">هیچ کد OTP در این ورودی رمز عبور یافت نشد</translation>
+        <translation>هیچ کد OTP در این ورودی رمز عبور یافت نشد</translation>
     </message>
 </context>
 <context>
@@ -1698,22 +1698,22 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">راه‌اندازی qrencode ناموفق بود: %1</translation>
+        <translation>راه‌اندازی qrencode ناموفق بود: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode به‌موقع پایان نیافت</translation>
+        <translation>qrencode به‌موقع پایان نیافت</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode از کار افتاد</translation>
+        <translation>qrencode از کار افتاد</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode با کد %1 خارج شد</translation>
+        <translation>qrencode با کد %1 خارج شد</translation>
     </message>
 </context>
 <context>

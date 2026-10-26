@@ -143,7 +143,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Activer la prise en charge des mots de passe à usage unique (OTP)</translation>
+        <translation>Activer la prise en charge des mots de passe à usage unique (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
@@ -478,7 +478,7 @@ La valeur sera néanmoins enregistrée telle quelle.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
         <source>Extensions:</source>
-        <translation>Extensions:</translation>
+        <translation>Extensions&#xa0;:</translation>
     </message>
     <message>
         <source>Use qrencode</source>
@@ -650,7 +650,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">Impossible de démarrer %1</translation>
+        <translation>Impossible de démarrer %1</translation>
     </message>
 </context>
 <context>
@@ -851,12 +851,12 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">Échec de la copie</translation>
+        <translation>Échec de la copie</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">Impossible de copier %1 vers %2.</translation>
+        <translation>Impossible de copier %1 vers %2.</translation>
     </message>
 </context>
 <context>
@@ -1416,7 +1416,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">La connexion a expiré ; réactivation de l&apos;interface.</translation>
+        <translation>La connexion a expiré ; réactivation de l&apos;interface.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="372"/>
@@ -1430,7 +1430,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Impossible de déchiffrer cette entrée de mot de passe</translation>
+        <translation>Impossible de déchiffrer cette entrée de mot de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="740"/>
@@ -1458,12 +1458,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">La recherche de contenu utilise les expressions régulières de base POSIX (pass grep).</translation>
+        <translation>La recherche de contenu utilise les expressions régulières de base POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">La recherche de contenu utilise les expressions régulières compatibles Perl (PCRE).</translation>
+        <translation>La recherche de contenu utilise les expressions régulières compatibles Perl (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1007"/>
@@ -1481,17 +1481,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Nom invalide</translation>
+        <translation>Nom invalide</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Ce nom pointerait en dehors du coffre de mots de passe. Veuillez choisir un autre nom.</translation>
+        <translation>Ce nom pointerait en dehors du coffre de mots de passe. Veuillez choisir un autre nom.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1201"/>
         <source> and the whole content?</source>
-        <translation> et tout le contenu?</translation>
+        <translation> et tout le contenu&#x202f;?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1211"/>
@@ -1546,7 +1546,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Cette entrée contient un secret OTP, pas un mot de passe</translation>
+        <translation>Cette entrée contient un secret OTP, pas un mot de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1880"/>
@@ -1664,7 +1664,7 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Secondes avant le changement du code OTP</translation>
+        <translation>Secondes avant le changement du code OTP</translation>
     </message>
 </context>
 <context>
@@ -1692,7 +1692,7 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">Aucun exécutable GPG configuré</translation>
+        <translation>Aucun exécutable GPG configuré</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1740,7 +1740,7 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation>Ensemble de caractères:</translation>
+        <translation>Ensemble de caractères&#xa0;:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
@@ -1770,12 +1770,12 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">URI otpauth:// ou secret base32</translation>
+        <translation>URI otpauth:// ou secret base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Secret OTP invalide</translation>
+        <translation>Secret OTP invalide</translation>
     </message>
 </context>
 <context>
@@ -1791,23 +1791,23 @@ Continuez&#x202f;?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">Mot de passe</translation>
+        <translation>Mot de passe</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Ouvrir %1 dans le navigateur</translation>
+        <translation>Ouvrir %1 dans le navigateur</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">Code OTP</translation>
+        <translation>Code OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Aucun code OTP trouvé dans cette entrée de mot de passe</translation>
+        <translation>Aucun code OTP trouvé dans cette entrée de mot de passe</translation>
     </message>
 </context>
 <context>
@@ -1906,22 +1906,22 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Impossible de démarrer qrencode&#xa0;: %1</translation>
+        <translation>Impossible de démarrer qrencode&#xa0;: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode n&apos;a pas terminé à temps</translation>
+        <translation>qrencode n&apos;a pas terminé à temps</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode a planté</translation>
+        <translation>qrencode a planté</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode s&apos;est terminé avec le code %1</translation>
+        <translation>qrencode s&apos;est terminé avec le code %1</translation>
     </message>
 </context>
 <context>

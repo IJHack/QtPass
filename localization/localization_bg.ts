@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Разрешаване на поддръжка за еднократни пароли (OTP)</translation>
+        <translation>Разрешаване на поддръжка за еднократни пароли (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -646,7 +646,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">Не може да се стартира %1</translation>
+        <translation>Не може да се стартира %1</translation>
     </message>
 </context>
 <context>
@@ -847,12 +847,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">Неуспешно копиране</translation>
+        <translation>Неуспешно копиране</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">Не може да се копира %1 в %2.</translation>
+        <translation>Не може да се копира %1 в %2.</translation>
     </message>
 </context>
 <context>
@@ -1443,7 +1443,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Операцията изтече; интерфейсът се активира отново.</translation>
+        <translation>Операцията изтече; интерфейсът се активира отново.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="372"/>
@@ -1453,7 +1453,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Този запис за парола не може да се дешифрира</translation>
+        <translation>Този запис за парола не може да се дешифрира</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="740"/>
@@ -1481,12 +1481,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Търсенето в съдържанието използва POSIX основни регулярни изрази (pass grep).</translation>
+        <translation>Търсенето в съдържанието използва POSIX основни регулярни изрази (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Търсенето в съдържанието използва Perl-съвместими регулярни изрази (PCRE).</translation>
+        <translation>Търсенето в съдържанието използва Perl-съвместими регулярни изрази (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1007"/>
@@ -1504,12 +1504,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Невалидно име</translation>
+        <translation>Невалидно име</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Това име би се разрешило извън хранилището за пароли. Моля, изберете друго име.</translation>
+        <translation>Това име би се разрешило извън хранилището за пароли. Моля, изберете друго име.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1267"/>
@@ -1630,7 +1630,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Този запис съдържа OTP тайна, а не парола</translation>
+        <translation>Този запис съдържа OTP тайна, а не парола</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1829"/>
@@ -1676,7 +1676,7 @@ Continue?</source>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Секунди до смяната на OTP кода</translation>
+        <translation>Секунди до смяната на OTP кода</translation>
     </message>
 </context>
 <context>
@@ -1704,7 +1704,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">Не е настроен изпълним файл на GPG</translation>
+        <translation>Не е настроен изпълним файл на GPG</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1782,12 +1782,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">otpauth:// URI или base32 тайна</translation>
+        <translation>otpauth:// URI или base32 тайна</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Невалидна OTP тайна</translation>
+        <translation>Невалидна OTP тайна</translation>
     </message>
 </context>
 <context>
@@ -1803,23 +1803,23 @@ Continue?</source>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">Парола</translation>
+        <translation>Парола</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Отвори %1 в браузъра</translation>
+        <translation>Отвори %1 в браузъра</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP код</translation>
+        <translation>OTP код</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">В този запис за парола не е намерен OTP код</translation>
+        <translation>В този запис за парола не е намерен OTP код</translation>
     </message>
 </context>
 <context>
@@ -1918,22 +1918,22 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Не може да се стартира qrencode: %1</translation>
+        <translation>Не може да се стартира qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode не приключи навреме</translation>
+        <translation>qrencode не приключи навреме</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode се срина</translation>
+        <translation>qrencode се срина</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode приключи с код %1</translation>
+        <translation>qrencode приключи с код %1</translation>
     </message>
 </context>
 <context>

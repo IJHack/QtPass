@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Iespējot vienreizējo paroļu (OTP) atbalstu</translation>
+        <translation>Iespējot vienreizējo paroļu (OTP) atbalstu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -586,7 +586,7 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">Neizdevās palaist %1</translation>
+        <translation>Neizdevās palaist %1</translation>
     </message>
 </context>
 <context>
@@ -787,12 +787,12 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">Kopēšana neizdevās</translation>
+        <translation>Kopēšana neizdevās</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">Neizdevās nokopēt %1 uz %2.</translation>
+        <translation>Neizdevās nokopēt %1 uz %2.</translation>
     </message>
 </context>
 <context>
@@ -1160,7 +1160,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Darbībai iestājās noildze; saskarne tiek iespējota no jauna.</translation>
+        <translation>Darbībai iestājās noildze; saskarne tiek iespējota no jauna.</translation>
     </message>
     <message>
         <source>OTP Code</source>
@@ -1169,7 +1169,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Neizdevās atšifrēt šo paroles ierakstu</translation>
+        <translation>Neizdevās atšifrēt šo paroles ierakstu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="740"/>
@@ -1207,12 +1207,12 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Satura meklēšana izmanto POSIX pamata regulārās izteiksmes (pass grep).</translation>
+        <translation>Satura meklēšana izmanto POSIX pamata regulārās izteiksmes (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Satura meklēšana izmanto ar Perl saderīgas regulārās izteiksmes (PCRE).</translation>
+        <translation>Satura meklēšana izmanto ar Perl saderīgas regulārās izteiksmes (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1007"/>
@@ -1240,12 +1240,12 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Nederīgs nosaukums</translation>
+        <translation>Nederīgs nosaukums</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Šis nosaukums norādītu ārpus paroļu krātuves. Lūdzu, izvēlieties citu nosaukumu.</translation>
+        <translation>Šis nosaukums norādītu ārpus paroļu krātuves. Lūdzu, izvēlieties citu nosaukumu.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1160"/>
@@ -1378,7 +1378,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Šajā ierakstā ir OTP noslēpums, nevis parole</translation>
+        <translation>Šajā ierakstā ir OTP noslēpums, nevis parole</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1829"/>
@@ -1448,7 +1448,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Sekundes līdz OTP koda maiņai</translation>
+        <translation>Sekundes līdz OTP koda maiņai</translation>
     </message>
 </context>
 <context>
@@ -1476,7 +1476,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">Nav konfigurēts GPG izpildāmais fails</translation>
+        <translation>Nav konfigurēts GPG izpildāmais fails</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1554,12 +1554,12 @@ Turpināt?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">otpauth:// URI vai base32 noslēpums</translation>
+        <translation>otpauth:// URI vai base32 noslēpums</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Nederīgs OTP noslēpums</translation>
+        <translation>Nederīgs OTP noslēpums</translation>
     </message>
 </context>
 <context>
@@ -1575,23 +1575,23 @@ Turpināt?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">Parole</translation>
+        <translation>Parole</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Atvērt %1 pārlūkā</translation>
+        <translation>Atvērt %1 pārlūkā</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP kods</translation>
+        <translation>OTP kods</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Nav atrasts OTP kods šajā paroles ievades virzienā</translation>
+        <translation>Nav atrasts OTP kods šajā paroles ievades virzienā</translation>
     </message>
 </context>
 <context>
@@ -1690,22 +1690,22 @@ Turpināt?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Neizdevās palaist qrencode: %1</translation>
+        <translation>Neizdevās palaist qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode nepabeidza darbu laikā</translation>
+        <translation>qrencode nepabeidza darbu laikā</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode avarēja</translation>
+        <translation>qrencode avarēja</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode beidza darbu ar kodu %1</translation>
+        <translation>qrencode beidza darbu ar kodu %1</translation>
     </message>
 </context>
 <context>

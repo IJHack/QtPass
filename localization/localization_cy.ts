@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Galluogi cymorth cyfrineiriau untro (OTP)</translation>
+        <translation>Galluogi cymorth cyfrineiriau untro (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -586,7 +586,7 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">Methwyd cychwyn %1</translation>
+        <translation>Methwyd cychwyn %1</translation>
     </message>
 </context>
 <context>
@@ -787,12 +787,12 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">Methodd y copïo</translation>
+        <translation>Methodd y copïo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">Methwyd copïo %1 i %2.</translation>
+        <translation>Methwyd copïo %1 i %2.</translation>
     </message>
 </context>
 <context>
@@ -1276,22 +1276,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Mae&apos;r weithred wedi cymryd gormod o amser; yn ailalluogi&apos;r rhyngwyneb.</translation>
+        <translation>Mae&apos;r weithred wedi cymryd gormod o amser; yn ailalluogi&apos;r rhyngwyneb.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Methwyd dadgryptio&apos;r cofnod cyfrinair hwn</translation>
+        <translation>Methwyd dadgryptio&apos;r cofnod cyfrinair hwn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Mae chwilio cynnwys yn defnyddio mynegiadau rheolaidd sylfaenol POSIX (pass grep).</translation>
+        <translation>Mae chwilio cynnwys yn defnyddio mynegiadau rheolaidd sylfaenol POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Mae chwilio cynnwys yn defnyddio mynegiadau rheolaidd cydnaws â Perl (PCRE).</translation>
+        <translation>Mae chwilio cynnwys yn defnyddio mynegiadau rheolaidd cydnaws â Perl (PCRE).</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1031"/>
@@ -1318,12 +1318,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Enw annilys</translation>
+        <translation>Enw annilys</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Byddai&apos;r enw hwnnw yn datrys y tu allan i&apos;r storfa cyfrineiriau. Dewiswch enw gwahanol.</translation>
+        <translation>Byddai&apos;r enw hwnnw yn datrys y tu allan i&apos;r storfa cyfrineiriau. Dewiswch enw gwahanol.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1160"/>
@@ -1416,7 +1416,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Mae&apos;r cofnod hwn yn cynnwys cyfrinach OTP, nid cyfrinair</translation>
+        <translation>Mae&apos;r cofnod hwn yn cynnwys cyfrinach OTP, nid cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1880"/>
@@ -1530,7 +1530,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Eiliadau nes bod y cod OTP yn newid</translation>
+        <translation>Eiliadau nes bod y cod OTP yn newid</translation>
     </message>
 </context>
 <context>
@@ -1558,7 +1558,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">Nid oes ffeil weithredadwy GPG wedi&apos;i ffurfweddu</translation>
+        <translation>Nid oes ffeil weithredadwy GPG wedi&apos;i ffurfweddu</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1636,12 +1636,12 @@ Parhau?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">URI otpauth:// neu gyfrinach base32</translation>
+        <translation>URI otpauth:// neu gyfrinach base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Cyfrinach OTP annilys</translation>
+        <translation>Cyfrinach OTP annilys</translation>
     </message>
 </context>
 <context>
@@ -1657,23 +1657,23 @@ Parhau?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">Cyfrinair</translation>
+        <translation>Cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Agor %1 mewn porwr</translation>
+        <translation>Agor %1 mewn porwr</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">Cod OTP</translation>
+        <translation>Cod OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Ni chanfuwyd cod OTP yn y cofnod cyfrinair hwn</translation>
+        <translation>Ni chanfuwyd cod OTP yn y cofnod cyfrinair hwn</translation>
     </message>
 </context>
 <context>
@@ -1772,22 +1772,22 @@ Parhau?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Methwyd cychwyn qrencode: %1</translation>
+        <translation>Methwyd cychwyn qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">Ni orffennodd qrencode mewn pryd</translation>
+        <translation>Ni orffennodd qrencode mewn pryd</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">Chwalodd qrencode</translation>
+        <translation>Chwalodd qrencode</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">Gorffennodd qrencode gyda&apos;r cod %1</translation>
+        <translation>Gorffennodd qrencode gyda&apos;r cod %1</translation>
     </message>
 </context>
 <context>

@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">ওয়ান-টাইম পাসওয়ার্ড (OTP) সমর্থন সক্ষম করুন</translation>
+        <translation>ওয়ান-টাইম পাসওয়ার্ড (OTP) সমর্থন সক্ষম করুন</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -586,7 +586,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">%1 চালু করা যায়নি</translation>
+        <translation>%1 চালু করা যায়নি</translation>
     </message>
 </context>
 <context>
@@ -787,12 +787,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">কপি ব্যর্থ হয়েছে</translation>
+        <translation>কপি ব্যর্থ হয়েছে</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">%1 কে %2 এ কপি করা যায়নি।</translation>
+        <translation>%1 কে %2 এ কপি করা যায়নি।</translation>
     </message>
 </context>
 <context>
@@ -1160,7 +1160,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">অপারেশনের সময় শেষ হয়ে গেছে; ইন্টারফেস পুনরায় সক্রিয় করা হচ্ছে।</translation>
+        <translation>অপারেশনের সময় শেষ হয়ে গেছে; ইন্টারফেস পুনরায় সক্রিয় করা হচ্ছে।</translation>
     </message>
     <message>
         <source>OTP Code</source>
@@ -1169,7 +1169,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">এই পাসওয়ার্ড এন্ট্রি ডিক্রিপ্ট করা যায়নি</translation>
+        <translation>এই পাসওয়ার্ড এন্ট্রি ডিক্রিপ্ট করা যায়নি</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="740"/>
@@ -1207,12 +1207,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">কন্টেন্ট অনুসন্ধান POSIX মৌলিক নিয়মিত এক্সপ্রেশন ব্যবহার করে (pass grep)।</translation>
+        <translation>কন্টেন্ট অনুসন্ধান POSIX মৌলিক নিয়মিত এক্সপ্রেশন ব্যবহার করে (pass grep)।</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">কন্টেন্ট অনুসন্ধান Perl-সামঞ্জস্যপূর্ণ নিয়মিত এক্সপ্রেশন ব্যবহার করে (PCRE)।</translation>
+        <translation>কন্টেন্ট অনুসন্ধান Perl-সামঞ্জস্যপূর্ণ নিয়মিত এক্সপ্রেশন ব্যবহার করে (PCRE)।</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1007"/>
@@ -1238,12 +1238,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">অবৈধ নাম</translation>
+        <translation>অবৈধ নাম</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">এই নামটি পাসওয়ার্ড স্টোরের বাইরে নির্দেশ করবে। অনুগ্রহ করে একটি ভিন্ন নাম বেছে নিন।</translation>
+        <translation>এই নামটি পাসওয়ার্ড স্টোরের বাইরে নির্দেশ করবে। অনুগ্রহ করে একটি ভিন্ন নাম বেছে নিন।</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1160"/>
@@ -1376,7 +1376,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">এই এন্ট্রিতে একটি OTP সিক্রেট আছে, পাসওয়ার্ড নয়</translation>
+        <translation>এই এন্ট্রিতে একটি OTP সিক্রেট আছে, পাসওয়ার্ড নয়</translation>
     </message>
     <message>
         <source>Open %1 in browser</source>
@@ -1450,7 +1450,7 @@ Continue?</source>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">OTP কোড পরিবর্তন হতে বাকি সেকেন্ড</translation>
+        <translation>OTP কোড পরিবর্তন হতে বাকি সেকেন্ড</translation>
     </message>
 </context>
 <context>
@@ -1478,7 +1478,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">কোনো GPG এক্সিকিউটেবল কনফিগার করা নেই</translation>
+        <translation>কোনো GPG এক্সিকিউটেবল কনফিগার করা নেই</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1556,12 +1556,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">otpauth:// URI অথবা base32 সিক্রেট</translation>
+        <translation>otpauth:// URI অথবা base32 সিক্রেট</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">অবৈধ OTP সিক্রেট</translation>
+        <translation>অবৈধ OTP সিক্রেট</translation>
     </message>
 </context>
 <context>
@@ -1577,23 +1577,23 @@ Continue?</source>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">পাসওয়ার্ড</translation>
+        <translation>পাসওয়ার্ড</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">ব্রাউজারে %1 খুলুন</translation>
+        <translation>ব্রাউজারে %1 খুলুন</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP কোড</translation>
+        <translation>OTP কোড</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">এই পাসওয়ার্ড ইনট্রির মধ্যে কোনো OTP কোড পাওয়া গেল না</translation>
+        <translation>এই পাসওয়ার্ড ইনট্রির মধ্যে কোনো OTP কোড পাওয়া গেল না</translation>
     </message>
 </context>
 <context>
@@ -1692,22 +1692,22 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">qrencode চালু করা যায়নি: %1</translation>
+        <translation>qrencode চালু করা যায়নি: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode সময়মতো শেষ হয়নি</translation>
+        <translation>qrencode সময়মতো শেষ হয়নি</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode ক্র্যাশ করেছে</translation>
+        <translation>qrencode ক্র্যাশ করেছে</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode কোড %1 দিয়ে বন্ধ হয়েছে</translation>
+        <translation>qrencode কোড %1 দিয়ে বন্ধ হয়েছে</translation>
     </message>
 </context>
 <context>

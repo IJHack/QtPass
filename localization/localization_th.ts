@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">เปิดใช้การรองรับรหัสผ่านแบบใช้ครั้งเดียว (OTP)</translation>
+        <translation>เปิดใช้การรองรับรหัสผ่านแบบใช้ครั้งเดียว (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -586,7 +586,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">ไม่สามารถเริ่ม %1</translation>
+        <translation>ไม่สามารถเริ่ม %1</translation>
     </message>
 </context>
 <context>
@@ -787,12 +787,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">การคัดลอกล้มเหลว</translation>
+        <translation>การคัดลอกล้มเหลว</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">ไม่สามารถคัดลอก %1 ไปยัง %2</translation>
+        <translation>ไม่สามารถคัดลอก %1 ไปยัง %2</translation>
     </message>
 </context>
 <context>
@@ -1216,12 +1216,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">ชื่อไม่ถูกต้อง</translation>
+        <translation>ชื่อไม่ถูกต้อง</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">ชื่อนี้จะชี้ออกไปนอกที่เก็บรหัสผ่าน โปรดเลือกชื่ออื่น</translation>
+        <translation>ชื่อนี้จะชี้ออกไปนอกที่เก็บรหัสผ่าน โปรดเลือกชื่ออื่น</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1160"/>
@@ -1244,22 +1244,22 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">การดำเนินการหมดเวลา กำลังเปิดใช้อินเทอร์เฟซอีกครั้ง</translation>
+        <translation>การดำเนินการหมดเวลา กำลังเปิดใช้อินเทอร์เฟซอีกครั้ง</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">ไม่สามารถถอดรหัสรายการรหัสผ่านนี้</translation>
+        <translation>ไม่สามารถถอดรหัสรายการรหัสผ่านนี้</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">การค้นหาเนื้อหาใช้นิพจน์ปรกติพื้นฐานแบบ POSIX (pass grep)</translation>
+        <translation>การค้นหาเนื้อหาใช้นิพจน์ปรกติพื้นฐานแบบ POSIX (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">การค้นหาเนื้อหาใช้นิพจน์ปรกติที่เข้ากันได้กับ Perl (PCRE)</translation>
+        <translation>การค้นหาเนื้อหาใช้นิพจน์ปรกติที่เข้ากันได้กับ Perl (PCRE)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1161"/>
@@ -1386,7 +1386,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">รายการนี้มีข้อมูลลับ OTP ไม่ใช่รหัสผ่าน</translation>
+        <translation>รายการนี้มีข้อมูลลับ OTP ไม่ใช่รหัสผ่าน</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1829"/>
@@ -1456,7 +1456,7 @@ Continue?</source>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">จำนวนวินาทีก่อนที่รหัส OTP จะเปลี่ยน</translation>
+        <translation>จำนวนวินาทีก่อนที่รหัส OTP จะเปลี่ยน</translation>
     </message>
 </context>
 <context>
@@ -1484,7 +1484,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">ยังไม่ได้กำหนดไฟล์ปฏิบัติการ GPG</translation>
+        <translation>ยังไม่ได้กำหนดไฟล์ปฏิบัติการ GPG</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1562,12 +1562,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">URI แบบ otpauth:// หรือข้อมูลลับแบบ base32</translation>
+        <translation>URI แบบ otpauth:// หรือข้อมูลลับแบบ base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">ข้อมูลลับ OTP ไม่ถูกต้อง</translation>
+        <translation>ข้อมูลลับ OTP ไม่ถูกต้อง</translation>
     </message>
 </context>
 <context>
@@ -1583,23 +1583,23 @@ Continue?</source>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">รหัสผ่าน</translation>
+        <translation>รหัสผ่าน</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">เปิด %1 ในเบราว์เซอร์</translation>
+        <translation>เปิด %1 ในเบราว์เซอร์</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">รหัส OTP</translation>
+        <translation>รหัส OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">ไม่พบรหัส OTP ในรายการรหัสผ่านนี้</translation>
+        <translation>ไม่พบรหัส OTP ในรายการรหัสผ่านนี้</translation>
     </message>
 </context>
 <context>
@@ -1698,22 +1698,22 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">ไม่สามารถเริ่ม qrencode: %1</translation>
+        <translation>ไม่สามารถเริ่ม qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode ทำงานไม่เสร็จภายในเวลาที่กำหนด</translation>
+        <translation>qrencode ทำงานไม่เสร็จภายในเวลาที่กำหนด</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode หยุดทำงาน</translation>
+        <translation>qrencode หยุดทำงาน</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode จบการทำงานด้วยรหัส %1</translation>
+        <translation>qrencode จบการทำงานด้วยรหัส %1</translation>
     </message>
 </context>
 <context>

@@ -478,7 +478,7 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Povolit podporu jednorázových hesel (OTP)</translation>
+        <translation>Povolit podporu jednorázových hesel (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -642,7 +642,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">Nepodařilo se spustit %1</translation>
+        <translation>Nepodařilo se spustit %1</translation>
     </message>
 </context>
 <context>
@@ -843,12 +843,12 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">Kopírování se nezdařilo</translation>
+        <translation>Kopírování se nezdařilo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">Nepodařilo se zkopírovat %1 do %2.</translation>
+        <translation>Nepodařilo se zkopírovat %1 do %2.</translation>
     </message>
 </context>
 <context>
@@ -1492,7 +1492,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Operace vypršela; rozhraní se znovu aktivuje.</translation>
+        <translation>Operace vypršela; rozhraní se znovu aktivuje.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="372"/>
@@ -1502,27 +1502,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">Tento záznam hesla se nepodařilo dešifrovat</translation>
+        <translation>Tento záznam hesla se nepodařilo dešifrovat</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Hledání v obsahu používá základní regulární výrazy POSIX (pass grep).</translation>
+        <translation>Hledání v obsahu používá základní regulární výrazy POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Hledání v obsahu používá regulární výrazy kompatibilní s Perlem (PCRE).</translation>
+        <translation>Hledání v obsahu používá regulární výrazy kompatibilní s Perlem (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Neplatné jméno</translation>
+        <translation>Neplatné jméno</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Tento název by odkazoval mimo úložiště hesel. Zvolte prosím jiný název.</translation>
+        <translation>Tento název by odkazoval mimo úložiště hesel. Zvolte prosím jiný název.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1588"/>
@@ -1585,7 +1585,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Tento záznam obsahuje tajný klíč OTP, nikoli heslo</translation>
+        <translation>Tento záznam obsahuje tajný klíč OTP, nikoli heslo</translation>
     </message>
     <message>
         <source>Open %1 in browser</source>
@@ -1670,7 +1670,7 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Sekund do změny kódu OTP</translation>
+        <translation>Sekund do změny kódu OTP</translation>
     </message>
 </context>
 <context>
@@ -1698,7 +1698,7 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">Není nastaven žádný spustitelný soubor GPG</translation>
+        <translation>Není nastaven žádný spustitelný soubor GPG</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1776,12 +1776,12 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">URI otpauth:// nebo tajný klíč v base32</translation>
+        <translation>URI otpauth:// nebo tajný klíč v base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Neplatný tajný klíč OTP</translation>
+        <translation>Neplatný tajný klíč OTP</translation>
     </message>
 </context>
 <context>
@@ -1797,23 +1797,23 @@ Pokračovat?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">Heslo</translation>
+        <translation>Heslo</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Otevřít %1 v prohlížeči</translation>
+        <translation>Otevřít %1 v prohlížeči</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">Kód OTP</translation>
+        <translation>Kód OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">V tomto záznamu hesla nebyl nalezen žádný kód OTP</translation>
+        <translation>V tomto záznamu hesla nebyl nalezen žádný kód OTP</translation>
     </message>
 </context>
 <context>
@@ -1912,22 +1912,22 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">Nepodařilo se spustit qrencode: %1</translation>
+        <translation>Nepodařilo se spustit qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode neskončil včas</translation>
+        <translation>qrencode neskončil včas</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode se zhroutil</translation>
+        <translation>qrencode se zhroutil</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode skončil s kódem %1</translation>
+        <translation>qrencode skončil s kódem %1</translation>
     </message>
 </context>
 <context>

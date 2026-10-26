@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Habilita la compatibilitat amb contrasenyes d&apos;un sol ús (OTP)</translation>
+        <translation>Habilita la compatibilitat amb contrasenyes d&apos;un sol ús (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -646,7 +646,7 @@ e-mail</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">No s&apos;ha pogut iniciar %1</translation>
+        <translation>No s&apos;ha pogut iniciar %1</translation>
     </message>
 </context>
 <context>
@@ -847,12 +847,12 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">La còpia ha fallat</translation>
+        <translation>La còpia ha fallat</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">No s&apos;ha pogut copiar %1 a %2.</translation>
+        <translation>No s&apos;ha pogut copiar %1 a %2.</translation>
     </message>
 </context>
 <context>
@@ -1537,7 +1537,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">L&apos;operació ha caducat; s&apos;està reactivant la interfície.</translation>
+        <translation>L&apos;operació ha caducat; s&apos;està reactivant la interfície.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="372"/>
@@ -1547,27 +1547,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">No s&apos;ha pogut desxifrar aquesta entrada de contrasenya</translation>
+        <translation>No s&apos;ha pogut desxifrar aquesta entrada de contrasenya</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">La cerca de contingut utilitza expressions regulars bàsiques POSIX (pass grep).</translation>
+        <translation>La cerca de contingut utilitza expressions regulars bàsiques POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">La cerca de contingut utilitza expressions regulars compatibles amb Perl (PCRE).</translation>
+        <translation>La cerca de contingut utilitza expressions regulars compatibles amb Perl (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">El nom no és vàlid</translation>
+        <translation>El nom no és vàlid</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Aquest nom es resoldria fora de l&apos;emmagatzematge de contrasenyes. Si us plau, trieu un nom diferent.</translation>
+        <translation>Aquest nom es resoldria fora de l&apos;emmagatzematge de contrasenyes. Si us plau, trieu un nom diferent.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1588"/>
@@ -1630,7 +1630,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Aquesta entrada conté un secret OTP, no una contrasenya</translation>
+        <translation>Aquesta entrada conté un secret OTP, no una contrasenya</translation>
     </message>
     <message>
         <source>Open %1 in browser</source>
@@ -1715,7 +1715,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Segons fins que canviï el codi OTP</translation>
+        <translation>Segons fins que canviï el codi OTP</translation>
     </message>
 </context>
 <context>
@@ -1743,7 +1743,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">No hi ha cap executable de GPG configurat</translation>
+        <translation>No hi ha cap executable de GPG configurat</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1821,12 +1821,12 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">URI otpauth:// o secret en base32</translation>
+        <translation>URI otpauth:// o secret en base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">El secret OTP no és vàlid</translation>
+        <translation>El secret OTP no és vàlid</translation>
     </message>
 </context>
 <context>
@@ -1842,23 +1842,23 @@ Voleu continuar?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">Contrasenya</translation>
+        <translation>Contrasenya</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Obre %1 al navegador</translation>
+        <translation>Obre %1 al navegador</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">Codi OTP</translation>
+        <translation>Codi OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">No s&apos;ha trobat cap codi OTP en aquesta entrada de contrasenya</translation>
+        <translation>No s&apos;ha trobat cap codi OTP en aquesta entrada de contrasenya</translation>
     </message>
 </context>
 <context>
@@ -1957,22 +1957,22 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">No s&apos;ha pogut iniciar qrencode: %1</translation>
+        <translation>No s&apos;ha pogut iniciar qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode no ha acabat a temps</translation>
+        <translation>qrencode no ha acabat a temps</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode ha fallat</translation>
+        <translation>qrencode ha fallat</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode ha acabat amb el codi %1</translation>
+        <translation>qrencode ha acabat amb el codi %1</translation>
     </message>
 </context>
 <context>
