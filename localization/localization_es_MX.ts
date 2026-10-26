@@ -320,7 +320,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Enable one-time password (OTP) support</source>
-        <translation type="unfinished">Habilitar la compatibilidad con contraseñas de un solo uso (OTP)</translation>
+        <translation>Habilitar la compatibilidad con contraseñas de un solo uso (OTP)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -618,7 +618,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/executor.cpp" line="106"/>
         <source>Failed to start %1</source>
-        <translation type="unfinished">No se pudo iniciar %1</translation>
+        <translation>No se pudo iniciar %1</translation>
     </message>
 </context>
 <context>
@@ -814,12 +814,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Copy failed</source>
-        <translation type="unfinished">Error al copiar</translation>
+        <translation>Error al copiar</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="933"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished">No se pudo copiar %1 a %2.</translation>
+        <translation>No se pudo copiar %1 a %2.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="715"/>
@@ -1398,12 +1398,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Nombre no válido</translation>
+        <translation>Nombre no válido</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Ese nombre apuntaría fuera del almacén de contraseñas. Por favor, elige un nombre diferente.</translation>
+        <translation>Ese nombre apuntaría fuera del almacén de contraseñas. Por favor, elige un nombre diferente.</translation>
     </message>
     <message>
         <source>New password file:
@@ -1448,28 +1448,28 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">La operación superó el tiempo de espera; se está reactivando la interfaz.</translation>
+        <translation>La operación superó el tiempo de espera; se está reactivando la interfaz.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>Could not decrypt this password entry</source>
-        <translation type="unfinished">No se pudo descifrar esta entrada de contraseña</translation>
+        <translation>No se pudo descifrar esta entrada de contraseña</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">La búsqueda de contenido utiliza expresiones regulares básicas POSIX (pass grep).</translation>
+        <translation>La búsqueda de contenido utiliza expresiones regulares básicas POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">La búsqueda de contenido utiliza expresiones regulares compatibles con Perl (PCRE).</translation>
+        <translation>La búsqueda de contenido utiliza expresiones regulares compatibles con Perl (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1161"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished">Nuevo fichero de contraseñas:
+        <translation>Nuevo fichero de contraseñas:
 (Se colocará en %1)</translation>
     </message>
     <message>
@@ -1540,7 +1540,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1805"/>
         <source>This entry holds an OTP secret, not a password</source>
-        <translation type="unfinished">Esta entrada contiene un secreto OTP, no una contraseña</translation>
+        <translation>Esta entrada contiene un secreto OTP, no una contraseña</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1829"/>
@@ -1666,7 +1666,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/otpcodewidget.cpp" line="67"/>
         <source>Seconds until the OTP code changes</source>
-        <translation type="unfinished">Segundos hasta que cambie el código OTP</translation>
+        <translation>Segundos hasta que cambie el código OTP</translation>
     </message>
 </context>
 <context>
@@ -1694,7 +1694,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/pass.cpp" line="452"/>
         <source>No GPG executable configured</source>
-        <translation type="unfinished">No hay ningún ejecutable de GPG configurado</translation>
+        <translation>No hay ningún ejecutable de GPG configurado</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>
@@ -1772,12 +1772,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/passworddialog.cpp" line="244"/>
         <source>otpauth:// URI or base32 secret</source>
-        <translation type="unfinished">URI otpauth:// o secreto en base32</translation>
+        <translation>URI otpauth:// o secreto en base32</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="277"/>
         <source>Invalid OTP secret</source>
-        <translation type="unfinished">Secreto OTP no válido</translation>
+        <translation>Secreto OTP no válido</translation>
     </message>
 </context>
 <context>
@@ -1798,18 +1798,18 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Abrir %1 en el navegador</translation>
+        <translation>Abrir %1 en el navegador</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">Código de OTP</translation>
+        <translation>Código de OTP</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">No se encontró ningún código OTP en esta entrada de contraseña</translation>
+        <translation>No se encontró ningún código OTP en esta entrada de contraseña</translation>
     </message>
 </context>
 <context>
@@ -1908,22 +1908,22 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/qtpass.cpp" line="552"/>
         <source>Could not start qrencode: %1</source>
-        <translation type="unfinished">No se pudo iniciar qrencode: %1</translation>
+        <translation>No se pudo iniciar qrencode: %1</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="560"/>
         <source>qrencode did not finish in time</source>
-        <translation type="unfinished">qrencode no terminó a tiempo</translation>
+        <translation>qrencode no terminó a tiempo</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="572"/>
         <source>qrencode crashed</source>
-        <translation type="unfinished">qrencode se cerró inesperadamente</translation>
+        <translation>qrencode se cerró inesperadamente</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="573"/>
         <source>qrencode exited with code %1</source>
-        <translation type="unfinished">qrencode terminó con el código %1</translation>
+        <translation>qrencode terminó con el código %1</translation>
     </message>
 </context>
 <context>
