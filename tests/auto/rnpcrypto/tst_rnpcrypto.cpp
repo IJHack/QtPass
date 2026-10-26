@@ -41,6 +41,8 @@ private Q_SLOTS:
   void recipientFormsAsGpgReadsThem();
   void refusesAMessageWithoutIntegrityProtection();
   void plaintextLimitStopsADecompressionBomb();
+  void blanksOnlyInAFingerprint();
+  void anExactlyNamedUnusableKeySaysWhy();
   void wrongKeyCannotDecrypt();
 
 private:
@@ -522,6 +524,61 @@ void tst_rnpcrypto::plaintextLimitStopsADecompressionBomb() {
     ok = true;
     QVERIFY(rnp.decrypt(enc.out, &error, &ok).isEmpty());
     QVERIFY(!ok);
+  }
+}
+
+// gpg allows blanks inside a fingerprint only: "dead beef" is a user ID,
+// and a key ID with a blank in it is no key ID.
+void tst_rnpcrypto::blanksOnlyInAFingerprint() {
+  const QString beef =
+      generateKey(QStringLiteral("dead beef <db@example.org>"), {});
+  QVERIFY(!beef.isEmpty());
+  RnpCrypto rnp;
+  QVERIFY(
+      !rnp.importKeys(exportKey(beef, {}, true) + exportKey(m_alice, {}, false))
+           .isEmpty());
+  QString error;
+  const QByteArray cipher =
+      rnp.encrypt("x", {QStringLiteral("dead beef")}, &error);
+  QVERIFY2(!cipher.isEmpty(), qPrintable(error));
+  bool ok = false;
+  QCOMPARE(rnp.decrypt(cipher, &error, &ok), QByteArray("x"));
+
+  const QString spacedKeyId =
+      m_alice.right(16).left(8) + QLatin1Char(' ') + m_alice.right(8);
+  QVERIFY(rnp.encrypt("x", {spacedKeyId}, &error).isEmpty());
+  QVERIFY2(error.contains(QLatin1String("No usable public key")),
+           qPrintable(error));
+}
+
+// A key named by fingerprint is tried alone, so when it cannot be used the
+// error says so instead of RNP's generic one.
+void tst_rnpcrypto::anExactlyNamedUnusableKeySaysWhy() {
+  const Result gen = gpg(
+      {QStringLiteral("--status-fd"), QStringLiteral("1"),
+       QStringLiteral("--faked-system-time"),
+       QStringLiteral("20200101T000000!"), QStringLiteral("--pinentry-mode"),
+       QStringLiteral("loopback"), QStringLiteral("--passphrase"), QString(),
+       QStringLiteral("--quick-gen-key"),
+       QStringLiteral("Expired Erin <erin@example.org>"),
+       QStringLiteral("default"), QStringLiteral("default"),
+       QStringLiteral("1d")});
+  QString erin;
+  for (const QByteArray &line : gen.out.split('\n')) {
+    if (line.startsWith("[GNUPG:] KEY_CREATED ")) {
+      erin = QString::fromLatin1(line.split(' ').value(3)).trimmed();
+    }
+  }
+  if (gen.exitCode != 0 || erin.isEmpty()) {
+    QSKIP("this gpg cannot make an expired key (--faked-system-time)");
+  }
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(erin, {}, false)).isEmpty());
+  for (const QString &recipient : {erin, erin.right(16)}) {
+    QString error;
+    QVERIFY(rnp.encrypt("x", {recipient}, &error).isEmpty());
+    QVERIFY2(error.contains(QLatin1String("cannot be encrypted to")),
+             qPrintable(error));
   }
 }
 

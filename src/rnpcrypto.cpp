@@ -210,43 +210,67 @@ auto locateKey(rnp_ffi_t ffi, const QString &recipient, QString *why) -> Key {
     setError(why, QStringLiteral("Empty recipient"));
     return nullptr;
   }
-  // A key ID or fingerprint: hex digits, blanks (spaces or tabs) between
-  // groups allowed, after 0x only when hex follows. gpg reads "0xAlice" as
-  // a user ID, and so does this.
+  // A key ID or fingerprint: hex digits after an optional 0x, which marks
+  // one only when hex follows (gpg reads "0xAlice" as a user ID, and so
+  // does this). Blanks (spaces or tabs) between groups are allowed in a
+  // fingerprint only, as gpg allows them: "dead beef" is a user ID.
   static const QRegularExpression blanks(QStringLiteral("\\s+"));
   static const QRegularExpression hex(QStringLiteral("^[0-9A-Fa-f]+$"));
-  QString compact = id;
-  compact.remove(blanks);
-  if (compact.startsWith(QLatin1String("0x"), Qt::CaseInsensitive) &&
-      hex.match(compact.mid(2)).hasMatch()) {
-    compact = compact.mid(2);
-  }
-  const bool isHex = hex.match(compact).hasMatch();
-  if (compact.isEmpty() ||
-      compact.compare(QLatin1String("0x"), Qt::CaseInsensitive) == 0) {
+  const auto withoutPrefix = [](const QString &text) {
+    return text.startsWith(QLatin1String("0x"), Qt::CaseInsensitive) &&
+                   hex.match(text.mid(2)).hasMatch()
+               ? text.mid(2)
+               : text;
+  };
+  QString fingerprint = id;
+  fingerprint.remove(blanks);
+  fingerprint = withoutPrefix(fingerprint);
+  const QString keyId = withoutPrefix(id);
+  if (keyId.compare(QLatin1String("0x"), Qt::CaseInsensitive) == 0) {
     setError(why, QStringLiteral("Empty recipient"));
     return nullptr;
   }
+  const bool isHexId = hex.match(keyId).hasMatch();
   const char *type = nullptr;
+  QString lookup;
   // 40 digits for a v4 key, 64 for v5 and v6 (RFC 9580).
-  if (isHex && (compact.size() == 40 || compact.size() == 64)) {
+  if (hex.match(fingerprint).hasMatch() &&
+      (fingerprint.size() == 40 || fingerprint.size() == 64)) {
     type = "fingerprint";
-  } else if (isHex && compact.size() == 16) {
+    lookup = fingerprint;
+  } else if (isHexId && keyId.size() == 16) {
     type = "keyid";
+    lookup = keyId;
   }
   if (type != nullptr) {
-    rnp_key_handle_t key = nullptr;
-    rnp_locate_key(ffi, type, compact.toUpper().toLatin1().constData(), &key);
-    if (key == nullptr) {
+    rnp_key_handle_t handle = nullptr;
+    rnp_locate_key(ffi, type, lookup.toUpper().toLatin1().constData(), &handle);
+    if (handle == nullptr) {
       setError(why, QStringLiteral("No public key for %1").arg(recipient));
+      return nullptr;
     }
-    return Key(key);
+    Key key(handle);
+    // Named exactly, so no other key is tried; say why it cannot be used
+    // rather than leaving RNP's generic error for later.
+    const QString primary = primaryFingerprint(handle);
+    rnp_key_handle_t primaryHandle = nullptr;
+    rnp_locate_key(ffi, "fingerprint", primary.toLatin1().constData(),
+                   &primaryHandle);
+    const Key primaryKey(primaryHandle);
+    if (primaryHandle == nullptr || !canEncryptTo(primaryHandle)) {
+      setError(why, QStringLiteral("The key %1 cannot be encrypted to: it "
+                                   "is expired or revoked, or has no valid "
+                                   "encryption subkey")
+                        .arg(recipient));
+      return nullptr;
+    }
+    return key;
   }
 
   QStringList primaries;
-  if (isHex && compact.size() == 8) {
+  if (isHexId && keyId.size() == 8) {
     // A short key ID: the last eight digits of a key's (or subkey's) ID.
-    const QString shortId = compact.toUpper();
+    const QString shortId = keyId.toUpper();
     primaries = matchingPrimaries(ffi, [&shortId](rnp_key_handle_t key) {
       char *keyId = nullptr;
       if (rnp_key_get_keyid(key, &keyId) != RNP_SUCCESS) {
