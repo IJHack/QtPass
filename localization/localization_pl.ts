@@ -188,7 +188,7 @@
         <location filename="../src/configdialog.ui" line="953"/>
         <location filename="../src/configdialog.ui" line="1501"/>
         <source>Automatically pull</source>
-        <translation>Automatyczne wypychanie</translation>
+        <translation>Automatyczne pobieranie</translation>
     </message>
     <message>
         <source>Extensions:</source>
