@@ -71,7 +71,20 @@ void ClipboardManager::trackCopied(const QString &text) {
       m_otherCopies.last() = text;
     } else {
       if (m_otherCopies.size() >= kMaxOtherCopies) {
-        m_otherCopies.removeFirst();
+        // Make room, but never by forgetting a text that is still on the
+        // clipboard or in the selection: it would then outlive autoclear.
+        // At most two are, so the oldest of the rest can always go.
+        const QString onClipboard =
+            QApplication::clipboard()->text(QClipboard::Clipboard);
+        const QString inSelection =
+            QApplication::clipboard()->text(QClipboard::Selection);
+        for (qsizetype i = 0; i < m_otherCopies.size(); ++i) {
+          if (m_otherCopies.at(i) != onClipboard &&
+              m_otherCopies.at(i) != inSelection) {
+            m_otherCopies.removeAt(i);
+            break;
+          }
+        }
       }
       m_otherCopies.append(text);
     }

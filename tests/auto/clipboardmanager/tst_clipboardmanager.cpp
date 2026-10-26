@@ -30,6 +30,7 @@ private slots:
   void trackedCopyIsClearedWithoutDroppingTheCopiedPassword();
   void secretTextBrowserMarksAndReportsWhatIsCopied();
   void aGrowingSelectionIsTrackedOnce();
+  void aCopyOnTheClipboardOutlivesManySelections();
 
 private:
   static void saveClipboardSettings(bool autoclear, int seconds,
@@ -195,6 +196,22 @@ void tst_clipboardmanager::aGrowingSelectionIsTrackedOnce() {
   QApplication::clipboard()->setText(QStringLiteral("pin: 1234"));
   manager.trackCopied(QStringLiteral("pin: 1234"));
   manager.trackCopied(QStringLiteral("1234"));
+  QTRY_VERIFY_WITH_TIMEOUT(QApplication::clipboard()->text().isEmpty(), 3000);
+}
+
+/**
+ * @brief A secret copied with Ctrl+C stays tracked however many selections
+ * follow before autoclear: making room in the list must not drop it while
+ * it is still on the clipboard.
+ */
+void tst_clipboardmanager::aCopyOnTheClipboardOutlivesManySelections() {
+  saveClipboardSettings(true, 1, Enums::CLIPBOARD_ON_DEMAND);
+  ClipboardManager manager;
+  QApplication::clipboard()->setText(QStringLiteral("pin: 1234"));
+  manager.trackCopied(QStringLiteral("pin: 1234"));
+  for (int i = 0; i < 40; ++i) {
+    manager.trackCopied(QStringLiteral("selection %1 xyz").arg(i * 7919));
+  }
   QTRY_VERIFY_WITH_TIMEOUT(QApplication::clipboard()->text().isEmpty(), 3000);
 }
 
