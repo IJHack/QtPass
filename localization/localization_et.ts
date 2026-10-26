@@ -2574,8 +2574,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="922"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>%n kirjes.</numerusform>
-            <numerusform>%n kirjes.</numerusform>
+            <numerusform>%n-s kirjes.</numerusform>
+            <numerusform>%n-s kirjes.</numerusform>
         </translation>
     </message>
     <message>
