@@ -11,16 +11,16 @@
 
 ### Bugfixes
 
-- Started from a terminal, QtPass no longer freezes when git wants HTTPS
-  credentials or ssh a passphrase or host key. They prompted on that
+- Started from a terminal, QtPass no longer freezes when Git wants HTTPS
+  credentials or SSH a passphrase or host key. They prompted on that
   terminal, unseen, and every decrypt and save waited behind them; child
-  processes now start without a controlling terminal, so git and ssh use
+  processes now start without a controlling terminal, so Git and SSH use
   `SSH_ASKPASS`/`GIT_ASKPASS` when set and otherwise fail with an error
   QtPass shows. Needs Qt 6.7 or newer; older builds behave as before (ported
   from [#2016](https://github.com/IJHack/QtPass/pull/2016),
   [#2040](https://github.com/IJHack/QtPass/pull/2040))
-- GNOME shows the QtPass icon for its window: the desktop file names the
-  window class (`StartupWMClass`) (ported from
+- GNOME shows the QtPass icon for its window: `StartupWMClass` in the
+  desktop entry ties the window to it (ported from
   [#1975](https://github.com/IJHack/QtPass/pull/1975), by
   [@carlos22](https://github.com/carlos22))
 
