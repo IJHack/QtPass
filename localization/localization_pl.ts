@@ -167,7 +167,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
         <source>Automatically pull</source>
-        <translation>Automatyczne „pull”</translation>
+        <translation>Automatyczne wypychanie</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
@@ -1160,7 +1160,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="433"/>
         <source>Git pull</source>
-        <translation>Git pull</translation>
+        <translation>Wypychanie Git</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="430"/>
