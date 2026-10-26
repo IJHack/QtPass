@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
         <source>Settings</source>
-        <translation type="unfinished">Settings</translation>
+        <translation>Settings</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation type="unfinished">Show process output</translation>
+        <translation>Show process output</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
@@ -141,12 +141,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished">Enable content search (pass grep)</translation>
+        <translation>Enable content search (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished">Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</translation>
+        <translation>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
@@ -156,32 +156,32 @@
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished">Generate GPG key pair</translation>
+        <translation>Generate GPG key pair</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">SSH_AUTH_SOCK override:</translation>
+        <translation>SSH_AUTH_SOCK override:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</translation>
+        <translation>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(auto-probe via gpgconf)</translation>
+        <translation>(auto-probe via gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished">Profile name, used to identify this configuration profile</translation>
+        <translation>Profile name, used to identify this configuration profile</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished">Path to the password store directory</translation>
+        <translation>Path to the password store directory</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="986"/>
@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="989"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished">Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</translation>
+        <translation>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1029"/>
@@ -418,27 +418,27 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="270"/>
         <location filename="../src/configdialog.cpp" line="280"/>
         <source>This field is required</source>
-        <translation type="unfinished">This field is required</translation>
+        <translation>This field is required</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="324"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">The path does not exist.</translation>
+        <translation>The path does not exist.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="327"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">The path is not readable.</translation>
+        <translation>The path is not readable.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="330"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">The path is not a Unix domain socket.</translation>
+        <translation>The path is not a Unix domain socket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="335"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Potentially invalid SSH_AUTH_SOCK override</translation>
+        <translation>Potentially invalid SSH_AUTH_SOCK override</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="336"/>
@@ -447,7 +447,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">The SSH_AUTH_SOCK override value may be invalid.
+        <translation>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
 
@@ -456,27 +456,27 @@ The value will still be saved as entered.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished">Create profile directory?</translation>
+        <translation>Create profile directory?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="791"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished">Would you like to create a password store at %1?</translation>
+        <translation>Would you like to create a password store at %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="799"/>
         <source>Could not create profile directory: %1</source>
-        <translation type="unfinished">Could not create profile directory: %1</translation>
+        <translation>Could not create profile directory: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="819"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished">Select recipients for %1</translation>
+        <translation>Select recipients for %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="844"/>
         <source>New Profile</source>
-        <translation type="unfinished">New Profile</translation>
+        <translation>New Profile</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="892"/>
@@ -512,12 +512,12 @@ The value will still be saved as entered.</translation>
         <location filename="../src/configdialog.cpp" line="798"/>
         <location filename="../src/configdialog.cpp" line="1059"/>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1060"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">Failed to create password-store at: %1</translation>
+        <translation>Failed to create password-store at: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1091"/>
@@ -532,17 +532,17 @@ The value will still be saved as entered.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1348"/>
         <source>New profile: %1 at %2</source>
-        <translation type="unfinished">New profile: %1 at %2</translation>
+        <translation>New profile: %1 at %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1352"/>
         <source>Profile: %1 at %2</source>
-        <translation type="unfinished">Profile: %1 at %2</translation>
+        <translation>Profile: %1 at %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1357"/>
         <source>Fill in all required fields</source>
-        <translation type="unfinished">Fill in all required fields</translation>
+        <translation>Fill in all required fields</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
@@ -654,54 +654,54 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation type="unfinished">Export Public Key</translation>
+        <translation>Export Public Key</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation type="unfinished">Public key</translation>
+        <translation>Public key</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished">Copy to Clipboard</translation>
+        <translation>Copy to Clipboard</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation type="unfinished">Save to File...</translation>
+        <translation>Save to File...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation type="unfinished">Public key for %1</translation>
+        <translation>Public key for %1</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation type="unfinished">Copied!</translation>
+        <translation>Copied!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation type="unfinished">Save Public Key</translation>
+        <translation>Save Public Key</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation type="unfinished">ASCII-armored key (*.asc);;All files (*)</translation>
+        <translation>ASCII-armored key (*.asc);;All files (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation type="unfinished">Could not open %1 for writing: %2</translation>
+        <translation>Could not open %1 for writing: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation type="unfinished">Could not write to %1: %2</translation>
+        <translation>Could not write to %1: %2</translation>
     </message>
 </context>
 <context>
@@ -728,12 +728,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="322"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished">GPG signing failed!</translation>
+        <translation>GPG signing failed!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="323"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished">Failed to sign %1.</translation>
+        <translation>Failed to sign %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="390"/>
@@ -780,33 +780,33 @@ You will not be able to decrypt any newly added passwords!</translation>
         <location filename="../src/imitatepass.cpp" line="643"/>
         <location filename="../src/imitatepass.cpp" line="756"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">Re-encryption failed</translation>
+        <translation>Re-encryption failed</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="644"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished">Failed to replace %1. Original has been restored.</translation>
+        <translation>Failed to replace %1. Original has been restored.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="674"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished">Creating backup commit</translation>
+        <translation>Creating backup commit</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished">Backup commit failed</translation>
+        <translation>Backup commit failed</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="685"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">Could not inspect git status. Re-encryption was aborted.</translation>
+        <translation>Could not inspect git status. Re-encryption was aborted.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="693"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished">Re-encryption was aborted because a git backup could not be created.</translation>
+        <translation>Re-encryption was aborted because a git backup could not be created.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="715"/>
@@ -822,27 +822,27 @@ You will not be able to decrypt any newly added passwords!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="743"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished">GPG ID verification failed</translation>
+        <translation>GPG ID verification failed</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished">Could not verify .gpg-id for directory.</translation>
+        <translation>Could not verify .gpg-id for directory.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="757"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished">Failed to re-encrypt %1</translation>
+        <translation>Failed to re-encrypt %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="763"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished">Re-encryption completed: %1 succeeded, %2 failed</translation>
+        <translation>Re-encryption completed: %1 succeeded, %2 failed</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">Re-encryption completed: %1 files re-encrypted</translation>
+        <translation>Re-encryption completed: %1 files re-encrypted</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="932"/>
@@ -861,42 +861,42 @@ You will not be able to decrypt any newly added passwords!</translation>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="41"/>
         <source>Import GPG Key</source>
-        <translation type="unfinished">Import GPG Key</translation>
+        <translation>Import GPG Key</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation type="unfinished">Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</translation>
+        <translation>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation type="unfinished">From File...</translation>
+        <translation>From File...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation type="unfinished">From Clipboard</translation>
+        <translation>From Clipboard</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation type="unfinished">Paste an ASCII-armored GPG key here...</translation>
+        <translation>Paste an ASCII-armored GPG key here...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation type="unfinished">Import</translation>
+        <translation>Import</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>ASCII-armored GPG key</source>
-        <translation type="unfinished">ASCII-armored GPG key</translation>
+        <translation>ASCII-armored GPG key</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>All Files</source>
-        <translation type="unfinished">All Files</translation>
+        <translation>All Files</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="50"/>
@@ -904,34 +904,34 @@ You will not be able to decrypt any newly added passwords!</translation>
         <location filename="../src/importkeydialog.cpp" line="163"/>
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <source>Import Key</source>
-        <translation type="unfinished">Import Key</translation>
+        <translation>Import Key</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
         <source>Could not open file: %1</source>
-        <translation type="unfinished">Could not open file: %1</translation>
+        <translation>Could not open file: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="66"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</translation>
+        <translation>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="113"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished">GPG import failed:
+        <translation>GPG import failed:
 %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="123"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation type="unfinished">Could not parse imported key id from GPG output.</translation>
+        <translation>Could not parse imported key id from GPG output.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="168"/>
         <source>Successfully imported key: %1</source>
-        <translation type="unfinished">Successfully imported key: %1</translation>
+        <translation>Successfully imported key: %1</translation>
     </message>
 </context>
 <context>
@@ -979,7 +979,7 @@ You will not be able to decrypt any newly added passwords!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished">Template contents will be set based on GPG version.</translation>
+        <translation>Template contents will be set based on GPG version.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1218,47 +1218,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished">Search inside password content (pass grep)</translation>
+        <translation>Search inside password content (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished">⌕</translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished">Content search toggle</translation>
+        <translation>Content search toggle</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished">Toggle content search mode to search inside password files</translation>
+        <translation>Toggle content search mode to search inside password files</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished">Case-insensitive search</translation>
+        <translation>Case-insensitive search</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished">Aa</translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished">Case-insensitive toggle</translation>
+        <translation>Case-insensitive toggle</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished">Toggle case-insensitive content search</translation>
+        <translation>Toggle case-insensitive content search</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished">Results</translation>
+        <translation>Results</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -1268,12 +1268,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="364"/>
         <source>Clear output</source>
-        <translation type="unfinished">Clear output</translation>
+        <translation>Clear output</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="363"/>
         <source>Clear</source>
-        <translation type="unfinished">Clear</translation>
+        <translation>Clear</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
@@ -1507,7 +1507,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="372"/>
         <source>Process Output</source>
-        <translation type="unfinished">Process Output</translation>
+        <translation>Process Output</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
@@ -1519,23 +1519,23 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="758"/>
         <location filename="../src/mainwindow.cpp" line="1289"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">OTP code copied to clipboard</translation>
+        <translation>OTP code copied to clipboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="760"/>
         <location filename="../src/mainwindow.cpp" line="1272"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">No OTP code found in this password entry</translation>
+        <translation>No OTP code found in this password entry</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="926"/>
         <source>Searching…</source>
-        <translation type="unfinished">Searching…</translation>
+        <translation>Searching…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished">Search content (regex)</translation>
+        <translation>Search content (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="960"/>
@@ -1550,7 +1550,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1007"/>
         <source>No matches found.</source>
-        <translation type="unfinished">No matches found.</translation>
+        <translation>No matches found.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="1032"/>
@@ -1563,17 +1563,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Invalid name</translation>
+        <translation>Invalid name</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">That name would resolve outside the password store. Please choose a different name.</translation>
+        <translation>That name would resolve outside the password store. Please choose a different name.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1267"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">No password selected for OTP generation</translation>
+        <translation>No password selected for OTP generation</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1574"/>
@@ -1588,27 +1588,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1588"/>
         <source>Share</source>
-        <translation type="unfinished">Share</translation>
+        <translation>Share</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1598"/>
         <source>Re-encrypt all passwords</source>
-        <translation type="unfinished">Re-encrypt all passwords</translation>
+        <translation>Re-encrypt all passwords</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1603"/>
         <source>Export my public key...</source>
-        <translation type="unfinished">Export my public key...</translation>
+        <translation>Export my public key...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1609"/>
         <source>Add recipient...</source>
-        <translation type="unfinished">Add recipient...</translation>
+        <translation>Add recipient...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1614"/>
         <source>What is this?</source>
-        <translation type="unfinished">What is this?</translation>
+        <translation>What is this?</translation>
     </message>
     <message>
         <source>Open %1 in browser</source>
@@ -1618,43 +1618,43 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1880"/>
         <location filename="../src/mainwindow.cpp" line="1899"/>
         <source>Export Public Key</source>
-        <translation type="unfinished">Export Public Key</translation>
+        <translation>Export Public Key</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1881"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1900"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished">Could not export public key for %1.
+        <translation>Could not export public key for %1.
 
 %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1902"/>
         <source>No output from gpg.</source>
-        <translation type="unfinished">No output from gpg.</translation>
+        <translation>No output from gpg.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1929"/>
         <source>Sharing Passwords with GPG</source>
-        <translation type="unfinished">Sharing Passwords with GPG</translation>
+        <translation>Sharing Passwords with GPG</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1930"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1672"/>
         <location filename="../src/mainwindow.cpp" line="1681"/>
         <location filename="../src/mainwindow.cpp" line="1828"/>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="155"/>
@@ -1664,12 +1664,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished">Failed to create folder: %1</translation>
+        <translation>Failed to create folder: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Failed to create .gpg-id file in: %1</translation>
+        <translation>Failed to create .gpg-id file in: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1709"/>
@@ -1695,12 +1695,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1829"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished">Directory does not exist: %1</translation>
+        <translation>Directory does not exist: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1834"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished">Re-encrypt passwords</translation>
+        <translation>Re-encrypt passwords</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1835"/>
@@ -1711,7 +1711,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">Re-encrypt all passwords in %1?
+        <translation>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
 
@@ -1744,12 +1744,12 @@ Continue?</translation>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Invalid password length</source>
-        <translation type="unfinished">Invalid password length</translation>
+        <translation>Invalid password length</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="160"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished">Can&apos;t generate password with zero length.</translation>
+        <translation>Can&apos;t generate password with zero length.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="201"/>
@@ -1770,25 +1770,25 @@ Continue?</translation>
         <location filename="../src/pass.cpp" line="557"/>
         <location filename="../src/pass.cpp" line="576"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished">Encryption failed: GPG key has expired. Please renew or replace it.</translation>
+        <translation>Encryption failed: GPG key has expired. Please renew or replace it.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="562"/>
         <location filename="../src/pass.cpp" line="581"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished">Encryption failed: GPG key has been revoked.</translation>
+        <translation>Encryption failed: GPG key has been revoked.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="566"/>
         <location filename="../src/pass.cpp" line="586"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished">Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</translation>
+        <translation>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="570"/>
         <location filename="../src/pass.cpp" line="590"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished">Encryption failed. Check that your GPG key is valid.</translation>
+        <translation>Encryption failed. Check that your GPG key is valid.</translation>
     </message>
 </context>
 <context>
@@ -1863,23 +1863,23 @@ Continue?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <location filename="../src/passworddisplaypanel.cpp" line="192"/>
         <source>Password</source>
-        <translation type="unfinished">Password</translation>
+        <translation>Password</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="168"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Open %1 in browser</translation>
+        <translation>Open %1 in browser</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="320"/>
         <location filename="../src/passworddisplaypanel.cpp" line="333"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP Code</translation>
+        <translation>OTP Code</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="321"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">No OTP code found in this password entry</translation>
+        <translation>No OTP code found in this password entry</translation>
     </message>
 </context>
 <context>
@@ -1953,12 +1953,12 @@ Continue?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="324"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished">GPG key pair generation failed</translation>
+        <translation>GPG key pair generation failed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="398"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished">GPG key pair generated successfully</translation>
+        <translation>GPG key pair generated successfully</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="482"/>
@@ -2005,7 +2005,7 @@ Continue?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="396"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished">Force overwrite?</translation>
+        <translation>Force overwrite?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="397"/>
@@ -2060,7 +2060,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Select which users should be able to decrypt passwords stored in this folder.
+        <translation>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
@@ -2069,12 +2069,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation type="unfinished">Import key...</translation>
+        <translation>Import key...</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation type="unfinished">Import a GPG key from file or clipboard</translation>
+        <translation>Import a GPG key from file or clipboard</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -2146,17 +2146,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="338"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">[INVALID] </translation>
+        <translation>[INVALID] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="341"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[EXPIRED] </translation>
+        <translation>[EXPIRED] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="345"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[PARTIAL] </translation>
+        <translation>[PARTIAL] </translation>
     </message>
 </context>
 </TS>
