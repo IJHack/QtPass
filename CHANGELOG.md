@@ -347,6 +347,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   drag, or the X11 selection) carries the same "secret" hints as a copy
   button's, so clipboard history leaves it out, and is cleared with the rest
   when autoclear runs
+- The same for a hidden password shown with the eye button: copied out of
+  its field it carries the hints and is cleared by autoclear, where it went
+  out as plain text before
 - With the `pass` backend in WSL, the signing key reaches `pass`, so it
   checks `.gpg-id.sig` there as well; see the upgrade notes
 
