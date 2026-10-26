@@ -167,7 +167,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
         <source>Automatically pull</source>
-        <translation>Automatyczne wypychanie</translation>
+        <translation>Automatyczne pobieranie</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
