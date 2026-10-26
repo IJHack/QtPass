@@ -323,6 +323,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   profile) came up with every key in the keyring preselected, because an
   empty recipient list made `gpg --list-keys` return all of them. Nothing is
   preselected now
+- A copied password carries the KDE password hint on FreeBSD and OpenBSD
+  too, as it did on Linux, so Klipper, CopyQ and cliphist keep it out of
+  their history [#2038](https://github.com/IJHack/QtPass/pull/2038)
 
 ### Changed
 
