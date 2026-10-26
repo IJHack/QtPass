@@ -2347,8 +2347,13 @@ void tst_util::updateEnvWslenvContainsRequiredVars() {
     QVERIFY2(wslenv.split(u':').contains(entry),
              qPrintable(QStringLiteral("WSLENV should include ") + entry));
   }
-  QVERIFY2(!wslenv.contains(QStringLiteral("/w")),
-           "nothing QtPass sets for pass may be forwarded out of WSL only");
+  // Only QtPass's own entries: a user's inherited MY_VAR/w is valid.
+  for (const QString &entry : wslenv.split(u':')) {
+    QVERIFY2(!(entry.startsWith(QLatin1String("PASSWORD_STORE_")) &&
+               entry.endsWith(QLatin1String("/w"))),
+             qPrintable(entry +
+                        QStringLiteral(" would be forwarded out of WSL only")));
+  }
 }
 
 /**
