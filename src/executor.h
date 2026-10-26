@@ -141,6 +141,19 @@ public:
                bool readStdout = false, bool readStderr = true);
 
   /**
+   * @brief Make @p process start its child without a controlling terminal.
+   *
+   * On Unix with Qt 6.7 or newer the child starts in a new session (setsid),
+   * so it has no /dev/tty. git and ssh then use an askpass helper when there
+   * is one and fail at once otherwise, instead of prompting in the terminal
+   * QtPass was started from while the queue waits behind them. Other Unix
+   * process flags set on @p process are kept. Does nothing on Windows or
+   * with older Qt. The queued and the blocking paths both call it.
+   * @param process Process to configure; call it before start().
+   */
+  static void detachFromTerminal(QProcess &process);
+
+  /**
    * @brief Run a command synchronously and return its exit code.
    * @param app Executable path.
    * @param args Command arguments.
