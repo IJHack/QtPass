@@ -121,8 +121,9 @@ void ImitatePass::GitPush() {
  */
 void ImitatePass::Show(QString file) {
   file = m_settings.passStore + file + ".gpg";
-  QStringList args = {"-d",      "--quiet",     "--yes",   "--no-encrypt-to",
-                      "--batch", "--use-agent", pgpg(file)};
+  QStringList args = {"-d",      "--quiet",    "--yes", "--no-encrypt-to",
+                      "--batch", "--use-agent"};
+  args << Pass::maxOutputArgs() << pgpg(file);
   executeGpg(PASS_SHOW, args);
 }
 
@@ -636,9 +637,10 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   dbg() << "reencrypt " << fileName << " for " << recipients;
 #endif
   QString local_lastDecrypt;
-  QStringList args = {
-      "-d",      "--quiet",     "--yes",       "--no-encrypt-to",
-      "--batch", "--use-agent", pgpg(fileName)};
+  QStringList args =
+      QStringList{"-d",      "--quiet",    "--yes", "--no-encrypt-to",
+                  "--batch", "--use-agent"} +
+      Pass::maxOutputArgs() + QStringList{pgpg(fileName)};
   int result = Executor::executeBlocking(m_settings.gpgExecutable, args,
                                          &local_lastDecrypt);
 
@@ -685,7 +687,8 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
 
   // Verify encryption worked by attempting to decrypt the temp file
   QString verifyOutput;
-  args = QStringList{"-d", "--quiet", "--batch", "--use-agent", pgpg(tempPath)};
+  args = QStringList{"-d", "--quiet", "--batch", "--use-agent"} +
+         Pass::maxOutputArgs() + QStringList{pgpg(tempPath)};
   result =
       Executor::executeBlocking(m_settings.gpgExecutable, args, &verifyOutput);
   if (result != 0 || verifyOutput.isEmpty()) {
@@ -1213,11 +1216,12 @@ auto ImitatePass::grepMatchFile(const QProcessEnvironment &env,
       translatedPath = translated;
   }
   QString plaintext;
-  const int rc =
-      Executor::executeBlocking(env, gpgExe,
-                                {"-d", "--quiet", "--yes", "--no-encrypt-to",
-                                 "--batch", "--use-agent", translatedPath},
-                                &plaintext);
+  const int rc = Executor::executeBlocking(
+      env, gpgExe,
+      QStringList{"-d", "--quiet", "--yes", "--no-encrypt-to", "--batch",
+                  "--use-agent"} +
+          Pass::maxOutputArgs() + QStringList{translatedPath},
+      &plaintext);
   if (rc != 0 || plaintext.isEmpty())
     return {};
   QStringList matches;

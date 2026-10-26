@@ -74,11 +74,18 @@ Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
   connect(&exec, &Executor::error, this, &Pass::finished);
 
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
-  // Merge our vars into WSLENV rather than blindly appending a duplicate entry
+  // Merge our vars into WSLENV rather than blindly appending a duplicate
+  // entry. WSLENV flags: /p translates the path, /u forwards from Windows
+  // into WSL only; /w would be the other direction, from WSL out, and leaves
+  // pass inside WSL without the value. Everything updateEnv() sets for pass
+  // has to cross, the signing key above all: without it pass does not check
+  // the .gpg-id signature.
   const QStringList wslenvVars = {
       QStringLiteral("PASSWORD_STORE_DIR/p"),
-      QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w"),
-      QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")};
+      QStringLiteral("PASSWORD_STORE_SIGNING_KEY/u"),
+      QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/u"),
+      QStringLiteral("PASSWORD_STORE_CHARACTER_SET/u"),
+      QStringLiteral("PASSWORD_STORE_GPG_OPTS/u")};
   const QString existing = env.value(QStringLiteral("WSLENV"));
   if (existing.isEmpty()) {
     env.insert(QStringLiteral("WSLENV"), wslenvVars.join(':'));
@@ -889,7 +896,22 @@ void Pass::updateEnv() {
   setEnvVar(QStringLiteral("PASSWORD_STORE_CHARACTER_SET="),
             effectiveCharset(passConfig));
 
+  // pass hands PASSWORD_STORE_GPG_OPTS to every gpg it runs: the user's own
+  // options (split as pass's shell splits them: spaces, tabs, newlines),
+  // then the output limit ImitatePass passes directly.
+  QStringList gpgOpts = QProcessEnvironment::systemEnvironment()
+                            .value(QStringLiteral("PASSWORD_STORE_GPG_OPTS"))
+                            .split(QRegularExpression(QStringLiteral("\\s+")),
+                                   Qt::SkipEmptyParts);
+  gpgOpts << maxOutputArgs();
+  setEnvVar(QStringLiteral("PASSWORD_STORE_GPG_OPTS="),
+            gpgOpts.join(QLatin1Char(' ')));
+
   exec.setEnvironment(env);
+}
+
+auto Pass::maxOutputArgs() -> QStringList {
+  return {QStringLiteral("--max-output"), QString::number(kMaxPlaintextBytes)};
 }
 
 /**

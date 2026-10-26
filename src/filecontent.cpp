@@ -60,7 +60,10 @@ auto FileContent::parse(const QString &fileContent,
     otpFromBareLine = password.trimmed();
   }
   for (const QString &line : std::as_const(lines)) {
-    if (line.contains(":")) {
+    // A bare otpauth:// line is never a field, also not when the template
+    // lists "otpauth": split at its colon, the value would lose the scheme
+    // that marks it as a shared secret and be shown, seed and all.
+    if (line.contains(":") && !isOtpUri(line)) {
       qsizetype colon = line.indexOf(':');
       QString name = line.left(colon);
       QString value = line.right(line.length() - colon - 1);
