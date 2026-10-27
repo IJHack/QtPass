@@ -2555,6 +2555,9 @@ void tst_util::gitDoesNotClimbAboveTheStore() {
   QVERIFY(links.isValid());
   const QString link = QDir(links.path()).filePath(QStringLiteral("store"));
   bool viaLinkInside = false;
+  // Unix only: on Windows QFile::link() makes a shortcut, a plain file to
+  // git and to the file system.
+#ifndef Q_OS_WIN
   if (QFile::link(store, link)) {
     s.passStore = link;
     pass.init(s);
@@ -2563,6 +2566,7 @@ void tst_util::gitDoesNotClimbAboveTheStore() {
         ceiling);
     viaLinkInside = insideARepo(link, pass.environment());
   }
+#endif
 
   // No store: no ceiling of a previous one stays behind.
   s.passStore.clear();
