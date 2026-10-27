@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "filecontent.h"
 
+#include <QCoreApplication>
 #include <QStringTokenizer>
 
 #include <utility>
@@ -95,8 +96,12 @@ auto FileContent::parse(const QString &fileContent,
   }
   QString remainingData;
   QString remainingDataDisplay;
-  bool anyRemaining = false;
-  bool anyDisplayed = false;
+  qsizetype remainingLines = 0;
+  qsizetype displayedLines = 0;
+  qsizetype notShown = 0;
+  // Past kMaxNamedFields a line is still offered to takeNamedValue(), into
+  // this throwaway list, for what it notes about OTP: the line stays text.
+  NamedValues pastTheCap;
   NamedValues namedValues;
   OtpCandidates otp;
   // An entry from `pass otp insert` has the URI as its only (password) line,
@@ -110,34 +115,50 @@ auto FileContent::parse(const QString &fileContent,
     // lists "otpauth": split at its colon, the value would lose the scheme
     // that marks it as a shared secret and be shown seed and all. Past
     // kMaxNamedFields, lines stay text.
-    if (!isOtpUri(line) && namedValues.size() < kMaxNamedFields &&
-        takeNamedValue(line, templateFields, allFields, namedValues, otp)) {
-      continue;
+    if (!isOtpUri(line)) {
+      if (namedValues.size() < kMaxNamedFields) {
+        if (takeNamedValue(line, templateFields, allFields, namedValues, otp)) {
+          continue;
+        }
+      } else {
+        takeNamedValue(line, templateFields, allFields, pastTheCap, otp);
+        pastTheCap.clear();
+      }
     }
     // Joined with "\n" as they go, as split() and join() did.
-    if (anyRemaining) {
+    if (remainingLines > 0) {
       remainingData += QLatin1Char('\n');
     }
     remainingData += line;
-    anyRemaining = true;
+    ++remainingLines;
     if (isOtpUri(line) && otp.bareLine.isEmpty()) {
       // A bare otpauth:// line, the convention the pass-otp extension uses.
       otp.bareLine = line.trimmed();
     }
     if (!isLineHidden(line)) {
-      if (anyDisplayed) {
+      if (displayedLines == kMaxDisplayLines) {
+        ++notShown;
+        continue;
+      }
+      if (displayedLines > 0) {
         remainingDataDisplay += QLatin1Char('\n');
       }
       remainingDataDisplay += line;
-      anyDisplayed = true;
+      ++displayedLines;
     }
+  }
+  if (notShown > 0) {
+    remainingDataDisplay +=
+        QLatin1Char('\n') + QCoreApplication::translate(
+                                "FileContent", "… %n more line(s) not shown",
+                                nullptr, static_cast<int>(notShown));
   }
   // The OTP value stays in namedValues/remainingData: the edit dialog reads it
   // from there and PasswordDialog::getPassword() drops empty fields, so
   // stripping it here would delete the secret on the next save. Suppression
   // happens in getRemainingDataForDisplay() and PasswordDisplayPanel.
-  return {password, namedValues, remainingData, remainingDataDisplay,
-          otp.pick()};
+  return {password,   namedValues,   remainingData, remainingDataDisplay,
+          otp.pick(), remainingLines};
 }
 
 auto FileContent::isOtpFieldName(const QString &name) -> bool {
@@ -173,11 +194,15 @@ auto FileContent::getOtpUri() const -> QString { return this->otpUri; }
 
 FileContent::FileContent(QString password, NamedValues namedValues,
                          QString remainingData, QString remainingDataDisplay,
-                         QString otpUri)
+                         QString otpUri, qsizetype remainingLines)
     : password(std::move(password)), namedValues(std::move(namedValues)),
       remainingData(std::move(remainingData)),
       remainingDataDisplay(std::move(remainingDataDisplay)),
-      otpUri(std::move(otpUri)) {}
+      otpUri(std::move(otpUri)), remainingLines(remainingLines) {}
+
+auto FileContent::getRemainingLineCount() const -> qsizetype {
+  return remainingLines;
+}
 
 NamedValues::NamedValues() = default;
 

@@ -907,22 +907,35 @@ void MainWindow::onGrepFinished(
   const AppSettings s = QtPassSettings::load();
   const bool hideContent = s.hideContent;
   int totalLines = 0;
+  int entries = 0;
+  bool stopped = false;
   for (const auto &pair : results) {
+    if (NativeGrep::isStoppedMarker(pair)) {
+      stopped = true;
+      continue;
+    }
+    ++entries;
     auto *entryItem = new QTreeWidgetItem(ui->grepResultsList);
     entryItem->setText(0, pair.first);
     entryItem->setData(0, Qt::UserRole, pair.first);
     for (const QString &line : pair.second) {
       auto *lineItem = new QTreeWidgetItem(entryItem);
-      lineItem->setText(0, hideContent ? "***" + tr("Content hidden") + "***"
-                                       : line);
+      // The marker is no content: shown as it is with hidden content too,
+      // and not counted as a match.
+      if (NativeGrep::isMoreMarker(line)) {
+        lineItem->setText(0, tr("… more matches in this entry"));
+      } else {
+        lineItem->setText(0, hideContent ? "***" + tr("Content hidden") + "***"
+                                         : line);
+        ++totalLines;
+      }
       lineItem->setData(0, Qt::UserRole, pair.first);
-      ++totalLines;
     }
   }
   ui->grepResultsList->expandAll();
   ui->treeView->setVisible(false);
   ui->grepResultsList->setVisible(true);
-  if (totalLines >= NativeGrep::kMaxMatches) {
+  if (stopped) {
     // The search stopped there; more entries may match.
     ui->statusBar->showMessage(
         tr("Showing the first %n match(es); search for something narrower "
@@ -930,10 +943,10 @@ void MainWindow::onGrepFinished(
            nullptr, totalLines),
         10000);
   } else {
-    ui->statusBar->showMessage(
-        tr("Found %n match(es)", nullptr, totalLines) + " " +
-            tr("in %n entr(ies).", nullptr, static_cast<int>(results.size())),
-        3000);
+    ui->statusBar->showMessage(tr("Found %n match(es)", nullptr, totalLines) +
+                                   " " +
+                                   tr("in %n entr(ies).", nullptr, entries),
+                               3000);
   }
   if (s.useAutoclearPanel)
     clearPanelTimer.start();

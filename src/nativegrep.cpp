@@ -63,7 +63,7 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
     if (t.isEmpty() || !rx.matchView(line).hasMatch())
       continue;
     if (matches.size() == kMaxMatchesPerEntry) {
-      matches << tr("… more matches in this entry");
+      matches << QString(); // isMoreMarker(): not a match, not counted
       break;
     }
     matches << t.toString();
@@ -80,7 +80,7 @@ auto NativeGrep::scanStore(const QProcessEnvironment &env,
                            const std::atomic_bool *cancel)
     -> QList<QPair<QString, QStringList>> {
   QList<QPair<QString, QStringList>> results;
-  int total = 0;
+  int total = 0; // matching lines, the markers not counted
   // Regular files only: a link or junction is not an entry, and searching
   // through one would decrypt files outside the store.
   const QStringList files =
@@ -89,18 +89,32 @@ auto NativeGrep::scanStore(const QProcessEnvironment &env,
     if (QThread::currentThread()->isInterruptionRequested() ||
         (cancel != nullptr && cancel->load()))
       return {};
-    QStringList matches = matchFile(env, gpgExe, filePath, rx, cancel);
-    if (!matches.isEmpty()) {
-      // The store-wide budget: take what still fits, then stop the walk.
-      matches = matches.mid(0, kMaxMatches - total);
-      total += static_cast<int>(matches.size());
-      QString entry = QDir(storeDir).relativeFilePath(filePath);
-      if (entry.endsWith(QLatin1String(".gpg")))
-        entry.chop(4);
-      results.append({entry, matches});
-      if (total >= kMaxMatches)
-        break;
+    if (total == kMaxMatches) {
+      // The budget is spent and entries remain: the search stopped here.
+      results.append({QString(), {}});
+      break;
     }
+    QStringList matches = matchFile(env, gpgExe, filePath, rx, cancel);
+    if (matches.isEmpty())
+      continue;
+    const bool more = isMoreMarker(matches.constLast());
+    if (more)
+      matches.removeLast();
+    // The store-wide budget: what still fits, and a marker when that cut
+    // the entry short.
+    const int room = kMaxMatches - total;
+    if (matches.size() > room) {
+      matches = matches.mid(0, room);
+      matches << QString();
+    } else if (more) {
+      matches << QString();
+    }
+    total += static_cast<int>(matches.size()) -
+             (isMoreMarker(matches.constLast()) ? 1 : 0);
+    QString entry = QDir(storeDir).relativeFilePath(filePath);
+    if (entry.endsWith(QLatin1String(".gpg")))
+      entry.chop(4);
+    results.append({entry, matches});
   }
   return results;
 }

@@ -62,9 +62,19 @@ public:
    * Every field becomes a row of widgets in the display panel. An entry is
    * compressed before it is encrypted, so a small one in a shared store
    * could decompress into millions of "a: b" lines within the plaintext
-   * limit; lines past this many fields stay in the remaining text.
+   * limit; lines past this many fields stay in the remaining text. They are
+   * still looked at for an OTP configuration, as fields would be.
    */
   static constexpr int kMaxNamedFields = 1000;
+
+  /**
+   * @brief Most lines of remaining text getRemainingDataForDisplay() gives.
+   *
+   * The text browser makes a block, with its layout, per line. Past this
+   * many the display text ends with one line saying how many more there
+   * are; getRemainingData() keeps them all, so saving loses nothing.
+   */
+  static constexpr int kMaxDisplayLines = 10000;
 
   /**
    * @brief parse parses the given fileContent in a FileContent object.
@@ -125,6 +135,12 @@ public:
   [[nodiscard]] auto getRemainingDataForDisplay() const -> QString;
 
   /**
+   * @brief How many lines getRemainingData() holds.
+   * @return The line count; 0 when there is no remaining text.
+   */
+  [[nodiscard]] auto getRemainingLineCount() const -> qsizetype;
+
+  /**
    * @brief Whether a field name designates the one-time password field.
    * @param name Field name as written in the file; surrounding whitespace is
    *        ignored.
@@ -163,12 +179,14 @@ public:
 
 private:
   FileContent(QString password, NamedValues namedValues, QString remainingData,
-              QString remainingDataDisplay, QString otpUri);
+              QString remainingDataDisplay, QString otpUri,
+              qsizetype remainingLines);
 
   QString password;
   NamedValues namedValues;
   QString remainingData, remainingDataDisplay;
   QString otpUri;
+  qsizetype remainingLines = 0;
 };
 
 #endif // SRC_FILECONTENT_H_

@@ -10,6 +10,8 @@ class tst_filecontent : public QObject {
 private Q_SLOTS:
   void parsePlainPassword();
   void parseTakesABoundedNumberOfFields();
+  void parseFindsOtpPastTheFieldCap();
+  void parseShowsABoundedNumberOfLines();
   void parseKeepsEmptyLinesAsSplitDid();
   void parsePasswordWithNamedFields();
   void parseWithTemplateFields();
@@ -83,6 +85,46 @@ void tst_filecontent::parseTakesABoundedNumberOfFields() {
                .arg(lines - 3)
                .arg(lines - 2)
                .arg(lines - 1));
+}
+
+/**
+ * @brief Lines past kMaxNamedFields stay text but are still looked at for
+ * an OTP configuration, as fields would be.
+ */
+void tst_filecontent::parseFindsOtpPastTheFieldCap() {
+  QString content = QStringLiteral("pw");
+  for (int i = 0; i < FileContent::kMaxNamedFields; ++i) {
+    content += QStringLiteral("\nf%1: v").arg(i);
+  }
+  const QString uri =
+      QStringLiteral("otpauth://totp/x?secret=JBSWY3DPEHPK3PXP");
+  content += QStringLiteral("\notp: ") + uri;
+  const FileContent fc = FileContent::parse(content, {}, true);
+  QCOMPARE(fc.getNamedValues().size(), FileContent::kMaxNamedFields);
+  QCOMPARE(fc.getOtpUri(), uri);
+  QVERIFY2(!fc.getRemainingDataForDisplay().contains(QStringLiteral("JBSWY")),
+           "the secret stays out of the display");
+}
+
+/**
+ * @brief The text browser makes a block per line: past kMaxDisplayLines the
+ * display text ends in one line saying how many more there are, while the
+ * remaining text keeps them all.
+ */
+void tst_filecontent::parseShowsABoundedNumberOfLines() {
+  const int lines = FileContent::kMaxDisplayLines + 7;
+  QString content = QStringLiteral("pw");
+  for (int i = 0; i < lines; ++i) {
+    content += QStringLiteral("\nline %1").arg(i);
+  }
+  const FileContent fc = FileContent::parse(content, {}, false);
+  QCOMPARE(fc.getRemainingLineCount(), qsizetype{lines});
+  QCOMPARE(fc.getRemainingData().count(QLatin1Char('\n')), lines - 1);
+  const QString shown = fc.getRemainingDataForDisplay();
+  QCOMPARE(shown.count(QLatin1Char('\n')), FileContent::kMaxDisplayLines);
+  QVERIFY2(
+      shown.section(QLatin1Char('\n'), -1).contains(QStringLiteral("7 more")),
+      qPrintable(shown.right(60)));
 }
 
 /**

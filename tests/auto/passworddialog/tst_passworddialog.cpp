@@ -36,6 +36,7 @@
 #include <functional>
 
 #include "../../../src/fieldlabel.h"
+#include "../../../src/filecontent.h"
 #include "../../../src/pass.h"
 #include "../../../src/passworddialog.h"
 #include "../../../src/qtpasssettings.h"
@@ -132,6 +133,7 @@ private Q_SLOTS:
   void templateBoxListsAndAppliesTemplates();
   void ctrlTCyclesTemplatesAndUpdatesBox();
   void fieldLabelRenamesTheField();
+  void anEntryTooLongToEditIsNotLoaded();
   void fieldLabelRefusesADuplicateName();
   void fieldLabelEscapeCancelsAndRemoveDropsTheRow();
   void templateFieldsKeepPlainLabels();
@@ -199,6 +201,32 @@ auto fieldLabel(PasswordDialog &d, const QString &name) -> FieldLabel * {
  *        edits it in place; Enter renames the field and the entry is written
  *        back under the new key.
  */
+/**
+ * @brief An entry of millions of lines (a small compressed one in a shared
+ * store can be one) would make an editor block per line. Past
+ * FileContent::kMaxDisplayLines it is not loaded at all, the dialog says
+ * why, and nothing can be saved over it from here.
+ */
+void tst_passworddialog::anEntryTooLongToEditIsNotLoaded() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret") +
+                   QString(FileContent::kMaxDisplayLines, QLatin1Char('\n')));
+  auto *body = d.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
+  auto *password = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+  auto *ok = d.findChild<QDialogButtonBox *>()->button(QDialogButtonBox::Ok);
+  QVERIFY(body != nullptr && password != nullptr && status != nullptr);
+  QVERIFY(body->toPlainText().isEmpty());
+  QVERIFY(password->text().isEmpty());
+  QVERIFY2(status->text().contains(QStringLiteral("too many")),
+           qPrintable(status->text()));
+  QVERIFY2(!ok->isEnabled(), "nothing can be saved over it");
+}
+
 void tst_passworddialog::fieldLabelRenamesTheField() {
   FakePass pass;
   PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
