@@ -12,8 +12,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   without a Git repository of its own no longer uses one in a folder above
   it. A store kept inside a larger repository on purpose needs Settings ▸
   Git ▸ "Use a Git repository in a folder above the store", or pull, commit
-  and push report "not a git repository". With the `pass` backend nothing
-  changes: `pass` has always stopped there.
+  and push fail with Git's error that there is no repository. With the
+  `pass` backend nothing changes: `pass` has always stopped there.
 - **New store folders and Git's files are private: umask 077, as with
   `pass`.** A store shared through group permissions on one machine needs
   `PASSWORD_STORE_UMASK` set (for example `007`), as `pass` itself does.
