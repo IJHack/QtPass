@@ -98,8 +98,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   1000 fields, the rest staying text, and shows at most 10000 lines of text
   (also with "Display as is"), saying how many more there are. The editor
   does not open an entry longer than that, and Ctrl+C takes the first line
-  without splitting the rest. Content search takes at most 100 matching lines from one entry
-  and 10000 in all, and says when it stopped.
+  without splitting the rest. Content search takes at most 100 matching
+  lines from one entry and 10000 in all, and says when it stopped.
 - A recipient list signed by a revoked signing key no longer verifies. gpg
   reports such a signature as `REVKEYSIG` but still prints `VALIDSIG` and
   succeeds, and QtPass read only the latter, so a signing key revoked after

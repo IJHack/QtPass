@@ -197,11 +197,6 @@ auto fieldLabel(PasswordDialog &d, const QString &name) -> FieldLabel * {
 } // namespace
 
 /**
- * @brief #132: double-click on a field name (or Rename in its context menu)
- *        edits it in place; Enter renames the field and the entry is written
- *        back under the new key.
- */
-/**
  * @brief An entry of millions of lines (a small compressed one in a shared
  * store can be one) would make an editor block per line. Past
  * FileContent::kMaxDisplayLines it is not loaded at all, the dialog says
@@ -213,8 +208,12 @@ void tst_passworddialog::anEntryTooLongToEditIsNotLoaded() {
                    false);
   d.show();
   QVERIFY(QTest::qWaitForWindowExposed(&d));
-  pass.deliverShow(QStringLiteral("secret") +
-                   QString(FileContent::kMaxDisplayLines, QLatin1Char('\n')));
+  // One line past the limit (the final newline ends a line, it is no line).
+  QString entry = QStringLiteral("secret\n");
+  for (int i = 1; i <= FileContent::kMaxDisplayLines; ++i) {
+    entry += QStringLiteral("l\n");
+  }
+  pass.deliverShow(entry);
   auto *body = d.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
   auto *password = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
   auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
@@ -225,8 +224,27 @@ void tst_passworddialog::anEntryTooLongToEditIsNotLoaded() {
   QVERIFY2(status->text().contains(QStringLiteral("too many")),
            qPrintable(status->text()));
   QVERIFY2(!ok->isEnabled(), "nothing can be saved over it");
+  QVERIFY2(status->text().contains(
+               QString::number(FileContent::kMaxDisplayLines + 1)),
+           qPrintable(status->text()));
+
+  // Exactly the limit, with the final newline pass writes: loaded.
+  FakePass fits;
+  PasswordDialog e(&fits, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  e.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&e));
+  fits.deliverShow(entry.mid(entry.indexOf(QLatin1Char('\n')) + 1));
+  QVERIFY(!e.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"))
+               ->toPlainText()
+               .isEmpty());
 }
 
+/**
+ * @brief #132: double-click on a field name (or Rename in its context menu)
+ *        edits it in place; Enter renames the field and the entry is written
+ *        back under the new key.
+ */
 void tst_passworddialog::fieldLabelRenamesTheField() {
   FakePass pass;
   PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),

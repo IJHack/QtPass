@@ -72,7 +72,9 @@ public:
    *
    * The text browser makes a block, with its layout, per line. Past this
    * many the display text ends with one line saying how many more there
-   * are; getRemainingData() keeps them all, so saving loses nothing.
+   * are; getRemainingData() keeps them all, so saving loses nothing. The
+   * edit dialog uses the same number for the whole entry (password and
+   * fields included) and does not load one with more lines.
    */
   static constexpr int kMaxDisplayLines = 10000;
 

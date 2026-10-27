@@ -27,7 +27,6 @@ using Enums::GIT_PULL;
 using Enums::GIT_PUSH;
 using Enums::GPG_GENKEYS;
 using Enums::PASS_COPY;
-using Enums::PASS_GREP;
 using Enums::PASS_INIT;
 using Enums::PASS_INSERT;
 using Enums::PASS_MOVE;
@@ -482,47 +481,6 @@ auto gpgErrorMessage(const QString &err) -> QString {
   return {};
 }
 
-namespace {
-// `pass grep` starts entry headers with ANSI blue (\x1B[94m); without colour,
-// a non-indented line ending in ':' is taken as one.
-auto isGrepHeaderLine(const QString &rawLine, const QString &trimmedLine)
-    -> bool {
-  return rawLine.startsWith(QStringLiteral("\x1B[94m")) ||
-         (!rawLine.startsWith(' ') && !rawLine.startsWith('\t') &&
-          trimmedLine.endsWith(':'));
-}
-} // namespace
-
-// Headers are detected on the raw line, before ANSI is stripped, so the
-// colour marks them regardless of locale.
-auto parseGrepOutput(const QString &rawOut)
-    -> QList<QPair<QString, QStringList>> {
-  static const QRegularExpression ansi(
-      QStringLiteral(R"(\x1B\[[0-9;]*[a-zA-Z])"));
-  QList<QPair<QString, QStringList>> results;
-  QString currentEntry;
-  QStringList currentMatches;
-  for (const QString &rawLine : rawOut.split('\n')) {
-    QString line = rawLine;
-    line.remove('\r');
-    line.remove(ansi);
-    line = line.trimmed();
-    const bool isHeader = isGrepHeaderLine(rawLine, line);
-    if (isHeader) {
-      if (!currentEntry.isEmpty() && !currentMatches.isEmpty())
-        results.append({currentEntry, currentMatches});
-      currentEntry = line.endsWith(':') ? line.chopped(1) : line;
-      currentMatches.clear();
-    } else if (!currentEntry.isEmpty()) {
-      if (!line.isEmpty())
-        currentMatches << line;
-    }
-  }
-  if (!currentEntry.isEmpty() && !currentMatches.isEmpty())
-    results.append({currentEntry, currentMatches});
-  return results;
-}
-
 void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
   auto pid = static_cast<PROCESS>(id);
@@ -550,11 +508,6 @@ void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &out,
                               const QString &err) {
   Q_UNUSED(out);
 
-  if (pid == PASS_GREP) {
-    handleGrepError(exitCode, err);
-    return;
-  }
-
   if (pid == PASS_INSERT) {
     const QString friendly = gpgErrorMessage(err);
     const QString why =
@@ -568,15 +521,6 @@ void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &out,
     emit generateGPGKeysFailed(err);
   }
   emit processErrorExit(exitCode, err);
-}
-
-void Pass::handleGrepError(int exitCode, const QString &err) {
-  if (exitCode == 1) {
-    emit finishedGrep({});
-  } else {
-    emit processErrorExit(exitCode, err);
-    emit finishedGrep({});
-  }
 }
 
 auto Pass::formatInsertError(const QString &friendly, const QString &err)
@@ -602,7 +546,8 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
   }
 
   // The kind-specific signal. PASS_SHOW is emitted by finished(), which
-  // knows the file; PASS_GREP carries parsed results, not raw output.
+  // knows the file. Content search runs in-process (NativeGrep), not
+  // through `pass grep`, and emits finishedGrep itself.
   using Signal = void (Pass::*)(const QString &, const QString &);
   static const QHash<int, Signal> kSignals{
       {GIT_INIT, &Pass::finishedGitInit},
@@ -615,10 +560,6 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
       {PASS_COPY, &Pass::finishedCopy},
       {GPG_GENKEYS, &Pass::finishedGenerateGPGKeys},
   };
-  if (pid == PASS_GREP) {
-    emit finishedGrep(parseGrepOutput(out));
-    return;
-  }
   if (const Signal signal = kSignals.value(pid, nullptr)) {
     (this->*signal)(out, err);
   }
